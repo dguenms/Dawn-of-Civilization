@@ -163,6 +163,8 @@ class WBStoredDataScreen:
 					sText += u" (%s)" % CyTranslator().getText(StabilityLevelTexts[scriptDict[item]], ())
 				elif item in ["iAstronomyTurn", "iNextTurnAIWar"]:
 					sText += u" (Turn %s)" % getTurnForYear(scriptDict[item])
+				elif item == "iFirstNewWorldColony":
+					sText = self.getCivName(scriptDict[item])
 				screen.setTableText("WBDataTable", 2*iColumn+3, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 22008, i, CvUtil.FONT_LEFT_JUSTIFY)
 
 	def placeListTables(self):
@@ -173,7 +175,7 @@ class WBStoredDataScreen:
 		global iSelectedCiv
 		global iWarList
 
-		bCiv = lLists[iSelectedList] in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered"]
+		bCiv = lLists[iSelectedList] in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered", "lFirstGreatPeople"]
 
 		iWidth = (screen.getXResolution() * 3 / 4 - 40) / 2 - 40
 		iHeightMax = self.allignTable((screen.getYResolution() - 85 - 50 - 50) / 2)
@@ -239,6 +241,9 @@ class WBStoredDataScreen:
 			elif item == "lFirstEntered": # Eras
 				sText = gc.getEraInfo(i).getDescription()
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			elif item == "lFirstGreatPeople": # Great People
+				sText = gc.getUnitInfo(lGreatPeopleUnits[i]).getDescription()
+				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getUnitInfo(lGreatPeopleUnits[i]).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lStabilityCategoryValues": # Stability Categories
 				sText = CyTranslator().getText(StabilityTypesTexts[i], ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -258,11 +263,10 @@ class WBStoredDataScreen:
 				screen.setTableText("WBListTableTwo", 0, i, str(i), "", WidgetTypes.WIDGET_PYTHON, -1, i, CvUtil.FONT_LEFT_JUSTIFY)
 
 			if bCiv:
+				sText = self.getCivName(lSelectedList[i])
 				if lSelectedList[i] == -1:
-					sText = CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
 					screen.setTableText("WBListTableTwo", 1, i, sText, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), WidgetTypes.WIDGET_PYTHON, 22008, i, CvUtil.FONT_LEFT_JUSTIFY)
 				else:
-					sText = CyTranslator().getText(str(gc.getPlayer(lSelectedList[i]).getCivilizationShortDescriptionKey()), ())
 					screen.setTableText("WBListTableTwo", 1, i, sText, gc.getCivilizationInfo(gc.getPlayer(lSelectedList[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_PYTHON, 22008, i, CvUtil.FONT_LEFT_JUSTIFY)
 			else:
 				sText = str(lSelectedList[i])
@@ -300,6 +304,11 @@ class WBStoredDataScreen:
 		else:
 			data.players[iSelectedCiv].__dict__[lLists[iSelectedList]][iItem] = iValue
 		self.placeListTables()
+
+	def getCivName(self, iCiv):
+		if iCiv < 0:
+			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
+		return CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
 
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBStoredDataScreen", CvScreenEnums.WB_STOREDDATA)
@@ -365,6 +374,8 @@ class WBStoredDataScreen:
 
 				if item == "iStabilityLevel":
 					iValue = max(iStabilityCollapsing, min(iValue, iStabilitySolid))
+				elif item == "iFirstNewWorldColony":
+					iValue = iSelectedCiv
 
 				if iSelectedMode == 0:
 					data.__dict__[item] = iValue
@@ -394,7 +405,7 @@ class WBStoredDataScreen:
 				else:
 					data.players[iSelectedCiv].__dict__[sList][iItem] = not data.players[iSelectedCiv].__dict__[sList][iItem]
 			elif isinstance(scriptDict[sList][iItem], int):
-				bCiv = sList in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered"]
+				bCiv = sList in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered", "lFirstGreatPeople"]
 				if bCiv:
 					data.__dict__[sList][iItem] = iSelectedCiv
 				else:

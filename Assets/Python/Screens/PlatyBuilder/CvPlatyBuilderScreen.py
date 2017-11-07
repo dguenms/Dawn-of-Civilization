@@ -1462,11 +1462,14 @@ class CvWorldBuilderScreen:
 					screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 					iX += iSpan*iAdjust
 					if self.iPlayerAddMode != "RegionMap":
-						bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
-						if bExtended:
-							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+						if self.iPlayerAddMode == "Flip":
+							bExtended = (self.m_iCurrentPlayer in Areas.dRebirthArea)
 						else:
-							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+							bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
+						if bExtended:
+							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+						else:
+							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in ["MoveMap", "MoveMap2"]:
 				if self.iPlayerAddMode == "MoveMap":
@@ -1873,8 +1876,6 @@ class CvWorldBuilderScreen:
 	def showFlipZone(self):
 		utils.removeStabilityOverlay()
 		if self.m_iCurrentPlayer < iNumPlayers:
-			sColor = "COLOR_MAGENTA"
-			sColorAI = "COLOR_RED"
 			if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
 				lHumanPlotList = self.dFlipZoneEdits[self.m_iCurrentPlayer]
 			else:
@@ -1883,22 +1884,25 @@ class CvWorldBuilderScreen:
 					lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
 				else:
 					lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			for tPlot in lHumanPlotList:
+				if tPlot == Areas.getCapital(self.m_iCurrentPlayer):
+					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1002, "COLOR_CYAN", 0.7)
+				else:
+					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, "COLOR_MAGENTA", 0.7)
 			# Additional cities outside flipzone (Canada)
 			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
 			for city in lExtraCities:
 				x = city.getX()
 				y = city.getY()
 				if (x, y) not in lHumanPlotList:
-					lHumanPlotList.append((x, y))
-			for tPlot in lHumanPlotList:
-				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, sColor, 0.7)
+					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
 
 			# Larger AI flipzone
 			if self.m_iCurrentPlayer in Areas.dChangedBirthArea:
 				tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
 				lAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, [])) if tPlot not in lHumanPlotList]
 				for tPlot in lAIPlotList:
-					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, sColorAI, 0.7)
+					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
 
 	def showStabilityOverlay(self):
 		utils.removeStabilityOverlay()
@@ -2530,13 +2534,15 @@ class CvWorldBuilderScreen:
 				self.showRegionOverlay()
 
 		elif inputClass.getFunctionName() == "SwitchReborn":
-			utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
-			if self.iPlayerAddMode == "Flip":
-				self.showFlipZone()
-			elif self.iPlayerAddMode == "WarMap":
-				self.showWarOverlay()
-			else:
-				self.showStabilityOverlay()
+			if inputClass.getData1() == 0:
+				utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
+				if self.iPlayerAddMode == "Flip":
+					self.showFlipZone()
+				elif self.iPlayerAddMode == "WarMap":
+					self.showWarOverlay()
+				else:
+					self.showStabilityOverlay()
+				dc.checkName(self.m_iCurrentPlayer)
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			if self.iPlayerAddMode == "ReligionMap":
