@@ -1467,9 +1467,9 @@ class CvWorldBuilderScreen:
 						else:
 							bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
 						if bExtended:
-							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 						else:
-							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in ["MoveMap", "MoveMap2"]:
 				if self.iPlayerAddMode == "MoveMap":
@@ -2534,13 +2534,15 @@ class CvWorldBuilderScreen:
 				self.showRegionOverlay()
 
 		elif inputClass.getFunctionName() == "SwitchReborn":
-			utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
-			if self.iPlayerAddMode == "Flip":
-				self.showFlipZone()
-			elif self.iPlayerAddMode == "WarMap":
-				self.showWarOverlay()
-			else:
-				self.showStabilityOverlay()
+			if inputClass.getData1() == 0:
+				utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
+				if self.iPlayerAddMode == "Flip":
+					self.showFlipZone()
+				elif self.iPlayerAddMode == "WarMap":
+					self.showWarOverlay()
+				else:
+					self.showStabilityOverlay()
+				dc.checkName(self.m_iCurrentPlayer)
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			if self.iPlayerAddMode == "ReligionMap":
