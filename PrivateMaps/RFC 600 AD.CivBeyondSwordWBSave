@@ -18512,7 +18512,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=30
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -18872,7 +18872,7 @@ BeginPlot
 	x=49,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -19231,7 +19231,8 @@ BeginPlot
 	x=50,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_GOLD
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -19258,7 +19259,7 @@ EndPlot
 BeginPlot
 	x=50,y=35
 	BonusType=BONUS_IRON
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -19579,7 +19580,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=28
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_GOLD
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -19623,6 +19626,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=36
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -19987,12 +19991,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=31
+	RiverNSDirection=0
+	isWOfRiver
 	BonusType=BONUS_CAMEL
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=52,y=32
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -20343,6 +20351,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=28
+	isWOfRiver
+	RiverNSDirection=2
 	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -20355,21 +20365,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=30
+	BonusType=BONUS_SHEEP
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=53,y=31
-	isNOfRiver
-	RiverWEDirection=1
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=53,y=32
-	BonusType=BONUS_COTTON
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -20380,6 +20391,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=34
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -20724,6 +20736,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=27
+	isWOfRiver
+	RiverNSDirection=2
 	BonusType=BONUS_IVORY
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -20731,6 +20745,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=28
+	isWOfRiver
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -20748,14 +20766,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=31
-	isNOfRiver
-	RiverWEDirection=1
+	isWOfRiver
+	RiverNSDirection=2
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=32
+	isNOfRiver
+	RiverWEDirection=1
+	BonusType=BONUS_COTTON
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -21117,7 +21139,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=28
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=3
 EndPlot
 BeginPlot
@@ -21143,12 +21166,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=32
-	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=33
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -21495,7 +21519,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=28
-	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -21503,6 +21526,7 @@ BeginPlot
 	x=56,y=29
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -21521,6 +21545,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=32
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot

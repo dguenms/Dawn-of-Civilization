@@ -264,8 +264,10 @@ class Barbs:
 				sAdj = ["TXT_KEY_ADJECTIVE_GHANAIAN"]
 			else:
 				sAdj = ["TXT_KEY_ADJECTIVE_SONGHAI"]
-			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 			self.checkSpawn(iNative, iImpi, 2, (48, 22), (63, 29), self.spawnMinors, iGameTurn, 16, 10, sAdj)
+			
+		if utils.isYearIn(1200, 1700):
+			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 
 		#American natives
 		if utils.isYearIn(600, 1100):

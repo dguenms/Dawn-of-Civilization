@@ -20672,7 +20672,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=30
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,22,24,29,38,45,
 EndPlot
@@ -21095,7 +21095,7 @@ BeginPlot
 	x=49,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,22,24,29,38,45,
 EndPlot
@@ -21607,7 +21607,10 @@ BeginPlot
 	x=50,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	BonusType=BONUS_GOLD
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=23,44,45,
 EndPlot
@@ -21641,7 +21644,7 @@ BeginPlot
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=22,22,29,44,45,
 EndPlot
@@ -22007,7 +22010,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=28
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_GOLD
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=22,24,38,44,45,
 EndPlot
@@ -22019,6 +22026,12 @@ BeginPlot
 	isWOfRiver
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+	TeamReveal=38,44,45,
+EndPlot
+BeginPlot
+	x=51,y=30
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
@@ -22037,12 +22050,6 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player45Culture=100, (Independent2)
 	EndCity
-	TeamReveal=38,44,45,
-EndPlot
-BeginPlot
-	x=51,y=30
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
 	TeamReveal=38,44,45,
 EndPlot
 BeginPlot
@@ -22077,7 +22084,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=36
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=24,29,38,44,
@@ -22541,14 +22548,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=31
+	RiverNSDirection=0
+	isWOfRiver
 	BonusType=BONUS_CAMEL
 	ImprovementType=IMPROVEMENT_PASTURE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=52,y=32
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=45,
@@ -23043,6 +23054,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=28
+	isWOfRiver
+	RiverNSDirection=2
 	BonusType=BONUS_GOLD
 	ImprovementType=IMPROVEMENT_MINE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
@@ -23059,6 +23072,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=30
+	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -23066,10 +23082,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=31
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+	TeamReveal=45,
+EndPlot
+BeginPlot
+	x=53,y=32
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
@@ -23097,15 +23120,6 @@ BeginPlot
 	TeamReveal=45,
 EndPlot
 BeginPlot
-	x=53,y=32
-	BonusType=BONUS_COTTON
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
-	TeamReveal=45,
-EndPlot
-BeginPlot
 	x=53,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -23113,6 +23127,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=34
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -23634,6 +23649,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=27
+	isWOfRiver
+	RiverNSDirection=2
 	BonusType=BONUS_IVORY
 	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
@@ -23643,6 +23660,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=28
+	isWOfRiver
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23650,7 +23671,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=29
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=38,45,
@@ -23665,8 +23685,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=31
-	isNOfRiver
-	RiverWEDirection=1
+	isWOfRiver
+	RiverNSDirection=2
 	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
@@ -23676,6 +23696,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=32
+	isNOfRiver
+	RiverWEDirection=1
+	BonusType=BONUS_COTTON
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -24102,7 +24128,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=28
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=3
 	TeamReveal=38,45,
 EndPlot
@@ -24135,15 +24162,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=32
-	BonusType=BONUS_STONE
-	ImprovementType=IMPROVEMENT_QUARRY
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=55,y=33
+	BonusType=BONUS_STONE
+	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -24168,8 +24196,6 @@ EndPlot
 BeginPlot
 	x=55,y=37
 	BonusType=BONUS_MARBLE
-	ImprovementType=IMPROVEMENT_QUARRY
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=35,44,
@@ -24651,9 +24677,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=28
-	BonusType=BONUS_IVORY
-	ImprovementType=IMPROVEMENT_CAMP
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=29,38,44,45,
@@ -24662,9 +24685,17 @@ BeginPlot
 	x=56,y=29
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	TeamReveal=38,44,45,
+EndPlot
+BeginPlot
+	x=56,y=30
+	isNOfRiver
+	RiverWEDirection=1
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
@@ -24683,13 +24714,6 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player45Culture=100, (Independent2)
 	EndCity
-	TeamReveal=38,44,45,
-EndPlot
-BeginPlot
-	x=56,y=30
-	isNOfRiver
-	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -24703,6 +24727,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=32
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=44,45,
