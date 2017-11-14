@@ -2705,7 +2705,7 @@ class RiseAndFall:
 		elif iCiv == iMali:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 5)
-			utils.createMissionaries(iCiv, 1)
+			utils.createMissionaries(iCiv, 2)
 		elif iCiv == iPoland:
 			iNumSettlers = 1
 			if utils.getHumanID() == iPoland: iNumSettlers = 2

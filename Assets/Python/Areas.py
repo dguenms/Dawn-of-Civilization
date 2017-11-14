@@ -127,7 +127,7 @@ tCapitals = (
 (53, 54), # London
 (59, 51), # Frankfurt
 (73, 54), # Moskow
-(53, 32), # Timbuktu
+(51, 30), # Djenne
 (65, 51), # Krakow
 (49, 43), # Lisboa
 (28, 22), # Cuzco
