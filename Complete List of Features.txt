@@ -566,8 +566,8 @@ NEW CIVILISATIONS
     * Unique Building: Noria (Aqueduct): -20 production cost, +2 production
     * Unique Power: The Power of Irrigation: food improvements yield +1 food on plains tiles
     * Unique Historical Victory:
-        * Control three cities in Iberia, the Maghreb and West Africa in 1200 AD
-        * Settle a total of five Great Prophets, Scientists or Engineers in Cordoba by 1300 AD
+        * Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD
+        * Build La Mezquita and settle a total of four Great Prophets, Scientists or Engineers in Cordoba by 1300 AD
         * Acquire 3000 gold through piracy by 1650 AD
 * Holy Roman Empire / Austria
     * Spawn: 840 AD at Frankfurt
@@ -1039,7 +1039,7 @@ GAME SCENARIOS
 * Terrain changes in Indochina: extended one row to the east
 * Terrain changes in Japan: Kyushu changed to grassland, added Tea and Clam
 * Terrain changes in the Tarim Basin: added the Tarim River and additional oases
-* Added the Senegal river
+* Terrain changes in West Africa: extended the course of the Niger River north, added the Senegal and Volta rivers
 * Added the Guadalquivir river in Iberia
 * Minor map adjustments in Colombia, Brazil, Sri Lanka, Mexico, Caribbean, California
 * All civilizations start with appropriate civics and state religions

@@ -364,6 +364,8 @@ UNIQUE HISTORICAL VICTORIES
 * First Maya goal: discover Writing and Mathematics by 600 AD
 * Third Arab goal: spread Islam to 30% of the cities in the world
 * Second Tibetan goal: spread Buddhism to 25% of the cities in the world
+* First Moorish goal: Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD
+* Second Moorish goal: Build La Mezquita and settle a total of four great prophets, scientists and engineers in Cordoba by 1300 AD
 * Third Spanish goal: spread Catholicism to 30% of the cities in the world and allow no Protestant civilisations in Europe in 1650 AD
 * Second Polish goal: be the first to discover Civil Liberties
 
@@ -452,6 +454,7 @@ ARTIFICIAL INTELLIGENCE
 * AI will emphasise connecting bonuses and keeping already constructed improvements more
 
 SCENARIOS
+* Terrain changes in West Africa: extended the course of the Niger River north, added the Senegal and Volta rivers
 * Teotihuacan spawns in 100 AD
 
 HISTORICAL IMMERSION
