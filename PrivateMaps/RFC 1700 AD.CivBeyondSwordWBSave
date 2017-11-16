@@ -463,7 +463,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=16, AttitudeExtra=-2, (Vikings)
 	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
