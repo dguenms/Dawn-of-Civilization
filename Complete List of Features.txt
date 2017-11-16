@@ -399,6 +399,7 @@ CIVILISATIONS
         * Have friendly relations with five Communist civilizations by 1950 AD
 * Mali
     * Name: Mandinka, Mande
+    * Spawn: Djenne
     * Unique Unit: Kelebolo (Skirmisher): +50% desert strength, +50% against melee units
     * Unique Historical Victory:
         * Conduct a trade mission to your holy city in 1350 AD
