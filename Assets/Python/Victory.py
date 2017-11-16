@@ -809,7 +809,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# second goal: build La Mezquita and settle four great prophets, scientists or engineers in Cordoba by 1300 AD
 		if isPossible(iMoors, 1):
-			bLaMezquita = data.getWonderBuilder(iMezquita)
+			bMezquita = data.getWonderBuilder(iMezquita) == iMoors
 		
 			iCounter = 0
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatProphet)
