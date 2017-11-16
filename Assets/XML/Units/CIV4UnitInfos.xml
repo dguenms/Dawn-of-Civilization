@@ -8481,6 +8481,10 @@
 					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
+					<iUnitClassMod>25</iUnitClassMod>
+				</UnitClassAttackMod>
 			</UnitClassAttackMods>
 			<iCultureGarrison>8</iCultureGarrison>
 			<iAsset>3</iAsset>
