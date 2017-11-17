@@ -214,6 +214,7 @@ dCommunistNames = {
 	'Sankt-Peterburg'	:	'Leningrad',
 	"Tver'"			:	'Kalinin',
 	'Yekaterinburg'		:	'Sverdlovsk',
+	'Nizhniy Novgorod'	:	'Gorkiy',
 	'Samara'		:	'Kuybyshev',
 	"Tsar'grad"		:	"Konstantinopol'",
 	'Bobruysk'		:	'Stalink',
