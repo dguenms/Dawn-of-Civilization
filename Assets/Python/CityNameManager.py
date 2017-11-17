@@ -210,18 +210,17 @@ def onCityAcquired(city, iNewOwner):
 		city.setName(sNewName, False)
 	
 dCommunistNames = {
-	'Caricyn'		:	'Stalingrad',
+	'Tsaritsyn'		:	'Stalingrad',
 	'Sankt-Peterburg'	:	'Leningrad',
 	"Tver'"			:	'Kalinin',
-	'Ekaterinburg'		:	'Sverdlovsk',
-	'Nizhnij Novgorod'	:	'Gorki',
-	'Samara'		:	'Kujbyshev',
-	"Car'grad"		:	"Konstantinopol'",
-	'Bobrujsk'		:	'Stalink',
-	'Vjatka'		:	'Kirov',
-	'Bavly'			:	"Oktjabr'skij",
+	'Yekaterinburg'		:	'Sverdlovsk',
+	'Samara'		:	'Kuybyshev',
+	"Tsar'grad"		:	"Konstantinopol'",
+	'Bobruysk'		:	'Stalink',
+	'Vyatka'		:	'Kirov',
+	'Bavly'			:	"Oktyabr'skiy",
 	'Sumin'			:	'Sumy',
-	'Sjangan'		:	'Gon Kong',
+	'Syangan'		:	'Gon Kong',
 }
 
 def applyCommunistNames(iCiv):
