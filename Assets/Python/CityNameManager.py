@@ -266,6 +266,7 @@ tEraNames = (
 	'Tumasik'		:	'Singapura',
 	'Sundapura'		:	'Jayakarta',
 	'Buda'			:	'Budapest',
+	'Rugodiv'		:	'Narva',
 },
 # industrial
 {
@@ -277,12 +278,21 @@ tEraNames = (
 	'Dagou'			:	'Gaoxiong',
 	'Ayutthaya'		:	'Bangkok',
 	'York'			:	'Toronto',
+	'Tsaryovo Gorodishche'	:	'Kurgan',
+	'Krivoshchekovskaya'	:	'Novonikolayevsk'
 },
 # modern
 {
 	'Angora'		:	'Ankara',
 	'Hanseong'		:	'Seoul',
 	'Jehol'			:	'Chengde',
+	'Nikolayevsk'		:	'Kustanay',
+	'Zheleznodorozhny'	:	'Kungrad',
+	"Vil'na"		:	"Vil'nyus",
+	'Kovno'			:	'Kaunas',
+	'Yekaterinoslav'	:	"Dnepropetrov'sk",
+	'Alexandrovsk-Grushevsky':	'Shakty',
+	"Khal'mer-Sede"		:	'Tazovskiy'
 },
 # future
 {},
