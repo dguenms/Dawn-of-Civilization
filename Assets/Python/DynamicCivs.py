@@ -1700,7 +1700,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_MOORS_TAIFAS"
 			
-		if utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
+		if iReligion == iIslam and utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
 			if bEmpire:
 				return "TXT_KEY_CALIPHATE_OF"
 				
