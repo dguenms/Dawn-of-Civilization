@@ -3306,6 +3306,11 @@ int CvGame::getNumFreeBonuses(BuildingTypes eBuilding)
 {
 	if (GC.getBuildingInfo(eBuilding).getNumFreeBonuses() == -1)
 	{
+		if (GC.getMapINLINE().getWorldSize() == -1)
+		{
+			return 7;
+		}
+
 		return GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getNumFreeBuildingBonuses();
 	}
 	else
