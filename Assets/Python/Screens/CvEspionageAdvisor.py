@@ -462,14 +462,17 @@ class CvEspionageAdvisor:
 
 
 	def resetEspionageWeights(self):
+		iActivePlayer = CyGame().getActivePlayer()
+		iActiveTeam = CyGame().getActiveTeam()
+	
 		for iRival in xrange(gc.getMAX_CIV_PLAYERS()):
 			pRival = gc.getPlayer(iRival)
 			iRivalTeam = pRival.getTeam()
-			if iRivalTeam == self.iActiveTeam:
+			if iRivalTeam == iActiveTeam:
 				continue
 
-			if pRival.isAlive() and self.pActiveTeam.isHasMet(iRivalTeam):
-				iChange = -1 * self.pActivePlayer.getEspionageSpendingWeightAgainstTeam(iRivalTeam)
+			if pRival.isAlive() and gc.getTeam(iActiveTeam).isHasMet(iRivalTeam):
+				iChange = -1 * gc.getPlayer(iActivePlayer).getEspionageSpendingWeightAgainstTeam(iRivalTeam)
 				CyMessageControl().sendEspionageSpendingWeightChange(iRivalTeam, iChange)
 
 		CyInterface().setDirty(InterfaceDirtyBits.Espionage_Advisor_DIRTY_BIT, True)

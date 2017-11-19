@@ -4,7 +4,6 @@ from CvPythonExtensions import *
 import CvUtil
 from PyHelpers import PyPlayer
 import Popup
-#import cPickle as pickle
 from StoredData import data # edead
 import CvTranslator
 from RFCUtils import utils
@@ -17,6 +16,7 @@ import Stability as sta
 import Areas
 import Civilizations
 import Modifiers
+import CvEspionageAdvisor
 
 ################
 ### Globals ###
@@ -76,7 +76,6 @@ class RiseAndFall:
 		
 		data.resetHumanStability()
 
-
 		for city in utils.getCityList(iCiv):
 			city.setInfoDirty(True)
 			city.setLayoutDirty(True)
@@ -86,6 +85,8 @@ class RiseAndFall:
 						
 		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 			vic.loseAll(iPreviousCiv)
+			
+		CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
 			
 	def scheduleFlipPopup(self, iNewCiv, lPlots):
 		data.lTempEvents.append((iNewCiv, lPlots))
