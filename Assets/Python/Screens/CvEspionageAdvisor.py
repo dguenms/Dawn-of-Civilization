@@ -382,7 +382,7 @@ class CvEspionageAdvisor:
 						iRow = screen.appendTableRow("ActiveTable")
 						screen.setTableText("ActiveTable", 0, iRow, "<font=2>" + szMission + "</font>", "", WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION, iLoopMission, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						if iCost > 0:
-							screen.setTableInt("ActiveTable", 1, iRow, "<font=2>" + szCost + "</font>", "", WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION, iLoopMission, -1, CvUtil.FONT_RIGHT_JUSTIFY)
+							screen.setTableInt("ActiveTable", 1, iRow, "<font=2>" + szCost + "   </font>", "", WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION, iLoopMission, -1, CvUtil.FONT_RIGHT_JUSTIFY)
 
 
 
