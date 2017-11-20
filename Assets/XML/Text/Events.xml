@@ -6826,4 +6826,29 @@
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</English>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Mittelalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_1</Tag>
+		<English>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</English>
+		<German>Unsere Zivilisation d&#252;rstet nach Adeligen, die unser Volk in eine bessere Zukunft f&#252;hren werden. [PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbilden, sollten wir unseren Weg finden, sei es in Zeiten des Friedens oder in Zeiten des Krieges.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_1</Tag>
+		<English>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</English>
+		<German>Edle Ritter[PARAGRAPH:1]Das Volk verlangt von Euch, dass Ihr eine gro&#223;e Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbildet.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_HELP_1</Tag>
+		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
+		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT]-Einheiten ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie Fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Milit&#228;rwesen[COLOR_REVERT], [COLOR_TECH_TEXT]Drall[COLOR_REVERT], oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_DONE_1</Tag>
+		<English>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</English>
+		<German>Gl&#252;ckwunsch! Die von Ihnen ausgebildete Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ist gro&#223; genug. W&#228;hlen Sie Ihre Belohnung aus.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_1</Tag>
+		<English>With such a large force of Lancers working together, additional training for these units can be achieved.</English>
+		<German>Mit einer so gro&#223;en Truppe Lanzenreiter k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
+	</TEXT>
 </Civ4GameText>
