@@ -71,6 +71,10 @@
 		<English>New Carthaginian Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_DEFAULT</Tag>
+		<English>Carthaginian Empire</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_EMPIRE</Tag>
 		<English>Carthaginian Empire</English>
 		<French>
