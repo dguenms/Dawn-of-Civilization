@@ -250,23 +250,31 @@ tEraNames = (
 {},
 # medieval
 {
+	'Siljikguk'		:	'Samcheok',
 	"Chang'an"		:	"Xi'an",
 	'Zhongdu'		:	'Beijing',
 	'Indraprastha'		:	'Dilli',
 },
 # renaissance
 {
+	'Rasa'			:	'Lhasa',
+	'Golkonda'		:	'Bhagyanagar',
+	'Susha'			:	'Shush',
+	'Neroon Koot'		:	'Haidarabad',
+	'Eystribygg&#240;'	:	'Julianeh&#229;b',
+	'Vestribygg&#240;'	:	'Godth&#229;b',
 	'Pataliputra'		:	'Patna',
 	'Haojing'		:	'Aomen',
 	'Nidaros'		:	'Trondheim',
 	'Roskilde'		:	'K&#248;benhavn',
 	'Haithabu'		:	'Hamburg',
 	'Novokholmogory'	:	"Arkhangel'sk",
-	'Spas na Kholmu'	:	'Krasnyj Kholm',
+	'Spas na Kholmu'	:	'Krasnyy Kholm',
 	'Tumasik'		:	'Singapura',
 	'Sundapura'		:	'Jayakarta',
 	'Buda'			:	'Budapest',
 	'Rugodiv'		:	'Narva',
+	"T'mutarakan"		:	"Taman'",
 },
 # industrial
 {
@@ -279,10 +287,12 @@ tEraNames = (
 	'Ayutthaya'		:	'Bangkok',
 	'York'			:	'Toronto',
 	'Tsaryovo Gorodishche'	:	'Kurgan',
-	'Krivoshchekovskaya'	:	'Novonikolayevsk'
+	'Krivoshchekovskaya'	:	'Novonikolayevsk',
 },
 # modern
 {
+	"Bayan Tum'en"		:	'Choibalsan',
+	'&#214;rg&#246;&#246;'	:	'Ulaanbaatar',
 	'Angora'		:	'Ankara',
 	'Hanseong'		:	'Seoul',
 	'Jehol'			:	'Chengde',
@@ -292,7 +302,8 @@ tEraNames = (
 	'Kovno'			:	'Kaunas',
 	'Yekaterinoslav'	:	"Dnepropetrov'sk",
 	'Alexandrovsk-Grushevsky':	'Shakty',
-	"Khal'mer-Sede"		:	'Tazovskiy'
+	"Khal'mer-Sede"		:	'Tazovskiy',
+	'Brzesc Litewski'	:	'Brzesc nad Bugiem',
 },
 # future
 {},
@@ -4925,8 +4936,8 @@ dIdentifiers = {
 	'Trondheim'		:	'Nidaros',
 	'Novokholmogory'	:	"Arkhangel'sk",
 	"Arkhangel'sk"		:	"Arkhangel'sk",
-	'Spas na Kholmu'	:	'Krasnyj Kholm',
-	'Krasnyj Kholm'		:	'Krasnyj Kholm',
+	'Spas na Kholmu'	:	'Krasnyy Kholm',
+	'Krasnyy Kholm'		:	'Krasnyy Kholm',
 	'Yax Mutal'		:	'Yax Mutal',
 	'Tikal'			:	'Yax Mutal',
 	'Ayutthaya'		:	'Ayutthaya',
