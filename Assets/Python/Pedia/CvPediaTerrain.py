@@ -102,10 +102,11 @@ class CvPediaTerrain:
 
 		screen.addPanel(panel, "", "", True, True, self.X_DETAILS, self.Y_DETAILS, self.W_DETAILS, self.H_DETAILS, PanelStyles.PANEL_STYLE_BLUE50)
 
-		szText = info.getHelp()
-		szText += CyGameTextMgr().getTerrainHelp(self.iTerrain, True)
-		szText = szText.replace("\n\n", "\n").strip()
-		screen.addMultilineText(text, szText, self.X_DETAILS + 5, self.Y_DETAILS + 10, self.W_DETAILS - 10, self.H_DETAILS - 20, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		if self.iTerrain != gc.getInfoTypeForString('TERRAIN_HILL'):
+			szText = info.getHelp()
+			szText += CyGameTextMgr().getTerrainHelp(self.iTerrain, True)
+			szText = szText.replace("\n\n", "\n").strip()
+			screen.addMultilineText(text, szText, self.X_DETAILS + 5, self.Y_DETAILS + 10, self.W_DETAILS - 10, self.H_DETAILS - 20, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 
 
