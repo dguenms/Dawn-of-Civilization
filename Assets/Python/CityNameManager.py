@@ -51,7 +51,7 @@ def getLanguages(iCiv):
 	elif iCiv == iMaya: 
 		if utils.isReborn(iCiv): return (iLangSpanish,)
 		return (iLangMayan, iLangAztec)
-	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin)
+	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin, iLangGreek)
 	elif iCiv == iJapan: return (iLangJapanese,)
 	elif iCiv == iVikings: return (iLangViking,)
 	elif iCiv == iArabia: return (iLangArabian,)
@@ -84,7 +84,7 @@ def getLanguages(iCiv):
 	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iArgentina: return (iLangSpanish,)
 	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish, iLangFrench)
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
 	else: return None
@@ -199,6 +199,10 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == 'Singidunon' and iNewOwner != iByzantium: sNewName = 'Belgrad'
 	elif sOldName == 'York' and iNewOwner == iCanada and city.getRegionID() == rCanada: sNewName = 'Toronto'
 	elif sOldName == 'Prey Nokor': sNewName = 'Saigon'
+	elif sOldName in ['B&#252;kres', 'Bukharest'] and iNewOwner >= iNumPlayers: sNewName = 'Bucuresti'
+	elif sOldName in ['Laibach', 'Lubiana', 'Lyublyana'] and iNewOwner >= iNumPlayers: sNewName = 'Ljubljana'
+	elif sOldName in ['Bosna Saraj', 'Sarajewo', 'Sarayevo'] and iNewOwner >= iNumPlayers: sNewName = 'Sarajevo'
+	elif sOldName == 'Bathurst' and iNewOwner >= iNumPlayers: sNewName = 'Banjul'
 	
 	if sNewName:
 		city.setName(sNewName, False)
@@ -291,6 +295,7 @@ tEraNames = (
 },
 # modern
 {
+	'Calabar'		:	'Port Harcourt',
 	"Bayan Tum'en"		:	'Choibalsan',
 	'&#214;rg&#246;&#246;'	:	'Ulaanbaatar',
 	'Angora'		:	'Ankara',
