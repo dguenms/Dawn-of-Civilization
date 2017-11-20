@@ -42,6 +42,10 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOROCCO_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_FASCIST</Tag>
 		<English>%s2 State</English>
 		<French>
