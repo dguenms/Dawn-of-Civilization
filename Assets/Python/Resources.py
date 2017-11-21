@@ -257,7 +257,7 @@ class Resources:
 		elif iGameTurn == getTurnForYear(1850):
 			self.createResource(12, 45, iWine) # California
 			self.createResource(31, 10, iWine) # Andes
-			self.createResource(113, 12, iWine) # Barossa Valley, Australia
+			self.createResource(113, 11, iWine) # Barossa Valley, Australia
 			
 			self.createResource(114, 11, iSheep) # Australia
 			self.createResource(116, 13, iSheep) # Australia
