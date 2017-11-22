@@ -202,6 +202,7 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName in ['B&#252;kres', 'Bukharest'] and iNewOwner >= iNumPlayers: sNewName = 'Bucuresti'
 	elif sOldName in ['Laibach', 'Lubiana', 'Lyublyana'] and iNewOwner >= iNumPlayers: sNewName = 'Ljubljana'
 	elif sOldName in ['Bosna Saraj', 'Sarajewo', 'Sarayevo'] and iNewOwner >= iNumPlayers: sNewName = 'Sarajevo'
+	elif sOldName in ['Belgrad', 'Belgrade', 'Belgrado', 'Singidun', 'Singidunon', 'Singidunum'] and iNewOwner >= iNumPlayers: sNewName = 'Belgrad'
 	elif sOldName == 'Bathurst' and iNewOwner >= iNumPlayers: sNewName = 'Banjul'
 	
 	if sNewName:
