@@ -27,6 +27,7 @@
 #include "CvInfos.h"
 #include "FProfiler.h"
 #include "CyArgsList.h"
+#include "CvRhyes.h"
 
 #include "CvDLLEngineIFaceBase.h"
 #include "CvDLLIniParserIFaceBase.h"
@@ -1363,245 +1364,62 @@ void CvMap::calculateAreas()
 			gDLL->getFAStarIFace()->GeneratePath(&GC.getAreaFinder(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), -1, -1, pLoopPlot->isWater(), iArea);
 		}
 	}
-	
-	//Rhye - start (continents)
-	CvArea* sudamericaArea = addArea();
-	int sudamericaID = sudamericaArea->getID();
-	sudamericaArea->init(sudamericaID, false);
-	CvArea* europaArea = addArea();
-	int europaID = europaArea->getID();
-	europaArea->init(europaID, false);
-	CvArea* africaArea = addArea();
-	int africaID = africaArea->getID();
-	africaArea->init(africaID, false);
 
+	// Leoreth: create different continents for Europe, Africa and South America
+	CvArea* europe = addArea();
+	CvArea* africa = addArea();
+	CvArea* southAmerica = addArea();
 
-	for (int iX = 24; iX <= 25; iX++)
-	{
-		gDLL->callUpdater();
-		for (int iY = 23; iY <= 29; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(sudamericaID);
-		}
-	}
-	for (int iX = 26; iX <= 34; iX++)
-	{
-		for (int iY = 3; iY <= 32; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(sudamericaID);
-		}
-	}
-	for (int iX = 35; iX <= 43; iX++)
-	{
-		for (int iY = 10; iY <= 29; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(sudamericaID);
-		}
-	}
+	int europeID = europe->getID();
+	int africaID = africa->getID();
+	int southAmericaID = southAmerica->getID();
 
-	for (int iX = 49; iX <= 56; iX++)
-	{
-		gDLL->callUpdater();
-		for (int iY = 40; iY <= 52; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-	for (int iX = 59; iX <= 68; iX++)
-	{
-		for (int iY = 40; iY <= 45; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-	for (int iX = 57; iX <= 78; iX++)
-	{
-		for (int iY = 46; iY <= 65; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-	for (int iX = 79; iX <= 83; iX++) //a slice of central asia
-	{
-		for (int iY = 52; iY <= 63; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-	for (int iX = 84; iX <= 123; iX++) //a slice of siberia
-	{
-		for (int iY = 55; iY <= 65; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-	
-	for (int iX = 111; iX <= 112; iX++) //Vladivostok area
-	{
-		for (int iY = 51; iY <= 55; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
+	europe->init(europeID, false);
+	africa->init(africaID, false);
+	southAmerica->init(southAmericaID, false);
 
-	plotSorenINLINE(119, 54)->setArea(europaID); //Kamchatka
-
-	//Leoreth: expand Europe to emulate the hellenistic world in the classical era
-	//Anatolia and Levant
-	for (int iX = 69; iX <= 79; iX++)
+	CvPlot* plot;
+	for (int iX = 0; iX < getGridWidth(); iX++)
 	{
-		for (int iY = 38; iY <= 45; iY++)
+		for (int iY = 0; iY < getGridHeight(); iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
+			gDLL->callUpdater();
+			plot = plotSorenINLINE(iX, iY);
+			
+			if (!plot->isWater())
+			{
+				switch (plot->getRegionID())
+				{
+				case REGION_BRITAIN:
+				case REGION_IBERIA:
+				case REGION_ITALY:
+				case REGION_BALKANS:
+				case REGION_EUROPE:
+				case REGION_SCANDINAVIA:
+				case REGION_RUSSIA:
+				case REGION_ANATOLIA:
+				case REGION_MESOPOTAMIA:
+				case REGION_ARABIA:
+				case REGION_EGYPT:
+				case REGION_MAGHREB:
+				case REGION_PERSIA:
+					plot->setArea(europeID);
+					break;
+				case REGION_ETHIOPIA:
+				case REGION_WEST_AFRICA:
+				case REGION_SOUTH_AFRICA:
+					plot->setArea(africaID);
+					break;
+				case REGION_BRAZIL:
+				case REGION_ARGENTINA:
+				case REGION_PERU:
+				case REGION_COLOMBIA:
+					plot->setArea(southAmericaID);
+					break;
+				}
+			}
 		}
 	}
-
-	//Persia
-	for (int iX = 80; iX <= 85; iX++)
-	{
-		for (int iY = 37; iY <= 43; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-
-	//Sahara, Arabia
-	for (int iX = 48; iX <= 82; iX++)
-	{
-		for (int iY = 32; iY <= 37; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-
-	//Maghreb
-	for (int iX = 51; iX <= 58; iX++)
-	{
-		for (int iY = 38; iY <= 39; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-
-	//Yemen
-	for (int iX = 76; iX <= 79; iX++)
-	{
-		for (int iY = 30; iY <= 31; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}
-
-	//British Isles
-	/*for (int iX = 48; iX <= 54; iX++)
-	{
-		for (int iY = 53; iY <= 60; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
-				plotSorenINLINE(iX, iY)->setArea(europaID);
-		}
-	}*/
-
-	//for (int iX = 48; iX <= 67; iX++)
-	//{
-	//	gDLL->callUpdater();
-	//	for (int iY = 26; iY <= 39; iY++)
-	//	{
-	//		if (!plotSorenINLINE(iX, iY)->isWater())
-	//			plotSorenINLINE(iX, iY)->setArea(africaID);
-	//	}
-	//}
-	//for (int iX = 60; iX <= 72; iX++)
-	//{
-	//	for (int iY = 10; iY <= 25; iY++)
-	//	{
-	//		if (!plotSorenINLINE(iX, iY)->isWater())
-	//			plotSorenINLINE(iX, iY)->setArea(africaID);
-	//	}
-	//}
-	//for (int iX = 68; iX <= 72; iX++)
-	//{
-	//	for (int iY = 26; iY <= 36; iY++)
-	//	{
-	//		if (!plotSorenINLINE(iX, iY)->isWater())
-	//			plotSorenINLINE(iX, iY)->setArea(africaID);
-	//	}
-	//}
-	//for (int iX = 73; iX <= 77; iX++)
-	//{
-	//	for (int iY = 24; iY <= 29; iY++)
-	//	{
-	//		if (!plotSorenINLINE(iX, iY)->isWater())
-	//			plotSorenINLINE(iX, iY)->setArea(africaID);
-	//	}
-	//}
-	//if (!plotSorenINLINE(73, 30)->isWater())
-	//	plotSorenINLINE(73, 30)->setArea(africaID);
-	//only subsaharian
-	for (int iX = 61; iX <= 72; iX++)
-	{
-		for (int iY = 10; iY <= 22; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
-				plotSorenINLINE(iX, iY)->setArea(africaID);
-		}
-	}
-
-	// Leoreth: Western half of Africa
-	for (int iX = 48; iX <= 65; iX++)
-	{
-		for (int iY = 23; iY <= 33; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
-				plotSorenINLINE(iX, iY)->setArea(africaID);
-		}
-	}
-
-	// Eastern half of Africa
-	for (int iX = 66; iX <= 75; iX++)
-	{
-		for (int iY = 23; iY <= 30; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater()) plotSorenINLINE(iX, iY)->setArea(africaID);
-		}
-	}
-
-	// Horn of Africa
-	for (int iX = 76; iX <= 77; iX++)
-	{
-		for (int iY = 27; iY <= 28; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
-				plotSorenINLINE(iX, iY)->setArea(africaID);
-		}
-	}
-
-	//this will be done later, slightly before the Malinese spawn date
-	/*for (int iX = 48; iX <= 64; iX++)
-	{
-		gDLL->callUpdater();
-		for (int iY = 22; iY <= 33; iY++)
-		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
-				plotSorenINLINE(iX, iY)->setArea(africaID);
-		}
-	}*/
-	//Rhye - end
-
 }
 
 int CvMap::plotIndex(int iX, int iY) const
