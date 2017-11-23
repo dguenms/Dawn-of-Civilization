@@ -7281,24 +7281,31 @@ tRenames = (
 },
 #Language: Prussian
 {
+	"Zhitomir"	:	"Hegewald",
+	"Kyiv"		:	"Kiroff",
+	"Sevastopol"	:	"Theoderichshafen",
 },
 #Language: American
 {
-	'Qu&#233;bec'		:	'Qu&#233;bec',
-	'Guatemala'		:	'Guatemala City',
-	'Monrovia'		:	'Monrovia',
-	'Fort Rosalie'		:	'Fort Panmure',
-	'Neu Braunfels'		:	'New Braunfels',
-	'Charleston'		:	'Charleston',
-	'Seward'		:	'Seward',
-	'Jacksonville'		:	'Jacksonville',
-	'Montreal'		:	'Montr&#233;al',
+	"Charleston"	:	"Charleston",
+	"Fort Rosalie"	:	"Fort Panmure",
+	"Fort Ross"	:	"Fort Ross",
+	"Guatemala"	:	"Guatemala City",
+	"Aga&#241;a"	:	"Hag&#229;t&#241;a",
+	"Jacksonville"	:	"Jacksonville",
+	"Manila"	:	"Manila",
+	"Monrovia"	:	"Monrovia",
+	"Montreal"	:	"Montr&#233;al",
+	"Neu Braunfels"	:	"New Braunfels",
+	"Qu&#233;bec"	:	"Qu&#233;bec",
+	"San Francisco"	:	"San Francisco",
+	"Seward"	:	"Seward",
 },
 #Language: Celtic
 {
-	'Inverness'		:	'Inbhir Nis',
-	'Dublin'		:	'&#193;th Cliath',
-	'Belfast'		:	'B&#233;al Feirste',
+	"Dublin"	:	"&#193;th Cliath",
+	"Belfast"	:	"B&#233;al Feirste",
+	"Inverness"	:	"Inbhir Nis",
 },
 #Language: Mexican
 {
