@@ -187,23 +187,23 @@ def onCityAcquired(city, iNewOwner):
 	sOldName = city.getName()
 	sNewName = None
 	
-	if sOldName == 'Inbhir Nis' and iNewOwner != iCeltia: sNewName = 'Inverness'
-	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCelta: sNewName = 'Edinburgh'
-	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwner not in [iRome, iTurkey]: sNewName = 'Buda'
-	elif sOldName in ['Takao', 'Gaoxiong'] and iNewOwner >= iNumPlayers: sNewName = 'Kaohsiung'
-	elif sOldName == 'Momba&#231;a' and iNewOwner != iPortugal: sNewName = 'Mombasa'
-	elif sOldName == 'Mo&#231;ambique' and iNewOwner != iPortugal: sNewName = 'Mozambique'
-	elif sOldName == 'Toranaro' and iNewOwner not in [iJapan, iFrance]: sNewName = 'Tolanaro'
-	elif sOldName == 'Kerimane' and iNewOwner != iJapan: sNewName = 'Quelimane'
-	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
-	elif sOldName == 'Singidunon' and iNewOwner != iByzantium: sNewName = 'Belgrad'
-	elif sOldName == 'York' and iNewOwner == iCanada and city.getRegionID() == rCanada: sNewName = 'Toronto'
-	elif sOldName == 'Prey Nokor': sNewName = 'Saigon'
-	elif sOldName in ['B&#252;kres', 'Bukharest'] and iNewOwner >= iNumPlayers: sNewName = 'Bucuresti'
-	elif sOldName in ['Laibach', 'Lubiana', 'Lyublyana'] and iNewOwner >= iNumPlayers: sNewName = 'Ljubljana'
-	elif sOldName in ['Bosna Saraj', 'Sarajewo', 'Sarayevo'] and iNewOwner >= iNumPlayers: sNewName = 'Sarajevo'
-	elif sOldName in ['Belgrad', 'Belgrade', 'Belgrado', 'Singidun', 'Singidunon', 'Singidunum'] and iNewOwner >= iNumPlayers: sNewName = 'Belgrad'
-	elif sOldName == 'Bathurst' and iNewOwner >= iNumPlayers: sNewName = 'Banjul'
+	if sOldName == "Inbhir Nis" and iNewOwner != iCeltia: sNewName = "Inverness"
+	elif sOldName == "D&#249;n &#200;ideann" and iNewOwner != iCelta: sNewName = "Edinburgh"
+	elif sOldName in ["Aquincum", "Ak Ink"] and iNewOwner not in [iRome, iTurkey]: sNewName = "Buda"
+	elif sOldName in ["Takao", "Gaoxiong"] and iNewOwner >= iNumPlayers: sNewName = "Kaohsiung"
+	elif sOldName == "Momba&#231;a" and iNewOwner != iPortugal: sNewName = "Mombasa"
+	elif sOldName == "Mo&#231;ambique" and iNewOwner != iPortugal: sNewName = "Mozambique"
+	elif sOldName == "Toranaro" and iNewOwner not in [iJapan, iFrance]: sNewName = "Tolanaro"
+	elif sOldName == "Kerimane" and iNewOwner != iJapan: sNewName = "Quelimane"
+	elif sOldName == "Sofara" and iNewOwner != iJapan: sNewName = "Sofala"
+	elif sOldName == "Singidunon" and iNewOwner != iByzantium: sNewName = "Belgrad"
+	elif sOldName == "York" and iNewOwner == iCanada and city.getRegionID() == rCanada: sNewName = "Toronto"
+	elif sOldName == "Prey Nokor": sNewName = "Saigon"
+	elif sOldName in ["B&#252;kres", "Bukharest"] and iNewOwner >= iNumPlayers: sNewName = "Bucuresti"
+	elif sOldName in ["Laibach", "Lubiana", "Lyublyana"] and iNewOwner >= iNumPlayers: sNewName = "Ljubljana"
+	elif sOldName in ["Bosna Saraj", "Sarajewo", "Sarayevo"] and iNewOwner >= iNumPlayers: sNewName = "Sarajevo"
+	elif sOldName in ["Belgrad", "Belgrade", "Belgrado", "Singidun", "Singidunon", "Singidunum"] and iNewOwner >= iNumPlayers: sNewName = "Belgrad"
+	elif sOldName == "Bathurst" and iNewOwner >= iNumPlayers: sNewName = "Banjul"
 	
 	if sNewName:
 		city.setName(sNewName, False)
@@ -215,21 +215,21 @@ def onCityAcquired(city, iNewOwner):
 		city.setName(sNewName, False)
 	
 dCommunistNames = {
-	'Tsaritsyn'		:	'Stalingrad',
-	'Sankt-Peterburg'	:	'Leningrad',
-	"Tver'"			:	'Kalinin',
-	'Yekaterinburg'		:	'Sverdlovsk',
-	'Nizhniy Novgorod'	:	'Gorkiy',
-	'Samara'		:	'Kuybyshev',
+	"Tsaritsyn"		:	"Stalingrad",
+	"Sankt-Peterburg"	:	"Leningrad",
+	"Tver'"			:	"Kalinin",
+	"Yekaterinburg"		:	"Sverdlovsk",
+	"Nizhniy Novgorod"	:	"Gorkiy",
+	"Samara"		:	"Kuybyshev",
 	"Tsar'grad"		:	"Konstantinopol'",
-	'Vyatka'		:	'Kirov',
-	'Syangan'		:	'Gon Kong',
-	'Akmolinsk'		:	'Tselinograd',
-	'Nyonoksa'		:	'Molotovsk',
-	'Korolevets'		:	'Kaliningrad',
-	'Tsary&#235;vokokshaysk':	'Krasnokokshaysk',
-	'Dyushambe'		:	'Stalinabad',
-	'Pishpek'		:	'Frunze'
+	"Vyatka"		:	"Kirov",
+	"Syangan"		:	"Gon Kong",
+	"Akmolinsk"		:	"Tselinograd",
+	"Nyonoksa"		:	"Molotovsk",
+	"Korolevets"		:	"Kaliningrad",
+	"Tsary&#235;vokokshaysk":	"Krasnokokshaysk",
+	"Dyushambe"		:	"Stalinabad",
+	"Pishpek"		:	"Frunze"
 }
 
 def applyCommunistNames(iCiv):
@@ -255,61 +255,61 @@ tEraNames = (
 {},
 # medieval
 {
-	'Siljikguk'		:	'Samcheok',
+	"Siljikguk"		:	"Samcheok",
 	"Chang'an"		:	"Xi'an",
-	'Zhongdu'		:	'Beijing',
-	'Indraprastha'		:	'Dilli',
+	"Zhongdu"		:	"Beijing",
+	"Indraprastha"		:	"Dilli",
 },
 # renaissance
 {
-	'Rasa'			:	'Lhasa',
-	'Golkonda'		:	'Bhagyanagar',
-	'Susha'			:	'Shush',
-	'Neroon Koot'		:	'Haidarabad',
-	'Eystribygg&#240;'	:	'Julianeh&#229;b',
-	'Vestribygg&#240;'	:	'Godth&#229;b',
-	'Pataliputra'		:	'Patna',
-	'Haojing'		:	'Aomen',
-	'Nidaros'		:	'Trondheim',
-	'Roskilde'		:	'K&#248;benhavn',
-	'Haithabu'		:	'Hamburg',
-	'Novokholmogory'	:	"Arkhangel'sk",
-	'Spas na Kholmu'	:	'Krasnyy Kholm',
-	'Tumasik'		:	'Singapura',
-	'Sundapura'		:	'Jayakarta',
-	'Buda'			:	'Budapest',
-	'Rugodiv'		:	'Narva',
+	"Rasa"			:	"Lhasa",
+	"Golkonda"		:	"Bhagyanagar",
+	"Susha"			:	"Shush",
+	"Neroon Koot"		:	"Haidarabad",
+	"Eystribygg&#240;"	:	"Julianeh&#229;b",
+	"Vestribygg&#240;"	:	"Godth&#229;b",
+	"Pataliputra"		:	"Patna",
+	"Haojing"		:	"Aomen",
+	"Nidaros"		:	"Trondheim",
+	"Roskilde"		:	"K&#248;benhavn",
+	"Haithabu"		:	"Hamburg",
+	"Novokholmogory"	:	"Arkhangel'sk",
+	"Spas na Kholmu"	:	"Krasnyy Kholm",
+	"Tumasik"		:	"Singapura",
+	"Sundapura"		:	"Jayakarta",
+	"Buda"			:	"Budapest",
+	"Rugodiv"		:	"Narva",
 	"T'mutarakan"		:	"Taman'",
 },
 # industrial
 {
-	'Yax Mutal'		:	'Tikal',
-	'Edo'			:	'Toukyou',
-	'Mo&#231;ambique'	:	'Lauren&#231;o Marques',
-	'Constantinopolis'	:	'Istanbul',
-	'Fiorenza'		:	'Firenze',
-	'Dagou'			:	'Gaoxiong',
-	'Ayutthaya'		:	'Bangkok',
-	'York'			:	'Toronto',
-	'Tsaryovo Gorodishche'	:	'Kurgan',
-	'Krivoshchekovskaya'	:	'Novonikolayevsk',
+	"Yax Mutal"		:	"Tikal",
+	"Edo"			:	"Toukyou",
+	"Mo&#231;ambique"	:	"Lauren&#231;o Marques",
+	"Constantinopolis"	:	"Istanbul",
+	"Fiorenza"		:	"Firenze",
+	"Dagou"			:	"Gaoxiong",
+	"Ayutthaya"		:	"Bangkok",
+	"York"			:	"Toronto",
+	"Tsaryovo Gorodishche"	:	"Kurgan",
+	"Krivoshchekovskaya"	:	"Novonikolayevsk",
 },
 # modern
 {
-	'Calabar'		:	'Port Harcourt',
-	"Bayan Tum'en"		:	'Choibalsan',
-	'&#214;rg&#246;&#246;'	:	'Ulaanbaatar',
-	'Angora'		:	'Ankara',
-	'Hanseong'		:	'Seoul',
-	'Jehol'			:	'Chengde',
-	'Nikolayevsk'		:	'Kustanay',
-	'Zheleznodorozhny'	:	'Kungrad',
+	"Calabar"		:	"Port Harcourt",
+	"Bayan Tum'en"		:	"Choibalsan",
+	"&#214;rg&#246;&#246;"	:	"Ulaanbaatar",
+	"Angora"		:	"Ankara",
+	"Hanseong"		:	"Seoul",
+	"Jehol"			:	"Chengde",
+	"Nikolayevsk"		:	"Kustanay",
+	"Zheleznodorozhny"	:	"Kungrad",
 	"Vil'na"		:	"Vil'nyus",
-	'Kovno'			:	'Kaunas',
-	'Yekaterinoslav'	:	"Dnepropetrov'sk",
-	'Alexandrovsk-Grushevsky':	'Shakty',
-	"Khal'mer-Sede"		:	'Tazovskiy',
-	'Brzesc Litewski'	:	'Brzesc nad Bugiem',
+	"Kovno"			:	"Kaunas",
+	"Yekaterinoslav"	:	"Dnepropetrov'sk",
+	"Alexandrovsk-Grushevsky":	"Shakty",
+	"Khal'mer-Sede"		:	"Tazovskiy",
+	"Brzesc Litewski"	:	"Brzesc nad Bugiem",
 },
 # future
 {},
@@ -331,7 +331,7 @@ def onTechAcquired(iCiv):
 			sIdentifier = getIdentifier(city.getName())
 			if not sIdentifier: continue
 			
-			if sIdentifier == 'York' and city.getRegionID() == rBritain: continue # do not rename English York
+			if sIdentifier == "York" and city.getRegionID() == rBritain: continue # do not rename English York
 		
 			sNewIdentifier = getEraRename(city.getName(), iEra)
 			if not sNewIdentifier: continue
@@ -343,11 +343,11 @@ def onReligionSpread(iReligion, iCiv, city):
 
 	if iCiv == iIndonesia:
 		if iReligion == iIslam:
-			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
+			if city.getName() == "Yogyakarta": city.setName("Mataram", False)
 			
 	# easter egg
 	if iReligion == iBuddhism:
-		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
+		if city.getName() in ["Buda", "Budapest", "Aquincum", "Akin"]: city.setName("Buddhapest", False)
 			
 def onRevolution(iCiv):
 
