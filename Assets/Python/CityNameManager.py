@@ -255,38 +255,39 @@ tEraNames = (
 {},
 # medieval
 {
-	"Siljikguk"		:	"Samcheok",
-	"Chang'an"		:	"Xi'an",
-	"Zhongdu"		:	"Beijing",
-	"Indraprastha"		:	"Dilli",
+	"Siljikguk"		:	"Samcheok", #done
+	"Chang'an"		:	"Xi'an", #done
+	"Zhongdu"		:	"Beijing", #fix
+	"Indraprastha"		:	"Dilli", #done
 },
 # renaissance
 {
-	"Rasa"			:	"Lhasa",
-	"Golkonda"		:	"Bhagyanagar",
-	"Susha"			:	"Shush",
-	"Neroon Koot"		:	"Haidarabad",
+	"Rasa"			:	"Lhasa", #done
+	"Golkonda"		:	"Hyderabad", #check
+	"Susha"			:	"Shush", #check
+	"Neroon Koot"		:	"Haidarabad", #done
 	"Eystribygg&#240;"	:	"Julianeh&#229;b",
 	"Vestribygg&#240;"	:	"Godth&#229;b",
-	"Pataliputra"		:	"Patna",
-	"Haojing"		:	"Aomen",
-	"Nidaros"		:	"Trondheim",
-	"Roskilde"		:	"K&#248;benhavn",
-	"Haithabu"		:	"Hamburg",
-	"Novokholmogory"	:	"Arkhangel'sk",
-	"Spas na Kholmu"	:	"Krasnyy Kholm",
-	"Tumasik"		:	"Singapura",
-	"Sundapura"		:	"Jayakarta",
-	"Buda"			:	"Budapest",
-	"Rugodiv"		:	"Narva",
-	"T'mutarakan"		:	"Taman'",
+	"Pataliputra"		:	"Patna", #done
+	"Haojing"		:	"Aomen", #check
+	"Nidaros"		:	"Trondheim", #done
+	"Roskilde"		:	"K&#248;benhavn", #done
+	"Haithabu"		:	"Hamburg", #done
+	"Novokholmogory"	:	"Arkhangel'sk", #done
+	"Spas na Kholmu"	:	"Krasnyy Kholm", #done
+	"Tumasik"		:	"Singapura", #done
+	"Sundapura"		:	"Jayakarta", #done
+	"Buda"			:	"Budapest", #check
+	"Rugodiv"		:	"Narva", #done
+	"T'mutarakan"		:	"Taman'", #done
+	"Kolyvan'"		:	"Reval", #check
 },
 # industrial
 {
 	"Yax Mutal"		:	"Tikal",
-	"Edo"			:	"Toukyou",
+	"Edo"			:	"Toukyou", #done
 	"Mo&#231;ambique"	:	"Lauren&#231;o Marques",
-	"Constantinopolis"	:	"Istanbul",
+	"Constantinopolis"	:	"Istanbul", #debug
 	"Fiorenza"		:	"Firenze",
 	"Dagou"			:	"Gaoxiong",
 	"Ayutthaya"		:	"Bangkok",
@@ -310,6 +311,7 @@ tEraNames = (
 	"Alexandrovsk-Grushevsky":	"Shakty",
 	"Khal'mer-Sede"		:	"Tazovskiy",
 	"Brzesc Litewski"	:	"Brzesc nad Bugiem",
+	"Reval"			:	"Tallinn", #check
 },
 # future
 {},
@@ -3744,6 +3746,7 @@ dIdentifiers = {
 	"Adroumetos"			:	"Hadrumete",
 	"Hadrumete"			:	"Hadrumete",
 	"Hadrumetum"			:	"Hadrumete",
+	"Haidarabad"			:	"Haidarabad",
 	"Hailaer"			:	"Hailaer",
 	"Hailar"			:	"Hailaer",
 	"Hairaru"			:	"Hailaer",
@@ -3945,6 +3948,7 @@ dIdentifiers = {
 	"Marx"				:	"Katharinenstadt",
 	"Kauthara"			:	"Kauthara",
 	"Nha Trang"			:	"Kauthara",
+	"Kaunas"			:	"Kaunas",
 	"Feodosiya"			:	"Kefe",
 	"Kefe"				:	"Kefe",
 	"Fort Prinsensten"		:	"Keta",
@@ -3992,6 +3996,7 @@ dIdentifiers = {
 	"Kolkata"			:	"Kolkata",
 	"Kolomea"			:	"Kolomea",
 	"Kolomyia"			:	"Kolomea",
+	"Kolyvan'"			:	"Kolyvan'",
 	"K&#246;stendsche"		:	"Konstantia",
 	"Konstantia"			:	"Konstantia",
 	"Konstantsa"			:	"Konstantia",
@@ -4011,7 +4016,6 @@ dIdentifiers = {
 	"Krakau"			:	"Krak&#243;w",
 	"Krakov"			:	"Krak&#243;w",
 	"Krasnyy Kholm"			:	"Krasnyy Kholm",
-	"Spas na Kholmu"		:	"Krasnyy Kholm",
 	"Kulsary"			:	"Kulsary",
 	"Kul'sary"			:	"Kulsary",
 	"Kumma"				:	"Kumma",
@@ -4300,6 +4304,7 @@ dIdentifiers = {
 	"Nara"				:	"Nara",
 	"Narbo Martius"			:	"Narbonne",
 	"Narbonne"			:	"Narbonne",
+	"Narva"				:	"Narva",
 	"N&#225;poles"			:	"Neapolis",
 	"Nabuli"			:	"Neapolis",
 	"Naples"			:	"Neapolis",
@@ -4308,6 +4313,7 @@ dIdentifiers = {
 	"Neapolis"			:	"Neapolis",
 	"Hierakonpolis"			:	"Nekhen",
 	"Nekhen"			:	"Nekhen",
+	"Neroon Koot"			:	"Neroon Koot",
 	"Neu Braunfels"			:	"Neu Braunfels",
 	"New Braunfels"			:	"Neu Braunfels",
 	"New Brunswick"			:	"New Brunswick",
@@ -4611,8 +4617,9 @@ dIdentifiers = {
 	"Rennes"			:	"Rennes",
 	"Diaroritum"			:	"Rennes-le-Ch&#226;teau",
 	"Rennes-le-Ch&#226;teau"	:	"Rennes-le-Ch&#226;teau",
-	"Renault"			:	"Reno",
+	"Renault"			:	"Reno", #check
 	"Reno"				:	"Reno",
+	"Reval"				:	"Reval",
 	"R&#237;joles"			:	"Rhegion",
 	"Reggio"			:	"Rhegion",
 	"Rhegion"			:	"Rhegion",
@@ -4641,6 +4648,7 @@ dIdentifiers = {
 	"Rostov-na-Donu"		:	"Rostov-na-Donu",
 	"Rotomagus"			:	"Rouen",
 	"Rouen"				:	"Rouen",
+	"Rugodiv"			:	"Rugodiv",
 	"S&#227;o Leopoldo"		:	"S&#227;o Leopoldo",
 	"Sankt Leopold"			:	"S&#227;o Leopoldo",
 	"Safakes"			:	"Safaqis",
@@ -4685,7 +4693,6 @@ dIdentifiers = {
 	"Samcheok"			:	"Samcheok",
 	"Sanchoku"			:	"Samcheok",
 	"Sanzhi"			:	"Samcheok",
-	"Siljikgug"			:	"Samcheok",
 	"Jiu Jinshan"			:	"San Francisco",
 	"San Francisco"			:	"San Francisco",
 	"San-Frantsisko"		:	"San Francisco",
@@ -4782,6 +4789,7 @@ dIdentifiers = {
 	"Suza"				:	"Shush",
 	"S.Cruz de Mar Peque&#241;a"	:	"Sidi Ifni",
 	"Sidi Ifni"			:	"Sidi Ifni",
+	"Siljikguk"			:	"Siljikguk",
 	"Shouantou"			:	"Singapura",
 	"Singapore"			:	"Singapura",
 	"Singapur"			:	"Singapura",
@@ -4814,6 +4822,7 @@ dIdentifiers = {
 	"Sparta"			:	"Sparte",
 	"Sparte"			:	"Sparte",
 	"Spat"				:	"Sparte",
+	"Spas na Kholmu"		:	"Spas na Kholmu",
 	"Aspalathos"			:	"Split",
 	"Aspalathus"			:	"Split",
 	"Spalato"			:	"Split",
@@ -4871,10 +4880,10 @@ dIdentifiers = {
 	"Taihoku"			:	"Taibei",
 	"Fort Witsten"			:	"Takoradi",
 	"Takoradi"			:	"Takoradi",
-	"Reval"				:	"Tallinn",
 	"Revalia"			:	"Tallinn",
 	"Tallin"			:	"Tallinn",
 	"Tallinn"			:	"Tallinn",
+	"Taman'"			:	"Taman'",
 	"Tamboccocha"			:	"Tambuqcucha",
 	"Tambuqcucha"			:	"Tambuqcucha",
 	"Damietta"			:	"Tamiat",
@@ -4942,6 +4951,7 @@ dIdentifiers = {
 	"Tirana"			:	"Tirana",
 	"Tihuanaco"			:	"Tiwanaku",
 	"Tiwanaku"			:	"Tiwanaku",
+	"T'mutarakan"			:	"T'mutarakan",
 	"Tol&#232;de"			:	"Toledo",
 	"Toledo"			:	"Toledo",
 	"Toletum"			:	"Toledo",
@@ -5478,6 +5488,7 @@ tRenames = (
 	"Yebu"			:	"Elephantine",
 	"Ljubljana"		:	"Emona",
 	"Epidamnos"		:	"Epidamnos",
+	"Haidarabad"		:	"Haidarabad",
 	"Ecbatana"		:	"Hangmatana",
 	"Hekatompilos"		:	"Hekatompilos",
 	"Per-Atum"		:	"Heliopolis",
@@ -5837,6 +5848,7 @@ tRenames = (
 	"Nanjing"	:	"Namgyeong",
 	"Pusan"		:	"Pusan",
 	"Pyongyang"	:	"Pyongyang",
+	"Samcheok"	:	"Samcheok",
 	"Seoul"		:	"Seoul",
 },
 #Language: Mayan
@@ -6688,6 +6700,7 @@ tRenames = (
 	"Kagoshima"		:	"Kagosima",
 	"Kakolewo"		:	"Kakolewo",
 	"Qara Qorum"		:	"Karakorum",
+	"Kaunas"		:	"Kaunas",
 	"Qazan"			:	"Kazan'",
 	"Khabarovsk"		:	"Khabarovsk",
 	"Hakodate"		:	"Khakodate",
@@ -6702,6 +6715,7 @@ tRenames = (
 	"Otomari"		:	"Korsakov",
 	"Kowno"			:	"Kovno",
 	"Krak&#243;w"		:	"Krakov",
+	"Krasnyy Kholm"		:	"Krasnyy Kholm",
 	"Fort Ross"		:	"Krepost' Ross",
 	"Kulsary"		:	"Kul'sary",
 	"Kushiro"		:	"Kusiro",
@@ -6714,6 +6728,7 @@ tRenames = (
 	"Mudanjiang"		:	"Mudan'tszyan",
 	"Shenyang"		:	"Mukden",
 	"Naha"			:	"Nakha",
+	"Narva"			:	"Narva",
 	"Fuyori"		:	"Nikolayevsk-na-Amure",
 	"Naissos"		:	"Nish",
 	"Norilsk"		:	"Norilsk",
@@ -6727,6 +6742,7 @@ tRenames = (
 	"Poti"			:	"Poti",
 	"Poznan"		:	"Poznan",
 	"Praha"			:	"Praga",
+	"Reval"			:	"Reval",
 	"Rostov"		:	"Rostov",
 	"Rostov-na-Donu"	:	"Rostov-na-Donu",
 	"Samarqand"		:	"Samarkand",
@@ -6745,6 +6761,7 @@ tRenames = (
 	"Staraya Ladoga"	:	"Staraya Ladoga",
 	"Hong Kong"		:	"Syangan",
 	"Tallinn"		:	"Tallin",
+	"Taman'"		:	"Taman'",
 	"Tashkent"		:	"Tashkent",
 	"Tbilisi"		:	"Tbilisi",
 	"Tirana"		:	"Tirana",
