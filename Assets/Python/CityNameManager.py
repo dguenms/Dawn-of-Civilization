@@ -263,7 +263,7 @@ tEraNames = (
 # renaissance
 {
 	"Rasa"			:	"Lhasa", #done
-	"Golkonda"		:	"Hyderabad", #check
+	"Golkonda"		:	"Hyderabad", #done
 	"Susha"			:	"Shush", #check
 	"Neroon Koot"		:	"Haidarabad", #done
 	"Eystribygg&#240;"	:	"Julianeh&#229;b",
@@ -288,30 +288,31 @@ tEraNames = (
 	"Edo"			:	"Toukyou", #done
 	"Mo&#231;ambique"	:	"Lauren&#231;o Marques",
 	"Constantinopolis"	:	"Istanbul", #debug
-	"Fiorenza"		:	"Firenze",
-	"Dagou"			:	"Gaoxiong",
-	"Ayutthaya"		:	"Bangkok",
-	"York"			:	"Toronto",
-	"Tsaryovo Gorodishche"	:	"Kurgan",
-	"Krivoshchekovskaya"	:	"Novonikolayevsk",
+	"Fiorenza"		:	"Firenze", #check
+	"Dagou"			:	"Gaoxiong", #check
+	"Ayutthaya"		:	"Bangkok", #check
+	"York"			:	"Toronto", #done
+	"Tsaryovo Gorodishche"	:	"Kurgan", #done
+	"Krivoshchekovskaya"	:	"Novonikolayevsk", #done
 },
 # modern
 {
 	"Calabar"		:	"Port Harcourt",
-	"Bayan Tum'en"		:	"Choibalsan",
-	"&#214;rg&#246;&#246;"	:	"Ulaanbaatar",
+	"Bayan Tum'en"		:	"Choibalsan", #done
+	"&#214;rg&#246;&#246;"	:	"Ulaanbaatar", #done
 	"Angora"		:	"Ankara",
-	"Hanseong"		:	"Seoul",
+	"Hanseong"		:	"Seoul", #done
 	"Jehol"			:	"Chengde",
-	"Nikolayevsk"		:	"Kustanay",
-	"Zheleznodorozhny"	:	"Kungrad",
-	"Vil'na"		:	"Vil'nyus",
+	"Nikolayevsk"		:	"Kustanay", #done
+	"Zheleznodorozhny"	:	"Kungrad", #done
+	"Vil'na"		:	"Vil'nyus", #debug
 	"Kovno"			:	"Kaunas",
 	"Yekaterinoslav"	:	"Dnepropetrov'sk",
 	"Alexandrovsk-Grushevsky":	"Shakty",
 	"Khal'mer-Sede"		:	"Tazovskiy",
-	"Brzesc Litewski"	:	"Brzesc nad Bugiem",
+	"Brzesc Litewski"	:	"Brzesc nad Bugiem", #debug
 	"Reval"			:	"Tallinn", #check
+	"Novonikolayevsk"	:	"Novosibirsk",
 },
 # future
 {},
@@ -3097,6 +3098,7 @@ iLangHarappan:
 }
 
 dIdentifiers = {
+	"&#214;rg&#246;&#246;"		:	"&#214;rg&#246;&#246;",
 	"Aachen"			:	"Aachen",
 	"Aix-la-Chapelle"		:	"Aachen",
 	"Aken"				:	"Aachen",
@@ -3346,6 +3348,7 @@ dIdentifiers = {
 	"Bath"				:	"Bath",
 	"B&#226;ton Rouge"		:	"Baton Rouge",
 	"Baton Rouge"			:	"Baton Rouge",
+	"Bayan Tum'en"			:	"Bayan Tum'en",
 	"Augustodurum"			:	"Bayeux",
 	"Bayeux"			:	"Bayeux",
 	"Bayonne"			:	"Bayonne",
@@ -3504,6 +3507,7 @@ dIdentifiers = {
 	"Deva"				:	"Chester",
 	"Chita"				:	"Chita",
 	"Cyty"				:	"Chita",
+	"Choibalsan"			:	"Choibalsan",
 	"Chongjin"			:	"Chongjin",
 	"Qingjin"			:	"Chongjin",
 	"Seishin"			:	"Chongjin",
@@ -4016,15 +4020,19 @@ dIdentifiers = {
 	"Krakau"			:	"Krak&#243;w",
 	"Krakov"			:	"Krak&#243;w",
 	"Krasnyy Kholm"			:	"Krasnyy Kholm",
+	"Krivoshchekovskaya"		:	"Krivoshchekovskaya",
 	"Kulsary"			:	"Kulsary",
 	"Kul'sary"			:	"Kulsary",
 	"Kumma"				:	"Kumma",
 	"Semna"				:	"Kumma",
+	"Kungrad"			:	"Kungrad",
 	"Konmei"			:	"Kunming",
 	"Kunming"			:	"Kunming",
+	"Kurgan"			:	"Kurgan",
 	"Chuanlu"			:	"Kushiro",
 	"Kushiro"			:	"Kushiro",
 	"Kusiro"			:	"Kushiro",
+	"Kustanay"			:	"Kustanay",
 	"K&#246;nug&#229;rd"		:	"Kyiv",
 	"Kiev"				:	"Kyiv",
 	"Kiew"				:	"Kyiv",
@@ -4340,6 +4348,7 @@ dIdentifiers = {
 	"Nikaia"			:	"Nikaia",
 	"Mikolaj&243;w"			:	"Nikolayev",
 	"Nikolayev"			:	"Nikolayev",
+	"Nikolayevsk"			:	"Nikolayevsk",
 	"Actia Nicopolis"		:	"Nikopolis",
 	"Nikopolis"			:	"Nikopolis",
 	"Preveza"			:	"Nikopolis",
@@ -4369,6 +4378,8 @@ dIdentifiers = {
 	"Novoarkhangel'sk"		:	"Novoarkhangel'sk",
 	"Sitka"				:	"Novoarkhangel'sk",
 	"Novokholmogory"		:	"Novokholmogory",
+	"Novonikolayevsk"		:	"Novonikolayevsk",
+	"Novosibirsk"			:	"Novosibirsk",
 	"Holmg&#229;rd"			:	"Nowgorod",
 	"Novgorod"			:	"Nowgorod",
 	"Nowgorod"			:	"Nowgorod",
@@ -4378,6 +4389,8 @@ dIdentifiers = {
 	"Nueva Iberia"			:	"Nueva Iberia",
 	"Numancia"			:	"Numantia",
 	"Numantia"			:	"Numantia",
+	"Nyenschanz"			:	"Nyenskans",
+	"Nyenskans"			:	"Nyenskans",
 	"Huaxyacac"			:	"Oaxaca",
 	"Oaxaca"			:	"Oaxaca",
 	"Odessos"			:	"Odessos",
@@ -5009,6 +5022,7 @@ dIdentifiers = {
 	"Trondheim"			:	"Trondheim",
 	"Stalingrad"			:	"Tsaritsyn",
 	"Tsaritsyn"			:	"Tsaritsyn",
+	"Tsaryovo Gorodishche"		:	"Tsaryovo Gorodishche",
 	"Tobruk"			:	"Tubruq",
 	"Tubruq"			:	"Tubruq",
 	"T&#250;cume"			:	"Tucume",
@@ -5034,6 +5048,7 @@ dIdentifiers = {
 	"Udaipur"			:	"Udaipur",
 	"Ufa"				:	"Ufa",
 	"Ufu"				:	"Ufa",
+	"Ulaanbaatar"			:	"Ulaanbaatar",
 	"Ulaan-Ude"			:	"Ulaan-Ude",
 	"Ulan-Udeh"			:	"Ulaan-Ude",
 	"Ollantaytambo"			:	"Ullantaytanpu",
@@ -5201,6 +5216,7 @@ dIdentifiers = {
 	"Zeyila"			:	"Zeyila",
 	"Choukakou"			:	"Zhangjiakou",
 	"Zhangjiakou"			:	"Zhangjiakou",
+	"Zheleznodorozhny"		:	"Zheleznodorozhny",
 	"Hegewald"			:	"Zhitomir",
 	"Zhitomir"			:	"Zhitomir",
 	"Zhongdu"			:	"Zhongdu",
@@ -5951,6 +5967,7 @@ tRenames = (
 	"Byzantion"		:	"Miklagard",
 	"Constantinopolis"	:	"Miklagard",
 	"Nouvelle Orl&#233;ans"	:	"New Orleans",
+	"Nyenskans"		:	"Nyenskans",
 	"Tallinn"		:	"Reval",
 	"Roskilde"		:	"Roskilde",
 	"Saint Thomas"		:	"Sankt Thomas",
@@ -6628,6 +6645,7 @@ tRenames = (
 	"Nouvelle Orl&#233;ans"	:	"New Orleans",
 	"Nijmegen"		:	"Nijmegen",
 	"Nowgorod"		:	"Nowgorod",
+	"Nyenskans"		:	"Nyenschanz",
 	"Palermo"		:	"Palermo",
 	"Paris"			:	"Paris",
 	"Pompeii"		:	"Pompeji",
@@ -6718,7 +6736,10 @@ tRenames = (
 	"Krasnyy Kholm"		:	"Krasnyy Kholm",
 	"Fort Ross"		:	"Krepost' Ross",
 	"Kulsary"		:	"Kul'sary",
+	"Kungrad"		:	"Kungrad",
+	"Kurgan"		:	"Kurgan",
 	"Kushiro"		:	"Kusiro",
+	"Kustanay"		:	"Kustanay",
 	"Los Angeles"		:	"Los-Andzheles",
 	"Ljubljana"		:	"Lyublyana",
 	"Katharinenstadt"	:	"Marx",
@@ -6733,6 +6754,8 @@ tRenames = (
 	"Naissos"		:	"Nish",
 	"Norilsk"		:	"Norilsk",
 	"Nowgorod"		:	"Novgorod",
+	"Novonikolayevsk"	:	"Novonikolayevsk",
+	"Novosibirsk"		:	"Novosibirsk",
 	"New York"		:	"N'yu-York",
 	"Paslek"		:	"Paslek",
 	"Beijing"		:	"Pekin",
@@ -6747,6 +6770,7 @@ tRenames = (
 	"Rostov-na-Donu"	:	"Rostov-na-Donu",
 	"Samarqand"		:	"Samarkand",
 	"San Francisco"		:	"San-Frantsisko",
+	"Nyenskans"		:	"Sankt-Peterburg",
 	"Sankt-Peterburg"	:	"Sankt-Peterburg",
 	"Saratov"		:	"Saratov",
 	"Sarajevo"		:	"Sarayevo",
@@ -7121,6 +7145,7 @@ tRenames = (
 #Language: Mongolian
 {
 	"Astrakhan"	:	"Astrakhan",
+	"Choibalsan"	:	"Choibalsan",
 	"Chita"		:	"Cyty",
 	"Irkutsk"	:	"Erkh&#252;&#252;",
 	"Hailaer"	:	"Hulun",
@@ -7131,6 +7156,7 @@ tRenames = (
 	"Qara Qorum"	:	"Qara Qorum",
 	"Samarqand"	:	"Samarkand",
 	"Tbilisi"	:	"Tiflis",
+	"Ulaanbaatar"	:	"Ulaanbaatar",
 	"Ulaan-Ude"	:	"Ulaan-Ude",
 },
 #Language: Aztec
