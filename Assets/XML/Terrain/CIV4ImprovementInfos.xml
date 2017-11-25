@@ -682,8 +682,8 @@
 				<iYield>1</iYield>
 			</PrereqNatureYields>
 			<YieldChanges>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
+				<iYieldChange>-1</iYieldChange>
+				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -707,7 +707,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iHealthPercent>-100</iHealthPercent>
+			<iHealthPercent>0</iHealthPercent>
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids>
