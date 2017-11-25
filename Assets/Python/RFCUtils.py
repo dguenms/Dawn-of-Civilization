@@ -1567,14 +1567,16 @@ class RFCUtils:
 		# check if only recently died
 		if iGameTurn - data.players[iPlayer].iLastTurnAlive < self.getTurns(10): return False
 		
-		# check if the civ can be reborn at this date
-		if len(tResurrectionIntervals[iPlayer]) > 0:
+		# check if the civ can be reborn at this date		
+		if tResurrectionIntervals[iPlayer]:
 			for tInterval in tResurrectionIntervals[iPlayer]:
 				iStart, iEnd = tInterval
 				if getTurnForYear(iStart) <= iGameTurn <= getTurnForYear(iEnd):
 					break
 			else:
 				return False
+		else:
+			return False
 					
 		# Thailand cannot respawn when Khmer is alive and vice versa
 		if iPlayer == iThailand and gc.getPlayer(iKhmer).isAlive(): return False
