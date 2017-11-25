@@ -798,8 +798,8 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: control three cities in the Maghreb and conquer two cities in Iberia and West Africa
 		if iGameTurn == getTurnForYear(1200):
-			bIberia = getNumCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR)) >= 3
-			bMaghreb = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tMaghrebTL, tMaghrebBR)) >= 2
+			bIberia = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR)) >= 2
+			bMaghreb = getNumCitiesInArea(iMoors, utils.getPlotList(tMaghrebTL, tMaghrebBR)) >= 3
 			bWestAfrica = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tWestAfricaTL, tWestAfricaBR)) >= 2
 			
 			if bIberia and bMaghreb and bWestAfrica:
@@ -3579,8 +3579,8 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iMoors:
 		if iGoal == 0:
-			iIberia = getNumCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR))
-			iMaghreb = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tMaghrebTL, tMaghrebBR))
+			iIberia = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR))
+			iMaghreb = getNumCitiesInArea(iMoors, utils.getPlotList(tMaghrebTL, tMaghrebBR))
 			iWestAfrica = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tWestAfricaTL, tWestAfricaBR))
 			aHelp.append(getIcon(iMaghreb >= 3) + localText.getText("TXT_KEY_VICTORY_MAGHREB_MOORS", (iMaghreb, 3)) + ' ' + getIcon(iIberia >= 2) + localText.getText("TXT_KEY_VICTORY_IBERIA", (iIberia, 2)) + ' ' + getIcon(iWestAfrica >= 2) + localText.getText("TXT_KEY_VICTORY_WEST_AFRICA", (iWestAfrica, 2)))
 		elif iGoal == 1:
