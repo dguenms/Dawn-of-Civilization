@@ -632,7 +632,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RECYCLING_CENTER_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Recycling Centres[COLOR_REVERT] increases health for [COLOR_HIGHLIGHT_TEXT]Mines[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Workshops[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Recycling Centres[COLOR_REVERT] remove all negative health from buildings.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PUBLIC_TRANSPORTATION_STRATEGY</Tag>
