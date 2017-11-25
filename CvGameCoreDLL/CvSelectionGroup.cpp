@@ -3285,6 +3285,13 @@ RouteTypes CvSelectionGroup::getBestBuildRoute(CvPlot* pPlot, BuildTypes* peBest
 	iBestValue = 0;
 	eBestRoute = NO_ROUTE;
 
+	// Leoreth: let them keep existing routes
+	if (pPlot->getRouteType() != NO_ROUTE)
+	{
+		eBestRoute = pPlot->getRouteType();
+		iBestValue = GC.getRouteInfo(eBestRoute).getValue();
+	}
+
 	pUnitNode = headUnitNode();
 
 	while (pUnitNode != NULL)
