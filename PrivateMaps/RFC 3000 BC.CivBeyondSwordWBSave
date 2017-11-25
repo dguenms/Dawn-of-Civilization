@@ -4881,7 +4881,6 @@ BeginPlot
 	x=11,y=46
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -4891,7 +4890,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -4899,7 +4897,6 @@ BeginPlot
 	x=11,y=48
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

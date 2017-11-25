@@ -280,4 +280,4 @@ class Resources:
 			# flood plains in California
 			for tPlot in [(11, 46), (11, 47), (11, 48)]:
 				x, y = tPlot
-				gc.getMap().plot(x,y).setFeatureType(3, 0)
+				gc.getMap().plot(x,y).setFeatureType(iFloodPlains, 0)
