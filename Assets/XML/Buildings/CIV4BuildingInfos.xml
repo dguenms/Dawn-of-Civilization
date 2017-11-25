@@ -2816,7 +2816,7 @@
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_MARKET</ConstructSound>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_DYE</BonusType>
@@ -2873,7 +2873,7 @@
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_MARKET</ConstructSound>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_DYE</BonusType>

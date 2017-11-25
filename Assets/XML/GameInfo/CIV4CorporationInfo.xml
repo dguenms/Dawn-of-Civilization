@@ -35,7 +35,7 @@
 			<Button>Art/Interface/Buttons/civics/SilkIndustry.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_MARKET</Sound>
+			<Sound>AS2D_BUILD_MARKETPLACE</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_TRADING_COMPANY</Type>
