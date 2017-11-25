@@ -2811,7 +2811,6 @@ class RiseAndFall:
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
 			utils.makeUnit(iMinuteman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
-			self.addMissionary(iCiv, (23, 40), (33, 52), tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:  
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
@@ -2819,6 +2818,10 @@ class RiseAndFall:
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() != iAmerica:
 				utils.makeUnitAI(iMinuteman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+			iReligion = self.findAreaReligion(iCiv, utils.getPlotList((23, 40), (33, 52)))
+			if iReligion >= 0:
+				pAmerica.setLastStateReligion(iReligion)
+				utils.makeUnit(iMissionary + iReligion, iCiv, tPlot, 1)
 		elif iCiv == iArgentina:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnit(iMusketman, iCiv, tPlot, 3, "", 2)
@@ -2884,43 +2887,32 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
-
-	def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
+				
+	def findAreaReligion(self, iPlayer, lPlots):
 		lReligions = [0 for i in range(iNumReligions)]
-		for (x, y) in utils.getPlotList(tTopLeft, tBottomRight):
-			pPlot = gc.getMap().plot( x, y )
-			if pPlot.isCity():
-				city = pPlot.getPlotCity() 
+		
+		for (x, y) in lPlots:
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity():
+				city = plot.getPlotCity()
 				iOwner = city.getOwner()
-				if iOwner != iCiv:
+				if iOwner != iPlayer:
+					for iReligion in range(iNumReligions):
+						if city.isHasReligion(iReligion):
+							lReligions[iReligion] += 1
 					iStateReligion = gc.getPlayer(iOwner).getStateReligion()
-					if iStateReligion != -1:
+					if iStateReligion >= 0:
 						lReligions[iStateReligion] += 1
+						
 		iMax = 0
-		iWinnerReligion = -1
-		for i in range(len(lReligions)): #so that Protestantism comes first
-			iLoopReligion = i % iNumReligions
+		iHighestReligion = -1
+		for i in range(iNumReligions):
+			iLoopReligion = (iProtestantism + i) % iNumReligions
 			if lReligions[iLoopReligion] > iMax:
 				iMax = lReligions[iLoopReligion]
-				iWinnerReligion = iLoopReligion
-
-		if iWinnerReligion == -1:
-			for iLoopCiv in range(iNumMajorPlayers):
-				if iLoopCiv != iCiv:
-					if gc.getMap().plot(tPlot[0], tPlot[1]).isRevealed(iLoopCiv, False):
-						iStateReligion = gc.getPlayer(iLoopCiv).getStateReligion()
-						if iStateReligion != -1:
-							lReligions[iStateReligion] += 1
-
-			for iLoopReligion in range(len(lReligions)): #so that Protestantism comes first
-				iLoopReligion = i % iNumReligions
-				if lReligions[iLoopReligion] > iMax:
-					iMax = lReligions[iLoopReligion]
-					iWinnerReligion = iLoopReligion   
-
-		if iWinnerReligion != -1:
-			utils.makeUnit(iMissionary + iWinnerReligion, iCiv, tPlot, iNumber)
-			
+				iHighestReligion = iLoopReligion
+				
+		return iHighestReligion
 
 				
 	def createStartingWorkers( self, iCiv, tPlot ):
