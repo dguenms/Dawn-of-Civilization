@@ -42,12 +42,20 @@
 		<English>Denmark</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_DENMARK_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_ADJECTIVE</Tag>
 		<English>Denmark</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_SHORT_DESC</Tag>
 		<English>Norway</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NORWAY_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_ADJECTIVE</Tag>
