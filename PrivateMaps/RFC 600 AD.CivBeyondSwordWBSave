@@ -19626,7 +19626,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=36
-	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
