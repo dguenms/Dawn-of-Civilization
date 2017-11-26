@@ -190,7 +190,6 @@ def onCityAcquired(city, iNewOwner):
 	if sOldName == "Inbhir Nis" and iNewOwner != iCeltia: sNewName = "Inverness"
 	elif sOldName == "D&#249;n &#200;ideann" and iNewOwner != iCelta: sNewName = "Edinburgh"
 	elif sOldName in ["Aquincum", "Ak Ink"] and iNewOwner not in [iRome, iTurkey]: sNewName = "Buda"
-	
 	elif sOldName == "Momba&#231;a" and iNewOwner != iPortugal: sNewName = "Mombasa"
 	elif sOldName == "Mo&#231;ambique" and iNewOwner != iPortugal: sNewName = "Mozambique"
 	elif sOldName == "Toranaro" and iNewOwner not in [iJapan, iFrance]: sNewName = "Tolanaro"
@@ -233,21 +232,21 @@ def onCityAcquired(city, iNewOwner):
 		city.setName(sNewName, False)
 	
 dCommunistNames = {
-	"Tsaritsyn"		:	"Stalingrad",
-	"Sankt-Peterburg"	:	"Leningrad",
-	"Tver'"			:	"Kalinin",
-	"Yekaterinburg"		:	"Sverdlovsk",
-	"Nizhniy Novgorod"	:	"Gorkiy",
-	"Samara"		:	"Kuybyshev",
-	"Tsar'grad"		:	"Konstantinopol'",
-	"Vyatka"		:	"Kirov",
-	"Syangan"		:	"Gon Kong",
-	"Akmolinsk"		:	"Tselinograd",
-	"Nyonoksa"		:	"Molotovsk",
-	"Korolevets"		:	"Kaliningrad",
-	"Tsary&#235;vokokshaysk":	"Krasnokokshaysk",
-	"Dyushambe"		:	"Stalinabad",
 	"Pishpek"		:	"Frunze"
+	"Syangan"		:	"Gon Kong",
+	"Nizhniy Novgorod"	:	"Gorkiy",
+	"Tver'"			:	"Kalinin",
+	"Korolevets"		:	"Kaliningrad",
+	"Vyatka"		:	"Kirov",
+	"Tsar'grad"		:	"Konstantinopol'",
+	"Tsary&#235;vokokshaysk":	"Krasnokokshaysk",
+	"Samara"		:	"Kuybyshev",
+	"Sankt-Peterburg"	:	"Leningrad",
+	"Nyonoksa"		:	"Molotovsk",
+	"Dyushambe"		:	"Stalinabad",
+	"Tsaritsyn"		:	"Stalingrad",
+	"Yekaterinburg"		:	"Sverdlovsk",
+	"Akmolinsk"		:	"Tselinograd",
 }
 
 def applyCommunistNames(iCiv):
@@ -273,67 +272,68 @@ tEraNames = (
 {},
 # medieval
 {
-	"Siljikguk"		:	"Samcheok", #done
-	"Chang'an"		:	"Xi'an", #done
 	"Zhongdu"		:	"Beijing", #fix
 	"Indraprastha"		:	"Dilli", #done
 	"Shencheng"		:	"Huating", #done
+	"Siljikguk"		:	"Samcheok", #done
+	"Chang'an"		:	"Xi'an", #done
 },
 # renaissance
 {
-	"Huating"		:	"Shanghai", #done
-	"Rasa"			:	"Lhasa", #done
-	"Golkonda"		:	"Hyderabad", #done
-	"Susha"			:	"Shush", #check
-	"Neroon Koot"		:	"Haidarabad", #done
-	"Eystribygg&#240;"	:	"Julianeh&#229;b",
-	"Vestribygg&#240;"	:	"Godth&#229;b",
-	"Pataliputra"		:	"Patna", #done
 	"Haojing"		:	"Aomen", #check
-	"Nidaros"		:	"Trondheim", #done
-	"Roskilde"		:	"K&#248;benhavn", #done
-	"Haithabu"		:	"Hamburg", #done
 	"Novokholmogory"	:	"Arkhangel'sk", #done
-	"Spas na Kholmu"	:	"Krasnyy Kholm", #done
-	"Tumasik"		:	"Singapura", #done
-	"Sundapura"		:	"Jayakarta", #done
 	"Buda"			:	"Budapest", #check
+	"Vestribygg&#240;"	:	"Godth&#229;b",
+	"Neroon Koot"		:	"Haidarabad", #done
+	"Haithabu"		:	"Hamburg", #done
+	"Golkonda"		:	"Hyderabad", #done
+	"Sundapura"		:	"Jayakarta", #done
+	"Eystribygg&#240;"	:	"Julianeh&#229;b",
+	"Roskilde"		:	"K&#248;benhavn", #done
+	"Spas na Kholmu"	:	"Krasnyy Kholm", #done
+	"Rasa"			:	"Lhasa", #done
 	"Rugodiv"		:	"Narva", #done
-	"T'mutarakan"		:	"Taman'", #done
+	"Pataliputra"		:	"Patna", #done
 	"Kolyvan'"		:	"Reval", #check
+	"Huating"		:	"Shanghai", #done
+	"Susha"			:	"Shush", #check
+	"Tumasik"		:	"Singapura", #done
+	"T'mutarakan"		:	"Taman'", #done
+	"Nidaros"		:	"Trondheim", #done
 },
 # industrial
 {
-	"Yax Mutal"		:	"Tikal",
-	"Edo"			:	"Toukyou", #done
-	"Mo&#231;ambique"	:	"Lauren&#231;o Marques",
-	"Constantinopolis"	:	"Istanbul", #debug
+	"Ayutthaya"		:	"Bangkok", #check
 	"Fiorenza"		:	"Firenze", #check
 	"Dagou"			:	"Gaoxiong", #check
-	"Ayutthaya"		:	"Bangkok", #check
-	"York"			:	"Toronto", #done
+	"Constantinopolis"	:	"Istanbul", #debug
 	"Tsaryovo Gorodishche"	:	"Kurgan", #done
+	"Mo&#231;ambique"	:	"Lauren&#231;o Marques",
 	"Krivoshchekovskaya"	:	"Novonikolayevsk", #done
+	"Yax Mutal"		:	"Tikal",
+	"York"			:	"Toronto", #done
+	"Edo"			:	"Toukyou", #done
 },
 # modern
 {
-	"Calabar"		:	"Port Harcourt",
-	"Bayan Tum'en"		:	"Choibalsan", #done
-	"&#214;rg&#246;&#246;"	:	"Ulaanbaatar", #done
+	"Verniy"		:	"Almarikh",
 	"Angora"		:	"Ankara",
-	"Hanseong"		:	"Seoul", #done
-	"Jehol"			:	"Chengde",
-	"Nikolayevsk"		:	"Kustanay", #done
-	"Zheleznodorozhny"	:	"Kungrad", #done
-	"Vil'na"		:	"Vil'nyus", #debug
-	"Kovno"			:	"Kaunas",
-	"Yekaterinoslav"	:	"Dnepropetrov'sk",
-	"Alexandrovsk-Grushevsky":	"Shakty",
-	"Khal'mer-Sede"		:	"Tazovskiy",
 	"Brzesc Litewski"	:	"Brzesc nad Bugiem", #debug
+	"Jehol"			:	"Chengde",
+	"Bayan Tum'en"		:	"Choibalsan",
+	"Yekaterinoslav"	:	"Dnepropetrov'sk", #implement
+	"Qiongshan"		:	"Haikou",
+	"Kovno"			:	"Kaunas", #check
+	"Zheleznodorozhny"	:	"Kungrad",
+	"Nikolayevsk"		:	"Kustanay",
+	"Novonikolayevsk"	:	"Novosibirsk",
+	"Calabar"		:	"Port Harcourt", #implement
+	"Hanseong"		:	"Seoul",
+	"Alexandrovsk-Grushevsky":	"Shakty", #implement
 	"Reval"			:	"Tallinn", #check
-	"Novonikolayevsk"	:	"Novosibirsk", #done
-	"Verniy"		:	"Almarikh", #done
+	"Khal'mer-Sede"		:	"Tazovskiy", #implement
+	"&#214;rg&#246;&#246;"	:	"Ulaanbaatar",
+	"Vil'na"		:	"Vil'nyus", #debug
 },
 # future
 {},
@@ -488,7 +488,7 @@ iLangChinese :
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Shillong",	"Shillong",	"Dali",	"-1",	"Qujing",	"-1",	"Guilin",	"Shaoguan",	"Meizhou",	"Xiamen",	"-1",	"-1",	"-1",	"Naba",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mizhina",	"Puer",	"Kunming",	"Gejiu",	"Nanning",	"Wuzhou",	"Guangzhou",	"Guangzhou",	"-1",	"-1",	"Taibei",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Jidangang",	"Mandele",	"Mandele",	"Wanxiang",	"Henei",	"Beihai",	"Zhanjiang",	"-1",	"-1",	"-1",	"-1",	"Dagou",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Pagan",	"Neibudu",	"Qingmai",	"Henei",	"-1",	"-1",	"Haikou",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Pagan",	"Neibudu",	"Qingmai",	"Henei",	"-1",	"-1",	"Qiongshan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Yangguang",	"Yangguang",	"-1",	"Wanxiang",	"Shunhua",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Yangguang",	"-1",	"-1",	"Qingmai",	"Xiangang",	"Xiangang",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mangu",	"Mangu",	"-1",	"Guiren",	"Jinlan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -3783,6 +3783,7 @@ dIdentifiers = {
 	"Hadrumete"			:	"Hadrumete",
 	"Hadrumetum"			:	"Hadrumete",
 	"Haidarabad"			:	"Haidarabad",
+	"Haikou"			:	"Haikou",
 	"Hailaer"			:	"Hailaer",
 	"Hailar"			:	"Hailaer",
 	"Hairaru"			:	"Hailaer",
@@ -4632,6 +4633,7 @@ dIdentifiers = {
 	"Qingdao"			:	"Qingdao",
 	"Seitou"			:	"Qingdao",
 	"Tsingtau"			:	"Qingdao",
+	"Qiongshan"			:	"Qiongshan",
 	"Chichiharu"			:	"Qiqihaer",
 	"Qiqihaer"			:	"Qiqihaer",
 	"Qiqihar"			:	"Qiqihaer",
@@ -5394,6 +5396,7 @@ tRenames = (
 	"Hiroshima"	:	"Guangdao",
 	"Guangzhou"	:	"Guangzhou",
 	"Guiyang"	:	"Guiyang",
+	"Haikou"	:	"Haikou",
 	"Hailaer"	:	"Hailar",
 	"Vladivostok"	:	"Haishenwai",
 	"Hanseong"	:	"Hancheng",
