@@ -273,62 +273,73 @@ tEraNames = (
 	"Jinling Yi"		:	"Moling",
 	"Nanwucheng"		:	"Panyu",
 	"Daliang"		:	"Qifeng",
+	"Fenghao"		:	"Xianyang",
+	"Jicheng"		:	"Yanjing",
 },
 # medieval
 {
-	"Zhongdu"		:	"Beijing", #fix
 	"Qifeng"		:	"Bianjing",
-	"Indraprastha"		:	"Dilli", #done
-	"Shencheng"		:	"Huating", #done
+	"Byzantion"		:	"Constantinopolis",
+	"Xianyang"		:	"Daxing",
+	"Indraprastha"		:	"Dilli",
+	"Shencheng"		:	"Huating",
 	"Moling"		:	"Jiankang",
-	"Siljikguk"		:	"Samcheok", #done
-	"Chang'an"		:	"Xi'an", #done
+	"Siljikguk"		:	"Samcheok",
+	"Houcheng"		:	"Shenyang",
 	"Panyu"			:	"Xingwang",
+	"Yanjing"		:	"Zhongdu",
 },
 # renaissance
 {
 	"Haojing"		:	"Aomen", #check
-	"Novokholmogory"	:	"Arkhangel'sk", #done
+	"Novokholmogory"	:	"Arkhangel'sk",
 	"Buda"			:	"Budapest", #check
+	"Daxing"		:	"Chang'an",
 	"Vestribygg&#240;"	:	"Godth&#229;b",
 	"Xingwang"		:	"Guangzhou",
-	"Neroon Koot"		:	"Haidarabad", #done
-	"Haithabu"		:	"Hamburg", #done
-	"Golkonda"		:	"Hyderabad", #done
-	"Sundapura"		:	"Jayakarta", #done
+	"Neroon Koot"		:	"Haidarabad",
+	"Haithabu"		:	"Hamburg",
+	"Golkonda"		:	"Hyderabad",
+	"Sundapura"		:	"Jayakarta",
+	"Zhongdu"		:	"Jingshi",
 	"Eystribygg&#240;"	:	"Julianeh&#229;b",
-	"Roskilde"		:	"K&#248;benhavn", #done
+	"Roskilde"		:	"K&#248;benhavn",
 	"Bianjing"		:	"Kaifeng",
-	"Spas na Kholmu"	:	"Krasnyy Kholm", #done
-	"Rasa"			:	"Lhasa", #done
-	"Rugodiv"		:	"Narva", #done
-	"Pataliputra"		:	"Patna", #done
+	"Spas na Kholmu"	:	"Krasnyy Kholm",
+	"Rasa"			:	"Lhasa",
+	"Rugodiv"		:	"Narva",
+	"Pataliputra"		:	"Patna",
 	"Kolyvan'"		:	"Reval", #check
-	"Huating"		:	"Shanghai", #done
+	"Huating"		:	"Shanghai",
+	"Shenyang"		:	"Shengjing",
 	"Susha"			:	"Shush", #check
-	"Tumasik"		:	"Singapura", #done
-	"T'mutarakan"		:	"Taman'", #done
-	"Nidaros"		:	"Trondheim", #done
+	"Tumasik"		:	"Singapura",
+	"T'mutarakan"		:	"Taman'",
+	"Nidaros"		:	"Trondheim",
 	"Jiankang"		:	"Yingtian",
 },
 # industrial
 {
 	"Ayutthaya"		:	"Bangkok", #check
+	"Jingshi"		:	"Beiping",
 	"Fiorenza"		:	"Firenze", #check
 	"Dagou"			:	"Gaoxiong", #check
 	"Constantinopolis"	:	"Istanbul", #debug
 	"Yingtian"		:	"Jiangning",
-	"Tsaryovo Gorodishche"	:	"Kurgan", #done
+	"Tsaryovo Gorodishche"	:	"Kurgan",
 	"Mo&#231;ambique"	:	"Lauren&#231;o Marques",
-	"Krivoshchekovskaya"	:	"Novonikolayevsk", #done
+	"Shengjing"		:	"Mukden",
+	"Krivoshchekovskaya"	:	"Novonikolayevsk",
 	"Yax Mutal"		:	"Tikal",
-	"York"			:	"Toronto", #done
-	"Edo"			:	"Toukyou", #done
+	"York"			:	"Toronto",
+	"Edo"			:	"Toukyou",
+	"Chang'an"		:	"Xi'an",
 },
 # modern
 {
 	"Verniy"		:	"Almarikh",
 	"Angora"		:	"Ankara",
+	"Beiping"		:	"Beijing",
 	"Brzesc Litewski"	:	"Brzesc nad Bugiem", #debug
 	"Jehol"			:	"Chengde",
 	"Bayan Tum'en"		:	"Choibalsan",
@@ -342,6 +353,7 @@ tEraNames = (
 	"Calabar"		:	"Port Harcourt", #implement
 	"Hanseong"		:	"Seoul",
 	"Alexandrovsk-Grushevsky":	"Shakty", #implement
+	"Mukden"		:	"Shenyang",
 	"Reval"			:	"Tallinn", #check
 	"Khal'mer-Sede"		:	"Tazovskiy", #implement
 	"&#214;rg&#246;&#246;"	:	"Ulaanbaatar",
@@ -488,12 +500,12 @@ iLangChinese :
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Wen Gehua",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Holingola",	"Ulanhot",	"Daqing",	"Haerbin",	"Jiamusi",	"Boli",	"-1",	"-1",	"-1",	"Zahuang",	"Zahuang",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Xi Yatu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kelamayi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Holingola",	"Changchun",	"Changchun",	"Yanji",	"Qingjin",	"Haishenwai",	"-1",	"-1",	"-1",	"Zahuang",	"-1",	"Chuanlu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Xi Yatu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kelamayi",	"Shihezi",	"Urumqi",	"Urumqi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Chifeng",	"Tongliao",	"Siping",	"-1",	"-1",	"Qingjin",	"-1",	"-1",	"-1",	"-1",	"Hanguan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Jiu Jinshan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Urumqi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Erenhot",	"Xilin hot",	"Chifeng",	"Shenyang",	"Shenyang",	"Tonghua",	"Xianxing",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Qingsen",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Jiu Jinshan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Urumqi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Erenhot",	"Xilin hot",	"Chifeng",	"Houcheng",	"Houcheng",	"Tonghua",	"Xianxing",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Qingsen",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Jiu Jinshan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Korla",	"Korla",	"Turfan",	"Chiayukuan",	"Hami",	"Dunhuang",	"Yinchuan",	"Baotou",	"Baotou",	"Hohhot",	"Hohhot",	"Tangshan",	"Chengde",	"Jinzhou",	"Liaoyang",	"Dandong",	"Pingrang",	"Yuanshang",	"-1",	"-1",	"-1",	"-1",	"-1",	"Qiutian",	"Xiantai",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Luo Shanji",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kashi",	"Akosu",	"Akosu",	"Turfan",	"Turfan",	"Chiayukuan",	"Hami",	"Dunhuang",	"Yinchuan",	"Yinchuan",	"Yulin",	"Datong",	"Zhongdu",	"Tianjin",	"-1",	"-1",	"Dalian",	"-1",	"Kaicheng",	"Chunchuan",	"Jiangling",	"-1",	"-1",	"-1",	"Xinxi",	"Changye",	"Jianghu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Luo Shanji",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kashi",	"Akosu",	"Akosu",	"Turfan",	"Turfan",	"Chiayukuan",	"Hami",	"Dunhuang",	"Yinchuan",	"Yinchuan",	"Yulin",	"Datong",	"Jicheng",	"Tianjin",	"-1",	"-1",	"Dalian",	"-1",	"Kaicheng",	"Chunchuan",	"Jiangling",	"-1",	"-1",	"-1",	"Xinxi",	"Changye",	"Jianghu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Luo Shanji",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kashi",	"Kashi",	"Suoche",	"H&#243;ti&#225;n",	"H&#243;ti&#225;n",	"-1",	"-1",	"-1",	"-1",	"-1",	"Lanzhou",	"-1",	"Taiyuan",	"Taiyuan",	"Baoding",	"Tianjin",	"-1",	"-1",	"-1",	"-1",	"Hancheng",	"Puxiang",	"-1",	"-1",	"-1",	"Jinze",	"Changye",	"Jianghu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Suoche",	"Suoche",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Yan'an",	"Chang'an",	"Luoyang",	"Handan",	"Jin'an",	"Zibo",	"Qingdao",	"-1",	"-1",	"Guangzhou",	"Fushan",	"-1",	"Jingdu",	"Jingdu",	"-1",	"Mingguwu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Xining",	"Changdu",	"-1",	"Chang'an",	"Chang'an",	"Luoyang",	"Daliang",	"Qufu",	"Xuzhou",	"Qingdao",	"-1",	"-1",	"-1",	"-1",	"-1",	"Guangdao",	"-1",	"Daban",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Suoche",	"Suoche",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Yan'an",	"Fenghao",	"Luoyang",	"Handan",	"Jin'an",	"Zibo",	"Qingdao",	"-1",	"-1",	"Guangzhou",	"Fushan",	"-1",	"Jingdu",	"Jingdu",	"-1",	"Mingguwu",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Xining",	"Changdu",	"-1",	"Fenghao",	"Fenghao",	"Luoyang",	"Daliang",	"Qufu",	"Xuzhou",	"Qingdao",	"-1",	"-1",	"-1",	"-1",	"-1",	"Guangdao",	"-1",	"Daban",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Shigatse",	"Lhasa",	"Linzhi",	"-1",	"Tianshui",	"Hanzhong",	"Dazhou",	"Wanzhou",	"Yichang",	"Wuhan",	"Jinling Yi",	"Jinling Yi",	"Shencheng",	"-1",	"-1",	"-1",	"Fugang",	"-1",	"Songshan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Zhongba",	"Shigatse",	"Lhasa",	"-1",	"Xichang",	"-1",	"Chengdu",	"Zigong",	"Chongqing",	"Enshi",	"Changsha",	"Nanchang",	"Jingdezhen",	"Hangzhou",	"-1",	"-1",	"-1",	"Changqi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Chengdu",	"-1",	"Liupanshui",	"Chongqing",	"Huaihua",	"Henyang",	"Ganzhou",	"Ganzhou",	"Fuzhou",	"-1",	"-1",	"-1",	"-1",	"Lu'erdao",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -3398,8 +3410,8 @@ dIdentifiers = {
 	"Beijing"			:	"Beijing",
 	"Bukgyeong"			:	"Beijing",
 	"Hokkin"			:	"Beijing",
-	"Khanbaliq"			:	"Beijing",
 	"Pekin"				:	"Beijing",
+	"Beiping"			:	"Beiping",
 	"Beja"				:	"Beja",
 	"Pax Iulia"			:	"Beja",
 	"B&#233;al Feirste"		:	"Belfast",
@@ -3612,6 +3624,7 @@ dIdentifiers = {
 	"Danni B&#225;a"		:	"Danni B&#225;a",
 	"Dabao"				:	"Davao",
 	"Davao"				:	"Davao",
+	"Daxing"			:	"Daxing",
 	"Delphi"			:	"Delphoi",
 	"Delphoi"			:	"Delphoi",
 	"Deoraby"			:	"Derby",
@@ -3706,6 +3719,7 @@ dIdentifiers = {
 	"'Uhshunubah"			:	"Faro",
 	"Fderik"			:	"Fderik",
 	"Fort Gouraud"			:	"Fderik",
+	"Fenghao"			:	"Fenghao",
 	"Fiorenza"			:	"Fiorenza",
 	"Florencja"			:	"Fiorenza",
 	"Firenze"			:	"Firenze",
@@ -3869,6 +3883,7 @@ dIdentifiers = {
 	"Honkon"			:	"Hong Kong",
 	"Syangan"			:	"Hong Kong",
 	"Xianggang"			:	"Hong Kong",
+	"Houcheng"			:	"Houcheng",
 	"Huambo"			:	"Huambo",
 	"New Lisbon"			:	"Huambo",
 	"Nova Lisboa"			:	"Huambo",
@@ -3941,10 +3956,13 @@ dIdentifiers = {
 	"Jekabsforts"			:	"Jekabsforts",
 	"Jiangning"			:	"Jiangning",
 	"Jiankang"			:	"Jiankang",
+	"Jicheng"			:	"Jicheng",
 	"Girin Ula"			:	"Jilin",
 	"Jilin"				:	"Jilin",
 	"Jillin"			:	"Jillin",
 	"Junggyeong"			:	"Jillin",
+	"Jingshi"			:	"Jingshi",
+	"Khanbaliq"			:	"Jingshi",
 	"Jinling Yi"			:	"Jinling Yi",
 	"Czin'chzhou"			:	"Jinzhou",
 	"Jinzhou"			:	"Jinzhou",
@@ -4142,6 +4160,7 @@ dIdentifiers = {
 	"Leptis Magna"			:	"Leptis Magna",
 	"Libdeh Al-Kubra"		:	"Leptis Magna",
 	"Lpqy"				:	"Leptis Magna",
+	"Lhasa"				:	"Lhasa",
 	"L&#252;ttich"			:	"Li&#232;ge",
 	"Li&#232;ge"			:	"Li&#232;ge",
 	"Lieja"				:	"Li&#232;ge",
@@ -4327,6 +4346,7 @@ dIdentifiers = {
 	"Mudan bira"			:	"Mudanjiang",
 	"Mudanjiang"			:	"Mudanjiang",
 	"Mudan'tszyan"			:	"Mudanjiang",
+	"Mukden"			:	"Mukden",
 	"Kashtpur"			:	"Multan",
 	"Multan"			:	"Multan",
 	"Mumbai"			:	"Mumbai",
@@ -4635,6 +4655,8 @@ dIdentifiers = {
 	"Pjongjang"			:	"Pyongyang",
 	"Pkhen'yan"			:	"Pyongyang",
 	"Pyongyang"			:	"Pyongyang",
+	"Changdu"			:	"Qamdo",
+	"Qamdo"				:	"Qamdo",
 	"Kandahar"			:	"Qandahar",
 	"Qandahar"			:	"Qandahar",
 	"Karakorum"			:	"Qara Qorum",
@@ -4683,7 +4705,6 @@ dIdentifiers = {
 	"Ragha"				:	"Ragha",
 	"Rhagae"			:	"Ragha",
 	"Lasa"				:	"Rasa",
-	"Lhasa"				:	"Rasa",
 	"Rasa"				:	"Rasa",
 	"Mauritsstad"			:	"Recife",
 	"Recife"			:	"Recife",
@@ -4854,7 +4875,7 @@ dIdentifiers = {
 	"Shanhai"			:	"Shanghai",
 	"Szanghaj"			:	"Shanghai",
 	"Shencheng"			:	"Shencheng",
-	"Mukden"			:	"Shenyang",
+	"Shengjing"			:	"Shengjing",
 	"Shenyang"			:	"Shenyang",
 	"Shin'you"			:	"Shenyang",
 	"Simiyan hoton"			:	"Shenyang",
@@ -5231,6 +5252,7 @@ dIdentifiers = {
 	"Wuzhou"			:	"Wuzhou",
 	"Seian"				:	"Xi'an",
 	"Xi'an"				:	"Xi'an",
+	"Xianyang"			:	"Xianyang",
 	"Xingwang"			:	"Xingwang",
 	"Sakha"				:	"Xou",
 	"Xou"				:	"Xou",
@@ -5240,6 +5262,7 @@ dIdentifiers = {
 	"Yangguang"			:	"Yangon",
 	"Yangkung"			:	"Yangon",
 	"Yangon"			:	"Yangon",
+	"Yanjing"			:	"Yanjing",
 	"Jaunde"			:	"Yaunde",
 	"Yaound&#233;"			:	"Yaunde",
 	"Yaunde"			:	"Yaunde",
@@ -5392,12 +5415,14 @@ tRenames = (
 	"Anyang"	:	"Anyang",
 	"Macao" 	:	"Aomen",
 	"Seogyeong"	:	"Baishan",
+	"Beiping"	:	"Beiping",
 	"Beijing"	:	"Beijing",
 	"Bianjing"	:	"Bianjing",
 	"Hakata"	:	"Boduo",
 	"Khabarovsk"	:	"Boli",
 	"Chang'an"	:	"Chang'an",
 	"Changchun"	:	"Changchun",
+	"Qamdo"		:	"Changdu",
 	"Changjin"	:	"Changjin",
 	"Nagasaki"	:	"Changqi",
 	"Changsha"	:	"Changsha",
@@ -5411,6 +5436,7 @@ tRenames = (
 	"Oosaka"	:	"Daban",
 	"Dagou"		:	"Dagou",
 	"Roma"		:	"Daqin",
+	"Daxing"	:	"Daxing",
 	"Dilli"		:	"Deli",
 	"Toyohara"	:	"Fengyuan",
 	"Fukuoka"	:	"Fugang",
@@ -5440,6 +5466,7 @@ tRenames = (
 	"Jilin"		:	"Jilin",
 	"Jillin"	:	"Jillin",
 	"Kyouto"	:	"Jingdu",
+	"Jingshi"	:	"Jingshi",
 	"Jinzhou"	:	"Jinzhou",
 	"San Francisco"	:	"Jiu Jinshan",
 	"Kaesong"	:	"Kaicheng",
@@ -5454,6 +5481,7 @@ tRenames = (
 	"Nagoya"	:	"Mingguwu",
 	"Moling"	:	"Moling",
 	"Mudanjiang"	:	"Mudanjiang",
+	"Mukden"	:	"Mukden",
 	"Nara"		:	"Nailiang",
 	"Nanchang"	:	"Nanchang",
 	"Nanjing"	:	"Nanjing",
@@ -5473,6 +5501,7 @@ tRenames = (
 	"Vijaya"	:	"Qui Nhon",
 	"Samcheok"	:	"Sanzhi",
 	"Shanghai"	:	"Shanghai",
+	"Shengjing"	:	"Shengjing"
 	"Shenyang"	:	"Shenyang",
 	"Seoul"		:	"Shouer",
 	"Matsuyama"	:	"Songshan",
@@ -5488,6 +5517,7 @@ tRenames = (
 	"Seattle"	:	"Xi Yatu",
 	"Xi'an"		:	"Xi'an",
 	"Hong Kong"	:	"Xianggang",
+	"Xianyang"	:	"Xianyang",
 	"Sendai"	:	"Xiantai",
 	"Hamhung"	:	"Xianxing",
 	"Saigon"	:	"Xigong",
@@ -5495,6 +5525,7 @@ tRenames = (
 	"Tumasik"	:	"Xinjiapo",
 	"Xingwang"	:	"Xingwang",
 	"Niigata"	:	"Xinxi",
+	"Yanjing"	:	"Yanjing",
 	"Yangon"	:	"Yangguang",
 	"Yingtian"	:	"Yingtian",
 	"Wonsan"	:	"Yuanshan",
@@ -5506,6 +5537,8 @@ tRenames = (
 {
 	"Pataliputra"	:	"Gron Kyer Me Tog",
 	"Patna"		:	"Gron Kyer Me Tog",
+	"Lhasa"		:	"Lhasa",
+	"Qamdo"		:	"Qamdo",
 	"Rasa"		:	"Rasa",
 },
 #Language: Babylonian
@@ -7242,6 +7275,8 @@ tRenames = (
 	"Irkutsk"	:	"Erkh&#252;&#252;",
 	"Hailaer"	:	"Hulun",
 	"Beijing"	:	"Khanbaliq",
+	"Beiping"	:	"Khanbaliq",
+	"Jingshi"	:	"Khanbaliq",
 	"Zhongdu"	:	"Khanbaliq",
 	"Kulsary"	:	"Kulsary",
 	"Shenyang"	:	"Mukden",
