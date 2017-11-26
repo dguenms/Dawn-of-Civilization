@@ -7949,10 +7949,23 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 		bool bOnlyBonus = (iChange == 0 || (iNumBonuses == 0 && iChange == 1) || (iNumBonuses == 1 && iChange == -1));
 		bool bStrategic = false;
 
+		// Leoreth: scale with number of cities
+		int iNumCities = std::max(getNumCities(), 1);
+		int iNumCitiesThreshold = 5;
+		int iBonusEffectValue = 0;
+
 		if (!GET_TEAM(getTeam()).isBonusObsolete(eBonus))
 		{
-			//iValue += (GC.getBonusInfo(eBonus).getHappiness() * 100);
-			//iValue += (GC.getBonusInfo(eBonus).getHealth() * 100);
+			iBonusEffectValue += (GC.getBonusInfo(eBonus).getHappiness() * 100);
+			iBonusEffectValue += (GC.getBonusInfo(eBonus).getHealth() * 100);
+
+			if (iNumCities > iNumCitiesThreshold)
+			{
+				iBonusEffectValue *= 100 + (iNumCities - iNumCitiesThreshold) * 20;
+				iBonusEffectValue /= 100;
+			}
+
+			iValue += iBonusEffectValue;
 
 			CvTeam& kTeam = GET_TEAM(getTeam());
 
@@ -8286,25 +8299,26 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			//	}
 
 			// Leoreth: value more because happiness/health now scale better
-			//iValue /= 10;
+			iValue /= 10;
 		}
 
 		// Leoreth: apply change
 		iValue *= iChange;
 
 		// Leoreth: weigh by number of cities
-		int iNumCities = std::max(getNumCities(), 1);
+		//int iNumCities = std::max(getNumCities(), 1);
+
 
 		// Leoreth: actual gain from bonuses
-		if (bOnlyBonus)
+		/*if (bOnlyBonus)
 		{
 			iValue += 100 * AI_bonusHappinessVal(eBonus, iChange) / iNumCities;
 			iValue += 50 * AI_bonusHealthVal(eBonus, iChange) / iNumCities;
-		}
+		}*/
 
 		// Leoreth: scale with gold value
-		iValue *= 2;
-		iValue /= 5;
+		//iValue *= 2;
+		//iValue /= 5;
 
 		//clamp value non-negative
 		m_aiBonusValue[eBonus] = iChange * std::max(0, iChange * iValue);
