@@ -190,7 +190,7 @@ def onCityAcquired(city, iNewOwner):
 	if sOldName == "Inbhir Nis" and iNewOwner != iCeltia: sNewName = "Inverness"
 	elif sOldName == "D&#249;n &#200;ideann" and iNewOwner != iCelta: sNewName = "Edinburgh"
 	elif sOldName in ["Aquincum", "Ak Ink"] and iNewOwner not in [iRome, iTurkey]: sNewName = "Buda"
-	elif sOldName in ["Takao", "Gaoxiong"] and iNewOwner >= iNumPlayers: sNewName = "Kaohsiung"
+	
 	elif sOldName == "Momba&#231;a" and iNewOwner != iPortugal: sNewName = "Mombasa"
 	elif sOldName == "Mo&#231;ambique" and iNewOwner != iPortugal: sNewName = "Mozambique"
 	elif sOldName == "Toranaro" and iNewOwner not in [iJapan, iFrance]: sNewName = "Tolanaro"
@@ -199,11 +199,29 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == "Singidunon" and iNewOwner != iByzantium: sNewName = "Belgrad"
 	elif sOldName == "York" and iNewOwner == iCanada and city.getRegionID() == rCanada: sNewName = "Toronto"
 	elif sOldName == "Prey Nokor": sNewName = "Saigon"
-	elif sOldName in ["B&#252;kres", "Bukharest"] and iNewOwner >= iNumPlayers: sNewName = "Bucuresti"
-	elif sOldName in ["Laibach", "Lubiana", "Lyublyana"] and iNewOwner >= iNumPlayers: sNewName = "Ljubljana"
-	elif sOldName in ["Bosna Saraj", "Sarajewo", "Sarayevo"] and iNewOwner >= iNumPlayers: sNewName = "Sarajevo"
-	elif sOldName in ["Belgrad", "Belgrade", "Belgrado", "Singidun", "Singidunon", "Singidunum"] and iNewOwner >= iNumPlayers: sNewName = "Belgrad"
-	elif sOldName == "Bathurst" and iNewOwner >= iNumPlayers: sNewName = "Banjul"
+	elif iNewOwner >= iNumPlayers: #names for newly-independent cities
+		if sOldName in ["Takao", "Gaoxiong"]: sNewName = "Kaohsiung"
+		elif sOldName in ["B&#252;kres", "Bukharest"]: sNewName = "Bucuresti"
+		elif sOldName in ["Laibach", "Lubiana", "Lyublyana"]: sNewName = "Ljubljana"
+		elif sOldName in ["Bosna Saraj", "Sarajewo", "Sarayevo"]: sNewName = "Sarajevo"
+		elif sOldName in ["Belgrad", "Belgrade", "Belgrado", "Singidun", "Singidunon", "Singidunum"]: sNewName = "Beograd"
+		elif sOldName == "Bathurst": sNewName = "Banjul"
+		elif sOldName == "Aktyubinsk": sNewName = "Aq'tobe"
+		elif sOldName == "Gur'yev": sNewName = "Atyrau"
+		elif sOldName == "Melovoye": sNewName = "Aktau"
+		elif sOldName == "Kul'sary": sNewName = "Qulsary"
+		elif sOldName == "Kungrad": sNewName = "Qo'ng'irot"
+		elif sOldName == "Krasnovodsk": sNewName = "Kyzyl-Su"
+		elif sOldName == "Ashkhabad": sNewName = "Ashgabat"
+		elif sOldName == "Karshi": sNewName = "Qarshi"
+		elif sOldName == "Petropavlovsk": sNewName = "Petropavl"
+		elif sOldName == "Semipalatinsk": sNewName = "Semey"
+		elif sOldName == "Ust'-Kamenogorsk": sNewName = "Oskemen"
+		elif sOldName in ["Dyushambe", "Stalinabad"]: sNewName = "Dushanbe"
+		elif sOldName in ["Pishpek", "Frunze"]: sNewName = "Bishkek"
+		elif sOldName in ["Akmolinsk", "Tselinograd"]: sNewName = "Astana"
+		elif sOldName in ["Nikolayevsk", "Kustanay"]: sNewName = "Qostanai'"
+		elif sOldName in ["Verniy", "Alma-Ata"]: sNewName = "Almaty"
 	
 	if sNewName:
 		city.setName(sNewName, False)
@@ -259,11 +277,11 @@ tEraNames = (
 	"Chang'an"		:	"Xi'an", #done
 	"Zhongdu"		:	"Beijing", #fix
 	"Indraprastha"		:	"Dilli", #done
-	"Shencheng"		:	"Huating", #test
+	"Shencheng"		:	"Huating", #done
 },
 # renaissance
 {
-	"Huating"		:	"Shanghai", #test
+	"Huating"		:	"Shanghai", #done
 	"Rasa"			:	"Lhasa", #done
 	"Golkonda"		:	"Hyderabad", #done
 	"Susha"			:	"Shush", #check
@@ -315,6 +333,7 @@ tEraNames = (
 	"Brzesc Litewski"	:	"Brzesc nad Bugiem", #debug
 	"Reval"			:	"Tallinn", #check
 	"Novonikolayevsk"	:	"Novosibirsk", #done
+	"Verniy"		:	"Almarikh", #done
 },
 # future
 {},
@@ -3139,6 +3158,8 @@ dIdentifiers = {
 	"Aksehir"			:	"Aksehir",
 	"Antiochia Pisidiae"		:	"Aksehir",
 	"Antiokeia tes Pisidias"	:	"Aksehir",
+	"Aktau"				:	"Aktau",
+	"Melovoye"			:	"Aktau",
 	"Alba Iulia"			:	"Alba Iulia",
 	"Apulon"			:	"Alba Iulia",
 	"Apulum"			:	"Alba Iulia",
@@ -3180,6 +3201,7 @@ dIdentifiers = {
 	"Lazkiye"			:	"Al-Ladhiqiyah",
 	"Alma-Ata"			:	"Almarikh",
 	"Almarikh"			:	"Almarikh",
+	"Almaty"			:	"Almarikh",
 	"Al-Mariyya"			:	"Almer&#237;a",
 	"Almer&#237;a"			:	"Almer&#237;a",
 	"Al-Qahirah"			:	"Al-Qahirah",
@@ -3240,6 +3262,8 @@ dIdentifiers = {
 	"Aomen"				:	"Aomen",
 	"Aomori"			:	"Aomori",
 	"Qingsen"			:	"Aomori",
+	"Aktyubinsk"			:	"Aq'tobe",
+	"Aq'tobe"			:	"Aq'tobe",
 	"Agley"				:	"Aquileia",
 	"Akvileya"			:	"Aquileia",
 	"Akylis"			:	"Aquileia",
@@ -3257,6 +3281,8 @@ dIdentifiers = {
 	"Arkhangel'sk"			:	"Arkhangel'sk",
 	"Artashat"			:	"Artashat",
 	"Artaxata"			:	"Artashat",
+	"Ashgabat"			:	"Ashgabat",
+	"Ashkhabad"			:	"Ashgabat",
 	"Astorga"			:	"Astorga",
 	"Asturica Augusta"		:	"Astorga",
 	"Astrachan"			:	"Astrakhan",
@@ -3284,6 +3310,8 @@ dIdentifiers = {
 	"Antalya"			:	"Attaleia",
 	"Attalea"			:	"Attaleia",
 	"Attaleia"			:	"Attaleia",
+	"Atyrau"			:	"Atyrau",
+	"Gur'yev"			:	"Atyrau",
 	"Danni B&#225;a"		:	"Atzompan",
 	"Augsburg"			:	"Augsburg",
 	"Augusta Vindelicorum"		:	"Augsburg",
@@ -3627,6 +3655,8 @@ dIdentifiers = {
 	"Durostorum"			:	"Durostulon",
 	"Durostulon"			:	"Durostulon",
 	"Silistre"			:	"Durostulon",
+	"Dushanbe"			:	"Dushanbe",
+	"Dyushambe"			:	"Dushanbe",
 	"Dabil"				:	"Dvin",
 	"Dousios"			:	"Dvin",
 	"Dvin"				:	"Dvin",
@@ -3947,6 +3977,8 @@ dIdentifiers = {
 	"Kalhu"				:	"Kalhu",
 	"Nimrud"			:	"Kalhu",
 	"Kanchipuram"			:	"Kanchipuram",
+	"Karshi"			:	"Karshi",
+	"Qarshi"			:	"Karshi",
 	"Cajamarca"			:	"Kashamarka",
 	"Kashamarka"			:	"Kashamarka",
 	"Cassel"			:	"Kassel",
@@ -4026,9 +4058,11 @@ dIdentifiers = {
 	"Krivoshchekovskaya"		:	"Krivoshchekovskaya",
 	"Kulsary"			:	"Kulsary",
 	"Kul'sary"			:	"Kulsary",
+	"Qulsary"			:	"Kulsary",
 	"Kumma"				:	"Kumma",
 	"Semna"				:	"Kumma",
 	"Kungrad"			:	"Kungrad",
+	"Qo'ng'irot"			:	"Kungrad",
 	"Konmei"			:	"Kunming",
 	"Kunming"			:	"Kunming",
 	"Kurgan"			:	"Kurgan",
@@ -4036,6 +4070,7 @@ dIdentifiers = {
 	"Kushiro"			:	"Kushiro",
 	"Kusiro"			:	"Kushiro",
 	"Kustanay"			:	"Kustanay",
+	"Qostanai'"			:	"Kustanay",
 	"K&#246;nug&#229;rd"		:	"Kyiv",
 	"Kiev"				:	"Kyiv",
 	"Kiew"				:	"Kyiv",
@@ -4049,6 +4084,8 @@ dIdentifiers = {
 	"Cyrene"			:	"Kyrene",
 	"Kyrene"			:	"Kyrene",
 	"Shahat"			:	"Kyrene",
+	"Krasnovodsk"			:	"Kyzyl-Su",
+	"Kyzyl-Su"			:	"Kyzyl-Su",
 	"L&#252;beck"			:	"L&#252;beck",
 	"Lubeka"			:	"L&#252;beck",
 	"Corunha"			:	"La Coru&#241;a",
@@ -4415,6 +4452,8 @@ dIdentifiers = {
 	"Cenabum Aureliani"		:	"Orl&#233;ans",
 	"Orl&#233;ans"			:	"Orl&#233;ans",
 	"Orlean"			:	"Orl&#233;ans",
+	"Oskemen"			:	"Oskemen",
+	"Ust'-Kamenogorsk"		:	"Oskemen",
 	"Fort Christiansborg"		:	"Osu",
 	"Osu"				:	"Osu",
 	"Korsakov"			:	"Otomari",
@@ -4495,6 +4534,8 @@ dIdentifiers = {
 	"Purushapura"			:	"Peshawar",
 	"Pel"				:	"Petra",
 	"Petra"				:	"Petra",
+	"Petropavlovsk"			:	"Petropavlovsk",
+	"Petropavl"			:	"Petropavlovsk",
 	"Filadelfia"			:	"Philadelphia",
 	"Fort Beversreede"		:	"Philadelphia",
 	"Philadelphia"			:	"Philadelphia",
@@ -4758,6 +4799,8 @@ dIdentifiers = {
 	"Shiatoru"			:	"Seattle",
 	"Siehtl"			:	"Seattle",
 	"Xi Yatu"			:	"Seattle",
+	"Semipalatinsk"			:	"Semey",
+	"Semey"				:	"Semey",
 	"Sendai"			:	"Sendai",
 	"Xiantai"			:	"Sendai",
 	"Baishan"			:	"Seogyeong",
@@ -5447,6 +5490,7 @@ tRenames = (
 #Language: Persian
 {
 	"Ahmedabad"		:	"Ahmedabad",
+	"Verniy"		:	"Almarikh",
 	"Ankuwash"		:	"Angora",
 	"Pataliputra"		:	"Azimabad",
 	"Patna"			:	"Azimabad",
@@ -5642,6 +5686,7 @@ tRenames = (
 	"K&#246;ln"		:	"Colonia Agrippina",
 	"Byzantion"		:	"Constantinopolis",
 	"Constantinopolis"	:	"Constantinopolis",
+	"Istanbul"		:	"Constantinopolis",
 	"Korinthos"		:	"Corinthus",
 	"Krak&#243;w"		:	"Cracovia",
 	"Kyrene"		:	"Cyrene",
@@ -6698,6 +6743,7 @@ tRenames = (
 	"Almarikh"		:	"Alma-Ata",
 	"Arkhangel'sk"		:	"Arkhangel'sk",
 	"Artashat"		:	"Artashat",
+	"Ashgabat"		:	"Ashkhabad",
 	"Astrakhan"		:	"Astrakhan'",
 	"Beograd"		:	"Belgrad",
 	"Berlin"		:	"Berlin",
@@ -6712,6 +6758,7 @@ tRenames = (
 	"Durostulon"		:	"Drastar",
 	"Dubrovnik"		:	"Dubrovnik",
 	"Dvin"			:	"Dvin",
+	"Dushanbe"		:	"Dyushambe",
 	"Pokrovsk"		:	"Engels",
 	"Kefe"			:	"Feodosiya",
 	"Frankfurt"		:	"Frankfurt",
@@ -6723,6 +6770,7 @@ tRenames = (
 	"Kagoshima"		:	"Kagosima",
 	"Kakolewo"		:	"Kakolewo",
 	"Qara Qorum"		:	"Karakorum",
+	"Karshi"		:	"Karshi",
 	"Kaunas"		:	"Kaunas",
 	"Qazan"			:	"Kazan'",
 	"Khabarovsk"		:	"Khabarovsk",
@@ -6738,6 +6786,7 @@ tRenames = (
 	"Otomari"		:	"Korsakov",
 	"Kowno"			:	"Kovno",
 	"Krak&#243;w"		:	"Krakov",
+	"Kyzyl-Su"		:	"Krasnovodsk",
 	"Krasnyy Kholm"		:	"Krasnyy Kholm",
 	"Fort Ross"		:	"Krepost' Ross",
 	"Kulsary"		:	"Kul'sary",
@@ -6749,6 +6798,7 @@ tRenames = (
 	"Ljubljana"		:	"Lyublyana",
 	"Katharinenstadt"	:	"Marx",
 	"Tenochtitl&#225;n"	:	"Mekhiko",
+	"Aktau"			:	"Melovoye",
 	"Halbstadt"		:	"Molochansk",
 	"Moskva"		:	"Moskva",
 	"Mudanjiang"		:	"Mudan'tszyan",
@@ -6764,6 +6814,7 @@ tRenames = (
 	"New York"		:	"N'yu-York",
 	"Paslek"		:	"Paslek",
 	"Beijing"		:	"Pekin",
+	"Petropavlovsk"		:	"Petropavlovsk",
 	"Pyongyang"		:	"Pkhen'yan",
 	"Plock"			:	"Plotsk",
 	"Philippopolis"		:	"Plovdiv",
@@ -6779,6 +6830,7 @@ tRenames = (
 	"Sankt-Peterburg"	:	"Sankt-Peterburg",
 	"Saratov"		:	"Saratov",
 	"Sarajevo"		:	"Sarayevo",
+	"Semey"			:	"Semipalatinsk",
 	"Szczecin"		:	"Shchetsin",
 	"Shirokolanovka"	:	"Shirokolanovka",
 	"Seattle"		:	"Siehtl",
@@ -6803,6 +6855,7 @@ tRenames = (
 	"Tver'"			:	"Tver'",
 	"Ufa"			:	"Ufa",
 	"Ulaan-Ude"		:	"Ulan-Udeh",
+	"Oskemen"		:	"Ust'-Kamenogorsk",
 	"Vancouver"		:	"Vankuver",
 	"Odessos"		:	"Varna",
 	"Warszawa"		:	"Varshava",
