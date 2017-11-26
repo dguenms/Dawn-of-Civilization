@@ -1662,6 +1662,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	bRecapture = ((eHighestCulturePlayer != NO_PLAYER) ? (GET_PLAYER(eHighestCulturePlayer).getTeam() == getTeam()) : false);
 
+	// Leoreth: peaceful acquisition of minor cities makes original owner
+	if (!bConquest && (GET_PLAYER(pOldCity->getOwnerINLINE()).isMinorCiv() || GET_PLAYER(pOldCity->getOwnerINLINE()).isBarbarian()))
+	{
+		eOriginalOwner = getID();
+	}
+
 	pOldCity->kill(false);
 
 	if (bTrade)
