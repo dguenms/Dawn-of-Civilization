@@ -232,7 +232,7 @@ def onCityAcquired(city, iNewOwner):
 		city.setName(sNewName, False)
 	
 dCommunistNames = {
-	"Pishpek"		:	"Frunze"
+	"Pishpek"		:	"Frunze",
 	"Syangan"		:	"Gon Kong",
 	"Nizhniy Novgorod"	:	"Gorkiy",
 	"Tver'"			:	"Kalinin",
