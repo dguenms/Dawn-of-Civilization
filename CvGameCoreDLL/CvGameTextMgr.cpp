@@ -20898,5 +20898,5 @@ void CvGameTextMgr::parseMinorReligionHelp(CvWStringBuffer &szBuffer, Civilizati
 		szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
 	}
 
-	szBuffer.append(CvWString::format(SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szPaganReligionName));
+	szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szPaganReligionName, gDLL->getText("TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM").c_str()));
 }

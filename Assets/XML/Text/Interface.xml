@@ -1824,4 +1824,9 @@
 		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture Level</English>
 		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] durch Kulturstufe</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM</Tag>
+		<English>Pagan Religion</English>
+		<German>Heidnische Religion</German>
+	</TEXT>
 </Civ4GameText>
