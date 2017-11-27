@@ -38341,7 +38341,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=1, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=1, (China)

@@ -42855,19 +42855,13 @@ BeginPlot
 		UnitType=UNIT_HORSE_ARCHER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LIGHT_SWORDSMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_HEAVY_SWORDSMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LIGHT_SWORDSMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LIGHT_SWORDSMAN, UnitOwner=12, (Korea)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=12, (Korea)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=12, (Korea)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CONFUCIAN_MISSIONARY, UnitOwner=12, (Korea)
