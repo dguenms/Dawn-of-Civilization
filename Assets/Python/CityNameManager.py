@@ -172,9 +172,21 @@ def onCityBuilt(city):
 	y = city.getY()
 	
 	sNewName = getFoundName(iOwner, (x,y))
+
+	if sNewName:
+		iCurrentEra = gc.getPlayer(iOwner).getCurrentEra()
+		sUpdatedName = sNewName
+		for iEra in range(0, iCurrentEra+1):
+			sIdentifier = getIdentifier(sUpdatedName)
+			if not sIdentifier: continue
+			
+			if sIdentifier == "York" and city.getRegionID() == rBritain: break # do not rename English York
+			sNewIdentifier = getEraIdentifier(sIdentifier, iEra)
+			if not sNewIdentifier: continue
 	
-	if sNewName: 
-		city.setName(sNewName, False)
+			sUpdatedName = getRenameName(iOwner, sNewIdentifier)
+
+		city.setName(sUpdatedName, False)
 		return
 		
 	sNewName = getNativeName(iOwner, (x,y))
@@ -229,7 +241,12 @@ def onCityAcquired(city, iNewOwner):
 	sNewName = getRenameName(iNewOwner, sOldName)
 	
 	if sNewName:
-		city.setName(sNewName, False)
+		iCurrentEra = gc.getPlayer(iNewOwner).getCurrentEra()
+		sUpdatedName = sNewName
+		for iEra in range(0, iCurrentEra+1):
+			sNewName = getEraRename(city, iNewOwner, iEra)
+			if sNewName: sUpdatedName = sNewName
+		city.setName(sUpdatedName, False)
 	
 dCommunistNames = {
 	"Pishpek"		:	"Frunze",
@@ -364,10 +381,21 @@ tEraNames = (
 {},
 )
 
-def getEraRename(sName, iEra):
+def getEraIdentifier(sName, iEra):
 	if sName in tEraNames[iEra]:
 		return tEraNames[iEra][sName]
 	return None
+
+def getEraRename(city, iCiv, iEra):
+	sIdentifier = getIdentifier(city.getName())
+	if not sIdentifier: return None
+			
+	if sIdentifier == "York" and city.getRegionID() == rBritain: return None # do not rename English York
+		
+	sNewIdentifier = getEraIdentifier(sIdentifier, iEra)
+	if not sNewIdentifier: return None
+	
+	return getRenameName(iCiv, sNewIdentifier)
 			
 def onTechAcquired(iCiv):
 	pCiv = gc.getPlayer(iCiv)
@@ -377,15 +405,7 @@ def onTechAcquired(iCiv):
 	
 	for iEra in range(pCiv.getCurrentEra()+1):
 		for city in lCities:
-			sIdentifier = getIdentifier(city.getName())
-			if not sIdentifier: continue
-			
-			if sIdentifier == "York" and city.getRegionID() == rBritain: continue # do not rename English York
-		
-			sNewIdentifier = getEraRename(sIdentifier, iEra)
-			if not sNewIdentifier: continue
-			
-			sNewName = getRenameName(iCiv, sNewIdentifier)
+			sNewName = getEraRename(city, iCiv, iEra)
 			if sNewName: city.setName(sNewName, False)
 				
 def onReligionSpread(iReligion, iCiv, city):
