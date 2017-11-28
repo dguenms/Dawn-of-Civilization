@@ -188,7 +188,7 @@ def onCityBuilt(city):
 			sUpdatedName = getRenameName(iOwner, sNewIdentifier)
 
 		if pOwner.getCivics(iCivicsEconomy) == iCentralPlanning:
-			if sUpdatedName in dCommunistNames: sUpdatedName = dCommunistNames[sName]
+			if sUpdatedName in dCommunistNames: sUpdatedName = dCommunistNames[sUpdatedName]
 
 		city.setName(sUpdatedName, False)
 		return
@@ -255,7 +255,7 @@ def onCityAcquired(city, iNewOwner):
 			sNewName = getEraRename(city, iNewOwner, iEra)
 			if sNewName: sUpdatedName = sNewName
 		if pNewOwner.getCivics(iCivicsEconomy) == iCentralPlanning:
-			if sUpdatedName in dCommunistNames: sUpdatedName = dCommunistNames[sName]
+			if sUpdatedName in dCommunistNames: sUpdatedName = dCommunistNames[sUpdatedName]
 		city.setName(sUpdatedName, False)
 	
 dCommunistNames = {
