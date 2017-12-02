@@ -463,7 +463,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	AttitudePlayer=16, AttitudeExtra=-2, (Vikings)
 	AttitudePlayer=35, AttitudeExtra=-4, (Turkey)
 	Handicap=HANDICAP_REGENT
@@ -4864,7 +4863,6 @@ BeginPlot
 	x=11,y=46
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -4874,7 +4872,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -4882,7 +4879,6 @@ BeginPlot
 	x=11,y=48
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -20672,7 +20668,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=30
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,22,24,29,38,45,
 EndPlot
@@ -21095,7 +21091,7 @@ BeginPlot
 	x=49,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,22,24,29,38,45,
 EndPlot
@@ -21607,7 +21603,10 @@ BeginPlot
 	x=50,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	BonusType=BONUS_GOLD
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=23,44,45,
 EndPlot
@@ -21641,7 +21640,7 @@ BeginPlot
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=22,22,29,44,45,
 EndPlot
@@ -22007,7 +22006,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=28
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_GOLD
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=22,24,38,44,45,
 EndPlot
@@ -22019,6 +22022,12 @@ BeginPlot
 	isWOfRiver
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+	TeamReveal=38,44,45,
+EndPlot
+BeginPlot
+	x=51,y=30
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
@@ -22037,12 +22046,6 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player45Culture=100, (Independent2)
 	EndCity
-	TeamReveal=38,44,45,
-EndPlot
-BeginPlot
-	x=51,y=30
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
 	TeamReveal=38,44,45,
 EndPlot
 BeginPlot
@@ -22077,7 +22080,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=36
-	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=24,29,38,44,
@@ -22541,14 +22543,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=31
+	RiverNSDirection=0
+	isWOfRiver
 	BonusType=BONUS_CAMEL
 	ImprovementType=IMPROVEMENT_PASTURE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=52,y=32
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=45,
@@ -23043,6 +23049,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=28
+	isWOfRiver
+	RiverNSDirection=2
 	BonusType=BONUS_GOLD
 	ImprovementType=IMPROVEMENT_MINE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
@@ -23059,6 +23067,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=30
+	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -23066,10 +23077,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=31
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+	TeamReveal=45,
+EndPlot
+BeginPlot
+	x=53,y=32
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
@@ -23097,15 +23115,6 @@ BeginPlot
 	TeamReveal=45,
 EndPlot
 BeginPlot
-	x=53,y=32
-	BonusType=BONUS_COTTON
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
-	TeamReveal=45,
-EndPlot
-BeginPlot
 	x=53,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -23113,6 +23122,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=34
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -23634,6 +23644,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=27
+	isWOfRiver
+	RiverNSDirection=2
 	BonusType=BONUS_IVORY
 	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
@@ -23643,6 +23655,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=28
+	isWOfRiver
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23650,7 +23666,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=29
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=38,45,
@@ -23665,8 +23680,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=31
-	isNOfRiver
-	RiverWEDirection=1
+	isWOfRiver
+	RiverNSDirection=2
 	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
@@ -23676,6 +23691,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=32
+	isNOfRiver
+	RiverWEDirection=1
+	BonusType=BONUS_COTTON
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -23735,7 +23756,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=Wahran
+		CityName=Vahran
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -23911,7 +23932,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=61
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,44,45,
 EndPlot
@@ -24102,7 +24123,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=28
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=3
 	TeamReveal=38,45,
 EndPlot
@@ -24135,15 +24157,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=32
-	BonusType=BONUS_STONE
-	ImprovementType=IMPROVEMENT_QUARRY
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=55,y=33
+	BonusType=BONUS_STONE
+	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -24168,8 +24191,6 @@ EndPlot
 BeginPlot
 	x=55,y=37
 	BonusType=BONUS_MARBLE
-	ImprovementType=IMPROVEMENT_QUARRY
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=35,44,
@@ -24451,7 +24472,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=60
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,38,39,44,45,
 EndPlot
@@ -24651,9 +24672,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=28
-	BonusType=BONUS_IVORY
-	ImprovementType=IMPROVEMENT_CAMP
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=29,38,44,45,
@@ -24662,9 +24680,17 @@ BeginPlot
 	x=56,y=29
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	TeamReveal=38,44,45,
+EndPlot
+BeginPlot
+	x=56,y=30
+	isNOfRiver
+	RiverWEDirection=1
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
@@ -24683,13 +24709,6 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player45Culture=100, (Independent2)
 	EndCity
-	TeamReveal=38,44,45,
-EndPlot
-BeginPlot
-	x=56,y=30
-	isNOfRiver
-	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -24703,6 +24722,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=32
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=44,45,
@@ -24920,25 +24942,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=59
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,39,44,
 EndPlot
 BeginPlot
 	x=56,y=60
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,39,44,
 EndPlot
 BeginPlot
 	x=56,y=61
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,44,
 EndPlot
 BeginPlot
 	x=56,y=62
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,44,
 EndPlot
@@ -25434,7 +25456,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=63
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,44,
 EndPlot
@@ -25897,7 +25919,7 @@ EndPlot
 BeginPlot
 	x=58,y=63
 	BonusType=BONUS_OIL
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,24,44,
 EndPlot
@@ -26089,7 +26111,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
-		CityName=Lagos
+		CityName=Lago de Curamo
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -26499,7 +26521,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=44,
 EndPlot
@@ -27567,7 +27589,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,44,
 EndPlot
@@ -31760,7 +31782,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=El-Uqsur
+		CityName=Luksor
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -31802,7 +31824,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=El-Kahire
+		CityName=Kahire
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -32099,7 +32121,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -32567,7 +32589,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -33068,20 +33090,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=71,y=66
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=71,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -33528,7 +33550,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Arkhangelsk
+		CityName=Arkhangel'sk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -33557,26 +33579,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=16,26,
 EndPlot
 BeginPlot
 	x=72,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=72,y=66
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=72,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -34134,25 +34156,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=73,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=73,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=73,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -34669,26 +34691,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=74,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=74,y=66
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=74,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -35176,7 +35198,7 @@ EndPlot
 BeginPlot
 	x=75,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -35889,7 +35911,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=Baghdad
+		CityName=Bagdat
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -36990,7 +37012,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
@@ -37403,7 +37425,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Obdorsk
+		CityName=Vorkuta
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -37429,7 +37451,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=26,
 EndPlot
@@ -37859,7 +37881,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Ekaterinburg
+		CityName=Yekaterinburg
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -41506,7 +41528,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Tomsk
+		CityName=Tara
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -46445,7 +46467,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Xi'an
+		CityName=Chang'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -47555,7 +47577,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Beijing
+		CityName=Jingshi
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -49038,7 +49060,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Shenyang
+		CityName=Shengjing
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
@@ -49976,7 +49998,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=44, (China)
-		CityName=Qiqihar
+		CityName=Qiqihaer
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
