@@ -798,3 +798,11 @@ class CvRFCEventHandler:
 			
 		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl and CyGame().GetWorldBuilderMode():
 			utils.removeStabilityOverlay() # Remove AI forbidden area overlay when exiting WB by ctrl+w
+			
+		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_V) and self.eventManager.bCtrl and self.eventManager.bShift:
+			for iPlayer in range(iNumTotalPlayersB):
+				print (str(gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getShortDescription(0)))
+				for iUnit in range(iNumUnits):
+					print (str(gc.getUnitInfo(iUnit).getDescription()))
+					utils.makeUnit(iUnit, iPlayer, (68, 33), 1)
+					gc.getMap().plot(68, 33).getUnit(0).kill(False, iBarbarian)
