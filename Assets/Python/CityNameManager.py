@@ -399,8 +399,8 @@ tEraNames = (
 	"Pelousion"		:	"Bur Sa'id",
 	"L&#252;shun"		:	"Dalian",
 	"Shengjing"		:	"Fengtian",
-	"Fiorenza"		:	"Firenze", #check
-	"Dagou"			:	"Gaoxiong", #check
+	"Fiorenza"		:	"Firenze",
+	"Dagou"			:	"Gaoxiong",
 	"Constantinopolis"	:	"Istanbul",
 	"Yingtian"		:	"Jiangning",
 	"Meizhou"		:	"Jiaying",
@@ -3260,6 +3260,8 @@ dIdentifiers = {
 	"Abdju"				:	"Abdju",
 	"Abydos"			:	"Abdju",
 	"Arabet"			:	"Abdju",
+	"Ad-Dakhla"			:	"Ad-Dakhla",
+	"Villa Cisneros"		:	"Ad-Dakhla",
 	"Adiacium"			:	"Adiacium",
 	"Adiacum"			:	"Adiacium",
 	"Ajaccio"			:	"Adiacium",
@@ -5025,11 +5027,8 @@ dIdentifiers = {
 	"Compositella"			:	"Santiago de Compostela",
 	"Sant Yaqub"			:	"Santiago de Compostela",
 	"Santiago de Compostela"	:	"Santiago de Compostela",
-	"Ad-Dakhla"			:	"Santo Domingo", #check this
-	"Dakhla"			:	"Santo Domingo",
 	"Saint-Domingue"		:	"Santo Domingo",
 	"Santo Domingo"			:	"Santo Domingo",
-	"Villa Cisneros"		:	"Santo Domingo",
 	"Sapporo"			:	"Sapporo",
 	"Zahuang"			:	"Sapporo",
 	"Bosna Saraj"			:	"Sarajevo",
@@ -6467,6 +6466,7 @@ tRenames = (
 },
 #Language: Arabian
 {
+	"Ad-Dakhla"			:	"Ad-Dakhla",
         "Casablanca"                    :       "Ad-Dar al-Bayda",
 	"Akka"				:	"Akka",
 	"Psoi"				:	"Al Manshah",
@@ -6766,6 +6766,7 @@ tRenames = (
 	"Valencia"			:	"Valencia",
 	"Venezuela"			:	"Venezuela",
 	"Willkapampa"			:	"Vilcabamba",
+	"Ad-Dakhla"			:	"Villa Cisneros",
 	"Lle Cul"			:	"Villa La Angostura",
 	"Zaragoza"			:	"Zaragoza",
 },
