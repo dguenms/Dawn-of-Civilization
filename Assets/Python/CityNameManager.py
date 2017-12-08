@@ -136,7 +136,17 @@ def getRenameName(iCiv, sName):
 	
 	sIdentifier = getIdentifier(sName)
 	if not sIdentifier: return None
-	
+
+	if sIdentifier in ["Yerushalayim", "Kang-e Dozhuxt", "Al-Quds"]:
+		iReligion=gc.getPlayer(iCiv).getStateReligion()
+		if iCiv == iPersia:
+			if iReligion == iIslam: sIdentifier = "Al-Quds"
+			elif iReligion == iZoroastrianism: sIdentifier = "Kang-e Dozhuxt"
+			else: sIdentifier = "Yerushalayim"
+		elif iCiv == iRome:
+			if iReligion > -1: sIdentifier = "Al-Quds"
+			else: sIdentifier = "Yerushalayim"
+
 	for iLanguage in tLanguages:
 		if sIdentifier in tRenames[iLanguage]:
 			return tRenames[iLanguage][sIdentifier]
@@ -177,6 +187,16 @@ def onCityBuilt(city):
 		pOwner = gc.getPlayer(iOwner)
 		iCurrentEra = pOwner.getCurrentEra()
 		sUpdatedName = sNewName
+
+		if getIdentifier(sNewName) in ["Yerushalayim", "Kang-e Dozhuxt", "Al-Quds"]:
+			if iOwner == iPersia:
+				if pOwner.getStateReligion() == iIslam: sUpdatedName = "Qods"
+				elif pOwner.getStateReligion() == iZoroastrianism: sUpdatedName = "Kang-e Dozhuxt"
+				else: sUpdatedName = "Yerushalayim"
+			elif iOwner == iRome:
+				if pOwner.getStateReligion() > -1: sUpdatedName = "Hierosolyma"
+				else: sUpdatedName = "Aelia Capitolina"
+
 		for iEra in range(iCurrentEra+1):
 			sIdentifier = getIdentifier(sUpdatedName)
 			if not sIdentifier: continue
@@ -493,6 +513,20 @@ def onTechAcquired(iCiv):
 		for city in lCities:
 			sNewName = getEraRename(city, iCiv, iEra)
 			if sNewName: city.setName(sNewName, False)
+
+def onPlayerChangeStateReligion(iPlayer, iReligion):
+
+	lCities = utils.getCityList(iPlayer)
+	for city in lCities:
+		if getIdentifier(city.getName()) in ["Yerushalayim", "Kang-e Dozhuxt", "Al-Quds"]:
+			if iPlayer == iPersia:
+				if iReligion == iIslam: city.setName("Qods", False)
+				elif iReligion == iZoroastrianism: city.setName("Kang-e Dozhuxt", False)
+				else: city.setName("Yerushalayim", False)
+			elif iPlayer == iRome:
+				if iReligion > -1: city.setName("Hierosolyma", False)
+				else: city.setName("Aelia Capitolina", False)
+			break
 				
 def onReligionSpread(iReligion, iCiv, city):
 
@@ -3348,6 +3382,16 @@ dIdentifiers = {
 	"Kair"				:	"Al-Qahirah",
 	"Kairo"				:	"Al-Qahirah",
 	"Le Caire"			:	"Al-Qahirah",
+	"Al-Quds"			:	"Al-Quds",
+	"Gerusalemme"			:	"Al-Quds",
+	"Hi&#233;rosolyme"		:	"Al-Quds",
+	"Hierosolyma"			:	"Al-Quds",
+	"Hierousalem"			:	"Al-Quds",
+	"Jerozolima"			:	"Al-Quds",
+	"Jerusalem"			:	"Al-Quds",
+	"Jorsala"			:	"Al-Quds",
+	"Kud&#252;s"			:	"Al-Quds",
+	"Qods"				:	"Al-Quds",
 	"Amasia"			:	"Amasia",
 	"Amasya"			:	"Amasia",
 	"Amasra"			:	"Amastris",
@@ -4192,6 +4236,7 @@ dIdentifiers = {
 	"Nimrud"			:	"Kalhu",
 	"Kaliningrad"			:	"Kaliningrad",
 	"Kanchipuram"			:	"Kanchipuram",
+	"Kang-e Dozhuxt"		:	"Kang-e Dozhuxt",
 	"Karshi"			:	"Karshi",
 	"Qarshi"			:	"Karshi",
 	"Cajamarca"			:	"Kashamarka",
@@ -5524,15 +5569,6 @@ dIdentifiers = {
 	"Yekaterinoslav"		:	"Yekaterinoslav",
 	"Aarru-Hetep"			:	"Yerushalayim",
 	"Aelia Capitolina"		:	"Yerushalayim",
-	"Al-Quds"			:	"Yerushalayim",
-	"Gerusalemme"			:	"Yerushalayim",
-	"Hi&#233;rosolyme"		:	"Yerushalayim",
-	"Hierousalem"			:	"Yerushalayim",
-	"Jerozolima"			:	"Yerushalayim",
-	"Jerusalem"			:	"Yerushalayim",
-	"Jorsala"			:	"Yerushalayim",
-	"Kud&#252;s"			:	"Yerushalayim",
-	"Qods"				:	"Yerushalayim",
 	"Urushalim"			:	"Yerushalayim",
 	"Yerushalayim"			:	"Yerushalayim",
 	"Yichang"			:	"Yichang",
@@ -5592,6 +5628,8 @@ tRenames = (
 #Language: Egyptian
 {
 	"Akka"		:	"Aak",
+	"Al-Quds"	:	"Aarru-Hetep",
+	"Kang-e Dozhuxt":	"Aarru-Hetep",
 	"Yerushalayim"	:	"Aarru-Hetep",
 	"Amunia"	:	"Amunia",
 	"Zula"		:	"Athel",
@@ -5889,6 +5927,8 @@ tRenames = (
 	"Sydwn"		:	"Siduna",
 	"Sur"		:	"Surru",
         "Tarsos"        :       "Tarsisi",
+	"Al-Quds"	:	"Urushalim",
+	"Kang-e Dozhuxt":	"Urushalim",
 	"Yerushalayim"	:	"Urushalim",
 },
 #Language: Persian
@@ -5910,12 +5950,13 @@ tRenames = (
 	"Roma"			:	"Hrwm",
 	"Hyderabad"		:	"Hyderabad",
 	"Jaisalmer"		:	"Jaisalmer",
+	"Kang-e Dozhuxt"	:	"Kang-e Dozhuxt",
 	"Kolachi"		:	"Kolachi",
 	"Lahore"		:	"Lahore",
 	"Multan"		:	"Multan",
 	"Pathragada"		:	"Pathragada",
 	"Peshawar"		:	"Peshawar",
-	"Yerushalayim"		:	"Qods",
+	"Al-Quds"		:	"Qods",
 	"Ragha"			:	"Ragha",
 	"Samarqand"		:	"Samarqand",
 	"Hekatompilos"		:	"Sauloe",
@@ -5927,6 +5968,7 @@ tRenames = (
 	"Tehran"		:	"Tehran",
 	"Tureng Tepe"		:	"Tureng Tepe",
 	"Udaipur"		:	"Udaipur",
+	"Yerushalayim"		:	"Yerushalayim",
 },
 #Language: Greek
 {
@@ -5967,6 +6009,8 @@ tRenames = (
 	"Per-Atum"		:	"Heliopolis",
 	"Khmun"			:	"Hermopolis",
 	"Nekhen"		:	"Hierakonpolis",
+	"Al-Quds"		:	"Hierousalem",
+	"Kang-e Dozhuxt"	:	"Hierousalem",
 	"Yerushalayim"		:	"Hierousalem",
         "Al-Jazair"             :       "Ikosion",
 	"Ilion"			:	"Ilion",
@@ -6131,6 +6175,7 @@ tRenames = (
 	"Herakleia"		:	"Heraklia",
 	"Khmun"			:	"Hermopolis",
 	"Nekhen"		:	"Hierakonpolis",
+	"Al-Quds"		:	"Hierosolyma",
 	"Annaba"		:	"Hippo Regius",
 	"Zadar"			:	"Iadera",
 	"Ikonion"		:	"Iconium",
@@ -6390,6 +6435,8 @@ tRenames = (
 	"Herakleia"		:	"Herakleia",
 	"Iraklion"		:	"Heraklion",
 	"Bangazi"		:	"Hesperides",
+	"Al-Quds"		:	"Hierousalem",
+	"Kang-e Dozhuxt"	:	"Hierousalem",
 	"Yerushalayim"		:	"Hierousalem",
 	"Ikonion"		:	"Ikonion",
 	"Ioannina"		:	"Ioannina",
@@ -6442,6 +6489,8 @@ tRenames = (
 	"Nowgorod"		:	"Holmg&#229;rd",
 	"Hong Kong"		:	"Hong Kong",
 	"York"			:	"J&#243;rvik",
+	"Al-Quds"		:	"Jorsala",
+	"Kang-e Dozhuxt"	:	"Jorsala",
 	"Yerushalayim"		:	"Jorsala",
 	"Kyiv"			:	"K&#246;nug&#229;rd",
 	"K&#248;benhavn"	:	"K&#248;benhavn",
@@ -6484,6 +6533,8 @@ tRenames = (
 	"Almer&#237;a"			:	"Al-Mariyya",
 	"Al-Qahirah"			:	"Al-Qahirah",
 	"Ineb Hedj"			:	"Al-Qahirah",
+	"Al-Quds"			:	"Al-Quds",
+	"Kang-e Dozhuxt"		:	"Al-Quds",
 	"Yerushalayim"			:	"Al-Quds",
 	"Taaou"				:	"Al-Qusayr",
 	"Urfa"				:	"Al-Ruha",
@@ -6842,6 +6893,8 @@ tRenames = (
 	"Hanoi"				:	"Hano&#239;",
 	"Hannover"			:	"Hanovre",
 	"Haithabu"			:	"Hedeby",
+	"Al-Quds"			:	"Hi&#233;rosolyme",
+	"Kang-e Dozhuxt"		:	"Hi&#233;rosolyme",
 	"Yerushalayim"			:	"Hi&#233;rosolyme",
 	"Hong Kong"			:	"Hong Kong",
 	"Likasi"			:	"Jadotville",
@@ -6987,6 +7040,8 @@ tRenames = (
 	"Hartford"		:	"Hartford",
 	"La Habana"		:	"Havana",
 	"Hong Kong"		:	"Hong Kong",
+	"Al-Quds"		:	"Jerusalem",
+	"Kang-e Dozhuxt"	:	"Jerusalem",
 	"Yerushalayim"		:	"Jerusalem",
 	"Kanchipuram"		:	"Kanchipuram",
 	"Kolachi"		:	"Karachi",
@@ -7105,6 +7160,8 @@ tRenames = (
 	"Helsinki"		:	"Helsinki",
 	"Hong Kong"		:	"Hong Kong",
 	"Yaounde"		:	"Jaunde",
+	"Al-Quds"		:	"Jerusalem",
+	"Kang-e Dozhuxt"	:	"Jerusalem",
 	"Yerushalayim"		:	"Jerusalem",
 	"K&#246;ln"		:	"K&#246;ln",
 	"K&#246;nigsberg"	:	"K&#246;nigsberg",
@@ -7462,6 +7519,8 @@ tRenames = (
 	"Hannover"		:	"Hanower",
 	"La Habana"		:	"Hawana",
 	"Irkutsk"		:	"Irkuck",
+	"Al-Quds"		:	"Jerozolima",
+	"Kang-e Dozhuxt"	:	"Jerozolima",
 	"Yerushalayim"		:	"Jerozolima",
 	"Al-Qahirah"		:	"Kair",
 	"Cartagena"		:	"Kartagena",
@@ -7643,6 +7702,8 @@ tRenames = (
 	"Fiorenza"		:	"Fiorenza",
 	"Firenze"		:	"Firenze",
 	"Frankfurt"		:	"Francoforte",
+	"Al-Quds"		:	"Gerusalemme",
+	"Kang-e Dozhuxt"	:	"Gerusalemme",
 	"Yerushalayim"		:	"Gerusalemme",
 	"Djibouti"		:	"Gibuti",
 	"Gen&#232;ve"		:	"Ginevra",
@@ -7803,6 +7864,8 @@ tRenames = (
 	"Ikonion"		:	"Konya",
 	"Byzantion"		:	"Kostantiniyye",
 	"Constantinopolis"	:	"Kostantiniyye",
+	"Al-Quds"		:	"Kud&#252;s",
+	"Kang-e Dozhuxt"	:	"Kud&#252;s",
 	"Yerushalayim"		:	"Kud&#252;s",
 	"Kulsary"		:	"Kulsary",
 	"Konstantia"		:	"Kustendje",
