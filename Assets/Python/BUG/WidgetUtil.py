@@ -283,6 +283,8 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_REGION_SELECTION", ())
 			elif iData2 == 44:
 				return CyTranslator().getText("TXT_KEY_WB_MOVEMAP", ())
+			elif iData2 == 45:
+				return CyTranslator().getText("TXT_KEY_WB_FLIPAI", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"

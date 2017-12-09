@@ -43,7 +43,7 @@ def getBirthArea(iPlayer):
 	
 def getBirthRectangle(iPlayer, bExtended = None):
 	if bExtended is None: bExtended = isExtendedBirth(iPlayer)
-	if iPlayer in dChangedBirthArea and isExtendedBirth(iPlayer):
+	if iPlayer in dChangedBirthArea and bExtended:
 		return dChangedBirthArea[iPlayer]
 	return tBirthArea[iPlayer]
 	
