@@ -352,6 +352,7 @@ class CvRFCEventHandler:
 		
 		if iPlayer < iNumPlayers:
 			dc.onPlayerChangeStateReligion(iPlayer, iNewReligion)
+			cnm.onPlayerChangeStateReligion(iPlayer, iNewReligion)
 			
 		sta.onPlayerChangeStateReligion(iPlayer)
 

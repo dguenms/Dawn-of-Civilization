@@ -422,7 +422,7 @@ class RiseAndFall:
 			self.prepareChina()
 			tCapital = Areas.getCapital(iChina)
 			lBuildings = [iGranary, iConfucianTemple, iTaixue, iBarracks, iForge]
-			utils.foundCapital(iChina, tCapital, "Xi'an", 4, 100, lBuildings, [iConfucianism, iTaoism])
+			utils.foundCapital(iChina, tCapital, "Daxing", 4, 100, lBuildings, [iConfucianism, iTaoism])
 			
 		elif utils.getScenario() == i1700AD:
 			

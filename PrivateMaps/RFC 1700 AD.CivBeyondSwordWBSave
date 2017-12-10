@@ -23756,7 +23756,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=Wahran
+		CityName=Vahran
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -26111,7 +26111,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
-		CityName=Lagos
+		CityName=Lago de Curamo
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -31782,7 +31782,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=El-Uqsur
+		CityName=Luksor
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -31824,7 +31824,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=El-Kahire
+		CityName=Kahire
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -33550,7 +33550,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Arkhangelsk
+		CityName=Arkhangel'sk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -35911,7 +35911,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=35, (Turkey)
-		CityName=Baghdad
+		CityName=Bagdat
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -37425,7 +37425,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Obdorsk
+		CityName=Vorkuta
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -37881,7 +37881,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Ekaterinburg
+		CityName=Yekaterinburg
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -41528,7 +41528,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
-		CityName=Tomsk
+		CityName=Tara
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -46467,7 +46467,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Xi'an
+		CityName=Chang'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -47577,7 +47577,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Beijing
+		CityName=Jingshi
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -49060,7 +49060,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
-		CityName=Shenyang
+		CityName=Shengjing
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
@@ -49998,7 +49998,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=44, (China)
-		CityName=Qiqihar
+		CityName=Qiqihaer
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
