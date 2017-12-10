@@ -234,7 +234,7 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == "Singidunon" and iNewOwner != iByzantium: sNewName = "Belgrad"
 	elif sOldName == "York" and iNewOwner == iCanada and city.getRegionID() == rCanada: sNewName = "Toronto"
 	elif sOldName == "Prey Nokor": sNewName = "Saigon"
-	elif iNewOwner >= iNumPlayers: #names for newly-independent cities
+	elif iNewOwner in [iIndependent, iIndependent2, iNative, iBarbarian]: #names for newly-independent cities
 		if sOldName in ["Takao", "Gaoxiong"]: sNewName = "Kaohsiung"
 		elif sOldName in ["B&#252;kres", "Bukharest"]: sNewName = "Bucuresti"
 		elif sOldName in ["Laibach", "Lubiana", "Lyublyana"]: sNewName = "Ljubljana"
@@ -521,17 +521,18 @@ def onTechAcquired(iCiv):
 
 def onPlayerChangeStateReligion(iPlayer, iReligion):
 
-	lCities = utils.getCityList(iPlayer)
-	for city in lCities:
-		if getIdentifier(city.getName()) in ["Yerushalayim", "Kang-e Dozhuxt", "Al-Quds"]:
-			if iPlayer == iPersia:
-				if iReligion == iIslam: city.setName("Qods", False)
-				elif iReligion == iZoroastrianism: city.setName("Kang-e Dozhuxt", False)
-				else: city.setName("Yerushalayim", False)
-			elif iPlayer == iRome:
-				if iReligion > -1: city.setName("Hierosolyma", False)
-				else: city.setName("Aelia Capitolina", False)
-			break
+	if iPlayer in [iPersia, iRome]:
+		lCities = utils.getCityList(iPlayer)
+		for city in lCities:
+			if getIdentifier(city.getName()) in ["Yerushalayim", "Kang-e Dozhuxt", "Al-Quds"]:
+				if iPlayer == iPersia:
+					if iReligion == iIslam: city.setName("Qods", False)
+					elif iReligion == iZoroastrianism: city.setName("Kang-e Dozhuxt", False)
+					else: city.setName("Yerushalayim", False)
+				elif iPlayer == iRome:
+					if iReligion > -1: city.setName("Hierosolyma", False)
+					else: city.setName("Aelia Capitolina", False)
+				break
 				
 def onReligionSpread(iReligion, iCiv, city):
 
