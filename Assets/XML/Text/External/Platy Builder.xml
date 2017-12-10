@@ -892,4 +892,8 @@
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET2</Tag>
 		<English>Turn old area to grass tiles</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_FLIPAI</Tag>
+		<English>AI only flipzone</English>
+	</TEXT>
 </Civ4GameText>

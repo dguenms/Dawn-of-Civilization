@@ -103,7 +103,9 @@ class CvWorldBuilderScreen:
 		self.TempInfo = []
 ## Platy Builder ##
 
+		self.lCurrentFlipZone = []
 		self.dFlipZoneEdits = {}
+		self.bFlipAI = False
 		self.iMoveMapReset = 0
 
 	def interfaceScreen (self):
@@ -557,13 +559,18 @@ class CvWorldBuilderScreen:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
 		elif self.iPlayerAddMode == "Flip":
 			if self.m_iCurrentPlayer < iNumPlayers:
-				if self.m_iCurrentPlayer not in self.dFlipZoneEdits.keys():
-					self.dFlipZoneEdits[self.m_iCurrentPlayer] = Areas.getBirthArea(self.m_iCurrentPlayer)
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				lPlots = self.dFlipZoneEdits[self.m_iCurrentPlayer]
-				if tPlot not in lPlots:
-					lPlots.append(tPlot)
-					self.dFlipZoneEdits[self.m_iCurrentPlayer] = lPlots
+				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
+				if self.bFlipAI:
+					if tPlot not in lAIPlotList:
+						lAIPlotList.append(tPlot)
+				else:
+					if tPlot not in lHumanPlotList:
+						lHumanPlotList.append(tPlot)
+					if tPlot in lAIPlotList:
+						lAIPlotList.remove(tPlot)
+				self.lCurrentFlipZone = lHumanPlotList, lAIPlotList
+				self.dFlipZoneEdits[self.m_iCurrentPlayer] = self.lCurrentFlipZone
 				if not bMulti:
 					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
@@ -697,13 +704,13 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Flip":
 			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				if self.m_iCurrentPlayer not in self.dFlipZoneEdits.keys():
-					self.dFlipZoneEdits[self.m_iCurrentPlayer] = Areas.getBirthArea(self.m_iCurrentPlayer)
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				lPlots = self.dFlipZoneEdits[self.m_iCurrentPlayer]
-				if tPlot in lPlots:
-					lPlots.remove(tPlot)
-					self.dFlipZoneEdits[self.m_iCurrentPlayer] = lPlots
+				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
+				if tPlot in lAIPlotList:
+					lAIPlotList.remove(tPlot)
+				if tPlot in lHumanPlotList:
+					lHumanPlotList.remove(tPlot)
+				self.lCurrentFlipZone = lHumanPlotList, lAIPlotList
+				self.dFlipZoneEdits[self.m_iCurrentPlayer] = self.lCurrentFlipZone
 				if not bMulti:
 					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
@@ -1397,7 +1404,11 @@ class CvWorldBuilderScreen:
 
 				iX = iXStart + 8
 				iY += iAdjust
-				if self.iPlayerAddMode not in  ["Flip", "RegionMap"]:
+				if self.iPlayerAddMode == "Flip":
+					screen.addCheckBoxGFC("FlipAIButton", "Art/Interface/Buttons/TechTree/Artificial_Intelligence.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
+						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 45, ButtonStyles.BUTTON_STYLE_LABEL)
+					iX += iAdjust
+				elif self.iPlayerAddMode != "RegionMap":
 					screen.addDropDownBoxGFC("PresetValue", iX, iY, iAdjust * 3 - 3, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 					if self.iPlayerAddMode == "ReligionMap":
 						for i in range(5):
@@ -1416,7 +1427,7 @@ class CvWorldBuilderScreen:
 					for iReligion in range(iNumReligions):
 						sName = gc.getReligionInfo(iReligion).getDescription()
 						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iReligion, iReligion, self.m_iCurrentReligion == iReligion)
-				elif self.iPlayerAddMode in "RegionMap":
+				elif self.iPlayerAddMode == "RegionMap":
 					for iRegion in range(iNumRegions):
 						TextKey = u"TXT_KEY_REGION_%d" % iRegion
 						sName = CyTranslator().getText(str(TextKey), ())
@@ -1588,6 +1599,7 @@ class CvWorldBuilderScreen:
 		screen.setState("ReligionMapButton", self.iPlayerAddMode == "ReligionMap")
 		screen.setState("RegionMapButton", self.iPlayerAddMode == "RegionMap")
 		screen.setState("MoveMapScreen", self.iPlayerAddMode in ["MoveMap", "MoveMap2"])
+		screen.setState("FlipAIButton", self.bFlipAI)
 
 	def setSelectionTable(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
@@ -1874,17 +1886,12 @@ class CvWorldBuilderScreen:
 ## Platy Reveal Mode End ##
 
 	def showFlipZone(self):
+		self.setCurrentFlip()
 		utils.removeStabilityOverlay()
 		if self.m_iCurrentPlayer < iNumPlayers:
-			if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
-				lHumanPlotList = self.dFlipZoneEdits[self.m_iCurrentPlayer]
-			else:
-				# Human flipzone
-				if utils.isReborn(self.m_iCurrentPlayer):
-					lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
-				else:
-					lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
 			for tPlot in lHumanPlotList:
+				if tPlot in lAIPlotList: continue
 				if tPlot == Areas.getCapital(self.m_iCurrentPlayer):
 					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1002, "COLOR_CYAN", 0.7)
 				else:
@@ -1897,12 +1904,25 @@ class CvWorldBuilderScreen:
 				if (x, y) not in lHumanPlotList:
 					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
 
-			# Larger AI flipzone
+			for tPlot in lAIPlotList:
+				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
+
+	def setCurrentFlip(self):
+		if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
+			self.lCurrentFlipZone = self.dFlipZoneEdits[self.m_iCurrentPlayer]
+		else:
+			# Human flipzone
+			if utils.isReborn(self.m_iCurrentPlayer):
+				lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
+			else:
+				lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+
 			if self.m_iCurrentPlayer in Areas.dChangedBirthArea:
 				tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
 				lAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, [])) if tPlot not in lHumanPlotList]
-				for tPlot in lAIPlotList:
-					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
+			else:
+				lAIPlotList = []
+			self.lCurrentFlipZone = [lHumanPlotList, lAIPlotList]
 
 	def showStabilityOverlay(self):
 		utils.removeStabilityOverlay()
@@ -2484,17 +2504,31 @@ class CvWorldBuilderScreen:
 
 		elif inputClass.getFunctionName() == "ClearChanges":
 			if self.iPlayerAddMode == "Flip":
-				if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
+				if CvEventInterface.getEventManager().bAlt:
+					self.dFlipZoneEdits = {}
+				elif self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
 					del self.dFlipZoneEdits[self.m_iCurrentPlayer]
-					self.showFlipZone()
+				self.showFlipZone()
 			elif self.iPlayerAddMode == "Core":
-				met.resetCore(self.m_iCurrentPlayer)
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(iNumPlayers):
+						met.resetCore(iPlayer)
+				else:
+					met.resetCore(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
-				met.resetSettler(self.m_iCurrentPlayer)
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(iNumPlayers):
+						met.resetSettler(iPlayer)
+				else:
+					met.resetSettler(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "WarMap":
-				met.resetWarMap(self.m_iCurrentPlayer)
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(iNumPlayers):
+						met.resetWarMap(iPlayer)
+				else:
+					met.resetWarMap(self.m_iCurrentPlayer)
 				self.showWarOverlay()
 			elif self.iPlayerAddMode == "ReligionMap":
 				met.resetReligionMap(self.m_iCurrentReligion)
@@ -2592,10 +2626,14 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "MoveMap"
 			self.refreshSideMenu()
 
+		elif inputClass.getFunctionName() == "FlipAIButton":
+			self.bFlipAI = not self.bFlipAI
+			self.setCurrentModeCheckbox()
+
 		elif inputClass.getFunctionName() == "MoveMapReset":
 			self.iMoveMapReset = screen.getPullDownData("MoveMapReset", screen.getSelectedPullDownID("MoveMapReset"))
 
-		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["DoCMapsScreen", "FlipButton", "CoreButton", "SettlerValueButton", "WarMapButton", "ReligionMapButton", "RegionMapButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight", "SensibilityCheck", "RegionButton"]:
+		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["DoCMapsScreen", "FlipButton", "CoreButton", "SettlerValueButton", "WarMapButton", "ReligionMapButton", "RegionMapButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight", "SensibilityCheck", "RegionButton", "FlipAIButton"]:
 			utils.removeStabilityOverlay()
 
 		return 1

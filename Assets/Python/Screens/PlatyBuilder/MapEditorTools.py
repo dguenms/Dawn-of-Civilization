@@ -79,7 +79,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 	elif iPlayer == iAztecs:
 		sName = "Aztecs"
 
-	lNewFlipPlotList = dFlipZoneEdits[iPlayer]
+	lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
 	if utils.isReborn(iPlayer):
 		lOldFlipPlotList = Areas.getRebirthArea(iPlayer)
 	else:
@@ -90,6 +90,18 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 			if tPlot not in lOldFlipPlotList:
 				bFlipChanged = True
 				break
+		else:
+			if iPlayer in Areas.dChangedBirthArea:
+				tTL, tBR = Areas.getBirthRectangle(iPlayer, True)
+				lOldAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, iPlayer, [])) if tPlot not in lOldFlipPlotList]
+			else:
+				lOldAIPlotList = []
+			bFlipChanged = len(lOldAIPlotList) != len(lNewAIPlotList)
+			if not bFlipChanged:
+				for tPlot in lNewAIPlotList:
+					if tPlot not in lOldAIPlotList:
+						bFlipChanged = True
+						break
 
 	if bFlipChanged:
 		Bottom = iWorldY
@@ -97,6 +109,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 		Left = iWorldX
 		Right = 0
 		for (x, y) in lNewFlipPlotList:
+			if (x, y) in lNewAIPlotList: continue
 			if x < Left:
 				Left = x
 			if x > Right:
@@ -112,6 +125,23 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 		for tPlot in utils.getPlotList(BL, TR):
 			if tPlot not in lNewFlipPlotList:
 				lExceptions.append(tPlot)
+
+		if lNewAIPlotList:
+			BottomAI = iWorldY
+			TopAI = 0
+			LeftAI = iWorldX
+			RightAI = 0
+			for (x, y) in lNewAIPlotList+lNewFlipPlotList:
+				if x < LeftAI:
+					LeftAI = x
+				if x > RightAI:
+					RightAI = x
+				if y < BottomAI:
+					BottomAI = y
+				if y > TopAI:
+					TopAI = y
+			BLAI = (LeftAI, BottomAI)
+			TRAI = (RightAI, TopAI)
 
 		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
 		try:
@@ -127,6 +157,11 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 				if lExceptions:
 					file.write("\n\n# dRebirthAreaExceptions\n")
 					file.write("i" + sName + " : " + str(lExceptions) + ",")
+
+			if lNewAIPlotList:
+				if not utils.isReborn(iPlayer):
+					file.write("\n\n# dChangedBirthArea\n")
+					file.write("("+ str(BLAI) + ",\t" + str(TRAI) + "),\t# " + sName)
 		finally:
 			file.close()
 		sText = "Flipzone map of %s exported" %sName
@@ -139,6 +174,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 def exportAllFlip(dFlipZoneEdits):
 	lAllFlips = []
 	lAllExceptions = []
+	lAllAIPlots = []
 	for iPlayer in range(iNumPlayers):
 		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
@@ -148,17 +184,24 @@ def exportAllFlip(dFlipZoneEdits):
 			sName = "Aztecs"
 			
 		if iPlayer in dFlipZoneEdits.keys():
-			lNewFlipPlotList = dFlipZoneEdits[iPlayer]
-		elif utils.isReborn(iPlayer):
-			lNewFlipPlotList = Areas.getRebirthArea(iPlayer)
+			lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
 		else:
-			lNewFlipPlotList = Areas.getBirthArea(iPlayer)
+			if utils.isReborn(iPlayer):
+				lNewFlipPlotList = Areas.getRebirthArea(iPlayer)
+			else:
+				lNewFlipPlotList = Areas.getBirthArea(iPlayer)
+			if iPlayer in Areas.dChangedBirthArea:
+				tTL, tBR = Areas.getBirthRectangle(iPlayer, True)
+				lNewAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, iPlayer, [])) if tPlot not in lNewFlipPlotList]
+			else:
+				lNewAIPlotList = []
 
 		Bottom = iWorldY
 		Top = 0
 		Left = iWorldX
 		Right = 0
 		for (x, y) in lNewFlipPlotList:
+			if (x, y) in lNewAIPlotList: continue
 			if x < Left:
 				Left = x
 			if x > Right:
@@ -175,9 +218,29 @@ def exportAllFlip(dFlipZoneEdits):
 			if tPlot not in lNewFlipPlotList:
 				lExceptions.append(tPlot)
 
+		if lNewAIPlotList:
+			BottomAI = iWorldY
+			TopAI = 0
+			LeftAI = iWorldX
+			RightAI = 0
+			for (x, y) in lNewAIPlotList+lNewFlipPlotList:
+				if (x, y) in lExceptions: continue
+				if x < LeftAI:
+					LeftAI = x
+				if x > RightAI:
+					RightAI = x
+				if y < BottomAI:
+					BottomAI = y
+				if y > TopAI:
+					TopAI = y
+			BLAI = (LeftAI, BottomAI)
+			TRAI = (RightAI, TopAI)
+
 		lAllFlips.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
 		if lExceptions:
 			lAllExceptions.append("i" + sName + " : " + str(lExceptions) + ",")
+		if lNewAIPlotList:
+			lAllAIPlots.append("i" + sName + " : (" + str(BLAI) + ",\t" + str(TRAI) + "),")
 
 	file = open(IMAGE_LOCATION + "\FlipZones\\AllFlipZones.txt", 'wt')
 	try:
@@ -185,10 +248,16 @@ def exportAllFlip(dFlipZoneEdits):
 		for sString in lAllFlips:
 			file.write(sString + "\n")
 		file.write(")")
-		file.write("\n\ndBirthAreaExceptions = {\n")
-		for sString in lAllExceptions:
-			file.write(sString + "\n")
-		file.write("}")
+		if lAllAIPlots:
+			file.write("\n\ndChangedBirthArea = {\n")
+			for sString in lAllAIPlots:
+				file.write(sString + "\n")
+			file.write("}")
+		if lAllExceptions:
+			file.write("\n\ndBirthAreaExceptions = {\n")
+			for sString in lAllExceptions:
+				file.write(sString + "\n")
+			file.write("}")
 	finally:
 		file.close()
 	sText = "All flipzone maps exported"
