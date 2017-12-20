@@ -174,9 +174,10 @@ def onCityBuilt(city):
 	sNewName = getFoundName(iOwner, (x,y))
 
 	if sNewName:
-		iCurrentEra = gc.getPlayer(iOwner).getCurrentEra()
+		pOwner = gc.getPlayer(iOwner)
+		iCurrentEra = pOwner.getCurrentEra()
 		sUpdatedName = sNewName
-		for iEra in range(0, iCurrentEra+1):
+		for iEra in range(iCurrentEra+1):
 			sIdentifier = getIdentifier(sUpdatedName)
 			if not sIdentifier: continue
 			
@@ -185,6 +186,9 @@ def onCityBuilt(city):
 			if not sNewIdentifier: continue
 	
 			sUpdatedName = getRenameName(iOwner, sNewIdentifier)
+
+		if pOwner.getCivics(iCivicsEconomy) == iCentralPlanning:
+			if sUpdatedName in dCommunistNames: sUpdatedName = dCommunistNames[sUpdatedName]
 
 		city.setName(sUpdatedName, False)
 		return
@@ -219,11 +223,14 @@ def onCityAcquired(city, iNewOwner):
 	sNewName = getRenameName(iNewOwner, sOldName)
 	
 	if sNewName:
-		iCurrentEra = gc.getPlayer(iNewOwner).getCurrentEra()
+		pNewOwner = gc.getPlayer(iNewOwner)
+		iCurrentEra = pNewOwner.getCurrentEra()
 		sUpdatedName = sNewName
-		for iEra in range(0, iCurrentEra+1):
+		for iEra in range(iCurrentEra+1):
 			sNewName = getEraRename(city, iNewOwner, iEra)
 			if sNewName: sUpdatedName = sNewName
+		if pNewOwner.getCivics(iCivicsEconomy) == iCentralPlanning:
+			if sUpdatedName in dCommunistNames: sUpdatedName = dCommunistNames[sUpdatedName]
 		city.setName(sUpdatedName, False)
 	
 dCommunistNames = {
