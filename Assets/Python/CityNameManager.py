@@ -51,7 +51,7 @@ def getLanguages(iCiv):
 	elif iCiv == iMaya: 
 		if utils.isReborn(iCiv): return (iLangSpanish,)
 		return (iLangMayan, iLangAztec)
-	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin)
+	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin, iLangGreek)
 	elif iCiv == iJapan: return (iLangJapanese,)
 	elif iCiv == iVikings: return (iLangViking,)
 	elif iCiv == iArabia: return (iLangArabian,)
@@ -84,7 +84,7 @@ def getLanguages(iCiv):
 	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iArgentina: return (iLangSpanish,)
 	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish, iLangFrench)
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
 	else: return None
