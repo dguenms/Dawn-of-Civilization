@@ -3589,7 +3589,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatProphet)
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatScientist)
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatEngineer)
-			aHelp.append(getIcon(bMezquita) + localText.getText("TXT_KEY_BUILDING_LA_MEZQUITA", ()) + ' ' + getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
+			aHelp.append(getIcon(bMezquita) + localText.getText("TXT_KEY_BUILDING_LA_MEZQUITA", ()) + ' ' + getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 4)))
 		elif iGoal == 2:
 			iRaidGold = data.iMoorishGold
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iRaidGold, utils.getTurns(3000))))
