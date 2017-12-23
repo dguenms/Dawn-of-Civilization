@@ -8139,7 +8139,7 @@
 			<Description>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE_STRATEGY</Strategy>
-			<Advisor>ADVISOR_GROWTH</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_LIGHTHOUSE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_LIGHTHOUSE</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
@@ -8300,7 +8300,7 @@
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_STRATEGY</Strategy>
-			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_ARTEMIS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_ARTEMIS</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
@@ -8363,7 +8363,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_PYRAMIDS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_PYRAMIDS_HELP</Help>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PYRAMIDS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PYRAMIDS</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
@@ -8580,7 +8580,7 @@
 			<Description>TXT_KEY_BUILDING_ISHTAR_GATE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ISHTAR_GATE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
+			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ISHTAR_GATE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ISHTAR_GATE</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
@@ -9036,7 +9036,7 @@
 			<Description>TXT_KEY_BUILDING_FLOATING_GARDENS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_FLOATING_GARDENS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_FLOATING_GARDENS_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FLOATING_GARDENS</ArtDefineTag>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
@@ -9312,7 +9312,7 @@
 			<Description>TXT_KEY_BUILDING_BOROBUDUR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BOROBUDUR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BOROBUDUR_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
+			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BOROBUDUR</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BOROBUDUR</MovieDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
@@ -9437,7 +9437,7 @@
 			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HAGIA_SOPHIA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HAGIA_SOPHIA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HAGIA_SOPHIA</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
@@ -9494,7 +9494,7 @@
 			<Description>TXT_KEY_BUILDING_NOTRE_DAME</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NOTRE_DAME_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_NOTRE_DAME_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NOTRE_DAME</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NOTRE_DAME</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
@@ -9603,7 +9603,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_HIMEJI_CASTLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HIMEJI_CASTLE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Help>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HIMEJI_CASTLE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HIMEJI_CASTLE</MovieDefineTag>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
@@ -9712,7 +9712,7 @@
 			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Strategy>
-			<Advisor>ADVISOR_RELIGION</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</MovieDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
@@ -9781,7 +9781,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_TOPKAPI_PALACE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TOPKAPI_PALACE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Help>
-			<Advisor>ADVISOR_CULTURE</Advisor>
+			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TOPKAPI_PALACE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_TOPKAPI_PALACE</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
@@ -9834,7 +9834,7 @@
 			<Description>TXT_KEY_BUILDING_LA_MEZQUITA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_LA_MEZQUITA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_LA_MEZQUITA_STRATEGY</Strategy>
-			<Advisor>ADVISOR_RELIGION</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LA_MEZQUITA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_LA_MEZQUITA</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
@@ -10008,7 +10008,7 @@
 			<Description>TXT_KEY_BUILDING_RED_FORT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_RED_FORT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_RED_FORT_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
+			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RED_FORT</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_RED_FORT</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
@@ -10523,7 +10523,7 @@
 			<Description>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ST_BASILS_CATHEDRAL</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
@@ -10710,7 +10710,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_BRANDENBURG_GATE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BRANDENBURG_GATE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Help>
-			<Advisor>ADVISOR_RELIGION</Advisor>
+			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BRANDENBURG_GATE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BRANDENBURG_GATE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
@@ -11316,7 +11316,7 @@
 			<Description>TXT_KEY_BUILDING_CN_TOWER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CN_TOWER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CN_TOWER_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CN_TOWER</ArtDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_TELEVISION</PrereqTech>
@@ -11364,7 +11364,7 @@
 			<Description>TXT_KEY_BUILDING_SPACE_ELEVATOR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SPACE_ELEVATOR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SPACE_ELEVATOR_STRATEGY</Strategy>
-			<Advisor>ADVISOR_GROWTH</Advisor>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SPACE_ELEVATOR</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_SPACE_ELEVATOR</MovieDefineTag>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
