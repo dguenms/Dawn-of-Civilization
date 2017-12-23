@@ -10171,7 +10171,7 @@ int CvPlayer::getExtraHappiness() const
 	{
 		int iCivicHappiness = 0;
 
-		if (getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_REPUBLIC) iCivicHappiness += 2;
+		if (getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_DEMOCRACY) iCivicHappiness += 2;
 		if (getCivics(CIVICOPTION_LEGITIMACY) == CIVIC_CONSTITUTION) iCivicHappiness += 2;
 		if (getCivics(CIVICOPTION_SOCIETY) == CIVIC_INDIVIDUALISM) iCivicHappiness += 2;
 		if (getCivics(CIVICOPTION_ECONOMY) == CIVIC_FREE_ENTERPRISE) iCivicHappiness += 2;
