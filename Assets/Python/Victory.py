@@ -552,7 +552,7 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: settle a great prophet in two Orthodox cities by 500 AD
 		if isPossible(iEthiopia, 0):
-			if countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet):
+			if countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet) >= 2:
 				win(iEthiopia, 0)
 				
 		if iGameTurn == getTurnForYear(500):
