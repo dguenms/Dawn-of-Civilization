@@ -675,6 +675,8 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeNationalWonders(self):
 		lBuildings = []
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
+			if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+				continue
 			if utils.getBuildingCategory(iBuilding) == 3:
 				szDescription = gc.getBuildingInfo(iBuilding).getDescription().replace("The ", "")
 				lBuildings.append((szDescription, iBuilding))
