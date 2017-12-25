@@ -186,6 +186,8 @@ class UnitUpgradesGraph:
 			unit = self.getUnitNumber(k)
 			if (unit == -1):
 				continue
+			if (gc.getUnitInfo(unit).isGraphicalOnly()):
+				continue
 			if (self.getUnitType(unit) not in self.exceptionList):
 				graph[unit] = Node()
 		
