@@ -320,6 +320,10 @@ class CvMainInterface:
 		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_CITY")
 		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_MISSION")
 		WidgetUtil.createWidget("WIDGET_GO_TO_CITY")
+		
+		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_PLAYER")
+		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_CITY")
+		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_MISSION")
 
 		
 		
