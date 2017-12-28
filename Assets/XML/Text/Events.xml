@@ -956,9 +956,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_EARTHDAY_HELP_2</Tag>
-		<English>[ICON_BULLET]Persuade other nations to convert to [COLOR_HIGHLIGHT_TEXT]Environmentalism[COLOR_REVERT] (at least one civilization must have the ability to do so).</English>
+		<English>[ICON_BULLET]Persuade other nations to convert to [COLOR_HIGHLIGHT_TEXT]Public Welfare[COLOR_REVERT] (at least one civilization must have the ability to do so).</English>
 		<French>[ICON_BULLET]Persuader d'autres nations de se convertir &#224; l'[COLOR_HIGHLIGHT_TEXT]&#233;cologie[COLOR_REVERT] (au moins une civilisation doit poss&#233;der cette capacit&#233;).</French>
-		<German>[ICON_BULLET]&#220;berzeugt andere Nationen, zum [COLOR_HIGHLIGHT_TEXT]Umweltschutz[COLOR_REVERT] zu wechseln (mindestens eine Zivilisation muss dazu f&#228;hig sein).</German>
+		<German>[ICON_BULLET]&#220;berzeugt andere Nationen, zum [COLOR_HIGHLIGHT_TEXT]Wohlfahrtsstaat[COLOR_REVERT] zu wechseln (mindestens eine Zivilisation muss dazu f&#228;hig sein).</German>
 		<Italian>[ICON_BULLET]Persuadi altre nazioni a convertirsi all'[COLOR_HIGHLIGHT_TEXT]Ambientalismo[COLOR_REVERT] (almeno una delle altre civilt&#224; deve essere in grado di farlo).</Italian>
 		<Spanish>[ICON_BULLET]Convence a otras naciones de que se conviertan al [COLOR_HIGHLIGHT_TEXT]Ecologismo[COLOR_REVERT] (al menos una civilizaci&#243;n debe poseer la capacidad de hacerlo).</Spanish>
 	</TEXT>
