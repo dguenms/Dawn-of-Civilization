@@ -6259,6 +6259,16 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
+		else if (eBuilding == LA_MEZQUITA)
+		{
+			if (GET_PLAYER(MOORS).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(MOORS).getBirthTurn()+5)
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	return true;
