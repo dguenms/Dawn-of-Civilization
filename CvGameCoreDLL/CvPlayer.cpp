@@ -7372,7 +7372,8 @@ int CvPlayer::calculatePreInflatedCosts() const
 
 int CvPlayer::calculateInflationRate() const
 {
-	int iTurns = ((GC.getGameINLINE().getGameTurn() + GC.getGameINLINE().getElapsedGameTurns()) / 2);
+	//int iTurns = ((GC.getGameINLINE().getGameTurn() + GC.getGameINLINE().getElapsedGameTurns()) / 2);
+	int iTurns = GC.getGameINLINE().getGameTurn();
 
 	if (GC.getGameINLINE().getMaxTurns() > 0)
 	{
@@ -7386,8 +7387,7 @@ int CvPlayer::calculateInflationRate() const
 		return 0;
 	}
 
-	// Leoreth: no inflation for America in the beginning to help its start
-	if (getID() == AMERICA && GC.getGameINLINE().getGameTurnYear() < 1840)
+	if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(GC.getCivilizationInfo(getCivilizationType()).getStartingYear()) + GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getInflationOffset() / 2)
 	{
 		return 0;
 	}
