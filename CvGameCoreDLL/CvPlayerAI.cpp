@@ -690,10 +690,7 @@ void CvPlayerAI::AI_doPeace()
 
 															if (eBestReceiveTech != NO_TECH)
 															{
-																if (iI == CHINA)
-																	iOurValue += GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam())*3/4;
-																else
-																	iOurValue += GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam());
+																iOurValue += GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam());
 															}
 														}
 
@@ -2784,17 +2781,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue /= 100;
 	}
 	//Rhye - end
-
-	if (getID() == CHINA)
-	{
-		if (getNumCities() <= 3)
-		{
-			if (iX == 103 && (iY == 43 || iY == 44))
-				iValue *= 100;	//Luoyang or Kaifeng
-			if ((iX == 106 && iY == 44) || (iX == 107 && iY == 43))
-				iValue *= 50;	//Shanghai or Hangzhou
-		}
-	}
 
 	return std::max(1, iValue);
 }
@@ -7683,11 +7669,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					switch (pNode->m_data.m_eItemType)
 					{
 					case TRADE_TECHNOLOGIES:
-						// Leoreth: penalize China in tech trading, so it's not possible to abuse the UP
-						/*if (ePlayer == (PlayerTypes)CHINA)
-							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam())*3/4;
-						else*/
-							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam());
+						iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam());
 						break;
 					case TRADE_RESOURCES:
 						if (!pabBonusDeal[pNode->m_data.m_iData])

@@ -2744,7 +2744,7 @@ int CvTeam::getCivilizationResearchModifier() const
 	if (getLeaderID() == CHINA)
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 15;
-		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 25;
 	}
 
 	return iCivModifier;
@@ -2890,19 +2890,19 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsBonus * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
 	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
-	/*if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if (iSpreadModifier > 0) iSpreadModifier = 0;
-	}*/
+	}
 
 	iModifier += iSpreadModifier;
 
-	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
+	//Leoreth: new Chinese UP: techs not known by anyone get -25% cost
 	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if (iCivsWithTech == 0)
 		{
-			iModifier -= 20;
+			iModifier -= 25;
 		}
 	}
 

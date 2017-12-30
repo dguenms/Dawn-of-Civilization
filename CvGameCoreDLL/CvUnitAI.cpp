@@ -1287,7 +1287,7 @@ void CvUnitAI::AI_settleMove()
 	if (iAreaBestFoundValue > 0 || iOtherBestFoundValue > 0)
 	{
 		//Rhye - start switch
-		/*if (AI_foundRange(FOUND_RANGE))
+		if (AI_foundRange(FOUND_RANGE))
 		{
 			return;
 		}
@@ -1295,7 +1295,7 @@ void CvUnitAI::AI_settleMove()
 		if (AI_found())
 		{
 			return;
-		}*/
+		}
 
 		/*if (AI_found())
 		{
@@ -1304,7 +1304,7 @@ void CvUnitAI::AI_settleMove()
 		//AI_found() is readded in BTS;
 		//when it is active, the following is ignored unless the city site is < 150.
 		//The steps are added in CvPlayerAI::AI_updateCitySites() as well.
-		if (AI_found_map(700))
+		/*if (AI_found_map(700))
 		{
 			return;
 		}
@@ -1349,11 +1349,7 @@ void CvUnitAI::AI_settleMove()
 			{
 				return;
 			}
-			/*if (AI_found_map(3))
-			{
-				return;
-			}*/
-		}
+		}*/
 		//Rhye - end
 	}
 
@@ -1374,7 +1370,7 @@ void CvUnitAI::AI_settleMove()
 	{
 		return;
 	}
-
+	
 	getGroup()->pushMission(MISSION_SKIP);
 	return;
 }
@@ -5531,7 +5527,7 @@ void CvUnitAI::AI_settlerSeaMove()
 	{
 		return;
 	}
-
+	
 	getGroup()->pushMission(MISSION_SKIP);
 	return;
 }
@@ -12803,10 +12799,10 @@ bool CvUnitAI::AI_found()
 	{
 		CvPlot* pCitySitePlot = GET_PLAYER(getOwnerINLINE()).AI_getCitySite(iI);
 
-		//Rhye - start
-		if (pCitySitePlot->getSettlerValue(getOwnerINLINE()) < 90) //so high?
+		if (pCitySitePlot->getSettlerValue(getOwnerINLINE()) < 90)
+		{
 			return false;
-		//Rhye - end
+		}
 
 		if (pCitySitePlot->getArea() == getArea())
 		{
@@ -12969,7 +12965,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 	{
 		for (iDY = -(iSearchRange); iDY <= iSearchRange; iDY++)
 		{
-			pLoopPlot	= plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 
 			if (pLoopPlot != NULL)
 			{
@@ -12977,30 +12973,29 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || GET_PLAYER(getOwnerINLINE()).getSettlerValue(iDX + getX_INLINE(), iDY + getY_INLINE()) >= 60) //Rhye
-						{ //Rhye
-
-						iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
-
-						if (iValue > iBestValue)
+						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || pLoopPlot->getSettlerValue(getOwnerINLINE()) >= 90) //Rhye
 						{
-							if (!(pLoopPlot->isVisibleEnemyUnit(this)))
+							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
+
+							if (iValue > iBestValue)
 							{
-								if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_FOUND, getGroup(), 3) == 0)
+								if (!(pLoopPlot->isVisibleEnemyUnit(this)))
 								{
-									if (generatePath(pLoopPlot, MOVE_SAFE_TERRITORY, true, &iPathTurns))
+									if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_FOUND, getGroup(), 3) == 0)
 									{
-										if (iPathTurns <= iRange)
+										if (generatePath(pLoopPlot, MOVE_SAFE_TERRITORY, true, &iPathTurns))
 										{
-											iBestValue = iValue;
-											pBestPlot = getPathEndTurnPlot();
-											pBestFoundPlot = pLoopPlot;
+											if (iPathTurns <= iRange)
+											{
+												iBestValue = iValue;
+												pBestPlot = getPathEndTurnPlot();
+												pBestFoundPlot = pLoopPlot;
+											}
 										}
 									}
 								}
 							}
 						}
-						} //Rhye
 					}
 				}
 			}
