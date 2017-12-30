@@ -427,7 +427,7 @@ CIVILISATIONS
     * Unique Building: Ger (Stable): +2 experience for Mounted units, +2 food on improved Horse tiles, +1 food on improved Cow and Sheep tiles
     * Unique Power: The Power of Terror: Approaching armies can send enemy cities into disorder
 * Aztecs
-    * Unique Power: The Power of Flower Wars: Can enslave defeated enemy units, can sacrifice slaves to increase city happiness
+    * Unique Power: The Power of Flower Wars: Can enslave defeated enemy units, can sacrifice slaves to hurry buildings and increase city happiness
     * Unique Building: Sacrificial Altar (Jail): -50% unhappiness from sacrificing population
     * Unique Historical Victory:
         * Make Tenochtitlan the largest city in the world in 1520 AD
