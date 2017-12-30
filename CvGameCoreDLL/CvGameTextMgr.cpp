@@ -16155,11 +16155,11 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterVassals = player.getStabilityParameter(PARAMETER_VASSALS);
 		int iParameterDefensivePacts = player.getStabilityParameter(PARAMETER_DEFENSIVE_PACTS);
 		int iParameterRelations = player.getStabilityParameter(PARAMETER_RELATIONS);
-		int iParameterAutocracy = player.getStabilityParameter(PARAMETER_AUTOCRACY);
-		int iParameterFanaticism = player.getStabilityParameter(PARAMETER_FANATICISM);
+		int iParameterNationhood = player.getStabilityParameter(PARAMETER_NATIONHOOD);
+		int iParameterTheocracy = player.getStabilityParameter(PARAMETER_THEOCRACY);
 		int iParameterMultilateralism = player.getStabilityParameter(PARAMETER_MULTILATERALISM);
 
-		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterAutocracy + iParameterFanaticism + iParameterMultilateralism;
+		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterNationhood + iParameterTheocracy + iParameterMultilateralism;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN");
 
@@ -16187,17 +16187,17 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
-		if (iParameterAutocracy > 0)
+		if (iParameterNationhood > 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterAutocracy, gDLL->getText("TXT_KEY_STABILITY_WARS_AUTOCRACY").GetCString());
+			szTemp.Format(L"+%d: %s", iParameterNationhood, gDLL->getText("TXT_KEY_STABILITY_WARS_NATIONHOOD").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
-		if (iParameterFanaticism > 0)
+		if (iParameterTheocracy > 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_HEATHENS").GetCString());
+			szTemp.Format(L"+%d: %s", iParameterTheocracy, gDLL->getText("TXT_KEY_STABILITY_WARS_HEATHENS").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -16225,10 +16225,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
-		if (iParameterFanaticism < 0)
+		if (iParameterTheocracy < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH").GetCString());
+			szTemp.Format(L"%d: %s", iParameterTheocracy, gDLL->getText("TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 

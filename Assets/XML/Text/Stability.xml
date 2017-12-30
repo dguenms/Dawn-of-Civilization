@@ -791,16 +791,16 @@
 		<English>WARFARE</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_WARS_AUTOCRACY</Tag>
-		<English>Autocracy: Waging Wars</English>
+		<Tag>TXT_KEY_STABILITY_WARS_NATIONHOOD</Tag>
+		<English>Nationhood: Waging Wars</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH</Tag>
-		<English>Fanaticism: Fighting Brothers of Faith</English>
+		<English>Theocracy: Fighting Brothers of Faith</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_HEATHENS</Tag>
-		<English>Fanaticism: Fighting Heathens</English>
+		<English>Theocracy: Fighting Heathens</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_MULTILATERALISM</Tag>
