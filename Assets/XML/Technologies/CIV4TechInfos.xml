@@ -1290,6 +1290,7 @@
 			<iCost>325</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_CLASSICAL</Era>
+			<FirstFreeUnitClass>UNITCLASS_GREAT_GENERAL</FirstFreeUnitClass>
 			<iAsset>24</iAsset>
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
