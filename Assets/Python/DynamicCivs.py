@@ -1209,10 +1209,7 @@ def specificAdjective(iPlayer):
 			
 	elif iPlayer == iChina:
 		if bMonarchy:
-			if bResurrected:
-				return "TXT_KEY_CIV_CHINA_SONG"
-		
-			if iEra == iMedieval:
+			if iEra >= iMedieval:
 				if tPlayer.isHasTech(iPaper) and tPlayer.isHasTech(iGunpowder):
 					return "TXT_KEY_CIV_CHINA_SONG"
 			
