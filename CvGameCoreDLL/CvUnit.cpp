@@ -3293,6 +3293,12 @@ bool CvUnit::canGift(bool bTestVisible, bool bTestTransport)
 		return false;
 	}
 
+	// Leoreth: can only gift units to vassals and defensive pact partners
+	if (!GET_TEAM(pPlot->getTeam()).isVassal(getTeam()) && !GET_TEAM(pPlot->getTeam()).isDefensivePact(getTeam()))
+	{
+		return false;
+	}
+
 	if (pPlot->isVisibleEnemyUnit(this))
 	{
 		return false;
@@ -3311,6 +3317,15 @@ bool CvUnit::canGift(bool bTestVisible, bool bTestTransport)
 	for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
 	{
 		if (m_pUnitInfo->getCorporationSpreads(iCorp) > 0)
+		{
+			return false;
+		}
+	}
+
+	// Leoreth: cannot gift missionaries
+	for (int iReligion = 0; iReligion < GC.getNumReligionInfos(); ++iReligion)
+	{
+		if (m_pUnitInfo->getReligionSpreads(iReligion) > 0)
 		{
 			return false;
 		}
