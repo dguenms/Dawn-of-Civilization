@@ -1065,7 +1065,7 @@ def specificName(iPlayer):
 		bSpain = not pMoors.isAlive() or not utils.isPlotInArea(capitalCoords(iMoors), vic.tIberiaTL, vic.tIberiaBR)
 	
 		if bSpain:
-			if not pPortugal.isAlive() or getMaster(iPortugal) == iPlayer or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
+			if not pPortugal.isAlive() or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
 		if isCapital(iPlayer, ["Barcelona", "Valencia"]):
