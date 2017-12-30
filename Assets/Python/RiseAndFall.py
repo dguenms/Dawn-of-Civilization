@@ -2741,10 +2741,10 @@ class RiseAndFall:
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
-				pPortugal.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnitAI(iGalley, iCiv, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 				utils.makeUnit(iSettler, iCiv, tPlot, 1)
 				utils.makeUnit(iCrossbowman, iCiv, tPlot, 1)
-				utils.makeUnit(iGalley, iCiv, tSeaPlot, 1)
+				utils.makeUnitAI(iGalley, iCiv, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 1)
 		elif iCiv == iInca:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iAucac, iCiv, tPlot, 4)

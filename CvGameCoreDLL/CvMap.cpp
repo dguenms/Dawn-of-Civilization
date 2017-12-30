@@ -1370,6 +1370,9 @@ void CvMap::calculateAreas()
 	CvArea* africa = addArea();
 	CvArea* southAmerica = addArea();
 
+	int asiaID = plot(100, 44)->getArea(); // Chang'an
+	int americaID = plot(27, 46)->getArea(); // Washington
+
 	int europeID = europe->getID();
 	int africaID = africa->getID();
 	int southAmericaID = southAmerica->getID();
@@ -1397,24 +1400,25 @@ void CvMap::calculateAreas()
 				case REGION_EUROPE:
 				case REGION_SCANDINAVIA:
 				case REGION_RUSSIA:
+				case REGION_SIBERIA:
 				case REGION_ANATOLIA:
 				case REGION_MESOPOTAMIA:
 				case REGION_ARABIA:
 				case REGION_EGYPT:
 				case REGION_MAGHREB:
 				case REGION_PERSIA:
-					plot->setArea(europeID);
+					if (plot->getArea() == asiaID) plot->setArea(europeID);
 					break;
 				case REGION_ETHIOPIA:
 				case REGION_WEST_AFRICA:
 				case REGION_SOUTH_AFRICA:
-					plot->setArea(africaID);
+					if (plot->getArea() == asiaID) plot->setArea(africaID);
 					break;
 				case REGION_BRAZIL:
 				case REGION_ARGENTINA:
 				case REGION_PERU:
 				case REGION_COLOMBIA:
-					plot->setArea(southAmericaID);
+					if (plot->getArea() == americaID) plot->setArea(southAmericaID);
 					break;
 				}
 			}

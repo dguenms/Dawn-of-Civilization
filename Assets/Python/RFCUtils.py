@@ -22,7 +22,8 @@ tCol = (
 '255,255,255',
 '200,200,200',
 '150,150,150',
-'128,128,128')
+'128,128,128'
+)
 
 lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
 # Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
@@ -1804,5 +1805,9 @@ class RFCUtils:
 		
 		pCity = gc.getPlayer(iPlayer).getCity(iCity)
 		pCity.triggerMeltdown(iNuclearPlant)
+		
+	def getCitySiteList(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		return [pPlayer.AI_getCitySite(i) for i in range(pPlayer.AI_getNumCitySites())]
 			
 utils = RFCUtils()
