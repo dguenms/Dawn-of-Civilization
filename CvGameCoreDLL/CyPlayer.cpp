@@ -2610,3 +2610,13 @@ void CyPlayer::setFreeTechsOnDiscovery(int iNewValue)
 	if (m_pPlayer)
 		m_pPlayer->setFreeTechsOnDiscovery(iNewValue);
 }
+
+CyPlot* CyPlayer::AI_getCitySite(int iIndex)
+{
+	return m_pPlayer ? new CyPlot(m_pPlayer->AI()->AI_getCitySite(iIndex)) : NULL;
+}
+
+int CyPlayer::AI_getNumCitySites()
+{
+	return m_pPlayer ? m_pPlayer->AI()->AI_getNumCitySites() : 0;
+}

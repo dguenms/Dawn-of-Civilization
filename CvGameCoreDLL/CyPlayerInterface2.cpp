@@ -114,5 +114,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getLastStateReligion", &CyPlayer::getLastStateReligion, "int ()")
 		.def("AI_bestCivic", &CyPlayer::AI_bestCivic, "int (int iCivicOptionType)")
 		.def("setFreeTechsOnDiscovery", &CyPlayer::setFreeTechsOnDiscovery, "void (int iNewValue)")
+		.def("AI_getNumCitySites", &CyPlayer::AI_getNumCitySites, "int ()")
+		.def("AI_getCitySite", &CyPlayer::AI_getCitySite, python::return_value_policy<python::manage_new_object>(), "CyPlot* (int iPlayer)")
 		;
 }

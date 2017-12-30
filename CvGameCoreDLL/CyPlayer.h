@@ -577,6 +577,8 @@ public:
 	bool isColonialSlavery();
 	int AI_bestCivic(int iCivicOptionType);
 	void setFreeTechsOnDiscovery(int iNewValue);
+	CyPlot* AI_getCitySite(int iIndex);
+	int AI_getNumCitySites();
 
 private:
 	CvPlayer* m_pPlayer;

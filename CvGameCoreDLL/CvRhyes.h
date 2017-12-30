@@ -356,7 +356,7 @@ enum ECSArtStyles
 #endif	// CVRHYES_H
 
 static const int lTechLeaderPenalty[NUM_ERAS] = {0, 0, 5, 10, 20, 20, 20};
-static const int lTechBackwardsBonus[NUM_ERAS] = {0, 5, 10, 15, 25, 25, 25};
+static const int lTechBackwardsBonus[NUM_ERAS] = {0, 10, 20, 30, 40, 50, 50};
 
 // Leoreth: order of persecution
 static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
