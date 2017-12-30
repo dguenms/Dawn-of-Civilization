@@ -945,12 +945,14 @@
 		<German>Unser Vorkommen des Bonusguts [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] in der N&#228;he von %s2_CityName ist aufgebraucht!</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_FOUNDED_FIRST</Tag>
+		<English>[ICON_BULLET]Requires [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] to spread to your cities</English>
+		<German>[ICON_BULLET]Benötigt [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] zur Verbreitung in Städten</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_FIRST_DISCOVER_INCORPORATES</Tag>
 		<English>[ICON_BULLET]Required for the spread of[SPACE]</English>
-		<French>[ICON_BULLET]Le premier &#224; d&#233;couvrir fonde[SPACE]</French>
 		<German>[ICON_BULLET]Notwendig zur Verbreitung von[SPACE]</German>
-		<Italian>[ICON_BULLET]Il primo a scoprire fonda[SPACE]</Italian>
-		<Spanish>[ICON_BULLET]El primero en descubrir se incorpora[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GOLD_TURN</Tag>
