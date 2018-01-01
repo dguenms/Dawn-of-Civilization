@@ -15934,6 +15934,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterCorePeriphery = player.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
 		int iParameterCoreScore = player.getStabilityParameter(PARAMETER_CORE_SCORE);
 		int iParameterPeripheryScore = player.getStabilityParameter(PARAMETER_PERIPHERY_SCORE);
+		int iParameterRecentExpansion = player.getStabilityParameter(PARAMETER_RECENT_EXPANSION);
 		int iParameterRazedCities = player.getStabilityParameter(PARAMETER_RAZED_CITIES);
 		int iParameterIsolationism = player.getStabilityParameter(PARAMETER_ISOLATIONISM);
 
@@ -15943,6 +15944,13 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
 		szStabilityParameters += szColor;
+
+		if (iParameterRecentExpansion > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterRecentExpansion, gDLL->getText("TXT_KEY_STABILITY_RECENT_EXPANSION").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
 
 		if (iParameterIsolationism > 0)
 		{
@@ -16151,7 +16159,6 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Foreign
 	else if (iStabilityCategory == 3)
 	{
-		int iParameterNeighbors = player.getStabilityParameter(PARAMETER_NEIGHBORS);
 		int iParameterVassals = player.getStabilityParameter(PARAMETER_VASSALS);
 		int iParameterDefensivePacts = player.getStabilityParameter(PARAMETER_DEFENSIVE_PACTS);
 		int iParameterRelations = player.getStabilityParameter(PARAMETER_RELATIONS);
@@ -16159,7 +16166,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterTheocracy = player.getStabilityParameter(PARAMETER_THEOCRACY);
 		int iParameterMultilateralism = player.getStabilityParameter(PARAMETER_MULTILATERALISM);
 
-		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterNationhood + iParameterTheocracy + iParameterMultilateralism;
+		iTotalStability = iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterNationhood + iParameterTheocracy + iParameterMultilateralism;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN");
 
@@ -16203,13 +16210,6 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 
 		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
 		szStabilityParameters += szColor;
-
-		if (iParameterNeighbors < 0)
-		{
-			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterNeighbors, gDLL->getText("TXT_KEY_STABILITY_NEIGHBORS").GetCString());
-			szStabilityParameters += NEWLINE + szTemp;
-		}
 
 		if (iParameterVassals < 0)
 		{

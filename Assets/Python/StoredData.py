@@ -77,8 +77,15 @@ class PlayerData:
 		
 		self.lWarTrend = [[] for _ in range(iNumTotalPlayersB)]		
 		self.lWarStartTurn = [0] * iNumTotalPlayersB
+		self.lLastWarSuccess = [0] * iNumTotalPlayersB
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
+		
+	def resetEconomyTrend(self):
+		self.lEconomyTrend = []
+		
+	def resetHappinessTrend(self):
+		self.lHappinessTrend = []
 		
 	def resetWarTrend(self, iEnemy):
 		self.lWarTrend[iPlayer] = []
