@@ -812,7 +812,7 @@ def isRepublic(iPlayer):
 def isCityStates(iPlayer):
 	iGovernment, iLegitimacy, _, _, _, _ = getCivics(iPlayer)
 	
-	if iLegitimacy not in [iAuthority, iCitizenship]: return False
+	if iLegitimacy not in [iAuthority, iCitizenship, iCentralism]: return False
 	
 	if iGovernment in [iRepublic, iElective, iDemocracy]: return True
 	
