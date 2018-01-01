@@ -14817,6 +14817,8 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 		}
 	}
 
+	if (isHasConflicting(eReligion)) iTurns += iIncrement;
+
 	if (eStateReligion == eReligion && isHasPrecursor(eReligion)) iTurns -= iIncrement / 2;
 
 	if (eSpread == RELIGION_SPREAD_MINORITY) iTurns *= 2;
@@ -14830,9 +14832,23 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 	if (eReligion == TAOISM) return isHasReligion(CONFUCIANISM);
 	if (eReligion == BUDDHISM) return isHasReligion(HINDUISM);
 
-	if (eReligion == ISLAM) return isHasReligion(CATHOLICISM) || isHasReligion(ORTHODOXY);
+	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == eReligion)
+	{
+		if (eReligion == ISLAM) return isHasReligion(CATHOLICISM) || isHasReligion(ORTHODOXY);
 
-	if (eReligion == CATHOLICISM || eReligion == ORTHODOXY) return isHasReligion(JUDAISM);
+		if (eReligion == ORTHODOXY) return isHasReligion(JUDAISM) && !isHasReligion(CATHOLICISM) && !isHasReligion(PROTESTANTISM);
+		if (eReligion == CATHOLICISM) return isHasReligion(JUDAISM) && !isHasReligion(ORTHODOXY) && !isHasReligion(PROTESTANTISM);
+	}
+
+	return false;
+}
+
+bool CvCity::isHasConflicting(ReligionTypes eReligion) const
+{
+	if (eReligion == ORTHODOXY || eReligion == CATHOLICISM || eReligion == PROTESTANTISM)
+	{
+		return isHasReligion(ORTHODOXY) || isHasReligion(CATHOLICISM) || isHasReligion(PROTESTANTISM) || isHasReligion(ISLAM);
+	}
 
 	return false;
 }
@@ -14865,7 +14881,6 @@ void CvCity::doReligion()
 
 		if (!canSpread(eReligion) && !(GET_PLAYER(getOwner()).isDistantSpread(this, eReligion))) continue;
 
-		iReligionInfluence = plot()->getReligionInfluence(eReligion);
 		iChance = getTurnsToSpread(eReligion);
 		iRand = GC.getGameINLINE().getSorenRandNum(iChance, "Religion spread");
 		

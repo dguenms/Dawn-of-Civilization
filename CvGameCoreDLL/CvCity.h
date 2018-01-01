@@ -1060,6 +1060,7 @@ public:
 	int getTurnsToSpread(ReligionTypes eReligion) const;
 
 	bool isHasPrecursor(ReligionTypes eReligion) const;
+	bool isHasConflicting(ReligionTypes eReligion) const;
 	int getReligionPopulation(ReligionTypes eReligion) const;
 
 	void updateWorkedImprovements();
