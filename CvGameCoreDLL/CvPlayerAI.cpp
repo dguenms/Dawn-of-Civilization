@@ -5048,6 +5048,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									//1800 - end
 									break;
 								case INDIA:
+									if (iI == PHILOSOPHY)
+										iValue *= 5;
 									if (iI == CEREMONY || iI == PRIESTHOOD)
 										iValue *= 20;
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
