@@ -546,6 +546,10 @@
 		<English>Economic Isolation</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ISOLATIONISM</Tag>
+		<English>Isolationism: no Cities outside of Core Area</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOSING_WARS</Tag>
 		<English>Losing Wars</English>
 	</TEXT>
@@ -564,10 +568,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOST_TERRITORY</Tag>
 		<English>We have lost control over our territory around %s1!</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_STABILITY_ISOLATIONISM</Tag>
-		<English>Isolationism: no Cities outside of Core Area</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER</Tag>
