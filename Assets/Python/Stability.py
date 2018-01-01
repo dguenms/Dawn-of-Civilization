@@ -705,8 +705,8 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += (50 + iCurrentEra * 50) * iPopulation / 100
-			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += (50 + iCurrentEra * 50) * iPopulation / 100
+			iCorePopulation += (100 + iCurrentEra * 50) * iPopulation / 100
+			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += (100 + iCurrentEra * 50) * iPopulation / 100
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
