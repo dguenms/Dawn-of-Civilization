@@ -4785,7 +4785,27 @@ void CvCity::updateArtStyleType()
 	}
 	else 
 	{
-		if (eHighestCulture == INDEPENDENT || eHighestCulture == INDEPENDENT2 || eHighestCulture == BARBARIAN)
+		if (eHighestCulture == NATIVE)
+		{
+			switch (id)
+			{
+			case REGION_ALASKA:
+			case REGION_CANADA:
+			case REGION_UNITED_STATES:
+			case REGION_MESOAMERICA:
+			case REGION_CARIBBEAN:
+			case REGION_BRAZIL:
+			case REGION_ARGENTINA:
+			case REGION_PERU:
+			case REGION_COLOMBIA:
+				eNewArtStyle = ARTSTYLE_SOUTH_AMERICA_OLD;
+				break;
+			default:
+				eNewArtStyle = ARTSTYLE_AFRICAN;
+				break;
+			}
+		}
+		else if (eHighestCulture == INDEPENDENT || eHighestCulture == INDEPENDENT2 || eHighestCulture == BARBARIAN)
 		{
 			switch (id)
 			{

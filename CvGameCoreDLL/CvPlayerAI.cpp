@@ -10943,8 +10943,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getGreatPeopleRateModifier() * getNumCities()) / 10);
 	iValue += ((kCivic.getGreatGeneralRateModifier() * getNumMilitaryUnits()) / 50);
 	iValue += ((kCivic.getDomesticGreatGeneralRateModifier() * getNumMilitaryUnits()) / 100);
-	//iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / /*8*/ 12);
-	//iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / /*8*/ 12);
+	iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
+	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
 	iValue += -((kCivic.getDistanceMaintenanceModifier() * calculateDistanceMaintenance()) / 100);
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
@@ -10970,12 +10970,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
-
-	// Leoreth: factor in extra unit upkeep
-	/*if (eCivic == CIVIC_MERCENARIES)
-	{
-		iValue -= getNumMilitaryUnits() / 3;
-	}*/
 
 	// Leoreth: wonder production modifier
 	iTempValue = kCivic.getWonderProductionModifier();
