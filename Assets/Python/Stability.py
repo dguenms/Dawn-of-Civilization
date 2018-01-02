@@ -1259,7 +1259,7 @@ def updateEconomyTrend(iPlayer):
 	iCivicEconomy = pPlayer.getCivics(3)
 		
 	iPositiveThreshold = 5
-	iNegativeThreshold = 2
+	iNegativeThreshold = min(2, pPlayer.getCurrentEra() / 2)
 	
 	if iCivicEconomy == iCentralPlanning: iNegativeThreshold = 0
 	
