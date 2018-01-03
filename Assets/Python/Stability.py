@@ -1436,6 +1436,19 @@ def checkResurrection(iGameTurn):
 	for iLoopCiv in range(iNumPlayers):
 		if utils.canRespawn(iLoopCiv):
 			lPossibleResurrections.append(iLoopCiv)
+			
+	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
+		if gc.getGame().getGameTurn() - data.players[iLoopCiv].iLastTurnAlive < utils.getTurns(15):
+			continue
+	
+		for city in utils.getAreaCities(Areas.getRespawnArea(iLoopCiv)):
+			if city.getOwner() not in [iIndependent, iIndependent2, iNative, iBarbarian]:
+				continue
+		
+		lCityList = getResurrectionCities(iLoopCiv)
+		if lCityList:
+			doResurrection(iLoopCiv, lCityList)
+			return
 				
 	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
 		iMinNumCities = 2
