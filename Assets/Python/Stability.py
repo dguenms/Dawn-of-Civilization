@@ -675,6 +675,8 @@ def calculateStability(iPlayer):
 	
 	bSingleCoreCity = (len(utils.getCoreCityList(iPlayer, iReborn)) == 1)
 	
+	iCorePopulationModifier = 150 + iCurrentEra * 50
+	
 	for city in utils.getCityList(iPlayer):
 		iPopulation = city.getPopulation()
 		iModifier = 0
@@ -705,8 +707,8 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += (150 + iCurrentEra * 50) * iPopulation / 100
-			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += (150 + iCurrentEra * 50) * iPopulation / 100
+			iCorePopulation += iCorePopulationModifier * iPopulation / 100
+			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += iCorePopulationModifier * iPopulation / 100
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -768,6 +770,14 @@ def calculateStability(iPlayer):
 		if bNonStateReligion: 
 			if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iNonStateReligionPopulation += city.getPopulation() / 2
 			else: iNonStateReligionPopulation += city.getPopulation()
+		
+	iPopulationImprovements = 0
+	for (x, y) in Areas.getCoreArea(iPlayer):
+		plot = gc.getMap().plot(x, y)
+		if plot.getImprovementType() in [iVillage, iTown]:
+			iPopulationImprovements += 1
+			
+	iCorePopulation += iCorePopulationModifier * iPopulationImprovements / 100
 	
 	iCurrentPower = pPlayer.getPower()
 	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - utils.getTurns(10))
