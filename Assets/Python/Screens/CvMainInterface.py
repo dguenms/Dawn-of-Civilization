@@ -229,7 +229,7 @@ tStabilitySymbols = (
 FontSymbols.UNSTABLE_CHAR,
 FontSymbols.UNSTABLE_CHAR,
 FontSymbols.STABLE_CHAR,
-FontSymbols.STABLE_CHAR,
+FontSymbols.SOLID_CHAR,
 FontSymbols.SOLID_CHAR,)
 
 class CvMainInterface:
@@ -5217,7 +5217,7 @@ class CvMainInterface:
 
 												if ePlayer < iNumPlayers:
 													iStabilityLevel = data.getStabilityLevel(ePlayer)
-													if iStabilityLevel > iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
+													if iStabilityLevel > iStabilityShaky: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
 													elif iStabilityLevel > iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
 													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
 													szBuffer += cStab
