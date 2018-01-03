@@ -301,7 +301,7 @@ def checkLostCoreCollapse(iPlayer):
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 	
-def determineStabilityLevel(iCurrentLevel, iStability, bFall):
+def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
 	iThreshold = 10 * iCurrentLevel - 10
 	
 	if bFall: iThreshold += 10
@@ -705,8 +705,8 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += (100 + iCurrentEra * 50) * iPopulation / 100
-			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += (100 + iCurrentEra * 50) * iPopulation / 100
+			iCorePopulation += (150 + iCurrentEra * 50) * iPopulation / 100
+			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += (150 + iCurrentEra * 50) * iPopulation / 100
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -789,11 +789,6 @@ def calculateStability(iPlayer):
 		
 	if iPeripheryExcess > 0:
 		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
-		
-		iLastExpansionStability = data.players[iPlayer].iLastExpansionStability
-		
-		# cap changes between checks at +5
-		if iLastExpansionStability - iCorePeripheryStability > 5: iCorePeripheryStability = iLastExpansionStability - 5
 
 		data.players[iPlayer].iLastExpansionStability = iCorePeripheryStability
 		
