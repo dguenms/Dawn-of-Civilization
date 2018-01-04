@@ -14942,6 +14942,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=20
+        BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -20759,6 +20760,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=34
+        BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -20857,7 +20859,6 @@ BeginPlot
 	x=54,y=49
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -22609,7 +22610,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=34
-	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -22927,7 +22927,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=23
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23903,7 +23902,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=60
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -24028,6 +24026,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=15
+        BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -24800,6 +24799,7 @@ BeginPlot
 	x=65,y=12
 	isNOfRiver
 	RiverWEDirection=3
+        BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -27432,7 +27432,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=52
-	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -27759,7 +27758,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -27982,7 +27980,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=15
-	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32662,6 +32659,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=50
+        BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -36437,6 +36435,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=44
+        BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot

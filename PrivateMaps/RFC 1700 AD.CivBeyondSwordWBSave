@@ -16486,6 +16486,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=20
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=29,44,
@@ -23709,6 +23710,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=34
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,45,
@@ -23844,7 +23846,6 @@ BeginPlot
 	x=54,y=49
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_URANIUM
 	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -26190,7 +26191,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=34
-	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=35,44,
@@ -26680,7 +26680,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=23
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28223,7 +28222,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=60
-	BonusType=BONUS_URANIUM
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28388,6 +28386,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=15
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=37,38,
@@ -29371,6 +29370,7 @@ BeginPlot
 	x=65,y=12
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=38,45,
@@ -32998,7 +32998,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=52
-	BonusType=BONUS_URANIUM
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -33409,7 +33408,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	BonusType=BONUS_URANIUM
 	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -33684,7 +33682,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=15
-	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,24,29,38,44,
@@ -39674,6 +39671,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=50
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=44,
@@ -44287,6 +44285,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=44
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=1,34,44,
