@@ -15891,31 +15891,32 @@ void CvGameTextMgr::buildFinanceForeignIncomeString(CvWStringBuffer& szBuffer, P
 }
 
 // Leoreth: stability display
-void CvGameTextMgr::buildStabilityString(CvWStringBuffer& szBuffer, int iCrisisImminent)
+void CvGameTextMgr::buildStabilityString(CvWStringBuffer& szBuffer, int iStabilityChange)
 {
-	bool bCrisisImminent = (iCrisisImminent == 1);
 	CvWString szStability;
 	CvWString szTemp;
 
-	if (bCrisisImminent)
+	if (iStabilityChange < 0)
 	{
 		szTemp.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
 		szStability += szTemp;
 
-		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_CRISIS_IMMINENT"));
+		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_CHANGE_NEGATIVE"));
+		szStability += szTemp;
+
+		szTemp.Format(ENDCOLR);
+		szStability += szTemp;
+	}
+	else if (iStabilityChange > 0)
+	{
+		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_CHANGE_POSITIVE"));
 		szStability += szTemp;
 	}
 	else
 	{
-		szTemp.Format(SETCOLR, TEXT_COLOR("COLOR_WHITE"));
-		szStability += szTemp;
-
-		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_NO_CRISIS_IMMINENT"));
+		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_NO_CHANGE"));
 		szStability += szTemp;
 	}
-
-	szTemp.Format(NEWLINE);
-	szStability += szTemp;
 
 	szBuffer.append(szStability.GetCString());
 }

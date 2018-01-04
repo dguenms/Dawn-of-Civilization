@@ -17,6 +17,9 @@ class PlayerData:
 		self.iPlayer = iPlayer
 		
 		self.setup()
+		
+	def update(self, data):
+		self.__dict__.update(data)
 
 	def setup(self):
 	
@@ -128,6 +131,11 @@ class GameData:
 		
 	def update(self, data):
 		self.__dict__.update(data)
+		
+		for player in self.players:
+			data = player.__dict__.copy()
+			player.setup()
+			player.update(data)
 
 	def setup(self):
 		self.players = [PlayerData(i) for i in range(iNumTotalPlayersB)]

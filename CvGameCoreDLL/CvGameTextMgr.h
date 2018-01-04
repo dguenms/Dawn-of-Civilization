@@ -205,7 +205,7 @@ public:
 
 	// Leoreth
 	DllExport void buildStabilityParameterString(CvWStringBuffer& szBuffer, int iStabilityCategory);
-	DllExport void buildStabilityString(CvWStringBuffer& szBuffer, int iCrisisImminent);
+	DllExport void buildStabilityString(CvWStringBuffer& szBuffer, int iStabilityChange);
 
 	DllExport void buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvCity* pCity);
 	DllExport void buildCityBillboardCityNameString( CvWStringBuffer& szBuffer, CvCity* pCity);

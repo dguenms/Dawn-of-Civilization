@@ -202,6 +202,14 @@
 		<English>Military</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CHANGE_NEGATIVE</Tag>
+		<English>If our stability does not improve, we will lose a stability level at the next check</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CHANGE_POSITIVE</Tag>
+		<English>Unless our stability decreases, we will gain a stability level at the next check</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CENTRAL_PLANNING_TRADE_FREE_MARKET</Tag>
 		<English>Central Planning: Trade with Free Market Civilizations</English>
 	</TEXT>
@@ -582,8 +590,8 @@
 		<English>Collapsing Neighbors</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_NO_CRISIS_IMMINENT</Tag>
-		<English>If our stability remains constant, we will not experience a crisis at the next stability check.</English>
+		<Tag>TXT_KEY_STABILITY_NO_CHANGE</Tag>
+		<English>If our stability does not change, the stability level will remain constant at the next check</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_NORMALIZATION</Tag>
@@ -666,6 +674,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RAZED_CITIES</Tag>
 		<English>Razed Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_RECENT_EXPANSION</Tag>
+		<English>Recent Expansion</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RELIGION</Tag>

@@ -11479,7 +11479,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 	int iBestValue;
 	int iI;
 
-	iBestValue = 0;
+	iBestValue = 1;
 	eBestReligion = NO_RELIGION;
 
 	ReligionTypes eFavorite = (ReligionTypes)GC.getLeaderHeadInfo(getLeaderType()).getFavoriteReligion();
@@ -11508,11 +11508,6 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 				{
 					iValue /= 2;
 				}
-			}
-
-			if (iI == JUDAISM && getStateReligion() == NO_RELIGION)
-			{
-				iValue /= 2;
 			}
 			
 			if (iValue > iBestValue)
@@ -11550,6 +11545,11 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 {
 	if (getHasReligionCount(eReligion) == 0)
+	{
+		return 0;
+	}
+
+	if (eReligion == JUDAISM)
 	{
 		return 0;
 	}

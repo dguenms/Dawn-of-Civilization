@@ -301,7 +301,7 @@ def checkLostCoreCollapse(iPlayer):
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 	
-def determineStabilityLevel(iCurrentLevel, iStability, bFall):
+def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
 	iThreshold = 10 * iCurrentLevel - 10
 	
 	if bFall: iThreshold += 10
@@ -675,6 +675,8 @@ def calculateStability(iPlayer):
 	
 	bSingleCoreCity = (len(utils.getCoreCityList(iPlayer, iReborn)) == 1)
 	
+	iCorePopulationModifier = 150 + iCurrentEra * 50
+	
 	for city in utils.getCityList(iPlayer):
 		iPopulation = city.getPopulation()
 		iModifier = 0
@@ -705,8 +707,8 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += (100 + iCurrentEra * 50) * iPopulation / 100
-			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += (100 + iCurrentEra * 50) * iPopulation / 100
+			iCorePopulation += iCorePopulationModifier * iPopulation / 100
+			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += iCorePopulationModifier * iPopulation / 100
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -768,6 +770,14 @@ def calculateStability(iPlayer):
 		if bNonStateReligion: 
 			if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iNonStateReligionPopulation += city.getPopulation() / 2
 			else: iNonStateReligionPopulation += city.getPopulation()
+		
+	iPopulationImprovements = 0
+	for (x, y) in Areas.getCoreArea(iPlayer):
+		plot = gc.getMap().plot(x, y)
+		if plot.getImprovementType() in [iVillage, iTown]:
+			iPopulationImprovements += 1
+			
+	iCorePopulation += iCorePopulationModifier * iPopulationImprovements / 100
 	
 	iCurrentPower = pPlayer.getPower()
 	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - utils.getTurns(10))
@@ -789,11 +799,6 @@ def calculateStability(iPlayer):
 		
 	if iPeripheryExcess > 0:
 		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
-		
-		iLastExpansionStability = data.players[iPlayer].iLastExpansionStability
-		
-		# cap changes between checks at +5
-		if iLastExpansionStability - iCorePeripheryStability > 5: iCorePeripheryStability = iLastExpansionStability - 5
 
 		data.players[iPlayer].iLastExpansionStability = iCorePeripheryStability
 		
@@ -1259,7 +1264,7 @@ def updateEconomyTrend(iPlayer):
 	iCivicEconomy = pPlayer.getCivics(3)
 		
 	iPositiveThreshold = 5
-	iNegativeThreshold = 2
+	iNegativeThreshold = min(2, pPlayer.getCurrentEra() / 2)
 	
 	if iCivicEconomy == iCentralPlanning: iNegativeThreshold = 0
 	
@@ -1431,6 +1436,19 @@ def checkResurrection(iGameTurn):
 	for iLoopCiv in range(iNumPlayers):
 		if utils.canRespawn(iLoopCiv):
 			lPossibleResurrections.append(iLoopCiv)
+			
+	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
+		if gc.getGame().getGameTurn() - data.players[iLoopCiv].iLastTurnAlive < utils.getTurns(15):
+			continue
+	
+		for city in utils.getAreaCities(Areas.getRespawnArea(iLoopCiv)):
+			if city.getOwner() not in [iIndependent, iIndependent2, iNative, iBarbarian]:
+				continue
+		
+		lCityList = getResurrectionCities(iLoopCiv)
+		if lCityList:
+			doResurrection(iLoopCiv, lCityList)
+			return
 				
 	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
 		iMinNumCities = 2
