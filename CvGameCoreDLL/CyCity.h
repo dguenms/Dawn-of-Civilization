@@ -579,6 +579,7 @@ public:
 	void setBuildingOriginalOwner(int eBuilding, int ePlayer);
 	int getHappinessYield(int eYield);
 	void triggerMeltdown(int eBuilding);
+	bool isColony();
 
 private:
 	CvCity* m_pCity;

@@ -714,7 +714,7 @@ def calculateStability(iPlayer):
 			if not bHistorical: iModifier += 2
 			
 			# colonies with Totalitarianism
-			if isOverseas(city) and bHistorical and bTotalitarianism: iModifier += 1
+			if city.isColony() and bHistorical and bTotalitarianism: iModifier += 1
 			
 			# not original owner
 			if not bExpansionExceptions:
@@ -732,7 +732,7 @@ def calculateStability(iPlayer):
 			if city.angryPopulation(0) == 0 and city.hasBuilding(utils.getUniqueBuilding(iPlayer, iJail)): iModifier -= 1
 			
 			# Portuguese UP: reduced instability from overseas colonies
-			if isOverseas(city):
+			if city.isColony():
 				if iPlayer == iPortugal: iModifier -= 2
 				if bColonialism and bHistorical: iModifier -= 1
 					
@@ -1414,11 +1414,6 @@ def isTolerated(iPlayer, iReligion):
 	if iPlayer == iPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
 	
 	return False
-	
-def isOverseas(city):
-	capital = gc.getPlayer(city.getOwner()).getCapitalCity()
-	
-	return (capital.plot().getArea() != city.plot().getArea())
 
 def checkResurrection(iGameTurn):
 

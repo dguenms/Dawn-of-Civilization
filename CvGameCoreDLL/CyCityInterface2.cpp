@@ -135,5 +135,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("setBuildingOriginalOwner", &CyCity::setBuildingOriginalOwner, "void (int eBuilding, int ePlayer)")
 		.def("getHappinessYield", &CyCity::getHappinessYield, "int (int eCommerce)")
 		.def("triggerMeltdown", &CyCity::triggerMeltdown, "void (int eBuilding)")
+		.def("isColony", &CyCity::isColony, "bool ()")
 		;
 }

@@ -2725,3 +2725,8 @@ void CyCity::triggerMeltdown(int eBuilding)
 {
 	if (m_pCity) m_pCity->triggerMeltdown((BuildingTypes)eBuilding);
 }
+
+bool CyCity::isColony()
+{
+	return m_pCity ? m_pCity->isColony() : false;
+}
