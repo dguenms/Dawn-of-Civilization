@@ -1009,23 +1009,23 @@ def calculateStability(iPlayer):
 			
 		# defensive pacts
 		if tPlayer.isDefensivePact(iLoopPlayer):
-			if iLoopScore > iPlayerScore: iDefensivePactStability += 5
+			if iLoopScore > iPlayerScore: iDefensivePactStability += 3
 			if bMultilateralism: iDefensivePactStability += 3
 		
 		# worst enemies
 		if pLoopPlayer.getWorstEnemy() == iPlayer:
-			if iLoopScore > iPlayerScore: iRelationStability -= 4
+			if iLoopScore > iPlayerScore: iRelationStability -= 3
 			
 		# wars
-		if bNationhood:
-			if utils.isNeighbor(iPlayer, iLoopPlayer) and tPlayer.isAtWar(iLoopPlayer): iNationhoodStability += 2
-		if bTheocracy:
-			if tPlayer.isAtWar(iLoopPlayer):
-				if pLoopPlayer.getStateReligion() != iStateReligion: iTheocracyStability += 3
-				else: iTheocracyStability -= 2
-		if bMultilateralism:
-			if tPlayer.isAtWar(iLoopPlayer):
-				iMultilateralismStability -= 2
+		if tPlayer.isAtWar(iLoopPlayer):
+			if bMultilateralism: iMultilateralismStability -= 2
+			
+			if utils.isNeighbor(iPlayer, iLoopPlayer):
+				if bNationhood: iNationhoodStability += 2
+				
+				if bTheocracy:
+					if pLoopPlayer.getStateReligion() != iStateReligion: iTheocracyStability += 3
+					else: iTheocracyStability -= 2
 		
 	# attitude stability
 	
