@@ -759,13 +759,6 @@ def calculateStability(iPlayer):
 		if city.isHasReligion(iStateReligion):
 			iStateReligionPopulation += city.getPopulation()
 			if not bNonStateReligion: iOnlyStateReligionPopulation += city.getPopulation()
-			
-		if iPlayer == iPoland:
-			if iStateReligion in [iCatholicism, iOrthodoxy, iProtestantism]:
-				for iReligion in [iCatholicism, iOrthodoxy, iProtestantism]:
-					if iReligion != iStateReligion and city.isHasReligion(iReligion) and not city.isHasReligion(iStateReligion):
-						iStateReligionPopulation += city.getPopulation()
-						if not bNonStateReligion: iOnlyStateReligionPopulation += city.getPopulation()
 				
 		if bNonStateReligion: 
 			if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iNonStateReligionPopulation += city.getPopulation() / 2
@@ -1415,6 +1408,10 @@ def isTolerated(iPlayer, iReligion):
 	if iStateReligion == iTaoism and iReligion == iConfucianism: return True
 	if iStateReligion == iHinduism and iReligion == iBuddhism: return True
 	if iStateReligion == iBuddhism and iReligion == iHinduism: return True
+	
+	# Poland
+	lChristianity = [iOrthodoxy, iCatholicism, iProtestantism]
+	if iPlayer == iPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
 	
 	return False
 	
