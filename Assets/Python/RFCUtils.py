@@ -1139,22 +1139,26 @@ class RFCUtils:
 		
 		unit.setXYOld(city.getX(), city.getY())
 		
-	def clearSlaves(self, iPlayer):
-		for (x, y) in self.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
-			if plot.getOwner() == iPlayer:
-				if plot.getImprovementType() == iSlavePlantation:
-					plot.setImprovementType(iPlantation)
-				if plot.isCity():
-					self.removeSlaves(plot.getPlotCity())
+	def checkSlaves(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		
+		if not pPlayer.isColonialSlavery():
+			for (x, y) in self.getWorldPlotsList():
+				plot = gc.getMap().plot(x, y)
+				if plot.getOwner() == iPlayer:
+					if plot.getImprovementType() == iSlavePlantation:
+						plot.setImprovementType(iPlantation)
+					if plot.isCity():
+						self.removeSlaves(plot.getPlotCity())
 						
-		lSlaves = []
-		for unit in PyPlayer(iPlayer).getUnitList():
-			if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
-				lSlaves.append(unit)
-				
-		for slave in lSlaves:
-			slave.kill(iBarbarian, False)
+		if not pPlayer.isColonialSlavery() and not pPlayer.isSlavery():				
+			lSlaves = []
+			for unit in PyPlayer(iPlayer).getUnitList():
+				if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
+					lSlaves.append(unit)
+					
+			for slave in lSlaves:
+				slave.kill(iBarbarian, False)
 			
 	def removeSlaves(self, city):
 		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)

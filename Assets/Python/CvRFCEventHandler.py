@@ -434,8 +434,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			dc.onRevolution(iPlayer)
 			
-		if not gc.getPlayer(iPlayer).isColonialSlavery():
-			utils.clearSlaves(iPlayer)
+		utils.checkSlaves(iPlayer)
 			
 		if iPlayer in [iEgypt]:
 			cnm.onRevolution(iPlayer)
