@@ -781,8 +781,9 @@ def calculateStability(iPlayer):
 	iPopulationImprovements = 0
 	for (x, y) in Areas.getCoreArea(iPlayer):
 		plot = gc.getMap().plot(x, y)
-		if plot.getImprovementType() in [iVillage, iTown]:
-			iPopulationImprovements += 1
+		if plot.getOwner() == iPlayer:
+			if plot.getImprovementType() in [iVillage, iTown]:
+				iPopulationImprovements += 1
 			
 	iCorePopulation += iCorePopulationModifier * iPopulationImprovements / 100
 	
@@ -1453,12 +1454,12 @@ def checkResurrection(iGameTurn):
 	
 		for city in utils.getAreaCities(Areas.getRespawnArea(iLoopCiv)):
 			if city.getOwner() not in [iIndependent, iIndependent2, iNative, iBarbarian]:
-				continue
-		
-		lCityList = getResurrectionCities(iLoopCiv)
-		if lCityList:
-			doResurrection(iLoopCiv, lCityList)
-			return
+				break
+		else:
+			lCityList = getResurrectionCities(iLoopCiv)
+			if lCityList:
+				doResurrection(iLoopCiv, lCityList)
+				return
 				
 	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
 		iMinNumCities = 2
