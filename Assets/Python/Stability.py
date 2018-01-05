@@ -33,6 +33,16 @@ tCrisisTypes = (
 "TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY",
 )
 
+tEraCorePopulationModifiers = (
+	100, # ancient
+	200, # classical
+	200, # medieval
+	250, # renaissance
+	300, # industrial
+	350, # modern
+	400, # future
+)
+
 def checkTurn(iGameTurn):
 	if data.bNoAIStability:
 		return
@@ -675,7 +685,7 @@ def calculateStability(iPlayer):
 	
 	bSingleCoreCity = (len(utils.getCoreCityList(iPlayer, iReborn)) == 1)
 	
-	iCorePopulationModifier = 150 + iCurrentEra * 50
+	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
 	
 	for city in utils.getCityList(iPlayer):
 		iPopulation = city.getPopulation()
@@ -1789,6 +1799,9 @@ def sign(x):
 	if x > 0: return 1
 	elif x < 0: return -1
 	else: return 0
+	
+def getCorePopulationModifier(iEra):
+	return tEraCorePopulationModifiers[iEra]
 	
 class Civics:
 
