@@ -669,7 +669,8 @@ def calculateStability(iPlayer):
 	
 	iStateReligionPopulation = 0
 	iOnlyStateReligionPopulation = 0
-	iNonStateReligionPopulation = 0
+	iDifferentReligionPopulation = 0
+	iNoReligionPopulation = 0
 	
 	bTotalitarianism = iCivicSociety == iTotalitarianism
 	bFreeEnterprise = iCivicEconomy == iFreeEnterprise
@@ -771,8 +772,11 @@ def calculateStability(iPlayer):
 			if not bNonStateReligion: iOnlyStateReligionPopulation += city.getPopulation()
 				
 		if bNonStateReligion: 
-			if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iNonStateReligionPopulation += city.getPopulation() / 2
-			else: iNonStateReligionPopulation += city.getPopulation()
+			if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iDifferentReligionPopulation += city.getPopulation() / 2
+			else: iDifferentReligionPopulation += city.getPopulation()
+			
+		if city.getReligionCount() == 0:
+			iNoReligionPopulation += city.getPopulation()
 		
 	iPopulationImprovements = 0
 	for (x, y) in Areas.getCoreArea(iPlayer):
@@ -941,7 +945,7 @@ def calculateStability(iPlayer):
 	iReligionStability = 0
 	
 	if iTotalPopulation > 0:
-		iHeathenRatio = 100 * iNonStateReligionPopulation / iTotalPopulation
+		iHeathenRatio = 100 * iDifferentReligionPopulation / iTotalPopulation
 		iHeathenThreshold = 30
 		iBelieverThreshold = 75
 		
@@ -950,7 +954,11 @@ def calculateStability(iPlayer):
 			
 		if iStateReligion >= 0:
 			iStateReligionRatio = 100 * iStateReligionPopulation / iTotalPopulation
-			iBelieverStability = (iStateReligionRatio - iBelieverThreshold) / 5
+			iNoReligionRatio = 100 * iNoReligionPopulation / iTotalPopulation
+			
+			iBelieverRatio = iStateReligionRatio - iBelieverThreshold
+			if iBelieverRatio < 0: iBelieverRatio = min(0, iBelieverRatio + iNoReligionRatio)
+			iBelieverStability = iBelieverRatio / 5
 			
 			# cap at -10 for threshold = 75
 			iCap = 2 * (iBelieverThreshold - 100) / 5
