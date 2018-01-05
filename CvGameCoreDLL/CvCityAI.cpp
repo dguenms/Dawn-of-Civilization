@@ -603,6 +603,7 @@ void CvCityAI::AI_chooseProduction()
 	UnitTypes eProductionUnit;
 	bool bWasFoodProduction;
 	bool bHasMetHuman;
+	bool bMajorWar;
 	bool bLandWar;
 	bool bAssault;
 	bool bDefenseWar;
@@ -711,6 +712,7 @@ void CvCityAI::AI_chooseProduction()
 
 	bWasFoodProduction = isFoodProduction();
 	bHasMetHuman = GET_TEAM(getTeam()).hasMetHuman();
+	bMajorWar = GET_TEAM(getTeam()).isAtWarWithMajorPlayer();
 	bLandWar = ((pArea->getAreaAIType(getTeam()) == AREAAI_OFFENSIVE) || (pArea->getAreaAIType(getTeam()) == AREAAI_DEFENSIVE) || (pArea->getAreaAIType(getTeam()) == AREAAI_MASSING));
 	bDefenseWar = (pArea->getAreaAIType(getTeam()) == AREAAI_DEFENSIVE);
 	bool bAssaultAssist = (pArea->getAreaAIType(getTeam()) == AREAAI_ASSAULT_ASSIST);
@@ -762,7 +764,7 @@ void CvCityAI::AI_chooseProduction()
     {
      	iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 1) / 2, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
 		//iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 2) / 3, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
-     	if (bLandWar || bAssault)
+     	if ((bLandWar || bAssault) && bMajorWar)
      	{
      		iMaxSettlers = (iMaxSettlers + 2) / 3;
      	}
@@ -1373,7 +1375,7 @@ void CvCityAI::AI_chooseProduction()
 
 		if (iPlotSettlerCount == 0)
 		{
-			if ((iNumSettlers < iMaxSettlers) && (!bLandWar || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
+			if ((iNumSettlers < iMaxSettlers) && (!(bLandWar && bMajorWar) || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
 			{
 				if (iPlotCityDefenderCount == 1)
 				{

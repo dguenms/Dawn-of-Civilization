@@ -358,6 +358,8 @@ public:
 	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
 	PlayerTypes getFoundingPlayer(ReligionTypes eReligion) const;
 
+	bool isAtWarWithMajorPlayer() const;
+
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
 	virtual void AI_doTurnPre() = 0;

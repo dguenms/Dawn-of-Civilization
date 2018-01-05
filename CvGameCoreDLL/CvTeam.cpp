@@ -7033,3 +7033,16 @@ TeamTypes CvTeam::getMaster() const
 
 	return NO_TEAM;
 }
+
+bool CvTeam::isAtWarWithMajorPlayer() const
+{
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv())
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
