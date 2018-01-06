@@ -113,7 +113,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BYZANTINE_HIPPODROME_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], doubles the happiness output from using the culture slider and loses one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
+		<English>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness and culture output, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and doubles the happiness output from using the culture slider.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Tag>
