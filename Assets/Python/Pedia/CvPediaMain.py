@@ -31,6 +31,7 @@ import TraitUtil
 import UnitUpgradesGraph
 
 from RFCUtils import utils
+from Consts import *
 
 gc = CyGlobalContext()
 g_TraitUtilInitDone = False
@@ -915,7 +916,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		UnitClassInfo = gc.getUnitClassInfo(UnitInfo.getUnitClassType())
 		iDefaultUnit = UnitClassInfo.getDefaultUnitIndex()
 
-		if UnitInfo.isGraphicalOnly():
+		if UnitInfo.isGraphicalOnly() and not utils.getBaseUnit(iUnit) in [iWarrior, iAxeman]:
 			return -1
 		elif iDefaultUnit > -1 and iDefaultUnit != iUnit:
 			return 2
