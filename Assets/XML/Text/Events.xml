@@ -6851,4 +6851,29 @@
 		<English>With such a large force of Lancers working together, additional training for these units can be achieved.</English>
 		<German>Mit einer so gro&#223;en Truppe Lanzenreiter k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_REINFORCED_HULL_1</Tag>
+		<English>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</English>
+		<German>Es gibt Ger&#252;chte, dass %s1:3_civ_adjective Schiffbauer ihre Kriegsgaleeren-Flotte &#252;berarbeiten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_REINFORCED_HULL_1</Tag>
+		<English>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</English>
+		<German>Unsere Schiffbauer haben einen Weg gefunden, den Rumpf unserer Kriegsgaleeren zu verst&#228;rken. Dies kommt uns sowohl beim Rammen als auch beim Gerammtwerden zugute.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_WARSHIPS_1</Tag>
+		<English>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</English>
+		<German>Unsere Marinekommandanten wollen sich auf den Krieg vorbereiten.[PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Einheiten ausbilden, k&#246;nnten wir &#252;ber die Meere herrschen!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_WARSHIPS_1</Tag>
+		<English>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</English>
+		<German>Kriegsschiffe[PARAGRAPH:1]Eure Marinekommandanten verlangen von Euch, eine gro&#223;e [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Flotte aufzubauen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
+		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</English>
+		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Renaissance erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
+	</TEXT>
 </Civ4GameText>
