@@ -1624,6 +1624,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iEthiopia:
+		if bCityStates:
+			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+	
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 	
