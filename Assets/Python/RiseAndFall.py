@@ -3093,73 +3093,42 @@ class RiseAndFall:
 		sta.onCivSpawn(iPlayer)
 
 	def arabianSpawn(self):
-		plotBaghdad = gc.getMap().plot(77,40)
-		plotCairo = gc.getMap().plot(69,35)
-		Baghdad = plotBaghdad.getPlotCity()
-		Cairo = plotCairo.getPlotCity()
+		tBaghdad = (77, 40)
+		tCairo = (69, 35)
+		tMecca = (75, 33)
 
-		bBaghdad = (plotBaghdad.getOwner() == iArabia)
-		bCairo = (plotCairo.getOwner() == iArabia)
-
-		if bBaghdad and bCairo:
-			iRand = gc.getGame().getSorenRandNum(2, "Toss Coin")
-
-			if iRand == 0:
-				if utils.getHumanID() != iArabia:
-					Baghdad.setHasRealBuilding(iPalace, True)
-					utils.makeUnit(iCamelArcher, iArabia, (77,40), 3)
-					utils.makeUnit(iSwordsman, iArabia, (77,40), 2)
-				utils.makeUnit(iCamelArcher, iArabia, (77,40), 2)
-				utils.makeUnit(iSwordsman, iArabia, (77,40), 2)
-			else:
-				if utils.getHumanID() != iArabia:
-					Baghdad.setHasRealBuilding(iPalace, True)
-					utils.makeUnit(iCamelArcher, iArabia, (69,35), 3)
-					utils.makeUnit(iSwordsman, iArabia, (69,35), 2)
-				utils.makeUnit(iCamelArcher, iArabia, (69,35), 2)
-				utils.makeUnit(iSwordsman, iArabia, (69,35), 2)
-
-			utils.makeUnit(iSettler, iArabia, (77,40), 1)
-			utils.makeUnit(iSettler, iArabia, (69,35), 1)
-			utils.makeUnit(iWorker, iArabia, (77,40), 1)
-			utils.makeUnit(iWorker, iArabia, (69,35), 1)
-
-		elif bBaghdad and not bCairo:
+		bBaghdad = gc.getMap().plot(tBaghdad[0], tBaghdad[1]).getOwner() == iArabia
+		bCairo = gc.getMap().plot(tCairo[0], tCairo[1]).getOwner() == iArabia
+		
+		lCities = []
+		
+		if bBaghdad: lCities.append(tBaghdad)
+		if bCairo: lCities.append(tCairo)
+		
+		tCapital = utils.getRandomEntry(lCities)
+		
+		if tCapital:
 			if utils.getHumanID() != iArabia:
-				Baghdad.setHasRealBuilding(iPalace, True)
-				utils.makeUnit(iCamelArcher, iArabia, (77,40), 3)
-				utils.makeUnit(iSwordsman, iArabia, (77,40), 2)
-			utils.makeUnit(iSettler, iArabia, (77,40), 1)
-			utils.makeUnit(iCamelArcher, iArabia, (77,40), 2)
-			utils.makeUnit(iSwordsman, iArabia, (77,40), 2)#
-
-			utils.makeUnit(iSettler, iArabia, (77,40), 1)
-			utils.makeUnit(iWorker, iArabia, (77,40), 1)
-			utils.makeUnit(iWorker, iArabia, (75,33), 1)
-
-		elif not bBaghdad and bCairo:
-			if utils.getHumanID() != iArabia:
-				utils.makeUnit(iCamelArcher, iArabia, (69,35), 3)
-				utils.makeUnit(iSwordsman, iArabia, (69,35), 2)
-			utils.makeUnit(iSettler, iArabia, (69,35), 1)
-			utils.makeUnit(iCamelArcher, iArabia, (69,35), 2)
-			utils.makeUnit(iSwordsman, iArabia, (69,35), 2)
-
-			utils.makeUnit(iSettler, iArabia, (69,35), 1)
-			utils.makeUnit(iWorker, iArabia, (75,33), 1)
-			utils.makeUnit(iWorker, iArabia, (69,35), 1)
-
-		else:
-			utils.makeUnit(iSettler, iArabia, (75,33), 2)
-			utils.makeUnit(iWorker, iArabia, (75,33), 2)
-			if utils.getHumanID() != iArabia:
-				utils.makeUnit(iCamelArcher, iArabia, (75,33), 3)
-				utils.makeUnit(iSwordsman, iArabia, (75,33), 2)
-			utils.makeUnit(iCamelArcher, iArabia, (75,33), 2)
-			utils.makeUnit(iSwordsman, iArabia, (75,33), 2)
+				utils.moveCapital(iArabia, tCapital)
+				utils.makeUnit(iCamelArcher, iArabia, tCapital, 3)
+				utils.makeUnit(iSwordsman, iArabia, tCapital, 2)
+			utils.makeUnit(iCamelArcher, iArabia, tCapital, 2)
+			utils.makeUnit(iSwordsman, iArabia, tCapital, 2)
+		
+		if bBaghdad:
+			utils.makeUnit(iSettler, iArabia, tBaghdad, 1)
+			utils.makeUnit(iWorker, iArabia, tBaghdad, 1)
+		
+		if bCairo:
+			utils.makeUnit(iSettler, iArabia, tCairo, 1)
+			utils.makeUnit(iWorker, iArabia, tCairo, 1)
+			
+		if len(lCities) < 2:
+			utils.makeUnit(iSettler, iArabia, tMecca, 2 - len(lCities))
+			utils.makeUnit(iWorker, iArabia, tMecca, 2 - len(lCities))
 
 		if utils.getHumanID() != iArabia and bBaghdad:
-			utils.makeUnit(iSpearman, iArabia, (77, 40), 2)
+			utils.makeUnit(iSpearman, iArabia, tBaghdad, 2)
 			
 	def germanSpawn(self):
 		if data.getStabilityLevel(iHolyRome) < iStabilityShaky: data.setStabilityLevel(iHolyRome, iStabilityShaky)
