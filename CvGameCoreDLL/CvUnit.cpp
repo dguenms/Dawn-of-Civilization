@@ -8373,12 +8373,9 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 	iExtraModifier = getExtraCombatPercent();
 
 	// Leoreth: Ethiopian UP: +10% strength for land units in own borders
-	if (pPlot != NULL)
+	if (getOwnerINLINE() == ETHIOPIA && getDomainType() == DOMAIN_LAND && plot()->getOwnerINLINE() == ETHIOPIA)
 	{
-		if (getOwnerINLINE() == ETHIOPIA && getDomainType() == DOMAIN_LAND && pPlot->getOwnerINLINE() == ETHIOPIA)
-		{
-			iExtraModifier += 10;
-		}
+		iExtraModifier += 10;
 	}
 
 	iModifier += iExtraModifier;
