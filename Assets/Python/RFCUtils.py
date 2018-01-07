@@ -1813,5 +1813,11 @@ class RFCUtils:
 	def getCitySiteList(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		return [pPlayer.AI_getCitySite(i) for i in range(pPlayer.AI_getNumCitySites())]
+		
+	def getAreaUnits(self, iPlayer, tTL, tBR):
+		lUnits = []
+		for tPlot in self.getPlotList(tTL, tBR):
+			lUnits.extend([unit for unit in self.getUnitList(tPlot) if unit.getOwner() == iPlayer])
+		return lUnits
 			
 utils = RFCUtils()

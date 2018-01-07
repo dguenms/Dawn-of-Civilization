@@ -99,8 +99,8 @@ class Barbs:
 			
 			self.checkSpawn(iBarbarian, iWolf, 1, (75, 54), (104, 64), self.spawnNatives, iGameTurn, 5, 2)
 			self.checkSpawn(iBarbarian, iBear, 1, (75, 54), (104, 64), self.spawnNatives, iGameTurn, 5, 4)
-			self.checkSpawn(iBarbarian, iLion, 1, (55, 10), (72, 29), self.spawnNatives, iGameTurn, 4, 1)
-			self.checkSpawn(iBarbarian, iPanther, 1, (55, 10), (72, 29), self.spawnNatives, iGameTurn, 4, 3)
+			self.checkLimitedSpawn(iBarbarian, iLion, 1, 5, (55, 10), (72, 29), self.spawnNatives, iGameTurn, 5, 1)
+			self.checkLimitedSpawn(iBarbarian, iPanther, 1, 5, (55, 10), (72, 29), self.spawnNatives, iGameTurn, 5, 3)
 
 			
 		#celts
@@ -202,9 +202,9 @@ class Barbs:
 			
 		#barbarians in central asia
 		if utils.isYearIn(-1600, -850):
-			self.checkSpawn(iBarbarian, iVulture, 1, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 3, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 		elif utils.isYearIn(-850, 300):
-			self.checkSpawn(iBarbarian, iVulture, 1, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 4, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 10-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
 		elif utils.isYearIn(300, 700):
 			#if utils.getScenario() == i3000BC:  #late start condition
@@ -451,8 +451,15 @@ class Barbs:
 			for i in range(killPlot.getNumUnits()):
 				unit = killPlot.getUnit(0)	# 0 instead of i because killing units changes the indices
 				unit.kill(False, iBarbarian)
-					
-	#Leoreth: new ways to spawn barbarians
+				
+	# Leoreth: check region for number of units first
+	def checkLimitedSpawn(self, iPlayer, iUnitType, iNumUnits, iMaxUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj=[]):
+		if iTurn % utils.getTurns(iPeriod) == iRest:
+			lAreaUnits = utils.getAreaUnits(iPlayer, tTL, tBR)
+			if len(lAreaUnits) < iMaxUnits:
+				self.checkSpawn(iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj)
+						
+	# Leoreth: new ways to spawn barbarians
 	def checkSpawn(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj=[]):
 		if len(lAdj) == 0:
 			sAdj = ""
