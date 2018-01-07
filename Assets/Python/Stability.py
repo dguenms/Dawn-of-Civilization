@@ -740,7 +740,7 @@ def calculateStability(iPlayer):
 			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, iCourthouse)): iModifier -= 1
 			
 			# Jail
-			if city.angryPopulation(0) == 0 and city.hasBuilding(utils.getUniqueBuilding(iPlayer, iJail)): iModifier -= 1
+			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, iJail)): iModifier -= 1
 			
 			# Portuguese UP: reduced instability from overseas colonies
 			if city.isColony():
