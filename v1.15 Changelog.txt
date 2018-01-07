@@ -32,6 +32,7 @@ MAJOR FEATURES
 * Included 10 new land, 5 new naval and 2 new air units, see Units section for details
 * Major changes and redesign of many existing units, see Units section for details
 * Completely new selection of 42 civics from 6 categories, see Civics section for details
+* Significant changes to the stability system, see Stability section for details
 * Instead of having no religion, all civs start out with a pagan religion unique to them, see Religion section for details
 * New espionage advisor (merged in from History Rewritten)
 
@@ -51,6 +52,8 @@ GAME RULES
 * Happiness and health change from improvements only apply when being worked
 * The number of National Wonders and Great Wonders in a city is limited by its current culture level
 * It is no longer possible to create slaves in cities, instead the chances of capturing them from Native units have been increased
+* Missionaries cannot be gifted to other civilisations
+* Unit gifting is limited to vassals and defensive pacts
 
 TECHNOLOGIES
 * Completely new tech tree covering 141 technologies over 7 eras
@@ -82,7 +85,7 @@ TECHNOLOGIES
 BUILDINGS
 * 21 new buildings:
     * Monument (Ceremony): +2 culture
-    * Weaver (Aesthetics): +25% culture, +1 happiness from Cotton, Silk, Dye
+    * Weaver (Aesthetics): +2 culture, +1 artist slot, +1 happiness from Cotton, Silk, Dye
     * Bath (Medicine): +2 health, +2 culture
     * Pharmacy (Alchemy): +1 health from Wine, Banana, Whale, +1 scientist slot
     * Coffeehouse (Patronage): +1 happiness from Sugar, Tea, Coffee, Tobacco
@@ -102,9 +105,10 @@ BUILDINGS
     * Electrical Grid (Social Services): +10% commerce with power
     * Hotel (Tourism): +20% trade route yield per culture level
     * Solar Plant (Renewable Energy): Provides power, maximum latitude 45 degrees
-* 17 existing buildings have been changed:
+* 18 existing buildings have been changed:
     * Granary (Pottery): retains 25% food after growth, +1 health with Wheat, Rice, Corn
     * Pagan Temple (Mythology): +1 culture, +1 priest slot
+    * Theatre (Literature): +25% culture, +1 artist slot, +1 happiness per 10% culture rate
     * Aqueduct (Cement): retains 25% food after growth
     * Lighthouse (Navigation): +1 trade route
     * Market (Currency): +25% gold, +1 happiness with Fur, Spices, Ivory, Incense
@@ -307,7 +311,7 @@ CIVICS
     * Monasticism (Ethics, low): +50% great people birth with state religion
     * Theocracy (Doctrine, high): +2 experience with state religion, no non-state religion spread, double priest slots
     * Tolerance (Civil Liberties, low): +1 happiness per non-state religion, +50% culture in capital, can train missionaries without monasteries
-    * Secularism (Civil Rights, medium): no state religion, +10% research, double production for Hospital, University, Laboratory
+    * Secularism (Civil Rights, medium): no state religion, +1 happiness per non-state religion, +10% research, double production for Hospital, University, Laboratory
 * Territory:
     * Sovereignty (low)
     * Conquest (Generalship, high): +2 land unit experience, -50% improvement upgrade speed
@@ -348,6 +352,7 @@ RELIGION
 
 UNIQUE POWERS
 * New Babylonian UP effect: free tech after discovering the first four techs
+* New Persian UP effect: additional stability from recently conquered cities
 * New Mughal UP: The Power of Architecture: Cities receive half the construction cost as culture on building completion
 * New Thai UP effect: +1 commerce per excess happiness
 * New German UP: The Power of Doctrine: Units retain all their experience when upgraded
@@ -359,6 +364,7 @@ UNIQUE HISTORICAL VICTORIES
 * First Greek goal: be the first to discover Mathematics, Literature, Aesthetics, Philosophy  and Medicine
 * New second Greek goal: build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
 * Switched order of second and third Greek goal
+* First Persian goal: control 7% of the world by 140 AD
 * Third Roman goal: be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service
 * First Ethiopian goal: settle a Great Prophet in two Orthodox cities by 500 AD
 * First Maya goal: discover Writing and Mathematics by 600 AD
@@ -431,9 +437,30 @@ EVENTS
     * Abandon nuclear energy: all nuclear plants become obsolete
 
 STABILITY
+* Completely removed crisis effects from losing stability
 * Collapse after overextension triggers collapse to core instead of a complete collapse
-* Some civics have stability effects in combination with particular state religions
-* Civs with Isolationism receive additional stability if they only control cities in their core
+* Stability levels have constant stability thresholds that are the same for everyone
+* Stability effects that depend on long term trends (happiness, economy) are reset when a civilisation is vassalised
+* Changes to stability factors:
+	* Core population modifier grows more slowly with the current era
+	* Added temporary positive expansion stability from recently founded and conquered cities
+	* Increased stability from recent conquests when running the Conquest civic
+	* The threshold for not being in recession increases over the course of the game
+	* Central Planning lowers the recession threshold to 0%
+	* Increased (positive and negative) stability with Free Enterprise
+	* Reduced negative economy stability with Public Welfare
+	* Happiness stability is limited to at most -5 and +5
+	* Religious unity is now weighted by the population of cities, instead of their number
+	* Cities with minor religions or no religion do not contribute to religious disunity
+	* Religious disunity impact of non-state religions is reduced if state religion is also present
+	* Positive stability from religious unity halved with Tolerance
+	* Removed negative stability from having unstable neighbours
+	* Removed stability from open borders and number of contacts
+	* Relations stability now depends on temporary AI memory of your actions
+	* Vassals receive additional stability if their masters are more stable to them
+	* War success is less sensitive to minor events that happened in the past
+	* Some civics have stability effects in combination with particular state religions
+	* Civs with Isolationism receive additional stability if they only control cities in their core
 
 BALANCE
 * Increased time that needs to pass until civs can respawn after their collapse

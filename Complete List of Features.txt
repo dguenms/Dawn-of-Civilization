@@ -248,6 +248,8 @@ GAME RULES
 * Native and Celtic units are not eliminated if they lose their last city
 * Increased culture required to reach Refined to 1000
 * Reduced base power health change to -1
+* Missionaries cannot be gifted to other civilisations
+* Unit gifting is limited to vassals and defensive pacts
 
 CIVILISATIONS
 * Egypt
@@ -299,7 +301,11 @@ CIVILISATIONS
     * Coat of arms: Achaemenid Eagle
     * Unique Unit: Immortal (Spearman): now starts with March
     * Unique Building: Apothecary (Market): +2 food from improved Incense tiles, +1 food from improved Spice and Silk tiles
-    * Unique Power: No expansion stability penalties for low culture
+    * Unique Power: Additional stability from recently conquered cities
+    * Unique Historical Victory:
+	* Control 7% of the world by 140 AD
+	* Control 7 world wonders by 350 AD
+	* Control 2 holy city shrines by 350 AD
 * Rome
     * Unique Unit: Legion (Swordsman): increased cost, +2 strength, +25% against Axeman, can build Roman Road (+1 movement with Masonry)
     * Unique Building: Forum (Market): +25% Great People birth rate, +2 Statesman slots
@@ -833,7 +839,7 @@ BUILDINGS
     * Smokehouse (Pastoralism): +1 health from Cow, Pig, Deer
     * Pagan Temple (Mythology): +1 culture, +1 priest slot, requires no state religion, no religion in the city
     * Monument (Ceremony): +2 culture
-    * Weaver (Aesthetics): +25% culture, +1 happiness from Cotton, Silk, Dye
+    * Weaver (Aesthetics): +2 culture, +1 artist slot, +1 happiness from Cotton, Silk, Dye
     * Bath (Medicine): +2 health, +2 culture
     * Pharmacy (Alchemy): +1 health from Wine, Banana, Whale, +1 scientist slot
     * Coffeehouse (Patronage): +1 happiness from Sugar, Tea, Coffee, Tobacco
@@ -853,9 +859,10 @@ BUILDINGS
     * Electrical Grid (Social Services): +10% commerce with power
     * Hotel (Tourism): +20% trade route yield per culture level
     * Solar Plant (Renewable Energy): Provides power, maximum latitude 45 degrees
-* 17 existing buildings have been changed:
+* 18 existing buildings have been changed:
     * Granary (Pottery): retains 25% food after growth, +1 health with Wheat, Rice, Corn
     * Pagan Temple (Mythology): +1 culture, +1 priest slot
+    * Theatre (Literature): +25% culture, +1 artist slot, +1 happiness per 10% culture rate
     * Aqueduct (Cement): retains 25% food after growth
     * Lighthouse (Navigation): +1 trade route
     * Market (Currency): +25% gold, +1 happiness with Fur, Spices, Ivory, Incense
@@ -1299,13 +1306,15 @@ STABILITY
 * Stability checks are now triggered by certain events (e.g. discovering a technology, changing civics, losing/acquiring a city, starting wars, making peace)
 * Stability scores are not permanent anymore, but instead calculated for every stability check (no permanent stability hits anymore)
 * Only stability levels are stored: Collapsing, Unstable, Shaky, Stable, Solid
-* Stability is divided into five categories: Expansion, Economy, Domestic, Foreign, Military
+* Stability is divided into five categories:
+	* Expansion: overexpansion (population outside vs. inside of core), recent expansion, recently razed cities
+	* Economy: economic growth
+	* Domestic: happiness, civic combinations, contemporary and outdated civics, religious unity
+	* Foreign: vassal stability, defensive pacts, foreign relations
+	* Military: war success, war weariness, barbarian losses
 * After a check, the stability level can increase or decrease based on your stability score result
-* After a stability drop to a low level, a crisis occurs
-* The severity of the crisis depends on the stability level, while the effect depends on the on the category with the lowest score
-* A crisis on collapsing results in a complete collapse
+* If stability does not improve when on Collapsing, a complete collapse occurs
 * Collapse after overextension triggers collapse to core instead of a complete collapse
-* Some civics have stability effects in combination with particular state religions
 
 DIPLOMACY
 * Congresses:
