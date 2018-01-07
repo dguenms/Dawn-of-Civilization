@@ -11432,6 +11432,78 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += countRequiredSlaves() * 50 / 15;
 	}
 
+	// Leoreth: some stability related AI help
+	if (eCivic == CIVIC_TOLERANCE || eCivic == CIVIC_SECULARISM)
+	{
+		if (getStabilityParameter(PARAMETER_RELIGION) < 0)
+		{
+			iValue += 15 * -getStabilityParameter(PARAMETER_RELIGION);
+		}
+	}
+	else if (eCivic == CIVIC_CENTRAL_PLANNING)
+	{
+		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 15)
+		{
+			iValue += 200;
+		}
+	}
+	else if (eCivic == CIVIC_PUBLIC_WELFARE)
+	{
+		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 0)
+		{
+			iValue += 5 * -getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
+		}
+	}
+	else if (eCivic == CIVIC_VASSALAGE)
+	{
+		if (getCurrentEra() >= ERA_INDUSTRIAL)
+		{
+			iValue *= 3;
+			iValue /= 4;
+		}
+	}
+	else if (eCivic == CIVIC_DEIFICATION)
+	{
+		if (getCurrentEra() >= ERA_RENAISSANCE)
+		{
+			iValue /= 2;
+		}
+	}
+	else if (eCivic == CIVIC_REDISTRIBUTION)
+	{
+		if (getCurrentEra() >= ERA_MEDIEVAL)
+		{
+			iValue /= 2;
+		}
+	}
+
+	// Leoreth: boost some modern civics as soon as available
+	switch (eCivic)
+	{
+	case CIVIC_IDEOLOGY:
+	case CIVIC_CONSTITUTION:
+	case CIVIC_INDIVIDUALISM:
+	case CIVIC_TOTALITARIANISM:
+	case CIVIC_EGALITARIANISM:
+	case CIVIC_FREE_ENTERPRISE:
+	case CIVIC_CENTRAL_PLANNING:
+	case CIVIC_PUBLIC_WELFARE:
+	case CIVIC_NATIONHOOD:
+	case CIVIC_MULTILATERALISM:
+		iValue *= 5;
+		iValue /= 4;
+		break;
+	case CIVIC_TOLERANCE:
+	case CIVIC_SECULARISM:
+		if (getCurrentEra() >= ERA_GLOBAL)
+		{
+			iValue *= 5;
+			iValue /= 4;
+		}
+	default:
+		break;
+	}
+
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
