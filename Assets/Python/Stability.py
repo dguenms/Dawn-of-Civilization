@@ -819,9 +819,12 @@ def calculateStability(iPlayer):
 	iExpansionStability += iCorePeripheryStability
 	
 	# recent expansion stability
-	iRecentExpansionStability = iRecentlyFounded + iRecentlyConquered
+	iConquestModifier = 1
+	if bConquest: iConquestModifier += 1
+	if iPlayer == iPersia: iConquestModifier += 1 # Persian UP
 	
-	if bConquest: iRecentExpansionStability += iRecentlyConquered
+	iRecentExpansionStability += iRecentlyFounded
+	iRecentExpansionStability += iConquestModifier * iRecentlyConquered
 		
 	lParameters[iParameterRecentExpansion] = iRecentExpansionStability
 	
