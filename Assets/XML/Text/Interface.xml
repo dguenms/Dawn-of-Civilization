@@ -1831,4 +1831,9 @@
 		<English>Pagan Religion</English>
 		<German>Heidnische Religion</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_GREATPEOPLE_UNIQUE_POWER</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</English>
+		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] durch Einzigartige Macht</German>
+	</TEXT>
 </Civ4GameText>

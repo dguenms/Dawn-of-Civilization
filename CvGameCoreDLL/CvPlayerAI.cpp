@@ -11490,15 +11490,15 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	case CIVIC_PUBLIC_WELFARE:
 	case CIVIC_NATIONHOOD:
 	case CIVIC_MULTILATERALISM:
-		iValue *= 5;
-		iValue /= 4;
+		iValue *= 6;
+		iValue /= 5;
 		break;
 	case CIVIC_TOLERANCE:
 	case CIVIC_SECULARISM:
 		if (getCurrentEra() >= ERA_GLOBAL)
 		{
-			iValue *= 5;
-			iValue /= 4;
+			iValue *= 6;
+			iValue /= 5;
 		}
 	default:
 		break;
