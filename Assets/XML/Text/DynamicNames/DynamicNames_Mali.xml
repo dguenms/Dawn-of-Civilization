@@ -18,6 +18,10 @@
 		<English>Songhai</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SONGHAI_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_PEOPLES</Tag>
 		<English>Mandinka Peoples</English>
 	</TEXT>
