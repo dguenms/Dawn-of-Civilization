@@ -26921,6 +26921,7 @@ BeginPlot
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMIDS
+		BuildingType=BUILDING_GREAT_SPHINX
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		Player14Culture=10, (Byzantium)
