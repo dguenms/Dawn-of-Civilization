@@ -209,16 +209,16 @@ WONDERS
 UNITS
 * 11 new land units
     * Militia (none): Strength 2, +25% city defense
-    * Light Swordsman (Alloys): Strength 4, +25% attack against Spearman
-    * Horseman (Riding): Strength 5, 20% retreat chance, +25% open terrain attack, +25% against siege units
-    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 50% retreat chance, collateral damage against 2 units (max. 25%), +25% hills attack
+    * Light Swordsman (Alloys): Strength 5
+    * Horseman (Riding): Strength 6, 20% retreat chance, +25% against siege units, -25% city strength
+    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 50% retreat chance, collateral damage against 2 units (max. 25%), +25% hills, forest, rainforest attack
     * Heavy Spearman (Civil Service): Strength 6, +100% against Heavy Cavalry
-    * Arquebusier (Firearms): Strength 9
-    * Pistolier (Firearms): Strength 8, 25% retreat chance, +25% open terrain strength
+    * Arquebusier (Firearms): Strength 10
+    * Pistolier (Firearms): Strength 8, 40% retreat chance, +25% open terrain strength
     * Dragoon (Biology): Strength 14, -25% city strength
-    * Hussar (Nationalism): Strength 10, 30% retreat chance, +25% open terrain strength
-    * Labourer (Labour Unions): +50% work rate, can build Hamlets
-    * Howitzer (Flight): Strength 15, 75% retreat chance, collateral damage against 7 units (max. 70%), +25% city attack, 16% bombard rate
+    * Hussar (Nationalism): Strength 10, 50% retreat chance, +25% open terrain strength
+    * Labourer (Labour Unions): +50% work rate, can build Hamlets and Highways
+    * Howitzer (Flight): Strength 15, 50% retreat chance, collateral damage against 6 units (max. 60%), +25% city attack, 16% bombard rate
 * 5 new naval units:
     * Heavy Galley (Alchemy): Strength 5, 50% retreat chance, +25% coast attack
     * Cog (Guilds): Strength 5, 25% retreat chance, 2 cargo
@@ -229,14 +229,14 @@ UNITS
     * Biplane (Flight): Strength 12, range 6, 50% interception chance, 8% bombard rate
     * Nuclear Bomber (Fission): Range 6, can drop a nuclear bomb
 * Changed and rebalanced many existing units:
-    * War Elephant (Generalship): Strength 8, +25% against Heavy Cavalry, -25% against Archers
+    * War Elephant (Generalship): Strength 8, +25% against Heavy Cavalry
     * Knight has been renamed to Lancer
-    * Crossbowman (Machinery): Strength 6, +25% against Melee, +25% city defense, +25% hill defense
-    * Longbowman (Commune): Strength 6, 50% retreat chance, collateral damage against 3 units (max. 50%), +50% hills attack, +25% against Light Cavalry
-    * Pikeman (Companies): Strength 6, +100% against Melee and Heavy Cavalry
-    * Musketman (Replaceable Parts): Strength 12
+    * Crossbowman (Machinery): Strength 6, +25% against Melee, +25% against Light Cavalry, +25% city defense, +25% hill defense
+    * Longbowman (Commune): Strength 6, 50% retreat chance, collateral damage against 3 units (max. 50%), +50% hills, forest, rainforest
+    * Pikeman (Companies): Strength 8, +50% against Melee and Heavy Cavalry
+    * Musketman (Replaceable Parts): Strength 12, +10% against Arquebusier
     * Grenadier (Chemistry): Strength 10, 50% retreat chance, collateral damage against 3 units (max. 50%), +25% against Rifleman, starts with City Raider I
-    * Artillery (Ballistics): Strength 14, 75% retreat chance, collateral damage against 6 units (max. 60%), 12% bombard rate
+    * Artillery (Ballistics): Strength 14, 50% retreat chance, collateral damage against 5 units (max. 50%), 12% bombard rate
 * Changes to Unique Units:
     * Vulture now replaces Light Swordsman
     * Greek Hoplite now replaces Spearman
@@ -259,8 +259,8 @@ UNITS
 * Added a unit strength modifier for fighting in open terrain (flat, no features or cities)
 * Split Mounted units in Heavy Cavalry and Light Cavalry
 * Heavy Cavalry units are countered by spear units (Spearman, Heavy Spearman, Pikeman)
-* Light Cavalry units are weaker, have increased open terrain strength and are countered by archers (Archer, Longbowman)
-* Siege units have increased cost and very high retreat chance to make them reusable and less expendable
+* Light Cavalry units are weaker, have increased open terrain strength and are countered by archers (Archer, Crossbowman)
+* Siege units have increased cost and high retreat chance to make them reusable and less expendable
 * Light naval combat units have a high retreat chance and increased attack/strength on coast tiles
 * Naval transport units have a retreat chance
 * New promotion: Skirmish: +25% against Light Cavalry
@@ -502,6 +502,7 @@ INTERFACE
 
 GRAPHICS
 * Improved arrangement of art assets for Tobacco, Coffee and Tea on the map, especially in combination with Plantation improvements
+* Improved available unit art with Varietas Delectat, in particular unique art for Great People
 
 BUGFIXES
 * Fixed an AI bug that prevented AIs from building religious buildings unless they control the holy city
