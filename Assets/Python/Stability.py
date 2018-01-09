@@ -690,37 +690,35 @@ def calculateStability(iPlayer):
 	
 	for city in utils.getCityList(iPlayer):
 		iPopulation = city.getPopulation()
-		iModifier = 0
 		x = city.getX()
 		y = city.getY()
 		plot = gc.getMap().plot(x,y)
 		
 		bHistorical = (plot.getSettlerValue(iPlayer) >= 90)
 		
-		iOwnCulture = plot.getCulture(iPlayer)
-		iTotalCulture = 0
-		
-		bForeignCore = False
-		for iLoopPlayer in range(iNumPlayers):
-			iTempCulture = plot.getCulture(iLoopPlayer)
-			if plot.isCore(iLoopPlayer):
-				iTempCulture *= 2
-				if iLoopPlayer != iPlayer and iGameTurn > getTurnForYear(tBirth[iLoopPlayer]):
-					bForeignCore = True
-			iTotalCulture += iTempCulture
-			
-		if iTotalCulture != 0:
-			iCulturePercent = 100 * iOwnCulture / iTotalCulture
-		else:
-			iCulturePercent = 100
-				
-		bExpansionExceptions = ((bHistorical and iPlayer == iMongolia) or bTotalitarianism)
-		
 		# Expansion
 		if plot.isCore(iPlayer):
 			iCorePopulation += iCorePopulationModifier * iPopulation / 100
 			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += iCorePopulationModifier * iPopulation / 100
 		else:
+			iModifier = 0
+			
+			iOwnCulture = plot.getCulture(iPlayer)
+			iTotalCulture = 0
+			
+			for iLoopPlayer in range(iNumPlayers):
+				iTempCulture = plot.getCulture(iLoopPlayer)
+				if plot.isCore(iLoopPlayer):
+					iTempCulture *= 2
+				iTotalCulture += iTempCulture
+				
+			if iTotalCulture != 0:
+				iCulturePercent = 100 * iOwnCulture / iTotalCulture
+			else:
+				iCulturePercent = 100
+					
+			bExpansionExceptions = ((bHistorical and iPlayer == iMongolia) or bTotalitarianism)
+		
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
 			
@@ -760,23 +758,23 @@ def calculateStability(iPlayer):
 				iRecentlyConquered += 1
 			
 		# Religions
-		bNonStateReligion = False
-		for iReligion in range(iNumReligions):
-			if iReligion != iStateReligion and city.isHasReligion(iReligion):
-				if not isTolerated(iPlayer, iReligion) and not gc.getReligionInfo(iReligion).isLocal():
-					bNonStateReligion = True
-					break
-				
-		if city.isHasReligion(iStateReligion):
-			iStateReligionPopulation += city.getPopulation()
-			if not bNonStateReligion: iOnlyStateReligionPopulation += city.getPopulation()
-				
-		if bNonStateReligion: 
-			if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iDifferentReligionPopulation += city.getPopulation() / 2
-			else: iDifferentReligionPopulation += city.getPopulation()
-			
 		if city.getReligionCount() == 0:
-			iNoReligionPopulation += city.getPopulation()
+			iNoReligionPopulation += iPopulation
+		else:
+			bNonStateReligion = False
+			for iReligion in range(iNumReligions):
+				if iReligion != iStateReligion and city.isHasReligion(iReligion):
+					if not isTolerated(iPlayer, iReligion) and not gc.getReligionInfo(iReligion).isLocal():
+						bNonStateReligion = True
+						break
+					
+			if city.isHasReligion(iStateReligion):
+				iStateReligionPopulation += iPopulation
+				if not bNonStateReligion: iOnlyStateReligionPopulation += iPopulation
+					
+			if bNonStateReligion: 
+				if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iDifferentReligionPopulation += iPopulation / 2
+				else: iDifferentReligionPopulation += iPopulation
 		
 	iPopulationImprovements = 0
 	for (x, y) in Areas.getCoreArea(iPlayer):
@@ -882,64 +880,58 @@ def calculateStability(iPlayer):
 	
 	# Civics (combinations)
 	civics = (iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory)
-	iCivicStability = getCivicStability(iPlayer, civics)
+	iCivicCombinationStability = getCivicStability(iPlayer, civics)
 		
-	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
-		
-	iCivicCombinationStability = iCivicStability
+	if utils.getHumanID() != iPlayer and iCivicCombinationStability < 0: iCivicCombinationStability /= 2
 	
 	lParameters[iParameterCivicCombinations] = iCivicCombinationStability
 	
-	iCivicStability = 0
+	iCivicEraTechStability = 0
 	
 	# Civics (eras and techs and religions)
 	if iCivicLegitimacy == iVassalage:
-		if iCurrentEra == iMedieval: iCivicStability += 2
-		elif iCurrentEra >= iIndustrial: iCivicStability -= 5
+		if iCurrentEra == iMedieval: iCivicEraTechStability += 2
+		elif iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
 		
 	if iCivicReligion == iDeification:
-		if iCurrentEra <= iClassical: iCivicStability += 2
-		else: iCivicStability -= 2 * (iCurrentEra - iClassical)
+		if iCurrentEra <= iClassical: iCivicEraTechStability += 2
+		else: iCivicEraTechStability -= 2 * (iCurrentEra - iClassical)
 		
 	if iCivicGovernment == iRepublic:
-		if iCurrentEra <= iClassical: iCivicStability += 2
-		elif iCurrentEra >= iIndustrial: iCivicStability -= 5
+		if iCurrentEra <= iClassical: iCivicEraTechStability += 2
+		elif iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iRepresentation):
-		if iCivicGovernment not in [iRepublic, iDemocracy] and iCivicLegitimacy not in [iIdeology, iConstitution]: iCivicStability -= 5
+		if iCivicGovernment not in [iRepublic, iDemocracy] and iCivicLegitimacy not in [iIdeology, iConstitution]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iCivilRights):
-		if iCivicSociety in [iSlavery, iManorialism, iCasteSystem]: iCivicStability -= 5
+		if iCivicSociety in [iSlavery, iManorialism, iCasteSystem]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iEconomics):
-		if iCivicEconomy in [iReciprocity, iRedistribution, iMerchantTrade]: iCivicStability -= 5
+		if iCivicEconomy in [iReciprocity, iRedistribution, iMerchantTrade]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iNationalism):
-		if iCivicTerritory in [iConquest, iTributaries]: iCivicStability -= 5
+		if iCivicTerritory in [iConquest, iTributaries]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iTheology):
-		if iCivicReligion in [iAnimism, iDeification]: iCivicStability -= 5
-		
-	iStateReligion = pPlayer.getStateReligion()
+		if iCivicReligion in [iAnimism, iDeification]: iCivicEraTechStability -= 5
 	
 	if iStateReligion == iHinduism:
-		if iCivicSociety == iCasteSystem: iCivicStability += 3
+		if iCivicSociety == iCasteSystem: iCivicEraTechStability += 3
 		
 	elif iStateReligion == iConfucianism:
-		if iCivicLegitimacy == iMeritocracy: iCivicStability += 3
+		if iCivicLegitimacy == iMeritocracy: iCivicEraTechStability += 3
 		
 	elif iStateReligion in [iZoroastrianism, iOrthodoxy, iCatholicism, iProtestantism]:
-		if iCivicSociety == iSlavery: iCivicStability -= 3
+		if iCivicSociety == iSlavery: iCivicEraTechStability -= 3
 		
 	elif iStateReligion == iIslam:
-		if iCivicSociety == iSlavery: iCivicStability += 2
+		if iCivicSociety == iSlavery: iCivicEraTechStability += 2
 		
 	elif iStateReligion == iBuddhism:
-		if iCivicReligion == iMonasticism: iCivicStability += 2
+		if iCivicReligion == iMonasticism: iCivicEraTechStability += 2
 		
-	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
-	
-	iCivicEraTechStability = iCivicStability
+	if utils.getHumanID() != iPlayer and iCivicEraTechStability < 0: iCivicEraTechStability /= 2
 	
 	lParameters[iParameterCivicsEraTech] = iCivicEraTechStability
 	
@@ -1451,6 +1443,7 @@ def checkResurrection(iGameTurn):
 		if utils.canRespawn(iLoopCiv):
 			lPossibleResurrections.append(iLoopCiv)
 			
+	# higher respawn chance for civs whose entire core is controlled by minor civs
 	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
 		if gc.getGame().getGameTurn() - data.players[iLoopCiv].iLastTurnAlive < utils.getTurns(15):
 			continue
@@ -1497,8 +1490,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 			if city.getOwner() != utils.getHumanID() or city.getGameTurnAcquired() < gc.getGame().getGameTurn() - utils.getTurns(5):
 				lPotentialCities.append(city)
 					
-	for k in range(len(lPotentialCities)):
-		city = lPotentialCities[k]
+	for city in lPotentialCities:
 		iOwner = city.getOwner()
 		
 		# barbarian and minor cities always flip
@@ -1541,13 +1533,12 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 				if bCapital:
 					lFlippingCities.append(city)
 					
-		# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
-		if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0 and len(lFlippingCities) * 2 >= len(lPotentialCities) and not bFromCollapse:
-			lFlippingCities = []
-			# cities in core are not affected by this
-			for city in lPotentialCities:
-				if not city.plot().isCore(city.getOwner()):
-					lFlippingCities.append(city)
+	# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
+	if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0 and len(lFlippingCities) * 2 >= len(lPotentialCities) and not bFromCollapse:
+		# cities in core are not affected by this
+		for city in lPotentialCities:
+			if not city.plot().isCore(city.getOwner()) and city not in lFlippingCities:
+				lFlippingCities.append(city)
 			
 	return lFlippingCities
 	
@@ -1617,7 +1608,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
-			utils.flipUnitsInArea(utils.getPlotList((x-2, y-2), (x+2, y+2)), iPlayer, iOwner, True, False)
+			utils.flipUnitsInArea(utils.surroundingPlots((x, y), 2), iPlayer, iOwner, True, False)
 	
 		else:
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
@@ -1657,10 +1648,10 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	x = capital.getX()
 	y = capital.getY()
 	
-	utils.makeUnit(utils.getBestInfantry(iPlayer), iPlayer, (x,y), 2 * iArmySize + iNumCities)
-	utils.makeUnit(utils.getBestCavalry(iPlayer), iPlayer, (x,y), iArmySize)
-	utils.makeUnit(utils.getBestCounter(iPlayer), iPlayer, (x,y), iArmySize)
-	utils.makeUnit(utils.getBestSiege(iPlayer), iPlayer, (x,y), iArmySize + iNumCities)
+	utils.makeUnit(utils.getBestInfantry(iPlayer), iPlayer, (x, y), 2 * iArmySize + iNumCities)
+	utils.makeUnit(utils.getBestCavalry(iPlayer), iPlayer, (x, y), iArmySize)
+	utils.makeUnit(utils.getBestCounter(iPlayer), iPlayer, (x, y), iArmySize)
+	utils.makeUnit(utils.getBestSiege(iPlayer), iPlayer, (x, y), iArmySize + iNumCities)
 	
 	# set state religion based on religions in the area
 	setStateReligion(iPlayer)
