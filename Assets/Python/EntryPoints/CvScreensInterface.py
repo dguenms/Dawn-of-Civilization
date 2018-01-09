@@ -505,9 +505,11 @@ def getWorldBuilderScreen():
 	return worldBuilderScreen
 
 def showWorldBuilderScreen():
+	utils.removeStabilityOverlay()
 	worldBuilderScreen.interfaceScreen()
 
 def hideWorldBuilderScreen():
+	utils.removeStabilityOverlay()
 	worldBuilderScreen.killScreen()
 
 def WorldBuilderToggleUnitEditCB():
