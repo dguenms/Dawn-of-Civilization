@@ -356,6 +356,7 @@ class CvEventManager(object):
 
 	def onLoadGame(self, argsList):
 		CvAdvisorUtils.resetNoLiberateCities()
+		utils.bStabilityOverlay = False
 		return 0
 
 	def onGameStart(self, argsList):
@@ -383,7 +384,8 @@ class CvEventManager(object):
 					popupInfo.addPopup(iPlayer)
 
 		CvAdvisorUtils.resetNoLiberateCities()
-																	
+		utils.bStabilityOverlay = False
+
 	def onGameEnd(self, argsList):
 		'Called at the End of the game'
 		print("Game is ending")
