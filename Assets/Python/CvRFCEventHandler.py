@@ -793,9 +793,6 @@ class CvRFCEventHandler:
 			print("SHIFT-ALT-S") #increases stability by one level
 			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
 			
-		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl and CyGame().GetWorldBuilderMode():
-			utils.removeStabilityOverlay() # Remove AI forbidden area overlay when exiting WB by ctrl+w
-			
 			
 		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_V) and self.eventManager.bCtrl and self.eventManager.bShift:
 			for iPlayer in range(iNumTotalPlayersB):

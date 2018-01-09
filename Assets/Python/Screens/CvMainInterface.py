@@ -5667,9 +5667,6 @@ class CvMainInterface:
 			utils.doByzantineBribery(g_pSelectedUnit)
 		# Leoreth: end
 
-		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() == "StabilityOverlay":
-			utils.toggleStabilityOverlay()
-
 		return 0
 	
 # BUG - Raw Yields - start

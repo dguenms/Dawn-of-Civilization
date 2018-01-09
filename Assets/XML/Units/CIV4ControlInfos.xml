@@ -961,10 +961,10 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<HotKeyAlt>KB_K</HotKeyAlt>
+			<HotKeyAlt/>
 			<bAltDownAlt>0</bAltDownAlt>
 			<bShiftDownAlt>0</bShiftDownAlt>
-			<bCtrlDownAlt>1</bCtrlDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
 			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<!-- Rhye -->
