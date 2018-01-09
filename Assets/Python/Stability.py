@@ -1438,9 +1438,6 @@ def isTolerated(iPlayer, iReligion):
 	return False
 
 def checkResurrection(iGameTurn):
-
-	#print '\nCheck resurrection'
-
 	iNationalismModifier = min(20, 4 * data.iCivsWithNationalism)
 	
 	lPossibleResurrections = []
