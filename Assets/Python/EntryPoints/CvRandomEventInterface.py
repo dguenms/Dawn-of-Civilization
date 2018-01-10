@@ -3650,7 +3650,7 @@ def canTriggerGunsButterDone(argsList):
 	#iNumUnits = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers() + 1
 	iNumUnits = 7 + 1
 	#Rhye - end
-	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_MUSKETMAN')
+	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_ARQUEBUSIER')
 
 	if player.getUnitClassCount(iUnitClassType) < iNumUnits:
 		return false

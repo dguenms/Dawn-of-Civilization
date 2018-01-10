@@ -11930,17 +11930,11 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_ENGINEERING</PrereqTech>
+				<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_HYDRAULICS</ObsoleteTech>
-				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
-				<ObsoleteTech>TECH_GEOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_MEASUREMENT</ObsoleteTech>
-				<ObsoleteTech>TECH_SOCIOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_SOCIAL_CONTRACT</ObsoleteTech>
+				<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12026,13 +12020,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_HYDRAULICS</ObsoleteTech>
-				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
-				<ObsoleteTech>TECH_GEOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_MEASUREMENT</ObsoleteTech>
-				<ObsoleteTech>TECH_SOCIOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_SOCIAL_CONTRACT</ObsoleteTech>
+				<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14721,12 +14709,11 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
+				<PrereqTech>TECH_FIREARMS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14813,7 +14800,6 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14892,11 +14878,10 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs/>
 			<AndPreReqs>
-				<PrereqTech>TECH_STEEL</PrereqTech>
-				<PrereqTech>TECH_RIDING</PrereqTech>
+				<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
+				<ObsoleteTech>TECH_COMBINED_ARMS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14982,7 +14967,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
+				<ObsoleteTech>TECH_COMBINED_ARMS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -15062,10 +15047,11 @@
 			<OrPreReqs/>
 			<AndPreReqs>
 				<PrereqTech>TECH_FLIGHT</PrereqTech>
-				<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
+				<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROBOTICS</ObsoleteTech>
+				<ObsoleteTech>TECH_SATELLITES</ObsoleteTech>
+				<ObsoleteTech>TECH_SUPERCONDUCTORS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
