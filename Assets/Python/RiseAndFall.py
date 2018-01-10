@@ -2521,7 +2521,6 @@ class RiseAndFall:
 			utils.createMissionaries(iCiv, 1)
 			utils.makeUnit(iSwordsman, iJapan, tPlot, 2)
 			utils.makeUnitAI(iArcher, iJapan, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			utils.makeUnit(iWorker, iJapan, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iJapan)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
