@@ -3165,7 +3165,7 @@ class CvMainInterface:
 
 					yCoord = 5  # Ruff: this use to be 3 but I changed it so it lines up with the Great Person Bar
 					szText = localText.getText("INTERFACE_ANARCHY", (gc.getPlayer(ePlayer).getAnarchyTurns(), ))
-					screen.setText( "ResearchText", "Background", szText, CvUtil.FONT_CENTER_JUSTIFY, xCoord, yCoord, -0.4, FontTypes.GAME_FONT, WidgetTypes.WIDGET_RESEARCH, gc.getActivePlayer().getCurrentResearch(), -1 )
+					screen.setText( "ResearchText", "Background", szText, CvUtil.FONT_CENTER_JUSTIFY, xCoord, yCoord, -0.4, FontTypes.GAME_FONT, -1, -1 )
 # BUG - Bars on single line for higher resolution screens - end
 
 					if ( gc.getPlayer(ePlayer).getCurrentResearch() != -1 ):
@@ -3187,7 +3187,7 @@ class CvMainInterface:
 						xCoord = screen.centerX(512)
 
 					yCoord = 5  # Ruff: this use to be 3 but I changed it so it lines up with the Great Person Bar
-					screen.setText( "ResearchText", "Background", szText, CvUtil.FONT_CENTER_JUSTIFY, xCoord, yCoord, -0.4, FontTypes.GAME_FONT, WidgetTypes.WIDGET_RESEARCH, gc.getActivePlayer().getCurrentResearch(), -1 )
+					screen.setText( "ResearchText", "Background", szText, CvUtil.FONT_CENTER_JUSTIFY, xCoord, yCoord, -0.4, FontTypes.GAME_FONT, WidgetTypes.WIDGET_RESEARCH, -1, -1 )
 					screen.show( "ResearchText" )
 # BUG - Bars on single line for higher resolution screens - end
 

@@ -55,6 +55,8 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 
 
 	def interfaceScreen(self, iTech):
+		if iTech < 0: iTech = gc.getActivePlayer().getCurrentResearch()
+	
 		self.iTech = iTech
 		self.placeInfo()
 		self.placePrereqs()
