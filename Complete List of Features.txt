@@ -340,7 +340,7 @@ CIVILISATIONS
     * Unique Historical Victory:
         * Have an average city culture of 6000 by 1600 AD without ever losing a city
         * Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and the Philippines in 1940 AD
-        * Be the first to discover five Modern technologies
+        * Be the first to discover eight Global and eight Digital technologies
 * Vikings
     * Leaders: Ragnar, Gustav Adolph, Gerhardsen
     * Color: Light Purple / Black
@@ -386,7 +386,7 @@ CIVILISATIONS
     * Unique Historical Victory:
         * Colonize every continent by 1730 AD (North America: 5, Asia: 5, Africa: 4, South/Central America and Caribbean: 3, Australia/Oceania: 3)
         * Have a total of 25 Frigates and Ships of the Line and sink 50 enemy ships by 1800 AD
-        * Be the first to enter the Industrial and Modern eras
+        * Be the first to discover eight Renaissance and eight Industrial technologies
 * Khmer
     * Color: Brownish Red / White
     * Spawn: 800 AD at Angkor (moved to the coast)
@@ -673,6 +673,10 @@ NEW CIVILISATIONS
     * Unique Unit: Panzer (Tank): +25% against Rifleman, Infantry, starts with Blitz, Leadership
     * Unique Building: Assembly Plant (Factory): +1 free engineer, +2 experience for Armoured units
     * Unique Power: The Power of Doctrine: Units retain all their experience when upgraded
+    * Unique Historical Victory:
+	* Have 7 great people in Berlin in 1900 AD
+	* Control Italy, France, Scandinavia, England and Russia in 1940 AD
+	* Be the first to discover eight Industrial and eight Global technologies
 * Mexico
     * Spawn: 1810 AD in Ciudad de México
     * Rebirth: of Aztecs
@@ -1314,7 +1318,7 @@ STABILITY
 	* Military: war success, war weariness, barbarian losses
 * After a check, the stability level can increase or decrease based on your stability score result
 * If stability does not improve when on Collapsing, a complete collapse occurs
-* Collapse after overextension triggers collapse to core instead of a complete collapse
+* Collapse after overextension triggers collapse to core instead of a complete collapse for AI civilisations
 
 DIPLOMACY
 * Congresses:

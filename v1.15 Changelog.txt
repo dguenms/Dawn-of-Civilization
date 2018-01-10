@@ -368,12 +368,15 @@ UNIQUE HISTORICAL VICTORIES
 * Third Roman goal: be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service
 * First Ethiopian goal: settle a Great Prophet in two Orthodox cities by 500 AD
 * First Maya goal: discover Writing and Mathematics by 600 AD
+* Third Japanese goal: be the first to discover eight Global and eight Digital technologies
 * Third Arab goal: spread Islam to 30% of the cities in the world
 * Second Tibetan goal: spread Buddhism to 25% of the cities in the world
 * First Moorish goal: Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD
 * Second Moorish goal: Build La Mezquita and settle a total of four great prophets, scientists and engineers in Cordoba by 1300 AD
 * Third Spanish goal: spread Catholicism to 30% of the cities in the world and allow no Protestant civilisations in Europe in 1650 AD
+* Third English goal: be the first to discover eight Renaissance and eight Industrial technologies 
 * Second Polish goal: be the first to discover Civil Liberties
+* Third German goal: be the first to discover eight Industrial and eight Global technologies
 
 UNIQUE RELIGIOUS VICTORIES
 * First Muslim goal: spread Islam to 40% of the cities in the world
@@ -438,7 +441,7 @@ EVENTS
 
 STABILITY
 * Completely removed crisis effects from losing stability
-* Collapse after overextension triggers collapse to core instead of a complete collapse
+* Collapse after overextension triggers collapse to core instead of a complete collapse for AI civilisations
 * Stability levels have constant stability thresholds that are the same for everyone
 * Stability effects that depend on long term trends (happiness, economy) are reset when a civilisation is vassalised
 * Changes to stability factors:
