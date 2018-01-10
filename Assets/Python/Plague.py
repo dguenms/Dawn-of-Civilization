@@ -27,22 +27,29 @@ class Plague:
 	def setup(self):
 		for iPlayer in range(iNumMajorPlayers):
 			data.players[iPlayer].iPlagueCountdown = -utils.getTurns(iImmunity)
-		
-		if utils.getScenario() == i3000BC:  #early start condition
-			data.lGenericPlagueDates[0] = getTurnForYear(400) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
-		else:
-			data.lGenericPlagueDates[0] = 80
 			
-		data.lGenericPlagueDates[1] = getTurnForYear(1300) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
+		data.lGenericPlagueDates[0] = 80
+		data.lGenericPlagueDates[2] = 300 # safe value to prevent plague at start of 1700 AD scenario
+		
+		if utils.getScenario() == i3000BC:
+			data.lGenericPlagueDates[0] = getTurnForYear(400) + utils.variation(20)
+			
+		data.lGenericPlagueDates[1] = getTurnForYear(1300) + utils.variation(20)
+		
+		# Avoid interfering with the Indian UHV
+		if utils.getHumanID() == iIndia and data.lGenericPlagueDates[1] <= getTurnForYear(1200):
+			data.lGenericPlagueDates[1] = getTurnForYear(1200) + 1
+		
 		if utils.getScenario != i1700AD:
-			data.lGenericPlagueDates[2] = getTurnForYear(1650) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
-		else:
-			data.lGenericPlagueDates[2] = 300 # Safe value to prevent plague at start of 1700 scenario
-		data.lGenericPlagueDates[3] = getTurnForYear(1850) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
+			data.lGenericPlagueDates[2] = getTurnForYear(1650) + utils.variation(20)
+			
+		data.lGenericPlagueDates[3] = getTurnForYear(1850) + utils.variation(20)
 
 		undoPlague = gc.getGame().getSorenRandNum(8, 'undo')
 		if undoPlague <= 3:
 			data.lGenericPlagueDates[undoPlague] = -1
+			
+	
 
 
 	def checkTurn(self, iGameTurn):

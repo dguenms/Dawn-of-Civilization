@@ -1824,5 +1824,8 @@ class RFCUtils:
 		for tPlot in self.getPlotList(tTL, tBR):
 			lUnits.extend([unit for unit in self.getUnitList(tPlot) if unit.getOwner() == iPlayer])
 		return lUnits
+		
+	def variation(self, iVariation):
+		return gc.getGame().getSorenRandNum(2 * iVariation, 'Variation') - iVariation
 			
 utils = RFCUtils()
