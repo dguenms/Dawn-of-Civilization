@@ -2919,28 +2919,36 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 	{
 		if (GC.getTechInfo((TechTypes)iI).getEra() <= ERA_MEDIEVAL && !isHasTech((TechTypes)iI))
 		{
-			bAllMedievalTechs = false;
-			break;
+			return 0;
 		}
 	}
 
-	if (bAllMedievalTechs)
-	{
-		int iCount = 0;
+	int iCount = 0;
 
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
+		if (!GET_TEAM(eTeam).isHuman() && canContact(eTeam) && GET_TEAM(eTeam).isHasTech(eTech) && GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL)
 		{
-			TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
-			if (!GET_TEAM(eTeam).isHuman() && canContact(eTeam) && GET_TEAM(eTeam).isHasTech(eTech) && GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL)
+			if (!isAtWar(eTeam))
 			{
 				iCount++;
 			}
+			else
+			{
+				int iOurSuccess = AI_getWarSuccess(eTeam);
+				int iTheirSuccess = GET_TEAM(eTeam).AI_getWarSuccess(getID());
+				if (iOurSuccess - iTheirSuccess > 20 + 10 * GET_PLAYER(getLeaderID()).getCurrentEra() + std::max(iOurSuccess, iTheirSuccess) / 10)
+				{
+					iCount++;
+				}
+			}
 		}
+	}
 
-		if (iCount >= 3)
-		{
-			return -50;
-		}
+	if (iCount >= 3)
+	{
+		return -50;
 	}
 
 	return 0;
