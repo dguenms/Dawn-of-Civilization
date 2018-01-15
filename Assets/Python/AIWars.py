@@ -142,6 +142,8 @@ class AIWars:
 		
 		if data.lConquest[iID]: return
 		
+		if gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
+		
 		iGameTurn = gc.getGame().getGameTurn()
 		iStartTurn = getTurnForYear(iYear) - 5 + (data.iSeed % 10)
 		
