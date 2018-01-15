@@ -162,7 +162,7 @@ tSpreadFactors = (
 },
 # Zoroastrianism
 {
-	iCore :	[rPersia],
+	iCore :		[rPersia],
 	iMinority : 	[rIndia],
 },
 )

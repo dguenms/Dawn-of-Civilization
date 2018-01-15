@@ -25401,7 +25401,7 @@ bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscover
 	CvCity* pCity;
 	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
 	{
-		if (pCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE)
+		if (pCity->plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_CORE)
 		{
 			return true;
 		}
