@@ -535,6 +535,7 @@ def secedeCity(city, iNewOwner):
 	if not city: return
 
 	sName = city.getName()
+	utils.relocateGarrisonToClosestCity(city)
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
 	
 	if city.getOwner() == utils.getHumanID():
