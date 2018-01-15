@@ -426,7 +426,7 @@ class CvRFCEventHandler:
 		if bCapitulated and iVassal == iChina and iMaster == iMongolia:
 			utils.setReborn(iMongolia, True)
 		
-		dc.onVassalState(iVassal)
+		dc.onVassalState(iMaster, iVassal)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'

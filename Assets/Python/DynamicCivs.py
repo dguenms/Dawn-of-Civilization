@@ -589,8 +589,10 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	checkName(iPlayer)
 	checkLeader(iPlayer)
 	
-def onVassalState(iVassal):
+def onVassalState(iMaster, iVassal):
 	if iVassal in lVassalNameChanges:
+		if iVassal == iMughals and iMaster not in lCivGroups[0]: return
+	
 		data.players[iVassal].iResurrections += 1
 		nameChange(iVassal)
 		adjectiveChange(iVassal)
