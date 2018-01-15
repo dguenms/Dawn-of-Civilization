@@ -91,8 +91,12 @@ class PlayerData:
 		self.lHappinessTrend = []
 		
 	def resetWarTrend(self, iEnemy):
-		self.lWarTrend[iPlayer] = []
-		
+		self.lWarTrend[iEnemy] = []
+	
+	def resetWarTrends(self):
+		for iEnemy in range(iNumPlayers):
+			self.resetWarTrend(iEnemy)
+	
 	def pushEconomyTrend(self, iValue):
 		self.lEconomyTrend.append(iValue)
 		if len(self.lEconomyTrend) > 10:

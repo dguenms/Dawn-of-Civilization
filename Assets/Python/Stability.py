@@ -140,16 +140,10 @@ def onTechAcquired(iPlayer, iTech):
 def onVassalState(iMaster, iVassal):
 	if data.bNoAIStability:
 		return
-	
-	setStabilityLevel(iVassal, max(iStabilityShaky, getStabilityLevel(iVassal)))
+		
 	checkStability(iMaster, True)
 	
-	# update number of cities so vassals survive losing cities
-	data.players[iVassal].iNumPreviousCities = gc.getPlayer(iVassal).getNumCities()
-	
-	# reset economy and happiness trends to give them a breather
-	data.players[iVassal].resetEconomyTrend()
-	data.players[iVassal].resetHappinessTrend()
+	balanceStability(iVassal, iStabilityShaky)
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
 	if data.bNoAIStability:
@@ -534,6 +528,9 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		utils.debugTextPopup('Resurrection: ' + gc.getPlayer(iResurrectionPlayer).getCivilizationShortDescription(0))
 		resurrectionFromCollapse(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
 		
+	if len(lCities) > 1:
+		balanceStability(iPlayer, iStabilityUnstable)
+		
 def secedeCity(city, iNewOwner):
 	if not city: return
 
@@ -613,9 +610,6 @@ def collapseToCore(iPlayer):
 			
 		# secede all non-core cities
 		secession(iPlayer, lNonCoreCities)
-		
-	data.players[iPlayer].resetEconomyTrend()
-	data.players[iPlayer].resetHappinessTrend()
 		
 def downgradeCottages(iPlayer):
 	for (x, y) in utils.getWorldPlotsList():
@@ -1805,6 +1799,26 @@ def sign(x):
 	
 def getCorePopulationModifier(iEra):
 	return tEraCorePopulationModifiers[iEra]
+	
+def balanceStability(iPlayer, iNewStabilityLevel):
+	playerData = data.players[iPlayer]
+	
+	# set stability to at least the specified level
+	setStabilityLevel(iPlayer, max(iNewStabilityLevel, getStabilityLevel(iPlayer)))
+
+	# prevent collapse if they were going to
+	playerData.iTurnsToCollapse = -1
+	
+	# update number of cities so vassals survive losing cities
+	playerData.iNumPreviousCities = gc.getPlayer(iPlayer).getNumCities()
+	
+	# reset previous commerce
+	playerData.iPreviousCommerce = 0
+	
+	# reset war, economy and happiness trends to give them a breather
+	playerData.resetEconomyTrend()
+	playerData.resetHappinessTrend()
+	playerData.resetWarTrends()
 	
 class Civics:
 
