@@ -8660,7 +8660,7 @@
 			</UnitAIs>
 			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
-			<iCost>140</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
@@ -8777,7 +8777,7 @@
 			</UnitAIs>
 			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
-			<iCost>120</iCost>
+			<iCost>130</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
