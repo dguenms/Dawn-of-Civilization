@@ -9566,7 +9566,7 @@
 			<iBuildingChange>0</iBuildingChange>
 			<BuildingExtraYields>
 				<BuildingExtraYield>
-					<BuildingClass>BUILDINGCLASS_GROCER</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iExtraYield>1</iExtraYield>
 				</BuildingExtraYield>
@@ -9821,6 +9821,10 @@
 			<UnitPromotion/>
 			<UnitName/>
 			<UnitCombatPromotions>
+				<UnitCombatPromotion>
+					<UnitCombat>UNITCOMBAT_LIGHT_CAVALRY</UnitCombat>
+					<UnitPromotion>PROMOTION_DISENGAGE1</UnitPromotion>
+				</UnitCombatPromotion>
 				<UnitCombatPromotion>
 					<UnitCombat>UNITCOMBAT_HEAVY_CAVALRY</UnitCombat>
 					<UnitPromotion>PROMOTION_DISENGAGE1</UnitPromotion>
@@ -12868,6 +12872,10 @@
 			<UnitClassPromotions>
 				<UnitClassPromotion>
 					<UnitClass>UNITCLASS_CANNON</UnitClass>
+					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
+				</UnitClassPromotion>
+				<UnitClassPromotion>
+					<UnitClass>UNITCLASS_ARTILLERY</UnitClass>
 					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>

@@ -366,7 +366,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -457,7 +459,9 @@
 			<BonusesRequired/>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -1531,7 +1535,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -1626,7 +1632,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -3766,7 +3774,9 @@
 			<BonusesRequired/>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -4206,7 +4216,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -4461,7 +4473,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -5408,7 +5422,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -5829,7 +5845,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_GROCER</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -6099,7 +6115,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -7674,7 +7692,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_TOURISM</PrereqTech>
+				<PrereqTech>TECH_INFRASTRUCTURE</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -7924,17 +7942,11 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_MINING</PrereqTech>
+				<PrereqTech>TECH_SMELTING</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
-				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
-				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_COMPANIES</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8014,11 +8026,11 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
+				<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
+				<ObsoleteTech>TECH_BALLISTICS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8188,17 +8200,11 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_FIREARMS</PrereqTech>
+				<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
-				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
-				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
-				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
-				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
+				<ObsoleteTech>TECH_SOCIAL_SERVICES</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8279,16 +8285,10 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs/>
 			<AndPreReqs>
-				<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
+				<PrereqTech>TECH_PHYSICS</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
-				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
-				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FLIGHT</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8369,7 +8369,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs/>
 			<AndPreReqs>
-				<PrereqTech>TECH_RADAR</PrereqTech>
+				<PrereqTech>TECH_POWER_PROJECTION</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_SUPERCONDUCTORS</ObsoleteTech>
@@ -8456,7 +8456,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_SUPERMATERIALS</ObsoleteTech>
+				<ObsoleteTech>TECH_AERODYNAMICS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8705,7 +8705,9 @@
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
-			<BonusesRequired/>
+			<BonusesRequired>
+				<BonusType>BONUS_TOBACCO</BonusType>
+			</BonusesRequired>
 			<RoutesRequired/>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -9070,15 +9072,15 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs>
+			<OrPreReqs/>
+			<AndPreReqs/>
+			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
 				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<ObsoleteTechs/>
+			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>1</bGlobal>
@@ -9161,7 +9163,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MEDICINE</ObsoleteTech>
+				<ObsoleteTech>TECH_MICROBIOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -9256,7 +9258,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_PHYSICS</PrereqTech>
+				<PrereqTech>TECH_RADIO</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -9784,7 +9786,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -10057,7 +10061,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -10234,7 +10240,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -10308,7 +10316,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_GROCER</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_HARBOR</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -10661,7 +10669,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -10836,7 +10846,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -10927,7 +10939,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -11016,7 +11030,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -11103,7 +11119,9 @@
 			</BonusesRequired>
 			<RoutesRequired>
 				<RouteType>ROUTE_ROAD</RouteType>
+				<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 				<RouteType>ROUTE_RAILROAD</RouteType>
+				<RouteType>ROUTE_HIGHWAY</RouteType>
 			</RoutesRequired>
 			<ReligionsRequired/>
 			<iNumReligions>0</iNumReligions>
@@ -12711,7 +12729,9 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs>
+			<OrPreReqs/>
+			<AndPreReqs/>
+			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
@@ -12719,9 +12739,7 @@
 				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<ObsoleteTechs/>
+			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>1</bGlobal>
@@ -13275,12 +13293,17 @@
 			<UnitsRequired>
 				<UnitClass>UNITCLASS_GALLEY</UnitClass>
 				<UnitClass>UNITCLASS_WAR_GALLEY</UnitClass>
+				<UnitClass>UNITCLASS_HEAVY_GALLEY</UnitClass>
+				<UnitClass>UNITCLASS_GALLEASS</UnitClass>
+				<UnitClass>UNITCLASS_COG</UnitClass>
 				<UnitClass>UNITCLASS_CARAVEL</UnitClass>
 				<UnitClass>UNITCLASS_GALLEON</UnitClass>
 				<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
 				<UnitClass>UNITCLASS_FRIGATE</UnitClass>
 				<UnitClass>UNITCLASS_SHIP_OF_THE_LINE</UnitClass>
 				<UnitClass>UNITCLASS_IRONCLAD</UnitClass>
+				<UnitClass>UNITCLASS_TORPEDO_BOAT</UnitClass>
+				<UnitClass>UNITCLASS_CRUISER</UnitClass>
 				<UnitClass>UNITCLASS_TRANSPORT</UnitClass>
 				<UnitClass>UNITCLASS_DESTROYER</UnitClass>
 				<UnitClass>UNITCLASS_STEALTH_DESTROYER</UnitClass>
@@ -13839,7 +13862,9 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs>
+			<OrPreReqs/>
+			<AndPreReqs/>
+			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
@@ -13847,9 +13872,7 @@
 				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<ObsoleteTechs/>
+			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>1</bGlobal>
@@ -15780,16 +15803,12 @@
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
-			<OrPreReqs/>
+			<OrPreReqs>
+				<PrereqTech>TECH_MEDICINE</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
-				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
-				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>

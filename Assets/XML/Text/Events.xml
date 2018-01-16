@@ -2169,6 +2169,11 @@
 		<Spanish>La construcci&#243;n comenzar&#225; en cuanto los planos est&#233;n terminados.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_INTERSTATE_EFFECT</Tag>
+		<English>All Roads on flatland will be replaced by Highways.</English>
+		<German>Alle Straßen im Flachland werden durch Autobahnen ersetzt.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_JADE_1</Tag>
 		<English>We can sell the precious jade for additional profit.</English>
 		<French>Nous pourrions vendre ce pr&#233;cieux jade pour accro&#238;tre nos profits.</French>

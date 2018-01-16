@@ -1305,6 +1305,7 @@ EVENTS
     * Refit the nuclear plant: costs gold, very low chance of nuclear meltdown
     * Ignore the problem: causes unhappiness, low chance of nuclear meltdown, event may continue
     * Abandon nuclear energy: all nuclear plants become obsolete
+* Interstate event: now replaces all Roads and Roman Roads on flatland with Highways
 
 STABILITY
 * Stability checks are now triggered by certain events (e.g. discovering a technology, changing civics, losing/acquiring a city, starting wars, making peace)

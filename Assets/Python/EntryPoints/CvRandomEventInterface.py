@@ -1478,7 +1478,7 @@ def getHelpInterstate(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
 	
-	szHelp = localText.getText("TXT_KEY_UNIT_MOVEMENT", (1, gc.getRouteInfo(CvUtil.findInfoTypeNum(gc.getRouteInfo,gc.getNumRouteInfos(),'ROUTE_ROAD')).getTextKey()))	
+	szHelp = localText.getText("TXT_KEY_EVENT_INTERSTATE_EFFECT", ())	
 
 	return szHelp
 
@@ -1489,8 +1489,13 @@ def applyInterstate(argsList):
 	team = gc.getTeam(player.getTeam())
 	
 	iRoad = CvUtil.findInfoTypeNum(gc.getRouteInfo,gc.getNumRouteInfos(),'ROUTE_ROAD')
-						
-	team.changeRouteChange(iRoad, -5)
+	iRomanRoad = CvUtil.findInfoTypeNum(gc.getRouteInfo,gc.getNumRouteInfos(),'ROUTE_ROMAN_ROAD')
+	iHighway = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), 'ROUTE_HIGHWAY')
+	
+	for i in range(gc.getMap().numPlots()):
+		plot = gc.getMap().plotByIndex(i)
+		if plot.isFlatlands() and plot.getOwner() == player.getID() and plot.getRouteType() in [iRoad, iRomanRoad]:
+			plot.setRouteType(iHighway)
 	
 ######## EARTH DAY ###########
 
@@ -2393,7 +2398,7 @@ def canTriggerSecurityTax(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	iWalls = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_WALLS')
-	if player.getNumCities() > player.getBuildingClassCount(iWalls):
+	if player.getNumCities() > 0 and player.getNumCities() > player.getBuildingClassCount(iWalls):
 		return false
 	
 	return true
