@@ -246,7 +246,6 @@
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iBaseFreeUnits>15</iBaseFreeUnits>
 			<iFreeUnitsPopulationPercent>10</iFreeUnitsPopulationPercent>
-			<bMilitaryFoodProduction>1</bMilitaryFoodProduction>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_CASTLE</BuildingType>
@@ -255,11 +254,10 @@
 			</BuildingHappinessChanges>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
 					<ImprovementYields>
-						<iYield>1</iYield>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -328,7 +326,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Ideology.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iGreatGeneralRateModifier>50</iGreatGeneralRateModifier>
+			<iGreatGeneralRateModifier>100</iGreatGeneralRateModifier>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
 					<BuildingType>BUILDINGCLASS_NEWS_PRESS</BuildingType>
@@ -341,7 +339,14 @@
 			</BuildingHappinessChanges>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
@@ -707,14 +712,6 @@
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
@@ -729,7 +726,7 @@
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 					<ImprovementYields>
-						<iYield>0</iYield>
+						<iYield>1</iYield>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</ImprovementYields>
@@ -1002,10 +999,10 @@
 			<iMaxConscript>3</iMaxConscript>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
+					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
