@@ -2539,7 +2539,7 @@ class RiseAndFall:
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iTamils)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iTamils, tSeaPlot, 1)
-				utils.makeUnit(iGalley, iTamils, tSeaPlot, 1)
+				utils.makeUnitAI(iGalley, iTamils, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 				utils.makeUnit(iWarGalley, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iSettler, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iTamils, tSeaPlot, 1)
