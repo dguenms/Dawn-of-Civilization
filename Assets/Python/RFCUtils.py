@@ -1835,7 +1835,6 @@ class RFCUtils:
 		for tPlot in self.surroundingPlots((city.getX(), city.getY()), 2):
 			for unit in self.getUnitList(tPlot):
 				if unit.getOwner() == city.getOwner():
-					if x < 0 or y < 0: unit.kill(False, -1)
-					else: unit.setXY(x, y, False, True, False)			
+					if x >= 0 or y >= 0: unit.setXY(x, y, False, True, False)			
 			
 utils = RFCUtils()
