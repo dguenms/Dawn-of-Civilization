@@ -26341,7 +26341,8 @@ BeginPlot
 	x=59,y=50
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	BonusType=BONUS_PIG
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
