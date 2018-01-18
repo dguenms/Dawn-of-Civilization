@@ -1474,7 +1474,6 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	lPotentialCities = []
 	lFlippingCities = []
 	
-	iMinNumCitiesOwner = 3
 	tCapital = Areas.getRespawnCapital(iPlayer)
 		
 	for (x, y) in Areas.getRespawnArea(iPlayer):
@@ -1487,6 +1486,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 					
 	for city in lPotentialCities:
 		iOwner = city.getOwner()
+		iMinNumCitiesOwner = 3
 		
 		# barbarian and minor cities always flip
 		if iOwner >= iNumPlayers:
@@ -1527,6 +1527,12 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 			elif iOwnerStability < iStabilitySolid:
 				if bCapital:
 					lFlippingCities.append(city)
+					
+	# if capital exists and does not flip, the respawn fails
+	capitalX, capitalY = tCapital
+	if gc.getMap().plot(capitalX, capitalY).isCity():
+		if tCapital not in [(city.getX(), city.getY()) for city in lFlippingCities]:
+			return []
 					
 	# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
 	if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0 and len(lFlippingCities) * 2 >= len(lPotentialCities) and not bFromCollapse:
