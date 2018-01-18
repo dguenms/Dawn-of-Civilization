@@ -161,4 +161,12 @@
 		<Tag>TXT_KEY_CIV_AUSTRIAN_ITALY</Tag>
 		<English>Grand Duchy of Tuscany</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_HUNGARY</Tag>
+		<English>Hungary</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_HUNGARIAN</Tag>
+		<English>Hungarian</English>
+	</TEXT>
 </Civ4GameText>
