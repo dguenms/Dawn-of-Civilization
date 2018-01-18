@@ -1159,7 +1159,11 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	// Leoreth: protect recently spawned civs for ten turns to avoid early attack exploits
 	if (eTeam < NUM_MAJOR_PLAYERS)
 	{
-		if (GC.getGameINLINE().getGameTurn() - getScenarioStartTurn() > 10 && (GC.getGameINLINE().getGameTurn() - GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn() < 10 || GC.getGameINLINE().getGameTurn() - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < 10))
+		int iGameTurn = GC.getGameINLINE().getGameTurn();
+
+		if (iGameTurn - getScenarioStartTurn() > getTurns(10) && // 10 turns after scenario start
+			iGameTurn - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(10) && // 10 turns after player spawn
+			(iGameTurn - GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn() < getTurns(10) || iGameTurn - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < getTurns(10))) // less than 10 turns after target spawn
 		{
 			return false;
 		}
