@@ -2919,7 +2919,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_THEATRE</ArtDefineTag>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>50</iCost>
+			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -2953,7 +2953,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_GREEK_ODEON</ArtDefineTag>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>50</iCost>
+			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -2992,7 +2992,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BYZANTINE_HIPPODROME</ArtDefineTag>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>50</iCost>
+			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -3038,7 +3038,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CHINESE_PAVILLION</ArtDefineTag>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
-			<iCost>50</iCost>
+			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>4</iAsset>
