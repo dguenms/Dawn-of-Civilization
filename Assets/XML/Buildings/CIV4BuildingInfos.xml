@@ -1999,7 +1999,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>1</iAsset>
@@ -2033,7 +2033,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -2078,7 +2078,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -2118,7 +2118,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>2</iAsset>
@@ -2156,7 +2156,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMaintenanceModifier>-10</iMaintenanceModifier>
@@ -2191,7 +2191,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>1</iAsset>
@@ -2231,7 +2231,7 @@
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>2</iAsset>
