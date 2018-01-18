@@ -2673,3 +2673,8 @@ void log(CvString logfile, CvString message)
 {
 	gDLL->logMsg(logfile, message);
 }
+
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer)
+{
+	return eBuilding == (BuildingTypes)eWonder && GET_PLAYER(ePlayer).isHuman() && GC.getGameINLINE().getGameTurn() < GET_PLAYER(ePlayer).getBirthTurn()+5;
+}

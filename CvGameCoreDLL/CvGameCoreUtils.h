@@ -217,6 +217,8 @@ inline int distanceInfluence(int iCenterValue, int iRange, int iDistance)
 	return (iCenterValue - 1) * (iDistance - iRange) * (iDistance - iRange) / (iRange * iRange) + 1;
 }
 
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer);
+
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
 CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
 int plotCityXY(int iDX, int iDY);																									// Exposed to Python

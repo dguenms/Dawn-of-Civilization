@@ -6209,66 +6209,26 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
 	if (!isHuman())
 	{
-		if (eBuilding == NOTRE_DAME || eBuilding == EIFFEL_TOWER)
-		{
-			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
-			{
-				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(FRANCE).getBirthTurn()+5)
-				{
-					return false;
-				}
-			}
-		}
-		else if (eBuilding == BLUE_MOSQUE || eBuilding == TOPKAPI_PALACE)
-		{
-			if (GET_PLAYER((PlayerTypes)TURKEY).isHuman())
-			{
-				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(TURKEY).getBirthTurn()+5)
-				{
-					return false;
-				}
-			}
-		}
-		else if (eBuilding == UNITED_NATIONS || eBuilding == PENTAGON || eBuilding == STATUE_OF_LIBERTY)
-		{
-			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
-			{
-				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(AMERICA).getBirthTurn()+5)
-				{
-					return false;
-				}
-			}
-		}
-		else if (eBuilding == SAN_MARCO_BASILICA || eBuilding == SISTINE_CHAPEL || eBuilding == LEANING_TOWER)
-		{
-			if (GET_PLAYER((PlayerTypes)ITALY).isHuman())
-			{
-				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(ITALY).getBirthTurn()+5)
-				{
-					return false;
-				}
-			}
-		}
-		else if (eBuilding == UNIVERSITY_OF_SANKORE)
-		{
-			if (GET_PLAYER((PlayerTypes)MALI).isHuman())
-			{
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(1400))
-				{
-					return false;
-				}
-			}
-		}
-		else if (eBuilding == LA_MEZQUITA)
-		{
-			if (GET_PLAYER(MOORS).isHuman())
-			{
-				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(MOORS).getBirthTurn()+5)
-				{
-					return false;
-				}
-			}
-		}
+		if (isHumanVictoryWonder(eBuilding, NOTRE_DAME, FRANCE)) return false;
+		else if (isHumanVictoryWonder(eBuilding, EIFFEL_TOWER, FRANCE)) return false;
+		else if (isHumanVictoryWonder(eBuilding, STATUE_OF_LIBERTY, FRANCE)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, BLUE_MOSQUE, TURKEY)) return false;
+		else if (isHumanVictoryWonder(eBuilding, TOPKAPI_PALACE, TURKEY)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, UNITED_NATIONS, AMERICA)) return false;
+		else if (isHumanVictoryWonder(eBuilding, PENTAGON, AMERICA)) return false;
+		else if (isHumanVictoryWonder(eBuilding, STATUE_OF_LIBERTY, AMERICA)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, SAN_MARCO_BASILICA, ITALY)) return false;
+		else if (isHumanVictoryWonder(eBuilding, SISTINE_CHAPEL, ITALY)) return false;
+		else if (isHumanVictoryWonder(eBuilding, LEANING_TOWER, ITALY)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, UNIVERSITY_OF_SANKORE, MALI)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, LA_MEZQUITA, MOORS)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, GREAT_COTHON, PHOENICIA)) return false;
 	}
 
 	return true;
