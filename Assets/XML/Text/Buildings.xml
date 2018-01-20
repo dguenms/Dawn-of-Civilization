@@ -29,7 +29,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], increases the city's science output and increases the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Whale[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], increases the city's science output.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_STRATEGY</Tag>
@@ -1301,7 +1301,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHARMACY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Pharmacies[COLOR_REVERT] increase the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Whale[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Pharmacies[COLOR_REVERT] increase the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT] and allow you to hire a [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RAILWAY_STATION</Tag>
