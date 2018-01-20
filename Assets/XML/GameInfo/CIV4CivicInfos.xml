@@ -934,6 +934,7 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iImprovementUpgradeRateModifier>-50</iImprovementUpgradeRateModifier>
+			<iCaptureGoldModifier>50</iCaptureGoldModifier>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>
 					<DomainType>DOMAIN_LAND</DomainType>
@@ -951,8 +952,13 @@
 			<Button>,Art/Interface/Buttons/Civics/Tributaries.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
+			<bMilitaryFoodProduction>1</bMilitaryFoodProduction>
 			<iVassalCityCommerce>1</iVassalCityCommerce>
-			<iCaptureGoldModifier>50</iCaptureGoldModifier>
+			<TradeYieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>25</iYield>
+			</TradeYieldModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
