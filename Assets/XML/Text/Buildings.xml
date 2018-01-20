@@ -233,7 +233,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EGYPTIAN_OBELISK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Obelisk[COLOR_REVERT], the Egyptian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides a major bonus to Culture output in your city and allows you to hire a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist.</English>
+		<English>The [COLOR_BUILDING_TEXT]Obelisk[COLOR_REVERT], the Egyptian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides a major bonus to Culture output in your city and allows you to hire a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CELTIC_DUN_STRATEGY</Tag>
@@ -345,7 +345,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], lowers city maintenance costs and never goes obsolete.</English>
+		<English>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], lowers city maintenance costs.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM</Tag>
@@ -374,7 +374,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production and never goes obsolete.</English>
+		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Tag>
@@ -628,7 +628,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MALAE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mala'e[COLOR_REVERT], the Polynesian replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Priesthood[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Engineering[COLOR_REVERT] technology, is cheaper, provides culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
+		<English>The [COLOR_BUILDING_TEXT]Mala'e[COLOR_REVERT], the Polynesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides additional culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RECYCLING_CENTER_STRATEGY</Tag>
