@@ -317,7 +317,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology, does require the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology.</English>
+		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], require the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>
@@ -337,7 +337,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Tambo[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Engineering[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology, is cheaper and increases trade route yield.</English>
+		<English>The [COLOR_BUILDING_TEXT]Tambo[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Engineering[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology, is cheaper and increases trade route yield.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT</Tag>
@@ -357,7 +357,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mausoleum[COLOR_REVERT], the Mughal replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Heritage[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Horticulture[COLOR_REVERT] technology and provides a free [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Mausoleum[COLOR_REVERT], the Mughal replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Heritage[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Horticulture[COLOR_REVERT] technology and provides a free [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL</Tag>
@@ -446,7 +446,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KOREAN_SEOWON_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], the Korean replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology and doesn't require the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology.</English>
+		<English>The [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], the Korean replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology and instead of the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_STRATEGY</Tag>
@@ -760,7 +760,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Gompa[COLOR_REVERT], the Tibetan replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], provides less research, increases a city's defenses against pre-gunpowder units, allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, provides a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, doesn't require a [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology and requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology.</English>
+		<English>The [COLOR_BUILDING_TEXT]Gompa[COLOR_REVERT], the Tibetan replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], provides less research, increases a city's defenses against pre-gunpowder units, allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, provides a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, doesn't require a [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], and requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
