@@ -1245,7 +1245,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DISTILLERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Distilleries[COLOR_REVERT] increase the city's happiness and unhealthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Distilleries[COLOR_REVERT] increase the city's wealth and unhealthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEWS_PRESS</Tag>
