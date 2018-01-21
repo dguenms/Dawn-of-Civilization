@@ -1917,9 +1917,10 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
 	# third Canadian goal: end twelve wars through diplomacy by 2000 AD
 	if iBroker == iCanada:
-		data.iCanadianPeaceDeals += 1
-		if data.iCanadianPeaceDeals >= 12:
-			win(iCanada, 2)
+		if isPossible(iCanada, 2):
+			data.iCanadianPeaceDeals += 1
+			if data.iCanadianPeaceDeals >= 12:
+				win(iCanada, 2)
 			
 def onBlockade(iPlayer, iGold):
 

@@ -1064,20 +1064,16 @@ def getUHVTileInfo(argsList):
 		if (x,y) in vic.lBlackSea:
 			return 48
 			
-		cx, cy = vic.tCairo
-		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
+		if (x, y) in utils.surroundingPlots(vic.tCairo):
 			return 49
 				
-		cx, cy = vic.tMecca
-		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
+		if (x, y) in utils.surroundingPlots(vic.tMecca):
 			return 50
 				
-		cx, cy = vic.tBaghdad
-		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
+		if (x, y) in utils.surroundingPlots(vic.tBaghdad):
 			return 51
 				
-		cx, cy = tVienna
-		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
+		if (x, y) in utils.surroundingPlots(vic.tVienna):
 			return 52
 			
 	elif iPlayer == iThailand:

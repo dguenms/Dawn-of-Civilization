@@ -4391,7 +4391,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
 
 		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier());
-		changeCultureHappiness(GC.getBuildingInfo(eBuilding).getCultureHappiness());
+		changeCultureHappiness(GC.getBuildingInfo(eBuilding).getCultureHappiness() * iChange);
 		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier());
 
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
