@@ -113,6 +113,7 @@ class RFCUtils:
 						teamMinor.makePeace(iActiveCiv)
 						if bOpenBorders:
 							teamMinor.signOpenBorders(iActiveCiv)
+	
 	#AIWars
 	def restorePeaceHuman(self, iMinorCiv, bOpenBorders): 
 		teamMinor = gc.getTeam(gc.getPlayer(iMinorCiv).getTeam())
@@ -123,6 +124,7 @@ class RFCUtils:
 				bIndependentUnitsInActiveTerritory = self.checkUnitsInEnemyTerritory(iMinorCiv, iHuman)
 				if not bActiveUnitsInIndependentTerritory and not bIndependentUnitsInActiveTerritory:
 					teamMinor.makePeace(iHuman)
+	
 	#AIWars
 	def minorWars(self, iMinorCiv):
 		teamMinor = gc.getTeam(gc.getPlayer(iMinorCiv).getTeam())
@@ -201,32 +203,27 @@ class RFCUtils:
 	def flipUnitsInCityBefore(self, tCityPlot, iNewOwner, iOldOwner):
 		#print ("tCityPlot Before", tCityPlot)
 		plotCity = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
-		city = plotCity.getPlotCity()
 		iNumUnitsInAPlot = plotCity.getNumUnits()
-		j = 0
-		for i in range(iNumUnitsInAPlot):
-			unit = plotCity.getUnit(j)
-			unitType = unit.getUnitType()
-			if unit.getOwner() == iOldOwner:
-				unit.kill(False, iBarbarian)
-				if iNewOwner < iNumActivePlayers or unitType > iSettler:
-					self.makeUnit(unitType, iNewOwner, (0, 67), 1)
-			else:
-				j += 1
+		if iNumUnitsInAPlot > 0:
+			lFlipUnits = []
+			for iUnit in reversed(range(iNumUnitsInAPlot)):
+				unit = plotCity.getUnit(iUnit)
+				iUnitType = unit.getUnitType()
+				if unit.getOwner() == iOldOwner:
+					unit.kill(False, iBarbarian)
+					if iNewOwner < iNumActivePlayers or iUnitType > iSettler:
+						lFlipUnits.append(iUnitType)
+			data.lFlippingUnits = lFlipUnits
+
 	#RiseAndFall
 	def flipUnitsInCityAfter(self, tCityPlot, iCiv):
 		#moves new units back in their place
 		print ("tCityPlot After", tCityPlot)
-		tempPlot = gc.getMap().plot(0,67)
-		if tempPlot.isUnit():
-			iNumUnitsInAPlot = tempPlot.getNumUnits()
-			#print ("iNumUnitsInAPlot", iNumUnitsInAPlot)
-			for i in range(iNumUnitsInAPlot):
-				unit = tempPlot.getUnit(0)
-				unit.setXYOld(tCityPlot[0],tCityPlot[1])
-		#cover plots revealed
-		for (x, y) in self.surroundingPlots((0, 67), 2):
-			gc.getMap().plot(x, y).setRevealed(iCiv, False, True, -1)
+		lFlipUnits = data.lFlippingUnits
+		if lFlipUnits:
+			for iUnitType in lFlipUnits:
+				self.makeUnit(iUnitType, iCiv, tCityPlot, 1)
+			data.lFlippingUnits = []
 
 	def killUnitsInArea(self, iPlayer, lPlots):
 		for (x, y) in lPlots:
@@ -243,61 +240,43 @@ class RFCUtils:
 
 	#RiseAndFall
 	def flipUnitsInArea(self, lPlots, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers):
-		"""Deletes, recreates units in 0,67 and moves them to the previous tile.
-		If there are units belonging to others in that plot and the new owner is barbarian, the units aren't recreated.
-		Settlers aren't created.
+		"""Creates a list of all flipping units, deletes old ones and places new ones
 		If bSkipPlotCity is True, units in a city won't flip. This is to avoid converting barbarian units that would capture a city before the flip delay"""
+		oldCapital = gc.getPlayer(iOldOwner).getCapitalCity()
+		
 		for (x, y) in lPlots:
-			killPlot = gc.getMap().plot(x,y)
+			killPlot = gc.getMap().plot(x, y)
+			if bSkipPlotCity and killPlot.isCity():
+				#print (killPlot.isCity())
+				#print 'do nothing'
+				continue
+			lPlotUnits = []
 			iNumUnitsInAPlot = killPlot.getNumUnits()
 			if iNumUnitsInAPlot > 0:
-				bRevealedZero = False
-				if gc.getMap().plot(0, 67).isRevealed(iNewOwner, False):
-					bRevealedZero = True
 				#print ("killplot", x, y)
-				if bSkipPlotCity and killPlot.isCity():
-					#print (killPlot.isCity())
-					#print 'do nothing'
-					pass
-				else:
-					j = 0
-					oldCapital = gc.getPlayer(iOldOwner).getCapitalCity()
-					for i in range(iNumUnitsInAPlot):
-						unit = killPlot.getUnit(j)
-						#print ("killplot", x, y, unit.getUnitType(), unit.getOwner(), "j", j)
-						if unit.getOwner() == iOldOwner:
-							# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
-							if iNewOwner == iItaly and iOldOwner < iNumPlayers:
-								unit.setXYOld(oldCapital.getX(), oldCapital.getY())
-							else:
-								unit.kill(False, iBarbarian)
-								
-								# Leoreth: can't flip naval units anymore
-								if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
-									continue
-									
-								# Leoreth: ignore workers as well
-								if unit.getUnitType() in [iWorker, iPunjabiWorker, iMadeireiro]:
-									continue
-								
-								if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
-									self.makeUnit(unit.getUnitType(), iNewOwner, (0, 67), 1)
+				for iUnit in reversed(range(iNumUnitsInAPlot)):
+					unit = killPlot.getUnit(iUnit)
+					#print ("killplot", x, y, unit.getUnitType(), unit.getOwner(), "j", j)
+					if unit.getOwner() == iOldOwner:
+						# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
+						if iNewOwner == iItaly and iOldOwner < iNumPlayers:
+							unit.setXYOld(oldCapital.getX(), oldCapital.getY())
 						else:
-							j += 1
-					tempPlot = gc.getMap().plot(0,67)
-					#moves new units back in their place
-					if tempPlot.isUnit():
-						iNumUnitsInAPlot = tempPlot.getNumUnits()
-						for i in range(iNumUnitsInAPlot):
-							unit = tempPlot.getUnit(0)
-							unit.setXYOld(x,y)
-						iCiv = iNewOwner
-						if not bRevealedZero:
-							for (x, y) in self.surroundingPlots((0, 67), 2):
-								gc.getMap().plot(x, y).setRevealed(iCiv, False, True, -1)
-
-
-
+							unit.kill(False, iBarbarian)
+							
+							# Leoreth: can't flip naval units anymore
+							if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
+								continue
+								
+							# Leoreth: ignore workers as well
+							if utils.getBaseUnit(unit.getUnitType()) in [iWorker, iLabourer]:
+								continue
+							
+							if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
+								lPlotUnits.append(unit.getUnitType())
+			if lPlotUnits:
+				for iUnit in lPlotUnits:
+					self.makeUnit(iUnit, iNewOwner, (x, y), 1)
 
 	#Congresses, RiseAndFall
 	def flipCity(self, tCityPlot, bFlipType, bKillUnits, iNewOwner, iOldOwners):
@@ -467,13 +446,10 @@ class RFCUtils:
 		if tDestination != (-1, -1):
 			plotCity = gc.getMap().plot(x, y)
 			iNumUnitsInAPlot = plotCity.getNumUnits()
-			j = 0
-			for i in range(iNumUnitsInAPlot):
-				unit = plotCity.getUnit(j)
+			for iUnit in reversed(range(iNumUnitsInAPlot)):
+				unit = plotCity.getUnit(iUnit)
 				if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 					unit.setXYOld(tDestination[0], tDestination[1])
-				else:
-					j += 1
 
 	def relocateGarrisons(self, tCityPlot, iOldOwner):
 		x, y = tCityPlot
@@ -482,13 +458,10 @@ class RFCUtils:
 			if pCity:
 				plot = gc.getMap().plot(x, y)
 				iNumUnits = plot.getNumUnits()
-				j = 0
-				for i in range(iNumUnits):
-					unit = plot.getUnit(j)
+				for iUnit in reversed(range(iNumUnits)):
+					unit = plot.getUnit(iUnit)
 					if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 						unit.setXYOld(pCity.getX(), pCity.getY())
-					else:
-						j += 1
 		else:
 			plot = gc.getMap().plot(x, y)
 			iNumUnits = plot.getNumUnits()
@@ -507,16 +480,13 @@ class RFCUtils:
 					self.createGarrisons((x, y), pCity.getOwner(), 2)
 			else:
 				iNumUnits = plot.getNumUnits()
-				j = 0
-				for i in range(iNumUnits):
-					unit = plot.getUnit(j)
+				for iUnit in reversed(range(iNumUnits)):
+					unit = plot.getUnit(iUnit)
 					iOwner = unit.getOwner()
 					if iOwner < iNumPlayers and iOwner != iPlayer:
 						capital = gc.getPlayer(iOwner).getCapitalCity()
 						if capital.getX() != -1 and capital.getY() != -1:
 							unit.setXYOld(capital.getX(), capital.getY())
-					else:
-						j += 1
 				
 	#Congresses, RiseAndFall
 	def relocateSeaGarrisons(self, tCityPlot, iOldOwner):
@@ -528,13 +498,10 @@ class RFCUtils:
 		if tDestination != (-1, -1):
 			plotCity = gc.getMap().plot(x, y)
 			iNumUnitsInAPlot = plotCity.getNumUnits()
-			j = 0
-			for i in range(iNumUnitsInAPlot):
-				unit = plotCity.getUnit(j)
+			for iUnit in reversed(range(iNumUnitsInAPlot)):
+				unit = plotCity.getUnit(iUnit)
 				if unit.getOwner() == iOldOwner and unit.getDomainType() == DomainTypes.DOMAIN_SEA:
 					unit.setXYOld(tDestination[0], tDestination[1])
-				else:
-					j += 1
 
 
 	#Congresses, RiseAndFall
@@ -1264,25 +1231,25 @@ class RFCUtils:
 		return [city for city in self.getAreaCities(lPlots) if city.getOwner() == iCiv]
 		
 	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False):
-	
+		tPlot = (x, y)
 		plot = gc.getMap().plot(x, y)
+		
 		plot.setRevealed(iCiv, False, True, -1)
 	
 		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 		
 		if bFlipUnits: 
-			self.flipUnitsInCityBefore((x, y), iCiv, iOwner)
+			self.flipUnitsInCityBefore(tPlot, iCiv, iOwner)
 		else:
-			self.pushOutGarrisons((x, y), iOwner)
-			self.relocateSeaGarrisons((x, y), iOwner)
+			self.pushOutGarrisons(tPlot, iOwner)
+			self.relocateSeaGarrisons(tPlot, iOwner)
 		
-		data.tTempFlippingCity = (x, y)
-		self.flipCity((x, y), 0, 0, iCiv, [iOwner])
+		self.flipCity(tPlot, 0, 0, iCiv, [iOwner])
 		
 		if bFlipUnits: 
-			self.flipUnitsInCityAfter(data.tTempFlippingCity, iCiv)
+			self.flipUnitsInCityAfter(tPlot, iCiv)
 		else:
-			self.createGarrisons(data.tTempFlippingCity, iCiv, 2)
+			self.createGarrisons(tPlot, iCiv, 2)
 		
 		plot.setRevealed(iCiv, True, True, -1)
 	

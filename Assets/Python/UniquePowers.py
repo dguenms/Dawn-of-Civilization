@@ -358,10 +358,9 @@ class UniquePowers:
 							if bUnitsApproaching:
 								print ("citynear", cityNear.getName(), "passed3")
 								utils.flipUnitsInCityBefore(tPlot, iMongolia, iOwnerNear)
-								data.tTempFlippingCity = tPlot
 								utils.flipCity(tPlot, 0, 0, iMongolia, [iOwnerNear])
-								utils.flipUnitsInCityAfter(data.tTempFlippingCity, iMongolia)
-								utils.cultureManager(data.tTempFlippingCity, 50, iOwnerNear, iMongolia, False, False, False)
+								utils.flipUnitsInCityAfter(tPlot, iMongolia)
+								utils.cultureManager(tPlot, 50, iOwnerNear, iMongolia, False, False, False)
 								CyInterface().addMessage(iOwnerNear, False, iDuration, CyTranslator().getText("TXT_KEY_UP_TERROR1", ()) + " " + cityNear.getName() + " " + CyTranslator().getText("TXT_KEY_UP_TERROR2", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 								CyInterface().addMessage(iMongolia, False, iDuration, CyTranslator().getText("TXT_KEY_UP_TERROR1", ()) + " " + cityNear.getName() + " " + CyTranslator().getText("TXT_KEY_UP_TERROR2", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 

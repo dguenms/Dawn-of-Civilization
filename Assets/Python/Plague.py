@@ -291,9 +291,8 @@ class Plague:
 							iPreserveDefenders += 1
 							break
 		if iNumUnitsInAPlot > 0:
-			for iUnit in range(iNumUnitsInAPlot):
-				i = iNumUnitsInAPlot - iUnit - 1
-				unit = pPlot.getUnit(i)
+			for iUnit in reversed(range(iNumUnitsInAPlot)):
+				unit = pPlot.getUnit(iUnit)
 				if gc.getPlayer(unit.getOwner()).isHuman():
 					#print ("iPreserveHumanDefenders", iPreserveHumanDefenders)
 					if iPreserveHumanDefenders > 0:

@@ -170,7 +170,7 @@ class GameData:
 		self.iBetrayalTurns = 0
 		self.iRebelCiv = 0
 		
-		self.tTempFlippingCity = (0, 0)
+		self.lFlippingUnits = []
 		
 		self.bAlreadySwitched = False
 		self.bUnlimitedSwitching = False

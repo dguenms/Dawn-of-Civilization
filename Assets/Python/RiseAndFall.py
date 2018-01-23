@@ -119,22 +119,20 @@ class RiseAndFall:
 		
 		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
-		humanCityList = [city for city in self.getConvertedCities(iNewCivFlip, lPlots) if city.getOwner() == iHuman]
+		lHumanCityList = [city for city in self.getConvertedCities(iNewCivFlip, lPlots) if city.getOwner() == iHuman]
 		
 		if popupReturn.getButtonClicked() == 0: # 1st button
 			print ("Flip agreed")
 			CyInterface().addMessage(iHuman, True, iDuration, CyTranslator().getText("TXT_KEY_FLIP_AGREED", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
 						
-			if humanCityList:
-				for i in range(len(humanCityList)):
-					city = humanCityList[i]
+			if lHumanCityList:
+				for city in lHumanCityList:
 					tCity = (city.getX(), city.getY())
 					print ("flipping ", city.getName())
 					utils.cultureManager(tCity, 100, iNewCivFlip, iHuman, False, False, False)
 					utils.flipUnitsInCityBefore(tCity, iNewCivFlip, iHuman)
-					data.tTempFlippingCity = tCity
-					utils.flipCity(tCity, 0, 0, iNewCivFlip, [iHuman])					
-					utils.flipUnitsInCityAfter(data.tTempFlippingCity, iNewCivFlip)
+					utils.flipCity(tCity, 0, 0, iNewCivFlip, [iHuman])
+					utils.flipUnitsInCityAfter(tCity, iNewCivFlip)
 					
 			if iNumCities == 0 and gc.getPlayer(iNewCivFlip).getNumCities() > 0:
 				self.createStartingWorkers(iNewCivFlip, (gc.getPlayer(iNewCivFlip).getCapitalCity().getX(), gc.getPlayer(iNewCivFlip).getCapitalCity().getY()))
@@ -145,8 +143,8 @@ class RiseAndFall:
 				if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iNewCivFlip): continue
 				iNumUnitsInAPlot = betrayalPlot.getNumUnits()
 				if iNumUnitsInAPlot > 0:
-					for i in range(iNumUnitsInAPlot):
-						unit = betrayalPlot.getUnit(i)
+					for iUnit in reversed(range(iNumUnitsInAPlot)):
+						unit = betrayalPlot.getUnit(iUnit)
 						if unit.getOwner() == iHuman:
 							rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
 							if rndNum >= iBetrayalThreshold:
@@ -154,7 +152,6 @@ class RiseAndFall:
 									iUnitType = unit.getUnitType()
 									unit.kill(False, iNewCivFlip)
 									utils.makeUnit(iUnitType, iNewCivFlip, (x,y), 1)
-									i = i - 1
 
 
 			if data.lCheatersCheck[0] == 0:
@@ -166,9 +163,8 @@ class RiseAndFall:
 			CyInterface().addMessage(iHuman, True, iDuration, CyTranslator().getText("TXT_KEY_FLIP_REFUSED", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
 						
 
-			if humanCityList:
-				for i in range(len(humanCityList)):
-					city = humanCityList[i]
+			if lHumanCityList:
+				for city in lHumanCityList:
 					pPlot = gc.getMap().plot(city.getX(), city.getY())
 					oldCulture = pPlot.getCulture(iHuman)
 					pPlot.setCulture(iNewCivFlip, oldCulture/2, True)
@@ -263,7 +259,7 @@ class RiseAndFall:
 		
 		Civilizations.initScenarioTechs(utils.getScenario())
 	
-		if utils.getScenario() == i3000BC:		
+		if utils.getScenario() == i3000BC:
 			self.create4000BCstartingUnits()
 			
 		if utils.getScenario() == i600AD:
@@ -519,7 +515,7 @@ class RiseAndFall:
 			pShenyang.setHasRealBuilding(iWalls, True)
 			pShenyang.setHasRealBuilding(iConfucianTemple, True)
 			
-	def adjust600ADWonders(self):	
+	def adjust600ADWonders(self):
 		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
 		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
 		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
@@ -612,12 +608,11 @@ class RiseAndFall:
 			if tBirth[iCiv] > -3000 and not gc.getPlayer(iCiv).isHuman():
 				data.players[iCiv].iBirthTurnModifier = gc.getGame().getSorenRandNum(11, "BirthTurnModifier") - 5 # -5 to +5
 		#now make sure that no civs spawn in the same turn and cause a double "new civ" popup
-		for iCiv in range(iNumPlayers):
-			if iCiv > utils.getHumanID() and iCiv < iNumPlayers-1:
-				for j in range(iNumPlayers-1-iCiv):
-					iNextCiv = iCiv+j+1
-					if getTurnForYear(tBirth[iCiv]) + data.players[iCiv].iBirthTurnModifier == getTurnForYear(tBirth[iNextCiv]) + data.players[iNextCiv].iBirthTurnModifier:
-						data.players[iNextCiv].iBirthTurnModifier += 1
+		for iCiv in range(utils.getHumanID()+1, iNumPlayers):
+			for j in range(iNumPlayers-1-iCiv):
+				iNextCiv = iCiv+j+1
+				if getTurnForYear(tBirth[iCiv]) + data.players[iCiv].iBirthTurnModifier == getTurnForYear(tBirth[iNextCiv]) + data.players[iNextCiv].iBirthTurnModifier:
+					data.players[iNextCiv].iBirthTurnModifier += 1
 						
 	def placeGoodyHuts(self):
 			
@@ -898,7 +893,7 @@ class RiseAndFall:
 			iFirstSpawn = iAmerica
 			
 		for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
-			if (iGameTurn >= getTurnForYear(tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(tBirth[iLoopCiv]) + 6):
+			if iGameTurn >= getTurnForYear(tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(tBirth[iLoopCiv]) + 6:
 				self.initBirth(iGameTurn, tBirth[iLoopCiv], iLoopCiv)
 
 
@@ -1149,10 +1144,9 @@ class RiseAndFall:
 					if iDivideCounter % 2 == 1:
 						tPlot = (city.getX(), city.getY())
 						utils.cultureManager(tPlot, 50, iSmallIndependent, iBigIndependent, False, True, True)
-						utils.flipUnitsInCityBefore(tPlot, iSmallIndependent, iBigIndependent)			    
-						data.tTempFlippingCity = tPlot
+						utils.flipUnitsInCityBefore(tPlot, iSmallIndependent, iBigIndependent)
 						utils.flipCity(tPlot, 0, 0, iSmallIndependent, [iBigIndependent])   #by trade because by conquest may raze the city
-						utils.flipUnitsInCityAfter(data.tTempFlippingCity, iSmallIndependent)
+						utils.flipUnitsInCityAfter(tPlot, iSmallIndependent)
 						iCounter += 1
 						if iCounter == 3:
 							return
@@ -1186,12 +1180,12 @@ class RiseAndFall:
 								if iDivideCounter % 4 == 0 or iDivideCounter % 4 == 1:
 									tPlot = (city.getX(), city.getY())
 									utils.cultureManager(tPlot, 50, iNewCiv, iBarbarian, False, True, True)
-									utils.flipUnitsInCityBefore(tPlot, iNewCiv, iBarbarian)			    
+									utils.flipUnitsInCityBefore(tPlot, iNewCiv, iBarbarian)
 									utils.flipCity(tPlot, 0, 0, iNewCiv, [iBarbarian])   #by trade because by conquest may raze the city
-									utils.flipUnitsInCityAfter(data.tTempFlippingCity, iNewCiv)
+									utils.flipUnitsInCityAfter(tPlot, iNewCiv)
 									iDivideCounter += 1
 					return
-		
+
 
 	def secession(self, iGameTurn):
 		iRndnum = gc.getGame().getSorenRandNum(iNumPlayers, 'starting count')
@@ -1241,17 +1235,16 @@ class RiseAndFall:
 						tPlot = (splittingCity.getX(), splittingCity.getY())
 						utils.cultureManager(tPlot, 50, iNewCiv, iPlayer, False, True, True)
 						utils.flipUnitsInCityBefore(tPlot, iNewCiv, iPlayer)
-						data.tTempFlippingCity = tPlot
 						utils.flipCity(tPlot, 0, 0, iNewCiv, [iPlayer])   #by trade because by conquest may raze the city
-						utils.flipUnitsInCityAfter(data.tTempFlippingCity, iNewCiv)
+						utils.flipUnitsInCityAfter(tPlot, iNewCiv)
 						if iPlayer == utils.getHumanID():
 							CyInterface().addMessage(iPlayer, True, iDuration, splittingCity.getName() + " " + \
 												CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(iOrange), -1, -1, True, True)
 						
 					return
-					
-			    
-				    
+
+
+
 	def initBirth(self, iCurrentTurn, iBirthYear, iCiv): # iBirthYear is really year now, so no conversion prior to function call - edead
 		print 'init birth in: '+str(iBirthYear)
 		iHuman = utils.getHumanID()
@@ -2335,8 +2328,8 @@ class RiseAndFall:
 			if killPlot.isCore(iOldOwner) and not killPlot.isCore(iNewOwner): continue
 			iNumUnitsInAPlot = killPlot.getNumUnits()
 			if iNumUnitsInAPlot > 0:
-				for i in range(iNumUnitsInAPlot):
-					unit = killPlot.getUnit(i)
+				for iUnit in reversed(range(iNumUnitsInAPlot)):
+					unit = killPlot.getUnit(iUnit)
 					if unit.getOwner() == iOldOwner:
 						rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
 						if rndNum >= iBetrayalThreshold:
@@ -2344,7 +2337,6 @@ class RiseAndFall:
 								iUnitType = unit.getUnitType()
 								unit.kill(False, iNewOwner)
 								utils.makeUnit(iUnitType, iNewOwner, tPlot, 1)
-								i = i - 1
 
 	def createAdditionalUnits(self, iCiv, tPlot):
 		if iCiv == iIndia:
@@ -2377,7 +2369,7 @@ class RiseAndFall:
 			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iCataphract, iCiv, tPlot, 2)
-			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)   
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 		elif iCiv == iVikings:
 			utils.makeUnit(iHuscarl, iCiv, tPlot, 3)
 		elif iCiv == iArabia:
@@ -2813,7 +2805,7 @@ class RiseAndFall:
 			utils.makeUnit(iMinuteman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-			if tSeaPlot:  
+			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 2)
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
