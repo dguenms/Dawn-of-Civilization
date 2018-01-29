@@ -5506,9 +5506,30 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 	if (pPlot->getFeatureType() != NO_FEATURE && getID() != CONGO)	//Leoreth: Congolese UP: can found in jungle
 	{
-		if (GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity() && pPlot->getArea() != NULL && GC.getMap().getArea(pPlot->getArea())->getNumTiles() > 1) // Leoreth: can always found on one tile islands
+		if (GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity())
 		{
-			return false;
+			// Leoreth: can always found on one tile islands
+			if (pPlot->getArea() != NULL && GC.getMap().getArea(pPlot->getArea())->getNumTiles() > 1)
+			{
+				bool bCanRemove = false;
+
+				for (int iI = 0; iI < GC.getNumBuildInfos(); iI++)
+				{
+					if (GC.getBuildInfo((BuildTypes)iI).isFeatureRemove(pPlot->getFeatureType()))
+					{
+						if (canBuild(pPlot, (BuildTypes)iI))
+						{
+							bCanRemove = true;
+							break;
+						}
+					}
+				}
+
+				if (!bCanRemove)
+				{
+					return false;
+				}
+			}
 		}
 	}
 
