@@ -66,6 +66,10 @@
 		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_FASCIST</Tag>
+		<English>National Gathering of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
 		<English>Norse Peoples</English>
 		<French>
@@ -140,26 +144,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_FASCIST</Tag>
 		<English>National Gathering of %s1</English>
-		<French>
-			<Text>Rassemblement National de %s1</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Nationalversammlung %s1:Nationalversammlung %s1:Nationalversammlung %s1</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Riunione Nazionale della %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Reuni&#243;n Nacional de %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS</Tag>
