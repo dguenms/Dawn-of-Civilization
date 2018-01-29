@@ -1135,7 +1135,7 @@ def adjective(iPlayer):
 		sForeignAdjective = getOrElse(getOrElse(dForeignAdjectives, getMaster(iPlayer), {}), iPlayer)
 		if sForeignAdjective: return sForeignAdjective
 		
-		return adjective(getMaster(iPlayer))
+		if getMaster(iPlayer) not in dForeignAdjectives: return adjective(getMaster(iPlayer))
 		
 	if isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer):
 		sRepublicAdjective = republicAdjective(iPlayer)
