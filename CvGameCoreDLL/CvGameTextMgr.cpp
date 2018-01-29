@@ -15939,7 +15939,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterRazedCities = player.getStabilityParameter(PARAMETER_RAZED_CITIES);
 		int iParameterIsolationism = player.getStabilityParameter(PARAMETER_ISOLATIONISM);
 
-		iTotalStability = iParameterCorePeriphery;
+		iTotalStability = iParameterCorePeriphery + iParameterRecentExpansion;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_EXPANSION");
 
