@@ -126,24 +126,24 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_VASSAL</Tag>
-		<English>Tributary %s2 State</English>
+		<English>Tributary %s4 State</English>
 		<French>
-			<Text>Etat %s2 Tributaire</Text>
+			<Text>Etat %s4 Tributaire</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Tributstaat %s2:Tributstaat %s2:Tributstaat %s2</Text>
+			<Text>Tributstaat %s3:Tributstaat %s3:Tributstaat %s3</Text>
 			<Gender>Male:Male:Male</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
 		<Italian>
-			<Text>Stato %s2 Tributario</Text>
+			<Text>Stato %s4 Tributario</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Estado %s2 Tributario</Text>
+			<Text>Estado %s4 Tributario</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>

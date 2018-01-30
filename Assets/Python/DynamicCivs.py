@@ -747,6 +747,8 @@ def text(sTextKey, tInput=()):
 	return localText.getText(sTextKey.encode(encoding), tInput)
 	
 def desc(iPlayer, sTextKey=str("%s1")):
+	if isVassal(iPlayer): return text(sTextKey, (name(iPlayer), adjective(iPlayer), name(iPlayer, True), adjective(iPlayer, True)))
+
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
@@ -890,8 +892,8 @@ def controlsHolyCity(iPlayer, iReligion):
 	
 ### Naming methods ###
 
-def name(iPlayer):
-	if isCapitulated(iPlayer):
+def name(iPlayer, bIgnoreVassal = False):
+	if isCapitulated(iPlayer) and not bIgnoreVassal:
 		sVassalName = vassalName(iPlayer, getMaster(iPlayer))
 		if sVassalName: return sVassalName
 		
@@ -1130,12 +1132,12 @@ def specificName(iPlayer):
 		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
 	
-def adjective(iPlayer):
+def adjective(iPlayer, bIgnoreVassal = False):
 	if isCapitulated(iPlayer):
 		sForeignAdjective = getOrElse(getOrElse(dForeignAdjectives, getMaster(iPlayer), {}), iPlayer)
 		if sForeignAdjective: return sForeignAdjective
 		
-		if getMaster(iPlayer) not in dForeignAdjectives: return adjective(getMaster(iPlayer))
+		if not bIgnoreVassal: return adjective(getMaster(iPlayer))
 		
 	if isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer):
 		sRepublicAdjective = republicAdjective(iPlayer)

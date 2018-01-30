@@ -191,24 +191,24 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY</Tag>
-		<English>%s2 Democratic Republic</English>
+		<English>%s4 Democratic Republic</English>
 		<French>
-			<Text>R&#233;publique D&#233;mocratique %s2</Text>
+			<Text>R&#233;publique D&#233;mocratique %s4</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>%s2 Demokratische Republik:%s2 Demokratische Republik:%s2 Demokratischen Republik</Text>
+			<Text>%s4 Demokratische Republik:%s4 Demokratische Republik:%s4 Demokratischen Republik</Text>
 			<Gender>Female:Female:Female</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
 		<Italian>
-			<Text>Repubblica Democratica %s2</Text>
+			<Text>Repubblica Democratica %s4</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Rep&#250;blica Democr&#225;tica %s2</Text>
+			<Text>Rep&#250;blica Democr&#225;tica %s4</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
