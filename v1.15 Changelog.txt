@@ -54,6 +54,7 @@ GAME RULES
 * It is no longer possible to create slaves in cities, instead the chances of capturing them from Native units have been increased
 * Missionaries cannot be gifted to other civilisations
 * Unit gifting is limited to vassals and defensive pacts
+* Technologies that allow removing terrain features also enable founding cities on these features
 
 TECHNOLOGIES
 * Completely new tech tree covering 141 technologies over 7 eras
@@ -314,8 +315,8 @@ CIVICS
     * Secularism (Civil Rights, medium): no state religion, +1 happiness per non-state religion, +10% research, double production for Hospital, University, Laboratory
 * Territory:
     * Sovereignty (low)
-    * Conquest (Generalship, high): +2 land unit experience, -50% improvement upgrade speed
-    * Tributaries (Feudalism, low): +1 commerce per vassal city in capital, +50% gold on city conquest
+    * Conquest (Generalship, high): +2 land unit experience, +50% gold on city conquest, -50% improvement upgrade speed
+    * Tributaries (Feudalism, low): +1 commerce per vassal city in capital, +25% trade route yield, units are produced using food
     * Isolationism (Heritage, medium): no foreign trade routes, +1 free specialist
     * Colonialism (Geography, medium): can use and trade slaves in colonies, +1 commerce per colony in capital, +4 naval unit experience
     * Nationhood (Nationalism, medium): can draft 3 units per turn, +1 production from Town
