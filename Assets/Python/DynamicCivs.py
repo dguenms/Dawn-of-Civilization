@@ -612,6 +612,10 @@ def onRevolution(iPlayer):
 	data.players[iPlayer].iAnarchyTurns += 1
 	checkName(iPlayer)
 	
+	for iLoopPlayer in range(iNumPlayers):
+		if gc.getTeam(iLoopPlayer).isVassal(iPlayer):
+			checkName(iLoopPlayer)
+	
 def onCityAcquired(iPreviousOwner, iNewOwner):
 	checkName(iPreviousOwner)
 	checkName(iNewOwner)
