@@ -2165,7 +2165,7 @@ def leaderName(iPlayer):
 			if iGameTurn >= getTurnForYear(1700):
 				return "TXT_KEY_LEADER_KANGXI"
 				
-	elif iPlayer == iIndia:
+	elif iPlayer == iTamils:
 		if iLeader == iKrishnaDevaRaya:
 			if iGameTurn >= getTurnForYear(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"
