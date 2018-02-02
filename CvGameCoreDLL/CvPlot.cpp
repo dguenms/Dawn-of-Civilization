@@ -11308,6 +11308,14 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 	
 	if (eReligion == ORTHODOXY)
 	{
+		if (!GC.getGameINLINE().isReligionFounded(ISLAM))
+		{
+			if (getSpreadFactor(ISLAM) == REGION_SPREAD_CORE)
+			{
+				return REGION_SPREAD_CORE;
+			}
+		}
+
 		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
 		{
 			if (iSpreadFactor < getSpreadFactor(CATHOLICISM))
