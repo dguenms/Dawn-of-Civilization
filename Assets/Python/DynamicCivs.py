@@ -894,6 +894,12 @@ def controlsHolyCity(iPlayer, iReligion):
 	
 	return False
 	
+def controlsCity(iPlayer, tPlot):
+	x, y = tPlot
+	plot = gc.getMap().plot(x, y)
+	
+	return plot.isCity() and plot.getPlotCity().getOwner() == iPlayer
+	
 ### Naming methods ###
 
 def name(iPlayer, bIgnoreVassal = False):
@@ -1015,14 +1021,15 @@ def specificName(iPlayer):
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_BYZANTIUM_RUM"
 	
-		if isCapital(iPlayer, ["Dyrrachion"]):
-			return "TXT_KEY_CIV_BYZANTIUM_EPIRUS"
+		if not bEmpire:
+			if isCapital(iPlayer, ["Dyrrachion"]):
+				return "TXT_KEY_CIV_BYZANTIUM_EPIRUS"
 			
-		if isCapital(iPlayer, ["Athena"]):
-			return "TXT_KEY_CIV_BYZANTIUM_MOREA"
+			if isCapital(iPlayer, ["Athena"]):
+				return "TXT_KEY_CIV_BYZANTIUM_MOREA"
 	
-		if not isCapital(iPlayer, ["Konstantinoupolis"]):
-			return capitalName(iPlayer)
+			if not isCapital(iPlayer, ["Konstantinoupolis"]):
+				return capitalName(iPlayer)
 			
 	elif iPlayer == iVikings:
 		if bEmpire:
@@ -1300,9 +1307,7 @@ def specificAdjective(iPlayer):
 		if pRome.getNumCities() > 0:
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
-		x, y = Areas.getCapital(iRome)
-		plot = gc.getMap().plot(x, y)
-		if plot.isCity() and plot.getPlotCity().getOwner() == iPlayer:
+		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
 			return gc.getPlayer(iRome).getCivilizationAdjective(0)
 			
 	elif iPlayer == iVikings:
@@ -1671,12 +1676,12 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_OF"
-	
-		if capital.getRegionID() != rAnatolia and tCapitalCoords != Areas.getCapital(iPlayer):
+			
+		if not bEmpire:
+			if capital.getRegionID() == rAnatolia or tCapitalCoords == Areas.getCapital(iPlayer):
+				return "TXT_KEY_EMPIRE_OF"
+				
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
-		
-		if not isCapital(iPlayer, ["Konstantinoupolis"]):
-			return "TXT_KEY_EMPIRE_OF"
 			
 	elif iPlayer == iVikings:
 		if iReligion < 0 and iEra < iRenaissance:
