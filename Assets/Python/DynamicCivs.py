@@ -1139,6 +1139,9 @@ def specificName(iPlayer):
 		if isCapital(iPlayer, ["Brussels", "Antwerpen"]):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIUM"
 			
+		if bCityStates:
+			return short(iPlayer)
+			
 	elif iPlayer == iGermany:
 		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
