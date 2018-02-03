@@ -668,6 +668,9 @@ public:
 	int getStateReligionFreeExperience() const;																																// Exposed to Python
 	void changeStateReligionFreeExperience(int iChange);
 
+	// Leoreth
+	void checkCapitalCity();
+
 	DllExport CvCity* getCapitalCity() const;																																	// Exposed to Python
 	void setCapitalCity(CvCity* pNewCapitalCity);
 

@@ -2890,6 +2890,8 @@ void CvPlayer::doTurn()
 
 	GC.getGameINLINE().verifyDeals();
 
+	checkCapitalCity();
+
 	AI_doTurnPre();
 
 	if (getRevolutionTimer() > 0)
@@ -25550,4 +25552,28 @@ bool CvPlayer::canBuySlaves() const
 	}
 
 	return false;
+}
+
+void CvPlayer::checkCapitalCity()
+{
+	if (getCapitalCity() != NULL)
+	{
+		return;
+	}
+
+	BuildingTypes eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(GC.getDefineINT("CAPITAL_BUILDINGCLASS"))));
+
+	if (eCapitalBuilding == NO_BUILDING)
+	{
+		return;
+	}
+
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->setNumRealBuilding(eCapitalBuilding, 0);
+	}
+
+	findNewCapital();
 }
