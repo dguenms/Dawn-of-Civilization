@@ -1260,7 +1260,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_GREECE_MACEDONIAN"
 			
 	elif iPlayer == iPersia:
-		if iReligion < 0:
+		if pPlayer.isStateReligion() and iReligion < 0:
 			return "TXT_KEY_CIV_PERSIA_MEDIAN"
 	
 		if bEmpire:
