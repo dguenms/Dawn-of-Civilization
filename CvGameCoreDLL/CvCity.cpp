@@ -2373,7 +2373,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 
 		if (!(GC.getBuildingClassInfo((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())).isNoLimit()))
 		{
-			if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
+			if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) && GC.getBuildingInfo(eBuilding).getProductionCost() > 0)
 			{
 				if (isWorldWondersMaxed())
 				{
