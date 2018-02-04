@@ -117,5 +117,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("AI_getNumCitySites", &CyPlayer::AI_getNumCitySites, "int ()")
 		.def("AI_getCitySite", &CyPlayer::AI_getCitySite, python::return_value_policy<python::manage_new_object>(), "CyPlot* (int iPlayer)")
 		.def("AI_getMemoryAttitude", &CyPlayer::AI_getMemoryAttitude, "int (int iPlayer, int iMemory)")
+		.def("restoreGeneralThreshold", &CyPlayer::restoreGeneralThreshold, "void ()")
 		;
 }

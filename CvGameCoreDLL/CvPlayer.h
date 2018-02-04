@@ -1306,6 +1306,8 @@ public:
 	int calculateCorporationMaintenance() const;
 	int calculateCitiesMaintenance() const;
 
+	void restoreGeneralThreshold();
+
 	bool m_bTurnPlayed;
 
 protected:

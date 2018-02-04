@@ -2625,3 +2625,8 @@ int CyPlayer::AI_getMemoryAttitude(int iPlayer, int iMemory)
 {
 	return m_pPlayer ? m_pPlayer->AI()->AI_getMemoryAttitude((PlayerTypes)iPlayer, (MemoryTypes)iMemory) : 0;
 }
+
+void CyPlayer::restoreGeneralThreshold()
+{
+	if (m_pPlayer) m_pPlayer->restoreGeneralThreshold();
+}

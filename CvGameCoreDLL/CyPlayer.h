@@ -580,6 +580,7 @@ public:
 	CyPlot* AI_getCitySite(int iIndex);
 	int AI_getNumCitySites();
 	int AI_getMemoryAttitude(int iPlayer, int iMemory);
+	void restoreGeneralThreshold();
 
 private:
 	CvPlayer* m_pPlayer;

@@ -401,6 +401,12 @@ class CvRFCEventHandler:
 				sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
 				CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MAYA_HOLKAN_EFFECT", (sAdjective, pLosingUnit.getNameKey(), 5, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		
+		# Brandenburg Gate effect
+		if gc.getPlayer(iLosingPlayer).isHasBuildingEffect(iBrandenburgGate):
+			for iPromotion in range(gc.getNumPromotionInfos()):
+				if gc.getPromotionInfo(iPromotion).isLeader():
+					gc.getPlayer(iLosingPlayer).restoreGeneralThreshold()
+		
 	def onReligionFounded(self, argsList):
 		'Religion Founded'
 		iReligion, iFounder = argsList

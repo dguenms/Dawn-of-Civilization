@@ -747,31 +747,6 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 
 	GET_PLAYER(getOwnerINLINE()).AI_changeNumAIUnits(AI_getUnitAIType(), -1);
 
-	// Brandenburg Gate effect: Great General death resets Great General threshold
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)BRANDENBURG_GATE))
-	{
-		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
-		{
-			if (isHasPromotion((PromotionTypes)iI))
-			{
-				if (GC.getPromotionInfo((PromotionTypes)iI).isLeader())
-				{
-					GET_PLAYER(getOwnerINLINE()).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((GET_PLAYER(getOwnerINLINE()).getGreatGeneralsCreated() / 10) + 1));
-
-					for (int iI = 0; iI < MAX_PLAYERS; iI++)
-					{
-						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
-						{
-							GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((GET_PLAYER(getOwnerINLINE()).getGreatGeneralsCreated() / 10) + 1));
-						}
-					}
-
-					GET_PLAYER(getOwnerINLINE()).decrementGreatGeneralsCreated();
-				}
-			}
-		}
-	}
-
 	eOwner = getOwnerINLINE();
 	eCapturingPlayer = getCapturingPlayer();
 	eCaptureUnitType = ((eCapturingPlayer != NO_PLAYER) ? getCaptureUnitType(GET_PLAYER(eCapturingPlayer).getCivilizationType()) : NO_UNIT);
@@ -10714,7 +10689,9 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 
 	// Leoreth: Terracotta Army effect
 	if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
+	{
 		iMax = MAX_INT;
+	}
 
 	if (bFromCombat)
 	{

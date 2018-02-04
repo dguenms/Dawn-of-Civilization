@@ -25577,3 +25577,18 @@ void CvPlayer::checkCapitalCity()
 
 	findNewCapital();
 }
+
+void CvPlayer::restoreGeneralThreshold()
+{
+	changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
+
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+		{
+			GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
+		}
+	}
+
+	decrementGreatGeneralsCreated();
+}
