@@ -25284,7 +25284,7 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 
 		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 		{
-			if (getID() != iI)
+			if (getID() != iI && GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
 				{
@@ -25299,14 +25299,17 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 
 	if (pCity->getReligionCount() > 0) return false;
 
-	CvCity* pCapitalCity = getCapitalCity();
-	if (pCapitalCity != NULL)
+	if (getStateReligion() == eReligion)
 	{
-		if (GC.getMap().getArea(pCapitalCity->getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCity->getArea())->getClosestAreaSize(30))
+		CvCity* pCapitalCity = getCapitalCity();
+		if (pCapitalCity != NULL)
 		{
-			if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
+			if (GC.getMap().getArea(pCapitalCity->getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCity->getArea())->getClosestAreaSize(30))
 			{
-				return true;
+				if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
+				{
+					return true;
+				}
 			}
 		}
 	}
