@@ -1721,7 +1721,8 @@ class RiseAndFall:
 			x, y = Areas.getCapital(iByzantium)
 			for city in utils.getCityList(iRome):
 				if city.getX() >= x-1 and city.getY() <= y:
-					lCities.append(city)
+					if (city.getX(), city.getY()) not in lPlots:
+						lCities.append(city)
 					
 		# Leoreth: Canada also flips English/American/French cities in the Canada region
 		if iPlayer == iCanada:
