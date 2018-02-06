@@ -453,11 +453,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
-		<English>-40% research cost until beginning of the Middle Ages</English>
-		<French>-40% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
-		<German>-40% Forschungskosten bis zum Anfang des Mittelalters</German>
-		<Italian>-40% ai costi di ricerca fino alla fine del Medioevo</Italian>
-		<Spanish>-40% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
+		<English>-50% research cost until beginning of the Middle Ages</English>
+		<French>-50% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
+		<German>-50% Forschungskosten bis zum Anfang des Mittelalters</German>
+		<Italian>-50% ai costi di ricerca fino alla fine del Medioevo</Italian>
+		<Spanish>-50% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>
