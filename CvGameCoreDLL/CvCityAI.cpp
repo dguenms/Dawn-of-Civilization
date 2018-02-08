@@ -3037,10 +3037,10 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									switch (getOwnerINLINE())
 									{
 									case EGYPT:
-										if (iI == PYRAMIDS) iTempValue *= 5;
+										if (iI == PYRAMIDS) iTempValue *= 10;
 										else if (iI == GREAT_LIBRARY) iTempValue *= 3;
 										else if (iI == GREAT_LIGHTHOUSE) iTempValue *= 3;
-										else if (iI == GREAT_SPHINX) iTempValue *= 3;
+										else if (iI == GREAT_SPHINX) iTempValue *= 5;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
@@ -3054,7 +3054,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case BABYLONIA:
 										if (iI == HANGING_GARDENS || iI == ISHTAR_GATE) iTempValue *= 5;
-										else if (iI == PYRAMIDS || iI == GREAT_SPHINX) iTempValue *= -10;
+										else if (iI == PYRAMIDS || iI == GREAT_SPHINX)  iTempValue = 0;
 										else if (iI == SPIRAL_MINARET) iTempValue *= 2;
 										else if (iI == GREAT_WALL) iTempValue /= 4;
 										else if (iI == ORACLE) iTempValue /= 6;

@@ -1826,7 +1826,14 @@ bool CvCity::isWorldWondersMaxed() const
 		return true;
 	}*/
 
-	if (getNumActiveWorldWonders() >= GC.getCultureLevelInfo(getCultureLevel()).getWonderLimit())
+	int iWonderLimit = GC.getCultureLevelInfo(getCultureLevel()).getWonderLimit();
+
+	if (isCapital())
+	{
+		iWonderLimit++;
+	}
+
+	if (getNumActiveWorldWonders() >= iWonderLimit)
 	{
 		return true;
 	}
@@ -2288,78 +2295,6 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 
 		if (iNumWaterTiles < 20) return false;
 	}
-
-	//Rhye - start switch for the UHV
-	if (eBuilding == RED_FORT)
-	{
-		if (getOwnerINLINE() != MUGHALS)
-		{
-			if (GET_PLAYER((PlayerTypes)MUGHALS).isHuman())
-			{
-				if (!GET_PLAYER((PlayerTypes)MUGHALS).isAlive())
-				{
-					return false;
-				}
-			}
-		}
-	}
-
-	if (eBuilding == WEMBLEY || eBuilding == ITAIPU_DAM || eBuilding == CRISTO_REDENTOR)
-	{
-		if (getOwnerINLINE() != BRAZIL)
-		{
-			if (GET_PLAYER((PlayerTypes)BRAZIL).isHuman())
-			{
-				if (!GET_PLAYER((PlayerTypes)BRAZIL).isAlive())
-				{
-					return false;
-				}
-			}
-		}
-	}
-
-	if (eBuilding == TEMPLE_OF_KUKULKAN)
-	{
-		if (getOwnerINLINE() != MAYA)
-		{
-			if (GET_PLAYER((PlayerTypes)MAYA).isHuman())
-			{
-				if (!GET_PLAYER((PlayerTypes)MAYA).isAlive())
-				{
-					return false;
-				}
-			}
-		}
-	}
-
-	if (eBuilding == NOTRE_DAME)
-	{
-		if (getOwnerINLINE() != FRANCE)
-		{
-			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
-			{
-				if (!GET_PLAYER((PlayerTypes)FRANCE).isAlive())
-				{
-					return false;
-				}
-			}
-		}
-	}
-
-	if (eBuilding == STATUE_OF_LIBERTY)
-	{
-		if (getOwnerINLINE() != AMERICA)
-		{
-			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
-			{
-				if (!GET_PLAYER((PlayerTypes)AMERICA).isAlive())
-				{
-					return false;
-				}
-			}
-		}
-	}
-	//Rhye - end
 
 	if (!bTestVisible)
 	{

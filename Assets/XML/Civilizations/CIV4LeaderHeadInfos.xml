@@ -21661,7 +21661,7 @@
 			<Description>TXT_KEY_LEADER_RAMESSES</Description>
 			<Civilopedia>TXT_KEY_LEADER_RAMESSES_II_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_RAMESSES</ArtDefineTag>
-			<iWonderConstructRand>50</iWonderConstructRand>
+			<iWonderConstructRand>70</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>6</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>

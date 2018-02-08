@@ -6229,9 +6229,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
-	//Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
 	if (!isHuman())
 	{
+		// Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
 		if (isHumanVictoryWonder(eBuilding, NOTRE_DAME, FRANCE)) return false;
 		else if (isHumanVictoryWonder(eBuilding, EIFFEL_TOWER, FRANCE)) return false;
 		else if (isHumanVictoryWonder(eBuilding, STATUE_OF_LIBERTY, FRANCE)) return false;
@@ -6252,6 +6252,28 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		else if (isHumanVictoryWonder(eBuilding, LA_MEZQUITA, MOORS)) return false;
 
 		else if (isHumanVictoryWonder(eBuilding, GREAT_COTHON, PHOENICIA)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, TEMPLE_OF_KUKULKAN, MAYA)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, WEMBLEY, BRAZIL)) return false;
+		else if (isHumanVictoryWonder(eBuilding, ITAIPU_DAM, BRAZIL)) return false;
+		else if (isHumanVictoryWonder(eBuilding, CRISTO_REDENTOR, BRAZIL)) return false;
+
+		else if (isHumanVictoryWonder(eBuilding, RED_FORT, MUGHALS)) return false;
+		else if (isHumanVictoryWonder(eBuilding, TAJ_MAHAL, MUGHALS)) return false;
+		else if (isHumanVictoryWonder(eBuilding, HARMANDIR_SAHIB, MUGHALS)) return false;
+
+		// Leoreth: delay Babylonia building Pyramids and Sphinx
+		if (getID() == BABYLONIA)
+		{
+			if (eBuilding == (BuildingTypes)PYRAMIDS || eBuilding == (BuildingTypes)GREAT_SPHINX)
+			{
+				if (!GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo((BuildingTypes)HANGING_GARDENS).getPrereqAndTech()) && !GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo((BuildingTypes)ISHTAR_GATE).getPrereqAndTech()))
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	return true;
