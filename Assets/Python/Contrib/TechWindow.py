@@ -280,13 +280,9 @@ class CvTechSplashScreen:
 			
 			if eLoopBuilding > iNumBuildingsPlague: continue
 			
-			if (eLoopBuilding != -1 and eLoopBuilding != iNumBuildingsPlague):
+			if (eLoopBuilding != -1):
 				if (isTechRequiredForBuilding(self.iTech, eLoopBuilding)):
 	        			screen.attachImageButton( panelName2, "", CyGlobalContext().getBuildingInfo(eLoopBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
-								  WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
-			elif eLoopBuilding == iNumBuildingsPlague:
-				if isTechRequiredForBuilding(self.iTech, eLoopBuilding):
-					screen.attachImageButton( panelName2, "", CyGlobalContext().getTechInfo(iPaper).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
 								  WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
 
 		# Improvements
