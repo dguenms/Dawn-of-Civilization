@@ -1946,6 +1946,8 @@ class RiseAndFall:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
 						
+					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
+						
 					data.lFirstContactConquerors[iIndex] = True
 					
 					# change some terrain to end isolation
@@ -1960,13 +1962,13 @@ class RiseAndFall:
 						
 					lContactPlots = []
 					lArrivalPlots = []
-					for (x, y) in utils.getPlotList(tContactZoneTL, tContactZoneBR):
+					for (x, y) in utils.getPlotList(tContactZoneTL, tContactZoneBR, lArrivalExceptions):
 						plot = gc.getMap().plot(x, y)
 						if plot.isVisible(iNewWorldCiv, False) and plot.isVisible(iOldWorldCiv, False):
 							lContactPlots.append((x,y))
 						if plot.getOwner() == iNewWorldCiv and not plot.isCity():
 							if plot.isFlatlands() or plot.isHills():
-								if not plot.getFeatureType() in [iJungle, iRainforest] and not plot.getTerrainType() == iMarsh and (x, y) != (25, 32):
+								if not plot.getFeatureType() in [iJungle, iRainforest] and not plot.getTerrainType() == iMarsh:
 									if gc.getMap().getArea(plot.getArea()).getNumTiles() > 3:
 										lArrivalPlots.append((x,y))
 								
