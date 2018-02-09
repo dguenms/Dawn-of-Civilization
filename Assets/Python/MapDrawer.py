@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 from Consts import *
 import Areas
+from SettlerMaps import *
 from RFCUtils import utils
 import csv
 
@@ -37,7 +38,7 @@ def createMap(iPlayer, iReborn):
 			lRow = []
 			for x in range(iWorldX):
 				plot = gc.getMap().plot(x, y)
-				iSettlerValue = getSettlerValue(iPlayer, iReborn, x, iWorldY-y-1)
+				iSettlerValue = getMapValue(iCivilization, x, y)
 				bForeignCore = ((x, y) in lForeignCorePlots)
 			
 				if plot.isWater(): lRow.append(WATER)
