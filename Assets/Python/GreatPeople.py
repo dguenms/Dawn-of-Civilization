@@ -2690,10 +2690,20 @@ iCivPoland : {
 	],
 },
 iCivCongo : {
+	iGreatProphet : [
+		"Nzinga a Nkuwu", # 15th
+		iRenaissance,
+		"Nkanga a Lukeni a Nzenze a Ntumba", # 17th
+		"fKimpa Vita", # 17th
+	],
+	iGreatMerchant : [
+		"N'Gangue M'voumbe Niambi", # 17th
+	],
 	iGreatStatesman : [
 		"Mwata Yamvo", # 16th
 		"Ng'anga Bilonda", # 16th
 		"Kalala Ilunga", # 17th
+		"fNzinga", # 17th
 		iIndustrial,
 		"Msiri", # 19th
 		iGlobal,
