@@ -251,6 +251,7 @@ GAME RULES
 * Missionaries cannot be gifted to other civilisations
 * Unit gifting is limited to vassals and defensive pacts
 * Technologies that allow removing terrain features also enable founding cities on these features
+* Conscripting units requires at least 50% of your culture in the city
 
 CIVILISATIONS
 * Egypt

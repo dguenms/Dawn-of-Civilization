@@ -138,8 +138,8 @@ class CvRFCEventHandler:
 		if iPlayer == iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
 			
-		if iPlayer < iNumMajorPlayers:
-			utils.spreadMajorCulture(iPlayer, tCity)
+		#if iPlayer < iNumMajorPlayers:
+		#	utils.spreadMajorCulture(iPlayer, tCity)
 		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:

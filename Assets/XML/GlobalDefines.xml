@@ -359,7 +359,7 @@
 	</Define>
 	<Define>
 		<DefineName>CONSCRIPT_MIN_CULTURE_PERCENT</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>FRESH_WATER_HEALTH_CHANGE</DefineName>
