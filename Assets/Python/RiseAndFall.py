@@ -1021,6 +1021,44 @@ class RiseAndFall:
 			self.respawnPopup(iCiv)
 
 		gc.getPlayer(iCiv).setLatestRebellionTurn(getTurnForYear(tRebirth[iCiv]))
+
+		# adjust gold, civics, religion and other special settings
+		if iCiv == iPersia:
+			pPersia.setGold(600)
+			pPersia.setLastStateReligion(iIslam)
+			pPersia.setCivics(iCivicsGovernment, iMonarchy)
+			pPersia.setCivics(iCivicsLegitimacy, iVassalage)
+			pPersia.setCivics(iCivicsSociety, iSlavery)
+			pPersia.setCivics(iCivicsEconomy, iMerchantTrade)
+			pPersia.setCivics(iCivicsReligion, iTheocracy)
+		elif iCiv == iAztecs:
+			if gc.getMap().plot(18, 37).isCity():
+				city = gc.getMap().plot(18, 37).getPlotCity()
+				if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iFloatingGardens).getBuildingClassType()) == 0:
+					city.setHasRealBuilding(iFloatingGardens, True)
+				iStateReligion = pAztecs.getStateReligion()
+				if city.isHasReligion(iStateReligion):
+					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
+			
+			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
+			
+			pAztecs.setGold(500)
+			
+			pAztecs.setCivics(iCivicsGovernment, iDespotism)
+			pAztecs.setCivics(iCivicsLegitimacy, iConstitution)
+			pAztecs.setCivics(iCivicsSociety, iIndividualism)
+			pAztecs.setCivics(iCivicsEconomy, iRegulatedTrade)
+			pAztecs.setCivics(iCivicsReligion, iClergy)
+			pAztecs.setCivics(iCivicsTerritory, iNationhood)
+		elif iCiv == iMaya:
+			pMaya.setGold(750)
+			pMaya.setCivics(iCivicsGovernment, iDespotism)
+			pMaya.setCivics(iCivicsLegitimacy, iConstitution)
+			pMaya.setCivics(iCivicsSociety, iIndividualism)
+			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
+			pMaya.setCivics(iCivicsReligion, iClergy)
+			pMaya.setCivics(iCivicsTerritory, iNationhood)
+			gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 		
 		dc.onCivRespawn(iCiv, [])
 		
@@ -1088,40 +1126,6 @@ class RiseAndFall:
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():
 			self.scheduleFlipPopup(iCiv, lRebirthPlots)
-
-		# adjust civics, religion and other special settings
-		if iCiv == iPersia:
-			pPersia.setLastStateReligion(iIslam)
-			pPersia.setCivics(iCivicsGovernment, iMonarchy)
-			pPersia.setCivics(iCivicsLegitimacy, iVassalage)
-			pPersia.setCivics(iCivicsSociety, iSlavery)
-			pPersia.setCivics(iCivicsEconomy, iMerchantTrade)
-			pPersia.setCivics(iCivicsReligion, iTheocracy)
-		elif iCiv == iAztecs:
-			if gc.getMap().plot(18, 37).isCity():
-				city = gc.getMap().plot(18, 37).getPlotCity()
-				if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iFloatingGardens).getBuildingClassType()) == 0:
-					city.setHasRealBuilding(iFloatingGardens, True)
-				iStateReligion = pAztecs.getStateReligion()
-				if city.isHasReligion(iStateReligion):
-					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
-			
-			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
-			
-			pAztecs.setCivics(iCivicsGovernment, iDemocracy)
-			pAztecs.setCivics(iCivicsLegitimacy, iConstitution)
-			pAztecs.setCivics(iCivicsSociety, iIndividualism)
-			pAztecs.setCivics(iCivicsEconomy, iRegulatedTrade)
-			pAztecs.setCivics(iCivicsReligion, iClergy)
-			pAztecs.setCivics(iCivicsTerritory, iNationhood)
-		elif iCiv == iMaya:
-			pMaya.setCivics(iCivicsGovernment, iDespotism)
-			pMaya.setCivics(iCivicsLegitimacy, iConstitution)
-			pMaya.setCivics(iCivicsSociety, iIndividualism)
-			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
-			pMaya.setCivics(iCivicsReligion, iClergy)
-			pMaya.setCivics(iCivicsTerritory, iNationhood)
-			gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
 		return
