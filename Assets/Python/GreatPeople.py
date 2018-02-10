@@ -2710,6 +2710,10 @@ iCivCongo : {
 		"Patrice Lumumba", # 20th
 		"Joseph Kasa-Vubu", # 20th
 	],
+	iGreatGeneral : [
+		"Lukeni lua Nimi", # 14th
+		"fKangala Kingwanda", # 18th
+	],
 },
 iCivArgentina : {
 	iGreatProphet : [

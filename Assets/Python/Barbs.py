@@ -67,7 +67,7 @@ tMinorStates = (
 	(-300, 600, (91, 31), [iArcher, iSwordsman, iWarElephant]), # Chola
 	(-300, 600, (92, 33), [iArcher, iSwordsman, iWarElephant]), # Chola
 	(-300, 900, (105, 49), [iHorseArcher, iSwordsman]), # Jurchen
-	(1100, 1500, (60, 44), [iPikeman, iLongbowman]), # Rome late
+	(1100, 1500, (60, 44), [iPikeman, iCrossbowman]), # Rome late
 	(0, 1100, (60, 44), [iSpearman, iArcher]), # Rome early
 )
 
