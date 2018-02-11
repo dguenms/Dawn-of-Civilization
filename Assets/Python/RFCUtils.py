@@ -1802,6 +1802,62 @@ class RFCUtils:
 		for tPlot in self.surroundingPlots((city.getX(), city.getY()), 2):
 			for unit in self.getUnitList(tPlot):
 				if unit.getOwner() == city.getOwner():
-					if x >= 0 or y >= 0: unit.setXY(x, y, False, True, False)			
+					if x >= 0 or y >= 0: unit.setXY(x, y, False, True, False)
+
+	def flipOrRelocateGarrison(self, city, iNumDefenders):
+		x = city.getX()
+		y = city.getY()
+		
+		lRelocatedUnits = []
+		lFlippedUnits = []
+		
+		for tPlot in self.surroundingPlots((x, y), 2):
+			for unit in self.getUnitList(tPlot):
+				if unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
+					if len(lFlippedUnits) < iNumDefenders:
+						lFlippedUnits.append(unit)
+					else:
+						lRelocatedUnits.append(unit)
+						
+		return lFlippedUnits, lRelocatedUnits
+		
+	def flipUnits(self, lUnits, iNewOwner, tPlot):
+		for unit in lUnits:
+			self.flipUnit(unit, iNewOwner, tPlot)
+			
+	def flipUnit(self, unit, iNewOwner, tPlot):
+		iUnitType = unit.getUnitType()
+		if unit.getX() >= 0 and unit.getY() >= 0:
+			unit.kill(iBarbarian, False)
+			self.makeUnit(iUnitType, iNewOwner, tPlot, 1)
+		
+	def relocateUnitsToCore(self, iPlayer, lUnits):
+		lCoreCities = self.getCoreCityList(iPlayer, self.getReborn(iPlayer))
+		dUnits = {}
+		
+		for unit in lUnits:
+			iUnitType = unit.getUnitType()
+			if iUnitType in dUnits:
+				if unit not in dUnits[iUnitType]: dUnits[iUnitType].append(unit)
+			else:
+				dUnits[iUnitType] = [unit]
+				
+		for iUnitType in dUnits:
+			for i, unit in enumerate(dUnits[iUnitType]):
+				index = i % (len(lCoreCities) * 2)
+				if index < len(lCoreCities):
+					city = lCoreCities[index]
+					unit.setXY(city.getX(), city.getY(), False, True, False)
+					
+	def flipOrCreateDefenders(self, iNewOwner, lUnits, tPlot, iNumDefenders):
+		self.flipUnits(lUnits, iNewOwner, tPlot)
+	
+		if len(lUnits) < iNumDefenders and utils.getHumanID() != iNewOwner:
+			self.makeUnit(self.getBestDefender(iNewOwner), iNewOwner, tPlot, iNumDefenders - len(lUnits))
+			
+	def killUnits(self, lUnits):
+		for unit in lUnits:
+			if unit.getX() >= 0 and unit.getY() >= 0:
+				unit.kill(iBarbarian, False)
 			
 utils = RFCUtils()

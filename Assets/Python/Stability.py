@@ -390,6 +390,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	# if smaller cities are supposed to be destroyed, do that first
 	lCededCities = []
 	lRemovedCities = []
+	lRelocatedUnits = []
+	
 	for city in lCities:
 		if bRazeMinorCities:
 			bMaxPopulation = (city.getPopulation() < 10)
@@ -482,7 +484,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						break
 						
 		if iClaim != -1:
-			secedeCity(city, iClaim)
+			lUnits = secedeCity(city, iClaim)
+			lRelocatedUnits.extend(lUnits)
 			continue
 
 		# if part of the core / resurrection area of a dead civ -> possible resurrection
@@ -520,7 +523,10 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		if bResurrectionFound: continue
 
 		# assign randomly to possible minors
-		secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
+		lUnits = secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
+		lRelocatedUnits.extend(lUnits)
+		
+	utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
 		
 	# execute possible resurrections
 	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
@@ -535,8 +541,12 @@ def secedeCity(city, iNewOwner):
 	if not city: return
 
 	sName = city.getName()
-	utils.relocateGarrisonToClosestCity(city)
+	
+	iNumDefenders = max(2, gc.getPlayer(iNewOwner).getCurrentEra()-1)
+	lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+	
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
+	utils.flipOrCreateDefenders(iNewOwner, lFlippedUnits, (city.getX(), city.getY()), iNumDefenders)
 	
 	if city.getOwner() == utils.getHumanID():
 		if iNewOwner in [iIndependent, iIndependent2, iNative, iBarbarian]:
@@ -550,6 +560,8 @@ def secedeCity(city, iNewOwner):
 	if utils.getHumanID() == iNewOwner:
 		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (sName,))
 		CyInterface().addMessage(iNewOwner, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+		
+	return lRelocatedUnits
 	
 def completeCollapse(iPlayer):
 	lCities = utils.getCityList(iPlayer)
@@ -592,7 +604,7 @@ def collapseToCore(iPlayer):
 				
 	# more than half ahistorical, only secede ahistorical cities
 	if 2 * len(lAhistoricalCities) > len(lNonCoreCities):
-			
+	
 		# notify owner
 		if utils.getHumanID() == iPlayer:
 			sText = localText.getText("TXT_KEY_STABILITY_FOREIGN_SECESSION", ())
@@ -603,7 +615,7 @@ def collapseToCore(iPlayer):
 		
 	# otherwise, secede all cities outside of core
 	elif lNonCoreCities:
-			
+	
 		# notify owner
 		if utils.getHumanID() == iPlayer:
 			sText = localText.getText("TXT_KEY_STABILITY_COLLAPSE_TO_CORE", ())
@@ -1599,6 +1611,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 							lCityList.append(city)
 
 	lOwners = []
+	dRelocatedUnits = {}
 	
 	for city in lCityList:
 		iOwner = city.getOwner()
@@ -1609,12 +1622,20 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		
 		bCapital = city.isCapital()
 		
+		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
+		lFlippedUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+		
+		if iOwner in dRelocatedUnits:
+			dRelocatedUnits[iOwner].extend(lRelocatedUnits)
+		else:
+			dRelocatedUnits[iOwner] = lRelocatedUnits
+		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
-			utils.flipUnitsInArea(utils.surroundingPlots((x, y), 2), iPlayer, iOwner, True, False)
-	
 		else:
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
+			
+		utils.flipOrCreateDefenders(iPlayer, lFlippedUnits, (x, y), iNumDefenders)
 			
 		newCity = gc.getMap().plot(x, y).getPlotCity()
 		
@@ -1628,6 +1649,12 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			
 		if iOwner not in lOwners:
 			lOwners.append(iOwner)
+			
+	for iOwner in dRelocatedUnits:
+		if iOwner < iNumPlayers:
+			utils.relocateUnitsToCore(iOwner, dRelocatedUnits[iOwner])
+		else:
+			utils.killUnits(dRelocatedUnits[iOwner])
 			
 	for iOwner in lOwners:
 		teamOwner = gc.getTeam(iOwner)

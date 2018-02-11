@@ -630,7 +630,19 @@ class Congress:
 					
 	def assignCity(self, iPlayer, iOwner, tPlot):
 		x, y = tPlot
+		city = gc.getMap().plot(x, y).getPlotCity()
+		
+		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
+		lFlippingUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
+		
 		utils.completeCityFlip(x, y, iPlayer, iOwner, 80, False, False, True)
+		
+		utils.flipOrCreateDefenders(iPlayer, lFlippingUnits, (x, y), iNumDefenders)
+		
+		if iOwner < iNumPlayers:
+			utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+		else:
+			utils.killUnits(lRelocatedUnits)
 		
 	def foundColony(self, iPlayer, tPlot):
 		x, y = tPlot

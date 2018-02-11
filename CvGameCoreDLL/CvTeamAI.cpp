@@ -1826,7 +1826,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		{
 			CvCity* pCapital = GET_PLAYER(getLeaderID()).getCapitalCity();
 
-			if (pCapital != NULL && GET_PLAYER(getLeaderID()).AI_isPlotThreatened(GET_PLAYER(getLeaderID()).getCapitalCity()->plot(), 2))
+			if (pCapital != NULL && GET_PLAYER(getLeaderID()).AI_isPlotThreatened(pCapital->plot(), 2))
 			{
 				if (2 * pCapital->area()->getPower(getLeaderID()) < pCapital->area()->getPower(GET_TEAM(eTeam).getLeaderID()))
 				{
