@@ -100,8 +100,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOMEINI_1</Tag>
-		<English>I, [OUR_NAME] of the [OUR_CIV], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</English>
-		<German>Ich, [OUR_NAME] von [OUR_CIV_SHORT], gr&#252;&#223;e Euch. Wisset, dass jene, welche von Nationalismus, Demokratie und solchen Dingen sprechen, Eure Nation von ihrer Mission abbringen wollen.</German>
+		<English>I, [OUR_NAME] of the [OUR_EMPIRE], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</English>
+		<German>Ich, [OUR_NAME] von der [OUR_EMPIRE], gr&#252;&#223;e Euch. Wisset, dass jene, welche von Nationalismus, Demokratie und solchen Dingen sprechen, Eure Nation von ihrer Mission abbringen wollen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_II_1</Tag>
