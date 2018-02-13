@@ -860,23 +860,26 @@ class CvTechChooser:
 			for iFlavor in xrange(gc.getNumFlavorTypes()):
 				if gc.getUnitInfo(iUnit).getFlavorValue(iFlavor) > 0:
 					break
+					
+			flavor = lambda x: gc.getTechInfo(x).getFlavorValue(iFlavor)
 
-			iMaxFlavor = 0
-			iTech = -1
-			for iLoopTech in xrange(gc.getNumTechInfos()):
-				if gc.getPlayer(self.iPlayer).canResearch(iLoopTech, False):
-					if gc.getTechInfo(iLoopTech).getFlavorValue(iFlavor) > iMaxFlavor:
-						iMaxFlavor = gc.getTechInfo(iLoopTech).getFlavorValue(iFlavor)
-						iTech = iLoopTech
+			lTechs = [i for i in xrange(gc.getNumTechInfos()) if gc.getPlayer(self.iPlayer).canResearch(i, False)]
+			iFirstDiscovery = utils.getHighestEntry(lTechs, flavor)
+			
+			iSecondDiscovery = None
+			if iFirstDiscovery:
+				lTechsGiven = [i for i in xrange(gc.getNumTechInfos()) if gc.getPlayer(self.iPlayer).canResearchGiven(i, False, iFirstDiscovery) and i != iFirstDiscovery]
+				iSecondDiscovery = utils.getHighestEntry(lTechsGiven, flavor)
 
 			screen.addDDSGFCAt("GreatPeopleUnit" + str(iUnit),"TechBottomPanel", gc.getUnitInfo(iUnit).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, -1, False)
 			iGPX += self.GP_ICON_SIZE
-
-			if iTech > -1:
-				screen.addDDSGFCAt("GreatPeoplePrereq" + str(iUnit),"TechBottomPanel", gc.getTechInfo(iTech).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iTech, -1, False)
-			else:
-				screen.addDDSGFCAt("GreatPeoplePrereq" + str(iUnit),"TechBottomPanel", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
-			iGPX += self.GP_ICON_SIZE
+			
+			for i, iTech in enumerate([iFirstDiscovery, iSecondDiscovery]):
+				if iTech:
+					screen.addDDSGFCAt("GreatPeoplePrereq" + str(iUnit) + str(i),"TechBottomPanel", gc.getTechInfo(iTech).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iTech, -1, False)
+				else:
+					screen.addDDSGFCAt("GreatPeoplePrereq" + str(iUnit) + str(i),"TechBottomPanel", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+				iGPX += self.GP_ICON_SIZE
 			
 			screen.addDDSGFCAt("GreatPeopleTechList" + str(iUnit),"TechBottomPanel", "Art/Interface/Buttons/TechList.dds", iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, 12001, iFlavor, False)
 			iGPX += self.GP_ICON_SIZE * 2

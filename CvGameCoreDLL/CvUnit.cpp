@@ -6146,27 +6146,15 @@ bool CvUnit::construct(BuildingTypes eBuilding)
 }
 
 
-TechTypes CvUnit::getDiscoveryTech() const
+TechTypes CvUnit::getDiscoveryTech(TechTypes eIgnoreTech) const
 {
-	return ::getDiscoveryTech(getUnitType(), getOwnerINLINE());
+	return ::getDiscoveryTech(getUnitType(), getOwnerINLINE(), eIgnoreTech);
 }
 
 
 int CvUnit::getDiscoverResearch(TechTypes eTech) const
 {
-	int iResearch;
-
-	iResearch = (m_pUnitInfo->getBaseDiscover() + (m_pUnitInfo->getDiscoverMultiplier() * GET_TEAM(getTeam()).getTotalPopulation()));
-
-	iResearch *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitDiscoverPercent();
-	iResearch /= 100;
-
-    if (eTech != NO_TECH)
-    {
-        iResearch = std::min(GET_TEAM(getTeam()).getResearchLeft(eTech), iResearch);
-    }
-
-	return std::max(0, iResearch);
+	return ::getDiscoverResearch(getUnitType(), getOwner(), eTech);
 }
 
 
@@ -6197,17 +6185,31 @@ bool CvUnit::canDiscover(const CvPlot* pPlot) const
 
 bool CvUnit::discover()
 {
-	TechTypes eDiscoveryTech;
+	TechTypes eFirstDiscoveryTech, eSecondDiscoveryTech;
 
 	if (!canDiscover(plot()))
 	{
 		return false;
 	}
 
-	eDiscoveryTech = getDiscoveryTech();
-	FAssertMsg(eDiscoveryTech != NO_TECH, "DiscoveryTech is not assigned a valid value");
+	eFirstDiscoveryTech = getDiscoveryTech();
+	eSecondDiscoveryTech = getDiscoveryTech(eFirstDiscoveryTech);
 
-	GET_TEAM(getTeam()).changeResearchProgress(eDiscoveryTech, getDiscoverResearch(eDiscoveryTech), getOwnerINLINE());
+	FAssertMsg(eFirstDiscoveryTech != NO_TECH, "FirstDiscoveryTech is not assigned a valid value");
+	FAssertMsg(eSecondDiscoveryTech != NO_TECH, "SecondDiscoveryTech is not assigned a valid value");
+
+	int iFirstResearch = getDiscoverResearch(eFirstDiscoveryTech);
+	int iSecondResearch = getDiscoverResearch(eSecondDiscoveryTech);
+
+	int iFirstResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoveryTech);
+	int iSecondResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoveryTech);
+	
+	GET_TEAM(getTeam()).changeResearchProgress(eFirstDiscoveryTech, std::min(iFirstResearch, iFirstResearchLeft), getOwnerINLINE());
+
+	if (iSecondResearch - iFirstResearchLeft > 0)
+	{
+		GET_TEAM(getTeam()).changeResearchProgress(eSecondDiscoveryTech, std::min(iSecondResearch - iFirstResearchLeft, iSecondResearchLeft), getOwnerINLINE());
+	}
 
 	if (plot()->isActiveVisible(false))
 	{

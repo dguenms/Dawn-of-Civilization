@@ -589,6 +589,12 @@ bool CyPlayer::canResearch(int /*TechTypes*/ eTech, bool bTrade)
 	return m_pPlayer ? m_pPlayer->canResearch((TechTypes)eTech, bTrade) : false;
 }
 
+// Leoreth
+bool CyPlayer::canResearchGiven(int eTech, bool bTrade, int eGivenTech)
+{
+	return m_pPlayer ? m_pPlayer->canResearch((TechTypes)eTech, bTrade, (TechTypes)eGivenTech) : false;
+}
+
 int /* TechTypes */ CyPlayer::getCurrentResearch()
 {
 	return m_pPlayer ? (int) m_pPlayer->getCurrentResearch() : (int) NO_TECH;

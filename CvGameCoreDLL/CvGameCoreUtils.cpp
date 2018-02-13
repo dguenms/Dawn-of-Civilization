@@ -1190,14 +1190,19 @@ bool isPlotEventTrigger(EventTriggerTypes eTrigger)
 	return false;
 }
 
-TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer)
+TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eIgnoreTech)
 {
 	TechTypes eBestTech = NO_TECH;
 	int iBestValue = 0;
 
 	for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
 	{
-		if (GET_PLAYER(ePlayer).canResearch((TechTypes)iI))
+		if ((TechTypes)iI == eIgnoreTech)
+		{
+			continue;
+		}
+
+		if (GET_PLAYER(ePlayer).canResearch((TechTypes)iI, false, eIgnoreTech))
 		{
 			int iValue = 0;
 
@@ -1215,6 +1220,21 @@ TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer)
 	}
 
 	return eBestTech;
+}
+
+
+int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
+{
+	int iResearch;
+	CvUnitInfo& kUnitInfo = GC.getUnitInfo(eUnit);
+	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+
+	iResearch = (kUnitInfo.getBaseDiscover() + (kUnitInfo.getDiscoverMultiplier() * GET_TEAM(kPlayer.getTeam()).getTotalPopulation()));
+
+	iResearch *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitDiscoverPercent();
+	iResearch /= 100;
+
+	return std::max(0, iResearch);
 }
 
 

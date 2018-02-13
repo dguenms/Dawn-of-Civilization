@@ -2231,7 +2231,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	BuildTypes eBuild;
 	RouteTypes eRoute;
 	BonusTypes eBonus;
-	TechTypes eTech;
+	TechTypes eTech, eFirstDiscovery, eSecondDiscovery;
 	bool bAlt;
 	bool bShift;
 	bool bValid;
@@ -2251,6 +2251,8 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	int iHigh;
 	int iLast;
 	int iRange;
+	int iFirstResearch, iSecondResearch;
+	int iFirstResearchLeft, iSecondResearchLeft;
 	int iDX, iDY;
 	int iI;
 
@@ -2614,19 +2616,48 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 					if (pSelectedUnit->canDiscover(pMissionPlot))
 					{
-						eTech = pSelectedUnit->getDiscoveryTech();
-	
-						if (pSelectedUnit->getDiscoverResearch(eTech) >= GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eTech))
+
+						eFirstDiscovery = pSelectedUnit->getDiscoveryTech();
+						eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
+
+						iFirstResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eFirstDiscovery);
+						iSecondResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eSecondDiscovery);
+
+						iFirstResearch = pSelectedUnit->getDiscoverResearch(eFirstDiscovery);
+						iSecondResearch = 0;
+
+						if (iFirstResearch >= iFirstResearchLeft)
 						{
-							szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eTech).getDescription());
-							szBuffer.append(NEWLINE);
+							iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
+						}
+						
+						szBuffer.append(NEWLINE);
+
+						if (iFirstResearch >= iFirstResearchLeft)
+						{
+							szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eFirstDiscovery).getDescription());
 							szBuffer.append(szTempBuffer);
 						}
 						else
 						{
-							szBuffer.append(NEWLINE);
-							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", pSelectedUnit->getDiscoverResearch(eTech), GC.getTechInfo(eTech).getTextKeyWide()));
+							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iFirstResearch, GC.getTechInfo(eFirstDiscovery).getTextKeyWide()));
 						}
+
+						if (iSecondResearch > 0)
+						{
+							szBuffer.append(gDLL->getText("TXT_KEY_AND"));
+
+							if (iSecondResearch >= iSecondResearchLeft)
+							{
+								szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_TECH_TEXT"), GC.getTechInfo(eSecondDiscovery).getDescription());
+								szBuffer.append(szTempBuffer);
+							}
+							else
+							{
+								szBuffer.append(gDLL->getText("TXT_KEY_ACTION_EXTRA_RESEARCH", iSecondResearch, GC.getTechInfo(eSecondDiscovery).getTextKeyWide()));
+							}
+						}
+
 						break;
 					}
 

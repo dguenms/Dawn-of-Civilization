@@ -154,6 +154,7 @@ public:
 	bool isResearch();
 	bool canEverResearch(int /*TechTypes*/ eTech);
 	bool canResearch(int /*TechTypes*/ eTech, bool bTrade);
+	bool canResearchGiven(int eTech, bool bTrade, int eGivenTech); // Leoreth
 	int /* TechTypes */ getCurrentResearch();
 	bool isCurrentResearchRepeat();
 	bool isNoResearchAvailable();

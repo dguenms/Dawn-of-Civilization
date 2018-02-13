@@ -9686,25 +9686,34 @@ bool CvUnitAI::AI_spreadCorporationAirlift()
 // Returns true if a mission was pushed...
 bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 {
-	TechTypes eDiscoverTech;
+	TechTypes eFirstDiscoverTech, eSecondDiscoverTech;
 	bool bIsFirstTech;
+	int iFirstLeft, iSecondLeft;
+	int iFirstResearch, iSecondResearch;
 	int iPercentWasted = 0;
 
 	if (canDiscover(plot()))
 	{
-		eDiscoverTech = getDiscoveryTech();
-		bIsFirstTech = (GET_PLAYER(getOwnerINLINE()).AI_isFirstTech(eDiscoverTech));
+		eFirstDiscoverTech = getDiscoveryTech();
+		eSecondDiscoverTech = getDiscoveryTech(eFirstDiscoverTech);
+
+		bIsFirstTech = (GET_PLAYER(getOwnerINLINE()).AI_isFirstTech(eFirstDiscoverTech) || GET_PLAYER(getOwnerINLINE()).AI_isFirstTech(eSecondDiscoverTech));
 
         if (bFirstResearchOnly && !bIsFirstTech)
         {
             return false;
         }
 
-		iPercentWasted = (100 - ((getDiscoverResearch(eDiscoverTech) * 100) / getDiscoverResearch(NO_TECH)));
+		iFirstLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoverTech);
+		iFirstResearch = std::min(getDiscoverResearch(eFirstDiscoverTech), iFirstLeft);
+
+		iSecondLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoverTech);
+		iSecondResearch = std::max(0, std::min(getDiscoverResearch(eSecondDiscoverTech) - iFirstLeft, iSecondLeft));
+
+		iPercentWasted = (100 - (((iFirstResearch + iSecondResearch) * 100) / 2 * getDiscoverResearch(NO_TECH)));
 		FAssert(((iPercentWasted >= 0) && (iPercentWasted <= 100)));
 
-
-        if (getDiscoverResearch(eDiscoverTech) >= GET_TEAM(getTeam()).getResearchLeft(eDiscoverTech))
+        if (iFirstResearch >= iFirstLeft)
         {
             if ((iPercentWasted < 51) && bFirstResearchOnly && bIsFirstTech)
             {
@@ -9727,7 +9736,7 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 
         if (iPercentWasted <= 11)
         {
-            if (GET_PLAYER(getOwnerINLINE()).getCurrentResearch() == eDiscoverTech)
+			if (GET_PLAYER(getOwnerINLINE()).getCurrentResearch() == eFirstDiscoverTech || (GET_PLAYER(getOwnerINLINE()).getCurrentResearch() == eSecondDiscoverTech && iSecondResearch > 0))
             {
                 getGroup()->pushMission(MISSION_DISCOVER);
                 return true;

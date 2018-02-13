@@ -224,7 +224,7 @@ public:
 	bool canConstruct(const CvPlot* pPlot, BuildingTypes eBuilding, bool bTestVisible = false) const;				// Exposed to Python
 	bool construct(BuildingTypes eBuilding);
 
-	TechTypes getDiscoveryTech() const;																														// Exposed to Python
+	TechTypes getDiscoveryTech(TechTypes eIgnoreTech = NO_TECH) const;																														// Exposed to Python
 	int getDiscoverResearch(TechTypes eTech) const;																								// Exposed to Python
 	bool canDiscover(const CvPlot* pPlot) const;																									// Exposed to Python
 	bool discover();

@@ -291,7 +291,8 @@ DllExport void setTradeItem(TradeData* pItem, TradeableItems eItemType = TRADE_I
 
 bool isPlotEventTrigger(EventTriggerTypes eTrigger);
 
-TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer);
+TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eIgnoreTech = NO_TECH);
+int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech);
 
 void setListHelp(wchar* szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
 void setListHelp(CvWString& szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);

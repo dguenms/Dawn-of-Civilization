@@ -251,7 +251,7 @@ public:
 
 	bool isResearch() const;																																							// Exposed to Python
 	DllExport bool canEverResearch(TechTypes eTech) const;																								// Exposed to Python
-	DllExport bool canResearch(TechTypes eTech, bool bTrade = false) const;																// Exposed to Python
+	DllExport bool canResearch(TechTypes eTech, bool bTrade = false, TechTypes eGivenTech = NO_TECH) const;																// Exposed to Python
 	DllExport TechTypes getCurrentResearch() const;																												// Exposed to Python
 	bool isCurrentResearchRepeat() const;																																	// Exposed to Python
 	bool isNoResearchAvailable() const;																																		// Exposed to Python

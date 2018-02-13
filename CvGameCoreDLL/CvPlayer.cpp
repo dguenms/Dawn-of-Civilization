@@ -7652,7 +7652,7 @@ bool CvPlayer::canEverResearch(TechTypes eTech) const
 }
 
 
-bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
+bool CvPlayer::canResearch(TechTypes eTech, bool bTrade, TechTypes eGivenTech) const
 {
 	bool bFoundPossible;
 	bool bFoundValid;
@@ -7692,7 +7692,7 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
 		{
 			bFoundPossible = true;
 
-			if (GET_TEAM(getTeam()).isHasTech(ePrereq))
+			if (GET_TEAM(getTeam()).isHasTech(ePrereq) || ePrereq == eGivenTech) // Leoreth
 			{
 				//Rhye
 				//if (!bTrade || GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || !GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
@@ -7715,7 +7715,7 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
 		TechTypes ePrereq = (TechTypes)GC.getTechInfo(eTech).getPrereqAndTechs(iI);
 		if (ePrereq != NO_TECH)
 		{
-			if (!GET_TEAM(getTeam()).isHasTech(ePrereq))
+			if (!GET_TEAM(getTeam()).isHasTech(ePrereq) && (eGivenTech == NO_TECH || ePrereq != eGivenTech))
 			{
 				return false;
 			}
