@@ -385,6 +385,8 @@ public:
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated();
 
+	void resetGreatPeopleCreated();
+
 	int getGreatPeopleThresholdModifier() const;																													// Exposed to Python
 	void changeGreatPeopleThresholdModifier(int iChange);
 

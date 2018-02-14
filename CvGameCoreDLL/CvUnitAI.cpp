@@ -9690,6 +9690,7 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 	bool bIsFirstTech;
 	int iFirstLeft, iSecondLeft;
 	int iFirstResearch, iSecondResearch;
+	int iNumTechsDiscovered;
 	int iPercentWasted = 0;
 
 	if (canDiscover(plot()))
@@ -9699,21 +9700,33 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 
 		bIsFirstTech = (GET_PLAYER(getOwnerINLINE()).AI_isFirstTech(eFirstDiscoverTech) || GET_PLAYER(getOwnerINLINE()).AI_isFirstTech(eSecondDiscoverTech));
 
-        if (bFirstResearchOnly && !bIsFirstTech)
+		if (bFirstResearchOnly && !bIsFirstTech)
         {
             return false;
         }
 
-		iFirstLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoverTech);
-		iFirstResearch = std::min(getDiscoverResearch(eFirstDiscoverTech), iFirstLeft);
+		iFirstResearch = 0;
+		iSecondResearch = 0;
+		iNumTechsDiscovered = 0;
 
-		iSecondLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoverTech);
-		iSecondResearch = std::max(0, std::min(getDiscoverResearch(eSecondDiscoverTech) - iFirstLeft, iSecondLeft));
+		if (eFirstDiscoverTech != NO_TECH)
+		{
+			iFirstLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoverTech);
+			iFirstResearch = std::min(getDiscoverResearch(eFirstDiscoverTech), iFirstLeft);
+			iNumTechsDiscovered++;
 
-		iPercentWasted = (100 - (((iFirstResearch + iSecondResearch) * 100) / 2 * getDiscoverResearch(NO_TECH)));
+			if (eSecondDiscoverTech != NO_TECH)
+			{
+				iSecondLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoverTech);
+				iSecondResearch = std::max(0, std::min(getDiscoverResearch(eSecondDiscoverTech) - iFirstLeft, iSecondLeft));
+				iNumTechsDiscovered++;
+			}
+		}
+
+		iPercentWasted = iNumTechsDiscovered > 0 ? (100 - (((iFirstResearch + iSecondResearch) * 100) / iNumTechsDiscovered * getDiscoverResearch(NO_TECH))) : 100;
 		FAssert(((iPercentWasted >= 0) && (iPercentWasted <= 100)));
 
-        if (iFirstResearch >= iFirstLeft)
+		if (iFirstResearch >= iFirstLeft)
         {
             if ((iPercentWasted < 51) && bFirstResearchOnly && bIsFirstTech)
             {
@@ -9734,7 +9747,7 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
             return false;
         }
 
-        if (iPercentWasted <= 11)
+		if (iPercentWasted <= 11)
         {
 			if (GET_PLAYER(getOwnerINLINE()).getCurrentResearch() == eFirstDiscoverTech || (GET_PLAYER(getOwnerINLINE()).getCurrentResearch() == eSecondDiscoverTech && iSecondResearch > 0))
             {
@@ -9743,6 +9756,7 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
             }
         }
     }
+
 	return false;
 }
 

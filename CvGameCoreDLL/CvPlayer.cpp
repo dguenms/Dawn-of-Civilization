@@ -25617,3 +25617,10 @@ void CvPlayer::restoreGeneralThreshold()
 
 	decrementGreatGeneralsCreated();
 }
+
+void CvPlayer::resetGreatPeopleCreated()
+{
+	m_iGreatPeopleCreated = 0;
+	m_iGreatGeneralsCreated = 0;
+	m_iGreatSpiesCreated = 0;
+}

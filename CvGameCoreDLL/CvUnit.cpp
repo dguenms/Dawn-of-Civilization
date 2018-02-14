@@ -6198,17 +6198,23 @@ bool CvUnit::discover()
 	FAssertMsg(eFirstDiscoveryTech != NO_TECH, "FirstDiscoveryTech is not assigned a valid value");
 	FAssertMsg(eSecondDiscoveryTech != NO_TECH, "SecondDiscoveryTech is not assigned a valid value");
 
-	int iFirstResearch = getDiscoverResearch(eFirstDiscoveryTech);
-	int iSecondResearch = getDiscoverResearch(eSecondDiscoveryTech);
-
-	int iFirstResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoveryTech);
-	int iSecondResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoveryTech);
-	
-	GET_TEAM(getTeam()).changeResearchProgress(eFirstDiscoveryTech, std::min(iFirstResearch, iFirstResearchLeft), getOwnerINLINE());
-
-	if (iSecondResearch - iFirstResearchLeft > 0)
+	if (eFirstDiscoveryTech != NO_TECH)
 	{
-		GET_TEAM(getTeam()).changeResearchProgress(eSecondDiscoveryTech, std::min(iSecondResearch - iFirstResearchLeft, iSecondResearchLeft), getOwnerINLINE());
+		int iFirstResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoveryTech);
+		int iFirstResearch = getDiscoverResearch(eFirstDiscoveryTech);
+
+		GET_TEAM(getTeam()).changeResearchProgress(eFirstDiscoveryTech, std::min(iFirstResearch, iFirstResearchLeft), getOwnerINLINE());
+
+		if (eSecondDiscoveryTech != NO_TECH)
+		{
+			int iSecondResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoveryTech);
+			int iSecondResearch = std::max(0, getDiscoverResearch(eSecondDiscoveryTech) - iFirstResearchLeft);
+
+			if (iSecondResearch > 0)
+			{
+				GET_TEAM(getTeam()).changeResearchProgress(eSecondDiscoveryTech, std::min(iSecondResearch, iSecondResearchLeft), getOwnerINLINE());
+			}
+		}
 	}
 
 	if (plot()->isActiveVisible(false))
