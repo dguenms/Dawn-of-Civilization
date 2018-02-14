@@ -57,7 +57,7 @@ All of this shows in the following main features of Dawn of Civilization:
 * Almost every already existing RFC civilization will experience an entirely different game due to changes in their UP, new UHV goals or general starting situation and environment
 * Replaced Carthage with Phoenicia, starting in 1200 BC in the Levant
 * Different spawn dates: India (1500 BC), Japan (525 AD), Netherlands (1580 AD) and Germany (1700 AD)
-* New stability system with more transparent factors, gradual effects in the form of different crises, and improved performance
+* New stability system with more transparent factors, gradual effects of instability, and improved performance
 * Diplomatic institutions overhaul: new rules and resolutions for the Apostolic Palace and United Nations, extended and optimized Congress mechanics
 * New religions: Zoroastrianism, Orthodoxy, Catholicism and Protestantism. Christianity is founded as the Orthodox faith, with Catholicism and Protestantism branching off through specific events (the Great Schism and the Reformation, respectively)
 * New religious spread rules, with religions gradually spreading around their holy city depending on historical spread in various regions on the map. Owner state religion can influence which religions can appear, and religions can disappear when the owner state religion changes
