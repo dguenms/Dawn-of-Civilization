@@ -2636,3 +2636,8 @@ void CyPlayer::restoreGeneralThreshold()
 {
 	if (m_pPlayer) m_pPlayer->restoreGeneralThreshold();
 }
+
+void CyPlayer::resetGreatPeopleCreated()
+{
+	if (m_pPlayer) m_pPlayer->resetGreatPeopleCreated();
+}

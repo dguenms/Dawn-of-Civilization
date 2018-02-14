@@ -582,6 +582,7 @@ public:
 	int AI_getNumCitySites();
 	int AI_getMemoryAttitude(int iPlayer, int iMemory);
 	void restoreGeneralThreshold();
+	void resetGreatPeopleCreated();
 
 private:
 	CvPlayer* m_pPlayer;

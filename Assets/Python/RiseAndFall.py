@@ -974,6 +974,9 @@ class RiseAndFall:
 		# reset diplomacy
 		pCiv.AI_reset()
 		
+		# reset great people
+		pCiv.resetGreatPeopleCreated()
+		
 		# reset map visibility
 		for (i, j) in utils.getWorldPlotsList():
 			gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)

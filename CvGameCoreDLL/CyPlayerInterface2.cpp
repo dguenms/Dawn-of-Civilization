@@ -119,5 +119,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("AI_getMemoryAttitude", &CyPlayer::AI_getMemoryAttitude, "int (int iPlayer, int iMemory)")
 		.def("restoreGeneralThreshold", &CyPlayer::restoreGeneralThreshold, "void ()")
 		.def("canResearchGiven", &CyPlayer::canResearchGiven, "bool (int eTech, bool bTrade, int eGivenTech)")
+		.def("resetGreatPeopleCreated", &CyPlayer::resetGreatPeopleCreated, "void ()")
 		;
 }
