@@ -507,7 +507,7 @@ class Barbs:
 		if bNearCity and not [(i, j) for (i, j) in utils.surroundingPlots(tPlot, 2, lambda (a, b): not gc.getMap().plot(a, b).isCity())]: return False
 		
 		# not on landmasses without cities
-		if gc.getMap().getArea(plot.getArea()).getNumCities() == 0: return False
+		if not bWater and gc.getMap().getArea(plot.getArea()).getNumCities() == 0: return False
 		
 		return True
 
