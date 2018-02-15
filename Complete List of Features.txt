@@ -253,6 +253,7 @@ GAME RULES
 * Technologies that allow removing terrain features also enable founding cities on these features
 * Conscripting units requires at least 50% of your culture in the city
 * Great People can discover up to two technologies
+* Wonders cannot be built anymore after someone has discovered their obsoletion technology
 
 CIVILISATIONS
 * Egypt

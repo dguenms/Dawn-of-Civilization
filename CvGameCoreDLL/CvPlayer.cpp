@@ -5972,6 +5972,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		return false;
 	}
 
+	// Leoreth: if a wonder is obsolete for anyone, you cannot build it anymore
+	if ((TechTypes)GC.getBuildingInfo(eBuilding).getObsoleteTech() != NO_TECH)
+	{
+		if (isWorldWonderClass(eBuildingClass) && GC.getGameINLINE().countKnownTechNumTeams((TechTypes)GC.getBuildingInfo(eBuilding).getObsoleteTech()) > 0)
+		{
+			return false;
+		}
+	}
+
 	if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() != NO_SPECIALBUILDING)
 	{
 		if (!(currentTeam.isHasTech((TechTypes)(GC.getSpecialBuildingInfo((SpecialBuildingTypes) GC.getBuildingInfo(eBuilding).getSpecialBuildingType()).getTechPrereq()))))
