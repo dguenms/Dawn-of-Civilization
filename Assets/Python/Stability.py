@@ -525,8 +525,11 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		# assign randomly to possible minors
 		lUnits = secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
 		lRelocatedUnits.extend(lUnits)
-		
-	utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+
+	if iPlayer < iNumPlayers:
+		utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+	else:
+		utils.killUnits(lRelocatedUnits)
 		
 	# execute possible resurrections
 	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
