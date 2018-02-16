@@ -11516,9 +11516,24 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 
 	// Leoreth: prefer deification if no state religion
-	if (eCivic == CIVIC_DEIFICATION && getLastStateReligion() == NO_RELIGION)
+	if (eCivic == CIVIC_DEIFICATION)
 	{
-		iValue *= 2;
+		switch (getLastStateReligion())
+		{
+		case NO_RELIGION:
+			if (getCurrentEra() <= ERA_CLASSICAL)
+			{
+				iValue *= 2;
+			}
+			break;
+		case JUDAISM:
+		case ORTHODOXY:
+		case CATHOLICISM:
+		case PROTESTANTISM:
+		case ISLAM:
+			iValue /= 5;
+			break;
+		}
 	}
 
 	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))
