@@ -1835,6 +1835,9 @@ class RFCUtils:
 		lCoreCities = self.getCoreCityList(iPlayer, self.getReborn(iPlayer))
 		dUnits = {}
 		
+		if not lCoreCities:
+			self.killUnits(lUnits)
+		
 		for unit in lUnits:
 			iUnitType = unit.getUnitType()
 			if iUnitType in dUnits:
@@ -1847,7 +1850,8 @@ class RFCUtils:
 				index = i % (len(lCoreCities) * 2)
 				if index < len(lCoreCities):
 					city = lCoreCities[index]
-					unit.setXY(city.getX(), city.getY(), False, True, False)
+					if unit.getX() >= 0 and unit.getY() >= 0:
+						unit.setXY(city.getX(), city.getY(), False, True, False)
 					
 	def flipOrCreateDefenders(self, iNewOwner, lUnits, tPlot, iNumDefenders):
 		self.flipUnits(lUnits, iNewOwner, tPlot)
