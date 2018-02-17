@@ -526,7 +526,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		lUnits = secedeCity(city, lPossibleMinors[city.getID() % len(lPossibleMinors)])
 		lRelocatedUnits.extend(lUnits)
 
-	if iPlayer < iNumPlayers:
+	if iPlayer < iNumPlayers and gc.getPlayer(iPlayer).getNumCities() > 0:
 		utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
 	else:
 		utils.killUnits(lRelocatedUnits)
