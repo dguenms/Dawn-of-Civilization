@@ -1780,6 +1780,7 @@ class RiseAndFall:
 				
 			if iCultureChange > 0:
 				utils.completeCityFlip(x, y, iPlayer, iOwner, iCultureChange, True, False, False, True)
+				utils.ensureDefenders(iPlayer, (x, y), 2)
 				iConvertedCitiesCount += 1
 				
 		self.warOnSpawn(iPlayer, lEnemies)

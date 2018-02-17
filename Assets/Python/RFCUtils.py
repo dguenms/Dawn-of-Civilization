@@ -1863,5 +1863,10 @@ class RFCUtils:
 		for unit in lUnits:
 			if unit.getX() >= 0 and unit.getY() >= 0:
 				unit.kill(iBarbarian, False)
+				
+	def ensureDefenders(self, iPlayer, tPlot, iNumDefenders):
+		lUnits = [unit for unit in self.getUnitList(tPlot) if unit.getOwner() == iPlayer and unit.canFight()]
+		if len(lUnits) < iNumDefenders:
+			self.makeUnit(self.getBestDefender(iPlayer), iPlayer, tPlot, iNumDefenders - len(lUnits))
 			
 utils = RFCUtils()
