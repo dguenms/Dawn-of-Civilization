@@ -295,6 +295,13 @@ class CvRFCEventHandler:
 					utils.makeUnitAI(iGalley, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
 					utils.makeUnitAI(iSettler, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
 					
+					# additional defenders and walls to make human life not too easy
+					if utils.getHumanID() == iRome:
+						carthage.setHasRealBuilding(iWalls, True)
+						utils.makeUnitAI(iArcher, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+						utils.makeUnit(iNumidianCavalry, iCarthage, (58, 39), 3)
+						utils.makeUnitAI(iAtlasElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
+					
 				utils.setReborn(iCarthage, True)
 				
 		if iOwner == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
