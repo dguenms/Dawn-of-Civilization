@@ -2616,17 +2616,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 					if (pSelectedUnit->canDiscover(pMissionPlot))
 					{
-
 						eFirstDiscovery = pSelectedUnit->getDiscoveryTech();
-						eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
-
 						iFirstResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eFirstDiscovery);
-						iSecondResearchLeft = GET_TEAM(pSelectedUnit->getTeam()).getResearchLeft(eSecondDiscovery);
-
 						iFirstResearch = pSelectedUnit->getDiscoverResearch(eFirstDiscovery);
+						
+						eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
 						iSecondResearch = 0;
 
-						if (iFirstResearch >= iFirstResearchLeft)
+						if (eSecondDiscovery != NO_TECH && iFirstResearch >= iFirstResearchLeft)
 						{
 							iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
 						}
