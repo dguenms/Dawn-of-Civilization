@@ -6047,22 +6047,6 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		{
 			return false;
 		}
-
-		int iLoop;
-		bool bPaganCity = false;
-		for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			if (pLoopCity->getReligionCount() == 0)
-			{
-				bPaganCity = true;
-				break;
-			}
-		}
-
-		if (!bPaganCity)
-		{
-			return false;
-		}
 	}
 
 	if (GC.getGameINLINE().countCivTeamsEverAlive() < GC.getBuildingInfo(eBuilding).getNumTeamsPrereq())

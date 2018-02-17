@@ -2194,7 +2194,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	// Leoreth: pagan buildings require no religion in the city
 	if (GC.getBuildingInfo(eBuilding).isPagan())
 	{
-		if (getReligionCount() > 0)
+		if ((!isHasReligion(JUDAISM) && !GET_PLAYER(getOwnerINLINE()).getStateReligion() == JUDAISM && getReligionCount() > 0) || getReligionCount() > 1)
 		{
 			return false;
 		}
