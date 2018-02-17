@@ -610,6 +610,10 @@ def onPlayerChangeStateReligion(iPlayer, iReligion):
 	
 def onRevolution(iPlayer):
 	data.players[iPlayer].iAnarchyTurns += 1
+	
+	if iPlayer == iMughals and isRepublic(iPlayer):
+		nameChange(iPlayer)
+	
 	checkName(iPlayer)
 	
 	for iLoopPlayer in range(iNumPlayers):
