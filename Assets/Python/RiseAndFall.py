@@ -1293,7 +1293,7 @@ class RiseAndFall:
 			if pRome.isAlive():
 				return
 				
-			cityList = utils.getCoreCityList(iRome, 0)
+			cityList = utils.getCitiesInCore(iRome, False)
 			
 			iIndependentCities = 0
 
@@ -1522,7 +1522,7 @@ class RiseAndFall:
 			
 				if iCiv == iItaly:
 					utils.removeCoreUnits(iItaly)
-					cityList = utils.getCoreCityList(iItaly, 0)
+					cityList = utils.getCitiesInCore(iItaly, False)
 					i, j = Areas.getCapital(iRome)
 					pRomePlot = gc.getMap().plot(i, j)
 					if pRomePlot.isCity():
@@ -1578,7 +1578,7 @@ class RiseAndFall:
 	def birthInForeignBorders(self, iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
 		if iCiv == iItaly:
 			utils.removeCoreUnits(iItaly)
-			cityList = utils.getCoreCityList(iItaly, 0)
+			cityList = self.getCitiesInCore(iItaly, False)
 			x, y = Areas.getCapital(iRome)
 			pRomePlot = gc.getMap().plot(x, y)
 			if pRomePlot.isCity():

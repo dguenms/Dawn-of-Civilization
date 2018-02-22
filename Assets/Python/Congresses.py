@@ -530,7 +530,7 @@ class Congress:
 					tThisPlayer = gc.getTeam(iThisPlayer)
 					if not tThisPlayer.canContact(iThatPlayer): tThisPlayer.meet(iThatPlayer, False)
 			
-		self.sHostCityName = utils.getRandomEntry(utils.getCoreCityList(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
+		self.sHostCityName = utils.getRandomEntry(utils.getOwnedCoreCities(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
 		
 		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
 		if utils.getHumanID() in self.lInvites:

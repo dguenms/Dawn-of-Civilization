@@ -748,13 +748,16 @@ class RFCUtils:
 		return gc.getPlayer(iCiv).getReborn()
 
 	# Leoreth
-	def getCoreCityList(self, iCiv, bReborn=False):
-		cityList = []
-		for (x, y) in Areas.getCoreArea(iCiv, bReborn):
+	def getCitiesInCore(self, iPlayer, bReborn=None):
+		lCities = []
+		for (x, y) in Areas.getCoreArea(iPlayer, bReborn):
 			plot = gc.getMap().plot(x, y)
 			if plot.isCity():
-				cityList.append(plot.getPlotCity())
-		return cityList
+				lCities.append(plot.getPlotCity())
+		return lCities
+		
+	def getOwnedCoreCities(self, iPlayer, bReborn=None):
+		return [city for city in self.getCitiesInCore(iPlayer, bReborn) if city.getOwner() == iPlayer]
 
 	# Leoreth
 	def getCoreUnitList(self, iCiv, reborn):
@@ -1832,11 +1835,12 @@ class RFCUtils:
 			self.makeUnit(iUnitType, iNewOwner, tPlot, 1)
 		
 	def relocateUnitsToCore(self, iPlayer, lUnits):
-		lCoreCities = self.getCoreCityList(iPlayer, self.getReborn(iPlayer))
+		lCoreCities = self.getOwnedCoreCities(iPlayer)
 		dUnits = {}
 		
 		if not lCoreCities:
 			self.killUnits(lUnits)
+			return
 		
 		for unit in lUnits:
 			iUnitType = unit.getUnitType()

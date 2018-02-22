@@ -102,7 +102,7 @@ def triggerCollapse(iPlayer):
 	# help overexpanding AI: collapse to core, unless fall date
 	if utils.getHumanID() != iPlayer:
 		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
-			if len(utils.getCoreCityList(iPlayer)) < len(utils.getCityList(iPlayer)):
+			if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
 				collapseToCore(iPlayer)
 				return
 
@@ -694,7 +694,7 @@ def calculateStability(iPlayer):
 	bNationhood = iCivicTerritory == iNationhood
 	bMultilateralism = iCivicTerritory == iMultilateralism
 	
-	bSingleCoreCity = (len(utils.getCoreCityList(iPlayer, iReborn)) == 1)
+	bSingleCoreCity = (len(utils.getOwnedCoreCities(iPlayer)) == 1)
 	
 	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
 	
