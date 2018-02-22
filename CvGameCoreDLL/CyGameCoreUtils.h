@@ -87,4 +87,6 @@ int cyGetSettlerValue(int iPlayer, int x, int y);
 
 void cyLog(std::string logfile, std::string message);
 
+void cySetDirty(int iDirtyBit, bool bNewValue);
+
 #endif	// CyGameCoreUtils_h

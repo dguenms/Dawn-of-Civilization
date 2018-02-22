@@ -87,4 +87,5 @@ void CyGameCoreUtilsPythonInterface()
 
 	python::def("getSettlerValue", cyGetSettlerValue, "int (int iPlayer, int x, int y)");
 	python::def("log", cyLog, "void (string logfile, string message)");
+	python::def("setDirty", cySetDirty, "void (int iDirtyBit, bool bNewValue)");
 }

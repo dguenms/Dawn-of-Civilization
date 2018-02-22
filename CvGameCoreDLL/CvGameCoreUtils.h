@@ -381,6 +381,8 @@ UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Le
 
 bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // Leoreth
 
+void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue);
+
 void log(char* format, ...);
 void log(CvWString message);
 void log(CvString logfile, CvString message);

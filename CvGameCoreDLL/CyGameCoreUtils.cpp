@@ -313,3 +313,8 @@ void cyLog(std::string logfile, std::string message)
 {
 	log(CvString(logfile), CvString(message));
 }
+
+void cySetDirty(int iDirtyBit, bool bNewValue)
+{
+	setDirty((InterfaceDirtyBits)iDirtyBit, bNewValue);
+}

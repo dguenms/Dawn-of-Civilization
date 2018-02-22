@@ -2698,3 +2698,8 @@ bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePla
 {
 	return eBuilding == (BuildingTypes)eWonder && GET_PLAYER(ePlayer).isHuman() && GC.getGameINLINE().getGameTurn() < GET_PLAYER(ePlayer).getBirthTurn()+5;
 }
+
+void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)
+{
+	gDLL->getInterfaceIFace()->setDirty(eDirtyBit, bNewValue);
+}
