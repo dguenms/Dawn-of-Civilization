@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.15)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to Git commit 2486.
+This version corresponds to Git commit 2605.
 
 TABLE OF CONTENTS
 * Included Mods
@@ -82,7 +82,7 @@ MAJOR FEATURES
 * Transatlantic Slave Trade:
     * With Slavery, defeating native units has a chance of capturing Slave units
     * Slave units can be traded when running Slavery or Colonialism
-    * In colonial regions, slaves can join a city (+2 production, +1 unhappiness) or build a Slave Plantation (+1 production, +2 commerce) over regular Plantations
+    * In colonial regions, slaves can join a city (+2 production, +1 unhappiness) or build a Slave Plantation (+1 commerce over regular Plantations)
 * Barbarian spawn redesign: additional units, spawn patterns and attack behavior AIs
 * New immigration mechanic: population can migrate to your cities in the New World if your capital is also in the New World    
 * The Mercenary mechanic has been removed
@@ -1138,7 +1138,7 @@ CIVICS
     * Vassalage (Nobility, low): extra units without upkeep, +1 production from Farm, +1 happiness from Castle
     * Meritocracy (Education, medium): +2 food from Paddy Field, +50% unit experience within own borders, +50% research in capital
     * Centralism (Statecraft, high): +50% production in capital, +50% wealth in capital
-    * Ideology (Journalism, low): +100% great general birth rate, +1 production from Workshop, Lumbermill, +1 happiness from News Press, Broadcasting Tower
+    * Ideology (Journalism, low): +100% great general birth rate, +1 production from Workshop, Watermill, +1 happiness from News Press, Broadcasting Tower
     * Constitution (Social Contract, medium): +100% great people birth rate, double statesman slots
 * Society:
     * Traditionalism (low)
@@ -1147,7 +1147,7 @@ CIVICS
     * Caste System (Contract, high): +50% improvement construction speed, +1 food from Plantation
     * Individualism (Civil Liberties, medium): +2 commerce from Village, Town, +100% improvement upgrade rate
     * Totalitarianism (Psychology, none): +25% military production, no war weariness, +1 production per unhappy citizen
-    * Egalitarianism (Sociology, high): +2 research per specialist, double slots for artists, scientists and engineers
+    * Egalitarianism (Sociology, high): +2 research per specialist, double slots for artists, scientists and engineers, cannot use slaves
 * Economy:
     * Reciprocity (low)
     * Redistribution (Arithmetics, medium): +25% food in capital, -25% trade route commerce, double production for Granary
@@ -1163,15 +1163,15 @@ CIVICS
     * Monasticism (Ethics, low): +50% great people birth with state religion
     * Theocracy (Doctrine, high): +2 experience with state religion, no non-state religion spread, double priest slots
     * Tolerance (Civil Liberties, low): +1 happiness per non-state religion, +50% culture in capital, can train missionaries without monasteries
-    * Secularism (Civil Rights, medium): no state religion, +10% research, double production for Hospital, University, Laboratory
+    * Secularism (Civil Rights, medium): no state religion, +1 happiness per non-state religion, +10% research, double production for Hospital, University, Laboratory
 * Territory:
     * Sovereignty (low)
     * Conquest (Generalship, high): +2 land unit experience, +50% gold on city conquest, -50% improvement upgrade speed
     * Tributaries (Feudalism, low): +1 commerce per vassal city in capital, +25% trade route yield, units are produced using food
     * Isolationism (Heritage, medium): no foreign trade routes, +1 free specialist
-    * Colonialism (Geography, medium): can use and trade slaves in colonies, +1 commerce per colony in capital, +4 naval unit experience
-    * Nationhood (Nationalism, medium): can draft 3 units per turn, +1 production from Town
-    * Multilateralism (Globalism, low): +100% war weariness, +100% trade route yield with defensive pact partners, +25% production from trade routes, +4 air unit experience
+    * Colonialism (Geography, medium): +1 commerce per colony in capital, +4 naval unit experience, +1 production, commerce from Slave Plantation
+    * Nationhood (Nationalism, medium): can draft 3 units per turn, +1 production from Town, cannot use slaves
+    * Multilateralism (Globalism, low): +100% war weariness, +100% trade route yield with defensive pact partners, +25% production from trade routes, +4 air unit experience, cannot use slaves
 
 RELIGION
 * New set of eight major religions:

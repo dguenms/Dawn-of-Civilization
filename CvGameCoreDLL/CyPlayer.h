@@ -576,6 +576,7 @@ public:
 	void AI_chooseFreeTech();
 	bool isSlavery();
 	bool isColonialSlavery();
+	bool canUseSlaves();
 	int AI_bestCivic(int iCivicOptionType);
 	void setFreeTechsOnDiscovery(int iNewValue);
 	CyPlot* AI_getCitySite(int iIndex);

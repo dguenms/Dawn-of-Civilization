@@ -11427,10 +11427,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 
 	// Leoreth: trade slaves and use in colonies
-	if (kCivic.isColonialSlavery())
+	/*if (kCivic.isColonialSlavery())
 	{
 		iValue += countRequiredSlaves() * 50 / 15;
-	}
+	}*/
 
 	// Leoreth: some stability related AI help
 	if (eCivic == CIVIC_TOLERANCE || eCivic == CIVIC_SECULARISM)

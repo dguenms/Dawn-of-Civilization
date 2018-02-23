@@ -17530,7 +17530,7 @@ bool CvCity::isColony() const
 // Leoreth: at most half of the population may be slaves
 bool CvCity::canSlaveJoin() const
 {
-	if (!GET_PLAYER(getOwnerINLINE()).isColonialSlavery()) return false;
+	if (!GET_PLAYER(getOwnerINLINE()).canUseSlaves()) return false;
 
 	if (!isColony()) return false;
 

@@ -149,7 +149,7 @@ class CvRFCEventHandler:
 				utils.moveCapital(iMongolia, tCity) # Khanbaliq
 				
 		# remove slaves if unable to practice slavery
-		if not gc.getPlayer(iPlayer).isColonialSlavery():
+		if not gc.getPlayer(iPlayer).canUseSlaves():
 			utils.removeSlaves(city)
 		else:
 			utils.freeSlaves(city, iPlayer)

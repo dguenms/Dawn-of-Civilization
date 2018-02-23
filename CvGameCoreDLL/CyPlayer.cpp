@@ -2606,6 +2606,11 @@ bool CyPlayer::isColonialSlavery()
 	return m_pPlayer ? m_pPlayer->isColonialSlavery() : false;
 }
 
+bool CyPlayer::canUseSlaves()
+{
+	return m_pPlayer ? m_pPlayer->canUseSlaves() : false;
+}
+
 int CyPlayer::AI_bestCivic(int iCivicOptionType)
 {
 	return m_pPlayer ? m_pPlayer->AI()->AI_bestCivic((CivicOptionTypes)iCivicOptionType) : NO_CIVIC;

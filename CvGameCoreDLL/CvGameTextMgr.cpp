@@ -7500,16 +7500,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_WORKERS"));
 	}
 
-	// Leoreth: can use slaves in colonies
-	if (GC.getCivicInfo(eCivic).isColonialSlavery())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES"));
-
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_AND_TRADE_SLAVES"));
-	}
-
 	//	Freedom Anger
 	if (GC.getCivicInfo(eCivic).getCivicPercentAnger() != 0)
 	{
@@ -7899,6 +7889,20 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_SUPPORT_COSTS", (GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() > 0), GC.getCommerceInfo(COMMERCE_GOLD).getChar()));
+	}
+
+	// Leoreth: cannot use slaves
+	if (GC.getCivicInfo(eCivic).isNoSlavery())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CANNOT_USE_SLAVES"));
+	}
+
+	// Leoreth: can use slaves in colonies
+	if (GC.getCivicInfo(eCivic).isColonialSlavery())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_SLAVES"));
 	}
 
 	//Rhye - start stability

@@ -1412,6 +1412,7 @@ public:
 	bool isStateReligion() const;				// Exposed to Python
 	bool isNoNonStateReligionSpread() const;				// Exposed to Python
 	bool isSlavery() const; // Leoreth
+	bool isNoSlavery() const; // Leoreth
 	bool isColonialSlavery() const; // Leoreth
 
 	std::wstring pyGetWeLoveTheKing() { return getWeLoveTheKing(); }			// Exposed to Python
@@ -1522,6 +1523,7 @@ protected:
 	bool m_bStateReligion;
 	bool m_bNoNonStateReligionSpread;
 	bool m_bSlavery; // Leoreth
+	bool m_bNoSlavery; // Leoreth
 	bool m_bColonialSlavery; // Leoreth
 
 	CvWString m_szWeLoveTheKingKey;

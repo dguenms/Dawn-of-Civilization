@@ -1690,6 +1690,11 @@
 		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CANNOT_USE_SLAVES</Tag>
+		<English>[ICON_BULLET]Cannot Use Slaves</English>
+		<German>[ICON_BULLET]Kann keine Sklaven verwenden</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES</Tag>
 		<English>[ICON_BULLET]Can Use Slaves</English>
 		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
@@ -1703,6 +1708,11 @@
 		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES</Tag>
 		<English>[ICON_BULLET]Can Use Slaves in Colonies</English>
 		<German>[ICON_BULLET]Kann Sklaven in Kolonien verwenden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_SLAVES</Tag>
+		<English>[ICON_BULLET]Can Capture Slaves</English>
+		<German>[ICON_BULLET]Kann Sklaven gefangen nehmen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_AND_TRADE_SLAVES</Tag>

@@ -6130,6 +6130,12 @@ bool CvCivicInfo::isSlavery() const
 }
 
 // Leoreth
+bool CvCivicInfo::isNoSlavery() const
+{
+	return m_bNoSlavery;
+}
+
+// Leoreth
 bool CvCivicInfo::isColonialSlavery() const
 {
 	return m_bColonialSlavery;
@@ -6417,6 +6423,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bNoNonStateReligionSpread);
 	stream->Read(&m_bSlavery); // Leoreth
+	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
 
 	// Arrays
@@ -6590,6 +6597,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bNoNonStateReligionSpread);
 	stream->Write(m_bSlavery); // Leoreth
+	stream->Write(m_bNoSlavery); // Leoreth
 	stream->Write(m_bColonialSlavery); // Leoreth
 
 	// Arrays
@@ -6695,6 +6703,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_bNoNonStateReligionSpread, "bNoNonStateReligionSpread");
 	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");

@@ -547,6 +547,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Egalitarianism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<bNoSlavery>1</bNoSlavery>
 			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
@@ -997,6 +998,16 @@
 					<iExperienceModifier>4</iExperienceModifier>
 				</DomainExperienceModifier>
 			</DomainExperienceModifiers>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
@@ -1008,6 +1019,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Nationhood.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<bNoSlavery>1</bNoSlavery>
 			<iMaxConscript>3</iMaxConscript>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
@@ -1029,6 +1041,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Multilateralism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>>
+			<bNoSlavery>1</bNoSlavery>
 			<iWarWearinessModifier>100</iWarWearinessModifier>
 			<iDefensivePactTradeModifier>100</iDefensivePactTradeModifier>
 			<TradeYieldModifiers>

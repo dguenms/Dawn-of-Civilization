@@ -611,6 +611,10 @@ public:
 	void changeSlaveryCount(int iChange);
 
 	// Leoreth
+	bool isNoSlavery() const;
+	void changeNoSlaveryCount(int iChange);
+
+	// Leoreth
 	bool isColonialSlavery() const;
 	void changeColonialSlaveryCount(int iChange);
 
@@ -1310,6 +1314,8 @@ public:
 
 	void restoreGeneralThreshold();
 
+	bool canUseSlaves() const;
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1404,6 +1410,7 @@ protected:
 	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
 	int m_iSlaveryCount; // Leoreth
+	int m_iNoSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;

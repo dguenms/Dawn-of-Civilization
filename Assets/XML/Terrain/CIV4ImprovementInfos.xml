@@ -1092,8 +1092,8 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PLANTATION</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>

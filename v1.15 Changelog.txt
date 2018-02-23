@@ -299,7 +299,7 @@ CIVICS
     * Caste System (Contract, high): +50% improvement construction speed, +1 food from Plantation
     * Individualism (Civil Liberties, medium): +2 commerce from Village, Town, +100% improvement upgrade rate
     * Totalitarianism (Psychology, none): +25% military production, no war weariness, +1 production per unhappy citizen
-    * Egalitarianism (Sociology, high): +2 research per specialist, double slots for artists, scientists and engineers
+    * Egalitarianism (Sociology, high): +2 research per specialist, double slots for artists, scientists and engineers, cannot use slaves
 * Economy:
     * Reciprocity (low)
     * Redistribution (Arithmetics, medium): +25% food in capital, -25% trade route commerce, double production for Granary
@@ -321,9 +321,9 @@ CIVICS
     * Conquest (Generalship, high): +2 land unit experience, +50% gold on city conquest, -50% improvement upgrade speed
     * Tributaries (Feudalism, low): +1 commerce per vassal city in capital, +25% trade route yield, units are produced using food
     * Isolationism (Heritage, medium): no foreign trade routes, +1 free specialist
-    * Colonialism (Geography, medium): can use and trade slaves in colonies, +1 commerce per colony in capital, +4 naval unit experience
-    * Nationhood (Nationalism, medium): can draft 3 units per turn, +1 production from Town
-    * Multilateralism (Globalism, low): +100% war weariness, +100% trade route yield with defensive pact partners, +25% production from trade routes, +4 air unit experience
+    * Colonialism (Geography, medium): +1 commerce per colony in capital, +4 naval unit experience, +1 production, commerce from Slave Plantation
+    * Nationhood (Nationalism, medium): can draft 3 units per turn, +1 production from Town, cannot use slaves
+    * Multilateralism (Globalism, low): +100% war weariness, +100% trade route yield with defensive pact partners, +25% production from trade routes, +4 air unit experience, cannot use slaves
 
 SPECIALISTS
 * Statesmen also produce espionage points
@@ -424,6 +424,7 @@ IMPROVEMENTS
     * Lumbermill (Steel): now +1 commerce with Paper, slightly reduced build time
     * Watermill (Machinery): now +1 production, +1 commerce, +1 commerce with Electricity, slightly reduced build time
     * Plantation (Calendar): now +1 commerce with Horticulture, +1 commerce with Railroad, slightly increased build time
+    * Slave Plantation: now only +1 commerce over Plantation (additional yields with Colonialism)
     * Mine (Mining): now +1 production with Geology, slightly increased build time
     * Pasture (Pastoralism): now +1 production with Biology
     * Well (Refining): -1 health

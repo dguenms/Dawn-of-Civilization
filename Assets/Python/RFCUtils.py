@@ -1112,7 +1112,7 @@ class RFCUtils:
 	def checkSlaves(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		
-		if not pPlayer.isColonialSlavery():
+		if not pPlayer.canUseSlaves():
 			for (x, y) in self.getWorldPlotsList():
 				plot = gc.getMap().plot(x, y)
 				if plot.getOwner() == iPlayer:
@@ -1120,8 +1120,7 @@ class RFCUtils:
 						plot.setImprovementType(iPlantation)
 					if plot.isCity():
 						self.removeSlaves(plot.getPlotCity())
-						
-		if not pPlayer.isColonialSlavery() and not pPlayer.isSlavery():				
+										
 			lSlaves = []
 			for unit in PyPlayer(iPlayer).getUnitList():
 				if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):

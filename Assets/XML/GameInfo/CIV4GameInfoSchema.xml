@@ -669,6 +669,7 @@
 	<ElementType name="bMilitaryFoodProduction" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iMaxConscript" content="textOnly" dt:type="int"/>
 	<ElementType name="bSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bNoSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bColonialSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoUnhealthyPopulation" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iExpInBorderModifier" content="textOnly" dt:type="int"/>
@@ -868,6 +869,7 @@
 		<element type="bMilitaryFoodProduction" minOccurs="0"/>
 		<element type="iMaxConscript" minOccurs="0"/>
 		<element type="bSlavery" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bNoSlavery" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bColonialSlavery" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoUnhealthyPopulation" minOccurs="0"/>
 		<element type="iExpInBorderModifier" minOccurs="0"/>
