@@ -520,7 +520,7 @@ iMughals :	((84, 37),	(94, 43)),
 ### Respawn area ###
 
 dRespawnArea = {
-iEgypt :	((65, 30),	(71, 39)),
+iEgypt :	((65, 30),	(71, 38)),
 iChina :	((99, 39),	(107, 47)),
 iIndia :	((88, 33),	(96, 41)),
 iByzantium :	((65, 40),	(69, 46)),
