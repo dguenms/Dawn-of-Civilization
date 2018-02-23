@@ -120,5 +120,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("restoreGeneralThreshold", &CyPlayer::restoreGeneralThreshold, "void ()")
 		.def("canResearchGiven", &CyPlayer::canResearchGiven, "bool (int eTech, bool bTrade, int eGivenTech)")
 		.def("resetGreatPeopleCreated", &CyPlayer::resetGreatPeopleCreated, "void ()")
+		.def("canUseSlaves", &CyPlayer::canUseSlaves, "bool ()")
 		;
 }
