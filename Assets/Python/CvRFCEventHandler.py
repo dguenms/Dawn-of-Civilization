@@ -412,7 +412,7 @@ class CvRFCEventHandler:
 		# Brandenburg Gate effect
 		if gc.getPlayer(iLosingPlayer).isHasBuildingEffect(iBrandenburgGate):
 			for iPromotion in range(gc.getNumPromotionInfos()):
-				if gc.getPromotionInfo(iPromotion).isLeader():
+				if gc.getPromotionInfo(iPromotion).isLeader() and pLosingUnit.isHasPromotion(iPromotion):
 					gc.getPlayer(iLosingPlayer).restoreGeneralThreshold()
 		
 	def onReligionFounded(self, argsList):
