@@ -501,6 +501,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iColonyCommerce = 0; // Leoreth
 	m_iCaptureGoldModifier = 0; // Leoreth
 	m_iSlaveryCount = 0; // Leoreth
+	m_iNoSlaveryCount = 0;
 	m_iColonialSlaveryCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;

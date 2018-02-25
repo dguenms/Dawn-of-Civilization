@@ -5756,6 +5756,7 @@ m_bNoForeignCorporations(false),
 m_bStateReligion(false),
 m_bNoNonStateReligionSpread(false),
 m_bSlavery(false), // Leoreth
+m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
