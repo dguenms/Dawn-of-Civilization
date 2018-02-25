@@ -565,6 +565,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iBuildingUnignorableBombardDefense = 0;
 
+	m_iCultureRank = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -11734,7 +11736,8 @@ int CvCity::getNumBonuses(BonusTypes eIndex) const
 
 bool CvCity::hasBonus(BonusTypes eIndex) const
 {
-	return (getNumBonuses(eIndex) > 0);
+	//return (getNumBonuses(eIndex) > 0);
+	return getNumBonuses(eIndex) > getCultureRank();
 }
 
 
@@ -15280,13 +15283,14 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationBadHappiness);
 	pStream->Read(&m_iCorporationHealth);
 	pStream->Read(&m_iCorporationUnhealth);
-	pStream->Read(&m_iNextCoveredPlot); // Leoreth
+	pStream->Read(&m_iNextCoveredPlot);
 	pStream->Read(&m_iImprovementHappinessPercent);
 	pStream->Read(&m_iImprovementHealthPercent);
 	pStream->Read(&m_iCultureGreatPeopleRateModifier);
 	pStream->Read(&m_iCultureHappiness);
 	pStream->Read(&m_iCultureTradeRouteModifier);
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
+	pStream->Read(&m_iCultureRank);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15564,6 +15568,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCultureTradeRouteModifier);
 
 	pStream->Write(m_iBuildingUnignorableBombardDefense);
+
+	pStream->Write(m_iCultureRank);
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -18246,4 +18252,14 @@ int CvCity::calculateCultureSpecialistGreatPeopleRate() const
 	}
 
 	return iGreatPeopleRate;
+}
+
+int CvCity::getCultureRank() const
+{
+	return m_iCultureRank;
+}
+
+void CvCity::setCultureRank(int iNewValue)
+{
+	m_iCultureRank = iNewValue;
 }

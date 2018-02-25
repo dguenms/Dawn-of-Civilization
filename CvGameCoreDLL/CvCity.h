@@ -1063,6 +1063,9 @@ public:
 	bool isHasConflicting(ReligionTypes eReligion) const;
 	int getReligionPopulation(ReligionTypes eReligion) const;
 
+	int getCultureRank() const;
+	void setCultureRank(int iNewValue);
+
 	void updateWorkedImprovements();
 	void updateWorkedImprovement(int iIndex, bool bNewValue);
 	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
@@ -1268,6 +1271,8 @@ protected:
 	int m_iCultureTradeRouteModifier;
 
 	int m_iBuildingUnignorableBombardDefense;
+
+	int m_iCultureRank;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;
