@@ -27,6 +27,7 @@ import CvEventManager
 import Popup
 import CityNameManager as cnm
 import WBStoredDataScreen
+import GreatPeople as gp
 
 from Consts import *
 from RFCUtils import utils
@@ -477,7 +478,9 @@ class CvWorldBuilderScreen:
 	## Python Effects ##
 		elif self.iPlayerAddMode == "Units":
 			for i in xrange(abs(iChange)):
-				gc.getPlayer(self.m_iCurrentPlayer).initUnit(self.iSelection, self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
+				unit = gc.getPlayer(self.m_iCurrentPlayer).initUnit(self.iSelection, self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
+				if self.iSelection in lGreatPeopleUnits:
+					gp.onGreatPersonBorn(unit, self.m_iCurrentPlayer, -1, False)
 		elif self.iPlayerAddMode == "Buildings":
 			if self.m_pCurrentPlot.isCity():
 				pCity = self.m_pCurrentPlot.getPlotCity()
@@ -1886,9 +1889,9 @@ class CvWorldBuilderScreen:
 ## Platy Reveal Mode End ##
 
 	def showFlipZone(self):
-		self.setCurrentFlip()
 		utils.removeStabilityOverlay()
 		if self.m_iCurrentPlayer < iNumPlayers:
+			self.setCurrentFlip()
 			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
 			for tPlot in lHumanPlotList:
 				if tPlot in lAIPlotList: continue
@@ -1926,16 +1929,18 @@ class CvWorldBuilderScreen:
 
 	def showStabilityOverlay(self):
 		utils.removeStabilityOverlay()
-		utils.toggleStabilityOverlay(self.m_iCurrentPlayer)
+		if self.m_iCurrentPlayer < iNumPlayers:
+			utils.toggleStabilityOverlay(self.m_iCurrentPlayer)
 
 	def showWarOverlay(self):
 		utils.removeStabilityOverlay()
-		for i in range(CyMap().numPlots()):
-			plot = CyMap().plotByIndex(i)
-			iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
-			if iPlotType > 0:
-				szColor = lWarMapColors[iPlotType-1]
-				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType-1, szColor, 0.7)
+		if self.m_iCurrentPlayer < iNumPlayers:
+			for i in range(CyMap().numPlots()):
+				plot = CyMap().plotByIndex(i)
+				iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
+				if iPlotType > 0:
+					szColor = lWarMapColors[iPlotType-1]
+					CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType-1, szColor, 0.7)
 
 	def showReligionOverlay(self):
 		utils.removeStabilityOverlay()

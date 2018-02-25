@@ -43,7 +43,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARCHER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Archers[COLOR_REVERT] have one first strike, have a defensive bonus in cities and have a defensive bonus in hills.</English>
+		<English>[COLOR_UNIT_TEXT]Archers[COLOR_REVERT] have one first strike, have a defensive bonus in cities, have a defensive bonus in hills and have a bonus against [COLOR_UNIT_TEXT]Light Cavalry Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AIRSHIP_STRATEGY</Tag>
@@ -242,11 +242,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAVALRY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat, has a combat bonus against [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units and has a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT], [COLOR_UNIT_TEXT]Atillery[COLOR_REVERT] and [COLOR_UNIT_TEXT]Howitzer[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat, have a combat bonus on open terrain, has a combat bonus against [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] and [COLOR_UNIT_TEXT]Howitzer[COLOR_REVERT] units and has a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT], [COLOR_UNIT_TEXT]Atillery[COLOR_REVERT] and [COLOR_UNIT_TEXT]Howitzer[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHARIOT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat and have an attack bonus against [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat and have a combat bonus on open terrain.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_GALLIC_WARRIOR_STRATEGY</Tag>
@@ -258,7 +258,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CROSSBOWMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Crossbowmen[COLOR_REVERT] have one first strike and have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Crossbowmen[COLOR_REVERT] have one first strike, have a defense bonus in cities and hills and have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Light Cavalry Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH_STRATEGY</Tag>
@@ -278,7 +278,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CUIRASSIER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Cuirassiers[COLOR_REVERT] don't receive defensive bonuses, are immune to first strikes and can withdraw from combat.</English>
+		<English>[COLOR_UNIT_TEXT]Cuirassiers[COLOR_REVERT] don't receive defensive bonuses, are immune to first strikes, have a combat penalty in cities and can withdraw from combat.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EGYPTIAN_WARCHARIOT</Tag>
@@ -474,7 +474,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GRENADIER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Grenadiers[COLOR_REVERT] have one first strike, can withdraw from combat, cause collateral damage and have an attack bonus in hills.</English>
+		<English>[COLOR_UNIT_TEXT]Grenadiers[COLOR_REVERT] have one first strike, can withdraw from combat, cause collateral damage, have an attack bonus against [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]City Raider I[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREEK_HOPLITE_STRATEGY</Tag>
@@ -482,7 +482,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSE_ARCHER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Horse Archers[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat, have a combat penalty in cities and have a bonus against [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Horse Archers[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat and have a combat bonus on open terrain.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_LANDSKNECHT_STRATEGY</Tag>
@@ -654,7 +654,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LANCER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Lancers[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Lancers[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses, have a combat penalty in cities and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KHMER_BALLISTA_ELEPHANT_STRATEGY</Tag>
@@ -666,7 +666,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MARINE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Marines[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Machine Gun[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units, are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
+		<English>[COLOR_UNIT_TEXT]Marines[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Machine Gun[COLOR_REVERT] and [COLOR_UNIT_TEXT]Howitzer[COLOR_REVERT] units, are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
@@ -675,7 +675,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] have a combat bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MANDE_KELEBOLO</Tag>
@@ -711,7 +711,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LONGBOWMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Longbowmen[COLOR_REVERT] have one first strike, can withdraw from combat, cause collateral damage and have an attack bonus in hills.</English>
+		<English>[COLOR_UNIT_TEXT]Longbowmen[COLOR_REVERT] have one first strike, can withdraw from combat, cause collateral damage and have an attack bonus in hills, forests and rainforests.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KOREAN_HWACHA_STRATEGY</Tag>
@@ -1146,7 +1146,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWORDSMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT] are the basic [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT] of the Classical Era.</English>
+		<English>[COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT] have a combat bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SUMERIAN_VULTURE</Tag>
@@ -1178,7 +1178,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SPEARMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Spearmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Spearmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SUBMARINE_STRATEGY</Tag>
@@ -1290,7 +1290,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_ELEPHANT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT] are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], don't receive defensive bonuses, have a combat penalty when attacking cities and have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT] are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], don't receive defensive bonuses and have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZULU_IMPI</Tag>
@@ -1454,7 +1454,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SKIRMISHER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Skirmishers[COLOR_REVERT] have one first strike, can withdraw from combat, cause collateral damage and have an attack bonus in hills.</English>
+		<English>[COLOR_UNIT_TEXT]Skirmishers[COLOR_REVERT] have one first strike, can withdraw from combat, cause collateral damage and have an attack bonus in hills, forests and rainforests.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN</Tag>
@@ -1522,7 +1522,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SPEARMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Heavy Spearmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Heavy Spearmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Heavy Mounted Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOWITZER</Tag>
@@ -1546,7 +1546,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PISTOLIER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Pistoliers[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses, can withdraw from combat and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Pistoliers[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses, can withdraw from combat, have a combat bonus on open terrain and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HUSSAR</Tag>
@@ -1554,7 +1554,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HUSSAR_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Hussars[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat, have a attack bonus against [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Hussars[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat, have a combat bonus on open terrain, have a attack bonus against [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
@@ -1562,7 +1562,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Light Swordsmen[COLOR_REVERT] have a bonus against [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT] units.</English>
+		<English>[COLOR_UNIT_TEXT]Light Swordsmen[COLOR_REVERT] are the basic [COLOR_UNIT_TEXT]Melee units[COLOR_REVERT] or the Classical Era.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LABOURER</Tag>
