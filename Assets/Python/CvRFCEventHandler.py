@@ -657,26 +657,27 @@ class CvRFCEventHandler:
 		iHuman = utils.getHumanID()
 		
 		iEra = gc.getTechInfo(iTech).getEra()
+		iGameTurn = gc.getGame().getGameTurn()
 
-		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn():
+		if iGameTurn == utils.getScenarioStartTurn():
 			return
 		
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
 
-		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]):
+		if iGameTurn > getTurnForYear(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
 			cnm.onTechAcquired(iPlayer)
 			dc.onTechAcquired(iPlayer, iTech)
 
-		if gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
+		if gc.getPlayer(iPlayer).isAlive() and iGameTurn > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
 			self.rel.onTechAcquired(iTech, iPlayer)
-			if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
+			if iGameTurn > getTurnForYear(1700):
 				self.aiw.forgetMemory(iTech, iPlayer)
 
 		if iTech == iExploration:
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
-				data.players[iPlayer].iExplorationTurn = gc.getGame().getGameTurn()
+				data.players[iPlayer].iExplorationTurn = iGameTurn
 				
 		elif iTech == iCompass:
 			if iPlayer == iVikings:

@@ -93,7 +93,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BROADCAST_TOWER_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Broadcast Towers[COLOR_REVERT] greatly increase a city's cultural output. They also increase the happiness output from using the culture slider, or if you have access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Broadcast Towers[COLOR_REVERT] greatly increase a city's cultural output with access to power. They also increase the happiness output from using the culture slider, or if you have access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Tag>
@@ -173,7 +173,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COURTHOUSE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Courthouses[COLOR_REVERT] lower city maintenance costs, provide you with a bonus to espionage and are required to build [COLOR_BUILDING_TEXT]Administrative Centers[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Courthouses[COLOR_REVERT] lower city maintenance costs, provide you with a bonus to espionage.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CUSTOMS_HOUSE</Tag>
@@ -450,7 +450,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Universities[COLOR_REVERT] increase a city's research and provide culture. [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] world wonder.</English>
+		<English>[COLOR_BUILDING_TEXT]Universities[COLOR_REVERT] increase a city's research and provide culture. [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]National College[COLOR_REVERT] national wonder.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VIKING_TRADING_POST_STRATEGY</Tag>
@@ -462,7 +462,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LABORATORY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Laboratories[COLOR_REVERT] increase a city's scientific research increase with access to power and its spaceship production.</English>
+		<English>[COLOR_BUILDING_TEXT]Laboratories[COLOR_REVERT] increase a city's scientific research increase with access to power and its spaceship production. [COLOR_BUILDING_TEXT]Laboratories[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] world wonder.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAYAN_BALL_COURT</Tag>
@@ -752,7 +752,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THEATRE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] increase a city's culture and increase the happiness output from using the culture slider. [COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] also provide culture and is required to build the [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] national wonder.</English>
+		<English>[COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] increase a city's culture. [COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] also provide culture and is required to build the [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] national wonder.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA</Tag>
@@ -1221,7 +1221,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WHARF_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] increase that city's income from trade routes, provide an experience bonus to [COLOR_UNIT_TEXT]Naval Units[COLOR_REVERT] and increase that city's health from access to [COLOR_HIGHLIGHT_TEXT]Clam[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Crab[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Fish[COLOR_REVERT] resources. A [COLOR_BUILDING_TEXT]Wharf[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] world wonder.</English>
+		<English>[COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] increase that city's income from trade routes and increase that city's health from access to [COLOR_HIGHLIGHT_TEXT]Clam[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Crab[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Fish[COLOR_REVERT] resources. A [COLOR_BUILDING_TEXT]Wharf[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] world wonder.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CIVIC_SQUARE</Tag>
@@ -1277,7 +1277,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PARK_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Parks[COLOR_REVERT] increase a city's happiness for each [COLOR_HIGHLIGHT_TEXT]Town[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Parks[COLOR_REVERT] increase health for [COLOR_HIGHLIGHT_TEXT]Villages[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Towns[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SOLAR_PLANT</Tag>
