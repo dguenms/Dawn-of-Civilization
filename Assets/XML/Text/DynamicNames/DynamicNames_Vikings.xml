@@ -154,6 +154,10 @@
 		<English>Kalmar Union</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_ALTHINGS</Tag>
+		<English>%s2 Althings</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SWEDISH</Tag>
 		<English>Swedish</English>
 	</TEXT>
