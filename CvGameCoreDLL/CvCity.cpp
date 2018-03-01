@@ -4200,6 +4200,26 @@ int CvCity::getBonusCommerceRateModifier(CommerceTypes eIndex, BonusTypes eBonus
 void CvCity::processBonus(BonusTypes eBonus, int iChange)
 {
 	int iI;
+
+	changePowerCount((getBonusPower(eBonus, true) * iChange), true);
+	changePowerCount((getBonusPower(eBonus, false) * iChange), false);
+
+	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	{
+		changeBonusYieldRateModifier(((YieldTypes)iI), (getBonusYieldRateModifier(((YieldTypes)iI), eBonus) * iChange));
+	}
+
+	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+	{
+		changeBonusCommerceRateModifier(((CommerceTypes)iI), (getBonusCommerceRateModifier(((CommerceTypes)iI), eBonus) * iChange));
+	}
+}
+
+
+// Leoreth
+void CvCity::processBonusEffect(BonusTypes eBonus, int iChange)
+{
+	int iI;
 	int iValue;
 	int iGoodValue;
 	int iBadValue;
@@ -4246,19 +4266,6 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 
 	changeBonusGoodHappiness(iGoodValue * iChange);
 	changeBonusBadHappiness(iBadValue * iChange);
-
-	changePowerCount((getBonusPower(eBonus, true) * iChange), true);
-	changePowerCount((getBonusPower(eBonus, false) * iChange), false);
-
-	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
-	{
-		changeBonusYieldRateModifier(((YieldTypes)iI), (getBonusYieldRateModifier(((YieldTypes)iI), eBonus) * iChange));
-	}
-
-	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
-	{
-		changeBonusCommerceRateModifier(((CommerceTypes)iI), (getBonusCommerceRateModifier(((CommerceTypes)iI), eBonus) * iChange));
-	}
 }
 
 
@@ -11737,8 +11744,14 @@ int CvCity::getNumBonuses(BonusTypes eIndex) const
 
 bool CvCity::hasBonus(BonusTypes eIndex) const
 {
-	//return (getNumBonuses(eIndex) > 0);
-	return getNumBonuses(eIndex) > getCultureRank();
+	return (getNumBonuses(eIndex) > 0);
+}
+
+
+// Leoreth
+bool CvCity::hasBonusEffect(BonusTypes eBonus) const
+{
+	return getNumBonuses(eBonus) > getCultureRank();
 }
 
 
@@ -11750,19 +11763,18 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 	if (iChange != 0)
 	{
 		bool bOldHasBonus = hasBonus(eIndex);
+		bool bOldHasBonusEffect = hasBonusEffect(eIndex);
 
 		m_paiNumBonuses[eIndex] += iChange;
 
 		if (bOldHasBonus != hasBonus(eIndex))
 		{
-			if (hasBonus(eIndex))
-			{
-				processBonus(eIndex, 1);
-			}
-			else
-			{
-				processBonus(eIndex, -1);
-			}
+			processBonus(eIndex, hasBonus(eIndex) ? 1 : -1);
+		}
+
+		if (bOldHasBonusEffect != hasBonusEffect(eIndex))
+		{
+			processBonusEffect(eIndex, hasBonusEffect(eIndex) ? 1 : -1);
 		}
 
 		if (isCorporationBonus(eIndex))
@@ -18262,5 +18274,23 @@ int CvCity::getCultureRank() const
 
 void CvCity::setCultureRank(int iNewValue)
 {
-	m_iCultureRank = iNewValue;
+	if (m_iCultureRank != iNewValue)
+	{
+		bool* bOldHasBonusEffect = new bool[GC.getNumBonusInfos()];
+
+		for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+		{
+			bOldHasBonusEffect[iI] = hasBonusEffect((BonusTypes)iI);
+		}
+
+		m_iCultureRank = iNewValue;
+
+		for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+		{
+			if (bOldHasBonusEffect[iI] != hasBonusEffect((BonusTypes)iI))
+			{
+				processBonusEffect((BonusTypes)iI, hasBonusEffect((BonusTypes)iI) ? 1 : -1);
+			}
+		}
+	}
 }
