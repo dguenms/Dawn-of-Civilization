@@ -1094,6 +1094,9 @@ public:
 
 	void triggerMeltdown(BuildingTypes eBuilding);
 
+	bool hasBonusEffect(BonusTypes eBonus) const;
+	void processBonusEffect(BonusTypes eBonus, int iChange);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
