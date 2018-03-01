@@ -2636,7 +2636,7 @@ class RiseAndFall:
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iGalley, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iHeavyGalley, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() in [iSpain, iMoors]:
 				utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
