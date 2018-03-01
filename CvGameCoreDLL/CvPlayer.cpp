@@ -1373,6 +1373,8 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 
 	pCity->init(pCity->getID(), getID(), iX, iY, bBumpUnits, bUpdatePlotGroups);
 
+	updateCultureRanks();
+
 	return pCity;
 }
 
@@ -25656,7 +25658,7 @@ struct cultureRankCompare
 {
 	bool operator() (CvCity* left, CvCity* right)
 	{
-		return left->getCulture(left->getOwnerINLINE()) < right->getCulture(right->getOwnerINLINE());
+		return left->getCulture(left->getOwnerINLINE()) > right->getCulture(right->getOwnerINLINE());
 	}
 };
 

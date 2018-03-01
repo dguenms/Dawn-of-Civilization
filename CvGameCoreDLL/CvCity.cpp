@@ -957,6 +957,7 @@ void CvCity::kill(bool bUpdatePlotGroups)
 	CvEventReporter::getInstance().cityLost(this);
 
 	GET_PLAYER(getOwnerINLINE()).deleteCity(getID());
+	GET_PLAYER(getOwnerINLINE()).updateCultureRanks();
 
 	pPlot->updateCulture(true, false);
 
