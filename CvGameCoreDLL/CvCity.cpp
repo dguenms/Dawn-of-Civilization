@@ -4394,7 +4394,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		FAssertMsg((0 < GC.getNumBonusInfos()) && "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset", "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset");
 		for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 		{
-			if (hasBonus((BonusTypes)iI))
+			if (hasBonusEffect((BonusTypes)iI))
 			{
 				if (GC.getBuildingInfo(eBuilding).getBonusHealthChanges(iI) > 0)
 				{
@@ -4404,6 +4404,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				{
 					changeBonusBadHealth(GC.getBuildingInfo(eBuilding).getBonusHealthChanges(iI) * iChange);
 				}
+
 				if (GC.getBuildingInfo(eBuilding).getBonusHappinessChanges(iI) > 0)
 				{
 					changeBonusGoodHappiness(GC.getBuildingInfo(eBuilding).getBonusHappinessChanges(iI) * iChange);
@@ -4412,7 +4413,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				{
 					changeBonusBadHappiness(GC.getBuildingInfo(eBuilding).getBonusHappinessChanges(iI) * iChange);
 				}
+			}
 
+			if (hasBonus((BonusTypes)iI))
+			{
 				if (GC.getBuildingInfo(eBuilding).getPowerBonus() == iI)
 				{
 					changePowerCount(iChange, GC.getBuildingInfo(eBuilding).isDirtyPower());
@@ -7472,7 +7476,7 @@ int CvCity::getAdditionalHappinessByBuilding(BuildingTypes eBuilding, int& iGood
 	// Bonus
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
-		if ((hasBonus((BonusTypes)iI) || kBuilding.getFreeBonus() == iI) && kBuilding.getNoBonus() != iI)
+		if ((hasBonusEffect((BonusTypes)iI) || kBuilding.getFreeBonus() == iI) && kBuilding.getNoBonus() != iI)
 		{
 			addGoodOrBad(kBuilding.getBonusHappinessChanges(iI), iGood, iBad);
 		}
@@ -7589,7 +7593,7 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 	// Bonus
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
-		if ((hasBonus((BonusTypes)iI) || kBuilding.getFreeBonus() == iI) && kBuilding.getNoBonus() != iI)
+		if ((hasBonusEffect((BonusTypes)iI) || kBuilding.getFreeBonus() == iI) && kBuilding.getNoBonus() != iI)
 		{
 			addGoodOrBad(kBuilding.getBonusHealthChanges(iI), iGood, iBad);
 		}
@@ -10941,10 +10945,12 @@ void CvCity::updateCorporationBonus()
 	std::vector<int> aiExtraCorpProducedBonuses;
 	std::vector<int> aiLastCorpProducedBonuses;
 	std::vector<bool> abHadBonuses;
+	std::vector<bool> abHadBonusEffects;
 
 	for (int iI = 0; iI < GC.getNumBonusInfos(); ++iI)
 	{
 		abHadBonuses.push_back(hasBonus((BonusTypes)iI));
+		abHadBonusEffects.push_back(hasBonusEffect((BonusTypes)iI));
 		m_paiNumCorpProducedBonuses[iI] = 0;
 		aiLastCorpProducedBonuses.push_back(getNumBonuses((BonusTypes)iI));
 		aiExtraCorpProducedBonuses.push_back(0);
@@ -11005,14 +11011,12 @@ void CvCity::updateCorporationBonus()
 	{
 		if (abHadBonuses[iI] != hasBonus((BonusTypes)iI))
 		{
-			if (hasBonus((BonusTypes)iI))
-			{
-				processBonus((BonusTypes)iI, 1);
-			}
-			else
-			{
-				processBonus((BonusTypes)iI, -1);
-			}
+			processBonus((BonusTypes)iI, hasBonus((BonusTypes)iI) ? 1 : -1);
+		}
+
+		if (abHadBonusEffects[iI] != hasBonusEffect((BonusTypes)iI))
+		{
+			processBonus((BonusTypes)iI, hasBonusEffect((BonusTypes)iI) ? 1 : -1);
 		}
 	}
 }
