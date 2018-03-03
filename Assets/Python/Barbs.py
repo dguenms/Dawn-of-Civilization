@@ -240,7 +240,7 @@ class Barbs:
 		#camels in arabia
 		if utils.isYearIn(190, 550):
 			self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), self.spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
-		if utils.isYearIn(-800, 1300):
+		if utils.isYearIn(-800, 1300) and self.includesActiveHuman([iEgypt, iArabia]):
 			iNumUnits = iHandicap
 			if utils.getScenario() == i3000BC: iNumUnits += 1
 			self.checkSpawn(iBarbarian, iMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
@@ -283,11 +283,12 @@ class Barbs:
 				if not gc.getMap().plot(30, 13).isUnit():
 					utils.makeUnitAI(iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 		
-		if utils.isYearIn(1700, 1900):
-			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnNomads, iGameTurn, 12 - iHandicap, 2)
+		if self.includesActiveHuman([iAmerica, iEngland, iFrance]):
+			if utils.isYearIn(1700, 1900):
+				self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnNomads, iGameTurn, 12 - iHandicap, 2)
 			
-		if utils.isYearIn(1500, 1850):
-			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
+			if utils.isYearIn(1500, 1850):
+				self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
 				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
@@ -572,3 +573,6 @@ class Barbs:
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+			
+	def includesActiveHuman(self, lPlayers):
+		return utils.getHumanID() in lPlayers and tBirth[utils.getHumanID()] <= gc.getGame().getGameTurnYear()
