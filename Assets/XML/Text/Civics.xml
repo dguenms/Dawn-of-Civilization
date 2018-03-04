@@ -7,7 +7,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
-		<English>Extra production from specialists; extra production from workshops and lumbermills; extra commerce from watermills; double production speed for factories and coal plants</English>
+		<English>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories and Coal Plants</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
@@ -42,16 +42,12 @@
 		<English>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CLERGY_STRATEGY</Tag>
-		<English>Cities with state religion construct buildings faster</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
 		<English>Public Welfare</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
-		<English>Reduced unhappiness from corporations; extra commerce from excess happiness; extra commerce from windmills, nature preserves and marine preserves; can spend gold to finish building production</English>
+		<English>Reduced unhappiness from corporations; extra commerce from excess happiness; extra commerce from Windmills, Nature Preserves and Marine Preserves; can spend gold to finish building production</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPUBLIC</Tag>
@@ -67,11 +63,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
-		<English>No state religion; increased science in all cities; double production speed for hospital, university, laboratory; can build wonders that require a state religion</English>
+		<English>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Laboratories; can build wonders that require a state religion</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
-		<English>Can capture workers; extra production from quarries; extra commerce from mines and plantations</English>
+		<English>Can capture Workers; extra production from Quarries; extra commerce from Mines and Plantations</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
@@ -91,7 +87,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
-		<English>Additional units without upkeep; units are produced using food; extra food and commerce from forts; extra happiness from castles</English>
+		<English>Additional units without upkeep; extra production from Farms; extra happiness from Castles</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_TERRITORY</Tag>
@@ -159,7 +155,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CITIZENSHIP_STRATEGY</Tag>
-		<English>Extra happiness in largest cities; double production speed for aqueduct, forge, library, market and jail</English>
+		<English>Extra happiness in largest cities; double production speed for Aqueduct, Forge, Library, Market and Jail</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERITOCRACY</Tag>
@@ -167,7 +163,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERITOCRACY_STRATEGY</Tag>
-		<English>Extra experience for units within borders; increased research in capital; extra food from paddy fields</English>
+		<English>Extra experience for units within borders; extra food from Paddy Fields; extra commerce from Windmills and Watermills</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRALISM</Tag>
@@ -183,7 +179,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_IDEOLOGY_STRATEGY</Tag>
-		<English>Increased great general birth rate; extra production from towns; extra happiness from news press and broadcasting tower</English>
+		<English>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
@@ -207,7 +203,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MANORIALISM_STRATEGY</Tag>
-		<English>Reduced worker cost; extra production from pastures; extra commerce from farms and orchards</English>
+		<English>Reduced worker cost; extra production from Pastures; extra commerce from Farms and Orchards</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_INDIVIDUALISM</Tag>
@@ -215,7 +211,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_INDIVIDUALISM_STRATEGY</Tag>
-		<English>Increased growth rate for cottages, hamlets and villages; extra commerce from villages and towns</English>
+		<English>Increased growth rate for Cottages, Hamlets and Villages; extra commerce from Villages and Towns</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_RECIPROCITY</Tag>
@@ -231,7 +227,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REDISTRIBUTION_STRATEGY</Tag>
-		<English>Increased food in capital; reduced commerce from trade routes; increased production speed for granaries</English>
+		<English>Increased food in capital; reduced commerce from trade routes; increased production speed for Granaries</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCHANT_TRADE</Tag>
@@ -239,7 +235,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCHANT_TRADE_STRATEGY</Tag>
-		<English>Extra trade route in all cities; happiness from oasis</English>
+		<English>Extra trade route in all cities; extra happiness from Oasis</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REGULATED_TRADE</Tag>
@@ -247,7 +243,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REGULATED_TRADE_STRATEGY</Tag>
-		<English>Increased commerce in capital; extra commerce from plantations and slave plantations; double production speed for customs house</English>
+		<English>Increased commerce in capital; extra commerce from Workshops, Plantations and Slave Plantations; double production speed for Customs House</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FREE_ENTERPRISE</Tag>
@@ -263,7 +259,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEIFICATION_STRATEGY</Tag>
-		<English>Increased wonder production speed; extra unhappiness from state religion; extra happiness from pagan temples</English>
+		<English>Increased wonder production speed; extra unhappiness from state religion; extra happiness from Pagan Temples</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CLERGY</Tag>
@@ -295,7 +291,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CONQUEST_STRATEGY</Tag>
-		<English>Extra experience for land units; reduced growth rate for cottages, hamlets and villages</English>
+		<English>Extra experience for land units; reduced growth rate for Cottages, Hamlets and Villages; extra gold on city conquest</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TRIBUTARIES</Tag>
@@ -303,7 +299,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TRIBUTARIES_STRATEGY</Tag>
-		<English>Extra commerce in capital from vassal cities; extra gold on city conquest</English>
+		<English>Extra commerce in capital from vassal cities; military units are produced with food; extra commerce from trade routes</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ISOLATIONISM</Tag>
@@ -319,7 +315,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COLONIALISM_STRATEGY</Tag>
-		<English>Extra commerce in capital from colonies; extra experience for water units; can buy and use slaves</English>
+		<English>Extra commerce in capital from colonies; extra production and commerce for Slave Plantations; extra experience for water units; can capture slaves</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NATIONHOOD</Tag>
@@ -327,10 +323,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NATIONHOOD_STRATEGY</Tag>
-		<English>Can draft units; extra production from forts</English>
+		<English>Can draft units; extra production from Towns</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
 		<English>Multilateralism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Tag>
+		<English>Can hurry unit production by sacrificing population; extra happiness from Palace and Monument</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CASTE_SYSTEM_STRATEGY</Tag>
+		<English>Faster improvement construction; extra food from Plantations</English>
 	</TEXT>
 </Civ4GameText>
