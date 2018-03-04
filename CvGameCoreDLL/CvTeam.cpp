@@ -2873,7 +2873,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iSpreadModifier = 0;
 	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) iCivsWithTech++;
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).canContact(CHINA) && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) iCivsWithTech++;
 	}
 
 	// less than a quarter know it -> more expensive
