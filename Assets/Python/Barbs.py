@@ -99,8 +99,8 @@ class Barbs:
 			
 			self.checkSpawn(iBarbarian, iWolf, 1, (75, 54), (104, 64), self.spawnNatives, iGameTurn, 5, 2)
 			self.checkSpawn(iBarbarian, iBear, 1, (75, 54), (104, 64), self.spawnNatives, iGameTurn, 5, 4)
-			self.checkLimitedSpawn(iBarbarian, iLion, 1, 5, (55, 10), (72, 29), self.spawnNatives, iGameTurn, 5, 1)
-			self.checkLimitedSpawn(iBarbarian, iPanther, 1, 5, (55, 10), (72, 29), self.spawnNatives, iGameTurn, 5, 3)
+			self.checkLimitedSpawn(iBarbarian, iLion, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 1)
+			self.checkLimitedSpawn(iBarbarian, iPanther, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 3)
 
 			
 		#celts
