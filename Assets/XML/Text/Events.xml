@@ -3235,8 +3235,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_2</Tag>
-		<English>The %1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</English>
-		<German>Die %1:1_civ_adjective Regierung unterst&#252;tzt ihre Handelsgesellschaft darin, milit&#228;rische Kontrolle &#252;ber ihre s&#252;dasiatischen Handelsrouten zu erlangen!</German>
+		<English>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</English>
+		<German>Die %s1:1_civ_adjective Regierung unterst&#252;tzt ihre Handelsgesellschaft darin, milit&#228;rische Kontrolle &#252;ber ihre s&#252;dasiatischen Handelsrouten zu erlangen!</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_THE_GOTHS_HELP_1</Tag>
