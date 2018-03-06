@@ -122,7 +122,7 @@ def getNativeName(iCiv, tPlot):
 		if iLanguage in dFoundMaps:
 			sName = dFoundMaps[iLanguage][67-y][x]
 			if sName != "-1":
-				return getRenameName(iCiv, tPlot)
+				return getRenameName(iCiv, sName)
 				
 	return None
 	
