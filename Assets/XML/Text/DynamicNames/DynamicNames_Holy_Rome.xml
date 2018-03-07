@@ -126,6 +126,10 @@
 		<English>Archduchy of %s1</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRIA_FASCIST</Tag>
+		<English>Federal State of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_SHORT_DESC</Tag>
 		<English>Austria</English>
 	</TEXT>
