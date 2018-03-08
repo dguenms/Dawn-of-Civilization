@@ -2901,12 +2901,12 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 
 	iModifier += iSpreadModifier;
 
-	//Leoreth: new Chinese UP: techs not known by anyone get -25% cost
+	//Leoreth: new Chinese UP: techs not known by anyone get -40% cost
 	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if (iCivsWithTech == 0)
 		{
-			iModifier -= 25;
+			iModifier -= 40;
 		}
 	}
 
