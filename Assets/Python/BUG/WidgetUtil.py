@@ -165,6 +165,8 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS_HELP",())
 			elif iData2 == 2005:
 				return CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE_HELP",())
+			elif iData2 == 2006:
+				return CyTranslator().getText("TXT_KEY_WB_NO_RAZING_PENALTY_HELP",())
 			elif iData2 == 3001:
 				return CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED_HELP",())
 			elif iData2 == 3002:

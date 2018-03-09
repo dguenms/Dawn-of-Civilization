@@ -242,6 +242,7 @@ class WBGameDataScreen:
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING", ()), 2003])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS", ()), 2004])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE", ()), 2005])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_RAZING_PENALTY", ()), 2006])
 		lList2.sort()
 
 		# Stored variables
@@ -308,6 +309,8 @@ class WBGameDataScreen:
 				bEnabled = data.bNoCongressOption
 			elif item == 2005:
 				bEnabled = data.bNoPlagues
+			elif item == 2006:
+				bEnabled = data.bNoHumanRazingPenalty
 
 			sText = self.colorText(lList2[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
@@ -456,6 +459,8 @@ class WBGameDataScreen:
 					data.bNoCongressOption = not data.bNoCongressOption
 				elif iGameOption == 2005:
 					data.bNoPlagues = not data.bNoPlagues
+				elif iGameOption == 2006:
+					data.bNoHumanRazingPenalty = not data.bNoHumanRazingPenalty
 				# Stored Variables
 				elif iGameOption == 3001:
 					data.bAlreadySwitched = not data.bAlreadySwitched

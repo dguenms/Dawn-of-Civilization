@@ -119,6 +119,8 @@ def onCityAcquired(city, iOwner, iPlayer):
 def onCityRazed(iPlayer, city):
 	if data.bNoAIStability:
 		return
+	if data.bNoHumanRazingPenalty:
+		return
 	
 	iOwner = city.getOwner()
 	

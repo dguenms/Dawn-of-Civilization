@@ -805,6 +805,14 @@
 		<English>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_WB_NO_RAZING_PENALTY</Tag>
+		<English>No human razing penalty</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_RAZING_PENALTY_HELP</Tag>
+		<English>Removes the stability penalty from razing cities for the human player</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_WB_CONGRESS_TURNS</Tag>
 		<English>Congress turns</English>
 	</TEXT>
