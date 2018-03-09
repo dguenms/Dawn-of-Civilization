@@ -29,7 +29,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], increases the city's science output and increases the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Whale[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], increases the city's science output.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_STRATEGY</Tag>
@@ -233,7 +233,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EGYPTIAN_OBELISK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Obelisk[COLOR_REVERT], the Egyptian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides a major bonus to Culture output in your city and allows you to hire a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist.</English>
+		<English>The [COLOR_BUILDING_TEXT]Obelisk[COLOR_REVERT], the Egyptian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides a major bonus to Culture output in your city and allows you to hire a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CELTIC_DUN_STRATEGY</Tag>
@@ -317,7 +317,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology, does require the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology.</English>
+		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], require the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>
@@ -337,7 +337,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Tambo[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Engineering[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology, is cheaper and increases trade route yield.</English>
+		<English>The [COLOR_BUILDING_TEXT]Tambo[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Engineering[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology, is cheaper and increases trade route yield.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT</Tag>
@@ -345,7 +345,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], lowers city maintenance costs and never goes obsolete.</English>
+		<English>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], lowers city maintenance costs.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM</Tag>
@@ -357,7 +357,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mausoleum[COLOR_REVERT], the Mughal replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Heritage[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Horticulture[COLOR_REVERT] technology and provides a free [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT]</English>
+		<English>The [COLOR_BUILDING_TEXT]Mausoleum[COLOR_REVERT], the Mughal replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Heritage[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Horticulture[COLOR_REVERT] technology and provides a free [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL</Tag>
@@ -374,7 +374,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production and never goes obsolete.</English>
+		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], the Indonesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides one production.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Tag>
@@ -446,7 +446,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KOREAN_SEOWON_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], the Korean replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology and doesn't require the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology.</English>
+		<English>The [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], the Korean replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology and instead of the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_STRATEGY</Tag>
@@ -628,7 +628,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MALAE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mala'e[COLOR_REVERT], the Polynesian replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Priesthood[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Engineering[COLOR_REVERT] technology, is cheaper, provides culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
+		<English>The [COLOR_BUILDING_TEXT]Mala'e[COLOR_REVERT], the Polynesian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], provides additional culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RECYCLING_CENTER_STRATEGY</Tag>
@@ -760,7 +760,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Gompa[COLOR_REVERT], the Tibetan replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], provides less research, increases a city's defenses against pre-gunpowder units, allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, provides a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, doesn't require a [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology and requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology.</English>
+		<English>The [COLOR_BUILDING_TEXT]Gompa[COLOR_REVERT], the Tibetan replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], provides less research, increases a city's defenses against pre-gunpowder units, allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, provides a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist, doesn't require a [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], and requires the [COLOR_TECH_TEXT]Paper[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Academia[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
@@ -1245,7 +1245,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DISTILLERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Distilleries[COLOR_REVERT] increase the city's happiness and unhealthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Distilleries[COLOR_REVERT] increase the city's wealth and unhealthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEWS_PRESS</Tag>
@@ -1301,7 +1301,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHARMACY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Pharmacies[COLOR_REVERT] increase the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Whale[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Pharmacies[COLOR_REVERT] increase the city's healthiness with access to [COLOR_HIGHLIGHT_TEXT]Banana[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT] and allow you to hire a [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RAILWAY_STATION</Tag>

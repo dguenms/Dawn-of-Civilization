@@ -11,7 +11,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
+		<English>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY</Tag>
@@ -51,7 +51,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARABIAN_CAMEL_ARCHER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Camel Archer[COLOR_REVERT], the Arabian replacement for the the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], is immune to first strikes, doesn't require the [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resources, has a combat bonus in [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</English>
+		<English>The [COLOR_UNIT_TEXT]Camel Archer[COLOR_REVERT], the Arabian replacement for the the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], is immune to first strikes, requires [COLOR_HIGHLIGHT_TEXT]Camels[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], has a combat bonus in [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY_STRATEGY</Tag>
@@ -147,7 +147,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Madeireiro[COLOR_REVERT], the Brazilian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman II[COLOR_REVERT] promotion and provides extra gold and production when it chops jungles, rainforest and forests.</English>
+		<English>The [COLOR_UNIT_TEXT]Madeireiro[COLOR_REVERT], the Brazilian replacement for the [COLOR_UNIT_TEXT]Labourer[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman II[COLOR_REVERT] promotion and provides extra gold and production when it chops jungles, rainforest and forests.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT_STRATEGY</Tag>
@@ -274,7 +274,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOMBIAN_ALBION_LEGION_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Albion Legion[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an additional movement point, begins with the [COLOR_HIGHLIGHT_TEXT]City Raider I[COLOR_REVERT] promotion and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT].</English>
+		<English>The [COLOR_UNIT_TEXT]Albion Legion[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an additional movement point and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CUIRASSIER_STRATEGY</Tag>
@@ -354,7 +354,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXPLORER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Explorers[COLOR_REVERT] is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend, ignores terrain movement costs and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
+		<English>[COLOR_UNIT_TEXT]Explorers[COLOR_REVERT] can enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend, ignores terrain movement costs and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MANDE_FARARI</Tag>
@@ -542,7 +542,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Commune[COLOR_REVERT] technology, has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
+		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
@@ -594,7 +594,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INFANTRY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] are the basic [COLOR_UNIT_TEXT]Gunpowder Unit[COLOR_REVERT] of the Modern Era.</English>
+		<English>[COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] is the basic [COLOR_UNIT_TEXT]Gunpowder Unit[COLOR_REVERT] of the Modern Era.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT</Tag>
@@ -658,7 +658,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KHMER_BALLISTA_ELEPHANT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and loses its combat penalty when attacking cities.</English>
+		<English>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JET_FIGHTER_STRATEGY</Tag>
@@ -824,7 +824,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MONGOLIAN_KESHIK_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Keshik[COLOR_REVERT], the Mongol replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, has an additional movement point, causes collateral damage and has a first strike.</English>
+		<English>The [COLOR_UNIT_TEXT]Keshik[COLOR_REVERT], the Mongol replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, has an additional movement point, causes collateral damage, has a first strike, and receives a combat bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOORISH_CAMEL_GUNNER</Tag>
@@ -1037,7 +1037,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RIFLEMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Riflemen[COLOR_REVERT] are the basic [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] of the late Renaissance.</English>
+		<English>[COLOR_UNIT_TEXT]Riflemen[COLOR_REVERT] are the basic [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] of the Industrial Era.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PRIVATEER_STRATEGY</Tag>
@@ -1097,7 +1097,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IRANIAN_QIZILBASH_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Qizilbash[COLOR_REVERT], the Iranian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
+		<English>The [COLOR_UNIT_TEXT]Qizilbash[COLOR_REVERT], the Iranian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against other [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IRONCLAD_STRATEGY</Tag>
@@ -1138,7 +1138,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SELJUK_GHULAM_WARRIOR_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], has one less strength point, doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</English>
+		<English>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER_STRATEGY</Tag>
@@ -1230,7 +1230,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, has two first strikes and has two additional cargo spaces.</English>
+		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, two first strikes and two cargo spaces.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
@@ -1238,7 +1238,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resources, requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units.</English>
+		<English>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TIBETAN_KHAMPA</Tag>
@@ -1274,11 +1274,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORK_BOAT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT] can create [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Whaling boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Offshore Platforms[COLOR_REVERT], cannot enter the ocean until [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Optics[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT] can create [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Whaling boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Offshore Platforms[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marine Reserves[COLOR_REVERT], cannot enter the ocean until [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Optics[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an attack bonus when attacking cities.</English>
+		<English>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an additional attack bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WOLF_STRATEGY</Tag>
@@ -1486,7 +1486,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_GALLEY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Galleass'[COLOR_REVERT] have a combat bonus defending on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Galleasses[COLOR_REVERT] have a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TORPEDO_BOAT</Tag>
