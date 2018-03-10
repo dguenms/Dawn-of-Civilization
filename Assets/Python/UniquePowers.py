@@ -506,7 +506,7 @@ class UniquePowers:
 		if gc.getPlayer(iCiv).isAlive():
 			cityList = [city for city in utils.getCityList(iCiv) if city.getPopulation() > 1]
 			if cityList:
-				return getRandomEntry(cityList)
+				return utils.getRandomEntry(cityList)
 		return False
 
 

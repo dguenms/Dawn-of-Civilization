@@ -1139,7 +1139,7 @@ class RFCUtils:
 			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
-		if not list: return False
+		if not list: return None
 		
 		return list[gc.getGame().getSorenRandNum(len(list), 'Random entry')]
 			
