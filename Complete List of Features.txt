@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.15)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to Git commit 2605.
+This version corresponds to Git commit 2644.
 
 TABLE OF CONTENTS
 * Included Mods
