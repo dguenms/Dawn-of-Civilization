@@ -295,6 +295,8 @@ class RiseAndFall:
 		data.bNoCongresses = (gc.getDefineINT("NO_CONGRESSES") != 0)
 		# No plagues
 		data.bNoPlagues = (gc.getDefineINT("NO_PLAGUES") != 0)
+		# No human raze penalty
+		data.bNoHumanRazingPenalty = (gc.getDefineINT("NO_HUMAN_RAZING_PENALTY") != 0)
 		
 	def updateStartingPlots(self):
 		for iPlayer in range(iNumPlayers):
