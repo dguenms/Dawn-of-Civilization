@@ -128,29 +128,44 @@ iCivChina : {
 		"Zhuangzi", # 4th BC
 		"Han Fei", # 3rd BC
 		iMedieval,
+		"Bodhidharma", # 6th
 		"fLin Moniang", # 10th
+		"Wang Chongyang", # 12th
 		"fSun Bu'er", # 12th
+		"Zhu Xi", # 12th
 		"Qiu Chuji", # 12th
+		iRenaissance, 
+		"Wang Yangming", # 16th
+		iIndustrial, 
+		"Hong Xiuquan", # 19th
 		iGlobal,
 		"Xiong Shili", # 20th
+		"Sheng Yen", # 20th
+		"Li Hongzhi", # 20th
 	],
 	iGreatArtist : [
 		"Ling Lun", # legendary
-		"Su Shi", # 11th BC
 		iClassical,
 		"Li Bo", # 8th BC
 		"Du Fu", # 8th BC
 		"Wang Xizhi", # 4th BC
 		"fCai Wenji", # 1st
+		"Gu Kaizhi", # 4th
 		iMedieval,
 		"fShangguan Wan'er", # 7th
+		"Fan Kuan", # 10th
+		"Su Shi", # 11th 
+		"fLi Qingzhao", # 12th
+		"Huang Gongwang", # 14th
 		"Luo Guanzhong", # 14th
 		iRenaissance,
+		"Tang Yin", # 15th
 		"Wu Cheng'en", # 16th
 		"Cao Xueqin", # 18th
 		iGlobal,
 		"Qi Baishi", # 20th
 		"Lu Xun", # 20th
+		"Wu Guanzhong", # 20th
 	],
 	iGreatScientist : [
 		"Li Fan", # 1st
@@ -163,6 +178,7 @@ iCivChina : {
 		iRenaissance,
 		"fTan Yunxian", # 16th
 		"Xu Guangqi", # 17th
+		"Song Yingxing", # 17th
 		"fWang Zhenyi", # 18th
 		iGlobal,
 		"Li Yuanzhe", # 20th
@@ -171,8 +187,10 @@ iCivChina : {
 	],
 	iGreatMerchant : [
 		"Zhang Qian", # 2nd BC
+		"Faxian", # 4th
 		iMedieval,
 		"Xuanzang", # 7th
+		"Li Chun'an", # 10th
 		"Wang Anshi", # 11th
 		iRenaissance,
 		"Zheng He", # 15th
@@ -186,21 +204,29 @@ iCivChina : {
 		iClassical,
 		"Cai Lun", # 1st
 		"Zhang Heng", # 2nd
+		"Ma Jun", # 3rd
 		iMedieval,
+		"Yi Xing", # 8th
 		"Bi Sheng", # 11th
+		"Su Song", # 11th
 		"Wang Zhen", # 14th
 		iGlobal,
 		"Li Siguang", # 20th
 		"fWu Jianxiong", # 20th
 	],
 	iGreatStatesman : [
+		"Gongsun Yang", # 4th BC
 		"Li Si", # 3rd BC
 		"Xiao He", # 2nd BC
 		iMedieval,
-		"Fang Yuanling", # 7th
+		"Fang Xuanling", # 7th
+		"fWu Zetian", # 7th
 		"Di Renjie", # 7th
+		"Fan Zhongyan", # 11th
+		"Liu Bowen", # 14th
 		iRenaissance,
 		"Zhang Juzheng", # 16th
+		"Zhang Tingyu", # 18th
 		iIndustrial,
 		"Li Hongzhang", # 19th
 		"Sun Yat-sen", # 19th
@@ -217,13 +243,26 @@ iCivChina : {
 		iMedieval,
 		"fPingyang Gongzhu", # 7th
 		"Guo Ziyi", # 8th
+		"Yue Fei", # 12th
 		iRenaissance,
+		"Qi Jiguang", # 16th
+		"Nurhaci", # 16th
 		"Shi Lang", # 17th
 		iIndustrial,
 		"fChing Shih", # 19th
+		"Zeng Guofan", # 19th
+		"Zuo Zongtang", # 19th
 		iGlobal,
 		"Zhang Zuolin", # 20th
+		"Zhu De", # 20th
+		"Chiang Kai-shek", # 20th
+		"Peng Dehuai", # 20th
 	],
+	iGreatSpy : [
+		"Li Bai", # 20th
+		"Dai Li", # 20th
+		"Kang Sheng", # 20th
+	]
 },
 iCivIndia : {
 	iGreatProphet : [
