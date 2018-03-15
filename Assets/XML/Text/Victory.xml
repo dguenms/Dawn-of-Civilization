@@ -2487,6 +2487,14 @@
 		<English>Goal accomplished!</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE</Tag>
+		<English>Goal accomplished! (%s1)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN</Tag>
+		<English>Goal accomplished! (%s1 - Turn %d2)</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOAL_FAILED</Tag>
 		<English>Goal failed!</English>
 	</TEXT>

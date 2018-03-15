@@ -2272,6 +2272,7 @@ def lose(iPlayer, iGoal):
 	
 def win(iPlayer, iGoal):
 	data.players[iPlayer].lGoals[iGoal] = 1
+	data.players[iPlayer].lGoalTurns[iGoal] = gc.getGame().getGameTurn()
 	checkHistoricalVictory(iPlayer)
 	
 def expire(iPlayer, iGoal):
@@ -3277,7 +3278,16 @@ def getUHVHelp(iPlayer, iGoal):
 
 	# the info is outdated or irrelevant once the goal has been accomplished or failed
 	if data.players[iPlayer].lGoals[iGoal] == 1:
-		aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()))
+		iWinTurn = data.players[iPlayer].lGoalTurns[iGoal]
+		iTurnYear = gc.getGame().getTurnYear(iWinTurn)
+		if iTurnYear < 0:
+			sWinDate = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
+		else:
+			sWinDate = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))
+		if not gc.getPlayer(iPlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
+			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE", (sWinDate,)))
+		else:
+			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN", (sWinDate, iWinTurn - utils.getScenarioStartTurn())))
 		return aHelp
 	elif data.players[iPlayer].lGoals[iGoal] == 0:
 		aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_GOAL_FAILED", ()))

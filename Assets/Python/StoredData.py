@@ -52,6 +52,7 @@ class PlayerData:
 		# Victory
 		
 		self.lGoals = [-1, -1, -1]
+		self.lGoalTurns = [-1, -1, -1]
 		self.bHistoricalGoldenAge = False
 		
 		# Stability
