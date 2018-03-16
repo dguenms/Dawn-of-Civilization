@@ -23,6 +23,7 @@ def getAlias(iCiv, iType):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivThailand: return iCivKhmer
+	elif iCiv == iCivIran: return iCivPersia
 	
 	return iCiv
 	
@@ -270,39 +271,61 @@ iCivIndia : {
 		"Siddharta Gautama", # 6th BC
 		"Ananda", # 6th BC
 		"Mahakashyapa", # 6th BC
+		"Nagarjuna", # 2nd
 		iMedieval,
 		"Adi Shankara", # 9th
 		"Atisha", # 11th
 		iRenaissance,
+		"Chaitanya Mahaprabhu", # 16th
 		"fMeera", # 16th
 		iIndustrial,
-		"Tipu Sultan", # 18th
+		"Ramakrishna", # 19th
+		"Swami Vivekananda", # 19th
+		"Shirdi Sai Baba", # 19th
 		iGlobal,
+		"Paramahansa Yogananda", # 20th
+		"fAnandamayi Ma", # 20th
 		"fAnjeze Gonxhe Bojaxhiu", # 20th
+		"Maharishi Mahesh Yogi", # 20th
+		"fNirmala Srivastava", # 20th
 	],
 	iGreatArtist : [
 		"Valmiki", # 4th BC
 		"Asvaghosa", # 1st
 		"Kalidasa", # 5th
+		iMedieval, 
+		"Abhinavagupta", # 10th
 		iRenaissance,
 		"Purandara Dasa", # 15th
+		"Tansen", # 16th
 		"Nainsukh", # 18th
 		iIndustrial,
+		"Muthuswami Dikshitar", # 19th
 		"Raja Ravi Varma", # 19th
 		iGlobal,
-		"Raja Rao", # 20th
 		"Rabindranath Tagore", # 20th
+		"Raja Rao", # 20th
+		"fAmrita Sher-Gil", # 20th
+		"Satyajit Ray", # 20th
+		"Ravi Shankar", # 20th
 	],
 	iGreatScientist : [
-		"Aryabhata", # 5th
-		"Brahmagupta", # 7th
+		"Yajnavalkya", # 8th BC
+		"Panini", # 6th or 5th BC
+		"Charaka", # 6th to 2nd BC
+		"Pingala", # 3rd or 2nd BC
 		iMedieval,
+		"Aryabhata", # 6th
+		"Dignaga", # 6th
+		"Dharmakirti" # 6th or 7th
+		"Brahmagupta", # 7th
 		"Bhaskara", # 12th
 		"Madhava", # 14th
 		iRenaissance,
 		"Nilakantha Somayaji", # 15th
 		"Kamalakara", # 17th
 		iGlobal,
+		"Chandrasekhara Venkata Raman", # 20th
 		"Satyendra Nath Bose", #20th
 		"fAsima Chatterjee", # 20th
 	],
@@ -314,41 +337,71 @@ iCivIndia : {
 		"Jamshetji Tata", # 19th
 		"Ardeshir Godrej", # 19th
 		iGlobal,
+		"V. O. Chidambaram Pillai", # 20th
 		"fIndra Nooyi", # 20th
 	],
 	iGreatEngineer : [
 		"Baudhayana", # 8th BC
 		"Lagadha", # 1st
+		iMedieval, 
+		"Gundan Anivaritachari", # 7th
+		iRenaissance, 
+		"Vidyadhar Bhattacharya", # 18th
 		iIndustrial,
 		"Jagadish Chandra Bose", # 19th
+		"Mokshagundam Visvesvaraya", # 19th
 		iGlobal,
-		"Chandrasekhara Venkata Raman", # 20th
+		"fEulie Chowdhury" # 20th
+		"Satish Dhawan", # 20th
+		"Charles Correa", # 20th
 	],
 	iGreatStatesman : [
 		"Chanakya", # 4th BC
 		iMedieval,
+		"Amoghavarsha", # 9th
+		"Chavundaraya", # 10th
 		"Rajaraja Chola", # 10th
 		iRenaissance,
-		"Krishna Devaraya", # 16th
-		"Shivaji Bhosle", # 17th
-		"Tipu Sultan", # 18th
+		"Ariyanatha Mudaliar", # 16th
+		"Nana Fadnavis", # 18th
+		"fBegum Samru", # 18th
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
 		iGlobal,
+		"fSarojini Naidu", # 20th
+		"Sarvepalli Radhakrishnan", # 20th
 		"Jawaharlal Nehru", # 20th
 	],
 	iGreatGeneral : [
 		"Chandragupta Maurya", # 4th BC
 		"Samudragupta", # 4th BC
 		iMedieval,
-		"Rajaraja Chola", # 12th
+		"Dhruva Dharavarsha", # 8th
+		"Mihira Bhoja", # 9th
+		"Rajaraja Chola", # 10th
 		iRenaissance,
 		"fRani Durgavati", # 16th
-		"Shivaji Bhosle", # 17th
+		"Kanhoji Angre", # 17th
+		"Marthanda Varma", # 18th
+		"Hyder Ali", # 18th
 		iIndustrial,
+		"Nana Sahib", # 19th
 		"fRani Lakshmibai", # 19th
+		iGlobal, 
+		"Kodandera M. Cariappa", # 20th
+		"Sam Manekshaw" # 20th
 	],
+	iGreatSpy : [
+		"Bahirji Naik", # 17th
+		"fSharan Kaur Pabla", # 17th
+		iIndustrial,
+		"Sarat Chandra Das", # 19th
+		iGlobal,
+		"fNoor Inayat Khan", # 20th
+		"Rameshwarnath Kao", # 20th
+		"Ravindra Kaushik", # 20th
+	]
 },
 iCivBabylonia : {
 	iGreatProphet : [
@@ -525,7 +578,6 @@ iCivGreece : {
 		"Fotis Kafatos", # 20th
 	],
 	iGreatMerchant : [
-		"Kroisos", # 6th BC
 		"Pytheas", # 4th BC
 		"Androsthenes", # 4th BC
 		"Megasthenes", # 4th BC
@@ -645,59 +697,146 @@ iCivCarthage : {
 },
 iCivPersia : {
 	iGreatProphet : [
-		"Zoroaster", # 18-10th BC
+		"Mahabad", # legendary
+		"Zarathustra", # 18-10th BC
 		iClassical,
+		"Baga-data", # 3rd BC
 		"Mani", # 3rd
+		"Kartir", # 3rd
 		"Mazdak", # 4th
+		"Mar Aba", # 6th
 		iMedieval,
+		"Al-Muqanna", # 8th
 		"Al-Ghazali", # 11th
 		"Mevlana", # 13th
 		iRenaissance,
 		"Mulla Sadra", # 17th
+		"Muhammad Baqir Majlisi", # 17th
+		"Muhammad Baqir Behbahani", # 18th
+		iIndustrial,
+		u"Bahá'u'lláh", # 19th
+		u"Báb", # 19th
+		iGlobal,
+		"Muhammad Husayn Tabataba'i", # 20th
+		"Muhammad-Taqi Mesbah-Yazdi", # 20th
 	],
 	iGreatArtist : [
-		"Firdausi", # 10th
+		"Pahlbod", # 7th
+		"fNagisa", # 7th
+		"Bamshad", # 7th
+		iMedieval,
+		"Rudaki", # 9th
+		"Ferdowsi", # 10th
 		"fRabia Balkhi", # 10th
+		"Nizami Ganjavi", # 12th
 		"Safi al-Din", # 13th
 		"Saadi", # 13th
+		"Nur ad-Din Abd ar-Rahman Jami", # 15th
 		iRenaissance,
 		"Kamal ud-Din Behzad", # 15th
-		"Reza Abbasi", # 16th
+		"Reza Abbasi", # 17th
+		"Mesrop", # 17th
+		iIndustrial,
+		"Mihr 'Ali", # 19th
+		iGlobal,
+		"fForough Farrokhzad", # 20th
+		"Hossein Amanat", # 20th
+		"fHayedeh", # 20th
 	],
 	iGreatScientist : [
+		"Ktesias", # 5th BC
 		"Ardashir", # 4th
+		"Borzuya", # 6th
+		"Paulos-e irani", # 6th
 		iMedieval,
-		"Al-Khwarizmi", # 9th
-		"Al-Razi", # 9th
+		"Muhammad ibn Musa al-Khwarizmi", # 9th
+		"Muhammad ibn Zakariya al-Razi", # 9th
 		"Ibn Sina", # 10th
 		"Abd al-Rahman al-Sufi", # 10th
-		"Al-Farisi", # 13th
+		"Kamal al-Din al-Farisi", # 13th
+		iRenaissance,
+		"Al-Birjandi", # 16th
+		"Baha al-din al-Amili", # 16th
+		"Qazi Sa'id Qumi", # 17th
+		"Alavi Shirazi", # 17th
+		iGlobal,
+		"Mahmoud Hessaby", # 20th
+		"Ali Javan", # 20th
+		"Cumrun Vafa", # 20th
 	],
 	iGreatMerchant : [
+		"Kroisos", # 6th BC
+		"Athurpat", # 4th BC
 		"Kavadh", # 5th
 		iMedieval,
 		"Ahmad ibn Rustah", # 10th
 		"Istakhri", # 10th
+		iGlobal,
+		"Manny Mashouf", # 20th
+		"Nasser David Khalili", # 20th
+		"Omid Kordestani", # 20th
+		"Amir Ansari", # 20th
+		"Pierre Omidyar", # 20th
 	],
 	iGreatEngineer : [
-		"Artaxerxes", # 5th BC
+		u"Artaxsaça", # 4th BC
 		"Bahram", # 3rd
+		"Sanimar", # 6th
 		iMedieval,
+		"Naubakht", # 8th or 9th
 		"Al-Khujandi", # 10th
 		"Ibn al-Haitham", # 10th
+		iRenaissance,
+		"Sheikh Baha'i", # 16th
+		"Ustad Mirza Shirazi", # 18th
+		iIndustrial,
+		"Abdallah Khan", # 19th
+		iGlobal,
+		"Firouz Naderi", # 20th
+		"Gholam Reza Aghazadeh", # 20th
+		"Caro Lucas", # 20th
+		"Siavash Alamouti", # 20th
+		"fAnousheh Ansari", # 20th
 	],
 	iGreatStatesman : [
-		"Tissaphernes", # 5th BC
+		"Chithrafarna", # 5th BC
 		"Tiribazus", # 4th BC
-		"fMania", # 4th BC
+		"Bagoi", # 4th BC
+		"Tiridat", # 1st
+		"Bozorgmehr", # 6th
+		"fPurandokht", # 7th
+		iMedieval,
+		"Ibn Miskawayh", # 10th
+		"Nizam al-Mulk", # 11th
+		iRenaissance,
+		"Tahmasp", # 16th
+		"Mirza Salman Jaberi", # 17th
+		"Khalifeh Soltan", # 17th
+		iIndustrial,
+		"Ebrahim Khan Kalantar", # 19th
+		"Kuchik Khan", # 19th
+		"Amir Kabir", # 19th
+		iGlobal,
+		"Reza Shah Pahlavi", # 20th
+		"Mohammad Mossadegh", # 20th
 	],
 	iGreatGeneral : [
-		"Achaemenes", # 7th BC
-		"Xerxes", # 5th BC
-		"Mehrdad", # 2nd BC
+		"Haxamanis", # 7th BC
+		"Xsaya-rsa", # 5th BC
+		"fMania", # 4th BC
+		"Mithradata", # 1st BC
 		"Shapur", # 3rd
-		iRenaissance,
-		"Abbas", # 16th
+		"Rostam Farrokhzad", # 7th
+		iRenaissance,		
+		"Shah Ismail", # 16th
+		"Mohammad Khan Qajar", # 18th
+		iIndustrial,
+		"Ahmad Amir-Ahmadi", # 19th
+		iGlobal,
+		"Bahram Aryana", # 20th
+		"Muhammad-Husayn Ayrom", # 20th
+		"Ali-Reza Asgari", # 20th
+		"Mohammad Ali Jafari", # 20th
 	],
 },
 iCivRome : {
@@ -1172,6 +1311,7 @@ iCivArabia : {
 		"Ibn al-Nafis", # 13th
 	],
 	iGreatMerchant : [
+		"Muhammad ibn al-Zayyat", # 9th
 		"Ibn Hawqal", # 10th
 		"Yaqut al-Hamawi", # 13th
 		"Ahmad ibn Majid", # 15th
@@ -1180,6 +1320,7 @@ iCivArabia : {
 	],
 	iGreatEngineer : [
 		"Jabir ibn Hayyan", # 8th
+		"Mashallah ibn Athari", # 8th
 		"Banu Musa", # 9th
 		"Ibn Wahshiyah", # 10th
 		"fMariam al-Astrulabi", # 10th
@@ -2232,6 +2373,7 @@ iCivMongols : {
 		"Duwa", # 13th
 		"Zhang Wenqian", # 13th
 		"Toqta", # 14th
+		"Ismail", # 14th
 		iGlobal,
 		"Li Siguang", # 20th
 	],
@@ -2300,7 +2442,7 @@ iCivAztecs : {
 },
 iCivMughals : {
 	iGreatProphet : [
-		"Rajah Birbal", # 16th
+		"Raja Birbal", # 16th
 		"Guru Ram Das", # 16th
 		"Guru Arjan", # 16th
 		"Hiravijaya ji", # 16th
@@ -2338,6 +2480,7 @@ iCivMughals : {
 	iGreatEngineer : [
 		"Fathullah Shirazi", # 16th
 		"Ustad Ahmad Lahauri", # 17th
+		"Muhammad Saleh Thattvi", # 17th
 		iGlobal,
 		"Abdur Rahman Hye", # 20th
 		"Abdul Qadeer Khan", # 20th
@@ -2614,75 +2757,6 @@ iCivAmerica : {
 		"Dwight D. Eisenhower", # 20th
 		"George Patton", # 20th
 		"Douglas MacArthur", # 20th
-	],
-},
-iCivIran : {
-	iGreatProphet : [
-		"Mulla Sadra", # 16th
-		"Muhammad Baqir Majlisi", # 17th
-		"Muhammad Baqir Behbahani", # 18th
-		iIndustrial,
-		u"Bahá'u'lláh", # 19th
-		u"Báb", # 19th
-		iGlobal,
-		"Ayatollah Mohammad Taqi", # 20th
-	],
-	iGreatArtist : [
-		"Shaykh-i Baha'i", # 16th
-		"Reza Abbasi", # 16th
-		"Ustad Mirza Shirazi", # 18thth
-		iIndustrial,
-		"Mihr 'Ali", # 19th
-		iGlobal,
-		"fForough Farrokhzad", # 20th
-		"Hossein Amanat", # 20th
-		"fHayedeh", # 20th
-	],
-	iGreatScientist : [
-		"Al-Birjandi", # 16th
-		"Baha al-din al-Amili", # 16th
-		"Qazi Sa'id Qumi", # 17th
-		"Alavi Shirazi", # 17th
-		iGlobal,
-		"Mahmoud Hessaby", # 20th
-		"Ali Javan", # 20th
-		"Cumrun Vafa", # 20th
-	],
-	iGreatMerchant : [
-		"Manny Mashouf", # 20th
-		"Nasser David Khalili", # 20th
-		"Omid Kordestani", # 20th
-		"Amir Ansari", # 20th
-		"Pierre Omidyar", # 20th
-	],
-	iGreatEngineer : [
-		"Firouz Naderi", # 20th
-		"Gholam Reza Aghazadeh", # 20th
-		"Caro Lucas", # 20th
-		"Siavash Alamouti", # 20th
-		"fAnousheh Ansari", # 20th
-	],
-	iGreatStatesman : [
-		"Ismail", # 15th
-		"Tahmasp", # 16th
-		iIndustrial,
-		"Ebrahim Khan Kalantar", # 19th
-		"Kuchik Khan", # 19th
-		"Amir Kabir", # 19th
-		iGlobal,
-		"Reza Shah Pahlavi", # 20th
-		"Mohammad Mossadegh", # 20th
-	],
-	iGreatGeneral : [
-		"Abbas I", # 16th
-		"Mohammad Khan Qajar", # 18th
-		iIndustrial,
-		"Ahmad Amir-Ahmadi", # 19th
-		iGlobal,
-		"Bahram Aryana", # 20th
-		"Muhammad-Husayn Ayrom", # 20th
-		"Ali-Reza Asgari", # 20th
-		"Mohammad Ali Jafari", # 20th
 	],
 },
 iCivTibet : {
