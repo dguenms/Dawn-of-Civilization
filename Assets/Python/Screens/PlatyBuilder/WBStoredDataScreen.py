@@ -161,7 +161,7 @@ class WBStoredDataScreen:
 			else:
 				if item == "iStabilityLevel":
 					sText += u" (%s)" % CyTranslator().getText(StabilityLevelTexts[scriptDict[item]], ())
-				elif item in ["iAstronomyTurn", "iNextTurnAIWar"]:
+				elif item in ["iNextTurnAIWar"]:
 					sText += u" (Turn %s)" % getTurnForYear(scriptDict[item])
 				elif item == "iFirstNewWorldColony":
 					sText = self.getCivName(scriptDict[item])
