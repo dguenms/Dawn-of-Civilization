@@ -316,7 +316,7 @@ iCivIndia : {
 		iMedieval,
 		"Aryabhata", # 6th
 		"Dignaga", # 6th
-		"Dharmakirti" # 6th or 7th
+		"Dharmakirti", # 6th or 7th
 		"Brahmagupta", # 7th
 		"Bhaskara", # 12th
 		"Madhava", # 14th
@@ -350,7 +350,7 @@ iCivIndia : {
 		"Jagadish Chandra Bose", # 19th
 		"Mokshagundam Visvesvaraya", # 19th
 		iGlobal,
-		"fEulie Chowdhury" # 20th
+		"fEulie Chowdhury", # 20th
 		"Satish Dhawan", # 20th
 		"Charles Correa", # 20th
 	],
@@ -389,7 +389,7 @@ iCivIndia : {
 		"fRani Lakshmibai", # 19th
 		iGlobal, 
 		"Kodandera M. Cariappa", # 20th
-		"Sam Manekshaw" # 20th
+		"Sam Manekshaw", # 20th
 	],
 	iGreatSpy : [
 		"Bahirji Naik", # 17th
@@ -941,7 +941,7 @@ iCivJapan : {
 		"Kenkichi Iwasawa", # 20th
 	],
 	iGreatMerchant : [
-		"Ruson Sukezaemon" # 16th
+		"Ruson Sukezaemon", # 16th
 		"Shousuke Tanaka", # 17th
 		"Takadaya Kahei", # 18th
 		iIndustrial,
