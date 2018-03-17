@@ -911,7 +911,8 @@ iCivJapan : {
 		"Takuan Souhou", # 17th
 		iIndustrial,
 		"Hirata Atsutane", # 19th
-		"Uchimura Kanzou", # 19th
+		"fMiki Nakayama", # 19th,
+		"Kanzou Uchimura", # 19th
 	],
 	iGreatArtist : [
 		"fMurasaki Shikibu", # 10th
@@ -941,7 +942,9 @@ iCivJapan : {
 		"Kenkichi Iwasawa", # 20th
 	],
 	iGreatMerchant : [
+		"Ruson Sukezaemon" # 16th
 		"Shousuke Tanaka", # 17th
+		"Takadaya Kahei", # 18th
 		iIndustrial,
 		"Torakusu Yamaha", # 19th
 		"Outano Kouzui", # 19th
@@ -991,27 +994,56 @@ iCivJapan : {
 		"Isoroku Yamamoto", # 20th
 		"Tomoyuki Yamashita", # 20th
 	],
+	iGreatSpy : [
+		"Kagetoki Kajiwara", # 12th
+		"Hino Kumawaka", # 14th
+		iRenaissance,
+		"Hanzou Hattori", # 16th
+		"fChiyome Mochizuki", # 16th
+		"Ishikawa Goemon", # 16th
+		iIndustrial,
+		"Nezumi Kozou", # 19th
+		"Akashi Motojiro", # 19th
+		iGlobal,
+		"fYoshiko Kawashima", # 20th
+		"Takeo Yoshikawa", # 20th
+	]
 },
 iCivEthiopia : {
 	iGreatProphet : [
 		"Gabra Manfas Qeddus", # legendary
-		"Yared", # 6th
+		"Fremnatos", # 4th
+		"Abba Pantelewon", # 5th
+		"Abuna Aregawi", # 6th
 		iMedieval,
+		"Tekle Haymanot", # 13th
 		"Ewostatewos", # 14th
 		"Abba Samuel", # 14th
+		"fKristos Samra", # 15th
+		iRenaissance,
+		"fWalatta Petros", # 17th
 		iGlobal,
 		"Abune Tewophilos", # 20th
 	],
 	iGreatArtist : [
-		"Gebre Kristos Desta", # 19th
+		"Yared", # 6th
+		iMedieval,
+		"Giyorgis Saglawi", # 14th
+		iIndustrial,
+		"Gebre Hanna", # 19th
+		"Afevork Ghevre Jesus", # 19th
 		iGlobal,
+		"Gebre Kristos Desta", # 20th
 		"Tsegaye Gabre-Medhin", # 20th
 		"Adamu Tesfaw", # 20th
 		"Afeworq Tekle", # 20th
 		"Alexander Boghossian", # 20th
 	],
 	iGreatScientist : [
-		"Abba Bahrey", # 16th
+		"Zar'a Ya'aqob", # 16th
+		"Abba Bahriy", # 16th
+		"Walda Heywat", # 17th
+		"Abba Gorgoryos", # 17th
 		iGlobal,
 		"Aklilu Lemma", # 20th
 		"Kitaw Ejigu", # 20th
@@ -1020,6 +1052,9 @@ iCivEthiopia : {
 	],
 	iGreatMerchant : [
 		"Nigiste Saba", # legendary
+		"Endubis", # 3rd
+		iMedieval,
+		"Yusuf bin Ahmad al-Kawneyn", # 13th
 		iGlobal,
 		"Berhanu Nega", # 20th
 		"Eleni Gebre-Medhin", # 20th
@@ -1030,28 +1065,37 @@ iCivEthiopia : {
 		iMedieval,
 		"Gebre Mesqel Lalibela", # 13th
 		iRenaissance,
-		"Alam Sagad", # 17th
+		"Fasiladas", # 17th
 	],
 	iGreatStatesman : [
 		"Ezana", # 4th
 		iRenaissance,
+		"fEleni", # 16th
 		"Susenyos", # 17th
 		iIndustrial,
 		"Tewodros", # 19th
 		"Menelik", # 19th
 		iGlobal,
 		"Mengistu Haile Mariam", # 20th
+		"Meles Zenawi", # 20th
 	],
 	iGreatGeneral : [
+		"Gadarat", # 2nd or 3rd
+		"Abraha", # 6th
+		iMedieval,
 		"fGudit", # 10th
 		"Yekuno Amlak", # 13th
 		"Amda Seyon", # 14th
 		"Eskender", # 15th
 		"Tewodros", # 15th
 		iRenaissance,
+		"Lebna Dengel", # 16th
 		"Iyasu", # 17th
 		iIndustrial,
-		"Yohannes", # 19th
+		"Yohannis", # 19th
+		"Alula Engida", # 19th
+		iGlobal,
+		"Aman Andom", # 20th
 	],
 },
 iCivKorea : {
@@ -1061,6 +1105,8 @@ iCivKorea : {
 		"Baegun", # 13th
 		iRenaissance,
 		"fHeo Nanseolheon", # 16th
+		iIndustrial,
+		"Choe Je-u", # 19th
 		iGlobal,
 		"Sun Myung Moon", # 20th
 	],
@@ -1090,6 +1136,7 @@ iCivKorea : {
 		"Hwang Woo-Suk", # 20th
 	],
 	iGreatMerchant : [
+		"Hyecho", # 8th
 		"Kim Sa-hyeong", # 15th
 		"Yi Mu", # 15th
 		"Yi Hoe", # 15th
@@ -1114,16 +1161,22 @@ iCivKorea : {
 		"Kim Ok-gyun", # 19th
 		"fMyeongseong", # 19th
 		iGlobal,
+		"fRyu Gwansun", # 20th
 		"Kim Gu", # 20th
 		"Kim Dae-jung", # 20th
 	],
 	iGreatGeneral : [
+		"Gim Yu-sin", # 7th
 		"Gang Gam-chan", # 11th
 		"Choe Woo", # 13th
 		"Yi Seong-gye", # 14th
 		iRenaissance,
 		"Yi Sun-sin", # 16th
 	],
+	iGreatSpy : [
+		"An Jung-geun", # 20th
+		"Kim Chang-ryong", # 20th
+	]
 },
 iCivByzantium : {
 	iGreatProphet : [
@@ -1153,6 +1206,7 @@ iCivByzantium : {
 	iGreatMerchant : [
 		"Hierokles", # 6th
 		"Zemarchos", # 6th
+		"Cosmas Indicopleustes", # 6th
 		"Georgios Kyprios", # 7th
 		"Danielis", # 9th
 	],
@@ -1161,6 +1215,7 @@ iCivByzantium : {
 		"Isidoros", # 6th
 		"Eutokios", # 6th
 		"Kallinikos", # 7th
+		"Tiridates", # 10th
 	],
 	iGreatStatesman : [
 		"Theodosios", # 4th
