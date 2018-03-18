@@ -1283,7 +1283,7 @@ def specificAdjective(iPlayer):
 					
 				return "TXT_KEY_CIV_PERSIA_ACHAEMENID"
 			
-			if iEra == iMedieval:
+			if getColumn(iPlayer) >= 6: 
 				return "TXT_KEY_CIV_PERSIA_SASSANID"
 				
 	elif iPlayer == iPolynesia:
@@ -2008,6 +2008,8 @@ def leader(iPlayer):
 			if iEra >= iGlobal: return iKhomeini
 			
 			return iAbbas
+		
+		if getColumn(iPlayer) >= 6: return iKhosrow
 			
 		if bEmpire:
 			return iDarius
