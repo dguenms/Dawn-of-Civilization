@@ -336,7 +336,7 @@ iCivIndia : {
 		"Jamshetji Tata", # 19th
 		"Ardeshir Godrej", # 19th
 		iGlobal,
-		"V. O. Chidambaram Pillai", # 20th
+		"Kappalottiya Tamizhan", # 20th
 		"fIndra Nooyi", # 20th
 	],
 	iGreatEngineer : [
@@ -381,6 +381,7 @@ iCivIndia : {
 		"Rajaraja Chola", # 10th
 		iRenaissance,
 		"fRani Durgavati", # 16th
+		"Shivaji Bhosle", # 17th
 		"Kanhoji Angre", # 17th
 		"Marthanda Varma", # 18th
 		"Hyder Ali", # 18th
@@ -748,7 +749,7 @@ iCivPersia : {
 		"Borzuya", # 6th
 		"Paulos-e irani", # 6th
 		iMedieval,
-		"Muhammad ibn Musa al-Khwarizmi", # 9th
+		"Al-Khwarizmi", # 9th
 		"Muhammad ibn Zakariya al-Razi", # 9th
 		"Ibn Sina", # 10th
 		"Abd al-Rahman al-Sufi", # 10th
@@ -778,7 +779,7 @@ iCivPersia : {
 		"Pierre Omidyar", # 20th
 	],
 	iGreatEngineer : [
-		u"Artaxsaça", # 4th BC
+		"Artakhshathra", # 4th BC
 		"Bahram", # 3rd
 		"Sanimar", # 6th
 		iMedieval,
@@ -821,7 +822,7 @@ iCivPersia : {
 	],
 	iGreatGeneral : [
 		"Haxamanis", # 7th BC
-		"Xsaya-rsa", # 5th BC
+		"Khashayarsha", # 5th BC
 		"fMania", # 4th BC
 		"Mithradata", # 1st BC
 		"Shapur", # 3rd
@@ -1953,7 +1954,6 @@ iCivEngland : {
 	iGreatGeneral : [
 		"William the Conqueror", # 11th
 		"Richard the Lionheart", # 12th
-		"William Wallace", # 13th
 		"Edward III", # 14th
 		iRenaissance,
 		"Oliver Cromwell", # 17th
@@ -2874,7 +2874,7 @@ iCivNetherlands : {
 		iGlobal,
 		"fMata Hari", # 20th
 		"Dirk Klop", # 20th
-		"François van 't Sant", # 20th
+		u"François van 't Sant", # 20th
 	],
 },
 iCivAmerica : {
