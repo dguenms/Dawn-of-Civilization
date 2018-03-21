@@ -121,5 +121,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("canResearchGiven", &CyPlayer::canResearchGiven, "bool (int eTech, bool bTrade, int eGivenTech)")
 		.def("resetGreatPeopleCreated", &CyPlayer::resetGreatPeopleCreated, "void ()")
 		.def("canUseSlaves", &CyPlayer::canUseSlaves, "bool ()")
+		.def("changeYieldRateModifier", &CyPlayer::changeYieldRateModifier, "void (int iYieldType, int iChange)")
 		;
 }

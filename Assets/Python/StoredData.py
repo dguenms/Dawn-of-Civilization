@@ -57,14 +57,25 @@ class PlayerData:
 		
 		# Stability
 		
-		self.resetStability()
+		self.initStability()
 		
 		# Tech Log
 		
 		self.iTechColumn = 0
 		
 	def resetStability(self):
+		# Chinese UP
+		if self.iPlayer == iChina:
+			gc.getPlayer(iChina).changeYieldRateModifier(YieldTypes.YIELD_COMMERCE, -10 * self.iStabilityLevel)
+	
+		self.initStability()
+	
+	def initStability(self):
 		self.iStabilityLevel = iStabilityShaky
+		
+		# Chinese UP
+		if self.iPlayer == iChina:
+			gc.getPlayer(iChina).changeYieldRateModifier(YieldTypes.YIELD_COMMERCE, 20)
 		
 		self.iTurnsToCollapse = -1
 		

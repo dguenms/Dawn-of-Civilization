@@ -13033,6 +13033,27 @@ void CvPlayerAI::AI_doCommerce()
 
 			iIdealPercent = std::min(iIdealPercent, 20);
 
+			// Leoreth: some civs historically focus on culture
+			if (getID() == CHINA && GC.getGame().getTechRank(getTeam()) < 3) 
+			{
+				iIdealPercent = 40 - 10 * GC.getGame().getTeamRank(getTeam());
+			}
+
+			if (getID() == JAPAN && getCurrentEra() < ERA_INDUSTRIAL && GC.getGame().getTechRank(getTeam()) < GC.getGame().countCivPlayersAlive() / 2)
+			{
+				iIdealPercent = 40;
+			}
+
+			if ((getID() == INDIA || getID() == TAMILS) && getCurrentEra() >= ERA_MEDIEVAL)
+			{
+				iIdealPercent = 40;
+			}
+
+			if (getID() == EGYPT && getCurrentEra() >= ERA_CLASSICAL)
+			{
+				iIdealPercent = 30;
+			}
+
 			if (AI_isDoStrategy(AI_STRATEGY_CULTURE4))
 			{
 			    iIdealPercent = 100;

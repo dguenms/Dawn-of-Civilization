@@ -584,6 +584,7 @@ public:
 	int AI_getMemoryAttitude(int iPlayer, int iMemory);
 	void restoreGeneralThreshold();
 	void resetGreatPeopleCreated();
+	void changeYieldRateModifier(int iYieldType, int iChange);
 
 private:
 	CvPlayer* m_pPlayer;
