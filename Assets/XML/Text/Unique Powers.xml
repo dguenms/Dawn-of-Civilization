@@ -147,17 +147,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI_TITLE</Tag>
-		<English>The Power of Invention:</English>
+		<English>The Power of the Mandate of Heaven:</English>
 		<French>Le Pouvoir de Invention :</French>
-		<German>Die Macht der Erfindung:</German>
+		<German>Die Macht des Mandats des Himmels:</German>
 		<Italian>Il potere del invenzione:</Italian>
 		<Spanish>El poder del invento:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI</Tag>
-		<English>Faster research of techologies that no known civilization has discovered yet until the Renaissance</English>
+		<English>Receives +10% [ICON_COMMERCE] per stability level</English>
 		<French>1.5X Vitesse d'entra&#238;nement des unit&#233;s de combat rapproch&#233; et &#233;quip&#233;es d'armes &#224; feu</French>
-		<German>Schnellere Forschung von Technologien, die bisher keine bekannte Zivilisation entdeckt hat, bis zum Beginn der Renaissance</German>
+		<German>Erh&#228;lt +10% [ICON_COMMERCE] pro Stabilitätsstufe</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
 	</TEXT>
