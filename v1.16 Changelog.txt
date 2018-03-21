@@ -1,0 +1,110 @@
+TABLE OF CONTENTS
+* Major Features
+* Game Rules
+* Technologies
+* Buildings
+* Unique Buildings
+* Wonders
+* Units
+* Civics
+* Specialists
+* Religion
+* Civilizations
+* Leaders
+* Unique Powers
+* Unique Historical Victories
+* Unique Religious Victories
+* Resources
+* Improvements
+* Events
+* Stability
+* Balance
+* Artificial Intelligence
+* Scenarios
+* Historical Immersion
+* Interface
+* Bugfixes
+* Performance
+
+MAJOR FEATURES
+
+
+GAME RULES
+
+
+TECHNOLOGIES
+
+
+BUILDINGS
+
+
+UNIQUE BUILDINGS
+
+
+NATIONAL WONDERS
+
+
+WONDERS
+
+
+UNITS
+
+
+CIVICS
+
+
+SPECIALISTS
+
+
+CIVILIZATIONS
+* New Chinese UP: Mandate of Heaven: +10% commerce per stability level
+
+LEADERS
+
+
+RELIGION
+
+
+UNIQUE POWERS
+
+
+UNIQUE HISTORICAL VICTORIES
+
+
+UNIQUE RELIGIOUS VICTORIES
+
+
+RESOURCES
+
+
+IMPROVEMENTS
+
+
+EVENTS
+
+
+STABILITY
+
+
+BALANCE
+
+
+ARTIFICIAL INTELLIGENCE
+
+
+SCENARIOS
+
+
+HISTORICAL IMMERSION
+* Some AI civilizations will invest more commerce into culture
+
+INTERFACE
+* The year (and turn if enabled) when a UHV goal was achieved is displayed in the victory screen
+
+GRAPHICS
+
+
+BUGFIXES
+
+
+PERFORMANCE
