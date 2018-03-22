@@ -1626,14 +1626,6 @@
 		<Spanish>Que se felicite a los ciudadanos.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_HARBORMASTER_1</Tag>
-		<English>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</English>
-		<French>Le Ma&#238;tre de port[PARAGRAPH:1]Votre marine marchande vous charge de construire suffisamment de [COLOR_BUILDING_TEXT]Ports[COLOR_REVERT] pour devenir la reine incontest&#233;e du commerce maritime. Vous devrez aussi construire une flotte de [COLOR_UNIT_TEXT]Caravelles[COLOR_REVERT] pour aider &#224; transporter le fret en haute mer.</French>
-		<German>Der Hafenmeister[PARAGRAPH:1]Eure Handelsmarine hat Euch den Auftrag gegeben, genug [COLOR_BUILDING_TEXT]H&#228;fen[COLOR_REVERT] zu bauen, damit sie die unangefochtenen Handelsk&#246;nige der See werden. Au&#223;erdem m&#252;sst Ihr eine Flotte von [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen, um die Fracht &#252;ber die Tiefsee zu bringen.</German>
-		<Italian>Armatore[PARAGRAPH:1]La tua marina mercantile ti chiede di costruire abbastanza [COLOR_BUILDING_TEXT]porti[COLOR_REVERT] affinch&#233; possiate diventare gli indiscussi padroni dei mari. Dovrai costruire anche una flotta di [COLOR_UNIT_TEXT]Caravelle[COLOR_REVERT] per trasportare la merce oltreoceano.</Italian>
-		<Spanish>El pr&#225;ctico del puerto[PARAGRAPH:1]Los miembros de la industria mercante marina han encargado construir [COLOR_BUILDING_TEXT]Puertos[COLOR_REVERT] suficientes para convertirlos en reyes indiscutibles del comercio por mar. Tambi&#233;n ser&#225; necesario construir una flota de [COLOR_UNIT_TEXT]Carabelas[COLOR_REVERT] que colaboren en el transporte de cargamentos por alta mar.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_DONE_1</Tag>
 		<English>Use our advantage to boost the seamanship of our current and future Naval units</English>
 		<French>Utiliser notre avantage pour augmenter les capacit&#233;s de nos unit&#233;s navales actuelles et futures.</French>
@@ -1656,14 +1648,6 @@
 		<German>Unsere Schiffskapit&#228;ne bekommen zus&#228;tzliche Erfahrung, so dass sie besser navigieren k&#246;nnen.</German>
 		<Italian>I capitani delle nostre navi guadagnano pi&#249; esperienza, diventando pi&#249; bravi a navigare.</Italian>
 		<Spanish>Nuestros capitanes de barco obtienen m&#225;s experiencia, lo que les permite navegar mejor.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_HARBORMASTER_HELP</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]Ports[COLOR_REVERT] dans plusieurs villes c&#244;ti&#232;res. Vous devrez aussi construire %d2 [COLOR_UNIT_TEXT]Caravelles[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te en avant vous ou si vous atteignez l'Ere Industrielle sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]H&#228;fen[COLOR_REVERT] in Ihren K&#252;stenst&#228;dten bauen. Au&#223;erdem m&#252;ssen Sie %d2 [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Industriezeitalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 [COLOR_BUILDING_TEXT]Porti[COLOR_REVERT] nelle tue citt&#224; costiere. Dovrai costruire anche %d2 [COLOR_UNIT_TEXT]Caravelle[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se raggiungerai l'era industriale senza aver soddisfatto le condizioni.</Italian>
-		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, deb&#233;is construir %d1 [COLOR_BUILDING_TEXT]Puertos[COLOR_REVERT] en vuestras diversas ciudades costeras. Tambi&#233;n deber&#233;is construir %d2 [COLOR_UNIT_TEXT]Carabelas[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si se alcanza la era Industrial sin haber cumplido las condiciones.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT</Tag>
