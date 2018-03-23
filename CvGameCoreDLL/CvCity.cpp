@@ -11237,12 +11237,12 @@ int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
 
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		iTotalCulture += getCultureTimes100((PlayerTypes)iI);
+		iTotalCulture += getCultureTimes100((PlayerTypes)iI) / 100;
 	}
 
 	if (iTotalCulture > 0)
 	{
-		return (100 * getCultureTimes100(eIndex) / iTotalCulture);
+		return (getCultureTimes100(eIndex) / iTotalCulture);
 	}
 
 	if (eIndex == getOwner())
