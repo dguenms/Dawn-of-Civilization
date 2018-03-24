@@ -2042,32 +2042,33 @@ class RiseAndFall:
 					data.setFirstContactMongols(iTeamX, False)
 		
 					teamTarget = gc.getTeam(iTeamX)
+						
+					if iTeamX == iArabia:
+						tTL = (73, 31)
+						tBR = (84, 43)
+						iDirection = DirectionTypes.DIRECTION_EAST
+					elif iTeamX == iPersia:
+						tTL = (73, 37)
+						tBR = (86, 48)
+						iDirection = DirectionTypes.DIRECTION_NORTH
+					elif iTeamX == iByzantium:
+						tTL = (68, 41)
+						tBR = (77, 46)
+						iDirection = DirectionTypes.DIRECTION_EAST
+					elif iTeamX == iRussia:
+						tTL = (68, 48)
+						tBR = (81, 62)
+						iDirection = DirectionTypes.DIRECTION_EAST
+
+					lTargetList = utils.getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
+					
+					if not lTargetList: return
 
 					teamMongolia.declareWar(iTeamX, True, WarPlanTypes.WARPLAN_TOTAL)
-					
-					lPlotList = []
-					lTargetList = []
-					iWesternLimit = 75
 					
 					iHandicap = 0
 					if utils.getHumanID() == iTeamX:
 						iHandicap = gc.getGame().getHandicapType() / 2
-
-					if iTeamX in [iArabia, iPersia]:
-						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_NORTH)
-					elif iTeamX in [iByzantium, iRussia]:
-						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_EAST)
-						
-					for tPlot in lPlotList:
-						x, y = tPlot
-						if x < iWesternLimit:
-							lPlotList.remove(tPlot)
-
-					for i in range(3):
-						if lPlotList:
-							iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random target plot')
-							lTargetList.append(lPlotList[iRand])
-							lPlotList.remove(lPlotList[iRand])
 
 					for tPlot in lTargetList:
 						utils.makeUnitAI(iKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iHandicap)

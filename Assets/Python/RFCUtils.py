@@ -973,6 +973,33 @@ class RFCUtils:
 				return [tPlot]
 
 		return []
+		
+	def getBorderPlots(self, iPlayer, tTL, tBR, iDirection = DirectionTypes.NO_DIRECTION, iNumPlots = 1):
+		dConstraints = {
+			DirectionTypes.NO_DIRECTION : lambda (x, y): 0,
+			DirectionTypes.DIRECTION_EAST : lambda (x, y): x,
+			DirectionTypes.DIRECTION_WEST : lambda (x, y): -x,
+			DirectionTypes.DIRECTION_NORTH : lambda (x, y): y,
+			DirectionTypes.DIRECTION_SOUTH : lambda (x, y): -y
+		}
+		
+		constraint = dConstraints[iDirection]
+	
+		lPlots = self.getPlotList(tTL, tBR)
+		lCities = self.getSortedList([city for city in self.getAreaCities(lPlots) if city.getOwner() == iPlayer], lambda city: constraint((city.getX(), city.getY())))
+		
+		lTargetCities = lCities[:iNumPlots]
+		
+		return [self.getPlotNearCityInDirection(city, constraint) for city in lTargetCities]
+		
+	def getPlotNearCityInDirection(self, city, constraint):
+		tCityPlot = (city.getX(), city.getY())
+		lFirstRing = self.surroundingPlots(tCityPlot)
+		lSecondRing = [tPlot for tPlot in self.surroundingPlots(tCityPlot, 2) if not tPlot in lFirstRing and not gc.getMap().plot(tPlot[0], tPlot[1]).isCity()]
+		
+		lBorderPlots = [tPlot for tPlot in lSecondRing if constraint(tPlot) >= constraint(tCityPlot)and not gc.getMap().plot(tPlot[0], tPlot[1]).isWater()]
+		
+		return self.getRandomEntry(lBorderPlots)
 
 	# Leoreth: return list of border plots in a given direction, -1 means all directions
 	def getBorderPlotList(self, iCiv, iDirection):
