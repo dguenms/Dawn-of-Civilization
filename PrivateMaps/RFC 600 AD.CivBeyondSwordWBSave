@@ -224,7 +224,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=8
-	LeaderType=LEADER_CYRUS
+	LeaderType=LEADER_KHOSROW
 	CivType=CIVILIZATION_PERSIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
