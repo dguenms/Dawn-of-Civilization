@@ -1846,4 +1846,14 @@
 		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</English>
 		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] durch Einzigartige Macht</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AFFECTED_CITIES</Tag>
+		<English>Supplies %d1 Cities</English>
+		<German>Versorgt %d1 St&#228;dte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<German></German>
+	</TEXT>
 </Civ4GameText>

@@ -13764,6 +13764,7 @@ m_iAITradeModifier(0),
 m_iAIObjective(0),
 m_iHealth(0),
 m_iHappiness(0),
+m_iAffectedCities(0),
 m_iMinAreaSize(0),
 m_iMinLatitude(0),
 m_iMaxLatitude(90),
@@ -13866,6 +13867,11 @@ int CvBonusInfo::getHappiness() const
 int CvBonusInfo::getMinAreaSize() const
 {
 	return m_iMinAreaSize;
+}
+
+int CvBonusInfo::getAffectedCities() const
+{
+	return m_iAffectedCities;
 }
 
 int CvBonusInfo::getMinLatitude() const
@@ -14046,6 +14052,7 @@ void CvBonusInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAIObjective);
 	stream->Read(&m_iHealth);
 	stream->Read(&m_iHappiness);
+	stream->Read(&m_iAffectedCities); // Leoreth
 	stream->Read(&m_iMinAreaSize);
 	stream->Read(&m_iMinLatitude);
 	stream->Read(&m_iMaxLatitude);
@@ -14110,6 +14117,7 @@ void CvBonusInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAIObjective);
 	stream->Write(m_iHealth);
 	stream->Write(m_iHappiness);
+	stream->Write(m_iAffectedCities); // Leoreth
 	stream->Write(m_iMinAreaSize);
 	stream->Write(m_iMinLatitude);
 	stream->Write(m_iMaxLatitude);
@@ -14183,6 +14191,7 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAIObjective, "iAIObjective");
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+	pXML->GetChildXmlValByName(&m_iAffectedCities, "iAffectedCities");
 	pXML->GetChildXmlValByName(&m_iMinAreaSize, "iMinAreaSize");
 	pXML->GetChildXmlValByName(&m_iMinLatitude, "iMinLatitude");
 	pXML->GetChildXmlValByName(&m_iMaxLatitude, "iMaxLatitude", 90);

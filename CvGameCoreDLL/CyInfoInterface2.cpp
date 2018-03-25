@@ -371,6 +371,7 @@ void CyInfoPythonInterface2()
 		.def("getGroupRange", &CvBonusInfo::getGroupRange, "int ()")
 		.def("getGroupRand", &CvBonusInfo::getGroupRand, "int ()")
 		.def("getBonusClassType", &CvBonusInfo::getBonusClassType, "int ()")
+		.def("getAffectedCities", &CvBonusInfo::getAffectedCities, "int ()") // Leoreth
 
 		.def("isOneArea", &CvBonusInfo::isOneArea, "bool ()")
 		.def("isHills", &CvBonusInfo::isHills, "bool ()")
