@@ -105,7 +105,9 @@ class CvPediaResource:
 			szStats += u"+%d%c  " % (abs(iHealth), CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR))
 
 		screen.appendListBoxString(panel, szStats, WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
-
+		
+		if iHappiness != 0 or iHealth != 0:
+			screen.appendListBoxString(panel, CyTranslator().getText("TXT_KEY_AFFECTED_CITIES", (ResourceInfo.getAffectedCities(),)), WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
 
 	def placeTech(self):

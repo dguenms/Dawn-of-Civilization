@@ -11755,7 +11755,7 @@ bool CvCity::hasBonus(BonusTypes eIndex) const
 // Leoreth
 bool CvCity::hasBonusEffect(BonusTypes eBonus) const
 {
-	return getNumBonuses(eBonus) > getCultureRank();
+	return getNumBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities() > getCultureRank();
 }
 
 
