@@ -106,5 +106,10 @@
 			<Description>TXT_KEY_CONCEPT_EXTENDED_WORLDBUILDER</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_EXTENDED_WORLDBUILDER_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_LIMITED_RESOURCE_EFFECTS</Type>
+			<Description>TXT_KEY_CONCEPT_LIMITED_RESOURCE_EFFECTS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_LIMITED_RESOURCE_EFFECTS_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>
