@@ -903,31 +903,56 @@ iCivRome : {
 },
 iCivJapan : {
 	iGreatProphet : [
-		"Koubou Daishi", # 8th
-		"Eisai Zenji", # 12th
+		"Kuukaii", # 8th
+		"Saichou", # 8th
+		"Abe no Seimei", # 10th
+		"Myouan Eisai", # 12th
 		"Shinran", # 13th
-		"Nikkou Shounin", # 13th
+		"Nikkou", # 13th
+		"Nichiren", # 13th
 		iRenaissance,
+		"Rennyo", # 15th
+		"Ikkyuu Soujun", # 15th
 		"Takuan Souhou", # 17th
+		"Ryoukan", # 18th
 		iIndustrial,
 		"Hirata Atsutane", # 19th
 		"fMiki Nakayama", # 19th,
 		"Kanzou Uchimura", # 19th
 	],
 	iGreatArtist : [
+		"Kakinomoto no Hitomaro", # 7th
+		"Yamanoue no Okura", # 7th
+		"Ootomo no Yakamochi", # 8th
+		"Ki no Tsurayuki", # 9th
 		"fMurasaki Shikibu", # 10th
-		"Saigyou Houshi", # 12th
+		"Unkei", # 12th
+		"Saigyou", # 12th
+		"Zeami", # 14th
+		"Sesshuu", # 15th
 		iRenaissance,
 		"Kanou Eitoku", # 16th
-		"Monzaemon Chikamatsu", # 17th
-		"Toushusai Sharaku", # 18th
+		"Sen no Rikyuu", # 16th
+		"Ihara Saikaku", # 17th
+		"Matsuo Bashou ", # 17th
+		"Chikamatsu Monzaemon", # 17th
+		"Toushuusai Sharaku", # 18th
 		"Yosa Buson", # 18th
+		"Kobayashi Issa", # 18th
 		iIndustrial,
+		"Kyokutei Bakin", # 19th
 		"Katsushika Hokusai", # 19th
 		"Utagawa Hiroshige", # 19th
 		"fIchiyou Higuchi", # 19th
+		"Masaoka Shiki", # 19th
 		iGlobal,
+		"fAkiko Yosano", # 20th
+		"Osamu Dazai", # 20th
+		"Miyazawa Kenji", # 20th
 		"Yukio Mishima", # 20th
+		"Yasunari Kawabata", # 20th
+		"Osamu Tezuka", # 20th
+		"Tsuburaya Eiji", # 20th
 		"Hayao Miyazaki", # 20th
 		"Toro Okamoto", # Contest Reward
 	],
@@ -935,19 +960,32 @@ iCivJapan : {
 		"Yoshida Mitsuyoshi", # 17th
 		"Takakazu Seki", # 17th
 		"Aida Yasuaki", # 18th
+		"Sugita Genpaku", # 18th
+		"Ogata Kouan", # 19th
+		"Shibasaburou Kitasato", # 19th
 		iGlobal,
+		"Hideyo Noguchi", # 20th
+		"Kiyoshi Shiga", # 20th
+		"Kumagusu Minakata", # 20th
 		"Kiyoshi Itou", # 20th
 		"Hideki Yukawa", # 20th
+		"Shinichirou Tomonaga", # 20th
 		"Masatoshi Koshiba", # 20th
 		"Kenkichi Iwasawa", # 20th
 	],
 	iGreatMerchant : [
 		"Ruson Sukezaemon", # 16th
+		"Yodoya Juutou", # 17th
+		"Mitsui Takatoshi", # 17th
 		"Shousuke Tanaka", # 17th
+		"Kounoike Zenzaemon", # 17-20th (Zaibatsu hereditary name)
+		"Sumitomo Kichizaemon", # 17-20th
 		"Takadaya Kahei", # 18th
 		iIndustrial,
 		"Torakusu Yamaha", # 19th
 		"Outano Kouzui", # 19th
+		"Yatarou Iwasaki", # 19th 
+		"Zenjirou Yasuda", # 19th
 		iGlobal,
 		"Masahisa Fujita", # 20th
 		"Kiichiro Toyoda", # 20th
@@ -955,9 +993,15 @@ iCivJapan : {
 		"Yoshitaka Fukuda", # 20th
 	],
 	iGreatEngineer : [
+		"Gyouki", # 8th
+		"Yaita Kinbee", # 16th
+		"Yasui Douton", # 16th
+		"Hiraga Gennai" # 18th
+		iIndustrial,
 		"Tanaka Hisashige", # 19th
 		"Katayama Toukuma", # 19th
 		"Takeda Ayasaburou", # 19th
+		"Sakichi Toyoda", # 19th
 		iGlobal,
 		"Koutarou Honda", # 20th
 		"Ken Sakamura", # 20th
@@ -967,29 +1011,43 @@ iCivJapan : {
 	],
 	iGreatStatesman : [
 		"Shoutouku Taishi", # 6th
+		"Fujiwara no Michinaga", # 11th
 		"Taira no Kiyomori", # 12th
 		"fHoujou Masako", # 12th
+		"Ashikaga Yoshimitsu", # 14th
 		iRenaissance,
 		"Tokugawa Ieyasu", # 16th
 		"Tsunenaga Hasekura", # 17th
 		"Arai Hakuseki", # 17th
+		"Tanuma Okitsugu", # 18th
 		iIndustrial,
 		"Sakamoto Ryouma", # 19th
 		"Oukubo Toshimichi", # 19th
 		"Yukichi Fukuzawa", # 19th
 		iGlobal,
+		"Yukio Ozaki", # 20th
+		"Korekiyo Takahashi", # 20th
 		"Shigeru Yoshida", # 20th
 		"fSadako Ogata", # 20th
 	],
 	iGreatGeneral : [
 		"Fujiwara no Kamatari", # 7th
+		"Sakanoue no Tamuramaro", # 8th
+		"Taira no Masakado", # 10th
 		"Minamoto no Yoritomo", # 12th
+		"Kusunoki Masashige", # 13th
 		"Ashikaga Takauji", # 14th
 		iRenaissance,
+		"Houjou Souun", # 16th
+		"Takeda Shingen", # 16th
+		"Shimazu Yoshihiro", # 16th
+		"fTachibana Ginchiyo", # 16th
 		"Toyotomi Hideyoshi", # 16th
 		iIndustrial,
 		"fNakano Takeko", # 19th
 		"Tougou Heihachirou", # 19th
+		"Yoshifuru Akiyama", # 19th
+		"Gonnohyoue Yamamoto", # 19th
 		iGlobal,
 		"Isoroku Yamamoto", # 20th
 		"Tomoyuki Yamashita", # 20th
@@ -1002,11 +1060,13 @@ iCivJapan : {
 		"fChiyome Mochizuki", # 16th
 		"Ishikawa Goemon", # 16th
 		iIndustrial,
+		"Mamiya Rinzou", # 18th
 		"Nezumi Kozou", # 19th
 		"Akashi Motojiro", # 19th
 		iGlobal,
 		"fYoshiko Kawashima", # 20th
 		"Takeo Yoshikawa", # 20th
+		"Keiji Suzuki", # 20th
 	],
 },
 iCivEthiopia : {
@@ -2189,6 +2249,7 @@ iCivRussia : {
 		"Vladimir Shukhov", # 19th
 		"Sergey Prokudin-Gorsky", # 19th
 		iGlobal,
+		"Mikhail Kalashnikov", # 20th
 		"Sergei Korolev", # 20th
 		"Andrey Tupolev", # 20th
 		u"Léon Theremin", # 20th
@@ -2198,6 +2259,8 @@ iCivRussia : {
 	],
 	iGreatStatesman : [
 		"Vladimir Sviatoslavich", # 11th
+		"Yaroslav Mudry ", # 11th
+		"fMarfa Posadnitsa", # 15th
 		"Ivan Vasilyevich", # 15th
 		iRenaissance,
 		"Vasily Tatishchev", # 18th
@@ -2210,6 +2273,7 @@ iCivRussia : {
 		"Leon Trotsky", # 20th
 		"fAlexandra Kollontai", # 20th
 		"Andrei Sakharov", # 20th
+		"Mikhail Gorbachev", # 20th
 	],
 	iGreatGeneral : [
 		"Alexander Nevsky", # 13th
@@ -2224,6 +2288,7 @@ iCivRussia : {
 		"fVasilisa Kozhina", # 19th
 		"fNadezhda Durova", # 19th
 		iGlobal,
+		"Mikhail Tukhachevsky", # 20th
 		"Georgy Zhukov", # 20th
 		"Vasily Chuikov", # 20th
 	],
