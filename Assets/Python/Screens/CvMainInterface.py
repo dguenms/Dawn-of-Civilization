@@ -4044,10 +4044,10 @@ class CvMainInterface:
 						
 						if iHealth == 0 and iHappiness == 0:
 							szTempBuffer = u"(%d)" % iNumResources
-						elif iResourceDiff >= 0:
+						elif iResourceDiff > 0:
 							szTempBuffer = u"(%d)" % iResourceDiff
 						else:
-							szTempBuffer = u"<color=255,0,0>(%d)</color>" % abs(iResourceDiff)
+							szTempBuffer = u"<color=255,0,0>(%d)</color>" % abs(iResourceDiff-1)
 						
 						szLeadBuffer = szLeadBuffer + szTempBuffer + "</font>"
 						
