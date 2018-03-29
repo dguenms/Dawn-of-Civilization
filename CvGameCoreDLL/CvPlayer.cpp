@@ -25664,13 +25664,26 @@ struct cultureRankCompare
 
 void CvPlayer::updateCultureRanks() const
 {
+	int iLoop;
+	CvPlotGroup* pPlotGroup;
+	for (pPlotGroup = firstPlotGroup(&iLoop); pPlotGroup != NULL; pPlotGroup = nextPlotGroup(&iLoop))
+	{
+		updateCultureRanks(pPlotGroup);
+	}
+}
+
+void CvPlayer::updateCultureRanks(CvPlotGroup* pPlotGroup) const
+{
 	std::vector<CvCity*> cities;
 
 	int iLoop;
 	CvCity* pLoopCity;
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		cities.push_back(pLoopCity);
+		if (pLoopCity->plot()->getPlotGroup(getID()) == pPlotGroup)
+		{
+			cities.push_back(pLoopCity);
+		}
 	}
 
 	cultureRankCompare cmp;

@@ -1317,6 +1317,7 @@ public:
 	bool canUseSlaves() const;
 
 	void updateCultureRanks() const;
+	void updateCultureRanks(CvPlotGroup* pPlotGroup) const;
 
 	bool m_bTurnPlayed;
 
