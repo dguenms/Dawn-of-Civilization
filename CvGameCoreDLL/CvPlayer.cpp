@@ -13682,7 +13682,7 @@ void CvPlayer::changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes
 	if (iChange != 0)
 	{
 		m_ppaaiImprovementYieldChange[eIndex1][eIndex2] = (m_ppaaiImprovementYieldChange[eIndex1][eIndex2] + iChange);
-		FAssert(getImprovementYieldChange(eIndex1, eIndex2) >= 0);
+		//FAssert(getImprovementYieldChange(eIndex1, eIndex2) >= 0);
 
 		updateYield();
 	}

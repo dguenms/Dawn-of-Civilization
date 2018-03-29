@@ -31326,7 +31326,7 @@ BeginPlot
 	x=68,y=36
 	RiverNSDirection=0
 	isNOfRiver
-	RiverWEDirection=0
+	RiverWEDirection=3
 	isWOfRiver
 	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM

@@ -2344,7 +2344,7 @@ void CvGame::updateTechRanks()
 	int iI, iJ;
 
 	TeamTypes eBestTeam;
-	bool abTeamRanked[MAX_TEAMS];
+	bool* abTeamRanked = new bool[MAX_TEAMS];
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{

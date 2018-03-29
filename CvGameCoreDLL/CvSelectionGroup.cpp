@@ -1131,6 +1131,7 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 		case MISSION_DAMAGE:
 		case MISSION_MULTI_SELECT:
 		case MISSION_MULTI_DESELECT:
+		case MISSION_ASSASSIN:
 			break;
 
 		default:

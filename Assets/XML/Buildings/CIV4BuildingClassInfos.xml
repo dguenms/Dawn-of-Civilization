@@ -353,15 +353,6 @@
 			<DefaultBuilding>BUILDING_MARKET</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GROCER</Type>
-			<Description>TXT_KEY_BUILDING_GROCER</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_GROCER</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BANK</Type>
 			<Description>TXT_KEY_BUILDING_BANK</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

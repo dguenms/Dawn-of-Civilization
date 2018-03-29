@@ -176,9 +176,6 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
-				<PrereqTech>TECH_CEREMONIAL_BURIAL</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_MYTHOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
@@ -210,9 +207,6 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
-				<PrereqTech>TECH_FISHING</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_SAILING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
