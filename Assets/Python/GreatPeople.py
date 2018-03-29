@@ -996,7 +996,7 @@ iCivJapan : {
 		"Gyouki", # 8th
 		"Yaita Kinbee", # 16th
 		"Yasui Douton", # 16th
-		"Hiraga Gennai" # 18th
+		"Hiraga Gennai", # 18th
 		iIndustrial,
 		"Tanaka Hisashige", # 19th
 		"Katayama Toukuma", # 19th
