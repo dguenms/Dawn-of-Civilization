@@ -1154,7 +1154,7 @@ class RFCUtils:
 					lSlaves.append(unit)
 					
 			for slave in lSlaves:
-				slave.kill(iBarbarian, False)
+				slave.kill(False, iBarbarian)
 			
 	def removeSlaves(self, city):
 		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
@@ -1857,7 +1857,7 @@ class RFCUtils:
 	def flipUnit(self, unit, iNewOwner, tPlot):
 		iUnitType = unit.getUnitType()
 		if unit.getX() >= 0 and unit.getY() >= 0:
-			unit.kill(iBarbarian, False)
+			unit.kill(False, iBarbarian)
 			self.makeUnit(iUnitType, iNewOwner, tPlot, 1)
 		
 	def relocateUnitsToCore(self, iPlayer, lUnits):
@@ -1892,7 +1892,7 @@ class RFCUtils:
 	def killUnits(self, lUnits):
 		for unit in lUnits:
 			if unit.getX() >= 0 and unit.getY() >= 0:
-				unit.kill(iBarbarian, False)
+				unit.kill(False, iBarbarian)
 				
 	def ensureDefenders(self, iPlayer, tPlot, iNumDefenders):
 		lUnits = [unit for unit in self.getUnitList(tPlot) if unit.getOwner() == iPlayer and unit.canFight()]

@@ -1813,10 +1813,10 @@ class RiseAndFall:
 
 	def convertSurroundingPlotCulture(self, iCiv, lPlots):
 		for (x, y) in lPlots:
-			pPLot = gc.getMap().plot(x, y)
-			if pPLot.isCore(pPLot.getOwner()) and not pPLot.isCore(iCiv): continue
-			if not pPLot.isCity():
-				utils.convertPlotCulture(pPLot, iCiv, 100, False)
+			pPlot = gc.getMap().plot(x, y)
+			if pPlot.getOwner() >= 0 and pPlot.isCore(pPlot.getOwner()) and not pPlot.isCore(iCiv): continue
+			if not pPlot.isCity():
+				utils.convertPlotCulture(pPlot, iCiv, 100, False)
 
 	def findSeaPlots( self, tCoords, iRange, iCiv):
 		"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
@@ -2309,6 +2309,7 @@ class RiseAndFall:
 	
 		iHuman = utils.getHumanID()
 		turnsLeft = data.iBetrayalTurns
+		
 		lTempPlots = [(x, y) for (x, y) in data.lTempPlots if not gc.getMap().plot(x, y).isCore(data.iOldCivFlip)]
 		plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		if not plotList:
