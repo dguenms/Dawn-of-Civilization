@@ -726,7 +726,6 @@ BeginPlayer
 	Team=48
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
-	Color=PLAYERCOLOR_SELJUK
 	ArtStyle=ARTSTYLE_MIDDLE_EAST
 	PlayableCiv=0
 	MinorNationStatus=1

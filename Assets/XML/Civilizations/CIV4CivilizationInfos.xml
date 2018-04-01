@@ -420,7 +420,7 @@
 			<ShortDescription>TXT_KEY_CIV_BABYLONIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_BABYLONIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_BABYLONIA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_BLUE</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BABYLON</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
@@ -1925,7 +1925,7 @@
 			<ShortDescription>TXT_KEY_CIV_GREECE_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_GREECE_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_GREECE_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_CYAN</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_SILVER</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GREECE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
@@ -4895,7 +4895,7 @@
 			<ShortDescription>TXT_KEY_CIV_SELJUK_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_SELJUK_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_SELJUK_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_SELJUK</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SELJUK</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>

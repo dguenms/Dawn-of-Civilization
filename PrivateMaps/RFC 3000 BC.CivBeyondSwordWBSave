@@ -226,7 +226,6 @@ BeginPlayer
 	Team=7
 	LeaderType=LEADER_AHOEITU
 	CivType=CIVILIZATION_POLYNESIA
-	Color=PLAYERCOLOR_POLYNESIA
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -755,7 +754,6 @@ BeginPlayer
 	Team=48
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
-	Color=PLAYERCOLOR_SELJUK
 	ArtStyle=ARTSTYLE_MIDDLE_EAST
 	PlayableCiv=0
 	MinorNationStatus=1
