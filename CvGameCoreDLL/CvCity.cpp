@@ -6720,7 +6720,6 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		case INDEPENDENT2:
 		case NATIVE:
 		case CELTIA: //late start too, as Byzantium stands in the junction point of 3 continents
-		case SELJUKS:
 			return 0;
 	}
 	//Rhye - end
@@ -8939,7 +8938,7 @@ TeamTypes CvCity::getTeam() const
 CultureLevelTypes CvCity::getCultureLevel() const
 {
 	//Leoreth: cap at two for minors
-	if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == SELJUKS)
+	if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2)
 		return std::min(m_eCultureLevel, (CultureLevelTypes)2);
 
 	return m_eCultureLevel;

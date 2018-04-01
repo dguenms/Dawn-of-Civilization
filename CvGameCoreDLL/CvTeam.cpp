@@ -3999,10 +3999,6 @@ bool CvTeam::isAtWar(TeamTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
 
-	// Seljuks always at war
-	if (getID() == SELJUKS || eIndex == (TeamTypes)SELJUKS)
-		return true;
-
 	return m_abAtWar[eIndex];
 }
 
