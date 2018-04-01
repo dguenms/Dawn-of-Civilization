@@ -217,6 +217,11 @@ inline int distanceInfluence(int iCenterValue, int iRange, int iDistance)
 	return (iCenterValue - 1) * (iDistance - iRange) * (iDistance - iRange) / (iRange * iRange) + 1;
 }
 
+inline int sgn(int x)
+{
+	return (x > 0) - (x < 0);
+}
+
 bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer);
 
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
