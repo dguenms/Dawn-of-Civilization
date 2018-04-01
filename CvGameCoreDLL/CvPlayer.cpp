@@ -1702,15 +1702,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	// Leoreth: log game turn of losing this city for previous owner
 	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
 
-	//Leoreth: protect middle eastern cities from Seljuk invasions
-	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
-	{
-		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
-	}
-	else
-	{
-		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
-	}
+	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
@@ -3930,12 +3922,6 @@ bool CvPlayer::canContact(PlayerTypes ePlayer) const
 	}
 
 	if (isMinorCiv() || GET_PLAYER(ePlayer).isMinorCiv())
-	{
-		return false;
-	}
-
-	//Leoreth: Seljuks should be covered by minors but make sure here anyway
-	if (getID() == SELJUKS || ePlayer == (PlayerTypes)SELJUKS)
 	{
 		return false;
 	}
@@ -11421,9 +11407,6 @@ void CvPlayer::verifyAlive()
 
 	if (isAlive())
 	{
-		// Leoreth: keep Seljuks alive early on to avoid exploits
-		if (getID() == SELJUKS && GC.getGameINLINE().getGameTurnYear() < 1250) return;
-
 		bKill = false;
 
 		if (!bKill)

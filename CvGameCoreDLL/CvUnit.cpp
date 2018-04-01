@@ -13960,17 +13960,6 @@ int CvUnit::getOriginalArtStyle(int regionID)
 			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)PHOENICIA).getCivilizationType()).getUnitArtStyleType();
 		}
 	}
-	/*else if (id == REGION_ANATOLIA)
-	{
-		if (GET_PLAYER((PlayerTypes)BYZANTIUM).isAlive() && !(GET_PLAYER((PlayerTypes)SELJUKS).isAlive() || GET_PLAYER((PlayerTypes)TURKEY).isAlive()))
-		{
-			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)BYZANTIUM).getCivilizationType()).getUnitArtStyleType();
-		}
-		else
-		{
-			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)TURKEY).getCivilizationType()).getUnitArtStyleType();
-		}
-	}*/
 	else if (id == REGION_EUROPE)
 	{
 		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDEPENDENT).getCivilizationType()).getUnitArtStyleType();
