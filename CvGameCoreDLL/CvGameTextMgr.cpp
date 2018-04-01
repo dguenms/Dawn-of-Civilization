@@ -17543,6 +17543,15 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 
 	int iBaseModifier = 100;
 
+	// Leoreth: Chinese unique power
+	int iPlayerMod = owner.getYieldRateModifier(eYieldType);
+	if (0 != iPlayerMod)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_PLAYER", iPlayerMod, info.getChar()));
+		szBuffer.append(NEWLINE);
+		iBaseModifier += iPlayerMod;
+	}
+
 	// Buildings
 	int iBuildingMod = 0;
 	for (int i = 0; i < GC.getNumBuildingInfos(); i++)
