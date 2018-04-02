@@ -3,51 +3,11 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
-		<English>The Turks</English>
-		<French>
-			<Text>Les Turques</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>T&#252;rken:Die T&#252;rken:den T&#252;rken</Text>
-			<Gender>Male:Male:Male</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>I Turchi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Los Turcos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<English>The Ottomans</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMANS_PEOPLES</Tag>
-		<English>Turkish Peoples</English>
-		<French>
-			<Text>Peuplades Turques</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>T&#252;rkische V&#246;lker:t&#252;rkischen V&#246;lker:t&#252;rkische V&#246;lkern</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>Popoli Turchi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pueblos Turcos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<English>Ottoman Peoples</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMANS_DEFAULT</Tag>
@@ -158,7 +118,7 @@
 		<English>Khedivate of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_BABYLONIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_BABYLONIA</Tag>
 		<English>Eyalet of Mesopotamia</English>
 	</TEXT>
 	<TEXT>
