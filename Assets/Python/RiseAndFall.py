@@ -2233,6 +2233,8 @@ class RiseAndFall:
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 		elif iCiv == iVikings:
 			utils.makeUnit(iHuscarl, iCiv, tPlot, 3)
+		elif iCiv == iTurks:
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 4)
 		elif iCiv == iArabia:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 4)
@@ -2442,6 +2444,11 @@ class RiseAndFall:
 				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
+		elif iCiv == iTurks:
+			utils.createSettlers(iCiv, 5)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 5)
+			utils.makeUnit(iScout, iCiv, tPlot, 1)
 		elif iCiv == iArabia:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -2795,6 +2802,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 			#utils.makeUnit(iSettler, iCiv, tPlot, 1)
 		elif iCiv == iVikings:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iTurks:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iArabia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)

@@ -263,7 +263,7 @@ dMasterTitles = {
 	iPortugal : "TXT_KEY_ADJECTIVE_TITLE",
 	iMongolia : "TXT_KEY_CIV_MONGOL_VASSAL",
 	iMughals : "TXT_KEY_CIV_MUGHAL_VASSAL",
-	iOttoman : "TXT_KEY_CIV_OTTOMAN_VASSAL",
+	iOttomans : "TXT_KEY_CIV_OTTOMAN_VASSAL",
 	iThailand : "TXT_KEY_CIV_THAI_VASSAL",
 }
 
@@ -275,7 +275,7 @@ dCommunistVassalTitles = {
 	iRussia : {
 		iChina : "TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE",
 		iJapan : "TXT_KEY_CIV_RUSSIA_SOVIET_JAPAN",
-		iOttoman : "TXT_KEY_CIV_RUSSIA_SOVIET_OTTOMANS",
+		iOttomans : "TXT_KEY_CIV_RUSSIA_SOVIET_OTTOMANS",
 		iGermany : "TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY",
 	},
 }
@@ -503,6 +503,7 @@ dStartingLeaders = [
 	iMaya : iPacal,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
+	iTurks : iAlpArslan,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
 	iKhmer : iSuryavarman,
