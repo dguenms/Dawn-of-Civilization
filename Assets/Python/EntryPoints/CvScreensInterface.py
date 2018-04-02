@@ -1057,7 +1057,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
 			return 43
 			
-	elif iPlayer == iTurkey:
+	elif iPlayer == iOttomans:
 		if (x,y) in vic.lEasternMediterranean:
 			return 47
 			

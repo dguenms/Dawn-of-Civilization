@@ -37,7 +37,6 @@ def getStartingTechs(iPlayer):
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
 		if tBirth[iPlayer] > utils.getScenarioStartYear(): continue
-		if iPlayer == iSeljuks: continue
 	
 		iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 		if iCivilization in lStartingTechs[iScenario]:
@@ -109,7 +108,7 @@ iCivMongols :	Techs([iPaper, iCompass], column=7, exceptions=[iTheology]),
 iCivAztecs :	Techs([iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
 iCivItaly : 	Techs([iCommune, iPaper, iCompass, iDoctrine], column=7),
 iCivMughals :	Techs([iCommune, iCropRotation, iDoctrine, iGunpowder], column=7),
-iCivTurkey :	Techs([iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder], column=7),
+iCivOttomans :	Techs([iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder], column=7),
 iCivCongo : 	Techs([iMachinery, iCivilService, iTheology], column=6),
 iCivThailand : 	Techs(column=8, exceptions=[iCompass, iDoctrine, iCommune, iPatronage]),
 iCivIran : 	Techs([iHeritage, iFirearms], column=9),
@@ -148,7 +147,7 @@ iCivHolyRome :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, 
 iCivRussia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivPoland :	Techs(column=11, exceptions=[iEconomics, iGeography]),
 iCivPortugal :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
-iCivTurkey :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
+iCivOttomans :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
 iCivMughals :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration, iOptics]),
 iCivThailand :	Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivCongo :	Techs([iCartography, iJudiciary], column=8),
