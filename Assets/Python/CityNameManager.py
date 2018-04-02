@@ -76,7 +76,7 @@ def getLanguages(iCiv):
 		if utils.isReborn(iCiv): return (iLangMexican, iLangSpanish)
 		return (iLangAztec, iLangMayan)
 	elif iCiv == iMughals: return (iLangPersian, iLangArabian, iLangIndian)
-	elif iCiv == iTurkey: return (iLangTurkish, iLangArabian)
+	elif iCiv == iOttomans: return (iLangTurkish, iLangArabian)
 	elif iCiv == iThailand: return (iLangThai, iLangKhmer, iLangIndonesian)
 	elif iCiv == iCongo: return (iLangCongolese,)
 	elif iCiv == iNetherlands: return (iLangDutch,)
@@ -86,7 +86,6 @@ def getLanguages(iCiv):
 	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
 	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iCeltia: return (iLangCeltic,)
-	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
 	else: return None
 	
 def getNativeLanguages(tPlot):
@@ -189,7 +188,7 @@ def onCityAcquired(city, iNewOwner):
 	
 	if sOldName == 'Inbhir Nis' and iNewOwner != iCeltia: sNewName = 'Inverness'
 	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCelta: sNewName = 'Edinburgh'
-	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwner not in [iRome, iTurkey]: sNewName = 'Buda'
+	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwner not in [iRome, iOttomans]: sNewName = 'Buda'
 	elif sOldName in ['Takao', 'Gaoxiong'] and iNewOwner >= iNumPlayers: sNewName = 'Kaohsiung'
 	elif sOldName == 'Momba&#231;a' and iNewOwner != iPortugal: sNewName = 'Mombasa'
 	elif sOldName == 'Mo&#231;ambique' and iNewOwner != iPortugal: sNewName = 'Mozambique'

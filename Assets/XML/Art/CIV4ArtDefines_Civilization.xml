@@ -265,8 +265,8 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_SELJUK</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Seljuks.dds</Button>
+			<Type>ART_DEF_CIVILIZATION_TURKS</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Turks.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Bow.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>

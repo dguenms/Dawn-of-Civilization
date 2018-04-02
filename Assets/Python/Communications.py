@@ -31,7 +31,7 @@ tPool2 = (iEgypt, -1,
 
 
 tPool3 = (iEgypt,  
-	iTurkey,
+	iOttomans,
 	iEngland,
 	iInca,
 	iCarthage,

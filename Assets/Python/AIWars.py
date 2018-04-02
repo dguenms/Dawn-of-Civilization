@@ -111,7 +111,6 @@ class AIWars:
 			utils.minorWars(iIndependent2)
 		if iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50):
 			utils.minorWars(iCeltia)
-			utils.minorWars(iSeljuks)
 		
 		self.checkConquest(tConquestGreeceMesopotamia)
 		self.checkConquest(tConquestGreeceEgypt)
