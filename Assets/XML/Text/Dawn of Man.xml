@@ -34,7 +34,7 @@
 		<English>It is the year 330 AD. With the Roman Empire threatened by Barbarian invasions from the east, it becomes evident that the Empire cannot be governed from Rome alone. So Constantine the Great has founded Constantinopolis as a "New Rome", in hopes that the Eastern Empire will be able to withstand these incursions and eventually restore the glory of the Roman Empire.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_BYZANTIUM_LATE</Tag>
+		<Tag>TXT_KEY_DOM_BYZANTIUM_600AD</Tag>
 		<English>It is the year 600 AD. After the death of Justinian, most of his successes have been unmade again. While the Lombards took Northern Italy and the Danube could be barely held against the Slavs, Byzantium was also plunged into a war against Sassanid Persia. Its victory proved Pyrrhic, and now the Empire is economically and militarily weakened.</English>
 	</TEXT>
 	<TEXT>
@@ -46,7 +46,7 @@
 		<English>It is the year 3000 BC. China is the easternmost region of the world where human civilization first develops. Through the dynasties of Xia, Shang and Zhou, cities develop mainly in the vicinity of the Yellow River, and the concept of a "Mandate of Heaven" is invented to legitimize the rule of the Middle Kingdom of China through the ages.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_CHINA_LATE</Tag>
+		<Tag>TXT_KEY_DOM_CHINA_600AD</Tag>
 		<English>It is the year 600 AD. After the Han Dynasty had collapsed, civil war between the Chinese kingdoms ensued. Only 11 years ago Emperor Wen of Sui managed to reunite China and reclaim the Mandate of Heaven. But the power of the Sui Dynasty is not completely consolidated, and the old challenges of China remain.</English>
 	</TEXT>
 	<TEXT>
@@ -130,7 +130,7 @@
 		<English>It is the year 525 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_JAPAN_LATE</Tag>
+		<Tag>TXT_KEY_DOM_JAPAN_600AD</Tag>
 		<English>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
 	</TEXT>
 	<TEXT>
@@ -146,7 +146,7 @@
 		<English>It is the year 50 BC. The three Korean kingdoms of Silla, Baekje and Goguryeo form on the Korean peninsula, the first step of centralization of power away from their predecessor chiefdoms. The Chinese are close; Korea will have to have to adapt their more advanced organization without abandoning its own sovereignty.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_KOREA_LATE</Tag>
+		<Tag>TXT_KEY_DOM_KOREA_600AD</Tag>
 		<English>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</English>
 	</TEXT>
 	<TEXT>
@@ -270,7 +270,7 @@
 		<English>It is the year 551 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for plunder or settlement.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_VIKINGS_LATE</Tag>
+		<Tag>TXT_KEY_DOM_VIKINGS_600AD</Tag>
 		<English>It is the year 600 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also those of the Mediterranean and even the New World make good targets for either plunder or settlement.</English>
 	</TEXT>
 	<TEXT>

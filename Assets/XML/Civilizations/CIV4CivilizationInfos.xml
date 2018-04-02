@@ -4096,7 +4096,7 @@
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
-			<Identifier>TUR</Identifier>
+			<Identifier>OTT</Identifier>
 			<StartingYear>1280</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>35</LoadingTime>
@@ -5501,7 +5501,7 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
-					<LeaderName>LEADER_ALP</LeaderName>
+					<LeaderName>LEADER_ALP_ARSLAN</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
