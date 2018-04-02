@@ -12,11 +12,11 @@ import SettlerMaps
 import WarMaps
 import CvScreenEnums
 
-
 # globals
 MainOpt = BugCore.game.MainInterface
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
+localText = CyTranslator()
 
 tCol = (
 '255,255,255',
@@ -1600,7 +1600,7 @@ class RFCUtils:
 				return False
 		
 		if not gc.getPlayer(iPlayer).isAlive() and iGameTurn > data.players[iPlayer].iLastTurnAlive + self.getTurns(20):
-			if tRebirth[iPlayer] == -1 or iGameTurn > getTurnForYear(tRebirth[iPlayer]) + 10:
+			if iPlayer not in dRebirth or iGameTurn > getTurnForYear(dRebirth[iPlayer]) + 10:
 				return True
 				
 		return False
@@ -1898,5 +1898,65 @@ class RFCUtils:
 		lUnits = [unit for unit in self.getUnitList(tPlot) if unit.getOwner() == iPlayer and unit.canFight()]
 		if len(lUnits) < iNumDefenders:
 			self.makeUnit(self.getBestDefender(iPlayer), iPlayer, tPlot, iNumDefenders - len(lUnits))
+			
+	def getGoalText(self, iPlayer, iGoal, bTitle = False):
+		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+		iGameSpeed = gc.getGame().getGameSpeedType()
+		
+		baseKey = "TXT_KEY_UHV_" + gc.getCivilizationInfo(iCiv).getIdentifier() + str(iGoal+1)
+		
+		fullKey = baseKey
+		
+		if bTitle:
+			fullKey += "_TITLE"
+		elif iGameSpeed < 2:
+			fullKey += "_" + gc.getGameSpeedInfo(iGameSpeed).getText().upper()
+			
+		translation = localText.getText(fullKey, ())
+		
+		if translation != fullKey: return translation
+		
+		return localText.getText(baseKey, ())
+		
+	def getReligiousGoalText(self, iReligion, iGoal, bTitle = False):
+		iGameSpeed = gc.getGame().getGameSpeedType()
+	
+		if iReligion < iNumReligions:
+			religionKey = gc.getReligionInfo(iReligion).getText()[:3].upper()
+		elif iReligion == iNumReligions:
+			religionKey = "POL"
+		elif iReligion == iNumReligions+1:
+			religionKey = "SEC"
+			
+		baseKey = "TXT_KEY_URV_" + religionKey + str(iGoal+1)
+		
+		fullKey = baseKey
+		
+		if bTitle:
+			fullKey += "_TITLE"
+		elif iGameSpeed < 2:
+			fullKey += "_" + gc.getGameSpeedInfo(iGameSpeed).getText().upper()
+			
+		translation = localText.getText(fullKey, ())
+		
+		if translation != fullKey: return translation
+		
+		return localText.getText(baseKey, ())
+		
+	def getDawnOfManText(self, iPlayer):
+		iScenario = self.getScenario()
+		
+		baseKey = "TXT_KEY_DOM_" + gc.getPlayer(iPlayer).getCivilizationShortDescription(0).replace(" ", "_").upper()
+		
+		fullKey = baseKey
+		
+		if iScenario == i600AD: fullKey += "_600AD"
+		elif iScenario == i1700AD: fullKey += "_1700AD"
+		
+		translation = localText.getText(str(fullKey), ())
+		
+		if translation != fullKey: return translation
+		
+		return localText.getText(str(baseKey), ())
 			
 utils = RFCUtils()
