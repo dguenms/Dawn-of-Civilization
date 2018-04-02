@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Turkey -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_DESC</Tag>
+		<English>The Turks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_SHORT_DESC</Tag>
+		<English>Turks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_ADJECTIVE</Tag>
+		<English>Turkic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_PEOPLES</Tag>
+		<English>Turkic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_DEFAULT</Tag>
+		<English>%s2 Khaganate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_FASCIST</Tag>
+		<English>Pan-Turkic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_</Tag>
+		<English></English>
+	</TEXT>
+</Civ4GameText>
