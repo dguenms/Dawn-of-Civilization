@@ -33568,7 +33568,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=51
-	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -33954,7 +33953,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=49
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_SHEEP
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33964,6 +33964,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=51
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34777,6 +34778,7 @@ BeginPlot
 	x=89,y=51
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
