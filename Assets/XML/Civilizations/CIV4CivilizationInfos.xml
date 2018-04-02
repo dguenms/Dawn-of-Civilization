@@ -5445,6 +5445,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TURKS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
 			<Identifier>TUR</Identifier>
 			<StartingYear>552</StartingYear>
 			<LoadingTimes>

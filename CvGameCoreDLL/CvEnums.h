@@ -1311,6 +1311,7 @@ enum PlayerTypes				// Exposed to Python
 	BYZANTIUM,
 	JAPAN,
 	VIKINGS,
+	TURKS,
 	ARABIA,
 	TIBET,
 	INDONESIA,
@@ -1342,7 +1343,6 @@ enum PlayerTypes				// Exposed to Python
 	INDEPENDENT2,
 	NATIVE,
 	CELTIA,
-	SELJUKS,
 	BARBARIAN
 };
 
