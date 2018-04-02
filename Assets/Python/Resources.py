@@ -133,6 +133,9 @@ class Resources:
 			
 			self.createResource(50, 44, iIron) # Portugal
 			
+			self.removeResource(87, 49) # Orduqent
+			self.removeResource(89, 51) # Orduqent
+			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
 		elif iGameTurn == getTurnForYear(tBirth[iMongolia]):
 			for tPlot in [(101, 48), (100, 49), (100, 50), (99, 50)]:
