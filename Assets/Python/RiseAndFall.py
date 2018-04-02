@@ -664,7 +664,7 @@ class RiseAndFall:
 					pMassilia.getPlotCity().setCulture(pMassilia.getPlotCity().getOwner(), 1, True)
 
 		# Leoreth: Turkey immediately flips independent cities in its core to avoid being pushed out of Anatolia
-		if iGameTurn ==  data.iOttomanSpawnTurn + 1:
+		if iGameTurn == data.iOttomanSpawnTurn + 1:
 			cityPlotList = utils.getAreaCities(Areas.getBirthArea(iOttomans))
 			for city in cityPlotList:
 				tPlot = (city.getX(), city.getY())
@@ -806,10 +806,10 @@ class RiseAndFall:
 			
 		# Leoreth: check for scripted rebirths
 		for iCiv in range(iNumPlayers):
-			if tRebirth[iCiv] != -1:
-				if iGameTurn == getTurnForYear(tRebirth[iCiv]) and not gc.getPlayer(iCiv).isAlive():
+			if iCiv in dRebirth:
+				if iGameTurn == getTurnForYear(dRebirth[iCiv]) and not gc.getPlayer(iCiv).isAlive():
 					self.rebirthFirstTurn(iCiv)
-				if iGameTurn == getTurnForYear(tRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
+				if iGameTurn == getTurnForYear(dRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
 					self.rebirthSecondTurn(iCiv)
 					
 	def endTurn(self, iPlayer):
@@ -825,8 +825,8 @@ class RiseAndFall:
 	def rebirthFirstTurn(self, iCiv):
 		pCiv = gc.getPlayer(iCiv)
 		teamCiv = gc.getTeam(pCiv.getTeam())
-		if tRebirthCiv[iCiv] != -1:
-			pCiv.setCivilizationType(tRebirthCiv[iCiv])
+		if iCiv in dRebirthCiv:
+			pCiv.setCivilizationType(dRebirthCiv[iCiv])
 		Modifiers.updateModifiers(iCiv)
 		x, y = Areas.dRebirthPlot[iCiv]
 		plot = gc.getMap().plot(x,y)
@@ -893,7 +893,7 @@ class RiseAndFall:
 		if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[gc.getGame().getActivePlayer()]):
 			self.respawnPopup(iCiv)
 
-		gc.getPlayer(iCiv).setLatestRebellionTurn(getTurnForYear(tRebirth[iCiv]))
+		gc.getPlayer(iCiv).setLatestRebellionTurn(getTurnForYear(dRebirth[iCiv]))
 
 		# adjust gold, civics, religion and other special settings
 		if iCiv == iPersia:
@@ -1740,8 +1740,8 @@ class RiseAndFall:
 		pCiv = gc.getPlayer(iCiv)
 		teamCiv = gc.getTeam(pCiv.getTeam())
 		
-		if pCiv.isAlive() and utils.getHumanID() != iCiv:
-			if teamCiv.isHasTech(iExploration) and data.players[iCiv].iColonistsAlreadyGiven < tMaxColonists[iCiv]:
+		if pCiv.isAlive() and utils.getHumanID() != iCiv and iCiv in dMaxColonists:
+			if teamCiv.isHasTech(iExploration) and data.players[iCiv].iColonistsAlreadyGiven < dMaxColonists[iCiv]:
 				lCities = utils.getAreaCitiesCiv(iCiv, Areas.getCoreArea(iCiv))
 				
 				# help England with settling Canada and Australia
