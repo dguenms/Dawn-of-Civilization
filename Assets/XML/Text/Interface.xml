@@ -1857,6 +1857,11 @@
 		<German>Versorgt %d1 St&#228;dte</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CITY_CULTURE_RANK</Tag>
+		<English>Culture Rank: %d1</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>
