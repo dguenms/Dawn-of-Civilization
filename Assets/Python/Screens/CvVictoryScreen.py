@@ -1560,8 +1560,8 @@ class CvVictoryScreen:
 				if (iLoopVC == 7):
 					for i in range(3):
 						iRow = screen.appendTableRow(szTable)
-						sGoalTitle = localText.getText(tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][2][self.iActivePlayer][i] + "_TITLE", ())
-						sGoalText = localText.getText(tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][gc.getGame().getGameSpeedType()][self.iActivePlayer][i], ())
+						sGoalTitle = utils.getGoalText(self.iActivePlayer, i, True)
+						sGoalText = utils.getGoalText(self.iActivePlayer, i)
 						sGoalTurn = ''
 						if not gc.getTeam(self.iActivePlayer).isHasTech(iCalendar) or gc.getPlayer(self.iActivePlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
 							iVictoryYear = dVictoryYears[gc.getPlayer(self.iActivePlayer).getCivilizationType()][i]
@@ -1599,7 +1599,7 @@ class CvVictoryScreen:
 					else:
 						for i in range(3):
 							iRow = screen.appendTableRow(szTable)
-							sGoalText = tReligiousGoals[gc.getGame().getGameSpeedType()][iVictoryType][i]
+							sGoalText = utils.getReligiousGoalText(iVictoryType, i)
 							if iVictoryType == iVictoryPaganism and i == 1: 
 								sGoalText += "_" + str(gc.getCivilizationInfo(gc.getPlayer(self.iActivePlayer).getCivilizationType()).getPaganReligionName(0).upper())
 								if self.iActivePlayer == iMaya and not gc.getPlayer(self.iActivePlayer).isReborn(): sGoalText += "_MAYA"

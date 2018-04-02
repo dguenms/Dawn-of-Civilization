@@ -17,14 +17,14 @@ gc = CyGlobalContext()
 def createMaps():
 	for iPlayer in range(iNumPlayers):
 		createMap(iPlayer, 0)
-		if tRebirth[iPlayer] != -1:
+		if iPlayer in dRebirth:
 			createMap(iPlayer, 1)
 			
 	print 'Maps Created'
 			
 def createMap(iPlayer, iReborn):
 	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
-	if iReborn == 1: iCivilization = tRebirthCiv[iPlayer]
+	if iReborn == 1: iCivilization = dRebirthCiv[iPlayer]
 	sName = gc.getCivilizationInfo(iCivilization).getShortDescription(0)
 	
 	file = open(IMAGE_LOCATION + "\Stability\\" + sName, 'wt')
@@ -80,7 +80,7 @@ def createMap(iPlayer, iReborn):
 	
 	lExtendedCorePlots = []
 	
-	if iReborn == 0 and tRebirth[iPlayer] == -1:
+	if iReborn == 0 and iPlayer in dRebirth:
 		lExtendedCorePlots = Areas.getCoreArea(iPlayer, True)
 		
 	try:
@@ -100,12 +100,12 @@ def createMap(iPlayer, iReborn):
 def getForeignCorePlots(iPlayer, iReborn):
 	lForeignCorePlots = []
 	iSpawnDate = tBirth[iPlayer]
-	if iReborn == 1: iSpawnDate = tRebirth[iPlayer]
+	if iReborn == 1: iSpawnDate = dRebirth[iPlayer]
 	
 	for iLoopPlayer in range(iNumPlayers):
 		if iLoopPlayer != iPlayer:
 			if utils.canEverRespawn(iLoopPlayer, getTurnForYear(iSpawnDate)) or tBirth[iLoopPlayer] > iSpawnDate:
-				for tPlot in Areas.getCoreArea(iLoopPlayer, tRebirth[iLoopPlayer] != 1 and iSpawnDate >= tRebirth[iLoopPlayer]):
+				for tPlot in Areas.getCoreArea(iLoopPlayer, iLoopPlayer in dRebirth and iSpawnDate >= dRebirth[iLoopPlayer]):
 					if not tPlot in lForeignCorePlots:
 						lForeignCorePlots.append(tPlot)
 						
