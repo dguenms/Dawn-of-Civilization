@@ -583,7 +583,7 @@ def completeCollapse(iPlayer):
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == iByzantium:
-		utils.removeReligionByArea(Areas.getCoreArea(iTurkey), iOrthodoxy)
+		utils.removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
 		
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == iChina:

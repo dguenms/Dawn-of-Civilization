@@ -2767,7 +2767,7 @@ iCivMughals : {
 		"Hamid Gul", # 20th
 	],
 },
-iCivTurkey : {
+iCivOttomans : {
 	iGreatProphet : [
 		"Sheikh Bedreddin", # 14th
 		iRenaissance,

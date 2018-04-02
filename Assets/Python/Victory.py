@@ -227,7 +227,7 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iTurkey, iThailand]:
+		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
@@ -1181,37 +1181,37 @@ def checkTurn(iGameTurn, iPlayer):
 				else:
 					lose(iAztecs, 2)
 				
-	elif iPlayer == iTurkey:
+	elif iPlayer == iOttomans:
 	
 		# first goal: have four non-obsolete wonders in your capital in 1550 AD
 		if iGameTurn == getTurnForYear(1550):
-			capital = pTurkey.getCapitalCity()
-			if countCityWonders(iTurkey, (capital.getX(), capital.getY()), False) >= 4:
-				win(iTurkey, 0)
+			capital = pOttomans.getCapitalCity()
+			if countCityWonders(iOttomans, (capital.getX(), capital.getY()), False) >= 4:
+				win(iOttomans, 0)
 			else:
-				lose(iTurkey, 0)
+				lose(iOttomans, 0)
 				
 		# second goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
-		if isPossible(iTurkey, 1):
-			bEasternMediterranean = isCultureControlled(iTurkey, lEasternMediterranean)
-			bBlackSea = isCultureControlled(iTurkey, lBlackSea)
-			bCairo = controlsCity(iTurkey, tCairo)
-			bMecca = controlsCity(iTurkey, tMecca)
-			bBaghdad = controlsCity(iTurkey, tBaghdad)
-			bVienna = controlsCity(iTurkey, tVienna)
+		if isPossible(iOttomans, 1):
+			bEasternMediterranean = isCultureControlled(iOttomans, lEasternMediterranean)
+			bBlackSea = isCultureControlled(iOttomans, lBlackSea)
+			bCairo = controlsCity(iOttomans, tCairo)
+			bMecca = controlsCity(iOttomans, tMecca)
+			bBaghdad = controlsCity(iOttomans, tBaghdad)
+			bVienna = controlsCity(iOttomans, tVienna)
 			
 			if bEasternMediterranean and bBlackSea and bCairo and bMecca and bBaghdad and bVienna:
-				win(iTurkey, 1)
+				win(iOttomans, 1)
 				
 		if iGameTurn == getTurnForYear(1700):
-			expire(iTurkey, 1)
+			expire(iOttomans, 1)
 			
 		# third goal: have more culture than all European civilizations combined in 1800 AD
 		if iGameTurn == getTurnForYear(1800):
-			if pTurkey.countTotalCulture() > getTotalCulture(lCivGroups[0]):
-				win(iTurkey, 2)
+			if pOttomans.countTotalCulture() > getTotalCulture(lCivGroups[0]):
+				win(iOttomans, 2)
 			else:
-				lose(iTurkey, 2)
+				lose(iOttomans, 2)
 				
 	elif iPlayer == iThailand:
 	
@@ -3817,24 +3817,24 @@ def getUHVHelp(iPlayer, iGoal):
 				bBestCity = isBestCity(iAztecs, (18, 37), cityPopulation)
 				aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 
-	elif iPlayer == iTurkey:
+	elif iPlayer == iOttomans:
 		if iGoal == 0:
-			capital = pTurkey.getCapitalCity()
-			iCounter = countCityWonders(iTurkey, (capital.getX(), capital.getY()), False)
+			capital = pOttomans.getCapitalCity()
+			iCounter = countCityWonders(iOttomans, (capital.getX(), capital.getY()), False)
 			aHelp.append(getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL", (iCounter, 4)))
 		elif iGoal == 1:
-			bEasternMediterranean = isCultureControlled(iTurkey, lEasternMediterranean)
-			bBlackSea = isCultureControlled(iTurkey, lBlackSea)
-			bCairo = controlsCity(iTurkey, tCairo)
-			bMecca = controlsCity(iTurkey, tMecca)
-			bBaghdad = controlsCity(iTurkey, tBaghdad)
-			bVienna = controlsCity(iTurkey, tVienna)
+			bEasternMediterranean = isCultureControlled(iOttomans, lEasternMediterranean)
+			bBlackSea = isCultureControlled(iOttomans, lBlackSea)
+			bCairo = controlsCity(iOttomans, tCairo)
+			bMecca = controlsCity(iOttomans, tMecca)
+			bBaghdad = controlsCity(iOttomans, tBaghdad)
+			bVienna = controlsCity(iOttomans, tVienna)
 			aHelp.append(getIcon(bEasternMediterranean) + localText.getText("TXT_KEY_VICTORY_EASTERN_MEDITERRANEAN", ()) + ' ' + getIcon(bBlackSea) + localText.getText("TXT_KEY_VICTORY_BLACK_SEA", ()))
 			aHelp.append(getIcon(bCairo) + localText.getText("TXT_KEY_VICTORY_CAIRO", ()) + ' ' + getIcon(bMecca) + localText.getText("TXT_KEY_VICTORY_MECCA", ()) + ' ' + getIcon(bBaghdad) + localText.getText("TXT_KEY_VICTORY_BAGHDAD", ()) + ' ' + getIcon(bVienna) + localText.getText("TXT_KEY_VICTORY_VIENNA", ()))
 		elif iGoal == 2:
-			iTurkishCulture = pTurkey.countTotalCulture()
+			iOttomanCulture = pOttomans.countTotalCulture()
 			iEuropeanCulture = getTotalCulture(lCivGroups[0])
-			aHelp.append(getIcon(iTurkishCulture > iEuropeanCulture) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iTurkishCulture, iEuropeanCulture)))
+			aHelp.append(getIcon(iOttomanCulture > iEuropeanCulture) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iOttomanCulture, iEuropeanCulture)))
 
 	elif iPlayer == iThailand:
 		if iGoal == 0:

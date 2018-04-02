@@ -89,7 +89,7 @@ def isExtendedBirth(iPlayer):
 	if gc.getGame().getActivePlayer() == iPlayer: return False
 	
 	# add special conditions for extended AI flip zones here
-	if iPlayer == iTurkey and pByzantium.isAlive(): return False
+	if iPlayer == iOttomans and pByzantium.isAlive(): return False
 	
 	return True
 			
@@ -164,7 +164,7 @@ iVikings : (63, 59),	# Stockholm
 iHolyRome : (62, 49),	# Vienna
 iItaly : (60, 44),	# Rome
 iMongolia : (102, 47),	# Khanbaliq
-iTurkey : (68, 45),	# Istanbul
+iOttomans : (68, 45),	# Istanbul
 }
 
 # new capital locations on respawn
@@ -182,7 +182,7 @@ iHolyRome : (62, 49),	# Vienna
 iInca : (26, 22),	# Lima
 iItaly : (60, 44),	# Rome
 iMughals : (85, 37),	# Karachi
-iTurkey : (68, 45),	# Istanbul
+iOttomans : (68, 45),	# Istanbul
 }
 
 ### Birth Area ###
@@ -239,7 +239,7 @@ iPersia :	((74, 37), 	(85, 44)), 	# includes Assyria and Anatolia
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
 iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south
-iTurkey : 	((67, 41), 	(76, 48)), 	# 2 more west
+iOttomans : 	((67, 41), 	(76, 48)), 	# 2 more west
 iArgentina : 	((29, 3), 	(35, 13)), 	# includes Chile
 }
 
@@ -262,7 +262,7 @@ iPoland : [(63, 50), (64, 50)],
 iItaly : [(63,47), (63,46)],
 iMongolia : [(99, 47), (100, 47), (101, 47), (102, 47), (103, 47), (99, 46), (100, 46), (101, 46), (102, 46), (103, 46), (104, 46), (99, 45), (100, 45), (101, 45), (102, 45), (103, 45), (104, 45), (105, 45), (106, 45)],
 iMughals : [(92, 43), (93, 42), (93, 43), (94, 42), (94, 43)],
-iTurkey : [(74, 48), (75, 48), (76, 48), (75, 47), (75, 48), (76, 41)],
+iOttomans : [(74, 48), (75, 48), (76, 48), (75, 47), (75, 48), (76, 41)],
 iNetherlands : [(57, 51), (58, 51)],
 iGermany : [(62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53), (62, 51), (63, 51), (64, 53), (61, 49), (61, 50), (64, 52), (58, 54), (65, 52), (65, 53)],
 iAmerica : [(25, 48), (25, 49), (25, 50), (26, 48), (26, 49), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)],
@@ -337,7 +337,7 @@ iItaly : 	((58, 40),	(63, 47)),
 iMongolia : 	((95, 46),	(106, 52)),
 iAztecs : 	((16, 35),	(19, 40)),	# Mexico
 iMughals : 	((86, 37),	(94, 43)),
-iTurkey : 	((67, 42),	(76, 47)),
+iOttomans : 	((67, 42),	(76, 47)),
 iGermany : 	((58, 49),	(63, 55)),
 }
 
@@ -374,7 +374,7 @@ iHolyRome : [(61, 51), (64, 51), (65, 51), (66, 51)],
 iItaly : [(63, 46), (63, 47)],
 iAztecs : [(19, 40)], # Mexico
 iMughals : [(92, 43), (93, 43), (94, 42), (94, 43)],
-iTurkey : [(67, 42), (70, 42), (71, 42), (73, 42), (74, 42), (75, 42)],
+iOttomans : [(67, 42), (70, 42), (71, 42), (73, 42), (74, 42), (75, 42)],
 iGermany : [(58, 52), (58, 53), (58, 54), (61, 49), (61, 50), (62, 49), (62, 50), (62, 51), (63, 49), (63, 50), (63, 51)],
 }
 
