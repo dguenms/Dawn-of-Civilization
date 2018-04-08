@@ -72,6 +72,9 @@ tIndonesiaBR = (109, 30)
 tPhilippinesTL = (108, 30)
 tPhilippinesBR = (110, 36)
 
+# second Turkic goal: create an overland trade route from a city in China to a Mediterranean port by 1100 AD
+lMediterraneanPorts = [(66, 37), (66, 36), (67, 36), (68, 36), (69, 36), (70, 36), (71, 36), (72, 37), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (70, 43), (69, 43), (69, 44), (68, 45)]
+
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tIberiaTL = (49, 40)
 tIberiaBR = (55, 46)
@@ -721,6 +724,52 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		if iGameTurn == getTurnForYear(1500):
 			expire(iVikings, 2)
+			
+	elif iPlayer == iTurks:
+	
+		# first goal: control 6% of the world's territory and pillage 20 improvements by 900 AD
+		if isPossible(iTurks, 0):
+			if getLandPercent(iTurks) >= 5.995 and data.iTurkicPillages >= 20:
+				win(iTurks, 0)
+				
+		if iGameTurn == getTurnForYear(900):
+			expire(iVikings, 0)
+			
+		# second goal: create an overland trade route between a Chinese and a Mediterranean city and spread the Silk Route to ten of your cities by 1100 AD
+		if isPossible(iTurks, 1):
+			if isConnectedByTradeRoute(iTurks, utils.getPlotList(tChinaTL, tChinaBR), lMediterraneanPorts) and pTurks.countCorporations(iSilkRoute):
+				win(iTurks, 1)
+				
+		if iGameTurn == getTurnForYear(1100):
+			expire(iTurks, 1)
+			
+		# third goal: have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD and another capital with influential culture by 1400 AD
+		if isPossible(iTurks, 2):
+			capital = pTurks.getCapitalCity()
+			tCapital = (capital.getX(), capital.getY())
+			
+			if iGameTurn <= getTurnForYear(900):
+				if capital.getCulture(iTurks) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType()):
+					data.tTurkicCapitals[0] = tCapital
+			
+			if iGameTurn <= getTurnForYear(1100):
+				if tCapital not in data.tTurkicCapitals and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(4).getSpeedThreshold(gc.getGame().getGameSpeedType()):
+					data.tTurkicCapitals[1] = tCapital
+					
+			if iGameTurn <= getTurnForYear(1400):
+				if tCapital not in data.tTurkicCapitals and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(5).getSpeedThreshold(gc.getGame().getGameSpeedType()):
+					win(iTurks, 2)
+					
+		if iGameTurn == getTurnForYear(900):
+			if not data.tTurkicCapitals[0]:
+				expire(iTurks, 2)
+				
+		if iGameTurn == getTurnForYear(1100):
+			if not data.tTurkicCapitals[1]:
+				expire(iTurks, 2)
+				
+		if iGameTurn == getTurnForYear(1400):
+			expire(iTurks, 2)
 			
 	elif iPlayer == iArabia:
 	
@@ -2624,47 +2673,51 @@ def getCityCulture(iPlayer, tPlot):
 	
 	return plot.getPlotCity().getCulture(iPlayer)
 	
-def isConnectedByRailroad(iPlayer, tStart, lTargetList):
+def isConnected(tStart, lTargets, plotFunction):
 	if not lTargetList: return False
-	if not gc.getTeam(iPlayer).isHasTech(iRailroad): return False
-	
-	iStartX, iStartY = tStart
-	iTargetX, iTargetY = lTargetList[0]
-	startPlot = gc.getMap().plot(iStartX, iStartY)
-	
-	if not (startPlot.isCity() and startPlot.getOwner() == iPlayer): return False
+	if not plotFunction(tStart): return False
 	
 	if tStart in lTargetList: return True
+	if not [tTarget for tTarget in lTargetList if plotFunction(tTarget)]: return False
 	
-	iRailroadRoute = gc.getInfoTypeForString("ROUTE_RAILROAD")
-	
-	bValidTarget = False
-	for tPlot in lTargetList:
-		x, y = tPlot
-		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroadRoute):
-			bValidTarget = True
-			break
-	if not bValidTarget: return False
-	
-	lNodes = [(utils.calculateDistance(iStartX, iStartY, iTargetX, iTargetY), iStartX, iStartY)]
+	lNodes = [(utils.minimalDistance(tStart, lTargets, plotFunction), tStart)]
 	heapq.heapify(lNodes)
 	lVisitedNodes = []
 	
-	while len(lNodes) > 0:
-		h, x, y = heapq.heappop(lNodes)
-		lVisitedNodes.append((h, x, y))
+	while lNodes:
+		h, tNode = heapq.heappop(lNodes)
+		lVisitedNodes.append((h, tNode))
 		
-		for (i, j) in utils.surroundingPlots((x, y)):
-			plot = gc.getMap().plot(i, j)
-			if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroadRoute):
-				if (i, j) in lTargetList: return True
-				tTuple = (utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
-				if not tTuple in lVisitedNodes:
-					if not tTuple in lNodes:
-						heapq.heappush(lNodes, tTuple)
+		for tPlot in utils.surroundingPlots(tNode):
+			if plotFunction(tPlot):
+				if tPlot in lTargetList: return True
+				
+				tTuple = (utils.minimalDistance(tPlot, lTargets, plotFunction), tPlot)
+				if not tTuple in lVisitedNodes and not tTuple in lNodes:
+					heapq.heappush(lNodes, tTuple)
 							
 	return False
+	
+def isConnectedByTradeRoute(iPlayer, lStarts, lTargets):
+	for tStart in lStarts:
+		tStartPlot = utils.plot(tStart)
+		if not startPlot.isCity(): return False
+	
+		plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() in [iPlayer, startPlot.getOwner()] and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() in [iRouteRoad, iRouteRailroad, iRouteRomanRoad, iRouteHighway])
+	
+		if isConnected(tStart, lTargets, plotFunction): return True
+		
+	return False
+	
+def isConnectedByRailroad(iPlayer, tStart, lTargets):
+	if not gc.getTeam(iPlayer).isHasTech(iRailroad): return False
+	
+	startPlot = utils.plot(tStart)
+	if not (startPlot.isCity() and startPlot.getOwner() == iPlayer): return False
+	
+	plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() == iPlayer and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() == iRouteRailroad)
+	
+	return isConnected(tStart, lTargets, plotFunction)
 	
 def countPlayersWithAttitudeAndCivic(iPlayer, eAttitude, tCivic):
 	iCivicType, iCivic = tCivic
@@ -3550,6 +3603,39 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iRaidGold = data.iVikingGold
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (iRaidGold, utils.getTurns(3000))))
+			
+	elif iPlayer == iTurks:
+		if iGoal == 0:
+			fLandPercent = getLandPercent(iTurks)
+			iPillagedImprovements = data.iTurkicPillages
+			aHelp.append(getIcon(fLandPercent >= 5.995) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", (str(u"%.2f%%" % fLandPercent), str(6))))
+			aHelp.append(getIcon(iPillagedImprovements >= 20) + localText.getText("TXT_KEY_VICTORY_PILLAGED_IMPROVEMENTS", (iPillagedImprovements, 20)))
+		elif iGoal == 1:
+			bConnected = isConnectedByTradeRoute(iTurks, [], [])
+			iSilkRouteCities = pTurks.countCorporations(iSilkRoute)
+			aHelp.append(getIcon(bConnected) + localText.getText("TXT_KEY_VICTORY_SILK_ROUTE_CONNECTION", ()))
+			aHelp.append(getIcon(iSilkRouteCities >= 10) + localText.getText("TXT_KEY_VICTORY_CITIES_WITH_SILK_ROUTE", (iSilkRouteCities, 10)))
+		elif iGoal == 2:
+			iCultureLevel = 3
+			for tCapital in data.tTurkicCapitals:
+				if tCapital:
+					iCultureLevel += 1
+					capitalPlot = utils.plot(tCapital)
+					if capitalPlot.isCity():
+						name = capitalPlot.getPlotCity().getName()
+						ownName = getRenameName(ownName)
+						if ownName: name = ownName
+						aHelp.append(getIcon(True) + name)
+			
+			if pTurks.getNumCities() > 0:
+				capital = pTurks.getCapitalCity()
+				iCulture = capital.getCulture(iTurks)
+				iRequiredCulture = gc.getCultureLevelInfo(iCultureLevel).getSpeedThreshold(gc.getGame().getGameSpeedType())
+			
+				if (capital.getX(), capital.getY()) in data.tTurkicCapitals:
+					aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_NO_NEW_CAPITAL", ()))
+				else:
+					aHelp.append(getIcon(iCulture >= iRequiredCulture) + localText.getText("TXT_KEY_VICTORY_CAPITAL_CULTURE", (capital.getName(), iCulture, iRequiredCulture)))
 
 	elif iPlayer == iArabia:
 		if iGoal == 0:
