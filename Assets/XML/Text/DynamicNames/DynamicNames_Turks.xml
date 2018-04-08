@@ -14,15 +14,15 @@
 		<English>Turkic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKS_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_TURKESTAN_PEOPLES</Tag>
 		<English>Turkic Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKS_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_TURKESTAN_DEFAULT</Tag>
 		<English>%s2 Khaganate</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKS_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_TURKESTAN_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
 	</TEXT>
 	<TEXT>
