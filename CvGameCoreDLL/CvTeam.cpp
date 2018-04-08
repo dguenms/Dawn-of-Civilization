@@ -7040,7 +7040,7 @@ bool CvTeam::isAtWarWithMajorPlayer() const
 {
 	for (int iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv())
+		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv() && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isBarbarian())
 		{
 			return true;
 		}

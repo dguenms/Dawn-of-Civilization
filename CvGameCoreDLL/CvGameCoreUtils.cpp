@@ -1393,6 +1393,20 @@ bool PUF_canDefend(const CvUnit* pUnit, int iData1, int iData2)
 	return pUnit->canDefend();
 }
 
+bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
+{
+	// Leoreth: Turkic UP
+	if (pUnit->getOwnerINLINE() == BARBARIAN && iData1 == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
+	{
+		if (pUnit->getUnitCombatType() == 2 || pUnit->getUnitCombatType() == 3)
+		{
+			return false;
+		}
+	}
+
+	return pUnit->canDefend();
+}
+
 bool PUF_cannotDefend(const CvUnit* pUnit, int iData1, int iData2)
 {
 	return !(pUnit->canDefend());
@@ -1408,6 +1422,13 @@ bool PUF_canDefendEnemy(const CvUnit* pUnit, int iData1, int iData2)
 	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
 	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
+}
+
+bool PUF_canDefendAgainstEnemy(const CvUnit* pUnit, int iData1, int iData2)
+{
+	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+	return PUF_canDefendAgainst(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2);
 }
 
 bool PUF_canDefendPotentialEnemy(const CvUnit* pUnit, int iData1, int iData2)
