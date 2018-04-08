@@ -1576,4 +1576,8 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ</Tag>
+		<English>Oghuz</English>
+	</TEXT>
 </Civ4GameText>

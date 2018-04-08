@@ -5483,7 +5483,12 @@
 				<City>Kastamonu</City>
 			</Cities>
 			<Buildings/>
-			<Units/>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
+					<UnitType>UNIT_TURKIC_OGHUZ</UnitType>
+				</Unit>
+			</Units>
 			<FreeUnitClasses/>
 			<FreeBuildingClasses>
 				<FreeBuildingClass>
