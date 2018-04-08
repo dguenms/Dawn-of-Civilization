@@ -8917,10 +8917,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46, (Native)
+		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=47, (Native)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Native)
+		CityOwner=47, (Native)
 		CityName=Yax Mutal
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
@@ -9323,18 +9323,18 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46, (Native)
+		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=47, (Native)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=46, (Native)
+		UnitType=UNIT_WORKER, UnitOwner=47, (Native)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Native)
+		CityOwner=47, (Native)
 		CityName=Chich'en Itz&#225;
 		CityPopulation=2
 		BuildingType=BUILDING_MAYAN_BALL_COURT
 		BuildingType=BUILDING_TEMPLE_OF_KUKULKAN
-		Player46Culture=10, (Native)
+		Player47Culture=10, (Native)
 	EndCity
 EndPlot
 BeginPlot
@@ -19633,10 +19633,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Marrakus
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -20472,10 +20472,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Burdigala
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
@@ -21231,10 +21231,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Barcelona
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -21624,10 +21624,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Massilia
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -23077,16 +23077,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Tripolis
 		CityPopulation=2
-		Player44Culture=10, (Independent)
+		Player45Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -23128,37 +23128,37 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=46, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=46, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CATHOLIC_MISSIONARY, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CATHOLIC_MISSIONARY, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_WORKER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Roma
 		CityPopulation=4
 		BuildingType=BUILDING_WALLS
@@ -23171,7 +23171,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		HolyCityReligionType=RELIGION_CATHOLICISM
-		Player45Culture=100, (Independent2)
+		Player46Culture=100, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -23602,31 +23602,31 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_HEAVY_SPEARMAN, UnitOwner=45, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Venetia
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
@@ -24044,12 +24044,12 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Vindobona
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
@@ -24770,13 +24770,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Hesperides
 		CityPopulation=2
-		Player44Culture=10, (Independent)
+		Player45Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -28047,18 +28047,18 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_SPEARMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Aksum
 		CityPopulation=2
 		BuildingType=BUILDING_ETHIOPIAN_STELE
 		ReligionType=RELIGION_ORTHODOXY
-		Player45Culture=50, (Independent2)
+		Player46Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -29656,10 +29656,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
@@ -30101,14 +30101,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		Player45Culture=10, (Independent2)
+		Player46Culture=10, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -31945,10 +31945,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Sirajis
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -31958,7 +31958,7 @@ BeginPlot
 		BuildingType=BUILDING_ZOROASTRIAN_SHRINE
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player45Culture=10, (Independent2)
+		Player46Culture=10, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -32361,14 +32361,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player44Culture=10, (Independent)
+		Player45Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -32724,16 +32724,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
+		CityOwner=46, (Independent)
 		CityName=Herat
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
-		Player45Culture=10, (Independent)
+		Player46Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -33164,16 +33164,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Samarkand
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player44Culture=10, (Independent)
+		Player45Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -33881,22 +33881,22 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Lavapuri
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player44Culture=50, (Independent)
+		Player45Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -34249,16 +34249,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Mumbai
 		CityPopulation=3
 		BuildingType=BUILDING_STABLE
@@ -34271,7 +34271,7 @@ BeginPlot
 		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player44Culture=50, (Independent)
+		Player45Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -34740,19 +34740,19 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Kashgar
 		CityPopulation=3
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		Player45Culture=40, (Independent2)
+		Player46Culture=40, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -35049,19 +35049,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Vijayanagara
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35069,7 +35069,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player45Culture=10, (Independent2)
+		Player46Culture=10, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -35111,19 +35111,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Bhopal
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35131,7 +35131,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player44Culture=50, (Independent)
+		Player45Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35153,13 +35153,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Delhi
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -35172,7 +35172,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
-		Player44Culture=100, (Independent)
+		Player45Culture=100, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35494,19 +35494,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Madurai
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35514,7 +35514,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player44Culture=10, (Independent)
+		Player45Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35552,26 +35552,26 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Golkonda
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player45Culture=50, (Independent2)
+		Player46Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -35958,19 +35958,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=44, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Kanchipuram
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35979,7 +35979,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player44Culture=50, (Independent)
+		Player45Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -36800,16 +36800,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Pataliputra
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -36829,7 +36829,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
-		Player45Culture=50, (Independent2)
+		Player46Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -37173,19 +37173,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=45, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Kolkata
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -37194,7 +37194,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player45Culture=50, (Independent2)
+		Player46Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -37261,16 +37261,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Dunhuang
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
-		Player44Culture=20, (Independent)
+		Player45Culture=20, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -38315,16 +38315,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44, (Independent)
+		CityOwner=45, (Independent)
 		CityName=Pagan
 		CityPopulation=4
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player44Culture=10, (Independent)
+		Player45Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -38755,10 +38755,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent))
+(		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent))
 (	EndUnit)
 (	BeginCity)
-(		CityOwner=44, (Independent))
+(		CityOwner=45, (Independent))
 (		CityName=Chengdu)
 (		CityPopulation=2)
 (		BuildingType=BUILDING_GRANARY)
@@ -39216,7 +39216,7 @@ BeginPlot
 (		UnitType=UNIT_WORKER, UnitOwner=1, (China))
 (	EndUnit)
 	BeginCity
-		CityOwner=45, (China)
+		CityOwner=46, (China)
 		CityName=Chang'an, (Xi'an)
 		CityPopulation=1, (4)
 (		BuildingType=BUILDING_PALACE)
@@ -39226,7 +39226,7 @@ BeginPlot
 (		BuildingType=BUILDING_CONFUCIAN_TEMPLE)
 (		ReligionType=RELIGION_CONFUCIANISM)
 (		ReligionType=RELIGION_TAOISM)
-		Player45Culture=3000, (100)
+		Player46Culture=3000, (100)
 	EndCity
 EndPlot
 BeginPlot
@@ -39996,10 +39996,10 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	BeginCity, (Removed after game start)
-		CityOwner=45
+		CityOwner=46
 		CityName=Guiyang
 		CityPopulation=1
-		Player45Culture=250
+		Player46Culture=250
 	EndCity
 	PlotType=1
 EndPlot
@@ -40048,13 +40048,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (China)
+		UnitType=UNIT_SPEARMAN, UnitOwner=46, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (China)
+		UnitType=UNIT_SPEARMAN, UnitOwner=46, (China)
 	EndUnit
 	BeginCity
-		CityOwner=45, (China)
+		CityOwner=46, (China)
 		CityName=Beijing
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -40070,7 +40070,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player45Culture=100, (20)
+		Player46Culture=100, (20)
 	EndCity
 EndPlot
 BeginPlot
@@ -40443,10 +40443,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (China)
 	EndUnit
 	BeginCity
-		CityOwner=45, (China)
+		CityOwner=46, (China)
 		CityName=Kaifeng
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -40458,7 +40458,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player45Culture=100, (20)
+		Player46Culture=100, (20)
 	EndCity
 EndPlot
 BeginPlot
@@ -41210,10 +41210,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_SPEARMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Guangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -41222,7 +41222,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player45Culture=100, (0)
+		Player46Culture=100, (0)
 	EndCity
 EndPlot
 BeginPlot
@@ -41257,10 +41257,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (China)
+		UnitType=UNIT_ARCHER, UnitOwner=46, (China)
 	EndUnit
 	BeginCity
-		CityOwner=45, (China)
+		CityOwner=46, (China)
 		CityName=Nanjing
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -41275,7 +41275,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player45Culture=100, (20)
+		Player46Culture=100, (20)
 	EndCity
 EndPlot
 BeginPlot
@@ -41311,16 +41311,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=49, (Barbarian))
+(		UnitType=UNIT_ARCHER, UnitOwner=50, (Barbarian))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=49, (Barbarian))
+(		UnitType=UNIT_WARRIOR, UnitOwner=50, (Barbarian))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=49, (Barbarian))
+(		UnitType=UNIT_WARRIOR, UnitOwner=50, (Barbarian))
 (	EndUnit)
 (	BeginCity)
-(		CityOwner=49, (Barbarian))
+(		CityOwner=50, (Barbarian))
 (		CityName=Simiyan hoton)
 (		CityPopulation=2)
 (		BuildingType=BUILDING_WALLS)
@@ -42047,7 +42047,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginCity
-		CityOwner=45, (Independent2)
+		CityOwner=46, (Independent2)
 		CityName=Hangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -42056,7 +42056,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player45Culture=100, (0)
+		Player46Culture=100, (0)
 	EndCity
 EndPlot
 BeginPlot
