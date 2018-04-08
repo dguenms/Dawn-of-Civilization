@@ -2700,7 +2700,7 @@ def isConnected(tStart, lTargets, plotFunction):
 	
 def isConnectedByTradeRoute(iPlayer, lStarts, lTargets):
 	for tStart in lStarts:
-		tStartPlot = utils.plot(tStart)
+		startPlot = utils.plot(tStart)
 		if not startPlot.isCity(): return False
 	
 		plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() in [iPlayer, startPlot.getOwner()] and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() in [iRouteRoad, iRouteRailroad, iRouteRomanRoad, iRouteHighway])
