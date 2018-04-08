@@ -147,7 +147,9 @@ class RFCUtils:
 
 	def calculateDistanceTuples(self, t1, t2):
 		return self.calculateDistance(t1[0], t1[1], t2[0], t2[1])
-
+		
+	def minimalDistance(self, tuple, list, entryFunction = lambda x: True):
+		return self.getHighestEntry([self.calculateDistanceTuples(tuple, x) for x in list if entryFunction(x)], lambda x: -x)
 
 	#RiseAndFall
 	def debugTextPopup(self, strText):
@@ -1959,5 +1961,8 @@ class RFCUtils:
 		if translation != fullKey: return translation
 		
 		return localText.getText(str(baseKey), ())
+		
+	def plot(self, tuple):
+		return gc.getMap().plot(tuple[0], tuple[1])
 			
 utils = RFCUtils()
