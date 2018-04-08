@@ -12,10 +12,6 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
 
-iNumCompanies = 9
-
-(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
-
 tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
@@ -40,10 +36,10 @@ class Companies:
 
 	def checkTurn(self, iGameTurn):
 
-		iCompany = iGameTurn % iNumCompanies
+		iCompany = iGameTurn % iNumCorporations
 		self.checkCompany(iCompany, iGameTurn)
 
-		iCompany = (iGameTurn + 4) % iNumCompanies
+		iCompany = (iGameTurn + 4) % iNumCorporations
 		self.checkCompany(iCompany, iGameTurn)
 
 
@@ -105,7 +101,7 @@ class Companies:
 	def onCityAcquired(self, argsList):
 		iPreviousOwner, iNewOwner, city, bConquest, bTrade = argsList
 		
-		for iCompany in range(iNumCompanies):
+		for iCompany in range(iNumCorporations):
 			if city.isHasCorporation(iCompany):
 				if self.getCityValue(city, iCompany) < 0:
 					city.setHasCorporation(iCompany, False, True, True)
@@ -124,7 +120,7 @@ class Companies:
 		
 		# Central Planning: only one company per city
 		if owner.getCivics(iCivicsEconomy) == iCentralPlanning:
-			for iLoopCorporation in range(iNumCompanies):
+			for iLoopCorporation in range(iNumCorporations):
 				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
 					return -1
 
