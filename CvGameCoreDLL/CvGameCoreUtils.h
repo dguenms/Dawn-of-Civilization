@@ -317,9 +317,11 @@ bool PUF_canSiege( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_isPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_canDeclareWar( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
+bool PUF_canDefendAgainst( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1); // Leoreth
 bool PUF_cannotDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefendGroupHead( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefendEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
+bool PUF_canDefendAgainstEnemy( const CvUnit* pUnit, int iData1, int iData2 = 1); // Leoreth
 bool PUF_canDefendPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_canAirAttack( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canAirDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);

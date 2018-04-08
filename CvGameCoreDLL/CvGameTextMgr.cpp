@@ -1779,7 +1779,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 		pDefender = pPlot->getBestDefender(NO_PLAYER, pAttacker->getOwnerINLINE(), pAttacker, !gDLL->altKey(), NO_TEAM == pAttacker->getDeclareWarMove(pPlot));
 // BUG - Combat Odds for Friendlies - end
 
-		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefend(pPlot) && pAttacker->canAttack(*pDefender))
+		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefendAgainst(pAttacker, pPlot) && pAttacker->canAttack(*pDefender)) // Leoreth
 		{
 			if (pAttacker->getDomainType() != DOMAIN_AIR)
 			{

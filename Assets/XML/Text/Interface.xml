@@ -1877,6 +1877,11 @@
 		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_UNIT_JOINED_YOU</Tag>
+		<English>A %s1_UnitName has joined our armies</English>
+		<German>Eine Einheit %s1_UnitName ist unseren Armeen beigetreten</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

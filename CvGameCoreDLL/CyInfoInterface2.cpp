@@ -61,6 +61,8 @@ void CyInfoPythonInterface2()
 
 		.def("getDerivativeCiv", &CvCivilizationInfo::getDerivativeCiv, "int ()")
 
+		.def("getIdentifier", &CvCivilizationInfo::getIdentifier, "string ()") // Leoreth
+
 		// Arrays
 
 		.def("getCivilizationBuildings", &CvCivilizationInfo::getCivilizationBuildings, "int (int i)")
