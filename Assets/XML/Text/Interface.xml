@@ -1851,4 +1851,9 @@
 		<English>[ICON_BULLET]%D1%%%F2 from Unique Power</English>
 		<German>[ICON_BULLET]%D1%%%F2 durch Einzigartige Macht</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_UNIT_JOINED_YOU</Tag>
+		<English>A %s1_UnitName has joined our armies</English>
+		<German>Eine Einheit %s1_UnitName ist unseren Armeen beigetreten</German>
+	</TEXT>
 </Civ4GameText>

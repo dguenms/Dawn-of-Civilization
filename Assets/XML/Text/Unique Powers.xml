@@ -679,6 +679,16 @@
 		<German>Kann unbegrenzt Missionare ausbilden; Missionare k&#246;nnen fremdes Territorium betreten</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_TUR_TITLE</Tag>
+		<English>The Power of Orda:</English>
+		<German>Die Macht der Orda:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TUR</Tag>
+		<English>Barbarians cannot enter your territory at peace and mounted barbarians will join your armies at war</English>
+		<German>Barbaren können Ihr Territorium im Frieden nicht betreten und berittene Barbaren werden im Krieg Ihren Armeen beitreten</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>
 		<English>The Power of Devshirme:</English>
 		<French>Le Pouvoir de l'Assimilation :</French>
