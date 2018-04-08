@@ -129,6 +129,7 @@ iCivKorea :	Techs([iMachinery], column=6, exceptions=[iScholarship]),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
 iCivJapan :	Techs(column=6, exceptions=[iScholarship]),
 iCivVikings :	Techs([iGuilds], column=6),
+iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedicine, iPhilosophy]),
 },
 {
 iCivIndependent:Techs(column=10),
