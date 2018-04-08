@@ -7042,7 +7042,11 @@ bool CvTeam::isAtWarWithMajorPlayer() const
 	{
 		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv() && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isBarbarian())
 		{
-			return true;
+			CvPlayer& kPlayer = GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID());
+			if (kPlayer.isAlive() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
+			{
+				return true;
+			}
 		}
 	}
 
