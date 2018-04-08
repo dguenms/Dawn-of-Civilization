@@ -1915,11 +1915,17 @@ def onGreatPersonBorn(iPlayer, unit):
 					win(iAztecs, 1)
 					
 def onUnitPillage(iPlayer, iGold, iUnit):
+	if iGold >= 1000: return
 
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 	if iPlayer == iVikings:
 		if isPossible(iVikings, 2):
 			data.iVikingGold += iGold
+			
+	# first Turkic goal: pillage 20 improvements by 900 AD
+	elif iPlayer == iTurks:
+		if isPossible(iTurks, 0):
+			data.iTurkicPillages += 1
 			
 	elif iPlayer == iMoors:
 		if isPossible(iMoors, 2) and iUnit == iCorsair:
