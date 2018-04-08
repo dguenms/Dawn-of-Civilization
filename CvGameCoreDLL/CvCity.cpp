@@ -17658,8 +17658,15 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	{
 		if (pPlot->getFeatureType() == FEATURE_MARSH || pPlot->getFeatureType() == FEATURE_JUNGLE || pPlot->getFeatureType() == FEATURE_RAINFOREST)
 		{
-			iCost  -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
+			iCost -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
 		}
+	}
+
+	// Leoreth: Steppe Empires (use this for Steppe and Semidesert terrain later)
+	if (getOwnerINLINE() == TURKS || getOwnerINLINE() == MONGOLIA)
+	{
+		if (pPlot->getTerrainType() == TERRAIN_DESERT) iCost -= GC.getTerrainInfo(TERRAIN_DESERT).getCultureCostModifier();
+		if (pPlot->getTerrainType() == TERRAIN_PLAINS) iCost -= 5;
 	}
 
 	return bOrdering ? iCost : std::max(0, iCost);
