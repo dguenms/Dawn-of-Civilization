@@ -5482,7 +5482,16 @@
 				<City>Semendre</City>
 				<City>Kastamonu</City>
 			</Cities>
-			<Buildings/>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingType>BUILDING_TURKIC_DIVAN</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+			</Buildings>
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
