@@ -16,7 +16,7 @@ iNumCompanies = 9
 
 (iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
 
-tCompanyTechs = (iCompass, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
+tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
@@ -179,6 +179,7 @@ class Companies:
 		
 		# various bonuses
 		if iCompany == iSilkRoute:
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
