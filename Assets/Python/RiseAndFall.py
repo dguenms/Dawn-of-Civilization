@@ -2247,7 +2247,7 @@ class RiseAndFall:
 		elif iCiv == iVikings:
 			utils.makeUnit(iHuscarl, iCiv, tPlot, 3)
 		elif iCiv == iTurks:
-			utils.makeUnit(iHorseArcher, iCiv, tPlot, 4)
+			utils.makeUnit(iOghuz, iCiv, tPlot, 4)
 		elif iCiv == iArabia:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 4)
@@ -2460,7 +2460,7 @@ class RiseAndFall:
 		elif iCiv == iTurks:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			utils.makeUnit(iHorseArcher, iCiv, tPlot, 5)
+			utils.makeUnit(iOghuz, iCiv, tPlot, 6)
 			utils.makeUnit(iScout, iCiv, tPlot, 1)
 		elif iCiv == iArabia:
 			utils.createSettlers(iCiv, 2)
