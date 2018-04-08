@@ -2458,7 +2458,7 @@ class RiseAndFall:
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iTurks:
-			utils.createSettlers(iCiv, 5)
+			utils.createSettlers(iCiv, 6)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnit(iOghuz, iCiv, tPlot, 6)
 			utils.makeUnit(iScout, iCiv, tPlot, 1)
@@ -2949,6 +2949,12 @@ class RiseAndFall:
 				tCapital = Areas.getCapital(iPlayer)
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
+				
+		tCapital = Areas.getCapital(iTurks)
+		utils.makeUnit(iSettler, iTurks, tCapital, 2)
+		utils.makeUnit(iOghuz, iTurks, tCapital, 6)
+		utils.makeUnit(iArcher, iTurks, tCapital, 1)
+		utils.makeUnit(iScout, iTurks, tCapital, 1)
 
 
 	def create4000BCstartingUnits(self):
