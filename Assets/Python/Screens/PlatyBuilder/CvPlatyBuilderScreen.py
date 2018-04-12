@@ -479,7 +479,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Units":
 			for i in xrange(abs(iChange)):
 				unit = gc.getPlayer(self.m_iCurrentPlayer).initUnit(self.iSelection, self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
-				if self.iSelection in lGreatPeopleUnits:
+				if self.iSelection in lGreatPeopleUnits or self.iSelection in [iGreatGeneral, iGreatSpy]:
 					gp.onGreatPersonBorn(unit, self.m_iCurrentPlayer, -1, False)
 		elif self.iPlayerAddMode == "Buildings":
 			if self.m_pCurrentPlot.isCity():
