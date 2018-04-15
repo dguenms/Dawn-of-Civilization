@@ -1915,11 +1915,11 @@ class RFCUtils:
 		elif iGameSpeed < 2:
 			fullKey += "_" + gc.getGameSpeedInfo(iGameSpeed).getText().upper()
 			
-		translation = localText.getText(fullKey, ())
+		translation = localText.getText(str(fullKey), ())
 		
 		if translation != fullKey: return translation
 		
-		return localText.getText(baseKey, ())
+		return localText.getText(str(baseKey), ())
 		
 	def getReligiousGoalText(self, iReligion, iGoal, bTitle = False):
 		iGameSpeed = gc.getGame().getGameSpeedType()
@@ -1940,11 +1940,11 @@ class RFCUtils:
 		elif iGameSpeed < 2:
 			fullKey += "_" + gc.getGameSpeedInfo(iGameSpeed).getText().upper()
 			
-		translation = localText.getText(fullKey, ())
+		translation = localText.getText(str(fullKey), ())
 		
 		if translation != fullKey: return translation
 		
-		return localText.getText(baseKey, ())
+		return localText.getText(str(baseKey), ())
 		
 	def getDawnOfManText(self, iPlayer):
 		iScenario = self.getScenario()
