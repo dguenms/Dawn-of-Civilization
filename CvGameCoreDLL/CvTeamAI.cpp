@@ -467,7 +467,7 @@ AreaAITypes CvTeamAI::AI_calculateAreaAIType(CvArea* pArea, bool bPreparingTotal
 				if (AI_getWarPlan((TeamTypes)iI) != NO_WARPLAN)
 				{
 					FAssert(((TeamTypes)iI) != getID());
-					FAssert(isHasMet((TeamTypes)iI) || GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR));
+					//FAssert(isHasMet((TeamTypes)iI) || GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR));
 
 					if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_ATTACKED_RECENT)
 					{
@@ -3908,7 +3908,7 @@ void CvTeamAI::AI_doWar()
 				}
 				else if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_PREPARING_LIMITED)
 				{
-					FAssert(canDeclareWar((TeamTypes)iI));
+					//FAssert(canDeclareWar((TeamTypes)iI));
 
 					if (AI_getWarPlanStateCounter((TeamTypes)iI) > ((5 * iTimeModifier) / 100))
 					{
@@ -3917,7 +3917,7 @@ void CvTeamAI::AI_doWar()
 				}
 				else if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_PREPARING_TOTAL)
 				{
-					FAssert(canDeclareWar((TeamTypes)iI));
+					//FAssert(canDeclareWar((TeamTypes)iI));
 
 					if (AI_getWarPlanStateCounter((TeamTypes)iI) > ((10 * iTimeModifier) / 100))
 					{

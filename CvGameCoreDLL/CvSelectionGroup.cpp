@@ -4760,7 +4760,7 @@ TeamTypes CvSelectionGroup::getHeadTeam() const
 
 void CvSelectionGroup::clearMissionQueue()
 {
-	FAssert(getOwnerINLINE() != NO_PLAYER);
+	//FAssert(getOwnerINLINE() != NO_PLAYER);
 
 	deactivateHeadMission();
 
@@ -4999,7 +4999,7 @@ void CvSelectionGroup::activateHeadMission()
 
 void CvSelectionGroup::deactivateHeadMission()
 {
-	FAssert(getOwnerINLINE() != NO_PLAYER);
+	//FAssert(getOwnerINLINE() != NO_PLAYER);
 
 	if (headMissionQueueNode() != NULL)
 	{

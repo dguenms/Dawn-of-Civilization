@@ -781,8 +781,8 @@ def calculateStability(iPlayer):
 					if not isTolerated(iPlayer, iReligion) and not gc.getReligionInfo(iReligion).isLocal():
 						bNonStateReligion = True
 						break
-					
-			if city.isHasReligion(iStateReligion):
+
+			if iStateReligion >= 0 and city.isHasReligion(iStateReligion):
 				iStateReligionPopulation += iPopulation
 				if not bNonStateReligion: iOnlyStateReligionPopulation += iPopulation
 					
@@ -1025,7 +1025,7 @@ def calculateStability(iPlayer):
 		# relations
 		if tPlayer.canContact(iLoopPlayer):
 			iNumContacts += 1
-		
+
 			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS: iFuriousRelations += 1
 			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY: iFriendlyRelations += 1
 			
@@ -1583,6 +1583,8 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	data.iRebelCiv = iPlayer
 	
 	for iOtherCiv in range(iNumPlayers):
+		if iPlayer == iOtherCiv: continue
+
 		teamPlayer.makePeace(iOtherCiv)
 		
 		if teamPlayer.isVassal(iOtherCiv):

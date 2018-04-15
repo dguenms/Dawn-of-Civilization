@@ -2606,7 +2606,7 @@ void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 int calculateExperience(int iLevel, PlayerTypes ePlayer)
 {
 	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
-	FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
+	//FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
 
 	// Japanese UP: cheaper promotions
 	/*if (ePlayer == JAPAN)

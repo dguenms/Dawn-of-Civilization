@@ -95,8 +95,6 @@ class AIWars:
 
 	def checkTurn(self, iGameTurn):
 
-		print "Check AI wars"
-
 		#turn automatically peace on between independent cities and all the major civs
 		if iGameTurn % 20 == 7:
 			utils.restorePeaceHuman(iIndependent2, False)
@@ -261,15 +259,19 @@ class AIWars:
 		if iTargetPlayer == -1:
 			return
 			
-		gc.getTeam(iAttackingPlayer).AI_setWarPlan(iTargetPlayer, WarPlanTypes.WARPLAN_PREPARING_LIMITED)
+		if gc.getTeam(iAttackingPlayer).canDeclareWar(iTargetPlayer):
+			gc.getTeam(iAttackingPlayer).AI_setWarPlan(iTargetPlayer, WarPlanTypes.WARPLAN_PREPARING_LIMITED)
 		
 		data.iNextTurnAIWar = iGameTurn + self.getNextInterval(iGameTurn)
 		
 	def determineAttackingPlayer(self):
-		lAggressionLevels = [data.players[i].iAggressionLevel for i in range(iNumPlayers)]
+		lAggressionLevels = [data.players[i].iAggressionLevel for i in range(iNumPlayers) if self.possibleTargets(i)]
 		iHighestEntry = utils.getHighestEntry(lAggressionLevels)
 		
 		return lAggressionLevels.index(iHighestEntry)
+		
+	def possibleTargets(self, iPlayer):
+		return [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if iPlayer != iLoopPlayer and gc.getTeam(gc.getPlayer(iPlayer).getTeam()).canDeclareWar(gc.getPlayer(iLoopPlayer).getTeam())]
 		
 	def determineTargetPlayer(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -278,9 +280,11 @@ class AIWars:
 		lTargetValues = [0 for i in range(iNumPlayers)]
 
 		# determine potential targets
-		for iLoopPlayer in range(iNumPlayers):
+		for iLoopPlayer in self.possibleTargets(iPlayer):
 			pLoopPlayer = gc.getPlayer(iLoopPlayer)
 			tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
+			
+			if iLoopPlayer == iPlayer: continue
 			
 			# requires live civ and past contact
 			if not pLoopPlayer.isAlive(): continue

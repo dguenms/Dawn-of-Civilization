@@ -322,7 +322,7 @@ void CvCityAI::AI_assignWorkingPlots()
 			}
 		}
 	}
-	FAssertMsg(iExtraSpecialists >= 0, "added too many specialists");
+	//FAssertMsg(iExtraSpecialists >= 0, "added too many specialists");
 
 	// if we still have population to assign, assign specialists
 	while (extraSpecialists() > 0)
@@ -1550,6 +1550,7 @@ void CvCityAI::AI_chooseProduction()
 				break;
 
 			case AREAAI_NEUTRAL:
+			case NO_AREAAI:
 				break;
 			default:
 				FAssert(false);

@@ -389,7 +389,8 @@ class Barbs:
 						
 		capital = gc.getPlayer(utils.getHumanID()).getCapitalCity()
 		for unit in lHumanUnits:
-			unit.setXY(capital.getX(), capital.getY())
+			print "SETXY barbs 1"
+			unit.setXY(capital.getX(), capital.getY(), False, True, False)
 			
 		for unit in lOtherUnits:
 			utils.makeUnit(unit.getUnitType(), iPlayer, tPlot, 1)

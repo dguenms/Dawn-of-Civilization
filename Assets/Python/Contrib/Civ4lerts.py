@@ -931,6 +931,8 @@ class RefusesToTalk(AbstractStatefulAlert):
 		"""
 		eActiveTeam, activeTeam = PlayerUtil.getActiveTeamAndID()
 		for eTeam in eTeams:
+			if eTeam == -1:
+				return
 			if eActiveTeam != eTeam and not activeTeam.isHasMet(eTeam):
 				return
 		self.check()

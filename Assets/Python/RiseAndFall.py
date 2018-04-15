@@ -1449,9 +1449,9 @@ class RiseAndFall:
 				if not utils.isDefenderUnit(unit):
 					if unit.getOwner() == iMongolia:
 						if utils.getHumanID() != iMongolia:
-							unit.setXYOld(mongolCapital.getX(), mongolCapital.getY())
+							unit.setXY(mongolCapital.getX(), mongolCapital.getY(), False, True, False)
 					elif unit.getOwner() == iSeljuks:
-						unit.setXYOld(seljukCapital.getX(), seljukCapital.getY())
+						unit.setXY(seljukCapital.getX(), seljukCapital.getY(), False, True, False)
 					else:
 						if unit.getUnitType() == iGhulamWarrior or unit.getUnitType() == iKeshik:
 							unit.kill(False, iBarbarian)
@@ -1506,7 +1506,7 @@ class RiseAndFall:
 						print ("moving starting units from", i, j, "to", tCapital)
 						for i in range(pPlot.getNumUnits()):
 							unit = pPlot.getUnit(0)
-							unit.setXYOld(x, y)
+							unit.setXY(x, y, False, True, False)
 		
 	def birthInFreeRegion(self, iCiv, tCapital, tTopLeft, tBottomRight):
 		x, y = tCapital

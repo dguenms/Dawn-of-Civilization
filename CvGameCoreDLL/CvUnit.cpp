@@ -121,12 +121,12 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	plot()->updateCenterUnit();
 
 	plot()->setFlagDirty(true);
-
+	
+	/* Leoreth: disable random name selection
 	iUnitName = GC.getGameINLINE().getUnitCreatedCount(getUnitType());
 	int iNumNames = m_pUnitInfo->getNumUnitNames();
 	if (iUnitName < iNumNames)
 	{
-		/* Leoreth: disable random name selection
 		int iOffset = GC.getGameINLINE().getSorenRandNum(iNumNames, "Unit name selection");
 
 		for (iI = 0; iI < iNumNames; iI++)
@@ -139,25 +139,8 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				GC.getGameINLINE().addGreatPersonBornName(szName);
 				break;
 			}
-		}*/
-
-		//Leoreth: names in chronological order, but allow some randomness that increases with the game era
-		/*int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
-
-		int iIndex;
-		for (iI = 0; iI < iNumNames; iI++)
-		{
-			iIndex = iI + (iOffset % (iNumNames - iI));
-
-			CvWString szName = gDLL->getText(m_pUnitInfo->getUnitNames(iIndex));
-			if (!GC.getGameINLINE().isGreatPersonBorn(szName))
-			{
-				setName(szName);
-				GC.getGameINLINE().addGreatPersonBornName(szName);
-				break;
-			}
-		}*/
-	}
+		}
+	}*/
 
 	setGameTurnCreated(GC.getGameINLINE().getGameTurn());
 
@@ -4873,7 +4856,7 @@ bool CvUnit::canPillage(const CvPlot* pPlot) const
 bool CvUnit::pillage()
 {
 	CvWString szBuffer;
-	int iPillageGold;
+	int iPillageGold = 0;
 	long lPillageGold;
 	ImprovementTypes eTempImprovement = NO_IMPROVEMENT;
 	RouteTypes eTempRoute = NO_ROUTE;
@@ -6196,7 +6179,6 @@ bool CvUnit::discover()
 	eSecondDiscoveryTech = getDiscoveryTech(eFirstDiscoveryTech);
 
 	FAssertMsg(eFirstDiscoveryTech != NO_TECH, "FirstDiscoveryTech is not assigned a valid value");
-	FAssertMsg(eSecondDiscoveryTech != NO_TECH, "SecondDiscoveryTech is not assigned a valid value");
 
 	if (eFirstDiscoveryTech != NO_TECH)
 	{
