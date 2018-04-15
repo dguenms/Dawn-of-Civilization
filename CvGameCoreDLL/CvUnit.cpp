@@ -3094,6 +3094,13 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 		}
 	}
 
+	// Leoreth: Turkic UP for the AI
+	if (pPlot != NULL && getOwnerINLINE() == BARBARIAN && pPlot->getOwnerINLINE() == TURKS && GC.getGame().getActivePlayer() != TURKS)
+	{
+		setCapturingPlayer(TURKS);
+		kill(false);
+	}
+
 /*************************************************************************************************/
 /**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
 /**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
