@@ -6072,8 +6072,13 @@ void CvCityAI::AI_updateBestBuild()
 
 	int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
 	iProductionAdvantage /= kPlayer.AI_averageYieldMultiplier(YIELD_PRODUCTION);
-	iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
-	iProductionAdvantage /= AI_yieldMultiplier(YIELD_COMMERCE);
+
+	int iCommerceYieldMultiplier = AI_yieldMultiplier(YIELD_COMMERCE);
+	if (iCommerceYieldMultiplier != 0)
+	{
+		iProductionAdvantage *= kPlayer.AI_averageYieldMultiplier(YIELD_COMMERCE);
+		iProductionAdvantage /= iCommerceYieldMultiplier;
+	}
 
 	//now we normalize the effect by # of cities
 
