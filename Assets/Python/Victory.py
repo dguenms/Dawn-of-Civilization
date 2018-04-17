@@ -2707,7 +2707,7 @@ def isConnected(tStart, lTargets, plotFunction):
 def isConnectedByTradeRoute(iPlayer, lStarts, lTargets):
 	for tStart in lStarts:
 		startPlot = utils.plot(tStart)
-		if not startPlot.isCity(): return False
+		if not startPlot.isCity(): continue
 	
 		plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() in [iPlayer, startPlot.getOwner()] and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() in [iRouteRoad, iRouteRailroad, iRouteRomanRoad, iRouteHighway])
 	
@@ -3617,7 +3617,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(fLandPercent >= 5.995) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", (str(u"%.2f%%" % fLandPercent), str(6))))
 			aHelp.append(getIcon(iPillagedImprovements >= 20) + localText.getText("TXT_KEY_VICTORY_PILLAGED_IMPROVEMENTS", (iPillagedImprovements, 20)))
 		elif iGoal == 1:
-			bConnected = isConnectedByTradeRoute(iTurks, [], [])
+			bConnected = isConnectedByTradeRoute(iTurks, utils.getPlotList(tChinaTL, tChinaBR), lMediterraneanPorts)
 			iSilkRouteCities = pTurks.countCorporations(iSilkRoute)
 			aHelp.append(getIcon(bConnected) + localText.getText("TXT_KEY_VICTORY_SILK_ROUTE_CONNECTION", ()))
 			aHelp.append(getIcon(iSilkRouteCities >= 10) + localText.getText("TXT_KEY_VICTORY_CITIES_WITH_SILK_ROUTE", (iSilkRouteCities, 10)))
