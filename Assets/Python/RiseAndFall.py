@@ -2445,8 +2445,8 @@ class RiseAndFall:
 		elif iCiv == iCongo:
 			utils.makeUnit(iPombos, iCiv, tPlot, 3)
 		elif iCiv == iGermany:
-			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
-			utils.makeUnit(iCannon, iCiv, tPlot, 3)
+			utils.makeUnit(iMusketman, iCiv, tPlot, 5)
+			utils.makeUnit(iBombard, iCiv, tPlot, 3)
 		elif iCiv == iAmerica:
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 3)
 			utils.makeUnit(iMinuteman, iCiv, tPlot, 3)
