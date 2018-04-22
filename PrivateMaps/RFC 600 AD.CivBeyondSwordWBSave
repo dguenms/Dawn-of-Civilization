@@ -34378,6 +34378,15 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	RouteType=ROUTE_ROAD
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=17, (Turks)
+	EndUnit
 	BeginCity
 		CityOwner=17, (Turks)
 		CityName=Orduqent
