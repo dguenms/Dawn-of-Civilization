@@ -6,6 +6,7 @@ from Consts import *
 from RFCUtils import utils
 import heapq
 import Areas
+import CityNameManager as cnm
 
 ### GLOBALS ###
 
@@ -749,15 +750,17 @@ def checkTurn(iGameTurn, iPlayer):
 			tCapital = (capital.getX(), capital.getY())
 			
 			if iGameTurn <= getTurnForYear(900):
-				if capital.getCulture(iTurks) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType()):
-					data.tTurkicCapitals[0] = tCapital
+				if not data.tFirstTurkicCapital and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType()):
+					utils.show("first check")
+					data.tFirstTurkicCapital = tCapital
 			
 			if iGameTurn <= getTurnForYear(1100):
-				if tCapital not in data.tTurkicCapitals and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(4).getSpeedThreshold(gc.getGame().getGameSpeedType()):
-					data.tTurkicCapitals[1] = tCapital
+				if data.tFirstTurkicCapital and not data.tSecondTurkicCapital and tCapital != data.tFirstTurkicCapital and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(4).getSpeedThreshold(gc.getGame().getGameSpeedType()):
+					utils.show("second check")
+					data.tSecondTurkicCapital = tCapital
 					
 			if iGameTurn <= getTurnForYear(1400):
-				if tCapital not in data.tTurkicCapitals and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(5).getSpeedThreshold(gc.getGame().getGameSpeedType()):
+				if tCapital != data.tFirstTurkicCapital and tCapital != data.tSecondTurkicCapital and data.tFirstTurkicCapital and data.tSecondTurkicCapital and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(5).getSpeedThreshold(gc.getGame().getGameSpeedType()):
 					win(iTurks, 2)
 					
 		if iGameTurn == getTurnForYear(900):
@@ -3623,13 +3626,13 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iSilkRouteCities >= 10) + localText.getText("TXT_KEY_VICTORY_CITIES_WITH_SILK_ROUTE", (iSilkRouteCities, 10)))
 		elif iGoal == 2:
 			iCultureLevel = 3
-			for tCapital in data.tTurkicCapitals:
+			for tCapital in [data.tFirstTurkicCapital, data.tSecondTurkicCapital]:
 				if tCapital:
 					iCultureLevel += 1
 					capitalPlot = utils.plot(tCapital)
 					if capitalPlot.isCity():
 						name = capitalPlot.getPlotCity().getName()
-						ownName = getRenameName(ownName)
+						ownName = cnm.getRenameName(iTurks, name)
 						if ownName: name = ownName
 						aHelp.append(getIcon(True) + name)
 			
@@ -3638,7 +3641,7 @@ def getUHVHelp(iPlayer, iGoal):
 				iCulture = capital.getCulture(iTurks)
 				iRequiredCulture = gc.getCultureLevelInfo(iCultureLevel).getSpeedThreshold(gc.getGame().getGameSpeedType())
 			
-				if (capital.getX(), capital.getY()) in data.tTurkicCapitals:
+				if (capital.getX(), capital.getY()) in [data.tFirstTurkicCapital, data.tSecondTurkicCapital]:
 					aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_NO_NEW_CAPITAL", ()))
 				else:
 					aHelp.append(getIcon(iCulture >= iRequiredCulture) + localText.getText("TXT_KEY_VICTORY_CAPITAL_CULTURE", (capital.getName(), iCulture, iRequiredCulture)))

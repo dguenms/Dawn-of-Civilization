@@ -241,7 +241,8 @@ class GameData:
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
 		
-		self.tTurkicCapitals = (None, None)
+		self.tFirstTurkicCapital = None
+		self.tSecondTurkicCapital = None
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0
