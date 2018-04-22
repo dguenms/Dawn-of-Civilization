@@ -685,8 +685,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR</Tag>
-		<English>Barbarians cannot enter your territory at peace and mounted barbarians will join your armies at war</English>
-		<German>Barbaren können Ihr Territorium im Frieden nicht betreten und berittene Barbaren werden im Krieg Ihren Armeen beitreten</German>
+		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</English>
+		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren werden in Kriegszeiten Ihren Armeen beitreten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>
