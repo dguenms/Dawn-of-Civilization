@@ -384,20 +384,7 @@ class RiseAndFall:
 		data.players[iPortugal].iColonistsAlreadyGiven = 6
 		data.players[iNetherlands].iColonistsAlreadyGiven = 4
 		
-	def assign3000BCGold(self):
-		for iPlayer in range(iNumTotalPlayers):
-			gc.getPlayer(iPlayer).changeGold(utils.getTurns(tStartingGold[iPlayer]))
-			
-	def assign600ADGold(self):
-		for iPlayer in dExtraGold600AD:
-			gc.getPlayer(iPlayer).changeGold(utils.getTurns(dExtraGold600AD[iPlayer]))
-		
-	def assign1700ADGold(self):
-		for iPlayer in dExtraGold1700AD:
-			gc.getPlayer(iPlayer).changeGold(utils.getTurns(dExtraGold1700AD[iPlayer]))
-		
 	def init1700ADDiplomacy(self):
-		
 		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_LIMITED)
 		teamIndia.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
 	
