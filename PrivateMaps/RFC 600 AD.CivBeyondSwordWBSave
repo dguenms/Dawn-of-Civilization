@@ -31945,12 +31945,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent2)
 		CityName=Sirajis
 		CityPopulation=4
+		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
@@ -32361,14 +32368,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
+		CityOwner=17, (Turks)
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player45Culture=10, (Independent)
+		Player17Culture=10, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -32724,12 +32731,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=46, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent)
 		CityName=Herat
 		CityPopulation=4
+		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
@@ -33164,16 +33178,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
-		CityName=Samarkand
+		CityOwner=17, (Turks)
+		CityName=Samarqand
 		CityPopulation=3
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player45Culture=10, (Independent)
+		Player17Culture=10, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -34364,7 +34376,15 @@ EndPlot
 BeginPlot
 	x=88,y=49
 	TerrainType=TERRAIN_DESERT
+	RouteType=ROUTE_ROAD
 	PlotType=1
+	BeginCity
+		CityOwner=17, (Turks)
+		CityName=Orduqent
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		Player17Culture=10, (Turks)
+	EndCity
 EndPlot
 BeginPlot
 	x=88,y=50
@@ -34740,19 +34760,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=46, (Independent2)
+		CityOwner=17, (Turks)
 		CityName=Kashgar
-		CityPopulation=3
-		BuildingType=BUILDING_WALLS
+		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		Player46Culture=40, (Independent2)
+		Player17Culture=40, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -37261,16 +37276,15 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
-		CityName=Dunhuang
-		CityPopulation=3
+		CityOwner=17, (Turks)
+		CityName=Dukhan
+		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
-		Player45Culture=20, (Independent)
+		Player17Culture=20, (Turks)
 	EndCity
 EndPlot
 BeginPlot

@@ -117,7 +117,7 @@ tCapitals = (
 (68, 45), # Constantinople
 (113, 45), # Kyoto
 (60, 59), # Oslo
-(88, 49), # Ordu Qent
+(88, 49), # Orduqent
 (75, 33), # Mecca
 (96, 43), # Lhasa
 (100, 26), # Palembang
