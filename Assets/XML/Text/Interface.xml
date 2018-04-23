@@ -1859,7 +1859,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_CITY_CULTURE_RANK</Tag>
 		<English>Culture Rank: %d1</English>
-		<German></German>
+		<German>Kulturstufe: %d1</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITY_SUPPLIED</Tag>
+		<English>[SPACE](%s1_city has %d2_num_bonus - as much as needed)[SPACE]</English>
+		<German>[SPACE](%s1_city hat %d2_num_bonus - soviel wie ben&#246;tigt)[SPACE]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITY_OVERSUPPLIED</Tag>
+		<English>[SPACE](%s1_city has %d2_num_bonus - %d3_num_bonus more than needed)[SPACE]</English>
+		<German>[SPACE](%s1_city hat %d2_num_bonus - %d3_num_bonus mehr als ben&#246;tigt)[SPACE]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITY_REQUIRES</Tag>
+		<English>[SPACE](%s1_city has %d2_num_bonus - %d3_num_bonus more required)[SPACE]</English>
+		<German>[SPACE](%s1_city hat %d2_num_bonus - %d3_num_bonus mehr ben&#246;tigt)[SPACE]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

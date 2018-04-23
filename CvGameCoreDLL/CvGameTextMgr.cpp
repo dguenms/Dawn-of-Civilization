@@ -13202,12 +13202,12 @@ bool CvGameTextMgr::setResumableValueTimes100ChangeHelp(CvWStringBuffer &szBuffe
 // BUG - Resumable Value Change Help - end
 
 
-void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText)
+void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, CvCity* pCity)
 {
-	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER);
+	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER, pCity);
 }
 
-void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer)
+void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer, CvCity* pCity)
 {
 	if (NO_BONUS == eBonus)
 	{
@@ -13221,7 +13221,29 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 		if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
 		{
 			CvPlayer& kActivePlayer = GET_PLAYER(GC.getGameINLINE().getActivePlayer());
-			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_AVAILABLE_PLAYER", kActivePlayer.getNumAvailableBonuses(eBonus), kActivePlayer.getNameKey()));
+
+			if (pCity != NULL)
+			{
+				int iDifference = kActivePlayer.getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities() - pCity->getCultureRank();
+				int iResourceDifference = iDifference > 0 ? iDifference / GC.getBonusInfo(eBonus).getAffectedCities() : std::abs(iDifference) / GC.getBonusInfo(eBonus).getAffectedCities() + 1;
+
+				if (iResourceDifference == 0)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_SUPPLIED", pCity->getName().GetCString(), kActivePlayer.getNumAvailableBonuses(eBonus)));
+				}
+				else if (iDifference > 0)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_OVERSUPPLIED", pCity->getName().GetCString(), kActivePlayer.getNumAvailableBonuses(eBonus), iResourceDifference));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_REQUIRES", pCity->getName().GetCString(), kActivePlayer.getNumAvailableBonuses(eBonus), iResourceDifference));
+				}
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_AVAILABLE_PLAYER", kActivePlayer.getNumAvailableBonuses(eBonus), kActivePlayer.getCivilizationShortDescriptionKey()));
+			}
 
 			for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
 			{

@@ -4035,6 +4035,8 @@ class CvMainInterface:
 						iCityHealth = pHeadSelectedCity.getBonusHealth(i)
 						iCityHappiness = pHeadSelectedCity.getBonusHappiness(i)
 						
+						iPlotIndex = gc.getMap().plotIndex(pHeadSelectedCity.getX(), pHeadSelectedCity.getY())
+						
 						szBuffer = u""
 						szLeadBuffer = u""
 
@@ -4067,9 +4069,9 @@ class CvMainInterface:
 								szTempBuffer += u"<font=1>, +%d%c</font>" %( iCityHealth, CyGame().getSymbolID( FontSymbols.UNHEALTHY_CHAR ) )
 
 							szName = "RightBonusItemLeft" + str(iRightCount)
-							screen.setLabelAt( szName, "BonusBack2", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack2", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							szName = "RightBonusItemRight" + str(iRightCount)
-							screen.setLabelAt( szName, "BonusBack2", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 102, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack2", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 102, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							
 							iRightCount = iRightCount + 1
 
@@ -4084,9 +4086,9 @@ class CvMainInterface:
 								szTempBuffer = u"<font=1>+%d%c</font>" %( -iCityHealth, CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR) )
 								
 							szName = "CenterBonusItemLeft" + str(iCenterCount)
-							screen.setLabelAt( szName, "BonusBack1", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack1", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							szName = "CenterBonusItemRight" + str(iCenterCount)
-							screen.setLabelAt( szName, "BonusBack1", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 62, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack1", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 62, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							
 							iCenterCount = iCenterCount + 1
 
@@ -4096,7 +4098,7 @@ class CvMainInterface:
 						if not bHandled:
 						
 							szName = "LeftBonusItem" + str(iLeftCount)
-							screen.setLabelAt( szName, "BonusBack0", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iLeftCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack0", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iLeftCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							
 							iLeftCount = iLeftCount + 1
 

@@ -590,6 +590,8 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL, // Leoreth
 	WIDGET_PEDIA_JUMP_TO_ROUTE, // Leoreth
 
+	WIDGET_HELP_BONUS_CITY, // Leoreth
+
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
 #endif

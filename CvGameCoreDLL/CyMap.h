@@ -87,6 +87,9 @@ public:
 	// PYTHON HELPER FUNCTIONS
 	//int getNumPlayerOwnedPlots(int /*PlayerTypes*/ iPlayer);
 
+	// Leoreth
+	int plotIndex(int iX, int iY);
+
 protected:
 	CvMap* m_pMap;
 };
