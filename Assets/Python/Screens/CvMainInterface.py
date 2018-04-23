@@ -4046,12 +4046,10 @@ class CvMainInterface:
 						
 						iResourceDiff = iNumResources * iAffectedCities - iCityCultureRank
 						
-						if iHealth == 0 and iHappiness == 0:
+						if iResourceDiff > 0 or (iHappiness == 0 and iHealth == 0):
 							szTempBuffer = u"(%d)" % iNumResources
-						elif iResourceDiff > 0:
-							szTempBuffer = u"(%d)" % iResourceDiff
 						else:
-							szTempBuffer = u"<color=255,0,0>(%d)</color>" % abs(iResourceDiff-1)
+							szTempBuffer = u"<color=255,0,0>(%d)</color>" % iNumResources
 						
 						szLeadBuffer = szLeadBuffer + szTempBuffer + "</font>"
 						
