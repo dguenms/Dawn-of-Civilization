@@ -1863,18 +1863,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CITY_SUPPLIED</Tag>
-		<English>[SPACE](%s1_city has %d2_num_bonus - as much as needed)[SPACE]</English>
-		<German>[SPACE](%s1_city hat %d2_num_bonus - soviel wie ben&#246;tigt)[SPACE]</German>
+		<English>[SPACE](%d2_num_bonus available - as much as needed for %s1_city)[SPACE]</English>
+		<German>[SPACE](%d2_num_bonus verf&#252;gbar - soviel wie ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CITY_OVERSUPPLIED</Tag>
-		<English>[SPACE](%s1_city has %d2_num_bonus - %d3_num_bonus more than needed)[SPACE]</English>
-		<German>[SPACE](%s1_city hat %d2_num_bonus - %d3_num_bonus mehr als ben&#246;tigt)[SPACE]</German>
+		<English>[SPACE](%d2_num_bonus available - %d3_num_bonus more than needed for %s1_city)[SPACE]</English>
+		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr als ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CITY_REQUIRES</Tag>
-		<English>[SPACE](%s1_city has %d2_num_bonus - %d3_num_bonus more required)[SPACE]</English>
-		<German>[SPACE](%s1_city hat %d2_num_bonus - %d3_num_bonus mehr ben&#246;tigt)[SPACE]</German>
+		<English>[SPACE](%d2_num_bonus available - %d3_num_bonus more required for %s1_city)[SPACE]</English>
+		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
