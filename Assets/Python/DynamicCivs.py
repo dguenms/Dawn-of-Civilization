@@ -503,7 +503,7 @@ dStartingLeaders = [
 	iMaya : iPacal,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
-	iTurks : iAlpArslan,
+	iTurks : iBumin,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
 	iKhmer : iSuryavarman,
@@ -2050,6 +2050,11 @@ def leader(iPlayer):
 		if iEra >= iGlobal: return iGerhardsen
 		
 		if iEra >= iRenaissance: return iGustav
+		
+	elif iPlayer == iTurks:
+		if bResurrected or bReborn: return iTamerlane
+	
+		if iGameTurn >= getTurnForYear(1000): return iAlpArslan
 		
 	elif iPlayer == iArabia:
 		if iGameTurn >= getTurnForYear(1000): return iSaladin
