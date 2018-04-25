@@ -12899,7 +12899,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		{
 			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
 
-			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) == modifier)
+			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) >= modifier)
 			{
 				if (pLoopPlot != NULL)
 				{

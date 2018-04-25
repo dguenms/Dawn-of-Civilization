@@ -147,17 +147,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI_TITLE</Tag>
-		<English>The Power of the Mandate of Heaven:</English>
+		<English>The Power of Myriads:</English>
 		<French>Le Pouvoir de Invention :</French>
-		<German>Die Macht des Mandats des Himmels:</German>
+		<German>Die Macht der Myriaden:</German>
 		<Italian>Il potere del invenzione:</Italian>
 		<Spanish>El poder del invento:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI</Tag>
-		<English>Receives +10% [ICON_COMMERCE] per stability level</English>
+		<English>Cities keep an additional 25% [ICON_FOOD] after growing</English>
 		<French>1.5X Vitesse d'entra&#238;nement des unit&#233;s de combat rapproch&#233; et &#233;quip&#233;es d'armes &#224; feu</French>
-		<German>Erh&#228;lt +10% [ICON_COMMERCE] pro Stabilitätsstufe</German>
+		<German>St&#228;dte behalten zus&#228;tzliche 25% [ICON_FOOD] nach dem Wachsen</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
 	</TEXT>

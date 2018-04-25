@@ -354,10 +354,6 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		
 		if iNewStabilityLevel < iStabilityLevel:
 			data.setStabilityLevel(iPlayer, iNewStabilityLevel)
-			
-	# Chinese UP: +10% commerce per stability level
-	if iPlayer == iChina:
-		pPlayer.changeYieldRateModifier(YieldTypes.YIELD_COMMERCE, 10 * (iNewStabilityLevel - iStabilityLevel))
 		
 	# update stability information
 	data.players[iPlayer].iLastStability = iStability

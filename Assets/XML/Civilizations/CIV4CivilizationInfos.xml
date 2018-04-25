@@ -3212,7 +3212,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>MAL</Identifier>
-			<StartingYear>980</StartingYear>
+			<StartingYear>989</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>35</LoadingTime>
 				<LoadingTime>15</LoadingTime>

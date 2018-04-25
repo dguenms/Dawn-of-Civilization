@@ -4668,6 +4668,7 @@ dIdentifiers = {
 	"Shenyang"		:	"Shenyang",
 	"Shin'you"		:	"Shenyang",
 	"Simiyan hoton"		:	"Shenyang",
+	"Seonyang"		:	"Shenyang",
 	"Shiraz"		:	"Shiraz",
 	"Sirajis"		:	"Shiraz",
 	"Siraz"			:	"Shiraz",
@@ -5601,6 +5602,7 @@ tRenames = (
 	"Hanseong"		:	"Hanseong",
 	"Pusan"			:	"Pusan",
 	"Pyongyang"		:	"Pyongyang",
+	"Shenyang"		:	"Seonyang",
 	"Seoul"			:	"Seoul",
 },
 #Language: Mayan
