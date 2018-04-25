@@ -751,12 +751,10 @@ def checkTurn(iGameTurn, iPlayer):
 			
 			if iGameTurn <= getTurnForYear(900):
 				if not data.tFirstTurkicCapital and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType()):
-					utils.show("first check")
 					data.tFirstTurkicCapital = tCapital
 			
 			if iGameTurn <= getTurnForYear(1100):
 				if data.tFirstTurkicCapital and not data.tSecondTurkicCapital and tCapital != data.tFirstTurkicCapital and capital.getCulture(iTurks) >= gc.getCultureLevelInfo(4).getSpeedThreshold(gc.getGame().getGameSpeedType()):
-					utils.show("second check")
 					data.tSecondTurkicCapital = tCapital
 					
 			if iGameTurn <= getTurnForYear(1400):
