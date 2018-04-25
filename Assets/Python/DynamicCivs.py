@@ -28,7 +28,13 @@ tBritainBR = (54, 60)
 tEuropeanRussiaTL = (68, 50)
 tEuropeanRussiaBR = (80, 62)
 tEuropeanRussiaExceptions = ((68, 59), (68, 60), (68, 61), (68, 62))
-	
+
+tKhazariaTL = (71, 46)
+tKhazariaBR = (79, 53)
+tAnatoliaTL = (69, 41)
+tAnatoliaBR = (75, 45)
+iTurkicEastWestBorder = 89
+
 ### Setup methods ###
 
 def findCapitalLocations(dCapitals):
@@ -1052,6 +1058,13 @@ def specificName(iPlayer):
 			
 		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
 		
+	elif iPlayer == iTurks:
+		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
+			return "TXT_KEY_CIV_TURKS_KHAZARIA"
+	
+		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
+			return "TXT_KEY_CIV_TURKS_RUM"
+		
 	elif iPlayer == iArabia:
 		if bResurrected:
 			return "TXT_KEY_CIV_ARABIA_SAUDI"
@@ -1325,6 +1338,27 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iVikings:
 		if bEmpire:
 			return "TXT_KEY_CIV_VIKINGS_SWEDISH"
+			
+	elif iPlayer == iTurks:
+		if bResurrected:
+			return "TXT_KEY_CIV_TURKS_TIMURID"
+	
+		if utils.isPlotInArea(tCapitalCoords, tKhazariaTL, tKhazariaBR):
+			return "TXT_KEY_CIV_TURKS_KHAZAR"
+			
+		if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+			return "TXT_KEY_CIV_TURKS_SELJUK"
+			
+		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
+			return "TXT_KEY_CIV_TURKS_SELJUK"
+			
+		easternmostCity = utils.getHighestEntry(utils.getCityList(iTurks), lambda city: city.getX())
+		if easternmostCity and easternmostCity.getX() < iTurkicEastWestBorder:
+			return "TXT_KEY_CIV_TURKS_WESTERN_TURKIC"
+			
+		westernmostCity = utils.getHighestEntry(utils.getCityList(iTurks), lambda city: -city.getX())
+		if westernmostCity and westernmostCity.getX() >= iTurkicEastWestBorder:
+			return "TXT_KEY_CIV_TURKS_EASTERN_TURKIC"
 			
 	elif iPlayer == iArabia:
 		if (bTheocracy or controlsHolyCity(iArabia, iIslam)) and iReligion == iIslam:
@@ -1711,6 +1745,25 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 			if iEra == iRenaissance or isCapital(iPlayer, ["Stockholm"]):
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
+				
+	elif iPlayer == iTurks:
+		if bCityStates or iCivicGovernment == iElective:
+			return "TXT_KEY_CIV_TURKS_KURULTAI"
+			
+		if iReligion >= 0:
+			if bEmpire:
+				if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+					return "TXT_KEY_CIV_TURKS_GREAT_EMPIRE"
+			
+				return "TXT_KEY_EMPIRE_ADJECTIVE"
+				
+			if iReligion == iIslam:
+				return "TXT_KEY_SULTANATE_OF"
+				
+			return "TXT_KEY_KINGDOM_OF"
+			
+		if bEmpire:
+			return "TXT_KEY_CIV_TURKS_KHAGANATE"
 			
 	elif iPlayer == iArabia:
 		if bResurrected:
