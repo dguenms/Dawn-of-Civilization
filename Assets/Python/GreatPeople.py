@@ -3745,6 +3745,7 @@ iCivMaya : {
 		u"fRigoberta Menchú", # 20th
 	],
 	iGreatGeneral : [
+		"Siyaj K'ak'", # 4th teotihuacan
 		"K'inich Yo'nal Ahk", # 7th
 		"fXochitl", # 9th toltec
 		"Hunac Ceel", # 12th
