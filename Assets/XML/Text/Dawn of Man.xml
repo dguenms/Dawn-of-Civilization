@@ -186,6 +186,14 @@
 		<English>It is the year 1700 AD. Since their independence at the end of the Eighty Years war, the Netherlands have entered a Golden Age and become the European center of trade, industry, culture and science. This wealth however has created envy in the rising neighboring powers of France and Great Britain, and the Dutch will need to keep their colonial empire together to maintain their wealth.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_OTTOMANS</Tag>
+		<English>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_OTTOMANS_1700AD</Tag>
+		<English>It is the year 1700 AD. With the defeat at the Siege of Vienna, the military expansion of the Ottoman Empire has come to an end and it is on the defensive against the growing power of Austria and Russia. This change in the balance of power leads to increased cultural contact and exchange with the Europeans and a flowering of Ottoman culture.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_PERSIA</Tag>
 		<English>It is the year 844 BC. Persia has always been home to warlike peoples, but now the Achaemenid dynasty provides them with the unifying force to form an organized empire. While the Persian plateau is not particularly wealthy, it has rich and defenseless neighbors in India in the east and Mesopotamia in the west to conquer on their way to become the world's greatest empire.</English>
 	</TEXT>
@@ -258,12 +266,8 @@
 		<English>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_OTTOMANS</Tag>
-		<English>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_DOM_OTTOMANS_1700AD</Tag>
-		<English>It is the year 1700 AD. With the defeat at the Siege of Vienna, the military expansion of the Ottoman Empire has come to an end and it is on the defensive against the growing power of Austria and Russia. This change in the balance of power leads to increased cultural contact and exchange with the Europeans and a flowering of Ottoman culture.</English>
+		<Tag>TXT_KEY_DOM_TURKESTAN</Tag>
+		<English>It is the year 554 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS</Tag>
