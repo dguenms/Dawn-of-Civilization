@@ -190,6 +190,10 @@
 		<English>Transcaucasian Socialist Federative Soviet Republic</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_TURKS</Tag>
+		<English>%s4 Soviet Socialist Republic</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY</Tag>
 		<English>%s4 Democratic Republic</English>
 		<French>

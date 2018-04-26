@@ -19,7 +19,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKESTAN_DEFAULT</Tag>
-		<English>%s2 Khaganate</English>
+		<English>%s2 Khanate</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKESTAN_FASCIST</Tag>
@@ -38,8 +38,16 @@
 		<English>%s2 Khaganate</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KHANATE_OF</Tag>
+		<English>Khanate of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_TIMURID</Tag>
 		<English>Timurid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_SHAYBANID</Tag>
+		<English>Shaybanid</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_KHAZARIA</Tag>
@@ -56,6 +64,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_SELJUK</Tag>
 		<English>Seljuk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_UZBEKISTAN</Tag>
+		<English>Uzbekistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_UZBEK</Tag>
+		<English>Uzbek</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_WESTERN_TURKIC</Tag>

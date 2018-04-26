@@ -280,6 +280,7 @@ dCommunistVassalTitlesGeneric = {
 dCommunistVassalTitles = {
 	iRussia : {
 		iChina : "TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE",
+		iTurks : "TXT_KEY_CIV_RUSSIA_SOVIET_TURKS",
 		iJapan : "TXT_KEY_CIV_RUSSIA_SOVIET_JAPAN",
 		iOttomans : "TXT_KEY_CIV_RUSSIA_SOVIET_OTTOMANS",
 		iGermany : "TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY",
@@ -410,11 +411,11 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
-lSocialistRepublicAdj = [iPersia, iItaly, iAztecs, iArgentina]
+lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iArgentina]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia]
@@ -949,6 +950,8 @@ def republicName(iPlayer):
 	if iPlayer == iInca and data.players[iPlayer].iResurrections > 0: return None
 	
 	if iPlayer == iNetherlands and isCommunist(iPlayer): return "TXT_KEY_CIV_NETHERLANDS_ARTICLE"
+	
+	if iPlayer == iTurks: return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
 
 	return short(iPlayer)
 	
@@ -1064,6 +1067,12 @@ def specificName(iPlayer):
 	
 		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_RUM"
+			
+		if iEra >= iRenaissance:
+			if bEmpire:
+				return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
+				
+			return capitalName(iPlayer)
 		
 	elif iPlayer == iArabia:
 		if bResurrected:
@@ -1351,6 +1360,12 @@ def specificAdjective(iPlayer):
 			
 		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
+			
+		if iEra >= iRenaissance:
+			if bEmpire:
+				return "TXT_KEY_CIV_TURKS_SHAYBANID"
+		
+			return "TXT_KEY_CIV_TURKS_UZBEK"
 			
 		easternmostCity = utils.getHighestEntry(utils.getCityList(iTurks), lambda city: city.getX())
 		if easternmostCity and easternmostCity.getX() < iTurkicEastWestBorder:
@@ -1752,10 +1767,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if iReligion >= 0:
 			if bEmpire:
-				if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]) and not bResurrected:
 					return "TXT_KEY_CIV_TURKS_GREAT_EMPIRE"
 			
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
+				
+			if not isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				return "TXT_KEY_CIV_TURKS_KHANATE_OF"
 				
 			if iReligion == iIslam:
 				return "TXT_KEY_SULTANATE_OF"
