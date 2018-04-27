@@ -72,7 +72,7 @@ def getLanguages(iCiv):
 		if isResurrected(iCiv): return (iLangSpanish,)
 		return (iLangQuechua,)
 	elif iCiv == iItaly: return (iLangItalian,)
-	elif iCiv == iMongolia: return (iLangMongolian, iLangChinese)
+	elif iCiv == iMongolia: return (iLangMongolian, iLangTurkish, iLangChinese)
 	elif iCiv == iAztecs: 
 		if utils.isReborn(iCiv): return (iLangMexican, iLangSpanish)
 		return (iLangAztec, iLangMayan)
