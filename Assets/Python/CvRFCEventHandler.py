@@ -143,7 +143,7 @@ class CvRFCEventHandler:
 			elif iPlayer == iTurks and utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 				capital = pTurks.getCapitalCity()
 				if not utils.isPlotInArea((capital.getX(), capital.getY()), Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
-					newCapital = utils.getRandomEntry(utils.getAreaCitiesCiv(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]))
+					newCapital = utils.getRandomEntry(utils.getAreaCitiesCiv(iTurks, utils.getPlotList(Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1])))
 					if newCapital:
 						utils.moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
 				
