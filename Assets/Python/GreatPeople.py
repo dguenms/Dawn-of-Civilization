@@ -2031,7 +2031,7 @@ iCivEngland : {
 		"Francis Walsingham", # 16th
 		"Guy Fawkes", # 16th
 		"fElizabeth Alkin", # 17th
-		"John André", # 18th
+		u"John André", # 18th
 		"Edward Bancroft", # 18th
 		iIndustrial,
 		"William Wickham", # 19th
