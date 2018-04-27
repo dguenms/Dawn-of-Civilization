@@ -1062,7 +1062,7 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
 		
 	elif iPlayer == iTurks:
-		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
+		if utils.isPlotInArea(tCapitalCoords, tKhazariaTL, tKhazariaTL):
 			return "TXT_KEY_CIV_TURKS_KHAZARIA"
 	
 		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
