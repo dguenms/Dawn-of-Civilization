@@ -1964,5 +1964,9 @@ class RFCUtils:
 		
 	def plot(self, tuple):
 		return gc.getMap().plot(tuple[0], tuple[1])
+		
+	def isAreaControlled(self, iPlayer, tTL, tBR, tExceptions=()):
+		lPlots = self.getPlotList(tTL, tBR, tExceptions)
+		return len(self.getAreaCitiesCiv(iPlayer, lPlots)) >= len(self.getAreaCities(lPlots))
 			
 utils = RFCUtils()

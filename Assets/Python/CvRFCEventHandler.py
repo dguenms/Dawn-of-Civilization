@@ -139,7 +139,14 @@ class CvRFCEventHandler:
 			if iPlayer == iOttomans and tCity == (68, 45):
 				utils.moveCapital(iOttomans, tCity) # Kostantiniyye
 			elif iPlayer == iMongolia and tCity == (102, 47):
-				utils.moveCapital(iMongolia, tCity) # Khanbaliq
+				utils.moveCapital(iMongolia, tCity) # Khanbaliq	
+			elif iPlayer == iTurks and utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				capital = pTurks.getCapitalCity()
+				if not utils.isPlotInArea((capital.getX(), capital.getY()), Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+					newCapital = utils.getRandomEntry(utils.getAreaCitiesCiv(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]))
+					if newCapital:
+						utils.moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
+				
 				
 		# remove slaves if unable to practice slavery
 		if not gc.getPlayer(iPlayer).canUseSlaves():
@@ -163,6 +170,12 @@ class CvRFCEventHandler:
 		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
 		if iPlayer == iOttomans and tCity == (68, 45):
 			utils.setReborn(iOttomans, True)
+			
+		if iPlayer == iTurks:
+			if utils.isAreaControlled(iPlayer, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				utils.setReborn(iTurks, True)
+			else:
+				utils.setReborn(iTurks, False)
 					
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
