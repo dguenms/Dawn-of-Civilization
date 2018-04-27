@@ -918,6 +918,13 @@ void CvUnit::doTurn()
 
 	setMoves(0);
 
+	// Leoreth: Turkic UP for the AI
+	if (getOwnerINLINE() == BARBARIAN && plot()->getOwnerINLINE() == TURKS && GC.getGame().getActivePlayer() != TURKS)
+	{
+		setCapturingPlayer(TURKS);
+		kill(false);
+	}
+
 	m_iStuckLoopCount = 0;
 }
 
@@ -3092,13 +3099,6 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 				}
 			}
 		}
-	}
-
-	// Leoreth: Turkic UP for the AI
-	if (pPlot != NULL && getOwnerINLINE() == BARBARIAN && pPlot->getOwnerINLINE() == TURKS && GC.getGame().getActivePlayer() != TURKS)
-	{
-		setCapturingPlayer(TURKS);
-		kill(false);
 	}
 
 /*************************************************************************************************/
