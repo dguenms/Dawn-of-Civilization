@@ -80,7 +80,19 @@ tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors]
+
+iTurksPersiaYear = 1000
+tTurksPersiaTL = (79, 37)
+tTurksPersiaBR = (85, 43)
+
+iTurksAnatoliaYear = 1100
+tTurksAnatoliaTL = (69, 41)
+tTurksAnatoliaBR = (78, 45)
+
+tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
+tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 3, iTurksAnatoliaYear, 20)
+
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia]
 
 class AIWars:
 		
@@ -111,18 +123,9 @@ class AIWars:
 			utils.minorWars(iIndependent2)
 		if iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50):
 			utils.minorWars(iCeltia)
-		
-		self.checkConquest(tConquestGreeceMesopotamia)
-		self.checkConquest(tConquestGreeceEgypt)
-		self.checkConquest(tConquestGreecePersia, tConquestGreeceMesopotamia)
-		
-		self.checkConquest(tConquestRomeCarthage)
-		self.checkConquest(tConquestRomeGreece)
-		self.checkConquest(tConquestRomeAnatolia, tConquestRomeGreece)
-		self.checkConquest(tConquestRomeCelts)
-		self.checkConquest(tConquestRomeEgypt)
-		
-		self.checkConquest(tConquestSpainMoors)
+			
+		for tConquest in lConquests:
+			self.checkConquest(tConquest)
 		
 		if iGameTurn == data.iNextTurnAIWar:
 			self.planWars(iGameTurn)
@@ -134,18 +137,14 @@ class AIWars:
 		iID, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
 	
 		if utils.getHumanID() == iPlayer: return
-		
 		if not gc.getPlayer(iPlayer).isAlive(): return
-		
 		if data.lConquest[iID]: return
-		
-		if gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
+		if iPreferredTarget >= 0 and gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
 		
 		iGameTurn = gc.getGame().getGameTurn()
 		iStartTurn = getTurnForYear(iYear) - 5 + (data.iSeed % 10)
 		
 		if not (iStartTurn <= iGameTurn <= iStartTurn + iIntervalTurns): return
-		
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
 		self.spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan)
@@ -185,7 +184,7 @@ class AIWars:
 			if city.getOwner() not in lOwners:
 				lOwners.append(city.getOwner())
 				
-		if iPreferredTarget not in lOwners and gc.getPlayer(iPreferredTarget).isAlive():
+		if iPreferredTarget >= 0 and iPreferredTarget not in lOwners and gc.getPlayer(iPreferredTarget).isAlive():
 			gc.getTeam(iPlayer).declareWar(iPreferredTarget, True, iWarPlan)
 				
 		for iOwner in lOwners:
@@ -194,7 +193,11 @@ class AIWars:
 			
 		for city in lTargetCities:
 			iExtra = 0
-			if utils.getHumanID() not in [iPlayer, city.getOwner()]: iExtra = 1 #max(1, gc.getPlayer(iPlayer).getCurrentEra())
+			if utils.getHumanID() not in [iPlayer, city.getOwner()]: 
+				iExtra += 1 #max(1, gc.getPlayer(iPlayer).getCurrentEra())
+				
+			if iPlayer == iTurks and utils.getHumanID() != iPlayer:
+				iExtra += 2
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
 			
@@ -213,6 +216,9 @@ class AIWars:
 				
 			if iPlayer == iSpain:
 				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 * iExtra)
+				
+			if iPlayer == iTurks:
+				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 	
 	def forgetMemory(self, iTech, iPlayer):
 		if iTech in [iPsychology, iTelevision]:
