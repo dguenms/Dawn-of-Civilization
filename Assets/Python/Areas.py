@@ -177,6 +177,7 @@ iPersia : (81, 41),	# Esfahan
 iEthiopia : (72, 28),	# Addis Ababa
 iJapan : (116, 46),	# Tokyo
 iVikings : (63, 59),	# Stockholm
+iTurks : (84, 41),	# Herat
 iIndonesia : (104, 25),	# Jakarta
 iMoors : (51, 37),	# Marrakesh
 iHolyRome : (62, 49),	# Vienna
