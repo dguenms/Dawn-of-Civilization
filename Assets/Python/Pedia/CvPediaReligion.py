@@ -115,7 +115,7 @@ class CvPediaReligion:
 		victorytext = CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ())
 		bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
 		for iGoal in range(3):
-			victorytext += bullet + CyTranslator().getText(tReligiousGoals[0][self.iReligion][iGoal], ()) + "\n"
+			victorytext += bullet + CyTranslator().getText(tReligiousGoals[2][self.iReligion][iGoal], ()) + "\n"
 		szHistory = victorytext + "\n" + gc.getReligionInfo(self.iReligion).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
