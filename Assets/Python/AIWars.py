@@ -92,7 +92,13 @@ tTurksAnatoliaBR = (78, 45)
 tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
 tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 3, iTurksAnatoliaYear, 20)
 
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia]
+iMongolsPersiaYear = 1220
+tMongolsPersiaTL = (79, 37)
+tMongolsPersiaBR = (85, 49)
+
+tConquestMongolsPersia = (12, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 6, iMongolsPersiaYear, 10)
+
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia]
 
 class AIWars:
 		
@@ -144,6 +150,7 @@ class AIWars:
 		iGameTurn = gc.getGame().getGameTurn()
 		iStartTurn = getTurnForYear(iYear) - 5 + (data.iSeed % 10)
 		
+		if iGameTurn <= tBirth[iPlayer]+3: return
 		if not (iStartTurn <= iGameTurn <= iStartTurn + iIntervalTurns): return
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
@@ -196,7 +203,7 @@ class AIWars:
 			if utils.getHumanID() not in [iPlayer, city.getOwner()]: 
 				iExtra += 1 #max(1, gc.getPlayer(iPlayer).getCurrentEra())
 				
-			if iPlayer == iTurks and utils.getHumanID() != iPlayer:
+			if iPlayer in [iTurks, iMongolia] and utils.getHumanID() != iPlayer:
 				iExtra += 2
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)

@@ -143,7 +143,7 @@ iLime = 100
 iNumMinorCities = 38
 
 # scripted conquerors
-iNumConquests = 12
+iNumConquests = 13
 
 #neighbours
 lNeighbours = [
