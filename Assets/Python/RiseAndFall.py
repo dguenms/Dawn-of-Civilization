@@ -1123,12 +1123,20 @@ class RiseAndFall:
 			if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
 				return
 		
-		lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina, iCanada]
+		lConditionalCivs = [iByzantium, iMughals, iOttomans, iThailand, iBrazil, iArgentina, iCanada]
 		
 		# Leoreth: extra checks for conditional civs
 		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
 			if iCiv == iByzantium:
 				if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStabilityLevel(iRome) == iStabilitySolid):
+					return
+					
+			elif iCiv == iOttomans:
+				tMiddleEastTL = (69, 38)
+				tMiddleEastBR = (78, 45)
+				lCities = utils.getAreaCities(utils.getPlotList(tMiddleEastTL, tMiddleEastBR))
+				
+				if iTurks not in [city.getOwner() for city in lCities] and iTurks not in [city.getPreviousOwner() for city in lCities]:
 					return
 
 			elif iCiv == iThailand:
@@ -1139,7 +1147,7 @@ class RiseAndFall:
 					if data.getStabilityLevel(iKhmer) > iStabilityUnstable:
 						return
 						
-			if iCiv in [iArgentina, iBrazil]:
+			elif iCiv in [iArgentina, iBrazil]:
 				iColonyPlayer = utils.getColonyPlayer(iCiv)
 				if iColonyPlayer < 0: return
 				elif iColonyPlayer not in [iArgentina, iBrazil]:
