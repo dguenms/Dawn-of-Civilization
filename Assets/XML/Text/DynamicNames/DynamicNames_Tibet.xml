@@ -65,4 +65,12 @@
 		<Tag>TXT_KEY_CIV_TIBET_SHORT_DESC</Tag>
 		<English>Tibet</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_VASSAL</Tag>
+		<English>Khrom of %s3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_NAME_TURKS</Tag>
+		<English>Liyul</English>
+	</TEXT>
 </Civ4GameText>

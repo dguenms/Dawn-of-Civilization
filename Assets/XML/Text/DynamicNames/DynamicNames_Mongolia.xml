@@ -126,6 +126,14 @@
 		<English>Timurid</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_HULAGU</Tag>
+		<English>Hulagu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_ILKHANATE</Tag>
+		<English>Ilkhanate</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_KHANATE</Tag>
 		<English>%s2 Khanate</English>
 	</TEXT>
@@ -280,6 +288,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_MONGOL</Tag>
 		<English>Mongol</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOL_NAME_TURKS</Tag>
+		<English>Moghulistan</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_ADJECTIVE</Tag>

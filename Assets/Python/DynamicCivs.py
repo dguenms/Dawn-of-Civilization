@@ -73,6 +73,11 @@ dSpecificVassalTitles = {
 	iBabylonia : {
 		iPhoenicia : "TXT_KEY_ADJECTIVE_TITLE",
 	},
+	iChina : {
+		iKorea : "TXT_KEY_CIV_CHINESE_KOREA",
+		iTurks : "TXT_KEY_CIV_CHINESE_TURKS",
+		iMongolia : "TXT_KEY_CIV_CHINESE_MONGOLIA",
+	},
 	iGreece : {
 		iIndia : "TXT_KEY_CIV_GREEK_INDIA",
 		iEgypt : "TXT_KEY_CIV_GREEK_EGYPT",
@@ -186,6 +191,7 @@ dSpecificVassalTitles = {
 		iPoland : "TXT_KEY_CIV_HOLY_ROMAN_POLAND",
 	},
 	iRussia : {
+		iTurks : "TXT_KEY_ADJECTIVE_TITLE",
 		iPoland : "TXT_KEY_CIV_RUSSIAN_POLAND",
 		iAmerica : "TXT_KEY_ADJECTIVE_TITLE",
 	},
@@ -259,6 +265,7 @@ dMasterTitles = {
 	iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL",
 	iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL",
 	iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL",
+	iTibet : "TXT_KEY_CIV_TIBETAN_VASSAL",
 	iIndonesia : "TXT_KEY_CIV_INDONESIAN_VASSAL",
 	iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL",
 	iSpain : "TXT_KEY_CIV_SPANISH_VASSAL",
@@ -335,8 +342,12 @@ dForeignAdjectives = {
 }
 
 dForeignNames = {
+	iGreece : {
+		iTurks : "TXT_KEY_CIV_GREEK_NAME_TURKS",
+	},
 	iPersia : {
 		iByzantium : "TXT_KEY_CIV_PERSIAN_NAME_BYZANTIUM",
+		iTurks : "TXT_KEY_CIV_PERSIAN_NAME_TURKS",
 		iIndonesia : "TXT_KEY_CIV_PERSIAN_NAME_INDONESIA",
 	},
 	iRome : {
@@ -349,6 +360,7 @@ dForeignNames = {
 		iEthiopia : "TXT_KEY_CIV_ROMAN_NAME_ETHIOPIA",
 		iByzantium : "TXT_KEY_CIV_ROMAN_NAME_BYZANTIUM",
 		iVikings : "TXT_KEY_CIV_ROMAN_NAME_VIKINGS",
+		iTurks : "TXT_KEY_CIV_ROMAN_NAME_TURKS",
 		iKhmer : "TXT_KEY_CIV_ROMAN_NAME_KHMER",
 		iSpain : "TXT_KEY_CIV_ROMAN_NAME_SPAIN",
 		iFrance : "TXT_KEY_CIV_ROMAN_NAME_FRANCE",
@@ -371,11 +383,15 @@ dForeignNames = {
 		iRome : "TXT_KEY_CIV_ARABIAN_NAME_ROME",
 		iEthiopia : "TXT_KEY_CIV_ARABIAN_NAME_ETHIOPIA",
 		iByzantium : "TXT_KEY_CIV_ARABIAN_NAME_BYZANTIUM",
+		iTurks : "TXT_KEY_CIV_ARABIAN_NAME_TURKS",
 		iArabia : "TXT_KEY_CIV_ARABIAN_NAME_ARABIA",
 		iIndonesia : "TXT_KEY_CIV_ARABIAN_NAME_INDONESIA",
 		iMoors : "TXT_KEY_CIV_ARABIAN_NAME_MOORS",
 		iSpain : "TXT_KEY_CIV_ARABIAN_NAME_SPAIN",
 		iPortugal : "TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL",
+	},
+	iTibet : {
+		iTurks : "TXT_KEY_CIV_TIBETAN_NAME_TURKS",
 	},
 	iMoors : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
@@ -405,6 +421,9 @@ dForeignNames = {
 	},
 	iRussia : {
 		iPersia : "TXT_KEY_CIV_RUSSIAN_NAME_PERSIA",
+	},
+	iMongolia : {
+		iTurks : "TXT_KEY_CIV_MONGOL_NAME_TURKS"
 	},
 	iGermany : {
 		iMoors : "TXT_KEY_CIV_GERMAN_NAME_MOORS",
@@ -1447,12 +1466,9 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_MONGOLIA_YUAN"
 				
 			if capital.getRegionID() == rPersia:
-				return "TXT_KEY_CIV_MONGOLIA_TIMURID"
+				return "TXT_KEY_CIV_MONGOLIA_HULAGU"
 				
 			if capital.getRegionID() == rCentralAsia:
-				if iReligion == iIslam:
-					return "TXT_KEY_CIV_MONGOLIA_TIMURID"
-					
 				return "TXT_KEY_CIV_MONGOLIA_CHAGATAI"
 				
 		if bMonarchy:
@@ -1940,6 +1956,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iMongolia:
+		if capital.getRegionID() == rPersia:
+			return "TXT_KEY_CIV_MONGOLIA_ILKHANATE"
+	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			

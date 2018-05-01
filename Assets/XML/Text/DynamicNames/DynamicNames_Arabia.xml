@@ -310,6 +310,10 @@
 		<English>Al-Garb</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_TURKS</Tag>
+		<English>Bilad al-Turk</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_OTTOMANS</Tag>
 		<English>Ottoman Sultanate</English>
 		<French>
