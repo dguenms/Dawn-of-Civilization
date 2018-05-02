@@ -420,6 +420,7 @@ lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
 dEmpireThreshold = {
 	iCarthage : 4,
 	iIndonesia : 4,
+	iTeotihuacan : 3,
 	iKorea : 4,
 	iRussia : 8,
 	iHolyRome : 3,
