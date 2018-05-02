@@ -325,13 +325,10 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Teotihuacan</City>
 				<City>Tlatelolco</City>
 				<City>Texcoco</City>
 				<City>Calixtlahuaca</City>
-				<City>Tlacopan</City>
 				<City>Atzcapotzalco</City>
-				<City>Tzintzuntzen</City>
 				<City>Malinalco</City>
 				<City>Tula</City>
 				<City>Tamuin</City>
@@ -5384,6 +5381,117 @@
 			<CivilizationActionSound>AS3D_INDIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_TEOTIHUACAN</Type>
+			<Description>TXT_KEY_CIV_TEOTIHUACAN_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_TEOTIHUACAN_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_TEOTIHUACAN_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_TEOTIHUACAN_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_TEOTIHUACAN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_TEOTIHUACAN</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
+			<Identifier>TEO</Identifier>
+			<StartingYear>-100</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>1</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Tlatelolco</City>
+				<City>Texcoco</City>
+				<City>Calixtlahuaca</City>
+				<City>Atzcapotzalco</City>
+				<City>Malinalco</City>
+				<City>Tula</City>
+				<City>Tamuin</City>
+				<City>Teayo</City>
+				<City>Cempoala</City>
+				<City>Chalco</City>
+				<City>Tlalmanalco</City>
+				<City>Ixtapaluca</City>
+				<City>Huexotla</City>
+				<City>Tepexpan</City>
+				<City>Tepetlaoxtoc</City>
+				<City>Chiconautla</City>
+				<City>Zitlaltepec</City>
+				<City>Coyotepec</City>
+				<City>Tequixquiac</City>
+				<City>Jilotzingo</City>
+				<City>Tlapanaloya</City>
+				<City>Tultitan</City>
+				<City>Ecatepec</City>
+				<City>Coatepec</City>
+				<City>Chalchiuites</City>
+				<City>Chiauhita</City>
+				<City>Chapultepec</City>
+				<City>Itzapalapa</City>
+				<City>Ayotzinco</City>
+				<City>Iztapam</City>
+				<City>Zaculeu</City>
+				<City>Cholula</City>
+				<City>Tulum</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
+					<BuildingType>BUILDING_TEOTIHUACAN_TEMAZCAL</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
+					<UnitType>UNIT_TEOTIHUACAN_ARTISAN</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ATLATL_CAUAC</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_AZTEC</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_AZTEC_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_AZTEC_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_THAILAND</Type>
 			<Description>TXT_KEY_CIV_THAILAND_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_THAILAND_SHORT_DESC</ShortDescription>
@@ -5861,7 +5969,6 @@
 			<Cities>
 				<City>Cherokee</City>
 				<City>Anasazi</City>
-				<City>Teoihuacan</City>
 				<City>Olmec</City>
 				<City>Chinook</City>
 				<City>Apache</City>
@@ -6089,7 +6196,6 @@
 			<Cities>
 				<City>Cherokee</City>
 				<City>Anasazi</City>
-				<City>Teoihuacan</City>
 				<City>Olmec</City>
 				<City>Zapotec</City>
 				<City>Chinook</City>
@@ -6515,7 +6621,6 @@
 			<Cities>
 				<City>Cherokee</City>
 				<City>Anasazi</City>
-				<City>Teoihuacan</City>
 				<City>Olmec</City>
 				<City>Zapotec</City>
 				<City>Chinook</City>
@@ -6637,7 +6742,6 @@
 			<Cities>
 				<City>Cherokee</City>
 				<City>Anasazi</City>
-				<City>Teoihuacan</City>
 				<City>Olmec</City>
 				<City>Zapotec</City>
 				<City>Chinook</City>

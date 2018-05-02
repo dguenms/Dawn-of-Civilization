@@ -671,7 +671,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
-		<German>Schwerer Schwertkämpfer</German>
+		<German>Schwerer Schwertkï¿½mpfer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
@@ -1575,5 +1575,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN</Tag>
+		<English>Toltec Artisan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Toltec Artisan[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], can be stationed in a city to provide it with two culture points per turn.</English>
 	</TEXT>
 </Civ4GameText>

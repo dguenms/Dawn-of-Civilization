@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Aztecs -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DESC</Tag>
+		<English>The Teotihuacanos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_SHORT_DESC</Tag>
+		<English>Teotihuacan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ADJECTIVE</Tag>
+		<English>Teotihuacan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_PEOPLES</Tag>
+		<English>Mexico Valley Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DEFAULT</Tag>
+		<English>Altepetl of Teotihuacan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL</Tag>
+		<English>Altepetl of %1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TOLTEC</Tag>
+		<English>Toltec</English>
+	</TEXT>
+</Civ4GameText>

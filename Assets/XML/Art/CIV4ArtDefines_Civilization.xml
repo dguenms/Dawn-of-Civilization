@@ -342,5 +342,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Flower.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_TEOTIHUACAN</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Aztec.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Serpent.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

@@ -320,6 +320,14 @@
 		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL</Tag>
+		<English>Reservoir</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] improve the food output of water plots. A [COLOR_BUILDING_TEXT]Harbor[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Customs Houses[COLOR_REVERT], [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] world wonder.</English>
 	</TEXT>
@@ -765,7 +773,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
-		<German>Jüdische Synagoge</German>
+		<German>Jï¿½dische Synagoge</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
@@ -774,7 +782,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
-		<German>Jüdische Jeschiwa</German>
+		<German>Jï¿½dische Jeschiwa</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
@@ -783,7 +791,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
-		<German>Jüdischer Sanhedrin</German>
+		<German>Jï¿½discher Sanhedrin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
@@ -893,7 +901,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Basílica de San Pedro</Text>
+			<Text>Basï¿½lica de San Pedro</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -1149,7 +1157,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
-		<German>Zoroastrisches Königliches Feuer</German>
+		<German>Zoroastrisches Kï¿½nigliches Feuer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>

@@ -659,6 +659,14 @@
 		<German>Die Tamilen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_TEO_TITLE</Tag>
+		<English>The Power of Obsidian:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TEO</Tag>
+		<English>Melee units do not require strategic resources</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>
 		<English>The Power of Father Governs Children:</English>
 		<German>Die Macht von Vater Regiert Kinder:</German>

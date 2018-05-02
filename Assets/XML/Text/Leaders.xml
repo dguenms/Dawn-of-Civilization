@@ -542,4 +542,8 @@
 		<Tag>TXT_KEY_LEADER_KHOSROW</Tag>
 		<English>Khosrow I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ATLATL_CAUAC</Tag>
+		<English>Atlatl Cauac</English>
+	</TEXT>
 </Civ4GameText>

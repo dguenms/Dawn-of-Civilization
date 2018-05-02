@@ -1381,7 +1381,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
 		<English>Build three Islamic Grand Mosques by 1500 AD</English>
-		<German>Bauen Sie drei Islamische Große Moscheen bis zum Jahr 1500 n. Chr.</German>
+		<German>Bauen Sie drei Islamische Groï¿½e Moscheen bis zum Jahr 1500 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
@@ -1785,6 +1785,30 @@
 		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 12000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
+		<English>First Pre-Columbian Metropolis</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1</Tag>
+		<English>Have more culture and population in your capital than in the rest of the Americas combined in 450 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
+		<English>Cultural Diffusion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO2</Tag>
+		<English>Acquire a city through culture by 550 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>
+		<English>The Toltec Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO3</Tag>
+		<English>Control all tiles in Mesoamerica and three world wonders in 1000 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
 		<English>The King and I</English>
 		<German>Der K&#246;nig und ich</German>
@@ -1915,17 +1939,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
 		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
-		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
+		<German>Erwï¿½hltes Volk: Haben Sie insgesamt 15 Groï¿½e Propheten, Wissenschaftler und Staatsmï¿½nner in Ihren Stï¿½dten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD2</Tag>
 		<English>Promised Land: Have legendary culture in the Jewish holy city</English>
-		<German>Gelobtes Land: Haben Sie legendäre Kultur in der jüdischen heiligen Stadt</German>
+		<German>Gelobtes Land: Haben Sie legendï¿½re Kultur in der jï¿½dischen heiligen Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD3</Tag>
 		<English>Diaspora: Have friendly relations with six civilizations with a Jewish minority</English>
-		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jüdischen Minderheit</German>
+		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jï¿½dischen Minderheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
@@ -2175,12 +2199,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC2</Tag>
 		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
-		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
+		<German>Humanismus: Stellen Sie sicher, dass es in sï¿½kularen Zivilisationen 25 Universitï¿½ten, 10 Groï¿½e Wissenschaftler und 10 Groï¿½e Staatsmï¿½nner gibt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
 		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
-		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
+		<German>Modernismus: Stellen Sie sicher, dass die fï¿½nf fortschrittlichsten unabhï¿½ngigen Zivilisationen sï¿½kular sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>

@@ -468,6 +468,7 @@ dAdjectiveChanges = {
 dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu"],
+	iTeotihuacan : ["Tollan"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
 	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
@@ -1020,6 +1021,10 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_KOREA_GORYEO"
 			
 		return "TXT_KEY_CIV_KOREA_JOSEON"
+	
+	elif iPlayer == iTeotihuacan:
+		if not bEmpire and not isCapital(iPlayer, ["Tollan"]):
+			return capitalName(iPlayer)
 		
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
@@ -1313,7 +1318,11 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iEthiopia:
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_ETHIOPIA_ADAL"
-			
+
+	elif iPlayer == iTeotihuacan:
+		if bEmpire and iGameTurn >= getTurnForYear(800):
+			return "TXT_KEY_CIV_TEOTIHUACAN_TOLTEC"
+							
 	elif iPlayer == iByzantium:
 		if pRome.getNumCities() > 0:
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
@@ -1666,7 +1675,14 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
-	
+
+	elif iPlayer == iTeotihuacan:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if bCityStates:
+			return "TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL"
+				
 	elif iPlayer == iKorea:
 		if iEra >= iIndustrial:
 			if bEmpire:

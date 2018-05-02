@@ -1162,5 +1162,12 @@
 			<fBlue>0.75</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MESOAMERICAN_RED</Type>
+			<fRed>0.58</fRed>
+			<fGreen>0.20</fGreen>
+			<fBlue>0.13</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

@@ -164,6 +164,14 @@
 		<English>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN</Tag>
+		<English>Pyramid of the Sun</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] doesn't do anything yet. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
 	</TEXT>

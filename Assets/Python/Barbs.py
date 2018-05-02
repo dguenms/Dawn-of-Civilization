@@ -31,8 +31,8 @@ tMinorCities = (
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-(-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Albán
-(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
+(-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Albï¿½n
+#(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
@@ -42,7 +42,7 @@ tMinorCities = (
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
-(830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# Lübeck
+(830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# Lï¿½beck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (880, (65, 48), iIndependent2, 'Buda', 3, iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
