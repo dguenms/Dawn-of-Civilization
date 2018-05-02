@@ -12,7 +12,7 @@ from StoredData import data
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
-iNumLanguages = 41
+iNumLanguages = 42
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
 iLangBabylonian, iLangPersian, iLangGreek, iLangPhoenician, iLangLatin, 
 iLangJapanese, iLangEthiopian, iLangTeotihuacan, iLangKorean, iLangMayan, iLangByzantine, 
