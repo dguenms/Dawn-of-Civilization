@@ -364,7 +364,7 @@ iCivPersia : (140, 350, 350),
 iCivRome : (100, 320, -1),
 iCivTamils : (800, 1000, 1200),
 iCivEthiopia : (-1, 600, 1910),
-iCivTeotihuacan : (450, 550, 1000)
+iCivTeotihuacan : (450, 550, 1000),
 iCivKorea : (1200, -1, -1),
 iCivMaya : (600, 900, -1),
 iCivByzantium : (1000, 1200, 1450),
