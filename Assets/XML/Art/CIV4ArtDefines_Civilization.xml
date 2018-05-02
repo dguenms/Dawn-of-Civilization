@@ -345,7 +345,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_TEOTIHUACAN</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Aztec.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Serpent.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_puh_glyph.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>

@@ -1220,6 +1220,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	CASTILLA,
 	WILLIAM,
 	GEORGE,
+	KHOSROW,
+	ATLATL_CAUAC,
 	NUM_LEADERHEADS
 };
 
@@ -1306,6 +1308,7 @@ enum PlayerTypes				// Exposed to Python
 	ROME,
 	TAMILS,
 	ETHIOPIA,
+	TEOTIHUACAN,
 	KOREA,
 	MAYA,
 	BYZANTIUM,
