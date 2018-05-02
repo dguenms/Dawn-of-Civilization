@@ -15,7 +15,7 @@ PyPlayer = PyHelpers.PyPlayer
 iNumLanguages = 41
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
 iLangBabylonian, iLangPersian, iLangGreek, iLangPhoenician, iLangLatin, 
-iLangJapanese, iLangEthiopian, iLangKorean, iLangMayan, iLangByzantine, 
+iLangJapanese, iLangEthiopian, iLangTeotihuacan, iLangKorean, iLangMayan, iLangByzantine, 
 iLangViking, iLangArabian, iLangKhmer, iLangIndonesian, iLangSpanish, 
 iLangFrench, iLangEnglish, iLangGerman, iLangRussian, iLangDutch, 
 iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian, 
