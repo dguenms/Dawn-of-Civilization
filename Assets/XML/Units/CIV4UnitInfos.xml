@@ -464,9 +464,9 @@
 			<Capture>UNITCLASS_WORKER</Capture>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
-			<Description>TXT_KEY_TEOTIHUACAN_ARTISAN</Description>
-			<Civilopedia>TXT_KEY_TEOTIHUACAN_ARTISAN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TEOTIHUACAN_ARTISAN_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN</Description>
+			<Civilopedia>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bFood>1</bFood>
 			<UnitClassUpgrades>
