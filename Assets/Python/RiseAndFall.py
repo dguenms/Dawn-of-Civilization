@@ -2539,6 +2539,9 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
+		elif iCiv == iTeotihuacan:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
 			utils.createMissionaries(iCiv, 1)
@@ -2921,6 +2924,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iTeotihuacan:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:

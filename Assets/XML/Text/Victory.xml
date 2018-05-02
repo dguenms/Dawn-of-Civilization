@@ -1809,6 +1809,10 @@
 		<English>Control all tiles in Mesoamerica and three world wonders in 1000 AD</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN</Tag>
+		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
 		<English>The King and I</English>
 		<German>Der K&#246;nig und ich</German>

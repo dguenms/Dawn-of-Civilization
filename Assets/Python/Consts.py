@@ -210,6 +210,7 @@ lOlderNeighbours = [
 [iEgypt, iGreece, iCarthage], #Rome
 [iHarappa, iIndia], #Tamils
 [iEgypt], #Ethiopia
+[iMaya], #Teotihuacan
 [iChina], #Korea
 [], #Maya
 [iGreece], #Byzantium

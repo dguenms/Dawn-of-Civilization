@@ -49,6 +49,10 @@ tSomaliaBR = (77, 29)
 tSubeqAfricaTL = (60, 10)
 tSubeqAfricaBR = (72, 29)
 
+# third Teotihuacan goal: control 100% of Mesoamerica and three world wonders in 1000 AD 
+tMesoamericaTL = (15, 40)
+tMesoamericaBR = (23, 32)
+
 # third Byzantine goal: control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
 tNearEastTL = (69, 37)
 tNearEastBR = (76, 45)
@@ -580,6 +584,29 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iEthiopia, 2)
 			else:
 				lose(iEthiopia, 2)
+				
+	elif iPlayer == iTeotihuacan:
+		
+		# first goal: more culture and population in capital than in all the Americas in 450 AD
+		if iGameTurn == getTurnForYear(450):
+			#capital = pTeotihuacan.getCapitalCity()
+			if True: 
+				win(iTeotihuacan, 0)
+			else:
+				lose(iTeotihuacan, 0)
+		
+		# second goal: acquire a city through culture by 550 AD
+		if iGameTurn == getTurnForYear(550):
+			expire(iTeotihuacan, 1)
+		
+		# third goal: control all tiles in Mesoamerica and 3 world wonders in 1000 AD
+		if iGameTurn == getTurnForYear(1000):
+			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+			if percentMesoamerica >= 99.5 and countWonders(iTeotihuacan) >= 3:
+				win(iTeotihuacan, 2)
+			else: 
+				lose(iTeotihuacan, 2)
 				
 	elif iPlayer == iKorea:
 	
@@ -3482,6 +3509,16 @@ def getUHVHelp(iPlayer, iGoal):
 			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
 			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
 
+	elif iPlayer == iTeotihuacan:
+		if iGoal == 0:
+			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
+			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
+		if iGoal == 2: 
+			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+			iCounter = countWonders(iTeotihuacan)
+			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(90))) + ' ' + getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 3)))
+	
 	elif iPlayer == iKorea:
 		if iGoal == 0:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)

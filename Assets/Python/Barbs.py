@@ -30,8 +30,8 @@ tMinorCities = (
 (-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
+(-300, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-(-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 #(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
@@ -160,6 +160,12 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
+		
+		# Jaguars in classical Mesoamerica
+		if utils.isYearIn(100, 500):
+			self.checkSpawn(iBarbarian, iJaguar, 1, (15, 36), (20, 41), self.spawnUprising, iGameTurn, 6, 4)	
+		elif utils.isYearIn(500, 1150):
+			self.checkSpawn(iBarbarian, iJaguar, 1, (15, 36), (20, 41), self.spawnUprising, iGameTurn, 4, 2)
 			
 		#pirates in Mediterranean
 		if utils.isYearIn(-210, 50):
@@ -264,7 +270,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 
 		#American natives
-		if utils.isYearIn(600, 1100):
+		if utils.isYearIn(400, 1100):
 			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
 			if utils.getScenario() == i3000BC:  #late start condition
 				self.checkSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
