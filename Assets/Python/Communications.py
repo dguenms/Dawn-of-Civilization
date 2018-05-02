@@ -27,7 +27,7 @@ tPool2 = (iEgypt, -1,
 	iGreece, -1,
 	iIndia, iEthiopia,
 	iJapan, -1,	    
-	iPersia, -1
+	iPersia, -1,
 	iTeotihuacan, -1)
 
 
