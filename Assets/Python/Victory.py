@@ -50,8 +50,8 @@ tSubeqAfricaTL = (60, 10)
 tSubeqAfricaBR = (72, 29)
 
 # third Teotihuacan goal: control 100% of Mesoamerica and three world wonders in 1000 AD 
-tMesoamericaTL = (15, 40)
-tMesoamericaBR = (23, 32)
+tMesoamericaTL = (15, 32)
+tMesoamericaBR = (23, 40)
 
 # third Byzantine goal: control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
 tNearEastTL = (69, 37)
