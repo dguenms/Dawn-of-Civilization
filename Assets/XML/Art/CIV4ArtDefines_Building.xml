@@ -1383,7 +1383,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.8</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/PyramidOfTheSun/ELcastillo04.nif</NIF>
+			<NIF>Art/Structures/Buildings/ChichenItza/ChichenItza.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Wonders/PyramidOfTheSun.dds</Button>
 		</BuildingArtInfo>
