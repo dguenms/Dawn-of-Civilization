@@ -2166,6 +2166,10 @@
 		<German>Erhalten Sie 50 Nahrung durch Kämpfe</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TEOTL_TEOTIHUACAN</Tag>
+		<English>Produce 100 culture with artisans</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
 		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
 		<German>Haben Sie 100 Runden von Städten, die den "Wir leben den König"-Tag feiern</German>
@@ -2501,6 +2505,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FOOD_FROM_COMBAT</Tag>
 		<English>Food acquired from combat: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS</Tag>
+		<English>Culture produced with artisans: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
