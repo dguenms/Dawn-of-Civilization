@@ -3517,7 +3517,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
 			iCounter = countWonders(iTeotihuacan)
-			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(90))) + ' ' + getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 3)))
+			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))) + ' ' + getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 3)))
 	
 	elif iPlayer == iKorea:
 		if iGoal == 0:

@@ -1379,10 +1379,10 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.33</fScale>
-			<fInterfaceScale>0.53</fInterfaceScale>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/PyramidOfTheSun/ELcastillo04.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Wonders/PyramidOfTheSun.dds</Button>
