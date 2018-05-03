@@ -417,7 +417,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_TEOTIHUACAN</Type> <!-- Teotihuacan -->
 			<ColorTypePrimary>COLOR_PLAYER_MESOAMERICAN_RED</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_GREEN_TEXT</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_GREEN</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_MESOAMERICAN_RED</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
