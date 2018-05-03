@@ -2925,7 +2925,7 @@ class RiseAndFall:
 		elif iCiv == iEthiopia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iTeotihuacan:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(iToltecArtisan, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:
