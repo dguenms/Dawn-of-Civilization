@@ -587,13 +587,16 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iTeotihuacan:
 		
-		# first goal: more culture and population in capital than in all the Americas in 450 AD
-		if iGameTurn == getTurnForYear(450):
-			#capital = pTeotihuacan.getCapitalCity()
-			if True: 
+		# first goal: experience two golden ages by 450 AD
+		if isPossible(iTeotihuacan, 0):
+			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(16):
 				win(iTeotihuacan, 0)
-			else:
-				lose(iTeotihuacan, 0)
+				
+			if pTeotihuacan.isGoldenAge() and not pTeotihuacan.isAnarchy():
+				data.iTeotihuacanGoldenAgeTurns += 1
+				
+		if iGameTurn == getTurnForYear(450):
+			expire(iTeotihuacan, 0)
 		
 		# second goal: acquire a city through culture by 550 AD
 		if iGameTurn == getTurnForYear(550):
@@ -1564,6 +1567,13 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 		expire(iJapan, 0)
 	
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
+	
+	# first Teotihuacan goal: acquire a city through culture by 450 AD
+	# NOTE: this code also allows winning from acquiring a city any way but military conquest (may need to be changed)
+	if iPlayer == iTeotihuacan:
+		if isPossible(iTeotihuacan, 1): 
+			if !bConquest:
+				win(iTeotihuacan, 1)
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
 	if iPlayer == iTibet:
@@ -2245,7 +2255,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 				
 			# Teotl: sacrifice ten slaves
 			elif paganReligion == "Teotl":
-				if data.iTeotlSacrifices >= 10:
+				if iPlayer == iTeotihuacan and data.iTeotlSacrifices >= 100:
+					return 1
+				elif data.iTeotlSacrifices >= 10:
 					return 1
 					
 			# Vedism: have 100 turns of cities celebrating "We Love the King" day
@@ -3287,6 +3299,8 @@ def getPaganGoalHelp(iPlayer):
 		iCount = data.iTeotlSacrifices
 		if iPlayer == iMaya:
 			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
+		if iPlayer == iTeotihuacan:
+			return getIcon(iCount >= 100) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 100))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 	
 	elif paganReligion == "Vedism":
@@ -3511,8 +3525,8 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iTeotihuacan:
 		if iGoal == 0:
-			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
+			iGoldenAgeTurns = data.iTeotihuacanGoldenAgeTurns
+			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(16)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 2)))
 		if iGoal == 2: 
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles

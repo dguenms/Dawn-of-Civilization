@@ -9608,12 +9608,13 @@
 			<ArtDefineTag>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PYRAMID_OF_THE_SUN</MovieDefineTag>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
-			<PrereqTech>TECH_ARITHMETICS</PrereqTech>
+			<PrereqTech>TECH_MASONRY</PrereqTech>
 			<ObsoleteTech>TECH_DOCTRINE</ObsoleteTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
+			<bGoldenAge>1</bGoldenAge>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
 			<iCost>300</iCost>

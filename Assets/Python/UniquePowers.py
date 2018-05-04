@@ -64,6 +64,9 @@ class UniquePowers:
 
 		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
+			
+		if iGameTurn >= getTurnForYear(tBirth[iTeotihuacan]) and pTeotihuacan.isAlive():
+			self.teotihuacanArtisan()
 		
 		data.bBabyloniaTechReceived = False
 					
@@ -570,3 +573,18 @@ class UniquePowers:
 	def mughalUP(self, city, iBuilding):
 		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
 		city.changeCulture(iMughals, iCost / 2, True)
+		
+		
+	# Teotihuacan artisan: 2 culture per Toltec Artisan stationed in a city
+	def teotihuacanArtisan(self):
+		unitList = PyPlayer(iTeotihuacan).getUnitsOfType(iToltecArtisan)
+		if unitList:
+			for unit in unitList:
+				x = unit.getX()
+				y = unit.getY()
+				plot = gc.getMap().plot(x, y)
+				if plot.isCity():
+					city = plot.getPlotCity()
+					if city.getOwner() == iTeotihuacan:
+						city.changeCulture(iTeotihuacan, 2, True)
+						if utils.getHumanID() == city.getOwner(): data.iTeotlSacrifices += 2 # for pagan victory
