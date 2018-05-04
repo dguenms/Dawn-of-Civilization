@@ -9604,6 +9604,7 @@
 			<Description>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PYRAMID_OF_THE_SUN</MovieDefineTag>
@@ -9614,7 +9615,6 @@
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
-			<bGoldenAge>1</bGoldenAge>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
 			<iCost>300</iCost>

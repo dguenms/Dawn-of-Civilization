@@ -2251,7 +2251,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 				
 			# Teotl: sacrifice ten slaves
 			elif paganReligion == "Teotl":
-				if iPlayer == iTeotihuacan and data.iTeotlSacrifices >= 100:
+				if iPlayer == iTeotihuacan and data.iTeotlSacrifices >= 200:
 					return 1
 				elif data.iTeotlSacrifices >= 10:
 					return 1
@@ -3296,7 +3296,7 @@ def getPaganGoalHelp(iPlayer):
 		if iPlayer == iMaya:
 			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
 		if iPlayer == iTeotihuacan:
-			return getIcon(iCount >= 100) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 100))
+			return getIcon(iCount >= 200) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 200))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 	
 	elif paganReligion == "Vedism":

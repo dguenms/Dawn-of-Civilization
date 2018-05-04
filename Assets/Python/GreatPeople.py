@@ -3572,7 +3572,8 @@ iCivMaya : {
 	iGreatProphet : [
 		"Junajpu", # mythological
 		"Xb'alanke", # mythological
-		"Kukulkan" # 10th, named after the god
+		"Kukulkan", # 10th, named after the god
+		"Ce Acatl Topiltzin", # 10th toltec
 	],
 	iGreatArtist : [
 		"Uaxaclajuun Ub'aah K'awiil", # 8th
@@ -3595,6 +3596,7 @@ iCivMaya : {
 		"Tabscoob", # 16th
 	],
 	iGreatEngineer : [
+		"Chan Imix K'awiil", # 7th
 		"fK'ab'al Xook", # 8th
 		"Ha' K'in Xook", # 8th
 		"Itzam K'an Ahk", # 8th
@@ -3609,6 +3611,7 @@ iCivMaya : {
 		u"fRigoberta Menchú", # 20th
 	],
 	iGreatGeneral : [
+		"Siyaj K'ak'", # 4th teotihuacan
 		"K'inich Yo'nal Ahk", # 7th
 		"fXochitl", # 9th toltec
 		"Hunac Ceel", # 12th

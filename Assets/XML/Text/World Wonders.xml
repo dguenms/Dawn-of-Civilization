@@ -168,8 +168,12 @@
 		<English>Pyramid of the Sun</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_HELP</Tag>
+		<English>[ICON_BULLET]Golden Ages require one fewer Great Person</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] reduces by 1 the number of Great People required to start a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT]. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
