@@ -587,26 +587,29 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iTeotihuacan:
 		
-		# first goal: experience two golden ages by 450 AD
-		if isPossible(iTeotihuacan, 0):
-			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(16):
+		# first goal: have 500 culture in 450
+		if iGameTurn == getTurnForYear(450):
+			if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
 				win(iTeotihuacan, 0)
+			else:
+				lose(iTeotihuacan, 0)
+			
+		# second goal: experience a golden age by 550 AD
+		if isPossible(iTeotihuacan, 1):
+			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(8):
+				win(iTeotihuacan, 1)
 				
 			if pTeotihuacan.isGoldenAge() and not pTeotihuacan.isAnarchy():
 				data.iTeotihuacanGoldenAgeTurns += 1
 				
-		if iGameTurn == getTurnForYear(450):
-			expire(iTeotihuacan, 0)
-		
-		# second goal: acquire a city through culture by 550 AD
 		if iGameTurn == getTurnForYear(550):
 			expire(iTeotihuacan, 1)
 		
-		# third goal: control all tiles in Mesoamerica and 3 world wonders in 1000 AD
+		# third goal: control all tiles in Mesoamerica in 1000 AD
 		if iGameTurn == getTurnForYear(1000):
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
-			if percentMesoamerica >= 99.5 and countWonders(iTeotihuacan) >= 3:
+			if percentMesoamerica >= 99.5:
 				win(iTeotihuacan, 2)
 			else: 
 				lose(iTeotihuacan, 2)
@@ -1567,13 +1570,6 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 		expire(iJapan, 0)
 	
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
-	
-	# first Teotihuacan goal: acquire a city through culture by 450 AD
-	# NOTE: this code also allows winning from acquiring a city any way but military conquest (may need to be changed)
-	if iPlayer == iTeotihuacan:
-		if isPossible(iTeotihuacan, 1): 
-			if not bConquest:
-				win(iTeotihuacan, 1)
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
 	if iPlayer == iTibet:
@@ -3525,13 +3521,12 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iTeotihuacan:
 		if iGoal == 0:
-			iGoldenAgeTurns = data.iTeotihuacanGoldenAgeTurns
-			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(16)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 2)))
+			iCulture = pTeotihuacan.countTotalCulture()
+			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
 		if iGoal == 2: 
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
-			iCounter = countWonders(iTeotihuacan)
-			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))) + ' ' + getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 3)))
+			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))))
 	
 	elif iPlayer == iKorea:
 		if iGoal == 0:
