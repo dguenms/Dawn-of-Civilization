@@ -226,6 +226,7 @@ class GameData:
 		self.iFirstNewWorldColony = -1
 		
 		self.iChineseGoldenAgeTurns = 0
+		self.iTeotihuacanGoldenAgeTurns = 0
 		self.iKoreanSinks = 0
 		self.iTamilTradeGold = 0
 		self.iColombianTradeGold = 0

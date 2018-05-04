@@ -1786,11 +1786,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
-		<English>First Pre-Columbian Metropolis</English>
+		<English>Birthplace of the Gods</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1</Tag>
-		<English>Have more culture and population in your capital than in the rest of the Americas combined in 450 AD</English>
+		<English>Experience two golden ages by 450 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
@@ -1798,7 +1798,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2</Tag>
-		<English>Acquire a city through culture by 550 AD</English>
+		<English>Acquire a city through cultural influence by 550 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>

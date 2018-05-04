@@ -587,13 +587,16 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iTeotihuacan:
 		
-		# first goal: more culture and population in capital than in all the Americas in 450 AD
-		if iGameTurn == getTurnForYear(450):
-			#capital = pTeotihuacan.getCapitalCity()
-			if True: 
+		# first goal: experience two golden ages by 450 AD
+		if isPossible(iTeotihuacan, 0):
+			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(16):
 				win(iTeotihuacan, 0)
-			else:
-				lose(iTeotihuacan, 0)
+				
+			if pTeotihuacan.isGoldenAge() and not pTeotihuacan.isAnarchy():
+				data.iTeotihuacanGoldenAgeTurns += 1
+				
+		if iGameTurn == getTurnForYear(450):
+			expire(iTeotihuacan, 0)
 		
 		# second goal: acquire a city through culture by 550 AD
 		if iGameTurn == getTurnForYear(550):
@@ -3515,8 +3518,8 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iTeotihuacan:
 		if iGoal == 0:
-			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
+			iGoldenAgeTurns = data.iTeotihuacanGoldenAgeTurns
+			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(16)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 2)))
 		if iGoal == 2: 
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
