@@ -162,7 +162,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
 		
 		# Jaguars in classical Mesoamerica
-		if utils.isYearIn(100, 500):
+		if utils.isYearIn(150, 500):
 			self.checkSpawn(iBarbarian, iJaguar, 1, (15, 36), (20, 41), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(500, 1150):
 			self.checkSpawn(iBarbarian, iJaguar, 1, (15, 36), (20, 41), self.spawnUprising, iGameTurn, 4, 2)
