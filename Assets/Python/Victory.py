@@ -1567,6 +1567,13 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 		expire(iJapan, 0)
 	
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
+	
+	# first Teotihuacan goal: acquire a city through culture by 450 AD
+	# NOTE: this code also allows winning from acquiring a city any way but military conquest (may need to be changed)
+	if iPlayer == iTeotihuacan:
+		if isPossible(iTeotihuacan, 1): 
+			if !bConquest:
+				win(iTeotihuacan, 1)
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
 	if iPlayer == iTibet:
