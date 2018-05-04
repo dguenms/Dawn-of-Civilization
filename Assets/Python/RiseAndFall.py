@@ -1929,6 +1929,9 @@ class RiseAndFall:
 					if iNewWorldCiv == iMaya:
 						tContactZoneTL = (15, 30)
 						tContactZoneBR = (34, 42)
+					elif iNewWorldCiv == iTeotihuacan:
+						tContactZoneTL = (11, 31)
+						tContactZoneBR = (34, 43)
 					elif iNewWorldCiv == iAztecs:
 						tContactZoneTL = (11, 31)
 						tContactZoneBR = (34, 43)
@@ -2009,7 +2012,7 @@ class RiseAndFall:
 							
 						if iNewWorldCiv == iInca:
 							utils.makeUnitAI(iAucac, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-						elif iNewWorldCiv == iAztecs:
+						elif iNewWorldCiv == iAztecs or iNewWorldCiv == iTeotihuacan:
 							utils.makeUnitAI(iJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 							utils.makeUnitAI(iHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 						elif iNewWorldCiv == iMaya:

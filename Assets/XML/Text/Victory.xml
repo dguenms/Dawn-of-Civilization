@@ -1786,19 +1786,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
-		<English>Birthplace of the Gods</English>
+		<English>Mesoamerican Metropolis</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1</Tag>
-		<English>Experience two golden ages by 450 AD</English>
+		<English>Have more than 500 culture in 450 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
-		<English>Cultural Diffusion</English>
+		<English>Birthplace of the Gods</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2</Tag>
-		<English>Acquire a city through cultural influence by 550 AD</English>
+		<English>Experience a golden age by 550 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>
@@ -1806,7 +1806,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3</Tag>
-		<English>Control all tiles in Mesoamerica and three world wonders in 1000 AD</English>
+		<English>Control all tiles in Mesoamerica in 1000 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN</Tag>

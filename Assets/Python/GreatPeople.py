@@ -24,7 +24,7 @@ def getAlias(iCiv, iType):
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivThailand: return iCivKhmer
 	elif iCiv == iCivIran: return iCivPersia
-	elif iCiv == iTeotihuacan: return iCivMaya
+	elif iCiv == iCivTeotihuacan: return iCivMaya
 	
 	return iCiv
 	
