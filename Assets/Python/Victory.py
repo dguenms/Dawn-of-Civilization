@@ -1572,7 +1572,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	# NOTE: this code also allows winning from acquiring a city any way but military conquest (may need to be changed)
 	if iPlayer == iTeotihuacan:
 		if isPossible(iTeotihuacan, 1): 
-			if !bConquest:
+			if not bConquest:
 				win(iTeotihuacan, 1)
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
