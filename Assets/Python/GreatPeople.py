@@ -1664,6 +1664,7 @@ iCivSpain : {
 		"Ramon Llull", # 13th
 		iRenaissance,
 		"Miguel Serveto", # 16th
+		u"Carlos de Sigüenza y Góngora", # 17th
 		"Antonio de Ulloa", # 18th
 		iIndustrial,
 		u"Santiago Ramón y Cajal", # 19th
