@@ -159,7 +159,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MAYA</Tag>
-		<English>It is the year 60 AD. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</English>
+		<English>It is the year 750 BC. Urbanization on the peninsula of Yucatan sparks the formation of the Maya city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MONGOLIA</Tag>
@@ -247,7 +247,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_TEOTIHUACAN</Tag>
-		<English>It is the year 100 BC. While the Valley of Mexico has been inhabited for thousands of years, advanced civilization thus far has only flourished East, in the Olmec, Zapotec, and Maya heartlands. Now urban centers are developing around Lake Texcoco. The most prominent is Teotihuacan, poised to influence the culture of all Mesoamerica.</English>
+		<English>It is the year 200 BC. While the Valley of Mexico has been inhabited for thousands of years, advanced civilization thus far has only flourished East, in the Olmec, Zapotec, and Maya heartlands. Now urban centers are developing around Lake Texcoco. The most prominent is Teotihuacan, poised to influence the culture of all Mesoamerica.</English>
+		<French>Nous sommes en l'an 200 avant J.-C. Bien que la vallée de Mexico soit habitée depuis des milliers d'années, des civilisations avancées ne se sont jusqu'ici dévelopées qu'à l'Est, chez les Olmèques, les Zapotèques et les Mayas. Cependant, des centres urbains se forment désormais autour du Lac Texcoco. Teotihuacan, la plus importante de ces cités, est destinée à influencer la culture de toute la Mésoamérique.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_THAILAND</Tag>
