@@ -9,8 +9,8 @@ iWorldY = 68
 
 # initialise player variables to player IDs from WBS
 iNumPlayers = 45
-(iEgypt, iChina, iBabylonia, iHarappa, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
-iTamils, iEthiopia, iTeotihuacan, iKorea, iMaya, iByzantium, iJapan, iVikings, iArabia, iTibet, iIndonesia,
+(iEgypt, iChina, iBabylonia, iHarappa, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, iMaya,
+iTamils, iEthiopia, iTeotihuacan, iKorea, iByzantium, iJapan, iVikings, iArabia, iTibet, iIndonesia,
 iMoors, iSpain, iFrance, iKhmer, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal, 
 iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany,
 iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
