@@ -392,7 +392,10 @@ dForeignNames = {
 		iPortugal : "TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL",
 	},
 	iTibet : {
+		iChina : "TXT_KEY_CIV_TIBETAN_NAME_CHINA",
+		iIndia : "TXT_KEY_CIV_TIBETAN_NAME_INDIA",
 		iTurks : "TXT_KEY_CIV_TIBETAN_NAME_TURKS",
+		iMongolia : "TXT_KEY_CIV_TIBETAN_NAME_MONGOLIA",
 	},
 	iMoors : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
