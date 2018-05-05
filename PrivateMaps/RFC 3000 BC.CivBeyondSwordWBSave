@@ -287,7 +287,7 @@ BeginPlayer
 	CivType=CIVILIZATION_TEOTIHUACAN
 	PlayableCiv=1
 	StartingGold=200
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
