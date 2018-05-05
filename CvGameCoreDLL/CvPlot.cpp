@@ -10922,58 +10922,58 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 			}
 		}
 
-		if (getOwner() != TEOTIHUACAN || GC.getUnitInfo(eUnit).getUnitClassType() != 1) { // Teotihuacan UP: melee units ignore resource requirements
-		if (GC.getUnitInfo(eUnit).getPrereqAndBonus() != NO_BONUS)
-		{
-			if (NULL == pCity)
+		if (getOwner() != TEOTIHUACAN || (getOwner() == TEOTIHUACAN && GC.getUnitInfo(eUnit).getUnitClassType() != 1)) { // Teotihuacan UP: melee units ignore resource requirements
+			if (GC.getUnitInfo(eUnit).getPrereqAndBonus() != NO_BONUS)
 			{
-				if (!isPlotGroupConnectedBonus(getOwnerINLINE(), (BonusTypes)GC.getUnitInfo(eUnit).getPrereqAndBonus()))
-				{
-					return false;
-				}
-			}
-			else
-			{
-				if (!pCity->hasBonus((BonusTypes)GC.getUnitInfo(eUnit).getPrereqAndBonus()))
-				{
-					return false;
-				}
-			}
-		}
-
-		bool bRequiresBonus = false;
-		bool bNeedsBonus = true;
-
-		for (int iI = 0; iI < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); ++iI)
-		{
-			if (GC.getUnitInfo(eUnit).getPrereqOrBonuses(iI) != NO_BONUS)
-			{
-				bRequiresBonus = true;
-
 				if (NULL == pCity)
 				{
-					if (isPlotGroupConnectedBonus(getOwnerINLINE(), (BonusTypes)GC.getUnitInfo(eUnit).getPrereqOrBonuses(iI)))
+					if (!isPlotGroupConnectedBonus(getOwnerINLINE(), (BonusTypes)GC.getUnitInfo(eUnit).getPrereqAndBonus()))
 					{
-						bNeedsBonus = false;
-						break;
+						return false;
 					}
 				}
 				else
 				{
-					if (pCity->hasBonus((BonusTypes)GC.getUnitInfo(eUnit).getPrereqOrBonuses(iI)))
+					if (!pCity->hasBonus((BonusTypes)GC.getUnitInfo(eUnit).getPrereqAndBonus()))
 					{
-						bNeedsBonus = false;
-						break;
+						return false;
 					}
 				}
 			}
+			
+			bool bRequiresBonus = false;
+			bool bNeedsBonus = true;
+			
+			for (int iI = 0; iI < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); ++iI)
+			{
+				if (GC.getUnitInfo(eUnit).getPrereqOrBonuses(iI) != NO_BONUS)
+				{
+					bRequiresBonus = true;
+					
+					if (NULL == pCity)
+					{
+						if (isPlotGroupConnectedBonus(getOwnerINLINE(), (BonusTypes)GC.getUnitInfo(eUnit).getPrereqOrBonuses(iI)))
+						{
+							bNeedsBonus = false;
+							break;
+						}
+					}
+					else
+					{
+						if (pCity->hasBonus((BonusTypes)GC.getUnitInfo(eUnit).getPrereqOrBonuses(iI)))
+						{
+							bNeedsBonus = false;
+							break;
+						}
+					}
+				}
+			}
+			
+			if (bRequiresBonus && bNeedsBonus)
+			{
+				return false;
+			}
 		}
-
-		if (bRequiresBonus && bNeedsBonus)
-		{
-			return false;
-		}
-	}
 	}
 
 	return true;
