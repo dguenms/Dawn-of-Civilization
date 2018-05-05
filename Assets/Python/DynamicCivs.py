@@ -501,6 +501,7 @@ dStartingLeaders = [
 	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iZaraYaqob,
+	iTeotihuacan : iAtlatlCauac,
 	iKorea : iWangKon,
 	iMaya : iPacal,
 	iByzantium : iJustinian,
