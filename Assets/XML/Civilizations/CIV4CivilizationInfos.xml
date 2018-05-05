@@ -5393,7 +5393,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
 			<Identifier>TEO</Identifier>
-			<StartingYear>-100</StartingYear>
+			<StartingYear>-200</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>

@@ -261,7 +261,7 @@ tBirth = (
 -753, # 90, #753BC			# Rome
 -300,					# Tamils
 -290, # 121, #300BC			# Ethiopia
--100, 					# Teotihuacan
+-200, 					# Teotihuacan
 -50,					# Korea
 65, # 145, #60AD			# Maya
 330,					# Byzantium
