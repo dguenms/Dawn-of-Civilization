@@ -6997,7 +6997,7 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		case TRADE_RESOURCES:
 			if (!bIgnoreAnnual)
 			{
-				iValue += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, iChange);
+				iValue += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, iChange);
 			}
 			break;
 		case TRADE_CITIES:
@@ -7401,7 +7401,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 							{
 								if (GET_PLAYER(ePlayer).AI_corporationBonusVal((BonusTypes)(pNode->m_data.m_iData)) == 0)
 								{
-									iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+									iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 									pabBonusDeal[pNode->m_data.m_iData] = true;
 								}
 							}
@@ -7505,7 +7505,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (GET_PLAYER(ePlayer).getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 0)
 							{
-								iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+								iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -7682,7 +7682,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 1)
 							{
-								iWeight += GET_PLAYER(ePlayer).AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), getID(), 1);
+								iWeight += GET_PLAYER(ePlayer).AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), getID(), 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -8317,6 +8317,13 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 	//iValue /= 10;
 
 	return iValue;
+}
+
+
+// Leoreth
+int CvPlayerAI::AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
+{
+	return AI_bonusTradeVal(eBonus, ePlayer, iChange) - GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
 }
 
 
@@ -13438,7 +13445,7 @@ void CvPlayerAI::AI_doDiplo()
 								{
 									if (getNumTradeableBonuses((BonusTypes)iJ) > 1)
 									{
-										if ((GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
+										if ((GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
 											&& (GET_PLAYER((PlayerTypes)iI).AI_bonusVal((BonusTypes)iJ, 1) > AI_bonusVal((BonusTypes)iJ, -1)))
 										{
 											setTradeItem(&item, TRADE_RESOURCES, iJ);
@@ -13551,7 +13558,7 @@ void CvPlayerAI::AI_doDiplo()
 									{
 										if (GET_PLAYER((PlayerTypes)iI).getNumTradeableBonuses((BonusTypes)iJ) > 0 && getNumAvailableBonuses((BonusTypes)iJ) == 0)
 										{
-											iValue = AI_bonusTradeVal((BonusTypes)iJ, (PlayerTypes)iI, 1);
+											iValue = AI_relativeBonusTradeVal((BonusTypes)iJ, (PlayerTypes)iI, 1);
 
 											if (iValue > iBestValue)
 											{
@@ -14213,7 +14220,7 @@ void CvPlayerAI::AI_doDiplo()
 															{
 																if (GET_PLAYER((PlayerTypes)iI).getNumTradeableBonuses((BonusTypes)iJ) > 1)
 																{
-																	if (AI_bonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
+																	if (AI_relativeBonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
 																	{
 																		setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14581,7 +14588,7 @@ void CvPlayerAI::AI_doDiplo()
 												{
 													if (GET_PLAYER((PlayerTypes)iI).AI_corporationBonusVal((BonusTypes)iJ) == 0)
 													{
-														if (AI_bonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
+														if (AI_relativeBonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
 													{
 														setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14611,7 +14618,7 @@ void CvPlayerAI::AI_doDiplo()
 													{
 														if (getNumTradeableBonuses((BonusTypes)iJ) > 1)
 														{
-															if (GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
+															if (GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
 															{
 																setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14632,7 +14639,7 @@ void CvPlayerAI::AI_doDiplo()
 
 												if (eBestGiveBonus != NO_BONUS)
 												{
-													if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || (AI_bonusTradeVal(eBestReceiveBonus, ((PlayerTypes)iI), -1) >= GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(eBestGiveBonus, getID(), 1)))
+													if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || (AI_relativeBonusTradeVal(eBestReceiveBonus, ((PlayerTypes)iI), -1) >= GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(eBestGiveBonus, getID(), 1)))
 													{
 														ourList.clear();
 														theirList.clear();
