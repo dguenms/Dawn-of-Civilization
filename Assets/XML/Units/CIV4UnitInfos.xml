@@ -4959,7 +4959,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_GLOBALISM</PrereqTech>
-			<iCost>160</iCost>
+			<iCost>175</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
@@ -5110,7 +5110,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_RADAR</PrereqTech>
-			<iCost>160</iCost>
+			<iCost>175</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
