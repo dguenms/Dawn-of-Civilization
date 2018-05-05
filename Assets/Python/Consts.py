@@ -15,14 +15,14 @@ iMoors, iSpain, iFrance, iKhmer, iEngland, iHolyRome, iRussia, iMali, iPoland, i
 iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany,
 iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
 
-(pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
-pTamils, pEthiopia, pTeotihuacan, pKorea, pMaya, pByzantium, pJapan, pVikings, pArabia, pTibet, pIndonesia, 
+(pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, pMaya,
+pTamils, pEthiopia, pTeotihuacan, pKorea, pByzantium, pJapan, pVikings, pArabia, pTibet, pIndonesia, 
 pMoors, pSpain, pFrance, pKhmer, pEngland, pHolyRome, pRussia, pMali, pPoland, pPortugal, 
 pInca, pItaly, pMongolia, pAztecs, pMughals, pTurkey, pThailand, pCongo, pNetherlands, pGermany, 
 pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
-(teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
-teamTamils, teamEthiopia, teamTeotihuacan, teamKorea, teamMaya, teamByzantium, teamJapan, teamVikings, teamArabia, teamTibet, teamIndonesia,
+(teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, teamMaya,
+teamTamils, teamEthiopia, teamTeotihuacan, teamKorea, teamByzantium, teamJapan, teamVikings, teamArabia, teamTibet, teamIndonesia,
 teamMoors, teamSpain, teamFrance, teamKhmer, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, teamPortugal, 
 teamInca, teamItaly, teamMongolia, teamAztecs, teamMughals, teamTurkey, teamThailand, teamCongo, teamNetherlands, teamGermany, 
 teamAmerica, teamArgentina, teamBrazil, teamCanada) = [gc.getTeam(i) for i in range(iNumPlayers)]
@@ -159,11 +159,11 @@ lNeighbours = [
 [], # Polynesia
 [iIndia, iBabylonia, iHarappa, iGreece, iByzantium, iTurkey, iMongolia, iCarthage, iMughals], #Persia
 [iEgypt, iBabylonia, iGreece, iCarthage, iSpain, iFrance, iHolyRome, iPortugal, iItaly, iGermany], #Rome
+[iSpain, iTeotihuacan, iInca, iAztecs, iAmerica], #Maya
 [iHarappa, iIndia, iKhmer, iIndonesia, iMughals, iThailand], #Tamils
 [iEgypt, iArabia, iMali, iCongo], #Ethiopia
 [iSpain, iMaya, iInca, iAztecs, iAmerica], #Teotihuacan
 [iChina, iKorea, iMongolia], #Korea
-[iSpain, iTeotihuacan, iInca, iAztecs, iAmerica], #Maya
 [iEgypt, iBabylonia, iGreece, iPersia, iArabia, iRussia], #Byzantium
 [iChina, iKorea, iKhmer, iMongolia, iThailand], #Japan
 [iFrance, iEngland, iHolyRome, iRussia, iPoland, iNetherlands, iGermany], #Vikings
@@ -208,11 +208,11 @@ lOlderNeighbours = [
 [], # Polynesia
 [iEgypt, iBabylonia, iHarappa, iGreece], #Persia
 [iEgypt, iGreece, iCarthage], #Rome
+[], #Maya
 [iHarappa, iIndia], #Tamils
 [iEgypt], #Ethiopia
 [iMaya], #Teotihuacan
 [iChina], #Korea
-[], #Maya
 [iGreece], #Byzantium
 [iKorea], #Japan
 [], #Vikings
@@ -259,11 +259,11 @@ tBirth = (
 -1000,					# Polynesia
 -850, # 84, #844BC			# Persia
 -753, # 90, #753BC			# Rome
+-750, 					# Maya
 -300,					# Tamils
 -290, # 121, #300BC			# Ethiopia
 -200, 					# Teotihuacan
 -50,					# Korea
-65, # 145, #60AD			# Maya
 330,					# Byzantium
 525, # 97, #660BC			# Japan
 551, # 177, #551AD			# Vikings
@@ -315,11 +315,11 @@ tFall = (
 1200,					# Polynesia
 651,					# Persia
 235, # crisis of the third century	# Rome
+900,					# Maya
 1000,					# Tamils
 960,					# Ethiopia
 550, #fall of Teotihuacan # Teotihuacan
 1255, #Mongol invasion			# Korea
-900,					# Maya
 1204, #fourth crusade			# Byzantium
 2020,					# Japan
 1300,					# Vikings
@@ -362,11 +362,11 @@ iCivCarthage : (-300, -100, 200),
 iCivPolynesia : (800, 1000, 1200),
 iCivPersia : (140, 350, 350),
 iCivRome : (100, 320, -1),
+iCivMaya : (600, 900, -1),
 iCivTamils : (800, 1000, 1200),
 iCivEthiopia : (-1, 600, 1910),
 iCivTeotihuacan : (450, 550, 1000),
 iCivKorea : (1200, -1, -1),
-iCivMaya : (600, 900, -1),
 iCivByzantium : (1000, 1200, 1450),
 iCivJapan : (1600, 1940, -1),
 iCivVikings : (1050, 1100, 1500),
@@ -463,11 +463,11 @@ tRebirthCiv = (
 -1,		# Polynesia
 iCivIran,	# Persia
 iCivItaly,	# Rome
+iCivColombia,	# Maya
 -1,		# Tamils
 -1,		# Ethiopia
 -1, 	# Teotihuacan
 -1,		# Korea
-iCivColombia,	# Maya
 -1,		# Byzantium
 -1,		# Japan
 -1,		# Vikings
@@ -511,11 +511,11 @@ tResurrectionIntervals = (
 [],		# Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
+[(0, 800)], #Maya
 [(-300, 600), (1300, 1650)], #Tamils
 [(1270, 1520), (1850, 2020)], #Ethiopia
 [(-100, 1000)], #Teotihuacan
 [(1800, 2020)], #Korea
-[(0, 800)], #Maya
 [(1100, 1280)], #Byzantium
 [(1800, 2020)], #Japan
 [(1520, 2020)], #Vikings
@@ -892,12 +892,12 @@ iCarthage	:	"TXT_KEY_DOM_PHOENICIA",
 iPolynesia	:	"TXT_KEY_DOM_POLYNESIA",
 iPersia		:	"TXT_KEY_DOM_PERSIA",
 iRome		:	"TXT_KEY_DOM_ROME",
+iMaya		:	"TXT_KEY_DOM_MAYA",
 iTamils		:	"TXT_KEY_DOM_TAMILS",
 iEthiopia	:	"TXT_KEY_DOM_ETHIOPIA",
 iJapan		:	"TXT_KEY_DOM_JAPAN",
 iTeotihuacan:	"TXT_KEY_DOM_TEOTIHUACAN",
 iKorea		:	"TXT_KEY_DOM_KOREA",
-iMaya		:	"TXT_KEY_DOM_MAYA",
 iByzantium	:	"TXT_KEY_DOM_BYZANTIUM",
 iVikings	:	"TXT_KEY_DOM_VIKINGS",
 iArabia		:	"TXT_KEY_DOM_ARABIA",
@@ -1010,11 +1010,11 @@ lEnemyCivsOnSpawn = [
 [iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage], #Persia
 #[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
 [], # rome for testing
+[], #Maya
 [], #Tamils
 [], #Ethiopia
 [], #Teotihuacan
 [], #Korea
-[], #Maya
 [iGreece, iPersia], #Byzantium
 [], #Japan
 [iEngland,iEngland,iFrance,iIndependent,iIndependent2], #Vikings
@@ -1059,11 +1059,11 @@ lTotalWarOnSpawn = [
 [], #Polynesia
 [iBabylonia, iCarthage], #Persia
 [iGreece], #Rome
+[], #Maya
 [], #Tamils
 [], #Ethiopia
 [], #Teotihuacan
 [], #Korea
-[], #Maya
 [iGreece], #Byzantium
 [], #Japan
 [], #Vikings
@@ -1109,11 +1109,11 @@ tAggressionLevel = (
 0, #Polynesia
 3, #Persia
 3, #Rome
+1, #Maya
 2, #Tamils
 0, #Ethiopia
 1, #Teotihuacan
 0, #Korea
-1, #Maya
 1, #Byzantium
 1, #Japan
 2, #Viking
@@ -1158,12 +1158,12 @@ tAIStopBirthThreshold = (
     80, #Carthage
     80, #Polynesia
     70, #Persia
+    80, #Maya
     80, #Rome
     80, #Tamils
     80, #Ethiopia
     80, #Teotihuacan
     80, #Korea
-    80, #Maya
     80, #Byzantium
     80, #Japan
     80, #Viking
@@ -1213,11 +1213,11 @@ tResurrectionProb = (
 40, #Polynesia
 70, #Persia
 65, #Rome
+30, #Maya
 10, #Tamils
 80, #Ethopia
 30, #Teotihuacan
 80, #Korea
-30, #Maya
 65, #Byzantium
 100, #Japan
 60, #Viking
@@ -1265,11 +1265,11 @@ tPatienceThreshold = (
 50, #Polynesia
 30, #Persia
 25, #Rome
+35, #Maya
 45, #Tamils
 20, #Ethopia
 35, #Teotihuacan
 25, #Korea
-35, #Maya
 25, #Byzantium
 25, #Japan
 30, #Viking
@@ -1315,11 +1315,11 @@ tMaxColonists = (
 0, #Polynesia
 0, #Persia
 0, #Rome
+0, #Maya
 0, #Tamils
 0, #Ethopia
 0, #Teotihuacan
 0, #Korea
-0, #Maya
 0, #Byzantium
 0, #Japan
 1, #Viking

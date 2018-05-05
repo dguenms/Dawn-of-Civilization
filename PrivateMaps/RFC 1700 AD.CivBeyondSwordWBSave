@@ -40,19 +40,19 @@ BeginTeam
 	TeamID=9, (Rome)
 EndTeam
 BeginTeam
-	TeamID=10, (Tamils)
+	TeamID=10, (Maya)
 EndTeam
 BeginTeam
-	TeamID=11, (Ethiopia)
+	TeamID=11, (Tamils)
 EndTeam
 BeginTeam
-	TeamID=12, (Teotihuacan)
+	TeamID=12, (Ethiopia)
 EndTeam
 BeginTeam
-	TeamID=13, (Korea)
+	TeamID=13, (Teotihuacan)
 EndTeam
 BeginTeam
-	TeamID=14, (Maya)
+	TeamID=14, (Korea)
 EndTeam
 BeginTeam
 	TeamID=15, (Byzantium)
@@ -263,6 +263,13 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=10
+	LeaderType=LEADER_PACAL
+	CivType=CIVILIZATION_MAYA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=11
 	LeaderType=LEADER_KRISHNA_DEVA_RAYA
 	LeaderName=TXT_KEY_LEADER_TIPU_SULTAN
 	CivType=CIVILIZATION_TAMILS
@@ -278,21 +285,21 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=11
+	Team=12
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=12
+	Team=13
 	LeaderType=LEADER_ATLATL_CAUAC
 	CivType=CIVILIZATION_TEOTIHUACAN
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=13
+	Team=14
 	LeaderType=LEADER_SEJONG
 	CivType=CIVILIZATION_KOREA
 	PlayableCiv=1
@@ -305,13 +312,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_ISOLATIONISM
 	AttitudePlayer=1, AttitudeExtra=2, (China)
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=14
-	LeaderType=LEADER_PACAL
-	CivType=CIVILIZATION_MAYA
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -40030,32 +40030,32 @@ BeginPlot
 	x=86,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,30,
+	TeamReveal=11,30,
 EndPlot
 BeginPlot
 	x=86,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=5,10,30,
+	TeamReveal=5,11,30,
 EndPlot
 BeginPlot
 	x=86,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=5,10,30,45,
+	TeamReveal=5,11,30,45,
 EndPlot
 BeginPlot
 	x=86,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=5,10,25,30,45,46,
+	TeamReveal=5,11,25,30,45,46,
 EndPlot
 BeginPlot
 	x=86,y=33
 	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=5,10,25,30,35,39,45,46,
+	TeamReveal=5,11,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=86,y=34
@@ -40440,43 +40440,43 @@ BeginPlot
 	x=87,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,
+	TeamReveal=11,
 EndPlot
 BeginPlot
 	x=87,y=28
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,30,45,
+	TeamReveal=11,30,45,
 EndPlot
 BeginPlot
 	x=87,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,30,45,
+	TeamReveal=11,30,45,
 EndPlot
 BeginPlot
 	x=87,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=5,10,30,35,45,46,
+	TeamReveal=5,11,30,35,45,46,
 EndPlot
 BeginPlot
 	x=87,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=5,10,30,35,45,46,
+	TeamReveal=5,11,30,35,45,46,
 EndPlot
 BeginPlot
 	x=87,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=5,10,25,30,35,45,46,
+	TeamReveal=5,11,25,30,35,45,46,
 EndPlot
 BeginPlot
 	x=87,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=87,y=34
@@ -40874,25 +40874,25 @@ BeginPlot
 	x=88,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,45,
+	TeamReveal=11,45,
 EndPlot
 BeginPlot
 	x=88,y=28
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,30,39,45,
+	TeamReveal=11,30,39,45,
 EndPlot
 BeginPlot
 	x=88,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,30,39,45,
+	TeamReveal=11,30,39,45,
 EndPlot
 BeginPlot
 	x=88,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=88,y=31
@@ -40900,13 +40900,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=88,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=88,y=33
@@ -40915,7 +40915,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=88,y=34
@@ -41369,13 +41369,13 @@ BeginPlot
 	x=89,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,39,45,
+	TeamReveal=11,39,45,
 EndPlot
 BeginPlot
 	x=89,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,30,39,45,
+	TeamReveal=11,22,30,39,45,
 EndPlot
 BeginPlot
 	x=89,y=29
@@ -41383,26 +41383,26 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=89,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=89,y=31
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=89,y=32
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=89,y=33
@@ -41412,13 +41412,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=89,y=34
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=89,y=35
@@ -41832,20 +41832,20 @@ BeginPlot
 	x=90,y=27
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,39,45,
+	TeamReveal=11,39,45,
 EndPlot
 BeginPlot
 	x=90,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=90,y=29
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=90,y=30
@@ -41855,7 +41855,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=90,y=31
@@ -41863,37 +41863,37 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginCity
-		CityOwner=10, (Tamils)
+		CityOwner=11, (Tamils)
 		CityName=Mahishuru
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
@@ -41912,16 +41912,16 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player10Culture=50, (Tamils)
+		Player11Culture=50, (Tamils)
 	EndCity
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=90,y=32
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=90,y=33
@@ -41931,14 +41931,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,25,30,35,39,45,46,
+	TeamReveal=5,11,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=90,y=34
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,25,30,35,39,45,46,
+	TeamReveal=5,11,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=90,y=35
@@ -42386,7 +42386,7 @@ BeginPlot
 	x=91,y=27
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,30,39,45,
+	TeamReveal=11,30,39,45,
 EndPlot
 BeginPlot
 	x=91,y=28
@@ -42394,14 +42394,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=91,y=29
 	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=91,y=30
@@ -42410,14 +42410,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=91,y=31
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=91,y=32
@@ -42427,7 +42427,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=91,y=33
@@ -42438,7 +42438,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=91,y=34
@@ -42470,7 +42470,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player46Culture=200, (Independent2)
 	EndCity
-	TeamReveal=5,10,25,30,35,39,45,46,
+	TeamReveal=5,11,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=91,y=35
@@ -42865,32 +42865,32 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=92,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=92,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=92,y=30
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=92,y=31
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=92,y=32
@@ -42931,7 +42931,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player25Culture=50, (England)
 	EndCity
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=92,y=33
@@ -42940,7 +42940,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=92,y=34
@@ -42949,7 +42949,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=92,y=35
@@ -43327,7 +43327,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=93,y=28
@@ -43356,31 +43356,31 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		Player39Culture=50, (Netherlands)
 	EndCity
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=93,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=93,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=93,y=31
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=93,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=93,y=33
@@ -43388,7 +43388,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=93,y=34
@@ -43396,7 +43396,7 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=5,10,22,25,30,35,39,45,46,
+	TeamReveal=5,11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=93,y=35
@@ -43404,7 +43404,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=5,10,25,30,35,39,45,46,
+	TeamReveal=5,11,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=93,y=36
@@ -43772,31 +43772,31 @@ BeginPlot
 	x=94,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,
+	TeamReveal=11,22,25,30,39,
 EndPlot
 BeginPlot
 	x=94,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,39,
+	TeamReveal=11,22,25,30,39,
 EndPlot
 BeginPlot
 	x=94,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,22,25,30,39,45,
+	TeamReveal=11,22,25,30,39,45,
 EndPlot
 BeginPlot
 	x=94,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=10,25,30,35,39,45,46,
+	TeamReveal=11,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=94,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=94,y=33
@@ -43804,7 +43804,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=10,22,25,30,35,39,45,46,
+	TeamReveal=11,22,25,30,35,39,45,46,
 EndPlot
 BeginPlot
 	x=94,y=34
@@ -48659,7 +48659,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,46,
+	TeamReveal=1,14,46,
 EndPlot
 BeginPlot
 	x=104,y=46
@@ -48668,7 +48668,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=104,y=47
@@ -48676,7 +48676,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=104,y=48
@@ -48685,14 +48685,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=104,y=49
 	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=104,y=50
@@ -48700,13 +48700,13 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=104,y=51
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=104,y=52
@@ -49113,32 +49113,32 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=105,y=45
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=105,y=46
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=105,y=47
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=105,y=48
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=105,y=49
@@ -49160,28 +49160,28 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		Player1Culture=80, (China)
 	EndCity
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=105,y=50
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=105,y=51
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=105,y=52
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=105,y=53
@@ -49552,7 +49552,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=106,y=44
@@ -49583,26 +49583,26 @@ BeginPlot
 		ReligionType=RELIGION_TAOISM
 		Player1Culture=100, (China)
 	EndCity
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=106,y=45
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=106,y=46
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=106,y=47
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=106,y=48
@@ -49611,13 +49611,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=106,y=49
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=106,y=50
@@ -49626,7 +49626,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=106,y=51
@@ -49634,13 +49634,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=106,y=52
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=106,y=53
@@ -49648,7 +49648,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=106,y=54
@@ -49978,7 +49978,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,30,46,
+	TeamReveal=1,14,16,30,46,
 EndPlot
 BeginPlot
 	x=107,y=42
@@ -50004,7 +50004,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		Player1Culture=100, (China)
 	EndCity
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=43
@@ -50012,31 +50012,31 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=45
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=46
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=47
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=48
@@ -50045,7 +50045,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=49
@@ -50055,7 +50055,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=107,y=50
@@ -50064,13 +50064,13 @@ BeginPlot
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=107,y=51
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=107,y=52
@@ -50079,7 +50079,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=107,y=53
@@ -50100,7 +50100,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		Player45Culture=50, (China)
 	EndCity
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=107,y=54
@@ -50467,7 +50467,7 @@ BeginPlot
 	x=108,y=42
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=108,y=43
@@ -50475,19 +50475,19 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=45
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=46
@@ -50495,7 +50495,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=47
@@ -50504,7 +50504,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=48
@@ -50512,13 +50512,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginCity
-		CityOwner=13, (Korea)
+		CityOwner=14, (Korea)
 		CityName=Pyongyang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -50537,9 +50537,9 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player13Culture=80, (Korea)
+		Player14Culture=80, (Korea)
 	EndCity
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=108,y=49
@@ -50548,27 +50548,27 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=50
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=108,y=51
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,45,46,
+	TeamReveal=1,14,45,46,
 EndPlot
 BeginPlot
 	x=108,y=52
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=108,y=53
@@ -50577,7 +50577,7 @@ BeginPlot
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=108,y=54
@@ -50942,19 +50942,19 @@ BeginPlot
 	x=109,y=42
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=43
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=45
@@ -50963,7 +50963,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=46
@@ -50971,37 +50971,37 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=13, (Korea)
+		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=13, (Korea)
+		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=13, (Korea)
+		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=13, (Korea)
+		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
 	EndUnit
 	BeginCity
-		CityOwner=13, (Korea)
+		CityOwner=14, (Korea)
 		CityName=Hanseong
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -51025,9 +51025,9 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player13Culture=250, (Korea)
+		Player14Culture=250, (Korea)
 	EndCity
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=47
@@ -51037,7 +51037,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=48
@@ -51045,34 +51045,34 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=49
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=50
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=109,y=51
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=109,y=52
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=109,y=53
@@ -51080,7 +51080,7 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
-	TeamReveal=1,13,45,
+	TeamReveal=1,14,45,
 EndPlot
 BeginPlot
 	x=109,y=54
@@ -51418,19 +51418,19 @@ BeginPlot
 	x=110,y=42
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,22,45,46,
+	TeamReveal=1,14,16,22,45,46,
 EndPlot
 BeginPlot
 	x=110,y=43
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=110,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=110,y=45
@@ -51439,7 +51439,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=110,y=46
@@ -51448,39 +51448,39 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=110,y=47
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=110,y=48
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=110,y=49
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=110,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=110,y=51
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=110,y=52
@@ -51488,7 +51488,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,
+	TeamReveal=1,14,16,45,
 EndPlot
 BeginPlot
 	x=110,y=53
@@ -51845,7 +51845,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,22,30,45,46,
+	TeamReveal=1,14,16,22,30,45,46,
 EndPlot
 BeginPlot
 	x=111,y=43
@@ -51854,56 +51854,56 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=111,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,
+	TeamReveal=1,14,16,45,
 EndPlot
 BeginPlot
 	x=111,y=45
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,45,
+	TeamReveal=1,14,16,45,
 EndPlot
 BeginPlot
 	x=111,y=46
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,
+	TeamReveal=14,16,
 EndPlot
 BeginPlot
 	x=111,y=47
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,46,
+	TeamReveal=14,16,46,
 EndPlot
 BeginPlot
 	x=111,y=48
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=111,y=49
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=111,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,13,16,46,
+	TeamReveal=1,14,16,46,
 EndPlot
 BeginPlot
 	x=111,y=51
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,13,16,45,46,
+	TeamReveal=1,14,16,45,46,
 EndPlot
 BeginPlot
 	x=111,y=52
@@ -52260,13 +52260,13 @@ BeginPlot
 	x=112,y=42
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=13,16,22,30,45,
+	TeamReveal=14,16,22,30,45,
 EndPlot
 BeginPlot
 	x=112,y=43
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=44
@@ -52275,7 +52275,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=45
@@ -52284,7 +52284,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=46
@@ -52292,37 +52292,37 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,
+	TeamReveal=14,16,
 EndPlot
 BeginPlot
 	x=112,y=47
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,
+	TeamReveal=14,16,
 EndPlot
 BeginPlot
 	x=112,y=48
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=49
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=51
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=112,y=52
@@ -52672,13 +52672,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=45
@@ -52758,37 +52758,37 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player16Culture=250, (Japan)
 	EndCity
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=46
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,
+	TeamReveal=14,16,
 EndPlot
 BeginPlot
 	x=113,y=47
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=48
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=49
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=113,y=51
@@ -53141,7 +53141,7 @@ BeginPlot
 	x=114,y=43
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=114,y=44
@@ -53149,13 +53149,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=114,y=45
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=114,y=46
@@ -53164,7 +53164,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=114,y=47
@@ -53173,7 +53173,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=13,16,45,
+	TeamReveal=14,16,45,
 EndPlot
 BeginPlot
 	x=114,y=48
