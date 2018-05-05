@@ -1013,7 +1013,7 @@ lEnemyCivsOnSpawn = [
 [], #Maya
 [], #Tamils
 [], #Ethiopia
-[], #Teotihuacan
+[iMaya], #Teotihuacan
 [], #Korea
 [iGreece, iPersia], #Byzantium
 [], #Japan
@@ -1034,7 +1034,7 @@ lEnemyCivsOnSpawn = [
 [], #Inca
 [], #Italy
 [iChina,iChina,iChina,iKorea,iKorea,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
-[iMaya], #Aztec
+[iMaya, iTeotihuacan], #Aztec
 [iIndia, iIndia], #Mughals
 [iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia,iByzantium,iByzantium,iByzantium], #Turkey
 [iKhmer, iKhmer, iKhmer], #Thailand

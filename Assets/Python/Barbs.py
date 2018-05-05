@@ -24,13 +24,13 @@ tMinorCities = (
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
+(-500, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 (-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
 (-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
-(-300, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
 #(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
@@ -156,7 +156,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
 		# Holkans in classical Mesoamerica
-		if utils.isYearIn(100, 600):
+		if utils.isYearIn(-350, 600):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)

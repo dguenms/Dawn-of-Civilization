@@ -2556,7 +2556,7 @@ class RiseAndFall:
 				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 		elif iCiv == iMaya:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iLegion, iCiv, tPlot, 4)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
@@ -2932,7 +2932,7 @@ class RiseAndFall:
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMaya:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 			#utils.makeUnit(iSettler, iCiv, tPlot, 1)
