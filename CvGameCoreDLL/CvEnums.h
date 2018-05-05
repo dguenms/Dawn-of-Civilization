@@ -1222,6 +1222,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	CASTILLA,
 	WILLIAM,
 	GEORGE,
+	KHOSROW,
+	BUMIN,
+	TAMERLANE,
 	NUM_LEADERHEADS
 };
 
