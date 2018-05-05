@@ -789,7 +789,7 @@ def calculateStability(iPlayer):
 	iPopulationImprovements = 0
 	for (x, y) in Areas.getCoreArea(iPlayer):
 		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer:
+		if plot.getOwner() == iPlayer and plot.getWorkingCity():
 			if plot.getImprovementType() in [iVillage, iTown]:
 				iPopulationImprovements += 1
 			
