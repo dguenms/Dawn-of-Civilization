@@ -10922,7 +10922,7 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 			}
 		}
 
-		if (getOwner() != TEOTIHUACAN) { // Teotihuacan UP
+		if (getOwner() != TEOTIHUACAN || GC.getUnitInfo(eUnit).getUnitClassType() != 1) { // Teotihuacan UP: melee units ignore resource requirements
 		if (GC.getUnitInfo(eUnit).getPrereqAndBonus() != NO_BONUS)
 		{
 			if (NULL == pCity)

@@ -21,9 +21,9 @@
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_RAMESSES_II_1</Tag>
 		<English>Mighty [OUR_NAME], all-powerful god-king of [OUR_CIV_SHORT] welcomes you, [CT_NAME]! Feel free to grovel in terror and awe if the mood takes you.</English>
 		<French>[OUR_NAME], tout puissant roi et divinit&#233; des [OUR_CIV_SHORT], vous souhaite la bienvenue, [CT_NAME] ! N'h&#233;sitez pas &#224; vous prosterner devant moi ou &#224; vous &#233;taler &#224; mes pieds si le coeur vous en dit !</French>
-		<German>Ich, [OUR_NAME], allmächtiges Staatsoberhaupt des Volkes von [OUR_CIV_SHORT], heiße Euch willkommen, [CT_NAME]! Es steht Euch frei, ehrfürchtig vor mir niederzuknien, wenn Euch danach ist.</German>
+		<German>Ich, [OUR_NAME], allmï¿½chtiges Staatsoberhaupt des Volkes von [OUR_CIV_SHORT], heiï¿½e Euch willkommen, [CT_NAME]! Es steht Euch frei, ehrfï¿½rchtig vor mir niederzuknien, wenn Euch danach ist.</German>
 		<Italian>Il potente [OUR_NAME], onnipotente e divino leader [OUR_CIV_ADJ] ti d&#224; il benvenuto, [CT_NAME]! Prostrati pure in preda al terrore e alla meraviglia, se ne hai voglia.</Italian>
-		<Spanish>El gran [OUR_NAME], rey dios todopoderoso de [OUR_CIV_SHORT] os da la bienvenida, [CT_NAME]. Pod&#233;is postraros ante mí presa de un temor reverencial si se os antoja.</Spanish>
+		<Spanish>El gran [OUR_NAME], rey dios todopoderoso de [OUR_CIV_SHORT] os da la bienvenida, [CT_NAME]. Pod&#233;is postraros ante mï¿½ presa de un temor reverencial si se os antoja.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SAN_MARTIN</Tag>
@@ -222,9 +222,9 @@
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_NATIVE_1</Tag>
 		<English>Your words are but the grunts of a diseased pig, [CT_NAME]. I do not hear them.</English>
 		<French>Vos paroles sonnent &#224; mes oreilles tels d'horribles grognements d'un porc agonisant, [CT_NAME]. Je ne les &#233;couterai pas plus longtemps.</French>
-		<German>Ihr sprecht mit gespaltener Zunge, [CT_NAME], und ich will es nicht hören!</German>
+		<German>Ihr sprecht mit gespaltener Zunge, [CT_NAME], und ich will es nicht hï¿½ren!</German>
 		<Italian>Le tue parole risuonano come i grugniti di un maiale morente, [CT_NAME]. Un rumore fastidioso che non voglio udire.</Italian>
-		<Spanish>Vuestras palabras no son más que gruñidos de un cerdo enfermo, [CT_NAME]. Como tales, no las escucho.</Spanish>
+		<Spanish>Vuestras palabras no son mï¿½s que gruï¿½idos de un cerdo enfermo, [CT_NAME]. Como tales, no las escucho.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_NATIVE_1</Tag>
@@ -232,7 +232,7 @@
 		<French>Donnez-moi ce que je demande, [CT_NAME], et peut-&#234;tre nos deux nations pourront-elles cohabiter en paix quelques temps encore.</French>
 		<German>Gebt uns, was wir verlangen, [CT_NAME], dann besteht die Chance, dass unsere Zivilisationen noch eine Weile in Frieden miteinander leben!</German>
 		<Italian>Dammi questo, [CT_NAME], e forse le nostre due nazioni vivranno in pace per un altro po'.</Italian>
-		<Spanish>Dadme esto, [CT_NAME], y es posible que nuestras naciones puedan vivir en paz un poco más.</Spanish>
+		<Spanish>Dadme esto, [CT_NAME], y es posible que nuestras naciones puedan vivir en paz un poco mï¿½s.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_NATIVE_1</Tag>
@@ -240,53 +240,53 @@
 		<French>Donnez-nous ce tribut, [CT_NAME], et il est possible que je vous laisse vivre... quelques temps, en tout cas.</French>
 		<German>Her damit, [CT_NAME]! Dann werde ich Euch vielleicht noch eine Weile verschonen!</German>
 		<Italian>Dammelo, [CT_NAME], e potrei lasciarti continuare a esistere ancora un po'.</Italian>
-		<Spanish>Entregadnos esto, [CT_NAME] y puede que os deje perdurar un poco más.</Spanish>
+		<Spanish>Entregadnos esto, [CT_NAME] y puede que os deje perdurar un poco mï¿½s.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_NATIVE_1</Tag>
 		<English>Unlikely as it may seem, it appears that your puny civilization has something that we want. I suggest you hand it over quickly. </English>
 		<French>Aussi ahurissant que cela puisse para&#238;tre, il semblerait que votre ridicule petite civilisation dispose de quelque chose qui pourrait nous &#234;tre utile. Je vous sugg&#232;re de nous le d&#233;livrer au plus vite.</French>
-		<German>So unglaublich es auch klingen mag: Eure mickrige Zivilisation scheint tatsächlich etwas zu haben, was wir wollen. Ihr wärt gut beraten, es uns schnellstens zu überlassen! </German>
-		<Italian>Per quanto possa apparire improbabile, a quanto pare la tua insignificante civiltà possiede qualcosa che vogliamo. Ti consiglio di darcelo subito. </Italian>
-		<Spanish>Por extraño que suene, parece que vuestra civilización tiene algo que queremos. Os sugiero que nos lo deis rápidamente. </Spanish>
+		<German>So unglaublich es auch klingen mag: Eure mickrige Zivilisation scheint tatsï¿½chlich etwas zu haben, was wir wollen. Ihr wï¿½rt gut beraten, es uns schnellstens zu ï¿½berlassen! </German>
+		<Italian>Per quanto possa apparire improbabile, a quanto pare la tua insignificante civiltï¿½ possiede qualcosa che vogliamo. Ti consiglio di darcelo subito. </Italian>
+		<Spanish>Por extraï¿½o que suene, parece que vuestra civilizaciï¿½n tiene algo que queremos. Os sugiero que nos lo deis rï¿½pidamente. </Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_NATIVE_1</Tag>
 		<English>Welcome, [CT_NAME]. And how is that undefended civilization of your coming along?</English>
 		<French>Bienvenue, [CT_NAME]. Alors, comment &#233;volue donc la situation dans votre petite civilisation si vuln&#233;rable ?</French>
 		<German>Willkommen, [CT_NAME]! Und, wie stehen die Dinge in Eurer hilflosen kleinen Zivilisation?</German>
-		<Italian>Salve, [CT_NAME]. Come vanno le cose per la tua civiltà indifesa?</Italian>
-		<Spanish>Saludos, [CT_NAME]. ¿Cómo está esa civilización indefensa de la que venís?</Spanish>
+		<Italian>Salve, [CT_NAME]. Come vanno le cose per la tua civiltï¿½ indifesa?</Italian>
+		<Spanish>Saludos, [CT_NAME]. ï¿½Cï¿½mo estï¿½ esa civilizaciï¿½n indefensa de la que venï¿½s?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_NATIVE_1</Tag>
 		<English>Not a chance. The mighty [OUR_CIV_ADJ] people do not care to make peace with cattle-stealing brigands like you.</English>
 		<French>N'y comptez pas ! Le puissant peuple des [OUR_CIV_ADJ] ne souhaite pas faire la paix avec des vils voleurs de b&#233;tail de votre esp&#232;ce.</French>
-		<German>Keine Chance! Das mächtige [OUR_CIV_ADJ:3] Volk hat kein Interesse daran, mit miesen Viehdieben wie Euch Frieden zu schließen! </German>
-		<Italian>Neanche per idea. Al potente sovrano [OUR_CIV_ADJ] non può interessare la pace con briganti ladri di bestiame come voi. </Italian>
+		<German>Keine Chance! Das mï¿½chtige [OUR_CIV_ADJ:3] Volk hat kein Interesse daran, mit miesen Viehdieben wie Euch Frieden zu schlieï¿½en! </German>
+		<Italian>Neanche per idea. Al potente sovrano [OUR_CIV_ADJ] non puï¿½ interessare la pace con briganti ladri di bestiame come voi. </Italian>
 		<Spanish>Ni en broma. El poderoso pueblo [OUR_CIV_ADJ:1] no se molesta ni en hacer las paces con cuatreros bergantes como vosotros. </Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_NATIVE_1</Tag>
 		<English>Greetings, [CT_NAME]! The [OUR_CIV_ADJ] people always enjoy meeting vulnerable and undefended new civilizations!</English>
 		<French>Mes hommages, [CT_NAME] ! Le peuple des [OUR_CIV_ADJ] est toujours enchant&#233; de rencontrer de nouvelles civilisations vuln&#233;rables et sans d&#233;fense !</French>
-		<German>Seid gegrüßt, [CT_NAME]! Das [OUR_CIV_ADJ:3] Volk ist stets hoch erfreut, die Bekanntschaft schutz- und wehrloser neuer Zivilisationen zu machen!</German>
-		<Italian>Salve, [CT_NAME]! Il sovrano [OUR_CIV_ADJ] è sempre lieto di incontrare nuove civiltà vulnerabili e indifese!</Italian>
-		<Spanish>¡Saludos, [CT_NAME]! El pueblo [OUR_CIV_ADJ:1] siempre se congratula de encontrarse con civilizaciones vulnerables e indefensas.</Spanish>
+		<German>Seid gegrï¿½ï¿½t, [CT_NAME]! Das [OUR_CIV_ADJ:3] Volk ist stets hoch erfreut, die Bekanntschaft schutz- und wehrloser neuer Zivilisationen zu machen!</German>
+		<Italian>Salve, [CT_NAME]! Il sovrano [OUR_CIV_ADJ] ï¿½ sempre lieto di incontrare nuove civiltï¿½ vulnerabili e indifese!</Italian>
+		<Spanish>ï¿½Saludos, [CT_NAME]! El pueblo [OUR_CIV_ADJ:1] siempre se congratula de encontrarse con civilizaciones vulnerables e indefensas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Tag>
 		<English>So you have emerged from your fetid country and come to me, [CT_NAME]. To what do I owe this extremely dubious honor?</English>
 		<French>Vous avez enfin r&#233;ussi &#224; sortir de cet horrible pays pour venir me voir, [CT_NAME]. Que me vaut un pareil honneur ?</French>
 		<German>Oha, Ihr habt Euer stinkendes Land verlassen, um mich zu besuchen, [CT_NAME]? Was verschafft mir denn diese zweifelhafte Ehre?</German>
-		<Italian>E così hai lasciato quel tuo fetido paese e sei venuto da me, [CT_NAME]. E a cosa devo questo dubbio onore?</Italian>
-		<Spanish>Así que hab&#233;is salido de vuestro f&#233;tido país y hab&#233;is venido a verme, [CT_NAME]. ¿A qu&#233; debo tan dudoso honor?</Spanish>
+		<Italian>E cosï¿½ hai lasciato quel tuo fetido paese e sei venuto da me, [CT_NAME]. E a cosa devo questo dubbio onore?</Italian>
+		<Spanish>Asï¿½ que hab&#233;is salido de vuestro f&#233;tido paï¿½s y hab&#233;is venido a verme, [CT_NAME]. ï¿½A qu&#233; debo tan dudoso honor?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MEHMED_1</Tag>
 		<English>We require mighty [CT_CIV_SHORT]'s assistance. I hope you won't disappoint us.</English>
-		<French>Nous avons besoin de l'aide des [CT_CIV_SHORT]. J'esp&#232;re que vous ne nous décevrez pas.</French>
-		<German>Wir könnten die Hilfe des mächtigen Volkes von [CT_CIV_SHORT] brauchen und hoffen doch sehr, dass Ihr uns nicht im Stich lasst!</German>
+		<French>Nous avons besoin de l'aide des [CT_CIV_SHORT]. J'esp&#232;re que vous ne nous dï¿½cevrez pas.</French>
+		<German>Wir kï¿½nnten die Hilfe des mï¿½chtigen Volkes von [CT_CIV_SHORT] brauchen und hoffen doch sehr, dass Ihr uns nicht im Stich lasst!</German>
 		<Italian>Chiediamo aiuto alla tua potente civilt&#224;. Spero che non ci deluderai.</Italian>
 		<Spanish>Necesitamos la ayuda y la fortaleza de [CT_CIV]. Espero que no nos decepcion&#233;is.</Spanish>
 	</TEXT>
@@ -333,7 +333,7 @@
 		<French>Que me vaut l'honneur peu enviable de votre pr?sence ?</French>
 		<German>Was verschafft mir die zweifelhafte Ehre Eures Besuchs?</German>
 		<Italian>E a cosa devo il dubbio onore della tua presenza?</Italian>
-		<Spanish>¿Y a qu? debemos el dudoso honor de vuestra compa??a?</Spanish>
+		<Spanish>ï¿½Y a qu? debemos el dudoso honor de vuestra compa??a?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AFONSO_1</Tag>
@@ -341,7 +341,7 @@
 		<French>Pourriez-vous donner ceci ? un bon ami, [CT_NAME] ?</French>
 		<German>Ihr werdet einem treuen Freund diese kleine Bitte doch nicht abschlagen, [CT_NAME]?</German>
 		<Italian>Avresti un po' di questi in nome della nostra amicizia, [CT_NAME]?</Italian>
-		<Spanish>¿Podr?ais darles esto a unos buenos amigos, [CT_NAME]?</Spanish>
+		<Spanish>ï¿½Podr?ais darles esto a unos buenos amigos, [CT_NAME]?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AFONSO_1</Tag>
@@ -358,5 +358,9 @@
 		<German>Schlagt ein, wenn Ihr kein zweites Gettysburg erleben wollt! </German>
 		<Italian>Dammi ci? che chiedo o proverai l'ira della nostra &quot;terribile e rapida spada.&quot; </Italian>
 		<Spanish>Dadnos esto o sentir?is la c?lera de nuestra &quot;terrible y veloz espada&quot;. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ATLATL_CAUAC_1</Tag>
+		<English>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</English>
 	</TEXT>
 </Civ4GameText>
