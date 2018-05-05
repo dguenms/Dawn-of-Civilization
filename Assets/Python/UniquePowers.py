@@ -579,6 +579,7 @@ class UniquePowers:
 	def teotihuacanArtisan(self):
 		unitList = PyPlayer(iTeotihuacan).getUnitsOfType(iToltecArtisan)
 		if unitList:
+			totalCulture = 0
 			for unit in unitList:
 				x = unit.getX()
 				y = unit.getY()
@@ -587,4 +588,7 @@ class UniquePowers:
 					city = plot.getPlotCity()
 					if city.getOwner() == iTeotihuacan:
 						city.changeCulture(iTeotihuacan, 2, True)
-						if utils.getHumanID() == city.getOwner(): data.iTeotlSacrifices += 2 # for pagan victory
+						totalCulture += 2
+			if utils.getHumanID() == iTeotihuacan and totalCulture > 0:
+					data.iTeotlSacrifices += totalCulture # for pagan victory
+					CyInterface().addMessage(iTeotihuacan, False, iDuration, CyTranslator().getText("TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE", (totalCulture,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

@@ -1790,7 +1790,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1</Tag>
-		<English>Have more than 500 culture in 450 AD</English>
+		<English>Have more than 300 culture in 450 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_EPIC</Tag>
+		<English>Have more than 450 culture in 450 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_MARATHON</Tag>
+		<English>Have more than 900 culture in 450 AD</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
@@ -2167,7 +2175,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TEOTL_TEOTIHUACAN</Tag>
-		<English>Produce 100 culture with artisans</English>
+		<English>Produce 200 culture with artisans</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>

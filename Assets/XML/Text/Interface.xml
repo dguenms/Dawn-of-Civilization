@@ -1851,4 +1851,8 @@
 		<English>[ICON_BULLET]%D1%%%F2 from Unique Power</English>
 		<German>[ICON_BULLET]%D1%%%F2 durch Einzigartige Macht</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE</Tag>
+		<English>Our artisans have created a total of %d1 [ICON_CULTURE] to our cities!</English>
+	</TEXT>
 </Civ4GameText>

@@ -10922,6 +10922,7 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 			}
 		}
 
+		if (getOwner() != TEOTIHUACAN) { // Teotihuacan UP
 		if (GC.getUnitInfo(eUnit).getPrereqAndBonus() != NO_BONUS)
 		{
 			if (NULL == pCity)
@@ -10972,6 +10973,7 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 		{
 			return false;
 		}
+	}
 	}
 
 	return true;
