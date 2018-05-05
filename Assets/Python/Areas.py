@@ -110,11 +110,11 @@ tCapitals = (
 (4, 18), # Tonga
 (82, 38), # Persepolis
 (60, 44), # Rome
+(22, 35), # Tikal
 (91, 30), # Thanjavur
 (72, 29), # Aksum
 (18, 37), # Tenotihuacan (Tollan)
 (109, 46), # Seoul
-(22, 35), # Tikal
 (68, 45), # Constantinople
 (113, 45), # Kyoto
 (60, 59), # Oslo

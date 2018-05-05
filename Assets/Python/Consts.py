@@ -415,11 +415,11 @@ tRebirth = (
 #1674,	# Maratha Empire
 1501,	# Safavid Persia	# Persia
 -1, #1167,	# Italy		# Rome
+1814,	# Colombia
 -1,				# Tamils
 -1,				# Ethiopia
 -1,				# Teotihuacan
 -1,				# Korea
-1814,	# Colombia
 -1,				# Byzantium
 -1,				# Japan
 -1,				# Vikings
@@ -1158,8 +1158,8 @@ tAIStopBirthThreshold = (
     80, #Carthage
     80, #Polynesia
     70, #Persia
-    80, #Maya
     80, #Rome
+    80, #Maya
     80, #Tamils
     80, #Ethiopia
     80, #Teotihuacan
