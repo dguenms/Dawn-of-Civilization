@@ -82,6 +82,10 @@
 		<English>Eastern Turkic</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKIC_VASSAL</Tag>
+		<English>Atabeylik of %s3</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_</Tag>
 		<English></English>
 	</TEXT>
