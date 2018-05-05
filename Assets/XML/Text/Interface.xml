@@ -1853,6 +1853,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE</Tag>
-		<English>Our artisans have created a total of %d1 [ICON_CULTURE] to our cities!</English>
+		<English>Our artisans have created a total of %d1 [ICON_CULTURE] in our cities!</English>
 	</TEXT>
 </Civ4GameText>

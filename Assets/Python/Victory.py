@@ -2251,8 +2251,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 				
 			# Teotl: sacrifice ten slaves
 			elif paganReligion == "Teotl":
-				if iPlayer == iTeotihuacan and data.iTeotlSacrifices >= 200:
-					return 1
+				if iPlayer == iTeotihuacan:
+					if data.iTeotlSacrifices >= 200:
+						return 1
 				elif data.iTeotlSacrifices >= 10:
 					return 1
 					
@@ -3522,7 +3523,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iTeotihuacan:
 		if iGoal == 0:
 			iCulture = pTeotihuacan.countTotalCulture()
-			aHelp.append(getIcon(iCulture >= utils.getTurns(300)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+			aHelp.append(getIcon(iCulture >= utils.getTurns(300)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(300))))
 		if iGoal == 2: 
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
