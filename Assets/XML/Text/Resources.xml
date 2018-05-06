@@ -74,6 +74,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_COCOA</Tag>
+		<English>Cocoa</English>
+		<German>Kakao</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_COFFEE</Tag>
 		<English>Coffee</English>
 		<French>
@@ -144,6 +149,11 @@
 		<German>Perlen</German>
 		<Italian>Pearls</Italian>
 		<Spanish>Pearls</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_POTATO</Tag>
+		<English>Potatoes</English>
+		<German>Kartoffeln</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TEA</Tag>
