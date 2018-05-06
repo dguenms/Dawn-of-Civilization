@@ -28,28 +28,28 @@ iThreshold = 100
 iMinValue = 30
 
 iRomeCarthageYear = -220
-tRomeCarthageTL = (53, 37)
-tRomeCarthageBR = (61, 40)
+tRomeCarthageTL = (61, 45)
+tRomeCarthageBR = (71, 49)
 
 iRomeGreeceYear = -150
-tRomeGreeceTL = (64, 40)
-tRomeGreeceBR = (68, 45)
+tRomeGreeceTL = (74, 50)
+tRomeGreeceBR = (81, 55)
 
 iRomeMesopotamiaYear = -100
-tRomeMesopotamiaTL = (70, 38)
-tRomeMesopotamiaBR = (78, 45)
+tRomeMesopotamiaTL = (82, 44)
+tRomeMesopotamiaBR = (91, 55)
 
 iRomeAnatoliaYear = -100
-tRomeAnatoliaTL = (70, 38)
-tRomeAnatoliaBR = (75, 45)
+tRomeAnatoliaTL = (82, 44)
+tRomeAnatoliaBR = (86, 55)
 
 iRomeCeltiaYear = -50
-tRomeCeltiaTL = (52, 45)
-tRomeCeltiaBR = (59, 51)
+tRomeCeltiaTL = (57, 53)
+tRomeCeltiaBR = (65, 61)
 
 iRomeEgyptYear = 0
-tRomeEgyptTL = (65, 31)
-tRomeEgyptBR = (72, 36)
+tRomeEgyptTL = (75, 38)
+tRomeEgyptBR = (82, 45)
 
 # following setup: iPlayer, iPreferredTarget, TL, BR, iNumTargets, iStartYear, iTurnInterval
 tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
@@ -59,26 +59,26 @@ tConquestRomeCelts = (3, iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeC
 tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
-tGreeceMesopotamiaTL = (70, 38)
-tGreeceMesopotamiaBR = (78, 45)
-tGreeceEgyptTL = (65, 31)
-tGreeceEgyptBR = (72, 36)
-tGreecePersiaTL = (79, 37)
-tGreecePersiaBR = (85, 45)
+tGreeceMesopotamiaTL = (82, 44)
+tGreeceMesopotamiaBR = (91, 55)
+tGreeceEgyptTL = (75, 38)
+tGreeceEgyptBR = (82, 45)
+tGreecePersiaTL = (92, 43)
+tGreecePersiaBR = (98, 51)
 
 tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
 tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
 tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
 
 iCholaSumatraYear = 1030
-tCholaSumatraTL = (98, 26)
-tCholaSumatraBR = (101, 28)
+tCholaSumatraTL = (117, 26)
+tCholaSumatraBR = (121, 29)
 
 tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
-tSpainMoorsTL = (50, 40)
-tSpainMoorsBR = (54, 42)
+tSpainMoorsTL = (56, 48)
+tSpainMoorsBR = (61, 50)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
@@ -322,8 +322,8 @@ class AIWars:
 		if not lPotentialTargets: return -1
 			
 		# iterate the map for all potential targets
-		for i in range(124):
-			for j in range(68):
+		for i in range(iWorldX):
+			for j in range(iWorldY):
 				iOwner = gc.getMap().plot(i,j).getOwner()
 				if iOwner in lPotentialTargets:
 					lTargetValues[iOwner] += pPlayer.getWarValue(i, j)

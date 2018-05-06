@@ -4,8 +4,8 @@
 from CvPythonExtensions import *
 gc = CyGlobalContext()
 
-iWorldX = 124
-iWorldY = 68
+iWorldX = 150
+iWorldY = 80
 
 # initialise player variables to player IDs from WBS
 iNumPlayers = 45
@@ -96,31 +96,31 @@ lCivBioNewWorld = [iMaya, iInca, iAztecs] #, iNative]
 
 
 #for Victory and the handler
-tAmericasTL = (3, 0)
-tAmericasBR = (43, 63)
+tAmericasTL = (0, 3)
+tAmericasBR = (49, 77)
 
 # Colombian UP
-tSouthCentralAmericaTL = (13, 3)
-tSouthCentralAmericaBR = (43, 39)
+tSouthCentralAmericaTL = (10, 3)
+tSouthCentralAmericaBR = (49, 46)
 
 # English colonists
-tCanadaTL = (10, 49)
-tCanadaBR = (37, 58)
-tAustraliaTL = (103, 5)
-tAustraliaBR = (123, 22)
+tCanadaTL = (7, 59)
+tCanadaBR = (40, 69)
+tAustraliaTL = (125, 6)
+tAustraliaBR = (149, 24)
 
 # new capital locations
-tVienna = (62, 49)
-tWarsaw = (65, 52)
-tStockholm = (63, 59)
-tIstanbul = (68, 45)
-tBeijing = (102, 47)
-tEsfahan = (81, 41)
-tHamburg = (59, 53)
-tMilan = (59, 47)
-tBaghdad = (77, 40)
-tMumbai = (88, 34)
-tMysore = (90, 31)
+tVienna = (72, 59)
+tWarsaw = (75, 63)
+tStockholm = (73, 70)
+tIstanbul = (80, 55)
+tBeijing = (124, 56)
+tEsfahan = (93, 47)
+tHamburg = (67, 65)
+tMilan = (67, 57)
+tBaghdad = (89, 47)
+tMumbai = (103, 38)
+tMysore = (105, 34)
 
 #for messages
 iDuration = 14
@@ -140,7 +140,7 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 40
+iNumMinorCities = 45
 
 # scripted conquerors
 iNumConquests = 13
@@ -866,10 +866,11 @@ iGreatSpy : iFemaleGreatSpy,
 }
 
 # initialise bonuses variables to bonuses IDs from WBS
-iNumBonuses = 41
+iNumBonuses = 44
 (iAluminium, iCamel, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,
-iDeer, iFish, iPig, iRice, iSheep, iWheat, iCoffee, iCotton, iDye, iFur, iGems, iGold, iIncense, iIvory, iPearls, iSilk, iSilver, iSpices,
+iDeer, iFish, iPig, iPotato, iRice, iSheep, iWheat, iCocoa, iCoffee, iCotton, iDye, iFur, iGems, iGold, iIncense, iIvory, iOlives, iPearls, iSilk, iSilver, iSpices,
 iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBonuses)
+
 # Buildings
 
 iNumBuildings = 318
@@ -1069,11 +1070,11 @@ rebirthLeaders = {
 }
 
 tTradingCompanyPlotLists = (
-[(109, 33)], #Spain
-[(101, 37), (101, 36), (102, 36), (102, 35), (103, 35), (103, 34), (104, 34), (104, 33)], #France
-[(95, 37), (94, 37), (94, 36), (94, 35), (94, 34), (93, 34), (93, 33), (92, 33), (92, 32), (88, 33), (88, 34), (88, 35)], #England
-[(82, 34), (89, 31), (101, 29), (105, 39), (93, 28), (93, 27), (71, 17), (69, 13), (54, 26), (62, 20)], #Portugal
-[(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
+[(130, 38)], #Spain
+[(122, 42), (121, 41), (121, 40), (122, 40), (122, 39), (123, 39), (123, 38), (124, 38), (123, 37), (124, 37), (123, 36), (124, 36), (123, 35)], #France
+[(113, 42), (112, 42), (111, 42), (111, 41), (111, 40), (110, 40), (110, 39), (109, 39), (109, 38), (108, 38), (108, 37), (107, 37), (107, 36), (107, 35), (107, 34), (103, 39), (103, 38), (103, 37), (103, 36)], #England
+[(62, 31), (70, 24), (79, 17), (83, 20), (96, 40), (96, 39), (104, 34), (108, 30), (108, 31), (120, 30), (125, 43)], #Portugal
+[(119, 28), (120, 28), (120, 27), (121, 27), (120, 26), (121, 26), (123, 25), (124, 25), (125, 25), (126, 25), (123, 29), (124, 29), (125, 29), (126, 29), (127, 29), (124, 28), (125, 28), (126, 28), (132, 28), (134, 28), (134, 29)] #Netherlands
 )
 
 lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
