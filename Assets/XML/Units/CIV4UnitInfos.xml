@@ -467,6 +467,7 @@
 			<Description>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN</Description>
 			<Civilopedia>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bFood>1</bFood>
 			<UnitClassUpgrades>

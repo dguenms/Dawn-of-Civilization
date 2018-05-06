@@ -1383,7 +1383,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.33</fScale>
 			<fInterfaceScale>0.53</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/PyramidOfTheSun/ELcastillo04.nif</NIF>
+			<NIF>Art/Structures/Wonders/PyramidOfTheSun/toltemple.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Wonders/PyramidOfTheSun.dds</Button>
 		</BuildingArtInfo>
@@ -2173,9 +2173,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.6</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Bath/bath_southamerika.nif</NIF>
+			<NIF>Art/Structures/Buildings/Temazcal/SA_workshop.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Bath/Button_Bath.dds</Button>
+			<Button>Art/Interface/Buttons/Wonders/temazcal.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MEXICAN_CHARREADA</Type>
