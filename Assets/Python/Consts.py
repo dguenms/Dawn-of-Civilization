@@ -459,6 +459,7 @@ tResurrectionIntervals = (
 [(1810, 2020)], #Argentina
 [(1820, 2020)], #Brazil
 [(1867, 2020)], #Canada
+)
 
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
