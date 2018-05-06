@@ -1968,5 +1968,10 @@ class RFCUtils:
 	def isAreaControlled(self, iPlayer, tTL, tBR, tExceptions=()):
 		lPlots = self.getPlotList(tTL, tBR, tExceptions)
 		return len(self.getAreaCitiesCiv(iPlayer, lPlots)) >= len(self.getAreaCities(lPlots))
+		
+	def breakAutoplay(self):
+		iHuman = self.getHumanID()
+		if gc.getGame().getGameTurnYear() < tBirth[iHuman]:
+			self.makeUnit(iSettler, iHuman, (0, 0), 1)
 			
 utils = RFCUtils()
