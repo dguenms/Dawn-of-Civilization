@@ -344,7 +344,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_TEOTIHUACAN</Type>
-			<Button>Art/Interface/Buttons/Civilizations/Aztec.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/teotihuacan.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_ocelot.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
