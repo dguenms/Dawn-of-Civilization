@@ -1381,7 +1381,7 @@
 			<Type>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>4.00</fScale>
+			<fScale>3.50</fScale>
 			<fInterfaceScale>0.53</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/PyramidOfTheSun/Adivino03.nif</NIF>
 			<KFM/>

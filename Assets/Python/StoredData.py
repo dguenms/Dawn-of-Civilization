@@ -156,7 +156,7 @@ class GameData:
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.lDeleteMode = [-1] * 3
-		self.lFirstContactConquerors = [False] * 3
+		self.lFirstContactConquerors = [False] * 4
 		self.lFirstContactMongols = [True] * 5
 		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
 		
