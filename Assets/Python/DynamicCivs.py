@@ -17,17 +17,17 @@ localText = CyTranslator()
 
 encoding = "utf-8"
 
-tBrazilTL = (32, 14)
-tBrazilBR = (43, 30)
-tNCAmericaTL = (3, 33)
-tNCAmericaBR = (37, 63)
+tBrazilTL = (35, 16)
+tBrazilBR = (49, 36)
+tNCAmericaTL = (0, 38)
+tNCAmericaBR = (40, 73)
 
-tBritainTL = (48, 53)
-tBritainBR = (54, 60)
+tBritainTL = (53, 62)
+tBritainBR = (60, 70)
 
-tEuropeanRussiaTL = (68, 50)
-tEuropeanRussiaBR = (80, 62)
-tEuropeanRussiaExceptions = ((68, 59), (68, 60), (68, 61), (68, 62))
+tEuropeanRussiaTL = (80, 60)
+tEuropeanRussiaBR = (95, 75)
+tEuropeanRussiaExceptions = ((80, 75), (81, 75), (82, 75), (83, 75), (84, 75), (85, 75))
 
 tKhazariaTL = (71, 46)
 tKhazariaBR = (79, 53)

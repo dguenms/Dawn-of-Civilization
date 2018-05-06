@@ -74,8 +74,14 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_COCOA</Tag>
+		<English>Cocoa</English>
+		<German>Kakao</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_COFFEE</Tag>
 		<English>Coffee</English>
+		<German>Kaffee</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_HIT_SINGLES</Tag>
@@ -129,6 +135,11 @@
 		<Tag>TXT_KEY_BONUS_PEARL</Tag>
 		<English>Pearls</English>
 		<German>Perlen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_POTATO</Tag>
+		<English>Potatoes</English>
+		<German>Kartoffeln</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TEA</Tag>

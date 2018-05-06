@@ -12,6 +12,7 @@ import SettlerMaps
 import WarMaps
 import CvScreenEnums
 
+
 # globals
 MainOpt = BugCore.game.MainInterface
 gc = CyGlobalContext()
@@ -25,7 +26,7 @@ tCol = (
 '128,128,128'
 )
 
-lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
+lChineseCities = [(128,48)]
 # Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
 
 class RFCUtils:
@@ -113,7 +114,7 @@ class RFCUtils:
 						teamMinor.makePeace(iActiveCiv)
 						if bOpenBorders:
 							teamMinor.signOpenBorders(iActiveCiv)
-	
+
 	#AIWars
 	def restorePeaceHuman(self, iMinorCiv, bOpenBorders): 
 		teamMinor = gc.getTeam(gc.getPlayer(iMinorCiv).getTeam())
@@ -124,7 +125,7 @@ class RFCUtils:
 				bIndependentUnitsInActiveTerritory = self.checkUnitsInEnemyTerritory(iMinorCiv, iHuman)
 				if not bActiveUnitsInIndependentTerritory and not bIndependentUnitsInActiveTerritory:
 					teamMinor.makePeace(iHuman)
-	
+
 	#AIWars
 	def minorWars(self, iMinorCiv):
 		teamMinor = gc.getTeam(gc.getPlayer(iMinorCiv).getTeam())
@@ -488,7 +489,6 @@ class RFCUtils:
 					if iOwner < iNumPlayers and iOwner != iPlayer:
 						capital = gc.getPlayer(iOwner).getCapitalCity()
 						if capital.getX() != -1 and capital.getY() != -1:
-							print "SETXY utils 4"
 							unit.setXY(capital.getX(), capital.getY(), False, True, False)
 				
 	#Congresses, RiseAndFall
@@ -952,21 +952,21 @@ class RFCUtils:
 
 		lDirectionList = []
 		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_NORTH:
-			if y < 68:
+			if y < iWorldY:
 				lDirectionList.append((0, 1))
 		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_SOUTH:
 			if y > 0:
 				lDirectionList.append((0, -1))
 		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_EAST:
-			if x < 124:
+			if x < iWorldX:
 				lDirectionList.append((1, 0))
 			else:
-				lDirectionList.append((-124, 0))
+				lDirectionList.append((-iWorldX, 0))
 		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_WEST:
 			if x > 0:
 				lDirectionList.append((-1, 0))
 			else:
-				lDirectionList.append((124, 0))
+				lDirectionList.append((iWorldX, 0))
 
 		for tDirection in lDirectionList:
 			dx, dy = tDirection

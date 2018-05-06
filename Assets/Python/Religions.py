@@ -2,9 +2,8 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import PyHelpers       
+import PyHelpers
 import Popup
-#import cPickle as pickle     	
 from Consts import *
 import CvTranslator
 from RFCUtils import utils
@@ -16,7 +15,7 @@ PyPlayer = PyHelpers.PyPlayer
 
 # initialise coordinates
 
-tJerusalem = (73, 38)
+tJerusalem = (84, 45)
 tJewishTL = (68, 34)
 tJewishBR = (80, 42)
 tVaranasiTL = (91, 37)
