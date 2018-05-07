@@ -149,9 +149,15 @@ public:
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) const;
 	int AI_corporationBonusVal(BonusTypes eBonus) const;
 
+	// Leoreth: relative bonus trade value
+	int AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
+
 	// Leoreth: more detailed bonus value
 	int AI_bonusHappinessVal(BonusTypes eBonus, int iChange) const;
 	int AI_bonusHealthVal(BonusTypes eBonus, int iChange) const;
+
+	// Leoreth: determine value provided by additional resource instances
+	int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const;
 
 	int AI_cityTradeVal(CvCity* pCity) const;
 	DenialTypes AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const;

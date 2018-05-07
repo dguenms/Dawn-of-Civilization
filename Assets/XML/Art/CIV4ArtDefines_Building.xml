@@ -2717,5 +2717,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Hubal_Temple/hubal_temple.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TURKIC_DIVAN</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.8</fScale>
+			<fInterfaceScale>0.42</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Madrassa/Madrassa.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/nizamiyya.dds,Art/Interface/Buttons/mem_buildings_atlas.dds,3,4</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

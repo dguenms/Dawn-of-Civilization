@@ -4977,6 +4977,40 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JAIL</BuildingClass>
+			<Type>BUILDING_TURKIC_DIVAN</Type>
+			<Description>TXT_KEY_BUILDING_TURKIC_DIVAN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TURKIC_DIVAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TURKIC_DIVAN_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TURKIC_DIVAN</ArtDefineTag>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
+			<PrereqTech>TECH_LAW</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iMaintenanceModifier>-50</iMaintenanceModifier>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</CommerceChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LEVEE</BuildingClass>
 			<Type>BUILDING_LEVEE</Type>
 			<Description>TXT_KEY_BUILDING_LEVEE</Description>

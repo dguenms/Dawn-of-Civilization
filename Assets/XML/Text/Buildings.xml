@@ -1424,11 +1424,15 @@
 		<English>Astar Temple</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_</Tag>
-		<English></English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN</Tag>
+		<English>Divan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
 	</TEXT>
 </Civ4GameText>

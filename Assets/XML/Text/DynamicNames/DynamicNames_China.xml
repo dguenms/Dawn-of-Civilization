@@ -129,6 +129,18 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINESE_KOREA</Tag>
+		<English>Protectorate General to Pacify the East</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINESE_TURKS</Tag>
+		<English>Protectorate General to Pacify the West</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINESE_MONGOLIA</Tag>
+		<English>Protectorate General to Pacify the North</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_EGYPT</Tag>
 		<English>Haixi</English>
 	</TEXT>
@@ -293,7 +305,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_TURKEY</Tag>
+		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_OTTOMANS</Tag>
 		<English>Tujue</English>
 		<French>Tujue</French>
 		<German>Tujue</German>

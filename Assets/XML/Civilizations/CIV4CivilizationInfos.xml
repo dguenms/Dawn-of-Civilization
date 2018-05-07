@@ -417,7 +417,7 @@
 			<ShortDescription>TXT_KEY_CIV_BABYLONIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_BABYLONIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_BABYLONIA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_BLUE</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BABYLON</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
@@ -1922,7 +1922,7 @@
 			<ShortDescription>TXT_KEY_CIV_GREECE_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_GREECE_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_GREECE_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_CYAN</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_SILVER</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GREECE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
@@ -4093,7 +4093,7 @@
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
-			<Identifier>TUR</Identifier>
+			<Identifier>OTT</Identifier>
 			<StartingYear>1280</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>35</LoadingTime>
@@ -4887,198 +4887,6 @@
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
-			<Type>CIVILIZATION_SELJUK</Type>
-			<Description>TXT_KEY_CIV_SELJUK_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_SELJUK_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_SELJUK_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_CIV_SELJUK_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_SELJUK</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_SELJUK</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
-			<Identifier>SEL</Identifier>
-			<StartingYear>0</StartingYear>
-			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-			</LoadingTimes>
-			<Rating>
-				<Trade>0</Trade>
-				<Production>0</Production>
-				<Culture>0</Culture>
-				<Growth>0</Growth>
-				<Start>0</Start>
-			</Rating>
-			<bPlayable>0</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
-			<Cities>
-				<City>Gaziantep</City>
-				<City>Marsin</City>
-				<City>Zonguldak</City>
-				<City>Denizli</City>
-				<City>Oidu</City>
-				<City>Mugla</City>
-				<City>Eskisehir</City>
-				<City>Inebolu</City>
-				<City>Artuin</City>
-				<City>Silifke</City>
-				<City>Marmaris</City>
-				<City>Bilecik</City>
-				<City>Gelibolu</City>
-				<City>Bachcisaraj</City>
-				<City>Tergoviste</City>
-				<City>Semendre</City>
-				<City>Kastamonu</City>
-			</Cities>
-			<Buildings>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SECURITY_BUREAU</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_ADMINISTRATIVE_CENTER</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_TRIUMPHAL_ARCH</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_STOCK_EXCHANGE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NATIONAL_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_RED_CROSS</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-			</Buildings>
-			<Units>
-				<Unit>
-					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
-					<UnitType>UNIT_SELJUK_GHULAM_WARRIOR</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SCOUT</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_EXPLORER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SPY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PROTESTANT_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CATHOLIC_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_ORTHODOX_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_ISLAMIC_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_HINDU_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_BUDDHIST_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CONFUCIAN_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_TAOIST_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_JEWISH_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_ZOROASTRIAN_MISSIONARY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-			</Units>
-			<FreeUnitClasses/>
-			<FreeBuildingClasses>
-				<FreeBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
-					<bFreeBuildingClass>1</bFreeBuildingClass>
-				</FreeBuildingClass>
-			</FreeBuildingClasses>
-			<FreeTechs/>
-			<DisableTechs/>
-			<InitialCivics>
-				<CivicType>CIVIC_CHIEFDOM</CivicType>
-				<CivicType>CIVIC_AUTHORITY</CivicType>
-				<CivicType>CIVIC_TRADITIONALISM</CivicType>
-				<CivicType>CIVIC_RECIPROCITY</CivicType>
-				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
-			</InitialCivics>
-			<Leaders>
-				<Leader>
-					<LeaderName>LEADER_ALP</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-			</Leaders>
-			<DerivativeCiv>CIVILIZATION_OTTOMAN</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_OTTOMAN_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_OTTOMAN_ORDER</CivilizationActionSound>
-		</CivilizationInfo>
-		<CivilizationInfo>
 			<Type>CIVILIZATION_SPAIN</Type>
 			<Description>TXT_KEY_CIV_SPAIN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_SPAIN_SHORT_DESC</ShortDescription>
@@ -5734,6 +5542,104 @@
 			<DerivativeCiv>CIVILIZATION_CHINA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_TURKS</Type>
+			<Description>TXT_KEY_CIV_TURKS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_TURKS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_TURKS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_TURKS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_GREYISH_BLUE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_TURKS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
+			<Identifier>TUR</Identifier>
+			<StartingYear>552</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>20</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>3</Culture>
+				<Growth>2</Growth>
+				<Start>4</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Gaziantep</City>
+				<City>Marsin</City>
+				<City>Zonguldak</City>
+				<City>Denizli</City>
+				<City>Oidu</City>
+				<City>Mugla</City>
+				<City>Eskisehir</City>
+				<City>Inebolu</City>
+				<City>Artuin</City>
+				<City>Silifke</City>
+				<City>Marmaris</City>
+				<City>Bilecik</City>
+				<City>Gelibolu</City>
+				<City>Bachcisaraj</City>
+				<City>Tergoviste</City>
+				<City>Semendre</City>
+				<City>Kastamonu</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingType>BUILDING_TURKIC_DIVAN</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
+					<UnitType>UNIT_TURKIC_OGHUZ</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses/>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_BUMIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_ALP_ARSLAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_TAMERLANE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_OTTOMAN</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_OTTOMAN_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_OTTOMAN_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_VIKING</Type>

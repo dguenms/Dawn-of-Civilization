@@ -1414,6 +1414,36 @@
 		<German>Haben Sie mehr als 150000 Kulturpunkte im Jahr 1750 n. Chr.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_OTT1_TITLE</Tag>
+		<English>The Golden Apple</English>
+		<German>Der Goldene Apfel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OTT1</Tag>
+		<English>Have four non-obsolete wonders in your capital in 1550 AD</English>
+		<German>Haben Sie im Jahr 1550 n. Chr. vier nicht veraltete Wunder in Ihrer Hauptstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OTT2_TITLE</Tag>
+		<English>Empire on three Continents</English>
+		<German>Reich der drei Kontinente</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OTT2</Tag>
+		<English>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1700 n. Chr. das &#246;stliche Mittelmeer, das Schwarze Meer, Kairo, Mekka, Bagdad und Wien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OTT3_TITLE</Tag>
+		<English>The Tulip Period</English>
+		<German>Die Tulpen-&#196;ra</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OTT3</Tag>
+		<English>Have more culture than all European civilizations combined in 1800 AD</English>
+		<German>Haben Sie im Jahr 1800 n. Chr. mehr Kultur als alle europ&#228;ischen Zivilisationen zusammen</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
 		<English>The First Empire</English>
 		<German>Das erste Gro&#223;reich</German>
@@ -1881,33 +1911,33 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR1_TITLE</Tag>
-		<English>The Golden Apple</English>
-		<German>Der Goldene Apfel</German>
+		<English>The Khaganate</English>
+		<German>Das Gro&#223;khanat</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR1</Tag>
-		<English>Have four non-obsolete wonders in your capital in 1550 AD</English>
-		<German>Haben Sie im Jahr 1550 n. Chr. vier nicht veraltete Wunder in Ihrer Hauptstadt</German>
+		<English>Control 6% of the world and pillage 20 improvements by 900 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 900 n. Chr. 6% der Welt und plündern Sie 20 Verbesserungen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR2_TITLE</Tag>
-		<English>Empire on three Continents</English>
-		<German>Reich der drei Kontinente</German>
+		<English>The Silk Road</English>
+		<German>Die Seidenstra&#223;e</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR2</Tag>
-		<English>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD</English>
-		<German>Kontrollieren Sie bis zum Jahr 1700 n. Chr. das &#246;stliche Mittelmeer, das Schwarze Meer, Kairo, Mekka, Bagdad und Wien</German>
+		<English>Create an overland trade route from any city in China to one of your Mediterranean ports and spread the Silk Route to 10 of your cities by 1100 AD</English>
+		<German>Errichten Sie bis zum Jahr 1100 n. Chr. eine Überlandroute von einer Stadt in China zu einem Ihrer Mittelmeerhafen und verbreiten Sie die Seidenstra&#223;e in 10 Ihrer Städte</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR3_TITLE</Tag>
-		<English>The Tulip Period</English>
-		<German>Die Tulpen-&#196;ra</German>
+		<English>Patronage</English>
+		<German>Mäzenat</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR3</Tag>
-		<English>Have more culture than all European civilizations combined in 1800 AD</English>
-		<German>Haben Sie im Jahr 1800 n. Chr. mehr Kultur als alle europ&#228;ischen Zivilisationen zusammen</German>
+		<English>Have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD and another capital with influential culture by 1400 AD</English>
+		<German>Haben Sie bis zum Jahr 900 n. Chr. eine Hauptstadt mit wachsender Kultur, bis zum Jahr 1100 n. Chr. eine andere Hauptstadt mit fortgeschrittener Kultur und bis zum Jahr 1400 n. Chr. eine weitere Hauptstadt mit einflussreicher Kultur</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
@@ -3187,5 +3217,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PILLAGED_IMPROVEMENTS</Tag>
+		<English>Improvements pillaged: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SILK_ROUTE_CONNECTION</Tag>
+		<English>City in China connected to a Mediterranean port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITIES_WITH_SILK_ROUTE</Tag>
+		<English>Silk Route: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_NEW_CAPITAL</Tag>
+		<English>No new capital</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITAL_CULTURE</Tag>
+		<English>Culture in %s1: %d2 / %d3</English>
 	</TEXT>
 </Civ4GameText>

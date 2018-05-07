@@ -1852,7 +1852,43 @@
 		<German>[ICON_BULLET]%D1%%%F2 durch Einzigartige Macht</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_AFFECTED_CITIES</Tag>
+		<English>Supplies %d1 Cities</English>
+		<German>Versorgt %d1 St&#228;dte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CULTURE_RANK</Tag>
+		<English>Culture Rank: %d1</English>
+		<German>Kulturstufe: %d1</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITY_SUPPLIED</Tag>
+		<English>[SPACE](%d2_num_bonus available - as much as needed for %s1_city)[SPACE]</English>
+		<German>[SPACE](%d2_num_bonus verf&#252;gbar - soviel wie ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITY_OVERSUPPLIED</Tag>
+		<English>[SPACE](%d2_num_bonus available - %d3_num_bonus more than needed for %s1_city)[SPACE]</English>
+		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr als ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITY_REQUIRES</Tag>
+		<English>[SPACE](%d2_num_bonus available - %d3_num_bonus more required for %s1_city)[SPACE]</English>
+		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_UNIT_JOINED_YOU</Tag>
+		<English>A %s1_UnitName has joined our armies</English>
+		<German>Eine Einheit %s1_UnitName ist unseren Armeen beigetreten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+		<German></German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE</Tag>
 		<English>Our artisans have created a total of %d1 [ICON_CULTURE] in our cities!</English>
+		<French>Nos artisans ont cr&#233;&#233; un total de %d1 [ICON_CULTURE] dans nos villes!</French>
 	</TEXT>
 </Civ4GameText>

@@ -688,6 +688,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR_TITLE</Tag>
+		<English>The Power of Orda:</English>
+		<German>Die Macht der Orda:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TUR</Tag>
+		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</English>
+		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren werden in Kriegszeiten Ihren Armeen beitreten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>
 		<English>The Power of Devshirme:</English>
 		<French>Le Pouvoir de l'Assimilation :</French>
 		<German>Die Macht der Devshirme:</German>
@@ -695,7 +705,7 @@
 		<Spanish>El poder de la asimilaci&#243;n:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TUR</Tag>
+		<Tag>TXT_KEY_UP_OTT</Tag>
 		<English>Can Conscript two extra Units in Cities with Non-State Religions</English>
 		<French>La plus grande partie de la culture &#233;trang&#232;re dans les villes turques est convertie &#224; la culture turque</French>
 		<German>Kann zwei zus&#228;tzliche Einheiten in St&#228;dten mit Nicht-Staatsreligionen rekrutieren</German>

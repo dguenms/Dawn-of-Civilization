@@ -590,6 +590,8 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL, // Leoreth
 	WIDGET_PEDIA_JUMP_TO_ROUTE, // Leoreth
 
+	WIDGET_HELP_BONUS_CITY, // Leoreth
+
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
 #endif
@@ -1221,7 +1223,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	WILLIAM,
 	GEORGE,
 	KHOSROW,
-	ATLATL_CAUAC,
+	BUMIN,
+	TAMERLANE,
+	ATLATL_CAUAC
 	NUM_LEADERHEADS
 };
 
@@ -1314,6 +1318,7 @@ enum PlayerTypes				// Exposed to Python
 	BYZANTIUM,
 	JAPAN,
 	VIKINGS,
+	TURKS,
 	ARABIA,
 	TIBET,
 	INDONESIA,
@@ -1345,7 +1350,6 @@ enum PlayerTypes				// Exposed to Python
 	INDEPENDENT2,
 	NATIVE,
 	CELTIA,
-	SELJUKS,
 	BARBARIAN
 };
 

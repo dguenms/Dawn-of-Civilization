@@ -508,9 +508,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
+		<German>China</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
+		<English>Mediterranean Coast</English>
+		<German>Mittelmeerk&#252;ste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_71</Tag>
+		<English>China</English>
+		<German>China</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_72</Tag>
 		<English>Mesoamerica</English>
+		<French>M&#233;soam&#233;rique</French>
 	</TEXT>
 </Civ4GameText>

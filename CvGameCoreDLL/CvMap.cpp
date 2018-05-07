@@ -558,6 +558,12 @@ void CvMap::combinePlotGroups(PlayerTypes ePlayer, CvPlotGroup* pPlotGroup1, CvP
 		pNewPlotGroup->addPlot(pPlot);
 		pPlotNode = pOldPlotGroup->deletePlotsNode(pPlotNode);
 	}
+
+	// Leoreth
+	if (ePlayer != NO_PLAYER)
+	{
+		GET_PLAYER(ePlayer).updateCultureRanks();
+	}
 }
 
 CvPlot* CvMap::syncRandPlot(int iFlags, int iArea, int iMinUnitDistance, int iTimeout)

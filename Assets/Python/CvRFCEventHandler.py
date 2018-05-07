@@ -130,23 +130,23 @@ class CvRFCEventHandler:
 			
 		if iPlayer == iArabia:
 			self.up.arabianUP(city)
-		# elif iPlayer == iMughals and utils.getHumanID() != iMughals:
-			# self.up.mughalUP(city)
-		# elif iPlayer == iSeljuks:
-			# self.up.seljukUP(city)
 			
 		if iPlayer == iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
-			
-		#if iPlayer < iNumMajorPlayers:
-		#	utils.spreadMajorCulture(iPlayer, tCity)
 		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:
-			if iPlayer == iTurkey and tCity == (68, 45):
-				utils.moveCapital(iTurkey, tCity) # Kostantiniyye
+			if iPlayer == iOttomans and tCity == (68, 45):
+				utils.moveCapital(iOttomans, tCity) # Kostantiniyye
 			elif iPlayer == iMongolia and tCity == (102, 47):
-				utils.moveCapital(iMongolia, tCity) # Khanbaliq
+				utils.moveCapital(iMongolia, tCity) # Khanbaliq	
+			elif iPlayer == iTurks and utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				capital = pTurks.getCapitalCity()
+				if not utils.isPlotInArea((capital.getX(), capital.getY()), Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+					newCapital = utils.getRandomEntry(utils.getAreaCitiesCiv(iTurks, utils.getPlotList(Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1])))
+					if newCapital:
+						utils.moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
+				
 				
 		# remove slaves if unable to practice slavery
 		if not gc.getPlayer(iPlayer).canUseSlaves():
@@ -157,12 +157,6 @@ class CvRFCEventHandler:
 		if city.isCapital():
 			if city.isHasRealBuilding(iAdministrativeCenter): 
 				city.setHasRealBuilding(iAdministrativeCenter, False)	
-							
-		# kill Seljuks
-		#if iOwner == iSeljuks and gc.getPlayer(iSeljuks).isAlive() and gc.getGame().getGameTurnYear() >= 1250:
-		#	if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
-		#		sta.completeCollapse(iSeljuks)
-				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
 				
 		# Leoreth: relocate capital for AI if reacquired:
 		if utils.getHumanID() != iPlayer and iPlayer < iNumPlayers:
@@ -174,8 +168,14 @@ class CvRFCEventHandler:
 					utils.relocateCapital(iPlayer, city)
 					
 		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
-		if iPlayer == iTurkey and tCity == (68, 45):
-			utils.setReborn(iTurkey, True)
+		if iPlayer == iOttomans and tCity == (68, 45):
+			utils.setReborn(iOttomans, True)
+			
+		if iPlayer == iTurks:
+			if utils.isAreaControlled(iPlayer, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				utils.setReborn(iTurks, True)
+			else:
+				utils.setReborn(iTurks, False)
 					
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
@@ -235,8 +235,8 @@ class CvRFCEventHandler:
 		
 		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 			
-		if iPlayer == iSeljuks or gc.getPlayer(iPlayer).isHasBuildingEffect(iTopkapiPalace):
-			self.up.turkishUP(city, iPlayer, iOwner)
+		if gc.getPlayer(iPlayer).isHasBuildingEffect(iTopkapiPalace):
+			self.up.ottomanUP(city, iPlayer, iOwner)
 		elif iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
 		else:
@@ -276,8 +276,8 @@ class CvRFCEventHandler:
 			if gc.getPlayer(iOwner).getNumCities() < 2:
 				gc.getPlayer(iOwner).AI_updateFoundValues(False); # fix for settler maps not updating after 1st city is founded
 
-		if iOwner == iTurkey:
-			self.up.turkishUP(city, iOwner, -1)
+		if iOwner == iOttomans:
+			self.up.ottomanUP(city, iOwner, -1)
 			
 		if iOwner == iCarthage:
 			if tCity == (58, 39):
@@ -469,7 +469,7 @@ class CvRFCEventHandler:
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
 		
 		iUnit = unit.getUnitType()
-		if (iPlayer == iVikings or iPlayer == iMoors) and iGold > 0 and iImprovement != -1 and iGold < 1000:
+		if iImprovement >= 0:
 			vic.onUnitPillage(iPlayer, iGold, iUnit)
 			
 	def onCityCaptureGold(self, argsList):

@@ -3979,7 +3979,7 @@ int CvPlot::getNumDefenders(PlayerTypes ePlayer) const
 
 int CvPlot::getNumVisibleEnemyDefenders(const CvUnit* pUnit) const
 {
-	return plotCount(PUF_canDefendEnemy, pUnit->getOwnerINLINE(), pUnit->isAlwaysHostile(this), NO_PLAYER, NO_TEAM, PUF_isVisible, pUnit->getOwnerINLINE());
+	return plotCount(PUF_canDefendAgainstEnemy, pUnit->getOwnerINLINE(), pUnit->isAlwaysHostile(this), NO_PLAYER, NO_TEAM, PUF_isVisible, pUnit->getOwnerINLINE());
 }
 
 

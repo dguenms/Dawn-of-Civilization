@@ -199,6 +199,11 @@ CyPlot* CyMap::plotByIndex(int iIndex)
 	return m_pMap ? new CyPlot(m_pMap->plotByIndexINLINE(iIndex)) : NULL;
 }
 
+int CyMap::plotIndex(int iX, int iY)
+{
+	return m_pMap ? m_pMap->plotIndex(iX, iY) : -1;
+}
+
 //
 // static version
 //

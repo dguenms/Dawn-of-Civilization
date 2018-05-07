@@ -114,13 +114,13 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iGalley, 1, (50, 49), (61, 55), self.spawnPirates, iGameTurn, 20, 0, ["TXT_KEY_ADJECTIVE_NORSE"])
 			
 		#mongolia
-		if utils.isYearIn(-210, 300):
-			self.checkSpawn(iBarbarian, iHorseman, 3 + iHandicap, (94, 48), (107, 54), self.spawnNomads, iGameTurn, 8-iHandicap, 0, ["TXT_KEY_ADJECTIVE_XIONGNU"])
-		elif utils.isYearIn(300, 900):
+		if utils.isYearIn(-210, 400):
+			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (94, 48), (107, 54), self.spawnNomads, iGameTurn, 8-iHandicap, 0, ["TXT_KEY_ADJECTIVE_XIONGNU"])
+		elif utils.isYearIn(400, 900):
 			iNumUnits = 2 + iHandicap
 			self.checkSpawn(iBarbarian, iHorseArcher, iNumUnits, (91, 50), (107, 54), self.spawnNomads, iGameTurn, 7-iHandicap, 0, ["TXT_KEY_ADJECTIVE_GOKTURK", "TXT_KEY_ADJECTIVE_UIGHUR"])
 		elif utils.isYearIn(900, 1100):
-			iNumUnits = 1 + iHandicap
+			iNumUnits = 2 + iHandicap
 			self.checkSpawn(iBarbarian, iKeshik, iNumUnits, (94, 48), (107, 54), self.spawnInvaders, iGameTurn, 6, 0, ["TXT_KEY_ADJECTIVE_JURCHEN", "TXT_KEY_ADJECTIVE_KHITAN"])
 			
 		#tibet
@@ -209,26 +209,22 @@ class Barbs:
 		#barbarians in central asia
 		if utils.isYearIn(-1600, -850):
 			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 3, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
-		elif utils.isYearIn(-850, 300):
-			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 4, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 10-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+		elif utils.isYearIn(-850, 600):
 			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
-		elif utils.isYearIn(300, 700):
+		elif utils.isYearIn(600, 900):
 			#if utils.getScenario() == i3000BC:  #late start condition
-			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
-		elif utils.isYearIn(700, 1040):
+			self.checkSpawn(iBarbarian, iOghuz, 2 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
+		elif utils.isYearIn(900, 1040):
 			#if utils.getScenario() == i3000BC:  #late start condition
-			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (78, 42), (90, 52), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
+			self.checkSpawn(iBarbarian, iOghuz, 2 + iHandicap, (78, 42), (90, 52), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
 
 		# late Central Asian barbarians
-		iSteppeUnit = iKeshik
-		iExtra = iHandicap
-		
 		if utils.isYearIn(1200, 1600):
 			if not utils.getAreaCitiesCiv(iMongolia, utils.getPlotList((70, 48), (80, 59))):
-				self.checkSpawn(iBarbarian, iSteppeUnit, 1 + iExtra, (74, 47), (81, 47), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_TATAR", "TXT_KEY_ADJECTIVE_NOGAI"])
+				self.checkSpawn(iBarbarian, iKeshik, 1 + iHandicap, (74, 47), (81, 47), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_TATAR", "TXT_KEY_ADJECTIVE_NOGAI"])
 		if utils.isYearIn(1400, 1700):
 			if utils.getAreaCities(utils.getPlotList((80, 47), (88, 53))):
-				self.checkSpawn(iBarbarian, iSteppeUnit, 1 + iExtra, (80, 47), (88, 53), self.spawnNomads, iGameTurn, 10-2*iHandicap, 2, ["TXT_KEY_ADJECTIVE_UZBEK", "TXT_KEY_ADJECTIVE_KAZAKH"])
+				self.checkSpawn(iBarbarian, iKeshik, 1 + iHandicap, (80, 47), (88, 53), self.spawnNomads, iGameTurn, 10-2*iHandicap, 2, ["TXT_KEY_ADJECTIVE_UZBEK", "TXT_KEY_ADJECTIVE_KAZAKH"])
 			
 		#barbarians in Elam
 		if utils.isYearIn(-1600, -1000):

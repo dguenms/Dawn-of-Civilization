@@ -38,6 +38,8 @@
 #include "CvBugOptions.h"
 // BUG - Ignore Harmless Barbarians - end
 
+#include <algorithm>
+
 // Public Functions...
 
 CvPlayer::CvPlayer()
@@ -1371,6 +1373,8 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 
 	pCity->init(pCity->getID(), getID(), iX, iY, bBumpUnits, bUpdatePlotGroups);
 
+	updateCultureRanks();
+
 	return pCity;
 }
 
@@ -1698,15 +1702,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	// Leoreth: log game turn of losing this city for previous owner
 	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
 
-	//Leoreth: protect middle eastern cities from Seljuk invasions
-	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
-	{
-		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
-	}
-	else
-	{
-		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
-	}
+	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
@@ -2931,6 +2927,8 @@ void CvPlayer::doTurn()
 		pLoopCity->doTurn();
 	}
 
+	updateCultureRanks();
+
 	// Leoreth: anarchy doesn't cost golden age turns
 	if (getGoldenAgeTurns() > 0 && !isAnarchy())
 	{
@@ -3924,12 +3922,6 @@ bool CvPlayer::canContact(PlayerTypes ePlayer) const
 	}
 
 	if (isMinorCiv() || GET_PLAYER(ePlayer).isMinorCiv())
-	{
-		return false;
-	}
-
-	//Leoreth: Seljuks should be covered by minors but make sure here anyway
-	if (getID() == SELJUKS || ePlayer == (PlayerTypes)SELJUKS)
 	{
 		return false;
 	}
@@ -11420,9 +11412,6 @@ void CvPlayer::verifyAlive()
 
 	if (isAlive())
 	{
-		// Leoreth: keep Seljuks alive early on to avoid exploits
-		if (getID() == SELJUKS && GC.getGameINLINE().getGameTurnYear() < 1250) return;
-
 		bKill = false;
 
 		if (!bKill)
@@ -25651,4 +25640,46 @@ bool CvPlayer::canUseSlaves() const
 	if (isNoSlavery()) return false;
 
 	return true;
+}
+
+struct cultureRankCompare
+{
+	bool operator() (CvCity* left, CvCity* right)
+	{
+		return left->getCulture(left->getOwnerINLINE()) > right->getCulture(right->getOwnerINLINE());
+	}
+};
+
+void CvPlayer::updateCultureRanks() const
+{
+	int iLoop;
+	CvPlotGroup* pPlotGroup;
+	for (pPlotGroup = firstPlotGroup(&iLoop); pPlotGroup != NULL; pPlotGroup = nextPlotGroup(&iLoop))
+	{
+		updateCultureRanks(pPlotGroup);
+	}
+}
+
+void CvPlayer::updateCultureRanks(CvPlotGroup* pPlotGroup) const
+{
+	std::vector<CvCity*> cities;
+
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity->plot()->getPlotGroup(getID()) == pPlotGroup)
+		{
+			cities.push_back(pLoopCity);
+		}
+	}
+
+	cultureRankCompare cmp;
+	std::sort(cities.begin(), cities.end(), cmp);
+
+	int iCount = 0;
+	for (std::vector<CvCity*>::iterator it = cities.begin(); it != cities.end(); ++it)
+	{
+		(*it)->setCultureRank(iCount++);
+	}
 }

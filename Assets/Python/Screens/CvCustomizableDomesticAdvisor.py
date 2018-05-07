@@ -1734,8 +1734,10 @@ class CvCustomizableDomesticAdvisor:
 	def calculateHasBonus (self, city, szKey, arg):
 		
 		# Determine whether or not city has the given bonus
-		if (city.hasBonus(arg)):
+		if city.hasBonusEffect(arg) or gc.getBonusInfo(arg).getAffectedCities() == 0:
 			return self.objectHave
+		elif city.hasBonus(arg):
+			return self.objectPossibleConcurrent
 		else:
 			return self.objectNotPossible
 

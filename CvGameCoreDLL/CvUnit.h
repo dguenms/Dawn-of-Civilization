@@ -364,6 +364,7 @@ public:
 	bool canAttack() const;																														// Exposed to Python
 	bool canAttack(const CvUnit& defender) const;
 	bool canDefend(const CvPlot* pPlot = NULL) const;																	// Exposed to Python
+	bool canDefendAgainst(const CvUnit* pAttacker, const CvPlot* pPlot = NULL) const; // Leoreth
 	bool canSiege(TeamTypes eTeam) const;																							// Exposed to Python
 
 	int airBaseCombatStr() const;																						// Exposed to Python

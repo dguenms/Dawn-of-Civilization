@@ -65,4 +65,24 @@
 		<Tag>TXT_KEY_CIV_TIBET_SHORT_DESC</Tag>
 		<English>Tibet</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_VASSAL</Tag>
+		<English>Khrom of %s3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_NAME_CHINA</Tag>
+		<English>Gyanak</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_NAME_INDIA</Tag>
+		<English>Gyakar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_NAME_TURKS</Tag>
+		<English>Liyul</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBETAN_NAME_MONGOLIA</Tag>
+		<English>Me Hor</English>
+	</TEXT>
 </Civ4GameText>

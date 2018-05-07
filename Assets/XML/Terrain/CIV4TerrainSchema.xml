@@ -199,6 +199,7 @@
 	<ElementType name="iHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappinessPercent" content="textOnly" dt:type="int"/>
+	<ElementType name="iAffectedCities" content="textOnly" dt:type="int"/>
 	<ElementType name="iPlacementOrder" content="textOnly" dt:type="int"/>
 	<ElementType name="iConstAppearance" content="textOnly" dt:type="int"/>
 	<ElementType name="iMinAreaSize" content="textOnly" dt:type="int"/>
@@ -258,6 +259,7 @@
 		<element type="iAIObjective" minOccurs="0"/>
 		<element type="iHealthPercent" minOccurs="0"/>
 		<element type="iHappinessPercent" minOccurs="0"/>
+		<element type="iAffectedCities" minOccurs="0"/>
 		<element type="iPlacementOrder" minOccurs="0"/>
 		<element type="iConstAppearance" minOccurs="0"/>
 		<element type="iMinAreaSize" minOccurs="0"/>

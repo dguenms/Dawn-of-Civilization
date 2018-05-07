@@ -4021,64 +4021,84 @@ class CvMainInterface:
 				iLeftCount = 0
 				iCenterCount = 0
 				iRightCount = 0
+				
+				iCityCultureRank = pHeadSelectedCity.getCultureRank()
 
 				for i in range( gc.getNumBonusInfos() ):
 					bHandled = False
 					if ( pHeadSelectedCity.hasBonus(i) ):
+						bonusInfo = gc.getBonusInfo(i)
 
-						iHealth = pHeadSelectedCity.getBonusHealth(i)
-						iHappiness = pHeadSelectedCity.getBonusHappiness(i)
+						iHealth = bonusInfo.getHealth()
+						iHappiness = bonusInfo.getHappiness()
+						
+						iCityHealth = pHeadSelectedCity.getBonusHealth(i)
+						iCityHappiness = pHeadSelectedCity.getBonusHappiness(i)
+						
+						iPlotIndex = gc.getMap().plotIndex(pHeadSelectedCity.getX(), pHeadSelectedCity.getY())
 						
 						szBuffer = u""
 						szLeadBuffer = u""
 
-						szTempBuffer = u"<font=1>%c" %( gc.getBonusInfo(i).getChar() )
+						szTempBuffer = u"<font=1>%c" %( bonusInfo.getChar() )
 						szLeadBuffer = szLeadBuffer + szTempBuffer
 						
-						if (pHeadSelectedCity.getNumBonuses(i) > 1):
-							szTempBuffer = u"(%d)" %( pHeadSelectedCity.getNumBonuses(i) )
-							szLeadBuffer = szLeadBuffer + szTempBuffer
-
-						szLeadBuffer = szLeadBuffer + "</font>"
+						iNumResources = pHeadSelectedCity.getNumBonuses(i)
+						iAffectedCities = bonusInfo.getAffectedCities()
 						
-						if (iHappiness != 0):
-							if ( iHappiness > 0 ):
-								szTempBuffer = u"<font=1>+%d%c</font>" %(iHappiness, CyGame().getSymbolID(FontSymbols.HAPPY_CHAR) )
-							else:
-								szTempBuffer = u"<font=1>+%d%c</font>" %( -iHappiness, CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR) )
+						iResourceDiff = iNumResources * iAffectedCities - iCityCultureRank
+						
+						if iResourceDiff > 0 or (iHappiness == 0 and iHealth == 0):
+							szTempBuffer = u"(%d)" % iNumResources
+						else:
+							szTempBuffer = u"<color=255,0,0>(%d)</color>" % iNumResources
+						
+						szLeadBuffer = szLeadBuffer + szTempBuffer + "</font>"
+						
+						if (iHappiness != 0 or iCityHappiness != 0):
+							szTempBuffer = u""
+						
+							if iCityHappiness > 0:
+								szTempBuffer = u"<font=1>+%d%c</font>" %(iCityHappiness, CyGame().getSymbolID(FontSymbols.HAPPY_CHAR) )
+							elif iCityHappiness < 0:
+								szTempBuffer = u"<font=1>+%d%c</font>" %( -iCityHappiness, CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR) )
 
-							if ( iHealth > 0 ):
-								szTempBuffer += u"<font=1>, +%d%c</font>" %( iHealth, CyGame().getSymbolID( FontSymbols.HEALTHY_CHAR ) )
+							if iCityHealth > 0:
+								szTempBuffer += u"<font=1>, +%d%c</font>" %( iCityHealth, CyGame().getSymbolID( FontSymbols.HEALTHY_CHAR ) )
+							elif iCityHealth < 0:
+								szTempBuffer += u"<font=1>, +%d%c</font>" %( iCityHealth, CyGame().getSymbolID( FontSymbols.UNHEALTHY_CHAR ) )
 
 							szName = "RightBonusItemLeft" + str(iRightCount)
-							screen.setLabelAt( szName, "BonusBack2", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack2", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							szName = "RightBonusItemRight" + str(iRightCount)
-							screen.setLabelAt( szName, "BonusBack2", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 102, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack2", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 102, (iRightCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							
 							iRightCount = iRightCount + 1
 
 							bHandled = True
 
-						if (iHealth != 0 and bHandled == False):
-							if ( iHealth > 0 ):
-								szTempBuffer = u"<font=1>+%d%c</font>" %( iHealth, CyGame().getSymbolID( FontSymbols.HEALTHY_CHAR ) )
-							else:
-								szTempBuffer = u"<font=1>+%d%c</font>" %( -iHealth, CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR) )
+						if (iHealth != 0 or iCityHealth != 0) and not bHandled:
+							szTempBuffer = u""
+							
+							if iCityHealth > 0:
+								szTempBuffer = u"<font=1>+%d%c</font>" %( iCityHealth, CyGame().getSymbolID( FontSymbols.HEALTHY_CHAR ) )
+							elif iCityHealth < 0:
+								szTempBuffer = u"<font=1>+%d%c</font>" %( -iCityHealth, CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR) )
 								
 							szName = "CenterBonusItemLeft" + str(iCenterCount)
-							screen.setLabelAt( szName, "BonusBack1", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack1", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							szName = "CenterBonusItemRight" + str(iCenterCount)
-							screen.setLabelAt( szName, "BonusBack1", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 62, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack1", szTempBuffer, CvUtil.FONT_RIGHT_JUSTIFY, 62, (iCenterCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							
 							iCenterCount = iCenterCount + 1
 
 							bHandled = True
 
 						szBuffer = u""
-						if ( not bHandled ):
+						if not bHandled:
 						
 							szName = "LeftBonusItem" + str(iLeftCount)
-							screen.setLabelAt( szName, "BonusBack0", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iLeftCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, i, -1 )
+							screen.setLabelAt( szName, "BonusBack0", szLeadBuffer, CvUtil.FONT_LEFT_JUSTIFY, 0, (iLeftCount * 20) + 4, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_BONUS_CITY, i, iPlotIndex )
 							
 							iLeftCount = iLeftCount + 1
 

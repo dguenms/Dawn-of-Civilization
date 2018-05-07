@@ -217,6 +217,11 @@ inline int distanceInfluence(int iCenterValue, int iRange, int iDistance)
 	return (iCenterValue - 1) * (iDistance - iRange) * (iDistance - iRange) / (iRange * iRange) + 1;
 }
 
+inline int sgn(int x)
+{
+	return (x > 0) - (x < 0);
+}
+
 bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer);
 
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
@@ -312,9 +317,11 @@ bool PUF_canSiege( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_isPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_canDeclareWar( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
+bool PUF_canDefendAgainst( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1); // Leoreth
 bool PUF_cannotDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefendGroupHead( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefendEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
+bool PUF_canDefendAgainstEnemy( const CvUnit* pUnit, int iData1, int iData2 = 1); // Leoreth
 bool PUF_canDefendPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_canAirAttack( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canAirDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);

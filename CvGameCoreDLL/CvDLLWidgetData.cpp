@@ -569,6 +569,10 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseBonusHelp(widgetDataStruct, szBuffer);
 		break;
 
+	case WIDGET_HELP_BONUS_CITY:
+		parseBonusHelpCity(widgetDataStruct, szBuffer);
+		break;
+
 // BUG - Trade Denial - start
 	case WIDGET_PEDIA_JUMP_TO_BONUS_TRADE:
 		parseBonusTradeHelp(widgetDataStruct, szBuffer);
@@ -1041,6 +1045,7 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 	case WIDGET_LEADER_LINE:
 	case WIDGET_CLOSE_SCREEN:
 	case WIDGET_SCORE_BREAKDOWN:
+	case WIDGET_HELP_BONUS_CITY:
 		//	Nothing on clicked
 		break;
 	}
@@ -4324,6 +4329,10 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 			}
 		}
 
+		int iCultureRank = pHeadSelectedCity->getCultureRank();
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_CITY_CULTURE_RANK", iCultureRank+1));
+
 		if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3 && iCultureRateTimes100 > 0)
 		{
 			if (iEffectiveNextCoveredPlot >= iNextCoveredPlot) iThreshold = pHeadSelectedCity->getCultureCost(iEffectiveNextCoveredPlot);
@@ -4861,6 +4870,15 @@ void CvDLLWidgetData::parseBonusHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 	{
 		GAMETEXT.setBonusHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData1);
 	}
+}
+
+// Leoreth
+void CvDLLWidgetData::parseBonusHelpCity(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	CvPlot* pPlot = GC.getMap().plotByIndex(widgetDataStruct.m_iData2);
+	CvCity* pCity = pPlot != NULL && pPlot->isCity() ? pPlot->getPlotCity() : NULL;
+
+	GAMETEXT.setBonusHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData1, false, pCity);
 }
 
 // BUG - Trade Denial - start

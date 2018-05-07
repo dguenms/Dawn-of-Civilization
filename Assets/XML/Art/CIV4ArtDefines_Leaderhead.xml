@@ -991,12 +991,37 @@
 			<BackgroundKFM>art/LeaderHeads/Khosrow/Suryavarman_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
+<<<<<<< HEAD
 			<Type>ART_DEF_LEADER_ATLATL_CAUAC</Type>
 			<Button>art/LeaderHeads/Topiltzin/topiltzin.dds</Button>
 			<NIF>art/LeaderHeads/Topiltzin/pacal.nif</NIF>
 			<KFM>art/LeaderHeads/Topiltzin/pacal.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Topiltzin/pacal_nonshader.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Topiltzin/pacal_bg.kfm</BackgroundKFM>
+=======
+			<Type>ART_DEF_LEADER_ALP_ARSLAN</Type>
+			<Button>Art/Leaderheads/Alp Arslan/Alp Arslan.dds</Button>
+			<NIF>Art/Leaderheads/Alp Arslan/Charlemagne.nif</NIF>
+			<KFM>Art/Leaderheads/Alp Arslan/Charlemagne.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Alp Arslan/Charlemagne.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Alp Arslan/Charlemagne_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_TAMERLANE</Type>
+			<Button>,Art/Interface/Buttons/Leaderheads/Tamerlane.dds,Art/Interface/Buttons/mem_leaders_atlas.dds,7,3</Button>
+			<NIF>art/LeaderHeads/Tamerlane/hannibal.nif</NIF>
+			<KFM>art/LeaderHeads/Tamerlane/hannibal.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Tamerlane/hannibal.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Tamerlane/JohnII_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BUMIN</Type>
+			<Button>art/LeaderHeads/Bumin/Btn_LH_Ruga.dds</Button>
+			<NIF>art/LeaderHeads/Bumin/genghis_khan.nif</NIF>
+			<KFM>art/LeaderHeads/Bumin/genghis_khan.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Bumin/genghis_khan_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Bumin/genghis_khan_bg.kfm</BackgroundKFM>
+>>>>>>> upstream/develop
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

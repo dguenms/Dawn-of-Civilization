@@ -2943,28 +2943,6 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
 
-	//Leoreth: Seljuks target only cities in the middle east
-	if (getID() == SELJUKS)
-	{
-		if (pCity->isMiddleEast())
-			iValue += 3;
-		else
-			iValue -= 10;
-
-		if (pCity->getRegionID() == REGION_ANATOLIA)
-			iValue += 5;
-
-		/*if ((pCity->getX() == 89 && pCity->getY() == 46) || (pCity->getX() == 95 && pCity->getY() == 47))
-			iValue -= 10;
-		else if (pCity->getX() == 72 && pCity->getY() == 43)
-			iValue += 20;*/
-
-		if (pCity->getOwner() == BYZANTIUM)
-			iValue += 5;
-		else if (pCity->getOwner() == ARABIA)
-			iValue += 10;
-	}
-
 	//Leoreth: more barbarian pressure against India and Rome
 	if (getID() == BARBARIAN && (pCity->getOwner() == INDIA || pCity->getOwner() == ROME))
 		iValue += 2;
@@ -7003,7 +6981,7 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		case TRADE_RESOURCES:
 			if (!bIgnoreAnnual)
 			{
-				iValue += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, iChange);
+				iValue += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, iChange);
 			}
 			break;
 		case TRADE_CITIES:
@@ -7407,7 +7385,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 							{
 								if (GET_PLAYER(ePlayer).AI_corporationBonusVal((BonusTypes)(pNode->m_data.m_iData)) == 0)
 								{
-									iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+									iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 									pabBonusDeal[pNode->m_data.m_iData] = true;
 								}
 							}
@@ -7511,7 +7489,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (GET_PLAYER(ePlayer).getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 0)
 							{
-								iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+								iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -7688,7 +7666,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 1)
 							{
-								iWeight += GET_PLAYER(ePlayer).AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), getID(), 1);
+								iWeight += GET_PLAYER(ePlayer).AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), getID(), 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -7868,19 +7846,6 @@ int CvPlayerAI::AI_bonusVal(BonusTypes eBonus, int iChange) const
 	iValue += AI_baseBonusVal(eBonus, iChange);
 	iValue += AI_corporationBonusVal(eBonus);
 
-	/*if ((iChange == 0) || ((iChange == 1) && (iBonusCount == 0)) || ((iChange == -1) && (iBonusCount == 1)))
-	{
-		//This is assuming the none-to-one or one-to-none case.
-		iValue += AI_baseBonusVal(eBonus);
-		iValue += AI_corporationBonusVal(eBonus);
-	}
-	else
-	{
-		//This is basically the marginal value of an additional instance of a bonus.
-		iValue += AI_baseBonusVal(eBonus) / 5;
-		iValue += AI_corporationBonusVal(eBonus);
-	}*/
-
 	return iValue;
 }
 
@@ -7922,6 +7887,45 @@ int CvPlayerAI::AI_bonusHealthVal(BonusTypes eBonus, int iChange) const
 	return iValue;
 }
 
+// Leoreth
+int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
+{
+	int iValue = 0;
+
+	int iCurrentAffectedCities = getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities();
+	int iAffectedCitiesChange = iChange * GC.getBonusInfo(eBonus).getAffectedCities();
+
+	int iLeft = iCurrentAffectedCities + (iChange < 0 ? iAffectedCitiesChange : 0);
+	int iRight = iCurrentAffectedCities + (iChange > 0 ? iAffectedCitiesChange : 0);
+
+	int iHappiness, iHealth, iModifier;
+
+	int iLoop;
+	CvCity* pCity;
+	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		iHappiness = pCity->getBonusHappiness(eBonus) * sgn(iChange);
+		iHealth = pCity->getBonusHealth(eBonus) * sgn(iChange);
+
+		iModifier = pCity->getCultureRank() < iRight ? 100 : 20;
+			
+		if (pCity->getCultureRank() >= iLeft && (pCity->getCultureRank() < iRight || iChange > 0))
+		{
+			if (sgn(iChange) * (pCity->happyLevel() - pCity->unhappyLevel()) < 0)
+			{
+				iValue += iHappiness * iModifier;
+			}
+
+			if (sgn(iChange) * (pCity->goodHealth() - pCity->badHealth()) < 0)
+			{
+				iValue += iHealth * iModifier;
+			}
+		}
+	}
+
+	return iValue;
+}
+
 //Value sans corporation
 int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 {
@@ -7939,34 +7943,20 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 		int iTempValue;
 		int iI, iJ;
 
-		int iNumBonuses = getNumAvailableBonuses(eBonus);
-		bool bOnlyBonus = (iChange == 0 || (iNumBonuses == 0 && iChange == 1) || (iNumBonuses == 1 && iChange == -1));
-		bool bStrategic = false;
-
-		// Leoreth: scale with number of cities
-		int iNumCities = std::max(getNumCities(), 1);
-		int iNumCitiesThreshold = 5;
-		int iBonusEffectValue = 0;
-
 		if (!GET_TEAM(getTeam()).isBonusObsolete(eBonus))
 		{
-			iBonusEffectValue += (GC.getBonusInfo(eBonus).getHappiness() * 100);
-			iBonusEffectValue += (GC.getBonusInfo(eBonus).getHealth() * 100);
+			// Leoreth: value depends on access to resource and need
+			//iValue += (GC.getBonusInfo(eBonus).getHappiness() * 100);
+			//iValue += (GC.getBonusInfo(eBonus).getHealth() * 100);
 
-			if (iNumCities > iNumCitiesThreshold)
-			{
-				iBonusEffectValue *= 100 + (iNumCities - iNumCitiesThreshold) * 20;
-				iBonusEffectValue /= 100;
-			}
-
-			iValue += iBonusEffectValue;
+			iValue += AI_bonusEffectVal(eBonus, iChange);
 
 			CvTeam& kTeam = GET_TEAM(getTeam());
 
 			CvCity* pCapital = getCapitalCity();
 			int iCityCount = getNumCities();
 			int iCoastalCityCount = countNumCoastalCities();
-
+			
 			// find the first coastal city
 			CvCity* pCoastalCity = NULL;
 			CvCity* pUnconnectedCoastalCity = NULL;
@@ -8004,45 +7994,25 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 
 					iTempValue = 0;
 
-					if (bOnlyBonus)
+					if (kLoopUnit.getPrereqAndBonus() == eBonus)
 					{
-						if (kLoopUnit.getPrereqAndBonus() == eBonus)
-						{
-							iTempValue += 50;
-						}
+						iTempValue += 50;
+					}
 
-						bool bIsOrBonus = false;
-						bool bHasOtherOrBonus = false;
-						for (iJ = 0; iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
-						{
-							if (kLoopUnit.getPrereqOrBonuses(iJ) == eBonus)
-							{
-								bIsOrBonus = true;
-							}
-							else
-							{
-								if (kLoopUnit.getPrereqOrBonuses(iJ) != NO_BONUS && getNumAvailableBonuses((BonusTypes)kLoopUnit.getPrereqOrBonuses(iJ)) > 0)
-								{
-									bHasOtherOrBonus = true;
-									break;
-								}
-							}
-						}
-
-						if (bIsOrBonus && !bHasOtherOrBonus)
+					for (iJ = 0; iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
+					{
+						if (kLoopUnit.getPrereqOrBonuses(iJ) == eBonus)
 						{
 							iTempValue += 40;
 						}
-
-						if (iTempValue > 0) bStrategic = true;
-
-						iTempValue += kLoopUnit.getBonusProductionModifier(eBonus) / 10;
 					}
+
+					iTempValue += kLoopUnit.getBonusProductionModifier(eBonus) / 10;
 
 					if (iTempValue > 0)
 					{
 						bool bIsWater = (kLoopUnit.getDomainType() == DOMAIN_SEA);
-
+						
 						// if non-limited water unit, weight by coastal cities
 						if (bIsWater && !isLimitedUnitClass((UnitClassTypes)(kLoopUnit.getUnitClassType())))
 						{
@@ -8058,7 +8028,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 								(pCapital != NULL && pCapital->allUpgradesAvailable(eLoopUnit) != NO_UNIT))
 							{
 								// its worthless
-								iTempValue = 0;
+								iTempValue = 2;
 							}
 							// otherwise, value units we could build if we had this bonus double
 							else
@@ -8094,57 +8064,38 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 				if (eLoopBuilding != NO_BUILDING)
 				{
 					CvBuildingInfo& kLoopBuilding = GC.getBuildingInfo(eLoopBuilding);
-
+					
 					iTempValue = 0;
 
-					if (bOnlyBonus)
+					if (kLoopBuilding.getPrereqAndBonus() == eBonus)
 					{
-						if (kLoopBuilding.getPrereqAndBonus() == eBonus)
-						{
-							iTempValue += 30;
-						}
+						iTempValue += 30;
+					}
 
-						bool bIsOrBonus = false;
-						bool bHasOtherBonus = false;
-						for (iJ = 0; iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
-						{
-							if (kLoopBuilding.getPrereqOrBonuses(iJ) == eBonus)
-							{
-								bIsOrBonus = true;
-							}
-							else
-							{
-								if (getNumAvailableBonuses((BonusTypes)kLoopBuilding.getPrereqOrBonuses(iJ)) > 0)
-								{
-									bHasOtherBonus = true;
-									break;
-								}
-							}
-						}
-
-						if (bIsOrBonus && !bHasOtherBonus)
+					for (iJ = 0; iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
+					{
+						if (kLoopBuilding.getPrereqOrBonuses(iJ) == eBonus)
 						{
 							iTempValue += 20;
 						}
-
-						iTempValue += kLoopBuilding.getBonusProductionModifier(eBonus) / 10;
-
-						if (kLoopBuilding.getPowerBonus() == eBonus)
-						{
-							iTempValue += 60;
-						}
-
-						for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-						{
-							iTempValue += kLoopBuilding.getBonusYieldModifier(eBonus, iJ) / 2;
-							if (kLoopBuilding.getPowerBonus() == eBonus)
-							{
-								iTempValue += kLoopBuilding.getPowerYieldModifier(iJ);
-							}
-						}
 					}
 
-					if (iTempValue > 0)
+					iTempValue += kLoopBuilding.getBonusProductionModifier(eBonus) / 10;
+
+					if (kLoopBuilding.getPowerBonus() == eBonus)
+					{
+						iTempValue += 60;
+					}
+					
+					for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+					{
+						iTempValue += kLoopBuilding.getBonusYieldModifier(eBonus, iJ) / 2;
+						if (kLoopBuilding.getPowerBonus() == eBonus)
+						{
+							iTempValue += kLoopBuilding.getPowerYieldModifier(iJ);
+						}
+					}
+					
 					{
 						// determine whether we have the tech for this building
 						bool bHasTechForBuilding = true;
@@ -8162,13 +8113,13 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 								}
 							}
 						}
-
+						
 						bool bIsStateReligion = (((ReligionTypes) kLoopBuilding.getStateReligion()) != NO_RELIGION);
 
 						//check if function call is cached
 						bool bCanConstruct = canConstruct(eLoopBuilding, false, /*bTestVisible*/ true, /*bIgnoreCost*/ true);
-
-						// bCanNeverBuild when true is accurate, it may be false in some cases where we will never be able to build
+						
+						// bCanNeverBuild when true is accurate, it may be false in some cases where we will never be able to build 
 						bool bCanNeverBuild = (bHasTechForBuilding && !bCanConstruct && !bIsStateReligion);
 
 						// if we can never build this, it is worthless
@@ -8215,10 +8166,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 				CvProjectInfo& kLoopProject = GC.getProjectInfo(eProject);
 				iTempValue = 0;
 
-				if (bOnlyBonus)
-				{
-					iTempValue += kLoopProject.getBonusProductionModifier(eBonus) / 10;
-				}
+				iTempValue += kLoopProject.getBonusProductionModifier(eBonus) / 10;
 
 				if (iTempValue > 0)
 				{
@@ -8258,7 +8206,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			{
 				RouteTypes eRoute = (RouteTypes)(GC.getBuildInfo((BuildTypes)iI).getRoute());
 
-				if (bOnlyBonus && eRoute != NO_ROUTE)
+				if (eRoute != NO_ROUTE)
 				{
 					iTempValue = 0;
 					if (GC.getRouteInfo(eRoute).getPrereqBonus() == eBonus)
@@ -8291,31 +8239,14 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			//		iValue /= 3;
 			//	}
 
-			// Leoreth: value more because happiness/health now scale better
 			iValue /= 10;
 		}
 
-		// Leoreth: apply change
-		iValue *= iChange;
-
-		// Leoreth: weigh by number of cities
-		//int iNumCities = std::max(getNumCities(), 1);
-
-
-		// Leoreth: actual gain from bonuses
-		/*if (bOnlyBonus)
-		{
-			iValue += 100 * AI_bonusHappinessVal(eBonus, iChange) / iNumCities;
-			iValue += 50 * AI_bonusHealthVal(eBonus, iChange) / iNumCities;
-		}*/
-
-		// Leoreth: scale with gold value
-		//iValue *= 2;
-		//iValue /= 5;
 
 		//clamp value non-negative
-		m_aiBonusValue[eBonus] = iChange * std::max(0, iChange * iValue);
+		//m_aiBonusValue[eBonus] = std::max(0, iValue);
 
+		m_aiBonusValue[eBonus] = iValue;
 		m_aiLastBonusValueChange[eBonus] = iChange;
 	}
 
@@ -8325,7 +8256,8 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 {
 	int iValue = 0;
-	int iNumCities = std::max(1, getNumCities());
+	int iCityCount = getNumCities();
+	iCityCount += iCityCount / 6 + 1;
 
 	for (int iCorporation = 0; iCorporation < GC.getNumCorporationInfos(); ++iCorporation)
 	{
@@ -8333,23 +8265,21 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 		if (iCorpCount > 0)
 		{
 			int iNumCorpBonuses = 0;
+			iCorpCount += getNumCities() / 6 + 1;
 			CvCorporationInfo& kCorp = GC.getCorporationInfo((CorporationTypes)iCorporation);
 			for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 			{
 				if (eBonus == kCorp.getPrereqBonus(i))
 				{
-					iValue += 50 * kCorp.getYieldProduced(YIELD_FOOD) * iCorpCount;
-					iValue += 50 * kCorp.getYieldProduced(YIELD_PRODUCTION) * iCorpCount;
-					iValue += 30 * kCorp.getYieldProduced(YIELD_COMMERCE) * iCorpCount;
+					iValue += (50 * kCorp.getYieldProduced(YIELD_FOOD) * iCorpCount) / iCityCount;
+					iValue += (50 * kCorp.getYieldProduced(YIELD_PRODUCTION) * iCorpCount) / iCityCount;
+					iValue += (30 * kCorp.getYieldProduced(YIELD_COMMERCE) * iCorpCount) / iCityCount;
 
-					iValue += 30 * kCorp.getCommerceProduced(COMMERCE_GOLD) * iCorpCount;
-					iValue += 30 * kCorp.getCommerceProduced(COMMERCE_RESEARCH) * iCorpCount;
-					iValue += 12 * kCorp.getCommerceProduced(COMMERCE_CULTURE) * iCorpCount;
-					iValue += 20 * kCorp.getCommerceProduced(COMMERCE_ESPIONAGE) * iCorpCount;
-
-					iValue += 100 * kCorp.getHappiness() * iCorpCount;
-					iValue += 50 * kCorp.getHealth() * iCorpCount;
-
+					iValue += (30 * kCorp.getCommerceProduced(COMMERCE_GOLD) * iCorpCount) / iCityCount;
+					iValue += (30 * kCorp.getCommerceProduced(COMMERCE_RESEARCH) * iCorpCount) / iCityCount;
+					iValue += (12 * kCorp.getCommerceProduced(COMMERCE_CULTURE) * iCorpCount) / iCityCount;
+					iValue += (20 * kCorp.getCommerceProduced(COMMERCE_ESPIONAGE) * iCorpCount) / iCityCount;
+					
 					//Disabled since you can't found/spread a corp unless there is already a bonus,
 					//and that bonus will provide the entirity of the bonusProduced benefit.
 
@@ -8365,8 +8295,6 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 		}
 	}
 
-	iValue /= iNumCities;
-
 	iValue /= 100;	//percent
 
 	//match AI_baseBonusVal
@@ -8376,45 +8304,30 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 }
 
 
+// Leoreth
+int CvPlayerAI::AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
+{
+	return AI_bonusTradeVal(eBonus, ePlayer, iChange) - GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
+}
+
+
 int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
 {
 	int iValue;
-	int iCityDifference, iTotalCities;
-
-	bool bVassal = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()) && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isCapitulated();
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
 
-	iCityDifference = std::abs(getNumCities() - GET_PLAYER(ePlayer).getNumCities());
-	iTotalCities = getNumCities() + GET_PLAYER(ePlayer).getNumCities();
-
-	if (bVassal) iCityDifference = 0;
-
 	iValue = AI_bonusVal(eBonus, iChange);
 
-	iValue *= 100 + std::max(0, std::min(iCityDifference, iTotalCities / 2)) * 20; //(getNumCities() + 3) * 30;
+	iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
 	iValue /= 100;
-	
-	// Leoreth: consider relative gain (negative because their loss is our gain)
-	/*iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
-
-	iTheirValue *= 100 + range(0, -iCityDifference, iTotalCities / 2) * 20; //(GET_PLAYER(ePlayer).getNumCities() + 3) * 30;
-	iTheirValue /= 100;
-
-	iValue = iOurValue - iTheirValue;*/
-
-	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
-	//iValue /= 100;
 
 	iValue *= std::max(0, (GC.getBonusInfo(eBonus).getAITradeModifier() + 100));
 	iValue /= 100;
 
-	if (bVassal)
+	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()) && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isCapitulated())
 	{
-		if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > iChange && iChange > 0)
-		{
-			iValue /= 2;
-		}
+		iValue /= 2;
 	}
 
 	return (iValue * GC.getDefineINT("PEACE_TREATY_LENGTH"));
@@ -8451,16 +8364,10 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 		return NO_DENIAL;
 	}
 
-	// Leoreth: resources can be completely worthless now even though you do not already have them
-	if (GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), 1) <= 0)
-	{
-		return DENIAL_NO_GAIN;
-	}
-
-	if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > 0 && GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) <= 0)
+	/*if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > 0 && GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) <= 0)
 	{
 		return (GET_PLAYER(ePlayer).isHuman() ? DENIAL_JOKING : DENIAL_NO_GAIN);
-	}
+	}*/
 
 	if (isHuman())
 	{
@@ -13522,7 +13429,7 @@ void CvPlayerAI::AI_doDiplo()
 								{
 									if (getNumTradeableBonuses((BonusTypes)iJ) > 1)
 									{
-										if ((GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
+										if ((GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
 											&& (GET_PLAYER((PlayerTypes)iI).AI_bonusVal((BonusTypes)iJ, 1) > AI_bonusVal((BonusTypes)iJ, -1)))
 										{
 											setTradeItem(&item, TRADE_RESOURCES, iJ);
@@ -13635,7 +13542,7 @@ void CvPlayerAI::AI_doDiplo()
 									{
 										if (GET_PLAYER((PlayerTypes)iI).getNumTradeableBonuses((BonusTypes)iJ) > 0 && getNumAvailableBonuses((BonusTypes)iJ) == 0)
 										{
-											iValue = AI_bonusTradeVal((BonusTypes)iJ, (PlayerTypes)iI, 1);
+											iValue = AI_relativeBonusTradeVal((BonusTypes)iJ, (PlayerTypes)iI, 1);
 
 											if (iValue > iBestValue)
 											{
@@ -14297,7 +14204,7 @@ void CvPlayerAI::AI_doDiplo()
 															{
 																if (GET_PLAYER((PlayerTypes)iI).getNumTradeableBonuses((BonusTypes)iJ) > 1)
 																{
-																	if (AI_bonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
+																	if (AI_relativeBonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
 																	{
 																		setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14665,7 +14572,7 @@ void CvPlayerAI::AI_doDiplo()
 												{
 													if (GET_PLAYER((PlayerTypes)iI).AI_corporationBonusVal((BonusTypes)iJ) == 0)
 													{
-														if (AI_bonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
+														if (AI_relativeBonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
 													{
 														setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14695,7 +14602,7 @@ void CvPlayerAI::AI_doDiplo()
 													{
 														if (getNumTradeableBonuses((BonusTypes)iJ) > 1)
 														{
-															if (GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
+															if (GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
 															{
 																setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14716,7 +14623,7 @@ void CvPlayerAI::AI_doDiplo()
 
 												if (eBestGiveBonus != NO_BONUS)
 												{
-													if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || (AI_bonusTradeVal(eBestReceiveBonus, ((PlayerTypes)iI), -1) >= GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(eBestGiveBonus, getID(), 1)))
+													if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || (AI_relativeBonusTradeVal(eBestReceiveBonus, ((PlayerTypes)iI), -1) >= GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(eBestGiveBonus, getID(), 1)))
 													{
 														ourList.clear();
 														theirList.clear();

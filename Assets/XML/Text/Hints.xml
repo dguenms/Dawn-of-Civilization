@@ -627,6 +627,10 @@
 		<English>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_76</Tag>
+		<English>Resources now only supply a limited number of cities with happiness or health. Acquire additional instances of a resource to keep your growing empire supplied!</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_</Tag>
 		<English></English>
 	</TEXT>
