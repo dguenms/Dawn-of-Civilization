@@ -661,10 +661,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TEO_TITLE</Tag>
 		<English>The Power of Obsidian:</English>
+		<French>Le Pouvoir de l'Obsidienne :</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TEO</Tag>
 		<English>Melee units do not require strategic resources</English>
+		<French>Les unit&#233;s de combat rapproch&#233; ne requi&#232;rent pas de ressources strat&#233;giques</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>

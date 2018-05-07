@@ -322,10 +322,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL</Tag>
 		<English>Temazcal</English>
+		<French>Temazcal</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>

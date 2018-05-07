@@ -1817,38 +1817,47 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
 		<English>Mesoamerican Metropolis</English>
+		<French>M&#233;tropole m&#233;soam&#233;ricaine</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1</Tag>
 		<English>Have more than 300 culture in 450 AD</English>
+		<French>Avoir plus de 300 culture en 450 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_EPIC</Tag>
 		<English>Have more than 450 culture in 450 AD</English>
+		<French>Avoir plus de 450 culture en 450 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_MARATHON</Tag>
 		<English>Have more than 900 culture in 450 AD</English>
+		<French>Avoir plus de 900 culture en 450 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
 		<English>Birthplace of the Gods</English>
+		<French>L&#224; o&#249; naquirent les dieux</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2</Tag>
 		<English>Experience a golden age by 550 AD</English>
+		<French>Traverser un âge d'or avant 550 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>
 		<English>The Toltec Empire</English>
+		<French>L'Empire tolt&#232;que</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3</Tag>
 		<English>Control all tiles in Mesoamerica in 1000 AD</English>
+		<French>Contr&#244;ler toute la M&#233;soam&#233;rique en 1000 ap. J.-C.</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN</Tag>
 		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
+		<French>Pourcentage de la M&#233;soam&#233;rique : %s1 / %s2%%</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
@@ -2206,6 +2215,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TEOTL_TEOTIHUACAN</Tag>
 		<English>Produce 200 culture with artisans</English>
+		<French>Produire 200 culture par les artisans</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>

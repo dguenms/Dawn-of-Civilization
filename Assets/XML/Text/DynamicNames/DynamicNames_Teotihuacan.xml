@@ -4,29 +4,36 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DESC</Tag>
 		<English>The Teotihuacanos</English>
+		<French>Les Teotihuacanos</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_SHORT_DESC</Tag>
 		<English>Teotihuacan</English>
+		<French>Teotihuacan</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ADJECTIVE</Tag>
 		<English>Teotihuacan</English>
+		<French>Teotihuacano</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_PEOPLES</Tag>
 		<English>Mexico Valley Peoples</English>
+		<French>Peuplades de la Vall&#233;e de Mexico</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DEFAULT</Tag>
 		<English>Altepetl of Teotihuacan</English>
+		<French>Altepetl de Teotihuacan</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL</Tag>
 		<English>Altepetl of %1</English>
+		<French>Altepetl de %1</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TOLTEC</Tag>
 		<English>Toltec</English>
+		<French>tolt&#232;que</French>
 	</TEXT>
 </Civ4GameText>
