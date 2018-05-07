@@ -76,6 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_COFFEE</Tag>
 		<English>Coffee</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_HIT_SINGLES</Tag>
@@ -128,21 +132,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_PEARL</Tag>
 		<English>Pearls</English>
+		<French>No Translation</French>
 		<German>Perlen</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TEA</Tag>
 		<English>Tea</English>
+		<French>No Translation</French>
 		<German>Tee</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TOBACCO</Tag>
 		<English>Tobacco</English>
+		<French>No Translation</French>
 		<German>Tabak</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CAMEL</Tag>
 		<English>Camel</English>
+		<French>No Translation</French>
 		<German>Kamel</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

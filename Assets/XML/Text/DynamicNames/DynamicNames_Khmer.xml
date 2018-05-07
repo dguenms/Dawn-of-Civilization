@@ -124,14 +124,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_DAI_VIET</Tag>
 		<English>Dai Viet</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_BURMA</Tag>
 		<English>Burma</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_NANZHAO</Tag>
 		<English>Nanzhao</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEA</Tag>
@@ -160,6 +172,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEAN</Tag>
 		<English>Kampuchean</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_ADJECTIVE</Tag>

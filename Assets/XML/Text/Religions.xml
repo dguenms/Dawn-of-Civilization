@@ -112,6 +112,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CATHOLICISM</Tag>
 		<English>Catholicism</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Tag>
@@ -120,11 +124,14 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Katholisch:katholischen:katholische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CONFUCIANISM_ADJECTIVE</Tag>
@@ -213,20 +220,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PROTESTANTISM</Tag>
 		<English>Protestantism</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Tag>
 		<English>Protestant</English>
+		<French>No Translation</French>
 		<German>
 			<Text>J&#252;disch:j&#252;dischen:j&#252;dische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ORTHODOXY</Tag>
 		<English>Orthodoxy</English>
+		<French>No Translation</French>
 		<German>Orthodoxie</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Tag>
@@ -235,20 +252,30 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Orthodox:orthodoxen:orthodoxe</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_REFORMATION</Tag>
 		<English>[ICON_BULLET]Founding Protestantism triggers the Reformation</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_SCREEN_DATE_FOUNDED</Tag>
 		<English>Founded:</English>
+		<French>No Translation</French>
 		<German>Gegr&#252;ndet:</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_TAOISM_ADJECTIVE</Tag>
@@ -309,90 +336,145 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PAGANISM</Tag>
 		<English>Paganism</English>
+		<French>No Translation</French>
 		<German>Heidentum</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PESEDJET</Tag>
 		<English>Pesedjet</English>
+		<French>No Translation</French>
 		<German>Pesedjet</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_SHENDAO</Tag>
 		<English>Shendao</English>
+		<French>No Translation</French>
 		<German>Shendao</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ANUNNAKI</Tag>
 		<English>Anunnaki</English>
+		<French>No Translation</French>
 		<German>Anunnaki</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_VEDISM</Tag>
 		<English>Vedism</English>
+		<French>No Translation</French>
 		<German>Vedismus</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_OLYMPIANISM</Tag>
 		<English>Olympianism</English>
+		<French>No Translation</French>
 		<German>Olympismus</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_BAALISM</Tag>
 		<English>Baalism</English>
+		<French>No Translation</French>
 		<German>Baalismus</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ATUA</Tag>
 		<English>Atua</English>
+		<French>No Translation</French>
 		<German>Atua</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_MAZDAISM</Tag>
 		<English>Mazdaism</English>
+		<French>No Translation</French>
 		<German>Masdaismus</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_TEOTL</Tag>
 		<English>Teotl</English>
+		<French>No Translation</French>
 		<German>Teotl</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_SHINTO</Tag>
 		<English>Shinto</English>
+		<French>No Translation</French>
 		<German>Schinto</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ASATRU</Tag>
 		<English>Asatru</English>
+		<French>No Translation</French>
 		<German>Asatru</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_DRUIDISM</Tag>
 		<English>Druidism</English>
+		<French>No Translation</French>
 		<German>Druidentum</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_RODNOVERY</Tag>
 		<English>Rodnovery</English>
+		<French>No Translation</French>
 		<German>Rodnowerie</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_YORUBA</Tag>
 		<English>Yoruba</English>
+		<French>No Translation</French>
 		<German>Yoruba</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_INTI</Tag>
 		<English>Inti</English>
+		<French>No Translation</French>
 		<German>Inti</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_TENGRI</Tag>
 		<English>Tengri</English>
+		<French>No Translation</French>
 		<German>Tengri</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

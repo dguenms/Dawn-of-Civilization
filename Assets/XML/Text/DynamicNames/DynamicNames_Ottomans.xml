@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
 		<English>The Ottomans</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
 		<English>Ottoman Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
@@ -60,10 +68,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMANS_OTTOMAN</Tag>
 		<English>Ottoman</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
@@ -116,10 +132,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_EGYPT</Tag>
 		<English>Khedivate of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_BABYLONIA</Tag>
 		<English>Eyalet of Mesopotamia</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_PERSIA</Tag>
@@ -172,6 +196,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_PHOENICIA</Tag>
 		<English>Eyalet of Syria</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ETHIOPIA</Tag>
@@ -200,6 +228,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_BYZANTIUM</Tag>
 		<English>Eyalet of R&#251;m</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ARABIA</Tag>
@@ -228,10 +260,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_RUSSIA</Tag>
 		<English>Eyalet of Yedisan</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_INDONESIA</Tag>
 		<English>Eyalet of Aceh</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ADJECTIVE</Tag>

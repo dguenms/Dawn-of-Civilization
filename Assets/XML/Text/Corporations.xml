@@ -4,122 +4,189 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_SILK_ROUTE</Tag>
 		<English>Silk Route</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Seidenstra&#195;&#159;e</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_TRADING_COMPANY</Tag>
 		<English>Trading Company</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Handelskompanie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_CEREAL_INDUSTRY</Tag>
 		<English>Cereal Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Getreideindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_FISHING_INDUSTRY</Tag>
 		<English>Fishing Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Fischereiindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Tag>
 		<English>Textile Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Textilindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Tag>
 		<English>Steel Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Stahlindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_OIL_INDUSTRY</Tag>
 		<English>Oil Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>&#195;&#150;lindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Tag>
 		<English>Luxury Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Luxusindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_COMPUTER_INDUSTRY</Tag>
 		<English>Computer Industry</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Computerindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_0</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Merchant Trade or Free Enterprise civics[NEWLINE][ICON_BULLET]Location is in Central Asia or Persia[NEWLINE][ICON_BULLET]Markets and Stables[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Location is in China[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_1</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Colonialism or Free Enterprise civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_2</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Granaries, Sewers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_3</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_4</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Markets, Weavers, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_5</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_6</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Banks, Distilleries, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_7</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Weavers, Department Stores, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_8</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CORPORATION_REMOVED</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

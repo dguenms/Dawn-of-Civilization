@@ -76,6 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_REPUBLIC</Tag>
 		<English>Hellenic Republic</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_COMMUNIST</Tag>
@@ -104,6 +108,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_FASCIST</Tag>
 		<English>Patriotic Alliance of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_LEAGUE</Tag>
@@ -132,30 +140,58 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_PERSIA</Tag>
 		<English>Seleucid Empire</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_EGYPT</Tag>
 		<English>Ptolemaic Kingdom</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_INDIA</Tag>
 		<English>Greco-Bactrian Kingdom</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_ROME</Tag>
 		<English>Magna Graecia</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA</Tag>
 		<English>Macedonia</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIAN</Tag>
 		<English>Macedonian</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_NAME_TURKS</Tag>
 		<English>Transoxiana</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_ADJECTIVE</Tag>

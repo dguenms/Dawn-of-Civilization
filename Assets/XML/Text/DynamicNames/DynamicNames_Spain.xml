@@ -28,6 +28,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_PEOPLES</Tag>
 		<English>Asturian Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_DEFAULT</Tag>
@@ -128,14 +132,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CASTILE</Tag>
 		<English>Castile</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CASTILIAN</Tag>
 		<English>Castilian</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_IBERIA</Tag>
 		<English>Iberia</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_IBERIAN</Tag>
@@ -164,14 +180,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CROWN_OF</Tag>
 		<English>Crown of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ARAGON</Tag>
 		<English>Aragon</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ARAGONESE</Tag>
 		<English>Aragonese</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_VASSAL</Tag>
@@ -200,6 +228,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_CARTHAGE</Tag>
 		<English>%s2 Lebanon</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_ETHIOPIA</Tag>
@@ -252,10 +284,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_INDONESIA</Tag>
 		<English>%s2 East Indies</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MOORS</Tag>
@@ -308,6 +348,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NETHERLANDS</Tag>
 		<English>%s2 %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MALI</Tag>
@@ -384,10 +428,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_ARGENTINA</Tag>
 		<English>Viceroyalty of the Rio de la Plata</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_COLOMBIA</Tag>
 		<English>Viceroyalty of New Granada</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_KHMER</Tag>
@@ -416,10 +468,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_AZTECS</Tag>
 		<English>New Spain</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_MUGHALS</Tag>
 		<English>West India</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ADJECTIVE</Tag>

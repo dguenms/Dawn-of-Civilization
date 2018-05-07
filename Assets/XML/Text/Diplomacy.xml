@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_JUAREZ_1</Tag>
 		<English>Please support [OUR_CIV_SHORT] and it's people. We depend on your help!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_PEDRO_II</Tag>
 		<English>This will be of mutual benefit for us both, don't you think so?</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_RAGNAR_LODBROK_1</Tag>
@@ -36,10 +44,18 @@
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_JUAREZ_1</Tag>
 		<English>[OUR_CIV_SHORT] needs this and demands your assistance!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_PEDRO_II</Tag>
 		<English>Brazil is strong in many ways, [CT_NAME]. Do not force me to show you how strong.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_SAN_MARTIN</Tag>
@@ -52,10 +68,18 @@
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_JUAREZ_1</Tag>
 		<English>Can you spare this for the people of the [OUR_EMPIRE]?</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_PEDRO_II</Tag>
 		<English>My people have faith in me, [CT_NAME]. Please help me not to disappoint them.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_SAN_MARTIN</Tag>
@@ -68,84 +92,146 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_GENERIC</Tag>
 		<English>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</English>
+		<French>No Translation</French>
 		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HARUN_1</Tag>
 		<English>Peace be upon you, [CT_NAME] of [CT_CIV_SHORT]. If you would expect the blessings of Allah, be kind to his people, for Allah will help him who moves the ways of Allah.</English>
+		<French>No Translation</French>
 		<German>Friede sei mit Euch, [CT_NAME] von [CT_CIV_SHORT]. Falls Ihr die Segnungen Allahs erwartet, seid freundlich zu seinem Volk, denn Allah wird dem helfen, der die Wege Allahs bewegt.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ATATURK_1</Tag>
 		<English>I am [OUR_NAME], the President of the Turkish people. We Turks do not consider our principles as dogmas contained in books that are said to come from heaven. We derive our inspiration not from heaven, or from an unseen world, but directly from life.</English>
+		<French>No Translation</French>
 		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CARDENAS_1</Tag>
 		<English>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CHARLES_1</Tag>
 		<English>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</English>
+		<French>No Translation</French>
 		<German>Willkommen, [CT_NAME]. Wir w&#252;rden Freundschaft mit Euch willkommen hei&#223;en. Giert Ihr nach Eroberungen, oder nach Frieden und Ruhe?</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HAILE_SELASSIE_1</Tag>
 		<English>Greetings in the name of God, [CT_NAME] of [CT_CIV_SHORT]. We are Emperor [OUR_NAME] of [OUR_CIV_SHORT]. We know that material and spiritual progress are essential to man. Will you join us as we ceaselessly work for the equal attainment of both?</English>
+		<French>No Translation</French>
 		<German>Gr&#252;&#223;e im Namen Gottes, [CT_NAME] von [CT_CIV_SHORT]. Wir sind Kaiser [OUR_NAME] von [OUR_CIV_SHORT]. Wir wissen, dass k&#246;rperlicher und spiritueller Fortschritt essentiell f&#252;r den Menschen sind. Werdet Ihr daran teilhaben, wie wir ununterbrochen f&#252;r das gleichzeitige Erlangen von beidem arbeiten?</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_JUAREZ_1</Tag>
 		<English>Greetings, [CT_NAME]. My name is [OUR_NAME], and I am the president of [OUR_CIV_SHORT]. My motto is: when there is respect, there is peace!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOMEINI_1</Tag>
 		<English>I, [OUR_NAME] of the [OUR_EMPIRE], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</English>
+		<French>No Translation</French>
 		<German>Ich, [OUR_NAME] von der [OUR_EMPIRE], gr&#252;&#223;e Euch. Wisset, dass jene, welche von Nationalismus, Demokratie und solchen Dingen sprechen, Eure Nation von ihrer Mission abbringen wollen.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALEXANDER_II_1</Tag>
 		<English>Greetings. I am [OUR_NAME], Emperor of [OUR_CIV_SHORT]. Dedicating all my efforts to the well-being of my people, I shall guard the concept of Autocracy like all my forefathers did.</English>
+		<French>No Translation</French>
 		<German>Gr&#252;&#223;e. Ich bin [OUR_NAME], Kaiser von [OUR_CIV_SHORT]. W&#228;hrend ich all meine Anstrengungen dem Wohlergehen meines Volkes widme, werde ich das Konzept der Autokratie besch&#252;tzen wie alle meine Vorv&#228;ter.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_PEDRO_II</Tag>
 		<English>Welcome to humble [OUR_CIV_SHORT]. I am [OUR_NAME], leader of this far-reaching and ever progressing country. Tell me, who are you?</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SAN_MARTIN</Tag>
 		<English>Hello, friend. My name is [OUR_NAME], but you can call me Jose. Or you can call me Francisco. Or you can call me Martin. Just don't call me late for dinner. </English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_SANTA_ANNA_1</Tag>
 		<English>Hello, [CT_NAME]. I am General Santa Anna, Savior of Mexico! What have you come to offer me in tribute?</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TAIZONG_1</Tag>
 		<English>Greetings [CT_NAME]. I am [OUR_NAME], emperor of all the lands below the heavens. With absolute power over numberless minions, do you dare hurt the divine ruler of mighty [OUR_CIV_SHORT].</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_IVAN_IV_1</Tag>
 		<English>[OUR_NAME] of [OUR_CIV_SHORT] greets you. I do not praise myself or my courage, but I praise God, for he protected me, a sinful man, from deadly dangers and created me capable of doing many human things.</English>
+		<French>No Translation</French>
 		<German>[OUR_NAME] von [OUR_CIV_SHORT] gr&#252;&#223;t Euch. Ich lobe weder mich selbst noch meinen Mut, aber ich lobe Gott, denn er besch&#252;tzte mich, einen s&#252;ndigen Mann, vor t&#246;dlichen Gefahren und erm&#246;glichte mir, viele menschliche Dinge zu tun.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ATATURK_1</Tag>
 		<English>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religon is a bridge... History is a bridge...</English>
+		<French>No Translation</French>
 		<German>Wir m&#252;ssen uns bereit machen, die Freundschaft zwischen unseren V&#246;lkern aufzubauen. Wie wird ein Volk auf solch ein Vorhaben vorbereitet? Indem wir die nat&#252;rlichen Br&#252;cken st&#228;rken, die zwischen uns existieren. Sprache ist eine Br&#252;cke ... Religion ist eine Br&#252;cke ... Geschichte ist eine Br&#252;cke ...</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HAILE_SELASSIE_1</Tag>
 		<English>Welcome, [CT_NAME]. Imagination, devotion, perseverance, together with divine grace, will assure your success. What shall we discuss?</English>
+		<French>No Translation</French>
 		<German>Willkommen, [CT_NAME]. Vorstellungskraft, Hingabe, Durchhalteverm&#246;gen, zusammen mit Gottes Gnade, wird Euren Erfolg sichern. Was sollen wir besprechen?</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_JUAREZ_1</Tag>
 		<English>Greetings, [CT_NAME]! It is so great to be at peace with you glorious nation!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_PEDRO_II</Tag>
 		<English>I see you have come to visit, [CT_NAME]. Tell me, what is it you wish to discuss.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_SAN_MARTIN</Tag>
@@ -158,25 +244,42 @@
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HAILE_SELASSIE_1</Tag>
 		<English>The world is well supplied with people who wish to rule and dominate others. People like you.</English>
+		<French>No Translation</French>
 		<German>Die Welt ist gut versorgt mit Menschen, die andere beherrschen und dominieren wollen. Menschen wie Euch.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_JUAREZ_1</Tag>
 		<English>Oh, you again... What are you going to complain about?</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_KHOMEINI_1</Tag>
 		<English>If one permits an infidel to continue in his role as a corrupter of the earth, the infidel's moral suffering will be all the worse. If one kills the infidel, and this stops him from perpetrating his misdeeds, his death will be a blessing to him.</English>
+		<French>No Translation</French>
 		<German>Wenn man einem Ungl&#228;ubigen erlaubt, seine Rolle als Verderber der Erde fortzusetzen, wird das moralische Leiden des Ungl&#228;ubigen umso gr&#246;&#223;er sein. Wenn man den Ungl&#228;ubigen t&#246;tet, und ihn vom Fortsetzen seiner Untaten abh&#228;lt, wird ihm sein Tod ein Segen sein.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ALEXANDER_II_1</Tag>
 		<English>Treachery, cowardice and lies are everywhere - and your nation is no exception.</English>
+		<French>No Translation</French>
 		<German>Verrat, Feigheit und L&#252;gen sind &#252;berall - und Eure Nation ist keine Ausnahme.</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_PEDRO_II</Tag>
 		<English>Speak fast [CT_CIV_ADJ]. I have enough on my schedule already.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_SAN_MARTIN</Tag>
@@ -189,10 +292,18 @@
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_JUAREZ_1</Tag>
 		<English>The government of the [OUR_EMPIRE] will fulfill its duty to defend its independence, to repel foreign aggression, and accept the struggle to which it has been provoked!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_PEDRO_II</Tag>
 		<English>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_SAN_MARTIN</Tag>
@@ -205,10 +316,18 @@
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_JUAREZ_1</Tag>
 		<English>Get out of my office!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_PEDRO_II</Tag>
 		<English>You make me sad, [CT_NAME]. Go away.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_SAN_MARTIN</Tag>
@@ -301,15 +420,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_SLAVE</Tag>
 		<English>Slave Trade</English>
+		<French>No Translation</French>
 		<German>Sklavenhandel</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TRUDEAU_1</Tag>
 		<English>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MEIJI_1</Tag>
 		<English>Finally we meet [CT_NAME], I have been awaiting your arrival. I am Meiji of Japan. Come, we have much to discuss. You have very nice dress, and I am impressed by your armies. Please, show me your ways and I shall show you the wonders of Japan...</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_AFONSO_1</Tag>

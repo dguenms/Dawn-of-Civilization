@@ -4,18 +4,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DESC</Tag>
 		<English>The Mughals</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_ADJECTIVE</Tag>
 		<English>Pakistani</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_SHORT_DESC</Tag>
 		<English>Pakistan</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_PEOPLES</Tag>
 		<English>Ghorid Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DEFAULT</Tag>
@@ -44,6 +60,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_FASCIST</Tag>
 		<English>%s2 Military Government</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_DEFAULT</Tag>
@@ -72,27 +92,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_FASCIST</Tag>
 		<English>%s2 Military Government</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
 		<English>Delhi</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_VASSAL</Tag>
 		<English>Kewab of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
 		<English>Deccan Sultanates</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_ADJECTIVE</Tag>
 		<English>Mughal</English>
+		<French>No Translation</French>
 		<German>Mogul</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>
 		<English>Mughals</English>
+		<French>No Translation</French>
 		<German>Moguln</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

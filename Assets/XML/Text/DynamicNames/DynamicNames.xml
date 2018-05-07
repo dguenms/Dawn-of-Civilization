@@ -4,14 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_OF</Tag>
 		<English>Peoples of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_ADJECTIVE</Tag>
 		<English>%s2 Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPIRE_OF</Tag>
 		<English>Empire of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPIRE_ADJECTIVE</Tag>
@@ -64,6 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_KINGDOM_ADJECTIVE</Tag>
 		<English>%s2 Kingdom</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REPUBLIC_OF</Tag>
@@ -116,6 +132,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_OF</Tag>
 		<English>Socialist Republic of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_ADJECTIVE</Tag>
@@ -216,10 +236,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 People's Republic</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STATES_OF</Tag>
 		<English>City States of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STATES_ADJECTIVE</Tag>
@@ -248,6 +276,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TITLE</Tag>
 		<English>%s2 %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CALIPHATE_ADJECTIVE</Tag>
@@ -348,6 +380,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONFEDERACY_ADJECTIVE</Tag>
 		<English>%s2 Confederacy</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_OF</Tag>
@@ -376,6 +412,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 Islamic Republic</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MANDATE_OF</Tag>
@@ -404,6 +444,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONFEDERATION_ADJECTIVE</Tag>
 		<English>%s2 Confederation</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROTECTORATE_OF</Tag>

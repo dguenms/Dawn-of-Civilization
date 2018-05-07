@@ -6,130 +6,258 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_TARGET_PLOT</Tag>
 		<English>Target Plot</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PUSH_MISSION</Tag>
 		<English>Push Mission</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ACTIVITY</Tag>
 		<English>Activity</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FORTIFY</Tag>
 		<English>Fortifying</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DONE</Tag>
 		<English>Done</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_WAIT</Tag>
 		<English>Waiting</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DUPLICATE_CITY</Tag>
 		<English>Duplicate City</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVE_CITY</Tag>
 		<English>Move City</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RAZE_CITY</Tag>
 		<English>Raze City</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SENSIBILITY</Tag>
 		<English>Checks Prerequisites for Multiple Tiles Mode</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REGION_SELECTION</Tag>
 		<English>Selects all tiles in a region</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT_TYPE</Tag>
 		<English>Plot Type</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STARTING_PLOT</Tag>
 		<English>Starting Plot</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PYTHON</Tag>
 		<English>Triggers Python Effects:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNIT_AI</Tag>
 		<English>Unit AI</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EVER</Tag>
 		<English>Ever</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_HIDE_DEAD</Tag>
 		<English>Hide Dead</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STATE_RELIGION</Tag>
 		<English>State Religion</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_COMMANDS</Tag>
 		<English>Commands</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_XLEVEL</Tag>
 		<English>Level</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_OWNER</Tag>
 		<English>Owner</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT</Tag>
 		<English>Plot</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNIT</Tag>
 		<English>Unit</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CITY</Tag>
 		<English>City</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GROUP</Tag>
 		<English>Group</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_LANDMARKS</Tag>
 		<English>Landmarks</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MODIFY</Tag>
 		<English>Modify %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AI_AUTOPLAY_WARNING</Tag>
 		<English>AI AutoPlay can be stopped with [COLOR_POSITIVE_TEXT]SPACE[COLOR_REVERT] or [COLOR_POSITIVE_TEXT]ESCAPE[COLOR_REVERT]</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_COASTAL_TRADE</Tag>
 		<English>Coastal [ICON_TRADE]: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_BASE_YIELD</Tag>
 		<English>Base %s1: %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CITY_DATA2</Tag>
 		<English>City Data II</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_BASE_RATE</Tag>
 		<English>Base Rate: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLAYER_DATA</Tag>
@@ -144,16 +272,23 @@
 		<English>Erase all plots</English>
 		<French>Effacer toutes les cases</French>
 		<German>Alle Felder l&#246;schen</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REPEATABLE</Tag>
 		<English>Can use Civilizations and Leaders already in the Game</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REVEAL_PLOT</Tag>
 		<English>Reveal Plot</English>
 		<French>R&#233;v&#233;ler case</French>
 		<German>Feld sichtbar</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Revelar casilla</Spanish>
 	</TEXT>
 	<TEXT>
@@ -161,6 +296,7 @@
 		<English>Reveal Submarine</English>
 		<French>R&#233;v&#233;ler sous-marin</French>
 		<German>U-Boote sichtbar</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Revelar submarinos</Spanish>
 	</TEXT>
 	<TEXT>
@@ -168,11 +304,16 @@
 		<English>Reveal Stealth</English>
 		<French>R&#233;v&#233;ler furtivit&#233;</French>
 		<German>Tarnzerst&#246;rer sichtbar</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Revelar unidades invisibles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ADD_UNITS</Tag>
 		<English>Add Units</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT_DATA</Tag>
@@ -185,15 +326,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_DEFAULT</Tag>
 		<English>Default</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SHOW_HIDDEN</Tag>
 		<English>Show Hidden Options</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SCRIPT_DATA</Tag>
 		<English>Script Data</English>
 		<French>Donn&#233;es Script</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Datos de script</Spanish>
 	</TEXT>
 	<TEXT>
@@ -201,40 +352,72 @@
 		<English>Start Year</English>
 		<French>Ann&#233;e de d&#233;part</French>
 		<German>Startjahr</German>
+		<Italian>No Translation</Italian>
 		<Spanish>A&#241;o de inicio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GAME_YEAR</Tag>
 		<English>Game Year: %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MAX_TURNS</Tag>
 		<English>Max Turns: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AI_AUTOPLAY</Tag>
 		<English>AI AutoPlay: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GAME_TURN</Tag>
 		<English>Game Turn: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ESTIMATED_END_TURN</Tag>
 		<English>Estimated End Turn: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MAX_CITY_ELIMINATION</Tag>
 		<English>Max City Elimination: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TARGET_SCORE</Tag>
 		<English>Target Score: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NUKES_EXPLODED</Tag>
 		<English>Nukes Exploded: %d1</English>
+		<French>No Translation</French>
 		<German>Explodierte Atomraketen: %d1</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ADD_NEW_PLAYER</Tag>
@@ -247,18 +430,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_AREA_ID</Tag>
 		<English>Area ID</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SINGLE_PLOT</Tag>
 		<English>Single Plot</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AREA_PLOTS</Tag>
 		<English>Area Plots</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALL_PLOTS</Tag>
 		<English>All Plots</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNIT_DATA</Tag>
@@ -273,10 +472,16 @@
 		<English>Damage</English>
 		<French>D&#233;g&#226;ts</French>
 		<German>Schaden</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CARGO_SPACE</Tag>
 		<English>Cargo</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVES</Tag>
@@ -321,22 +526,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_DIRECTION</Tag>
 		<English>Direction</English>
+		<French>No Translation</French>
 		<German>Blickrichtung</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Direcci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_HURRY_ANGER</Tag>
 		<English>Hurry [ICON_UNHAPPY]: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DEFY_RESOLUTION</Tag>
 		<English>Defy Resolution [ICON_UNHAPPY]: %d1</English>
 		<French>D&#233;fier r&#233;solution [ICON_UNHAPPY]: %d1</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Desafiar resoluci&#243;n [ICON_UNHAPPY]: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TEMP_HAPPY</Tag>
 		<English>Temporary [ICON_HAPPY]: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DEFENSE</Tag>
@@ -351,26 +568,40 @@
 		<English>Grant Available</English>
 		<French>Accorder disponible</French>
 		<German>Verlehe alle verf&#252;gbaren</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_COPY_ALL</Tag>
 		<English>Apply to All %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FREE_SPECIALISTS</Tag>
 		<English>Free Specialists</English>
 		<French>Sp&#233;cialistes gratuits</French>
 		<German>Freie Spezialisten</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PROGRESS</Tag>
 		<English>Progress: %d1</English>
 		<French>Progr&#232;s: %d1</French>
 		<German>Fortschritt: %d1</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GOLDEN_AGE_UNITS</Tag>
 		<English>[ICON_GREATPEOPLE] Required: %d1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ANARCHY</Tag>
@@ -383,10 +614,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_STATE_RELIGION_UNIT</Tag>
 		<English>[ICON_RELIGION] Unit [ICON_PRODUCTION]: %d1%%</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STATE_RELIGION_BUILDING</Tag>
 		<English>[ICON_RELIGION] Building [ICON_PRODUCTION]: %d1%%</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TEAM_DATA</Tag>
@@ -449,6 +688,8 @@
 		<English>Extra Water Sight</English>
 		<French>Vision suppl&#233;mentaire sur eau</French>
 		<German>Zus&#228;tzliche Sicht &#252;ber Wasser</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_BRIDGE_BUILDING</Tag>
@@ -487,6 +728,7 @@
 		<English>Enemy War Weariness: %d1</English>
 		<French>Lassitude de la guerre chez ennemi: %d1</French>
 		<German>Feindliche Kriegsm&#252;digkeit: %d1</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Hast&#237;o b&#233;lico del enemigo: %d1</Spanish>
 	</TEXT>
 	<TEXT>
@@ -494,12 +736,16 @@
 		<English>Guaranteed Eligibility</English>
 		<French>Eligibilit&#233; garantie</French>
 		<German>Teilnahmeberechtigt</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Elegibilidad garantizada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FEATURE_VARIETY</Tag>
 		<English>Variety: %d1</English>
 		<French>vari&#233;t&#233;: %d1</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UPGRADE_PROGRESS</Tag>
@@ -512,16 +758,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_TRIGGER_EVENT</Tag>
 		<English>Trigger %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_LATITUDE</Tag>
 		<English>Latitude: %d1</English>
+		<French>No Translation</French>
 		<German>Spielraum: %d1</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ATTITUDE</Tag>
 		<English>Attitude</English>
+		<French>No Translation</French>
 		<German>Verh&#228;ltnis</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Actitud</Spanish>
 	</TEXT>
 	<TEXT>
@@ -535,7 +790,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_MODIFIER</Tag>
 		<English>Modifier</English>
+		<French>No Translation</French>
 		<German>Multiplikator</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Modificador</Spanish>
 	</TEXT>
 	<TEXT>
@@ -543,27 +800,40 @@
 		<English>Counter Espionage</English>
 		<French>Contre-espionnage</French>
 		<German>Spionagepunkte</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MEMORY</Tag>
 		<English>Memory</English>
 		<French>M&#233;moire</French>
 		<German>Erinnerung</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_KILL</Tag>
 		<English>Kill</English>
 		<French>Tuer</French>
 		<German>L&#246;schen</German>
+		<Italian>No Translation</Italian>
 		<Spanish>Matar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ENABLE_CIV</Tag>
 		<English>This civ is enabled. (Click to disable)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DISABLE_CIV</Tag>
 		<English>This civ is disabled. (Click to enable)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 
 <!-- Sevopedia_CIV4GameText -->
@@ -571,11 +841,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_SEVOPEDIA_TITLE</Tag>
 		<English>SEVOPEDIA</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_SCREEN_INDEX</Tag>
 		<English>Index</English>
-		<Italian>[SPACE][SPACE][SPACE][SPACE][SPACE]Indice</Italian>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>Indice</Italian>
 		<Spanish>Indice</Spanish>
 	</TEXT>
 	<TEXT>
@@ -592,6 +868,7 @@
 		<French>Am&#233;liorations des Unit&#233;s</French>
 		<German>Modernisierungen</German>
 		<Italian>Avanzamenti</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION_TREE</Tag>
@@ -599,6 +876,7 @@
 		<French>Arborescence des Promotions</French>
 		<German>Bef&#246;rderungsbaum</German>
 		<Italian>Albero Promoz.</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS</Tag>
@@ -606,6 +884,7 @@
 		<French>Merveilles Nationales</French>
 		<German>Nationalwunder</German>
 		<Italian>Merav. Naz.</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_WONDERS</Tag>
@@ -613,6 +892,7 @@
 		<French>Merveilles Mondiales</French>
 		<German>Weltwunder</German>
 		<Italian>Grandi Merav.</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_NEW</Tag>
@@ -620,6 +900,7 @@
 		<French>Conceptes BTS</French>
 		<German>Beyond the Sword-Konzepte</German>
 		<Italian>Concetti di BTS</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIQUE_BUILDINGS</Tag>
@@ -627,6 +908,7 @@
 		<French>B&#226;timents Uniques</French>
 		<German>Einzigartige Geb&#228;ude</German>
 		<Italian>Edifici Unici</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_FAV_CIVIC_AND_RELIGION</Tag>
@@ -642,26 +924,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HIDE_INACTIVE</Tag>
 		<English>Hide Inactive</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_ROUTE</Tag>
 		<English>Routes</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_DOMAIN</Tag>
 		<English>Domain</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_NATIONAL_STUFF</Tag>
 		<English>National %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_TEAM_STUFF</Tag>
 		<English>Team %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_WORLD_STUFF</Tag>
 		<English>World %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_NON_COMBAT</Tag>
@@ -675,225 +981,449 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_MAPS</Tag>
 		<English>Stability Maps</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPAWN_MAPS</Tag>
 		<English>Flipzone Maps</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IN_SPAWN</Tag>
 		<English>Flipzone</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CORE</Tag>
 		<English>Core</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SETTLERVALUE</Tag>
 		<English>Settlervalue</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EXTENDED</Tag>
 		<English>Reborn</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NA</Tag>
 		<English>N/A</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FLIP</Tag>
 		<English>Flip</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SET_VALUE</Tag>
 		<English>Set Value</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_INPUT</Tag>
 		<English>Keyboard input</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EXPORT</Tag>
 		<English>Export</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REVERT_CHANGES</Tag>
 		<English>Reset</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
 		<English>Warvalue</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP</Tag>
 		<English>Religion values</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REGIONMAP</Tag>
 		<English>Region IDs</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_MINORITY</Tag>
 		<English>Minority</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_PERIPHERY</Tag>
 		<English>Periphery</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_HISTORICAL</Tag>
 		<English>Historical</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_CORE</Tag>
 		<English>Core</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_STABILITY</Tag>
 		<English>No Stability (all civs)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_STABILITY_HELP</Tag>
 		<English>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY</Tag>
 		<English>No collapsing Human Player</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_HELP</Tag>
 		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV</Tag>
 		<English>Ignore AI UHV Checks</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV_HELP</Tag>
 		<English>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING</Tag>
 		<English>Unlimited Civ Switching</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING_HELP</Tag>
 		<English>Allows the human player to switch multiple times.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALREADY_SWITCHED</Tag>
 		<English>Already Switched Civ</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALREADY_SWITCHED_HELP</Tag>
 		<English>Variable which stores if the player has already switched. (Red means the player CAN still switch)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_CONGRESS</Tag>
 		<English>No congresses</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_CONGRESS_HELP</Tag>
 		<English>Disables congresses. Both normal and war congresses.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_PLAGUE</Tag>
 		<English>No plagues</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_PLAGUE_HELP</Tag>
 		<English>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CONGRESS_TURNS</Tag>
 		<English>Congress turns</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CONGRESS_TURNS_HELP</Tag>
 		<English>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SECONDARY_CIVS</Tag>
 		<English>Enabled secondary civilizations</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RFC_OPTIONS</Tag>
 		<English>RFC DoC options</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RFC_VARIABLES</Tag>
 		<English>Stored variables</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_OPTIONS_ENABLE_CIV</Tag>
 		<English>Enable/disable civ</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STOREDDATA</Tag>
 		<English>StoredData</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RESTORE_SD_BACKUP</Tag>
 		<English>Restore backup</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RESTORE_SD_BACKUP_HELP</Tag>
 		<English>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CREATE_SD_BACKUP</Tag>
 		<English>Create backup</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CREATE_SD_BACKUP_HELP</Tag>
 		<English>Saves the current state of the StoredData.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GLOBAL</Tag>
 		<English>Global data</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CIVS</Tag>
 		<English>Civilization data</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STOREDDATA_WARNING</Tag>
 		<English>Be careful with your changes! Any change can seriously effect your game!</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CHANGE</Tag>
 		<English>Click to change</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SELECT</Tag>
 		<English>Click to select</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CANNOT_CHANGE</Tag>
 		<English>Cannot change this</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DOCMAPS</Tag>
 		<English>DoC Maps</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP</Tag>
 		<English>Move large portions of map at once</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET0</Tag>
 		<English>Do not change old area</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET1</Tag>
 		<English>Turn old area to water tiles</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET2</Tag>
 		<English>Turn old area to grass tiles</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FLIPAI</Tag>
 		<English>AI only flipzone</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

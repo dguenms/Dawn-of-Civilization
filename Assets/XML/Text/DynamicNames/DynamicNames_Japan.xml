@@ -81,6 +81,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>No Translation</German>
 		<Italian>
 			<Text>Impero del Grande %s1</Text>
 			<Gender>Male</Gender>
@@ -95,22 +96,42 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL</Tag>
 		<English>Co-Prosperity %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_CHINA</Tag>
 		<English>Reorganized National Government of China</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_KOREA</Tag>
 		<English>Governor-General of Chosen</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_MONGOLIA</Tag>
 		<English>Mengjiang United Autonomous Government</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_INDIA</Tag>
 		<English>Azad Hind</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPAN_ADJECTIVE</Tag>

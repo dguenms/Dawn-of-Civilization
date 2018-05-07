@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_DESC</Tag>
 		<English>The Brazilians</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_PEOPLES</Tag>
 		<English>Brazilian Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_DEFAULT</Tag>
@@ -36,6 +44,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_REPUBLIC</Tag>
 		<English>Federative Republic of %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_FASCIST</Tag>
@@ -64,13 +76,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZILIAN_ARGENTINA</Tag>
 		<English>Transplatine Province</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_ADJECTIVE</Tag>
 		<English>Brazilian</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_SHORT_DESC</Tag>
 		<English>Brazil</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>

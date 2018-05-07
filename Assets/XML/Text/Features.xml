@@ -4,21 +4,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_CAPE</Tag>
 		<English>Cape</English>
+		<French>No Translation</French>
 		<German>
 			<Text>Kap</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
 		<English>Islands</English>
+		<French>No Translation</French>
 		<German>Inseln</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_RAINFOREST</Tag>
 		<English>Rainforest</English>
+		<French>No Translation</French>
 		<German>Regenwald</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_MARSH</Tag>
@@ -47,5 +56,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_NO_IMPROVEMENT</Tag>
 		<English>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 </Civ4GameText>
