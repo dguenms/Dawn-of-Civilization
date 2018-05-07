@@ -1440,6 +1440,7 @@ iCivTurks : {
 		"Tatpar Qaghan", # 6th
 		"Bulan", # 9th
 		"Abu Mansur al-Maturidi", # 9th
+		"Muhammad al-Bukhari", # 9th
 		"Al-Ghazali", # 11th (also Persian)
 		"Ahmad Yasawi", # 12th
 		"fFatima al-Samarqandi", # 12th
@@ -1482,6 +1483,7 @@ iCivTurks : {
 		"Kasym Tynystanov", # 20th
 	],
 	iGreatMerchant : [
+		"Maniakh", # 6th
 		"Muqan Qaghan", # 6th
 		"Sheguy", # 7th
 		"Ahmad ibn Rustah", # 10th
@@ -1497,6 +1499,7 @@ iCivTurks : {
 		"Kanysh Satbayev", # 20th
 	],
 	iGreatStatesman : [
+		u"Istämi", # 6th
 		"Ishbara Qaghan", # 6th
 		"Ashina Simo", # 7th
 		"Nizam al-Mulk", # 11th
