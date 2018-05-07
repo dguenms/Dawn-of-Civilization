@@ -1779,7 +1779,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 		pDefender = pPlot->getBestDefender(NO_PLAYER, pAttacker->getOwnerINLINE(), pAttacker, !gDLL->altKey(), NO_TEAM == pAttacker->getDeclareWarMove(pPlot));
 // BUG - Combat Odds for Friendlies - end
 
-		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefend(pPlot) && pAttacker->canAttack(*pDefender))
+		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefendAgainst(pAttacker, pPlot) && pAttacker->canAttack(*pDefender)) // Leoreth
 		{
 			if (pAttacker->getDomainType() != DOMAIN_AIR)
 			{
@@ -13202,12 +13202,12 @@ bool CvGameTextMgr::setResumableValueTimes100ChangeHelp(CvWStringBuffer &szBuffe
 // BUG - Resumable Value Change Help - end
 
 
-void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText)
+void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, CvCity* pCity)
 {
-	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER);
+	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER, pCity);
 }
 
-void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer)
+void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer, CvCity* pCity)
 {
 	if (NO_BONUS == eBonus)
 	{
@@ -13221,7 +13221,29 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 		if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
 		{
 			CvPlayer& kActivePlayer = GET_PLAYER(GC.getGameINLINE().getActivePlayer());
-			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_AVAILABLE_PLAYER", kActivePlayer.getNumAvailableBonuses(eBonus), kActivePlayer.getNameKey()));
+
+			if (pCity != NULL && GC.getBonusInfo(eBonus).getAffectedCities() != 0)
+			{
+				int iDifference = kActivePlayer.getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities() - pCity->getCultureRank();
+				int iResourceDifference = iDifference > 0 ? iDifference / GC.getBonusInfo(eBonus).getAffectedCities() : std::abs(iDifference) / GC.getBonusInfo(eBonus).getAffectedCities() + 1;
+
+				if (iResourceDifference == 0)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_SUPPLIED", pCity->getName().GetCString(), kActivePlayer.getNumAvailableBonuses(eBonus)));
+				}
+				else if (iDifference > 0)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_OVERSUPPLIED", pCity->getName().GetCString(), kActivePlayer.getNumAvailableBonuses(eBonus), iResourceDifference));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_REQUIRES", pCity->getName().GetCString(), kActivePlayer.getNumAvailableBonuses(eBonus), iResourceDifference));
+				}
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_AVAILABLE_PLAYER", kActivePlayer.getNumAvailableBonuses(eBonus), kActivePlayer.getCivilizationShortDescriptionKey()));
+			}
 
 			for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
 			{

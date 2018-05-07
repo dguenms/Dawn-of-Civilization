@@ -1065,7 +1065,7 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
-			<Type>COLOR_SELJUK</Type>
+			<Type>COLOR_SILVER</Type>
 			<fRed>0.745</fRed>
 			<fGreen>0.862</fGreen>
 			<fBlue>0.941</fBlue>
@@ -1160,6 +1160,13 @@
 			<fRed>0.95</fRed>
 			<fGreen>0.60</fGreen>
 			<fBlue>0.75</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_GREYISH_BLUE</Type>
+			<fRed>0.28</fRed>
+			<fGreen>0.44</fGreen>
+			<fBlue>1.00</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 	</ColorVals>

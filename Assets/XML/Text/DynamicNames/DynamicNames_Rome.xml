@@ -398,6 +398,10 @@
 		<English>Borussia</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKS</Tag>
+		<English>Transoxiana</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
 		<English>Sarmatia</English>
 		<French>
@@ -518,7 +522,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKEY</Tag>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_OTTOMANS</Tag>
 		<English>Asia Minor</English>
 		<French>
 			<Text>Asie Mineure</Text>

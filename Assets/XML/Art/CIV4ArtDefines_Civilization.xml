@@ -26,7 +26,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_BABYLON</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Babylonia.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,8,1</Button>
+			<Button>,Art/Interface/Buttons/Civilizations/Babylonia.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Lamassu.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -92,7 +92,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_GREECE</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Greece.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,2,7</Button>
+			<Button>,Art/Interface/Buttons/Civilizations/Greece.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Owl.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -265,8 +265,8 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_SELJUK</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Seljuks.dds</Button>
+			<Type>ART_DEF_CIVILIZATION_TURKS</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Turks.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Bow.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>

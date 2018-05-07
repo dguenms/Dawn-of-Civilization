@@ -230,6 +230,7 @@ class GameData:
 		self.iTamilTradeGold = 0
 		self.iColombianTradeGold = 0
 		self.iVikingGold = 0
+		self.iTurkicPillages = 0
 		self.iMoorishGold = 0
 		self.iEnglishSinks = 0
 		self.iMongolRazes = 0
@@ -239,6 +240,9 @@ class GameData:
 		self.iMexicanGreatGenerals = 0
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
+		
+		self.tFirstTurkicCapital = None
+		self.tSecondTurkicCapital = None
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0

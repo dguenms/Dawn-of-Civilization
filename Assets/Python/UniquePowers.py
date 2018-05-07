@@ -81,9 +81,6 @@ class UniquePowers:
 		# Babylonian UP: receive a free tech after discovering the first four techs
 		pBabylonia.setFreeTechsOnDiscovery(4)
 		
-		# Chinese UP: +10% commerce rate per stability level
-		pChina.changeYieldRateModifier(YieldTypes.YIELD_COMMERCE, 20)
-		
 	def onBuildingBuilt(self, city, iOwner, iBuilding):
 		if iOwner == iMughals:
 			self.mughalUP(city, iBuilding)
@@ -216,24 +213,6 @@ class UniquePowers:
 
 #------------------ARABIAN U.P.-------------------
 
-	def seljukUP(self, city): # Unused
-		return
-		# pSeljuks = gc.getPlayer(iSeljuks)
-		iStateReligion = pSeljuks.getStateReligion()
-
-		if iStateReligion >= 0:
-			for iReligion in range(iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
-				if city.isHasReligion(iReligion) and not city.isHolyCityByType(iReligion):
-					city.setHasReligion(iReligion, False, False, False)
-				if city.hasBuilding(iTemple + iReligion*4):
-					city.setHasRealBuilding((iTemple + iReligion*4), False)
-				if city.hasBuilding(iCathedral + iReligion*4):
-					city.setHasRealBuilding((iCathedral + iReligion*4), False)
-				if city.hasBuilding(iMonastery + iReligion*4):
-					city.setHasRealBuilding((iMonastery + iReligion*4), False)
-			city.setHasReligion(iStateReligion, True, True, False)
-		
-
 	def arabianUP(self, city):
 		#pArabia = gc.getPlayer(iArabia)
 		iStateReligion = pArabia.getStateReligion()
@@ -301,7 +280,7 @@ class UniquePowers:
 #------------------TURKISH U.P.-------------------
 
 
-	def turkishUP(self, city, iCiv, iPreviousOwner):
+	def ottomanUP(self, city, iCiv, iPreviousOwner):
 		tPlot = (city.getX(), city.getY())
 		x, y = tPlot
 		for (i, j) in utils.surroundingPlots(tPlot, 2):

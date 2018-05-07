@@ -10,7 +10,7 @@
 			<Type>CORPORATION_SILK_ROUTE</Type>
 			<Description>TXT_KEY_CORPORATION_SILK_ROUTE</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_SILK_ROUTE_PEDIA</Civilopedia>
-			<TechPrereq>TECH_COMPASS</TechPrereq>
+			<TechPrereq>TECH_CURRENCY</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
@@ -21,6 +21,7 @@
 				<BonusType>BONUS_COTTON</BonusType>
 				<BonusType>BONUS_INCENSE</BonusType>
 				<BonusType>BONUS_SILK</BonusType>
+				<BonusType>BONUS_CAMEL</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>

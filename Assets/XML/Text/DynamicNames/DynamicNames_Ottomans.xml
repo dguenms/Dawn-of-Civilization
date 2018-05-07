@@ -3,54 +3,14 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
-		<English>The Turks</English>
-		<French>
-			<Text>Les Turques</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>T&#252;rken:Die T&#252;rken:den T&#252;rken</Text>
-			<Gender>Male:Male:Male</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>I Turchi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Los Turcos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<English>The Ottomans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
-		<English>Turkish Peoples</English>
-		<French>
-			<Text>Peuplades Turques</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>T&#252;rkische V&#246;lker:t&#252;rkischen V&#246;lker:t&#252;rkische V&#246;lkern</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>Popoli Turchi</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pueblos Turcos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_CIV_OTTOMANS_PEOPLES</Tag>
+		<English>Ottoman Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMANS_DEFAULT</Tag>
 		<English>Sublime %s2 State</English>
 		<French>
 			<Text>Sublime Etat %s2</Text>
@@ -74,7 +34,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_COMMUNIST</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMANS_COMMUNIST</Tag>
 		<English>National Democratic Popular %s1</English>
 		<French>
 			<Text>%s1 Nationale D&#233;mocratique Populaire</Text>
@@ -98,15 +58,15 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMANS_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMANS_OTTOMAN</Tag>
 		<English>Ottoman</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMANS_ISLAMIC_REPUBLIC</Tag>
 		<English>Islamic %s2 Democracy</English>
 		<French>
 			<Text>D&#233;mocratie Islamique %s2</Text>
@@ -130,7 +90,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_VASSAL</Tag>
 		<English>Eyalet of %s1</English>
 		<French>
 			<Text>Eyalet d'%s1</Text>
@@ -154,15 +114,15 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_EGYPT</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_EGYPT</Tag>
 		<English>Khedivate of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_BABYLONIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_BABYLONIA</Tag>
 		<English>Eyalet of Mesopotamia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_PERSIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_PERSIA</Tag>
 		<English>Eyalet of Sharazor</English>
 		<French>
 			<Text>Eyalet de Sharazor</Text>
@@ -186,7 +146,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_GREECE</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_GREECE</Tag>
 		<English>Eyalet of Rumelia</English>
 		<French>
 			<Text>Eyalet de Roum&#233;lie</Text>
@@ -210,11 +170,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_PHOENICIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_PHOENICIA</Tag>
 		<English>Eyalet of Syria</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_ETHIOPIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_ETHIOPIA</Tag>
 		<English>Eyalet of Habes</English>
 		<French>
 			<Text>Eyalet d'Ethiopie</Text>
@@ -238,11 +198,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_BYZANTIUM</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_BYZANTIUM</Tag>
 		<English>Eyalet of R&#251;m</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_ARABIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_ARABIA</Tag>
 		<English>Sharifate of Mekke</English>
 		<French>
 			<Text>Ch&#233;rifat de Mekke</Text>
@@ -266,11 +226,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_RUSSIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_RUSSIA</Tag>
 		<English>Eyalet of Yedisan</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_INDONESIA</Tag>
+		<Tag>TXT_KEY_CIV_OTTOMAN_INDONESIA</Tag>
 		<English>Eyalet of Aceh</English>
 	</TEXT>
 	<TEXT>

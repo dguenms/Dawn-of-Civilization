@@ -3999,10 +3999,6 @@ bool CvTeam::isAtWar(TeamTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
 
-	// Seljuks always at war
-	if (getID() == SELJUKS || eIndex == (TeamTypes)SELJUKS)
-		return true;
-
 	return m_abAtWar[eIndex];
 }
 
@@ -7044,9 +7040,13 @@ bool CvTeam::isAtWarWithMajorPlayer() const
 {
 	for (int iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv())
+		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv() && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isBarbarian())
 		{
-			return true;
+			CvPlayer& kPlayer = GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID());
+			if (kPlayer.isAlive() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
+			{
+				return true;
+			}
 		}
 	}
 

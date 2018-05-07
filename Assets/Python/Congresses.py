@@ -1011,7 +1011,7 @@ class Congress:
 			if iGameTurn < pPlayer.getLatestRebellionTurn() + utils.getTurns(20): continue
 			
 			# recently reborn
-			if utils.isReborn(iLoopPlayer) and tRebirth != -1 and iGameTurn < getTurnForYear(tRebirth[iLoopPlayer]) + utils.getTurns(20): continue
+			if utils.isReborn(iLoopPlayer) and iLoopPlayer in dRebirth and iGameTurn < getTurnForYear(dRebirth[iLoopPlayer]) + utils.getTurns(20): continue
 			
 			# exclude master/vassal relationships
 			if gc.getTeam(iPlayer).isVassal(iLoopPlayer): continue

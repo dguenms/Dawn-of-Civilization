@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Leaderhead art path information -->
+<Civ4ArtDefines xmlns="x-schema:Ruga_CIV4ArtDefinesSchema.xml">
+	<LeaderheadArtInfos>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_HUNS_RUGA</Type>
+			<Button>Modules/Custom Civilizations/Huns/leaderheads/Ruga/Btn_LH_Ruga.dds</Button>
+			<NIF>Modules/Custom Civilizations/Huns/leaderheads/Ruga/genghis_khan.nif</NIF>
+			<KFM>Modules/Custom Civilizations/Huns/leaderheads/Ruga/genghis_khan.kfm</KFM>
+			<NoShaderNIF>Modules/Custom Civilizations/Huns/leaderheads/Ruga/genghis_khan_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Modules/Custom Civilizations/Huns/leaderheads/Ruga/genghis_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+	</LeaderheadArtInfos>
+</Civ4ArtDefines>

@@ -1435,6 +1435,97 @@ iCivVikings : {
 		"Stig Bergling", # 20th swedish
 	],
 },
+iCivTurks : {
+	iGreatProphet : [
+		"Tatpar Qaghan", # 6th
+		"Bulan", # 9th
+		"Abu Mansur al-Maturidi", # 9th
+		"Al-Ghazali", # 11th (also Persian)
+		"Ahmad Yasawi", # 12th
+		"fFatima al-Samarqandi", # 12th
+		"Haji Bektash Veli", # 13th
+	],
+	iGreatArtist : [
+		"Yusuf Balasaguni", # 11th
+		"Suzani Samarqandi", # 12th
+		"Nizami Ganjavi", # 12th (also Persian)
+		"Rumi", # 13th (also Persian)
+		"Izzeddin Hasanoglu", # 13-14th
+		"Imadaddin Nasimi", # 14th
+		"Alisher Nava'i", # 15th
+		iRenaissance,
+		"Khasta Qasim", # 18th
+		"Magtymguly Pyragy", # 18th
+		iIndustrial,
+		"Qurmangazy Sagyrbaiuly", # 19th
+		"Abai Qunanbaiuly", # 19th
+		"fNodira", # 19th
+		iGlobal,
+		"Hamza Hakimzade Niyazi", # 20th
+		"G'afur G'ulom", # 20th
+		"Chinghiz Aitmatov", # 20th
+	],
+	iGreatScientist : [
+		"Al-Farabi", # 10th (also Arab)
+		"Ismail ibn Hammad al-Jawhari", # 10th
+		"Ibn Sina", # 10th (also Persian)
+		"Omar Khayyam", # 11th (also Persian)
+		"Mahmud al-Kashgari", # 11th
+		"Nizami Aruzi", # 12th
+		"Qadi Zada al-Rumi", # 14th
+		"Jamshid al-Kashi", # 15th
+		"Ulugh Beg", # 15th (also Mongol)
+		"Ali Qushji", # 15th (also Ottoman)
+		iIndustrial,
+		"Shoqan Walikhanov", # 19th
+		iGlobal,
+		"Kasym Tynystanov", # 20th
+	],
+	iGreatMerchant : [
+		"Muqan Qaghan", # 6th
+		"Sheguy", # 7th
+		"Ahmad ibn Rustah", # 10th
+		"Bar Sauma", # 13th 
+		"Yahballaha", # 13th
+	],
+	iGreatEngineer : [
+		"Omurtag", # 9th
+		"Abu-Mahmud Khojandi", # 10th
+		"Al-Biruni", # 11th 
+		"fSaray Mulk", # 14th
+		iGlobal,
+		"Kanysh Satbayev", # 20th
+	],
+	iGreatStatesman : [
+		"Ishbara Qaghan", # 6th
+		"Ashina Simo", # 7th
+		"Nizam al-Mulk", # 11th
+		"fTerken Khatun", # 11th
+		"Aq Sunqur al-Hajib", # 11th
+		"Abd-al-Razzaq Samarqandi", # 15th
+		"Muhammad Shaybani", # 15th
+		iRenaissance,
+		"Abdullah Khan", # 16th
+		iIndustrial,
+		"Alikhan Bukeikhanov", # 19th
+		iGlobal,
+		"Sopubek Begaliev", # 20th
+	],
+	iGreatGeneral : [
+		"Tong Yabghu Qaghan", # 7th
+		"Qapaghan Qaghan", # 7th
+		u"Kültigin", # 8th
+		"Tughril", # 11th (distinct from Mongol Toghril)
+		"Anushtegin Gharchai", # 11th
+		"Nur ad-Din Zengi", # 13th (also Arab) 
+		"Uzun Hasan", # 15th
+		iRenaissance,
+		"Ablai Khan", # 18th
+		"Raiymbek Batyr", # 18th
+		iGlobal,
+		"Sobir Rakhimov", # 20th
+	],
+},
 iCivArabia : {
 	iGreatProphet : [
 		"Ali ibn Abi Talib", # 7th
@@ -2816,7 +2907,7 @@ iCivMughals : {
 		"Hamid Gul", # 20th
 	],
 },
-iCivTurkey : {
+iCivOttomans : {
 	iGreatProphet : [
 		"Sheikh Bedreddin", # 14th
 		"Akshamsaddin", # 15th

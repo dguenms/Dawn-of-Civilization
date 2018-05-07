@@ -94,6 +94,10 @@
 		<English>Bolivar</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_BUMIN</Tag>
+		<English>Bumin</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_CARDENAS</Tag>
 		<English>Cardenas</English>
 	</TEXT>
@@ -441,6 +445,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SUHARTO</Tag>
 		<English>Suharto</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TAMERLANE</Tag>
+		<English>Tamerlane</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TAIZONG</Tag>

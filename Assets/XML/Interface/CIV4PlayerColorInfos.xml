@@ -15,7 +15,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_BLUE</Type> <!-- Babylonia -->
 			<ColorTypePrimary>COLOR_PLAYER_BLUE</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
@@ -355,10 +355,10 @@
 			<TextColorType>COLOR_PLAYER_DARK_ROT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_SELJUK</Type> <!-- Seljuks -->
-			<ColorTypePrimary>COLOR_SELJUK</ColorTypePrimary>
+			<Type>PLAYERCOLOR_SILVER</Type> <!-- Seljuks -->
+			<ColorTypePrimary>COLOR_SILVER</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
-			<TextColorType>COLOR_SELJUK</TextColorType>
+			<TextColorType>COLOR_SILVER</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_ITALY</Type> <!-- Italy -->
@@ -413,6 +413,12 @@
 			<ColorTypePrimary>COLOR_PLAYER_ROSE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ROSE_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_GREYISH_BLUE</Type> <!-- Turks -->
+			<ColorTypePrimary>COLOR_PLAYER_GREYISH_BLUE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>
