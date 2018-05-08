@@ -1058,8 +1058,8 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_KOREA_JOSEON"
 	
 	elif iPlayer == iTeotihuacan:
-		if not bEmpire and not isCapital(iPlayer, ["Tollan"]):
-			return capitalName(iPlayer)
+		if not isCapital(iPlayer, ["Tollan"]):
+				return capitalName(iPlayer)
 		
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:

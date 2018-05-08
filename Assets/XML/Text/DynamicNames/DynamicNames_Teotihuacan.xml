@@ -4,36 +4,73 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DESC</Tag>
 		<English>The Teotihuacanos</English>
-		<French>Les Teotihuacanos</French>
+		<French>
+			<Text>Les Teotihuacanos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_SHORT_DESC</Tag>
 		<English>Teotihuacan</English>
-		<French>Teotihuacan</French>
+		<French>
+			<Text>Teotihuacan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ADJECTIVE</Tag>
 		<English>Teotihuacan</English>
-		<French>Teotihuacano</French>
+		<French>
+			<Text>teotihuacano:teotihuacana:teotihuacanos:teotihuacanas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_PEOPLES</Tag>
 		<English>Mexico Valley Peoples</English>
-		<French>Peuplades de la Vall&#233;e de Mexico</French>
+		<French>
+			<Text>Peuplades de la Vall&#233;e de Mexico</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DEFAULT</Tag>
-		<English>Altepetl of Teotihuacan</English>
-		<French>Altepetl de Teotihuacan</French>
+		<English>Altepetl of %s1</English>
+		<French>
+			<Text>Altepetl de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL</Tag>
-		<English>Altepetl of %1</English>
-		<French>Altepetl de %1</French>
+		<English>%s2 Altepemeh</English>
+		<French>
+			<Text>Altepeme %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TOLTEC</Tag>
 		<English>Toltec</English>
-		<French>tolt&#232;que</French>
+		<French>
+			<Text>tolt&#232;que:tolt&#232;que:tolt&#232;ques:tolt&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TULA</Tag>
+		<English>Tula</English>
+		<French>
+			<Text>Tula</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 	</TEXT>
 </Civ4GameText>
