@@ -10922,8 +10922,7 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 			}
 		}
 
-		//if (getOwner() != TEOTIHUACAN || GC.getUnitInfo(eUnit).getUnitCombatType() == 4) { // Teotihuacan UP: melee units (combat type 4) ignore resource requirements
-		if (!(getOwner() == TEOTIHUACAN && GC.getUnitInfo(eUnit).getUnitCombatType() == 4)) {
+		if (!(getOwner() == TEOTIHUACAN && GC.getUnitInfo(eUnit).getUnitCombatType() == 4)) { // Teotihuacan UP: melee units (combat type 4) ignore resource requirements
 			if (GC.getUnitInfo(eUnit).getPrereqAndBonus() != NO_BONUS)
 			{
 				if (NULL == pCity)
