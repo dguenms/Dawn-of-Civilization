@@ -1060,6 +1060,9 @@ def specificName(iPlayer):
 	elif iPlayer == iTeotihuacan:
 		if not isCapital(iPlayer, ["Tollan"]):
 				return capitalName(iPlayer)
+				
+		if iGameTurn >= getTurnForYear(800):
+			return "TXT_KEY_CIV_TEOTIHUACAN_TULA"
 		
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
@@ -1368,7 +1371,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ETHIOPIA_ADAL"
 
 	elif iPlayer == iTeotihuacan:
-		if bEmpire and iGameTurn >= getTurnForYear(800):
+		if iGameTurn >= getTurnForYear(800):
 			return "TXT_KEY_CIV_TEOTIHUACAN_TOLTEC"
 							
 	elif iPlayer == iByzantium:
