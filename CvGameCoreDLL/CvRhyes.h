@@ -13,7 +13,7 @@ typedef list<char*> LISTCHAR;
 
 #define BEGIN_WONDERS				(163) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
-#define NUM_BUILDINGS_PLAGUE		(238) // always increment when a building is added
+#define NUM_BUILDINGS_PLAGUE		(239) // always increment when a building is added
 #define NUM_BUILDINGTYPES_PLAGUE	(159) // increment when a building class is added
 
 #define NUM_MAJOR_PLAYERS		(45)
