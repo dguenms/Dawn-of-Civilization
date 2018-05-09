@@ -591,9 +591,9 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iTeotihuacan:
 		
-		# first goal: have 500 culture in 450
-		if iGameTurn == getTurnForYear(450):
-			if pTeotihuacan.countTotalCulture() >= utils.getTurns(300):
+		# first goal: have 500 culture in 550
+		if iGameTurn == getTurnForYear(550):
+			if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
 				win(iTeotihuacan, 0)
 			else:
 				lose(iTeotihuacan, 0)
@@ -3583,8 +3583,8 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iTeotihuacan:
 		if iGoal == 0:
 			iCulture = pTeotihuacan.countTotalCulture()
-			aHelp.append(getIcon(iCulture >= utils.getTurns(300)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(300))))
-		if iGoal == 2: 
+			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+		elif iGoal == 2: 
 			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
 			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))))
