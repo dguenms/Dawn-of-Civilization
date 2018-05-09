@@ -18,7 +18,7 @@ iNetherlands, iGermany, iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlay
 (pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
 pMaya, pTamils, pEthiopia, pTeotihuacan, pKorea, pByzantium, pJapan, pVikings, pTurks, pArabia, 
 pTibet, pIndonesia, pMoors, pSpain, pFrance, pKhmer, pEngland, pHolyRome, pRussia, pMali, 
-pPoland, pPortugal, pInca, pItaly, pMongolia, pAztecs, pMughals, iOttomans, pThailand, pCongo, 
+pPoland, pPortugal, pInca, pItaly, pMongolia, pAztecs, pMughals, pOttomans, pThailand, pCongo, 
 pNetherlands, pGermany, pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
 (teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
