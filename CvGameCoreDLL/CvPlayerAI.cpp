@@ -8301,7 +8301,7 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 // Leoreth
 int CvPlayerAI::AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
 {
-	return AI_bonusTradeVal(eBonus, ePlayer, iChange) - GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
+	return AI_bonusTradeVal(eBonus, ePlayer, iChange) + GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
 }
 
 
