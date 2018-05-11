@@ -50,7 +50,7 @@ tSomaliaBR = (77, 29)
 tSubeqAfricaTL = (60, 10)
 tSubeqAfricaBR = (72, 29)
 
-# third Teotihuacan goal: control 100% of Mesoamerica and three world wonders in 1000 AD 
+# third Teotihuacan goal: control 100% of Mesoamerica in 1000 AD 
 tMesoamericaTL = (15, 32)
 tMesoamericaBR = (23, 40)
 

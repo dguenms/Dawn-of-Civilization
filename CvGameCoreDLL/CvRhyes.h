@@ -16,7 +16,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGS_PLAGUE		(239) // always increment when a building is added
 #define NUM_BUILDINGTYPES_PLAGUE	(159) // increment when a building class is added
 
-#define NUM_MAJOR_PLAYERS		(45)
+#define NUM_MAJOR_PLAYERS		(46)
 #define NUM_MINORS				(5)	 // Independent, Independent2, Natives, Celtia, Barbarians
 #define NUM_CIVS				(53)
 
