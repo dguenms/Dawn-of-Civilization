@@ -6,11 +6,11 @@
 		<English>The Ottomans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMANS_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
 		<English>Ottoman Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMANS_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
 		<English>Sublime %s2 State</English>
 		<French>
 			<Text>Sublime Etat %s2</Text>
@@ -34,7 +34,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMANS_COMMUNIST</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_COMMUNIST</Tag>
 		<English>National Democratic Popular %s1</English>
 		<French>
 			<Text>%s1 Nationale D&#233;mocratique Populaire</Text>
@@ -58,7 +58,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMANS_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
 	</TEXT>
 	<TEXT>
@@ -66,7 +66,7 @@
 		<English>Ottoman</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMANS_ISLAMIC_REPUBLIC</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
 		<English>Islamic %s2 Democracy</English>
 		<French>
 			<Text>D&#233;mocratie Islamique %s2</Text>
