@@ -1076,7 +1076,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in utils.surroundingPlots(vic.tVienna):
 			return 52
 			
-	elif iPlayer == iThailand:
+	elif iPlayer in [iThailand, iVietnam]:
 		if utils.isPlotInArea((x, y), vic.tSouthAsiaTL, vic.tSouthAsiaBR):
 			return 53
 			
@@ -1154,9 +1154,59 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iMongolia:
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
-				
-		# continue with ID 70
 			
+	elif iPlayer == iSweden:
+		if (x, y) in vic.lSkagerrak or (x, y) in vic.lSkagerrak:
+			return 70
+		
+		if (x, y) in vic.lBalticSea or (x, y) in vic.lBalticSea:
+			return 71
+				
+
+	elif iPlayer == iAustralia:
+		if utils.isPlotInArea((x, y), vic.tAustraliaTL, vic.tAustraliaBR):
+			return 72
+			
+		if utils.isPlotInArea((x, y), vic.tNewZealandTL, vic.tNewZealandBR):
+			return 66
+			
+		if utils.isPlotInArea((x, y), vic.tNewGuineaTL, vic.tNewGuineaBR):
+			return 73
+			
+		if utils.isPlotInArea((x, y), vic.tPacific1TL, vic.tPacific1BR) or utils.isPlotInArea((x, y), vic.tPacific2TL, vic.tPacific2BR) or utils.isPlotInArea((x, y), vic.tPacific3TL, vic.tPacific3BR) or utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
+			return 74
+				
+	elif iPlayer == iMamluks:
+		if utils.isPlotInArea((x, y), vic.tLowerNileTL, vic.tLowerNileBR) and gc.getMap().plot(x, y).isRiver():
+			if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+				return 78
+			return 77
+		
+		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+			return 22
+		
+		if utils.isPlotInArea((x, y), vic.tHejazTL, vic.tHejazBR, vic.tHejazExceptions):
+			return 75
+		
+		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
+			return 76
+		
+		if (x, y) in Areas.getCoreArea(iBabylonia, False):
+			return 4
+		
+	elif iPlayer == iManchuria:
+		if gc.getMap().plot(x, y).getSettlerValue(iManchuria) >= 90:
+			return 79
+				
+	elif iPlayer == iBoers:
+		if utils.isPlotInArea((x, y), vic.tBoerAfricaTL, vic.tBoerAfricaBR):
+			return 80
+			
+	elif iPlayer == iSwahili:
+		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
+			return 72
+				
+		# continue with 81
 	return -1
 		
 def getCityName(argsList):

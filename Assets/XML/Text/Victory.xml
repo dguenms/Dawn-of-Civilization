@@ -130,6 +130,54 @@
 		<German>Erleben Sie bis zum Jahr 2000 n. Chr. f&#252;nf goldene Zeitalter</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS1_TITLE</Tag>
+		<English>Commonwealth of Oceania</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS1</Tag>
+		<English>Control Australia, New Zealand, New Guinea and 3 Pacific island in 1950 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS2_TITLE</Tag>
+		<English>ANZAC</English>
+		<French>ANZAC</French>
+		<German>ANZAC</German>
+		<Italian>ANZAC</Italian>
+		<Spanish>ANZAC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS2</Tag>
+		<English>Gift 10 Digger, Marines or Mechanized Infantry to at least three different civilizations by 1950 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS3_TITLE</Tag>
+		<English>G'Day mate!</English>
+		<French>G'Day mate!</French>
+		<German>G'Day mate!</German>
+		<Italian>G'Day mate!</Italian>
+		<Spanish>G'Day mate!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AUS3</Tag>
+		<English>Have the highest approval rating in the world for 25 turns</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT1_TITLE</Tag>
 		<English>Floating Gardens</English>
 		<German>Schwimmende G&#228;rten</German>
@@ -242,6 +290,54 @@
 		<German>Machen Sie Babylon bis zum Jahr 700 v. Chr. zur kulturell bedeutendsten Stadt</German>
 		<Italian>Rendi Babilonia la citt&#224; culturalmente pi&#249; avanzata del mondo entro il 700 a.C.</Italian>
 		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE1_TITLE</Tag>
+		<English>The Boer Wars</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE1</Tag>
+		<English>Allow no European Colonies in Southern Africa by 1920 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE2_TITLE</Tag>
+		<English>A monopoly is forever</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE2</Tag>
+		<English>Secure or get by trade 5 gems resources by 1950 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE3_TITLE</Tag>
+		<English>The Incident</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BOE3</Tag>
+		<English>Build an ICBM by 1980 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA1_TITLE</Tag>
@@ -604,7 +700,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1</Tag>
 		<English>Settle a Great Prophet in two Orthodox cities by 500 AD</English>
-		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen Großen Propheten in zwei orthodoxen Städten an</German>
+		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen GroÃŸen Propheten in zwei orthodoxen StÃ¤dten an</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
@@ -710,7 +806,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE1</Tag>
 		<English>Be the first to discover Mathematics, Literature, Aesthetics, Philosophy and Medicine</English>
-		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Mathematik, Literatur, Ästhetik, Philosophie und Medizin</German>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Mathematik, Literatur, Ã„sthetik, Philosophie und Medizin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
@@ -773,7 +869,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR2</Tag>
 		<English>Build three Reservoirs, two Granaries and two Smokehouses by 1500 BC</English>
-		<German>Errichten Sie bis zum Jahr 1500 v. Chr. drei Reservoirs, zwei Kornkammern und zwei Räucherkammern</German>
+		<German>Errichten Sie bis zum Jahr 1500 v. Chr. drei Reservoirs, zwei Kornkammern und zwei RÃ¤ucherkammern</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR3_TITLE</Tag>
@@ -1222,6 +1318,102 @@
 		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 15000 Gold und im Jahr 1700 n. Chr. &#252;ber 45.000 Gold</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_MAM1_TITLE</Tag>
+		<English>Furusiyya</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAM1</Tag>
+		<English>Control Northern Africa, Hejaz, the Levant and Mesopotamia by 1300 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAM2_TITLE</Tag>
+		<English>Eye of the Sun</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAM2</Tag>
+		<English>Make Cairo the most populous city in the world and have at least 30 population on the Lower Nile in 1380 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAM3_TITLE</Tag>
+		<English>Zenith of culture and science</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAM3</Tag>
+		<English>Have the highest total culture and research output in 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN1_TITLE</Tag>
+		<English>The Malthusian Limit</English>
+		<French>The Malthusian Limit</French>
+		<German>The Malthusian Limit</German>
+		<Italian>The Malthusian Limit</Italian>
+		<Spanish>The Malthusian Limit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN1</Tag>
+		<English>Have 25% of the world population in China and Manchuria in 1800 AD</English>
+		<French>Have 25% of the world population in China and Manchuria in 1800 AD</French>
+		<German>Have 25% of the world population in China and Manchuria in 1800 AD</German>
+		<Italian>Have 25% of the world population in China and Manchuria in 1800 AD</Italian>
+		<Spanish>Have 25% of the world population in China and Manchuria in 1800 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN2_TITLE</Tag>
+		<English>Celestial Empire</English>
+		<French>Celestial Empire</French>
+		<German>Celestial Empire</German>
+		<Italian>Celestial Empire</Italian>
+		<Spanish>Celestial Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN2</Tag>
+		<English>Have the highest food, production and commerce output in 1850 AD</English>
+		<French>Have the highest food, production and commerce output in 1850 AD</French>
+		<German>Have the highest food, production and commerce output in 1850 AD</German>
+		<Italian>Have the highest food, production and commerce output in 1850 AD</Italian>
+		<Spanish>Have the highest food, production and commerce output in 1850 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN3_TITLE</Tag>
+		<English>Westernization Movement</English>
+		<French>Westernization Movement</French>
+		<German>Westernization Movement</German>
+		<Italian>Westernization Movement</Italian>
+		<Spanish>Westernization Movement</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAN3</Tag>
+		<English>Be the first to complete all Industrial technologies and eight Global technologies</English>
+		<French>Be the first to complete all Industrial technologies and eight Global technologies</French>
+		<German>Be the first to complete all Industrial technologies and eight Global technologies</German>
+		<Italian>Be the first to complete all Industrial technologies and eight Global technologies</Italian>
+		<Spanish>Be the first to complete all Industrial technologies and eight Global technologies</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
 		<English>The Sun</English>
 		<German>Die Sonne</German>
@@ -1342,7 +1534,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO1</Tag>
 		<English>Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD</English>
-		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei St&#228;dte im Maghreb und erobern Sie zwei Städte in Iberien und Westafrika</German>
+		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei St&#228;dte im Maghreb und erobern Sie zwei StÃ¤dte in Iberien und Westafrika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO2_TITLE</Tag>
@@ -1381,7 +1573,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
 		<English>Build three Islamic Grand Mosques by 1500 AD</English>
-		<German>Bauen Sie drei Islamische Gro�e Moscheen bis zum Jahr 1500 n. Chr.</German>
+		<German>Bauen Sie drei Islamische Große Moscheen bis zum Jahr 1500 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
@@ -1412,6 +1604,70 @@
 		<Tag>TXT_KEY_UHV_MUG3_MARATHON</Tag>
 		<English>Have more than 150000 culture in 1750 AD</English>
 		<German>Haben Sie mehr als 150000 Kulturpunkte im Jahr 1750 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG1_TITLE</Tag>
+		<English>Ifianyako</English>
+		<French>Ifianyako</French>
+		<German>Ifianyako</German>
+		<Italian>Ifianyako</Italian>
+		<Spanish>Ifianyako</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG1</Tag>
+		<English>Have the largest army of Africa in 1600 AD</English>
+		<French>Have the largest army of Africa in 1600 AD</French>
+		<German>Have the largest army of Africa in 1600 AD</German>
+		<Italian>Have the largest army of Africa in 1600 AD</Italian>
+		<Spanish>Have the largest army of Africa in 1600 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG2_TITLE</Tag>
+		<English>&#210;kp&#242;h&#242;</English>
+		<French>&#210;kp&#242;h&#242;</French>
+		<German>&#210;kp&#242;h&#242;</German>
+		<Italian>&#210;kp&#242;h&#242;</Italian>
+		<Spanish>&#210;kp&#242;h&#242;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG2</Tag>
+		<English>Acquire 2000 gold by selling resources by 1750 AD</English>
+		<French>Acquire 2000 gold by selling resources by 1750 AD</French>
+		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 2000 Gold durch den Verkauf von Ressourcen</German>
+		<Italian>Acquire 2000 gold by selling resources by 1750 AD</Italian>
+		<Spanish>Acquire 2000 gold by selling resources by 1750 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG2_EPIC</Tag>
+		<English>Acquire 4000 gold by selling resources by 1750 AD</English>
+		<French>Acquire 4000 gold by selling resources by 1750 AD</French>
+		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 4000 Gold durch den Verkauf von Ressourcen</German>
+		<Italian>Acquire 4000 gold by selling resources by 1750 AD</Italian>
+		<Spanish>Acquire 4000 gold by selling resources by 1750 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG2_MARATHON</Tag>
+		<English>Acquire 6000 gold by selling resources by 1750 AD</English>
+		<French>Acquire 6000 gold by selling resources by 1750 AD</French>
+		<German>Erhalten Sie bis zum Jahr 1750 n. Chr. 6000 Gold durch den Verkauf von Ressourcen</German>
+		<Italian>Acquire 6000 gold by selling resources by 1750 AD</Italian>
+		<Spanish>Acquire 6000 gold by selling resources by 1750 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG3_TITLE</Tag>
+		<English>Nollywood and Oil Delta</English>
+		<French>Nollywood and Oil Delta</French>
+		<German>Nollywood and Oil Delta</German>
+		<Italian>Nollywood and Oil Delta</Italian>
+		<Spanish>Nollywood and Oil Delta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NIG3</Tag>
+		<English>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</English>
+		<French>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</French>
+		<German>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</German>
+		<Italian>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</Italian>
+		<Spanish>Control a Hit Movie and spread Oil Industry to a city by 1950 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
@@ -1552,6 +1808,58 @@
 		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI1_TITLE</Tag>
+		<English>Embassies</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI1</Tag>
+		<English>Control 7 Embassies in 1400 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI2_TITLE</Tag>
+		<English>More traders than warriors</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI2</Tag>
+		<English>Acquire 8 different happiness resources by 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3_TITLE</Tag>
+		<English>Piloncitos</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3</Tag>
+		<English>Have 5000 gold in 1600 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3_EPIC</Tag>
+		<English>Have 7500 gold in 1600 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PHI3_MARATHON</Tag>
+		<English>Have 15000 gold in 1600 AD</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_POL1_TITLE</Tag>
 		<English>The Folwark System</English>
 		<German>Das Folwark-System</German>
@@ -1665,7 +1973,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
 		<English>Late Antiquity</English>
-		<German>Spätantike</German>
+		<German>SpÃ¤tantike</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3</Tag>
@@ -1733,6 +2041,118 @@
 		<Tag>TXT_KEY_UHV_SPA3</Tag>
 		<English>Spread Catholicism to 30% of the world population and allow no Protestant civilizations in Europe in 1650 AD</English>
 		<German>Verbreiten Sie den Katholizismus zu 30% der Weltbev&#246;lkerung und erlauben sie im Jahr 1650 n. Chr. keine protestantischen Zivilisationen in Europa</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1_TITLE</Tag>
+		<English>Lion of the North</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1</Tag>
+		<English>Control the Baltic Coast, the Kattegat and the Skagerak by 1700 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE2_TITLE</Tag>
+		<English>Swedish India Company</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE2</Tag>
+		<English>Control or get by trade 7 fur resources by 1800 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE3_TITLE</Tag>
+		<English>Social democracy</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA2_TITLE</Tag>
+		<English>Msikiti Mkubwa</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE3</Tag>
+		<English>Have the highest approval rating in the world for 50 turns by 1970 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1_TITLE</Tag>
+		<English>Swahili Coast Trade</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1</Tag>
+		<English>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions, dhows) by 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1_EPIC</Tag>
+		<English>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions, dhows) by 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA1_MARATHON</Tag>
+		<English>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions, dhows) by 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA2</Tag>
+		<English>Build an Islamic Grand Mosque by 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA3_TITLE</Tag>
+		<English>Marchinbar Island Coins</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWA3</Tag>
+		<English>Found a city in Australia by 1650 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
@@ -1874,6 +2294,70 @@
 		<German>Haben Sie im Jahr 1800 n. Chr. mehr Kultur als alle europ&#228;ischen Zivilisationen zusammen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1_TITLE</Tag>
+		<English>Water Puppetry</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1</Tag>
+		<English>Have 8000 culture in 1200 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1_EPIC</Tag>
+		<English>Have 12000 culture in 1200 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE1_MARATHON</Tag>
+		<English>Have 24000 culture in 1200 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE2_TITLE</Tag>
+		<English>The Tale of Le Loi</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE2</Tag>
+		<English>Create three great generals by 1500 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE3_TITLE</Tag>
+		<English>Vietcong</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIE3</Tag>
+		<English>Never lose a single city until 1950 AD and Allow no foreign powers in Southern Asia in 1950 AD</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
 		<English>Norman Conquests</English>
 		<German>Normannische Eroberungen</German>
@@ -1915,17 +2399,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
 		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
-		<German>Erw�hltes Volk: Haben Sie insgesamt 15 Gro�e Propheten, Wissenschaftler und Staatsm�nner in Ihren St�dten</German>
+		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD2</Tag>
 		<English>Promised Land: Have legendary culture in the Jewish holy city</English>
-		<German>Gelobtes Land: Haben Sie legend�re Kultur in der j�dischen heiligen Stadt</German>
+		<German>Gelobtes Land: Haben Sie legendäre Kultur in der jüdischen heiligen Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD3</Tag>
 		<English>Diaspora: Have friendly relations with six civilizations with a Jewish minority</English>
-		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer j�dischen Minderheit</German>
+		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jüdischen Minderheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
@@ -2070,7 +2554,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_ASATRU</Tag>
 		<English>Have five units of level five</English>
-		<German>Haben Sie fünf Einheiten der Stufe fünf</German>
+		<German>Haben Sie fÃ¼nf Einheiten der Stufe fÃ¼nf</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_ATUA</Tag>
@@ -2080,7 +2564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_BAALISM</Tag>
 		<English>Make your capital the city with the highest trade income in the world</English>
-		<German>Machen Sie Ihre Hauptstadt zur Stadt mit dem höchsten Handelseinkommen der Welt</German>
+		<German>Machen Sie Ihre Hauptstadt zur Stadt mit dem hÃ¶chsten Handelseinkommen der Welt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_DRUIDISM</Tag>
@@ -2105,7 +2589,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_PESEDJET</Tag>
 		<English>Be first to create three different types of great person</English>
-		<German>Erhalten Sie als erster drei verschiedene Arten von großen Persönlichkeiten</German>
+		<German>Erhalten Sie als erster drei verschiedene Arten von groÃŸen PersÃ¶nlichkeiten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_RODNOVERY</Tag>
@@ -2115,12 +2599,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_SHENDAO</Tag>
 		<English>Control 25% of the world's population</English>
-		<German>Kontrollieren Sie 25% der Weltbevölkerung</German>
+		<German>Kontrollieren Sie 25% der WeltbevÃ¶lkerung</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_SHINTO</Tag>
 		<English>Settle three great spies in your capital</English>
-		<German>Siedeln Sie drei große Spione in Ihrer Hauptstadt an</German>
+		<German>Siedeln Sie drei groÃŸe Spione in Ihrer Hauptstadt an</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TENGRI</Tag>
@@ -2135,12 +2619,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TEOTL_MAYA</Tag>
 		<English>Acquire 50 food from combat</English>
-		<German>Erhalten Sie 50 Nahrung durch Kämpfe</German>
+		<German>Erhalten Sie 50 Nahrung durch KÃ¤mpfe</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
 		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
-		<German>Haben Sie 100 Runden von Städten, die den "Wir leben den König"-Tag feiern</German>
+		<German>Haben Sie 100 Runden von StÃ¤dten, die den "Wir leben den KÃ¶nig"-Tag feiern</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_YORUBA</Tag>
@@ -2175,12 +2659,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC2</Tag>
 		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
-		<German>Humanismus: Stellen Sie sicher, dass es in s�kularen Zivilisationen 25 Universit�ten, 10 Gro�e Wissenschaftler und 10 Gro�e Staatsm�nner gibt</German>
+		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
 		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
-		<German>Modernismus: Stellen Sie sicher, dass die f�nf fortschrittlichsten unabh�ngigen Zivilisationen s�kular sind</German>
+		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
@@ -2903,6 +3387,14 @@
 		<English>Percentage of world population: %s1 / %s2%%</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION_AREA</Tag>
+		<English>Percentage of world population %s3: %s1 / %s2%%</English>
+		<French>Percentage of world population %s3: %s1 / %s2%%</French>
+		<German>Percentage of world population %s3: %s1 / %s2%%</German>
+		<Italian>Percentage of world population %s3: %s1 / %s2%%</Italian>
+		<Spanish>Percentage of world population %s3: %s1 / %s2%%</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
 		<English>Percentage of the world: %s1 / %s2%%</English>
 	</TEXT>
@@ -3135,5 +3627,189 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1_SKAGERRAK_HELP</Tag>
+		<English>Skagerrak and Kattegat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE1_BALTIC_SEA_HELP</Tag>
+		<English>Baltic Coast</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SWE2_HELP</Tag>
+		<English>Controlled fur resources: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GIVEN_UNITS</Tag>
+		<English>Units given: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_EMBASSIES</Tag>
+		<English>Embassies: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AFRICAN_COLONIES</Tag>
+		<English>No European colonies in South Africa</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_UNIT_RECEIVERS</Tag>
+		<English>Unit receiving civs: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EMBASSIES_CIVS</Tag>
+		<English>Civs with embassy: %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_GEMS_RESOURCES</Tag>
+		<English>Available gems resources: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_AUSTRALIA</Tag>
+		<English>Australia: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_NEW_ZEALAND</Tag>
+		<English>New Zealand: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTH_AFRICA_MAM</Tag>
+		<English>North Africa</English>
+		<French>Afrique du Nord</French>
+		<German>Nordafrika</German>
+		<Italian>Africa del Nord</Italian>
+		<Spanish>&#193;frica del Norte</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HEJAZ</Tag>
+		<English>Hejaz</English>
+		<French>Hedjaz</French>
+		<German>Hedschas</German>
+		<Italian>Hegiaz</Italian>
+		<Spanish>Hiyaz</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LEVANT</Tag>
+		<English>Levant</English>
+		<French>Levante</French>
+		<German>Levante</German>
+		<Italian>Levante</Italian>
+		<Spanish>Levante</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NILE_POPULATION</Tag>
+		<English>Population in cities on the Lower Nile: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_GUINEA</Tag>
+		<English>New Guinea: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_CULTURE_OUTPUT_CIV</Tag>
+		<English>Civilization with highest culture output: %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AUSTRALIA_CONTROL_PACIFIC</Tag>
+		<English>Pacific Islands: %d1 / %d2</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_RESEARCH_OUTPUT_CIV</Tag>
+		<English>Civilization with highest research output: %s1</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_FOOD_CIV</Tag>
+		<English>Highest food output: %s1</English>
+		<French>Highest food output: %s1</French>
+		<German>Highest food output: %s1</German>
+		<Italian>Highest food output: %s1</Italian>
+		<Spanish>Highest food output: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_PRODUCTION_CIV</Tag>
+		<English>Highest production output: %s1</English>
+		<French>Highest production output: %s1</French>
+		<German>Highest production output: %s1</German>
+		<Italian>Highest production output: %s1</Italian>
+		<Spanish>Highest production output: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_COMMERCE_CIV</Tag>
+		<English>Highest commerces output: %s1</English>
+		<French>Highest production output: %s1</French>
+		<German>Highest production output: %s1</German>
+		<Italian>Highest production output: %s1</Italian>
+		<Spanish>Highest production output: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALL_ERA_TECHS</Tag>
+		<English>All %s1 technologies</English>
+		<French>All %s1 technologies</French>
+		<German>All %s1 technologies</German>
+		<Italian>All %s1 technologies</Italian>
+		<Spanish>All %s1 technologies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_ARMY_AFRICA</Tag>
+		<English>Largest army in Africa: %s1</English>
+		<French>Largest army in Africa: %s1</French>
+		<German>Largest army in Africa: %s1</German>
+		<Italian>Largest army in Africa: %s1</Italian>
+		<Spanish>Largest army in Africa: %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

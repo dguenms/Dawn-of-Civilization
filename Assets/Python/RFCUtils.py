@@ -1305,11 +1305,14 @@ class RFCUtils:
 		oldCapital.setHasRealBuilding(iPalace, False)
 		newCapital.setHasRealBuilding(iPalace, True)
 		
-	def createSettlers(self, iPlayer, iTargetCities):
+	def createSettlers(self, iPlayer, iTargetCities, lPlots = []):
 		iNumCities = 0
 		bCapital = False
-						
-		for (x, y) in Areas.getBirthArea(iPlayer):
+		
+		if not lPlots:
+			lPlots = Areas.getBirthArea(iPlayer)
+			
+		for (x, y) in lPlots:
 			if gc.getMap().plot(x, y).isCity():
 				iNumCities += 1
 						
@@ -1504,6 +1507,36 @@ class RFCUtils:
 
 		popup.launch(False)
 		
+	def canEstablishEmbassy(self, unit):
+		plot = unit.plot()
+		
+		if not plot.isCity(): return False
+		
+		city = plot.getPlotCity()
+		iOwner = city.getOwner()
+		if iOwner == iPhilippines or iOwner in data.lPhilippineEmbassies: return False
+		
+		if teamPhilippines.isOpenBorders(iOwner) and gc.getPlayer(iOwner).AI_getAttitude(iPhilippines) >= AttitudeTypes.ATTITUDE_PLEASED: return True
+		
+		return False
+		
+	def doPhilippineEmbassy(self, unit = None):
+		lOldEmbassies = data.lPhilippineEmbassies
+		if unit is not None:
+			lOldEmbassies.append(unit.plot().getPlotCity().getOwner())
+			unit.finishMoves()
+		if lOldEmbassies:
+			lNewEmbassies = []
+			for iCiv in lOldEmbassies:
+				pCiv = gc.getPlayer(iCiv)
+				if pCiv.isAlive() and pCiv.AI_getAttitude(iPhilippines) >= AttitudeTypes.ATTITUDE_PLEASED:
+					lNewEmbassies.append(iCiv)
+			data.lPhilippineEmbassies = lNewEmbassies
+			if lNewEmbassies:
+				iNumEmbassies = len(lNewEmbassies)
+				capital = gc.getPlayer(iPhilippines).getCapitalCity()
+				capital.setBuildingCommerceChange (gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, iNumEmbassies*2)
+		
 	def linreg(self, lTuples):
 		n = len(lTuples)
 		
@@ -1566,6 +1599,10 @@ class RFCUtils:
 		
 		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 		if iPlayer == iIndia and gc.getPlayer(iMughals).isAlive(): return False
+		
+		# Egypt cannot respawn when Mamluks are alive and vice versa
+		if iPlayer == iEgypt and gc.getPlayer(iMamluks).isAlive(): return False
+		if iPlayer == iMamluks and gc.getPlayer(iEgypt).isAlive(): return False
 		
 		# Exception during Japanese UHV
 		if self.getHumanID() == iJapan and iGameTurn >= getTurnForYear(1920) and iGameTurn <= getTurnForYear(1945):

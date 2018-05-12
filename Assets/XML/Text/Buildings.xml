@@ -1423,4 +1423,156 @@
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] increase a city's cultural output. They are also required to build [COLOR_BUILDING_TEXT]Civic Squares[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</Tag>
+		<English>Immigration Office</English>
+		<French>Bureau de l'immigration</French>
+		<German>Einwanderungsbeh&#246;rde</German>
+		<Italian>Ufficio Immigrazione</Italian>
+		<Spanish>Oficina de Inmigraci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_HELP</Tag>
+		<English>[ICON_BULLET]Increases the chance of attracting immigrants</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Immigration Office[COLOR_REVERT], the Australian replacement for the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT], can be build in every city and provides an extra trade route.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAMLUK_SOUQ</Tag>
+		<English>Souq</English>
+		<French>Souk</French>
+		<German>Suq</German>
+		<Italian>Suq</Italian>
+		<Spanish>Zoco</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAMLUK_SOUQ_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Souq[COLOR_REVERT], the Mamluk replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases the culture output of the city.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO</Tag>
+		<English>Piaohao</English>
+		<French>Piaohao</French>
+		<German>Piaohao</German>
+		<Italian>Piaohao</Italian>
+		<Spanish>Piaohao</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Piaohao[COLOR_REVERT], the Manchurian replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], stores food.</English>
+		<French>No Translantion</French>
+		<German>No Translantion</German>
+		<Italian>No Translantion</Italian>
+		<Spanish>No Translantion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NIGERIA_IYA</Tag>
+		<English>Iya</English>
+		<French>Iya</French>
+		<German>Iya</German>
+		<Italian>Iya</Italian>
+		<Spanish>Iya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NIGERIA_IYA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Iya[COLOR_REVERT], the Nigerian replacement for the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT], lowers city maintenance.</English>
+		<French>The [COLOR_BUILDING_TEXT]Iya[COLOR_REVERT], the Nigerian replacement for the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT], lowers city maintenance.</French>
+		<German>The [COLOR_BUILDING_TEXT]Iya[COLOR_REVERT], the Nigerian replacement for the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT], lowers city maintenance.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Iya[COLOR_REVERT], the Nigerian replacement for the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT], lowers city maintenance.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Iya[COLOR_REVERT], the Nigerian replacement for the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT], lowers city maintenance.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHILIPPINES_PORT</Tag>
+		<English>Port</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHILIPPINES_PORT_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Port[COLOR_REVERT], the Philipine replacement for the [COLOR_BUILDING_TEXT]Harbor[COLOR_REVERT], increases the city's wealth output.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOER_PLAAS</Tag>
+		<English>Plaas</English>
+		<French>Plaas</French>
+		<German>Plaas</German>
+		<Italian>Plaas</Italian>
+		<Spanish>Plaas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOER_PLAAS_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Plaas[COLOR_REVERT], the Boer replacement for the [COLOR_BUILDING_TEXT]Star Fort[COLOR_REVERT], provides two extra food.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA</Tag>
+		<English>Ziara</English>
+		<French>Ziara</French>
+		<German>Ziara</German>
+		<Italian>Ziara</Italian>
+		<Spanish>Ziara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWAHILI_ZIARA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ziara[COLOR_REVERT], the Swahili replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants one free trade route.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK</Tag>
+		<English>Riksbank</English>
+		<French>Riksbank</French>
+		<German>Riksbank</German>
+		<Italian>Riksbank</Italian>
+		<Spanish>Riksbank</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_STRATEGY</Tag>
+		<English>The Swedish [COLOR_BUILDING_TEXT]Riksbank[COLOR_REVERT] greatly increases a city's production of wealth and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH</Tag>
+		<English>Dinh</English>
+		<French>Dinh</French>
+		<German>Dinh</German>
+		<Italian>Dinh</Italian>
+		<Spanish>Dinh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIETNAM_DINH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Dinh[COLOR_REVERT], the Vietnamese replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], gives all eligible units built in this city the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -2521,6 +2521,13 @@ class CvMainInterface:
 							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iCurrency).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
+							
+					# Merijn: Philippine UP: Establish embassies
+					if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and pUnit.getOwner() == iPhilippines:
+						if utils.canEstablishEmbassy(pUnit):
+							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iEconomics).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10002, 10002, False)
+							screen.show("BottomButtonContainer")
+							iCount = iCount + 1
 
 		elif (CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY):
 		
@@ -5666,6 +5673,10 @@ class CvMainInterface:
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
 			utils.doByzantineBribery(g_pSelectedUnit)
 		# Leoreth: end
+		
+		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10002:
+			utils.doPhilippineEmbassy(g_pSelectedUnit)
+			self.updateSelectionButtons()
 
 		return 0
 	

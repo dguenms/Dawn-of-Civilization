@@ -812,6 +812,14 @@
 		<German>Der durch unsere Gew&#228;sser verlaufende Handel bringt unserer Schatzkammer %d1 [ICON_GOLD]!</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SWAHILI_DHOW_GOLD</Tag>
+		<English>Our traders sailing Dhows acquired %d1 [ICON_GOLD] for our treasury!</English>
+		<French>Our traders sailing Dhows acquired %d1 [ICON_GOLD] for our treasury!</French>
+		<German>Our traders sailing Dhows acquired %d1 [ICON_GOLD] for our treasury!</German>
+		<Italian>Our traders sailing Dhows acquired %d1 [ICON_GOLD] for our treasury!</Italian>
+		<Spanish>Our traders sailing Dhows acquired %d1 [ICON_GOLD] for our treasury!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_INVADERS_HUMAN</Tag>
 		<English>%s1 armies have invaded our territory!</English>
 		<German>%s1 Armeen sind in unser Territorium eingefallen!</German>

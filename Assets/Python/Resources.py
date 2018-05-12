@@ -22,6 +22,7 @@ iRoad = 0
 #Orka: Silk Road road locations
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
+lAustraliaCapes = [(106, 21), (107, 21), (107, 22), (108, 22), (109, 22), (109, 23), (110, 23), (111, 23), (112, 23), (113, 23), (114, 23), (115, 23), (115, 22), (116, 22), (117, 22)]
 
 class Resources:
 
@@ -113,13 +114,21 @@ class Resources:
 			self.removeResource(71, 34)
 			self.createResource(71, 34, iIron)
 		    
-		elif iGameTurn == getTurnForYear(1100):
+		elif iGameTurn == getTurnForYear(950):
 			#gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt
 			
+			# prepare for Swahili
 			self.createResource(72, 24, iSugar) # East Africa
-			self.createResource(70, 17, iSugar) # Zimbabwe
 			self.createResource(67, 11, iSugar) # South Africa
+			if data.isPlayerEnabled(iSwahili): # Prevent overlap with Quelimane
+				self.createResource(71, 17, iSugar) # Zimbabwe
+			else:
+				self.createResource(70, 17, iSugar) # Zimbabwe
+			if utils.getHumanID() == iSwahili:
+				for x, y in lAustraliaCapes:
+					gc.getMap().plot(x, y).setFeatureType(iCape, 0)
 			
+		elif iGameTurn == getTurnForYear(1100):	
 			self.createResource(66, 23, iBanana) # Central Africa
 			self.createResource(64, 20, iBanana) # Central Africa
 			
@@ -206,7 +215,11 @@ class Resources:
 			for tuple in [(82, 47), (83, 46), (85, 49)]:
 				x, y = tuple
 				gc.getMap().plot(x, y).setFeatureType(-1, 0)
-		       
+				
+		elif iGameTurn == getTurnForYear(1650) + 1:
+			if gc.getMap().plot(lAustraliaCapes[0], lAustraliaCapes[1]).getFeatureType() == iCape:
+				for x, y in lAustraliaCapes:
+					gc.getMap().plot(x, y).setFeatureType(-1, 0)
 
 		elif iGameTurn == getTurnForYear(1700):
 			self.createResource(16, 54, iHorse) # Alberta

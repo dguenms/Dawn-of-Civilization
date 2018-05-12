@@ -538,4 +538,156 @@
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CHRISTIAN_IV</Tag>
+		<English>Christian IV</English>
+		<French>Christian IV</French>
+		<German>Christian IV.</German>
+		<Italian>Cristiano IV</Italian>
+		<Spanish>Christi&#225;n IV</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_GUSTAV_VASA</Tag>
+		<English>Gustav Vasa</English>
+		<French>Gustave Vasa</French>
+		<German>Gustav Wasa</German>
+		<Italian>Gustavo Vasa</Italian>
+		<Spanish>Gustavo Vasa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_KARL_XII</Tag>
+		<English>Karl XII</English>
+		<French>Charles XII</French>
+		<German>Karl XII.</German>
+		<Italian>Carlo XII</Italian>
+		<Spanish>Carlos XII</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CURTIN</Tag>
+		<English>Curtin</English>
+		<French>Curtin</French>
+		<German>Curtin</German>
+		<Italian>Curtin</Italian>
+		<Spanish>Curtin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MENZIES</Tag>
+		<English>Menzies</English>
+		<French>Menzies</French>
+		<German>Menzies</German>
+		<Italian>Menzies</Italian>
+		<Spanish>Menzies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MUSTASIM</Tag>
+		<English>Mustasim</English>
+		<French>Mustasim</French>
+		<German>Mustasim</German>
+		<Italian>Mustasim</Italian>
+		<Spanish>Mustasim</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CIXI</Tag>
+		<English>Cixi</English>
+		<French>Cixi</French>
+		<German>Cixi</German>
+		<Italian>Cixi</Italian>
+		<Spanish>Cixi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ODUDUWA</Tag>
+		<English>Oduduwa</English>
+		<French>Oduduwa</French>
+		<German>Oduduwa</German>
+		<Italian>Oduduwa</Italian>
+		<Spanish>Oduduwa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_EWUARE</Tag>
+		<English>Ewuare</English>
+		<French>Ewuare</French>
+		<German>Ewuare</German>
+		<Italian>Ewuare</Italian>
+		<Spanish>Ewuare</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_AMINATU</Tag>
+		<English>Aminatu</English>
+		<French>Aminatu</French>
+		<German>Aminatu</German>
+		<Italian>Aminatu</Italian>
+		<Spanish>Aminatu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_LAPU_LAPU</Tag>
+		<English>Lapu-Lapu</English>
+		<French>Lapu-Lapu</French>
+		<German>Lapu-Lapu</German>
+		<Italian>Lapu-Lapu</Italian>
+		<Spanish>Lapulapu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_KRUGER</Tag>
+		<English>Kruger</English>
+		<French>Kruger</French>
+		<German>Kruger</German>
+		<Italian>Kruger</Italian>
+		<Spanish>Kruger</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MANDELA</Tag>
+		<English>Mandela</English>
+		<French>Mandela</French>
+		<German>Mandela</German>
+		<Italian>Mandela</Italian>
+		<Spanish>Mandela</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SHIRAZI</Tag>
+		<English>Shirazi</English>
+		<French>Shirazi</French>
+		<German>Shirazi</German>
+		<Italian>Shirazi</Italian>
+		<Spanish>Shirazi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DAWUD</Tag>
+		<English>Dawud</English>
+		<French>Dawud</French>
+		<German>Dawud</German>
+		<Italian>Dawud</Italian>
+		<Spanish>Dawud</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BARGHASH</Tag>
+		<English>Barghash</English>
+		<French>Barghash</French>
+		<German>Barghash</German>
+		<Italian>Barghash</Italian>
+		<Spanish>Barghash</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TRUNG</Tag>
+		<English>Trung Sisters</English>
+		<French>Soeurs Trung</French>
+		<German>Trung-Schwestern</German>
+		<Italian>Translation</Italian>
+		<Spanish>Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CHIEU_HOANG</Tag>
+		<English>Chieu Hoang</English>
+		<French>Chieu Hoang</French>
+		<German>Chieu Hoang</German>
+		<Italian>Chieu Hoang</Italian>
+		<Spanish>Chieu Hoang</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HO_CHI_MINH</Tag>
+		<English>Ho Chi Minh</English>
+		<French>Ho Chi Minh</French>
+		<German>Ho Chi Minh</German>
+		<Italian>Ho Chi Minh</Italian>
+		<Spanish>Ho Chi Minh</Spanish>
+	</TEXT>
 </Civ4GameText>

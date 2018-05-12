@@ -1587,6 +1587,18 @@ class CvVictoryScreen:
 								iRow = screen.appendTableRow(szTable)
 								szHelp = "    " + szHelp
 								screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						if self.iActivePlayer == iPhilippines and i == 0:
+							lEmbassies = data.lPhilippineEmbassies
+							if lEmbassies:
+								szHelp = ""
+								for iCiv in lEmbassies:
+									if szHelp != "":
+										szHelp += ", "
+									szHelp += gc.getPlayer(iCiv).getCivilizationShortDescription(0)
+							else:
+								szHelp = localText.getText("TXT_KEY_CULTURELEVEL_NONE", ())
+							iRow = screen.appendTableRow(szTable)
+							screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_VICTORY_EMBASSIES_CIVS", (szHelp,)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 					bEntriesFound = True
 				#Rhye - end
 				

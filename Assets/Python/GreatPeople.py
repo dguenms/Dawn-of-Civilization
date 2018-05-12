@@ -23,6 +23,7 @@ def getAlias(iCiv, iType):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivThailand: return iCivKhmer
+	elif iCiv == iCivManchuria: return iCivChina
 	
 	return iCiv
 	
@@ -874,6 +875,55 @@ iCivEthiopia : {
 		"Iyasu", # 17th
 		iIndustrial,
 		"Yohannes", # 19th
+	],
+},
+iCivVietnam : {
+	iGreatProphet : [
+		u"Pháp Hiên", # 7th
+		iMedieval,
+		u"Giác Hài", # 11th
+		u"Tuê Trung", # 13th
+		iGlobal,
+		u"Ngô Van Chiêu", # 20th
+	],
+	iGreatArtist : [
+		u"Dang Dung", # 14th
+		iIndustrial,
+		u"fDoàn Thi Diem", # 18th
+		u"Nguyen Du", # 18th
+		u"fHó Xuân Huong", # 18th
+		u"Nguyen Công Trú", # 19th
+		u"fNguyen Thi Bích", # 19th
+	],
+	iGreatScientist : [
+		u"Chu Van An", # 14th
+		iRenaissance,
+		u"Ngô Si Liên", # 15th
+		u"fNguyen Thi Duê", # 17th
+		iIndustrial,
+		u"Lê Quý Dôn", # 18th
+	],
+	iGreatEngineer : [
+		u"Nguyen An", # 15th
+	],
+	iGreatStatesman : [
+		u"Lý Nhân Tông", # 11th
+		u"Nguyen Trãi", # 15th
+		u"Lê Thánh Tông", # 15th
+		iRenaissance,
+		u"Nguyen Bình Khiêm", # 16th
+		iIndustrial,
+		u"Phan Dinh Phùng", # 19th
+	],
+	iGreatGeneral : [
+		u"fTrieu Thi Trinh", # 3rd
+		u"Lý Thuòng Kiêt", # 11th
+		iRenaissance,
+		u"Le Loi", # 15th
+	],
+	iGreatSpy : [
+		u"Pham Ngoc Thào", # 20th
+		u"Pham Xuan An", # 20th
 	],
 },
 iCivKorea : {
@@ -1890,6 +1940,31 @@ iCivRussia : {
 		"Vasily Chuikov", # 20th
 	],
 },
+iCivSwahili : {
+	iGreatProphet : [
+		"Placeholder",
+	],
+	iGreatArtist : [
+		"Placeholder",
+	],
+	iGreatScientist : [
+		"Placeholder",
+	],
+	iGreatMerchant : [
+		"Sultan al-Hasan ibn Sulaiman",
+	],
+	iGreatEngineer : [
+		"Placeholder",
+	],
+	iGreatStatesman : [
+		"Muhammad ibn Rukn ad Din",
+	],
+	iGreatGeneral : [
+		"Fumo Liyongo",
+	],
+},
+iCivMamluks : {
+},
 iCivMali : {
 	iGreatProphet : [
 		"Wali Keita", # 13th
@@ -2159,6 +2234,8 @@ iCivItaly : {
 		"Giovanni Messe", # 20th
 	],
 },
+iCivNigeria : {
+},
 iCivMongols : {
 	iGreatProphet : [
 		"Abaqa", # 13th
@@ -2406,6 +2483,64 @@ iCivTurkey : {
 		iGlobal,
 		"fKara Fatma", # 20th
 		"Ismail Enver", # 20th
+	],
+},
+iCivSweden : {
+	iGreatProphet : [
+		"fBirgitta Birgersdotter", # 13th
+		iRenaissance,
+		"John Campanius Holm", # 17th
+		"Emanuel Swedenborg", # 18th
+	],
+	iGreatArtist : [
+		"Nils Hakansson", # 14
+		"Georg Sternhielm", # 17t
+		"Johan Ludvig Runeberg", # 19th finnish
+		"fJohanna Maria Lind", # 19th
+		iGlobal,
+		"fAstrid Lindgren", # 20th
+		"Ingmar Bergman", # 20th
+		"Stieg Larsson", # 20th
+	],
+	iGreatScientist : [
+		"Mikael Agricola", # 16th finnish
+		"Anders Celsius", # 18th
+		u"Carl von Linné", # 18th
+		iIndustrial,
+		"Jöns Jacob Berzelius", # 19th
+		"Johannes Rydberg", # 19th
+		u"Anders Ångström", # 19th
+	],
+	iGreatMerchant : [
+		iRenaissance,
+		"Arvid Horn", # 18th
+		iIndustrial,
+		"Rutger Mackleir", # 18th
+		"Sven Hedin", # 19th
+		iGlobal,
+		"Ingvar Kamprad", # 20th
+	],
+	iGreatEngineer : [
+		iRenaissance,
+		"Nicomedus Tessin", # 18th
+		"Christopher Polhammar", # 18th
+		iIndustrial,
+		"Johan Ericsson", # 19th
+		"Pehr Gerog Scheutz", # 19th
+		"Alfred Nobel", # 19th
+		"Lars Magnus Ericsson", # 19th
+	],
+	iGreatStatesman : [
+		"Erik den Helige", # 11th
+		iRenaissance,
+		"Peter Estenberg", # 18th
+		iGlobal,
+		u"Dag Hammarskjöld", # 20th
+	],
+	iGreatGeneral : [
+		"Birger Jarl", # 13th
+		iRenaissance,
+		"Lennart Torstensson", # 17th
 	],
 },
 iCivNetherlands : {
@@ -2700,6 +2835,8 @@ iCivTibet : {
 		iRenaissance,
 		"Ngawang Namgyal", # 17th
 	],
+},
+iCivPhilippines :{
 },
 iCivPoland : {
 	iGreatProphet : [
@@ -3030,6 +3167,63 @@ iCivMexico : {
 		u"Porfirio Díaz", # 19th
 		"Pancho Villa", # 19th
 		"Emiliano Zapata Salazar", # 19th
+	],
+},
+iCivAustralia : {
+},
+iCivBoers : {
+	iGreatProphet : [
+		"Sarel Cilliers", # 19th
+		"Siener van Rensburg", # 19th
+		iGlobal,
+		"fNontetha Nkwenkwe", # 20th
+		"Desmond Tutu", # 20th
+	],
+	iGreatArtist : [
+		"Solomon Thekisho Plaatje", # 20th
+		"fIngrid Jonker", # 20th
+		"Jacobus Hendrik Pierneef", # 20th
+		"fNadine Gordimer", # 20th
+		"fMiriam Makeba", # 20th
+		"John Maxwell Coetzee", # 20th
+	],
+	iGreatScientist : [
+		"Max Theiler", # 20th
+		"Allan McLeod Cormack", # 20th
+		"Christiaan Barnard", # 20th
+		"Sydney Brenner", # 20th
+	],
+	iGreatMerchant : [
+		"Sammy Marks", # 19th
+		iGlobal,
+		"Harry Oppenheimer", # 20th
+		"Richard Maponya", # 20th
+		"Mark Shuttleworth", # 20th
+	],
+	iGreatEngineer : [
+		"fSophy Gray", # 19th
+		"Sytze Wierda", # 19th
+		iGlobal,
+		"Gerard Moerdijk", # 20th
+		"Hendrik van der Bijl", # 20th
+		"Elon Musk", # 21st
+	],
+	iGreatStatesman : [
+		"Andries Pretorius", # 19th
+		"Louis Botha", # 19th
+		iGlobal,
+		"Albert Lutuli", # 20th
+		"fHelen Suzman", # 20th
+		"Harry Schwarz", # 20th
+		"Mangosuthu Buthelezi", # 20th
+		"Frederik Willem de Klerk", # 20th
+	],
+	iGreatGeneral : [
+		"Daniel Theron", # 19th
+		"Koos de la Rey", # 19th
+		"Christiaan de Wet", # 19th
+		iGlobal,
+		"Jan Smuts", # 20th
 	],
 },
 iCivCanada : {

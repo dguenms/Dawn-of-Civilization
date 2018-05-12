@@ -5101,6 +5101,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == THEOLOGY)
 										iValue *= 2;*/
 									break;
+								case VIETNAM:
+									if (iI == CURRENCY || iI == COMMUNE || iI == HERITAGE)
+										iValue *= 2;
+									if (iI == FORTIFICATION)
+										iValue *= 4;
+									if (iI == OPTICS)
+										iValue /= 2;
+									break;
                                 case KOREA:
                                     if (iI == OPTICS)
                                         iValue /= 4;
@@ -5252,6 +5260,24 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									}
 									break;
+								case PHILIPPINES:
+									if (iI == LOGISTICS)
+										iValue *= 3;
+									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == OPTICS || iI == COMPASS)
+										iValue *= 4;
+									break;
+								case MAMLUKS:
+									/*if (iI == FISSION) {
+										iValue *= 4;
+										iValue /= 3;
+									}*/
+									if (iI == SCHOLARSHIP || iI == ALCHEMY)
+										iValue *= 3;
+									else if (iI == FINANCE || iI == FIREARMS || iI == COMPANIES)
+										iValue /= 5;
+									else if (iI == PAPER)
+										iValue /= 2;
+									break;
 								case MALI:
 									if (iI == EDUCATION)
 										iValue *= 3;
@@ -5305,6 +5331,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue /= 4;
                                     }
 									break;
+								case NIGERIA:
+									break;
 								case MONGOLIA:
 									if (iI == PAPER)
 									{
@@ -5337,6 +5365,30 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									}
 									break;
+								case MANCHURIA:
+									if (iI == DIVINATION || iI == SAILING)
+										iValue /= 2;
+									if (iI == AESTHETICS || iI == CONTRACT)
+										iValue *= 4;
+									if (iI == WRITING && (!(GET_PLAYER((PlayerTypes)BABYLONIA).isHuman()) || GET_TEAM((TeamTypes)BABYLONIA).isHasTech((TechTypes)WRITING)))
+										iValue *= 4;	// fair conditions for the Babylonian UHV, otherwise even more luck dependent
+									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING || iI == COMPASS)
+										iValue *= 2;
+									if (iI == FIREARMS)
+										iValue /= 5;
+									if (iI == CIVIL_SERVICE) {
+										iValue *= 3;
+										iValue /= 2;
+									}
+									if (iI == CONSTRUCTION)
+										iValue *= 2;
+									if (iI == COMPANIES)
+										iValue /= 4;
+									if (iI == EXPLORATION || iI == OPTICS || iI == GEOGRAPHY || iI == THEOLOGY || iI == FINANCE || iI == EDUCATION || iI == LOGISTICS || iI == COMBINED_ARMS)
+										iValue /= 4;
+									if (iI == CIVIL_LIBERTIES || iI == HUMANITIES || iI == ACADEMIA)
+										iValue /= 10;
+									break;
 								case GERMANY:
 									if (iI == ENGINE || iI == INFRASTRUCTURE || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == PSYCHOLOGY || iI == SOCIOLOGY)
 										iValue *= 2;
@@ -5365,6 +5417,12 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case BRAZIL:
 									if (iI == RADIO || iI == SYNTHETICS || iI == ELECTRICITY || iI == ENGINE)
 										iValue *= 2;
+									break;
+								case AUSTRALIA:
+									if (iI == REFRIGERATION || iI == TELEVISION)
+										iValue *= 3;
+									break;
+								case BOERS:
 									break;
 								default:
 									break;
@@ -11591,7 +11649,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == MAMLUKS || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA || getID() == SWAHILI)
 				{
 					iValue /= 2;
 				}

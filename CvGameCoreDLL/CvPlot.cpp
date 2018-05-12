@@ -832,6 +832,13 @@ void CvPlot::doImprovement()
 					{
 						iOdds *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent();
 						iOdds /= 100;
+						
+						// Australia UP easter egg
+						if (getOwnerINLINE() == AUSTRALIA)
+						{
+							iOdds *= 9;
+							iOdds /= 10;
+						}
 
 						if( GC.getGameINLINE().getSorenRandNum(iOdds, "Bonus Discovery") == 0)
 						{
@@ -6847,6 +6854,12 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		{
 			iYield += GC.getImprovementInfo(eImprovement).getImprovementBonusYield(eBonus, eYield);
 		}
+		
+		// Australian UP: Mines on the mining resources provide doubled production and commerce increment
+		if (eBonus != NO_BONUS && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_MINE") && ePlayer == AUSTRALIA)
+		{
+			iYield += GC.getImprovementInfo(eImprovement).getImprovementBonusYield(eBonus, eYield) + GC.getImprovementInfo(eImprovement).getYieldChange(eYield);
+		}
 	}
 
 	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
@@ -7064,6 +7077,40 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			if (isWater())
 			{
 				iYield += GC.getBonusInfo((BonusTypes)21).getYieldChange(eYield);
+			}
+		}
+
+		// Merijn: Manchurian UP: Improved resources adjacent to cities provide additional food and production
+		if (ePlayer == MANCHURIA)
+		{
+			if (getBonusType() != NO_BONUS && getImprovementType() != NO_IMPROVEMENT)
+			{
+				if (GC.getImprovementInfo(getImprovementType()).isImprovementBonusMakesValid(getBonusType()))
+				{
+					bool bAdjacentCity = false;
+					for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+					{
+						CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+						if ((pAdjacentPlot != NULL) && pAdjacentPlot->isCity())
+						{
+							CvCity* pAdjacentCityCity = pAdjacentPlot->getPlotCity();
+							if (pAdjacentCityCity->getOwnerINLINE() == ePlayer)
+							{
+								bAdjacentCity = true;
+								break;
+							}
+						}
+					}
+
+					if (bAdjacentCity)
+					{
+						if (eYield == YIELD_FOOD || eYield == YIELD_PRODUCTION)
+						{
+							iYield += 1;
+						}
+					}
+				}
 			}
 		}
 

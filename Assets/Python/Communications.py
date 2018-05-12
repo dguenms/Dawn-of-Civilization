@@ -49,6 +49,7 @@ tPool3 = (iEgypt,
 	iIndonesia,
 	iSpain,
 	iGreece,
+	iSwahili,
 	iMali,
 	iMaya,
 	iHolyRome,
@@ -67,12 +68,20 @@ tPool3 = (iEgypt,
 	iPoland,
 	iMoors,
 	iCongo,
+	iSweden,
 	iTibet,
 	iBrazil,
 	iArgentina,
 	iCanada,
 	iPolynesia,
-	iHarappa)
+	iHarappa,
+	iAustralia,
+	iMamluks,
+	iManchuria,
+	iNigeria,
+	iPhilippines,
+	iBoers,
+	iVietnam)
 
 
 class Communications:
@@ -120,6 +129,12 @@ class Communications:
 		for iContact in lContacts:
 			if gc.getTeam(iContact).isAVassal() and iContact not in lRemove:
 				lRemove.append(iContact)
+				
+		# Phillipine UP: Cannot lose contact with civs with embassy
+		if iCiv == iPhilippines:
+			for iContact in lContacts:
+				if iContact in data.lPhilippineEmbassies and iContact not in lRemove:
+					lRemove.append(iContact)
 					
 		for iLoopCiv in lRemove:
 			if iLoopCiv in lContacts: lContacts.remove(iLoopCiv)

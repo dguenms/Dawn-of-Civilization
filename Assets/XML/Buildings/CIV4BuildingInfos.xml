@@ -78,6 +78,40 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_WALLS</BuildingClass>
+			<Type>BUILDING_NIGERIA_IYA</Type>
+			<Description>TXT_KEY_BUILDING_NIGERIA_IYA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_NIGERIA_IYA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NIGERIA_IYA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_NIGERIA_IYA</ArtDefineTag>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>50</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMaintenanceModifier>-20</iMaintenanceModifier>
+			<iDefense>50</iDefense>
+			<iBombardDefense>50</iBombardDefense>
+			<iAsset>1</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_WALLS</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_WALLS</BuildingClass>
 			<Type>BUILDING_CELTIC_DUN</Type>
 			<Description>TXT_KEY_BUILDING_CELTIC_DUN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CELTIC_DUN_PEDIA</Civilopedia>
@@ -237,6 +271,35 @@
 			<iAsset>2</iAsset>
 			<iPower>2</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_STAR_FORT</BuildingClass>
+			<Type>BUILDING_BOER_PLAAS</Type>
+			<Description>TXT_KEY_BUILDING_BOER_PLAAS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BOER_PLAAS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BOER_PLAAS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BOER_PLAAS</ArtDefineTag>
+			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iUnignorableBombardDefense>50</iUnignorableBombardDefense>
+			<iAsset>2</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>2</iYield>
+			</YieldChanges>
 			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -1118,6 +1181,37 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HARBOR</BuildingClass>
+			<Type>BUILDING_PHILIPPINES_PORT</Type>
+			<Description>TXT_KEY_BUILDING_PHILIPPINES_PORT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PHILIPPINES_PORT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PHILIPPINES_PORT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PHILIPPINES_PORT</ArtDefineTag>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
+			<bWater>1</bWater>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SeaPlotYieldChanges>
+				<iYield>1</iYield>
+			</SeaPlotYieldChanges>
+			<CommerceModifiers>
+				<iCommerce>10</iCommerce>
+			</CommerceModifiers>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClass>
 			<Type>BUILDING_CUSTOMS_HOUSE</Type>
 			<Description>TXT_KEY_BUILDING_CUSTOMS_HOUSE</Description>
@@ -1181,6 +1275,36 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClass>
+			<Type>BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</Type>
+			<Description>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE_HELP</Help>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</ArtDefineTag>
+			<PrereqTech>TECH_LOGISTICS</PrereqTech>
+			<iCost>180</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>10</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iTradeRoutes>1</iTradeRoutes>
+			<iForeignTradeRouteModifier>100</iForeignTradeRouteModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -2261,6 +2385,45 @@
 				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<Type>BUILDING_SWAHILI_ZIARA</Type>
+			<Description>TXT_KEY_BUILDING_SWAHILI_ZIARA</Description>
+			<Civilopedia>TXT_KEY_NEW_BUILDING_SWAHILI_ZIARA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SWAHILI_ZIARA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SWAHILI_ZIARA</ArtDefineTag>
+			<PrereqTech>TECH_CEREMONY</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>50</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iTradeRoutes>1</iTradeRoutes>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PUBLIC_TRANSPORTATION</BuildingClass>
@@ -3616,6 +3779,59 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
+			<Type>BUILDING_MAMLUK_SOUQ</Type>
+			<Description>TXT_KEY_BUILDING_MAMLUK_SOUQ</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MAMLUK_SOUQ_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MAMLUK_SOUQ_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MAMLUK_SOUQ</ArtDefineTag>
+			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
+			<PrereqTech>TECH_CURRENCY</PrereqTech>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_FUR</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_IVORY</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SILK</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_WHALE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
 			<Type>BUILDING_BANK</Type>
 			<Description>TXT_KEY_BUILDING_BANK</Description>
@@ -3664,6 +3880,66 @@
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
 				<iCommerce>40</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
+			<Type>BUILDING_SWEDEN_RIKSBANK</Type>
+			<Description>TXT_KEY_BUILDING_SWEDEN_RIKSBANK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SWEDEN_RIKSBANK_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SWEDEN_RIKSBANK</ArtDefineTag>
+			<PrereqTech>TECH_FINANCE</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
+			<Type>BUILDING_MANCHURIA_PIAOHAO</Type>
+			<Description>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MANCHURIA_PIAOHAO_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MANCHURIA_PIAOHAO</ArtDefineTag>
+			<PrereqTech>TECH_FINANCE</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iFoodKept>15</iFoodKept>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
 			<SpecialistCounts>
 				<SpecialistCount>
@@ -4425,6 +4701,80 @@
 			</CommerceChangeDoubleTimes>
 			<CommerceModifiers>
 				<iCommerce>10</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CIVIC_SQUARE</BuildingClass>
+			<Type>BUILDING_VIETNAM_DINH</Type>
+			<Description>TXT_KEY_BUILDING_VIETNAM_DINH</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VIETNAM_DINH_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VIETNAM_DINH_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VIETNAM_DINH</ArtDefineTag>
+			<PrereqTech>TECH_STATECRAFT</PrereqTech>
+			<FreePromotion>PROMOTION_CITY_GARRISON1</FreePromotion>
+			<bNeverCapture>1</bNeverCapture>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceModifiers>
+				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
@@ -11318,6 +11668,51 @@
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SYDNEY_OPERA</BuildingClass>
+			<Type>BUILDING_SYDNEY_OPERA</Type>
+			<Description>TXT_KEY_BUILDING_SYDNEY_OPERA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SYDNEY_OPERA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SYDNEY_OPERA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SYDNEY_OPERA_HELP</Help>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SYDNEY_OPERA</ArtDefineTag>
+			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
+			<PrereqTech>TECH_TOURISM</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bWater>1</bWater>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>1400</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>25</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>

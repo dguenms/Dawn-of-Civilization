@@ -1715,7 +1715,12 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			
 	elif iPlayer == iIndia:
 		utils.setReborn(iIndia, gc.getGame().getGameTurn() < getTurnForYear(1900))
+		
+	elif iPlayer == iVikings:
+		utils.setReborn(iVikings, True)
 	
+	elif iPlayer == iPhilippines: # For Spanish CNM
+		utils.setReborn(iPhilippines, True)
 		
 	# others revert to their old cores instead
 	if iPlayer in [iArabia, iMongolia]:

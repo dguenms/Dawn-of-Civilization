@@ -52,6 +52,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("religionFounded",self.onReligionFounded) #Victory
 		eventManager.addEventHandler("buildingBuilt",self.onBuildingBuilt) #Victory
 		eventManager.addEventHandler("projectBuilt",self.onProjectBuilt) #Victory
+		eventManager.addEventHandler("unitGifted",self.onUnitGifted) #Victory
 		eventManager.addEventHandler("BeginPlayerTurn", self.onBeginPlayerTurn)
 		eventManager.addEventHandler("kbdEvent",self.onKbdEvent)
 		eventManager.addEventHandler("OnLoad",self.onLoadGame) #edead: StoredData
@@ -147,6 +148,8 @@ class CvRFCEventHandler:
 				utils.moveCapital(iTurkey, tCity) # Kostantiniyye
 			elif iPlayer == iMongolia and tCity == (102, 47):
 				utils.moveCapital(iMongolia, tCity) # Khanbaliq
+			elif iPlayer == iManchuria and tCity == (102, 47):
+				utils.moveCapital(iMongolia, tCity) # Beijing
 				
 		# remove slaves if unable to practice slavery
 		if not gc.getPlayer(iPlayer).canUseSlaves():
@@ -176,6 +179,10 @@ class CvRFCEventHandler:
 		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
 		if iPlayer == iTurkey and tCity == (68, 45):
 			utils.setReborn(iTurkey, True)
+		
+		# Merijn: conquering Beijing adds it to the Manchurian core
+		if iPlayer == iManchuria and tCity == (102, 47):
+			utils.setReborn(iManchuria, True)
 					
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
@@ -241,6 +248,9 @@ class CvRFCEventHandler:
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
 		else:
 			utils.cityConquestCulture(city, iPlayer, iOwner)
+			
+		if iOwner == iBoers:
+			self.up.boersUP(city)
 
 	def onCityRazed(self, argsList):
 		city, iPlayer = argsList
@@ -278,6 +288,8 @@ class CvRFCEventHandler:
 
 		if iOwner == iTurkey:
 			self.up.turkishUP(city, iOwner, -1)
+		elif iOwner == iBoers:
+			self.up.boersUP(city)
 			
 		if iOwner == iCarthage:
 			if tCity == (58, 39):
@@ -498,6 +510,8 @@ class CvRFCEventHandler:
 			
 	def onUnitGifted(self, argsList):
 		pUnit, iOwner, pPlot = argsList
+		
+		vic.onUnitGifted(pUnit, iOwner, pPlot)
 			
 	def onUnitCreated(self, argsList):
 		utils.debugTextPopup("Unit created")
@@ -505,6 +519,8 @@ class CvRFCEventHandler:
 			
 	def onUnitBuilt(self, argsList):
 		city, unit = argsList
+		
+		vic.onUnitBuilt(city, unit)
 		
 		if unit.getUnitType() == iSettler and city.getOwner() == iChina and utils.getHumanID() != iChina:
 			utils.handleChineseCities(unit)
@@ -704,8 +720,6 @@ class CvRFCEventHandler:
 				utils.moveCapital(iPlayer, (116, 47)) # Toukyou
 			elif iPlayer == iItaly and iEra == iIndustrial:
 				utils.moveCapital(iPlayer, (60, 44)) # Roma
-			elif iPlayer == iVikings and iEra == iRenaissance:
-				utils.moveCapital(iPlayer, (63, 59)) # Stockholm
 			elif iPlayer == iHolyRome and iEra == iRenaissance:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
 				

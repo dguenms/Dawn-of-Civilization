@@ -18,12 +18,28 @@
 		<English>It is the year 1810 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_AUSTRALIA</Tag>
+		<English>It is the year 1850 AD. The Australian Colonies Government Act has just been signed, granting representative constitutions to the colony. The mineral riches of the land can provide the base of a well developed empire.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_AZTECS</Tag>
 		<English>It is the year 1195 AD. The Aztec peoples have founded the city of Tenochtitlan at Lake Texcoco in the Valley of Mexico. Through clever use of irrigation systems, Tenochtitlan can become the largest metropolis of Mesoamerica and dominate the surrounding cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_BABYLONIA</Tag>
 		<English>It is the year 3000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Though the cities of Sumer and Akkad are thriving, with the emergence of Babylon, they will soon be overshadowed by the greatest metropolis of its time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BOER</Tag>
+		<English>It is the year 1852 AD. The discord between governers and settlers about colony politics lead settlers to move out from their colonies. Boer republics declared independence and get recognized by former governers, but the political and deplomatic conditions against European imperialists are still unstable. The Boer peoples' bright future is not guaranted yet.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_BRAZIL</Tag>
@@ -154,6 +170,14 @@
 		<English>It is the year 1700 AD. The Kingdom of Joseon has faced both invasion from Japan and the Manchu, who now control the entire Chinese Empire. Now a period of relative peace and economic and cultural renaissance has begun, but with two powerful neighbors and Western imperialism on the rise, it can only last for so long ...</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_MAMLUKS</Tag>
+		<English>It is the year 969 AD. Under your command, the Fatimid army has conquered Egypt. The land here is rich and people are tired of persecutions from the hands of Sunni governors. The Ismaili Fatimids shall be more welcoming to people of different creeds - their help will be vital in the final battle against the caliphs of Baghdad.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_MALI</Tag>
 		<English>It is the year 989 AD. Sub-Saharan Africa is still underdeveloped compared to the rest of the old world. But the Mande people control rich gold mines, which has caught the attention of its northern neighbors. Defending against foreign attempts to seize its riches by force, Mali has now the opportunity to truly become the richest civilization on Earth.</English>
 	</TEXT>
@@ -186,12 +210,28 @@
 		<English>It is the year 1700 AD. Since their independence at the end of the Eighty Years war, the Netherlands have entered a Golden Age and become the European center of trade, industry, culture and science. This wealth however has created envy in the rising neighboring powers of France and Great Britain, and the Dutch will need to keep their colonial empire together to maintain their wealth.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_NIGERIA</Tag>
+		<English>It is the year 1180 AD.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_PERSIA</Tag>
 		<English>It is the year 844 BC. Persia has always been home to warlike peoples, but now the Achaemenid dynasty provides them with the unifying force to form an organized empire. While the Persian plateau is not particularly wealthy, it has rich and defenseless neighbors in India in the east and Mesopotamia in the west to conquer on their way to become the world's greatest empire.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PERSIA_1700AD</Tag>
 		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_PHILIPPINES</Tag>
+		<English>It is the year 900 AD.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PHOENICIA</Tag>
@@ -238,6 +278,26 @@
 		<English>It is the year 1700 AD. The Spanish Empire is in a state of decline. Income from the American colonies is diminishing, the cultural flourishing of the last century has come to an end, and now the ruling Habsburg dynasty is about to die out. The conflict over the Spanish succession is about to consume Europe ...</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_SWEDEN</Tag>
+		<English>It is 1523 AD. A couple years after the outrages of the Stockholm Bloodbath, committed by the Danish king Kristian the Tyrant. You, Gustav Vasa, have lead a rebellion since to restore independence, successfully uniting Sweden under a hereditary monarchy.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_SWEDEN_1700AD</Tag>
+		<English>It is the year 1700 AD. The Kingdom of Sweden is the most formidable of the Scandinavian powers and has managed to establish an empire by acquiring Finland. Still, its expansion has also created enemies, and rivals like Denmark-Norway, Poland and especially Russia might seek to curb Swedish power ...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_SWAHILI</Tag>
+		<English>It is the year 960 AD.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_TAMILS</Tag>
 		<English>It is the year 300 BC. With the development of their Sangam literature, the Tamil culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</English>
 	</TEXT>
@@ -266,6 +326,14 @@
 		<English>It is the year 1700 AD. With the defeat at the Siege of Vienna, the military expansion of the Ottoman Empire has come to an end and it is on the defensive against the growing power of Austria and Russia. This change in the balance of power leads to increased cultural contact and exchange with the Europeans and a flowering of Ottoman culture.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_VIETNAM</Tag>
+		<English>It's the year 257 BC. Your people live a peaceful life at the Red River delta, but conquerers from the north calling themselves the Sons of Heaven threaten to end this lifestyle once and for all. It is your duty to not only fend off these arrivists, but also build an empire that outshines everthing that has ever been.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS</Tag>
 		<English>It is the year 551 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for plunder or settlement.</English>
 	</TEXT>
@@ -274,7 +342,7 @@
 		<English>It is the year 600 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also those of the Mediterranean and even the New World make good targets for either plunder or settlement.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_SWEDEN_1700AD</Tag>
-		<English>It is the year 1700 AD. The Kingdom of Sweden is the most formidable of the Scandinavian powers and has managed to establish an empire by acquiring Finland. Still, its expansion has also created enemies, and rivals like Denmark-Norway, Poland and especially Russia might seek to curb Swedish power ...</English>
+		<Tag>TXT_KEY_DOM_VIKINGS_1700AD</Tag>
+		<English>It is the year 1700 AD. Have fun.</English>
 	</TEXT>
 </Civ4GameText>

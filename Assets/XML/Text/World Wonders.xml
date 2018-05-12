@@ -902,6 +902,30 @@
 		<English>[ICON_BULLET]No open borders required for trade</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SYDNEY_OPERA</Tag>
+		<English>Sydney Opera House</English>
+		<French>Op&#233;ra de Sydney</French>
+		<German>Opernhaus Sydney</German>
+		<Italian>Teatro dell'opera di Sydney</Italian>
+		<Spanish>&#211;pera de S&#237;dney</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SYDNEY_OPERA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Sydney Opera House[COLOR_REVERT] increases the happiness per culture level in all cities and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SYDNEY_OPERA_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_HAPPY] per Culture Level in All Cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>

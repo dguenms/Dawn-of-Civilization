@@ -790,6 +790,8 @@ public:
 
 	// Leoreth
 	SpecialistTypes getSettledSpecialist() const;
+	// Merijn: Vietnamese UP
+	bool isGuerillaBonus() const;
 
 	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;										// Exposed to Python
 	DllExport const TCHAR* getButton() const;										// Exposed to Python

@@ -1576,4 +1576,172 @@
 		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWEDEN_KAROLIN</Tag>
+		<English>Karolin</English>
+		<French>Carolean</French>
+		<German>Karoliner</German>
+		<Italian>Carolean</Italian>
+		<Spanish>Carolean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWEDEN_KAROLIN_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Karolin[COLOR_REVERT], the Swedish replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] promotions.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER</Tag>
+		<English>Digger</English>
+		<French>Digger</French>
+		<German>Digger</German>
+		<Italian>Digger</Italian>
+		<Spanish>Digger</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AUSTRALIAN_DIGGER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Digger[COLOR_REVERT], the Australian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RABBIT</Tag>
+		<English>Rabbit</English>
+		<French>Lapin</French>
+		<German>Hase</German>
+		<Italian>Coniglio</Italian>
+		<Spanish>Conejo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW</Tag>
+		<English>Dhow</English>
+		<French>Dhow</French>
+		<German>Dau</German>
+		<Italian>Dau</Italian>
+		<Spanish>Dhow</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Dhow[COLOR_REVERT], the Swahili replacement for the the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], provides gold when stationed in foreign coastal cities.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWAHILI_DHOW_HELP</Tag>
+		<English>[ICON_BULLET]2 [ICON_GOLD] when stationed in a foreign coastal city (max one unit per city)</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RATTAN_ARCHER</Tag>
+		<English>Rattan Archer</English>
+		<French>Archer de rotin</French>
+		<German>Rattan Bogensch&#252;tze</German>
+		<Italian>Arciere in rattan</Italian>
+		<Spanish>Arquero de rat&#225;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RATTAN_ARCHER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rattan Archer[COLOR_REVERT], the Vietnamese replacement for the the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has an additional first strike, has a higher withdraw chance and does collateral damage to more units.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RABBIT_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Rabbits[COLOR_REVERT] are Barbarian units that spawn in Australia from 1860 AD.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MAMLUK_ROYAL_MAMLUK</Tag>
+		<English>Royal Mamluk</English>
+		<French>Royal Mamluk</French>
+		<German>Royal Mamluk</German>
+		<Italian>Royal Mamluk</Italian>
+		<Spanish>Royal Mamluk</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MAMLUK_ROYAL_MAMLUK_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Royal Mamluk[COLOR_REVERT], the Mamluk replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Light Cavarly Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MANCHURIA_EIGHTBANNER</Tag>
+		<English>Eight Banner</English>
+		<French>Huit Banni&#232;re</French>
+		<German>Acht Banner</German>
+		<Italian>Otto bandiere</Italian>
+		<Spanish>Ocho bandera</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MANCHURIA_EIGHTBANNER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Eight Banner[COLOR_REVERT], the Manchurian replacement for the the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a high withdraw chance.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHILIPPINES_BALANGAY</Tag>
+		<English>Balangay</English>
+		<French>Balangay</French>
+		<German>Balangay</German>
+		<Italian>Balangay</Italian>
+		<Spanish>Balangay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHILIPPINES_BALANGAY_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Balangay[COLOR_REVERT], the Philippine replacement for the the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT], is cheaper and has a higher withdraw chance.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BOER_COMMANDO</Tag>
+		<English>Kommando</English>
+		<French>Kommando</French>
+		<German>Kommando</German>
+		<Italian>Kommando</Italian>
+		<Spanish>Kommando</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BOER_COMMANDO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kommando[COLOR_REVERT], the Boer replacement for the the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NIGERIA_YAN_LIFIDA</Tag>
+		<English>Yan Lifida</English>
+		<French>Yan Lifida</French>
+		<German>Yan Lifida</German>
+		<Italian>Yan Lifida</Italian>
+		<Spanish>Yan Lifida</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NIGERIA_YAN_LIFIDA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</English>
+		<French>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</French>
+		<German>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</Spanish>
+	</TEXT>
 </Civ4GameText>

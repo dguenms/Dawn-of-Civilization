@@ -346,6 +346,10 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_VIETNAM</Tag>
+		<English>Cochinchina</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
 		<English>West India</English>
 	</TEXT>
@@ -400,5 +404,13 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NIGERIA</Tag>
+		<English>%s2 Dahomy</English>
+		<French>%s2 Dahomy</French>
+		<German>%s2 Dahomy</German>
+		<Italian>%s2 Dahomy</Italian>
+		<Spanish>%s2 Dahomy</Spanish>
 	</TEXT>
 </Civ4GameText>

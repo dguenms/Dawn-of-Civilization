@@ -26,18 +26,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
-		<English>The Swedish</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>
-		<English>Sweden</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Tag>
-		<English>Swedish</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_SHORT_DESC</Tag>
 		<English>Denmark</English>
 	</TEXT>
@@ -60,14 +48,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_ADJECTIVE</Tag>
 		<English>Norwegian</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_SWEDEN_DEFAULT</Tag>
-		<English>Kingdom of %s1</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_SWEDEN_FASCIST</Tag>
-		<English>National Gathering of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
@@ -158,20 +138,12 @@
 		<English>%s2 Althings</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_SWEDISH</Tag>
-		<English>Swedish</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY</Tag>
 		<English>Denmark-Norway</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORWAY</Tag>
 		<English>Norway</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_SWEDEN</Tag>
-		<English>Sweden</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK</Tag>

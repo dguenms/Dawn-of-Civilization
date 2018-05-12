@@ -2442,6 +2442,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case ETHIOPIA:
 		break;
+	case VIETNAM:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
+		aiUnitAIVal[UNITAI_COLLATERAL] *= 3;
+		aiUnitAIVal[UNITAI_COLLATERAL] /= 2;
+		break;
     case KOREA:
         aiUnitAIVal[UNITAI_EXPLORE] /= 2;
         aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
@@ -2556,6 +2562,23 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
 		break;
+	case PHILIPPINES:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		break;
+	case SWAHILI:
+		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
+		break;
+	case MAMLUKS:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
+		aiUnitAIVal[UNITAI_MISSIONARY] *= 2;
+		break;
 	case MALI:
 		break;
 	case POLAND:
@@ -2598,6 +2621,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
         aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
         aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
 		break;
+	case NIGERIA:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
 	case MONGOLIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
 		break;
@@ -2613,6 +2641,16 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case CONGO:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 4;
 		break;
+	case SWEDEN:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLE] *= 3;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+		aiUnitAIVal[UNITAI_COUNTER] *= 3;
+		break;
 	case NETHERLANDS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -2625,6 +2663,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_WORKER_SEA] /= 2;
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
+		break;
+	case MANCHURIA:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		break;
 	case GERMANY:
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
@@ -2648,6 +2690,20 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_WORKER] *= 2;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
+		break;
+	case AUSTRALIA:
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
+		aiUnitAIVal[UNITAI_WORKER] *= 3;
+		aiUnitAIVal[UNITAI_WORKER] /= 2;
+		break;
+	case BOERS:
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
+		aiUnitAIVal[UNITAI_ICBM] *= 4;
+		aiUnitAIVal[UNITAI_ICBM] /= 3;
 		break;
 	case NATIVE:
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 5;
@@ -3175,6 +3231,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ETHIOPIA:
 										break;
+									case VIETNAM:
+										break;
                                     case KOREA:
                                         break;
 									case MAYA:
@@ -3274,6 +3332,13 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 										}
 										break;
+									case PHILIPPINES:
+										break;
+									case SWAHILI:
+										break;
+									case MAMLUKS:
+										if (iI == LA_MEZQUITA || iI == TOPKAPI_PALACE || iI == UNIVERSITY_OF_SANKORE || iI == SPIRAL_MINARET || iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE || iI == DOME_OF_THE_ROCK) iTempValue /= 2;
+										break;
 									case MALI:
 										if (iI == UNIVERSITY_OF_SANKORE)	iTempValue *= 4;
 										break;
@@ -3306,6 +3371,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
                                         {
                                             iTempValue *= 3;
                                         }
+										break;
+									case NIGERIA:
 										break;
 									case MONGOLIA:
 										break;
@@ -3341,6 +3408,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case CONGO:
 										iTempValue /= 2;
 										break;
+									case SWEDEN:
+										if (iI == CERN_RESEARCH_COMPLEX) {
+											iTempValue *= 3;
+											iTempValue /= 2;
+										}
+										break;
 									case NETHERLANDS:
 										if (iI == NOTRE_DAME) { //Notre Dame
 														iTempValue *= 3;
@@ -3354,6 +3427,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 3;
 											iTempValue /= 4;
 										}
+										break;
+									case MANCHURIA:
+										if (iI == FORBIDDEN_PALACE || iI == GRAND_CANAL) iTempValue *= 4;
+										else if (iI == GREAT_WALL) iTempValue *= 8;
+										else if (iI == TERRACOTTA_ARMY || iI == PORCELAIN_TOWER) iTempValue *= 2;
+										else if (iI == HANGING_GARDENS || iI == HIMEJI_CASTLE || iI == BOROBUDUR || iI == BRANDENBURG_GATE) iTempValue /= 3;
 										break;
 									case GERMANY:
 										if (iI == IRONWORKS) { //Iron Works
@@ -3382,6 +3461,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case BRAZIL:
 										if (iI == CRISTO_REDENTOR) iTempValue *= 3;
 										if (iI == ITAIPU_DAM || iI == WEMBLEY) iTempValue *= 2;
+										break;
+									case AUSTRALIA:
+										if (iI == WEMBLEY || iI == SYDNEY_OPERA) iTempValue *= 2;
+										break;
+									case BOERS:
 										break;
 									case CANADA:
 										if (iI == CN_TOWER) iTempValue *= 3;

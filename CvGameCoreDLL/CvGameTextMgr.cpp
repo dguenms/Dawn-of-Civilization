@@ -6511,6 +6511,15 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			iHappinessChange += GET_PLAYER(pCity->getOwnerINLINE()).getSpecialistHappiness();
 		}
 
+		// Merijn: Swedish UP, 2 happiness (and 1 gold) for every settled GP
+		if (GC.getGameINLINE().getActivePlayer() == SWEDEN && (GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass() == NO_UNITCLASS))
+		{
+			if (eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE") && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_CITIZEN"))
+			{
+				iHappinessChange += 2;
+			}
+		}
+
 		if (iHappinessChange != 0)
 		{
 			if (iHappinessChange > 0)

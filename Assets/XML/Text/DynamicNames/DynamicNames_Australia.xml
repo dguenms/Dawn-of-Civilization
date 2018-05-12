@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- America -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_DESC</Tag>
+		<English>The Australians</English>
+		<French>The Australians</French>
+		<German>The Australians</German>
+		<Italian>The Australians</Italian>
+		<Spanish>The Australians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_SHORT_DESC</Tag>
+		<English>Australia</English>
+		<French>Australie</French>
+		<German>Australien</German>
+		<Italian>Australia</Italian>
+		<Spanish>Australia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_ADJECTIVE</Tag>
+		<English>Australian</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_PEOPLES</Tag>
+		<English>Australian Peoples</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_DEFAULT</Tag>
+		<English>Australia</English>
+		<French>Australie</French>
+		<German>Australien</German>
+		<Italian>Australia</Italian>
+		<Spanish>Australia</Spanish>
+	</TEXT>
+</Civ4GameText>

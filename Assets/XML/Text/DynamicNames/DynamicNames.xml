@@ -406,6 +406,14 @@
 		<English>%s2 Confederation</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONFEDERATION_OF</Tag>
+		<English>Confederation of %s1</English>
+		<French>Confederation of %s1</French>
+		<German>Confederation of %s1</German>
+		<Italian>Confederation of %s1</Italian>
+		<Spanish>Confederation of %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROTECTORATE_OF</Tag>
 		<English>Protectorate of %s1</English>
 		<French>

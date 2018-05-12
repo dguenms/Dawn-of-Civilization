@@ -27,6 +27,9 @@ iCongressInterval = 15
 tAmericanClaimsTL = (19, 41)
 tAmericanClaimsBR = (24, 49)
 
+tAustraliaTL = (103, 7)
+tAustraliaBR = (118, 22)
+
 tNewfoundlandTL = (27, 53)
 tNewfoundlandBR = (36, 59)
 
@@ -1078,6 +1081,11 @@ class Congress:
 					if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
 						iValue += 5
 						
+				# help AI Australia gain Australia
+				if iPlayer == iAustralia and utils.getHumanID() != iPlayer:
+					if utils.isPlotInArea((x, y), tAustraliaTL, tAustraliaBR):
+						iValue += 5
+						
 				# help Canada gain Labrador and Newfoundland
 				if iPlayer == iCanada:
 					if utils.isPlotInArea((x, y), tNewfoundlandTL, tNewfoundlandBR):
@@ -1093,7 +1101,9 @@ class Congress:
 				if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
 				plot = gc.getMap().plot(x, y)
 				if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
-					if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
+					if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia] \
+					or (plot.getRegionID() == [rAustralia, rOceania] and gc.getGame().getGameTurn() < tBirth[iAustralia]) \
+					or (plot.getRegionID() == rSouthAfrica and gc.getGame().getGameTurn() < tBirth[iBoers]):
 						iSettlerMapValue = plot.getSettlerValue(iPlayer)
 						if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
 							closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())

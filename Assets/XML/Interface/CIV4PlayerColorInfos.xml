@@ -129,7 +129,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIGHT_GREEN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_GREEN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_DARK_GREEN</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
@@ -413,6 +413,48 @@
 			<ColorTypePrimary>COLOR_PLAYER_ROSE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ROSE_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_SWEDISH_BLUE_AND_YELLOW</Type> <!-- Sweden -->
+			<ColorTypePrimary>COLOR_PLAYER_SWEDISH_BLUE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_SWEDISH_YELLOW</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_SWEDISH_BLUE</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_AUSTRALIA</Type> <!-- Australia -->
+			<ColorTypePrimary>COLOR_PLAYER_GOLD</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_AUSTGREEN</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_GOLD</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_MEDIUM_YELLOW</Type> <!-- Mamluks -->
+			<ColorTypePrimary>COLOR_PLAYER_MEDIUM_YELLOW</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_MEDIUM_YELLOW_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_DARK_ROSE</Type> <!-- Philippines -->
+			<ColorTypePrimary>COLOR_PLAYER_DARK_ROSE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_GOLDENROD</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_DARK_ROSE_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_GOLDEN_BROWN</Type> <!-- Boers -->
+			<ColorTypePrimary>COLOR_PLAYER_GOLDEN_BROWN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_GOLDEN_BROWN</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_SWAHILI</Type> <!-- Swahili -->
+			<ColorTypePrimary>COLOR_CIVILIZATION_GREENBLUE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_CIVILIZATION_MOSS</ColorTypeSecondary>
+			<TextColorType>COLOR_CIVILIZATION_GREENBLUE_TEXT</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_ORANGE_GREEN</Type> <!-- Vietnam -->
+			<ColorTypePrimary>COLOR_PLAYER_ORANGE_GREEN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_BROWNISH_RED</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_ORANGE_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

@@ -342,5 +342,59 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Flower.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_AUSTRALIA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/australia.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Australia.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MAMLUKS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Mamluk.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Mamluk.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MANCHURIA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Manchuria.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Manchu.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_NIGERIA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Nigeria.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Nigeria.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_PHILIPPINES</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Philippines.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Philippines.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_BOER</Type>
+			<Button>Art/Interface/Buttons/Civilizations/boer.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Boer.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_SWAHILI</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Swahili.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_PalmTree2.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_SWEDEN</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Sweden.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Sweden.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_VIETNAM</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Vietnam.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Vietnam.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

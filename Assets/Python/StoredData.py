@@ -184,6 +184,7 @@ class GameData:
 		
 		self.iImmigrationTimer = 0
 		self.iRomanVictories = 0
+		self.lPhilippineEmbassies = []
 		
 		self.lByzantineBribes = []
 		
@@ -221,23 +222,31 @@ class GameData:
 		self.lReligionFounder = [-1] * iNumReligions
 		self.lFirstDiscovered = [-1] * iNumTechs
 		self.lFirstEntered = [-1] * iNumEras
+		self.lFirstCompleted = [-1] * iNumEras
 		self.lFirstGreatPeople = [-1] * len(lGreatPeopleUnits)
 		self.iFirstNewWorldColony = -1
 		
 		self.iChineseGoldenAgeTurns = 0
 		self.iKoreanSinks = 0
-		self.iTamilTradeGold = 0
+		self.iTamilTradeGold = 0.0
 		self.iColombianTradeGold = 0
+		self.iNigeriaTradeGold = 0
 		self.iVikingGold = 0
 		self.iMoorishGold = 0
 		self.iEnglishSinks = 0
+		self.iSwahiliTradeGold = 0.0
 		self.iMongolRazes = 0
 		self.iAztecSlaves = 0
 		self.iCongoSlaveCounter = 0
+		self.iSwedenHappinessTurns = 0
 		self.iDutchColonies = 0
 		self.iMexicanGreatGenerals = 0
+		self.iVietnamGreatGenerals = 0
 		self.iArgentineGoldenAgeTurns = 0
 		self.iCanadianPeaceDeals = 0
+		self.iAustraliaGifts = 0
+		self.lAustralianGiftReceivers = []
+		self.iAustraliaHappinessTurns = 0
 		
 		self.iPopeTurns = 0
 		self.iHinduGoldenAgeTurns = 0
@@ -266,6 +275,7 @@ class GameData:
 		self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)] = bNewValue
 		
 	def isPlayerEnabled(self, iPlayer):
+		if gc.getGame().getActivePlayer() == iPlayer: return True
 		return self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)]
 		
 	def resetStability(self, iPlayer):

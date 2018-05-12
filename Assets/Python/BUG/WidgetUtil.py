@@ -129,6 +129,9 @@ def getWidgetHelp(argsList):
 	if iData1 == 10001:
 		return CyTranslator().getText("TXT_KEY_ACTION_BYZANTINE_UP", ())
 		
+	if iData1 == 10002:
+		return CyTranslator().getText("TXT_KEY_ACTION_ESTABLISH_EMBASSY", ())
+		
 	if iData1 == 12001:
 		szText = BugUtil.getPlainText("TXT_KEY_BUG_TECH_PREFS_ALL") + "\n"
 		for pTech in TechPrefs.TechPrefs().getAllFlavorTechs(iData2):

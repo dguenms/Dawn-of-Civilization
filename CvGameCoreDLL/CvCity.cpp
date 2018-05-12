@@ -4547,6 +4547,15 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
 
+	// Merijn: Swedish UP, 2 happiness (and 1 gold) for every settled GP
+	if (getOwnerINLINE() == SWEDEN && (GC.getSpecialistInfo(eSpecialist).getGreatPeopleUnitClass() == NO_UNITCLASS))
+	{
+		if (eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE") && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_CITIZEN"))
+		{
+			iHappinessChange += 2;
+		}
+	}
+
 	if (iHappinessChange > 0)
 	{
 		changeSpecialistGoodHappiness(iHappinessChange * iChange);
@@ -7286,6 +7295,12 @@ int CvCity::getBuildingHappiness(BuildingTypes eBuilding) const
 	iHappiness = GC.getBuildingInfo(eBuilding).getHappiness();
 
 	iHappiness += GC.getBuildingInfo(eBuilding).getCultureHappiness() * getCultureLevel();
+	
+	// Merijn: Sydney Opera House
+	if (eBuilding == SYDNEY_OPERA)
+	{
+		iHappiness += getCultureLevel();
+	}
 
 	if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 	{
@@ -8253,7 +8268,13 @@ void CvCity::changeTradeRouteModifier(int iChange)
 
 int CvCity::getForeignTradeRouteModifier() const
 {
-	return m_iForeignTradeRouteModifier;
+	int iResult = m_iForeignTradeRouteModifier;
+	
+	// Merijn - Swahili UP: the power of sea trade, +100% foreign trade route yield.
+	if (getOwner() == SWAHILI)
+		iResult += 100;
+	
+	return iResult;
 }
 
 void CvCity::changeForeignTradeRouteModifier(int iChange)
@@ -10272,6 +10293,15 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 					iCommerce += (GC.getCorporationInfo((CorporationTypes)(GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce())).getHeadquarterCommerce(eIndex) * GC.getGameINLINE().countCorporationLevels((CorporationTypes)(GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce()))) * getNumActiveBuilding(eBuilding);
 				}
 			}
+			
+			// Mamluk UP: 2 science to science buildings
+			if (getOwnerINLINE() == MAMLUKS && eIndex == COMMERCE_RESEARCH)
+			{
+				if (iCommerce > 0 || kBuilding.getCommerceModifier(COMMERCE_RESEARCH) > 0)
+				{
+					iCommerce += 2;
+				}
+			}
 
 			if ((GC.getBuildingInfo(eBuilding).getCommerceChangeDoubleTime(eIndex) != 0) &&
 				(getBuildingOriginalTime(eBuilding) != MIN_INT) &&
@@ -10378,6 +10408,14 @@ int CvCity::getAdditionalBaseCommerceRateByBuildingImpl(CommerceTypes eIndex, Bu
 		if (kBuilding.getGlobalCorporationCommerce() != NO_CORPORATION)
 		{
 			iExtraRate += GC.getCorporationInfo((CorporationTypes)(kBuilding.getGlobalCorporationCommerce())).getHeadquarterCommerce(eIndex) * GC.getGameINLINE().countCorporationLevels((CorporationTypes)(kBuilding.getGlobalCorporationCommerce()));
+		}
+		// Mamluk UP: 2 science to science buildings
+		if (getOwnerINLINE() == MAMLUKS && eIndex == COMMERCE_RESEARCH)
+		{
+			if (iExtraRate > 0 || kBuilding.getCommerceModifier(COMMERCE_RESEARCH) > 0)
+			{
+				iExtraRate += 2;
+			}
 		}
 		// ignore double-time check since this assumes you are building it this turn
 
@@ -10558,12 +10596,12 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getCommerceChange(eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex) : 0));
+	return iChange * (GET_PLAYER(getOwnerINLINE()).specialistCommerce(eSpecialist, eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex) : 0));
 }
 // BUG - Specialist Additional Commerce - end
 
 
-int CvCity::getReligionCommerce(CommerceTypes eIndex) const												 
+int CvCity::getReligionCommerce(CommerceTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");

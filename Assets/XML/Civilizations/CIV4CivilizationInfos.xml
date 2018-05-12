@@ -186,11 +186,11 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
-					<LeaderName>LEADER_SALADIN</LeaderName>
+					<LeaderName>LEADER_HARUN</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_HARUN</LeaderName>
+					<LeaderName>LEADER_MUSTASIM</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -295,6 +295,112 @@
 			<DerivativeCiv>CIVILIZATION_SPAIN</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_SPAIN_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_AUSTRALIA</Type>
+			<Description>TXT_KEY_CIV_AUSTRALIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_AUSTRALIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_AUSTRALIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_AUSTRALIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_AUSTRALIA</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_AUSTRALIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ATUA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Atua.dds</PaganReligionButton>
+			<Identifier>AUS</Identifier>
+			<StartingYear>1850</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>75</LoadingTime>
+				<LoadingTime>45</LoadingTime>
+				<LoadingTime>25</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>4</Production>
+				<Culture>5</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Melbourne</City>
+				<City>Sydney</City>
+				<City>Brisbane</City>
+				<City>Perth</City>
+				<City>Adelaide</City>
+				<City>Gold Coast-Tweed Heads</City>
+				<City>Newcastle-Maitland</City>
+				<City>Canberra-Queanbeyan</City>
+				<City>Sunshine Coast</City>
+				<City>Wollongong</City>
+				<City>Hobart</City>
+				<City>Geelong</City>
+				<City>Townsville</City>
+				<City>Cairns</City>
+				<City>Darwin</City>
+				<City>Toowoomba</City>
+				<City>Ballarat</City>
+				<City>Bendigo</City>
+				<City>Launceston</City>
+				<City>Albury-Wodonga</City>
+				<City>Mackay</City>
+				<City>Rockhampton</City>
+				<City>Bundaberg</City>
+				<City>Bunbury</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClassType>
+					<BuildingType>BUILDING_AUSTRALIAN_IMMIGRATION_OFFICE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_INFANTRY</UnitClassType>
+					<UnitType>UNIT_AUSTRALIAN_DIGGER</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_CURTIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_MENZIES</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ENGLAND</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ENGLAND_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ENGLAND_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_AZTEC</Type>
@@ -515,6 +621,98 @@
 			<DerivativeCiv>CIVILIZATION_PERSIA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_BABYLON_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_BABYLON_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_BOER</Type>
+			<Description>TXT_KEY_CIV_BOER_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_BOER_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_BOER_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_BOER_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_GOLDEN_BROWN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_BOER</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
+			<Identifier>BOE</Identifier>
+			<StartingYear>1852</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>80</LoadingTime>
+				<LoadingTime>50</LoadingTime>
+				<LoadingTime>30</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>3</Culture>
+				<Growth>2</Growth>
+				<Start>1</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Soweto</City>
+				<City>Johannesburg</City>
+				<City>Pretoria</City>
+				<City>Durban</City>
+				<City>Tembisa</City>
+				<City>Cape Town</City>
+				<City>Katlehong</City>
+				<City>Umlazi</City>
+				<City>Soshanguve</City>
+				<City>Khayelitsha</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_STAR_FORT</BuildingClassType>
+					<BuildingType>BUILDING_BOER_PLAAS</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
+					<UnitType>UNIT_BOER_COMMANDO</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_KRUGER</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_MANDELA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ENGLAND</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ZULU_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_NETHERLANDS_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_BRAZIL</Type>
@@ -1449,14 +1647,6 @@
 				</Leader>
 				<Leader>
 					<LeaderName>LEADER_RAMESSES</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_BAIBARS</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_NASSER</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -3314,6 +3504,212 @@
 			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_MAMLUKS</Type>
+			<Description>TXT_KEY_CIV_MAMLUKS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MAMLUKS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MAMLUKS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_MAMLUKS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_MEDIUM_YELLOW</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_MAMLUKS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<Identifier>MAM</Identifier>
+			<StartingYear>969</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>4</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Kufah</City>
+				<City>Khurasan</City>
+				<City>Anjar</City>
+				<City>Yamama</City>
+				<City>Mansura</City>
+				<City>Aydab</City>
+				<City>Bayt Ras</City>
+				<City>Taif</City>
+				<City>Shihr</City>
+				<City>Abu Dhabi</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingType>BUILDING_MAMLUK_SOUQ</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_MAMLUK_ROYAL_MAMLUK</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_SALADIN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BAIBARS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_NASSER</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_MOORS</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ARABIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_MANCHURIA</Type>
+			<Description>TXT_KEY_CIV_MANCHURIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MANCHURIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MANCHURIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_MANCHURIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_GOLD_AND_BLACK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_MANCHURIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
+			<Identifier>MAN</Identifier>
+			<StartingYear>1636</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>20</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>5</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Tianjin</City>
+				<City>Shandong</City>
+				<City>Baoding</City>
+				<City>Yangzhou</City>
+				<City>Loyang</City>
+				<City>Taiyuan</City>
+				<City>Tainan</City>
+				<City>Lijiang</City>
+				<City>Wuxi</City>
+				<City>Suzhou</City>
+				<City>Maoming</City>
+				<City>Shaoguan</City>
+				<City>Yangjiang</City>
+				<City>Heyuan</City>
+				<City>Liaoning</City>
+				<City>Hubei</City>
+				<City>Gansu</City>
+				<City>Huangshi</City>
+				<City>Yichang</City>
+				<City>Yingtan</City>
+				<City>Xinyu</City>
+				<City>Xinzheng</City>
+				<City>Handan</City>
+				<City>Dunhuang</City>
+				<City>Gaoyu</City>
+				<City>Nantong</City>
+				<City>Weifang</City>
+				<City>Xikang</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
+					<BuildingType>BUILDING_MANCHURIA_PIAOHAO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
+					<UnitType>UNIT_MANCHURIA_EIGHTBANNER</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_KANGXI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_CIXI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_CHINA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_MAYA</Type>
 			<Description>TXT_KEY_CIV_MAYA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_MAYA_SHORT_DESC</ShortDescription>
@@ -4085,6 +4481,141 @@
 			<CivilizationActionSound>AS3D_NETHERLANDS_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_NIGERIA</Type>
+			<Description>TXT_KEY_CIV_NIGERIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_NIGERIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_NIGERIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_NIGERIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_NIGERIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
+			<Identifier>NIG</Identifier>
+			<StartingYear>1180</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Ife</City>
+				<City>Ijebu</City>
+				<City>Oyo</City>
+				<City>Ilesa</City>
+				<City>Ondo</City>
+				<City>Akure</City>
+				<City>Owo</City>
+				<City>Ado Ekiti</City>
+				<City>Osogbo</City>
+				<City>Ila</City>
+				<City>Ilorin</City>
+				<City>Ketou</City>
+				<City>Benin</City>
+				<City>Udo</City>
+				<City>Umoghumwan</City>
+				<City>Uromi</City>
+				<City>Warri</City>
+				<City>Agbor</City>
+				<City>Igbo Ukwu</City>
+				<City>Onitsha</City>
+				<City>Enugu</City>
+				<City>Owere</City>
+				<City>Zazzau</City>
+				<City>Kano</City>
+				<City>Katsina</City>
+				<City>Daura</City>
+				<City>Gobir</City>
+				<City>Rano</City>
+				<City>Biram</City>
+				<City>Zamfara</City>
+				<City>Kebbi</City>
+				<City>Surame</City>
+				<City>Gudu</City>
+				<City>Sokoto</City>
+				<City>Gwandu</City>
+				<City>Bauchi</City>
+				<City>Yola</City>
+				<City>Lagos</City>
+				<City>Ikorodu</City>
+				<City>Ibadan</City>
+				<City>Abeokuta</City>
+				<City>Aba</City>
+				<City>Uyo</City>
+				<City>Calabar</City>
+				<City>Umuahia</City>
+				<City>Jos</City>
+				<City>Kaduna</City>
+				<City>Maiduguri</City>
+				<City>Abuja</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_WALLS</BuildingClassType>
+					<BuildingType>BUILDING_NIGERIA_IYA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_NIGERIA_YAN_LIFIDA</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ODUDUWA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_EWUARE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_AMINATU</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ETHIOPIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_MALI_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_OTTOMAN</Type>
 			<Description>TXT_KEY_CIV_OTTOMAN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_OTTOMAN_SHORT_DESC</ShortDescription>
@@ -4305,6 +4836,91 @@
 			<DerivativeCiv>CIVILIZATION_IRAN</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_PERSIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_PERSIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_PHILIPPINES</Type>
+			<Description>TXT_KEY_CIV_PHILIPPINES_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_PHILIPPINES_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_PHILIPPINES_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_PHILIPPINES_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DARK_ROSE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_PHILIPPINES</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<Identifier>PHI</Identifier>
+			<StartingYear>900</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Calapan</City>
+				<City>Dagupan</City>
+				<City>Olongapo</City>
+				<City>Tarlac</City>
+				<City>Iligan</City>
+				<City>Bacolod</City>
+				<City>Cabantuan</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+					<BuildingType>BUILDING_PHILIPPINES_PORT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_GALLEY</UnitClassType>
+					<UnitType>UNIT_PHILIPPINES_BALANGAY</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_LAPU_LAPU</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_INDONESIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_POLAND</Type>
@@ -5270,6 +5886,209 @@
 			<CivilizationActionSound>AS3D_SUMERIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_SWAHILI</Type>
+			<Description>TXT_KEY_CIV_SWAHILI_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_SWAHILI_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_SWAHILI_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_SWAHILI_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_SWAHILI</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_SWAHILI</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
+			<Identifier>SWA</Identifier>
+			<StartingYear>960</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>2</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Madingou</City>
+				<City>Mindouli</City>
+				<City>Kimpese</City>
+				<City>N'dalatando</City>
+				<City>Uige</City>
+				<City>Massango</City>
+				<City>Boma</City>
+				<City>Tshela</City>
+				<City>Negage</City>
+				<City>Mossendjo</City>
+				<City>Djambala</City>
+				<City>Mushie</City>
+				<City>Songo</City>
+				<City>Kikwit</City>
+				<City>Kutu</City>
+				<City>Bolobo</City>
+				<City>Gamboma</City>
+				<City>Kasongo-Lunda</City>
+				<City>Popokabaka</City>
+				<City>Idiofa</City>
+				<City>Bulungu</City>
+				<City>Caxito</City>
+				<City>Inongo</City>
+				<City>Sibiti</City>
+				<City>Soyo</City>
+				<City>Muanda</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<BuildingType>BUILDING_SWAHILI_ZIARA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_COG</UnitClassType>
+					<UnitType>UNIT_SWAHILI_DHOW</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_SHIRAZI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_DAWUD</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BARGHASH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ETHIOPIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_PERSIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_PERSIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_SWEDEN</Type>
+			<Description>TXT_KEY_CIV_SWEDEN_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_SWEDEN_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_SWEDEN_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_SWEDISH_BLUE_AND_YELLOW</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_SWEDEN</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
+			<Identifier>SWE</Identifier>
+			<StartingYear>1523</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>40</LoadingTime>
+				<LoadingTime>20</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Birka</City>
+				<City>Sigtuna</City>
+				<City>V&#228;ster&#229;s</City>
+				<City>Lund</City>
+				<City>L&#246;d&#246;se</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
+					<BuildingType>BUILDING_SWEDEN_RIKSBANK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitType>UNIT_SWEDEN_KAROLIN</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_GUSTAV_VASA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_GUSTAV</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KARL_XII</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_VIKINGS</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_VIKING_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_VIKING_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_TAMILS</Type>
 			<Description>TXT_KEY_CIV_TAMILS_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_TAMILS_SHORT_DESC</ShortDescription>
@@ -5624,6 +6443,123 @@
 			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_VIETNAM</Type>
+			<Description>TXT_KEY_CIV_VIETNAM_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_VIETNAM_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_VIETNAM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_VIETNAM_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_ORANGE_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_VIETNAM</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
+			<Identifier>VIE</Identifier>
+			<StartingYear>-257</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Sai Gon</City>
+				<City>Da Lat</City>
+				<City>Thang Hoa</City>
+				<City>Nha Trang</City>
+				<City>My Tho</City>
+				<City>Long Xuyen</City>
+				<City>Rach Gia</City>
+				<City>Vinh</City>
+				<City>Hai Phong</City>
+				<City>Hong Gai</City>
+				<City>Ha Giang</City>
+				<City>Buon Me Thuot</City>
+				<City>Qui Nhon</City>
+				<City>Cam Lam</City>
+				<City>Lang Son</City>
+				<City>Hoa Binh</City>
+				<City>Lai Chau</City>
+				<City>Song Doc</City>
+				<City>Tay Ninh</City>
+				<City>Bien Hoa</City>
+				<City>Pleiku</City>
+				<City>Viet Tri</City>
+				<City>Nam Dinh</City>
+				<City>Vung Tau</City>
+				<City>Thai Nguyen</City>
+				<City>Ha Long</City>
+				<City>Hoi An</City>
+				<City>Vinh Long</City>
+				<City>Mong Cai</City>
+				<City>Thu Dau Mot</City>
+				<City>Kim Bong</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
+					<BuildingType>BUILDING_VIETNAM_DINH</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
+					<UnitType>UNIT_VIETNAM_RATTAN_ARCHER</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TRUNG</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_CHIEU_HOANG</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HO_CHI_MINH</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_THAILAND</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_VIKING</Type>
 			<Description>TXT_KEY_CIV_VIKING_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_VIKING_SHORT_DESC</ShortDescription>
@@ -5652,13 +6588,9 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Birka</City>
-				<City>Sigtuna</City>
 				<City>Odense</City>
 				<City>Ribe</City>
 				<City>Lindholm</City>
-				<City>V&#228;ster&#229;s</City>
-				<City>Lund</City>
 				<City>Kaupang</City>
 				<City>Thingvellir</City>
 				<City>Stamford</City>
@@ -5673,7 +6605,6 @@
 				<City>Bj&#248;rgvin</City>
 				<City>T&#248;nsberg</City>
 				<City>Kirkjub&#248;ur</City>
-				<City>L&#246;d&#246;se</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -5719,7 +6650,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_GUSTAV</LeaderName>
+					<LeaderName>LEADER_CHRISTIAN_IV</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>

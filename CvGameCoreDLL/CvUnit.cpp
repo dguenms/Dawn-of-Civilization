@@ -9273,7 +9273,7 @@ int CvUnit::maxXPValue() const
 
 int CvUnit::firstStrikes() const
 {
-	return std::max(0, (m_pUnitInfo->getFirstStrikes() + getExtraFirstStrikes()));
+	return std::max(0, (m_pUnitInfo->getFirstStrikes() + getExtraFirstStrikes() + (isGuerillaBonus() ? 2 : 0)));
 }
 
 
@@ -10869,7 +10869,14 @@ int CvUnit::getFortifyTurns() const
 
 void CvUnit::setFortifyTurns(int iNewValue)
 {
-	iNewValue = range(iNewValue, 0, GC.getDefineINT("MAX_FORTIFY_TURNS"));
+	int iMaxFortifyTurns = GC.getDefineINT("MAX_FORTIFY_TURNS");
+	
+	if (getOwnerINLINE() == NIGERIA && isFortifyable())
+	{
+		iMaxFortifyTurns *= 2;
+	}
+	
+	iNewValue = range(iNewValue, 0, iMaxFortifyTurns);
 
 	if (iNewValue != getFortifyTurns())
 	{
@@ -14432,4 +14439,50 @@ SpecialistTypes CvUnit::getSettledSpecialist() const
 bool CvUnit::isWorker() const
 {
 	return m_pUnitInfo->isWorker();
+}
+
+// Merijn: Vietnamese UP
+bool CvUnit::isGuerillaBonus() const
+{
+	CvPlot* pPlot;
+	pPlot = plot();
+	int iTerrainModifier;
+	
+	if (!(getOwner() == VIETNAM))
+	{
+		return false;
+	}
+	
+	if (isMechUnit())
+	{
+		return false;
+	}
+	
+	if (pPlot->isWater())
+	{
+		return false;
+	}
+	
+	if (pPlot->isHills())
+	{
+		return true;
+	}
+	
+	iTerrainModifier = (!(pPlot->getFeatureType() == NO_FEATURE) ? GC.getFeatureInfo(pPlot->getFeatureType()).getDefenseModifier() : 0);
+	
+	if (iTerrainModifier > 0)
+	{
+		return true;
+	}
+	
+	CvCity* pCity = pPlot->getPlotCity();
+	if (pCity != NULL)
+	{
+		if (pCity->getOwnerINLINE() == VIETNAM)
+		{
+			return true;
+		}
+	}
+	
+	return false;
 }

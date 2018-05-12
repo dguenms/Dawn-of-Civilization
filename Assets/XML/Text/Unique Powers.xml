@@ -36,6 +36,22 @@
 		<Spanish>La religi&#243;n oficial se propaga con los templos y catedrales a las ciudades conquistadas</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_AUS_TITLE</Tag>
+		<English>The Power of Mining Industry:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_AUS</Tag>
+		<English>Mines on the mining resources provide doubled [ICON_PRODUCTION] and [ICON_COMMERCE] increment.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ARG_TITLE</Tag>
 		<English>The Power of Juntas:</English>
 		<German>Die Macht der Juntas:</German>
@@ -76,6 +92,22 @@
 		<German>Erhält eine weitere Technologie für die ersten vier entdeckten Technologien</German>
 		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BOE_TITLE</Tag>
+		<English>The Power of Voortrekkers:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BOE</Tag>
+		<English>Additional infrastructure in new and acquired cities</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
@@ -428,6 +460,22 @@
 		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Bef&#246;rderung</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_MAM_TITLE</Tag>
+		<English>The Power of Madaris:</English>
+		<French>Translation</French>
+		<German>Translation</German>
+		<Italian>Translation</Italian>
+		<Spanish>Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAM</Tag>
+		<English>+2 [ICON_RESEARCH] to science buildings</English>
+		<French>Translation</French>
+		<German>Translation</German>
+		<Italian>Translation</Italian>
+		<Spanish>Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
 		<English>The Power of Wealth:</English>
 		<French>Le Pouvoir de la Richesse :</French>
@@ -442,6 +490,22 @@
 		<German>+1 Kommerz auf jedem Land-Gel&#228;ndefeld</German>
 		<Italian>+1 commercio in ogni casella di terra</Italian>
 		<Spanish>+1 intercambio en cada casilla de tierra</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAN_TITLE</Tag>
+		<English>The Power of Prosperity:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAN</Tag>
+		<English>Improved resources adjacent to cities provide additional food and production</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
@@ -537,6 +601,22 @@
 		<German>Städte erhalten die Hälfte der Baukosten als Kultur, wenn ein Gebäude errichtet wird</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_NIG_TITLE</Tag>
+		<English>The Power of the Shield of the Warrior King:</English>
+		<French>NThe Power of the Shield of the Warrior King:</French>
+		<German>The Power of the Shield of the Warrior King:</German>
+		<Italian>The Power of the Shield of the Warrior King:</Italian>
+		<Spanish>The Power of the Shield of the Warrior King:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NIG</Tag>
+		<English>Fortified units can get up to 50% defense bonus</English>
+		<French>Fortified units can get up to 50% defense bonus</French>
+		<German>Fortified units can get up to 50% defense bonus</German>
+		<Italian>Fortified units can get up to 50% defense bonus</Italian>
+		<Spanish>Fortified units can get up to 50% defense bonus</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
 		<English>The Power of Satrapy:</English>
 		<French>Le Pouvoir de la Satrapie :</French>
@@ -556,6 +636,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PLY</Tag>
 		<English>No penalties for cultural expansion over Ocean tiles</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PHI_TITLE</Tag>
+		<English>The Power of Embassies:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PHI</Tag>
+		<English>Naval units can establish embassies. Embassies provide 2 [ICON_GOLD] in your capital</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_ESTABLISH_EMBASSY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Establish Embassy[COLOR_REVERT][NEWLINE]Provides 2[ICON_GOLD] in your capital. Cannot lose contact with this civ.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
@@ -644,6 +748,38 @@
 		<Spanish>Las unidades navales nuevas reciben +2 puntos de movimiento</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_SWE_TITLE</Tag>
+		<English>The Power of Nobel Prizes:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWE</Tag>
+		<English>Settled Great People create two extra [ICON_HAPPY] and one extra [ICON_GOLD]</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWA_TITLE</Tag>
+		<English>The Power of Sea Trade:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_SWA</Tag>
+		<English>Foreign trade route yields increased by 100%</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<German>Die Macht der Thalassokratie:</German>
@@ -693,6 +829,22 @@
 		<German>Kann zwei zus&#228;tzliche Einheiten in St&#228;dten mit Nicht-Staatsreligionen rekrutieren</German>
 		<Italian>La maggioranza di cultura straniera nelle citt&#224; turche &#232; convertita in cultura turca</Italian>
 		<Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_VIE_TITLE</Tag>
+		<English>The Power of Guerilla Warfare:</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_VIE</Tag>
+		<English>Units in cities, wooded plots and on hills have 2 first extra strikes</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>

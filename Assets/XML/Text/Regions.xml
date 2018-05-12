@@ -509,4 +509,93 @@
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_70</Tag>
+		<English>Skagerrak and Kattegat</English>
+		<French>Skagerrak et Kattegat</French>
+		<German>Skagerrak und Kattegat</German>
+		<Italian>Skagerrak e Kattegat</Italian>
+		<Spanish>Skagerrak y Kattegat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_71</Tag>
+		<English>Baltic Coast</English>
+		<French>C&#244;te Baltique</French>
+		<German>Ostseeküste</German>
+		<Italian>Costa del Mar Baltico</Italian>
+		<Spanish>Costa b&#225;ltica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_72</Tag>
+		<English>Australia</English>
+		<French>Australie</French>
+		<German>Australien</German>
+		<Italian>Australia</Italian>
+		<Spanish>Australia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_73</Tag>
+		<English>New Guinea</English>
+		<English>Australia</English>
+		<French>Nouvelle Guin&#233;e</French>
+		<German>Neu Guinea</German>
+		<Italian>AustraliaNuova Guinea</Italian>
+		<Spanish>Nueva Guinea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_74</Tag>
+		<English>Pacific Islands</English>
+		<French>&#206;les du Pacifique</French>
+		<German>Pazifische Inseln</German>
+		<Italian>Isole del Pacifico</Italian>
+		<Spanish>Islas del Pacifico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_75</Tag>
+		<English>Hejaz</English>
+		<French>Hedjaz</French>
+		<German>Hedschas</German>
+		<Italian>Hegiaz</Italian>
+		<Spanish>Hiyaz</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_76</Tag>
+		<English>Levant</English>
+		<French>Levante</French>
+		<German>Levante</German>
+		<Italian>Levante</Italian>
+		<Spanish>Levante</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_77</Tag>
+		<English>Lower Nile</English>
+		<French>Nil inf&#233;rieur</French>
+		<German>Niedriger Nil</German>
+		<Italian>Nilo inferiore</Italian>
+		<Spanish>Nilo inferior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_78</Tag>
+		<English>Lower Nile, North Africa</English>
+		<French>Nil inf&#233;rieur, Afrique du Nord</French>
+		<German>Niedriger Nil, Nordafrika</German>
+		<Italian>Nilo inferiore, Africa del Nord</Italian>
+		<Spanish>Nilo inferior, &#193;frica del Norte</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_79</Tag>
+		<English>China and Manchuria</English>
+		<French>China and Manchuria</French>
+		<German>China and Manchuria</German>
+		<Italian>China and Manchuria</Italian>
+		<Spanish>China and Manchuria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_80</Tag>
+		<English>Southern Africa</English>
+		<French>Afrique du sud</French>
+		<German>S&#252;dafrika</German>
+		<Italian>Africa meridionale</Italian>
+		<Spanish>Africa del Sur</Spanish>
+	</TEXT>
 </Civ4GameText>

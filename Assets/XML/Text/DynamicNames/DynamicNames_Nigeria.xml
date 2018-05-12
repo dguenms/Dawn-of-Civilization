@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Congo -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_DESC</Tag>
+		<English>The Nigerians</English>
+		<French>The Nigerians</French>
+		<German>The Nigerians</German>
+		<Italian>The Nigerians</Italian>
+		<Spanish>The Nigerians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_PEOPLES</Tag>
+		<English>Yoruba Peoples</English>
+		<French>Yoruba Peoples</French>
+		<German>Yoruba Peoples</German>
+		<Italian>Yoruba Peoples</Italian>
+		<Spanish>Yoruba Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_ADJECTIVE</Tag>
+		<English>Nigerian</English>
+		<French>Nigerian</French>
+		<German>Nigerian</German>
+		<Italian>Nigerian</Italian>
+		<Spanish>Nigerian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_SHORT_DESC</Tag>
+		<English>Nigeria</English>
+		<French>Nigeria</French>
+		<German>Nigeria</German>
+		<Italian>Nigeria</Italian>
+		<Spanish>Nigeria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_DEFAULT</Tag>
+		<English>Igodomigodo</English>
+		<French>Igodomigodo</French>
+		<German>Igodomigodo</German>
+		<Italian>Igodomigodo</Italian>
+		<Spanish>Igodomigodo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_BENIN</Tag>
+		<English>Benin</English>
+		<French>Benin</French>
+		<German>Benin</German>
+		<Italian>Benin</Italian>
+		<Spanish>Benin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_OYO</Tag>
+		<English>Oyo</English>
+		<French>Oyo</French>
+		<German>Oyo</German>
+		<Italian>Oyo</Italian>
+		<Spanish>Oyo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_IFE</Tag>
+		<English>Ife</English>
+		<French>Ife</French>
+		<German>Ife</German>
+		<Italian>Ife</Italian>
+		<Spanish>Ife</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_KANEM</Tag>
+		<English>Kanem</English>
+		<French>Kanem</French>
+		<German>Kanem</German>
+		<Italian>Kanem</Italian>
+		<Spanish>Kanem</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_KWARARAFA</Tag>
+		<English>Kwararafa</English>
+		<French>Kwararafa</French>
+		<German>Kwararafa</German>
+		<Italian>Kwararafa</Italian>
+		<Spanish>Kwararafa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_NRI</Tag>
+		<English>Nri</English>
+		<French>Nri</French>
+		<German>Nri</German>
+		<Italian>Nri</Italian>
+		<Spanish>Nri</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NIGERIA_NIGERIA</Tag>
+		<English>Nigeria</English>
+		<French>Nigeria</French>
+		<German>Nigeria</German>
+		<Italian>Nigeria</Italian>
+		<Spanish>V</Spanish>
+	</TEXT>
+</Civ4GameText>

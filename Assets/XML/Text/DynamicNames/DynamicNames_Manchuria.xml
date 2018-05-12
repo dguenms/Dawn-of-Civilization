@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- China -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_DESC</Tag>
+		<English>The Manchurians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_PEOPLES</Tag>
+		<English>Jurchen Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_DEFAULT</Tag>
+		<English>Empire of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_QING</Tag>
+		<English>the Great Qing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_ADJECTIVE</Tag>
+		<English>Manchurian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MANCHURIA_SHORT_DESC</Tag>
+		<English>Manchuria</English>
+	</TEXT>
+</Civ4GameText>

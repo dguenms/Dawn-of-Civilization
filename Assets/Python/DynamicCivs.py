@@ -50,6 +50,7 @@ dDefaultInsertNames = {
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCO",
 	iMughals : "TXT_KEY_CIV_MUGHALS_DELHI",
 	iHarappa : "TXT_KEY_CIV_HARAPPA_INDUS",
+	iBoers : "TXT_KEY_CIV_BOER_SOUTH_AFRICA",
 }
 
 dDefaultInsertAdjectives = {
@@ -99,6 +100,7 @@ dSpecificVassalTitles = {
 		iPersia : "TXT_KEY_CIV_BYZANTINE_PERSIA",
 		iRome : "TXT_KEY_CIV_BYZANTINE_ROME",
 		iSpain : "TXT_KEY_CIV_BYZANTINE_SPAIN",
+		iMamluks : "TXT_KEY_CIV_BYZANTINE_EGYPT",
 	},
 	iVikings : {
 		iEngland : "TXT_KEY_CIV_VIKING_ENGLAND",
@@ -143,9 +145,11 @@ dSpecificVassalTitles = {
 		iRussia : "TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF",
 		iPoland : "TXT_KEY_CIV_FRENCH_POLAND",
 		iNetherlands : "TXT_KEY_CIV_FRENCH_NETHERLANDS",
+		iMamluks : "TXT_KEY_MANDATE_OF",
 		iMali : "TXT_KEY_CIV_FRENCH_MALI",
 		iPortugal : "TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF",
 		iInca : "TXT_KEY_CIV_FRENCH_INCA",
+		iNigeria : "TXT_KEY_CIV_FRENCH_NIGERIA",
 		iAztecs : "TXT_KEY_CIV_FRENCH_AZTECS",
 		iMughals : "TXT_KEY_MANDATE_OF",
 		iCongo : "TXT_KEY_ADJECTIVE_TITLE",
@@ -166,8 +170,10 @@ dSpecificVassalTitles = {
 		iIndonesia : "TXT_KEY_CIV_ENGLISH_INDONESIA",
 		iFrance : "TXT_KEY_CIV_ENGLISH_FRANCE",
 		iHolyRome : "TXT_KEY_CIV_ENGLISH_HOLY_ROME",
+		iNigeria : "TXT_KEY_CIV_ENGLISH_NIGERIA",
 		iGermany : "TXT_KEY_CIV_ENGLISH_GERMANY",
 		iNetherlands : "TXT_KEY_CIV_ENGLISH_NETHERLANDS",
+		iMamluks : "TXT_KEY_MANDATE_OF",
 		iMali : "TXT_KEY_CIV_ENGLISH_MALI",
 		iTurkey : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_ENGLISH_AMERICA",
@@ -210,6 +216,7 @@ dSpecificVassalTitles = {
 		iRussia : "TXT_KEY_CIV_MONGOL_RUSSIA",
 		iTurkey : "TXT_KEY_CIV_MONGOL_TURKEY",
 		iMughals : "TXT_KEY_CIV_MONGOL_MUGHALS",
+		iMamluks : "TXT_KEY_CIV_MONGOL_ILKHANATE",
 	},
 	iMughals : {
 		iIndia : "TXT_KEY_CIV_MUGHAL_INDIA",
@@ -225,6 +232,7 @@ dSpecificVassalTitles = {
 		iArabia : "TXT_KEY_CIV_TURKISH_ARABIA",
 		iIndonesia : "TXT_KEY_CIV_TURKISH_INDONESIA",
 		iRussia : "TXT_KEY_CIV_TURKISH_RUSSIA",
+		iMamluks : "TXT_KEY_CIV_TURKISH_EGYPT",
 	},
 	iGermany : {
 		iHolyRome : "TXT_KEY_CIV_GERMAN_HOLY_ROME",
@@ -243,6 +251,10 @@ dSpecificVassalTitles = {
 	iBrazil : {
 		iArgentina : "TXT_KEY_CIV_BRAZILIAN_ARGENTINA",
 	},
+	iBoers	: {
+		iEngland : "TXT_KEY_CIV_BOER_ENGLAND",
+		iNetherlands : "TXT_KEY_CIV_BOER_NETHERLANDS",
+	}
 }
 
 dMasterTitles = {
@@ -299,6 +311,7 @@ dFascistVassalTitles = {
 		iHolyRome : "TXT_KEY_CIV_GERMANY_NAZI_HOLY_ROME",
 		iRussia : "TXT_KEY_CIV_GERMANY_NAZI_RUSSIA",
 		iNetherlands : "TXT_KEY_CIV_GERMANY_NAZI_NETHERLANDS",
+		iMamluks : "TXT_KEY_CIV_GERMANY_REICHSPROTEKTORAT",
 		iMali : "TXT_KEY_CIV_GERMANY_NAZI_MALI",
 		iPoland : "TXT_KEY_CIV_GERMANY_NAZI_POLAND",
 		iPortugal : "TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT",
@@ -324,6 +337,8 @@ dForeignAdjectives = {
 		iMongolia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA",
 		iTurkey : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TURKEY",
 		iTibet : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET",
+		iMamluks : "TXT_KEY_CIV_CHINESE_ADJECTIVE_EGYPT",
+		iVietnam : "TXT_KEY_CIV_CHINESE_ADJECTIVE_VIETNAM",
 	},
 }
 
@@ -355,6 +370,7 @@ dForeignNames = {
 		iMongolia : "TXT_KEY_CIV_ROMAN_NAME_MONGOLIA",
 		iTurkey : "TXT_KEY_CIV_ROMAN_NAME_TURKEY",
 		iThailand : "TXT_KEY_CIV_ROMAN_NAME_THAILAND",
+		iMamluks : "TXT_KEY_CIV_ROMAN_NAME_EGYPT",
 	},
 	iArabia : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
@@ -369,6 +385,7 @@ dForeignNames = {
 		iMoors : "TXT_KEY_CIV_ARABIAN_NAME_MOORS",
 		iSpain : "TXT_KEY_CIV_ARABIAN_NAME_SPAIN",
 		iPortugal : "TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL",
+		iMamluks : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
 	},
 	iMoors : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
@@ -382,6 +399,7 @@ dForeignNames = {
 		iMoors : "TXT_KEY_CIV_ARABIAN_NAME_MOORS",
 		iSpain : "TXT_KEY_CIV_ARABIAN_NAME_SPAIN",
 		iPortugal : "TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL",
+		iMamluks : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
 	},
 	iSpain : {
 		iKhmer : "TXT_KEY_CIV_SPANISH_NAME_KHMER",
@@ -391,6 +409,7 @@ dForeignNames = {
 	iFrance : {
 		iKhmer : "TXT_KEY_CIV_FRENCH_NAME_KHMER",
 		iMughals : "TXT_KEY_CIV_FRENCH_NAME_MUGHALS",
+		iVietnam : "TXT_KEY_CIV_FRENCH_NAME_VIETNAM",
 	},
 	iEngland : {
 		iKhmer : "TXT_KEY_CIV_ENGLISH_NAME_KHMER",
@@ -404,8 +423,8 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand]
-lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iMamluks, iPhilippines, iBoers, iVietnam]
+lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
 lSocialistRepublicAdj = [iPersia, iItaly, iAztecs, iArgentina]
@@ -432,6 +451,8 @@ dEmpireThreshold = {
 	iTibet : 2,
 	iPolynesia : 3,
 	iTamils : 3,
+	iNigeria : 3,
+	iSwahili : 4,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
@@ -450,7 +471,6 @@ dNameChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
 	iMali : "TXT_KEY_CIV_SONGHAI_SHORT_DESC",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
-	iVikings : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 }
 
@@ -461,7 +481,6 @@ dAdjectiveChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
 	iMali : "TXT_KEY_CIV_SONGHAI_ADJECTIVE",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
-	iVikings : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 }
 
@@ -469,16 +488,19 @@ dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
-	iVikings : ["Stockholm", "Oslo", "Nidaros", "Kalmar", "Roskilde"],
-	iKhmer : ["Pagan", "Dali", "Angkor", "Hanoi"],
+	iVikings : ["Oslo", "Nidaros", "Roskilde"],
+	iKhmer : ["Pagan", "Dali", "Angkor"],
 	iHolyRome : ["Buda"],
 	iRussia : ["Moskva", "Kiev"],
 	iItaly : ["Fiorenza", "Roma"],
 	iTamils : ["Madurai", "Thiruvananthapuram", "Cochin", "Kozhikode"],
 	iArabia : ["Dimashq"],
 	iSpain : ["La Paz", "Barcelona", "Valencia"],
+	iPhilippines : ["Tondo", "Butuan"],
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
+	iNigeria : ["Oyo", "Ife", "Njimi", "Igbo-Ukwu", "Wukari"],
 	iNetherlands : ["Brussels", "Antwerpen"],
+	iBoers : ["Pretoria", "Johannesburg", "Pietermaritzburg", "Durban"],
 }
 
 dCapitalLocations = findCapitalLocations(dCapitals)
@@ -499,6 +521,7 @@ dStartingLeaders = [
 	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iZaraYaqob,
+	iVietnam : iTrung,
 	iKorea : iWangKon,
 	iMaya : iPacal,
 	iByzantium : iJustinian,
@@ -514,21 +537,29 @@ dStartingLeaders = [
 	iHolyRome : iBarbarossa,
 	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
+	iPhilippines : iLapuLapu,
+	iSwahili : iShirazi,
+	iMamluks : iSaladin,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
 	iPortugal : iAfonso,
 	iInca : iHuaynaCapac,
 	iItaly : iLorenzo,
+	iNigeria : iOduduwa,
 	iMongolia : iGenghisKhan,
 	iAztecs : iMontezuma,
 	iMughals : iTughluq,
 	iTurkey : iMehmed,
 	iThailand : iNaresuan,
 	iCongo : iMbemba,
+	iSweden : iGustavVasa,
+	iManchuria : iKangxi,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
+	iAustralia : iCurtin,
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
+	iBoers : iKruger,
 	iCanada : iMacDonald,
 },
 # 600 AD
@@ -540,13 +571,15 @@ dStartingLeaders = [
 	iChina : iHongwu,
 	iIndia : iShahuji,
 	iPersia : iAbbas,
+	iVietnam : iHoChiMinh,
 	iJapan : iOdaNobunaga,
-	iVikings : iGustav,
+	iVikings : iChristian,
 	iSpain : iPhilip,
 	iFrance : iLouis,
 	iEngland : iVictoria,
 	iHolyRome : iFrancis,
 	iRussia : iPeter,
+	iSweden : iKarl,
 	iNetherlands : iWilliam,
 	iPoland : iSobieski,
 	iPortugal : iJoao,
@@ -564,9 +597,9 @@ def setup():
 		data.players[iChina].iAnarchyTurns += 3
 		
 	elif iScenario == i1700AD:
-		data.players[iEgypt].iResurrections += 1
+		# data.players[iEgypt].iResurrections += 1
 		
-		for iPlayer in [iVikings, iMoors]:
+		for iPlayer in [iMoors]:
 			nameChange(iPlayer)
 			adjectiveChange(iPlayer)
 	
@@ -635,11 +668,7 @@ def onTechAcquired(iPlayer, iTech):
 	
 	if iPlayer == iVikings:
 		if iEra == iRenaissance:
-			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-				setShort(iVikings, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
-				setAdjective(iVikings, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
-			
-			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+			if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 				setShort(iVikings, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
 				setAdjective(iVikings, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
 			
@@ -674,11 +703,7 @@ def onPalaceMoved(iPlayer):
 			
 	elif iPlayer == iVikings:
 		if iEra >= iRenaissance:
-			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-				setShort(iVikings, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
-				setAdjective(iVikings, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
-			
-			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+			if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 				setShort(iVikings, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
 				setAdjective(iVikings, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
 			
@@ -942,6 +967,8 @@ def republicName(iPlayer):
 	if iPlayer == iInca and data.players[iPlayer].iResurrections > 0: return None
 	
 	if iPlayer == iNetherlands and isCommunist(iPlayer): return "TXT_KEY_CIV_NETHERLANDS_ARTICLE"
+	
+	if iPlayer == iBoers: return "TXT_KEY_CIV_BOER_SOUTH_AFRICA"
 
 	return short(iPlayer)
 	
@@ -974,8 +1001,8 @@ def specificName(iPlayer):
 	
 	if iPlayer == iChina:
 		if bEmpire:
-			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
-				return "TXT_KEY_CIV_CHINA_QING"
+			# if iEra >= iIndustrial or utils.getScenario() == i1700AD:
+				# return "TXT_KEY_CIV_CHINA_QING"
 			
 			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
@@ -1011,6 +1038,18 @@ def specificName(iPlayer):
 		if not gc.getGame().isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
 			
+	elif iPlayer == iVietnam:
+		if iEra >= iDigital:
+			return "TXT_KEY_CIV_VIETNAM_SHORT_DESC"
+		
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_VIETNAM_VIET_NAM"
+			
+		if iEra >= iMedieval:
+			return "TXT_KEY_CIV_VIETNAM_DAI_VIET"
+			
+		return "TXT_KEY_CIV_VIETNAM_AU_LAC"
+			
 	elif iPlayer == iKorea:
 		if iEra == iClassical:
 			if bEmpire:
@@ -1035,21 +1074,21 @@ def specificName(iPlayer):
 			if not isCapital(iPlayer, ["Konstantinoupolis"]):
 				return capitalName(iPlayer)
 			
-	elif iPlayer == iVikings:	
-		if bEmpire:
-			if not isCapital(iPlayer, ["Stockholm", "Kalmar"]) or iEra > iRenaissance:
-				return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
+	elif iPlayer == iVikings:
+		# if bEmpire:
+		if iEra >= iRenaissance:
+			return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
 	
 		if isCapital(iPlayer, ["Oslo", "Nidaros"]):
 			return "TXT_KEY_CIV_VIKINGS_NORWAY"
 			
-		if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-			return "TXT_KEY_CIV_VIKINGS_SWEDEN"
-			
 		if isCapital(iPlayer, ["Roskilde"]):
 			return "TXT_KEY_CIV_VIKINGS_DENMARK"
 			
-		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
+		if not pSweden.isAlive():
+			return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
+			
+		return "TXT_KEY_CIV_VIKING_SHORT_DESC"
 		
 	elif iPlayer == iArabia:
 		if bResurrected:
@@ -1119,6 +1158,16 @@ def specificName(iPlayer):
 				
 			return capitalName(iPlayer)
 			
+	elif iPlayer == iPhilippines:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_PHILIPPINES_THE"
+	
+		if isCapital(iPlayer, ["Tondo"]):
+			return "TXT_KEY_CIV_PHILIPPINES_TONDO"
+			
+		if isCapital(iPlayer, ["Butuan"]):
+			return "TXT_KEY_CIV_PHILIPPINES_BUTUAN"
+			
 	elif iPlayer == iInca:
 		if bResurrected:
 			if isCapital(iPlayer, ["La Paz"]):
@@ -1135,9 +1184,34 @@ def specificName(iPlayer):
 				
 			return capitalName(iPlayer)
 			
+	elif iPlayer == iNigeria:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_NIGERIA_NIGERIA"
+			
+		if isCapital(iPlayer, ["Oyo"]):
+			return "TXT_KEY_CIV_NIGERIA_OYO"
+			
+		if isCapital(iPlayer, ["Ife"]):
+			return "TXT_KEY_CIV_NIGERIA_IFE"
+			
+		if isCapital(iPlayer, ["Njimi"]):
+			return "TXT_KEY_CIV_NIGERIA_KANEM"
+			
+		if isCapital(iPlayer, ["Igbo-Ukwu"]):
+			return "TXT_KEY_CIV_NIGERIA_NRI"
+			
+		if isCapital(iPlayer, ["Wukari"]):
+			return "TXT_KEY_CIV_NIGERIA_KWARARAFA"
+			
+		return "TXT_KEY_CIV_NIGERIA_BENIN"
+			
 	elif iPlayer == iThailand:
 		if iEra <= iRenaissance:
 			return "TXT_KEY_CIV_THAILAND_AYUTTHAYA"
+			
+	elif iPlayer == iSweden:
+		if iEra >= iIndustrial and (isAreaControlled(iPlayer, (58, 59), (61, 63)) and not pVikings.isAlive()) or getMaster(iVikings) == iPlayer:
+			return "TXT_KEY_CIV_SWEDEN_AND_NORWAY"
 			
 	elif iPlayer == iNetherlands:
 		if isCapital(iPlayer, ["Brussels", "Antwerpen"]):
@@ -1145,6 +1219,9 @@ def specificName(iPlayer):
 			
 		if bCityStates:
 			return short(iPlayer)
+			
+	elif iPlayer == iManchuria:
+		return "TXT_KEY_CIV_CHINA_QING"
 			
 	elif iPlayer == iGermany:
 		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
@@ -1208,18 +1285,18 @@ def specificAdjective(iPlayer):
 	
 	bMonarchy = not isCommunist(iPlayer) and not isFascist(iPlayer) and not isRepublic(iPlayer)
 	
-	if iPlayer == iEgypt:
-		if bMonarchy:
-			if bResurrected:
-				if tPlayer.isHasTech(iGunpowder):
-					return "TXT_KEY_CIV_EGYPT_MAMLUK"
+	# if iPlayer == iEgypt:
+		# if bMonarchy:
+			# if bResurrected:
+				# if tPlayer.isHasTech(iGunpowder):
+					# return "TXT_KEY_CIV_EGYPT_MAMLUK"
 		
-				if pArabia.isAlive():
-					return "TXT_KEY_CIV_EGYPT_FATIMID"
+				# if pArabia.isAlive():
+					# return "TXT_KEY_CIV_EGYPT_FATIMID"
 			
-				return "TXT_KEY_CIV_EGYPT_AYYUBID"
+				# return "TXT_KEY_CIV_EGYPT_AYYUBID"
 			
-	elif iPlayer == iIndia:
+	if iPlayer == iIndia:
 		if bMonarchy and not bCityStates:
 			if iEra >= iRenaissance:
 				return "TXT_KEY_CIV_INDIA_MARATHA"
@@ -1321,10 +1398,6 @@ def specificAdjective(iPlayer):
 		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
 			return gc.getPlayer(iRome).getCivilizationAdjective(0)
 			
-	elif iPlayer == iVikings:
-		if bEmpire:
-			return "TXT_KEY_CIV_VIKINGS_SWEDISH"
-			
 	elif iPlayer == iArabia:
 		if (bTheocracy or controlsHolyCity(iArabia, iIslam)) and iReligion == iIslam:
 			if not bEmpire:
@@ -1380,6 +1453,15 @@ def specificAdjective(iPlayer):
 			
 		if not bEmpire and iGameTurn < getTurnForYear(tBirth[iGermany]):
 			return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
+			
+	elif iPlayer == iMamluks:
+		if tPlayer.isHasTech(iGunpowder):
+			return "TXT_KEY_CIV_MAMLUKS_MAMLUK"
+
+		if pArabia.isAlive():
+			return "TXT_KEY_CIV_MAMLUKS_FATIMID"
+	
+		return "TXT_KEY_CIV_MAMLUKS_AYYUBID"
 			
 	elif iPlayer == iInca:
 		if bResurrected:
@@ -1551,12 +1633,12 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bWar = isAtWar(iPlayer)
 
 	if iPlayer == iEgypt:
-		if bResurrected:
-			if data.players[iPlayer].iResurrections < 2:
-				if iReligion == iIslam:
-					if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
-					return "TXT_KEY_SULTANATE_ADJECTIVE"
-				return "TXT_KEY_KINGDOM_ADJECTIVE"
+		# if bResurrected:
+			# if data.players[iPlayer].iResurrections < 2:
+				# if iReligion == iIslam:
+					# if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
+					# return "TXT_KEY_SULTANATE_ADJECTIVE"
+				# return "TXT_KEY_KINGDOM_ADJECTIVE"
 				
 		if iGreece in lPreviousOwners:
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
@@ -1666,6 +1748,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	# elif iPlayer == iVietnam:
+		# pass
 	
 	elif iPlayer == iKorea:
 		if iEra >= iIndustrial:
@@ -1705,10 +1790,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS"
 			
 		if bEmpire:
-			if iEra <= iMedieval:
-				return "TXT_KEY_CIV_VIKINGS_KALMAR_UNION"
-				
-			if iEra == iRenaissance or isCapital(iPlayer, ["Stockholm"]):
+			if iEra == iRenaissance and utils.getScenario() != i1700AD:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iArabia:
@@ -1725,9 +1807,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iKhmer:
 		if iEra <= iRenaissance and isCapital(iPlayer, ["Angkor"]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
-			
-		if isCapital(iPlayer, ["Hanoi"]):
-			return "TXT_KEY_CIV_KHMER_DAI_VIET"
 			
 	elif iPlayer == iIndonesia:
 		if iReligion == iIslam:
@@ -1808,6 +1887,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"
+			
+	elif iPlayer == iPhilippines:
+		if iReligion == iHinduism:
+			return "TXT_KEY_CIV_PHILIPPINES_RAJAHNATE"
+			
+	elif iPlayer == iMamluks:
+		if iReligion == iIslam:
+			if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
+			return "TXT_KEY_SULTANATE_ADJECTIVE"
+		return "TXT_KEY_KINGDOM_ADJECTIVE"
 
 	elif iPlayer == iNetherlands:
 		if bCityStates:
@@ -1866,6 +1955,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	elif iPlayer == iNigeria:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if isCapital(iPlayer, ["Wukari"]):
+			return "TXT_KEY_CONFEDERATION_OF"
+			
+		if iGameTurn >= getTurnForYear(1300):
+			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iMongolia:
 		if bEmpire:
@@ -1933,6 +2032,20 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_OF"
 			
+	elif iPlayer == iBoers:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_BOER_UNION"
+		
+		if bEmpire:
+			return "TXT_KEY_CIV_BOER_UNION"
+		
+		if isCapital(iPlayer, ["Pretoria", "Johannesburg"]):
+			return "TXT_KEY_CIV_BOER_TRANSVAAL"
+		if isCapital(iPlayer, ["Bloemfontein"]):
+			return "TXT_KEY_CIV_BOER_ORANGE_FREE_STATE"
+		if isCapital(iPlayer, ["Pietermaritzburg", "Durban"]):
+			return "TXT_KEY_CIV_BOER_NATALIA"
+			
 	return None
 			
 ### Leader methods ###
@@ -1967,10 +2080,6 @@ def leader(iPlayer):
 	iGameEra = gc.getGame().getCurrentEra()
 	
 	if iPlayer == iEgypt:
-		if not bMonarchy and iEra >= iGlobal: return iNasser
-		
-		if bResurrected or utils.getScenario() >= i600AD: return iBaibars
-		
 		if getColumn(iPlayer) >= 4: return iCleopatra
 		
 	elif iPlayer == iIndia:
@@ -2037,6 +2146,11 @@ def leader(iPlayer):
 	elif iPlayer == iEthiopia:
 		if iEra >= iIndustrial: return iHaileSelassie
 		
+	elif iPlayer == iVietnam:
+		if iEra >= iGlobal: return iHoChiMinh
+		
+		if iEra >= iMedieval: return iChieuHoang
+		
 	elif iPlayer == iTamils:
 		if iEra >= iRenaissance: return iKrishnaDevaRaya
 		
@@ -2046,10 +2160,10 @@ def leader(iPlayer):
 	elif iPlayer == iVikings:
 		if iEra >= iGlobal: return iGerhardsen
 		
-		if iEra >= iRenaissance: return iGustav
+		if iEra >= iRenaissance: return iChristian
 		
 	elif iPlayer == iArabia:
-		if iGameTurn >= getTurnForYear(1000): return iSaladin
+		if iGameTurn >= getTurnForYear(1200): return iMustasim
 		
 	elif iPlayer == iTibet:
 		if iGameTurn >= getTurnForYear(1500): return iLobsangGyatso
@@ -2100,6 +2214,16 @@ def leader(iPlayer):
 			if iGameTurn >= getTurnForYear(1750): return iCatherine
 			
 			return iPeter
+			
+	elif iPlayer == iSwahili:
+		if iEra >= iIndustrial: return iBarghash
+		
+		if bEmpire: return iDawud
+		
+	elif iPlayer == iMamluks:
+		if not bMonarchy and iEra >= iGlobal: return iNasser
+		
+		if tPlayer.isHasTech(iGunpowder): return iBaibars
 		
 	elif iPlayer == iNetherlands:
 		if iGameTurn >= getTurnForYear(1650): return iWilliam
@@ -2128,6 +2252,11 @@ def leader(iPlayer):
 	
 		if iEra >= iIndustrial: return iCavour
 		
+	elif iPlayer == iNigeria:
+		if iEra >= iIndustrial: return iAminatu
+		
+		if iEra >= iRenaissance: return iEwuare
+		
 	elif iPlayer == iMongolia:
 		if iGameTurn >= getTurnForYear(1400): return iKublaiKhan
 		
@@ -2153,6 +2282,14 @@ def leader(iPlayer):
 				
 	elif iPlayer == iThailand:
 		if iEra >= iIndustrial: return iMongkut
+		
+	elif iPlayer == iSweden:
+		if iEra >= iIndustrial: return iKarl
+		
+		if bEmpire: return iGustav
+		
+	elif iPlayer == iManchuria:
+		if iEra >= iIndustrial: return iCixi
 
 	elif iPlayer == iGermany:
 		if isFascist(iPlayer): return iHitler
@@ -2169,6 +2306,12 @@ def leader(iPlayer):
 	
 	elif iPlayer == iBrazil:
 		if iEra >= iGlobal: return iVargas
+		
+	elif iPlayer == iAustralia:
+		if iEra >= iGlobal: return iMenzies
+		
+	elif iPlayer == iBoers:
+		if iEra >= iDigital: return iMandela
 		
 	elif iPlayer == iCanada:
 		if iEra >= iGlobal: return iTrudeau

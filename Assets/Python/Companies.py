@@ -12,14 +12,10 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
 
-iNumCompanies = 9
-
-(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
-
 tCompanyTechs = (iCompass, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
-lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
+lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings, iSweden] # Vikings too now
 
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)
@@ -151,6 +147,9 @@ class Companies:
 				iValue += 2
 			elif city.getRegionID() == rChina:
 				iValue -= 2
+		elif iCompany == iSteelIndustry:
+			if iOwner == iAustralia:
+				iValue += 2
 		
 		# geographical requirements
 		tPlot = (city.getX(), city.getY())
