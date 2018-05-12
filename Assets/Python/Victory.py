@@ -563,21 +563,21 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# third goal: acquire 4000 gold by trade by 1200 AD
 		if isPossible(iTamils, 2):
-			iTradeGold = 0.0
+			iTradeGold = 0
 			
 			# gold from city trade routes
 			iTradeCommerce = 0
 			for city in utils.getCityList(iTamils):
 				iTradeCommerce += city.getTradeYield(2)
-			iTradeGold += iTradeCommerce * pTamils.getCommercePercent(0) / 100.0
+			iTradeGold += iTradeCommerce * pTamils.getCommercePercent(0)
 			
 			# gold from per turn gold trade
 			for iPlayer in range(iNumPlayers):
-				iTradeGold += pTamils.getGoldPerTurnByPlayer(iPlayer) * 1.0
+				iTradeGold += pTamils.getGoldPerTurnByPlayer(iPlayer) * 100
 			
 			data.iTamilTradeGold += iTradeGold
 			
-			if int(data.iTamilTradeGold) >= utils.getTurns(4000):
+			if data.iTamilTradeGold / 100 >= utils.getTurns(4000):
 				win(iTamils, 2)
 				
 		if iGameTurn == getTurnForYear(1200):
@@ -1059,21 +1059,21 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iSwahili:
 		# first goal: acquire 4000 gold by trade by 1500 AD
 		if isPossible(iSwahili, 0):
-			iTradeGold = 0.0
+			iTradeGold = 0
 			
 			# gold from city trade routes
 			iTradeCommerce = 0
 			for city in utils.getCityList(iSwahili):
 				iTradeCommerce += city.getTradeYield(2)
-			iTradeGold += iTradeCommerce * pSwahili.getCommercePercent(0) / 100.0
+			iTradeGold += iTradeCommerce * pSwahili.getCommercePercent(0)
 			
 			# gold from per turn gold trade
 			for iPlayer in range(iNumPlayers):
-				iTradeGold += pSwahili.getGoldPerTurnByPlayer(iPlayer) * 1.0
+				iTradeGold += pSwahili.getGoldPerTurnByPlayer(iPlayer) * 100
 			
 			data.iSwahiliTradeGold += iTradeGold
 			
-			if int(data.iSwahiliTradeGold) >= utils.getTurns(4000):
+			if data.iSwahiliTradeGold / 100 >= utils.getTurns(4000):
 				win(iSwahili, 2)
 				
 		if iGameTurn == getTurnForYear(1500):
@@ -2208,11 +2208,11 @@ def onPlayerGoldTrade(iPlayer, iGold):
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
 		if isPossible(iTamils, 2):
-			data.iTamilTradeGold += iGold * 1.0
+			data.iTamilTradeGold += iGold * 100
 	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
 	elif iPlayer == iSwahili:
 		if isPossible(iSwahili, 0):
-			data.iSwahiliTradeGold += iGold * 1.0
+			data.iSwahiliTradeGold += iGold * 100
 		
 def onPlayerSlaveTrade(iPlayer, iGold):
 
@@ -2227,10 +2227,10 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
-		data.iTamilTradeGold += iGold * 1.0
+		data.iTamilTradeGold += iGold * 100
 	# first Swahili goal: acquire 4000 gold by trade by 1500 AD
 	elif iPlayer == iSwahili:
-		data.iSwahiliTradeGold += iGold * 1.0
+		data.iSwahiliTradeGold += iGold * 100
 		
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iPlayer == iMali:
@@ -3846,7 +3846,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSrivijaya = isControlledOrVassalized(iTamils, utils.getPlotList(tSrivijayaTL, tSrivijayaBR))
 			aHelp.append(getIcon(bDeccan) + localText.getText("TXT_KEY_VICTORY_DECCAN", ()) + ' ' + getIcon(bSrivijaya) + localText.getText("TXT_KEY_VICTORY_SRIVIJAYA", ()))
 		elif iGoal == 2:
-			iTradeGold = int(data.iTamilTradeGold)
+			iTradeGold = data.iTamilTradeGold / 100
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iEthiopia:
@@ -4096,7 +4096,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iSwahili:
 		if iGoal == 0:
-			iTradeGold = int(data.iSwahiliTradeGold)
+			iTradeGold = data.iSwahiliTradeGold / 100
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iMamluks:
