@@ -1381,6 +1381,9 @@ def specificAdjective(iPlayer):
 		if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 			
+		if utils.isPlotInArea(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][0]):
+			return "TXT_KEY_CIV_TURKS_SELJUK"
+			
 		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 			
@@ -1796,6 +1799,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_TURKS_KHANATE_OF"
 				
 			if iReligion == iIslam:
+				if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+					return "TXT_KEY_SULTANATE_ADJECTIVE"
+			
 				return "TXT_KEY_SULTANATE_OF"
 				
 			return "TXT_KEY_KINGDOM_OF"
