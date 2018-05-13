@@ -25864,6 +25864,7 @@ BeginPlot
 	x=58,y=29
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=33,53,54,
@@ -26350,7 +26351,7 @@ BeginPlot
 	x=59,y=28
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=33,53,54,
@@ -26911,7 +26912,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=25
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,25,33,44,
@@ -27487,7 +27488,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=26
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	BonusType=BONUS_COTTON
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=33,
