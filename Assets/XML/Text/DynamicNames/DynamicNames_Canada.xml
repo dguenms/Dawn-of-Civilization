@@ -4,18 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_DESC</Tag>
 		<English>The Canadians</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Canadians</French>
+		<German>The Canadians</German>
+		<Italian>The Canadians</Italian>
+		<Spanish>The Canadians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_PEOPLES</Tag>
 		<English>Canadian Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Canadian Peoples</French>
+		<German>Canadian Peoples</German>
+		<Italian>Canadian Peoples</Italian>
+		<Spanish>Canadian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_DEFAULT</Tag>
@@ -68,10 +68,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_COMMUNIST</Tag>
 		<English>%s2 Worker's Commonwealth</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Worker's Commonwealth</French>
+		<German>%s2 Worker's Commonwealth</German>
+		<Italian>%s2 Worker's Commonwealth</Italian>
+		<Spanish>%s2 Worker's Commonwealth</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_FASCIST</Tag>
@@ -100,17 +100,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_ADJECTIVE</Tag>
 		<English>Canadian</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Canadian</French>
+		<German>Canadian</German>
+		<Italian>Canadian</Italian>
+		<Spanish>Canadian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_SHORT_DESC</Tag>
 		<English>Canada</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Canada</French>
+		<German>Canada</German>
+		<Italian>Canada</Italian>
+		<Spanish>Canada</Spanish>
 	</TEXT>
 </Civ4GameText>

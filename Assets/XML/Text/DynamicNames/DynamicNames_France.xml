@@ -124,74 +124,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_FRANCIA</Tag>
 		<English>Francia</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Francia</French>
+		<German>Francia</German>
+		<Italian>Francia</Italian>
+		<Spanish>Francia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_FRANKISH</Tag>
 		<English>Frankish</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Frankish</French>
+		<German>Frankish</German>
+		<Italian>Frankish</Italian>
+		<Spanish>Frankish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_EXILE</Tag>
 		<English>Free %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Free %s1</French>
+		<German>Free %s1</German>
+		<Italian>Free %s1</Italian>
+		<Spanish>Free %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_LOUISIANA</Tag>
 		<English>Louisiana</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Louisiana</French>
+		<German>Louisiana</German>
+		<Italian>Louisiana</Italian>
+		<Spanish>Louisiana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
 		<English>Québec</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Québec</French>
+		<German>Québec</German>
+		<Italian>Québec</Italian>
+		<Spanish>Québec</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_BABYLONIA</Tag>
 		<English>French Mandate of Mesopotamia</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>French Mandate of Mesopotamia</French>
+		<German>French Mandate of Mesopotamia</German>
+		<Italian>French Mandate of Mesopotamia</Italian>
+		<Spanish>French Mandate of Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF</Tag>
 		<English>Départements of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Départements of %s1</French>
+		<German>Départements of %s1</German>
+		<Italian>Départements of %s1</Italian>
+		<Spanish>Départements of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_PHOENICIA</Tag>
 		<English>French Mandate of Lebanon</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>French Mandate of Lebanon</French>
+		<German>French Mandate of Lebanon</German>
+		<Italian>French Mandate of Lebanon</Italian>
+		<Spanish>French Mandate of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>
 		<English>Cisalpine Republic</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Cisalpine Republic</French>
+		<German>Cisalpine Republic</German>
+		<Italian>Cisalpine Republic</Italian>
+		<Spanish>Cisalpine Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_ETHIOPIA</Tag>
@@ -220,26 +220,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Latin Empire</French>
+		<German>Latin Empire</German>
+		<Italian>Latin Empire</Italian>
+		<Spanish>Latin Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_ENGLAND</Tag>
 		<English>Duchy of Normandy</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Duchy of Normandy</French>
+		<German>Duchy of Normandy</German>
+		<Italian>Duchy of Normandy</Italian>
+		<Spanish>Duchy of Normandy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_SPAIN</Tag>
 		<English>Spanish March</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Spanish March</French>
+		<German>Spanish March</German>
+		<Italian>Spanish March</Italian>
+		<Spanish>Spanish March</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_HOLY_ROME</Tag>
@@ -268,10 +268,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_NETHERLANDS</Tag>
 		<English>Batavian Republic</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Batavian Republic</French>
+		<German>Batavian Republic</German>
+		<Italian>Batavian Republic</Italian>
+		<Spanish>Batavian Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_MALI</Tag>
@@ -300,10 +300,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_POLAND</Tag>
 		<English>Duchy of Warsaw</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Duchy of Warsaw</French>
+		<German>Duchy of Warsaw</German>
+		<Italian>Duchy of Warsaw</Italian>
+		<Spanish>Duchy of Warsaw</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_INCA</Tag>
@@ -404,18 +404,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
 		<English>West India</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>West India</French>
+		<German>West India</German>
+		<Italian>West India</Italian>
+		<Spanish>West India</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_CONGO</Tag>
 		<English>%s2 Equatorial Africa</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Equatorial Africa</French>
+		<German>%s2 Equatorial Africa</German>
+		<Italian>%s2 Equatorial Africa</Italian>
+		<Spanish>%s2 Equatorial Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_ADJECTIVE</Tag>

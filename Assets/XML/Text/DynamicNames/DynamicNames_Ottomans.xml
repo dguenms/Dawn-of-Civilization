@@ -4,18 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
 		<English>The Ottomans</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Ottomans</French>
+		<German>The Ottomans</German>
+		<Italian>The Ottomans</Italian>
+		<Spanish>The Ottomans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
 		<English>Ottoman Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ottoman Peoples</French>
+		<German>Ottoman Peoples</German>
+		<Italian>Ottoman Peoples</Italian>
+		<Spanish>Ottoman Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
@@ -68,18 +68,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Pan-Turkic Empire</French>
+		<German>Pan-Turkic Empire</German>
+		<Italian>Pan-Turkic Empire</Italian>
+		<Spanish>Pan-Turkic Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMANS_OTTOMAN</Tag>
 		<English>Ottoman</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ottoman</French>
+		<German>Ottoman</German>
+		<Italian>Ottoman</Italian>
+		<Spanish>Ottoman</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
@@ -132,18 +132,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_EGYPT</Tag>
 		<English>Khedivate of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Khedivate of %s1</French>
+		<German>Khedivate of %s1</German>
+		<Italian>Khedivate of %s1</Italian>
+		<Spanish>Khedivate of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_BABYLONIA</Tag>
 		<English>Eyalet of Mesopotamia</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Eyalet of Mesopotamia</French>
+		<German>Eyalet of Mesopotamia</German>
+		<Italian>Eyalet of Mesopotamia</Italian>
+		<Spanish>Eyalet of Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_PERSIA</Tag>
@@ -196,10 +196,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_PHOENICIA</Tag>
 		<English>Eyalet of Syria</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Eyalet of Syria</French>
+		<German>Eyalet of Syria</German>
+		<Italian>Eyalet of Syria</Italian>
+		<Spanish>Eyalet of Syria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ETHIOPIA</Tag>
@@ -228,10 +228,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_BYZANTIUM</Tag>
 		<English>Eyalet of R&#251;m</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Eyalet of R&#251;m</French>
+		<German>Eyalet of R&#251;m</German>
+		<Italian>Eyalet of R&#251;m</Italian>
+		<Spanish>Eyalet of R&#251;m</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ARABIA</Tag>
@@ -260,18 +260,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_RUSSIA</Tag>
 		<English>Eyalet of Yedisan</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Eyalet of Yedisan</French>
+		<German>Eyalet of Yedisan</German>
+		<Italian>Eyalet of Yedisan</Italian>
+		<Spanish>Eyalet of Yedisan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_INDONESIA</Tag>
 		<English>Eyalet of Aceh</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Eyalet of Aceh</French>
+		<German>Eyalet of Aceh</German>
+		<Italian>Eyalet of Aceh</Italian>
+		<Spanish>Eyalet of Aceh</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ADJECTIVE</Tag>

@@ -4,10 +4,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_PEOPLES</Tag>
 		<English>Lombard Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Lombard Peoples</French>
+		<German>Lombard Peoples</German>
+		<Italian>Lombard Peoples</Italian>
+		<Spanish>Lombard Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DEFAULT</Tag>
@@ -36,10 +36,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_FASCIST</Tag>
 		<English>National Fascist %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>National Fascist %s1</French>
+		<German>National Fascist %s1</German>
+		<Italian>National Fascist %s1</Italian>
+		<Spanish>National Fascist %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_LEAGUE</Tag>
@@ -68,42 +68,42 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_LOMBARD</Tag>
 		<English>Lombard</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Lombard</French>
+		<German>Lombard</German>
+		<Italian>Lombard</Italian>
+		<Spanish>Lombard</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_TUSCANY</Tag>
 		<English>Tuscany</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Tuscany</French>
+		<German>Tuscany</German>
+		<Italian>Tuscany</Italian>
+		<Spanish>Tuscany</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
 		<English>%s2 Maritime Republics</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Maritime Republics</French>
+		<German>%s2 Maritime Republics</German>
+		<Italian>%s2 Maritime Republics</Italian>
+		<Spanish>%s2 Maritime Republics</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DUCHY_OF</Tag>
 		<English>Duchy of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Duchy of %s1</French>
+		<German>Duchy of %s1</German>
+		<Italian>Duchy of %s1</Italian>
+		<Spanish>Duchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATES</Tag>
 		<English>Papal States</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Papal States</French>
+		<German>Papal States</German>
+		<Italian>Papal States</Italian>
+		<Spanish>Papal States</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_ADJECTIVE</Tag>
@@ -116,10 +116,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DESC</Tag>
 		<English>The Italians</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Italians</French>
+		<German>The Italians</German>
+		<Italian>The Italians</Italian>
+		<Spanish>The Italians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_SHORT_DESC</Tag>

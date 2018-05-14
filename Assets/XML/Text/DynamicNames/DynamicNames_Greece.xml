@@ -76,10 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_REPUBLIC</Tag>
 		<English>Hellenic Republic</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Hellenic Republic</French>
+		<German>Hellenic Republic</German>
+		<Italian>Hellenic Republic</Italian>
+		<Spanish>Hellenic Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_COMMUNIST</Tag>
@@ -108,10 +108,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_FASCIST</Tag>
 		<English>Patriotic Alliance of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Patriotic Alliance of %s1</French>
+		<German>Patriotic Alliance of %s1</German>
+		<Italian>Patriotic Alliance of %s1</Italian>
+		<Spanish>Patriotic Alliance of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_LEAGUE</Tag>
@@ -140,58 +140,58 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_PERSIA</Tag>
 		<English>Seleucid Empire</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Seleucid Empire</French>
+		<German>Seleucid Empire</German>
+		<Italian>Seleucid Empire</Italian>
+		<Spanish>Seleucid Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_EGYPT</Tag>
 		<English>Ptolemaic Kingdom</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ptolemaic Kingdom</French>
+		<German>Ptolemaic Kingdom</German>
+		<Italian>Ptolemaic Kingdom</Italian>
+		<Spanish>Ptolemaic Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_INDIA</Tag>
 		<English>Greco-Bactrian Kingdom</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Greco-Bactrian Kingdom</French>
+		<German>Greco-Bactrian Kingdom</German>
+		<Italian>Greco-Bactrian Kingdom</Italian>
+		<Spanish>Greco-Bactrian Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_ROME</Tag>
 		<English>Magna Graecia</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Magna Graecia</French>
+		<German>Magna Graecia</German>
+		<Italian>Magna Graecia</Italian>
+		<Spanish>Magna Graecia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA</Tag>
 		<English>Macedonia</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Macedonia</French>
+		<German>Macedonia</German>
+		<Italian>Macedonia</Italian>
+		<Spanish>Macedonia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIAN</Tag>
 		<English>Macedonian</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Macedonian</French>
+		<German>Macedonian</German>
+		<Italian>Macedonian</Italian>
+		<Spanish>Macedonian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_NAME_TURKS</Tag>
 		<English>Transoxiana</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Transoxiana</French>
+		<German>Transoxiana</German>
+		<Italian>Transoxiana</Italian>
+		<Spanish>Transoxiana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_ADJECTIVE</Tag>

@@ -4,34 +4,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DESC</Tag>
 		<English>The Mughals</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Mughals</French>
+		<German>The Mughals</German>
+		<Italian>The Mughals</Italian>
+		<Spanish>The Mughals</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_ADJECTIVE</Tag>
 		<English>Pakistani</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Pakistani</French>
+		<German>Pakistani</German>
+		<Italian>Pakistani</Italian>
+		<Spanish>Pakistani</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_SHORT_DESC</Tag>
 		<English>Pakistan</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Pakistan</French>
+		<German>Pakistan</German>
+		<Italian>Pakistan</Italian>
+		<Spanish>Pakistan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_PEOPLES</Tag>
 		<English>Ghorid Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ghorid Peoples</French>
+		<German>Ghorid Peoples</German>
+		<Italian>Ghorid Peoples</Italian>
+		<Spanish>Ghorid Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DEFAULT</Tag>
@@ -60,10 +60,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_FASCIST</Tag>
 		<English>%s2 Military Government</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Military Government</French>
+		<German>%s2 Military Government</German>
+		<Italian>%s2 Military Government</Italian>
+		<Spanish>%s2 Military Government</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_DEFAULT</Tag>
@@ -92,49 +92,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_FASCIST</Tag>
 		<English>%s2 Military Government</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Military Government</French>
+		<German>%s2 Military Government</German>
+		<Italian>%s2 Military Government</Italian>
+		<Spanish>%s2 Military Government</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
 		<English>Delhi</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Delhi</French>
+		<German>Delhi</German>
+		<Italian>Delhi</Italian>
+		<Spanish>Delhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_VASSAL</Tag>
 		<English>Kewab of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Kewab of %s1</French>
+		<German>Kewab of %s1</German>
+		<Italian>Kewab of %s1</Italian>
+		<Spanish>Kewab of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
 		<English>Deccan Sultanates</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Deccan Sultanates</French>
+		<German>Deccan Sultanates</German>
+		<Italian>Deccan Sultanates</Italian>
+		<Spanish>Deccan Sultanates</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_ADJECTIVE</Tag>
 		<English>Mughal</English>
-		<French>No Translation</French>
+		<French>Mughal</French>
 		<German>Mogul</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<Italian>Mughal</Italian>
+		<Spanish>Mughal</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>
 		<English>Mughals</English>
-		<French>No Translation</French>
+		<French>Mughals</French>
 		<German>Moguln</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<Italian>Mughals</Italian>
+		<Spanish>Mughals</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -28,10 +28,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_PEOPLES</Tag>
 		<English>Indo-Aryan Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Indo-Aryan Peoples</French>
+		<German>Indo-Aryan Peoples</German>
+		<Italian>Indo-Aryan Peoples</Italian>
+		<Spanish>Indo-Aryan Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_DEFAULT</Tag>
@@ -84,66 +84,66 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MARATHA</Tag>
 		<English>Maratha</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Maratha</French>
+		<German>Maratha</German>
+		<Italian>Maratha</Italian>
+		<Spanish>Maratha</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAHAJANAPADAS</Tag>
 		<English>%s2 Mahajanapadas</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Mahajanapadas</French>
+		<German>%s2 Mahajanapadas</German>
+		<Italian>%s2 Mahajanapadas</Italian>
+		<Spanish>%s2 Mahajanapadas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAURYA</Tag>
 		<English>Maurya</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Maurya</French>
+		<German>Maurya</German>
+		<Italian>Maurya</Italian>
+		<Spanish>Maurya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_GUPTA</Tag>
 		<English>Gupta</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Gupta</French>
+		<German>Gupta</German>
+		<Italian>Gupta</Italian>
+		<Spanish>Gupta</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_PALA</Tag>
 		<English>Pala</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Pala</French>
+		<German>Pala</German>
+		<Italian>Pala</Italian>
+		<Spanish>Pala</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_VIJAYANAGARA</Tag>
 		<English>Vijayanagara</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Vijayanagara</French>
+		<German>Vijayanagara</German>
+		<Italian>Vijayanagara</Italian>
+		<Spanish>Vijayanagara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIAN_VASSAL</Tag>
 		<English>Janapada of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Janapada of %s1</French>
+		<German>Janapada of %s1</German>
+		<Italian>Janapada of %s1</Italian>
+		<Spanish>Janapada of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIAN_AZTECS</Tag>
 		<English>Aztec Janapada</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Aztec Janapada</French>
+		<German>Aztec Janapada</German>
+		<Italian>Aztec Janapada</Italian>
+		<Spanish>Aztec Janapada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_ADJECTIVE</Tag>

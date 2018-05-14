@@ -52,10 +52,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_DEFAULT</Tag>
 		<English>United Principalities of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>United Principalities of %s1</French>
+		<German>United Principalities of %s1</German>
+		<Italian>United Principalities of %s1</Italian>
+		<Spanish>United Principalities of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_REPUBLIC</Tag>
@@ -84,74 +84,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_COMMUNIST</Tag>
 		<English>United Socialist States of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>United Socialist States of %s1</French>
+		<German>United Socialist States of %s1</German>
+		<Italian>United Socialist States of %s1</Italian>
+		<Spanish>United Socialist States of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_FASCIST</Tag>
 		<English>New World Order</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>New World Order</French>
+		<German>New World Order</German>
+		<Italian>New World Order</Italian>
+		<Spanish>New World Order</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_CSA</Tag>
 		<English>Confederate States of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Confederate States of %s1</French>
+		<German>Confederate States of %s1</German>
+		<Italian>Confederate States of %s1</Italian>
+		<Spanish>Confederate States of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_ENGLAND</Tag>
 		<English>Airstrip One</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Airstrip One</French>
+		<German>Airstrip One</German>
+		<Italian>Airstrip One</Italian>
+		<Spanish>Airstrip One</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_JAPAN</Tag>
 		<English>Allied Council for %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Allied Council for %s1</French>
+		<German>Allied Council for %s1</German>
+		<Italian>Allied Council for %s1</Italian>
+		<Spanish>Allied Council for %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_GERMANY</Tag>
 		<English>US-Occupied %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>US-Occupied %s1</French>
+		<German>US-Occupied %s1</German>
+		<Italian>US-Occupied %s1</Italian>
+		<Spanish>US-Occupied %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_KOREA</Tag>
 		<English>Commander Naval Forces %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Commander Naval Forces %s1</French>
+		<German>Commander Naval Forces %s1</German>
+		<Italian>Commander Naval Forces %s1</Italian>
+		<Spanish>Commander Naval Forces %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_MEXICO</Tag>
 		<English>New Mexico</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>New Mexico</French>
+		<German>New Mexico</German>
+		<Italian>New Mexico</Italian>
+		<Spanish>New Mexico</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_MAYA</Tag>
 		<English>%s2 Yucatán</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Yucatán</French>
+		<German>%s2 Yucatán</German>
+		<Italian>%s2 Yucatán</Italian>
+		<Spanish>%s2 Yucatán</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_ADJECTIVE</Tag>

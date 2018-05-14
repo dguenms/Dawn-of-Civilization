@@ -4,10 +4,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_DESC</Tag>
 		<English>The Mexicans</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Mexicans</French>
+		<German>The Mexicans</German>
+		<Italian>The Mexicans</Italian>
+		<Spanish>The Mexicans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
@@ -37,7 +37,7 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>No Translation</German>
+		<German>Mexican</German>
 		<Italian>
 			<Text>Messicani</Text>
 			<Gender>Male</Gender>
@@ -52,10 +52,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_PEOPLES</Tag>
 		<English>Mexican Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Mexican Peoples</French>
+		<German>Mexican Peoples</German>
+		<Italian>Mexican Peoples</Italian>
+		<Spanish>Mexican Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_DEFAULT</Tag>
@@ -132,9 +132,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_FASCIST</Tag>
 		<English>Synarchist Union of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Synarchist Union of %s1</French>
+		<German>Synarchist Union of %s1</German>
+		<Italian>Synarchist Union of %s1</Italian>
+		<Spanish>Synarchist Union of %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

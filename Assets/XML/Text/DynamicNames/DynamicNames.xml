@@ -4,26 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_OF</Tag>
 		<English>Peoples of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Peoples of %s1</French>
+		<German>Peoples of %s1</German>
+		<Italian>Peoples of %s1</Italian>
+		<Spanish>Peoples of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_ADJECTIVE</Tag>
 		<English>%s2 Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Peoples</French>
+		<German>%s2 Peoples</German>
+		<Italian>%s2 Peoples</Italian>
+		<Spanish>%s2 Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPIRE_OF</Tag>
 		<English>Empire of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Empire of %s1</French>
+		<German>Empire of %s1</German>
+		<Italian>Empire of %s1</Italian>
+		<Spanish>Esmpire of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPIRE_ADJECTIVE</Tag>
@@ -76,10 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_KINGDOM_ADJECTIVE</Tag>
 		<English>%s2 Kingdom</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REPUBLIC_OF</Tag>
@@ -132,10 +132,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_OF</Tag>
 		<English>Socialist Republic of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Socialist Republic of %s1</French>
+		<German>Socialist Republic of %s1</German>
+		<Italian>Socialist Republic of %s1</Italian>
+		<Spanish>Socialist Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_ADJECTIVE</Tag>
@@ -236,18 +236,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 People's Republic</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 People's Republic</French>
+		<German>%s2 People's Republic</German>
+		<Italian>%s2 People's Republic</Italian>
+		<Spanish>%s2 People's Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STATES_OF</Tag>
 		<English>City States of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>City States of %s1</French>
+		<German>City States of %s1</German>
+		<Italian>City States of %s1</Italian>
+		<Spanish>City States of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_STATES_ADJECTIVE</Tag>
@@ -276,10 +276,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TITLE</Tag>
 		<English>%s2 %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 %s1</French>
+		<German>%s2 %s1</German>
+		<Italian>%s2 %s1</Italian>
+		<Spanish>%s2 %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CALIPHATE_ADJECTIVE</Tag>
@@ -380,10 +380,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONFEDERACY_ADJECTIVE</Tag>
 		<English>%s2 Confederacy</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Confederacy</French>
+		<German>%s2 Confederacy</German>
+		<Italian>%s2 Confederacy</Italian>
+		<Spanish>%s2 Confederacy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_OF</Tag>
@@ -412,10 +412,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 Islamic Republic</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Islamic Republic</French>
+		<German>%s2 Islamic Republic</German>
+		<Italian>%s2 Islamic Republic</Italian>
+		<Spanish>%s2 Islamic Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MANDATE_OF</Tag>
@@ -444,10 +444,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONFEDERATION_ADJECTIVE</Tag>
 		<English>%s2 Confederation</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Confederation</French>
+		<German>%s2 Confederation</German>
+		<Italian>%s2 Confederation</Italian>
+		<Spanish>%s2 Confederation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROTECTORATE_OF</Tag>

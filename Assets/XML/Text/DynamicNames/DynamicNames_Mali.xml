@@ -4,50 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_DESC</Tag>
 		<English>The Mandinka</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Mandinka</French>
+		<German>The Mandinka</German>
+		<Italian>The Mandinka</Italian>
+		<Spanish>The Mandinka</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_ADJECTIVE</Tag>
 		<English>Mande</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Mande</French>
+		<German>Mande</German>
+		<Italian>Mande</Italian>
+		<Spanish>Mande</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SONGHAI_ADJECTIVE</Tag>
 		<English>Songhai</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Songhai</French>
+		<German>Songhai</German>
+		<Italian>Songhai</Italian>
+		<Spanish>Songhai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SONGHAI_SHORT_DESC</Tag>
 		<English>Songhai</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Songhai</French>
+		<German>Songhai</German>
+		<Italian>Songhai</Italian>
+		<Spanish>Songhai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SONGHAI_DEFAULT</Tag>
 		<English>%s2 Empire</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Empire</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_PEOPLES</Tag>
 		<English>Mandinka Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Mandinka Peoples</French>
+		<German>Mandinka Peoples</German>
+		<Italian>Mandinka Peoples</Italian>
+		<Spanish>Mandinka Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_DEFAULT</Tag>
@@ -76,10 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_FASCIST</Tag>
 		<English>Military Committee of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Military Committee of %s1</French>
+		<German>Military Committee of %s1</German>
+		<Italian>Military Committee of %s1</Italian>
+		<Spanish>Military Committee of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_ADJECTIVE_OLD</Tag>

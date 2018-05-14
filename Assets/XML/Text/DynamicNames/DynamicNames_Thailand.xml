@@ -4,18 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_DESC</Tag>
 		<English>The Thais</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The Thais</French>
+		<German>The Thais</German>
+		<Italian>The Thais</Italian>
+		<Spanish>The Thais</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_PEOPLES</Tag>
 		<English>Thai Peoples</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Thai Peoples</French>
+		<German>Thai Peoples</German>
+		<Italian>Thai Peoples</Italian>
+		<Spanish>Thai Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_DEFAULT</Tag>
@@ -68,49 +68,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_AYUTTHAYA</Tag>
 		<English>Ayutthaya</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ayutthaya</French>
+		<German>Ayutthaya</German>
+		<Italian>Ayutthaya</Italian>
+		<Spanish>Ayutthaya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SIAM</Tag>
 		<English>Siam</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Siam</French>
+		<German>Siam</German>
+		<Italian>Siam</Italian>
+		<Spanish>Siam</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SIAMESE</Tag>
 		<English>Siamese</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Siamese</French>
+		<German>Siamese</German>
+		<Italian>Siamese</Italian>
+		<Spanish>Siamese</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAI_VASSAL</Tag>
 		<English>Mueang of %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Mueang of %s1</French>
+		<German>Mueang of %s1</German>
+		<Italian>Mueang of %s1</Italian>
+		<Spanish>Mueang of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_ADJECTIVE</Tag>
 		<English>Thai</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Thai</French>
+		<German>Thai</German>
+		<Italian>Thai</Italian>
+		<Spanish>Thai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SHORT_DESC</Tag>
 		<English>Thailand</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Thailand</French>
+		<German>Thailand</German>
+		<Italian>Thailand</Italian>
+		<Spanish>Thailand</Spanish>
 	</TEXT>
 </Civ4GameText>

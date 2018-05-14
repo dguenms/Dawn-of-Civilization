@@ -124,58 +124,58 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_TIMURID</Tag>
 		<English>Timurid</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Timurid</French>
+		<German>Timurid</German>
+		<Italian>Timurid</Italian>
+		<Spanish>Timurid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_HULAGU</Tag>
 		<English>Hulagu</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Hulagu</French>
+		<German>Hulagu</German>
+		<Italian>Hulagu</Italian>
+		<Spanish>Hulagu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_ILKHANATE</Tag>
 		<English>Ilkhanate</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ilkhanate</French>
+		<German>Ilkhanate</German>
+		<Italian>Ilkhanate</Italian>
+		<Spanish>Ilkhanate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_KHANATE</Tag>
 		<English>%s2 Khanate</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>%s2 Khanate</French>
+		<German>%s2 Khanate</German>
+		<Italian>%s2 Khanate</Italian>
+		<Spanish>%s2 Khanate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_CHAGATAI</Tag>
 		<English>Chagatai</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Chagatai</French>
+		<German>Chagatai</German>
+		<Italian>Chagatai</Italian>
+		<Spanish>Chagatai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_YUAN</Tag>
 		<English>Yuan</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Yuan</French>
+		<German>Yuan</German>
+		<Italian>Yuan</Italian>
+		<Spanish>Yuan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_KHAMAG</Tag>
 		<English>Khamag Mongol</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Khamag Mongol</French>
+		<German>Khamag Mongol</German>
+		<Italian>Khamag Mongol</Italian>
+		<Spanish>Khamag Mongol</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_VASSAL</Tag>
@@ -228,26 +228,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_CHINA</Tag>
 		<English>Yuan Khanate</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Yuan Khanate</French>
+		<German>Yuan Khanate</German>
+		<Italian>Yuan Khanate</Italian>
+		<Spanish>Yuan Khanate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_BABYLONIA</Tag>
 		<English>Ilkhanate of Mesopotamia</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ilkhanate of Mesopotamia</French>
+		<German>Ilkhanate of Mesopotamia</German>
+		<Italian>Ilkhanate of Mesopotamia</Italian>
+		<Spanish>Ilkhanate of Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_PHOENICIA</Tag>
 		<English>Ilkhanate of Syria</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Ilkhanate of Syria</French>
+		<German>Ilkhanate of Syria</German>
+		<Italian>Ilkhanate of Syria</Italian>
+		<Spanish>Ilkhanate of Syria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_BYZANTIUM</Tag>
@@ -324,26 +324,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_MUGHALS</Tag>
 		<English>Khanate of Delhi</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Khanate of Delhi</French>
+		<German>Khanate of Delhi</German>
+		<Italian>Khanate of Delhi</Italian>
+		<Spanish>Khanate of Delhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_MONGOL</Tag>
 		<English>Mongol</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Mongol</French>
+		<German>Mongol</German>
+		<Italian>Mongol</Italian>
+		<Spanish>Mongol</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_NAME_TURKS</Tag>
 		<English>Moghulistan</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Moghulistan</French>
+		<German>Moghulistan</German>
+		<Italian>Moghulistan</Italian>
+		<Spanish>Moghulistan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_ADJECTIVE</Tag>

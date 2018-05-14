@@ -76,10 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_FASCIST</Tag>
 		<English>Neo-Persian Empire</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Neo-Persian Empire</French>
+		<German>Neo-Persian Empire</German>
+		<Italian>Neo-Persian Empire</Italian>
+		<Spanish>Neo-Persian Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_DEFAULT</Tag>
@@ -108,66 +108,66 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_FASCIST</Tag>
 		<English>National-Socialist Workers' %s1</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>National-Socialist Workers' %s1</French>
+		<German>National-Socialist Workers' %s1</German>
+		<Italian>National-Socialist Workers' %s1</Italian>
+		<Spanish>National-Socialist Workers' %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_MEDIAN</Tag>
 		<English>Median</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Median</French>
+		<German>Median</German>
+		<Italian>Median</Italian>
+		<Spanish>Median</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_PARTHIAN</Tag>
 		<English>Parthian</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Parthian</French>
+		<German>Parthian</German>
+		<Italian>Parthian</Italian>
+		<Spanish>Parthian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_ACHAEMENID</Tag>
 		<English>Achaemenid</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Achaemenid</French>
+		<German>Achaemenid</German>
+		<Italian>Achaemenid</Italian>
+		<Spanish>Achaemenid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_SASSANID</Tag>
 		<English>Sassanid</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Sassanid</French>
+		<German>Sassanid</German>
+		<Italian>Sassanid</Italian>
+		<Spanish>Sassanid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_SAFAVID</Tag>
 		<English>Safavid</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Safavid</French>
+		<German>Safavid</German>
+		<Italian>Safavid</Italian>
+		<Spanish>Safavid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_QAJAR</Tag>
 		<English>Qajar</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Qajar</French>
+		<German>Qajar</German>
+		<Italian>Qajar</Italian>
+		<Spanish>Qajar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_PAHLAVI</Tag>
 		<English>Pahlavi</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Pahlavi</French>
+		<German>Pahlavi</German>
+		<Italian>Pahlavi</Italian>
+		<Spanish>Pahlavi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_VASSAL</Tag>
@@ -412,26 +412,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_NAME_INDONESIA</Tag>
 		<English>Malacca</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Malacca</French>
+		<German>Malacca</German>
+		<Italian>Malacca</Italian>
+		<Spanish>Malacca</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_NAME_TURKS</Tag>
 		<English>Sogdiana</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Sogdiana</French>
+		<German>Sogdiana</German>
+		<Italian>Sogdiana</Italian>
+		<Spanish>Sogdiana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_ADJECTIVE</Tag>
 		<English>Iranian</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Iranian</French>
+		<German>Iranian</German>
+		<Italian>Iranian</Italian>
+		<Spanish>Iranian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_DESC</Tag>
@@ -460,10 +460,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_SHORT_DESC</Tag>
 		<English>Iran</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Iran</French>
+		<German>Iran</German>
+		<Italian>Iran</Italian>
+		<Spanish>Iran</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_ADJECTIVE</Tag>

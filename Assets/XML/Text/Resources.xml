@@ -76,10 +76,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_COFFEE</Tag>
 		<English>Coffee</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Coffee</French>
+		<German>Coffee</German>
+		<Italian>Coffee</Italian>
+		<Spanish>Coffee</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_HIT_SINGLES</Tag>
@@ -132,33 +132,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_PEARL</Tag>
 		<English>Pearls</English>
-		<French>No Translation</French>
+		<French>Pearls</French>
 		<German>Perlen</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<Italian>Pearls</Italian>
+		<Spanish>Pearls</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TEA</Tag>
 		<English>Tea</English>
-		<French>No Translation</French>
+		<French>Tea</French>
 		<German>Tee</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<Italian>Tea</Italian>
+		<Spanish>Tea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TOBACCO</Tag>
 		<English>Tobacco</English>
-		<French>No Translation</French>
+		<French>Tobacco</French>
 		<German>Tabak</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<Italian>Tobacco</Italian>
+		<Spanish>Tobacco</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CAMEL</Tag>
 		<English>Camel</English>
-		<French>No Translation</French>
+		<French>Camel</French>
 		<German>Kamel</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<Italian>Camel</Italian>
+		<Spanish>Camel</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -28,105 +28,105 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]Apollo Program[COLOR_REVERT] is required to create the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] and [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT].</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]Apollo Program[COLOR_REVERT] is required to create the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] and [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT].</French>
+		<German>The [COLOR_PROJECT_TEXT]Apollo Program[COLOR_REVERT] is required to create the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] and [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT].</German>
+		<Italian>The [COLOR_PROJECT_TEXT]Apollo Program[COLOR_REVERT] is required to create the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] and [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]Apollo Program[COLOR_REVERT] is required to create the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] and [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_PERSECUTION</Tag>
 		<English>Persecution</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>Persecution</French>
+		<German>Persecution</German>
+		<Italian>Persecution</Italian>
+		<Spanish>Persecution</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_PERSECUTION_HELP</Tag>
 		<English>[ICON_BULLET]Removes one non-state religion from this city[NEWLINE][ICON_BULLET]Causes temporary disorder and unhappiness</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>[ICON_BULLET]Removes one non-state religion from this city[NEWLINE][ICON_BULLET]Causes temporary disorder and unhappiness</French>
+		<German>[ICON_BULLET]Removes one non-state religion from this city[NEWLINE][ICON_BULLET]Causes temporary disorder and unhappiness</German>
+		<Italian>[ICON_BULLET]Removes one non-state religion from this city[NEWLINE][ICON_BULLET]Causes temporary disorder and unhappiness</Italian>
+		<Spanish>[ICON_BULLET]Removes one non-state religion from this city[NEWLINE][ICON_BULLET]Causes temporary disorder and unhappiness</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_MANHATTAN_PROJECT_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT] is required to create [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT]. It also allows you to construct [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Bomb Shelters[COLOR_REVERT].</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT] is required to create [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT]. It also allows you to construct [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Bomb Shelters[COLOR_REVERT].</French>
+		<German>The [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT] is required to create [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT]. It also allows you to construct [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Bomb Shelters[COLOR_REVERT].</German>
+		<Italian>The [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT] is required to create [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT]. It also allows you to construct [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Bomb Shelters[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT] is required to create [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT]. It also allows you to construct [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Bomb Shelters[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SDI_STRATEGY</Tag>
 		<English>[COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] gives a fifty percent chance of intercepting nukes.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>[COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] gives a fifty percent chance of intercepting nukes.</French>
+		<German>[COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] gives a fifty percent chance of intercepting nukes.</German>
+		<Italian>[COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] gives a fifty percent chance of intercepting nukes.</Italian>
+		<Spanish>[COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] gives a fifty percent chance of intercepting nukes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_CASING_STRATEGY</Tag>
 		<English>[COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. Increases the chance of a successful mission for the spaceship.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>[COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. Increases the chance of a successful mission for the spaceship.</French>
+		<German>[COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. Increases the chance of a successful mission for the spaceship.</German>
+		<Italian>[COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. Increases the chance of a successful mission for the spaceship.</Italian>
+		<Spanish>[COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. Increases the chance of a successful mission for the spaceship.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_COCKPIT_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</French>
+		<German>The [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_DOCKING_BAY_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</French>
+		<German>The [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_ENGINE_STRATEGY</Tag>
 		<English>[COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>[COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</French>
+		<German>[COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</German>
+		<Italian>[COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</Italian>
+		<Spanish>[COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_LIFE_SUPPORT_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</French>
+		<German>The [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_STASIS_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</French>
+		<German>The [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] is required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SPACE_THRUSTERS_STRATEGY</Tag>
 		<English>[COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>[COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</French>
+		<German>[COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</German>
+		<Italian>[COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</Italian>
+		<Spanish>[COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_THE_INTERNET_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
+		<French>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</French>
+		<German>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</Spanish>
 	</TEXT>
 </Civ4GameText>
