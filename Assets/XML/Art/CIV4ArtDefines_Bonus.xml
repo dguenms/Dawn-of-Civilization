@@ -412,5 +412,42 @@
 			<Button>Art/Interface/Buttons/Resources/Cocoa.dds</Button>
 			<FontButtonIndex>43</FontButtonIndex>
 		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_OPIUM</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Opium/wheat.nif</NIF>
+			<KFM>Art/Terrain/Resources/Opium/wheat.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Opium.dds</Button>
+			<FontButtonIndex>44</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_RUBBER</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.25</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Rubber/silk.nif</NIF>
+			<KFM>Art/Terrain/Resources/Rubber/silk.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Rubber/silk.nif</SHADERNIF>
+			<Button>Art/Interface/Buttons/Resources/Rubber.dds</Button>
+			<FontButtonIndex>45</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_SALT</Type>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Salt/Marble.nif</NIF>
+			<KFM>Art/Terrain/Resources/Salt/Marble.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Salt.dds</Button>
+			<FontButtonIndex>46</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_JADE</Type>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Jade/Stone.nif</NIF>
+			<KFM>Art/Terrain/Resources/Jade/Stone.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Jade.dds</Button>
+			<FontButtonIndex>47</FontButtonIndex>
+		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>
