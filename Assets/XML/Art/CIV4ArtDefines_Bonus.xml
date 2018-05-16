@@ -449,5 +449,24 @@
 			<Button>Art/Interface/Buttons/Resources/Jade.dds</Button>
 			<FontButtonIndex>47</FontButtonIndex>
 		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_OBSIDIAN</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.5</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Obsidian/Gems.nif</NIF>
+			<KFM>Art/Terrain/Resources/Obsidian/Gems.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Obsidian/Gems.nif</SHADERNIF>
+			<Button>Art/Interface/Buttons/Resources/Obsidian.dds</Button>
+			<FontButtonIndex>48</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_RARE_EARTHS</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.1</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Rare Earths/Aluminum.nif</NIF>
+			<KFM>Art/Terrain/Resources/Rare Earths/Aluminum.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/RareEarths.dds</Button>
+			<FontButtonIndex>49</FontButtonIndex>
+		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>

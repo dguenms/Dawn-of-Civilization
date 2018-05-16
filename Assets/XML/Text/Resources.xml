@@ -176,4 +176,14 @@
 		<English>Jade</English>
 		<German>Jade</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_OBSIDIAN</Tag>
+		<English>Obsidian</English>
+		<German>Obsidian</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_RARE_EARTHS</Tag>
+		<English>Rare Earths</English>
+		<German>Seltene Erden</German>
+	</TEXT>
 </Civ4GameText>
