@@ -156,4 +156,24 @@
 		<English>Camel</English>
 		<German>Kamel</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_OPIUM</Tag>
+		<English>Opium</English>
+		<German>Opium</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_RUBBER</Tag>
+		<English>Rubber</English>
+		<German>Kautschuk</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SALT</Tag>
+		<English>Salt</English>
+		<German>Salz</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_JADE</Tag>
+		<English>Jade</English>
+		<German>Jade</German>
+	</TEXT>
 </Civ4GameText>
