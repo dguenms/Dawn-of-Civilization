@@ -253,7 +253,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
+		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FACTORY_STRATEGY</Tag>
@@ -720,7 +720,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</English>
+		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPERMARKET_STRATEGY</Tag>
@@ -765,7 +765,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
-		<German>Jüdische Synagoge</German>
+		<German>Jï¿½dische Synagoge</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
@@ -774,7 +774,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
-		<German>Jüdische Jeschiwa</German>
+		<German>Jï¿½dische Jeschiwa</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
@@ -783,7 +783,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
-		<German>Jüdischer Sanhedrin</German>
+		<German>Jï¿½discher Sanhedrin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
@@ -893,7 +893,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Basílica de San Pedro</Text>
+			<Text>Basï¿½lica de San Pedro</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -1149,7 +1149,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
-		<German>Zoroastrisches Königliches Feuer</German>
+		<German>Zoroastrisches Kï¿½nigliches Feuer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>
@@ -1352,68 +1352,136 @@
 		<English>Pesedjet Temple</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pesedjet Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Pesedjet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE</Tag>
 		<English>Ancestor Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ancestor Shrine[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shendao[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VEDIC_TEMPLE</Tag>
 		<English>Vedic Temple</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VEDIC_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Vedic Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Vedism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE</Tag>
 		<English>Olympian Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE</Tag>
 		<English>Baalist Temple</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Baalist Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATUA_SHRINE</Tag>
 		<English>Atua Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ATUA_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Atua Shrine[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Atua[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAZDAIST_TEMPLE</Tag>
 		<English>Mazdaist Temple</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAZDAIST_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Mazdaist Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mazdaism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEOTL_STEP_PYRAMID</Tag>
 		<English>Teotl Step Pyramid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTL_STEP_PYRAMID_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Teotl Step Pyramid[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Teotl[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHINTO_SHRINE</Tag>
 		<English>Shinto Shrine</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHINTO_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Shinto Shrine[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shinto[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ASATRU_HOF</Tag>
 		<English>Asatru Hof</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASATRU_HOF_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Asatru Hof[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Asatru[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DRUIDIC_NEMETON</Tag>
 		<English>Druidic Nemeton</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DRUIDIC_NEMETON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Druidic Nemeton[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Druidism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PERUN_SHRINE</Tag>
 		<English>Shrine of Perun</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PERUN_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Shrine of Perun[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Rodnovery[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_YORUBA_TEMPLE</Tag>
 		<English>Yoruba Temple</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_YORUBA_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Yoruba Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Yoruba[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INTI_TEMPLE</Tag>
 		<English>Inti Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INTI_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Inti Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Inti[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TENGRI_OBO</Tag>
 		<English>Tengri Obo</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TENGRI_OBO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Tengri Obo[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Tengri[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBAL_TEMPLE</Tag>
 		<English>Hubal Temple</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUBAL_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Hubal Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in the Arabian peninsula.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ASTAR_TEMPLE</Tag>
 		<English>Astar Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASTAR_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Astar Temple[COLOR_REVERT] replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] for Ethiopia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
