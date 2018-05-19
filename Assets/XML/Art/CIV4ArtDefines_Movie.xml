@@ -390,5 +390,9 @@
 			<Type>ART_DEF_MOVIE_SYDNEY_OPERA</Type>
 			<Path>Art/Movies/Wonders/Sydney_Opera_House.dds</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_ZIMBABWE</Type>
+			<Path>Art/Movies/Wonders/Great_Zimbabwe.dds</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

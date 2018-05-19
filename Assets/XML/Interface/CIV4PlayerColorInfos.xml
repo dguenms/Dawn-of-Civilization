@@ -456,5 +456,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_BROWNISH_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ORANGE_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_MIDDLE_RED_INDIGO</Type> <!-- Zimbabwe -->
+			<ColorTypePrimary>COLOR_PLAYER_MIDDLE_RED_INDIGO</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_MIDDLE_RED_INDIGO</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

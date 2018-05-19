@@ -1575,4 +1575,20 @@
 		<Italian>No Translation</Italian>
 		<Spanish>No Translation</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZIMBABWE_KRAAL</Tag>
+		<English>Kraal</English>
+		<French>Kraal</French>
+		<German>Kraal</German>
+		<Italian>Kraal</Italian>
+		<Spanish>Kraal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZIMBABWE_KRAAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Spanish>
+	</TEXT>
 </Civ4GameText>

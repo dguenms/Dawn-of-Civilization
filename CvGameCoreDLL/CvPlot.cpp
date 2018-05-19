@@ -7077,6 +7077,20 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		{
 			iYield += calculateImprovementYieldChange((ImprovementTypes)iAppliedImprovement, eYield, ePlayer);
 		}
+		
+		// Merijn: Zimbabwe UP: +2 production and commerce on city tiles
+		if (ePlayer == ZIMBABWE)
+		{
+			if (eYield == YIELD_PRODUCTION || eYield == YIELD_COMMERCE)
+			{
+				iYield += 2;
+			}
+		}
+		
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)GREAT_ZIMBABWE))
+		{
+			iYield += 1;
+		}
 	}
 
 	iYield += GC.getGameINLINE().getPlotExtraYield(m_iX, m_iY, eYield);

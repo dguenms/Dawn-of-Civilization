@@ -926,6 +926,30 @@
 		<Spanish>No Translation</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_ZIMBABWE</Tag>
+		<English>Great Zimbabwe</English>
+		<French>Great Zimbabwe</French>
+		<German>Great Zimbabwe</German>
+		<Italian>Great Zimbabwe</Italian>
+		<Spanish>Great Zimbabwe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_ZIMBABWE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Great Zimbabwe[COLOR_REVERT] adds extra food, production and commerce to all city tiles. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Great Zimbabwe[COLOR_REVERT] adds extra food, production and commerce to all city tiles. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Great Zimbabwe[COLOR_REVERT] adds extra food, production and commerce to all city tiles. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Great Zimbabwe[COLOR_REVERT] adds extra food, production and commerce to all city tiles. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Great Zimbabwe[COLOR_REVERT] adds extra food, production and commerce to all city tiles. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_ZIMBABWE_STRATEGY_HELP</Tag>
+		<English>[ICON_BULLET]All city tiles: +1[ICON_FOOD], +1[ICON_PRODUCTION], +1[ICON_COMMERCE]</English>
+		<French>[ICON_BULLET]All city tiles: +1[ICON_FOOD], +1[ICON_PRODUCTION], +1[ICON_COMMERCE]</French>
+		<German>[ICON_BULLET]All city tiles: +1[ICON_FOOD], +1[ICON_PRODUCTION], +1[ICON_COMMERCE]</German>
+		<Italian>[ICON_BULLET]All city tiles: +1[ICON_FOOD], +1[ICON_PRODUCTION], +1[ICON_COMMERCE]</Italian>
+		<Spanish>[ICON_BULLET]All city tiles: +1[ICON_FOOD], +1[ICON_PRODUCTION], +1[ICON_COMMERCE]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>

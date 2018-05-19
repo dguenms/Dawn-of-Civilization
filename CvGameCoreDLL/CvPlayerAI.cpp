@@ -5306,6 +5306,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									if (iI == COMBINED_ARMS || iI == CIVIL_LIBERTIES)
 										iValue *= 3;
+								case ZIMBABWE:
+									break;
 								case PORTUGAL:
 									if (iI == REPLACEABLE_PARTS)
 										iValue *= 2;

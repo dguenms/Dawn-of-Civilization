@@ -2397,6 +2397,54 @@
 		<German>Erwerben Sie bis 1500 n. Chr. 9000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ZIM1_TITLE</Tag>
+		<English>Homestead of Stone</English>
+		<French>Homestead of Stone</French>
+		<German>Homestead of Stone</German>
+		<Italian>Homestead of Stone</Italian>
+		<Spanish>Homestead of Stone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ZIM1</Tag>
+		<English>Build four castles and kraals and Great Zimbabwe and control them in 1400 AD</English>
+		<French>Build four castles and kraals and Great Zimbabwe and control them in 1400 AD</French>
+		<German>Build four castles and kraals and Great Zimbabwe and control them in 1400 AD</German>
+		<Italian>Build four castles and kraals and Great Zimbabwe and control them in 1400 AD</Italian>
+		<Spanish>Build four castles and kraals and Great Zimbabwe and control them in 1400 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ZIM2_TITLE</Tag>
+		<English>xxx</English>
+		<French>xxx</French>
+		<German>xxx</German>
+		<Italian>xxx</Italian>
+		<Spanish>xxx</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ZIM2</Tag>
+		<English>Monopolize Gold, Silver, Gems and Ivory in Sub-Saharan Africa in 1500 AD</English>
+		<French>Monopolize Gold, Silver, Gems and Ivory in Sub-Saharan Africa in 1500 AD</French>
+		<German>Monopolize Gold, Silver, Gems and Ivory in Sub-Saharan Africa in 1500 AD</German>
+		<Italian>Monopolize Gold, Silver, Gems and Ivory in Sub-Saharan Africa in 1500 AD</Italian>
+		<Spanish>Monopolize Gold, Silver, Gems and Ivory in Sub-Saharan Africa in 1500 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ZIM3_TITLE</Tag>
+		<English>The accidental crusade</English>
+		<French>The accidental crusade</French>
+		<German>The accidental crusade</German>
+		<Italian>The accidental crusade</Italian>
+		<Spanish>The accidental crusade</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ZIM3</Tag>
+		<English>Ensure there are no European colonies in Subequatorial Africa in 1700 AD</English>
+		<French>Ensure there are no European colonies in Subequatorial Africa in 1700 AD</French>
+		<German>Ensure there are no European colonies in Subequatorial Africa in 1700 AD</German>
+		<Italian>Ensure there are no European colonies in Subequatorial Africa in 1700 AD</Italian>
+		<Spanish>Ensure there are no European colonies in Subequatorial Africa in 1700 AD</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
 		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
 		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
@@ -3811,5 +3859,37 @@
 		<German>Largest army in Africa: %s1</German>
 		<Italian>Largest army in Africa: %s1</Italian>
 		<Spanish>Largest army in Africa: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MONOPOLY</Tag>
+		<English>Monopolized %s1</English>
+		<French>Monopolized %s1</French>
+		<German>Monopolized %s1</German>
+		<Italian>Monopolized %s1</Italian>
+		<Spanish>Monopolized %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CASTLES</Tag>
+		<English>Castles: %d1 / %d2</English>
+		<French>Castles: %d1 / %d2</French>
+		<German>Castles: %d1 / %d2</German>
+		<Italian>Castles: %d1 / %d2</Italian>
+		<Spanish>Castles: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_KRAALS</Tag>
+		<English>Kraals: %d1 / %d2</English>
+		<French>Kraals: %d1 / %d2</French>
+		<German>Kraals: %d1 / %d2</German>
+		<Italian>Kraals: %d1 / %d2</Italian>
+		<Spanish>Kraals: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT_ZIMBABWE</Tag>
+		<English>Currently no European colonies in Subequatorial Africa</English>
+		<French>Currently no European colonies in Subequatorial Africa</French>
+		<German>Currently no European colonies in Subequatorial Africa</German>
+		<Italian>Currently no European colonies in Subequatorial Africa</Italian>
+		<Spanish>Currently no European colonies in Subequatorial Africa</Spanish>
 	</TEXT>
 </Civ4GameText>

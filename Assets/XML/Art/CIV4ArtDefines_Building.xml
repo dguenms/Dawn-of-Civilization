@@ -2797,5 +2797,25 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Dinh/Button_Dinh.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ZIMBABWE_KRAAL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.05</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Kraal/MaasaiRanch.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Kraal/MAA_Ranch.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GREAT_ZIMBABWE</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Great_Zimbabwe/great_zimbabwe.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Great_Zimbabwe/Great_Zimbabwe_Button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -120,10 +120,7 @@ class Resources:
 			# prepare for Swahili
 			self.createResource(72, 24, iSugar) # East Africa
 			self.createResource(67, 11, iSugar) # South Africa
-			if data.isPlayerEnabled(iSwahili): # Prevent overlap with Quelimane
-				self.createResource(71, 17, iSugar) # Zimbabwe
-			else:
-				self.createResource(70, 17, iSugar) # Zimbabwe
+			self.createResource(70, 17, iSugar) # Zimbabwe
 			if utils.getHumanID() == iSwahili:
 				for x, y in lAustraliaCapes:
 					gc.getMap().plot(x, y).setFeatureType(iCape, 0)

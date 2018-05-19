@@ -1240,6 +1240,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	TRUNG,
 	CHIEUHOANG,
 	HOCHIMINH,
+	RUSVINGO,
+	MUTOTA,
 	NUM_LEADERHEADS
 };
 
@@ -1347,6 +1349,7 @@ enum PlayerTypes				// Exposed to Python
 	MAMLUKS,
 	MALI,
 	POLAND,
+	ZIMBABWE,
 	PORTUGAL,
 	INCA,
 	ITALY,

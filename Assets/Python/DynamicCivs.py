@@ -177,6 +177,7 @@ dSpecificVassalTitles = {
 		iMali : "TXT_KEY_CIV_ENGLISH_MALI",
 		iTurkey : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_ENGLISH_AMERICA",
+		iZimbabwe : "TXT_KEY_CIV_ENGLISH_ZIMBABWE",
 	},
 	iHolyRome : {
 		iItaly : "TXT_KEY_CIV_HOLY_ROMAN_ITALY",
@@ -423,7 +424,7 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iMamluks, iPhilippines, iBoers, iVietnam]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iTurkey, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings]
@@ -542,6 +543,7 @@ dStartingLeaders = [
 	iMamluks : iSaladin,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
+	iZimbabwe : iRusvingo,
 	iPortugal : iAfonso,
 	iInca : iHuaynaCapac,
 	iItaly : iLorenzo,
@@ -1167,6 +1169,21 @@ def specificName(iPlayer):
 			
 		if isCapital(iPlayer, ["Butuan"]):
 			return "TXT_KEY_CIV_PHILIPPINES_BUTUAN"
+			
+	elif iPlayer == iZimbabwe:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_ZIMBABWE_ZIMBABWE"
+	
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_ZIMBABWE_ROZWI"
+		
+		if iEra >= iRenaissance:
+			return "TXT_KEY_CIV_ZIMBABWE_MUTAPA"
+			
+		if iGameTurn >= 1220:
+			return "TXT_KEY_CIV_ZIMBABWE_GREAT"
+			
+		return "TXT_KEY_CIV_ZIMBABWE_MAPUNGUBWE"
 			
 	elif iPlayer == iInca:
 		if bResurrected:
@@ -1920,6 +1937,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if isCapital(iPlayer, ["Kowno", "Medvegalis", "Wilno", "Ryga"]):
 			return "TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF"
 			
+	elif iPlayer == iZimbabwe:
+		if iEra >= iRenaissance:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
 	elif iPlayer == iPortugal:
 		if utils.isPlotInCore(iBrazil, tCapitalCoords) and not pBrazil.isAlive():
 			return "TXT_KEY_CIV_PORTUGAL_BRAZIL"
@@ -2236,6 +2257,9 @@ def leader(iPlayer):
 		if iEra >= iRenaissance: return iSobieski
 		
 		if utils.getScenario() == i1700AD: return iSobieski
+		
+	elif iPlayer == iZimbabwe:
+		if iEra >= iRenaissance: return iMutota
 		
 	elif iPlayer == iPortugal:
 		if iEra >= iIndustrial: return iMaria

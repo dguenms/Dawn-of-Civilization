@@ -862,4 +862,20 @@
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ZIM_TITLE</Tag>
+		<English>The Power of Stone Cities:</English>
+		<French>The Power of Stone Cities:</French>
+		<German>The Power of Stone Cities:</German>
+		<Italian>The Power of Stone Cities:</Italian>
+		<Spanish>The Power of Stone Cities:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ZIM</Tag>
+		<English>Extra production and commerce on city tiles</English>
+		<French>Extra production and commerce on city tiles</French>
+		<German>Extra production and commerce on city tiles</German>
+		<Italian>Extra production and commerce on city tiles</Italian>
+		<Spanish>Extra production and commerce on city tiles</Spanish>
+	</TEXT>
 </Civ4GameText>

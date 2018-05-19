@@ -1142,5 +1142,21 @@
 			<NoShaderNIF>Art/Leaderheads/Ho Chi Minh/HoChiMinh.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Ho Chi Minh/genghis_khan_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_RUSVINGO</Type>
+			<Button>Art/LeaderHeads/Rusvingo/Btn_Rusvingo.dds</Button>
+			<NIF>art/LeaderHeads/Rusvingo/Cunhambebe.nif</NIF>
+			<KFM>art/LeaderHeads/Rusvingo/Cunhambebe.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Rusvingo/peter_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Rusvingo/Cunhambebe_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MUTOTA</Type>
+			<Button>Art/LeaderHeads/Mutota/Mutota.dds</Button>
+			<NIF>Art/LeaderHeads/Mutota/shaka.nif</NIF>
+			<KFM>Art/LeaderHeads/Mutota/shaka.kfm</KFM>
+			<NoShaderNIF>Art/LeaderHeads/Mutota/shaka_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/LeaderHeads/Mutota/shaka_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

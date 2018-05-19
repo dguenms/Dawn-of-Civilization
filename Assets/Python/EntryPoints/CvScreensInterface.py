@@ -1202,6 +1202,15 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tBoerAfricaTL, vic.tBoerAfricaBR):
 			return 80
 			
+	elif iPlayer == iZimbabwe:
+		if utils.isPlotInArea((x, y), vic.tSubeqAfricaTL, vic.tSubeqAfricaBR):
+			return 81
+			
+		if utils.isPlotInArea((x, y), vic.tSubSaharaTL, vic.tSubSaharaBR, vic.tSubSaharaExceptions):
+			return 82
+			
+		# continue with ID 83
+			
 	elif iPlayer == iSwahili:
 		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
 			return 72

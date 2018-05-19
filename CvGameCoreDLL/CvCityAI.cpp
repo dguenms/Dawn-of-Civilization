@@ -2586,6 +2586,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 3;
 		break;
+	case ZIMBABWE:
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 3;
+		break;
 	case MUGHALS:
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -3348,6 +3353,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == TAJ_MAHAL || iI == RED_FORT || iI == ST_BASILS_CATHEDRAL) iTempValue /= 4;
 										break;
 									case POLAND:
+										break;
+									case ZIMBABWE:
+										if (iI == GREAT_ZIMBABWE) iTempValue *= 3;
 										break;
 									case PORTUGAL:
 										if (iI == NOTRE_DAME) {
