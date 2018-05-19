@@ -602,6 +602,6 @@ class UniquePowers:
 			if iCount > 0:
 				iGold = 2 * iCount
 				pSwahili.changeGold(iGold)
-				data.iSwahiliTradeGold += iGold * 1.0
+				data.iSwahiliTradeGold += iGold * 100
 				if utils.getHumanID() == iSwahili:
 					CyInterface().addMessage(iSwahili, False, iDuration, CyTranslator().getText("TXT_KEY_SWAHILI_DHOW_GOLD", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

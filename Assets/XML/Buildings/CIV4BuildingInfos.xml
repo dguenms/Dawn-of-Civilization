@@ -11680,6 +11680,7 @@
 			<Help>TXT_KEY_BUILDING_SYDNEY_OPERA_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SYDNEY_OPERA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SYDNEY_OPERA</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_TOURISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
