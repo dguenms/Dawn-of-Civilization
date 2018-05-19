@@ -186,4 +186,14 @@
 		<English>Rare Earths</English>
 		<German>Seltene Erden</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_AMBER</Tag>
+		<English>Amber</English>
+		<German>Bernstein</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_MILLET</Tag>
+		<English>Millet</English>
+		<German>Hirse</German>
+	</TEXT>
 </Civ4GameText>

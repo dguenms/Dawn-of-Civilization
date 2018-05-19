@@ -468,5 +468,23 @@
 			<Button>Art/Interface/Buttons/Resources/RareEarths.dds</Button>
 			<FontButtonIndex>49</FontButtonIndex>
 		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_MILLET</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Millet/Corn.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Resources/Millet.dds</Button>
+			<FontButtonIndex>50</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_AMBER</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Amber/Gems.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Resources/Amber.dds</Button>
+			<FontButtonIndex>51</FontButtonIndex>
+		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>
