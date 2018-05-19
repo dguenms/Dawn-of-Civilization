@@ -35,7 +35,7 @@
 	<symbol id="wait" name="ORDER_WAIT"/>
 	<symbol id="upgrade"/>
 	<symbol id="cancel"/>
-	<symbol id="ss casing" from="HAPPY" offset="-25"/>
+	<symbol id="ss casing" from="HAPPY" offset="-23"/>
 	<symbol id="ss cockpit"/>
 	<symbol id="ss docking bay"/>
 	<symbol id="ss engine"/>
