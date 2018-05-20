@@ -5,6 +5,7 @@ import CvScreenEnums
 import WBGameDataScreen
 import WBCorporationScreen
 import WBPlayerScreen
+import WBPlayerEnabledScreen
 import WBTeamScreen
 import WBCityEditScreen
 import WBInfoScreen
@@ -62,6 +63,7 @@ class WBReligionScreen:
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PITBOSS_GAME_OPTIONS", ()), 10, 10, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_INFO_SCREEN", ()), 11, 11, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ()), 12, 12, False)
+		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_PLAYER_ENABLED", ()), 13, 13, False)
 
 		sText = "<font=3b>" + CyTranslator().getText("TXT_KEY_RELIGION_SCREEN_HOLY_CITY", ())[:-1] + "</font>"
 		sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
@@ -214,6 +216,8 @@ class WBReligionScreen:
 				WBInfoScreen.WBInfoScreen().interfaceScreen(iSelectedPlayer)
 			elif iIndex == 12:
 				WBStoredDataScreen.WBStoredDataScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen()
+			elif iIndex == 13:
+				WBPlayerEnabledScreen.WBPlayerEnabledScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "OwnerType":
 			iOwnerType = screen.getPullDownData("OwnerType", screen.getSelectedPullDownID("OwnerType"))

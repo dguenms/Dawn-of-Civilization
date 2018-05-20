@@ -288,6 +288,8 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_MOVEMAP", ())
 			elif iData2 == 45:
 				return CyTranslator().getText("TXT_KEY_WB_FLIPAI", ())
+			elif iData2 == 46:
+				return CyTranslator().getText("TXT_KEY_WB_SPAWN_MENU", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -513,6 +515,8 @@ def getWidgetHelp(argsList):
 			return CyTranslator().getText("TXT_KEY_WB_RESTORE_SD_BACKUP_HELP", ())
 		elif iData1 == 22014:
 			return CyTranslator().getText("TXT_KEY_WB_CREATE_SD_BACKUP_HELP", ())
+		elif iData1 == 22020:
+			return CyTranslator().getText("TXT_KEY_WB_TOGGLE_SPAWN_TYPE", ())
 	return u""
 
 ## Configuration Handler

@@ -6,6 +6,7 @@ import Popup
 import WBReligionScreen
 import WBCorporationScreen
 import WBGameDataScreen
+import WBPlayerEnabledScreen
 import WBInfoScreen
 import Barbs
 import AIWars
@@ -82,6 +83,7 @@ class WBStoredDataScreen:
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PITBOSS_GAME_OPTIONS", ()), 10, 10, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_INFO_SCREEN", ()), 11, 11, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ()), 12, 12, True)
+		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_PLAYER_ENABLED", ()), 13, 13, False)
 
 		self.loadData()
 
@@ -334,6 +336,8 @@ class WBStoredDataScreen:
 				WBGameDataScreen.WBGameDataScreen(self.top).interfaceScreen()
 			elif iIndex == 11:
 				WBInfoScreen.WBInfoScreen().interfaceScreen(self.top.m_iCurrentPlayer)
+			elif iIndex == 13:
+				WBPlayerEnabledScreen.WBPlayerEnabledScreen(self.top).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "ChangeBy":
 			if bRemove:

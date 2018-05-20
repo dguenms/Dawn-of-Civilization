@@ -17,6 +17,7 @@ import Areas
 import Civilizations
 import Modifiers
 import CvEspionageAdvisor
+from EnabledCivs import dSpawnTypes
 
 ################
 ### Globals ###
@@ -1277,19 +1278,21 @@ class RiseAndFall:
 		iHuman = utils.getHumanID()
 		iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
 		
-		if iCiv in lSecondaryCivs:
-			if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
-				return
+		iSpawnType = data.players[iCiv].iSpawnType
+		if iSpawnType == iNoSpawn: return
+		
+		# if iCiv in lSecondaryCivs:
+			# if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
+				# return
 		
 		if iCiv == iTurkey:
 			if pSeljuks.isAlive():
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
 		
-		lConditionalCivs = [iByzantium, iMamluks, iMughals, iThailand, iBrazil, iArgentina, iCanada]
-		
-		# Leoreth: extra checks for conditional civs
-		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
+		lConditionalCivs = [iByzantium, iMamluks, iMughals, iThailand, iBrazil, iArgentina, iCanada, iItaly]
+		if iSpawnType == iConditionalSpawn and iCiv in lConditionalCivs:
+			# Leoreth: extra checks for conditional civs
 			if iCiv == iByzantium:
 				if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStabilityLevel(iRome) == iStabilitySolid):
 					return
@@ -1320,20 +1323,28 @@ class RiseAndFall:
 					if data.getStabilityLevel(iColonyPlayer) > iStabilityStable:
 						return
 						
-		if utils.getHumanID() != iCiv and iCiv == iItaly:
-			if pRome.isAlive():
-				return
-				
-			cityList = utils.getCitiesInCore(iRome, False)
-			
-			iIndependentCities = 0
-
-			for pCity in cityList:
-				if not pCity.getOwner() < iNumPlayers:
-					iIndependentCities += 1
+			if iCiv == iItaly:
+				if pRome.isAlive():
+					return
 					
-			if iIndependentCities == 0:
-				return
+				cityList = utils.getCitiesInCore(iRome, False)
+				
+				iIndependentCities = 0
+
+				for pCity in cityList:
+					if not pCity.getOwner() < iNumPlayers:
+						iIndependentCities += 1
+						
+				if iIndependentCities == 0:
+					return
+					
+		elif iSpawnType == iForcedSpawn and iCiv in [iItaly, iMamluks]:
+			if iCiv == iItaly:
+				if pRome.isAlive():
+					sta.completeCollapse(iRome)
+			elif iCiv == iMamluks:
+				if pEgypt.isAlive():
+					sta.completCollapse(iEgypt)
 				
 		tCapital = Areas.getCapital(iCiv)
 				
@@ -3244,7 +3255,7 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
 				
-			if iPlayer == iHarappa and (data.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
+			if iPlayer == iHarappa and data.players[iHarappa].iSpawnType != iNoSpawn:
 				utils.makeUnit(iCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
 		
@@ -3305,76 +3316,81 @@ class RiseAndFall:
 		
 				
 	def determineEnabledPlayers(self):
+		for iPlayer in range(iNumPlayers):
+			if iPlayer == utils.getHumanID():
+				data.players[iPlayer].iSpawnType = iForcedSpawn
+			else:
+				data.players[iPlayer].iSpawnType = dSpawnTypes[iPlayer]
 	
-		iHuman = utils.getHumanID()
+		# iHuman = utils.getHumanID()
 		
-		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLYNESIA")
-		if iRand <= 0:
-			data.setPlayerEnabled(iPolynesia, False)
-		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
-			data.setPlayerEnabled(iPolynesia, False)
+		# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLYNESIA")
+		# if iRand <= 0:
+			# data.setPlayerEnabled(iPolynesia, False)
+		# elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
+			# data.setPlayerEnabled(iPolynesia, False)
 			
-		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
-		if iRand <= 0:
-			data.setPlayerEnabled(iHarappa, False)
-		elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
-			data.setPlayerEnabled(iHarappa, False)
+		# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
+		# if iRand <= 0:
+			# data.setPlayerEnabled(iHarappa, False)
+		# elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
+			# data.setPlayerEnabled(iHarappa, False)
 		
-		if iHuman != iIndia and iHuman != iIndonesia:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")
+		# if iHuman != iIndia and iHuman != iIndonesia:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iTamils, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Tamils enabled?') != 0:
-				data.setPlayerEnabled(iTamils, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iTamils, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Tamils enabled?') != 0:
+				# data.setPlayerEnabled(iTamils, False)
 				
-		if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TIBET")
+		# if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TIBET")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iTibet, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Tibet enabled?') != 0:
-				data.setPlayerEnabled(iTibet, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iTibet, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Tibet enabled?') != 0:
+				# data.setPlayerEnabled(iTibet, False)
 				
-		if iHuman != iSpain and iHuman != iMali:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MOORS")
+		# if iHuman != iSpain and iHuman != iMali:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MOORS")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iMoors, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Moors enabled?') != 0:
-				data.setPlayerEnabled(iMoors, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iMoors, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Moors enabled?') != 0:
+				# data.setPlayerEnabled(iMoors, False)
 				
-		if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLAND")
+		# if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLAND")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iPoland, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Poland enabled?') != 0:
-				data.setPlayerEnabled(iPoland, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iPoland, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Poland enabled?') != 0:
+				# data.setPlayerEnabled(iPoland, False)
 				
-		if iHuman != iMali and iHuman != iPortugal:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_CONGO")
+		# if iHuman != iMali and iHuman != iPortugal:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_CONGO")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iCongo, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
-				data.setPlayerEnabled(iCongo, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iCongo, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
+				# data.setPlayerEnabled(iCongo, False)
 				
-		if iHuman != iSpain:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")
+		# if iHuman != iSpain:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iArgentina, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Argentina enabled?') != 0:
-				data.setPlayerEnabled(iArgentina, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iArgentina, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Argentina enabled?') != 0:
+				# data.setPlayerEnabled(iArgentina, False)
 				
-		if iHuman != iPortugal:
-			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_BRAZIL")
+		# if iHuman != iPortugal:
+			# iRand = gc.getDefineINT("PLAYER_OCCURRENCE_BRAZIL")
 			
-			if iRand <= 0:
-				data.setPlayerEnabled(iBrazil, False)
-			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
-				data.setPlayerEnabled(iBrazil, False)
+			# if iRand <= 0:
+				# data.setPlayerEnabled(iBrazil, False)
+			# elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
+				# data.setPlayerEnabled(iBrazil, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []

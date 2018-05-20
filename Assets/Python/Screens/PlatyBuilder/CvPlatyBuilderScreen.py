@@ -17,6 +17,7 @@ import WBReligionScreen
 import WBCorporationScreen
 import WBDiplomacyScreen
 import WBPlayerScreen
+import WBPlayerEnabledScreen
 import WBTeamScreen
 import WBTechScreen
 import WBProjectScreen
@@ -1150,6 +1151,9 @@ class CvWorldBuilderScreen:
 			iX += iAdjust
 			screen.addCheckBoxGFC("MoveMapScreen", "Art/Interface/Buttons/MoveMap.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
 				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 44, ButtonStyles.BUTTON_STYLE_LABEL)
+			iX += iAdjust
+			screen.addCheckBoxGFC("PlayerEnabledScreen", "Art/Interface/Buttons/PlayerEnabled.dds", "",
+				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 46, ButtonStyles.BUTTON_STYLE_LABEL)
 
 			iX = iXStart + 8
 			iY += iAdjust
@@ -2506,6 +2510,9 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "MoveMap"
 			self.bRegion = False
 			self.refreshSideMenu()
+			
+		elif inputClass.getFunctionName() == "PlayerEnabledScreen":
+			WBPlayerEnabledScreen.WBPlayerEnabledScreen(self).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "ClearChanges":
 			if self.iPlayerAddMode == "Flip":

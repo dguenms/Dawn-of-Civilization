@@ -1,0 +1,71 @@
+from CvPythonExtensions import *
+from Consts import *
+
+'''
+This file determines if a civ will spawn.
+If a civ has a forced spawn, it will allways spawn, regardless of anything. (To avoid conflicts, Rome and Egypt will have a forced collapse when Italy and Mamluks spawn respectively)
+If a civ has a conditional spawn, it will only spawn if it meets the conditions. If no special conditions are defined, the forced spawn method is used. This is the default value for most civs.
+If a civ has a no spawn, it will not spawn at all.
+
+To change the spawn type, change the value after the : to one of the values below. (Just copy, replace)
+Forced spawn	: iForcedSpawn
+Never spawn		: iNoSpawn
+Conditional Spawn: iConditionalSpawn
+'''
+
+dSpawnTypes = {
+iEgypt			: iConditionalSpawn,
+iChina			: iConditionalSpawn,
+iBabylonia		: iConditionalSpawn,
+iHarappa		: iNoSpawn,
+iGreece			: iConditionalSpawn,
+iIndia			: iConditionalSpawn,
+iCarthage		: iConditionalSpawn,
+iPolynesia		: iNoSpawn,
+iPersia			: iConditionalSpawn,
+iRome			: iConditionalSpawn,
+iTamils			: iConditionalSpawn,
+iEthiopia		: iConditionalSpawn,
+iVietnam		: iConditionalSpawn,
+iKorea			: iConditionalSpawn,
+iMaya			: iConditionalSpawn,
+iByzantium		: iConditionalSpawn,
+iJapan			: iConditionalSpawn,
+iVikings		: iConditionalSpawn,
+iArabia			: iConditionalSpawn,
+iTibet			: iConditionalSpawn,
+iIndonesia		: iConditionalSpawn,
+iMoors			: iConditionalSpawn,
+iSpain			: iConditionalSpawn,
+iFrance			: iConditionalSpawn,
+iKhmer			: iConditionalSpawn,
+iEngland		: iConditionalSpawn,
+iHolyRome		: iConditionalSpawn,
+iRussia			: iConditionalSpawn,
+iPhilippines	: iConditionalSpawn,
+iSwahili		: iConditionalSpawn,
+iMamluks		: iConditionalSpawn,
+iMali			: iConditionalSpawn,
+iPoland			: iConditionalSpawn,
+iZimbabwe		: iConditionalSpawn,
+iPortugal		: iConditionalSpawn,
+iInca			: iConditionalSpawn,
+iItaly			: iConditionalSpawn,
+iNigeria		: iConditionalSpawn,
+iMongolia		: iConditionalSpawn,
+iAztecs			: iConditionalSpawn,
+iMughals		: iConditionalSpawn,
+iTurkey			: iConditionalSpawn,
+iThailand		: iConditionalSpawn,
+iCongo			: iConditionalSpawn,
+iSweden			: iConditionalSpawn,
+iNetherlands	: iConditionalSpawn,
+iManchuria		: iConditionalSpawn,
+iGermany		: iConditionalSpawn,
+iAmerica		: iConditionalSpawn,
+iArgentina		: iConditionalSpawn,
+iBrazil			: iConditionalSpawn,
+iAustralia		: iConditionalSpawn,
+iBoers			: iConditionalSpawn,
+iCanada			: iConditionalSpawn,
+}

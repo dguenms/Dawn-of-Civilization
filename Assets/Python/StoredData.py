@@ -35,6 +35,8 @@ class PlayerData:
 		
 		self.iExplorationTurn = 1500
 		
+		self.iSpawnType = 0
+		
 		# Religions
 		
 		self.iReformationDecision = -1

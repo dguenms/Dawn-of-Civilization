@@ -1950,3 +1950,6 @@ lReligionMapTexts = ["TXT_KEY_CULTURELEVEL_NONE", "TXT_KEY_WB_RELIGIONMAP_MINORI
 lNetworkEvents = {
 	"CHANGE_COMMERCE_PERCENT" :	1200,
 }
+
+iNumSpawnTypes = 3
+(iForcedSpawn, iNoSpawn, iConditionalSpawn) = range(iNumSpawnTypes)

@@ -83,6 +83,7 @@ import WBPromotionScreen
 import WBDiplomacyScreen
 import WBGameDataScreen
 import WBPlayerUnits
+import WBPlayerEnabledScreen
 import WBReligionScreen
 import WBCorporationScreen
 import WBInfoScreen
@@ -1323,6 +1324,7 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					WB_INFO : WBInfoScreen.WBInfoScreen(),
 					WB_TRADE : WBTradeScreen.WBTradeScreen(),
 					WB_STOREDDATA : WBStoredDataScreen.WBStoredDataScreen(worldBuilderScreen),
+					WB_PLAYER_ENABLED : WBPlayerEnabledScreen.WBPlayerEnabledScreen(worldBuilderScreen),
 				}
 
 #######################################################################################

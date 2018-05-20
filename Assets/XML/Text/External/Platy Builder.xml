@@ -896,4 +896,84 @@
 		<Tag>TXT_KEY_WB_FLIPAI</Tag>
 		<English>AI only flipzone</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PLAYER_ENABLED</Tag>
+		<English>Player Enabled</English>
+		<French>Player Enabled</French>
+		<German>Player Enabled</German>
+		<Italian>Player Enabled</Italian>
+		<Spanish>Player Enabled</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PLAYER_BIRTH_YEAR</Tag>
+		<English>Birth year</English>
+		<French>Birth year</French>
+		<German>Birth year</German>
+		<Italian>Birth year</Italian>
+		<Spanish>Birth year</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PLAYER_BIRTH_TURN</Tag>
+		<English>Birth turn</English>
+		<French>Birth turn</French>
+		<German>Birth turn</German>
+		<Italian>Birth turn</Italian>
+		<Spanish>Birth turn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PLAYER_CIVILIZATION</Tag>
+		<English>Civilization</English>
+		<French>Civilization</French>
+		<German>Civilization</German>
+		<Italian>Civilization</Italian>
+		<Spanish>Civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_PLAYER_SPAWNTYPE</Tag>
+		<English>Spawn type</English>
+		<French>Spawn type</French>
+		<German>Spawn type</German>
+		<Italian>Spawn type</Italian>
+		<Spanish>Spawn type</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_FORCED_SPAWN</Tag>
+		<English>Forced</English>
+		<French>Forced</French>
+		<German>Forced</German>
+		<Italian>Forced</Italian>
+		<Spanish>Forced</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_SPAWN</Tag>
+		<English>None</English>
+		<French>None</French>
+		<German>None</German>
+		<Italian>None</Italian>
+		<Spanish>None</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CONDITIONAL_SPAWN</Tag>
+		<English>Conditional</English>
+		<French>Conditional</French>
+		<German>Conditional</German>
+		<Italian>Conditional</Italian>
+		<Spanish>Conditional</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TOGGLE_SPAWN_TYPE</Tag>
+		<English>Change spawn type</English>
+		<French>Change spawn type</French>
+		<German>Change spawn type</German>
+		<Italian>Change spawn type</Italian>
+		<Spanish>Change spawn type</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SPAWN_MENU</Tag>
+		<English>Spawn menu</English>
+		<French>Spawn menu</French>
+		<German>Spawn menu</German>
+		<Italian>Spawn menu</Italian>
+		<Spanish>Spawn menu</Spanish>
+	</TEXT>
 </Civ4GameText>
