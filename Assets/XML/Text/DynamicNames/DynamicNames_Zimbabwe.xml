@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Congo -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_DESC</Tag>
+		<English>The Zimbabweans</English>
+		<French>The Zimbabweans</French>
+		<German>The Zimbabweans</German>
+		<Italian>The Zimbabweans</Italian>
+		<Spanish>The Zimbabweans</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_PEOPLES</Tag>
+		<English>Zimbabwean Peoples</English>
+		<French>Zimbabwean Peoples</French>
+		<German>Zimbabwean Peoples</German>
+		<Italian>Zimbabwean Peoples</Italian>
+		<Spanish>Zimbabwean Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>Kingdom of %s1</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_GREAT</Tag>
+		<English>Great Zimbabwe</English>
+		<French>Great Zimbabwe</French>
+		<German>Great Zimbabwe</German>
+		<Italian>Great Zimbabwe</Italian>
+		<Spanish>Great Zimbabwe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_ZIMBABWE</Tag>
+		<English>Zimbabwe</English>
+		<French>Zimbabwe</French>
+		<German>Zimbabwe</German>
+		<Italian>Zimbabwe</Italian>
+		<Spanish>Zimbabwe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_MAPUNGUBWE</Tag>
+		<English>Mapungubwe</English>
+		<French>Mapungubwe</French>
+		<German>Mapungubwe</German>
+		<Italian>Mapungubwe</Italian>
+		<Spanish>Mapungubwe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_MUTAPA</Tag>
+		<English>Mutapa</English>
+		<French>Mutapa</French>
+		<German>Mutapa</German>
+		<Italian>Mutapa</Italian>
+		<Spanish>Mutapa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_ROZWI</Tag>
+		<English>Rozwi</English>
+		<French>Rozwi</French>
+		<German>Rozwi</German>
+		<Italian>Rozwi</Italian>
+		<Spanish>Rozwi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_BUTUA</Tag>
+		<English>Butua</English>
+		<French>Butua</French>
+		<German>Butua</German>
+		<Italian>Butua</Italian>
+		<Spanish>Butua</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_ADJECTIVE</Tag>
+		<English>Zimbabwean</English>
+		<French>Zimbabwean</French>
+		<German>Zimbabwean</German>
+		<Italian>Zimbabwean</Italian>
+		<Spanish>Zimbabwean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ZIMBABWE_SHORT_DESC</Tag>
+		<English>Zimbabwe</English>
+		<French>Zimbabwe</French>
+		<German>Zimbabwe</German>
+		<Italian>Zimbabwe</Italian>
+		<Spanish>Zimbabwe</Spanish>
+	</TEXT>
+</Civ4GameText>

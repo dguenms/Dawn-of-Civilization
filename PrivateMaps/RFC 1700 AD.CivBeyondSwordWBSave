@@ -28629,6 +28629,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=17
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=43,
@@ -30752,6 +30753,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_STONE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
