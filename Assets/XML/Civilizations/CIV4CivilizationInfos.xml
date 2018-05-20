@@ -1773,7 +1773,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIME</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ETHIOPIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
 			<Identifier>ETH</Identifier>
@@ -3192,7 +3192,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_KHAKI</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CONGO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>CON</Identifier>
@@ -3398,7 +3398,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_PEACH</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>MAL</Identifier>
@@ -4489,7 +4489,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NIGERIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>NIG</Identifier>
@@ -6671,7 +6671,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_RED_INDIGO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ZIMBABWE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>ZIM</Identifier>
