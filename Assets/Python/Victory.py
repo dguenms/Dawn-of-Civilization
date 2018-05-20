@@ -3424,7 +3424,7 @@ def isMonopoly(iPlayer, iBonus, lPlots, bIncludeVassals = True):
 		
 	lAllowedOwners = [iPlayer, -1]
 	if bIncludeVassals:
-		for iLoopPlayer in range(iNumPlayer):
+		for iLoopPlayer in range(iNumPlayers):
 			if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
 				lAllowedOwners.append(iLoopPlayer)
 		
