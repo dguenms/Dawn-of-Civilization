@@ -3430,7 +3430,7 @@ def isMonopoly(iPlayer, iBonus, lPlots, bIncludeVassals = True):
 		
 	for x, y in lPlots:
 		plot = gc.getMap().plot(x, y)
-		if plot.getBonusType(-1) == iBonus:
+		if plot.getBonusType(-1) == iBonus and plot.getImprovementType() >= 0:
 			iOwner = plot.getOwner()
 			if iOwner < iNumPlayers and iOwner not in lAllowedOwners:
 				if gc.getImprovementInfo(plot.getImprovementType()).isImprovementBonusMakesValid(iBonus):

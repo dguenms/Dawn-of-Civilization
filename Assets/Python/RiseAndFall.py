@@ -2833,8 +2833,8 @@ class RiseAndFall:
 				utils.makeUnit(iJanissary, iCiv, tPlot, 5)
 				utils.makeUnit(iLancer, iCiv, tPlot, 4)
 		elif iCiv == iZimbabwe:
-			utils.createSettlers(iCiv, 3)
-			utils.makeUnit(iArcher, iCiv, tPlot, 4)
+			utils.createSettlers(iCiv, 2)
+			utils.makeUnit(iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
 		elif iCiv == iPortugal:
 			utils.createSettlers(iCiv, 1)
