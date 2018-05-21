@@ -25,4 +25,14 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_LAGOON</Tag>
+		<English>Lagoon</English>
+		<German>Lagune</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_ARCTIC_COAST</Tag>
+		<English>Arctic Coast</English>
+		<German>Arktische Küste</German>
+	</TEXT>
 </Civ4GameText>
