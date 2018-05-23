@@ -803,12 +803,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=3
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=0,y=4
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -818,47 +818,42 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=6
-	BonusType=BONUS_WHALE
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=0,y=7
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=0,y=8
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
-	x=0,y=9
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
-EndPlot
-BeginPlot
-	x=0,y=10
-	RiverNSDirection=0
-	isWOfRiver
-	BonusType=BONUS_POTATO
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=0,y=11
-	isNOfRiver
-	RiverWEDirection=3
+	x=0,y=7
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=0,y=12
-	BonusType=BONUS_FISH
+	x=0,y=8
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+EndPlot
+BeginPlot
+	x=0,y=9
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=0,y=10
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=0,y=11
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=0,y=12
+	BonusType=BONUS_AMBER
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=0,y=13
@@ -1163,7 +1158,7 @@ EndPlot
 BeginPlot
 	x=0,y=72
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1174,7 +1169,7 @@ EndPlot
 BeginPlot
 	x=0,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1185,25 +1180,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=0,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=0,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=0,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1236,12 +1231,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=5
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=6
-	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_WHALE
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1251,35 +1247,40 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=8
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=1,y=9
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=1,y=10
-	BonusType=BONUS_OBSIDIAN
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
+	x=1,y=9
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
+EndPlot
+BeginPlot
+	x=1,y=10
+	RiverNSDirection=0
+	isWOfRiver
+	BonusType=BONUS_POTATO
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
 	x=1,y=11
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	isNOfRiver
+	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=1,y=12
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=13
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1596,7 +1597,7 @@ EndPlot
 BeginPlot
 	x=1,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1611,19 +1612,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1666,12 +1667,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=7
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=8
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1681,22 +1682,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=10
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_OBSIDIAN
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=2,y=11
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=12
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=13
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1975,7 +1979,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=68
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2029,13 +2033,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2087,17 +2091,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=9
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=3,y=10
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=3,y=11
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2445,13 +2449,13 @@ EndPlot
 BeginPlot
 	x=3,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=3,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2807,7 +2811,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=69
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2859,19 +2863,19 @@ EndPlot
 BeginPlot
 	x=4,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -3282,19 +3286,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -3327,7 +3331,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=5
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -3636,13 +3640,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=66
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3705,19 +3709,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4135,24 +4139,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=7,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=7,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=7,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4406,7 +4410,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=49
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4417,7 +4421,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=51
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4577,19 +4581,19 @@ EndPlot
 BeginPlot
 	x=8,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=8,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=8,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5019,19 +5023,19 @@ EndPlot
 BeginPlot
 	x=9,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=9,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=9,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5255,7 +5259,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=43
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5472,25 +5476,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=10,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=10,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=10,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5740,7 +5744,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=48
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5910,19 +5914,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=11,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=11,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -6357,13 +6361,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=12,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -6793,25 +6797,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=13,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=13,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=13,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7244,12 +7248,12 @@ EndPlot
 BeginPlot
 	x=14,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=14,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7260,7 +7264,7 @@ EndPlot
 BeginPlot
 	x=14,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7684,7 +7688,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7700,7 +7704,7 @@ EndPlot
 BeginPlot
 	x=15,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -8121,7 +8125,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -8562,18 +8566,18 @@ EndPlot
 BeginPlot
 	x=17,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=17,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=17,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -9011,7 +9015,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -9274,7 +9278,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=47
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -9452,13 +9456,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=19,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -9474,7 +9478,7 @@ EndPlot
 BeginPlot
 	x=19,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -9887,30 +9891,30 @@ EndPlot
 BeginPlot
 	x=20,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -10336,7 +10340,7 @@ EndPlot
 BeginPlot
 	x=21,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -10346,7 +10350,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -10793,18 +10797,18 @@ EndPlot
 BeginPlot
 	x=22,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=22,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=22,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -11189,17 +11193,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=68
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=23,y=69
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=23,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -11232,7 +11236,7 @@ EndPlot
 BeginPlot
 	x=23,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -11248,7 +11252,7 @@ EndPlot
 BeginPlot
 	x=23,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -11623,12 +11627,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=67
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=68
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -11638,12 +11642,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -11680,7 +11684,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12051,7 +12055,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=67
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12066,22 +12070,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12102,24 +12106,24 @@ EndPlot
 BeginPlot
 	x=25,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12481,12 +12485,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=67
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12501,12 +12505,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12522,7 +12526,7 @@ EndPlot
 BeginPlot
 	x=26,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12533,18 +12537,18 @@ EndPlot
 BeginPlot
 	x=26,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12556,7 +12560,7 @@ EndPlot
 BeginPlot
 	x=27,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12916,7 +12920,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12936,18 +12940,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=71
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12958,7 +12962,7 @@ EndPlot
 BeginPlot
 	x=27,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12973,7 +12977,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -12990,7 +12994,7 @@ EndPlot
 BeginPlot
 	x=28,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13342,17 +13346,17 @@ EndPlot
 BeginPlot
 	x=28,y=64
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13372,7 +13376,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13382,34 +13386,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13426,13 +13430,13 @@ EndPlot
 BeginPlot
 	x=29,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13803,45 +13807,45 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=67
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=68
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=69
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=72
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13852,18 +13856,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14295,13 +14299,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=30,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14312,7 +14316,7 @@ EndPlot
 BeginPlot
 	x=30,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14323,7 +14327,7 @@ EndPlot
 BeginPlot
 	x=30,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14340,7 +14344,7 @@ EndPlot
 BeginPlot
 	x=31,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14741,13 +14745,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=31,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14758,13 +14762,13 @@ EndPlot
 BeginPlot
 	x=31,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=31,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14786,7 +14790,7 @@ EndPlot
 BeginPlot
 	x=32,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14806,12 +14810,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=32,y=5
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15011,7 +15015,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=38
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -15196,12 +15200,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=32,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15212,7 +15216,7 @@ EndPlot
 BeginPlot
 	x=32,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15260,13 +15264,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=3
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=4
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15276,7 +15280,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=6
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -15652,17 +15656,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=69
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15683,7 +15687,7 @@ EndPlot
 BeginPlot
 	x=33,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15720,13 +15724,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=34,y=3
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16124,7 +16128,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16168,7 +16172,7 @@ EndPlot
 BeginPlot
 	x=34,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16184,8 +16188,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=2
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16413,7 +16417,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=38
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16579,22 +16583,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=69
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16605,7 +16609,7 @@ EndPlot
 BeginPlot
 	x=35,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16622,18 +16626,18 @@ EndPlot
 BeginPlot
 	x=35,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16644,13 +16648,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=1
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=2
 	FeatureType=FEATURE_CAPE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16661,7 +16665,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -16918,7 +16922,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=43
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17052,17 +17056,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=68
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=69
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -17072,18 +17076,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -17098,46 +17102,46 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=3
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -17353,13 +17357,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=37
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=38
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17370,7 +17374,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=40
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17381,7 +17385,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17485,17 +17489,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=62
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=63
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -17512,12 +17516,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=67
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=68
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -17543,55 +17547,55 @@ EndPlot
 BeginPlot
 	x=37,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -17965,17 +17969,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=67
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18010,34 +18014,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18048,13 +18052,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=2
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18412,32 +18416,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=67
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=68
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=69
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18457,30 +18461,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18491,7 +18495,7 @@ EndPlot
 BeginPlot
 	x=39,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18507,7 +18511,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18865,17 +18869,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=40,y=64
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=40,y=65
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=40,y=66
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18901,18 +18905,18 @@ EndPlot
 BeginPlot
 	x=40,y=71
 	BonusType=BONUS_WHALE
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=40,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=40,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18933,13 +18937,13 @@ EndPlot
 BeginPlot
 	x=40,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=40,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -18951,18 +18955,18 @@ EndPlot
 BeginPlot
 	x=41,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=41,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=41,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -19345,12 +19349,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=41,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -19400,13 +19404,13 @@ EndPlot
 BeginPlot
 	x=42,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=42,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -19782,7 +19786,7 @@ EndPlot
 BeginPlot
 	x=42,y=70
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -20207,7 +20211,7 @@ EndPlot
 BeginPlot
 	x=43,y=70
 	BonusType=BONUS_AMBER
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -20631,18 +20635,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=44,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=44,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=44,y=72
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -21057,25 +21061,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=45,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=45,y=72
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=45,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=45,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -21479,24 +21483,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=72
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=46,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=46,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=46,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -21547,8 +21551,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=4
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -21789,7 +21793,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=51
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -21906,25 +21910,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=47,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=47,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=47,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -21952,17 +21956,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=3
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -22321,24 +22325,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -22366,7 +22370,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -22377,7 +22381,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -22734,25 +22738,25 @@ EndPlot
 BeginPlot
 	x=49,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=49,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=49,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=49,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -22774,17 +22778,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=50,y=3
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=50,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23130,17 +23134,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=50,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=50,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23152,19 +23156,19 @@ EndPlot
 BeginPlot
 	x=50,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=50,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=50,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23538,7 +23542,7 @@ EndPlot
 BeginPlot
 	x=51,y=73
 	BonusType=BONUS_FISH
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23556,24 +23560,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=51,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=51,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=51,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23950,7 +23954,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -23968,25 +23972,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=52,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=52,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=52,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -24204,7 +24208,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -24365,7 +24369,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -24380,7 +24384,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -24397,7 +24401,7 @@ EndPlot
 BeginPlot
 	x=53,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -24781,22 +24785,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=54,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=54,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=54,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -24812,7 +24816,7 @@ EndPlot
 BeginPlot
 	x=54,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -25208,12 +25212,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=55,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -25228,13 +25232,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=55,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -25295,7 +25299,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=11
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -25637,7 +25641,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=73
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -25664,7 +25668,7 @@ EndPlot
 BeginPlot
 	x=56,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -26095,13 +26099,13 @@ EndPlot
 BeginPlot
 	x=57,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=57,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -26545,7 +26549,7 @@ EndPlot
 BeginPlot
 	x=58,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -26988,7 +26992,7 @@ EndPlot
 BeginPlot
 	x=59,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -28592,7 +28596,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=51
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -28784,8 +28788,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=4
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -30354,7 +30358,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=53
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31264,9 +31268,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=56
-	BonusType=BONUS_CLAM
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_LAGOON
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=57
@@ -31390,8 +31393,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=77
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -31667,7 +31670,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=47
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31710,6 +31713,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=55
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31845,8 +31849,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=77
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -32164,7 +32168,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=54
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32306,12 +32309,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=71,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -32627,12 +32630,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=53
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=72,y=54
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32771,7 +32775,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -33071,7 +33075,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=51
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -33230,7 +33234,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -33694,13 +33698,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=78
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=74,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -34181,19 +34185,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=76,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=76,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -34495,7 +34499,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=52
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34649,7 +34653,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -34661,7 +34665,7 @@ EndPlot
 BeginPlot
 	x=77,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -34947,7 +34951,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=50
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35125,7 +35129,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -35137,7 +35141,7 @@ EndPlot
 BeginPlot
 	x=78,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -35419,13 +35423,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=52
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=78,y=53
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35582,7 +35586,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -35594,7 +35598,7 @@ EndPlot
 BeginPlot
 	x=79,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -35894,7 +35898,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=50
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -36063,7 +36067,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -36075,7 +36079,7 @@ EndPlot
 BeginPlot
 	x=80,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -36533,7 +36537,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -36545,7 +36549,7 @@ EndPlot
 BeginPlot
 	x=81,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -36993,12 +36997,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=81,y=79
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37010,7 +37014,7 @@ EndPlot
 BeginPlot
 	x=82,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37046,8 +37050,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=8
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37443,7 +37447,7 @@ EndPlot
 BeginPlot
 	x=82,y=78
 	BonusType=BONUS_FISH
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37460,7 +37464,7 @@ EndPlot
 BeginPlot
 	x=83,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37875,7 +37879,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37891,12 +37895,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=83,y=78
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37999,7 +38003,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=18
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -38045,7 +38049,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=26
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -38319,12 +38323,12 @@ EndPlot
 BeginPlot
 	x=84,y=73
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=84,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -38339,7 +38343,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -38362,7 +38366,7 @@ EndPlot
 BeginPlot
 	x=85,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -38551,7 +38555,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -38777,7 +38781,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -38787,12 +38791,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=85,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -38815,7 +38819,7 @@ EndPlot
 BeginPlot
 	x=86,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39221,23 +39225,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=86,y=74
 	BonusType=BONUS_FISH
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=86,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=86,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39265,7 +39269,7 @@ EndPlot
 BeginPlot
 	x=87,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39450,7 +39454,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39688,7 +39692,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39722,7 +39726,7 @@ EndPlot
 BeginPlot
 	x=88,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40145,17 +40149,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=88,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=88,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40184,13 +40188,13 @@ EndPlot
 BeginPlot
 	x=89,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=89,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40608,7 +40612,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40643,7 +40647,7 @@ EndPlot
 BeginPlot
 	x=90,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41061,28 +41065,28 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=90,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=90,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=90,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=90,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41105,7 +41109,7 @@ EndPlot
 BeginPlot
 	x=91,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41135,8 +41139,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=8
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41507,7 +41511,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41517,13 +41521,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=91,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41546,7 +41550,7 @@ EndPlot
 BeginPlot
 	x=92,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41941,24 +41945,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=92,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=92,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=92,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41981,7 +41985,7 @@ EndPlot
 BeginPlot
 	x=93,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42081,7 +42085,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42177,7 +42181,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=41
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42378,24 +42382,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=93,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=93,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=93,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42418,7 +42422,7 @@ EndPlot
 BeginPlot
 	x=94,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42815,17 +42819,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=94,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=94,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42836,13 +42840,13 @@ EndPlot
 BeginPlot
 	x=94,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=94,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42859,7 +42863,7 @@ EndPlot
 BeginPlot
 	x=95,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43062,7 +43066,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43239,12 +43243,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=95,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43284,7 +43288,7 @@ EndPlot
 BeginPlot
 	x=96,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43670,12 +43674,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=96,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43686,7 +43690,7 @@ EndPlot
 BeginPlot
 	x=96,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43709,13 +43713,13 @@ EndPlot
 BeginPlot
 	x=97,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=97,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44109,24 +44113,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=97,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=97,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=97,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44144,7 +44148,7 @@ EndPlot
 BeginPlot
 	x=98,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44170,8 +44174,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=6
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44544,24 +44548,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=98,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=98,y=77
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=98,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44577,7 +44581,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44602,17 +44606,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=6
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=99,y=7
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=99,y=8
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44986,25 +44990,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=99,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=99,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=99,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45021,7 +45025,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45046,7 +45050,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=6
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45056,7 +45060,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=8
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45438,31 +45442,31 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=100,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=100,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=100,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=100,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45479,7 +45483,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45504,17 +45508,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=6
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=101,y=7
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=101,y=8
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45896,36 +45900,36 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=101,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=101,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=101,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=102,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=102,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45945,8 +45949,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=5
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46327,7 +46331,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46348,13 +46352,13 @@ EndPlot
 BeginPlot
 	x=102,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=102,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46366,12 +46370,12 @@ EndPlot
 BeginPlot
 	x=103,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=103,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46772,29 +46776,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=103,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=103,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=103,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=103,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46817,7 +46821,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -47229,7 +47233,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -47244,7 +47248,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -47262,13 +47266,13 @@ EndPlot
 BeginPlot
 	x=105,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=105,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -47697,12 +47701,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=105,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -47726,7 +47730,7 @@ EndPlot
 BeginPlot
 	x=106,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -48158,7 +48162,7 @@ EndPlot
 BeginPlot
 	x=106,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -48182,7 +48186,7 @@ EndPlot
 BeginPlot
 	x=107,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -48627,13 +48631,13 @@ EndPlot
 BeginPlot
 	x=107,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=107,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -48651,7 +48655,7 @@ EndPlot
 BeginPlot
 	x=108,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -49073,19 +49077,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=108,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=108,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -49103,7 +49107,7 @@ EndPlot
 BeginPlot
 	x=109,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -49521,13 +49525,13 @@ EndPlot
 BeginPlot
 	x=109,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=109,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -49544,7 +49548,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -49962,13 +49966,13 @@ EndPlot
 BeginPlot
 	x=110,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=110,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -49986,7 +49990,7 @@ EndPlot
 BeginPlot
 	x=111,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -50409,13 +50413,13 @@ EndPlot
 BeginPlot
 	x=111,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=111,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -50433,7 +50437,7 @@ EndPlot
 BeginPlot
 	x=112,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -50862,7 +50866,7 @@ EndPlot
 BeginPlot
 	x=112,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -50880,7 +50884,7 @@ EndPlot
 BeginPlot
 	x=113,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -51294,7 +51298,7 @@ EndPlot
 BeginPlot
 	x=113,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -51312,7 +51316,7 @@ EndPlot
 BeginPlot
 	x=114,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -51729,7 +51733,7 @@ EndPlot
 BeginPlot
 	x=114,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -51746,7 +51750,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -52172,13 +52176,13 @@ EndPlot
 BeginPlot
 	x=115,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -52189,12 +52193,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=1
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=116,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -52629,13 +52633,13 @@ EndPlot
 BeginPlot
 	x=116,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=116,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -52651,7 +52655,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -53099,7 +53103,7 @@ EndPlot
 BeginPlot
 	x=117,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -53116,7 +53120,7 @@ EndPlot
 BeginPlot
 	x=118,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -53573,7 +53577,7 @@ EndPlot
 BeginPlot
 	x=118,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -53590,7 +53594,7 @@ EndPlot
 BeginPlot
 	x=119,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54035,7 +54039,7 @@ EndPlot
 BeginPlot
 	x=119,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54052,7 +54056,7 @@ EndPlot
 BeginPlot
 	x=120,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54485,7 +54489,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54501,7 +54505,7 @@ EndPlot
 BeginPlot
 	x=120,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54518,7 +54522,7 @@ EndPlot
 BeginPlot
 	x=121,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54953,7 +54957,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54971,7 +54975,7 @@ EndPlot
 BeginPlot
 	x=121,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -54983,13 +54987,13 @@ EndPlot
 BeginPlot
 	x=122,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -55440,19 +55444,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -55464,13 +55468,13 @@ EndPlot
 BeginPlot
 	x=123,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=123,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -55908,7 +55912,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -55937,7 +55941,7 @@ EndPlot
 BeginPlot
 	x=124,y=2
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -56360,19 +56364,19 @@ EndPlot
 BeginPlot
 	x=124,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=124,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=124,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -56388,7 +56392,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -56464,7 +56468,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=17
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -56819,13 +56823,13 @@ EndPlot
 BeginPlot
 	x=125,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=125,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -56843,12 +56847,12 @@ EndPlot
 BeginPlot
 	x=126,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=126,y=2
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -56936,7 +56940,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=19
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57284,13 +57288,13 @@ EndPlot
 BeginPlot
 	x=126,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=126,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -57308,7 +57312,7 @@ EndPlot
 BeginPlot
 	x=127,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -57740,13 +57744,13 @@ EndPlot
 BeginPlot
 	x=127,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=127,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -57758,13 +57762,13 @@ EndPlot
 BeginPlot
 	x=128,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=128,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -58200,7 +58204,7 @@ EndPlot
 BeginPlot
 	x=128,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -58218,7 +58222,7 @@ EndPlot
 BeginPlot
 	x=129,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -58324,6 +58328,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=22
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58652,7 +58657,7 @@ EndPlot
 BeginPlot
 	x=129,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -58670,7 +58675,7 @@ EndPlot
 BeginPlot
 	x=130,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -58777,11 +58782,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=22
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=130,y=23
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59096,24 +59103,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=130,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=130,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=130,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -59125,7 +59132,7 @@ EndPlot
 BeginPlot
 	x=131,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -59233,12 +59240,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=131,y=23
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59565,13 +59573,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=131,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -59588,7 +59596,7 @@ EndPlot
 BeginPlot
 	x=132,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -59702,11 +59710,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=23
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=132,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60018,31 +60028,31 @@ EndPlot
 BeginPlot
 	x=132,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=132,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=132,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=133,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=133,y=1
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -60158,6 +60168,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60463,7 +60474,7 @@ EndPlot
 BeginPlot
 	x=133,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -60474,7 +60485,7 @@ EndPlot
 BeginPlot
 	x=134,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -60591,12 +60602,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=23
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=134,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60826,7 +60838,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60892,19 +60904,19 @@ EndPlot
 BeginPlot
 	x=134,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=134,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=135,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -61029,6 +61041,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61320,7 +61333,7 @@ EndPlot
 BeginPlot
 	x=135,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -61332,7 +61345,7 @@ EndPlot
 BeginPlot
 	x=136,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -61383,7 +61396,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=10
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61461,6 +61474,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61747,7 +61761,7 @@ EndPlot
 BeginPlot
 	x=136,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -61759,7 +61773,7 @@ EndPlot
 BeginPlot
 	x=137,y=0
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -61884,6 +61898,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62170,13 +62185,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=137,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -62318,6 +62333,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62605,7 +62621,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -63056,7 +63072,7 @@ EndPlot
 BeginPlot
 	x=139,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -63212,6 +63228,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=24
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63485,13 +63502,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=140,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -63855,7 +63872,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=64
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63924,12 +63941,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=141,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -64359,7 +64376,7 @@ EndPlot
 BeginPlot
 	x=142,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -64777,12 +64794,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=143,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -65192,7 +65209,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=144,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -65226,7 +65243,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=145,y=3
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -65256,7 +65273,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=145,y=9
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -65549,7 +65566,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=145,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -65604,7 +65621,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=145,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -65637,22 +65654,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=146,y=3
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=146,y=4
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=146,y=5
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=146,y=6
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -65672,7 +65689,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=146,y=10
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -66011,19 +66028,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=146,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=146,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=146,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -66044,21 +66061,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=3
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=147,y=4
-	BonusType=BONUS_JADE
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=147,y=5
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=147,y=6
@@ -66067,12 +66081,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=7
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=147,y=8
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -66261,7 +66275,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=45
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -66372,7 +66386,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -66422,13 +66436,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=76
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=147,y=77
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -66460,34 +66474,35 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=148,y=3
-	BonusType=BONUS_CLAM
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=0,
 EndPlot
 BeginPlot
 	x=148,y=4
+	BonusType=BONUS_JADE
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	TeamReveal=0,
 EndPlot
 BeginPlot
 	x=148,y=5
-	isNOfRiver
-	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
+	TeamReveal=0,
 EndPlot
 BeginPlot
 	x=148,y=6
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+	TeamReveal=0,
 EndPlot
 BeginPlot
 	x=148,y=7
-	BonusType=BONUS_COAL
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=8
@@ -66496,28 +66511,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=148,y=9
-	BonusType=BONUS_OIL
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=10
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=11
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=12
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=13
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -66527,7 +66541,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=148,y=15
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -66793,7 +66806,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=148,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -66839,30 +66852,30 @@ EndPlot
 BeginPlot
 	x=148,y=75
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=77
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=148,y=79
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -66884,30 +66897,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=3
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=4
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=149,y=5
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=149,y=6
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
+	x=149,y=5
+	isNOfRiver
+	RiverWEDirection=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=149,y=6
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
+EndPlot
+BeginPlot
 	x=149,y=7
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=149,y=8
@@ -66916,8 +66933,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=9
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	BonusType=BONUS_OIL
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=10
@@ -66931,10 +66949,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=12
-	BonusType=BONUS_AMBER
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=13
@@ -66948,6 +66964,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=15
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -67098,7 +67115,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=44
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -67243,28 +67260,28 @@ EndPlot
 BeginPlot
 	x=149,y=72
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=74
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=75
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=149,y=76
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
