@@ -1513,9 +1513,9 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iNetherlands, 2)
 			
 	elif iPlayer == iManchuria:
-		# first goal: Have 25% of the world population in China and Manchuria in 1800 AD
-		if iGameTurn == getTurnForYear(1800):
-			if getPopulationPercent(iManchuria, lambda city: gc.getMap().plot(city.getX(), city.getY()).getSettlerValue(iManchuria) >= 90) >= 25.0:
+		# first goal: Have 20% of the world population in 1850 AD
+		if iGameTurn == getTurnForYear(1850):
+			if getPopulationPercent(iManchuria) >= 25.0:
 				win(iManchuria, 0)
 			else:
 				lose(iManchuria, 0)
@@ -3160,7 +3160,7 @@ def isCultureControlled(iPlayer, lPlots, bIgnoreWater = False):
 	for tPlot in lPlots:
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
-		if bIncludeWater and plot.isWater(): continue
+		if bIgnoreWater and plot.isWater(): continue
 		if plot.getOwner() != -1 and plot.getOwner() != iPlayer:
 			return False
 	return True
@@ -3821,7 +3821,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCounter >= 20) + localText.getText("TXT_KEY_VICTORY_TEMPLES_BUILT", (iCounter, 20)))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iIndia)
-			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(20))))
+			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
 
 	elif iPlayer == iCarthage:
 		if iGoal == 0:
@@ -4396,8 +4396,8 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iManchuria:
 		if iGoal == 0:
-			popPercent = getPopulationPercent(iManchuria, lambda city: gc.getMap().plot(city.getX(), city.getY()).getSettlerValue(iManchuria) >= 90)
-			aHelp.append(getIcon(popPercent >= 25.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION_AREA", (str(u"%.2f%%" % popPercent), str(25), localText.getText("TXT_KEY_UHV_AREA_70", ()))))
+			popPercent = getPopulationPercent(iManchuria)
+			aHelp.append(getIcon(popPercent >= 25.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
 		elif iGoal == 1:
 			iMostFoodCiv = getBestPlayer(iManchuria, playerFoodOutput)
 			iMostProductionCiv = getBestPlayer(iManchuria, playerProductionOutput)
