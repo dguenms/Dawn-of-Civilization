@@ -52,6 +52,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>Kingdom of %s1</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_COMMUNIST</Tag>
@@ -104,14 +108,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EMPIRE</Tag>
 		<English>Portuguese Empire</English>
+		<French>Portuguese Empire</French>
+		<German>Portuguese Empire</German>
+		<Italian>Portuguese Empire</Italian>
+		<Spanish>Portuguese Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_BRAZIL</Tag>
 		<English>United Kingdom of %s1 and Brazil</English>
+		<French>United Kingdom of %s1 and Brazil</French>
+		<German>United Kingdom of %s1 and Brazil</German>
+		<Italian>United Kingdom of %s1 and Brazil</Italian>
+		<Spanish>United Kingdom of %s1 and Brazil</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EXILE</Tag>
 		<English>%s2 Government in Exile</English>
+		<French>%s2 Government in Exile</French>
+		<German>%s2 Government in Exile</German>
+		<Italian>%s2 Government in Exile</Italian>
+		<Spanish>%s2 Government in Exile</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_INDIA</Tag>
@@ -140,18 +156,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_INDONESIA</Tag>
 		<English>%s2 East Indies</English>
+		<French>%s2 East Indies</French>
+		<German>%s2 East Indies</German>
+		<Italian>%s2 East Indies</Italian>
+		<Spanish>%s2 East Indies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_CONGO</Tag>
 		<English>%s2 West Africa</English>
+		<French>%s2 West Africa</French>
+		<German>%s2 West Africa</German>
+		<Italian>%s2 West Africa</Italian>
+		<Spanish>%s2 West Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_MALI</Tag>
 		<English>%s2 Gold Coast</English>
+		<French>%s2 Gold Coast</French>
+		<German>%s2 Gold Coast</German>
+		<Italian>%s2 Gold Coast</Italian>
+		<Spanish>%s2 Gold Coast</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_BRAZIL</Tag>
 		<English>State of %s1</English>
+		<French>State of %s1</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_ADJECTIVE</Tag>

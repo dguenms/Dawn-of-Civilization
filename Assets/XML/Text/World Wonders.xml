@@ -28,28 +28,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Tag>
 		<English>[ICON_BULLET]Artists can also be hired using Priest slots</English>
+		<French>[ICON_BULLET]Artists can also be hired using Priest slots</French>
 		<German>[ICON_BULLET]K&#252;nstler k&#246;nnen auch mithilfe von Priesterstellen eingestellt werden</German>
+		<Italian>[ICON_BULLET]Artists can also be hired using Priest slots</Italian>
+		<Spanish>[ICON_BULLET]Artists can also be hired using Priest slots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
 		<English>Blue Mosque</English>
+		<French>Blue Mosque</French>
 		<German>Blaue Moschee</German>
+		<Italian>Blue Mosque</Italian>
+		<Spanish>Blue Mosque</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] removes all unhappiness from the city in which it is built. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] removes all unhappiness from the city in which it is built. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] removes all unhappiness from the city in which it is built. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] removes all unhappiness from the city in which it is built. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] removes all unhappiness from the city in which it is built. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOROBUDUR</Tag>
 		<English>Borobudur</English>
+		<French>Borobudur</French>
+		<German>Borobudur</German>
+		<Italian>Borobudur</Italian>
+		<Spanish>Borobudur</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOROBUDUR_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] allows you to hire three [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and adds additional production to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] allows you to hire three [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and adds additional production to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] allows you to hire three [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and adds additional production to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] allows you to hire three [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and adds additional production to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] allows you to hire three [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and adds additional production to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE</Tag>
@@ -78,6 +100,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] resets the [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] threshold when a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] dies. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] resets the [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] threshold when a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] dies. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] resets the [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] threshold when a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] dies. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] resets the [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] threshold when a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] dies. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] resets the [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] threshold when a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] dies. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WEMBLEY</Tag>
@@ -106,6 +132,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WEMBLEY_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Tag>
@@ -134,6 +164,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Tag>
@@ -162,50 +196,86 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
+		<French>CN Tower</French>
+		<German>CN Tower</German>
+		<Italian>CN Tower</Italian>
+		<Spanish>CN Tower</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Tag>
 		<English>Dome of the Rock</English>
+		<French>Le D&#244;me du Rocher</French>
 		<German>
 			<Text>Felsendom</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Cupola della Roccia</Italian>
+		<Spanish>Cupula de la Roca</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Tag>
 		<English>The Empire State Building</English>
+		<French>The Empire State Building</French>
 		<German>Das Empire State Building</German>
+		<Italian>The Empire State Building</Italian>
+		<Spanish>The Empire State Building</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP</Tag>
 		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</English>
+		<French>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</French>
 		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bev&#246;lkerung seiner Stadt</German>
+		<Italian>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</Italian>
+		<Spanish>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] provides a gold bonus equal to the population of the city in which it's built. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]</English>
+		<French>The [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] provides a gold bonus equal to the population of the city in which it's built. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]</French>
+		<German>The [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] provides a gold bonus equal to the population of the city in which it's built. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] provides a gold bonus equal to the population of the city in which it's built. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] provides a gold bonus equal to the population of the city in which it's built. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_HELP</Tag>
 		<English>[ICON_BULLET]Golden Ages consume at most three Great People</English>
+		<French>[ICON_BULLET]Golden Ages consume at most three Great People</French>
 		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen h&#246;chstens drei gro&#223;e Pers&#246;nlichkeiten</German>
+		<Italian>[ICON_BULLET]Golden Ages consume at most three Great People</Italian>
+		<Spanish>[ICON_BULLET]Golden Ages consume at most three Great People</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] grants a culture boost and also limits the amount of great people consumed in a golden age to 3. Its city has an improved chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] grants a culture boost and also limits the amount of great people consumed in a golden age to 3. Its city has an improved chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] grants a culture boost and also limits the amount of great people consumed in a golden age to 3. Its city has an improved chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] grants a culture boost and also limits the amount of great people consumed in a golden age to 3. Its city has an improved chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] grants a culture boost and also limits the amount of great people consumed in a golden age to 3. Its city has an improved chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOSSUS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
@@ -234,78 +304,134 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
 		<English>The Great Bath</English>
+		<French>The Great Bath</French>
 		<German>Das Gro&#223;e Bad</German>
+		<Italian>The Great Bath</Italian>
+		<Spanish>The Great Bath</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON</Tag>
 		<English>The Great Cothon</English>
+		<French>The Great Cothon</French>
 		<German>
 			<Text>Der Gro&#223;e Cothon</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>The Great Cothon</Italian>
+		<Spanish>The Great Cothon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_LIBRARY_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] gives its city two free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] gives its city two free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] gives its city two free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] gives its city two free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] gives its city two free [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] in every coastal city and provides a free trade route in its city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] in every coastal city and provides a free trade route in its city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] in every coastal city and provides a free trade route in its city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] in every coastal city and provides a free trade route in its city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] in every coastal city and provides a free trade route in its city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_HELP</Tag>
 		<English>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</English>
+		<French>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</French>
 		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauer[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
+		<Italian>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</Italian>
+		<Spanish>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT] reduces enemy speed within your borders and also damages barbarians within your borders. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT] reduces enemy speed within your borders and also damages barbarians within your borders. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT] reduces enemy speed within your borders and also damages barbarians within your borders. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT] reduces enemy speed within your borders and also damages barbarians within your borders. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT] reduces enemy speed within your borders and also damages barbarians within your borders. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
 		<English>Harmandir Sahib</English>
+		<French>Harmandir Sahib</French>
+		<German>Harmandir Sahib</German>
+		<Italian>Harmandir Sahib</Italian>
+		<Spanish>Harmandir Sahib</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] grants experience points to troops built in all cities with your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] grants experience points to troops built in all cities with your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] grants experience points to troops built in all cities with your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] grants experience points to troops built in all cities with your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] grants experience points to troops built in all cities with your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_GREAT_BATH</Tag>
 		<English>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</English>
+		<French>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</French>
 		<German>[ICON_BULLET]Versorgt die Stadt mit S&#252;&#223;wasser[NEWLINE][ICON_BULLET]Alle neu gegr&#252;ndeten St&#228;dte erhalten einen zus&#228;tzlichen Bev&#246;lkerungspunkt</German>
+		<Italian>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</Italian>
+		<Spanish>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HARMANDIR_SAHIB</Tag>
 		<English>[ICON_BULLET]All units built in cities with state religion receive +2 experience</English>
+		<French>[ICON_BULLET]All units built in cities with state religion receive +2 experience</French>
 		<German>[ICON_BULLET]Alle Einheiten, die in St&#228;dten mit Staatsreligion ausgebildet werden, erhalten +2 Erfahrung</German>
+		<Italian>[ICON_BULLET]All units built in cities with state religion receive +2 experience</Italian>
+		<Spanish>[ICON_BULLET]All units built in cities with state religion receive +2 experience</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
 		<English>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</English>
+		<French>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</French>
 		<German>[ICON_BULLET]Stadtverteidigung erh&#246;ht Kulturaussto&#223; in allen St&#228;dten[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] pro Level f&#252;r jede vollst&#228;ndig befestigte Einheit in der Stadt</German>
+		<Italian>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</Italian>
+		<Spanish>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOLLYWOOD_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_KHAJURAHO</Tag>
 		<English>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</English>
+		<French>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</French>
 		<German>[ICON_BULLET]+100% [ICON_PRODUCTION] für Gebäude der Staats [ICON_RELIGION]</German>
+		<Italian>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</Italian>
+		<Spanish>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
 		<English>[ICON_BULLET]All trade routes are counted as foreign</English>
+		<French>[ICON_BULLET]All trade routes are counted as foreign</French>
 		<German>[ICON_BULLET]All Handelsrouten werden als ausl&#228;ndisch gewertet</German>
+		<Italian>[ICON_BULLET]All trade routes are counted as foreign</Italian>
+		<Spanish>[ICON_BULLET]All trade routes are counted as foreign</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HIMEJI_CASTLE</Tag>
@@ -330,27 +456,47 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LUBYANKA</Tag>
 		<English>Lubyanka</English>
+		<French>Lubyanka</French>
+		<German>Lubyanka</German>
+		<Italian>Lubyanka</Italian>
+		<Spanish>Lubyanka</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LUBYANKA_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] adds additional espionage to all of your specialists. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] adds additional espionage to all of your specialists. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] adds additional espionage to all of your specialists. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] adds additional espionage to all of your specialists. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] adds additional espionage to all of your specialists. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO</Tag>
 		<English>Khajuraho</English>
+		<French>Khajuraho</French>
+		<German>Khajuraho</German>
+		<Italian>Khajuraho</Italian>
+		<Spanish>Khajuraho</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Tag>
 		<English>St. Basil's Cathedral</English>
+		<Italian>Cattedrale di San Basilio</Italian>
+		<Spanish>Catedral de San Basilio</Spanish>
 		<German>
 			<Text>Basilius-Kathedrale</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Cattedrale di San Basilio</Italian>
+		<Spanish>Catedral de San Basilio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] adds additional espionage to all buildings of your state religion and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] adds additional espionage to all buildings of your state religion and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] adds additional espionage to all buildings of your state religion and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] adds additional espionage to all buildings of your state religion and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] adds additional espionage to all buildings of your state religion and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEANING_TOWER</Tag>
@@ -379,30 +525,58 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEANING_TOWER_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] increases the rate at which your civilization generates [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] increases the rate at which your civilization generates [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] increases the rate at which your civilization generates [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] increases the rate at which your civilization generates [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] increases the rate at which your civilization generates [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU</Tag>
 		<English>Machu Picchu</English>
+		<French>Machu Picchu</French>
+		<German>Machu Picchu</German>
+		<Italian>Machu Picchu</Italian>
+		<Spanish>Machu Picchu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_HELP</Tag>
 		<English>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</English>
+		<French>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</French>
+		<German>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</German>
+		<Italian>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</Italian>
+		<Spanish>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2 gold for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in the city's radius. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2 gold for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in the city's radius. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2 gold for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in the city's radius. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2 gold for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in the city's radius. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2 gold for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in the city's radius. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA</Tag>
 		<English>La Mezquita</English>
+		<French>La Mezquita</French>
+		<German>La Mezquita</German>
+		<Italian>La Mezquita</Italian>
+		<Spanish>La Mezquita</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PENTAGON_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] grants experience points to troops built in all cities and increases the chance that its city will generate a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] grants experience points to troops built in all cities and increases the chance that its city will generate a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] grants experience points to troops built in all cities and increases the chance that its city will generate a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] grants experience points to troops built in all cities and increases the chance that its city will generate a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] grants experience points to troops built in all cities and increases the chance that its city will generate a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA</Tag>
@@ -431,47 +605,90 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MT_RUSHMORE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Mt. Rushmore[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Mt. Rushmore[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Mt. Rushmore[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Mt. Rushmore[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Mt. Rushmore[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the happiness of all of your cities. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the happiness of all of your cities. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the happiness of all of your cities. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the happiness of all of your cities. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT] increases the happiness of all of your cities. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORACLE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Oracle[COLOR_REVERT] gives one free technology of your current or previous era, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Oracle[COLOR_REVERT] gives one free technology of your current or previous era, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Oracle[COLOR_REVERT] gives one free technology of your current or previous era, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Oracle[COLOR_REVERT] gives one free technology of your current or previous era, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Oracle[COLOR_REVERT] gives one free technology of your current or previous era, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA_HELP</Tag>
 		<English>[ICON_BULLET]Builder Receives a Great Person</English>
+		<French>[ICON_BULLET]Builder Receives a Great Person</French>
 		<German>[ICON_BULLET]Erbauer erh&#228;lt eine gro&#223;e Pers&#246;nlichkeit</German>
+		<Italian>[ICON_BULLET]Builder Receives a Great Person</Italian>
+		<Spanish>[ICON_BULLET]Builder Receives a Great Person</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and grants the builder a free great person. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and grants the builder a free great person. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and grants the builder a free great person. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and grants the builder a free great person. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and grants the builder a free great person. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</English>
+		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</French>
+		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] add bonus production to all [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] in your civilization. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] add bonus production to all [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] in your civilization. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] add bonus production to all [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] in your civilization. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] add bonus production to all [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] in your civilization. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] add bonus production to all [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] in your civilization. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] doubles the construction speed of the buildings of your state religion. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PARTHENON_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Legitimacy[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Legitimacy[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Legitimacy[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Legitimacy[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Legitimacy[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] allows you to hire a specialist of each type. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] allows you to hire a specialist of each type. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] allows you to hire a specialist of each type. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] allows you to hire a specialist of each type. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] allows you to hire a specialist of each type. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HIMEJI_CASTLE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT] makes city defence increases culture output and makes all fully fortified units provide +1 culture. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT] makes city defence increases culture output and makes all fully fortified units provide +1 culture. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT] makes city defence increases culture output and makes all fully fortified units provide +1 culture. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT] makes city defence increases culture output and makes all fully fortified units provide +1 culture. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT] makes city defence increases culture output and makes all fully fortified units provide +1 culture. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS</Tag>
@@ -500,20 +717,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] removes the unhealthiness of all Flood Plains in its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] removes the unhealthiness of all Flood Plains in its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] removes the unhealthiness of all Flood Plains in its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] removes the unhealthiness of all Flood Plains in its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] removes the unhealthiness of all Flood Plains in its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
 		<English>The Grand Canal</English>
+		<French>The Grand Canal</French>
 		<German>Kaiserkanal</German>
+		<Italian>The Grand Canal</Italian>
+		<Spanish>The Grand Canal</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT] adds extra commerce to all river tiles in your city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT] adds extra commerce to all river tiles in your city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT] adds extra commerce to all river tiles in your city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT] adds extra commerce to all river tiles in your city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT] adds extra commerce to all river tiles in your city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS</Tag>
 		<English>Floating Gardens</English>
+		<French>Floating Gardens</French>
 		<German>Schwimmende G&#228;rten</German>
+		<Italian>Floating Gardens</Italian>
+		<Spanish>Floating Gardens</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
@@ -542,10 +773,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Ampitheatre[COLOR_REVERT], provides bonus health.</English>
+		<French>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Ampitheatre[COLOR_REVERT], provides bonus health.</French>
+		<German>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Ampitheatre[COLOR_REVERT], provides bonus health.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Ampitheatre[COLOR_REVERT], provides bonus health.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Ampitheatre[COLOR_REVERT], provides bonus health.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Floating Gardens[COLOR_REVERT] give a large food bonus as well as increasing its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Floating Gardens[COLOR_REVERT] give a large food bonus as well as increasing its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Floating Gardens[COLOR_REVERT] give a large food bonus as well as increasing its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Floating Gardens[COLOR_REVERT] give a large food bonus as well as increasing its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Floating Gardens[COLOR_REVERT] give a large food bonus as well as increasing its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE</Tag>
@@ -574,11 +813,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Tag>
 		<English>[ICON_BULLET]Civic Upkeep Reduced by 33%</English>
+		<French>[ICON_BULLET]Civic Upkeep Reduced by 33%</French>
 		<German>[ICON_BULLET]Staatsformen-Unterhalt um 33% reduziert</German>
+		<Italian>[ICON_BULLET]Civic Upkeep Reduced by 33%</Italian>
+		<Spanish>[ICON_BULLET]Civic Upkeep Reduced by 33%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT] reduces civic maintenance costs. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT] reduces civic maintenance costs. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT] reduces civic maintenance costs. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT] reduces civic maintenance costs. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT] reduces civic maintenance costs. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>
@@ -591,6 +837,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and removes the open border requirement for trade routes. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and removes the open border requirement for trade routes. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and removes the open border requirement for trade routes. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and removes the open border requirement for trade routes. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and removes the open border requirement for trade routes. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS</Tag>
@@ -619,20 +869,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
 		<English>[ICON_BULLET]Cities continue to grow when using Food for Production</English>
+		<French>[ICON_BULLET]Cities continue to grow when using Food for Production</French>
 		<German>[ICON_BULLET]Städte wachsen weiterhin, wenn Nahrung zur Produktion verwendet wird</German>
+		<Italian>[ICON_BULLET]Cities continue to grow when using Food for Production</Italian>
+		<Spanish>[ICON_BULLET]Cities continue to grow when using Food for Production</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_FORT</Tag>
 		<English>The Red Fort</English>
+		<French>The Red Fort</French>
 		<German>Das Rote Fort</German>
+		<Italian>The Red Fort</Italian>
+		<Spanish>The Red Fort</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_FORT_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRACELAND</Tag>
@@ -661,26 +925,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRACELAND_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will create a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will create a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will create a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will create a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will create a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAN_MARCO_BASILICA</Tag>
 		<English>San Marco Basilica</English>
+		<French>Basilique St Marc</French>
+		<German>Markusdom</German>
+		<Italian>Basilica di San Marco</Italian>
+		<Spanish>Basilica de San Marcos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAN_MARCO_BASILICA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] gives 2 trade routes and increases trade route yield by fifty percent. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] gives 2 trade routes and increases trade route yield by fifty percent. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] gives 2 trade routes and increases trade route yield by fifty percent. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] gives 2 trade routes and increases trade route yield by fifty percent. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] gives 2 trade routes and increases trade route yield by fifty percent. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SISTINE_CHAPEL_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] causes each specialist in every city to generate culture and increases the culture bonus provided by buildings of your state religion. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] causes each specialist in every city to generate culture and increases the culture bonus provided by buildings of your state religion. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] causes each specialist in every city to generate culture and increases the culture bonus provided by buildings of your state religion. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] causes each specialist in every city to generate culture and increases the culture bonus provided by buildings of your state religion. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] causes each specialist in every city to generate culture and increases the culture bonus provided by buildings of your state religion. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPACE_ELEVATOR_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] increases spaceship part production in all of your cities and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] increases spaceship part production in all of your cities and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] increases spaceship part production in all of your cities and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] increases spaceship part production in all of your cities and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] increases spaceship part production in all of your cities and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPIRAL_MINARET_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT] gives all buildings of your state religion a gold bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT] gives all buildings of your state religion a gold bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT] gives all buildings of your state religion a gold bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT] gives all buildings of your state religion a gold bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT] gives all buildings of your state religion a gold bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_LIBERTY_STRATEGY</Tag>
@@ -693,33 +981,54 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Tag>
 		<English>[ICON_BULLET]No City Resistance on Conquest</English>
+		<French>[ICON_BULLET]No City Resistance on Conquest</French>
 		<German>[ICON_BULLET]Kein Widerstand nach Stadteroberung</German>
+		<Italian>[ICON_BULLET]No City Resistance on Conquest</Italian>
+		<Spanish>[ICON_BULLET]No City Resistance on Conquest</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT] removes city resistance on conquest and increases military production speed in cities with pagan temples. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT] removes city resistance on conquest and increases military production speed in cities with pagan temples. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT] removes city resistance on conquest and increases military production speed in cities with pagan temples. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT] removes city resistance on conquest and increases military production speed in cities with pagan temples. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT] removes city resistance on conquest and increases military production speed in cities with pagan temples. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX</Tag>
 		<English>Great Sphinx</English>
+		<French>Great Sphinx</French>
 		<German>
 			<Text>Die Gro&#223;e Sphinx</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Great Sphinx</Italian>
+		<Spanish>Great Sphinx</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
 		<English>[ICON_BULLET]Food is added to Production when building Wonders</English>
+		<French>[ICON_BULLET]Food is added to Production when building Wonders</French>
 		<German>[ICON_BULLET]Beim Errichten von Wundern wird Nahrung zur Produktion addiert</German>
+		<Italian>[ICON_BULLET]Food is added to Production when building Wonders</Italian>
+		<Spanish>[ICON_BULLET]Food is added to Production when building Wonders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS</Tag>
@@ -748,15 +1057,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_HELP</Tag>
 		<English>[ICON_BULLET]Doubles the revenue limit of all your shrines</English>
+		<French>[ICON_BULLET]Doubles the revenue limit of all your shrines</French>
 		<German>[ICON_BULLET]Verdoppelt die Einnahmegrenze aller Ihrer Schreine</German>
+		<Italian>[ICON_BULLET]Doubles the revenue limit of all your shrines</Italian>
+		<Spanish>[ICON_BULLET]Doubles the revenue limit of all your shrines</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY</Tag>
@@ -773,67 +1093,114 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
 		<English>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</English>
+		<French>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</French>
 		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt gro&#223;er Gener&#228;le bei</German>
+		<Italian>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</Italian>
+		<Spanish>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] removes the limit of experience gained from barbarians and allows barbarians to contribute to Great General birth. It also increases its city's production when creating military units and increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] removes the limit of experience gained from barbarians and allows barbarians to contribute to Great General birth. It also increases its city's production when creating military units and increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] removes the limit of experience gained from barbarians and allows barbarians to contribute to Great General birth. It also increases its city's production when creating military units and increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] removes the limit of experience gained from barbarians and allows barbarians to contribute to Great General birth. It also increases its city's production when creating military units and increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] removes the limit of experience gained from barbarians and allows barbarians to contribute to Great General birth. It also increases its city's production when creating military units and increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THEODOSIAN_WALLS</Tag>
 		<English>Theodosian Walls</English>
+		<French>Mur Th&#233;odosien</French>
 		<German>
 			<Text>Theodosische Mauern</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Mura Teodosiane</Italian>
+		<Spanish>Muralla Teodosiana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THEODOSIAN_WALLS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] increase a city's defenses against pre-gunpowder units. It also increases their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] increase a city's defenses against pre-gunpowder units. It also increases their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] increase a city's defenses against pre-gunpowder units. It also increases their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] increase a city's defenses against pre-gunpowder units. It also increases their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] increase a city's defenses against pre-gunpowder units. It also increases their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE</Tag>
 		<English>Topkapi Palace</English>
+		<French>Palace Topkapi</French>
 		<German>
 			<Text>Topkapi-Palast</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Palazzo Topkapi</Italian>
+		<Spanish>Palacio de Topkapi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITAIPU_DAM</Tag>
 		<English>Itaipu Dam</English>
+		<French>Itaipu Dam</French>
+		<German>Itaipu Dam</German>
+		<Italian>Itaipu Dam</Italian>
+		<Spanish>Itaipu Dam</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITAIPU_DAM_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Itaipu Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Itaipu Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Itaipu Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Itaipu Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Itaipu Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Tag>
 		<English>[ICON_BULLET]Extra initial production in conquered cities</English>
+		<French>[ICON_BULLET]Extra initial production in conquered cities</French>
+		<German>[ICON_BULLET]Extra initial production in conquered cities</German>
+		<Italian>[ICON_BULLET]Extra initial production in conquered cities</Italian>
+		<Spanish>[ICON_BULLET]Extra initial production in conquered cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest and grants extra initial production in the conquered city. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest and grants extra initial production in the conquered city. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest and grants extra initial production in the conquered city. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest and grants extra initial production in the conquered city. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest and grants extra initial production in the conquered city. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE</Tag>
 		<English>Trafalgar Square</English>
+		<French>Trafalgar Square</French>
+		<German>Trafalgar Square</German>
+		<Italian>Trafalgar Square</Italian>
 		<Spanish>Plaza de Trafalgar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_HELP</Tag>
 		<English>[ICON_BULLET]Requires a naval unit of level three or higher</English>
+		<French>[ICON_BULLET]Requires a naval unit of level three or higher</French>
 		<German>[ICON_BULLET]Ben&#246;tigt eine Marineeinheit der Stufe drei oder h&#246;her</German>
+		<Italian>[ICON_BULLET]Requires a naval unit of level three or higher</Italian>
+		<Spanish>[ICON_BULLET]Requires a naval unit of level three or higher</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] enables ships to be built much faster and the ships start off with additional experience points. It also increase its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] enables ships to be built much faster and the ships start off with additional experience points. It also increase its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] enables ships to be built much faster and the ships start off with additional experience points. It also increase its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] enables ships to be built much faster and the ships start off with additional experience points. It also increase its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] enables ships to be built much faster and the ships start off with additional experience points. It also increase its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE</Tag>
@@ -862,47 +1229,85 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] gives all buildings of your state religion a research bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] gives all buildings of your state religion a research bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] gives all buildings of your state religion a research bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] gives all buildings of your state religion a research bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] gives all buildings of your state religion a research bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VERSAILLES_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNITED_NATIONS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic Victory[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic Victory[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic Victory[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic Victory[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic Victory[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Tag>
 		<English>Westminster Palace</English>
+		<French>Westminster Palace</French>
 		<German>
 			<Text>Palast von Westminster</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Westminster Palace</Italian>
+		<Spanish>Westminster Palace</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
 		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erhöht die Produktion aller Gebäude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_HELP</Tag>
 		<English>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</English>
+		<French>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</French>
+		<German>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</German>
+		<Italian>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</Italian>
+		<Spanish>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Tag>
 		<English>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</English>
+		<French>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</French>
+		<German>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</German>
+		<Italian>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</Italian>
+		<Spanish>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_HELP</Tag>
 		<English>[ICON_BULLET]No open borders required for trade</English>
+		<French>[ICON_BULLET]No open borders required for trade</French>
+		<German>[ICON_BULLET]No open borders required for trade</German>
+		<Italian>[ICON_BULLET]No open borders required for trade</Italian>
+		<Spanish>[ICON_BULLET]No open borders required for trade</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 </Civ4GameText>

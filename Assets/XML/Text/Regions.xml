@@ -12,154 +12,306 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_0</Tag>
 		<English>Britain</English>
+		<French>Britain</French>
+		<German>Britain</German>
+		<Italian>Britain</Italian>
+		<Spanish>Britain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_1</Tag>
 		<English>Iberia</English>
+		<French>Iberia</French>
+		<German>Iberia</German>
+		<Italian>Iberia</Italian>
+		<Spanish>Iberia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_2</Tag>
 		<English>Italy</English>
+		<French>Italy</French>
+		<German>Italy</German>
+		<Italian>Italy</Italian>
+		<Spanish>Italy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_3</Tag>
 		<English>Balkans</English>
+		<French>Balkans</French>
+		<German>Balkans</German>
+		<Italian>Balkans</Italian>
+		<Spanish>Balkans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_4</Tag>
 		<English>Europe</English>
+		<French>Europe</French>
+		<German>Europe</German>
+		<Italian>Europe</Italian>
+		<Spanish>Europe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_5</Tag>
 		<English>Scandinavia</English>
+		<French>Scandinavia</French>
+		<German>Scandinavia</German>
+		<Italian>Scandinavia</Italian>
+		<Spanish>Scandinavia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_6</Tag>
 		<English>Russia</English>
+		<French>Russia</French>
+		<German>Russia</German>
+		<Italian>Russia</Italian>
+		<Spanish>Russia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_7</Tag>
 		<English>Anatolia</English>
+		<French>Anatolia</French>
+		<German>Anatolia</German>
+		<Italian>Anatolia</Italian>
+		<Spanish>Anatolia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_8</Tag>
 		<English>Mesopotamia</English>
+		<French>Mesopotamia</French>
+		<German>Mesopotamia</German>
+		<Italian>Mesopotamia</Italian>
+		<Spanish>Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_9</Tag>
 		<English>Arabia</English>
+		<French>Arabia</French>
+		<German>Arabia</German>
+		<Italian>Arabia</Italian>
+		<Spanish>Arabia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_10</Tag>
 		<English>Egypt</English>
+		<French>Egypt</French>
+		<German>Egypt</German>
+		<Italian>Egypt</Italian>
+		<Spanish>Egypt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_11</Tag>
 		<English>Maghreb</English>
+		<French>Maghreb</French>
+		<German>Maghreb</German>
+		<Italian>Maghreb</Italian>
+		<Spanish>Maghreb</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_12</Tag>
 		<English>Persia</English>
+		<French>Persia</French>
+		<German>Persia</German>
+		<Italian>Persia</Italian>
+		<Spanish>Persia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_13</Tag>
 		<English>India</English>
+		<French>India</French>
+		<German>India</German>
+		<Italian>India</Italian>
+		<Spanish>India</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_14</Tag>
 		<English>Deccan</English>
+		<French>Deccan</French>
+		<German>Deccan</German>
+		<Italian>Deccan</Italian>
+		<Spanish>Deccan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_15</Tag>
 		<English>Indochina</English>
+		<French>Indochina</French>
+		<German>Indochina</German>
+		<Italian>Indochina</Italian>
+		<Spanish>Indochina</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_16</Tag>
 		<English>Indonesia</English>
+		<French>Indonesia</French>
+		<German>Indonesia</German>
+		<Italian>Indonesia</Italian>
+		<Spanish>Indonesia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_17</Tag>
 		<English>China</English>
+		<French>China</French>
+		<German>China</German>
+		<Italian>China</Italian>
+		<Spanish>China</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_18</Tag>
 		<English>Korea</English>
+		<French>Korea</French>
+		<German>Korea</German>
+		<Italian>Korea</Italian>
+		<Spanish>Korea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_19</Tag>
 		<English>Japan</English>
+		<French>Japan</French>
+		<German>Japan</German>
+		<Italian>Japan</Italian>
+		<Spanish>Japan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_20</Tag>
 		<English>Manchuria</English>
+		<French>Manchuria</French>
+		<German>Manchuria</German>
+		<Italian>Manchuria</Italian>
+		<Spanish>Manchuria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_21</Tag>
 		<English>Tibet</English>
+		<French>Tibet</French>
+		<German>Tibet</German>
+		<Italian>Tibet</Italian>
+		<Spanish>Tibet</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_22</Tag>
 		<English>Central Asia</English>
+		<French>Central Asia</French>
+		<German>Central Asia</German>
+		<Italian>Central Asia</Italian>
+		<Spanish>Central Asia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_23</Tag>
 		<English>Siberia</English>
+		<French>Siberia</French>
+		<German>Siberia</German>
+		<Italian>Siberia</Italian>
+		<Spanish>Siberia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_24</Tag>
 		<English>Australia</English>
+		<French>Australia</French>
+		<German>Australia</German>
+		<Italian>Australia</Italian>
+		<Spanish>Australia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_25</Tag>
 		<English>Oceania</English>
+		<French>Oceania</French>
+		<German>Oceania</German>
+		<Italian>Oceania</Italian>
+		<Spanish>Oceania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_26</Tag>
 		<English>Ethiopia</English>
+		<French>Ethiopia</French>
+		<German>Ethiopia</German>
+		<Italian>Ethiopia</Italian>
+		<Spanish>Ethiopia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_27</Tag>
 		<English>West Africa</English>
+		<French>West Africa</French>
+		<German>West Africa</German>
+		<Italian>West Africa</Italian>
+		<Spanish>West Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_28</Tag>
 		<English>South Africa</English>
+		<French>South Africa</French>
+		<German>South Africa</German>
+		<Italian>South Africa</Italian>
+		<Spanish>South Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_29</Tag>
 		<English>Canada</English>
+		<French>Canada</French>
+		<German>Canada</German>
+		<Italian>Canada</Italian>
+		<Spanish>Canada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_30</Tag>
 		<English>Alaska</English>
+		<French>Alaska</French>
+		<German>Alaska</German>
+		<Italian>Alaska</Italian>
+		<Spanish>Alaska</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_31</Tag>
 		<English>United States</English>
+		<French>United States</French>
+		<German>United States</German>
+		<Italian>United States</Italian>
+		<Spanish>United States</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_32</Tag>
 		<English>Caribbean</English>
+		<French>Caribbean</French>
+		<German>Caribbean</German>
+		<Italian>Caribbean</Italian>
+		<Spanish>Caribbean</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_33</Tag>
 		<English>Mesoamerica</English>
+		<French>Mesoamerica</French>
+		<German>Mesoamerica</German>
+		<Italian>Mesoamerica</Italian>
+		<Spanish>Mesoamerica</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_34</Tag>
 		<English>Brazil</English>
+		<French>Brazil</French>
+		<German>Brazil</German>
+		<Italian>Brazil</Italian>
+		<Spanish>Brazil</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_35</Tag>
 		<English>Argentina</English>
+		<French>Argentina</French>
+		<German>Argentina</German>
+		<Italian>Argentina</Italian>
+		<Spanish>Argentina</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_36</Tag>
 		<English>Peru</English>
+		<French>Peru</French>
+		<German>Peru</German>
+		<Italian>Peru</Italian>
+		<Spanish>Peru</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_37</Tag>
 		<English>Colombia</English>
+		<French>Colombia</French>
+		<German>Colombia</German>
+		<Italian>Colombia</Italian>
+		<Spanish>Colombia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_</Tag>
@@ -172,352 +324,577 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_0</Tag>
 		<English>Egypt</English>
+		<French>Egypt</French>
 		<German>&#196;gypten</German>
+		<Italian>Egypt</Italian>
+		<Spanish>Egypt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_1</Tag>
 		<English>Phoenicia</English>
+		<French>Phoenicia</French>
 		<German>Ph&#246;nizien</German>
+		<Italian>Phoenicia</Italian>
+		<Spanish>Phoenicia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_2</Tag>
 		<English>Babylonia</English>
+		<French>Babylonia</French>
 		<German>Babylonien</German>
+		<Italian>Babylonia</Italian>
+		<Spanish>Babylonia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_3</Tag>
 		<English>Persia</English>
+		<French>Persia</French>
 		<German>Persien</German>
+		<Italian>Persia</Italian>
+		<Spanish>Persia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_4</Tag>
 		<English>Mesopotamia</English>
+		<French>Mesopotamia</French>
 		<German>Mesopotamien</German>
+		<Italian>Mesopotamia</Italian>
+		<Spanish>Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_5</Tag>
 		<English>Transoxania</English>
+		<French>Transoxania</French>
 		<German>Transoxanien</German>
+		<Italian>Transoxania</Italian>
+		<Spanish>Transoxania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_6</Tag>
 		<English>Northwest India</English>
+		<French>Northwest India</French>
 		<German>Nordwestindien</German>
+		<Italian>Northwest India</Italian>
+		<Spanish>Northwest India</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_7</Tag>
 		<English>Mediterranean</English>
+		<French>Mediterranean</French>
 		<German>Mittelmeerk&#252;ste</German>
+		<Italian>Mediterranean</Italian>
+		<Spanish>Mediterranean</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_8</Tag>
 		<English>Iberia</English>
+		<French>Iberia</French>
 		<German>Iberien</German>
+		<Italian>Iberia</Italian>
+		<Spanish>Iberia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_9</Tag>
 		<English>Gaul</English>
+		<French>Gaul</French>
 		<German>Gallien</German>
+		<Italian>Gaul</Italian>
+		<Spanish>Gaul</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_10</Tag>
 		<English>Britain</English>
+		<French>Britain</French>
 		<German>Britannien</German>
+		<Italian>Britain</Italian>
+		<Spanish>Britain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_11</Tag>
 		<English>Africa</English>
+		<French>Africa</French>
 		<German>Afrika</German>
+		<Italian>Africa</Italian>
+		<Spanish>Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_12</Tag>
 		<English>Greece and Anatolia</English>
+		<French>Greece and Anatolia</French>
 		<German>Griechenland und Anatolien</German>
+		<Italian>Greece and Anatolia</Italian>
+		<Spanish>Greece and Anatolia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_13</Tag>
 		<English>Egypt</English>
+		<French>Egypt</French>
 		<German>&#196;gypten</German>
+		<Italian>Egypt</Italian>
+		<Spanish>Egypt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_14</Tag>
 		<English>Korea</English>
+		<French>Korea</French>
+		<German>Korea</German>
+		<Italian>Korea</Italian>
+		<Spanish>Korea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_15</Tag>
 		<English>Manchuria</English>
+		<French>Manchuria</French>
 		<German>Mandschurei</German>
+		<Italian>Manchuria</Italian>
+		<Spanish>Manchuria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_16</Tag>
 		<English>China</English>
+		<French>China</French>
+		<German>China</German>
+		<Italian>China</Italian>
+		<Spanish>China</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_17</Tag>
 		<English>Indochina</English>
+		<French>Indochina</French>
+		<German>Indochina</German>
+		<Italian>Indochina</Italian>
+		<Spanish>Indochina</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_18</Tag>
 		<English>Indonesia</English>
+		<French>Indonesia</French>
 		<German>Indonesien</German>
+		<Italian>Indonesia</Italian>
+		<Spanish>Indonesia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_19</Tag>
 		<English>Philippines</English>
+		<French>Philippines</French>
 		<German>Philippinen</German>
+		<Italian>Philippines</Italian>
+		<Spanish>Philippines</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_20</Tag>
 		<English>Ethiopia and Subequatorial Africa</English>
+		<French>Ethiopia and Subequatorial Africa</French>
 		<German>&#196;thiopien und Sub&#228;quatorialafrika</German>
+		<Italian>Ethiopia and Subequatorial Africa</Italian>
+		<Spanish>Ethiopia and Subequatorial Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_21</Tag>
 		<English>Balkans</English>
+		<French>Balkans</French>
 		<German>Balkan</German>
+		<Italian>Balkans</Italian>
+		<Spanish>Balkans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_22</Tag>
 		<English>North Africa</English>
+		<French>North Africa</French>
 		<German>Nordafrika</German>
+		<Italian>North Africa</Italian>
+		<Spanish>North Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_23</Tag>
 		<English>Near East</English>
+		<French>Near East</French>
 		<German>Naher Osten</German>
+		<Italian>Near East</Italian>
+		<Spanish>Near East</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_24</Tag>
 		<English>Egypt</English>
+		<French>Egypt</French>
 		<German>&#196;gypten</German>
+		<Italian>Egypt</Italian>
+		<Spanish>Egypt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_25</Tag>
 		<English>Maghreb</English>
+		<French>Maghreb</French>
+		<German>Maghreb</German>
+		<Italian>Maghreb</Italian>
+		<Spanish>Maghreb</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_26</Tag>
 		<English>Mesopotamia</English>
+		<French>Mesopotamia</French>
 		<German>Mesopotamien</German>
+		<Italian>Mesopotamia</Italian>
+		<Spanish>Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_27</Tag>
 		<English>Persia</English>
+		<French>Persia</French>
 		<German>Persien</German>
+		<Italian>Persia</Italian>
+		<Spanish>Persia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_28</Tag>
 		<English>Spain</English>
+		<French>Spain</French>
 		<German>Spanien</German>
+		<Italian>Spain</Italian>
+		<Spanish>Spain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_29</Tag>
 		<English>Europe</English>
+		<French>Europe</French>
 		<German>Europa</German>
+		<Italian>Europe</Italian>
+		<Spanish>Europe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_30</Tag>
 		<English>North America</English>
+		<French>North America</French>
 		<German>Nordamerika</German>
+		<Italian>North America</Italian>
+		<Spanish>North America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_31</Tag>
 		<English>North America</English>
+		<French>North America</French>
 		<German>Nordamerika</German>
+		<Italian>North America</Italian>
+		<Spanish>North America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_32</Tag>
 		<English>South and Central America</English>
+		<French>South and Central America</French>
 		<German>S&#252;d- und Mittelamerika</German>
+		<Italian>South and Central America</Italian>
+		<Spanish>South and Central America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_33</Tag>
 		<English>Africa</English>
+		<French>Africa</French>
 		<German>Afrika</German>
+		<Italian>Africa</Italian>
+		<Spanish>Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_34</Tag>
 		<English>Asia</English>
+		<French>Asia</French>
 		<German>Asien</German>
+		<Italian>Asia</Italian>
+		<Spanish>Asia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_35</Tag>
 		<English>Australia and Oceania</English>
+		<French>Australia and Oceania</French>
 		<German>Australien und Ozeanien</German>
+		<Italian>Australia and Oceania</Italian>
+		<Spanish>Australia and Oceania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_36</Tag>
 		<English>France</English>
+		<French>France</French>
 		<German>Frankreich</German>
+		<Italian>France</Italian>
+		<Spanish>France</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_37</Tag>
 		<English>Italy</English>
+		<French>Italy</French>
 		<German>Italien</German>
+		<Italian>Italy</Italian>
+		<Spanish>Italy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_38</Tag>
 		<English>Russia</English>
+		<French>Russia</French>
 		<German>Russland</German>
+		<Italian>Russia</Italian>
+		<Spanish>Russia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_39</Tag>
 		<English>England</English>
+		<French>England</French>
+		<German>England</German>
+		<Italian>England</Italian>
+		<Spanish>England</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_40</Tag>
 		<English>Scandinavia</English>
+		<French>Scandinavia</French>
 		<German>Skandinavien</German>
+		<Italian>Scandinavia</Italian>
+		<Spanish>Scandinavia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_41</Tag>
 		<English>Siberia</English>
+		<French>Siberia</French>
 		<German>Sibirien</German>
+		<Italian>Siberia</Italian>
+		<Spanish>Siberia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_42</Tag>
 		<English>Andean Coast, South America</English>
+		<French>Andean Coast, South America</French>
 		<German>Andenk&#252;ste, S&#252;damerika</German>
+		<Italian>Andean Coast, South America</Italian>
+		<Spanish>Andean Coast, South America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_43</Tag>
 		<English>Peru, South America</English>
+		<French>Peru, South America</French>
 		<German>Peru, S&#252;damerika</German>
+		<Italian>Peru, South America</Italian>
+		<Spanish>Peru, South America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_44</Tag>
 		<English>Gran Columbia, South America</English>
+		<French>Gran Columbia, South America</French>
 		<German>Gro&#223;kolumbien, S&#252;damerika</German>
+		<Italian>Gran Columbia, South America</Italian>
+		<Spanish>Gran Columbia, South America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_45</Tag>
 		<English>Guayanas, South America</English>
+		<French>Guayanas, South America</French>
 		<German>Guayanas, S&#252;damerika</German>
+		<Italian>Guayanas, South America</Italian>
+		<Spanish>Guayanas, South America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_46</Tag>
 		<English>Caribbean</English>
+		<French>Caribbean</French>
 		<German>Karibik</German>
+		<Italian>Caribbean</Italian>
+		<Spanish>Caribbean</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_47</Tag>
 		<English>Eastern Mediterranean</English>
+		<French>Eastern Mediterranean</French>
 		<German>&#214;stliche Mittelmeerk&#252;ste</German>
+		<Italian>Eastern Mediterranean</Italian>
+		<Spanish>Eastern Mediterranean</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_48</Tag>
 		<English>Black Sea</English>
+		<French>Black Sea</French>
 		<German>Schwarzes Meer</German>
+		<Italian>Black Sea</Italian>
+		<Spanish>Black Sea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_49</Tag>
 		<English>Cairo</English>
+		<French>Cairo</French>
 		<German>Kairo</German>
+		<Italian>Cairo</Italian>
+		<Spanish>Cairo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_50</Tag>
 		<English>Mecca</English>
+		<French>Mecca</French>
 		<German>Mekka</German>
+		<Italian>Mecca</Italian>
+		<Spanish>Mecca</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_51</Tag>
 		<English>Baghdad</English>
+		<French>Baghdad</French>
 		<German>Bagdad</German>
+		<Italian>Baghdad</Italian>
+		<Spanish>Baghdad</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_52</Tag>
 		<English>Vienna</English>
+		<French>Vienna</French>
 		<German>Wien</German>
+		<Italian>Vienna</Italian>
+		<Spanish>Vienna</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_53</Tag>
 		<English>South Asia</English>
+		<French>South Asia</French>
 		<German>S&#252;dasien</German>
+		<Italian>South Asia</Italian>
+		<Spanish>South Asia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_54</Tag>
 		<English>North and Central America</English>
+		<French>North and Central America</French>
 		<German>Nord- und Mittelamerika</German>
+		<Italian>North and Central America</Italian>
+		<Spanish>North and Central America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_55</Tag>
 		<English>Deccan</English>
+		<French>Deccan</French>
 		<German>Dekkan</German>
+		<Italian>Deccan</Italian>
+		<Spanish>Deccan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_56</Tag>
 		<English>Srivijaya</English>
+		<French>Srivijaya</French>
+		<German>Srivijaya</German>
+		<Italian>Srivijaya</Italian>
+		<Spanish>Srivijaya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_57</Tag>
 		<English>Iberia</English>
+		<French>Iberia</French>
 		<German>Iberien</German>
+		<Italian>Iberia</Italian>
+		<Spanish>Iberia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_58</Tag>
 		<English>Maghreb</English>
+		<French>Maghreb</French>
+		<German>Maghreb</German>
+		<Italian>Maghreb</Italian>
+		<Spanish>Maghreb</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_59</Tag>
 		<English>West Africa</English>
+		<French>West Africa</French>
 		<German>Westafrika</German>
+		<Italian>West Africa</Italian>
+		<Spanish>West Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_60</Tag>
 		<English>Brazil</English>
+		<French>Brazil</French>
 		<German>Brasilien</German>
+		<Italian>Brazil</Italian>
+		<Spanish>Brazil</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_61</Tag>
 		<English>South America</English>
+		<French>South America</French>
 		<German>S&#252;damerika</German>
+		<Italian>South America</Italian>
+		<Spanish>South America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_62</Tag>
 		<English>Canada</English>
+		<French>Canada</French>
 		<German>Kanada</German>
+		<Italian>Canada</Italian>
+		<Spanish>Canada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_63</Tag>
 		<English>Atlantic Coast, Canada</English>
+		<French>Atlantic Coast, Canada</French>
 		<German>Atlantikk&#252;ste, Kanada</German>
+		<Italian>Atlantic Coast, Canada</Italian>
+		<Spanish>Atlantic Coast, Canada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_64</Tag>
 		<English>Pacific Coast, Canada</English>
+		<French>Pacific Coast, Canada</French>
 		<German>Pazifikk&#252;ste, Kanada</German>
+		<Italian>Pacific Coast, Canada</Italian>
+		<Spanish>Pacific Coast, Canada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_65</Tag>
 		<English>Hawaii</English>
+		<French>Hawaii</French>
+		<German>Hawaii</German>
+		<Italian>Hawaii</Italian>
+		<Spanish>Hawaii</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_66</Tag>
 		<English>New Zealand</English>
+		<French>New Zealand</French>
 		<German>Neuseeland</German>
+		<Italian>New Zealand</Italian>
+		<Spanish>New Zealand</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_67</Tag>
 		<English>Marquesas</English>
+		<French>Marquesas</French>
+		<German>Marquesas</German>
+		<Italian>Marquesas</Italian>
+		<Spanish>Marquesas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_68</Tag>
 		<English>Easter Island</English>
+		<French>Easter Island</French>
 		<German>Osterinsel</German>
+		<Italian>Easter Island</Italian>
+		<Spanish>Easter Island</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
+		<French>China</French>
 		<German>China</German>
+		<Italian>China</Italian>
+		<Spanish>China</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
 		<English>Mediterranean Coast</English>
+		<French>Mediterranean Coast</French>
 		<German>Mittelmeerk&#252;ste</German>
+		<Italian>Mediterranean Coast</Italian>
+		<Spanish>Mediterranean Coast</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_71</Tag>
 		<English>China</English>
+		<French>China</French>
 		<German>China</German>
+		<Italian>China</Italian>
+		<Spanish>China</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -76,14 +76,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_FASCIST</Tag>
 		<English>New Mexica Empire</English>
+		<French>New Mexica Empire</French>
+		<German>New Mexica Empire</German>
+		<Italian>New Mexica Empire</Italian>
+		<Spanish>New Mexica Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_ALTEPETL</Tag>
 		<English>Mexican Altepetl</English>
+		<French>Mexican Altepetl</French>
+		<German>Mexican Altepetl</German>
+		<Italian>Mexican Altepetl</Italian>
+		<Spanish>Mexican Altepetl</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_EMPIRE</Tag>
 		<English>Aztec Empire</English>
+		<French>Aztec Empire</French>
+		<German>Aztec Empire</German>
+		<Italian>Aztec Empire</Italian>
+		<Spanish>Aztec Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_ADJECTIVE</Tag>

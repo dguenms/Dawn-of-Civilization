@@ -100,21 +100,41 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DESERT_ADAPTATION</Tag>
 		<English>Desert Adaptation</English>
+		<French>Desert Adaptation</French>
+		<German>Desert Adaptation</German>
+		<Italian>Desert Adaptation</Italian>
+		<Spanish>Desert Adaptation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SKIRMISH</Tag>
 		<English>Skirmish</English>
+		<French>Skirmish</French>
+		<German>Skirmish</German>
+		<Italian>Skirmish</Italian>
+		<Spanish>Skirmish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DISENGAGE1</Tag>
 		<English>Disengage I</English>
+		<French>Disengage I</French>
+		<German>Disengage I</German>
+		<Italian>Disengage I</Italian>
+		<Spanish>Disengage I</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DISENGAGE2</Tag>
 		<English>Disengage II</English>
+		<French>Disengage II</French>
+		<German>Disengage II</German>
+		<Italian>Disengage II</Italian>
+		<Spanish>Disengage II</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FLANKING3</Tag>
 		<English>Flanking III</English>
+		<French>Flanking III</French>
+		<German>Flanking III</German>
+		<Italian>Flanking III</Italian>
+		<Spanish>Flanking III</Spanish>
 	</TEXT>
 </Civ4GameText>

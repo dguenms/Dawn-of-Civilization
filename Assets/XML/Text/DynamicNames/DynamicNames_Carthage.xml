@@ -4,23 +4,38 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DESC</Tag>
 		<English>The Phoenicians</English>
+		<French>The Phoenicians</French>
+		<German>The Phoenicians</German>
+		<Italian>The Phoenicians</Italian>
+		<Spanish>The Phoenicians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</Tag>
 		<English>Phoenicia</English>
+		<French>Phoenicia</French>
+		<German>Phoenicia</German>
+		<Italian>Phoenicia</Italian>
+		<Spanish>Phoenicia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Tag>
 		<English>Phoenician</English>
+		<French>Phoenician</French>
 		<German>
 			<Text>Ph&#246;nizisch:ph&#246;nizischen:ph&#246;nizische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>Phoenician</Italian>
+		<Spanish>Phoenician</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_PEOPLES</Tag>
 		<English>Canaanite Peoples</English>
+		<French>Canaanite Peoples</French>
+		<German>Canaanite Peoples</German>
+		<Italian>Canaanite Peoples</Italian>
+		<Spanish>Canaanite Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DEFAULT</Tag>
@@ -49,30 +64,58 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_REPUBLIC</Tag>
 		<English>Republic of Lebanon</English>
+		<French>Republic of Lebanon</French>
+		<German>Republic of Lebanon</German>
+		<Italian>Republic of Lebanon</Italian>
+		<Spanish>Republic of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_COMMUNIST</Tag>
 		<English>People's Republic of Lebanon</English>
+		<French>People's Republic of Lebanon</French>
+		<German>People's Republic of Lebanon</German>
+		<Italian>People's Republic of Lebanon</Italian>
+		<Spanish>People's Republic of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_FASCIST</Tag>
 		<English>National Lebanon</English>
+		<French>National Lebanon</French>
+		<German>National Lebanon</German>
+		<Italian>National Lebanon</Italian>
+		<Spanish>National Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_REPUBLIC</Tag>
 		<English>Punic Republic</English>
+		<French>Punic Republic</French>
+		<German>Punic Republic</German>
+		<Italian>Punic Republic</Italian>
+		<Spanish>Punic Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_COMMUNIST</Tag>
 		<English>Punic People's Republic</English>
+		<French>Punic People's Republic</French>
+		<German>Punic People's Republic</German>
+		<Italian>Punic People's Republic</Italian>
+		<Spanish>Punic People's Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_FASCIST</Tag>
 		<English>New Carthaginian Empire</English>
+		<French>New Carthaginian Empire</French>
+		<German>New Carthaginian Empire</German>
+		<Italian>New Carthaginian Empire</Italian>
+		<Spanish>New Carthaginian Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_DEFAULT</Tag>
 		<English>Carthaginian Empire</English>
+		<French>Carthaginian Empire</French>
+		<German>Carthaginian Empire</German>
+		<Italian>Carthaginian Empire</Italian>
+		<Spanish>Carthaginian Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_EMPIRE</Tag>
