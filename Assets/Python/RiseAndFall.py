@@ -1123,7 +1123,7 @@ class RiseAndFall:
 			if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
 				return
 		
-		lConditionalCivs = [iByzantium, iMughals, iOttomans, iThailand, iBrazil, iArgentina, iCanada]
+		lConditionalCivs = [iByzantium, iMughals, iOttomans, iThailand, iBrazil, iArgentina, iCanada, iItaly]
 		
 		# Leoreth: extra checks for conditional civs
 		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -1154,20 +1154,20 @@ class RiseAndFall:
 					if data.getStabilityLevel(iColonyPlayer) > iStabilityStable:
 						return
 						
-		if utils.getHumanID() != iCiv and iCiv == iItaly:
-			if pRome.isAlive():
-				return
+			elif iCiv == iItaly:
+				if pRome.isAlive():
+					return
 				
-			cityList = utils.getCitiesInCore(iRome, False)
-			
-			iIndependentCities = 0
+				cityList = utils.getCitiesInCore(iRome, False)
+				
+				iIndependentCities = 0
 
-			for pCity in cityList:
-				if not pCity.getOwner() < iNumPlayers:
-					iIndependentCities += 1
-					
-			if iIndependentCities == 0:
-				return
+				for pCity in cityList:
+					if not pCity.getOwner() < iNumPlayers:
+						iIndependentCities += 1
+						
+				if iIndependentCities == 0:
+					return
 				
 		tCapital = Areas.getCapital(iCiv)
 				

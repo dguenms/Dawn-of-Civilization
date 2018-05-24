@@ -1260,6 +1260,7 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("ClearChanges")
 			screen.deleteWidget("Export")
 			screen.deleteWidget("SwitchReborn")
+			screen.deleteWidget("FlipAIButton")
 ## Panel Screen ##
 			nRows = 1
 			if self.iPlayerAddMode in self.PlayerMode + self.RevealMode + self.MapMode:
