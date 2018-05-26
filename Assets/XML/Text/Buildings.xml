@@ -253,7 +253,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
+		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FACTORY_STRATEGY</Tag>
@@ -730,7 +730,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</English>
+		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</English>
+		<French>La [COLOR_BUILDING_TEXT]Ziggourat[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes des [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] et qui proviennent de M&#233;sopotamie.</French>
+		<German>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPERMARKET_STRATEGY</Tag>
@@ -775,7 +779,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
-		<German>J�dische Synagoge</German>
+		<German>Jüdische Synagoge</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
@@ -784,7 +788,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
-		<German>J�dische Jeschiwa</German>
+		<German>Jüdische Jeschiwa</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
@@ -793,7 +797,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
-		<German>J�discher Sanhedrin</German>
+		<German>Jüdischer Sanhedrin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
@@ -903,7 +907,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Bas�lica de San Pedro</Text>
+			<Text>Basílica de San Pedro</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -1159,7 +1163,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
-		<German>Zoroastrisches K�nigliches Feuer</German>
+		<German>Zoroastrisches Königliches Feuer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>
@@ -1360,70 +1364,342 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE</Tag>
 		<English>Pesedjet Temple</English>
+		<French>
+			<Text>Temple pesedjet:Temples pesedjet</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Pesedjet Temple</German>
+		<Italian>Pesedjet Temple</Italian>
+		<Spanish>Pesedjet Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pesedjet Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Pesedjet[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple du Pesedjet[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Pesedjet[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Pesedjet Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Pesedjet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pesedjet Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Pesedjet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pesedjet Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Pesedjet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE</Tag>
 		<English>Ancestor Shrine</English>
+		<French>
+			<Text>Temple des anc&#234;tres:Temples des anc&#234;tres</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Ancestor Shrine</German>
+		<Italian>Ancestor Shrine</Italian>
+		<Spanish>Ancestor Shrine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ancestor Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shendao[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple des anc&#234;tres[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Shenisme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Ancestor Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shendao[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Ancestor Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shendao[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Ancestor Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shendao[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VEDIC_TEMPLE</Tag>
 		<English>Vedic Temple</English>
+		<French>
+			<Text>Temple v&#233;dique:Temples v&#233;diques</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Vedic Temple</German>
+		<Italian>Vedic Temple</Italian>
+		<Spanish>Vedic Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VEDIC_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Vedic Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Vedism[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple v&#233;dique[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]V&#233;disme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Vedic Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Vedism[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Vedic Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Vedism[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Vedic Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Vedism[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE</Tag>
 		<English>Olympian Temple</English>
+		<French>
+			<Text>Temple olympien:Temples olympiens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Olympian Temple</German>
+		<Italian>Olympian Temple</Italian>
+		<Spanish>Olympian Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple olympien[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]Olympianisme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE</Tag>
 		<English>Baalist Temple</English>
+		<French>
+			<Text>Temples de Baal:Temples de Baal</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Baalist Temple</German>
+		<Italian>Baalist Temple</Italian>
+		<Spanish>Baalist Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Baalist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple de Baal[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Baalisme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Baalist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Baalist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Baalist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Baalism[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATUA_SHRINE</Tag>
 		<English>Atua Shrine</English>
+		<French>
+			<Text>Sanctuaire atua:Sanctuaires atua</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Atua Shrine</German>
+		<Italian>Atua Shrine</Italian>
+		<Spanish>Atua Shrine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ATUA_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Atua Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Atua[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Sanctuaire atua[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes des [COLOR_HIGHLIGHT_TEXT]Atua[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Atua Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Atua[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Atua Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Atua[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Atua Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Atua[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAZDAIST_TEMPLE</Tag>
 		<English>Mazdaist Temple</English>
+		<French>
+			<Text>Temple mazd&#233;iste:Temples mazd&#233;istes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Mazdaist Temple</German>
+		<Italian>Mazdaist Temple</Italian>
+		<Spanish>Mazdaist Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAZDAIST_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Mazdaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mazdaism[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple mazd&#233;iste[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Mazd&#233;isme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Mazdaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mazdaism[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Mazdaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mazdaism[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Mazdaist Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Mazdaism[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEOTL_STEP_PYRAMID</Tag>
 		<English>Teotl Step Pyramid</English>
+		<French>
+			<Text>Pyramide &#224; degr&#233;s teotl:Pyramides &#224; degr&#233;s teotl</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Teotl Step Pyramid</German>
+		<Italian>Teotl Step Pyramid</Italian>
+		<Spanish>Teotl Step Pyramid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTL_STEP_PYRAMID_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Teotl Step Pyramid[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Teotl[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Pyramide &#224; degr&#233;s teotl[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Teotl[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Teotl Step Pyramid[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Teotl[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Teotl Step Pyramid[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Teotl[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Teotl Step Pyramid[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Teotl[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHINTO_SHRINE</Tag>
 		<English>Shinto Shrine</English>
+		<French>
+			<Text>Sanctuaire shinto:Sanctuaires shinto</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Shinto Shrine</German>
+		<Italian>Shinto Shrine</Italian>
+		<Spanish>Shinto Shrine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHINTO_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Shinto Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shinto[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Sanctuaire shinto[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Shinto&#239;sme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Shinto Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shinto[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shinto Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shinto[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shinto Shrine[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Shinto[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ASATRU_HOF</Tag>
 		<English>Asatru Hof</English>
+		<French>
+			<Text>Hof &#193;satr&#250;ar:Hofs &#193;satr&#250;ar</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Asatru Hof</German>
+		<Italian>Asatru Hof</Italian>
+		<Spanish>Asatru Hof</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASATRU_HOF_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Asatru Hof[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Asatru[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Hof &#193;satr&#250;ar[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]&#193;satr&#250;[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Asatru Hof[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Asatru[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Asatru Hof[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Asatru[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Asatru Hof[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Asatru[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DRUIDIC_NEMETON</Tag>
 		<English>Druidic Nemeton</English>
+		<French>
+			<Text>Nemeton druidique:Nemetons druidiques</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Druidic Nemeton</German>
+		<Italian>Druidic Nemeton</Italian>
+		<Spanish>Druidic Nemeton</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DRUIDIC_NEMETON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Druidic Nemeton[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Druidism[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Nemeton druidique[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Druidisme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Druidic Nemeton[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Druidism[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Druidic Nemeton[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Druidism[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Druidic Nemeton[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Druidism[COLOR_REVERT].</Spanish>
+</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PERUN_SHRINE</Tag>
 		<English>Shrine of Perun</English>
+		<French>
+			<Text>Sanctuaire de P&#233;roun:Sanctuaires de P&#233;roun</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Shrine of Perun</German>
+		<Italian>Shrine of Perun</Italian>
+		<Spanish>Shrine of Perun</Spanish>	
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PERUN_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Shrine of Perun[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Rodnovery[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Sanctuaire de P&#233;roun[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de la [COLOR_HIGHLIGHT_TEXT]Rodnov&#233;rie[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Shrine of Perun[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Rodnovery[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shrine of Perun[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Rodnovery[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shrine of Perun[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Rodnovery[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_YORUBA_TEMPLE</Tag>
 		<English>Yoruba Temple</English>
+		<French>
+			<Text>Temple yoruba:Temples yoruba</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Yoruba Temple</German>
+		<Italian>Yoruba Temple</Italian>
+		<Spanish>Yoruba Temple</Spanish>	
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_YORUBA_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Yoruba Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Yoruba[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple yoruba[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de la religion [COLOR_HIGHLIGHT_TEXT]Yoruba[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Yoruba Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Yoruba[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Yoruba Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Yoruba[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Yoruba Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Yoruba[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INTI_TEMPLE</Tag>
 		<English>Inti Temple</English>
+		<French>
+			<Text>Temple d'Inti:Temples d'Inti</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Inti Temple</German>
+		<Italian>Inti Temple</Italian>
+		<Spanish>Inti Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INTI_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Inti Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Inti[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple d'Inti[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes d'[COLOR_HIGHLIGHT_TEXT]Inti[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Inti Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Inti[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Inti Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Inti[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Inti Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Inti[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TENGRI_OBO</Tag>
 		<English>Tengri Obo</English>
+		<French>
+			<Text>Ovoo tengriste:Ovoos tengristes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Tengri Obo</German>
+		<Italian>Tengri Obo</Italian>
+		<Spanish>Tengri Obo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TENGRI_OBO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Tengri Obo[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Tengri[COLOR_REVERT].</English>
+		<French>L'[COLOR_BUILDING_TEXT]Ovoo tengriste[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes du [COLOR_HIGHLIGHT_TEXT]Tengrisme[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Tengri Obo[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Tengri[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Tengri Obo[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Tengri[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Tengri Obo[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Tengri[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBAL_TEMPLE</Tag>
 		<English>Hubal Temple</English>
+		<French>
+			<Text>Temple de Houbal:Temples de Houbal</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Hubal Temple</German>
+		<Italian>Hubal Temple</Italian>
+		<Spanish>Hubal Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUBAL_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Hubal Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in the Arabian peninsula.</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple de Houbal[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes des [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] et qui proviennent de la p&#233;ninsule arabique.</French>
+		<German>The [COLOR_BUILDING_TEXT]Hubal Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in the Arabian peninsula.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Hubal Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in the Arabian peninsula.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Hubal Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in the Arabian peninsula.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ASTAR_TEMPLE</Tag>
 		<English>Astar Temple</English>
+		<French>
+			<Text>Temple d'Astar:Temples d'Astar</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Astar Temple</German>
+		<Italian>Astar Temple</Italian>
+		<Spanish>Astar Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASTAR_TEMPLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Astar Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of Ethiopia.</English>
+		<French>Le [COLOR_BUILDING_TEXT]Temple d'Astar[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] de l'&#201;thiopie.</French>
+		<German>The [COLOR_BUILDING_TEXT]Astar Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of Ethiopia.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Astar Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of Ethiopia.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Astar Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of Ethiopia.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
