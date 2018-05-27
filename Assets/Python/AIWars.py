@@ -143,7 +143,7 @@ class AIWars:
 		iID, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
 	
 		if utils.getHumanID() == iPlayer: return
-		if not gc.getPlayer(iPlayer).isAlive(): return
+		if not gc.getPlayer(iPlayer).isAlive() and iPlayer != iTurks: return
 		if data.lConquest[iID]: return
 		if iPreferredTarget >= 0 and gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
 		
