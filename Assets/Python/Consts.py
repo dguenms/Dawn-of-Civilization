@@ -408,7 +408,7 @@ iAztecs : 1810,		# Mexico
 }
 
 dRebirthCiv = {
-iPersia : iCivPersia,
+iPersia : iCivIran,
 iMaya : iCivColombia,
 iAztecs : iCivMexico,
 }
