@@ -2454,7 +2454,10 @@ class RiseAndFall:
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iTurks:
 			utils.createSettlers(iCiv, 6)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			if utils.getHumanID() == iTurks:
+				utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			else:
+				utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
 			utils.makeUnit(iOghuz, iCiv, tPlot, 6)
 			utils.makeUnit(iScout, iCiv, tPlot, 1)
 		elif iCiv == iArabia:
