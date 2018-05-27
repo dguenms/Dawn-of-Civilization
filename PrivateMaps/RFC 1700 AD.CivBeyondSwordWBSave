@@ -347,9 +347,20 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=17
-	LeaderType=LEADER_ALP_ARSLAN
+	LeaderType=LEADER_TAMERLANE
+	CivDesc=TXT_KEY_CIV_UZBEKS_DESC
+	CivShortDesc=TXT_KEY_CIV_UZBEKS_SHORT_DESC
+	CivAdjective=TXT_KEY_CIV_UZBEKS_ADJECTIVE
 	CivType=CIVILIZATION_TURKS
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=50
+	StateReligion=RELIGION_ISLAM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -38363,6 +38374,25 @@ BeginPlot
 	x=82,y=46
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginCity
+		CityOwner=17, (Turks)
+		CityName=Khiva
+		CityPopulation=4
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		Player17Culture=100, (Turks)
+	EndCity
 	TeamReveal=8,45,
 EndPlot
 BeginPlot
@@ -38765,28 +38795,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=45, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
-	EndUnit
-	BeginCity
-		CityOwner=45, (Independent)
-		CityName=Merv
-		CityPopulation=4
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
-	EndCity
 	TeamReveal=8,45,46,
 EndPlot
 BeginPlot
@@ -39712,18 +39720,52 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_LANCER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_LANCER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_LANCER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
-		CityName=Samarkand
+		CityOwner=17, (Turks)
+		CityName=Bukhara
 		CityPopulation=6
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
@@ -39733,7 +39775,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player17Culture=100, (Turks)
 	EndCity
 	TeamReveal=8,45,
 EndPlot
