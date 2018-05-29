@@ -1809,7 +1809,11 @@ class CvSignDesc:
 		f.write("BeginSign\n")
 		f.write("\tplotX=%d\n" %(sign.getPlot().getX(),))
 		f.write("\tplotY=%d\n" %(sign.getPlot().getY(),))
-		f.write("\tplayerType=%d, (%s)\n" %(sign.getPlayerType(), gc.getPlayer(sign.getPlayerType()).getName().encode(fileencoding)))
+		iPlayer = sign.getPlayerType()
+		if iPlayer == -1:
+			f.write("\tplayerType=%d, (%s)\n" %(iPlayer, "All"))
+		else:
+			f.write("\tplayerType=%d, (%s)\n" %(iPlayer, gc.getPlayer(iPlayer).getName().encode(fileencoding)))
 		f.write("\tcaption=%s\n" %(sign.getCaption(),))
 		f.write("EndSign\n")
 
