@@ -6,8 +6,8 @@ using namespace std;
 typedef list<char*> LISTCHAR;
 
 // rhyes.h
-#define EARTH_X					(124)
-#define EARTH_Y					(68)
+#define EARTH_X					(150)
+#define EARTH_Y					(80)
 
 #define MAX_COM_SHRINE			(20)
 
