@@ -26,6 +26,30 @@
 		<Spanish>Turkic</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKS_DESC</Tag>
+		<English>The Uzbeks</English>
+		<French>The Uzbeks</French>
+		<German>Die Usbeken</German>
+		<Italian>The Uzbeks</Italian>
+		<Spanish>The Uzbeks</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKS_SHORT_DESC</Tag>
+		<English>Uzbekistan</English>
+		<French>Uzbekistan</French>
+		<German>Uzbekistan</German>
+		<Italian>Uzbekistan</Italian>
+		<Spanish>Uzbekistan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKS_ADJECTIVE</Tag>
+		<English>Uzbek</English>
+		<French>Uzbek</French>
+		<German>Uzbek</German>
+		<Italian>Uzbek</Italian>
+		<Spanish>Uzbek</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKESTAN_PEOPLES</Tag>
 		<English>Turkic Peoples</English>
 		<French>Turkic Peoples</French>

@@ -394,7 +394,7 @@
 		<Spanish>It is the year 844 BC. Persia has always been home to warlike peoples, but now the Achaemenid dynasty provides them with the unifying force to form an organized empire. While the Persian plateau is not particularly wealthy, it has rich and defenseless neighbors in India in the east and Mesopotamia in the west to conquer on their way to become the world's greatest empire.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_PERSIA_1700AD</Tag>
+		<Tag>TXT_KEY_DOM_IRAN</Tag>
 		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
 		<French>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</French>
 		<German>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</German>
@@ -541,6 +541,22 @@
 		<German>It is the year 554 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</German>
 		<Italian>It is the year 554 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</Italian>
 		<Spanish>It is the year 554 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKESTAN_600AD</Tag>
+		<English>It is the year 600 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</English>
+		<French>It is the year 600 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</French>
+		<German>It is the year 600 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</German>
+		<Italian>It is the year 600 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</Italian>
+		<Spanish>It is the year 600 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_UZBEKISTAN</Tag>
+		<English>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</English>
+		<French>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</French>
+		<German>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</German>
+		<Italian>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Italian>
+		<Spanish>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS</Tag>

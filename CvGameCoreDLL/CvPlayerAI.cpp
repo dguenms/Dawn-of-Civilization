@@ -7890,7 +7890,8 @@ int CvPlayerAI::AI_bonusHealthVal(BonusTypes eBonus, int iChange) const
 // Leoreth
 int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
 {
-	int iValue = 0;
+	int iHappinessValue = 0;
+	int iHealthValue = 0;
 
 	int iCurrentAffectedCities = getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities();
 	int iAffectedCitiesChange = iChange * GC.getBonusInfo(eBonus).getAffectedCities();
@@ -7913,17 +7914,27 @@ int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
 		{
 			if (sgn(iChange) * (pCity->happyLevel() - pCity->unhappyLevel()) < 0)
 			{
-				iValue += iHappiness * iModifier;
+				iHappinessValue += iHappiness * iModifier;
 			}
 
 			if (sgn(iChange) * (pCity->goodHealth() - pCity->badHealth()) < 0)
 			{
-				iValue += iHealth * iModifier;
+				iHealthValue += iHealth * iModifier;
 			}
 		}
 	}
 
-	return iValue;
+	if (abs(iHappinessValue) < 50 && GC.getBonusInfo(eBonus).getHappiness() > 0)
+	{
+		iHappinessValue = sgn(iChange) * 50;
+	}
+
+	if (abs(iHealthValue) < 50 && GC.getBonusInfo(eBonus).getHealth() > 0)
+	{
+		iHealthValue = sgn(iChange) * 50;
+	}
+
+	return iHappinessValue + iHealthValue;
 }
 
 //Value sans corporation
@@ -8307,7 +8318,7 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 // Leoreth
 int CvPlayerAI::AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
 {
-	return AI_bonusTradeVal(eBonus, ePlayer, iChange) + GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
+	return AI_bonusTradeVal(eBonus, ePlayer, iChange) - GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
 }
 
 

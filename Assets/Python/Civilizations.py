@@ -142,6 +142,7 @@ iCivIran :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exce
 iCivKorea :	Techs(column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivJapan :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
+iCivTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
 iCivSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
 iCivFrance :	Techs([iReplaceableParts], column=11),
 iCivEngland :	Techs([iReplaceableParts, iPhysics], column=11),

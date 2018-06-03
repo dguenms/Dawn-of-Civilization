@@ -395,19 +395,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
-<<<<<<< HEAD
-		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
-=======
 		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
 		<French>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</French>
 		<German>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</Spanish>
->>>>>>> 08ba8165... Translations for vanilla techs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FACTORY_STRATEGY</Tag>
@@ -1165,23 +1157,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_STRATEGY</Tag>
-<<<<<<< HEAD
 		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</English>
 		<French>La [COLOR_BUILDING_TEXT]Ziggourat[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes des [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] et qui proviennent de M&#233;sopotamie.</French>
 		<German>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Anunnaki[COLOR_REVERT] and originate in Mesopotamia.</Spanish>
-		<French>No Translation</French>
-		<German>No Translation</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
-=======
-		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</English>
-		<French>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</French>
-		<German>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</Spanish>
->>>>>>> 08ba8165... Translations for vanilla techs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPERMARKET_STRATEGY</Tag>
@@ -1266,17 +1246,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
-<<<<<<< HEAD
-		<French>No Translation</French>
-		<German>JÃ¼dische Synagoge</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
-=======
 		<French>Jewish Synagogue</French>
 		<German>Jüdische Synagoge</German>
 		<Italian>Jewish Synagogue</Italian>
 		<Spanish>Jewish Synagogue</Spanish>
->>>>>>> 08ba8165... Translations for vanilla techs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
@@ -1289,17 +1262,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
-<<<<<<< HEAD
-		<French>No Translation</French>
-		<German>JÃ¼dische Jeschiwa</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
-=======
 		<French>Jewish Yeshiva</French>
 		<German>Jüdische Jeschiwa</German>
 		<Italian>Jewish Yeshiva</Italian>
 		<Spanish>Jewish Yeshiva</Spanish>
->>>>>>> 08ba8165... Translations for vanilla techs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
@@ -1312,17 +1278,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
-<<<<<<< HEAD
-		<French>No Translation</French>
-		<German>JÃ¼discher Sanhedrin</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
-=======
 		<French>Jewish Sanhedrin</French>
 		<German>Jüdischer Sanhedrin</German>
 		<Italian>Jewish Sanhedrin</Italian>
 		<Spanish>Jewish Sanhedrin</Spanish>
->>>>>>> 08ba8165... Translations for vanilla techs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
@@ -1887,17 +1846,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
-<<<<<<< HEAD
-		<French>No Translation</French>
-		<German>Zoroastrisches KÃ¶nigliches Feuer</German>
-		<Italian>No Translation</Italian>
-		<Spanish>No Translation</Spanish>
-=======
 		<French>Zoroastrian Royal Fire</French>
 		<German>Zoroastrisches Königliches Feuer</German>
 		<Italian>Zoroastrian Royal Fire</Italian>
 		<Spanish>Zoroastrian Royal Fire</Spanish>
->>>>>>> 08ba8165... Translations for vanilla techs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>
