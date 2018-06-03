@@ -100,6 +100,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_FASCIST</Tag>
 		<English>Revolutionary Union of %s1</English>
+		<French>Revolutionary Union of %s1</French>
+		<German>Revolutionary Union of %s1</German>
+		<Italian>Revolutionary Union of %s1</Italian>
+		<Spanish>Revolutionary Union of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_DEFAULT</Tag>
@@ -176,10 +180,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_SHORT_DESC</Tag>
 		<English>Peru</English>
+		<French>Peru</French>
+		<German>Peru</German>
+		<Italian>Peru</Italian>
+		<Spanish>Peru</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_ADJECTIVE</Tag>
 		<English>Peruvian</English>
+		<French>Peruvian</French>
+		<German>Peruvian</German>
+		<Italian>Peruvian</Italian>
+		<Spanish>Peruvian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_FOUR_REGIONS</Tag>
@@ -208,10 +220,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_BOLIVIA</Tag>
 		<English>Bolivia</English>
+		<French>Bolivia</French>
+		<German>Bolivia</German>
+		<Italian>Bolivia</Italian>
+		<Spanish>Bolivia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_BOLIVIAN</Tag>
 		<English>Bolivian</English>
+		<French>Bolivian</French>
+		<German>Bolivian</German>
+		<Italian>Bolivian</Italian>
+		<Spanish>Bolivian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_ADJECTIVE</Tag>

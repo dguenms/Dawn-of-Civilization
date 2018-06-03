@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_DESC</Tag>
 		<English>The Indonesians</English>
+		<French>The Indonesians</French>
+		<German>The Indonesians</German>
+		<Italian>The Indonesians</Italian>
+		<Spanish>The Indonesians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_PEOPLES</Tag>
 		<English>Malay Peoples</English>
+		<French>Malay Peoples</French>
+		<German>Malay Peoples</German>
+		<Italian>Malay Peoples</Italian>
+		<Spanish>Malay Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_DEFAULT</Tag>
@@ -36,31 +44,57 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_FASCIST</Tag>
 		<English>%s2 New Order</English>
+		<French>%s2 New Order</French>
+		<German>%s2 New Order</German>
+		<Italian>%s2 New Order</Italian>
+		<Spanish>%s2 New Order</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_MATARAM</Tag>
 		<English>Mataram</English>
+		<French>Mataram</French>
+		<German>Mataram</German>
+		<Italian>Mataram</Italian>
+		<Spanish>Mataram</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_SRIVIJAYA</Tag>
 		<English>Srivijaya</English>
+		<French>Srivijaya</French>
+		<German>Srivijaya</German>
+		<Italian>Srivijaya</Italian>
+		<Spanish>Srivijaya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_MAJAPAHIT</Tag>
 		<English>Majapahit</English>
+		<French>Majapahit</French>
+		<German>Majapahit</German>
+		<Italian>Majapahit</Italian>
+		<Spanish>Majapahit</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIAN_VASSAL</Tag>
 		<English>Kedatuan of %s1</English>
+		<French>Kedatuan of %s1</French>
+		<German>Kedatuan of %s1</German>
+		<Italian>Kedatuan of %s1</Italian>
+		<Spanish>Kedatuan of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_ADJECTIVE</Tag>
 		<English>Indonesian</English>
+		<French>Indonesian</French>
 		<German>Indonesisch</German>
+		<Italian>Indonesian</Italian>
+		<Spanish>Indonesian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_SHORT_DESC</Tag>
 		<English>Indonesia</English>
+		<French>Indonesia</French>
 		<German>Indonesien</German>
+		<Italian>Indonesia</Italian>
+		<Spanish>Indonesia</Spanish>
 	</TEXT>
 </Civ4GameText>

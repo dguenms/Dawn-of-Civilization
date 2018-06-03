@@ -28,10 +28,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_PEOPLES</Tag>
 		<English>Rus' Peoples</English>
+		<French>Rus' Peoples</French>
+		<German>Rus' Peoples</German>
+		<Italian>Rus' Peoples</Italian>
+		<Spanish>Rus' Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_DEFAULT</Tag>
 		<English>Grand Duchy of %s1</English>
+		<French>Grand Duchy of %s1</French>
+		<German>Grand Duchy of %s1</German>
+		<Italian>Grand Duchy of %s1</Italian>
+		<Spanish>Grand Duchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_REPUBLIC</Tag>
@@ -108,26 +116,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_FASCIST</Tag>
 		<English>Panslavic Empire</English>
+		<French>Panslavic Empire</French>
+		<German>Panslavic Empire</German>
+		<Italian>Panslavic Empire</Italian>
+		<Spanish>Panslavic Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_MUSCOVY</Tag>
 		<English>Muscovy</English>
+		<French>Muscovy</French>
+		<German>Muscovy</German>
+		<Italian>Muscovy</Italian>
+		<Spanish>Muscovy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_KIEVAN_RUS</Tag>
 		<English>Kievan Rus</English>
+		<French>Kievan Rus</French>
+		<German>Kievan Rus</German>
+		<Italian>Kievan Rus</Italian>
+		<Spanish>Kievan Rus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_RUS</Tag>
 		<English>Rus of %s1</English>
+		<French>Rus of %s1</French>
+		<German>Rus of %s1</German>
+		<Italian>Rus of %s1</Italian>
+		<Spanish>Rus of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_VASSAL</Tag>
 		<English>%s1 Krai</English>
+		<French>%s1 Krai</French>
+		<German>%s1 Krai</German>
+		<Italian>%s1 Krai</Italian>
+		<Spanish>%s1 Krai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_POLAND</Tag>
 		<English>Congress %s1</English>
+		<French>Congress %s1</French>
+		<German>Congress %s1</German>
+		<Italian>Congress %s1</Italian>
+		<Spanish>Congress %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
@@ -156,6 +188,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 Soviet Republic</English>
+		<French>%s2 Soviet Republic</French>
+		<German>%s2 Soviet Republic</German>
+		<Italian>%s2 Soviet Republic</Italian>
+		<Spanish>%s2 Soviet Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_NAME_PERSIA</Tag>
@@ -184,14 +220,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_JAPAN</Tag>
 		<English>Far Eastern Republic</English>
+		<French>Far Eastern Republic</French>
+		<German>Far Eastern Republic</German>
+		<Italian>Far Eastern Republic</Italian>
+		<Spanish>Far Eastern Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_OTTOMANS</Tag>
 		<English>Transcaucasian Socialist Federative Soviet Republic</English>
+		<French>Transcaucasian Socialist Federative Soviet Republic</French>
+		<German>Transcaucasian Socialist Federative Soviet Republic</German>
+		<Italian>Transcaucasian Socialist Federative Soviet Republic</Italian>
+		<Spanish>Transcaucasian Socialist Federative Soviet Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_TURKS</Tag>
 		<English>%s4 Soviet Socialist Republic</English>
+		<French>%s4 Soviet Socialist Republic</French>
+		<German>%s4 Soviet Socialist Republic</German>
+		<Italian>%s4 Soviet Socialist Republic</Italian>
+		<Spanish>%s4 Soviet Socialist Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY</Tag>

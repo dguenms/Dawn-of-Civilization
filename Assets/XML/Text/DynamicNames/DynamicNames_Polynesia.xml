@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_DESC</Tag>
 		<English>The Polynesians</English>
+		<French>The Polynesians</French>
+		<German>The Polynesians</German>
+		<Italian>The Polynesians</Italian>
+		<Spanish>The Polynesians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_PEOPLES</Tag>
 		<English>Polynesian Peoples</English>
+		<French>Polynesian Peoples</French>
+		<German>Polynesian Peoples</German>
+		<Italian>Polynesian Peoples</Italian>
+		<Spanish>Polynesian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_DEFAULT</Tag>
@@ -36,45 +44,89 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_REPUBLIC</Tag>
 		<English>Polynesian Republics</English>
+		<French>Polynesian Republics</French>
+		<German>Polynesian Republics</German>
+		<Italian>Polynesian Republics</Italian>
+		<Spanish>Polynesian Republics</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_FASCIST</Tag>
 		<English>Oceania</English>
+		<French>Oceania</French>
+		<German>Oceania</German>
+		<Italian>Oceania</Italian>
+		<Spanish>Oceania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TONGA</Tag>
 		<English>Tonga</English>
+		<French>Tonga</French>
+		<German>Tonga</German>
+		<Italian>Tonga</Italian>
+		<Spanish>Tonga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TUI_TONGA</Tag>
 		<English>Tu'i Tonga</English>
+		<French>Tu'i Tonga</French>
+		<German>Tu'i Tonga</German>
+		<Italian>Tu'i Tonga</Italian>
+		<Spanish>Tu'i Tonga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_HAWAII</Tag>
 		<English>Hawaii</English>
+		<French>Hawaii</French>
+		<German>Hawaii</German>
+		<Italian>Hawaii</Italian>
+		<Spanish>Hawaii</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_SAMOA</Tag>
 		<English>Samoa</English>
+		<French>Samoa</French>
+		<German>Samoa</German>
+		<Italian>Samoa</Italian>
+		<Spanish>Samoa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TUI_MANUA</Tag>
 		<English>Tu'i Manu'a</English>
+		<French>Tu'i Manu'a</French>
+		<German>Tu'i Manu'a</German>
+		<Italian>Tu'i Manu'a</Italian>
+		<Spanish>Tu'i Manu'a</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_NIUE</Tag>
 		<English>Niue</English>
+		<French>Niue</French>
+		<German>Niue</German>
+		<Italian>Niue</Italian>
+		<Spanish>Niue</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TAHITI</Tag>
 		<English>Tahiti</English>
+		<French>Tahiti</French>
+		<German>Tahiti</German>
+		<Italian>Tahiti</Italian>
+		<Spanish>Tahiti</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_ADJECTIVE</Tag>
 		<English>Polynesian</English>
+		<French>Polynesian</French>
+		<German>Polynesian</German>
+		<Italian>Polynesian</Italian>
+		<Spanish>Polynesian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_SHORT_DESC</Tag>
 		<English>Polynesia</English>
+		<French>Polynesia</French>
+		<German>Polynesia</German>
+		<Italian>Polynesia</Italian>
+		<Spanish>Polynesia</Spanish>
 	</TEXT>
 </Civ4GameText>

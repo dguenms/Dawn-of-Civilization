@@ -4,10 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
 		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
+		<French>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</French>
+		<German>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</German>
+		<Italian>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
+		<Spanish>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_TITLE</Tag>
 		<English>The %s1 Trading Company</English>
+		<French>The %s1 Trading Company</French>
+		<German>The %s1 Trading Company</German>
+		<Italian>The %s1 Trading Company</Italian>
+		<Spanish>The %s1 Trading Company</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_AIRLINER_CRASH_1</Tag>
@@ -1333,6 +1341,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FORTY_THIEVES_1</Tag>
 		<English>Excellent.</English>
+		<French>xcellent.</French>
 		<German>Hervorragend.</German>
 		<Italian>Eccellente.</Italian>
 		<Spanish>Excelente.</Spanish>
@@ -2053,6 +2062,7 @@
 		<Tag>TXT_KEY_EVENT_INDEPENDENTFILMS_HELP_1</Tag>
 		<English>[ICON_BULLET]%D1%F2 in %s3_city</English>
 		<French>[ICON_BULLET]%D1%F2 &#224; %s3_city</French>
+		<German>[ICON_BULLET]%D1%F2 in %s3_city</German>
 		<Italian>[ICON_BULLET]%D1%F2 a %s3_city</Italian>
 		<Spanish>[ICON_BULLET]%D1 %F2 en %s3_city</Spanish>
 	</TEXT>
@@ -2155,7 +2165,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INTERSTATE_EFFECT</Tag>
 		<English>All Roads on flatland will be replaced by Highways.</English>
+		<French>All Roads on flatland will be replaced by Highways.</French>
 		<German>Alle Straßen im Flachland werden durch Autobahnen ersetzt.</German>
+		<Italian>All Roads on flatland will be replaced by Highways.</Italian>
+		<Spanish>All Roads on flatland will be replaced by Highways.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_JADE_1</Tag>
@@ -2816,33 +2829,58 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_1</Tag>
 		<English>Embrace the Reformation.</English>
+		<French>mbrace the Reformation.</French>
 		<German>Nehmt die Reformation an.</German>
+		<Italian>mbrace the Reformation.</Italian>
+		<Spanish>mbrace the Reformation.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_2</Tag>
 		<English>Tolerate the new sects.</English>
+		<French>Tolerate the new sects.</French>
 		<German>Toleriert die neuen Sekten.</German>
+		<Italian>Tolerate the new sects.</Italian>
+		<Spanish>Tolerate the new sects.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_3</Tag>
 		<English>Join the Counter-Reformation.</English>
+		<French>Join the Counter-Reformation.</French>
 		<German>Tretet der Gegen-Reformation bei.</German>
+		<Italian>Join the Counter-Reformation.</Italian>
+		<Spanish>Join the Counter-Reformation.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_COUNTER</Tag>
 		<English>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</English>
+		<French>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</French>
+		<German>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</German>
+		<Italian>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</Italian>
+		<Spanish>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_EMBRACE</Tag>
 		<English>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</English>
+		<French>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</French>
+		<German>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</German>
+		<Italian>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</Italian>
+		<Spanish>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_TOLERATE</Tag>
 		<English>Protestantism can spread to your cities and even replace Catholicism.</English>
+		<French>Protestantism can spread to your cities and even replace Catholicism.</French>
+		<German>Protestantism can spread to your cities and even replace Catholicism.</German>
+		<Italian>Protestantism can spread to your cities and even replace Catholicism.</Italian>
+		<Spanish>Protestantism can spread to your cities and even replace Catholicism.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_TOLERATE_STATE</Tag>
 		<English>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</English>
+		<French>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</French>
+		<German>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</German>
+		<Italian>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</Italian>
+		<Spanish>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REINFORCED_HULL_1</Tag>
@@ -3183,18 +3221,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_ACQUIRE</Tag>
 		<English>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</English>
+		<French>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</French>
+		<German>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</German>
+		<Italian>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</Italian>
+		<Spanish>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_COLONIZE</Tag>
 		<English>Will offer %d1 gold to our colonists to settle %s2.</English>
+		<French>Will offer %d1 gold to our colonists to settle %s2.</French>
+		<German>Will offer %d1 gold to our colonists to settle %s2.</German>
+		<Italian>Will offer %d1 gold to our colonists to settle %s2.</Italian>
+		<Spanish>Will offer %d1 gold to our colonists to settle %s2.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_CONQUEST</Tag>
 		<English>Will draft armies to attack %s1 to conquer their cities of %s2.</English>
+		<French>Will draft armies to attack %s1 to conquer their cities of %s2.</French>
+		<German>Will draft armies to attack %s1 to conquer their cities of %s2.</German>
+		<Italian>Will draft armies to attack %s1 to conquer their cities of %s2.</Italian>
+		<Spanish>Will draft armies to attack %s1 to conquer their cities of %s2.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_NO_CITIES</Tag>
 		<English>There are no cities that your armies could conquer.</English>
+		<French>There are no cities that your armies could conquer.</French>
+		<German>There are no cities that your armies could conquer.</German>
+		<Italian>There are no cities that your armies could conquer.</Italian>
+		<Spanish>There are no cities that your armies could conquer.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEA_1</Tag>
@@ -3215,12 +3269,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_1</Tag>
 		<English>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</English>
+		<French>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</French>
 		<German>Die %s1:1_civ_adjective Handelsgesellschaft hat Kontrolle &#252;ber einige s&#252;dasiatische H&#228;fen erlangt.</German>
+		<Italian>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</Italian>
+		<Spanish>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_2</Tag>
 		<English>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</English>
+		<French>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</French>
 		<German>Die %s1:1_civ_adjective Regierung unterst&#252;tzt ihre Handelsgesellschaft darin, milit&#228;rische Kontrolle &#252;ber ihre s&#252;dasiatischen Handelsrouten zu erlangen!</German>
+		<Italian>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</Italian>
+		<Spanish>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_THE_GOTHS_HELP_1</Tag>
@@ -3329,17 +3389,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_1</Tag>
 		<English>Fund the establishment of contracted harbors out of our treasury.</English>
+		<French>Fund the establishment of contracted harbors out of our treasury.</French>
 		<German>Finanziert die Einrichtung von Vertragsh&#228;fen aus unserer Schatzkammer.</German>
+		<Italian>Fund the establishment of contracted harbors out of our treasury.</Italian>
+		<Spanish>Fund the establishment of contracted harbors out of our treasury.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_2</Tag>
 		<English>Draft an army to establish control.</English>
+		<French>Draft an army to establish control.</French>
 		<German>Stellt eine Armee auf, um die Kontrolle zu erringen.</German>
+		<Italian>Draft an army to establish control.</Italian>
+		<Spanish>Draft an army to establish control.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_3</Tag>
 		<English>This is none of our concern.</English>
+		<French>This is none of our concern.</French>
 		<German>Das geht uns nichts an.</German>
+		<Italian>This is none of our concern.</Italian>
+		<Spanish>This is none of our concern.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_AIRLINER_CRASH_1</Tag>
@@ -4656,7 +4725,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REFORMATION</Tag>
 		<English>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</English>
+		<French>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</French>
 		<German>Die Erfindung der Druckerpresse hat eine Welle neuer Doktrinen ausgel&#246;st. Reformer aus der gesamten katholischen Welt fordern die Autorit&#228;t des Papstes &#252;ber theologische Fragen heraus. Wie sollen wir reagieren?</German>
+		<Italian>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</Italian>
+		<Spanish>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REINFORCED_HULL_1</Tag>
@@ -4925,7 +4997,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
 		<English>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</English>
+		<French>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</French>
 		<German>Mit der Einrichtung unserer eignenen Handelsgesellschaft treten die Kaufleute unseres Landes an Euch heran, Ma&#223;nahmen zur weiteren Sicherung ihrer Position in den s&#252;dasiatischen M&#228;rkten zu ergreifen.</German>
+		<Italian>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</Italian>
+		<Spanish>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_TRUFFLES_1</Tag>
@@ -6354,7 +6429,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REFORMATION</Tag>
 		<English>The Reformation has reached the %s1_civ_adjective civilization.</English>
+		<French>The Reformation has reached the %s1_civ_adjective civilization.</French>
 		<German>Die Reformation hat die %s1:1 Zivilisation erreicht.</German>
+		<Italian>The Reformation has reached the %s1_civ_adjective civilization.</Italian>
+		<Spanish>The Reformation has reached the %s1_civ_adjective civilization.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REINFORCED_HULL_1</Tag>
@@ -6655,7 +6733,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
 		<English>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</English>
+		<French>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</French>
 		<German>Die %s1:1 Handelsgesellschaft erw&#228;gt weitere Aktionen zur Festigung ihrer Marketstellung in S&#252;dasien.</German>
+		<Italian>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</Italian>
+		<Spanish>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TRUFFLES</Tag>
@@ -6748,121 +6829,193 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_REACTOR_LEAK</Tag>
 		<English>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</English>
+		<French>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</French>
 		<German>Im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city wurden Strahlungslecks im Reaktor entdeckt.</German>
+		<Italian>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</Italian>
+		<Spanish>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NUCLEAR_REACTOR_LEAK_1</Tag>
 		<English>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</English>
+		<French>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</French>
 		<German>Im Atomkraftwerk von %s2_city wurden Strahlungsleck im Reaktor entdeckt.</German>
+		<Italian>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</Italian>
+		<Spanish>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_REACTOR_LEAK_AGAIN</Tag>
 		<English>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</English>
+		<French>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</French>
 		<German>Die Strahlungslecks im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city sind immer noch nicht eingedämmt.</German>
+		<Italian>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</Italian>
+		<Spanish>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NUCLEAR_REACTOR_LEAK_AGAIN_1</Tag>
 		<English>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</English>
+		<French>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</French>
 		<German>Unsere Inspektoren berichten immer noch von Strahlungslecks im Atomkraftwerk von %s2_city.</German>
+		<Italian>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</Italian>
+		<Spanish>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1</Tag>
 		<English>Our reactors are safe. Contain the leaks, but there is no need for further action.</English>
+		<French>Our reactors are safe. Contain the leaks, but there is no need for further action.</French>
 		<German>Unsere Reaktoren sind sicher. Dämmt das Leck ein, aber es besteht kein Bedarf für weitere Maßnahmen.</German>
+		<Italian>Our reactors are safe. Contain the leaks, but there is no need for further action.</Italian>
+		<Spanish>Our reactors are safe. Contain the leaks, but there is no need for further action.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2</Tag>
 		<English>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</English>
+		<French>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</French>
 		<German>Diese Lecks sind gefährlich. Wir müssen in die Modernisierung unserer Reaktoren investieren, um sie auch in Zukunft sicher zu halten.</German>
+		<Italian>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</Italian>
+		<Spanish>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3</Tag>
 		<English>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</English>
+		<French>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</French>
 		<German>Dies zeigt, dass Atomenergie zu gefährlich für unsere Gesellschaft ist. Fasst Pläne, so schnell wie möglich aus der Atomkraft auszusteigen.</German>
+		<Italian>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</Italian>
+		<Spanish>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1_HELP</Tag>
 		<English>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</English>
+		<French>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</French>
 		<German>[ICON_BULLET]Mittleres Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks können sich fortsetzen.</German>
+		<Italian>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Italian>
+		<Spanish>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2_HELP</Tag>
 		<English>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</English>
+		<French>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</French>
 		<German>[ICON_BULLET]Geringes Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks können sich fortsetzen.</German>
+		<Italian>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Italian>
+		<Spanish>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3_HELP</Tag>
 		<English>[ICON_BULLET]Nuclear Plants will become obsolete.</English>
+		<French>[ICON_BULLET]Nuclear Plants will become obsolete.</French>
 		<German>[ICON_BULLET]Atomkraftwerke werden veraltet.</German>
+		<Italian>[ICON_BULLET]Nuclear Plants will become obsolete.</Italian>
+		<Spanish>[ICON_BULLET]Nuclear Plants will become obsolete.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_HARBORMASTER</Tag>
 		<English>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</English>
+		<French>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</French>
 		<German>Unsere Hafenmeister fordern Hilfe von der Regierung, um unseren &#220;berseehandel auszudehnen.[PARAGRAPH:1]Wir m&#252;ssen genug[COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in unseren St&#228;dten bauen und genug hochseetaugliche Schiffe konstruieren.</German>
+		<Italian>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</Italian>
+		<Spanish>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_1</Tag>
 		<English>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</English>
+		<French>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</French>
 		<German>Der Hafenmeister[PARAGRAPH:1]Eure Handelsmarine hat Euch den Auftrag gegeben, genug [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] zu bauen, damit sie die unangefochtenen Handelsk&#246;nige der See werden. Au&#223;erdem m&#252;sst Ihr eine Flotte von [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen, um die Fracht &#252;ber die Tiefsee zu bringen.</German>
+		<Italian>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</Italian>
+		<Spanish>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_HELP</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in Ihren K&#252;stenst&#228;dten bauen. Au&#223;erdem m&#252;ssen Sie %d2 [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Industriezeitalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Mittelalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_1</Tag>
 		<English>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</English>
+		<French>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</French>
 		<German>Unsere Zivilisation d&#252;rstet nach Adeligen, die unser Volk in eine bessere Zukunft f&#252;hren werden. [PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbilden, sollten wir unseren Weg finden, sei es in Zeiten des Friedens oder in Zeiten des Krieges.</German>
+		<Italian>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Italian>
+		<Spanish>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_1</Tag>
 		<English>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</English>
+		<French>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</French>
 		<German>Edle Ritter[PARAGRAPH:1]Das Volk verlangt von Euch, dass Ihr eine gro&#223;e Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbildet.</German>
+		<Italian>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Italian>
+		<Spanish>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT]-Einheiten ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie Fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Milit&#228;rwesen[COLOR_REVERT], [COLOR_TECH_TEXT]Drall[COLOR_REVERT], oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_DONE_1</Tag>
 		<English>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</English>
+		<French>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</French>
 		<German>Gl&#252;ckwunsch! Die von Ihnen ausgebildete Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ist gro&#223; genug. W&#228;hlen Sie Ihre Belohnung aus.</German>
+		<Italian>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Italian>
+		<Spanish>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_1</Tag>
 		<English>With such a large force of Lancers working together, additional training for these units can be achieved.</English>
+		<French>With such a large force of Lancers working together, additional training for these units can be achieved.</French>
 		<German>Mit einer so gro&#223;en Truppe Lanzenreiter k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
+		<Italian>With such a large force of Lancers working together, additional training for these units can be achieved.</Italian>
+		<Spanish>With such a large force of Lancers working together, additional training for these units can be achieved.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REINFORCED_HULL_1</Tag>
 		<English>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</English>
+		<French>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</French>
 		<German>Es gibt Ger&#252;chte, dass %s1:3_civ_adjective Schiffbauer ihre Kriegsgaleeren-Flotte &#252;berarbeiten.</German>
+		<Italian>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Italian>
+		<Spanish>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REINFORCED_HULL_1</Tag>
 		<English>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</English>
+		<French>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</French>
 		<German>Unsere Schiffbauer haben einen Weg gefunden, den Rumpf unserer Kriegsgaleeren zu verst&#228;rken. Dies kommt uns sowohl beim Rammen als auch beim Gerammtwerden zugute.</German>
+		<Italian>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Italian>
+		<Spanish>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_WARSHIPS_1</Tag>
 		<English>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</English>
+		<French>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</French>
 		<German>Unsere Marinekommandanten wollen sich auf den Krieg vorbereiten.[PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Einheiten ausbilden, k&#246;nnten wir &#252;ber die Meere herrschen!</German>
+		<Italian>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Italian>
+		<Spanish>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_1</Tag>
 		<English>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</English>
+		<French>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</French>
 		<German>Kriegsschiffe[PARAGRAPH:1]Eure Marinekommandanten verlangen von Euch, eine gro&#223;e [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Flotte aufzubauen.</German>
+		<Italian>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Italian>
+		<Spanish>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Renaissance erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</Spanish>
 	</TEXT>
 </Civ4GameText>

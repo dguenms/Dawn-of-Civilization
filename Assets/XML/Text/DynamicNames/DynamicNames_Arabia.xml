@@ -52,6 +52,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_DEFAULT</Tag>
 		<English>%s2 Sultanates</English>
+		<French>%s2 Sultanates</French>
+		<German>%s2 Sultanates</German>
+		<Italian>%s2 Sultanates</Italian>
+		<Spanish>%s2 Sultanates</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_REPUBLIC</Tag>
@@ -128,18 +132,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_SAUDI</Tag>
 		<English>Saudi-Arabia</English>
+		<French>Saudi-Arabia</French>
+		<German>Saudi-Arabia</German>
+		<Italian>Saudi-Arabia</Italian>
+		<Spanish>Saudi-Arabia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_RASHIDUN</Tag>
 		<English>Rashidun</English>
+		<French>Rashidun</French>
+		<German>Rashidun</German>
+		<Italian>Rashidun</Italian>
+		<Spanish>Rashidun</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_UMMAYAD</Tag>
 		<English>Umayyad</English>
+		<French>Umayyad</French>
+		<German>Umayyad</German>
+		<Italian>Umayyad</Italian>
+		<Spanish>Umayyad</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_ABBASID</Tag>
 		<English>Abbasid</English>
+		<French>Abbasid</French>
+		<German>Abbasid</German>
+		<Italian>Abbasid</Italian>
+		<Spanish>Abbasid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL</Tag>
@@ -192,6 +212,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BABYLONIA</Tag>
 		<English>Iraq</English>
+		<French>Iraq</French>
+		<German>Iraq</German>
+		<Italian>Iraq</Italian>
+		<Spanish>Iraq</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_PERSIA</Tag>
@@ -244,10 +268,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ROME</Tag>
 		<English>Italiya</English>
+		<French>Italiya</French>
+		<German>Italiya</German>
+		<Italian>Italiya</Italian>
+		<Spanish>Italiya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_INDONESIA</Tag>
 		<English>Zabag</English>
+		<French>Zabag</French>
+		<German>Zabag</German>
+		<Italian>Zabag</Italian>
+		<Spanish>Zabag</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ETHIOPIA</Tag>
@@ -276,6 +308,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BYZANTIUM</Tag>
 		<English>R&#251;m</English>
+		<French>R&#251;m</French>
+		<German>R&#251;m</German>
+		<Italian>R&#251;m</Italian>
+		<Spanish>R&#251;m</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_MOORS</Tag>
@@ -304,14 +340,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_SPAIN</Tag>
 		<English>Esbanya</English>
+		<French>Esbanya</French>
+		<German>Esbanya</German>
+		<Italian>Esbanya</Italian>
+		<Spanish>Esbanya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL</Tag>
 		<English>Al-Garb</English>
+		<French>Al-Garb</French>
+		<German>Al-Garb</German>
+		<Italian>Al-Garb</Italian>
+		<Spanish>Al-Garb</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_TURKS</Tag>
 		<English>Bilad al-Turk</English>
+		<French>Bilad al-Turk</French>
+		<German>Bilad al-Turk</German>
+		<Italian>Bilad al-Turk</Italian>
+		<Spanish>Bilad al-Turk</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_OTTOMANS</Tag>
@@ -340,6 +388,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_MUGHALS</Tag>
 		<English>Emirate of Delhi</English>
+		<French>Emirate of Delhi</French>
+		<German>Emirate of Delhi</German>
+		<Italian>Emirate of Delhi</Italian>
+		<Spanish>Emirate of Delhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_ADJECTIVE</Tag>

@@ -12,12 +12,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
 		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
+		<French>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</French>
 		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
+		<Italian>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Italian>
+		<Spanish>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</English>
+		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</French>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn In Allen St&#228;dten</German>
+		<Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARA_TITLE</Tag>
@@ -38,12 +44,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARG_TITLE</Tag>
 		<English>The Power of Juntas:</English>
+		<French>The Power of Juntas:</French>
 		<German>Die Macht der Juntas:</German>
+		<Italian>The Power of Juntas:</Italian>
+		<Spanish>The Power of Juntas:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARG</Tag>
 		<English>Great Generals can start Golden Ages</English>
+		<French>Great Generals can start Golden Ages</French>
 		<German>Gro&#223;e Gener&#228;le k&#246;nnen Goldene Zeitalter ausl&#246;sen</German>
+		<Italian>Great Generals can start Golden Ages</Italian>
+		<Spanish>Great Generals can start Golden Ages</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AZT_TITLE</Tag>
@@ -80,54 +92,98 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
 		<English>The Power of Ethanol:</English>
+		<French>The Power of Ethanol:</French>
 		<German>Die Macht des Ethanols:</German>
+		<Italian>The Power of Ethanol:</Italian>
+		<Spanish>The Power of Ethanol:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA</Tag>
 		<English>Sugar counts as oil for Oil Industry</English>
+		<French>Sugar counts as oil for Oil Industry</French>
 		<German>Zucker z&#228;hlt als &#214;l f&#252;r die &#214;lindustrie</German>
+		<Italian>Sugar counts as oil for Oil Industry</Italian>
+		<Spanish>Sugar counts as oil for Oil Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
 		<English>The Power of Bribery:</English>
+		<French>The Power of Bribery:</French>
 		<German>Die Macht der Bestechung:</German>
+		<Italian>The Power of Bribery:</Italian>
+		<Spanish>The Power of Bribery:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ</Tag>
 		<English>Double gold value in trades, spies can bribe barbarian units</English>
+		<French>Double gold value in trades, spies can bribe barbarian units</French>
 		<German>Doppelter Wert von Gold beim Handeln, Spione k&#246;nnen barbarische Einheiten bestechen</German>
+		<Italian>Double gold value in trades, spies can bribe barbarian units</Italian>
+		<Spanish>Double gold value in trades, spies can bribe barbarian units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_BYZANTINE_UP</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BODY</Tag>
 		<English>Choose the barbarian unit you wish to bribe:</English>
+		<French>Choose the barbarian unit you wish to bribe:</French>
+		<German>Choose the barbarian unit you wish to bribe:</German>
+		<Italian>Choose the barbarian unit you wish to bribe:</Italian>
+		<Spanish>Choose the barbarian unit you wish to bribe:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON</Tag>
 		<English>%s1 (%d2 gold)</English>
+		<French>%s1 (%d2 gold)</French>
+		<German>%s1 (%d2 gold)</German>
+		<Italian>%s1 (%d2 gold)</Italian>
+		<Spanish>%s1 (%d2 gold)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON_NONE</Tag>
 		<English>None</English>
+		<French>None</French>
+		<German>None</German>
+		<Italian>None</Italian>
+		<Spanish>None</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_TITLE</Tag>
 		<English>Bribing Barbarians</English>
+		<French>Bribing Barbarians</French>
+		<German>Bribing Barbarians</German>
+		<Italian>Bribing Barbarians</Italian>
+		<Spanish>Bribing Barbarians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN_TITLE</Tag>
 		<English>The Power of Multiculturalism:</English>
+		<French>The Power of Multiculturalism:</French>
+		<German>The Power of Multiculturalism:</German>
+		<Italian>The Power of Multiculturalism:</Italian>
+		<Spanish>The Power of Multiculturalism:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN</Tag>
 		<English>Immigrants bring [ICON_GREATPEOPLE] to your cities</English>
+		<French>Immigrants bring [ICON_GREATPEOPLE] to your cities</French>
+		<German>Immigrants bring [ICON_GREATPEOPLE] to your cities</German>
+		<Italian>Immigrants bring [ICON_GREATPEOPLE] to your cities</Italian>
+		<Spanish>Immigrants bring [ICON_GREATPEOPLE] to your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MULTICULTURALISM</Tag>
 		<English>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</English>
+		<French>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</French>
+		<German>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</German>
+		<Italian>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</Italian>
+		<Spanish>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR_TITLE</Tag>
@@ -164,17 +220,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_COL_TITLE</Tag>
 		<English>The Power of the Liberator:</English>
+		<French>The Power of the Liberator:</French>
 		<German>Die Macht des Befreiers:</German>
+		<Italian>The Power of the Liberator:</Italian>
+		<Spanish>The Power of the Liberator:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_COL</Tag>
 		<English>No City Resistance on Conquest in Latin America</English>
+		<French>No City Resistance on Conquest in Latin America</French>
 		<German>Keinen Widerstand in eroberten St&#228;dten in Lateinamerika</German>
+		<Italian>No City Resistance on Conquest in Latin America</Italian>
+		<Spanish>No City Resistance on Conquest in Latin America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CONQUESTS_TARGET</Tag>
 		<English>%s1 has fielded an army to conquer our civilization!</English>
+		<French>%s1 has fielded an army to conquer our civilization!</French>
 		<German>%s1 hat eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+		<Italian>%s1 has fielded an army to conquer our civilization!</Italian>
+		<Spanish>%s1 has fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_EGY_TITLE</Tag>
@@ -243,12 +308,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GER_TITLE</Tag>
 		<English>The Power of Doctrine:</English>
+		<French>The Power of Doctrine:</French>
 		<German>Die Macht der Doktrin:</German>
+		<Italian>The Power of Doctrine:</Italian>
+		<Spanish>The Power of Doctrine:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_GER</Tag>
 		<English>Units retain all their experience when upgraded</English>
+		<French>Units retain all their experience when upgraded</French>
 		<German>Modernisierte Einheiten behalten ihre gesamte Erfahrung</German>
+		<Italian>Units retain all their experience when upgraded</Italian>
+		<Spanish>Units retain all their experience when upgraded</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_GRE_TITLE</Tag>
@@ -269,15 +340,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GREEK_CONQUESTS_TARGET</Tag>
 		<English>The Greeks have fielded an army to conquer our civilization!</English>
+		<French>The Greeks have fielded an army to conquer our civilization!</French>
 		<German>Die Griechen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+		<Italian>The Greeks have fielded an army to conquer our civilization!</Italian>
+		<Spanish>The Greeks have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HAR_TITLE</Tag>
 		<English>The Power of Sanitation:</English>
+		<French>The Power of Sanitation:</French>
+		<German>The Power of Sanitation:</German>
+		<Italian>The Power of Sanitation:</Italian>
+		<Spanish>The Power of Sanitation:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HAR</Tag>
 		<English>Positive health contributes to city growth during the Ancient era</English>
+		<French>Positive health contributes to city growth during the Ancient era</French>
+		<German>Positive health contributes to city growth during the Ancient era</German>
+		<Italian>Positive health contributes to city growth during the Ancient era</Italian>
+		<Spanish>Positive health contributes to city growth during the Ancient era</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HOL_TITLE</Tag>
@@ -298,12 +380,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HRE_TITLE</Tag>
 		<English>The Power of Investiture:</English>
+		<French>The Power of Investiture:</French>
 		<German>Die Macht der Investitur:</German>
+		<Italian>The Power of Investiture:</Italian>
+		<Spanish>The Power of Investiture:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HRE</Tag>
 		<English>Double construction speed of state religion buildings</English>
+		<French>Double construction speed of state religion buildings</French>
 		<German>Doppelte Baugeschwindigkeit f&#252;r Geb&#228;ude der Staatsreligion</German>
+		<Italian>Double construction speed of state religion buildings</Italian>
+		<Spanish>Double construction speed of state religion buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IMMIGRATION</Tag>
@@ -348,32 +436,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_INO_TITLE</Tag>
 		<English>The Power of Straits:</English>
+		<French>The Power of Straits:</French>
 		<German>Die Macht der Meerengen:</German>
+		<Italian>The Power of Straits:</Italian>
+		<Spanish>The Power of Straits:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INO</Tag>
 		<English>Additional gold from foreign ships passing through your core</English>
+		<French>Additional gold from foreign ships passing through your core</French>
 		<German>Zus&#228;tzliches Gold von ausl&#228;ndischen Schiffen, die unser Kerngebiet passieren</German>
+		<Italian>Additional gold from foreign ships passing through your core</Italian>
+		<Spanish>Additional gold from foreign ships passing through your core</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA_TITLE</Tag>
 		<English>The Power of Safaviyya:</English>
+		<French>The Power of Safaviyya:</French>
 		<German>Die Macht der Safaviyya:</German>
+		<Italian>The Power of Safaviyya:</Italian>
+		<Spanish>The Power of Safaviyya:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA</Tag>
 		<English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
+		<French>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</French>
 		<German>Religi&#246;se Geb&#228;ude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
+		<Italian>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</Italian>
+		<Spanish>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ITA_TITLE</Tag>
 		<English>The Power of Renaissance:</English>
+		<French>The Power of Renaissance:</French>
 		<German>Die Macht der Renaissance:</German>
+		<Italian>The Power of Renaissance:</Italian>
+		<Spanish>The Power of Renaissance:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ITA</Tag>
 		<English>Free specialist in all of your cities until the Industrial Age</English>
+		<French>Free specialist in all of your cities until the Industrial Age</French>
 		<German>Zus&#228;tzlicher Spezialist in allen St&#228;dten bis zum Industriezeitalter</German>
+		<Italian>Free specialist in all of your cities until the Industrial Age</Italian>
+		<Spanish>Free specialist in all of your cities until the Industrial Age</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_JAP_TITLE</Tag>
@@ -410,22 +516,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CON_TITLE</Tag>
 		<English>The Power of the Tropics:</English>
+		<French>The Power of the Tropics:</French>
 		<German>Die Macht der Tropen:</German>
+		<Italian>The Power of the Tropics:</Italian>
+		<Spanish>The Power of the Tropics:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CON</Tag>
 		<English>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</English>
+		<French>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</French>
 		<German>Dschungel, Regenw&#228;lder und Marschen geben zus&#228;tzliche Nahrung und Produktion und verursachen keine Krankheit</German>
+		<Italian>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</Italian>
+		<Spanish>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR_TITLE</Tag>
 		<English>The Power of Kobuksons:</English>
+		<French>The Power of Kobuksons:</French>
 		<German>Die Macht der Kobuksons:</German>
+		<Italian>The Power of Kobuksons:</Italian>
+		<Spanish>The Power of Kobuksons:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>
 		<English>Free Drill I and Drill II promotions for all naval units</English>
+		<French>Free Drill I and Drill II promotions for all naval units</French>
 		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Bef&#246;rderung</German>
+		<Italian>Free Drill I and Drill II promotions for all naval units</Italian>
+		<Spanish>Free Drill I and Drill II promotions for all naval units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
@@ -462,12 +580,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>
 		<English>The Power of Arid Agriculture:</English>
+		<French>The Power of Arid Agriculture:</French>
 		<German>Die Macht der Ariden Landwirtschaft:</German>
+		<Italian>The Power of Arid Agriculture:</Italian>
+		<Spanish>The Power of Arid Agriculture:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX</Tag>
 		<English>Can build farms on hills</English>
+		<French>Can build farms on hills</French>
 		<German>Kann Farmen auf H&#252;geln errichten</German>
+		<Italian>Can build farms on hills</Italian>
+		<Spanish>Can build farms on hills</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MON_TITLE</Tag>
@@ -488,17 +612,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_HORDE</Tag>
 		<English>Your successful conquests have made your horde grow!</English>
+		<French>Your successful conquests have made your horde grow!</French>
 		<German>Eure erfolgreichen Eroberungen haben Eure Horde wachsen lassen!</German>
+		<Italian>Your successful conquests have made your horde grow!</Italian>
+		<Spanish>Your successful conquests have made your horde grow!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_TERROR</Tag>
 		<English>The citizens of %s1 tremble in fear before our approaching armies!</English>
+		<French>The citizens of %s1 tremble in fear before our approaching armies!</French>
 		<German>Die B&#252;rger von %s1 erzittern vor Furcht vor unseren anr&#252;ckenden Truppen!</German>
+		<Italian>The citizens of %s1 tremble in fear before our approaching armies!</Italian>
+		<Spanish>The citizens of %s1 tremble in fear before our approaching armies!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_TERROR_US</Tag>
 		<English>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</English>
+		<French>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</French>
 		<German>Aus Furcht vor den anr&#252;ckenden mongolischen Armeen haben die B&#252;rger von %s1 ihre Stellungen aufgegeben!</German>
+		<Italian>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</Italian>
+		<Spanish>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TERROR1</Tag>
@@ -519,22 +652,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO_TITLE</Tag>
 		<English>The Power of Irrigation:</English>
+		<French>The Power of Irrigation:</French>
 		<German>Die Macht der Bew&#228;sserung:</German>
+		<Italian>The Power of Irrigation:</Italian>
+		<Spanish>The Power of Irrigation:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO</Tag>
 		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
+		<French>Improvements that yield food give one extra food on plains tiles until the Renaissance</French>
 		<German>Verbesserungen, die Nahrung produzieren, geben eine zus&#228;tzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
+		<Italian>Improvements that yield food give one extra food on plains tiles until the Renaissance</Italian>
+		<Spanish>Improvements that yield food give one extra food on plains tiles until the Renaissance</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MUG_TITLE</Tag>
 		<English>The Power of Architecture:</English>
+		<French>The Power of Architecture:</French>
 		<German>Die Macht der Architektur:</German>
+		<Italian>The Power of Architecture:</Italian>
+		<Spanish>The Power of Architecture:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MUG</Tag>
 		<English>Cities receive half the construction cost as culture after a building is completed</English>
+		<French>Cities receive half the construction cost as culture after a building is completed</French>
 		<German>Städte erhalten die Hälfte der Baukosten als Kultur, wenn ein Gebäude errichtet wird</German>
+		<Italian>Cities receive half the construction cost as culture after a building is completed</Italian>
+		<Spanish>Cities receive half the construction cost as culture after a building is completed</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
@@ -547,25 +692,42 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PER</Tag>
 		<English>Additional stability for recently conquered cities</English>
+		<French>Additional stability for recently conquered cities</French>
 		<German>Zusätzliche Stabilität für kürzlich eroberte Städte</German>
+		<Italian>Additional stability for recently conquered cities</Italian>
+		<Spanish>Additional stability for recently conquered cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_PLY_TITLE</Tag>
 		<English>The Power of Navigation:</English>
+		<French>The Power of Navigation:</French>
+		<German>The Power of Navigation:</German>
+		<Italian>The Power of Navigation:</Italian>
+		<Spanish>The Power of Navigation:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_PLY</Tag>
 		<English>No penalties for cultural expansion over Ocean tiles</English>
+		<French>No penalties for cultural expansion over Ocean tiles</French>
+		<German>No penalties for cultural expansion over Ocean tiles</German>
+		<Italian>No penalties for cultural expansion over Ocean tiles</Italian>
+		<Spanish>No penalties for cultural expansion over Ocean tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
 		<English>The Power of Golden Liberty:</English>
+		<French>The Power of Golden Liberty:</French>
 		<German>Die Macht der Goldenen Freiheit:</German>
+		<Italian>The Power of Golden Liberty:</Italian>
+		<Spanish>The Power of Golden Liberty:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL</Tag>
 		<English>Additional food and commerce during Golden Ages</English>
+		<French>Additional food and commerce during Golden Ages</French>
 		<German>Zus&#228;tzliche Nahrung und Kommerz durch Goldene Zeitalter</German>
+		<Italian>Additional food and commerce during Golden Ages</Italian>
+		<Spanish>Additional food and commerce during Golden Ages</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR_TITLE</Tag>
@@ -578,7 +740,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR</Tag>
 		<English>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</English>
+		<French>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</French>
 		<German>Ozeanhandel erm&#246;glicht durch Kartographie, verringerte Instabilit&#228;t durch &#220;bersee-Kolonien</German>
+		<Italian>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</Italian>
+		<Spanish>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>
@@ -599,17 +764,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS</Tag>
 		<English>An army has been fielded to attack %s1_civ_adjective!</English>
+		<French>An army has been fielded to attack %s1_civ_adjective!</French>
 		<German>Eine Armee wurde zusammengestellt zum Angriff auf %s1_civ_adjective!</German>
+		<Italian>An army has been fielded to attack %s1_civ_adjective!</Italian>
+		<Spanish>An army has been fielded to attack %s1_civ_adjective!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS_TARGET</Tag>
 		<English>The Romans have fielded an army to conquer our civilization!</English>
+		<French>The Romans have fielded an army to conquer our civilization!</French>
 		<German>Die R&#246;mer haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+		<Italian>The Romans have fielded an army to conquer our civilization!</Italian>
+		<Spanish>The Romans have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_TRIUMPH</Tag>
 		<English>Your triumphant victories have enabled you to field another legion!</English>
+		<French>Your triumphant victories have enabled you to field another legion!</French>
 		<German>Eure triumphalen Siege haben Euch erm&#246;glicht, eine weitere Legion auszuheben!</German>
+		<Italian>Your triumphant victories have enabled you to field another legion!</Italian>
+		<Spanish>Your triumphant victories have enabled you to field another legion!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_RUS_TITLE</Tag>
@@ -646,17 +820,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
+		<French>The Power of Thalassocracy:</French>
 		<German>Die Macht der Thalassokratie:</German>
+		<Italian>The Power of Thalassocracy:</Italian>
+		<Spanish>The Power of Thalassocracy:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAM</Tag>
 		<English>Extra commerce on coast and ocean tiles</English>
+		<French>Extra commerce on coast and ocean tiles</French>
 		<German>Zus&#228;tzlicher Kommerz auf K&#252;sten- und Ozeanfeldern</German>
+		<Italian>Extra commerce on coast and ocean tiles</Italian>
+		<Spanish>Extra commerce on coast and ocean tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAMIL_CONQUESTS_TARGET</Tag>
 		<English>The Tamils have fielded an army to conquer our civilization!</English>
+		<French>The Tamils have fielded an army to conquer our civilization!</French>
 		<German>Die Tamilen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+		<Italian>The Tamils have fielded an army to conquer our civilization!</Italian>
+		<Spanish>The Tamils have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TEO_TITLE</Tag>
@@ -671,32 +854,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>
 		<English>The Power of Father Governs Children:</English>
+		<French>The Power of Father Governs Children:</French>
 		<German>Die Macht von Vater Regiert Kinder:</German>
+		<Italian>The Power of Father Governs Children:</Italian>
+		<Spanish>The Power of Father Governs Children:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA</Tag>
 		<English>+1 Commerce per Excess Happiness</English>
+		<French>+1 Commerce per Excess Happiness</French>
 		<German>+1 Kommerz pro überzählige Zufriedenheit</German>
+		<Italian>+1 Commerce per Excess Happiness</Italian>
+		<Spanish>+1 Commerce per Excess Happiness</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TIB_TITLE</Tag>
 		<English>The Power of Missionaries:</English>
+		<French>The Power of Missionaries:</French>
 		<German>Die Macht der Missionare:</German>
+		<Italian>The Power of Missionaries:</Italian>
+		<Spanish>The Power of Missionaries:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TIB</Tag>
 		<English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
+		<French>Can train unlimited missionaries; Missionaries can enter foreign territory</French>
 		<German>Kann unbegrenzt Missionare ausbilden; Missionare k&#246;nnen fremdes Territorium betreten</German>
+		<Italian>Can train unlimited missionaries; Missionaries can enter foreign territory</Italian>
+		<Spanish>Can train unlimited missionaries; Missionaries can enter foreign territory</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR_TITLE</Tag>
 		<English>The Power of Orda:</English>
+		<French>The Power of Orda:</French>
 		<German>Die Macht der Orda:</German>
+		<Italian>The Power of Orda:</Italian>
+		<Spanish>The Power of Orda:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR</Tag>
 		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</English>
+		<French>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</French>
 		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren werden in Kriegszeiten Ihren Armeen beitreten</German>
+		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Italian>
+		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>

@@ -52,14 +52,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_DEFAULT</Tag>
 		<English>Middle Kingdom of %s1</English>
+		<French>Middle Kingdom of %s1</French>
+		<German>Middle Kingdom of %s1</German>
+		<Italian>Middle Kingdom of %s1</Italian>
+		<Spanish>Middle Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_FASCIST</Tag>
 		<English>Nation of %s1</English>
+		<French>Nation of %s1</French>
+		<German>Nation of %s1</German>
+		<Italian>Nation of %s1</Italian>
+		<Spanish>Nation of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_ZHOU</Tag>
 		<English>Zhou</English>
+		<French>Zhou</French>
+		<German>Zhou</German>
+		<Italian>Zhou</Italian>
+		<Spanish>Zhou</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_HAN</Tag>
@@ -69,6 +81,7 @@
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>Han</German>
 		<Italian>
 			<Text>Han</Text>
 			<Gender>Male</Gender>
@@ -83,26 +96,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_QIN</Tag>
 		<English>Qin</English>
+		<French>Qin</French>
+		<German>Qin</German>
+		<Italian>Qin</Italian>
+		<Spanish>Qin</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_SUI</Tag>
 		<English>Sui</English>
+		<French>Sui</French>
+		<German>Sui</German>
+		<Italian>Sui</Italian>
+		<Spanish>Sui</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_TANG</Tag>
 		<English>Tang</English>
+		<French>Tang</French>
+		<German>Tang</German>
+		<Italian>Tang</Italian>
+		<Spanish>Tang</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_SONG</Tag>
 		<English>Song</English>
+		<French>Song</French>
+		<German>Song</German>
+		<Italian>Song</Italian>
+		<Spanish>Song</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_MING</Tag>
 		<English>the Great Ming</English>
+		<French>the Great Ming</French>
+		<German>the Great Ming</German>
+		<Italian>the Great Ming</Italian>
+		<Spanish>the Great Ming</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_QING</Tag>
 		<English>the Great Qing</English>
+		<French>the Great Qing</French>
+		<German>the Great Qing</German>
+		<Italian>the Great Qing</Italian>
+		<Spanish>the Great Qing</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_VASSAL</Tag>
@@ -131,18 +168,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_KOREA</Tag>
 		<English>Protectorate General to Pacify the East</English>
+		<French>Protectorate General to Pacify the East</French>
+		<German>Protectorate General to Pacify the East</German>
+		<Italian>Protectorate General to Pacify the East</Italian>
+		<Spanish>Protectorate General to Pacify the East</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_TURKS</Tag>
 		<English>Protectorate General to Pacify the West</English>
+		<French>Protectorate General to Pacify the West</French>
+		<German>Protectorate General to Pacify the West</German>
+		<Italian>Protectorate General to Pacify the West</Italian>
+		<Spanish>Protectorate General to Pacify the West</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_MONGOLIA</Tag>
 		<English>Protectorate General to Pacify the North</English>
+		<French>Protectorate General to Pacify the North</French>
+		<German>Protectorate General to Pacify the North</German>
+		<Italian>Protectorate General to Pacify the North</Italian>
+		<Spanish>Protectorate General to Pacify the North</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_EGYPT</Tag>
 		<English>Haixi</English>
+		<French>Haixi</French>
+		<German>Haixi</German>
+		<Italian>Haixi</Italian>
+		<Spanish>Haixi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_INDIA</Tag>
@@ -171,6 +224,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_BABYLONIA</Tag>
 		<English>Tiaozhi</English>
+		<French>Tiaozhi</French>
+		<German>Tiaozhi</German>
+		<Italian>Tiaozhi</Italian>
+		<Spanish>Tiaozhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_PERSIA</Tag>
@@ -247,6 +304,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_KOREA</Tag>
 		<English>Chaoxian</English>
+		<French>Chaoxian</French>
+		<German>Chaoxian</German>
+		<Italian>Chaoxian</Italian>
+		<Spanish>Chaoxian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_BYZANTIUM</Tag>
@@ -275,10 +336,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_ARABIA</Tag>
 		<English>Dashi</English>
+		<French>Dashi</French>
+		<German>Dashi</German>
+		<Italian>Dashi</Italian>
+		<Spanish>Dashi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_KHMER</Tag>
 		<English>Jiaozhi</English>
+		<French>Jiaozhi</French>
+		<German>Jiaozhi</German>
+		<Italian>Jiaozhi</Italian>
+		<Spanish>Jiaozhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA</Tag>
@@ -315,10 +384,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET</Tag>
 		<English>Xizang</English>
+		<French>Xizang</French>
+		<German>Xizang</German>
+		<Italian>Xizang</Italian>
+		<Spanish>Xizang</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_INDONESIA</Tag>
 		<English>Yindunixiya</English>
+		<French>Yindunixiya</French>
+		<German>Yindunixiya</German>
+		<Italian>Yindunixiya</Italian>
+		<Spanish>Yindunixiya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_ADJECTIVE</Tag>

@@ -4,14 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_DESC</Tag>
 		<English>The Colombians</English>
+		<French>The Colombians</French>
+		<German>The Colombians</German>
+		<Italian>The Colombians</Italian>
+		<Spanish>The Colombians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_PEOPLES</Tag>
 		<English>Colombian Peoples</English>
+		<French>Colombian Peoples</French>
+		<German>Colombian Peoples</German>
+		<Italian>Colombian Peoples</Italian>
+		<Spanish>Colombian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_DEFAULT</Tag>
 		<English>Kingdom of New Granada</English>
+		<French>Kingdom of New Granada</French>
+		<German>Kingdom of New Granada</German>
+		<Italian>Kingdom of New Granada</Italian>
+		<Spanish>Kingdom of New Granada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_REPUBLIC</Tag>
@@ -40,21 +52,41 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_COMMUNIST</Tag>
 		<English>Socialist Republic of %s1</English>
+		<French>Socialist Republic of %s1</French>
+		<German>Socialist Republic of %s1</German>
+		<Italian>Socialist Republic of %s1</Italian>
+		<Spanish>Socialist Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_FASCIST</Tag>
 		<English>Falangist %s1</English>
+		<French>Falangist %s1</French>
+		<German>Falangist %s1</German>
+		<Italian>Falangist %s1</Italian>
+		<Spanish>Falangist %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_EMPIRE</Tag>
 		<English>Empire of Gran Colombia</English>
+		<French>Empire of Gran Colombia</French>
+		<German>Empire of Gran Colombia</German>
+		<Italian>Empire of Gran Colombia</Italian>
+		<Spanish>Empire of Gran Colombia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Tag>
 		<English>Colombian</English>
+		<French>Colombian</French>
+		<German>Colombian</German>
+		<Italian>Colombian</Italian>
+		<Spanish>Colombian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_SHORT_DESC</Tag>
 		<English>Colombia</English>
+		<French>Colombia</French>
+		<German>Colombia</German>
+		<Italian>Colombia</Italian>
+		<Spanish>Colombia</Spanish>
 	</TEXT>
 </Civ4GameText>

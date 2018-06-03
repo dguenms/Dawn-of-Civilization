@@ -4,41 +4,81 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_DESC</Tag>
 		<English>The Harappans</English>
+		<French>The Harappans</French>
+		<German>The Harappans</German>
+		<Italian>The Harappans</Italian>
+		<Spanish>The Harappans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_PEOPLES</Tag>
 		<English>Indus Valley Peoples</English>
+		<French>Indus Valley Peoples</French>
+		<German>Indus Valley Peoples</German>
+		<Italian>Indus Valley Peoples</Italian>
+		<Spanish>Indus Valley Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_DEFAULT</Tag>
 		<English>Indus Valley City States</English>
+		<French>Indus Valley City States</French>
+		<German>Indus Valley City States</German>
+		<Italian>Indus Valley City States</Italian>
+		<Spanish>Indus Valley City States</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_DEMOCRATIC</Tag>
 		<English>Indus River Republic</English>
+		<French>Indus River Republic</French>
+		<German>Indus River Republic</German>
+		<Italian>Indus River Republic</Italian>
+		<Spanish>Indus River Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_COMMUNIST</Tag>
 		<English>Democratic Republic of the Indus</English>
+		<French>Democratic Republic of the Indus</French>
+		<German>Democratic Republic of the Indus</German>
+		<Italian>Democratic Republic of the Indus</Italian>
+		<Spanish>Democratic Republic of the Indus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_FASCIST</Tag>
 		<English>National Republic of the Indus</English>
+		<French>National Republic of the Indus</French>
+		<German>National Republic of the Indus</German>
+		<Italian>National Republic of the Indus</Italian>
+		<Spanish>National Republic of the Indus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_INDUS</Tag>
 		<English>Indus</English>
+		<French>Indus</French>
+		<German>Indus</German>
+		<Italian>Indus</Italian>
+		<Spanish>Indus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Tag>
 		<English>Harappan</English>
+		<French>Harappan</French>
+		<German>Harappan</German>
+		<Italian>Harappan</Italian>
+		<Spanish>Harappan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPANS_DESC</Tag>
 		<English>The Harappans</English>
+		<French>The Harappans</French>
+		<German>The Harappans</German>
+		<Italian>The Harappans</Italian>
+		<Spanish>The Harappans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</Tag>
 		<English>Harappa</English>
+		<French>Harappa</French>
+		<German>Harappa</German>
+		<Italian>Harappa</Italian>
+		<Spanish>Harappa</Spanish>
 	</TEXT>
 </Civ4GameText>
