@@ -401,8 +401,8 @@ dTechPreferences = {
 		iCartography: 100,
 		iExploration: 100,
 		iCompass: 100,
+		iFirearms: 100,
 		iPatronage: 50,
-		iFirearms: 30,
 		iReplaceableParts: 30,
 		iGuilds: 15,
 		iGunpowder: 15,
@@ -410,6 +410,7 @@ dTechPreferences = {
 	},
 	iCivFrance : {
 		iReplaceableParts: 30,
+		iFirearms: 20,
 		iExploration: 20,
 		iGeography: 20,
 		iLogistics: 20,
@@ -435,6 +436,7 @@ dTechPreferences = {
 	iCivEngland : {
 		iExploration: 40,
 		iGeography: 40,
+		iFirearms: 40,
 		iReplaceableParts: 30,
 		iLogistics: 30,
 		iCivilLiberties: 20,
@@ -445,6 +447,7 @@ dTechPreferences = {
 	iCivHolyRome : {
 		iAcademia: 50,
 		iPrinting: 50,
+		iFirearms: 20,
 		iReplaceableParts: 20,
 		iEducation: 15,
 		iGuilds: 15,
@@ -493,6 +496,7 @@ dTechPreferences = {
 		iExploration: 100,
 		iGeography: 100,
 		iCompass: 100,
+		iFirearms: 100,
 		iCompanies: 50,
 		iPatronage: 50,
 		iReplaceableParts: 20,
@@ -544,6 +548,7 @@ dTechPreferences = {
 	},
 	iCivNetherlands : {
 		iExploration: 20,
+		iFirearms: 20,
 		iOptics: 20,
 		iGeography: 20,
 		iReplaceableParts: 20,
