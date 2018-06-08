@@ -2651,3 +2651,13 @@ void CyPlayer::changeYieldRateModifier(int iYieldType, int iChange)
 {
 	if (m_pPlayer) m_pPlayer->changeYieldRateModifier((YieldTypes)iYieldType, iChange);
 }
+
+int CyPlayer::getTechPreference(int eTech)
+{
+	return m_pPlayer ? m_pPlayer->getTechPreference((TechTypes)eTech) : 0;
+}
+
+void CyPlayer::setTechPreference(int eTech, int iNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setTechPreference((TechTypes)eTech, iNewValue);
+}

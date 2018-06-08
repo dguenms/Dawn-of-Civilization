@@ -562,6 +562,8 @@ public:
 	int getWarValue(int x, int y);
 	int getModifier(int eModifierType);
 	void setModifier(int eModifierType, int iNewValue);
+	int getTechPreference(int eTech);
+	void setTechPreference(int eTech, int iNewValue);
 	int getStartingEra();
 	void setStartingEra(int iNewValue);
 	void setTakenTilesThreshold(int iNewValue);

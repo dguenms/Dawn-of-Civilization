@@ -9695,8 +9695,8 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 		}
 
 		iPercentWasted = 100 - (iFirstResearch + iSecondResearch) * 100 / getDiscoverResearch(NO_TECH);
-		FAssert(iPercentWasted >= 0, "iPercentWasted expected to be positive");
-		FAssert(iPercentWasted <= 100, "iPercentWaster expected to be at most 100");
+		FAssertMsg(iPercentWasted >= 0, "iPercentWasted expected to be positive");
+		FAssertMsg(iPercentWasted <= 100, "iPercentWaster expected to be at most 100");
 
 		if (iFirstResearch >= iFirstLeft)
         {
