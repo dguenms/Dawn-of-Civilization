@@ -1303,6 +1303,46 @@
 		<Spanish>[ICON_BULLET]No open borders required for trade</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_APADANA_PALACE</Tag>
+		<English>Apadana Palace</English>
+		<French>Apadana Palace</French>
+		<German>Apadana-Palast</German>
+		<Italian>Apadana Palace</Italian>
+		<Spanish>Apadana Palace</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JETAVANARAMAYA</Tag>
+		<English>Jetavanaramaya</English>
+		<French>Jetavanaramaya</French>
+		<German>Jetavanaramaya</German>
+		<Italian>Jetavanaramaya</Italian>
+		<Spanish>Jetavanaramaya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GONDESHAPUR</Tag>
+		<English>Academy of Gondeshapur</English>
+		<French>Academy of Gondeshapur</French>
+		<German>Akademie von Gondeschapur</German>
+		<Italian>Academy of Gondeshapur</Italian>
+		<Spanish>Academy of Gondeshapur</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PRAMBANAN</Tag>
+		<English>Prambanan</English>
+		<French>Prambanan</French>
+		<German>Prambanan</German>
+		<Italian>Prambanan</Italian>
+		<Spanish>Prambanan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PRAMBANAN_HELP</Tag>
+		<English>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</English>
+		<French>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</French>
+		<German>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</German>
+		<Italian>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
