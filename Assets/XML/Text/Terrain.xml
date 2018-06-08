@@ -35,4 +35,19 @@
 		<English>Arctic Coast</English>
 		<German>Arktische Küste</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_SEMIDESERT</Tag>
+		<English>Semidesert</English>
+		<German>Halbwüste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_MOORLAND</Tag>
+		<English>Moorland</English>
+		<German>Moor</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_STEPPE</Tag>
+		<English>Steppe</English>
+		<German>Steppe</German>
+	</TEXT>
 </Civ4GameText>
