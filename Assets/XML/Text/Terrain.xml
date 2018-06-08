@@ -50,4 +50,9 @@
 		<English>Steppe</English>
 		<German>Steppe</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_TAIGA</Tag>
+		<English>Taiga</English>
+		<German>Taiga</German>
+	</TEXT>
 </Civ4GameText>
