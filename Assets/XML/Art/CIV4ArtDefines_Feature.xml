@@ -781,5 +781,83 @@
 				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Button_Islands.dds</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_TAIGA</Type>
+			<bAnimated>0</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_TREES</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>,Art/Interface/Buttons/TerrainFeatures/ForestSnowyEvergreen.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,8,3</Button>
+			
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/TreeSnowy/Snowy15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestSnowyEvergreen.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
 	</FeatureArtInfos>
 </Civ4ArtDefines>
