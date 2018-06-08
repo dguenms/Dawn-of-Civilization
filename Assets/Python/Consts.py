@@ -872,7 +872,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 238
+iNumBuildings = 241
 (iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
@@ -893,7 +893,10 @@ iArmoury, iAdministrativeCenter, iSecretService, iTriumphalArch, iNationalTheatr
 iNationalMonument, iIronworks, iMilitaryAcademy, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis, 
 iPyramids, iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iApadanaPalace, iColossus, iParthenon, iStatueOfZeus, iShwedagonPaya, 
 iKhajuraho, 
-iGreatLibrary, iMausoleumOfMaussollos, iFloatingGardens, iColosseum, iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iHagiaSophia, 
+iGreatLibrary, iMausoleumOfMaussollos, iGondeshapur, iFloatingGardens, iColosseum, iGreatWall, iJetavanamaraya, iTheodosianWalls, iMachuPicchu, iPrambanan,
+iBorobudur, 
+iGrandCanal, 
+iHagiaSophia, 
 iNotreDame, iTempleOfKukulkan, iHimejiCastle, iBlueMosque, iWatPreahPisnulok, iTopkapiPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort, 
 iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iUniversityOfSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower, iSaintBasilsCathedral, iHarmandirSahib, 
 iTrafalgarSquare, iBrandenburgGate, iStatueOfLiberty, iPentagon, iLubyanka, iWestminsterPalace, iEiffelTower, iEmpireStateBuilding, iCERN, iWembley, 

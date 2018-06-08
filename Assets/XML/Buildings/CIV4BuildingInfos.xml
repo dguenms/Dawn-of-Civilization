@@ -8655,12 +8655,13 @@
 			<Description>TXT_KEY_BUILDING_APADANA_PALACE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_APADANA_PALACE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_APADANA_PALACE_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APADANA_PALACE</ArtDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<StateReligion>RELIGION_ZOROASTRIANISM</StateReligion>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
 			<PrereqTech>TECH_ARITHMETICS</PrereqTech>
+			<FreeBuilding>BUILDINGCLASS_MONUMENT</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -8670,6 +8671,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
+			<iWorkerSpeedModifier>50</iWorkerSpeedModifier>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -9084,6 +9086,65 @@
 			</BonusProductionModifiers>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_GONDESHAPUR</BuildingClass>
+			<Type>BUILDING_GONDESHAPUR</Type>
+			<Description>TXT_KEY_BUILDING_GONDESHAPUR</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GONDESHAPUR_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GONDESHAPUR_STRATEGY</Strategy>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_GONDESHAPUR</ArtDefineTag>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
+			<StateReligion>RELIGION_ZOROASTRIANISM</StateReligion>
+			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
+			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<FreePromotion>PROMOTION_MEDIC1</FreePromotion>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>250</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>10</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_GREATLIBRARY</ConstructSound>
+			<SpecialistYieldChanges>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+			</SpecialistYieldChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_FLOATING_GARDENS</BuildingClass>
 			<Type>BUILDING_FLOATING_GARDENS</Type>
 			<Description>TXT_KEY_BUILDING_FLOATING_GARDENS</Description>
@@ -9253,6 +9314,61 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JETAVANARAMAYA</BuildingClass>
+			<Type>BUILDING_JETAVANARAMAYA</Type>
+			<Description>TXT_KEY_BUILDING_JETAVANARAMAYA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JETAVANARAMAYA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_JETAVANARAMAYA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_JETAVANARAMAYA</ArtDefineTag>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
+			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<PrereqTech>TECH_AESTHETICS</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>100</iAIWeight>
+			<iCost>300</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<SpecialistYieldChanges>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+			</SpecialistYieldChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_THEODOSIAN_WALLS</BuildingClass>
 			<Type>BUILDING_THEODOSIAN_WALLS</Type>
 			<Description>TXT_KEY_BUILDING_THEODOSIAN_WALLS</Description>
@@ -9355,6 +9471,62 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PRAMBANAN</BuildingClass>
+			<Type>BUILDING_PRAMBANAN</Type>
+			<Description>TXT_KEY_BUILDING_PRAMBANAN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PRAMBANAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_PRAMBANAN_HELP</Help>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PRAMBANAN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_PRAMBANAN</MovieDefineTag>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>200</iAIWeight>
+			<iCost>400</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>15</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

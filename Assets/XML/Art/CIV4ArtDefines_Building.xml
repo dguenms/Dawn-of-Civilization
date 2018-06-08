@@ -2707,5 +2707,45 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/nizamiyya.dds,Art/Interface/Buttons/mem_buildings_atlas.dds,3,4</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_APADANA_PALACE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.8</fScale>
+			<fInterfaceScale>0.42</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/ApadanaPalace/Anahita.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,5</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JETAVANARAMAYA</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>3.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Jetavanaramaya/Jetavanaramaya.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Jetavanaramaya/Button_Jetavanaramaya.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GONDESHAPUR</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.75</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Gondeshapur/palace_mideast.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Gondeshapur/Gondeshapur_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PRAMBANAN</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Prambanan/Khmer_Baray.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Prambanan/Prambanan_Button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
