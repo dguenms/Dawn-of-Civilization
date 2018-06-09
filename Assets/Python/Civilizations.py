@@ -80,20 +80,25 @@ def getTechPreferences(iPlayer):
 			iOrPrereq = gc.getTechInfo(iTech).getPrereqOrTechs(i)
 			iAndPrereq = gc.getTechInfo(iTech).getPrereqAndTechs(i)
 			
-			if iOrPrereq < 0 and iAndPrereq < 0: continue
+			if iOrPrereq < 0 and iAndPrereq < 0: break
 			
-			iPrereqValue = getDictValue(dPreferences, iOrPrereq) + getDictValue(dPreferences, iAndPrereq)
-			
-			if iValue > 0 and iPrereqValue >= 0:
-				iPrereqValue = min(iValue, iPrereqValue + iValue / 2)
-				
-			elif iValue < 0 and iPrereqValue <= 0:
-				iPrereqValue = max(iValue, iPrereqValue + iValue / 2)
-				
-			if iOrPrereq >= 0: dPreferences[iOrPrereq] = iPrereqValue
-			elif iAndPrereq >= 0: dPreferences[iAndPrereq] = iPrereqValue
+			updatePrereqPreference(dPreferences, iOrPrereq, iValue)
+			updatePrereqPreference(dPreferences, iAndPrereq, iValue)
 	
 	return dPreferences
+	
+def updatePrereqPreference(dPreferences, iPrereqTech, iValue):
+	if iPrereqTech < 0: return
+	
+	iPrereqValue = getDictValue(dPreferences, iPrereqTech)
+	
+	if iValue > 0 and iPrereqValue >= 0:
+		iPrereqValue = min(max(iPrereqValue, iValue), iPrereqValue + iValue / 2)
+		
+	elif iValue < 0 and iPrereqValue <= 0:
+		iPrereqValue = max(min(iPrereqValue, iValue), iPrereqValue + iValue / 2)
+		
+	dPreferences[iPrereqTech] = iPrereqValue
 	
 def initPlayerTechPreferences(iPlayer):
 	initTechPreferences(iPlayer, getTechPreferences(iPlayer))
