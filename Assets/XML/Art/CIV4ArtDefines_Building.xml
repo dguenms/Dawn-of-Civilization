@@ -2747,5 +2747,75 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Prambanan/Prambanan_Button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CHEOMSEONGDAE</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Cheomseongdae/observ_ancient.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Cheomseongdae/Cheomseongdae_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NALANDA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Nalanda/Menak.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Nalanda/Nalanda_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KRAK_DES_CHEVALIERS</Type>
+			<LSystem>LSYSTEM_4x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Krak des Chevaliers/Krak16.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Krak des Chevaliers/Krak_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HOUSE_OF_WISDOM</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.75</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/House of Wisdom/gondeshapur.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/House of Wisdom/HouseOfWisdom.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SALSAL_BUDDHA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Salsal/bamyanbuddhastatue.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Salsal/Button_Salsal.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SAINT_SOPHIA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.07</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Saint Sophia/st_sophia.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Saint Sophia/Saint_Sophia.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SANTA_MARIA_DEL_FIORE</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Santa Maria del Fiore/florence2.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Santa Maria del Fiore/SantaMariaDelFiore.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

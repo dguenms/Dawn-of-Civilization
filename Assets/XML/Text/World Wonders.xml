@@ -1427,11 +1427,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GONDESHAPUR</Tag>
-		<English>Academy of Gondeshapur</English>
-		<French>Academy of Gondeshapur</French>
-		<German>Akademie von Gondeschapur</German>
-		<Italian>Academy of Gondeshapur</Italian>
-		<Spanish>Academy of Gondeshapur</Spanish>
+		<English>Gondeshapur</English>
+		<French>Gondeshapur</French>
+		<German>Gondeschapur</German>
+		<Italian>Gondeshapur</Italian>
+		<Spanish>Gondeshapur</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN</Tag>
@@ -1448,6 +1448,86 @@
 		<German>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</German>
 		<Italian>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</Italian>
 		<Spanish>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHEOMSEONGDAE</Tag>
+		<English>Cheomseongdae</English>
+		<French>Cheomseongdae</French>
+		<German>Cheomseongdae</German>
+		<Italian>Cheomseongdae</Italian>
+		<Spanish>Cheomseongdae</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NALANDA</Tag>
+		<English>Nalanda University</English>
+		<French>Nalanda University</French>
+		<German>Universität von Nalanda</German>
+		<Italian>Nalanda University</Italian>
+		<Spanish>Nalanda University</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS</Tag>
+		<English>Krak des Chevaliers</English>
+		<French>Krak des Chevaliers</French>
+		<German>Krak des Chevaliers</German>
+		<Italian>Krak des Chevaliers</Italian>
+		<Spanish>Krak des Chevaliers</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_KRAK_DES_CHEVALIERS</Tag>
+		<English>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</English>
+		<French>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</French>
+		<German>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</German>
+		<Italian>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Tag>
+		<English>House of Wisdom</English>
+		<French>House of Wisdom</French>
+		<German>Haus der Weisheit</German>
+		<Italian>House of Wisdom</Italian>
+		<Spanish>House of Wisdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Tag>
+		<English>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</English>
+		<French>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</French>
+		<German>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</German>
+		<Italian>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA</Tag>
+		<English>Salsal Buddha</English>
+		<French>Salsal Buddha</French>
+		<German>Salsal Buddha</German>
+		<Italian>Salsal Buddha</Italian>
+		<Spanish>Salsal Buddha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Tag>
+		<English>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</English>
+		<French>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</French>
+		<German>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</German>
+		<Italian>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA</Tag>
+		<English>Saint Sophia's Cathedral</English>
+		<French>Saint Sophia's Cathedral</French>
+		<German>Heilige Sophien-Kathedrale</German>
+		<Italian>Saint Sophia's Cathedral</Italian>
+		<Spanish>Saint Sophia's Cathedral</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Tag>
+		<English>Santa Maria del Fiore</English>
+		<French>Santa Maria del Fiore</French>
+		<German>Santa Maria del Fiore</German>
+		<Italian>Santa Maria del Fiore</Italian>
+		<Spanish>Santa Maria del Fiore</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
