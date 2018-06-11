@@ -9476,6 +9476,55 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SALSAL_BUDDHA</BuildingClass>
+			<Type>BUILDING_SALSAL_BUDDHA</Type>
+			<Description>TXT_KEY_BUILDING_SALSAL_BUDDHA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SALSAL_BUDDHA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SALSAL_BUDDHA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Help>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SALSAL_BUDDHA</ArtDefineTag>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<PrereqTech>TECH_ARTISANRY</PrereqTech>
+			<PrereqBonuses>BONUS_CAMEL</PrereqBonuses>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>200</iAIWeight>
+			<iCost>250</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>15</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PRAMBANAN</BuildingClass>
 			<Type>BUILDING_PRAMBANAN</Type>
 			<Description>TXT_KEY_BUILDING_PRAMBANAN</Description>
@@ -9483,8 +9532,7 @@
 			<Strategy>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_PRAMBANAN_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PRAMBANAN</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_PRAMBANAN</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_PRAMBANAN</ArtDefineTag>>
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
@@ -9767,6 +9815,63 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SAINT_SOPHIA</BuildingClass>
+			<Type>BUILDING_SAINT_SOPHIA</Type>
+			<Description>TXT_KEY_BUILDING_SAINT_SOPHIA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SAINT_SOPHIA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SAINT_SOPHIA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SAINT_SOPHIA</ArtDefineTag>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_DOCTRINE</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>550</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</StateReligionCommerces>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_TEMPLE_OF_KUKULKAN</BuildingClass>
 			<Type>BUILDING_TEMPLE_OF_KUKULKAN</Type>
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Description>
@@ -9834,7 +9939,7 @@
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
+			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -9873,6 +9978,61 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_KRAK_DES_CHEVALIERS</BuildingClass>
+			<Type>BUILDING_KRAK_DES_CHEVALIERS</Type>
+			<Description>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_HELP_KRAK_DES_CHEVALIERS</Help>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_KRAK_DES_CHEVALIERS</ArtDefineTag>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
+			<FreeBuilding>BUILDINGCLASS_CASTLE</FreeBuilding>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>200</iAIWeight>
+			<iCost>500</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -10112,6 +10272,113 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CHEOMSEONGDAE</BuildingClass>
+			<Type>BUILDING_CHEOMSEONGDAE</Type>
+			<Description>TXT_KEY_BUILDING_CHEOMSEONGDAE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CHEOMSEONGDAE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHEOMSEONGDAE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CHEOMSEONGDAE</ArtDefineTag>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<PrereqTech>TECH_SCHOLARSHIP</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>100</iAIWeight>
+			<iCost>200</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>10</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+			</CommerceHappinesses>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_OBSERVATORY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_NALANDA</BuildingClass>
+			<Type>BUILDING_NALANDA</Type>
+			<Description>TXT_KEY_BUILDING_NALANDA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_NALANDA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NALANDA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_NALANDA</ArtDefineTag>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<PrereqTech>TECH_SCHOLARSHIP</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>100</iAIWeight>
+			<iCost>200</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>10</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<StateReligionCommerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</StateReligionCommerces>
+			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClass>
 			<Type>BUILDING_SISTINE_CHAPEL</Type>
 			<Description>TXT_KEY_BUILDING_SISTINE_CHAPEL</Description>
@@ -10182,6 +10449,59 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LEANING_TOWER</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_LEANING_TOWER</MovieDefineTag>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_PATRONAGE</PrereqTech>
+			<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>400</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
+			<iAsset>8</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANTA_MARIA_DEL_FIORE</BuildingClass>
+			<Type>BUILDING_SANTA_MARIA_DEL_FIORE</Type>
+			<Description>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SANTA_MARIA_DEL_FIORE</ArtDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
@@ -10516,6 +10836,52 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HOUSE_OF_WISDOM</BuildingClass>
+			<Type>BUILDING_HOUSE_OF_WISDOM</Type>
+			<Description>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Help>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_HOUSE_OF_WISDOM</ArtDefineTag>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
+			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_EDUCATION</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>350</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
