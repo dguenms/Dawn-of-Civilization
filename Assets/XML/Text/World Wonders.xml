@@ -1423,6 +1423,70 @@
 		<Spanish>Santa Maria del Fiore</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IRON_PILLAR</Tag>
+		<English>Iron Pillar</English>
+		<French>Iron Pillar</French>
+		<German>Eiserne Säule</German>
+		<Italian>Iron Pillar</Italian>
+		<Spanish>Iron Pillar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN</Tag>
+		<English>Silver Tree Fountain</English>
+		<French>Silver Tree Fountain</French>
+		<German>Silberbaumbrunnen</German>
+		<Italian>Silver Tree Fountain</Italian>
+		<Spanish>Silver Tree Fountain</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN_HELP</Tag>
+		<English>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</English>
+		<French>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</French>
+		<German>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</German>
+		<Italian>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH</Tag>
+		<English>Saint Thomas Church</English>
+		<French>Saint Thomas Church</French>
+		<German>Thomaskirche</German>
+		<Italian>Saint Thomas Church</Italian>
+		<Spanish>Saint Thomas Church</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ESCORIAL</Tag>
+		<English>El Escorial</English>
+		<French>El Escorial</French>
+		<German>El Escorial</German>
+		<Italian>El Escorial</Italian>
+		<Spanish>El Escorial</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ESCORIAL_HELP</Tag>
+		<English>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</English>
+		<French>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</French>
+		<German>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</German>
+		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TORRE_DE_BELEM</Tag>
+		<English>Torre de Belem</English>
+		<French>Torre de Belem</French>
+		<German>Torre de Belem</German>
+		<Italian>Torre de Belem</Italian>
+		<Spanish>Torre de Belem</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
