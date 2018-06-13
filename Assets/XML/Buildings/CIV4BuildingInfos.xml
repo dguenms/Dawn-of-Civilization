@@ -11574,7 +11574,7 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>8</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -11603,7 +11603,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SHALIMAR_GARDENS</ArtDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
-			<PrereqReligion>RELIGION_ISLAM</StateReligion>
+			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -11621,7 +11621,7 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>6</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -11633,9 +11633,158 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_IMAGE_OF_THE_WORLD_SQUARE</BuildingClass>
+			<Type>BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Type>
+			<Description>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</ArtDefineTag>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
+			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>600</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iTradeRoutes>4</iTradeRoutes>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BOURSE</BuildingClass>
+			<Type>BUILDING_BOURSE</Type>
+			<Description>TXT_KEY_BUILDING_BOURSE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BOURSE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BOURSE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BOURSE</ArtDefineTag>
+			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<PrereqTech>TECH_ECONOMICS</PrereqTech>
+			<FreeBuilding>BUILDINGCLASS_BANK</FreeBuilding>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>600</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iFreeSpecialistCount>2</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ITSUKUSHIMA_SHRINE</BuildingClass>
+			<Type>BUILDING_ITSUKUSHIMA_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_HELP</Help>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ITSUKUSHIMA_SHRINE</ArtDefineTag>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<bWater>1</bWater>
+			<iCost>600</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

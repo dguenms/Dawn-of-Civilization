@@ -1504,11 +1504,43 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHALIMAR_GARDENS_HELP</Tag>
-		<English>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</English>
-		<French>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</French>
-		<German>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</German>
-		<Italian>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</Italian>
-		<Spanish>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</Spanish>
+		<English>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</English>
+		<French>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</French>
+		<German>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</German>
+		<Italian>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Tag>
+		<English>Image of the World Square</English>
+		<French>Image of the World Square</French>
+		<German>Abbild der Welt Platz</German>
+		<Italian>Image of the World Square</Italian>
+		<Spanish>Image of the World Square</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOURSE</Tag>
+		<English>The Bourse</English>
+		<French>The Bourse</French>
+		<German>Beurs</German>
+		<Italian>The Bourse</Italian>
+		<Spanish>The Bourse</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE</Tag>
+		<English>Itsukushima Shrine</English>
+		<French>Itsukushima Shrine</French>
+		<German>Itsukushima-Schrein</German>
+		<Italian>Itsukushima Shrine</Italian>
+		<Spanish>Itsukushima Shrine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</English>
+		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</French>
+		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</German>
+		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

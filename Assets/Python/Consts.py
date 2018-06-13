@@ -872,7 +872,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 253
+iNumBuildings = 256
 (iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
@@ -909,7 +909,10 @@ iRedFort,
 iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, iUniversityOfSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower, iSaintBasilsCathedral, 
 iEscorial,
 iHarmandirSahib,
-iTrafalgarSquare, iPotalaPalace, iShalimarGardens, iBrandenburgGate, iStatueOfLiberty, iPentagon, iLubyanka, iWestminsterPalace, iEiffelTower, iEmpireStateBuilding, 
+iTrafalgarSquare, iPotalaPalace, iShalimarGardens, iImageOfTheWorldSquare, iBourse, iItsukushimaShrine, iBrandenburgGate, iStatueOfLiberty, iPentagon, iLubyanka, 
+iWestminsterPalace, 
+iEiffelTower, 
+iEmpireStateBuilding, 
 iCERN, iWembley, 
 iGraceland, iCristoRedentor, iItaipuDam, iHollywood, iUnitedNations, iCNTower, iSpaceElevator) = range(iNumBuildings)
 

@@ -2887,5 +2887,35 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Shalimar Gardens/ShalimarGardens.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.4</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Image of the World Square/imamreza.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Image of the World Square/ImageOfTheWorldSquare.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BOURSE</Type>
+			<LSystem>LSYSTEM_3x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Bourse/konink.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Bourse/Button_Bourse.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ITSUKUSHIMA_SHRINE</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.35</fScale>
+			<fInterfaceScale>0.47</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Itsukushima Shrine/torii.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Itsukushima Shrine/torii.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
