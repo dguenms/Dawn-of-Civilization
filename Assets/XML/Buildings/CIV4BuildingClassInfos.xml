@@ -1736,7 +1736,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_HOUSE_OF_WISDOM</Type>
-			<Description>TXT_KEY_HOUSE_OF_WISDOM</Description>
+			<Description>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1754,7 +1754,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SAINT_SOPHIA</Type>
-			<Description>TXT_KEY_SAINT_SOPHIA</Description>
+			<Description>TXT_KEY_BUILDING_SAINT_SOPHIA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1772,7 +1772,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_IRON_PILLAR</Type>
-			<Description>TXT_KEY_IRON_PILLAR</Description>
+			<Description>TXT_KEY_BUILDING_IRON_PILLAR</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1790,7 +1790,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SAINT_THOMAS_CHURCH</Type>
-			<Description>TXT_KEY_SAINT_THOMAS_CHURCH</Description>
+			<Description>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1799,7 +1799,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ESCORIAL</Type>
-			<Description>TXT_KEY_ESCORIAL</Description>
+			<Description>TXT_KEY_BUILDING_ESCORIAL</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1817,7 +1817,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_POTALA_PALACE</Type>
-			<Description>TXT_KEY_POTALA_PALACE</Description>
+			<Description>TXT_KEY_BUILDING_POTALA_PALACE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1826,12 +1826,39 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SHALIMAR_GARDENS</Type>
-			<Description>TXT_KEY_SHALIMAR_GARDENS</Description>
+			<Description>TXT_KEY_BUILDING_SHALIMAR_GARDENS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SHALIMAR_GARDENS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_IMAGE_OF_THE_WORLD_SQUARE</Type>
+			<Description>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_IMAGE_OF_THE_WORLD_SQUARE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BOURSE</Type>
+			<Description>TXT_KEY_BUILDING_BOURSE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_BOURSE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ITSUKUSHIMA_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_ITSUKUSHIMA_SHRINE</DefaultBuilding>
 		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>
