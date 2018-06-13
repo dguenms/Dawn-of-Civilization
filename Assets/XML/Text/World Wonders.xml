@@ -1586,12 +1586,36 @@
 		<Spanish>Torre de Belem</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_BUILDING_POTALA_PALACE</Tag>
+		<English>Potala Palace</English>
+		<French>Potala Palace</French>
+		<German>Potala-Palast</German>
+		<Italian>Potala Palace</Italian>
+		<Spanish>Potala Palace</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POTALA_PALACE_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius (not implemented)</English>
+		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius (not implemented)</French>
+		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius (not implemented)</German>
+		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHALIMAR_GARDENS</Tag>
+		<English>Shalimar Gardens</English>
+		<French>Shalimar Gardens</French>
+		<German>Schalimar-Gärten</German>
+		<Italian>Shalimar Gardens</Italian>
+		<Spanish>Shalimar Gardens</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHALIMAR_GARDENS_HELP</Tag>
+		<English>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</English>
+		<French>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</French>
+		<German>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</German>
+		<Italian>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</Italian>
+		<Spanish>[ICON_BULLET]Excess [ICON_HEALTH] counts as [ICON_HAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
