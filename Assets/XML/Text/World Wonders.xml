@@ -1543,6 +1543,62 @@
 		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOUVRE</Tag>
+		<English>The Louvre</English>
+		<French>The Louvre</French>
+		<German>Der Louvre</German>
+		<Italian>The Louvre</Italian>
+		<Spanish>The Louvre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
+		<English>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</English>
+		<French>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</French>
+		<German>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</German>
+		<Italian>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
+		<English>Hermitage</English>
+		<French>Hermitage</French>
+		<German>Eremitage</German>
+		<Italian>Hermitage</Italian>
+		<Spanish>Hermitage</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE_HELP</Tag>
+		<English>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</English>
+		<French>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</French>
+		<German>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</German>
+		<Italian>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SALT_CATHEDRAL</Tag>
+		<English>Salt Cathedral</English>
+		<French>Salt Cathedral</French>
+		<German>Salzkathedrale</German>
+		<Italian>Salt Cathedral</Italian>
+		<Spanish>Salt Cathedral</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMERALD_BUDDHA</Tag>
+		<English>Emerald Buddha Temple</English>
+		<French>Emerald Buddha Temple</French>
+		<German>Tempel des Smaragd-Buddha</German>
+		<Italian>Emerald Buddha Temple</Italian>
+		<Spanish>Emerald Buddha Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BELL_ROCK_LIGHTHOUSE</Tag>
+		<English>Bell Rock Lighthouse</English>
+		<French>Bell Rock Lighthouse</French>
+		<German>Bell-Rock-Leuchtturm</German>
+		<Italian>Bell Rock Lighthouse</Italian>
+		<Spanish>Bell Rock Lighthouse</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
