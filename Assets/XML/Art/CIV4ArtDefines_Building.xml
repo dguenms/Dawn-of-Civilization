@@ -2867,5 +2867,25 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Torre de Belem/TorreBelem_Button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_POTALA_PALACE</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>3.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Potala/potalapalace.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Potala/Potala.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SHALIMAR_GARDENS</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.3</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Shalimar Gardens/theatre.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Shalimar Gardens/ShalimarGardens.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
