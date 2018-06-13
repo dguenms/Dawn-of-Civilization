@@ -1188,7 +1188,7 @@
 			<Button>Art/Interface/Buttons/Buildings/NationalTheatre.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_NATIONAL_GALLERY</Type>
+			<Type>ART_DEF_BUILDING_HERMITAGE</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.25</fScale>
@@ -2916,6 +2916,56 @@
 			<NIF>Art/Structures/Wonders/Itsukushima Shrine/torii.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Itsukushima Shrine/torii.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_LOUVRE</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.75</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Louvre/Louvre.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Louvre/Louvre_button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NATIONAL_GALLERY</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/National Gallery/Sheremetevo01.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/National Gallery/NationalGallery.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SALT_CATHEDRAL</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.4</fScale>
+			<fInterfaceScale>0.3</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Salt Cathedral/Wieliczka.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Salt Cathedral/Button_Wieliczka.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_EMERALD_BUDDHA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Emerald Buddha/phathatluang.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Emerald Buddha/EmeraldBuddha.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BELL_ROCK_LIGHTHOUSE</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.3</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Bell Rock Lighthouse/lighthouse.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Bell Rock Lighthouse/BellRockLighthouse.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
