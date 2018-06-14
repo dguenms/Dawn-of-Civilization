@@ -1599,6 +1599,62 @@
 		<Spanish>Bell Rock Lighthouse</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN</Tag>
+		<English>Neuschwanstein Castle</English>
+		<French>Neuschwanstein Castle</French>
+		<German>Schloss Neuschwanstein</German>
+		<Italian>Neuschwanstein Castle</Italian>
+		<Spanish>Neuschwanstein Castle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN_HELP</Tag>
+		<English>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</English>
+		<French>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</French>
+		<German>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</German>
+		<Italian>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BROOKLYN_BRIDGE</Tag>
+		<English>Brooklyn Bridge</English>
+		<French>Brooklyn Bridge</French>
+		<German>Brooklyn-Brücke</German>
+		<Italian>Brooklyn Bridge</Italian>
+		<Spanish>Brooklyn Bridge</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRYSTAL_PALACE</Tag>
+		<English>Crystal Palace</English>
+		<French>Crystal Palace</French>
+		<German>Kristallpalast</German>
+		<Italian>Crystal Palace</Italian>
+		<Spanish>Crystal Palace</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TSUKIJI</Tag>
+		<English>Tsukiji Fish Market</English>
+		<French>Tsukiji Fish Market</French>
+		<German>Tsukiji Fischmarkt</German>
+		<Italian>Tsukiji Fish Market</Italian>
+		<Spanish>Tsukiji Fish Market</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA</Tag>
+		<English>Sagrada Familia</English>
+		<French>Sagrada Familia</French>
+		<German>Sagrada Familia</German>
+		<Italian>Sagrada Familia</Italian>
+		<Spanish>Sagrada Familia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_HELP</Tag>
+		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</English>
+		<French>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</French>
+		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</German>
+		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

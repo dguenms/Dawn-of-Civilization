@@ -2715,7 +2715,7 @@
 			<fInterfaceScale>0.42</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/ApadanaPalace/Anahita.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,5</Button>
+			<Button>Art/Structures/Wonders/ApadanaPalace/ApadanaPalace.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_JETAVANARAMAYA</Type>
@@ -2966,6 +2966,56 @@
 			<NIF>Art/Structures/Wonders/Bell Rock Lighthouse/lighthouse.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Bell Rock Lighthouse/BellRockLighthouse.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NEUSCHWANSTEIN</Type>
+			<LSystem>LSYSTEM_4x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Neuschwanstein/neuschwanstein.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Neuschwanstein/neuschwanstein.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BROOKLYN_BRIDGE</Type>
+			<LSystem>LSYSTEM_RIVER</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>2</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Brooklyn Bridge/Bridge_NS.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Brooklyn Bridge/bridge button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CRYSTAL_PALACE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Crystal Palace/CrystalPalace4.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Crystal Palace/crystalpalace.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TSUKIJI</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Tsukiji/tsukiji.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Tsukiji/tsukiji.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SAGRADA_FAMILIA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Sagrada Familia/sagrada_familia.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Sagrada Familia/sagradafamilia.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
