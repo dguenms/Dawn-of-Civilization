@@ -1762,6 +1762,62 @@
 		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DUJIANGYAN</Tag>
+		<English>Dujiangyan</English>
+		<French>Dujiangyan</French>
+		<German>Dujiangyan</German>
+		<Italian>Dujiangyan</Italian>
+		<Spanish>Dujiangyan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MONOLITHIC_CHURCH</Tag>
+		<English>Monolithic Church</English>
+		<French>Monolithic Church</French>
+		<German>Monolithische Kirche</German>
+		<Italian>Monolithic Church</Italian>
+		<Spanish>Monolithic Church</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE</Tag>
+		<English>Golden Gate Bridge</English>
+		<French>Golden Gate Bridge</French>
+		<German>Golden Gate Brücke</German>
+		<Italian>Golden Gate Bridge</Italian>
+		<Spanish>Golden Gate Bridge</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ATOMIUM</Tag>
+		<English>Atomium</English>
+		<French>Atomium</French>
+		<German>Atomium</German>
+		<Italian>Atomium</Italian>
+		<Spanish>Atomium</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ATOMIUM_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</English>
+		<French>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</French>
+		<German>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</German>
+		<Italian>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER</Tag>
+		<English>World Trade Center</English>
+		<French>World Trade Center</French>
+		<German>World Trade Center</German>
+		<Italian>World Trade Center</Italian>
+		<Spanish>World Trade Center</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER_HELP</Tag>
+		<English>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</English>
+		<French>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</French>
+		<German>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</German>
+		<Italian>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

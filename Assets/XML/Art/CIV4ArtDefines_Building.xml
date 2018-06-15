@@ -3017,5 +3017,55 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Sagrada Familia/sagradafamilia.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_DUJIANGYAN</Type>
+			<LSystem>LSYSTEM_RIVER</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Dujiangyan/Levee.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Dujiangyan/dujiangyan.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MONOLITHIC_CHURCH</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.00</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Monolithic Church/bete_giyorgis.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Monolithic Church/BeteGiyorgis_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GOLDEN_GATE_BRIDGE</Type>
+			<LSystem>LSYSTEM_RIVER</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.2</fScale>
+			<fInterfaceScale>0.02</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Golden Gate Bridge/Bridge.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Golden Gate Bridge/bridge.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ATOMIUM</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.3</fScale>
+			<fInterfaceScale>0.3</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Atomium/Atomium_05.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Atomium/atomium_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_WORLD_TRADE_CENTER</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.5</fScale>
+			<fInterfaceScale>0.28</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/World Trade Center/wtc.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/World Trade Center/WorldTradeCenter.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
