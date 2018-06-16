@@ -1858,6 +1858,86 @@
 		<Spanish>Hubble Space Telescope</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Tag>
+		<English>Channel Tunnel</English>
+		<French>Channel Tunnel</French>
+		<German>Eurotunnel</German>
+		<Italian>Channel Tunnel</Italian>
+		<Spanish>Channel Tunnel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL_HELP</Tag>
+		<English>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</English>
+		<French>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</French>
+		<German>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</German>
+		<Italian>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DELTA_WORKS</Tag>
+		<English>Delta Works</English>
+		<French>Delta Works</French>
+		<German>Deltawerke</German>
+		<Italian>Delta Works</Italian>
+		<Spanish>Delta Works</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DELTA_WORKS_HELP</Tag>
+		<English>[ICON_BULLET]Requires only flat land in city radius (not implemented)</English>
+		<French>[ICON_BULLET]Requires only flat land in city radius (not implemented)</French>
+		<German>[ICON_BULLET]Requires only flat land in city radius (not implemented)</German>
+		<Italian>[ICON_BULLET]Requires only flat land in city radius (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Requires only flat land in city radius (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IRON_DOME</Tag>
+		<English>Iron Dome</English>
+		<French>Iron Dome</French>
+		<German>Iron Dome</German>
+		<Italian>Iron Dome</Italian>
+		<Spanish>Iron Dome</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IRON_DOME_HELP</Tag>
+		<English>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</English>
+		<French>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</French>
+		<German>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</German>
+		<Italian>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER</Tag>
+		<English>Oriental Pearl Tower</English>
+		<French>Oriental Pearl Tower</French>
+		<German>Oriental Pearl Tower</German>
+		<Italian>Oriental Pearl Tower</Italian>
+		<Spanish>Oriental Pearl Tower</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</English>
+		<French>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</French>
+		<German>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</German>
+		<Italian>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY</Tag>
+		<English>Gardens by the Bay</English>
+		<French>Gardens by the Bay</French>
+		<German>Gardens by the Bay</German>
+		<Italian>Gardens by the Bay</Italian>
+		<Spanish>Gardens by the Bay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
