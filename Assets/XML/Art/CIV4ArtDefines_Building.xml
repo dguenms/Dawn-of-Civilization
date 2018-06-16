@@ -3067,5 +3067,35 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/World Trade Center/WorldTradeCenter.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HARBOUR_OPERA</Type>
+			<LSystem>LSYSTEM_WATER</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Harbour Opera/Sydney_Opera_House.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Harbour Opera/opera_house_button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BURJ_KHALIFA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Burj Khalifa/burj2_v3.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Burj Khalifa/burjkhalifa.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HUBBLE_SPACE_TELESCOPE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.07</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Hubble Space Telescope/Hubble.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Hubble Space Telescope/hubble_btn.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
