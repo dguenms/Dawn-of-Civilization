@@ -1711,6 +1711,46 @@
 		<Spanish>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA</Tag>
+		<English>Harbour Opera</English>
+		<French>Harbour Opera</French>
+		<German>Hafenoper</German>
+		<Italian>Harbour Opera</Italian>
+		<Spanish>Harbour Opera</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA</Tag>
+		<English>Burj Khalifa</English>
+		<French>Burj Khalifa</French>
+		<German>Burj Khalifa</German>
+		<Italian>Burj Khalifa</Italian>
+		<Spanish>Burj Khalifa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
+		<English>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</English>
+		<French>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</French>
+		<German>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</German>
+		<Italian>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Tag>
+		<English>Hubble Space Telescope</English>
+		<French>Hubble Space Telescope</French>
+		<German>Hubble Weltraumteleskop</German>
+		<Italian>Hubble Space Telescope</Italian>
+		<Spanish>Hubble Space Telescope</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
