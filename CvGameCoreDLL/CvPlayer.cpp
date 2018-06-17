@@ -6709,7 +6709,7 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 	iMultiplier += getBuildingProductionModifier(eBuilding);
 
 	// Khajuraho effect
-	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)KHAJURAHO))
+	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)SHWEDAGON_PAYA))
 	{
 	    if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() != NO_SPECIALBUILDING && GC.getBuildingInfo(eBuilding).getPrereqReligion() == getStateReligion())
 		{
