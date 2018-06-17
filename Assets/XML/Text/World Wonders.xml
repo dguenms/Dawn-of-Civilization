@@ -1879,6 +1879,14 @@
 		<Spanish>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
