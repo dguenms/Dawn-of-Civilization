@@ -11157,6 +11157,7 @@
 			<Description>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_UNIVERSITY_OF_SANKORE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_OF_SANKORE</MovieDefineTag>
@@ -11186,10 +11187,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<StateReligionCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</StateReligionCommerces>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
