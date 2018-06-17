@@ -10886,10 +10886,10 @@
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
+			<FreeBuilding>BUILDINGCLASS_ESTATE</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
-			<bGoldenAge>1</bGoldenAge>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>600</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -10908,6 +10908,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iFreeSpecialistCount>2</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
@@ -10921,16 +10927,12 @@
 			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>3</iFlavor>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
