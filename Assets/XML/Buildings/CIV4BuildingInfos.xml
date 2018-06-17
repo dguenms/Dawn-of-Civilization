@@ -11281,8 +11281,6 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iTradeRoutes>2</iTradeRoutes>
-			<iTradeRouteModifier>50</iTradeRouteModifier>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -11300,7 +11298,10 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<SpecialistExtraCommerces>
+				<iCommerce>1</iCommerce>
+			</SpecialistExtraCommerces>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
