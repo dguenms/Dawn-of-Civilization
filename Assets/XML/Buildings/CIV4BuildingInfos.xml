@@ -10372,6 +10372,59 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_VIJAYA_STAMBHA</BuildingClass>
+			<Type>BUILDING_VIJAYA_STAMBHA</Type>
+			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VIJAYA_STAMBHA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VIJAYA_STAMBHA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VIJAYA_STAMBHA</ArtDefineTag>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_COMPANIES</PrereqTech>
+			<FreePromotion>PROMOTION_CITY_GARRISON1</FreePromotion>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>500</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iGreatGeneralRateModifier>50</iGreatGeneralRateModifier>
+			<iAsset>10</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_TOPKAPI_PALACE</BuildingClass>
 			<Type>BUILDING_TOPKAPI_PALACE</Type>
 			<Description>TXT_KEY_BUILDING_TOPKAPI_PALACE</Description>
@@ -12500,6 +12553,50 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MOTHERLAND_CALLS</BuildingClass>
+			<Type>BUILDING_MOTHERLAND_CALLS</Type>
+			<Description>TXT_KEY_BUILDING_MOTHERLAND_CALLS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MOTHERLAND_CALLS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MOTHERLAND_CALLS_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_MOTHERLAND_CALLS_HELP</Help>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MOTHERLAND_CALLS</ArtDefineTag>
+			<PrereqTech>TECH_POWER_PROJECTION</PrereqTech>
+			<PrereqCivic>CIVIC_CENTRAL_PLANNING</PrereqCivic>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>750</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LUBYANKA</BuildingClass>
 			<Type>BUILDING_LUBYANKA</Type>
 			<Description>TXT_KEY_BUILDING_LUBYANKA</Description>
@@ -12771,6 +12868,51 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BERLAYMONT</BuildingClass>
+			<Type>BUILDING_BERLAYMONT</Type>
+			<Description>TXT_KEY_BUILDING_BERLAYMONT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BERLAYMONT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BERLAYMONT_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_BERLAYMONT_HELP</Help>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BERLAYMONT</ArtDefineTag>
+			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
+			<PrereqTech>TECH_GLOBALISM</PrereqTech>
+			<PrereqCivic>CIVIC_MULTILATERALISM</PrereqCivic>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>1000</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CERN_RESEARCH_COMPLEX</BuildingClass>
 			<Type>BUILDING_CERN_RESEARCH_COMPLEX</Type>
 			<Description>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Description>
@@ -12816,6 +12958,49 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BLETCHLEY_PARK</BuildingClass>
+			<Type>BUILDING_BLETCHLEY_PARK</Type>
+			<Description>TXT_KEY_BUILDING_BLETCHLEY_PARK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BLETCHLEY_PARK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BLETCHLEY_PARK_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_BLETCHLEY_PARK_HELP</Help>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BLETCHLEY_PARK</ArtDefineTag>
+			<PrereqTech>TECH_RADIO</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>500</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>8</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -13585,6 +13770,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bWater>1</bWater>
 			<iCost>2500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -13645,6 +13831,86 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_LARGE_HADRON_COLLIDER</BuildingClass>
+			<Type>BUILDING_LARGE_HADRON_COLLIDER</Type>
+			<Description>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_LARGE_HADRON_COLLIDER</ArtDefineTag>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>3000</iCost>
+			<iHurryCostModifier>300</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iAsset>20</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>100</iCommerce>
+			</CommerceModifiers>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_PLANTNUCLEAR</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ITER</BuildingClass>
+			<Type>BUILDING_ITER</Type>
+			<Description>TXT_KEY_BUILDING_ITER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ITER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ITER_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_ITER_HELP</Help>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ITER</ArtDefineTag>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<PrereqTech>TECH_FUSION</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<bAreaCleanPower>1</bAreaCleanPower>
+			<iCost>4000</iCost>
+			<iHurryCostModifier>300</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iAsset>20</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_NUCLEAR_PLANT</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_PLANTNUCLEAR</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>

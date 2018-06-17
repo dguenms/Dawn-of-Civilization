@@ -872,7 +872,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 279
+iNumBuildings = 284
 (iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
@@ -901,7 +901,8 @@ iBorobudur,
 iMonolithicChurch,
 iGrandCanal, 
 iHagiaSophia, 
-iNotreDame, iSaintSophia, iTempleOfKukulkan, iHimejiCastle, iKrakDesChevaliers, iSaintThomasChurch, iBlueMosque, iWatPreahPisnulok, iTopkapiPalace, iMezquita, 
+iNotreDame, iSaintSophia, iTempleOfKukulkan, iHimejiCastle, iKrakDesChevaliers, iSaintThomasChurch, iBlueMosque, iWatPreahPisnulok, iVijayaStambha, iTopkapiPalace, 
+iMezquita, 
 iCheomseongdae, 
 iNalanda, 
 iSistineChapel, 
@@ -914,15 +915,15 @@ iHarmandirSahib,
 iTrafalgarSquare, iPotalaPalace, iShalimarGardens, iImageOfTheWorldSquare, iBourse, iItsukushimaShrine, iLouvre, iHermitage, iSaltCathedral, iEmeraldBuddha,
 iBellRockLighthouse,
 iBrandenburgGate, 
-iStatueOfLiberty, iNeuschwanstein, iBrooklynBridge, iCrystalPalace, iTsukijiFishMarket, iPentagon, 
+iStatueOfLiberty, iNeuschwanstein, iBrooklynBridge, iCrystalPalace, iTsukijiFishMarket, iPentagon, iMotherlandCalls,
 iLubyanka, 
 iWestminsterPalace, 
 iEiffelTower, 
-iEmpireStateBuilding, iSagradaFamilia,
-iCERN, iWembley, 
+iEmpireStateBuilding, iSagradaFamilia, iBerlaymont,
+iCERN, iBletchleyPark, iWembley, 
 iGraceland, iCristoRedentor, iItaipuDam, iHollywood, iUnitedNations, iCNTower, iGoldenGateBridge, iAtomium, iWorldTradeCenter, iHarbourOpera,
 iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iDeltaWorks, iIronDome, iOrientalPearlTower, iGardensByTheBay,
-iSpaceElevator) = range(iNumBuildings)
+iSpaceElevator, iITER) = range(iNumBuildings)
 
 iBeginWonders = iGreatSphinx # different from DLL constant because that includes national wonders
 
