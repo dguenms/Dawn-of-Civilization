@@ -8875,6 +8875,7 @@
 			<Description>TXT_KEY_BUILDING_SHWEDAGON_PAYA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SHWEDAGON_PAYA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SHWEDAGON_PAYA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SHWEDAGON_PAYA_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SHWEDAGON_PAYA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_SHWEDAGON_PAYA</MovieDefineTag>
@@ -8883,12 +8884,11 @@
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_ETHICS</PrereqTech>
-			<CivicOption>CIVICOPTION_RELIGION</CivicOption>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>450</iCost>
+			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -8929,7 +8929,6 @@
 			<Description>TXT_KEY_BUILDING_KHAJURAHO</Description>
 			<Civilopedia>TXT_KEY_BUILDING_KHAJURAHO_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_KHAJURAHO_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_HELP_KHAJURAHO</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_KHAJURAHO</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_KHAJURAHO</MovieDefineTag>
@@ -8943,7 +8942,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
-			<iCost>200</iCost>
+			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -8965,6 +8964,9 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionYieldChanges>
+				<iYield>1</iYield>
+			</ReligionYieldChanges>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -11167,7 +11169,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>550</iCost>
+			<iCost>500</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

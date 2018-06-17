@@ -418,14 +418,6 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HELP_KHAJURAHO</Tag>
-		<English>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</English>
-		<French>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</French>
-		<German>[ICON_BULLET]+100% [ICON_PRODUCTION] für Gebäude der Staats [ICON_RELIGION]</German>
-		<Italian>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</Italian>
-		<Spanish>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
 		<English>[ICON_BULLET]All trade routes are counted as foreign</English>
 		<French>[ICON_BULLET]All trade routes are counted as foreign</French>
@@ -1877,6 +1869,14 @@
 		<German>Vijaya Stambha</German>
 		<Italian>Vijaya Stambha</Italian>
 		<Spanish>Vijaya Stambha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_HELP</Tag>
+		<English>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</English>
+		<French>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</French>
+		<German>[ICON_BULLET]Doppelte [ICON_PRODUCTION] für Gebäude der Staats [ICON_RELIGION]</German>
+		<Italian>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Italian>
+		<Spanish>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
