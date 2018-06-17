@@ -9935,6 +9935,7 @@
 			<Description>TXT_KEY_BUILDING_NOTRE_DAME</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NOTRE_DAME_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_NOTRE_DAME_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NOTRE_DAME</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NOTRE_DAME</MovieDefineTag>
@@ -9951,7 +9952,6 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iGlobalHappiness>2</iGlobalHappiness>
 			<iAsset>14</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
