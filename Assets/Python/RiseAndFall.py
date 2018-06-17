@@ -536,7 +536,7 @@ class RiseAndFall:
 		
 	def adjust1700ADWonders(self):
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
-		pMilan.setBuildingOriginalOwner(iLeaningTower, iItaly)
+		pMilan.setBuildingOriginalOwner(iSantaMariaDelFiore, iItaly)
 		pMilan.setBuildingOriginalOwner(iSanMarcoBasilica, iItaly)
 		
 		pDjenne = gc.getMap().plot(51, 29).getPlotCity()

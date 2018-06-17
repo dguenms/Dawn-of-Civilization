@@ -1428,16 +1428,6 @@
 			<DefaultBuilding>BUILDING_MOAI_STATUES</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LEANING_TOWER</Type>
-			<Description>TXT_KEY_BUILDING_LEANING_TOWER</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_LEANING_TOWER</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PLAGUE</Type>
 			<Description>TXT_KEY_BUILDING_PLAGUE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

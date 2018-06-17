@@ -872,7 +872,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 284
+iNumBuildings = 283
 (iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
@@ -906,7 +906,6 @@ iMezquita,
 iCheomseongdae, 
 iNalanda, 
 iSistineChapel, 
-iLeaningTower, 
 iSantaMariaDelFiore,
 iRedFort, 
 iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, iUniversityOfSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower, iSaintBasilsCathedral, 
