@@ -2076,5 +2076,59 @@
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_GARDENS_BY_THE_BAY</DefaultBuilding>
 		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BLETCHLEY_PARK</Type>
+			<Description>TXT_KEY_BUILDING_BLETCHLEY_PARK</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_BLETCHLEY_PARK</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MOTHERLAND_CALLS</Type>
+			<Description>TXT_KEY_BUILDING_MOTHERLAND_CALLS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MOTHERLAND_CALLS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BERLAYMONT</Type>
+			<Description>TXT_KEY_BUILDING_BERLAYMONT</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_BERLAYMONT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ITER</Type>
+			<Description>TXT_KEY_BUILDING_ITER</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_ITER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LARGE_HADRON_COLLIDER</Type>
+			<Description>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LARGE_HADRON_COLLIDER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_VIJAYA_STAMBHA</Type>
+			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_VIJAYA_STAMBHA</DefaultBuilding>
+		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>

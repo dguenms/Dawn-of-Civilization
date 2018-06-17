@@ -1831,6 +1831,86 @@
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK</Tag>
+		<English>Bletchley Park</English>
+		<French>Bletchley Park</French>
+		<German>Bletchley Park</German>
+		<Italian>Bletchley Park</Italian>
+		<Spanish>Bletchley Park</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK_HELP</Tag>
+		<English>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</English>
+		<French>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</French>
+		<German>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</German>
+		<Italian>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS</Tag>
+		<English>The Motherland Calls</English>
+		<French>The Motherland Calls</French>
+		<German>Das Mutterland Ruft</German>
+		<Italian>The Motherland Calls</Italian>
+		<Spanish>The Motherland Calls</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS_HELP</Tag>
+		<English>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</English>
+		<French>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</French>
+		<German>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</German>
+		<Italian>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BERLAYMONT</Tag>
+		<English>Berlaymont</English>
+		<French>Berlaymont</French>
+		<German>Berlaymont</German>
+		<Italian>Berlaymont</Italian>
+		<Spanish>Berlaymont</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BERLAYMONT_HELP</Tag>
+		<English>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</English>
+		<French>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</French>
+		<German>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</German>
+		<Italian>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITER</Tag>
+		<English>ITER</English>
+		<French>ITER</French>
+		<German>ITER</German>
+		<Italian>ITER</Italian>
+		<Spanish>ITER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITER_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Tag>
+		<English>Large Hadron Collider</English>
+		<French>Large Hadron Collider</French>
+		<German>Large Hadron Collider</German>
+		<Italian>Large Hadron Collider</Italian>
+		<Spanish>Large Hadron Collider</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Tag>
+		<English>Vijaya Stambha</English>
+		<French>Vijaya Stambha</French>
+		<German>Vijaya Stambha</German>
+		<Italian>Vijaya Stambha</Italian>
+		<Spanish>Vijaya Stambha</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

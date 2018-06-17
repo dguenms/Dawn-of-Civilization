@@ -1868,14 +1868,14 @@
 			<Button>Art/Interface/Buttons/Wonders/BigBen.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</Type>
+			<Type>ART_DEF_BUILDING_LARGE_HADRON_COLLIDER</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.73</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/CERN/CERN.nif</NIF>
+			<NIF>Art/Structures/Wonders/Large Hadron Collider/CERN.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/CERN/btn_cern.dds</Button>
+			<Button>Art/Structures/Wonders/Large Hadron Collider/largehadroncollider.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BOROBUDUR</Type>
@@ -3136,6 +3136,66 @@
 			<NIF>Art/Structures/Buildings/Dutch_Dike/Dutch_Dike.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Gardens by the Bay/gardens.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BLETCHLEY_PARK</Type>
+			<LSystem>LSYSTEM_2x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Bletchley Park/Bletch20.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Bletchley Park/bletchleypark.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MOTHERLAND_CALLS</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.06</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/The Motherland Calls/motherland.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/The Motherland Calls/motherland.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BERLAYMONT</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Berlaymont/Berlaymont.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Berlaymont/berlaymont_button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ITER</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/ITER/SuperCollider.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/ITER/iter.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>4</fScale>
+			<fInterfaceScale>0.63</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/CERN/holotheatre.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/CERN/cern.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_VIJAYA_STAMBHA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Vijaya Stambha/victory.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Vijaya Stambha/vijayastambha.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
