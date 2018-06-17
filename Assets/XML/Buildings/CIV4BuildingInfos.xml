@@ -10758,60 +10758,6 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_LEANING_TOWER</BuildingClass>
-			<Type>BUILDING_LEANING_TOWER</Type>
-			<Description>TXT_KEY_BUILDING_LEANING_TOWER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_LEANING_TOWER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_LEANING_TOWER_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_LEANING_TOWER</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_LEANING_TOWER</MovieDefineTag>
-			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
-			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
-			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_PATRONAGE</PrereqTech>
-			<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
-			<bTeamShare>1</bTeamShare>
-			<bNukeImmune>1</bNukeImmune>
-			<iCost>400</iCost>
-			<iHurryCostModifier>100</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
-			<iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
-			<iAsset>8</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>6</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<CommerceChangeOriginalOwners>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
-			</CommerceChangeOriginalOwners>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_MARBLE</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SANTA_MARIA_DEL_FIORE</BuildingClass>
 			<Type>BUILDING_SANTA_MARIA_DEL_FIORE</Type>
 			<Description>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Description>
