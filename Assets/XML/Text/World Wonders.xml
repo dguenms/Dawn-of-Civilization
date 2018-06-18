@@ -1895,6 +1895,14 @@
 		<Spanish>[ICON_BULLET]Only two Temples required to build Cathedrals (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE_HELP</Tag>
+		<English>[ICON_BULLET]Temporary unhappiness is limited to 1[ICON_UNHAPPY] (not implemented)</English>
+		<French>[ICON_BULLET]Temporary unhappiness is limited to 1[ICON_UNHAPPY] (not implemented)</French>
+		<German>[ICON_BULLET]Temporary unhappiness is limited to 1[ICON_UNHAPPY] (not implemented)</German>
+		<Italian>[ICON_BULLET]Temporary unhappiness is limited to 1[ICON_UNHAPPY] (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Temporary unhappiness is limited to 1[ICON_UNHAPPY] (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

@@ -10257,6 +10257,7 @@
 			<Description>TXT_KEY_BUILDING_BLUE_MOSQUE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BLUE_MOSQUE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BLUE_MOSQUE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_BLUE_MOSQUE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BLUE_MOSQUE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BLUE_MOSQUE</MovieDefineTag>
@@ -10268,7 +10269,6 @@
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
-			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>600</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
