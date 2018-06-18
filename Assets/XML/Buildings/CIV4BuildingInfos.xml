@@ -10490,7 +10490,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SILVER_TREE_FOUNTAIN</ArtDefineTag>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_COMPASS</PrereqTech>
+			<PrereqTech>TECH_PAPER</PrereqTech>
 			<PrereqBonuses>BONUS_SILK</PrereqBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
