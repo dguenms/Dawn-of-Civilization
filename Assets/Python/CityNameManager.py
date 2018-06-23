@@ -320,7 +320,7 @@ def onTechAcquired(iCiv):
 			if not sNewIdentifier: continue
 			
 			# Nigerian and Japanese Edo
-			if iIdentifier == 'Edo':
+			if sIdentifier == 'Edo':
 				if city.getRegionID() == rWestAfrica and sNewIdentifier == 'Toukyou': continue
 				if city.getRegionID() == rJapan and sNewIdentifier == 'Benin': continue
 			

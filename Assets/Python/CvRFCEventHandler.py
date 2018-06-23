@@ -149,7 +149,7 @@ class CvRFCEventHandler:
 			elif iPlayer == iMongolia and tCity == (102, 47):
 				utils.moveCapital(iMongolia, tCity) # Khanbaliq
 			elif iPlayer == iManchuria and tCity == (102, 47):
-				utils.moveCapital(iMongolia, tCity) # Beijing
+				utils.moveCapital(iManchuria, tCity) # Beijing
 				
 		# remove slaves if unable to practice slavery
 		if not gc.getPlayer(iPlayer).canUseSlaves():
