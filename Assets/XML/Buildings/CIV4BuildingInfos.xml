@@ -10650,8 +10650,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NALANDA</ArtDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
-			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
-			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_SCHOLARSHIP</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
@@ -13232,6 +13231,8 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bWater>1</bWater>
+			<bRiver>1</bRiver>
 			<iCost>2000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
