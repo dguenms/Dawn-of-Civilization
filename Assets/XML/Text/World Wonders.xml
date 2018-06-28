@@ -1755,11 +1755,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM_HELP</Tag>
-		<English>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</English>
-		<French>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</French>
-		<German>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</German>
-		<Italian>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1 [ICON_RESEARCH] per ICBM built in the world (not implemented)</Spanish>
+		<English>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world (not implemented)</English>
+		<French>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world (not implemented)</French>
+		<German>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world (not implemented)</German>
+		<Italian>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER</Tag>
