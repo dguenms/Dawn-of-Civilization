@@ -3187,5 +3187,95 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Vijaya Stambha/vijayastambha.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AL_KHAZNEH</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.25</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Al Khazneh/Petra.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Al Khazneh/Button_AlKhazneh.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ALAMUT</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Alamut/Alamut.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Alamut/Alamut.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MOUNT_ATHOS</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.60</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Athos/hilmon.NIF</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Athos/athos.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GLOBAL_SEED_VAULT</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Seed Vault/Svalbard.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Seed Vault/seedvault_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GUADALUPE_BASILICA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Guadalupe/guadalupe.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Guadalupe/guadalupe.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MOLE_ANTONELLIANA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Mole Antonelliana/mole_antoneliana.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Mole Antonelliana/mole_antoneliana.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GUR_E_AMIR</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>3.7</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Gur-e-Amir/shah.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Gur-e-Amir/gureamir.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_LOTUS_TEMPLE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Lotus Temple/lotus6.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Lotus Temple/lotus_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AQUA_APPIA</Type>
+			<LSystem>LSYSTEM_1x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Aqueduct/Pedia_Aqueduct.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Aqua Appia/aqua_appia.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

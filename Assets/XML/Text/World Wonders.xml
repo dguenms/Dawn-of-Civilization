@@ -2018,6 +2018,134 @@
 		<Spanish>[ICON_BULLET]+1 movement for civilian units (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH</Tag>
+		<English>Al Khazneh</English>
+		<French>Al Khazneh</French>
+		<German>Al Khazneh</German>
+		<Italian>Al Khazneh</Italian>
+		<Spanish>Al Khazneh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH_HELP</Tag>
+		<English>[ICON_BULLET]Requires Oasis in city radius</English>
+		<French>[ICON_BULLET]Requires Oasis in city radius</French>
+		<German>[ICON_BULLET]Requires Oasis in city radius</German>
+		<Italian>[ICON_BULLET]Requires Oasis in city radius</Italian>
+		<Spanish>[ICON_BULLET]Requires Oasis in city radius</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ALAMUT</Tag>
+		<English>Alamut Fortress</English>
+		<French>Alamut Fortress</French>
+		<German>Festung Alamut</German>
+		<Italian>Alamut Fortress</Italian>
+		<Spanish>Alamut Fortress</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOUNT_ATHOS</Tag>
+		<English>Mount Athos</English>
+		<French>Mount Athos</French>
+		<German>Athos</German>
+		<Italian>Mount Athos</Italian>
+		<Spanish>Mount Athos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOUNT_ATHOS_HELP</Tag>
+		<English>[ICON_BULLET]+2 [ICON_GREATPEOPLE] for each controlled wonder (not implemented)</English>
+		<French>[ICON_BULLET]+2 [ICON_GREATPEOPLE] for each controlled wonder (not implemented)</French>
+		<German>[ICON_BULLET]+2 [ICON_GREATPEOPLE] for each controlled wonder (not implemented)</German>
+		<Italian>[ICON_BULLET]+2 [ICON_GREATPEOPLE] for each controlled wonder (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_GREATPEOPLE] for each controlled wonder (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT</Tag>
+		<English>Global Seed Vault</English>
+		<French>Global Seed Vault</French>
+		<German>Weltweiter Saatgut-Tresor</German>
+		<Italian>Global Seed Vault</Italian>
+		<Spanish>Global Seed Vault</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT_HELP</Tag>
+		<English>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</English>
+		<French>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</French>
+		<German>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</German>
+		<Italian>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GUADALUPE_BASILICA</Tag>
+		<English>Guadalupe Basilica</English>
+		<French>Guadalupe Basilica</French>
+		<German>Basilica von Guadalupe</German>
+		<Italian>Guadalupe Basilica</Italian>
+		<Spanish>Guadalupe Basilica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GUADALUPE_BASILICA_HELP</Tag>
+		<English>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</English>
+		<French>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</French>
+		<German>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</German>
+		<Italian>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOLE_ANTONELLIANA</Tag>
+		<English>Mole Antonelliana</English>
+		<French>Mole Antonelliana</French>
+		<German>Mole Antonelliana</German>
+		<Italian>Mole Antonelliana</Italian>
+		<Spanish>Mole Antonelliana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOLE_ANTONELLIANA_HELP</Tag>
+		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</English>
+		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</French>
+		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</German>
+		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR</Tag>
+		<English>Gur-e-Amir</English>
+		<French>Gur-e-Amir</French>
+		<German>Gur-e-Amir</German>
+		<Italian>Gur-e-Amir</Italian>
+		<Spanish>Gur-e-Amir</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_HELP</Tag>
+		<English>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</English>
+		<French>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</French>
+		<German>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</German>
+		<Italian>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE</Tag>
+		<English>Lotus Temple</English>
+		<French>Lotus Temple</French>
+		<German>Lotustempel</German>
+		<Italian>Lotus Temple</Italian>
+		<Spanish>Lotus Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE_HELP</Tag>
+		<English>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</English>
+		<French>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</French>
+		<German>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</German>
+		<Italian>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AQUA_APPIA</Tag>
+		<English>Aqua Appia</English>
+		<French>Aqua Appia</French>
+		<German>Aqua Appia</German>
+		<Italian>Aqua Appia</Italian>
+		<Spanish>Aqua Appia</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
