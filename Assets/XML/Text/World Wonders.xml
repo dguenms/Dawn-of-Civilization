@@ -2010,7 +2010,7 @@
 		<Spanish>[ICON_BULLET]Temporary unhappiness is limited to 1[ICON_UNHAPPY] (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SAINT_BASILS_CATHEDRAL_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_HELP</Tag>
 		<English>[ICON_BULLET]+1 movement for civilian units (not implemented)</English>
 		<French>[ICON_BULLET]+1 movement for civilian units (not implemented)</French>
 		<German>[ICON_BULLET]+1 movement for civilian units (not implemented)</German>

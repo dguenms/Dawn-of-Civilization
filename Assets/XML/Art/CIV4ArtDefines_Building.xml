@@ -30,8 +30,8 @@
 			<Type>ART_DEF_BUILDING_VERSAILLES</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.16</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fScale>1.25</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Versailles/Versailles.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Versailles.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,7</Button>
@@ -781,7 +781,7 @@
 			<Type>ART_DEF_BUILDING_LEVEE</Type>
 			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.5</fScale>
+			<fScale>0.4</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Levee/Levee.nif</NIF>
 			<KFM/>
@@ -831,7 +831,7 @@
 			<Type>ART_DEF_BUILDING_JEWISH_SHRINE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
+			<fScale>1.45</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shrine/jewish-shrine.nif</NIF>
 			<KFM/>
@@ -951,11 +951,11 @@
 			<Type>ART_DEF_BUILDING_ISLAMIC_SHRINE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.8</fScale>
-			<fInterfaceScale>0.67</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Masjid_al-haram/imamreza.nif</NIF>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/kaaba/kaaba.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/al-haram.dds</Button>
+			<Button>Art/Structures/Wonders/kaaba/kaaba_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HINDU_TEMPLE</Type>
@@ -991,7 +991,7 @@
 			<Type>ART_DEF_BUILDING_HINDU_SHRINE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.25</fScale>
+			<fScale>1.35</fScale>
 			<fInterfaceScale>0.56</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shrine/hindu_shrine.nif</NIF>
 			<KFM/>
@@ -1181,7 +1181,7 @@
 			<Type>ART_DEF_BUILDING_NATIONAL_THEATRE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
+			<fScale>1.85</fScale>
 			<fInterfaceScale>0.53</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/National_Theatre/semperoper.nif</NIF>
 			<KFM/>
@@ -1191,8 +1191,8 @@
 			<Type>ART_DEF_BUILDING_HERMITAGE</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.25</fScale>
-			<fInterfaceScale>0.32</fInterfaceScale>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Hermitage/Hermitage.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Hermitage.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,3</Button>
@@ -1221,7 +1221,7 @@
 			<Type>ART_DEF_BUILDING_TRADING_COMPANY</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.75</fScale>
+			<fScale>1</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Trading_Company/navalmanufacture.nif</NIF>
 			<KFM/>
@@ -1281,7 +1281,7 @@
 			<Type>ART_DEF_BUILDING_GREAT_LIBRARY</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.43</fScale>
+			<fScale>1.35</fScale>
 			<fInterfaceScale>0.67</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/GreatLibrary/GreatLibrary.nif</NIF>
 			<KFM/>
@@ -1342,8 +1342,8 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.25</fScale>
-			<fInterfaceScale>0.48</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/AngkorWat/AngkorWat.nif</NIF>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/AngkorWat/AngkorWat1.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/AngkorWat.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,1</Button>
 		</BuildingArtInfo>
@@ -1361,7 +1361,7 @@
 			<Type>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.33</fScale>
+			<fScale>1.37</fScale>
 			<fInterfaceScale>0.53</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/ChichenItza/ChichenItza.nif</NIF>
 			<KFM/>
@@ -1371,8 +1371,8 @@
 			<Type>ART_DEF_BUILDING_SISTINE_CHAPEL</Type>
 			<LSystem>LSYSTEM_1x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.1</fScale>
-			<fInterfaceScale>0.73</fInterfaceScale>
+			<fScale>1.25</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/SistineChapel/SistineChapel.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/SistineChapel.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,6</Button>
@@ -1402,7 +1402,7 @@
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/TajMahal/TajMahal.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/TajMahal.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,7</Button>
@@ -1411,7 +1411,7 @@
 			<Type>ART_DEF_BUILDING_ST_BASILS_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.21</fScale>
+			<fScale>1.32</fScale>
 			<fInterfaceScale>0.36</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Kremlin/Kremlin.nif</NIF>
 			<KFM/>
@@ -1422,7 +1422,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
-			<fInterfaceScale>0.27</fInterfaceScale>
+			<fInterfaceScale>0.33</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/EiffelTower/EiffelTower.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/EiffelTower.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,2</Button>
@@ -1431,8 +1431,8 @@
 			<Type>ART_DEF_BUILDING_STATUE_OF_LIBERTY</Type>
 			<LSystem>LSYSTEM_WATER</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.2</fScale>
-			<fInterfaceScale>0.25</fInterfaceScale>
+			<fScale>1.9</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/StatueofLiberty/StatueofLiberty.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/StatueOfLiberty.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,10</Button>
@@ -1451,8 +1451,8 @@
 			<Type>ART_DEF_BUILDING_GRACELAND</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>1.53</fScale>
-			<fInterfaceScale>0.76</fInterfaceScale>
+			<fScale>1.75</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Graceland/Graceland.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Graceland.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,9</Button>
@@ -1481,8 +1481,8 @@
 			<Type>ART_DEF_BUILDING_PENTAGON</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>0.65</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Pentagon/Pentagon.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Pentagon.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,5</Button>
@@ -1511,7 +1511,7 @@
 			<Type>ART_DEF_BUILDING_TEMPLE_OF_ARTEMIS</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>1.7</fScale>
+			<fScale>1.9</fScale>
 			<fInterfaceScale>0.59</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Temple_of_Artemis/Temple_of_Artemis.nif</NIF>
 			<KFM/>
@@ -1531,8 +1531,8 @@
 			<Type>ART_DEF_BUILDING_UNIVERSITY_OF_SANKORE</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>2.53</fScale>
-			<fInterfaceScale>0.61</fInterfaceScale>
+			<fScale>2.65</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Sankore/Sankore.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,6</Button>
@@ -1591,21 +1591,21 @@
 			<Type>ART_DEF_BUILDING_NATIONAL_PARK</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>0.25</fScale>
-			<fInterfaceScale>0.25</fInterfaceScale>
+			<fScale>0.13</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/National_Park/park.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/National_Park/Button_NationalPark.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GREAT_COTHON</Type>
-			<LSystem>LSYSTEM_HARBOR</LSystem>
+			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.1</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Cothon/harbor.nif</NIF>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>1.7</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/GreatCothon/doppelhafen.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Cothon/Cothon.dds</Button>
+			<Button>Art/Structures/Wonders/GreatCothon/Cothon.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MOAI_STATUES</Type>
@@ -1622,7 +1622,7 @@
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.31</fScale>
-			<fInterfaceScale>0.27</fInterfaceScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shwedagon_Paya/Shwedagon_Paya.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,13</Button>
@@ -1631,7 +1631,7 @@
 			<Type>ART_DEF_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.65</fScale>
+			<fScale>1.8</fScale>
 			<fInterfaceScale>0.44</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Halicarnassus/Halicarnassus.nif</NIF>
 			<KFM/>
@@ -1641,7 +1641,7 @@
 			<Type>ART_DEF_BUILDING_STATUE_OF_ZEUS</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>0.6</fScale>
+			<fScale>0.7</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Zeus/Zeus.nif</NIF>
 			<KFM/>
@@ -1792,7 +1792,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
-			<fInterfaceScale>0.75</fInterfaceScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/dome_rock/mideast_midtemple.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/dome_rock_BTN.dds</Button>
@@ -1811,7 +1811,7 @@
 			<Type>ART_DEF_BUILDING_BRANDENBURG_GATE</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.8</fScale>
+			<fScale>1.1</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Brandenburg_Gate/brandenburg_gate.nif</NIF>
 			<KFM/>
@@ -1831,7 +1831,7 @@
 			<Type>ART_DEF_BUILDING_TERRACOTTA_ARMY</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
+			<fScale>0.9</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Terracotta/Xian.nif</NIF>
 			<KFM/>
@@ -1841,8 +1841,8 @@
 			<Type>ART_DEF_BUILDING_SAN_MARCO_BASILICA</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.45</fScale>
-			<fInterfaceScale>0.7</fInterfaceScale>
+			<fScale>0.55</fScale>
+			<fInterfaceScale>0.48</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/San_Marco/sanmarco.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/San_Marco/BTN_SanMarco.dds</Button>
@@ -1851,7 +1851,7 @@
 			<Type>ART_DEF_BUILDING_WESTMINSTER_PALACE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.2</fScale>
+			<fScale>1.75</fScale>
 			<fInterfaceScale>0.35</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Westminster/bigben.nif</NIF>
 			<KFM/>
@@ -1861,8 +1861,8 @@
 			<Type>ART_DEF_BUILDING_LARGE_HADRON_COLLIDER</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.73</fInterfaceScale>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Large Hadron Collider/CERN.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Large Hadron Collider/largehadroncollider.dds</Button>
@@ -1871,7 +1871,7 @@
 			<Type>ART_DEF_BUILDING_BOROBUDUR</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.8</fScale>
+			<fScale>0.65</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Borobudur/Borobudur.nif</NIF>
 			<KFM/>
@@ -1911,9 +1911,9 @@
 			<Type>ART_DEF_BUILDING_KHAJURAHO</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Khmer_Baray/Khmer_Baray.nif</NIF>
+			<fScale>2.2</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/wonders/Khajuraho/akshardham.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Wonders/Khajuraho.dds</Button>
 		</BuildingArtInfo>
@@ -1921,9 +1921,9 @@
 			<Type>ART_DEF_BUILDING_HARMANDIR_SAHIB</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>2.55</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Monastery/Hindu/Hindu_monastery.nif</NIF>
+			<fScale>2.2</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/wonders/HarmandirSahib/door.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Wonders/HarmandirSahib.dds</Button>
 		</BuildingArtInfo>
@@ -1981,8 +1981,8 @@
 			<Type>ART_DEF_BUILDING_RED_FORT</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>10.0</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fScale>13.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Red_Fort/agra_fort.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Red_Fort/RedFort.dds</Button>
@@ -2031,8 +2031,8 @@
 			<Type>ART_DEF_BUILDING_TRAFALGAR_SQUARE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.2</fScale>
-			<fInterfaceScale>0.25</fInterfaceScale>
+			<fScale>0.16</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Trafalgar_Square/Trafalgar_square.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Trafalgar_Square/trafalgar_square_button.dds</Button>
@@ -2042,7 +2042,7 @@
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.00</fScale>
-			<fInterfaceScale>0.25</fInterfaceScale>
+			<fInterfaceScale>0.28</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/EmpireStateBuilding/empire.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/EmpireStateBuilding/empiremain.dds</Button>
@@ -2052,7 +2052,7 @@
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.8</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Floating_Gardens/garden.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Wonders/Floating_Gardens.dds</Button>
@@ -2071,7 +2071,7 @@
 			<Type>ART_DEF_BUILDING_LUBYANKA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.25</fScale>
+			<fScale>2.5</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/KGB/KGB.nif</NIF>
 			<KFM/>
@@ -2151,8 +2151,8 @@
 			<Type>ART_DEF_BUILDING_MACHU_PICCHU</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>3</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<fScale>3.3</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/MachuPicchu/macchu_picchu.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/MachuPicchu/Machu.dds</Button>
@@ -2222,7 +2222,7 @@
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
-			<fInterfaceScale>0.47</fInterfaceScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/HagiaSophia/HagiaSophia.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/HagiaSophia.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,3</Button>
@@ -2242,7 +2242,7 @@
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.4</fScale>
-			<fInterfaceScale>0.7</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Thermae/bad_giebel.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Thermae.dds</Button>
@@ -2461,8 +2461,8 @@
 			<Type>ART_DEF_BUILDING_NATIONAL_MONUMENT</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.35</fInterfaceScale>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Kings_Saga/KingsSaga.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/HeroicEpic.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,5</Button>
@@ -2481,8 +2481,8 @@
 			<Type>ART_DEF_BUILDING_MILITARY_ACADEMY</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.75</fScale>
-			<fInterfaceScale>0.34</fInterfaceScale>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WestPoint/WestPoint.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/MilitaryAcademy.dds</Button>
@@ -2491,7 +2491,7 @@
 			<Type>ART_DEF_BUILDING_CENTRAL_BANK</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.3</fScale>
+			<fScale>1.5</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Central_Bank/Bank.nif</NIF>
 			<KFM/>
@@ -2691,8 +2691,8 @@
 			<Type>ART_DEF_BUILDING_APADANA_PALACE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.8</fScale>
-			<fInterfaceScale>0.42</fInterfaceScale>
+			<fScale>1.65</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/ApadanaPalace/Anahita.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/ApadanaPalace/ApadanaPalace.dds</Button>
@@ -2701,7 +2701,7 @@
 			<Type>ART_DEF_BUILDING_JETAVANARAMAYA</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>3.5</fScale>
+			<fScale>2.9</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Jetavanaramaya/Jetavanaramaya.nif</NIF>
 			<KFM/>
@@ -2721,9 +2721,9 @@
 			<Type>ART_DEF_BUILDING_PRAMBANAN</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.75</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Prambanan/Khmer_Baray.nif</NIF>
+			<fScale>2.2</fScale>
+			<fInterfaceScale>0.48</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Prambanan/Prambanan.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Prambanan/Prambanan_Button.dds</Button>
 		</BuildingArtInfo>
@@ -2751,8 +2751,8 @@
 			<Type>ART_DEF_BUILDING_KRAK_DES_CHEVALIERS</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.4</fScale>
-			<fInterfaceScale>0.7</fInterfaceScale>
+			<fScale>2.3</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Krak des Chevaliers/Krak16.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Krak des Chevaliers/Krak_btn.dds</Button>
@@ -2761,8 +2761,8 @@
 			<Type>ART_DEF_BUILDING_HOUSE_OF_WISDOM</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.75</fInterfaceScale>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/House of Wisdom/gondeshapur.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/House of Wisdom/HouseOfWisdom.dds</Button>
@@ -2771,8 +2771,8 @@
 			<Type>ART_DEF_BUILDING_SALSAL_BUDDHA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.75</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>0.65</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Salsal/bamyanbuddhastatue.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Salsal/Button_Salsal.dds</Button>
@@ -2781,7 +2781,7 @@
 			<Type>ART_DEF_BUILDING_SAINT_SOPHIA</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.07</fScale>
+			<fScale>0.065</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Saint Sophia/st_sophia.nif</NIF>
 			<KFM/>
@@ -2791,8 +2791,8 @@
 			<Type>ART_DEF_BUILDING_SANTA_MARIA_DEL_FIORE</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.4</fScale>
-			<fInterfaceScale>0.7</fInterfaceScale>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Santa Maria del Fiore/florence2.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Santa Maria del Fiore/SantaMariaDelFiore.dds</Button>
@@ -2802,7 +2802,7 @@
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>8.5</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Iron Pillar/Kutlug-Timur.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Iron Pillar/iron_pillar.dds</Button>
@@ -2811,8 +2811,8 @@
 			<Type>ART_DEF_BUILDING_SILVER_TREE_FOUNTAIN</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.3</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Silver Tree Fountain/asian_palace.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Silver Tree Fountain/SilverTreeFountain.dds</Button>
@@ -2832,7 +2832,7 @@
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
-			<fInterfaceScale>0.3</fInterfaceScale>
+			<fInterfaceScale>0.37</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Escorial/Palacio.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Escorial/Escorial.dds</Button>
@@ -2842,7 +2842,7 @@
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>3.5</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Torre de Belem/torre13.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Torre de Belem/TorreBelem_Button.dds</Button>
@@ -2851,8 +2851,8 @@
 			<Type>ART_DEF_BUILDING_POTALA_PALACE</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>3.5</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fScale>3</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Potala/potalapalace.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Potala/Potala.dds</Button>
@@ -2861,8 +2861,8 @@
 			<Type>ART_DEF_BUILDING_SHALIMAR_GARDENS</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.3</fInterfaceScale>
+			<fScale>0.85</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Shalimar Gardens/theatre.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Shalimar Gardens/ShalimarGardens.dds</Button>
@@ -2871,7 +2871,7 @@
 			<Type>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.4</fScale>
+			<fScale>2.55</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Image of the World Square/imamreza.nif</NIF>
 			<KFM/>
@@ -2899,9 +2899,9 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_LOUVRE</Type>
-			<LSystem>LSYSTEM_4x4</LSystem>
+			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.75</fScale>
+			<fScale>2.6</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Louvre/Louvre.nif</NIF>
 			<KFM/>
@@ -2921,8 +2921,8 @@
 			<Type>ART_DEF_BUILDING_SALT_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.4</fScale>
-			<fInterfaceScale>0.3</fInterfaceScale>
+			<fScale>0.32</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Salt Cathedral/Wieliczka.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Salt Cathedral/Button_Wieliczka.dds</Button>
@@ -2941,8 +2941,8 @@
 			<Type>ART_DEF_BUILDING_BELL_ROCK_LIGHTHOUSE</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.3</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fScale>0.32</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Bell Rock Lighthouse/lighthouse.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Bell Rock Lighthouse/BellRockLighthouse.dds</Button>
@@ -2951,7 +2951,7 @@
 			<Type>ART_DEF_BUILDING_NEUSCHWANSTEIN</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.4</fScale>
+			<fScale>1.55</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Neuschwanstein/neuschwanstein.nif</NIF>
 			<KFM/>
@@ -2961,8 +2961,8 @@
 			<Type>ART_DEF_BUILDING_BROOKLYN_BRIDGE</Type>
 			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
-			<fInterfaceScale>2</fInterfaceScale>
+			<fScale>1.9</fScale>
+			<fInterfaceScale>1.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Brooklyn Bridge/Bridge_NS.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Brooklyn Bridge/bridge button.dds</Button>
@@ -2971,17 +2971,17 @@
 			<Type>ART_DEF_BUILDING_CRYSTAL_PALACE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
-			<fInterfaceScale>0.9</fInterfaceScale>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Crystal Palace/CrystalPalace4.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Crystal Palace/crystalpalace.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TSUKIJI</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
+			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
+			<fScale>1.25</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Tsukiji/tsukiji.nif</NIF>
 			<KFM/>
@@ -2991,8 +2991,8 @@
 			<Type>ART_DEF_BUILDING_SAGRADA_FAMILIA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Sagrada Familia/sagrada_familia.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Sagrada Familia/sagradafamilia.dds</Button>
@@ -3011,7 +3011,7 @@
 			<Type>ART_DEF_BUILDING_MONOLITHIC_CHURCH</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.00</fScale>
+			<fScale>1.2</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Monolithic Church/bete_giyorgis.nif</NIF>
 			<KFM/>
@@ -3021,8 +3021,8 @@
 			<Type>ART_DEF_BUILDING_GOLDEN_GATE_BRIDGE</Type>
 			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.2</fScale>
-			<fInterfaceScale>0.02</fInterfaceScale>
+			<fScale>0.005</fScale>
+			<fInterfaceScale>1.1</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Golden Gate Bridge/Bridge.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Golden Gate Bridge/bridge.dds</Button>
@@ -3031,8 +3031,8 @@
 			<Type>ART_DEF_BUILDING_ATOMIUM</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.3</fScale>
-			<fInterfaceScale>0.3</fInterfaceScale>
+			<fScale>0.27</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Atomium/Atomium_05.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Atomium/atomium_btn.dds</Button>
@@ -3041,18 +3041,18 @@
 			<Type>ART_DEF_BUILDING_WORLD_TRADE_CENTER</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.5</fScale>
-			<fInterfaceScale>0.28</fInterfaceScale>
+			<fScale>2.7</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/World Trade Center/wtc.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/World Trade Center/WorldTradeCenter.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HARBOUR_OPERA</Type>
-			<LSystem>LSYSTEM_WATER</LSystem>
+			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
-			<fInterfaceScale>1</fInterfaceScale>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Harbour Opera/Sydney_Opera_House.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Harbour Opera/opera_house_button.dds</Button>
@@ -3081,8 +3081,8 @@
 			<Type>ART_DEF_BUILDING_CHANNEL_TUNNEL</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.4</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>0.15</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Channel Tunnel/Eurotunnel.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Channel Tunnel/Eurotunnel.dds</Button>
@@ -3101,7 +3101,7 @@
 			<Type>ART_DEF_BUILDING_IRON_DOME</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
+			<fScale>2</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Iron Dome/Coastal.nif</NIF>
 			<KFM/>
@@ -3111,8 +3111,8 @@
 			<Type>ART_DEF_BUILDING_ORIENTAL_PEARL_TOWER</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.4</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Oriental Pearl Tower/teltower02.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Oriental Pearl Tower/orientalpearltower.dds</Button>
@@ -3131,8 +3131,8 @@
 			<Type>ART_DEF_BUILDING_BLETCHLEY_PARK</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Bletchley Park/Bletch20.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Bletchley Park/bletchleypark.dds</Button>
@@ -3142,7 +3142,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.06</fScale>
-			<fInterfaceScale>0.35</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/The Motherland Calls/motherland.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/The Motherland Calls/motherland.dds</Button>
@@ -3151,8 +3151,8 @@
 			<Type>ART_DEF_BUILDING_BERLAYMONT</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Berlaymont/Berlaymont.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Berlaymont/berlaymont_button.dds</Button>
@@ -3171,7 +3171,7 @@
 			<Type>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>4</fScale>
+			<fScale>5</fScale>
 			<fInterfaceScale>0.63</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/CERN/holotheatre.nif</NIF>
 			<KFM/>
@@ -3181,8 +3181,8 @@
 			<Type>ART_DEF_BUILDING_VIJAYA_STAMBHA</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.4</fScale>
-			<fInterfaceScale>0.65</fInterfaceScale>
+			<fScale>1.7</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Vijaya Stambha/victory.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Vijaya Stambha/vijayastambha.dds</Button>
@@ -3191,8 +3191,8 @@
 			<Type>ART_DEF_BUILDING_AL_KHAZNEH</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.25</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Al Khazneh/Petra.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Al Khazneh/Button_AlKhazneh.dds</Button>
@@ -3211,7 +3211,7 @@
 			<Type>ART_DEF_BUILDING_MOUNT_ATHOS</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.60</fScale>
+			<fScale>0.75</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Athos/hilmon.NIF</NIF>
 			<KFM/>
@@ -3221,7 +3221,7 @@
 			<Type>ART_DEF_BUILDING_GLOBAL_SEED_VAULT</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
+			<fScale>1.85</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Seed Vault/Svalbard.nif</NIF>
 			<KFM/>
@@ -3231,8 +3231,8 @@
 			<Type>ART_DEF_BUILDING_GUADALUPE_BASILICA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Guadalupe/guadalupe.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Guadalupe/guadalupe.dds</Button>
@@ -3241,8 +3241,8 @@
 			<Type>ART_DEF_BUILDING_MOLE_ANTONELLIANA</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Mole Antonelliana/mole_antoneliana.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Mole Antonelliana/mole_antoneliana.dds</Button>
@@ -3261,8 +3261,8 @@
 			<Type>ART_DEF_BUILDING_LOTUS_TEMPLE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Lotus Temple/lotus6.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Lotus Temple/lotus_btn.dds</Button>
