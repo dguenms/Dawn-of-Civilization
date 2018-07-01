@@ -2039,6 +2039,38 @@
 		<Spanish>Aqua Appia</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AMBER_ROOM</Tag>
+		<English>Amber Room</English>
+		<French>Amber Room</French>
+		<German>Bernsteinzimmer</German>
+		<Italian>Amber Room</Italian>
+		<Spanish>Amber Room</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AMBER_ROOM_HELP</Tag>
+		<English>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</English>
+		<French>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</French>
+		<German>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</German>
+		<Italian>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PALACE_OF_NATIONS</Tag>
+		<English>Palace of Nations</English>
+		<French>Palais des Nations</French>
+		<German>Palast der Nationen</German>
+		<Italian>Palace of Nations</Italian>
+		<Spanish>Palace of Nations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PALACE_OF_NATIONS_HELP</Tag>
+		<English>[ICON_BULLET]Congresses occur every four turns (not implemented)[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress (not implemented)[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress (not implemented)</English>
+		<French>[ICON_BULLET]Congresses occur every four turns (not implemented)[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress (not implemented)[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress (not implemented)</French>
+		<German>[ICON_BULLET]Congresses occur every four turns (not implemented)[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress (not implemented)[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress (not implemented)</German>
+		<Italian>[ICON_BULLET]Congresses occur every four turns (not implemented)[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress (not implemented)[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Congresses occur every four turns (not implemented)[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress (not implemented)[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
