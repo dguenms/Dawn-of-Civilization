@@ -2471,11 +2471,11 @@
 			<Type>ART_DEF_BUILDING_NATIONAL_COLLEGE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.83</fScale>
-			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/OxfordUniversity/OxfordUniversity.nif</NIF>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/National_College/fine_arts.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/NationalCollege.dds</Button>
+			<Button>Art/Structures/Buildings/National_College/Sorbonne.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MILITARY_ACADEMY</Type>
@@ -3296,6 +3296,16 @@
 			<NIF>Art/Structures/Wonders/Palace of Nations/The_Palais_des_Nations.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Palace of Nations/PalaceOfNations.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_OXFORD_UNIVERSITY</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.83</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/OxfordUniversity/OxfordUniversity.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/NationalCollege.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
