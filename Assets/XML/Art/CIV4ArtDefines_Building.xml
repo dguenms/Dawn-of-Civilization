@@ -2913,7 +2913,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/National Gallery/Sheremetevo01.nif</NIF>
+			<NIF>Art/Structures/Buildings/National Gallery/Schonbrunn.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/National Gallery/NationalGallery.dds</Button>
 		</BuildingArtInfo>
@@ -3269,13 +3269,33 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AQUA_APPIA</Type>
-			<LSystem>LSYSTEM_1x2</LSystem>
+			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Aqueduct/Pedia_Aqueduct.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Aqua Appia/aqua_appia.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AMBER_ROOM</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Amber Room/Sheremetevo01.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Amber Room/AmberRoom.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PALACE_OF_NATIONS</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Palace of Nations/The_Palais_des_Nations.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Palace of Nations/PalaceOfNations.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
