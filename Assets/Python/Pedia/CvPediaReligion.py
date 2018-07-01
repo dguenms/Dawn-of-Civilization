@@ -3,6 +3,7 @@ import CvUtil
 import string
 
 from Consts import *
+from RFCUtils import utils
 
 gc = CyGlobalContext()
 
