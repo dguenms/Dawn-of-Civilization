@@ -997,9 +997,9 @@
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TRIUMPHAL_ARCH</Type>
 			<Description>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bMonument>1</bMonument>
 			<DefaultBuilding>BUILDING_TRIUMPHAL_ARCH</DefaultBuilding>

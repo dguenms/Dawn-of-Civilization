@@ -7484,43 +7484,6 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_TRIUMPHAL_ARCH</BuildingClass>
-			<Type>BUILDING_TRIUMPHAL_ARCH</Type>
-			<Description>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Help>
-			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TRIUMPHAL_ARCH</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_TRIUMPHAL_ARCH</MovieDefineTag>
-			<VictoryPrereq>VICTORY_HISTORICAL</VictoryPrereq>
-			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
-			<bGoldenAge>1</bGoldenAge>
-			<iCost>-1</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iMilitaryProductionModifier>50</iMilitaryProductionModifier>
-			<iAsset>8</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClass>
 			<Type>BUILDING_NATIONAL_THEATRE</Type>
 			<Description>TXT_KEY_BUILDING_NATIONAL_THEATRE</Description>
@@ -12611,6 +12574,51 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_TRIUMPHAL_ARCH</BuildingClass>
+			<Type>BUILDING_TRIUMPHAL_ARCH</Type>
+			<Description>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Help>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TRIUMPHAL_ARCH</ArtDefineTag>
+			<PrereqCivic>CIVIC_CONSTITUTION</PrereqCivic>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
+			<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>800</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>16</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
