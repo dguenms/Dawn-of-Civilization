@@ -2071,6 +2071,38 @@
 		<Spanish>[ICON_BULLET]Congresses occur every four turns (not implemented)[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress (not implemented)[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress (not implemented)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
+		<English>[ICON_BULLET]Units are completely healed when promoted (not implemented)</English>
+		<French>[ICON_BULLET]Units are completely healed when promoted (not implemented)</French>
+		<German>[ICON_BULLET]Units are completely healed when promoted (not implemented)</German>
+		<Italian>[ICON_BULLET]Units are completely healed when promoted (not implemented)</Italian>
+		<Spanish>[ICON_BULLET]Units are completely healed when promoted (not implemented)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Tag>
+		<English>Triumphal Arch</English>
+		<French>
+			<Text>Arc de Triomphe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Triumphbogen</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Arco di trionfo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Arco de Triunfo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

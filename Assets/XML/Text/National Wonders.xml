@@ -146,46 +146,6 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Tag>
-		<English>Triumphal Arch</English>
-		<French>
-			<Text>Arc de Triomphe</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Triumphbogen</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Arco di trionfo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Arco de Triunfo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
-		<English>[COLOR_WARNING_TEXT]Is automatically built on achievement of 2 Historical Goals out of 3[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Est automatiquement construit lorsque 2 objectifs historiques sur 3 sont atteints[COLOR_REVERT]</French>
-		<German>[COLOR_WARNING_TEXT]Wird bei Erf&#252;llung von 2 von 3 Historischen Siegbedingungen automatisch erbaut[COLOR_REVERT]</German>
-		<Italian>[COLOR_WARNING_TEXT]Viene automaticamente costruito al raggiungimento di 2 obiettivi storici su 3[COLOR_REVERT]</Italian>
-		<Spanish>[COLOR_WARNING_TEXT]Se construye autom&#225;ticamente tras la consecuci&#243;n de 2 de los 3 objetivos hist&#243;ricos[COLOR_REVERT]</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
-		<French>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</French>
-		<German>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE</Tag>
 		<English>Stock Exchange</English>
 		<French>
