@@ -12445,7 +12445,6 @@
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
-			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>600</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
