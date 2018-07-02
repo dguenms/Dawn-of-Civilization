@@ -3136,7 +3136,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == MAUSOLEUM_OF_MAUSSOLLOS) iTempValue *= 3;
 										break;
 									case ROME:
-                                        if (iI == COLOSSEUM || iI == LEANING_TOWER || iI == SISTINE_CHAPEL || iI == SAN_MARCO_BASILICA)
+                                        if (iI == COLOSSEUM || iI == SANTA_MARIA_DEL_FIORE || iI == SISTINE_CHAPEL || iI == SAN_MARCO_BASILICA)
                                         {
                                             iTempValue *= 3;
                                         }
@@ -3307,7 +3307,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										break;
 									case ITALY:
-                                        if (iI == COLOSSEUM || iI == LEANING_TOWER || iI == SISTINE_CHAPEL || iI == SAN_MARCO_BASILICA)
+                                        if (iI == COLOSSEUM || iI == SANTA_MARIA_DEL_FIORE || iI == SISTINE_CHAPEL || iI == SAN_MARCO_BASILICA)
                                         {
                                             iTempValue *= 3;
                                         }

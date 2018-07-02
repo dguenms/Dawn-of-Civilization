@@ -6246,7 +6246,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		else if (isHumanVictoryWonder(eBuilding, SAN_MARCO_BASILICA, ITALY)) return false;
 		else if (isHumanVictoryWonder(eBuilding, SISTINE_CHAPEL, ITALY)) return false;
-		else if (isHumanVictoryWonder(eBuilding, LEANING_TOWER, ITALY)) return false;
+		else if (isHumanVictoryWonder(eBuilding, SANTA_MARIA_DEL_FIORE, ITALY)) return false;
 
 		else if (isHumanVictoryWonder(eBuilding, UNIVERSITY_OF_SANKORE, MALI)) return false;
 
