@@ -1128,7 +1128,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iItaly:
 	
-		# first goal: build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD
+		# first goal: build San Marco Basilica, the Sistine Chapel and Santa Maria del Fiore by 1500 AD
 		if iGameTurn == getTurnForYear(1500):
 			expire(iItaly, 0)
 			
