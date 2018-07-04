@@ -94,6 +94,7 @@ CvPlayer::CvPlayer()
 	m_paiHasCorporationCount = NULL;
 	m_paiUpkeepCount = NULL;
 	m_paiSpecialistValidCount = NULL;
+	m_paiTechPreferences = NULL; // Leoreth
 
 	m_pabResearchingTech = NULL;
 	m_pabLoyalMember = NULL;
@@ -351,6 +352,7 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiHasCorporationCount);
 	SAFE_DELETE_ARRAY(m_paiUpkeepCount);
 	SAFE_DELETE_ARRAY(m_paiSpecialistValidCount);
+	SAFE_DELETE_ARRAY(m_paiTechPreferences); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_pabResearchingTech);
 	SAFE_DELETE_ARRAY(m_pabLoyalMember);
@@ -795,6 +797,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
 			m_paiSpecialistValidCount[iI] = 0;
+		}
+
+		FAssertMsg(0 < GC.getNumTechInfos(), "GC.getNumTechInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
+		FAssertMsg(m_paiTechPreferences == NULL, "about to leak memory, CvPlayer::m_paiTechPreferences");
+		m_paiTechPreferences = new int[GC.getNumTechInfos()];
+		for (iI = 0; iI < GC.getNumTechInfos(); iI++)
+		{
+			m_paiTechPreferences[iI] = 0;
 		}
 
 		FAssertMsg(0 < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
@@ -18077,6 +18087,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
+	// Leoreth: using flag = 2
+
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
 
@@ -18291,6 +18303,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumCorporationInfos(), m_paiHasCorporationCount);
 	pStream->Read(GC.getNumUpkeepInfos(), m_paiUpkeepCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistValidCount);
+	if (uiFlag >= 2) pStream->Read(GC.getNumTechInfos(), m_paiTechPreferences);
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::read");
 	pStream->Read(GC.getNumTechInfos(), m_pabResearchingTech);
@@ -18613,7 +18626,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 1;
+	uint uiFlag = 2;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -18800,6 +18813,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
 	pStream->Write(NUM_PARAMETERS, m_aiStabilityParameters);
 	pStream->Write(NUM_MODIFIER_TYPES, m_aiModifiers);
+	//pStream->Write(GC.getNumTechInfos(), m_aiTechPreferences);
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -18827,6 +18841,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumCorporationInfos(), m_paiHasCorporationCount);
 	pStream->Write(GC.getNumUpkeepInfos(), m_paiUpkeepCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistValidCount);
+	pStream->Write(GC.getNumTechInfos(), m_paiTechPreferences); // Leoreth
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::write");
 	pStream->Write(GC.getNumTechInfos(), m_pabResearchingTech);
@@ -25126,6 +25141,16 @@ int CvPlayer::getModifier(ModifierTypes eModifier) const
 void CvPlayer::setModifier(ModifierTypes eModifier, int iNewValue)
 {
 	m_aiModifiers[eModifier] = iNewValue;
+}
+
+int CvPlayer::getTechPreference(TechTypes eTech) const
+{
+	return m_paiTechPreferences[eTech];
+}
+
+void CvPlayer::setTechPreference(TechTypes eTech, int iNewValue)
+{
+	m_paiTechPreferences[eTech] = iNewValue;
 }
 
 EraTypes CvPlayer::getStartingEra() const

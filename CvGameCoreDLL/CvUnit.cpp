@@ -91,7 +91,6 @@ void CvUnit::reloadEntity()
 void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOwner, int iX, int iY, DirectionTypes eFacingDirection)
 {
 	CvWString szBuffer;
-	int iUnitName;
 	int iI, iJ;
 
 	FAssert(NO_UNIT != eUnit);

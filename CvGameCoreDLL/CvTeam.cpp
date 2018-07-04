@@ -5324,13 +5324,10 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 	CvWString szBuffer;
 	CivicOptionTypes eCivicOptionType;
 	CivicTypes eCivicType;
-	PlayerTypes eBestPlayer;
 	BonusTypes eBonus;
 	UnitTypes eFreeUnit;
 	bool bReligionFounded;
 	bool bFirstBonus;
-	int iValue;
-	int iBestValue;
 	int iI, iJ, iK;
 
 	if (eIndex == NO_TECH)

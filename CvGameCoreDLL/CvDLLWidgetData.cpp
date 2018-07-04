@@ -2236,7 +2236,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 	BuildTypes eBuild;
 	RouteTypes eRoute;
 	BonusTypes eBonus;
-	TechTypes eTech, eFirstDiscovery, eSecondDiscovery;
+	TechTypes eFirstDiscovery, eSecondDiscovery;
 	bool bAlt;
 	bool bShift;
 	bool bValid;

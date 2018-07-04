@@ -4274,7 +4274,6 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 // Leoreth
 void CvCity::processBonusEffect(BonusTypes eBonus, int iChange)
 {
-	int iI;
 	int iValue;
 	int iGoodValue;
 	int iBadValue;
