@@ -10098,9 +10098,11 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		setYieldChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
 		setCommerceChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getCommerceModifierArray(), true, bCivilopediaText);
 
-		if (kBuilding.getGreatPeopleRateChange() != 0)
+		// Leoreth
+		int iTotalGreatPeopleRateChange = kBuilding.getGreatPeopleRateChange() + (pCity != NULL ? pCity->getBuildingGreatPeopleRateChange((BuildingClassTypes)kBuilding.getBuildingClassType()) : 0);
+		if (iTotalGreatPeopleRateChange != 0)
 		{
-			szTempBuffer.Format(L", %s%d%c", ((kBuilding.getGreatPeopleRateChange() > 0) ? "+" : ""), kBuilding.getGreatPeopleRateChange(), gDLL->getSymbolID(GREAT_PEOPLE_CHAR));
+			szTempBuffer.Format(L", %s%d%c", ((iTotalGreatPeopleRateChange > 0) ? "+" : ""), iTotalGreatPeopleRateChange, gDLL->getSymbolID(GREAT_PEOPLE_CHAR));
 			szBuffer.append(szTempBuffer);
 
 			if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS)

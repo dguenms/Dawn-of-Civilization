@@ -1013,6 +1013,9 @@ public:
 	void setBuildingHappyChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
 	int getBuildingHealthChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
 	void setBuildingHealthChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
+	int getBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass) const; // Leoreth
+	void setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // Leoreth
+	void changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // Leoreth
 
 	void updateBuildingYieldChange(BuildingClassTypes eBuildingType, YieldTypes eYield, int iChange);
 	void changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange);
@@ -1391,6 +1394,7 @@ protected:
 	std::vector<BuildingCommerceChange> m_aBuildingCommerceChange;
 	BuildingChangeArray m_aBuildingHappyChange;
 	BuildingChangeArray m_aBuildingHealthChange;
+	BuildingChangeArray m_aBuildingGreatPeopleRateChange;
 
 	// CACHE: cache frequently used values
 	mutable int	m_iPopulationRank;

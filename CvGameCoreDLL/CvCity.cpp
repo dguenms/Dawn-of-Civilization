@@ -813,6 +813,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aBuildingCommerceChange.clear();
 		m_aBuildingHappyChange.clear();
 		m_aBuildingHealthChange.clear();
+		m_aBuildingGreatPeopleRateChange.clear();
 	}
 
 	if (!bConstructorCall)
@@ -4480,6 +4481,39 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 		updateExtraBuildingHappiness();
 		updateExtraBuildingHealth();
+
+		// Leoreth: special wonder effects
+		CvCity* pLoopCity;
+		int iLoop;
+
+		// Mount Athos
+		if (eBuilding == MOUNT_ATHOS)
+		{
+			int iGreatPeopleRate;
+			for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+			{
+				for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+				{
+					if (pLoopCity->isHasRealBuilding((BuildingTypes)iI))
+					{
+						iGreatPeopleRate = GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
+						if (iGreatPeopleRate > 0)
+						{
+							pLoopCity->changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType(), iChange * iGreatPeopleRate);
+						}
+					}
+				}
+			}
+		}
+
+		if (GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() > 0)
+		{
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
+			{
+				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange());
+			}
+		}
+		
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
 
@@ -15491,13 +15525,27 @@ void CvCity::read(FDataStreamBase* pStream)
 		pStream->Read(&iChange);
 		m_aBuildingHealthChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
 	}
+
+	if (uiFlag >= 1)
+	{
+		pStream->Read(&iNumElts);
+		m_aBuildingGreatPeopleRateChange.clear();
+		for (int i = 0; i < iNumElts; ++i)
+		{
+			int iBuildingClass;
+			pStream->Read(&iBuildingClass);
+			int iChange;
+			pStream->Read(&iChange);
+			m_aBuildingGreatPeopleRateChange.push_back(std::make_pair((BuildingClassTypes)iBuildingClass, iChange));
+		}
+	}
 }
 
 void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=0;
+	uint uiFlag=1; // Leoreth: 1 for wonder effect changes
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -15752,6 +15800,16 @@ void CvCity::write(FDataStreamBase* pStream)
 	{
 		pStream->Write((*it).first);
 		pStream->Write((*it).second);
+	}
+
+	if (uiFlag >= 1)
+	{
+		pStream->Write(m_aBuildingGreatPeopleRateChange.size());
+		for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
+		{
+			pStream->Write((*it).first);
+			pStream->Write((*it).second);
+		}
 	}
 }
 
@@ -17081,6 +17139,71 @@ void CvCity::setBuildingHealthChange(BuildingClassTypes eBuildingClass, int iCha
 int CvCity::getBuildingHealthChange(BuildingClassTypes eBuildingClass) const
 {
 	for (BuildingChangeArray::const_iterator it = m_aBuildingHealthChange.begin(); it != m_aBuildingHealthChange.end(); ++it)
+	{
+		if ((*it).first == eBuildingClass)
+		{
+			return (*it).second;
+		}
+	}
+
+	return 0;
+}
+
+void CvCity::setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange)
+{
+	for (BuildingChangeArray::iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
+	{
+		if ((*it).first == eBuildingClass)
+		{
+			if ((*it).second != iChange)
+			{
+				int iOldChange = (*it).second;
+
+				m_aBuildingGreatPeopleRateChange.erase(it);
+
+				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+				if (NO_BUILDING != eBuilding)
+				{
+					if (getNumBuilding(eBuilding) > 0)
+					{
+						changeBaseGreatPeopleRate(-iOldChange);
+
+						if( iChange != 0 )
+						{
+							m_aBuildingGreatPeopleRateChange.push_back(std::make_pair(eBuildingClass, iChange));
+							changeBaseGreatPeopleRate(iChange);
+						}
+					}
+				}
+			}
+
+			return;
+		}
+	}
+
+	if (0 != iChange)
+	{
+		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+		if (NO_BUILDING != eBuilding)
+		{
+			if (getNumBuilding(eBuilding) > 0)
+			{	
+				m_aBuildingGreatPeopleRateChange.push_back(std::make_pair(eBuildingClass, iChange));
+
+				changeBaseGreatPeopleRate(iChange);
+			}
+		}
+	}
+}
+
+void CvCity::changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange)
+{
+	setBuildingGreatPeopleRateChange(eBuildingClass, getBuildingGreatPeopleRateChange(eBuildingClass) + iChange);
+}
+
+int CvCity::getBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass) const
+{
+	for (BuildingChangeArray::const_iterator it = m_aBuildingGreatPeopleRateChange.begin(); it != m_aBuildingGreatPeopleRateChange.end(); ++it)
 	{
 		if ((*it).first == eBuildingClass)
 		{
