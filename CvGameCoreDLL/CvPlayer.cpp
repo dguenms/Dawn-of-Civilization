@@ -6914,7 +6914,11 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		}
 	}
 
-	// Leoreth: Moai Statues effect
+	// Leoreth: special wonder effects
+	CvCity* pLoopCity;
+	int iLoop;
+
+	// Moai Statues
 	if (eBuilding == MOAI_STATUES)
 	{
 		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
@@ -6926,22 +6930,18 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		}
 	}
 
-	// Leoreth: Himeji Castle effect
+	// Himeji Castle
 	if (eBuilding == HIMEJI_CASTLE)
 	{
-		CvCity* pLoopCity;
-		int iLoop;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
 			pLoopCity->changeCommerceRateModifier(COMMERCE_CULTURE, pLoopCity->getBuildingDefense() * iChange);
 		}
 	}
 
-	// Leoreth: Hanging Gardens effect
+	// Hanging Gardens
 	if (eBuilding == HANGING_GARDENS)
 	{
-		CvCity* pLoopCity;
-		int iLoop;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
 			pLoopCity->updateFeatureHealth();
