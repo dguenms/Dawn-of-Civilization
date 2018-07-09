@@ -3121,9 +3121,9 @@
 			<Type>ART_DEF_BUILDING_GARDENS_BY_THE_BAY</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Dutch_Dike/Dutch_Dike.nif</NIF>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.68</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Gardens by the Bay/GardensByTheBay.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Gardens by the Bay/gardens.dds</Button>
 		</BuildingArtInfo>
@@ -3306,6 +3306,16 @@
 			<NIF>Art/Structures/Buildings/OxfordUniversity/OxfordUniversity.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/NationalCollege.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_METROPOLITAIN</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>12</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Metropolitain/Metro.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Metropolitain/Metro_btn.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
