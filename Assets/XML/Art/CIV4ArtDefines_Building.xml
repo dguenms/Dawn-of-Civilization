@@ -2813,7 +2813,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Silver Tree Fountain/asian_palace.nif</NIF>
+			<NIF>Art/Structures/Wonders/Silver Tree Fountain/Silver_Tree.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Silver Tree Fountain/SilverTreeFountain.dds</Button>
 		</BuildingArtInfo>
