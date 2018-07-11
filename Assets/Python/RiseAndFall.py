@@ -2328,6 +2328,8 @@ class RiseAndFall:
 			utils.makeUnit(iCavalry, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
 
 
 	def createStartingUnits(self, iCiv, tPlot):
@@ -2730,6 +2732,15 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(iDragoon, iCiv, tPlot, 3)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iInfantry, iCiv, tPlot, 3)
+			utils.makeUnit(iTank, iCiv, tPlot, 3)
+			utils.makeUnit(iFighter, iCiv, tPlot, 3)
+			utils.makeUnit(iSpy, iCiv, tPlot, 3)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iTransport, iCiv, tSeaPlot, 1)
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iCiv)
@@ -2886,6 +2897,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iCanada:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iLabourer, iCiv, tPlot, 2)
 			
 	def create1700ADstartingUnits(self):
 

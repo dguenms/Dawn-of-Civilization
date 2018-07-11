@@ -171,6 +171,7 @@ iCivMexico :	Techs(column=13, exceptions=[iMachineTools]),
 iCivColombia :	Techs(column=13, exceptions=[iMachineTools]),
 iCivBrazil :	Techs(column=13),
 iCivCanada :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
+iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 },
 {
 iCivIndependent:Techs(column=5),

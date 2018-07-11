@@ -73,6 +73,7 @@ tPool3 = (iEgypt,
 	iBrazil,
 	iArgentina,
 	iCanada,
+	iIsrael,
 	iPolynesia,
 	iHarappa)
 

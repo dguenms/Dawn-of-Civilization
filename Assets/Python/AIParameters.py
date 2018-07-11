@@ -219,4 +219,5 @@ iCivThailand : 4,
 iCivNetherlands : 4,
 iCivAmerica : 4,
 iCivCanada : 4,
+iCivIsrael : 4,
 }

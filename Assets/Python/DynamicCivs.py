@@ -118,6 +118,7 @@ dSpecificVassalTitles = {
 	iArabia : {
 		iOttomans : "TXT_KEY_CIV_ARABIAN_OTTOMANS",
 		iMughals : "TXT_KEY_CIV_ARABIAN_MUGHALS",
+		iIsrael : "TXT_KEY_CIV_ARABIAN_ISRAEL",
 	},
 	iMoors : {
 		iArabia : "TXT_KEY_CIV_MOORISH_ARABIA",
@@ -162,6 +163,7 @@ dSpecificVassalTitles = {
 		iCongo : "TXT_KEY_ADJECTIVE_TITLE",
 		iOttomans : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_FRENCH_AMERICA",
+		iIsrael : "TXT_KEY_CIV_FRENCH_ISRAEL",
 	},
 	iEngland : {
 		iEgypt : "TXT_KEY_MANDATE_OF",
@@ -182,6 +184,7 @@ dSpecificVassalTitles = {
 		iMali : "TXT_KEY_CIV_ENGLISH_MALI",
 		iOttomans : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_ENGLISH_AMERICA",
+		iIsrael : "TXT_KEY_CIV_ENGLISH_ISRAEL",
 	},
 	iHolyRome : {
 		iItaly : "TXT_KEY_CIV_HOLY_ROMAN_ITALY",
@@ -237,6 +240,7 @@ dSpecificVassalTitles = {
 		iArabia : "TXT_KEY_CIV_OTTOMAN_ARABIA",
 		iIndonesia : "TXT_KEY_CIV_OTTOMAN_INDONESIA",
 		iRussia : "TXT_KEY_CIV_OTTOMAN_RUSSIA",
+		iIsrael : "TXT_KEY_CIV_OTTOMAN_ISRAEL",
 	},
 	iGermany : {
 		iHolyRome : "TXT_KEY_CIV_GERMAN_HOLY_ROME",
@@ -564,6 +568,7 @@ dStartingLeaders = [
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
 	iCanada : iMacDonald,
+	iIsrael : iBenGurion,
 },
 # 600 AD
 {
@@ -1205,6 +1210,10 @@ def specificName(iPlayer):
 	elif iPlayer == iGermany:
 		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
+	
+	elif iPlayer == iIsrael:
+		if iReligion == iIslam:
+			return "TXT_KEY_CIV_ISRAEL_PALESTINE"
 	
 def adjective(iPlayer, bIgnoreVassal = False):
 	if isCapitulated(iPlayer):

@@ -1487,6 +1487,33 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(2000):
 			expire(iCanada, 2)
 			
+	elif iPlayer == iIsrael :
+
+		# first goal: build an ICBM by 1980
+		if isPossible(iIsrael, 0):
+			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
+			if iIsraeliNuclearArsenal >= 1:
+				win(iIsrael, 0)
+
+		if iGameTurn == getTurnForYear(1980):
+			expire(iIsrael, 0)
+
+		# second goal: have the city with the highest research output for 10 turns (no time limit)
+		if isPossible(iIsrael, 1):
+			if data.iIsraeliResearchTurns >= 10:
+				win(iIsrael, 1)
+			
+			x, y = 0, 0
+			capital = pPlayer.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			if pBestCity.getOwner() == iPlayer: 
+				data.iIsraeliResearchTurns += 1
+
+		# third goal: create two great spies (no time limit)
+		# see onGreatPersonBorn()
+		
 			
 	# check religious victory (human only)
 	if utils.getHumanID() == iPlayer:
@@ -1956,6 +1983,13 @@ def onGreatPersonBorn(iPlayer, unit):
 				
 				if data.iMexicanGreatGenerals >= 3:
 					win(iAztecs, 1)
+					
+	# third Israeli goal: get two great spies (no time limit)
+	if iPlayer == iIsrael:
+		if isPossible(iIsrael, 2):
+			if pUnitInfo.getGreatPeoples(iSpecialistGreatSpy):
+				if pIsrael.getGreatSpiesCreated() >= 2:
+					win(iIsrael, 2)
 					
 def onUnitPillage(iPlayer, iGold, iUnit):
 	if iGold >= 1000: return
@@ -2454,7 +2488,11 @@ def cityWonders(city):
 def cityTradeIncome(city):
 	if not city: return 0
 	return city.getTradeYield(YieldTypes.YIELD_COMMERCE)
-	
+
+def cityResearchOutput(city):
+	if not city: return 0
+	return city.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)
+
 def cityHappiness(city):
 	if not city: return 0
 	
@@ -4095,5 +4133,21 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iPeaceDeals = data.iCanadianPeaceDeals
 			aHelp.append(getIcon(iPeaceDeals >= 12) + localText.getText("TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS", (iPeaceDeals, 12)))
+	
+	elif iPlayer == iIsrael:
+		if iGoal == 0:
+			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
+			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
+		elif iGoal == 1:
+			x, y = 0, 0
+			capital = pIsrael.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			iResearchTurns = data.iIsraeliResearchTurns
+			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iResearchTurns >= 10) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
+		elif iGoal == 2:
+			iSpies = pIsrael.getGreatSpiesCreated()
+			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
 			
 	return aHelp
