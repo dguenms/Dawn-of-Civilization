@@ -1020,6 +1020,47 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PARK</BuildingClass>
+			<Type>BUILDING_ISRAELI_KIBBUTZ</Type>
+			<Description>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ISRAELI_KIBBUTZ</ArtDefineTag>
+			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iGreatPeopleRateModifier>15</iGreatPeopleRateModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>2</iYield>
+			</YieldChanges>
+			<ImprovementHealths>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+			</ImprovementHealths>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_HOSPITAL</BuildingClass>
 			<Type>BUILDING_HOSPITAL</Type>
 			<Description>TXT_KEY_BUILDING_HOSPITAL</Description>

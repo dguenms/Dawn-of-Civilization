@@ -2671,6 +2671,94 @@
 			<CivilizationActionSound>AS3D_PERSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_ISRAEL</Type>
+			<Description>TXT_KEY_CIV_ISRAEL_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_ISRAEL_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_ISRAEL_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_ISRAEL_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_ISRAEL</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_ISRAEL</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_BAALISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Baalism.dds</PaganReligionButton>
+			<Identifier>ISR</Identifier>
+			<StartingYear>1948</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>90</LoadingTime>
+				<LoadingTime>60</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Rishon LeZiyyon</City>
+				<City>Petah Tiqwa</City>
+				<City>Ashdod</City>
+				<City>Netanya</City>
+				<City>Be'er Sheva</City>
+				<City>Holon</City>
+				<City>Bene Berak</City>
+				<City>Ramat Gan</City>
+				<City>Rehovot</City>
+				<City>Ashkelon</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PARK</BuildingClassType>
+					<BuildingType>BUILDING_ISRAELI_KIBBUTZ</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_BAALIST_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MAIN_BATTLE_TANK</UnitClassType>
+					<UnitType>UNIT_ISRAELI_MERKAVA</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_BEN_GURION</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ARABIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_CARTHAGE_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_CARTHAGE_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_ITALY</Type>
 			<Description>TXT_KEY_CIV_ITALY_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_ITALY_SHORT_DESC</ShortDescription>
