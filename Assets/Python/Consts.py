@@ -408,7 +408,7 @@ iCivArgentina : (1930, 1960, 2000),
 iCivColombia : (1870, 1920, 1950),
 iCivBrazil : (1880, -1, 1950),
 iCivCanada : (1920, 1950, 2000),
-CivIsrael : (1980, 2000, -1),
+iCivIsrael : (1980, 2000, -1),
 }
 
 # Leoreth: date-triggered respawn for certain civs
