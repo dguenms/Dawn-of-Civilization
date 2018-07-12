@@ -148,19 +148,22 @@ BeginTeam
 	TeamID=45, (Canada)
 EndTeam
 BeginTeam
-	TeamID=46, (Independent)
+	TeamID=46, (Israel)
 EndTeam
 BeginTeam
-	TeamID=47, (Independent2)
+	TeamID=47, (Independent)
 EndTeam
 BeginTeam
-	TeamID=48, (Native)
+	TeamID=48, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=49, (Celtia)
+	TeamID=49, (Native)
 EndTeam
 BeginTeam
-	TeamID=50, (Barbarian)
+	TeamID=50, (Celtia)
+EndTeam
+BeginTeam
+	TeamID=51, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -740,6 +743,21 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=46
+	LeaderType=LEADER_BEN_GURION
+	CivType=CIVILIZATION_ISRAEL
+	PlayableCiv=1
+	StartingGold=1500
+	StateReligion=RELIGION_JUDAISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DEMOCRACY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_IDEOLOGY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_EGALITARIANISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_PUBLIC_WELFARE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=47
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
 	PlayableCiv=0
@@ -748,7 +766,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
+	Team=48
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
 	PlayableCiv=0
@@ -757,7 +775,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
+	Team=49
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -766,7 +784,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=49
+	Team=50
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=0
@@ -774,7 +792,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=50
+	Team=51
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0
