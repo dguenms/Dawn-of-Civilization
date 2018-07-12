@@ -833,5 +833,16 @@
 		<Tag>TXT_KEY_LEADER_ATLATL_CAUAC</Tag>
 		<English>Atlatl Cauac</English>
 		<French>Atlatl Cauac</French>
+		<German>Atlatl Cauac</German>
+		<Italian>Atlatl Cauac</Italian>
+		<Spanish>Atlatl Cauac</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BEN_GURION</Tag>
+		<English>Ben-Gurion</English>
+		<French>Ben-Gourion</French>
+		<German>Ben-Gurion</German>
+		<Italian>Ben-Gurion</Italian>
+		<Spanish>Ben-Gurion</Spanish>
 	</TEXT>
 </Civ4GameText>

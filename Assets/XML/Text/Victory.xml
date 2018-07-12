@@ -1506,6 +1506,54 @@
 		<Spanish>Have a city of at least 60000 culture in 1800 AD</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1_TITLE</Tag>
+		<English>The Samson Option</English>
+		<French>L'option Samson</French>
+		<German>The Samson Option</German>
+		<Italian>The Samson Option</Italian>
+		<Spanish>The Samson Option</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1</Tag>
+		<English>Build an ICBM by 1980 AD</English>
+		<French>Cr&#233;er un ICBM avant 1980</French>
+		<German>Build an ICBM by 1980 AD</German>
+		<Italian>Build an ICBM by 1980 AD</Italian>
+		<Spanish>Build an ICBM by 1980 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
+		<English>Start-up Nation</English>
+		<French>La nation startup</French>
+		<German>Start-up Nation</German>
+		<Italian>Start-up Nation</Italian>
+		<Spanish>Start-up Nation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2</Tag>
+		<English>Control the city with the highest research for 10 turns</English>
+		<French>Contr&#244;ler la ville produisant le plus de science au monde pendant 10 tours</French>
+		<German>Control the city with the highest research for 10 turns</German>
+		<Italian>Control the city with the highest research for 10 turns</Italian>
+		<Spanish>Control the city with the highest research for 10 turns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
+		<English>By Stratagem You Wage War</English>
+		<French>Tu feras la guerre avec prudence</French>
+		<German>By Stratagem You Wage War</German>
+		<Italian>By Stratagem You Wage War</Italian>
+		<Spanish>By Stratagem You Wage War</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3</Tag>
+		<English>Create two Great Spies</English>
+		<French>Cr&#233;er deux espions illustres</French>
+		<German>Create two Great Spies</German>
+		<Italian>Create two Great Spies</Italian>
+		<Spanish>Create two Great Spies</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
 		<English>Renaissance Architecture</English>
 		<French>Renaissance Architecture</French>
@@ -5294,5 +5342,37 @@
 		<German>Culture in %s1: %d2 / %d3</German>
 		<Italian>Culture in %s1: %d2 / %d3</Italian>
 		<Spanish>Culture in %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUCLEAR_ARSENAL</Tag>
+		<English>ICBMs built: %d1 / %d2</English>
+		<French>Nombre d'ICBM : %d1 / %d2</French>
+		<German>ICBMs built: %d1 / %d2</German>
+		<Italian>ICBMs built: %d1 / %d2</Italian>
+		<Spanish>ICBMs built: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_SPIES</Tag>
+		<English>Great Spies created: %d1 / %d2</English>
+		<French>Espions illustres cr&#233;&#233;s : %d1 / %d2</French>
+		<German>Great Spies created: %d1 / %d2</German>
+		<Italian>Great Spies created: %d1 / %d2</Italian>
+		<Spanish>Great Spies created: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_CITY</Tag>
+		<English>City with highest research: %s1</English>
+		<French>Ville produisant le plus de science : %s1</French>
+		<German>City with highest research: %s1</German>
+		<Italian>City with highest research: %s1</Italian>
+		<Spanish>City with highest research: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_TURNS</Tag>
+		<English>Turns with highest research city: %d1 / %d2</English>
+		<French>Tours pass&#233;s avec la ville produisant le plus de science : %d1 / %d2</French>
+		<German>Turns with highest research city: %d1 / %d2</German>
+		<Italian>Turns with highest research city: %d1 / %d2</Italian>
+		<Spanish>Turns with highest research city: %d1 / %d2</Spanish>
 	</TEXT>
 </Civ4GameText>

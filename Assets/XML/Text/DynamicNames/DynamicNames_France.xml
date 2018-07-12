@@ -34,7 +34,7 @@
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Fränkische V&#246;lker:Fränkischen V&#246;lker:Fränkischen V&#246;lkern</Text>
+			<Text>Frï¿½nkische V&#246;lker:Frï¿½nkischen V&#246;lker:Frï¿½nkischen V&#246;lkern</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>1:1:1</Plural>
 		</German>
@@ -155,11 +155,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
-		<English>Québec</English>
-		<French>Québec</French>
-		<German>Québec</German>
-		<Italian>Québec</Italian>
-		<Spanish>Québec</Spanish>
+		<English>Quï¿½bec</English>
+		<French>Quï¿½bec</French>
+		<German>Quï¿½bec</German>
+		<Italian>Quï¿½bec</Italian>
+		<Spanish>Quï¿½bec</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_BABYLONIA</Tag>
@@ -171,11 +171,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF</Tag>
-		<English>Départements of %s1</English>
-		<French>Départements of %s1</French>
-		<German>Départements of %s1</German>
-		<Italian>Départements of %s1</Italian>
-		<Spanish>Départements of %s1</Spanish>
+		<English>Dï¿½partements of %s1</English>
+		<French>Dï¿½partements of %s1</French>
+		<German>Dï¿½partements of %s1</German>
+		<Italian>Dï¿½partements of %s1</Italian>
+		<Spanish>Dï¿½partements of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_PHOENICIA</Tag>
@@ -184,6 +184,18 @@
 		<German>French Mandate of Lebanon</German>
 		<Italian>French Mandate of Lebanon</Italian>
 		<Spanish>French Mandate of Lebanon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_ISRAEL</Tag>
+		<English>French Mandatory Palestine</English>
+		<French>
+			<Text>Palestine mandataire fran&#231;aise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>French Mandatory Palestine</German>
+		<Italian>French Mandatory Palestine</Italian>
+		<Spanish>French Mandatory Palestine</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>

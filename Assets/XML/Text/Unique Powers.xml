@@ -845,11 +845,17 @@
 		<Tag>TXT_KEY_UP_TEO_TITLE</Tag>
 		<English>The Power of Obsidian:</English>
 		<French>Le Pouvoir de l'Obsidienne :</French>
+		<German>The Power of Obsidian:</German>
+		<Italian>The Power of Obsidian:</Italian>
+		<Spanish>The Power of Obsidian:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TEO</Tag>
 		<English>Melee units do not require strategic resources</English>
 		<French>Les unit&#233;s de combat rapproch&#233; ne requi&#232;rent pas de ressources strat&#233;giques</French>
+		<German>Melee units do not require strategic resources</German>
+		<Italian>Melee units do not require strategic resources</Italian>
+		<Spanish>Melee units do not require strategic resources</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>
@@ -930,5 +936,37 @@
 		<German>Zus&#228;tzliches gold durch Pl&#252;nderung, Stadteroberung und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ISR_TITLE</Tag>
+		<English>The Power of Aliyah:</English>
+		<French>Le Pouvoir de l'Alya :</French>
+		<German>The Power of Aliyah:</German>
+		<Italian>The Power of Aliyah:</Italian>
+		<Spanish>The Power of Aliyah:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ISR</Tag>
+		<English>Extra food, production and commerce in your capital from Jewish cities with open borders; immigration from Jewish cities at war</English>
+		<French>La capitale re&#231;oit de la nourriture, de la production et du commerce pour chaque ville juive avec un accord de libre passage, et des immigrants des villes juives en guerre</French>
+		<German>Extra food, production and commerce in your capital from Jewish cities with open borders; immigration from Jewish cities at war</German>
+		<Italian>Extra food, production and commerce in your capital from Jewish cities with open borders; immigration from Jewish cities at war</Italian>
+		<Spanish>Extra food, production and commerce in your capital from Jewish cities with open borders; immigration from Jewish cities at war</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_EMIGRATION_ALIYAH</Tag>
+		<English>The Jewish population of %s1 is fleeing to Israel!</English>
+		<French>La population juive de %s1 &#233;migre vers Isra&#235;l!</French>
+		<German>The Jewish population of %s1 is fleeing to Israel!</German>
+		<Italian>The Jewish population of %s1 is fleeing to Israel!</Italian>
+		<Spanish>The Jewish population of %s1 is fleeing to Israel!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IMMIGRATION_ALIYAH</Tag>
+		<English>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</English>
+		<French>La population juive de %s1 a quitté %s2 afin d'accomplir son alya à %s3!</French>
+		<German>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</German>
+		<Italian>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Italian>
+		<Spanish>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Spanish>
 	</TEXT>
 </Civ4GameText>

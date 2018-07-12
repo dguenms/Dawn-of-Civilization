@@ -494,4 +494,40 @@
 		<English>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</English>
 		<French>Bienvenue dans notre cit&#233;, [CT_NAME]. On m'appelle Atlatl Cauac. Je vous en prie, accompagnez-moi au sommet d'une de nos pyramides : la vue de la vall&#233;e est magnifique...</French>
 	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BEN_GURION_1</Tag>
+		<English>Shalom, [CT_NAME]. Let us hope you bring with you peaceful relations, for aggression against [OUR_CIV_SHORT] will be answered with equal or greater force.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_BEN_GURION_1</Tag>
+		<English>The most dangerous enemy to the security of [OUR_CIV_SHORT] is the intellectual inertia of those who are responsible for security. As it stands, I'm the minister of defense, and I can't let you fool me.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DECLARE_WAR_LEADER_BEN_GURION_1</Tag>
+		<English>When faced with a situation that necessitates an armed solution, our national doctrine dictates that we don't sit around like lambs for slaughter. You [CT_CIV_ADJ:1] brought this upon yourselves. ([OUR_NAME] declares war!)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_BEN_GURION_1</Tag>
+		<English>What matters is not what the goyim say, but what the [OUR_CIV_ADJ:1] do. Unless we make a stand here and show the world that there is a high a price for murdering our brothers and sisters, we won't survive.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_BEN_GURION_1</Tag>
+		<English>Glad to have you back, [CT_NAME]. Your continued support for the state of [OUR_CIV_SHORT] will be appreciated for generations to come.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_BEN_GURION_1</Tag>
+		<English>When we put forth the motion to form the state of [OUR_CIV_SHORT], we thought we would no longer have to put up with the politics of people like you... yet here you are. I'm listening, [CT_NAME], but with strained ears.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_BEN_GURION_1</Tag>
+		<English>Ideally the national estate of [OUR_CIV_SHORT] should be created through our own labor alone, but when afflicted with reality's setbacks, we have no choice but to bend our principles a little. Care to help?</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_BEN_GURION_1</Tag>
+		<English>Children of [OUR_CIV_SHORT] are in need of new settlements. Prove yourself our friend, or you will know the backs of our guns.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BEN_GURION_1</Tag>
+		<English>We [OUR_CIV_ADJ:1] are a people of peerless zeal. Should you evoke our wrath, we would plunge you into a vortex worthy of the end times. Instead, let's see that it needn't come to that.</English>
+	</TEXT>
 </Civ4GameText>
