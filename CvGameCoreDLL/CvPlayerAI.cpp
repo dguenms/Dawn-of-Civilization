@@ -11120,10 +11120,14 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA || getID() == ISRAEL)
 				{
 					iValue /= 2;
 				}
+			}
+			else if (iI == ISLAM && getID() == ISRAEL)
+			{
+				iValue /= 2;
 			}
 			
 			if (iValue > iBestValue)
@@ -11165,7 +11169,7 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 		return 0;
 	}
 
-	if (eReligion == JUDAISM)
+	if (eReligion == JUDAISM && getID() != ISRAEL)
 	{
 		return 0;
 	}

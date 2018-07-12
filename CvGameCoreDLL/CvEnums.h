@@ -1226,6 +1226,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	BUMIN,
 	TAMERLANE,
 	ATLATL_CAUAC,
+	BEN_GURION,
 	NUM_LEADERHEADS
 };
 
@@ -1346,6 +1347,7 @@ enum PlayerTypes				// Exposed to Python
 	ARGENTINA,
 	BRAZIL,
 	CANADA,
+	ISRAEL,
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,

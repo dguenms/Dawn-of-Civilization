@@ -1020,6 +1020,11 @@ int CyPlayer::getGreatGeneralsCreated()
 	return m_pPlayer ? m_pPlayer->getGreatGeneralsCreated() : -1;
 }
 
+int CyPlayer::getGreatSpiesCreated()
+{
+	return m_pPlayer ? m_pPlayer->getGreatSpiesCreated() : -1;
+}
+
 int CyPlayer::getGreatPeopleThresholdModifier()
 {
 	return m_pPlayer ? m_pPlayer->getGreatPeopleThresholdModifier() : -1;

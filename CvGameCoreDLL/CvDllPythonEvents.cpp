@@ -1408,6 +1408,37 @@ void CvDllPythonEvents::reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePl
 	}
 }
 
+// Steb: open borders
+void CvDllPythonEvents::reportBordersOpened(PlayerTypes ePlayer1, PlayerTypes ePlayer2)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("bordersOpened");
+
+		eventData.add((int)ePlayer1);
+		eventData.add((int)ePlayer2);
+
+		postEvent(eventData);
+	}
+}
+
+// Steb: open borders
+void CvDllPythonEvents::reportBordersClosed(PlayerTypes ePlayer1, PlayerTypes ePlayer2)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("bordersClosed");
+
+		eventData.add((int)ePlayer1);
+		eventData.add((int)ePlayer2);
+
+		postEvent(eventData);
+	}
+}
+
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

@@ -507,6 +507,18 @@ void CvEventReporter::peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, P
 	m_kPythonEventMgr.reportPeaceBrokered(eBroker, ePlayer1, ePlayer2);
 }
 
+// Steb: open borders
+void CvEventReporter::bordersOpened(PlayerTypes ePlayer1, PlayerTypes ePlayer2)
+{
+	m_kPythonEventMgr.reportBordersOpened(ePlayer1, ePlayer2);
+}
+
+// Steb: close borders
+void CvEventReporter::bordersClosed(PlayerTypes ePlayer1, PlayerTypes ePlayer2)
+{
+	m_kPythonEventMgr.reportBordersClosed(ePlayer1, ePlayer2);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
