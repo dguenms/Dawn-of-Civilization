@@ -440,6 +440,7 @@ tNormalArea = (
 ((31,  3), 	(36, 15)), 	# Argentina
 ((32, 14), 	(43, 28)), 	# Brazil
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedNormalArea = {
