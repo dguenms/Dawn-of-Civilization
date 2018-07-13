@@ -1237,7 +1237,7 @@
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
 		<French>Jewish Synagogue</French>
-		<German>Jüdische Synagoge</German>
+		<German>J&#252;dische Synagoge</German>
 		<Italian>Jewish Synagogue</Italian>
 		<Spanish>Jewish Synagogue</Spanish>
 	</TEXT>
@@ -1253,7 +1253,7 @@
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
 		<French>Jewish Yeshiva</French>
-		<German>Jüdische Jeschiwa</German>
+		<German>J&#252;dische Jeschiwa</German>
 		<Italian>Jewish Yeshiva</Italian>
 		<Spanish>Jewish Yeshiva</Spanish>
 	</TEXT>
@@ -1269,7 +1269,7 @@
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
 		<French>Jewish Sanhedrin</French>
-		<German>Jüdischer Sanhedrin</German>
+		<German>J&#252;discher Sanhedrin</German>
 		<Italian>Jewish Sanhedrin</Italian>
 		<Spanish>Jewish Sanhedrin</Spanish>
 	</TEXT>
@@ -1837,7 +1837,7 @@
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
 		<French>Zoroastrian Royal Fire</French>
-		<German>Zoroastrisches Königliches Feuer</German>
+		<German>Zoroastrisches K&#246;nigliches Feuer</German>
 		<Italian>Zoroastrian Royal Fire</Italian>
 		<Spanish>Zoroastrian Royal Fire</Spanish>
 	</TEXT>
@@ -2276,7 +2276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</English>
-		<French>Le [COLOR_BUILDING_TEXT]Temple olympien[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]Olympianisme[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]Temple olympien[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]Olympisme[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</Spanish>
@@ -2285,7 +2285,7 @@
 		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE</Tag>
 		<English>Baalist Temple</English>
 		<French>
-			<Text>Temples de Baal:Temples de Baal</Text>
+			<Text>Temple de Baal:Temples de Baal</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>

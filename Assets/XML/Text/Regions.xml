@@ -397,7 +397,7 @@
 		<Tag>TXT_KEY_REGION_32</Tag>
 		<English>Caribbean</English>
 		<French>
-    	<Text>Caraïbes</Text>
+    	<Text>Cara&#239;bes</Text>
     	<Gender>Female</Gender>
     	<Plural>1</Plural>
 		</French>
@@ -997,7 +997,7 @@
 		<Tag>TXT_KEY_UHV_AREA_46</Tag>
 		<English>Caribbean</English>
 		<French>
-    	<Text>Caraïbes</Text>
+    	<Text>Cara&#239;bes</Text>
     	<Gender>Female</Gender>
     	<Plural>1</Plural>
 		</French>
@@ -1225,7 +1225,7 @@
 		<Tag>TXT_KEY_UHV_AREA_65</Tag>
 		<English>Hawaii</English>
 		<French>
-    	<Text>Hawaï</Text>
+    	<Text>Hawa&#239;</Text>
     	<Gender>Male</Gender>
     	<Plural>0</Plural>
 		</French>
