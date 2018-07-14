@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_OCEAN_FISHERY</Tag>
 		<English>Ocean Fishery</English>
-		<French>Ocean Fishery</French>
+		<French>
+			<Text>P&#234;cherie en haute mer</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hochsee-Fischerei</German>
 		<Italian>Ocean Fishery</Italian>
 		<Spanish>Ocean Fishery</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
 		<English>Slave Plantation</English>
-		<French>Slave Plantation</French>
+		<French>
+			<Text>Plantation &#224; esclaves</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Slave Plantation</German>
 		<Italian>Slave Plantation</Italian>
 		<Spanish>Slave Plantation</Spanish>
@@ -20,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_ORCHARD</Tag>
 		<English>Orchard</English>
-		<French>Orchard</French>
+		<French>
+			<Text>Verger</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Orchard</German>
 		<Italian>Orchard</Italian>
 		<Spanish>Orchard</Spanish>
@@ -28,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_NATURE_RESERVE</Tag>
 		<English>Nature Reserve</English>
-		<French>Nature Reserve</French>
+		<French>
+			<Text>R&#233;serve naturelle</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nature Reserve</German>
 		<Italian>Nature Reserve</Italian>
 		<Spanish>Nature Reserve</Spanish>
@@ -36,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_MARINE_RESERVE</Tag>
 		<English>Marine Reserve</English>
-		<French>Marine Reserve</French>
+		<French>
+			<Text>Aire marine prot&#233;g&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Marine Reserve</German>
 		<Italian>Marine Reserve</Italian>
 		<Spanish>Marine Reserve</Spanish>
@@ -44,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_PADDY_FIELD</Tag>
 		<English>Paddy Field</English>
-		<French>Paddy Field</French>
+		<French>
+			<Text>Rizi&#232;re</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Paddy Field</German>
 		<Italian>Paddy Field</Italian>
 		<Spanish>Paddy Field</Spanish>
@@ -52,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
 		<English>Roman Road</English>
-		<French>Roman Road</French>
+		<French>
+			<Text>Voie romaine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Roman Road</German>
 		<Italian>Roman Road</Italian>
 		<Spanish>Roman Road</Spanish>
@@ -60,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ROUTE_HIGHWAY</Tag>
 		<English>Highway</English>
-		<French>Highway</French>
+		<French>
+			<Text>Autoroute</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Highway</German>
 		<Italian>Highway</Italian>
 		<Spanish>Highway</Spanish>
