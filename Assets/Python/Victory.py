@@ -1494,8 +1494,7 @@ def checkHistoricalVictory(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
 	if not data.players[iPlayer].bHistoricalGoldenAge:
-		if countAchievedGoals(iPlayer) == 2:
-		
+		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
 			capital = pPlayer.getCapitalCity()
