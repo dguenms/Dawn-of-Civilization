@@ -44,7 +44,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
 		<English>Blue Mosque</English>
-		<French>Blue Mosque</French>
+		<French>
+			<Text>Mosquée bleue</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Blaue Moschee</German>
 		<Italian>Blue Mosque</Italian>
 		<Spanish>Blue Mosque</Spanish>
@@ -60,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOROBUDUR</Tag>
 		<English>Borobudur</English>
-		<French>Borobudur</French>
+		<French>
+			<Text>Borobudur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Borobudur</German>
 		<Italian>Borobudur</Italian>
 		<Spanish>Borobudur</Spanish>
@@ -77,8 +85,8 @@
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE</Tag>
 		<English>Brandenburg Gate</English>
 		<French>
-			<Text>Brandenburg Gate</Text>
-			<Gender>Male</Gender>
+			<Text>Porte de Brandebourg</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -204,7 +212,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
-		<French>CN Tower</French>
+		<French>
+			<Text>Tour CN</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>CN Tower</German>
 		<Italian>CN Tower</Italian>
 		<Spanish>CN Tower</Spanish>
@@ -220,7 +232,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Tag>
 		<English>Dome of the Rock</English>
-		<French>Le D&#244;me du Rocher</French>
+		<French>
+			<Text>Le D&#244;me du Rocher</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Felsendom</Text>
 			<Gender>Male</Gender>
@@ -232,7 +248,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Tag>
 		<English>The Empire State Building</English>
-		<French>The Empire State Building</French>
+		<French>
+			<Text>L'Empire State Building</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Das Empire State Building</German>
 		<Italian>The Empire State Building</Italian>
 		<Spanish>The Empire State Building</Spanish>
@@ -312,7 +332,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
 		<English>The Great Bath</English>
-		<French>The Great Bath</French>
+		<French>
+			<Text>Les Grands Bains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Das Gro&#223;e Bad</German>
 		<Italian>The Great Bath</Italian>
 		<Spanish>The Great Bath</Spanish>

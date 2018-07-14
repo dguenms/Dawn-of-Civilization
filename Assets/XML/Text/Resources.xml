@@ -76,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_COFFEE</Tag>
 		<English>Coffee</English>
-		<French>Coffee</French>
+		<French>
+			<Text>Caf&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Coffee</German>
 		<Italian>Coffee</Italian>
 		<Spanish>Coffee</Spanish>
@@ -132,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_PEARL</Tag>
 		<English>Pearls</English>
-		<French>Pearls</French>
+		<French>
+			<Text>Perles</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Perlen</German>
 		<Italian>Pearls</Italian>
 		<Spanish>Pearls</Spanish>
@@ -140,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TEA</Tag>
 		<English>Tea</English>
-		<French>Tea</French>
+		<French>
+			<Text>Th&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tee</German>
 		<Italian>Tea</Italian>
 		<Spanish>Tea</Spanish>
@@ -148,7 +160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TOBACCO</Tag>
 		<English>Tobacco</English>
-		<French>Tobacco</French>
+		<French>
+			<Text>Tabac</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tabak</German>
 		<Italian>Tobacco</Italian>
 		<Spanish>Tobacco</Spanish>
@@ -156,7 +172,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CAMEL</Tag>
 		<English>Camel</English>
-		<French>Camel</French>
+		<French>
+			<Text>Chameaux</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Kamel</German>
 		<Italian>Camel</Italian>
 		<Spanish>Camel</Spanish>
