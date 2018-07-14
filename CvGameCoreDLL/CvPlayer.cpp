@@ -6957,6 +6957,15 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->updateFeatureHealth();
 		}
 	}
+
+	// Prambanan
+	if (eBuilding == PRAMBANAN)
+	{
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->changeMaxFoodKeptPercent(25 * iChange);
+		}
+	}
 }
 
 
