@@ -50,7 +50,7 @@
 		<Spanish>Polish-Lithuanian Commonwealth</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLAND_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_POLAND_FASCIST</Tag>
 		<English>Sanacja %s1</English>
 		<French>Sanacja %s1</French>
 		<German>Sanacja %s1</German>
