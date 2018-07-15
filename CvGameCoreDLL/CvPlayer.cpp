@@ -6956,6 +6956,9 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->changeMaxFoodKeptPercent(25 * iChange);
 		}
 	}
+
+	// Salsal Buddha
+	updatePlotGroups();
 }
 
 
@@ -23013,12 +23016,12 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 		{
 			return true;
 		}
-
+		
 		if (GET_TEAM(kOtherPlayer.getTeam()).isVassal(getTeam()))
 		{
 			return true;
 		}
-
+		
 		if (!isNoForeignTrade() && !kOtherPlayer.isNoForeignTrade())
 		{
 			return true;

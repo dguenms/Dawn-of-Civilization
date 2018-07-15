@@ -4029,12 +4029,21 @@ void CvTeam::setPermanentWarPeace(TeamTypes eIndex, bool bNewValue)
 
 bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 {
-	if (isAtWar(eIndex))
+	if (!isHasMet(eIndex))
 	{
 		return false;
 	}
 
-	if (!isHasMet(eIndex))
+	// Leoreth: Salsal Buddha effect
+	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA))
+	{
+		if (!GET_PLAYER(GET_TEAM(eIndex).getLeaderID()).isMinorCiv())
+		{
+			return true;
+		}
+	}
+	
+	if (isAtWar(eIndex))
 	{
 		return false;
 	}
