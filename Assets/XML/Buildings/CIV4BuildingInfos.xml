@@ -10302,7 +10302,7 @@
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
 					<UnitCombatType>UNITCOMBAT_SPY</UnitCombatType>
-					<iExperience>2</iExperience>
+					<iExperience>10</iExperience>
 				</UnitCombatFreeExperience>
 			</UnitCombatFreeExperiences>
 			<Flavors>
