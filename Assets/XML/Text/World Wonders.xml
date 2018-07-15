@@ -1467,11 +1467,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Tag>
-		<English>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</English>
-		<French>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</French>
-		<German>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</German>
-		<Italian>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Trade routes remain connected even during war (not implemented)</Spanish>
+		<English>[ICON_BULLET]Trade routes remain connected even during war</English>
+		<French>[ICON_BULLET]Trade routes remain connected even during war</French>
+		<German>[ICON_BULLET]Trade routes remain connected even during war</German>
+		<Italian>[ICON_BULLET]Trade routes remain connected even during war</Italian>
+		<Spanish>[ICON_BULLET]Trade routes remain connected even during war</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA</Tag>
