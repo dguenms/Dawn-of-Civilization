@@ -476,7 +476,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_0</Tag>
 		<English>Egypt</English>
-		<<French>
+		<French>
 			<Text>&#201;gypte</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
