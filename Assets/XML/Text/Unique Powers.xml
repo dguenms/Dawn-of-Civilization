@@ -4,7 +4,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME_TITLE</Tag>
 		<English>The Power of the American Dream:</English>
-		<French>Le Pouvoir du R&#234;ve Am&#233;ricain :</French>
+		<French>Le pouvoir du r&#234;ve am&#233;ricain :</French>
 		<German>Die Macht des Amerikanischen Traums:</German>
 		<Italian>Il potere del sogno americano:</Italian>
 		<Spanish>El poder del sue&#241;o americano:</Spanish>
@@ -12,7 +12,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
 		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
-		<French>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</French>
+		<French>Bonheur additionnel avec les doctrines D&#233;mocratie, Constitution, Individualisme et Libre entreprise</French>
 		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
 		<Italian>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Italian>
 		<Spanish>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Spanish>
@@ -20,7 +20,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</English>
-		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</French>
+		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn dans toutes les villes</French>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn In Allen St&#228;dten</German>
 		<Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</Spanish>
@@ -28,7 +28,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARA_TITLE</Tag>
 		<English>The Power of Faith:</English>
-		<French>Le Pouvoir de la Foi :</French>
+		<French>Le pouvoir de la foi :</French>
 		<German>Die Macht des Glaubens:</German>
 		<Italian>Il potere della fede:</Italian>
 		<Spanish>El poder de la fe:</Spanish>
@@ -36,7 +36,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARA</Tag>
 		<English>State religion spreads with temples to conquered cities</English>
-		<French>La religion d'&#233;tat se r&#233;pand dans les petits et grands lieux de culte pour conqu&#233;rir les villes</French>
+		<French>La religion d'&#201;tat se propage dans les villes conquises et un lieu de culte y est automatiquement construit</French>
 		<German>Ausbreitung der Staatsreligion inklusive Tempeln in eroberten St&#228;dten</German>
 		<Italian>La religione di stato si diffonde con templi e cattedrali nelle citt&#224; conquistate</Italian>
 		<Spanish>La religi&#243;n oficial se propaga con los templos y catedrales a las ciudades conquistadas</Spanish>
@@ -44,7 +44,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARG_TITLE</Tag>
 		<English>The Power of Juntas:</English>
-		<French>The Power of Juntas:</French>
+		<French>Le pouvoir des juntes :</French>
 		<German>Die Macht der Juntas:</German>
 		<Italian>The Power of Juntas:</Italian>
 		<Spanish>The Power of Juntas:</Spanish>
@@ -52,7 +52,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARG</Tag>
 		<English>Great Generals can start Golden Ages</English>
-		<French>Great Generals can start Golden Ages</French>
+		<French>Les g&#233;n&#233;raux illustres peuvent d&#233;clencher un &#226;ge d'or</French>
 		<German>Gro&#223;e Gener&#228;le k&#246;nnen Goldene Zeitalter ausl&#246;sen</German>
 		<Italian>Great Generals can start Golden Ages</Italian>
 		<Spanish>Great Generals can start Golden Ages</Spanish>
@@ -60,7 +60,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_AZT_TITLE</Tag>
 		<English>The Power of Flower Wars:</English>
-		<French>Le Pouvoir du Sacrifice :</French>
+		<French>Le pouvoir des guerres fleuries :</French>
 		<German>Die Macht der Blumenkriege:</German>
 		<Italian>Il potere del sacrificio:</Italian>
 		<Spanish>El poder del sacrificio:</Spanish>
@@ -68,7 +68,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_AZT</Tag>
 		<English>Military units can enslave defeated enemy units, can sacrifice slaves to increase city happiness</English>
-		<French>Les unit&#233;s militaires peuvent asservir les unit&#233;s ennemies vaincues</French>
+		<French>Les unit&#233;s militaires peuvent asservir les unit&#233;s vaincues, et il est possible de sacrifier des esclaves pour augmenter le bonheur des villes</French>
 		<German>Versklavung besiegter feindlicher Einheiten durch Milit&#228;reinheiten, can Sklaven opfern, um Zufriedenheit in St&#228;dten zu erh&#246;hen</German>
 		<Italian>Le unit&#224; militari possono schiavizzare le unit&#224; nemiche sconfitte</Italian>
 		<Spanish>Las unidades militares pueden esclavizar a las unidades enemigas derrotadas</Spanish>
@@ -76,7 +76,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB_TITLE</Tag>
 		<English>The Power of the Cradle of Civilization:</English>
-		<French>Le Pouvoir de la Loi :</French>
+		<French>Le pouvoir du berceau de la civilisation :</French>
 		<German>Die Macht der Wiege der Zivilisation:</German>
 		<Italian>Il potere della legge:</Italian>
 		<Spanish>El poder de la ley:</Spanish>
@@ -84,7 +84,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB</Tag>
 		<English>Receives a free technology for the first four technologies discovered</English>
-		<French>Pas de r&#233;sistance dans les villes conquises</French>
+		<French>Une technologie gratuite pour les quatre premi&#232;res technologies d&#233;couvertes</French>
 		<German>Erhält eine weitere Technologie für die ersten vier entdeckten Technologien</German>
 		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
@@ -92,7 +92,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
 		<English>The Power of Ethanol:</English>
-		<French>The Power of Ethanol:</French>
+		<French>Le pouvoir de l'&#233;thanol :</French>
 		<German>Die Macht des Ethanols:</German>
 		<Italian>The Power of Ethanol:</Italian>
 		<Spanish>The Power of Ethanol:</Spanish>
@@ -100,7 +100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA</Tag>
 		<English>Sugar counts as oil for Oil Industry</English>
-		<French>Sugar counts as oil for Oil Industry</French>
+		<French>Le sucre compte comme du p&#233;trole pour l'Industrie p&#233;troli&#232;re</French>
 		<German>Zucker z&#228;hlt als &#214;l f&#252;r die &#214;lindustrie</German>
 		<Italian>Sugar counts as oil for Oil Industry</Italian>
 		<Spanish>Sugar counts as oil for Oil Industry</Spanish>
@@ -108,7 +108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
 		<English>The Power of Bribery:</English>
-		<French>The Power of Bribery:</French>
+		<French>Le pouvoir des pots-de-vin :</French>
 		<German>Die Macht der Bestechung:</German>
 		<Italian>The Power of Bribery:</Italian>
 		<Spanish>The Power of Bribery:</Spanish>
@@ -116,7 +116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ</Tag>
 		<English>Double gold value in trades, spies can bribe barbarian units</English>
-		<French>Double gold value in trades, spies can bribe barbarian units</French>
+		<French>L'or vaut en double lors des &#233;changes, et les espions peuvent soudoyer les unit&#233;s barbares</French>
 		<German>Doppelter Wert von Gold beim Handeln, Spione k&#246;nnen barbarische Einheiten bestechen</German>
 		<Italian>Double gold value in trades, spies can bribe barbarian units</Italian>
 		<Spanish>Double gold value in trades, spies can bribe barbarian units</Spanish>
@@ -124,7 +124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_BYZANTINE_UP</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</French>
+		<French>[COLOR_HIGHLIGHT_TEXT]Soudoyer les barbares[COLOR_REVERT][NEWLINE]Permet &#224; votre espion d'offrir de l'or afin de convaincre l'une des unit&#233;s barbares sur cette case de se joindre &#224; votre arm&#233;e.</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</Spanish>
@@ -132,7 +132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BODY</Tag>
 		<English>Choose the barbarian unit you wish to bribe:</English>
-		<French>Choose the barbarian unit you wish to bribe:</French>
+		<French>Choisissez l'unit&#233; barbare &#224; soudoyer :</French>
 		<German>Choose the barbarian unit you wish to bribe:</German>
 		<Italian>Choose the barbarian unit you wish to bribe:</Italian>
 		<Spanish>Choose the barbarian unit you wish to bribe:</Spanish>
@@ -140,7 +140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON</Tag>
 		<English>%s1 (%d2 gold)</English>
-		<French>%s1 (%d2 gold)</French>
+		<French>%s1 (%d2 or)</French>
 		<German>%s1 (%d2 gold)</German>
 		<Italian>%s1 (%d2 gold)</Italian>
 		<Spanish>%s1 (%d2 gold)</Spanish>
@@ -148,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_BUTTON_NONE</Tag>
 		<English>None</English>
-		<French>None</French>
+		<French>Aucun</French>
 		<German>None</German>
 		<Italian>None</Italian>
 		<Spanish>None</Spanish>
@@ -156,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BYZANTINE_UP_TITLE</Tag>
 		<English>Bribing Barbarians</English>
-		<French>Bribing Barbarians</French>
+		<French>Soudoyer les barbares</French>
 		<German>Bribing Barbarians</German>
 		<Italian>Bribing Barbarians</Italian>
 		<Spanish>Bribing Barbarians</Spanish>
@@ -164,7 +164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN_TITLE</Tag>
 		<English>The Power of Multiculturalism:</English>
-		<French>The Power of Multiculturalism:</French>
+		<French>Le pouvoir du multiculturalisme :</French>
 		<German>The Power of Multiculturalism:</German>
 		<Italian>The Power of Multiculturalism:</Italian>
 		<Spanish>The Power of Multiculturalism:</Spanish>
@@ -172,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAN</Tag>
 		<English>Immigrants bring [ICON_GREATPEOPLE] to your cities</English>
-		<French>Immigrants bring [ICON_GREATPEOPLE] to your cities</French>
+		<French>Les immigrants apportent des [ICON_GREATPEOPLE] dans vos villes</French>
 		<German>Immigrants bring [ICON_GREATPEOPLE] to your cities</German>
 		<Italian>Immigrants bring [ICON_GREATPEOPLE] to your cities</Italian>
 		<Spanish>Immigrants bring [ICON_GREATPEOPLE] to your cities</Spanish>
@@ -180,7 +180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MULTICULTURALISM</Tag>
 		<English>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</English>
-		<French>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</French>
+		<French>En s'&#233;tablissant &#224; %s1, des immigrants ont rapproch&#233; de %d3 points l'apparition d'un %s2.</French>
 		<German>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</German>
 		<Italian>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</Italian>
 		<Spanish>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</Spanish>
@@ -188,7 +188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR_TITLE</Tag>
 		<English>The Power of Mercenaries:</English>
-		<French>Le Pouvoir des Mercenaires :</French>
+		<French>Le pouvoir des mercenaires :</French>
 		<German>Die Macht der S&#246;ldner:</German>
 		<Italian>Il potere dei mercenari:</Italian>
 		<Spanish>El poder de los mercenarios:</Spanish>
@@ -196,7 +196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR</Tag>
 		<English>Halved costs and no extra upkeep for hurried units</English>
-		<French>Co&#251;ts de recrutement et d'entretien des mercenaires divis&#233;s par deux</French>
+		<French>Co&#251;t d'acc&#233;l&#233;ration des unit&#233;s divis&#233; par deux, et absence de co&#251;t d'entretien suppl&#233;mentaire pour ces unit&#233;s</French>
 		<German>Halbierte Kosten und kein zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>
 		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
@@ -204,7 +204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI_TITLE</Tag>
 		<English>The Power of Myriads:</English>
-		<French>Le Pouvoir de Invention :</French>
+		<French>Le pouvoir des myriades :</French>
 		<German>Die Macht der Myriaden:</German>
 		<Italian>Il potere del invenzione:</Italian>
 		<Spanish>El poder del invento:</Spanish>
@@ -212,7 +212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI</Tag>
 		<English>Cities keep an additional 25% [ICON_FOOD] after growing</English>
-		<French>1.5X Vitesse d'entra&#238;nement des unit&#233;s de combat rapproch&#233; et &#233;quip&#233;es d'armes &#224; feu</French>
+		<French>Les villes conservent 25% [ICON_FOOD] de plus apr&#232;s la croissance</French>
 		<German>St&#228;dte behalten zus&#228;tzliche 25% [ICON_FOOD] nach dem Wachsen</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
@@ -220,7 +220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_COL_TITLE</Tag>
 		<English>The Power of the Liberator:</English>
-		<French>The Power of the Liberator:</French>
+		<French>Le pouvoir du lib&#233;rateur :</French>
 		<German>Die Macht des Befreiers:</German>
 		<Italian>The Power of the Liberator:</Italian>
 		<Spanish>The Power of the Liberator:</Spanish>
@@ -228,7 +228,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_COL</Tag>
 		<English>No City Resistance on Conquest in Latin America</English>
-		<French>No City Resistance on Conquest in Latin America</French>
+		<French>Pas de r&#233;sistance &#224; la conqu&#234;te de villes en Am&#233;rique latine</French>
 		<German>Keinen Widerstand in eroberten St&#228;dten in Lateinamerika</German>
 		<Italian>No City Resistance on Conquest in Latin America</Italian>
 		<Spanish>No City Resistance on Conquest in Latin America</Spanish>
@@ -236,7 +236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CONQUESTS_TARGET</Tag>
 		<English>%s1 has fielded an army to conquer our civilization!</English>
-		<French>%s1 has fielded an army to conquer our civilization!</French>
+		<French>%s1 a mis en place une arm&#233;e pour conqu&#233;rir notre civilisation!</French>
 		<German>%s1 hat eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 		<Italian>%s1 has fielded an army to conquer our civilization!</Italian>
 		<Spanish>%s1 has fielded an army to conquer our civilization!</Spanish>
@@ -244,7 +244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_EGY_TITLE</Tag>
 		<English>The Power of the Pharaoh:</English>
-		<French>Le Pouvoir du Pharaon :</French>
+		<French>Le pouvoir du pharaon :</French>
 		<German>Die Macht des Pharaos:</German>
 		<Italian>Il potere del faraone:</Italian>
 		<Spanish>El poder del fara&#243;n:</Spanish>
@@ -252,7 +252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_EGY</Tag>
 		<English>Monarchy, Redistribution and Deification are enabled at start</English>
-		<French>Le droit h&#233;r&#233;ditaire et l'esclavage sont disponibles au d&#233;part</French>
+		<French>La monarchie, la redistribution et la d&#233;ification sont activ&#233;es au d&#233;part</French>
 		<German>Aktivierung von Monarchie, Umverteilung und Vergötterung beim Spielstart</German>
 		<Italian>All'avvio sono abilitati governo ereditario e schiavit&#249;</Italian>
 		<Spanish>Gobierno hereditario y Esclavitud est&#225;n activados al principio</Spanish>
@@ -260,7 +260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ENG_TITLE</Tag>
 		<English>The Power of Indirect Rule:</English>
-		<French>Le Pouvoir de la Royal Navy :</French>
+		<French>Le pouvoir de l'indirect rule :</French>
 		<German>Die Macht der Indirekten Herrschaft:</German>
 		<Italian>Il potere della marina reale:</Italian>
 		<Spanish>El poder de la Royal Navy:</Spanish>
@@ -276,7 +276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
 		<English>The Power of Sovereignty:</English>
-		<French>Le Pouvoir de la Souverainet&#233; :</French>
+		<French>Le pouvoir de la souverainet&#233; :</French>
 		<German>Die Macht der Souver&#228;nit&#228;t:</German>
 		<Italian>Il potere della sovranit&#224;:</Italian>
 		<Spanish>El poder de la soberan&#237;a:</Spanish>
@@ -292,7 +292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA_TITLE</Tag>
 		<English>The Power of Diplomacy:</English>
-		<French>Le Pouvoir de l'Entente :</French>
+		<French>Le pouvoir de la diplomatie :</French>
 		<German>Die Macht der Diplomatie:</German>
 		<Italian>Il potere dell'entente:</Italian>
 		<Spanish>El poder de la entente:</Spanish>
@@ -308,7 +308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GER_TITLE</Tag>
 		<English>The Power of Doctrine:</English>
-		<French>The Power of Doctrine:</French>
+		<French>Le pouvoir de la doctrine militaire :</French>
 		<German>Die Macht der Doktrin:</German>
 		<Italian>The Power of Doctrine:</Italian>
 		<Spanish>The Power of Doctrine:</Spanish>
@@ -324,7 +324,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GRE_TITLE</Tag>
 		<English>The Power of Philosophy:</English>
-		<French>Le Pouvoir de la Philosophie :</French>
+		<French>Le pouvoir de la philosophie :</French>
 		<German>Die Macht der Philosophie:</German>
 		<Italian>Il potere della filosofia:</Italian>
 		<Spanish>El poder de la filosof&#237;a:</Spanish>
@@ -348,7 +348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HAR_TITLE</Tag>
 		<English>The Power of Sanitation:</English>
-		<French>The Power of Sanitation:</French>
+		<French>Le pouvoir de l'assainissement :</French>
 		<German>The Power of Sanitation:</German>
 		<Italian>The Power of Sanitation:</Italian>
 		<Spanish>The Power of Sanitation:</Spanish>
@@ -364,7 +364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HOL_TITLE</Tag>
 		<English>The Power of Trading Companies:</English>
-		<French>Le Pouvoir des Entreprises Commerciales :</French>
+		<French>Le pouvoir des compagnies commerciales :</French>
 		<German>Die Macht der Handelsgesellschaften:</German>
 		<Italian>Il potere delle compagnie commerciali:</Italian>
 		<Spanish>El poder de la Compa&#241;&#237;a de las Indias:</Spanish>
@@ -380,7 +380,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HRE_TITLE</Tag>
 		<English>The Power of Investiture:</English>
-		<French>The Power of Investiture:</French>
+		<French>Le pouvoir de l'investiture :</French>
 		<German>Die Macht der Investitur:</German>
 		<Italian>The Power of Investiture:</Italian>
 		<Spanish>The Power of Investiture:</Spanish>
@@ -404,7 +404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC_TITLE</Tag>
 		<English>The Power of Terraces:</English>
-		<French>Le Pouvoir des Terrasses :</French>
+		<French>Le pouvoir des terrasses :</French>
 		<German>Die Macht der Terrassen:</German>
 		<Italian>Il potere delle terrazze:</Italian>
 		<Spanish>El poder de las terrazas:</Spanish>
@@ -420,7 +420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND_TITLE</Tag>
 		<English>The Power of Purity:</English>
-		<French>Le Pouvoir de la Spiritualit&#233; :</French>
+		<French>Le pouvoir de la puret&#233; :</French>
 		<German>Die Macht der Reinheit:</German>
 		<Italian>Il potere della spiritualit&#224;:</Italian>
 		<Spanish>El poder de la espiritualidad:</Spanish>
@@ -436,7 +436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_INO_TITLE</Tag>
 		<English>The Power of Straits:</English>
-		<French>The Power of Straits:</French>
+		<French>The pouvoir des d&#233;troits :</French>
 		<German>Die Macht der Meerengen:</German>
 		<Italian>The Power of Straits:</Italian>
 		<Spanish>The Power of Straits:</Spanish>
@@ -452,7 +452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA_TITLE</Tag>
 		<English>The Power of Safaviyya:</English>
-		<French>The Power of Safaviyya:</French>
+		<French>Le pouvoir du Safavieh :</French>
 		<German>Die Macht der Safaviyya:</German>
 		<Italian>The Power of Safaviyya:</Italian>
 		<Spanish>The Power of Safaviyya:</Spanish>
@@ -468,7 +468,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ITA_TITLE</Tag>
 		<English>The Power of Renaissance:</English>
-		<French>The Power of Renaissance:</French>
+		<French>Le pouvoir de la Renaissance :</French>
 		<German>Die Macht der Renaissance:</German>
 		<Italian>The Power of Renaissance:</Italian>
 		<Spanish>The Power of Renaissance:</Spanish>
@@ -484,7 +484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_JAP_TITLE</Tag>
 		<English>The Power of Modernization:</English>
-		<French>Le Pouvoir de l'Honneur :</French>
+		<French>Le pouvoir de la modernisation :</French>
 		<German>Die Macht der Modernisierung:</German>
 		<Italian>Il potere dell'onore:</Italian>
 		<Spanish>El poder del honor:</Spanish>
@@ -500,7 +500,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHM_TITLE</Tag>
 		<English>The Power of Monsoons:</English>
-		<French>Le Pouvoir des Moussons :</French>
+		<French>Le pouvoir des moussons :</French>
 		<German>Die Macht des Monsuns:</German>
 		<Italian>Il potere dei monsoni:</Italian>
 		<Spanish>El poder de los monzones:</Spanish>
@@ -516,7 +516,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CON_TITLE</Tag>
 		<English>The Power of the Tropics:</English>
-		<French>The Power of the Tropics:</French>
+		<French>Le pouvoir des tropiques :</French>
 		<German>Die Macht der Tropen:</German>
 		<Italian>The Power of the Tropics:</Italian>
 		<Spanish>The Power of the Tropics:</Spanish>
@@ -532,7 +532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR_TITLE</Tag>
 		<English>The Power of Kobuksons:</English>
-		<French>The Power of Kobuksons:</French>
+		<French>Le pouvoir des bateaux tortues :</French>
 		<German>Die Macht der Kobuksons:</German>
 		<Italian>The Power of Kobuksons:</Italian>
 		<Spanish>The Power of Kobuksons:</Spanish>
@@ -548,7 +548,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
 		<English>The Power of Wealth:</English>
-		<French>Le Pouvoir de la Richesse :</French>
+		<French>Le pouvoir de la richesse :</French>
 		<German>Die Macht des Wohlstands:</German>
 		<Italian>Il potere della ricchezza:</Italian>
 		<Spanish>El poder de la riqueza:</Spanish>
@@ -564,7 +564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
 		<English>The Power of Astronomy:</English>
-		<French>Le Pouvoir de l'Astronomie :</French>
+		<French>Le pouvoir de l'astronomie :</French>
 		<German>Die Macht der Astronomie:</German>
 		<Italian>Il potere dell'astronomia:</Italian>
 		<Spanish>El poder de la astronom&#237;a:</Spanish>
@@ -580,7 +580,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>
 		<English>The Power of Arid Agriculture:</English>
-		<French>The Power of Arid Agriculture:</French>
+		<French>Le pouvoir de l'aridoculture :</French>
 		<German>Die Macht der Ariden Landwirtschaft:</German>
 		<Italian>The Power of Arid Agriculture:</Italian>
 		<Spanish>The Power of Arid Agriculture:</Spanish>
@@ -596,7 +596,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MON_TITLE</Tag>
 		<English>The Power of Terror:</English>
-		<French>Le Pouvoir de la Horde :</French>
+		<French>Le pouvoir de la terreur :</French>
 		<German>Die Macht des Schreckens:</German>
 		<Italian>Il potere dell'orda:</Italian>
 		<Spanish>El poder de la horda:</Spanish>
@@ -652,7 +652,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO_TITLE</Tag>
 		<English>The Power of Irrigation:</English>
-		<French>The Power of Irrigation:</French>
+		<French>Le pouvoir de l'irrigation :</French>
 		<German>Die Macht der Bew&#228;sserung:</German>
 		<Italian>The Power of Irrigation:</Italian>
 		<Spanish>The Power of Irrigation:</Spanish>
@@ -668,7 +668,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MUG_TITLE</Tag>
 		<English>The Power of Architecture:</English>
-		<French>The Power of Architecture:</French>
+		<French>Le pouvoir de l'architecture :</French>
 		<German>Die Macht der Architektur:</German>
 		<Italian>The Power of Architecture:</Italian>
 		<Spanish>The Power of Architecture:</Spanish>
@@ -684,7 +684,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
 		<English>The Power of Satrapy:</English>
-		<French>Le Pouvoir de la Satrapie :</French>
+		<French>Le pouvoir des satrapies :</French>
 		<German>Die Macht der Satrapie:</German>
 		<Italian>Il potere della satrapia:</Italian>
 		<Spanish>El poder de la satrap&#237;a:</Spanish>
@@ -700,7 +700,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PLY_TITLE</Tag>
 		<English>The Power of Navigation:</English>
-		<French>The Power of Navigation:</French>
+		<French>Le pouvoir de la navigation :</French>
 		<German>The Power of Navigation:</German>
 		<Italian>The Power of Navigation:</Italian>
 		<Spanish>The Power of Navigation:</Spanish>
@@ -716,7 +716,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
 		<English>The Power of Golden Liberty:</English>
-		<French>The Power of Golden Liberty:</French>
+		<French>Le pouvoir de la Libert&#233; dor&#233;e :</French>
 		<German>Die Macht der Goldenen Freiheit:</German>
 		<Italian>The Power of Golden Liberty:</Italian>
 		<Spanish>The Power of Golden Liberty:</Spanish>
@@ -732,7 +732,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR_TITLE</Tag>
 		<English>The Power of Exploration:</English>
-		<French>Le Pouvoir de l'Exploration :</French>
+		<French>Le pouvoir de l'exploration :</French>
 		<German>Die Macht des Kundschaftens:</German>
 		<Italian>Il potere dell'esplorazione:</Italian>
 		<Spanish>El poder de la exploraci&#243;n:</Spanish>
@@ -748,7 +748,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>
 		<English>The Power of Infrastructure:</English>
-		<French>Le Pouvoir de l'Infrastructure :</French>
+		<French>Le pouvoir de l'infrastructure :</French>
 		<German>Die Macht der Infrastruktur:</German>
 		<Italian>Il potere delle infrastrutture:</Italian>
 		<Spanish>El poder de la infraestructura:</Spanish>
@@ -788,7 +788,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_RUS_TITLE</Tag>
 		<English>The Power of General Winter:</English>
-		<French>Le Pouvoir du G&#233;n&#233;ral Hiver :</French>
+		<French>Le pouvoir du g&#233;n&#233;ral Hiver :</French>
 		<German>Die Macht von "General Winter":</German>
 		<Italian>Il potere del Generale Inverno:</Italian>
 		<Spanish>El poder del General Invierno:</Spanish>
@@ -804,7 +804,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_SPA_TITLE</Tag>
 		<English>The Power of Discovery:</English>
-		<French>Le Pouvoir de la D&#233;couverte :</French>
+		<French>Le pouvoir de la d&#233;couverte :</French>
 		<German>Die Macht der Entdeckungen:</German>
 		<Italian>Il potere della scoperta:</Italian>
 		<Spanish>El poder del descubrimiento:</Spanish>
@@ -820,7 +820,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
-		<French>The Power of Thalassocracy:</French>
+		<French>The pouvoir de la thalassocratie :</French>
 		<German>Die Macht der Thalassokratie:</German>
 		<Italian>The Power of Thalassocracy:</Italian>
 		<Spanish>The Power of Thalassocracy:</Spanish>
@@ -844,7 +844,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>
 		<English>The Power of Father Governs Children:</English>
-		<French>The Power of Father Governs Children:</French>
+		<French>Le pouvoir de la figure paternelle :</French>
 		<German>Die Macht von Vater Regiert Kinder:</German>
 		<Italian>The Power of Father Governs Children:</Italian>
 		<Spanish>The Power of Father Governs Children:</Spanish>
@@ -860,7 +860,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TIB_TITLE</Tag>
 		<English>The Power of Missionaries:</English>
-		<French>The Power of Missionaries:</French>
+		<French>Le pouvoir des missionnaires :</French>
 		<German>Die Macht der Missionare:</German>
 		<Italian>The Power of Missionaries:</Italian>
 		<Spanish>The Power of Missionaries:</Spanish>
@@ -876,7 +876,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR_TITLE</Tag>
 		<English>The Power of Orda:</English>
-		<French>The Power of Orda:</French>
+		<French>Le pouvoir de la horde :</French>
 		<German>Die Macht der Orda:</German>
 		<Italian>The Power of Orda:</Italian>
 		<Spanish>The Power of Orda:</Spanish>
@@ -892,7 +892,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>
 		<English>The Power of Devshirme:</English>
-		<French>Le Pouvoir de l'Assimilation :</French>
+		<French>Le pouvoir du devchirm&#233; :</French>
 		<German>Die Macht der Devshirme:</German>
 		<Italian>Il potere dell'assimilazione:</Italian>
 		<Spanish>El poder de la asimilaci&#243;n:</Spanish>
@@ -908,7 +908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
 		<English>The Power of Raid:</English>
-		<French>Le Pouvoir du Pillage :</French>
+		<French>Le pouvoir du pillage :</French>
 		<German>Die Macht des Raubens:</German>
 		<Italian>Il potere dell'incursione:</Italian>
 		<Spanish>El poder del pillaje:</Spanish>

@@ -333,7 +333,7 @@
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
 		<English>The Great Bath</English>
 		<French>
-			<Text>Les Grands Bains</Text>
+			<Text>Grands Bains</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -345,7 +345,7 @@
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON</Tag>
 		<English>The Great Cothon</English>
 		<French>
-			<Text>Le Grand Cothon</Text>
+			<Text>Grand Cothon</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -785,7 +785,7 @@
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
 		<English>The Grand Canal</English>
 		<French>
-			<Text>Le Grand Canal</Text>
+			<Text>Grand Canal</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1077,7 +1077,7 @@
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX</Tag>
 		<English>Great Sphinx</English>
 		<French>
-			<Text>Le Grand Sphinx</Text>
+			<Text>Grand Sphinx</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
