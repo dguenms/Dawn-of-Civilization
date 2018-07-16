@@ -212,7 +212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI</Tag>
 		<English>Cities keep an additional 25% [ICON_FOOD] after growing</English>
-		<French>Les villes conservent 25% [ICON_FOOD] de plus apr&#232;s la croissance</French>
+		<French>Les villes conservent 25 % [ICON_FOOD] de plus apr&#232;s la croissance</French>
 		<German>St&#228;dte behalten zus&#228;tzliche 25% [ICON_FOOD] nach dem Wachsen</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
@@ -236,7 +236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CONQUESTS_TARGET</Tag>
 		<English>%s1 has fielded an army to conquer our civilization!</English>
-		<French>%s1 a mis en place une arm&#233;e pour conqu&#233;rir notre civilisation!</French>
+		<French>%s1 a lev&#233; une arm&#233;e pour conqu&#233;rir notre civilisation !</French>
 		<German>%s1 hat eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 		<Italian>%s1 has fielded an army to conquer our civilization!</Italian>
 		<Spanish>%s1 has fielded an army to conquer our civilization!</Spanish>
@@ -300,7 +300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA</Tag>
 		<English>Diplomatic penalties expire faster, more likely to be voted for in congresses</English>
-		<French>Les autres civilisations ont une attitude plus amicale</French>
+		<French>Les p&#233;nalit&#233;s diplomatiques expirent plus vite, et les autres civilisations sont plus enclines &#224; voter pour vous lors des congr&#232;s</French>
 		<German>Diplomatische Mali verfallen schneller; h&#246;here Wahrscheinlichkeit, Stimmen in Kongressen zu erhalten</German>
 		<Italian>Le altre civilt&#224; hanno un atteggiamento pi&#249; amichevole</Italian>
 		<Spanish>Las dem&#225;s civilizaciones mantienen una actitud m&#225;s amistosa</Spanish>
@@ -316,7 +316,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GER</Tag>
 		<English>Units retain all their experience when upgraded</English>
-		<French>Units retain all their experience when upgraded</French>
+		<French>Les unit&#233;s conservent toute leur exp&#233;rience lorsqu'elles sont am&#233;lior&#233;es</French>
 		<German>Modernisierte Einheiten behalten ihre gesamte Erfahrung</German>
 		<Italian>Units retain all their experience when upgraded</Italian>
 		<Spanish>Units retain all their experience when upgraded</Spanish>
@@ -332,7 +332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GRE</Tag>
 		<English>+150% Great People birth rate until the end of the Classical Era</English>
-		<French>+150 % Taux de natalit&#233; des personnages illustres jusqu'&#224; la fin du Moyen Age</French>
+		<French>Le taux de natalit&#233; des personnages illustres est augment&#233; de 150 % jusqu'&#224; la fin de l'&#200;re classique</French>
 		<German>+150% Geburtenrate von Gro&#223;en Pers&#246;nlichkeiten bis zum Ende des klassischen Zeitalters</German>
 		<Italian>+150% tasso di natalit&#224; dei Grandi Personaggi fino alla fine del Medioevo</Italian>
 		<Spanish>+100% a la tasa de natalidad de grandes personajes hasta el final de la Edad Media</Spanish>
@@ -340,7 +340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_GREEK_CONQUESTS_TARGET</Tag>
 		<English>The Greeks have fielded an army to conquer our civilization!</English>
-		<French>The Greeks have fielded an army to conquer our civilization!</French>
+		<French>Les Grecs ont lev&#233; une arm&#233;e pour conqu&#233;rir notre civilisation !</French>
 		<German>Die Griechen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 		<Italian>The Greeks have fielded an army to conquer our civilization!</Italian>
 		<Spanish>The Greeks have fielded an army to conquer our civilization!</Spanish>
@@ -356,7 +356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HAR</Tag>
 		<English>Positive health contributes to city growth during the Ancient era</English>
-		<French>Positive health contributes to city growth during the Ancient era</French>
+		<French>Les points de sant&#233; au-dessus de z&#233;ro contribuent &#224; la croissance des villes pendant l'&#200;re antique</French>
 		<German>Positive health contributes to city growth during the Ancient era</German>
 		<Italian>Positive health contributes to city growth during the Ancient era</Italian>
 		<Spanish>Positive health contributes to city growth during the Ancient era</Spanish>
@@ -372,7 +372,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HOL</Tag>
 		<English>Doubled yield and commerce from the trading company corporation</English>
-		<French>Toutes les unit&#233;s en mer peuvent entrer sur un territoire ennemi</French>
+		<French>Les rendements de la Compagnie commerciale sont doubl&#233;s</French>
 		<German>Doppeltes Einkommen durch Handelsgesellschaften</German>
 		<Italian>Tutte le unit&#224; marittime possono entrare in territorio nemico</Italian>
 		<Spanish>Todas las unidades mar&#237;timas pueden entrar en territorio enemigo</Spanish>
@@ -388,7 +388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HRE</Tag>
 		<English>Double construction speed of state religion buildings</English>
-		<French>Double construction speed of state religion buildings</French>
+		<French>La vistesse de construction des b&#226;timents li&#233;s &#224; la religion d'&#201;tat est doubl&#233;e</French>
 		<German>Doppelte Baugeschwindigkeit f&#252;r Geb&#228;ude der Staatsreligion</German>
 		<Italian>Double construction speed of state religion buildings</Italian>
 		<Spanish>Double construction speed of state religion buildings</Spanish>
@@ -412,7 +412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC</Tag>
 		<English>Mountains produce 2 food and 1 hammer</English>
-		<French>Les montagnes produisent 2 de nourriture et 1 marteau</French>
+		<French>Les montagnes produisent 2 nourritures et 1 marteau</French>
 		<German>Berge gew&#228;hren 2 Nahrung und 1 Hammer</German>
 		<Italian>Le montagne producono 2 cibo e 1 scudo</Italian>
 		<Spanish>Las monta&#241;as producen 2 alimentos y 1 martillo</Spanish>
@@ -428,7 +428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND</Tag>
 		<English>One extra [ICON_HEALTHY] for every three excess [ICON_HAPPY]</English>
-		<French>Pas d'anarchie lors des r&#233;volutions</French>
+		<French>Un [ICON_HEALTHY] pour chaque trois [ICON_HAPPY] en exc&#232;s</French>
 		<German>Eine zus&#228;tzliche [ICON_HAPPY] pro zwei &#252;berz&#228;hlige [ICON_HEALTHY]</German>
 		<Italian>Niente anarchia durante le rivoluzioni</Italian>
 		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
@@ -444,7 +444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_INO</Tag>
 		<English>Additional gold from foreign ships passing through your core</English>
-		<French>Additional gold from foreign ships passing through your core</French>
+		<French>Les navires &#233;trangers qui passent par votre c&#339;ur rapportent de l'or additionnel</French>
 		<German>Zus&#228;tzliches Gold von ausl&#228;ndischen Schiffen, die unser Kerngebiet passieren</German>
 		<Italian>Additional gold from foreign ships passing through your core</Italian>
 		<Spanish>Additional gold from foreign ships passing through your core</Spanish>
@@ -460,7 +460,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA</Tag>
 		<English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
-		<French>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</French>
+		<French>Les b&#226;timents religieux produisent +2 [ICON_CULTURE] et +2 [ICON_RESEARCH]</French>
 		<German>Religi&#246;se Geb&#228;ude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
 		<Italian>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</Italian>
 		<Spanish>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</Spanish>
@@ -476,7 +476,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ITA</Tag>
 		<English>Free specialist in all of your cities until the Industrial Age</English>
-		<French>Free specialist in all of your cities until the Industrial Age</French>
+		<French>Un sp&#233;cialiste gratuit par ville jusqu'&#224; l'&#200;re industrielle</French>
 		<German>Zus&#228;tzlicher Spezialist in allen St&#228;dten bis zum Industriezeitalter</German>
 		<Italian>Free specialist in all of your cities until the Industrial Age</Italian>
 		<Spanish>Free specialist in all of your cities until the Industrial Age</Spanish>
@@ -492,7 +492,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_JAP</Tag>
 		<English>After discovering all medieval techs, every tech three other civilizations are willing to trade costs -50% [ICON_RESEARCH]</English>
-		<French>Toutes les unit&#233;s terrestres ont un bonus de d&#233;fense des villes</French>
+		<French>Apr&#232;s avoir d&#233;couvert toutes les technologies m&#233;di&#233;vales, chaque technologie co&#251;te -50 % [ICON_RESEARCH] si trois civilisations sont dispos&#233;es &#224; l'&#233;changer</French>
 		<German>Nachdem alle Technologien des Mittelalters entdeckt wurden, kostet jede Technologie -50% [ICON_RESEARCH], die drei andere Zivilisationen zu tauschen bereit sind</German>
 		<Italian>Tutte le unit&#224; militari terrestri hanno un bonus in difesa delle citt&#224;</Italian>
 		<Spanish>Todas las unidades militares terrestres tienen una bonificaci&#243;n al defender ciudades</Spanish>
@@ -508,7 +508,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHM</Tag>
 		<English>All land units can move through jungles and rainforests, can build farms on rainforest</English>
-		<French>Toutes les unit&#233;s terrestres peuvent se d&#233;placer &#224; travers la jungle</French>
+		<French>Toutes les unit&#233;s terrestres peuvent se d&#233;placer &#224; travers la jungle, et les fermes peuvent &#234;tre construites dans la for&#234;t tropicale</French>
 		<German>Landeinheiten k&#246;nnen Dschungel und Regenwald durchqueren, kann Farmen in Regenwald errichten</German>
 		<Italian>Tutte le unit&#224; di terra si possono muovere attraverso la giungla</Italian>
 		<Spanish>Todas las unidades terrestres se pueden mover a trav&#233;s de las junglas</Spanish>
@@ -524,7 +524,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CON</Tag>
 		<English>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</English>
-		<French>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</French>
+		<French>Les jungles, les for&#234;ts tropicales et les mar&#233;cages rapportent de la nourriture et de la production, et ne causent pas de maladie</French>
 		<German>Dschungel, Regenw&#228;lder und Marschen geben zus&#228;tzliche Nahrung und Produktion und verursachen keine Krankheit</German>
 		<Italian>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</Italian>
 		<Spanish>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</Spanish>
@@ -540,7 +540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>
 		<English>Free Drill I and Drill II promotions for all naval units</English>
-		<French>Free Drill I and Drill II promotions for all naval units</French>
+		<French>Promotions DRILL I et DRILL II gratuites pour les unit&#233;s navales</French>
 		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Bef&#246;rderung</German>
 		<Italian>Free Drill I and Drill II promotions for all naval units</Italian>
 		<Spanish>Free Drill I and Drill II promotions for all naval units</Spanish>
@@ -556,7 +556,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL</Tag>
 		<English>+1 commerce in every land plot</English>
-		<French>+1 commerce sur toutes les cases de terre</French>
+		<French>+1 commerce sur toutes les cases terrestres</French>
 		<German>+1 Kommerz auf jedem Land-Gel&#228;ndefeld</German>
 		<Italian>+1 commercio in ogni casella di terra</Italian>
 		<Spanish>+1 intercambio en cada casilla de tierra</Spanish>
@@ -572,7 +572,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
 		<English>-50% research cost until beginning of the Middle Ages</English>
-		<French>-50% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
+		<French>-50 % sur les co&#251;ts de recherche jusqu'au d&#233;but du Moyen &#194;ge</French>
 		<German>-50% Forschungskosten bis zum Anfang des Mittelalters</German>
 		<Italian>-50% ai costi di ricerca fino alla fine del Medioevo</Italian>
 		<Spanish>-50% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
@@ -588,7 +588,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX</Tag>
 		<English>Can build farms on hills</English>
-		<French>Can build farms on hills</French>
+		<French>Les fermes peuvent &#234;tres construites sur les collines</French>
 		<German>Kann Farmen auf H&#252;geln errichten</German>
 		<Italian>Can build farms on hills</Italian>
 		<Spanish>Can build farms on hills</Spanish>
@@ -604,7 +604,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MON</Tag>
 		<English>Cities threatened by your armies descend into unrest</English>
-		<French>Chaque ville ras&#233;e entra&#238;ne la reddition des villes ennemies voisines si elles sont approch&#233;es</French>
+		<French>Les villes menac&#233;es par vos arm&#233;es deviennent agit&#233;es</French>
 		<German>Von Ihren Streitkr&#228;ften bedrohte St&#228;dte verfallen in Unruhe</German>
 		<Italian>Ogni citt&#224; distrutta fa s&#236; che le citt&#224; nemiche vicine si arrendano, se avvicinate</Italian>
 		<Spanish>Una ciudad arrasada provoca que las ciudades enemigas cercanas se rindan al aproximarse</Spanish>
@@ -612,7 +612,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_HORDE</Tag>
 		<English>Your successful conquests have made your horde grow!</English>
-		<French>Your successful conquests have made your horde grow!</French>
+		<French>Vos succ&#232;s de conqu&#234;te ont fait grandir votre horde !</French>
 		<German>Eure erfolgreichen Eroberungen haben Eure Horde wachsen lassen!</German>
 		<Italian>Your successful conquests have made your horde grow!</Italian>
 		<Spanish>Your successful conquests have made your horde grow!</Spanish>
@@ -620,7 +620,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_TERROR</Tag>
 		<English>The citizens of %s1 tremble in fear before our approaching armies!</English>
-		<French>The citizens of %s1 tremble in fear before our approaching armies!</French>
+		<French>Les habitants de %s1 tremblent de peur &#224; l'approche de nos arm&#233;es !</French>
 		<German>Die B&#252;rger von %s1 erzittern vor Furcht vor unseren anr&#252;ckenden Truppen!</German>
 		<Italian>The citizens of %s1 tremble in fear before our approaching armies!</Italian>
 		<Spanish>The citizens of %s1 tremble in fear before our approaching armies!</Spanish>
@@ -628,7 +628,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_TERROR_US</Tag>
 		<English>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</English>
-		<French>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</French>
+		<French>Effray&#233;s par l'approche des arm&#233;es mongoles, les habitants de %s1 ont abandonn&#233; leurs d&#233;fenses !</French>
 		<German>Aus Furcht vor den anr&#252;ckenden mongolischen Armeen haben die B&#252;rger von %s1 ihre Stellungen aufgegeben!</German>
 		<Italian>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</Italian>
 		<Spanish>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</Spanish>
@@ -660,7 +660,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO</Tag>
 		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
-		<French>Improvements that yield food give one extra food on plains tiles until the Renaissance</French>
+		<French>Sur les cases de plaines, les am&#233;liorations qui rapportent de la nourriture en rapportent une de plus jusqu'&#224; la Renaissance</French>
 		<German>Verbesserungen, die Nahrung produzieren, geben eine zus&#228;tzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
 		<Italian>Improvements that yield food give one extra food on plains tiles until the Renaissance</Italian>
 		<Spanish>Improvements that yield food give one extra food on plains tiles until the Renaissance</Spanish>
@@ -676,7 +676,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MUG</Tag>
 		<English>Cities receive half the construction cost as culture after a building is completed</English>
-		<French>Cities receive half the construction cost as culture after a building is completed</French>
+		<French>Au moment de compl&#233;ter un b&#226;timent, les villes re&#231;oivent en culture la moiti&#233; du co&#251;t de construction</French>
 		<German>Städte erhalten die Hälfte der Baukosten als Kultur, wenn ein Gebäude errichtet wird</German>
 		<Italian>Cities receive half the construction cost as culture after a building is completed</Italian>
 		<Spanish>Cities receive half the construction cost as culture after a building is completed</Spanish>
@@ -692,7 +692,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PER</Tag>
 		<English>Additional stability for recently conquered cities</English>
-		<French>Additional stability for recently conquered cities</French>
+		<French>Stabilit&#233; additionnelle pour les villes r&#233;cemment conquises</French>
 		<German>Zusätzliche Stabilität für kürzlich eroberte Städte</German>
 		<Italian>Additional stability for recently conquered cities</Italian>
 		<Spanish>Additional stability for recently conquered cities</Spanish>
@@ -708,7 +708,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_PLY</Tag>
 		<English>No penalties for cultural expansion over Ocean tiles</English>
-		<French>No penalties for cultural expansion over Ocean tiles</French>
+		<French>Pas de p&#233;nalit&#233; pour l'expansion culturelle sur les cases d'oc&#233;an</French>
 		<German>No penalties for cultural expansion over Ocean tiles</German>
 		<Italian>No penalties for cultural expansion over Ocean tiles</Italian>
 		<Spanish>No penalties for cultural expansion over Ocean tiles</Spanish>
@@ -724,7 +724,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL</Tag>
 		<English>Additional food and commerce during Golden Ages</English>
-		<French>Additional food and commerce during Golden Ages</French>
+		<French>Les &#226;ges d'or rapportent davantage de nourriture et de commerce</French>
 		<German>Zus&#228;tzliche Nahrung und Kommerz durch Goldene Zeitalter</German>
 		<Italian>Additional food and commerce during Golden Ages</Italian>
 		<Spanish>Additional food and commerce during Golden Ages</Spanish>
@@ -740,7 +740,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR</Tag>
 		<English>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</English>
-		<French>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</French>
+		<French>Le commerce transoc&#233;anique est permis avec la Cartographie, et l'instabilit&#233; caus&#233;e par les colonies d'outre-mer est r&#233;duite</French>
 		<German>Ozeanhandel erm&#246;glicht durch Kartographie, verringerte Instabilit&#228;t durch &#220;bersee-Kolonien</German>
 		<Italian>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</Italian>
 		<Spanish>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</Spanish>
@@ -756,7 +756,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM</Tag>
 		<English>Buildings that already exist in your capital receive +30% construction speed.</English>
-		<French>Les routes &#224; l'int&#233;rieur des fronti&#232;res romaines permettent aux unit&#233;s un mouvement 4X au lieu de 2X.</French>
+		<French>Les b&#226;timents d&#233;j&#224; pr&#233;sents dans votre capitale sont construits 30 % plus vite</French>
 		<German>Geb&#228;ude, die bereits in der Hauptstadt errichtet wurden, erhalten +30% Baugeschwindigkeit.</German>
 		<Italian>Le strade all'interno dei confini romani permettono movimento delle unit&#224; 4X invece di 2X</Italian>
 		<Spanish>Las carreteras dentro de las fronteras romanas permiten un movimiento de unidades multiplicado x4 en lugar de x2</Spanish>
@@ -764,7 +764,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS</Tag>
 		<English>An army has been fielded to attack %s1_civ_adjective!</English>
-		<French>An army has been fielded to attack %s1_civ_adjective!</French>
+		<French>Une arm&#233;e a &#233;t&#233; lev&#233;e pour attaquer %s1_civ_adjective !</French>
 		<German>Eine Armee wurde zusammengestellt zum Angriff auf %s1_civ_adjective!</German>
 		<Italian>An army has been fielded to attack %s1_civ_adjective!</Italian>
 		<Spanish>An army has been fielded to attack %s1_civ_adjective!</Spanish>
@@ -772,7 +772,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS_TARGET</Tag>
 		<English>The Romans have fielded an army to conquer our civilization!</English>
-		<French>The Romans have fielded an army to conquer our civilization!</French>
+		<French>Les Romains ont lev&#233; une arm&#233;e pour conqu&#233;rir notre civilisation !</French>
 		<German>Die R&#246;mer haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 		<Italian>The Romans have fielded an army to conquer our civilization!</Italian>
 		<Spanish>The Romans have fielded an army to conquer our civilization!</Spanish>
@@ -780,7 +780,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_TRIUMPH</Tag>
 		<English>Your triumphant victories have enabled you to field another legion!</English>
-		<French>Your triumphant victories have enabled you to field another legion!</French>
+		<French>Vos victoires triomphantes vous ont permis de lever une autre l&#233;gion !</French>
 		<German>Eure triumphalen Siege haben Euch erm&#246;glicht, eine weitere Legion auszuheben!</German>
 		<Italian>Your triumphant victories have enabled you to field another legion!</Italian>
 		<Spanish>Your triumphant victories have enabled you to field another legion!</Spanish>
@@ -828,7 +828,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAM</Tag>
 		<English>Extra commerce on coast and ocean tiles</English>
-		<French>Extra commerce on coast and ocean tiles</French>
+		<French>Les cases d'oc&#233;an rapportent du commerce suppl&#233;mentaire</French>
 		<German>Zus&#228;tzlicher Kommerz auf K&#252;sten- und Ozeanfeldern</German>
 		<Italian>Extra commerce on coast and ocean tiles</Italian>
 		<Spanish>Extra commerce on coast and ocean tiles</Spanish>
@@ -836,7 +836,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAMIL_CONQUESTS_TARGET</Tag>
 		<English>The Tamils have fielded an army to conquer our civilization!</English>
-		<French>The Tamils have fielded an army to conquer our civilization!</French>
+		<French>Les Tamouls ont lev&#233; une arm&#233;e pour conqu&#233;rir notre civilisation !</French>
 		<German>Die Tamilen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 		<Italian>The Tamils have fielded an army to conquer our civilization!</Italian>
 		<Spanish>The Tamils have fielded an army to conquer our civilization!</Spanish>
@@ -852,7 +852,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA</Tag>
 		<English>+1 Commerce per Excess Happiness</English>
-		<French>+1 Commerce per Excess Happiness</French>
+		<French>+1 commerce par [ICON_HAPPY] en exc&#232;s</French>
 		<German>+1 Kommerz pro überzählige Zufriedenheit</German>
 		<Italian>+1 Commerce per Excess Happiness</Italian>
 		<Spanish>+1 Commerce per Excess Happiness</Spanish>
@@ -868,7 +868,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TIB</Tag>
 		<English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
-		<French>Can train unlimited missionaries; Missionaries can enter foreign territory</French>
+		<French>Pas de limite de missionnaires ; les missionnaires peuvent entrer en territoire &#233;tranger</French>
 		<German>Kann unbegrenzt Missionare ausbilden; Missionare k&#246;nnen fremdes Territorium betreten</German>
 		<Italian>Can train unlimited missionaries; Missionaries can enter foreign territory</Italian>
 		<Spanish>Can train unlimited missionaries; Missionaries can enter foreign territory</Spanish>
@@ -884,7 +884,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR</Tag>
 		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</English>
-		<French>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</French>
+		<French>En temps de paix, les barbares ne peuvent pas entrer dans votre territoire ; en temps de guerre, les barbares mont&#233;s se joignent &#224; votre arm&#233;e si vous les attaquez</French>
 		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren werden in Kriegszeiten Ihren Armeen beitreten</German>
 		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Italian>
 		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Spanish>
@@ -900,7 +900,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT</Tag>
 		<English>Can Conscript two extra Units in Cities with Non-State Religions</English>
-		<French>La plus grande partie de la culture &#233;trang&#232;re dans les villes turques est convertie &#224; la culture turque</French>
+		<French>Vous pouvez enr&#244;ler deux unit&#233;s suppl&#233;mentaires dans les villes adeptes de religions autres que la religion d'&#201;tat</French>
 		<German>Kann zwei zus&#228;tzliche Einheiten in St&#228;dten mit Nicht-Staatsreligionen rekrutieren</German>
 		<Italian>La maggioranza di cultura straniera nelle citt&#224; turche &#232; convertita in cultura turca</Italian>
 		<Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>
@@ -916,7 +916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK</Tag>
 		<English>Additional gold from pillaging, conquering cities and sinking ships during the Middle Ages</English>
-		<French>5X Or obtenu par le pillage</French>
+		<French>Piller, conqu&#233;rir des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
 		<German>Zus&#228;tzliches gold durch Pl&#252;nderung, Stadteroberung und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
