@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ACADEMIA</Tag>
 		<English>Academia</English>
-		<French>Academia</French>
+		<French>
+			<Text>Universit&#233;</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Academia</German>
 		<Italian>Academia</Italian>
 		<Spanish>Academia</Spanish>
@@ -12,7 +16,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ACADEMIA_QUOTE</Tag>
 		<English>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</English>
-		<French>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</French>
+		<French>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristote, &#201;thique &#224; Nicomaque</French>
 		<German>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</German>
 		<Italian>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</Italian>
 		<Spanish>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</Spanish>
@@ -29,7 +33,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AERODYNAMICS</Tag>
 		<English>Aerodynamics</English>
-		<French>Aerodynamics</French>
+		<French>
+			<Text>A&#233;rodynamique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aerodynamics</German>
 		<Italian>Aerodynamics</Italian>
 		<Spanish>Aerodynamics</Spanish>
@@ -128,7 +136,7 @@
 		<English>Alchemy</English>
 		<French>
 			<Text>Alchimie</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -150,7 +158,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALCHEMY_QUOTE</Tag>
 		<English>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</English>
-		<French>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</French>
+		<French>"Ainsi tout est reli&#233;, le ciel et la terre, l'air et l'eau. Tous ne sont qu'une chose, pas quatre, pas deux ni trois, mais une. L&#224; o&#249; ils ne sont pas tous ensembles, ce n'est qu'un morceau incomplet."[PARAGRAPH:2]- Paracelsus</French>
 		<German>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</German>
 		<Italian>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Italian>
 		<Spanish>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Spanish>
@@ -170,6 +178,11 @@
 		<Tag>TXT_KEY_TECH_ALLOYS</Tag>
 		<English>Alloys</English>
 		<French>Alloys</French>
+		<French>
+			<Text>Alliages</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Alloys</German>
 		<Italian>Alloys</Italian>
 		<Spanish>Alloys</Spanish>
@@ -187,7 +200,7 @@
 		<English>Evidence of the use of bronze, an alloy of copper and tin, dates back to Thailand in 4500 BC. Several hundred years later, bronze working was discovered in the Middle East. Artifacts from this period show that bronze was initially used for decorative purposes only. This is because tin was not readily available. It wasn't until approximately 2000 BC, when tin was regularly imported from neighboring regions, that bronze replaced copper in the construction of larger items. Bronze was harder and less brittle than copper, and it held a sharper edge. Tools, weapons, and armor made from bronze were also cheaper to produce and more durable. The period of time when bronze was the metal of choice for such items was known as the Bronze Age. The Bronze Age lasted until iron working became prevalent in approximately 1200 BC.</English>
 		<French>L'utilisation du bronze, un alliage de cuivre et d'&#233;tain, remonte au moins &#224; 4 500 av. J.-C., en Tha&#239;lande. Des si&#232;cles plus tard, le travail du bronze a &#233;t&#233; d&#233;couvert au Moyen-Orient. Les objets datant de cette p&#233;riode montrent que le bronze &#233;tait uniquement utilis&#233; &#224; l'origine dans un but d&#233;coratif. Il rempla&#231;ait l'&#233;tain, plus difficile &#224; obtenir. Ce n'est que vers 2 000 av. J.-C., quand l'&#233;tain a &#233;t&#233; r&#233;guli&#232;rement import&#233; des r&#233;gions voisines, que le bronze a remplac&#233; le cuivre dans la fabrication d'objets de plus grande taille. Le bronze &#233;tait plus solide et moins cassant que le cuivre et permettait de produire des lames plus tranchantes. Les outils, armes, et armures en bronze &#233;taient aussi moins chers &#224; produire et plus r&#233;sistants. La p&#233;riode au cours de laquelle le bronze a &#233;t&#233; le m&#233;tal privil&#233;gi&#233; pour ce genre d'objets est connue sous le nom de l'Age de Bronze, p&#233;riode qui a perdur&#233; jusqu'au d&#233;veloppement du travail de fer, vers 1 200 av. J.-C..</French>
 		<German>Es wird vermutet, dass Bronze, eine Legierung aus Kupfer und Zinn, bereits im Jahre 4500 vor Christus in Thailand verwendet wurde. Mehrere Jahrhunderte sp&#228;ter wurde die Bronzeverarbeitung im Nahen Osten entdeckt. Kunstwerke dieser Periode zeigen, dass Bronze anfangs nur zu Dekorationszwecken genutzt wurde, weil Zinn schwer zu beschaffen war. Erst um etwa 2000 vor Christus wurde Zinn regelm&#228;&#223;ig von den benachbarten L&#228;ndern importiert. In der Folgezeit wurde das bis dahin verwendete Kupfer bei der Herstellung gr&#246;&#223;erer Objekte durch Bronze ersetzt, die h&#228;rter und weniger spr&#246;de war als Kupfer, so dass sich damit sch&#228;rfere Kanten formen lie&#223;en - dar&#252;ber hinaus waren Werkzeuge, Waffen und R&#252;stungen aus Bronze auch preiswerter und langlebiger. Die Zeit, in der Bronze das bevorzugte Metall f&#252;r die Fertigung dieser Ger&#228;te war, ist als Bronzezeitalter bekannt. Diese Periode dauerte bis etwa 1200 vor Christus, als das noch hochwertigere Eisen verf&#252;gbar wurde.</German>
-		<Italian>Le prime testimonianze sull'uso del bronzo, una lega di rame e stagno, risalgono alla Thailandia del 4500 a. C. Diversi secoli pi˘ tardi, la lavorazione del bronzo venne scoperta nel Medio Oriente. Gli oggetti risalenti a questo periodo dimostrano che il bronzo veniva inizialmente utilizzato solo a scopo decorativo, questo perchÈ lo stagno non era facilmente reperibile. Bisogner‡ aspettare pi˘ o meno il 2000 a. C. perchÈ, con l'importazione regolare di stagno dalle regioni confinanti, il bronzo sostituisca il rame nella fabbricazione di oggetti pi˘ grandi, offrendo anche una maggior resistenza rispetto al rame e la possibilit‡ di produrre punte pi˘ acuminate. Strumenti, armi e armature di bronzo erano anche meno costosi da realizzare e pi˘ duraturi. Il periodo di tempo in cui si preferiva il bronzo per tali prodotti Ë noto come l'Et‡ del Bronzo, che durÚ fino al 1200 a. C. circa, quando fu soppiantato dalla lavorazione del ferro.</Italian>
+		<Italian>Le prime testimonianze sull'uso del bronzo, una lega di rame e stagno, risalgono alla Thailandia del 4500 a. C. Diversi secoli piÔøΩ tardi, la lavorazione del bronzo venne scoperta nel Medio Oriente. Gli oggetti risalenti a questo periodo dimostrano che il bronzo veniva inizialmente utilizzato solo a scopo decorativo, questo perchÔøΩ lo stagno non era facilmente reperibile. BisognerÔøΩ aspettare piÔøΩ o meno il 2000 a. C. perchÔøΩ, con l'importazione regolare di stagno dalle regioni confinanti, il bronzo sostituisca il rame nella fabbricazione di oggetti piÔøΩ grandi, offrendo anche una maggior resistenza rispetto al rame e la possibilitÔøΩ di produrre punte piÔøΩ acuminate. Strumenti, armi e armature di bronzo erano anche meno costosi da realizzare e piÔøΩ duraturi. Il periodo di tempo in cui si preferiva il bronzo per tali prodotti ÔøΩ noto come l'EtÔøΩ del Bronzo, che durÔøΩ fino al 1200 a. C. circa, quando fu soppiantato dalla lavorazione del ferro.</Italian>
 		<Spanish>Las primeras evidencias del uso del bronce, una aleaci&#243;n de cobre y esta&#241;o, se remontan al a&#241;o 4500 a. C. en Tailandia. Varios siglos despu&#233;s, se descubri&#243; la forja del bronce en Oriente Medio. Los artefactos de este periodo demuestran que inicialmente el bronce solo se usaba con fines decorativos, debido a que el esta&#241;o escaseaba. No fue hasta aproximadamente el a&#241;o 2000 a. C., con la importaci&#243;n regular de esta&#241;o de regiones vecinas, que el bronce sustituy&#243; al cobre en la fabricaci&#243;n de objetos grandes. El bronce era m&#225;s duro y menos quebradizo que el cobre, y se pod&#237;a afilar mejor. Las armas y armaduras hechas de bronce tambi&#233;n eran m&#225;s baratas de producir, y m&#225;s resistentes. El periodo que hizo del bronce el metal preferido para dichos objetos se conoce como Edad del Bronce, y dur&#243; hasta el triunfo de la forja del hierro, en torno al 1200 a. C.</Spanish>
 	</TEXT>
 
@@ -198,7 +211,7 @@
 		<English>Architecture</English>
 		<French>
 			<Text>Architecture</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -220,7 +233,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARCHITECTURE_QUOTE</Tag>
 		<English>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</English>
-		<French>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</French>
+		<French>"Dans l‚Äô&#233;difice, la fiert&#233;, la victoire sur la lourdeur, la volont&#233; de puissance doivent &#234;tre rendues visibles : l‚Äôarchitecture est une sorte d‚Äô&#233;loquence du pouvoir par les formes."[PARAGRAPH:2]- Friedrich Nietzsche, Le Cr&#233;puscule des idoles</French>
 		<German>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</German>
 		<Italian>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</Italian>
 		<Spanish>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</Spanish>
@@ -239,7 +252,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARITHMETICS</Tag>
 		<English>Arithmetics</English>
-		<French>Arithmetics</French>
+		<French>
+			<Text>Arithm&#233;tique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Arithmetics</German>
 		<Italian>Arithmetics</Italian>
 		<Spanish>Arithmetics</Spanish>
@@ -247,7 +264,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARITHMETICS_QUOTE</Tag>
 		<English>"All things are numbers."[PARAGRAPH:2]- Pythagoras</English>
-		<French>"All things are numbers."[PARAGRAPH:2]- Pythagoras</French>
+		<French>"Tout est nombre."[PARAGRAPH:2]- Pythagore</French>
 		<German>"All things are numbers."[PARAGRAPH:2]- Pythagoras</German>
 		<Italian>"All things are numbers."[PARAGRAPH:2]- Pythagoras</Italian>
 		<Spanish>"All things are numbers."[PARAGRAPH:2]- Pythagoras</Spanish>
@@ -266,7 +283,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE</Tag>
 		<English>Artificial Intelligence</English>
-		<French>Artificial Intelligence</French>
+		<French>
+			<Text>Intelligence artificielle</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Artificial Intelligence</German>
 		<Italian>Artificial Intelligence</Italian>
 		<Spanish>Artificial Intelligence</Spanish>
@@ -274,7 +295,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_QUOTE</Tag>
 		<English>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</English>
-		<French>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</French>
+		<French>"Le myst&#232;re qui entoure une machine pensante entoure d&#233;j&#224; l'homme pensant."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</French>
 		<German>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</German>
 		<Italian>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</Italian>
 		<Spanish>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</Spanish>
@@ -293,7 +314,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTISANRY</Tag>
 		<English>Artisanry</English>
-		<French>Artisanry</French>
+		<French>
+			<Text>Artisanat</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Artisanry</German>
 		<Italian>Artisanry</Italian>
 		<Spanish>Artisanry</Spanish>
@@ -301,7 +326,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTISANRY_QUOTE</Tag>
 		<English>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</English>
-		<French>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</French>
+		<French>"Bien qu‚Äôon ait du c&#339;ur &#224; l‚Äôouvrage, L‚ÄôArt est long et le Temps est court."[PARAGRAPH:2]- Charles Baudelaire, Le Guignon</French>
 		<German>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</German>
 		<Italian>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</Italian>
 		<Spanish>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</Spanish>
@@ -355,7 +380,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NAVIGATION</Tag>
 		<English>Navigation</English>
-		<French>Navigation</French>
+		<French>
+			<Text>Navigation</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Navigation</German>
 		<Italian>Navigazione</Italian>
 		<Spanish>Navegaci&#243;n</Spanish>
@@ -363,7 +392,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
 		<English>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</English>
-		<French>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</French>
+		<French>"Les vents et les flots sont toujours du c&#244;t&#233; des navigateurs les plus habiles."[PARAGRAPH:2]- Edward Gibbon, Histoire de la d&#233;cadence et de la chute de l‚ÄôEmpire romain</French>
 		<German>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</German>
 		<Italian>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</Italian>
 		<Spanish>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</Spanish>
@@ -382,7 +411,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOGRAPHY</Tag>
 		<English>Geography</English>
-		<French>Geography</French>
+		<French>
+			<Text>G&#233;ographie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Geography</German>
 		<Italian>Geography</Italian>
 		<Spanish>Geography</Spanish>
@@ -409,7 +442,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ATOMIC_PHYSICS</Tag>
 		<English>Atomic Physics</English>
-		<French>Atomic Physics</French>
+		<French>Physique atomique</French>
 		<German>Atomic Physics</German>
 		<Italian>Atomic Physics</Italian>
 		<Spanish>Atomic Physics</Spanish>
@@ -436,7 +469,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AUTOMATION</Tag>
 		<English>Automation</English>
-		<French>Automation</French>
+		<French>
+			<Text>Automatisation</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Automation</German>
 		<Italian>Automation</Italian>
 		<Spanish>Automation</Spanish>
@@ -490,7 +527,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AVIATION</Tag>
 		<English>Aviation</English>
-		<French>Aviation</French>
+		<French>
+			<Text>Aviation</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aviation</German>
 		<Italian>Aviation</Italian>
 		<Spanish>Aviation</Spanish>
@@ -517,7 +558,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BALLISTICS</Tag>
 		<English>Ballistics</English>
-		<French>Ballistics</French>
+		<French>
+			<Text>Balistique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ballistics</German>
 		<Italian>Ballistics</Italian>
 		<Spanish>Ballistics</Spanish>
@@ -544,7 +589,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BLOOMERY</Tag>
 		<English>Bloomery</English>
-		<French>Bloomery</French>
+		<French>
+			<Text>Bas fourneau</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bloomery</German>
 		<Italian>Bloomery</Italian>
 		<Spanish>Bloomery</Spanish>
@@ -598,7 +647,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOTECHNOLOGY</Tag>
 		<English>Biotechnology</English>
-		<French>Biotechnology</French>
+		<French>
+			<Text>Biotechnologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Biotechnology</German>
 		<Italian>Biotechnology</Italian>
 		<Spanish>Biotechnology</Spanish>
@@ -606,7 +659,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOTECHNOLOGY_QUOTE</Tag>
 		<English>"The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of star stuff."[PARAGRAPH:2]- Carl Sagan, Cosmos</English>
-		<French>"The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of star stuff."[PARAGRAPH:2]- Carl Sagan, Cosmos</French>
+		<French>"L'azote dans notre ADN, le calcium de nos dents, le fer dans le sang, le carbone dans nos tartes aux pommes ont &#233;t&#233; faits &#224; l'int&#233;rieur d'&#233;toiles qui se sont effondr&#233;es. Nous sommes faits de poussi&#232;res d'&#233;toiles."[PARAGRAPH:2]- Carl Sagan, Cosmos</French>
 		<German>"The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of star stuff."[PARAGRAPH:2]- Carl Sagan, Cosmos</German>
 		<Italian>"The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of star stuff."[PARAGRAPH:2]- Carl Sagan, Cosmos</Italian>
 		<Spanish>"The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of star stuff."[PARAGRAPH:2]- Carl Sagan, Cosmos</Spanish>
@@ -649,7 +702,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CALENDAR_QUOTE</Tag>
 		<English>"For everything there is a season and a time for every purpose under heaven."[PARAGRAPH:2]- The Bible, Ecclesiastes</English>
-		<French>"A toute chose sa saison, et &#224; toute affaire sous les cieux, son temps."[PARAGRAPH:2]- Le livre de l'Eccl&#233;siaste</French>
+		<French>"&#192; toute chose sa saison, et &#224; toute affaire sous les cieux, son temps."[PARAGRAPH:2]- La Bible, L'Eccl&#233;siaste</French>
 		<German>"F&#252;r alles gibt es eine Stunde. Und f&#252;r jedes Vorhaben unter dem Himmel eine Zeit."[PARAGRAPH:2]- Ekklesiastes</German>
 		<Italian>"Esistono una stagione e un tempo per ogni cosa."[PARAGRAPH:2]- Ecclesiaste</Italian>
 		<Spanish>"Todo tiene su tiempo, y todo cuanto se hace bajo el sol tiene su hora."[PARAGRAPH:2]- La Biblia, Eclesiast&#233;s</Spanish>
@@ -661,12 +714,12 @@
 		<Tag>TXT_KEY_TECH_CARTOGRAPHY</Tag>
 		<English>Cartography</English>
 		<French>
-			<Text>Carthographie</Text>
+			<Text>Cartographie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Karthografie</Text>
+			<Text>Kartografie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -676,7 +729,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>CartografÌa</Text>
+			<Text>CartografÔøΩa</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -684,7 +737,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CARTOGRAPHY_QUOTE</Tag>
 		<English>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</English>
-		<French>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</French>
+		<French>"Tout ceux qui errent ne sont pas perdus."[PARAGRAPH:2]- J. R. R. Tolkien, Le Seigneur des anneaux</French>
 		<German>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</German>
 		<Italian>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</Italian>
 		<Spanish>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</Spanish>
@@ -703,7 +756,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CEREMONY</Tag>
 		<English>Ceremony</English>
-		<French>Ceremony</French>
+		<French>
+			<Text>C&#233;r&#233;monie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ceremony</German>
 		<Italian>Ceremony</Italian>
 		<Spanish>Ceremony</Spanish>
@@ -711,7 +768,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CEREMONY_QUOTE</Tag>
 		<English>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</English>
-		<French>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</French>
+		<French>"Si le prince dirige le peuple par la Vertu et fait r&#233;gner l‚Äôunion gr&#226;ce aux rites, le peuple a honte de mal faire, et devient vertueux."[PARAGRAPH:2]- Confucius</French>
 		<German>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</German>
 		<Italian>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</Italian>
 		<Spanish>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</Spanish>
@@ -730,7 +787,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CHARITY</Tag>
 		<English>Charity</English>
-		<French>Charity</French>
+		<French>Charit&#233;</French>
 		<German>Charity</German>
 		<Italian>Charity</Italian>
 		<Spanish>Charity</Spanish>
@@ -792,7 +849,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_LIBERTIES</Tag>
 		<English>Civil Liberties</English>
-		<French>Civil Liberties</French>
+		<French>
+			<Text>Libert&#233;s civiles</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Civil Liberties</German>
 		<Italian>Civil Liberties</Italian>
 		<Spanish>Civil Liberties</Spanish>
@@ -819,7 +880,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_RIGHTS</Tag>
 		<English>Civil Rights</English>
-		<French>Civil Rights</French>
+		<French>
+			<Text>Droits civiques</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Civil Rights</German>
 		<Italian>Civil Rights</Italian>
 		<Spanish>Civil Rights</Spanish>
@@ -827,7 +892,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_RIGHTS_QUOTE</Tag>
 		<English>"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character."[PARAGRAPH:2]- Martin Luther King Jr.</English>
-		<French>"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character."[PARAGRAPH:2]- Martin Luther King Jr.</French>
+		<French>"Je r&#234;ve que mes quatre jeunes enfants vivront un jour dans une nation o&#249; ils ne seront pas jug&#233;s par la couleur de leur peau, mais &#224; la mesure de leur caract&#232;re."[PARAGRAPH:2]- Martin Luther King Jr.</French>
 		<German>"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character."[PARAGRAPH:2]- Martin Luther King Jr.</German>
 		<Italian>"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character."[PARAGRAPH:2]- Martin Luther King Jr.</Italian>
 		<Spanish>"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character."[PARAGRAPH:2]- Martin Luther King Jr.</Spanish>
@@ -847,7 +912,7 @@
 		<Tag>TXT_KEY_TECH_CIVIL_SERVICE</Tag>
 		<English>Civil Service</English>
 		<French>
-			<Text>Administration</Text>
+			<Text>Administration publique</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -870,7 +935,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_SERVICE_QUOTE</Tag>
 		<English>"The bureaucracy is expanding to meet the needs of the expanding bureaucracy."[PARAGRAPH:2]- Oscar Wilde</English>
-		<French>"La bureaucratie grandit pour r&#233;pondre aux besoins croissants de la bureaucratie grandissante."[PARAGRAPH:2]- Inconnu</French>
+		<French>"La bureaucratie grandit pour r&#233;pondre aux besoins croissants de la bureaucratie grandissante."[PARAGRAPH:2]- Oscar Wilde</French>
 		<German>"Die B&#252;rokratie wurde erfunden, um die Bed&#252;rfnisse der B&#252;rokratie zu stillen."[PARAGRAPH:2]- Unbekannt</German>
 		<Italian>"La burocrazia si espande per soddisfare i bisogni di una burocrazia in espansione."[PARAGRAPH:2]- Anonimo</Italian>
 		<Spanish>"La burocracia se expande para satisfacer las necesidades de una burocracia en expansi&#243;n."[PARAGRAPH:2]- An&#243;nimo</Spanish>
@@ -881,7 +946,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMBINED_ARMS</Tag>
 		<English>Combined Arms</English>
-		<French>Combined Arms</French>
+		<French>
+			<Text>Armes combin&#233;es</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Combined Arms</German>
 		<Italian>Combined Arms</Italian>
 		<Spanish>Combined Arms</Spanish>
@@ -889,14 +958,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMBINED_ARMS_QUOTE</Tag>
 		<English>"The whole is greater than the sum of its parts."[PARAGRAPH:2]- Aristotle, Metaphysics</English>
-		<French>"La totalit&#233; est plus que la somme des parties." - Aristote</French>
+		<French>"La totalit&#233; est plus que la somme des parties."[PARAGRAPH:2]- Aristote, M&#233;taphysique</French>
 		<German>"Das Ganze ist mehr als die Summe seiner Teile." - Aristoteles</German>
 		<Italian>"Il risultato &#232; migliore della somma delle sue parti." - Aristotele</Italian>
 		<Spanish>"Un todo es mayor que la suma de sus partes." - Arist&#243;teles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMBINED_ARMS_PEDIA</Tag>
-		<English>Combined arms is an approach to warfare which seeks to integrate different combat arms of a military to achieve mutually complementary effects (for example, using infantry and armor in an urban environment, where one supports the other, or both support each other).[PARAGRAPH:2]The 17th century saw increasing use of combined arms at lower (regimental) level. King Gustavus Adolphus of Sweden was the proponent of the idea. For fire support he attached teams of "commanded musketeers" to cavalry units and fielded light 3-pounder guns to provide infantry units with organic artillery.[PARAGRAPH:2]In the eighteenth century, the concept of the legion was revived. Legions now consisted of musketeers, light infantry, dragoons and artillery in a brigade sized force. These legions often combined professional military personnel with militia. Perhaps the most notable example is the use of light cavalry, light infantry and light horse artillery in advance detachments by France's La Grande ArmÈe during the Napoleonic Wars.</English>
+		<English>Combined arms is an approach to warfare which seeks to integrate different combat arms of a military to achieve mutually complementary effects (for example, using infantry and armor in an urban environment, where one supports the other, or both support each other).[PARAGRAPH:2]The 17th century saw increasing use of combined arms at lower (regimental) level. King Gustavus Adolphus of Sweden was the proponent of the idea. For fire support he attached teams of "commanded musketeers" to cavalry units and fielded light 3-pounder guns to provide infantry units with organic artillery.[PARAGRAPH:2]In the eighteenth century, the concept of the legion was revived. Legions now consisted of musketeers, light infantry, dragoons and artillery in a brigade sized force. These legions often combined professional military personnel with militia. Perhaps the most notable example is the use of light cavalry, light infantry and light horse artillery in advance detachments by France's La Grande Arm&#233;e during the Napoleonic Wars.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -908,7 +977,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINE</Tag>
 		<English>Engine</English>
-		<French>Engine</French>
+		<French>
+			<Text>Moteur</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Engine</German>
 		<Italian>Engine</Italian>
 		<Spanish>Engine</Spanish>
@@ -916,14 +989,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINE_QUOTE</Tag>
 		<English>"You would make a ship sail against the winds and currents by lighting a bonfire under her deck? I have no time for such nonsense."[PARAGRAPH:2]- Napoleon Bonaparte</English>
-		<French>"Vous feriez avancer un navire contre vents et courants en allumant un brasier sous le pont ? Je n'ai pas de temps &#224; perdre avec de telles inepties."[PARAGRAPH:2]- Napol&#233;on</French>
+		<French>"Vous feriez avancer un navire contre vents et courants en allumant un brasier sous le pont ? Je n'ai pas de temps &#224; perdre avec de telles inepties."[PARAGRAPH:2]- Napol&#233;on Bonaparte</French>
 		<German>"Was veranlasst Sie zu der Annahme, dass ein Schiff gegen den Wind und gegen die Str&#246;mung segeln k&#246;nnte, wenn man nur ein Feuer unter Deck anz&#252;nde? Ich habe keine Zeit, mir so einen Unsinn anzuh&#246;ren."[PARAGRAPH:2]- Napoleon</German>
 		<Italian>"Quindi per far andare una nave controvento dovresti accendere un fuoco nella stiva? Non ho tempo per queste idiozie."[PARAGRAPH:2]- Napoleone</Italian>
 		<Spanish>"-&#191;Usted har&#237;a barcos que navegaran contra las corrientes y los vientos con solo encender una caldera bajo la cubierta? &#173;Disc&#250;lpeme, no tengo tiempo para escuchar tonter&#237;as."[PARAGRAPH:2]- Napole&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINE_PEDIA</Tag>
-		<English>An engine or motor is a machine designed to convert one form of energy into mechanical energy. Heat engines burn a fuel to create heat, which is then used to create a force. Electric motors convert electrical energy into mechanical motion; pneumatic motors use compressed air and clockwork motors in wind-up toys use elastic energy.[PARAGRAPH:2]Internal combustion piston engines  were tested in France in 1807 by de Rivaz and independently, by the NiÈpce brothers. They were theoretically advanced by Carnot in 1824. In 1853-57 Eugenio Barsanti and Felice Matteucci invented and patented an engine using the free-piston principle that was possibly the first 4-cycle engine.[PARAGRAPH:2]The invention of an internal combustion engine which was later commercially successful was made during 1860 by Etienne Lenoir. The Otto cycle in 1877 was capable of giving a far higher power to weight ratio than steam engines and worked much better for many transportation applications such as cars and aircraft.</English>
+		<English>An engine or motor is a machine designed to convert one form of energy into mechanical energy. Heat engines burn a fuel to create heat, which is then used to create a force. Electric motors convert electrical energy into mechanical motion; pneumatic motors use compressed air and clockwork motors in wind-up toys use elastic energy.[PARAGRAPH:2]Internal combustion piston engines  were tested in France in 1807 by de Rivaz and independently, by the Ni&#233;pce brothers. They were theoretically advanced by Carnot in 1824. In 1853-57 Eugenio Barsanti and Felice Matteucci invented and patented an engine using the free-piston principle that was possibly the first 4-cycle engine.[PARAGRAPH:2]The invention of an internal combustion engine which was later commercially successful was made during 1860 by Etienne Lenoir. The Otto cycle in 1877 was capable of giving a far higher power to weight ratio than steam engines and worked much better for many transportation applications such as cars and aircraft.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -1014,8 +1087,8 @@
 		<Tag>TXT_KEY_TECH_COMPUTERS</Tag>
 		<English>Computers</English>
 		<French>
-			<Text>Informatique</Text>
-			<Gender>Female</Gender>
+			<Text>Ordinateur</Text>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -1037,7 +1110,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMPUTERS_QUOTE</Tag>
 		<English>"I do not fear computers. I fear the lack of them."[PARAGRAPH:2]- Isaac Asimov</English>
-		<French>"I do not fear computers. I fear the lack of them."[PARAGRAPH:2]- Isaac Asimov</French>
+		<French>"Je n'ai pas peur des ordinateurs. J'ai peur qu'ils viennent &#224; nous manquer."[PARAGRAPH:2]- Isaac Asimov</French>
 		<German>"I do not fear computers. I fear the lack of them."[PARAGRAPH:2]- Isaac Asimov</German>
 		<Italian>"I do not fear computers. I fear the lack of them."[PARAGRAPH:2]- Isaac Asimov</Italian>
 		<Spanish>"I do not fear computers. I fear the lack of them."[PARAGRAPH:2]- Isaac Asimov</Spanish>
@@ -1048,7 +1121,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIAL_CONTRACT</Tag>
 		<English>Social Contract</English>
-		<French>Social Contract</French>
+		<French>
+			<Text>Contrat social</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Social Contract</German>
 		<Italian>Social Contract</Italian>
 		<Spanish>Social Contract</Spanish>
@@ -1056,7 +1133,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIAL_CONTRACT_QUOTE</Tag>
 		<English>"Each person possesses an inviolability founded on justice that even the welfare of society as a whole cannot override."[PARAGRAPH:2]- John Rawls, A Theory of Justice</English>
-		<French>"Each person possesses an inviolability founded on justice that even the welfare of society as a whole cannot override."[PARAGRAPH:2]- John Rawls, A Theory of Justice</French>
+		<French>"Chaque membre de la soci&#233;t&#233; poss&#232;de une inviolabilit&#233; fond&#233;e sur la justice qui a priorit&#233; sur tout, m&#234;me sur le bien-&#234;tre de tous les autres."[PARAGRAPH:2]- John Rawls, Th&#233;orie de la justice</French>
 		<German>"Each person possesses an inviolability founded on justice that even the welfare of society as a whole cannot override."[PARAGRAPH:2]- John Rawls, A Theory of Justice</German>
 		<Italian>"Each person possesses an inviolability founded on justice that even the welfare of society as a whole cannot override."[PARAGRAPH:2]- John Rawls, A Theory of Justice</Italian>
 		<Spanish>"Each person possesses an inviolability founded on justice that even the welfare of society as a whole cannot override."[PARAGRAPH:2]- John Rawls, A Theory of Justice</Spanish>
@@ -1099,7 +1176,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONSTRUCTION_QUOTE</Tag>
 		<English>"And on the pedestal these words appear: 'My name is Ozymandias, king of kings: Look on my works, ye Mighty, and despair!'"[PARAGRAPH:2]- Percy Bysshe Shelley, Ozymandias</English>
-		<French>"Et sur le pi&#233;destal apparaissent ces mots : 'Je suis Ozymandias, le Roi des Rois ; contemple mon oeuvre, &#212; Tout-puissant, et d&#233;sesp&#232;re !'"[PARAGRAPH:2]- Percy Bysshe Shelley </French>
+		<French>"Et sur le pi&#233;destal apparaissent ces mots : 'Je suis Ozymandias, le Roi des Rois ; contemple mon &#339;uvre, &#212; Tout-puissant, et d&#233;sesp&#232;re !'"[PARAGRAPH:2]- Percy Bysshe Shelley</French>
 		<German>"Und auf dem Sockel erscheinen folgende Worte: 'Mein Name ist Ozymandias, K&#246;nig der K&#246;nige: Betrachtet mein Werk, ihr M&#228;chtigen, und verzweifelt!'"[PARAGRAPH:2]- Percy Bysshe Shelley</German>
 		<Italian>"E sul mio piedistallo saranno incise queste parole: 'Il mio nome &#232; Ozymandias, re dei re; guarda il mio operato e ammutolisci!'"[PARAGRAPH:2]- Percy Bysshe Shelley</Italian>
 		<Spanish>"Y en el pedestal se leen estas palabras: 'Mi nombre es Ozymandias, rey de reyes: &#161;Contemplad mis obras, poderosos, y perded la esperanza!' "[PARAGRAPH:2]- Percy Bysshe Shelley</Spanish>
@@ -1110,7 +1187,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONTRACT</Tag>
 		<English>Contract</English>
-		<French>Contract</French>
+		<French>
+			<Text>Contrat</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Contract</German>
 		<Italian>Contract</Italian>
 		<Spanish>Contract</Spanish>
@@ -1118,7 +1199,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONTRACT_QUOTE</Tag>
 		<English>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</English>
-		<French>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</French>
+		<French>"On respecte un accord si aucune des parties n‚Äôa int&#233;r&#234;t &#224; en transgresser les dispositions. Il en va de m&#234;me pour mes lois : je les adapte &#224; mes concitoyens afin de faire comprendre &#224; tous que respecter la justice vaut mieux que transgresser la loi."[PARAGRAPH:2]- Solon</French>
 		<German>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</German>
 		<Italian>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</Italian>
 		<Spanish>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</Spanish>
@@ -1137,7 +1218,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CROP_ROTATION</Tag>
 		<English>Crop Rotation</English>
-		<French>Crop Rotation</French>
+		<French>
+			<Text>Rotation des cultures</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Crop Rotation</German>
 		<Italian>Crop Rotation</Italian>
 		<Spanish>Crop Rotation</Spanish>
@@ -1145,7 +1230,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CROP_ROTATION_QUOTE</Tag>
 		<English>"Don't judge each day by the harvest you reap but by the seeds that you plant."[PARAGRAPH:2]- Robert Louis Stevenson</English>
-		<French>"Don't judge each day by the harvest you reap but by the seeds that you plant."[PARAGRAPH:2]- Robert Louis Stevenson</French>
+		<French>"Ne juge pas chaque jour &#224; la r&#233;colte que tu fais mais aux graines que tu s&#232;mes."[PARAGRAPH:2]- Robert Louis Stevenson</French>
 		<German>"Don't judge each day by the harvest you reap but by the seeds that you plant."[PARAGRAPH:2]- Robert Louis Stevenson</German>
 		<Italian>"Don't judge each day by the harvest you reap but by the seeds that you plant."[PARAGRAPH:2]- Robert Louis Stevenson</Italian>
 		<Spanish>"Don't judge each day by the harvest you reap but by the seeds that you plant."[PARAGRAPH:2]- Robert Louis Stevenson</Spanish>
@@ -1199,7 +1284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CYBERNETICS</Tag>
 		<English>Cybernetics</English>
-		<French>Cybernetics</French>
+		<French>Cybern&#233;tique</French>
 		<German>Cybernetics</German>
 		<Italian>Cybernetics</Italian>
 		<Spanish>Cybernetics</Spanish>
@@ -1207,7 +1292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CYBERNETICS_QUOTE</Tag>
 		<English>"If the brain were so simple we could understand it, we would be so simple we couldn't."[PARAGRAPH:2]- Lyall Watson</English>
-		<French>"If the brain were so simple we could understand it, we would be so simple we couldn't."[PARAGRAPH:2]- Lyall Watson</French>
+		<French>"Si notre cerveau &#233;tait suffisamment simple pour que nous le comprenions, nous serions si simples d'esprit que nous ne le comprendrions pas."[PARAGRAPH:2]- Lyall Watson</French>
 		<German>"If the brain were so simple we could understand it, we would be so simple we couldn't."[PARAGRAPH:2]- Lyall Watson</German>
 		<Italian>"If the brain were so simple we could understand it, we would be so simple we couldn't."[PARAGRAPH:2]- Lyall Watson</Italian>
 		<Spanish>"If the brain were so simple we could understand it, we would be so simple we couldn't."[PARAGRAPH:2]- Lyall Watson</Spanish>
@@ -1226,15 +1311,19 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_DIVINATION</Tag>
 		<English>Divination</English>
-		<French>Divination</French>
+		<French>
+			<Text>Divination</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Divination</German>
 		<Italian>Divination</Italian>
 		<Spanish>Divination</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_DIVINATION_QUOTE</Tag>
-		<English>"Our remedies of in ourselves do lie, which we ascribe to heaven: the fated sky."[PARAGRAPH:2]- William Shakespeare, All's Well That Ends Well</English>
-		<French>"Our remedies of in ourselves do lie, which we ascribe to heaven: the fated sky."[PARAGRAPH:2]- William Shakespeare, All's Well That Ends Well</French>
+		<English>"Our remedies oft in ourselves do lie, which we ascribe to heaven: the fated sky."[PARAGRAPH:2]- William Shakespeare, All's Well That Ends Well</English>
+		<French>"Souvent, nous avons en nous les rem&#232;des que nous attendons du ciel."[PARAGRAPH:2]- William Shakespeare, Tout est bien qui finit bien</French>
 		<German>"Our remedies of in ourselves do lie, which we ascribe to heaven: the fated sky."[PARAGRAPH:2]- William Shakespeare, All's Well That Ends Well</German>
 		<Italian>"Our remedies of in ourselves do lie, which we ascribe to heaven: the fated sky."[PARAGRAPH:2]- William Shakespeare, All's Well That Ends Well</Italian>
 		<Spanish>"Our remedies of in ourselves do lie, which we ascribe to heaven: the fated sky."[PARAGRAPH:2]- William Shakespeare, All's Well That Ends Well</Spanish>
@@ -1253,7 +1342,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_DOCTRINE</Tag>
 		<English>Doctrine</English>
-		<French>Doctrine</French>
+		<French>
+			<Text>Dogme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Doctrine</German>
 		<Italian>Doctrine</Italian>
 		<Spanish>Doctrine</Spanish>
@@ -1261,7 +1354,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_DOCTRINE_QUOTE</Tag>
 		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</English>
-		<French>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</French>
+		<French>"Il est clair que celui qui adh&#232;re &#224; l'enseignement de l'&#201;glise comme &#224; une r&#232;gle infaillible, donne son assentiment &#224; tout ce que l'&#201;glise enseigne."[PARAGRAPH:2]- Saint Thomas d'Aquin, Somme th&#233;ologique</French>
 		<German>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</German>
 		<Italian>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</Italian>
 		<Spanish>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</Spanish>
@@ -1281,7 +1374,7 @@
 		<Tag>TXT_KEY_TECH_ECOLOGY</Tag>
 		<English>Ecology</English>
 		<French>
-			<Text>Ecologie</Text>
+			<Text>&#201;cologie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1304,7 +1397,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ECOLOGY_QUOTE</Tag>
 		<English>"We do not inherit the Earth from our ancestors, we borrow it from our children."[PARAGRAPH:2]- Wendell Berry, The Unforeseen Wilderness</English>
-		<French>"Nous n'h&#233;ritons pas de la Terre de nos anc&#234;tres, nous l'empruntons &#224; nos enfants."[PARAGRAPH:2]- Chant am&#233;rindien</French>
+		<French>"Nous n'h&#233;ritons pas de la Terre de nos anc&#234;tres, nous l'empruntons &#224; nos enfants."[PARAGRAPH:2]- Wendell Berry, The Unforeseen Wilderness</French>
 		<German>"Wir haben die Erde nicht von unseren Vorfahren geerbt, sondern von unseren Kindern geliehen."[PARAGRAPH:2]- Indianerlied</German>
 		<Italian>"Non ereditiamo la terra dai nostri antenati, la prendiamo in prestito per i nostri figli."[PARAGRAPH:2]- Canzone dei Nativi Americani</Italian>
 		<Spanish>"La Tierra no es una herencia de nuestros padres, sino un pr&#233;stamo de nuestros hijos."[PARAGRAPH:2]- Canci&#243;n de los ind&#237;genas americanos</Spanish>
@@ -1359,7 +1452,7 @@
 		<Tag>TXT_KEY_TECH_EDUCATION</Tag>
 		<English>Education</English>
 		<French>
-			<Text>Education</Text>
+			<Text>&#201;ducation</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1382,7 +1475,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EDUCATION_QUOTE</Tag>
 		<English>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</English>
-		<French>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</French>
+		<French>"L‚Äô&#233;ducation est l‚Äôallumage d‚Äôune flamme, et non pas le remplissage d‚Äôun navire."[PARAGRAPH:2]- Socrate</French>
 		<German>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</German>
 		<Italian>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</Italian>
 		<Spanish>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</Spanish>
@@ -1394,7 +1487,7 @@
 		<Tag>TXT_KEY_TECH_ELECTRICITY</Tag>
 		<English>Electricity</English>
 		<French>
-			<Text>Electricit&#233;</Text>
+			<Text>&#201;lectricit&#233;</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1428,7 +1521,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ELECTRONICS</Tag>
 		<English>Electronics</English>
-		<French>Electronics</French>
+		<French>
+			<Text>&#201;lectronique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Electronics</German>
 		<Italian>Electronics</Italian>
 		<Spanish>Electronics</Spanish>
@@ -1478,7 +1575,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINEERING_QUOTE</Tag>
-		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-ExupÈry, Terre des Hommes</English>
+		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Terre des Hommes</English>
 		<French>"La perfection est atteinte non pas parce qu'il n'y a plus rien &#224; ajouter, mais lorsqu'il n'y a plus rien &#224; retirer."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</French>
 		<German>"Perfektion ist nicht dann erreicht, wenn es nichts mehr hinzuzuf&#252;gen gibt, sondern wenn man nichts mehr weglassen kann."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</German>
 		<Italian>"Un progettista sa di aver raggiunto la perfezione non quando non c'&#232; pi&#249; niente da aggiungere, ma quando non c'&#232; pi&#249; nulla da eliminare."[PARAGRAPH:2]- Antoine de Saint-Exupry</Italian>
@@ -1490,7 +1587,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ETHICS</Tag>
 		<English>Ethics</English>
-		<French>Ethics</French>
+		<French>
+			<Text>&#201;thique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ethics</German>
 		<Italian>Ethics</Italian>
 		<Spanish>Ethics</Spanish>
@@ -1498,7 +1599,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ETHICS_QUOTE</Tag>
 		<English>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant, Groundwork of the Metaphysics of Morals</English>
-		<French>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant, Groundwork of the Metaphysics of Morals</French>
+		<French>"Agis uniquement d'apr&#232;s la maxime qui fait que tu peux vouloir en m&#234;me temps qu'elle devienne une loi universelle."[PARAGRAPH:2]- Emmanuel Kant, Fondements de la m&#233;taphysique des m&#339;urs</French>
 		<German>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant, Groundwork of the Metaphysics of Morals</German>
 		<Italian>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant, Groundwork of the Metaphysics of Morals</Italian>
 		<Spanish>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant, Groundwork of the Metaphysics of Morals</Spanish>
@@ -1517,7 +1618,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EVANGELISM</Tag>
 		<English>Evangelism</English>
-		<French>Evangelism</French>
+		<French>&#201;vang&#233;lisme</French>
 		<German>Evangelism</German>
 		<Italian>Evangelism</Italian>
 		<Spanish>Evangelism</Spanish>
@@ -1567,7 +1668,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EXPLORATION_QUOTE</Tag>
-		<English>"One doesn't discover new lands without losing sight of the shore."[PARAGRAPH:2]- AndrÈ Gide, The Counterfeiters</English>
+		<English>"One doesn't discover new lands without losing sight of the shore."[PARAGRAPH:2]- Andr&#233; Gide, The Counterfeiters</English>
 		<French>"Ne d&#233;couvre de nouvelles terres, que celui qui sait quitter tout rivage."[PARAGRAPH:2]- Andr&#233; Gide</French>
 		<German>"Man kann keine neuen L&#228;nder entdecken, ohne die K&#252;ste aus den Augen zu verlieren."[PARAGRAPH:2]- Andr&#233; Gide</German>
 		<Italian>"Una persona non pu&#242; scoprire nuove terre senza vederne la spiagge."[PARAGRAPH:2]- Andre Gide</Italian>
@@ -1587,7 +1688,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EXPLOSIVES</Tag>
 		<English>Explosives</English>
-		<French>Explosives</French>
+		<French>Explosifs</French>
 		<German>Explosives</German>
 		<Italian>Explosives</Italian>
 		<Spanish>Explosives</Spanish>
@@ -1614,7 +1715,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FERTILIZER</Tag>
 		<English>Fertilizer</English>
-		<French>Fertilizer</French>
+		<French>Engrais</French>
 		<German>Fertilizer</German>
 		<Italian>Fertilizer</Italian>
 		<Spanish>Fertilizer</Spanish>
@@ -1684,7 +1785,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FILM</Tag>
 		<English>Film</English>
-		<French>Film</French>
+		<French>
+			<Text>Cin&#233;ma</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Film</German>
 		<Italian>Film</Italian>
 		<Spanish>Film</Spanish>
@@ -1692,7 +1797,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FILM_QUOTE</Tag>
 		<English>"I have the seized the light. I have arrested its flight."[PARAGRAPH:2]- Louis Daguerre</English>
-		<French>"I have the seized the light. I have arrested its flight."[PARAGRAPH:2]- Louis Daguerre</French>
+		<French>"J'ai saisi la lumi&#232;re au passage et je l'ai encha&#238;n&#233;e."[PARAGRAPH:2]- Louis Daguerre</French>
 		<German>"I have the seized the light. I have arrested its flight."[PARAGRAPH:2]- Louis Daguerre</German>
 		<Italian>"I have the seized the light. I have arrested its flight."[PARAGRAPH:2]- Louis Daguerre</Italian>
 		<Spanish>"I have the seized the light. I have arrested its flight."[PARAGRAPH:2]- Louis Daguerre</Spanish>
@@ -1711,7 +1816,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FINANCE</Tag>
 		<English>Finance</English>
-		<French>Finance</French>
+		<French>
+			<Text>Finance</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Finance</German>
 		<Italian>Finance</Italian>
 		<Spanish>Finance</Spanish>
@@ -1738,7 +1847,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FIREARMS</Tag>
 		<English>Firearms</English>
-		<French>Firearms</French>
+		<French>
+			<Text>Armes &#224; feu</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Firearms</German>
 		<Italian>Firearms</Italian>
 		<Spanish>Firearms</Spanish>
@@ -1753,7 +1866,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FIREARMS_PEDIA</Tag>
-		<English>In its first centuries, gunpowder was too unstable and metallurgy too crude for the new explosive mix to be used for applications other than demolitions, fireworks, and large, heavily overbuilt artillery pieces. But with advances in metalworking in the 15th and 16th centuries CE, it became possible to create man-portable gunpowder weapons, which began to supplement and then to replace earlier ranged weapons such as the bow, crossbow, and sling.[PARAGRAPH:2]By the 17th century, the world's most modern armies relied in large part on blocks of musket-armed infantry, often supported by pike units to keep cavalry from running down the musketeers while they reloaded their clumsy weapons. The pike units were removed entirely with the development of the bayonet, and ever since that era infantry combat has been dominated by the role of the gun and advances in firearms technology.[PARAGRAPH:2]Even though early firearms were little if any deadlier than a good bow on average, they triggered a revolution in warfare. Firearms were easy to learn to use, and incredibly easy to mass produce compared to the cost of a suit of "bullet proof" steel armor. This helped drive the last nails into the coffin of heavily armored shock cavalry in Europe, ended the dominance of nomadic horse-archer cultures in Asia, and triggered a shift towards mass armies recruited from among the populace, ultimately paving the way for the revolutionary leveÈ en masse of the Napoleonic French.</English>
+		<English>In its first centuries, gunpowder was too unstable and metallurgy too crude for the new explosive mix to be used for applications other than demolitions, fireworks, and large, heavily overbuilt artillery pieces. But with advances in metalworking in the 15th and 16th centuries CE, it became possible to create man-portable gunpowder weapons, which began to supplement and then to replace earlier ranged weapons such as the bow, crossbow, and sling.[PARAGRAPH:2]By the 17th century, the world's most modern armies relied in large part on blocks of musket-armed infantry, often supported by pike units to keep cavalry from running down the musketeers while they reloaded their clumsy weapons. The pike units were removed entirely with the development of the bayonet, and ever since that era infantry combat has been dominated by the role of the gun and advances in firearms technology.[PARAGRAPH:2]Even though early firearms were little if any deadlier than a good bow on average, they triggered a revolution in warfare. Firearms were easy to learn to use, and incredibly easy to mass produce compared to the cost of a suit of "bullet proof" steel armor. This helped drive the last nails into the coffin of heavily armored shock cavalry in Europe, ended the dominance of nomadic horse-archer cultures in Asia, and triggered a shift towards mass armies recruited from among the populace, ultimately paving the way for the revolutionary lev&#233;e en masse of the Napoleonic French.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -1824,7 +1937,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FISSION_QUOTE</Tag>
 		<English>"If the radiance of a thousand suns were to burst forth at once in the sky, that would be like the splendour of the mighty One. I am become Death, destroyer of worlds."[PARAGRAPH:2]- J. Robert Oppenheimer, quoting from the Bhagavat Gita</English>
-		<French>"Si la splendeur de mille soleils &#233;clatait &#224; la fois dans les cieux, cela serait comparable au rayonnement du grand Etre... Je suis devenu la Mort, le destructeur des mondes."[PARAGRAPH:2]- J. Robert Oppenheimer, citant la Bhagavad Gita</French>
+		<French>"Si la splendeur de mille soleils &#233;clatait &#224; la fois dans les cieux, cela serait comparable au rayonnement du grand √ätre... Je suis devenu la Mort, le destructeur des mondes."[PARAGRAPH:2]- J. Robert Oppenheimer, citant la Bhagavad Gita</French>
 		<German>"Wenn das Licht von tausend Sonnen am Himmel pl&#246;tzlich br&#228;ch' hervor, zu gleicher Zeit - das w&#228;re gleich dem Glanze des Herrlichen ... Ich bin der Tod, der alles raubt, Ersch&#252;tterer der Welten."[PARAGRAPH:2]- J. Robert Oppenheimer, Zitat aus der "Bhagavad Gita"</German>
 		<Italian>Se migliaia di soli illuminassero il cielo sarebbe uno spettacolo di straordinaria potenza... Sono la Morte, Distruttrice di Mondi.[PARAGRAPH:2]- J. Robert Oppenheimer, citando il "Bhagavad Gita"</Italian>
 		<Spanish>"Si el brillo de mil soles refulgiese a la vez en el cielo, ser&#237;a como el esplendor del Poderoso... Me he convertido en la Muerte, la destructora de mundos."[PARAGRAPH:2]- J. Robert Oppenheimer, citando "El Bhagavad Gita"</Spanish>
@@ -1835,7 +1948,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FLIGHT</Tag>
 		<English>Flight</English>
-		<French>Flight</French>
+		<French>
+			<Text>Vol</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Flight</German>
 		<Italian>Flight</Italian>
 		<Spanish>Flight</Spanish>
@@ -1878,7 +1995,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FUSION_QUOTE</Tag>
 		<English>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</English>
-		<French>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</French>
+		<French>"Tout ce que nous ne pourrons controÃÇler, nous le preÃÅdirons, et tout ce que nous ne pourrons preÃÅdire, nous le controÃÇlerons."[PARAGRAPH:2]- John von Neumann</French>
 		<German>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</German>
 		<Italian>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</Italian>
 		<Spanish>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</Spanish>
@@ -1897,7 +2014,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GENERALSHIP_QUOTE</Tag>
 		<English>"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win."[PARAGRAPH:2]- Sun Tzu, The Art of War</English>
-		<French>"Le vainqueur triomphe avant m&#234;me de partir &#224; la guerre, le vaincu part &#224; la guerre puis r&#234;ve de triomphe."[PARAGRAPH:2]- Sun-Tzu</French>
+		<French>"Le vainqueur triomphe avant m&#234;me de partir &#224; la guerre, le vaincu part &#224; la guerre puis r&#234;ve de triomphe."[PARAGRAPH:2]- Sun-Tzu, L'Art de la guerre</French>
 		<German>"Der General, der eine Schlacht gewinnt, stellt vor dem Kampf viele Berechnungen an. Der General, der verliert, stellt vorher kaum Berechnungen an."[PARAGRAPH:2]- Sun-Tzu</German>
 		<Italian>"I guerrieri vittoriosi prima vincono e poi vanno in guerra; quelli sconfitti, prima vanno in guerra e poi cercano di vincere."[PARAGRAPH:2]- Sun-Tzu</Italian>
 		<Spanish>"Los guerreros vencedores ganan primero y luego van a la guerra, mientras que los perdedores van a la guerra primero y luego pretenden ganar."[PARAGRAPH:2]- Sun Tzu</Spanish>
@@ -1951,15 +2068,19 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOLOGY</Tag>
 		<English>Geology</English>
-		<French>Geology</French>
+		<French>
+			<Text>G&#233;ologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Geology</German>
 		<Italian>Geology</Italian>
 		<Spanish>Geology</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOLOGY_QUOTE</Tag>
-		<English>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</English>
-		<French>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</French>
+		<English>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, The Steam House</English>
+		<French>"L‚Äôhomme, simple habitant de la terre, ne saurait en franchir les bornes ! Mais s‚Äôil est riv&#233; &#224; son &#233;corce, il peut en p&#233;n&#233;trer tous les secrets."[PARAGRAPH:2]- Jules Verne, La Maison &#224; vapeur</French>
 		<German>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</German>
 		<Italian>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</Italian>
 		<Spanish>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</Spanish>
@@ -1985,7 +2106,7 @@
 		</French>
 		<German>
 			<Text>Mathematik</Text>
-			<Gender>FEmale</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Italian>
@@ -2002,7 +2123,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MATHEMATICS_QUOTE</Tag>
 		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon, Opus Majus</English>
-		<French>"La science vise une certitude qui ne souffre aucun doute, une v&#233;rit&#233; qui ne souffre aucune erreur, les math&#233;matiques s'imposent donc comme les fondations de toute science."[PARAGRAPH:2]- Roger Bacon</French>
+		<French>"La science vise une certitude qui ne souffre aucun doute, une v&#233;rit&#233; qui ne souffre aucune erreur, les math&#233;matiques s'imposent donc comme les fondations de toute science."[PARAGRAPH:2]- Roger Bacon, Opus Majus</French>
 		<German>"Nur mithilfe der Mathematik kann man wirklich wissen, denn in jeder Wissenschaft ist nur so viel an Wahrheit enthalten, wie in ihr Mathematik steckt."[PARAGRAPH:2]- Roger Bacon</German>
 		<Italian>"Se in altre scienze &#232; probabile raggiungere la certezza senza dubbio e senza errore, &#232; giusto porre le fondamenta del sapere nella matematica."[PARAGRAPH:2]- Roger Bacon</Italian>
 		<Spanish>"Si en las dem&#225;s ciencias hubi&#233;ramos de obtener la certeza sin dudas y la verdad sin errores, nos corresponder&#237;a basar el conocimiento en las Matem&#225;ticas."[PARAGRAPH:2]- Roger Bacon</Spanish>
@@ -2013,7 +2134,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLOBALISM</Tag>
 		<English>Globalism</English>
-		<French>Globalism</French>
+		<French>
+			<Text>Mondialisme</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Globalism</German>
 		<Italian>Globalism</Italian>
 		<Spanish>Globalism</Spanish>
@@ -2021,7 +2146,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLOBALISM_QUOTE</Tag>
 		<English>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</English>
-		<French>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</French>
+		<French>"Je suis un citoyen du monde."[PARAGRAPH:2]- Diog&#232;ne de Sinope</French>
 		<German>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</German>
 		<Italian>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</Italian>
 		<Spanish>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</Spanish>
@@ -2042,7 +2167,7 @@
 		<English>Guilds</English>
 		<French>
 			<Text>Guildes</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>
@@ -2108,7 +2233,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HERITAGE</Tag>
 		<English>Heritage</English>
-		<French>Heritage</French>
+		<French>
+			<Text>Patrimoine</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Heritage</German>
 		<Italian>Heritage</Italian>
 		<Spanish>Heritage</Spanish>
@@ -2135,7 +2264,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HORTICULTURE</Tag>
 		<English>Horticulture</English>
-		<French>Horticulture</French>
+		<French>
+			<Text>Horticulture</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Horticulture</German>
 		<Italian>Horticulture</Italian>
 		<Spanish>Horticulture</Spanish>
@@ -2143,7 +2276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HORTICULTURE_QUOTE</Tag>
 		<English>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson, Farming</English>
-		<French>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson, Farming</French>
+		<French>"Le premier fermier a &#233;t&#233; le premier homme, et toute la noblesse historique repose sur la possession et l'exploitation du sol."[PARAGRAPH:2]- Ralph Waldo Emerson, De la chose rustique</French>
 		<German>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson, Farming</German>
 		<Italian>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson, Farming</Italian>
 		<Spanish>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson, Farming</Spanish>
@@ -2163,6 +2296,11 @@
 		<Tag>TXT_KEY_TECH_HUMANITIES</Tag>
 		<English>Humanities</English>
 		<French>Humanities</French>
+		<French>
+			<Text>Sciences humaines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Humanities</German>
 		<Italian>Humanities</Italian>
 		<Spanish>Humanities</Spanish>
@@ -2170,7 +2308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HUMANITIES_QUOTE</Tag>
 		<English>"I am a man. Nothing human is alien to me."[PARAGRAPH:2]- Terence, The Self-Tormentor</English>
-		<French>"I am a man. Nothing human is alien to me."[PARAGRAPH:2]- Terence, The Self-Tormentor</French>
+		<French>"Je suis un homme ; je consid&#232;re que rien de ce qui est humain ne m'est &#233;tranger."[PARAGRAPH:2]- T&#233;rence, Heautontimoroumenos</French>
 		<German>"I am a man. Nothing human is alien to me."[PARAGRAPH:2]- Terence, The Self-Tormentor</German>
 		<Italian>"I am a man. Nothing human is alien to me."[PARAGRAPH:2]- Terence, The Self-Tormentor</Italian>
 		<Spanish>"I am a man. Nothing human is alien to me."[PARAGRAPH:2]- Terence, The Self-Tormentor</Spanish>
@@ -2224,7 +2362,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HYDRAULICS</Tag>
 		<English>Hydraulics</English>
-		<French>Hydraulics</French>
+		<French>
+			<Text>Hydraulique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hydraulics</German>
 		<Italian>Hydraulics</Italian>
 		<Spanish>Hydraulics</Spanish>
@@ -2232,7 +2374,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HYDRAULICS_QUOTE</Tag>
 		<English>"Water is the driving force of all nature."[PARAGRAPH:2]- Leonardo da Vinci</English>
-		<French>"Water is the driving force of all nature."[PARAGRAPH:2]- Leonardo da Vinci</French>
+		<French>"L'eau est la force motrice de toute la nature."[PARAGRAPH:2]- L&#233;onard de Vinci</French>
 		<German>"Water is the driving force of all nature."[PARAGRAPH:2]- Leonardo da Vinci</German>
 		<Italian>"Water is the driving force of all nature."[PARAGRAPH:2]- Leonardo da Vinci</Italian>
 		<Spanish>"Water is the driving force of all nature."[PARAGRAPH:2]- Leonardo da Vinci</Spanish>
@@ -2251,7 +2393,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INFRASTRUCTURE</Tag>
 		<English>Infrastructure</English>
-		<French>Infrastructure</French>
+		<French>
+			<Text>Infrastructure</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Infrastructure</German>
 		<Italian>Infrastructure</Italian>
 		<Spanish>Infrastructure</Spanish>
@@ -2278,7 +2424,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INSURANCE</Tag>
 		<English>Insurance</English>
-		<French>Insurance</French>
+		<French>Assurance</French>
 		<German>Insurance</German>
 		<Italian>Insurance</Italian>
 		<Spanish>Insurance</Spanish>
@@ -2305,7 +2451,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_JOURNALISM</Tag>
 		<English>Journalism</English>
-		<French>Journalism</French>
+		<French>
+			<Text>Journalisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Journalism</German>
 		<Italian>Journalism</Italian>
 		<Spanish>Journalism</Spanish>
@@ -2313,7 +2463,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_JOURNALISM_QUOTE</Tag>
 		<English>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being."[PARAGRAPH:2]- Thomas Jefferson</English>
-		<French>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being."[PARAGRAPH:2]- Thomas Jefferson</French>
+		<French>"Il n'existe pas meilleur instrument que la presse pour &#233;clairer l'esprit de l'homme, et faire de ce dernier un &#234;tre rationnel, moral et social bien meilleur."[PARAGRAPH:2]- Thomas Jefferson</French>
 		<German>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being."[PARAGRAPH:2]- Thomas Jefferson</German>
 		<Italian>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being."[PARAGRAPH:2]- Thomas Jefferson</Italian>
 		<Spanish>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being."[PARAGRAPH:2]- Thomas Jefferson</Spanish>
@@ -2332,7 +2482,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_JUDICIARY</Tag>
 		<English>Judiciary</English>
-		<French>Judiciary</French>
+		<French>
+			<Text>Syst&#232;me judiciaire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Judiciary</German>
 		<Italian>Judiciary</Italian>
 		<Spanish>Judiciary</Spanish>
@@ -2340,7 +2494,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_JUDICIARY_QUOTE</Tag>
 		<English>"Society is well governed when its people obey the magistrates, and the magistrates obey the law."[PARAGRAPH:2]- Solon of Athens</English>
-		<French>"Society is well governed when its people obey the magistrates, and the magistrates obey the law."[PARAGRAPH:2]- Solon of Athens</French>
+		<French>"La soci&#233;t&#233; est bien gouvern&#233;e quand les citoyens ob&#233;issent aux magistrats et les magistrats aux lois."[PARAGRAPH:2]- Solon</French>
 		<German>"Society is well governed when its people obey the magistrates, and the magistrates obey the law."[PARAGRAPH:2]- Solon of Athens</German>
 		<Italian>"Society is well governed when its people obey the magistrates, and the magistrates obey the law."[PARAGRAPH:2]- Solon of Athens</Italian>
 		<Spanish>"Society is well governed when its people obey the magistrates, and the magistrates obey the law."[PARAGRAPH:2]- Solon of Athens</Spanish>
@@ -2387,6 +2541,11 @@
 		<Tag>TXT_KEY_TECH_LABOUR_UNIONS</Tag>
 		<English>Labour Unions</English>
 		<French>Labour Unions</French>
+		<French>
+			<Text>Syndicats</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Labour Unions</German>
 		<Italian>Labour Unions</Italian>
 		<Spanish>Labour Unions</Spanish>
@@ -2436,7 +2595,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LASER_QUOTE</Tag>
 		<English>"The night is far spent; the day is at hand. Let us therefore cast off the works of darkness, and let us put on the armor of light."[PARAGRAPH:2]- The Bible, Romans</English>
-		<French>"The night is far spent; the day is at hand. Let us therefore cast off the works of darkness, and let us put on the armor of light."[PARAGRAPH:2]- The Bible, Romans</French>
+		<French>"La nuit est avanc&#233;e, le jour approche. D&#233;pouillons-nous donc des &#339;uvres des t&#233;n&#232;bres, et rev&#234;tons les armes de la lumi&#232;re."[PARAGRAPH:2]- La Bible, &#201;p&#238;tre aux Romains</French>
 		<German>"The night is far spent; the day is at hand. Let us therefore cast off the works of darkness, and let us put on the armor of light."[PARAGRAPH:2]- The Bible, Romans</German>
 		<Italian>"The night is far spent; the day is at hand. Let us therefore cast off the works of darkness, and let us put on the armor of light."[PARAGRAPH:2]- The Bible, Romans</Italian>
 		<Spanish>"The night is far spent; the day is at hand. Let us therefore cast off the works of darkness, and let us put on the armor of light."[PARAGRAPH:2]- The Bible, Romans</Spanish>
@@ -2446,7 +2605,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LAW</Tag>
 		<English>Law</English>
-		<French>Law</French>
+		<French>
+			<Text>Droit</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Law</German>
 		<Italian>Law</Italian>
 		<Spanish>Law</Spanish>
@@ -2464,7 +2627,7 @@
 		<English>The earliest tribal civilizations were bonded together by mutual needs and beliefs. A tribal chieftain, who acted as an advisor and enforcer of the will of the gods, ruled these groups. No formal laws existed in these early cultures, but fear of the gods and a sense of tribal customs and morality kept order in the tribe. As societies became larger and more diverse, the need arose for established rules of conduct. The earliest known codes of laws existed in Babylon, India, and Palestine. The Twelve Tables of Rome, written in 500 BC, and its successors such as the Justinian Code, were the first codes of law to distinguish between public law, which involves the state, and private law, which concerns disputes between citizens. Roman law was the first formalized written system of laws, and went on to influence many of the legal systems of the modern world.</English>
 		<French>Les civilisations tribales primitives &#233;taient form&#233;es d'individus partageant les m&#234;mes croyances et besoins. Ces groupes &#233;taient dirig&#233;s par un chef tribal, charg&#233; d'interpr&#233;ter et d'appliquer la volont&#233; des dieux. Ces soci&#233;t&#233;s &#233;taient d&#233;pourvues de lois officielles et l'ordre social reposait sur la crainte des dieux ainsi que le respect des coutumes tribales et des r&#232;gles morales. Mais au fur et &#224; mesure que ces soci&#233;t&#233;s s'&#233;largissaient et se diversifiaient, la n&#233;cessit&#233; d'&#233;tablir des r&#232;gles de conduite strictes se faisait ressentir. Les premiers codes de lois connus sont apparus &#224; Babylone, en Inde et en Palestine. Les Douze Tables de Rome, &#233;crites en 500 av. J.-C., et les codes des lois romaines qui leur ont succ&#233;d&#233;, comme le Code Justinien, ont &#233;t&#233; les premiers &#224; distinguer le droit public, qui int&#233;resse l'Etat, et le droit priv&#233;, qui concerne les conflits entre citoyens. Le droit romain a &#233;t&#233; le premier code formel de lois &#233;crites et a influenc&#233; de nombreux syst&#232;mes juridiques du monde contemporain.</French>
 		<German>Schon der Zusammenhalt der ersten St&#228;mme basierte auf gemeinsamen Bed&#252;rfnissen und &#220;berzeugungen. Solchen Gemeinschaften stand ein Stammesh&#228;uptling vor, der als Berater, aber auch als ausf&#252;hrendes Organ der G&#246;tter fungierte. In diesen fr&#252;hen Kulturen gab es zwar keine Gesetze, aber die Ehrfurcht vor den G&#246;ttern und das Gesp&#252;r f&#252;r das Moralverst&#228;ndnis und die Sitten der anderen hielten die Ordnung innerhalb des Stammes aufrecht. Als sich dann in den sp&#228;teren Siedlungen und St&#228;dten immer mehr Einwohner unterschiedlichster Kulturen zusammenfanden, stieg auch der Bedarf nach festen Regeln und Vorschriften. Die ersten bekannten Gesetze existierten in Babylon, Indien und Pal&#228;stina. Die zw&#246;lf Tafeln von Rom, die um 500 vor Christus verfasst wurden, und ihre Nachfolger, wie der Codex Justinianeus, unterschieden erstmals zwischen dem Strafrecht, das Vergehen gegen den Staat bzw. die &#214;ffentlichkeit abhandelte, und dem Zivilrecht, das Streitigkeiten zwischen den B&#252;rgern regelte. Mit dem r&#246;mischen Gesetz Corpus Iuris Civilis wurde erstmals ein umfassendes formelles und schriftlich fixiertes Regelwerk f&#252;r das gesellschaftliche Zusammenleben geschaffen, das viele zuk&#252;nftige Rechtssysteme der modernen Welt entscheidend beeinflusste.</German>
-		<Italian>Le prime civilt‡ tribali erano legate tra loro da esigenze e credenze comuni. Questi gruppi erano guidati da capi trib˘ che agivano da consiglieri e da interpreti della volont‡ divina. In queste culture primitive non esistevano vere e proprie leggi, ma il timore degli dei e un senso di tradizione e morale tribale mantenevano l'ordine all'interno delle comunit‡. Man mano che le societ‡ si sviluppavano e si differenziavano, sorse per tutte l'esigenza di stabilire delle regole di comportamento. I primi codici di leggi conosciuti furono redatti a Babilonia, in India e in Palestina. Le Dodici Tavole di Roma, scritte nel 500 a. C., e il successivo Codice di Giustiniano, furono i primi codici a distinguere tra diritto pubblico, che riguarda lo Stato, e diritto privato, che riguarda le dispute tra cittadini. Il diritto Romano fu il primo sistema scritto di leggi e continua a influenzare ancora oggi molti sistemi legali.</Italian>
+		<Italian>Le prime civiltÔøΩ tribali erano legate tra loro da esigenze e credenze comuni. Questi gruppi erano guidati da capi tribÔøΩ che agivano da consiglieri e da interpreti della volontÔøΩ divina. In queste culture primitive non esistevano vere e proprie leggi, ma il timore degli dei e un senso di tradizione e morale tribale mantenevano l'ordine all'interno delle comunitÔøΩ. Man mano che le societÔøΩ si sviluppavano e si differenziavano, sorse per tutte l'esigenza di stabilire delle regole di comportamento. I primi codici di leggi conosciuti furono redatti a Babilonia, in India e in Palestina. Le Dodici Tavole di Roma, scritte nel 500 a. C., e il successivo Codice di Giustiniano, furono i primi codici a distinguere tra diritto pubblico, che riguarda lo Stato, e diritto privato, che riguarda le dispute tra cittadini. Il diritto Romano fu il primo sistema scritto di leggi e continua a influenzare ancora oggi molti sistemi legali.</Italian>
 		<Spanish>Las primeras civilizaciones tribales estaban vinculadas por creencias y necesidades comunes. Un caudillo tribal que actuaba como consejero e int&#233;rprete de la voluntad de los dioses gobernaba cada uno de estos grupos. En estas culturas primitivas no exist&#237;an leyes formales, sino que eran el miedo a los dioses y el sentido de la costumbre y la moralidad los que garantizaba el orden. A medida que las sociedades se volvieron m&#225;s numerosas y diversas, surgi&#243; la necesidad de establecer normas de conducta. Los primeros c&#243;digos legislativos conocidos existieron en Babilonia, India y Palestina. Las doce tablas de Roma, redactadas en el 500 a. C., y sus sucesoras, como por ejemplo el c&#243;digo de Justiniano, fueron los primeros c&#243;digos legislativos que distingu&#237;an entre la ley p&#250;blica, referida al estado, y la ley privada, concerniente a las disputas entre los ciudadanos. El derecho romano fue el primer sistema legislativo formalizado, e influy&#243; en muchos de los sistemas legales del mundo moderno.</Spanish>
 	</TEXT>
 
@@ -2473,7 +2636,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LEVERAGE</Tag>
 		<English>Leverage</English>
-		<French>Leverage</French>
+		<French>
+			<Text>Effet de levier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Leverage</German>
 		<Italian>Leverage</Italian>
 		<Spanish>Leverage</Spanish>
@@ -2481,7 +2648,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LEVERAGE_QUOTE</Tag>
 		<English>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</English>
-		<French>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</French>
+		<French>"Donnez-moi un point fixe et un levier, et je soul&#232;verai la Terre."[PARAGRAPH:2]- Archim&#232;de</French>
 		<German>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</German>
 		<Italian>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</Italian>
 		<Spanish>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</Spanish>
@@ -2535,7 +2702,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LOGISTICS</Tag>
 		<English>Logistics</English>
-		<French>Logistics</French>
+		<French>
+			<Text>Logistique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Logistics</German>
 		<Italian>Logistics</Italian>
 		<Spanish>Logistics</Spanish>
@@ -2586,7 +2757,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACHINERY_QUOTE</Tag>
 		<English>"Instrumental or mechanical science is the noblest and, above all others, the most useful."[PARAGRAPH:2]- Leonardo da Vinci</English>
-		<French>"Instrumental or mechanical science is the noblest and, above all others, the most useful."[PARAGRAPH:2]- Leonardo da Vinci</French>
+		<French>"Les sciences m&#233;caniques sont les plus nobles et les plus utiles d'entre toutes, car par leur biais tous les corps anim&#233;s ex&#233;cutent l'op&#233;ration pour laquelle ils ont &#233;t&#233; con&#231;us."[PARAGRAPH:2]- L&#233;onard de Vinci</French>
 		<German>"Instrumental or mechanical science is the noblest and, above all others, the most useful."[PARAGRAPH:2]- Leonardo da Vinci</German>
 		<Italian>"Instrumental or mechanical science is the noblest and, above all others, the most useful."[PARAGRAPH:2]- Leonardo da Vinci</Italian>
 		<Spanish>"Instrumental or mechanical science is the noblest and, above all others, the most useful."[PARAGRAPH:2]- Leonardo da Vinci</Spanish>
@@ -2597,7 +2768,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACHINE_TOOLS</Tag>
 		<English>Machine Tools</English>
-		<French>Machine Tools</French>
+		<French>
+			<Text>Machines-outils</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Machine Tools</German>
 		<Italian>Machine Tools</Italian>
 		<Spanish>Machine Tools</Spanish>
@@ -2624,7 +2799,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACROECONOMICS</Tag>
 		<English>Macroeconomics</English>
-		<French>Macroeconomics</French>
+		<French>
+			<Text>Macro&#233;conomie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Macroeconomics</German>
 		<Italian>Macroeconomics</Italian>
 		<Spanish>Macroeconomics</Spanish>
@@ -2632,7 +2811,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACROECONOMICS_QUOTE</Tag>
 		<English>"But this long run is a misleading guide to current affairs. In the long run we are all dead."[PARAGRAPH:2]- John Maynard Keynes, A Tract on Monetary Reform</English>
-		<French>"But this long run is a misleading guide to current affairs. In the long run we are all dead."[PARAGRAPH:2]- John Maynard Keynes, A Tract on Monetary Reform</French>
+		<French>"R&#233;fl&#233;chir &#224; long terme est une mauvaise m&#233;thode pour r&#233;soudre les probl&#232;mes &#233;conomiques. Car &#224; long terme, nous sommes tous morts."[PARAGRAPH:2]- John Maynard Keynes, La r&#233;forme mon&#233;taire</French>
 		<German>"But this long run is a misleading guide to current affairs. In the long run we are all dead."[PARAGRAPH:2]- John Maynard Keynes, A Tract on Monetary Reform</German>
 		<Italian>"But this long run is a misleading guide to current affairs. In the long run we are all dead."[PARAGRAPH:2]- John Maynard Keynes, A Tract on Monetary Reform</Italian>
 		<Spanish>"But this long run is a misleading guide to current affairs. In the long run we are all dead."[PARAGRAPH:2]- John Maynard Keynes, A Tract on Monetary Reform</Spanish>
@@ -2675,7 +2854,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MASONRY_QUOTE</Tag>
 		<English>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</English>
-		<French>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</French>
+		<French>"L&#224;, le marteau sur l'enclume frappait, l&#224;, le ciseau clivait, et le graveur &#233;crivait ; L&#224;, &#233;tait forg&#233;e la lame et fix&#233;e la garde ; L'excavateur creusait, la ma&#231;on b&#226;tissait."[PARAGRAPH:2]- J.R.R. Tolkien, Le Seigneur des anneaux</French>
 		<German>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</German>
 		<Italian>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</Italian>
 		<Spanish>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</Spanish>
@@ -2686,7 +2865,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONSUMERISM</Tag>
 		<English>Consumerism</English>
-		<French>Consumerism</French>
+		<French>
+			<Text>Consum&#233;risme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Consumerism</German>
 		<Italian>Consumerism</Italian>
 		<Spanish>Consumerism</Spanish>
@@ -2694,7 +2877,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONSUMERISM_QUOTE</Tag>
 		<English>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</English>
-		<French>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</French>
+		<French>"Plus d'une chose insignifiante a pris de l'ampleur gr&#226;ce &#224; une bonne publicit&#233;."[PARAGRAPH:2]- Mark Twain</French>
 		<German>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</German>
 		<Italian>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</Italian>
 		<Spanish>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</Spanish>
@@ -2713,7 +2896,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEASUREMENT</Tag>
 		<English>Measurement</English>
-		<French>Measurement</French>
+		<French>
+			<Text>M&#233;trologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Measurement</German>
 		<Italian>Measurement</Italian>
 		<Spanish>Measurement</Spanish>
@@ -2721,7 +2908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEASUREMENT_QUOTE</Tag>
 		<English>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</English>
-		<French>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</French>
+		<French>"Mesure ce qui est mesurable et rends mesurable ce qui ne peut l'&#234;tre."[PARAGRAPH:2]- Galil&#233;e</French>
 		<German>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</German>
 		<Italian>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</Italian>
 		<Spanish>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</Spanish>
@@ -2775,7 +2962,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MICROBIOLOGY</Tag>
 		<English>Microbiology</English>
-		<French>Microbiology</French>
+		<French>
+			<Text>Microbiologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Microbiology</German>
 		<Italian>Microbiology</Italian>
 		<Spanish>Microbiology</Spanish>
@@ -2783,7 +2974,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MICROBIOLOGY_QUOTE</Tag>
 		<English>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</English>
-		<French>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</French>
+		<French>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Recherches microscopiques sur la similarit&#233; de structure et de d&#233;veloppement des cellules animales et v&#233;g&#233;tales</French>
 		<German>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</German>
 		<Italian>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</Italian>
 		<Spanish>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</Spanish>
@@ -2802,7 +2993,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CEMENT</Tag>
 		<English>Cement</English>
-		<French>Cement</French>
+		<French>
+			<Text>Ciment</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cement</German>
 		<Italian>Cement</Italian>
 		<Spanish>Cement</Spanish>
@@ -2829,7 +3024,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_METALLURGY</Tag>
 		<English>Metallurgy</English>
-		<French>Metallurgy</French>
+		<French>
+			<Text>M&#233;tallurgie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Metallurgy</German>
 		<Italian>Metallurgy</Italian>
 		<Spanish>Metallurgy</Spanish>
@@ -2837,7 +3036,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_METALLURGY_QUOTE</Tag>
 		<English>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</English>
-		<French>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</French>
+		<French>"Le minerai le plus pur est produit par la fournaise la plus ardente, et l‚Äô&#233;clair le plus lumineux est provoqu&#233; par l‚Äôorage le plus sombre."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</French>
 		<German>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</German>
 		<Italian>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</Italian>
 		<Spanish>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</Spanish>
@@ -2891,7 +3090,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY</Tag>
 		<English>Nanotechnology</English>
-		<French>Nanotechnology</French>
+		<French>
+			<Text>Nanotechnologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nanotechnology</German>
 		<Italian>Nanotechnology</Italian>
 		<Spanish>Nanotechnology</Spanish>
@@ -2961,7 +3164,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NOBILITY</Tag>
 		<English>Nobility</English>
-		<French>Nobility</French>
+		<French>
+			<Text>Noblesse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nobility</German>
 		<Italian>Nobility</Italian>
 		<Spanish>Nobility</Spanish>
@@ -2988,7 +3195,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NUCLEAR_POWER</Tag>
 		<English>Nuclear Power</English>
-		<French>Nuclear Power</French>
+		<French>
+			<Text>&#201;nergie nucl&#233;aire</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nuclear Power</German>
 		<Italian>Nuclear Power</Italian>
 		<Spanish>Nuclear Power</Spanish>
@@ -3039,7 +3250,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_OPTICS_QUOTE</Tag>
 		<English>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</English>
-		<French>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</French>
+		<French>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, &#201;chantillons de civilisations</French>
 		<German>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</German>
 		<Italian>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</Italian>
 		<Spanish>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</Spanish>
@@ -3085,7 +3296,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PASTORALISM</Tag>
 		<English>Pastoralism</English>
-		<French>Pastoralism</French>
+		<French>
+			<Text>Pastoralisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pastoralism</German>
 		<Italian>Pastoralism</Italian>
 		<Spanish>Pastoralism</Spanish>
@@ -3093,7 +3308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PASTORALISM_QUOTE</Tag>
 		<English>"The greatness of a nation can be judged by the way its animals are treated."[PARAGRAPH:2]- Mohandas Gandhi</English>
-		<French>"The greatness of a nation can be judged by the way its animals are treated."[PARAGRAPH:2]- Mohandas Gandhi</French>
+		<French>"On peut juger de la grandeur d'une nation par la fa&#231;on dont les animaux y sont trait&#233;s."[PARAGRAPH:2]- Mohandas Gandhi</French>
 		<German>"The greatness of a nation can be judged by the way its animals are treated."[PARAGRAPH:2]- Mohandas Gandhi</German>
 		<Italian>"The greatness of a nation can be judged by the way its animals are treated."[PARAGRAPH:2]- Mohandas Gandhi</Italian>
 		<Spanish>"The greatness of a nation can be judged by the way its animals are treated."[PARAGRAPH:2]- Mohandas Gandhi</Spanish>
@@ -3112,7 +3327,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PATRONAGE</Tag>
 		<English>Patronage</English>
-		<French>Patronage</French>
+		<French>
+			<Text>M&#233;c&#233;nat</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Patronage</German>
 		<Italian>Patronage</Italian>
 		<Spanish>Patronage</Spanish>
@@ -3120,7 +3339,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PATRONAGE_QUOTE</Tag>
 		<English>"Never respect men merely for their riches, but rather for their philanthropy; we do not value the sun for its height, but for its use."[PARAGRAPH:2]- Gamaliel Bailey</English>
-		<French>"Never respect men merely for their riches, but rather for their philanthropy; we do not value the sun for its height, but for its use."[PARAGRAPH:2]- Gamaliel Bailey</French>
+		<French>"Ne respectez jamais les hommes uniquement pour leurs richesses, mais plut&#244;t pour leur philanthropie ; nous ne valorisons pas le soleil pour sa hauteur, mais pour son usage."[PARAGRAPH:2]- Gamaliel Bailey</French>
 		<German>"Never respect men merely for their riches, but rather for their philanthropy; we do not value the sun for its height, but for its use."[PARAGRAPH:2]- Gamaliel Bailey</German>
 		<Italian>"Never respect men merely for their riches, but rather for their philanthropy; we do not value the sun for its height, but for its use."[PARAGRAPH:2]- Gamaliel Bailey</Italian>
 		<Spanish>"Never respect men merely for their riches, but rather for their philanthropy; we do not value the sun for its height, but for its use."[PARAGRAPH:2]- Gamaliel Bailey</Spanish>
@@ -3163,7 +3382,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PHILOSOPHY_QUOTE</Tag>
 		<English>"I think, therefore I am."[PARAGRAPH:2]- Rene Descartes, Discourse on the Method</English>
-		<French>"I think, therefore I am."[PARAGRAPH:2]- Rene Descartes, Discourse on the Method</French>
+		<French>"Je pense, donc je suis."[PARAGRAPH:2]- Ren&#233; Descartes, Discours de la m&#233;thode</French>
 		<German>"I think, therefore I am."[PARAGRAPH:2]- Rene Descartes, Discourse on the Method</German>
 		<Italian>"I think, therefore I am."[PARAGRAPH:2]- Rene Descartes, Discourse on the Method</Italian>
 		<Spanish>"I think, therefore I am."[PARAGRAPH:2]- Rene Descartes, Discourse on the Method</Spanish>
@@ -3174,7 +3393,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PHOTOGRAPHY</Tag>
 		<English>Photography</English>
-		<French>Photography</French>
+		<French>Photographie</French>
 		<German>Photography</German>
 		<Italian>Photography</Italian>
 		<Spanish>Photography</Spanish>
@@ -3236,7 +3455,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PNEUMATICS</Tag>
 		<English>Pneumatics</English>
-		<French>Pneumatics</French>
+		<French>
+			<Text>Pneumatique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pneumatics</German>
 		<Italian>Pneumatics</Italian>
 		<Spanish>Pneumatics</Spanish>
@@ -3244,7 +3467,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PNEUMATICS_QUOTE</Tag>
 		<English>"No pressure, no diamonds."[PARAGRAPH:2]- Thomas Carlyle</English>
-		<French>"No pressure, no diamonds."[PARAGRAPH:2]- Thomas Carlyle</French>
+		<French>"Pas de pression, pas de diamant."[PARAGRAPH:2]- Thomas Carlyle</French>
 		<German>"No pressure, no diamonds."[PARAGRAPH:2]- Thomas Carlyle</German>
 		<Italian>"No pressure, no diamonds."[PARAGRAPH:2]- Thomas Carlyle</Italian>
 		<Spanish>"No pressure, no diamonds."[PARAGRAPH:2]- Thomas Carlyle</Spanish>
@@ -3263,7 +3486,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POLITICS</Tag>
 		<English>Politics</English>
-		<French>Politics</French>
+		<French>
+			<Text>Politique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Politics</German>
 		<Italian>Politics</Italian>
 		<Spanish>Politics</Spanish>
@@ -3271,7 +3498,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POLITICS_QUOTE</Tag>
 		<English>"Politics is the art of the possible."[PARAGRAPH:2]- Otto von Bismarck</English>
-		<French>"Politics is the art of the possible."[PARAGRAPH:2]- Otto von Bismarck</French>
+		<French>"La politique est l'art du possible."[PARAGRAPH:2]- Otto von Bismarck</French>
 		<German>"Politics is the art of the possible."[PARAGRAPH:2]- Otto von Bismarck</German>
 		<Italian>"Politics is the art of the possible."[PARAGRAPH:2]- Otto von Bismarck</Italian>
 		<Spanish>"Politics is the art of the possible."[PARAGRAPH:2]- Otto von Bismarck</Spanish>
@@ -3314,7 +3541,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POTTERY_QUOTE</Tag>
 		<English>"Hath not the potter power over the clay, to make one vessel unto honor, and another unto dishonor?"[PARAGRAPH:2]- The Bible, Romans</English>
-		<French>"Le potier n'a-t-il pas pouvoir sur l'argile pour faire de la m&#234;me masse un vase &#224; honneur et un autre &#224; d&#233;shonneur ?"[PARAGRAPH:2]- La Bible, Ep&#238;tre aux Romains</French>
+		<French>"Le potier n'a-t-il pas pouvoir sur l'argile pour faire de la m&#234;me masse un vase &#224; honneur et un autre &#224; d&#233;shonneur ?"[PARAGRAPH:2]- La Bible, &#201;p&#238;tre aux Romains</French>
 		<German>"Hat nicht ein T&#246;pfer Macht &#252;ber den Ton, aus demselben Klumpen ein Gef&#228;&#223; zu ehrenvollem und ein anderes zu nicht ehrenvollem Gebrauch zu machen?"[PARAGRAPH:2]- Die Bibel, R&#246;mer</German>
 		<Italian>"Nelle mani dell'artigiano sta la capacit&#224; di creare vasi da giorno e vasi da notte."[PARAGRAPH:2]- La Bibbia, i Romani</Italian>
 		<Spanish>"&#191;O es que no puede el alfarero hacer del mismo barro un vaso de honor y uno indecoroso?"[PARAGRAPH:2]- La Biblia, San Mateo, Ep&#237;stola a los Romanos</Spanish>
@@ -3325,7 +3552,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POWER_PROJECTION</Tag>
 		<English>Power Projection</English>
-		<French>Power Projection</French>
+		<French>
+			<Text>Projection</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Power Projection</German>
 		<Italian>Power Projection</Italian>
 		<Spanish>Power Projection</Spanish>
@@ -3333,7 +3564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POWER_PROJECTION_QUOTE</Tag>
 		<English>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</English>
-		<French>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</French>
+		<French>"La guerre est la continuation de la politique par d‚Äôautres moyens."[PARAGRAPH:2]- Carl von Clausewitz, De la guerre</French>
 		<German>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</German>
 		<Italian>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</Italian>
 		<Spanish>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</Spanish>
@@ -3353,8 +3584,8 @@
 		<Tag>TXT_KEY_TECH_PRIESTHOOD</Tag>
 		<English>Priesthood</English>
 		<French>
-			<Text>Clerg&#233;</Text>
-			<Gender>Male</Gender>
+			<Text>Pr&#234;trise</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -3376,7 +3607,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PRIESTHOOD_QUOTE</Tag>
 		<English>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore, Fireflies</English>
-		<French>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore, Fireflies</French>
+		<French>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore, Lucioles</French>
 		<German>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore, Fireflies</German>
 		<Italian>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore, Fireflies</Italian>
 		<Spanish>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore, Fireflies</Spanish>
@@ -3387,7 +3618,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PRINTING</Tag>
 		<English>Printing</English>
-		<French>Printing</French>
+		<French>
+			<Text>Imprimerie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Printing</German>
 		<Italian>Printing</Italian>
 		<Spanish>Printing</Spanish>
@@ -3406,7 +3641,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PROPERTY</Tag>
 		<English>Property</English>
-		<French>Property</French>
+		<French>
+			<Text>Propri&#233;t&#233;</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Property</German>
 		<Italian>Property</Italian>
 		<Spanish>Property</Spanish>
@@ -3414,7 +3653,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PROPERTY_QUOTE</Tag>
 		<English>"The first man who, having fenced in a piece of land, said "This is mine," and found people naive enough to believe him; that man was the true founder of civil society."[PARAGRAPH:2]- Jean Jacques Rousseau, Discourse on Inequality</English>
-		<French>"The first man who, having fenced in a piece of land, said "This is mine," and found people naive enough to believe him; that man was the true founder of civil society."[PARAGRAPH:2]- Jean Jacques Rousseau, Discourse on Inequality</French>
+		<French>"Le premier qui, ayant enclos un terrain, s'avisa de dire : ceci est &#224; moi, et trouva des gens assez simples pour le croire, fut le vrai fondateur de la soci&#233;t&#233; civile."[PARAGRAPH:2]- Jean-Jacques Rousseau, Discours sur l'origine de l'in&#233;galit&#233;</French>
 		<German>"The first man who, having fenced in a piece of land, said "This is mine," and found people naive enough to believe him; that man was the true founder of civil society."[PARAGRAPH:2]- Jean Jacques Rousseau, Discourse on Inequality</German>
 		<Italian>"The first man who, having fenced in a piece of land, said "This is mine," and found people naive enough to believe him; that man was the true founder of civil society."[PARAGRAPH:2]- Jean Jacques Rousseau, Discourse on Inequality</Italian>
 		<Spanish>"The first man who, having fenced in a piece of land, said "This is mine," and found people naive enough to believe him; that man was the true founder of civil society."[PARAGRAPH:2]- Jean Jacques Rousseau, Discourse on Inequality</Spanish>
@@ -3433,7 +3672,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RADAR</Tag>
 		<English>Radar</English>
-		<French>Radar</French>
+		<French>
+			<Text>Radar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Radar</German>
 		<Italian>Radar</Italian>
 		<Spanish>Radar</Spanish>
@@ -3441,7 +3684,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RADAR_QUOTE</Tag>
 		<English>"Vision is the art of seeing things invisible."[PARAGRAPH:2]- Jonathan Swift</English>
-		<French>"Vision is the art of seeing things invisible."[PARAGRAPH:2]- Jonathan Swift</French>
+		<French>"La vision est l'art de voir les choses invisibles."[PARAGRAPH:2]- Jonathan Swift</French>
 		<German>"Vision is the art of seeing things invisible."[PARAGRAPH:2]- Jonathan Swift</German>
 		<Italian>"Vision is the art of seeing things invisible."[PARAGRAPH:2]- Jonathan Swift</Italian>
 		<Spanish>"Vision is the art of seeing things invisible."[PARAGRAPH:2]- Jonathan Swift</Spanish>
@@ -3484,7 +3727,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RADIO_QUOTE</Tag>
 		<English>"A world without radio is a deaf world."[PARAGRAPH:2] - Ernest Yeboah</English>
-		<French>"A world without radio is a deaf world."[PARAGRAPH:2] - Ernest Yeboah</French>
+		<French>"Un monde sans radio est un monde sourd."[PARAGRAPH:2] - Ernest Yeboah</French>
 		<German>"A world without radio is a deaf world."[PARAGRAPH:2] - Ernest Yeboah</German>
 		<Italian>"A world without radio is a deaf world."[PARAGRAPH:2] - Ernest Yeboah</Italian>
 		<Spanish>"A world without radio is a deaf world."[PARAGRAPH:2] - Ernest Yeboah</Spanish>
@@ -3519,7 +3762,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RAILROAD_QUOTE</Tag>
 		<English>"The introduction of so powerful an agent as steam to carriage on wheels will make a great change in the situation of man."[PARAGRAPH:2]- Thomas Jefferson</English>
-		<French>"The introduction of so powerful an agent as steam to carriage on wheels will make a great change in the situation of man."[PARAGRAPH:2]- Thomas Jefferson</French>
+		<French>"L'utilisation d'un agent aussi puissant que la vapeur dans la propulsion des v&#233;hicules marquera grandement l'&#233;volution de la soci&#233;t&#233; humaine."[PARAGRAPH:2]- Thomas Jefferson</French>
 		<German>"The introduction of so powerful an agent as steam to carriage on wheels will make a great change in the situation of man."[PARAGRAPH:2]- Thomas Jefferson</German>
 		<Italian>"The introduction of so powerful an agent as steam to carriage on wheels will make a great change in the situation of man."[PARAGRAPH:2]- Thomas Jefferson</Italian>
 		<Spanish>"The introduction of so powerful an agent as steam to carriage on wheels will make a great change in the situation of man."[PARAGRAPH:2]- Thomas Jefferson</Spanish>
@@ -3530,7 +3773,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFINING</Tag>
 		<English>Refining</English>
-		<French>Refining</French>
+		<French>
+			<Text>Raffinage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Refining</German>
 		<Italian>Refining</Italian>
 		<Spanish>Refining</Spanish>
@@ -3538,7 +3785,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFINING_QUOTE</Tag>
 		<English>"The formula for success: rise early, work late, and strike oil."[PARAGRAPH:2]- J. Paul Getty</English>
-		<French>"The formula for success: rise early, work late, and strike oil."[PARAGRAPH:2]- J. Paul Getty</French>
+		<French>"Ma recette du succ&#232;s ? Se lever t&#244;t. Travailler tard. Trouver du p&#233;trole."[PARAGRAPH:2]- J. Paul Getty</French>
 		<German>"The formula for success: rise early, work late, and strike oil."[PARAGRAPH:2]- J. Paul Getty</German>
 		<Italian>"The formula for success: rise early, work late, and strike oil."[PARAGRAPH:2]- J. Paul Getty</Italian>
 		<Spanish>"The formula for success: rise early, work late, and strike oil."[PARAGRAPH:2]- J. Paul Getty</Spanish>
@@ -3581,7 +3828,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFRIGERATION_QUOTE</Tag>
 		<English>"Tell me what you eat, and I will tell you what you are."[PARAGRAPH:2]- Anthelme Brillat-Savarin, The Physiology of Taste</English>
-		<French>"Dis-moi ce que tu manges et je te dirai qui tu es !"[PARAGRAPH:2]- Anthelme Brillat-Savarin</French>
+		<French>"Dis-moi ce que tu manges et je te dirai qui tu es."[PARAGRAPH:2]- Anthelme Brillat-Savarin</French>
 		<German>"Der Mensch ist, was er isst."[PARAGRAPH:2]- Anthelme Brillat-Savarin</German>
 		<Italian>"Dimmi cosa mangi e ti dir&#242; chi sei."[PARAGRAPH:2]- Anthelme Brillat-Savarin</Italian>
 		<Spanish>"Dime lo que comes y te dir&#233; qui&#233;n eres."[PARAGRAPH:2]- Anthelme Brillat-Savarin</Spanish>
@@ -3592,7 +3839,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RENEWABLE_ENERGY</Tag>
 		<English>Renewable Energy</English>
-		<French>Renewable Energy</French>
+		<French>
+			<Text>&#201;nergie renouvelable</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Renewable Energy</German>
 		<Italian>Renewable Energy</Italian>
 		<Spanish>Renewable Energy</Spanish>
@@ -3600,7 +3851,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RENEWABLE_ENERGY_QUOTE</Tag>
 		<English>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</English>
-		<French>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</French>
+		<French>"Dans quelques g&#233;n&#233;rations, nos machines seront anim&#233;es gr&#226;ce &#224; une &#233;nergie disponible en tous points de l‚Äôunivers."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</French>
 		<German>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</German>
 		<Italian>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</Italian>
 		<Spanish>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</Spanish>
@@ -3643,7 +3894,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REPLACEABLE_PARTS_QUOTE</Tag>
 		<English>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</English>
-		<French>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</French>
+		<French>"Rien n‚Äôest particuli&#232;rement difficile si on le divise en petites t&#226;ches."[PARAGRAPH:2]- Henry Ford</French>
 		<German>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</German>
 		<Italian>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</Italian>
 		<Spanish>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</Spanish>
@@ -3654,7 +3905,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REPRESENTATION</Tag>
 		<English>Representation</English>
-		<French>Representation</French>
+		<French>
+			<Text>Repr&#233;sentation</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Representation</German>
 		<Italian>Representation</Italian>
 		<Spanish>Representation</Spanish>
@@ -3681,7 +3936,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RIDING</Tag>
 		<English>Riding</English>
-		<French>Riding</French>
+		<French>
+			<Text>&#201;quitation</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Riding</German>
 		<Italian>Riding</Italian>
 		<Spanish>Riding</Spanish>
@@ -3802,7 +4061,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ROCKETRY_QUOTE</Tag>
 		<English>"We have guided missiles and misguided men."[PARAGRAPH:2]- Martin Luther King Jr., The Quest for Peace and Justice</English>
-		<French>"We have guided missiles and misguided men."[PARAGRAPH:2]- Martin Luther King Jr., The Quest for Peace and Justice</French>
+		<French>"Nous avons des missiles guid&#233;s et des hommes d&#233;sorient&#233;s."[PARAGRAPH:2]- Martin Luther King Jr.</French>
 		<German>"We have guided missiles and misguided men."[PARAGRAPH:2]- Martin Luther King Jr., The Quest for Peace and Justice</German>
 		<Italian>"We have guided missiles and misguided men."[PARAGRAPH:2]- Martin Luther King Jr., The Quest for Peace and Justice</Italian>
 		<Spanish>"We have guided missiles and misguided men."[PARAGRAPH:2]- Martin Luther King Jr., The Quest for Peace and Justice</Spanish>
@@ -3814,7 +4073,7 @@
 		<Tag>TXT_KEY_TECH_SAILING</Tag>
 		<English>Sailing</English>
 		<French>
-			<Text>Navigation &#224; voile</Text>
+			<Text>Voile</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -3848,7 +4107,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SATELLITES</Tag>
 		<English>Satellites</English>
-		<French>Satellites</French>
+		<French>
+			<Text>Satellites</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Satellites</German>
 		<Italian>Satellites</Italian>
 		<Spanish>Satellites</Spanish>
@@ -3856,7 +4119,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SATELLITES_QUOTE</Tag>
 		<English>"The earth is the cradle of the mind but one cannot eternally live in a cradle."[PARAGRAPH:2]- Konstantin Tsiolkovsky</English>
-		<French> "La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?"[PARAGRAPH:2]- Konstantin Tsiolkovsky</French>
+		<French> "La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?"[PARAGRAPH:2]- Constantin Tsiolkovski</French>
 		<German>"Die Erde ist die Wiege der Menschheit, aber welches Kind bleibt schon ewig in seiner Wiege."[PARAGRAPH:2]- Konstantin Ciolkowski</German>
 		<Italian>"La Terra &#232; la culla della mente... ma non si pu&#242; vivere sempre in una culla..."[PARAGRAPH:2]- Konstantin Tsiolkovksy</Italian>
 		<Spanish>"La Tierra es la cuna de la Humanidad, pero no puedes vivir en una cuna eternamente."[PARAGRAPH:2]- Konstant&#237;n Tsiolkovksi</Spanish>
@@ -3867,7 +4130,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SCHOLARSHIP</Tag>
 		<English>Scholarship</English>
-		<French>Scholarship</French>
+		<French>
+			<Text>Scolastique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Scholarship</German>
 		<Italian>Scholarship</Italian>
 		<Spanish>Scholarship</Spanish>
@@ -3875,7 +4142,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SCHOLARSHIP_QUOTE</Tag>
 		<English>"There is no wealth like knowledge, no poverty like ignorance."[PARAGRAPH:2]- Ali ibn Abi-Talib, Regarding Knowledge and Wisdom</English>
-		<French>"There is no wealth like knowledge, no poverty like ignorance."[PARAGRAPH:2]- Ali ibn Abi-Talib, Regarding Knowledge and Wisdom</French>
+		<French>"Il n'y a pas de plus grande richesse que la science, pas de plus grande pauvret&#233; que l'ignorance."[PARAGRAPH:2]- Ali ibn Abi Talib</French>
 		<German>"There is no wealth like knowledge, no poverty like ignorance."[PARAGRAPH:2]- Ali ibn Abi-Talib, Regarding Knowledge and Wisdom</German>
 		<Italian>"There is no wealth like knowledge, no poverty like ignorance."[PARAGRAPH:2]- Ali ibn Abi-Talib, Regarding Knowledge and Wisdom</Italian>
 		<Spanish>"There is no wealth like knowledge, no poverty like ignorance."[PARAGRAPH:2]- Ali ibn Abi-Talib, Regarding Knowledge and Wisdom</Spanish>
@@ -3929,7 +4196,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SEAFARING</Tag>
 		<English>Seafaring</English>
-		<French>Seafaring</French>
+		<French>
+			<Text>Marine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Seafaring</German>
 		<Italian>Seafaring</Italian>
 		<Spanish>Seafaring</Spanish>
@@ -3956,7 +4227,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SHIPBUILDING</Tag>
 		<English>Shipbuilding</English>
-		<French>Shipbuilding</French>
+		<French>
+			<Text>Construction navale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Shipbuilding</German>
 		<Italian>Shipbuilding</Italian>
 		<Spanish>Shipbuilding</Spanish>
@@ -3964,7 +4239,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SHIPBUILDING_QUOTE</Tag>
 		<English>"He who commands the sea has command of everything."[PARAGRAPH:2]- Themistocles</English>
-		<French>"He who commands the sea has command of everything."[PARAGRAPH:2]- Themistocles</French>
+		<French>"Quand on est ma&#238;tre de la mer on est ma&#238;tre de tout."[PARAGRAPH:2]- Th&#233;mistocle</French>
 		<German>"He who commands the sea has command of everything."[PARAGRAPH:2]- Themistocles</German>
 		<Italian>"He who commands the sea has command of everything."[PARAGRAPH:2]- Themistocles</Italian>
 		<Spanish>"He who commands the sea has command of everything."[PARAGRAPH:2]- Themistocles</Spanish>
@@ -3983,7 +4258,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMMUNE</Tag>
 		<English>Commune</English>
-		<French>Commune</French>
+		<French>
+			<Text>Commune</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Commune</German>
 		<Italian>Commune</Italian>
 		<Spanish>Commune</Spanish>
@@ -3991,7 +4270,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMMUNE_QUOTE</Tag>
 		<English>"We shall be a single People of brethren, never to part in danger nor distress."[PARAGRAPH:2]- Friedrich Schiller, William Tell</English>
-		<French>"We shall be a single People of brethren, never to part in danger nor distress."[PARAGRAPH:2]- Friedrich Schiller, William Tell</French>
+		<French>"Nous serons un peuple de fr&#232;res que nul malheur et nul danger ne s&#233;parera."[PARAGRAPH:2]- Friedrich Schiller, Guillaume Tell</French>
 		<German>"We shall be a single People of brethren, never to part in danger nor distress."[PARAGRAPH:2]- Friedrich Schiller, William Tell</German>
 		<Italian>"We shall be a single People of brethren, never to part in danger nor distress."[PARAGRAPH:2]- Friedrich Schiller, William Tell</Italian>
 		<Spanish>"We shall be a single People of brethren, never to part in danger nor distress."[PARAGRAPH:2]- Friedrich Schiller, William Tell</Spanish>
@@ -4010,7 +4289,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SMELTING</Tag>
 		<English>Smelting</English>
-		<French>Smelting</French>
+		<French>
+			<Text>Fusion des m&#233;taux</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Smelting</German>
 		<Italian>Smelting</Italian>
 		<Spanish>Smelting</Spanish>
@@ -4018,14 +4301,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SMELTING_QUOTE</Tag>
 		<English>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</English>
-		<French>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</French>
+		<French>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- S&#233;n&#232;que</French>
 		<German>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</German>
 		<Italian>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</Italian>
 		<Spanish>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SMELTING_PEDIA</Tag>
-		<English>Smelting is a form of extractive metallurgy; its main use is to produce a base metal from its ore. This includes production of silver, iron, copper and other base metals from their ores. Smelting makes use of heat and a chemical reducing agent to decompose the ore, driving off other elements as gases or slag and leaving just the metal base behind. The reducing agent is commonly a source of carbon such as coke, or in earlier times charcoal.[PARAGRAPH:2]The carbon (or carbon monoxide derived from it) removes oxygen from the ore, leaving behind the elemental metal. The carbon is thus oxidized in two stages, producing first carbon monoxide and then carbon dioxide. As most ores are impure, it is often necessary to use flux, such as limestone, to remove the accompanying rock gangue as slag.[PARAGRAPH:2]In the Old World, the first metals smelted were tin and lead. After tin and lead, the next metal to be smelted appears to have been copper. How the discovery came about is a matter of much debate. Campfires are about 200 ∞C short of the temperature needed for that, so it has been conjectured that the first smelting of copper may have been achieved in pottery kilns. The development of copper smelting in the Andes, which is believed to have occurred independently of that in the Old World, may have occurred in the same way.[PARAGRAPH:2]The discovery of copper manufacture had a significant impact on the history of the Old World. Metals were hard enough to make weapons that were heavier, stronger, and more resistant to impact-related damage than their wood, bone, or stone equivalents.</English>
+		<English>Smelting is a form of extractive metallurgy; its main use is to produce a base metal from its ore. This includes production of silver, iron, copper and other base metals from their ores. Smelting makes use of heat and a chemical reducing agent to decompose the ore, driving off other elements as gases or slag and leaving just the metal base behind. The reducing agent is commonly a source of carbon such as coke, or in earlier times charcoal.[PARAGRAPH:2]The carbon (or carbon monoxide derived from it) removes oxygen from the ore, leaving behind the elemental metal. The carbon is thus oxidized in two stages, producing first carbon monoxide and then carbon dioxide. As most ores are impure, it is often necessary to use flux, such as limestone, to remove the accompanying rock gangue as slag.[PARAGRAPH:2]In the Old World, the first metals smelted were tin and lead. After tin and lead, the next metal to be smelted appears to have been copper. How the discovery came about is a matter of much debate. Campfires are about 200 &#176;C short of the temperature needed for that, so it has been conjectured that the first smelting of copper may have been achieved in pottery kilns. The development of copper smelting in the Andes, which is believed to have occurred independently of that in the Old World, may have occurred in the same way.[PARAGRAPH:2]The discovery of copper manufacture had a significant impact on the history of the Old World. Metals were hard enough to make weapons that were heavier, stronger, and more resistant to impact-related damage than their wood, bone, or stone equivalents.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -4037,7 +4320,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIOLOGY</Tag>
 		<English>Sociology</English>
-		<French>Sociology</French>
+		<French>
+			<Text>Sociologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sociology</German>
 		<Italian>Sociology</Italian>
 		<Spanish>Sociology</Spanish>
@@ -4045,7 +4332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIOLOGY_QUOTE</Tag>
 		<English>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</English>
-		<French>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</French>
+		<French>"La soci&#233;t&#233; n‚Äôest pas constitu&#233;e d‚Äôindividus, mais exprime la somme des relations, des rapports o&#249; ces individus se situent les uns par rapport aux autres."[PARAGRAPH:2]- Karl Marx, Grundrisse</French>
 		<German>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</German>
 		<Italian>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</Italian>
 		<Spanish>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</Spanish>
@@ -4064,7 +4351,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIAL_SERVICES</Tag>
 		<English>Social Services</English>
-		<French>Social Services</French>
+		<French>
+			<Text>Services sociaux</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Social Services</German>
 		<Italian>Social Services</Italian>
 		<Spanish>Social Services</Spanish>
@@ -4072,7 +4363,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIAL_SERVICES_QUOTE</Tag>
 		<English>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</English>
-		<French>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</French>
+		<French>"Le prince doit donc, s‚Äôil est dou&#233; de quelque sagesse, imaginer et &#233;tablir un syst&#232;me de gouvernement tel, qu‚Äôen quelque temps que ce soit, et malgr&#233; toutes les circonstances, les citoyens aient besoin de lui : alors il sera toujours certain de les trouver fid&#232;les."[PARAGRAPH:2]- Nicolas Machiavel, Le Prince</French>
 		<German>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</German>
 		<Italian>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</Italian>
 		<Spanish>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</Spanish>
@@ -4091,7 +4382,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SPACEFLIGHT</Tag>
 		<English>Spaceflight</English>
-		<French>Spaceflight</French>
+		<French>
+			<Text>Vol spatial</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Spaceflight</German>
 		<Italian>Spaceflight</Italian>
 		<Spanish>Spaceflight</Spanish>
@@ -4099,7 +4394,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SPACEFLIGHT_QUOTE</Tag>
 		<English>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</English>
-		<French>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</French>
+		<French>"Un petit pas pour l'homme, un bond de g&#233;ant pour l'humanit&#233;."[PARAGRAPH:2]- Neil Armstrong</French>
 		<German>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</German>
 		<Italian>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</Italian>
 		<Spanish>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</Spanish>
@@ -4118,7 +4413,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_STATECRAFT</Tag>
 		<English>Statecraft</English>
-		<French>Statecraft</French>
+		<French>
+			<Text>Statecraft</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Statecraft</German>
 		<Italian>Statecraft</Italian>
 		<Spanish>Statecraft</Spanish>
@@ -4126,7 +4425,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_STATECRAFT_QUOTE</Tag>
 		<English>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</English>
-		<French>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</French>
+		<French>"L‚Äôassociation de plusieurs villages forme un &#201;tat complet, arriv&#233;, l‚Äôon peut dire, &#224; ce point de se suffire absolument &#224; lui-m&#234;me, n&#233; d‚Äôabord des besoins de la vie, et subsistant parce qu‚Äôil les satisfait tous."[PARAGRAPH:2]- Aristote, Politique</French>
 		<German>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</German>
 		<Italian>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</Italian>
 		<Spanish>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</Spanish>
@@ -4145,7 +4444,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_STEEL</Tag>
 		<English>Steel</English>
-		<French>Steel</French>
+		<French>
+			<Text>Acier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Steel</German>
 		<Italian>Steel</Italian>
 		<Spanish>Steel</Spanish>
@@ -4153,7 +4456,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_STEEL_QUOTE</Tag>
 		<English>"There never was a good knife made of bad steel."[PARAGRAPH:2]- Benjamin Franklin</English>
-		<French>"There never was a good knife made of bad steel."[PARAGRAPH:2]- Benjamin Franklin</French>
+		<French>"Jamais il n'y a eu de bon couteau n&#233; d'un mauvais acier."[PARAGRAPH:2]- Benjamin Franklin</French>
 		<German>"There never was a good knife made of bad steel."[PARAGRAPH:2]- Benjamin Franklin</German>
 		<Italian>"There never was a good knife made of bad steel."[PARAGRAPH:2]- Benjamin Franklin</Italian>
 		<Spanish>"There never was a good knife made of bad steel."[PARAGRAPH:2]- Benjamin Franklin</Spanish>
@@ -4216,7 +4519,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERMATERIALS</Tag>
 		<English>Supermaterials</English>
-		<French>Supermaterials</French>
+		<French>
+			<Text>Supermat&#233;riaux</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Supermaterials</German>
 		<Italian>Supermaterials</Italian>
 		<Spanish>Supermaterials</Spanish>
@@ -4242,7 +4549,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PSYCHOLOGY</Tag>
 		<English>Psychology</English>
-		<French>Psychology</French>
+		<French>
+			<Text>Psychologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Psychology</German>
 		<Italian>Psychology</Italian>
 		<Spanish>Psychology</Spanish>
@@ -4250,7 +4561,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PSYCHOLOGY_QUOTE</Tag>
 		<English>"The mind is like an iceberg, it floats with one-seventh of its bulk above water."[PARAGRAPH:2]- Sigmund Freud</English>
-		<French>"The mind is like an iceberg, it floats with one-seventh of its bulk above water."[PARAGRAPH:2]- Sigmund Freud</French>
+		<French>"L'esprit est comme un iceberg, il flotte avec un septi&#232;me de sa masse au-dessus de l'eau."[PARAGRAPH:2]- Sigmund Freud</French>
 		<German>"The mind is like an iceberg, it floats with one-seventh of its bulk above water."[PARAGRAPH:2]- Sigmund Freud</German>
 		<Italian>"The mind is like an iceberg, it floats with one-seventh of its bulk above water."[PARAGRAPH:2]- Sigmund Freud</Italian>
 		<Spanish>"The mind is like an iceberg, it floats with one-seventh of its bulk above water."[PARAGRAPH:2]- Sigmund Freud</Spanish>
@@ -4269,7 +4580,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SYNTHETICS</Tag>
 		<English>Synthetics</English>
-		<French>Synthetics</French>
+		<French>
+			<Text>Mat&#233;riaux synth&#233;tiques</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Synthetics</German>
 		<Italian>Synthetics</Italian>
 		<Spanish>Synthetics</Spanish>
@@ -4277,7 +4592,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SYNTHETICS_QUOTE</Tag>
 		<English>"Nothing on this earth lasts forever. Except maybe plastic."[PARAGRAPH:2]- Patricia Dunn</English>
-		<French>"Nothing on this earth lasts forever. Except maybe plastic."[PARAGRAPH:2]- Patricia Dunn</French>
+		<French>"Rien sur cette terre ne dure &#233;ternellement. Sauf peut-&#234;tre le plastique."[PARAGRAPH:2]- Patricia Dunn</French>
 		<German>"Nothing on this earth lasts forever. Except maybe plastic."[PARAGRAPH:2]- Patricia Dunn</German>
 		<Italian>"Nothing on this earth lasts forever. Except maybe plastic."[PARAGRAPH:2]- Patricia Dunn</Italian>
 		<Spanish>"Nothing on this earth lasts forever. Except maybe plastic."[PARAGRAPH:2]- Patricia Dunn</Spanish>
@@ -4288,7 +4603,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TANNING</Tag>
 		<English>Tanning</English>
-		<French>Tanning</French>
+		<French>
+			<Text>Tannage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tanning</German>
 		<Italian>Tanning</Italian>
 		<Spanish>Tanning</Spanish>
@@ -4296,7 +4615,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TANNING_QUOTE</Tag>
 		<English>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</English>
-		<French>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</French>
+		<French>"Pour celui qui a le pied chauss&#233;, la terre n'est-elle pas en quelque sorte toute couverte de cuir ?."[PARAGRAPH:2]- Proverbe indien</French>
 		<German>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</German>
 		<Italian>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</Italian>
 		<Spanish>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</Spanish>
@@ -4315,7 +4634,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TELECOMMUNICATIONS</Tag>
 		<English>Telecommunications</English>
-		<French>Telecommunications</French>
+		<French>
+			<Text>T&#233;l&#233;communications</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Telecommunications</German>
 		<Italian>Telecommunications</Italian>
 		<Spanish>Telecommunications</Spanish>
@@ -4323,7 +4646,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TELECOMMUNICATIONS_QUOTE</Tag>
 		<English>"The new electronic interdependence recreates the world in the image of a global village."[PARAGRAPH:2]- Marshall McLuhan, The Gutenberg Galaxy</English>
-		<French>"The new electronic interdependence recreates the world in the image of a global village."[PARAGRAPH:2]- Marshall McLuhan, The Gutenberg Galaxy</French>
+		<French>"L'interd&#233;pendance nouvelle qu'impose l'&#233;lectronique recr&#233;e le monde &#224; l'image d'un village global."[PARAGRAPH:2]- Marshall McLuhan, La Galaxie Gutenberg</French>
 		<German>"The new electronic interdependence recreates the world in the image of a global village."[PARAGRAPH:2]- Marshall McLuhan, The Gutenberg Galaxy</German>
 		<Italian>"The new electronic interdependence recreates the world in the image of a global village."[PARAGRAPH:2]- Marshall McLuhan, The Gutenberg Galaxy</Italian>
 		<Spanish>"The new electronic interdependence recreates the world in the image of a global village."[PARAGRAPH:2]- Marshall McLuhan, The Gutenberg Galaxy</Spanish>
@@ -4342,7 +4665,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TELEPHONE</Tag>
 		<English>Telephone</English>
-		<French>Telephone</French>
+		<French>T&#233;l&#233;phone</French>
 		<German>Telephone</German>
 		<Italian>Telephone</Italian>
 		<Spanish>Telephone</Spanish>
@@ -4369,7 +4692,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TELEVISION</Tag>
 		<English>Television</English>
-		<French>Television</French>
+		<French>
+			<Text>T&#233;l&#233;vision</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Television</German>
 		<Italian>Television</Italian>
 		<Spanish>Television</Spanish>
@@ -4377,7 +4704,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TELEVISION_QUOTE</Tag>
 		<English>"In the age of television, image becomes more important than substance."[PARAGRAPH:2]- S. I. Hayakawa</English>
-		<French>"In the age of television, image becomes more important than substance."[PARAGRAPH:2]- S. I. Hayakawa</French>
+		<French>"&#192; l'&#232;re de la t&#233;l&#233;vision, l'image devient plus importante que le fond."[PARAGRAPH:2]- S. I. Hayakawa</French>
 		<German>"In the age of television, image becomes more important than substance."[PARAGRAPH:2]- S. I. Hayakawa</German>
 		<Italian>"In the age of television, image becomes more important than substance."[PARAGRAPH:2]- S. I. Hayakawa</Italian>
 		<Spanish>"In the age of television, image becomes more important than substance."[PARAGRAPH:2]- S. I. Hayakawa</Spanish>
@@ -4411,7 +4738,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THEOLOGY_QUOTE</Tag>
 		<English>"Two cities have been formed by two loves: the earthly by the love of self; the heavenly by the love of God."[PARAGRAPH:2]- Augustine of Hippo, The City of God</English>
-		<French>"Deux amours ont fait deux cit&#233;s : l'amour de soi, la cit&#233; terrestre ; l'amour de Dieu, la cit&#233; c&#233;leste."[PARAGRAPH:2]- Saint-Augustin</French>
+		<French>"Deux amours ont fait deux cit&#233;s : l'amour de soi, la cit&#233; terrestre ; l'amour de Dieu, la cit&#233; c&#233;leste."[PARAGRAPH:2]- Augustin d'Hippone</French>
 		<German>"Es gibt zwei St&#228;dte auf der Welt. Die eine ist auf der Liebe zu sich selbst, die andere auf der Liebe zu Gott errichtet."[PARAGRAPH:2]- Augustinus</German>
 		<Italian>"Esistono due tipi di citt&#224;, fondate su due tipi d'amore: quello terreno per s&#233; stessi e quello celeste per di Dio."[PARAGRAPH:2]- Sant'Agostino</Italian>
 		<Spanish>"Dos amores han fundado dos ciudades: el amor a uno mismo, la terrenal; y el amor a Dios, la celestial."[PARAGRAPH:2]- San Agust&#237;n</Spanish>
@@ -4422,7 +4749,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THERMODYNAMICS</Tag>
 		<English>Thermodynamics</English>
-		<French>Thermodynamics</French>
+		<French>
+			<Text>Thermodynamique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Thermodynamics</German>
 		<Italian>Thermodynamics</Italian>
 		<Spanish>Thermodynamics</Spanish>
@@ -4430,14 +4761,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THERMODYNAMICS_QUOTE</Tag>
 		<English>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</English>
-		<French>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</French>
+		<French>"L‚Äô&#233;nergie de l‚Äôunivers est constante. L‚Äôentropie de l‚Äôunivers tend vers un maximum."[PARAGRAPH:2] - Rudolf Clausius, Th&#233;orie m&#233;canique de la chaleur</French>
 		<German>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</German>
 		<Italian>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</Italian>
 		<Spanish>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THERMODYNAMICS_PEDIA</Tag>
-		<English>Thermodynamics is a branch of physics concerned with heat and temperature and their relation to energy and work. The behavior of these quantities is governed by the four laws of thermodynamics, irrespective of the composition or specific properties of the material or system in question. The laws of thermodynamics are explained in terms of microscopic constituents by statistical mechanics. Thermodynamics applies to a wide variety of topics in science and engineering, especially physical chemistry, chemical engineering and mechanical engineering.[PARAGRAPH:2]Historically, thermodynamics developed out of a desire to increase the efficiency of early steam engines, particularly through the work of French physicist Nicolas LÈonard Sadi Carnot (1824) who believed that engine efficiency was the key that could help France win the Napoleonic Wars. Scottish physicist Lord Kelvin was the first to formulate a concise definition of thermodynamics in 1854 which stated, "Thermo-dynamics is the subject of the relation of heat to forces acting between contiguous parts of bodies, and the relation of heat to electrical agency."</English>
+		<English>Thermodynamics is a branch of physics concerned with heat and temperature and their relation to energy and work. The behavior of these quantities is governed by the four laws of thermodynamics, irrespective of the composition or specific properties of the material or system in question. The laws of thermodynamics are explained in terms of microscopic constituents by statistical mechanics. Thermodynamics applies to a wide variety of topics in science and engineering, especially physical chemistry, chemical engineering and mechanical engineering.[PARAGRAPH:2]Historically, thermodynamics developed out of a desire to increase the efficiency of early steam engines, particularly through the work of French physicist Nicolas L&#233;onard Sadi Carnot (1824) who believed that engine efficiency was the key that could help France win the Napoleonic Wars. Scottish physicist Lord Kelvin was the first to formulate a concise definition of thermodynamics in 1854 which stated, "Thermo-dynamics is the subject of the relation of heat to forces acting between contiguous parts of bodies, and the relation of heat to electrical agency."</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -4448,7 +4779,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TOURISM</Tag>
 		<English>Tourism</English>
-		<French>Tourism</French>
+		<French>
+			<Text>Tourisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tourism</German>
 		<Italian>Tourism</Italian>
 		<Spanish>Tourism</Spanish>
@@ -4456,7 +4791,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TOURISM_QUOTE</Tag>
 		<English>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</English>
-		<French>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</French>
+		<French>"Le monde est un livre et ceux qui ne voyagent pas n'en lisent qu'une page."[PARAGRAPH:2]- Augustin d'Hippone</French>
 		<German>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</German>
 		<Italian>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</Italian>
 		<Spanish>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</Spanish>
@@ -4475,7 +4810,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TRANSHUMANISM</Tag>
 		<English>Transhumanism</English>
-		<French>Transhumanism</French>
+		<French>
+			<Text>Transhumanisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Transhumanism</German>
 		<Italian>Transhumanism</Italian>
 		<Spanish>Transhumanism</Spanish>
@@ -4502,15 +4841,19 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_UNIFIED_THEORY</Tag>
 		<English>Unified Theory</English>
-		<French>Unified Theory</French>
+		<French>
+			<Text>Th&#233;orie du tout</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Unified Theory</German>
 		<Italian>Unified Theory</Italian>
 		<Spanish>Unified Theory</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_UNIFIED_THEORY_QUOTE</Tag>
-		<English>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</English>
-		<French>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</French>
+		<English>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- J. B. S. Haldane</English>
+		<French>"Non seulement l'Univers est plus &#233;trange que nous ne l'imaginons, mais il est plus &#233;trange que nous ne pouvons l'imaginer."[PARAGRAPH:2]- J. B. S. Haldane</French>
 		<German>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</German>
 		<Italian>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</Italian>
 		<Spanish>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</Spanish>
@@ -4529,7 +4872,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_URBAN_PLANNING</Tag>
 		<English>Urban Planning</English>
-		<French>Urban Planning</French>
+		<French>
+			<Text>Urbanisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Urban Planning</German>
 		<Italian>Urban Planning</Italian>
 		<Spanish>Urban Planning</Spanish>
@@ -4537,7 +4884,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_URBAN_PLANNING_QUOTE</Tag>
 		<English>"I found Rome a city of bricks and left it a city of marble."[PARAGRAPH:2]- Augustus Caesar</English>
-		<French>"I found Rome a city of bricks and left it a city of marble."[PARAGRAPH:2]- Augustus Caesar</French>
+		<French>"J'ai trouv&#233; une Rome de brique. J'ai laiss&#233; une Rome de marbre."[PARAGRAPH:2]- Auguste</French>
 		<German>"I found Rome a city of bricks and left it a city of marble."[PARAGRAPH:2]- Augustus Caesar</German>
 		<Italian>"I found Rome a city of bricks and left it a city of marble."[PARAGRAPH:2]- Augustus Caesar</Italian>
 		<Spanish>"I found Rome a city of bricks and left it a city of marble."[PARAGRAPH:2]- Augustus Caesar</Spanish>
@@ -4556,7 +4903,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMPANIES</Tag>
 		<English>Companies</English>
-		<French>Companies</French>
+		<French>
+			<Text>Compagnies</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Companies</German>
 		<Italian>Companies</Italian>
 		<Spanish>Companies</Spanish>
@@ -4583,7 +4934,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FORTIFICATION</Tag>
 		<English>Fortification</English>
-		<French>Fortification</French>
+		<French>
+			<Text>Fortification</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Fortification</German>
 		<Italian>Fortification</Italian>
 		<Spanish>Fortification</Spanish>
@@ -4610,7 +4965,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MYTHOLOGY</Tag>
 		<English>Mythology</English>
-		<French>Mythology</French>
+		<French>
+			<Text>Mythologie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mythology</German>
 		<Italian>Mythology</Italian>
 		<Spanish>Mythology</Spanish>
@@ -4618,7 +4977,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MYTHOLOGY_QUOTE</Tag>
 		<English>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</English>
-		<French>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</French>
+		<French>"Ne t‚Äô&#233;gale point aux Dieux, car la race des Dieux immortels n‚Äôest point semblable &#224; celle des hommes qui marchent sur la terre."[PARAGRAPH:2]- Hom&#232;re, l'Iliade</French>
 		<German>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</German>
 		<Italian>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</Italian>
 		<Spanish>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</Spanish>
@@ -4638,7 +4997,7 @@
 		<Tag>TXT_KEY_TECH_WRITING</Tag>
 		<English>Writing</English>
 		<French>
-			<Text>Ecriture</Text>
+			<Text>&#201;criture</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -4670,7 +5029,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ERA_GLOBAL</Tag>
 		<English>Global</English>
-		<French>Global</French>
+		<French>Globale</French>
 		<German>Global</German>
 		<Italian>Global</Italian>
 		<Spanish>Global</Spanish>
@@ -4678,7 +5037,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ERA_DIGITAL</Tag>
 		<English>Digital</English>
-		<French>Digital</French>
+		<French>Digitale</French>
 		<German>Digital</German>
 		<Italian>Digital</Italian>
 		<Spanish>Digital</Spanish>
