@@ -1995,11 +1995,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>
-		<English>[ICON_BULLET]Only two Temples required to build Cathedrals (not implemented)</English>
-		<French>[ICON_BULLET]Only two Temples required to build Cathedrals (not implemented)</French>
-		<German>[ICON_BULLET]Only two Temples required to build Cathedrals (not implemented)</German>
-		<Italian>[ICON_BULLET]Only two Temples required to build Cathedrals (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Only two Temples required to build Cathedrals (not implemented)</Spanish>
+		<English>[ICON_BULLET]Only three Temples required to build Cathedrals</English>
+		<French>[ICON_BULLET]Only three Temples required to build Cathedrals</French>
+		<German>[ICON_BULLET]Only three Temples required to build Cathedrals</German>
+		<Italian>[ICON_BULLET]Only three Temples required to build Cathedrals</Italian>
+		<Spanish>[ICON_BULLET]Only three Temples required to build Cathedrals</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE_HELP</Tag>
