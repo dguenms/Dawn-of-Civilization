@@ -6759,6 +6759,12 @@ int CvPlayer::getBuildingClassPrereqBuildingStatic(BuildingTypes eBuilding, Buil
 	iPrereqs *= std::max(0, (GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getBuildingClassPrereqModifier() + 100));
 	iPrereqs /= 100;
 
+	// Leoreth: Notre Dame effect
+	if (isHasBuildingEffect((BuildingTypes)NOTRE_DAME) && kBuilding.getReligionType() != NO_RELIGION)
+	{
+		iPrereqs -= 1;
+	}
+
 	if (!isLimitedWonderClass(eBuildingClass))
 	{
 		iPrereqs *= (getBuildingClassCount((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())) + iExtra + 1);
