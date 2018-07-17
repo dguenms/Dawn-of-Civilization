@@ -1880,11 +1880,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</French>
-		<German>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</German>
-		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] on Desert (not implemented)</Spanish>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>

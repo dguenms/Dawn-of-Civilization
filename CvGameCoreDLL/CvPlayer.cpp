@@ -6958,7 +6958,16 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	}
 
 	// Salsal Buddha
-	updatePlotGroups();
+	if (eBuilding == SALSAL_BUDDHA)
+	{
+		updatePlotGroups();
+	}
+
+	// University of Sankore
+	else if (eBuilding == UNIVERSITY_OF_SANKORE)
+	{
+		updateYield();
+	}
 }
 
 

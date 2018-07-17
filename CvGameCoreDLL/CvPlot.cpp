@@ -7047,6 +7047,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Leoreth: University of Sankore effect
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)UNIVERSITY_OF_SANKORE))
+		{
+			if (getTerrainType() == TERRAIN_DESERT && eYield == YIELD_COMMERCE)
+			{
+				iYield += 1;
+			}
+		}
+
 		//Rhye - start UP (not shown in debug mode)
 		if (ePlayer == MALI)
 		{
