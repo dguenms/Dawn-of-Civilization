@@ -1339,6 +1339,30 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 					break;
 				}
 
+				// Leoreth: Krak des Chevaliers effect
+				if (pDefender->getDamage() + iDefenderDamage >= pDefender->maxHitPoints())
+				{
+					if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KRAK_DES_CHEVALIERS))
+					{
+						if (pPlot->isCity())
+						{
+							CvCity* pCity = pPlot->getPlotCity();
+
+							if (pCity->getOwner() == pDefender->getOwnerINLINE() && !pCity->isCapital())
+							{
+								CvCity* pCapital = GET_PLAYER(pDefender->getOwnerINLINE()).getCapitalCity();
+								if (pCapital != NULL)
+								{
+									changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
+									//pDefender->setXY(pDefender->getX_INLINE()-1, pDefender->getY_INLINE()-1, true, true, pCapital->plot()->isVisibleToWatchingHuman(), true);
+									CvEventReporter::getInstance().combatRetreat(this, pDefender);
+									break;
+								}
+							}
+						}
+					}
+				}
+
 				pDefender->changeDamage(iDefenderDamage, getOwnerINLINE());
 
 				if (getCombatFirstStrikes() > 0 && isRanged())
@@ -1714,6 +1738,31 @@ void CvUnit::updateCombat(bool bQuick)
 
 			// This is is put before the plot advancement, the unit will always try to walk back
 			// to the square that they came from, before advancing.
+			getGroup()->clearMissionQueue();
+		}
+		else if (GET_PLAYER(pDefender->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KRAK_DES_CHEVALIERS) && pDefender->maxHitPoints() - pDefender->getDamage() < maxHitPoints() - getDamage())
+		{
+			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", pDefender->getNameKey(), getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+
+			bool bAdvance = canAdvance(pPlot, ((pDefender->canDefendAgainst(this) ) ? 1 : 0));
+
+			CvCity* pCapital = GET_PLAYER(pDefender->getOwnerINLINE()).getCapitalCity();
+			pDefender->setXY(pCapital->getX(), pCapital->getY());
+
+			if (!bAdvance)
+			{
+				changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
+				checkRemoveSelectionAfterAttack();
+			}
+
+			if (pPlot->getNumVisibleEnemyDefenders(this) == 0)
+			{
+				getGroup()->groupMove(pPlot, true, ((bAdvance) ? this : NULL));
+			}
+
 			getGroup()->clearMissionQueue();
 		}
 		else

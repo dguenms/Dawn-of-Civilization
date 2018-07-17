@@ -1435,11 +1435,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_KRAK_DES_CHEVALIERS</Tag>
-		<English>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</English>
-		<French>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</French>
-		<German>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</German>
-		<Italian>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Defeated city defenders retreat to your capital (not implemented)</Spanish>
+		<English>[ICON_BULLET]Defeated city defenders retreat to your capital</English>
+		<French>[ICON_BULLET]Defeated city defenders retreat to your capital</French>
+		<German>[ICON_BULLET]Defeated city defenders retreat to your capital</German>
+		<Italian>[ICON_BULLET]Defeated city defenders retreat to your capital</Italian>
+		<Spanish>[ICON_BULLET]Defeated city defenders retreat to your capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Tag>
