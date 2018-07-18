@@ -16,7 +16,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ACADEMIA_QUOTE</Tag>
 		<English>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</English>
-		<French>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristote, &#201;thique &#224; Nicomaque</French>
+		<French>"C'est la marque d'un esprit cultiv&#233; qu'&#234;tre capable de nourrir une pens&#233;e sans la cautionner pour autant."[PARAGRAPH:2]- Aristote, &#201;thique &#224; Nicomaque</French>
 		<German>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</German>
 		<Italian>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</Italian>
 		<Spanish>"It is the mark of an educated mind to be able to entertain a thought without accepting it."[PARAGRAPH:2]- Aristotle, Nicomachean Ethics</Spanish>
@@ -45,7 +45,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AERODYNAMICS_QUOTE</Tag>
 		<English>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</English>
-		<French>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</French>
+		<French>"Je me suis lib&#233;r&#233; des emprises de la Terre ; J'ai dans&#233; dans le ciel sur les ailes argent&#233;es du rire."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</French>
 		<German>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</German>
 		<Italian>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</Italian>
 		<Spanish>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</Spanish>
@@ -88,7 +88,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AESTHETICS_QUOTE</Tag>
 		<English>"I believe in the might of design, the mystery of colour, the redemption of all things by Beauty everlasting, and the message of Art that has made these hands blessed."[PARAGRAPH:2]- George Bernard Shaw, The Doctor's Dilemma</English>
-		<French>"I believe in the might of design, the mystery of colour, the redemption of all things by Beauty everlasting, and the message of Art that has made these hands blessed."[PARAGRAPH:2]- George Bernard Shaw, The Doctor's Dilemma</French>
+		<French>"Je crois &#224; la puissance du dessin, aux myst&#232;res de la couleur, &#224; la r&#233;demption de toutes choses par l'&#233;ternelle beaut&#233; et au message de l'art qui a b&#233;ni ces mains."[PARAGRAPH:2]- George Bernard Shaw, Le Dilemme du docteur</French>
 		<German>"I believe in the might of design, the mystery of colour, the redemption of all things by Beauty everlasting, and the message of Art that has made these hands blessed."[PARAGRAPH:2]- George Bernard Shaw, The Doctor's Dilemma</German>
 		<Italian>"I believe in the might of design, the mystery of colour, the redemption of all things by Beauty everlasting, and the message of Art that has made these hands blessed."[PARAGRAPH:2]- George Bernard Shaw, The Doctor's Dilemma</Italian>
 		<Spanish>"I believe in the might of design, the mystery of colour, the redemption of all things by Beauty everlasting, and the message of Art that has made these hands blessed."[PARAGRAPH:2]- George Bernard Shaw, The Doctor's Dilemma</Spanish>
@@ -123,7 +123,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AGRICULTURE_QUOTE</Tag>
 		<English>"When tillage begins, other arts follow. The farmers therefore are the founders of human civilization."[PARAGRAPH:2]- Daniel Webster, Remarks on Agriculture</English>
-		<French>"When tillage begins, other arts follow. The farmers therefore are the founders of human civilization."[PARAGRAPH:2]- Daniel Webster, Remarks on Agriculture</French>
+		<French>"Lorsque le labourage commence, les autres arts suivent. Les fermiers, par cons&#233;quent, sont les fondateurs de la civilisation."[PARAGRAPH:2]- Daniel Webster</French>
 		<German>"When tillage begins, other arts follow. The farmers therefore are the founders of human civilization."[PARAGRAPH:2]- Daniel Webster, Remarks on Agriculture</German>
 		<Italian>"When tillage begins, other arts follow. The farmers therefore are the founders of human civilization."[PARAGRAPH:2]- Daniel Webster, Remarks on Agriculture</Italian>
 		<Spanish>"When tillage begins, other arts follow. The farmers therefore are the founders of human civilization."[PARAGRAPH:2]- Daniel Webster, Remarks on Agriculture</Spanish>
@@ -158,7 +158,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALCHEMY_QUOTE</Tag>
 		<English>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</English>
-		<French>"Ainsi tout est reli&#233;, le ciel et la terre, l'air et l'eau. Tous ne sont qu'une chose, pas quatre, pas deux ni trois, mais une. L&#224; o&#249; ils ne sont pas tous ensembles, ce n'est qu'un morceau incomplet."[PARAGRAPH:2]- Paracelsus</French>
+		<French>"Ainsi tout est reli&#233;, le ciel et la terre, l'air et l'eau. Tous ne sont qu'une chose, pas quatre, pas deux ni trois, mais une. L&#224; o&#249; ils ne sont pas tous ensembles, ce n'est qu'un morceau incomplet."[PARAGRAPH:2]- Paracelse</French>
 		<German>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</German>
 		<Italian>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Italian>
 		<Spanish>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</Spanish>
@@ -190,7 +190,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALLOYS_QUOTE</Tag>
 		<English>"It is entirely seemly for a young man killed in battle to lie mangled by the bronze spear. In his death all things appear fair."[PARAGRAPH:2]- Homer, The Iliad</English>
-		<French>"Un jeune homme tomb&#233; dans la bataille peut afficher la pointe d'airain fich&#233;e dans son corps car rien ne choque chez un mort."[PARAGRAPH:2]- Hom&#232;re</French>
+		<French>"Un jeune homme tomb&#233; dans la bataille peut afficher la pointe d'airain fich&#233;e dans son corps car rien ne choque chez un mort."[PARAGRAPH:2]- Hom&#232;re, l'Iliade</French>
 		<German>"So mancher J&#252;ngling f&#228;llt in der Schlacht, zermalmt von bronzenem Speer. Im Tode so scheint sein Schicksal vollbracht."[PARAGRAPH:2]- Homer</German>
 		<Italian>"Per un giovane &#232; decoroso morire in battaglia trafitto da una lancia di bronzo. Nella morte, tutte le cose sembrano giuste."[PARAGRAPH:2]- Omero</Italian>
 		<Spanish>"Yacer en el suelo, habiendo sido atravesado en la lid por el agudo bronce, es decoroso para un joven, y cuanto de &#233;l pueda verse todo es bello, a pesar de la muerte."[PARAGRAPH:2]- Homero</Spanish>
@@ -294,8 +294,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_QUOTE</Tag>
-		<English>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</English>
-		<French>"Le myst&#232;re qui entoure une machine pensante entoure d&#233;j&#224; l'homme pensant."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</French>
+		<English>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B. F. Skinner, Contingencies of Reinforcement</English>
+		<French>"Le myst&#232;re qui entoure une machine pensante entoure d&#233;j&#224; l'homme pensant."[PARAGRAPH:2]- B. F. Skinner, Contingencies of Reinforcement</French>
 		<German>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</German>
 		<Italian>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</Italian>
 		<Spanish>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</Spanish>
@@ -326,7 +326,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTISANRY_QUOTE</Tag>
 		<English>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</English>
-		<French>"Bien qu’on ait du c&#339;ur &#224; l’ouvrage, L’Art est long et le Temps est court."[PARAGRAPH:2]- Charles Baudelaire, Le Guignon</French>
+		<French>"Bien qu’on ait du c&#339;ur &#224; l’ouvrage, l’Art est long et le Temps est court."[PARAGRAPH:2]- Charles Baudelaire, Les Fleurs du mal</French>
 		<German>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</German>
 		<Italian>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</Italian>
 		<Spanish>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</Spanish>
@@ -369,7 +369,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ASSEMBLY_LINE_QUOTE</Tag>
 		<English>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</English>
-		<French>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</French>
+		<French>"Il est impossible de visiter une usine d'assemblage sans sentir que l'on est en enfer."[PARAGRAPH:2]- W. H. Auden</French>
 		<German>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</German>
 		<Italian>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</Italian>
 		<Spanish>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</Spanish>
@@ -423,7 +423,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOGRAPHY_QUOTE</Tag>
 		<English>"Leave no stone unturned."[PARAGRAPH:2]- Euripides, Heraclidae</English>
-		<French>"Leave no stone unturned."[PARAGRAPH:2]- Euripides, Heraclidae</French>
+		<French>"La g&#233;ographie embrasse la totalit&#233; des choses, de m&#234;me que l'image d'une t&#234;te la repr&#233;sente tout enti&#232;re."[PARAGRAPH:2]- Ptol&#233;m&#233;e, G&#233;ographie</French>
 		<German>"Leave no stone unturned."[PARAGRAPH:2]- Euripides, Heraclidae</German>
 		<Italian>"Leave no stone unturned."[PARAGRAPH:2]- Euripides, Heraclidae</Italian>
 		<Spanish>"Leave no stone unturned."[PARAGRAPH:2]- Euripides, Heraclidae</Spanish>
@@ -481,7 +481,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AUTOMATION_QUOTE</Tag>
 		<English>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith, The New Industrial State</English>
-		<French>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith, The New Industrial State</French>
+		<French>"Nous devenons les serviteurs, en pens&#233;e comme en action, de la machine que nous avons cr&#233;&#233;e pour nous servir."[PARAGRAPH:2]- John Kenneth Galbraith, Le Nouvel &#201;tat industriel</French>
 		<German>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith, The New Industrial State</German>
 		<Italian>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith, The New Industrial State</Italian>
 		<Spanish>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith, The New Industrial State</Spanish>
@@ -737,7 +737,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CARTOGRAPHY_QUOTE</Tag>
 		<English>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</English>
-		<French>"Tout ceux qui errent ne sont pas perdus."[PARAGRAPH:2]- J. R. R. Tolkien, Le Seigneur des anneaux</French>
+		<French>"Tous ceux qui errent ne sont pas perdus."[PARAGRAPH:2]- J. R. R. Tolkien, Le Seigneur des anneaux</French>
 		<German>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</German>
 		<Italian>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</Italian>
 		<Spanish>"Not all those who wander are lost."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</Spanish>
@@ -861,7 +861,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_LIBERTIES_QUOTE</Tag>
 		<English>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</English>
-		<French>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</French>
+		<French>"Donnez-moi la libert&#233; de conna&#238;tre, de prononcer, d’argumenter librement selon ma conscience, au-dessus de toutes les libert&#233;s."[PARAGRAPH:2]- John Milton</French>
 		<German>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</German>
 		<Italian>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</Italian>
 		<Spanish>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</Spanish>
@@ -1533,7 +1533,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ELECTRONICS_QUOTE</Tag>
 		<English>"The complexity for minimum component costs has increased at a rate of roughly a factor of two per year."[PARAGRAPH:2]- Gordon Moore, Cramming More Components onto Integrated Circuits</English>
-		<French>"The complexity for minimum component costs has increased at a rate of roughly a factor of two per year."[PARAGRAPH:2]- Gordon Moore, Cramming More Components onto Integrated Circuits</French>
+		<French>"La complexit&#233; pour un co&#251;t minimum par composant a progress&#233; &#224; un taux d'environ un facteur de deux par ann&#233;e."[PARAGRAPH:2]- Gordon Moore, Cramming More Components onto Integrated Circuits</French>
 		<German>"The complexity for minimum component costs has increased at a rate of roughly a factor of two per year."[PARAGRAPH:2]- Gordon Moore, Cramming More Components onto Integrated Circuits</German>
 		<Italian>"The complexity for minimum component costs has increased at a rate of roughly a factor of two per year."[PARAGRAPH:2]- Gordon Moore, Cramming More Components onto Integrated Circuits</Italian>
 		<Spanish>"The complexity for minimum component costs has increased at a rate of roughly a factor of two per year."[PARAGRAPH:2]- Gordon Moore, Cramming More Components onto Integrated Circuits</Spanish>
@@ -1669,7 +1669,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EXPLORATION_QUOTE</Tag>
 		<English>"One doesn't discover new lands without losing sight of the shore."[PARAGRAPH:2]- Andr&#233; Gide, The Counterfeiters</English>
-		<French>"Ne d&#233;couvre de nouvelles terres, que celui qui sait quitter tout rivage."[PARAGRAPH:2]- Andr&#233; Gide</French>
+		<French>"On ne d&#233;couvre pas de terre nouvelle sans consentir &#224; perdre de vue, d'abord et longtemps, tout rivage."[PARAGRAPH:2]- Andr&#233; Gide, Les Faux-monnayeurs</French>
 		<German>"Man kann keine neuen L&#228;nder entdecken, ohne die K&#252;ste aus den Augen zu verlieren."[PARAGRAPH:2]- Andr&#233; Gide</German>
 		<Italian>"Una persona non pu&#242; scoprire nuove terre senza vederne la spiagge."[PARAGRAPH:2]- Andre Gide</Italian>
 		<Spanish>"Uno no descubre nuevas tierras sin perder de vista la costa."[PARAGRAPH:2]- Andr&#233; Gide</Spanish>
@@ -1859,7 +1859,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FIREARMS_QUOTE</Tag>
 		<English>"One man with a gun can control a hundred without one."[PARAGRAPH:2]- Vladimir Lenin</English>
-		<French>"One man with a gun can control a hundred without one."[PARAGRAPH:2]- Vladimir Lenin</French>
+		<French>"Un homme avec un fusil peut contr&#244;ler cent hommes sans."[PARAGRAPH:2]- Vladimir L&#233;nine</French>
 		<German>"One man with a gun can control a hundred without one."[PARAGRAPH:2]- Vladimir Lenin</German>
 		<Italian>"One man with a gun can control a hundred without one."[PARAGRAPH:2]- Vladimir Lenin</Italian>
 		<Spanish>"One man with a gun can control a hundred without one."[PARAGRAPH:2]- Vladimir Lenin</Spanish>
@@ -1937,7 +1937,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FISSION_QUOTE</Tag>
 		<English>"If the radiance of a thousand suns were to burst forth at once in the sky, that would be like the splendour of the mighty One. I am become Death, destroyer of worlds."[PARAGRAPH:2]- J. Robert Oppenheimer, quoting from the Bhagavat Gita</English>
-		<French>"Si la splendeur de mille soleils &#233;clatait &#224; la fois dans les cieux, cela serait comparable au rayonnement du grand Être... Je suis devenu la Mort, le destructeur des mondes."[PARAGRAPH:2]- J. Robert Oppenheimer, citant la Bhagavad Gita</French>
+		<French>"Si la splendeur de mille soleils &#233;clatait &#224; la fois dans les cieux, cela serait comparable au rayonnement du grand &#202;tre... Je suis devenu la Mort, le destructeur des mondes."[PARAGRAPH:2]- J. Robert Oppenheimer, citant la Bhagavad Gita</French>
 		<German>"Wenn das Licht von tausend Sonnen am Himmel pl&#246;tzlich br&#228;ch' hervor, zu gleicher Zeit - das w&#228;re gleich dem Glanze des Herrlichen ... Ich bin der Tod, der alles raubt, Ersch&#252;tterer der Welten."[PARAGRAPH:2]- J. Robert Oppenheimer, Zitat aus der "Bhagavad Gita"</German>
 		<Italian>Se migliaia di soli illuminassero il cielo sarebbe uno spettacolo di straordinaria potenza... Sono la Morte, Distruttrice di Mondi.[PARAGRAPH:2]- J. Robert Oppenheimer, citando il "Bhagavad Gita"</Italian>
 		<Spanish>"Si el brillo de mil soles refulgiese a la vez en el cielo, ser&#237;a como el esplendor del Poderoso... Me he convertido en la Muerte, la destructora de mundos."[PARAGRAPH:2]- J. Robert Oppenheimer, citando "El Bhagavad Gita"</Spanish>
@@ -1995,7 +1995,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FUSION_QUOTE</Tag>
 		<English>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</English>
-		<French>"Tout ce que nous ne pourrons contrôler, nous le prédirons, et tout ce que nous ne pourrons prédire, nous le contrôlerons."[PARAGRAPH:2]- John von Neumann</French>
+		<French>"Tout ce que nous ne pourrons contr&#244;ler, nous le pr&#233;dirons, et tout ce que nous ne pourrons pr&#233;dire, nous le contr&#244;lerons."[PARAGRAPH:2]- John von Neumann</French>
 		<German>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</German>
 		<Italian>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</Italian>
 		<Spanish>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</Spanish>
@@ -2617,7 +2617,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LAW_QUOTE</Tag>
 		<English>"To bring about the rule of righteousness in the land, so that the strong should not harm the weak."[PARAGRAPH:2]- Code of Hammurabi</English>
-		<French>"Pour accompagner le r&#232;gne des justes sur la Terre afin que le fort jamais ne brutalise le faible."[PARAGRAPH:2]- Code d'Hammurabi, Prologue</French>
+		<French>"Pour accompagner le r&#232;gne des justes sur la Terre afin que le fort jamais ne brutalise le faible."[PARAGRAPH:2]- Code de Hammurabi, Prologue</French>
 		<German>"Es wird Zeit, dem Land Gesetze zu schenken, auf dass die Reichen die Armen nicht unterdr&#252;cken."[PARAGRAPH:2]- Codex Hammurabi, Prolog</German>
 		<Italian>"Per portare regole e giustizia, in modo che il pi&#249; forte non possa nuocere al pi&#249; debole."[PARAGRAPH:2]- Codice di Hammurabi, Prologo</Italian>
 		<Spanish>"Para traer el imperio de la Justicia al pa&#237;s y que los fuertes no perjudiquen a los d&#233;biles."[PARAGRAPH:2]- Pre&#225;mbulo del C&#243;digo de Hammurabi</Spanish>
@@ -2853,8 +2853,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MASONRY_QUOTE</Tag>
-		<English>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</English>
-		<French>"L&#224;, le marteau sur l'enclume frappait, l&#224;, le ciseau clivait, et le graveur &#233;crivait ; L&#224;, &#233;tait forg&#233;e la lame et fix&#233;e la garde ; L'excavateur creusait, la ma&#231;on b&#226;tissait."[PARAGRAPH:2]- J.R.R. Tolkien, Le Seigneur des anneaux</French>
+		<English>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J. R. R. Tolkien, The Lord of the Rings</English>
+		<French>"Sous les coups du marteau, l'enclume r&#233;sonnait, le ciseau ciselait, le burin &#233;crivait ; Battue &#233;tait la lame et garnie la poign&#233;e ; Creusaient et b&#226;tissaient ma&#231;ons et ouvriers."[PARAGRAPH:2]- J. R. R. Tolkien, Le Seigneur des anneaux</French>
 		<German>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</German>
 		<Italian>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</Italian>
 		<Spanish>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</Spanish>
@@ -3444,7 +3444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PHYSICS_QUOTE</Tag>
 		<English>"To every action there is always opposed an equal reaction."[PARAGRAPH:2]- Isaac Newton, Philosophiae Naturalis Principia Mathematica</English>
-		<French>"A chaque action correspond une r&#233;action &#233;gale."[PARAGRAPH:2]- Isaac Newton, Philosophiae Naturalis Principia Mathematica</French>
+		<French>"&#192; chaque action correspond une r&#233;action &#233;gale."[PARAGRAPH:2]- Isaac Newton, Philosophiae Naturalis Principia Mathematica</French>
 		<German>"Jede Aktion erzeugt gleichzeitig eine Reaktion."[PARAGRAPH:2]- Isaac Newton, Philosophiae Naturalis Principia Mathematica</German>
 		<Italian>"Ad ogni azione, corrisponde una reazione uguale ma di segno opposto."[PARAGRAPH:2]- Isaac Newton, Philosophiae Naturalis Principia Mathematica</Italian>
 		<Spanish>"Para cada acci&#243;n existe siempre una reacci&#243;n igual y de sentido contrario."[PARAGRAPH:2]- Isaac Newton, Philosophiae Naturalis Principia Mathematica</Spanish>
@@ -4915,7 +4915,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMPANIES_QUOTE</Tag>
 		<English>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</English>
-		<French>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</French>
+		<French>"La possession n’est rien, si la jouissance ne s’y joint."[PARAGRAPH:2]- &#201;sope</French>
 		<German>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</German>
 		<Italian>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</Italian>
 		<Spanish>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</Spanish>
@@ -4946,7 +4946,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FORTIFICATION_QUOTE</Tag>
 		<English>"It is from their foes, not their friends, that cities learn the lesson of building high walls."[PARAGRAPH:2]- Aristophanes, Birds</English>
-		<French>"Ce sont leurs ennemis et non leurs amis qui ont enseign&#233; aux cit&#233;s &#224; b&#226;tir de hautes murailles !"[PARAGRAPH:2]- Aristophane</French>
+		<French>"Les cit&#233;s ont appris de leurs ennemis, et non de leurs amis, &#224; b&#226;tir des murailles &#233;lev&#233;es."[PARAGRAPH:2]- Aristophane, Les Oiseaux</French>
 		<German>"Nicht von ihren Freunden, sondern von ihren Feinden lernen St&#228;dte, hohe Mauern zu bauen."[PARAGRAPH:2]- Aristophanes</German>
 		<Italian>"&#200; dai nemici, non dagli amici, che le citt&#224; imparano la lezione di costruire alte mura."[PARAGRAPH:2]- Aristofane</Italian>
 		<Spanish>"Es de los enemigos, no de los amigos, que las ciudades aprenden la lecci&#243;n de construir murallas altas."[PARAGRAPH:2]- Arist&#243;fanes</Spanish>
