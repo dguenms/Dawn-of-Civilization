@@ -14269,7 +14269,7 @@ bool CvUnit::diplomaticMission()
 	{
 		for (int iI = 0; iI < NUM_MEMORY_TYPES; iI++)
 		{
-			if (GET_PLAYER(ePlayer).AI_getMemoryAttitude(getOwner(), (MemoryTypes)iI))
+			if (GET_PLAYER(ePlayer).AI_getMemoryAttitude(getOwner(), (MemoryTypes)iI) < 0)
 			{
 				GET_PLAYER(ePlayer).AI_changeMemoryCount(getOwner(), (MemoryTypes)iI, -GET_PLAYER(ePlayer).AI_getMemoryCount(getOwner(), (MemoryTypes)iI));
 			}

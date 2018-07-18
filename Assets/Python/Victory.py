@@ -1554,8 +1554,7 @@ def checkHistoricalVictory(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
 	if not data.players[iPlayer].bHistoricalGoldenAge:
-		if countAchievedGoals(iPlayer) == 2:
-		
+		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
 			capital = pPlayer.getCapitalCity()
@@ -3768,7 +3767,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iHighestCiv = getBestPlayer(iIndonesia, playerRealPopulation)
 			bHighest = (iHighestCiv == iIndonesia)
-			aHelp.append(getIcon(bHighest) + localText.getText("TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV", ()) + localText.getText(str(gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey()),()))
+			aHelp.append(getIcon(bHighest) + localText.getText("TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV", (gc.getPlayer(iHighestCiv).getCivilizationShortDescription(0),)))
 		elif iGoal == 1:
 			iCounter = countHappinessResources(iIndonesia)
 			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 10)))

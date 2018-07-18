@@ -4039,6 +4039,12 @@ bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 		return false;
 	}
 
+	// Porcelain Tower effect: no open borders required for trade
+	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
+	{
+		return true;
+	}
+
 	return (isOpenBorders(eIndex) || GC.getGameINLINE().isFreeTrade());
 }
 

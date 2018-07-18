@@ -12,7 +12,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER</Tag>
 		<English>Administrative Center</English>
-		<French>Administrative Center</French>
+		<French>
+			<Text>Centre admnistratif:Centres administratifs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Verwaltungszentrum</German>
 		<Italian>Administrative Center</Italian>
 		<Spanish>Administrative Center</Spanish>
@@ -44,7 +48,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST</Tag>
 		<English>Alchemist</English>
-		<French>Alchemist</French>
+		<French>
+			<Text>Alchimiste:Alchimistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Alchemist</German>
 		<Italian>Alchemist</Italian>
 		<Spanish>Alchemist</Spanish>
@@ -68,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Tag>
 		<English>Cold Storage Plant</English>
-		<French>Cold Storage Plant</French>
+		<French>
+			<Text>Entrep&#244;t frigorifique:Entrep&#244;ts frigorifiques</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Cold Storage Plant</German>
 		<Italian>Cold Storage Plant</Italian>
 		<Spanish>Cold Storage Plant</Spanish>
@@ -164,7 +176,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Tag>
 		<English>Fazenda</English>
-		<French>Fazenda</French>
+		<French>
+			<Text>Fazenda:Fazendas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Fazenda</German>
 		<Italian>Fazenda</Italian>
 		<Spanish>Fazenda</Spanish>
@@ -204,7 +220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Tag>
 		<English>Royal Mounted Police</English>
-		<French>Royal Mounted Police</French>
+		<French>
+			<Text>Gendarmerie royale:Gendarmeries royales</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Royal Mounted Police</German>
 		<Italian>Royal Mounted Police</Italian>
 		<Spanish>Royal Mounted Police</Spanish>
@@ -220,7 +240,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHINESE_TAIXUE</Tag>
 		<English>Taixue</English>
-		<French>Taixue</French>
+		<French>
+			<Text>Taixue</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Taixue</German>
 		<Italian>Taixue</Italian>
 		<Spanish>Taixue</Spanish>
@@ -244,7 +268,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA</Tag>
 		<English>Hacienda</English>
-		<French>Hacienda</French>
+		<French>
+			<Text>Hacienda:Haciendas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Hacienda</German>
 		<Italian>Hacienda</Italian>
 		<Spanish>Hacienda</Spanish>
@@ -380,7 +408,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE</Tag>
 		<English>Royal Exchange</English>
-		<French>Bourse Royale</French>
+		<French>
+			<Text>Bourse royale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>K&#246;nigliche B&#246;rse</German>
 		<Italian>Borsa Reale</Italian>
 		<Spanish>Bolsa Real</Spanish>
@@ -428,7 +460,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Tag>
 		<English>Caravanserai</English>
-		<French>Caravanserai</French>
+		<French>
+			<Text>Caravans&#233;rail:Caravans&#233;rails</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Caravanserai</German>
 		<Italian>Caravanserai</Italian>
 		<Spanish>Caravanserai</Spanish>
@@ -476,7 +512,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONGOLIAN_GER</Tag>
 		<English>Ger</English>
-		<French>Yourte</French>
+		<French>
+			<Text>Yourte:Yourtes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Jurte</German>
 		<Italian>Ger</Italian>
 		<Spanish>Ger:Gers</Spanish>
@@ -508,7 +548,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR</Tag>
 		<English>Reservoir</English>
-		<French>Reservoir</French>
+		<French>
+			<Text>R&#233;servoir:R&#233;servoirs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Reservoir</German>
 		<Italian>Reservoir</Italian>
 		<Spanish>Reservoir</Spanish>
@@ -564,7 +608,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INCAN_TAMBO</Tag>
 		<English>Tambo</English>
-		<French>Tambo</French>
+		<French>
+			<Text>Tambo:Tambos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Tambo</German>
 		<Italian>Tambo</Italian>
 		<Spanish>Tambo</Spanish>
@@ -580,7 +628,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT</Tag>
 		<English>Edict</English>
-		<French>Edict</French>
+		<French>
+			<Text>&#201;dit:&#201;dits</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Edict</German>
 		<Italian>Edict</Italian>
 		<Spanish>Edict</Spanish>
@@ -596,7 +648,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM</Tag>
 		<English>Mausoleum</English>
-		<French>Mausol&#233;e</French>
+		<French>
+			<Text>Mausol&#233;e:Mausol&#233;es</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Mausoleum</German>
 		<Italian>Mausoleo</Italian>
 		<Spanish>Mausoleo:Mausoleos</Spanish>
@@ -612,7 +668,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL</Tag>
 		<English>Stepwell</English>
-		<French>Stepwell</French>
+		<French>
+			<Text>Puits &#224; degr&#233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Stufenbrunnen</German>
 		<Italian>Stepwell</Italian>
 		<Spanish>Stepwell</Spanish>
@@ -628,7 +688,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI</Tag>
 		<English>Candi</English>
-		<French>Candi</French>
+		<French>
+			<Text>Candi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Candi</German>
 		<Italian>Candi</Italian>
 		<Spanish>Candi</Spanish>
@@ -644,7 +708,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Tag>
 		<English>Art Studio</English>
-		<French>Art Studio</French>
+		<French>
+			<Text>Atelier d'artiste:Ateliers d'artiste</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Art Studio</German>
 		<Italian>Art Studio</Italian>
 		<Spanish>Art Studio</Spanish>
@@ -700,7 +768,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAPANESE_ZAIBATSU</Tag>
 		<English>Zaibatsu</English>
-		<French>Zaibatsu</French>
+		<French>
+			<Text>Zaibatsu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Zaibatsu</German>
 		<Italian>Zaibatsu</Italian>
 		<Spanish>Zaibatsu</Spanish>
@@ -740,7 +812,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MANDE_MINT</Tag>
 		<English>Mint</English>
-		<French>H&#244;tel de la Monnaie</French>
+		<French>
+			<Text>H&#244;tel de la Monnaie:H&#244;tels de la Monnaie</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>M&#252;nzanstalt</German>
 		<Italian>Zecca</Italian>
 		<Spanish>Ceca:Cecas</Spanish>
@@ -844,7 +920,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Tag>
 		<English>Charreada Arena</English>
-		<French>Charreada Arena</French>
+		<French>
+			<Text>Ar&#232;ne de Charrería:Ar&#232;nes de Charrería</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Charreada Arena</German>
 		<Italian>Charreada Arena</Italian>
 		<Spanish>Charreada Arena</Spanish>
@@ -860,7 +940,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOORISH_NORIA</Tag>
 		<English>Noria</English>
-		<French>Noria</French>
+		<French>
+			<Text>Noria:Norias</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Noria</German>
 		<Italian>Noria</Italian>
 		<Spanish>Noria</Spanish>
@@ -916,7 +1000,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PAGAN_TEMPLE</Tag>
 		<English>Pagan Temple</English>
-		<French>Pagan Temple</French>
+		<French>
+			<Text>Temple pa&#239;en:Temples pa&#239;ens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>
 			<Text>Heidnischer Tempel</Text>
 			<Gender>Male</Gender>
@@ -952,7 +1040,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Tag>
 		<English>Glassmaker</English>
-		<French>Glassmaker</French>
+		<French>
+			<Text>Verrier:Verriers</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>
 			<Text>Glasmacher</Text>
 			<Gender>Male</Gender>
@@ -972,7 +1064,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PLAGUE</Tag>
 		<English>Plague</English>
-		<French>Peste</French>
+		<French>
+			<Text>Peste</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pest</German>
 		<Italian>Peste</Italian>
 		<Spanish>Peste</Spanish>
@@ -1012,7 +1108,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLISH_SEJMIK</Tag>
 		<English>Sejmik</English>
-		<French>Sejmik</French>
+		<French>
+			<Text>Sejmik</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sejmik</German>
 		<Italian>Sejmik</Italian>
 		<Spanish>Sejmik</Spanish>
@@ -1028,7 +1128,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MALAE</Tag>
 		<English>Mala'e</English>
-		<French>Mala'e</French>
+		<French>
+			<Text>Mala'e</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mala'e</German>
 		<Italian>Mala'e</Italian>
 		<Spanish>Mala'e</Spanish>
@@ -1116,7 +1220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SMOKEHOUSE</Tag>
 		<English>Smokehouse</English>
-		<French>Fumoir</French>
+		<French>
+			<Text>Fumoir:Fumoirs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>R&#228;ucherei</German>
 		<Italian>Affumicatoio</Italian>
 		<Spanish>Ahumadero</Spanish>
@@ -1236,7 +1344,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA</Tag>
 		<English>Gompa</English>
-		<French>Gompa</French>
+		<French>
+			<Text>Gompa:Gompas</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Gompa</German>
 		<Italian>Gompa</Italian>
 		<Spanish>Gompa</Spanish>
@@ -1252,7 +1364,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
 		<English>Jewish Synagogue</English>
-		<French>Jewish Synagogue</French>
+		<French>
+			<Text>Synagogue juive:Synagogues juives</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>J&#252;dische Synagoge</German>
 		<Italian>Jewish Synagogue</Italian>
 		<Spanish>Jewish Synagogue</Spanish>
@@ -1268,7 +1384,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
 		<English>Jewish Yeshiva</English>
-		<French>Jewish Yeshiva</French>
+		<French>
+			<Text>Yeshiva juive:Yeshivas juives</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>J&#252;dische Jeschiwa</German>
 		<Italian>Jewish Yeshiva</Italian>
 		<Spanish>Jewish Yeshiva</Spanish>
@@ -1284,7 +1404,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
 		<English>Jewish Sanhedrin</English>
-		<French>Jewish Sanhedrin</French>
+		<French>
+			<Text>Sanh&#233;drin juif:Sanh&#233;drins juifs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>J&#252;discher Sanhedrin</German>
 		<Italian>Jewish Sanhedrin</Italian>
 		<Spanish>Jewish Sanhedrin</Spanish>
@@ -1308,7 +1432,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Tag>
 		<English>Orthodox Church</English>
-		<French>Eglise Orthodoxe</French>
+		<French>
+			<Text>&#201;glise orthodoxe:&#201;glises orthodoxes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Orthodoxe Kirche</German>
 		<Italian>Chiesa Ortodossa</Italian>
 		<Spanish>Iglesia ortodoxa</Spanish>
@@ -1324,7 +1452,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Tag>
 		<English>Orthodox Monastery</English>
-		<French>Monast&#232;re Orthodoxe</French>
+		<French>
+			<Text>Monast&#232;re orthodoxe:Monast&#232;res orthodoxes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Orthodoxes Kloster</German>
 		<Italian>Monastero Ortodosso</Italian>
 		<Spanish>Monasterio ortodoxo</Spanish>
@@ -1340,7 +1472,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Tag>
 		<English>Orthodox Cathedral</English>
-		<French>Cath&#233;drale Orthodoxe</French>
+		<French>
+			<Text>Cath&#233;drale orthodoxe:Cath&#233;drales orthodoxes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Orthodoxe Kathedrale</German>
 		<Italian>Cattedrale Ortodossa</Italian>
 		<Spanish>Catedral ortodoxa</Spanish>
@@ -1356,7 +1492,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Tag>
 		<English>Church of the Anastasis</English>
-		<French>Church of the Anastasis</French>
+		<French>
+			<Text>Basilique de la R&#233;surrection</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Church of the Anastasis</German>
 		<Italian>Church of the Anastasis</Italian>
 		<Spanish>Church of the Anastasis</Spanish>
@@ -1372,7 +1512,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_TEMPLE</Tag>
 		<English>Catholic Church</English>
-		<French>Eglise Catholique</French>
+		<French>
+			<Text>&#201;glise catholique:&#201;glises catholiques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Katholische Kirche</German>
 		<Italian>Chiesa Cattolica</Italian>
 		<Spanish>Iglesia Cat&#243;lica</Spanish>
@@ -1388,7 +1532,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_MONASTERY</Tag>
 		<English>Catholic Monastery</English>
-		<French>Monast&#232;re Catholique</French>
+		<French>
+			<Text>Monast&#232;re catholique:Monast&#232;res catholiques</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Katholisches Kloster</German>
 		<Italian>Monastero Cattolico</Italian>
 		<Spanish>Monasterio cat&#243;lico</Spanish>
@@ -1404,7 +1552,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL</Tag>
 		<English>Catholic Cathedral</English>
-		<French>Cath&#233;drale Catholique</French>
+		<French>
+			<Text>Cath&#233;drale catholique:Cath&#233;drales catholiques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Katholische Kathedrale</German>
 		<Italian>Cattedrale Cattolica</Italian>
 		<Spanish>Catedral cat&#243;lica</Spanish>
@@ -1452,7 +1604,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_TEMPLE</Tag>
 		<English>Protestant Church</English>
-		<French>Eglise Protestante</French>
+		<French>
+			<Text>&#201;glise protestante:&#201;glises protestantes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Protestantische Kirche</German>
 		<Italian>Chiesa Protestante</Italian>
 		<Spanish>Iglesia protestante</Spanish>
@@ -1468,7 +1624,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_MONASTERY</Tag>
 		<English>Protestant Seminary</English>
-		<French>S&#233;minaire Protestant</French>
+		<French>
+			<Text>S&#233;minaire protestant:S&#233;minaires protestants</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Protestantisches Seminar</German>
 		<Italian>Seminario Protestante</Italian>
 		<Spanish>Seminario protestante</Spanish>
@@ -1484,7 +1644,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL</Tag>
 		<English>Protestant Cathedral</English>
-		<French>Cath&#233;drale Protestante</French>
+		<French>
+			<Text>Cath&#233;drale protestante:Cath&#233;drales protestantes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Protestantische Kathedrale</German>
 		<Italian>Cattedrale Protestante</Italian>
 		<Spanish>Catedral protestante</Spanish>
@@ -1500,7 +1664,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_SHRINE</Tag>
 		<English>All Saints' Church</English>
-		<French>All Saints' Church</French>
+		<French>
+			<Text>&#201;glise de la Toussaint</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>All Saints' Church</German>
 		<Italian>All Saints' Church</Italian>
 		<Spanish>All Saints' Church</Spanish>
@@ -1516,7 +1684,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_TEMPLE</Tag>
 		<English>Islamic Mosque</English>
-		<French>Mosqu&#233;e Islamique</French>
+		<French>
+			<Text>Mosqu&#233;e islamique:Mosqu&#233;es islamiques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Islamische Moschee</German>
 		<Italian>Moschea Islamica</Italian>
 		<Spanish>Mezquita isl&#225;mica</Spanish>
@@ -1532,7 +1704,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_MONASTERY</Tag>
 		<English>Islamic Madrassa</English>
-		<French>Madrassa Islamique</French>
+		<French>
+			<Text>Madrassa islamique:Madrassas islamiques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Islamische Madrasa</German>
 		<Italian>Madrassa Islamica</Italian>
 		<Spanish>Madraza isl&#225;mico</Spanish>
@@ -1548,7 +1724,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_CATHEDRAL</Tag>
 		<English>Islamic Grand Mosque</English>
-		<French>Mosqu&#233;e Islamique</French>
+		<French>
+			<Text>Grande mosqu&#233;e islamique:Grandes mosqu&#233;es islamiques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Islamische Gro&#223;moschee</German>
 		<Italian>Grande Moschea Islamica</Italian>
 		<Spanish>Gran Mezquita isl&#225;mica</Spanish>
@@ -1572,7 +1752,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_TEMPLE</Tag>
 		<English>Hindu Mandir</English>
-		<French>Hindu Mandir</French>
+		<French>
+			<Text>Mandir hindou:Mandirs hindous</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Hinduistischer Mandir</German>
 		<Italian>Hindu Mandir</Italian>
 		<Spanish>Hindu Mandir</Spanish>
@@ -1588,7 +1772,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_MONASTERY</Tag>
 		<English>Hindu Ashram</English>
-		<French>Hindu Ashram</French>
+		<French>
+			<Text>Ashram hindou:Ahsrams hindous</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Hinduistischer Ashram</German>
 		<Italian>Hindu Ashram</Italian>
 		<Spanish>Hindu Ashram</Spanish>
@@ -1604,7 +1792,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_CATHEDRAL</Tag>
 		<English>Hindu Kshetra</English>
-		<French>Hindu Kshetra</French>
+		<French>
+			<Text>Kshetra hindou:Kshetras hindous</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Hindustischer Kshetra</German>
 		<Italian>Hindu Kshetra</Italian>
 		<Spanish>Hindu Kshetra</Spanish>
@@ -1620,7 +1812,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_SHRINE</Tag>
 		<English>Vishwanath</English>
-		<French>Vishwanath</French>
+		<French>
+			<Text>Vishwanath</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Vishwanath</German>
 		<Italian>Vishwanath</Italian>
 		<Spanish>Vishwanath</Spanish>
@@ -1636,7 +1832,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_TEMPLE</Tag>
 		<English>Buddhist Stupa</English>
-		<French>Buddhist Stupa</French>
+		<French>
+			<Text>Stupa bouddhiste:Stupas bouddhistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Buddhistische Stupa</German>
 		<Italian>Buddhist Stupa</Italian>
 		<Spanish>Buddhist Stupa</Spanish>
@@ -1652,7 +1852,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_MONASTERY</Tag>
 		<English>Buddhist Sangha</English>
-		<French>Buddhist Sangha</French>
+		<French>
+			<Text>Sangha bouddhiste:Sanghas bouddhistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Buddhistische Sangha</German>
 		<Italian>Buddhist Sangha</Italian>
 		<Spanish>Buddhist Sangha</Spanish>
@@ -1668,7 +1872,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_CATHEDRAL</Tag>
 		<English>Buddhist Chaitya</English>
-		<French>Buddhist Chaitya</French>
+		<French>
+			<Text>Chaitya bouddhiste:Chaityas bouddhistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Buddhistische Chaitya</German>
 		<Italian>Buddhist Chaitya</Italian>
 		<Spanish>Buddhist Chaitya</Spanish>
@@ -1692,7 +1900,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_TEMPLE</Tag>
 		<English>Confucian Miao</English>
-		<French>Confucian Miao</French>
+		<French>
+			<Text>Miao confuc&#233;en:Miaos confuc&#233;ens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Konfuzianischer Miao</German>
 		<Italian>Confucian Miao</Italian>
 		<Spanish>Confucian Miao</Spanish>
@@ -1708,7 +1920,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_MONASTERY</Tag>
 		<English>Confucian Academy</English>
-		<French>Confucian Academy</French>
+		<French>
+			<Text>Acad&#233;mie confuc&#233;enne:Acad&#233;mies confuc&#233;ennes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Konfuzianische Akademie</German>
 		<Italian>Confucian Academy</Italian>
 		<Spanish>Confucian Academy</Spanish>
@@ -1724,7 +1940,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL</Tag>
 		<English>Confucian Guozijian</English>
-		<French>Confucian Guozijian</French>
+		<French>
+			<Text>Guozijian confuc&#233;en:Guozijians confuc&#233;ens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Konfuzianische Guozijian</German>
 		<Italian>Confucian Guozijian</Italian>
 		<Spanish>Confucian Guozijian</Spanish>
@@ -1740,7 +1960,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE</Tag>
 		<English>San Kong</English>
-		<French>San Kong</French>
+		<French>
+			<Text>San Kong</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>San Kong</German>
 		<Italian>San Kong</Italian>
 		<Spanish>San Kong</Spanish>
@@ -1756,7 +1980,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_TEMPLE</Tag>
 		<English>Taoist Guan</English>
-		<French>Taoist Guan</French>
+		<French>
+			<Text>Guan tao&#239;ste:Guans tao&#239;stes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Taotischer Guan</German>
 		<Italian>Taoist Guan</Italian>
 		<Spanish>Taoist Guan</Spanish>
@@ -1772,7 +2000,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_MONASTERY</Tag>
 		<English>Taoist Dongtian</English>
-		<French>Taoist Dongtian</French>
+		<French>
+			<Text>Dongtian tao&#239;ste:Dongtians tao&#239;stes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Taoisticher Dongtian</German>
 		<Italian>Taoist Dongtian</Italian>
 		<Spanish>Taoist Dongtian</Spanish>
@@ -1788,7 +2020,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_CATHEDRAL</Tag>
 		<English>Taoist Gong</English>
-		<French>Taoist Gong</French>
+		<French>
+			<Text>Gong tao&#239;ste:Gongs tao&#239;stes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Taoistischer Gong</German>
 		<Italian>Taoist Gong</Italian>
 		<Spanish>Taoist Gong</Spanish>
@@ -1804,7 +2040,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_SHRINE</Tag>
 		<English>The Temple of Heaven</English>
-		<French>The Temple of Heaven</French>
+		<French>
+			<Text>Temple du Ciel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Himmelstempel</German>
 		<Italian>The Temple of Heaven</Italian>
 		<Spanish>The Temple of Heaven</Spanish>
@@ -1820,7 +2060,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
 		<English>Zoroastrian Fire Temple</English>
-		<French>Zoroastrian Fire Temple</French>
+		<French>
+			<Text>Temple du feu zoroastrien:Temples du feu zoroastriens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Zoroastrischer Feuertempel</German>
 		<Italian>Zoroastrian Fire Temple</Italian>
 		<Spanish>Zoroastrian Fire Temple</Spanish>
@@ -1836,7 +2080,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
 		<English>Zoroastrian Pir</English>
-		<French>Zoroastrian Pir</French>
+		<French>
+			<Text>Pir zoroastrien:Pirs zoroastriens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Zoroastrischer Pir</German>
 		<Italian>Zoroastrian Pir</Italian>
 		<Spanish>Zoroastrian Pir</Spanish>
@@ -1852,7 +2100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
 		<English>Zoroastrian Royal Fire</English>
-		<French>Zoroastrian Royal Fire</French>
+		<French>
+			<Text>Feu royal zoroastrien:Feux royaux zoroastriens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Zoroastrisches K&#246;nigliches Feuer</German>
 		<Italian>Zoroastrian Royal Fire</Italian>
 		<Spanish>Zoroastrian Royal Fire</Spanish>
@@ -1868,7 +2120,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE</Tag>
 		<English>Adur Farnbag</English>
-		<French>Adur Farnbag</French>
+		<French>
+			<Text>Feu de Farnbagh</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Adur Farnbag</German>
 		<Italian>Adur Farnbag</Italian>
 		<Spanish>Adur Farnbag</Spanish>
@@ -1884,7 +2140,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WEAVER</Tag>
 		<English>Weaver</English>
-		<French>Tisserie</French>
+		<French>
+			<Text>Tisseranderie:Tisseranderies</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Weberei</German>
 		<Italian>Tessitore</Italian>
 		<Spanish>Tejedor</Spanish>
@@ -1900,7 +2160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BATH</Tag>
 		<English>Bath</English>
-		<French>Bath</French>
+		<French>
+			<Text>Bains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Bath</German>
 		<Italian>Bath</Italian>
 		<Spanish>Bath</Spanish>
@@ -1916,7 +2180,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONSTABULARY</Tag>
 		<English>Constabulary</English>
-		<French>Constabulary</French>
+		<French>
+			<Text>Police</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Constabulary</German>
 		<Italian>Constabulary</Italian>
 		<Spanish>Constabulary</Spanish>
@@ -1932,10 +2200,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COFFEEHOUSE</Tag>
 		<English>Coffee House</English>
-		<French>Caf&#233;</French>
+		<French>
+			<Text>Caf&#233;:Caf&#233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Kaffeehaus</German>
 		<Italian>Caffetteria</Italian>
-		<Spanish>Café</Spanish>
+		<Spanish>Caf&#233;</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COFFEEHOUSE_STRATEGY</Tag>
@@ -1948,7 +2220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POST_OFFICE</Tag>
 		<English>Post Office</English>
-		<French>Post Office</French>
+		<French>
+			<Text>Bureau de poste:Bureaux de poste</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Post Office</German>
 		<Italian>Post Office</Italian>
 		<Spanish>Post Office</Spanish>
@@ -1964,7 +2240,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WHARF</Tag>
 		<English>Wharf</English>
-		<French>Quai</French>
+		<French>
+			<Text>Quai:Quais</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Kai</German>
 		<Italian>Molo</Italian>
 		<Spanish>Muelle</Spanish>
@@ -1980,7 +2260,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CIVIC_SQUARE</Tag>
 		<English>Civic Square</English>
-		<French>Civic Square</French>
+		<French>
+			<Text>Place publique:Places publiques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Civic Square</German>
 		<Italian>Civic Square</Italian>
 		<Spanish>Civic Square</Spanish>
@@ -1996,7 +2280,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SEWER</Tag>
 		<English>Sewer</English>
-		<French>Sewer</French>
+		<French>
+			<Text>&#201;gout:&#201;gouts</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Sewer</German>
 		<Italian>Sewer</Italian>
 		<Spanish>Sewer</Spanish>
@@ -2012,7 +2300,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DISTILLERY</Tag>
 		<English>Distillery</English>
-		<French>Distillery</French>
+		<French>
+			<Text>Distillerie:Distilleries</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Distillery</German>
 		<Italian>Distillery</Italian>
 		<Spanish>Distillery</Spanish>
@@ -2028,7 +2320,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEWS_PRESS</Tag>
 		<English>News Press</English>
-		<French>News Press</French>
+		<French>
+			<Text>Journal:Journaux</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>News Press</German>
 		<Italian>News Press</Italian>
 		<Spanish>News Press</Spanish>
@@ -2044,7 +2340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CINEMA</Tag>
 		<English>Cinema</English>
-		<French>Cinema</French>
+		<French>
+			<Text>Cin&#233;ma:Cin&#233;mas</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Cinema</German>
 		<Italian>Cinema</Italian>
 		<Spanish>Cinema</Spanish>
@@ -2060,7 +2360,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOTEL</Tag>
 		<English>Hotel</English>
-		<French>Hotel</French>
+		<French>
+			<Text>H&#244;tel:H&#244;tels</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Hotel</German>
 		<Italian>Hotel</Italian>
 		<Spanish>Hotel</Spanish>
@@ -2076,7 +2380,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PARK</Tag>
 		<English>Park</English>
-		<French>Park</French>
+		<French>
+			<Text>Parc:Parcs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Park</German>
 		<Italian>Park</Italian>
 		<Spanish>Park</Spanish>
@@ -2092,7 +2400,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SOLAR_PLANT</Tag>
 		<English>Solar Plant</English>
-		<French>Solar Plant</French>
+		<French>
+			<Text>Centrale solaire:Centrales solaires</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Solar Plant</German>
 		<Italian>Solar Plant</Italian>
 		<Spanish>Solar Plant</Spanish>
@@ -2108,7 +2420,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESTATE</Tag>
 		<English>Estate</English>
-		<French>Estate</French>
+		<French>
+			<Text>Domaine:Domaines</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Estate</German>
 		<Italian>Estate</Italian>
 		<Spanish>Estate</Spanish>
@@ -2124,7 +2440,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHARMACY</Tag>
 		<English>Pharmacy</English>
-		<French>Pharmacy</French>
+		<French>
+			<Text>Pharmacie:Pharmacies</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Pharmacy</German>
 		<Italian>Pharmacy</Italian>
 		<Spanish>Pharmacy</Spanish>
@@ -2140,7 +2460,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RAILWAY_STATION</Tag>
 		<English>Railway Station</English>
-		<French>Railway Station</French>
+		<French>
+			<Text>Gare:Gares</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Railway Station</German>
 		<Italian>Railway Station</Italian>
 		<Spanish>Railway Station</Spanish>
@@ -2156,7 +2480,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DEPARTMENT_STORE</Tag>
 		<English>Department Store</English>
-		<French>Department Store</French>
+		<French>
+			<Text>Grand magasin:Grands magasins</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Department Store</German>
 		<Italian>Department Store</Italian>
 		<Spanish>Department Store</Spanish>
@@ -2172,7 +2500,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STAR_FORT</Tag>
 		<English>Star Fort</English>
-		<French>Trac&#233; &#224; l'italienne</French>
+		<French>
+			<Text>Trac&#233; &#224; l'italienne:Trac&#233;s &#224; l'italienne</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Bollwerk</German>
 		<Italian>Fortificazione a Stella</Italian>
 		<Spanish>Estrelle Fuerte</Spanish>
@@ -2188,7 +2520,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ELECTRICAL_GRID</Tag>
 		<English>Electrical Grid</English>
-		<French>Electrical Grid</French>
+		<French>
+			<Text>R&#233;seau &#233;lectrique:R&#233;seaux &#233;lectriques</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Electrical Grid</German>
 		<Italian>Electrical Grid</Italian>
 		<Spanish>Electrical Grid</Spanish>
@@ -2204,7 +2540,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_EDUBBA</Tag>
 		<English>Edubba</English>
-		<French>Edubba</French>
+		<French>
+			<Text>Edubba:Edubbas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Edubba</German>
 		<Italian>Edubba</Italian>
 		<Spanish>Edubba</Spanish>
@@ -2292,7 +2632,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</English>
-		<French>Le [COLOR_BUILDING_TEXT]Temple olympien[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]Olympianisme[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]Temple olympien[COLOR_REVERT] est le [COLOR_BUILDING_TEXT]Temple pa&#239;en[COLOR_REVERT] des civilisations adeptes de l'[COLOR_HIGHLIGHT_TEXT]Olympisme[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Olympian Temple[COLOR_REVERT] is the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] of civilizations that follow [COLOR_HIGHLIGHT_TEXT]Olympianism[COLOR_REVERT].</Spanish>
@@ -2301,7 +2641,7 @@
 		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE</Tag>
 		<English>Baalist Temple</English>
 		<French>
-			<Text>Temples de Baal:Temples de Baal</Text>
+			<Text>Temple de Baal:Temples de Baal</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
@@ -2568,7 +2908,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN</Tag>
 		<English>Divan</English>
-		<French>Divan</French>
+		<French>
+			<Text>Divan:Divans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Divan</German>
 		<Italian>Divan</Italian>
 		<Spanish>Divan</Spanish>

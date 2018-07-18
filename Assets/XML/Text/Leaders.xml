@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_ABBAS</Tag>
 		<English>Abbas I</English>
-		<French>Abbas I</French>
+		<French>
+			<Text>Abbas Ier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Abbas I.</German>
 		<Italian>Abbas I</Italian>
 		<Spanish>Abbas I</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_AFONSO</Tag>
 		<English>Afonso Henriques</English>
-		<French>Alphonse Henriques</French>
+		<French>
+			<Text>Alphonse Henriques</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Alfons Henriques</German>
 		<Italian>Afonso Henriques</Italian>
 		<Spanish>Afonso Henriques</Spanish>
@@ -20,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_AHOEITU</Tag>
 		<English>Aho'eitu</English>
-		<French>Aho'eitu</French>
+		<French>
+			<Text>Aho'eitu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aho'eitu</German>
 		<Italian>Aho'eitu</Italian>
 		<Spanish>Aho'eitu</Spanish>
@@ -28,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_AKBAR</Tag>
 		<English>Akbar</English>
-		<French>Akbar</French>
+		<French>
+			<Text>Akbar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Akbar</German>
 		<Italian>Akbar</Italian>
 		<Spanish>Akbar</Spanish>
@@ -36,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_ALFRED</Tag>
 		<English>Alfred</English>
-		<French>Alfred</French>
+		<French>
+			<Text>Alfred</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Alfred</German>
 		<Italian>Alfred</Italian>
 		<Spanish>Alfred</Spanish>
@@ -44,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_ALP_ARSLAN</Tag>
 		<English>Alp Arslan</English>
-		<French>Alp Arslan</French>
+		<French>
+			<Text>Alp Arslan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Alp Arslan</German>
 		<Italian>Alp Arslan</Italian>
 		<Spanish>Alp Arslan</Spanish>
@@ -52,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_ATATURK</Tag>
 		<English>Atat&#252;rk</English>
-		<French>Atat&#252;rk</French>
+		<French>
+			<Text>Atat&#252;rk</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Atat&#252;rk</German>
 		<Italian>Atat&#252;rk</Italian>
 		<Spanish>Atat&#252;rk</Spanish>
@@ -84,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BAIBARS</Tag>
 		<English>Baibars</English>
-		<French>Baibars</French>
+		<French>
+			<Text>Baybars</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Baibars</German>
 		<Italian>Baibars</Italian>
 		<Spanish>Baibars</Spanish>
@@ -108,7 +140,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BASIL</Tag>
 		<English>Basil II</English>
-		<French>Basil II</French>
+		<French>
+			<Text>Basile II</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Basileios II.</German>
 		<Italian>
 			<Text>Basilio II</Text>
@@ -124,7 +160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BOLIVAR</Tag>
 		<English>Bolivar</English>
-		<French>Bolivar</French>
+		<French>
+			<Text>Bolivar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bolivar</German>
 		<Italian>Bolivar</Italian>
 		<Spanish>Bolivar</Spanish>
@@ -132,7 +172,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BUMIN</Tag>
 		<English>Bumin</English>
-		<French>Bumin</French>
+		<French>
+			<Text>Bumin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bumin</German>
 		<Italian>Bumin</Italian>
 		<Spanish>Bumin</Spanish>
@@ -140,7 +184,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CARDENAS</Tag>
 		<English>Cardenas</English>
-		<French>Cardenas</French>
+		<French>
+			<Text>C&#225;rdenas</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cardenas</German>
 		<Italian>Cardenas</Italian>
 		<Spanish>Cardenas</Spanish>
@@ -148,7 +196,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CASIMIR</Tag>
 		<English>Casimir III</English>
-		<French>Casimir III</French>
+		<French>
+			<Text>Casimir III</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Casimir III</German>
 		<Italian>Casimir III</Italian>
 		<Spanish>Casimir III</Spanish>
@@ -156,7 +208,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CAVOUR</Tag>
 		<English>Cavour</English>
-		<French>Cavour</French>
+		<French>
+			<Text>Cavour</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cavour</German>
 		<Italian>Cavour</Italian>
 		<Spanish>Cavour</Spanish>
@@ -164,7 +220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CHANDRAGUPTA</Tag>
 		<English>Chandragupta</English>
-		<French>Chandragupta</French>
+		<French>
+			<Text>Chandragupta</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Chandragupta</German>
 		<Italian>Chandragupta</Italian>
 		<Spanish>Chandragupta</Spanish>
@@ -172,7 +232,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CHARLES</Tag>
 		<English>Charles V</English>
-		<French>Charles V</French>
+		<French>
+			<Text>Charles Quint</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Karl V.</Text>
 			<Gender>Male</Gender>
@@ -192,7 +256,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_DHARMASETU</Tag>
 		<English>Dharmasetu</English>
-		<French>Dharmasetu</French>
+		<French>
+			<Text>Dharmasetu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dharmasetu</German>
 		<Italian>Dharmasetu</Italian>
 		<Spanish>Dharmasetu</Spanish>
@@ -200,7 +268,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_DOM_PEDRO</Tag>
 		<English>Pedro II</English>
-		<French>Pedro II</French>
+		<French>
+			<Text>Pierre II</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pedro II</German>
 		<Italian>Pedro II</Italian>
 		<Spanish>Pedro II</Spanish>
@@ -233,7 +305,7 @@
 		<Tag>TXT_KEY_LEADER_FRANCIS</Tag>
 		<English>Francis I</English>
 		<French>
-			<Text>Francois I</Text>
+			<Text>Fran&#231;ois Ier</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -256,7 +328,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_FRANCO</Tag>
 		<English>Franco</English>
-		<French>Franco</French>
+		<French>
+			<Text>Franco</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Franco</German>
 		<Italian>Franco</Italian>
 		<Spanish>Franco</Spanish>
@@ -264,7 +340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_GILGAMESH</Tag>
 		<English>Sargon</English>
-		<French>Sargon</French>
+		<French>
+			<Text>Sargon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sargon</German>
 		<Italian>Sargon</Italian>
 		<Spanish>Sargon</Spanish>
@@ -272,7 +352,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_GUSTAV</Tag>
 		<English>Gustav Adolph</English>
-		<French>Gustav Adolph</French>
+		<French>
+			<Text>Gustave II Adolphe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gustav Adolph</German>
 		<Italian>Gustav Adolph</Italian>
 		<Spanish>Gustav Adolph</Spanish>
@@ -280,7 +364,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HAILE_SELASSIE</Tag>
 		<English>Haile Selassie</English>
-		<French>Haile Selassie</French>
+		<French>
+			<Text>Ha&#239;l&#233; S&#233;lassi&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Haile Selassie</German>
 		<Italian>Haile Selassie</Italian>
 		<Spanish>Haile Selassie</Spanish>
@@ -312,7 +400,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HARUN</Tag>
 		<English>Harun al-Rashid</English>
-		<French>Harun al-Rashid</French>
+		<French>
+			<Text>H&#226;roun ar-Rach&#238;d</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Harun al-Rashid</German>
 		<Italian>Harun al-Rashid</Italian>
 		<Spanish>Harun al-Rashid</Spanish>
@@ -320,7 +412,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HATSHEPSUT</Tag>
 		<English>Cleopatra</English>
-		<French>Cleopatra</French>
+		<French>
+			<Text>Cl&#233;op&#226;tre</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cleopatra</German>
 		<Italian>Cleopatra</Italian>
 		<Spanish>Cleopatra</Spanish>
@@ -328,7 +424,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HAYAM_WURUK</Tag>
 		<English>Hayam Wuruk</English>
-		<French>Hayam Wuruk</French>
+		<French>
+			<Text>Hayam Wuruk</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hayam Wuruk</German>
 		<Italian>Hayam Wuruk</Italian>
 		<Spanish>Hayam Wuruk</Spanish>
@@ -336,7 +436,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HIRAM</Tag>
 		<English>Hiram</English>
-		<French>Hiram</French>
+		<French>
+			<Text>Hiram</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hiram</German>
 		<Italian>Hiram</Italian>
 		<Spanish>Hiram</Spanish>
@@ -344,7 +448,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HITLER</Tag>
 		<English>Hitler</English>
-		<French>Hitler</French>
+		<French>
+			<Text>Hitler</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hitler</German>
 		<Italian>Hitler</Italian>
 		<Spanish>Hitler</Spanish>
@@ -352,7 +460,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HONGWU</Tag>
 		<English>Hongwu</English>
-		<French>Hongwu</French>
+		<French>
+			<Text>Hongwu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hongwu</German>
 		<Italian>Hongwu</Italian>
 		<Spanish>Hongwu</Spanish>
@@ -360,7 +472,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_IBN_TUGHLUQ</Tag>
 		<English>Muhammad ibn Tughluq</English>
-		<French>Muhammad ibn Tughluq</French>
+		<French>
+			<Text>Mouhammed ibn Tughl&#251;q</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Muhammad ibn Tughluq</German>
 		<Italian>Muhammad ibn Tughluq</Italian>
 		<Spanish>Muhammad ibn Tughluq</Spanish>
@@ -392,7 +508,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KANGXI</Tag>
 		<English>Kangxi</English>
-		<French>Kangxi</French>
+		<French>
+			<Text>Kangxi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kangxi</German>
 		<Italian>Kangxi</Italian>
 		<Spanish>Kangxi</Spanish>
@@ -400,7 +520,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_JIMMU</Tag>
 		<English>Kammu</English>
-		<French>Kammu</French>
+		<French>
+			<Text>Kammu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kammu</German>
 		<Italian>Kammu</Italian>
 		<Spanish>Kammu</Spanish>
@@ -408,7 +532,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_JUAREZ</Tag>
 		<English>Juarez</English>
-		<French>Juarez</French>
+		<French>
+			<Text>Ju&#225;rez</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Juarez</German>
 		<Italian>Juarez</Italian>
 		<Spanish>Juarez</Spanish>
@@ -416,7 +544,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KHOMEINI</Tag>
 		<English>Khomeini</English>
-		<French>Khomeini</French>
+		<French>
+			<Text>Khomeini</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Chomeini</German>
 		<Italian>Khomeini</Italian>
 		<Spanish>Khomeini</Spanish>
@@ -424,7 +556,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KRISHNA_DEVA_RAYA</Tag>
 		<English>Krishna Deva Raya</English>
-		<French>Krishna Deva Raya</French>
+		<French>
+			<Text>Krishna Deva Raya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Krishna Deva Raya</German>
 		<Italian>Krishna Deva Raya</Italian>
 		<Spanish>Krishna Deva Raya</Spanish>
@@ -432,7 +568,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_LOBSANG_GYATSO</Tag>
 		<English>Lobsang Gyatso</English>
-		<French>Lobsang Gyatso</French>
+		<French>
+			<Text>Lobsang Gyatso</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Lobsang Gyatso</German>
 		<Italian>Lobsang Gyatso</Italian>
 		<Spanish>Lobsang Gyatso</Spanish>
@@ -440,7 +580,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_LORENZO</Tag>
 		<English>Lorenzo de' Medici</English>
-		<French>Lorenzo de' Medici</French>
+		<French>
+			<Text>Laurent de M&#233;dicis</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Lorenzo de' Medici</German>
 		<Italian>Lorenzo de' Medici</Italian>
 		<Spanish>Lorenzo de' Medici</Spanish>
@@ -448,7 +592,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MARIA_II</Tag>
 		<English>Maria II</English>
-		<French>Maria II</French>
+		<French>
+			<Text>Marie II</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Maria II</German>
 		<Italian>Maria II</Italian>
 		<Spanish>Maria II</Spanish>
@@ -456,7 +604,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MBEMBA</Tag>
 		<English>Mbemba</English>
-		<French>Mbemba</French>
+		<French>
+			<Text>Mbemba</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mbemba</German>
 		<Italian>Mbemba</Italian>
 		<Spanish>Mbemba</Spanish>
@@ -488,7 +640,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MEIJI</Tag>
 		<English>Meiji</English>
-		<French>Meiji</French>
+		<French>
+			<Text>Meiji</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Meiji</German>
 		<Italian>Meiji</Italian>
 		<Spanish>Meiji</Spanish>
@@ -496,7 +652,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MONGKUT</Tag>
 		<English>Mongkut</English>
-		<French>Mongkut</French>
+		<French>
+			<Text>Mongkut</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mongkut</German>
 		<Italian>Mongkut</Italian>
 		<Spanish>Mongkut</Spanish>
@@ -504,7 +664,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_NARESUAN</Tag>
 		<English>Naresuan</English>
-		<French>Naresuan</French>
+		<French>
+			<Text>Naresuan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Naresuan</German>
 		<Italian>Naresuan</Italian>
 		<Spanish>Naresuan</Spanish>
@@ -512,7 +676,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_NASSER</Tag>
 		<English>Nasser</English>
-		<French>Nasser</French>
+		<French>
+			<Text>Nasser</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nasser</German>
 		<Italian>Nasser</Italian>
 		<Spanish>Nasser</Spanish>
@@ -544,7 +712,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_ALEXANDER_II</Tag>
 		<English>Alexander II</English>
-		<French>Alexander II</French>
+		<French>
+			<Text>Alexandre II</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Alexander II.</German>
 		<Italian>Alexander II</Italian>
 		<Spanish>Alexander II</Spanish>
@@ -552,7 +724,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_PERON</Tag>
 		<English>Per&#243;n</English>
-		<French>Per&#243;n</French>
+		<French>
+			<Text>Per&#243;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Per&#243;n</German>
 		<Italian>Per&#243;n</Italian>
 		<Spanish>Per&#243;n</Spanish>
@@ -560,7 +736,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_RAHMAN</Tag>
 		<English>Abd-ar-Rahman</English>
-		<French>Abd-ar-Rahman</French>
+		<French>
+			<Text>Abd al-Rahman</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Abd-ar-Rahman</German>
 		<Italian>Abd-ar-Rahman</Italian>
 		<Spanish>Abd-ar-Rahman</Spanish>
@@ -568,7 +748,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_RAJENDRA</Tag>
 		<English>Rajendra Chola</English>
-		<French>Rajendra Chola</French>
+		<French>
+			<Text>Rajendra Chola</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Rajendra Chola</German>
 		<Italian>Rajendra Chola</Italian>
 		<Spanish>Rajendra Chola</Spanish>
@@ -600,7 +784,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SAN_MARTIN</Tag>
 		<English>San Martin</English>
-		<French>San Martin</French>
+		<French>
+			<Text>San Mart&#237;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>San Martin</German>
 		<Italian>San Martin</Italian>
 		<Spanish>San Martin</Spanish>
@@ -608,7 +796,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SANTA_ANNA</Tag>
 		<English>Santa Anna</English>
-		<French>Santa Anna</French>
+		<French>
+			<Text>Santa Anna</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Santa Anna</German>
 		<Italian>Santa Anna</Italian>
 		<Spanish>Santa Anna</Spanish>
@@ -616,7 +808,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SHIVAJI</Tag>
 		<English>Shahuji</English>
-		<French>Shahuji</French>
+		<French>
+			<Text>Shahu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Shahuji</German>
 		<Italian>Shahuji</Italian>
 		<Spanish>Shahuji</Spanish>
@@ -624,7 +820,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SOBIESKI</Tag>
 		<English>Sobieski</English>
-		<French>Sobieski</French>
+		<French>
+			<Text>Sobieski</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sobieski</German>
 		<Italian>Sobieski</Italian>
 		<Spanish>Sobieski</Spanish>
@@ -632,7 +832,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SONGTSEN</Tag>
 		<English>Songtsen Gampo</English>
-		<French>Songtsen Gampo</French>
+		<French>
+			<Text>Songtsen Gampo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Songtsen Gampo</German>
 		<Italian>Songtsen Gampo</Italian>
 		<Spanish>Songtsen Gampo</Spanish>
@@ -640,7 +844,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SUHARTO</Tag>
 		<English>Suharto</English>
-		<French>Suharto</French>
+		<French>
+			<Text>Soeharto</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Suharto</German>
 		<Italian>Suharto</Italian>
 		<Spanish>Suharto</Spanish>
@@ -648,7 +856,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TAMERLANE</Tag>
 		<English>Tamerlane</English>
-		<French>Tamerlane</French>
+		<French>
+			<Text>Tamerlan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tamerlane</German>
 		<Italian>Tamerlane</Italian>
 		<Spanish>Tamerlane</Spanish>
@@ -656,7 +868,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TAIZONG</Tag>
 		<English>Tang Taizong</English>
-		<French>Tang Taizong</French>
+		<French>
+			<Text>Tang Taizong</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tang Taizong</German>
 		<Italian>Tang Taizong</Italian>
 		<Spanish>Tang Taizong</Spanish>
@@ -664,7 +880,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TOKUGAWA</Tag>
 		<English>Oda Nobunaga</English>
-		<French>Oda Nobunaga</French>
+		<French>
+			<Text>Oda Nobunaga</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Oda Nobunaga</German>
 		<Italian>Oda Nobunaga</Italian>
 		<Spanish>Oda Nobunaga</Spanish>
@@ -672,7 +892,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TRUDEAU</Tag>
 		<English>Trudeau</English>
-		<French>Trudeau</French>
+		<French>
+			<Text>Trudeau</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Trudeau</German>
 		<Italian>Trudeau</Italian>
 		<Spanish>Trudeau</Spanish>
@@ -680,7 +904,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_TIPU_SULTAN</Tag>
 		<English>Tipu Sultan</English>
-		<French>Tipu Sultan</French>
+		<French>
+			<Text>Tip&#251; Sult&#226;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tipu Sultan</German>
 		<Italian>Tipu Sultan</Italian>
 		<Spanish>Tipu Sultan</Spanish>
@@ -688,7 +916,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_VATAVELLI</Tag>
 		<English>Vatavelli</English>
-		<French>Vatavelli</French>
+		<French>
+			<Text>Vatavelli</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Vatavelli</German>
 		<Italian>Vatavelli</Italian>
 		<Spanish>Vatavelli</Spanish>
@@ -720,7 +952,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_YAQUB</Tag>
 		<English>Yaqub al-Mansur</English>
-		<French>Yaqub al-Mansur</French>
+		<French>
+			<Text>Yaqub al-Mansur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Yaqub al-Mansur</German>
 		<Italian>Yaqub al-Mansur</Italian>
 		<Spanish>Yaqub al-Mansur</Spanish>
@@ -728,7 +964,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BHUTTO</Tag>
 		<English>Benazir Bhutto</English>
-		<French>Benazir Bhutto</French>
+		<French>
+			<Text>Benazir Bhutto</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Benazir Bhutto</German>
 		<Italian>Benazir Bhutto</Italian>
 		<Spanish>Benazir Bhutto</Spanish>
@@ -736,7 +976,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_GERHARDSEN</Tag>
 		<English>Gerhardsen</English>
-		<French>Gerhardsen</French>
+		<French>
+			<Text>Gerhardsen</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gerhardsen</German>
 		<Italian>Gerhardsen</Italian>
 		<Spanish>Gerhardsen</Spanish>
@@ -744,7 +988,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_IVAN_IV</Tag>
 		<English>Ivan IV</English>
-		<French>Ivan IV</French>
+		<French>
+			<Text>Ivan IV</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ivan IV</German>
 		<Italian>Ivan IV</Italian>
 		<Spanish>Ivan IV</Spanish>
@@ -752,7 +1000,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MACDONALD</Tag>
 		<English>MacDonald</English>
-		<French>MacDonald</French>
+		<French>
+			<Text>MacDonald</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>MacDonald</German>
 		<Italian>MacDonald</Italian>
 		<Spanish>MacDonald</Spanish>
@@ -760,7 +1012,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MUSSOLINI</Tag>
 		<English>Mussolini</English>
-		<French>Mussolini</French>
+		<French>
+			<Text>Mussolini</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mussolini</German>
 		<Italian>Mussolini</Italian>
 		<Spanish>Mussolini</Spanish>
@@ -768,7 +1024,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SEJONG</Tag>
 		<English>Sejong</English>
-		<French>Sejong</French>
+		<French>
+			<Text>Sejong</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sejong</German>
 		<Italian>Sejong</Italian>
 		<Spanish>Sejong</Spanish>
@@ -776,7 +1036,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_PILSUDSKI</Tag>
 		<English>Pilsudski</English>
-		<French>Pilsudski</French>
+		<French>
+			<Text>Pilsudski</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pilsudski</German>
 		<Italian>Pilsudski</Italian>
 		<Spanish>Pilsudski</Spanish>
@@ -784,7 +1048,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_VARGAS</Tag>
 		<English>Vargas</English>
-		<French>Vargas</French>
+		<French>
+			<Text>Vargas</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Vargas</German>
 		<Italian>Vargas</Italian>
 		<Spanish>Vargas</Spanish>
@@ -792,7 +1060,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_WALESA</Tag>
 		<English>Walesa</English>
-		<French>Walesa</French>
+		<French>
+			<Text>Walesa</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Walesa</German>
 		<Italian>Walesa</Italian>
 		<Spanish>Walesa</Spanish>
@@ -800,7 +1072,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_CASTILLA</Tag>
 		<English>Castilla</English>
-		<French>Castilla</French>
+		<French>
+			<Text>Castilla</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Castilla</German>
 		<Italian>Castilla</Italian>
 		<Spanish>Castilla</Spanish>
@@ -808,7 +1084,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_WILLIAM_III</Tag>
 		<English>William III</English>
-		<French>William III</French>
+		<French>
+			<Text>Guillaume III</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>William III</German>
 		<Italian>William III</Italian>
 		<Spanish>William III</Spanish>
@@ -816,7 +1096,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
 		<English>George I</English>
-		<French>George I</French>
+		<French>
+			<Text>Georges Ier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>George I</German>
 		<Italian>George I</Italian>
 		<Spanish>George I</Spanish>
@@ -824,7 +1108,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KHOSROW</Tag>
 		<English>Khosrow I</English>
-		<French>Khosrow I</French>
+		<French>
+			<Text>Khosro Ier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Khosrow I</German>
 		<Italian>Khosrow I</Italian>
 		<Spanish>Khosrow I</Spanish>

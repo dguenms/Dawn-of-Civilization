@@ -4209,11 +4209,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV</Tag>
-		<English>Civilization with the largest population: </English>
-		<French>Civilization with the largest population: </French>
-		<German>Civilization with the largest population: </German>
-		<Italian>Civilization with the largest population: </Italian>
-		<Spanish>Civilization with the largest population: </Spanish>
+		<English>Civilization with the largest population: %s1</English>
+		<French>Civilization with the largest population: %s1</French>
+		<German>Civilization with the largest population: %s1</German>
+		<Italian>Civilization with the largest population: %s1</Italian>
+		<Spanish>Civilization with the largest population: %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_TRADE_CITY</Tag>

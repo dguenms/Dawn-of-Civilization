@@ -12,7 +12,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_0</Tag>
 		<English>Britain</English>
-		<French>Britain</French>
+		<French>
+			<Text>Grande-Bretagne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Britain</German>
 		<Italian>Britain</Italian>
 		<Spanish>Britain</Spanish>
@@ -20,7 +24,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_1</Tag>
 		<English>Iberia</English>
-		<French>Iberia</French>
+		<French>
+			<Text>P&#233;ninsule Ib&#233;rique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Iberia</German>
 		<Italian>Iberia</Italian>
 		<Spanish>Iberia</Spanish>
@@ -28,7 +36,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_2</Tag>
 		<English>Italy</English>
-		<French>Italy</French>
+		<French>
+			<Text>Italie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Italy</German>
 		<Italian>Italy</Italian>
 		<Spanish>Italy</Spanish>
@@ -36,7 +48,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_3</Tag>
 		<English>Balkans</English>
-		<French>Balkans</French>
+		<French>
+			<Text>Balkans</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Balkans</German>
 		<Italian>Balkans</Italian>
 		<Spanish>Balkans</Spanish>
@@ -44,7 +60,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_4</Tag>
 		<English>Europe</English>
-		<French>Europe</French>
+		<French>
+			<Text>Europe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Europe</German>
 		<Italian>Europe</Italian>
 		<Spanish>Europe</Spanish>
@@ -52,7 +72,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_5</Tag>
 		<English>Scandinavia</English>
-		<French>Scandinavia</French>
+		<French>
+			<Text>Scandinavie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Scandinavia</German>
 		<Italian>Scandinavia</Italian>
 		<Spanish>Scandinavia</Spanish>
@@ -60,7 +84,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_6</Tag>
 		<English>Russia</English>
-		<French>Russia</French>
+		<French>
+			<Text>Russie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Russia</German>
 		<Italian>Russia</Italian>
 		<Spanish>Russia</Spanish>
@@ -68,7 +96,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_7</Tag>
 		<English>Anatolia</English>
-		<French>Anatolia</French>
+		<French>
+			<Text>Anatolie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Anatolia</German>
 		<Italian>Anatolia</Italian>
 		<Spanish>Anatolia</Spanish>
@@ -76,7 +108,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_8</Tag>
 		<English>Mesopotamia</English>
-		<French>Mesopotamia</French>
+		<French>
+			<Text>M&#233;sopotamie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mesopotamia</German>
 		<Italian>Mesopotamia</Italian>
 		<Spanish>Mesopotamia</Spanish>
@@ -84,7 +120,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_9</Tag>
 		<English>Arabia</English>
-		<French>Arabia</French>
+		<French>
+			<Text>Arabie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Arabia</German>
 		<Italian>Arabia</Italian>
 		<Spanish>Arabia</Spanish>
@@ -92,7 +132,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_10</Tag>
 		<English>Egypt</English>
-		<French>Egypt</French>
+		<French>
+			<Text>&#201;gypte</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Egypt</German>
 		<Italian>Egypt</Italian>
 		<Spanish>Egypt</Spanish>
@@ -100,7 +144,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_11</Tag>
 		<English>Maghreb</English>
-		<French>Maghreb</French>
+		<French>
+			<Text>Maghreb</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Maghreb</German>
 		<Italian>Maghreb</Italian>
 		<Spanish>Maghreb</Spanish>
@@ -108,7 +156,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_12</Tag>
 		<English>Persia</English>
-		<French>Persia</French>
+		<French>
+			<Text>Perse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Persia</German>
 		<Italian>Persia</Italian>
 		<Spanish>Persia</Spanish>
@@ -116,7 +168,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_13</Tag>
 		<English>India</English>
-		<French>India</French>
+		<French>
+			<Text>Inde</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>India</German>
 		<Italian>India</Italian>
 		<Spanish>India</Spanish>
@@ -124,7 +180,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_14</Tag>
 		<English>Deccan</English>
-		<French>Deccan</French>
+		<French>
+			<Text>Deccan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Deccan</German>
 		<Italian>Deccan</Italian>
 		<Spanish>Deccan</Spanish>
@@ -132,7 +192,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_15</Tag>
 		<English>Indochina</English>
-		<French>Indochina</French>
+		<French>
+			<Text>Indochine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Indochina</German>
 		<Italian>Indochina</Italian>
 		<Spanish>Indochina</Spanish>
@@ -140,7 +204,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_16</Tag>
 		<English>Indonesia</English>
-		<French>Indonesia</French>
+		<French>
+			<Text>Indon&#233;sie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Indonesia</German>
 		<Italian>Indonesia</Italian>
 		<Spanish>Indonesia</Spanish>
@@ -148,7 +216,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_17</Tag>
 		<English>China</English>
-		<French>China</French>
+		<French>
+			<Text>Chine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>China</German>
 		<Italian>China</Italian>
 		<Spanish>China</Spanish>
@@ -156,7 +228,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_18</Tag>
 		<English>Korea</English>
-		<French>Korea</French>
+		<French>
+			<Text>Cor&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Korea</German>
 		<Italian>Korea</Italian>
 		<Spanish>Korea</Spanish>
@@ -164,7 +240,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_19</Tag>
 		<English>Japan</English>
-		<French>Japan</French>
+		<French>
+			<Text>Japon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Japan</German>
 		<Italian>Japan</Italian>
 		<Spanish>Japan</Spanish>
@@ -172,7 +252,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_20</Tag>
 		<English>Manchuria</English>
-		<French>Manchuria</French>
+		<French>
+			<Text>Mandchourie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Manchuria</German>
 		<Italian>Manchuria</Italian>
 		<Spanish>Manchuria</Spanish>
@@ -180,7 +264,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_21</Tag>
 		<English>Tibet</English>
-		<French>Tibet</French>
+		<French>
+			<Text>Tibet</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tibet</German>
 		<Italian>Tibet</Italian>
 		<Spanish>Tibet</Spanish>
@@ -188,7 +276,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_22</Tag>
 		<English>Central Asia</English>
-		<French>Central Asia</French>
+		<French>
+			<Text>Asie centrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Central Asia</German>
 		<Italian>Central Asia</Italian>
 		<Spanish>Central Asia</Spanish>
@@ -196,7 +288,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_23</Tag>
 		<English>Siberia</English>
-		<French>Siberia</French>
+		<French>
+			<Text>Sib&#233;rie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Siberia</German>
 		<Italian>Siberia</Italian>
 		<Spanish>Siberia</Spanish>
@@ -204,7 +300,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_24</Tag>
 		<English>Australia</English>
-		<French>Australia</French>
+		<French>
+			<Text>Australie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Australia</German>
 		<Italian>Australia</Italian>
 		<Spanish>Australia</Spanish>
@@ -212,7 +312,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_25</Tag>
 		<English>Oceania</English>
-		<French>Oceania</French>
+		<French>
+			<Text>Oc&#233;anie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Oceania</German>
 		<Italian>Oceania</Italian>
 		<Spanish>Oceania</Spanish>
@@ -220,7 +324,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_26</Tag>
 		<English>Ethiopia</English>
-		<French>Ethiopia</French>
+		<French>
+			<Text>&#201;thiopie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ethiopia</German>
 		<Italian>Ethiopia</Italian>
 		<Spanish>Ethiopia</Spanish>
@@ -228,7 +336,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_27</Tag>
 		<English>West Africa</English>
-		<French>West Africa</French>
+		<French>
+			<Text>Afrique de l'Ouest</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>West Africa</German>
 		<Italian>West Africa</Italian>
 		<Spanish>West Africa</Spanish>
@@ -236,7 +348,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_28</Tag>
 		<English>South Africa</English>
-		<French>South Africa</French>
+		<French>
+			<Text>Afrique australe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>South Africa</German>
 		<Italian>South Africa</Italian>
 		<Spanish>South Africa</Spanish>
@@ -244,7 +360,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_29</Tag>
 		<English>Canada</English>
-		<French>Canada</French>
+		<French>
+			<Text>Canada</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Canada</German>
 		<Italian>Canada</Italian>
 		<Spanish>Canada</Spanish>
@@ -252,7 +372,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_30</Tag>
 		<English>Alaska</English>
-		<French>Alaska</French>
+		<French>
+			<Text>Alaska</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Alaska</German>
 		<Italian>Alaska</Italian>
 		<Spanish>Alaska</Spanish>
@@ -260,7 +384,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_31</Tag>
 		<English>United States</English>
-		<French>United States</French>
+		<French>
+			<Text>&#201;tats-Unis</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>United States</German>
 		<Italian>United States</Italian>
 		<Spanish>United States</Spanish>
@@ -268,7 +396,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_32</Tag>
 		<English>Caribbean</English>
-		<French>Caribbean</French>
+		<French>
+			<Text>Cara&#239;bes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Caribbean</German>
 		<Italian>Caribbean</Italian>
 		<Spanish>Caribbean</Spanish>
@@ -276,7 +408,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_33</Tag>
 		<English>Mesoamerica</English>
-		<French>Mesoamerica</French>
+		<French>
+			<Text>M&#233;soam&#233;rique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mesoamerica</German>
 		<Italian>Mesoamerica</Italian>
 		<Spanish>Mesoamerica</Spanish>
@@ -284,7 +420,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_34</Tag>
 		<English>Brazil</English>
-		<French>Brazil</French>
+		<French>
+			<Text>Br&#233;sil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Brazil</German>
 		<Italian>Brazil</Italian>
 		<Spanish>Brazil</Spanish>
@@ -292,7 +432,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_35</Tag>
 		<English>Argentina</English>
-		<French>Argentina</French>
+		<French>
+			<Text>Argentine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Argentina</German>
 		<Italian>Argentina</Italian>
 		<Spanish>Argentina</Spanish>
@@ -300,7 +444,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_36</Tag>
 		<English>Peru</English>
-		<French>Peru</French>
+		<French>
+			<Text>P&#233;rou</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Peru</German>
 		<Italian>Peru</Italian>
 		<Spanish>Peru</Spanish>
@@ -308,7 +456,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_37</Tag>
 		<English>Colombia</English>
-		<French>Colombia</French>
+		<French>
+			<Text>Colombie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Colombia</German>
 		<Italian>Colombia</Italian>
 		<Spanish>Colombia</Spanish>
@@ -324,7 +476,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_0</Tag>
 		<English>Egypt</English>
-		<French>Egypt</French>
+		<French>
+			<Text>&#201;gypte</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>&#196;gypten</German>
 		<Italian>Egypt</Italian>
 		<Spanish>Egypt</Spanish>
@@ -332,7 +488,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_1</Tag>
 		<English>Phoenicia</English>
-		<French>Phoenicia</French>
+		<French>
+			<Text>Ph&#233;nicie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ph&#246;nizien</German>
 		<Italian>Phoenicia</Italian>
 		<Spanish>Phoenicia</Spanish>
@@ -340,7 +500,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_2</Tag>
 		<English>Babylonia</English>
-		<French>Babylonia</French>
+		<French>
+			<Text>Babylonie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Babylonien</German>
 		<Italian>Babylonia</Italian>
 		<Spanish>Babylonia</Spanish>
@@ -348,7 +512,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_3</Tag>
 		<English>Persia</English>
-		<French>Persia</French>
+		<French>
+			<Text>Perse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Persien</German>
 		<Italian>Persia</Italian>
 		<Spanish>Persia</Spanish>
@@ -356,7 +524,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_4</Tag>
 		<English>Mesopotamia</English>
-		<French>Mesopotamia</French>
+		<French>
+			<Text>M&#233;sopotamie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mesopotamien</German>
 		<Italian>Mesopotamia</Italian>
 		<Spanish>Mesopotamia</Spanish>
@@ -364,7 +536,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_5</Tag>
 		<English>Transoxania</English>
-		<French>Transoxania</French>
+		<French>
+			<Text>Transoxiane</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Transoxanien</German>
 		<Italian>Transoxania</Italian>
 		<Spanish>Transoxania</Spanish>
@@ -372,7 +548,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_6</Tag>
 		<English>Northwest India</English>
-		<French>Northwest India</French>
+		<French>
+			<Text>Nord-ouest de l'Inde</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nordwestindien</German>
 		<Italian>Northwest India</Italian>
 		<Spanish>Northwest India</Spanish>
@@ -380,7 +560,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_7</Tag>
 		<English>Mediterranean</English>
-		<French>Mediterranean</French>
+		<French>
+			<Text>M&#233;diterran&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mittelmeerk&#252;ste</German>
 		<Italian>Mediterranean</Italian>
 		<Spanish>Mediterranean</Spanish>
@@ -388,7 +572,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_8</Tag>
 		<English>Iberia</English>
-		<French>Iberia</French>
+		<French>
+			<Text>P&#233;ninsule Ib&#233;rique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Iberien</German>
 		<Italian>Iberia</Italian>
 		<Spanish>Iberia</Spanish>
@@ -396,7 +584,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_9</Tag>
 		<English>Gaul</English>
-		<French>Gaul</French>
+		<French>
+			<Text>Gaule</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gallien</German>
 		<Italian>Gaul</Italian>
 		<Spanish>Gaul</Spanish>
@@ -404,7 +596,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_10</Tag>
 		<English>Britain</English>
-		<French>Britain</French>
+		<French>
+			<Text>Grande-Bretagne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Britannien</German>
 		<Italian>Britain</Italian>
 		<Spanish>Britain</Spanish>
@@ -412,7 +608,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_11</Tag>
 		<English>Africa</English>
-		<French>Africa</French>
+		<French>
+			<Text>Afrique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Afrika</German>
 		<Italian>Africa</Italian>
 		<Spanish>Africa</Spanish>
@@ -420,7 +620,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_12</Tag>
 		<English>Greece and Anatolia</English>
-		<French>Greece and Anatolia</French>
+		<French>Gr&#232;ce et Anatolie</French>
 		<German>Griechenland und Anatolien</German>
 		<Italian>Greece and Anatolia</Italian>
 		<Spanish>Greece and Anatolia</Spanish>
@@ -428,7 +628,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_13</Tag>
 		<English>Egypt</English>
-		<French>Egypt</French>
+		<French>
+			<Text>&#201;gypte</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>&#196;gypten</German>
 		<Italian>Egypt</Italian>
 		<Spanish>Egypt</Spanish>
@@ -436,7 +640,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_14</Tag>
 		<English>Korea</English>
-		<French>Korea</French>
+		<French>
+			<Text>Cor&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Korea</German>
 		<Italian>Korea</Italian>
 		<Spanish>Korea</Spanish>
@@ -444,7 +652,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_15</Tag>
 		<English>Manchuria</English>
-		<French>Manchuria</French>
+		<French>
+			<Text>Mandchourie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mandschurei</German>
 		<Italian>Manchuria</Italian>
 		<Spanish>Manchuria</Spanish>
@@ -452,7 +664,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_16</Tag>
 		<English>China</English>
-		<French>China</French>
+		<French>
+			<Text>Chine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>China</German>
 		<Italian>China</Italian>
 		<Spanish>China</Spanish>
@@ -460,7 +676,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_17</Tag>
 		<English>Indochina</English>
-		<French>Indochina</French>
+		<French>
+			<Text>Indochine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Indochina</German>
 		<Italian>Indochina</Italian>
 		<Spanish>Indochina</Spanish>
@@ -468,7 +688,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_18</Tag>
 		<English>Indonesia</English>
-		<French>Indonesia</French>
+		<French>
+			<Text>Indon&#233;sie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Indonesien</German>
 		<Italian>Indonesia</Italian>
 		<Spanish>Indonesia</Spanish>
@@ -476,7 +700,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_19</Tag>
 		<English>Philippines</English>
-		<French>Philippines</French>
+		<French>
+			<Text>Philippines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Philippinen</German>
 		<Italian>Philippines</Italian>
 		<Spanish>Philippines</Spanish>
@@ -484,7 +712,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_20</Tag>
 		<English>Ethiopia and Subequatorial Africa</English>
-		<French>Ethiopia and Subequatorial Africa</French>
+		<French>&#201;thiopie et Afrique sub&#233;quatoriale</French>
 		<German>&#196;thiopien und Sub&#228;quatorialafrika</German>
 		<Italian>Ethiopia and Subequatorial Africa</Italian>
 		<Spanish>Ethiopia and Subequatorial Africa</Spanish>
@@ -492,7 +720,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_21</Tag>
 		<English>Balkans</English>
-		<French>Balkans</French>
+		<French>
+			<Text>Balkans</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Balkan</German>
 		<Italian>Balkans</Italian>
 		<Spanish>Balkans</Spanish>
@@ -500,7 +732,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_22</Tag>
 		<English>North Africa</English>
-		<French>North Africa</French>
+		<French>
+			<Text>Afrique du Nord</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nordafrika</German>
 		<Italian>North Africa</Italian>
 		<Spanish>North Africa</Spanish>
@@ -508,7 +744,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_23</Tag>
 		<English>Near East</English>
-		<French>Near East</French>
+		<French>
+			<Text>Proche-Orient</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Naher Osten</German>
 		<Italian>Near East</Italian>
 		<Spanish>Near East</Spanish>
@@ -516,7 +756,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_24</Tag>
 		<English>Egypt</English>
-		<French>Egypt</French>
+		<French>
+			<Text>&#201;gypte</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>&#196;gypten</German>
 		<Italian>Egypt</Italian>
 		<Spanish>Egypt</Spanish>
@@ -524,7 +768,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_25</Tag>
 		<English>Maghreb</English>
-		<French>Maghreb</French>
+		<French>
+			<Text>Maghreb</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Maghreb</German>
 		<Italian>Maghreb</Italian>
 		<Spanish>Maghreb</Spanish>
@@ -532,7 +780,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_26</Tag>
 		<English>Mesopotamia</English>
-		<French>Mesopotamia</French>
+		<French>
+			<Text>M&#233;sopotamie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mesopotamien</German>
 		<Italian>Mesopotamia</Italian>
 		<Spanish>Mesopotamia</Spanish>
@@ -540,7 +792,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_27</Tag>
 		<English>Persia</English>
-		<French>Persia</French>
+		<French>
+			<Text>Perse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Persien</German>
 		<Italian>Persia</Italian>
 		<Spanish>Persia</Spanish>
@@ -548,7 +804,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_28</Tag>
 		<English>Spain</English>
-		<French>Spain</French>
+		<French>
+			<Text>Espagne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Spanien</German>
 		<Italian>Spain</Italian>
 		<Spanish>Spain</Spanish>
@@ -556,7 +816,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_29</Tag>
 		<English>Europe</English>
-		<French>Europe</French>
+		<French>
+			<Text>Europe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Europa</German>
 		<Italian>Europe</Italian>
 		<Spanish>Europe</Spanish>
@@ -572,7 +836,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_31</Tag>
 		<English>North America</English>
-		<French>North America</French>
+		<French>
+			<Text>Am&#233;rique du Nord</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nordamerika</German>
 		<Italian>North America</Italian>
 		<Spanish>North America</Spanish>
@@ -580,7 +848,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_32</Tag>
 		<English>South and Central America</English>
-		<French>South and Central America</French>
+		<French>
+			<Text>Am&#233;rique centrale et du Sud</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>S&#252;d- und Mittelamerika</German>
 		<Italian>South and Central America</Italian>
 		<Spanish>South and Central America</Spanish>
@@ -588,7 +860,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_33</Tag>
 		<English>Africa</English>
-		<French>Africa</French>
+		<French>
+			<Text>Afrique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Afrika</German>
 		<Italian>Africa</Italian>
 		<Spanish>Africa</Spanish>
@@ -596,7 +872,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_34</Tag>
 		<English>Asia</English>
-		<French>Asia</French>
+		<French>
+			<Text>Asie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Asien</German>
 		<Italian>Asia</Italian>
 		<Spanish>Asia</Spanish>
@@ -604,7 +884,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_35</Tag>
 		<English>Australia and Oceania</English>
-		<French>Australia and Oceania</French>
+		<French>Australie and Oc&#233;anie</French>
 		<German>Australien und Ozeanien</German>
 		<Italian>Australia and Oceania</Italian>
 		<Spanish>Australia and Oceania</Spanish>
@@ -612,7 +892,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_36</Tag>
 		<English>France</English>
-		<French>France</French>
+		<French>
+			<Text>France</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Frankreich</German>
 		<Italian>France</Italian>
 		<Spanish>France</Spanish>
@@ -620,7 +904,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_37</Tag>
 		<English>Italy</English>
-		<French>Italy</French>
+		<French>
+			<Text>Italie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Italien</German>
 		<Italian>Italy</Italian>
 		<Spanish>Italy</Spanish>
@@ -628,7 +916,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_38</Tag>
 		<English>Russia</English>
-		<French>Russia</French>
+		<French>
+			<Text>Russie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Russland</German>
 		<Italian>Russia</Italian>
 		<Spanish>Russia</Spanish>
@@ -636,7 +928,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_39</Tag>
 		<English>England</English>
-		<French>England</French>
+		<French>
+			<Text>Angleterre</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>England</German>
 		<Italian>England</Italian>
 		<Spanish>England</Spanish>
@@ -644,7 +940,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_40</Tag>
 		<English>Scandinavia</English>
-		<French>Scandinavia</French>
+		<French>
+			<Text>Scandinavie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Skandinavien</German>
 		<Italian>Scandinavia</Italian>
 		<Spanish>Scandinavia</Spanish>
@@ -652,7 +952,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_41</Tag>
 		<English>Siberia</English>
-		<French>Siberia</French>
+		<French>
+			<Text>Sib&#233;rie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sibirien</German>
 		<Italian>Siberia</Italian>
 		<Spanish>Siberia</Spanish>
@@ -660,7 +964,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_42</Tag>
 		<English>Andean Coast, South America</English>
-		<French>Andean Coast, South America</French>
+		<French>C&#244;te andine, Am&#233;rique du Sud</French>
 		<German>Andenk&#252;ste, S&#252;damerika</German>
 		<Italian>Andean Coast, South America</Italian>
 		<Spanish>Andean Coast, South America</Spanish>
@@ -668,15 +972,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_43</Tag>
 		<English>Peru, South America</English>
-		<French>Peru, South America</French>
+		<French>P&#233;rou, Am&#233;rique du Sud</French>
 		<German>Peru, S&#252;damerika</German>
 		<Italian>Peru, South America</Italian>
 		<Spanish>Peru, South America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_44</Tag>
-		<English>Gran Columbia, South America</English>
-		<French>Gran Columbia, South America</French>
+		<English>Gran Colombia, South America</English>
+		<French>Grande Colombie, Am&#233;rique du Sud</French>
 		<German>Gro&#223;kolumbien, S&#252;damerika</German>
 		<Italian>Gran Columbia, South America</Italian>
 		<Spanish>Gran Columbia, South America</Spanish>
@@ -684,7 +988,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_45</Tag>
 		<English>Guayanas, South America</English>
-		<French>Guayanas, South America</French>
+		<French>Guyanes, Am&#233;rique du Sud</French>
 		<German>Guayanas, S&#252;damerika</German>
 		<Italian>Guayanas, South America</Italian>
 		<Spanish>Guayanas, South America</Spanish>
@@ -692,7 +996,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_46</Tag>
 		<English>Caribbean</English>
-		<French>Caribbean</French>
+		<French>
+			<Text>Cara&#239;bes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Karibik</German>
 		<Italian>Caribbean</Italian>
 		<Spanish>Caribbean</Spanish>
@@ -700,7 +1008,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_47</Tag>
 		<English>Eastern Mediterranean</English>
-		<French>Eastern Mediterranean</French>
+		<French>
+			<Text>M&#233;diterran&#233;e orientale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>&#214;stliche Mittelmeerk&#252;ste</German>
 		<Italian>Eastern Mediterranean</Italian>
 		<Spanish>Eastern Mediterranean</Spanish>
@@ -708,7 +1020,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_48</Tag>
 		<English>Black Sea</English>
-		<French>Black Sea</French>
+		<French>
+			<Text>Mer Noire</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Schwarzes Meer</German>
 		<Italian>Black Sea</Italian>
 		<Spanish>Black Sea</Spanish>
@@ -716,7 +1032,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_49</Tag>
 		<English>Cairo</English>
-		<French>Cairo</French>
+		<French>
+			<Text>Le Caire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kairo</German>
 		<Italian>Cairo</Italian>
 		<Spanish>Cairo</Spanish>
@@ -724,7 +1044,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_50</Tag>
 		<English>Mecca</English>
-		<French>Mecca</French>
+		<French>
+			<Text>La Mecque</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mekka</German>
 		<Italian>Mecca</Italian>
 		<Spanish>Mecca</Spanish>
@@ -732,7 +1056,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_51</Tag>
 		<English>Baghdad</English>
-		<French>Baghdad</French>
+		<French>
+			<Text>Baghdad</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bagdad</German>
 		<Italian>Baghdad</Italian>
 		<Spanish>Baghdad</Spanish>
@@ -740,7 +1068,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_52</Tag>
 		<English>Vienna</English>
-		<French>Vienna</French>
+		<French>
+			<Text>Vienne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Wien</German>
 		<Italian>Vienna</Italian>
 		<Spanish>Vienna</Spanish>
@@ -748,7 +1080,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_53</Tag>
 		<English>South Asia</English>
-		<French>South Asia</French>
+		<French>
+			<Text>Asie du Sud</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>S&#252;dasien</German>
 		<Italian>South Asia</Italian>
 		<Spanish>South Asia</Spanish>
@@ -756,7 +1092,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_54</Tag>
 		<English>North and Central America</English>
-		<French>North and Central America</French>
+		<French>
+			<Text>Am&#233;rique du Nord et centrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nord- und Mittelamerika</German>
 		<Italian>North and Central America</Italian>
 		<Spanish>North and Central America</Spanish>
@@ -764,7 +1104,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_55</Tag>
 		<English>Deccan</English>
-		<French>Deccan</French>
+		<French>
+			<Text>Deccan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dekkan</German>
 		<Italian>Deccan</Italian>
 		<Spanish>Deccan</Spanish>
@@ -772,7 +1116,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_56</Tag>
 		<English>Srivijaya</English>
-		<French>Srivijaya</French>
+		<French>
+			<Text>Sriwijaya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Srivijaya</German>
 		<Italian>Srivijaya</Italian>
 		<Spanish>Srivijaya</Spanish>
@@ -780,7 +1128,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_57</Tag>
 		<English>Iberia</English>
-		<French>Iberia</French>
+		<French>
+			<Text>P&#233;ninsule Ib&#233;rique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Iberien</German>
 		<Italian>Iberia</Italian>
 		<Spanish>Iberia</Spanish>
@@ -788,7 +1140,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_58</Tag>
 		<English>Maghreb</English>
-		<French>Maghreb</French>
+		<French>
+			<Text>Maghreb</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Maghreb</German>
 		<Italian>Maghreb</Italian>
 		<Spanish>Maghreb</Spanish>
@@ -796,7 +1152,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_59</Tag>
 		<English>West Africa</English>
-		<French>West Africa</French>
+		<French>
+			<Text>Afrique de l'Ouest</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Westafrika</German>
 		<Italian>West Africa</Italian>
 		<Spanish>West Africa</Spanish>
@@ -804,7 +1164,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_60</Tag>
 		<English>Brazil</English>
-		<French>Brazil</French>
+		<French>
+			<Text>Br&#233;sil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Brasilien</German>
 		<Italian>Brazil</Italian>
 		<Spanish>Brazil</Spanish>
@@ -812,7 +1176,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_61</Tag>
 		<English>South America</English>
-		<French>South America</French>
+		<French>
+			<Text>Am&#233;rique du Sud</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>S&#252;damerika</German>
 		<Italian>South America</Italian>
 		<Spanish>South America</Spanish>
@@ -820,7 +1188,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_62</Tag>
 		<English>Canada</English>
-		<French>Canada</French>
+		<French>
+			<Text>Canada</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kanada</German>
 		<Italian>Canada</Italian>
 		<Spanish>Canada</Spanish>
@@ -828,7 +1200,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_63</Tag>
 		<English>Atlantic Coast, Canada</English>
-		<French>Atlantic Coast, Canada</French>
+		<French>
+			<Text>C&#244;te atlantique, Canada</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Atlantikk&#252;ste, Kanada</German>
 		<Italian>Atlantic Coast, Canada</Italian>
 		<Spanish>Atlantic Coast, Canada</Spanish>
@@ -836,7 +1212,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_64</Tag>
 		<English>Pacific Coast, Canada</English>
-		<French>Pacific Coast, Canada</French>
+		<French>
+			<Text>C&#244;te pacifique, Canada</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pazifikk&#252;ste, Kanada</German>
 		<Italian>Pacific Coast, Canada</Italian>
 		<Spanish>Pacific Coast, Canada</Spanish>
@@ -844,7 +1224,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_65</Tag>
 		<English>Hawaii</English>
-		<French>Hawaii</French>
+		<French>
+			<Text>Hawa&#239;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hawaii</German>
 		<Italian>Hawaii</Italian>
 		<Spanish>Hawaii</Spanish>
@@ -852,7 +1236,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_66</Tag>
 		<English>New Zealand</English>
-		<French>New Zealand</French>
+		<French>
+			<Text>Nouvelle-Z&#233;lande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Neuseeland</German>
 		<Italian>New Zealand</Italian>
 		<Spanish>New Zealand</Spanish>
@@ -860,7 +1248,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_67</Tag>
 		<English>Marquesas</English>
-		<French>Marquesas</French>
+		<French>
+			<Text>Marquises</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Marquesas</German>
 		<Italian>Marquesas</Italian>
 		<Spanish>Marquesas</Spanish>
@@ -868,7 +1260,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_68</Tag>
 		<English>Easter Island</English>
-		<French>Easter Island</French>
+		<French>
+			<Text>&#206;le de P&#226;ques</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Osterinsel</German>
 		<Italian>Easter Island</Italian>
 		<Spanish>Easter Island</Spanish>
@@ -876,7 +1272,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
-		<French>China</French>
+		<French>
+			<Text>Chine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>China</German>
 		<Italian>China</Italian>
 		<Spanish>China</Spanish>
@@ -884,7 +1284,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_70</Tag>
 		<English>Mediterranean Coast</English>
-		<French>Mediterranean Coast</French>
+		<French>
+			<Text>C&#244;te m&#233;diterran&#233;enne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mittelmeerk&#252;ste</German>
 		<Italian>Mediterranean Coast</Italian>
 		<Spanish>Mediterranean Coast</Spanish>
@@ -892,7 +1296,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_71</Tag>
 		<English>China</English>
-		<French>China</French>
+		<French>
+			<Text>Chine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>China</German>
 		<Italian>China</Italian>
 		<Spanish>China</Spanish>

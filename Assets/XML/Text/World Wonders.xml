@@ -44,7 +44,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
 		<English>Blue Mosque</English>
-		<French>Blue Mosque</French>
+		<French>
+			<Text>Mosqu&#233;e bleue</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Blaue Moschee</German>
 		<Italian>Blue Mosque</Italian>
 		<Spanish>Blue Mosque</Spanish>
@@ -60,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOROBUDUR</Tag>
 		<English>Borobudur</English>
-		<French>Borobudur</French>
+		<French>
+			<Text>Borobudur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Borobudur</German>
 		<Italian>Borobudur</Italian>
 		<Spanish>Borobudur</Spanish>
@@ -77,8 +85,8 @@
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE</Tag>
 		<English>Brandenburg Gate</English>
 		<French>
-			<Text>Brandenburg Gate</Text>
-			<Gender>Male</Gender>
+			<Text>Porte de Brandebourg</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -219,7 +227,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
-		<French>CN Tower</French>
+		<French>
+			<Text>Tour CN</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>CN Tower</German>
 		<Italian>CN Tower</Italian>
 		<Spanish>CN Tower</Spanish>
@@ -235,7 +247,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Tag>
 		<English>Dome of the Rock</English>
-		<French>Le D&#244;me du Rocher</French>
+		<French>
+			<Text>Le D&#244;me du Rocher</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Felsendom</Text>
 			<Gender>Male</Gender>
@@ -247,7 +263,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Tag>
 		<English>The Empire State Building</English>
-		<French>The Empire State Building</French>
+		<French>
+			<Text>L'Empire State Building</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Das Empire State Building</German>
 		<Italian>The Empire State Building</Italian>
 		<Spanish>The Empire State Building</Spanish>
@@ -327,7 +347,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
 		<English>The Great Bath</English>
-		<French>The Great Bath</French>
+		<French>
+			<Text>Les Grands Bains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Das Gro&#223;e Bad</German>
 		<Italian>The Great Bath</Italian>
 		<Spanish>The Great Bath</Spanish>
@@ -335,7 +359,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON</Tag>
 		<English>The Great Cothon</English>
-		<French>The Great Cothon</French>
+		<French>
+			<Text>Le Grand Cothon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Der Gro&#223;e Cothon</Text>
 			<Gender>Male</Gender>
@@ -387,7 +415,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
 		<English>Harmandir Sahib</English>
-		<French>Harmandir Sahib</French>
+		<French>
+			<Text>Harmandir Sahib</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Harmandir Sahib</German>
 		<Italian>Harmandir Sahib</Italian>
 		<Spanish>Harmandir Sahib</Spanish>
@@ -451,7 +483,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HIMEJI_CASTLE</Tag>
 		<English>Himeji Castle</English>
-		<French>Ch&#226;teau d'Himeji</French>
+		<French>
+			<Text>Ch&#226;teau de Himeji</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Die Burg von Himeji</German>
 		<Italian>Castello Himeji</Italian>
 		<Spanish>Castillo Himeji</Spanish>
@@ -459,7 +495,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE</Tag>
 		<English>Ishtar Gate</English>
-		<French>Porte d'Ishtar</French>
+		<French>
+			<Text>Porte d'Ishtar</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Ishtar-Tor</Text>
 			<Gender>Male</Gender>
@@ -471,7 +511,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LUBYANKA</Tag>
 		<English>Lubyanka</English>
-		<French>Lubyanka</French>
+		<French>
+			<Text>Loubianka</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Lubyanka</German>
 		<Italian>Lubyanka</Italian>
 		<Spanish>Lubyanka</Spanish>
@@ -487,7 +531,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO</Tag>
 		<English>Khajuraho</English>
-		<French>Khajuraho</French>
+		<French>
+			<Text>Khajur&#226;ho</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Khajuraho</German>
 		<Italian>Khajuraho</Italian>
 		<Spanish>Khajuraho</Spanish>
@@ -495,8 +543,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Tag>
 		<English>St. Basil's Cathedral</English>
-		<Italian>Cattedrale di San Basilio</Italian>
-		<Spanish>Catedral de San Basilio</Spanish>
+		<French>
+			<Text>Cath&#233;drale Basile-le-Bienheureux</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Basilius-Kathedrale</Text>
 			<Gender>Male</Gender>
@@ -548,7 +599,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU</Tag>
 		<English>Machu Picchu</English>
-		<French>Machu Picchu</French>
+		<French>
+			<Text>Machu Picchu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Machu Picchu</German>
 		<Italian>Machu Picchu</Italian>
 		<Spanish>Machu Picchu</Spanish>
@@ -580,7 +635,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA</Tag>
 		<English>La Mezquita</English>
-		<French>La Mezquita</French>
+		<French>
+			<Text>La Mezquita</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>La Mezquita</German>
 		<Italian>La Mezquita</Italian>
 		<Spanish>La Mezquita</Spanish>
@@ -740,7 +799,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
 		<English>The Grand Canal</English>
-		<French>The Grand Canal</French>
+		<French>
+			<Text>Le Grand Canal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kaiserkanal</German>
 		<Italian>The Grand Canal</Italian>
 		<Spanish>The Grand Canal</Spanish>
@@ -756,7 +819,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS</Tag>
 		<English>Floating Gardens</English>
-		<French>Floating Gardens</French>
+		<French>
+			<Text>Jardins flottants</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Schwimmende G&#228;rten</German>
 		<Italian>Floating Gardens</Italian>
 		<Spanish>Floating Gardens</Spanish>
@@ -844,7 +911,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>
 		<English>Porcelain Tower</English>
-		<French>Tour de Porcelaine</French>
+		<French>
+			<Text>Tour de Porcelaine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Porzellanturm</German>
 		<Italian>Torre di Porcellana</Italian>
 		<Spanish>Torre de porcelana</Spanish>
@@ -900,7 +971,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_FORT</Tag>
 		<English>The Red Fort</English>
-		<French>The Red Fort</French>
+		<French>
+			<Text>Le Fort rouge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Das Rote Fort</German>
 		<Italian>The Red Fort</Italian>
 		<Spanish>The Red Fort</Spanish>
@@ -948,7 +1023,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAN_MARCO_BASILICA</Tag>
 		<English>San Marco Basilica</English>
-		<French>Basilique St Marc</French>
+		<French>
+			<Text>Basilique Saint-Marc</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Markusdom</German>
 		<Italian>Basilica di San Marco</Italian>
 		<Spanish>Basilica de San Marcos</Spanish>
@@ -1012,7 +1091,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX</Tag>
 		<English>Great Sphinx</English>
-		<French>Great Sphinx</French>
+		<French>
+			<Text>Le Grand Sphinx</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Die Gro&#223;e Sphinx</Text>
 			<Gender>Male</Gender>
@@ -1096,7 +1179,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY</Tag>
 		<English>Terracotta Army</English>
-		<French>Arm&#233;e en terre-cuite</French>
+		<French>
+			<Text>Arm&#233;e de terre cuite</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Terracotta-Armee</Text>
 			<Gender>Male</Gender>
@@ -1124,7 +1211,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THEODOSIAN_WALLS</Tag>
 		<English>Theodosian Walls</English>
-		<French>Mur Th&#233;odosien</French>
+		<French>
+			<Text>Murs th&#233;odosiens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>
 			<Text>Theodosische Mauern</Text>
 			<Gender>Male</Gender>
@@ -1144,7 +1235,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE</Tag>
 		<English>Topkapi Palace</English>
-		<French>Palace Topkapi</French>
+		<French>
+			<Text>Palais de Topkapi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Topkapi-Palast</Text>
 			<Gender>Male</Gender>
@@ -1156,7 +1251,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITAIPU_DAM</Tag>
 		<English>Itaipu Dam</English>
-		<French>Itaipu Dam</French>
+		<French>
+			<Text>Barrage d'Itaipu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Itaipu Dam</German>
 		<Italian>Itaipu Dam</Italian>
 		<Spanish>Itaipu Dam</Spanish>
@@ -1188,7 +1287,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE</Tag>
 		<English>Trafalgar Square</English>
-		<French>Trafalgar Square</French>
+		<French>
+			<Text>Trafalgar Square</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Trafalgar Square</German>
 		<Italian>Trafalgar Square</Italian>
 		<Spanish>Plaza de Trafalgar</Spanish>
@@ -1268,7 +1371,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Tag>
 		<English>Westminster Palace</English>
-		<French>Westminster Palace</French>
+		<French>
+			<Text>Palais de Westminster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Palast von Westminster</Text>
 			<Gender>Male</Gender>
