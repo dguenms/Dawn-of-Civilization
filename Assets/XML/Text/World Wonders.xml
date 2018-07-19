@@ -1400,11 +1400,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN_HELP</Tag>
-		<English>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</English>
-		<French>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</French>
-		<German>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</German>
-		<Italian>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Another great person is born whenever a Great General appears (not implemented)</Spanish>
+		<English>[ICON_BULLET]Another great person is born whenever a Great General appears</English>
+		<French>[ICON_BULLET]Another great person is born whenever a Great General appears</French>
+		<German>[ICON_BULLET]Another great person is born whenever a Great General appears</German>
+		<Italian>[ICON_BULLET]Another great person is born whenever a Great General appears</Italian>
+		<Spanish>[ICON_BULLET]Another great person is born whenever a Great General appears</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH</Tag>
