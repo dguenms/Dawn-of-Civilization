@@ -215,6 +215,14 @@ class CvRFCEventHandler:
 				if isNationalWonderClass(gc.getBuildingInfo(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
 					city.setHasRealBuilding(iNationalWonder, False)
 					
+		# Leoreth: Escorial effect
+		if gc.getPlayer(iPlayer).isHasBuildingEffect(iEscorial):
+			if city.isColony():
+				capital = gc.getPlayer(iPlayer).getCapitalCity()
+				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
+				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+				gc.getPlayer(iPlayer).changeGold(iGold)
+					
 		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
 		self.com.onCityAcquired(city) # Communications
 		self.corp.onCityAcquired(argsList) # Companies
@@ -361,6 +369,14 @@ class CvRFCEventHandler:
 		if iOwner == iHolyRome:
 			if gc.getPlayer(iHolyRome).getNumCities() == 1:
 				self.rnf.holyRomanSpawn()
+				
+		# Leoreth: Escorial effect
+		if gc.getPlayer(iOwner).isHasBuildingEffect(iEscorial):
+			if city.isColony():
+				capital = gc.getPlayer(iOwner).getCapitalCity()
+				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
+				CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+				gc.getPlayer(iOwner).changeGold(iGold)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'
