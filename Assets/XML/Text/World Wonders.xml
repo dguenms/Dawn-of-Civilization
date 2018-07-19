@@ -1423,12 +1423,20 @@
 		<Spanish>El Escorial</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ESCORIAL_EFFECT</Tag>
+		<English>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</English>
+		<French>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</French>
+		<German>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</German>
+		<Italian>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</Italian>
+		<Spanish>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_HELP</Tag>
-		<English>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</English>
-		<French>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</French>
-		<German>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</German>
-		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony (not implemented)</Spanish>
+		<English>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</English>
+		<French>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</French>
+		<German>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</German>
+		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Italian>
+		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TORRE_DE_BELEM</Tag>
