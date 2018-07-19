@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_THEATRE</Tag>
 		<English>National Theatre</English>
-		<French>National Theatre</French>
+		<French>
+			<Text>Th&#233;&#226;tre national</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>National Theatre</German>
 		<Italian>National Theatre</Italian>
 		<Spanish>National Theatre</Spanish>
@@ -12,7 +16,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_THEATRE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]th&#233;&#226;tre nationale[COLOR_REVERT] augmente la production culturelle et le bonheur de la ville. Il augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
@@ -44,7 +48,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_GALLERY_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<French>La [COLOR_BUILDING_TEXT]galerie nationale[COLOR_REVERT] double la production culturelle de sa ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
 		<German>Die [COLOR_BUILDING_TEXT]Nationalgalerie[COLOR_REVERT] verdoppelt den kulturellen Aussto&#223; einer Stadt. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
@@ -52,7 +56,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_PARK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]parc national[COLOR_REVERT] am&#233;liore grandement la sant&#233; de la ville. Il fournit aussi un sp&#233;cialiste gratuit par [COLOR_HIGHLIGHT_TEXT]r&#233;serve naturelle[COLOR_REVERT] dans les environs de la ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]savant illustre[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
@@ -84,7 +88,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]parc olympique[COLOR_REVERT] d&#233;clenche un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
@@ -92,7 +96,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SECRET_SERVICE</Tag>
 		<English>Secret Service</English>
-		<French>Secret Service</French>
+		<French>
+			<Text>Service secret</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Secret Service</German>
 		<Italian>Secret Service</Italian>
 		<Spanish>Secret Service</Spanish>
@@ -100,7 +108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SECRET_SERVICE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Secret Service[COLOR_REVERT] increases its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</English>
-		<French>The [COLOR_BUILDING_TEXT]Secret Service[COLOR_REVERT] increases its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</French>
+		<French>Le [COLOR_BUILDING_TEXT]service secret[COLOR_REVERT] augmente la production d'espionnage de la ville et donne des points d'exp&#233;rience aux [COLOR_UNIT_TEXT]unit&#233;s d'espionnage[COLOR_REVERT] qui y sont form&#233;es.</French>
 		<German>The [COLOR_BUILDING_TEXT]Secret Service[COLOR_REVERT] increases its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Secret Service[COLOR_REVERT] increases its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Secret Service[COLOR_REVERT] increases its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</Spanish>
@@ -139,8 +147,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</French>
+		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city that Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]compagnie commerciale[COLOR_REVERT] g&#233;n&#232;re un revenu pour chaque ville o&#249; s'est propag&#233;e la Compagnie commerciale. Elle procure de la sant&#233; si sa ville a acc&#232;s &#224; des [COLOR_HIGHLIGHT_TEXT]&#233;pices[COLOR_REVERT] ou du [COLOR_HIGHLIGHT_TEXT]sucre[COLOR_REVERT], et du bonheur si sa ville a acc&#232;s &#224; du [COLOR_HIGHLIGHT_TEXT]caf&#233;[COLOR_REVERT], du [COLOR_HIGHLIGHT_TEXT]th&#233;[COLOR_REVERT] ou du [COLOR_HIGHLIGHT_TEXT]tabac[COLOR_REVERT]. Elle augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</Spanish>
@@ -149,7 +157,7 @@
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Tag>
 		<English>Triumphal Arch</English>
 		<French>
-			<Text>Arc de Triomphe</Text>
+			<Text>Arc de triomphe</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -180,7 +188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
-		<French>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</French>
+		<French>L'[COLOR_BUILDING_TEXT]arc de triomphe[COLOR_REVERT] d&#233;lenche un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il acc&#233;l&#232;re aussi la production d'unit&#233;s militaires.</French>
 		<German>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</Spanish>
@@ -212,7 +220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</French>
+		<French>La [COLOR_BUILDING_TEXT]bourse[COLOR_REVERT] augmente la production de richesse d'une ville et les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
@@ -244,7 +252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRONWORKS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] increases a city's production if that city has access to coal and/or iron, but also adds unhealthiness. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>L'[COLOR_BUILDING_TEXT]usine sid&#233;rurgique[COLOR_REVERT] augmente la production d'une ville si celle-ci dispose de charbon et/ou de fer, mais aux d&#233;pens de la sant&#233; des habitants. Elle augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]ing&#233;nieur illustre[COLOR_REVERT].</French>
+		<French>L'[COLOR_BUILDING_TEXT]usine sid&#233;rurgique[COLOR_REVERT] augmente la production d'une ville si celle-ci dispose de charbon ou de fer, mais aux d&#233;pens de la sant&#233; des habitants. Elle augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]ing&#233;nieur illustre[COLOR_REVERT].</French>
 		<German>Die [COLOR_BUILDING_TEXT]Eisenverarbeitung[COLOR_REVERT] steigert in St&#228;dten mit Zugriff auf Kohle und/oder Eisen die Produktion, wirkt sich aber negativ auf die Gesundheit der Bev&#246;lkerung aus. Dar&#252;ber hinaus erh&#246;ht sie die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
 		<Italian>La [COLOR_BUILDING_TEXT]Ferrieria[COLOR_REVERT] aumenta la produzione della citt&#224; se ha accesso a carbone e/o ferro, ma genera infelicit&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Ingegnere[COLOR_REVERT].</Italian>
 		<Spanish>La [COLOR_BUILDING_TEXT]Metalurgia[COLOR_REVERT] aumenta la producci&#243;n de la ciudad si &#233;sta tiene acceso a carb&#243;n o hierro, pero tambi&#233;n aumenta su insalubridad. Incrementa tambi&#233;n las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran ingeniero[COLOR_REVERT].</Spanish>
@@ -252,7 +260,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MANUFACTORY</Tag>
 		<English>Manufactory</English>
-		<French>Manufactory</French>
+		<French>
+			<Text>Manufacture</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Manufactory</German>
 		<Italian>Manufactory</Italian>
 		<Spanish>Manufactory</Spanish>
@@ -260,7 +272,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MANUFACTORY_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Manufactories[COLOR_REVERT] increase a city's production and increase trade route yield.</English>
-		<French>[COLOR_BUILDING_TEXT]Manufactories[COLOR_REVERT] increase a city's production and increase trade route yield.</French>
+		<French>Les [COLOR_BUILDING_TEXT]manufactures[COLOR_REVERT] augmentent la production d'une ville et le rendement de ses routes commerciales.</French>
 		<German>[COLOR_BUILDING_TEXT]Manufactories[COLOR_REVERT] increase a city's production and increase trade route yield.</German>
 		<Italian>[COLOR_BUILDING_TEXT]Manufactories[COLOR_REVERT] increase a city's production and increase trade route yield.</Italian>
 		<Spanish>[COLOR_BUILDING_TEXT]Manufactories[COLOR_REVERT] increase a city's production and increase trade route yield.</Spanish>
@@ -268,7 +280,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUSEUM</Tag>
 		<English>Museum</English>
-		<French>Museum</French>
+		<French>
+			<Text>Mus&#233;e</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Museum</German>
 		<Italian>Museum</Italian>
 		<Spanish>Museum</Spanish>
@@ -276,7 +292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUSEUM_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Musea[COLOR_REVERT] greatly increase a city's cultural output. They also increase a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate depending on the culture level.</English>
-		<French>[COLOR_BUILDING_TEXT]Musea[COLOR_REVERT] greatly increase a city's cultural output. They also increase a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate depending on the culture level.</French>
+		<French>Les [COLOR_BUILDING_TEXT]mus&#233;es[COLOR_REVERT] augmentent nettement la production culturelle d'une ville. Ils augmentent aussi le taux de natalit&#233; des [COLOR_HIGHLIGHT_TEXT]personnages illustres[COLOR_REVERT] selon le niveau de culture de la ville.</French>
 		<German>[COLOR_BUILDING_TEXT]Musea[COLOR_REVERT] greatly increase a city's cultural output. They also increase a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate depending on the culture level.</German>
 		<Italian>[COLOR_BUILDING_TEXT]Musea[COLOR_REVERT] greatly increase a city's cultural output. They also increase a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate depending on the culture level.</Italian>
 		<Spanish>[COLOR_BUILDING_TEXT]Musea[COLOR_REVERT] greatly increase a city's cultural output. They also increase a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate depending on the culture level.</Spanish>
@@ -284,7 +300,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARMOURY</Tag>
 		<English>Armoury</English>
-		<French>Armoury</French>
+		<French>
+			<Text>Arsenal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Armoury</German>
 		<Italian>Armoury</Italian>
 		<Spanish>Armoury</Spanish>
@@ -292,7 +312,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARMOURY_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Armouries[COLOR_REVERT] increase a city's military unit production.</English>
-		<French>[COLOR_BUILDING_TEXT]Armouries[COLOR_REVERT] increase a city's military unit production.</French>
+		<French>Les [COLOR_BUILDING_TEXT]arsenaux[COLOR_REVERT] acc&#233;l&#232;rent la production d'unit&#233;s militaires d'une ville.</French>
 		<German>[COLOR_BUILDING_TEXT]Armouries[COLOR_REVERT] increase a city's military unit production.</German>
 		<Italian>[COLOR_BUILDING_TEXT]Armouries[COLOR_REVERT] increase a city's military unit production.</Italian>
 		<Spanish>[COLOR_BUILDING_TEXT]Armouries[COLOR_REVERT] increase a city's military unit production.</Spanish>
@@ -300,7 +320,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_COLLEGE</Tag>
 		<English>National College</English>
-		<French>Coll&#232;ge national</French>
+		<French>
+			<Text>Coll&#232;ge national</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nationale Hochschule</German>
 		<Italian>Collegio nazionale</Italian>
 		<Spanish>Colegio nacional</Spanish>
@@ -308,7 +332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_COLLEGE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]National College[COLOR_REVERT] greatly increases the scientific output of its city. It also allows you to change three citizens into scientists and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
-		<French>Le [COLOR_BUILDING_TEXT]Coll&#232;ge national[COLOR_REVERT] augmente nettement la production scientifique de la ville qui l'abrite. Elle permet aussi de transformer 3 citoyens en scientifiques et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]savant illustre[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]coll&#232;ge national[COLOR_REVERT] augmente nettement la production scientifique de la ville qui l'abrite. Elle permet aussi de transformer 3 citoyens en scientifiques et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]savant illustre[COLOR_REVERT].</French>
 		<German>Die [COLOR_BUILDING_TEXT]Nationale Hochschule[COLOR_REVERT] erh&#246;ht den Forschungsaussto&#223; einer Stadt und erh&#246;ht die Chance, einen [COLOR_UNIT_TEXT]Gro&#223;en Wissenschaftler[COLOR_REVERT] hervorzubringen. Dar&#252;ber hinaus k&#246;nnen Sie drei B&#252;rger in Wissenschaftler verwandeln.</German>
 		<Italian>Il [COLOR_BUILDING_TEXT]Collegio nazionale[COLOR_REVERT] aumenta notevolmente la produzione scientifica della citt&#224;. Inoltre, permette di trasformare tre cittadini in scienziati e aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT].</Italian>
 		<Spanish>El [COLOR_BUILDING_TEXT]Colegio nacional[COLOR_REVERT] aumenta enormemente la producci&#243;n cient&#237;fica de la ciudad. Tambi&#233;n permite convertir a tres ciudadanos en cient&#237;ficos y aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran cient&#237;fico[COLOR_REVERT].</Spanish>
@@ -316,7 +340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_MONUMENT</Tag>
 		<English>National Monument</English>
-		<French>Monument national</French>
+		<French>
+			<Text>Monument national</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nationalmonument</German>
 		<Italian>Monumento nazionale</Italian>
 		<Spanish>Monumento Nacional</Spanish>
@@ -324,7 +352,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_MONUMENT_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]National Monument[COLOR_REVERT] greatly increases the rate at which its city produces [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT], particularly [COLOR_UNIT_TEXT]Great Artists[COLOR_REVERT].</English>
-		<French>Le [COLOR_BUILDING_TEXT]Monument national[COLOR_REVERT] augmente nettement les chances d'apparition de [COLOR_HIGHLIGHT_TEXT]personnages illustres[COLOR_REVERT] dans la ville, notamment des [COLOR_UNIT_TEXT]artistes illustres[COLOR_REVERT].</French>
+		<French>Le [COLOR_BUILDING_TEXT]monument national[COLOR_REVERT] augmente nettement les chances d'apparition de [COLOR_HIGHLIGHT_TEXT]personnages illustres[COLOR_REVERT] dans la ville, notamment des [COLOR_UNIT_TEXT]artistes illustres[COLOR_REVERT].</French>
 		<German>Das [COLOR_BUILDING_TEXT]Nationalmonument[COLOR_REVERT] beschleunigt in einer Stadt die Bildung [COLOR_HIGHLIGHT_TEXT]Gro&#223;er Pers&#246;nlichkeiten[COLOR_REVERT] (vor allem [COLOR_UNIT_TEXT]Gro&#223;e K&#252;nstler[COLOR_REVERT]).</German>
 		<Italian>Il [COLOR_BUILDING_TEXT]Monumento nazionale[COLOR_REVERT] aumenta notevolmente il ritmo di realizzazione dei [COLOR_HIGHLIGHT_TEXT]Grandi Personaggi[COLOR_REVERT], in particolare dei [COLOR_UNIT_TEXT]Grandi Artisti[COLOR_REVERT].</Italian>
 		<Spanish>El [COLOR_BUILDING_TEXT]Monumento Nacional[COLOR_REVERT] aumenta mucho el ritmo al que la ciudad produce [COLOR_HIGHLIGHT_TEXT]Grandes personajes[COLOR_REVERT], en especial [COLOR_UNIT_TEXT]Grandes artistas[COLOR_REVERT].</Spanish>
@@ -332,15 +360,19 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MILITARY_ACADEMY</Tag>
 		<English>Military Academy</English>
-		<French>Military Academy</French>
+		<French>
+			<Text>&#201;cole militaire</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Military Academy</German>
 		<Italian>Military Academy</Italian>
 		<Spanish>Military Academy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MILITARY_ACADEMY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] increase a city's military unit production, grants the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion to all units and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] increase a city's military unit production, grants the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion to all units and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<English>The [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] increases a city's military unit production, grants the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion to all units and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>L'[COLOR_BUILDING_TEXT]&#233;cole militaire[COLOR_REVERT] acc&#233;l&#232;re la production d'unit&#233;s militaires de la ville, conf&#232;re la promotion [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] &#224; toutes les unit&#233;s qui y sont form&#233;es, et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]homme d'&#201;tat illustre[COLOR_REVERT].</French>
 		<German>The [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] increase a city's military unit production, grants the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion to all units and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] increase a city's military unit production, grants the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion to all units and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] increase a city's military unit production, grants the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion to all units and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
@@ -348,7 +380,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CENTRAL_BANK</Tag>
 		<English>Central Bank</English>
-		<French>Banque centrale</French>
+		<French>
+			<Text>Banque centrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Zentralbank</German>
 		<Italian>Banca centrale</Italian>
 		<Spanish>Banco Central</Spanish>
@@ -356,7 +392,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CENTRAL_BANK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Central Bank[COLOR_REVERT] doubles its city's wealth output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>La [COLOR_BUILDING_TEXT]Banque centrale[COLOR_REVERT] double la production de richesse de la ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
+		<French>La [COLOR_BUILDING_TEXT]banque centrale[COLOR_REVERT] double la production de richesse de la ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
 		<German>Die [COLOR_BUILDING_TEXT]Zentralbank[COLOR_REVERT] verdoppelt die Wohlstandsproduktion einer Stadt und erh&#246;ht die Chance, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
 		<Italian>La [COLOR_BUILDING_TEXT]Banca centrale[COLOR_REVERT] raddoppia la produzione di ricchezza della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
 		<Spanish>El [COLOR_BUILDING_TEXT]Banco Central[COLOR_REVERT] dobla la producci&#243;n de riqueza de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
