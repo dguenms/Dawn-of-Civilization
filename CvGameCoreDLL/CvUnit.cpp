@@ -8004,7 +8004,18 @@ int CvUnit::visibilityRange() const
 
 int CvUnit::baseMoves() const
 {
-	return (m_pUnitInfo->getMoves() + getExtraMoves() + GET_TEAM(getTeam()).getExtraMoves(getDomainType()));
+	int iMoves = m_pUnitInfo->getMoves() + getExtraMoves() + GET_TEAM(getTeam()).getExtraMoves(getDomainType());
+
+	// Leoreth: Saint Basil's Cathedral effect
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)SAINT_BASILS_CATHEDRAL))
+	{
+		if (!canFight())
+		{
+			iMoves += 1;
+		}
+	}
+
+	return iMoves;
 }
 
 

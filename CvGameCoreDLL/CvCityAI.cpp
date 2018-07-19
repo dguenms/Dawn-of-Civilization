@@ -3273,7 +3273,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										break;
 									case RUSSIA:
-										if (iI == ST_BASILS_CATHEDRAL || iI == LUBYANKA) iTempValue *= 4;
+										if (iI == SAINT_BASILS_CATHEDRAL || iI == LUBYANKA) iTempValue *= 4;
 										else {
 											iTempValue *= 3;
 											iTempValue /= 4;
@@ -3285,7 +3285,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case TURKEY:
 										if (iI == HAGIA_SOPHIA) iTempValue *= 2;
 										if (iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE) iTempValue *= 6;
-										else if (iI == TAJ_MAHAL || iI == RED_FORT || iI == ST_BASILS_CATHEDRAL) iTempValue /= 4;
+										else if (iI == TAJ_MAHAL || iI == RED_FORT || iI == SAINT_BASILS_CATHEDRAL) iTempValue /= 4;
 										break;
 									case POLAND:
 										break;
