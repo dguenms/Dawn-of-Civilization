@@ -1344,11 +1344,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Tag>
-		<English>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</English>
-		<French>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</French>
-		<German>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</German>
-		<Italian>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries (not implemented)</Spanish>
+		<English>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</English>
+		<French>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</French>
+		<German>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</German>
+		<Italian>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Italian>
+		<Spanish>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA</Tag>
