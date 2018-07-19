@@ -2114,12 +2114,20 @@
 		<Spanish>Gur-e-Amir</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT</Tag>
+		<English>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</English>
+		<French>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</French>
+		<German>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</German>
+		<Italian>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Italian>
+		<Spanish>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_HELP</Tag>
-		<English>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</English>
-		<French>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</French>
-		<German>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</German>
-		<Italian>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]City receives additional culture equal to gold plundered from captured cities (not implemented)</Spanish>
+		<English>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</English>
+		<French>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</French>
+		<German>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</German>
+		<Italian>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Italian>
+		<Spanish>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE</Tag>

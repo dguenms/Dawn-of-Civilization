@@ -475,6 +475,14 @@ class CvRFCEventHandler:
 	def onCityCaptureGold(self, argsList):
 		city, iPlayer, iGold = argsList
 		
+		if iGold > 0:
+			if gc.getPlayer(iPlayer).isHasBuildingEffect(iGurEAmir):
+				for loopCity in utils.getCityList(iPlayer):
+					if loopCity.isHasRealBuilding(iGurEAmir):
+						CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT", (iGold, city.getName(), loopCity.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+						loopCity.changeCulture(iPlayer, iGold, True)
+						break
+		
 		if iPlayer == iVikings and iGold > 0:
 			vic.onCityCaptureGold(iPlayer, iGold)
 			
