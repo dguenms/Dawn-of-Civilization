@@ -4513,6 +4513,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
+		// Potala Palace
+		if (eBuilding == POTALA_PALACE)
+		{
+			int iNumHills = 0;
+			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			{
+				if (getCityIndexPlot(iI)->isHills())
+				{
+					iNumHills++;
+				}
+			}
+
+			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)POTALA_PALACE).getBuildingClassType(), iChange * iNumHills);
+		}
+
 		if (GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() > 0)
 		{
 			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
