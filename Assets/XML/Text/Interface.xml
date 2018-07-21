@@ -2627,6 +2627,22 @@
 		<Spanish>A %s1_UnitName has joined our armies</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PER_CULTURE_LEVEL</Tag>
+		<English>[SPACE]per Culture Level</English>
+		<French>[SPACE]per Culture Level</French>
+		<German>[SPACE]pro Kulturstufe</German>
+		<Italian>[SPACE]per Culture Level</Italian>
+		<Spanish>[SPACE]per Culture Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_YIELD_CULTURE</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Culture Level</English>
+		<French>[ICON_BULLET]%D1%%%F2 from Culture Level</French>
+		<German>[ICON_BULLET]%D1%%%F2 durch Kulturstufe</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from Culture Level</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from Culture Level</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

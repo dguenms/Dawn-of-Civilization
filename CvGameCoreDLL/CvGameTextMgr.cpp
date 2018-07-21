@@ -10737,6 +10737,8 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerCommerceModifierArray(), true);
 
+	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_PER_CULTURE_LEVEL").c_str(), kBuilding.getCultureCommerceModifierArray(), true);
+
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_ALL_CITIES_THIS_CONTINENT").c_str(), kBuilding.getAreaYieldModifierArray(), true);
 
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_ALL_CITIES").c_str(), kBuilding.getGlobalYieldModifierArray(), true);
@@ -17436,6 +17438,14 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BUILDINGS", iBuildingMod, info.getChar()));
 		szBuffer.append(NEWLINE);
 		iModifier += iBuildingMod;
+	}
+
+	int iCultureMod = city.getCultureLevel() * city.getCultureCommerceRateModifier(eCommerceType);
+	if (iCultureMod != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CULTURE", iCultureMod, info.getChar()));
+		szBuffer.append(NEWLINE);
+		iModifier += iCultureMod;
 	}
 
 	// Power

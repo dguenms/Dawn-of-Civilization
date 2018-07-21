@@ -1536,11 +1536,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HERMITAGE_HELP</Tag>
-		<English>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</English>
-		<French>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</French>
-		<German>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</German>
-		<Italian>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage (not implemented)</Spanish>
+		<English>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</English>
+		<French>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</French>
+		<German>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</German>
+		<Italian>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</Italian>
+		<Spanish>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALT_CATHEDRAL</Tag>
