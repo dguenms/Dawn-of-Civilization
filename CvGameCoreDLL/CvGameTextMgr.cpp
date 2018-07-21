@@ -10098,6 +10098,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		setYieldChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
 		setCommerceChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getCommerceModifierArray(), true, bCivilopediaText);
 
+		if (!CvWString(kBuilding.getHelp()).empty())
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(kBuilding.getHelp());
+		}
+
 		// Leoreth
 		int iTotalGreatPeopleRateChange = kBuilding.getGreatPeopleRateChange() + (pCity != NULL ? pCity->getBuildingGreatPeopleRateChange((BuildingClassTypes)kBuilding.getBuildingClassType()) : 0);
 		if (iTotalGreatPeopleRateChange != 0)
@@ -11103,6 +11109,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	if (bCivilopediaText)
 	{
+		if (!CvWString(kBuilding.getHelp()).empty())
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(kBuilding.getHelp());
+		}
+
 		if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS)
 		{
 			if (ePlayer != NO_PLAYER)
@@ -11126,12 +11138,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_START_ERA", GC.getEraInfo((EraTypes)kBuilding.getFreeStartEra()).getTextKeyWide()));
 		}
-	}
-
-	if (!CvWString(kBuilding.getHelp()).empty())
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(kBuilding.getHelp());
 	}
 
 	buildBuildingRequiresString(szBuffer, eBuilding, bCivilopediaText, bTechChooserText, pCity);
