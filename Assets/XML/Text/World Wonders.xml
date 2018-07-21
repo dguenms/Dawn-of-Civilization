@@ -1472,11 +1472,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHALIMAR_GARDENS_HELP</Tag>
-		<English>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</English>
-		<French>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</French>
-		<German>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</German>
-		<Italian>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY] (not implemented)</Spanish>
+		<English>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</English>
+		<French>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</French>
+		<German>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</German>
+		<Italian>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</Italian>
+		<Spanish>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Tag>
