@@ -941,6 +941,8 @@ public:
 	void setNumRealBuilding(BuildingTypes eIndex, int iNewValue);		// Exposed to Python
 	void setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, PlayerTypes eOriginalOwner, int iOriginalTime);
 
+	bool isHasBuildingEffect(BuildingTypes eBuilding) const; // Leoreth
+
 	bool isValidBuildingLocation(BuildingTypes eIndex) const;
 
 	int getNumFreeBuilding(BuildingTypes eIndex) const;															// Exposed to Python

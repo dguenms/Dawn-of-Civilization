@@ -5179,7 +5179,14 @@ int CvCity::getHurryPercentAnger(int iExtra) const
 		return 0;
 	}
 
-	return ((((((getHurryAngerTimer() - 1) / flatHurryAngerLength()) + 1) * GC.getDefineINT("HURRY_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1);
+	int iHurryPercentAnger = (((((getHurryAngerTimer() - 1) / flatHurryAngerLength()) + 1) * GC.getDefineINT("HURRY_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1;
+
+	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
+	{
+		return std::min(iHurryPercentAnger, 100);
+	}
+
+	return iHurryPercentAnger;
 }
 
 
@@ -5190,7 +5197,14 @@ int CvCity::getConscriptPercentAnger(int iExtra) const
 		return 0;
 	}
 
-	return ((((((getConscriptAngerTimer() - 1) / flatConscriptAngerLength()) + 1) * GC.getDefineINT("CONSCRIPT_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1);
+	int iConscriptPercentAnger = (((((getConscriptAngerTimer() - 1) / flatConscriptAngerLength()) + 1) * GC.getDefineINT("CONSCRIPT_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1;
+
+	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
+	{
+		return std::min(iConscriptPercentAnger, 100);
+	}
+
+	return iConscriptPercentAnger;
 }
 
 int CvCity::getDefyResolutionPercentAnger(int iExtra) const
@@ -5200,7 +5214,14 @@ int CvCity::getDefyResolutionPercentAnger(int iExtra) const
 		return 0;
 	}
 
-	return ((((((getDefyResolutionAngerTimer() - 1) / flatDefyResolutionAngerLength()) + 1) * GC.getDefineINT("DEFY_RESOLUTION_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1);
+	int iDefyResolutionPercentAnger = (((((getDefyResolutionAngerTimer() - 1) / flatDefyResolutionAngerLength()) + 1) * GC.getDefineINT("DEFY_RESOLUTION_POP_ANGER") * GC.getPERCENT_ANGER_DIVISOR()) / std::max(1, getPopulation() + iExtra)) + 1;
+
+	if (isHasBuildingEffect((BuildingTypes)BLUE_MOSQUE))
+	{
+		return std::min(iDefyResolutionPercentAnger, 100);
+	}
+
+	return iDefyResolutionPercentAnger;
 }
 
 
@@ -12885,6 +12906,13 @@ void CvCity::alterWorkingPlot(int iIndex)
 		}
 	}
 }
+
+// Leoreth
+bool CvCity::isHasBuildingEffect(BuildingTypes eBuilding) const
+{
+	return isHasRealBuilding(eBuilding) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(eBuilding);
+}
+
 
 //Rhye - start
 bool CvCity::isHasRealBuilding(BuildingTypes eIndex) const
