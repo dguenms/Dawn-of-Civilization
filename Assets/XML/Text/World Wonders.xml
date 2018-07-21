@@ -1611,11 +1611,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_HELP</Tag>
-		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</English>
-		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</French>
-		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</German>
-		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius (not implemented)</Spanish>
+		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</English>
+		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</French>
+		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</German>
+		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE</Tag>
