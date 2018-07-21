@@ -12073,7 +12073,6 @@
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_ECONOMICS</PrereqTech>
-			<FreeBuilding>BUILDINGCLASS_BANK</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
