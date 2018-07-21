@@ -180,7 +180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MULTICULTURALISM</Tag>
 		<English>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</English>
-		<French>En s'&#233;tablissant &#224; %s1, des immigrants ont rapproch&#233; de %d3 points l'apparition d'un %s2.</French>
+		<French>En s'&#233;tablissant &#224; %s1, des immigrants ont acc&#233;l&#233;r&#233; de %d3 points l'apparition d'un %s2.</French>
 		<German>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</German>
 		<Italian>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</Italian>
 		<Spanish>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</Spanish>
@@ -356,7 +356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_HAR</Tag>
 		<English>Positive health contributes to city growth during the Ancient era</English>
-		<French>Les points de sant&#233; au-dessus de z&#233;ro contribuent &#224; la croissance des villes pendant l'&#200;re antique</French>
+		<French>Les points de sant&#233; en exc&#232;s contribuent &#224; la croissance des villes pendant l'&#200;re antique</French>
 		<German>Positive health contributes to city growth during the Ancient era</German>
 		<Italian>Positive health contributes to city growth during the Ancient era</Italian>
 		<Spanish>Positive health contributes to city growth during the Ancient era</Spanish>
