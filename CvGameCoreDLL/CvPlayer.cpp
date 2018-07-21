@@ -15116,17 +15116,12 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 				iMissionCost = iBaseMissionCost + ((100 + kMission.getBuyTechCostFactor()) * iProdCost) / 100;
 			}
 
-			//Rhye - start penalty for giga empires
-			//NOT NEEDED
-			/*int iNumCities = getNumCities();
-			int iMultiplier = 3;
-			int iDiv = 2;
-			if (iNumCities > 10)
+			// Leoreth: Hermitage effect
+			if (isHasBuildingEffect((BuildingTypes)HERMITAGE))
 			{
-				iMissionCost *= 100 + iMultiplier*(iNumCities-10)/iDiv;
-				iMissionCost /= 100;
-			}	*/
-			//Rhye - end
+				iMissionCost *= 3;
+				iMissionCost /= 4;
+			}
 		}
 	}
 	else if (kMission.getSwitchCivicCostFactor() > 0)
