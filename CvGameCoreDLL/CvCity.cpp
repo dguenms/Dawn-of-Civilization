@@ -2315,6 +2315,21 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		if (iNumWaterTiles < 20) return false;
 	}
 
+	// Leoreth: Guadalupe Basilica needs to be on different continent than Catholic holy city
+	if (eBuilding == GUADALUPE_BASILICA)
+	{
+		CvCity* pHolyCity = GC.getGame().getHolyCity(CATHOLICISM);
+		if (pHolyCity == NULL)
+		{
+			return false;
+		}
+
+		if (getArea() == pHolyCity->getArea())
+		{
+			return false;
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (!bContinue)
@@ -10423,23 +10438,20 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 						iCommerce += GET_PLAYER(getOwnerINLINE()).getStateReligionBuildingCommerce(eIndex) * getNumActiveBuilding(eBuilding);
 					}
 				}
+				
+				// modified by Leoreth to account for Solomon's Temple's effect
+				int iShrineLimit = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK) ? 2 * MAX_COM_SHRINE : MAX_COM_SHRINE;
 
 				if (GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce() != NO_RELIGION)
 				{
-				    // modified by Leoreth to account for Solomon's Temple's effect
-				    int limit;
-				    if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK))
-				    {
-				        limit = MAX_COM_SHRINE*2;
-				    }
-				    else
-				    {
-				        limit = MAX_COM_SHRINE;
-				    }
-                    //Rhye - start (max commerce from a shrine)
                     //iCommerce += (GC.getReligionInfo((ReligionTypes)(GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce())).getGlobalReligionCommerce(eIndex) * GC.getGameINLINE().countReligionLevels((ReligionTypes)(GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce())));
-                    iCommerce += std::min(limit, (GC.getReligionInfo((ReligionTypes)(GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce())).getGlobalReligionCommerce(eIndex) * GC.getGameINLINE().countReligionLevels((ReligionTypes)(GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce()))));
-                    //Rhye - end
+                    iCommerce += std::min(iShrineLimit, (GC.getReligionInfo((ReligionTypes)(GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce())).getGlobalReligionCommerce(eIndex) * GC.getGameINLINE().countReligionLevels((ReligionTypes)(GC.getBuildingInfo(eBuilding).getGlobalReligionCommerce()))));
+				}
+
+				// Leoreth: Guadalupe Basilica effect
+				if (eBuilding == GUADALUPE_BASILICA && eIndex == COMMERCE_GOLD)
+				{
+					iCommerce += std::min(iShrineLimit, GC.getMap().getArea(getArea())->countHasReligion(CATHOLICISM));
 				}
 
 				if (GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce() != NO_CORPORATION)
