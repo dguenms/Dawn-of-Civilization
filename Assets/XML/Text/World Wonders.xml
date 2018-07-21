@@ -1984,11 +1984,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUADALUPE_BASILICA_HELP</Tag>
-		<English>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</English>
-		<French>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</French>
-		<German>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</German>
-		<Italian>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 gold per Catholic city on the same continent (not implemented)</Spanish>
+		<English>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</English>
+		<French>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</French>
+		<German>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</German>
+		<Italian>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</Italian>
+		<Spanish>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOLE_ANTONELLIANA</Tag>
