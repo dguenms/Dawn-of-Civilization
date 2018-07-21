@@ -2581,12 +2581,13 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 {
 	//Rhye - start
 	//return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * 3); //Rhye
-	int modifier = 280;
+	int iModifier = 280;
 	if (isHasTech((TechTypes)ELECTRICITY) || isHasTech((TechTypes)ASSEMBLY_LINE)) {
-		modifier = 200;
+		iModifier = 200;
 	}
-	else if (GC.getGameINLINE().getGameTurn() > getTurnForYear(400)) { //the last 100 turns, starting from 1900
-		modifier = 160;
+	else if (GC.getGameINLINE().getGameTurn() > getTurnForYear(400)) 
+	{ //the last 100 turns, starting from 1900
+		iModifier = 160;
 	}
 
 	//discount if in a chain of alliances but not directly allied yet
@@ -2596,13 +2597,25 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 		{
 			if (GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI) && isDefensivePact((TeamTypes)iI))
 			{
-				modifier -= 70;
+				iModifier -= 70;
 			}
 		}
 	}
 
-	return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * std::max(modifier,10) / 100); //Rhye
-	//Rhye - end
+	int iNumCities = getNumCities() + GET_TEAM(eTeam).getNumCities();
+
+	// Leoreth: Amber Room effect
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)AMBER_ROOM))
+	{
+		iModifier -= 60;
+
+		if (2 * GET_TEAM(eTeam).getNumCities() < iNumCities)
+		{
+			iNumCities = 2 * GET_TEAM(eTeam).getNumCities();
+		}
+	}
+
+	return iNumCities * std::max(iModifier, 10) / 100;
 }
 
 

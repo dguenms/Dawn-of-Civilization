@@ -9055,6 +9055,18 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 		m_iGoldenAgeTurns = (m_iGoldenAgeTurns + iChange);
 		FAssert(getGoldenAgeTurns() >= 0);
 
+		// Leoreth: Amber Room effect
+		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isHasBuildingEffect((BuildingTypes)AMBER_ROOM))
+			{
+				if (GET_TEAM(getTeam()).isDefensivePact(GET_PLAYER((PlayerTypes)iI).getTeam()))
+				{
+					GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(iChange);
+				}
+			}
+		}
+
 		if (bOldGoldenAge != isGoldenAge())
 		{
 			//Rhye - start comment
