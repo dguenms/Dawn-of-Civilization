@@ -2171,11 +2171,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AMBER_ROOM_HELP</Tag>
-		<English>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</English>
-		<French>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</French>
-		<German>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</German>
-		<Italian>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts (not implemented)[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners (not implemented)</Spanish>
+		<English>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</English>
+		<French>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</French>
+		<German>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</German>
+		<Italian>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</Italian>
+		<Spanish>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PALACE_OF_NATIONS</Tag>
