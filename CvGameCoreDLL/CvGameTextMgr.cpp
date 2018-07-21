@@ -12861,13 +12861,13 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		/*iHappy = (city.getOwnerINLINE() == INDIA) ? (city.goodHealth() - city.badHealth()) / 2 : 0;
+		iHappy = city.isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS) ? city.goodHealth() - city.badHealth() : 0;
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
 			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_HEALTH", iHappy));
 			szBuffer.append(NEWLINE);
-		}*/
+		}
 
 		iHappy = (city.getExtraHappiness() + GET_PLAYER(city.getOwnerINLINE()).getExtraHappiness());
 		if (iHappy > 0)

@@ -5416,6 +5416,12 @@ int CvCity::happyLevel() const
 		iHappiness += GC.getDefineINT("TEMP_HAPPY");
 	}
 
+	// Leoreth: Shalimar Gardens effect
+	if (isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
+	{
+		iHappiness += std::max(0, goodHealth() - badHealth());
+	}
+
 	return std::max(0, iHappiness);
 }
 
