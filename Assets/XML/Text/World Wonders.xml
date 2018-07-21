@@ -1627,11 +1627,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
-		<English>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</English>
-		<French>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</French>
-		<German>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</German>
-		<Italian>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Extra culture from controlled Wonders (not implemented)</Spanish>
+		<English>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</English>
+		<French>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</French>
+		<German>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</German>
+		<Italian>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Italian>
+		<Spanish>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
