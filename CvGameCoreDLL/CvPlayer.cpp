@@ -9064,6 +9064,8 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 				{
 					GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(iChange);
 				}
+
+				break;
 			}
 		}
 
