@@ -81,7 +81,11 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Coffee</German>
+		<German>
+			<Text>Kaffee</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
 		<Italian>Coffee</Italian>
 		<Spanish>Coffee</Spanish>
 	</TEXT>
@@ -95,7 +99,7 @@
 		</French>
 		<German>
 			<Text>Hitsingles</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Italian>
@@ -141,7 +145,11 @@
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>Perlen</German>
+		<German>
+			<Text>Perlen</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+			</German>
 		<Italian>Pearls</Italian>
 		<Spanish>Pearls</Spanish>
 	</TEXT>
@@ -153,7 +161,11 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Tee</German>
+		<German>
+			<Text>Tee</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
 		<Italian>Tea</Italian>
 		<Spanish>Tea</Spanish>
 	</TEXT>
@@ -165,7 +177,11 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Tabak</German>
+		<German>
+			<Text>Tabak</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+			</German>
 		<Italian>Tobacco</Italian>
 		<Spanish>Tobacco</Spanish>
 	</TEXT>
@@ -177,7 +193,11 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>Kamel</German>
+		<German>
+			<Text>Kamele</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
 		<Italian>Camel</Italian>
 		<Spanish>Camel</Spanish>
 	</TEXT>

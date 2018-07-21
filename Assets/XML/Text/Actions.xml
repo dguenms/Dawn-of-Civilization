@@ -5,7 +5,7 @@
 		<Tag>TXT_KEY_BUILD_DEFORESTATION</Tag>
 		<English>Deforestation</English>
 		<French>Deforestation</French>
-		<German>Deforestation</German>
+		<German>Entwaldung</German>
 		<Italian>Deforestation</Italian>
 		<Spanish>Deforestation</Spanish>
 	</TEXT>
@@ -13,7 +13,7 @@
 		<Tag>TXT_KEY_BUILD_OCEAN_FISHERY</Tag>
 		<English>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</English>
 		<French>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</French>
-		<German>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_OCEAN_FISHERY]Hochsee-Fischerboote[\LINK] bauen</German> 
 		<Italian>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</Spanish>
 	</TEXT>
@@ -21,7 +21,7 @@
 		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>
 		<English>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</English>
 		<French>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</French>
-		<German>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_SLAVE_PLANTATION]Sklavenplantage[\LINK] bauen</German> 
 		<Italian>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</Spanish>
 	</TEXT>
@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_BUILD_REMOVE_RAINFOREST</Tag>
 		<English>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</English>
 		<French>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</French>
-		<German>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</German>
+		<German>[LINK=FEATURE_RAINFOREST]Regenwald[\LINK] abholzen</German>  
 		<Italian>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</Italian>
 		<Spanish>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</Spanish>
 	</TEXT>
@@ -37,7 +37,7 @@
 		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
 		<English>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</English>
 		<French>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</French>
-		<German>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</German>
+		<German>[LINK=ROUTE_ROMAN_ROAD]Römische Stra&#223;e[\LINK] bauen</German>
 		<Italian>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</Italian>
 		<Spanish>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</Spanish>
 	</TEXT>
@@ -45,7 +45,7 @@
 		<Tag>TXT_KEY_BUILD_HIGHWAY</Tag>
 		<English>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</English>
 		<French>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</French>
-		<German>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</German>
+		<German>[LINK=ROUTE_HIGHWAY]Autobahn[\LINK] bauen</German>
 		<Italian>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</Italian>
 		<Spanish>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</Spanish>
 	</TEXT>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_BUILD_ORCHARD</Tag>
 		<English>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</English>
 		<French>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</French>
-		<German>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_ORCHARD]Obstplantage[\LINK] errichten</German> 
 		<Italian>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</Spanish>
 	</TEXT>
@@ -61,7 +61,7 @@
 		<Tag>TXT_KEY_BUILD_PADDY_FIELD</Tag>
 		<English>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</English>
 		<French>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</French>
-		<German>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_PADDY_FIELD]Reisfeld[\LINK] errichten</German>
 		<Italian>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</Spanish>
 	</TEXT>
@@ -69,7 +69,7 @@
 		<Tag>TXT_KEY_BUILD_NATURE_RESERVE</Tag>
 		<English>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</English>
 		<French>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</French>
-		<German>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_NATURE_RESERVE]Naturschutzgebiet[\LINK] einrichten</German>
 		<Italian>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</Spanish>
 	</TEXT>
@@ -77,7 +77,7 @@
 		<Tag>TXT_KEY_BUILD_MARINE_RESERVE</Tag>
 		<English>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</English>
 		<French>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</French>
-		<German>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_MARINE_RESERVE]Meeresschutzgebiet[\LINK] einrichten</German>
 		<Italian>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</Spanish>
 	</TEXT>
@@ -85,7 +85,7 @@
 		<Tag>TXT_KEY_BUILD_HAMLET</Tag>
 		<English>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</English>
 		<French>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</French>
-		<German>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</German>
+		<German>[LINK=IMPROVEMENT_HAMLET]Weiler[\LINK] gr&#220;nden</German>
 		<Italian>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</Spanish>
 	</TEXT>
@@ -93,7 +93,7 @@
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</German>
+		<German>[COLOR_HIGHLIGHT_TEXT]Opfern[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] f&#220;r %d1 Runden.[NEWLINE]Dieser Befehl opfert den Sklaven, was f&#220;r %d2 Runden zu zusätzlicher Zufriedenheit und Feierlichkeiten in der Stadt f&#220;hrt. Der Sklave wird hierbei aufgebraucht.</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</Spanish>
 	</TEXT>
@@ -117,7 +117,7 @@
 		<Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
 		<English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
 		<French>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</French>
-		<German>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</German>
+		<German>Versucht eine der Nicht-Staatsreligionen aus der Stadt zu entfernen. Der Inquisitor wird dabei aufgebraucht.</German>
 		<Italian>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Italian>
 		<Spanish>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Spanish>
 	</TEXT>
@@ -157,7 +157,7 @@
 		<Tag>TXT_KEY_MISSION_PERSECUTE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</German>
+		<German>[COLOR_HIGHLIGHT_TEXT]Religi&#246;se Verfolgung[COLOR_REVERT]</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Spanish>
 	</TEXT>
@@ -181,7 +181,7 @@
 		<Tag>TXT_KEY_MISSION_GREAT_MISSION</Tag>
 		<English>Great Mission</English>
 		<French>Great Mission</French>
-		<German>Gro�e Mission</German>
+		<German>Gro&#223;e Mission</German>
 		<Italian>Great Mission</Italian>
 		<Spanish>Great Mission</Spanish>
 	</TEXT>

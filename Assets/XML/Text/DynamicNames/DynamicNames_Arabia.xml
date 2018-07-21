@@ -133,7 +133,7 @@
 		<Tag>TXT_KEY_CIV_ARABIA_SAUDI</Tag>
 		<English>Saudi-Arabia</English>
 		<French>Saudi-Arabia</French>
-		<German>Saudi-Arabia</German>
+		<German>Saudi-Arabien</German>
 		<Italian>Saudi-Arabia</Italian>
 		<Spanish>Saudi-Arabia</Spanish>
 	</TEXT>
@@ -213,7 +213,7 @@
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BABYLONIA</Tag>
 		<English>Iraq</English>
 		<French>Iraq</French>
-		<German>Iraq</German>
+		<German>Irak</German>
 		<Italian>Iraq</Italian>
 		<Spanish>Iraq</Spanish>
 	</TEXT>
@@ -389,7 +389,7 @@
 		<Tag>TXT_KEY_CIV_ARABIAN_MUGHALS</Tag>
 		<English>Emirate of Delhi</English>
 		<French>Emirate of Delhi</French>
-		<German>Emirate of Delhi</German>
+		<German>Emirat von Delhi</German>
 		<Italian>Emirate of Delhi</Italian>
 		<Spanish>Emirate of Delhi</Spanish>
 	</TEXT>
@@ -402,7 +402,7 @@
 			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
-			<Text>Arabisch:arabischen:arabische</Text>
+			<Text>arabisch:arabischen:arabische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
