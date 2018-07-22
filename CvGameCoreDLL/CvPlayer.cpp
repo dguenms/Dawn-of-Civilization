@@ -6990,6 +6990,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	{
 		changeProcessModifier(iChange * 25);
 	}
+
+	// World Trade Center
+	else if (eBuilding == WORLD_TRADE_CENTER)
+	{
+		changeCorporationCommerceModifier(iChange * 50);
+	}
 }
 
 
