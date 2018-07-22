@@ -6,6 +6,7 @@
 #define CIV4_TEAM_H
 
 //#include "CvEnums.h"
+#include <set>
 
 class CvArea;
 
@@ -359,6 +360,8 @@ public:
 	PlayerTypes getFoundingPlayer(ReligionTypes eReligion) const;
 
 	bool isAtWarWithMajorPlayer() const;
+
+	std::set<TeamTypes> determineDefensivePactPartners(std::set<TeamTypes> visited) const;
 
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;

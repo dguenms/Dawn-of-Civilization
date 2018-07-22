@@ -1955,11 +1955,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BERLAYMONT_HELP</Tag>
-		<English>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</English>
-		<French>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</French>
-		<German>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</German>
-		<Italian>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+2 possible defensive pacts (not implemented)[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact (not implemented)</Spanish>
+		<English>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</English>
+		<French>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</French>
+		<German>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</German>
+		<Italian>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Italian>
+		<Spanish>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER</Tag>
