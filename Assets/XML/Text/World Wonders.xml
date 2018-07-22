@@ -1930,12 +1930,20 @@
 		<Spanish>The Motherland Calls</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS_EFFECT</Tag>
+		<English>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</English>
+		<French>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</French>
+		<German>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</German>
+		<Italian>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</Italian>
+		<Spanish>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS_HELP</Tag>
-		<English>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</English>
-		<French>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</French>
-		<German>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</German>
-		<Italian>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Drafts a new unit whenever you lose a unit of level 3 or higher (not implemented)</Spanish>
+		<English>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</English>
+		<French>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</French>
+		<German>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</German>
+		<Italian>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</Italian>
+		<Spanish>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BERLAYMONT</Tag>

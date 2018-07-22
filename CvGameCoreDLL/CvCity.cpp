@@ -3996,7 +3996,7 @@ int CvCity::flatConscriptAngerLength() const
 }
 
 
-bool CvCity::canConscript() const
+bool CvCity::canConscript(bool bForce) const
 {
 	if (isDisorder())
 	{
@@ -4008,26 +4008,29 @@ bool CvCity::canConscript() const
 		return false;
 	}
 
-	if (GET_PLAYER(getOwnerINLINE()).getConscriptCount() >= GET_PLAYER(getOwnerINLINE()).getMaxConscript())
+	if (!bForce)
 	{
-		return false;
-	}
-
-	// Turkish UP: extra conscript requires non-state religion
-	if (getOwnerINLINE() == TURKEY && GET_PLAYER(getOwnerINLINE()).getConscriptCount() - GET_PLAYER(getOwnerINLINE()).getMaxConscript() >= -2)
-	{
-		if (!GET_PLAYER(getOwnerINLINE()).isStateReligion())
+		if (GET_PLAYER(getOwnerINLINE()).getConscriptCount() >= GET_PLAYER(getOwnerINLINE()).getMaxConscript())
 		{
-			if (getReligionCount() == 0)
-			{
-				return false;
-			}
+			return false;
 		}
-		else
+
+		// Turkish UP: extra conscript requires non-state religion
+		if (getOwnerINLINE() == TURKEY && GET_PLAYER(getOwnerINLINE()).getConscriptCount() - GET_PLAYER(getOwnerINLINE()).getMaxConscript() >= -2)
 		{
-			if ((isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && getReligionCount() == 1) || getReligionCount() == 0)
+			if (!GET_PLAYER(getOwnerINLINE()).isStateReligion())
 			{
-				return false;
+				if (getReligionCount() == 0)
+				{
+					return false;
+				}
+			}
+			else
+			{
+				if ((isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && getReligionCount() == 1) || getReligionCount() == 0)
+				{
+					return false;
+				}
 			}
 		}
 	}
@@ -4101,9 +4104,9 @@ CvUnit* CvCity::initConscriptedUnit()
 }
 
 
-void CvCity::conscript()
+void CvCity::conscript(bool bForce)
 {
-	if (!canConscript())
+	if (!canConscript(bForce))
 	{
 		return;
 	}
@@ -4112,7 +4115,11 @@ void CvCity::conscript()
 	FAssertMsg(pUnit != NULL, "pUnit expected to be assigned (not NULL)");
 
 	changePopulation(-(getConscriptPopulation()));
-	changeConscriptAngerTimer(flatConscriptAngerLength());
+
+	if (!bForce)
+	{
+		changeConscriptAngerTimer(flatConscriptAngerLength());
+	}
 
 	setDrafted(true);
 

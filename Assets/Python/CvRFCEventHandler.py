@@ -430,6 +430,17 @@ class CvRFCEventHandler:
 			for iPromotion in range(gc.getNumPromotionInfos()):
 				if gc.getPromotionInfo(iPromotion).isLeader() and pLosingUnit.isHasPromotion(iPromotion):
 					gc.getPlayer(iLosingPlayer).restoreGeneralThreshold()
+					
+		# Motherland Calls effect
+		if gc.getPlayer(iLosingPlayer).isHasBuildingEffect(iMotherlandCalls):
+			if pLosingUnit.getLevel() >= 3:
+				lCities = [city for city in utils.getCityList(iLosingPlayer) if not city.isDrafted()]
+				pCity = utils.getHighestEntry(lCities, lambda city: -utils.calculateDistance(city.getX(), city.getY(), pLosingUnit.getX(), pLosingUnit.getY()))
+				if pCity:
+					pCity.conscript(True)
+					gc.getPlayer(iLosingPlayer).changeConscriptCount(-1)
+					CyInterface().addMessage(iLosingPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_MOTHERLAND_CALLS_EFFECT", (pLosingUnit.getName(), pCity.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+
 		
 	def onReligionFounded(self, argsList):
 		'Religion Founded'
@@ -819,7 +830,7 @@ class CvRFCEventHandler:
 		
 		self.rnf.endTurn(iPlayer)
 		sta.endTurn(iPlayer)
-
+		
 	def onKbdEvent(self, argsList):
 		'keypress handler - return 1 if the event was consumed'
 		eventType,key,mx,my,px,py = argsList

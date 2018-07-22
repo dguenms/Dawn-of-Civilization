@@ -102,7 +102,7 @@ public:
 	int conscriptMinCityPopulation();
 	int flatConscriptAngerLength();
 	bool canConscript();
-	void conscript();
+	void conscript(bool bForce);
 	int getBonusHealth(int /*BonusTypes*/ iBonus);
 	int getBonusHappiness(int /*BonusTypes*/ iBonus);
 	int getBonusPower(int /*BonusTypes*/ eBonus, bool bDirty);										 
