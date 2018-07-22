@@ -4635,7 +4635,15 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 			changeFreeSpecialist(iChange * iNumDefensivePacts);
 		}
-		
+
+		// Atomium
+		if (eBuilding == ATOMIUM)
+		{
+			for (int iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER((PlayerTypes)iI).getNumNukeUnits());
+			}
+		}
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
 

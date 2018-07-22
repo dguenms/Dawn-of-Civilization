@@ -9618,6 +9618,28 @@ void CvPlayer::changeNumNukeUnits(int iChange)
 {
 	m_iNumNukeUnits = (m_iNumNukeUnits + iChange);
 	FAssert(getNumNukeUnits() >= 0);
+
+	// Leoreth: Atomium effect
+	if (GC.getGame().getBuildingClassCreatedCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ATOMIUM).getBuildingClassType()) > 0)
+	{
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).isHasBuildingEffect((BuildingTypes)ATOMIUM))
+			{
+				int iLoop;
+				for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+				{
+					if (pLoopCity->isHasRealBuilding((BuildingTypes)ATOMIUM))
+					{
+						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ATOMIUM).getBuildingClassType(), COMMERCE_RESEARCH, iChange);
+						break;
+					}
+				}
+
+				break;
+			}
+		}
+	}
 }
 
 
