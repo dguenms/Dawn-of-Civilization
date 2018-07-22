@@ -1683,11 +1683,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN_HELP</Tag>
-		<English>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</English>
-		<French>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</French>
-		<German>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</German>
-		<Italian>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE] (not implemented)</Spanish>
+		<English>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</English>
+		<French>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</French>
+		<German>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</German>
+		<Italian>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</Italian>
+		<Spanish>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BROOKLYN_BRIDGE</Tag>
