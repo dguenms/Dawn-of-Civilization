@@ -379,10 +379,10 @@ bool CyCity::canConscript()
 	return m_pCity ? m_pCity->canConscript() : false;
 }
 
-void CyCity::conscript()
+void CyCity::conscript(bool bForce)
 {
 	if (m_pCity)
-		m_pCity->conscript();
+		m_pCity->conscript(bForce);
 }
 
 int CyCity::getBonusHealth(int /*BonusTypes*/ iBonus)

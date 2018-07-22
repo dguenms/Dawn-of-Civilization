@@ -140,8 +140,8 @@ public:
 	int getConscriptPopulation() const;																// Exposed to Python
 	int conscriptMinCityPopulation() const;																			// Exposed to Python
 	int flatConscriptAngerLength() const;																				// Exposed to Python
-	bool canConscript() const;																				// Exposed to Python
-	void conscript();																											// Exposed to Python
+	bool canConscript(bool bForce = false) const;																				// Exposed to Python
+	void conscript(bool bForce = false);																											// Exposed to Python
 
 	int getBonusHealth(BonusTypes eBonus) const;																// Exposed to Python - getBonusHealth
 	int getBonusHappiness(BonusTypes eBonus) const;															// Exposed to Python - getBonusHappiness
