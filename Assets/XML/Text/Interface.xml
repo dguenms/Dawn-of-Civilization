@@ -1284,11 +1284,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
-		<English>[ICON_BULLET]%D1%F2 from Excess Health</English>
-		<French>[ICON_BULLET]%D1%F2 from Excess Health</French>
-		<German>[ICON_BULLET]%D1%F2 from Excess Health</German>
-		<Italian>[ICON_BULLET]%D1%F2 from Excess Health</Italian>
-		<Spanish>[ICON_BULLET]%D1%F2 from Excess Health</Spanish>
+		<English>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</English>
+		<French>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</French>
+		<German>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE</Tag>
@@ -2641,6 +2641,14 @@
 		<German>[ICON_BULLET]%D1%%%F2 durch Kulturstufe</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Culture Level</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Culture Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</English>
+		<French>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</French>
+		<German>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
