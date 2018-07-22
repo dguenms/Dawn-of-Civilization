@@ -1723,11 +1723,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_HELP</Tag>
-		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</English>
-		<French>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</French>
-		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</German>
-		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE] (not implemented)</Spanish>
+		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</English>
+		<French>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</French>
+		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</German>
+		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Italian>
+		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DUJIANGYAN</Tag>

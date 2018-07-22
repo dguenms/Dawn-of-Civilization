@@ -6984,6 +6984,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	{
 		updateYield();
 	}
+
+	// Sagrada Familia
+	else if (eBuilding == SAGRADA_FAMILIA)
+	{
+		changeProcessModifier(iChange * 25);
+	}
 }
 
 
