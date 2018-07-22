@@ -1672,11 +1672,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER_HELP</Tag>
-		<English>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</English>
-		<French>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</French>
-		<German>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</German>
-		<Italian>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+50% Commerce from Corporations (not implemented)</Spanish>
+		<English>[ICON_BULLET]+50% Commerce from Corporations</English>
+		<French>[ICON_BULLET]+50% Commerce from Corporations</French>
+		<German>[ICON_BULLET]+50% Commerce from Corporations</German>
+		<Italian>[ICON_BULLET]+50% Commerce from Corporations</Italian>
+		<Spanish>[ICON_BULLET]+50% Commerce from Corporations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA</Tag>
