@@ -10098,12 +10098,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		setYieldChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
 		setCommerceChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getCommerceModifierArray(), true, bCivilopediaText);
 
-		if (!CvWString(kBuilding.getHelp()).empty())
-		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(kBuilding.getHelp());
-		}
-
 		// Leoreth
 		int iTotalGreatPeopleRateChange = kBuilding.getGreatPeopleRateChange() + (pCity != NULL ? pCity->getBuildingGreatPeopleRateChange((BuildingClassTypes)kBuilding.getBuildingClassType()) : 0);
 		if (iTotalGreatPeopleRateChange != 0)
@@ -11047,6 +11041,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		}
 	}
 
+	if (!CvWString(kBuilding.getHelp()).empty())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(kBuilding.getHelp());
+	}
+
 	bFirst = true;
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
@@ -11109,12 +11109,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	if (bCivilopediaText)
 	{
-		if (!CvWString(kBuilding.getHelp()).empty())
-		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(kBuilding.getHelp());
-		}
-
 		if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS)
 		{
 			if (ePlayer != NO_PLAYER)
