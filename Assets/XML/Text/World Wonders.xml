@@ -1760,11 +1760,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRON_DOME_HELP</Tag>
-		<English>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</English>
-		<French>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</French>
-		<German>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</German>
-		<Italian>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+50% intercept chance within own culture (not implemented)</Spanish>
+		<English>[ICON_BULLET]+50% intercept chance within own territory</English>
+		<French>[ICON_BULLET]+50% intercept chance within own territory</French>
+		<German>[ICON_BULLET]+50% intercept chance within own territory</German>
+		<Italian>[ICON_BULLET]+50% intercept chance within own territory</Italian>
+		<Spanish>[ICON_BULLET]+50% intercept chance within own territory</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER</Tag>
