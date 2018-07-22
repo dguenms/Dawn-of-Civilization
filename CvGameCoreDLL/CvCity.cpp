@@ -4597,6 +4597,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITSUKUSHIMA_SHRINE).getBuildingClassType(), iChange * iNumWater);
 		}
+
+		// Mole Antonelliana
+		if (eBuilding == MOLE_ANTONELLIANA)
+		{
+			int iNumPeaks = 0;
+			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			{
+				if (getCityIndexPlot(iI)->isPeak())
+				{
+					iNumPeaks++;
+				}
+			}
+
+			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)MOLE_ANTONELLIANA).getBuildingClassType(), YIELD_PRODUCTION, iChange * 2 * iNumPeaks);
+		}
 		
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);

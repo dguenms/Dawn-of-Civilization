@@ -2107,11 +2107,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOLE_ANTONELLIANA_HELP</Tag>
-		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</English>
-		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</French>
-		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</German>
-		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius (not implemented)</Spanish>
+		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</English>
+		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</French>
+		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</German>
+		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR</Tag>
