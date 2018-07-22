@@ -4620,6 +4620,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)MOLE_ANTONELLIANA).getBuildingClassType(), YIELD_PRODUCTION, iChange * 2 * iNumPeaks);
 		}
+
+		// Berlaymont
+		if (eBuilding == BERLAYMONT)
+		{
+			int iNumDefensivePacts = 0;
+			for (int iI = 0; iI < MAX_TEAMS; iI++)
+			{
+				if (getTeam() != iI && GET_TEAM((TeamTypes)iI).isAlive() && ! GET_TEAM((TeamTypes)iI).isMinorCiv() && GET_TEAM(getTeam()).isDefensivePact((TeamTypes)iI))
+				{
+					iNumDefensivePacts += 1;
+				}
+			}
+
+			changeFreeSpecialist(iChange * iNumDefensivePacts);
+		}
 		
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);

@@ -4130,6 +4130,20 @@ void CvTeam::setDefensivePact(TeamTypes eIndex, bool bNewValue)
 			}
 		}
 
+		// Leoreth: Berlaymont effect
+		if (GET_PLAYER(getLeaderID()).isHasBuildingEffect((BuildingTypes)BERLAYMONT))
+		{
+			int iLoop;
+			for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
+			{
+				if (pLoopCity->isHasRealBuilding((BuildingTypes)BERLAYMONT))
+				{
+					pLoopCity->changeFreeSpecialist(bNewValue ? 1 : -1);
+					break;
+				}
+			}
+		}
+
 		if ((getID() == GC.getGameINLINE().getActiveTeam()) || (eIndex == GC.getGameINLINE().getActiveTeam()))
 		{
 			gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
@@ -7060,4 +7074,34 @@ bool CvTeam::isAtWarWithMajorPlayer() const
 	}
 
 	return false;
+}
+
+std::set<TeamTypes> CvTeam::determineDefensivePactPartners(std::set<TeamTypes> visited) const
+{
+	std::set<TeamTypes> partners;
+	std::set<TeamTypes> theirPartners;
+
+	visited.insert(getID());
+
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (visited.count((TeamTypes)iI) == 0)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isMinorCiv())
+			{
+				if (isDefensivePact((TeamTypes)iI))
+				{
+					partners.insert((TeamTypes)iI);
+
+					theirPartners = GET_TEAM((TeamTypes)iI).determineDefensivePactPartners(visited);
+					for (std::set<TeamTypes>::iterator it = theirPartners.begin(); it != theirPartners.end(); ++it)
+					{
+						partners.insert(*it);
+					}
+				}
+			}
+		}
+	}
+
+	return partners;
 }
