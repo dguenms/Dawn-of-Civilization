@@ -16452,6 +16452,21 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		bNeedSubtotal = true;
 	}
 
+	// Harbour Opera effect
+	int iHappinessFood = 0;
+	if (city.isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+	{
+		iHappinessFood += std::max(0, (city.happyLevel() - city.unhappyLevel()) / 2);
+	}
+
+	if (iHappinessFood != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_HAPPINESS", iHappinessFood, info.getChar()));
+		iBaseRate += iHappinessFood;
+		bNeedSubtotal = true;
+	}
+
 	// Base and modifiers (only if there are modifiers since total is always shown)
 	if (city.getBaseYieldRateModifier(YIELD_FOOD) != 100)
 	{

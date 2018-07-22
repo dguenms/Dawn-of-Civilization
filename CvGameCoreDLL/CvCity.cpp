@@ -9676,6 +9676,12 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 		}
 	}
 
+	// Harbour Opera effect
+	if (eIndex == YIELD_FOOD && isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+	{
+		iYieldRateTimes100 += 100 * std::max(0, (happyLevel() - unhappyLevel()) / 2);
+	}
+
 	return (iYieldRateTimes100 / 100);
 }
 

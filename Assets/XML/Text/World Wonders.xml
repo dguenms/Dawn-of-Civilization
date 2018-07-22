@@ -1688,11 +1688,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</English>
-		<French>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</French>
-		<German>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</German>
-		<Italian>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_FOOD] per excess [ICON_HAPPY] (not implemented)</Spanish>
+		<English>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA</Tag>
