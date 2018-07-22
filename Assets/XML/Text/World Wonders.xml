@@ -1808,11 +1808,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK_HELP</Tag>
-		<English>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</English>
-		<French>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</French>
-		<German>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</German>
-		<Italian>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+50% chance to avoid spy detection (not implemented)[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies (not implemented)</Spanish>
+		<English>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</English>
+		<French>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</French>
+		<German>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</German>
+		<Italian>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</Italian>
+		<Spanish>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS</Tag>
