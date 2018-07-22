@@ -2651,6 +2651,14 @@
 		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_FOOD_NON_STATE_RELIGIONS</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</English>
+		<French>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</French>
+		<German>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

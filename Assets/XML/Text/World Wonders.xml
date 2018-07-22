@@ -2048,11 +2048,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE_HELP</Tag>
-		<English>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</English>
-		<French>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</French>
-		<German>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</German>
-		<Italian>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Requires at least four religions (not implemented)[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per non-state religion in all cities (not implemented)</Spanish>
+		<English>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</English>
+		<French>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</French>
+		<German>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</German>
+		<Italian>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Italian>
+		<Spanish>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUA_APPIA</Tag>
