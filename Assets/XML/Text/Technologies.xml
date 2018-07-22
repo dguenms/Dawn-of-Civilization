@@ -177,7 +177,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALLOYS</Tag>
 		<English>Alloys</English>
-		<French>Alloys</French>
 		<French>
 			<Text>Alliages</Text>
 			<Gender>Male</Gender>
@@ -233,7 +232,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARCHITECTURE_QUOTE</Tag>
 		<English>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</English>
-		<French>"Dans l’&#233;difice, la fiert&#233;, la victoire sur la lourdeur, la volont&#233; de puissance doivent &#234;tre rendues visibles : l’architecture est une sorte d’&#233;loquence du pouvoir par les formes."[PARAGRAPH:2]- Friedrich Nietzsche, Le Cr&#233;puscule des idoles</French>
+		<French>"Dans l'&#233;difice, la fiert&#233;, la victoire sur la lourdeur, la volont&#233; de puissance doivent &#234;tre rendues visibles : l'architecture est une sorte d'&#233;loquence du pouvoir par les formes."[PARAGRAPH:2]- Friedrich Nietzsche, Le Cr&#233;puscule des idoles</French>
 		<German>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</German>
 		<Italian>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</Italian>
 		<Spanish>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche, The Twilight of the Idols</Spanish>
@@ -326,7 +325,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTISANRY_QUOTE</Tag>
 		<English>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</English>
-		<French>"Bien qu’on ait du c&#339;ur &#224; l’ouvrage, l’Art est long et le Temps est court."[PARAGRAPH:2]- Charles Baudelaire, Les Fleurs du mal</French>
+		<French>"Bien qu'on ait du c&#339;ur &#224; l'ouvrage, l'Art est long et le Temps est court."[PARAGRAPH:2]- Charles Baudelaire, Les Fleurs du mal</French>
 		<German>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</German>
 		<Italian>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</Italian>
 		<Spanish>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</Spanish>
@@ -392,7 +391,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
 		<English>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</English>
-		<French>"Les vents et les flots sont toujours du c&#244;t&#233; des navigateurs les plus habiles."[PARAGRAPH:2]- Edward Gibbon, Histoire de la d&#233;cadence et de la chute de l’Empire romain</French>
+		<French>"Les vents et les flots sont toujours du c&#244;t&#233; des navigateurs les plus habiles."[PARAGRAPH:2]- Edward Gibbon, Histoire de la d&#233;cadence et de la chute de l'Empire romain</French>
 		<German>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</German>
 		<Italian>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</Italian>
 		<Spanish>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon, The Decline and Fall of the Roman Empire</Spanish>
@@ -768,7 +767,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CEREMONY_QUOTE</Tag>
 		<English>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</English>
-		<French>"Si le prince dirige le peuple par la Vertu et fait r&#233;gner l’union gr&#226;ce aux rites, le peuple a honte de mal faire, et devient vertueux."[PARAGRAPH:2]- Confucius</French>
+		<French>"Si le prince dirige le peuple par la Vertu et fait r&#233;gner l'union gr&#226;ce aux rites, le peuple a honte de mal faire, et devient vertueux."[PARAGRAPH:2]- Confucius</French>
 		<German>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</German>
 		<Italian>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</Italian>
 		<Spanish>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</Spanish>
@@ -861,7 +860,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_LIBERTIES_QUOTE</Tag>
 		<English>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</English>
-		<French>"Donnez-moi la libert&#233; de conna&#238;tre, de prononcer, d’argumenter librement selon ma conscience, au-dessus de toutes les libert&#233;s."[PARAGRAPH:2]- John Milton</French>
+		<French>"Donnez-moi la libert&#233; de conna&#238;tre, de prononcer, d'argumenter librement selon ma conscience, au-dessus de toutes les libert&#233;s."[PARAGRAPH:2]- John Milton</French>
 		<German>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</German>
 		<Italian>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</Italian>
 		<Spanish>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</Spanish>
@@ -1199,7 +1198,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONTRACT_QUOTE</Tag>
 		<English>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</English>
-		<French>"On respecte un accord si aucune des parties n’a int&#233;r&#234;t &#224; en transgresser les dispositions. Il en va de m&#234;me pour mes lois : je les adapte &#224; mes concitoyens afin de faire comprendre &#224; tous que respecter la justice vaut mieux que transgresser la loi."[PARAGRAPH:2]- Solon</French>
+		<French>"On respecte un accord si aucune des parties n'a int&#233;r&#234;t &#224; en transgresser les dispositions. Il en va de m&#234;me pour mes lois : je les adapte &#224; mes concitoyens afin de faire comprendre &#224; tous que respecter la justice vaut mieux que transgresser la loi."[PARAGRAPH:2]- Solon</French>
 		<German>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</German>
 		<Italian>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</Italian>
 		<Spanish>"Men keep their agreements when it is an advantage to both parties not to break them; and I shall so frame my laws that it will be evident to the Athenians that it will be for their interest to observe them."[PARAGRAPH:2]- Solon of Athens</Spanish>
@@ -1475,7 +1474,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EDUCATION_QUOTE</Tag>
 		<English>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</English>
-		<French>"L’&#233;ducation est l’allumage d’une flamme, et non pas le remplissage d’un navire."[PARAGRAPH:2]- Socrate</French>
+		<French>"L'&#233;ducation est l'allumage d'une flamme, et non pas le remplissage d'un navire."[PARAGRAPH:2]- Socrate</French>
 		<German>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</German>
 		<Italian>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</Italian>
 		<Spanish>"Education is the kindling of a flame, not the filling of a vessel."[PARAGRAPH:2]- Socrates</Spanish>
@@ -2006,7 +2005,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GENERALSHIP</Tag>
 		<English>Generalship</English>
-		<French>Generalship</French>
+		<French>
+			<Text>G&#233;n&#233;ralat</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Generalship</German>
 		<Italian>Generalship</Italian>
 		<Spanish>Generalship</Spanish>
@@ -2080,7 +2083,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOLOGY_QUOTE</Tag>
 		<English>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, The Steam House</English>
-		<French>"L’homme, simple habitant de la terre, ne saurait en franchir les bornes ! Mais s’il est riv&#233; &#224; son &#233;corce, il peut en p&#233;n&#233;trer tous les secrets."[PARAGRAPH:2]- Jules Verne, La Maison &#224; vapeur</French>
+		<French>"L'homme, simple habitant de la terre, ne saurait en franchir les bornes ! Mais s'il est riv&#233; &#224; son &#233;corce, il peut en p&#233;n&#233;trer tous les secrets."[PARAGRAPH:2]- Jules Verne, La Maison &#224; vapeur</French>
 		<German>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</German>
 		<Italian>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</Italian>
 		<Spanish>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</Spanish>
@@ -2295,7 +2298,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HUMANITIES</Tag>
 		<English>Humanities</English>
-		<French>Humanities</French>
 		<French>
 			<Text>Sciences humaines</Text>
 			<Gender>Female</Gender>
@@ -2540,7 +2542,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LABOUR_UNIONS</Tag>
 		<English>Labour Unions</English>
-		<French>Labour Unions</French>
 		<French>
 			<Text>Syndicats</Text>
 			<Gender>Male</Gender>
@@ -3036,7 +3037,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_METALLURGY_QUOTE</Tag>
 		<English>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</English>
-		<French>"Le minerai le plus pur est produit par la fournaise la plus ardente, et l’&#233;clair le plus lumineux par l’orage le plus sombre."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</French>
+		<French>"Le minerai le plus pur est produit par la fournaise la plus ardente, et l'&#233;clair le plus lumineux par l'orage le plus sombre."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</French>
 		<German>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</German>
 		<Italian>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</Italian>
 		<Spanish>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton, Lacon</Spanish>
@@ -3564,7 +3565,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POWER_PROJECTION_QUOTE</Tag>
 		<English>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</English>
-		<French>"La guerre est la continuation de la politique par d’autres moyens."[PARAGRAPH:2]- Carl von Clausewitz, De la guerre</French>
+		<French>"La guerre est la continuation de la politique par d'autres moyens."[PARAGRAPH:2]- Carl von Clausewitz, De la guerre</French>
 		<German>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</German>
 		<Italian>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</Italian>
 		<Spanish>"War is merely the continuation of politics by other means."[PARAGRAPH:2]- Karl von Clausewitz, On War</Spanish>
@@ -3851,7 +3852,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RENEWABLE_ENERGY_QUOTE</Tag>
 		<English>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</English>
-		<French>"Dans quelques g&#233;n&#233;rations, nos machines seront anim&#233;es gr&#226;ce &#224; une &#233;nergie disponible en tous points de l’univers."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</French>
+		<French>"Dans quelques g&#233;n&#233;rations, nos machines seront anim&#233;es gr&#226;ce &#224; une &#233;nergie disponible en tous points de l'univers."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</French>
 		<German>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</German>
 		<Italian>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</Italian>
 		<Spanish>"Ere many generations pass, our machinery will be driven by a power obtainable at any point of the universe."[PARAGRAPH:2]- Nikola Tesla, Experiments with Alternate Currents</Spanish>
@@ -3894,7 +3895,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REPLACEABLE_PARTS_QUOTE</Tag>
 		<English>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</English>
-		<French>"Rien n’est particuli&#232;rement difficile si on le divise en petites t&#226;ches."[PARAGRAPH:2]- Henry Ford</French>
+		<French>"Rien n'est particuli&#232;rement difficile si on le divise en petites t&#226;ches."[PARAGRAPH:2]- Henry Ford</French>
 		<German>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</German>
 		<Italian>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</Italian>
 		<Spanish>"Nothing is particularly hard if you divide it into small jobs."[PARAGRAPH:2]- Henry Ford</Spanish>
@@ -4332,7 +4333,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIOLOGY_QUOTE</Tag>
 		<English>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</English>
-		<French>"La soci&#233;t&#233; n’est pas constitu&#233;e d’individus, mais exprime la somme des relations, des rapports o&#249; ces individus se situent les uns par rapport aux autres."[PARAGRAPH:2]- Karl Marx, Grundrisse</French>
+		<French>"La soci&#233;t&#233; n'est pas constitu&#233;e d'individus, mais exprime la somme des relations, des rapports o&#249; ces individus se situent les uns par rapport aux autres."[PARAGRAPH:2]- Karl Marx, Grundrisse</French>
 		<German>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</German>
 		<Italian>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</Italian>
 		<Spanish>"Society does not consist of individuals but expresses the sum of interrelations, the relations within which these individuals stand."[PARAGRAPH:2]- Karl Marx, Grundrisse</Spanish>
@@ -4363,7 +4364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SOCIAL_SERVICES_QUOTE</Tag>
 		<English>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</English>
-		<French>"Le prince doit donc, s’il est dou&#233; de quelque sagesse, imaginer et &#233;tablir un syst&#232;me de gouvernement tel, qu’en quelque temps que ce soit, et malgr&#233; toutes les circonstances, les citoyens aient besoin de lui : alors il sera toujours certain de les trouver fid&#232;les."[PARAGRAPH:2]- Nicolas Machiavel, Le Prince</French>
+		<French>"Le prince doit donc, s'il est dou&#233; de quelque sagesse, imaginer et &#233;tablir un syst&#232;me de gouvernement tel, qu'en quelque temps que ce soit, et malgr&#233; toutes les circonstances, les citoyens aient besoin de lui : alors il sera toujours certain de les trouver fid&#232;les."[PARAGRAPH:2]- Nicolas Machiavel, Le Prince</French>
 		<German>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</German>
 		<Italian>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</Italian>
 		<Spanish>"Therefore a wise prince will seek means by which his subjects will always and in every possible condition of things have need of his government, and then they will always be faithful to him."[PARAGRAPH:2]- Niccolo Machiavelli, The Prince</Spanish>
@@ -4425,7 +4426,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_STATECRAFT_QUOTE</Tag>
 		<English>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</English>
-		<French>"L’association de plusieurs villages forme un &#201;tat complet, arriv&#233;, l’on peut dire, &#224; ce point de se suffire absolument &#224; lui-m&#234;me, n&#233; d’abord des besoins de la vie, et subsistant parce qu’il les satisfait tous."[PARAGRAPH:2]- Aristote, Politique</French>
+		<French>"L'association de plusieurs villages forme un &#201;tat complet, arriv&#233;, l'on peut dire, &#224; ce point de se suffire absolument &#224; lui-m&#234;me, n&#233; d'abord des besoins de la vie, et subsistant parce qu'il les satisfait tous."[PARAGRAPH:2]- Aristote, Politique</French>
 		<German>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</German>
 		<Italian>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</Italian>
 		<Spanish>"When several villages are united in a single complete community, large enough to be nearly or quite self-sufficing, the state comes into existence, originating in the bare needs of life, and continuing in existence for the sake of a good life."[PARAGRAPH:2]- Aristotle, Politics</Spanish>
@@ -4761,7 +4762,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THERMODYNAMICS_QUOTE</Tag>
 		<English>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</English>
-		<French>"L’&#233;nergie de l’univers est constante. L’entropie de l’univers tend vers un maximum."[PARAGRAPH:2] - Rudolf Clausius, Th&#233;orie m&#233;canique de la chaleur</French>
+		<French>"L'&#233;nergie de l'univers est constante. L'entropie de l'univers tend vers un maximum."[PARAGRAPH:2] - Rudolf Clausius, Th&#233;orie m&#233;canique de la chaleur</French>
 		<German>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</German>
 		<Italian>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</Italian>
 		<Spanish>"The energy of the universe is constant. The entropy of the universe tends to a maximum."[PARAGRAPH:2] - Rudolf Clausius, The Mechanical Theory of Heat</Spanish>
@@ -4915,7 +4916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMPANIES_QUOTE</Tag>
 		<English>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</English>
-		<French>"La possession n’est rien, si la jouissance ne s’y joint."[PARAGRAPH:2]- &#201;sope</French>
+		<French>"La possession n'est rien, si la jouissance ne s'y joint."[PARAGRAPH:2]- &#201;sope</French>
 		<German>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</German>
 		<Italian>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</Italian>
 		<Spanish>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</Spanish>
@@ -4977,7 +4978,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MYTHOLOGY_QUOTE</Tag>
 		<English>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</English>
-		<French>"Ne t’&#233;gale point aux Dieux, car la race des Dieux immortels n’est point semblable &#224; celle des hommes qui marchent sur la terre."[PARAGRAPH:2]- Hom&#232;re, l'Iliade</French>
+		<French>"Ne t'&#233;gale point aux Dieux, car la race des Dieux immortels n'est point semblable &#224; celle des hommes qui marchent sur la terre."[PARAGRAPH:2]- Hom&#232;re, l'Iliade</French>
 		<German>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</German>
 		<Italian>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</Italian>
 		<Spanish>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth."[PARAGRAPH:2]- Homer, The Iliad</Spanish>
@@ -5029,7 +5030,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ERA_GLOBAL</Tag>
 		<English>Global</English>
-		<French>Globale</French>
+		<French>&#200; mondiale</French>
 		<German>Global</German>
 		<Italian>Global</Italian>
 		<Spanish>Global</Spanish>
@@ -5037,7 +5038,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ERA_DIGITAL</Tag>
 		<English>Digital</English>
-		<French>Digitale</French>
+		<French>&#200;re num&#233;rique</French>
 		<German>Digital</German>
 		<Italian>Digital</Italian>
 		<Spanish>Digital</Spanish>
