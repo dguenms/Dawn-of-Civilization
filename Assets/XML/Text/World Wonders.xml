@@ -2195,11 +2195,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
-		<English>[ICON_BULLET]Units are completely healed when promoted (not implemented)</English>
-		<French>[ICON_BULLET]Units are completely healed when promoted (not implemented)</French>
-		<German>[ICON_BULLET]Units are completely healed when promoted (not implemented)</German>
-		<Italian>[ICON_BULLET]Units are completely healed when promoted (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Units are completely healed when promoted (not implemented)</Spanish>
+		<English>[ICON_BULLET]Units are completely healed when promoted</English>
+		<French>[ICON_BULLET]Units are completely healed when promoted</French>
+		<German>[ICON_BULLET]Units are completely healed when promoted</German>
+		<Italian>[ICON_BULLET]Units are completely healed when promoted</Italian>
+		<Spanish>[ICON_BULLET]Units are completely healed when promoted</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Tag>
