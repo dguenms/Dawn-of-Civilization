@@ -6139,6 +6139,12 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 	if (pCity != NULL)
 	{
 		pCity->changeFreeSpecialistCount(eSpecialist, 1);
+
+		// Leoreth: Neuschwanstein Castle effect
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)NEUSCHWANSTEIN))
+		{
+			pCity->changeGreatPeopleProgress(GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false) / 2);
+		}
 	}
 
 	if (plot()->isActiveVisible(false))
