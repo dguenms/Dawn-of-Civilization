@@ -6965,6 +6965,17 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 		return false;
 	}
 
+	// Leoreth: Bletchley Park effect
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)BLETCHLEY_PARK))
+	{
+		iModifier += 50;
+	}
+
+	if (GET_PLAYER(eTargetPlayer).isHasBuildingEffect((BuildingTypes)BLETCHLEY_PARK))
+	{
+		iModifier -= 50;
+	}
+
 	if (GC.getGameINLINE().getSorenRandNum(10000, "Spy Interception") >= getSpyInterceptPercent(kTargetPlayer.getTeam()) * (100 + iModifier))
 	{
 		return false;
