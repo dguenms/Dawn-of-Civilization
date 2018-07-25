@@ -1153,7 +1153,7 @@
 		<Tag>TXT_KEY_UNIT_LANCER</Tag>
 		<English>Lancer</English>
 		<French>
-			<Text>Lancier &#224; cheval</Text>
+			<Text>Chevalier</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1197,8 +1197,8 @@
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
 		<French>
-			<Text>Infanterie lourde &#224; &#233;p&#233;e</Text>
-			<Gender>Female</Gender>
+			<Text>Fantassin lourd</Text>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Schwerer Schwertk&#228;mpfer</German>
@@ -2697,7 +2697,7 @@
 		<Tag>TXT_KEY_UNIT_ARQUEBUSIER</Tag>
 		<English>Arquebusier</English>
 		<French>
-			<Text>Mousquetaire</Text>
+			<Text>Arquebusier</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -2809,8 +2809,8 @@
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
 		<English>Light Swordsman</English>
 		<French>
-			<Text>Infanterie l&#233;g&#232;re &#224; &#233;p&#233;e</Text>
-			<Gender>Female</Gender>
+			<Text>Fantassin l&#233;ger</Text>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Light Swordsman</German>
