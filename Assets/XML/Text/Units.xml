@@ -12,7 +12,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
 		<English>Minuteman</English>
-		<French>Minuteman</French>
+		<French>
+			<Text>Minuteman</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Minuteman</German>
 		<Italian>Minuteman</Italian>
 		<Spanish>Minuteman</Spanish>
@@ -28,7 +32,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY</Tag>
 		<English>Grenadier Cavalry</English>
-		<French>Grenadier Cavalry</French>
+		<French>
+			<Text>Grenadier &#224; cheval</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Grenadier Cavalry</German>
 		<Italian>Grenadier Cavalry</Italian>
 		<Spanish>Grenadier Cavalry</Spanish>
@@ -108,7 +116,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KUSHAN_ASVAKA</Tag>
 		<English>Asvaka</English>
-		<French>Asvaka</French>
+		<French>
+			<Text>Asvaka</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Asvaka</German>
 		<Italian>Asvaka</Italian>
 		<Spanish>Asvaka</Spanish>
@@ -124,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE</Tag>
 		<English>Nuclear Submarine</English>
-		<French>Nuclear Submarine</French>
+		<French>
+			<Text>Sous-marin nucl&#233;aire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nuclear Submarine</German>
 		<Italian>Nuclear Submarine</Italian>
 		<Spanish>Nuclear Submarine</Spanish>
@@ -204,7 +220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BOMBARD</Tag>
 		<English>Bombard</English>
-		<French>Bombard</French>
+		<French>
+			<Text>Bombarde</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bombard</German>
 		<Italian>Bombard</Italian>
 		<Spanish>Bombard</Spanish>
@@ -228,7 +248,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO</Tag>
 		<English>Madeireiro</English>
-		<French>Madeireiro</French>
+		<French>
+			<Text>Madeireiro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Madeireiro</German>
 		<Italian>Madeireiro</Italian>
 		<Spanish>Madeireiro</Spanish>
@@ -292,7 +316,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CANADIAN_CORVETTE</Tag>
 		<English>Corvette</English>
-		<French>Corvette</French>
+		<French>
+			<Text>Corvette</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Corvette</German>
 		<Italian>Corvette</Italian>
 		<Spanish>Corvette</Spanish>
@@ -333,7 +361,7 @@
 		<Tag>TXT_KEY_UNIT_CHINESE_CHOKONU</Tag>
 		<English>Cho-Ko-Nu</English>
 		<French>
-			<Text>Cho-Ko-Nu</Text>
+			<Text>Chu ko nu</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -364,7 +392,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Tag>
 		<English>Atlas Elephant</English>
-		<French>Atlas Elephant</French>
+		<French>
+			<Text>&#201;l&#233;phant de l'Atlas</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Atlas Elephant</German>
 		<Italian>Atlas Elephant</Italian>
 		<Spanish>Atlas Elephant</Spanish>
@@ -404,7 +436,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH</Tag>
 		<English>Cidainh</English>
-		<French>Cidainh</French>
+		<French>
+			<Text>Cidainh</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cidainh</German>
 		<Italian>Cidainh</Italian>
 		<Spanish>Cidainh</Spanish>
@@ -436,7 +472,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOMBIAN_ALBION_LEGION</Tag>
 		<English>Albion Legion</English>
-		<French>Albion Legion</French>
+		<French>
+			<Text>L&#233;gion d'Albion</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Albion Legion</German>
 		<Italian>Albion Legion</Italian>
 		<Spanish>Albion Legion</Spanish>
@@ -508,7 +548,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI</Tag>
 		<English>Askari</English>
-		<French>Askari</French>
+		<French>
+			<Text>Askari</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Askari</German>
 		<Italian>Askari</Italian>
 		<Spanish>Askari</Spanish>
@@ -524,7 +568,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_1</Tag>
 		<English>Cereal Industry Executive</English>
-		<French>Cereal Industry Executive</French>
+		<French>Cadre de l'industrie c&#233;r&#233;ali&#232;re</French>
 		<German>Cereal Industry Executive</German>
 		<Italian>Cereal Industry Executive</Italian>
 		<Spanish>Cereal Industry Executive</Spanish>
@@ -532,7 +576,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_2</Tag>
 		<English>Fishing Industry Executive</English>
-		<French>Fishing Industry Executive</French>
+		<French>Cadre de l'industrie de la p&#234;che</French>
 		<German>Fishing Industry Executive</German>
 		<Italian>Fishing Industry Executive</Italian>
 		<Spanish>Fishing Industry Executive</Spanish>
@@ -540,7 +584,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_3</Tag>
 		<English>Oil Industry Executive</English>
-		<French>Oil Industry Executive</French>
+		<French>Cadre de l'industrie p&#233;troli&#232;re</French>
 		<German>Oil Industry Executive</German>
 		<Italian>Oil Industry Executive</Italian>
 		<Spanish>Oil Industry Executive</Spanish>
@@ -548,7 +592,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_4</Tag>
 		<English>Computer Industry Executive</English>
-		<French>Computer Industry Executive</French>
+		<French>Cadre de l'industrie informatique</French>
 		<German>Computer Industry Executive</German>
 		<Italian>Computer Industry Executive</Italian>
 		<Spanish>Computer Industry Executive</Spanish>
@@ -556,7 +600,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_5</Tag>
 		<English>Textile Industry Executive</English>
-		<French>Textile Industry Executive</French>
+		<French>Cadre de l'industrie textile</French>
 		<German>Textile Industry Executive</German>
 		<Italian>Textile Industry Executive</Italian>
 		<Spanish>Textile Industry Executive</Spanish>
@@ -564,7 +608,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_6</Tag>
 		<English>Steel Industry Executive</English>
-		<French>Steel Industry Executive</French>
+		<French>Cadre de l'industrie sid&#233;rurgique</French>
 		<German>Steel Industry Executive</German>
 		<Italian>Steel Industry Executive</Italian>
 		<Spanish>Steel Industry Executive</Spanish>
@@ -572,7 +616,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_7</Tag>
 		<English>Luxury Industry Executive</English>
-		<French>Luxury Industry Executive</French>
+		<French>Cadre de l'industrie du luxe</French>
 		<German>Luxury Industry Executive</German>
 		<Italian>Luxury Industry Executive</Italian>
 		<Spanish>Luxury Industry Executive</Spanish>
@@ -588,7 +632,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MANDE_FARARI</Tag>
 		<English>Farari</English>
-		<French>Farari</French>
+		<French>
+			<Text>Farari</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Farari</German>
 		<Italian>Farari</Italian>
 		<Spanish>Farari</Spanish>
@@ -668,7 +716,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRENCH_HEAVY_CANNON</Tag>
 		<English>Heavy Cannon</English>
-		<French>Heavy Cannon</French>
+		<French>
+			<Text>Canon lourd</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Heavy Cannon</German>
 		<Italian>Heavy Cannon</Italian>
 		<Spanish>Heavy Cannon</Spanish>
@@ -756,7 +808,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREAT_STATESMAN</Tag>
 		<English>Great Statesman</English>
-		<French>Great Statesman</French>
+		<French>Homme d'&#201;tat illustre</French>
 		<German>Gro&#223;er Staatsmann</German>
 		<Italian>Great Statesman</Italian>
 		<Spanish>Great Statesman</Spanish>
@@ -764,7 +816,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREEK_HOPLITE</Tag>
 		<English>Hoplite</English>
-		<French>Hoplite</French>
+		<French>
+			<Text>Hoplite</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Hoplit</Text>
 			<Gender>Male</Gender>
@@ -832,7 +888,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER</Tag>
 		<English>City Builder</English>
-		<French>City Builder</French>
+		<French>
+			<Text>B&#226;tisseur de ville</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>City Builder</German>
 		<Italian>City Builder</Italian>
 		<Spanish>City Builder</Spanish>
@@ -920,7 +980,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
 		<English>Huluganni</English>
-		<French>Huluganni</French>
+		<French>
+			<Text>Huluganni</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Huluganni</German>
 		<Italian>Huluganni</Italian>
 		<Spanish>Huluganni</Spanish>
@@ -952,7 +1016,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INCAN_AUCAC</Tag>
 		<English>Aucac</English>
-		<French>Aucac</French>
+		<French>
+			<Text>Aucac</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aucac</German>
 		<Italian>Aucac</Italian>
 		<Spanish>Aucac</Spanish>
@@ -960,7 +1028,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA</Tag>
 		<English>Patiyodha</English>
-		<French>Patiyodha</French>
+		<French>
+			<Text>Patiyodha</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Patiyodha</German>
 		<Italian>Patiyodha</Italian>
 		<Spanish>Patiyodha</Spanish>
@@ -969,7 +1041,7 @@
 		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER</Tag>
 		<English>Punjabi Worker</English>
 		<French>
-			<Text>Ouvrier du Panj&#226;b</Text>
+			<Text>Ouvrier du Pendjab</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1000,7 +1072,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT</Tag>
 		<English>Orang Laut</English>
-		<French>Orang Laut</French>
+		<French>
+			<Text>Orang Laut</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Orang Laut</German>
 		<Italian>Orang Laut</Italian>
 		<Spanish>Orang Laut</Spanish>
@@ -1056,7 +1132,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ITALIAN_BERSAGLIERE</Tag>
 		<English>Bersagliere</English>
-		<French>Bersagliere</French>
+		<French>
+			<Text>Bersaglier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bersagliere</German>
 		<Italian>Bersagliere</Italian>
 		<Spanish>Bersagliere</Spanish>
@@ -1072,7 +1152,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LANCER</Tag>
 		<English>Lancer</English>
-		<French>Lancer</French>
+		<French>
+			<Text>Lancier &#224; cheval</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Lancer</German>
 		<Italian>Lancer</Italian>
 		<Spanish>Lancer</Spanish>
@@ -1112,8 +1196,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
-		<French>Heavy Swordsman</French>
-		<German>Schwerer Schwertkämpfer</German>
+		<French>
+			<Text>Infanterie lourde &#224; &#233;p&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Schwerer Schwertk&#228;mpfer</German>
 		<Italian>Heavy Swordsman</Italian>
 		<Spanish>Heavy Swordsman</Spanish>
 	</TEXT>
@@ -1216,7 +1304,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LEVY</Tag>
 		<English>Levy</English>
-		<French>Levy</French>
+		<French>Lev&#233;e</French>
 		<German>Miliz</German>
 		<Italian>Levy</Italian>
 		<Spanish>Levy</Spanish>
@@ -1240,7 +1328,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUBIAN_MEDJAY</Tag>
 		<English>Medjay</English>
-		<French>Medjay</French>
+		<French>
+			<Text>Medja&#255;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Medjay</German>
 		<Italian>Medjay</Italian>
 		<Spanish>Medjay</Spanish>
@@ -1248,7 +1340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES</Tag>
 		<English>Rurales</English>
-		<French>Rurales</French>
+		<French>
+			<Text>Rurales</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Rurales</German>
 		<Italian>Rurales</Italian>
 		<Spanish>Rurales</Spanish>
@@ -1304,7 +1400,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IROQUOIS_MOHAWK</Tag>
 		<English>Mohawk</English>
-		<French>Mohawk</French>
+		<French>
+			<Text>Mohawk</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mohawk</German>
 		<Italian>Mohawk</Italian>
 		<Spanish>Mohawk</Spanish>
@@ -1360,7 +1460,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOORISH_CORSAIR</Tag>
 		<English>Corsair</English>
-		<French>Corsair</French>
+		<French>
+			<Text>Corsaire barbaresque</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Corsair</German>
 		<Italian>Corsair</Italian>
 		<Spanish>Corsair</Spanish>
@@ -1368,7 +1472,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOORISH_CORSAIR_HELP</Tag>
 		<English>[ICON_BULLET]Receives [ICON_GOLD] for Sinking Enemy Ships</English>
-		<French>[ICON_BULLET]Receives [ICON_GOLD] for Sinking Enemy Ships</French>
+		<French>[ICON_BULLET]Re&#231;oit de l'[ICON_GOLD] en coulant des navires ennemis</French>
 		<German>[ICON_BULLET]Receives [ICON_GOLD] for Sinking Enemy Ships</German>
 		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for Sinking Enemy Ships</Italian>
 		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for Sinking Enemy Ships</Spanish>
@@ -1384,7 +1488,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE</Tag>
 		<English>Mounted Brave</English>
-		<French>Mounted Brave</French>
+		<French>
+			<Text>Cavalerie sioux</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mounted Brave</German>
 		<Italian>Mounted Brave</Italian>
 		<Spanish>Mounted Brave</Spanish>
@@ -1425,7 +1533,7 @@
 		<Tag>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN</Tag>
 		<English>East Indiaman</English>
 		<French>
-			<Text>East Indiaman</Text>
+			<Text>Indiaman</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1457,7 +1565,7 @@
 		<Tag>TXT_KEY_UNIT_NATIVE_AMERICAN_DOG_SOLDIER</Tag>
 		<English>Dog Soldier</English>
 		<French>
-			<Text>Soldat chien:Soldats chiens</Text>
+			<Text>Chien soldat:Chiens soldats</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
@@ -1496,7 +1604,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT</Tag>
 		<English>Siege Elephant</English>
-		<French>Siege Elephant</French>
+		<French>
+			<Text>&#201;l&#233;phant de si&#232;ge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Belagerungselephant</German>
 		<Italian>Siege Elephant</Italian>
 		<Spanish>Siege Elephant</Spanish>
@@ -1568,7 +1680,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR</Tag>
 		<English>Religious Persecutor</English>
-		<French>Religious Persecutor</French>
+		<French>
+			<Text>Inquisiteur religieux</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Religious Persecutor</German>
 		<Italian>Religious Persecutor</Italian>
 		<Spanish>Religious Persecutor</Spanish>
@@ -1584,7 +1700,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIAN_BIREME</Tag>
 		<English>Bireme</English>
-		<French>Bireme</French>
+		<French>Bir&#232;me</French>
 		<German>Bireme</German>
 		<Italian>Bireme</Italian>
 		<Spanish>Bireme</Spanish>
@@ -1704,7 +1820,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR</Tag>
 		<English>Winged Hussar</English>
-		<French>Winged Hussar</French>
+		<French>
+			<Text>Hussard ail&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Winged Hussar</German>
 		<Italian>Winged Hussar</Italian>
 		<Spanish>Winged Hussar</Spanish>
@@ -1728,7 +1848,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POLYNESIAN_WAKA</Tag>
 		<English>Waka</English>
-		<French>Waka</French>
+		<French>
+			<Text>Waka</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Waka</German>
 		<Italian>Waka</Italian>
 		<Spanish>Waka</Spanish>
@@ -1736,7 +1860,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IRANIAN_QIZILBASH</Tag>
 		<English>Qizilbash</English>
-		<French>Qizilbash</French>
+		<French>
+			<Text>Qizilbash</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Qizilbash</German>
 		<Italian>Qizilbash</Italian>
 		<Spanish>Qizilbash</Spanish>
@@ -1784,7 +1912,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SELJUK_GHULAM_WARRIOR</Tag>
 		<English>Ghulam Warrior</English>
-		<French>Ghulam Warrior</French>
+		<French>
+			<Text>Guerrier ghulam</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ghulam-Krieger</German>
 		<Italian>Ghulam Warrior</Italian>
 		<Spanish>Ghulam Warrior</Spanish>
@@ -1912,7 +2044,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE</Tag>
 		<English>Slave</English>
-		<French>Slave</French>
+		<French>
+			<Text>Esclave</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Slave</German>
 		<Italian>Slave</Italian>
 		<Spanish>Slave</Spanish>
@@ -1928,7 +2064,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>
 		<English>[ICON_BULLET]Can build [LINK=literal]Slave Plantation[\LINK]</English>
-		<French>[ICON_BULLET]Can build [LINK=literal]Slave Plantation[\LINK]</French>
+		<French>[ICON_BULLET]Peut construire une [LINK=literal]Plantation &#224; esclaves[\LINK]</French>
 		<German>[ICON_BULLET]Can build [LINK=literal]Slave Plantation[\LINK]</German>
 		<Italian>[ICON_BULLET]Can build [LINK=literal]Slave Plantation[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Can build [LINK=literal]Slave Plantation[\LINK]</Spanish>
@@ -1936,7 +2072,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AZTEC_SLAVE</Tag>
 		<English>Aztec Slave</English>
-		<French>Aztec Slave</French>
+		<French>
+			<Text>Esclave azt&#232;que</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aztec Slave</German>
 		<Italian>Aztec Slave</Italian>
 		<Spanish>Aztec Slave</Spanish>
@@ -1944,7 +2084,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI</Tag>
 		<English>Dharani</English>
-		<French>Dharani</French>
+		<French>
+			<Text>Dharani</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dharani</German>
 		<Italian>Dharani</Italian>
 		<Spanish>Dharani</Spanish>
@@ -1968,7 +2112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
 		<English>Chang Suek</English>
-		<French>Chang Suek</French>
+		<French>
+			<Text>Chang Suek</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Chang Suek</German>
 		<Italian>Chang Suek</Italian>
 		<Spanish>Chang Suek</Spanish>
@@ -1984,7 +2132,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TIBETAN_KHAMPA</Tag>
 		<English>Khampa</English>
-		<French>Khampa</French>
+		<French>
+			<Text>Khampa</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Khampa</German>
 		<Italian>Khampa</Italian>
 		<Spanish>Khampa</Spanish>
@@ -1992,7 +2144,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_GALLEY</Tag>
 		<English>War Galley</English>
-		<French>War Galley</French>
+		<French>
+			<Text>Gal&#232;re de guerre</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>War Galley</German>
 		<Italian>War Galley</Italian>
 		<Spanish>War Galley</Spanish>
@@ -2032,7 +2188,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL</Tag>
 		<English>Huscarl</English>
-		<French>Huscarl</French>
+		<French>
+			<Text>Housecarl</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Huscarl</German>
 		<Italian>Huscarl</Italian>
 		<Spanish>Huscarl</Spanish>
@@ -2144,7 +2304,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
 		<English>Jewish Rabbi</English>
-		<French>Jewish Rabbi</French>
+		<French>
+			<Text>Rabbin juif</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>JÃ¼discher Rabbi</German>
 		<Italian>Jewish Rabbi</Italian>
 		<Spanish>Jewish Rabbi</Spanish>
@@ -2160,7 +2324,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Tag>
 		<English>Orthodox Missionary</English>
-		<French>Orthodox Missionary</French>
+		<French>
+			<Text>Missionnaire orthodoxe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Orthodoxer Missionar</German>
 		<Italian>Orthodox Missionary</Italian>
 		<Spanish>Orthodox Missionary</Spanish>
@@ -2176,7 +2344,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Tag>
 		<English>Catholic Missionary</English>
-		<French>Catholic Missionary</French>
+		<French>
+			<Text>Missionnaire catholique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Katholischer Missionar</German>
 		<Italian>Catholic Missionary</Italian>
 		<Spanish>Catholic Missionary</Spanish>
@@ -2192,7 +2364,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Tag>
 		<English>Protestant Missionary</English>
-		<French>Protestant Missionary</French>
+		<French>
+			<Text>Missionnaire protestant</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Protestantischer Missionar</German>
 		<Italian>Protestant Missionary</Italian>
 		<Spanish>Protestant Missionary</Spanish>
@@ -2208,7 +2384,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Tag>
 		<English>Islamic Imam</English>
-		<French>Islamic Imam</French>
+		<French>
+			<Text>Imam musulman</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Islamischer Imam</German>
 		<Italian>Islamic Imam</Italian>
 		<Spanish>Islamic Imam</Spanish>
@@ -2224,7 +2404,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HINDU_MISSIONARY</Tag>
 		<English>Hindu Guru</English>
-		<French>Hindu Guru</French>
+		<French>
+			<Text>Gourou hindou</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hinduistischer Guru</German>
 		<Italian>Hindu Guru</Italian>
 		<Spanish>Hindu Guru</Spanish>
@@ -2240,7 +2424,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Tag>
 		<English>Buddhist Bhikku</English>
-		<French>Buddhist Bhikku</French>
+		<French>
+			<Text>Bonze bouddhiste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Buddhistischer Bhikku</German>
 		<Italian>Buddhist Bhikku</Italian>
 		<Spanish>Buddhist Bhikku</Spanish>
@@ -2256,7 +2444,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Tag>
 		<English>Confucian Scholar</English>
-		<French>Confucian Scholar</French>
+		<French>
+			<Text>&#201;rudit confuc&#233;en</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Konfuzianischer Gelehrter</German>
 		<Italian>Confucian Scholar</Italian>
 		<Spanish>Confucian Scholar</Spanish>
@@ -2272,7 +2464,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAOIST_MISSIONARY</Tag>
 		<English>Taoist Daoshi</English>
-		<French>Taoist Daoshi</French>
+		<French>
+			<Text>Daoshi tao&#239;ste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Taoistischer Daoshi</German>
 		<Italian>Taoist Daoshi</Italian>
 		<Spanish>Taoist Daoshi</Spanish>
@@ -2287,15 +2483,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Tag>
-		<English>Zoroastrian Magu</English>
-		<French>Zoroastrian Magu</French>
+		<English>Zoroastrian Magus</English>
+		<French>
+			<Text>Mage zoroastrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Zoroastrischer Magu</German>
 		<Italian>Zoroastrian Magu</Italian>
 		<Spanish>Zoroastrian Magu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>[COLOR_UNIT_TEXT]Magi[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 		<French>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</French>
 		<German>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</German>
 		<Italian>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</Italian>
@@ -2320,7 +2520,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER</Tag>
 		<English>Nuclear Bomber</English>
-		<French>Nuclear Bomber</French>
+		<French>
+			<Text>Bombardier nucl&#233;aire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nuclear Bomber</German>
 		<Italian>Nuclear Bomber</Italian>
 		<Spanish>Nuclear Bomber</Spanish>
@@ -2328,7 +2532,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SKIRMISHER</Tag>
 		<English>Skirmisher</English>
-		<French>Skirmisher</French>
+		<French>
+			<Text>Tirailleur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Skirmisher</German>
 		<Italian>Skirmisher</Italian>
 		<Spanish>Skirmisher</Spanish>
@@ -2344,7 +2552,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN</Tag>
 		<English>Horseman</English>
-		<French>Horseman</French>
+		<French>
+			<Text>Cavalier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Horseman</German>
 		<Italian>Horseman</Italian>
 		<Spanish>Horseman</Spanish>
@@ -2360,7 +2572,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_GALLEY</Tag>
 		<English>Heavy Galley</English>
-		<French>Heavy Galley</French>
+		<French>
+			<Text>Gal&#232;re lourde</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Heavy Galley</German>
 		<Italian>Heavy Galley</Italian>
 		<Spanish>Heavy Galley</Spanish>
@@ -2376,7 +2592,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COG</Tag>
 		<English>Cog</English>
-		<French>Cog</French>
+		<French>
+			<Text>Cogue</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cog</German>
 		<Italian>Cog</Italian>
 		<Spanish>Cog</Spanish>
@@ -2392,7 +2612,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GALLEASS</Tag>
 		<English>Galleass</English>
-		<French>Galleass</French>
+		<French>
+			<Text>Gal&#233;asse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Galleass</German>
 		<Italian>Galleass</Italian>
 		<Spanish>Galleass</Spanish>
@@ -2408,7 +2632,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TORPEDO_BOAT</Tag>
 		<English>Torpedo Boat</English>
-		<French>Torpedo Boat</French>
+		<French>
+			<Text>Torpilleur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Torpedo Boat</German>
 		<Italian>Torpedo Boat</Italian>
 		<Spanish>Torpedo Boat</Spanish>
@@ -2424,7 +2652,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CRUISER</Tag>
 		<English>Cruiser</English>
-		<French>Cruiser</French>
+		<French>
+			<Text>Croiseur</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cruiser</German>
 		<Italian>Cruiser</Italian>
 		<Spanish>Cruiser</Spanish>
@@ -2440,7 +2672,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BIPLANE</Tag>
 		<English>Biplane</English>
-		<French>Biplane</French>
+		<French>
+			<Text>Biplan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Biplane</German>
 		<Italian>Biplane</Italian>
 		<Spanish>Biplane</Spanish>
@@ -2448,7 +2684,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MILITIA</Tag>
 		<English>Militia</English>
-		<French>Militia</French>
+		<French>
+			<Text>Milice</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Militia</German>
 		<Italian>Militia</Italian>
 		<Spanish>Militia</Spanish>
@@ -2456,7 +2696,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARQUEBUSIER</Tag>
 		<English>Arquebusier</English>
-		<French>Arquebusier</French>
+		<French>
+			<Text>Mousquetaire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Arquebusier</German>
 		<Italian>Arquebusier</Italian>
 		<Spanish>Arquebusier</Spanish>
@@ -2464,7 +2708,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SPEARMAN</Tag>
 		<English>Heavy Spearman</English>
-		<French>Heavy Spearman</French>
+		<French>
+			<Text>Lancier lourd</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Heavy Spearman</German>
 		<Italian>Heavy Spearman</Italian>
 		<Spanish>Heavy Spearman</Spanish>
@@ -2480,7 +2728,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOWITZER</Tag>
 		<English>Howitzer</English>
-		<French>Howitzer</French>
+		<French>
+			<Text>Obusier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Howitzer</German>
 		<Italian>Howitzer</Italian>
 		<Spanish>Howitzer</Spanish>
@@ -2496,7 +2748,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_DRAGOON</Tag>
 		<English>Dragoon</English>
-		<French>Dragoon</French>
+		<French>
+			<Text>Dragon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dragoon</German>
 		<Italian>Dragoon</Italian>
 		<Spanish>Dragoon</Spanish>
@@ -2512,7 +2768,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PISTOLIER</Tag>
 		<English>Pistolier</English>
-		<French>Pistolier</French>
+		<French>
+			<Text>Gendarme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pistolier</German>
 		<Italian>Pistolier</Italian>
 		<Spanish>Pistolier</Spanish>
@@ -2528,7 +2788,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HUSSAR</Tag>
 		<English>Hussar</English>
-		<French>Hussar</French>
+		<French>
+			<Text>Hussard</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hussar</German>
 		<Italian>Hussar</Italian>
 		<Spanish>Hussar</Spanish>
@@ -2544,7 +2808,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
 		<English>Light Swordsman</English>
-		<French>Light Swordsman</French>
+		<French>
+			<Text>Infanterie l&#233;g&#232;re &#224; &#233;p&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Light Swordsman</German>
 		<Italian>Light Swordsman</Italian>
 		<Spanish>Light Swordsman</Spanish>
@@ -2560,7 +2828,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LABOURER</Tag>
 		<English>Labourer</English>
-		<French>Labourer</French>
+		<French>
+			<Text>Man&#339;uvre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Labourer</German>
 		<Italian>Labourer</Italian>
 		<Spanish>Labourer</Spanish>
@@ -2584,7 +2856,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ</Tag>
 		<English>Oghuz</English>
-		<French>Oghuz</French>
+		<French>
+			<Text>Oghouze</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Oghuz</German>
 		<Italian>Oghuz</Italian>
 		<Spanish>Oghuz</Spanish>
