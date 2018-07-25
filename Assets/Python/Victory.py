@@ -1515,7 +1515,7 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iManchuria:
 		# first goal: Have 20% of the world population in 1850 AD
 		if iGameTurn == getTurnForYear(1850):
-			if getPopulationPercent(iManchuria) >= 25.0:
+			if getPopulationPercent(iManchuria) >= 20.0:
 				win(iManchuria, 0)
 			else:
 				lose(iManchuria, 0)
@@ -4397,7 +4397,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iManchuria:
 		if iGoal == 0:
 			popPercent = getPopulationPercent(iManchuria)
-			aHelp.append(getIcon(popPercent >= 25.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
+			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
 		elif iGoal == 1:
 			iMostFoodCiv = getBestPlayer(iManchuria, playerFoodOutput)
 			iMostProductionCiv = getBestPlayer(iManchuria, playerProductionOutput)

@@ -182,6 +182,22 @@
 		<English>It is the year 989 AD. Sub-Saharan Africa is still underdeveloped compared to the rest of the old world. But the Mande people control rich gold mines, which has caught the attention of its northern neighbors. Defending against foreign attempts to seize its riches by force, Mali has now the opportunity to truly become the richest civilization on Earth.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_MANCHURIA</Tag>
+		<English>It is the year 1636 AD. Beginning in the 16th century, an Aisin Gioro chief called Nurhaci successfully united the warring Jurchen tribes and proclaimed himself the Khan of the Later Jin, openly renouncing his fealty to the Chinese Ming dynasty. Hong Taiji, the son of Nurhaci, has now declared himself the Emperor of the Great Qing, setting his sights on the Imperial capital of Beijing...</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MANCHURIA_1700AD</Tag>
+		<English>It is the year 1700 AD. After the Ming Dynasty collapsed under peasant revolts, the Jurchens of Manchuria conquered China and established the Empire of the Great Qing. With Manchuria and Tibet under imperial control, China has reached its greatest extent in history and the rule of the Kangxi Emperor promises another golden era.</English>
+		<French>No Translation</French>
+		<German>No Translation</German>
+		<Italian>No Translation</Italian>
+		<Spanish>No Translation</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_MAYA</Tag>
 		<English>It is the year 60 AD. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first advanced civilization in the Americas.</English>
 	</TEXT>
@@ -211,7 +227,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_NIGERIA</Tag>
-		<English>It is the year 1180 AD.</English>
+		<English>It is the year 1180 AD. While living there for centuries, the people of the region have only just begun to unify, under the sixteen clans in the city-state of Ife. The newly united Yoruba people are now ready to spread their culture, urbanism, and wisdom from the banks of the river Niger to the coast of the Gulf of Guinea.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -227,7 +243,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PHILIPPINES</Tag>
-		<English>It is the year 900 AD.</English>
+		<English>It is the year 900 AD. All across the archipelago polities are beginning to rise, spurred by its position on the trade routes between India and China. While culturally influenced by these two great regions, the archipelago is also home to a strong tradition of its own. One of the first polities to rise is Tondo. Surrounded on all sides by water, is especially well-placed to command an influential role across the entirety of Luzon and beyond.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -287,11 +303,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_SWEDEN_1700AD</Tag>
-		<English>It is the year 1700 AD. The Kingdom of Sweden is the most formidable of the Scandinavian powers and has managed to establish an empire by acquiring Finland. Still, its expansion has also created enemies, and rivals like Denmark-Norway, Poland and especially Russia might seek to curb Swedish power ...</English>
+		<English>It is the year 1700 AD. The Kingdom of Sweden is the most formidable of the Scandinavian powers and has managed to establish an empire by acquiring Finland. Still, its expansion has also created enemies, and rivals like Denmark-Norway, Poland and especially Russia might seek to curb Swedish power...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_SWAHILI</Tag>
-		<English>It is the year 960 AD.</English>
+		<English>It is the year 960 AD. For generations the East Coast of Africa has been visited by Persian and Arabic traders from the Islamic world, giving rise to a uniquely mixed culture. Now, with the purchase of the highly defensible island of Kilwa from the inland dwellers, the Swahili traders are ready to control the trade of the entire Indian ocean, and maybe even beyond...</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -343,6 +359,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS_1700AD</Tag>
-		<English>It is the year 1700 AD. Have fun.</English>
+		<English>It is the year 1700 AD. Denmark is a shadow of its former. Once the premier power throughout Scandinavia, the 17th century saw the collapse of the Kalmar Union, Protestant Reformation, 30 Years’ War, and a slew of wars against Sweden. Only shrewd diplomacy will determine whether Denmark will regain what it has lost or end up undergoing even further disintegration...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ZIMBABWE</Tag>
+		<English>It is the year 1075 AD. The hills at the confluence of the Shashi and Limpopo rivers control the local gold and cattle trade and are also prime country for hunting elephants for their valuable ivory. From this vantage point new innovations in stonework will take place, and these structures will grow ever grander as the grandeur of these kingdoms grows.</English>
 	</TEXT>
 </Civ4GameText>
