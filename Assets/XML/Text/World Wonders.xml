@@ -1976,7 +1976,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT_HELP</Tag>
-		<English>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</English>
+		<English>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Paddy Field, Orchard and Plantation resource</English>
 		<French>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</French>
 		<German>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</German>
 		<Italian>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</Italian>
