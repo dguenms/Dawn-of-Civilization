@@ -1792,11 +1792,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</French>
-		<German>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</German>
-		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per excess [ICON_HEALTHY] (not implemented)</Spanish>
+		<English>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</English>
+		<French>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</French>
+		<German>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</German>
+		<Italian>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK</Tag>
