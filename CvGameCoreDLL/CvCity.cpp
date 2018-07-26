@@ -2339,6 +2339,25 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	// Leoreth: Global Seed Vault requires tundra
+	if (eBuilding == GLOBAL_SEED_VAULT)
+	{
+		bool bFound = false;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->getTerrainType() == TERRAIN_TUNDRA)
+			{
+				bFound = true;
+				break;
+			}
+		}
+
+		if (!bFound)
+		{
+			return false;
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (!bContinue)
@@ -4650,6 +4669,32 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			for (int iI = 0; iI < MAX_PLAYERS; iI++)
 			{
 				changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER((PlayerTypes)iI).getNumNukeUnits());
+			}
+		}
+
+		// Global Seed Vault
+		if (eBuilding == GLOBAL_SEED_VAULT)
+		{
+			for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+			{
+				for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
+				{
+					CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iJ);
+					if (kBuild.isGraphicalOnly())
+					{
+						continue;
+					}
+
+					if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
+					{
+						CvImprovementInfo& kImprovement = GC.getImprovementInfo((ImprovementTypes)kBuild.getImprovement());
+						if (kImprovement.isImprovementBonusMakesValid(iI) && !kImprovement.isGraphicalOnly() && !kImprovement.isActsAsCity())
+						{
+							changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER(getOwnerINLINE()).getNumAvailableBonuses((BonusTypes)iI));
+							break;
+						}
+					}
+				}
 			}
 		}
 
