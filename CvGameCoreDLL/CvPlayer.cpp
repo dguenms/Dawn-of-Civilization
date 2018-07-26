@@ -6996,6 +6996,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	{
 		changeCorporationCommerceModifier(iChange * 50);
 	}
+
+	// Burj Khalifa
+	else if (eBuilding == BURJ_KHALIFA)
+	{
+		updateYield();
+	}
 }
 
 

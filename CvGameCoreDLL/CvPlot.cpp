@@ -7056,6 +7056,18 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Leoreth: Burj Khalifa effect
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)BURJ_KHALIFA))
+		{
+			if (getTerrainType() == TERRAIN_DESERT)
+			{
+				if (eYield == YIELD_FOOD || eYield == YIELD_COMMERCE)
+				{
+					iYield += 2;
+				}
+			}
+		}
+
 		//Rhye - start UP (not shown in debug mode)
 		if (ePlayer == MALI)
 		{
