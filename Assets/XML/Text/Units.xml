@@ -1197,7 +1197,7 @@
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
 		<French>
-			<Text>Fantassin lourd</Text>
+			<Text>Homme d'armes</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -2709,7 +2709,7 @@
 		<Tag>TXT_KEY_UNIT_HEAVY_SPEARMAN</Tag>
 		<English>Heavy Spearman</English>
 		<French>
-			<Text>Lancier lourd</Text>
+			<Text>Hallebardier</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -2769,7 +2769,7 @@
 		<Tag>TXT_KEY_UNIT_PISTOLIER</Tag>
 		<English>Pistolier</English>
 		<French>
-			<Text>Gendarme</Text>
+			<Text>Pistolier</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -2809,7 +2809,7 @@
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
 		<English>Light Swordsman</English>
 		<French>
-			<Text>Fantassin l&#233;ger</Text>
+			<Text>Fantassin</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -2852,6 +2852,54 @@
 		<German>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</German>
 		<Italian>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</Italian>
 		<Spanish>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] requires no special resources.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUSKETMAN</Tag>
+		<English>Musketman</English>
+		<French>
+			<Text>Mousquetaire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Musketier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Soldato con moschetto:Soldati con moschetto</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mosquete:Mosquetes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ENGLISH_REDCOAT</Tag>
+		<English>Redcoat</English>
+		<French>
+			<Text>Tunique rouge</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Rotrock</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Giubba rossa:Giubbe rosse</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Casaca roja:Casacas rojas</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ</Tag>
