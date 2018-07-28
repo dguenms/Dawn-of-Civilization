@@ -1704,7 +1704,7 @@ iScout, iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissi
 iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, iVulture, iDogSoldier, 
 iSwordsman, iJaguar, iLegion, iGallicWarrior, iAucac, iHeavySwordsman, iSamurai, iHuscarl, iPombos, iSpearman, 
 iHoplite, iImmortal, iImpi, iHeavySpearman, iPikeman, iLandsknecht, iRozwiWarrior, iArquebusier, iJanissary, iAskari, iQizilbash, 
-iMohawk, iMusketeer, iMusketman, iRedcoat, iMinuteman, iKarolin, iRifleman, iGrenadier, iAlbionLegion, iAntiTank, iInfantry, 
+iMohawk, iMusketeer, iMusketman, iRedcoat, iKarolin, iMinuteman, iRifleman, iGrenadier, iAlbionLegion, iAntiTank, iInfantry, 
 iBersagliere, iDigger, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, 
 iSkirmisher, iHolkan, iKelebolo, iLongbowman, iPatiyodha, iRattanArcher, iCrossbowman, iChokonu, iChariot, iWarChariot, iHuluganni, 
 iCidainh, iHorseman, iNumidianCavalry, iAsvaka, iHorseArcher, iCamelArcher, iKhampa, iLancer, iKeshik, iCataphract, 
