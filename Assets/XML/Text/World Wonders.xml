@@ -1776,11 +1776,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</English>
-		<French>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</French>
-		<German>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</German>
-		<Italian>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_RESEARCH] per city population (not implemented)</Spanish>
+		<English>[ICON_BULLET]+2[ICON_RESEARCH] per city population</English>
+		<French>[ICON_BULLET]+2[ICON_RESEARCH] per city population</French>
+		<German>[ICON_BULLET]+2[ICON_RESEARCH] per city population</German>
+		<Italian>[ICON_BULLET]+2[ICON_RESEARCH] per city population</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_RESEARCH] per city population</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY</Tag>
