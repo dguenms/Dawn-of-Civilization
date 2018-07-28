@@ -1487,6 +1487,14 @@
 		<Spanish>Image of the World Square</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_HELP</Tag>
+		<English>[ICON_BULLET]+1 trade route per culture level</English>
+		<French>[ICON_BULLET]+1 trade route per culture level</French>
+		<German>[ICON_BULLET]+1 Handelsroute pro Kulturstufe</German>
+		<Italian>[ICON_BULLET]+1 trade route per culture level</Italian>
+		<Spanish>[ICON_BULLET]+1 trade route per culture level</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOURSE</Tag>
 		<English>The Bourse</English>
 		<French>The Bourse</French>

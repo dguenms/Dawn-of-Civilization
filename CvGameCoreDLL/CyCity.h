@@ -582,6 +582,7 @@ public:
 	bool isColony();
 	bool hasBonusEffect(int iBonus);
 	int getCultureRank();
+	bool isHasBuildingEffect(int eBuilding);
 
 private:
 	CvCity* m_pCity;

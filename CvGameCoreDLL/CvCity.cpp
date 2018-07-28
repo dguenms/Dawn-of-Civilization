@@ -2395,6 +2395,25 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	// Leoreth: Al Khazneh requires Oasis in city radius
+	if (eBuilding == AL_KHAZNEH)
+	{
+		bool bFound = false;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_OASIS)
+			{
+				bFound = true;
+				break;
+			}
+		}
+
+		if (!bFound)
+		{
+			return false;
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (!bContinue)
@@ -4654,6 +4673,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 
 			changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)POTALA_PALACE).getBuildingClassType(), iChange * iNumHills);
+		}
+
+		// Image of the World Square
+		if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE)
+		{
+			changeExtraTradeRoutes(iChange * getCultureLevel());
 		}
 
 		// Itsukushima Shrine
@@ -9379,6 +9404,11 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 
 		if (GC.getGameINLINE().isFinalInitialized())
 		{
+			if (isHasBuildingEffect((BuildingTypes)IMAGE_OF_THE_WORLD_SQUARE))
+			{
+				changeExtraTradeRoutes(eNewValue - eOldValue);
+			}
+
 			if ((getCultureLevel() > eOldValue) && (getCultureLevel() > 1))
 			{
 				//szBuffer = gDLL->getText("TXT_KEY_MISC_BORDERS_EXPANDED", getNameKey());

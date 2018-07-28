@@ -12020,6 +12020,7 @@
 			<Description>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</ArtDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
@@ -12035,7 +12036,6 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iTradeRoutes>4</iTradeRoutes>
 			<iAsset>14</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
