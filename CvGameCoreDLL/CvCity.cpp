@@ -4741,6 +4741,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * 2 * std::max(0, goodHealth() - badHealth()));
 		}
 
+		// ITER
+		if (eBuilding == ITER)
+		{
+			int iPowerConsumed = 0;
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+				{
+					iPowerConsumed += pLoopCity->getPowerConsumedCount();
+				}
+			}
+
+			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iPowerConsumed);
+		}
+
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
 
 		area()->changePower(getOwnerINLINE(), (GC.getBuildingInfo(eBuilding).getPowerValue() * iChange));
@@ -18574,6 +18589,28 @@ void CvCity::changePowerConsumedCount(int iChange)
 	if (iChange != 0)
 	{
 		m_iPowerConsumedCount += iChange;
+
+		// Leoreth: ITER effect
+		if (GC.getGame().getBuildingClassCreatedCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITER).getBuildingClassType()) > 0)
+		{
+			for (int iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).isHasBuildingEffect((BuildingTypes)ITER))
+				{
+					int iLoop;
+					for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+					{
+						if (pLoopCity->isHasBuildingEffect((BuildingTypes)ITER))
+						{
+							pLoopCity->changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITER).getBuildingClassType(), YIELD_COMMERCE, iChange);
+							break;
+						}
+					}
+
+					break;
+				}
+			}
+		}
 
 		updatePowerHealth();
 	}
