@@ -2383,6 +2383,18 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	// Leoreth: Delta Works requires only flatland
+	if (eBuilding == DELTA_WORKS)
+	{
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->isHills() || getCityIndexPlot(iI)->isPeak())
+			{
+				return false;
+			}
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (!bContinue)
