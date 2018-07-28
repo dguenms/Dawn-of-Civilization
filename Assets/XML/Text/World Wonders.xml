@@ -1811,11 +1811,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
-		<English>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</English>
-		<French>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</French>
-		<German>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</German>
-		<Italian>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile (not implemented)</Spanish>
+		<English>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</English>
+		<French>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</French>
+		<German>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</German>
+		<Italian>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Tag>
@@ -1851,11 +1851,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DELTA_WORKS_HELP</Tag>
-		<English>[ICON_BULLET]Requires only flat land in city radius (not implemented)</English>
-		<French>[ICON_BULLET]Requires only flat land in city radius (not implemented)</French>
-		<German>[ICON_BULLET]Requires only flat land in city radius (not implemented)</German>
-		<Italian>[ICON_BULLET]Requires only flat land in city radius (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Requires only flat land in city radius (not implemented)</Spanish>
+		<English>[ICON_BULLET]Requires only flat land in city radius</English>
+		<French>[ICON_BULLET]Requires only flat land in city radius</French>
+		<German>[ICON_BULLET]Requires only flat land in city radius</German>
+		<Italian>[ICON_BULLET]Requires only flat land in city radius</Italian>
+		<Spanish>[ICON_BULLET]Requires only flat land in city radius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRON_DOME</Tag>
@@ -2084,10 +2084,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT_HELP</Tag>
 		<English>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Paddy Field, Orchard and Plantation resource</English>
-		<French>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</French>
-		<German>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</German>
-		<Italian>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Orchard and Plantation resource (not implemented)</Spanish>
+		<French>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Paddy Field, Orchard and Plantation resource</French>
+		<German>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Paddy Field, Orchard and Plantation resource</German>
+		<Italian>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Paddy Field, Orchard and Plantation resource</Italian>
+		<Spanish>[ICON_BULLET]Requires Tundra in city radius[NEWLINE][ICON_BULLET]+1 [ICON_RESEARCH] per Farm, Paddy Field, Orchard and Plantation resource</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUADALUPE_BASILICA</Tag>
