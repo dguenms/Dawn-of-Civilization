@@ -2740,3 +2740,8 @@ int CyCity::getCultureRank()
 {
 	return m_pCity ? m_pCity->getCultureRank() : -1;
 }
+
+bool CyCity::isHasBuildingEffect(int eBuilding)
+{
+	return m_pCity ? m_pCity->isHasBuildingEffect((BuildingTypes)eBuilding) : false;
+}
