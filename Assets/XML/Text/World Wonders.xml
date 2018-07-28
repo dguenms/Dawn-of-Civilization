@@ -1864,11 +1864,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</French>
-		<German>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</German>
-		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities (not implemented)</Spanish>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Tag>
