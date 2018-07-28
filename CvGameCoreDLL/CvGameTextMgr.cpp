@@ -19334,6 +19334,21 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 						szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_PEACE", iNewMod));
 						iModifier += iNewMod;
 					}
+
+					// Leoreth: Channel Tunnel effect
+					if (GET_PLAYER(pCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
+					{
+						if (GET_PLAYER(pOtherCity->getOwnerINLINE()).AI_getAttitude(pCity->getOwnerINLINE()) >= ATTITUDE_FRIENDLY)
+						{
+							iNewMod = 100;
+							if (0 != iNewMod)
+							{
+								szBuffer.append(NEWLINE);
+								szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_FRIENDLY_RELATION", iNewMod));
+								iModifier += iNewMod;
+							}
+						}
+					}
 				}
 
 				iNewMod = pCity->getDistanceTradeModifier(pOtherCity);

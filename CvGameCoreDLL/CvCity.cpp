@@ -9986,6 +9986,15 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			iModifier += getForeignTradeRouteModifier();
 
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
+
+			// Leoreth: Channel Tunnel effect
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
+			{
+				if (GET_PLAYER(pOtherCity->getOwnerINLINE()).AI_getAttitude(getOwnerINLINE()) >= ATTITUDE_FRIENDLY)
+				{
+					iModifier += 100;
+				}
+			}
 		}
 
 		// Leoreth: new distance modifier

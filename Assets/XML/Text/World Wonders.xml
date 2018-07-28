@@ -1728,11 +1728,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL_HELP</Tag>
-		<English>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</English>
-		<French>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</French>
-		<German>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</German>
-		<Italian>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</Italian>
-		<Spanish>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations (not implemented)</Spanish>
+		<English>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</English>
+		<French>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</French>
+		<German>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</German>
+		<Italian>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</Italian>
+		<Spanish>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DELTA_WORKS</Tag>
