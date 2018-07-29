@@ -1383,13 +1383,13 @@
 			<DefaultBuilding>BUILDING_STATUE_OF_ZEUS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MAUSOLEUM_OF_MAUSSOLLOS</Type>
-			<Description>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Description>
+			<Type>BUILDINGCLASS_GREAT_MAUSOLEUM</Type>
+			<Description>TXT_KEY_BUILDING_GREAT_MAUSOLEUM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</DefaultBuilding>
+			<DefaultBuilding>BUILDING_GREAT_MAUSOLEUM</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CRISTO_REDENTOR</Type>

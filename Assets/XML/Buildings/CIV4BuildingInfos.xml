@@ -9051,14 +9051,14 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_MAUSOLEUM_OF_MAUSSOLLOS</BuildingClass>
-			<Type>BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Type>
-			<Description>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_GREAT_MAUSOLEUM</BuildingClass>
+			<Type>BUILDING_GREAT_MAUSOLEUM</Type>
+			<Description>TXT_KEY_BUILDING_GREAT_MAUSOLEUM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GREAT_MAUSOLEUM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GREAT_MAUSOLEUM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_MAUSOLEUM_OF_MAUSSOLLOS</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_GREAT_MAUSOLEUM</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GREAT_MAUSOLEUM</MovieDefineTag>
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_CEMENT</PrereqTech>
