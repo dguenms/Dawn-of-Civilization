@@ -4664,7 +4664,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (eBuilding == POTALA_PALACE)
 		{
 			int iNumHills = 0;
-			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 			{
 				if (getCityIndexPlot(iI)->isHills())
 				{
@@ -4685,7 +4685,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (eBuilding == ITSUKUSHIMA_SHRINE)
 		{
 			int iNumWater = 0;
-			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 			{
 				if (getCityIndexPlot(iI)->isWater())
 				{
@@ -4700,7 +4700,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (eBuilding == MOLE_ANTONELLIANA)
 		{
 			int iNumPeaks = 0;
-			for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 			{
 				if (getCityIndexPlot(iI)->isPeak())
 				{
@@ -4711,11 +4711,31 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)MOLE_ANTONELLIANA).getBuildingClassType(), YIELD_PRODUCTION, iChange * 2 * iNumPeaks);
 		}
 
+		// Metropolitain
+		if (eBuilding == METROPOLITAIN)
+		{
+			for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			{
+				int iNumBuildings = 0;
+				if (isHasRealBuilding((BuildingTypes)iI))
+				{
+					iNumBuildings += 1;
+				}
+					
+				changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iNumBuildings);
+			}
+		}
+
+		if (isHasBuildingEffect((BuildingTypes)METROPOLITAIN))
+		{
+			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)METROPOLITAIN).getBuildingClassType(), YIELD_COMMERCE, iChange);
+		}
+
 		// Berlaymont
 		if (eBuilding == BERLAYMONT)
 		{
 			int iNumDefensivePacts = 0;
-			for (int iI = 0; iI < MAX_TEAMS; iI++)
+			for (iI = 0; iI < MAX_TEAMS; iI++)
 			{
 				if (getTeam() != iI && GET_TEAM((TeamTypes)iI).isAlive() && ! GET_TEAM((TeamTypes)iI).isMinorCiv() && GET_TEAM(getTeam()).isDefensivePact((TeamTypes)iI))
 				{
@@ -4729,7 +4749,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Atomium
 		if (eBuilding == ATOMIUM)
 		{
-			for (int iI = 0; iI < MAX_PLAYERS; iI++)
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
 				changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_RESEARCH, iChange * GET_PLAYER((PlayerTypes)iI).getNumNukeUnits());
 			}

@@ -2135,6 +2135,22 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_METROPOLITAIN</Tag>
+		<English>Metropolitain</English>
+		<French>Metropolitain</French>
+		<German>Metropolitain</German>
+		<Italian>Metropolitain</Italian>
+		<Spanish>Metropolitain</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</English>
+		<French>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</French>
+		<German>[ICON_BULLET]+1 [ICON_COMMERCE] f&#252;r alle Geb&#228;ude</German>
+		<Italian>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
