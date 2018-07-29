@@ -1628,7 +1628,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,13</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Type>
+			<Type>ART_DEF_BUILDING_GREAT_MAUSOLEUM</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.8</fScale>

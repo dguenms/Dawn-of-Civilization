@@ -570,12 +570,12 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2 gold for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in the city's radius. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<Tag>TXT_KEY_BUILDING_GREAT_MAUSOLEUM_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Great Mausoleum[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Great Mausoleum[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Great Mausoleum[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Great Mausoleum[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Great Mausoleum[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA</Tag>
@@ -2256,6 +2256,22 @@
 		<German>[ICON_BULLET]+1 [ICON_COMMERCE] pro Geb&#228;ude in der Stadt</German>
 		<Italian>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_MAUSOLEUM</Tag>
+		<English>The Great Mausoleum</English>
+		<French>The Great Mausoleum</French>
+		<German>Das Gro&#223;e Mausoleum</German>
+		<Italian>The Great Mausoleum</Italian>
+		<Spanish>The Great Mausoleum</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_MAUSOLEUM_PEDIA</Tag>
+		<English>[TAB]Maussollos died in 349 BC. King of Caria during his lifetime, Maussollos wished to leave a reminder of himself for future generations in the form of a great tomb. In addition to hiring hundreds of laborers, Maussollos commissioned five of the finest artisans in the Hellenic world to design the hundreds of statues that were to line the peripheries of his white marble resting place.[PARAGRAPH:1]Over 130 feet tall upon completion, the Mausoleum of Maussollos stood by the harbor of Halicarnassus until 1522, when the Knights Hospitaller tore it down in order to use the stones to build defenses against the approaching Turks.</English>
+		<French>[TAB]Mausole meurt en 349 av. J.C. Roi de Carie, Mausole souhaite laisser un souvenir de lui aux g&#233;n&#233;rations futures sous la forme d'un grand tombeau. En plus d'employer des centaines d'ouvriers, Mausole ordonne aux cinq meilleurs artisans du monde hell&#233;nique de concevoir les statues qui borderaient sa s&#233;pulture de marbre blanc.[PARAGRAPH:1]Haut de plus de 40 m&#232;tres, le Mausol&#233;e d'Halicarnasse &#233;tait situ&#233; sur le port d'Halicarnasse jusqu'en 1522 ; les chevaliers hospitaliers le d&#233;molissent alors afin d'utiliser les pierres pour construire des d&#233;fenses contre l'ennemi turc.</French>
+		<German>[TAB]Maussollos, der K&#246;nig von Caria, starb 349 v. Chr. Um f&#252;r die kommenden Generationen ein Andenken an seine Herrschaft zu hinterlassen, lie&#223; er sich ein Grabmal errichten. Zu diesem Zweck heuerte Maussollos nicht nur hunderte von Arbeitern an, sondern beauftragte au&#223;erdem f&#252;nf der besten Steinmetze und Handwerker des antiken Griechenlands mit dem Entwurf von hunderten von Statuen, die seine letzte Ruhest&#228;tte aus wei&#223;em Marmor umrahmen sollten.[PARAGRAPH:1]Bei seiner Fertigstellung war das Mausoleum &#252;ber 40 Meter hoch und stand bis 1522 am Hafen von Halikarnassos, als die Ritter des Malteserordens es abtrugen, um die Steine zur Verteidigung gegen die anr&#252;ckenden T&#252;rken zu benutzen.</German>
+		<Italian>[TAB]Mausolo, satrapo della Caria, mor&#236; nel 349 a.C. Suo desiderio era quello di lasciare un ricordo di s&#233; alle generazioni future con una tomba grandiosa. Oltre a impiegare centinaia di operai, Mausolo commission&#242; a cinque dei migliori artigiani del mondo ellenico la progettazione delle centinaia di statue che avrebbero fiancheggiato la sua tomba di marmo bianco.[PARAGRAPH:1]Il Mausoleo di Mausolo, situato nel porto di Alicarnasso, era alto pi&#249; di 36 metri; nel 1522, quando i Cavalieri Ospitalieri di San Giovanni ne utilizzarono le pietre per costruire postazioni difensive prima dell'arrivo dei Turchi.</Italian>
+		<Spanish>[TAB]Mausolo muri&#243; en el a&#241;o 349 a. C. Rey de Caria durante toda su vida, Mausolo quiso legar a las generaciones futuras un recuerdo de su persona en forma de tumba. Adem&#225;s de contratar a cientos de trabajadores, se hizo con los servicios de cinco de los mejores artesanos del mundo heleno para dise&#241;ar los cientos de estatuas que deb&#237;an rodear su tumba de m&#225;rmol blanco.[PARAGRAPH:1]Con sus m&#225;s de cuarenta metros de altura una vez terminado, el Mausoleo de Mausolo permanecer&#237;a en el puerto de Halicarnaso hasta 1522, cuando los caballeros hospitalarios lo derribaron para levantar defensas contra los turcos.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
