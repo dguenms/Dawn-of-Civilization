@@ -2251,11 +2251,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Tag>
-		<English>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</English>
-		<French>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</French>
-		<German>[ICON_BULLET]+1 [ICON_COMMERCE] f&#252;r alle Geb&#228;ude</German>
-		<Italian>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</Italian>
-		<Spanish>[ICON_BULLET]+1 [ICON_COMMERCE] for all Buildings</Spanish>
+		<English>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</English>
+		<French>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</French>
+		<German>[ICON_BULLET]+1 [ICON_COMMERCE] pro Geb&#228;ude in der Stadt</German>
+		<Italian>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
