@@ -490,6 +490,7 @@ class RiseAndFall:
 		pChengdu.setPopulation(2)
 		pChengdu.setHasReligion(iConfucianism, True, False, False)
 		pChengdu.setHasRealBuilding(iGranary, True)
+		pChengdu.setHasRealBuilding(iDujiangyan, True)
 		
 		if utils.getScenario() == i600AD:
 			pBarbarian.found(105, 49)
