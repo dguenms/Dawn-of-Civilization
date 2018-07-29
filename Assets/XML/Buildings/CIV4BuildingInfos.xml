@@ -12723,6 +12723,51 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_METROPOLITAIN</BuildingClass>
+			<Type>BUILDING_METROPOLITAIN</Type>
+			<Description>TXT_KEY_BUILDING_METROPOLITAIN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_METROPOLITAIN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_METROPOLITAIN_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Help>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_METROPOLITAIN</ArtDefineTag>
+			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
+			<PrereqTech>TECH_PNEUMATICS</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>1000</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>16</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_NEUSCHWANSTEIN</BuildingClass>
 			<Type>BUILDING_NEUSCHWANSTEIN</Type>
 			<Description>TXT_KEY_BUILDING_NEUSCHWANSTEIN</Description>
