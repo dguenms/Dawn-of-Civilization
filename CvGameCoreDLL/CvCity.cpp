@@ -4726,7 +4726,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
-		if (isHasBuildingEffect((BuildingTypes)METROPOLITAIN))
+		if (isHasBuildingEffect((BuildingTypes)METROPOLITAIN) && eBuilding != METROPOLITAIN)
 		{
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)METROPOLITAIN).getBuildingClassType(), YIELD_COMMERCE, iChange);
 		}
