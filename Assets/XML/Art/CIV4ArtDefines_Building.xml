@@ -3317,5 +3317,15 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/TajMahal.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,7</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ABBEY_MILLS_PUMPING_STATION</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>3</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/AbbeyMillsPump/AbbeyMillsPump.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/AbbeyMillsPump/AbbeyMillsPump_btn.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
