@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_DESC</Tag>
 		<English>The Canadians</English>
-		<French>The Canadians</French>
+		<French>
+			<Text>Les Canadiens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Canadians</German>
 		<Italian>The Canadians</Italian>
 		<Spanish>The Canadians</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_PEOPLES</Tag>
 		<English>Canadian Peoples</English>
-		<French>Canadian Peoples</French>
+		<French>
+			<Text>Peuplades canadiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Canadian Peoples</German>
 		<Italian>Canadian Peoples</Italian>
 		<Spanish>Canadian Peoples</Spanish>
@@ -45,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_CANADA_REPUBLIC</Tag>
 		<English>Commonwealth of %s1</English>
 		<French>
-			<Text>Commonwealth d'%s1</Text>
+			<Text>Commonwealth du %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -68,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_COMMUNIST</Tag>
 		<English>%s2 Worker's Commonwealth</English>
-		<French>%s2 Worker's Commonwealth</French>
+		<French>
+			<Text>Commonwealth %s2 des travailleurs</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>%s2 Worker's Commonwealth</German>
 		<Italian>%s2 Worker's Commonwealth</Italian>
 		<Spanish>%s2 Worker's Commonwealth</Spanish>
@@ -100,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_ADJECTIVE</Tag>
 		<English>Canadian</English>
-		<French>Canadian</French>
+		<French>
+			<Text>canadien:canadienne:canadiens:canadiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Canadian</German>
 		<Italian>Canadian</Italian>
 		<Spanish>Canadian</Spanish>
@@ -108,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_SHORT_DESC</Tag>
 		<English>Canada</English>
-		<French>Canada</French>
+		<French>
+			<Text>Canada</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Canada</German>
 		<Italian>Canada</Italian>
 		<Spanish>Canada</Spanish>
