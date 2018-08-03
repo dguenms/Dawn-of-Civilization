@@ -51,9 +51,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CANADA_REPUBLIC</Tag>
-		<English>Commonwealth of %s1</English>
+		<English>%s2 Federation</English>
 		<French>
-			<Text>Commonwealth du %s1</Text>
+			<Text>F&#233;d&#233;ration %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
