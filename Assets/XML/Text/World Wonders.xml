@@ -2175,6 +2175,14 @@
 		<Spanish>Abbey Mills</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MENLO_PARK</Tag>
+		<English>Menlo Park</English>
+		<French>Menlo Park</French>
+		<German>Menlo Park</German>
+		<Italian>Menlo Park</Italian>
+		<Spanish>Menlo Park</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
