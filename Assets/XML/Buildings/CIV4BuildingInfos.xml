@@ -12768,6 +12768,59 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_NOBEL_PRIZE</BuildingClass>
+			<Type>BUILDING_NOBEL_PRIZE</Type>
+			<Description>TXT_KEY_BUILDING_NOBEL_PRIZE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_NOBEL_PRIZE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NOBEL_PRIZE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_NOBEL_PRIZE_HELP</Help>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_NOBEL_PRIZE</ArtDefineTag>
+			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
+			<PrereqTech>TECH_REFINING</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>800</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>16</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_UNIVERSITY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_METROPOLITAIN</BuildingClass>
 			<Type>BUILDING_METROPOLITAIN</Type>
 			<Description>TXT_KEY_BUILDING_METROPOLITAIN</Description>
@@ -12919,7 +12972,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MENLO_PARK</ArtDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>

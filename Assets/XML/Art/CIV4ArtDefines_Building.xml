@@ -448,14 +448,14 @@
 			<Button>,Art/Interface/Buttons/Buildings/Library.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,2</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_UNIVERSITY</Type>
+			<Type>ART_DEF_BUILDING_NATIONAL_COLLEGE</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.35</fScale>
 			<fInterfaceScale>0.67</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/University/University.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/University.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,7</Button>
+			<Button>Art/Structures/Buildings/National_College/Sorbonne.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_KOREAN_SEOWON</Type>
@@ -2448,16 +2448,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/HeroicEpic.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_NATIONAL_COLLEGE</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.7</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/National_College/fine_arts.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/National_College/Sorbonne.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MILITARY_ACADEMY</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3336,6 +3326,26 @@
 			<NIF>Art/Structures/Wonders/MenloPark/MenloPark.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/MenloPark/MenloPark_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NOBEL_PRIZE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Nobel_Prize/fine_arts.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Nobel_Prize/Nobel.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_UNIVERSITY</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/UniversityNew/University.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/University.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,7</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

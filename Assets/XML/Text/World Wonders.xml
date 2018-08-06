@@ -2183,6 +2183,30 @@
 		<Spanish>Menlo Park</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE</Tag>
+		<English>Nobel Prize</English>
+		<French>Nobel Prize</French>
+		<German>Nobelpreis</German>
+		<Italian>Nobel Prize</Italian>
+		<Spanish>Nobel Prize</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_HELP</Tag>
+		<English>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</English>
+		<French>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</French>
+		<German>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</German>
+		<Italian>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</Italian>
+		<Spanish>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT</Tag>
+		<English>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
+		<French>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</French>
+		<German>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
+		<Italian>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
+		<Spanish>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
