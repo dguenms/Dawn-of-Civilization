@@ -2237,5 +2237,14 @@
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_METROPOLITAIN</DefaultBuilding>
 		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ABBEY_MILLS</Type>
+			<Description>TXT_KEY_BUILDING_ABBEY_MILLS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_ABBEY_MILLS</DefaultBuilding>
+		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>
