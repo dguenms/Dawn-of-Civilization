@@ -694,6 +694,30 @@ class CvRFCEventHandler:
 				iGreatPerson = utils.getHighestEntry(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit))
 				if iGreatPerson >= 0:
 					gc.getPlayer(iPlayer).createGreatPeople(iGreatPerson, False, False, city.getX(), city.getY())
+					
+		# Leoreth: Nobel Prize effect
+		if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iNobelPrize).getBuildingClassType()) > 0:
+			if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() == 0 and gc.getUnitInfo(pUnit.getUnitType()).getEspionagePoints() == 0:
+				for iLoopPlayer in range(iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isHasBuildingEffect(iNobelPrize):
+						if gc.getPlayer(pUnit.getOwner()).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
+							for pLoopCity in utils.getCityList(iLoopPlayer):
+								if pLoopCity.isHasBuildingEffect(iNobelPrize):
+									iGreatPersonType = pUnit.getUnitType()
+									if iGreatPersonType in dFemaleGreatPeople.values():
+										for iLoopGreatPerson in dFemaleGreatPeople:
+											if iGreatPersonType == dFemaleGreatPeople[iLoopGreatPerson]:
+												iGreatPersonType = iLoopGreatPerson
+												break
+								
+									iGreatPeoplePoints = gc.getPlayer(iLoopPlayer).greatPeopleThreshold(False) / 4
+								
+									pLoopCity.changeGreatPeopleProgress(iGreatPeoplePoints)
+									pLoopCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
+									CyInterface().setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
+									CyInterface().addMessage(iLoopPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT", (gc.getPlayer(pUnit.getOwner()).getCivilizationAdjective(0), pUnit.getName(), pLoopCity.getName(), iGreatPeoplePoints)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+									break
+							break
 
 	def onReligionSpread(self, argsList):
 		iReligion, iOwner, pSpreadCity = argsList
