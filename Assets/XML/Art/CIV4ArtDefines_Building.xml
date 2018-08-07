@@ -2199,11 +2199,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HAGIA_SOPHIA</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<LSystem>LSYSTEM_HAGIA_SOPHIA</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/HagiaSophia/HagiaSophia.nif</NIF>
+			<NIF>Art/Structures/Wonders/HagiaSophia/HagiaSophia_Proper.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/HagiaSophia.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,3</Button>
 		</BuildingArtInfo>
