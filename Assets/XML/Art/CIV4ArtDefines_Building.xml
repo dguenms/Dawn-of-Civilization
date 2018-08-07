@@ -1843,9 +1843,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Large Hadron Collider/CERN.nif</NIF>
+			<NIF>Art/Structures/Wonders/LargeHadronCollider/CERN.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Large Hadron Collider/largehadroncollider.dds</Button>
+			<Button>Art/Structures/Wonders/LargeHadronCollider/largehadroncollider.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BOROBUDUR</Type>
@@ -2723,9 +2723,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.3</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Krak des Chevaliers/Krak16.nif</NIF>
+			<NIF>Art/Structures/Wonders/KrakDesChevaliers/Krak16.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Krak des Chevaliers/Krak_btn.dds</Button>
+			<Button>Art/Structures/Wonders/KrakDesChevaliers/Krak_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HOUSE_OF_WISDOM</Type>
@@ -2733,9 +2733,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/House of Wisdom/gondeshapur.nif</NIF>
+			<NIF>Art/Structures/Wonders/HouseOfWisdom/gondeshapur.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/House of Wisdom/HouseOfWisdom.dds</Button>
+			<Button>Art/Structures/Wonders/HouseOfWisdom/HouseOfWisdom.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SALSAL_BUDDHA</Type>
@@ -2753,9 +2753,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.065</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Saint Sophia/st_sophia.nif</NIF>
+			<NIF>Art/Structures/Wonders/SaintSophia/st_sophia.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Saint Sophia/Saint_Sophia.dds</Button>
+			<Button>Art/Structures/Wonders/SaintSophia/Saint_Sophia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SANTA_MARIA_DEL_FIORE</Type>
@@ -2763,9 +2763,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Santa Maria del Fiore/florence2.nif</NIF>
+			<NIF>Art/Structures/Wonders/SantaMariaDelFiore/florence2.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Santa Maria del Fiore/SantaMariaDelFiore.dds</Button>
+			<Button>Art/Structures/Wonders/SantaMariaDelFiore/SantaMariaDelFiore.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_IRON_PILLAR</Type>
@@ -2773,9 +2773,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>8.5</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Iron Pillar/Kutlug-Timur.nif</NIF>
+			<NIF>Art/Structures/Wonders/IronPillar/Kutlug-Timur.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Iron Pillar/iron_pillar.dds</Button>
+			<Button>Art/Structures/Wonders/IronPillar/iron_pillar.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SILVER_TREE_FOUNTAIN</Type>
@@ -2783,9 +2783,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Silver Tree Fountain/Silver_Tree.nif</NIF>
+			<NIF>Art/Structures/Wonders/SilverTreeFountain/Silver_Tree.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Silver Tree Fountain/SilverTreeFountain.dds</Button>
+			<Button>Art/Structures/Wonders/SilverTreeFountain/SilverTreeFountain.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SAINT_THOMAS_CHURCH</Type>
@@ -2793,9 +2793,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.8</fScale>
 			<fInterfaceScale>0.44</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Saint Thomas Church/christian monastery.nif</NIF>
+			<NIF>Art/Structures/Wonders/SaintThomasChurch/christian monastery.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Saint Thomas Church/SaintThomas.dds</Button>
+			<Button>Art/Structures/Wonders/SaintThomasChurch/SaintThomas.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ESCORIAL</Type>
@@ -2813,9 +2813,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>3.5</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Torre de Belem/torre13.nif</NIF>
+			<NIF>Art/Structures/Wonders/TorreDeBelem/torre13.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Torre de Belem/TorreBelem_Button.dds</Button>
+			<Button>Art/Structures/Wonders/TorreDeBelem/TorreBelem_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_POTALA_PALACE</Type>
@@ -2833,9 +2833,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.85</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Shalimar Gardens/theatre.nif</NIF>
+			<NIF>Art/Structures/Wonders/ShalimarGardens/theatre.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Shalimar Gardens/ShalimarGardens.dds</Button>
+			<Button>Art/Structures/Wonders/ShalimarGardens/ShalimarGardens.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Type>
@@ -2843,9 +2843,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.55</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Image of the World Square/imamreza.nif</NIF>
+			<NIF>Art/Structures/Wonders/ImageOfTheWorldSquare/imamreza.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Image of the World Square/ImageOfTheWorldSquare.dds</Button>
+			<Button>Art/Structures/Wonders/ImageOfTheWorldSquare/ImageOfTheWorldSquare.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BOURSE</Type>
@@ -2863,9 +2863,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.35</fScale>
 			<fInterfaceScale>0.47</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Itsukushima Shrine/torii.nif</NIF>
+			<NIF>Art/Structures/Wonders/ItsukushimaShrine/torii.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Itsukushima Shrine/torii.dds</Button>
+			<Button>Art/Structures/Wonders/ItsukushimaShrine/torii.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_LOUVRE</Type>
@@ -2883,9 +2883,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/National Gallery/Schonbrunn.nif</NIF>
+			<NIF>Art/Structures/Buildings/National_Gallery/Schonbrunn.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/National Gallery/NationalGallery.dds</Button>
+			<Button>Art/Structures/Buildings/National_Gallery/NationalGallery.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SALT_CATHEDRAL</Type>
@@ -2893,9 +2893,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.32</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Salt Cathedral/Wieliczka.nif</NIF>
+			<NIF>Art/Structures/Wonders/SaltCathedral/Wieliczka.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Salt Cathedral/Button_Wieliczka.dds</Button>
+			<Button>Art/Structures/Wonders/SaltCathedral/Button_Wieliczka.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_EMERALD_BUDDHA</Type>
@@ -2903,9 +2903,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Emerald Buddha/phathatluang.nif</NIF>
+			<NIF>Art/Structures/Wonders/EmeraldBuddha/phathatluang.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Emerald Buddha/EmeraldBuddha.dds</Button>
+			<Button>Art/Structures/Wonders/EmeraldBuddha/EmeraldBuddha.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BELL_ROCK_LIGHTHOUSE</Type>
@@ -2913,9 +2913,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.32</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Bell Rock Lighthouse/lighthouse.nif</NIF>
+			<NIF>Art/Structures/Wonders/BellRockLighthouse/lighthouse.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Bell Rock Lighthouse/BellRockLighthouse.dds</Button>
+			<Button>Art/Structures/Wonders/BellRockLighthouse/BellRockLighthouse.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_NEUSCHWANSTEIN</Type>
@@ -2933,9 +2933,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.9</fScale>
 			<fInterfaceScale>1.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Brooklyn Bridge/Bridge_NS.nif</NIF>
+			<NIF>Art/Structures/Wonders/BrooklynBridge/Bridge_NS.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Brooklyn Bridge/bridge button.dds</Button>
+			<Button>Art/Structures/Wonders/BrooklynBridge/bridge_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CRYSTAL_PALACE</Type>
@@ -2943,9 +2943,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.4</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Crystal Palace/CrystalPalace4.nif</NIF>
+			<NIF>Art/Structures/Wonders/CrystalPalace/CrystalPalace4.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Crystal Palace/crystalpalace.dds</Button>
+			<Button>Art/Structures/Wonders/CrystalPalace/crystalpalace.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TSUKIJI</Type>
@@ -2963,9 +2963,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Sagrada Familia/sagrada_familia.nif</NIF>
+			<NIF>Art/Structures/Wonders/SagradaFamilia/sagrada_familia.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Sagrada Familia/sagradafamilia.dds</Button>
+			<Button>Art/Structures/Wonders/SagradaFamilia/sagradafamilia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_DUJIANGYAN</Type>
@@ -2983,9 +2983,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.2</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Monolithic Church/bete_giyorgis.nif</NIF>
+			<NIF>Art/Structures/Wonders/MonolithicChurch/bete_giyorgis.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Monolithic Church/BeteGiyorgis_Button.dds</Button>
+			<Button>Art/Structures/Wonders/MonolithicChurch/BeteGiyorgis_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GOLDEN_GATE_BRIDGE</Type>
@@ -2993,9 +2993,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.005</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Golden Gate Bridge/Bridge.nif</NIF>
+			<NIF>Art/Structures/Wonders/GoldenGateBridge/Bridge.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Golden Gate Bridge/bridge.dds</Button>
+			<Button>Art/Structures/Wonders/GoldenGateBridge/bridge.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ATOMIUM</Type>
@@ -3013,9 +3013,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.7</fScale>
 			<fInterfaceScale>0.35</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/World Trade Center/wtc.nif</NIF>
+			<NIF>Art/Structures/Wonders/WorldTradeCenter/wtc.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/World Trade Center/WorldTradeCenter.dds</Button>
+			<Button>Art/Structures/Wonders/WorldTradeCenter/WorldTradeCenter.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HARBOUR_OPERA</Type>
@@ -3023,9 +3023,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Harbour Opera/Sydney_Opera_House.nif</NIF>
+			<NIF>Art/Structures/Wonders/HarbourOpera/Sydney_Opera_House.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Harbour Opera/opera_house_button.dds</Button>
+			<Button>Art/Structures/Wonders/HarbourOpera/opera_house_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BURJ_KHALIFA</Type>
@@ -3033,9 +3033,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
 			<fInterfaceScale>0.25</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Burj Khalifa/burj2_v3.nif</NIF>
+			<NIF>Art/Structures/Wonders/BurjKhalifa/burj2_v3.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Burj Khalifa/burjkhalifa.dds</Button>
+			<Button>Art/Structures/Wonders/BurjKhalifa/burjkhalifa.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HUBBLE_SPACE_TELESCOPE</Type>
@@ -3043,9 +3043,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
 			<fInterfaceScale>0.07</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Hubble Space Telescope/Hubble.nif</NIF>
+			<NIF>Art/Structures/Wonders/HubbleSpaceTelescope/Hubble.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Hubble Space Telescope/hubble_btn.dds</Button>
+			<Button>Art/Structures/Wonders/HubbleSpaceTelescope/hubble_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CHANNEL_TUNNEL</Type>
@@ -3053,9 +3053,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.15</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Channel Tunnel/Eurotunnel.nif</NIF>
+			<NIF>Art/Structures/Wonders/ChannelTunnel/Eurotunnel.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Channel Tunnel/Eurotunnel.dds</Button>
+			<Button>Art/Structures/Wonders/ChannelTunnel/Eurotunnel.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_DELTA_WORKS</Type>
@@ -3063,9 +3063,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.8</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Delta Works/Levee.nif</NIF>
+			<NIF>Art/Structures/Wonders/DeltaWorks/Levee.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Delta Works/deltaworks.dds</Button>
+			<Button>Art/Structures/Wonders/DeltaWorks/deltaworks.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_IRON_DOME</Type>
@@ -3073,9 +3073,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Iron Dome/Coastal.nif</NIF>
+			<NIF>Art/Structures/Wonders/IronDome/Coastal.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Iron Dome/irondome.dds</Button>
+			<Button>Art/Structures/Wonders/IronDome/irondome.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ORIENTAL_PEARL_TOWER</Type>
@@ -3083,9 +3083,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Oriental Pearl Tower/teltower02.nif</NIF>
+			<NIF>Art/Structures/Wonders/OrientalPearlTower/teltower02.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Oriental Pearl Tower/orientalpearltower.dds</Button>
+			<Button>Art/Structures/Wonders/OrientalPearlTower/orientalpearltower.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GARDENS_BY_THE_BAY</Type>
@@ -3093,9 +3093,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.7</fScale>
 			<fInterfaceScale>0.68</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Gardens by the Bay/GardensByTheBay.nif</NIF>
+			<NIF>Art/Structures/Wonders/GardensByTheBay/GardensByTheBay.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Gardens by the Bay/gardens.dds</Button>
+			<Button>Art/Structures/Wonders/GardensByTheBay/gardens.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BLETCHLEY_PARK</Type>
@@ -3103,9 +3103,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Bletchley Park/Bletch20.nif</NIF>
+			<NIF>Art/Structures/Wonders/BletchleyPark/Bletch20.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Bletchley Park/bletchleypark.dds</Button>
+			<Button>Art/Structures/Wonders/BletchleyPark/bletchleypark.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MOTHERLAND_CALLS</Type>
@@ -3113,9 +3113,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.06</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/The Motherland Calls/motherland.nif</NIF>
+			<NIF>Art/Structures/Wonders/TheMotherlandCalls/motherland.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/The Motherland Calls/motherland.dds</Button>
+			<Button>Art/Structures/Wonders/TheMotherlandCalls/motherland.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BERLAYMONT</Type>
@@ -3153,9 +3153,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.7</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Vijaya Stambha/victory.nif</NIF>
+			<NIF>Art/Structures/Wonders/VijayaStambha/victory.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Vijaya Stambha/vijayastambha.dds</Button>
+			<Button>Art/Structures/Wonders/VijayaStambha/vijayastambha.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AL_KHAZNEH</Type>
@@ -3163,9 +3163,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Al Khazneh/Petra.nif</NIF>
+			<NIF>Art/Structures/Wonders/AlKhazneh/Petra.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Al Khazneh/Button_AlKhazneh.dds</Button>
+			<Button>Art/Structures/Wonders/AlKhazneh/Button_AlKhazneh.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ALAMUT</Type>
@@ -3193,9 +3193,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.85</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Seed Vault/Svalbard.nif</NIF>
+			<NIF>Art/Structures/Wonders/SeedVault/Svalbard.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Seed Vault/seedvault_btn.dds</Button>
+			<Button>Art/Structures/Wonders/SeedVault/seedvault_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GUADALUPE_BASILICA</Type>
@@ -3213,9 +3213,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.75</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Mole Antonelliana/mole_antoneliana.nif</NIF>
+			<NIF>Art/Structures/Wonders/MoleAntonelliana/mole_antoneliana.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Mole Antonelliana/mole_antoneliana.dds</Button>
+			<Button>Art/Structures/Wonders/MoleAntonelliana/mole_antoneliana.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GUR_E_AMIR</Type>
@@ -3233,9 +3233,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.8</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Lotus Temple/lotus6.nif</NIF>
+			<NIF>Art/Structures/Wonders/LotusTemple/lotus6.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Lotus Temple/lotus_btn.dds</Button>
+			<Button>Art/Structures/Wonders/LotusTemple/lotus_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AQUA_APPIA</Type>
@@ -3245,7 +3245,7 @@
 			<fInterfaceScale>0.65</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Aqueduct/Pedia_Aqueduct.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Aqua Appia/aqua_appia.dds</Button>
+			<Button>Art/Structures/Wonders/AquaAppia/aqua_appia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AMBER_ROOM</Type>
@@ -3253,9 +3253,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.25</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Amber Room/Sheremetevo01.nif</NIF>
+			<NIF>Art/Structures/Wonders/AmberRoom/Sheremetevo01.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Amber Room/AmberRoom.dds</Button>
+			<Button>Art/Structures/Wonders/AmberRoom/AmberRoom.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PALACE_OF_NATIONS</Type>
@@ -3263,9 +3263,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Palace of Nations/The_Palais_des_Nations.nif</NIF>
+			<NIF>Art/Structures/Wonders/PalaceOfNations/The_Palais_des_Nations.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Palace of Nations/PalaceOfNations.dds</Button>
+			<Button>Art/Structures/Wonders/PalaceOfNations/PalaceOfNations.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_OXFORD_UNIVERSITY</Type>
