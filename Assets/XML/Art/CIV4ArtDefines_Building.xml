@@ -3347,5 +3347,35 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/University.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,7</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CRYSTAL_CATHEDRAL</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/CrystalCathedral/CrystalCathedral.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/CrystalCathedral/CrystalCathedral_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SKYTREE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Skytree/Skytree.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Skytree/Skytree_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_LAS_LAJAS</Type>
+			<LSystem>LSYSTEM_RIVER</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.75</fScale>
+			<fInterfaceScale>0.75</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/LasLajas/LasLajas.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/LasLajas/LasLajas_btn.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

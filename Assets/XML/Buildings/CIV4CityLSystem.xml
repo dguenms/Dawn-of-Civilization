@@ -1367,7 +1367,7 @@
 			<Attribute Class="Scalar">bLayoutAfterGenerics:1</Attribute>
 			<Attribute Class="Scalar">bNoContour:0</Attribute>
 			<Attribute Class="Scalar">bNoWaterTest:1</Attribute>
-			<Attribute Class="Scalar">bNoRotateCivilopedia:1</Attribute>
+			<!--<Attribute Class="Scalar">bNoRotateCivilopedia:1</Attribute>-->
 			<Rotate>45</Rotate>
 		</ArtRef>
 		<ArtRef Name="building:LSYSTEM_LIGHTHOUSE">
