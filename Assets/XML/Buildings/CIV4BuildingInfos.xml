@@ -14573,7 +14573,6 @@
 			<Strategy>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LARGE_HADRON_COLLIDER</ArtDefineTag>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -14615,7 +14614,6 @@
 			<Help>TXT_KEY_BUILDING_ITER_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ITER</ArtDefineTag>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<PrereqTech>TECH_FUSION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
