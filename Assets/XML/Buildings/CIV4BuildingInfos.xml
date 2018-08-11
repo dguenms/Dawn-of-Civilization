@@ -12366,6 +12366,7 @@
 			<OrPrereqReligion>RELIGION_ORTHODOXY</OrPrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_GEOLOGY</PrereqTech>
+			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
