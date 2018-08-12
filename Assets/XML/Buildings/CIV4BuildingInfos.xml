@@ -8521,6 +8521,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_STONEHENGE</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -8599,7 +8600,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_PARTHENON</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -8654,7 +8655,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -8821,6 +8822,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_IVORY</BonusType>
@@ -8875,6 +8877,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_GOLD</BonusType>
@@ -9094,6 +9097,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -9252,6 +9256,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -9307,6 +9312,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -9360,6 +9366,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -9413,6 +9420,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_FORGE</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_IRON</BonusType>
@@ -9521,6 +9529,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_WALLS</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -9582,6 +9591,7 @@
 					</YieldChanges>
 				</SpecialistYieldChange>
 			</SpecialistYieldChanges>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -9629,7 +9639,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_WALLS</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -9684,6 +9694,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_STONEHENGE</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -9789,7 +9800,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -9986,6 +9997,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -10033,6 +10045,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -10090,6 +10103,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -10148,6 +10162,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -10209,6 +10224,7 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_STONEHENGE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -10427,6 +10443,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -10475,6 +10492,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -10545,6 +10563,7 @@
 					</YieldChanges>
 				</SpecialistYieldChange>
 			</SpecialistYieldChanges>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -10597,6 +10616,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -10652,7 +10672,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -10705,7 +10725,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -10759,7 +10779,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_GREATLIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -10871,7 +10891,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</StateReligionCommerces>
-			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
+			<ConstructSound>AS2D_BUILD_GREATLIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -10932,6 +10952,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_PARTHENON</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -10985,6 +11006,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_MARBLE</BonusType>
@@ -11038,6 +11060,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -11089,6 +11112,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -11162,6 +11186,7 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -11216,6 +11241,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -11266,6 +11292,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -11324,7 +11351,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_GOLD</BonusType>
@@ -11384,6 +11411,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_GREATLIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -11438,6 +11466,7 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_GREATLIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -11491,6 +11520,7 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -11657,6 +11687,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -11704,6 +11735,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_PARTHENON</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -11762,7 +11794,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_SILVER</BonusType>
@@ -11817,7 +11849,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
+			<ConstructSound>AS2D_BUILD_LIGHTHOUSE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -11943,6 +11975,7 @@
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -11990,6 +12023,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -12086,7 +12120,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_PARTHENON</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -12399,6 +12433,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -12639,7 +12674,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_COLOSSUS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -12699,6 +12734,7 @@
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_PARTHENON</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -12750,6 +12786,7 @@
 					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -12899,7 +12936,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -13003,6 +13040,7 @@
 					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -13099,7 +13137,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_OBSERVATORY</ConstructSound>
 			<FreeSpecialistCounts>
 				<FreeSpecialistCount>
 					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
@@ -13154,6 +13192,7 @@
 			<SeaPlotYieldChanges>
 				<iYield>1</iYield>
 			</SeaPlotYieldChanges>
+			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -13183,6 +13222,7 @@
 			<iGlobalExperience>2</iGlobalExperience>
 			<iAsset>20</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -13227,6 +13267,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -13392,6 +13433,7 @@
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -13437,6 +13479,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -13545,6 +13588,7 @@
 					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -13594,6 +13638,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_COURTHOUSE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -13644,6 +13689,7 @@
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -13687,6 +13733,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
@@ -13727,6 +13774,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -13767,6 +13815,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -13816,6 +13865,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ITAIPU_DAM</BuildingClass>
@@ -13846,6 +13896,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<ConstructSound>AS2D_BUILD_PLANTHYDRO</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_HOLLYWOOD</BuildingClass>
@@ -13880,6 +13931,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_THEATRE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -13912,6 +13964,7 @@
 			<iConquestProb>100</iConquestProb>
 			<iAsset>20</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_COURTHOUSE</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CN_TOWER</BuildingClass>
@@ -13950,6 +14003,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -14023,6 +14077,7 @@
 					<iProductonModifier>50</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -14071,6 +14126,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -14252,7 +14308,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -14297,6 +14353,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -14348,6 +14405,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>100</iCommerce>
 			</CommerceModifiers>
+			<ConstructSound>AS2D_BUILD_OBSERVATORY</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -14392,6 +14450,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -14443,6 +14502,7 @@
 				<iYield>1</iYield>
 				<iYield>1</iYield>
 			</SeaPlotYieldChanges>
+			<ConstructSound>AS2D_BUILD_PLANTHYDRO</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -14491,6 +14551,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
@@ -14535,6 +14596,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -14580,6 +14642,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -14618,6 +14681,7 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_IRONWORKS</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
