@@ -150,7 +150,7 @@
 		<English>US-Occupied %s1</English>
 		<French>
 			<Text>Zone d'occupation am&#233;ricaine en %s1</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>US-Occupied %s1</German>
