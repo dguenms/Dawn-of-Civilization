@@ -2691,8 +2691,8 @@
 			<Type>ART_DEF_BUILDING_PRAMBANAN</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.2</fScale>
-			<fInterfaceScale>0.48</fInterfaceScale>
+			<fScale>7</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Prambanan/Prambanan.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Prambanan/Prambanan_Button.dds</Button>
@@ -3376,6 +3376,16 @@
 			<NIF>Art/Structures/Wonders/LasLajas/LasLajas.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/LasLajas/LasLajas_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KAZIMIERZ</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>7</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Kazimierz/Kazimierz.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Kazimierz/Kazimierz_btn.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
