@@ -461,8 +461,8 @@
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
 		<English>West India</English>
 		<French>
-			<Text>Inde de l'Ouest %s2</Text>
-			<Gender>Male</Gender>
+			<Text>Inde de l'ouest %s2</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>West India</German>
@@ -474,7 +474,7 @@
 		<English>%s2 Equatorial Africa</English>
 		<French>
 			<Text>Afrique-&#201;quatoriale %s2</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>%s2 Equatorial Africa</German>
