@@ -437,7 +437,7 @@
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_KHMER</Tag>
 		<English>Indochina</English>
 		<French>
-			<Text>Indochine %s2</Text>
+			<Text>Indochine</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -461,7 +461,7 @@
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
 		<English>West India</English>
 		<French>
-			<Text>Inde de l'ouest %s2</Text>
+			<Text>Inde de l'ouest</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>

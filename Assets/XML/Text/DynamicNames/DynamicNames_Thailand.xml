@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_DESC</Tag>
 		<English>The Thais</English>
-		<French>The Thais</French>
+		<French>
+			<Text>Les Tha&#239;s</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Thais</German>
 		<Italian>The Thais</Italian>
 		<Spanish>The Thais</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_PEOPLES</Tag>
 		<English>Thai Peoples</English>
-		<French>Thai Peoples</French>
+		<French>
+			<Text>Peuplades tha&#239;es</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Thai Peoples</German>
 		<Italian>Thai Peoples</Italian>
 		<Spanish>Thai Peoples</Spanish>
@@ -21,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_THAILAND_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -68,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_AYUTTHAYA</Tag>
 		<English>Ayutthaya</English>
-		<French>Ayutthaya</French>
+		<French>
+			<Text>Ayutthaya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Ayutthaya</German>
 		<Italian>Ayutthaya</Italian>
 		<Spanish>Ayutthaya</Spanish>
@@ -76,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SIAM</Tag>
 		<English>Siam</English>
-		<French>Siam</French>
+		<French>
+			<Text>Siam</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Siam</German>
 		<Italian>Siam</Italian>
 		<Spanish>Siam</Spanish>
@@ -84,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SIAMESE</Tag>
 		<English>Siamese</English>
-		<French>Siamese</French>
+		<French>
+			<Text>siamois:siamoise:siamois:siamoises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Siamese</German>
 		<Italian>Siamese</Italian>
 		<Spanish>Siamese</Spanish>
@@ -92,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAI_VASSAL</Tag>
 		<English>Mueang of %s1</English>
-		<French>Mueang of %s1</French>
+		<French>
+			<Text>Mueang de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mueang of %s1</German>
 		<Italian>Mueang of %s1</Italian>
 		<Spanish>Mueang of %s1</Spanish>
@@ -100,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_ADJECTIVE</Tag>
 		<English>Thai</English>
-		<French>Thai</French>
+		<French>
+			<Text>tha&#239;:tha&#239;e:tha&#239;s:tha&#239;es</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Thai</German>
 		<Italian>Thai</Italian>
 		<Spanish>Thai</Spanish>
@@ -108,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SHORT_DESC</Tag>
 		<English>Thailand</English>
-		<French>Thailand</French>
+		<French>
+			<Text>Tha&#239;lande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Thailand</German>
 		<Italian>Thailand</Italian>
 		<Spanish>Thailand</Spanish>
