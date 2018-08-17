@@ -40,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>
 		<English>Sweden</English>
-		<French>Sweden</French>
+		<French>
+			<Text>Su&#232;de</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sweden</German>
 		<Italian>Sweden</Italian>
 		<Spanish>Sweden</Spanish>
@@ -49,9 +53,9 @@
 		<Tag>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Tag>
 		<English>Swedish</English>
 		<French>
-			<Text>Su&#232;de</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
+			<Text>su&#233;dois:su&#233;doise:su&#233;dois:su&#233;doises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>Swedish</German>
 		<Italian>Swedish</Italian>
