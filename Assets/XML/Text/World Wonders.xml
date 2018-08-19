@@ -2239,6 +2239,14 @@
 		<Spanish>[ICON_BULLET]+10% unit heal rate in all cities</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CRYSTAL_CATHEDRAL</Tag>
+		<English>Crystal Cathedral</English>
+		<French>Crystal Cathedral</French>
+		<German>Kristallkathedrale</German>
+		<Italian>Crystal Cathedral</Italian>
+		<Spanish>Crystal Cathedral</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
