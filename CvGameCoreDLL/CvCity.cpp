@@ -343,6 +343,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
+	// Leoreth: Las Lajas Sanctuary effect: +10% heal rate in all cities
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LAS_LAJAS_SANCTUARY))
+	{
+		changeHealRate(10);
+	}
+
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
 

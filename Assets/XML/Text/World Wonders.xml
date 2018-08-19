@@ -2330,6 +2330,22 @@
 		<Spanish>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY</Tag>
+		<English>Las Lajas Sanctuary</English>
+		<French>Las Lajas Sanctuary</French>
+		<German>Las Lajas Wallfahrtskirche</German>
+		<Italian>Las Lajas Sanctuary</Italian>
+		<Spanish>Las Lajas Sanctuary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY_HELP</Tag>
+		<English>[ICON_BULLET]+10% unit heal rate in all cities</English>
+		<French>[ICON_BULLET]+10% unit heal rate in all cities</French>
+		<German>[ICON_BULLET]+10% Einheiten-Heilrate in allen St&#228;dten</German>
+		<Italian>[ICON_BULLET]+10% unit heal rate in all cities</Italian>
+		<Spanish>[ICON_BULLET]+10% unit heal rate in all cities</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

@@ -872,7 +872,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 303
+iNumBuildings = 304
 (iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
@@ -900,10 +900,10 @@ iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, i
 iSaintBasilsCathedral, iEscorial, iTorreDeBelem, iHarmandirSahib, iTrafalgarSquare, iPotalaPalace, iShalimarGardens, iImageOfTheWorldSquare, iBourse, iItsukushimaShrine, 
 iLouvre, iHermitage, iSaltCathedral, iAmberRoom, iEmeraldBuddha, iGuadalupeBasilica, iAbbeyMills, iBellRockLighthouse, iBrandenburgGate, iStatueOfLiberty, 
 iTriumphalArch, iMoleAntonelliana, iNobelPrize, iMetropolitain, iNeuschwanstein, iBrooklynBridge, iMenloPark, iCrystalPalace, iTsukijiFishMarket, iPentagon, 
-iMotherlandCalls, iLubyanka, iWestminsterPalace, iEiffelTower, iEmpireStateBuilding, iPalaceOfNations, iSagradaFamilia, iBerlaymont, iCERN, iBletchleyPark, 
-iWembley, iGraceland, iCristoRedentor, iItaipuDam, iHollywood, iUnitedNations, iCNTower, iGoldenGateBridge, iAtomium, iGlobalSeedVault, 
-iWorldTradeCenter, iHarbourOpera, iLotusTemple, iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iDeltaWorks, iIronDome, iOrientalPearlTower, iGardensByTheBay, 
-iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
+iMotherlandCalls, iLubyanka, iWestminsterPalace, iEiffelTower, iEmpireStateBuilding, iLasLajasSanctuary, iPalaceOfNations, iSagradaFamilia, iBerlaymont, iCERN, 
+iBletchleyPark, iWembley, iGraceland, iCristoRedentor, iItaipuDam, iHollywood, iUnitedNations, iCNTower, iGoldenGateBridge, iAtomium, 
+iGlobalSeedVault, iWorldTradeCenter, iHarbourOpera, iLotusTemple, iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iDeltaWorks, iIronDome, iOrientalPearlTower, 
+iGardensByTheBay, iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
 
 iBeginWonders = iGreatSphinx # different from DLL constant because that includes national wonders
 
