@@ -2247,6 +2247,14 @@
 		<Spanish>Crystal Cathedral</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SKYTREE</Tag>
+		<English>Skytree</English>
+		<French>Skytree</French>
+		<German>Skytree</German>
+		<Italian>Skytree</Italian>
+		<Spanish>Skytree</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
