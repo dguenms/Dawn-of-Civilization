@@ -309,7 +309,7 @@ class CvTechChooser:
 				for iFeature in xrange(gc.getNumFeatureInfos()):
 					iTech = gc.getBuildInfo(iBuild).getFeatureTech(iFeature)
 					if iTech > -1:
-						self.TechEffects[iTech].append(("Improvement", iBuild))
+						self.TechEffects[iTech].append(("Remove", iBuild))
 
 		# Resources
 		for iResource in xrange(gc.getNumBonusInfos()):
@@ -470,6 +470,7 @@ class CvTechChooser:
 
 		### Effects
 			fX = self.X_ITEMS
+			lRemoves = []
 			for index in xrange(len(self.TechEffects[tech])):
 				type = self.TechEffects[tech][index][0]
 				item = self.TechEffects[tech][index][1]
@@ -539,6 +540,10 @@ class CvTechChooser:
 				elif type == "Improvement":
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_IMPROVEMENT, tech, item, False)
 
+				elif type == "Remove":
+					lRemoves.append(item)
+					continue
+					
 				elif type == "ImprovementYield":
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getImprovementInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_YIELD_CHANGE, tech, item, False)
 
@@ -643,6 +648,10 @@ class CvTechChooser:
 					szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath()
 					screen.addDDSGFCAt(szItem, szTechBox, szFileName, iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PYTHON, 7800, tech, False)
 
+				fX += self.X_INCREMENT
+				
+			if len(lRemoves) > 0:
+				screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildInfo(lRemoves[0]).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_REMOVE, tech, tech, False)
 				fX += self.X_INCREMENT
 
 			fX = self.BOX_WIDTH - (self.PIXEL_INCREMENT * 2)

@@ -403,6 +403,10 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseBuildHelp(widgetDataStruct, szBuffer);
 		break;
 
+	case WIDGET_HELP_REMOVE:
+		parseRemoveHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_HELP_DOMAIN_EXTRA_MOVES:
 		parseDomainExtraMovesHelp(widgetDataStruct, szBuffer);
 		break;
@@ -1020,6 +1024,7 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 	case WIDGET_HELP_IGNORE_IRRIGATION:
 	case WIDGET_HELP_WATER_WORK:
 	case WIDGET_HELP_IMPROVEMENT:
+	case WIDGET_HELP_REMOVE:
 	case WIDGET_HELP_DOMAIN_EXTRA_MOVES:
 	case WIDGET_HELP_ADJUST:
 	case WIDGET_HELP_TERRAIN_TRADE:
@@ -4961,6 +4966,15 @@ void CvDLLWidgetData::parseImprovementHelp(CvWidgetDataStruct &widgetDataStruct,
 	if (widgetDataStruct.m_iData2 != 0)
 	{
 		GAMETEXT.setImprovementHelp(szBuffer, (ImprovementTypes)widgetDataStruct.m_iData1);
+	}
+}
+
+void CvDLLWidgetData::parseRemoveHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	if (widgetDataStruct.m_iData1 != 0)
+	{
+		log("parse remove help");
+		GAMETEXT.setRemoveHelp(szBuffer, (TechTypes)widgetDataStruct.m_iData1);
 	}
 }
 
