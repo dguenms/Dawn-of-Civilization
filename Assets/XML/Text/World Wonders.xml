@@ -2207,6 +2207,22 @@
 		<Spanish>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Tag>
+		<English>Old Synagogue</English>
+		<French>Old Synagogue</French>
+		<German>Alte Synagoge</German>
+		<Italian>Old Synagogue</Italian>
+		<Spanish>Old Synagogue</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLD_SYNAGOGUE_HELP</Tag>
+		<English>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</English>
+		<French>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</French>
+		<German>[ICON_BULLET]+2 [ICON_GOLD] durch j&#252;dische religi&#246;se Geb&#228;ude</German>
+		<Italian>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

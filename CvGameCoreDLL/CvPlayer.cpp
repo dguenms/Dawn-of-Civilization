@@ -6992,6 +6992,22 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	{
 		updateYield();
 	}
+
+	// Old Synagogue
+	else if (eBuilding == OLD_SYNAGOGUE)
+	{
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			for (int iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+			{
+				CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iJ);
+				if (kBuilding.getReligionType() == JUDAISM)
+				{
+					pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)kBuilding.getBuildingClassType(), COMMERCE_GOLD, 2 * iChange);
+				}
+			}
+		}
+	}
 }
 
 
