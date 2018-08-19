@@ -3287,7 +3287,7 @@
 			<Type>ART_DEF_BUILDING_METROPOLITAIN</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>12</fScale>
+			<fScale>6</fScale>
 			<fInterfaceScale>1</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Metropolitain/Metro.nif</NIF>
 			<KFM/>
