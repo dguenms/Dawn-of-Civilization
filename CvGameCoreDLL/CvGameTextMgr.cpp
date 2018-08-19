@@ -14959,6 +14959,36 @@ void CvGameTextMgr::setUnitCombatHelp(CvWStringBuffer &szBuffer, UnitCombatTypes
 	szBuffer.append(GC.getUnitCombatInfo(eUnitCombat).getDescription());
 }
 
+void CvGameTextMgr::setRemoveHelp(CvWStringBuffer &szBuffer, TechTypes eTech)
+{
+	CvWString szTempBuffer;
+
+	bool bFirst = true;
+	for (int iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iI);
+		if (!kBuild.isGraphicalOnly() && kBuild.getTechPrereq() == NO_TECH)
+		{
+			for (int iJ = 0; iJ < GC.getNumFeatureInfos(); iJ++)
+			{
+				if (kBuild.getFeatureTech(iJ) == eTech)
+				{
+					if (!bFirst)
+					{
+						szTempBuffer.Format(L", ");
+						szBuffer.append(szTempBuffer);
+					}
+
+					szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), kBuild.getDescription());
+					szBuffer.append(szTempBuffer);
+
+					bFirst = false;	
+				}
+			}
+		}
+	}
+}
+
 void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTypes eImprovement, bool bCivilopediaText)
 {
 	CvWString szTempBuffer;
