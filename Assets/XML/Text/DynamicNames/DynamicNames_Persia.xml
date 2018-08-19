@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_PERSIA_PEOPLES</Tag>
 		<English>Parsi Peoples</English>
 		<French>
-			<Text>Peuplades Parsi</Text>
+			<Text>Peuplades perses</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_PERSIA_DEFAULT</Tag>
 		<English>%s2 Shahdom</English>
 		<French>
-			<Text>Royaume %s2 du Shah</Text>
+			<Text>Royaume %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -76,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_FASCIST</Tag>
 		<English>Neo-Persian Empire</English>
-		<French>Neo-Persian Empire</French>
+		<French>
+			<Text>Empire n&#233;o-perse</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Neo-Persian Empire</German>
 		<Italian>Neo-Persian Empire</Italian>
 		<Spanish>Neo-Persian Empire</Spanish>
@@ -85,7 +89,7 @@
 		<Tag>TXT_KEY_CIV_IRAN_DEFAULT</Tag>
 		<English>%s2 Shahdom</English>
 		<French>
-			<Text>Royaume %s2 du Shah</Text>
+			<Text>Royaume %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -108,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_FASCIST</Tag>
 		<English>National-Socialist Workers' %s1</English>
-		<French>National-Socialist Workers' %s1</French>
+		<French>
+			<Text>%s1 des travailleurs nationaux-socialistes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>National-Socialist Workers' %s1</German>
 		<Italian>National-Socialist Workers' %s1</Italian>
 		<Spanish>National-Socialist Workers' %s1</Spanish>
@@ -116,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_MEDIAN</Tag>
 		<English>Median</English>
-		<French>Median</French>
+		<French>
+			<Text>m&#232;de:m&#232;de:m&#232;des:m&#232;des</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Median</German>
 		<Italian>Median</Italian>
 		<Spanish>Median</Spanish>
@@ -124,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_PARTHIAN</Tag>
 		<English>Parthian</English>
-		<French>Parthian</French>
+		<French>
+			<Text>parthe:parthe:parthes:parthes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Parthian</German>
 		<Italian>Parthian</Italian>
 		<Spanish>Parthian</Spanish>
@@ -132,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_ACHAEMENID</Tag>
 		<English>Achaemenid</English>
-		<French>Achaemenid</French>
+		<French>ach&#233;m&#233;nide</French>
 		<German>Achaemenid</German>
 		<Italian>Achaemenid</Italian>
 		<Spanish>Achaemenid</Spanish>
@@ -140,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_SASSANID</Tag>
 		<English>Sassanid</English>
-		<French>Sassanid</French>
+		<French>sassanide</French>
 		<German>Sassanid</German>
 		<Italian>Sassanid</Italian>
 		<Spanish>Sassanid</Spanish>
@@ -148,7 +164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_SAFAVID</Tag>
 		<English>Safavid</English>
-		<French>Safavid</French>
+		<French>s&#233;f&#233;vide</French>
 		<German>Safavid</German>
 		<Italian>Safavid</Italian>
 		<Spanish>Safavid</Spanish>
@@ -156,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_QAJAR</Tag>
 		<English>Qajar</English>
-		<French>Qajar</French>
+		<French>kadjar</French>
 		<German>Qajar</German>
 		<Italian>Qajar</Italian>
 		<Spanish>Qajar</Spanish>
@@ -173,7 +189,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_VASSAL</Tag>
 		<English>Satrapy of %s1</English>
 		<French>
-			<Text>Satrape d'%s1</Text>
+			<Text>Satrapie de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -197,7 +213,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_EGYPT</Tag>
 		<English>Sixth Satrapy</English>
 		<French>
-			<Text>Sixi&#232;me Satrape</Text>
+			<Text>Sixi&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -221,7 +237,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_INDIA</Tag>
 		<English>Twentieth Satrapy</English>
 		<French>
-			<Text>Vingti&#232;me Satrape</Text>
+			<Text>Vingti&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -245,7 +261,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_BABYLONIA</Tag>
 		<English>Ninth Satrapy</English>
 		<French>
-			<Text>Neuvi&#232;me Satrape</Text>
+			<Text>Neuvi&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -269,7 +285,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_GREECE</Tag>
 		<English>First Satrapy</English>
 		<French>
-			<Text>Premi&#232;re Satrape</Text>
+			<Text>Premi&#232;re Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -293,7 +309,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_ETHIOPIA</Tag>
 		<English>Seventeenth Satrapy</English>
 		<French>
-			<Text>Dix-Septi&#232;me Satrape</Text>
+			<Text>Dix-Septi&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -317,7 +333,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_ARABIA</Tag>
 		<English>Fifth Satrapy</English>
 		<French>
-			<Text>Cinqui&#232;me Satrape</Text>
+			<Text>Cinqui&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -341,7 +357,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_MONGOLIA</Tag>
 		<English>Fifteenth Satrapy</English>
 		<French>
-			<Text>Quinzi&#232;me Satrape</Text>
+			<Text>Quinzi&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -365,7 +381,7 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_OTTOMANS</Tag>
 		<English>Fourth Satrapy</English>
 		<French>
-			<Text>Quatri&#232;me Satrape</Text>
+			<Text>Quatri&#232;me Satrapie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -390,7 +406,7 @@
 		<English>Anatolia</English>
 		<French>
 			<Text>Anatolie</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -412,7 +428,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_NAME_INDONESIA</Tag>
 		<English>Malacca</English>
-		<French>Malacca</French>
+		<French>
+			<Text>Malacca</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Malacca</German>
 		<Italian>Malacca</Italian>
 		<Spanish>Malacca</Spanish>
@@ -420,7 +440,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_NAME_TURKS</Tag>
 		<English>Sogdiana</English>
-		<French>Sogdiana</French>
+		<French>
+			<Text>Sogdiane</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sogdiana</German>
 		<Italian>Sogdiana</Italian>
 		<Spanish>Sogdiana</Spanish>
@@ -428,7 +452,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_ADJECTIVE</Tag>
 		<English>Iranian</English>
-		<French>Iranian</French>
+		<French>
+			<Text>iranien:iranienne:iraniens:iraniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Iranian</German>
 		<Italian>Iranian</Italian>
 		<Spanish>Iranian</Spanish>
@@ -437,7 +465,7 @@
 		<Tag>TXT_KEY_CIV_IRAN_DESC</Tag>
 		<English>The Iranians</English>
 		<French>
-			<Text>Les Perses</Text>
+			<Text>Les Iraniens</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -460,7 +488,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_SHORT_DESC</Tag>
 		<English>Iran</English>
-		<French>Iran</French>
+		<French>
+			<Text>Iran</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Iran</German>
 		<Italian>Iran</Italian>
 		<Spanish>Iran</Spanish>
@@ -494,8 +526,8 @@
 		<English>Persia</English>
 		<French>
 			<Text>Perse</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Persien</Text>

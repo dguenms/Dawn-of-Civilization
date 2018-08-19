@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_ARABIA_PEOPLES</Tag>
 		<English>Bedouin Peoples</English>
 		<French>
-			<Text>Peuplades B&#233;douins</Text>
+			<Text>Peuplades b&#233;douines</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -52,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_DEFAULT</Tag>
 		<English>%s2 Sultanates</English>
-		<French>%s2 Sultanates</French>
+		<French>
+			<Text>Sultanats arabes</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>%s2 Sultanates</German>
 		<Italian>%s2 Sultanates</Italian>
 		<Spanish>%s2 Sultanates</Spanish>
@@ -61,7 +65,7 @@
 		<Tag>TXT_KEY_CIV_ARABIA_REPUBLIC</Tag>
 		<English>Arab League</English>
 		<French>
-			<Text>Ligue Arabe</Text>
+			<Text>Ligue arabe</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -85,7 +89,7 @@
 		<Tag>TXT_KEY_CIV_ARABIA_FASCIST</Tag>
 		<English>Pan Arab State</English>
 		<French>
-			<Text>Etat Pan-Arabe</Text>
+			<Text>&#201;tat panarabe</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -109,7 +113,7 @@
 		<Tag>TXT_KEY_CIV_ARABIA_COMMUNIST</Tag>
 		<English>Baathist %s1</English>
 		<French>
-			<Text>%s1 Baasiste</Text>
+			<Text>%s1 baathiste</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -132,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_SAUDI</Tag>
 		<English>Saudi-Arabia</English>
-		<French>Saudi-Arabia</French>
+		<French>
+			<Text>Arabie saoudite</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Saudi-Arabia</German>
 		<Italian>Saudi-Arabia</Italian>
 		<Spanish>Saudi-Arabia</Spanish>
@@ -140,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_RASHIDUN</Tag>
 		<English>Rashidun</English>
-		<French>Rashidun</French>
+		<French>rachidun</French>
 		<German>Rashidun</German>
 		<Italian>Rashidun</Italian>
 		<Spanish>Rashidun</Spanish>
@@ -148,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_UMMAYAD</Tag>
 		<English>Umayyad</English>
-		<French>Umayyad</French>
+		<French>omeyyade</French>
 		<German>Umayyad</German>
 		<Italian>Umayyad</Italian>
 		<Spanish>Umayyad</Spanish>
@@ -156,7 +164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_ABBASID</Tag>
 		<English>Abbasid</English>
-		<French>Abbasid</French>
+		<French>abbasside</French>
 		<German>Abbasid</German>
 		<Italian>Abbasid</Italian>
 		<Spanish>Abbasid</Spanish>
@@ -165,7 +173,7 @@
 		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL</Tag>
 		<English>Emirate of %s1</English>
 		<French>
-			<Text>Emirat de %s1</Text>
+			<Text>&#201;mirat de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -212,7 +220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BABYLONIA</Tag>
 		<English>Iraq</English>
-		<French>Iraq</French>
+		<French>Irak</French>
 		<German>Iraq</German>
 		<Italian>Iraq</Italian>
 		<Spanish>Iraq</Spanish>
@@ -365,7 +373,7 @@
 		<Tag>TXT_KEY_CIV_ARABIAN_OTTOMANS</Tag>
 		<English>Ottoman Sultanate</English>
 		<French>
-			<Text>Sultanat Ottoman</Text>
+			<Text>Sultanat ottoman</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -388,7 +396,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_MUGHALS</Tag>
 		<English>Emirate of Delhi</English>
-		<French>Emirate of Delhi</French>
+		<French>
+			<Text>&#201;mirat de Delhi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Emirate of Delhi</German>
 		<Italian>Emirate of Delhi</Italian>
 		<Spanish>Emirate of Delhi</Spanish>
@@ -422,8 +434,8 @@
 		<English>Arabia</English>
 		<French>
 			<Text>Arabie</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Arabien</Text>

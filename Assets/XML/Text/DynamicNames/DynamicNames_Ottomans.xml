@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
 		<English>The Ottomans</English>
-		<French>The Ottomans</French>
+		<French>
+			<Text>Les Ottomans</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Ottomans</German>
 		<Italian>The Ottomans</Italian>
 		<Spanish>The Ottomans</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
 		<English>Ottoman Peoples</English>
-		<French>Ottoman Peoples</French>
+		<French>
+			<Text>Peuplades ottomanes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Ottoman Peoples</German>
 		<Italian>Ottoman Peoples</Italian>
 		<Spanish>Ottoman Peoples</Spanish>
@@ -21,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
 		<English>Sublime %s2 State</English>
 		<French>
-			<Text>Sublime Etat %s2</Text>
+			<Text>&#201;tat %s2 exalt&#233;</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -45,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_TURKEY_COMMUNIST</Tag>
 		<English>National Democratic Popular %s1</English>
 		<French>
-			<Text>%s1 Nationale D&#233;mocratique Populaire</Text>
+			<Text>%s1 nationale d&#233;mocratique populaire</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -68,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
-		<French>Pan-Turkic Empire</French>
+		<French>
+			<Text>Empire panturc</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pan-Turkic Empire</German>
 		<Italian>Pan-Turkic Empire</Italian>
 		<Spanish>Pan-Turkic Empire</Spanish>
@@ -76,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMANS_OTTOMAN</Tag>
 		<English>Ottoman</English>
-		<French>Ottoman</French>
+		<French>
+			<Text>ottoman:ottomane:ottomans:ottomanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Ottoman</German>
 		<Italian>Ottoman</Italian>
 		<Spanish>Ottoman</Spanish>
@@ -85,7 +101,7 @@
 		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
 		<English>Islamic %s2 Democracy</English>
 		<French>
-			<Text>D&#233;mocratie Islamique %s2</Text>
+			<Text>D&#233;mocratie islamique %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -109,7 +125,7 @@
 		<Tag>TXT_KEY_CIV_OTTOMAN_VASSAL</Tag>
 		<English>Eyalet of %s1</English>
 		<French>
-			<Text>Eyalet d'%s1</Text>
+			<Text>Eyalet de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -132,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_EGYPT</Tag>
 		<English>Khedivate of %s1</English>
-		<French>Khedivate of %s1</French>
+		<French>
+			<Text>Kh&#233;divat d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Khedivate of %s1</German>
 		<Italian>Khedivate of %s1</Italian>
 		<Spanish>Khedivate of %s1</Spanish>
@@ -140,7 +160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_BABYLONIA</Tag>
 		<English>Eyalet of Mesopotamia</English>
-		<French>Eyalet of Mesopotamia</French>
+		<French>
+			<Text>Eyalet de M&#233;sopotamie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eyalet of Mesopotamia</German>
 		<Italian>Eyalet of Mesopotamia</Italian>
 		<Spanish>Eyalet of Mesopotamia</Spanish>
@@ -196,7 +220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_PHOENICIA</Tag>
 		<English>Eyalet of Syria</English>
-		<French>Eyalet of Syria</French>
+		<French>
+			<Text>Eyalet de Syrie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eyalet of Syria</German>
 		<Italian>Eyalet of Syria</Italian>
 		<Spanish>Eyalet of Syria</Spanish>
@@ -205,7 +233,7 @@
 		<Tag>TXT_KEY_CIV_OTTOMAN_ETHIOPIA</Tag>
 		<English>Eyalet of Habes</English>
 		<French>
-			<Text>Eyalet d'Ethiopie</Text>
+			<Text>Eyalet d'&#201;thiopie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -228,7 +256,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_BYZANTIUM</Tag>
 		<English>Eyalet of R&#251;m</English>
-		<French>Eyalet of R&#251;m</French>
+		<French>
+			<Text>Eyalet de Roum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eyalet of R&#251;m</German>
 		<Italian>Eyalet of R&#251;m</Italian>
 		<Spanish>Eyalet of R&#251;m</Spanish>
@@ -260,7 +292,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_RUSSIA</Tag>
 		<English>Eyalet of Yedisan</English>
-		<French>Eyalet of Yedisan</French>
+		<French>
+			<Text>Eyalet du Yedisan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eyalet of Yedisan</German>
 		<Italian>Eyalet of Yedisan</Italian>
 		<Spanish>Eyalet of Yedisan</Spanish>
@@ -268,7 +304,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_INDONESIA</Tag>
 		<English>Eyalet of Aceh</English>
-		<French>Eyalet of Aceh</French>
+		<French>
+			<Text>Eyalet d'Aceh</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eyalet of Aceh</German>
 		<Italian>Eyalet of Aceh</Italian>
 		<Spanish>Eyalet of Aceh</Spanish>

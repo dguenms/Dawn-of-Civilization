@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_KHMER_PEOPLES</Tag>
 		<English>Khmer Peoples</English>
 		<French>
-			<Text>Peuplades Khm&#232;res</Text>
+			<Text>Peuplades khm&#232;res</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -77,7 +77,7 @@
 		<Tag>TXT_KEY_CIV_KHMER_COMMUNIST</Tag>
 		<English>Democratic %s1</English>
 		<French>
-			<Text>%s1 D&#233;mocratique</Text>
+			<Text>%s1 d&#233;mocratique</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -101,7 +101,7 @@
 		<Tag>TXT_KEY_CIV_KHMER_FASCIST</Tag>
 		<English>Nationalist %s1</English>
 		<French>
-			<Text>%s1 Nationaliste</Text>
+			<Text>%s1 nationaliste</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -124,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_DAI_VIET</Tag>
 		<English>Dai Viet</English>
-		<French>Dai Viet</French>
+		<French>
+			<Text>Dai Vi&#234;t</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dai Viet</German>
 		<Italian>Dai Viet</Italian>
 		<Spanish>Dai Viet</Spanish>
@@ -132,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_BURMA</Tag>
 		<English>Burma</English>
-		<French>Burma</French>
+		<French>
+			<Text>Birmanie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Burma</German>
 		<Italian>Burma</Italian>
 		<Spanish>Burma</Spanish>
@@ -140,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_NANZHAO</Tag>
 		<English>Nanzhao</English>
-		<French>Nanzhao</French>
+		<French>
+			<Text>Nanzhao</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nanzhao</German>
 		<Italian>Nanzhao</Italian>
 		<Spanish>Nanzhao</Spanish>
@@ -149,8 +161,8 @@
 		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEA</Tag>
 		<English>Kampuchea</English>
 		<French>
-			<Text>Kampuchea</Text>
-			<Gender>Female</Gender>
+			<Text>Kampuch&#233;a</Text>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -172,7 +184,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEAN</Tag>
 		<English>Kampuchean</English>
-		<French>Kampuchean</French>
+		<French>
+			<Text>cambodgien:cambodgienne:cambodgiens:cambodgiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kampuchean</German>
 		<Italian>Kampuchean</Italian>
 		<Spanish>Kampuchean</Spanish>
@@ -185,7 +201,7 @@
 			<Plural>0:1</Plural>
 		</English>
 		<French>
-			<Text>khmer:khmer:khmers:khmers</Text>
+			<Text>khmer:khm&#232;re:khmers:khm&#232;res</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>

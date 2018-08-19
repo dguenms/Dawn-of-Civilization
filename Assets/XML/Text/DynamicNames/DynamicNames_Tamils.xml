@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DESC</Tag>
 		<English>The Tamils</English>
-		<French>The Tamils</French>
+		<French>
+			<Text>Les Tamouls</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Tamils</German>
 		<Italian>The Tamils</Italian>
 		<Spanish>The Tamils</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_PEOPLES</Tag>
 		<English>Dravidian Peoples</English>
-		<French>Dravidian Peoples</French>
+		<French>
+			<Text>Peuplades dravidiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Dravidian Peoples</German>
 		<Italian>Dravidian Peoples</Italian>
 		<Spanish>Dravidian Peoples</Spanish>
@@ -20,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DEFAULT</Tag>
 		<English>%s2 Kingdom</English>
-		<French>%s2 Kingdom</French>
+		<French>
+			<Text>Royaume %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>%s2 Kingdom</German>
 		<Italian>%s2 Kingdom</Italian>
 		<Spanish>%s2 Kingdom</Spanish>
@@ -28,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_REPUBLIC</Tag>
 		<English>Republic of Tamil Nadu</English>
-		<French>Republic of Tamil Nadu</French>
+		<French>
+			<Text>R&#233;publique du Tamil Nadu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Republic of Tamil Nadu</German>
 		<Italian>Republic of Tamil Nadu</Italian>
 		<Spanish>Republic of Tamil Nadu</Spanish>
@@ -36,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_FASCIST</Tag>
 		<English>Dravidian Empire</English>
-		<French>Dravidian Empire</French>
+		<French>
+			<Text>Empire dravidien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dravidian Empire</German>
 		<Italian>Dravidian Empire</Italian>
 		<Spanish>Dravidian Empire</Spanish>
@@ -44,7 +64,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
 		<English>Vijayanagara</English>
-		<French>Vijayanagara</French>
+		<French>Vijayan&#226;gara</French>
 		<German>Vijayanagara</German>
 		<Italian>Vijayanagara</Italian>
 		<Spanish>Vijayanagara</Spanish>
@@ -84,7 +104,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DRAVIDA</Tag>
 		<English>Dravida</English>
-		<French>Dravida</French>
+		<French>Dr&#226;vida</French>
 		<German>Dravida</German>
 		<Italian>Dravida</Italian>
 		<Spanish>Dravida</Spanish>
@@ -92,7 +112,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_BAHMANI</Tag>
 		<English>Bahmani</English>
-		<French>Bahmani</French>
+		<French>Bahman&#238;</French>
 		<German>Bahmani</German>
 		<Italian>Bahmani</Italian>
 		<Spanish>Bahmani</Spanish>
@@ -100,7 +120,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_TAMIL_NADU</Tag>
 		<English>Tamil Nadu</English>
-		<French>Tamil Nadu</French>
+		<French>
+			<Text>Tamil Nadu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tamil Nadu</German>
 		<Italian>Tamil Nadu</Italian>
 		<Spanish>Tamil Nadu</Spanish>
@@ -108,7 +132,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_ADJECTIVE</Tag>
 		<English>Tamil</English>
-		<French>Tamil</French>
+		<French>
+			<Text>tamoul:tamoule:tamouls:tamoules</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tamil</German>
 		<Italian>Tamil</Italian>
 		<Spanish>Tamil</Spanish>
@@ -116,7 +144,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_SHORT_DESC</Tag>
 		<English>Tamils</English>
-		<French>Tamils</French>
+		<French>
+			<Text>Tamouls</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Tamils</German>
 		<Italian>Tamils</Italian>
 		<Spanish>Tamils</Spanish>

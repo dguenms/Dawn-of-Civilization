@@ -28,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
 		<English>The Swedish</English>
-		<French>The Swedish</French>
+		<French>
+			<Text>Les Su&#233;dois</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Swedish</German>
 		<Italian>The Swedish</Italian>
 		<Spanish>The Swedish</Spanish>
@@ -36,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>
 		<English>Sweden</English>
-		<French>Sweden</French>
+		<French>
+			<Text>Su&#232;de</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sweden</German>
 		<Italian>Sweden</Italian>
 		<Spanish>Sweden</Spanish>
@@ -44,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Tag>
 		<English>Swedish</English>
-		<French>Swedish</French>
+		<French>
+			<Text>su&#233;dois:su&#233;doise:su&#233;dois:su&#233;doises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Swedish</German>
 		<Italian>Swedish</Italian>
 		<Spanish>Swedish</Spanish>
@@ -52,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_SHORT_DESC</Tag>
 		<English>Denmark</English>
-		<French>Denmark</French>
+		<French>
+			<Text>Danemark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Denmark</German>
 		<Italian>Denmark</Italian>
 		<Spanish>Denmark</Spanish>
@@ -60,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
-		<French>Kingdom of %s1</French>
+		<French>
+			<Text>Royaume de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kingdom of %s1</German>
 		<Italian>Kingdom of %s1</Italian>
 		<Spanish>Kingdom of %s1</Spanish>
@@ -68,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_ADJECTIVE</Tag>
 		<English>Danish</English>
-		<French>Danish</French>
+		<French>
+			<Text>danois:danoise:danois:danoises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Danish</German>
 		<Italian>Danish</Italian>
 		<Spanish>Danish</Spanish>
@@ -76,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_SHORT_DESC</Tag>
 		<English>Norway</English>
-		<French>Norway</French>
+		<French>
+			<Text>Norv&#232;ge</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Norway</German>
 		<Italian>Norway</Italian>
 		<Spanish>Norway</Spanish>
@@ -84,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
-		<French>Kingdom of %s1</French>
+		<French>
+			<Text>Royaume de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kingdom of %s1</German>
 		<Italian>Kingdom of %s1</Italian>
 		<Spanish>Kingdom of %s1</Spanish>
@@ -92,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_ADJECTIVE</Tag>
 		<English>Norwegian</English>
-		<French>Norwegian</French>
+		<French>
+			<Text>norv&#233;gien:norv&#233;gienne:norv&#233;giens:norv&#233;giennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Norwegian</German>
 		<Italian>Norwegian</Italian>
 		<Spanish>Norwegian</Spanish>
@@ -100,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
-		<French>Kingdom of %s1</French>
+		<French>
+			<Text>Royaume de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kingdom of %s1</German>
 		<Italian>Kingdom of %s1</Italian>
 		<Spanish>Kingdom of %s1</Spanish>
@@ -108,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_FASCIST</Tag>
 		<English>National Gathering of %s1</English>
-		<French>National Gathering of %s1</French>
+		<French>
+			<Text>Rassemblement national de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>National Gathering of %s1</German>
 		<Italian>National Gathering of %s1</Italian>
 		<Spanish>National Gathering of %s1</Spanish>
@@ -117,7 +161,7 @@
 		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
 		<English>Norse Peoples</English>
 		<French>
-			<Text>Peuplades Nordiques</Text>
+			<Text>Peuplades nordiques</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -141,7 +185,7 @@
 		<Tag>TXT_KEY_CIV_VIKINGS_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -165,7 +209,7 @@
 		<Tag>TXT_KEY_CIV_VIKINGS_COMMUNIST</Tag>
 		<English>Democratic Republic of %s1</English>
 		<French>
-			<Text>R&#233;publique D&#233;mocratique de %s1</Text>
+			<Text>R&#233;publique d&#233;mocratique de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -188,7 +232,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_FASCIST</Tag>
 		<English>National Gathering of %s1</English>
-		<French>National Gathering of %s1</French>
+		<French>
+			<Text>Rassemblement national de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>National Gathering of %s1</German>
 		<Italian>National Gathering of %s1</Italian>
 		<Spanish>National Gathering of %s1</Spanish>
@@ -196,7 +244,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS</Tag>
 		<English>Norse Kingdoms</English>
-		<French>Norse Kingdoms</French>
+		<French>
+			<Text>Royaumes scandinaves</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Norse Kingdoms</German>
 		<Italian>Norse Kingdoms</Italian>
 		<Spanish>Norse Kingdoms</Spanish>
@@ -204,7 +256,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_KALMAR_UNION</Tag>
 		<English>Kalmar Union</English>
-		<French>Kalmar Union</French>
+		<French>
+			<Text>Union de Kalmar</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kalmar Union</German>
 		<Italian>Kalmar Union</Italian>
 		<Spanish>Kalmar Union</Spanish>
@@ -212,7 +268,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_ALTHINGS</Tag>
 		<English>%s2 Althings</English>
-		<French>%s2 Althings</French>
+		<French>
+			<Text>Althings %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>%s2 Althings</German>
 		<Italian>%s2 Althings</Italian>
 		<Spanish>%s2 Althings</Spanish>
@@ -220,7 +280,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SWEDISH</Tag>
 		<English>Swedish</English>
-		<French>Swedish</French>
+		<French>
+			<Text>su&#233;dois:su&#233;doise:su&#233;dois:su&#233;doises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Swedish</German>
 		<Italian>Swedish</Italian>
 		<Spanish>Swedish</Spanish>
@@ -228,7 +292,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY</Tag>
 		<English>Denmark-Norway</English>
-		<French>Denmark-Norway</French>
+		<French>
+			<Text>Danemark-Norv&#232;ge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Denmark-Norway</German>
 		<Italian>Denmark-Norway</Italian>
 		<Spanish>Denmark-Norway</Spanish>
@@ -236,7 +304,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORWAY</Tag>
 		<English>Norway</English>
-		<French>Norway</French>
+		<French>
+			<Text>Norv&#232;ge</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Norway</German>
 		<Italian>Norway</Italian>
 		<Spanish>Norway</Spanish>
@@ -244,7 +316,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SWEDEN</Tag>
 		<English>Sweden</English>
-		<French>Sweden</French>
+		<French>
+			<Text>Su&#232;de</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sweden</German>
 		<Italian>Sweden</Italian>
 		<Spanish>Sweden</Spanish>
@@ -252,7 +328,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK</Tag>
 		<English>Denmark</English>
-		<French>Denmark</French>
+		<French>
+			<Text>Danemark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Denmark</German>
 		<Italian>Denmark</Italian>
 		<Spanish>Denmark</Spanish>
@@ -284,7 +364,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIAN</Tag>
 		<English>Scandinavian</English>
-		<French>Scandinavian</French>
+		<French>
+			<Text>scandinave:scandinave:scandinaves:scandinaves</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Scandinavian</German>
 		<Italian>Scandinavian</Italian>
 		<Spanish>Scandinavian</Spanish>
@@ -292,7 +376,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKING_ENGLAND</Tag>
 		<English>Danelaw</English>
-		<French>Danelaw</French>
+		<French>
+			<Text>Danelaw</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Danelaw</German>
 		<Italian>Danelaw</Italian>
 		<Spanish>Danelaw</Spanish>
@@ -300,7 +388,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKING_RUSSIA</Tag>
 		<English>Varangian Principalities</English>
-		<French>Varangian Principalities</French>
+		<French>
+			<Text>Principaut&#233;s var&#232;gues</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Varangian Principalities</German>
 		<Italian>Varangian Principalities</Italian>
 		<Spanish>Varangian Principalities</Spanish>
@@ -309,9 +401,9 @@
 		<Tag>TXT_KEY_CIV_VIKING_ADJECTIVE</Tag>
 		<English>Viking</English>
 		<French>
-			<Text>Viking</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
+			<Text>viking:viking:vikings:vikings</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Wikingisch:wikingischen:wikingische</Text>
