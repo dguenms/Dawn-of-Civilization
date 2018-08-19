@@ -14779,6 +14779,69 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SKYTREE</BuildingClass>
+			<Type>BUILDING_SKYTREE</Type>
+			<Description>TXT_KEY_BUILDING_SKYTREE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SKYTREE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SKYTREE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SKYTREE</ArtDefineTag>
+			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
+			<PrereqTech>TECH_TELECOMMUNICATIONS</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>2500</iCost>
+			<iHurryCostModifier>200</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>25</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<SpecialistYieldChanges>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<YieldChanges>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+			</SpecialistYieldChanges>
+			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_GARDENS_BY_THE_BAY</BuildingClass>
 			<Type>BUILDING_GARDENS_BY_THE_BAY</Type>
 			<Description>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY</Description>

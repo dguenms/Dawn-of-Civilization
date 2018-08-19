@@ -872,7 +872,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 # Buildings
 
-iNumBuildings = 305
+iNumBuildings = 306
 (iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
 iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
@@ -903,7 +903,7 @@ iTriumphalArch, iMoleAntonelliana, iNobelPrize, iMetropolitain, iNeuschwanstein,
 iMotherlandCalls, iLubyanka, iWestminsterPalace, iEiffelTower, iEmpireStateBuilding, iLasLajasSanctuary, iPalaceOfNations, iSagradaFamilia, iBerlaymont, iCERN, 
 iBletchleyPark, iWembley, iGraceland, iCristoRedentor, iItaipuDam, iHollywood, iUnitedNations, iCNTower, iCrystalCathedral, iGoldenGateBridge, 
 iAtomium, iGlobalSeedVault, iWorldTradeCenter, iHarbourOpera, iLotusTemple, iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iDeltaWorks, iIronDome, 
-iOrientalPearlTower, iGardensByTheBay, iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
+iOrientalPearlTower, iSkytree, iGardensByTheBay, iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
 
 iBeginWonders = iGreatSphinx # different from DLL constant because that includes national wonders
 
