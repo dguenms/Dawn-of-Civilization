@@ -10045,6 +10045,12 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<StateReligionCommerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</StateReligionCommerces>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -10052,10 +10058,6 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<ReligionYieldChanges>
-				<iYield>0</iYield>
-				<iYield>2</iYield>
-			</ReligionYieldChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -10151,17 +10153,19 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<StateReligionCommerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</StateReligionCommerces>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<SpecialistYieldChanges>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+			</SpecialistYieldChanges>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -10629,6 +10633,64 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_KREMLIN</BuildingClass>
+			<Type>BUILDING_KREMLIN</Type>
+			<Description>TXT_KEY_BUILDING_KREMLIN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_KREMLIN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_KREMLIN_HELP</Help>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_KREMLIN</ArtDefineTag>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>600</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAllCityDefense>25</iAllCityDefense>
+			<iAsset>10</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>6</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11759,14 +11821,13 @@
 			<Description>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ST_BASILS_CATHEDRAL</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -11775,7 +11836,6 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iAllCityDefense>25</iAllCityDefense>
 			<iAsset>16</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -11800,6 +11860,10 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
+			<ReligionYieldChanges>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</ReligionYieldChanges>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
