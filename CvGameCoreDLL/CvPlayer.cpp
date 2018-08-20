@@ -15183,13 +15183,13 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 			if (canStealTech(eTargetPlayer, eTech))
 			{
 				iMissionCost = iBaseMissionCost + ((100 + kMission.getBuyTechCostFactor()) * iProdCost) / 100;
-			}
 
-			// Leoreth: Hermitage effect
-			if (isHasBuildingEffect((BuildingTypes)HERMITAGE))
-			{
-				iMissionCost *= 3;
-				iMissionCost /= 4;
+				// Leoreth: Hermitage effect
+				if (isHasBuildingEffect((BuildingTypes)HERMITAGE))
+				{
+					iMissionCost *= 3;
+					iMissionCost /= 4;
+				}
 			}
 		}
 	}
