@@ -1927,7 +1927,7 @@
 		<Spanish>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_KREMLIN_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</English>
 		<French>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</French>
 		<German>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</German>

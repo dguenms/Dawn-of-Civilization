@@ -8030,8 +8030,8 @@ int CvUnit::baseMoves() const
 {
 	int iMoves = m_pUnitInfo->getMoves() + getExtraMoves() + GET_TEAM(getTeam()).getExtraMoves(getDomainType());
 
-	// Leoreth: Saint Basil's Cathedral effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)SAINT_BASILS_CATHEDRAL))
+	// Leoreth: Kremlin effect
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KREMLIN))
 	{
 		if (!canFight())
 		{
