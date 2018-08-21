@@ -23,6 +23,7 @@ def getAlias(iCiv, iType):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivIran: return iCivPersia
+	elif iCiv == iCivByzantium: return iCivGreece
 	
 	return iCiv
 	
@@ -394,6 +395,14 @@ iCivGreece : {
 		"Philolaos", # 5th BC
 		"fDiotima", # 5th BC
 		"Epikouros", # 4th BC
+		"Nestorios", # 5th
+		iMedieval,
+		"fTheodora", # 6th
+		"Kyrillos", # 9th
+		"Methodios", # 9th
+		"Photios", # 9th
+		"Nikolaos Mystikos", # 10th
+		"Ioannes Xiphilinos", # 11th
 		iIndustrial,
 		"Emmanuel Metaxakis", # 19th
 		iGlobal,
@@ -412,6 +421,13 @@ iCivGreece : {
 		"Aischylos", # 5th BC
 		"Pheidias", # 5th BC
 		"Anyte Tegeatis", # 3rd BC
+		iMedieval,
+		"Theophylaktos Simokates", # 7th
+		"Theodoros Prodromos", # 12th
+		"Eulalios", # 12th
+		"Manuel Chrysoloras", # 14th
+		"Georgios Plethon", # 14th
+		"Theophanes Strelitzas", # 16th
 		iIndustrial,
 		"Dionysios Solomos", # 19th
 		"Georgios Jakobides", # 19th
@@ -435,6 +451,13 @@ iCivGreece : {
 		"Galenos", # 2nd BC
 		"fAglaonike", # 2nd BC
 		"fHypatia", # 4th
+		iMedieval,
+		"Stephanos Alexandrinos", # 7th
+		"Michael Psellos", # 11th
+		"Nikephoros Blemmydes", # 13th
+		"Niketas Choniates", # 13th
+		"Nikephoros Gregoras", # 14th
+		"Gregorios Gemistos", # 15th
 		iIndustrial,
 		"Eugenios Voulgaris", # 18th
 		iGlobal,
@@ -447,6 +470,12 @@ iCivGreece : {
 		"Androsthenes", # 4th BC
 		"Megasthenes", # 4th BC
 		"Heroides Attikos", # 2nd
+		iMedieval, 
+		"Hierokles", # 6th
+		"Zemarchos", # 6th
+		"Cosmas Indicopleustes", # 6th
+		"Georgios Kyprios", # 7th
+		"Danielis", # 9th
 		iIndustrial,
 		"fManto Mavrogenous", # 19th
 		"Evangelos Zappas", # 19th
@@ -462,6 +491,12 @@ iCivGreece : {
 		"Satyros", # 4th BC
 		"Archimedes", # 3rd BC
 		"Heron", # 1st
+		iMedieval, 
+		"Anthemios", # 6th
+		"Isidoros", # 6th
+		"Eutokios", # 6th
+		"Kallinikos", # 7th
+		"Tiridates", # 10th
 		iIndustrial,
 		"Ernestos Tsiller", # 19th
 		iGlobal,
@@ -477,6 +512,13 @@ iCivGreece : {
 		"Kimon", # 5th BC
 		"Isokrates", # 4th BC
 		"Aresteides", # 4th BC
+		"Theodosios", # 4th
+		iMedieval,
+		"Tribonianos", # 6th
+		"fEirene", # 6th
+		"Irakleios", # 7th
+		"Leon", # 9th
+		"Michael Palaiologos", # 13th
 		iIndustrial,
 		"Adamantios Korais", # 19th
 		"Ioannis Kapodistrias", # 19th
@@ -495,6 +537,15 @@ iCivGreece : {
 		"Philippos", # 4th BC
 		"Pyrrhos", # 3rd BC
 		"fArtemisia", # 4th
+		iMedieval,
+		"Belisarios", # 6th
+		"Ioannis Tzimiskes", # 10th
+		"Basileios Bulgaroktonos", # 11th
+		"Georgios Maniakes", # 11th
+		"Michael Palaiologos", # 12th
+		"Nikephoros Bryennios", # 12th
+		"Andronikos Kontostephanos", # 12th
+		"Alexios Strategopoulos", # 13th
 		iIndustrial,
 		"fLaskarina Bouboulina", # 19th
 		"Alexandros Ypsilantis", # 19th
@@ -1194,65 +1245,6 @@ iCivMaya : {
 		iRenaissance,
 		"Napuc Chi", # 16th
 		"Tecun Uman", # 16th
-	],
-},
-iCivByzantium : {
-	iGreatProphet : [
-		"Nestorios", # 5th
-		"fTheodora", # 6th
-		"Kyrillos", # 9th
-		"Methodios", # 9th
-		"Photios", # 9th
-		"Nikolaos Mystikos", # 10th
-		"Ioannes Xiphilinos", # 11th
-	],
-	iGreatArtist : [
-		"Theophylaktos Simokates", # 7th
-		"Theodoros Prodromos", # 12th
-		"Eulalios", # 12th
-		"Manuel Chrysoloras", # 14th
-		"Georgios Plethon", # 14th
-		"Theophanes Strelitzas", # 16th
-	],
-	iGreatScientist : [
-		"Stephanos Alexandrinos", # 7th
-		"Michael Psellos", # 11th
-		"Nikephoros Blemmydes", # 13th
-		"Niketas Choniates", # 13th
-		"Nikephoros Gregoras", # 14th
-		"Gregorios Gemistos", # 15th
-	],
-	iGreatMerchant : [
-		"Hierokles", # 6th
-		"Zemarchos", # 6th
-		"Cosmas Indicopleustes", # 6th
-		"Georgios Kyprios", # 7th
-		"Danielis", # 9th
-	],
-	iGreatEngineer : [
-		"Anthemios", # 6th
-		"Isidoros", # 6th
-		"Eutokios", # 6th
-		"Kallinikos", # 7th
-		"Tiridates", # 10th
-	],
-	iGreatStatesman : [
-		"Theodosios", # 4th
-		"Tribonianos", # 6th
-		"fEirene", # 6th
-		"Irakleios", # 7th
-		"Leon", # 9th
-		"Michael Palaiologos", # 13th
-	],
-	iGreatGeneral : [
-		"Belisarios", # 6th
-		"Ioannis Tzimiskes", # 10th
-		"Basileios Bulgaroktonos", # 11th
-		"Georgios Maniakes", # 11th
-		"Michael Palaiologos", # 12th
-		"Nikephoros Bryennios", # 12th
-		"Andronikos Kontostephanos", # 12th
-		"Alexios Strategopoulos", # 13th
 	],
 },
 iCivJapan : {
