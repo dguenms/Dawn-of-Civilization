@@ -2668,7 +2668,6 @@ iCivMali : {
 		"fSeh-Dong-Hong-Beh", # 19th
 	],
 },
-
 iCivPoland : {
 	iGreatProphet : [
 		"Wojciech", # 10th
@@ -2739,13 +2738,13 @@ iCivPoland : {
 	iGreatSpy : [
 		"fZofia Potocka", # 18th
 		iIndustrial,
-		"fKarolina Sobańska", # 19th
+		u"fKarolina Sobańska", # 19th
 		iGlobal,
 		"Jan Kowalewski", # 20th
 		"Jerzy Sosnowski", # 20th
 		"Kazimierz Leski", # 20th
 		"fKrystyna Skarbek", # 20th
-		"Ryszard Kukliński", # 20th
+		u"Ryszard Kukliński", # 20th
 	],
 },
 iCivPortugal : {
