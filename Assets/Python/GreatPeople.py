@@ -1968,6 +1968,8 @@ iCivSpain : {
 	],
 	iGreatGeneral : [
 		"El Cid", # 11th
+		"Alfonso el Bravo", # 11th
+		"Jaume el Conqueridor", # 13th
 		iRenaissance,
 		"Francisco Coronado", # 16th
 		u"Hernán Cortés", # 16th
@@ -1975,6 +1977,11 @@ iCivSpain : {
 		u"Álvaro de Bazán", # 16th
 		u"fMaría Pacheco", # 16th
 		u"Ambrosio Spínola Doria", # 17th
+		u"Bernardo de Gálvez", # 18th
+		iGlobal, 
+		"Emilio Mola", # 20th
+		"Vicente Rojo Lluch", # 20th
+		"Mohamed ben Mizzian", # 20th
 	],
 	iGreatSpy : [
 		u"Tomás de Torquemada", # 15th
@@ -2321,6 +2328,7 @@ iCivEngland : {
 		iIndustrial,
 		"William Gladstone", # 19th
 		"Benjamin Disraeli", # 19th
+		"Robert Gascoyne-Cecil Salisbury", # 19th
 		iGlobal,
 		"Thomas Edward Lawrence", # 20th
 		"fEmmeline Pankhurst", # 20th
@@ -2819,6 +2827,7 @@ iCivPortugal : {
 		u"António de Oliveria Salazar", # 20th
 	],
 	iGreatGeneral : [
+		"Geraldo sem Pavor", # 12th
 		u"Nuno Álvares Pereira", # 14th
 		"Afonso de Albuquerque", # 15th
 		"Alvaro Vaz de Almada", # 15th
@@ -2884,8 +2893,8 @@ iCivItaly : {
 		"Francesco d'Assisi", # 13th
 		"fGuglielma", # 13th
 		"fCaterina di Giacomo di Benincasa", # 14th
-		"Giuliano della Rovere", # 15th
 		iRenaissance,
+		"Giuliano della Rovere", # 15th
 		"Camillo Borghese", # 16th
 		"Giulio de' Medici", # 16th
 		"Matteo Ricci", # 16th
@@ -2916,8 +2925,8 @@ iCivItaly : {
 	iGreatScientist : [
 		"fTrotula di Salerno", # 12th
 		"Francesco Petrarca", # 14th
-		"Pico della Mirandola", # 15th
 		iRenaissance,
+		"Pico della Mirandola", # 15th
 		"Giordano Bruno", # 16th
 		"Galileo Galilei", # 16th
 		"fElena Cornaro Piscopia", # 17th
@@ -2939,6 +2948,8 @@ iCivItaly : {
 		"Donato Peruzzi", # 14th
 		"Ciriaco de Ancona", # 15th
 		iRenaissance,
+		"Giovanni Caboto", # 15th
+		"Amerigo Vespucci", # 15th
 		"fTullia d'Aragona", # 16th
 		iGlobal,
 		"Enzo Ferrari", # 20th
@@ -2947,8 +2958,8 @@ iCivItaly : {
 	iGreatEngineer : [
 		"Taccola", # 15th
 		"Filippo Brunelleschi", # 15th
-		"Leon Battista Alberti", # 15th
 		iRenaissance,
+		"Leon Battista Alberti", # 15th
 		"Leonardo da Vinci", # 15th
 		"Donato Bramante", # 15th
 		"Andrea Palladio", # 16th
@@ -2960,15 +2971,17 @@ iCivItaly : {
 	],
 	iGreatStatesman : [
 		"Giovanni Villani", # 13th
-		u"Niccolò Machiavelli", # 15th
 		iRenaissance,
-		"fIsabelle d'Este", # 16th
+		"fLucrezia Borgia", # 15th
+		u"Niccolò Machiavelli", # 15th
+		"fIsabella d'Este", # 16th
 		"Francesco Guicciardini", # 16th
 		"Giambattista Vico", # 18th
 		"Cesare Beccaria", # 18th
 		iIndustrial,
 		"Giuseppe Garibaldi", # 19th
 		"Giuseppe Mazzini", # 19th
+		"Francesco Crispi", # 19th
 		iGlobal,
 		"Antonio Gramsci", # 20th
 	],
@@ -2976,9 +2989,15 @@ iCivItaly : {
 		"Enrico Dandolo", # 13th
 		"Simone Boccanegra", # 14th
 		"Francesco Sforza", # 15th
+		iRenaissance, 
+		"Cesare Borgia", # 15th
+		"Andrea Doria", # 16th
+		"Sebastiano Venier", # 16th
 		iIndustrial,
+		"Alessandro Ferrero La Marmora", # 19th
 		"Giuseppe Garibaldi", # 19th
 		iGlobal,
+		"Rodolfo Graziani", # 20th
 		"Giovanni Messe", # 20th
 	],
 	iGreatSpy : [
