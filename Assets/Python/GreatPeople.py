@@ -599,9 +599,13 @@ iCivIndia : {
 	iGreatArtist : [
 		"Valmiki", # 4th BC
 		"Asvaghosa", # 1st
+		"Kapilar", # 1st tamil
 		"Kalidasa", # 5th
 		iMedieval, 
+		"Gunadhya", # 6th
+		"fAvvaiyar", # 10th tamil
 		"Abhinavagupta", # 10th
+		"Nakkirar", # medieval tamil
 		iRenaissance,
 		"Purandara Dasa", # 15th
 		"Tansen", # 16th
@@ -664,7 +668,9 @@ iCivIndia : {
 		"Charles Correa", # 20th
 	],
 	iGreatStatesman : [
+		"Vishnu Sharma", # 12th BC to 3rd AD
 		"Chanakya", # 4th BC
+		"Thiruvalluvar", # 4th BC to 7th AD
 		iMedieval,
 		"Amoghavarsha", # 9th
 		"Chavundaraya", # 10th
@@ -1134,8 +1140,10 @@ iCivKorea : {
 		"Jinul", # 12th
 		"Uicheon", # 12th
 		"Baegun", # 13th
+		"An Hyang", # 13th
 		iRenaissance,
-		"fHeo Nanseolheon", # 16th
+		"Yi Hwang", # 16th
+		"Yi I", # 16th
 		iIndustrial,
 		"Choe Je-u", # 19th
 		iGlobal,
@@ -1147,6 +1155,7 @@ iCivKorea : {
 		"Yi Je-hyeon", # 9th
 		iRenaissance,
 		"Hwang Jip-jung", # 16th
+		"fHeo Nanseolheon", # 16th
 		"Yan Duseo", # 17th
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
@@ -2508,6 +2517,7 @@ iCivRussia : {
 		iRenaissance,
 		"Alexander Sumarokov", # 18th
 		"Fedot Shubin", # 18th
+		"Gavrila Derzhavin", # 18th
 		iIndustrial,
 		"Alexander Pushkin", # 19th
 		"Fyodor Dostoyevsky", # 19th
@@ -2997,6 +3007,7 @@ iCivMongols : {
 		"Siqin Gaowa", # 20th
 	],
 	iGreatScientist : [
+		"Isa Khelmerchi", # 13th
 		"Kaidu", # 13th
 		"Nasir al-Din al-Tusi", # 13th (also Persian)
 		"Ulugh Beg", # 15th
