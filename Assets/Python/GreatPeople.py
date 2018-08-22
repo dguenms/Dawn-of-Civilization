@@ -432,6 +432,7 @@ iCivGreece : {
 		"Manuel Chrysoloras", # 14th
 		iRenaissance,
 		"Theophanes Strelitzas", # 16th
+		"Domenikos Theotokopoulos", # 16th
 		"Petros Bereketis", # 17th
 		iIndustrial,
 		"Dionysios Solomos", # 19th
@@ -1834,6 +1835,8 @@ iCivIndonesia : {
 		"fMalahayati", # 16th
 		"fMartha Christina Tiahahu", # 18th
 		"Pattimura", # 18th
+		iIndustrial, 
+		"fCut Nyak Dhien", # 19th
 	],
 },
 iCivMoors : {
@@ -1978,6 +1981,8 @@ iCivSpain : {
 		u"fMaría Pacheco", # 16th
 		u"Ambrosio Spínola Doria", # 17th
 		u"Bernardo de Gálvez", # 18th
+		iIndustrial, 
+		u"fAgustina de Aragón", # 19th
 		iGlobal, 
 		"Emilio Mola", # 20th
 		"Vicente Rojo Lluch", # 20th
@@ -2114,6 +2119,7 @@ iCivFrance : {
 	iGreatGeneral : [
 		"Charles Martel", # 8th
 		"Godefroy de Bouillon", # 11th
+		"fJeanne de Flandre", # 14th
 		"Charles V", # 14th
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
@@ -2339,6 +2345,7 @@ iCivEngland : {
 		"William the Conqueror", # 11th
 		"Richard the Lionheart", # 12th
 		"Edward III", # 14th
+		"fMargaret of Anjou", # 15th
 		iRenaissance,
 		"Oliver Cromwell", # 17th
 		"John Churchill Marlborough", # 17th
@@ -2681,6 +2688,7 @@ iCivMali : {
 		u"Alpha Oumar Konaré", # 20th
 	],
 	iGreatGeneral : [
+		"fYennenga", # 12th
 		"Sundiata Keita", # 13th
 		"Askia Muhammad", # 15th
 		"Sunni Ali", # 15th
@@ -2986,6 +2994,7 @@ iCivItaly : {
 		"Antonio Gramsci", # 20th
 	],
 	iGreatGeneral : [
+		"fMatilde di Canossa", # 11th
 		"Enrico Dandolo", # 13th
 		"Simone Boccanegra", # 14th
 		"Francesco Sforza", # 15th
@@ -3066,6 +3075,7 @@ iCivMongols : {
 		"Ogodei", # 13th
 		"Chagatai", # 13th
 		u"Möngke", # 13th
+		"fKhutulun", # 13th
 		"Timur-e Lang", # 14th
 	],
 },
