@@ -10148,18 +10148,32 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 	if (eBuilding == HANGING_GARDENS)
 	{
-		FeatureTypes eFeature;
 		int iFloodPlainsCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
-			eFeature = getCityIndexPlot(iI)->getFeatureType();
-			if (eFeature != NO_FEATURE && GC.getFeatureInfo(eFeature).getYieldChange(YIELD_FOOD) >= 3)
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_FLOOD_PLAINS)
 			{
 				iFloodPlainsCount += 1;
 			}
 		}
 
 		if (iFloodPlainsCount < 2)
+		{
+			return 0;
+		}
+	}
+	else if (eBuilding == TEMPLE_OF_KUKULKAN)
+	{
+		int iRainforestCount = 0;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_RAINFOREST)
+			{
+				iRainforestCount += 1;
+			}
+		}
+
+		if (iRainforestCount < 4)
 		{
 			return 0;
 		}
