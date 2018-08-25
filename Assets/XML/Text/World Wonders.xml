@@ -2255,6 +2255,14 @@
 		<Spanish>Skytree</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_HELP</Tag>
+		<English>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</English>
+		<French>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</French>
+		<German>[ICON_BULLET]+1 [ICON_FOOD] von Regenwald</German>
+		<Italian>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Italian>
+		<Spanish>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

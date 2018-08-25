@@ -4679,8 +4679,14 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
+		// Temple of Kukulkan
+		if (eBuilding == TEMPLE_OF_KUKULKAN)
+		{
+			updateYield();
+		}
+
 		// Potala Palace
-		if (eBuilding == POTALA_PALACE)
+		else if (eBuilding == POTALA_PALACE)
 		{
 			int iNumHills = 0;
 			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -4695,13 +4701,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Image of the World Square
-		if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE)
+		else if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE)
 		{
 			changeExtraTradeRoutes(iChange * getCultureLevel());
 		}
 
 		// Itsukushima Shrine
-		if (eBuilding == ITSUKUSHIMA_SHRINE)
+		else if (eBuilding == ITSUKUSHIMA_SHRINE)
 		{
 			int iNumWater = 0;
 			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -4716,7 +4722,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Mole Antonelliana
-		if (eBuilding == MOLE_ANTONELLIANA)
+		else if (eBuilding == MOLE_ANTONELLIANA)
 		{
 			int iNumPeaks = 0;
 			for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -4731,7 +4737,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Metropolitain
-		if (eBuilding == METROPOLITAIN)
+		else if (eBuilding == METROPOLITAIN)
 		{
 			for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 			{
@@ -4751,7 +4757,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Berlaymont
-		if (eBuilding == BERLAYMONT)
+		else if (eBuilding == BERLAYMONT)
 		{
 			int iNumDefensivePacts = 0;
 			for (iI = 0; iI < MAX_TEAMS; iI++)
@@ -4766,7 +4772,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Atomium
-		if (eBuilding == ATOMIUM)
+		else if (eBuilding == ATOMIUM)
 		{
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -4775,7 +4781,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Global Seed Vault
-		if (eBuilding == GLOBAL_SEED_VAULT)
+		else if (eBuilding == GLOBAL_SEED_VAULT)
 		{
 			for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
 			{
@@ -4801,13 +4807,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		// Gardens by the Bay
-		if (eBuilding == GARDENS_BY_THE_BAY)
+		else if (eBuilding == GARDENS_BY_THE_BAY)
 		{
 			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * 2 * std::max(0, goodHealth() - badHealth()));
 		}
 
 		// ITER
-		if (eBuilding == ITER)
+		else if (eBuilding == ITER)
 		{
 			int iPowerConsumed = 0;
 			for (iI = 0; iI < MAX_PLAYERS; iI++)

@@ -10190,6 +10190,7 @@
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</MovieDefineTag>
@@ -10202,12 +10203,12 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
+			<iAIWeight>200</iAIWeight>
 			<iCost>450</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iAllCityDefense>25</iAllCityDefense>
 			<iAsset>12</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
