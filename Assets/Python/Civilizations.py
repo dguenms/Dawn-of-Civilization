@@ -805,7 +805,7 @@ dBuildingPreferences = {
 		iCristoRedentor: 20,
 		iWembley: 20,
 		iIberianTradingCompany: 20,
-		iTorreDeBeleom: 15,
+		iTorreDeBelem: 15,
 		iNotreDame: 15,
 		iMezquita: 15,
 	},
@@ -876,7 +876,7 @@ dBuildingPreferences = {
 	},
 	iCivPortugal : {
 		iCristoRedentor: 40,
-		iTorreDeBeleom: 40,
+		iTorreDeBelem: 40,
 		iIberianTradingCompany: 40,
 		iWembley: 20,
 		iEscorial: 20,
