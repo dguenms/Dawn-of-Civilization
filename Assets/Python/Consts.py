@@ -892,7 +892,7 @@ iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZor
 iArmoury, iAdministrativeCenter, iSecretService, iNationalTheatre, iTradingCompany, iIberianTradingCompany, iCentralBank, iNationalCollege, iNationalGallery, iNationalMonument, 
 iIronworks, iMilitaryAcademy, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis, iPyramids, 
 iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iApadanaPalace, iColossus, iParthenon, iStatueOfZeus, iShwedagonPaya, iMountAthos,
-iKhajuraho, iGreatLibrary, iMausoleumOfMaussollos, iAlKhazneh, iGondeshapur, iFloatingGardens, iColosseum, iAquaAppia, iIronPillar, iDujiangyan, 
+iKhajuraho, iGreatLibrary, iGreatMausoleum, iAlKhazneh, iGondeshapur, iFloatingGardens, iColosseum, iAquaAppia, iIronPillar, iDujiangyan, 
 iGreatWall, iJetavanaramaya, iTheodosianWalls, iMachuPicchu, iSalsalBuddha, iPrambanan, iBorobudur, iMonolithicChurch, iGrandCanal, iHagiaSophia, 
 iNotreDame, iSaintSophia, iTempleOfKukulkan, iHimejiCastle, iAlamut, iOldSynagogue, iKrakDesChevaliers, iSaintThomasChurch, iBlueMosque, iWatPreahPisnulok, 
 iKremlin, iVijayaStambha, iTopkapiPalace, iSilverTreeFountain, iMezquita, iCheomseongdae, iNalanda, iSistineChapel, iSantaMariaDelFiore, iGurEAmir, 
@@ -911,6 +911,8 @@ iTemple = iJewishTemple #generic
 iCathedral = iJewishCathedral #generic
 iMonastery = iJewishMonastery #generic
 iShrine = iJewishShrine #generic
+
+iFirstWonder = iGreatSphinx
 
 iPlague = iNumBuildings
 iNumBuildingsPlague = iNumBuildings+1
