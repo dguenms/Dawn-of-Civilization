@@ -587,6 +587,8 @@ public:
 	void restoreGeneralThreshold();
 	void resetGreatPeopleCreated();
 	void changeYieldRateModifier(int iYieldType, int iChange);
+	void setBuildingPreference(int iBuilding, int iNewValue);
+	int getBuildingPreference(int iBuilding);
 
 private:
 	CvPlayer* m_pPlayer;

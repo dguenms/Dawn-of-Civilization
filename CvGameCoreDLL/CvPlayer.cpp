@@ -39,6 +39,7 @@
 // BUG - Ignore Harmless Barbarians - end
 
 #include <algorithm>
+#include <map>
 
 // Public Functions...
 
@@ -360,6 +361,8 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paeCivics);
 
 	m_triggersFired.clear();
+
+	m_buildingPreference.clear(); // Leoreth
 
 	if (m_ppaaiSpecialistExtraYield != NULL)
 	{
@@ -837,6 +840,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aVote.clear();
 		m_aUnitExtraCosts.clear();
 		m_triggersFired.clear();
+		m_buildingPreference.clear();
 	}
 
 	m_plotGroups.removeAll();
@@ -25797,4 +25801,20 @@ void CvPlayer::updateCultureRanks(CvPlotGroup* pPlotGroup) const
 	{
 		(*it)->setCultureRank(iCount++);
 	}
+}
+
+void CvPlayer::setBuildingPreference(BuildingTypes eBuilding, int iNewValue)
+{
+	m_buildingPreference[eBuilding] = iNewValue;
+}
+
+int CvPlayer::getBuildingPreference(BuildingTypes eBuilding) const
+{
+	std::map<BuildingTypes, int>::const_iterator it = m_buildingPreference.find(eBuilding);
+	if (it != m_buildingPreference.end())
+	{
+		return it->second;
+	}
+
+	return -MAX_INT;
 }

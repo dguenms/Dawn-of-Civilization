@@ -58,6 +58,7 @@ def initTech(iPlayer, iTech):
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
 	
+<<<<<<< c47b96d1be106791b7b7dcd1308067e3538bd79b
 ### Tech preference functions ###
 
 def getDictValue(dDict, key):
@@ -106,6 +107,22 @@ def initPlayerTechPreferences(iPlayer):
 def initTechPreferences(iPlayer, dPreferences):
 	for iTech, iValue in dPreferences.items():
 		gc.getPlayer(iPlayer).setTechPreference(iTech, iValue)
+=======
+### Wonder preference methods ###
+
+def initBuildingPreferences(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iCiv = pPlayer.getCivilizationType()
+	if iCiv in dBuildingPreferences:
+		for iBuilding, iValue in dBuildingPreferences[iCiv].iteritems():
+			pPlayer.setBuildingPreference(iBuilding, iValue)
+			
+	if iCiv in dDefaultWonderPreferences:
+		iDefaultPreference = dDefaultWonderPreferences[iCiv]
+		for iWonder in range(iFirstWonder, iNumBuildings):
+			if iCiv not in dBuildingPreferences or iWonder not in dBuildingPreferences[iCiv]:
+				pPlayer.setBuildingPreference(iWonder, iDefaultPreference)
+>>>>>>> Move wonder preferences to Python
 	
 ### General functions ###
 		
@@ -115,7 +132,11 @@ def initBirthYear(iPlayer):
 def init():
 	for iPlayer in range(iNumPlayers):
 		initBirthYear(iPlayer)
+<<<<<<< c47b96d1be106791b7b7dcd1308067e3538bd79b
 		initPlayerTechPreferences(iPlayer)
+=======
+		initBuildingPreferences(iPlayer)
+>>>>>>> Move wonder preferences to Python
 
 ### Starting technologies ###
 
@@ -207,6 +228,7 @@ iCivNetherlands:Techs([iReplaceableParts, iHydraulics], column=11),
 iCivGermany :	Techs([iReplaceableParts], column=11),
 }]
 
+<<<<<<< c47b96d1be106791b7b7dcd1308067e3538bd79b
 ### Tech Preferences ###
 
 dTechPreferences = {
@@ -593,4 +615,273 @@ dTechPreferences = {
 		iElectricity: 20,
 		iEngine: 20,
 	},
+=======
+dDefaultWonderPreferences = {
+	iCivEgypt: -15,
+	iCivBabylonia: -40,
+	iCivGreece: -15,
+	iCivIndia: -15,
+	iCivRome: -20,
+	iCivArabia: -15,
+	iCivIndonesia: -15,
+	iCivFrance: -12,
+	iCivKhmer: -15,
+	iCivEngland: -12,
+	iCivRussia: -12,
+	iCivThailand: -15,
+	iCivCongo: -20,
+	iCivNetherlands: -12,
+	iCivAmerica: -12,
+}
+
+dBuildingPreferences = {
+	iCivEgypt : {
+		iPyramids: 100,
+		iGreatLibrary: 30,
+		iGreatLighthouse: 30,
+		iGreatSphinx: 30,
+	},
+	iCivChina : {
+		iGreatWall: 80,
+		iForbiddenPalace: 40,
+		iGrandCanal: 40,
+		iTerracottaArmy: 30,
+		iPorcelainTower: 30,
+		
+		iHangingGardens: -30,
+		iHimejiCastle: -30,
+		iBorobudur: -30,
+		iBrandenburgGate: -30,
+	},
+	iCivBabylonia : {
+		iHangingGardens: 50,
+		iIshtarGate: 50,
+		iSpiralMinaret: 20,
+		iGreatMausoleum: 15,
+		
+		iPyramids: 0,
+		iGreatSphinx: 0,
+		
+		iOracle: -60,
+	},
+	iCivGreece : {
+		iColossus: 30,
+		iOracle: 30,
+		iParthenon: 30,
+		iTempleOfArtemis: 30,
+		iStatueOfZeus: 30,
+		iGreatMausoleum: 20,
+		iMountAthos: 20,
+		iHagiaSophia: 20,
+		iGreatLibrary: 15,
+		iGreatLighthouse: 15,
+		
+		iPyramids: -100,
+		iGreatCothon: -80,
+	},
+	iCivIndia : {
+		iTajMahal: 30,
+		iWatPreahPisnulok: 20,
+		iShwedagonPaya: 20,
+		iKhajuraho: 20,
+		iShwedagonPaya: 20,
+		iHarmandirSahib: 20,
+		iBorobudur: 15,
+		
+		iParthenon: -30,
+		iStatueOfZeus: -20,
+	},
+	iCivCarthage : {
+		iGreatCothon: 30,
+		iGreatLighthouse: 15,
+		iColossus: 15,
+		
+		iPyramids: -50,
+	},
+	iCivPolynesia : {
+		iMoaiStatues: 30,
+	},
+	iCivPersia : {
+		iApadanaPalace: 30,
+		iGreatMausoleum: 30,
+		iHangingGardens: 15,
+		iColossus: 15,
+		iOracle: 15,
+	},
+	iCivRome : {
+		iColosseum: 30,
+		iSantaMariaDelFiore: 30,
+		iSistineChapel: 30,
+		iSanMarcoBasilica: 30,
+		
+		iGreatWall: -100,
+	},
+	iCivTamils : {
+		iKhajuraho: 20,
+	},
+	iCivEthiopia : {
+	},
+	iCivKorea : {
+	},
+	iCivMaya : {
+		iTempleOfKukulkan: 40,
+	},
+	iCivByzantium : {
+		iHagiaSophia: 40,
+		iTheodosianWalls: 30,
+		
+		iNotreDame: -20,
+		iSistineChapel: -20,
+	},
+	iCivJapan : {
+		iHimejiCastle: 30,
+	
+		iGreatWall: -100,
+	},
+	iCivVikings : {
+		iCERN: 15,
+	},
+	iCivArabia: {
+		iSpiralMinaret: 60,
+		iDomeOfTheRock: 60,
+	
+		iTopkapiPalace: -80,
+		iMezquita: -50,
+	},
+	iCivTibet : {
+	},
+	iCivIndonesia : {
+		iBorobudur: 30,
+		iShwedagonPaya: 20,
+		iWatPreahPisnulok: 20,
+	},
+	iCivMoors : {
+		iMezquita: 100,
+		
+		iUniversityOfSankore: -40,
+		iSpiralMinaret: -40,
+		iTopkapiPalace: -40,
+		iBlueMosque: -40,
+	},
+	iCivSpain : {
+		iCristoRedentor: 20,
+		iWembley: 20,
+		iIberianTradingCompany: 20,
+		iNotreDame: 15,
+		iMezquita: 15,
+	},
+	iCivFrance : {
+		iTradingCompany: 40,
+		iEiffelTower: 30,
+		iVersailles: 30,
+		iCERN: 30,
+		iNotreDame: 20,
+	},
+	iCivKhmer : {
+		iWatPreahPisnulok: 30,
+		iShwedagonPaya: 30,
+		iTajMahal: 20,
+		iBorobudur: 20,
+	},
+	iCivEngland : {
+		iTradingCompany: 50,
+		iWembley: 30,
+		iWestminsterPalace: 30,
+		iTrafalgarSquare: 30,
+		iNationalGallery: 20,
+	},
+	iCivHolyRome : {
+		iNotreDame: 15,
+	},
+	iCivRussia : {
+		iSaintBasilsCathedral: 40,
+		iLubyanka: 40,
+	},
+	iCivMali : {
+		iUniversityOfSankore: 40,
+	},
+	iCivOttomans : {
+		iTopkapiPalace: 60,
+		iBlueMosque: 60,
+		iHagiaSophia: 20,
+		
+		iTajMahal: -40,
+		iRedFort: -40,
+		iSaintBasilsCathedral: -40,
+	},
+	iCivPoland : {
+	},
+	iCivPortugal : {
+		iCristoRedentor: 40,
+		iIberianTradingCompany: 40,
+		iWembley: 20,
+		iNotreDame: 15,
+	},
+	iCivInca : {
+		iMachuPicchu: 40,
+		iTempleOfKukulkan: 20,
+	},
+	iCivItaly : {
+		iColosseum: 30,
+		iSantaMariaDelFiore: 30,
+		iSistineChapel: 30,
+		iSanMarcoBasilica: 30,
+	},
+	iCivMongols : {
+	},
+	iCivAztecs : {
+		iFloatingGardens: 40,
+		iTempleOfKukulkan: 30,
+		
+		iMachuPicchu: -40,
+	},
+	iCivMughals : {
+		iTajMahal: 40,
+		iRedFort: 40,
+		iHarmandirSahib: 20,
+		
+		iBlueMosque: -80,
+		iTopkapiPalace: -80,
+		iMezquita: -50,
+	},
+	iCivThailand : {
+		iWatPreahPisnulok: 30,
+		iShwedagonPaya: 30,
+		iTajMahal: 20,
+		iBorobudur: 20,
+		iGreatCothon: 15,
+	},
+	iCivNetherlands : {
+		iTradingCompany: 60,
+		iNationalGallery: 30,
+		iWembley: 30,
+		iCERN: 20,
+		iNotreDame: 15,
+	},
+	iCivGermany : {
+		iBrandenburgGate: 30,
+		iWembley: 20,
+		iCERN: 20,
+		iIronworks: 15,
+	},
+	iCivAmerica : {
+		iStatueOfLiberty: 30,
+		iHollywood: 30,
+		iPentagon: 30,
+		iEmpireStateBuilding: 30,
+		iUnitedNations: 20,
+		iGraceland: 20,
+	},
+	iCivArgentina : {
+		iWembley: 20,
+	},
+	iCivBrazil : {
+		iCristoRedentor: 30,
+		iItaipuDam: 30,
+		iWembley: 20,
+	},
+	iCivCanada : {
+		iCNTower: 30,
+	}
+>>>>>>> Move wonder preferences to Python
 }
