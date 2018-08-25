@@ -116,6 +116,7 @@ public:
 
 	// Leoreth
 	ReligionTypes AI_getPersecutionReligion();
+	int AI_buildingWeight(BuildingTypes eBuilding) const;
 	
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
