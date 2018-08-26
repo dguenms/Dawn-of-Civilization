@@ -6085,7 +6085,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Rhye - start
 	if (getScenario() >= SCENARIO_600AD) //late start condition
 	{
-		if ((eBuilding >= GREAT_SPHINX && eBuilding <= MAUSOLEUM_OF_MAUSSOLLOS))
+		if ((eBuilding >= GREAT_SPHINX && eBuilding <= GREAT_MAUSOLEUM))
 		{
 			return false;
 		}
@@ -6244,7 +6244,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		else if (isHumanVictoryWonder(eBuilding, UNIVERSITY_OF_SANKORE, MALI)) return false;
 
-		else if (isHumanVictoryWonder(eBuilding, LA_MEZQUITA, MOORS)) return false;
+		else if (isHumanVictoryWonder(eBuilding, MEZQUITA, MOORS)) return false;
 
 		else if (isHumanVictoryWonder(eBuilding, GREAT_COTHON, PHOENICIA)) return false;
 
