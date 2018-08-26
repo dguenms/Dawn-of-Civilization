@@ -3403,5 +3403,15 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Kremlin/Kremlin.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ADMINISTRATIVE_CENTER</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>5.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/AdministrativeCenter/gymnasium2.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/AdministrativeCenter/AdministrativeCenter.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
