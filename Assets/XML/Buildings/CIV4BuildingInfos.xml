@@ -7224,7 +7224,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PALACE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ADMINISTRATIVE_CENTER</ArtDefineTag>
 			<PrereqTech>TECH_POLITICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
