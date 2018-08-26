@@ -116,6 +116,9 @@ class CvRFCEventHandler:
 		Civilizations.init()
 		AIParameters.init()
 		
+		for iBuilding in range(iNumBuildings):
+			print "%d -> %s" % (iBuilding, gc.getBuildingInfo(iBuilding).getText())
+		
 		return 0
 
 

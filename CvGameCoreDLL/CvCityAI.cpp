@@ -3184,9 +3184,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 
 	if (getOwner() == MOORS && isCapital() && getRegionID() == REGION_IBERIA)
 	{
-		if (canConstruct((BuildingTypes)LA_MEZQUITA))
+		if (canConstruct((BuildingTypes)MEZQUITA))
 		{
-			eBestBuilding = (BuildingTypes)LA_MEZQUITA;
+			eBestBuilding = (BuildingTypes)MEZQUITA;
 		}
 	}
 
