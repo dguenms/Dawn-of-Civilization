@@ -2370,6 +2370,22 @@
 		<Spanish>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE</Tag>
+		<English>Chapultepec Castle</English>
+		<French>Chapultepec Castle</French>
+		<German>Schloss Chapultepec</German>
+		<Italian>Chapultepec Castle</Italian>
+		<Spanish>Chapultepec Castle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE_HELP</Tag>
+		<English>[ICON_BULLET]+1 unit experience per culture level</English>
+		<French>[ICON_BULLET]+1 unit experience per culture level</French>
+		<German>[ICON_BULLET]+1 Einheitenerfahrung pro Kulturstufe</German>
+		<Italian>[ICON_BULLET]+1 unit experience per culture level</Italian>
+		<Spanish>[ICON_BULLET]+1 unit experience per culture level</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

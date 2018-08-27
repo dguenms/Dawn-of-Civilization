@@ -1877,6 +1877,15 @@
 			<DefaultBuilding>BUILDING_BELL_ROCK_LIGHTHOUSE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CHAPULTEPEC_CASTLE</Type>
+			<Description>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CHAPULTEPEC_CASTLE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_EIFFEL_TOWER</Type>
 			<Description>TXT_KEY_BUILDING_EIFFEL_TOWER</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
