@@ -10242,7 +10242,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return 0;
 		}
 	}
-	else if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE || eBuilding == HERMITAGE)
+	else if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE || eBuilding == HERMITAGE || eBuilding == CHAPULTEPEC_CASTLE)
 	{
 		if (getCultureLevel() < 3)
 		{

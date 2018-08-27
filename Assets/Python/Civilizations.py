@@ -357,6 +357,7 @@ dBuildingPreferences = {
 	iCivSpain : {
 		iEscorial: 30,
 		iGuadalupeBasilica: 30,
+		iChapultepecCastle: 30,
 		iSagradaFamilia: 30,
 		iCristoRedentor: 20,
 		iWembley: 20,
@@ -528,6 +529,7 @@ dBuildingPreferences = {
 	},
 	iCivMexico : {
 		iGuadalupeBasilica: 40,
+		iChapultepecCastle: 40,
 		iLasLajasSanctuary: 20,
 	},
 	iCivArgentina : {

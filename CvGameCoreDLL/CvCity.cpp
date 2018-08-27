@@ -2884,7 +2884,13 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
             }
         }
 	}
-	//SuperSpies: TSHEEP end
+	//SuperSpies: TSHEEP 
+
+	// Leoreth: Chapultepec Castle
+	if (isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+	{
+		iExperience += getCultureLevel();
+	}
 
 	return std::max(0, iExperience);
 }
