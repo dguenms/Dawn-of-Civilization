@@ -7233,7 +7233,19 @@ bool CvUnit::build(BuildTypes eBuild)
 
 	GET_PLAYER(getOwnerINLINE()).changeGold(-(GET_PLAYER(getOwnerINLINE()).getBuildCost(plot(), eBuild)));
 
-	bFinished = plot()->changeBuildProgress(eBuild, workRate(false), getTeam());
+	int iWorkRate = workRate(false);
+
+	// Leoreth: Chateau Frontenac effect
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)FRONTENAC))
+	{
+		if (GC.getBuildInfo(eBuild).getTechPrereq() == RAILROAD)
+		{
+			iWorkRate *= 150;
+			iWorkRate /= 100;
+		}
+	}
+
+	bFinished = plot()->changeBuildProgress(eBuild, iWorkRate, getTeam());
 
 	finishMoves(); // needs to be at bottom because movesLeft() can affect workRate()...
 

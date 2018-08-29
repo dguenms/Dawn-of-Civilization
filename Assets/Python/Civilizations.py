@@ -547,6 +547,7 @@ dBuildingPreferences = {
 		iWembley: 20,
 	},
 	iCivCanada : {
+		iFrontenac: 30,
 		iCNTower: 30,
 	}
 }
