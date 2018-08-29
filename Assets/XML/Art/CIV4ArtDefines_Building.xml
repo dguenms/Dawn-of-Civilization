@@ -3404,16 +3404,6 @@
 			<Button>Art/Structures/Wonders/Kremlin/Kremlin.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ADMINISTRATIVE_CENTER</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>5.0</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/AdministrativeCenter/gymnasium2.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/AdministrativeCenter/AdministrativeCenter.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CHAPULTEPEC_CASTLE</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3422,6 +3412,16 @@
 			<NIF>Art/Structures/Wonders/Chapultepec/chapultepec.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Chapultepec/chapultepec.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_FRONTENAC</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Frontenac/Frontenac.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Frontenac/Frontenac_btn.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
