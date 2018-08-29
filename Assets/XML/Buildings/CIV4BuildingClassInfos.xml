@@ -2003,6 +2003,15 @@
 			<DefaultBuilding>BUILDING_NEUSCHWANSTEIN</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FRONTENAC</Type>
+			<Description>TXT_KEY_BUILDING_FRONTENAC</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FRONTENAC</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_WEMBLEY</Type>
 			<Description>TXT_KEY_BUILDING_WEMBLEY</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>

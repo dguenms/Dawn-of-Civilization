@@ -991,6 +991,7 @@ dBuildingPreferences = {
 		iWembley: 20,
 	},
 	iCivCanada : {
+		iFrontenac: 30,
 		iCNTower: 30,
 	}
 >>>>>>> Move wonder preferences to Python

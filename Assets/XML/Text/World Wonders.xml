@@ -2386,6 +2386,22 @@
 		<Spanish>[ICON_BULLET]+1 unit experience per culture level</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRONTENAC</Tag>
+		<English>Chateau Frontenac</English>
+		<French>Chateau Frontenac</French>
+		<German>Chateau Frontenac</German>
+		<Italian>Chateau Frontenac</Italian>
+		<Spanish>Chateau Frontenac</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRONTENAC_HELP</Tag>
+		<English>[ICON_BULLET]+50% building speed for Railroads</English>
+		<French>[ICON_BULLET]+50% building speed for Railroads</French>
+		<German>[ICON_BULLET]+50% Baugeschwindigkeit f&#252;r Schienen</German>
+		<Italian>[ICON_BULLET]+50% building speed for Railroads</Italian>
+		<Spanish>[ICON_BULLET]+50% building speed for Railroads</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
