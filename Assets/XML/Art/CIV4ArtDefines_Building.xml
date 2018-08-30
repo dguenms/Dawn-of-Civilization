@@ -3251,15 +3251,9 @@
 			<Type>ART_DEF_BUILDING_AMBER_ROOM</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
-<<<<<<< 2f2f84d9a483e5c45916c01c6fd752c65997a6dc
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Amber Room/Sheremetevo01.nif</NIF>
-=======
 			<fScale>2.25</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/AmberRoom/Sheremetevo01.nif</NIF>
->>>>>>> Fix wonder buttons in city tooltip
 			<KFM/>
 			<Button>Art/Structures/Wonders/AmberRoom/AmberRoom.dds</Button>
 		</BuildingArtInfo>

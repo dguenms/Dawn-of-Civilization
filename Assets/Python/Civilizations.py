@@ -129,7 +129,7 @@ def initBirthYear(iPlayer):
 
 def init():
 	for iPlayer in range(iNumPlayers):
-		initBirthYear(iPlayer
+		initBirthYear(iPlayer)
 		initPlayerTechPreferences(iPlayer)
 		initBuildingPreferences(iPlayer)
 
