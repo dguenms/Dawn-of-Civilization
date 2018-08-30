@@ -57,8 +57,7 @@ def initTechs(iPlayer, lTechs):
 def initTech(iPlayer, iTech):
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
-	
-<<<<<<< c47b96d1be106791b7b7dcd1308067e3538bd79b
+
 ### Tech preference functions ###
 
 def getDictValue(dDict, key):
@@ -107,7 +106,7 @@ def initPlayerTechPreferences(iPlayer):
 def initTechPreferences(iPlayer, dPreferences):
 	for iTech, iValue in dPreferences.items():
 		gc.getPlayer(iPlayer).setTechPreference(iTech, iValue)
-=======
+
 ### Wonder preference methods ###
 
 def initBuildingPreferences(iPlayer):
@@ -122,7 +121,6 @@ def initBuildingPreferences(iPlayer):
 		for iWonder in range(iFirstWonder, iNumBuildings):
 			if iCiv not in dBuildingPreferences or iWonder not in dBuildingPreferences[iCiv]:
 				pPlayer.setBuildingPreference(iWonder, iDefaultPreference)
->>>>>>> Move wonder preferences to Python
 	
 ### General functions ###
 		
@@ -131,12 +129,9 @@ def initBirthYear(iPlayer):
 
 def init():
 	for iPlayer in range(iNumPlayers):
-		initBirthYear(iPlayer)
-<<<<<<< c47b96d1be106791b7b7dcd1308067e3538bd79b
+		initBirthYear(iPlayer
 		initPlayerTechPreferences(iPlayer)
-=======
 		initBuildingPreferences(iPlayer)
->>>>>>> Move wonder preferences to Python
 
 ### Starting technologies ###
 
@@ -228,7 +223,6 @@ iCivNetherlands:Techs([iReplaceableParts, iHydraulics], column=11),
 iCivGermany :	Techs([iReplaceableParts], column=11),
 }]
 
-<<<<<<< c47b96d1be106791b7b7dcd1308067e3538bd79b
 ### Tech Preferences ###
 
 dTechPreferences = {
@@ -615,7 +609,10 @@ dTechPreferences = {
 		iElectricity: 20,
 		iEngine: 20,
 	},
-=======
+}
+
+### Building Preferences ###
+
 dDefaultWonderPreferences = {
 	iCivEgypt: -15,
 	iCivBabylonia: -40,
@@ -994,5 +991,4 @@ dBuildingPreferences = {
 		iFrontenac: 30,
 		iCNTower: 30,
 	}
->>>>>>> Move wonder preferences to Python
 }
