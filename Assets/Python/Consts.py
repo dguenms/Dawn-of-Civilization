@@ -869,34 +869,40 @@ iNumBonuses = 41
 (iAluminium, iCamel, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,
 iDeer, iFish, iPig, iRice, iSheep, iWheat, iCoffee, iCotton, iDye, iFur, iGems, iGold, iIncense, iIvory, iPearls, iSilk, iSilver, iSpices,
 iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBonuses)
-
 # Buildings
 
-iNumBuildings = 237
-(iPalace, iWalls, iDun, iCastle, iCitadel, iStarFort, iBarracks, iIkhanda, iStable, iGer, 
-iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, iBath, 
-iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
-iHarbor, iCustomsHouse, iFeitoria, iWharf, iPostOffice, iTambo, iDrydock, iAirport, iForge, iMint, 
-iArtStudio, iFactory, iAssemblyPlant, iZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid, iIndustrialPark, 
-iPaganTemple, iMonument, iObelisk, iStele, iCandi, iEdict, iMalae, iTotemPole, iPublicTransportation, iLibrary,
-iEdubba, iTaixue, iHoTrai, iSangam, iUniversity, iSeowon, iGompa, iObservatory, iLaboratory, iResearchInstitute,
-iWeaver, iMbwadi, iTheatre, iOdeon, iHippodrome, iPavilion, iAmphitheatre, iBallCourt, iCharreadaArena, iGarden, 
-iCinema, iBroadcastTower, iMarket, iForum, iApothecary, iCaravanserai, iGlassmaker, iBank, iRoyalExchange, iRailwayStation, 
-iDepartmentStore, iMall, iSupermarket, iRefrigerationPlant, iCoffeehouse, iSalon, iDistillery, iHotel, iConstabulary, iMountedPolice, 
-iCivicSquare, iRathaus, iSejmik, iEstate, iMausoleum, iFazenda, iHacienda, iNewsPress, iCourthouse, iJail, 
-iSacrificialAltar, iDivan, iLevee, iDike, iIntelligenceAgency, iSecurityBureau, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, 
+iNumBuildings = 309
+(iPalace, iBarracks, iIkhanda, iGranary, iTerrace, iSmokehouse, iPaganTemple, iMonument, iObelisk, iStele,
+iCandi, iEdict, iMalae, iTotemPole, iWalls, iDun, iStable, iGer, iLibrary, iEdubba,
+iTaixue, iHoTrai, iSangam, iHarbor, iAqueduct, iBaray, iNoria, iStepwell, iTheatre, iOdeon,
+iHippodrome, iPavilion, iAmphitheatre, iBallCourt, iCharreadaArena, iGarden, iLighthouse, iTradingPost, iWeaver, iMbwadi,
+iMarket, iForum, iApothecary, iCaravanserai, iGlassmaker, iJail, iSacrificialAltar, iDivan, iBath, iReservoir,
+iHammam, iForge, iMint, iArtStudio, iCastle, iCitadel, iPharmacy, iAlchemist, iPostOffice, iTambo,
+iWharf, iCoffeehouse, iSalon, iBank, iRoyalExchange, iConstabulary, iMountedPolice, iCustomsHouse, iFeitoria, iUniversity,
+iSeowon, iGompa, iCivicSquare, iRathaus, iSejmik, iSewer, iStarFort, iEstate, iMausoleum, iFazenda, 
+iHacienda, iDrydock, iLevee, iDike, iObservatory, iPark, iCourthouse, iFactory, iAssemblyPlant, iZaibatsu, 
+iDistillery, iCoalPlant, iRailwayStation, iLaboratory, iResearchInstitute, iNewsPress, iIndustrialPark, iCinema, iHospital, iSupermarket, 
+iColdStoragePlant, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, iIntelligenceAgency, iElectricalGrid, iAirport, iBombShelters, iHydroPlant, 
+iBunker, iNuclearPlant, iSecurityBureau, iHotel, iRecyclingCenter, iSolarPlant,  iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, 
 iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicChurch, iCatholicCathedral, iCatholicMonastery, iCatholicShrine, iProtestantTemple, iProtestantCathedral, 
 iProtestantMonastery, iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, 
 iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, 
-iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine, iAcademy, iStockExchange, iManufactory, iMuseum, 
-iArmoury, iAdministrativeCenter, iSecretService, iTriumphalArch, iNationalTheatre, iTradingCompany, iIberianTradingCompany, iCentralBank, iNationalCollege, iNationalGallery, 
-iNationalMonument, iIronworks, iMilitaryAcademy, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis, 
-iPyramids, iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iColossus, iParthenon, iStatueOfZeus, iShwedagonPaya, iKhajuraho, 
-iGreatLibrary, iMausoleumOfMaussollos, iFloatingGardens, iColosseum, iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iHagiaSophia, 
-iNotreDame, iTempleOfKukulkan, iHimejiCastle, iBlueMosque, iWatPreahPisnulok, iTopkapiPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort, 
-iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iUniversityOfSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower, iSaintBasilsCathedral, iHarmandirSahib, 
-iTrafalgarSquare, iBrandenburgGate, iStatueOfLiberty, iPentagon, iLubyanka, iWestminsterPalace, iEiffelTower, iEmpireStateBuilding, iCERN, iWembley, 
-iGraceland, iCristoRedentor, iItaipuDam, iHollywood, iUnitedNations, iCNTower, iSpaceElevator) = range(iNumBuildings)
+iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine, iAcademy, iAdministrativeCenter, iManufactory, iArmoury, 
+iMuseum, iStockExchange, iTradingCompany, iIberianTradingCompany, iNationalMonument, iNationalTheatre, iNationalGallery, iNationalCollege, iMilitaryAcademy, iSecretService, 
+iIronworks, iRedCross, iNationalPark, iCentralBank, iGreatSphinx, iPyramids, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, 
+iHangingGardens, iGreatCothon, iDujiangyan, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iParthenon, iTempleOfArtemis, iGreatLighthouse, 
+iMoaiStatues, iColosseum, iAquaAppia, iAlKhazneh, iTempleOfKukulkan, iMachuPicchu, iGreatLibrary, iFloatingGardens, iGondeshapur, iJetavanaramaya, 
+iNalanda, iTheodosianWalls, iHagiaSophia, iBorobudur, iMezquita, iShwedagonPaya, iMountAthos, iIronPillar, iPrambanan, iSalsalBuddha, 
+iCheomseongdae, iHimejiCastle, iGrandCanal, iWatPreahPisnulok, iKhajuraho, iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, iKrakDesChevaliers, iMonolithicChurch, 
+iUniversityOfSankore, iNotreDame, iOldSynagogue, iSaintSophia, iSilverTreeFountain, iSantaMariaDelFiore, iAlamut, iSanMarcoBasilica, iSistineChapel, iPorcelainTower, 
+iTopkapiPalace, iKremlin, iSaintThomasChurch, iVijayaStambha, iGurEAmir, iRedFort, iTajMahal, iForbiddenPalace, iVersailles, iBlueMosque, 
+iEscorial, iTorreDeBelem, iPotalaPalace, iOxfordUniversity, iHarmandirSahib, iSaintBasilsCathedral, iBourse, iItsukushimaShrine, iImageOfTheWorldSquare, iLouvre, 
+iEmeraldBuddha, iShalimarGardens, iTrafalgarSquare, iHermitage, iGuadalupeBasilica, iSaltCathedral, iAmberRoom, iStatueOfLiberty, iBrandenburgGate, iAbbeyMills, 
+iBellRockLighthouse, iChapultepecCastle, iEiffelTower, iWestminsterPalace, iTriumphalArch, iMenloPark, iCrystalPalace, iTsukijiFishMarket, iBrooklynBridge, iHollywood, 
+iEmpireStateBuilding, iLasLajasSanctuary, iPalaceOfNations, iMoleAntonelliana, iNeuschwanstein, iFrontenac, iWembley, iLubyanka, iCristoRedentor, iMetropolitain, 
+iNobelPrize, iGoldenGateBridge, iBletchleyPark, iSagradaFamilia, iCERN, iItaipuDam, iGraceland, iCNTower, iPentagon, iUnitedNations, 
+iCrystalCathedral, iMotherlandCalls, iBerlaymont, iWorldTradeCenter, iAtomium, iIronDome, iHarbourOpera, iLotusTemple, iGlobalSeedVault, iGardensByTheBay, 
+iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iSkytree, iOrientalPearlTower, iDeltaWorks, iSpaceElevator, iLargeHadronCollider, iITER) = range(iNumBuildings)
 
 iBeginWonders = iGreatSphinx # different from DLL constant because that includes national wonders
 
@@ -904,6 +910,8 @@ iTemple = iJewishTemple #generic
 iCathedral = iJewishCathedral #generic
 iMonastery = iJewishMonastery #generic
 iShrine = iJewishShrine #generic
+
+iFirstWonder = iGreatSphinx
 
 iPlague = iNumBuildings
 iNumBuildingsPlague = iNumBuildings+1

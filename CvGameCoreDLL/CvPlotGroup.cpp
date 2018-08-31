@@ -9,6 +9,7 @@
 #include "CvCity.h"
 #include "CvDLLFAStarIFaceBase.h"
 #include "FProfiler.h"
+#include "CvRhyes.h"
 
 // Public Functions...
 
@@ -238,6 +239,38 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 			}
 
 			pPlotNode = nextPlotsNode(pPlotNode);
+		}
+
+		// Leoreth: Global Seed Vault
+		if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)GLOBAL_SEED_VAULT))
+		{
+			int iLoop;
+			for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
+			{
+				if (pLoopCity->isHasRealBuilding((BuildingTypes)GLOBAL_SEED_VAULT))
+				{
+					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
+					{
+						CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iJ);
+						if (kBuild.isGraphicalOnly())
+						{
+							continue;
+						}
+
+						if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
+						{
+							CvImprovementInfo& kImprovement = GC.getImprovementInfo((ImprovementTypes)kBuild.getImprovement());
+							if (kImprovement.isImprovementBonusMakesValid(eBonus) && !kImprovement.isGraphicalOnly() && !kImprovement.isActsAsCity())
+							{
+								pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)GLOBAL_SEED_VAULT).getBuildingClassType(), COMMERCE_RESEARCH, iChange);
+								break;
+							}
+						}
+					}
+
+					break;
+				}
+			}
 		}
 	}
 }

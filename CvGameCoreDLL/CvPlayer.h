@@ -1243,6 +1243,10 @@ public:
 	int getTechPreference(TechTypes eTech) const;
 	void setTechPreference(TechTypes eTech, int iNewValue);
 
+	// Leoreth
+	int getBuildingPreference(BuildingTypes eBuilding) const;
+	void setBuildingPreference(BuildingTypes eBuilding, int iNewValue);
+
 	int getBirthYear() const;
 	int getBirthTurn() const;
 	void setBirthYear(int iNewValue);
@@ -1566,6 +1570,9 @@ protected:
 	bool* m_pabLoyalMember;
 
 	std::vector<EventTriggerTypes> m_triggersFired;
+
+	// Leoreth
+	std::map<BuildingTypes, int> m_buildingPreference;
 
 	CivicTypes* m_paeCivics;
 

@@ -2661,3 +2661,13 @@ void CyPlayer::setTechPreference(int eTech, int iNewValue)
 {
 	if (m_pPlayer) m_pPlayer->setTechPreference((TechTypes)eTech, iNewValue);
 }
+
+void CyPlayer::setBuildingPreference(int iBuilding, int iNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setBuildingPreference((BuildingTypes)iBuilding, iNewValue);
+}
+
+int CyPlayer::getBuildingPreference(int iBuilding)
+{
+	return m_pPlayer ? m_pPlayer->getBuildingPreference((BuildingTypes)iBuilding) : -1;
+}

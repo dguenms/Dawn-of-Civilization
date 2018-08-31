@@ -383,7 +383,7 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_TRADE_ROUTES</DefineName>
-		<iDefineIntVal>8</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MIN_TIMER_UNIT_DOUBLE_MOVES</DefineName>
