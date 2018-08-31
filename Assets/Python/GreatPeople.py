@@ -2343,9 +2343,10 @@ iCivEngland : {
 		"Robert Hooke", # 17th
 		"Christopher Wren", # 17th
 		"William Adam", # 18th
-		"John Harrison", # 18TH
+		"John Harrison", # 18th
 		iIndustrial,
 		"James Watt", # 18th
+		"George Stephenson", # 19th
 		"Isambard Kingdom Brunel", # 19th
 		"Henry Bessemer", # 19th
 		"Charles Babbage", # 19th
