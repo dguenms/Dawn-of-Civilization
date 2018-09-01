@@ -1234,6 +1234,12 @@ int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 	iResearch *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitDiscoverPercent();
 	iResearch /= 100;
 
+	// Leoreth: House of Wisdom effect
+	if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+	{
+		iResearch *= 3;
+	}
+
 	return std::max(0, iResearch);
 }
 

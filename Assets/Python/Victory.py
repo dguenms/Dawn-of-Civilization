@@ -215,7 +215,7 @@ dWonderGoals = {
 	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
 	iMali: (1, [iUniversityOfSankore], False),
-	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iLeaningTower], True),
+	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore], True),
 	iMughals: (1, [iTajMahal, iRedFort, iHarmandirSahib], True),
 	iAmerica: (1, [iStatueOfLiberty, iEmpireStateBuilding, iPentagon, iUnitedNations], True),
 	iBrazil: (1, [iWembley, iCristoRedentor, iItaipuDam], True),
@@ -1128,7 +1128,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iItaly:
 	
-		# first goal: build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD
+		# first goal: build San Marco Basilica, the Sistine Chapel and Santa Maria del Fiore by 1500 AD
 		if iGameTurn == getTurnForYear(1500):
 			expire(iItaly, 0)
 			
@@ -1497,8 +1497,7 @@ def checkHistoricalVictory(iPlayer):
 		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
-			capital = pPlayer.getCapitalCity()
-			capital.setHasRealBuilding(iTriumphalArch, True)
+			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeTurns())
 			
 			if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
@@ -3857,8 +3856,8 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			bSanMarcoBasilica = data.getWonderBuilder(iSanMarcoBasilica) == iItaly
 			bSistineChapel = data.getWonderBuilder(iSistineChapel) == iItaly
-			bLeaningTower = data.getWonderBuilder(iLeaningTower) == iItaly
-			aHelp.append(getIcon(bSanMarcoBasilica) + localText.getText("TXT_KEY_BUILDING_SAN_MARCO_BASILICA", ()) + ' ' + getIcon(bSistineChapel) + localText.getText("TXT_KEY_BUILDING_SISTINE_CHAPEL", ()) + ' ' + getIcon(bLeaningTower) + localText.getText("TXT_KEY_BUILDING_LEANING_TOWER", ()))
+			bSantaMariaDelFiore = data.getWonderBuilder(iSantaMariaDelFiore) == iItaly
+			aHelp.append(getIcon(bSanMarcoBasilica) + localText.getText("TXT_KEY_BUILDING_SAN_MARCO_BASILICA", ()) + ' ' + getIcon(bSistineChapel) + localText.getText("TXT_KEY_BUILDING_SISTINE_CHAPEL", ()) + ' ' + getIcon(bSantaMariaDelFiore) + localText.getText("TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE", ()))
 		elif iGoal == 1:
 			iCount = countCitiesWithCultureLevel(iItaly, 5)
 			aHelp.append(getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE", (iCount, 3)))

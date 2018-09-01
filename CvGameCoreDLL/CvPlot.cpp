@@ -4181,7 +4181,7 @@ bool CvPlot::isTradeNetwork(TeamTypes eTeam) const
 {
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 
-	if (atWar(eTeam, getTeam()))
+	if (atWar(eTeam, getTeam()) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
 	{
 		return false;
 	}
@@ -4212,7 +4212,7 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 {
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 
-	if (atWar(eTeam, getTeam()) || atWar(eTeam, pPlot->getTeam()))
+	if ((atWar(eTeam, getTeam()) || atWar(eTeam, pPlot->getTeam())) && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA) && (getOwner() == NO_PLAYER || !GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SALSAL_BUDDHA)))
 	{
 		return false;
 	}
@@ -7044,6 +7044,43 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			if (iYield >= GET_PLAYER(ePlayer).getExtraYieldThreshold(eYield))
 			{
 				iYield += GC.getDefineINT("EXTRA_YIELD");
+			}
+		}
+
+		// Leoreth: Temple of Kukulkan effect
+		if (getFeatureType() == FEATURE_RAINFOREST && eYield == YIELD_FOOD)
+		{
+			CvCity* pWorkingCity = getWorkingCity();
+			if (pWorkingCity != NULL)
+			{
+				if (pWorkingCity->isHasBuildingEffect((BuildingTypes)TEMPLE_OF_KUKULKAN))
+				{
+					if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
+					{
+						iYield += 1;
+					}
+				}
+			}
+		}
+
+		// Leoreth: University of Sankore effect
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)UNIVERSITY_OF_SANKORE))
+		{
+			if (getTerrainType() == TERRAIN_DESERT && eYield == YIELD_COMMERCE)
+			{
+				iYield += 1;
+			}
+		}
+
+		// Leoreth: Burj Khalifa effect
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)BURJ_KHALIFA))
+		{
+			if (getTerrainType() == TERRAIN_DESERT)
+			{
+				if (eYield == YIELD_FOOD || eYield == YIELD_COMMERCE)
+				{
+					iYield += 2;
+				}
 			}
 		}
 

@@ -116,6 +116,9 @@ class CvRFCEventHandler:
 		Civilizations.init()
 		AIParameters.init()
 		
+		for iBuilding in range(iNumBuildings):
+			print "%d -> %s" % (iBuilding, gc.getBuildingInfo(iBuilding).getText())
+		
 		return 0
 
 
@@ -214,6 +217,14 @@ class CvRFCEventHandler:
 				iNationalWonder = i
 				if isNationalWonderClass(gc.getBuildingInfo(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
 					city.setHasRealBuilding(iNationalWonder, False)
+					
+		# Leoreth: Escorial effect
+		if gc.getPlayer(iPlayer).isHasBuildingEffect(iEscorial):
+			if city.isColony():
+				capital = gc.getPlayer(iPlayer).getCapitalCity()
+				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
+				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+				gc.getPlayer(iPlayer).changeGold(iGold)
 					
 		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
 		self.com.onCityAcquired(city) # Communications
@@ -361,6 +372,14 @@ class CvRFCEventHandler:
 		if iOwner == iHolyRome:
 			if gc.getPlayer(iHolyRome).getNumCities() == 1:
 				self.rnf.holyRomanSpawn()
+				
+		# Leoreth: Escorial effect
+		if gc.getPlayer(iOwner).isHasBuildingEffect(iEscorial):
+			if city.isColony():
+				capital = gc.getPlayer(iOwner).getCapitalCity()
+				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
+				CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+				gc.getPlayer(iOwner).changeGold(iGold)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'
@@ -414,6 +433,17 @@ class CvRFCEventHandler:
 			for iPromotion in range(gc.getNumPromotionInfos()):
 				if gc.getPromotionInfo(iPromotion).isLeader() and pLosingUnit.isHasPromotion(iPromotion):
 					gc.getPlayer(iLosingPlayer).restoreGeneralThreshold()
+					
+		# Motherland Calls effect
+		if gc.getPlayer(iLosingPlayer).isHasBuildingEffect(iMotherlandCalls):
+			if pLosingUnit.getLevel() >= 3:
+				lCities = [city for city in utils.getCityList(iLosingPlayer) if not city.isDrafted()]
+				pCity = utils.getHighestEntry(lCities, lambda city: -utils.calculateDistance(city.getX(), city.getY(), pLosingUnit.getX(), pLosingUnit.getY()))
+				if pCity:
+					pCity.conscript(True)
+					gc.getPlayer(iLosingPlayer).changeConscriptCount(-1)
+					CyInterface().addMessage(iLosingPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_MOTHERLAND_CALLS_EFFECT", (pLosingUnit.getName(), pCity.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+
 		
 	def onReligionFounded(self, argsList):
 		'Religion Founded'
@@ -461,9 +491,14 @@ class CvRFCEventHandler:
 		pCity, iPlayer = argsList
 		
 		# Leoreth/Voyhkah: Empire State Building effect
-		if pCity.isHasRealBuilding(iEmpireStateBuilding):
+		if pCity.isHasBuildingEffect(iEmpireStateBuilding):
 			iPop = pCity.getPopulation()
 			pCity.setBuildingCommerceChange(gc.getBuildingInfo(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
+			
+		# Leoreth: Oriental Pearl Tower effect
+		if pCity.isHasBuildingEffect(iOrientalPearlTower):
+			iPop = pCity.getPopulation()
+			pCity.setBuildingCommerceChange(gc.getBuildingInfo(iOrientalPearlTower).getBuildingClassType(), 1, 2 * iPop)
 			
 	def onUnitPillage(self, argsList):
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
@@ -474,6 +509,14 @@ class CvRFCEventHandler:
 			
 	def onCityCaptureGold(self, argsList):
 		city, iPlayer, iGold = argsList
+		
+		if iGold > 0:
+			if gc.getPlayer(iPlayer).isHasBuildingEffect(iGurEAmir):
+				for loopCity in utils.getCityList(iPlayer):
+					if loopCity.isHasRealBuilding(iGurEAmir):
+						CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT", (iGold, city.getName(), loopCity.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+						loopCity.changeCulture(iPlayer, iGold, True)
+						break
 		
 		if iPlayer == iVikings and iGold > 0:
 			vic.onCityCaptureGold(iPlayer, iGold)
@@ -549,6 +592,11 @@ class CvRFCEventHandler:
 			iPop = city.getPopulation()
 			city.setBuildingCommerceChange(gc.getBuildingInfo(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
 			
+		# Leoreth: Oriental Pearl Tower
+		if iBuildingType == iOrientalPearlTower:
+			iPop = city.getPopulation()
+			city.setBuildingCommerceChange(gc.getBuildingInfo(iOrientalPearlTower).getBuildingClassType(), 1, 2 * iPop)
+			
 		# Leoreth: Machu Picchu
 		if iBuildingType == iMachuPicchu:
 			iNumPeaks = 0
@@ -563,6 +611,11 @@ class CvRFCEventHandler:
 				plot = gc.getMap().plotByIndex(iPlot)
 				if plot.getOwner() == iOwner and not plot.isWater():
 					plot.setWithinGreatWall(True)
+					
+		# Leoreth: Atomium
+		if iBuildingType == iAtomium:
+			sd.tAtomiumPlot = (city.getX(), city.getY())
+			city.changeBuildingCommerceChange(gc.getBuildingInfo(iAtomium).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, sd.iNumNuclearWeapons)
 					
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
@@ -636,6 +689,38 @@ class CvRFCEventHandler:
 		gp.onGreatPersonBorn(pUnit, iPlayer, pCity)
 		vic.onGreatPersonBorn(iPlayer, pUnit)
 		sta.onGreatPersonBorn(iPlayer)
+		
+		# Leoreth: Silver Tree Fountain effect
+		if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() > 0 and gc.getPlayer(iPlayer).isHasBuildingEffect(iSilverTreeFountain):
+			city = utils.getHighestEntry(utils.getCityList(iPlayer), lambda city: city.getGreatPeopleProgress())
+			if city and city.getGreatPeopleProgress() > 0:
+				iGreatPerson = utils.getHighestEntry(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit))
+				if iGreatPerson >= 0:
+					gc.getPlayer(iPlayer).createGreatPeople(iGreatPerson, False, False, city.getX(), city.getY())
+					
+		# Leoreth: Nobel Prize effect
+		if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iNobelPrize).getBuildingClassType()) > 0:
+			if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() == 0 and gc.getUnitInfo(pUnit.getUnitType()).getEspionagePoints() == 0:
+				for iLoopPlayer in range(iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isHasBuildingEffect(iNobelPrize):
+						if gc.getPlayer(pUnit.getOwner()).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
+							for pLoopCity in utils.getCityList(iLoopPlayer):
+								if pLoopCity.isHasBuildingEffect(iNobelPrize):
+									iGreatPersonType = pUnit.getUnitType()
+									if iGreatPersonType in dFemaleGreatPeople.values():
+										for iLoopGreatPerson in dFemaleGreatPeople:
+											if iGreatPersonType == dFemaleGreatPeople[iLoopGreatPerson]:
+												iGreatPersonType = iLoopGreatPerson
+												break
+								
+									iGreatPeoplePoints = gc.getPlayer(iLoopPlayer).greatPeopleThreshold(False) / 4
+								
+									pLoopCity.changeGreatPeopleProgress(iGreatPeoplePoints)
+									pLoopCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
+									CyInterface().setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
+									CyInterface().addMessage(iLoopPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT", (gc.getPlayer(pUnit.getOwner()).getCivilizationAdjective(0), pUnit.getName(), pLoopCity.getName(), iGreatPeoplePoints)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+									break
+							break
 
 	def onReligionSpread(self, argsList):
 		iReligion, iOwner, pSpreadCity = argsList
@@ -787,7 +872,7 @@ class CvRFCEventHandler:
 		
 		self.rnf.endTurn(iPlayer)
 		sta.endTurn(iPlayer)
-
+		
 	def onKbdEvent(self, argsList):
 		'keypress handler - return 1 if the event was consumed'
 		eventType,key,mx,my,px,py = argsList

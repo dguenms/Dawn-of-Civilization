@@ -1245,6 +1245,21 @@
 	<LNode Name="Leaf_3x3">
 		<Width>3</Width>
 		<Height>3</Height>
+		
+		<!-- HAGIA SOPHIA -->
+		<ArtRef Name="building:LSYSTEM_HAGIA_SOPHIA">
+			<Attribute Class="Scalar">szNIF:Art/Structures/Wonders/HagiaSophia/HagiaSophia.nif</Attribute>
+			<Attribute Class="Era">ERA_ALL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_MIDDLE_EAST</Attribute>
+			<Scale>1.12</Scale>
+		</ArtRef>
+		<ArtRef Name="building:LSYSTEM_HAGIA_SOPHIA">
+			<Attribute Class="Scalar">szNIF:Art/Structures/Wonders/HagiaSophia/HagiaSophia_Proper.nif</Attribute>
+			<Attribute Class="Era">ERA_ALL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_ASIAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_GRECO_ROMAN,ARTSTYLE_BARBARIAN,ARTSTYLE_AFRICAN</Attribute>
+			<Scale>1.12</Scale>
+		</ArtRef>
+		
 		<!-- LEAF 3x3 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_3x3">
 			<Scale>1.0</Scale>
@@ -1352,7 +1367,7 @@
 			<Attribute Class="Scalar">bLayoutAfterGenerics:1</Attribute>
 			<Attribute Class="Scalar">bNoContour:0</Attribute>
 			<Attribute Class="Scalar">bNoWaterTest:1</Attribute>
-			<Attribute Class="Scalar">bNoRotateCivilopedia:1</Attribute>
+			<!--<Attribute Class="Scalar">bNoRotateCivilopedia:1</Attribute>-->
 			<Rotate>45</Rotate>
 		</ArtRef>
 		<ArtRef Name="building:LSYSTEM_LIGHTHOUSE">

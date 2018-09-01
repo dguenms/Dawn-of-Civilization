@@ -490,6 +490,7 @@ class RiseAndFall:
 		pChengdu.setPopulation(2)
 		pChengdu.setHasReligion(iConfucianism, True, False, False)
 		pChengdu.setHasRealBuilding(iGranary, True)
+		pChengdu.setHasRealBuilding(iDujiangyan, True)
 		
 		if utils.getScenario() == i600AD:
 			pBarbarian.found(105, 49)
@@ -536,7 +537,7 @@ class RiseAndFall:
 		
 	def adjust1700ADWonders(self):
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
-		pMilan.setBuildingOriginalOwner(iLeaningTower, iItaly)
+		pMilan.setBuildingOriginalOwner(iSantaMariaDelFiore, iItaly)
 		pMilan.setBuildingOriginalOwner(iSanMarcoBasilica, iItaly)
 		
 		pDjenne = gc.getMap().plot(51, 29).getPlotCity()
