@@ -2902,6 +2902,14 @@
 		<Spanish>Divan</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WAREHOUSE</Tag>
+		<English>Warehouse</English>
+		<French>Warehouse</French>
+		<German>Warenhaus</German>
+		<Italian>Warehouse</Italian>
+		<Spanish>Warehouse</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
