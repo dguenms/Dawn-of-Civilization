@@ -8139,7 +8139,7 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}
 
-	if (isHuman() && (pCity->getNumActiveBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE-1)) > 0))
+	if (isHuman() && (pCity->getNumActiveBuilding((BuildingTypes)(BUILDING_PLAGUE)) > 0))
 	{
 		return DENIAL_NO_GAIN;
 	}
