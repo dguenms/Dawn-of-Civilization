@@ -3427,5 +3427,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/AdministrativeCenter/AdministrativeCenter.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_WAREHOUSE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.00</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Warehouse/NavalManufacture.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Warehouse/Warehouse.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

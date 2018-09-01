@@ -2902,6 +2902,7 @@
 		<Spanish>Divan</Spanish>
 	</TEXT>
 	<TEXT>
+<<<<<<< 4e8b5f9660a511c662d929a5f17c033a073ceb23
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
 		<English>Garden</English>
 		<French>
@@ -2932,6 +2933,14 @@
 		<German>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WAREHOUSE</Tag>
+		<English>Warehouse</English>
+		<French>Warehouse</French>
+		<German>Warenhaus</German>
+		<Italian>Warehouse</Italian>
+		<Spanish>Warehouse</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
