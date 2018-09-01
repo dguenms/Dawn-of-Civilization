@@ -7235,7 +7235,7 @@ bool CvUnit::build(BuildTypes eBuild)
 	int iWorkRate = workRate(false);
 
 	// Leoreth: Chateau Frontenac effect
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)FRONTENAC))
+	if (eBuild != NO_BUILD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)FRONTENAC))
 	{
 		if (GC.getBuildInfo(eBuild).getTechPrereq() == RAILROAD)
 		{
