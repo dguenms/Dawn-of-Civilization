@@ -601,7 +601,7 @@
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA</Tag>
 		<English>The Hagia Sophia</English>
 		<French>
-			<Text>Sainte-Sophie</Text>
+			<Text>Basilique Sainte-Sophie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -1372,7 +1372,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_APADANA_PALACE</Tag>
 		<English>Apadana Palace</English>
-		<French>Apadana Palace</French>
+		<French>
+			<Text>Apadana</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Apadana-Palast</German>
 		<Italian>Apadana Palace</Italian>
 		<Spanish>Apadana Palace</Spanish>
@@ -1380,7 +1384,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JETAVANARAMAYA</Tag>
 		<English>Jetavanaramaya</English>
-		<French>Jetavanaramaya</French>
+		<French>
+			<Text>Jetavanaramaya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Jetavanaramaya</German>
 		<Italian>Jetavanaramaya</Italian>
 		<Spanish>Jetavanaramaya</Spanish>
@@ -1388,7 +1396,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GONDESHAPUR</Tag>
 		<English>Gondeshapur</English>
-		<French>Gondeshapur</French>
+		<French>
+			<Text>Gundishapur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gondeschapur</German>
 		<Italian>Gondeshapur</Italian>
 		<Spanish>Gondeshapur</Spanish>
@@ -1396,7 +1408,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN</Tag>
 		<English>Prambanan</English>
-		<French>Prambanan</French>
+		<French>
+			<Text>Prambanan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Prambanan</German>
 		<Italian>Prambanan</Italian>
 		<Spanish>Prambanan</Spanish>
@@ -1404,7 +1420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAMBANAN_HELP</Tag>
 		<English>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</English>
-		<French>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</French>
+		<French>[ICON_BULLET]Toutes les villes stockent 25% de [ICON_FOOD] en plus après la croissance</French>
 		<German>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</German>
 		<Italian>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</Italian>
 		<Spanish>[ICON_BULLET]All cities store an additional 25% [ICON_FOOD] after growth</Spanish>
@@ -1412,7 +1428,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHEOMSEONGDAE</Tag>
 		<English>Cheomseongdae</English>
-		<French>Cheomseongdae</French>
+		<French>
+			<Text>Cheomseongdae</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Cheomseongdae</German>
 		<Italian>Cheomseongdae</Italian>
 		<Spanish>Cheomseongdae</Spanish>
@@ -1420,7 +1440,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NALANDA</Tag>
 		<English>Nalanda University</English>
-		<French>Nalanda University</French>
+		<French>
+			<Text>Université de Nâlandâ</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Universität von Nalanda</German>
 		<Italian>Nalanda University</Italian>
 		<Spanish>Nalanda University</Spanish>
@@ -1428,7 +1452,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS</Tag>
 		<English>Krak des Chevaliers</English>
-		<French>Krak des Chevaliers</French>
+		<French>
+			<Text>Krak des Chevaliers</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Krak des Chevaliers</German>
 		<Italian>Krak des Chevaliers</Italian>
 		<Spanish>Krak des Chevaliers</Spanish>
@@ -1436,7 +1464,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_KRAK_DES_CHEVALIERS</Tag>
 		<English>[ICON_BULLET]Defeated city defenders retreat to your capital</English>
-		<French>[ICON_BULLET]Defeated city defenders retreat to your capital</French>
+		<French>[ICON_BULLET]Vos unités vaincues en défendant une ville battent en retraite dans votre capitale</French>
 		<German>[ICON_BULLET]Defeated city defenders retreat to your capital</German>
 		<Italian>[ICON_BULLET]Defeated city defenders retreat to your capital</Italian>
 		<Spanish>[ICON_BULLET]Defeated city defenders retreat to your capital</Spanish>
@@ -1444,7 +1472,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Tag>
 		<English>House of Wisdom</English>
-		<French>House of Wisdom</French>
+		<French>
+			<Text>Maison de la sagesse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Haus der Weisheit</German>
 		<Italian>House of Wisdom</Italian>
 		<Spanish>House of Wisdom</Spanish>
@@ -1452,7 +1484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Tag>
 		<English>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</English>
-		<French>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</French>
+		<French>[ICON_BULLET]+200% de [ICON_RESEARCH] pour les découvertes des personnages illustres</French>
 		<German>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</German>
 		<Italian>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Italian>
 		<Spanish>[ICON_BULLET]+200% [ICON_RESEARCH] from Great People discoveries</Spanish>
@@ -1460,7 +1492,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA</Tag>
 		<English>Salsal Buddha</English>
-		<French>Salsal Buddha</French>
+		<French>
+			<Text>Bouddha Salsal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Salsal Buddha</German>
 		<Italian>Salsal Buddha</Italian>
 		<Spanish>Salsal Buddha</Spanish>
@@ -1468,7 +1504,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALSAL_BUDDHA_HELP</Tag>
 		<English>[ICON_BULLET]Trade routes remain connected even during war</English>
-		<French>[ICON_BULLET]Trade routes remain connected even during war</French>
+		<French>[ICON_BULLET]Les routes commerciales demeurent connectées en temps de guerre</French>
 		<German>[ICON_BULLET]Trade routes remain connected even during war</German>
 		<Italian>[ICON_BULLET]Trade routes remain connected even during war</Italian>
 		<Spanish>[ICON_BULLET]Trade routes remain connected even during war</Spanish>
@@ -1476,7 +1512,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA</Tag>
 		<English>Saint Sophia's Cathedral</English>
-		<French>Saint Sophia's Cathedral</French>
+		<French>
+			<Text>Cathédrale Sainte-Sophie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Heilige Sophien-Kathedrale</German>
 		<Italian>Saint Sophia's Cathedral</Italian>
 		<Spanish>Saint Sophia's Cathedral</Spanish>
@@ -1484,7 +1524,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Tag>
 		<English>Santa Maria del Fiore</English>
-		<French>Santa Maria del Fiore</French>
+		<French>
+			<Text>Santa Maria del Fiore</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Santa Maria del Fiore</German>
 		<Italian>Santa Maria del Fiore</Italian>
 		<Spanish>Santa Maria del Fiore</Spanish>
@@ -1492,7 +1536,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRON_PILLAR</Tag>
 		<English>Iron Pillar</English>
-		<French>Iron Pillar</French>
+		<French>
+			<Text>Pilier de fer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eiserne Säule</German>
 		<Italian>Iron Pillar</Italian>
 		<Spanish>Iron Pillar</Spanish>
@@ -1500,7 +1548,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN</Tag>
 		<English>Silver Tree Fountain</English>
-		<French>Silver Tree Fountain</French>
+		<French>
+			<Text>Fontaine de l'arbre d'argent</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Silberbaumbrunnen</German>
 		<Italian>Silver Tree Fountain</Italian>
 		<Spanish>Silver Tree Fountain</Spanish>
@@ -1508,7 +1560,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN_HELP</Tag>
 		<English>[ICON_BULLET]Another great person is born whenever a Great General appears</English>
-		<French>[ICON_BULLET]Another great person is born whenever a Great General appears</French>
+		<French>[ICON_BULLET]Un autre personnage illustre naît lors de l'apparition d'un Général illustre</French>
 		<German>[ICON_BULLET]Another great person is born whenever a Great General appears</German>
 		<Italian>[ICON_BULLET]Another great person is born whenever a Great General appears</Italian>
 		<Spanish>[ICON_BULLET]Another great person is born whenever a Great General appears</Spanish>
@@ -1516,7 +1568,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH</Tag>
 		<English>Saint Thomas Church</English>
-		<French>Saint Thomas Church</French>
+		<French>
+			<Text>Église Saint-Thomas</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Thomaskirche</German>
 		<Italian>Saint Thomas Church</Italian>
 		<Spanish>Saint Thomas Church</Spanish>
@@ -1524,7 +1580,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL</Tag>
 		<English>El Escorial</English>
-		<French>El Escorial</French>
+		<French>
+			<Text>Escurial</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>El Escorial</German>
 		<Italian>El Escorial</Italian>
 		<Spanish>El Escorial</Spanish>
@@ -1532,7 +1592,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_EFFECT</Tag>
 		<English>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</English>
-		<French>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</French>
+		<French>Nos colons et conquistadors dans le Nouveau Monde ont acquis %d1 [ICON_GOLD] dans la colonie de %s2.</French>
 		<German>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</German>
 		<Italian>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</Italian>
 		<Spanish>Our settlers and conquistadors in the New World have acquired an additional %d1 [ICON_GOLD] from the new colony of %s2.</Spanish>
@@ -1540,7 +1600,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ESCORIAL_HELP</Tag>
 		<English>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</English>
-		<French>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</French>
+		<French>[ICON_BULLET]Rapporte de l'[ICON_GOLD] pour chaque nouvelle colonie</French>
 		<German>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</German>
 		<Italian>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Italian>
 		<Spanish>[ICON_BULLET]Receives [ICON_GOLD] for every acquired colony</Spanish>
@@ -1548,7 +1608,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TORRE_DE_BELEM</Tag>
 		<English>Torre de Belem</English>
-		<French>Torre de Belem</French>
+		<French>
+			<Text>Tour de Belém</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Torre de Belem</German>
 		<Italian>Torre de Belem</Italian>
 		<Spanish>Torre de Belem</Spanish>
@@ -1556,7 +1620,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTALA_PALACE</Tag>
 		<English>Potala Palace</English>
-		<French>Potala Palace</French>
+		<French>
+			<Text>Palais du Potala</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Potala-Palast</German>
 		<Italian>Potala Palace</Italian>
 		<Spanish>Potala Palace</Spanish>
@@ -1564,7 +1632,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POTALA_PALACE_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius</English>
-		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius</French>
+		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] par colline dans les environs de la ville</French>
 		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius</German>
 		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Hill in city radius</Spanish>
@@ -1572,7 +1640,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHALIMAR_GARDENS</Tag>
 		<English>Shalimar Gardens</English>
-		<French>Shalimar Gardens</French>
+		<French>
+			<Text>Jardins de Shalimar</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Schalimar-Gärten</German>
 		<Italian>Shalimar Gardens</Italian>
 		<Spanish>Shalimar Gardens</Spanish>
@@ -1580,7 +1652,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHALIMAR_GARDENS_HELP</Tag>
 		<English>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</English>
-		<French>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</French>
+		<French>[ICON_BULLET]Les [ICON_HEALTHY] en excès comptent comme des [ICON_HAPPY]</French>
 		<German>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</German>
 		<Italian>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</Italian>
 		<Spanish>[ICON_BULLET]Excess [ICON_HEALTHY] counts as [ICON_HAPPY]</Spanish>
@@ -1588,7 +1660,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Tag>
 		<English>Image of the World Square</English>
-		<French>Image of the World Square</French>
+		<French>
+			<Text>Place du Portrait du monde</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Abbild der Welt Platz</German>
 		<Italian>Image of the World Square</Italian>
 		<Spanish>Image of the World Square</Spanish>
@@ -1596,7 +1672,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE_HELP</Tag>
 		<English>[ICON_BULLET]+1 trade route per culture level</English>
-		<French>[ICON_BULLET]+1 trade route per culture level</French>
+		<French>[ICON_BULLET]+1 route commerciale par niveau de culture</French>
 		<German>[ICON_BULLET]+1 Handelsroute pro Kulturstufe</German>
 		<Italian>[ICON_BULLET]+1 trade route per culture level</Italian>
 		<Spanish>[ICON_BULLET]+1 trade route per culture level</Spanish>
