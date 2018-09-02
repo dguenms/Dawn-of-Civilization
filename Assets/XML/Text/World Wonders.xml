@@ -28,7 +28,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Tag>
 		<English>[ICON_BULLET]Artists can also be hired using Priest slots</English>
-		<French>[ICON_BULLET]Artists can also be hired using Priest slots</French>
+		<French>[ICON_BULLET]Vous pouvez transformer des citoyens en artistes à la place des prêtres</French>
 		<German>[ICON_BULLET]K&#252;nstler k&#246;nnen auch mithilfe von Priesterstellen eingestellt werden</German>
 		<Italian>[ICON_BULLET]Artists can also be hired using Priest slots</Italian>
 		<Spanish>[ICON_BULLET]Artists can also be hired using Priest slots</Spanish>
@@ -260,7 +260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP</Tag>
 		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</English>
-		<French>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</French>
+		<French>[ICON_BULLET]Rapporte de autant d'[ICON_GOLD] que la ville a de population</French>
 		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bev&#246;lkerung seiner Stadt</German>
 		<Italian>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</Italian>
 		<Spanish>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</Spanish>
@@ -276,7 +276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_HELP</Tag>
 		<English>[ICON_BULLET]Golden Ages consume at most three Great People</English>
-		<French>[ICON_BULLET]Golden Ages consume at most three Great People</French>
+		<French>[ICON_BULLET]Les âges d'or utilisent un maximum de trois personnages illustres</French>
 		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen h&#246;chstens drei gro&#223;e Pers&#246;nlichkeiten</German>
 		<Italian>[ICON_BULLET]Golden Ages consume at most three Great People</Italian>
 		<Spanish>[ICON_BULLET]Golden Ages consume at most three Great People</Spanish>
@@ -384,7 +384,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_HELP</Tag>
 		<English>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</English>
-		<French>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</French>
+		<French>[ICON_BULLET]Les unités ennemies se déplacent plus lentement à l'intérieur des murs[NEWLINE][ICON_BULLET]Les unités barbares subissent des dommages à l'intérieur des murs</French>
 		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauer[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
 		<Italian>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</Italian>
 		<Spanish>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</Spanish>
@@ -420,7 +420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_GREAT_BATH</Tag>
 		<English>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</English>
-		<French>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</French>
+		<French>[ICON_BULLET]Fournit de l'eau douce à la ville[NEWLINE][ICON_BULLET]Les nouvelles villes reçoivent un point de population supplémentaire</French>
 		<German>[ICON_BULLET]Versorgt die Stadt mit S&#252;&#223;wasser[NEWLINE][ICON_BULLET]Alle neu gegr&#252;ndeten St&#228;dte erhalten einen zus&#228;tzlichen Bev&#246;lkerungspunkt</German>
 		<Italian>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</Italian>
 		<Spanish>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</Spanish>
@@ -428,7 +428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HARMANDIR_SAHIB</Tag>
 		<English>[ICON_BULLET]All units built in cities with state religion receive +2 experience</English>
-		<French>[ICON_BULLET]All units built in cities with state religion receive +2 experience</French>
+		<French>[ICON_BULLET]+2 EXP pour les unités construites dans les villes avec la religion d'État</French>
 		<German>[ICON_BULLET]Alle Einheiten, die in St&#228;dten mit Staatsreligion ausgebildet werden, erhalten +2 Erfahrung</German>
 		<Italian>[ICON_BULLET]All units built in cities with state religion receive +2 experience</Italian>
 		<Spanish>[ICON_BULLET]All units built in cities with state religion receive +2 experience</Spanish>
@@ -436,7 +436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
 		<English>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</English>
-		<French>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</French>
+		<French>[ICON_BULLET]Le niveau de défense des villes augmente leur production de culture[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] par niveau de chaque unité complètement fortifiée dans la ville</French>
 		<German>[ICON_BULLET]Stadtverteidigung erh&#246;ht Kulturaussto&#223; in allen St&#228;dten[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] pro Level f&#252;r jede vollst&#228;ndig befestigte Einheit in der Stadt</German>
 		<Italian>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</Italian>
 		<Spanish>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</Spanish>
@@ -452,7 +452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
 		<English>[ICON_BULLET]All trade routes are counted as foreign</English>
-		<French>[ICON_BULLET]All trade routes are counted as foreign</French>
+		<French>[ICON_BULLET]Toutes les routes commerciales sont considérées étrangères</French>
 		<German>[ICON_BULLET]All Handelsrouten werden als ausl&#228;ndisch gewertet</German>
 		<Italian>[ICON_BULLET]All trade routes are counted as foreign</Italian>
 		<Spanish>[ICON_BULLET]All trade routes are counted as foreign</Spanish>
@@ -556,7 +556,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_HELP</Tag>
 		<English>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</English>
-		<French>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</French>
+		<French>[ICON_BULLET]+2[ICON_GOLD] par montagne dans les environs de la ville</French>
 		<German>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</German>
 		<Italian>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</Italian>
 		<Spanish>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</Spanish>
@@ -648,7 +648,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA_HELP</Tag>
 		<English>[ICON_BULLET]Builder Receives a Great Person</English>
-		<French>[ICON_BULLET]Builder Receives a Great Person</French>
+		<French>[ICON_BULLET]Crée immédiatement un personnage illustre</French>
 		<German>[ICON_BULLET]Erbauer erh&#228;lt eine gro&#223;e Pers&#246;nlichkeit</German>
 		<Italian>[ICON_BULLET]Builder Receives a Great Person</Italian>
 		<Spanish>[ICON_BULLET]Builder Receives a Great Person</Spanish>
@@ -664,7 +664,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</English>
-		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</French>
+		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] pour les aménagements maritimes[NEWLINE][COLOR_WARNING_TEXT]Requiert 20 cases d'eau dans les environs de la ville[COLOR_REVERT]</French>
 		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</German>
 		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</Spanish>
@@ -840,7 +840,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Tag>
 		<English>[ICON_BULLET]Civic Upkeep Reduced by 33%</English>
-		<French>[ICON_BULLET]Civic Upkeep Reduced by 33%</French>
+		<French>[ICON_BULLET]Entretien des doctrines réduit de 33%</French>
 		<German>[ICON_BULLET]Staatsformen-Unterhalt um 33% reduziert</German>
 		<Italian>[ICON_BULLET]Civic Upkeep Reduced by 33%</Italian>
 		<Spanish>[ICON_BULLET]Civic Upkeep Reduced by 33%</Spanish>
@@ -900,7 +900,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
 		<English>[ICON_BULLET]Cities continue to grow when using Food for Production</English>
-		<French>[ICON_BULLET]Cities continue to grow when using Food for Production</French>
+		<French>[ICON_BULLET]Les villes continuent de croître lorsqu'elles utilisent la nourriture comme production</French>
 		<German>[ICON_BULLET]Städte wachsen weiterhin, wenn Nahrung zur Produktion verwendet wird</German>
 		<Italian>[ICON_BULLET]Cities continue to grow when using Food for Production</Italian>
 		<Spanish>[ICON_BULLET]Cities continue to grow when using Food for Production</Spanish>
@@ -938,7 +938,7 @@
 		<English>Graceland</English>
 		<French>
 			<Text>Graceland</Text>
-			<Gender>Female</Gender>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -1020,7 +1020,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Tag>
 		<English>[ICON_BULLET]No City Resistance on Conquest</English>
-		<French>[ICON_BULLET]No City Resistance on Conquest</French>
+		<French>[ICON_BULLET]Pas de résistance des villes conquises</French>
 		<German>[ICON_BULLET]Kein Widerstand nach Stadteroberung</German>
 		<Italian>[ICON_BULLET]No City Resistance on Conquest</Italian>
 		<Spanish>[ICON_BULLET]No City Resistance on Conquest</Spanish>
@@ -1052,7 +1052,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
 		<English>[ICON_BULLET]Food is added to Production when building Wonders</English>
-		<French>[ICON_BULLET]Food is added to Production when building Wonders</French>
+		<French>[ICON_BULLET]La nourriture est ajoutée à la production lors de la construction de merveilles</French>
 		<German>[ICON_BULLET]Beim Errichten von Wundern wird Nahrung zur Produktion addiert</German>
 		<Italian>[ICON_BULLET]Food is added to Production when building Wonders</Italian>
 		<Spanish>[ICON_BULLET]Food is added to Production when building Wonders</Spanish>
@@ -1116,7 +1116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_HELP</Tag>
 		<English>[ICON_BULLET]Doubles the revenue limit of all your shrines</English>
-		<French>[ICON_BULLET]Doubles the revenue limit of all your shrines</French>
+		<French>[ICON_BULLET]Double la limite de revenu de tous vos sanctuaires</French>
 		<German>[ICON_BULLET]Verdoppelt die Einnahmegrenze aller Ihrer Schreine</German>
 		<Italian>[ICON_BULLET]Doubles the revenue limit of all your shrines</Italian>
 		<Spanish>[ICON_BULLET]Doubles the revenue limit of all your shrines</Spanish>
@@ -1140,7 +1140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
 		<English>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</English>
-		<French>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</French>
+		<French>[ICON_BULLET]Pas de limite d'expérience en vaincant des unités barbares[NEWLINE][ICON_BULLET]Les victoires contre les barbares contribuent à l'apparition des Généraux illustres</French>
 		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt gro&#223;er Gener&#228;le bei</German>
 		<Italian>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</Italian>
 		<Spanish>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</Spanish>
@@ -1216,7 +1216,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Tag>
 		<English>[ICON_BULLET]Extra initial production in conquered cities</English>
-		<French>[ICON_BULLET]Extra initial production in conquered cities</French>
+		<French>[ICON_BULLET]Production initiale additionnelle dans les villes conquises</French>
 		<German>[ICON_BULLET]Extra initial production in conquered cities</German>
 		<Italian>[ICON_BULLET]Extra initial production in conquered cities</Italian>
 		<Spanish>[ICON_BULLET]Extra initial production in conquered cities</Spanish>
@@ -1252,7 +1252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_HELP</Tag>
 		<English>[ICON_BULLET]Requires a naval unit of level three or higher</English>
-		<French>[ICON_BULLET]Requires a naval unit of level three or higher</French>
+		<French>[ICON_BULLET]Requiert une unité navale de niveau trois ou plus</French>
 		<German>[ICON_BULLET]Ben&#246;tigt eine Marineeinheit der Stufe drei oder h&#246;her</German>
 		<Italian>[ICON_BULLET]Requires a naval unit of level three or higher</Italian>
 		<Spanish>[ICON_BULLET]Requires a naval unit of level three or higher</Spanish>
@@ -1348,7 +1348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_HELP</Tag>
 		<English>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</English>
-		<French>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</French>
+		<French>[ICON_BULLET]Pas de [ICON_UNHEALTHY] des plaines inondables</French>
 		<German>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</German>
 		<Italian>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</Spanish>
@@ -1356,7 +1356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Tag>
 		<English>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</English>
-		<French>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</French>
+		<French>[ICON_BULLET]Le seuil d'apparition d'un Général illustre est remis à zéro lorsqu'un Général illustre meurt au combat</French>
 		<German>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</German>
 		<Italian>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</Italian>
 		<Spanish>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</Spanish>
@@ -1364,7 +1364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_HELP</Tag>
 		<English>[ICON_BULLET]No open borders required for trade</English>
-		<French>[ICON_BULLET]No open borders required for trade</French>
+		<French>[ICON_BULLET]Les accords de libre passage ne sont pas nécessaires pour le commerce</French>
 		<German>[ICON_BULLET]No open borders required for trade</German>
 		<Italian>[ICON_BULLET]No open borders required for trade</Italian>
 		<Spanish>[ICON_BULLET]No open borders required for trade</Spanish>
@@ -1680,7 +1680,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOURSE</Tag>
 		<English>The Bourse</English>
-		<French>The Bourse</French>
+		<French>
+			<Text>Bourse d'Amsterdam</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Beurs</German>
 		<Italian>The Bourse</Italian>
 		<Spanish>The Bourse</Spanish>
@@ -1688,7 +1692,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE</Tag>
 		<English>Itsukushima Shrine</English>
-		<French>Itsukushima Shrine</French>
+		<French>
+			<Text>Sanctuaire d'Itsukushima</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Itsukushima-Schrein</German>
 		<Italian>Itsukushima Shrine</Italian>
 		<Spanish>Itsukushima Shrine</Spanish>
@@ -1696,7 +1704,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</English>
-		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</French>
+		<French>[ICON_BULLET]+1 [ICON_GREATPEOPLE] par case d'eau dans les environs de la ville</French>
 		<German>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</German>
 		<Italian>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_GREATPEOPLE] per Water tile in city radius</Spanish>
@@ -1704,7 +1712,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE</Tag>
 		<English>The Louvre</English>
-		<French>The Louvre</French>
+		<French>
+			<Text>Le Louvre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Der Louvre</German>
 		<Italian>The Louvre</Italian>
 		<Spanish>The Louvre</Spanish>
@@ -1712,7 +1724,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
 		<English>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</English>
-		<French>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</French>
+		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contrôle</French>
 		<German>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</German>
 		<Italian>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Italian>
 		<Spanish>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Spanish>
@@ -1720,7 +1732,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
 		<English>Hermitage</English>
-		<French>Hermitage</French>
+		<French>
+			<Text>Ermitage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eremitage</German>
 		<Italian>Hermitage</Italian>
 		<Spanish>Hermitage</Spanish>
@@ -1728,7 +1744,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HERMITAGE_HELP</Tag>
 		<English>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</English>
-		<French>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</French>
+		<French>[ICON_BULLET]Les tecnologies coûtent -25% de [ICON_RESEARCH] lors des échanges et via l'espionnage</French>
 		<German>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</German>
 		<Italian>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</Italian>
 		<Spanish>[ICON_BULLET]Technologies cost -25% [ICON_RESEARCH] less in trade and espionage</Spanish>
@@ -1736,7 +1752,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SALT_CATHEDRAL</Tag>
 		<English>Salt Cathedral</English>
-		<French>Salt Cathedral</French>
+		<French>
+			<Text>Cathédrale de sel</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Salzkathedrale</German>
 		<Italian>Salt Cathedral</Italian>
 		<Spanish>Salt Cathedral</Spanish>
@@ -1744,7 +1764,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMERALD_BUDDHA</Tag>
 		<English>Emerald Buddha Temple</English>
-		<French>Emerald Buddha Temple</French>
+		<French>
+			<Text>Temple du Bouddha d'émeraude</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tempel des Smaragd-Buddha</German>
 		<Italian>Emerald Buddha Temple</Italian>
 		<Spanish>Emerald Buddha Temple</Spanish>
@@ -1752,7 +1776,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BELL_ROCK_LIGHTHOUSE</Tag>
 		<English>Bell Rock Lighthouse</English>
-		<French>Bell Rock Lighthouse</French>
+		<French>
+			<Text>Phare de Bell Rock</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bell-Rock-Leuchtturm</German>
 		<Italian>Bell Rock Lighthouse</Italian>
 		<Spanish>Bell Rock Lighthouse</Spanish>
@@ -1760,7 +1788,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN</Tag>
 		<English>Neuschwanstein Castle</English>
-		<French>Neuschwanstein Castle</French>
+		<French>
+			<Text>Château de Neuschwanstein</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Schloss Neuschwanstein</German>
 		<Italian>Neuschwanstein Castle</Italian>
 		<Spanish>Neuschwanstein Castle</Spanish>
@@ -1768,7 +1800,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN_HELP</Tag>
 		<English>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</English>
-		<French>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</French>
+		<French>[ICON_BULLET]Ordonner à un personnage illustre de rejoindre une ville y restaure 50% des [ICON_GREATPEOPLE]</French>
 		<German>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</German>
 		<Italian>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</Italian>
 		<Spanish>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</Spanish>
@@ -1776,7 +1808,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BROOKLYN_BRIDGE</Tag>
 		<English>Brooklyn Bridge</English>
-		<French>Brooklyn Bridge</French>
+		<French>
+			<Text>Pont de Brooklyn</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Brooklyn-Brücke</German>
 		<Italian>Brooklyn Bridge</Italian>
 		<Spanish>Brooklyn Bridge</Spanish>
@@ -1784,7 +1820,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRYSTAL_PALACE</Tag>
 		<English>Crystal Palace</English>
-		<French>Crystal Palace</French>
+		<French>
+			<Text>Crystal Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kristallpalast</German>
 		<Italian>Crystal Palace</Italian>
 		<Spanish>Crystal Palace</Spanish>
@@ -1792,7 +1832,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TSUKIJI</Tag>
 		<English>Tsukiji Fish Market</English>
-		<French>Tsukiji Fish Market</French>
+		<French>
+			<Text>Marché aux poissons de Tsukiji</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tsukiji Fischmarkt</German>
 		<Italian>Tsukiji Fish Market</Italian>
 		<Spanish>Tsukiji Fish Market</Spanish>
@@ -1800,7 +1844,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA</Tag>
 		<English>Sagrada Familia</English>
-		<French>Sagrada Familia</French>
+		<French>
+			<Text>Sagrada Família</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Sagrada Familia</German>
 		<Italian>Sagrada Familia</Italian>
 		<Spanish>Sagrada Familia</Spanish>
@@ -1808,7 +1856,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAGRADA_FAMILIA_HELP</Tag>
 		<English>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</English>
-		<French>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</French>
+		<French>[ICON_BULLET]+25% de [ICON_PRODUCTION] convertie en [ICON_COMMERCE]</French>
 		<German>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</German>
 		<Italian>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Italian>
 		<Spanish>[ICON_BULLET]+25% [ICON_PRODUCTION] converted into [ICON_COMMERCE]</Spanish>
@@ -1816,7 +1864,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DUJIANGYAN</Tag>
 		<English>Dujiangyan</English>
-		<French>Dujiangyan</French>
+		<French>
+			<Text>Dujiangyan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Dujiangyan</German>
 		<Italian>Dujiangyan</Italian>
 		<Spanish>Dujiangyan</Spanish>
@@ -1824,7 +1876,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MONOLITHIC_CHURCH</Tag>
 		<English>Monolithic Church</English>
-		<French>Monolithic Church</French>
+		<French>
+			<Text>Église monolithique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Monolithische Kirche</German>
 		<Italian>Monolithic Church</Italian>
 		<Spanish>Monolithic Church</Spanish>
@@ -1832,7 +1888,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE</Tag>
 		<English>Golden Gate Bridge</English>
-		<French>Golden Gate Bridge</French>
+		<French>
+			<Text>Pont du Golden Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Golden Gate Brücke</German>
 		<Italian>Golden Gate Bridge</Italian>
 		<Spanish>Golden Gate Bridge</Spanish>
@@ -1840,7 +1900,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM</Tag>
 		<English>Atomium</English>
-		<French>Atomium</French>
+		<French>
+			<Text>Atomium</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Atomium</German>
 		<Italian>Atomium</Italian>
 		<Spanish>Atomium</Spanish>
@@ -1848,7 +1912,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ATOMIUM_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</English>
-		<French>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</French>
+		<French>[ICON_BULLET]+1[ICON_RESEARCH] par arme nucléaire dans le monde</French>
 		<German>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</German>
 		<Italian>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_RESEARCH] per Nuclear Weapon built in the world</Spanish>
@@ -1856,7 +1920,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER</Tag>
 		<English>World Trade Center</English>
-		<French>World Trade Center</French>
+		<French>
+			<Text>World Trade Center</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>World Trade Center</German>
 		<Italian>World Trade Center</Italian>
 		<Spanish>World Trade Center</Spanish>
@@ -1864,7 +1932,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_TRADE_CENTER_HELP</Tag>
 		<English>[ICON_BULLET]+50% Commerce from Corporations</English>
-		<French>[ICON_BULLET]+50% Commerce from Corporations</French>
+		<French>[ICON_BULLET]+50% de [ICON_COMMERCE] des sociétés commerciales</French>
 		<German>[ICON_BULLET]+50% Commerce from Corporations</German>
 		<Italian>[ICON_BULLET]+50% Commerce from Corporations</Italian>
 		<Spanish>[ICON_BULLET]+50% Commerce from Corporations</Spanish>
@@ -1872,7 +1940,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA</Tag>
 		<English>Harbour Opera</English>
-		<French>Harbour Opera</French>
+		<French>
+			<Text>Opéra du Port</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hafenoper</German>
 		<Italian>Harbour Opera</Italian>
 		<Spanish>Harbour Opera</Spanish>
@@ -1880,7 +1952,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOUR_OPERA_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</English>
-		<French>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</French>
+		<French>[ICON_BULLET]+1[ICON_FOOD] pour chaque deux [ICON_HAPPY] en excès</French>
 		<German>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</German>
 		<Italian>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_FOOD] for every two excess [ICON_HAPPY]</Spanish>
@@ -1888,7 +1960,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA</Tag>
 		<English>Burj Khalifa</English>
-		<French>Burj Khalifa</French>
+		<French>
+			<Text>Burj Khalifa</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Burj Khalifa</German>
 		<Italian>Burj Khalifa</Italian>
 		<Spanish>Burj Khalifa</Spanish>
@@ -1896,7 +1972,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
 		<English>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</English>
-		<French>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</French>
+		<French>[ICON_BULLET]+2[ICON_FOOD], +2[ICON_COMMERCE] par case de désert</French>
 		<German>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</German>
 		<Italian>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</Italian>
 		<Spanish>[ICON_BULLET]+2[ICON_FOOD] +2[ICON_COMMERCE] per Desert tile</Spanish>
@@ -1904,7 +1980,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Tag>
 		<English>Hubble Space Telescope</English>
-		<French>Hubble Space Telescope</French>
+		<French>
+			<Text>Télescope spatial Hubble</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Hubble Weltraumteleskop</German>
 		<Italian>Hubble Space Telescope</Italian>
 		<Spanish>Hubble Space Telescope</Spanish>
@@ -1912,7 +1992,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Tag>
 		<English>Channel Tunnel</English>
-		<French>Channel Tunnel</French>
+		<French>
+			<Text>Tunnel sous la Manche</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eurotunnel</German>
 		<Italian>Channel Tunnel</Italian>
 		<Spanish>Channel Tunnel</Spanish>
@@ -1920,7 +2004,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL_HELP</Tag>
 		<English>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</English>
-		<French>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</French>
+		<French>[ICON_BULLET]Les routes commerciales rapportent +100% [ICON_TRADE] si les relations sont enthousiastes</French>
 		<German>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</German>
 		<Italian>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</Italian>
 		<Spanish>[ICON_BULLET]+100% [ICON_TRADE] income with friendly relations</Spanish>
@@ -1928,7 +2012,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DELTA_WORKS</Tag>
 		<English>Delta Works</English>
-		<French>Delta Works</French>
+		<French>
+			<Text>Plan Delta</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Deltawerke</German>
 		<Italian>Delta Works</Italian>
 		<Spanish>Delta Works</Spanish>
@@ -1936,7 +2024,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DELTA_WORKS_HELP</Tag>
 		<English>[ICON_BULLET]Requires only flat land in city radius</English>
-		<French>[ICON_BULLET]Requires only flat land in city radius</French>
+		<French>[ICON_BULLET]Requiert des terrains exclusivement plats dans les environs de la ville</French>
 		<German>[ICON_BULLET]Requires only flat land in city radius</German>
 		<Italian>[ICON_BULLET]Requires only flat land in city radius</Italian>
 		<Spanish>[ICON_BULLET]Requires only flat land in city radius</Spanish>
@@ -1944,7 +2032,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRON_DOME</Tag>
 		<English>Iron Dome</English>
-		<French>Iron Dome</French>
+		<French>
+			<Text>Dôme de fer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Iron Dome</German>
 		<Italian>Iron Dome</Italian>
 		<Spanish>Iron Dome</Spanish>
@@ -1952,7 +2044,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRON_DOME_HELP</Tag>
 		<English>[ICON_BULLET]+50% intercept chance within own territory</English>
-		<French>[ICON_BULLET]+50% intercept chance within own territory</French>
+		<French>[ICON_BULLET]Probabilité d'interception +50% dans votre territoire</French>
 		<German>[ICON_BULLET]+50% intercept chance within own territory</German>
 		<Italian>[ICON_BULLET]+50% intercept chance within own territory</Italian>
 		<Spanish>[ICON_BULLET]+50% intercept chance within own territory</Spanish>
@@ -1960,7 +2052,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER</Tag>
 		<English>Oriental Pearl Tower</English>
-		<French>Oriental Pearl Tower</French>
+		<French>
+			<Text>Perle de l'Orient</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Oriental Pearl Tower</German>
 		<Italian>Oriental Pearl Tower</Italian>
 		<Spanish>Oriental Pearl Tower</Spanish>
@@ -1968,7 +2064,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORIENTAL_PEARL_TOWER_HELP</Tag>
 		<English>[ICON_BULLET]+2[ICON_RESEARCH] per city population</English>
-		<French>[ICON_BULLET]+2[ICON_RESEARCH] per city population</French>
+		<French>[ICON_BULLET]+2 [ICON_RESEARCH] par point de population dans la ville</French>
 		<German>[ICON_BULLET]+2[ICON_RESEARCH] per city population</German>
 		<Italian>[ICON_BULLET]+2[ICON_RESEARCH] per city population</Italian>
 		<Spanish>[ICON_BULLET]+2[ICON_RESEARCH] per city population</Spanish>
@@ -1976,7 +2072,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY</Tag>
 		<English>Gardens by the Bay</English>
-		<French>Gardens by the Bay</French>
+		<French>
+			<Text>Jardins de la Baie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Gardens by the Bay</German>
 		<Italian>Gardens by the Bay</Italian>
 		<Spanish>Gardens by the Bay</Spanish>
@@ -1984,7 +2084,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY_HELP</Tag>
 		<English>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</English>
-		<French>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</French>
+		<French>[ICON_BULLET]+2[ICON_COMMERCE] par [ICON_HEALTHY] en excès</French>
 		<German>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</German>
 		<Italian>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Italian>
 		<Spanish>[ICON_BULLET]+2[ICON_COMMERCE] per excess [ICON_HEALTHY]</Spanish>
@@ -1992,7 +2092,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK</Tag>
 		<English>Bletchley Park</English>
-		<French>Bletchley Park</French>
+		<French>
+			<Text>Bletchley Park</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bletchley Park</German>
 		<Italian>Bletchley Park</Italian>
 		<Spanish>Bletchley Park</Spanish>
@@ -2000,7 +2104,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLETCHLEY_PARK_HELP</Tag>
 		<English>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</English>
-		<French>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</French>
+		<French>[ICON_BULLET]Probabilité +50% d'éviter la détection de vos espions[NEWLINE][ICON_BULLET]Probabilité +50% de détecter les espions ennemis</French>
 		<German>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</German>
 		<Italian>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</Italian>
 		<Spanish>[ICON_BULLET]+50% chance to avoid spy detection[NEWLINE][ICON_BULLET]+50% chance to detect enemy spies</Spanish>
@@ -2008,7 +2112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS</Tag>
 		<English>The Motherland Calls</English>
-		<French>The Motherland Calls</French>
+		<French>
+			<Text>L'Appel de la Mère-Patrie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Das Mutterland Ruft</German>
 		<Italian>The Motherland Calls</Italian>
 		<Spanish>The Motherland Calls</Spanish>
@@ -2016,7 +2124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS_EFFECT</Tag>
 		<English>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</English>
-		<French>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</French>
+		<French>Après la défaite de notre %s1, une nouvelle unité a été enrôlée à %s2 pour défendre la mère-patrie !</French>
 		<German>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</German>
 		<Italian>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</Italian>
 		<Spanish>After the defeat of our %s1 another unit has been drafted in %s2 to defend the motherland!</Spanish>
@@ -2024,7 +2132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOTHERLAND_CALLS_HELP</Tag>
 		<English>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</English>
-		<French>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</French>
+		<French>[ICON_BULLET]Une nouvelle unité est enrôlée chaque fois qu'une unité de niveau trois ou plus est vaincue</French>
 		<German>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</German>
 		<Italian>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</Italian>
 		<Spanish>[ICON_BULLET]Another unit is drafted whenever a unit of level 3 or higher is lost</Spanish>
@@ -2032,7 +2140,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BERLAYMONT</Tag>
 		<English>Berlaymont</English>
-		<French>Berlaymont</French>
+		<French>
+			<Text>Berlaymont</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Berlaymont</German>
 		<Italian>Berlaymont</Italian>
 		<Spanish>Berlaymont</Spanish>
@@ -2040,7 +2152,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BERLAYMONT_HELP</Tag>
 		<English>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</English>
-		<French>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</French>
+		<French>[ICON_BULLET]+2 pactes de défense possibles[NEWLINE][ICON_BULLET]+1 spécialiste gratuit par pacte de défense</French>
 		<German>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</German>
 		<Italian>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Italian>
 		<Spanish>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Spanish>
@@ -2048,7 +2160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER</Tag>
 		<English>ITER</English>
-		<French>ITER</French>
+		<French>
+			<Text>ITER</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>ITER</German>
 		<Italian>ITER</Italian>
 		<Spanish>ITER</Spanish>
@@ -2056,7 +2172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</French>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] par électricité consommée dans toutes les villes</French>
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per power consumed in all cities</Spanish>
@@ -2064,7 +2180,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Tag>
 		<English>Large Hadron Collider</English>
-		<French>Large Hadron Collider</French>
+		<French>
+			<Text>Grand collisionneur de hadrons</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Large Hadron Collider</German>
 		<Italian>Large Hadron Collider</Italian>
 		<Spanish>Large Hadron Collider</Spanish>
@@ -2072,7 +2192,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Tag>
 		<English>Vijaya Stambha</English>
-		<French>Vijaya Stambha</French>
+		<French>
+			<Text>Vijay Stambha</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Vijaya Stambha</German>
 		<Italian>Vijaya Stambha</Italian>
 		<Spanish>Vijaya Stambha</Spanish>
@@ -2080,7 +2204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_HELP</Tag>
 		<English>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</English>
-		<French>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</French>
+		<French>[ICON_BULLET][ICON_PRODUCTION] doublée pour les bâtiments de la [ICON_RELIGION] d'État</French>
 		<German>[ICON_BULLET]Doppelte [ICON_PRODUCTION] für Gebäude der Staats [ICON_RELIGION]</German>
 		<Italian>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Italian>
 		<Spanish>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Spanish>
@@ -2088,7 +2212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</French>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] sur les cases de désert</French>
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] on Desert</Spanish>
@@ -2096,7 +2220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOTRE_DAME_HELP</Tag>
 		<English>[ICON_BULLET]Only three Temples required to build Cathedrals</English>
-		<French>[ICON_BULLET]Only three Temples required to build Cathedrals</French>
+		<French>[ICON_BULLET]Seulement trois temples sont nécessaires pour construire des cathédrales</French>
 		<German>[ICON_BULLET]Only three Temples required to build Cathedrals</German>
 		<Italian>[ICON_BULLET]Only three Temples required to build Cathedrals</Italian>
 		<Spanish>[ICON_BULLET]Only three Temples required to build Cathedrals</Spanish>
@@ -2104,7 +2228,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE_HELP</Tag>
 		<English>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</English>
-		<French>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</French>
+		<French>[ICON_BULLET]Maximum de 1[ICON_UNHAPPY] des effets temporaires</French>
 		<German>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</German>
 		<Italian>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</Italian>
 		<Spanish>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</Spanish>
@@ -2112,7 +2236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</English>
-		<French>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</French>
+		<French>[ICON_BULLET]+1 [ICON_MOVES] pour les unités civiles</French>
 		<German>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</German>
 		<Italian>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_MOVES] for civilian units</Spanish>
@@ -2120,7 +2244,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH</Tag>
 		<English>Al Khazneh</English>
-		<French>Al Khazneh</French>
+		<French>
+			<Text>Khazneh</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Al Khazneh</German>
 		<Italian>Al Khazneh</Italian>
 		<Spanish>Al Khazneh</Spanish>
@@ -2128,7 +2256,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH_HELP</Tag>
 		<English>[ICON_BULLET]Requires Oasis in city radius</English>
-		<French>[ICON_BULLET]Requires Oasis in city radius</French>
+		<French>[ICON_BULLET]Requiert un oasis dans les environs de la ville</French>
 		<German>[ICON_BULLET]Requires Oasis in city radius</German>
 		<Italian>[ICON_BULLET]Requires Oasis in city radius</Italian>
 		<Spanish>[ICON_BULLET]Requires Oasis in city radius</Spanish>
@@ -2136,7 +2264,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ALAMUT</Tag>
 		<English>Alamut Fortress</English>
-		<French>Alamut Fortress</French>
+		<French>
+			<Text>Forteresse d'Alamut</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Festung Alamut</German>
 		<Italian>Alamut Fortress</Italian>
 		<Spanish>Alamut Fortress</Spanish>
@@ -2144,7 +2276,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOUNT_ATHOS</Tag>
 		<English>Mount Athos</English>
-		<French>Mount Athos</French>
+		<French>
+			<Text>Mont Athos</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Athos</German>
 		<Italian>Mount Athos</Italian>
 		<Spanish>Mount Athos</Spanish>
@@ -2152,7 +2288,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOUNT_ATHOS_HELP</Tag>
 		<English>[ICON_BULLET]Double [ICON_GREATPEOPLE] from Buildings</English>
-		<French>[ICON_BULLET]Double [ICON_GREATPEOPLE] from Buildings</French>
+		<French>[ICON_BULLET]Les bâtiments rapportent le double de [ICON_GREATPEOPLE]</French>
 		<German>[ICON_BULLET]Double [ICON_GREATPEOPLE] from Buildings</German>
 		<Italian>[ICON_BULLET]Double [ICON_GREATPEOPLE] from Buildings</Italian>
 		<Spanish>[ICON_BULLET]Double [ICON_GREATPEOPLE] from Buildings</Spanish>
@@ -2160,7 +2296,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT</Tag>
 		<English>Global Seed Vault</English>
-		<French>Global Seed Vault</French>
+		<French>
+			<Text>Réserve mondiale de semences</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Weltweiter Saatgut-Tresor</German>
 		<Italian>Global Seed Vault</Italian>
 		<Spanish>Global Seed Vault</Spanish>
@@ -2176,7 +2316,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUADALUPE_BASILICA</Tag>
 		<English>Guadalupe Basilica</English>
-		<French>Guadalupe Basilica</French>
+		<French>
+			<Text>Basilique de Guadalupe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Basilica von Guadalupe</German>
 		<Italian>Guadalupe Basilica</Italian>
 		<Spanish>Guadalupe Basilica</Spanish>
@@ -2184,7 +2328,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUADALUPE_BASILICA_HELP</Tag>
 		<English>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</English>
-		<French>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</French>
+		<French>[ICON_BULLET]Ne peut être construite sur le même continent que le sanctuaire catholique[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] par ville catholique sur le même continent</French>
 		<German>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</German>
 		<Italian>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</Italian>
 		<Spanish>[ICON_BULLET]Cannot be built on the same continent as the Catholic Shrine[NEWLINE][ICON_BULLET]+1 [ICON_GOLD] per Catholic city on the same continent</Spanish>
@@ -2192,7 +2336,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOLE_ANTONELLIANA</Tag>
 		<English>Mole Antonelliana</English>
-		<French>Mole Antonelliana</French>
+		<French>
+			<Text>Mole Antonelliana</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mole Antonelliana</German>
 		<Italian>Mole Antonelliana</Italian>
 		<Spanish>Mole Antonelliana</Spanish>
@@ -2200,7 +2348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOLE_ANTONELLIANA_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</English>
-		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</French>
+		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] par montagne dans les environs de la ville</French>
 		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</German>
 		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] per Peak in city radius</Spanish>
@@ -2208,7 +2356,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR</Tag>
 		<English>Gur-e-Amir</English>
-		<French>Gur-e-Amir</French>
+		<French>
+			<Text>Gour Emir</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gur-e-Amir</German>
 		<Italian>Gur-e-Amir</Italian>
 		<Spanish>Gur-e-Amir</Spanish>
@@ -2216,7 +2368,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT</Tag>
 		<English>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</English>
-		<French>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</French>
+		<French>Nos armées ont pillé %d1 [ICON_CULTURE] pendant leur conquête de %s2 et l'ont ramenée à %s3.</French>
 		<German>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</German>
 		<Italian>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Italian>
 		<Spanish>Our armies have plundered %d1 [ICON_CULTURE] during their conquest of %s2 and brought it to %s3.</Spanish>
@@ -2224,7 +2376,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GUR_E_AMIR_HELP</Tag>
 		<English>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</English>
-		<French>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</French>
+		<French>[ICON_BULLET]Le ville reçoit de la [ICON_CULTURE] additionnelle égale à l'[ICON_GOLD] pillé dans les villes conquises</French>
 		<German>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</German>
 		<Italian>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Italian>
 		<Spanish>[ICON_BULLET]City receives additional [ICON_CULTURE] equal to [ICON_GOLD] plundered from captured cities</Spanish>
@@ -2232,7 +2384,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE</Tag>
 		<English>Lotus Temple</English>
-		<French>Lotus Temple</French>
+		<French>
+			<Text>Temple du Lotus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Lotustempel</German>
 		<Italian>Lotus Temple</Italian>
 		<Spanish>Lotus Temple</Spanish>
@@ -2240,7 +2396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE_HELP</Tag>
 		<English>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</English>
-		<French>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</French>
+		<French>[ICON_BULLET]Requiert au moins quatre religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] par [ICON_RELIGION] autre que la [ICON_RELIGION] d'État dans toutes les villes</French>
 		<German>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</German>
 		<Italian>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Italian>
 		<Spanish>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Spanish>
@@ -2248,7 +2404,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUA_APPIA</Tag>
 		<English>Aqua Appia</English>
-		<French>Aqua Appia</French>
+		<French>
+			<Text>Aqua Appia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aqua Appia</German>
 		<Italian>Aqua Appia</Italian>
 		<Spanish>Aqua Appia</Spanish>
@@ -2256,7 +2416,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AMBER_ROOM</Tag>
 		<English>Amber Room</English>
-		<French>Amber Room</French>
+		<French>
+			<Text>Chambre d'ambre</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bernsteinzimmer</German>
 		<Italian>Amber Room</Italian>
 		<Spanish>Amber Room</Spanish>
@@ -2264,7 +2428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AMBER_ROOM_HELP</Tag>
 		<English>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</English>
-		<French>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</French>
+		<French>[ICON_BULLET]Les autres civilisations sont plus enclines à signer des pactes de défense[NEWLINE][ICON_BULLET]Âges d'or partagés par les signataires d'un pacte de défense</French>
 		<German>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</German>
 		<Italian>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</Italian>
 		<Spanish>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</Spanish>
@@ -2272,7 +2436,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PALACE_OF_NATIONS</Tag>
 		<English>Palace of Nations</English>
-		<French>Palais des Nations</French>
+		<French>
+			<Text>Palais des Nations</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Palast der Nationen</German>
 		<Italian>Palace of Nations</Italian>
 		<Spanish>Palace of Nations</Spanish>
@@ -2280,7 +2448,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PALACE_OF_NATIONS_HELP</Tag>
 		<English>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</English>
-		<French>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</French>
+		<French>[ICON_BULLET]Les Congrès se produisent tous les quatre tours[NEWLINE][ICON_BULLET]Vos villes ne peuvent pas être réclamées lors des Congrès[NEWLINE][ICON_BULLET]Les autres civilisations sont plus enclines à accepter vos demandes lors des Congrès</French>
 		<German>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</German>
 		<Italian>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</Italian>
 		<Spanish>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</Spanish>
@@ -2288,7 +2456,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
 		<English>[ICON_BULLET]Units are completely healed when promoted</English>
-		<French>[ICON_BULLET]Units are completely healed when promoted</French>
+		<French>[ICON_BULLET]Vos unités sont soignées complètement lorsqu'elles sont promues</French>
 		<German>[ICON_BULLET]Units are completely healed when promoted</German>
 		<Italian>[ICON_BULLET]Units are completely healed when promoted</Italian>
 		<Spanish>[ICON_BULLET]Units are completely healed when promoted</Spanish>
@@ -2320,7 +2488,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN</Tag>
 		<English>Metropolitain</English>
-		<French>Metropolitain</French>
+		<French>
+			<Text>Le Métropolitain</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Metropolitain</German>
 		<Italian>Metropolitain</Italian>
 		<Spanish>Metropolitain</Spanish>
@@ -2328,7 +2500,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</English>
-		<French>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</French>
+		<French>[ICON_BULLET]+1 [ICON_COMMERCE] par bâtiment dans la ville</French>
 		<German>[ICON_BULLET]+1 [ICON_COMMERCE] pro Geb&#228;ude in der Stadt</German>
 		<Italian>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Spanish>
@@ -2336,7 +2508,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_MAUSOLEUM</Tag>
 		<English>The Great Mausoleum</English>
-		<French>The Great Mausoleum</French>
+		<French>
+			<Text>Grand Mausolée</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Das Gro&#223;e Mausoleum</German>
 		<Italian>The Great Mausoleum</Italian>
 		<Spanish>The Great Mausoleum</Spanish>
@@ -2352,7 +2528,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ABBEY_MILLS</Tag>
 		<English>Abbey Mills</English>
-		<French>Abbey Mills</French>
+		<French>
+			<Text>Abbey Mills</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Abbey Mills</German>
 		<Italian>Abbey Mills</Italian>
 		<Spanish>Abbey Mills</Spanish>
@@ -2360,7 +2540,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MENLO_PARK</Tag>
 		<English>Menlo Park</English>
-		<French>Menlo Park</French>
+		<French>
+			<Text>Menlo Park</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Menlo Park</German>
 		<Italian>Menlo Park</Italian>
 		<Spanish>Menlo Park</Spanish>
@@ -2368,7 +2552,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE</Tag>
 		<English>Nobel Prize</English>
-		<French>Nobel Prize</French>
+		<French>
+			<Text>Prix Nobel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nobelpreis</German>
 		<Italian>Nobel Prize</Italian>
 		<Spanish>Nobel Prize</Spanish>
@@ -2376,7 +2564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_HELP</Tag>
 		<English>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</English>
-		<French>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</French>
+		<French>[ICON_BULLET]Rapporte des [ICON_GREATPEOPLE] pour chaque personnage illustre apparu dans une civilisation avec laquelle vos relations sont favorables ou enthousiastes</French>
 		<German>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</German>
 		<Italian>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</Italian>
 		<Spanish>[ICON_BULLET]Extra [ICON_GREATPEOPLE] for every Great Person born in a pleased or friendly Civilization</Spanish>
@@ -2384,7 +2572,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT</Tag>
 		<English>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
-		<French>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</French>
+		<French>Un prix Nobel a été remis au personnage illustre %s1 %s2 de %s3, générant %d4 [ICON_GREATPEOPLE]</French>
 		<German>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
 		<Italian>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
 		<Spanish>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
@@ -2392,7 +2580,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Tag>
 		<English>Old Synagogue</English>
-		<French>Old Synagogue</French>
+		<French>
+			<Text>Vieille Synagogue</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Alte Synagoge</German>
 		<Italian>Old Synagogue</Italian>
 		<Spanish>Old Synagogue</Spanish>
@@ -2408,7 +2600,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY</Tag>
 		<English>Las Lajas Sanctuary</English>
-		<French>Las Lajas Sanctuary</French>
+		<French>
+			<Text>Sanctuaire de Las Lajas</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Las Lajas Wallfahrtskirche</German>
 		<Italian>Las Lajas Sanctuary</Italian>
 		<Spanish>Las Lajas Sanctuary</Spanish>
@@ -2416,7 +2612,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY_HELP</Tag>
 		<English>[ICON_BULLET]+10% unit heal rate in all cities</English>
-		<French>[ICON_BULLET]+10% unit heal rate in all cities</French>
+		<French>[ICON_BULLET]Les unités se soignent +10% rapidement dans toutes les villes</French>
 		<German>[ICON_BULLET]+10% Einheiten-Heilrate in allen St&#228;dten</German>
 		<Italian>[ICON_BULLET]+10% unit heal rate in all cities</Italian>
 		<Spanish>[ICON_BULLET]+10% unit heal rate in all cities</Spanish>
@@ -2424,7 +2620,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRYSTAL_CATHEDRAL</Tag>
 		<English>Crystal Cathedral</English>
-		<French>Crystal Cathedral</French>
+		<French>
+			<Text>Crystal Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kristallkathedrale</German>
 		<Italian>Crystal Cathedral</Italian>
 		<Spanish>Crystal Cathedral</Spanish>
@@ -2432,7 +2632,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SKYTREE</Tag>
 		<English>Skytree</English>
-		<French>Skytree</French>
+		<French>
+			<Text>Skytree</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Skytree</German>
 		<Italian>Skytree</Italian>
 		<Spanish>Skytree</Spanish>
@@ -2440,7 +2644,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</English>
-		<French>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</French>
+		<French>[ICON_BULLET]+1 [ICON_FOOD] sur les cases de Forêt tropicale</French>
 		<German>[ICON_BULLET]+1 [ICON_FOOD] von Regenwald</German>
 		<Italian>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Spanish>
@@ -2448,7 +2652,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE</Tag>
 		<English>Chapultepec Castle</English>
-		<French>Chapultepec Castle</French>
+		<French>
+			<Text>Château de Chapultepec</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Schloss Chapultepec</German>
 		<Italian>Chapultepec Castle</Italian>
 		<Spanish>Chapultepec Castle</Spanish>
@@ -2456,7 +2664,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE_HELP</Tag>
 		<English>[ICON_BULLET]+1 unit experience per culture level</English>
-		<French>[ICON_BULLET]+1 unit experience per culture level</French>
+		<French>[ICON_BULLET]+1 EXP par niveau de culture</French>
 		<German>[ICON_BULLET]+1 Einheitenerfahrung pro Kulturstufe</German>
 		<Italian>[ICON_BULLET]+1 unit experience per culture level</Italian>
 		<Spanish>[ICON_BULLET]+1 unit experience per culture level</Spanish>
@@ -2464,7 +2672,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FRONTENAC</Tag>
 		<English>Chateau Frontenac</English>
-		<French>Chateau Frontenac</French>
+		<French>
+			<Text>Château Frontenac</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Chateau Frontenac</German>
 		<Italian>Chateau Frontenac</Italian>
 		<Spanish>Chateau Frontenac</Spanish>
@@ -2472,7 +2684,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FRONTENAC_HELP</Tag>
 		<English>[ICON_BULLET]+50% building speed for Railroads</English>
-		<French>[ICON_BULLET]+50% building speed for Railroads</French>
+		<French>[ICON_BULLET]Les ouvriers construisent les chemins de fer +50% rapidement</French>
 		<German>[ICON_BULLET]+50% Baugeschwindigkeit f&#252;r Schienen</German>
 		<Italian>[ICON_BULLET]+50% building speed for Railroads</Italian>
 		<Spanish>[ICON_BULLET]+50% building speed for Railroads</Spanish>
