@@ -403,6 +403,7 @@ iCivGreece : {
 		"Methodios", # 9th
 		"Photios", # 9th
 		"Nikolaos Mystikos", # 10th
+		"Athanasios o Athonites", # 10th
 		"Ioannes Xiphilinos", # 11th
 		iIndustrial,
 		"Emmanuel Metaxakis", # 19th
@@ -2738,48 +2739,76 @@ iCivMali : {
 iCivPoland : {
 	iGreatProphet : [
 		"Wojciech", # 10th
-		"Stanislaw", # 11th
+		"Stanislaw Szczepanowski", # 11th
 		"fJadwiga", # 14th
 		iRenaissance,
 		"Piotr z Goniadza", # 16th
+		"Piotr Skarga", # 16th
 		"Israel Baal Szem Tow", # 18th
+		"Eliasz ben Salomon Zalman", # 18th
+		u"Jakub Józef Frank", # 18th
+		iIndustrial, 
+		"Albert Chmielowski", # 19th
 		iGlobal,
+		u"fUrsula Ledóchowska", # 20th
+		"fFaustina Kowalska", # 20th
+		"Stefan Wyszynski", # 20th
 		"Karol Wojtyla", # 20th
 	],
 	iGreatArtist : [
 		"Jan Kochanowski", # 16th
+		"Jan Andrzej Morsztyn", # 17th
+		"Ignacy Krasicki", # 18th
 		iIndustrial,
 		"Adam Mickiewicz", # 19th
 		"Fryderyk Chopin", # 19th
 		"Jan Matejko", # 19th
 		"Stanislaw Wyspianski", # 19th
+		u"Józef Konrad Korzeniowski", # 19th
 		iGlobal,
 		"fTamara de Lempicka", # 20th
 		"Witold Lutoslawski", # 20th
+		"Andrzej Wajda", # 20th
+		"fWislawa Szymborska", # 20th
 	],
 	iGreatScientist : [
 		"Witelo", # 13th
 		iRenaissance,
 		"Mikolaj Kopernik", # 16th
+		u"Michal Sedziwój", # 17th
 		"Jan Brozek", # 17th
 		"Stanislaw Staszic", # 18th
 		iIndustrial,
+		"Ludwik Lejzer Zamenhof", # 19th
 		"fMaria Sklodowska", # 19th
+		iGlobal, 
+		"Kazimierz Funk", # 20th
+		"Alfred Tarski", # 20th
+		u"Józef Rotblat", # 20th
 	],
 	iGreatMerchant : [
 		"Konstanty Korniakt", # 16th
+		"Antoni Protazy Potocki", # 18th
 		iIndustrial,
+		"Henryk Lubienski", # 19th
 		"Leopold Kronenberg", # 19th
+		"Franciszek Ksawery Branicki", # 19th"
 		iGlobal,
+		"Maksymilian Faktorowicz", # 20th
 		"Jan Kulczyk", # 20th
 	],
 	iGreatEngineer : [
+		"Kazimierz Siemienowicz", # 17th
+		"Tylman Gamerski", # 17th
 		"Laurynas Gucevicius", # 18th
 		iIndustrial,
+		"Piotr Steinkeller", # 19th
 		"Ignacy Lukasiewicz", # 19th
+		"Stefan Drzewiecki", # 19th
 		iGlobal,
 		"Kasimiersz Proszynski", # 20th
 		"Tadeusz Sendzimir", # 20th
+		"Stefan Tyszkiewicz", # 20th
 	],
 	iGreatStatesman : [
 		"Wladyslaw Lokietek", # 14th
@@ -2788,27 +2817,42 @@ iCivPoland : {
 		"Jan Zamoyski", # 16th
 		"fElzbieta Sieniawska", # 17th
 		"Stanislaw Staszic", # 18th
+		"Scipione Piattoli", # 18th
+		iIndustrial, 
+		"Adam Jerzy Czartoryski", # 19th
 		iGlobal,
 		"Ignacy Daszynski", # 20th
 		"Jozef Pilsudski", # 20th
 		"Wladyslaw Sikorski", # 20th
 	],
 	iGreatGeneral : [
-		"Wladyslaw Jagiello", # 15th
+		"Mieszko", # 10th
+		"Wladyslaw Jagiello", # 14th
+		iRenaissance,
 		"Jan Tarnowski", # 16th
+		"Stefan Batory", # 16th
+		u"Stanislaw Zólkiewski", # 16th
+		"Stefan Czarniecki", # 17th
 		"Tadeusz Kosciuszko", # 18th
 		iIndustrial,
+		"Jan Henryk Dabrowski", # 18th
+		"Ignacy Pradzynski", # 19th
+		u"Józef Bem", # 19th
 		"fEmilia Plater", # 19th
 		iGlobal,
 		"Wladyslaw Sikorski", # 20th
+		"Kazimierz Sosnkowski", # 20th
+		"Stanislaw Maczek", # 20th
 	],
 	iGreatSpy : [
+		"Jerzy Franciszek Kulczycki", # 17th
 		"fZofia Potocka", # 18th
 		iIndustrial,
 		u"fKarolina Sobańska", # 19th
 		iGlobal,
 		"Jan Kowalewski", # 20th
 		"Jerzy Sosnowski", # 20th
+		"Marian Rejewski", # 20th
 		"Kazimierz Leski", # 20th
 		"fKrystyna Skarbek", # 20th
 		u"Ryszard Kukliński", # 20th
