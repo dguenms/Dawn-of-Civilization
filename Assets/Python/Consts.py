@@ -916,7 +916,7 @@ iProtestantMonastery, iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIsl
 iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, 
 iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine, iAcademy, iAdministrativeCenter, iManufactory, iArmoury, 
 iMuseum, iStockExchange, iTradingCompany, iIberianTradingCompany, iNationalMonument, iNationalTheatre, iNationalGallery, iNationalCollege, iMilitaryAcademy, iSecretService, 
-iIronworks, iRedCross, iNationalPark, iCentralBank, iGreatSphinx, iPyramids, iPyramidOfTheSunm iPyramidOfTheSun, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, 
+iIronworks, iRedCross, iNationalPark, iCentralBank, iGreatSphinx, iPyramids, iPyramidOfTheSun, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, 
 iHangingGardens, iGreatCothon, iDujiangyan, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iParthenon, iTempleOfArtemis, iGreatLighthouse, 
 iMoaiStatues, iColosseum, iAquaAppia, iAlKhazneh, iTempleOfKukulkan, iMachuPicchu, iGreatLibrary, iFloatingGardens, iGondeshapur, iJetavanaramaya, 
 iNalanda, iTheodosianWalls, iHagiaSophia, iBorobudur, iMezquita, iShwedagonPaya, iMountAthos, iIronPillar, iPrambanan, iSalsalBuddha, 
