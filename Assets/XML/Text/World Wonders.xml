@@ -260,7 +260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP</Tag>
 		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</English>
-		<French>[ICON_BULLET]Rapporte de autant d'[ICON_GOLD] que la ville a de population</French>
+		<French>[ICON_BULLET]Rapporte un bonus en [ICON_GOLD] &#233;quivalent &#233; &#224; la population de la ville</French>
 		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bev&#246;lkerung seiner Stadt</German>
 		<Italian>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</Italian>
 		<Spanish>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</Spanish>
@@ -276,7 +276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_HELP</Tag>
 		<English>[ICON_BULLET]Golden Ages consume at most three Great People</English>
-		<French>[ICON_BULLET]Les &#226;ges d'or utilisent un maximum de trois personnages illustres</French>
+		<French>[ICON_BULLET]Les &#226;ges d'or consomment un maximum de trois personnages illustres</French>
 		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen h&#246;chstens drei gro&#223;e Pers&#246;nlichkeiten</German>
 		<Italian>[ICON_BULLET]Golden Ages consume at most three Great People</Italian>
 		<Spanish>[ICON_BULLET]Golden Ages consume at most three Great People</Spanish>
@@ -452,7 +452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
 		<English>[ICON_BULLET]All trade routes are counted as foreign</English>
-		<French>[ICON_BULLET]Toutes les routes commerciales sont consid&#233;r&#233;es &#233;trang&#232;res</French>
+		<French>[ICON_BULLET]Toutes les routes commerciales sont consid&#233;r&#233;es comme &#233;trang&#232;res</French>
 		<German>[ICON_BULLET]All Handelsrouten werden als ausl&#228;ndisch gewertet</German>
 		<Italian>[ICON_BULLET]All trade routes are counted as foreign</Italian>
 		<Spanish>[ICON_BULLET]All trade routes are counted as foreign</Spanish>
@@ -1140,7 +1140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
 		<English>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</English>
-		<French>[ICON_BULLET]Pas de limite d'exp&#233;rience en vaincant des unit&#233;s barbares[NEWLINE][ICON_BULLET]Les victoires contre les barbares contribuent &#224; l'apparition des G&#233;n&#233;raux illustres</French>
+		<French>[ICON_BULLET]Pas de limite &#224; l'exp&#233;rience gagn&#233;e contre les barbares[NEWLINE][ICON_BULLET]Les victoires contre les barbares contribuent &#224; l'apparition des g&#233;n&#233;raux illustres</French>
 		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt gro&#223;er Gener&#228;le bei</German>
 		<Italian>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</Italian>
 		<Spanish>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</Spanish>
@@ -1348,7 +1348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_HELP</Tag>
 		<English>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</English>
-		<French>[ICON_BULLET]Pas de [ICON_UNHEALTHY] des plaines inondables</French>
+		<French>[ICON_BULLET]Pas de [ICON_UNHEALTHY] caus&#233;s par les plaines inondables</French>
 		<German>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</German>
 		<Italian>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</Spanish>
@@ -1356,7 +1356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Tag>
 		<English>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</English>
-		<French>[ICON_BULLET]Le seuil d'apparition d'un G&#233;n&#233;ral illustre est remis &#224; z&#233;ro lorsqu'un G&#233;n&#233;ral illustre meurt au combat</French>
+		<French>[ICON_BULLET]Le seuil d'apparition d'un g&#233;n&#233;ral illustre est remis &#224; z&#233;ro lorsqu'un g&#233;n&#233;ral illustre meurt au combat</French>
 		<German>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</German>
 		<Italian>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</Italian>
 		<Spanish>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</Spanish>
@@ -1560,7 +1560,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN_HELP</Tag>
 		<English>[ICON_BULLET]Another great person is born whenever a Great General appears</English>
-		<French>[ICON_BULLET]Un autre personnage illustre na&#238;t lors de l'apparition d'un G&#233;n&#233;ral illustre</French>
+		<French>[ICON_BULLET]Un autre personnage illustre na&#238;t lors de l'apparition d'un g&#233;n&#233;ral illustre</French>
 		<German>[ICON_BULLET]Another great person is born whenever a Great General appears</German>
 		<Italian>[ICON_BULLET]Another great person is born whenever a Great General appears</Italian>
 		<Spanish>[ICON_BULLET]Another great person is born whenever a Great General appears</Spanish>
@@ -2228,7 +2228,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE_HELP</Tag>
 		<English>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</English>
-		<French>[ICON_BULLET]Maximum de 1[ICON_UNHAPPY] des effets temporaires</French>
+		<French>[ICON_BULLET]Maximum de 1[ICON_UNHAPPY] caus&#233; par des effets temporaires</French>
 		<German>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</German>
 		<Italian>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</Italian>
 		<Spanish>[ICON_BULLET]At most 1[ICON_UNHAPPY] from temporary effects</Spanish>
@@ -2428,7 +2428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AMBER_ROOM_HELP</Tag>
 		<English>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</English>
-		<French>[ICON_BULLET]Les autres civilisations sont plus enclines &#224; signer des pactes de d&#233;fense[NEWLINE][ICON_BULLET]&#194;ges d'or partag&#233;s entre les signataires d'un pacte de d&#233;fense</French>
+		<French>[ICON_BULLET]Les autres civilisations sont plus enclines &#224; signer des pactes de d&#233;fense[NEWLINE][ICON_BULLET]&#194;ges d'or partag&#233;s entre signataires d'un pacte de d&#233;fense</French>
 		<German>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</German>
 		<Italian>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</Italian>
 		<Spanish>[ICON_BULLET]Other civilisation are more willing to enter defensive pacts[NEWLINE][ICON_BULLET]Shares golden ages of defensive pact partners</Spanish>
@@ -2456,7 +2456,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
 		<English>[ICON_BULLET]Units are completely healed when promoted</English>
-		<French>[ICON_BULLET]Vos unit&#233;s sont soign&#233;es compl&#232;tement lorsqu'elles sont promues</French>
+		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French>
 		<German>[ICON_BULLET]Units are completely healed when promoted</German>
 		<Italian>[ICON_BULLET]Units are completely healed when promoted</Italian>
 		<Spanish>[ICON_BULLET]Units are completely healed when promoted</Spanish>
@@ -2572,7 +2572,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT</Tag>
 		<English>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</English>
-		<French>Un prix Nobel a &#233;t&#233; remis au personnage illustre %s1 %s2 de %s3, g&#233;n&#233;rant %d4 [ICON_GREATPEOPLE]</French>
+		<French>Un prix Nobel a &#233;t&#233; d&#233;cern&#233; au personnage illustre %s1 %s2 de %s3, g&#233;n&#233;rant %d4 [ICON_GREATPEOPLE]</French>
 		<German>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</German>
 		<Italian>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Italian>
 		<Spanish>A nobel prize has been awarded to the %s1 Great Person %s2 in %s3, adding %d4 [ICON_GREATPEOPLE]</Spanish>
@@ -2592,7 +2592,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLD_SYNAGOGUE_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</English>
-		<French>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</French>
+		<French>[ICON_BULLET]+2 [ICON_GOLD] par bâtiment religieux juif</French>
 		<German>[ICON_BULLET]+2 [ICON_GOLD] durch j&#252;dische religi&#246;se Geb&#228;ude</German>
 		<Italian>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_GOLD] from Jewish religious buildings</Spanish>
@@ -2644,7 +2644,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_HELP</Tag>
 		<English>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</English>
-		<French>[ICON_BULLET]+1 [ICON_FOOD] sur les cases de For&#234;t tropicale</French>
+		<French>[ICON_BULLET]+1 [ICON_FOOD] sur les cases de for&#234;t tropicale</French>
 		<German>[ICON_BULLET]+1 [ICON_FOOD] von Regenwald</German>
 		<Italian>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Italian>
 		<Spanish>[ICON_BULLET]+1 [ICON_FOOD] on Rainforest</Spanish>
