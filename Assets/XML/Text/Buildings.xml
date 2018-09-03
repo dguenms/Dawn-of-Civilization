@@ -921,7 +921,7 @@
 		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Tag>
 		<English>Charreada Arena</English>
 		<French>
-			<Text>Ar&#232;ne de Charrería:Ar&#232;nes de Charrería</Text>
+			<Text>Ar&#232;ne de Charrer&#237;a:Ar&#232;nes de Charrer&#237;a</Text>
 			<Gender>Female</Gender>
 			<Plural>0:1</Plural>
 		</French>
@@ -2181,7 +2181,7 @@
 		<Tag>TXT_KEY_BUILDING_CONSTABULARY</Tag>
 		<English>Constabulary</English>
 		<French>
-			<Text>Police</Text>
+			<Text>Force de police</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>

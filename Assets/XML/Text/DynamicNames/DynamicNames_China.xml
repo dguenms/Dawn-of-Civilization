@@ -52,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_DEFAULT</Tag>
 		<English>Middle Kingdom of %s1</English>
-		<French>Middle Kingdom of %s1</French>
+		<French>
+			<Text>Empire du Milieu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Middle Kingdom of %s1</German>
 		<Italian>Middle Kingdom of %s1</Italian>
 		<Spanish>Middle Kingdom of %s1</Spanish>
@@ -60,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_FASCIST</Tag>
 		<English>Nation of %s1</English>
-		<French>Nation of %s1</French>
+		<French>
+			<Text>Nation de Chine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Nation of %s1</German>
 		<Italian>Nation of %s1</Italian>
 		<Spanish>Nation of %s1</Spanish>
@@ -128,7 +136,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_MING</Tag>
 		<English>the Great Ming</English>
-		<French>the Great Ming</French>
+		<French>le Grand Ming</French>
 		<German>the Great Ming</German>
 		<Italian>the Great Ming</Italian>
 		<Spanish>the Great Ming</Spanish>
@@ -136,7 +144,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_QING</Tag>
 		<English>the Great Qing</English>
-		<French>the Great Qing</French>
+		<French>le Grand Qing</French>
 		<German>the Great Qing</German>
 		<Italian>the Great Qing</Italian>
 		<Spanish>the Great Qing</Spanish>
@@ -145,7 +153,7 @@
 		<Tag>TXT_KEY_CIV_CHINESE_VASSAL</Tag>
 		<English>Tributary %s4 State</English>
 		<French>
-			<Text>Etat %s4 Tributaire</Text>
+			<Text>&#201;tat %s4 tributaire</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -168,7 +176,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_KOREA</Tag>
 		<English>Protectorate General to Pacify the East</English>
-		<French>Protectorate General to Pacify the East</French>
+		<French>
+			<Text>Protectorat g&#233;n&#233;ral pour pacifier l'Est</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Protectorate General to Pacify the East</German>
 		<Italian>Protectorate General to Pacify the East</Italian>
 		<Spanish>Protectorate General to Pacify the East</Spanish>
@@ -176,7 +188,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_TURKS</Tag>
 		<English>Protectorate General to Pacify the West</English>
-		<French>Protectorate General to Pacify the West</French>
+		<French>
+			<Text>Protectorat g&#233;n&#233;ral pour pacifier l'Ouest</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Protectorate General to Pacify the West</German>
 		<Italian>Protectorate General to Pacify the West</Italian>
 		<Spanish>Protectorate General to Pacify the West</Spanish>
@@ -184,7 +200,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_MONGOLIA</Tag>
 		<English>Protectorate General to Pacify the North</English>
-		<French>Protectorate General to Pacify the North</French>
+		<French>
+			<Text>Protectorat g&#233;n&#233;ral pour pacifier le Nord</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Protectorate General to Pacify the North</German>
 		<Italian>Protectorate General to Pacify the North</Italian>
 		<Spanish>Protectorate General to Pacify the North</Spanish>
@@ -426,7 +446,7 @@
 		<English>China</English>
 		<French>
 			<Text>Chine</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>

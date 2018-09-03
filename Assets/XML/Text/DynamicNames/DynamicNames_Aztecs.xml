@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_AZTEC_PEOPLES</Tag>
 		<English>Mexica Peoples</English>
 		<French>
-			<Text>Peuplades Mexica</Text>
+			<Text>Peuplades mexicatl</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_AZTEC_DEFAULT</Tag>
 		<English>Altepetl of Tenochtitlan</English>
 		<French>
-			<Text>Triple Alliance %s2</Text>
+			<Text>Altepetl de Tenochtitlan</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -76,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_FASCIST</Tag>
 		<English>New Mexica Empire</English>
-		<French>New Mexica Empire</French>
+		<French>
+			<Text>Nouvel Empire mexica</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>New Mexica Empire</German>
 		<Italian>New Mexica Empire</Italian>
 		<Spanish>New Mexica Empire</Spanish>
@@ -84,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_ALTEPETL</Tag>
 		<English>%s2 Triple Alliance</English>
-		<French>%s2 Triple Alliance</French>
+		<French>
+			<Text>Triple alliance %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>%s2 Triple Alliance</German>
 		<Italian>%s2 Triple Alliance</Italian>
 		<Spanish>%s2 Triple Alliance</Spanish>
@@ -92,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_EMPIRE</Tag>
 		<English>Aztec Empire</English>
-		<French>Aztec Empire</French>
+		<French>
+			<Text>Empire azt&#232;que</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Aztec Empire</German>
 		<Italian>Aztec Empire</Italian>
 		<Spanish>Aztec Empire</Spanish>

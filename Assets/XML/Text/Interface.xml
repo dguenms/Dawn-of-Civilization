@@ -1284,11 +1284,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
-		<English>[ICON_BULLET]%D1%F2 from Excess Health</English>
-		<French>[ICON_BULLET]%D1%F2 from Excess Health</French>
-		<German>[ICON_BULLET]%D1%F2 from Excess Health</German>
-		<Italian>[ICON_BULLET]%D1%F2 from Excess Health</Italian>
-		<Spanish>[ICON_BULLET]%D1%F2 from Excess Health</Spanish>
+		<English>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</English>
+		<French>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</French>
+		<German>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE</Tag>
@@ -2625,6 +2625,46 @@
 		<German>Eine Einheit %s1_UnitName ist unseren Armeen beigetreten</German>
 		<Italian>A %s1_UnitName has joined our armies</Italian>
 		<Spanish>A %s1_UnitName has joined our armies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PER_CULTURE_LEVEL</Tag>
+		<English>[SPACE]per Culture Level</English>
+		<French>[SPACE]per Culture Level</French>
+		<German>[SPACE]pro Kulturstufe</German>
+		<Italian>[SPACE]per Culture Level</Italian>
+		<Spanish>[SPACE]per Culture Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_YIELD_CULTURE</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Culture Level</English>
+		<French>[ICON_BULLET]%D1%%%F2 from Culture Level</French>
+		<German>[ICON_BULLET]%D1%%%F2 durch Kulturstufe</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from Culture Level</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from Culture Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</English>
+		<French>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</French>
+		<German>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_FOOD_NON_STATE_RELIGIONS</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</English>
+		<French>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</French>
+		<German>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</German>
+		<Italian>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Italian>
+		<Spanish>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_MOD_FRIENDLY_RELATION</Tag>
+		<English>%D1%%: for Friendly Relations</English>
+		<French>%D1%%: for Friendly Relations</French>
+		<German>%D1%%: f&#252;r Freundliche Beziehungen</German>
+		<Italian>%D1%%: for Friendly Relations</Italian>
+		<Spanish>%D1%%: for Friendly Relations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

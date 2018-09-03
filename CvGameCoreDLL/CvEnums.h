@@ -591,6 +591,7 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_PEDIA_JUMP_TO_ROUTE, // Leoreth
 
 	WIDGET_HELP_BONUS_CITY, // Leoreth
+	WIDGET_HELP_REMOVE, // Leoreth
 
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
@@ -930,6 +931,7 @@ enum FeatureTypes					// Exposed to Python
 	FEATURE_ICE,
 	FEATURE_JUNGLE,
 	FEATURE_OASIS,
+	FEATURE_FLOOD_PLAINS,
 	FEATURE_FOREST,
 	FEATURE_MARSH,
 	FEATURE_CAPE,

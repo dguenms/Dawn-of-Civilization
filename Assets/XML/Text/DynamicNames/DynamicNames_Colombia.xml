@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_DESC</Tag>
 		<English>The Colombians</English>
-		<French>The Colombians</French>
+		<French>
+			<Text>Les Colombiens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Colombians</German>
 		<Italian>The Colombians</Italian>
 		<Spanish>The Colombians</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_PEOPLES</Tag>
 		<English>Colombian Peoples</English>
-		<French>Colombian Peoples</French>
+		<French>
+			<Text>Peuplades colombiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Colombian Peoples</German>
 		<Italian>Colombian Peoples</Italian>
 		<Spanish>Colombian Peoples</Spanish>
@@ -20,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_DEFAULT</Tag>
 		<English>Kingdom of New Granada</English>
-		<French>Kingdom of New Granada</French>
+		<French>
+			<Text>Royaume de Nouvelle-Grenade</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kingdom of New Granada</German>
 		<Italian>Kingdom of New Granada</Italian>
 		<Spanish>Kingdom of New Granada</Spanish>
@@ -52,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_COMMUNIST</Tag>
 		<English>Socialist Republic of %s1</English>
-		<French>Socialist Republic of %s1</French>
+		<French>
+			<Text>R&#233;publique socialiste de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Socialist Republic of %s1</German>
 		<Italian>Socialist Republic of %s1</Italian>
 		<Spanish>Socialist Republic of %s1</Spanish>
@@ -60,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_FASCIST</Tag>
 		<English>Falangist %s1</English>
-		<French>Falangist %s1</French>
+		<French>
+			<Text>%s1 phalangiste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Falangist %s1</German>
 		<Italian>Falangist %s1</Italian>
 		<Spanish>Falangist %s1</Spanish>
@@ -68,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_EMPIRE</Tag>
 		<English>Empire of Gran Colombia</English>
-		<French>Empire of Gran Colombia</French>
+		<French>
+			<Text>Empire de Grande Colombie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Empire of Gran Colombia</German>
 		<Italian>Empire of Gran Colombia</Italian>
 		<Spanish>Empire of Gran Colombia</Spanish>
@@ -76,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Tag>
 		<English>Colombian</English>
-		<French>Colombian</French>
+		<French>
+			<Text>colombien:colombienne:colombiens:colombiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Colombian</German>
 		<Italian>Colombian</Italian>
 		<Spanish>Colombian</Spanish>
@@ -84,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_SHORT_DESC</Tag>
 		<English>Colombia</English>
-		<French>Colombia</French>
+		<French>
+			<Text>Colombie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Colombia</German>
 		<Italian>Colombia</Italian>
 		<Spanish>Colombia</Spanish>

@@ -28,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_PEOPLES</Tag>
 		<English>Rus' Peoples</English>
-		<French>Rus' Peoples</French>
+		<French>
+			<Text>Peuplades de la Rus'</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Rus' Peoples</German>
 		<Italian>Rus' Peoples</Italian>
 		<Spanish>Rus' Peoples</Spanish>
@@ -36,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_DEFAULT</Tag>
 		<English>Grand Duchy of %s1</English>
-		<French>Grand Duchy of %s1</French>
+		<French>
+			<Text>Grande-principaut&#233; de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Grand Duchy of %s1</German>
 		<Italian>Grand Duchy of %s1</Italian>
 		<Spanish>Grand Duchy of %s1</Spanish>
@@ -69,7 +77,7 @@
 		<Tag>TXT_KEY_CIV_RUSSIA_COMMUNIST</Tag>
 		<English>Union of Soviet Socialist Republics</English>
 		<French>
-			<Text>Union des R&#233;publiques Socialistes Sovi&#233;tiques</Text>
+			<Text>Union des r&#233;publiques socialistes sovi&#233;tiques</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -93,8 +101,8 @@
 		<Tag>TXT_KEY_CIV_RUSSIA_TSARDOM_OF</Tag>
 		<English>Tsardom of %s1</English>
 		<French>
-			<Text>Tsarie de %s1</Text>
-			<Gender>Female</Gender>
+			<Text>Tsarat de %s1</Text>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -116,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_FASCIST</Tag>
 		<English>Panslavic Empire</English>
-		<French>Panslavic Empire</French>
+		<French>
+			<Text>Empire panslave</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Panslavic Empire</German>
 		<Italian>Panslavic Empire</Italian>
 		<Spanish>Panslavic Empire</Spanish>
@@ -124,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_MUSCOVY</Tag>
 		<English>Muscovy</English>
-		<French>Muscovy</French>
+		<French>
+			<Text>Moscovie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Muscovy</German>
 		<Italian>Muscovy</Italian>
 		<Spanish>Muscovy</Spanish>
@@ -132,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_KIEVAN_RUS</Tag>
 		<English>Kievan Rus</English>
-		<French>Kievan Rus</French>
+		<French>
+			<Text>Rus' de Kiev</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Kievan Rus</German>
 		<Italian>Kievan Rus</Italian>
 		<Spanish>Kievan Rus</Spanish>
@@ -140,7 +160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_RUS</Tag>
 		<English>Rus of %s1</English>
-		<French>Rus of %s1</French>
+		<French>
+			<Text>Rus' de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Rus of %s1</German>
 		<Italian>Rus of %s1</Italian>
 		<Spanish>Rus of %s1</Spanish>
@@ -148,7 +172,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_VASSAL</Tag>
 		<English>%s1 Krai</English>
-		<French>%s1 Krai</French>
+		<French>
+			<Text>Kra&#239; de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>%s1 Krai</German>
 		<Italian>%s1 Krai</Italian>
 		<Spanish>%s1 Krai</Spanish>
@@ -156,7 +184,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_POLAND</Tag>
 		<English>Congress %s1</English>
-		<French>Congress %s1</French>
+		<French>
+			<Text>Royaume du Congr&#232;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Congress %s1</German>
 		<Italian>Congress %s1</Italian>
 		<Spanish>Congress %s1</Spanish>
@@ -165,8 +197,8 @@
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
 		<English>Soviet %s1</English>
 		<French>
-			<Text>%s1 Sovi&#233;tique</Text>
-			<Gender>Male</Gender>
+			<Text>%s1 sovi&#233;tique:%s1 sovi&#233;tique</Text>
+			<Gender>Male:Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -188,7 +220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 Soviet Republic</English>
-		<French>%s2 Soviet Republic</French>
+		<French>
+			<Text>R&#233;publique sovi&#233;tique %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>%s2 Soviet Republic</German>
 		<Italian>%s2 Soviet Republic</Italian>
 		<Spanish>%s2 Soviet Republic</Spanish>
@@ -220,7 +256,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_JAPAN</Tag>
 		<English>Far Eastern Republic</English>
-		<French>Far Eastern Republic</French>
+		<French>
+			<Text>R&#233;publique d'Extr&#234;me-Orient</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Far Eastern Republic</German>
 		<Italian>Far Eastern Republic</Italian>
 		<Spanish>Far Eastern Republic</Spanish>
@@ -228,7 +268,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_OTTOMANS</Tag>
 		<English>Transcaucasian Socialist Federative Soviet Republic</English>
-		<French>Transcaucasian Socialist Federative Soviet Republic</French>
+		<French>
+			<Text>R&#233;publique socialiste f&#233;d&#233;rative sovi&#233;tique de Transcaucasie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Transcaucasian Socialist Federative Soviet Republic</German>
 		<Italian>Transcaucasian Socialist Federative Soviet Republic</Italian>
 		<Spanish>Transcaucasian Socialist Federative Soviet Republic</Spanish>
@@ -236,7 +280,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_TURKS</Tag>
 		<English>%s4 Soviet Socialist Republic</English>
-		<French>%s4 Soviet Socialist Republic</French>
+		<French>
+			<Text>R&#233;publique socialiste sovi&#233;tique %s4</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>%s4 Soviet Socialist Republic</German>
 		<Italian>%s4 Soviet Socialist Republic</Italian>
 		<Spanish>%s4 Soviet Socialist Republic</Spanish>
@@ -245,7 +293,7 @@
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY</Tag>
 		<English>%s4 Democratic Republic</English>
 		<French>
-			<Text>R&#233;publique D&#233;mocratique %s4</Text>
+			<Text>R&#233;publique d&#233;mocratique %s4</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -294,8 +342,8 @@
 		<English>Russia</English>
 		<French>
 			<Text>Russie</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Russland</Text>

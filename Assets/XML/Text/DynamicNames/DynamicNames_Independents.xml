@@ -9,7 +9,7 @@
 			<Plural>0:1</Plural>
 		</English>
 		<French>
-			<Text>celte:celtique:celtes:celtiques</Text>
+			<Text>celte:celte:celtes:celtes</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
@@ -153,7 +153,7 @@
 		<Tag>TXT_KEY_CIV_NATIVE_ADJECTIVE</Tag>
 		<English>Native</English>
 		<French>
-			<Text>natif:native:natifs:natives</Text>
+			<Text>indig&#232;ne:indig&#232;ne:indig&#232;nes:indig&#232;nes</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
@@ -177,7 +177,7 @@
 		<Tag>TXT_KEY_CIV_NATIVE_DESC</Tag>
 		<English>Native Peoples</English>
 		<French>
-			<Text>Peuples natifs</Text>
+			<Text>Peuples indig&#232;nes</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -201,7 +201,7 @@
 		<Tag>TXT_KEY_CIV_NATIVE_SHORT_DESC</Tag>
 		<English>Natives</English>
 		<French>
-			<Text>Natifs</Text>
+			<Text>Indig&#232;nes</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -224,7 +224,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SELJUK_ADJECTIVE</Tag>
 		<English>Seljuk</English>
-		<French>in French</French>
+		<French>
+			<Text>seldjoukide:seldjoukide:seldjoukides:seldjoukides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Seldschukisch</German>
 		<Italian>in Italian</Italian>
 		<Spanish>in Spanish</Spanish>
@@ -232,7 +236,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SELJUK_DESC</Tag>
 		<English>Seljuk Empire</English>
-		<French>in French</French>
+		<French>
+			<Text>Empire des Seldjoukides</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Seldschukenreich</German>
 		<Italian>in Italian</Italian>
 		<Spanish>in Spanish</Spanish>
@@ -240,7 +248,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SELJUK_SHORT_DESC</Tag>
 		<English>Seljuks</English>
-		<French>in French</French>
+		<French>
+			<Text>Seldjoukides</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Seldschuken</German>
 		<Italian>in Italian</Italian>
 		<Spanish>in Spanish</Spanish>

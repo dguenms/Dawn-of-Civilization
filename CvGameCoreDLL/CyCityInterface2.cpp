@@ -138,5 +138,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("isColony", &CyCity::isColony, "bool ()")
 		.def("hasBonusEffect", &CyCity::hasBonusEffect, "bool ()")
 		.def("getCultureRank", &CyCity::getCultureRank, "int ()")
+		.def("isHasBuildingEffect", &CyCity::isHasBuildingEffect, "bool (int eBuilding)")
 		;
 }

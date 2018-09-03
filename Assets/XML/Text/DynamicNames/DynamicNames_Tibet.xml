@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_DESC</Tag>
 		<English>The Tibetans</English>
-		<French>The Tibetans</French>
+		<French>
+			<Text>Les Tib&#233;tains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>The Tibetans</German>
 		<Italian>The Tibetans</Italian>
 		<Spanish>The Tibetans</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_PEOPLES</Tag>
 		<English>Tibetan Peoples</English>
-		<French>Tibetan Peoples</French>
+		<French>
+			<Text>Peuplades tib&#233;taines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Tibetan Peoples</German>
 		<Italian>Tibetan Peoples</Italian>
 		<Spanish>Tibetan Peoples</Spanish>
@@ -68,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_ADJECTIVE</Tag>
 		<English>Tibetan</English>
-		<French>Tibetan</French>
+		<French>
+			<Text>tib&#233;tain:tib&#233;taine:tib&#233;tains:tib&#233;taines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tibetan</German>
 		<Italian>Tibetan</Italian>
 		<Spanish>Tibetan</Spanish>
@@ -76,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_SHORT_DESC</Tag>
 		<English>Tibet</English>
-		<French>Tibet</French>
+		<French>
+			<Text>Tibet</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tibet</German>
 		<Italian>Tibet</Italian>
 		<Spanish>Tibet</Spanish>
@@ -84,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBETAN_VASSAL</Tag>
 		<English>Khrom of %s3</English>
-		<French>Khrom of %s3</French>
+		<French>
+			<Text>Khrom de %s3</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Khrom of %s3</German>
 		<Italian>Khrom of %s3</Italian>
 		<Spanish>Khrom of %s3</Spanish>

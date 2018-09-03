@@ -140,8 +140,8 @@ public:
 	int getConscriptPopulation() const;																// Exposed to Python
 	int conscriptMinCityPopulation() const;																			// Exposed to Python
 	int flatConscriptAngerLength() const;																				// Exposed to Python
-	bool canConscript() const;																				// Exposed to Python
-	void conscript();																											// Exposed to Python
+	bool canConscript(bool bForce = false) const;																				// Exposed to Python
+	void conscript(bool bForce = false);																											// Exposed to Python
 
 	int getBonusHealth(BonusTypes eBonus) const;																// Exposed to Python - getBonusHealth
 	int getBonusHappiness(BonusTypes eBonus) const;															// Exposed to Python - getBonusHappiness
@@ -941,6 +941,8 @@ public:
 	void setNumRealBuilding(BuildingTypes eIndex, int iNewValue);		// Exposed to Python
 	void setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool bFirst, PlayerTypes eOriginalOwner, int iOriginalTime);
 
+	bool isHasBuildingEffect(BuildingTypes eBuilding) const; // Leoreth
+
 	bool isValidBuildingLocation(BuildingTypes eIndex) const;
 
 	int getNumFreeBuilding(BuildingTypes eIndex) const;															// Exposed to Python
@@ -1013,6 +1015,9 @@ public:
 	void setBuildingHappyChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
 	int getBuildingHealthChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
 	void setBuildingHealthChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
+	int getBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass) const; // Leoreth
+	void setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // Leoreth
+	void changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // Leoreth
 
 	void updateBuildingYieldChange(BuildingClassTypes eBuildingType, YieldTypes eYield, int iChange);
 	void changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange);
@@ -1391,6 +1396,7 @@ protected:
 	std::vector<BuildingCommerceChange> m_aBuildingCommerceChange;
 	BuildingChangeArray m_aBuildingHappyChange;
 	BuildingChangeArray m_aBuildingHealthChange;
+	BuildingChangeArray m_aBuildingGreatPeopleRateChange;
 
 	// CACHE: cache frequently used values
 	mutable int	m_iPopulationRank;

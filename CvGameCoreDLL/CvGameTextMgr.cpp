@@ -10098,9 +10098,11 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		setYieldChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
 		setCommerceChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getCommerceModifierArray(), true, bCivilopediaText);
 
-		if (kBuilding.getGreatPeopleRateChange() != 0)
+		// Leoreth
+		int iTotalGreatPeopleRateChange = kBuilding.getGreatPeopleRateChange() + (pCity != NULL ? pCity->getBuildingGreatPeopleRateChange((BuildingClassTypes)kBuilding.getBuildingClassType()) : 0);
+		if (iTotalGreatPeopleRateChange != 0)
 		{
-			szTempBuffer.Format(L", %s%d%c", ((kBuilding.getGreatPeopleRateChange() > 0) ? "+" : ""), kBuilding.getGreatPeopleRateChange(), gDLL->getSymbolID(GREAT_PEOPLE_CHAR));
+			szTempBuffer.Format(L", %s%d%c", ((iTotalGreatPeopleRateChange > 0) ? "+" : ""), iTotalGreatPeopleRateChange, gDLL->getSymbolID(GREAT_PEOPLE_CHAR));
 			szBuffer.append(szTempBuffer);
 
 			if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS)
@@ -10735,6 +10737,8 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerCommerceModifierArray(), true);
 
+	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_PER_CULTURE_LEVEL").c_str(), kBuilding.getCultureCommerceModifierArray(), true);
+
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_ALL_CITIES_THIS_CONTINENT").c_str(), kBuilding.getAreaYieldModifierArray(), true);
 
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_ALL_CITIES").c_str(), kBuilding.getGlobalYieldModifierArray(), true);
@@ -11037,6 +11041,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		}
 	}
 
+	if (!CvWString(kBuilding.getHelp()).empty())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(kBuilding.getHelp());
+	}
+
 	bFirst = true;
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
@@ -11122,12 +11132,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_START_ERA", GC.getEraInfo((EraTypes)kBuilding.getFreeStartEra()).getTextKeyWide()));
 		}
-	}
-
-	if (!CvWString(kBuilding.getHelp()).empty())
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(kBuilding.getHelp());
 	}
 
 	buildBuildingRequiresString(szBuffer, eBuilding, bCivilopediaText, bTechChooserText, pCity);
@@ -12859,13 +12863,13 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		/*iHappy = (city.getOwnerINLINE() == INDIA) ? (city.goodHealth() - city.badHealth()) / 2 : 0;
+		iHappy = city.isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS) ? city.goodHealth() - city.badHealth() : 0;
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
 			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_HEALTH", iHappy));
 			szBuffer.append(NEWLINE);
-		}*/
+		}
 
 		iHappy = (city.getExtraHappiness() + GET_PLAYER(city.getOwnerINLINE()).getExtraHappiness());
 		if (iHappy > 0)
@@ -14955,6 +14959,36 @@ void CvGameTextMgr::setUnitCombatHelp(CvWStringBuffer &szBuffer, UnitCombatTypes
 	szBuffer.append(GC.getUnitCombatInfo(eUnitCombat).getDescription());
 }
 
+void CvGameTextMgr::setRemoveHelp(CvWStringBuffer &szBuffer, TechTypes eTech)
+{
+	CvWString szTempBuffer;
+
+	bool bFirst = true;
+	for (int iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iI);
+		if (!kBuild.isGraphicalOnly() && kBuild.getTechPrereq() == NO_TECH)
+		{
+			for (int iJ = 0; iJ < GC.getNumFeatureInfos(); iJ++)
+			{
+				if (kBuild.getFeatureTech(iJ) == eTech)
+				{
+					if (!bFirst)
+					{
+						szTempBuffer.Format(L", ");
+						szBuffer.append(szTempBuffer);
+					}
+
+					szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), kBuild.getDescription());
+					szBuffer.append(szTempBuffer);
+
+					bFirst = false;	
+				}
+			}
+		}
+	}
+}
+
 void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTypes eImprovement, bool bCivilopediaText)
 {
 	CvWString szTempBuffer;
@@ -16448,6 +16482,36 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		bNeedSubtotal = true;
 	}
 
+	// Harbour Opera effect
+	int iHappinessFood = 0;
+	if (city.isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+	{
+		iHappinessFood += std::max(0, (city.happyLevel() - city.unhappyLevel()) / 2);
+	}
+
+	if (iHappinessFood != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_HAPPINESS", iHappinessFood, info.getChar()));
+		iBaseRate += iHappinessFood;
+		bNeedSubtotal = true;
+	}
+
+	// Lotus Temple effect
+	int iNonStateReligionFood = 0;
+	if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
+	{
+		iNonStateReligionFood += city.getReligionCount() - (GET_PLAYER(city.getOwnerINLINE()).getStateReligion() != NO_RELIGION && city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()) ? 1 : 0);
+	}
+
+	if (iNonStateReligionFood != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_NON_STATE_RELIGIONS", iNonStateReligionFood, info.getChar()));
+		iBaseRate += iNonStateReligionFood;
+		bNeedSubtotal = true;
+	}
+
 	// Base and modifiers (only if there are modifiers since total is always shown)
 	if (city.getBaseYieldRateModifier(YIELD_FOOD) != 100)
 	{
@@ -17434,6 +17498,14 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BUILDINGS", iBuildingMod, info.getChar()));
 		szBuffer.append(NEWLINE);
 		iModifier += iBuildingMod;
+	}
+
+	int iCultureMod = city.getCultureLevel() * city.getCultureCommerceRateModifier(eCommerceType);
+	if (iCultureMod != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CULTURE", iCultureMod, info.getChar()));
+		szBuffer.append(NEWLINE);
+		iModifier += iCultureMod;
 	}
 
 	// Power
@@ -19291,6 +19363,21 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_PEACE", iNewMod));
 						iModifier += iNewMod;
+					}
+
+					// Leoreth: Channel Tunnel effect
+					if (GET_PLAYER(pCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)CHANNEL_TUNNEL))
+					{
+						if (GET_PLAYER(pOtherCity->getOwnerINLINE()).AI_getAttitude(pCity->getOwnerINLINE()) >= ATTITUDE_FRIENDLY)
+						{
+							iNewMod = 100;
+							if (0 != iNewMod)
+							{
+								szBuffer.append(NEWLINE);
+								szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_FRIENDLY_RELATION", iNewMod));
+								iModifier += iNewMod;
+							}
+						}
 					}
 				}
 
