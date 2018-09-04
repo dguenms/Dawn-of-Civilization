@@ -2358,6 +2358,16 @@
 			<Button>,Art/Interface/Buttons/Buildings/HangingGardens.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ISRAELI_KIBBUTZ</Type>
+			<LSystem>LSYSTEM_4x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Central_Park/Central_Park.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/kibbutz.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SOLAR_PLANT</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
