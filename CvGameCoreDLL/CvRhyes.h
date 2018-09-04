@@ -11,7 +11,7 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define BEGIN_WONDERS				(165) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(163) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+11)
 
 #define NUM_MAJOR_PLAYERS		(47)
