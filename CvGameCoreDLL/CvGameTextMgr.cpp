@@ -10383,6 +10383,22 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NO_UNHEALTHY_BUILDINGS"));
 	}
 
+	// Leoreth
+	if (kBuilding.getBuildingUnhealthModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szTempBuffer.Format(L"%s%d", kBuilding.getBuildingUnhealthModifier() > 0 ? L"+" : L"", kBuilding.getBuildingUnhealthModifier());
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BUILDING_UNHEALTH_MODIFIER", szTempBuffer.c_str()));
+	}
+
+	// Leoreth
+	if (kBuilding.getCorporationUnhealthModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szTempBuffer.Format(L"%s%d", kBuilding.getCorporationUnhealthModifier() > 0 ? L"+" : L"", kBuilding.getCorporationUnhealthModifier());
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CORPORATION_UNHEALTH_MODIFIER", szTempBuffer.c_str()));
+	}
+
 	if (kBuilding.getGreatPeopleRateModifier() != 0)
 	{
 		szBuffer.append(NEWLINE);

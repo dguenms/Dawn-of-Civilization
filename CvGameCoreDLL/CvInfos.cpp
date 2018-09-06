@@ -7253,6 +7253,8 @@ m_iHealRateChange(0),
 m_iHealth(0),
 m_iAreaHealth(0),
 m_iGlobalHealth(0),
+m_iBuildingUnhealthModifier(0), // Leoreth
+m_iCorporationUnhealthModifier(0), // Leoreth
 m_iGlobalPopulationChange(0),
 m_iFreeTechs(0),
 m_iDefenseModifier(0),
@@ -7870,6 +7872,18 @@ int CvBuildingInfo::getAreaHealth() const
 int CvBuildingInfo::getGlobalHealth() const
 {
 	return m_iGlobalHealth;
+}
+
+// Leoreth
+int CvBuildingInfo::getBuildingUnhealthModifier() const
+{
+	return m_iBuildingUnhealthModifier;
+}
+
+// Leoreth
+int CvBuildingInfo::getCorporationUnhealthModifier() const
+{
+	return m_iCorporationUnhealthModifier;
 }
 
 int CvBuildingInfo::getGlobalPopulationChange() const
@@ -8661,6 +8675,8 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHealth);
 	stream->Read(&m_iAreaHealth);
 	stream->Read(&m_iGlobalHealth);
+	if (uiFlag >= 1) stream->Read(&m_iBuildingUnhealthModifier);
+	if (uiFlag >= 1) stream->Read(&m_iCorporationUnhealthModifier);
 	stream->Read(&m_iGlobalPopulationChange);
 	stream->Read(&m_iFreeTechs);
 	stream->Read(&m_iDefenseModifier);
@@ -8945,7 +8961,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::write(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=1; // Leoreth: 1 for building/corporation health modifiers
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iBuildingClassType);
@@ -9035,6 +9051,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iHealth);
 	stream->Write(m_iAreaHealth);
 	stream->Write(m_iGlobalHealth);
+	stream->Write(m_iBuildingUnhealthModifier); // Leoreth
+	stream->Write(m_iCorporationUnhealthModifier); // Leoreth
 	stream->Write(m_iGlobalPopulationChange);
 	stream->Write(m_iFreeTechs);
 	stream->Write(m_iDefenseModifier);
@@ -9390,6 +9408,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 	pXML->GetChildXmlValByName(&m_iAreaHealth, "iAreaHealth");
 	pXML->GetChildXmlValByName(&m_iGlobalHealth, "iGlobalHealth");
+	pXML->GetChildXmlValByName(&m_iBuildingUnhealthModifier, "iBuildingUnhealthModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iCorporationUnhealthModifier, "iCorporationUnhealthModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 	pXML->GetChildXmlValByName(&m_iCultureHappiness, "iCultureHappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iAreaHappiness, "iAreaHappiness");

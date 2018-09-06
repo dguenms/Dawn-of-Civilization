@@ -3480,6 +3480,20 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 						+ ((std::max(0, iBuildingBadHealth - iBadHealth) + 1) * iHealthModifier);
 				}
 
+				// Leoreth: building health modifier
+				if (kBuilding.getBuildingUnhealthModifier() != 0)
+				{
+					int iBadHealthRemoved = (-getBuildingBadHealth() * kBuilding.getBuildingUnhealthModifier()) / 100;
+					iValue += (std::min(iBadHealthRemoved, iBadHealth) * 12) + ((std::max(0, iBadHealthRemoved - iBadHealth) + 1) * iHealthModifier);
+				}
+
+				// Leoreth: corporation health modifier
+				if (kBuilding.getCorporationUnhealthModifier() != 0)
+				{
+					int iBadHealthRemoved = (-getCorporationUnhealth() * kBuilding.getCorporationUnhealthModifier()) / 100;
+					iValue += (std::min(iBadHealthRemoved, iBadHealth) * 12) + ((std::max(0, iBadHealthRemoved - iBadHealth) + 1) * iHealthModifier);
+				}
+
 				int iBuildingHealth = kBuilding.getHealth();
 
 				for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)

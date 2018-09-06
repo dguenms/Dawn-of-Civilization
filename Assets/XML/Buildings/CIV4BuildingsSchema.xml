@@ -155,6 +155,8 @@
 	<ElementType name="iHealthPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iAreaHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHealth" content="textOnly" dt:type="int"/>
+	<ElementType name="iBuildingUnhealthModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iCorporationUnhealthModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappinessPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iCultureHappiness" content="textOnly" dt:type="int"/>
@@ -542,6 +544,8 @@
 		<element type="iHealth" minOccurs="0"/>
 		<element type="iAreaHealth" minOccurs="0"/>
 		<element type="iGlobalHealth" minOccurs="0"/>
+		<element type="iBuildingUnhealthModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iCorporationUnhealthModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iHappiness" minOccurs="0"/>
 		<element type="iCultureHappiness" minOccurs="0"/>
 		<element type="iAreaHappiness" minOccurs="0"/>

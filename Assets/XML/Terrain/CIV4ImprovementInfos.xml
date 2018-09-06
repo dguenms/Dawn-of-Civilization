@@ -1842,7 +1842,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iHealthPercent>-50</iHealthPercent>
+			<iHealthPercent>0</iHealthPercent>
 			<iPillageGold>20</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -1895,7 +1895,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iHealthPercent>-100</iHealthPercent>
+			<iHealthPercent>0</iHealthPercent>
 			<iPillageGold>25</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>

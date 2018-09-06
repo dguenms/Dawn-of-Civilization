@@ -594,6 +594,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iStabilityPopulation = 0;
 
+	m_iBuildingUnhealthModifier = 0;
+	m_iCorporationUnhealthModifier = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -4481,6 +4484,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeWarWearinessModifier(GC.getBuildingInfo(eBuilding).getWarWearinessModifier() * iChange);
 		changeHurryAngerModifier(GC.getBuildingInfo(eBuilding).getHurryAngerModifier() * iChange);
 		changeHealRate(GC.getBuildingInfo(eBuilding).getHealRateChange() * iChange);
+
 		if (GC.getBuildingInfo(eBuilding).getHealth() > 0)
 		{
 			changeBuildingGoodHealth(GC.getBuildingInfo(eBuilding).getHealth() * iChange);
@@ -4489,6 +4493,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeBuildingBadHealth(GC.getBuildingInfo(eBuilding).getHealth() * iChange);
 		}
+
 		if (GC.getBuildingInfo(eBuilding).getHappiness() > 0)
 		{
 			changeBuildingGoodHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange);
@@ -4497,10 +4502,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeBuildingBadHappiness(GC.getBuildingInfo(eBuilding).getHappiness() * iChange);
 		}
+
 		if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 		{
 			changeStateReligionHappiness(((ReligionTypes)(GC.getBuildingInfo(eBuilding).getReligionType())), (GC.getBuildingInfo(eBuilding).getStateReligionHappiness() * iChange));
 		}
+
 		changeMilitaryProductionModifier(GC.getBuildingInfo(eBuilding).getMilitaryProductionModifier() * iChange);
 		changeSpaceProductionModifier(GC.getBuildingInfo(eBuilding).getSpaceProductionModifier() * iChange);
 		changeExtraTradeRoutes(GC.getBuildingInfo(eBuilding).getTradeRoutes() * iChange);
@@ -4512,9 +4519,17 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
 
-		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier());
+		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier() * iChange);
 		changeCultureHappiness(GC.getBuildingInfo(eBuilding).getCultureHappiness() * iChange);
-		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier());
+		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier() * iChange);
+
+		changeBuildingUnhealthModifier(GC.getBuildingInfo(eBuilding).getBuildingUnhealthModifier() * iChange);
+
+		if (GC.getBuildingInfo(eBuilding).getCorporationUnhealthModifier() != 0)
+		{
+			changeCorporationUnhealthModifier(GC.getBuildingInfo(eBuilding).getCorporationUnhealthModifier() * iChange);
+			updateCorporationHealth();
+		}
 
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
@@ -5760,12 +5775,18 @@ int CvCity::totalGoodBuildingHealth() const
 
 int CvCity::totalBadBuildingHealth() const
 {
-	if (!isBuildingOnlyHealthy())
+	if (isBuildingOnlyHealthy())
 	{
-		return (getBuildingBadHealth() + area()->getBuildingBadHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingBadHealth() + getExtraBuildingBadHealth());
+		return 0;
 	}
 
-	return 0;
+	int iBuildingHealth = getBuildingBadHealth() + area()->getBuildingBadHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingBadHealth() + getExtraBuildingBadHealth();
+
+	// Leoreth: building health modifier
+	iBuildingHealth *= 100 + getBuildingUnhealthModifier();
+	iBuildingHealth /= 100;
+
+	return iBuildingHealth;
 }
 
 
@@ -8039,6 +8060,18 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 	if (kBuilding.isNoUnhealthyPopulation())
 	{
 		iBad -= getPopulation();
+	}
+
+	// Leoreth: building health modifier
+	if (kBuilding.getBuildingUnhealthModifier() != 0)
+	{
+		iBad -= (totalBadBuildingHealth() * (100 + kBuilding.getBuildingUnhealthModifier())) / 100;
+	}
+
+	// Leoreth: corporation health modifier
+	if (kBuilding.getCorporationUnhealthModifier() != 0)
+	{
+		iBad -= (getCorporationUnhealth() * (100 + kBuilding.getCorporationUnhealthModifier())) / 100;
 	}
 
 	// Effect on Spoiled Food
@@ -18096,6 +18129,13 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 		}
 	}
 
+	// Leoreth: corporation unhealth modifier
+	if (iHealth < 0)
+	{
+		iHealth *= 100 + getCorporationUnhealthModifier();
+		iHealth /= 100;
+	}
+
 	return iHealth / 10;
 }
 
@@ -18881,4 +18921,34 @@ int CvCity::getStabilityPopulation() const
 void CvCity::setStabilityPopulation(int iNewValue)
 {
 	m_iStabilityPopulation = iNewValue;
+}
+
+int CvCity::getBuildingUnhealthModifier() const
+{
+	return m_iBuildingUnhealthModifier;
+}
+
+void CvCity::setBuildingUnhealthModifier(int iNewValue)
+{
+	m_iBuildingUnhealthModifier = iNewValue;
+}
+
+void CvCity::changeBuildingUnhealthModifier(int iChange)
+{
+	m_iBuildingUnhealthModifier += iChange;
+}
+
+int CvCity::getCorporationUnhealthModifier() const
+{
+	return m_iCorporationUnhealthModifier;
+}
+
+void CvCity::setCorporationUnhealthModifier(int iNewValue)
+{
+	m_iCorporationUnhealthModifier = iNewValue;
+}
+
+void CvCity::changeCorporationUnhealthModifier(int iChange)
+{
+	m_iCorporationUnhealthModifier += iChange;
 }

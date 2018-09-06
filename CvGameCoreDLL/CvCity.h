@@ -1105,6 +1105,14 @@ public:
 	int getStabilityPopulation() const;
 	void setStabilityPopulation(int iNewValue);
 
+	int getBuildingUnhealthModifier() const;
+	void setBuildingUnhealthModifier(int iNewValue);
+	void changeBuildingUnhealthModifier(int iChange);
+
+	int getCorporationUnhealthModifier() const;
+	void setCorporationUnhealthModifier(int iNewValue);
+	void changeCorporationUnhealthModifier(int iChange);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1286,6 +1294,9 @@ protected:
 	int m_iCultureRank;
 
 	int m_iStabilityPopulation;
+
+	int m_iBuildingUnhealthModifier;
+	int m_iCorporationUnhealthModifier;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;
