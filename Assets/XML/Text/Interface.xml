@@ -4,15 +4,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FIRST_FREE_TECH</Tag>
 		<English>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</English>
-		<French>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</French>
+		<French>[ICON_BULLET]La premi&#232;re civilisation &#224; d&#233;couvrir ceci re&#231;oit une [COLOR_TECH_TEXT]technologie gratuite[COLOR_REVERT] de l'&#232;re actuelle ou d'une &#232;re pass&#233;e</French>
 		<German>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</German>
 		<Italian>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</Italian>
 		<Spanish>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FIRST_FREE_TECHS</Tag>
-		<English>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</English>
-		<French>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</French>
+		<English>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT] Free Technologies[COLOR_REVERT] from your current or earlier Era</English>
+		<French>[ICON_BULLET]La premi&#232;re civilisation &#224; d&#233;couvrir ceci re&#231;oit [COLOR_TECH_TEXT]%d1_Num technologies gratuites[COLOR_REVERT] de l'&#232;re actuelle ou d'une &#232;re pass&#233;e</French>
 		<German>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</German>
 		<Italian>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</Italian>
 		<Spanish>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</Spanish>
@@ -36,7 +36,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_EMIGRATION</Tag>
 		<English>A part of our population from %s1 is emigrating to the New World!</English>
-		<French>Une partie de notre population &#233;migre en Am&#233;rique !</French>
+		<French>Une partie de notre population &#233;migre vers le Nouveau Monde !</French>
 		<German>Ein Teil unserer Bev&#246;lkerung aus %s1 wandert in die Neue Welt aus!</German>
 		<Italian>Parte della nostra popolazione emigra in America!</Italian>
 		<Spanish>&#161;Parte de nuestra poblaci&#243;n est&#225; emigrando a Estados Unidos!</Spanish>
@@ -44,7 +44,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BASE_COST</Tag>
 		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</English>
-		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</French>
+		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Co&#251;t de base :[COLOR_REVERT]</French>
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Grundkosten:[COLOR_REVERT]</German>
 		<Italian> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</Italian>
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</Spanish>
@@ -52,7 +52,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EMPIRE_SIZE</Tag>
 		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Empire Size:[COLOR_REVERT]</English>
-		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Empire Size:[COLOR_REVERT]</French>
+		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Taille de l'empire :[COLOR_REVERT]</French>
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Reichsgr&#246;&#223;e:[COLOR_REVERT]</German>
 		<Italian> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Empire Size:[COLOR_REVERT]</Italian>
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Empire Size:[COLOR_REVERT]</Spanish>
@@ -68,7 +68,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LEADER_MODIFIER</Tag>
 		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Lead:[COLOR_REVERT]</English>
-		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Lead:[COLOR_REVERT]</French>
+		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Avance technologique :[COLOR_REVERT]</French>
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Technologievorsprung:[COLOR_REVERT]</German>
 		<Italian> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Lead:[COLOR_REVERT]</Italian>
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Lead:[COLOR_REVERT]</Spanish>
@@ -76,7 +76,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MODERNIZATION_MODIFIER</Tag>
 		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernization:[COLOR_REVERT]</English>
-		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernization:[COLOR_REVERT]</French>
+		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernisation :[COLOR_REVERT]</French>
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernisierung:[COLOR_REVERT]</German>
 		<Italian> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernization:[COLOR_REVERT]</Italian>
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernization:[COLOR_REVERT]</Spanish>
@@ -84,7 +84,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SPAWN_MODIFIER</Tag>
 		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Rise of Civilization:[COLOR_REVERT]</English>
-		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Rise of Civilization:[COLOR_REVERT]</French>
+		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]&#201;mergence d'une civilisation :[COLOR_REVERT]</French>
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Aufstieg der Zivilisation:[COLOR_REVERT]</German>
 		<Italian> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Rise of Civilization:[COLOR_REVERT]</Italian>
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Rise of Civilization:[COLOR_REVERT]</Spanish>
@@ -92,7 +92,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SPREAD_MODIFIER</Tag>
 		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Spread:[COLOR_REVERT]</English>
-		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Spread:[COLOR_REVERT]</French>
+		<French> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Diffusion technologique :[COLOR_REVERT]</French>
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Technologieverbreitung:[COLOR_REVERT]</German>
 		<Italian> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Spread:[COLOR_REVERT]</Italian>
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Spread:[COLOR_REVERT]</Spanish>
@@ -100,7 +100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_FOUND_BUDDHISM</Tag>
 		<English>[ICON_BULLET]Founded when a Hindu Temple is built</English>
-		<French>[ICON_BULLET]Founded when a Hindu Temple is built</French>
+		<French>[ICON_BULLET]Fond&#233; quand un temple hindou est construit</French>
 		<German>[ICON_BULLET]Founded when a Hindu Temple is built</German>
 		<Italian>[ICON_BULLET]Founded when a Hindu Temple is built</Italian>
 		<Spanish>[ICON_BULLET]Founded when a Hindu Temple is built</Spanish>
@@ -108,7 +108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_FOUND_CATHOLICISM</Tag>
 		<English>[ICON_BULLET]Founded when Christian civilizations control less than half of all Christian cities[NEWLINE][ICON_BULLET]Alternately founded by the first civilization to build an Orthodox Cathedral without controlling the Orthodox holy city</English>
-		<French>[ICON_BULLET]Founded when Christian civilizations control less than half of all Christian cities[NEWLINE][ICON_BULLET]Alternately founded by the first civilization to build an Orthodox Cathedral without controlling the Orthodox holy city</French>
+		<French>[ICON_BULLET]Fond&#233; quand les civilisations chr&#233;tiennes contr&#244;lent moins de la moiti&#233; des villes chr&#233;tiennes[NEWLINE][ICON_BULLET]Peut aussi &#234;tre fond&#233; par la premi&#232;re civilisation qui construit une cath&#233;drale orthodoxe sans contr&#244;ler la ville sainte orthodoxe</French>
 		<German>[ICON_BULLET]Founded when Christian civilizations control less than half of all Christian cities[NEWLINE][ICON_BULLET]Alternately founded by the first civilization to build an Orthodox Cathedral without controlling the Orthodox holy city</German>
 		<Italian>[ICON_BULLET]Founded when Christian civilizations control less than half of all Christian cities[NEWLINE][ICON_BULLET]Alternately founded by the first civilization to build an Orthodox Cathedral without controlling the Orthodox holy city</Italian>
 		<Spanish>[ICON_BULLET]Founded when Christian civilizations control less than half of all Christian cities[NEWLINE][ICON_BULLET]Alternately founded by the first civilization to build an Orthodox Cathedral without controlling the Orthodox holy city</Spanish>
@@ -116,7 +116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_EXTRA_UPKEEP_TEXT</Tag>
 		<English>[ICON_BULLET]Costs %d1 [ICON_GOLD] Additional Upkeep</English>
-		<French>[ICON_BULLET]Costs %d1 [ICON_GOLD] Additional Upkeep</French>
+		<French>[ICON_BULLET]Co&#251;te %d1 [ICON_GOLD] d'entretien suppl&#233;mentaire</French>
 		<German>[ICON_BULLET]Kostet %d1 [ICON_GOLD] zus&#228;tzlichen Unterhalt</German>
 		<Italian>[ICON_BULLET]Costs %d1 [ICON_GOLD] Additional Upkeep</Italian>
 		<Spanish>[ICON_BULLET]Costs %d1 [ICON_GOLD] Additional Upkeep</Spanish>
@@ -124,7 +124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_NO_UPGRADE</Tag>
 		<English>[ICON_BULLET]Cannot Be Upgraded</English>
-		<French>[ICON_BULLET]Cannot Be Upgraded</French>
+		<French>[ICON_BULLET]Ne peut &#234;tre am&#233;lior&#233;</French>
 		<German>[ICON_BULLET]Kann nicht aufger&#252;stet werden</German>
 		<Italian>[ICON_BULLET]Cannot Be Upgraded</Italian>
 		<Spanish>[ICON_BULLET]Cannot Be Upgraded</Spanish>
@@ -132,7 +132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MOD_CAPITAL_ROUTE</Tag>
 		<English>%D1_Mod%%: for trading through Capital</English>
-		<French>%D1_Mod%%: for trading through Capital</French>
+		<French>%D1_Mod%% : commerce passant par la capitale</French>
 		<German>%D1_Mod%%: durch Handel durch die Hauptstadt</German>
 		<Italian>%D1_Mod%%: for trading through Capital</Italian>
 		<Spanish>%D1_Mod%%: for trading through Capital</Spanish>
@@ -140,7 +140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MOD_DEFENSIVE_PACT</Tag>
 		<English>%D1_Mod%%: for trading with Defensive Pact partner</English>
-		<French>%D1_Mod%%: for trading with Defensive Pact partner</French>
+		<French>%D1_Mod%%: commerce avec un partenaire de pacte de d&#233;fense</French>
 		<German>%D1_Mod%%: durch Handel mit einem Verteidigungsb&#252;ndnispartner</German>
 		<Italian>%D1_Mod%%: for trading with Defensive Pact partner</Italian>
 		<Spanish>%D1_Mod%%: for trading with Defensive Pact partner</Spanish>
@@ -148,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MOD_DISTANCE</Tag>
 		<English>%D1%%: from City Distance</English>
-		<French>%D1%%: from City Distance</French>
+		<French>%D1%% : distance de la ville</French>
 		<German>%D1%%: durch Stadtentfernung</German>
 		<Italian>%D1%%: from City Distance</Italian>
 		<Spanish>%D1%%: from City Distance</Spanish>
@@ -156,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION</Tag>
 		<English>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</English>
-		<French>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</French>
+		<French>[ICON_BULLET]Vitesse de production doubl&#233;e pour : [LINK=literal]%s1_unit_or_building[\LINK]</French>
 		<German>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</German>
 		<Italian>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</Spanish>
@@ -172,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_START</Tag>
 		<English>[ICON_BULLET]Double Production Speed for</English>
-		<French>[ICON_BULLET]Double Production Speed for</French>
+		<French>[ICON_BULLET]Vitesse de production doubl&#233;e pour :</French>
 		<German>[ICON_BULLET]Double Production Speed for</German>
 		<Italian>[ICON_BULLET]Double Production Speed for</Italian>
 		<Spanish>[ICON_BULLET]Double Production Speed for</Spanish>
@@ -180,7 +180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER</Tag>
 		<English>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</English>
-		<French>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</French>
+		<French>[ICON_BULLET]Construit [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% plus vite</French>
 		<German>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</German>
 		<Italian>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</Italian>
 		<Spanish>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</Spanish>
@@ -188,7 +188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ANGER_CORPORATION</Tag>
 		<English>%D1_Change[ICON_UNHAPPY]: "Our workers are being exploited!"</English>
-		<French>%D1_Change[ICON_UNHAPPY]: "Our workers are being exploited!"</French>
+		<French>%D1_Change[ICON_UNHAPPY] : "Nos travailleurs sont exploit&#233;s !"</French>
 		<German>%D1_Change[ICON_UNHAPPY]: "Unsere Arbeiter werden ausgebeutet!"</German>
 		<Italian>%D1_Change[ICON_UNHAPPY]: "Our workers are being exploited!"</Italian>
 		<Spanish>%D1_Change[ICON_UNHAPPY]: "Our workers are being exploited!"</Spanish>
@@ -196,7 +196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ANGER_SPECIALISTS</Tag>
 		<English>%D1_Change[ICON_UNHAPPY]: "Our slaves are longing for freedom!"</English>
-		<French>%D1_Change[ICON_UNHAPPY]: "Our slaves are longing for freedom!"</French>
+		<French>%D1_Change[ICON_UNHAPPY] : "Nos esclaves r&#233;clament leur libert&#233; !"</French>
 		<German>%D1_Change[ICON_UNHAPPY]: "Unsere Sklaven sehnen sich nach Freiheit!"</German>
 		<Italian>%D1_Change[ICON_UNHAPPY]: "Our slaves are longing for freedom!"</Italian>
 		<Spanish>%D1_Change[ICON_UNHAPPY]: "Our slaves are longing for freedom!"</Spanish>
@@ -220,7 +220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
 		<English>[ICON_BULLET]%D1_Change Free Specialist per Core City</English>
-		<French>[ICON_BULLET]%D1_Change Free Specialist per Core City</French>
+		<French>[ICON_BULLET]%D1_Change Un sp&#233;cialiste gratuit par ville centrale</French>
 		<German>[ICON_BULLET]%D1_Change Free Specialist per Core City</German>
 		<Italian>[ICON_BULLET]%D1_Change Free Specialist per Core City</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change Free Specialist per Core City</Spanish>
@@ -228,7 +228,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LIMITED_UNIT_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City up to a Maximum of %D3</English>
-		<French>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City up to a Maximum of %D3</French>
+		<French>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad par unit&#233; militaire post&#233;e dans une ville, jusqu'&#224; concurrence de %D3</French>
 		<German>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad pro in einer Stadt stationierter Milit&#228;reinheit bis zu einem Maximum von %D3</German>
 		<Italian>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City up to a Maximum of %D3</Italian>
 		<Spanish>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City up to a Maximum of %D3</Spanish>
@@ -236,7 +236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WE_LOVE_CONSUL</Tag>
 		<English>"We Love the Consul Day"</English>
-		<French>"We Love the Consul Day"</French>
+		<French>"F&#234;te du consul"</French>
 		<German>"Konsul-Feiertag"</German>
 		<Italian>"We Love the Consul Day"</Italian>
 		<Spanish>"We Love the Consul Day"</Spanish>
@@ -244,7 +244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WONDER_PRODUCTION</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</French>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] lors de la construction de merveilles</French>
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] beim Bau von Wundern</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</Spanish>
@@ -252,7 +252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE</Tag>
 		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Vassal City</English>
-		<French>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Vassal City</French>
+		<French>[ICON_BULLET]%D1_Change[ICON_COMMERCE] dans la capitale pour chaque ville vassale</French>
 		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro Vasallenstadt</German>
 		<Italian>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Vassal City</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Vassal City</Spanish>
@@ -260,7 +260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COLONY_COMMERCE</Tag>
 		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Colony</English>
-		<French>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Colony</French>
+		<French>[ICON_BULLET]%D1_Change[ICON_COMMERCE] dans la capitale pour chaque colonie</French>
 		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro Kolonie</German>
 		<Italian>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Colony</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Colony</Spanish>
@@ -284,7 +284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
 		<English>[ICON_BULLET]Double slots for[SPACE]</English>
-		<French>[ICON_BULLET]Double slots for[SPACE]</French>
+		<French>[ICON_BULLET]Permet deux fois plus de[SPACE]</French>
 		<German>[ICON_BULLET]Erlaubt doppelt soviele[SPACE]</German>
 		<Italian>[ICON_BULLET]Double slots for[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]Double slots for[SPACE]</Spanish>
@@ -292,7 +292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POST_COMMUNISM</Tag>
 		<English>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</English>
-		<French>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</French>
+		<French>[ICON_BULLET]Pas plus d'une soci&#233;t&#233; commerciale par ville[NEWLINE][ICON_BULLET]Crise post-communiste en cas de changement de syst&#232;me &#233;conomique</French>
 		<German>[ICON_BULLET]Maximal eine Kapitalgesellschaft pro Stadt[ICON_BULLET][ICON_BULLET]Post-kommunistische Krise im Falle eines Wirtschaftssystemwechsels</German>
 		<Italian>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</Italian>
 		<Spanish>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</Spanish>
@@ -300,7 +300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
 		<English>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</English>
-		<French>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</French>
+		<French>[ICON_BULLET]Peut convertir de la production en commerce avec une efficacit&#233; de %D1_Mod%%</French>
 		<German>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</German>
 		<Italian>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</Italian>
 		<Spanish>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</Spanish>
@@ -308,7 +308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>
 		<English>[SPACE]per Specialist for every city that works at most %d1 land tiles</English>
-		<French>[SPACE]per Specialist for every city that works at most %d1 land tiles</French>
+		<French>[SPACE]par sp&#233;cialiste pour chaque ville qui exploite un maximum de %d1 cases terrestres</French>
 		<German>[SPACE]pro Spezialist f&#252;r jede Stadt, die h&#246;chstens %d1 Landfelder bearbeitet</German>
 		<Italian>[SPACE]per Specialist for every city that works at most %d1 land tiles</Italian>
 		<Spanish>[SPACE]per Specialist for every city that works at most %d1 land tiles</Spanish>
@@ -316,7 +316,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS</Tag>
 		<English>[SPACE]per Excess Happiness</English>
-		<French>[SPACE]per Excess Happiness</French>
+		<French>[SPACE]par bonheur en exc&#232;s</French>
 		<German>[SPACE]pro Überschuss an Zufriedenheit</German>
 		<Italian>[SPACE]per Excess Happiness</Italian>
 		<Spanish>[SPACE]per Excess Happiness</Spanish>
@@ -324,16 +324,16 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PER_ANGRY_POPULATION</Tag>
 		<English>[SPACE]per Angry Population</English>
-		<French>[SPACE]per Angry Population</French>
-		<German>[SPACE]pro Unzufriedene Bevölkerung</German>
+		<French>[SPACE]par point de population en col&#232;re</French>
+		<German>[SPACE]pro Unzufriedene Bev&#246;lkerung</German>
 		<Italian>[SPACE]per Angry Population</Italian>
 		<Spanish>[SPACE]per Angry Population</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FOR_UNIMPROVED_TILES</Tag>
 		<English>[SPACE]from No Improvement</English>
-		<French>[SPACE]from No Improvement</French>
-		<German>[SPACE]für keine Verbesserung</German>
+		<French>[SPACE]pour les cases sans am&#233;nagement</French>
+		<German>[SPACE]f&#252;r keine Verbesserung</German>
 		<Italian>[SPACE]from No Improvement</Italian>
 		<Spanish>[SPACE]from No Improvement</Spanish>
 	</TEXT>
@@ -348,7 +348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NO_FOREIGN_TRADE_MODIFIER</Tag>
 		<English>[ICON_BULLET]No Additional Income from Foreign Trade Routes</English>
-		<French>[ICON_BULLET]No Additional Income from Foreign Trade Routes</French>
+		<French>[ICON_BULLET]Pas de revenu additionnel pour les routes commerciales &#233;trang&#232;res</French>
 		<German>[ICON_BULLET]Kein zus&#228;tzliches Einkommen durch ausl&#228;ndische Handelsrouten</German>
 		<Italian>[ICON_BULLET]No Additional Income from Foreign Trade Routes</Italian>
 		<Spanish>[ICON_BULLET]No Additional Income from Foreign Trade Routes</Spanish>
@@ -356,7 +356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION</Tag>
 		<English>[ICON_BULLET]No [ICON_UNHAPPY] from Corporations</English>
-		<French>[ICON_BULLET]No [ICON_UNHAPPY] from Corporations</French>
+		<French>[ICON_BULLET]Pas de [ICON_UNHAPPY] pour les soci&#233;t&#233;s commerciales</French>
 		<German>[ICON_BULLET]Kein [ICON_UNHAPPY] durch Kapitalgesellschaften</German>
 		<Italian>[ICON_BULLET]No [ICON_UNHAPPY] from Corporations</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_UNHAPPY] from Corporations</Spanish>
@@ -364,7 +364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from Corporations</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from Corporations</French>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] pour les soci&#233;t&#233;s commerciales</French>
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] durch Kapitalgesellschaften</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from Corporations</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from Corporations</Spanish>
@@ -380,7 +380,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORPORATION_COMMERCE</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Corporation Commerce</English>
-		<French>[ICON_BULLET]%D1_Mod%% Corporation Commerce</French>
+		<French>[ICON_BULLET]%D1_Mod%% commerce des soci&#233;t&#233;s commerciales</French>
 		<German>[ICON_BULLET]%D1_Mod%% Corporation Commerce</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Corporation Commerce</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Corporation Commerce</Spanish>
@@ -388,7 +388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEFENSIVE_PACT_TRADE_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</English>
-		<French>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</French>
+		<French>[ICON_BULLET]%D1_Mod%% de revenu pour les [ICON_TRADE] avec les partenaires de pacte de d&#233;fense</French>
 		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Verteidigungsb&#252;ndnispartnern</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</Spanish>
@@ -404,7 +404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
-		<French>[ICON_BULLET]%D1_Mod%% Production For All %s2</French>
+		<French>[ICON_BULLET]%D1_Mod%% de production pour tou(te)s les %s2</French>
 		<German>[ICON_BULLET]%D1_Mod%% Production For All %s2</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Production For All %s2</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Production For All %s2</Spanish>
@@ -412,7 +412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
 		<English>[ICON_BULLET]+%d1 Experience For All %s2</English>
-		<French>[ICON_BULLET]+%d1 Experience For All %s2</French>
+		<French>[ICON_BULLET]+%d1 EXP pour toutes les %s2</French>
 		<German>[ICON_BULLET]+%d1 Experience For All %s2</German>
 		<Italian>[ICON_BULLET]+%d1 Experience For All %s2</Italian>
 		<Spanish>[ICON_BULLET]+%d1 Experience For All %s2</Spanish>
@@ -420,7 +420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPITAL_TRADE_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] going through your Capital</English>
-		<French>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] going through your Capital</French>
+		<French>[ICON_BULLET]%D1_Mod%% de revenu pour les [ICON_TRADE] passant par votre capitale</French>
 		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] durch die Hauptstadt</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] going through your Capital</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] going through your Capital</Spanish>
@@ -428,7 +428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_CIVIC</Tag>
 		<English>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]N&#233;cessite : [LINK=literal]%s1[\LINK][COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Erfordert: [LINK=literal]%s1[\LINK][COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</Spanish>
@@ -436,7 +436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_NUM_COLONIES</Tag>
 		<English>[COLOR_WARNING_TEXT]Requires at least %d1_Num Colony[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Requires at least %d1_Num Colony[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]N&#233;cessite un minimum de %d1_Num colonies[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Erfordert mindestens %d1_Num Kolonie[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Requires at least %d1_Num Colony[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requires at least %d1_Num Colony[COLOR_REVERT]</Spanish>
@@ -445,7 +445,7 @@
 		<Tag>TXT_KEY_BUILDING_REQUIRES_PERCENT_SPECIAL_BUILDINGS_NO_CITY</Tag>
 		<!-- %s1_Name = Can be Buildings, Units, etc -->
 		<English>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]N&#233;cessite : %s1_Name (dans %d2% de toutes les villes)[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</Spanish>
@@ -453,7 +453,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_RIVER</Tag>
 		<English>[COLOR_WARNING_TEXT]Requires a River[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Requires a River[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]N&#233;cessite une rivi&#232;re[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Requires a River[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Requires a River[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requires a River[COLOR_REVERT]</Spanish>
@@ -461,7 +461,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_WATER</Tag>
 		<English>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]N&#233;cessite un acc&#232;s &#224; la mer[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</Spanish>
@@ -469,7 +469,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FREE_TECH</Tag>
 		<English>[ICON_BULLET]1 Free Technology From Your Current Or Earlier Eras</English>
-		<French>[ICON_BULLET]1 Free Technology From Your Current Or Earlier Eras</French>
+		<French>[ICON_BULLET]1 technologie gratuite de l'&#232;re actuelle ou d'une &#232;re pass&#233;e</French>
 		<German>[ICON_BULLET]1 freie Technologie aus Ihrer aktuellen oder fr&#252;heren Zeitaltern</German>
 		<Italian>[ICON_BULLET]1 Free Technology From Your Current Or Earlier Eras</Italian>
 		<Spanish>[ICON_BULLET]1 Free Technology From Your Current Or Earlier Eras</Spanish>
@@ -477,7 +477,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FREE_TECHS</Tag>
 		<English>[ICON_BULLET]%d1_Num Free Technologies From Your Current Or Earlier Eras</English>
-		<French>[ICON_BULLET]%d1_Num Free Technologies From Your Current Or Earlier Eras</French>
+		<French>[ICON_BULLET]%d1_Num technologies gratuites de l'&#232;re actuelle ou d'une &#232;re pass&#233;e</French>
 		<German>[ICON_BULLET]%d1_Num freie Technologien aus Ihrer aktuellen oder fr&#252;heren Zeitaltern</German>
 		<Italian>[ICON_BULLET]%d1_Num Free Technologies From Your Current Or Earlier Eras</Italian>
 		<Spanish>[ICON_BULLET]%d1_Num Free Technologies From Your Current Or Earlier Eras</Spanish>
@@ -485,7 +485,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BONUS_PLOTS</Tag>
 		<English>Improved [LINK=literal]%s1[\LINK] Tiles</English>
-		<French>Improved [LINK=literal]%s1[\LINK] Tiles</French>
+		<French>Cases de [LINK=literal]%s1[\LINK] am&#233;nag&#233;es</French>
 		<German>[LINK=literal]%s1[\LINK]-Gel&#228;ndefelder mit Verbesserung</German>
 		<Italian>Improved [LINK=literal]%s1[\LINK] Tiles</Italian>
 		<Spanish>Improved [LINK=literal]%s1[\LINK] Tiles</Spanish>
@@ -493,7 +493,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CITY_LIBERATE_MINOR</Tag>
 		<English>Grant independence to %s1_city</English>
-		<French>Grant independence to %s1_city</French>
+		<French>Accorder l'ind&#233;pendance &#224; %s1_city</French>
 		<German>Grant independence to %s1_city</German>
 		<Italian>Grant independence to %s1_city</Italian>
 		<Spanish>Grant independence to %s1_city</Spanish>
@@ -501,7 +501,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_BONUS_PLAYER_TRADE</Tag>
 		<English>Trade</English>
-		<French>Trade</French>
+		<French>Commerce</French>
 		<German>Handel</German>
 		<Italian>Trade</Italian>
 		<Spanish>Trade</Spanish>
@@ -510,7 +510,7 @@
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT</Tag>
 		<English>RFC Concepts</English>
 		<French>
-			<Text>Concepts du RFC</Text>
+			<Text>Concepts de RFC</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -533,7 +533,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UPGRADES</Tag>
 		<English>Unit Upgrades</English>
-		<French>Am&#233;liorations d'unit&#233;s</French>
+		<French>Am&#233;liorations d'unit&#233;</French>
 		<German>Einheitenbef&#246;rderungen</German>
 		<Italian>Aggiornamento delle unit&#224;</Italian>
 		<Spanish>Modernizaci&#243;n de unidades</Spanish>
@@ -589,7 +589,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_DEFORESTATION_EVENT</Tag>
 		<English>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</English>
-		<French>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</French>
+		<French>Retirer une for&#234;t %s1 pr&#232;s de votre ville de %s2 a ajout&#233; %d3 [ICON_GOLD] &#224; votre tr&#233;sor.</French>
 		<German>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</German>
 		<Italian>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</Italian>
 		<Spanish>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</Spanish>
@@ -629,7 +629,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_AGE_BRONZE</Tag>
 		<English>Bronze Age</English>
-		<French>Age de Bronze</French>
+		<French>
+			<Text>&#194;ge de Bronze</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Bronzezeit</German>
 		<Italian>Et&#224; del bronzo</Italian>
 		<Spanish>Edad de Bronce</Spanish>
@@ -637,7 +641,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_AGE_IRON</Tag>
 		<English>Iron Age</English>
-		<French>Age de Fer</French>
+		<French>
+			<Text>&#194;ge de Fer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Eisenzeit</German>
 		<Italian>Et&#224; del ferro</Italian>
 		<Spanish>Edad de Hierro</Spanish>
@@ -645,7 +653,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_AGE_MEDIEVAL</Tag>
 		<English>Medieval Age</English>
-		<French>Age M&#233;di&#233;val</French>
+		<French>
+			<Text>Moyen &#194;ge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Mittelalter</German>
 		<Italian>Et&#224; medievale</Italian>
 		<Spanish>Edad Media</Spanish>
@@ -653,7 +665,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_AGE_RENAISSANCE</Tag>
 		<English>Renaissance Age</English>
-		<French>Renaissance</French>
+		<French>
+			<Text>Renaissance</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Renaissance</German>
 		<Italian>Et&#224; rinascimentale</Italian>
 		<Spanish>Renacimiento</Spanish>
@@ -661,7 +677,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_AGE_STONE</Tag>
 		<English>Stone Age</English>
-		<French>Age de Pierre</French>
+		<French>
+			<Text>&#194;ge de Pierre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Steinzeit</German>
 		<Italian>Eta della pietra</Italian>
 		<Spanish>Edad de Piedra</Spanish>
@@ -685,7 +705,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FINANCIAL_ADVISOR_TITLE</Tag>
 		<English>Interior Advisor</English>
-		<French>Conseiller Interne</French>
+		<French>Conseiller &#224; l'Int&#233;rieur</French>
 		<German>Inlandsberater</German>
 		<Italian>Consigliere per gli interni</Italian>
 		<Spanish>Consejero de Interior</Spanish>
@@ -693,7 +713,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_CITY_EXPANSION_TURNS</Tag>
 		<English>Border expands in: %d1 Turns</English>
-		<French>Border expands in: %d1 Turns</French>
+		<French>Les fronti&#232;res s'agrandiront dans : %d1 tours</French>
 		<German>Gebietsweiterung in: %d1 Runden</German>
 		<Italian>Border expands in: %d1 Turns</Italian>
 		<Spanish>Border expands in: %d1 Turns</Spanish>
@@ -709,7 +729,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_APOSTOLIC_PALACE_COLLECT_TITHE</Tag>
 		<English>We have collected a tithe of %d1 from the Catholic world.</English>
-		<French>We have collected a tithe of %d1 from the Catholic world.</French>
+		<French>Nous avons per&#231;u une d&#238;me de %d1 [ICON_GOLD] de la part du monde catholique.</French>
 		<German>We have collected a tithe of %d1 from the Catholic world.</German>
 		<Italian>We have collected a tithe of %d1 from the Catholic world.</Italian>
 		<Spanish>We have collected a tithe of %d1 from the Catholic world.</Spanish>
@@ -717,7 +737,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_AUTOPLAY_TURNS_REMAINING</Tag>
 		<English>AUTO-PLAY TURNS REMAINING:  %d1_Num</English>
-		<French>TOURS RESTANTS EN JEU AUTO : %d1_Num</French>
+		<French>TOURS DE JEU AUTOMATIS&#201; RESTANTS : %d1_Num</French>
 		<German>VERBLEIBENDE AUTOPLAY-RUNDEN:  %d1_Num</German>
 		<Italian>TURNI DI GIOCO AUTOMATICO RIMANENTI:  %d1_Num</Italian>
 		<Spanish>TURNOS AUTOM&#193;TICOS RESTANTES: %d1_Num</Spanish>
@@ -757,7 +777,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ENSLAVE</Tag>
 		<English>ENSLAVE</English>
-		<French>ENSLAVE</French>
+		<French>ASSERVIR</French>
 		<German>ENSLAVE</German>
 		<Italian>ENSLAVE</Italian>
 		<Spanish>ENSLAVE</Spanish>
@@ -765,7 +785,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ESCAPE_TEXT</Tag>
 		<English>You have escaped and regained control of %s1 territory. Now let's teach our enemies a lesson!</English>
-		<French>Vous vous &#234;tes &#233;chapp&#233; et avez regagn&#233; le contr&#244;le du territoire %s1. A pr&#233;sent, donnons une le&#231;on &#224; nos ennemis !</French>
+		<French>Vous vous &#234;tes &#233;chapp&#233; et avez regagn&#233; le contr&#244;le du territoire %s1. &#192; pr&#233;sent, donnons une le&#231;on &#224; nos ennemis !</French>
 		<German>Ihr seid entkommen und habt die Kontrolle &#252;ber das %s1:3 Gebiet wiedererlangt. Nun sollten wir unseren Feinden eine Lektion erteilen!</German>
 		<Italian>Sei riuscito a fuggire e a riguadagnare il controllo del territorio %s1. Ora diamo una bella lezione ai nostri nemici!</Italian>
 		<Spanish>Hab&#233;is escapado y recuperado el control del territorio %s1:1. &#161;D&#233;mosles una lecci&#243;n a nuestros enemigos!</Spanish>
@@ -781,7 +801,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ESCAPE_TEXT2</Tag>
 		<English>territory. Now let's teach our enemies a lesson!</English>
-		<French>. A pr&#233;sent, donnons une le&#231;on &#224; nos ennemis !</French>
+		<French>. &#192; pr&#233;sent, donnons une le&#231;on &#224; nos ennemis !</French>
 		<German>Territorium wiedererlangt. Nun sollten wir unseren Feinden eine Lektion erteilen!</German>
 		<Italian>. Ora diamo una bella lezione ai nostri nemici!</Italian>
 		<Spanish>. &#161;D&#233;mosles una lecci&#243;n a nuestros enemigos!</Spanish>
@@ -837,7 +857,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FINANCE_ADVISOR_STABILITY</Tag>
 		<English>%s1[NEWLINE]------------------------[NEWLINE]Total %s2 Stability: %s3%d4</English>
-		<French>%s1[NEWLINE]------------------------[NEWLINE]Total %s2 Stability: %s3%d4</French>
+		<French>%s1[NEWLINE]------------------------[NEWLINE]Stabilit&#233; %s2 totale : %s3%d4</French>
 		<German>%s1[NEWLINE]------------------------[NEWLINE]Total %s2 Stability: %s3%d4</German>
 		<Italian>%s1[NEWLINE]------------------------[NEWLINE]Total %s2 Stability: %s3%d4</Italian>
 		<Spanish>%s1[NEWLINE]------------------------[NEWLINE]Total %s2 Stability: %s3%d4</Spanish>
@@ -845,7 +865,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FINANCE_ADVISOR_STABILITY_HEAD</Tag>
 		<English>%s1 Stability:</English>
-		<French>%s1 Stability:</French>
+		<French>Stabilit&#233; %s1 :</French>
 		<German>%s1 Stability:</German>
 		<Italian>%s1 Stability:</Italian>
 		<Spanish>%s1 Stability:</Spanish>
@@ -853,7 +873,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FIRST_CONTACT_NEWWORLD</Tag>
 		<English>Conquerors from a far away continent are invading our lands searching for wealth!</English>
-		<French>Des conqu&#233;rants d'un continent lointain envahissent nos terres &#224; la recherche de richesses !</French>
+		<French>Des conqu&#233;rants venus d'un continent lointain envahissent nos terres &#224; la recherche de richesses !</French>
 		<German>Eroberer von einem weit entfernten Kontinent fallen auf der Suche nach Reichtum in unser Land ein!</German>
 		<Italian>I conquistatori provenienti da un continente lontano invadono le nostre terre in cerca di ricchezza!</Italian>
 		<Spanish>&#161;Unos conquistadores de un continente lejano est&#225;n invadiendo nuestras tierras en busca de riquezas!</Spanish>
@@ -861,7 +881,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FIRST_CONTACT_OLDWORLD</Tag>
 		<English>A group of our own adventurers has arrived in the new world searching for wealth!</English>
-		<French>Un groupe de nos aventuriers est arriv&#233; dans le nouveau monde &#224; la recherche de richesses !</French>
+		<French>Un groupe de nos aventuriers est arriv&#233; dans le Nouveau Monde &#224; la recherche de richesses !</French>
 		<German>Eine Gruppe Eurer eigenen Abenteurer ist auf der Suche nach Reichtum in der Neuen Welt angekommen!</German>
 		<Italian>Un gruppo di nostri avventurieri &#232; arrivato nel nuovo mondo in cerca di ricchezza!</Italian>
 		<Spanish>&#161;Uno de nuestros grupos de aventureros ha llegado a unas nuevas tierras en busca de riquezas!</Spanish>
@@ -869,7 +889,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FLIP_AGREED</Tag>
 		<English>We agreed to the flip!</English>
-		<French>Nous acceptons de c&#233;der la ville !</French>
+		<French>Nous acceptons de c&#233;der le territoire !</French>
 		<German>Wir lassen sie ziehen!</German>
 		<Italian>Siamo d'accordo sul passaggio!</Italian>
 		<Spanish>&#161;Hemos accedido a la cesi&#243;n!</Spanish>
@@ -893,7 +913,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FLIP_REFUSED</Tag>
 		<English>We refused the flip, this means war!</English>
-		<French>Nous refusons de c&#233;der la ville, cela signifie la guerre !</French>
+		<French>Nous refusons de c&#233;der le territoire, cela signifie la guerre !</French>
 		<German>Wir lassen sie nicht ziehen. Das bedeutet Krieg!</German>
 		<Italian>Abbiamo rifiutato il passaggio: ci&#242; significa guerra!</Italian>
 		<Spanish>Nos hemos negado a la cesi&#243;n, &#161;esto significa la guerra!</Spanish>
@@ -925,7 +945,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FOOD_PRODUCED</Tag>
 		<English>[ICON_BULLET]Production consumes [ICON_FOOD]</English>
-		<French>[ICON_BULLET]Production consumes [ICON_FOOD]</French>
+		<French>[ICON_BULLET]La production consomme de la [ICON_FOOD]</French>
 		<German>[ICON_BULLET]Produktion verbraucht [ICON_FOOD]</German>
 		<Italian>[ICON_BULLET]Production consumes [ICON_FOOD]</Italian>
 		<Spanish>[ICON_BULLET]Production consumes [ICON_FOOD]</Spanish>
@@ -941,7 +961,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_CORPORATION</Tag>
 		<English>%D1_Change[ICON_HAPPY]: "Our corporations treat us well!"</English>
-		<French>%D1_Change[ICON_HAPPY]: "Our corporations treat us well!"</French>
+		<French>%D1_Change[ICON_HAPPY] : "Nos soci&#233;t&#233;s commerciales nous traitent bien !"</French>
 		<German>%D1_Change[ICON_HAPPY]: "Unsere Kapitalgesellschaften behandeln uns gut!"</German>
 		<Italian>%D1_Change[ICON_HAPPY]: "Our corporations treat us well!"</Italian>
 		<Spanish>%D1_Change[ICON_HAPPY]: "Our corporations treat us well!"</Spanish>
@@ -949,7 +969,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_HEALTH</Tag>
 		<English>%D1_Change[ICON_HAPPY]: "Our city is clean!"</English>
-		<French>%D1_Change[ICON_HAPPY]: "Our city is clean!"</French>
+		<French>%D1_Change[ICON_HAPPY] : "Notre ville est propre !"</French>
 		<German>%D1_Change[ICON_HAPPY]: "Unsere Stadt ist sauber!"</German>
 		<Italian>%D1_Change[ICON_HAPPY]: "Our city is clean!"</Italian>
 		<Spanish>%D1_Change[ICON_HAPPY]: "Our city is clean!"</Spanish>
@@ -957,7 +977,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_SPECIALISTS</Tag>
 		<English>%D1_Change[ICON_HAPPY]: "Our specialists increase the prestige of our city!"</English>
-		<French>%D1_Change[ICON_HAPPY]: "Our specialists increase the prestige of our city!"</French>
+		<French>%D1_Change[ICON_HAPPY] : "Nos sp&#233;cialistes contribuent au prestige de notre ville !"</French>
 		<German>%D1_Change[ICON_HAPPY]: "Unsere Spezialisten steigern das Prestige unserer Stadt!"</German>
 		<Italian>%D1_Change[ICON_HAPPY]: "Our specialists increase the prestige of our city!"</Italian>
 		<Spanish>%D1_Change[ICON_HAPPY]: "Our specialists increase the prestige of our city!"</Spanish>
@@ -981,7 +1001,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HURRY_GOLD_BUILDINGS</Tag>
 		<English>Can Spend Gold to Finish Building Production in a City</English>
-		<French>Can Spend Gold to Finish Building Production in a City</French>
+		<French>Possibilit&#233; de d&#233;penser de l'or pour achever la production des b&#226;timents</French>
 		<German>Can Spend Gold to Finish Building Production in a City</German>
 		<Italian>Can Spend Gold to Finish Building Production in a City</Italian>
 		<Spanish>Can Spend Gold to Finish Building Production in a City</Spanish>
@@ -989,7 +1009,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HURRY_GOLD_UNITS</Tag>
 		<English>Can Spend Gold to Finish Military Unit Production in a City</English>
-		<French>Can Spend Gold to Finish Military Unit Production in a City</French>
+		<French>Possibilit&#233; de d&#233;penser de l'or pour achever la production des unit&#233;s militaires</French>
 		<German>Can Spend Gold to Finish Military Unit Production in a City</German>
 		<Italian>Can Spend Gold to Finish Military Unit Production in a City</Italian>
 		<Spanish>Can Spend Gold to Finish Military Unit Production in a City</Spanish>
@@ -1029,7 +1049,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INDONESIAN_UP</Tag>
 		<English>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</English>
-		<French>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</French>
+		<French>Le commerce passant par nos mers contribue &#224; notre tr&#233;sor &#224; hauteur de %d1 [ICON_GOLD] !</French>
 		<German>Der durch unsere Gew&#228;sser verlaufende Handel bringt unserer Schatzkammer %d1 [ICON_GOLD]!</German>
 		<Italian>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</Italian>
 		<Spanish>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</Spanish>
@@ -1037,7 +1057,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INVADERS_HUMAN</Tag>
 		<English>%s1 armies have invaded our territory!</English>
-		<French>%s1 armies have invaded our territory!</French>
+		<French>Les arm&#233;es %s1 ont envahi notre territoire !</French>
 		<German>%s1 Armeen sind in unser Territorium eingefallen!</German>
 		<Italian>%s1 armies have invaded our territory!</Italian>
 		<Spanish>%s1 armies have invaded our territory!</Spanish>
@@ -1053,7 +1073,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MAYA_HOLKAN_EFFECT</Tag>
 		<English>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</English>
-		<French>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</French>
+		<French>Votre holkan a vaincu un %s2 %s1 et ramen&#233; %d3 [ICON_FOOD] &#224; %s4.</French>
 		<German>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</German>
 		<Italian>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</Italian>
 		<Spanish>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</Spanish>
@@ -1117,7 +1137,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_PERSECUTION</Tag>
 		<English>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</English>
-		<French>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</French>
+		<French>Votre inquisiteur a r&#233;ussi &#224; purger la ville de %s1_city du %s2_religion et a confisqu&#233; au passage %d3_gold[ICON_GOLD].</French>
 		<German>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</German>
 		<Italian>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</Italian>
 		<Spanish>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</Spanish>
@@ -1125,7 +1145,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_PERSECUTION_FAIL</Tag>
 		<English>Your persecutor in %s1_city was unsuccessful.</English>
-		<French>Your persecutor in %s1_city was unsuccessful.</French>
+		<French>Votre inquisiteur &#224; %s1_city a &#233;chou&#233;.</French>
 		<German>Your persecutor in %s1_city was unsuccessful.</German>
 		<Italian>Your persecutor in %s1_city was unsuccessful.</Italian>
 		<Spanish>Your persecutor in %s1_city was unsuccessful.</Spanish>
@@ -1133,7 +1153,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MEZQUITA_FREE_GP</Tag>
 		<English>A %s1 has been born after the construction of La Mezquita in %s2!</English>
-		<French>A %s1 has been born after the construction of La Mezquita in %s2!</French>
+		<French>Un %s1 est n&#233; &#224; la suite de la construction de La Mezquita &#224; %s2 !</French>
 		<German>Ein %s1 wurde nach der Errichtung der La Mezquita in %s2 geboren!</German>
 		<Italian>A %s1 has been born after the construction of La Mezquita in %s2!</Italian>
 		<Spanish>A %s1 has been born after the construction of La Mezquita in %s2!</Spanish>
@@ -1141,7 +1161,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_BONUS_PLAYER_TRADE</Tag>
 		<English>[ICON_BULLET]Allows Trade of[SPACE]</English>
-		<French>[ICON_BULLET]Allows Trade of[SPACE]</French>
+		<French>[ICON_BULLET]Permet le commerce de :[SPACE]</French>
 		<German>[ICON_BULLET]Erlaubt Handel von:[SPACE]</German>
 		<Italian>[ICON_BULLET]Allows Trade of[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]Allows Trade of[SPACE]</Spanish>
@@ -1149,7 +1169,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CITY_WAS_TRADED_TO</Tag>
 		<English>%s1_CityName was traded to the %s2_CivName!!!</English>
-		<French>%s1_CityName a &#233;t&#233; &#233;chang&#233; &#224; %s2_CivName!!!</French>
+		<French>%s1_CityName a &#233;t&#233; &#233;chang&#233; &#224; %s2_CivName !!!</French>
 		<German>Die Stadt %s1_CityName wurde an das %s2:2_CivName &#252;bereignet!!!</German>
 		<Italian>%s1_CityName &#232; stata ceduta a %s2_CivName!!!</Italian>
 		<Spanish>&#161;%s1_CityName ha sido cedida al %s2_CivName!</Spanish>
@@ -1181,7 +1201,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_ESPIONAGE_EXPERIENCE</Tag>
 		<English>Espionage Experience</English>
-		<French>Espionage Experience</French>
+		<French>Exp&#233;rience en espionnage</French>
 		<German>Spionage-Erfahrung</German>
 		<Italian>Espionage Experience</Italian>
 		<Spanish>Espionage Experience</Spanish>
@@ -1189,7 +1209,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED</Tag>
 		<English>Our source of [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] near %s2_CityName has been exhausted!</English>
-		<French>Our source of [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] near %s2_CityName has been exhausted!</French>
+		<French>Notre source de [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] pr&#232;s de %s2_CityName est &#233;puis&#233;e !</French>
 		<German>Unser Vorkommen des Bonusguts [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] in der N&#228;he von %s2_CityName ist aufgebraucht!</German>
 		<Italian>Our source of [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] near %s2_CityName has been exhausted!</Italian>
 		<Spanish>Our source of [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] near %s2_CityName has been exhausted!</Spanish>
@@ -1197,15 +1217,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_FOUNDED_FIRST</Tag>
 		<English>[ICON_BULLET]Requires [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] to spread to your cities</English>
-		<French>[ICON_BULLET]Requires [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] to spread to your cities</French>
-		<German>[ICON_BULLET]Benötigt [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] zur Verbreitung in Städten</German>
+		<French>[ICON_BULLET]Peut se propager dans vos villes avec la technologie : [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</French>
+		<German>[ICON_BULLET]Ben&#246;tigt [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] zur Verbreitung in St&#228;dten</German>
 		<Italian>[ICON_BULLET]Requires [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] to spread to your cities</Italian>
 		<Spanish>[ICON_BULLET]Requires [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT] to spread to your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_FIRST_DISCOVER_INCORPORATES</Tag>
 		<English>[ICON_BULLET]Required for the spread of[SPACE]</English>
-		<French>[ICON_BULLET]Required for the spread of[SPACE]</French>
+		<French>[ICON_BULLET]Requis pour la propagation de :[SPACE]</French>
 		<German>[ICON_BULLET]Notwendig zur Verbreitung von[SPACE]</German>
 		<Italian>[ICON_BULLET]Required for the spread of[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]Required for the spread of[SPACE]</Spanish>
@@ -1221,7 +1241,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_HAPPINESS</Tag>
 		<English>%D1_Change[ICON_HEALTHY] from Excess Happiness</English>
-		<French>%D1_Change[ICON_HEALTHY] from Excess Happiness</French>
+		<French>%D1_Change[ICON_HEALTHY] gr&#226;ce au bonheur en exc&#232;s</French>
 		<German>%D1_Change[ICON_HEALTHY] durch &#252;bersch&#252;ssige Zufriedenheit</German>
 		<Italian>%D1_Change[ICON_HEALTHY] from Excess Happiness</Italian>
 		<Spanish>%D1_Change[ICON_HEALTHY] from Excess Happiness</Spanish>
@@ -1229,7 +1249,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS</Tag>
 		<English>%D1_Change[ICON_HEALTHY] from Specialists</English>
-		<French>%D1_Change[ICON_HEALTHY] from Specialists</French>
+		<French>%D1_Change[ICON_HEALTHY] gr&#226;ce aux sp&#233;cialistes</French>
 		<German>%D1_Change[ICON_HEALTHY] durch Spezialisten</German>
 		<Italian>%D1_Change[ICON_HEALTHY] from Specialists</Italian>
 		<Spanish>%D1_Change[ICON_HEALTHY] from Specialists</Spanish>
@@ -1237,7 +1257,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GP_BORN_OUTSIDE</Tag>
 		<English>%s1_GPName has been born near %s2_CityName!</English>
-		<French>%s1_GPName has been born near %s2_CityName!</French>
+		<French>%s1_GPName est n&#233; pr&#232;s de : %s2_CityName !</French>
 		<German>Die Gro&#223;e Pers&#246;nlichkeit %s1_GPName wurde nahe %s2_CityName geboren!</German>
 		<Italian>%s1_GPName has been born near %s2_CityName!</Italian>
 		<Spanish>%s1_GPName has been born near %s2_CityName!</Spanish>
@@ -1245,7 +1265,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GREAT_SPY</Tag>
 		<English>Great Spy: %d1_Curr/%d2_Need Experience</English>
-		<French>Great Spy: %d1_Curr/%d2_Need Experience</French>
+		<French>Espion illustre : %d1_Curr/%d2_Need exp&#233;rience</French>
 		<German>Gro&#223;er Spion: %d1_Curr/%d2_Need Erfahrung</German>
 		<Italian>Great Spy: %d1_Curr/%d2_Need Experience</Italian>
 		<Spanish>Great Spy: %d1_Curr/%d2_Need Experience</Spanish>
@@ -1253,7 +1273,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HEALTH_FROM_CORPORATIONS</Tag>
 		<English>%D1_Change[ICON_UNHEALTHY] from Corporations</English>
-		<French>%D1_Change[ICON_UNHEALTHY] from Corporations</French>
+		<French>%D1_Change[ICON_UNHEALTHY] &#224; cause des soci&#233;t&#233;s commerciales</French>
 		<German>%D1_Change[ICON_UNHEALTHY] durch Kapitalgesellschaften</German>
 		<Italian>%D1_Change[ICON_UNHEALTHY] from Corporations</Italian>
 		<Spanish>%D1_Change[ICON_UNHEALTHY] from Corporations</Spanish>
@@ -1261,7 +1281,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HEALTH_FROM_IMPROVEMENTS</Tag>
 		<English>%D1_Change[ICON_UNHEALTHY] from Improvements</English>
-		<French>%D1_Change[ICON_UNHEALTHY] from Improvements</French>
+		<French>%D1_Change[ICON_UNHEALTHY] &#224; cause des am&#233;nagements</French>
 		<German>%D1_Change[ICON_UNHEALTHY] durch Verbesserungen</German>
 		<Italian>%D1_Change[ICON_UNHEALTHY] from Improvements</Italian>
 		<Spanish>%D1_Change[ICON_UNHEALTHY] from Improvements</Spanish>
@@ -1269,7 +1289,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ANGER_IMPROVEMENTS</Tag>
 		<English>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</English>
-		<French>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</French>
+		<French>+%d1_Change[ICON_UNHAPPY] : "Nos campagnes sont bond&#233;es !"</French>
 		<German>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</German>
 		<Italian>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</Italian>
 		<Spanish>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</Spanish>
@@ -1277,7 +1297,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_IMPROVEMENTS</Tag>
 		<English>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</English>
-		<French>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</French>
+		<French>+%d1_Change[ICON_HAPPY] : "Nous appr&#233;cions nos parcs nationaux !"</French>
 		<German>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</German>
 		<Italian>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</Italian>
 		<Spanish>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</Spanish>
@@ -1285,7 +1305,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</English>
-		<French>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</French>
+		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux [ICON_HEALTHY] en exc&#232;s</French>
 		<German>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</German>
 		<Italian>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HEALTHY]</Spanish>
@@ -1293,7 +1313,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Fortified Units</English>
-		<French>[ICON_BULLET]%D1%F2 from Fortified Units</French>
+		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux unit&#233;s fortifi&#233;es</French>
 		<German>[ICON_BULLET]%D1%F2 durch befestigte Einheiten</German>
 		<Italian>[ICON_BULLET]%D1%F2 from Fortified Units</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2 from Fortified Units</Spanish>
@@ -1301,7 +1321,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_CIVIC</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for %s2_unit_or_building from Civics</English>
-		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for %s2_unit_or_building from Civics</French>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] gr&#226;ce aux doctrines pour : %s2_unit_or_building</French>
 		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for %s2_unit_or_building from Civics</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for %s2_unit_or_building from Civics</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for %s2_unit_or_building from Civics</Spanish>
@@ -1309,7 +1329,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_HOLY_ROME</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</English>
-		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</French>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] pour les b&#226;timents li&#233;s &#224; la religion d'&#201;tat</French>
 		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</Spanish>
@@ -1317,7 +1337,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_ROME</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</English>
-		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</French>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] parce que le b&#226;timent actuel est d&#233;j&#224; dans votre capitale</French>
 		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</Spanish>
@@ -1325,7 +1345,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_STATUE_OF_ZEUS_EFFECT</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</English>
-		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</French>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] gr&#226;ce &#224; la Statue de Zeus pour :%s2_unit_or_building</French>
 		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</Spanish>
@@ -1357,7 +1377,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_POLLUTION_MODIFIER</Tag>
 		<English>%D1_Change[ICON_UNHEALTHY] from civics</English>
-		<French>%D1_Change[ICON_UNHEALTHY] from civics</French>
+		<French>%D1_Change[ICON_UNHEALTHY] &#224; cause des doctrines</French>
 		<German>%D1_Change[ICON_UNHEALTHY] durch Regierungsformen</German>
 		<Italian>%D1_Change[ICON_UNHEALTHY] from civics</Italian>
 		<Spanish>%D1_Change[ICON_UNHEALTHY] from civics</Spanish>
@@ -1365,7 +1385,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_SPY_UPGRADED</Tag>
 		<English>Your Spy has reached the status of a Great Spy!</English>
-		<French>Your Spy has reached the status of a Great Spy!</French>
+		<French>Votre espion a atteint le statut d'espion illustre !</French>
 		<German>Ihr Spion hat den Status eines Gro&#223;en Spions erreicht!</German>
 		<Italian>Your Spy has reached the status of a Great Spy!</Italian>
 		<Spanish>Your Spy has reached the status of a Great Spy!</Spanish>
@@ -1437,7 +1457,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MONGOL_HORDE</Tag>
 		<English>The Mongol hordes have invaded %s1_civ_adjective territory!</English>
-		<French>The Mongol hordes have invaded %s1_civ_adjective territory!</French>
+		<French>Les hordes mongoles ont envahi le territoire %s1_civ_adjective !</French>
 		<German>Die mongolischen Horden sind in %s1_civ_adjective Territorium eingefallen!</German>
 		<Italian>The Mongol hordes have invaded %s1_civ_adjective territory!</Italian>
 		<Spanish>The Mongol hordes have invaded %s1_civ_adjective territory!</Spanish>
@@ -1445,7 +1465,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MONGOL_HORDE_HUMAN</Tag>
 		<English>The Mongol hordes have invaded our territory!</English>
-		<French>The Mongol hordes have invaded our territory!</French>
+		<French>Les hordes mongoles ont envahi notre territoire !</French>
 		<German>Die mongolischen Horden sind in unser Territorium eingefallen!</German>
 		<Italian>The Mongol hordes have invaded our territory!</Italian>
 		<Spanish>The Mongol hordes have invaded our territory!</Spanish>
@@ -1453,7 +1473,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_NEW_MERCENARIES</Tag>
 		<English>There are new mercenaries available for hiring.</English>
-		<French>There are new mercenaries available for hiring.</French>
+		<French>De nouveaux mercenaires sont disponibles.</French>
 		<German>There are new mercenaries available for hiring.</German>
 		<Italian>There are new mercenaries available for hiring.</Italian>
 		<Spanish>There are new mercenaries available for hiring.</Spanish>
@@ -1461,7 +1481,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_NEWCIV_MESSAGE</Tag>
 		<English>Do you wish to take permanent control of the %s1 civilization?</English>
-		<French>Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2</French>
+		<French>Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2 ?</French>
 		<German>Wollt Ihr die permanente Kontrolle &#252;ber das %s1:3 Volk &#252;bernehmen?</German>
 		<Italian>Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
 		<Spanish>&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
@@ -1469,7 +1489,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_NEWCIV_MESSAGE1</Tag>
 		<English>Do you wish to take permanent control of the </English>
-		<French>Voulez-vous prendre le contr&#244;le permanent de la</French>
+		<French>Voulez-vous prendre le contr&#244;le permanent de l'empire</French>
 		<German>Wollt Ihr die permanente Kontrolle &#252;ber </German>
 		<Italian>Vuoi assumere il controllo permanente di </Italian>
 		<Spanish>&#191;Deseas tener el control permanente sobre </Spanish>
@@ -1517,7 +1537,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_NO_RELIGIOUS_GOALS</Tag>
 		<English>You lack a state religion with religious goals!</English>
-		<French>You lack a state religion with religious goals!</French>
+		<French>Vous n'avez pas de religion d'&#201;tat poss&#233;dant des objectifs religieux !</French>
 		<German>Euch fehlt eine Staatsreligion mit religi&#246;sen Zielen!</German>
 		<Italian>You lack a state religion with religious goals!</Italian>
 		<Spanish>You lack a state religion with religious goals!</Spanish>
@@ -1525,7 +1545,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_OVERFLOW</Tag>
 		<English>Overflow in (%d1, %d2), method: %s3</English>
-		<French>Overflow in (%d1, %d2), method: %s3</French>
+		<French>D&#233;bordement &#224; (%d1, %d2), m&#233;thode : %s3</French>
 		<German>Overflow in (%d1, %d2), method: %s3</German>
 		<Italian>Overflow in (%d1, %d2), method: %s3</Italian>
 		<Spanish>Overflow in (%d1, %d2), method: %s3</Spanish>
@@ -1533,7 +1553,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PAGAN_TEMPLE_REMOVED</Tag>
 		<English>The spread of %s1 to our city of %s2 caused its citizens to abandon their Pagan Temple.</English>
-		<French>The spread of %s1 to our city of %s2 caused its citizens to abandon their Pagan Temple.</French>
+		<French>La propagation de la religion : %s1 &#224; %s2 a pouss&#233; les citoyens &#224; abandonner leur temple pa&#239;en.</French>
 		<German>The spread of %s1 to our city of %s2 caused its citizens to abandon their Pagan Temple.</German>
 		<Italian>The spread of %s1 to our city of %s2 caused its citizens to abandon their Pagan Temple.</Italian>
 		<Spanish>The spread of %s1 to our city of %s2 caused its citizens to abandon their Pagan Temple.</Spanish>
@@ -1541,7 +1561,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PAGAN_TEMPLE_REPLACED</Tag>
 		<English>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as a %s3.</English>
-		<French>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as a %s3.</French>
+		<French>La propagation de la religion : %s1 &#224; %s2 a pouss&#233; les citoyens &#224; reconvertir leur temple pa&#239;en en %s3.</French>
 		<German>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as a %s3.</German>
 		<Italian>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as a %s3.</Italian>
 		<Spanish>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as a %s3.</Spanish>
@@ -1549,7 +1569,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PANTHEON_REQUIREMENT</Tag>
 		<English>[ICON_BULLET]Requires [LINK=literal]Pantheon[\LINK]</English>
-		<French>[ICON_BULLET]Requires [LINK=literal]Pantheon[\LINK]</French>
+		<French>[ICON_BULLET]N&#233;cessite : [LINK=literal]Panth&#233;on[\LINK]</French>
 		<German>[ICON_BULLET]Requires [LINK=literal]Pantheon[\LINK]</German>
 		<Italian>[ICON_BULLET]Requires [LINK=literal]Pantheon[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Requires [LINK=literal]Pantheon[\LINK]</Spanish>
@@ -1557,7 +1577,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PERSECUTION_MESSAGE</Tag>
 		<English>Which religion do you want to persecute in %s1?</English>
-		<French>Which religion do you want to persecute in %s1?</French>
+		<French>Quelle religion voulez-vous pers&#233;cuter &#224; %s1 ?</French>
 		<German>Which religion do you want to persecute in %s1?</German>
 		<Italian>Which religion do you want to persecute in %s1?</Italian>
 		<Spanish>Which religion do you want to persecute in %s1?</Spanish>
@@ -1565,7 +1585,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PERSECUTION_PERFORMED</Tag>
 		<English>Religious persecution in %s2 has removed %s1 from the city.</English>
-		<French>Religious persecution in %s2 has removed %s1 from the city.</French>
+		<French>La pers&#233;cution religieuse &#224; %s2 a purg&#233; de la ville la religion : %s1.</French>
 		<German>Religious persecution in %s2 has removed %s1 from the city.</German>
 		<Italian>Religious persecution in %s2 has removed %s1 from the city.</Italian>
 		<Spanish>Religious persecution in %s2 has removed %s1 from the city.</Spanish>
@@ -1597,7 +1617,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PLAYER_OPTION_MODDER_1</Tag>
 		<English>Display UHV End Turns</English>
-		<French>Display UHV End Turns</French>
+		<French>Montrer le tour final des VHU</French>
 		<German>EHS Endrunden Anzeigen</German>
 		<Italian>Display UHV End Turns</Italian>
 		<Spanish>Display UHV End Turns</Spanish>
@@ -1605,7 +1625,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PLAYER_OPTION_MODDER_1_HELP</Tag>
 		<English>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</English>
-		<French>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</French>
+		<French>Les tours auxquels vos objectifs de VHU doivent &#234;tre accomplis sont montr&#233;s m&#234;me apr&#232;s la d&#233;couverte du calendrier.</French>
 		<German>Die Runde, in der Ihre EHS-Ziele erf&#252;llt werden m&#252;ssen, wird auch nach der Entdeckung des Kalenders angezeigt.</German>
 		<Italian>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</Italian>
 		<Spanish>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</Spanish>
@@ -1613,7 +1633,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_COLLECT_TITHE</Tag>
 		<English>Collect Tithe (Requires %d1 of %d2 Total Votes)</English>
-		<French>Collect Tithe (Requires %d1 of %d2 Total Votes)</French>
+		<French>Percevoir la d&#238;me (n&#233;cessite %d1 votes sur %d2)</French>
 		<German>Den Zehnt eintreiben (Ben&#246;tigt %d1 von insgesamt %d2 Stimmen)</German>
 		<Italian>Collect Tithe (Requires %d1 of %d2 Total Votes)</Italian>
 		<Spanish>Collect Tithe (Requires %d1 of %d2 Total Votes)</Spanish>
@@ -1621,7 +1641,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_DECOLONIZE</Tag>
 		<English>UN Resolution - Decolonize %s1_city (%s2_player) (Requires %d3_ReqNum of %d4_TotNum Total Votes)</English>
-		<French>UN Resolution - Decolonize %s1_city (%s2_player) (Requires %d3_ReqNum of %d4_TotNum Total Votes)</French>
+		<French>R&#233;solution de l'ONU - D&#233;coloniser %s1_city (%s2_player) (n&#233;cessite %d3_ReqNum votes sur %d4_TotNum)</French>
 		<German>UN Resolution - %s1_city (%s2_player) dekolonisieren (Erfordert %d3_ReqNum on insgesamt %d4_TotNum Stimmen.)</German>
 		<Italian>UN Resolution - Decolonize %s1_city (%s2_player) (Requires %d3_ReqNum of %d4_TotNum Total Votes)</Italian>
 		<Spanish>UN Resolution - Decolonize %s1_city (%s2_player) (Requires %d3_ReqNum of %d4_TotNum Total Votes)</Spanish>
@@ -1629,7 +1649,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_EXCOMMUNICATION</Tag>
 		<English>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</English>
-		<French>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</French>
+		<French>Excommunier : %s1 (n&#233;cessite %d2 votes sur %d3)</French>
 		<German>%s1 exkommunizieren (Ben&#246;tigt %d2 von insgesamt %d3 Stimmen)</German>
 		<Italian>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</Italian>
 		<Spanish>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</Spanish>
@@ -1637,7 +1657,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_FORCE_WAR</Tag>
 		<English>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</English>
-		<French>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</French>
+		<French>Croisade contre : %s1_player (n&#233;cessite %d2_ReqNum votes sur %d3_TotNum)</French>
 		<German>Kreuzzug gegen %s1_player (Erfordert %d2_ReqNum on insgesamt %d3_TotNum Stimmen.)</German>
 		<Italian>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</Italian>
 		<Spanish>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</Spanish>
@@ -1645,7 +1665,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_INQUISITION</Tag>
 		<English>Send Inquisition to %s1 (Requires %d2 of %d3 Total Votes)</English>
-		<French>Send Inquisition to %s1 (Requires %d2 of %d3 Total Votes)</French>
+		<French>Envoyer l'Inquisition chez : %s1 (n&#233;cessite %d2 votes sur %d3)</French>
 		<German>Inquisition nach %s1 entsenden (Ben&#246;tigt %d2 von insgesamt %d3 Stimmen)</German>
 		<Italian>Send Inquisition to %s1 (Requires %d2 of %d3 Total Votes)</Italian>
 		<Spanish>Send Inquisition to %s1 (Requires %d2 of %d3 Total Votes)</Spanish>
@@ -1653,7 +1673,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_RELEASE</Tag>
 		<English>UN Resolution - Free %s1_player from %s2_civ_adjective Control (Requires %d3_ReqNum of %d4_TotNum Total Votes)</English>
-		<French>UN Resolution - Free %s1_player from %s2_civ_adjective Control (Requires %d3_ReqNum of %d4_TotNum Total Votes)</French>
+		<French>R&#233;solution de l'ONU - Lib&#233;rer %s1_player du contr&#244;le %s2_civ_adjective (n&#233;cessite %d3_ReqNum votes sur %d4_TotNum)</French>
 		<German>UN Resolution - %s1_player aus %s2:1_civ_adjective Kontrolle befreien (Erfordert %d3_ReqNum on insgesamt %d4_TotNum Stimmen.)</German>
 		<Italian>UN Resolution - Free %s1_player from %s2_civ_adjective Control (Requires %d3_ReqNum of %d4_TotNum Total Votes)</Italian>
 		<Spanish>UN Resolution - Free %s1_player from %s2_civ_adjective Control (Requires %d3_ReqNum of %d4_TotNum Total Votes)</Spanish>
@@ -1677,7 +1697,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_RATING</Tag>
 		<English>Rating</English>
-		<French>Evaluation</French>
+		<French>&#201;valuation</French>
 		<German>Bewertung</German>
 		<Italian>Valutazione</Italian>
 		<Spanish>&#205;ndice</Spanish>
@@ -1709,7 +1729,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_MESSAGE</Tag>
 		<English>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</English>
-		<French>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</French>
+		<French>L'invention de l'imprimerie a permis la diffusion de nouvelles id&#233;ologies, et des &#233;glises dites protestantes commencent &#224; s'opposer au pouvoir du pape sur la chr&#233;tient&#233;. Adh&#233;rerons-nous &#224; la R&#233;forme ? Nos villes et b&#226;timents catholiques se convertiront alors &#224; la nouvelle religion. Si nous nous convertissons maintenant, nous recevrons un bonus de 500 or pour avoir rapidement pris le contr&#244;le des biens de l'&#201;glise.</French>
 		<German>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</German>
 		<Italian>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Italian>
 		<Spanish>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Spanish>
@@ -1717,7 +1737,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_TITLE</Tag>
 		<English>The Reformation!</English>
-		<French>The Reformation!</French>
+		<French>La R&#233;forme !</French>
 		<German>The Reformation!</German>
 		<Italian>The Reformation!</Italian>
 		<Spanish>The Reformation!</Spanish>
@@ -1725,7 +1745,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELEASE_CIVILIZATION</Tag>
 		<English>Release %s1_citylist to %s2</English>
-		<French>Release %s1_citylist to %s2</French>
+		<French>Rendre %s1_citylist &#224; : %s2</French>
 		<German>Release %s1_citylist to %s2</German>
 		<Italian>Release %s1_citylist to %s2</Italian>
 		<Spanish>Release %s1_citylist to %s2</Spanish>
@@ -1733,7 +1753,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_REPUBLIC_REQUIREMENT</Tag>
 		<English>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</English>
-		<French>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</French>
+		<French>[ICON_BULLET]N&#233;cessite la [LINK=literal]r&#233;publique[\LINK]</French>
 		<German>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</German>
 		<Italian>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</Spanish>
@@ -1757,7 +1777,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SCHISM_MESSAGE</Tag>
 		<English>While Christianity has since its existence consisted of various sects, our central government could still uphold Christian Orthodoxy. But with worldly control over the Christian world fracturing, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now a theological schism divides Christianity, and several cities outside of our direct control have joined this new Catholic sect.</English>
-		<French>While Christianity has since its existence consisted of various sects, our central government could still uphold Christian Orthodoxy. But with worldly control over the Christian world fracturing, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now a theological schism divides Christianity, and several cities outside of our direct control have joined this new Catholic sect.</French>
+		<French>Si le christianisme depuis sa naissance est compos&#233; de diverses d&#233;nominations, il a n&#233;anmoins &#233;t&#233; possible pour notre gouvernement de faire respecter une certaine orthodoxie. Mais maintenant que le contr&#244;le temporel du monde chr&#233;tien se fractionne, le patriarche de %s1 s'est d&#233;clar&#233; pape et pr&#233;tend &#234;tre le seul repr&#233;sentant de Dieu sur Terre. Un schisme th&#233;ologique divise la chr&#233;tient&#233;, et de nombreuses villes hors de notre contr&#244;le direct ont adh&#233;r&#233; &#224; cette nouvelle &#201;glise catholique.</French>
 		<German>While Christianity has since its existence consisted of various sects, our central government could still uphold Christian Orthodoxy. But with worldly control over the Christian world fracturing, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now a theological schism divides Christianity, and several cities outside of our direct control have joined this new Catholic sect.</German>
 		<Italian>While Christianity has since its existence consisted of various sects, our central government could still uphold Christian Orthodoxy. But with worldly control over the Christian world fracturing, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now a theological schism divides Christianity, and several cities outside of our direct control have joined this new Catholic sect.</Italian>
 		<Spanish>While Christianity has since its existence consisted of various sects, our central government could still uphold Christian Orthodoxy. But with worldly control over the Christian world fracturing, the Patriarch of %s1 has declared himself Pope and claims to be the sole representative of God on Earth. Now a theological schism divides Christianity, and several cities outside of our direct control have joined this new Catholic sect.</Spanish>
@@ -1765,7 +1785,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SCHISM_TITLE</Tag>
 		<English>The Great Schism</English>
-		<French>The Great Schism</French>
+		<French>Le Grand Schisme</French>
 		<German>The Great Schism</German>
 		<Italian>The Great Schism</Italian>
 		<Spanish>The Great Schism</Spanish>
@@ -1773,7 +1793,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SELJUK_HORDES</Tag>
 		<English>A vast army of Seljuk Turks has been spotted moving west across the Iranian Plateau!</English>
-		<French>in French</French>
+		<French>Une immense arm&#233;e de turcs seldjoukides a &#233;t&#233; aper&#231;ue en train de traverser le plateau iranien vers l'ouest !</French>
 		<German>Eine gewaltige Armee von Seldschuk-T&#65533;rken wurde dabei gesichtet, sich westw&#65533;rts durch das Iranische Plateau zu bewegen!</German>
 		<Italian>in Italian</Italian>
 		<Spanish>in Spanish</Spanish>
@@ -1797,7 +1817,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_GREAT_STATESMAN</Tag>
 		<English>Great Statesman</English>
-		<French>Great Statesman</French>
+		<French>Homme d'&#201;tat illustre</French>
 		<German>Gro&#223;er Staatsmann</German>
 		<Italian>Great Statesman</Italian>
 		<Spanish>Great Statesman</Spanish>
@@ -1805,7 +1825,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_SLAVE</Tag>
 		<English>Slave</English>
-		<French>Slave</French>
+		<French>Esclave</French>
 		<German>Slave</German>
 		<Italian>Slave</Italian>
 		<Spanish>Slave</Spanish>
@@ -1813,7 +1833,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_STATESMAN</Tag>
 		<English>Statesman</English>
-		<French>Statesman</French>
+		<French>Homme d'&#201;tat</French>
 		<German>Staatsmann</German>
 		<Italian>Statesman</Italian>
 		<Spanish>Statesman</Spanish>
@@ -1829,7 +1849,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STATE_RELIGION</Tag>
 		<English>State Religion</English>
-		<French>State Religion</French>
+		<French>Religion d'&#201;tat</French>
 		<German>Staatsreligion</German>
 		<Italian>State Religion</Italian>
 		<Spanish>State Religion</Spanish>
@@ -1845,7 +1865,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VASSALAGE_ALLOWS</Tag>
 		<English>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK]</English>
-		<French>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK]</French>
+		<French>[ICON_BULLET]N&#233;cessaire pour former une [LINK=literal]Lev&#233;e[\LINK]</French>
 		<German>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK]</German>
 		<Italian>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK]</Spanish>
@@ -1853,7 +1873,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VASSALAGE_REQUIREMENT</Tag>
 		<English>[ICON_BULLET]Requires [LINK=literal]Vassalage[\LINK]</English>
-		<French>[ICON_BULLET]Requires [LINK=literal]Vassalage[\LINK]</French>
+		<French>[ICON_BULLET]N&#233;cessite la [LINK=literal]vassalit&#233;[\LINK]</French>
 		<German>[ICON_BULLET]Requires [LINK=literal]Vassalage[\LINK]</German>
 		<Italian>[ICON_BULLET]Requires [LINK=literal]Vassalage[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Requires [LINK=literal]Vassalage[\LINK]</Spanish>
@@ -1861,7 +1881,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VIKING_NAVAL_UP</Tag>
 		<English>You have acquired %d1 [ICON_GOLD] by sinking a %s2 %s3.</English>
-		<French>You have acquired %d1 [ICON_GOLD] by sinking a %s2 %s3.</French>
+		<French>Vous avez obtenu %d1 [ICON_GOLD] en coulant [NUM1:un:une] %s2 %s3.</French>
 		<German>Sie haben %s1 [ICON_GOLD] durch das Versenken eines %s2 %s3.</German>
 		<Italian>You have acquired %d1 [ICON_GOLD] by sinking a %s2 %s3.</Italian>
 		<Spanish>You have acquired %d1 [ICON_GOLD] by sinking a %s2 %s3.</Spanish>
@@ -1869,7 +1889,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_COLLECT_TITHE</Tag>
 		<English>Collect Tithe</English>
-		<French>Collect Tithe</French>
+		<French>Percevoir la d&#238;me</French>
 		<German>Collect Tithe</German>
 		<Italian>Collect Tithe</Italian>
 		<Spanish>Collect Tithe</Spanish>
@@ -1877,7 +1897,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_EGALITARIANISM</Tag>
 		<English>U.N. Resolution #743 (Global Civic - Egalitarianism)</English>
-		<French>R&#233;solution de l'ONU n&#176; 743 (Doctrine mondiale - &#233;mancipation)</French>
+		<French>R&#233;solution de l'ONU n&#176; 743 (Doctrine mondiale - &#201;galitarisme)</French>
 		<German>U.N.-Resolution Nr. 743 (Globale Staatsform - Egalitarianism)</German>
 		<Italian>Mozione #743 dell'ONU (Emancipazione globale)</Italian>
 		<Spanish>Resoluci&#243;n n&#186; 743 de la ONU (principio mundial - Emancipaci&#243;n)</Spanish>
@@ -1893,7 +1913,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_FORCE_WAR</Tag>
 		<English>Crusade</English>
-		<French>Crusade</French>
+		<French>Croisade</French>
 		<German>Crusade</German>
 		<Italian>Crusade</Italian>
 		<Spanish>Crusade</Spanish>
@@ -1909,7 +1929,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_MULTILATERALISM</Tag>
 		<English>U.N. Resolution #413 (Global Civic - Multilateralism)</English>
-		<French>U.N. Resolution #413 (Global Civic - Multilateralism)</French>
+		<French>R&#233;solution de l'ONU n&#176; 413 (Doctrine mondiale - Multilat&#233;ralisme)</French>
 		<German>U.N.-Resolution Nr. 413 (Globale Staatsform - Multilateralism)</German>
 		<Italian>U.N. Resolution #413 (Global Civic - Multilateralism)</Italian>
 		<Spanish>U.N. Resolution #413 (Global Civic - Multilateralism)</Spanish>
@@ -1917,7 +1937,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_PUBLIC_WELFARE</Tag>
 		<English>U.N. Resolution #631 (Global Civic - Public Welfare)</English>
-		<French>U.N. Resolution #631 (Global Civic - Public Welfare)</French>
+		<French>R&#233;solution de l'ONU n&#176; 631 (Doctrine mondiale - &#201;tat-providence)</French>
 		<German>U.N. Resolution #631 (Global Civic - Public Welfare)</German>
 		<Italian>U.N. Resolution #631 (Global Civic - Public Welfare)</Italian>
 		<Spanish>U.N. Resolution #631 (Global Civic - Public Welfare)</Spanish>
@@ -1925,7 +1945,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_DEMOCRACY</Tag>
 		<English>U.N. Resolution #3445 (Global Civic - Democracy)</English>
-		<French>U.N. Resolution #3445 (Global Civic - Democracy)</French>
+		<French>R&#233;solution de l'ONU n&#176; 3445 (Doctrine mondiale - D&#233;mocratie)</French>
 		<German>U.N.-Resolution Nr. 3445 (Globale Staatsform - Demokratie)</German>
 		<Italian>U.N. Resolution #3445 (Global Civic - Democracy)</Italian>
 		<Spanish>U.N. Resolution #3445 (Global Civic - Democracy)</Spanish>
@@ -1933,7 +1953,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_CONSTITUTION</Tag>
 		<English>U.N. Resolution #791 (Global Civic - Constitution)</English>
-		<French>U.N. Resolution #791 (Global Civic - Constitution)</French>
+		<French>R&#233;solution de l'ONU n&#176; 791 (Doctrine mondiale - Constitution)</French>
 		<German>U.N.-Resolution Nr. 791 (Globale Staatsform - Verfassung)</German>
 		<Italian>U.N. Resolution #791 (Global Civic - Constitution)</Italian>
 		<Spanish>U.N. Resolution #791 (Global Civic - Constitution)</Spanish>
@@ -1941,7 +1961,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_SECULARISM</Tag>
 		<English>U.N. Resolution #427 (Global Civic - Secularism)</English>
-		<French>R&#233;solution de l'ONU n&#176; 427 (Doctrine mondiale - libert&#233; de culte)</French>
+		<French>R&#233;solution de l'ONU n&#176; 427 (Doctrine mondiale - La&#239;cit&#233;)</French>
 		<German>U.N.-Resolution Nr. 427 (Globale Staatsform - Sekularismus)</German>
 		<Italian>Mozione #427 dell'ONU (Libert&#224; di religione globale)</Italian>
 		<Spanish>Resoluci&#243;n n&#186; 427 de la ONU (principio mundial - Libertad religiosa)</Spanish>
@@ -1949,7 +1969,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_UN_DECOLONIZE</Tag>
 		<English>Decolonization</English>
-		<French>Decolonization</French>
+		<French>D&#233;colonisation</French>
 		<German>Decolonization</German>
 		<Italian>Decolonization</Italian>
 		<Spanish>Decolonization</Spanish>
@@ -1957,7 +1977,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_UN_RELEASE_CIVILIZATION</Tag>
 		<English>Release Civilization</English>
-		<French>Release Civilization</French>
+		<French>Lib&#233;rer une civilisation</French>
 		<German>Release Civilization</German>
 		<Italian>Release Civilization</Italian>
 		<Spanish>Release Civilization</Spanish>
@@ -1965,7 +1985,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CANNOT_SPREAD_UNLESS_STATE</Tag>
 		<English>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</English>
-		<French>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</French>
+		<French>[ICON_BULLET]Les missionnaires ne peuvent propager leur religion chez des civilisations adeptes d'une autre religion</French>
 		<German>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</German>
 		<Italian>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</Italian>
 		<Spanish>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</Spanish>
@@ -1973,7 +1993,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CANNOT_CONVERT_UNLESS_HOLY_CITY</Tag>
 		<English>[ICON_BULLET]Converting to this religion requires controlling its holy city</English>
-		<French>[ICON_BULLET]Converting to this religion requires controlling its holy city</French>
+		<French>[ICON_BULLET]Se convertir &#224; cette religion n&#233;cessite de contr&#244;ler sa ville sainte</French>
 		<German>[ICON_BULLET]Converting to this religion requires controlling its holy city</German>
 		<Italian>[ICON_BULLET]Converting to this religion requires controlling its holy city</Italian>
 		<Spanish>[ICON_BULLET]Converting to this religion requires controlling its holy city</Spanish>
@@ -1981,7 +2001,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RELIGION_BUILDINGS</Tag>
 		<English>All %F1_RelIcon Buildings</English>
-		<French>All %F1_RelIcon Buildings</French>
+		<French>Tous les b&#226;timents %F1_RelIcon</French>
 		<German>All %F1_RelIcon Buildings</German>
 		<Italian>All %F1_RelIcon Buildings</Italian>
 		<Spanish>All %F1_RelIcon Buildings</Spanish>
@@ -1989,7 +2009,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_RELIGION_DISAPPEARANCE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] has disappeared from %s2_CityName.</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] has disappeared from %s2_CityName.</French>
+		<French>La religion : [COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] est disparue de %s2_CityName.</French>
 		<German>Die Religion [COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] ist aus %s2_CityName verschwunden.</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] has disappeared from %s2_CityName.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] has disappeared from %s2_CityName.</Spanish>
@@ -1997,7 +2017,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CORPORATIONS</Tag>
 		<English>Corporations</English>
-		<French>Corporations</French>
+		<French>Soci&#233;t&#233;s commerciales</French>
 		<German>Corporations</German>
 		<Italian>Corporations</Italian>
 		<Spanish>Corporations</Spanish>
@@ -2005,7 +2025,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_MILITARY_UNITS</Tag>
 		<English>Military Units</English>
-		<French>Military Units</French>
+		<French>Unit&#233;s militaires</French>
 		<German>Military Units</German>
 		<Italian>Military Units</Italian>
 		<Spanish>Military Units</Spanish>
@@ -2013,7 +2033,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIQUE_UNITS</Tag>
 		<English>Unique Units</English>
-		<French>Unique Units</French>
+		<French>Unit&#233;s uniques</French>
 		<German>Unique Units</German>
 		<Italian>Unique Units</Italian>
 		<Spanish>Unique Units</Spanish>
@@ -2021,7 +2041,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_CHARTS</Tag>
 		<English>Unit Charts</English>
-		<French>Unit Charts</French>
+		<French>Sch&#233;ma des unit&#233;s</French>
 		<German>Unit Charts</German>
 		<Italian>Unit Charts</Italian>
 		<Spanish>Unit Charts</Spanish>
@@ -2029,7 +2049,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIQUE_BUILDINGS</Tag>
 		<English>Unique Buildings</English>
-		<French>Unique Buildings</French>
+		<French>B&#226;timents uniques</French>
 		<German>Unique Buildings</German>
 		<Italian>Unique Buildings</Italian>
 		<Spanish>Unique Buildings</Spanish>
@@ -2037,7 +2057,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_RELIGIOUS_BUILDINGS</Tag>
 		<English>Religion Buildings</English>
-		<French>Religion Buildings</French>
+		<French>B&#226;timents religieux</French>
 		<German>Religion Buildings</German>
 		<Italian>Religion Buildings</Italian>
 		<Spanish>Religion Buildings</Spanish>
@@ -2045,7 +2065,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_WORLD_WONDERS</Tag>
 		<English>Great Wonders</English>
-		<French>Great Wonders</French>
+		<French>Merveilles du monde</French>
 		<German>Great Wonders</German>
 		<Italian>Great Wonders</Italian>
 		<Spanish>Great Wonders</Spanish>
@@ -2061,7 +2081,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_FAVOURITES</Tag>
 		<English>Favourites</English>
-		<French>Favourites</French>
+		<French>Favoris</French>
 		<German>Favourites</German>
 		<Italian>Favourites</Italian>
 		<Spanish>Favourites</Spanish>
@@ -2069,7 +2089,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_DETAILS</Tag>
 		<English>Details</English>
-		<French>Details</French>
+		<French>D&#233;tails</French>
 		<German>Details</German>
 		<Italian>Details</Italian>
 		<Spanish>Details</Spanish>
@@ -2077,7 +2097,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_RELIGIOUS_VICTORY</Tag>
 		<English>[BOLD]Religious victory[\BOLD][NEWLINE]</English>
-		<French>[BOLD]Religious victory[\BOLD][NEWLINE]</French>
+		<French>[BOLD]Victoire religieuse[\BOLD][NEWLINE]</French>
 		<German>[BOLD]Religious victory[\BOLD][NEWLINE]</German>
 		<Italian>[BOLD]Religious victory[\BOLD][NEWLINE]</Italian>
 		<Spanish>[BOLD]Religious victory[\BOLD][NEWLINE]</Spanish>
@@ -2085,7 +2105,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_LEADERS</Tag>
 		<English>Leaders</English>
-		<French>Leaders</French>
+		<French>Dirigeants</French>
 		<German>Leaders</German>
 		<Italian>Leaders</Italian>
 		<Spanish>Leaders</Spanish>
@@ -2093,7 +2113,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_TERRAIN_FEATURE</Tag>
 		<English>Terrain Feature</English>
-		<French>Terrain Feature</French>
+		<French>Caract&#233;ristiques du terrain</French>
 		<German>Terrain Feature</German>
 		<Italian>Terrain Feature</Italian>
 		<Spanish>Terrain Feature</Spanish>
@@ -2101,7 +2121,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_TERRAIN</Tag>
 		<English>Terrain</English>
-		<French>Terrain</French>
+		<French>Terrains</French>
 		<German>Terrain</German>
 		<Italian>Terrain</Italian>
 		<Spanish>Terrain</Spanish>
@@ -2109,7 +2129,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_USED_BY</Tag>
 		<English>Used by</English>
-		<French>Used by</French>
+		<French>Utilis&#233; par</French>
 		<German>Used by</German>
 		<Italian>Used by</Italian>
 		<Spanish>Used by</Spanish>
@@ -2125,7 +2145,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_ABILITIES</Tag>
 		<English>Abilities</English>
-		<French>Abilities</French>
+		<French>Capacit&#233;s</French>
 		<German>Abilities</German>
 		<Italian>Abilities</Italian>
 		<Spanish>Abilities</Spanish>
@@ -2133,7 +2153,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_REPLACEMENTS_UPGRADES</Tag>
 		<English>Replacements and Upgrades</English>
-		<French>Replacements and Upgrades</French>
+		<French>Substitutions et am&#233;liorations</French>
 		<German>Replacements and Upgrades</German>
 		<Italian>Replacements and Upgrades</Italian>
 		<Spanish>Replacements and Upgrades</Spanish>
@@ -2141,7 +2161,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_REPLACEMENTS</Tag>
 		<English>Replaced By</English>
-		<French>Replaced By</French>
+		<French>Remplac&#233; par</French>
 		<German>Replaced By</German>
 		<Italian>Replaced By</Italian>
 		<Spanish>Replaced By</Spanish>
@@ -2149,7 +2169,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_UPGRADES</Tag>
 		<English>Upgraded To</English>
-		<French>Upgraded To</French>
+		<French>Am&#233;lior&#233; en</French>
 		<German>Upgraded To</German>
 		<Italian>Upgraded To</Italian>
 		<Spanish>Upgraded To</Spanish>
@@ -2157,7 +2177,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_APPEAR_CONDITIONS</Tag>
 		<English>Appearing conditions</English>
-		<French>Appearing conditions</French>
+		<French>Conditions d'apparition</French>
 		<German>Appearing conditions</German>
 		<Italian>Appearing conditions</Italian>
 		<Spanish>Appearing conditions</Spanish>
@@ -2165,7 +2185,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_HQ_WEALTH</Tag>
 		<English>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</English>
-		<French>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</French>
+		<French>[ICON_BULLET]Si&#232;ge social : +%d1[ICON_GOLD] par ville</French>
 		<German>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</German>
 		<Italian>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</Italian>
 		<Spanish>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</Spanish>
@@ -2173,7 +2193,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_HQ_RESEARCH</Tag>
 		<English>[ICON_BULLET]Headquarters: +%d1[ICON_RESEARCH] per City</English>
-		<French>[ICON_BULLET]Headquarters: +%d1[ICON_RESEARCH] per City</French>
+		<French>[ICON_BULLET]Si&#232;ge social : +%d1[ICON_RESEARCH] par ville</French>
 		<German>[ICON_BULLET]Headquarters: +%d1[ICON_RESEARCH] per City</German>
 		<Italian>[ICON_BULLET]Headquarters: +%d1[ICON_RESEARCH] per City</Italian>
 		<Spanish>[ICON_BULLET]Headquarters: +%d1[ICON_RESEARCH] per City</Spanish>
@@ -2181,7 +2201,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_HQ_CULTURE</Tag>
 		<English>[ICON_BULLET]Headquarters: +%d1[ICON_CULTURE] per City</English>
-		<French>[ICON_BULLET]Headquarters: +%d1[ICON_CULTURE] per City</French>
+		<French>[ICON_BULLET]Si&#232;ge social : +%d1[ICON_CULTURE] par ville</French>
 		<German>[ICON_BULLET]Headquarters: +%d1[ICON_CULTURE] per City</German>
 		<Italian>[ICON_BULLET]Headquarters: +%d1[ICON_CULTURE] per City</Italian>
 		<Spanish>[ICON_BULLET]Headquarters: +%d1[ICON_CULTURE] per City</Spanish>
@@ -2189,7 +2209,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_HQ_ESPIONAGE</Tag>
 		<English>[ICON_BULLET]Headquarters: +%d1[ICON_ESPIONAGE] per City</English>
-		<French>[ICON_BULLET]Headquarters: +%d1[ICON_ESPIONAGE] per City</French>
+		<French>[ICON_BULLET]Si&#232;ge social : +%d1[ICON_ESPIONAGE] par ville</French>
 		<German>[ICON_BULLET]Headquarters: +%d1[ICON_ESPIONAGE] per City</German>
 		<Italian>[ICON_BULLET]Headquarters: +%d1[ICON_ESPIONAGE] per City</Italian>
 		<Spanish>[ICON_BULLET]Headquarters: +%d1[ICON_ESPIONAGE] per City</Spanish>
@@ -2205,7 +2225,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</French>
+		<French>[COLOR_HIGHLIGHT_TEXT]Sp&#233;cialistes[COLOR_REVERT]</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</Spanish>
@@ -2213,7 +2233,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</French>
+		<French>[COLOR_HIGHLIGHT_TEXT]Sp&#233;cialistes illustres[COLOR_REVERT]</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</Spanish>
@@ -2221,7 +2241,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS</Tag>
 		<English>[ICON_BULLET]+%s1%F2_HappyOrUn per[SPACE]</English>
-		<French>[ICON_BULLET]+%s1%F2_HappyOrUn per[SPACE]</French>
+		<French>[ICON_BULLET]+%s1%F2_HappyOrUn par[SPACE]</French>
 		<German>[ICON_BULLET]+%s1%F2_HappyOrUn per[SPACE]</German>
 		<Italian>[ICON_BULLET]+%s1%F2_HappyOrUn per[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]+%s1%F2_HappyOrUn per[SPACE]</Spanish>
@@ -2229,7 +2249,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HEALTH</Tag>
 		<English>[ICON_BULLET]+%s1%F2_HealthOrUn per[SPACE]</English>
-		<French>[ICON_BULLET]+%s1%F2_HealthOrUn per[SPACE]</French>
+		<French>[ICON_BULLET]+%s1%F2_HealthOrUn par[SPACE]</French>
 		<German>[ICON_BULLET]+%s1%F2_HealthOrUn per[SPACE]</German>
 		<Italian>[ICON_BULLET]+%s1%F2_HealthOrUn per[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]+%s1%F2_HealthOrUn per[SPACE]</Spanish>
@@ -2237,7 +2257,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIGNORABLE_BOMBARD_DEFENSE_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</English>
-		<French>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</French>
+		<French>[ICON_BULLET]%D1_Mod%% de dommage aux d&#233;fenses lors des bombardements</French>
 		<German>[ICON_BULLET]%D1_Mod%% Bombardierungsschaden gegen Defensivanlagen</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</Spanish>
@@ -2245,7 +2265,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CULTURE_BIRTH_RATE_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</French>
+		<French>[ICON_BULLET]%D1_Mod%% de taux de natalit&#233; des [ICON_GREATPEOPLE] par niveau de culture</French>
 		<German>[ICON_BULLET]%D1_Mod%% Geburtenrate [ICON_GREATPEOPLE] pro Kulturstufe</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</Spanish>
@@ -2253,7 +2273,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CULTURE_LEVEL_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</English>
-		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</French>
+		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn par niveau culturel</French>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Kulturstufe</German>
 		<Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</Spanish>
@@ -2261,15 +2281,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_BABYLONIAN_UP</Tag>
 		<English>As the Cradle of Civilization, we can choose another free technology:</English>
-		<French>As the Cradle of Civilization, we can choose another free technology:</French>
-		<German>Als Wiege der Zivilisation können wir eine weitere Technologie entdecken:</German>
+		<French>En tant que berceau de la civilisation, nous pouvons choisir une technologie gratuite :</French>
+		<German>Als Wiege der Zivilisation k&#246;nnen wir eine weitere Technologie entdecken:</German>
 		<Italian>As the Cradle of Civilization, we can choose another free technology:</Italian>
 		<Spanish>As the Cradle of Civilization, we can choose another free technology:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SPECIALIST_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</English>
-		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</French>
+		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn par sp&#233;cialiste</French>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Spezialist</German>
 		<Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</Spanish>
@@ -2277,7 +2297,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</French>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] lors de la conqu&#234;te d'une ville</French>
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Spanish>
@@ -2285,7 +2305,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</French>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] lors de la conqu&#234;te d'une ville</French>
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</Spanish>
@@ -2293,7 +2313,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WORKER_COST</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] required to train Workers</English>
-		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] required to train Workers</French>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] n&#233;cessaire pour former des ouvriers</French>
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] Kosten pro Arbeiter</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] required to train Workers</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] required to train Workers</Spanish>
@@ -2301,15 +2321,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_ENSLAVE</Tag>
 		<English>[ICON_BULLET]Can Enslave Population</English>
-		<French>[ICON_BULLET]Can Enslave Population</French>
-		<German>[ICON_BULLET]Kann Bevölkerung versklaven</German>
+		<French>[ICON_BULLET]Possible d'asservir votre population</French>
+		<German>[ICON_BULLET]Kann Bev&#246;lkerung versklaven</German>
 		<Italian>[ICON_BULLET]Can Enslave Population</Italian>
 		<Spanish>[ICON_BULLET]Can Enslave Population</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES</Tag>
 		<English>[ICON_BULLET]Can Use Slaves</English>
-		<French>[ICON_BULLET]Can Use Slaves</French>
+		<French>[ICON_BULLET]Possible d'utiliser des esclaves</French>
 		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
 		<Italian>[ICON_BULLET]Can Use Slaves</Italian>
 		<Spanish>[ICON_BULLET]Can Use Slaves</Spanish>
@@ -2317,7 +2337,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CANNOT_USE_SLAVES</Tag>
 		<English>[ICON_BULLET]Cannot Use Slaves</English>
-		<French>[ICON_BULLET]Cannot Use Slaves</French>
+		<French>[ICON_BULLET]Impossible d'utiliser des esclaves</French>
 		<German>[ICON_BULLET]Kann keine Sklaven verwenden</German>
 		<Italian>[ICON_BULLET]Cannot Use Slaves</Italian>
 		<Spanish>[ICON_BULLET]Cannot Use Slaves</Spanish>
@@ -2325,7 +2345,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES</Tag>
 		<English>[ICON_BULLET]Can Use Slaves</English>
-		<French>[ICON_BULLET]Can Use Slaves</French>
+		<French>[ICON_BULLET]Possible d'utiliser des esclaves</French>
 		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
 		<Italian>[ICON_BULLET]Can Use Slaves</Italian>
 		<Spanish>[ICON_BULLET]Can Use Slaves</Spanish>
@@ -2333,7 +2353,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_WORKERS</Tag>
 		<English>[ICON_BULLET]Can Capture Workers</English>
-		<French>[ICON_BULLET]Can Capture Workers</French>
+		<French>[ICON_BULLET]Possible de capturer des ouvriers</French>
 		<German>[ICON_BULLET]Kann Arbeiter gefangen nehmen</German>
 		<Italian>[ICON_BULLET]Can Capture Workers</Italian>
 		<Spanish>[ICON_BULLET]Can Capture Workers</Spanish>
@@ -2341,7 +2361,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES</Tag>
 		<English>[ICON_BULLET]Can Use Slaves in Colonies</English>
-		<French>[ICON_BULLET]Can Use Slaves in Colonies</French>
+		<French>[ICON_BULLET]Possible d'utiliser des esclaves dans les colonies</French>
 		<German>[ICON_BULLET]Kann Sklaven in Kolonien verwenden</German>
 		<Italian>[ICON_BULLET]Can Use Slaves in Colonies</Italian>
 		<Spanish>[ICON_BULLET]Can Use Slaves in Colonies</Spanish>
@@ -2349,7 +2369,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_SLAVES</Tag>
 		<English>[ICON_BULLET]Can Capture Slaves</English>
-		<French>[ICON_BULLET]Can Capture Slaves</French>
+		<French>[ICON_BULLET]Possible de capturer des esclaves</French>
 		<German>[ICON_BULLET]Kann Sklaven gefangen nehmen</German>
 		<Italian>[ICON_BULLET]Can Capture Slaves</Italian>
 		<Spanish>[ICON_BULLET]Can Capture Slaves</Spanish>
@@ -2357,7 +2377,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_AND_TRADE_SLAVES</Tag>
 		<English>[ICON_BULLET]Can Capture and Trade Slaves</English>
-		<French>[ICON_BULLET]Can Capture and Trade Slaves</French>
+		<French>[ICON_BULLET]Possible de capturer et d'&#233;changer des esclaves</French>
 		<German>[ICON_BULLET]Kann Sklaven gefangen nehmen und handeln</German>
 		<Italian>[ICON_BULLET]Can Capture and Trade Slaves</Italian>
 		<Spanish>[ICON_BULLET]Can Capture and Trade Slaves</Spanish>
@@ -2365,15 +2385,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_REQUIRES_PAGAN_RELIGION</Tag>
 		<English>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</French>
-		<German>[COLOR_WARNING_TEXT]Benötigt %s1[COLOR_REVERT]</German>
+		<French>[COLOR_WARNING_TEXT]N&#233;cessite : %s1[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Ben&#246;tigt %s1[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORK_RATE_MODIFIER</Tag>
 		<English>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</English>
-		<French>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</French>
+		<French>[ICON_BULLET]Construction d'am&#233;nagements %D1_Mod%% plus rapide</French>
 		<German>[ICON_BULLET]Errichtet Verbesserungen %D1_Mod%% Schneller</German>
 		<Italian>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</Italian>
 		<Spanish>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</Spanish>
@@ -2381,15 +2401,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORKER_LIMIT</Tag>
 		<English>[ICON_BULLET]Worker (1 Allowed per City)</English>
-		<French>[ICON_BULLET]Worker (1 Allowed per City)</French>
-		<German>[ICON_BULLET]Arbeiter (1 zulässig pro Stadt)</German>
+		<French>[ICON_BULLET]Ouvrier (1 maximum par ville)</French>
+		<German>[ICON_BULLET]Arbeiter (1 zul&#228;ssig pro Stadt)</German>
 		<Italian>[ICON_BULLET]Worker (1 Allowed per City)</Italian>
 		<Spanish>[ICON_BULLET]Worker (1 Allowed per City)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WORKER_LEFT</Tag>
 		<English>[SPACE]%d1_Num Left</English>
-		<French>[SPACE]%d1_Num Left</French>
+		<French>[SPACE]%d1_Num restants</French>
 		<German>[SPACE]%d1_Num &#252;brig</German>
 		<Italian>[SPACE]%d1_Num Left</Italian>
 		<Spanish>[SPACE]%d1_Num Left</Spanish>
@@ -2397,7 +2417,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CULTURE_TRADE_ROUTE_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Trade Route Yield per Culture Level</English>
-		<French>[ICON_BULLET]%D1_Mod%% Trade Route Yield per Culture Level</French>
+		<French>[ICON_BULLET]%D1_Mod%% de rendement des routes commerciales par niveau culturel</French>
 		<German>[ICON_BULLET]%D1_Mod%% Ertr&#228;ge durch Handelswege pro Kulturstufe</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Trade Route Yield per Culture Level</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Trade Route Yield per Culture Level</Spanish>
@@ -2405,7 +2425,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_WONDERS_PER_CULTURE_LEVEL</Tag>
 		<English>[COLOR_WARNING_TEXT]Can only Construct %d1_Num World Wonders with %s2_LevelName Culture[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Can only Construct %d1_Num World Wonders with %s2_LevelName Culture[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]Possible de construire un maximum de %d1_Num merveilles du monde avec une culture %s2_LevelName[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Kann nur %d1_Num Weltwunder mit %s2_LevelName Kultur errichten[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Can only Construct %d1_Num World Wonders with %s2_LevelName Culture[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Can only Construct %d1_Num World Wonders with %s2_LevelName Culture[COLOR_REVERT]</Spanish>
@@ -2413,7 +2433,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WORLD_WONDERS_NONE_FOR_CULTURE_LEVEL</Tag>
 		<English>[COLOR_WARNING_TEXT]Cannot Construct World Wonders with %s1_LevelName Culture[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Cannot Construct World Wonders with %s1_LevelName Culture[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]Impossible de construire des merveilles du monde avec une culture %s1_LevelName[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Kann keine Weltwunder mit %s1_LevelName Kultur errichten[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Cannot Construct World Wonders with %s1_LevelName Culture[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Cannot Construct World Wonders with %s1_LevelName Culture[COLOR_REVERT]</Spanish>
@@ -2421,7 +2441,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_WONDERS_PER_CULTURE_LEVEL</Tag>
 		<English>[COLOR_WARNING_TEXT]Can only Construct %d1_Num National Wonders with %s2_LevelName Culture[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Can only Construct %d1_Num National Wonders with %s2_LevelName Culture[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]Possible de construire un maximum de %d1_Num merveilles nationales avec une culture %s2_LevelName[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Kann nur %d1_Num [NUM1:Nationales:Nationale] Wunder mit %s2_LevelName Kultur errichten[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Can only Construct %d1_Num National Wonders with %s2_LevelName Culture[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Can only Construct %d1_Num National Wonders with %s2_LevelName Culture[COLOR_REVERT]</Spanish>
@@ -2429,7 +2449,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_WONDERS_NONE_FOR_CULTURE_LEVEL</Tag>
 		<English>[COLOR_WARNING_TEXT]Cannot Construct National Wonders with %s1_LevelName Culture[COLOR_REVERT]</English>
-		<French>[COLOR_WARNING_TEXT]Cannot Construct National Wonders with %s1_LevelName Culture[COLOR_REVERT]</French>
+		<French>[COLOR_WARNING_TEXT]Impossible de construire des merveilles nationales avec une culture %s1_LevelName[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Kann keine Nationale Wunder mit %s1_LevelName Kultur errichten[COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Cannot Construct National Wonders with %s1_LevelName Culture[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]Cannot Construct National Wonders with %s1_LevelName Culture[COLOR_REVERT]</Spanish>
@@ -2437,7 +2457,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CARRIER_BASE</Tag>
 		<English>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</English>
-		<French>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</French>
+		<French>[ICON_BULLET]Peut &#234;tre bas&#233; sur un [LINK=UNIT_CARRIER]Porte-avions[\LINK]</French>
 		<German>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</German>
 		<Italian>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</Spanish>
@@ -2445,7 +2465,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNITCOMBAT_HEAVY_CAVALRY</Tag>
 		<English>Heavy Cavalry Units</English>
-		<French>Heavy Cavalry Units</French>
+		<French>Unit&#233;s de cavelerie lourde</French>
 		<German>Heavy Cavalry Units</German>
 		<Italian>Heavy Cavalry Units</Italian>
 		<Spanish>Heavy Cavalry Units</Spanish>
@@ -2453,7 +2473,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNITCOMBAT_LIGHT_CAVALRY</Tag>
 		<English>Light Cavalry Units</English>
-		<French>Light Cavalry Units</French>
+		<French>Unit&#233;s de cavalerie l&#233;g&#232;re</French>
 		<German>Light Cavalry Units</German>
 		<Italian>Light Cavalry Units</Italian>
 		<Spanish>Light Cavalry Units</Spanish>
@@ -2461,7 +2481,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PLAINS_STRENGTH</Tag>
 		<English>[ICON_BULLET]%D1_Change%% Open Terrain Strength</English>
-		<French>[ICON_BULLET]%D1_Change%% Open Terrain Strength</French>
+		<French>[ICON_BULLET]%D1_Change%% de puissance en terrain d&#233;gag&#233;</French>
 		<German>[ICON_BULLET]%D1_Change%% St&#228;rke in offenem Terrain</German>
 		<Italian>[ICON_BULLET]%D1_Change%% Open Terrain Strength</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%% Open Terrain Strength</Spanish>
@@ -2469,7 +2489,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PLAINS_ATTACK</Tag>
 		<English>[ICON_BULLET]%D1_Change%% Open Terrain Attack</English>
-		<French>[ICON_BULLET]%D1_Change%% Open Terrain Attack</French>
+		<French>[ICON_BULLET]%D1_Change%% d'attaque en terrain d&#233;gag&#233;</French>
 		<German>[ICON_BULLET]%D1_Change%% Angriff in offenem Terrain</German>
 		<Italian>[ICON_BULLET]%D1_Change%% Open Terrain Attack</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%% Open Terrain Attack</Spanish>
@@ -2477,7 +2497,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PLAINS_DEFENSE</Tag>
 		<English>[ICON_BULLET]%D1_Change%% Open Terrain Defense</English>
-		<French>[ICON_BULLET]%D1_Change%% Open Terrain Defense</French>
+		<French>[ICON_BULLET]%D1_Change%% de d&#233;fense en terrain d&#233;gag&#233;</French>
 		<German>[ICON_BULLET]%D1_Change%% Verteidigung in offenem Terrain</German>
 		<Italian>[ICON_BULLET]%D1_Change%% Open Terrain Defense</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%% Open Terrain Defense</Spanish>
@@ -2485,7 +2505,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_COMBAT_PLOT_PLAINS_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</English>
-		<French>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</French>
+		<French>[ICON_BULLET]%D1_Bonus%% d&#251; au terrain d&#233;gag&#233; (capacit&#233; de l'unit&#233;)</French>
 		<German>[ICON_BULLET]%D1_Bonus%% durch offenes Terrain (Einheitenf&#228;higkeit)</German>
 		<Italian>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</Italian>
 		<Spanish>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</Spanish>
@@ -2493,7 +2513,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PLAINS_ATTACK_TEXT</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% Open Terrain Attack</English>
-		<French>[ICON_BULLET]%D1_Bonus%% Open Terrain Attack</French>
+		<French>[ICON_BULLET]%D1_Bonus%% d'attaque en terrain d&#233;gag&#233;</French>
 		<German>[ICON_BULLET]%D1_Bonus%% Angriff in offenem Terrain</German>
 		<Italian>[ICON_BULLET]%D1_Bonus%% Open Terrain Attack</Italian>
 		<Spanish>[ICON_BULLET]%D1_Bonus%% Open Terrain Attack</Spanish>
@@ -2501,7 +2521,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PLAINS_DEFENSE_TEXT</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</English>
-		<French>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</French>
+		<French>[ICON_BULLET]%D1_Bonus%% de d&#233;fense en terrain d&#233;gag&#233;</French>
 		<German>[ICON_BULLET]%D1_Bonus%% Verteidigung in offenem Terrain</German>
 		<Italian>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</Italian>
 		<Spanish>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</Spanish>
@@ -2509,7 +2529,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CULTURE_LEVELS</Tag>
 		<English>Culture Levels</English>
-		<French>Culture Levels</French>
+		<French>Niveaux culturels</French>
 		<German>Kulturstufen</German>
 		<Italian>Culture Levels</Italian>
 		<Spanish>Culture Levels</Spanish>
@@ -2517,15 +2537,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_BUILDINGS</Tag>
 		<English>Buildings</English>
-		<French>Buildings</French>
-		<German>Gebäude</German>
+		<French>B&#226;timents</French>
+		<German>Geb&#228;ude</German>
 		<Italian>Buildings</Italian>
 		<Spanish>Buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_SPECIALISTS</Tag>
 		<English>Specialists</English>
-		<French>Specialists</French>
+		<French>Sp&#233;cialistes</French>
 		<German>Spezialisten</German>
 		<Italian>Specialists</Italian>
 		<Spanish>Specialists</Spanish>
@@ -2533,7 +2553,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_WONDER_LIMIT</Tag>
 		<English>Can build %d1 World Wonders per City</English>
-		<French>Can build %d1 World Wonders per City</French>
+		<French>Possible de construire %d1 merveilles du monde par ville</French>
 		<German>Kann pro Stadt %d1 Weltwunder errichten</German>
 		<Italian>Can build %d1 World Wonders per City</Italian>
 		<Spanish>Can build %d1 World Wonders per City</Spanish>
@@ -2541,7 +2561,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_NATIONAL_WONDER_LIMIT</Tag>
 		<English>Can build %d1 National Wonders per City</English>
-		<French>Can build %d1 National Wonders per City</French>
+		<French>Possible de construire %d1 merveilles nationales par ville</French>
 		<German>Kann pro Stadt %d1 Nationale Wunder errichten</German>
 		<Italian>Can build %d1 National Wonders per City</Italian>
 		<Spanish>Can build %d1 National Wonders per City</Spanish>
@@ -2549,7 +2569,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_GREATPEOPLE_CULTURE_LEVEL</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture Level</English>
-		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture Level</French>
+		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] gr&#226;ce au niveau de culture</French>
 		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] durch Kulturstufe</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture Level</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture Level</Spanish>
@@ -2557,7 +2577,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM</Tag>
 		<English>Pagan Religion</English>
-		<French>Pagan Religion</French>
+		<French>Religion pa&#239;enne</French>
 		<German>Heidnische Religion</German>
 		<Italian>Pagan Religion</Italian>
 		<Spanish>Pagan Religion</Spanish>
@@ -2565,7 +2585,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_GREATPEOPLE_UNIQUE_POWER</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</English>
-		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</French>
+		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] gr&#226;ce au pouvoir unique</French>
 		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] durch Einzigartige Macht</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</Spanish>
@@ -2573,7 +2593,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_YIELD_PLAYER</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Unique Power</English>
-		<French>[ICON_BULLET]%D1%%%F2 from Unique Power</French>
+		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce au pouvoir unique</French>
 		<German>[ICON_BULLET]%D1%%%F2 durch Einzigartige Macht</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Unique Power</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Unique Power</Spanish>
@@ -2581,7 +2601,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_AFFECTED_CITIES</Tag>
 		<English>Supplies %d1 Cities</English>
-		<French>Supplies %d1 Cities</French>
+		<French>Alimente %d1 villes</French>
 		<German>Versorgt %d1 St&#228;dte</German>
 		<Italian>Supplies %d1 Cities</Italian>
 		<Spanish>Supplies %d1 Cities</Spanish>
@@ -2589,7 +2609,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CITY_CULTURE_RANK</Tag>
 		<English>Culture Rank: %d1</English>
-		<French>Culture Rank: %d1</French>
+		<French>Rang culturel : %d1</French>
 		<German>Kulturstufe: %d1</German>
 		<Italian>Culture Rank: %d1</Italian>
 		<Spanish>Culture Rank: %d1</Spanish>
@@ -2597,7 +2617,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CITY_SUPPLIED</Tag>
 		<English>[SPACE](%d2_num_bonus available - as much as needed for %s1_city)[SPACE]</English>
-		<French>[SPACE](%d2_num_bonus available - as much as needed for %s1_city)[SPACE]</French>
+		<French>[SPACE](%d2_num_bonus copies disponible(s) - suffisant pour %s1_city)[SPACE]</French>
 		<German>[SPACE](%d2_num_bonus verf&#252;gbar - soviel wie ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 		<Italian>[SPACE](%d2_num_bonus available - as much as needed for %s1_city)[SPACE]</Italian>
 		<Spanish>[SPACE](%d2_num_bonus available - as much as needed for %s1_city)[SPACE]</Spanish>
@@ -2605,7 +2625,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CITY_OVERSUPPLIED</Tag>
 		<English>[SPACE](%d2_num_bonus available - %d3_num_bonus more than needed for %s1_city)[SPACE]</English>
-		<French>[SPACE](%d2_num_bonus available - %d3_num_bonus more than needed for %s1_city)[SPACE]</French>
+		<French>[SPACE](%d2_num_bonus copies disponible(s) - %d3_num_bonus de plus que n&#233;cessaire pour %s1_city)[SPACE]</French>
 		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr als ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 		<Italian>[SPACE](%d2_num_bonus available - %d3_num_bonus more than needed for %s1_city)[SPACE]</Italian>
 		<Spanish>[SPACE](%d2_num_bonus available - %d3_num_bonus more than needed for %s1_city)[SPACE]</Spanish>
@@ -2613,7 +2633,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CITY_REQUIRES</Tag>
 		<English>[SPACE](%d2_num_bonus available - %d3_num_bonus more required for %s1_city)[SPACE]</English>
-		<French>[SPACE](%d2_num_bonus available - %d3_num_bonus more required for %s1_city)[SPACE]</French>
+		<French>[SPACE](%d2_num_bonus copies disponible(s) - %d3_num_bonus copie(s) additionnelle(s) requise(s) pour %s1_city)[SPACE]</French>
 		<German>[SPACE](%d2_num_bonus verf&#252;gbar - %d3_num_bonus mehr ben&#246;tigt f&#252;r %s1_city)[SPACE]</German>
 		<Italian>[SPACE](%d2_num_bonus available - %d3_num_bonus more required for %s1_city)[SPACE]</Italian>
 		<Spanish>[SPACE](%d2_num_bonus available - %d3_num_bonus more required for %s1_city)[SPACE]</Spanish>
@@ -2621,7 +2641,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_UNIT_JOINED_YOU</Tag>
 		<English>A %s1_UnitName has joined our armies</English>
-		<French>A %s1_UnitName has joined our armies</French>
+		<French>[NUM1:Un:Une] %s1_UnitName a rejoint nos arm&#233;es</French>
 		<German>Eine Einheit %s1_UnitName ist unseren Armeen beigetreten</German>
 		<Italian>A %s1_UnitName has joined our armies</Italian>
 		<Spanish>A %s1_UnitName has joined our armies</Spanish>
@@ -2629,7 +2649,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PER_CULTURE_LEVEL</Tag>
 		<English>[SPACE]per Culture Level</English>
-		<French>[SPACE]per Culture Level</French>
+		<French>[SPACE]par niveau de culture</French>
 		<German>[SPACE]pro Kulturstufe</German>
 		<Italian>[SPACE]per Culture Level</Italian>
 		<Spanish>[SPACE]per Culture Level</Spanish>
@@ -2637,7 +2657,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_YIELD_CULTURE</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Culture Level</English>
-		<French>[ICON_BULLET]%D1%%%F2 from Culture Level</French>
+		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce au niveau culturel</French>
 		<German>[ICON_BULLET]%D1%%%F2 durch Kulturstufe</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Culture Level</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Culture Level</Spanish>
@@ -2645,7 +2665,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</English>
-		<French>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</French>
+		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux [ICON_HAPPY] en exc&#232;s</French>
 		<German>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</German>
 		<Italian>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2 from Excess [ICON_HAPPY]</Spanish>
@@ -2653,7 +2673,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_NON_STATE_RELIGIONS</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</English>
-		<French>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</French>
+		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux [ICON_RELIGION] autres que la [ICON_RELIGION] d'&#201;tat</French>
 		<German>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</German>
 		<Italian>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Spanish>
@@ -2661,7 +2681,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_MOD_FRIENDLY_RELATION</Tag>
 		<English>%D1%%: for Friendly Relations</English>
-		<French>%D1%%: for Friendly Relations</French>
+		<French>%D1%% : relations enthousiastes</French>
 		<German>%D1%%: f&#252;r Freundliche Beziehungen</German>
 		<Italian>%D1%%: for Friendly Relations</Italian>
 		<Spanish>%D1%%: for Friendly Relations</Spanish>

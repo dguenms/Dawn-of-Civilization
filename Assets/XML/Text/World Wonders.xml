@@ -664,7 +664,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</English>
-		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] pour les am&#233;nagements maritimes[NEWLINE][COLOR_WARNING_TEXT]Requiert 20 cases d'eau dans les environs de la ville[COLOR_REVERT]</French>
+		<French>[ICON_BULLET]+2 [ICON_PRODUCTION] pour les am&#233;nagements maritimes[NEWLINE][COLOR_WARNING_TEXT]N&#233;cessite 20 cases d'eau dans les environs de la ville[COLOR_REVERT]</French>
 		<German>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</German>
 		<Italian>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[COLOR_REVERT]</Spanish>
@@ -1252,7 +1252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_HELP</Tag>
 		<English>[ICON_BULLET]Requires a naval unit of level three or higher</English>
-		<French>[ICON_BULLET]Requiert une unit&#233; navale de niveau trois ou plus</French>
+		<French>[ICON_BULLET]N&#233;cessite une unit&#233; navale de niveau trois ou plus</French>
 		<German>[ICON_BULLET]Ben&#246;tigt eine Marineeinheit der Stufe drei oder h&#246;her</German>
 		<Italian>[ICON_BULLET]Requires a naval unit of level three or higher</Italian>
 		<Spanish>[ICON_BULLET]Requires a naval unit of level three or higher</Spanish>
@@ -2024,7 +2024,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DELTA_WORKS_HELP</Tag>
 		<English>[ICON_BULLET]Requires only flat land in city radius</English>
-		<French>[ICON_BULLET]Requiert des terrains exclusivement plats dans les environs de la ville</French>
+		<French>[ICON_BULLET]N&#233;cessite des terrains exclusivement plats dans les environs de la ville</French>
 		<German>[ICON_BULLET]Requires only flat land in city radius</German>
 		<Italian>[ICON_BULLET]Requires only flat land in city radius</Italian>
 		<Spanish>[ICON_BULLET]Requires only flat land in city radius</Spanish>
@@ -2256,7 +2256,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AL_KHAZNEH_HELP</Tag>
 		<English>[ICON_BULLET]Requires Oasis in city radius</English>
-		<French>[ICON_BULLET]Requiert un oasis dans les environs de la ville</French>
+		<French>[ICON_BULLET]N&#233;cessite un oasis dans les environs de la ville</French>
 		<German>[ICON_BULLET]Requires Oasis in city radius</German>
 		<Italian>[ICON_BULLET]Requires Oasis in city radius</Italian>
 		<Spanish>[ICON_BULLET]Requires Oasis in city radius</Spanish>
@@ -2396,7 +2396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE_HELP</Tag>
 		<English>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</English>
-		<French>[ICON_BULLET]Requiert au moins quatre religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] par [ICON_RELIGION] autre que la [ICON_RELIGION] d'&#201;tat dans toutes les villes</French>
+		<French>[ICON_BULLET]N&#233;cessite au moins quatre religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] par [ICON_RELIGION] autre que la [ICON_RELIGION] d'&#201;tat dans toutes les villes</French>
 		<German>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</German>
 		<Italian>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Italian>
 		<Spanish>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Spanish>
@@ -2448,7 +2448,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PALACE_OF_NATIONS_HELP</Tag>
 		<English>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</English>
-		<French>[ICON_BULLET]Les Congr&#232;s se produisent tous les quatre tours[NEWLINE][ICON_BULLET]Vos villes ne peuvent pas &#234;tre r&#233;clam&#233;es lors des Congr&#232;s[NEWLINE][ICON_BULLET]Les autres civilisations sont plus enclines &#224; accepter vos demandes lors des Congr&#232;s</French>
+		<French>[ICON_BULLET]Les congr&#232;s se produisent tous les quatre tours[NEWLINE][ICON_BULLET]Vos villes ne peuvent pas &#234;tre r&#233;clam&#233;es lors des congr&#232;s[NEWLINE][ICON_BULLET]Les autres civilisations sont plus enclines &#224; accepter vos demandes lors des congr&#232;s</French>
 		<German>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</German>
 		<Italian>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</Italian>
 		<Spanish>[ICON_BULLET]Congresses occur every four turns[NEWLINE][ICON_BULLET]Your cities cannot be demanded in Congress[NEWLINE][ICON_BULLET]Other civilisations are more willing to approve your demands in Congress</Spanish>
