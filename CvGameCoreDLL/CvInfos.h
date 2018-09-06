@@ -1739,6 +1739,8 @@ public:
 	int getHealth() const;				// Exposed to Python
 	int getAreaHealth() const;				// Exposed to Python
 	int getGlobalHealth() const;				// Exposed to Python
+	int getBuildingUnhealthModifier() const; // Leoreth
+	int getCorporationUnhealthModifier() const; // Leoreth
 	int getGlobalPopulationChange() const;				// Exposed to Python
 	int getFreeTechs() const;				// Exposed to Python
 	int getDefenseModifier() const;					// Exposed to Python
@@ -1966,6 +1968,8 @@ protected:
 	int m_iHealth;
 	int m_iAreaHealth;
 	int m_iGlobalHealth;
+	int m_iBuildingUnhealthModifier; // Leoreth
+	int m_iCorporationUnhealthModifier; // Leoreth
 	int m_iGlobalPopulationChange;
 	int m_iFreeTechs;
 	int m_iDefenseModifier;

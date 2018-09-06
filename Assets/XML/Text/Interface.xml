@@ -2667,6 +2667,22 @@
 		<Spanish>%D1%%: for Friendly Relations</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUILDING_UNHEALTH_MODIFIER</Tag>
+		<English>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</English>
+		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</French>
+		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Geb&#228;ude</German>
+		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</Italian>
+		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CORPORATION_UNHEALTH_MODIFIER</Tag>
+		<English>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</English>
+		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</French>
+		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Kapitalgesellschaften</German>
+		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Italian>
+		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

@@ -3373,7 +3373,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iHealth>2</iHealth>
+			<iHealth>3</iHealth>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
@@ -4140,18 +4140,10 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
+			<iHappiness>2</iHappiness>
+			<iHealth>2</iHealth>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ImprovementHealths>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-			</ImprovementHealths>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -4636,15 +4628,15 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_OIL</BonusType>
+					<iHealthChange>3</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
 			<iAsset>5</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
-			<ImprovementHealths>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-			</ImprovementHealths>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -5082,15 +5074,15 @@
 			<Strategy>TXT_KEY_BUILDING_RECYCLING_CENTER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RECYCLING_CENTER</ArtDefineTag>
-			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+			<PrereqTech>TECH_ECOLOGY</PrereqTech>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
+			<iCorporationUnhealthModifier>-50</iCorporationUnhealthModifier>
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
-			<bBuildingOnlyHealthy>1</bBuildingOnlyHealthy>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
