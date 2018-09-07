@@ -2047,6 +2047,14 @@
 		<Spanish>Unique Buildings</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_PEOPLE_BUILDINGS</Tag>
+		<English>Great Buildings</English>
+		<French>Great Buildings</French>
+		<German>Great Buildings</German>
+		<Italian>Great Buildings</Italian>
+		<Spanish>Great Buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_RELIGIOUS_BUILDINGS</Tag>
 		<English>Religion Buildings</English>
 		<French>B&#226;timents religieux</French>

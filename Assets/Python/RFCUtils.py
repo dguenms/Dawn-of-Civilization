@@ -1740,22 +1740,33 @@ class RFCUtils:
 
 		return ""
 		
+	def isGreatPeopleBuilding(self, iBuilding):
+		for iUnit in lGreatPeopleUnits:
+			unit = gc.getUnitInfo(iUnit)
+			if unit.getBuildings(iBuilding):
+				return True
+				
+		return False
+		
 	def getBuildingCategory(self, iBuilding):
 		'0 = Building'
 		'1 = Religious Building'
 		'2 = Unique Building'
-		'3 = National Wonder'
-		'4 = World Wonder'
+		'3 = Great People Building'
+		'4 = National Wonder'
+		'5 = World Wonder'
 
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
 		if BuildingInfo.getReligionType() > -1:
 			return 1
 		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()):
-			return 4
+			return 5
 		else:
 			iBuildingClass = BuildingInfo.getBuildingClassType()
 			iDefaultBuilding = gc.getBuildingClassInfo(iBuildingClass).getDefaultBuildingIndex()
 			if isNationalWonderClass(iBuildingClass):
+				return 4
+			elif self.isGreatPeopleBuilding(iBuilding):
 				return 3
 			else:
 				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
