@@ -1913,7 +1913,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_FORCE_WAR</Tag>
 		<English>Crusade</English>
-		<French>Croisade</French>
+		<French>
+			<Text>Croisade</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Crusade</German>
 		<Italian>Crusade</Italian>
 		<Spanish>Crusade</Spanish>
@@ -1921,7 +1925,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_INQUISITION</Tag>
 		<English>Inquisition</English>
-		<French>Inquisition</French>
+		<French>
+			<Text>Inquisition</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Inquisition</German>
 		<Italian>Inquisition</Italian>
 		<Spanish>Inquisition</Spanish>
