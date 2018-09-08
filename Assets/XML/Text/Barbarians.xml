@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_ASSYRIAN</Tag>
 		<English>Assyrian</English>
-		<French>Assyrian</French>
+		<French>
+			<Text>assyrien:assyrienne:assyriens:assyriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Assyrian</German>
 		<Italian>Assyrian</Italian>
 		<Spanish>Assyrian</Spanish>
@@ -12,7 +16,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_AVAR</Tag>
 		<English>Avar</English>
-		<French>Avar</French>
+		<French>
+			<Text>avar:avar:avars:avars</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Avar</German>
 		<Italian>Avar</Italian>
 		<Spanish>Avar</Spanish>
@@ -20,7 +28,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_BEDOUIN</Tag>
 		<English>Bedouin</English>
-		<French>Bedouin</French>
+		<French>
+			<Text>b&#233;douin:b&#233;douine:b&#233;douins:b&#233;douines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bedouin</German>
 		<Italian>Bedouin</Italian>
 		<Spanish>Bedouin</Spanish>
@@ -28,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_BERBER</Tag>
 		<English>Berber</English>
-		<French>Berber</French>
+		<French>
+			<Text>berb&#232;re:berb&#232;re:berb&#232;res:berb&#232;res</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Berber</German>
 		<Italian>Berber</Italian>
 		<Spanish>Berber</Spanish>
@@ -36,7 +52,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_BULGAR</Tag>
 		<English>Bulgar</English>
-		<French>Bulgar</French>
+		<French>
+			<Text>proto-bulgare:proto-bulgare:proto-bulgares:proto-bulgares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bulgar</German>
 		<Italian>Bulgar</Italian>
 		<Spanish>Bulgar</Spanish>
@@ -44,7 +64,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_CUMAN</Tag>
 		<English>Cuman</English>
-		<French>Cuman</French>
+		<French>
+			<Text>couman:coumane:coumans:coumanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Cuman</German>
 		<Italian>Cuman</Italian>
 		<Spanish>Cuman</Spanish>
@@ -52,7 +76,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_ELAMITE</Tag>
 		<English>Elamite</English>
-		<French>Elamite</French>
+		<French>
+			<Text>&#233;lamite:&#233;lamite:&#233;lamites:&#233;lamites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Elamite</German>
 		<Italian>Elamite</Italian>
 		<Spanish>Elamite</Spanish>
@@ -60,7 +88,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_GAUL</Tag>
 		<English>Gaul</English>
-		<French>Gaul</French>
+		<French>
+			<Text>gaulois:gauloise:gaulois:gauloises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Gaul</German>
 		<Italian>Gaul</Italian>
 		<Spanish>Gaul</Spanish>
@@ -68,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_GERMANIC</Tag>
 		<English>Germanic</English>
-		<French>Germanic</French>
+		<French>
+			<Text>germanique:germanique:germaniques:germaniques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Germanic</German>
 		<Italian>Germanic</Italian>
 		<Spanish>Germanic</Spanish>
@@ -76,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_GHANAIAN</Tag>
 		<English>Ghanaian</English>
-		<French>Ghanaian</French>
+		<French>
+			<Text>ghan&#233;en:ghan&#233;enne:ghan&#233;ens:ghan&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Ghanaian</German>
 		<Italian>Ghanaian</Italian>
 		<Spanish>Ghanaian</Spanish>
@@ -84,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_GOKTURK</Tag>
 		<English>G&#246;kt&#252;rk</English>
-		<French>G&#246;kt&#252;rk</French>
+		<French>
+			<Text>g&#246;kt&#252;rk:g&#246;kt&#252;rk:g&#246;kt&#252;rks:g&#246;kt&#252;rks</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>G&#246;kt&#252;rk</German>
 		<Italian>G&#246;kt&#252;rk</Italian>
 		<Spanish>G&#246;kt&#252;rk</Spanish>
@@ -92,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_HEPHTHALITE</Tag>
 		<English>Hephthalite</English>
-		<French>Hephthalite</French>
+		<French>
+			<Text>hephthalite:hephthalite:hephthalites:hephthalites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hephthalite</German>
 		<Italian>Hephthalite</Italian>
 		<Spanish>Hephthalite</Spanish>
@@ -100,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_HITTITE</Tag>
 		<English>Hittite</English>
-		<French>Hittite</French>
+		<French>
+			<Text>hittite:hittite:hittites:hittites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hittite</German>
 		<Italian>Hittite</Italian>
 		<Spanish>Hittite</Spanish>
@@ -108,7 +160,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_HUNNIC</Tag>
 		<English>Hunnic</English>
-		<French>Hunnic</French>
+		<French>
+			<Text>hunnique:hunnique:hunniques:hunniques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hunnic</German>
 		<Italian>Hunnic</Italian>
 		<Spanish>Hunnic</Spanish>
@@ -116,7 +172,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_INDO_SCYTHIAN</Tag>
 		<English>Indo-Scythian</English>
-		<French>Indo-Scythian</French>
+		<French>
+			<Text>indo-scythe:indo-scythe:indo-scythes:indo-scythes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Indo-Scythian</German>
 		<Italian>Indo-Scythian</Italian>
 		<Spanish>Indo-Scythian</Spanish>
@@ -124,7 +184,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_JURCHEN</Tag>
 		<English>Jurchen</English>
-		<French>Jurchen</French>
+		<French>
+			<Text>jürchen:jürchen:jürchen:jürchen</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Jurchen</German>
 		<Italian>Jurchen</Italian>
 		<Spanish>Jurchen</Spanish>
@@ -132,7 +196,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_KAZAKH</Tag>
 		<English>Kazakh</English>
-		<French>Kazakh</French>
+		<French>
+			<Text>kazakh:kazakhe:kazakhs:kazakhes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kazakh</German>
 		<Italian>Kazakh</Italian>
 		<Spanish>Kazakh</Spanish>
@@ -140,7 +208,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_KHITAN</Tag>
 		<English>Khitan</English>
-		<French>Khitan</French>
+		<French>
+			<Text>khitan:khitan:khitan:khitan</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Khitan</German>
 		<Italian>Khitan</Italian>
 		<Spanish>Khitan</Spanish>
@@ -148,7 +220,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_KUSHANA</Tag>
 		<English>Kushan</English>
-		<French>Kushan</French>
+		<French>
+			<Text>kouchan:kouchane:kouchans:kouchanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kushan</German>
 		<Italian>Kushan</Italian>
 		<Spanish>Kushan</Spanish>
@@ -156,7 +232,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_NOGAI</Tag>
 		<English>Nogai</English>
-		<French>Nogai</French>
+		<French>
+			<Text>noga&#239;:noga&#239;e:noga&#239;s:noga&#239;es</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Nogai</German>
 		<Italian>Nogai</Italian>
 		<Spanish>Nogai</Spanish>
@@ -164,7 +244,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_NORSE</Tag>
 		<English>Norse</English>
-		<French>Norse</French>
+		<French>
+			<Text>scandinave:scandinave:scandinaves:scandinaves</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Norse</German>
 		<Italian>Norse</Italian>
 		<Spanish>Norse</Spanish>
@@ -172,7 +256,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_NUBIAN</Tag>
 		<English>Nubian</English>
-		<French>Nubian</French>
+		<French>
+			<Text>nubien:nubienne:nubiens:nubiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Nubian</German>
 		<Italian>Nubian</Italian>
 		<Spanish>Nubian</Spanish>
@@ -180,7 +268,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_PARTHIAN</Tag>
 		<English>Parthian</English>
-		<French>Parthian</French>
+		<French>
+			<Text>parthe:parthe:parthes:parthes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Parthian</German>
 		<Italian>Parthian</Italian>
 		<Spanish>Parthian</Spanish>
@@ -188,7 +280,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SIBIR</Tag>
 		<English>Sibir</English>
-		<French>Sibir</French>
+		<French>
+			<Text>sib&#233;rien:sib&#233;rienne:sib&#233;riens:sib&#233;riennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Sibir</German>
 		<Italian>Sibir</Italian>
 		<Spanish>Sibir</Spanish>
@@ -196,7 +292,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SONGHAI</Tag>
 		<English>Songhai</English>
-		<French>Songhai</French>
+		<French>
+			<Text>songha&#239;:songha&#239;:songha&#239;s:songha&#239;s</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Songhai</German>
 		<Italian>Songhai</Italian>
 		<Spanish>Songhai</Spanish>
@@ -204,7 +304,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TATAR</Tag>
 		<English>Tatar</English>
-		<French>Tatar</French>
+		<French>
+			<Text>tatar:tatare:tatars:tatares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tatar</German>
 		<Italian>Tatar</Italian>
 		<Spanish>Tatar</Spanish>
@@ -212,7 +316,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TIBETAN</Tag>
 		<English>Tibetan</English>
-		<French>Tibetan</French>
+		<French>
+			<Text>tib&#233;tain:tib&#233;taine:tib&#233;tains:tib&#233;taines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tibetan</German>
 		<Italian>Tibetan</Italian>
 		<Spanish>Tibetan</Spanish>
@@ -220,7 +328,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TURKIC</Tag>
 		<English>Turkic</English>
-		<French>Turkic</French>
+		<French>
+			<Text>turc:turque:turcs:turques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Turkic</German>
 		<Italian>Turkic</Italian>
 		<Spanish>Turkic</Spanish>
@@ -228,7 +340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_UIGHUR</Tag>
 		<English>Uighur</English>
-		<French>Uighur</French>
+		<French>
+			<Text>ou&#239;ghour:ou&#239;ghoure:ou&#239;ghours:ou&#239;ghoures</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Uighur</German>
 		<Italian>Uighur</Italian>
 		<Spanish>Uighur</Spanish>
@@ -236,7 +352,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_UZBEK</Tag>
 		<English>Uzbek</English>
-		<French>Uzbek</French>
+		<French>
+			<Text>ouzbek:ouzb&#232;ke:ouzbeks:ouzb&#232;kes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Uzbek</German>
 		<Italian>Uzbek</Italian>
 		<Spanish>Uzbek</Spanish>
@@ -244,7 +364,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_VISIGOTHIC</Tag>
 		<English>Visigothic</English>
-		<French>Visigothic</French>
+		<French>
+			<Text>wisigothique:wisigothique:wisigothiques:wisigothiques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Visigothic</German>
 		<Italian>Visigothic</Italian>
 		<Spanish>Visigothic</Spanish>
@@ -252,7 +376,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_XIONGNU</Tag>
 		<English>Xiongnu</English>
-		<French>Xiongnu</French>
+		<French>
+			<Text>xiongnu:xiongnu:xiongnu:xiongnu</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Xiongnu</German>
 		<Italian>Xiongnu</Italian>
 		<Spanish>Xiongnu</Spanish>
@@ -265,9 +393,9 @@
 			<Plural>0</Plural>
 		</English>
 		<French>
-			<Text>Celtes</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>celte:celte:celtes:celtes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Keltisch</Text>
@@ -293,9 +421,9 @@
 			<Plural>0</Plural>
 		</English>
 		<French>
-			<Text>Cor&#233;ens</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>cor&#233;en:cor&#233;enne:cor&#233;ens:cor&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Koreanisch</Text>
@@ -321,9 +449,9 @@
 			<Plural>0</Plural>
 		</English>
 		<French>
-			<Text>Zoulous</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>zoulou:zouloue:zoulous:zouloues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Zulul&#228;ndisch</Text>
@@ -344,7 +472,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_AINU</Tag>
 		<English>Ainu</English>
-		<French>Ainu</French>
+		<French>
+			<Text>a&#239;nou:a&#239;noue:a&#239;nous:a&#239;noues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Ainu</German>
 		<Italian>Ainu</Italian>
 		<Spanish>Ainu</Spanish>
@@ -352,7 +484,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_APACHE</Tag>
 		<English>Apache</English>
-		<French>Apache</French>
+		<French>
+			<Text>apache:apache:apaches:apaches</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Apache</German>
 		<Italian>Apache</Italian>
 		<Spanish>Apache</Spanish>
@@ -360,7 +496,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ARABIAN</Tag>
 		<English>Arabian</English>
-		<French>Arabian</French>
+		<French>
+			<Text>arabe:arabe:arabes:arabes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Arabian</German>
 		<Italian>Arabian</Italian>
 		<Spanish>Arabian</Spanish>
@@ -368,7 +508,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ARYAN</Tag>
 		<English>Aryan</English>
-		<French>Aryan</French>
+		<French>
+			<Text>aryen:aryenne:aryens:aryennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Aryan</German>
 		<Italian>Aryan</Italian>
 		<Spanish>Aryan</Spanish>
@@ -376,7 +520,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ASHANTI</Tag>
 		<English>Ashanti</English>
-		<French>Ashanti</French>
+		<French>
+			<Text>ashanti:ashanti:ashantis:ashantis</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Ashanti</German>
 		<Italian>Ashanti</Italian>
 		<Spanish>Ashanti</Spanish>
@@ -384,7 +532,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ASSYRIAN</Tag>
 		<English>Assyrian</English>
-		<French>Assyrian</French>
+		<French>
+			<Text>assyrien:assyrienne:assyriens:assyriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Assyrian</German>
 		<Italian>Assyrian</Italian>
 		<Spanish>Assyrian</Spanish>
@@ -392,7 +544,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BACTRIAN</Tag>
 		<English>Bactrian</English>
-		<French>Bactrian</French>
+		<French>
+			<Text>bactrien:bactrienne:bactriens:bactriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bactrian</German>
 		<Italian>Bactrian</Italian>
 		<Spanish>Bactrian</Spanish>
@@ -400,7 +556,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BANTU</Tag>
 		<English>Bantu</English>
-		<French>Bantu</French>
+		<French>
+			<Text>bantou:bantoue:bantous:bantoues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bantu</German>
 		<Italian>Bantu</Italian>
 		<Spanish>Bantu</Spanish>
@@ -408,7 +568,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BENGAL</Tag>
 		<English>Bengal</English>
-		<French>Bengal</French>
+		<French>
+			<Text>bengali:bengali:bengalis:bengalis</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bengal</German>
 		<Italian>Bengal</Italian>
 		<Spanish>Bengal</Spanish>
@@ -416,7 +580,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BERBER</Tag>
 		<English>Berber</English>
-		<French>Berber</French>
+		<French>
+			<Text>berb&#232;re:berb&#232;re:berb&#232;res:berb&#232;res</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Berber</German>
 		<Italian>Berber</Italian>
 		<Spanish>Berber</Spanish>
@@ -424,7 +592,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BOHEMIAN</Tag>
 		<English>Bohemian</English>
-		<French>Bohemian</French>
+		<French>
+			<Text>boh&#233;mien:boh&#233;mienne:boh&#233;miens:boh&#233;miennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bohemian</German>
 		<Italian>Bohemian</Italian>
 		<Spanish>Bohemian</Spanish>
@@ -432,7 +604,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BRITON</Tag>
 		<English>Briton</English>
-		<French>Briton</French>
+		<French>
+			<Text>breton:bretone:bretons:bretones</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Briton</German>
 		<Italian>Briton</Italian>
 		<Spanish>Briton</Spanish>
@@ -440,7 +616,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BULGAR</Tag>
 		<English>Bulgar</English>
-		<French>Bulgar</French>
+		<French>
+			<Text>proto-bulgare:proto-bulgare:proto-bulgares:proto-bulgares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Bulgar</German>
 		<Italian>Bulgar</Italian>
 		<Spanish>Bulgar</Spanish>
@@ -448,7 +628,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BURGUNDIAN</Tag>
 		<English>Burgundian</English>
-		<French>Burgundian</French>
+		<French>
+			<Text>bourguignon:bourguignonne:bourguignons:bourguignonnes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Burgundian</German>
 		<Italian>Burgundian</Italian>
 		<Spanish>Burgundian</Spanish>
@@ -456,7 +640,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_BURMESE</Tag>
 		<English>Burmese</English>
-		<French>Burmese</French>
+		<French>
+			<Text>birman:birmane:birmans:birmanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Burmese</German>
 		<Italian>Burmese</Italian>
 		<Spanish>Burmese</Spanish>
@@ -464,7 +652,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_CATALAN</Tag>
 		<English>Catalan</English>
-		<French>Catalan</French>
+		<French>
+			<Text>catalan:catalane:catalans:catalanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Catalan</German>
 		<Italian>Catalan</Italian>
 		<Spanish>Catalan</Spanish>
@@ -472,7 +664,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_CELTIC</Tag>
 		<English>Celtic</English>
-		<French>Celtic</French>
+		<French>
+			<Text>celte:celte:celtes:celtes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Celtic</German>
 		<Italian>Celtic</Italian>
 		<Spanish>Celtic</Spanish>
@@ -480,7 +676,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_CHAN_CHAN</Tag>
 		<English>Moche</English>
-		<French>Moche</French>
+		<French>
+			<Text>moche:moche:moches:moches</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Moche</German>
 		<Italian>Moche</Italian>
 		<Spanish>Moche</Spanish>
@@ -488,7 +688,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_CHEYENNE</Tag>
 		<English>Cheyenne</English>
-		<French>Cheyenne</French>
+		<French>
+			<Text>cheyenne:cheyenne:cheyennes:cheyennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Cheyenne</German>
 		<Italian>Cheyenne</Italian>
 		<Spanish>Cheyenne</Spanish>
@@ -496,7 +700,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_CIRCASSIAN</Tag>
 		<English>Circassian</English>
-		<French>Circassian</French>
+		<French>
+			<Text>circassien:circassienne:circassiens:circassiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Circassian</German>
 		<Italian>Circassian</Italian>
 		<Spanish>Circassian</Spanish>
@@ -504,7 +712,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_DACIAN</Tag>
 		<English>Dacian</English>
-		<French>Dacian</French>
+		<French>
+			<Text>dace:dace:daces:daces</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Dacian</German>
 		<Italian>Dacian</Italian>
 		<Spanish>Dacian</Spanish>
@@ -512,7 +724,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_DRAVIDIAN</Tag>
 		<English>Dravidian</English>
-		<French>Dravidian</French>
+		<French>
+			<Text>dravidien:dravidienne:dravidiens:dravidiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Dravidian</German>
 		<Italian>Dravidian</Italian>
 		<Spanish>Dravidian</Spanish>
@@ -520,7 +736,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ELAMITE</Tag>
 		<English>Elamite</English>
-		<French>Elamite</French>
+		<French>
+			<Text>&#233;lamite:&#233;lamite:&#233;lamites:&#233;lamites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Elamite</German>
 		<Italian>Elamite</Italian>
 		<Spanish>Elamite</Spanish>
@@ -528,7 +748,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ETRUSCAN</Tag>
 		<English>Etruscan</English>
-		<French>Etruscan</French>
+		<French>
+			<Text>&#233;trusque:&#233;trusque:&#233;trusques:&#233;trusques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Etruscan</German>
 		<Italian>Etruscan</Italian>
 		<Spanish>Etruscan</Spanish>
@@ -536,7 +760,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_GAULISH</Tag>
 		<English>Gaulish</English>
-		<French>Gaulish</French>
+		<French>
+			<Text>gaulois:gauloise:gaulois:gauloises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Gaulish</German>
 		<Italian>Gaulish</Italian>
 		<Spanish>Gaulish</Spanish>
@@ -544,7 +772,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_GOTHIC</Tag>
 		<English>Gothic</English>
-		<French>Gothic</French>
+		<French>
+			<Text>goth:gothe:goths:gothes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Gothic</German>
 		<Italian>Gothic</Italian>
 		<Spanish>Gothic</Spanish>
@@ -552,7 +784,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_GUARANI</Tag>
 		<English>Guarani</English>
-		<French>Guarani</French>
+		<French>
+			<Text>guarani:guarani:guaranis:guaranis</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Guarani</German>
 		<Italian>Guarani</Italian>
 		<Spanish>Guarani</Spanish>
@@ -560,7 +796,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_HAN</Tag>
 		<English>Han</English>
-		<French>Han</French>
+		<French>
+			<Text>han:han:han:han</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Han</German>
 		<Italian>Han</Italian>
 		<Spanish>Han</Spanish>
@@ -568,7 +808,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_HARAPPAN</Tag>
 		<English>Harappan</English>
-		<French>Harappan</French>
+		<French>
+			<Text>harapp&#233;en:harapp&#233;enne:harapp&#233;ens:harapp&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Harappan</German>
 		<Italian>Harappan</Italian>
 		<Spanish>Harappan</Spanish>
@@ -576,7 +820,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_HITTITE</Tag>
 		<English>Hittite</English>
-		<French>Hittite</French>
+		<French>
+			<Text>hittite:hittite:hittites:hittites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hittite</German>
 		<Italian>Hittite</Italian>
 		<Spanish>Hittite</Spanish>
@@ -584,7 +832,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_HUNGARIAN</Tag>
 		<English>Hungarian</English>
-		<French>Hungarian</French>
+		<French>
+			<Text>hongrois:hongroise:hongrois:hongroises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hungarian</German>
 		<Italian>Hungarian</Italian>
 		<Spanish>Hungarian</Spanish>
@@ -592,7 +844,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_HURRIAN</Tag>
 		<English>Hurrian</English>
-		<French>Hurrian</French>
+		<French>
+			<Text>hourrite:hourrite:hourrites:hourrites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hurrian</German>
 		<Italian>Hurrian</Italian>
 		<Spanish>Hurrian</Spanish>
@@ -600,7 +856,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_HYKSOS</Tag>
 		<English>Hyksos</English>
-		<French>Hyksos</French>
+		<French>
+			<Text>hyks&#244;s:hyks&#244;s:hyks&#244;s:hyks&#244;s</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Hyksos</German>
 		<Italian>Hyksos</Italian>
 		<Spanish>Hyksos</Spanish>
@@ -608,7 +868,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_IBERIAN</Tag>
 		<English>Iberian</English>
-		<French>Iberian</French>
+		<French>
+			<Text>ib&#232;re:ib&#232;re:ib&#232;res:ib&#232;res</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Iberian</German>
 		<Italian>Iberian</Italian>
 		<Spanish>Iberian</Spanish>
@@ -616,7 +880,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ILLYRIAN</Tag>
 		<English>Illyrian</English>
-		<French>Illyrian</French>
+		<French>
+			<Text>illyrien:illyrienne:illyriens:illyriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Illyrian</German>
 		<Italian>Illyrian</Italian>
 		<Spanish>Illyrian</Spanish>
@@ -624,7 +892,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_IRANIAN</Tag>
 		<English>Iranian</English>
-		<French>Iranian</French>
+		<French>
+			<Text>iranien:iranienne:iraniens:iraniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Iranian</German>
 		<Italian>Iranian</Italian>
 		<Spanish>Iranian</Spanish>
@@ -632,7 +904,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_IRAQI</Tag>
 		<English>Iraqi</English>
-		<French>Iraqi</French>
+		<French>
+			<Text>irakien:irakienne:irakiens:irakiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Iraqi</German>
 		<Italian>Iraqi</Italian>
 		<Spanish>Iraqi</Spanish>
@@ -640,7 +916,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_IRISH</Tag>
 		<English>Irish</English>
-		<French>Irish</French>
+		<French>
+			<Text>irlandais:irlandaise:irlandais:irlandaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Irish</German>
 		<Italian>Irish</Italian>
 		<Spanish>Irish</Spanish>
@@ -648,7 +928,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_IROQUOIS</Tag>
 		<English>Iroquois</English>
-		<French>Iroquois</French>
+		<French>
+			<Text>iroquois:iroquoise:iroquois:iroquoises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Iroquois</German>
 		<Italian>Iroquois</Italian>
 		<Spanish>Iroquois</Spanish>
@@ -656,7 +940,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_JAVANESE</Tag>
 		<English>Javanese</English>
-		<French>Javanese</French>
+		<French>
+			<Text>javanais:javanaise:javanais:javanaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Javanese</German>
 		<Italian>Javanese</Italian>
 		<Spanish>Javanese</Spanish>
@@ -664,7 +952,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_JUDEAN</Tag>
 		<English>Judean</English>
-		<French>Judean</French>
+		<French>
+			<Text>jud&#233;en:jud&#233;enne:jud&#233;ens:jud&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Judean</German>
 		<Italian>Judean</Italian>
 		<Spanish>Judean</Spanish>
@@ -672,7 +964,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KASSITE</Tag>
 		<English>Kassite</English>
-		<French>Kassite</French>
+		<French>
+			<Text>kassite:kassite:kassites:kassites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kassite</German>
 		<Italian>Kassite</Italian>
 		<Spanish>Kassite</Spanish>
@@ -680,7 +976,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KHAZAR</Tag>
 		<English>Khazar</English>
-		<French>Khazar</French>
+		<French>
+			<Text>khazar:khazare:khazars:khazares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Khazar</German>
 		<Italian>Khazar</Italian>
 		<Spanish>Khazar</Spanish>
@@ -688,7 +988,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KHMER</Tag>
 		<English>Khmer</English>
-		<French>Khmer</French>
+		<French>
+			<Text>khmer:khm&#232;re:khmers:khm&#232;res</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Khmer</German>
 		<Italian>Khmer</Italian>
 		<Spanish>Khmer</Spanish>
@@ -696,7 +1000,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KHWAREZMID</Tag>
 		<English>Khwarezmid</English>
-		<French>Khwarezmid</French>
+		<French>
+			<Text>khwarezmien:khwarezmienne:khwarezmiens:khwarezmiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Khwarezmid</German>
 		<Italian>Khwarezmid</Italian>
 		<Spanish>Khwarezmid</Spanish>
@@ -704,7 +1012,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KIMMERIAN</Tag>
 		<English>Kimmerian</English>
-		<French>Kimmerian</French>
+		<French>
+			<Text>cimm&#233;rien:cimm&#233;rienne:cimm&#233;riens:cimm&#233;riennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kimmerian</German>
 		<Italian>Kimmerian</Italian>
 		<Spanish>Kimmerian</Spanish>
@@ -712,7 +1024,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KURDISH</Tag>
 		<English>Kurdish</English>
-		<French>Kurdish</French>
+		<French>
+			<Text>kurde:kurde:kurdes:kurdes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kurdish</German>
 		<Italian>Kurdish</Italian>
 		<Spanish>Kurdish</Spanish>
@@ -720,7 +1036,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_KUSHAN</Tag>
 		<English>Kushan</English>
-		<French>Kushan</French>
+		<French>
+			<Text>kouchan:kouchane:kouchans:kouchanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Kushan</German>
 		<Italian>Kushan</Italian>
 		<Spanish>Kushan</Spanish>
@@ -728,7 +1048,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_LOMBARD</Tag>
 		<English>Lombard</English>
-		<French>Lombard</French>
+		<French>
+			<Text>lombard:lombarde:lombards:lombardes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Lombard</German>
 		<Italian>Lombard</Italian>
 		<Spanish>Lombard</Spanish>
@@ -736,7 +1060,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_LYDIAN</Tag>
 		<English>Lydian</English>
-		<French>Lydian</French>
+		<French>
+			<Text>lydien:lydienne:lydiens:lydiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Lydian</German>
 		<Italian>Lydian</Italian>
 		<Spanish>Lydian</Spanish>
@@ -744,7 +1072,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_MALAY</Tag>
 		<English>Malay</English>
-		<French>Malay</French>
+		<French>
+			<Text>malais:malaise:malais:malaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Malay</German>
 		<Italian>Malay</Italian>
 		<Spanish>Malay</Spanish>
@@ -752,7 +1084,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_MANCHU</Tag>
 		<English>Manchu</English>
-		<French>Manchu</French>
+		<French>
+			<Text>mandchou:mandchoue:mandchous:mandchoues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Manchu</German>
 		<Italian>Manchu</Italian>
 		<Spanish>Manchu</Spanish>
@@ -760,7 +1096,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_MINOAN</Tag>
 		<English>Minoan</English>
-		<French>Minoan</French>
+		<French>
+			<Text>minoen:minoenne:minoens:minoennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Minoan</German>
 		<Italian>Minoan</Italian>
 		<Spanish>Minoan</Spanish>
@@ -768,7 +1108,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_MOORISH</Tag>
 		<English>Moorish</English>
-		<French>Moorish</French>
+		<French>
+			<Text>maure:maure:maures:maures</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Moorish</German>
 		<Italian>Moorish</Italian>
 		<Spanish>Moorish</Spanish>
@@ -776,7 +1120,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_NABATEAN</Tag>
 		<English>Nabatean</English>
-		<French>Nabatean</French>
+		<French>
+			<Text>nabat&#233;en:nabat&#233;enne:nabat&#233;ens:nabat&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Nabatean</German>
 		<Italian>Nabatean</Italian>
 		<Spanish>Nabatean</Spanish>
@@ -784,7 +1132,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_NAZCAN</Tag>
 		<English>Nazcan</English>
-		<French>Nazcan</French>
+		<French>
+			<Text>nazca:nazca:nazcas:nazcas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Nazcan</German>
 		<Italian>Nazcan</Italian>
 		<Spanish>Nazcan</Spanish>
@@ -792,7 +1144,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_NORMAN</Tag>
 		<English>Norman</English>
-		<French>Norman</French>
+		<French>
+			<Text>normand:normande:normands:normandes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Norman</German>
 		<Italian>Norman</Italian>
 		<Spanish>Norman</Spanish>
@@ -800,7 +1156,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_NUBIAN</Tag>
 		<English>Nubian</English>
-		<French>Nubian</French>
+		<French>
+			<Text>nubien:nubienne:nubiens:nubiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Nubian</German>
 		<Italian>Nubian</Italian>
 		<Spanish>Nubian</Spanish>
@@ -808,7 +1168,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_NUMIDIAN</Tag>
 		<English>Numidian</English>
-		<French>Numidian</French>
+		<French>
+			<Text>numide:numide:numides:numides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Numidian</German>
 		<Italian>Numidian</Italian>
 		<Spanish>Numidian</Spanish>
@@ -816,7 +1180,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_OCCITAN</Tag>
 		<English>Occitan</English>
-		<French>Occitan</French>
+		<French>
+			<Text>occitan:occitane:occitans:occitanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Occitan</German>
 		<Italian>Occitan</Italian>
 		<Spanish>Occitan</Spanish>
@@ -824,7 +1192,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_OLMEC</Tag>
 		<English>Olmec</English>
-		<French>Olmec</French>
+		<French>
+			<Text>olm&#232;que:olm&#232;que:olm&#232;ques:olm&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Olmec</German>
 		<Italian>Olmec</Italian>
 		<Spanish>Olmec</Spanish>
@@ -832,7 +1204,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_OMANI</Tag>
 		<English>Omani</English>
-		<French>Omani</French>
+		<French>
+			<Text>omanais:omanaise:omanais:omanaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Omani</German>
 		<Italian>Omani</Italian>
 		<Spanish>Omani</Spanish>
@@ -840,7 +1216,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_PARTHIAN</Tag>
 		<English>Parthian</English>
-		<French>Parthian</French>
+		<French>
+			<Text>parthe:parthe:parthes:parthes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Parthian</German>
 		<Italian>Parthian</Italian>
 		<Spanish>Parthian</Spanish>
@@ -848,7 +1228,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_PASHTUN</Tag>
 		<English>Pashtun</English>
-		<French>Pashtun</French>
+		<French>
+			<Text>pachtoune:pachtoune:pachtounes:pachtounes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Pashtun</German>
 		<Italian>Pashtun</Italian>
 		<Spanish>Pashtun</Spanish>
@@ -856,7 +1240,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_PHILISTINE</Tag>
 		<English>Philistine</English>
-		<French>Philistine</French>
+		<French>
+			<Text>philistin:philistine:philistins:philistines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Philistine</German>
 		<Italian>Philistine</Italian>
 		<Spanish>Philistine</Spanish>
@@ -864,7 +1252,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_POLISH</Tag>
 		<English>Polish</English>
-		<French>Polish</French>
+		<French>
+			<Text>polonais:polonaise:polonais:polonaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Polish</German>
 		<Italian>Polish</Italian>
 		<Spanish>Polish</Spanish>
@@ -872,7 +1264,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_POLYNESIAN</Tag>
 		<English>Polynesian</English>
-		<French>Polynesian</French>
+		<French>
+			<Text>polyn&#233;sien:polyn&#233;sienne:polyn&#233;siens:polyn&#233;siennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Polynesian</German>
 		<Italian>Polynesian</Italian>
 		<Spanish>Polynesian</Spanish>
@@ -880,7 +1276,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_RAJPUT</Tag>
 		<English>Rajput</English>
-		<French>Rajput</French>
+		<French>
+			<Text>rajput:rajput:rajputs:rajputs</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Rajput</German>
 		<Italian>Rajput</Italian>
 		<Spanish>Rajput</Spanish>
@@ -888,7 +1288,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_RUS</Tag>
 		<English>Rus</English>
-		<French>Rus</French>
+		<French>
+			<Text>Rus:Rus:Rus:Rus</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Rus</German>
 		<Italian>Rus</Italian>
 		<Spanish>Rus</Spanish>
@@ -896,7 +1300,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SABEAN</Tag>
 		<English>Sabean</English>
-		<French>Sabean</French>
+		<French>
+			<Text>sab&#233;en:sab&#233;enne:sab&#233;ens:sab&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Sabean</German>
 		<Italian>Sabean</Italian>
 		<Spanish>Sabean</Spanish>
@@ -904,7 +1312,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SCOTS</Tag>
 		<English>Scottish</English>
-		<French>Scottish</French>
+		<French>
+			<Text>&#233;cossais:&#233;cossaise:&#233;cossais:&#233;cossaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Scottish</German>
 		<Italian>Scottish</Italian>
 		<Spanish>Scottish</Spanish>
@@ -912,7 +1324,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SELJUK</Tag>
 		<English>Seljuk</English>
-		<French>Seljuk</French>
+		<French>
+			<Text>seldjoukide:seldjoukide:seldjoukides:seldjoukides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Seljuk</German>
 		<Italian>Seljuk</Italian>
 		<Spanish>Seljuk</Spanish>
@@ -920,7 +1336,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SICILIAN</Tag>
 		<English>Sicilian</English>
-		<French>Sicilian</French>
+		<French>
+			<Text>sicilien:sicilienne:siciliens:siciliennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Sicilian</German>
 		<Italian>Sicilian</Italian>
 		<Spanish>Sicilian</Spanish>
@@ -928,7 +1348,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SIKH</Tag>
 		<English>Sikh</English>
-		<French>Sikh</French>
+		<French>
+			<Text>sikh:sikhe:sikhs:sikhes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Sikh</German>
 		<Italian>Sikh</Italian>
 		<Spanish>Sikh</Spanish>
@@ -936,7 +1360,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SIOUX</Tag>
 		<English>Sioux</English>
-		<French>Sioux</French>
+		<French>
+			<Text>sioux:sioux:sioux:sioux</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Sioux</German>
 		<Italian>Sioux</Italian>
 		<Spanish>Sioux</Spanish>
@@ -944,7 +1372,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SLAVIC</Tag>
 		<English>Slavic</English>
-		<French>Slavic</French>
+		<French>
+			<Text>slave:slave:slaves:slaves</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Slavic</German>
 		<Italian>Slavic</Italian>
 		<Spanish>Slavic</Spanish>
@@ -952,7 +1384,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SONGHAI</Tag>
 		<English>Songhai</English>
-		<French>Songhai</French>
+		<French>
+			<Text>songha&#239;:songha&#239;:songha&#239;s:songha&#239;s</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Songhai</German>
 		<Italian>Songhai</Italian>
 		<Spanish>Songhai</Spanish>
@@ -960,7 +1396,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SUAHELI</Tag>
 		<English>Suaheli</English>
-		<French>Suaheli</French>
+		<French>
+			<Text>swahili:swahilie:swahilis:swahilies</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Suaheli</German>
 		<Italian>Suaheli</Italian>
 		<Spanish>Suaheli</Spanish>
@@ -968,7 +1408,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SUMERIAN</Tag>
 		<English>Sumerian</English>
-		<French>Sumerian</French>
+		<French>
+			<Text>sum&#233;rien:sum&#233;rienne:sum&#233;riens:sum&#233;riennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Sumerian</German>
 		<Italian>Sumerian</Italian>
 		<Spanish>Sumerian</Spanish>
@@ -976,7 +1420,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SWISS</Tag>
 		<English>Swiss</English>
-		<French>Swiss</French>
+		<French>
+			<Text>suisse:suisse:suisses:suisses</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Swiss</German>
 		<Italian>Swiss</Italian>
 		<Spanish>Swiss</Spanish>
@@ -984,7 +1432,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_TAMIL</Tag>
 		<English>Tamil</English>
-		<French>Tamil</French>
+		<French>
+			<Text>tamoul:tamoule:tamouls:tamoules</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tamil</German>
 		<Italian>Tamil</Italian>
 		<Spanish>Tamil</Spanish>
@@ -992,7 +1444,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_TARTAR</Tag>
 		<English>Tartar</English>
-		<French>Tartar</French>
+		<French>
+			<Text>tartare:tartare:tartares:tartares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tartar</German>
 		<Italian>Tartar</Italian>
 		<Spanish>Tartar</Spanish>
@@ -1000,7 +1456,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_THAI</Tag>
 		<English>Thai</English>
-		<French>Thai</French>
+		<French>
+			<Text>tha&#239;:tha&#239;e:tha&#239;s:tha&#239;es</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Thai</German>
 		<Italian>Thai</Italian>
 		<Spanish>Thai</Spanish>
@@ -1008,7 +1468,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_THRACIAN</Tag>
 		<English>Thracian</English>
-		<French>Thracian</French>
+		<French>
+			<Text>thrace:thrace:thraces:thraces</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Thracian</German>
 		<Italian>Thracian</Italian>
 		<Spanish>Thracian</Spanish>
@@ -1016,7 +1480,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_TIBETAN</Tag>
 		<English>Tibetan</English>
-		<French>Tibetan</French>
+		<French>
+			<Text>tib&#233;tain:tib&#233;taine:tib&#233;tains:tib&#233;taines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Tibetan</German>
 		<Italian>Tibetan</Italian>
 		<Spanish>Tibetan</Spanish>
@@ -1024,7 +1492,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_TOLTEC</Tag>
 		<English>Toltec</English>
-		<French>Toltec</French>
+		<French>
+			<Text>tolt&#232;que:tolt&#232;que:tolt&#232;ques:tolt&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Toltec</German>
 		<Italian>Toltec</Italian>
 		<Spanish>Toltec</Spanish>
@@ -1032,7 +1504,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_UZBEK</Tag>
 		<English>Uzbek</English>
-		<French>Uzbek</French>
+		<French>
+			<Text>ouzbek:ouzb&#232;ke:ouzbeks:ouzb&#232;kes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Uzbek</German>
 		<Italian>Uzbek</Italian>
 		<Spanish>Uzbek</Spanish>
@@ -1040,7 +1516,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_VANDAL</Tag>
 		<English>Vandal</English>
-		<French>Vandal</French>
+		<French>
+			<Text>vandale:vandale:vandales:vandales</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Vandal</German>
 		<Italian>Vandal</Italian>
 		<Spanish>Vandal</Spanish>
@@ -1048,7 +1528,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_VARANGIAN</Tag>
 		<English>Varangian</English>
-		<French>Varangian</French>
+		<French>
+			<Text>var&#232;gue:var&#232;gue:var&#232;gues:var&#232;gues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Varangian</German>
 		<Italian>Varangian</Italian>
 		<Spanish>Varangian</Spanish>
@@ -1056,7 +1540,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_VIETNAMESE</Tag>
 		<English>Vietnamese</English>
-		<French>Vietnamese</French>
+		<French>
+			<Text>vietnamien:vietnamienne:vietnamiens:vietnamiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Vietnamese</German>
 		<Italian>Vietnamese</Italian>
 		<Spanish>Vietnamese</Spanish>
@@ -1064,7 +1552,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_XIONGNU</Tag>
 		<English>Xiongnu</English>
-		<French>Xiongnu</French>
+		<French>
+			<Text>xiongnu:xiongnu:xiongnu:xiongnu</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Xiongnu</German>
 		<Italian>Xiongnu</Italian>
 		<Spanish>Xiongnu</Spanish>
@@ -1072,7 +1564,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_YAMATO</Tag>
 		<English>Yamato</English>
-		<French>Yamato</French>
+		<French>
+			<Text>yamato:yamato:yamato:yamato</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Yamato</German>
 		<Italian>Yamato</Italian>
 		<Spanish>Yamato</Spanish>
@@ -1080,7 +1576,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_YUEZHI</Tag>
 		<English>Yuezhi</English>
-		<French>Yuezhi</French>
+		<French>
+			<Text>yuezhi:yuezhi:yuezhi:yuezhi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Yuezhi</German>
 		<Italian>Yuezhi</Italian>
 		<Spanish>Yuezhi</Spanish>
@@ -1088,7 +1588,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ZAPOTEC</Tag>
 		<English>Zapotec</English>
-		<French>Zapotec</French>
+		<French>
+			<Text>zapot&#232;que:zapot&#232;que:zapot&#232;ques:zapot&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Zapotec</German>
 		<Italian>Zapotec</Italian>
 		<Spanish>Zapotec</Spanish>
@@ -1096,7 +1600,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_ZULU</Tag>
 		<English>Zulu</English>
-		<French>Zulu</French>
+		<French>
+			<Text>zoulou:zouloue:zoulous:zouloues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Zulu</German>
 		<Italian>Zulu</Italian>
 		<Spanish>Zulu</Spanish>
