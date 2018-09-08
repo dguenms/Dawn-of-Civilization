@@ -36,7 +36,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_PERSECUTION</Tag>
 		<English>Persecution</English>
-		<French>Persecution</French>
+		<French>
+			<Text>Pers&#233;cution</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Persecution</German>
 		<Italian>Persecution</Italian>
 		<Spanish>Persecution</Spanish>
