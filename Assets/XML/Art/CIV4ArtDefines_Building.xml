@@ -3457,5 +3457,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Container_Terminal/ContainerTerminal.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_LOGISTICS_CENTER</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Logistics_Center/warehouse.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Logistics_Center/LogisticsCenter.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

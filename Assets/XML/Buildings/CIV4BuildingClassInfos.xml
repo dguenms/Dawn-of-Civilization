@@ -569,6 +569,15 @@
 			<DefaultBuilding>BUILDING_CONTAINER_TERMINAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LOGISTICS_CENTER</Type>
+			<Description>TXT_KEY_BUILDING_LOGISTICS_CENTER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LOGISTICS_CENTER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SOLAR_PLANT</Type>
 			<Description>TXT_KEY_BUILDING_SOLAR_PLANT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

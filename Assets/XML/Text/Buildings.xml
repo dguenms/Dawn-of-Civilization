@@ -2958,6 +2958,14 @@
 		<Spanish>Container Terminal</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOGISTICS_CENTER</Tag>
+		<English>Logistics Center</English>
+		<French>Logistics Center</French>
+		<German>Logistikzentrum</German>
+		<Italian>Logistics Center</Italian>
+		<Spanish>Logistics Center</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
