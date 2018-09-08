@@ -2944,7 +2944,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iForeignTradeRouteModifier>100</iForeignTradeRouteModifier>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
@@ -5091,6 +5091,37 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CONTAINER_TERMINAL</BuildingClass>
+			<Type>BUILDING_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONTAINER_TERMINAL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONTAINER_TERMINAL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CONTAINER_TERMINAL</ArtDefineTag>
+			<PrereqTech>TECH_ROBOTICS</PrereqTech>
+			<bWater>1</bWater>
+			<iCost>300</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>10</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SOLAR_PLANT</BuildingClass>
 			<Type>BUILDING_SOLAR_PLANT</Type>
 			<Description>TXT_KEY_BUILDING_SOLAR_PLANT</Description>
@@ -5149,6 +5180,12 @@
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
 			<ConstructSound>AS2D_BUILD_FACTORY</ConstructSound>
 			<Flavors>
 				<Flavor>

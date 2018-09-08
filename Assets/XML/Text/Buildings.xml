@@ -2950,6 +2950,14 @@
 		<Spanish>Automated Factory</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Tag>
+		<English>Container Terminal</English>
+		<French>Container Terminal</French>
+		<German>Container Terminal</German>
+		<Italian>Container Terminal</Italian>
+		<Spanish>Container Terminal</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
