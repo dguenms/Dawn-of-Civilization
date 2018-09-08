@@ -560,6 +560,15 @@
 			<DefaultBuilding>BUILDING_RECYCLING_CENTER</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CONTAINER_TERMINAL</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SOLAR_PLANT</Type>
 			<Description>TXT_KEY_BUILDING_SOLAR_PLANT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

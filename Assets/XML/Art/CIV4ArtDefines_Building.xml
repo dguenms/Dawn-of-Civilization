@@ -3447,5 +3447,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/AutomatedFactory/AutomatedFactory.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CONTAINER_TERMINAL</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Container_Terminal/Dock.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Container_Terminal/ContainerTerminal.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
