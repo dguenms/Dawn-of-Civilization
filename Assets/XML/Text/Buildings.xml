@@ -2910,6 +2910,14 @@
 		<Spanish>Warehouse</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Tag>
+		<English>Automated Factory</English>
+		<French>Automated Factory</French>
+		<German>Automatisierte Fabrik</German>
+		<Italian>Automated Factory</Italian>
+		<Spanish>Automated Factory</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

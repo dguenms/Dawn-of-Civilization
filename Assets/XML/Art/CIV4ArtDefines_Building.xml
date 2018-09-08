@@ -3437,5 +3437,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Warehouse/Warehouse.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AUTOMATED_FACTORY</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Advanced_Factories/Advanced_Factories.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/AutomatedFactory/AutomatedFactory.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
