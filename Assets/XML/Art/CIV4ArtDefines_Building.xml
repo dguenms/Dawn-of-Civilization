@@ -3467,5 +3467,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Logistics_Center/LogisticsCenter.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_VERTICAL_FARM</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.3</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Vertical_Farm/condenser.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Vertical_Farm/VerticalFarm.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

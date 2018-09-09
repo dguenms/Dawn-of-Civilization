@@ -2934,6 +2934,14 @@
 		<Spanish>Logistics Center</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERTICAL_FARM</Tag>
+		<English>Vertical Farm</English>
+		<French>Vertical Farm</French>
+		<German>Vertikale Landwirtschaft</German>
+		<Italian>Vertical Farm</Italian>
+		<Spanish>Vertical Farm</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
