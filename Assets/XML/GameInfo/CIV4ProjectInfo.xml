@@ -45,7 +45,7 @@
 			<Civilopedia>TXT_KEY_PROJECT_THE_INTERNET_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_THE_INTERNET_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
-			<TechPrereq>TECH_TELECOMMUNICATIONS</TechPrereq>
+			<TechPrereq>TECH_COMPUTERS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
