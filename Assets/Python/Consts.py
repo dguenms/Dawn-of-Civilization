@@ -883,7 +883,7 @@ iSeowon, iGompa, iCivicSquare, iRathaus, iSejmik, iSewer, iStarFort, iEstate, iM
 iHacienda, iDrydock, iLevee, iDike, iObservatory, iWarehouse, iCourthouse, iFactory, iAssemblyPlant, iZaibatsu, 
 iDistillery, iPark, iCoalPlant, iRailwayStation, iLaboratory, iResearchInstitute, iNewsPress, iIndustrialPark, iCinema, iHospital, 
 iSupermarket, iColdStoragePlant, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, iIntelligenceAgency, iElectricalGrid, iAirport, iBombShelters, 
-iHydroPlant, iBunker, iNuclearPlant, iSecurityBureau, iSupercomputer, iHotel, iRecyclingCenter, iContainerTerminal, iLogisticsCenter, iSolarPlant, 
+iHydroPlant, iBunker, iSecurityBureau, iNuclearPlant, iSupercomputer, iHotel, iRecyclingCenter, iContainerTerminal, iLogisticsCenter, iSolarPlant, 
 iFiberNetwork,
 iAutomatedFactory, 
 iVerticalFarm,
