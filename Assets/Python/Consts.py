@@ -871,7 +871,7 @@ iDeer, iFish, iPig, iRice, iSheep, iWheat, iCoffee, iCotton, iDye, iFur, iGems, 
 iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBonuses)
 # Buildings
 
-iNumBuildings = 313
+iNumBuildings = 314
 (iPalace, iBarracks, iIkhanda, iGranary, iTerrace, iSmokehouse, iPaganTemple, iMonument, iObelisk, iStele,
 iCandi, iEdict, iMalae, iTotemPole, iWalls, iDun, iStable, iGer, iLibrary, iEdubba,
 iTaixue, iHoTrai, iSangam, iHarbor, iAqueduct, iBaray, iNoria, iStepwell, iTheatre, iOdeon,
@@ -884,6 +884,7 @@ iHacienda, iDrydock, iLevee, iDike, iObservatory, iWarehouse, iCourthouse, iFact
 iDistillery, iPark, iCoalPlant, iRailwayStation, iLaboratory, iResearchInstitute, iNewsPress, iIndustrialPark, iCinema, iHospital, 
 iSupermarket, iColdStoragePlant, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, iIntelligenceAgency, iElectricalGrid, iAirport, iBombShelters, 
 iHydroPlant, iBunker, iNuclearPlant, iSecurityBureau, iHotel, iRecyclingCenter, iContainerTerminal, iLogisticsCenter, iSolarPlant, iAutomatedFactory, 
+iVerticalFarm,
 iJewishTemple, 
 iJewishCathedral, 
 iJewishMonastery, iJewishShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicChurch, iCatholicCathedral, iCatholicMonastery, iCatholicShrine, 

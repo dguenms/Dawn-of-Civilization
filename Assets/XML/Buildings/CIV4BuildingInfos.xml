@@ -5233,6 +5233,32 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_VERTICAL_FARM</BuildingClass>
+			<Type>BUILDING_VERTICAL_FARM</Type>
+			<Description>TXT_KEY_BUILDING_VERTICAL_FARM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VERTICAL_FARM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VERTICAL_FARM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VERTICAL_FARM</ArtDefineTag>
+			<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
+			<iCost>500</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>6</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<PowerYieldModifiers>
+				<iYield>10</iYield>
+			</PowerYieldModifiers>
+			<ConstructSound>AS2D_BUILD_LABORATORY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClass>
 			<Type>BUILDING_JEWISH_TEMPLE</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>

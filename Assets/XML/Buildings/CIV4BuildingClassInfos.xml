@@ -596,6 +596,15 @@
 			<DefaultBuilding>BUILDING_AUTOMATED_FACTORY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_VERTICAL_FARM</Type>
+			<Description>TXT_KEY_BUILDING_VERTICAL_FARM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_VERTICAL_FARM</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_JEWISH_TEMPLE</Type>
 			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
