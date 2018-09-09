@@ -524,15 +524,6 @@
 			<DefaultBuilding>BUILDING_BUNKER</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_NUCLEAR_PLANT</Type>
-			<Description>TXT_KEY_BUILDING_NUCLEAR_PLANT</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_NUCLEAR_PLANT</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SECURITY_BUREAU</Type>
 			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -540,6 +531,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SECURITY_BUREAU</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_NUCLEAR_PLANT</Type>
+			<Description>TXT_KEY_BUILDING_NUCLEAR_PLANT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_NUCLEAR_PLANT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SUPERCOMPUTER</Type>
