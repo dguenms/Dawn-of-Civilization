@@ -540,7 +540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAR2</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
-		<French>Contrôler l'Italie et la péninsule ibérique en 100 av. J.-C.</French>
+		<French>Contrôler l'Italie et la péninsule Ibérique en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 		<Italian>Control Italy and Iberia in 100 BC</Italian>
 		<Spanish>Control Italy and Iberia in 100 BC</Spanish>
@@ -548,7 +548,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAR2_EPIC</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
-		<French>Contrôler l'Italie et la péninsule ibérique en 100 av. J.-C.</French>
+		<French>Contrôler l'Italie et la péninsule Ibérique en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 		<Italian>Control Italy and Iberia in 100 BC</Italian>
 		<Spanish>Control Italy and Iberia in 100 BC</Spanish>
@@ -556,7 +556,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAR2_MARATHON</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
-		<French>Contrôler l'Italie et la péninsule ibérique en 100 av. J.-C.</French>
+		<French>Contrôler l'Italie et la péninsule Ibérique en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 		<Italian>Control Italy and Iberia in 100 BC</Italian>
 		<Spanish>Control Italy and Iberia in 100 BC</Spanish>
@@ -564,7 +564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAR2_NOTURN</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
-		<French>Contrôler l'Italie et la péninsule ibérique en 100 av. J.-C.</French>
+		<French>Contrôler l'Italie et la péninsule Ibérique en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 		<Italian>Control Italy and Iberia in 100 BC</Italian>
 		<Spanish>Control Italy and Iberia in 100 BC</Spanish>
@@ -1340,7 +1340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1</Tag>
 		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
-		<French>Contrôler le sanctuaire de l'hindouisme et celui du bouddhisme en 100 av. J.-C.</French>
+		<French>Contrôler le lieu saint de l'hindouisme et celui du bouddhisme en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. die Schreine des Hinduismus und Buddhismus</German>
 		<Italian>Control the shrines of Hinduism and Buddhism in 100 BC</Italian>
 		<Spanish>Control the shrines of Hinduism and Buddhism in 100 BC</Spanish>
@@ -1348,7 +1348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1_EPIC</Tag>
 		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
-		<French>Contrôler le sanctuaire de l'hindouisme et celui du bouddhisme en 100 av. J.-C.</French>
+		<French>Contrôler le lieu saint de l'hindouisme et celui du bouddhisme en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. die Schreine des Hinduismus und Buddhismus</German>
 		<Italian>Control the shrines of Hinduism and Buddhism in 100 BC</Italian>
 		<Spanish>Control the shrines of Hinduism and Buddhism in 100 BC</Spanish>
@@ -1356,7 +1356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1_MARATHON</Tag>
 		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
-		<French>Contrôler le sanctuaire de l'hindouisme et celui du bouddhisme en 100 av. J.-C.</French>
+		<French>Contrôler le lieu saint de l'hindouisme et celui du bouddhisme en 100 av. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. die Schreine des Hinduismus und Buddhismus</German>
 		<Italian>Control the shrines of Hinduism and Buddhism in 100 BC</Italian>
 		<Spanish>Control the shrines of Hinduism and Buddhism in 100 BC</Spanish>
@@ -1748,7 +1748,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR1_TITLE</Tag>
 		<English>Palman Daejanggyeong and Gukjagam</English>
-		<French>Palman Daejanggyeong and Gukjagam</French>
+		<French>Palman Daejanggyeong et Gukjagam </French>
 		<German>Palman Daejanggyeong und Gukjagam</German>
 		<Italian>Palman Daejanggyeong and Gukjagam</Italian>
 		<Spanish>Palman Daejanggyeong and Gukjagam</Spanish>
@@ -1756,7 +1756,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR1</Tag>
 		<English>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 AD</English>
-		<French>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 ap. J.-C.</French>
+		<French>Construire un chaitya bouddhiste et un guozijian confucéen avant 1200 ap. J.-C.</French>
 		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
 		<Italian>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 AD</Italian>
 		<Spanish>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 AD</Spanish>
@@ -1764,7 +1764,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
 		<English>Choe Yun-ui</English>
-		<French>Choe Yun-ui</French>
+		<French>Choe Yun-ui </French>
 		<German>Choe Yun-ui</German>
 		<Italian>Choe Yun-ui</Italian>
 		<Spanish>Choe Yun-ui</Spanish>
@@ -1772,7 +1772,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2</Tag>
 		<English>Be first to discover Printing</English>
-		<French>Be first to discover Printing</French>
+		<French>Être le premier à découvrir l'imprimerie</French>
 		<German>Erforschen Sie als Erster Buchdruck</German>
 		<Italian>Be first to discover Printing</Italian>
 		<Spanish>Be first to discover Printing</Spanish>
@@ -1780,7 +1780,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
 		<English>Yi Sun-sin</English>
-		<French>Yi Sun-sin</French>
+		<French>Yi Sun-sin </French>
 		<German>Yi Sun-sin</German>
 		<Italian>Yi Sun-sin</Italian>
 		<Spanish>Yi Sun-sin</Spanish>
@@ -1788,7 +1788,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3</Tag>
 		<English>Sink 20 enemy ships</English>
-		<French>Sink 20 enemy ships</French>
+		<French>Couler 20 navires ennemis</French>
 		<German>Versenken Sie 20 gegnerische Schiffe</German>
 		<Italian>Sink 20 enemy ships</Italian>
 		<Spanish>Sink 20 enemy ships</Spanish>
@@ -1796,7 +1796,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL1_TITLE</Tag>
 		<English>The Great Hajj</English>
-		<French>The Great Hajj</French>
+		<French>La grand hajj </French>
 		<German>Die gro&#223;e Hadsch</German>
 		<Italian>The Great Hajj</Italian>
 		<Spanish>The Great Hajj</Spanish>
@@ -1804,7 +1804,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL1</Tag>
 		<English>Conduct a trade mission to your holy city by 1350 AD</English>
-		<French>Conduct a trade mission to your holy city by 1350 ap. J.-C.</French>
+		<French>Compléter une mission commerciale dans votre ville sainte avant 1350 ap. J.-C.</French>
 		<German>F&#252;hren Sie bis zum Jahr 1350 n. Chr. eine Handelsmission zu Ihrer heiligen Stadt durch</German>
 		<Italian>Conduct a trade mission to your holy city by 1350 AD</Italian>
 		<Spanish>Conduct a trade mission to your holy city by 1350 AD</Spanish>
@@ -1812,7 +1812,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL2_TITLE</Tag>
 		<English>The Madrassah of Timbuktu</English>
-		<French>The Madrassah of Timbuktu</French>
+		<French>La madrassa de Tombouctou</French>
 		<German>Die Madrasah von Timbuktu</German>
 		<Italian>The Madrassah of Timbuktu</Italian>
 		<Spanish>The Madrassah of Timbuktu</Spanish>
@@ -1820,7 +1820,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL2</Tag>
 		<English>Build the University of Sankore and settle a great prophet in its city by 1500 AD</English>
-		<French>Build the University of Sankore and settle a great prophet in its city by 1500 ap. J.-C.</French>
+		<French>Construire l'Université de Sankoré et faire rejoindre un prophète illustre à la même ville avant 1500 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr die Universit&#228;t von Sankore und siedeln Sie einen gro&#223;en Propheten in ihrer Stadt an</German>
 		<Italian>Build the University of Sankore and settle a great prophet in its city by 1500 AD</Italian>
 		<Spanish>Build the University of Sankore and settle a great prophet in its city by 1500 AD</Spanish>
@@ -1828,7 +1828,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL3_TITLE</Tag>
 		<English>Caravans of the Sahara</English>
-		<French>Caravans of the Sahara</French>
+		<French>Caravanes du Sahara </French>
 		<German>Karawanen der Sahara</German>
 		<Italian>Caravans of the Sahara</Italian>
 		<Spanish>Caravans of the Sahara</Spanish>
@@ -1836,7 +1836,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL3</Tag>
 		<English>Have 5000 gold in 1500 AD and 15000 gold in 1700 AD</English>
-		<French>Have 5000 gold in 1500 AD and 15000 gold in 1700 ap. J.-C.</French>
+		<French>Avoir 5000 or en 1500 ap. J.-C. et 15000 or en 1700 ap. J.-C.</French>
 		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 5000 Gold und im Jahr 1700 n. Chr. &#252;ber 15.000 Gold</German>
 		<Italian>Have 5000 gold in 1500 AD and 15000 gold in 1700 AD</Italian>
 		<Spanish>Have 5000 gold in 1500 AD and 15000 gold in 1700 AD</Spanish>
@@ -1844,7 +1844,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL3_EPIC</Tag>
 		<English>Have 7500 gold in 1500 AD and 22500 gold in 1700 AD</English>
-		<French>Have 7500 gold in 1500 AD and 22500 gold in 1700 ap. J.-C.</French>
+		<French>Avoir 7500 or en 1500 ap. J.-C. et 22500 or en 1700 ap. J.-C.</French>
 		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 7500 Gold und im Jahr 1700 n. Chr. &#252;ber 22.500 Gold</German>
 		<Italian>Have 7500 gold in 1500 AD and 22500 gold in 1700 AD</Italian>
 		<Spanish>Have 7500 gold in 1500 AD and 22500 gold in 1700 AD</Spanish>
@@ -1852,7 +1852,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL3_MARATHON</Tag>
 		<English>Have 15000 gold in 1500 AD and 45000 gold in 1700 AD</English>
-		<French>Have 15000 gold in 1500 AD and 45000 gold in 1700 ap. J.-C.</French>
+		<French>Avoir 15000 or en 1500 ap. J.-C. et 45000 or en 1700 ap. J.-C.</French>
 		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 15000 Gold und im Jahr 1700 n. Chr. &#252;ber 45.000 Gold</German>
 		<Italian>Have 15000 gold in 1500 AD and 45000 gold in 1700 AD</Italian>
 		<Spanish>Have 15000 gold in 1500 AD and 45000 gold in 1700 AD</Spanish>
@@ -1860,7 +1860,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
 		<English>The Sun</English>
-		<French>The Sun</French>
+		<French>Le soleil </French>
 		<German>Die Sonne</German>
 		<Italian>The Sun</Italian>
 		<Spanish>The Sun</Spanish>
@@ -1868,7 +1868,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1</Tag>
 		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>Discover Writing and Mathematics by 600 ap. J.-C.</French>
+		<French>Découvrir l'écriture et les mathématiques avant 600 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
 		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
 		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
@@ -1876,7 +1876,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
 		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>Discover Writing and Mathematics by 600 ap. J.-C.</French>
+		<French>Découvrir l'écriture et les mathématiques avant 600 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
 		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
 		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
@@ -1884,7 +1884,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
 		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>Discover Writing and Mathematics by 600 ap. J.-C.</French>
+		<French>Découvrir l'écriture et les mathématiques avant 600 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
 		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
 		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
@@ -1892,7 +1892,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_NOTURN</Tag>
 		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>Discover Writing and Mathematics by 600 ap. J.-C.</French>
+		<French>Découvrir l'écriture et les mathématiques avant 600 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
 		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
 		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
@@ -1900,7 +1900,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
 		<English>The Gods</English>
-		<French>The Gods</French>
+		<French>Les dieux </French>
 		<German>Die G&#246;tter</German>
 		<Italian>The Gods</Italian>
 		<Spanish>The Gods</Spanish>
@@ -1908,7 +1908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2</Tag>
 		<English>Build the Temple of Kukulkan by 900 AD</English>
-		<French>Build the Temple of Kukulkan by 900 ap. J.-C.</French>
+		<French>Construire le Temple de Quetzalc&#243;atl avant 900 ap. J.-C.</French>
 		<German>Errichten Sie bis zum Jahr 900 n. Chr. die Pyramide des Kukulc&#225;n</German>
 		<Italian>Build the Temple of Kukulkan by 900 AD</Italian>
 		<Spanish>Build the Temple of Kukulkan by 900 AD</Spanish>
@@ -1916,7 +1916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3_TITLE</Tag>
 		<English>The Stars</English>
-		<French>The Stars</French>
+		<French>Les étoiles </French>
 		<German>Die Sterne</German>
 		<Italian>The Stars</Italian>
 		<Spanish>The Stars</Spanish>
@@ -1924,7 +1924,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3</Tag>
 		<English>Make contact with a European civilization before they discover America</English>
-		<French>Make contact with a European civilization before they discover America</French>
+		<French>Établir un contact avec une civilisation européenne avant qu'elle ne découvre l'Amérique</French>
 		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor diese Amerika entdecken</German>
 		<Italian>Make contact with a European civilization before they discover America</Italian>
 		<Spanish>Make contact with a European civilization before they discover America</Spanish>
@@ -1932,7 +1932,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
 		<English>Church and State</English>
-		<French>Church and State</French>
+		<French>L'Église et l'État </French>
 		<German>Kirche und Staat</German>
 		<Italian>Church and State</Italian>
 		<Spanish>Church and State</Spanish>
@@ -1940,7 +1940,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1</Tag>
 		<English>Build three cathedrals of your state religion by 1880 AD</English>
-		<French>Build three cathedrals of your state religion by 1880 ap. J.-C.</French>
+		<French>Construire trois cathédrales de votre religion d'État avant 1880 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 1880 n. Chr. drei Kathedralen Ihrer Staatsreligion</German>
 		<Italian>Build three cathedrals of your state religion by 1880 AD</Italian>
 		<Spanish>Build three cathedrals of your state religion by 1880 AD</Spanish>
@@ -1948,7 +1948,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX2_TITLE</Tag>
 		<English>Revolutionary Leaders</English>
-		<French>Revolutionary Leaders</French>
+		<French>Chefs révolutionnaires </French>
 		<German>Revolutionsf&#252;hrer</German>
 		<Italian>Revolutionary Leaders</Italian>
 		<Spanish>Revolutionary Leaders</Spanish>
@@ -1956,7 +1956,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX2</Tag>
 		<English>Create three great generals by 1940 AD</English>
-		<French>Create three great generals by 1940 ap. J.-C.</French>
+		<French>Créer trois généraux illustres avant 1940 ap. J.-C.</French>
 		<German>Erstellen Sie bis zum Jahr 1940 n. Chr. drei Gro&#223;e Gener&#228;le</German>
 		<Italian>Create three great generals by 1940 AD</Italian>
 		<Spanish>Create three great generals by 1940 AD</Spanish>
@@ -1964,7 +1964,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX3_TITLE</Tag>
 		<English>The City of Palaces</English>
-		<French>The City of Palaces</French>
+		<French>La ville des palais </French>
 		<German>Die Stadt der Pal&#228;ste</German>
 		<Italian>The City of Palaces</Italian>
 		<Spanish>The City of Palaces</Spanish>
@@ -1972,7 +1972,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX3</Tag>
 		<English>Make Mexico City the largest city in the world in 1960 AD</English>
-		<French>Make Mexico City the largest city in the world in 1960 ap. J.-C.</French>
+		<French>Faire de Mexico la plus grande ville au monde en 1960 ap. J.-C.</French>
 		<German>Machen Sie Mexico-Stadt im Jahr 1960 n. Chr. zur gr&#246;&#223;ten Stadt der Welt</German>
 		<Italian>Make Mexico City the largest city in the world in 1960 AD</Italian>
 		<Spanish>Make Mexico City the largest city in the world in 1960 AD</Spanish>
@@ -1980,7 +1980,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON1_TITLE</Tag>
 		<English>The Yuan Dynasty</English>
-		<French>The Yuan Dynasty</French>
+		<French>La dynastie Yuan </French>
 		<German>Die Yuan-Dynastie</German>
 		<Italian>The Yuan Dynasty</Italian>
 		<Spanish>The Yuan Dynasty</Spanish>
@@ -1996,7 +1996,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON2_TITLE</Tag>
 		<English>The Scourge of God</English>
-		<French>The Scourge of God</French>
+		<French>Le fléau de Dieu </French>
 		<German>Die Gei&#223;el Gottes</German>
 		<Italian>The Scourge of God</Italian>
 		<Spanish>The Scourge of God</Spanish>
@@ -2012,7 +2012,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON3_TITLE</Tag>
 		<English>Pax Mongolica</English>
-		<French>Pax Mongolica</French>
+		<French>Pax Mongolica </French>
 		<German>Pax Mongolica</German>
 		<Italian>Pax Mongolica</Italian>
 		<Spanish>Pax Mongolica</Spanish>
@@ -2028,7 +2028,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO1_TITLE</Tag>
 		<English>Caliphate of Al-Andalus</English>
-		<French>Caliphate of Al-Andalus</French>
+		<French>Le califat d'Al-Andalus </French>
 		<German>Kaliphat von Al-Andalus</German>
 		<Italian>Caliphate of Al-Andalus</Italian>
 		<Spanish>Caliphate of Al-Andalus</Spanish>
@@ -2036,7 +2036,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO1</Tag>
 		<English>Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD</English>
-		<French>Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 ap. J.-C.</French>
+		<French>Contrôler trois villes au Maghreb et conquérir deux villes dans la péninsule Ibérique et en Afrique de l'Ouest en 1200 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei St&#228;dte im Maghreb und erobern Sie zwei Städte in Iberien und Westafrika</German>
 		<Italian>Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD</Italian>
 		<Spanish>Control three cities in the Maghreb and conquer two cities in Iberia and West Africa in 1200 AD</Spanish>
@@ -2044,7 +2044,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO2_TITLE</Tag>
 		<English>Jewel of the World</English>
-		<French>Jewel of the World</French>
+		<French>Le joyau du monde </French>
 		<German>Juwel der Welt</German>
 		<Italian>Jewel of the World</Italian>
 		<Spanish>Jewel of the World</Spanish>
@@ -2052,7 +2052,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO2</Tag>
 		<English>Build La Mezquita and settle a total of four great prophets, scientists or engineers in Cordoba by 1300 AD</English>
-		<French>Build La Mezquita and settle a total of four great prophets, scientists or engineers in Cordoba by 1300 ap. J.-C.</French>
+		<French>Construire La Mezquita et faire rejoindre à Cordoue un total de quatre prophèetes, savants ou ingénieurs illustres avant 1300 ap. J.-C.</French>
 		<German>Errichten Sie bis zum Jahr 1300 n. Chr. La Mezquita und siedeln Sie insgesamt vier gro&#223;e Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
 		<Italian>Build La Mezquita and settle a total of four great prophets, scientists or engineers in Cordoba by 1300 AD</Italian>
 		<Spanish>Build La Mezquita and settle a total of four great prophets, scientists or engineers in Cordoba by 1300 AD</Spanish>
@@ -2060,7 +2060,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3_TITLE</Tag>
 		<English>Barbary Corsairs</English>
-		<French>Barbary Corsairs</French>
+		<French>Corsaires barbaresques </French>
 		<German>Korsaren der Barbareskenk&#252;ste</German>
 		<Italian>Barbary Corsairs</Italian>
 		<Spanish>Barbary Corsairs</Spanish>
@@ -2068,7 +2068,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3</Tag>
 		<English>Acquire 3000 gold through piracy by 1650 AD</English>
-		<French>Acquire 3000 gold through piracy by 1650 ap. J.-C.</French>
+		<French>Amasser 3000 or par la piraterie avant 1650 ap. J.-C.</French>
 		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 3000 Gold durch Piraterie</German>
 		<Italian>Acquire 3000 gold through piracy by 1650 AD</Italian>
 		<Spanish>Acquire 3000 gold through piracy by 1650 AD</Spanish>
@@ -2076,7 +2076,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3_EPIC</Tag>
 		<English>Acquire 4500 gold through piracy by 1650 AD</English>
-		<French>Acquire 4500 gold through piracy by 1650 ap. J.-C.</French>
+		<French>Amasser 4500 or par la piraterie avant 1650 ap. J.-C.</French>
 		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 4500 Gold durch Piraterie</German>
 		<Italian>Acquire 4500 gold through piracy by 1650 AD</Italian>
 		<Spanish>Acquire 4500 gold through piracy by 1650 AD</Spanish>
@@ -2084,7 +2084,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3_MARATHON</Tag>
 		<English>Acquire 9000 gold through piracy by 1650 AD</English>
-		<French>Acquire 9000 gold through piracy by 1650 ap. J.-C.</French>
+		<French>Amasser 9000 or par la piraterie avant 1650 ap. J.-C.</French>
 		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 9000 Gold durch Piraterie</German>
 		<Italian>Acquire 9000 gold through piracy by 1650 AD</Italian>
 		<Spanish>Acquire 9000 gold through piracy by 1650 AD</Spanish>
@@ -2092,7 +2092,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1_TITLE</Tag>
 		<English>Muhammad ibn Tughluq</English>
-		<French>Muhammad ibn Tughluq</French>
+		<French>Mouhammed ibn Tughlûq </French>
 		<German>Muhammad ibn Tughluq</German>
 		<Italian>Muhammad ibn Tughluq</Italian>
 		<Spanish>Muhammad ibn Tughluq</Spanish>
@@ -2100,15 +2100,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
 		<English>Build three Islamic Grand Mosques by 1500 AD</English>
-		<French>Build three Islamic Grand Mosques by 1500 ap. J.-C.</French>
-		<German>Bauen Sie drei Islamische Gro�e Moscheen bis zum Jahr 1500 n. Chr.</German>
+		<French>Construire trois grandes mosquées islamiques avant 1500 ap. J.-C.</French>
+		<German>Bauen Sie drei Islamische Große Moscheen bis zum Jahr 1500 n. Chr.</German>
 		<Italian>Build three Islamic Grand Mosques by 1500 AD</Italian>
 		<Spanish>Build three Islamic Grand Mosques by 1500 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
 		<English>Shah Akbar</English>
-		<French>Shah Akbar</French>
+		<French>Shah Akbar </French>
 		<German>Schah Akbar</German>
 		<Italian>Shah Akbar</Italian>
 		<Spanish>Shah Akbar</Spanish>
@@ -2116,7 +2116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2</Tag>
 		<English>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</English>
-		<French>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 ap. J.-C.</French>
+		<French>Construire le Fort rouge, le Harmandir Sahib et le Taj Mahal avant 1660 ap. J.-C.</French>
 		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, Harmandir Sahib und den Taj Mahal.</German>
 		<Italian>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</Italian>
 		<Spanish>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</Spanish>
@@ -2124,7 +2124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3_TITLE</Tag>
 		<English>Shah Jahan</English>
-		<French>Shah Jahan</French>
+		<French>Shâh Jahân </French>
 		<German>Schah Dschahan</German>
 		<Italian>Shah Jahan</Italian>
 		<Spanish>Shah Jahan</Spanish>
@@ -2132,7 +2132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3</Tag>
 		<English>Have more than 50000 culture in 1750 AD</English>
-		<French>Have more than 50000 culture in 1750 ap. J.-C.</French>
+		<French>Avoir plus de 50 000 en culture en 1750 ap. J.-C.</French>
 		<German>Haben Sie mehr als 50000 Kulturpunkte im Jahr 1750 n. Chr.</German>
 		<Italian>Have more than 50000 culture in 1750 AD</Italian>
 		<Spanish>Have more than 50000 culture in 1750 AD</Spanish>
@@ -2140,7 +2140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3_EPIC</Tag>
 		<English>Have more than 75000 culture in 1750 AD</English>
-		<French>Have more than 75000 culture in 1750 ap. J.-C.</French>
+		<French>Avoir plus de 75 000 en culture en 1750 ap. J.-C.</French>
 		<German>Haben Sie mehr als 75000 Kulturpunkte im Jahr 1750 n. Chr.</German>
 		<Italian>Have more than 75000 culture in 1750 AD</Italian>
 		<Spanish>Have more than 75000 culture in 1750 AD</Spanish>
@@ -2148,7 +2148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3_MARATHON</Tag>
 		<English>Have more than 150000 culture in 1750 AD</English>
-		<French>Have more than 150000 culture in 1750 ap. J.-C.</French>
+		<French>Avoir plus de 150 000 en culture en 1750 ap. J.-C.</French>
 		<German>Haben Sie mehr als 150000 Kulturpunkte im Jahr 1750 n. Chr.</German>
 		<Italian>Have more than 150000 culture in 1750 AD</Italian>
 		<Spanish>Have more than 150000 culture in 1750 AD</Spanish>
@@ -2156,7 +2156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OTT1_TITLE</Tag>
 		<English>The Golden Apple</English>
-		<French>The Golden Apple</French>
+		<French>La pomme d'or </French>
 		<German>Der Goldene Apfel</German>
 		<Italian>The Golden Apple</Italian>
 		<Spanish>The Golden Apple</Spanish>
@@ -2164,7 +2164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OTT1</Tag>
 		<English>Have four non-obsolete wonders in your capital in 1550 AD</English>
-		<French>Have four non-obsolete wonders in your capital in 1550 ap. J.-C.</French>
+		<French>Avoir quatre merveilles non obsolètes dans votre capitale en 1550 ap. J.-C.</French>
 		<German>Haben Sie im Jahr 1550 n. Chr. vier nicht veraltete Wunder in Ihrer Hauptstadt</German>
 		<Italian>Have four non-obsolete wonders in your capital in 1550 AD</Italian>
 		<Spanish>Have four non-obsolete wonders in your capital in 1550 AD</Spanish>
@@ -2172,7 +2172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OTT2_TITLE</Tag>
 		<English>Empire on three Continents</English>
-		<French>Empire on three Continents</French>
+		<French>Un empire sur trois continents </French>
 		<German>Reich der drei Kontinente</German>
 		<Italian>Empire on three Continents</Italian>
 		<Spanish>Empire on three Continents</Spanish>
@@ -2180,7 +2180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OTT2</Tag>
 		<English>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD</English>
-		<French>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 ap. J.-C.</French>
+		<French>Contrôler la Méditerranée orientale, la mer Noire, Le Caire, La Mecque, Baghdad et Vienne avant 1700 ap. J.-C.</French>
 		<German>Kontrollieren Sie bis zum Jahr 1700 n. Chr. das &#246;stliche Mittelmeer, das Schwarze Meer, Kairo, Mekka, Bagdad und Wien</German>
 		<Italian>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD</Italian>
 		<Spanish>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD</Spanish>
@@ -2188,7 +2188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OTT3_TITLE</Tag>
 		<English>The Tulip Period</English>
-		<French>The Tulip Period</French>
+		<French>L'ère des tulipes </French>
 		<German>Die Tulpen-&#196;ra</German>
 		<Italian>The Tulip Period</Italian>
 		<Spanish>The Tulip Period</Spanish>
@@ -2196,7 +2196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OTT3</Tag>
 		<English>Have more culture than all European civilizations combined in 1800 AD</English>
-		<French>Have more culture than all European civilizations combined in 1800 ap. J.-C.</French>
+		<French>Avoir plus de culture que toutes les civilisations européennes mises ensemble en 1800 ap. J.-C.</French>
 		<German>Haben Sie im Jahr 1800 n. Chr. mehr Kultur als alle europ&#228;ischen Zivilisationen zusammen</German>
 		<Italian>Have more culture than all European civilizations combined in 1800 AD</Italian>
 		<Spanish>Have more culture than all European civilizations combined in 1800 AD</Spanish>
@@ -2204,7 +2204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
 		<English>The First Empire</English>
-		<French>The First Empire</French>
+		<French>Le premier empire </French>
 		<German>Das erste Gro&#223;reich</German>
 		<Italian>The First Empire</Italian>
 		<Spanish>The First Empire</Spanish>
@@ -2244,7 +2244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER2_TITLE</Tag>
 		<English>Seven Wonders of the World</English>
-		<French>Seven Wonders of the World</French>
+		<French>Sept merveilles du monde </French>
 		<German>Die Sieben Weltwunder</German>
 		<Italian>Seven Wonders of the World</Italian>
 		<Spanish>Seven Wonders of the World</Spanish>
@@ -2284,7 +2284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
 		<English>Land of Religions</English>
-		<French>Land of Religions</French>
+		<French>Terre des religions </French>
 		<German>Land der Religionen</German>
 		<Italian>Land of Religions</Italian>
 		<Spanish>Land of Religions</Spanish>
@@ -2292,7 +2292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3</Tag>
 		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<French>Contr&#244;ler 2 lieux saints en 350 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
 		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
 		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
@@ -2300,7 +2300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_EPIC</Tag>
 		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<French>Contr&#244;ler 2 lieux saints en 350 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
 		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
 		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
@@ -2308,7 +2308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_MARATHON</Tag>
 		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<French>Contr&#244;ler 2 lieux saints en 350 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
 		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
 		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
@@ -2316,7 +2316,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3_NOTURN</Tag>
 		<English>Control 2 holy city shrines in 350 AD</English>
-		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<French>Contr&#244;ler 2 lieux saints en 350 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
 		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
 		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
@@ -2324,7 +2324,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY1_TITLE</Tag>
 		<English>Oceanic Navigators</English>
-		<French>Oceanic Navigators</French>
+		<French>Navigateurs océaniques </French>
 		<German>Oceanic Navigators</German>
 		<Italian>Oceanic Navigators</Italian>
 		<Spanish>Oceanic Navigators</Spanish>
@@ -2332,7 +2332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY1</Tag>
 		<English>Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island</English>
-		<French>Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island</French>
+		<French>Coloniser deux des groupes d'îles suivants avant 800 ap. J.-C. : Hawaï, la Nouvelle-Zélande, les Marquises et l'Île de Pâques</French>
 		<German>Besiedeln Sie bis zum Jahr 800 n. Chr. die folgenden Inselgruppen: Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
 		<Italian>Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island</Italian>
 		<Spanish>Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island</Spanish>
@@ -2340,7 +2340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY2_TITLE</Tag>
 		<English>The Polynesian Triangle</English>
-		<French>The Polynesian Triangle</French>
+		<French>Le triangle polynésien </French>
 		<German>The Polynesian Triangle</German>
 		<Italian>The Polynesian Triangle</Italian>
 		<Spanish>The Polynesian Triangle</Spanish>
@@ -2348,7 +2348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY2</Tag>
 		<English>Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD</English>
-		<French>Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 ap. J.-C.</French>
+		<French>Coloniser Hawaï, la Nouvelle-Zélande, les Marquises et l'Île de Pâques avant 1000 ap. J.-C.</French>
 		<German>Besiedeln Sie bis zum Jahr 1000 n. Chr. Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
 		<Italian>Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD</Italian>
 		<Spanish>Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD</Spanish>
@@ -2356,7 +2356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY3_TITLE</Tag>
 		<English>Rano Raraku</English>
-		<French>Rano Raraku</French>
+		<French>Rano Raraku </French>
 		<German>Rano Raraku</German>
 		<Italian>Rano Raraku</Italian>
 		<Spanish>Rano Raraku</Spanish>
@@ -2364,7 +2364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY3</Tag>
 		<English>Build the Moai Statues by 1200 AD</English>
-		<French>Build the Moai Statues by 1200 ap. J.-C.</French>
+		<French>Construire les Statues moaï avant 1200 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
 		<Italian>Build the Moai Statues by 1200 AD</Italian>
 		<Spanish>Build the Moai Statues by 1200 AD</Spanish>
@@ -2372,7 +2372,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL1_TITLE</Tag>
 		<English>The Folwark System</English>
-		<French>The Folwark System</French>
+		<French>Le système des folwarki </French>
 		<German>Das Folwark-System</German>
 		<Italian>The Folwark System</Italian>
 		<Spanish>The Folwark System</Spanish>
@@ -2380,7 +2380,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL1</Tag>
 		<English>Have three cities of at least size 12 by 1400 AD</English>
-		<French>Have three cities of at least size 12 by 1400 ap. J.-C.</French>
+		<French>Avoir trois villes de taille 12 ou plus avant 1400 ap. J.-C.</French>
 		<German>Haben Sie bis zum Jahr 1400 n. Chr. drei St&#228;dte mit mindestens Gr&#246;&#223;e 12</German>
 		<Italian>Have three cities of at least size 12 by 1400 AD</Italian>
 		<Spanish>Have three cities of at least size 12 by 1400 AD</Spanish>
@@ -2388,7 +2388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL2_TITLE</Tag>
 		<English>Golden Liberty</English>
-		<French>Golden Liberty</French>
+		<French>Liberté dorée </French>
 		<German>Goldene Freiheit</German>
 		<Italian>Golden Liberty</Italian>
 		<Spanish>Golden Liberty</Spanish>
@@ -2396,7 +2396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL2</Tag>
 		<English>Be first to discover Civil Liberties</English>
-		<French>Be first to discover Civil Liberties</French>
+		<French>Être le premier à découvrir les libertés civiles</French>
 		<German>Entdecken Sie als erster Freiheitsrechte</German>
 		<Italian>Be first to discover Civil Liberties</Italian>
 		<Spanish>Be first to discover Civil Liberties</Spanish>
@@ -2404,7 +2404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL3_TITLE</Tag>
 		<English>The Commonwealth</English>
-		<French>The Commonwealth</French>
+		<French>La République aristocratique </French>
 		<German>Die Adelsrepublik</German>
 		<Italian>The Commonwealth</Italian>
 		<Spanish>The Commonwealth</Spanish>
@@ -2412,7 +2412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL3</Tag>
 		<English>Build three Christian Cathedrals by 1600 AD</English>
-		<French>Build three Christian Cathedrals by 1600 ap. J.-C.</French>
+		<French>Construire trois cathédrales chrétiennes avant 1600 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 1600 n. Chr. drei christliche Kathedralen</German>
 		<Italian>Build three Christian Cathedrals by 1600 AD</Italian>
 		<Spanish>Build three Christian Cathedrals by 1600 AD</Spanish>
@@ -2420,7 +2420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR1_TITLE</Tag>
 		<English>Cartaz</English>
-		<French>Cartaz</French>
+		<French>Cartaz </French>
 		<German>Cartaz</German>
 		<Italian>Cartaz</Italian>
 		<Spanish>Cartaz</Spanish>
@@ -2436,7 +2436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR2_TITLE</Tag>
 		<English>Age of Discovery</English>
-		<French>Age of Discovery</French>
+		<French>L'âge des découvertes </French>
 		<German>Zeitalter der Entdeckungen</German>
 		<Italian>Age of Discovery</Italian>
 		<Spanish>Age of Discovery</Spanish>
@@ -2444,7 +2444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR2</Tag>
 		<English>Acquire 12 trading company resources by 1650 AD</English>
-		<French>Acquire 12 trading company resources by 1650 ap. J.-C.</French>
+		<French>Acquérir 12 ressources associées à la compagnie commerciale avant 1650 ap. J.-C.</French>
 		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 12 Handelsgesellschaftsressourcen</German>
 		<Italian>Acquire 12 trading company resources by 1650 AD</Italian>
 		<Spanish>Acquire 12 trading company resources by 1650 AD</Spanish>
@@ -2452,7 +2452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR3_TITLE</Tag>
 		<English>Treaty of Tordesilhas</English>
-		<French>Treaty of Tordesilhas</French>
+		<French>Le traité de Tordesilhas</French>
 		<German>Vertrag von Tordesilhas</German>
 		<Italian>Treaty of Tordesilhas</Italian>
 		<Spanish>Treaty of Tordesilhas</Spanish>
@@ -2460,7 +2460,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR3</Tag>
 		<English>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</English>
-		<French>Control 15 colonies in Brazil, Africa and Asia in 1700 ap. J.-C.</French>
+		<French>Contrôler 15 colonies au Brésil, en Afrique et en Asie en 1700 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 1700 AD 15 Kolonien in Brasilien, Afrika und Asien</German>
 		<Italian>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</Italian>
 		<Spanish>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</Spanish>
@@ -2468,7 +2468,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_TITLE</Tag>
 		<English>Bread and Circuses</English>
-		<French>Bread and Circuses</French>
+		<French>Du pain et des jeux </French>
 		<German>Brot und Spiele</German>
 		<Italian>Bread and Circuses</Italian>
 		<Spanish>Bread and Circuses</Spanish>
@@ -2476,7 +2476,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
 		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 ap. J.-C.</French>
+		<French>Construire 6 casernes, 5 aqueducs, 4 amphithéâtres et 3 forums avant 100 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
 		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
@@ -2484,7 +2484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
 		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 ap. J.-C.</French>
+		<French>Construire 6 casernes, 5 aqueducs, 4 amphithéâtres et 3 forums avant 100 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
 		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
@@ -2492,7 +2492,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
 		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 ap. J.-C.</French>
+		<French>Construire 6 casernes, 5 aqueducs, 4 amphithéâtres et 3 forums avant 100 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
 		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
 		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
@@ -2500,7 +2500,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_NOTURN</Tag>
 		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 ap. J.-C.</French>
+		<French>Construire 6 casernes, 5 aqueducs, 4 amphithéâtres et 3 forums avant 100 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukten, 4 Amphitheatern und 3 Foren</German>
 		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
 		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
@@ -2508,7 +2508,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
 		<English>Pax Romana</English>
-		<French>Pax Romana</French>
+		<French>Pax Romana </French>
 		<German>Pax Romana</German>
 		<Italian>Pax Romana</Italian>
 		<Spanish>Pax Romana</Spanish>
@@ -2516,7 +2516,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
 		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<French>Control in 320 AD all the area historically known as the Roman Empire</French>
+		<French>Contrôler en 320 ap. J.-C. toute la zone ayant historiquement fait partie de l'Empire romain</French>
 		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
 		<Italian>Control in 320 AD all the area historically known as the Roman Empire</Italian>
 		<Spanish>Control in 320 AD all the area historically known as the Roman Empire</Spanish>
@@ -2524,7 +2524,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_EPIC</Tag>
 		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<French>Control in 320 AD all the area historically known as the Roman Empire</French>
+		<French>Contrôler en 320 ap. J.-C. toute la zone ayant historiquement fait partie de l'Empire romain</French>
 		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
 		<Italian>Control in 320 AD all the area historically known as the Roman Empire</Italian>
 		<Spanish>Control in 320 AD all the area historically known as the Roman Empire</Spanish>
@@ -2532,7 +2532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_MARATHON</Tag>
 		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<French>Control in 320 AD all the area historically known as the Roman Empire</French>
+		<French>Contrôler en 320 ap. J.-C. toute la zone ayant historiquement fait partie de l'Empire romain</French>
 		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
 		<Italian>Control in 320 AD all the area historically known as the Roman Empire</Italian>
 		<Spanish>Control in 320 AD all the area historically known as the Roman Empire</Spanish>
@@ -2540,7 +2540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_NOTURN</Tag>
 		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
-		<French>Control in 320 AD all the area historically known as the Roman Empire</French>
+		<French>Contrôler en 320 ap. J.-C. toute la zone ayant historiquement fait partie de l'Empire romain</French>
 		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
 		<Italian>Control in 320 AD all the area historically known as the Roman Empire</Italian>
 		<Spanish>Control in 320 AD all the area historically known as the Roman Empire</Spanish>
@@ -2548,7 +2548,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
 		<English>Late Antiquity</English>
-		<French>Late Antiquity</French>
+		<French>L'Antiquité tardive </French>
 		<German>Spätantike</German>
 		<Italian>Late Antiquity</Italian>
 		<Spanish>Late Antiquity</Spanish>
@@ -2556,7 +2556,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3</Tag>
 		<English>Be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service</English>
-		<French>Be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service</French>
+		<French>Être le premier à découvrir l'architecture, la politique, la scolastique, la mécanique et l'administration publique</French>
 		<German>Enforschen Sie vor allen anderen Zivilisationen Architektur, Politik, Gelehrsamkeit, Maschinen und &#214;ffentliche Verwaltung</German>
 		<Italian>Be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service</Italian>
 		<Spanish>Be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service</Spanish>
@@ -2564,7 +2564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS1_TITLE</Tag>
 		<English>Eastward Expansion</English>
-		<French>Eastward Expansion</French>
+		<French>Expansion vers l'est </French>
 		<German>Expansion nach Osten</German>
 		<Italian>Eastward Expansion</Italian>
 		<Spanish>Eastward Expansion</Spanish>
@@ -2572,7 +2572,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS1</Tag>
 		<English>Found 7 colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD</English>
-		<French>Found 7 colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 ap. J.-C.</French>
+		<French>Fonder 7 colonies en Sibérie avant 1700 ap. J.-C. et construire le chemin de fer transsibérien avant 1920 ap. J.-C.</French>
 		<German>Gr&#252;nden Sie bis zum Jahr 1700 n. Chr. 7 sibirische Kolonien und bauen Sie bis zum Jahr 1920 n. Chr. die transsibirische Eisenbahn</German>
 		<Italian>Found 7 colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD</Italian>
 		<Spanish>Found 7 colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD</Spanish>
@@ -2580,7 +2580,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2_TITLE</Tag>
 		<English>The Cold War</English>
-		<French>The Cold War</French>
+		<French>La Guerre froide </French>
 		<German>Der Kalte Krieg</German>
 		<Italian>The Cold War</Italian>
 		<Spanish>The Cold War</Spanish>
@@ -2588,7 +2588,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2</Tag>
 		<English>Be the first civilization to complete the Manhattan Project and the Apollo Program</English>
-		<French>Be the first civilization to complete the Manhattan Project and the Apollo Program</French>
+		<French>Être la première civilisation à compléter le projet Manhattan et le programme Apollo</French>
 		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und das Apollo-Programm vervollst&#228;ndigt</German>
 		<Italian>Be the first civilization to complete the Manhattan Project and the Apollo Program</Italian>
 		<Spanish>Be the first civilization to complete the Manhattan Project and the Apollo Program</Spanish>
@@ -2596,7 +2596,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3_TITLE</Tag>
 		<English>The Iron Curtain</English>
-		<French>The Iron Curtain</French>
+		<French>Le rideau de fer </French>
 		<German>Der Eiserne Vorhang</German>
 		<Italian>The Iron Curtain</Italian>
 		<Spanish>The Iron Curtain</Spanish>
@@ -2604,7 +2604,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3</Tag>
 		<English>Have friendly relations with 5 communist civilisations by 1950 AD</English>
-		<French>Have friendly relations with 5 communist civilisations by 1950 ap. J.-C.</French>
+		<French>Avoir des relations enthousiastes avec 5 civilisations communistes avant 1950 ap. J.-C.</French>
 		<German>Haben Sie bis zum Jahr 1950 n. Chr. freundliche Beziehungen zu 5 kommunistischen Zivilisationen</German>
 		<Italian>Have friendly relations with 5 communist civilisations by 1950 AD</Italian>
 		<Spanish>Have friendly relations with 5 communist civilisations by 1950 AD</Spanish>
@@ -2612,7 +2612,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
 		<English>Plus Ultra</English>
-		<French>Plus Ultra</French>
+		<French>Plus ultra </French>
 		<German>Plus Ultra</German>
 		<Italian>Plus Ultra</Italian>
 		<Spanish>Plus Ultra</Spanish>
@@ -2620,7 +2620,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1</Tag>
 		<English>Be the first to found a colony in America</English>
-		<French>Etre le premier &#224; fonder une ville en Am&#233;rique</French>
+		<French>Être le premier &#224; fonder une colonie en Am&#233;rique</French>
 		<German>Gr&#252;nden Sie vor allen anderen Zivilisationen die erste Kolonie in Amerika</German>
 		<Italian>Devi essere il primo a fondare una citt&#224; in America</Italian>
 		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
@@ -2628,7 +2628,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA2_TITLE</Tag>
 		<English>The Treasure Fleet</English>
-		<French>The Treasure Fleet</French>
+		<French>La flotte des Indes </French>
 		<German>Die Schatzflotte</German>
 		<Italian>The Treasure Fleet</Italian>
 		<Spanish>The Treasure Fleet</Spanish>
@@ -2636,7 +2636,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA2</Tag>
 		<English>Secure a total of 10 silver and gold resources by 1650 AD</English>
-		<French>Secure a total of 10 silver and gold resources by 1650 ap. J.-C.</French>
+		<French>Sécuriser un total de 10 ressources d'argent et d'or avant 1650 ap. J.-C.</French>
 		<German>Erschlie&#223;en Sie bis zum Jahr 1650 n. Chr. insgesamt 10 Silber- und Goldvorkommen</German>
 		<Italian>Secure a total of 10 silver and gold resources by 1650 AD</Italian>
 		<Spanish>Secure a total of 10 silver and gold resources by 1650 AD</Spanish>
@@ -2644,7 +2644,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA3_TITLE</Tag>
 		<English>Soldiers of God</English>
-		<French>Soldiers of God</French>
+		<French>Les soldats de Dieu </French>
 		<German>Soldaten Gottes</German>
 		<Italian>Soldiers of God</Italian>
 		<Spanish>Soldiers of God</Spanish>
@@ -2652,7 +2652,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA3</Tag>
 		<English>Spread Catholicism to 30% of the world population and allow no Protestant civilizations in Europe in 1650 AD</English>
-		<French>Spread Catholicism to 30% of the world population and allow no Protestant civilizations in Europe in 1650 ap. J.-C.</French>
+		<French>Propager le catholicisme à 30% de la population mondiale et empêcher la présence de civilisations protestantes en Europe en 1650 ap. J.-C.</French>
 		<German>Verbreiten Sie den Katholizismus zu 30% der Weltbev&#246;lkerung und erlauben sie im Jahr 1650 n. Chr. keine protestantischen Zivilisationen in Europa</German>
 		<Italian>Spread Catholicism to 30% of the world population and allow no Protestant civilizations in Europe in 1650 AD</Italian>
 		<Spanish>Spread Catholicism to 30% of the world population and allow no Protestant civilizations in Europe in 1650 AD</Spanish>
@@ -2660,7 +2660,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
 		<English>The Sangam Period</English>
-		<French>The Sangam Period</French>
+		<French>La période Sangam </French>
 		<German>Die Sangam-&#196;ra</German>
 		<Italian>The Sangam Period</Italian>
 		<Spanish>The Sangam Period</Spanish>
@@ -2668,7 +2668,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1</Tag>
 		<English>Have 3000 gold and 2000 culture in 800 AD</English>
-		<French>Have 3000 gold and 2000 culture in 800 ap. J.-C.</French>
+		<French>Avoir 3000 or et 2000 en culture en 800 ap. J.-C.</French>
 		<German>Haben Sie im Jahr 800 n. Chr. 3000 Gold und 2000 Kultur</German>
 		<Italian>Have 3000 gold and 2000 culture in 800 AD</Italian>
 		<Spanish>Have 3000 gold and 2000 culture in 800 AD</Spanish>
@@ -2676,7 +2676,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_EPIC</Tag>
 		<English>Have 4500 gold and 3000 culture in 800 AD</English>
-		<French>Have 4500 gold and 3000 culture in 800 ap. J.-C.</French>
+		<French>Avoir 4500 or et 3000 en culture en 800 ap. J.-C.</French>
 		<German>Haben Sie im Jahr 800 n. Chr. 4500 Gold und 3000 Kultur</German>
 		<Italian>Have 4500 gold and 3000 culture in 800 AD</Italian>
 		<Spanish>Have 4500 gold and 3000 culture in 800 AD</Spanish>
@@ -2684,7 +2684,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_MARATHON</Tag>
 		<English>Have 9000 gold and 6000 culture in 800 AD</English>
-		<French>Have 9000 gold and 6000 culture in 800 ap. J.-C.</French>
+		<French>Avoir 9000 or et 6000 en culture en 800 ap. J.-C.</French>
 		<German>Haben Sie im Jahr 800 n. Chr. 9000 Gold und 6000 Kultur</German>
 		<Italian>Have 9000 gold and 6000 culture in 800 AD</Italian>
 		<Spanish>Have 9000 gold and 6000 culture in 800 AD</Spanish>
@@ -2692,7 +2692,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM2_TITLE</Tag>
 		<English>The Chola Empire</English>
-		<French>The Chola Empire</French>
+		<French>L'empire Chola </French>
 		<German>Das Chola-Reich</German>
 		<Italian>The Chola Empire</Italian>
 		<Spanish>The Chola Empire</Spanish>
@@ -2700,7 +2700,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM2</Tag>
 		<English>Control or vassalize the Deccan and Srivijaya in 1000 AD</English>
-		<French>Control or vassalize the Deccan and Srivijaya in 1000 ap. J.-C.</French>
+		<French>Contrôler ou vassaliser le Deccan et Sriwijaya en 1000 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 1000 n. Chr. Srivijaya und den Dekkan direkt oder per Vasall</German>
 		<Italian>Control or vassalize the Deccan and Srivijaya in 1000 AD</Italian>
 		<Spanish>Control or vassalize the Deccan and Srivijaya in 1000 AD</Spanish>
@@ -2708,7 +2708,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM3_TITLE</Tag>
 		<English>Indian Ocean Trade</English>
-		<French>Indian Ocean Trade</French>
+		<French>Commerce dans l'océan Indien </French>
 		<German>Der Indische Ozean-Handel</German>
 		<Italian>Indian Ocean Trade</Italian>
 		<Spanish>Indian Ocean Trade</Spanish>
@@ -2716,7 +2716,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM3</Tag>
 		<English>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
-		<French>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions) by 1200 ap. J.-C.</French>
+		<French>Amasser 4000 or par le commerce (routes commerciales, diplomatie, missions commerciales) avant 1200 ap. J.-C.</French>
 		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 4000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 		<Italian>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Italian>
 		<Spanish>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Spanish>
@@ -2724,7 +2724,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM3_EPIC</Tag>
 		<English>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
-		<French>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions) by 1200 ap. J.-C.</French>
+		<French>Amasser 6000 or par le commerce (routes commerciales, diplomatie, missions commerciales) avant 1200 ap. J.-C.</French>
 		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 6000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 		<Italian>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Italian>
 		<Spanish>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Spanish>
@@ -2732,7 +2732,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM3_MARATHON</Tag>
 		<English>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
-		<French>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 ap. J.-C.</French>
+		<French>Amasser 12 000 or par le commerce (routes commerciales, diplomatie, missions commerciales) avant 1200 ap. J.-C.</French>
 		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 12000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 		<Italian>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Italian>
 		<Spanish>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Spanish>
@@ -2740,7 +2740,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
 		<English>The King and I</English>
-		<French>The King and I</French>
+		<French>Le Roi et moi </French>
 		<German>Der K&#246;nig und ich</German>
 		<Italian>The King and I</Italian>
 		<Spanish>The King and I</Spanish>
@@ -2748,7 +2748,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1</Tag>
 		<English>Have open borders with 10 civilizations by 1650 AD</English>
-		<French>Have open borders with 10 civilizations by 1650 ap. J.-C.</French>
+		<French>Avoir un accord de libre passage avec 10 civilisations avant 1650 ap. J.-C.</French>
 		<German>Haben Sie bis zum Jahr 1650 n. Chr. offene Grenzen mit 10 Zivilisationen</German>
 		<Italian>Have open borders with 10 civilizations by 1650 AD</Italian>
 		<Spanish>Have open borders with 10 civilizations by 1650 AD</Spanish>
@@ -2756,7 +2756,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA2_TITLE</Tag>
 		<English>Venice of the East</English>
-		<French>Venice of the East</French>
+		<French>La Venise de l'Orient </French>
 		<German>Venedig des Ostens</German>
 		<Italian>Venice of the East</Italian>
 		<Spanish>Venice of the East</Spanish>
@@ -2764,7 +2764,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA2</Tag>
 		<English>Make Ayutthaya the most populous city in the world in 1700 AD</English>
-		<French>Make Ayutthaya the most populous city in the world in 1700 ap. J.-C.</French>
+		<French>Faire d'Ayutthaya la ville la plus peuplée au monde en 1700 ap. J.-C.</French>
 		<German>Machen Sie Ayutthaya zur bev&#246;lkerungsreichsten Stadt der Welt im Jahr 1700 n. Chr.</German>
 		<Italian>Make Ayutthaya the most populous city in the world in 1700 AD</Italian>
 		<Spanish>Make Ayutthaya the most populous city in the world in 1700 AD</Spanish>
@@ -2772,7 +2772,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA3_TITLE</Tag>
 		<English>The Circle of Power</English>
-		<French>The Circle of Power</French>
+		<French>Le cercle du pouvoir </French>
 		<German>Der Kreis der Macht</German>
 		<Italian>The Circle of Power</Italian>
 		<Spanish>The Circle of Power</Spanish>
@@ -2780,7 +2780,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA3</Tag>
 		<English>Allow no foreign powers in Southern Asia in 1900 AD</English>
-		<French>Allow no foreign powers in Southern Asia in 1900 ap. J.-C.</French>
+		<French>Empêcher la présence de puissances étrangères en Asie du Sud en 1900 ap. J.-C.</French>
 		<German>Lassen Sie im Jahr 1900 n. Chr. keine ausl&#228;ndischen M&#228;chte im s&#252;dlichen Asien zu</German>
 		<Italian>Allow no foreign powers in Southern Asia in 1900 AD</Italian>
 		<Spanish>Allow no foreign powers in Southern Asia in 1900 AD</Spanish>
