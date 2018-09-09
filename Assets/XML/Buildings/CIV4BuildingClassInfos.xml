@@ -587,6 +587,15 @@
 			<DefaultBuilding>BUILDING_SOLAR_PLANT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FIBER_NETWORK</Type>
+			<Description>TXT_KEY_BUILDING_FIBER_NETWORK</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FIBER_NETWORK</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_AUTOMATED_FACTORY</Type>
 			<Description>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

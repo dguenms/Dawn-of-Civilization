@@ -2942,6 +2942,14 @@
 		<Spanish>Vertical Farm</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FIBER_NETWORK</Tag>
+		<English>Fiber Network</English>
+		<French>Fiber Network</French>
+		<German>Glasfasernetzwerk</German>
+		<Italian>Fiber Network</Italian>
+		<Spanish>Fiber Network</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
