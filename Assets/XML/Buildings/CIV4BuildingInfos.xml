@@ -4878,6 +4878,30 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BUNKER</BuildingClass>
+			<Type>BUILDING_BUNKER</Type>
+			<Description>TXT_KEY_BUILDING_BUNKER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BUNKER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BUNKER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BUNKER</ArtDefineTag>
+			<PrereqTech>TECH_ROCKETRY</PrereqTech>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAirModifier>-50</iAirModifier>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BOMB_SHELTER</BuildingClass>
 			<Type>BUILDING_BOMB_SHELTER</Type>
 			<SpecialBuildingType>SPECIALBUILDING_BOMB_SHELTER</SpecialBuildingType>
@@ -4933,30 +4957,6 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_BUNKER</BuildingClass>
-			<Type>BUILDING_BUNKER</Type>
-			<Description>TXT_KEY_BUILDING_BUNKER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_BUNKER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_BUNKER_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BUNKER</ArtDefineTag>
-			<PrereqTech>TECH_RADAR</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
-			<iCost>100</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
-			<iAirModifier>-50</iAirModifier>
-			<iAsset>1</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SECURITY_BUREAU</BuildingClass>
 			<Type>BUILDING_SECURITY_BUREAU</Type>
 			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
@@ -4983,6 +4983,37 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CONTAINER_TERMINAL</BuildingClass>
+			<Type>BUILDING_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONTAINER_TERMINAL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONTAINER_TERMINAL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CONTAINER_TERMINAL</ArtDefineTag>
+			<PrereqTech>TECH_RADAR</PrereqTech>
+			<bWater>1</bWater>
+			<iCost>300</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>10</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -5125,37 +5156,6 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CONTAINER_TERMINAL</BuildingClass>
-			<Type>BUILDING_CONTAINER_TERMINAL</Type>
-			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CONTAINER_TERMINAL_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CONTAINER_TERMINAL_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CONTAINER_TERMINAL</ArtDefineTag>
-			<PrereqTech>TECH_ROBOTICS</PrereqTech>
-			<bWater>1</bWater>
-			<iCost>300</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>10</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
-			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
-			<iAsset>4</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
