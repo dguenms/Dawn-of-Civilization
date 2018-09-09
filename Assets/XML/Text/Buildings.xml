@@ -2982,6 +2982,14 @@
 		<Spanish>Fiber Network</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUPERCOMPUTER</Tag>
+		<English>Supercomputer</English>
+		<French>Supercomputer</French>
+		<German>Supercomputer</German>
+		<Italian>Supercomputer</Italian>
+		<Spanish>Supercomputer</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
