@@ -10741,7 +10741,27 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	// Leoreth
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
-		setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_BONUS_PLOTS", GC.getBonusInfo((BonusTypes)iI).getText()).c_str(), L": ", L"", kBuilding.getBonusYieldChangeArray(iI));
+		szTempBuffer.Format(L"");
+		bool bFound = false;
+		for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+		{
+			if (kBuilding.getBonusYieldChange(iI, iJ) != 0)
+			{
+				if (bFound)
+				{
+					szTempBuffer += L", ";
+				}
+
+				szTempBuffer += CvWString::format(L"%s%d%c", kBuilding.getBonusYieldChange(iI, iJ) > 0 ? L"+" : L"", kBuilding.getBonusYieldChange(iI, iJ), GC.getYieldInfo((YieldTypes)iJ).getChar());
+				bFound = true;
+			}
+		}
+
+		if (bFound)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_IMPROVED_RESOURCE_YIELDS", szTempBuffer.c_str(), GC.getBonusInfo((BonusTypes)iI).getText()));
+		}
 	}
 
 	// Leoreth

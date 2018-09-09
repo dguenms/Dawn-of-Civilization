@@ -483,14 +483,6 @@
 		<Spanish>[ICON_BULLET]%d1_Num Free Technologies From Your Current Or Earlier Eras</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BONUS_PLOTS</Tag>
-		<English>Improved [LINK=literal]%s1[\LINK] Tiles</English>
-		<French>Improved [LINK=literal]%s1[\LINK] Tiles</French>
-		<German>[LINK=literal]%s1[\LINK]-Gel&#228;ndefelder mit Verbesserung</German>
-		<Italian>Improved [LINK=literal]%s1[\LINK] Tiles</Italian>
-		<Spanish>Improved [LINK=literal]%s1[\LINK] Tiles</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CITY_LIBERATE_MINOR</Tag>
 		<English>Grant independence to %s1_city</English>
 		<French>Grant independence to %s1_city</French>
@@ -2689,6 +2681,14 @@
 		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Kapitalgesellschaften</German>
 		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Italian>
 		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVED_RESOURCE_YIELDS</Tag>
+		<English>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</English>
+		<French>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</French>
+		<German>[ICON_BULLET]%s1 auf verbesserten [LINK=literal]%s2[\LINK] Rohstoffen</German>
+		<Italian>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</Italian>
+		<Spanish>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
