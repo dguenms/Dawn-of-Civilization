@@ -770,7 +770,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FALLOUT</FeatureType>
-					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
+					<PrereqTech>TECH_NANOTECHNOLOGY</PrereqTech>
 					<iTime>2000</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>

@@ -262,6 +262,12 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -317,6 +323,12 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_CHEMISTRY</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
 					</TechYields>
@@ -661,6 +673,13 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -728,6 +747,14 @@
 					<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_NANOTECHNOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -866,6 +893,14 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
@@ -918,6 +953,14 @@
 				</TechYieldChange>
 				<TechYieldChange>
 					<PrereqTech>TECH_ELECTRICITY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1066,6 +1109,14 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1312,6 +1363,14 @@
 						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_ROBOTICS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -1416,6 +1475,12 @@
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_GENETICS</PrereqTech>
+					<TechYields>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -1551,15 +1616,32 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
+						<iYieldChange>2</iYieldChange>
 						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
-			<RouteYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_AUTOMATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_RAILROAD</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1608,7 +1690,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_AUTOMATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1679,6 +1770,14 @@
 			<TechYieldChanges>
 				<TechYieldChange>
 					<PrereqTech>TECH_CROP_ROTATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1911,6 +2010,12 @@
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
+				<TechYieldChange>
+					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
 			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
@@ -2060,7 +2165,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_TOURISM</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>

@@ -497,6 +497,15 @@
 			<DefaultBuilding>BUILDING_AIRPORT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BUNKER</Type>
+			<Description>TXT_KEY_BUILDING_BUNKER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_BUNKER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BOMB_SHELTER</Type>
 			<Description>TXT_KEY_BUILDING_BOMB_SHELTER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -515,15 +524,6 @@
 			<DefaultBuilding>BUILDING_HYDRO_PLANT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_BUNKER</Type>
-			<Description>TXT_KEY_BUILDING_BUNKER</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_BUNKER</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SECURITY_BUREAU</Type>
 			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -531,6 +531,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SECURITY_BUREAU</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CONTAINER_TERMINAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NUCLEAR_PLANT</Type>
@@ -567,15 +576,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_RECYCLING_CENTER</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CONTAINER_TERMINAL</Type>
-			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_CONTAINER_TERMINAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LOGISTICS_CENTER</Type>
