@@ -4256,7 +4256,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
 					<BuildingType>BUILDING_PERSIAN_APOTHECARY</BuildingType>
 				</Building>
 				<Building>
