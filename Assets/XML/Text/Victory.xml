@@ -2788,7 +2788,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB1_TITLE</Tag>
 		<English>The Tibetan Empire</English>
-		<French>The Tibetan Empire</French>
+		<French>L'empire du Tibet </French>
 		<German>Das tibetanische Reich</German>
 		<Italian>The Tibetan Empire</Italian>
 		<Spanish>The Tibetan Empire</Spanish>
@@ -2796,7 +2796,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB1</Tag>
 		<English>Acquire 5 cities by 1000 AD</English>
-		<French>Acquire 5 cities by 1000 ap. J.-C.</French>
+		<French>Acquérir 5 villes avant 1000 ap. J.-C.</French>
 		<German>Erlangen Sie bis zum Jahr 1000 n. Chr. 5 St&#228;dte</German>
 		<Italian>Acquire 5 cities by 1000 AD</Italian>
 		<Spanish>Acquire 5 cities by 1000 AD</Spanish>
@@ -2804,7 +2804,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB2_TITLE</Tag>
 		<English>Tibetan Buddhism</English>
-		<French>Tibetan Buddhism</French>
+		<French>Bouddhisme tibétain </French>
 		<German>Tibetan Buddhism</German>
 		<Italian>Tibetan Buddhism</Italian>
 		<Spanish>Tibetan Buddhism</Spanish>
@@ -2812,7 +2812,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB2</Tag>
 		<English>Spread Buddhism to 25% by 1400 AD</English>
-		<French>Spread Buddhism to 25% by 1400 ap. J.-C.</French>
+		<French>Propager le bouddhisme à 25% avant 1400 ap. J.-C.</French>
 		<German>Verbreiten Sie bis zum Jahr 1400 n. Chr. den Buddhismus auf 25%</German>
 		<Italian>Spread Buddhism to 25% by 1400 AD</Italian>
 		<Spanish>Spread Buddhism to 25% by 1400 AD</Spanish>
@@ -2820,7 +2820,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB3_TITLE</Tag>
 		<English>The Dalai Lamas</English>
-		<French>The Dalai Lamas</French>
+		<French>Les dalaï-lamas </French>
 		<German>Die Dalai Lamas</German>
 		<Italian>The Dalai Lamas</Italian>
 		<Spanish>The Dalai Lamas</Spanish>
@@ -2828,7 +2828,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB3</Tag>
 		<English>Settle 5 great prophets in Lhasa by 1700 AD</English>
-		<French>Settle 5 great prophets in Lhasa by 1700 ap. J.-C.</French>
+		<French>Faire rejoindre 5 prophètes illustres à Lhassa avant 1700 ap. J.-C.</French>
 		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. 5 gro&#223;e Propheten in Lhasa an</German>
 		<Italian>Settle 5 great prophets in Lhasa by 1700 AD</Italian>
 		<Spanish>Settle 5 great prophets in Lhasa by 1700 AD</Spanish>
@@ -2836,7 +2836,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR1_TITLE</Tag>
 		<English>The Khaganate</English>
-		<French>The Khaganate</French>
+		<French>Le khaganat </French>
 		<German>Das Gro&#223;khanat</German>
 		<Italian>The Khaganate</Italian>
 		<Spanish>The Khaganate</Spanish>
@@ -2844,7 +2844,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR1</Tag>
 		<English>Control 6% of the world and pillage 20 improvements by 900 AD</English>
-		<French>Control 6% of the world and pillage 20 improvements by 900 ap. J.-C.</French>
+		<French>Contrôler 6% du monde et piller 20 aménagements avant 900 ap. J.-C.</French>
 		<German>Kontrollieren Sie bis zum Jahr 900 n. Chr. 6% der Welt und plündern Sie 20 Verbesserungen</German>
 		<Italian>Control 6% of the world and pillage 20 improvements by 900 AD</Italian>
 		<Spanish>Control 6% of the world and pillage 20 improvements by 900 AD</Spanish>
@@ -2852,7 +2852,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR2_TITLE</Tag>
 		<English>The Silk Road</English>
-		<French>The Silk Road</French>
+		<French>La route de la soie </French>
 		<German>Die Seidenstra&#223;e</German>
 		<Italian>The Silk Road</Italian>
 		<Spanish>The Silk Road</Spanish>
@@ -2860,7 +2860,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR2</Tag>
 		<English>Create an overland trade route from any city in China to one of your Mediterranean ports and spread the Silk Route to 10 of your cities by 1100 AD</English>
-		<French>Create an overland trade route from any city in China to one of your Mediterranean ports and spread the Silk Route to 10 of your cities by 1100 ap. J.-C.</French>
+		<French>Connecter par la terre n'importe quelle ville en Chine avec un port méditerranéen sous votre contrôler et propager la route de la soie à 10 de vos villes avant 1100 ap. J.-C.</French>
 		<German>Errichten Sie bis zum Jahr 1100 n. Chr. eine Überlandroute von einer Stadt in China zu einem Ihrer Mittelmeerhafen und verbreiten Sie die Seidenstra&#223;e in 10 Ihrer Städte</German>
 		<Italian>Create an overland trade route from any city in China to one of your Mediterranean ports and spread the Silk Route to 10 of your cities by 1100 AD</Italian>
 		<Spanish>Create an overland trade route from any city in China to one of your Mediterranean ports and spread the Silk Route to 10 of your cities by 1100 AD</Spanish>
@@ -2868,7 +2868,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR3_TITLE</Tag>
 		<English>Patronage</English>
-		<French>Patronage</French>
+		<French>Mécénat </French>
 		<German>Mäzenat</German>
 		<Italian>Patronage</Italian>
 		<Spanish>Patronage</Spanish>
@@ -2876,7 +2876,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR3</Tag>
 		<English>Have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD and another capital with influential culture by 1400 AD</English>
-		<French>Have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD and another capital with influential culture by 1400 ap. J.-C.</French>
+		<French>Avoir une capitale avec une culture grandissante avant 900 ap. J.-C., une autre capitale avec une culture raffinée avant 1100 ap. J.-C., et une autre capitale avec une culture influente avant 1400 ap. J.-C.</French>
 		<German>Haben Sie bis zum Jahr 900 n. Chr. eine Hauptstadt mit wachsender Kultur, bis zum Jahr 1100 n. Chr. eine andere Hauptstadt mit fortgeschrittener Kultur und bis zum Jahr 1400 n. Chr. eine weitere Hauptstadt mit einflussreicher Kultur</German>
 		<Italian>Have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD and another capital with influential culture by 1400 AD</Italian>
 		<Spanish>Have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD and another capital with influential culture by 1400 AD</Spanish>
@@ -2884,7 +2884,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
 		<English>Norman Conquests</English>
-		<French>Norman Conquests</French>
+		<French>Les conquêtes normandes </French>
 		<German>Normannische Eroberungen</German>
 		<Italian>Norman Conquests</Italian>
 		<Spanish>Norman Conquests</Spanish>
@@ -2892,7 +2892,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK1</Tag>
 		<English>Control the core of another European civilization in 1050 AD</English>
-		<French>Control the core of another European civilization in 1050 ap. J.-C.</French>
+		<French>Contrôler le cœeur d'une autre civilisation européenne en 1050 ap. J.-C.</French>
 		<German>Kontrollieren Sie im Jahr 1050 n. Chr. das Kerngebiet einer anderen europ&#228;ischen Zivilisation</German>
 		<Italian>Control the core of another European civilization in 1050 AD</Italian>
 		<Spanish>Control the core of another European civilization in 1050 AD</Spanish>
@@ -2900,7 +2900,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK2_TITLE</Tag>
 		<English>Vinland Saga</English>
-		<French>Vinland Saga</French>
+		<French>La saga du Vinland </French>
 		<German>Die Vinland-Saga</German>
 		<Italian>Vinland Saga</Italian>
 		<Spanish>Vinland Saga</Spanish>
@@ -2908,7 +2908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK2</Tag>
 		<English>Found a city in America by 1100 AD</English>
-		<French>Found a city in America by 1100 ap. J.-C.</French>
+		<French>Fonder une ville en Amérique avant 1100 ap. J.-C.</French>
 		<German>Gr&#252;nden Sie bis 1100 n. Chr. eine Stadt in Amerika</German>
 		<Italian>Found a city in America by 1100 AD</Italian>
 		<Spanish>Found a city in America by 1100 AD</Spanish>
@@ -2916,7 +2916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3_TITLE</Tag>
 		<English>Danegeld</English>
-		<French>Danegeld</French>
+		<French>Danegeld </French>
 		<German>Danegeld</German>
 		<Italian>Danegeld</Italian>
 		<Spanish>Danegeld</Spanish>
@@ -2924,7 +2924,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3</Tag>
 		<English>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
-		<French>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 ap. J.-C.</French>
+		<French>Amasser 3000 or en pillant, en capturant des villes et en coulant des navires avant 1500 ap. J.-C.</French>
 		<German>Erwerben Sie bis 1500 n. Chr. 3000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
 		<Italian>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD</Italian>
 		<Spanish>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD</Spanish>
@@ -2932,7 +2932,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3_EPIC</Tag>
 		<English>Acquire 4500 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
-		<French>Acquire 4500 gold by pillaging, conquering cities and sinking ships by 1500 ap. J.-C.</French>
+		<French>Amasser 4500 or en pillant, en capturant des villes et en coulant des navires avant 1500 ap. J.-C.</French>
 		<German>Erwerben Sie bis 1500 n. Chr. 4500 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
 		<Italian>Acquire 4500 gold by pillaging, conquering cities and sinking ships by 1500 AD</Italian>
 		<Spanish>Acquire 4500 gold by pillaging, conquering cities and sinking ships by 1500 AD</Spanish>
@@ -2940,7 +2940,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3_MARATHON</Tag>
 		<English>Acquire 9000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
-		<French>Acquire 9000 gold by pillaging, conquering cities and sinking ships by 1500 ap. J.-C.</French>
+		<French>Amasser 9000 or en pillant, en capturant des villes et en coulant des navires avant 1500 ap. J.-C.</French>
 		<German>Erwerben Sie bis 1500 n. Chr. 9000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
 		<Italian>Acquire 9000 gold by pillaging, conquering cities and sinking ships by 1500 AD</Italian>
 		<Spanish>Acquire 9000 gold by pillaging, conquering cities and sinking ships by 1500 AD</Spanish>
@@ -2948,31 +2948,31 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
 		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
-		<French>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</French>
-		<German>Erw�hltes Volk: Haben Sie insgesamt 15 Gro�e Propheten, Wissenschaftler und Staatsm�nner in Ihren St�dten</German>
+		<French>Peuple élu : Avoir un total de 15 prophètes, savants et hommes d'État illustres dans vos villes</French>
+		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
 		<Italian>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</Italian>
 		<Spanish>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD2</Tag>
 		<English>Promised Land: Have legendary culture in the Jewish holy city</English>
-		<French>Promised Land: Have legendary culture in the Jewish holy city</French>
-		<German>Gelobtes Land: Haben Sie legend�re Kultur in der j�dischen heiligen Stadt</German>
+		<French>Terre promise : Avoir une culture légendaire dans la ville sainte du judaïsme</French>
+		<German>Gelobtes Land: Haben Sie legendäre Kultur in der jüdischen heiligen Stadt</German>
 		<Italian>Promised Land: Have legendary culture in the Jewish holy city</Italian>
 		<Spanish>Promised Land: Have legendary culture in the Jewish holy city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD3</Tag>
 		<English>Diaspora: Have friendly relations with six civilizations with a Jewish minority</English>
-		<French>Diaspora: Have friendly relations with six civilizations with a Jewish minority</French>
-		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer j�dischen Minderheit</German>
+		<French>Diaspora : Avoir des relations enthousiastes avec six civilisations comportant une minorité juive</French>
+		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jüdischen Minderheit</German>
 		<Italian>Diaspora: Have friendly relations with six civilizations with a Jewish minority</Italian>
 		<Spanish>Diaspora: Have friendly relations with six civilizations with a Jewish minority</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
 		<English>Sila: Be at peace for 100 turns</English>
-		<French>Sila: Be at peace for 100 turns</French>
+		<French>Sila : Être en paix pendant 100 tours</French>
 		<German>Sila: Haben Sie 100 Runden lang Frieden</German>
 		<Italian>Sila: Be at peace for 100 turns</Italian>
 		<Spanish>Sila: Be at peace for 100 turns</Spanish>
@@ -2980,7 +2980,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1_EPIC</Tag>
 		<English>Sila: Be at peace for 150 turns</English>
-		<French>Sila: Be at peace for 150 turns</French>
+		<French>Sila : Être en paix pendant 150 tours</French>
 		<German>Sila: Haben Sie 150 Runden lang Frieden</German>
 		<Italian>Sila: Be at peace for 150 turns</Italian>
 		<Spanish>Sila: Be at peace for 150 turns</Spanish>
@@ -2988,7 +2988,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1_MARATHON</Tag>
 		<English>Sila: Be at peace for 300 turns</English>
-		<French>Sila: Be at peace for 300 turns</French>
+		<French>Sila : Être en paix pendant 300 tours</French>
 		<German>Sila: Haben Sie 300 Runden lang Frieden</German>
 		<Italian>Sila: Be at peace for 300 turns</Italian>
 		<Spanish>Sila: Be at peace for 300 turns</Spanish>
@@ -2996,7 +2996,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD2</Tag>
 		<English>Nirvana: Have the highest approval rating in the world for 100 turns</English>
-		<French>Nirvana: Have the highest approval rating in the world for 100 turns</French>
+		<French>Nirvana : Avoir le taux d'approbation le plus élevé au monde pendant 100 tours</French>
 		<German>Nirwana: Haben Sie 100 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
 		<Italian>Nirvana: Have the highest approval rating in the world for 100 turns</Italian>
 		<Spanish>Nirvana: Have the highest approval rating in the world for 100 turns</Spanish>
@@ -3004,7 +3004,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD2_EPIC</Tag>
 		<English>Nirvana: Have the highest approval rating in the world for 150 turns</English>
-		<French>Nirvana: Have the highest approval rating in the world for 150 turns</French>
+		<French>Nirvana : Avoir le taux d'approbation le plus élevé au monde pendant 150 tours</French>
 		<German>Nirwana: Haben Sie 150 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
 		<Italian>Nirvana: Have the highest approval rating in the world for 150 turns</Italian>
 		<Spanish>Nirvana: Have the highest approval rating in the world for 150 turns</Spanish>
@@ -3012,7 +3012,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD2_MARATHON</Tag>
 		<English>Nirvana: Have the highest approval rating in the world for 300 turns</English>
-		<French>Nirvana: Have the highest approval rating in the world for 300 turns</French>
+		<French>Nirvana : Avoir le taux d'approbation le plus élevé au monde pendant 300 tours</French>
 		<German>Nirwana: Haben Sie 300 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
 		<Italian>Nirvana: Have the highest approval rating in the world for 300 turns</Italian>
 		<Spanish>Nirvana: Have the highest approval rating in the world for 300 turns</Spanish>
@@ -3020,7 +3020,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD3</Tag>
 		<English>Middle Way: Have cautious or better relations with all civilizations</English>
-		<French>Middle Way: Have cautious or better relations with all civilizations</French>
+		<French>Voie du milieu : Avoir de bonnes relations (se méfie, favorable ou enthousiaste) avec toutes les civilisations</French>
 		<German>Mittlerer Weg: Haben Sie mit allen Zivilisationen vorsichtige oder bessere Beziehungen</German>
 		<Italian>Middle Way: Have cautious or better relations with all civilizations</Italian>
 		<Spanish>Middle Way: Have cautious or better relations with all civilizations</Spanish>
@@ -3028,7 +3028,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CAT1</Tag>
 		<English>Holy See: Be Pope for 100 turns</English>
-		<French>Holy See: Be Pope for 100 turns</French>
+		<French>Saint-Siège : Être pape pendant 100 tours</French>
 		<German>Heiliger Stuhl: Halten Sie 100 Runden lang das Papstamt</German>
 		<Italian>Holy See: Be Pope for 100 turns</Italian>
 		<Spanish>Holy See: Be Pope for 100 turns</Spanish>
@@ -3036,7 +3036,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CAT1_EPIC</Tag>
 		<English>Holy See: Be Pope for 150 turns</English>
-		<French>Holy See: Be Pope for 150 turns</French>
+		<French>Saint-Siège : Être pape pendant 150 tours</French>
 		<German>Heiliger Stuhl: Halten Sie 150 Runden lang das Papstamt</German>
 		<Italian>Holy See: Be Pope for 150 turns</Italian>
 		<Spanish>Holy See: Be Pope for 150 turns</Spanish>
@@ -3044,7 +3044,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CAT1_MARATHON</Tag>
 		<English>Holy See: Be Pope for 300 turns</English>
-		<French>Holy See: Be Pope for 300 turns</French>
+		<French>Saint-Siège : Être pape pendant 300 tours</French>
 		<German>Heiliger Stuhl: Halten Sie 300 Runden lang das Papstamt</German>
 		<Italian>Holy See: Be Pope for 300 turns</Italian>
 		<Spanish>Holy See: Be Pope for 300 turns</Spanish>
@@ -3052,7 +3052,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CAT2</Tag>
 		<English>Holy Land: Control the Catholic shrine and make sure that at least 12 great prophets are settled in Catholic civilizations</English>
-		<French>Holy Land: Control the Catholic shrine and make sure that at least 12 great prophets are settled in Catholic civilizations</French>
+		<French>Terre sainte : Contrôler le lieu saint catholique et faire en sorte qu'au moins 12 prohètes illustres aient rejoint des villes de civilisations catholiques</French>
 		<German>Heiliges Land: Kontrollieren Sie den katholischen Schrein und stellen Sie sicher, dass mindestens 12 gro&#223;e Propheten in katholischen Zivilisationen angesiedelt sind</German>
 		<Italian>Holy Land: Control the Catholic shrine and make sure that at least 12 great prophets are settled in Catholic civilizations</Italian>
 		<Spanish>Holy Land: Control the Catholic shrine and make sure that at least 12 great prophets are settled in Catholic civilizations</Spanish>
@@ -3060,7 +3060,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CAT3</Tag>
 		<English>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</English>
-		<French>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</French>
+		<French>Sainte mission : Faire en sorte qu'au moins 50% du monde soit contrôlé par des civilisations catholiques</French>
 		<German>Heilige Mission: Stellen Sie sicher, dass mindestens 50% des Weltgebiets von katholischen Zivilisationen kontrolliert wird</German>
 		<Italian>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</Italian>
 		<Spanish>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</Spanish>
@@ -3068,7 +3068,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CON1</Tag>
 		<English>Harmony: Have friendly relations with five civilizations</English>
-		<French>Harmony: Have friendly relations with five civilizations</French>
+		<French>Harmonie : Avoir des relations enthousiastes avec cinq civilisations</French>
 		<German>Harmonie: Haben Sie freundliche Beziehungen mit f&#252;nf Zivilisationen</German>
 		<Italian>Harmony: Have friendly relations with five civilizations</Italian>
 		<Spanish>Harmony: Have friendly relations with five civilizations</Spanish>
@@ -3076,7 +3076,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CON2</Tag>
 		<English>Ritual: Have five wonders in the Confucian holy city</English>
-		<French>Ritual: Have five wonders in the Confucian holy city</French>
+		<French>Rituel : Avoir cinq merveilles dans la ville sainte du confucianisme</French>
 		<German>Ritual: Haben Sie f&#252;nf Wunder in der konfuzianistischen heiligen Stadt</German>
 		<Italian>Ritual: Have five wonders in the Confucian holy city</Italian>
 		<Spanish>Ritual: Have five wonders in the Confucian holy city</Spanish>
@@ -3084,7 +3084,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_CON3</Tag>
 		<English>Loyalty: Control an army of 200 non-obsolete melee or gunpowder units</English>
-		<French>Loyalty: Control an army of 200 non-obsolete melee or gunpowder units</French>
+		<French>Loyauté : Contrôler une armée de 200 unités non obsolètes de combat rapproché ou avec armes à feu</French>
 		<German>Loyalit&#228;t: Kontrollieren Sie eine Armee as 200 nicht-veralteten Nahkampf- oder Schie&#223;pulver-Einheiten</German>
 		<Italian>Loyalty: Control an army of 200 non-obsolete melee or gunpowder units</Italian>
 		<Spanish>Loyalty: Control an army of 200 non-obsolete melee or gunpowder units</Spanish>
@@ -3092,7 +3092,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_HIN1</Tag>
 		<English>Varna: Settle five different great people in the Hindu holy city</English>
-		<French>Varna: Settle five different great people in the Hindu holy city</French>
+		<French>Varna : Faire rejoindre cinq personnages illustres de types différents à la ville sainte de l'hindouisme</French>
 		<German>Varna: Siedeln Sie f&#252;nf verschiedene gro&#223;e Pers&#246;nlichkeiten in der hinduistischen heiligen Stadt an</German>
 		<Italian>Varna: Settle five different great people in the Hindu holy city</Italian>
 		<Spanish>Varna: Settle five different great people in the Hindu holy city</Spanish>
@@ -3100,7 +3100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_HIN2</Tag>
 		<English>Artha: Experience 24 turns of golden age</English>
-		<French>Artha: Experience 24 turns of golden age</French>
+		<French>Artha : Traverser 24 tours d'âge d'or</French>
 		<German>Artha: Erleben Sie 24 Runden Goldenes Zeitalter</German>
 		<Italian>Artha: Experience 24 turns of golden age</Italian>
 		<Spanish>Artha: Experience 24 turns of golden age</Spanish>
@@ -3108,7 +3108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_HIN2_EPIC</Tag>
 		<English>Artha: Experience 36 turns of golden age</English>
-		<French>Artha: Experience 36 turns of golden age</French>
+		<French>Artha : Traverser 36 tours d'âge d'or</French>
 		<German>Artha: Erleben Sie 36 Runden Goldenes Zeitalter</German>
 		<Italian>Artha: Experience 36 turns of golden age</Italian>
 		<Spanish>Artha: Experience 36 turns of golden age</Spanish>
@@ -3116,7 +3116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_HIN2_MARATHON</Tag>
 		<English>Artha: Experience 72 turns of golden age</English>
-		<French>Artha: Experience 72 turns of golden age</French>
+		<French>Artha : Traverser 72 tours d'âge d'or</French>
 		<German>Artha: Erleben Sie 72 Runden Goldenes Zeitalter</German>
 		<Italian>Artha: Experience 72 turns of golden age</Italian>
 		<Spanish>Artha: Experience 72 turns of golden age</Spanish>
@@ -3124,7 +3124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_HIN3</Tag>
 		<English>Kama: Make sure the five largest cities in the world are Hindu</English>
-		<French>Kama: Make sure the five largest cities in the world are Hindu</French>
+		<French>Kama : Faire en sorte que les cinq plus grandes villes du monde soient hindoues</French>
 		<German>Kama: Stellen Sie sicher, dass die f&#252;nf gr&#246;&#223;ten St&#228;dte der Welt hinduistisch sind</German>
 		<Italian>Kama: Make sure the five largest cities in the world are Hindu</Italian>
 		<Spanish>Kama: Make sure the five largest cities in the world are Hindu</Spanish>
@@ -3132,7 +3132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ISL1</Tag>
 		<English>Shahada: Spread Islam to 40%</English>
-		<French>Shahada: Spread Islam to 40%</French>
+		<French>Chahada : Propager l'islam à 40%</French>
 		<German>Schahada: Verbreiten Sie den Islam auf 40%</German>
 		<Italian>Shahada: Spread Islam to 40%</Italian>
 		<Spanish>Shahada: Spread Islam to 40%</Spanish>
@@ -3140,7 +3140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ISL2</Tag>
 		<English>Hajj: Settle seven great people in the Muslim holy city</English>
-		<French>Hajj: Settle seven great people in the Muslim holy city</French>
+		<French>Hajj : Faire rejoindre sept personnages illustres à la ville sainte de l'islam</French>
 		<German>Hadsch: Siedeln Sie sieben gro&#223;e Pers&#246;nlichkeiten in der muslimischen heiligen Stadt an</German>
 		<Italian>Hajj: Settle seven great people in the Muslim holy city</Italian>
 		<Spanish>Hajj: Settle seven great people in the Muslim holy city</Spanish>
@@ -3148,7 +3148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ISL3</Tag>
 		<English>Jihad: Control five shrines</English>
-		<French>Jihad: Control five shrines</French>
+		<French>Djihad : Contrôler cinq lieux saints</French>
 		<German>Dschihad: Kontrollieren Sie f&#252;nf Schreine</German>
 		<Italian>Jihad: Control five shrines</Italian>
 		<Spanish>Jihad: Control five shrines</Spanish>
@@ -3156,7 +3156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ORT1</Tag>
 		<English>Patriarchates: Build four Orthodox Cathedrals</English>
-		<French>Patriarchates: Build four Orthodox Cathedrals</French>
+		<French>Les patriarcats : Construire quatre cathédrales orthodoxes</French>
 		<German>Patriarchate: Bauen Sie vier orthodoxe Kathedralen</German>
 		<Italian>Patriarchates: Build four Orthodox Cathedrals</Italian>
 		<Spanish>Patriarchates: Build four Orthodox Cathedrals</Spanish>
@@ -3164,7 +3164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ORT2</Tag>
 		<English>Iconography: Make sure the five most cultured cities in the world are Orthodox</English>
-		<French>Iconography: Make sure the five most cultured cities in the world are Orthodox</French>
+		<French>Iconographie : Faire en sorte que les cinq villes plus plus cultivées au monde soient orthodoxes</French>
 		<German>Ikonographie: Stellen Sie sicher, dass die f&#252;nf kultiviertesten St&#228;dte der Welt orthodox sind</German>
 		<Italian>Iconography: Make sure the five most cultured cities in the world are Orthodox</Italian>
 		<Spanish>Iconography: Make sure the five most cultured cities in the world are Orthodox</Spanish>
@@ -3172,7 +3172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ORT3</Tag>
 		<English>Communion: Make sure there are no Catholic civilizations in the world</English>
-		<French>Communion: Make sure there are no Catholic civilizations in the world</French>
+		<French>Communion : Empêcher l'existence de civilisations catholiques dans le monde</French>
 		<German>Kommunion: Stellen Sie sicher, dass es in der Welt keine katholischen Zivilisationen gibt</German>
 		<Italian>Communion: Make sure there are no Catholic civilizations in the world</Italian>
 		<Spanish>Communion: Make sure there are no Catholic civilizations in the world</Spanish>
@@ -3180,7 +3180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL1</Tag>
 		<English>Make sure there are 15 pagan temples in the world</English>
-		<French>Make sure there are 15 pagan temples in the world</French>
+		<French>Faire en sorte qu'il existe 15 temples païens dans le monde</French>
 		<German>Stellen Sie sicher, dass es 15 heidnische Tempel in der Welt gibt</German>
 		<Italian>Make sure there are 15 pagan temples in the world</Italian>
 		<Spanish>Make sure there are 15 pagan temples in the world</Spanish>
@@ -3188,7 +3188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_ANUNNAKI</Tag>
 		<English>Have more wonders in your capital than any other city in the world</English>
-		<French>Have more wonders in your capital than any other city in the world</French>
+		<French>Posséder plus de merveilles dans votre capitale que dans toute autre ville au monde</French>
 		<German>Haben Sie mehr Wunder in Ihrer Hauptstadt als jede andere Stadt in der Welt</German>
 		<Italian>Have more wonders in your capital than any other city in the world</Italian>
 		<Spanish>Have more wonders in your capital than any other city in the world</Spanish>
@@ -3196,7 +3196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_ASATRU</Tag>
 		<English>Have five units of level five</English>
-		<French>Have five units of level five</French>
+		<French>Avoir cinq unités de niveau cinq</French>
 		<German>Haben Sie fünf Einheiten der Stufe fünf</German>
 		<Italian>Have five units of level five</Italian>
 		<Spanish>Have five units of level five</Spanish>
@@ -3204,7 +3204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_ATUA</Tag>
 		<English>Acquire four pearl resources and control 50 ocean tiles</English>
-		<French>Acquire four pearl resources and control 50 ocean tiles</French>
+		<French>Acquérir quatre ressources de perles et contrôler 50 cases d'océan</French>
 		<German>Erwerben Sie vier Perlen-Ressourcen und kontrollieren Sie 50 Ozean-Felder</German>
 		<Italian>Acquire four pearl resources and control 50 ocean tiles</Italian>
 		<Spanish>Acquire four pearl resources and control 50 ocean tiles</Spanish>
@@ -3212,7 +3212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_BAALISM</Tag>
 		<English>Make your capital the city with the highest trade income in the world</English>
-		<French>Make your capital the city with the highest trade income in the world</French>
+		<French>Faire de votre capitale la ville avec le revenu commercial le plus élevé</French>
 		<German>Machen Sie Ihre Hauptstadt zur Stadt mit dem höchsten Handelseinkommen der Welt</German>
 		<Italian>Make your capital the city with the highest trade income in the world</Italian>
 		<Spanish>Make your capital the city with the highest trade income in the world</Spanish>
@@ -3220,7 +3220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_DRUIDISM</Tag>
 		<English>Control 20 unimproved forest or marsh tiles</English>
-		<French>Control 20 unimproved forest or marsh tiles</French>
+		<French>Contrôler 20 cases non aménagées de forêt ou de marécages</French>
 		<German>Kontrollieren Sie 20 unverbesserte Wald- oder Marsch-Felder</German>
 		<Italian>Control 20 unimproved forest or marsh tiles</Italian>
 		<Spanish>Control 20 unimproved forest or marsh tiles</Spanish>
@@ -3228,7 +3228,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_INTI</Tag>
 		<English>Have more gold in your treasury than the rest of the world combined</English>
-		<French>Have more gold in your treasury than the rest of the world combined</French>
+		<French>Avoir plus d'or dans votre trésorerie que le reste du monde mis ensemble</French>
 		<German>Haben Sie mehr Gold in Ihrer Schatzkammer als der Rest der Welt zusammen</German>
 		<Italian>Have more gold in your treasury than the rest of the world combined</Italian>
 		<Spanish>Have more gold in your treasury than the rest of the world combined</Spanish>
@@ -3236,7 +3236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_MAZDAISM</Tag>
 		<English>Acquire six incense resources</English>
-		<French>Acquire six incense resources</French>
+		<French>Acquérir six ressources d'encens</French>
 		<German>Erwerben Sie sechs Weihrauch-Ressourcen</German>
 		<Italian>Acquire six incense resources</Italian>
 		<Spanish>Acquire six incense resources</Spanish>
@@ -3244,7 +3244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_OLYMPIANISM</Tag>
 		<English>Control ten wonders that require no state religion</English>
-		<French>Control ten wonders that require no state religion</French>
+		<French>Contrôler dix merveilles qui requièrent de ne pas avoir de religion d'État</French>
 		<German>Kontrollieren Sie zehn Wunder, die keine Staatsreligion erfordern</German>
 		<Italian>Control ten wonders that require no state religion</Italian>
 		<Spanish>Control ten wonders that require no state religion</Spanish>
@@ -3252,7 +3252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_PESEDJET</Tag>
 		<English>Be first to create three different types of great person</English>
-		<French>Be first to create three different types of great person</French>
+		<French>Être le premier à créer trois types différents de personnages illustres</French>
 		<German>Erhalten Sie als erster drei verschiedene Arten von großen Persönlichkeiten</German>
 		<Italian>Be first to create three different types of great person</Italian>
 		<Spanish>Be first to create three different types of great person</Spanish>
@@ -3260,7 +3260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_RODNOVERY</Tag>
 		<English>Acquire seven fur resources</English>
-		<French>Acquire seven fur resources</French>
+		<French>Aquérir sept ressources de fourrures</French>
 		<German>Erwerben Sie sieben Pelz-Ressourcen</German>
 		<Italian>Acquire seven fur resources</Italian>
 		<Spanish>Acquire seven fur resources</Spanish>
@@ -3268,7 +3268,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_SHENDAO</Tag>
 		<English>Control 25% of the world's population</English>
-		<French>Control 25% of the world's population</French>
+		<French>Contrôler 25% de la population mondiale</French>
 		<German>Kontrollieren Sie 25% der Weltbevölkerung</German>
 		<Italian>Control 25% of the world's population</Italian>
 		<Spanish>Control 25% of the world's population</Spanish>
@@ -3276,7 +3276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_SHINTO</Tag>
 		<English>Settle three great spies in your capital</English>
-		<French>Settle three great spies in your capital</French>
+		<French>Faire rejoindre trois espions illustres dans votre capitale</French>
 		<German>Siedeln Sie drei große Spione in Ihrer Hauptstadt an</German>
 		<Italian>Settle three great spies in your capital</Italian>
 		<Spanish>Settle three great spies in your capital</Spanish>
@@ -3284,7 +3284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TENGRI</Tag>
 		<English>Acquire eight horse resources</English>
-		<French>Acquire eight horse resources</French>
+		<French>Acquérir huit ressources de chevaux</French>
 		<German>Erwerben Sie acht Pferde-Ressourcen</German>
 		<Italian>Acquire eight horse resources</Italian>
 		<Spanish>Acquire eight horse resources</Spanish>
@@ -3292,7 +3292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TEOTL</Tag>
 		<English>Sacrifice ten slaves</English>
-		<French>Sacrifice ten slaves</French>
+		<French>Sacrifier dix esclaves</French>
 		<German>Opfern Sie zehn Sklaven</German>
 		<Italian>Sacrifice ten slaves</Italian>
 		<Spanish>Sacrifice ten slaves</Spanish>
@@ -3300,7 +3300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_TEOTL_MAYA</Tag>
 		<English>Acquire 50 food from combat</English>
-		<French>Acquire 50 food from combat</French>
+		<French>Acquérir 50 en nourriture par le combat</French>
 		<German>Erhalten Sie 50 Nahrung durch Kämpfe</German>
 		<Italian>Acquire 50 food from combat</Italian>
 		<Spanish>Acquire 50 food from combat</Spanish>
@@ -3308,7 +3308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
 		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
-		<French>Have 100 turns of cities celebrating "We Love the King" day</French>
+		<French>Avoir l'équivalent de 100 tours de villes célébrant "La fête du roi"</French>
 		<German>Haben Sie 100 Runden von Städten, die den "Wir leben den König"-Tag feiern</German>
 		<Italian>Have 100 turns of cities celebrating "We Love the King" day</Italian>
 		<Spanish>Have 100 turns of cities celebrating "We Love the King" day</Spanish>
@@ -3316,7 +3316,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_YORUBA</Tag>
 		<English>Acquire eight ivory resources and six gem resources</English>
-		<French>Acquire eight ivory resources and six gem resources</French>
+		<French>Acquérir huit ressources d'ivoire et six ressources de pierres précieuses</French>
 		<German>Erwerben Sie acht Elfenbein-Ressourcen und sechs Edelstein-Ressourcen</German>
 		<Italian>Acquire eight ivory resources and six gem resources</Italian>
 		<Spanish>Acquire eight ivory resources and six gem resources</Spanish>
@@ -3324,7 +3324,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL3</Tag>
 		<English>Don't allow more than half of your cities to have a religion</English>
-		<French>Don't allow more than half of your cities to have a religion</French>
+		<French>Ne pas permettre à plus de la moitié de vos villes d'avoir une religion</French>
 		<German>Erlauben Sie nicht mehr als der H&#228;lfte ihrer St&#228;dte, eine Religion zu haben</German>
 		<Italian>Don't allow more than half of your cities to have a religion</Italian>
 		<Spanish>Don't allow more than half of your cities to have a religion</Spanish>
@@ -3332,7 +3332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_PRO1</Tag>
 		<English>Enlightenment: Be first to discover Civil Liberties, Social Contract and Economics</English>
-		<French>tenment: Be first to discover Civil Liberties, Social Contract and Economics</French>
+		<French>Les Lumières : Être le premier à découvrir les libertés civiles, le contrat sociale et les sciences économiques</French>
 		<German>Aufkl&#228;rung: Entdecken Sie als erstes Freiheitsrechte, Gesellschaftsvertrag und Wirtschaftswissenschaften</German>
 		<Italian>tenment: Be first to discover Civil Liberties, Social Contract and Economics</Italian>
 		<Spanish>tenment: Be first to discover Civil Liberties, Social Contract and Economics</Spanish>
@@ -3340,7 +3340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_PRO2</Tag>
 		<English>Work Ethic: Make sure five great merchants and five great engineers are settled in Protestant civilizations</English>
-		<French>Work Ethic: Make sure five great merchants and five great engineers are settled in Protestant civilizations</French>
+		<French>Éthique du travail : Faire en sorte que cinq marchands illustres et cinq ingénieurs illustres aient rejoint des villes dans des civilisations protestantes</French>
 		<German>Arbeitsmoral: Stellen Sie sicher, dass f&#252;nf gro&#223;e H&#228;ndler und f&#252;nf gro&#223;e Ingeneure in protestantischen Zivilisation angesiedelt sind</German>
 		<Italian>Work Ethic: Make sure five great merchants and five great engineers are settled in Protestant civilizations</Italian>
 		<Spanish>Work Ethic: Make sure five great merchants and five great engineers are settled in Protestant civilizations</Spanish>
@@ -3348,7 +3348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_PRO3</Tag>
 		<English>Religious Freedom: Make sure at least half of all civilizations are Protestant or secular</English>
-		<French>Religious Freedom: Make sure at least half of all civilizations are Protestant or secular</French>
+		<French>Liberté religieuse : Faire en sorte qu'au moins la moitié de toutes les civilisations soient protestantes ou laïques</French>
 		<German>Religi&#246;se Freiheit: Stellen Sie sicher, dass mindestens die H&#228;lfte aller Zivilisationen protestantisch oder s&#228;kular sind</German>
 		<Italian>Religious Freedom: Make sure at least half of all civilizations are Protestant or secular</Italian>
 		<Spanish>Religious Freedom: Make sure at least half of all civilizations are Protestant or secular</Spanish>
@@ -3356,7 +3356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC1</Tag>
 		<English>Tolerance: Control the Cathedrals of all religions</English>
-		<French>Tolerance: Control the Cathedrals of all religions</French>
+		<French>Tolérance : Contrôler une cathédrale de chaque religion</French>
 		<German>Toleranz: Kontrollieren Sie die Kathedralen aller Religionen</German>
 		<Italian>Tolerance: Control the Cathedrals of all religions</Italian>
 		<Spanish>Tolerance: Control the Cathedrals of all religions</Spanish>
@@ -3364,23 +3364,23 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC2</Tag>
 		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
-		<French>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</French>
-		<German>Humanismus: Stellen Sie sicher, dass es in s�kularen Zivilisationen 25 Universit�ten, 10 Gro�e Wissenschaftler und 10 Gro�e Staatsm�nner gibt</German>
+		<French>Humanisme : Faire en sorte qu'il y ait 25 universités, 10 savants illustres et 10 hommes d'État illustres dans des civilisations laïques</French>
+		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
 		<Italian>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</Italian>
 		<Spanish>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
 		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
-		<French>Modernity: Make sure that the five most advanced independent civilizations are secular</French>
-		<German>Modernismus: Stellen Sie sicher, dass die f�nf fortschrittlichsten unabh�ngigen Zivilisationen s�kular sind</German>
+		<French>Modernité : Faire en sorte que les cinq civilisations indépendantes les plus avancées soient laïques</French>
+		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
 		<Italian>Modernity: Make sure that the five most advanced independent civilizations are secular</Italian>
 		<Spanish>Modernity: Make sure that the five most advanced independent civilizations are secular</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
 		<English>Compassion: Have the highest life expectancy rating in the world for 100 turns</English>
-		<French>Compassion: Have the highest life expectancy rating in the world for 100 turns</French>
+		<French>Compassion : Avoir l'espérance de vie la plus élevée au monde pendant 100 tours</French>
 		<German>Mitgef&#252;hl: Haben Sie 100 Runden lang die h&#246;chste Lebenserwartung in der Welt</German>
 		<Italian>Compassion: Have the highest life expectancy rating in the world for 100 turns</Italian>
 		<Spanish>Compassion: Have the highest life expectancy rating in the world for 100 turns</Spanish>
@@ -3388,7 +3388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1_EPIC</Tag>
 		<English>Compassion: Have the highest life expectancy rating in the world for 150 turns</English>
-		<French>Compassion: Have the highest life expectancy rating in the world for 150 turns</French>
+		<French>Compassion : Avoir l'espérance de vie la plus élevée au monde pendant 150 tours</French>
 		<German>Mitgef&#252;hl: Haben Sie 150 Runden lang die h&#246;chste Lebenserwartung in der Welt</German>
 		<Italian>Compassion: Have the highest life expectancy rating in the world for 150 turns</Italian>
 		<Spanish>Compassion: Have the highest life expectancy rating in the world for 150 turns</Spanish>
@@ -3396,7 +3396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1_MARATHON</Tag>
 		<English>Compassion: Have the highest life expectancy rating in the world for 300 turns</English>
-		<French>Compassion: Have the highest life expectancy rating in the world for 300 turns</French>
+		<French>Compassion : Avoir l'espérance de vie la plus élevée au monde pendant 300 tours</French>
 		<German>Mitgef&#252;hl: Haben Sie 300 Runden lang die h&#246;chste Lebenserwartung in der Welt</German>
 		<Italian>Compassion: Have the highest life expectancy rating in the world for 300 turns</Italian>
 		<Spanish>Compassion: Have the highest life expectancy rating in the world for 300 turns</Spanish>
@@ -3404,7 +3404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO2</Tag>
 		<English>Moderation: Control the Confucian and Taoist shrines and combine their income to 40 gold</English>
-		<French>Moderation: Control the Confucian and Taoist shrines and combine their income to 40 gold</French>
+		<French>Modération : Contrôler les lieux saints du confucianisme et tu taoïsme et porter leur revenu combiné à 40 or</French>
 		<German>M&#228;&#223;igung: Kontrollieren Sie den konfuzianistischen und den taoistischen Schrein und kombinieren Sie ihr Einkommen zu 40 Gold</German>
 		<Italian>Moderation: Control the Confucian and Taoist shrines and combine their income to 40 gold</Italian>
 		<Spanish>Moderation: Control the Confucian and Taoist shrines and combine their income to 40 gold</Spanish>
@@ -3412,7 +3412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO3</Tag>
 		<English>Humility: Have legendary culture in the Taoist holy city</English>
-		<French>Humility: Have legendary culture in the Taoist holy city</French>
+		<French>Humilité : Avoir une culture légendaire dans la ville sainte du taoïsme</French>
 		<German>Bescheidenheit: Haben Sie legend&#228;re Kultur in der taoistischen heiligen Stadt</German>
 		<Italian>Humility: Have legendary culture in the Taoist holy city</Italian>
 		<Spanish>Humility: Have legendary culture in the Taoist holy city</Spanish>
@@ -3420,7 +3420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ZOR1</Tag>
 		<English>Adar: Acquire six incense resources</English>
-		<French>Adar: Acquire six incense resources</French>
+		<French>Atar : Acquérir six ressources d'encens</French>
 		<German>Adar: Erwerben Sie sechs Weihrauch-Ressourcen</German>
 		<Italian>Adar: Acquire six incense resources</Italian>
 		<Spanish>Adar: Acquire six incense resources</Spanish>
@@ -3428,7 +3428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ZOR2</Tag>
 		<English>Mathra: Spread Zoroastrianism to 10%</English>
-		<French>Mathra: Spread Zoroastrianism to 10%</French>
+		<French>Mathra : Propager le zoroastrisme à 10%</French>
 		<German>Mathra: Verbreiten Sie den Zoroastrianismus auf 10%</German>
 		<Italian>Mathra: Spread Zoroastrianism to 10%</Italian>
 		<Spanish>Mathra: Spread Zoroastrianism to 10%</Spanish>
@@ -3436,7 +3436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_URV_ZOR3</Tag>
 		<English>Shahnameh: Have legendary culture in the Zoroastrian holy city</English>
-		<French>Shahnameh: Have legendary culture in the Zoroastrian holy city</French>
+		<French>Le Livre des Rois : Avoir une culture légendaire dans la ville sainte du zoroastrisme</French>
 		<German>Schahnameh: Haben Sie legend&#228;re Kultur in der zoroastrischen heiligen Stadt</German>
 		<Italian>Shahnameh: Have legendary culture in the Zoroastrian holy city</Italian>
 		<Spanish>Shahnameh: Have legendary culture in the Zoroastrian holy city</Spanish>
