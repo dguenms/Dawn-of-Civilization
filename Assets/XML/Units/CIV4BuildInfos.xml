@@ -770,8 +770,8 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FALLOUT</FeatureType>
-					<PrereqTech>TECH_NANOTECHNOLOGY</PrereqTech>
-					<iTime>2000</iTime>
+					<PrereqTech>TECH_NUCLEAR_POWER</PrereqTech>
+					<iTime>4000</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
