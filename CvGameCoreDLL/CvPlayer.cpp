@@ -15071,6 +15071,14 @@ bool CvPlayer::canDoEspionageMission(EspionageMissionTypes eMission, PlayerTypes
 		}
 	}
 
+	if (pUnit->getDomainType() == DOMAIN_AIR)
+	{
+		if (kMission.getDestroyBuildingCostFactor() == 0 && kMission.getDestroyProjectCostFactor() == 0 && kMission.getDestroyUnitCostFactor())
+		{
+			return false;
+		}
+	}
+
 	int iCost = getEspionageMissionCost(eMission, eTargetPlayer, pPlot, iExtraData, pUnit);
 	if (iCost < 0)
 	{
