@@ -13335,6 +13335,64 @@
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_DRONE</Class>
+			<Type>UNIT_DRONE</Type>
+			<Special>SPECIALUNIT_FIGHTER</Special>
+			<Combat>UNITCOMBAT_AIR</Combat>
+			<Domain>DOMAIN_AIR</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK_AIR</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_DRONE</Description>
+			<Civilopedia>TXT_KEY_UNIT_DRONE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DRONE_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_CARRIER_BASE</Help>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<bMechanized>1</bMechanized>
+			<bRivalTerritory>1</bRivalTerritory>
+			<bSpy>1</bSpy>
+			<bInvisible>1</bInvisible>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_AIR</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_AUTOMATION</PrereqTech>
+			<BonusType>BONUS_OIL</BonusType>
+			<PrereqBonuses>
+				<BonusType>BONUS_ALUMINUM</BonusType>
+			</PrereqBonuses>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iAirRange>10</iAirRange>
+			<iNukeRange>-1</iNukeRange>
+			<iAirUnitCap>1</iAirUnitCap>
+			<iAirCombat>20</iAirCombat>
+			<iAirCombatLimit>100</iAirCombatLimit>
+			<iEvasionProbability>50</iEvasionProbability>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>4</iXPValueDefense>
+			<iBombRate>16</iBombRate>
+			<iAsset>4</iAsset>
+			<iPower>20</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>0.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_DRONE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_NUCLEAR_BOMBER</Class>
 			<Type>UNIT_NUCLEAR_BOMBER</Type>
 			<Combat>UNITCOMBAT_AIR</Combat>

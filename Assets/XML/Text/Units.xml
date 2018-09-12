@@ -2917,4 +2917,20 @@
 		<Italian>Oghuz</Italian>
 		<Spanish>Oghuz</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRONE</Tag>
+		<English>Drone</English>
+		<French>Drone</French>
+		<German>Drone</German>
+		<Italian>Drone</Italian>
+		<Spanish>Drone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>
