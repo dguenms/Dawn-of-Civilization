@@ -326,9 +326,17 @@ iCivChina : {
 		"Peng Dehuai", # 20th
 	],
 	iGreatSpy : [
-		"Li Bai", # 20th
+		"Zhou Xing", # 7th
+		"Lai Junchen", # 7th
+		"Yang Xian", # 14th
+		iRenaissance,
+		"Liu Jin", # 15th
+		"Wei Zhongxian", # 16th
+		iGlobal,
 		"Dai Li", # 20th
 		"Kang Sheng", # 20th
+		"fXu Lai", # 20th
+		"Li Bai", # 20th
 	],
 },
 iCivBabylonia : {
@@ -3440,6 +3448,8 @@ iCivOttomans : {
 		"Ismail Enver", # 20th
 	],
 	iGreatSpy : [
+		"Petar Ovcarevic", # 16th, 
+		iGlobal,
 		u"Süleyman Askerî", #20th
 		"fDespina Storch", # 20th
 	],
@@ -3939,6 +3949,9 @@ iCivColombia : {
 		u"Antonio Nariño", # 19th
 		"Francisco de Paula Santander", # 19th
 	],
+	iGreatSpy :  [
+		u"fManuela Sáenz", # 19th
+	]
 },
 iCivBrazil : {
 	iGreatProphet : [
