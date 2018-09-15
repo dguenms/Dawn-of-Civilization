@@ -8260,6 +8260,33 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SPACEPORT</BuildingClass>
+			<Type>BUILDING_SPACEPORT</Type>
+			<Description>TXT_KEY_BUILDING_SPACEPORT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SPACEPORT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SPACEPORT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SPACEPORT</ArtDefineTag>
+			<PrereqTech>TECH_SPACEFLIGHT</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
+			<iCost>800</iCost>
+			<iHurryCostModifier>50</iHurryCostModifier>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>30</iMaxLatitude>
+			<iGlobalSpaceProductionModifier>100</iGlobalSpaceProductionModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>8</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_GREAT_SPHINX</BuildingClass>
 			<Type>BUILDING_GREAT_SPHINX</Type>
 			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>

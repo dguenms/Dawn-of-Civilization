@@ -1156,6 +1156,15 @@
 			<DefaultBuilding>BUILDING_CENTRAL_BANK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SPACEPORT</Type>
+			<Description>TXT_KEY_BUILDING_SPACEPORT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SPACEPORT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_SPHINX</Type>
 			<Description>TXT_KEY_BUILDING_SPHINX</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
