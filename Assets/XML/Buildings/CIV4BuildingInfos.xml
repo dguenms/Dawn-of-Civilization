@@ -1246,13 +1246,13 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
-			<Type>BUILDING_AMPHITHEATRE</Type>
-			<Description>TXT_KEY_BUILDING_AMPHITHEATRE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_AMPHITHEATRE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_AMPHITHEATRE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
+			<Type>BUILDING_ARENA</Type>
+			<Description>TXT_KEY_BUILDING_ARENA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ARENA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ARENA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_AMPHITHEATRE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ARENA</ArtDefineTag>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
 			<iCost>80</iCost>
@@ -1270,7 +1270,7 @@
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_MAYAN_BALL_COURT</Type>
 			<Description>TXT_KEY_BUILDING_MAYAN_BALL_COURT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MAYAN_BALL_COURT_PEDIA</Civilopedia>
@@ -1309,7 +1309,7 @@
 			</UnitCombatFreeExperiences>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_MEXICAN_CHARREADA</Type>
 			<Description>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MEXICAN_CHARREADA_PEDIA</Civilopedia>
@@ -1352,7 +1352,7 @@
 			</UnitCombatFreeExperiences>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 			<Type>BUILDING_BABYLONIAN_GARDEN</Type>
 			<Description>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_PEDIA</Civilopedia>

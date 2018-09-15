@@ -123,14 +123,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_16</Tag>
-		<English>In Rhye's and Fall of Civilization, the Colosseum is a world wonder. The generic building is called an "amphitheatre."</English>
-		<French>Dans Rhye's and Fall of Civilization, le Colis&#233;e est une merveille mondiale. Le b&#226;timent g&#233;n&#233;rique est appel&#233; "amphith&#233;&#226;tre".</French>
-		<German>In Rhye's and Fall of Civilization ist das Kolosseum ein Weltwunder. Das gew&#246;hnliche Geb&#228;ude hei&#223;t hier "Amphitheater".</German>
-		<Italian>In Rhye's and Fall il Colosseo &#232; una Grande Meraviglia. L'edificio generico si chiama &amp;quot;anfiteatro.&amp;quot;</Italian>
-		<Spanish>En Rhye's and Fall of Civilization el Coliseo es una maravilla del mundo. El edificio gen&#233;rico se denomina &amp;quot;anfiteatro&amp;quot;.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_HINT_17</Tag>
 		<English>In Rhye's and Fall of Civilization, vassal states are enabled by the discovery of Contract.</English>
 		<French>Dans Rhye's and Fall of Civilization, la d&#233;couverte de la monarchie permet les &#233;tats vassaux.</French>
 		<German>In Rhye's and Fall of Civilization werden Vasallenstaaten durch die Entdeckung des "Vertragswesens" verf&#252;gbar.</German>
@@ -138,7 +130,7 @@
 		<Spanish>En Rhye's and Fall of Civilization los estados vasallos se activan con el descubrimiento de la Monarqu&#237;a.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_18</Tag>
+		<Tag>TXT_KEY_HINT_17</Tag>
 		<English>If you like the mod, and if you have any ideas to improve it, or you just have a bug to report, make sure to check out the development forum at CivFanatics.com.</English>
 		<French>Si le mod vous pla&#238;t et que vous avez des id&#233;es pour l'am&#233;liorer, ou simplement un bug &#224; signaler, pensez &#224; consulter le forum de d&#233;veloppement sur CivFanatics.com.</French>
 		<German>Wenn Sie das Mod m&#246;gen und Verbesserungsvorschl&#228;ge haben oder einen Bug melden wollen, besuchen Sie das Entwicklerforum unter CivFanatics.com.</German>
@@ -146,7 +138,7 @@
 		<Spanish>Si te gusta el mod y tienes ideas para mejorarlo o has encontrado alg&#250;n error del que informar, visita el foro de dise&#241;o en CivFanatics.com.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_19</Tag>
+		<Tag>TXT_KEY_HINT_18</Tag>
 		<English>If it's been a while since the last time you got an updated version of the mod, make sure to check CivFanatics.com for a new version. The mod is in active development, and updates are uploaded often. Every update is full of fixes and new features.</English>
 		<French>Si votre version du mod commence &#224; dater, rendez-vous sur CivFanatics.com pour t&#233;l&#233;charger une version mise &#224; jour. Le mod est en plein d&#233;veloppement et b&#233;n&#233;ficie de mises &#224; jour fr&#233;quentes. Chaque mise &#224; jour apporte une multitude de corrections et de nouvelles options.</French>
 		<German>Wenn es schon eine Weile her ist, seit Sie das letzte Mod-Update installiert haben, besuchen Sie CivFanatics.com, um eine neuere Version herunterzuladen. Bei diesem Mod handelt es sich um ein aktives Entwicklungsprojekt und dementsprechend h&#228;ufig werden neue Updates bereitgestellt, von denen jedes zahlreiche Fixes und neue Features enth&#228;lt.</German>
@@ -154,7 +146,7 @@
 		<Spanish>Si ya hace tiempo que conseguiste tu &#250;ltima versi&#243;n actualizada del mod, visita CivFanatics.com para ver si hay alguna nueva. El mod est&#225; en continuo desarrollo, por lo que las actualizaciones son frecuentes. Todas las actualizaciones incluyen nuevas caracter&#237;sticas y soluciones de errores.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_20</Tag>
+		<Tag>TXT_KEY_HINT_19</Tag>
 		<English>In Rhye's and Fall of Civilization, camera flying mode hotkey has changed to [CTRL + F]</English>
 		<French>Dans Rhye's and Fall of Civilization, le raccourci pour activer la cam&#233;ra libre est [CTRL + F].</French>
 		<German>In Rhye's and Fall of Civilization ist die Schnelltaste f&#252;r den Kameraflugmodus [STRG + F]</German>
@@ -162,7 +154,7 @@
 		<Spanish>En Rhye's and Fall of Civilization se ha cambiado el atajo de teclado para la c&#225;mara a&#233;rea a [CTRL + F].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_21</Tag>
+		<Tag>TXT_KEY_HINT_20</Tag>
 		<English>In Rhye's and Fall of Civilization, city founding is not allowed in tundra, ice or desert if far from water.</English>
 		<French>Dans Rhye's and Fall of Civilization, il est impossible de fonder une ville sur une case de toundra, de d&#233;sert ou de glace trop loin de l'eau.</French>
 		<German>In Rhye's and Fall of Civilization ist die Gr&#252;ndung einer Stadt auf den Gel&#228;ndearten Tundra, Eis und W&#252;ste, sofern zu weit von einer Wasserquelle entfernt, nicht zul&#228;ssig.</German>
@@ -170,7 +162,7 @@
 		<Spanish>En Rhye's and Fall of Civilization no se permite fundar ciudades en tundra, hielo o desierto si no hay agua cerca.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_22</Tag>
+		<Tag>TXT_KEY_HINT_21</Tag>
 		<English>In Rhye's and Fall of Civilization, jungle, rainforest and marshes are impassable to most land units.</English>
 		<French>Dans Rhye's and Fall of Civilization, la plupart des unit&#233;s terrestres ne peuvent pas franchir les marais et les jungles.</French>
 		<German>In Rhye's and Fall of Civilization sind Dschungel-, Regenwald- und Sumpf-Gel&#228;ndefelder f&#252;r die meisten Landeinheiten unpassierbar.</German>
@@ -178,7 +170,7 @@
 		<Spanish>En Rhye's and Fall of Civilization la mayor&#237;a de las unidades terrestres no pueden atravesar junglas ni ci&#233;nagas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_23</Tag>
+		<Tag>TXT_KEY_HINT_22</Tag>
 		<English>If you attempt to stop the growth of newborn civs, some of your units will flip to their side.</English>
 		<French>Si vous tentez d'arr&#234;ter le d&#233;veloppement d'une civilisation &#233;mergente, certaines de vos unit&#233;s se rangeront de son c&#244;t&#233;.</French>
 		<German>Wenn Sie versuchen, das Wachstum neu entstandener Zivilisationen zu behindern, werden einige Ihrer Einheiten die Seiten wechseln.</German>
@@ -186,7 +178,7 @@
 		<Spanish>Si intentas frenar el crecimiento de civilizaciones recientes, algunas de tus unidades se unir&#225;n a ellas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_24</Tag>
+		<Tag>TXT_KEY_HINT_23</Tag>
 		<English>In Rhye's and Fall of Civilization, many wonder effects have been changed</English>
 		<French>Dans Rhye's and Fall of Civilization, les effets de beaucoup de merveilles ont &#233;t&#233; modifi&#233;s.</French>
 		<German>In Rhye's and Fall of Civilization wurden die Auswirkungen vieler Wunder ge&#228;ndert.</German>
@@ -194,7 +186,7 @@
 		<Spanish>En Rhye's and Fall of Civilization se han cambiado los efectos de muchas maravillas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_25</Tag>
+		<Tag>TXT_KEY_HINT_24</Tag>
 		<English>Never attack a city with only siege weapons. They may be the best way to damage a large number of enemy units, but once they inflict their maximum amount of damage, they will be unable to attack enemy units.</English>
 		<French>N'attaquez jamais une ville uniquement avec des armes de si&#232;ge. Il n'y a rien de mieux pour blesser un grand nombre d'unit&#233;s ennemies, mais une fois qu'elles auront inflig&#233; leur maximum de d&#233;g&#226;ts, elles ne pourront plus attaquer les unit&#233;s ennemies.</French>
 		<German>Greifen Sie eine Stadt niemals ausschlie&#223;lich mit Belagerungswaffen an! Sie m&#246;gen die beste Wahl sein, wenn es darum geht, einer gro&#223;en Zahl feindlicher Einheiten Schaden zuzuf&#252;gen, aber sobald sie ihren maximalen Schadenswert erreicht haben, k&#246;nnen sie keine weiteren Angriffe mehr ausf&#252;hren.</German>
@@ -202,7 +194,7 @@
 		<Spanish>Nunca ataques una ciudad &#250;nicamente con armas de asedio. Puede que sean la mejor forma de da&#241;ar a un gran n&#250;mero de unidades enemigas, pero cuando hayan infligido su m&#225;xima cantidad de da&#241;o, no podr&#225;n atacar a las unidades enemigas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_26</Tag>
+		<Tag>TXT_KEY_HINT_25</Tag>
 		<English>Good things come to spies who wait. Leaving a spy on a tile will reduce the costs of all Espionage Missions performed against objects in that tile. So leaving a Spy in an enemy city will make your Missions in that city significantly cheaper.</English>
 		<French>Un espion patient est toujours r&#233;compens&#233;. Si vous laissez un espion sur une case, cela r&#233;duira le co&#251;t de toutes les missions d'espionnage lanc&#233;es contre les &#233;l&#233;ments dans cette case. Si vous laissez un espion dans une ville &#233;trang&#232;re, vos missions dans cette ville vous co&#251;teront donc bien moins cher.</French>
 		<German>Gut Ding will Weile haben - das gilt auch f&#252;r Spione. Wenn Sie einen Spion auf einem Gel&#228;ndefeld belassen, reduziert dies die Kosten f&#252;r alle Spionagemissionen, die Sie gegen Objekte auf diesem Gel&#228;ndefeld ausf&#252;hren. Dementsprechend werden Missionen, die Sie in einer feindlichen Stadt durchf&#252;hren, ebenfalls erheblich preiswerter, wenn Sie Ihren Spion dort stationiert lassen.</German>
@@ -210,7 +202,7 @@
 		<Spanish>Los esp&#237;as que saben esperar tienen sus ventajas. Dejar un esp&#237;a en una casilla reducir&#225; los costes de todas las misiones de espionaje realizadas contra los objetos de dicha casilla. Por tanto, dejar un esp&#237;a en una ciudad enemiga abaratar&#225; significativamente el coste de tus misiones en dicha ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_27</Tag>
+		<Tag>TXT_KEY_HINT_26</Tag>
 		<English>If you spend more Espionage Points than an opponent, then your missions towards that opponent will be cheaper. Every point you spend throughout the game is added towards this total, so if you see a fierce rival outspending you in Espionage Points, it would be wise to increase your Espionage spending.</English>
 		<French>Si vous d&#233;pensez plus de points d'espionnage qu'un de vos adversaires, vos missions contre lui vous co&#251;teront moins cher. Chaque point d&#233;pens&#233; dans le jeu est totalis&#233;, alors si vous avez un rival acharn&#233; qui d&#233;pense plus de points d'espionnage que vous, vous avez int&#233;r&#234;t &#224; augmenter vos d&#233;penses d'espionnage.</French>
 		<German>Wenn Sie mehr Spionagepunkte als eine gegnerische Zivilisation einsetzen, sinken die Kosten f&#252;r die Durchf&#252;hrung Ihrer Missionen gegen diese Nation. Jeder Punkt, den Sie im Laufe des Spiels einsetzen, wird in der Gesamtsumme addiert. Wenn Sie also feststellen, dass ein erbitterter Rivale mehr Spionagepunkte investiert als Sie selbst, w&#228;re es klug, Ihre eigenen Spionageinvestitionen zu erh&#246;hen.</German>
@@ -218,7 +210,7 @@
 		<Spanish>Si gastas m&#225;s puntos de espionaje que un rival, tus misiones contra dicho adversario ser&#225;n m&#225;s baratas. Cada punto que gastes a lo largo de la partida se suma a este total, de modo que si ves que un duro rival gasta m&#225;s que t&#250; en puntos de espionaje, es buena idea aumentar tu gasto en espionaje.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_28</Tag>
+		<Tag>TXT_KEY_HINT_27</Tag>
 		<English>When on the defense, be sure to set your Fighters and Jet Fighters to the "Intercept" mission when they're not running missions. They will defend the skies from opposing Air Units, earning them valuable experience points.</English>
 		<French>Quand vous vous d&#233;fendez, pensez &#224; confier une mission d'interception &#224; vos chasseurs et vos chasseurs &#224; r&#233;action, si vous n'avez aucune autre mission &#224; leur confier. Ils chasseront les unit&#233;s a&#233;riennes ennemies dans le ciel et gagneront de pr&#233;cieux points d'exp&#233;rience.</French>
 		<German>Im Verteidigungsfall sollten Sie Ihre J&#228;ger und D&#252;senj&#228;ger anweisen, Abfangmissionen durchzuf&#252;hren, sofern keine anderen Missionen anstehen. Daraufhin werden sie den Luftraum gegen feindliche Lufteinheiten verteidigen und auf diese Weise gleichzeitig wertvolle Erfahrungspunkte sammeln.</German>
@@ -226,7 +218,7 @@
 		<Spanish>Cuando est&#233;s defendiendo y tus Cazas y Cazas a reacci&#243;n no est&#233;n cumpliendo otras misiones, aseg&#250;rate de que tengan activada la misi&#243;n "Interceptar". As&#237; defender&#225;n los cielos de unidades a&#233;reas rivales, lo cual les reportar&#225; unos valiosos puntos de experiencia.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_29</Tag>
+		<Tag>TXT_KEY_HINT_28</Tag>
 		<English>During wartime, your ships may sever all naval trade routes entering an enemy city by using the "Blockade" Mission within range of the opposing metropolis. Using a Privateer to blockade a city during peace time will even allow you to plunder gold from your enemy's treasury!</English>
 		<French>En temps de guerre, vos navires peuvent couper toutes les routes commerciales maritimes rejoignant une ville ennemie, en ex&#233;cutant la mission Blocus pr&#232;s de la m&#233;tropole adverse. Utiliser des Corsaires pour bloquer une ville en tant de paix vous permet m&#234;me de piller l'or du tr&#233;sor ennemi !</French>
 		<German>Zu Kriegszeiten k&#246;nnen Ihre Schiffe alle Marinehandelswege zu einer gegnerischen Stadt mittels der Blockade-Mission innerhalb der Reichweite der gegnerischen Stadt blockieren. Wenn Sie eine Stadt zu Friedenszeiten mit Freibeutern blockieren, k&#246;nnen Sie sogar Gold aus der Schatzkammer des Gegners pl&#252;ndern!</German>
@@ -234,7 +226,7 @@
 		<Spanish>En tiempos de guerra, tus barcos pueden cortar todas las rutas comerciales que pasen por una ciudad enemiga si usan la misi&#243;n "Bloqueo" dentro del alcance de la metr&#243;polis contraria. Usar un corsario para bloquear una ciudad en tiempos de paz te permitir&#225; incluso saquear oro de la tesorer&#237;a de tu enemigo.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_30</Tag>
+		<Tag>TXT_KEY_HINT_29</Tag>
 		<English>Intercontinental trade routes now yield more gold than normal trade routes. Build a Customs House to further cash in.</English>
 		<French>Les routes commerciales intercontinentales rapportent d&#233;sormais plus d'or que les routes commerciales normales. Construisez un poste de douane pour augmenter encore vos recettes.</French>
 		<German>Interkontinentale Handelswege erwirtschaften nun mehr Gold als normale Handelswege. Errichten Sie f&#252;r zus&#228;tzliche Einnahmen ein Zollamt.</German>
@@ -242,7 +234,7 @@
 		<Spanish>Ahora, las rutas comerciales intercontinentales reportan m&#225;s oro que las rutas comerciales normales. Construye una aduana para aumentar los ingresos obtenidos.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_31</Tag>
+		<Tag>TXT_KEY_HINT_30</Tag>
 		<English>Naval Units performing "Blockade" Missions prevent all enemy trade from passing within their blockading range. Making sure an enemy city is within that range is a sure-fire way to stop enemy trade routes.</English>
 		<French>Les unit&#233;s navales faisant la mission Blocus emp&#234;chent tout le commerce ennemi de passer dans la port&#233;e du blocus. S'assurer que la ville ennemie est &#224; port&#233;e est un moyen s&#251;r de bloquer les routes commerciales ennemies.</French>
 		<German>Marineeinheiten, die die Blockade-Mission durchf&#252;hren, verhindern den gesamten gegnerischen Handel innerhalb der Blockadereichweite. Die Errichtung einer Blockade in Reichweite einer gegnerischen Stadt ist eine zuverl&#228;ssige Methode, gegnerischen Handel zu verhindern.</German>
@@ -250,7 +242,7 @@
 		<Spanish>Las unidades navales que lleven a cabo la misi&#243;n "Bloqueo" evitan que todo el comercio enemigo pase por el alcance de su bloqueo. Asegurarse de que una ciudad enemiga est&#233; dentro de ese alcance es un disparo certero para conseguir detener las rutas comerciales enemigas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_32</Tag>
+		<Tag>TXT_KEY_HINT_31</Tag>
 		<English>The game is won when a Spaceship arrives on Alpha Centauri, not when it is launched. The more Engines and Thrusters you build, the faster the Spaceship will arrive.</English>
 		<French>Pour gagner la partie, il faut que votre vaisseau spatial soit le premier &#224; atteindre Alpha du Centaure. Il ne vous suffit pas de le faire d&#233;coller en premier. Plus vous construirez de moteurs et de propulseurs, plus votre vaisseau arrivera vite.</French>
 		<German>Dieses Spiel gilt mit der Ankunft eines Raumschiffs auf Alpha Centauri als gewonnen und nicht mit dem Start des Raumschiffs. Je mehr Motoren und Triebwerke Sie bauen, desto schneller wird das Raumschiff ankommen.</German>
@@ -258,7 +250,7 @@
 		<Spanish>La partida se gana cuando una nave espacial llega a Alpha Centauri, no cuando &#233;sta se lanza. Cuantos m&#225;s motores y propulsores construyas, m&#225;s r&#225;pido llegar&#225; la nave espacial.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_33</Tag>
+		<Tag>TXT_KEY_HINT_32</Tag>
 		<English>Your Fighters can intercept multiple enemy planes per turn, but become less effective at it as they get damage, so take care to repair your defensive planes.</English>
 		<French>Vos chasseurs peuvent intercepter plusieurs avions ennemis par tour, mais sont moins efficaces quand ils sont endommag&#233;s. Pensez donc bien &#224; r&#233;parer vos avions de d&#233;fense.</French>
 		<German>Ihre J&#228;ger k&#246;nnen in jeder Runde mehrere feindliche Lufteinheiten abfangen, Ihre Schlagkraft sinkt allerdings, wenn sie besch&#228;digt werden. Sie sollten Ihre defensiven Lufteinheiten daher stets reparieren.</German>
@@ -266,7 +258,7 @@
 		<Spanish>Tus cazas pueden interceptar varios aviones por turno, pero se vuelven menos eficaces a medida que sufren da&#241;os, por lo que debes preocuparte de reparar tus aviones defensivos.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_34</Tag>
+		<Tag>TXT_KEY_HINT_33</Tag>
 		<English>Use the Submarine's stealth along with its ability to carry conventional and tactical nuclear missiles to launch a devastating opening attack on another landmass.</English>
 		<French>Tirez parti de la furtivit&#233; du sous-marin et de sa capacit&#233; &#224; transporter des missiles conventionnels et des missiles nucl&#233;aires pour lancer une attaque d&#233;vastatrice contre un autre continent.</French>
 		<German>Nutzen Sie die Tarnung Ihrer U-Boote und ihre F&#228;higkeit, konventionelle und taktische Atomraketen zu bef&#246;rdern, um vernichtende Startoffensiven auf gegnerische Landmassen auszuf&#252;hren.</German>
@@ -274,7 +266,7 @@
 		<Spanish>Utiliza la invisibilidad ante el radar del submarino junto a su capacidad para transportar misiles nucleares convencionales y t&#225;cticos para lanzar un devastador ataque inicial sobre otra masa de tierra.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_35</Tag>
+		<Tag>TXT_KEY_HINT_34</Tag>
 		<English>Keep some spies in your borders for counter-espionage. Enemy spies can wreak havoc!</English>
 		<French>Gardez quelques espions &#224; l'int&#233;rieur de vos fronti&#232;res pour le contre-espionnage. Les espions ennemis peuvent faire des ravages !</French>
 		<German>Behalten Sie zum Zweck der Gegenspionage einige Spione innerhalb Ihrer Grenzen. Feindliche Spione k&#246;nnen verheerende Sch&#228;den anrichten!</German>
@@ -282,7 +274,7 @@
 		<Spanish>Mant&#233;n algunos esp&#237;as en tus fronteras para practicar el contraespionaje. &#161;Los esp&#237;as enemigos pueden sembrar el caos!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_36</Tag>
+		<Tag>TXT_KEY_HINT_35</Tag>
 		<English>Short on gold? Send your spies to steal from your neighbors!</English>
 		<French>Vous manquez d'or ? Envoyez vos espions en voler &#224; vos voisins !</French>
 		<German>Knapp bei Kasse? Dann senden Sie Ihre Spione aus, um die benachbarten Zivilisationen zu bestehlen!</German>
@@ -290,7 +282,7 @@
 		<Spanish>&#191;Andas escaso de oro? &#161;Env&#237;a a tus esp&#237;as a robar a tus vecinos!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_37</Tag>
+		<Tag>TXT_KEY_HINT_36</Tag>
 		<English>Mounted units cause flanking damage to certain Siege weapons. For example, all Cannons in an enemy stack are damaged if an attacking Cavalry unit survives the battle!</English>
 		<French>Les unit&#233;s mont&#233;es infligent des d&#233;g&#226;ts d'attaque de flanc &#224; certaines armes de si&#232;ge. Tous les canons d'un groupe ennemi seront endommag&#233;s, par exemple, si une unit&#233; de cavalerie les attaque et survit &#224; la bataille !</French>
 		<German>Berittene Einheiten verursachen Flankensch&#228;den an bestimmten Belagerungseinheiten. Zum Beispiel werden alle in einem Verband organisierten feindlichen Kanonen besch&#228;digt, wenn eine angreifende Kavallerieeinheit das Gefecht &#252;berlebt!</German>
@@ -298,7 +290,7 @@
 		<Spanish>Las unidades montadas causan da&#241;o de flanqueo a ciertas armas de asedio. Por ejemplo, &#161;todos los ca&#241;ones de un apilamiento enemigo quedar&#225;n da&#241;ados si una unidad de caballer&#237;a atacante sobrevive a la batalla!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_38</Tag>
+		<Tag>TXT_KEY_HINT_37</Tag>
 		<English>Random events are tied to what is happening within your civilization. If you want to experience all of the events that are possible, you will have to play numerous games using different approaches and strategies: war and peace, different religious approaches, different technological paths, different civics and more!</English>
 		<French>Les &#233;v&#233;nements al&#233;atoires sont li&#233;s &#224; la mani&#232;re dont vous g&#233;rez votre civilisation. Si vous voulez exp&#233;rimenter tous les &#233;v&#233;nements possibles, vous allez devoir jouer un nombre impressionnant de parties en variant sans cesse vos strat&#233;gies : pr&#233;f&#233;rer la guerre ou la paix, changer d'approche en mati&#232;re de religion, de technologie ou de doctrine, etc. Il n'y a pas de limite !</French>
 		<German>Zufallsereignisse hängen davon ab, was innerhalb Ihrer Zivilisation geschieht. Wenn Sie alle möglichen Ereignisse erleben wollen, müssen Sie zahlreiche Spiele mit unterschiedlichen Ansätzen und Strategien spielen: Krieg und Frieden, unterschiedliche religiöse Ansätze, Technologiewege, Staatsformen und vieles mehr!</German>
@@ -306,7 +298,7 @@
 		<Spanish>Los acontecimientos al azar están ligados a lo que ocurra en tu civilización. Si quieres probar todos los sucesos posibles, tendrás que jugar numerosas partidas con diferentes aproximaciones y estrategias: guerra y paz, distintas propuestas religiosas, diferentes caminos tecnológicos, principios diversos y demás.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_39</Tag>
+		<Tag>TXT_KEY_HINT_38</Tag>
 		<English>You may be wise to keep some reserve gold in your treasury. You never know when your savings may help mitigate the effects of a disastrous event or grant you access to additional opportunities when a positive event rolls around.</English>
 		<French>Faites en sorte de ne pas dilapider votre tr&#233;sor. Vos &#233;conomies pourraient un jour vous aider &#224; att&#233;nuer les effets d'un &#233;v&#232;nement catastrophique ou vous donner acc&#232;s &#224; de nouvelles opportunit&#233;s si un &#233;v&#232;nement positif devait survenir .</French>
 		<German>Es wäre klug, ein paar Goldreserven in der Schatzkammer zu belassen. Man weiß nie, wann das Ersparte dabei helfen könnte, die Auswirkungen eines verheerenden Ereignisses zu mildern, oder Ihnen zusätzliche Möglichkeiten bei einem positiven Ereignis verschafft.</German>
@@ -314,7 +306,7 @@
 		<Spanish>Debes ser prudente y guardar algunas reservas de oro en tu tesoro. Nunca se sabe cuándo tus ahorros pueden servir para mitigar los efectos de un suceso desastroso o para darte acceso a oportunidades adicionales cuando se produzca un suceso positivo.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_40</Tag>
+		<Tag>TXT_KEY_HINT_39</Tag>
 		<English>A negative event that afflicts one of your rivals is, in effect, like a positive event for you! Keep an eye on the world news reports in case an event happening to other nations opens new opportunities for you.</English>
 		<French>Les &#233;v&#233;nements n&#233;gatifs qui frappent vos rivaux peuvent s'av&#233;rer extr&#234;mement positifs pour vous ! Gardez un oeil sur les informations en provenance des autres pays, au cas o&#249; un &#233;v&#233;nement vous offrirait de nouvelles opportunit&#233;s.</French>
 		<German>Ein negatives Ereignis, das einen Ihrer Gegner betrifft, ist ein positives Ereignis für Sie! Achten Sie auf die Berichte in den Weltnachrichten, damit Sie von den Ereignissen in anderen Nationen erfahren, die Ihnen selbst neue Möglichkeiten eröffnen.</German>
@@ -322,7 +314,7 @@
 		<Spanish>Los sucesos negativos que aflijan a tus rivales son, de hecho, buenas noticias para ti. Estate atento a las noticias internacionales por si algo que ha ocurrido en otras naciones abriera nuevas oportunidades para ti.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_41</Tag>
+		<Tag>TXT_KEY_HINT_40</Tag>
 		<English>Rival civilizations led by computer opponents now pose a more significant threat from the sea. Stronger fleets, amphibious invasions... Don't be caught unprepared! The more warlike leaders can be very sneaky with their attack plans, as they have learned to think beyond the sword.</English>
 		<French>Les civilisations rivales men&#233;es par l'ordinateur sont d&#233;sormais plus promptes &#224; vous attaquer par la mer. Flottes plus puissantes, invasions amphibies... Ne vous laissez pas surprendre ! Les dirigeants les plus sanguinaires peuvent s'av&#233;rer tr&#232;s sournois maintenant que le mot "strat&#233;gie" ne leur est plus inconnu.</French>
 		<German>Von Computergegnern geführte gegnerische Zivilisationen stellen nun eine große Bedrohung vom Meer aus dar. Stärkere Flotten, amphibische Angriffe ... Lassen Sie sich nicht überrumpeln! Kriegerische Zivilisationen können in Bezug auf ihre Angriffspläne sehr raffiniert vorgehen, da sie gelernt haben, über den Rand der Klinge hinauszusehen.</German>
