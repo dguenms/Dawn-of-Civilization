@@ -854,5 +854,13 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_DRONE</DefaultUnit>
 		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_SATELLITE</Type>
+			<Description>TXT_KEY_UNIT_SATELLITE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_SATELLITE</DefaultUnit>
+		</UnitClassInfo>
 	</UnitClassInfos>
 </Civ4UnitClassInfos>

@@ -2922,6 +2922,14 @@
 		<Spanish>Drone</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SATELLITE</Tag>
+		<English>Satellite</English>
+		<French>Satellite</French>
+		<German>Satellit</German>
+		<Italian>Satellite</Italian>
+		<Spanish>Satellite</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

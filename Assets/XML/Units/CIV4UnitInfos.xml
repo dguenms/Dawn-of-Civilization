@@ -13485,6 +13485,67 @@
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_SATELLITE</Class>
+			<Type>UNIT_SATELLITE</Type>
+			<Domain>DOMAIN_AIR</Domain>
+			<DefaultUnitAI>UNITAI_SCIENTIST</DefaultUnitAI>
+			<Invisible>INVISIBLE_SATELLITE</Invisible>
+			<SeeInvisible>INVISIBLE_SATELLITE</SeeInvisible>
+			<Description>TXT_KEY_UNIT_SATELLITE</Description>
+			<Civilopedia>TXT_KEY_UNIT_SATELLITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SATELLITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<bNukeImmune>1</bNukeImmune>
+			<bMechanized>1</bMechanized>
+			<bRivalTerritory>1</bRivalTerritory>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_SCIENTIST</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<GreatPeoples>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_RESEARCH_SATELLITE</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_COMMERCIAL_SATELLITE</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_MILITARY_SATELLITE</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+			</GreatPeoples>
+			<PrereqTech>TECH_SATELLITES</PrereqTech>
+			<iCost>400</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iNukeRange>-1</iNukeRange>
+			<iMoves>1</iMoves>
+			<iAsset>10</iAsset>
+			<iPower>0</iPower>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SENTRY</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SATELLITE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_GREAT_PROPHET</Class>
 			<Type>UNIT_GREAT_PROPHET</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>
