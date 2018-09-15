@@ -2990,6 +2990,14 @@
 		<Spanish>Supercomputer</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STADIUM</Tag>
+		<English>Stadium</English>
+		<French>Stadium</French>
+		<German>Stadion</German>
+		<Italian>Stadium</Italian>
+		<Spanish>Stadium</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
