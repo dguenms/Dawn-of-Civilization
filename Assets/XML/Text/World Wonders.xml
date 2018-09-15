@@ -298,36 +298,20 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
-		<English>The Colosseum</English>
-		<French>
-			<Text>Colis&#233;e</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Das Kolosseum</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Il Colosseo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Coliseo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
+		<English>Flavian Amphitheatre</English>
+		<French>Flavian Amphitheatre</French>
+		<German>Flavian Amphitheatre</German>
+		<Italian>Flavian Amphitheatre</Italian>
+		<Spanish>Flavian Amphitheatre</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>

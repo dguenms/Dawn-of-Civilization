@@ -530,7 +530,7 @@ class RiseAndFall:
 		pAthens.setBuildingOriginalOwner(iParthenon, iGreece)
 		
 		pRome = gc.getMap().plot(60, 44).getPlotCity()
-		pRome.setBuildingOriginalOwner(iColosseum, iRome)
+		pRome.setBuildingOriginalOwner(iFlavianAmphitheatre, iRome)
 		
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
@@ -552,7 +552,7 @@ class RiseAndFall:
 		pBaghdad.setBuildingOriginalOwner(iSpiralMinaret, iArabia)
 		
 		pRome = gc.getMap().plot(60, 44).getPlotCity()
-		pRome.setBuildingOriginalOwner(iColosseum, iRome)
+		pRome.setBuildingOriginalOwner(iFlavianAmphitheatre, iRome)
 		pRome.setBuildingOriginalOwner(iSistineChapel, iItaly)
 		
 		pSeville = gc.getMap().plot(51, 41).getPlotCity()
