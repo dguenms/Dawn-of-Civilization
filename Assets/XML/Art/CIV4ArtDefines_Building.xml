@@ -1219,11 +1219,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TRADING_COMPANY</Type>
-			<LSystem>LSYSTEM_2x4</LSystem>
+			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
+			<fScale>0.85</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Trading_Company/navalmanufacture.nif</NIF>
+			<NIF>Art/Structures/Buildings/Trading_Company/trade.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/TradingCompany.dds</Button>
 		</BuildingArtInfo>
