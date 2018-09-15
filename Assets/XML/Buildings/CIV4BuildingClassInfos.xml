@@ -117,14 +117,14 @@
 			<DefaultBuilding>BUILDING_THEATRE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_AMPHITHEATRE</Type>
-			<Description>TXT_KEY_BUILDING_AMPHITHEATRE</Description>
+			<Type>BUILDINGCLASS_ARENA</Type>
+			<Description>TXT_KEY_BUILDING_ARENA</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_AMPHITHEATRE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ARENA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LIGHTHOUSE</Type>

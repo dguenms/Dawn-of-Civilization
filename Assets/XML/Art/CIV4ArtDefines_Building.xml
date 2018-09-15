@@ -538,12 +538,12 @@
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,7</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_AMPHITHEATRE</Type>
+			<Type>ART_DEF_BUILDING_ARENA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.80</fScale>
-			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Colosseum/Colosseum.nif</NIF>
+			<fScale>1.05</fScale>
+			<fInterfaceScale>1.3</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Arena/Colosseum.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,2</Button>
 		</BuildingArtInfo>

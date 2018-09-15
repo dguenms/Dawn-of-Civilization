@@ -17917,7 +17917,7 @@
 			<BuildingExtraCommerces/>
 			<BuildingExtraHappies>
 				<BuildingExtraHappy>
-					<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 					<iHappy>1</iHappy>
 				</BuildingExtraHappy>
 			</BuildingExtraHappies>
@@ -18007,7 +18007,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>4</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -18947,7 +18947,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_ARENA</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>

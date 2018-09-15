@@ -3383,7 +3383,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_MAYAN_BALL_COURT</BuildingType>
 				</Building>
 				<Building>
@@ -3477,7 +3477,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_MEXICAN_CHARREADA</BuildingType>
 				</Building>
 				<Building>
