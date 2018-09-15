@@ -15099,9 +15099,9 @@ bool CvPlayer::canDoEspionageMission(EspionageMissionTypes eMission, PlayerTypes
 		}
 	}
 
-	if (pUnit->getDomainType() == DOMAIN_AIR)
+	if (pUnit != NULL && pUnit->getDomainType() == DOMAIN_AIR)
 	{
-		if (kMission.getDestroyBuildingCostFactor() == 0 && kMission.getDestroyProjectCostFactor() == 0 && kMission.getDestroyUnitCostFactor())
+		if (kMission.getDestroyBuildingCostFactor() == 0 && kMission.getDestroyProjectCostFactor() == 0 && kMission.getDestroyUnitCostFactor() == 0)
 		{
 			return false;
 		}
