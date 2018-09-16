@@ -1113,6 +1113,8 @@ public:
 	void setCorporationUnhealthModifier(int iNewValue);
 	void changeCorporationUnhealthModifier(int iChange);
 
+	int countNoGlobalEffectsFreeSpecialists() const;
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
