@@ -13443,6 +13443,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_ICBM</Class>
 			<Type>UNIT_ICBM</Type>
+			<Special>SPECIALUNIT_ICBM</Special>
 			<Domain>DOMAIN_IMMOBILE</Domain>
 			<DefaultUnitAI>UNITAI_ICBM</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ICBM</Description>
@@ -13487,6 +13488,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_SATELLITE</Class>
 			<Type>UNIT_SATELLITE</Type>
+			<Special>SPECIALUNIT_SATELLITE</Special>
 			<Domain>DOMAIN_AIR</Domain>
 			<DefaultUnitAI>UNITAI_SCIENTIST</DefaultUnitAI>
 			<Invisible>INVISIBLE_SATELLITE</Invisible>

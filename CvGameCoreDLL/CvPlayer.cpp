@@ -100,6 +100,8 @@ CvPlayer::CvPlayer()
 	m_pabResearchingTech = NULL;
 	m_pabLoyalMember = NULL;
 
+	m_pabSpecialUnitValid = NULL; // Leoreth
+
 	m_paeCivics = NULL;
 
 	m_ppaaiSpecialistExtraYield = NULL;
@@ -325,6 +327,15 @@ void CvPlayer::init(PlayerTypes eID)
 				}
 			}
 		}
+
+		// Leoreth
+		for (iI = 0; iI < GC.getNumSpecialUnitInfos(); ++iI)
+		{
+			if (GC.getSpecialUnitInfo((SpecialUnitTypes)iI).isPlayerValid())
+			{
+				makeSpecialUnitValid((SpecialUnitTypes)iI);
+			}
+		}
 	}
 
 	AI_init();
@@ -357,6 +368,7 @@ void CvPlayer::uninit()
 
 	SAFE_DELETE_ARRAY(m_pabResearchingTech);
 	SAFE_DELETE_ARRAY(m_pabLoyalMember);
+	SAFE_DELETE_ARRAY(m_pabSpecialUnitValid); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_paeCivics);
 
@@ -784,6 +796,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		for (iI = 0; iI < GC.getNumVoteSourceInfos(); iI++)
 		{
 			m_pabLoyalMember[iI] = true;
+		}
+
+		// Leoreth
+		FAssertMsg(m_pabSpecialUnitValid == NULL, "about to leak memory, CvPlayer::m_pabSpecialUnitValid");
+		m_pabSpecialUnitValid = new bool[GC.getNumSpecialUnitInfos()];
+		for (iI = 0; iI < GC.getNumSpecialUnitInfos(); iI++)
+		{
+			m_pabSpecialUnitValid[iI] = false;
 		}
 
 		FAssertMsg(0 < GC.getNumUpkeepInfos(), "GC.getNumUpkeepInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
@@ -5913,6 +5933,11 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			{
 				return false;
 			}
+
+			if (!isSpecialUnitValid((SpecialUnitTypes)GC.getUnitInfo(eUnit).getSpecialUnitType()))
+			{
+				return false;
+			}
 		}
 
 		// Leoreth: at most one worker per city (disabled)
@@ -6721,6 +6746,12 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 int CvPlayer::getProductionModifier(ProjectTypes eProject) const
 {
 	int iMultiplier = 0;
+
+	// Leoreth
+	if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
+	{
+		iMultiplier += GC.getProjectInfo(eProject).getExistingProductionModifier();
+	}
 
 	if (GC.getProjectInfo(eProject).isSpaceship())
 	{
@@ -18223,7 +18254,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 2
+	// Leoreth: using flag = 3
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18445,6 +18476,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumTechInfos(), m_pabResearchingTech);
 
 	pStream->Read(GC.getNumVoteSourceInfos(), m_pabLoyalMember);
+
+	if (uiFlag >= 3) pStream->Read(GC.getNumSpecialUnitInfos(), m_pabSpecialUnitValid); // Leoreth
 
 	for (iI=0;iI<GC.getNumCivicOptionInfos();iI++)
 	{
@@ -18762,7 +18795,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 2;
+	uint uiFlag = 3;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -18983,6 +19016,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumTechInfos(), m_pabResearchingTech);
 
 	pStream->Write(GC.getNumVoteSourceInfos(), m_pabLoyalMember);
+
+	pStream->Write(GC.getNumSpecialUnitInfos(), m_pabSpecialUnitValid); // Leoreth
 
 	for (iI=0;iI<GC.getNumCivicOptionInfos();iI++)
 	{
@@ -25823,4 +25858,18 @@ int CvPlayer::getBuildingPreference(BuildingTypes eBuilding) const
 	}
 
 	return -MAX_INT;
+}
+
+bool CvPlayer::isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const
+{
+	FAssertMsg(eSpecialUnit >= 0, "eSpecialUnit is expected to be non-negative (invalid Index)");
+	FAssertMsg(eSpecialUnit < GC.getNumSpecialUnitInfos(), "eSpecialUnit is expected to be within maximum bounds (invalid Index)");
+	return m_pabSpecialUnitValid[eSpecialUnit];
+}
+
+void CvPlayer::makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit)
+{
+	FAssertMsg(eSpecialUnit >= 0, "eSpecialUnit is expected to be non-negative (invalid Index)");
+	FAssertMsg(eSpecialUnit < GC.getNumSpecialUnitInfos(), "eSpecialUnit is expected to be within maximum bounds (invalid Index)");
+	m_pabSpecialUnitValid[eSpecialUnit] = true;
 }

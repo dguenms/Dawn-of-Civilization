@@ -331,7 +331,7 @@
 			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_APOLLO_PROGRAM</Type>
+			<Type>ART_DEF_MOVIE_LUNAR_LANDING</Type>
 			<Path>Art/Movies/Wonders/ApolloProject.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>

@@ -4691,6 +4691,7 @@ ProjectTypes CvCityAI::AI_bestProject()
 			iValue = AI_projectValue((ProjectTypes)iI);
 
 			if ((GC.getProjectInfo((ProjectTypes)iI).getEveryoneSpecialUnit() != NO_SPECIALUNIT) ||
+				(GC.getProjectInfo((ProjectTypes)iI).getSpecialUnit() != NO_SPECIALUNIT) ||
 				  (GC.getProjectInfo((ProjectTypes)iI).getEveryoneSpecialBuilding() != NO_SPECIALBUILDING) ||
 				  GC.getProjectInfo((ProjectTypes)iI).isAllowsNukes())
 			{

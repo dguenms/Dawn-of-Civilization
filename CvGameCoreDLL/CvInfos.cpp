@@ -5576,6 +5576,7 @@ bool CvUnitFormationInfo::read(CvXMLLoadUtility* pXML)
 //------------------------------------------------------------------------------------------------------
 CvSpecialUnitInfo::CvSpecialUnitInfo() :
 m_bValid(false),
+m_bPlayerValid(false), // Leoreth
 m_bCityLoad(false),
 m_pbCarrierUnitAITypes(NULL),
 m_piProductionTraits(NULL)
@@ -5598,6 +5599,12 @@ CvSpecialUnitInfo::~CvSpecialUnitInfo()
 bool CvSpecialUnitInfo::isValid() const
 {
 	return m_bValid;
+}
+
+// Leoreth
+bool CvSpecialUnitInfo::isPlayerValid() const
+{
+	return m_bPlayerValid;
 }
 
 bool CvSpecialUnitInfo::isCityLoad() const
@@ -5629,6 +5636,7 @@ bool CvSpecialUnitInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->GetChildXmlValByName(&m_bValid, "bValid");
+	pXML->GetChildXmlValByName(&m_bPlayerValid, "bPlayerValid"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bCityLoad, "bCityLoad");
 
 	pXML->SetVariableListTagPair(&m_pbCarrierUnitAITypes, "CarrierUnitAITypes", sizeof(GC.getUnitAIInfo((UnitAITypes)0)), NUM_UNITAI_TYPES);
@@ -16880,12 +16888,19 @@ m_iMaxTeamInstances(0),
 m_iProductionCost(0),
 m_iNukeInterception(0),
 m_iTechShare(0),
+m_iFirstAirExperience(0),
+m_iExistingProductionModifier(0),
+m_iSpecialUnit(NO_SPECIALUNIT), // Leoreth
 m_iEveryoneSpecialUnit(NO_SPECIALUNIT),
 m_iEveryoneSpecialBuilding(NO_SPECIALBUILDING),
+m_iFirstFreeUnit(NO_UNIT), // Leoreth
 m_iVictoryDelayPercent(0),
 m_iSuccessRate(0),
 m_bSpaceship(false),
 m_bAllowsNukes(false),
+m_bGoldenAge(false), // Leoreth
+m_bFirstEnemyAnarchy(false), // Leoreth
+m_bRevealsMap(false), // Leoreth
 m_piBonusProductionModifier(NULL),
 m_piVictoryThreshold(NULL),
 m_piVictoryMinThreshold(NULL),
@@ -16953,6 +16968,24 @@ int CvProjectInfo::getTechShare() const
 	return m_iTechShare;
 }
 
+// Leoreth
+int CvProjectInfo::getFirstAirExperience() const
+{
+	return m_iFirstAirExperience;
+}
+
+// Leoreth
+int CvProjectInfo::getExistingProductionModifier() const
+{
+	return m_iExistingProductionModifier;
+}
+
+// Leoreth
+int CvProjectInfo::getSpecialUnit() const
+{
+	return m_iSpecialUnit;
+}
+
 int CvProjectInfo::getEveryoneSpecialUnit() const
 {
 	return m_iEveryoneSpecialUnit;
@@ -16961,6 +16994,12 @@ int CvProjectInfo::getEveryoneSpecialUnit() const
 int CvProjectInfo::getEveryoneSpecialBuilding() const
 {
 	return m_iEveryoneSpecialBuilding;
+}
+
+// Leoreth
+int CvProjectInfo::getFirstFreeUnit() const
+{
+	return m_iFirstFreeUnit;
 }
 
 int CvProjectInfo::getVictoryDelayPercent() const
@@ -16981,6 +17020,24 @@ bool CvProjectInfo::isSpaceship() const
 bool CvProjectInfo::isAllowsNukes() const
 {
 	return m_bAllowsNukes;
+}
+
+// Leoreth
+bool CvProjectInfo::isGoldenAge() const
+{
+	return m_bGoldenAge;
+}
+
+// Leoreth
+bool CvProjectInfo::isFirstEnemyAnarchy() const
+{
+	return m_bFirstEnemyAnarchy;
+}
+
+// Leoreth
+bool CvProjectInfo::isRevealsMap() const
+{
+	return m_bRevealsMap;
 }
 
 const char* CvProjectInfo::getMovieArtDef() const
@@ -17053,6 +17110,12 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iProductionCost, "iCost");
 	pXML->GetChildXmlValByName(&m_iNukeInterception, "iNukeInterception");
 	pXML->GetChildXmlValByName(&m_iTechShare, "iTechShare");
+	pXML->GetChildXmlValByName(&m_iFirstAirExperience, "iFirstAirExperience"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iExistingProductionModifier, "iExistingProductionModifier"); // Leoreth
+
+	// Leoreth
+	pXML->GetChildXmlValByName(szTextVal, "SpecialUnit");
+	m_iSpecialUnit = pXML->FindInInfoClass(szTextVal);
 
 	pXML->GetChildXmlValByName(szTextVal, "EveryoneSpecialUnit");
 	m_iEveryoneSpecialUnit = pXML->FindInInfoClass(szTextVal);
@@ -17060,8 +17123,16 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(szTextVal, "EveryoneSpecialBuilding");
 	m_iEveryoneSpecialBuilding = pXML->FindInInfoClass(szTextVal);
 
+	// Leoreth
+	pXML->GetChildXmlValByName(szTextVal, "FirstFreeUnit");
+	m_iFirstFreeUnit = pXML->FindInInfoClass(szTextVal);
+
 	pXML->GetChildXmlValByName(&m_bSpaceship, "bSpaceship");
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");
+	pXML->GetChildXmlValByName(&m_bGoldenAge, "bGoldenAge"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bFirstEnemyAnarchy, "bFirstEnemyAnarchy"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bRevealsMap, "bRevealsMap"); // Leoreth
+
 	pXML->GetChildXmlValByName(m_szMovieArtDef, "MovieDefineTag");
 
 	pXML->SetVariableListTagPair(&m_piBonusProductionModifier, "BonusProductionModifiers", sizeof(GC.getBonusInfo((BonusTypes)0)), GC.getNumBonusInfos());

@@ -1287,6 +1287,7 @@ public:
 	virtual ~CvSpecialUnitInfo();
 
 	bool isValid() const;
+	bool isPlayerValid() const; // Leoreth
 	bool isCityLoad() const;
 
 	// Arrays
@@ -1301,6 +1302,7 @@ public:
 protected:
 
 	bool m_bValid;
+	bool m_bPlayerValid; // Leoreth
 	bool m_bCityLoad;
 
 	// Arrays
@@ -4153,13 +4155,21 @@ public:
 	int getProductionCost() const;								// Exposed to Python
 	int getNukeInterception() const;							// Exposed to Python
 	int getTechShare() const;											// Exposed to Python
+	int getFirstAirExperience() const; // Leoreth
+	int getExistingProductionModifier() const; // Leoreth
+	int getSpecialUnit() const; // Leoreth
 	int getEveryoneSpecialUnit() const;						// Exposed to Python
 	int getEveryoneSpecialBuilding() const;				// Exposed to Python
+	int getFirstFreeUnit() const; // Leoreth
 	int getVictoryDelayPercent() const;				// Exposed to Python
 	int getSuccessRate() const;				// Exposed to Python
 
 	bool isSpaceship() const;											// Exposed to Python
 	bool isAllowsNukes() const;											// Exposed to Python
+	bool isGoldenAge() const; // Leoreth
+	bool isFirstEnemyAnarchy() const; // Leoreth
+	bool isRevealsMap() const; // Leoreth
+
 	const char* getMovieArtDef() const;						// Exposed to Python
 
 	const TCHAR* getCreateSound() const;					// Exposed to Python
@@ -4186,13 +4196,20 @@ protected:
 	int m_iProductionCost;
 	int m_iNukeInterception;
 	int m_iTechShare;
+	int m_iFirstAirExperience; // Leoreth
+	int m_iExistingProductionModifier; // Leoreth
+	int m_iSpecialUnit; // Leoreth
 	int m_iEveryoneSpecialUnit;
 	int m_iEveryoneSpecialBuilding;
+	int m_iFirstFreeUnit; // Leoreth
 	int m_iVictoryDelayPercent;
 	int m_iSuccessRate;
 
 	bool m_bSpaceship;
 	bool m_bAllowsNukes;
+	bool m_bGoldenAge; // Leoreth
+	bool m_bFirstEnemyAnarchy; // Leoreth
+	bool m_bRevealsMap; // Leoreth
 
 	CvString m_szCreateSound;
 	CvString m_szMovieArtDef;

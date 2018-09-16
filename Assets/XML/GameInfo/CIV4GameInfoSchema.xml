@@ -509,10 +509,17 @@
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
 	<ElementType name="iNukeInterception" content="textOnly" dt:type="int"/>
 	<ElementType name="iTechShare" content="textOnly" dt:type="int"/>
+	<ElementType name="iFirstAirExperience" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iExistingProductionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="SpecialUnit" content="textOnly"/> <!-- Leoreth -->
 	<ElementType name="EveryoneSpecialUnit" content="textOnly"/>
 	<ElementType name="EveryoneSpecialBuilding" content="textOnly"/>
+	<ElementType name="FirstFreeUnit" content="textOnly"/> <!-- Leoreth -->
 	<ElementType name="bSpaceship" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bAllowsNukes" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bGoldenAge" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bFirstEnemyAnarchy" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bRevealsMap" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="ProjectType" content="textOnly"/>
 	<ElementType name="iNeeded" content="textOnly" dt:type="int"/>
 	<ElementType name="PrereqProject" content="eltOnly">
@@ -568,10 +575,17 @@
 		<element type="iCost"/>
 		<element type="iNukeInterception"/>
 		<element type="iTechShare"/>
+		<element type="iFirstAirExperience"/> <!-- Leoreth -->
+		<element type="iExistingProductionModifier"/> <!-- Leoreth -->
+		<element type="SpecialUnit"/> <!-- Leoreth -->
 		<element type="EveryoneSpecialUnit"/>
 		<element type="EveryoneSpecialBuilding"/>
+		<element type="FirstFreeUnit"/> <!-- Leoreth -->
 		<element type="bSpaceship"/>
 		<element type="bAllowsNukes"/>
+		<element type="bGoldenAge"/> <!-- Leoreth -->
+		<element type="bFirstEnemyAnarchy"/> <!-- Leoreth -->
+		<element type="bRevealsMap"/> <!-- Leoreth -->
 		<element type="Button"/>
 		<element type="PrereqProjects"/>
 		<element type="VictoryThresholds"/>

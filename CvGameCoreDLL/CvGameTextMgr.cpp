@@ -9650,7 +9650,8 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 			{
 				for (iI = 0; iI < GC.getNumProjectInfos(); ++iI)
 				{
-					if (GC.getProjectInfo((ProjectTypes)iI).getEveryoneSpecialUnit() == GC.getUnitInfo(eUnit).getSpecialUnitType())
+					if (GC.getProjectInfo((ProjectTypes)iI).getEveryoneSpecialUnit() == GC.getUnitInfo(eUnit).getSpecialUnitType() ||
+						GC.getProjectInfo((ProjectTypes)iI).getSpecialUnit() == GC.getUnitInfo(eUnit).getSpecialUnitType())
 					{
 						szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_REQUIRES").c_str());
 						CvWString szProject;
@@ -11960,10 +11961,46 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_TECH_SHARE", kProject.getTechShare()));
 	}
 
+	// Leoreth
+	if (kProject.getFirstAirExperience() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szTempBuffer.Format(L"%s%d", kProject.getFirstAirExperience() > 0 ? L"+" : L"", kProject.getFirstAirExperience());
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_FIRST_AIR_EXPERIENCE", szTempBuffer.c_str()));
+	}
+
 	if (kProject.isAllowsNukes())
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_ENABLES_NUKES"));
+	}
+
+	// Leoreth
+	if (kProject.isGoldenAge())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_GOLDEN_AGE"));
+	}
+
+	// Leoreth
+	if (kProject.isFirstEnemyAnarchy())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_FIRST_ENEMY_ANARCHY"));
+	}
+
+	// Leoreth
+	if (kProject.isRevealsMap())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_REVEALS_MAP"));
+	}
+
+	// Leoreth
+	if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_ENABLES_SPECIAL_PLAYER", GC.getSpecialUnitInfo((SpecialUnitTypes)kProject.getSpecialUnit()).getTextKeyWide()));
 	}
 
 	if (kProject.getEveryoneSpecialUnit() != NO_SPECIALUNIT)
@@ -11976,6 +12013,13 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_ENABLES_SPECIAL", GC.getSpecialBuildingInfo((SpecialBuildingTypes)(kProject.getEveryoneSpecialBuilding())).getTextKeyWide()));
+	}
+
+	// Leoreth
+	if (kProject.getFirstFreeUnit() != NO_UNIT)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_FIRST_FREE_UNIT", GC.getUnitInfo((UnitTypes)kProject.getFirstFreeUnit()).getTextKeyWide()));
 	}
 
 	for (iI = 0; iI < GC.getNumVictoryInfos(); ++iI)
@@ -12118,6 +12162,44 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 		}
 	}
 
+	if (kProject.getExistingProductionModifier() != 0)
+	{
+		if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
+		}
+
+		if (!bCivilopediaText)
+		{
+			szBuffer.append(L" (");
+		}
+		else
+		{
+			szTempBuffer.Format(L"%s%c", NEWLINE, gDLL->getSymbolID(BULLET_CHAR), szTempBuffer);
+			szBuffer.append(szTempBuffer);
+		}
+		if (kProject.getExistingProductionModifier() == 100)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_DOUBLE_SPEED_EXISTING"));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_BUILDS_FASTER_EXISTING", kProject.getExistingProductionModifier()));
+		}
+		if (!bCivilopediaText)
+		{
+			szBuffer.append(L')');
+		}
+		if (pCity != NULL)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+		}
+	}
+
 	for (iI = 0; iI < GC.getNumBonusInfos(); ++iI)
 	{
 		if (kProject.getBonusProductionModifier(iI) != 0)
@@ -12133,6 +12215,7 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 					szBuffer.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
 				}
 			}
+
 			if (!bCivilopediaText)
 			{
 				szBuffer.append(L" (");
@@ -17012,6 +17095,18 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 	if (NO_PROJECT != eProject)
 	{
 		CvProjectInfo& project = GC.getProjectInfo(eProject);
+
+		// Leoreth: existing projects
+		if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
+		{
+			int iExistingMod = project.getExistingProductionModifier();
+			if (0 != iExistingMod)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_EXISTING_PROJECT", iExistingMod));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += iExistingMod;
+			}
+		}
 
 		// Spaceship
 		if (project.isSpaceship())

@@ -4740,6 +4740,8 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 
 	if (iChange != 0)
 	{
+		bool bFirst = GC.getGameINLINE().getProjectCreatedCount(eIndex) == 0 && iChange > 0;
+
 		GC.getGameINLINE().incrementProjectCreatedCount(eIndex, iChange);
 
 		iOldProjectCount = getProjectCount(eIndex);
@@ -4793,7 +4795,40 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 			if (kProject.isAllowsNukes())
 			{
 				GC.getGameINLINE().makeNukesValid(true);
-			}	
+			}
+
+			// Leoreth
+			if (kProject.isRevealsMap())
+			{
+				GC.getMapINLINE().setRevealedPlots(getID(), true, true);
+			}
+
+			// Leoreth
+			if (bFirst)
+			{
+				if (kProject.isFirstEnemyAnarchy())
+				{
+					for (iI = 0; iI < MAX_TEAMS; iI++)
+					{
+						if (GET_TEAM((TeamTypes)iI).getProjectMaking(eIndex) > 0)
+						{
+							for (iJ = 0; iJ > MAX_PLAYERS; iJ++)
+							{
+								if (GET_PLAYER((PlayerTypes)iJ).isAlive() && GET_PLAYER((PlayerTypes)iJ).getTeam() == iI)
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeAnarchyTurns(getTurns(1));
+
+									if (GC.getGame().isFinalInitialized() && GET_PLAYER((PlayerTypes)iJ).isHuman())
+									{
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
+										gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iJ), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -4801,6 +4836,27 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 					{
+						// Leoreth
+						if (bFirst)
+						{
+							if (kProject.getFirstAirExperience() != 0)
+							{
+								GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_AIR, kProject.getFirstAirExperience());
+							}
+						}
+
+						// Leoreth
+						if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
+						{
+							GET_PLAYER((PlayerTypes)iI).makeSpecialUnitValid((SpecialUnitTypes)kProject.getSpecialUnit());
+						}
+
+						// Leoreth
+						if (kProject.isGoldenAge())
+						{
+							GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(GET_PLAYER((PlayerTypes)iI).getGoldenAgeLength());
+						}
+
 						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
 							bChangeProduction = false;
