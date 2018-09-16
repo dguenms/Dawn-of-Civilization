@@ -2930,6 +2930,38 @@
 		<Spanish>Satellite</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SPECIALUNIT_SATELLITE</Tag>
+		<English>Satellite</English>
+		<French>Satellite</French>
+		<German>Satellit</German>
+		<Italian>Satellite</Italian>
+		<Spanish>Satellite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALUNIT_ICBM</Tag>
+		<English>ICBM</English>
+		<French>
+			<Text>Missile intercontinental</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>ICBM</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>ICBM:ICBM</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>ICBM:ICBM</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

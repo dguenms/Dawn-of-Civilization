@@ -2,28 +2,44 @@
 <!-- Projects -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM</Tag>
-		<English>Apollo Program</English>
-		<French>
-			<Text>Programme Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Apollo-Programm</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Programma Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Programa Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_PROJECT_BALLISTIC_MISSILE</Tag>
+		<English>Ballistic Missile</English>
+		<French>Ballistic Missile</French>
+		<German>Ballistische Rakete</German>
+		<Italian>Ballistic Missile</Italian>
+		<Spanish>Ballistic Missile</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_SATELLITE</Tag>
+		<English>First Satellite</English>
+		<French>First Satellite</French>
+		<German>Erster Satellit</German>
+		<Italian>First Satellite</Italian>
+		<Spanish>First Satellite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MAN_IN_SPACE</Tag>
+		<English>Man in Space</English>
+		<French>Man in Space</French>
+		<German>Mann im Weltraum</German>
+		<Italian>Man in Space</Italian>
+		<Spanish>Man in Space</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_LUNAR_LANDING</Tag>
+		<English>Lunar Landing</English>
+		<French>Lunar Landing</French>
+		<German>Mondlandung</German>
+		<Italian>Lunar Landing</Italian>
+		<Spanish>Lunar Landing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_MISSION</Tag>
+		<English>Mission to Mars</English>
+		<French>Mission to Mars</French>
+		<German>Mission to Mars</German>
+		<Italian>Mission to Mars</Italian>
+		<Spanish>Mission to Mars</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Tag>

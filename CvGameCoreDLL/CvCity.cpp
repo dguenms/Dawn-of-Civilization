@@ -14352,6 +14352,23 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			// Event reported to Python before the project is built, so that we can show the movie before awarding free techs, for example
 			CvEventReporter::getInstance().projectBuilt(this, eCreateProject);
 
+			// Leoreth
+			if (GC.getGameINLINE().getProjectCreatedCount(eCreateProject) == 0)
+			{
+				if (GC.getProjectInfo(eCreateProject).getFirstFreeUnit() != NO_UNIT)
+				{
+					UnitTypes eFreeUnit = (UnitTypes)GC.getProjectInfo(eCreateProject).getFirstFreeUnit();
+					if (GC.getUnitInfo(eFreeUnit).getDiscoverMultiplier() > 0 || GC.getUnitInfo(eFreeUnit).getEspionagePoints() > 0 || GC.getUnitInfo(eFreeUnit).getLeaderExperience() > 0)
+					{
+						createGreatPeople(eFreeUnit, false, false);
+					}
+					else
+					{
+						GET_PLAYER(getOwnerINLINE()).initUnit(eFreeUnit, getX_INLINE(), getY_INLINE());
+					}
+				}
+			}
+
 			GET_TEAM(getTeam()).changeProjectCount(eCreateProject, 1);
 
 			if (GC.getProjectInfo(eCreateProject).isSpaceship())

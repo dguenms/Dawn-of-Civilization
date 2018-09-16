@@ -1327,6 +1327,9 @@ public:
 	void updateCultureRanks() const;
 	void updateCultureRanks(CvPlotGroup* pPlotGroup) const;
 
+	bool isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const;
+	void makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit);
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1568,6 +1571,8 @@ protected:
 
 	bool* m_pabResearchingTech;
 	bool* m_pabLoyalMember;
+
+	bool* m_pabSpecialUnitValid; // Leoreth
 
 	std::vector<EventTriggerTypes> m_triggersFired;
 

@@ -2723,6 +2723,79 @@
 		<Spanish>Satellites</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_ENABLES_SPECIAL_PLAYER</Tag>
+		<!-- %s1_Name = Can be Buildings, Units, Projects, etc -->
+		<English>[ICON_BULLET]Enables %s1_Name</English>
+		<French>[ICON_BULLET]Permet : %s1_Name</French>
+		<German>[ICON_BULLET]Erm&#246;glicht: %s1_Name</German>
+		<Italian>[ICON_BULLET]Attiva %s1_Name</Italian>
+		<Spanish>[ICON_BULLET]Permite: %s1_Name</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GOLDEN_AGE</Tag>
+		<English>[ICON_BULLET]Starts a Golden Age</English>
+		<French>[ICON_BULLET]Starts a Golden Age</French>
+		<German>[ICON_BULLET]Startet ein Goldenes Zeitalter</German>
+		<Italian>[ICON_BULLET]Starts a Golden Age</Italian>
+		<Spanish>[ICON_BULLET]Starts a Golden Age</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_FREE_UNIT</Tag>
+		<English>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</English>
+		<French>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet erh&#228;lt: [LINK=literal]%s1_Name[\LINK]</German>
+		<Italian>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_ENEMY_ANARCHY</Tag>
+		<English>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</English>
+		<French>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet l&#246;st Anarchie bei allen aus, die an dem Projekt arbeiten</German>
+		<Italian>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</Italian>
+		<Spanish>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_PROJECT_ANARCHY</Tag>
+		<English>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</English>
+		<French>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</French>
+		<German>Es war ein gewaltiger Schock f&#252;r unsere Zivilisation zu erfahren, dass %s1 es geschafft hat, %s2 vor uns zu vollenden!</German>
+		<Italian>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Italian>
+		<Spanish>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_AIR_EXPERIENCE</Tag>
+		<English>[ICON_BULLET]First to complete receives %s1 experience for Air units</English>
+		<French>[ICON_BULLET]First to complete receives %s1 experience for Air units</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet, erh&#228;lt %s1 Erfahrung für Luft-Einheiten</German>
+		<Italian>[ICON_BULLET]First to complete receives %s1 experience for Air units</Italian>
+		<Spanish>[ICON_BULLET]First to complete receives %s1 experience for Air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_EXISTING_PROJECT</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</English>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</French>
+		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] f&#252;r die Errichtung eines existierenden Projekts</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_DOUBLE_SPEED_EXISTING</Tag>
+		<English>Double Production Speed when already completed by another civilization</English>
+		<French>Double Production Speed when already completed by another civilization</French>
+		<German>Doppelte Produktionsgeschwindigkeit falls bereits von einer anderen Zivilisation vollendet</German>
+		<Italian>Double Production Speed when already completed by another civilization</Italian>
+		<Spanish>Double Production Speed when already completed by another civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_BUILDS_FASTER_EXISTING</Tag>
+		<English>Builds %d1_Mod%% Faster when already completed by another civilization</English>
+		<French>Builds %d1_Mod%% Faster when already completed by another civilization</French>
+		<German>Baut %d1_Mod%% schneller falls bereits von einer anderen Zivilisation vollendet</German>
+		<Italian>Builds %d1_Mod%% Faster when already completed by another civilization</Italian>
+		<Spanish>Builds %d1_Mod%% Faster when already completed by another civilization</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
