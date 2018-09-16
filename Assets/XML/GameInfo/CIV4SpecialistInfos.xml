@@ -592,6 +592,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Satellite.dds</Texture>
 			<bVisible>0</bVisible>
+			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields/>
@@ -616,6 +617,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Satellite.dds</Texture>
 			<bVisible>0</bVisible>
+			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields/>
@@ -639,6 +641,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Satellite.dds</Texture>
 			<bVisible>0</bVisible>
+			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields/>
@@ -665,6 +668,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Slave.dds</Texture>
 			<bVisible>0</bVisible>
+			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields>

@@ -1079,6 +1079,7 @@
 	<ElementType name="iHotKeyPriorityAlt" content="textOnly" dt:type="int"/>
 	<ElementType name="iOrderPriority" content="textOnly" dt:type="int"/>
 	<ElementType name="bVisible" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bNoGlobalEffects" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="iGreatPeopleRateChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="CultureLevelType" content="textOnly"/>
@@ -1117,6 +1118,7 @@
 		<element type="Help"/>
 		<element type="Texture"/>
 		<element type="bVisible"/>
+		<element type="bNoGlobalEffects" minOccurs="0"/> <!-- Leoreth -->
 		<element type="GreatPeopleUnitClass"/>
 		<element type="iGreatPeopleRateChange"/>
 		<element type="Yields"/>

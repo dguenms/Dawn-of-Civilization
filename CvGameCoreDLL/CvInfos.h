@@ -251,6 +251,7 @@ public:
 	int getHappiness() const; // Leoreth
 
 	bool isVisible() const;				// Exposed to Python
+	bool isNoGlobalEffects() const; // Leoreth
 
 	// Arrays
 
@@ -279,6 +280,7 @@ protected:
 	int m_iHappiness; // Leoreth
 
 	bool m_bVisible;				// Exposed to Python
+	bool m_bNoGlobalEffects; // Leoreth
 
 	CvString m_szTexture;
 

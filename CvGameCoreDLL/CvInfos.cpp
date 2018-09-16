@@ -828,6 +828,7 @@ m_iGreatPeopleUnitClass(NO_UNITCLASS),
 m_iGreatPeopleRateChange(0),
 m_iMissionType(NO_MISSION),
 m_bVisible(false),
+m_bNoGlobalEffects(false), // Leoreth
 m_piYieldChange(NULL),
 m_piCommerceChange(NULL),
 m_piFlavorValue(NULL),
@@ -895,6 +896,12 @@ void CvSpecialistInfo::setMissionType(int iNewType)
 bool CvSpecialistInfo::isVisible() const
 {
 	return m_bVisible;
+}
+
+// Leoreth
+bool CvSpecialistInfo::isNoGlobalEffects() const
+{
+	return m_bNoGlobalEffects;
 }
 
 int CvSpecialistInfo::getExperience() const
@@ -994,6 +1001,7 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 	setTexture(szTextVal);
 
 	pXML->GetChildXmlValByName(&m_bVisible, "bVisible");
+	pXML->GetChildXmlValByName(&m_bNoGlobalEffects, "bNoGlobalEffects"); // Leoreth
 
 	pXML->GetChildXmlValByName(szTextVal, "GreatPeopleUnitClass");
 	m_iGreatPeopleUnitClass = pXML->FindInInfoClass(szTextVal);
