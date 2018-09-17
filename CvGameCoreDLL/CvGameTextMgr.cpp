@@ -12164,7 +12164,7 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 
 	if (kProject.getExistingProductionModifier() != 0)
 	{
-		if (GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
+		if (GC.getGameINLINE().isFinalInitialized() && GC.getGameINLINE().getProjectCreatedCount(eProject) > 0)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
 		}
