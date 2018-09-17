@@ -4,7 +4,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
 		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
-		<French>La compagnie commerciale %s1 demande le contrôle de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter leur offre ?</French>
+		<French>La compagnie commerciale %s1 demande le contr&#244;le de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter leur offre ?</French>
 		<German>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</German>
 		<Italian>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
 		<Spanish>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
@@ -76,7 +76,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ANCIENT_TEXTS_2</Tag>
 		<English>Fund an effort to preserve these artifacts in museums, accessible only to the most careful scholars.</English>
-		<French>Mettre tout en œuvre pour pr&#233;server ces artefacts dans des mus&#233;es, accessibles uniquement &#224; des sp&#233;cialistes tri&#233;s sur le volet.</French>
+		<French>Mettre tout en &#339;uvre pour pr&#233;server ces artefacts dans des mus&#233;es, accessibles uniquement &#224; des sp&#233;cialistes tri&#233;s sur le volet.</French>
 		<German>Gr&#252;ndet eine Initiative, um diese Artefakte in Museen zu lagern, wo sie nur den sorgf&#228;ltigsten Gelehrten zug&#228;nglich sind.</German>
 		<Italian>Finanzia il tentativo di preservare questi manufatti nei musei, rendendoli accessibili solo agli studiosi pi&#249; attenti.</Italian>
 		<Spanish>Que se financie un plan para conservar estos objetos en museos a los que solo puedan acceder los eruditos m&#225;s cuidadosos.</Spanish>
@@ -140,7 +140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ANTIMONARCHISTS</Tag>
 		<English>Anti-monarchists are claiming that the King has too much power and that religious leaders need to have some, too.</English>
-		<French>Des anti-monarchistes prétendent que le roi a trop de pouvoir, et que les autorités religieuses devraient en avoir plus.</French>
+		<French>Des anti-monarchistes pr&#233;tendent que le roi a trop de pouvoir, et que les autorit&#233;s religieuses devraient en avoir plus.</French>
 		<German>Gl&#228;ubige Menschen protestieren gegen die Ohnmacht religi&#246;ser Institutionen im Vergleich zur Allmacht Eures K&#246;nigshauses.</German>
 		<Italian>Gli antimonarchici rivendicano che il Re ha troppi poteri, e che i leader religiosi debbano avere i propri poteri rafforzati.</Italian>
 		<Spanish>Antimon&#225;rquicos reclaman qu&#233; el rey tiene demasiado poder y qu&#233; los lideres religiosos deberian tener algo tambien.</Spanish>
@@ -148,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ANTIMONARCHISTS_1</Tag>
 		<English>Our King is the State!</English>
-		<French>L'État, c'est moi !</French>
+		<French>L'&#201;tat, c'est moi !</French>
 		<German>Der Staat bin ich!</German>
 		<Italian>Il Re &#232; lo Stato!</Italian>
 		<Spanish>Nuestro rey es el estado!</Spanish>
@@ -156,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ANTIMONARCHISTS_2</Tag>
 		<English>It's a valid point, our clerics need more influence.</English>
-		<French>Ce sont de justes revendications, notre clergé a besoin d'être plus influent.</French>
+		<French>Ce sont de justes revendications, notre clerg&#233; a besoin d'&#234;tre plus influent.</French>
 		<German>Nun gut, ich gew&#228;hre den Geistlichen mehr Einfluss.</German>
 		<Italian>Hanno ragione, le organizzazioni ecclesiastiche devono avere pi&#249; influenza.</Italian>
 		<Spanish>Es un argumento v&#225;lido, nuestro clerigos necesitan m&#225;s influencia.</Spanish>
@@ -284,7 +284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BEST_DEFENSE_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], [COLOR_TECH_TEXT]Railroad[COLOR_REVERT], or [COLOR_TECH_TEXT]Economics[COLOR_REVERT] without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]ch&#226;teaux[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le la Grande Muraille.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez le [COLOR_TECH_TEXT]fusil[COLOR_REVERT], les [COLOR_TECH_TEXT]voies ferrées[COLOR_REVERT] ou les [COLOR_TECH_TEXT]sciences économiques[COLOR_REVERT] sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]ch&#226;teaux[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le la Grande Muraille.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez le [COLOR_TECH_TEXT]fusil[COLOR_REVERT], les [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT] ou les [COLOR_TECH_TEXT]sciences &#233;conomiques[COLOR_REVERT] sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Schl&#246;sser[COLOR_REVERT] in Ihren St&#228;dten bauen.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Sie bei Erf&#252;llung der Quest die Gro&#223;e Mauer kontrollieren.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Technologie [COLOR_TECH_TEXT]Drall[COLOR_REVERT], [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT] oder [COLOR_TECH_TEXT]Wirtschaftswesen[COLOR_REVERT] entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 [COLOR_BUILDING_TEXT]Castelli[COLOR_REVERT] nelle tue citt&#224;.[PARAGRAPH:1]Se la tua civilt&#224; controlla la Grande Muraglia otterrai un'ulteriore ricompensa.[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se scoprirai [COLOR_TECH_TEXT]Rigatura delle canne[COLOR_REVERT], [COLOR_TECH_TEXT]Ferrovia[COLOR_REVERT] o [COLOR_TECH_TEXT]Economia[COLOR_REVERT] senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, deb&#233;is construir %d1 [COLOR_BUILDING_TEXT]Castillos[COLOR_REVERT] en vuestras ciudades.[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n controla la Gran Muralla.[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si descubres el [COLOR_TECH_TEXT]Fusil[COLOR_REVERT], el [COLOR_TECH_TEXT]Ferrocarril[COLOR_REVERT] o la [COLOR_TECH_TEXT]Econom&#237;a[COLOR_REVERT] sin haber cumplido las condiciones.</Spanish>
@@ -292,7 +292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BETTER_COAL</Tag>
 		<English>Our scientists have developed better ways of processing coal fuel. Our economy stands ready to benefit from this development.</English>
-		<French>Nos scientifiques ont trouvé une meilleure façon d'exploiter le charbon. Notre économie va béneficier énormement de cette découverte.</French>
+		<French>Nos scientifiques ont trouv&#233; une meilleure fa&#231;on d'exploiter le charbon. Notre &#233;conomie va b&#233;neficier &#233;normement de cette d&#233;couverte.</French>
 		<German>Unsere Wissenschaftler haben ein verbessertes Verfahren zur Energiegewinnung aus Kohle entwickelt, von welchem unsere Wirtschaft profitieren k&#246;nnte.</German>
 		<Italian>I nostri scienziati hanno sviluppato metodi migliori per la lavorazione del combustibile derivante dal carbone. La nostra economia &#232; pronta per beneficiare di questo sviluppo.</Italian>
 		<Spanish>Nuestros cient&#237;ficos han descubierto mejores maneras de procesar carb&#243;n. Nuestra economia est&#225; preparada para beneficiarse de este desarrollo.</Spanish>
@@ -300,7 +300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BETTER_COAL_1</Tag>
 		<English>Put it to use at our Coal-fueled power plants. Production is power!</English>
-		<French>Appliquez cette avancée immédiatement à nos centrales à charbon. La production, c'est le pouvoir !</French>
+		<French>Appliquez cette avanc&#233;e imm&#233;diatement &#224; nos centrales &#224; charbon. La production, c'est le pouvoir !</French>
 		<German>F&#246;rdert den Einsatz dieser Technik in unseren Kohlekraftwerken, um die st&#228;dtischen Produktionsraten zu steigern.</German>
 		<Italian>Usiamolo nelle nostre centrali a carbone. La produttivit&#224; &#232; potere!</Italian>
 		<Spanish>Aplicadlo en nuestras plantas de carb&#243;. La producci&#243;n es poder!</Spanish>
@@ -308,7 +308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BETTER_COAL_2</Tag>
 		<English>I suppose we can make our Drydocks a more healthy place to work and slightly more productive, then.</English>
-		<French>J'imagine que nous pouvons faire de nos cales sèches un endroit plus sain et plus productif, alors.</French>
+		<French>J'imagine que nous pouvons faire de nos cales s&#232;ches un endroit plus sain et plus productif, alors.</French>
 		<German>F&#246;rdert den Einsatz dieser Technik in unseren Trockendocks, um die dortigen Gesundheitsbedingungen und Ertr&#228;ge zu verbessern.</German>
 		<Italian>Penso che i nostri cantieri navali ne gioverebbero, sarebbero luoghi pi&#249; sani per chi ci lavora e anche leggermente pi&#249; produttivi.</Italian>
 		<Spanish>Supongo que entonces podemos hacer de nuestros astilleros un lugar m&#225;s saludable y ligeramente m&#225;s productivo.</Spanish>
@@ -332,7 +332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BLESSED_SEA_DONE_1</Tag>
 		<English>Establish your religion in a number of your cities.</English>
-		<French>Établir votre religion dans un certain nombre de vos villes.</French>
+		<French>&#201;tablir votre religion dans un certain nombre de vos villes.</French>
 		<German>Etabliert Eure Religion in mehreren St&#228;dten.</German>
 		<Italian>Instaura la tua religione in molte tue citt&#224;.</Italian>
 		<Spanish>Llevar nuestra religi&#243;n a un n&#250;mero determinado de ciudades.</Spanish>
@@ -340,7 +340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BLESSED_SEA_DONE_2</Tag>
 		<English>Receive a Temple improvement in all cities with five population or more, where your State Religion is present.</English>
-		<French>Obtenir un temple dans toutes les villes d'au moins cinq habitants, sous r&#233;serve que votre religion d'État y soit pr&#233;sente.</French>
+		<French>Obtenir un temple dans toutes les villes d'au moins cinq habitants, sous r&#233;serve que votre religion d'&#201;tat y soit pr&#233;sente.</French>
 		<German>Ihr erhaltet eine Tempel-Modernisierung in allen St&#228;dten mit einer Bev&#246;lkerungsgr&#246;&#223;e von 5 oder mehr, in denen Eure Staatsreligion vorherrscht.</German>
 		<Italian>Ricevi un miglioramento del tempio in tutte le citt&#224;, con una popolazione pari a cinque o superiore, in cui &#232; presente la religione di stato.</Italian>
 		<Spanish>Recibir una mejora en el Templo de todas las ciudades que tengan cinco o m&#225;s de poblaci&#243;n y nuestra religi&#243;n oficial.</Spanish>
@@ -356,7 +356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BLESSED_SEA_HELP</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must establish or capture cities on %d1 total landmasses of any size, from one-plot islands to massive continents. All landmasses where you have at least one city are counted. Note that additional cities on the same island or continent do not help in this quest. The goal is to establish your presence on a number of different landmasses and thereby prove your mastery over the waters.[PARAGRAPH:1] You will fail this quest if you change state religions, cease to have a state religion or reach [COLOR_TECH_TEXT]Industrialism[COLOR_REVERT] without having met the conditions.</English>
-		<French>Pour mener votre qu&#234;te &#224; bien, vous devez fonder ou capturer des villes sur un total de %d1 continents, dont la taille varie d'une seule case &#224; une surface colossale. Tous les continents o&#249; vous avez au moins une ville sont pris en compte. Sachez que la construction de nouvelles villes sur une m&#234;me &#238;le ou sur un m&#234;me continent ne contribuera pas &#224; l'ach&#232;vement de votre qu&#234;te. Le but est d'&#233;tablir votre pr&#233;sence sur plusieurs continents diff&#233;rents et d&#233;montrer ainsi votre ma&#238;trise des mers.[PARAGRAPH:1]Vous &#233;chouerez dans votre qu&#234;te si vous changez de religion d'État, cessez d'avoir une religion d'État ou atteignez l'industrialisme sans en avoir rempli les conditions.</French>
+		<French>Pour mener votre qu&#234;te &#224; bien, vous devez fonder ou capturer des villes sur un total de %d1 continents, dont la taille varie d'une seule case &#224; une surface colossale. Tous les continents o&#249; vous avez au moins une ville sont pris en compte. Sachez que la construction de nouvelles villes sur une m&#234;me &#238;le ou sur un m&#234;me continent ne contribuera pas &#224; l'ach&#232;vement de votre qu&#234;te. Le but est d'&#233;tablir votre pr&#233;sence sur plusieurs continents diff&#233;rents et d&#233;montrer ainsi votre ma&#238;trise des mers.[PARAGRAPH:1]Vous &#233;chouerez dans votre qu&#234;te si vous changez de religion d'&#201;tat, cessez d'avoir une religion d'&#201;tat ou atteignez l'industrialisme sans en avoir rempli les conditions.</French>
 		<German>[PARAGRAPH:1]Um diese Quest zu erf&#252;llen, m&#252;ssen Sie auf insgesamt %d1 L&#228;ndern beliebiger Gr&#246;&#223;e, von kleinen Inseln bis hin zu gro&#223;en Kontinenten, St&#228;dte errichten oder einnehmen. Es z&#228;hlen alle Landmassen, auf denen Sie mindestens eine Stadt unterhalten. Beachten Sie jedoch, dass zus&#228;tzliche St&#228;dte auf derselben Insel oder demselben Kontinent in diesem Fall nicht helfen. Das Questziel lautet, Ihre Anwesenheit auf einer Reihe verschiedener Landmassen zu etablieren und dadurch Ihre Dominanz auf dem Meer zu beweisen.[PARAGRAPH:1]Diese Quest gilt als gescheitert, wenn Sie die Staatsreligion wechseln, die Staatsreligion abschaffen oder die Industrialisierung erreichen, ohne die geforderten Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per portare a termine questa impresa devi fondare o catturare citt&#224; su %d1 territori di qualsiasi dimensione, da isolette grandi come un campo a enormi continenti. Verranno contati tutti i territori su cui hai almeno una citt&#224;. Nota che pi&#249; citt&#224; sulla stessa isola o sullo stesso continente non ti aiutano nell'impresa. Lo scopo &#232; quello di stabilire la tua presenza su un numero di territori diversi, provando cos&#236; il tuo dominio sulle acque.[PARAGRAPH:1] Fallirai nell'impresa se cambi religione di stato, cessi di avere una religione di stato o se raggiungi l'Industrialismo senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, hay que fundar ciudades o capturarlas en un total de %d1 masas de tierra de cualquier tama&#241;o, desde islas de una casilla hasta enormes continentes. Se contar&#225;n todas las masas de tierra en las que se tenga al menos una ciudad. Hay que tener en cuenta que las ciudades adicionales que haya en una misma isla o continente no contar&#225;n para esta misi&#243;n. El objetivo consiste en tener una presencia en un n&#250;mero de masas de tierra diferentes y, con ello, demostrar el dominio de las aguas.[PARAGRAPH:1] Esta misi&#243;n ser&#225; un fracaso si se cambia la religi&#243;n oficial, si se deja de tener una religi&#243;n oficial o si se llega al Industrialismo sin haber cumplido las condiciones.</Spanish>
@@ -396,7 +396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BROKEN_DAM</Tag>
 		<English>The dam in %s2_city has broken. The city's suburbs are flooded and deaths have been reported.</English>
-		<French>Le barrage de %s2_city a rompu. Les banlieues de la ville sont inondées et il y a de nombreuses victimes.</French>
+		<French>Le barrage de %s2_city a rompu. Les banlieues de la ville sont inond&#233;es et il y a de nombreuses victimes.</French>
 		<German>Ein Bruch des Wasserschutzwalls in der Stadt %s2_city verursacht &#220;berflutungen von Stadtbezirken und fordert Todesopfer.</German>
 		<Italian>La diga di %s2_city &#232; crollata. I sobborghi della citt&#224; sono stati inondati e sono state segnalate diverse persone che hanno perso la vita.</Italian>
 		<Spanish>La presa en %s2_city ha cedido. Las afueras de la ciudad est&#225;n inundadas y se informa de muertes.</Spanish>
@@ -404,7 +404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BROKEN_DAM_1</Tag>
 		<English>That is very unfortunate, but we can not help. Tell the local authorities they'll have to handle the situation.</English>
-		<French>C'est malheureux, mais nous ne pouvons rien y faire. Mettez les autorités locales en charge de la situation.</French>
+		<French>C'est malheureux, mais nous ne pouvons rien y faire. Mettez les autorit&#233;s locales en charge de la situation.</French>
 		<German>Wir k&#246;nnen uns derzeit keine Hilfsma&#223;nahmen leisten. Die lokalen Beh&#246;rden m&#252;ssen mit dieser Situation selbst fertig werden.</German>
 		<Italian>&#200; una cosa molto spiacevole, ma non possiamo fare nulla. Dici alle autorit&#224; locali che dovranno occuparsi della situazione.</Italian>
 		<Spanish>Eso es muy desafortunado, pero no podemos ayudar. Decir a las autoridades locales que tendr&#225;n que manejar la situaci&#243;n.</Spanish>
@@ -412,7 +412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BROKEN_DAM_2</Tag>
 		<English>Repair the dam from our emergency funds.</English>
-		<French>Réparez le barrage à l'aide de nos fonds d'urgence.</French>
+		<French>R&#233;parez le barrage &#224; l'aide de nos fonds d'urgence.</French>
 		<German>Organisiert einen Wiederaufbau des Wasserschutzwalles.</German>
 		<Italian>Ripara la diga con i nostri fondi destinati alle emergenze</Italian>
 		<Spanish>Reparar la presa con nuestros fondos de emergencia.</Spanish>
@@ -420,7 +420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BROKEN_DAM_3</Tag>
 		<English>Repair the dam and provide compensation to the affected families.</English>
-		<French>Remettez le barrage en état et payez des réparations aux familles touchées par le drame.</French>
+		<French>Remettez le barrage en &#233;tat et payez des r&#233;parations aux familles touch&#233;es par le drame.</French>
 		<German>Organisiert einen Wiederaufbau des Wasserschutzwalles und Hilfsma&#223;nahmen f&#252;r die Betroffenen.</German>
 		<Italian>Ripara la diga e provvedi a un risarcimento per le famiglie coinvolte dal disastro</Italian>
 		<Spanish>Reparar la presa y dar compensaciones a las familias afectadas</Spanish>
@@ -588,7 +588,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CHILLY_FLIGHT_1</Tag>
 		<English>Set up a monument at the airport to produce tourism.</English>
-		<French>Ériger un monument &#224; l'a&#233;roport pour encourager le tourisme.</French>
+		<French>&#201;riger un monument &#224; l'a&#233;roport pour encourager le tourisme.</French>
 		<German>Errichtet ein Denkmal am Flughafen, um den Tourismus anzukurbeln.</German>
 		<Italian>Erigi un monumento all'aeroporto per produrre turismo.</Italian>
 		<Spanish>Que se coloque un monumento en el aeropuerto para que genere turismo.</Spanish>
@@ -636,7 +636,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CIV_GAME_1</Tag>
 		<English>Send congratulations to the developers. Our people should enjoy this game.</English>
-		<French>Envoyez nos félicitations aux développeurs. Notre bon peuple devrait apprécier ce jeu.</French>
+		<French>Envoyez nos f&#233;licitations aux d&#233;veloppeurs. Notre bon peuple devrait appr&#233;cier ce jeu.</French>
 		<German>&#220;bermittelt meine Gl&#252;ckw&#252;nsche. Unser Volk soll sich an dem Spiel erfreuen.</German>
 		<German>&#220;bermittelt meine Gl&#252;ckw&#252;nsche. Unser Volk soll sich an dem Spiel erfreuen.</German>
 		<Italian>Manda le nostre congratulazioni agli sviluppatori. La nostra gente si divertir&#224; con questo gioco.</Italian>
@@ -645,7 +645,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CIV_GAME_2</Tag>
 		<English>This game seems to have great educational potential. Suggest that it be used in our educational system.</English>
-		<French>Il semblerait que ce jeu ait un fort potentiel éducatif. Nous devrions l'utiliser dans notre système scolaire.</French>
+		<French>Il semblerait que ce jeu ait un fort potentiel &#233;ducatif. Nous devrions l'utiliser dans notre syst&#232;me scolaire.</French>
 		<German>Dieses Spiel scheint gro&#223;es Bildungspotential zu haben. Lasst es uns im Bildungswesen einsetzen.</German>
 		<Italian>Questo gioco sembra avere un grande potenziale educativo. Propongo che venga usato nel nostro sistema scolastico.</Italian>
 		<Spanish>Este juego parece tener un gran potencial educacional. Sugerir que sea usado en nuestro sistema educativo.</Spanish>
@@ -653,7 +653,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CIV_GAME_3</Tag>
 		<English>Computer games? They have no place in our society! Sell the franchise to foreign buyers!</English>
-		<French>Des jeux vidéo ? Pas de ça dans notre société ! Vendez la franchise à des acheteurs étrangers !</French>
+		<French>Des jeux vid&#233;o ? Pas de &#231;a dans notre soci&#233;t&#233; ! Vendez la franchise &#224; des acheteurs &#233;trangers !</French>
 		<German>Computerspiele? So etwas verdirbt die Gesellschaft nur. Verkauft die Rechte ins Ausland!</German>
 		<Italian>Giochi per computer? Non c'&#232; posto per loro nella nostra societ&#224;! Vendi la licenza ad acquirenti stranieri!</Italian>
 		<Spanish>&#191;Juegos de ordenador? No tienen cabida en nuestra sociedad! Vender la franquicia a compradores extranjeros!</Spanish>
@@ -693,7 +693,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CLASSIC_LITERATURE_DONE_HELP_2</Tag>
 		<English>[ICON_BULLET]Receive a random Technology from among Ancient Era techs not yet discovered.</English>
-		<French>[ICON_BULLET]Recevez une technologie al&#233;atoire parmi les technologies non découvertes de l'ère antique.</French>
+		<French>[ICON_BULLET]Recevez une technologie al&#233;atoire parmi les technologies non d&#233;couvertes de l'&#232;re antique.</French>
 		<German>[ICON_BULLET]Ihr erhaltet eine zuf&#228;llige Technologie aus der Antike, die noch nicht entdeckt wurde.</German>
 		<Italian>[ICON_BULLET]Ricevi una tecnologia a caso tra le tecnologie dell'era antica che non hai ancora scoperto.</Italian>
 		<Spanish>[ICON_BULLET]Recibir una tecnolog&#237;a al azar de las tecnolog&#237;as de la Antig&#252;edad que todav&#237;a no se han descubierto.</Spanish>
@@ -725,7 +725,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CONTROVERSIAL_PHILOSOPHER</Tag>
 		<English>A philosopher from %s2_city is stirring up controversy among our population. Our people are highly distrustful of his teachings.</English>
-		<French>Un philosophe de %s2_city casuse une controverse parmi nos gens qui se méfient fortement de ses enseignements.</French>
+		<French>Un philosophe de %s2_city casuse une controverse parmi nos gens qui se m&#233;fient fortement de ses enseignements.</French>
 		<German>Ein Philosoph aus %s2_city l&#246;st Kontroversen innerhalb unserer Bev&#246;lkerung aus. Seine Lehren machen die Leute argw&#246;hnisch.</German>
 		<Italian>Un filosofo di %s2_city sta scatenando una controversia all'interno della nostra popolazione. I nostri cittadini sono molto diffidenti nei confronti dei suoi insegnamenti.</Italian>
 		<Spanish>Un fil&#243;sofo de %s2_city esta levantando controversia entre nuestra poblaci&#243;n. Nuestra gente esta realmente disgustada con sus ense&#241;anzas.</Spanish>
@@ -733,7 +733,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CONTROVERSIAL_PHILOSOPHER_1</Tag>
 		<English>We won't tolerate such heresy. Send him into exile!</English>
-		<French>Nous ne tolérerons aucune hérésie. Bannissez-le !</French>
+		<French>Nous ne tol&#233;rerons aucune h&#233;r&#233;sie. Bannissez-le !</French>
 		<German>Derartige Ketzerei wird nicht toleriert. Schickt ihn ins Exil!</German>
 		<Italian>Non tollereremo un'eresia simile. Mandatelo in esilio!</Italian>
 		<Spanish>No toleraremos tal herejia. Mandarlo al exilio!</Spanish>
@@ -869,7 +869,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DEFECTING_AGENT</Tag>
 		<English>One of our high-ranking intelligence agents has defected to the %s1_civ_adjective empire.</English>
-		<French>Un de nos agents haut placé a déserté nos rangs pour rejoindre l'empire %s1_civ_adjective.</French>
+		<French>Un de nos agents haut plac&#233; a d&#233;sert&#233; nos rangs pour rejoindre l'empire %s1_civ_adjective.</French>
 		<German>Einer unserer hochrangigen Spione ist zum %s1:2_civ_adjective Reich &#252;bergelaufen.</German>
 		<Italian>Uno dei nostri agenti dell'intelligence di grado elevato ha defezionato ed &#232; passato al servizio dell'impero %s1:1_civ_adjective</Italian>
 		<Spanish>Uno de nuestros agentes de inteligencia de alto rango ha desertado al imperio %s1_civ_adjective</Spanish>
@@ -877,7 +877,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DEFECTING_AGENT_1</Tag>
 		<English>That's regrettable. We'll need to review our security procedures.</English>
-		<French>C'est regrettable. Il nous faut revoir nos procédures de sécurité.</French>
+		<French>C'est regrettable. Il nous faut revoir nos proc&#233;dures de s&#233;curit&#233;.</French>
 		<German>Das ist bedauerlich. Lasst die Sicherheitsma&#223;nahmen &#252;berpr&#252;fen.</German>
 		<Italian>&#200; una cosa deplorevole. Dovremo rivedere le nostre misure di sicurezza.</Italian>
 		<Spanish>Es lamentable. Tendremos que revisar nuestros procedimientos de seguridad.</Spanish>
@@ -885,7 +885,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DEFECTING_AGENT_2</Tag>
 		<English>Unacceptable. An "accident" should happen to the traitor!</English>
-		<French>Intolérable. Un "accident" devrait arriver au traître!</French>
+		<French>Intol&#233;rable. Un "accident" devrait arriver au tra&#238;tre!</French>
 		<German>Das ist inakzeptabel. Sorgt f&#252;r einen "Unfall" des Verr&#228;ters...</German>
 		<Italian>&#200; inaccettabile. Il traditore la deve pagare!</Italian>
 		<Spanish>Inaceptable. El traidor debe sufrir un "accidente"!</Spanish>
@@ -893,7 +893,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISSIDENT_PRIEST</Tag>
 		<English>A dissident priest from %s2_city is doubting the supreme power of Amun-Re in an unprecedented outbreak of heresy.</English>
-		<French>Un prêtre dissident de %s2_city a mis en doute la puissance suprême d'Amon-Rê, ouvrant la voie à une nouvelle hérésie.</French>
+		<French>Un pr&#234;tre dissident de %s2_city a mis en doute la puissance supr&#234;me d'Amon-R&#234;, ouvrant la voie &#224; une nouvelle h&#233;r&#233;sie.</French>
 		<German>Ein kritischer Priester der Stadt %s2_city zweifelt in beispielloser Ketzerei an der Macht des Fruchtbarkeitsgottes.</German>
 		<Italian>Un sacerdote dissidente di %s2_city sta dubitando del potere supremo di Amon-Ra, creando una diffusione di eresie senza precedenti.</Italian>
 		<Spanish>En un brote de herejia sin precedentes, un sacerdote disidente de %s2_city duda del poder supremo de Amun-Re.</Spanish>
@@ -901,7 +901,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISSIDENT_PRIEST_1</Tag>
 		<English>That is disgusting and preposterous. The heresy must be dealt with in the name of Amun-Re, even if the locals won't support it.</English>
-		<French>C'est inadmissible et dépravé. Cette hérésie doit être contrecarrée au nom d'Amon-Rê même si les autochtones n'approuvent pas.</French>
+		<French>C'est inadmissible et d&#233;prav&#233;. Cette h&#233;r&#233;sie doit &#234;tre contrecarr&#233;e au nom d'Amon-R&#234; m&#234;me si les autochtones n'approuvent pas.</French>
 		<German>Beendet im Namen des Fruchtbarkeitsgottes diese widerliche Ketzerei, notfalls mit Gewalt gegen die Bev&#246;lkerung.</German>
 		<Italian>Tutto ci&#242; &#232; disgustoso e assurdo. Dovremo occuparci di questa eresia nel nome di Amon-Ra, anche se non avremo l'appoggio delle popolazioni locali.</Italian>
 		<Spanish>Eso es lamentable y absurdo. La herejia debe ser tratada con el nombre de Amun-Re, incluso si la poblaci&#243;n local no lo apoya.</Spanish>
@@ -909,7 +909,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISSIDENT_PRIEST_2</Tag>
 		<English>We can ignore that nutter, our people will get over it.</English>
-		<French>Ignorons cet imbécile, notre peuple s'en remettra.</French>
+		<French>Ignorons cet imb&#233;cile, notre peuple s'en remettra.</French>
 		<German>Ignoriert den Verr&#252;ckten, das Volk wird dar&#252;ber hinweg kommen.</German>
 		<Italian>Ignoriamo questo pazzo, il nostro popolo si dimenticher&#224; di tutto ci&#242; che ha detto.</Italian>
 		<Spanish>Podemos ignorar esa minucia, nuestra gente se ocupara de ello.</Spanish>
@@ -917,7 +917,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_DISSIDENT_PRIEST_3</Tag>
 		<English>Diversity is good. Allow these beliefs to spread and be recorded, though convincing our people that it's nothing to fear won't be easy.</English>
-		<French>La diversité est positive. Laissons ces croyances se propager, même s'il ne sera pas facile de convaincre notre peuple de leur innocuité !</French>
+		<French>La diversit&#233; est positive. Laissons ces croyances se propager, m&#234;me s'il ne sera pas facile de convaincre notre peuple de leur innocuit&#233; !</French>
 		<German>Der Glaube hat viele Gesichter. Zeichnet die neuen &#220;berzeugungen auf und hindert sie nicht an der Ausbreitung, aber helft den Menschen, ihren Glauben zu wahren.</German>
 		<Italian>La diversit&#224; &#232; un bene.Permettiamo a questa credenza di diffondersi e di essere dichiarata ufficialmente, sebbene convincere i nostri cittadini che non c'&#232; nulla da temere sar&#224; difficile.</Italian>
 		<Spanish>La diversidad es buena. Permitid que esas creencias se difundad y sean preservadas, aunque convencer a nuestra gente de que no hay nada que temer no ser&#225; facil.</Spanish>
@@ -1005,7 +1005,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ELITE_SWORDS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT] [NUM1:unit:units]. A source of Iron will be required.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating the [COLOR_HIGHLIGHT_TEXT]Monarchy[COLOR_REVERT] civic.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achevez cette qu&#234;te, vous devez entra&#238;ner %d1 [NUM1:unit&#233;:unit&#233;s] de [COLOR_UNIT_TEXT]spadassins[COLOR_REVERT]. Une source de fer sera n&#233;cessaire.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation utilise la doctrine [COLOR_HIGHLIGHT_TEXT]monarchie[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez le Moyen Âge sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achevez cette qu&#234;te, vous devez entra&#238;ner %d1 [NUM1:unit&#233;:unit&#233;s] de [COLOR_UNIT_TEXT]spadassins[COLOR_REVERT]. Une source de fer sera n&#233;cessaire.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation utilise la doctrine [COLOR_HIGHLIGHT_TEXT]monarchie[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez le Moyen &#194;ge sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [NUM1:Einheit:Einheiten] [COLOR_UNIT_TEXT]Schwertk&#228;mpfer[COLOR_REVERT] ausbilden. Dazu ist Eisen erforderlich.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Monarchie[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Mittelalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare quest'impresa devi addestrare %d1 [COLOR_UNIT_TEXT][NUM1:Spadaccino:Spadaccini][COLOR_REVERT]. &#200; necessaria una fonte di ferro.[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; ha come forma di governo preferita il [COLOR_HIGHLIGHT_TEXT]Governo ereditario[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se raggiungerai il Medioevo senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Soldados con espada[COLOR_REVERT]. Ser&#225; necesaria una fuente de hierro.[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n utiliza el principio de [COLOR_HIGHLIGHT_TEXT]Gobierno hereditario[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si se alcanza la Edad Media sin haber cumplido las condiciones.</Spanish>
@@ -1165,7 +1165,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FAIL_OVERWHELM</Tag>
 		<English>You have failed the quest of the "Overwhelm Doctrine!"</English>
-		<French>Vous avez &#233;chou&#233; dans la qu&#234;te de la Doctrine de l'Écrasement !</French>
+		<French>Vous avez &#233;chou&#233; dans la qu&#234;te de la Doctrine de l'&#201;crasement !</French>
 		<German>Die Quest "&#220;berw&#228;ltigungsdoktrin" ist gescheitert!</German>
 		<Italian>Hai fallito nell'impresa della Dottrina della sopraffazione!</Italian>
 		<Spanish>&#161;La misi&#243;n Doctrina del doblegamiento ha fracasado!</Spanish>
@@ -1309,7 +1309,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FIRING_PINS_1</Tag>
 		<English>Supply our Grenadiers with the improved explosives.</English>
-		<French>Équiper les grenadiers d'explosifs am&#233;lior&#233;s.</French>
+		<French>&#201;quiper les grenadiers d'explosifs am&#233;lior&#233;s.</French>
 		<German>Stattet unsere Grenadiere mit den verbesserten Sprengs&#228;tzen aus.</German>
 		<Italian>Equipaggia i nostri granatieri con gli esplosivi migliorati.</Italian>
 		<Spanish>Que se les suministren explosivos mejorados a nuestros granaderos.</Spanish>
@@ -1429,7 +1429,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GOLDEN_BUDDHA</Tag>
 		<English>A blacksmith working in the Forge of %s2_city has made a beautiful golden statue of Buddha.</English>
-		<French>Un forgeron travaillant dans la forge de %s2_city a créé une superbe statue en or du Bouddha.</French>
+		<French>Un forgeron travaillant dans la forge de %s2_city a cr&#233;&#233; une superbe statue en or du Bouddha.</French>
 		<German>In der Schmiede der Stadt %s2_city hat der Meister eine wundersch&#246;ne goldene Buddha-Statue angefertigt.</German>
 		<Italian>Un fabbro che lavora presso la fucina di %s2_city ha creato una splendida statua d'oro di Buddha</Italian>
 		<Spanish>Un herrero trabajando en la forja de %s2_city ha hecho una hermosa estatua de Buda.</Spanish>
@@ -1437,7 +1437,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GOLDEN_BUDDHA_1</Tag>
 		<English>That's not his job. Sell the statue and remind the blacksmith what his responsibilities are.</English>
-		<French>Ce n'est pas son travail. Vendez la statue et rappelez à l'ordre le forgeron.</French>
+		<French>Ce n'est pas son travail. Vendez la statue et rappelez &#224; l'ordre le forgeron.</French>
 		<German>Das geh&#246;rt nicht zu seinen Aufgaben. Verkauft die Statue und erinnert den Schmied an seine Pflichten.</German>
 		<Italian>Questo non &#232; il suo lavoro. Vendiamo la statua e ricorda al fabbro quali siano i suoi doveri.</Italian>
 		<Spanish>Ese no es su trabajo. Vende la estatua y recuerda al herrero cuales son sus responsabilidades.</Spanish>
@@ -1453,7 +1453,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GOLDEN_BUDDHA_3</Tag>
 		<English>The blacksmith is a true talent, we should encourage him to make more of these statues.</English>
-		<French>Ce forgeron a un vrai talent, nous devrions l'encourager à faire plus de statues.</French>
+		<French>Ce forgeron a un vrai talent, nous devrions l'encourager &#224; faire plus de statues.</French>
 		<German>Der Schmied ist ein Naturtalent. Ermutigt ihn zum Anfertigen weiterer Statuen.</German>
 		<Italian>Questo fabbro &#232; un vero talento, incoraggiamolo a scolpire nuove statue.</Italian>
 		<Spanish>El herrero es un aut&#233;ntico artista, debemos animarle a que haga m&#225;s estatuas.</Spanish>
@@ -1461,7 +1461,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GREAT_BEAST</Tag>
 		<English>A great beast has been discovered near one of our hunting camps.</English>
-		<French>Une énorme bête a été decouverte près d'un de nos camps de chasse.</French>
+		<French>Une &#233;norme b&#234;te a &#233;t&#233; decouverte pr&#232;s d'un de nos camps de chasse.</French>
 		<German>Ein riesiges Tier wurde in der N&#228;he eines unserer Lager gesichtet.</German>
 		<Italian>Un grande animale &#232; stato avvistato nei dintorni di un nostro campo di caccia.</Italian>
 		<Spanish>Una gran bestia ha sido descubierta cerca de uno de nuestros campamentos.</Spanish>
@@ -1469,7 +1469,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GREAT_BEAST_1</Tag>
 		<English>Let it breed and give offspring. Hunt sparingly.</English>
-		<French>Laissez-la se reproduire et chassez sa progéniture avec parcimonie.</French>
+		<French>Laissez-la se reproduire et chassez sa prog&#233;niture avec parcimonie.</French>
 		<German>Lasst das Tier sich vermehren und die Nachkommen ma&#223;voll bejagen.</German>
 		<Italian>Lasciate che si riproduca. Cacciate con moderazione.</Italian>
 		<Spanish>Dejenle criar y tener descendencia. Cazar esporadicamente.</Spanish>
@@ -1485,7 +1485,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GREAT_BEAST_3</Tag>
 		<English>Hunt it? Are you mad? The beast is a manifestation of a divine spirit!</English>
-		<French>La chasser ? Vous êtes fous ? Cette bête est une manifestation divine!</French>
+		<French>La chasser ? Vous &#234;tes fous ? Cette b&#234;te est une manifestation divine!</French>
 		<German>Das Tier zur Strecke bringen? Seid ihr von Sinnen? Dies ist eine Manifestation g&#246;ttlichen Wirkens!</German>
 		<Italian>Cacciarlo? Sei matto? L'animale &#232; una manifestazione di uno spirito divino!</Italian>
 		<Spanish>&#191;Cazarlo?&#191;Est&#225;as loco? La bestia es una maniestaci&#243;n de un esp&#237;ritu divino!</Spanish>
@@ -1597,7 +1597,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_DONE_3</Tag>
 		<English>Enjoy our Golden Age of Muskets.</English>
-		<French>Profitons de notre Âge d'or des mousquets.</French>
+		<French>Profitons de notre &#194;ge d'or des mousquets.</French>
 		<German>Genie&#223;t das Goldene Zeitalter der Musketiere.</German>
 		<Italian>Goditi l'et&#224; dell'oro dei moschetti.</Italian>
 		<Spanish>Disfrutad de vuestra edad de oro de los mosquetes.</Spanish>
@@ -1605,7 +1605,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Musketman[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Rifling[COLOR_REVERT] or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 unit&#233;s de [COLOR_UNIT_TEXT]mousquetaires[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation utilise la [COLOR_HIGHLIGHT_TEXT]Vassalit&#233;[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es (technologies du [COLOR_TECH_TEXT]fusil[COLOR_REVERT] ou des [COLOR_TECH_TEXT]voies ferrées[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 unit&#233;s de [COLOR_UNIT_TEXT]mousquetaires[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation utilise la [COLOR_HIGHLIGHT_TEXT]Vassalit&#233;[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es (technologies du [COLOR_TECH_TEXT]fusil[COLOR_REVERT] ou des [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [NUM1:Einheit:Einheiten] [COLOR_UNIT_TEXT]Musketiere[COLOR_REVERT] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Vasallentum[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine weitere Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Drall[COLOR_REVERT] oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 unit&#224; di [COLOR_UNIT_TEXT]Soldati con moschetto[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; ha come forma di governo preferita il [COLOR_HIGHLIGHT_TEXT]Vassallaggio[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; controlla [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se una civilt&#224; rivale la completa per prima, o se scoprirai armi da fuoco avanzate (le tecnologie [COLOR_TECH_TEXT]Rigatura delle canne[COLOR_REVERT] o [COLOR_TECH_TEXT]Ferrovia[COLOR_REVERT]) senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Mosquetes[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n utiliza el principio de [COLOR_HIGHLIGHT_TEXT]Vasallaje[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n controla [NUM2:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si descubres armas de fuego avanzadas (las tecnolog&#237;as [COLOR_TECH_TEXT]Fusil[COLOR_REVERT] o [COLOR_TECH_TEXT]Ferrocarril[COLOR_REVERT]) sin haber cumplido las condiciones.</Spanish>
@@ -1661,7 +1661,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT</Tag>
 		<English>Our herbalists have discovered a new plant that holds great promise for health treatments. However, tests on human subjects are required to find the right mixture.</English>
-		<French>Nos botanistes ont découvert une nouvelle plante prometteuse pour la médecine. Cependant, des tests sur des humains sont requis pour trouver les dosages appropriés.</French>
+		<French>Nos botanistes ont d&#233;couvert une nouvelle plante prometteuse pour la m&#233;decine. Cependant, des tests sur des humains sont requis pour trouver les dosages appropri&#233;s.</French>
 		<German>Unsere Naturheilkundigen haben die besondere Wirksamkeit einer Pflanze f&#252;r die Behandlung von Krankheiten entdeckt. Es sind allerdings umfassende Feldversuche an Menschen erforderlich, die f&#252;r die Betroffenen nicht ungef&#228;hrlich sind.</German>
 		<Italian>I nostri erboristi hanno scoperto una pianta che sembra avere un grande potenziale per un uso nel campo medico. Tuttavia, sono richiesti test su esseri umani per trovare la miscela giusta.</Italian>
 		<Spanish>Nuestros boticarios han descubierto una nueva planta prometedora para tratar enfermedades. Sin embargo, es necesario pruebas en sujetos humanos para refinar la composici&#243;n.</Spanish>
@@ -1669,7 +1669,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT_1</Tag>
 		<English>Forget these tests. Anything worth knowing has already been discovered, so why risk needless death?</English>
-		<French>Au diable les tests ! Tout ce qui en vaut la peine a déjà été découvert, alors pourquoi risquer des morts inutiles ?</French>
+		<French>Au diable les tests ! Tout ce qui en vaut la peine a d&#233;j&#224; &#233;t&#233; d&#233;couvert, alors pourquoi risquer des morts inutiles ?</French>
 		<German>Riskante Feldversuche kommen nicht in Frage. Wir setzen die Gesundheit von Menschen nicht aufs Spiel.</German>
 		<Italian>Dimentica i test. Tutto ci&#242; che &#232; necessario nel campo medico &#232; gi&#224; stato scoperto, perch&#232; rischiare decessi inutili?</Italian>
 		<Spanish>Olvida esas pruebas. Ya ha sido descubierto algo de valor, &#191;para qu&#233; arriesgarse con pruebas innecesarias?</Spanish>
@@ -1685,7 +1685,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT_3</Tag>
 		<English>Health is the bedrock to world domination! Run full scale tests on all but the youngest and weakest among us.</English>
-		<French>La santé est le pilier fondateur de toute domination mondiale ! Lancez des tests à grande échelle sur tous nos citoyens adultes et en bonne santé !</French>
+		<French>La sant&#233; est le pilier fondateur de toute domination mondiale ! Lancez des tests &#224; grande &#233;chelle sur tous nos citoyens adultes et en bonne sant&#233; !</French>
 		<German>Ohne Risiko ist kein Fortschritt zu haben, und eine Gro&#223;macht braucht ein gesundes Volk! Lasst umfassende Versuchsreihen durchf&#252;hren, von denen nur die J&#252;ngsten und Schw&#228;chsten ausgenommen sind.</German>
 		<Italian>La buona salute dei nostri cittadini &#232; uno dei fondamenti per la dominazione mondiale! Diamo il via a test su larga scala su tutte le persone eccetto i pi&#249; giovani e i pi&#249; deboli.</Italian>
 		<Spanish>La salud es la base de la dominaci&#243;n mundial! Realicen pruebas completas en todos salvo los m&#225;s d&#233;biles</Spanish>
@@ -1693,7 +1693,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT_4</Tag>
 		<English>In their attempts to find the right mixture of herbs, our healers caused fatalities throughout the empire!</English>
-		<French>Les tentatives de nos chercheurs pour trouver le bon dosage de plantes ont causé de nombreuses morts dans notre empire !</French>
+		<French>Les tentatives de nos chercheurs pour trouver le bon dosage de plantes ont caus&#233; de nombreuses morts dans notre empire !</French>
 		<German>Umfassende Versuchsreihen f&#252;r ein neues Heilmittel verursachen Todesf&#228;lle im gesamten Reich! </German>
 		<Italian>Durante i vari tentativi di trovare la giusta miscela di erbe, i nostri erboristi hanno causato la morte di diverse persone all'interno del nostro impero!</Italian>
 		<Spanish>En su intento por refinar la composici&#243;n, nuestros sanitarios causan fallecimientos por todo el imperio!</Spanish>
@@ -1701,7 +1701,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT_5</Tag>
 		<English>Our experiments have been a success! Our cities now enjoy better healing herbs!</English>
-		<French>Nos expériences ont réussi ! Nos villes bénéficient désormais d'herbes médicinales améliorées !</French>
+		<French>Nos exp&#233;riences ont r&#233;ussi ! Nos villes b&#233;n&#233;ficient d&#233;sormais d'herbes m&#233;dicinales am&#233;lior&#233;es !</French>
 		<German>Die Versuchsreihen f&#252;r ein neues Heilmittel sind ein voller Erfolg. Die Gesundheit unserer St&#228;dte profitiert von den neuen Behandlungsm&#246;glichkeiten!</German>
 		<Italian>I nostri esperimenti hanno avuto successo! Le nostre citt&#224; hanno ora a disposizione erbe curative di migliore qualit&#224;!</Italian>
 		<Spanish>Nuestros experimentos han sido un &#233;xito! Nuestros ciudadanos ahora disfrutan de mejores hierbas curativas!</Spanish>
@@ -1709,7 +1709,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HEALING_PLANT_6</Tag>
 		<English>Our experiments have been a resounding success! We now posess much better treatments!</English>
-		<French>Nos expériences ont réussi au-delà de nos espérances ! Nous disposons désormais de meilleurs traitements !</French>
+		<French>Nos exp&#233;riences ont r&#233;ussi au-del&#224; de nos esp&#233;rances ! Nous disposons d&#233;sormais de meilleurs traitements !</French>
 		<German>Die Versuchsreihen f&#252;r ein neues Heilmittel sind ein durchschlagender Erfolg. Wir besitzen jetzt deutlich bessere Behandlungsm&#246;glichkeiten!</German>
 		<Italian>I nostri esperimenti hanno avuto un successo straordinario! Abbiamo ora a nostra disposizione cure molto migliori per alcune malattie!</Italian>
 		<Spanish>Nuestros experimentos han sido un &#233;xito rotundo! Ahora poseemos tratamientos mucho mejores!</Spanish>
@@ -1717,7 +1717,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HERESY_1</Tag>
 		<English>Suppress the heresy! Then launch a drive to remind our people that we already adhere to the one true faith.</English>
-		<French>Éradiquer l'h&#233;r&#233;sie puis mener une action pour rappeler &#224; notre peuple que nous n'adh&#233;rons qu'&#224; la seule vraie foi.</French>
+		<French>&#201;radiquer l'h&#233;r&#233;sie puis mener une action pour rappeler &#224; notre peuple que nous n'adh&#233;rons qu'&#224; la seule vraie foi.</French>
 		<German>Macht der Ketzerei ein Ende! Dann startet eine Kampagne, um unser Volk daran zu erinnern, dass wir uns bereits an den einen wahren Glauben halten.</German>
 		<Italian>Sopprimi l'eresia! Poi lancia una campagna per ricordare alla nostra gente che seguiamo gi&#224; l'unica vera fede!</Italian>
 		<Spanish>&#161;Que la herej&#237;a sea eliminada! Y que luego se inicie una campa&#241;a que recuerde a los nuestros que ya hemos elegido nuestra &#250;nica y verdadera fe.</Spanish>
@@ -1845,7 +1845,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HOLY_MOUNTAIN_HELP</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must extend your cultural influence and control over the Peak plot that is the Holy Mountain. You may achieve this by divine providence by settling near any Peaks you find. Eventually you may find the right one.[PARAGRAPH:1]Or you may seek further guidance from studying the holy scriptures. If you build %d3 religious buildings (Temples and Monasteries), your religious leaders will solve the puzzle and identify the correct location of the Holy Mountain, which you must then still go and settle near to complete the quest. A %s2_building allows for more coordinated worship and is worth as much as four Temples for the purposes of this quest.[PARAGRAPH:1]You will fail this quest if you change state religions, cease to have a state religion, or reach [COLOR_TECH_TEXT]Industrialism[COLOR_REVERT] without having met the conditions. You will also fail this quest if any other civilization takes control of the Holy Mountain before you do.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez &#233;tendre votre influence culturelle et votre contr&#244;le &#224; la case montagneuse sur laquelle se trouve la montagne sacr&#233;e. Vous pouvez r&#233;ussir cette mission en comptant sur la providence divine, c'est-&#224;-dire en vous installant pr&#232;s de toutes les montagnes que vous trouverez. Au bout du compte, vous finirez bien par trouver la bonne.[PARAGRAPH:1]Ou vous pouvez tenter d'en savoir plus en &#233;tudiant les &#233;critures sacr&#233;es. Si vous construisez %d3 b&#226;timents religieux (temples et monast&#232;res), vos chefs religieux r&#233;soudront l'&#233;nigme et localiseront pr&#233;cis&#233;ment la montagne sacr&#233;e, qu'il vous faudra encore coloniser pour achever la qu&#234;te. La construction d'un b&#226;timent pr&#233;cis (%s2_building) permet une meilleure coordination du culte et &#233;quivaut &#224; quatre temples, en ce qui concerne cette qu&#234;te.[PARAGRAPH:1]Vous &#233;chouerez dans votre qu&#234;te si vous changez de religion d'État, si vous cessez d'avoir une religion d'État ou si vous atteignez l'&#233;poque industrielle sans en avoir rempli les conditions. Vous &#233;chouerez &#233;galement si une autre civilisation prend le contr&#244;le de la montagne sacr&#233;e avant vous.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez &#233;tendre votre influence culturelle et votre contr&#244;le &#224; la case montagneuse sur laquelle se trouve la montagne sacr&#233;e. Vous pouvez r&#233;ussir cette mission en comptant sur la providence divine, c'est-&#224;-dire en vous installant pr&#232;s de toutes les montagnes que vous trouverez. Au bout du compte, vous finirez bien par trouver la bonne.[PARAGRAPH:1]Ou vous pouvez tenter d'en savoir plus en &#233;tudiant les &#233;critures sacr&#233;es. Si vous construisez %d3 b&#226;timents religieux (temples et monast&#232;res), vos chefs religieux r&#233;soudront l'&#233;nigme et localiseront pr&#233;cis&#233;ment la montagne sacr&#233;e, qu'il vous faudra encore coloniser pour achever la qu&#234;te. La construction d'un b&#226;timent pr&#233;cis (%s2_building) permet une meilleure coordination du culte et &#233;quivaut &#224; quatre temples, en ce qui concerne cette qu&#234;te.[PARAGRAPH:1]Vous &#233;chouerez dans votre qu&#234;te si vous changez de religion d'&#201;tat, si vous cessez d'avoir une religion d'&#201;tat ou si vous atteignez l'&#233;poque industrielle sans en avoir rempli les conditions. Vous &#233;chouerez &#233;galement si une autre civilisation prend le contr&#244;le de la montagne sacr&#233;e avant vous.</French>
 		<German>[PARAGRAPH:1]Um diese Quest zu erf&#252;llen, m&#252;ssen Sie Ihren kulturellen Einfluss ausdehnen und die Kontrolle &#252;ber das erh&#246;hte Gel&#228;ndefeld erringen, auf dem sich der Heilige Berg befindet. Dies erreichen Sie nach g&#246;ttlicher Vorsehung, indem Sie sich an allen erh&#246;hten Standorten ansiedeln, bis Sie schlie&#223;lich den richtigen Standort gefunden haben.[PARAGRAPH:1]Oder Sie durchsuchen die Heilige Schrift weiter nach Hinweisen. Wenn Sie %d3 religi&#246;se Geb&#228;ude errichtet haben (Tempel und Kl&#246;ster), werden Ihre religi&#246;sen F&#252;hrer das R&#228;tsel l&#246;sen und den korrekten Standort des Heiligen Berges identifizieren. Anschlie&#223;end m&#252;ssen Sie dorthin aufbrechen und sich in der N&#228;he des Berges niederlassen, um die Quest erfolgreich abzuschlie&#223;en. Das Geb&#228;ude %s2_building erm&#246;glicht bessere Gottesdienste und ist f&#252;r diese Quest etwa so viel wert wie vier Tempel.[PARAGRAPH:1]Diese Quest gilt als gescheitert, wenn Sie die Staatsreligion wechseln, die Staatsreligion abschaffen oder die Industrialisierung erreichen, ohne die geforderten Bedingungen erf&#252;llt zu haben. Au&#223;erdem gilt sie auch dann als gescheitert, wenn eine andere Zivilisation den Heiligen Berg vor Ihnen besetzt.</German>
 		<Italian>[PARAGRAPH:1]Per completare l'impresa dovrai espandere la tua influenza culturale e il tuo controllo sulla casella che ospita il picco della Montagna Sacra. Puoi riuscirci affidandoti alla divina provvidenza e accampandoti a fianco di ogni picco che incontri: prima o poi troverai quello giusto.[PARAGRAPH:1]Oppure puoi cercare aiuto nello studio delle sacre scritture. Se costruisci %d3 edifici religiosi (templi e monasteri) i tuoi capi religiosi riusciranno a risolvere l'enigma e a identificare l'esatta posizione della Montagna Sacra; dovrai comunque andarci e accampartici, per portare e termine l'impresa. %s2_building permette un'adorazione pi&#249; coordinata e vale come quattro templi, ai fini dell'impresa.[PARAGRAPH:1]Fallirai nell'impresa se cambi religione di stato, elimini la religione di stato o se raggiungi l'era industriale senza aver soddisfatto le condizioni. Fallirai anche se un'altra civilt&#224; prende il controllo della Montagna Sacra prima di te.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, debemos extender nuestra influencia cultural y controlar la casilla con el pico, que es la Monta&#241;a Sagrada. &#201;sta se encontrar&#225; por divina providencia si se colonizan las inmediaciones de cualquier pico hallado. Tarde o pronto se encontrar&#225; el apropiado.[PARAGRAPH:1]Tambi&#233;n se pueden buscar m&#225;s pistas si se estudian las sagradas escrituras. Si se construyen %d3 edificios religiosos (Templos y Monasterios), los l&#237;deres religiosos resolver&#225;n el enigma de la ubicaci&#243;n correcta de la Monta&#241;a Sagrada, pero a&#250;n habr&#225; que ir all&#237; y colonizarla para completar la misi&#243;n. [NUM2:Un:Una:Unos:Unas] %s2_building [NUM2:permite:permite:permiten:permiten] un culto m&#225;s coordinado y [NUM2:cuenta:cuenta:cuentan:cuentan] como cuatro Templos a efectos de esta misi&#243;n.[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si se cambia la religi&#243;n oficial, si se deja de tener una religi&#243;n oficial o si se alcanza la Era Industrial sin haber cumplido las condiciones. Tambi&#233;n se fracasar&#225; si cualquier otra civilizaci&#243;n se apodera antes de la Monta&#241;a Sagrada.</Spanish>
@@ -1909,7 +1909,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HORSE_WHISPERING_HELP</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Stables[COLOR_REVERT] in your various cities.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Renaissance Era without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]écuries[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez la Renaissance sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]&#233;curies[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez la Renaissance sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]St&#228;lle[COLOR_REVERT] in Ihren St&#228;dten bauen.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Renaissance erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 [COLOR_BUILDING_TEXT]Stalle[COLOR_REVERT] nelle tue citt&#224;.[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se raggiungerai il Rinascimento senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, deb&#233;is construir %d1 [COLOR_BUILDING_TEXT]Establos[COLOR_REVERT] en vuestras diversas ciudades.[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si se alcanza la era del Renacimiento sin haber cumplido las condiciones.</Spanish>
@@ -2029,7 +2029,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_IMPEACHMENT</Tag>
 		<English>The Congress wants to impeach the President. The population supports this motion.</English>
-		<French>Les députés, soutenus par la population, souhaitent passer une motion de censure à l'égard du president.</French>
+		<French>Les d&#233;put&#233;s, soutenus par la population, souhaitent passer une motion de censure &#224; l'&#233;gard du president.</French>
 		<German>Der Kongress verlangt ein Amtsenthebungsverfahren gegen die Regierungsf&#252;hrung, unterst&#252;tzt von gro&#223;en Teilen der Bev&#246;lkerung.</German>
 		<Italian>Il Congresso vuole mettere sotto impeachment il Presidente. La popolazione supporta la mozione.</Italian>
 		<Spanish>El congreso ha presentado una moci&#243;n de censura contra el presidente. La poblaci&#243;n apoya esta iniciativa.</Spanish>
@@ -2045,7 +2045,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_IMPEACHMENT_2</Tag>
 		<English>That's an overreaction. The President has gotten the message that his administration needs to improve.</English>
-		<French>Ils en font trop. Le président a compris le message et améliorerera son administration.</French>
+		<French>Ils en font trop. Le pr&#233;sident a compris le message et am&#233;liorerera son administration.</French>
 		<German>Ein Amtsenthebungsverfahren w&#228;re &#252;bertrieben. Aber die Regierungsf&#252;hrung soll die Sorgen der Menschen ernster nehmen.</German>
 		<Italian>&#200; una reazione eccessiva. Il Presidente avr&#224; inteso il messaggio che la sua amministrazione deve migliorare.</Italian>
 		<Spanish>Eso es una exageraci&#243;n. El presidente debe captar el mensaje de que su administraci&#243;n debe mejorar.</Spanish>
@@ -2077,7 +2077,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INDUSTRIAL_FIRE_2</Tag>
 		<English>Fund an emergency rebuilding effort.</English>
-		<French>Mettre tout en œuvre pour reconstruire.</French>
+		<French>Mettre tout en &#339;uvre pour reconstruire.</French>
 		<German>Finanziert einen Wiederaufbauplan.</German>
 		<Italian>Finanzia una ricostruzione d'emergenza.</Italian>
 		<Spanish>Que se financie un plan de reconstrucci&#243;n de emergencia.</Spanish>
@@ -2165,8 +2165,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INTERSTATE_EFFECT</Tag>
 		<English>All Roads on flatland will be replaced by Highways.</English>
-		<French>Toutes les routes construites sur des terrains plats seront remplacées par des autoroutes.</French>
-		<German>Alle Straßen im Flachland werden durch Autobahnen ersetzt.</German>
+		<French>Toutes les routes construites sur des terrains plats seront remplac&#233;es par des autoroutes.</French>
+		<German>Alle Stra&#223;en im Flachland werden durch Autobahnen ersetzt.</German>
 		<Italian>All Roads on flatland will be replaced by Highways.</Italian>
 		<Spanish>All Roads on flatland will be replaced by Highways.</Spanish>
 	</TEXT>
@@ -2181,7 +2181,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_JAIL</Tag>
 		<English>People of %s2_city are not feeling safe. They are worried that criminals may escape from the local Jail.</English>
-		<French>Les habitants de %s2_city ne se sentent pas en sécurité. La possibilité que des criminels s'échappent de la prison locale les inquiète.</French>
+		<French>Les habitants de %s2_city ne se sentent pas en s&#233;curit&#233;. La possibilit&#233; que des criminels s'&#233;chappent de la prison locale les inqui&#232;te.</French>
 		<German>Die B&#252;rger von %s2_city sorgen sich hinsichtlich der Sicherheit des st&#228;dtischen Gef&#228;ngnisses.</German>
 		<Italian>I cittadini di %s2_city non si sentono sicuri. Sono preoccupati che i criminali possano scappare dalla Prigione locale.</Italian>
 		<Spanish>La gente de %s2_city no se siente segura. Les preocupes que los criminales escapen de la carcel local.</Spanish>
@@ -2189,7 +2189,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_JAIL_1</Tag>
 		<English>So what? No one is going to escape anyway.</English>
-		<French>Et alors ? Personne ne va s'échapper de toute façon.</French>
+		<French>Et alors ? Personne ne va s'&#233;chapper de toute fa&#231;on.</French>
 		<German>Die Leute sehen Gespenster. Ich habe andere Sorgen.</German>
 		<Italian>Quindi? In ogni caso nessuno uscir&#224; da quella prigione.</Italian>
 		<Spanish>&#191;Y qu&#233;? Nadie va a escapar de ah&#237;.</Spanish>
@@ -2197,7 +2197,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_JAIL_2</Tag>
 		<English>Boost jail security and organize a campaign to convince the citizens that they're safe.</English>
-		<French>Améliorez la sécurité pénitentiaire et organisez une campagne de communication pour convainvre les gens qu'ils sont en sûreté.</French>
+		<French>Am&#233;liorez la s&#233;curit&#233; p&#233;nitentiaire et organisez une campagne de communication pour convainvre les gens qu'ils sont en s&#251;ret&#233;.</French>
 		<German>Verst&#228;rkt die Gef&#228;ngnissicherheit und organisiert eine Kampagne, um die B&#252;rger von der Sicherheit zu &#252;berzeugen.</German>
 		<Italian>Potenzia la sicurezza nella prigione e organizza una campagna propagandistica per rassicurare i cittadini.</Italian>
 		<Spanish>Incrementa la seguridad de la carcel y organiza una campa&#241;a para convencer a los ciudadanos de que est&#225;n seguros.</Spanish>
@@ -2205,7 +2205,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_JOYOUS_WEDDING_1</Tag>
 		<English>Send well wishes and a token wedding gift.</English>
-		<French>Envoyer nos meilleurs vœux et un modeste cadeau de mariage pour la forme.</French>
+		<French>Envoyer nos meilleurs v&#339;ux et un modeste cadeau de mariage pour la forme.</French>
 		<German>Richtet ihnen unsere besten W&#252;nsche aus und schickt ein angemessenes Hochzeitsgeschenk.</German>
 		<Italian>Invia le congratulazioni e un regalo nuziale simbolico.</Italian>
 		<Spanish>Que se les env&#237;en nuestros mejores deseos y un regalo de bodas simb&#243;lico.</Spanish>
@@ -2597,7 +2597,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Knights[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 unit&#233;s de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le le b&#226;timent : [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es (technologie de la [COLOR_TECH_TEXT]tradition militaire[COLOR_REVERT], du [COLOR_TECH_TEXT]fusil[COLOR_REVERT], ou des [COLOR_TECH_TEXT]voies ferrées[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 unit&#233;s de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le le b&#226;timent : [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es (technologie de la [COLOR_TECH_TEXT]tradition militaire[COLOR_REVERT], du [COLOR_TECH_TEXT]fusil[COLOR_REVERT], ou des [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Ritter[COLOR_REVERT]-Einheiten ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie Fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Milit&#228;rwesen[COLOR_REVERT], [COLOR_TECH_TEXT]Drall[COLOR_REVERT], oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 unit&#224; di [COLOR_UNIT_TEXT]Cavalieri[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; ha come forma di governo preferita la [COLOR_HIGHLIGHT_TEXT]Religione organizzata[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; controlla [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se una civilt&#224; rivale la completa per prima, o se scoprirai armi da fuoco avanzate (le tecnologie [COLOR_TECH_TEXT]Tradizione militare[COLOR_REVERT], [COLOR_TECH_TEXT]Rigatura delle canne[COLOR_REVERT], o [COLOR_TECH_TEXT]Ferrovia[COLOR_REVERT]) senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Caballeros[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n utiliza el principio de [COLOR_HIGHLIGHT_TEXT]Religi&#243;n organizada[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n controla [NUM2:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si descubres armas de fuego avanzadas (las tecnolog&#237;as [COLOR_TECH_TEXT]Tradici&#243;n militar[COLOR_REVERT], [COLOR_TECH_TEXT]Fusil[COLOR_REVERT], o [COLOR_TECH_TEXT]Ferrocarril[COLOR_REVERT]) sin haber cumplido las condiciones.</Spanish>
@@ -2605,7 +2605,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_PROTEST</Tag>
 		<English>Our people are protesting against our nuclear arsenal. They fear that we would use nukes with disastrous consequences.</English>
-		<French>Nos citoyens manifestent contre notre force de frappe nucléaire. Ils craignent les conséquences dramatiques qui surviendraient si nous les utilisions.</French>
+		<French>Nos citoyens manifestent contre notre force de frappe nucl&#233;aire. Ils craignent les cons&#233;quences dramatiques qui surviendraient si nous les utilisions.</French>
 		<German>Das Volk protestiert gegen Euer Atomwaffenarsenal. Die Menschen bef&#252;rchten katastrophale Folgen durch einen Einsatz dieser Waffen.</German>
 		<Italian>I nostri cittadini protestano contro il nostro arsenale nucleare. Temono che useremo le armi atomiche con conseguenze disastrose.</Italian>
 		<Spanish>Nuestro pueblo esta manifestandose contra nuestro arsenal nuclear. Temen que las usemos con consecuencias catastr&#243;ficas</Spanish>
@@ -2613,7 +2613,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_PROTEST_1</Tag>
 		<English>The people's wishes are our top priority. We will disband our nuclear weapons.</English>
-		<French>Notre priorité est de contenter nos citoyens. Nous allons désarmer notre arsenal nucléaire.</French>
+		<French>Notre priorit&#233; est de contenter nos citoyens. Nous allons d&#233;sarmer notre arsenal nucl&#233;aire.</French>
 		<German>Der Volkswille hat oberste Priorit&#228;t. Das Atomwaffenarsenal wird aufgel&#246;st.</German>
 		<Italian>La volont&#224; del nostro popolo &#232; la nostra prima priorit&#224;. Avvia il disarmo nucleare.</Italian>
 		<Spanish>Los deseos del pueblo son nuestra primera prioridad. Desmantelaremos nuestro arsenal nuclear.</Spanish>
@@ -2621,7 +2621,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_PROTEST_1_HELP</Tag>
 		<English>[ICON_BULLET]Lose all nuclear weapons.</English>
-		<French>[ICON_BULLET]Perte de toutes nos armes nucléaires</French>
+		<French>[ICON_BULLET]Perte de toutes nos armes nucl&#233;aires</French>
 		<German>[ICON_BULLET]Alle Nuklearwaffen werden beseitigt</German>
 		<Italian>[ICON_BULLET]Tutte le armi nucleari vengono smantellate.</Italian>
 		<Spanish>[ICON_BULLET]Perder todas las armas nucleares.</Spanish>
@@ -2637,7 +2637,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_PROTEST_3</Tag>
 		<English>We need a positive publicity campaign for our military, right now!</English>
-		<French>Il nous faut une campagne de promotion pour notre armée, tout de suite !</French>
+		<French>Il nous faut une campagne de promotion pour notre arm&#233;e, tout de suite !</French>
 		<German>Sorgt umgehend f&#252;r eine &#246;ffentliche Kampagne zur Unterst&#252;tzung unseres Milit&#228;rapparats!</German>
 		<Italian>Le nostre forze armate hanno bisogno di una buona campagna pubblicitaria, ora!</Italian>
 		<Spanish>Necesitamos una campa&#241;a de publicidad positiva para nuestro ej&#233;rcito, ahora mismo!</Spanish>
@@ -2653,7 +2653,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_OVERWHELM_1</Tag>
 		<English>The Overwhelm Doctrine[PARAGRAPH:1]You are tasked by your military leaders to construct a fully functional aircraft carrier battle fleet.</English>
-		<French>La Doctrine de l'Écrasement[PARAGRAPH:1]Vos dirigeants militaires vous chargent de construire une flotte op&#233;rationnelle de porte-avions.</French>
+		<French>La Doctrine de l'&#201;crasement[PARAGRAPH:1]Vos dirigeants militaires vous chargent de construire une flotte op&#233;rationnelle de porte-avions.</French>
 		<German>Die &#220;berw&#228;ltigungsdoktrin[PARAGRAPH:1]Eure Milit&#228;rf&#252;hrer verlangen von Euch, eine voll funktionale Flugzeugtr&#228;ger-Schlachtflotte zu bauen.</German>
 		<Italian>Dottrina della sopraffazione[PARAGRAPH:1]I capi militari ti hanno incaricato di costruire una flotta da battaglia con tanto di portaerei.</Italian>
 		<Spanish>Doctrina del doblegamiento[PARAGRAPH:1]Los l&#237;deres militares encargan la construcci&#243;n de una flota de combate de portaaviones plenamente operativa.</Spanish>
@@ -2757,7 +2757,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PASTURE_BUILT</Tag>
 		<English>Industrious villagers near our city of %s2_city have built a Pasture.</English>
-		<French>D'industrieux villageois ont construit un pâturage près de la ville de %s2_city.</French>
+		<French>D'industrieux villageois ont construit un p&#226;turage pr&#232;s de la ville de %s2_city.</French>
 		<German>Flei&#223;ige Dorfbewohner errichten nahe der Stadt %s2_city selbst&#228;ndig eine Weide.</German>
 		<Italian>Abitanti industriosi di un villaggio vicino alla nostra citt&#224; di %s2_city hanno costruito un Pascolo</Italian>
 		<Spanish>Aldeanos laboriosos cerca de la ciudad de %s2_city han hecho un pastizal.</Spanish>
@@ -2805,7 +2805,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PREACHING_RESEARCHER</Tag>
 		<English>A scientist from %s2_city has undergone baptism and become a preacher at the city's Christian Monastery.</English>
-		<French>Un scientifique de %s2_city s'est fait baptiser et est entré dans les ordres au monastère chrétien de la ville.</French>
+		<French>Un scientifique de %s2_city s'est fait baptiser et est entr&#233; dans les ordres au monast&#232;re chr&#233;tien de la ville.</French>
 		<German>Ein renommierter Wissenschaftler der Stadt %s2_city predigt nach seiner Taufe im &#246;rtlichen Christlichen Kloster.</German>
 		<Italian>Uno scienziato di %s2_city si &#232; fatto battezzare ed &#232; diventato un predicatore presso il Monastero Cristiano della citt&#224;.</Italian>
 		<Spanish>Un cient&#237;fico de %s2_city se ha bautizado y convertido en predicador en el monasterio cristiano de la ciudad.</Spanish>
@@ -2821,7 +2821,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PREACHING_RESEARCHER_2</Tag>
 		<English>See if the scientist would be willing to continue the scientific work at the Monastery, given some additional funding.</English>
-		<French>Demandez au scientifique s'il serait prêt à continuer son travail au monastère s'il avait un soutien financier.</French>
+		<French>Demandez au scientifique s'il serait pr&#234;t &#224; continuer son travail au monast&#232;re s'il avait un soutien financier.</French>
 		<German>Ermutigt den Wissenschaftler mit finanzieller Unterst&#252;tzung dazu, seine wissenschaftlichen Arbeiten im Kloster fortzusetzen.</German>
 		<Italian>Vediamo se lo scienziato sia consenziente a continuare la propria ricerca scientifica presso il Monastero, dopo aver concesso alcuni fondi aggiuntivi.</Italian>
 		<Spanish>Mira si el cient&#237;fico desea continuar investigando en el monasterio, d&#225;ndole alguna financiaci&#243;n adicional.</Spanish>
@@ -2829,7 +2829,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_1</Tag>
 		<English>Embrace the Reformation.</English>
-		<French>Adhérer à la Réforme</French>
+		<French>Adh&#233;rer &#224; la R&#233;forme</French>
 		<German>Nehmt die Reformation an.</German>
 		<Italian>mbrace the Reformation.</Italian>
 		<Spanish>mbrace the Reformation.</Spanish>
@@ -2837,7 +2837,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_2</Tag>
 		<English>Tolerate the new sects.</English>
-		<French>Tolérer les nouveaux cultes.</French>
+		<French>Tol&#233;rer les nouveaux cultes.</French>
 		<German>Toleriert die neuen Sekten.</German>
 		<Italian>Tolerate the new sects.</Italian>
 		<Spanish>Tolerate the new sects.</Spanish>
@@ -2845,7 +2845,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_3</Tag>
 		<English>Join the Counter-Reformation.</English>
-		<French>Se joindre à la Contre-Réforme.</French>
+		<French>Se joindre &#224; la Contre-R&#233;forme.</French>
 		<German>Tretet der Gegen-Reformation bei.</German>
 		<Italian>Join the Counter-Reformation.</Italian>
 		<Spanish>Join the Counter-Reformation.</Spanish>
@@ -2853,7 +2853,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_COUNTER</Tag>
 		<English>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</English>
-		<French>Le catholicisme demeure votre religion d'État. Le protestantisme se propagera seulement à certaines de vos plus grandes villes. Vous déclarerez la guerre à toutes les civilisations qui se sont converties au protestantisme.</French>
+		<French>Le catholicisme demeure votre religion d'&#201;tat. Le protestantisme se propagera seulement &#224; certaines de vos plus grandes villes. Vous d&#233;clarerez la guerre &#224; toutes les civilisations qui se sont converties au protestantisme.</French>
 		<German>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</German>
 		<Italian>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</Italian>
 		<Spanish>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</Spanish>
@@ -2861,7 +2861,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_EMBRACE</Tag>
 		<English>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</English>
-		<French>Le protestantisme deviendra votre religion d'État et la plupart de vos villes s'y convertiront. Le catholicisme peut rester dans les grandes villes. Prendre le contrôle des biens de l'Église dans les villes catholiques vous rapportera %d1 or. Si vous êtes le fondateur du protestantisme, un lieu saint sera construit dans la ville sainte. Les civilisations catholiques pourront vous déclarer la guerre pour freiner la Réforme.</French>
+		<French>Le protestantisme deviendra votre religion d'&#201;tat et la plupart de vos villes s'y convertiront. Le catholicisme peut rester dans les grandes villes. Prendre le contr&#244;le des biens de l'&#201;glise dans les villes catholiques vous rapportera %d1 or. Si vous &#234;tes le fondateur du protestantisme, un lieu saint sera construit dans la ville sainte. Les civilisations catholiques pourront vous d&#233;clarer la guerre pour freiner la R&#233;forme.</French>
 		<German>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</German>
 		<Italian>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</Italian>
 		<Spanish>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</Spanish>
@@ -2869,7 +2869,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_TOLERATE</Tag>
 		<English>Protestantism can spread to your cities and even replace Catholicism.</English>
-		<French>Le protestantisme peut se propager dans vos villes et même remplacer le catholicisme.</French>
+		<French>Le protestantisme peut se propager dans vos villes et m&#234;me remplacer le catholicisme.</French>
 		<German>Protestantism can spread to your cities and even replace Catholicism.</German>
 		<Italian>Protestantism can spread to your cities and even replace Catholicism.</Italian>
 		<Spanish>Protestantism can spread to your cities and even replace Catholicism.</Spanish>
@@ -2877,7 +2877,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_TOLERATE_STATE</Tag>
 		<English>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</English>
-		<French>Le catholicisme demeure votre religion d'État. Le protestantisme peut se propager dans vos villes et même remplacer le catholicisme.</French>
+		<French>Le catholicisme demeure votre religion d'&#201;tat. Le protestantisme peut se propager dans vos villes et m&#234;me remplacer le catholicisme.</French>
 		<German>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</German>
 		<Italian>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</Italian>
 		<Spanish>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</Spanish>
@@ -2901,7 +2901,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ROGUE_STATION</Tag>
 		<English>A rogue radio station in %s2_city is broadcasting propaganda against our ruling party in an amazing display of impudence.</English>
-		<French>Une radio pirate de %s2_city diffuse de façon ouverte et insolente de la propagande anti-gouvernementale.</French>
+		<French>Une radio pirate de %s2_city diffuse de fa&#231;on ouverte et insolente de la propagande anti-gouvernementale.</French>
 		<German>Ein Piratensender verbreitet ausgehend von der Stadt %s2_city dreiste Propaganda gegen Eure Regierung.</German>
 		<Italian>Una stazione radio dissidente nella citt&#224; di %s2_city sta diffondendo propaganda contro il nostro partito al potere, mostrando una sorprendente impudenza.</Italian>
 		<Spanish>Una emisora pirata en %s2_city est&#225; emitiendo propaganda contra nuestro partido gobernante en una sorprendente muestra de imprudencia.</Spanish>
@@ -2909,7 +2909,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ROGUE_STATION_1</Tag>
 		<English>Send a blackops group to destroy the radio tower, we can blame it on an industrial accident.</English>
-		<French>Envoyez une équipe d'opérations noires détruire la station émettrice. Nous prétendrons qu'il s'agit d'un accident industriel.</French>
+		<French>Envoyez une &#233;quipe d'op&#233;rations noires d&#233;truire la station &#233;mettrice. Nous pr&#233;tendrons qu'il s'agit d'un accident industriel.</French>
 		<German>Ein verdecktes Einsatzkommando soll den Sender zerst&#246;ren, aber lasst es wie einen Unfall aussehen.</German>
 		<Italian>Manda una squadra speciale a distruggere la stazione radio, possiamo addossare le cause ad un incidente industriale.</Italian>
 		<Spanish>Envia un grupo encubierto a destruir la torre de radio, podemos disfrazarlo de accidente industrial.</Spanish>
@@ -2917,7 +2917,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ROGUE_STATION_2</Tag>
 		<English>Round up the broadcasters, that should send a message.</English>
-		<French>Envoyez les animateurs au trou, ça devrait faire passer le message.</French>
+		<French>Envoyez les animateurs au trou, &#231;a devrait faire passer le message.</French>
 		<German>Lasst die Betreiber verhaften, das sollte als Warnung gen&#252;gen.</German>
 		<Italian>Catturate gli annunciatori, capiranno il messaggio.</Italian>
 		<Spanish>Apresa a los locutores, eso enviar&#225; un mensaje.</Spanish>
@@ -2925,7 +2925,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ROGUE_STATION_3</Tag>
 		<English>Wait for the station to get more listeners, then round them up along with the broadcasters and send them all to do labour at our factories.</English>
-		<French>Attendez que la station gagne des auditeurs, puis arrêtez les animateurs et les diffuseurs et envoyez-les tous travailler dans nos usines.</French>
+		<French>Attendez que la station gagne des auditeurs, puis arr&#234;tez les animateurs et les diffuseurs et envoyez-les tous travailler dans nos usines.</French>
 		<German>Stellt fest, wer mit dem Piratensender sympathisiert, dann verhaftet die Staatsfeinde und verurteilt sie zur Zwangsarbeit in den Fabriken.</German>
 		<Italian>Attendete che alla stazione radio si radunino vari ascoltatori, poi catturate gli annunciatori e tutti gli ascoltatori che si erano radunati e mandateli ai lavori forzati nelle nostre fabbriche.</Italian>
 		<Spanish>Espera a que la emisora tenga m&#225;s oyentes, entonces apr&#233;salos junto a los locutores y envialos a trabajar a nuestras f&#225;bricas.</Spanish>
@@ -3141,7 +3141,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SPORTS_LEAGUE_DONE_2</Tag>
 		<English>Leverage these sports leagues in to a cultural tradition.</English>
-		<French>Élever ces ligues de sports au rang de tradition culturelle.</French>
+		<French>&#201;lever ces ligues de sports au rang de tradition culturelle.</French>
 		<German>Macht aus diesen Sportligen eine kulturelle Tradition.</German>
 		<Italian>Trasforma questi campionati sportivi in una tradizione culturale.</Italian>
 		<Spanish>Aprovechemos estas ligas deportivas para convertirlas en una tradici&#243;n cultural.</Spanish>
@@ -3157,7 +3157,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SPORTS_LEAGUE_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if you control [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] if and when this quest is successfully completed.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Modern Era without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]arènes[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si vous contr&#244;lez le b&#226;timent : [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] si et lorsque cette qu&#234;te est achev&#233;e avec succ&#232;s.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]ar&#232;nes[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si vous contr&#244;lez le b&#226;timent : [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] si et lorsque cette qu&#234;te est achev&#233;e avec succ&#232;s.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Amphitheatern[COLOR_REVERT] in Ihren St&#228;dten bauen.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Sie bei Erf&#252;llung der Quest das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrollieren.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Moderne erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 [COLOR_BUILDING_TEXT]Anfiteatri[COLOR_REVERT] nelle tue citt&#224;.[PARAGRAPH:1]Se controlli [NUM2:il:la] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] ti verr&#224; data un'ulteriore ricompensa, se e quando completerai l'impresa.[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se raggiungerai l'era moderna senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, deb&#233;is construir %d1 [COLOR_BUILDING_TEXT]Anfiteatros[COLOR_REVERT] en vuestras ciudades.[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si se ostenta el control [NUM2:del:de la:de los:de las] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] siempre y cuando esta misi&#243;n se haya cumplido satisfactoriamente.[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si se alcanza la era Moderna sin haber cumplido las condiciones.</Spanish>
@@ -3165,7 +3165,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SPY_DISCOVERED</Tag>
 		<English>A %s1_civ_adjective spy is operating on a high level in our government! What should we do?</English>
-		<French>Un espion %s1_civ_adjective est implanté dans les plus hautes sphères de notre gouvernement ! Que devons-nous faire?</French>
+		<French>Un espion %s1_civ_adjective est implant&#233; dans les plus hautes sph&#232;res de notre gouvernement ! Que devons-nous faire?</French>
 		<German>Einer Eurer Regierungsmitarbeiter ist als %[s1:3_civ_adjective]r Spion enttarnt worden! Was wollt Ihr tun?</German>
 		<Italian>Una spia %s1:2_civ_adjective sta operando negli alti livelli del nostro governo.Cosa dobiamo fare?</Italian>
 		<Spanish>Un espia %s1_civ_adjective esta operando a alto nivel en nuestro gobierno! &#191;Qu&#233; debemos hacer?</Spanish>
@@ -3173,7 +3173,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SPY_DISCOVERED_1</Tag>
 		<English>Be discreet. Offer the to release the spy to their government, but question him first.</English>
-		<French>Soyez discrets. Offrez de rendre l'espion à son gouvernement, mais questionnez-le d'abord.</French>
+		<French>Soyez discrets. Offrez de rendre l'espion &#224; son gouvernement, mais questionnez-le d'abord.</French>
 		<German>Seid diskret. Bietet die Ausweisung des Spions an, aber verh&#246;rt ihn gr&#252;ndlich.</German>
 		<Italian>Agiamo con discrezione. Offriamo al loro governo il rilascio della spia, dopo averlo interrogato.</Italian>
 		<Spanish>Seamos discretos. Entregar el espia a su gobierno, pero interrogadlo primero.</Spanish>
@@ -3181,7 +3181,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SPY_DISCOVERED_2</Tag>
 		<English>Every man has his price. His knowledge could make him a very valuable asset.</English>
-		<French>Personne n'est incorruptible. Ses connaissances pourraient nous être précieuses.</French>
+		<French>Personne n'est incorruptible. Ses connaissances pourraient nous &#234;tre pr&#233;cieuses.</French>
 		<German>Jeder ist k&#228;uflich. Dieser Spion wird uns noch n&#252;tzlich sein.</German>
 		<Italian>Ogni uomo ha un suo prezzo. Le sue conoscenze potrebbero tornarci molto utili.</Italian>
 		<Spanish>Todo el mundo tiene su precio. Su conocimiento puede hacerle un recurso muy valioso.</Spanish>
@@ -3189,7 +3189,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SPY_DISCOVERED_3</Tag>
 		<English>That is an act of war! Clearly, our people and military contractors will rise to the occasion!</English>
-		<French>C'est une déclaration de guerre ! Il est évident que notre peuple et nos fournisseurs militaires sauront profiter de cette occasion !</French>
+		<French>C'est une d&#233;claration de guerre ! Il est &#233;vident que notre peuple et nos fournisseurs militaires sauront profiter de cette occasion !</French>
 		<German>Dieser Vorfall ist ein kriegerischer Akt! Die Emp&#246;rung wird das Volk in Rage versetzen und zu H&#246;chstleistungen antreiben.</German>
 		<Italian>Questo &#232; un atto di guerra! Certamente, i nostri cittadini reagiranno duramente alla notizia e i contractor militari vorranno approfittare di questa occasione!</Italian>
 		<Spanish>Esto es un acto de guerra! Obviamente, nuestro pueblo y contratistas militares estaran a la altura!</Spanish>
@@ -3221,7 +3221,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_ACQUIRE</Tag>
 		<English>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</English>
-		<French>Offrir %d1 or à : %s2 pour leurs villes de %s3. Leur refus causera une guerre.</French>
+		<French>Offrir %d1 or &#224; : %s2 pour leurs villes de %s3. Leur refus causera une guerre.</French>
 		<German>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</German>
 		<Italian>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</Italian>
 		<Spanish>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</Spanish>
@@ -3229,7 +3229,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_COLONIZE</Tag>
 		<English>Will offer %d1 gold to our colonists to settle %s2.</English>
-		<French>Offrir %d1 or à nos colons pour fonder %s2.</French>
+		<French>Offrir %d1 or &#224; nos colons pour fonder %s2.</French>
 		<German>Will offer %d1 gold to our colonists to settle %s2.</German>
 		<Italian>Will offer %d1 gold to our colonists to settle %s2.</Italian>
 		<Spanish>Will offer %d1 gold to our colonists to settle %s2.</Spanish>
@@ -3237,7 +3237,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_CONQUEST</Tag>
 		<English>Will draft armies to attack %s1 to conquer their cities of %s2.</English>
-		<French>Lever des armées pour attaquer : %s1 et conquérir leurs villes de %s2.</French>
+		<French>Lever des arm&#233;es pour attaquer : %s1 et conqu&#233;rir leurs villes de %s2.</French>
 		<German>Will draft armies to attack %s1 to conquer their cities of %s2.</German>
 		<Italian>Will draft armies to attack %s1 to conquer their cities of %s2.</Italian>
 		<Spanish>Will draft armies to attack %s1 to conquer their cities of %s2.</Spanish>
@@ -3245,7 +3245,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TCC_NO_CITIES</Tag>
 		<English>There are no cities that your armies could conquer.</English>
-		<French>Il n'y a pas de villes disponibles pour la conquête.</French>
+		<French>Il n'y a pas de villes disponibles pour la conqu&#234;te.</French>
 		<German>There are no cities that your armies could conquer.</German>
 		<Italian>There are no cities that your armies could conquer.</Italian>
 		<Spanish>There are no cities that your armies could conquer.</Spanish>
@@ -3269,7 +3269,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_1</Tag>
 		<English>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</English>
-		<French>La compagnie commerciale %s1_civ_adjective a établi son contrôle sur les ports d'Asie du Sud.</French>
+		<French>La compagnie commerciale %s1_civ_adjective a &#233;tabli son contr&#244;le sur les ports d'Asie du Sud.</French>
 		<German>Die %s1:1_civ_adjective Handelsgesellschaft hat Kontrolle &#252;ber einige s&#252;dasiatische H&#228;fen erlangt.</German>
 		<Italian>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</Italian>
 		<Spanish>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</Spanish>
@@ -3277,7 +3277,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_2</Tag>
 		<English>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</English>
-		<French>Le gouvernement %s1_civ_adjective soutient sa compagnie commerciale afin d'établir un contrôle militaire sur les routes commerciales d'Asie du Sud !</French>
+		<French>Le gouvernement %s1_civ_adjective soutient sa compagnie commerciale afin d'&#233;tablir un contr&#244;le militaire sur les routes commerciales d'Asie du Sud !</French>
 		<German>Die %s1:1_civ_adjective Regierung unterst&#252;tzt ihre Handelsgesellschaft darin, milit&#228;rische Kontrolle &#252;ber ihre s&#252;dasiatischen Handelsrouten zu erlangen!</German>
 		<Italian>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</Italian>
 		<Spanish>The %s1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</Spanish>
@@ -3365,7 +3365,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TOXCATL</Tag>
 		<English>During the Toxcatl feast, the young man who is Tezcatlipoca's likeness has escaped from the teokalli in %s2_city before he could be sacrificed!</English>
-		<French>Au cours du festival de Toxcatl, le jeune homme qui incarne Tezcatlipoca s'est échappé du teokalli de %s2_city avant qu'il puisse être sacrifié !</French>
+		<French>Au cours du festival de Toxcatl, le jeune homme qui incarne Tezcatlipoca s'est &#233;chapp&#233; du teokalli de %s2_city avant qu'il puisse &#234;tre sacrifi&#233; !</French>
 		<German>In der Stadt gibt %s2_city gibt es einen religi&#246;sen Skandal, weil das geweihte Opfer vor der heiligen Blutzeremonie entkommen konnte.</German>
 		<Italian>Durante la celebrazione di Toxcatl un giovane uomo avente le sembianze di Tezcalipoca &#232; scappato dai teokalli nella citt&#224; di %s2_city prima che potesse essere sacrificato!</Italian>
 		<Spanish>Durante el festival Toxcatl, el hombre joven favorito de Tezcatlipoca ha huido del teokalli en %s2_city antes de poder ser sacrificado!</Spanish>
@@ -3373,7 +3373,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TOXCATL_1</Tag>
 		<English>This is horrible news. May the heavens be merciful...</English>
-		<French>Quelle horrible nouvelle. Que les cieux nous soient cléments !</French>
+		<French>Quelle horrible nouvelle. Que les cieux nous soient cl&#233;ments !</French>
 		<German>Schreckliche Nachricht. M&#246;gen uns die G&#246;tter gn&#228;dig sein.</German>
 		<Italian>&#200; una notizia orribile! Che gli dei abbiano piet&#224;...</Italian>
 		<Spanish>Terribles noticias. Que los cielos sean piadosos...</Spanish>
@@ -3389,7 +3389,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_1</Tag>
 		<English>Fund the establishment of contracted harbors out of our treasury.</English>
-		<French>Financer l'établissement de concessions portuaires à partir de notre trésor.</French>
+		<French>Financer l'&#233;tablissement de concessions portuaires &#224; partir de notre tr&#233;sor.</French>
 		<German>Finanziert die Einrichtung von Vertragsh&#228;fen aus unserer Schatzkammer.</German>
 		<Italian>Fund the establishment of contracted harbors out of our treasury.</Italian>
 		<Spanish>Fund the establishment of contracted harbors out of our treasury.</Spanish>
@@ -3397,7 +3397,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_2</Tag>
 		<English>Draft an army to establish control.</English>
-		<French>Lever une armée pour établir le contrôle.</French>
+		<French>Lever une arm&#233;e pour &#233;tablir le contr&#244;le.</French>
 		<German>Stellt eine Armee auf, um die Kontrolle zu erringen.</German>
 		<Italian>Draft an army to establish control.</Italian>
 		<Spanish>Draft an army to establish control.</Spanish>
@@ -3669,7 +3669,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CITY_RUINS_INDUSTRIAL_1</Tag>
 		<English>An archaeological expedition to city ruins near %s2_city has uncovered lost treasures, texts and artifacts.</English>
-		<French>Une exp&#233;dition arch&#233;ologique partie explorer les ruines pr&#232;s de %s2_city a d&#233;couvert des tr&#233;sors, des textes et des artéfacts perdus.</French>
+		<French>Une exp&#233;dition arch&#233;ologique partie explorer les ruines pr&#232;s de %s2_city a d&#233;couvert des tr&#233;sors, des textes et des art&#233;facts perdus.</French>
 		<German>Eine arch&#228;ologische Expedition hat in den Ruinen in der N&#228;he von %s2_city verloren geglaubte Sch&#228;tze, Schriften und Artefakte zutage gef&#246;rdert.</German>
 		<Italian>Una spedizione archeologica nelle rovine vicino a %s2_city ha scoperto tesori, testi e manufatti perduti.</Italian>
 		<Spanish>La expedici&#243;n arqueol&#243;gica enviada a las ruinas de la ciudad cercana a %s2_city ha descubierto tesoros, textos y artefactos perdidos.</Spanish>
@@ -3677,7 +3677,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CIV_GAME</Tag>
 		<English>Our game designers have developed a new addictive game of Civilization. How shall we proceed?</English>
-		<French>Nos développeurs de jeux vidéo on créé une nouvelle et addictive version de Civilization. Que devons-nous faire ?</French>
+		<French>Nos d&#233;veloppeurs de jeux vid&#233;o on cr&#233;&#233; une nouvelle et addictive version de Civilization. Que devons-nous faire ?</French>
 		<German>Unsere Entwickler pr&#228;sentieren ein neuartiges Computerspiel namens 'Civilization'. Was meint Ihr dazu?</German>
 		<Italian>I nostri progettisti di videogiochi hanno sviluppato un nuovo gioco chiamato Civilization. Cosa dobbiamo fare?</Italian>
 		<Spanish>Nuestros dise&#241;adores de juegos han desarrollado un nuevo juego de Civilization. &#191;Qu&#233; debemos hacer?</Spanish>
@@ -3685,7 +3685,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CLASSIC_LITERATURE</Tag>
 		<English>Our eldest scholars have collaborated on an effort to collect, record, and preserve all of our oral traditions and unwritten literature.[PARAGRAPH:1]They require storage space for pottery, stone tablets and other artifacts, as well as special repositories within our cities.</English>
-		<French>Nos &#233;rudits les plus sages ont collabor&#233; pour rassembler, consigner et pr&#233;server toutes nos traditions orales et nos l&#233;gendes.[PARAGRAPH:1]Ils ont besoin d'espace pour conserver les poteries, les tablettes de pierre et autres artéfacts, et d'entrep&#244;ts sp&#233;ciaux dans nos villes.</French>
+		<French>Nos &#233;rudits les plus sages ont collabor&#233; pour rassembler, consigner et pr&#233;server toutes nos traditions orales et nos l&#233;gendes.[PARAGRAPH:1]Ils ont besoin d'espace pour conserver les poteries, les tablettes de pierre et autres art&#233;facts, et d'entrep&#244;ts sp&#233;ciaux dans nos villes.</French>
 		<German>Unsere &#228;ltesten Gelehrten haben sich zusammengeschlossen, um alle unsere &#252;berlieferten Traditionen zu sammeln, aufzuzeichnen und zu bewahren.[PARAGRAPH:1]Sie verlangen gro&#223;e Lagerr&#228;ume f&#252;r T&#246;pferwaren, Steintafeln und andere Artefakte, sowie besondere Aufbewahrungsorte in unseren St&#228;dten.</German>
 		<Italian>I nostri studiosi hanno collaborato nel tentativo di raccogliere, registrare e preservare tutte le nostre tradizioni e la letteratura orale.[PARAGRAPH:1]Hanno bisogno di spazio per immagazzinare ceramiche, tavolette di pietra e altri manufatti, oltre che speciali magazzini nelle citt&#224;.</Italian>
 		<Spanish>Nuestros eruditos de mayor edad han colaborado en una iniciativa destinada a recolectar, registrar y conservar todas nuestras tradiciones no escritas y la literatura de transmisi&#243;n oral.[PARAGRAPH:1]Necesitan espacio para almacenar objetos de alfarer&#237;a, tablillas de piedra y otros artefactos, as&#237; como dep&#243;sitos especiales dentro de nuestras ciudades.</Spanish>
@@ -4317,7 +4317,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_IMMIGRANTS</Tag>
 		<English>Immigrants are flowing to %s2_city inspired by stories of its culture!</English>
-		<French>Les immigrants arrivent en masse dans la ville de %s2_city, attirés par les histoires qu'ils ont lues sur sa culture !</French>
+		<French>Les immigrants arrivent en masse dans la ville de %s2_city, attir&#233;s par les histoires qu'ils ont lues sur sa culture !</French>
 		<German>Geschichten &#252;ber die reiche Kultur der Stadt %s2_city ziehen viele Immigranten an.</German>
 		<Italian>Un flusso di immigranti si dirige verso %s2_city ispirati da racconti sulle sue bellezze culturali!</Italian>
 		<Spanish>Los inmigrantes est&#225;n inundando %s2_city inspirados por libros que narran historias sobre su cultura!</Spanish>
@@ -4629,7 +4629,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_OVERWHELM_DONE_1</Tag>
 		<English>Congratulations! You have built a powerful Aircraft Carrier battle fleet capable of conquering enemy cities in a single attack. A force capable of executing the Overwhelm Doctrine is now yours to command. Please choose your reward.</English>
-		<French>F&#233;licitations ! Vous avez construit une puissante flotte de porte-avions capable de conqu&#233;rir les villes ennemies en une seule attaque. Vous dirigez &#224; pr&#233;sent une arm&#233;e capable d'ex&#233;cuter la Doctrine de l'Écrasement. Veuillez choisir votre r&#233;compense.</French>
+		<French>F&#233;licitations ! Vous avez construit une puissante flotte de porte-avions capable de conqu&#233;rir les villes ennemies en une seule attaque. Vous dirigez &#224; pr&#233;sent une arm&#233;e capable d'ex&#233;cuter la Doctrine de l'&#201;crasement. Veuillez choisir votre r&#233;compense.</French>
 		<German>Gl&#252;ckwunsch! Sie haben eine m&#228;chtige Flugzeugtr&#228;ger-Schlachtflotte aufgebaut, mit der feindliche St&#228;dte in einem einzigen Angriff erobert werden k&#246;nnen. Sie befehligen jetzt eine Streitmacht, welche die &#220;berw&#228;ltigungsdoktrin ausf&#252;hren kann. W&#228;hlen Sie Ihre Belohnung aus.</German>
 		<Italian>Congratulazioni! Hai costruito una potente flotta da battaglia con portaerei, in grado di conquistare citt&#224; nemiche con un singolo attacco. Ora al tuo comando c'&#232; una forza in grado di mettere in atto la dottrina della sopraffazione. Scegli la ricompensa.</Italian>
 		<Spanish>&#161;Felicidades! Hab&#233;is creado una poderosa flota de combate de portaaviones capaz de conquistar ciudades enemigas con un solo ataque. Ahora ten&#233;is a vuestras &#243;rdenes a una fuerza capaz de ejecutar la doctrina del doblegamiento. Elegid vuestra recompensa.</Spanish>
@@ -4725,7 +4725,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REFORMATION</Tag>
 		<English>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</English>
-		<French>L'invention de l'imprimerie a permis la diffusion de nouvelles id&#233;ologies. À travers le monde catholique, des réformistes défient l'autorité du pape sur des questions de théologie. Comment devons-nous réagir ?</French>
+		<French>L'invention de l'imprimerie a permis la diffusion de nouvelles id&#233;ologies. &#192; travers le monde catholique, des r&#233;formistes d&#233;fient l'autorit&#233; du pape sur des questions de th&#233;ologie. Comment devons-nous r&#233;agir ?</French>
 		<German>Die Erfindung der Druckerpresse hat eine Welle neuer Doktrinen ausgel&#246;st. Reformer aus der gesamten katholischen Welt fordern die Autorit&#228;t des Papstes &#252;ber theologische Fragen heraus. Wie sollen wir reagieren?</German>
 		<Italian>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</Italian>
 		<Spanish>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</Spanish>
@@ -4773,7 +4773,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SEA_TURTLES_1</Tag>
 		<English>The locals have figured out the mating cycles of the sea turtles who flock to the shore in massive quantities. They have begun to harvest the turtles and eggs, in a way that does not endanger the long term survival of the creatures.</English>
-		<French>Les habitants du bord de mer ont d&#233;couvert les cycles de reproduction des tortues de mer qui affluent sur les plages en grande quantit&#233;. Ils ont commenc&#233; &#224; ramasser les tortues et les œufs sans pour autant mettre en danger la survie &#224; long terme de ces cr&#233;atures.</French>
+		<French>Les habitants du bord de mer ont d&#233;couvert les cycles de reproduction des tortues de mer qui affluent sur les plages en grande quantit&#233;. Ils ont commenc&#233; &#224; ramasser les tortues et les &#339;ufs sans pour autant mettre en danger la survie &#224; long terme de ces cr&#233;atures.</French>
 		<German>Die Einheimischen haben die Paarungszyklen der Seeschildkr&#246;ten erforscht, die sich in Scharen an der K&#252;ste einfinden. Sie haben damit begonnen, die Schildkr&#246;ten und ihre Eier zu "ernten", ohne das langfristige &#220;berleben der Tiere zu gef&#228;hrden.</German>
 		<Italian>I locali hanno scoperto il ciclo riproduttivo delle testuggini, che vengono a riva in quantit&#224; enormi. Hanno cominciato a raccogliere testuggini e uova, ma in un modo che non mette in pericolo la sopravvivenza a lungo termine delle creature.</Italian>
 		<Spanish>Los lugare&#241;os han descubierto c&#243;mo funcionan los ciclos de apareamiento de las Tortugas marinas, que se re&#250;nen en tropel en la orilla. Han empezado a recoger las tortugas y sus huevos, pero de manera que no ponen en peligro la supervivencia a largo plazo de esos animales.</Spanish>
@@ -4845,7 +4845,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_REVOLT_WARNING</Tag>
 		<English>The slaves of %s2_city are on the verge of revolt!</English>
-		<French>Les esclaves de la ville de %s2_city sont sur le point de se révolter !</French>
+		<French>Les esclaves de la ville de %s2_city sont sur le point de se r&#233;volter !</French>
 		<German>Die unterdr&#252;ckten Sklaven in %s2_city stehen am Rande eines Aufstandes!</German>
 		<Italian>Gli schiavi di %s2_city sono sull'orlo di una rivolta!</Italian>
 		<Spanish>Los esclavos de %s2_city est&#225;n a punto de rebelarse!</Spanish>
@@ -4893,7 +4893,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SPORTS_LEAGUE</Tag>
 		<English>Our cultural advisors believe that our nation could benefit from city-based sports franchises if we built enough [COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] to support national sports leagues.[PARAGRAPH:1]Each major city would require its own facility in which its teams could play.</English>
-		<French>Nos conseillers culturels pensent que notre nation pourrait profiter des franchises sportives dans les villes si nous construisons suffisamment d'[COLOR_BUILDING_TEXT]arènes[COLOR_REVERT] pour soutenir les ligues sportives nationales.[PARAGRAPH:1]Chaque grande ville aura besoin de ses propres installations pour que ses &#233;quipes puissent jouer.</French>
+		<French>Nos conseillers culturels pensent que notre nation pourrait profiter des franchises sportives dans les villes si nous construisons suffisamment d'[COLOR_BUILDING_TEXT]ar&#232;nes[COLOR_REVERT] pour soutenir les ligues sportives nationales.[PARAGRAPH:1]Chaque grande ville aura besoin de ses propres installations pour que ses &#233;quipes puissent jouer.</French>
 		<German>Unsere Kulturberater meinen, dass unsere Nation von stadtbezogenen Sportlizenzen profitieren k&#246;nnte, wenn wir genug [COLOR_BUILDING_TEXT]Amphitheatern[COLOR_REVERT] bauen, um eine nationale Sportliga zu unterst&#252;tzen.[PARAGRAPH:1]Jede gr&#246;&#223;ere Stadt w&#252;rde ihr eigenes Geb&#228;ude ben&#246;tigen, in dem das Team spielen k&#246;nnte.</German>
 		<Italian>I nostri consiglieri culturali sostengono che la nostra nazione trarrebbe beneficio dalla presenza di squadre cittadine, se costruissimo abbastanza [COLOR_BUILDING_TEXT]Anfiteatri[COLOR_REVERT] da supportare campionati sportivi nazionali.[PARAGRAPH:1]Ogni grande citt&#224; avr&#224; bisogno del proprio impianto sportivo, in cui potranno giocare le sue squadre.</Italian>
 		<Spanish>Nuestros consejeros culturales creen que nuestra naci&#243;n podr&#237;a beneficiarse de franquicias deportivas con sede en una ciudad si construy&#233;semos suficientes [COLOR_BUILDING_TEXT]Anfiteatros[COLOR_REVERT] para dar apoyo a las ligas deportivas nacionales.[PARAGRAPH:1]Cada una de las principales ciudades deber&#237;a disponer de instalaciones propias donde los equipos pudiesen jugar.</Spanish>
@@ -4901,7 +4901,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_SPORTS_LEAGUE_DONE_1</Tag>
 		<English>Congratulations! You have met the goals of your sports entrepreneurs and built enough [COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] to support viable leagues. Please choose a reward from among the benefits your new national pastimes can provide to you.</English>
-		<French>F&#233;licitations ! Vous avez atteint les objectifs de vos entrepreneurs sportifs et construit suffisamment d'[COLOR_BUILDING_TEXT]arènes[COLOR_REVERT] pour soutenir des ligues viables. Veuillez choisir une r&#233;compense parmi les avantages que vos passe-temps nationaux peuvent vous fournir.</French>
+		<French>F&#233;licitations ! Vous avez atteint les objectifs de vos entrepreneurs sportifs et construit suffisamment d'[COLOR_BUILDING_TEXT]ar&#232;nes[COLOR_REVERT] pour soutenir des ligues viables. Veuillez choisir une r&#233;compense parmi les avantages que vos passe-temps nationaux peuvent vous fournir.</French>
 		<German>Gl&#252;ckwunsch! Sie haben die Forderungen Ihrer Sportunternehmer erf&#252;llt und genug [COLOR_BUILDING_TEXT]Amphitheatern[COLOR_REVERT] gebaut, um Sportligen zu unterst&#252;tzen. W&#228;hlen Sie eine Belohnung aus den Vorteilen aus, die Ihre neue nationale Freizeitbesch&#228;ftigung Ihnen bieten kann.</German>
 		<Italian>Congratulazioni! Hai raggiunto gli obiettivi dei tuoi consiglieri culturali, costruendo abbastanza [COLOR_BUILDING_TEXT]Anfiteatri[COLOR_REVERT] da supportare campionati nazionali. Scegli una ricompensa tra quelle messe a disposizione dai nuovi passatempi nazionali.</Italian>
 		<Spanish>&#161;Felicidades! Se han cumplido los objetivos de los empresarios y se han construido suficientes [COLOR_BUILDING_TEXT]Anfiteatros[COLOR_REVERT] para dar apoyo a ligas viables. Elegid una de las recompensas que vuestros nuevos pasatiempos nacionales pueden ofreceros.</Spanish>
@@ -4997,7 +4997,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
 		<English>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</English>
-		<French>Avec l'établissement de notre compagnie commerciale, les marchands de notre pays vous demandent d'agir pour mieux asseoir leur position dans les marchés d'Asie du Sud.</French>
+		<French>Avec l'&#233;tablissement de notre compagnie commerciale, les marchands de notre pays vous demandent d'agir pour mieux asseoir leur position dans les march&#233;s d'Asie du Sud.</French>
 		<German>Mit der Einrichtung unserer eignenen Handelsgesellschaft treten die Kaufleute unseres Landes an Euch heran, Ma&#223;nahmen zur weiteren Sicherung ihrer Position in den s&#252;dasiatischen M&#228;rkten zu ergreifen.</German>
 		<Italian>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</Italian>
 		<Spanish>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</Spanish>
@@ -5197,7 +5197,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WAR_CHARIOTS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Chariot[COLOR_REVERT] [NUM1:unit:units]. A source of Horses will be required.[PARAGRAPH:1]An additional reward option will be available if your civilization has a state religion.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Classical Era without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 [NUM1:unit&#233;:unit&#233;s] de [COLOR_UNIT_TEXT]chars[COLOR_REVERT]. Une source de chevaux sera n&#233;cessaire.[PARAGRAPH:1]Un option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a une religion d'&#233;tat.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez l'ère classique sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 [NUM1:unit&#233;:unit&#233;s] de [COLOR_UNIT_TEXT]chars[COLOR_REVERT]. Une source de chevaux sera n&#233;cessaire.[PARAGRAPH:1]Un option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a une religion d'&#233;tat.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez l'&#232;re classique sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [NUM1:Einheit:Einheiten] [COLOR_UNIT_TEXT]Streitwagen[COLOR_REVERT] ausbilden. Dazu sind Pferde erforderlich.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation &#252;ber eine Staatsreligion verf&#252;gt.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Klassik erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]Per completare quest'impresa devi addestrare %d1 [COLOR_UNIT_TEXT][NUM1:Biga:Bighe][COLOR_REVERT]. &#200; necessario l'accesso ai cavalli.[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; avr&#224; una religione di stato.[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se raggiungerai l'era classica senza aver soddisfatto le condizioni.</Italian>
 		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Carros[COLOR_REVERT]. Ser&#225; necesaria una fuente de caballos.[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n tiene una religi&#243;n oficial.[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si se alcanza la era Cl&#225;sica sin haber cumplido las condiciones.</Spanish>
@@ -5261,7 +5261,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WEDDING_FEUD_1</Tag>
 		<English>Send well wishes and a token wedding gift, trying not to further anger our neighbors.</English>
-		<French>Envoyer nos meilleurs vœux et un modeste pr&#233;sent, en essayant de ne pas froisser davantage nos voisins.</French>
+		<French>Envoyer nos meilleurs v&#339;ux et un modeste pr&#233;sent, en essayant de ne pas froisser davantage nos voisins.</French>
 		<German>Richtet ihnen unsere besten W&#252;nsche aus, schickt ein angemessenes Hochzeitsgeschenk und versucht, den &#196;rger unserer Nachbarn nicht noch zu sch&#252;ren.</German>
 		<Italian>Invia le congratulazioni e un regalo nuziale simbolico, cercando di non irritare ulteriormente i vicini.</Italian>
 		<Spanish>Que se les env&#237;en nuestros mejores deseos y un regalo de bodas simb&#243;lico, para no enojar m&#225;s a nuestros vecinos.</Spanish>
@@ -5477,7 +5477,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_BETTER_COAL</Tag>
 		<English>%s1_civ_adjective scientists have developed better ways of processing coal fuel.</English>
-		<French>Les scientifiques %s1_civ_adjective ont developpé une méthode ameliorée d'exploitation du charbon.</French>
+		<French>Les scientifiques %s1_civ_adjective ont developp&#233; une m&#233;thode amelior&#233;e d'exploitation du charbon.</French>
 		<German>Die %s1:2_civ_adjective Wissenschaftler entwickeln ein verbessertes Verfahren zur Energiegewinnung aus Kohle.</German>
 		<Italian>Scienziati %s1:3_civ_adjective hanno sviluppato metodi migliori per la lavorazione del combustibile derivante dal carbone.</Italian>
 		<Spanish>Cient&#237;ficos %s1_civ_adjective han descubierto mejores maneras de procesar carb&#243;n.</Spanish>
@@ -5613,7 +5613,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_CIV_GAME</Tag>
 		<English>The %s1_civ_adjective game designers have developed a new game of Civilization.</English>
-		<French>Les développeurs de jeux vidéo %s1_civ_adjective ont créé un nouvelle version de Civilization.</French>
+		<French>Les d&#233;veloppeurs de jeux vid&#233;o %s1_civ_adjective ont cr&#233;&#233; un nouvelle version de Civilization.</French>
 		<German>Von %s1:2_civ_adjective Entwicklern wird ein neuartiges Computerspiel namens 'Civilization' pr&#228;sentiert.</German>
 		<Italian>Progettisti di videogiochi %s1:3_civ_adjective hanno sviluppato un nuovo gioco chiamato Civilization.</Italian>
 		<Spanish>Los dise&#241;adores de juegos %s1_civ_adjective han desarrollado un nuevo juego de Civilization.</Spanish>
@@ -5645,7 +5645,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_CONTROVERSIAL_PHILOSOPHER</Tag>
 		<English>A %s1_civ_adjective philosopher has stirred up controversy among the religious population.</English>
-		<French>Un philosophe %s1_civ_adjective est à l'origine d'une controverse au sein de la population religieuse.</French>
+		<French>Un philosophe %s1_civ_adjective est &#224; l'origine d'une controverse au sein de la population religieuse.</French>
 		<German>Ein %[s1:3_civ_adjective]r Philosoph l&#246;st Kontroversen unter der religi&#246;sen Bev&#246;lkerung aus.</German>
 		<Italian>Un filosofo %s1:1_civ_adjective ha scatenato una controversia tra i vari credenti.</Italian>
 		<Spanish>Un fil&#243;sofo %s1_civ_adjective ha levantado controversia entre la poblaci&#243;n religiosa.</Spanish>
@@ -5693,7 +5693,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DEFECTING_AGENT</Tag>
 		<English>A high-ranking %s1_civ_adjective intelligence agent has defected to the %s4_civ_adjective government.</English>
-		<French>Un agent %s1_civ_adjective haut placé a déserté et a rejoint le gouvernement %s4_civ_adjective.</French>
+		<French>Un agent %s1_civ_adjective haut plac&#233; a d&#233;sert&#233; et a rejoint le gouvernement %s4_civ_adjective.</French>
 		<German>Ein hochrangiger %[s1:3_civ_adjective]r Spion ist zum %s4:2_civ_adjective Reich &#252;bergelaufen.</German>
 		<Italian>Un agente di grado elevato dell'intelligence %s1:2_civ_adjective ha defezionato ed &#232; passato al servizio del governo %s4:1_civ_adjective.</Italian>
 		<Spanish>Un agente de inteligencia %s1_civ_adjective de alto rango ha desertado al gobierno %s4_civ_adjective.</Spanish>
@@ -5701,7 +5701,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DISSIDENT_PRIEST</Tag>
 		<English>A priest from %s2_city is doubting the supreme power of Amun-Re.</English>
-		<French>Un prêtre de %s2_city a mis en doute le pouvoir suprême d'Amon-Rê.</French>
+		<French>Un pr&#234;tre de %s2_city a mis en doute le pouvoir supr&#234;me d'Amon-R&#234;.</French>
 		<German>Ein Hohepriester der Stadt %s2_city zweifelt an der Macht des Fruchtbarkeitsgottes.</German>
 		<Italian>Un sacerdote di %s2_city dubita del potere supremo di Amon-Ra.</Italian>
 		<Spanish>Un sacerdote de %s2_city duda del poder supremo de Amun-Re.</Spanish>
@@ -5725,7 +5725,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_EARTHDAY</Tag>
 		<English>The %s1_civ_adjective Empire has announced the first annual Earth Day, crusading for the cause of Environmentalism.</English>
-		<French>L'empire %s1_civ_adjective a annonc&#233; le premier Jour de la Terre annuel pour promouvoir la cause de l'écologie.</French>
+		<French>L'empire %s1_civ_adjective a annonc&#233; le premier Jour de la Terre annuel pour promouvoir la cause de l'&#233;cologie.</French>
 		<German>Das %s1:3_civ_adjective Reich hat den ersten Tag der Erde ausgerufen, um den Umweltschutz zu f&#246;rdern.</German>
 		<Italian>L'impero %s1:1_civ_adjective ha annunciato la prima, annuale, Festa della Terra, impegnandosi nella crociata per l'ambientalismo.</Italian>
 		<Spanish>El imperio %s1:1_civ_adjective ha anunciado el primer D&#237;a Anual de la Tierra como forma de abogar por el Ecologismo.</Spanish>
@@ -5925,7 +5925,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_GREAT_BEAST</Tag>
 		<English>%s1_civ_adjective hunters have discovered a great beast lurking near one of their camps.</English>
-		<French>Les chasseurs %s1_civ_adjective ont découvert une énorme bête rôdant près d'un de leurs camps.</French>
+		<French>Les chasseurs %s1_civ_adjective ont d&#233;couvert une &#233;norme b&#234;te r&#244;dant pr&#232;s d'un de leurs camps.</French>
 		<German>Von %s1:2_civ_adjective J&#228;gern gibt es Berichte &#252;ber ein riesiges Tier, das sich in der N&#228;he eines Lagers gezeigt haben soll.</German>
 		<Italian>Cacciatori %s1:3_civ_adjective hanno avvistato un grande animale appostato nei dintorni di un loro accampamento.</Italian>
 		<Spanish>Cazadores %s1_civ_adjective han descubierto una gran bestia acechando uno de sus campamentos.</Spanish>
@@ -5989,7 +5989,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_HEALING_PLANT</Tag>
 		<English>%s1_civ_adjective herbalists have discovered a plant that might result in better illness treatment.</English>
-		<French>Les botanistes %s1_civ_adjective ont découvert une plante qui pourrait améliorer le traitement de certaines maladies.</French>
+		<French>Les botanistes %s1_civ_adjective ont d&#233;couvert une plante qui pourrait am&#233;liorer le traitement de certaines maladies.</French>
 		<German>Von %s1:2_civ_adjective Naturheilkundigen wird die besondere Wirksamkeit einer Pflanze f&#252;r die Behandlung von Krankheiten entdeckt.</German>
 		<Italian>Erboristi %s1:3_civ_adjective hanno scoperto una pianta che potrebbe risultare utile nella cura di alcune malattie.</Italian>
 		<Spanish>Boticarios %s1_civ_adjective han descubierto una planta que puede servir para un mejor tratamiento de enfermedades.</Spanish>
@@ -6101,7 +6101,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_IMMIGRANTS</Tag>
 		<English>Inspired by books telling stories about the culture of %s2_city, immigrants are flowing to the city!</English>
-		<French>Motivés par ce qu'ils ont lu sur la culture de %s2_city, les immigrants y arrivent en masse !</French>
+		<French>Motiv&#233;s par ce qu'ils ont lu sur la culture de %s2_city, les immigrants y arrivent en masse !</French>
 		<German>Geschichten &#252;ber die reiche Kultur der Stadt %s2_city ziehen viele Immigranten an.</German>
 		<Italian>Ispirati dai libri che raccontano storie sulle bellezze culturali di %s2_city, un flusso di immigranti si dirige verso la citt&#224;!</Italian>
 		<Spanish>Inspirados por libros que narran historias sobre la cultura de %s2_city, los inmigrantes est&#225;n inundando la ciudad!</Spanish>
@@ -6109,7 +6109,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_IMPEACHMENT</Tag>
 		<English>The %s1_civ_adjective President is facing impeachment.</English>
-		<French>Le président %s1_civ_adjective fait face a une motion de censure.</French>
+		<French>Le pr&#233;sident %s1_civ_adjective fait face a une motion de censure.</French>
 		<German>Im %s1:2_civ_adjective Reich droht der Regierungsf&#252;hrung ein Amtsenthebungsverfahren.</German>
 		<Italian>Il Presidente %s1:1_civ_adjective &#232; stato messo sotto impeachment</Italian>
 		<Spanish>El presidente %s1_civ_adjective se enfrente a una moci&#243;n de censura.</Spanish>
@@ -6165,7 +6165,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_JAIL</Tag>
 		<English>The citizens of %s2_city are worried about their safety because of the city's Jail.</English>
-		<French>Les habitants de %s2_city sont inquiets pour leur sécurité à cause de la prison municipale.</French>
+		<French>Les habitants de %s2_city sont inquiets pour leur s&#233;curit&#233; &#224; cause de la prison municipale.</French>
 		<German>Die B&#252;rger von %s2_city sind wegen des Gef&#228;ngnisses der Stadt hinsichtlich ihrer Sicherheit besorgt.</German>
 		<Italian>I cittadini di %s2_city sono preoccupati per la loro sicurezza a causa della Prigione cittadina.</Italian>
 		<Spanish>Los ciudadanos de %s2_city est&#225;n preocupados por su seguridad debido a la carcel de la ciudad.</Spanish>
@@ -6333,7 +6333,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NOBLE_KNIGHTS_DONE</Tag>
 		<English>The %s1_civ_adjective people have trained the largest force of knights. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</English>
-		<French>Le peuple %s1_civ_adjective a entra&#238;n&#233; le plus grand nombre de chevaliers. Les conseillers du monde entier tremblent &#224; l'id&#233;e de faire face aux rang&#233;es de lances qui chargent au grand galop au cœur de la bataille.</French>
+		<French>Le peuple %s1_civ_adjective a entra&#238;n&#233; le plus grand nombre de chevaliers. Les conseillers du monde entier tremblent &#224; l'id&#233;e de faire face aux rang&#233;es de lances qui chargent au grand galop au c&#339;ur de la bataille.</French>
 		<German>Das %s1:3_civ_adjective Volk hat die gr&#246;&#223;te Ritter-Truppe ausgebildet. Berater der gesamten entdeckten Welt erzittern beim Gedanken an die von donnernden Hufen angetriebenen Lanzenreihen auf dem Schlachtfeld.</German>
 		<Italian>La popolazione %s1:2_civ_adjective ha addestrato la pi&#249; grande forza militare composta da cavalieri. I consiglieri di tutto il mondo tremano al pensiero di affrontare le file di lance spinte da tonanti zoccoli di una carica di cavalleria.</Italian>
 		<Spanish>Los %s1:3_civ_adjective han entrenado a la mayor fuerza de caballeros. Consejeros de todo el mundo conocido se estremecen al pensar en hileras de lanzas impulsadas por el atronador galope de una carga en plena batalla.</Spanish>
@@ -6341,7 +6341,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_PROTEST</Tag>
 		<English>News reports indicate massive %s1_civ_adjective protests over the country's nuclear weapons stockpile.</English>
-		<French>Dernière minute : manifestions %s1_civ_adjective contre l'arsenal nucléaire national !</French>
+		<French>Derni&#232;re minute : manifestions %s1_civ_adjective contre l'arsenal nucl&#233;aire national !</French>
 		<German>Es gibt Berichte &#252;ber massive %s1:3_civ_adjective B&#252;rgerproteste hinsichtlich des Atomwaffenarsenals.</German>
 		<Italian>Rapporti recenti mostrano massicce proteste di cittadini %s1:3_civ_adjective per l'arsenale nucleare della nazione.</Italian>
 		<Spanish>Las noticias indican protestas masivas en %s1_civ_adjective por la reserva nuclear del pais.</Spanish>
@@ -6373,7 +6373,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_PASTURE_BUILT</Tag>
 		<English>Industrious villagers have built a Pasture in %s1_civ_adjective lands.</English>
-		<French>D'industrieux villageois ont construit un pâturage dans les terres %s1_civ_adjective.</French>
+		<French>D'industrieux villageois ont construit un p&#226;turage dans les terres %s1_civ_adjective.</French>
 		<German>Flei&#223;ige Dorfbewohner errichten auf %s1:3_civ_adjectivem Boden selbst&#228;ndig eine Weide.</German>
 		<Italian>Abitanti industriosi di un villaggio hanno costruito un Pascolo nelle terre %s1:4_civ_adjective</Italian>
 		<Spanish>Aldeanos laboriosos han hecho un pastizal en tierras de %s1_civ_adjective.</Spanish>
@@ -6421,7 +6421,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_PREACHING_RESEARCHER</Tag>
 		<English>A well-known scientist from %s2_city has become a preacher at the local Christian Monastery.</English>
-		<French>Un scientifique réputé de %s2_city est entré dans les ordres au monastère chrétien local.</French>
+		<French>Un scientifique r&#233;put&#233; de %s2_city est entr&#233; dans les ordres au monast&#232;re chr&#233;tien local.</French>
 		<German>Ein renommierter Wissenschaftler der Stadt %s2_city predigt im &#246;rtlichen Christlichen Kloster.</German>
 		<Italian>Un rinomato scienziato di %s2_city &#232; diventato un predicatore presso il locale Monastero Cristiano.</Italian>
 		<Spanish>Un reputado cient&#237;fico de %s2_city se ha convertido en predicador en el monasterio cristiano local.</Spanish>
@@ -6429,7 +6429,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REFORMATION</Tag>
 		<English>The Reformation has reached the %s1_civ_adjective civilization.</English>
-		<French>La Réforme a atteint la civilisation %s1_civ_adjective.</French>
+		<French>La R&#233;forme a atteint la civilisation %s1_civ_adjective.</French>
 		<German>Die Reformation hat die %s1:1 Zivilisation erreicht.</German>
 		<Italian>The Reformation has reached the %s1_civ_adjective civilization.</Italian>
 		<Spanish>The Reformation has reached the %s1_civ_adjective civilization.</Spanish>
@@ -6597,7 +6597,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SPY_DISCOVERED</Tag>
 		<English>A %s4_civ_adjective infiltrator has been dicovered in the %s1_civ_adjective government.</English>
-		<French>Un infiltrateur %s4_civ_adjective a été découvert au sein du gouvernement %s1_civ_adjective</French>
+		<French>Un infiltrateur %s4_civ_adjective a &#233;t&#233; d&#233;couvert au sein du gouvernement %s1_civ_adjective</French>
 		<German>In den Reihen der %s1:2_civ_adjective Regierung ist ein %[s4:3_civ_adjective]r Spion enttarnt worden.</German>
 		<Italian>Un infiltratore %s4:1_civ_adjective &#232; stato scoperto all'interno del governo %s1_civ_adjective</Italian>
 		<Spanish>Un infiltrado %s4_civ_adjective ha sido descubierto en el gobierno %s1_civ_adjective.</Spanish>
@@ -6725,7 +6725,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TOXCATL</Tag>
 		<English>The man who is Tezcatlipoca's likeness has escaped during this year's Toxcatl feast in the %s1_civ_adjective Empire.</English>
-		<French>L'homme qui incarne Tezcatlipoca s'est échappé au cours du festival annuel de Toxcatl de l'empire %s1_civ_adjective.</French>
+		<French>L'homme qui incarne Tezcatlipoca s'est &#233;chapp&#233; au cours du festival annuel de Toxcatl de l'empire %s1_civ_adjective.</French>
 		<German>Im %s1:2_civ_adjective Reich gibt es einen religi&#246;sen Skandal, weil das geweihte Opfer vor der heiligen Blutzeremonie entkommen konnte.</German>
 		<Italian>L'uomo che ha le sembianze di Tezcalipoca &#232; scappato durante la celebrazione di quest'anno di Toxcatl nell'impero %s1:1_civ_adjective</Italian>
 		<Spanish>El hombre que es el favorito de Tezcatlipoca ha huido durante el festival Toxcatl en el imperio %s1_civ_adjective.</Spanish>
@@ -6733,7 +6733,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
 		<English>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</English>
-		<French>La compagnie commerciale %s1_civ_adjective considère la possibilité d'agir pour renforcer sa position sur les marchés d'Asie du Sud.</French>
+		<French>La compagnie commerciale %s1_civ_adjective consid&#232;re la possibilit&#233; d'agir pour renforcer sa position sur les march&#233;s d'Asie du Sud.</French>
 		<German>Die %s1:1 Handelsgesellschaft erw&#228;gt weitere Aktionen zur Festigung ihrer Marketstellung in S&#252;dasien.</German>
 		<Italian>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</Italian>
 		<Spanish>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</Spanish>
@@ -6829,7 +6829,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_REACTOR_LEAK</Tag>
 		<English>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</English>
-		<French>Des fuites radioactives ont été découvertes dans le réacteur de la centrale nucléaire de la ville %s1_civ_adjective de %s2_city.</French>
+		<French>Des fuites radioactives ont &#233;t&#233; d&#233;couvertes dans le r&#233;acteur de la centrale nucl&#233;aire de la ville %s1_civ_adjective de %s2_city.</French>
 		<German>Im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city wurden Strahlungslecks im Reaktor entdeckt.</German>
 		<Italian>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</Italian>
 		<Spanish>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</Spanish>
@@ -6837,7 +6837,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NUCLEAR_REACTOR_LEAK_1</Tag>
 		<English>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</English>
-		<French>Des fuites radioactives ont été découvertes dans le réacteur de la centrale nucléaire de %s2_city.</French>
+		<French>Des fuites radioactives ont &#233;t&#233; d&#233;couvertes dans le r&#233;acteur de la centrale nucl&#233;aire de %s2_city.</French>
 		<German>Im Atomkraftwerk von %s2_city wurden Strahlungsleck im Reaktor entdeckt.</German>
 		<Italian>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</Italian>
 		<Spanish>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</Spanish>
@@ -6845,15 +6845,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_REACTOR_LEAK_AGAIN</Tag>
 		<English>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</English>
-		<French>Les fuites radioactives de la centrale nucléaire de la ville %s1_civ_adjective de %s2_city ne sont toujours pas colmatées.</French>
-		<German>Die Strahlungslecks im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city sind immer noch nicht eingedämmt.</German>
+		<French>Les fuites radioactives de la centrale nucl&#233;aire de la ville %s1_civ_adjective de %s2_city ne sont toujours pas colmat&#233;es.</French>
+		<German>Die Strahlungslecks im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city sind immer noch nicht einged&#228;mmt.</German>
 		<Italian>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</Italian>
 		<Spanish>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NUCLEAR_REACTOR_LEAK_AGAIN_1</Tag>
 		<English>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</English>
-		<French>Nos inspecteurs rapportent toujours des fuites radioactives dans la centrale nucléaire de %s2_city.</French>
+		<French>Nos inspecteurs rapportent toujours des fuites radioactives dans la centrale nucl&#233;aire de %s2_city.</French>
 		<German>Unsere Inspektoren berichten immer noch von Strahlungslecks im Atomkraftwerk von %s2_city.</German>
 		<Italian>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</Italian>
 		<Spanish>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</Spanish>
@@ -6861,47 +6861,47 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1</Tag>
 		<English>Our reactors are safe. Contain the leaks, but there is no need for further action.</English>
-		<French>Nos réacteurs sont sécuritaires. Colmatez les fuites, mais nous n'avons pas besoin d'en faire plus.</French>
-		<German>Unsere Reaktoren sind sicher. Dämmt das Leck ein, aber es besteht kein Bedarf für weitere Maßnahmen.</German>
+		<French>Nos r&#233;acteurs sont s&#233;curitaires. Colmatez les fuites, mais nous n'avons pas besoin d'en faire plus.</French>
+		<German>Unsere Reaktoren sind sicher. D&#228;mmt das Leck ein, aber es besteht kein Bedarf f&#252;r weitere Ma&#223;nahmen.</German>
 		<Italian>Our reactors are safe. Contain the leaks, but there is no need for further action.</Italian>
 		<Spanish>Our reactors are safe. Contain the leaks, but there is no need for further action.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2</Tag>
 		<English>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</English>
-		<French>De telles fuites sont dangereuses. Nous devons investir dans la modernisation de nos réacteurs afin d'assurer leur sûreté future.</French>
-		<German>Diese Lecks sind gefährlich. Wir müssen in die Modernisierung unserer Reaktoren investieren, um sie auch in Zukunft sicher zu halten.</German>
+		<French>De telles fuites sont dangereuses. Nous devons investir dans la modernisation de nos r&#233;acteurs afin d'assurer leur s&#251;ret&#233; future.</French>
+		<German>Diese Lecks sind gef&#228;hrlich. Wir m&#252;ssen in die Modernisierung unserer Reaktoren investieren, um sie auch in Zukunft sicher zu halten.</German>
 		<Italian>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</Italian>
 		<Spanish>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3</Tag>
 		<English>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</English>
-		<French>Le danger que pose l'énergie nucléaire pour notre société n'est plus à démontrer. Nous devons sortir du nucléaire aussitôt que possible.</French>
-		<German>Dies zeigt, dass Atomenergie zu gefährlich für unsere Gesellschaft ist. Fasst Pläne, so schnell wie möglich aus der Atomkraft auszusteigen.</German>
+		<French>Le danger que pose l'&#233;nergie nucl&#233;aire pour notre soci&#233;t&#233; n'est plus &#224; d&#233;montrer. Nous devons sortir du nucl&#233;aire aussit&#244;t que possible.</French>
+		<German>Dies zeigt, dass Atomenergie zu gef&#228;hrlich f&#252;r unsere Gesellschaft ist. Fasst Pl&#228;ne, so schnell wie m&#246;glich aus der Atomkraft auszusteigen.</German>
 		<Italian>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</Italian>
 		<Spanish>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1_HELP</Tag>
 		<English>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</English>
-		<French>[ICON_BULLET]Risque moyen de fusion du cœur du réacteur.[NEWLINE][ICON_BULLET]Les fuites réactives pourraient continuer.</French>
-		<German>[ICON_BULLET]Mittleres Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks können sich fortsetzen.</German>
+		<French>[ICON_BULLET]Risque mod&#233;r&#233; de fusion du c&#339;ur du r&#233;acteur.[NEWLINE][ICON_BULLET]Les fuites radioactives pourraient continuer.</French>
+		<German>[ICON_BULLET]Mittleres Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks k&#246;nnen sich fortsetzen.</German>
 		<Italian>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Italian>
 		<Spanish>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2_HELP</Tag>
 		<English>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</English>
-		<French>[ICON_BULLET]Faible risque de fusion du cœur du réacteur.[NEWLINE][ICON_BULLET]Les fuites radioactives pourraient continuer.</French>
-		<German>[ICON_BULLET]Geringes Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks können sich fortsetzen.</German>
+		<French>[ICON_BULLET]Faible risque de fusion du c&#339;ur du r&#233;acteur.[NEWLINE][ICON_BULLET]Les fuites radioactives pourraient continuer.</French>
+		<German>[ICON_BULLET]Geringes Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks k&#246;nnen sich fortsetzen.</German>
 		<Italian>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Italian>
 		<Spanish>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3_HELP</Tag>
 		<English>[ICON_BULLET]Nuclear Plants will become obsolete.</English>
-		<French>[ICON_BULLET]Les centrales nucléaires deviendront obsolètes.</French>
+		<French>[ICON_BULLET]Les centrales nucl&#233;aires deviendront obsol&#232;tes.</French>
 		<German>[ICON_BULLET]Atomkraftwerke werden veraltet.</German>
 		<Italian>[ICON_BULLET]Nuclear Plants will become obsolete.</Italian>
 		<Spanish>[ICON_BULLET]Nuclear Plants will become obsolete.</Spanish>
@@ -6917,7 +6917,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_1</Tag>
 		<English>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</English>
-		<French>Le Capitaine de port[PARAGRAPH:1]Votre industrie de la marine marchande vous demande de construire suffisamment de [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] pour leur permettre de dominer le commerce maritime mondial. Vous devrez aussi construire une flotte de [COLOR_UNIT_TEXT]caravelles[COLOR_REVERT] pour aider au transport de marchandises à travers les mers.</French>
+		<French>Le Capitaine de port[PARAGRAPH:1]Votre industrie de la marine marchande vous demande de construire suffisamment de [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] pour leur permettre de dominer le commerce maritime mondial. Vous devrez aussi construire une flotte de [COLOR_UNIT_TEXT]caravelles[COLOR_REVERT] pour aider au transport de marchandises &#224; travers les mers.</French>
 		<German>Der Hafenmeister[PARAGRAPH:1]Eure Handelsmarine hat Euch den Auftrag gegeben, genug [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] zu bauen, damit sie die unangefochtenen Handelsk&#246;nige der See werden. Au&#223;erdem m&#252;sst Ihr eine Flotte von [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen, um die Fracht &#252;ber die Tiefsee zu bringen.</German>
 		<Italian>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</Italian>
 		<Spanish>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</Spanish>
@@ -6925,7 +6925,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_HELP</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette quête, vous devez construire %d1 [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] dans vos villes côtières. Vous devez aussi construire %d2 [COLOR_UNIT_TEXT]caravelles[COLOR_REVERT].[PARAGRAPH:1]Vous échouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez l'ère industrielle sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] dans vos villes c&#244;ti&#232;res. Vous devez aussi construire %d2 [COLOR_UNIT_TEXT]caravelles[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez l'&#232;re industrielle sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in Ihren K&#252;stenst&#228;dten bauen. Au&#223;erdem m&#252;ssen Sie %d2 [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Industriezeitalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</Italian>
 		<Spanish>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</Spanish>
@@ -6933,7 +6933,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette quête, vous devez construire %d1 [COLOR_UNIT_TEXT]trirèmes[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous échouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez le Moyen Âge sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]trir&#232;mes[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez le Moyen &#194;ge sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Mittelalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Italian>
 		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Spanish>
@@ -6941,7 +6941,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_1</Tag>
 		<English>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</English>
-		<French>Notre civilisation appelle la noblesse à mener notre peuple vers un meilleur futur. [PARAGRAPH:1]Si nous formons assez de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT], nous serons capables de trouver notre voie, que ce soit en temps de paix ou en temps de guerre.</French>
+		<French>Notre civilisation appelle la noblesse &#224; mener notre peuple vers un meilleur futur. [PARAGRAPH:1]Si nous formons assez de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT], nous serons capables de trouver notre voie, que ce soit en temps de paix ou en temps de guerre.</French>
 		<German>Unsere Zivilisation d&#252;rstet nach Adeligen, die unser Volk in eine bessere Zukunft f&#252;hren werden. [PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbilden, sollten wir unseren Weg finden, sei es in Zeiten des Friedens oder in Zeiten des Krieges.</German>
 		<Italian>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Italian>
 		<Spanish>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Spanish>
@@ -6949,7 +6949,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_1</Tag>
 		<English>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</English>
-		<French>Nobles Chevaliers[PARAGRAPH:1]Votre peuple vous donne le mandat de former une armée suffisamment puissante d'unités de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].</French>
+		<French>Nobles Chevaliers[PARAGRAPH:1]Votre peuple vous donne le mandat de former une arm&#233;e suffisamment puissante d'unit&#233;s de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].</French>
 		<German>Edle Ritter[PARAGRAPH:1]Das Volk verlangt von Euch, dass Ihr eine gro&#223;e Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbildet.</German>
 		<Italian>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Italian>
 		<Spanish>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Spanish>
@@ -6957,7 +6957,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette quête, vous devez construire %d1 [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a adopté la doctrine [COLOR_HIGHLIGHT_TEXT]religion organisée[COLOR_REVERT].[PARAGRAPH:1]Une autre option de r&#233;compense sera disponible si votre civilisation contrôle le [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous échouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous découvrez les armes à feu avancées ([COLOR_TECH_TEXT]tradition militaire[COLOR_REVERT], [COLOR_TECH_TEXT]fusil[COLOR_REVERT] ou [COLOR_TECH_TEXT]voies ferrées[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a adopt&#233; la doctrine [COLOR_HIGHLIGHT_TEXT]religion organis&#233;e[COLOR_REVERT].[PARAGRAPH:1]Une autre option de r&#233;compense sera disponible si votre civilisation contr&#244;le le [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es ([COLOR_TECH_TEXT]tradition militaire[COLOR_REVERT], [COLOR_TECH_TEXT]fusil[COLOR_REVERT] ou [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT]-Einheiten ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie Fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Milit&#228;rwesen[COLOR_REVERT], [COLOR_TECH_TEXT]Drall[COLOR_REVERT], oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</Italian>
 		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</Spanish>
@@ -6965,7 +6965,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_DONE_1</Tag>
 		<English>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</English>
-		<French>Félicitations ! Vous avez formé une armée suffisamment puissante de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT]. Choisissez votre récompense.</French>
+		<French>F&#233;licitations ! Vous avez form&#233; une arm&#233;e suffisamment puissante de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT]. Choisissez votre r&#233;compense.</French>
 		<German>Gl&#252;ckwunsch! Die von Ihnen ausgebildete Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ist gro&#223; genug. W&#228;hlen Sie Ihre Belohnung aus.</German>
 		<Italian>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Italian>
 		<Spanish>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Spanish>
@@ -6973,7 +6973,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_1</Tag>
 		<English>With such a large force of Lancers working together, additional training for these units can be achieved.</English>
-		<French>Avec une telle armée de chevaliers travaillant ensemble, de l'entraînement supplémentaire peut leur être apporté.</French>
+		<French>Avec une telle arm&#233;e de chevaliers travaillant ensemble, de l'entra&#238;nement suppl&#233;mentaire peut leur &#234;tre apport&#233;.</French>
 		<German>Mit einer so gro&#223;en Truppe Lanzenreiter k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
 		<Italian>With such a large force of Lancers working together, additional training for these units can be achieved.</Italian>
 		<Spanish>With such a large force of Lancers working together, additional training for these units can be achieved.</Spanish>
@@ -6981,7 +6981,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REINFORCED_HULL_1</Tag>
 		<English>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</English>
-		<French>La rumeur veut que les capitaines %s1_civ_adjective soient en train de rénover massivement leur flotte de galères de guerre.</French>
+		<French>La rumeur veut que les capitaines %s1_civ_adjective soient en train de r&#233;nover massivement leur flotte de gal&#232;res de guerre.</French>
 		<German>Es gibt Ger&#252;chte, dass %s1:3_civ_adjective Schiffbauer ihre Kriegsgaleeren-Flotte &#252;berarbeiten.</German>
 		<Italian>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Italian>
 		<Spanish>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Spanish>
@@ -6989,7 +6989,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REINFORCED_HULL_1</Tag>
 		<English>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</English>
-		<French>Nos capitaines ont inventé un moyen de renforcer la coque de nos galères de guerre. Cela les aidera à la fois à éperonner et à résister à l'éperonnage.</French>
+		<French>Nos capitaines ont invent&#233; un moyen de renforcer la coque de nos gal&#232;res de guerre. Cela les aidera &#224; la fois &#224; &#233;peronner et &#224; r&#233;sister &#224; l'&#233;peronnage.</French>
 		<German>Unsere Schiffbauer haben einen Weg gefunden, den Rumpf unserer Kriegsgaleeren zu verst&#228;rken. Dies kommt uns sowohl beim Rammen als auch beim Gerammtwerden zugute.</German>
 		<Italian>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Italian>
 		<Spanish>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Spanish>
@@ -6997,7 +6997,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_WARSHIPS_1</Tag>
 		<English>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</English>
-		<French>Nos commandants navals aimeraient se préparer pour la guerre.[PARAGRAPH:1]Si nous construisons suffisamment de [COLOR_UNIT_TEXT]galères de guerre[COLOR_REVERT], nous pourrons dominer les mers !</French>
+		<French>Nos commandants navals aimeraient se pr&#233;parer pour la guerre.[PARAGRAPH:1]Si nous construisons suffisamment de [COLOR_UNIT_TEXT]gal&#232;res de guerre[COLOR_REVERT], nous pourrons dominer les mers !</French>
 		<German>Unsere Marinekommandanten wollen sich auf den Krieg vorbereiten.[PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Einheiten ausbilden, k&#246;nnten wir &#252;ber die Meere herrschen!</German>
 		<Italian>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Italian>
 		<Spanish>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Spanish>
@@ -7005,7 +7005,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_1</Tag>
 		<English>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</English>
-		<French>Navires de guerre[PARAGRAPH:1]Vos commandants navals vous chargent de construire un nombre important de [COLOR_UNIT_TEXT]galères de guerre[COLOR_REVERT]</French>
+		<French>Navires de guerre[PARAGRAPH:1]Vos commandants navals vous chargent de construire un nombre important de [COLOR_UNIT_TEXT]gal&#232;res de guerre[COLOR_REVERT]</French>
 		<German>Kriegsschiffe[PARAGRAPH:1]Eure Marinekommandanten verlangen von Euch, eine gro&#223;e [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Flotte aufzubauen.</German>
 		<Italian>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Italian>
 		<Spanish>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Spanish>
@@ -7013,7 +7013,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
 		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]galères de guerre[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez la Renaissance sans avoir rempli les conditions de victoire.</French>
+		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]gal&#232;res de guerre[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez la Renaissance sans avoir rempli les conditions de victoire.</French>
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Renaissance erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</Italian>
 		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</Spanish>
