@@ -12522,7 +12522,7 @@
 			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RESEARCH</FlavorType>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>6</iFlavor>
 				</Flavor>
 				<Flavor>

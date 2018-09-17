@@ -2831,9 +2831,9 @@
 			<Type>ART_DEF_BUILDING_SHALIMAR_GARDENS</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.85</fScale>
-			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/ShalimarGardens/theatre.nif</NIF>
+			<fScale>10</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/ShalimarGardens/NorthAfricaCityCenter01.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/ShalimarGardens/ShalimarGardens.dds</Button>
 		</BuildingArtInfo>
@@ -3416,6 +3416,16 @@
 			<NIF>Art/Structures/Wonders/Frontenac/Frontenac.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Frontenac/Frontenac_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ADMINISTRATIVE_CENTER</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>5.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/AdministrativeCenter/gymnasium2.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/AdministrativeCenter/AdministrativeCenter.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
