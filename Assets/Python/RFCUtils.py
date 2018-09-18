@@ -1949,7 +1949,7 @@ class RFCUtils:
 	def getDawnOfManText(self, iPlayer):
 		iScenario = self.getScenario()
 		
-		baseKey = "TXT_KEY_DOM_" + gc.getPlayer(iPlayer).getCivilizationShortDescription(0).replace(" ", "_").upper()
+		baseKey = "TXT_KEY_DOM_" + gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getIdentifier()
 		
 		fullKey = baseKey
 		
