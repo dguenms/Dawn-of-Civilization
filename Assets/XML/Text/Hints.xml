@@ -12,7 +12,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_2</Tag>
 		<English>Discovering Microbiology will keep you safe from plagues</English>
-		<French>Discovering Microbiology will keep you safe from plagues</French>
+		<French>Découvrir la microbiologie vous protégera de la peste.</French>
 		<German>Die Erforschung der "Mikrobiologie" bewahrt Sie vor der Pest.</German>
 		<Italian>Discovering Microbiology will keep you safe from plagues</Italian>
 		<Spanish>Discovering Microbiology will keep you safe from plagues</Spanish>
@@ -92,7 +92,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_12</Tag>
 		<English>Combining Totalitarianism and Constitution isn't a good idea.</English>
-		<French>Il est d&#233;conseill&#233; d'instaurer la libert&#233; d'expression dans un &#233;tat policier.</French>
+		<French>Il est d&#233;conseill&#233; de donner une constitution à un État totalitaire.</French>
 		<German>Die Kombination von Totalitarismus und Verfassung ist keine gute Idee.</German>
 		<Italian>Combinare lo stato di polizia con la libert&#224; di parola non &#232; una buona idea.</Italian>
 		<Spanish>Combinar Estado policial y Libertad de expresi&#243;n no es una buena idea.</Spanish>
@@ -132,7 +132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_17</Tag>
 		<English>In Rhye's and Fall of Civilization, vassal states are enabled by the discovery of Contract.</English>
-		<French>Dans Rhye's and Fall of Civilization, la d&#233;couverte de la monarchie permet les &#233;tats vassaux.</French>
+		<French>Dans Rhye's and Fall of Civilization, la d&#233;couverte du contrat permet les &#201;tats vassaux.</French>
 		<German>In Rhye's and Fall of Civilization werden Vasallenstaaten durch die Entdeckung des "Vertragswesens" verf&#252;gbar.</German>
 		<Italian>In Rhye's and Fall gli stati vassalli sono abilitati dalla scoperta della monarchia.</Italian>
 		<Spanish>En Rhye's and Fall of Civilization los estados vasallos se activan con el descubrimiento de la Monarqu&#237;a.</Spanish>
@@ -172,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_22</Tag>
 		<English>In Rhye's and Fall of Civilization, jungle, rainforest and marshes are impassable to most land units.</English>
-		<French>Dans Rhye's and Fall of Civilization, la plupart des unit&#233;s terrestres ne peuvent pas franchir les marais et les jungles.</French>
+		<French>Dans Rhye's and Fall of Civilization, la plupart des unit&#233;s terrestres ne peuvent pas franchir les marais, les forêts tropicales et les jungles.</French>
 		<German>In Rhye's and Fall of Civilization sind Dschungel-, Regenwald- und Sumpf-Gel&#228;ndefelder f&#252;r die meisten Landeinheiten unpassierbar.</German>
 		<Italian>In Rhye's and Fall giungle e paludi sono impossibili da attraversare per la maggior parte delle unit&#224; terrestri.</Italian>
 		<Spanish>En Rhye's and Fall of Civilization la mayor&#237;a de las unidades terrestres no pueden atravesar junglas ni ci&#233;nagas.</Spanish>
@@ -332,7 +332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_1</Tag>
 		<English>AI Mongols receive additional armies to attack Russia and the Middle East. Be prepared!</English>
-		<French>AI Mongols receive additional armies to attack Russia and the Middle East. Be prepared!</French>
+		<French>Lorsqu'ils sont contrôlés par l'IA, les Mongols reçoivent des armées supplémentaires pour attaquer la Russie et le Moyen-Orient. Soyez prêt !</French>
 		<German>AI Mongols receive additional armies to attack Russia and the Middle East. Be prepared!</German>
 		<Italian>AI Mongols receive additional armies to attack Russia and the Middle East. Be prepared!</Italian>
 		<Spanish>AI Mongols receive additional armies to attack Russia and the Middle East. Be prepared!</Spanish>
@@ -340,7 +340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_2</Tag>
 		<English>In Dawn of Civilization, several civilizations like Byzantium, Italy and Thailand have conditional spawns, and don't appear in every game.</English>
-		<French>In Dawn of Civilization, several civilizations like Byzantium, Italy and Thailand have conditional spawns, and don't appear in every game.</French>
+		<French>Dans Dawn of Civilizations, plusieurs civilisations, comme Byzance, l'Italie et la Thaïlande, naissent seulement lorsque certaines conditions sont remplies. Elles n'apparaissent donc pas dans toutes les parties.</French>
 		<German>In Dawn of Civilization, several civilizations like Byzantium, Italy and Thailand have conditional spawns, and don't appear in every game.</German>
 		<Italian>In Dawn of Civilization, several civilizations like Byzantium, Italy and Thailand have conditional spawns, and don't appear in every game.</Italian>
 		<Spanish>In Dawn of Civilization, several civilizations like Byzantium, Italy and Thailand have conditional spawns, and don't appear in every game.</Spanish>
@@ -348,7 +348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_3</Tag>
 		<English>Several AI civilizations flip larger areas on spawn to help them along.</English>
-		<French>Several AI civilizations flip larger areas on spawn to help them along.</French>
+		<French>Plusieurs civilisations contrôlées par l'IA reçoivent un plus grand territoire à leur naissance afin de les aider.</French>
 		<German>Several AI civilizations flip larger areas on spawn to help them along.</German>
 		<Italian>Several AI civilizations flip larger areas on spawn to help them along.</Italian>
 		<Spanish>Several AI civilizations flip larger areas on spawn to help them along.</Spanish>
@@ -356,7 +356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_4</Tag>
 		<English>In Dawn of Civilization, free technology effects like the Oracle only allow you to choose technologies of your current or earlier eras.</English>
-		<French>In Dawn of Civilization, free technology effects like the Oracle only allow you to choose technologies of your current or earlier eras.</French>
+		<French>Dans Dawn of Civilization, les technologies gratuites, comme celle que donne l'Oracle, doivent être choisies parmi celles de l'ère actuelle ou des ères passées.</French>
 		<German>In Dawn of Civilization, free technology effects like the Oracle only allow you to choose technologies of your current or earlier eras.</German>
 		<Italian>In Dawn of Civilization, free technology effects like the Oracle only allow you to choose technologies of your current or earlier eras.</Italian>
 		<Spanish>In Dawn of Civilization, free technology effects like the Oracle only allow you to choose technologies of your current or earlier eras.</Spanish>
@@ -364,7 +364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_5</Tag>
 		<English>If you're playing as a Western European civilization, build a Trading Company to expand to Africa or Asia.</English>
-		<French>If you're playing as a Western European civilization, build a Trading Company to expand to Africa or Asia.</French>
+		<French>Si vous contrôlez une civilisation d'Europe de l'Ouest, la construction d'une compagnie commerciale vous permettra de prendre de l'expansion en Afrique ou en Asie.</French>
 		<German>If you're playing as a Western European civilization, build a Trading Company to expand to Africa or Asia.</German>
 		<Italian>If you're playing as a Western European civilization, build a Trading Company to expand to Africa or Asia.</Italian>
 		<Spanish>If you're playing as a Western European civilization, build a Trading Company to expand to Africa or Asia.</Spanish>
@@ -372,7 +372,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_6</Tag>
 		<English>Pagan Temples cannot be built in cities that have a religion, and when a religion spreads to a city with a Pagan Temple, it is replaced by that religion's temple instead.</English>
-		<French>Pagan Temples cannot be built in cities that have a religion, and when a religion spreads to a city with a Pagan Temple, it is replaced by that religion's temple instead.</French>
+		<French>Les temples païens ne peuvent être construits dans les villes adeptes d'une religion. Lorsqu'une religion se propage dans une ville possédant un temple païen, ce dernier est remplacé par un lieu de culte de la religion.</French>
 		<German>Pagan Temples cannot be built in cities that have a religion, and when a religion spreads to a city with a Pagan Temple, it is replaced by that religion's temple instead.</German>
 		<Italian>Pagan Temples cannot be built in cities that have a religion, and when a religion spreads to a city with a Pagan Temple, it is replaced by that religion's temple instead.</Italian>
 		<Spanish>Pagan Temples cannot be built in cities that have a religion, and when a religion spreads to a city with a Pagan Temple, it is replaced by that religion's temple instead.</Spanish>
@@ -380,7 +380,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_7</Tag>
 		<English>In Dawn of Civilization, civilisations can respawn in historically appropriate time periods, even before Nationalism has been discovered.</English>
-		<French>In Dawn of Civilization, civilisations can respawn in historically appropriate time periods, even before Nationalism has been discovered.</French>
+		<French>Dans Dawn of Civilization, les civilisations peuvent réapparaître pendant les périodes appropriées, et ce, même avant la découverte du nationalisme.</French>
 		<German>In Dawn of Civilization, civilisations can respawn in historically appropriate time periods, even before Nationalism has been discovered.</German>
 		<Italian>In Dawn of Civilization, civilisations can respawn in historically appropriate time periods, even before Nationalism has been discovered.</Italian>
 		<Spanish>In Dawn of Civilization, civilisations can respawn in historically appropriate time periods, even before Nationalism has been discovered.</Spanish>
@@ -388,7 +388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_8</Tag>
 		<English>You need to discover Exploration before you can vassalize far away civilizations.</English>
-		<French>You need to discover Exploration before you can vassalize far away civilizations.</French>
+		<French>Vous devez découvrir l'exploration pour pouvoir vassaliser les civilisations lointaines.</French>
 		<German>You need to discover Exploration before you can vassalize far away civilizations.</German>
 		<Italian>You need to discover Exploration before you can vassalize far away civilizations.</Italian>
 		<Spanish>You need to discover Exploration before you can vassalize far away civilizations.</Spanish>
@@ -396,7 +396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_9</Tag>
 		<English>You need to discover Exploration before you can train settlers on other continents than your capital's.</English>
-		<French>You need to discover Exploration before you can train settlers on other continents than your capital's.</French>
+		<French>Vous devez découvrir l'explorarion pour pouvoir créer des colons sur des continents autres que celui où est située votre capitale.</French>
 		<German>You need to discover Exploration before you can train settlers on other continents than your capital's.</German>
 		<Italian>You need to discover Exploration before you can train settlers on other continents than your capital's.</Italian>
 		<Spanish>You need to discover Exploration before you can train settlers on other continents than your capital's.</Spanish>
@@ -404,7 +404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_10</Tag>
 		<English>In Dawn of Civilization, military units cannot be killed by the plague, only weakened.</English>
-		<French>In Dawn of Civilization, military units cannot be killed by the plague, only weakened.</French>
+		<French>Dans Dawn of Civilization, la peste affaiblit les unités militaires mais ne les tue pas.</French>
 		<German>In Dawn of Civilization, military units cannot be killed by the plague, only weakened.</German>
 		<Italian>In Dawn of Civilization, military units cannot be killed by the plague, only weakened.</Italian>
 		<Spanish>In Dawn of Civilization, military units cannot be killed by the plague, only weakened.</Spanish>
@@ -412,7 +412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_11</Tag>
 		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism don't create unhappiness if one of them is your state religion</English>
-		<French>Related religions like Hinduism and Buddhism or Confucianism and Taoism don't create unhappiness if one of them is your state religion</French>
+		<French>Les religions apparentées, comme l'hindouisme et le bouddhisme ou encore le confucianisme et le taoïsme, ne créent pas de malheur si l'une d'elles est votre religion d'État.</French>
 		<German>Related religions like Hinduism and Buddhism or Confucianism and Taoism don't create unhappiness if one of them is your state religion</German>
 		<Italian>Related religions like Hinduism and Buddhism or Confucianism and Taoism don't create unhappiness if one of them is your state religion</Italian>
 		<Spanish>Related religions like Hinduism and Buddhism or Confucianism and Taoism don't create unhappiness if one of them is your state religion</Spanish>
@@ -420,7 +420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_12</Tag>
 		<English>The Seljuks appear in the Middle East in the 11th century. Be prepared!</English>
-		<French>The Seljuks appear in the Middle East in the 11th century. Be prepared!</French>
+		<French>Les Seldjoukides apparaissent au Moyen-Orient au 11e siècle. Soyez prêt !</French>
 		<German>The Seljuks appear in the Middle East in the 11th century. Be prepared!</German>
 		<Italian>The Seljuks appear in the Middle East in the 11th century. Be prepared!</Italian>
 		<Spanish>The Seljuks appear in the Middle East in the 11th century. Be prepared!</Spanish>
@@ -428,7 +428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_13</Tag>
 		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</English>
-		<French>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</French>
+		<French>Les religions apparentées, comme l'hindouisme et le bouddhisme ou encore le confucianisme et le taoïsme, créent des pénalités diplomatiques moindres.</French>
 		<German>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</German>
 		<Italian>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</Italian>
 		<Spanish>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</Spanish>
@@ -436,7 +436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_14</Tag>
 		<English>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</English>
-		<French>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</French>
+		<French>Les sièges sociaux des sociétés commerciales ont été retirés du jeu ; les sociétés commerciales se propagent par elles-mêmes lorsque les conditions sont réunies.</French>
 		<German>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</German>
 		<Italian>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</Italian>
 		<Spanish>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</Spanish>
@@ -444,7 +444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_15</Tag>
 		<English>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</English>
-		<French>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</French>
+		<French>Les sociétés commerciales de la route de la soie et de la compagnie commerciale ne peuvent se propager que dans les régions appropriées d'un point de vue historique.</French>
 		<German>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</German>
 		<Italian>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</Italian>
 		<Spanish>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</Spanish>
@@ -452,7 +452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_16</Tag>
 		<English>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</English>
-		<French>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</French>
+		<French>Pour attirer une société commerciale, obtenez davantage de ressources reliées, construisez les bâtiments associés, ou adoptez la doctrine de la libre entreprise.</French>
 		<German>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</German>
 		<Italian>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</Italian>
 		<Spanish>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</Spanish>
@@ -460,7 +460,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_17</Tag>
 		<English>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</English>
-		<French>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</French>
+		<French>Dans Dawn of Civilization, de nombreuses merveilles nécessitent des religions ou des doctrines spécifiques afin d'encourager leur construction dans les régions appropriées.</French>
 		<German>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</German>
 		<Italian>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</Italian>
 		<Spanish>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</Spanish>
@@ -468,7 +468,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_18</Tag>
 		<English>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</English>
-		<French>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</French>
+		<French>La première civilisation catholique à découvrir l'université déclenche la Réforme. Toutes les civilisations catholiques doivent alors décider si elles se convertissent au protestantisme.</French>
 		<German>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</German>
 		<Italian>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</Italian>
 		<Spanish>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</Spanish>
@@ -476,7 +476,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_19</Tag>
 		<English>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</English>
-		<French>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</French>
+		<French>Dans Dawn of Civilization, les vassaux ne cèdent pas à leur maître le contrôle des cases adjacentes à leurs villes.</French>
 		<German>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</German>
 		<Italian>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</Italian>
 		<Spanish>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</Spanish>
@@ -484,7 +484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_20</Tag>
 		<English>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</English>
-		<French>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</French>
+		<French>Quand un objectif de VHU nécessite de contrôler une civilisation, il faut posséder plus de villes dans leur cœur qu'eux.</French>
 		<German>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</German>
 		<Italian>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</Italian>
 		<Spanish>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</Spanish>
@@ -492,7 +492,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_21</Tag>
 		<English>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</English>
-		<French>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</French>
+		<French>Les régions pertinentes pour votre VHU apparaissent en bleu pâle dans l'information de chaque case.</French>
 		<German>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</German>
 		<Italian>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</Italian>
 		<Spanish>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</Spanish>
@@ -500,7 +500,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_22</Tag>
 		<English>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</English>
-		<French>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</French>
+		<French>Dawn of Civilization est encore en développement. Vous pouvez obtenir les dernières mises à jour grâce à la version Git du mod. Visitez le forum à l'adresse http://forums.civfanatics.com/forumdisplay.php?f=452 pour en savoir plus.</French>
 		<German>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</German>
 		<Italian>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</Italian>
 		<Spanish>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</Spanish>
@@ -508,7 +508,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_23</Tag>
 		<English>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</English>
-		<French>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</French>
+		<French>Le catholicisme est fondé au moment du Grand Schisme, qui se produit lorsque plus de la moitié des villes orthodoxes tombent hors du contrôle des civilisations orthodoxes.</French>
 		<German>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</German>
 		<Italian>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</Italian>
 		<Spanish>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</Spanish>
@@ -516,7 +516,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_24</Tag>
 		<English>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</English>
-		<French>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</French>
+		<French>La quantité de culture engendrée lorsqu'un artiste illustre crée un chef d'œuvre dépend de l'ère actuelle.</French>
 		<German>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</German>
 		<Italian>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</Italian>
 		<Spanish>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</Spanish>
@@ -524,7 +524,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_25</Tag>
 		<English>Train a persecutor to remove non-state religions from your cities.</English>
-		<French>Train a persecutor to remove non-state religions from your cities.</French>
+		<French>Formez un inquisiteur si vous voulez retirer les religions non officielles de vos villes.</French>
 		<German>Train a persecutor to remove non-state religions from your cities.</German>
 		<Italian>Train a persecutor to remove non-state religions from your cities.</Italian>
 		<Spanish>Train a persecutor to remove non-state religions from your cities.</Spanish>
@@ -532,7 +532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_26</Tag>
 		<English>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</English>
-		<French>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</French>
+		<French>Confus quant aux règles qui régissent la stabilité liée à l'expansion et aux doctrines ? Consultez la section Concepts de la Civilopédia !</French>
 		<German>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</German>
 		<Italian>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</Italian>
 		<Spanish>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</Spanish>
@@ -540,7 +540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_27</Tag>
 		<English>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</English>
-		<French>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</French>
+		<French>La musique d'ambiance de l'ère classique, du Moyen Âge et de la Renaissance dépend de votre religion d'État.</French>
 		<German>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</German>
 		<Italian>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</Italian>
 		<Spanish>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</Spanish>
@@ -548,7 +548,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_28</Tag>
 		<English>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</English>
-		<French>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</French>
+		<French>Lorsqu'ils sont contrôlés par l'IA, les Romains et les Grecs reçoivent des armées pour conquérir la région méditerranéenne et la Mésopotamie. Soyez prêt !</French>
 		<German>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</German>
 		<Italian>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</Italian>
 		<Spanish>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</Spanish>
@@ -556,7 +556,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_29</Tag>
 		<English>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</English>
-		<French>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</French>
+		<French>Lorsqu'une ville se situe sur une case de ressource au sein d'une île de cinq cases ou moins, sa case rapporte autant que production et de commerce que si l'aménagement approprié y était construit.</French>
 		<German>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</German>
 		<Italian>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</Italian>
 		<Spanish>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</Spanish>
@@ -564,7 +564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_30</Tag>
 		<English>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</English>
-		<French>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</French>
+		<French>Vaincre des unités indigènes sur votre territoire peut créer une unité d'esclave si vous avez adopté la doctrine de l'esclavage.</French>
 		<German>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</German>
 		<Italian>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</Italian>
 		<Spanish>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</Spanish>
@@ -572,7 +572,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_31</Tag>
 		<English>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</English>
-		<French>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</French>
+		<French>Obtenez des esclaves pour construire des plantations à esclaves ou pour les ajouter à vos villes. Cette option est possible uniquement en Amérique du Nord et en Afrique, sauf si votre capitale se situe en Afrique.</French>
 		<German>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</German>
 		<Italian>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</Italian>
 		<Spanish>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</Spanish>
@@ -580,7 +580,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_32</Tag>
 		<English>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</English>
-		<French>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</French>
+		<French>Si vous avez adopté l'esclavage ou le colonialisme, vous pouvez échanger des esclaves dans l'interface de diplomatie avec les autres civilisations.</French>
 		<German>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</German>
 		<Italian>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</Italian>
 		<Spanish>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</Spanish>
@@ -588,7 +588,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_33</Tag>
 		<English>Tribal villages are placed randomly at the beginning of the game.</English>
-		<French>Tribal villages are placed randomly at the beginning of the game.</French>
+		<French>Les villages tribaux sont placés aléatoirement au début du jeu.</French>
 		<German>Tribal villages are placed randomly at the beginning of the game.</German>
 		<Italian>Tribal villages are placed randomly at the beginning of the game.</Italian>
 		<Spanish>Tribal villages are placed randomly at the beginning of the game.</Spanish>
@@ -596,7 +596,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_34</Tag>
 		<English>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</English>
-		<French>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</French>
+		<French>Lorsqu'une nouvelle civilisation apparaît, la région qui lui revient automatiquement n'est pas forcément identique à son cœur. Plusieurs civilisations reçoivent des régions beaucoup plus étendues.</French>
 		<German>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</German>
 		<Italian>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</Italian>
 		<Spanish>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</Spanish>
@@ -604,7 +604,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_35</Tag>
 		<English>The core of several civilisations expands on certain conditions, such as entering a new era.</English>
-		<French>The core of several civilisations expands on certain conditions, such as entering a new era.</French>
+		<French>Le cœur de plusieurs civilisations prend de l'expansion lorsque certaines conditions sont réunies, par exemple l'entrée dans une nouvelle ère.</French>
 		<German>The core of several civilisations expands on certain conditions, such as entering a new era.</German>
 		<Italian>The core of several civilisations expands on certain conditions, such as entering a new era.</Italian>
 		<Spanish>The core of several civilisations expands on certain conditions, such as entering a new era.</Spanish>
@@ -612,7 +612,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_36</Tag>
 		<English>The stability and flip zone maps for all civilizations can be found in the Maps folder.</English>
-		<French>The stability and flip zone maps for all civilizations can be found in the Maps folder.</French>
+		<French>Des cartes montrant pour chaque civilisation les zones de stabilité et le territoire à la naissance peuvent être consultées dans le dossier Maps.</French>
 		<German>The stability and flip zone maps for all civilizations can be found in the Maps folder.</German>
 		<Italian>The stability and flip zone maps for all civilizations can be found in the Maps folder.</Italian>
 		<Spanish>The stability and flip zone maps for all civilizations can be found in the Maps folder.</Spanish>
@@ -620,7 +620,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_37</Tag>
 		<English>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</English>
-		<French>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</French>
+		<French>Les civilisations tamoule, maure, tibétaine, polonaise et congolaise peuvent être configurées de telle sorte qu'elles n'apparaissent pas à chaque partie. Pour ce faire, il faut modifier le fichier XML\GlobalDefinesAlt.xml.</French>
 		<German>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</German>
 		<Italian>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</Italian>
 		<Spanish>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</Spanish>
@@ -628,7 +628,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_38</Tag>
 		<English>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</English>
-		<French>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</French>
+		<French>Les civilisations polynésienne et harappéenne sont réservées aux joueurs humains. Vous pouvez les activer pour l'IA dans le fichier XML\GlobalDefinesAlt.xml, mais sans garantie que l'IA les incarnera de façon réaliste ou fructueuse.</French>
 		<German>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</German>
 		<Italian>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</Italian>
 		<Spanish>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</Spanish>
@@ -636,7 +636,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_39</Tag>
 		<English>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</English>
-		<French>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</French>
+		<French>Les vérifications de stabilité peuvent augmenter ou diminuer votre niveau de stabilité. S'il diminue, cela pourrait causer une crise ou même un effondrement de votre civilisation !</French>
 		<German>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</German>
 		<Italian>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</Italian>
 		<Spanish>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</Spanish>
