@@ -2681,7 +2681,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_NON_STATE_RELIGIONS</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</English>
-		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux [ICON_RELIGION] autres que la [ICON_RELIGION] d'&#201;tat</French>
+		<French>[ICON_BULLET]%D1%F2 gr&#226;ce aux [ICON_RELIGION] non officielles</French>
 		<German>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</German>
 		<Italian>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Italian>
 		<Spanish>[ICON_BULLET]%D1%F2 from Non-State [ICON_RELIGION]</Spanish>

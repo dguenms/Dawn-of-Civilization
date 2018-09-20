@@ -2396,7 +2396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOTUS_TEMPLE_HELP</Tag>
 		<English>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</English>
-		<French>[ICON_BULLET]N&#233;cessite au moins quatre religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] par [ICON_RELIGION] autre que la [ICON_RELIGION] d'&#201;tat dans toutes les villes</French>
+		<French>[ICON_BULLET]N&#233;cessite au moins quatre religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] par [ICON_RELIGION] non officielle dans toutes les villes</French>
 		<German>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</German>
 		<Italian>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Italian>
 		<Spanish>[ICON_BULLET]Requires at least four religions[NEWLINE][ICON_BULLET]+1 [ICON_FOOD] per Non-State [ICON_RELIGION] in all cities</Spanish>

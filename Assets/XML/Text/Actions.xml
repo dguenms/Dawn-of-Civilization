@@ -120,7 +120,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
 		<English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
-		<French>Tente de purger la ville d'une religion (autre que la religion d'&#201;tat). Cela consomme l'inquisiteur.</French>
+		<French>Tente de purger la ville d'une religion non officielle. Cela consomme l'inquisiteur.</French>
 		<German>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</German>
 		<Italian>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Italian>
 		<Spanish>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Spanish>
