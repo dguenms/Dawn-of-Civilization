@@ -511,10 +511,12 @@
 	<ElementType name="iTechShare" content="textOnly" dt:type="int"/>
 	<ElementType name="iFirstAirExperience" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iExistingProductionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iAirExperience" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="SpecialUnit" content="textOnly"/> <!-- Leoreth -->
 	<ElementType name="EveryoneSpecialUnit" content="textOnly"/>
 	<ElementType name="EveryoneSpecialBuilding" content="textOnly"/>
 	<ElementType name="FirstFreeUnit" content="textOnly"/> <!-- Leoreth -->
+	<ElementType name="FreePromotion" content="textOnly"/> <!-- Leoreth -->
 	<ElementType name="bSpaceship" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bAllowsNukes" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bGoldenAge" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
@@ -575,12 +577,14 @@
 		<element type="iCost"/>
 		<element type="iNukeInterception"/>
 		<element type="iTechShare"/>
+		<element type="iAirExperience"/> <!-- Leoreth -->
 		<element type="iFirstAirExperience"/> <!-- Leoreth -->
 		<element type="iExistingProductionModifier"/> <!-- Leoreth -->
 		<element type="SpecialUnit"/> <!-- Leoreth -->
 		<element type="EveryoneSpecialUnit"/>
 		<element type="EveryoneSpecialBuilding"/>
 		<element type="FirstFreeUnit"/> <!-- Leoreth -->
+		<element type="FreePromotion"/> <!-- Leoreth -->
 		<element type="bSpaceship"/>
 		<element type="bAllowsNukes"/>
 		<element type="bGoldenAge"/> <!-- Leoreth -->

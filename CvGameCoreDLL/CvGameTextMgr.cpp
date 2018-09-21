@@ -11960,6 +11960,14 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	}
 
 	// Leoreth
+	if (kProject.getAirExperience() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szTempBuffer.Format(L"%s%d", kProject.getAirExperience() > 0 ? L"+" : L"", kProject.getAirExperience());
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_AIR_EXPERIENCE", szTempBuffer.c_str()));
+	}
+
+	// Leoreth
 	if (kProject.getFirstAirExperience() != 0)
 	{
 		szBuffer.append(NEWLINE);
@@ -12018,6 +12026,13 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_FIRST_FREE_UNIT", GC.getUnitInfo((UnitTypes)kProject.getFirstFreeUnit()).getTextKeyWide()));
+	}
+
+	// Leoreth
+	if (kProject.getFreePromotion() != NO_PROMOTION)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_FREE_PROMOTION", GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getTextKeyWide()));
 	}
 
 	// Leoreth

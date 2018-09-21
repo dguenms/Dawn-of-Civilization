@@ -4846,6 +4846,12 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
+						if (kProject.getAirExperience() != 0)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_AIR, kProject.getAirExperience());
+						}
+
+						// Leoreth
 						if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
 						{
 							GET_PLAYER((PlayerTypes)iI).makeSpecialUnitValid((SpecialUnitTypes)kProject.getSpecialUnit());
@@ -4855,6 +4861,30 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						if (kProject.isGoldenAge())
 						{
 							GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(GET_PLAYER((PlayerTypes)iI).getGoldenAgeLength());
+						}
+
+						// Leorth
+						if (kProject.getFreePromotion() != NO_PROMOTION)
+						{
+							if (iChange > 0)
+							{
+								int iLoop;
+								for (CvUnit* pUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pUnit != NULL; pUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
+								{
+									if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(pUnit->getUnitCombatType()))
+									{
+										pUnit->setHasPromotion((PromotionTypes)kProject.getFreePromotion(), true);
+									}
+								}
+							}
+
+							for (int iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
+							{
+								if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(iJ))
+								{
+									GET_PLAYER((PlayerTypes)iI).setFreePromotion((UnitCombatTypes)iJ, (PromotionTypes)kProject.getFreePromotion(), iChange > 0);
+								}
+							}
 						}
 
 						// Leoreth

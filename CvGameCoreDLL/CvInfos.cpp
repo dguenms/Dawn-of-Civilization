@@ -16902,12 +16902,14 @@ m_iMaxTeamInstances(0),
 m_iProductionCost(0),
 m_iNukeInterception(0),
 m_iTechShare(0),
-m_iFirstAirExperience(0),
-m_iExistingProductionModifier(0),
+m_iAirExperience(0), // Leoreth
+m_iFirstAirExperience(0), // Leoreth
+m_iExistingProductionModifier(0), // Leoreth
 m_iSpecialUnit(NO_SPECIALUNIT), // Leoreth
 m_iEveryoneSpecialUnit(NO_SPECIALUNIT),
 m_iEveryoneSpecialBuilding(NO_SPECIALBUILDING),
 m_iFirstFreeUnit(NO_UNIT), // Leoreth
+m_iFreePromotion(NO_PROMOTION), // Leoreth
 m_iVictoryDelayPercent(0),
 m_iSuccessRate(0),
 m_bSpaceship(false),
@@ -16983,6 +16985,12 @@ int CvProjectInfo::getTechShare() const
 }
 
 // Leoreth
+int CvProjectInfo::getAirExperience() const
+{
+	return m_iAirExperience;
+}
+
+// Leoreth
 int CvProjectInfo::getFirstAirExperience() const
 {
 	return m_iFirstAirExperience;
@@ -17014,6 +17022,12 @@ int CvProjectInfo::getEveryoneSpecialBuilding() const
 int CvProjectInfo::getFirstFreeUnit() const
 {
 	return m_iFirstFreeUnit;
+}
+
+// Leoreth
+int CvProjectInfo::getFreePromotion() const
+{
+	return m_iFreePromotion;
 }
 
 int CvProjectInfo::getVictoryDelayPercent() const
@@ -17124,6 +17138,7 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iProductionCost, "iCost");
 	pXML->GetChildXmlValByName(&m_iNukeInterception, "iNukeInterception");
 	pXML->GetChildXmlValByName(&m_iTechShare, "iTechShare");
+	pXML->GetChildXmlValByName(&m_iAirExperience, "iAirExperience"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iFirstAirExperience, "iFirstAirExperience"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iExistingProductionModifier, "iExistingProductionModifier"); // Leoreth
 
@@ -17140,6 +17155,10 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 	// Leoreth
 	pXML->GetChildXmlValByName(szTextVal, "FirstFreeUnit");
 	m_iFirstFreeUnit = pXML->FindInInfoClass(szTextVal);
+
+	// Leoreth
+	pXML->GetChildXmlValByName(szTextVal, "FreePromotion");
+	m_iFreePromotion = pXML->FindInInfoClass(szTextVal);
 
 	pXML->GetChildXmlValByName(&m_bSpaceship, "bSpaceship");
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");
