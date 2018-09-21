@@ -2218,6 +2218,14 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Hubble Space Telescope[COLOR_REVERT] adds additional science to all of your settled satellites. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Tag>
+		<English>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</English>
+		<French>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</French>
+		<German>[ICON_BULLET]+3[ICON_RESEARCH] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Tag>
 		<English>Channel Tunnel</English>
 		<French>
