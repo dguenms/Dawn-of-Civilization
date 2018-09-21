@@ -189,7 +189,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALLOYS_QUOTE</Tag>
 		<English>"It is entirely seemly for a young man killed in battle to lie mangled by the bronze spear. In his death all things appear fair."[PARAGRAPH:2]- Homer, The Iliad</English>
-		<French>"Un jeune homme tomb&#233; dans la bataille peut afficher la pointe d'airain fich&#233;e dans son corps car rien ne choque chez un mort."[PARAGRAPH:2]- Hom&#232;re, l'Iliade</French>
+		<French>"&#192; un jeune guerrier, tu&#233; par Ar&#232;s, d&#233;chir&#233; par le bronze ac&#233;r&#233;, il convient sans r&#233;serve de rester &#233;tendu. Jusque dans la mort, tout en lui reste beau."[PARAGRAPH:2]- Hom&#232;re, l'Iliade</French>
 		<German>"So mancher J&#252;ngling f&#228;llt in der Schlacht, zermalmt von bronzenem Speer. Im Tode so scheint sein Schicksal vollbracht."[PARAGRAPH:2]- Homer</German>
 		<Italian>"Per un giovane &#232; decoroso morire in battaglia trafitto da una lancia di bronzo. Nella morte, tutte le cose sembrano giuste."[PARAGRAPH:2]- Omero</Italian>
 		<Spanish>"Yacer en el suelo, habiendo sido atravesado en la lid por el agudo bronce, es decoroso para un joven, y cuanto de &#233;l pueda verse todo es bello, a pesar de la muerte."[PARAGRAPH:2]- Homero</Spanish>
@@ -294,7 +294,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_QUOTE</Tag>
 		<English>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B. F. Skinner, Contingencies of Reinforcement</English>
-		<French>"Le myst&#232;re qui entoure une machine pensante entoure d&#233;j&#224; l'homme pensant."[PARAGRAPH:2]- B. F. Skinner, Contingencies of Reinforcement</French>
+		<French>"Le myst&#232;re qui entoure une machine pensante entoure d&#233;j&#224; l'homme pensant."[PARAGRAPH:2]- B. F. Skinner, L'analyse exp&#233;rimentale du comportement</French>
 		<German>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</German>
 		<Italian>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</Italian>
 		<Spanish>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</Spanish>
@@ -599,8 +599,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BLOOMERY_QUOTE</Tag>
-		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publius Syrus, Sentences</English>
-		<French>"Il faut battre le fer tant qu'il est chaud."[PARAGRAPH:2]- Publius Syrus</French>
+		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publilius Syrus, Sentences</English>
+		<French>"Il faut battre le fer quand il est rouge au feu."[PARAGRAPH:2]- Publilius Syrus, Sentences</French>
 		<German>"Man muss das Eisen schmieden, solange es hei&#223; ist."[PARAGRAPH:2]- Publius Syrus</German>
 		<Italian>"Dovresti battere il ferro finch&#233; &#232; caldo."[PARAGRAPH:2]- Publilio Siro</Italian>
 		<Spanish>"Debes golpear el hierro cuando a&#250;n est&#225; al rojo vivo."[PARAGRAPH:2]- Publio Siro</Spanish>
@@ -1271,8 +1271,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CURRENCY_QUOTE</Tag>
-		<English>"Everything is worth what its purchaser will pay for it."[PARAGRAPH:2]- Publius Syrus</English>
-		<French>"Toute chose a la valeur que son acqu&#233;reur est pr&#234;t &#224; payer."[PARAGRAPH:2]- Publius Syrus</French>
+		<English>"Everything is worth what its purchaser will pay for it."[PARAGRAPH:2]- Publilius Syrus</English>
+		<French>"Les choses n’ont que le prix qu’y veut mettre l’acheteur."[PARAGRAPH:2]- Publilius Syrus</French>
 		<German>"Jedes Ding ist wert, was der K&#228;ufer daf&#252;r zahlen will."[PARAGRAPH:2]- Publius Syrus</German>
 		<Italian>"Ogni cosa vale il prezzo che un acquirente &#232; disposto a pagare."[PARAGRAPH:2]- Publilio Siro</Italian>
 		<Spanish>"Las cosas valen lo que su comprador est&#233; dispuesto a pagar por ellas."[PARAGRAPH:2]- Publio Siro</Spanish>
@@ -2149,7 +2149,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLOBALISM_QUOTE</Tag>
 		<English>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</English>
-		<French>"Je suis un citoyen du monde."[PARAGRAPH:2]- Diog&#232;ne de Sinope</French>
+		<French>"Je suis citoyen du monde."[PARAGRAPH:2]- Diog&#232;ne de Sinope</French>
 		<German>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</German>
 		<Italian>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</Italian>
 		<Spanish>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</Spanish>
@@ -2692,7 +2692,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LITERATURE_QUOTE</Tag>
 		<English>"Some books are to be tasted, others to be swallowed, and some few to be chewed and digested."[PARAGRAPH:2]- Francis Bacon, Of Studies</English>
-		<French>"Certains livres se go&#251;tent, d'autres se d&#233;vorent, d'autres encore se m&#226;chent et se dig&#232;rent lentement."[PARAGRAPH:2]- Sir Francis Bacon</French>
+		<French>"Certains livres se go&#251;tent, d'autres se d&#233;vorent, d'autres encore se m&#226;chent et se dig&#232;rent lentement."[PARAGRAPH:2]- Francis Bacon, De l'&#233;tude</French>
 		<German>"Manche B&#252;cher m&#252;ssen gekostet werden, manche verschlingt man, und nur einige wenige kaut man und verdaut sie ganz."[PARAGRAPH:2]- Sir Francis Bacon</German>
 		<Italian>"Alcuni libri devono essere gustati, altri inghiottiti, altri divorati e digeriti."[PARAGRAPH:2]- Sir Francis Bacon</Italian>
 		<Spanish>"Algunos libros se han de paladear, otros se han de engullir y unos cuantos m&#225;s se han de masticar y digerir."[PARAGRAPH:2]- Sir Francis Bacon</Spanish>
@@ -3829,7 +3829,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFRIGERATION_QUOTE</Tag>
 		<English>"Tell me what you eat, and I will tell you what you are."[PARAGRAPH:2]- Anthelme Brillat-Savarin, The Physiology of Taste</English>
-		<French>"Dis-moi ce que tu manges et je te dirai qui tu es."[PARAGRAPH:2]- Anthelme Brillat-Savarin</French>
+		<French>"Dis-moi ce que tu manges, je te dirai qui tu es."[PARAGRAPH:2]- Anthelme Brillat-Savarin, Physiologie du go&#251;t</French>
 		<German>"Der Mensch ist, was er isst."[PARAGRAPH:2]- Anthelme Brillat-Savarin</German>
 		<Italian>"Dimmi cosa mangi e ti dir&#242; chi sei."[PARAGRAPH:2]- Anthelme Brillat-Savarin</Italian>
 		<Spanish>"Dime lo que comes y te dir&#233; qui&#233;n eres."[PARAGRAPH:2]- Anthelme Brillat-Savarin</Spanish>
@@ -4027,7 +4027,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ROBOTICS_QUOTE</Tag>
 		<English>"From the moment when the machine first made its appearance it was clear to all thinking people that the need for human drudgery, and therefore to a great extent for human inequality, had disappeared."[PARAGRAPH:2]- George Orwell, Nineteen Eighty-Four</English>
-		<French>"D&#232;s le moment de la parution de la premi&#232;re machine, il fut &#233;vident, pour tous les gens qui r&#233;fl&#233;chissaient, que la n&#233;cessit&#233; du travail de l&#8217;homme et, en cons&#233;quence, dans une grande mesure, de l&#8217;in&#233;galit&#233; humaine, avait disparu."[PARAGRAPH:2]- George Orwell, 1984</French>
+		<French>"D&#232;s le moment de la parution de la premi&#232;re machine, il fut &#233;vident, pour tous les gens qui r&#233;fl&#233;chissaient, que la n&#233;cessit&#233; du travail de l'homme et, en cons&#233;quence, dans une grande mesure, de l'in&#233;galit&#233; humaine, avait disparu."[PARAGRAPH:2]- George Orwell, 1984</French>
 		<German>"From the moment when the machine first made its appearance it was clear to all thinking people that the need for human drudgery, and therefore too a great extent for human inequality, had disappeared."[PARAGRAPH:2]- George Orwell, Nineteen Eighty-Four</German>
 		<Italian>"From the moment when the machine first made its appearance it was clear to all thinking people that the need for human drudgery, and therefore too a great extent for human inequality, had disappeared."[PARAGRAPH:2]- George Orwell, Nineteen Eighty-Four</Italian>
 		<Spanish>"From the moment when the machine first made its appearance it was clear to all thinking people that the need for human drudgery, and therefore too a great extent for human inequality, had disappeared."[PARAGRAPH:2]- George Orwell, Nineteen Eighty-Four</Spanish>
@@ -4186,7 +4186,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD_QUOTE</Tag>
 		<English>"I do not feel obliged to believe that the same God who has endowed us with sense, reason, and intellect has intended us to forgo their use."[PARAGRAPH:2]- Galileo Galilei, Letter to the Grand Duchess Christina</English>
-		<French>"J'ai du mal &#224; croire que le m&#234;me Dieu qui nous a dot&#233;s d'esprit, de raison et d'intelligence puisse vouloir que nous y renoncions."[PARAGRAPH:2]- Galil&#233;e</French>
+		<French>"Comme Dieu nous a dot&#233;s de sens, de facult&#233;s discursives et d'intelligence, ceci signifie qu'il a voulu, qu'usant de ces moyens, nous puissions conna&#238;tre tout ce qu'il nous permet d'atteindre."[PARAGRAPH:2]- Galil&#233;e, Lettre &#224; la grande-duchesse Christine</French>
 		<German>"Ich f&#252;hle mich nicht zu dem Glauben verpflichtet, dass derselbe Gott, der uns mit Sinnen, Vernunft und Verstand ausgestattet hat, von uns verlangt, dieselben nicht zu benutzen."[PARAGRAPH:2]- Galileo Galilei</German>
 		<Italian>"Non sono obbligato a credere che lo stesso Dio che ci ha donato il senso, la ragione e l'intelligenza voleva che ne dimenticassimo l_uso."[PARAGRAPH:2]- Galileo Galilei</Italian>
 		<Spanish>"No me siento obligado a creer que el mismo Dios que nos ha dotado de sentido com&#250;n, raciocinio e intelecto tuviera como intenci&#243;n privarnos de su uso."[PARAGRAPH:2]- Galileo Galilei</Spanish>
@@ -4616,7 +4616,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TANNING_QUOTE</Tag>
 		<English>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</English>
-		<French>"Pour celui qui a le pied chauss&#233;, la terre n'est-elle pas en quelque sorte toute couverte de cuir ?."[PARAGRAPH:2]- Proverbe indien</French>
+		<French>"Pour celui qui a le pied chauss&#233;, la terre n'est-elle pas en quelque sorte toute couverte de cuir ?"[PARAGRAPH:2]- Proverbe indien</French>
 		<German>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</German>
 		<Italian>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</Italian>
 		<Spanish>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</Spanish>
@@ -4823,7 +4823,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TRANSHUMANISM_QUOTE</Tag>
 		<English>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</English>
-		<French>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</French>
+		<French>"Que r&#233;serve le futur &#224; cet &#234;tre &#233;trange, n&#233; d'un souffle, fait de tissus p&#233;rissables, et pourtant immortel et dot&#233; de pouvoirs dignes d'un dieu ?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</French>
 		<German>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</German>
 		<Italian>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</Italian>
 		<Spanish>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</Spanish>
