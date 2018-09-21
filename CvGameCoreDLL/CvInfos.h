@@ -252,6 +252,7 @@ public:
 
 	bool isVisible() const;				// Exposed to Python
 	bool isNoGlobalEffects() const; // Leoreth
+	bool isSatellite() const;
 
 	// Arrays
 

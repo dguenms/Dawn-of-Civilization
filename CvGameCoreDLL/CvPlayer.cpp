@@ -7062,6 +7062,13 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->changeHealRate(10 * iChange);
 		}
 	}
+
+	// Hubble Space Telescope
+	else if (eBuilding == HUBBLE_SPACE_TELESCOPE)
+	{
+		updateCommerce(COMMERCE_RESEARCH);
+		AI_makeAssignWorkDirty();
+	}
 }
 
 
@@ -8919,7 +8926,8 @@ int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) co
 
 int CvPlayer::specialistCommerce(SpecialistTypes eSpecialist, CommerceTypes eCommerce) const
 {
-	return (GC.getSpecialistInfo(eSpecialist).getCommerceChange(eCommerce) + getSpecialistExtraCommerce(eCommerce));
+	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
+	return (kSpecialist.getCommerceChange(eCommerce) + (kSpecialist.isNoGlobalEffects() ? 0 : getSpecialistExtraCommerce(eCommerce)) + (kSpecialist.isSatellite() ? getSatelliteExtraCommerce(eCommerce) : 0));
 }
 
 
@@ -25874,4 +25882,19 @@ void CvPlayer::makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit)
 	FAssertMsg(eSpecialUnit >= 0, "eSpecialUnit is expected to be non-negative (invalid Index)");
 	FAssertMsg(eSpecialUnit < GC.getNumSpecialUnitInfos(), "eSpecialUnit is expected to be within maximum bounds (invalid Index)");
 	m_pabSpecialUnitValid[eSpecialUnit] = true;
+}
+
+int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
+{
+	int iCommerce = 0;
+
+	if (eCommerce == COMMERCE_RESEARCH)
+	{
+		if (isHasBuildingEffect((BuildingTypes)HUBBLE_SPACE_TELESCOPE))
+		{
+			iCommerce += 3;
+		}
+	}
+
+	return iCommerce;
 }

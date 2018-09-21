@@ -15122,6 +15122,7 @@
 			<Description>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HUBBLE_SPACE_TELESCOPE</ArtDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
@@ -15130,6 +15131,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>500</iAIWeight>
 			<iCost>3000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -15140,7 +15142,7 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -15152,10 +15154,6 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>100</iCommerce>
-			</CommerceModifiers>
 			<ConstructSound>AS2D_BUILD_OBSERVATORY</ConstructSound>
 			<Flavors>
 				<Flavor>

@@ -1111,6 +1111,7 @@ public:
 	void changeCorporationUnhealthModifier(int iChange);
 
 	int countNoGlobalEffectsFreeSpecialists() const;
+	int countSatellites() const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

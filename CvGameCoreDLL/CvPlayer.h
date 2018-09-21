@@ -1330,6 +1330,8 @@ public:
 	bool isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const;
 	void makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit);
 
+	int getSatelliteExtraCommerce(CommerceTypes eCommerce) const;
+
 	bool m_bTurnPlayed;
 
 protected:

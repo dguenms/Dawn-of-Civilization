@@ -976,6 +976,12 @@ int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(int eCultureLevel) co
 	return m_piCultureLevelGreatPeopleRateChanges[eCultureLevel];
 }
 
+// Leoreth
+bool CvSpecialistInfo::isSatellite() const
+{
+	return getGreatPeopleRateChange() == 0 && getHappiness() == 0 && isNoGlobalEffects(); 
+}
+
 const TCHAR* CvSpecialistInfo::getTexture() const
 {
 	return m_szTexture;
