@@ -1116,6 +1116,8 @@ public:
 	int countNoGlobalEffectsFreeSpecialists() const;
 	int countSatellites() const;
 
+	int getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const;
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);

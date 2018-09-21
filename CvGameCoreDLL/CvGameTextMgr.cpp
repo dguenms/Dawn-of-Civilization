@@ -6542,9 +6542,7 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_EXPERIENCE", GC.getSpecialistInfo(eSpecialist).getExperience()));
 		}
 
-		int iGreatPeopleRateChange = GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
-		iGreatPeopleRateChange += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(pCity->getCultureLevel()) : 0;
-
+		int iGreatPeopleRateChange = pCity == NULL ? GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() : pCity->getSpecialistGreatPeopleRateChange(eSpecialist);
 		if (iGreatPeopleRateChange != 0)
 		{
 			szHelpString.append(NEWLINE);
@@ -12020,6 +12018,13 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_FIRST_FREE_UNIT", GC.getUnitInfo((UnitTypes)kProject.getFirstFreeUnit()).getTextKeyWide()));
+	}
+
+	// Leoreth
+	if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_HELP"));
 	}
 
 	for (iI = 0; iI < GC.getNumVictoryInfos(); ++iI)
@@ -18087,8 +18092,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 			int iCount = city.getSpecialistCount((SpecialistTypes)i) + city.getFreeSpecialistCount((SpecialistTypes)i);
 			if (iCount > 0)
 			{
-				iRate += iCount * GC.getSpecialistInfo((SpecialistTypes)i).getGreatPeopleRateChange();
-				iRate += iCount * GC.getSpecialistInfo((SpecialistTypes)i).getCultureLevelGreatPeopleRateChange(city.getCultureLevel());
+				iRate += iCount * city.getSpecialistGreatPeopleRateChange((SpecialistTypes)i);
 			}
 		}
 		if (iRate > 0)

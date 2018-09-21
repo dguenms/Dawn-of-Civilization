@@ -2,6 +2,30 @@
 <!-- Projects -->
 <Civ4GameText>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION</Tag>
+		<English>International Space Station</English>
+		<French>International Space Station</French>
+		<German>Internationale Raumstation</German>
+		<Italian>International Space Station</Italian>
+		<Spanish>International Space Station</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_HELP</Tag>
+		<English>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</English>
+		<French>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</French>
+		<German>[ICON_BULLET]+3[ICON_GREATPEOPLE] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_BALLISTIC_MISSILE</Tag>
 		<English>Ballistic Missile</English>
 		<French>Ballistic Missile</French>

@@ -444,8 +444,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 
 	iValue = AI_yieldValue(aiYields, aiCommerceYields, bAvoidGrowth, bRemove);
 
-	iGreatPeopleRate = GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
-	iGreatPeopleRate += GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel());
+	iGreatPeopleRate = getSpecialistGreatPeopleRateChange(eSpecialist);
 
 	int iEmphasisCount = 0;
 	if (iGreatPeopleRate != 0)
@@ -9380,8 +9379,7 @@ int CvCityAI::AI_countGoodSpecialists(bool bHealthy)
 		iValue += 40 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_GOLD);
 		iValue += 20 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_ESPIONAGE);
 		iValue += 15 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_CULTURE);
-		iValue += 25 * GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
-		iValue += 25 * GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel());
+		iValue += 25 * getSpecialistGreatPeopleRateChange(eSpecialist);
 
 		if (iValue >= (bHealthy ? 200 : 300))
 		{

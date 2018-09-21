@@ -979,7 +979,7 @@ int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(int eCultureLevel) co
 // Leoreth
 bool CvSpecialistInfo::isSatellite() const
 {
-	return getGreatPeopleRateChange() == 0 && getHappiness() == 0 && isNoGlobalEffects(); 
+	return getHappiness() == 0 && isNoGlobalEffects(); 
 }
 
 const TCHAR* CvSpecialistInfo::getTexture() const
