@@ -607,7 +607,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/Satellite.dds</Button>
+			<Button>Art/Interface/MainScreen/CityScreen/Satellite_Research.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_COMMERCIAL_SATELLITE</Type>
@@ -631,7 +631,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/Satellite.dds</Button>
+			<Button>Art/Interface/MainScreen/CityScreen/Satellite_Commerce.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_MILITARY_SATELLITE</Type>
@@ -658,7 +658,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/Satellite.dds</Button>
+			<Button>Art/Interface/MainScreen/CityScreen/Satellite_Military.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_SLAVE</Type>
