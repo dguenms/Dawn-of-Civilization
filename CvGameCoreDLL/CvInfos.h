@@ -4158,12 +4158,14 @@ public:
 	int getProductionCost() const;								// Exposed to Python
 	int getNukeInterception() const;							// Exposed to Python
 	int getTechShare() const;											// Exposed to Python
+	int getAirExperience() const; // Leoreth
 	int getFirstAirExperience() const; // Leoreth
 	int getExistingProductionModifier() const; // Leoreth
 	int getSpecialUnit() const; // Leoreth
 	int getEveryoneSpecialUnit() const;						// Exposed to Python
 	int getEveryoneSpecialBuilding() const;				// Exposed to Python
 	int getFirstFreeUnit() const; // Leoreth
+	int getFreePromotion() const; // Leoreth
 	int getVictoryDelayPercent() const;				// Exposed to Python
 	int getSuccessRate() const;				// Exposed to Python
 
@@ -4199,12 +4201,14 @@ protected:
 	int m_iProductionCost;
 	int m_iNukeInterception;
 	int m_iTechShare;
+	int m_iAirExperience; // Leoreth
 	int m_iFirstAirExperience; // Leoreth
 	int m_iExistingProductionModifier; // Leoreth
 	int m_iSpecialUnit; // Leoreth
 	int m_iEveryoneSpecialUnit;
 	int m_iEveryoneSpecialBuilding;
 	int m_iFirstFreeUnit; // Leoreth
+	int m_iFreePromotion; // Leoreth
 	int m_iVictoryDelayPercent;
 	int m_iSuccessRate;
 

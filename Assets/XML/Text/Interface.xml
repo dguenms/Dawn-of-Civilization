@@ -2796,6 +2796,22 @@
 		<Spanish>Builds %d1_Mod%% Faster when already completed by another civilization</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_AIR_EXPERIENCE</Tag>
+		<English>[ICON_BULLET]%s1 experience for Air units</English>
+		<French>[ICON_BULLET]%s1 experience for Air units</French>
+		<German>[ICON_BULLET]%s1 Erfahrung f&#252;r Luft-Einheiten</German>
+		<Italian>[ICON_BULLET]%s1 experience for Air units</Italian>
+		<Spanish>[ICON_BULLET]%s1 experience for Air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FREE_PROMOTION</Tag>
+		<English>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</English>
+		<French>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</French>
+		<German>[ICON_BULLET]Alle Einheiten erhalten die [LINK=literal]%s1[\LINK]-Bef&#246;rderung</German>
+		<Italian>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Italian>
+		<Spanish>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

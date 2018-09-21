@@ -20,12 +20,14 @@
 			<iCost>1500</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>SPECIALBUILDING_BOMB_SHELTER</EveryoneSpecialBuilding>
 			<FirstFreeUnit>UNIT_NUCLEAR_BOMBER</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>1</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -59,12 +61,14 @@
 			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>2</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -98,12 +102,14 @@
 			<iCost>1000</iCost>
 			<iNukeInterception>50</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -125,24 +131,67 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SDI</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_INTERNATIONAL_SPACE_STATION</Type>
-			<Description>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION</Description>
-			<Civilopedia>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_STRATEGY</Strategy>
+			<Type>PROJECT_GLOBAL_POSITIONING_SYSTEM</Type>
+			<Description>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM</Description>
+			<Civilopedia>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
-			<TechPrereq>TECH_SATELLITES</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iCost>2000</iCost>
+			<TechPrereq>TECH_TELECOMMUNICATIONS</TechPrereq>
+			<AnyonePrereqProject>PROJECT_MAN_IN_SPACE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>1500</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>4</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>PROMOTION_COMMANDO</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/GPS.dds</Button>
+			<PrereqProjects/>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_INTERNATIONAL_SPACE_STATION</Type>
+			<Description>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION</Description>
+			<Civilopedia>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_SATELLITES</TechPrereq>
+			<AnyonePrereqProject>PROJECT_MAN_IN_SPACE</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>2000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -176,12 +225,14 @@
 			<iCost>400</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>100</iExistingProductionModifier>
 			<SpecialUnit>SPECIALUNIT_ICBM</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>UNIT_GREAT_ENGINEER</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -210,12 +261,14 @@
 			<iCost>800</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>100</iExistingProductionModifier>
 			<SpecialUnit>SPECIALUNIT_SATELLITE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -254,12 +307,14 @@
 			<iCost>800</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>4</iFirstAirExperience>
 			<iExistingProductionModifier>100</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -298,12 +353,14 @@
 			<iCost>1200</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>1</bGoldenAge>
@@ -342,12 +399,14 @@
 			<iCost>1600</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>50</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -386,12 +445,14 @@
 			<iCost>700</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -435,12 +496,14 @@
 			<iCost>800</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -484,12 +547,14 @@
 			<iCost>900</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -528,12 +593,14 @@
 			<iCost>1700</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -577,12 +644,14 @@
 			<iCost>1300</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -626,12 +695,14 @@
 			<iCost>600</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
@@ -680,12 +751,14 @@
 			<iCost>900</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
 			<iExistingProductionModifier>0</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bGoldenAge>0</bGoldenAge>
