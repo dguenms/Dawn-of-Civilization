@@ -4857,6 +4857,17 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(GET_PLAYER((PlayerTypes)iI).getGoldenAgeLength());
 						}
 
+						// Leoreth
+						if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
+						{
+							int iLoop;
+							CvCity* pCity;
+							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+							{
+								pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 3);
+							}
+						}
+
 						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
 							bChangeProduction = false;

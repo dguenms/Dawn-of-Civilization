@@ -4927,11 +4927,11 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 		if (eGreatPeopleUnit != NO_UNIT)
 		{
-			changeGreatPeopleUnitRate(eGreatPeopleUnit, GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() * iChange);
+			changeGreatPeopleUnitRate(eGreatPeopleUnit, getSpecialistGreatPeopleRateChange(eSpecialist) * iChange);
 		}
 	}
 
-	changeBaseGreatPeopleRate(GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() * iChange);
+	changeBaseGreatPeopleRate(getSpecialistGreatPeopleRateChange(eSpecialist) * iChange);
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -6875,8 +6875,7 @@ int CvCity::getAdditionalBaseGreatPeopleRateBySpecialist(SpecialistTypes eSpecia
 {
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
-
-	return iChange * (GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() + GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel()));
+	return iChange * getSpecialistGreatPeopleRateChange(eSpecialist);
 }
 // BUG - Specialist Additional Great People - end
 
@@ -18973,4 +18972,25 @@ int CvCity::countSatellites() const
 	}
 
 	return iCount;
+}
+
+int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const
+{
+	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
+	int iGreatPeopleRate = kSpecialist.getGreatPeopleRateChange();
+
+	if (!kSpecialist.isNoGlobalEffects())
+	{
+		iGreatPeopleRate += kSpecialist.getCultureLevelGreatPeopleRateChange(getCultureLevel());
+	}
+
+	if (kSpecialist.isSatellite())
+	{
+		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_INTERNATIONAL_SPACE_STATION))
+		{
+			iGreatPeopleRate += 3;
+		}
+	}
+
+	return iGreatPeopleRate;
 }
