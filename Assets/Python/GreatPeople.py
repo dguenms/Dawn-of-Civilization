@@ -1541,6 +1541,7 @@ iCivVikings : {
 		"Peter Estenberg", # 18th swedish
 		"Arvid Horn", # 18th swedish
 		iIndustrial,
+		"Gustaf Mauritz Armfelt", # 19th finnish
 		"Nikolaj Frederik Severin Grundtvig", # 19th danish
 		iGlobal,
 		"Trygve Lie", # 20th norwegian
@@ -1555,7 +1556,12 @@ iCivVikings : {
 		iRenaissance,
 		"Gustav Vasa", # 16th swedish
 		"Lennart Torstensson", # 17th swedish
+		"Peter Tordenskjold", # 18th norwegian
 		"fIngela Gathenhielm", # 18th swedish
+		iGlobal, 
+		"Carl Gustaf Emil Mannerheim", # 20th finnish
+		"Carl Gustav Fleischer", # 20th norwegian
+		
 	],
 	iGreatSpy : [
 		"fBrita Tott", # 15th swedish/danish
@@ -3450,7 +3456,7 @@ iCivOttomans : {
 	iGreatSpy : [
 		"Petar Ovcarevic", # 16th, 
 		iGlobal,
-		u"Süleyman Askerî", #20th
+		u"Süleyman Askerî", # 20th
 		"fDespina Storch", # 20th
 	],
 },
