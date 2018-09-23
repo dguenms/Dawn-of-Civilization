@@ -213,4 +213,20 @@
 		<Italian>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</Italian>
 		<Spanish>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_SATELLITE_ATTACK</Tag>
+		<English>Destroy Satellite</English>
+		<French>Destroy Satellite</French>
+		<German>Satellit Zerst&#246;ren</German>
+		<Italian>Satellite Attack</Italian>
+		<Spanish>Satellite Attack</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_SATELLITE_ATTACK</Tag>
+		<English>The Satellite will destroy an enemy Satellite on the same tile.</English>
+		<French>The Satellite will destroy an enemy Satellite on the same tile.</French>
+		<German>Der Satellit wird einen gegnerischen Satellit auf demselben Feld zerst&#246;ren.</German>
+		<Italian>The Satellite will destroy an enemy Satellite on the same tile.</Italian>
+		<Spanish>The Satellite will destroy an enemy Satellite on the same tile.</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -11982,6 +11982,20 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	}
 
 	// Leoreth
+	if (kProject.isSatelliteIntercept())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_SATELLITE_INTERCEPT"));
+	}
+
+	// Leoreth
+	if (kProject.isSatelliteAttack())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_SATELLITE_ATTACK"));
+	}
+
+	// Leoreth
 	if (kProject.isGoldenAge())
 	{
 		szBuffer.append(NEWLINE);

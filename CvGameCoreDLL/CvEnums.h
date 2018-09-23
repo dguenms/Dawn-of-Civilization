@@ -1602,6 +1602,13 @@ enum UnitTypes				// Exposed to Python
 enum SpecialUnitTypes	// Exposed to Python
 {
 	NO_SPECIALUNIT = -1,
+
+	SPECIALUNIT_FIGHER,
+	SPECIALUNIT_PEOPLE,
+	SPECIALUNIT_MISSILE,
+	SPECIALUNIT_ICBM,
+	SPECIALUNIT_SATELLITE,
+	NUM_SPECIALUNITS
 };
 
 enum UnitCombatTypes	// Exposed to Python
@@ -1779,6 +1786,7 @@ enum MissionTypes				// Exposed to Python
 	MISSION_DIPLOMATIC_MISSION,
 	MISSION_PERSECUTE,
 	MISSION_GREAT_MISSION,
+	MISSION_SATELLITE_ATTACK,
 // BUG - Sentry Actions - start
 #ifdef _MOD_SENTRY
 	MISSION_MOVE_TO_SENTRY,

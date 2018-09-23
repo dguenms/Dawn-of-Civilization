@@ -30,6 +30,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>1</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -71,6 +73,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -90,17 +94,17 @@
 			<MovieDefineTag>ART_DEF_MOVIE_INTERNET</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_SDI</Type>
-			<Description>TXT_KEY_PROJECT_SDI</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SDI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SDI_STRATEGY</Strategy>
+			<Type>PROJECT_STRATEGIC_DEFENSE_INITIATIVE</Type>
+			<Description>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_STRATEGIC_DEFENSE_INITIATIVE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_LASER</TechPrereq>
 			<AnyonePrereqProject>PROJECT_MANHATTAN_PROJECT</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1000</iCost>
-			<iNukeInterception>50</iNukeInterception>
+			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
@@ -110,13 +114,20 @@
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<FirstFreeUnit>NONE</FirstFreeUnit>
 			<FreePromotion>NONE</FreePromotion>
-			<bSpaceship>0</bSpaceship>
+			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>1</bSatelliteIntercept>
+			<bSatelliteAttack>1</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
 			<Button>,Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,6</Button>
-			<PrereqProjects/>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
 			<VictoryThresholds/>
 			<VictoryMinThresholds/>
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
@@ -137,7 +148,7 @@
 			<Strategy>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_TELECOMMUNICATIONS</TechPrereq>
-			<AnyonePrereqProject>PROJECT_MAN_IN_SPACE</AnyonePrereqProject>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1500</iCost>
@@ -153,11 +164,18 @@
 			<FreePromotion>PROMOTION_COMMANDO</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
 			<Button>Art/Interface/Buttons/Buildings/GPS.dds</Button>
-			<PrereqProjects/>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
 			<VictoryThresholds/>
 			<VictoryMinThresholds/>
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
@@ -178,7 +196,7 @@
 			<Strategy>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_SATELLITES</TechPrereq>
-			<AnyonePrereqProject>PROJECT_MAN_IN_SPACE</AnyonePrereqProject>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iCost>2000</iCost>
@@ -194,11 +212,18 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
 			<Button>Art/Interface/Buttons/Buildings/ISS.dds</Button>
-			<PrereqProjects/>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
 			<VictoryThresholds/>
 			<VictoryMinThresholds/>
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
@@ -235,6 +260,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -271,6 +298,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>1</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -317,6 +346,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>1</bRevealsMap>
@@ -363,6 +394,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>1</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -409,6 +442,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -455,6 +490,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -506,6 +543,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -557,6 +596,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -603,6 +644,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -654,6 +697,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -705,6 +750,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>
@@ -761,6 +808,8 @@
 			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
 			<bGoldenAge>0</bGoldenAge>
 			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
 			<bRevealsMap>0</bRevealsMap>

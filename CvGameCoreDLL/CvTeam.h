@@ -361,6 +361,12 @@ public:
 
 	bool isAtWarWithMajorPlayer() const;
 
+	bool canSatelliteIntercept() const;
+	void changeSatelliteInterceptCount(int iChange);
+
+	bool canSatelliteAttack() const;
+	void changeSatelliteAttackCount(int iChange);
+
 	std::set<TeamTypes> determineDefensivePactPartners(std::set<TeamTypes> visited) const;
 
 	virtual void AI_init() = 0;
@@ -427,6 +433,8 @@ protected:
 	int m_iEspionagePointsEver;
 
 	int m_iTotalTechValue; // Leoreth
+	int m_iSatelliteInterceptCount; // Leoreth
+	int m_iSatelliteAttackCount; // Leoreth
 
 	bool m_bMapCentering;
 	bool m_bCapitulated;

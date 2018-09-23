@@ -284,6 +284,9 @@ public:
 	bool canGreatMission(const CvPlot* pPlot) const;
 	bool greatMission();
 
+	bool canSatelliteAttack(const CvPlot* pPlot) const;
+	bool satelliteAttack();
+
 	bool isWorker() const;
 
 	int upgradePrice(UnitTypes eUnit) const;																											// Exposed to Python

@@ -1219,7 +1219,7 @@ void CvPlot::verifyUnitValidPlot()
 						{
 							if (isVisibleEnemyUnit(pLoopUnit))
 							{
-								if (!(pLoopUnit->isInvisible(getTeam(), false)))
+								if (!(pLoopUnit->isInvisible(getTeam(), false)) && (pLoopUnit->getInvisibleType() == NO_INVISIBLE || !pLoopUnit->isRivalTerritory()))
 								{
 									if (!pLoopUnit->jumpToNearestValidPlot())
 									{

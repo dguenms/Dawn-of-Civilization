@@ -4236,6 +4236,7 @@ bool CvUnit::nuke(int iX, int iY)
 	bool abTeamsAffected[MAX_TEAMS];
 	TeamTypes eBestTeam;
 	int iBestInterception;
+	CvUnit* bestInterceptor;
 	int iI, iJ, iK;
 
 	if (!canNukeAt(plot(), iX, iY))
@@ -4272,11 +4273,34 @@ bool CvUnit::nuke(int iX, int iY)
 
 	iBestInterception = 0;
 	eBestTeam = NO_TEAM;
+	bestInterceptor = NULL;
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
 		if (abTeamsAffected[iI])
 		{
+			if (GET_TEAM((TeamTypes)iI).canSatelliteIntercept())
+			{
+				for (int iJ = NO_DIRECTION; iJ < NUM_DIRECTION_TYPES; iJ++)
+				{
+					CvPlot* pPlot = plotDirection(iX, iY, (DirectionTypes)iJ);
+					for (int iK = 0; iK < pPlot->getNumUnits(); iK++)
+					{
+						CvUnit* pUnit = pPlot->getUnitByIndex(iK);
+						if (pUnit != this && pUnit->getTeam() == iI && pUnit->getSpecialUnitType() == SPECIALUNIT_SATELLITE)
+						{
+							bestInterceptor = pUnit;
+							break;
+						}
+					}
+				}
+			}
+
+			if (bestInterceptor != NULL)
+			{
+				break;
+			}
+
 			if (GET_TEAM((TeamTypes)iI).getNukeInterception() > iBestInterception)
 			{
 				iBestInterception = GET_TEAM((TeamTypes)iI).getNukeInterception();
@@ -4290,11 +4314,27 @@ bool CvUnit::nuke(int iX, int iY)
 
 	setReconPlot(pPlot);
 
-	if (GC.getGameINLINE().getSorenRandNum(100, "Nuke") < iBestInterception)
+	// Leoreth: if a satellite can intercept, it will
+	if (bestInterceptor != NULL)
 	{
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			if (GET_PLAYER((PlayerTypes)iI).isAlive() && (getOwner() == iI || abTeamsAffected[GET_PLAYER((PlayerTypes)iI).getTeam()]))
+			{
+				szBuffer = gDLL->getText("TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE", GET_PLAYER(getOwnerINLINE()).getCivilizationAdjective(), getNameKey(), GET_PLAYER(bestInterceptor->getOwnerINLINE()).getCivilizationAdjective(), bestInterceptor->getNameKey());
+				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), (((PlayerTypes)iI) == getOwnerINLINE()), GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_NUKE_INTERCEPTED", MESSAGE_TYPE_MAJOR_EVENT, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
+			}
+		}
+
+		bestInterceptor->kill(true);
+		kill(true);
+		return true;
+	}
+	else if (GC.getGameINLINE().getSorenRandNum(100, "Nuke") < iBestInterception)
+	{
+		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).isAlive() && (getOwner() == iI || abTeamsAffected[GET_PLAYER((PlayerTypes)iI).getTeam()]))
 			{
 				szBuffer = gDLL->getText("TXT_KEY_MISC_NUKE_INTERCEPTED", GET_PLAYER(getOwnerINLINE()).getNameKey(), getNameKey(), GET_TEAM(eBestTeam).getName().GetCString());
 				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), (((PlayerTypes)iI) == getOwnerINLINE()), GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_NUKE_INTERCEPTED", MESSAGE_TYPE_MAJOR_EVENT, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
@@ -8189,6 +8229,7 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_PERSECUTE: // Leoreth
 		case MISSION_GREAT_MISSION:
+		case MISSION_SATELLITE_ATTACK:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -8318,6 +8359,11 @@ bool CvUnit::canCoexistWithEnemyUnit(TeamTypes eTeam) const
 		}
 
 		return false;
+	}
+
+	if (getInvisibleType() != NO_INVISIBLE && isRivalTerritory())
+	{
+		return true;
 	}
 
 	if (isInvisible(eTeam, false))
@@ -14558,6 +14604,63 @@ bool CvUnit::greatMission()
 	kill(true);
 
 	return true;
+}
+
+bool CvUnit::canSatelliteAttack(const CvPlot* pPlot) const
+{
+	if (getSpecialUnitType() != SPECIALUNIT_SATELLITE)
+	{
+		return false;
+	}
+
+	if (!GET_TEAM(getTeam()).canSatelliteAttack())
+	{
+		return false;
+	}
+
+	for (int iI = 0; iI < pPlot->getNumUnits(); iI++)
+	{
+		CvUnit* pUnit = pPlot->getUnitByIndex(iI);
+		if (pUnit != this && pUnit->getSpecialUnitType() == SPECIALUNIT_SATELLITE)
+		{
+			if (atWar(getTeam(), pUnit->getTeam()))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+bool CvUnit::satelliteAttack()
+{
+	if (!canSatelliteAttack(plot()))
+	{
+		return false;
+	}
+
+	for (int iI = 0; iI < plot()->getNumUnits(); iI++)
+	{
+		CvUnit* pUnit = plot()->getUnitByIndex(iI);
+		if (pUnit != this && pUnit->getSpecialUnitType() == SPECIALUNIT_SATELLITE)
+		{
+			if (atWar(getTeam(), pUnit->getTeam()))
+			{
+				pUnit->kill(true, getOwnerINLINE());
+
+				if (plot()->isActiveVisible(false))
+				{
+					NotifyEntity(MISSION_SATELLITE_ATTACK);
+				}
+
+				finishMoves();
+				return true;
+			}
+		}
+	}
+
+	return false;
 }
 
 SpecialistTypes CvUnit::getSettledSpecialist() const

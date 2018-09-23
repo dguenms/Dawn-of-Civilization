@@ -519,6 +519,8 @@
 	<ElementType name="FreePromotion" content="textOnly"/> <!-- Leoreth -->
 	<ElementType name="bSpaceship" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bAllowsNukes" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bSatelliteIntercept" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bSatelliteAttack" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bGoldenAge" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bFirstEnemyAnarchy" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bRevealsMap" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
@@ -587,6 +589,8 @@
 		<element type="FreePromotion"/> <!-- Leoreth -->
 		<element type="bSpaceship"/>
 		<element type="bAllowsNukes"/>
+		<element type="bSatelliteIntercept"/> <!-- Leoreth -->
+		<element type="bSatelliteAttack"/> <!-- Leoreth -->
 		<element type="bGoldenAge"/> <!-- Leoreth -->
 		<element type="bFirstEnemyAnarchy"/> <!-- Leoreth -->
 		<element type="bRevealsMap"/> <!-- Leoreth -->
