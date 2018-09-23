@@ -376,7 +376,7 @@
 			<Description>TXT_KEY_PROJECT_LUNAR_LANDING</Description>
 			<Civilopedia>TXT_KEY_PROJECT_LUNAR_LANDING_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_LUNAR_LANDING_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -466,6 +466,54 @@
 			</BonusProductionModifiers>
 			<CreateSound/>
 			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_LUNAR_COLONY</Type>
+			<Description>TXT_KEY_PROJECT_LUNAR_COLONY</Description>
+			<Civilopedia>TXT_KEY_PROJECT_LUNAR_COLONY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_LUNAR_COLONY_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_FUSION</TechPrereq>
+			<AnyonePrereqProject>PROJECT_LUNAR_LANDING</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>2400</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/LunarColony.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag>ART_DEF_MOVIE_LUNAR_LANDING</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
 			<Type>PROJECT_SS_COCKPIT</Type>

@@ -4912,6 +4912,20 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							}
 						}
 
+						// Leoreth
+						if (eIndex == PROJECT_LUNAR_COLONY)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeSpaceProductionModifier(100);
+							
+							for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+							{
+								if (GC.getSpecialistInfo((SpecialistTypes)iJ).isSatellite())
+								{
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_PRODUCTION, iChange * 3);
+								}
+							}
+						}
+
 						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
 							bChangeProduction = false;

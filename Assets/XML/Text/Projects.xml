@@ -10,6 +10,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_LUNAR_COLONY</Tag>
+		<English>Lunar Colony</English>
+		<French>Lunar Colony</French>
+		<German>Mondkolonie</German>
+		<Italian>Lunar Colony</Italian>
+		<Spanish>Lunar Colony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_LUNAR_COLONY_HELP</Tag>
+		<English>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</English>
+		<French>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</French>
+		<German>[ICON_BULLET]+3[ICON_PRODUCTION] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE</Tag>
 		<English>Strategic Defense Initiative</English>
 		<French>Strategic Defense Initiative</French>
