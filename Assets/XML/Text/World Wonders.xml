@@ -2394,6 +2394,14 @@
 		<Spanish>[ICON_BULLET]+50% building speed for Railroads</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPACE_ELEVATOR_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] f&#252;r jeden gebauten [LINK=literal]Satellit[\LINK][NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] f&#252;r jedes vollendete Weltraumprojekt</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
