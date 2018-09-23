@@ -10,6 +10,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE</Tag>
+		<English>Strategic Defense Initiative</English>
+		<French>Strategic Defense Initiative</French>
+		<German>Strategische Verteidigungsinitiative</German>
+		<Italian>Strategic Defense Initiative</Italian>
+		<Spanish>Strategic Defense Initiative</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM</Tag>
 		<English>Global Positioning System</English>
 		<French>Global Positioning System</French>

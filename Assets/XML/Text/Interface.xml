@@ -2812,6 +2812,30 @@
 		<Spanish>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SATELLITE_INTERCEPT</Tag>
+		<English>[ICON_BULLET]Satellites can intercept Nuclear Weapons</English>
+		<French>[ICON_BULLET]Satellites can intercept Nuclear Weapons</French>
+		<German>[ICON_BULLET]Satelliten k&#246;nnen nukleare Waffen abfangen</German>
+		<Italian>[ICON_BULLET]Satellites can intercept Nuclear Weapons</Italian>
+		<Spanish>[ICON_BULLET]Satellites can intercept Nuclear Weapons</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE</Tag>
+		<English>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</English>
+		<French>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</French>
+		<German>Eine %s1 %s2_UnitName wurde von einem %s3 SDI-%s4 abgefangen!!!</German>
+		<Italian>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</Italian>
+		<Spanish>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SATELLITE_ATTACK</Tag>
+		<English>[ICON_BULLET]Satellites can attack enemy Satellites</English>
+		<French>[ICON_BULLET]Satellites can attack enemy Satellites</French>
+		<German>[ICON_BULLET]Satelliten k&#246;nnen gegnerische Satelliten angreifen</German>
+		<Italian>[ICON_BULLET]Satellites can attack enemy Satellites</Italian>
+		<Spanish>[ICON_BULLET]Satellites can attack enemy Satellites</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

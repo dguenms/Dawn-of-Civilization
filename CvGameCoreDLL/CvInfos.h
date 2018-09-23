@@ -4171,6 +4171,8 @@ public:
 
 	bool isSpaceship() const;											// Exposed to Python
 	bool isAllowsNukes() const;											// Exposed to Python
+	bool isSatelliteIntercept() const; // Leoreth
+	bool isSatelliteAttack() const; // Leoreth
 	bool isGoldenAge() const; // Leoreth
 	bool isFirstEnemyAnarchy() const; // Leoreth
 	bool isRevealsMap() const; // Leoreth
@@ -4214,6 +4216,8 @@ protected:
 
 	bool m_bSpaceship;
 	bool m_bAllowsNukes;
+	bool m_bSatelliteIntercept; // Leoreth
+	bool m_bSatelliteAttack; // Leoreth
 	bool m_bGoldenAge; // Leoreth
 	bool m_bFirstEnemyAnarchy; // Leoreth
 	bool m_bRevealsMap; // Leoreth

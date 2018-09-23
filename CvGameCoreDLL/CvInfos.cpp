@@ -16914,6 +16914,8 @@ m_iVictoryDelayPercent(0),
 m_iSuccessRate(0),
 m_bSpaceship(false),
 m_bAllowsNukes(false),
+m_bSatelliteIntercept(false), // Leoreth
+m_bSatelliteAttack(false), // Leoreth
 m_bGoldenAge(false), // Leoreth
 m_bFirstEnemyAnarchy(false), // Leoreth
 m_bRevealsMap(false), // Leoreth
@@ -17051,6 +17053,18 @@ bool CvProjectInfo::isAllowsNukes() const
 }
 
 // Leoreth
+bool CvProjectInfo::isSatelliteIntercept() const
+{
+	return m_bSatelliteIntercept;
+}
+
+// Leoreth
+bool CvProjectInfo::isSatelliteAttack() const
+{
+	return m_bSatelliteAttack;
+}
+
+// Leoreth
 bool CvProjectInfo::isGoldenAge() const
 {
 	return m_bGoldenAge;
@@ -17162,6 +17176,8 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_bSpaceship, "bSpaceship");
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");
+	pXML->GetChildXmlValByName(&m_bSatelliteIntercept, "bSatelliteIntercept"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bSatelliteAttack, "bSatelliteAttack"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bGoldenAge, "bGoldenAge"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bFirstEnemyAnarchy, "bFirstEnemyAnarchy"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bRevealsMap, "bRevealsMap"); // Leoreth
