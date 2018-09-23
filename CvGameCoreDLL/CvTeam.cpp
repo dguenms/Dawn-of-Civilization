@@ -4902,6 +4902,12 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
+						if (eIndex == PROJECT_GOLDEN_RECORD)
+						{
+							GET_PLAYER((PlayerTypes)iI).updateCommerce(COMMERCE_CULTURE);
+						}
+
+						// Leoreth
 						if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
 						{
 							int iLoop;

@@ -2845,6 +2845,14 @@
 		<Spanish>[COLOR_WARNING_TEXT]Requiere [LINK=literal]%s1[\LINK][COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_COMMERCE_SPACE_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Spaceship Production</English>
+		<French>[ICON_BULLET]%D1%%%F2 from Spaceship Production</French>
+		<German>[ICON_BULLET]%D1%%%F2 durch Raumschiffproduktion</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

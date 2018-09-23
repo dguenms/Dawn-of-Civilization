@@ -8658,6 +8658,11 @@ int CvCity::getSpaceProductionModifier() const
 void CvCity::changeSpaceProductionModifier(int iChange)
 {
 	m_iSpaceProductionModifier = (m_iSpaceProductionModifier + iChange);
+
+	if (iChange != 0 && GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
+	{
+		updateCommerce(COMMERCE_CULTURE);
+	}
 }
 
 
@@ -10609,6 +10614,12 @@ int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 	if (isPower())
 	{
 		iTotalModifier += getPowerCommerceRateModifier(eIndex);
+	}
+
+	// Leoreth
+	if (eIndex == COMMERCE_CULTURE && GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
+	{
+		iTotalModifier += getSpaceProductionModifier() / 2;
 	}
 
 	return std::max(0, iTotalModifier); // Leoreth
