@@ -25892,7 +25892,7 @@ int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
 	{
 		if (isHasBuildingEffect((BuildingTypes)HUBBLE_SPACE_TELESCOPE))
 		{
-			iCommerce += 3;
+			iCommerce += 5;
 		}
 	}
 
