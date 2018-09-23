@@ -2896,6 +2896,15 @@
 		<Spanish>[ICON_BULLET]Satellites can attack enemy Satellites</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_REQUIRES_ONE</Tag>
+		<!-- %s1_Name = Can be Buildings, Units, Projects, etc -->
+		<English>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Requiert : [LINK=literal]%s1[\LINK][COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Erfordert: [LINK=literal]%s1[\LINK][COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Richiede [LINK=literal]%s1[\LINK][COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Requiere [LINK=literal]%s1[\LINK][COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
