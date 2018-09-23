@@ -25894,5 +25894,13 @@ int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
 		}
 	}
 
+	else if (eCommerce == COMMERCE_CULTURE)
+	{
+		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD))
+		{
+			iCommerce += 5;
+		}
+	}
+
 	return iCommerce;
 }

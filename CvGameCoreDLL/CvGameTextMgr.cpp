@@ -12050,6 +12050,12 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	}
 
 	// Leoreth
+	if (eProject == PROJECT_GOLDEN_RECORD)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_GOLDEN_RECORD_HELP"));
+	}
+
 	if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
 	{
 		szBuffer.append(NEWLINE);
@@ -17727,6 +17733,19 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_POWER", iPowerMod, info.getChar()));
 			szBuffer.append(NEWLINE);
 			iModifier += iPowerMod;
+		}
+	}
+
+
+	// Spaceship production (with Golden Record)
+	if (eCommerceType == COMMERCE_CULTURE && GET_TEAM(city.getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
+	{
+		int iSpaceshipMod = city.getSpaceProductionModifier() / 2;
+		if (0 != iSpaceshipMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_COMMERCE_SPACE_PRODUCTION", iSpaceshipMod, info.getChar()));
+			szBuffer.append(NEWLINE);
+			iModifier += iSpaceshipMod;
 		}
 	}
 
