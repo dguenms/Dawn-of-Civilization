@@ -1985,4 +1985,16 @@ class RFCUtils:
 		if gc.getGame().getGameTurnYear() < tBirth[iHuman]:
 			self.makeUnit(iSettler, iHuman, (0, 0), 1)
 			
+	def getBuildingEffectCity(self, iBuilding):
+		if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iBuilding).getBuildingClassType()) == 0:
+			return None
+			
+		for iPlayer in range(iNumTotalPlayersB):
+			if gc.getPlayer(iPlayer).isHasBuildingEffect(iBuilding):
+				for city in self.cityList(iPlayer):
+					if city.isHasBuildingEffect(iBuilding):
+						return city
+						
+		return None
+			
 utils = RFCUtils()

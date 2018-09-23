@@ -3214,6 +3214,14 @@
 		<Spanish>El [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT] permite a su constructor cambiar instant&#225;neamente de [COLOR_HIGHLIGHT_TEXT]religi&#243;n[COLOR_REVERT] o de [COLOR_HIGHLIGHT_TEXT]principios[COLOR_REVERT] una vez por turno, sin sufrir los efectos de la anarqu&#237;a. Tambi&#233;n aumenta las posibilidades de que aparezca un [COLOR_UNIT_TEXT]Sumo sacerdote[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPACE_ELEVATOR_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] f&#252;r jeden gebauten [LINK=literal]Satellit[\LINK][NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] f&#252;r jedes vollendete Weltraumprojekt</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
