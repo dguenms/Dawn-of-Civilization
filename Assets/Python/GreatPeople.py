@@ -548,7 +548,8 @@ iCivGreece : {
 		iGlobal,
 		"Ioannis Metaxas", # 20th
 		"Konstantinos Karamanlis", # 20th
-		"Andreas Papandreou ", # 20th
+		"Michael Christodoulou Mouskos", # 20th
+		"Andreas Papandreou", # 20th
 	],
 	iGreatGeneral : [
 		"Hektor", # legendary
@@ -647,7 +648,7 @@ iCivIndia : {
 		"Kamalakara", # 17th
 		iGlobal,
 		"Chandrasekhara Venkata Raman", # 20th
-		"Satyendra Nath Bose", #20th
+		"Satyendra Nath Bose", # 20th
 		"fAsima Chatterjee", # 20th
 	],
 	iGreatMerchant : [
@@ -1315,7 +1316,7 @@ iCivJapan : {
 		"Kanou Eitoku", # 16th
 		"Sen no Rikyuu", # 16th
 		"Ihara Saikaku", # 17th
-		"Matsuo Bashou ", # 17th
+		"Matsuo Bashou", # 17th
 		"Chikamatsu Monzaemon", # 17th
 		"Toushuusai Sharaku", # 18th
 		"Yosa Buson", # 18th
@@ -1526,9 +1527,9 @@ iCivVikings : {
 		"Alfred Nobel", # 19th swedish
 		"Lars Magnus Ericsson", # 19th swedish
 		iGlobal,
-		"Arne Jacobsen", #20th danish
+		"Arne Jacobsen", # 20th danish
 		u"Jørn Utzon", # 20th danish
-		"Ivar Giaever", # 20th norwegian
+		u"Ivar Giæver", # 20th norwegian
 	],
 	iGreatStatesman : [
 		"Gorm den Gamle", # 10th danish
@@ -1836,19 +1837,19 @@ iCivIndonesia : {
 	],
 	iGreatScientist : [
 		"Jayabaya", # 12th
-		"Empu Tantular", #14th
+		"Empu Tantular", # 14th
 	],
 	iGreatMerchant : [
-		"Dewawarman", #1st
-		"fCri Kahulunnan", #9th
+		"Dewawarman", # 1st
+		"fCri Kahulunnan", # 9th
 		iRenaissance,
 		"Raja Mudaliar", # 16th
-		"Nahkoda Muda", #18th
+		"Nahkoda Muda", # 18th
 	],
 	iGreatEngineer : [
-		"Gunadharma", #9th
-		"Samaratungga", #9th
-		"Rakai Pikatan", #9th
+		"Gunadharma", # 9th
+		"Samaratungga", # 9th
+		"Rakai Pikatan", # 9th
 	],
 	iGreatStatesman : [
 		"Gajah Mada", # 14th
@@ -2680,7 +2681,7 @@ iCivRussia : {
 	],
 	iGreatStatesman : [
 		"Vladimir Sviatoslavich", # 11th
-		"Yaroslav Mudry ", # 11th
+		"Yaroslav Mudry", # 11th
 		"fMarfa Posadnitsa", # 15th
 		"Ivan Vasilyevich", # 15th
 		iRenaissance,
@@ -3066,7 +3067,7 @@ iCivItaly : {
 		"Giulio de' Medici", # 16th
 		"Matteo Ricci", # 16th
 		iIndustrial,
-		"Giovanni Maria Mastai-Ferretti", #19th
+		"Giovanni Maria Mastai-Ferretti", # 19th
 		"Giovanni Bosco", # 19th
 	],
 	iGreatArtist : [
