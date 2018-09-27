@@ -3646,7 +3646,6 @@ iCivNetherlands : {
 		"Clemens Brenninkmeijer", # 19th
 		"August Kessler", # 19th
 		iGlobal,
-		"Anton Philips", # 20th
 		"Freddy Heineken", # 20th
 	],
 	iGreatEngineer : [
@@ -3660,7 +3659,7 @@ iCivNetherlands : {
 		"Cornelis Lely", # 19th
 		"Hendrik Petrus Berlage", # 19th
 		iGlobal,
-		"Frits Philips", # 20th
+		"Anton Philips", # 20th
 		"Gerrit Rietveld", # 20th
 	],
 	iGreatStatesman : [
