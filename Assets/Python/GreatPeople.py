@@ -1829,15 +1829,26 @@ iCivIndonesia : {
 		iRenaissance,
 		"Sunan Giri", # 15th
 		"Sunan Gunung Jati", # 16th
+		iIndustrial, 
+		"Ahmad Dahlan", # 19th
+		iGlobal,
+		"Albertus Soegijapranata", # 20th
 	],
 	iGreatArtist : [
+		"Abdullah Abdul Kadir", # 19th
+		"Raja Ali Haji", # 19th
+		iGlobal,
+		"Amir Hamzah", # 20th
+		"Ismail Marzuki", # 20th
+		"Pramoedya Ananta Toer", # 20th
 		"Asep Sunandar Sunarya", # 20th
 		"I Made Sidia", # 20th
-		"Ismail Marzuki", # 20th
 	],
 	iGreatScientist : [
 		"Jayabaya", # 12th
 		"Empu Tantular", # 14th
+		iGlobal, 
+		"Herman Johannes", # 20th
 	],
 	iGreatMerchant : [
 		"Dewawarman", # 1st
@@ -1850,6 +1861,9 @@ iCivIndonesia : {
 		"Gunadharma", # 9th
 		"Samaratungga", # 9th
 		"Rakai Pikatan", # 9th
+		iGlobal, 
+		"Liem Bwan Tjie", # 20th
+		"Soejoedi Wirjoatmodjo", # 20th
 	],
 	iGreatStatesman : [
 		"Gajah Mada", # 14th
@@ -1874,6 +1888,9 @@ iCivIndonesia : {
 		"Pattimura", # 18th
 		iIndustrial, 
 		"fCut Nyak Dhien", # 19th
+		iGlobal, 
+		"Oerip Soemohardjo", # 20th
+		"Sudirman", # 20th
 	],
 },
 iCivMoors : {
