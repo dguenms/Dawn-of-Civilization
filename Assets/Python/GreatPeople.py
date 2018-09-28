@@ -443,9 +443,12 @@ iCivGreece : {
 		"Fotis Kafatos", # 20th
 	],
 	iGreatMerchant : [
+		"Kolaios", # 7th BC
+		"Sostratos", # 6th BC
 		"Pytheas", # 4th BC
 		"Androsthenes", # 4th BC
 		"Megasthenes", # 4th BC
+		"Hippalos", # 1st BC
 		"Heroides Attikos", # 2nd
 		iIndustrial,
 		"fManto Mavrogenous", # 19th
@@ -484,7 +487,8 @@ iCivGreece : {
 		iGlobal,
 		"Ioannis Metaxas", # 20th
 		"Konstantinos Karamanlis", # 20th
-		"Andreas Papandreou ", # 20th
+		"Michael Christodoulou Mouskos", # 20th
+		"Andreas Papandreou", # 20th
 	],
 	iGreatGeneral : [
 		"Hektor", # legendary
@@ -494,7 +498,7 @@ iCivGreece : {
 		"Lysandros", # 5th BC
 		"Philippos", # 4th BC
 		"Pyrrhos", # 3rd BC
-		"fArtemisia", # 4th
+		"fArtemisia", # 4th BC
 		iIndustrial,
 		"fLaskarina Bouboulina", # 19th
 		"Alexandros Ypsilantis", # 19th
@@ -1200,40 +1204,52 @@ iCivByzantium : {
 	iGreatProphet : [
 		"Nestorios", # 5th
 		"fTheodora", # 6th
+		"Ioannis o Damaskinos", # 8th
 		"Kyrillos", # 9th
 		"Methodios", # 9th
 		"Photios", # 9th
 		"Nikolaos Mystikos", # 10th
+		"Athanasios o Athonites", # 10th
 		"Ioannes Xiphilinos", # 11th
 	],
 	iGreatArtist : [
-		"Theophylaktos Simokates", # 7th
+		"fAelia Eudocia", # 5th
+		"Romanos o Melodos", # 6th
+		"Flauios Dioskoros", # 6th
+		"fKassia", # 9th
 		"Theodoros Prodromos", # 12th
 		"Eulalios", # 12th
 		"Manuel Chrysoloras", # 14th
-		"Georgios Plethon", # 14th
+		iRenaissance,
 		"Theophanes Strelitzas", # 16th
+		"Domenikos Theotokopoulos", # 16th
+		"Petros Bereketis", # 17th
 	],
 	iGreatScientist : [
+		"fHypatia", # 4th
 		"Stephanos Alexandrinos", # 7th
+		"Theophylaktos Simokates", # 7th
+		"Leon o Mathematikos", # 9th
 		"Michael Psellos", # 11th
+		"fAnna Komnene", # 12th
 		"Nikephoros Blemmydes", # 13th
 		"Niketas Choniates", # 13th
 		"Nikephoros Gregoras", # 14th
-		"Gregorios Gemistos", # 15th
+		"Georgios Plethon", # 15th
 	],
 	iGreatMerchant : [
 		"Hierokles", # 6th
 		"Zemarchos", # 6th
-		"Cosmas Indicopleustes", # 6th
+		"Kosmas Indikopleustes", # 6th
 		"Georgios Kyprios", # 7th
-		"Danielis", # 9th
+		"fDanielis", # 9th
 	],
 	iGreatEngineer : [
 		"Anthemios", # 6th
 		"Isidoros", # 6th
 		"Eutokios", # 6th
 		"Kallinikos", # 7th
+		"Petronas Kamateros", # 9th
 		"Tiridates", # 10th
 	],
 	iGreatStatesman : [
@@ -1247,6 +1263,8 @@ iCivByzantium : {
 	iGreatGeneral : [
 		"Belisarios", # 6th
 		"Ioannis Tzimiskes", # 10th
+		"Nikephoros Phokas", # 10th
+		"Ioannis Kourkouas", # 10th 
 		"Basileios Bulgaroktonos", # 11th
 		"Georgios Maniakes", # 11th
 		"Michael Palaiologos", # 12th
