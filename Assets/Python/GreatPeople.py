@@ -1675,7 +1675,11 @@ iCivArabia : {
 		"Al-Baqilanni", # 10th
 		"Ibn al-Jawzi", # 12th
 		iRenaissance,
+		"Al-Suyuti", # 15th
+		"Abdullah ibn Alawi al-Haddad", # 17th
 		"Muhammad ibn Abd al-Wahhab", # 18th
+		iIndustrial, 
+		"Muhammad Abduh", # 19th
 	],
 	iGreatArtist : [
 		"Ibn Muqla", # 10th
@@ -1695,14 +1699,23 @@ iCivArabia : {
 		"Ibn al-Jazzar", # 10th
 		"Ibn al-Haytam", # 11th
 		"Ibn al-Nafis", # 13th
+		iGlobal, 
+		"Abdul Jabbar Abdullah", # 20th
+		"Ahmed Zewail", # 20th
 	],
 	iGreatMerchant : [
 		"Muhammad ibn al-Zayyat", # 9th
 		"Ibn Hawqal", # 10th
+		"Abu'l Abbas al-Hijazi", # 12th
 		"Yaqut al-Hamawi", # 13th
-		"Ahmad ibn Majid", # 15th
 		iRenaissance,
+		"Ahmad ibn Majid", # 15th
 		"Sulaiman Al Mahri", # 16th
+		iIndustrial, 
+		"David Sassoon", # 19th
+		"Sassoon Eskell", # 19th
+		iGlobal, 
+		"Mohammed bin Awad bin Laden", # 20th
 	],
 	iGreatEngineer : [
 		"Jabir ibn Hayyan", # 8th
@@ -1725,7 +1738,9 @@ iCivArabia : {
 		iIndustrial,
 		"Hussein bin Ali", # 19th
 		iGlobal,
+		"Zayed bin Sultan Al Nahyan", # 20th
 		"Yasser Arafat", # 20th
+		"Hisham Nazer", # 20th
 	],
 	iGreatGeneral : [
 		"Khalid ibn al-Walid", # 7th
@@ -1736,10 +1751,14 @@ iCivArabia : {
 		"Nur ad-Din Zengi", # 12th
 		iRenaissance,
 		"Rahmah ibn Jabir Al Jalhami", # 18th
+		iGlobal, 
+		"Abd al-Karim Qasim", # 20th
 	],
 	iGreatSpy : [
 		"Hassan-i Sabbah", # 11th
 		"Rashid ad-Din Sinan", # 12th
+		iGlobal, 
+		"Ali Hassan al-Majid", # 20th
 	],
 },
 iCivTibet : {
