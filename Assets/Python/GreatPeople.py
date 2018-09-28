@@ -1896,16 +1896,24 @@ iCivMoors : {
 		"Musa bin Maymun", # 12th
 		"fFatima bint al-Muthanna", # 12th
 		"Ibn Arabi", # 12th
+		iRenaissance, 
+		"Ahmad Zarruq", # 15th
+		"Ahmad ibn Abi Jum'ah", # 15th
+		iIndustrial, 
+		"Muhammad ibn Ali as-Senussi", # 19th
 	],
 	iGreatArtist : [
 		"Ziryab", # 9th
 		"fWallada bint al-Mustakfi", # 11th
+		"fQasmuna", # 12th
 		"Ibn Tufail", # 12th
 		"Ibn Quzman", # 12th
 		"Al-Shustari", # 13th
 		iRenaissance,
 		"Ahmad Ibn al-Qadi", # 16th
 		"Mohammed Awzal", # 18th
+		iIndustrial, 
+		"Kaddour El Alamy", # 19th
 		iGlobal,
 		"Abdessadeq Cheqara", # 20th
 	],
@@ -1917,9 +1925,12 @@ iCivMoors : {
 		"Ibn Bajja", # 12th
 		"Abu al-Salt", # 12th
 		"Al-Qalasadi", # 15th
+		iRenaissance, 
+		"Abul Qasim ibn Mohammed al-Ghassani", # 16th
 	],
 	iGreatMerchant : [
 		"Ibrahim ibn Yaqub", # 10th
+		"Al-Bakri", # 11th
 		"Al-Idrisi", # 12th
 		"Ibn Jubayr", # 12th
 		"Ibn Battuta", # 14th
@@ -1938,6 +1949,9 @@ iCivMoors : {
 		"fZaynab an-Nafzawiyyah", # 11h
 		"Ibn al-Khatib", # 14th
 		"Ibn Khaldun", # 14th
+		iRenaissance, 
+		"fLalla Aisha Mubarka", # 17th
+		"Abu al-Qasim al-Zayyani", # 18th
 		iGlobal,
 		"Habib Bourguiba", # 20th
 	],
@@ -1946,11 +1960,14 @@ iCivMoors : {
 		"Muhammad ibn Abi Aamir", # 10th
 		"Yusuf ibn Tashfin", # 11th
 		iRenaissance,
+		"fSayyida al Hurra", # 16th
 		"Mohammed ash-Sheikh", # 16th
 		"Ahmad al-Mansur", # 16th
+		"Ismail ibn Sharif", # 17th
 		iIndustrial,
 		"Abdelkader ibn Muhieddine", # 19th
 		iGlobal,
+		"Abd el-Krim", # 20th
 		"Mohamed Meziane", # 20th
 	],
 },
