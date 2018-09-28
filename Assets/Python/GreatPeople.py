@@ -325,9 +325,17 @@ iCivChina : {
 		"Peng Dehuai", # 20th
 	],
 	iGreatSpy : [
-		"Li Bai", # 20th
+		"Zhou Xing", # 7th
+		"Lai Junchen", # 7th
+		"Yang Xian", # 14th
+		iRenaissance,
+		"Liu Jin", # 15th
+		"Wei Zhongxian", # 16th
+		iGlobal,
 		"Dai Li", # 20th
 		"Kang Sheng", # 20th
+		"fXu Lai", # 20th
+		"Li Bai", # 20th
 	],
 },
 iCivBabylonia : {
