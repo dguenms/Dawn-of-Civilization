@@ -1538,9 +1538,9 @@ iCivVikings : {
 		"Alfred Nobel", # 19th swedish
 		"Lars Magnus Ericsson", # 19th swedish
 		iGlobal,
-		"Arne Jacobsen", #20th danish
+		"Arne Jacobsen", # 20th danish
 		u"Jørn Utzon", # 20th danish
-		"Ivar Giaever", # 20th norwegian
+		u"Ivar Giæver", # 20th norwegian
 	],
 	iGreatStatesman : [
 		"Gorm den Gamle", # 10th danish
@@ -1548,10 +1548,12 @@ iCivVikings : {
 		"fMargrete Valdemarsdatter", # 14th danish
 		iRenaissance,
 		"Gustav Vasa", # 16th swedish
+		"Axel Oxenstierna", # 17th swedish
 		"fKristina", # 17th swedish
 		"Peter Estenberg", # 18th swedish
 		"Arvid Horn", # 18th swedish
 		iIndustrial,
+		"Gustaf Mauritz Armfelt", # 19th finnish
 		"Nikolaj Frederik Severin Grundtvig", # 19th danish
 		iGlobal,
 		"Trygve Lie", # 20th norwegian
@@ -1566,7 +1568,11 @@ iCivVikings : {
 		iRenaissance,
 		"Gustav Vasa", # 16th swedish
 		"Lennart Torstensson", # 17th swedish
+		"Peter Tordenskjold", # 18th norwegian
 		"fIngela Gathenhielm", # 18th swedish
+		iGlobal, 
+		"Carl Gustaf Emil Mannerheim", # 20th finnish
+		"Carl Gustav Fleischer", # 20th norwegian	
 	],
 	iGreatSpy : [
 		"fBrita Tott", # 15th swedish/danish
