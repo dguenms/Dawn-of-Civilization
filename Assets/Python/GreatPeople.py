@@ -1079,8 +1079,10 @@ iCivKorea : {
 		"Jinul", # 12th
 		"Uicheon", # 12th
 		"Baegun", # 13th
+		"An Hyang", # 13th
 		iRenaissance,
-		"fHeo Nanseolheon", # 16th
+		"Yi Hwang", # 16th
+		"Yi I", # 16th
 		iIndustrial,
 		"Choe Je-u", # 19th
 		iGlobal,
@@ -1092,6 +1094,7 @@ iCivKorea : {
 		"Yi Je-hyeon", # 9th
 		iRenaissance,
 		"Hwang Jip-jung", # 16th
+		"fHeo Nanseolheon", # 16th
 		"Yan Duseo", # 17th
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
@@ -1108,6 +1111,8 @@ iCivKorea : {
 		"Seong Sammun", # 15th
 		"Yu Seong-won", # 15th
 		"Heo Jun", # 16th
+		iIndustrial,
+		"Jeong Yakyong", # 19th
 		iGlobal,
 		"Hwang Woo-Suk", # 20th
 	],
@@ -1131,6 +1136,7 @@ iCivKorea : {
 		"Myeongnim Dap-bo", # 2nd
 		"fSeondeok", # 7th
 		"Kim Bu-sik", # 12th
+		"Jeong Dojeon", # 14th
 		iRenaissance,
 		"Yi Hwang", # 16th
 		iIndustrial,
