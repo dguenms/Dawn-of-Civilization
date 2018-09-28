@@ -2043,8 +2043,10 @@ iCivFrance : {
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
 		"Jean Calvin", # 16th
+		"Vincent de Paul", # 17th
 		"fJeanne Mance", # 17th
 		"fMarguerite Bourgeoys", # 17th
+		u"Jacques-Bénigne Bossuet", # 17th
 		iIndustrial,
 		u"fThérèse de Lisieux", # 19th
 		"Auguste Comte", # 19th
@@ -2148,15 +2150,19 @@ iCivFrance : {
 		u"fAnne-Marie-Louise d'Orléans", # 17th
 		u"Charles-Maurice de Talleyrand-Périgord", # 18th
 		"Montesquieu", # 18th
+		"Maximilien Robespierre", # 18th
 		iIndustrial,
+		"Adolphe Thiers", # 19th
 		"Alexis de Tocqueville", # 19th
 		"Pierre-Joseph Proudhon", # 19th
 		iGlobal,
+		u"Léon Blum", # 20th
 		"fSimone de Beauvoir", # 20th
 	],
 	iGreatGeneral : [
 		"Charles Martel", # 8th
 		"Godefroy de Bouillon", # 11th
+		"fJeanne de Flandre", # 14th
 		"Charles V", # 14th
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
@@ -2169,8 +2175,10 @@ iCivFrance : {
 		"Joachim Murat", # 18th
 		"Louis-Alexandre Berthier", # 19th
 		"Gilbert de Lafayette", # 19th
+		"Patrice de MacMahon", # 19th
 		iGlobal,
 		"Ferdinand Foch", # 20th
+		"Joseph Joffre", # 20th
 		u"Philippe Pétain", # 20th
 		"Philippe Leclerc de Hauteclocque", # 20th
 	],
