@@ -2735,6 +2735,7 @@ iCivMali : {
 		u"Alpha Oumar Konaré", # 20th
 	],
 	iGreatGeneral : [
+		"fYennenga", # 12th
 		"Sundiata Keita", # 13th
 		"Askia Muhammad", # 15th
 		"Sunni Ali", # 15th
