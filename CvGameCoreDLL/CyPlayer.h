@@ -589,6 +589,7 @@ public:
 	void changeYieldRateModifier(int iYieldType, int iChange);
 	void setBuildingPreference(int iBuilding, int iNewValue);
 	int getBuildingPreference(int iBuilding);
+	void launch(int iVictory);
 
 private:
 	CvPlayer* m_pPlayer;

@@ -2853,6 +2853,14 @@
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUTTON_LAUNCH_SPACESHIP</Tag>
+		<English>Launch</English>
+		<French>Launch</French>
+		<German>Starten</German>
+		<Italian>Launch</Italian>
+		<Spanish>Launch</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

@@ -126,5 +126,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("changeYieldRateModifier", &CyPlayer::changeYieldRateModifier, "void (int iYieldType, int iChange)")
 		.def("setBuildingPreference", &CyPlayer::setBuildingPreference, "void (int iBuilding, int iNewValue)")
 		.def("getBuildingPreference", &CyPlayer::getBuildingPreference, "int (int iBuilding)")
+		.def("launch", &CyPlayer::launch, "void (int iVictory)")
 		;
 }

@@ -2671,3 +2671,8 @@ int CyPlayer::getBuildingPreference(int iBuilding)
 {
 	return m_pPlayer ? m_pPlayer->getBuildingPreference((BuildingTypes)iBuilding) : -1;
 }
+
+void CyPlayer::launch(int iVictory)
+{
+	if (m_pPlayer) m_pPlayer->launch((VictoryTypes)iVictory);
+}

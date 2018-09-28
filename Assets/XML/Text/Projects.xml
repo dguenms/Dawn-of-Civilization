@@ -10,6 +10,62 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_FRAMING</Tag>
+		<English>Mars Framing</English>
+		<French>Mars Framing</French>
+		<German>Mars Struktur</German>
+		<Italian>Mars Framing</Italian>
+		<Spanish>Mars Framing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_POWER_SOURCE</Tag>
+		<English>Mars Power Source</English>
+		<French>Mars Power Source</French>
+		<German>Mars Energiequelle</German>
+		<Italian>Mars Power Source</Italian>
+		<Spanish>Mars Power Source</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_EXTRACTOR</Tag>
+		<English>Mars Extractor</English>
+		<French>Mars Extractor</French>
+		<German>Mars Extraktor</German>
+		<Italian>Mars Extractor</Italian>
+		<Spanish>Mars Extractor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_HABITAT</Tag>
+		<English>Mars Habitat</English>
+		<French>Mars Habitat</French>
+		<German>Mars Habitat</German>
+		<Italian>Mars Habitat</Italian>
+		<Spanish>Mars Habitat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_HYDROPONICS</Tag>
+		<English>Mars Hydroponics</English>
+		<French>Mars Hydroponics</French>
+		<German>Mars Hydroponics</German>
+		<Italian>Mars Hydroponics</Italian>
+		<Spanish>Mars Hydroponics</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_LABORATORY</Tag>
+		<English>Mars Laboratory</English>
+		<French>Mars Laboratory</French>
+		<German>Mars Labor</German>
+		<Italian>Mars Laboratory</Italian>
+		<Spanish>Mars Laboratory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_CONTROL_CENTER</Tag>
+		<English>Mars Control Center</English>
+		<French>Mars Control Center</French>
+		<German>Mars Kontrollzentrum</German>
+		<Italian>Mars Control Center</Italian>
+		<Spanish>Mars Control Center</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_GOLDEN_RECORD</Tag>
 		<English>Golden Record</English>
 		<French>Golden Record</French>
