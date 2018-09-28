@@ -2532,6 +2532,7 @@ iCivRussia : {
 		iRenaissance,
 		"Alexander Sumarokov", # 18th
 		"Fedot Shubin", # 18th
+		"Gavrila Derzhavin", # 18th
 		iIndustrial,
 		"Alexander Pushkin", # 19th
 		"Fyodor Dostoyevsky", # 19th
@@ -2591,7 +2592,7 @@ iCivRussia : {
 	],
 	iGreatStatesman : [
 		"Vladimir Sviatoslavich", # 11th
-		"Yaroslav Mudry ", # 11th
+		"Yaroslav Mudry", # 11th
 		"fMarfa Posadnitsa", # 15th
 		"Ivan Vasilyevich", # 15th
 		iRenaissance,
