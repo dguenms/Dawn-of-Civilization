@@ -4024,11 +4024,16 @@ iCivBrazil : {
 iCivCanada : {
 	iGreatProphet : [
 		"Ignace Bourget", # 19th
-		iGlobal,
 		u"André Bessette", # 20th
+		iGlobal,
+		"Lionel Groulx", # 20th
 		"George C. Pidgeon", # 20th
+		u"fRúhíyyih Khánum", # 20th
+		"Marshall McLuhan", # 20th
 	],
 	iGreatArtist : [
+		"Cornelius Krieghoff", # 19th
+		u"Calixa Lavallée", # 19th
 		"Tom Thomson", # 19th
 		u"Émile Nelligan", # 19th
 		iGlobal,
@@ -4056,6 +4061,7 @@ iCivCanada : {
 		"Alphonse Desjardins", # 19th
 		iGlobal,
 		"fElizabeth Arden", # 20th
+		"Max Aitken", # 20th
 		"Ted Rogers", # 20th
 		u"Guy Laliberté", # 20th
 	],
@@ -4065,26 +4071,32 @@ iCivCanada : {
 		"Alexander Graham Bell", # 19th
 		"Reginald Fessenden", # 19th
 		iGlobal,
+		"Ernest Cormier", # 20th
 		"Joseph-Armand Bombardier", # 20th
 		"fElsie MacGill", # 20th
 	],
 	iGreatStatesman : [
 		u"George-Étienne Cartier", # 19th
 		"Louis Riel", # 19th
+		"Henri Bourassa", # 19th
 		iGlobal,
 		"Lester B. Pearson", # 20th
 		"fEmily Murphy", # 20th
 		"fNellie McClung", # 20th
+		"Tommy Douglas", # 20th
 		u"René Lévesque", # 20th
+		"fLouise Arbour", # 20th
 	],
 	iGreatGeneral : [
 		"Arthur Currie", # 20th
 		"Andrew McNaughton", # 20th
+		"Billy Bishop", # 20th
 		u"Roméo Dallaire", # 20th
 	],
 	iGreatSpy : [
-		"Igor Gouzenko", # 20th
 		"William Stephenson", # 20th
+		"Guy D'Artois", # 20th
+		"Igor Gouzenko", # 20th
 	],
 },
 }
