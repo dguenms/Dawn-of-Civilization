@@ -538,9 +538,13 @@ iCivIndia : {
 	iGreatArtist : [
 		"Valmiki", # 4th BC
 		"Asvaghosa", # 1st
+		"Kapilar", # 1st tamil
 		"Kalidasa", # 5th
 		iMedieval, 
+		"Gunadhya", # 6th
+		"fAvvaiyar", # 10th tamil
 		"Abhinavagupta", # 10th
+		"Nakkirar", # medieval tamil
 		iRenaissance,
 		"Purandara Dasa", # 15th
 		"Tansen", # 16th
@@ -572,7 +576,7 @@ iCivIndia : {
 		"Kamalakara", # 17th
 		iGlobal,
 		"Chandrasekhara Venkata Raman", # 20th
-		"Satyendra Nath Bose", #20th
+		"Satyendra Nath Bose", # 20th
 		"fAsima Chatterjee", # 20th
 	],
 	iGreatMerchant : [
@@ -603,7 +607,9 @@ iCivIndia : {
 		"Charles Correa", # 20th
 	],
 	iGreatStatesman : [
+		"Vishnu Sharma", # 12th BC to 3rd AD
 		"Chanakya", # 4th BC
+		"Thiruvalluvar", # 4th BC to 7th AD
 		iMedieval,
 		"Amoghavarsha", # 9th
 		"Chavundaraya", # 10th
