@@ -3064,6 +3064,7 @@ iCivMongols : {
 		"Siqin Gaowa", # 20th
 	],
 	iGreatScientist : [
+		"Isa Khelmerchi", # 13th
 		"Kaidu", # 13th
 		"Nasir al-Din al-Tusi", # 13th (also Persian)
 		"Ulugh Beg", # 15th
@@ -3103,7 +3104,7 @@ iCivMongols : {
 		"Ogodei", # 13th
 		"Chagatai", # 13th
 		u"Möngke", # 13th
-		"Timur-e Lang", # 14th
+		"fKhutulun", # 13th
 	],
 },
 iCivAztecs : {
