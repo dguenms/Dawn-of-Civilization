@@ -3548,11 +3548,11 @@ iCivNetherlands : {
 		"Geert Grote", # 14th
 		iRenaissance,
 		"Desiderius Erasmus", # 16th
+		"Menno Simons", # 16th
 		"Jakob Hermanszoon", # 16th
 		"Baruch Spinoza", # 17th
 		iIndustrial,
 		"Abraham Kuyper", # 19th
-		"fAletta Jacobs", # 19th
 		iGlobal,
 		"fAlida Bosshardt", # 20th
 	],
@@ -3563,10 +3563,12 @@ iCivNetherlands : {
 		"Pieter Corneliszoon Hooft", # 17th
 		"fTitia Bergsma", # 18th
 		iIndustrial,
+		"Multatuli", # 19th
 		"Vincent van Gogh", # 19th
 		iGlobal,
 		"Piet Mondrian", # 20th
 		"Maurits Cornelis Escher", # 20th
+		"fAnna Maria Geertruida Schmidt", # 20th
 	],
 	iGreatScientist : [
 		"Willebrord Snel van Royen", # 16th
@@ -3574,9 +3576,14 @@ iCivNetherlands : {
 		"Antonie van Leeuwenhoek", # 17th
 		"Govert Bidloo", # 17th
 		"fAnna Maria van Schurman", # 18th
+		iIndustrial, 
+		"Johannes Diderik van der Waals", # 19th
+		"Hendrik Antoon Lorentz", # 19th
 		iGlobal,
 		"Jan Hendrik Oort", # 20th
 		"Gerrit Pieter Kuiper", # 20th
+		"Edsger Wybe Dijkstra", # 20th
+		"Willem Johan Kolff", # 20th
 	],
 	iGreatMerchant : [
 		"Willem Barentsz", # 16th
@@ -3596,11 +3603,15 @@ iCivNetherlands : {
 	iGreatEngineer : [
 		"Simon Stevin", # 16th
 		"Cornelis Corneliszoon", # 16th
+		"Cornelis Drebbel", # 17th
 		"Jan Leeghwater", # 17th
+		"Menno van Coehoorn", # 17th
 		iIndustrial,
 		"Adolphe Sax", # 19th
+		"Cornelis Lely", # 19th
+		"Hendrik Petrus Berlage", # 19th
 		iGlobal,
-		"Frits Philips", # 20th
+		"Anton Philips", # 20th
 		"Gerrit Rietveld", # 20th
 	],
 	iGreatStatesman : [
@@ -3612,16 +3623,18 @@ iCivNetherlands : {
 		"Cornelis de Graeff", # 17th
 		iIndustrial,
 		"Johan Thorbecke", # 19th
-		"Cornelis Lely", # 19th
+		"fAletta Jacobs", # 19th
 		iGlobal,
 		"Willem Drees", # 20th
 	],
 	iGreatGeneral : [
 		"Maurits van Nassau", # 16th
+		"Piet Pieterszoon Hein", # 16th
 		"Michiel de Ruyter", # 17th
 		"Frederik Hendrik", # 17th
 		"Cornelis Tromp", # 17th
 		iIndustrial,
+		"Joannes Benedictus van Heutsz", # 19th
 		"Henri Winkelman", # 20th
 	],
 	iGreatSpy : [
