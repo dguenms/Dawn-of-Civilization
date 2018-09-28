@@ -2942,22 +2942,25 @@ iCivItaly : {
 		"Francesco d'Assisi", # 13th
 		"fGuglielma", # 13th
 		"fCaterina di Giacomo di Benincasa", # 14th
-		"Giuliano della Rovere", # 15th
 		iRenaissance,
+		"Giuliano della Rovere", # 15th
 		"Camillo Borghese", # 16th
 		"Giulio de' Medici", # 16th
 		"Matteo Ricci", # 16th
 		iIndustrial,
-		"Giovanni Maria Mastai-Ferretti", #19th
+		"Giovanni Maria Mastai-Ferretti", # 19th
+		"Giovanni Bosco", # 19th
 	],
 	iGreatArtist : [
 		"Dante Alighieri", # 13th
+		"Giotto di Bondone", # 14th
 		"Giovanni Boccaccio", # 14th
 		"Donatello", # 15th
 		iRenaissance,
-		"Michelangelo", # 16th
+		"Michelangelo Buonarroti", # 16th
 		"Raffaello Sanzio", # 16th
 		"fSofonisba Anguissola", # 16th
+		"Michelangelo Merisi da Caravaggio", # 16th
 		"Claudio Monteverdi", # 17th
 		"fArtemisia Gentileschi", # 17th
 		"Antonio Vivaldi", # 18th
@@ -2974,8 +2977,8 @@ iCivItaly : {
 	iGreatScientist : [
 		"fTrotula di Salerno", # 12th
 		"Francesco Petrarca", # 14th
-		"Pico della Mirandola", # 15th
 		iRenaissance,
+		"Pico della Mirandola", # 15th
 		"Giordano Bruno", # 16th
 		"Galileo Galilei", # 16th
 		"fElena Cornaro Piscopia", # 17th
@@ -2997,6 +3000,8 @@ iCivItaly : {
 		"Donato Peruzzi", # 14th
 		"Ciriaco de Ancona", # 15th
 		iRenaissance,
+		"Giovanni Caboto", # 15th
+		"Amerigo Vespucci", # 15th
 		"fTullia d'Aragona", # 16th
 		iGlobal,
 		"Enzo Ferrari", # 20th
@@ -3005,11 +3010,14 @@ iCivItaly : {
 	iGreatEngineer : [
 		"Taccola", # 15th
 		"Filippo Brunelleschi", # 15th
-		"Leon Battista Alberti", # 15th
 		iRenaissance,
+		"Leon Battista Alberti", # 15th
 		"Leonardo da Vinci", # 15th
 		"Donato Bramante", # 15th
 		"Andrea Palladio", # 16th
+		iIndustrial, 
+		"Alois Negrelli", # 19th
+		"Antonio Meucci", # 19th
 		iGlobal,
 		"Guglielmo Marconi", # 20th
 		"Giovanni Battista Caproni", # 20th
@@ -3018,25 +3026,35 @@ iCivItaly : {
 	],
 	iGreatStatesman : [
 		"Giovanni Villani", # 13th
-		u"Niccolò Machiavelli", # 15th
 		iRenaissance,
-		"fIsabelle d'Este", # 16th
+		"fLucrezia Borgia", # 15th
+		u"Niccolò Machiavelli", # 15th
+		"fIsabella d'Este", # 16th
 		"Francesco Guicciardini", # 16th
 		"Giambattista Vico", # 18th
 		"Cesare Beccaria", # 18th
+		"Pasquale Paoli", # 18th
 		iIndustrial,
 		"Giuseppe Garibaldi", # 19th
 		"Giuseppe Mazzini", # 19th
+		"Francesco Crispi", # 19th
 		iGlobal,
 		"Antonio Gramsci", # 20th
 	],
 	iGreatGeneral : [
+		"fMatilde di Canossa", # 11th
 		"Enrico Dandolo", # 13th
 		"Simone Boccanegra", # 14th
 		"Francesco Sforza", # 15th
+		iRenaissance, 
+		"Cesare Borgia", # 15th
+		"Andrea Doria", # 16th
+		"Sebastiano Venier", # 16th
 		iIndustrial,
+		"Alessandro Ferrero La Marmora", # 19th
 		"Giuseppe Garibaldi", # 19th
 		iGlobal,
+		"Rodolfo Graziani", # 20th
 		"Giovanni Messe", # 20th
 	],
 	iGreatSpy : [
