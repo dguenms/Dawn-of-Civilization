@@ -1919,6 +1919,7 @@ iCivMoors : {
 iCivSpain : {
 	iGreatProphet : [
 		"Juan de Ortega", # 11th
+		u"Domingo de Guzmán", # 12th
 		iRenaissance,
 		"Ignacio de Loyola", # 16th
 		u"Juan de Sepúlveda", # 16th
@@ -1927,10 +1928,14 @@ iCivSpain : {
 		u"Bartolomé de Las Casas", # 16th
 		iIndustrial,
 		u"Junípero Serra", # 18th
+		"fJoaquima de Vedruna", # 19th
 		iGlobal, 
 		u"Josemaría Escrivá", # 20th
 	],
 	iGreatArtist : [
+		"Gonzalo de Berceo", # 13th
+		"Juan Manuel", # 14th
+		iRenaissance,
 		"Miguel de Cervantes", # 16th
 		"Garcilaso de la Vega", # 16th
 		"Lope de Vega", # 17th
@@ -1938,28 +1943,42 @@ iCivSpain : {
 		u"fJuana Inés de la Cruz", # 17th
 		"Francisco de Goya", # 18th
 		iIndustrial,
+		u"fGertrudis Gómez de Avellaneda", # 19th
+		u"Gustavo Adolfo Bécquer", # 19th
+		u"fRosalía de Castro", # 19th
 		u"Isaac Albéniz", # 19th
+		u"Benito Pérez Galdós", # 19th
 		iGlobal,
 		"Pablo Picasso", # 20th
 		u"Joan Miró", # 20th
+		u"Luis Buñuel", # 20th
 		u"Salvador Dalí", # 20th
 	],
 	iGreatScientist : [
 		"Gerardo de Cremona", # 12th
+		"Yehuda ben Moshe", # 13th
 		"Ramon Llull", # 13th
 		iRenaissance,
 		"Miguel Serveto", # 16th
 		u"Carlos de Sigüenza y Góngora", # 17th
 		"Antonio de Ulloa", # 18th
 		iIndustrial,
+		u"José Celestino Mutis", # 18th
 		u"Santiago Ramón y Cajal", # 19th
+		iGlobal, 
+		"Severo Ochoa", # 20th
 	],
 	iGreatMerchant : [
 		u"Cristóbal Colón", # 15th
 		"Fernando de Magallanes", # 15th
+		u"Martín de Azpilcueta", # 16th
 		"Hernando de Soto", # 16th
+		u"José Penso de la Vega", # 17th
 		iIndustrial,
 		"Salvador Fidalgo", # 18th
+		iGlobal,
+		"Juan March Ordinas", # 20th
+		"Amancio Ortega", # 20th
 	],
 	iGreatEngineer : [
 		"Juan Bautista de Toledo", # 16th
@@ -1974,22 +1993,38 @@ iCivSpain : {
 		"Juan de la Cierva", # 20th
 	],
 	iGreatStatesman : [
+		"Alfonso el Sabio", # 13th
+		iRenaissance,
 		u"Francisco Jiménez de Cisneros", # 15th
 		"Francisco de Vitoria", # 16th
 		iIndustrial,
 		u"José de Gálvez", # 18th
 		u"José Moniño", # 18th
 		"Juan Prim", # 19th
+		iGlobal, 
+		u"Lluís Companys", # 20th
+		u"fDolores Ibárruri", # 20th
 	],
 	iGreatGeneral : [
 		"El Cid", # 11th
+		"Alfonso el Bravo", # 11th
+		"Jaume el Conqueridor", # 13th
 		iRenaissance,
 		"Francisco Coronado", # 16th
 		u"Hernán Cortés", # 16th
 		"Francisco Pizarro", # 16th
 		u"Álvaro de Bazán", # 16th
 		u"fMaría Pacheco", # 16th
+		u"Fernando Álvarez de Toledo", # 16th
 		u"Ambrosio Spínola Doria", # 17th
+		u"Bernardo de Gálvez", # 18th
+		iIndustrial, 
+		u"fAgustina de Aragón", # 19th
+		"Fernando Villaamil", # 19th
+		iGlobal, 
+		"Emilio Mola", # 20th
+		"Vicente Rojo Lluch", # 20th
+		"Mohamed ben Mizzian", # 20th
 	],
 	iGreatSpy : [
 		u"Tomás de Torquemada", # 15th
