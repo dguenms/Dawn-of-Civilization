@@ -1327,7 +1327,7 @@ iCivJapan : {
 		"Kanou Eitoku", # 16th
 		"Sen no Rikyuu", # 16th
 		"Ihara Saikaku", # 17th
-		"Matsuo Bashou ", # 17th
+		"Matsuo Bashou", # 17th
 		"Chikamatsu Monzaemon", # 17th
 		"Toushuusai Sharaku", # 18th
 		"Yosa Buson", # 18th
@@ -3476,7 +3476,7 @@ iCivOttomans : {
 		"Ismail Enver", # 20th
 	],
 	iGreatSpy : [
-		u"Süleyman Askerî", #20th
+		u"Süleyman Askerî", # 20th
 		"fDespina Storch", # 20th
 	],
 },
