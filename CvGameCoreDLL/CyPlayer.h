@@ -591,6 +591,7 @@ public:
 	int getBuildingPreference(int iBuilding);
 	void changeGreatPeopleCreated(int iChange);
 	void changeGreatGeneralsCreated(int iChange);
+	void launch(int iVictory);
 
 private:
 	CvPlayer* m_pPlayer;

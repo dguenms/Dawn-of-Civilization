@@ -72,7 +72,7 @@ class CvVictoryScreen:
 		self.SETTINGS_TAB_ID = "SettingsTabWidget"
 		self.UN_RESOLUTION_TAB_ID = "VotingTabWidget"
 		self.UN_MEMBERS_TAB_ID = "MembersTabWidget"
-		self.SPACESHIP_SCREEN_BUTTON = 1234
+		self.SPACESHIP_LAUNCH_BUTTON = 1234
 
 		self.Z_BACKGROUND = -6.1
 		self.Z_CONTROLS = self.Z_BACKGROUND - 0.2
@@ -94,12 +94,12 @@ class CvVictoryScreen:
 		self.W_AREA = 1010 + self.X_EXTRA
 		self.H_AREA = 650
 
-		self.TABLE_WIDTH_0 = 580 + self.X_EXTRA#500#350
+		self.TABLE_WIDTH_0 = 500 + self.X_EXTRA
 		self.TABLE_WIDTH_1 = 0
 		self.TABLE_WIDTH_2 = 120
-		self.TABLE_WIDTH_3 = 120#100
-		self.TABLE_WIDTH_4 = 80#180
-		self.TABLE_WIDTH_5 = 100
+		self.TABLE_WIDTH_3 = 120
+		self.TABLE_WIDTH_4 = 120
+		self.TABLE_WIDTH_5 = 120
 		
 		self.TABLE_RFC_WIDTH_0 = 750
 
@@ -188,6 +188,7 @@ class CvVictoryScreen:
 		self.TABLE_WIDTH_0 += self.X_EXTRA
 
 		self.iActivePlayer = CyGame().getActivePlayer()
+		self.activePlayer = gc.getPlayer(self.iActivePlayer)
 		if self.iScreen == -1:
 			self.iScreen = VICTORY_CONDITION_SCREEN
 
@@ -1341,7 +1342,7 @@ class CvVictoryScreen:
 						if (gc.getProjectInfo(i).getVictoryThreshold(iLoopVC) > 0):
 							if not self.isApolloBuilt():
 								iRow = screen.appendTableRow(szTable)
-								screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+								screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_PROJECT_MARS_MISSION", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 								screen.setTableText(szTable, 2, iRow, activePlayer.getCivilizationShortDescription() + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 								screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOT_BUILT", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 								bEntriesFound = True
@@ -1350,7 +1351,7 @@ class CvVictoryScreen:
 								if not bApolloShown:
 									bApolloShown = True
 									iRow = screen.appendTableRow(szTable)
-									screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+									screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_PROJECT_MARS_MISSION", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 									if self.isApolloBuiltbyTeam(activePlayer.getTeam()):
 										screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_BUILT", (activePlayer.getCivilizationShortDescription(), )), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -1364,7 +1365,7 @@ class CvVictoryScreen:
 								iRow = screen.appendTableRow(szTable)
 								iReqTech = gc.getProjectInfo(i).getTechPrereq()
 
-								if (gc.getProjectInfo(i).getVictoryMinThreshold(iLoopVC) == gc.getProjectInfo(i).getVictoryThreshold(iLoopVC)):
+								if (gc.getProjectInfo(i).getVictoryMinThreshold(iLoopVC) >= gc.getProjectInfo(i).getVictoryThreshold(iLoopVC)):
 									szNumber = unicode(gc.getProjectInfo(i).getVictoryThreshold(iLoopVC))
 								else:
 									szNumber = unicode(gc.getProjectInfo(i).getVictoryMinThreshold(iLoopVC)) + u"-" + unicode(gc.getProjectInfo(i).getVictoryThreshold(iLoopVC))
@@ -1380,7 +1381,7 @@ class CvVictoryScreen:
 
 									iHasTechColor = -1
 									iSSColor = 0
-									if activePlayer.getTeam().getProjectCount(i) == gc.getProjectInfo(i).getVictoryThreshold(iLoopVC):
+									if activePlayer.getTeam().getProjectCount(i) >= gc.getProjectInfo(i).getVictoryThreshold(iLoopVC):
 										sSSCount = "%i" % (activePlayer.getTeam().getProjectCount(i))
 										iSSColor = ColorUtil.keyToType("COLOR_GREEN")
 									elif activePlayer.getTeam().getProjectCount(i) >= gc.getProjectInfo(i).getVictoryMinThreshold(iLoopVC):
@@ -1395,7 +1396,7 @@ class CvVictoryScreen:
 										screen.setTableText(szTable, 3, iRow, sSSCount, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 									#check if spaceship
-									if (gc.getProjectInfo(i).isSpaceship()):
+									if (gc.getProjectInfo(i).getVictoryThreshold(5) > 0):
 										bSpaceshipFound = True
 								
 								# add AI space ship info
@@ -1409,7 +1410,7 @@ class CvVictoryScreen:
 
 									iHasTechColor = -1
 									iSSColor = 0
-									if pTeam.getProjectCount(i) == gc.getProjectInfo(i).getVictoryThreshold(iLoopVC):
+									if pTeam.getProjectCount(i) >= gc.getProjectInfo(i).getVictoryThreshold(iLoopVC):
 										iSSColor = ColorUtil.keyToType("COLOR_GREEN")
 									elif pTeam.getProjectCount(i) >= gc.getProjectInfo(i).getVictoryMinThreshold(iLoopVC):
 										iSSColor = ColorUtil.keyToType("COLOR_YELLOW")
@@ -1434,28 +1435,29 @@ class CvVictoryScreen:
 							else:
 								szNumber = unicode(gc.getProjectInfo(i).getVictoryMinThreshold(iLoopVC)) + u"-" + unicode(gc.getProjectInfo(i).getVictoryThreshold(iLoopVC))
 							screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_BUILDING", (szNumber, gc.getProjectInfo(i).getTextKey())), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-							screen.setTableText(szTable, 2, iRow, activePlayer.getCivilizationShortDescription(0) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-							screen.setTableText(szTable, 3, iRow, str(activePlayer.getTeam().getProjectCount(i)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							screen.setTableText(szTable, 1, iRow, activePlayer.getCivilizationShortDescription(0) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							screen.setTableText(szTable, 2, iRow, str(activePlayer.getTeam().getProjectCount(i)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							
 							#check if spaceship
-							if (gc.getProjectInfo(i).isSpaceship()):
+							if (gc.getProjectInfo(i).getVictoryThreshold(5) > 0):
 								bSpaceshipFound = True
 
 							if (iBestProjectTeam != -1):
-								screen.setTableText(szTable, 4, iRow, gc.getPlayer(iBestProjectTeam).getCivilizationShortDescription(0) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-								screen.setTableText(szTable, 5, iRow, unicode(gc.getTeam(iBestProjectTeam).getProjectCount(i)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+								screen.setTableText(szTable, 3, iRow, gc.getPlayer(iBestProjectTeam).getCivilizationShortDescription(0) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+								screen.setTableText(szTable, 4, iRow, unicode(gc.getTeam(iBestProjectTeam).getProjectCount(i)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 							bEntriesFound = True
 # BUG Additions End
 						
 				#add spaceship button
 				if (bSpaceshipFound):
-					screen.setButtonGFC("SpaceShipButton" + str(iLoopVC), localText.getText("TXT_KEY_GLOBELAYER_STRATEGY_VIEW", ()), "", 0, 0, 15, 10, WidgetTypes.WIDGET_GENERAL, self.SPACESHIP_SCREEN_BUTTON, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
-					#Rhye - start
-					iRow = screen.appendTableRow(szTable)
-					#screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iVictoryTitleRow, 1)
-					screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iRow, 2)
-					#Rhye - end
+					if gc.getTeam(self.activePlayer.getTeam()).canLaunch(iLoopVC):
+						screen.setButtonGFC("SpaceShipButton" + str(iLoopVC), localText.getText("TXT_KEY_BUTTON_LAUNCH_SPACESHIP", ()), "", 0, 0, 15, 10, WidgetTypes.WIDGET_GENERAL, self.SPACESHIP_LAUNCH_BUTTON, iLoopVC, ButtonStyles.BUTTON_STYLE_STANDARD )
+						#Rhye - start
+						iRow = screen.appendTableRow(szTable)
+						#screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iVictoryTitleRow, 1)
+						screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iRow, 2)
+						#Rhye - end
 					
 					victoryDelay = gc.getTeam(iActiveTeam).getVictoryCountdown(iLoopVC)
 					if((victoryDelay > 0) and (gc.getGame().getGameState() != GameStateTypes.GAMESTATE_EXTENDED)):
@@ -1771,7 +1773,7 @@ class CvVictoryScreen:
 		activePlayer = gc.getPlayer(self.iActivePlayer)
 		iActiveTeam = activePlayer.getTeam()
 
-		# check if anyone has built the apollo project (PROJECT_APOLLO_PROGRAM)
+		# check if anyone has built the mars mission project (PROJECT_MARS_MISSION)
 		for iLoopTeam in range(gc.getMAX_CIV_TEAMS()):
 			pLoopTeam = gc.getTeam(iLoopTeam)
 			if (pLoopTeam.isAlive()
@@ -1801,7 +1803,7 @@ class CvVictoryScreen:
 
 		for i in range(gc.getNumProjectInfos()):
 			component = gc.getProjectInfo(i)
-			if (component.isSpaceship()):
+			if (component.getVictoryThreshold(5) > 0):
 				bApollo = True
 				for j in range(gc.getNumProjectInfos()):
 					if(vTeam.getProjectCount(j) < component.getProjectsNeeded(j)):
@@ -1887,18 +1889,14 @@ class CvVictoryScreen:
 				self.iScreen = UN_MEMBERS_SCREEN
 				self.showMembersScreen()
 
-			elif (inputClass.getData1() == self.SPACESHIP_SCREEN_BUTTON):
+			elif (inputClass.getData1() == self.SPACESHIP_LAUNCH_BUTTON):
 				#close screen
 				screen = self.getScreen()
 				screen.setDying(True)
 				CyInterface().clearSelectedCities()
 
-				#popup spaceship screen
-				popupInfo = CyPopupInfo()
-				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
-				popupInfo.setData1(-1)
-				popupInfo.setText(u"showSpaceShip")
-				popupInfo.addPopup(self.iActivePlayer)
+				# launch spaceship
+				self.activePlayer.launch(inputClass.getData2())
 
 	def update(self, fDelta):
 		return

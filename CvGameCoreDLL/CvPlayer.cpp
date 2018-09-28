@@ -22499,7 +22499,18 @@ void CvPlayer::launch(VictoryTypes eVictory)
 
 	kTeam.setCanLaunch(eVictory, false);
 
-	CvCity *capital = getCapitalCity();
+	CvCity* launchCity = getCapitalCity();
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			if (GC.getBuildingInfo((BuildingTypes)iI).getGlobalSpaceProductionModifier() > 0 && ::isNationalWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()))
+			{
+				launchCity = pCity;
+			}
+		}
+	}
 
 	//message
 	CvWString szBuffer;
@@ -22509,10 +22520,10 @@ void CvPlayer::launch(VictoryTypes eVictory)
 		{
 			int plotX = -1;
 			int plotY = -1;
-			if((capital != NULL) && capital->isRevealed(GET_PLAYER((PlayerTypes) i).getTeam(), false))
+			if((launchCity != NULL) && launchCity->isRevealed(GET_PLAYER((PlayerTypes) i).getTeam(), false))
 			{
-				plotX = capital->getX();
-				plotY = capital->getY();
+				plotX = launchCity->getX();
+				plotY = launchCity->getY();
 			}
 
 			if (GET_PLAYER((PlayerTypes)i).getTeam() == getTeam())
