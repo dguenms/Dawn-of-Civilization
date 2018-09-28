@@ -2863,6 +2863,10 @@ iCivPortugal : {
 		iRenaissance,
 		u"João de Deus", # 16th
 		u"João de Brito", # 17th
+		iIndustrial, 
+		f"Rita Lopes de Almeida", # 19th
+		iGlobal, 
+		"Agostinho da Silva", # 20th
 	],
 	iGreatArtist : [
 		u"Fernão Lopes", # 15th
@@ -2872,16 +2876,22 @@ iCivPortugal : {
 		u"António Ferreira", # 16th
 		u"João de Barros", # 16th
 		"Machado de Castro", # 18th
+		iIndustrial, 
+		"Antero de Quental", # 19th
+		u"José Maria de Eça de Queirós", # 19th
 		iGlobal,
+		"Fernando Pessoa", # 20th
 		u"fAmália Rodrigues", # 20th
 		u"José Saramago", # 20th
 	],
 	iGreatScientist : [
 		"Garcia de Orta", # 16th
 		"Pedro Nunes", # 16th
+		"Amato Lusitano", # 16th
 		"Bartolomeu de Gusmao", # 18th
 		"Jacob de Castro Sarmento", # 18th
 		iGlobal,
+		"Froilano de Mello", # 20th
 		"Abel Salazar", # 20th
 		u"António Egas Moniz", # 20th
 	],
@@ -2891,30 +2901,49 @@ iCivPortugal : {
 		"Henrique o Navegador", # 15th
 		"Bartolomeu Dias", # 15th
 		iRenaissance,
-		"fGracia Mendes Nasi", # 16th
 		u"Pedro Álvares Cabral", # 15th
+		u"Fernão Pires de Andrade", # 16th
+		"fGracia Mendes Nasi", # 16th
 		u"Fernão Mendes Pinto", # 16th
+		iIndustrial, 
+		"fAntonia Ferreira", # 19th
+		iGlobal, 
+		u"António Champalimaud", # 20th
 	],
 	iGreatEngineer : [
 		"Mateus Fernandes", # 15th
 		iRenaissance,
+		"Diogo de Arruda", # 16th
 		"Diogo de Boitaca", # 16th
 		u"João Antunes", # 17th
+		u"Bartolomeu de Gusmão", # 18th
+		iIndustrial,
+		"Carlos Amarante", # 18th
 		iGlobal,
+		u"José Marques da Silva", # 20th
 		u"Álvaro Siza Vieira", # 20th
 	],
 	iGreatStatesman : [
 		"Henrique de Avis", # 15th
 		iRenaissance,
+		u"Tristão da Cunha", # 16th
+		u"João o Restaurador", # 17th
+		u"fLuisa de Guzmán", # 17th
 		u"Sebastião José de Carvalho e Melo", # 18th
 		iGlobal,
 		"Afonso Costa", # 20th
 		u"António de Oliveria Salazar", # 20th
+		u"António Guterres", # 20th
 	],
 	iGreatGeneral : [
+		"Geraldo sem Pavor", # 12th
 		u"Nuno Álvares Pereira", # 14th
+		u"Álvaro Vaz de Almada", # 15th
+		iRenaissance,
 		"Afonso de Albuquerque", # 15th
-		"Alvaro Vaz de Almada", # 15th
+		"Matias de Albuquerque", # 17th
+		iIndustrial, 
+		u"António José Severim de Noronha", # 19th
 		iGlobal,
 		"Otelo Saraiva de Carvalho", # 20th
 	],
