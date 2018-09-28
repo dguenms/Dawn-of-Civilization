@@ -3874,14 +3874,16 @@ iCivArgentina : {
 	iGreatProphet : [
 		"Gauchito Gil", # 19th
 		iGlobal,
+		"Enrique Angelelli", # 20th
+		"Carlos Mugica", # 20th
 		"Jorge Mario Bergoglio", # 20th
 	],
 	iGreatArtist : [
 		u"José Hernández", # 19th
+		"fLola Mora", # 19th
 		iGlobal,
 		"Carlos Gardel", # 20th
 		"fGabriela Mistral", # 20th
-		u"fEva Perón", # 20th
 		"Jorge Luis Borges", # 20th
 		"Antonio Berni", # 20th
 		"Daniel Barenboim", # 20th
@@ -3890,6 +3892,7 @@ iCivArgentina : {
 	],
 	iGreatScientist : [
 		"Francisco Moreno", # 19th
+		"Florentino Ameghino", # 19th
 		iGlobal,
 		"Luis Federico Leloir", # 20th
 		u"László Bíró", # 20th
@@ -3897,8 +3900,10 @@ iCivArgentina : {
 	],
 	iGreatMerchant : [
 		"Juan Las Heras", # 19th
+		"Otto Bemberg", # 19th
+		"Ernesto Tornquist", # 19th
 		iGlobal,
-		u"José ber Gelbard", # 20th
+		u"José Ber Gelbard", # 20th
 		"Roberto Alemann", # 20th
 		"Jorge Wehbe", # 20th
 		"Aldo Ferrer", # 20th
@@ -3906,16 +3911,23 @@ iCivArgentina : {
 	],
 	iGreatEngineer : [
 		"Luis Huergo", # 19th
+		"Jorge Newbery", # 19th
 		iGlobal,
 		"Amancio Williams", # 20th
-		u"César Pelli", # 20th
+		"Livio Dante Porta", # 20th
 		"Clorindo Testa", # 20th
+		u"César Pelli", # 20th
 	],
 	iGreatStatesman : [
+		"Juan Manuel de Rosas", # 19th
+		"Domingo Faustino Sarmiento", # 19th
 		"Estanislao Zeballos", # 19th
 		iGlobal,
 		"Carlos Saavedra Lamas", # 20th
 		"Juan Atilio Bramuglia", # 20th
+		u"fEva Perón", # 20th
+		"Ernesto Guevara", # 20th
+		u"fIsabel Martínez de Perón", # 20th
 		"fEstela Barnes de Carlotto", # 20th
 	],
 	iGreatGeneral : [
@@ -3924,8 +3936,14 @@ iCivArgentina : {
 		u"Juan José Castelli", # 18th
 		u"Martín Miguel de Güemes", # 18th
 		u"José Gervasio Artigas", # 19th
+		iGlobal, 
+		u"Juan Carlos Onganía", # 20th
+		"Jorge Rafael Videla", # 20th
+		"Leopoldo Galtieri", # 20th
+		"Jorge Anaya", # 20th
 	],
 	iGreatSpy : [
+		"Emilio Eduardo Massera", # 20th
 		"Guillermo Gaede", # 20th
 	],
 },
