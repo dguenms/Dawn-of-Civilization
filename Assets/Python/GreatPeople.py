@@ -2280,6 +2280,7 @@ iCivEngland : {
 		iGlobal,
 		"Gerald Gardner", # 20th
 		"Aleister Crowley", # 20th
+		"John Stott", # 20th
 	],
 	iGreatArtist : [
 		"Geoffrey Chaucer", # 14th
@@ -2346,9 +2347,10 @@ iCivEngland : {
 		"Robert Hooke", # 17th
 		"Christopher Wren", # 17th
 		"William Adam", # 18th
-		"John Harrison", # 18TH
+		"John Harrison", # 18th
 		iIndustrial,
 		"James Watt", # 18th
+		"George Stephenson", # 19th
 		"Isambard Kingdom Brunel", # 19th
 		"Henry Bessemer", # 19th
 		"Charles Babbage", # 19th
@@ -2371,6 +2373,7 @@ iCivEngland : {
 		iIndustrial,
 		"William Gladstone", # 19th
 		"Benjamin Disraeli", # 19th
+		"Robert Gascoyne-Cecil Salisbury", # 19th
 		iGlobal,
 		"Thomas Edward Lawrence", # 20th
 		"fEmmeline Pankhurst", # 20th
@@ -2381,6 +2384,7 @@ iCivEngland : {
 		"William the Conqueror", # 11th
 		"Richard the Lionheart", # 12th
 		"Edward III", # 14th
+		"fMargaret of Anjou", # 15th
 		iRenaissance,
 		"Oliver Cromwell", # 17th
 		"John Churchill Marlborough", # 17th
