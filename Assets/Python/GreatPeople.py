@@ -3925,6 +3925,7 @@ iCivArgentina : {
 },
 iCivColombia : {
 	iGreatProphet : [
+		"fLaura Montoya", # 20th
 		u"Félix Restrepo Mejía", # 20th
 		"Camilo Torres Restrepo", # 20th
 		u"Alfonso López Trujillo", # 20th
@@ -3933,9 +3934,12 @@ iCivColombia : {
 		u"César Castellanos", # 20th
 	],
 	iGreatArtist : [
-		u"Gabriel García Márquez", # 20th
+		"Jorge Isaacs", # 19th
+		u"Andrés de Santa Maria", # 19th
+		iGlobal,
 		"Rodrigo Arenas", # 20th
 		u"Álvaro Mutis", # 20th
+		u"Gabriel García Márquez", # 20th
 		"Fernando Botero", # 20th
 		"Rafael Orozco", # 20th
 		u"Rodrigo García", # 20th
@@ -3949,14 +3953,20 @@ iCivColombia : {
 		"Jorge Reynolds Pombo", # 20th
 	],
 	iGreatMerchant : [
+		"James Martin Eder", # 19th
+		iGlobal,
 		"Julio Mario Santo Domingo", # 20th
 		u"Carlos Ardila Lülle", # 20th
 		"Luis Carlos Sarmiento Angulo", # 20th
 	],
 	iGreatEngineer : [
+		u"Carlos Albán", # 19th
+		iGlobal, 
+		u"Carlos Raúl Villanueva", # 20th
 		"Rogelio Salmona", # 20th
 	],
 	iGreatStatesman : [
+		u"Tomás Cipriano de Mosquera", # 19th
 		u"Rafael Núñez", # 19th
 		iGlobal,
 		u"Jorge Eliécer Gaitán", # 20th
@@ -3968,6 +3978,9 @@ iCivColombia : {
 		u"Antonio Nariño", # 19th
 		"Francisco de Paula Santander", # 19th
 	],
+	iGreatSpy :  [
+		u"fManuela Sáenz", # 19th
+	]
 },
 iCivBrazil : {
 	iGreatProphet : [
