@@ -10,6 +10,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_THE_INTERNET_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] pro Spezialist</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_MARS_FRAMING</Tag>
 		<English>Mars Framing</English>
 		<French>Mars Framing</French>
