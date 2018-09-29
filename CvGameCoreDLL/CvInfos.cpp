@@ -12963,6 +12963,7 @@ m_piYieldChange(NULL),
 m_piRiverSideYieldChange(NULL),
 m_piHillsYieldChange(NULL),
 m_piIrrigatedChange(NULL),
+m_piCoastalYieldChange(NULL), // Leoreth
 m_pbTerrainMakesValid(NULL),
 m_pbFeatureMakesValid(NULL),
 m_ppiTechYieldChanges(NULL),
@@ -12987,6 +12988,7 @@ CvImprovementInfo::~CvImprovementInfo()
 	SAFE_DELETE_ARRAY(m_piRiverSideYieldChange);
 	SAFE_DELETE_ARRAY(m_piHillsYieldChange);
 	SAFE_DELETE_ARRAY(m_piIrrigatedChange);
+	SAFE_DELETE_ARRAY(m_piCoastalYieldChange); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	SAFE_DELETE_ARRAY(m_pbFeatureMakesValid);
 
@@ -13236,6 +13238,18 @@ int* CvImprovementInfo::getIrrigatedYieldChangeArray()
 	return m_piIrrigatedChange;
 }
 
+// Leoreth
+int CvImprovementInfo::getCoastalYieldChange(int i) const
+{
+	return m_piCoastalYieldChange ? m_piCoastalYieldChange[i] : -1;
+}
+
+// Leoreth
+int* CvImprovementInfo::getCoastalYieldChangeArray()
+{
+	return m_piCoastalYieldChange;
+}
+
 bool CvImprovementInfo::getTerrainMakesValid(int i) const
 {
 	FAssertMsg(i < GC.getNumTerrainInfos(), "Index out of bounds");
@@ -13337,7 +13351,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: 1
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iAdvancedStartCost);
@@ -13396,6 +13410,10 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	m_piIrrigatedChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piIrrigatedChange);
 
+	SAFE_DELETE_ARRAY(m_piCoastalYieldChange);
+	m_piCoastalYieldChange = new int[NUM_YIELD_TYPES];
+	if (uiFlag >= 1) stream->Read(NUM_YIELD_TYPES, m_piCoastalYieldChange);
+
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	m_pbTerrainMakesValid = new bool[GC.getNumTerrainInfos()];
 	stream->Read(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
@@ -13449,7 +13467,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=1;
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iAdvancedStartCost);
@@ -13493,6 +13511,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piRiverSideYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piHillsYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piIrrigatedChange);
+	stream->Write(NUM_YIELD_TYPES, m_piCoastalYieldChange); // Leoreth
 	stream->Write(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
 	stream->Write(GC.getNumFeatureInfos(), m_pbFeatureMakesValid);
 
@@ -13578,6 +13597,17 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piIrrigatedChange, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "CoastalYieldChange"))
+	{
+		pXML->SetYields(&m_piCoastalYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piCoastalYieldChange, NUM_YIELD_TYPES);
 	}
 
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCost, "iAdvancedStartCost");

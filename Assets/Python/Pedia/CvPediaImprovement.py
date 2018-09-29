@@ -90,6 +90,7 @@ class CvPediaImprovement:
 
 				iCost = BuildInfo.getCost()
 				if iCost > 0:
+					if iTime > 0: szStats += u", "
 					szStats += u"Cost: %d%c" % (iCost, gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar())
 
 				screen.appendListBoxString(panel, szStats, WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
@@ -185,6 +186,14 @@ class CvPediaImprovement:
 				szSign = u"+"
 			if iYieldChange != 0:
 				szText += u"%c%s%d%c next to River\n" % (szBullet, szSign, iYieldChange, gc.getYieldInfo(iYieldType).getChar())
+				
+		for iYieldType in xrange(YieldTypes.NUM_YIELD_TYPES):
+			iYieldChange = info.getCoastalYieldChange(iYieldType)
+			szSign = u""
+			if iYieldChange > 0:
+				szSign = u"+"
+			if iYieldChange != 0:
+				szText += u"%c%s%d%c on the Coast\n" % (szBullet, szSign, iYieldChange, gc.getYieldInfo(iYieldType).getChar())
 
 		for iRoute in xrange(gc.getNumRouteInfos()):
 			for iYieldType in xrange(YieldTypes.NUM_YIELD_TYPES):

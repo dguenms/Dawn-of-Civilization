@@ -822,6 +822,25 @@
 			<Button>Art/Interface/Buttons/Builds/BuildMarineReserve.dds</Button>
 		</BuildInfo>
 		<BuildInfo>
+			<Type>BUILD_SOLAR_COLLECTOR</Type>
+			<Description>TXT_KEY_BUILD_SOLAR_COLLECTOR</Description>
+			<Help/>
+			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
+			<iTime>3000</iTime>
+			<iCost>20</iCost>
+			<bKill>0</bKill>
+			<ImprovementType>IMPROVEMENT_SOLAR_COLLECTOR</ImprovementType>
+			<RouteType>NONE</RouteType>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<FeatureStructs/>
+			<HotKey>KB_T</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>1</iHotKeyPriority>
+			<Button>Art/Structures/Improvements/Solar_Collector/Button_SolarPlant.dds</Button>
+		</BuildInfo>
+		<BuildInfo>
 			<Type>BUILD_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
 			<iTime>0</iTime>

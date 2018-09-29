@@ -225,4 +225,12 @@
 		<Italian>The Satellite will destroy an enemy Satellite on the same tile.</Italian>
 		<Spanish>The Satellite will destroy an enemy Satellite on the same tile.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_SOLAR_COLLECTOR</Tag>
+		<English>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</English>
+		<French>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</French>
+		<German>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</German>
+		<Italian>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</Italian>
+		<Spanish>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</Spanish>
+	</TEXT>
 </Civ4GameText>

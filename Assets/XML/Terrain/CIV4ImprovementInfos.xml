@@ -2241,5 +2241,58 @@
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
+		
+		<ImprovementInfo>
+			<Type>IMPROVEMENT_SOLAR_COLLECTOR</Type>
+			<Description>TXT_KEY_IMPROVEMENT_SOLAR_COLLECTOR</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_SOLAR_COLLECTOR_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_SOLAR_COLLECTOR</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>3</iYieldChange>
+			</YieldChanges>
+			<RiverSideYieldChange/>
+			<CoastalYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</CoastalYieldChange>
+			<bActsAsCity>0</bActsAsCity>
+			<bHillsMakesValid>0</bHillsMakesValid>
+			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
+			<bRiverSideMakesValid>0</bRiverSideMakesValid>
+			<bNoFreshWater>0</bNoFreshWater>
+			<bRequiresFlatlands>0</bRequiresFlatlands>
+			<bRequiresRiverSide>0</bRequiresRiverSide>
+			<bRequiresIrrigation>0</bRequiresIrrigation>
+			<bCarriesIrrigation>0</bCarriesIrrigation>
+			<bRequiresFeature>1</bRequiresFeature>
+			<bWater>0</bWater>
+			<bGoody>0</bGoody>
+			<bPermanent>0</bPermanent>
+			<bUseLSystem>0</bUseLSystem>
+			<iAdvancedStartCost>80</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<iTilesPerGoody>0</iTilesPerGoody>
+			<iGoodyRange>0</iGoodyRange>
+			<iFeatureGrowth>0</iFeatureGrowth>
+			<iUpgradeTime>0</iUpgradeTime>
+			<iAirBombDefense>20</iAirBombDefense>
+			<iDefenseModifier>0</iDefenseModifier>
+			<iHappinessPercent>0</iHappinessPercent>
+			<iPillageGold>25</iPillageGold>
+			<bOutsideBorders>0</bOutsideBorders>
+			<TerrainMakesValids>
+				<TerrainMakesValid>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bMakesValid>1</bMakesValid>
+				</TerrainMakesValid>
+			</TerrainMakesValids>
+			<FeatureMakesValids/>
+			<ImprovementPillage/>
+			<ImprovementUpgrade/>
+			<TechYieldChanges/>
+			<RouteYieldChanges/>
+			<bGraphicalOnly>0</bGraphicalOnly>
+		</ImprovementInfo>
 	</ImprovementInfos>
 </Civ4ImprovementInfos>
