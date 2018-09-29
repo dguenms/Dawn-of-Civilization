@@ -3284,8 +3284,8 @@
 			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>52</iAsset>
 			<bTrade>1</bTrade>
-			<bIgnoreIrrigation>1</bIgnoreIrrigation>
 			<bGoodyTech>0</bGoodyTech>
+			<bIgnoreIrrigation>1</bIgnoreIrrigation>
 			<iGridX>13</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>

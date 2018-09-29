@@ -4908,7 +4908,19 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
-						if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
+						else if (eIndex == PROJECT_THE_INTERNET)
+						{
+							for (int iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+							{
+								if (!GC.getSpecialistInfo((SpecialistTypes)iJ).isNoGlobalEffects())
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
+								}
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
 						{
 							int iLoop;
 							CvCity* pCity;
@@ -4919,7 +4931,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
-						if (eIndex == PROJECT_LUNAR_COLONY)
+						else if (eIndex == PROJECT_LUNAR_COLONY)
 						{
 							GET_PLAYER((PlayerTypes)iI).changeSpaceProductionModifier(100);
 							

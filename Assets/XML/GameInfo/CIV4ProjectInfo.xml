@@ -58,14 +58,14 @@
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_COMPUTERS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>2</iTechShare>
+			<iTechShare>0</iTechShare>
 			<iAirExperience>0</iAirExperience>
 			<iFirstAirExperience>0</iFirstAirExperience>
-			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<iExistingProductionModifier>-50</iExistingProductionModifier>
 			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>

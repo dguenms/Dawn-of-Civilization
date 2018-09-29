@@ -12030,6 +12030,12 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_GOLDEN_RECORD_HELP"));
 	}
 
+	if (eProject == PROJECT_THE_INTERNET)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_THE_INTERNET_HELP"));
+	}
+
 	if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
 	{
 		szBuffer.append(NEWLINE);
