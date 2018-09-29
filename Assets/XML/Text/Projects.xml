@@ -10,6 +10,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT</Tag>
+		<English>Human Genome Project</English>
+		<French>Human Genome Project</French>
+		<German>Human Genome Project</German>
+		<Italian>Human Genome Project</Italian>
+		<Spanish>Human Genome Project</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] f&#252;r [LINK=literal]Stadt[\LINK]</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_THE_INTERNET_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</English>
 		<French>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</French>

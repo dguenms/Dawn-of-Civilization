@@ -4920,6 +4920,18 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
+						else if (eIndex == PROJECT_HUMAN_GENOME_PROJECT)
+						{
+							for (int iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
+							{
+								if (GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_COMMERCE) > 3)
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_COMMERCE, iChange);
+								}
+							}
+						}
+
+						// Leoreth
 						else if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
 						{
 							int iLoop;
