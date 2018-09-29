@@ -56,13 +56,25 @@ class CvPediaBuilding:
 	def interfaceScreen(self, iBuilding):
 		self.iBuilding = iBuilding
 		screen = self.top.getScreen()
-		screen.addBuildingGraphicGFC(self.top.getNextWidgetName(), self.iBuilding, self.X_BUILDING_ANIMATION, self.Y_BUILDING_ANIMATION, self.W_BUILDING_ANIMATION, self.H_BUILDING_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_BUILDING_ANIMATION, self.Z_ROTATION_BUILDING_ANIMATION, self.SCALE_ANIMATION, True)
+		if iBuilding == iHubbleSpaceTelescope:
+			self.spaceGraphic(iBuilding)
+		else:
+			screen.addBuildingGraphicGFC(self.top.getNextWidgetName(), self.iBuilding, self.X_BUILDING_ANIMATION, self.Y_BUILDING_ANIMATION, self.W_BUILDING_ANIMATION, self.H_BUILDING_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_BUILDING_ANIMATION, self.Z_ROTATION_BUILDING_ANIMATION, self.SCALE_ANIMATION, True)
 
 		self.placeInfo()
 		self.placeRequires()
 		self.placeEffects()
 		self.placeHistory()
 
+	def spaceGraphic(self, iBuilding):
+		screen = self.top.getScreen()
+		szImage = self.top.getNextWidgetName()
+		screen.addModelGraphicGFC(szImage, "Art/Interface/Screens/Civilopedia/Space_Environment.nif", self.X_BUILDING_ANIMATION, self.Y_BUILDING_ANIMATION, self.W_BUILDING_ANIMATION, self.H_BUILDING_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_BUILDING_ANIMATION,  self.Z_ROTATION_BUILDING_ANIMATION, 1.0)
+		
+		if iBuilding == iHubbleSpaceTelescope: #Hubble has a special nif file because it is so high in the air
+			screen.addToModelGraphicGFC(szImage, "Art/Structures/Wonders/HubbleSpaceTelescope/Hubble_Pedia.nif")
+		else:
+			screen.addToModelGraphicGFC(szImage, gc.getBuildingInfo(iBuilding).getArtInfo().getNIF())
 
 
 	def placeInfo(self):
