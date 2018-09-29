@@ -329,6 +329,7 @@ void CyInfoPythonInterface2()
 		.def("getRiverSideYieldChange", &CvImprovementInfo::getRiverSideYieldChange, "int (int i)")
 		.def("getHillsYieldChange", &CvImprovementInfo::getHillsYieldChange, "int (int i)")
 		.def("getIrrigatedYieldChange", &CvImprovementInfo::getIrrigatedYieldChange, "int (int i)")
+		.def("getCoastalYieldChange", &CvImprovementInfo::getCoastalYieldChange, "int (int i)") // Leoreth
 
 		.def("getTerrainMakesValid", &CvImprovementInfo::getTerrainMakesValid, "bool (int i)")
 		.def("getFeatureMakesValid", &CvImprovementInfo::getFeatureMakesValid, "bool (int i)")

@@ -2921,6 +2921,14 @@
 		<Spanish>Launch</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_COASTAL</Tag>
+		<English>[SPACE]on the Coast</English>
+		<French>[SPACE]on the Coast</French>
+		<German>[SPACE]an der K&#252;ste</German>
+		<Italian>[SPACE]on the Coast</Italian>
+		<Spanish>[SPACE]on the Coast</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

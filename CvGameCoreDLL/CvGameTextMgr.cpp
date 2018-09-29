@@ -15225,6 +15225,7 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_WITH_IRRIGATION").c_str(), info.getIrrigatedYieldChangeArray());
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_ON_HILLS").c_str(), info.getHillsYieldChangeArray());
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_ALONG_RIVER").c_str(), info.getRiverSideYieldChangeArray());
+		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_COASTAL").c_str(), info.getCoastalYieldChangeArray());
 
 		// Leoreth: routes
 		for (int iRoute = 0; iRoute < GC.getNumRouteInfos(); iRoute++)

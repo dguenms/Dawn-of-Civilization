@@ -121,4 +121,12 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SOLAR_COLLECTOR</Tag>
+		<English>Solar Collector</English>
+		<French>Solar Collector</French>
+		<German>Solaranlage</German>
+		<Italian>Solar Collector</Italian>
+		<Spanish>Solar Collector</Spanish>
+	</TEXT>
 </Civ4GameText>

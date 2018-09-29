@@ -3838,6 +3838,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 												iTempValue += (kImprovement.getRiverSideYieldChange(iK) * 100);
 												iTempValue += (kImprovement.getHillsYieldChange(iK) * 100);
 												iTempValue += (kImprovement.getIrrigatedYieldChange(iK) * 150);
+												iTempValue += (kImprovement.getCoastalYieldChange(iK) * 50); // Leoreth
 
 												// land food yield is more valueble
 												if (iK == YIELD_FOOD && !kImprovement.isWater())

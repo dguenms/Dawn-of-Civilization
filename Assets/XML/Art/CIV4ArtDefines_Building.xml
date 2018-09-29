@@ -2341,11 +2341,11 @@
 			<Type>ART_DEF_BUILDING_SOLAR_PLANT</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.5</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Solar_Plant/solarplant.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Solar_Plant/solar.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Solar_Plant/Button_SolarPlant.dds</Button>
+			<Button>Art/Structures/Buildings/Solar_Plant/SolarPlant.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MONUMENT</Type>

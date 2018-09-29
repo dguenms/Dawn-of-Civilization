@@ -249,5 +249,14 @@
 			<KFM>Art/Structures/Improvements/Marine_Reserve/Nets.kfm</KFM>
 			<Button>Art/Interface/Buttons/Builds/BuildMarineReserve.dds</Button>
 		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_SOLAR_COLLECTOR</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Solar_Collector/solarplant.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Improvements/Solar_Collector/Button_SolarPlant.dds</Button>
+		</ImprovementArtInfo>
 	</ImprovementArtInfos>
 </Civ4ArtDefines>

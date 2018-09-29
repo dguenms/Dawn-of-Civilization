@@ -368,6 +368,9 @@
 	<ElementType name="IrrigatedYieldChange" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="CoastalYieldChange" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="BonusType" content="textOnly"/>
 	<ElementType name="bBonusMakesValid" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bBonusTrade" content="textOnly" dt:type="boolean"/>
@@ -432,6 +435,7 @@
 		<element type="RiverSideYieldChange" minOccurs="0"/>
 		<element type="HillsYieldChange" minOccurs="0"/>
 		<element type="IrrigatedYieldChange" minOccurs="0"/>
+		<element type="CoastalYieldChange" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bActsAsCity"/>
 		<element type="bHillsMakesValid"/>
 		<element type="bFreshWaterMakesValid"/>

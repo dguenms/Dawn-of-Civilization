@@ -3065,6 +3065,8 @@ public:
 	int* getHillsYieldChangeArray();
 	int getIrrigatedYieldChange(int i) const;				// Exposed to Python
 	int* getIrrigatedYieldChangeArray();				// For Moose - CvWidgetData XXX
+	int getCoastalYieldChange(int i) const; // Leoreth
+	int* getCoastalYieldChangeArray();
 
 	bool getTerrainMakesValid(int i) const;				// Exposed to Python
 	bool getFeatureMakesValid(int i) const;				// Exposed to Python
@@ -3139,6 +3141,7 @@ protected:
 	int* m_piRiverSideYieldChange;
 	int* m_piHillsYieldChange;
 	int* m_piIrrigatedChange;
+	int* m_piCoastalYieldChange; // Leoreth
 
 	bool* m_pbTerrainMakesValid;
 	bool* m_pbFeatureMakesValid;
