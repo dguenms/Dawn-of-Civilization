@@ -4926,7 +4926,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							{
 								if (GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_COMMERCE) > 3)
 								{
-									GET_PLAYER((PlayerTypes)iJ).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_COMMERCE, iChange);
+									GET_PLAYER((PlayerTypes)iJ).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_FOOD, iChange);
 								}
 							}
 						}
