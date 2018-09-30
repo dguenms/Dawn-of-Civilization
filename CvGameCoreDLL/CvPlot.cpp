@@ -6687,7 +6687,16 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	if (isPeak())
 	{
 		if (eTeam == INCA)
-			return 0 + GC.getYieldInfo(eYield).getLakeChange() + GC.getYieldInfo(eYield).getLakeChange() + GC.getYieldInfo(eYield).getHillsChange() + GC.getYieldInfo(eYield).getLakeChange();
+		{
+			if (eYield == YIELD_FOOD) 
+			{
+				return 2;
+			}
+			if (eYield == YIELD_PRODUCTION)
+			{
+				return 1;
+			}
+		}
 		else
 			return 0;
 	}
@@ -6908,6 +6917,26 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	}
 
 	iYield = calculateNatureYield(eYield, ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM));
+	
+	// Leoreth + Merijn: Burj Khalifa effect
+	if (ePlayer != NO_PLAYER)
+	{
+		if (getTerrainType() == TERRAIN_DESERT)
+		{
+			if (eYield == YIELD_FOOD || eYield == YIELD_COMMERCE)
+			{
+				pWorkingCity = getWorkingCity();
+				
+				if (pWorkingCity != NULL)
+				{
+					if (pWorkingCity->isHasBuildingEffect((BuildingTypes)BURJ_KHALIFA))
+					{
+						iYield = std::max(2, iYield);;
+					}
+				}
+			}
+		}
+	}
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
@@ -7050,7 +7079,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		// Leoreth: Temple of Kukulkan effect
 		if (getFeatureType() == FEATURE_RAINFOREST && eYield == YIELD_FOOD)
 		{
-			CvCity* pWorkingCity = getWorkingCity();
+			pWorkingCity = getWorkingCity();
+			
 			if (pWorkingCity != NULL)
 			{
 				if (pWorkingCity->isHasBuildingEffect((BuildingTypes)TEMPLE_OF_KUKULKAN))
@@ -7072,25 +7102,13 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// Leoreth: Burj Khalifa effect
-		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)BURJ_KHALIFA))
-		{
-			if (getTerrainType() == TERRAIN_DESERT)
-			{
-				if (eYield == YIELD_FOOD || eYield == YIELD_COMMERCE)
-				{
-					iYield += 2;
-				}
-			}
-		}
-
 		//Rhye - start UP (not shown in debug mode)
 		if (ePlayer == MALI)
 		{
 			//if (getYield((YieldTypes)2) == 1)
-			if (!isWater())
+			if (!isWater() && eYield == YIELD_COMMERCE)
 			{
-				iYield += GC.getBonusInfo((BonusTypes)21).getYieldChange(eYield); //+1 commerce, same as fur
+				iYield += 1;
 			}
 		}
 		//Rhye - end UP
@@ -7098,9 +7116,9 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		// Leoreth: Tamil UP
 		if (ePlayer == TAMILS)
 		{
-			if (isWater())
+			if (isWater() && eYield == YIELD_COMMERCE)
 			{
-				iYield += GC.getBonusInfo((BonusTypes)21).getYieldChange(eYield);
+				iYield += 1;
 			}
 		}
 
