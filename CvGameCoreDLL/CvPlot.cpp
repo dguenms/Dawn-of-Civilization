@@ -6797,9 +6797,10 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	}
 
 	// Leoreth
-	if (isCoastalLand())
+	int iCoastalYieldChange = GC.getImprovementInfo(eImprovement).getCoastalYieldChange(eYield);
+	if (iCoastalYieldChange != 0 && isCoastalLand())
 	{
-		iYield += GC.getImprovementInfo(eImprovement).getCoastalYieldChange(eYield);
+		iYield += iCoastalYieldChange;
 	}
 
 	if ((bOptimal) ? true : isIrrigationAvailable())
