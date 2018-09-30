@@ -2928,14 +2928,14 @@ iCivPoland : {
 		"Jerzy Franciszek Kulczycki", # 17th
 		"fZofia Potocka", # 18th
 		iIndustrial,
-		u"fKarolina Sobańska", # 19th
+		u"fKarolina Sobanska", # 19th
 		iGlobal,
 		"Jan Kowalewski", # 20th
 		"Jerzy Sosnowski", # 20th
 		"Marian Rejewski", # 20th
 		"Kazimierz Leski", # 20th
 		"fKrystyna Skarbek", # 20th
-		u"Ryszard Kukliński", # 20th
+		u"Ryszard Kuklinski", # 20th
 	],
 },
 iCivPortugal : {
