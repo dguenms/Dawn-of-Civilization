@@ -11985,7 +11985,7 @@
 			<Description>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HARMANDIR_SAHIB_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HARMANDIR_SAHIB_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_HELP_HARMANDIR_SAHIB</Help>
+			<Help>TXT_KEY_BUILDING_HARMANDIR_SAHIB_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HARMANDIR_SAHIB</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HARMANDIR_SAHIB</MovieDefineTag>
@@ -12371,7 +12371,7 @@
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			<ObsoleteTech>TECH_SOCIAL_SERVICES</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -12419,7 +12419,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_TRAFALGAR_SQUARE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_MEASUREMENT</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -12592,7 +12592,7 @@
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_GEOLOGY</PrereqTech>
 			<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -12947,7 +12947,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_EIFFEL_TOWER</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_EIFFEL_TOWER</MovieDefineTag>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -13761,7 +13761,7 @@
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<OrPrereqReligion>RELIGION_PROTESTANTISM</OrPrereqReligion>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -14021,7 +14021,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SAGRADA_FAMILIA</ArtDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_MACROECONOMICS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>

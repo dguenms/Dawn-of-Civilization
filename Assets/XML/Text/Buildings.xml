@@ -2902,6 +2902,38 @@
 		<Spanish>Divan</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
+		<English>Garden</English>
+		<French>
+			<Text>Jardin:Jardins</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Garten</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Giardino:Giardini</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Jard&#237;n:Jardines</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</English>
+		<French>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</French>
+		<German>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
