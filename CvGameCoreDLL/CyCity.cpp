@@ -2551,6 +2551,14 @@ void CyCity::setBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, i
 	}
 }
 
+void CyCity::changeBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)
+{
+	if (m_pCity)
+	{
+		m_pCity->changeBuildingYieldChange((BuildingClassTypes)eBuildingClass, (YieldTypes)eYield, iChange);
+	}
+}
+
 void CyCity::updateBuildingCommerce()
 {
 	if (m_pCity)

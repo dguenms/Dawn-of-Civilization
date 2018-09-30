@@ -1991,7 +1991,7 @@ class RFCUtils:
 			
 		for iPlayer in range(iNumTotalPlayersB):
 			if gc.getPlayer(iPlayer).isHasBuildingEffect(iBuilding):
-				for city in self.cityList(iPlayer):
+				for city in self.getCityList(iPlayer):
 					if city.isHasBuildingEffect(iBuilding):
 						return city
 						
