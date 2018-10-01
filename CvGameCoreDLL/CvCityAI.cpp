@@ -3327,7 +3327,6 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	{
 		if ((iFocusFlags == 0) || (iValue > 0) || (iPass == 0))
 		{
-
 		    if ((iFocusFlags & BUILDINGFOCUS_WORLDWONDER) || (iPass > 0))
 		    {
 		        if (isWorldWonderClass(eBuildingClass))
@@ -4746,21 +4745,34 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 	int iValue;
 	int iI;
 
+	CvProjectInfo& kProject = GC.getProjectInfo(eProject);
+
+	bool bWarPlan = (GET_TEAM(getTeam()).getAnyWarPlanCount(true) > 0);
+	int iWarmongerPercent = 25000 / std::max(100, (100 + GC.getLeaderHeadInfo(getPersonalityType()).getMaxWarRand()));
+
+	int iSatelliteCount = 0;
+
+	int iLoop;
+	for (CvCity* pCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+	{
+		iSatelliteCount += pCity->countSatellites();
+	}
+
 	iValue = 0;
 
-	if (GC.getProjectInfo(eProject).getNukeInterception() > 0)
+	if (kProject.getNukeInterception() > 0)
 	{
 		if (GC.getGameINLINE().canTrainNukes())
 		{
-			iValue += (GC.getProjectInfo(eProject).getNukeInterception() / 10);
+			iValue += (kProject.getNukeInterception() / 10);
 		}
 	}
 
-	if (GC.getProjectInfo(eProject).getTechShare() > 0)
+	if (kProject.getTechShare() > 0)
 	{
-		if (GC.getProjectInfo(eProject).getTechShare() < GET_TEAM(getTeam()).getHasMetCivCount(true))
+		if (kProject.getTechShare() < GET_TEAM(getTeam()).getHasMetCivCount(true))
 		{
-			iValue += (20 / GC.getProjectInfo(eProject).getTechShare());
+			iValue += (20 / kProject.getTechShare());
 		}
 	}
 
@@ -4768,13 +4780,166 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 	{
 		if (GC.getGameINLINE().isVictoryValid((VictoryTypes)iI))
 		{
-			iValue += (std::max(0, (GC.getProjectInfo(eProject).getVictoryThreshold(iI) - GET_TEAM(getTeam()).getProjectCount(eProject))) * 20);
+			iValue += (std::max(0, (kProject.getVictoryThreshold(iI) - GET_TEAM(getTeam()).getProjectCount(eProject))) * 20);
 		}
 	}
 
 	for (iI = 0; iI < GC.getNumProjectInfos(); iI++)
 	{
 		iValue += (std::max(0, (GC.getProjectInfo((ProjectTypes)iI).getProjectsNeeded(eProject) - GET_TEAM(getTeam()).getProjectCount(eProject))) * 10);
+	}
+
+	// Leoreth
+	if (kProject.isRevealsMap())
+	{
+		iValue += 5;
+	}
+
+	if (kProject.isSatelliteAttack())
+	{
+		for (iI = 0; iI < GC.getNumProjectInfos(); iI++)
+		{
+			if (GC.getProjectInfo((ProjectTypes)iI).isSatelliteAttack() || GC.getProjectInfo((ProjectTypes)iI).isSatelliteIntercept())
+			{
+				iValue += GC.getGameINLINE().getProjectCreatedCount((ProjectTypes)iI) * 5;
+			}
+		}
+	}
+
+	if (kProject.isSatelliteIntercept())
+	{
+		if (GC.getGameINLINE().canTrainNukes())
+		{
+			iValue += 10;
+		}
+	}
+
+	if (kProject.isFirstEnemyAnarchy())
+	{
+		if (GC.getGameINLINE().getProjectCreatedCount(eProject) == 0)
+		{
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).getProjectMaking(eProject) > 0)
+				{
+					if (GET_PLAYER(getOwnerINLINE()).AI_getAttitude((PlayerTypes)iI) < ATTITUDE_PLEASED)
+					{
+						iValue += 10;
+					}
+				}
+			}
+		}
+	}
+
+	if (kProject.getFirstAirExperience() != 0)
+	{
+		if (GC.getGameINLINE().getProjectCreatedCount(eProject) == 0)
+		{	
+			iValue += (kProject.getFirstAirExperience() * GET_PLAYER(getOwnerINLINE()).getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 500;
+		}
+	}
+
+	iValue += (kProject.getAirExperience() * GET_PLAYER(getOwnerINLINE()).getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 500;
+
+	if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
+	{
+		for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
+		{
+			if (GC.getUnitInfo((UnitTypes)iI).getSpecialUnitType() == kProject.getSpecialUnit())
+			{
+				iValue += GET_PLAYER(getOwnerINLINE()).AI_getUnitEnabledValue((UnitTypes)iI) / 20;
+			}
+		}
+	}
+
+	if (kProject.isGoldenAge())
+	{
+		iValue += 10;
+	}
+
+	if (kProject.getFreePromotion() != NO_PROMOTION)
+	{
+		iValue += 5;
+	}
+
+	// project is anywhere on the prereq chain for a victory project
+	for (iI = 0; iI < GC.getNumVictoryInfos(); iI++)
+	{
+		for (int iJ = 0; iJ < GC.getNumProjectInfos(); iJ++)
+		{
+			if (GC.getProjectInfo((ProjectTypes)iJ).getVictoryThreshold(iI) > 0)
+			{
+				if (GC.getProjectInfo((ProjectTypes)iJ).getAnyoneProjectPrereq() == eProject)
+				{
+					iValue += 5;
+				}
+
+				ProjectTypes ePrereq = (ProjectTypes)iJ;
+				while (true)
+				{
+					if (ePrereq == eProject && ePrereq != iJ)
+					{
+						iValue += 10;
+						break;
+					}
+
+					for (int iK = 0; iK < GC.getNumProjectInfos(); iK++)
+					{
+						if (GC.getProjectInfo(ePrereq).getProjectsNeeded(iK) > 0)
+						{
+							ePrereq = (ProjectTypes)iK;
+							continue;
+						}
+					}
+
+					break;
+				}
+			}
+		}
+	}
+
+	if (eProject == PROJECT_GOLDEN_RECORD)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE2))
+		{
+			iValue += 5;
+			iValue += iSatelliteCount / 5;
+		}
+
+		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE4))
+		{
+			iValue += 10;
+			iValue += iSatelliteCount / 2;
+		}
+	}
+
+	if (eProject == PROJECT_THE_INTERNET)
+	{
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE) * GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / 15 / 1000;
+	}
+
+	if (eProject == PROJECT_HUMAN_GENOME_PROJECT)
+	{
+		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+		{
+			if (GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(YIELD_COMMERCE) > 3)
+			{
+				iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD) * GET_PLAYER(getOwnerINLINE()).getImprovementCount((ImprovementTypes)iI) / 1000;
+			}
+		}
+	}
+
+	if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
+	{
+		iValue += 5;
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageCommerceMultiplier(COMMERCE_RESEARCH) * iSatelliteCount * 3 / 1000;
+	}
+
+	if (eProject == PROJECT_LUNAR_COLONY)
+	{
+		iValue += 5;
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION) * iSatelliteCount * 3 / 1000;
+		iValue += GET_PLAYER(getOwnerINLINE()).getNumCities() / 2;
 	}
 
 	return iValue;
