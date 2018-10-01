@@ -366,6 +366,9 @@ public:
 	int AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
 	int AI_getPersecutionValue(ReligionTypes eReligion) const; // Leoreth
 	int AI_neededPersecutors(CvArea* pArea) const;
+	int AI_getUnitEnabledValue(UnitTypes eUnit, TechTypes eTech, CvCity* pCapitalCity, int iHasMetCount, int iCoastalCities, bool bWarPlan, bool bCapitalAlone) const;
+	int AI_getUnitEnabledValue(UnitTypes eUnit) const;
+	bool AI_enablesUnitWonder(UnitClassTypes eUnitClass, int iPathLength) const;
 
 	// for serialization
   virtual void read(FDataStreamBase* pStream);
