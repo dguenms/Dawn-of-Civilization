@@ -1544,6 +1544,7 @@ DomainTypes CvPlayerAI::AI_unitAIDomainType(UnitAITypes eUnitAI) const
 	case UNITAI_DEFENSE_AIR:
 	case UNITAI_CARRIER_AIR:
 	case UNITAI_MISSILE_AIR:
+	case UNITAI_SATELLITE:
 		return DOMAIN_AIR;
 		break;
 
@@ -8670,6 +8671,16 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 				}
 			}
 
+		case UNITAI_SATELLITE:
+			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+			{
+				if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite() && GC.getUnitInfo(eUnit).getGreatPeoples(iI))
+				{
+					bValid = true;
+					break;
+				}
+			}
+
 		default:
 			FAssert(false);
 			break;
@@ -9087,6 +9098,22 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 		iValue += 40 * (5 - AI_getReligiousTolerance());
 		iValue += (isNoNonStateReligionSpread() ? 80 : 0);
 		break;
+
+	case UNITAI_SATELLITE:
+		iValue += 200;
+		if (GET_TEAM(getTeam()).canSatelliteAttack()) iValue += 100;
+		if (GET_TEAM(getTeam()).canSatelliteIntercept() && GC.getGameINLINE().isNukesValid()) iValue += 100;
+
+		if (getSatelliteExtraCommerce(COMMERCE_RESEARCH)) iValue += 100;
+		if (getSatelliteExtraCommerce(COMMERCE_CULTURE)) iValue + 50;
+
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			if (GC.getUnitInfo(eUnit).getGreatPeoples(iI) && getSpecialistExtraYield((SpecialistTypes)iI, YIELD_PRODUCTION))
+			{
+				iValue += 50;
+			}
+		}
 
 	default:
 		FAssert(false);
@@ -19334,6 +19361,9 @@ int CvPlayerAI::AI_getUnitEnabledValue(UnitTypes eUnit,
 		case UNITAI_MISSILE_AIR:
 			iMilitaryValue += ((bWarPlan) ? 200 : 100);
 			break;
+
+		case UNITAI_SATELLITE:
+			iValue += 400;
 
 		default:
 			FAssert(false);

@@ -1666,6 +1666,7 @@ enum UnitAITypes			// Exposed to Python
 	UNITAI_ATTACK_CITY_LEMMING,
 	UNITAI_STATESMAN, // Leoreth
 	UNITAI_PERSECUTOR, // Leoreth
+	UNITAI_SATELLITE, // Leoreth
 
 	NUM_UNITAI_TYPES
 };

@@ -13490,7 +13490,7 @@
 			<Type>UNIT_SATELLITE</Type>
 			<Special>SPECIALUNIT_SATELLITE</Special>
 			<Domain>DOMAIN_AIR</Domain>
-			<DefaultUnitAI>UNITAI_SCIENTIST</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_SATELLITE</DefaultUnitAI>
 			<Invisible>INVISIBLE_SATELLITE</Invisible>
 			<SeeInvisible>INVISIBLE_SATELLITE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_SATELLITE</Description>
@@ -13502,7 +13502,7 @@
 			<bRivalTerritory>1</bRivalTerritory>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_SCIENTIST</UnitAIType>
+					<UnitAIType>UNITAI_SATELLITE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
