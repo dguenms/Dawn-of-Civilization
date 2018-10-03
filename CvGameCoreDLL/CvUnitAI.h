@@ -102,6 +102,7 @@ protected:
 	void AI_carrierAirMove();
 	void AI_missileAirMove();
 	void AI_persecutorMove(); // Leoreth
+	void AI_satelliteMove(); // Leoreth
 
 	void AI_networkAutomated();
 	void AI_cityAutomated();
@@ -214,6 +215,8 @@ protected:
 	bool AI_diplomaticMission(int iPowerMultiplier);
 	bool AI_persecute();
 	bool AI_greatMission(int iCityPercent);
+	bool AI_satelliteDefendMove();
+	bool AI_satelliteAttackMove();
 
 	bool AI_followBombard();
 
@@ -249,6 +252,8 @@ protected:
 
 	bool AI_canGroupWithAIType(UnitAITypes eUnitAI) const;
 	bool AI_allowGroup(const CvUnit* pUnit, UnitAITypes eUnitAI) const;
+
+	CvCity* AI_nukeTarget();
 
 	// added so under cheat mode we can call protected functions for testing
 	friend class CvGameTextMgr;

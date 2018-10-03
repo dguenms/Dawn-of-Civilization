@@ -630,6 +630,7 @@ bool CvSelectionGroupAI::AI_isDeclareWar(const CvPlot* pPlot)
 			case UNITAI_DEFENSE_AIR:
 			case UNITAI_CARRIER_AIR:
 			case UNITAI_MISSILE_AIR:
+			case UNITAI_SATELLITE:
 				break;
 
 			default:
