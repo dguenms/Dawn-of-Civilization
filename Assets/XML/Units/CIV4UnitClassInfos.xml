@@ -255,12 +255,12 @@
 			<DefaultUnit>UNIT_ARQUEBUSIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_MUSKETMAN</Type>
-			<Description>TXT_KEY_UNIT_MUSKETMAN</Description>
+			<Type>UNITCLASS_MUSKETEER</Type>
+			<Description>TXT_KEY_UNIT_MUSKETEER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_MUSKETMAN</DefaultUnit>
+			<DefaultUnit>UNIT_MUSKETEER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_RIFLEMAN</Type>
