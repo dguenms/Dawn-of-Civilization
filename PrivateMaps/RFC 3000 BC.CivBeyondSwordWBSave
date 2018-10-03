@@ -775,8 +775,8 @@ BeginMap
 	grid height=68
 	prime meridian=53
 	equator=26
-	top latitude=90
-	bottom latitude=-90
+	top latitude=75
+	bottom latitude=-75
 	wrap X=1
 	wrap Y=0
 	world size=WORLDSIZE_HUGE
