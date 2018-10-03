@@ -1681,6 +1681,8 @@ class CvMapDesc:
 	def __init__(self):
 		self.iGridW = 0
 		self.iGridH = 0
+		self.iPrimeMeridian = -1
+		self.iEquator = -1
 		self.iTopLatitude = 0
 		self.iBottomLatitude = 0
 		self.bWrapX = 0
@@ -1703,6 +1705,8 @@ class CvMapDesc:
 		f.write("BeginMap\n")
 		f.write("\tgrid width=%d\n" %(map.getGridWidth(),))
 		f.write("\tgrid height=%d\n" %(map.getGridHeight(),))
+		f.write("\tprime meridian=%d\n" %(map.getPrimeMeridian(),))
+		f.write("\tequator=%d\n" %(map.getEquator(),))
 		f.write("\ttop latitude=%d\n" %(map.getTopLatitude(),))
 		f.write("\tbottom latitude=%d\n" %(map.getBottomLatitude(),))
 		f.write("\twrap X=%d\n" %(map.isWrapX(),))
@@ -1736,6 +1740,16 @@ class CvMapDesc:
 			v = parser.findTokenValue(toks, "grid height")
 			if v!=-1:
 				self.iGridH = int(v)
+				continue
+				
+			v = parser.findTokenValue(toks, "prime meridian")
+			if v != -1:
+				self.iPrimeMeridian = int(v)
+				continue
+				
+			v = parser.findTokenValue(toks, "equator")
+			if v != -1:
+				self.iEquator = int(v)
 				continue
 
 			v = parser.findTokenValue(toks, "top latitude")
@@ -1922,7 +1936,7 @@ class CvWBDesc:
 		worldSizeType = CvUtil.findInfoTypeNum(gc.getWorldInfo, gc.getNumWorldInfos(), self.mapDesc.worldSize)
 		climateType = CvUtil.findInfoTypeNum(gc.getClimateInfo, gc.getNumClimateInfos(), self.mapDesc.climate)
 		seaLevelType = CvUtil.findInfoTypeNum(gc.getSeaLevelInfo, gc.getNumSeaLevelInfos(), self.mapDesc.seaLevel)
-		CyMap().rebuild(self.mapDesc.iGridW, self.mapDesc.iGridH, self.mapDesc.iTopLatitude, self.mapDesc.iBottomLatitude, self.mapDesc.bWrapX, self.mapDesc.bWrapY, WorldSizeTypes(worldSizeType), ClimateTypes(climateType), SeaLevelTypes(seaLevelType), 0, None)
+		CyMap().rebuild(self.mapDesc.iGridW, self.mapDesc.iGridH, self.mapDesc.iPrimeMeridian, self.mapDesc.iEquator, self.mapDesc.iTopLatitude, self.mapDesc.iBottomLatitude, self.mapDesc.bWrapX, self.mapDesc.bWrapY, WorldSizeTypes(worldSizeType), ClimateTypes(climateType), SeaLevelTypes(seaLevelType), 0, None)
 
 		print "preapply plots"
 		for pDesc in self.plotDesc:

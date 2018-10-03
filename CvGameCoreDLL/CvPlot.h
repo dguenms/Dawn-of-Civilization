@@ -216,7 +216,7 @@ public:
 #endif
 	bool at(int iX, int iY) const;																																		// Exposed to Python
 // BUG - Lat/Long Coordinates - start
-	int calculateMinutes(int iPlotIndex, int iPlotCount, bool bWrap, int iDegreeMin, int iDegreeMax) const;
+	int calculateMinutes(int iPlotIndex, int iPlotCount, bool bWrap, int iDegreeMin, int iDegreeMax, int iZero) const;
 	int getLongitudeMinutes() const;																																		// Exposed to Python
 	int getLatitudeMinutes() const;																																		// Exposed to Python
 // BUG - Lat/Long Coordinates - end
