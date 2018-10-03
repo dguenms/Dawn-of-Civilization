@@ -2946,7 +2946,7 @@ iCivPortugal : {
 		u"João de Deus", # 16th
 		u"João de Brito", # 17th
 		iIndustrial, 
-		f"Rita Lopes de Almeida", # 19th
+		"fRita Lopes de Almeida", # 19th
 		iGlobal, 
 		"Agostinho da Silva", # 20th
 	],
