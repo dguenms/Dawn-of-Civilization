@@ -9342,10 +9342,10 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -12500,7 +12500,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -13123,13 +13123,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -16211,7 +16211,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -19752,7 +19752,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -20779,7 +20779,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -22123,10 +22123,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent2)
@@ -22183,10 +22183,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -23185,13 +23185,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent2)
@@ -23334,7 +23334,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -23720,7 +23720,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Netherlands)
@@ -24407,40 +24407,40 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=23, (France)
@@ -24788,10 +24788,10 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent2)
@@ -24917,7 +24917,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETEER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -25436,19 +25436,19 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=39, (Netherlands)
@@ -25986,10 +25986,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -26452,10 +26452,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Germany)
@@ -26523,10 +26523,10 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Germany)
@@ -26927,16 +26927,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent2)
@@ -27066,16 +27066,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -27115,13 +27115,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -27659,10 +27659,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -28050,7 +28050,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Holy Rome)
+		UnitType=UNIT_MUSKETEER, UnitOwner=26, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Holy Rome)
@@ -28211,28 +28211,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CUIRASSIER, UnitOwner=40, (Germany)
@@ -28443,7 +28443,7 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Netherlands)
@@ -29886,7 +29886,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Germany)
+		UnitType=UNIT_MUSKETEER, UnitOwner=40, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Germany)
@@ -32845,10 +32845,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -33394,10 +33394,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -34442,10 +34442,10 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -35484,7 +35484,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=46, (Independent2)
+		UnitType=UNIT_MUSKETEER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=46, (Independent2)
@@ -38258,10 +38258,10 @@ BeginPlot
 		UnitType=UNIT_CANNON, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -41563,10 +41563,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -43387,7 +43387,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Netherlands)
@@ -43999,7 +43999,7 @@ BeginPlot
 		UnitType=UNIT_CUIRASSIER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -45600,13 +45600,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent)
+		UnitType=UNIT_MUSKETEER, UnitOwner=45, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent)
@@ -46950,10 +46950,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Netherlands)
@@ -48489,10 +48489,10 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Netherlands)
@@ -51795,7 +51795,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Netherlands)
+		UnitType=UNIT_MUSKETEER, UnitOwner=39, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Netherlands)
