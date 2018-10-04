@@ -614,7 +614,7 @@ class CvRFCEventHandler:
 					
 		# Leoreth: Atomium
 		if iBuildingType == iAtomium:
-			sd.tAtomiumPlot = (city.getX(), city.getY())
+			data.tAtomiumPlot = (city.getX(), city.getY())
 			city.changeBuildingCommerceChange(gc.getBuildingInfo(iAtomium).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, sd.iNumNuclearWeapons)
 					
 	def onPlotFeatureRemoved(self, argsList):
