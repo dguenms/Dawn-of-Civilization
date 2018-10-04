@@ -4195,11 +4195,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_INTERMEDIATE</Tag>
-		<English>We have accomplished 2 Historical Goals out of 3. A Triumphal Arch has been built in our capital</English>
-		<French>Nous avons accompli 2 objectifs historiques sur 3. Un Arc de Triomphe a &#233;t&#233; construit dans notre capitale</French>
-		<German>Wir haben 2 von 3 Historischen Siegbedingungen erf&#252;llt. In unserer Hauptstadt wurde ein Triumphbogen erbaut.</German>
-		<Italian>Abbiamo raggiunto 2 obiettivi storici su 3. &#200; stato costruito un arco di trionfo nella nostra capitale</Italian>
-		<Spanish>Hemos conseguido 2 de los 3 objetivos hist&#243;ricos. Se ha erigido un Arco de Triunfo en nuestra capital</Spanish>
+		<English>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</English>
+		<French>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</French>
+		<German>Wir haben unsere zweite historische Siegbedingung erf&#252;llt. Ein Goldenes Zeitalter f&#252;r unsere Zivilisation hat begonnen!</German>
+		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
+		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ITALY</Tag>
