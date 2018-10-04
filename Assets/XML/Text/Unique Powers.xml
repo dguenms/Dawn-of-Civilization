@@ -883,11 +883,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR</Tag>
-		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</English>
+		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</English>
 		<French>En temps de paix, les barbares ne peuvent pas entrer dans votre territoire ; en temps de guerre, les barbares mont&#233;s se joignent &#224; votre arm&#233;e si vous les attaquez</French>
-		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren werden in Kriegszeiten Ihren Armeen beitreten</German>
-		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Italian>
-		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Spanish>
+		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren, die in Kriegszeiten angegriffen werden, treten Ihren Armeen bei</German>
+		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</Italian>
+		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>
