@@ -13990,6 +13990,7 @@
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bGoldenAge>1</bGoldenAge>
+			<bGreatMission>1</bGreatMission>
 			<bNukeImmune>1</bNukeImmune>
 			<UnitAIs>
 				<UnitAI>
