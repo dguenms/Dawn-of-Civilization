@@ -122,7 +122,6 @@ MAJOR FEATURES
     * Can conduct a Diplomatic Mission: immediately make peace with a civ you are at war with, or improve relations and reduce past transgression penalties with a civ you are at peace with
     * Can join a city as a Great Statesman (+4 commerce, +4 espionage)
     * Some wonders now create Great Statesman points, especially those which previously generated Great Spy points
-    * Free Great Statesman for the first to discover Representation
 * Unique "Dawn of a Civilization" introduction screens for every civilization
 * Redesign of the Victory code:
     * Improved performance
