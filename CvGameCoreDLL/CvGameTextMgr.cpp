@@ -9354,23 +9354,27 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 				if (eBuilding != NO_BUILDING)
 				{
 					CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
-					iExperience = kBuilding.getUnitCombatFreeExperience(eCombatType);
-					if (!kUnit.isSpy())
-					{
-						iExperience += kBuilding.getDomainFreeExperience(eDomainType);
-					}
 
-					if (iExperience != 0)
+					if (kBuilding.getObsoleteTech() == NO_TECH || !GET_TEAM(pCity->getTeam()).isHasTech((TechTypes)kBuilding.getObsoleteTech()))
 					{
-						if (pCity->getNumBuilding(eBuilding) > 0)
+						iExperience = kBuilding.getUnitCombatFreeExperience(eCombatType);
+						if (!kUnit.isSpy())
 						{
-							szBuffer.append(NEWLINE);
-							szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_EXPERIENCE", iExperience, kBuilding.getTextKeyWide()));
+							iExperience += kBuilding.getDomainFreeExperience(eDomainType);
 						}
-						else if (pCity->canConstruct(eBuilding, false, true))
+
+						if (iExperience != 0)
 						{
-							szBuffer.append(NEWLINE);
-							szBuffer.append(gDLL->getText("TXT_KEY_NO_BUILDING_FREE_EXPERIENCE", iExperience, kBuilding.getTextKeyWide()));
+							if (pCity->getNumBuilding(eBuilding) > 0)
+							{
+								szBuffer.append(NEWLINE);
+								szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_EXPERIENCE", iExperience, kBuilding.getTextKeyWide()));
+							}
+							else if (pCity->canConstruct(eBuilding, false, true))
+							{
+								szBuffer.append(NEWLINE);
+								szBuffer.append(gDLL->getText("TXT_KEY_NO_BUILDING_FREE_EXPERIENCE", iExperience, kBuilding.getTextKeyWide()));
+							}
 						}
 					}
 				}
