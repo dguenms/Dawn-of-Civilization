@@ -2603,11 +2603,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3</Tag>
-		<English>Have friendly relations with 5 communist civilisations by 1950 AD</English>
-		<French>Have friendly relations with 5 communist civilisations by 1950 AD</French>
-		<German>Haben Sie bis zum Jahr 1950 n. Chr. freundliche Beziehungen zu 5 kommunistischen Zivilisationen</German>
-		<Italian>Have friendly relations with 5 communist civilisations by 1950 AD</Italian>
-		<Spanish>Have friendly relations with 5 communist civilisations by 1950 AD</Spanish>
+		<English>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</English>
+		<French>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</French>
+		<German>Haben Sie bis zum Jahr 1950 n. Chr. als kommunistische Zivilisation freundliche Beziehungen zu f&#252;nf anderen kommunistischen Zivilisationen</German>
+		<Italian>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</Italian>
+		<Spanish>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
@@ -3714,12 +3714,12 @@
 		<Spanish>Available colonial resources: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_COMMUNIST_BROTHERS</Tag>
-		<English>Communist brothers: %d1 / %d2</English>
-		<French>Communist brothers: %d1 / %d2</French>
-		<German>Communist brothers: %d1 / %d2</German>
-		<Italian>Communist brothers: %d1 / %d2</Italian>
-		<Spanish>Communist brothers: %d1 / %d2</Spanish>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_CENTRAL_PLANNING</Tag>
+		<English>Friendly civilisations with Central Planning: %d1 / %d2</English>
+		<French>Friendly civilisations with Central Planning: %d1 / %d2</French>
+		<German>Friendly civilisations with Central Planning: %d1 / %d2</German>
+		<Italian>Friendly civilisations with Central Planning: %d1 / %d2</Italian>
+		<Spanish>Friendly civilisations with Central Planning: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
