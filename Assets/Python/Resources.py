@@ -214,8 +214,8 @@ class Resources:
 				gc.getMap().plot(x, y).setFeatureType(-1, 0)
 				
 		elif iGameTurn == getTurnForYear(1650) + 1:
-			if gc.getMap().plot(lAustraliaCapes[0], lAustraliaCapes[1]).getFeatureType() == iCape:
-				for x, y in lAustraliaCapes:
+			for x, y in lAustraliaCapes:
+				if gc.getMap().plot(x, y).getFeatureType() == iCape:
 					gc.getMap().plot(x, y).setFeatureType(-1, 0)
 
 		elif iGameTurn == getTurnForYear(1700):
