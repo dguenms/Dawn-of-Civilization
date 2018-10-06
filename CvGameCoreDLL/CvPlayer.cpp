@@ -19881,7 +19881,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		{
 			for (int i = 0; i < MAX_CIV_PLAYERS; i++)
 			{
-				if (GET_PLAYER((PlayerTypes)i).canTrigger(eEventTrigger, getID(), eReligion))
+				if (!GET_PLAYER((PlayerTypes)i).isMinorCiv() && GET_PLAYER((PlayerTypes)i).canTrigger(eEventTrigger, getID(), eReligion))
 				{
 					if (kTrigger.isPickOtherPlayerCity())
 					{
