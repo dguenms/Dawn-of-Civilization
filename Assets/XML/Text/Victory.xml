@@ -2603,11 +2603,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3</Tag>
-		<English>Have friendly relations with 5 communist civilisations by 1950 AD</English>
-		<French>Avoir des relations enthousiastes avec 5 civilisations communistes avant 1950 ap. J.-C.</French>
-		<German>Haben Sie bis zum Jahr 1950 n. Chr. freundliche Beziehungen zu 5 kommunistischen Zivilisationen</German>
-		<Italian>Have friendly relations with 5 communist civilisations by 1950 AD</Italian>
-		<Spanish>Have friendly relations with 5 communist civilisations by 1950 AD</Spanish>
+		<English>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</English>
+		<French>&#202;tre communiste et avoir des relations enthousiastes avec cinq civilisations communistes avant 1950 ap. J.-C.</French>
+		<German>Haben Sie bis zum Jahr 1950 n. Chr. als kommunistische Zivilisation freundliche Beziehungen zu f&#252;nf anderen kommunistischen Zivilisationen</German>
+		<Italian>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</Italian>
+		<Spanish>As a communist civilisation, have friendly relations with five other communist civilisations by 1950 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
@@ -3714,12 +3714,12 @@
 		<Spanish>Available colonial resources: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_COMMUNIST_BROTHERS</Tag>
-		<English>Communist brothers: %d1 / %d2</English>
-		<French>Fr&#232;res communistes : %d1 / %d2</French>
-		<German>Communist brothers: %d1 / %d2</German>
-		<Italian>Communist brothers: %d1 / %d2</Italian>
-		<Spanish>Communist brothers: %d1 / %d2</Spanish>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_CENTRAL_PLANNING</Tag>
+		<English>Friendly civilisations with Central Planning: %d1 / %d2</English>
+		<French>Civilisations enthousiastes ayant adopt&#233; l'&#233;conomie planifi&#233;e : %d1 / %d2</French>
+		<German>Friendly civilisations with Central Planning: %d1 / %d2</German>
+		<Italian>Friendly civilisations with Central Planning: %d1 / %d2</Italian>
+		<Spanish>Friendly civilisations with Central Planning: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
@@ -4195,11 +4195,12 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_INTERMEDIATE</Tag>
-		<English>We have accomplished 2 Historical Goals out of 3. A Triumphal Arch has been built in our capital</English>
-		<French>Nous avons accompli 2 objectifs historiques sur 3. Un Arc de triomphe a &#233;t&#233; construit dans notre capitale</French>
-		<German>Wir haben 2 von 3 Historischen Siegbedingungen erf&#252;llt. In unserer Hauptstadt wurde ein Triumphbogen erbaut.</German>
-		<Italian>Abbiamo raggiunto 2 obiettivi storici su 3. &#200; stato costruito un arco di trionfo nella nostra capitale</Italian>
-		<Spanish>Hemos conseguido 2 de los 3 objetivos hist&#243;ricos. Se ha erigido un Arco de Triunfo en nuestra capital</Spanish>
+		<English>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</English>
+		<French>Nous avons accompli notre deuxi&#232;me objectif historique. Un &#226;ge d'or d&#233;bute pour notre civilisation !</French>
+		<German>Wir haben unsere zweite historische Siegbedingung erf&#252;llt. Ein Goldenes Zeitalter f&#252;r unsere Zivilisation hat begonnen!</German>
+		<Italian>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Italian>
+		<Spanish>We have accomplished our second Historical Goal. A Golden Age has begun for our civilization!</Spanish>
+>>>>>>> upstream/develop
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ITALY</Tag>

@@ -7001,12 +7001,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		changeCorporationCommerceModifier(iChange * 50);
 	}
 
-	// Burj Khalifa
-	else if (eBuilding == BURJ_KHALIFA)
-	{
-		updateYield();
-	}
-
 	// Old Synagogue
 	else if (eBuilding == OLD_SYNAGOGUE)
 	{
@@ -13568,7 +13562,7 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 	}
 
 	// Leoreth: Forbidden Palace effect
-	if (getBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)FORBIDDEN_PALACE).getBuildingClassType()) > 0)
+	if (isHasBuildingEffect((BuildingTypes)FORBIDDEN_PALACE))
 	{
 		iTotalUpkeep *= 2;
 		iTotalUpkeep /= 3;

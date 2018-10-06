@@ -14,7 +14,11 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>Cape</Italian>
+		<Italian>			
+			<Text>Capo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
 		<Spanish>Cape</Spanish>
 	</TEXT>
 	<TEXT>
@@ -26,7 +30,11 @@
 			<Plural>1</Plural>
 		</French>
 		<German>Inseln</German>
-		<Italian>Islands</Italian>
+		<Italian> 
+			<Text>Isole</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
 		<Spanish>Islands</Spanish>
 	</TEXT>
 	<TEXT>
@@ -38,7 +46,11 @@
 			<Plural>0</Plural>
 		</French>
 		<German>Regenwald</German>
-		<Italian>Rainforest</Italian>
+		<Italian>
+			<Text>Foresta pluviale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
 		<Spanish>Rainforest</Spanish>
 	</TEXT>
 	<TEXT>
@@ -70,7 +82,7 @@
 		<English>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</English>
 		<French>[NEWLINE][ICON_BULLET]Les am&#233;nagements ne peuvent &#234;tre construits ici</French>
 		<German>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</German>
-		<Italian>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</Italian>
+		<Italian>[NEWLINE][ICON_BULLET]Non si possono costruire miglioramenti su questo terreno</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</Spanish>
 	</TEXT>
 </Civ4GameText>

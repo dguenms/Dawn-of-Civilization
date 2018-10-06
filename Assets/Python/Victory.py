@@ -231,7 +231,7 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
+		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
@@ -1022,7 +1022,7 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: have friendly relations with five communist civilizations by 1950 AD
 		if isPossible(iRussia, 2):
-			if countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning)) >= 5:
+			if pPlayer.getCivics(iCivicsEconomy) == iCentralPlanning and countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning)) >= 5:
 				win(iRussia, 2)
 				
 		if iGameTurn == getTurnForYear(1950):
@@ -1497,7 +1497,7 @@ def checkHistoricalVictory(iPlayer):
 		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
-			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeTurns())
+			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeLength())
 			
 			if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
@@ -3534,7 +3534,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSrivijaya = isControlledOrVassalized(iTamils, utils.getPlotList(tSrivijayaTL, tSrivijayaBR))
 			aHelp.append(getIcon(bDeccan) + localText.getText("TXT_KEY_VICTORY_DECCAN", ()) + ' ' + getIcon(bSrivijaya) + localText.getText("TXT_KEY_VICTORY_SRIVIJAYA", ()))
 		elif iGoal == 2:
-			iTradeGold = data.fTamilTradeGold / 100
+			iTradeGold = data.iTamilTradeGold / 100
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iEthiopia:
@@ -3790,8 +3790,9 @@ def getUHVHelp(iPlayer, iGoal):
 			bApolloProgram = teamRussia.getProjectCount(iApolloProgram) > 0
 			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))
 		elif iGoal == 2:
+			bCommunism = pRussia.getCivics(iCivicsEconomy) == iCentralPlanning
 			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))
-			aHelp.append(getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_COMMUNIST_BROTHERS", (iCount, 5)))
+			aHelp.append(getIcon(bCommunism) + gc.getCivicInfo(iCentralPlanning).getText() + ' ' + getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_WITH_CENTRAL_PLANNING", (iCount, 5)))
 
 	elif iPlayer == iMali:
 		if iGoal == 1:
