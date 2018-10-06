@@ -2200,7 +2200,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BURJ_KHALIFA_HELP</Tag>
 		<English>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</English>
-		<French>[ICON_BULLET]Nécessite un désert dans les environs de la ville[NEWLINE][ICON_BULLET]Les cases de désert exploitées par la ville fournissent un minimum de 2[ICON_FOOD] et 2[ICON_COMMERCE]</French>
+		<French>[ICON_BULLET]N&#233;cessite un d&#233;sert dans les environs de la ville[NEWLINE][ICON_BULLET]Les cases de d&#233;sert exploit&#233;es par la ville fournissent un minimum de 2[ICON_FOOD] et 2[ICON_COMMERCE]</French>
 		<German>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</German>
 		<Italian>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</Italian>
 		<Spanish>[ICON_BULLET]Requires Desert in city radius[NEWLINE][ICON_BULLET]Desert tiles worked by the city yield at least 2[ICON_FOOD] and 2[ICON_COMMERCE]</Spanish>
@@ -3068,7 +3068,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLD_SYNAGOGUE_HELP</Tag>
 		<English>[ICON_BULLET]+2[ICON_GOLD] from Jewish religious buildings</English>
-		<French>[ICON_BULLET]+2 [ICON_GOLD] par bâtiment religieux juif</French>
+		<French>[ICON_BULLET]+2 [ICON_GOLD] par b&#226;timent religieux juif</French>
 		<German>[ICON_BULLET]+2[ICON_GOLD] durch j&#252;dische religi&#246;se Geb&#228;ude</German>
 		<Italian>[ICON_BULLET]+2[ICON_GOLD] from Jewish religious buildings</Italian>
 		<Spanish>[ICON_BULLET]+2[ICON_GOLD] from Jewish religious buildings</Spanish>
@@ -3216,7 +3216,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CRISTO_REDENTOR_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT] allows its builder to switch [COLOR_HIGHLIGHT_TEXT]Religions[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Civics[COLOR_REVERT] instantly once per turn, with no anarchy. It also increases the chances of a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT] appearing.</English>
-		<French>Le [COLOR_BUILDING_TEXT]Christ rédempteur[COLOR_REVERT] permet à son constructeur de changer de [COLOR_HIGHLIGHT_TEXT]religion[COLOR_REVERT] ou de [COLOR_HIGHLIGHT_TEXT]doctrine[COLOR_REVERT] instantanément, une fois par tour et sans période d'anarchie. Il augmente aussi les chances qu'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT] apparaisse.</French>
+		<French>Le [COLOR_BUILDING_TEXT]Christ r&#233;dempteur[COLOR_REVERT] permet &#224; son constructeur de changer de [COLOR_HIGHLIGHT_TEXT]religion[COLOR_REVERT] ou de [COLOR_HIGHLIGHT_TEXT]doctrine[COLOR_REVERT] instantan&#233;ment, une fois par tour et sans p&#233;riode d'anarchie. Il augmente aussi les chances qu'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT] apparaisse.</French>
 		<German>Die [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT]-Statue erm&#246;glicht ihrem Erbauer, einmal pro Runde augenblicklich die [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] oder [COLOR_HIGHLIGHT_TEXT]Staatsform[COLOR_REVERT] zu wechseln, ohne dadurch Anarchie zu verursachen. Sie erh&#246;ht auch die Wahrscheinlichkeit, dass ein [COLOR_UNIT_TEXT]Gro&#223;er Prophet[COLOR_REVERT] auftaucht.</German>
 		<Italian>Il [COLOR_BUILDING_TEXT]Cristo Redentore[COLOR_REVERT] permette a chi lo costruisce di cambiare [COLOR_HIGHLIGHT_TEXT]Religione[COLOR_REVERT] o [COLOR_HIGHLIGHT_TEXT]Forma di governo[COLOR_REVERT] istantaneamente una volta per turno, senza generare anarchia. Aumenta inoltre le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Sacerdote[COLOR_REVERT].</Italian>
 		<Spanish>El [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT] permite a su constructor cambiar instant&#225;neamente de [COLOR_HIGHLIGHT_TEXT]religi&#243;n[COLOR_REVERT] o de [COLOR_HIGHLIGHT_TEXT]principios[COLOR_REVERT] una vez por turno, sin sufrir los efectos de la anarqu&#237;a. Tambi&#233;n aumenta las posibilidades de que aparezca un [COLOR_UNIT_TEXT]Sumo sacerdote[COLOR_REVERT].</Spanish>
