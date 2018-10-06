@@ -220,7 +220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
 		<English>[ICON_BULLET]%D1_Change Free Specialist per Core City</English>
-		<French>[ICON_BULLET]%D1_Change Un sp&#233;cialiste gratuit par ville centrale</French>
+		<French>[ICON_BULLET]%D1_Change sp&#233;cialiste gratuit par ville dans le c&#156;ur historique</French>
 		<German>[ICON_BULLET]%D1_Change Free Specialist per Core City</German>
 		<Italian>[ICON_BULLET]%D1_Change Free Specialist per Core City</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change Free Specialist per Core City</Spanish>
@@ -533,7 +533,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UPGRADES</Tag>
 		<English>Unit Upgrades</English>
-		<French>Am&#233;liorations d'unit&#233;</French>
+		<French>Am&#233;liorations des unit&#233;</French>
 		<German>Einheitenbef&#246;rderungen</German>
 		<Italian>Aggiornamento delle unit&#224;</Italian>
 		<Spanish>Modernizaci&#243;n de unidades</Spanish>

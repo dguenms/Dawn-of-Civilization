@@ -484,7 +484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_20</Tag>
 		<English>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</English>
-		<French>Quand un objectif de VHU n&#233;cessite de contr&#244;ler une civilisation, il faut poss&#233;der plus de villes dans leur c&#339;ur qu'eux.</French>
+		<French>Quand un objectif de VHU n&#233;cessite de contr&#244;ler une civilisation, il faut poss&#233;der plus de villes dans leur c&#156;ur historique qu'eux.</French>
 		<German>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</German>
 		<Italian>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</Italian>
 		<Spanish>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</Spanish>
@@ -596,7 +596,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_34</Tag>
 		<English>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</English>
-		<French>Lorsqu'une nouvelle civilisation appara&#238;t, la r&#233;gion qui lui revient automatiquement n'est pas forc&#233;ment identique &#224; son c&#339;ur. Plusieurs civilisations re&#231;oivent des r&#233;gions beaucoup plus &#233;tendues.</French>
+		<French>Lorsqu'une nouvelle civilisation appara&#238;t, la r&#233;gion qui lui revient automatiquement n'est pas forc&#233;ment identique &#224; son c&#156;ur historique. Plusieurs civilisations re&#231;oivent des r&#233;gions beaucoup plus &#233;tendues.</French>
 		<German>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</German>
 		<Italian>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</Italian>
 		<Spanish>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</Spanish>
@@ -604,7 +604,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_35</Tag>
 		<English>The core of several civilisations expands on certain conditions, such as entering a new era.</English>
-		<French>Le c&#339;ur de plusieurs civilisations prend de l'expansion lorsque certaines conditions sont r&#233;unies, par exemple l'entr&#233;e dans une nouvelle &#232;re.</French>
+		<French>Le c&#156;ur historique de plusieurs civilisations prend de l'expansion lorsque certaines conditions sont r&#233;unies, par exemple l'entr&#233;e dans une nouvelle &#232;re.</French>
 		<German>The core of several civilisations expands on certain conditions, such as entering a new era.</German>
 		<Italian>The core of several civilisations expands on certain conditions, such as entering a new era.</Italian>
 		<Spanish>The core of several civilisations expands on certain conditions, such as entering a new era.</Spanish>
@@ -924,7 +924,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_75</Tag>
 		<English>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</English>
-		<French>Pour fonder une religion, vous devez non seulement d&#233;couvrir la technologie appropri&#233;e, mais aussi contr&#244;ler une ville dans le centre historique de la religion.</French>
+		<French>Pour fonder une religion, vous devez non seulement d&#233;couvrir la technologie appropri&#233;e, mais aussi contr&#244;ler une ville dans le c&#156;ur historique de la religion.</French>
 		<German>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</German>
 		<Italian>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</Italian>
 		<Spanish>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</Spanish>

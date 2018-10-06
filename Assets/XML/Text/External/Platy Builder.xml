@@ -865,7 +865,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_UPGRADES</Tag>
 		<English>Unit Upgrades</English>
-		<French>Am&#233;liorations des Unit&#233;s</French>
+		<French>Am&#233;liorations des unit&#233;s</French>
 		<German>Modernisierungen</German>
 		<Italian>Avanzamenti</Italian>
 		<Spanish>Unit Upgrades</Spanish>
@@ -873,7 +873,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION_TREE</Tag>
 		<English>Promotion Tree</English>
-		<French>Arborescence des Promotions</French>
+		<French>Arborescence des promotions</French>
 		<German>Bef&#246;rderungsbaum</German>
 		<Italian>Albero Promoz.</Italian>
 		<Spanish>Promotion Tree</Spanish>
@@ -881,7 +881,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS</Tag>
 		<English>National Wonders</English>
-		<French>Merveilles Nationales</French>
+		<French>Merveilles nationales</French>
 		<German>Nationalwunder</German>
 		<Italian>Merav. Naz.</Italian>
 		<Spanish>National Wonders</Spanish>
