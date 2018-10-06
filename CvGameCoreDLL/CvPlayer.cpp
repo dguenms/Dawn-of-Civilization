@@ -6092,24 +6092,6 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
-	//Rhye - start
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-	{
-		if ((eBuilding >= GREAT_SPHINX && eBuilding <= GREAT_MAUSOLEUM))
-		{
-			return false;
-		}
-	}
-
-	if (getScenario() == SCENARIO_1700AD)
-	{
-		if (eBuilding == GREAT_WALL || eBuilding == MACHU_PICCHU || eBuilding == KHAJURAHO)
-		{
-			return false;
-		}
-	}
-	//Rhye - end
-
 	if (GC.getGameINLINE().isBuildingClassMaxedOut(eBuildingClass))
 	{
 		return false;

@@ -36018,7 +36018,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=36, (Turkey)
-		CityName=Baghdad
+		CityName=Bagdat
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -36030,6 +36030,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		BuildingType=BUILDING_HOUSE_OF_WISDOM
 		BuildingType=BUILDING_SPIRAL_MINARET
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
@@ -42102,6 +42103,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_IRON_PILLAR
+		BuildingType=BUILDING_KHAJURAHO
 		BuildingType=BUILDING_RED_FORT
 		BuildingType=BUILDING_TAJ_MAHAL
 		ReligionType=RELIGION_ISLAM
@@ -43937,6 +43939,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_HINDU_SHRINE
 		BuildingType=BUILDING_BUDDHIST_SHRINE
+		BuildingType=BUILDING_NALANDA
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		HolyCityReligionType=RELIGION_HINDUISM
@@ -48509,6 +48512,7 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_BOROBUDUR
+		BuildingType=BUILDING_PRAMBANAN
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM

@@ -315,6 +315,8 @@ public:
 
 	void autosave();
 
+	void incrementBuildingClassCreatedCount(int iBuildingClass);
+
 protected:
 	CvGame* m_pGame;
 };

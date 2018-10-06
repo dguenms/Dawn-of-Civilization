@@ -530,6 +530,9 @@ class RiseAndFall:
 			pShenyang.setHasRealBuilding(iConfucianTemple, True)
 			
 	def adjust600ADWonders(self):
+		lExpiredWonders = [iOracle, iIshtarGate, iTerracottaArmy, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya]
+		self.expireWonders(lExpiredWonders)
+		
 		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
 		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
 		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
@@ -562,6 +565,9 @@ class RiseAndFall:
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 		
 	def adjust1700ADWonders(self):
+		lExpiredWonders = [iOracle, iIshtarGate, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya, iGreatLighthouse, iMoaiStatues, iColosseum, iGreatLibrary, iGondeshapur, iSilverTreeFountain, iAlamut]
+		self.expireWonders(lExpiredWonders)
+	
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
 		pMilan.setBuildingOriginalOwner(iSantaMariaDelFiore, iItaly)
 		pMilan.setBuildingOriginalOwner(iSanMarcoBasilica, iItaly)
@@ -616,6 +622,10 @@ class RiseAndFall:
 		
 		pMecca = gc.getMap().plot(75, 33).getPlotCity()
 		pMecca.setBuildingOriginalOwner(iIslamicShrine, iArabia)
+		
+	def expireWonders(self, lWonders):
+		for iWonder in lWonders:
+			gc.getGame().incrementBuildingClassCreatedCount(gc.getBuildingInfo(iWonder).getBuildingClassType())
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
