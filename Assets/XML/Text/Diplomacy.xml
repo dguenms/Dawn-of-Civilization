@@ -489,4 +489,36 @@
 		<Italian>Dammi ci? che chiedo o proverai l'ira della nostra &quot;terribile e rapida spada.&quot; </Italian>
 		<Spanish>Dadnos esto o sentir?is la c?lera de nuestra &quot;terrible y veloz espada&quot;. </Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BUMIN_1</Tag>
+		<English>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</English>
+		<French>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</French>
+		<German>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</German>
+		<Italian>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Italian>
+		<Spanish>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALP_ARSLAN_1</Tag>
+		<English>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</English>
+		<French>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</French>
+		<German>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</German>
+		<Italian>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</Italian>
+		<Spanish>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TAMERLANE_1</Tag>
+		<English>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</English>
+		<French>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</French>
+		<German>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</German>
+		<Italian>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Italian>
+		<Spanish>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>
