@@ -23,12 +23,68 @@ import CvEspionageAdvisor
 ##############
 
 gc = CyGlobalContext()
+localText = CyTranslator()
 
 iCheatersPeriod = 12
 iBetrayalPeriod = 8
 iBetrayalThreshold = 80
 iRebellionDelay = 15
 iEscapePeriod = 30
+
+### Screen popups ###
+# (Slowly migrate event handlers here when rewriting to use BUTTONPOPUP_PYTHON and more idiomatic code)
+
+def startNewCivSwitchEvent(iPlayer):
+	popup = CyPopupInfo()
+	popup.setText(localText.getText("TXT_KEY_INTERFACE_NEW_CIV_SWITCH", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),)))
+	popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+	popup.setOnClickedPythonCallback("applyNewCivSwitchEvent")
+	
+	popup.setData1(iPlayer)
+	popup.addPythonButton(localText.getText("TXT_KEY_POPUP_NO", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+	popup.addPythonButton(localText.getText("TXT_KEY_POPUP_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+	
+	popup.addPopup(utils.getHumanID())
+	
+def applyNewCivSwitchEvent(argsList):
+	iButton = argsList[0]
+	iPlayer = argsList[1]
+	
+	if iButton == 1:
+		handleNewCiv(iPlayer)
+		
+### Utility methods ###
+
+def handleNewCiv(iPlayer):
+	iPreviousPlayer = utils.getHumanID()
+	iOldHandicap = gc.getActivePlayer().getHandicapType()
+	
+	pPlayer = gc.getPlayer(iPlayer)
+	
+	gc.getActivePlayer().setHandicapType(pPlayer.getHandicapType())
+	gc.getGame().setActivePlayer(iPlayer, False)
+	pPlayer.setHandicapType(iOldHandicap)
+	
+	for iMaster in range(iNumPlayers):
+		if (gc.getTeam(pPlayer.getTeam()).isVassal(iMaster)):
+			gc.getTeam(pPlayer.getTeam()).setVassal(iMaster, False, False)
+	
+	data.bAlreadySwitched = True
+	gc.getPlayer(iPlayer).setPlayable(True)
+	
+	data.resetHumanStability()
+
+	for city in utils.getCityList(iPlayer):
+		city.setInfoDirty(True)
+		city.setLayoutDirty(True)
+					
+	for i in range(3):
+		data.players[iPlayer].lGoals[i] = -1
+					
+	if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
+		vic.loseAll(iPreviousPlayer)
+		
+	CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
 
 class RiseAndFall:
 
@@ -45,10 +101,6 @@ class RiseAndFall:
 		    popup.addButton( i )
 		popup.launch(False)
 
-	def newCivPopup(self, iCiv):
-		self.showPopup(7614, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-		data.addNewCiv(iCiv)
-
 	def eventApply7614(self, popupReturn):
 		iNewCiv = data.getNewCiv()
 		if popupReturn.getButtonClicked() == 0: # 1st button
@@ -61,32 +113,6 @@ class RiseAndFall:
 	def eventApply7628(self, popupReturn):
 		if popupReturn.getButtonClicked() == 0:
 			self.handleNewCiv(data.iRespawnCiv)
-		
-	def handleNewCiv(self, iCiv):
-		iPreviousCiv = utils.getHumanID()
-		iOldHandicap = gc.getActivePlayer().getHandicapType()
-		gc.getActivePlayer().setHandicapType(gc.getPlayer(iCiv).getHandicapType())
-		gc.getGame().setActivePlayer(iCiv, False)
-		gc.getPlayer(iCiv).setHandicapType(iOldHandicap)
-		for iMaster in range(iNumPlayers):
-			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
-				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
-		data.bAlreadySwitched = True
-		gc.getPlayer(iCiv).setPlayable(True)
-		
-		data.resetHumanStability()
-
-		for city in utils.getCityList(iCiv):
-			city.setInfoDirty(True)
-			city.setLayoutDirty(True)
-						
-		for i in range(3):
-			data.players[iCiv].lGoals[i] = -1
-						
-		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
-			vic.loseAll(iPreviousCiv)
-			
-		CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
 			
 	def scheduleFlipPopup(self, iNewCiv, lPlots):
 		data.lTempEvents.append((iNewCiv, lPlots))
@@ -1301,7 +1327,7 @@ class RiseAndFall:
 			self.setStateReligion(iCiv)
 			
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
-			self.newCivPopup(iCiv)
+			startNewCivSwitchEvent(iCiv)
 
 	def moveOutInvaders(self, tTL, tBR):
 		if pMongolia.isAlive():

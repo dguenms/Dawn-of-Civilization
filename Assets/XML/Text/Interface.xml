@@ -1467,28 +1467,20 @@
 		<Spanish>&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_NEWCIV_MESSAGE1</Tag>
-		<English>Do you wish to take permanent control of the </English>
-		<French>Voulez-vous prendre le contr&#244;le permanent de la</French>
-		<German>Wollt Ihr die permanente Kontrolle &#252;ber </German>
-		<Italian>Vuoi assumere il controllo permanente di </Italian>
-		<Spanish>&#191;Deseas tener el control permanente sobre </Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_NEWCIV_MESSAGE2</Tag>
-		<English> empire?</English>
-		<French> ?</French>
-		<German> Reich &#252;bernehmen?</German>
-		<Italian>?</Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_NEWCIV_TITLE</Tag>
 		<English>A new civilization is being born</English>
 		<French>Naissance d'une nouvelle civilisation</French>
 		<German>Eine neue Zivilisation entsteht</German>
 		<Italian>Nasce una nuova civilt&#224;</Italian>
 		<Spanish>Ha nacido una nueva civilizaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_NEW_CIV_SWITCH</Tag>
+		<English>[H1]A new civilization is being born[\H1][NEWLINE]Do you wish to take permanent control of the %s1 civilization?</English>
+		<French>[H1]Naissance d'une nouvelle civilisation[\H1][NEWLINE]Voulez-vous prendre le contr&#244;le permanent de la civilisation %s1:2</French>
+		<German>[H1]Eine neue Zivilisation entsteht[\H1][NEWLINE]Wollt Ihr die permanente Kontrolle &#252;ber das %s1:3 Volk &#252;bernehmen?</German>
+		<Italian>[H1]Nasce una nuova civilt&#224;[\H1][NEWLINE]Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
+		<Spanish>[H1]Ha nacido una nueva civilizaci&#243;n[\H1][NEWLINE]&#191;Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEWS_EVENT_FAMINE_2</Tag>
