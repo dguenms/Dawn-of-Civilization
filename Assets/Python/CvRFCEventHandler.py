@@ -612,11 +612,6 @@ class CvRFCEventHandler:
 				if plot.getOwner() == iOwner and not plot.isWater():
 					plot.setWithinGreatWall(True)
 					
-		# Leoreth: Atomium
-		if iBuildingType == iAtomium:
-			data.tAtomiumPlot = (city.getX(), city.getY())
-			city.changeBuildingCommerceChange(gc.getBuildingInfo(iAtomium).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, sd.iNumNuclearWeapons)
-					
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
 		

@@ -1773,9 +1773,10 @@ class CvInfoScreen:
 					+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
 				lCities.append((city, iValue))
 		lCities.sort(key=itemgetter(1), reverse=True)
-		for i in range(5):
-			self.pCityPointers[i] = lCities[i][0]
-			self.iCityValues[i] = lCities[i][1]
+		lCities = lCities[:5]
+		for i, city in enumerate(lCities):
+			self.pCityPointers[i] = city[0]
+			self.iCityValues[i] = city[1]
 
 	def determineCityData(self):
 
