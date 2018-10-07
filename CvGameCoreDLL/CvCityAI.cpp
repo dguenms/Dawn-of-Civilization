@@ -10178,7 +10178,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 			return 0;
 		}
 	}
-	else if (eBuilding == MACHU_PICCHU)
+	else if (eBuilding == MACHU_PICCHU || eBuilding == MOLE_ANTONELLIANA)
 	{
 		int iPeakCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
