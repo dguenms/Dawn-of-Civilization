@@ -311,10 +311,6 @@ class RiseAndFall:
 		self.updateExtraOptions()
 		
 	def updateExtraOptions(self):
-		# Human player can't collapse
-		data.bNoHumanStability = (gc.getDefineINT("NO_HUMAN_STABILITY") != 0)
-		# No stability checks at all
-		data.bNoAIStability = (gc.getDefineINT("NO_STABILITY") != 0)
 		# Human player can switch infinite times
 		data.bUnlimitedSwitching = (gc.getDefineINT("UNLIMITED_SWITCHING") != 0)
 		# No congresses

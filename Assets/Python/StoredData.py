@@ -259,8 +259,6 @@ class GameData:
 		self.iHumanRazePenalty = 0
 		
 		self.bCrisisImminent = False
-		self.bNoHumanStability = False
-		self.bNoAIStability = False
 		
 		self.dSecedingCities = {}
 		
