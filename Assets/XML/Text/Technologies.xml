@@ -634,8 +634,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOLOGY_QUOTE</Tag>
-		<English>"It is not the strongest of the species that survive, but the one most responsive to change."[PARAGRAPH:2]- Charles Darwin</English>
-		<French>"Ce n'est pas l'esp&#232;ce la plus puissante qui survit mais celle qui s'adapte le mieux au changement."[PARAGRAPH:2]- Charles Darwin</French>
+		<English>"From so simple a beginning, endless forms most beautiful and most wonderful have been, and are being, evolved."[PARAGRAPH:2]- Charles Darwin, On the Origin of Species</English>
+		<French>"Une quantit&#233; infinie de belles et admirables formes, sorties d’un commencement si simple, n’ont pas cess&#233; de se d&#233;velopper et se d&#233;veloppent encore."[PARAGRAPH:2]- Charles Darwin, L'Origine des esp&#232;ces</French>
 		<German>"Nicht die st&#228;rksten Spezies werden &#252;berleben, sondern jene, die sich Ver&#228;nderungen am besten anpassen k&#246;nnen."[PARAGRAPH:2]- Charles Darwin</German>
 		<Italian>"Non sopravvive la specie pi&#249; forte, ma quella pi&#249; adatta al cambiamento."[PARAGRAPH:2]- Charles Darwin</Italian>
 		<Spanish>"No sobrevive la especie m&#225;s fuerte, sino la m&#225;s adaptable al cambio."[PARAGRAPH:2]- Charles Darwin</Spanish>
@@ -1575,7 +1575,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINEERING_QUOTE</Tag>
 		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Terre des Hommes</English>
-		<French>"La perfection est atteinte non pas parce qu'il n'y a plus rien &#224; ajouter, mais lorsqu'il n'y a plus rien &#224; retirer."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</French>
+		<French>"Il semble que la perfection soit atteinte non quand il n'y a plus rien &#224; ajouter, mais quand il n'y a plus rien &#224; retrancher."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Terre des Hommes</French>
 		<German>"Perfektion ist nicht dann erreicht, wenn es nichts mehr hinzuzuf&#252;gen gibt, sondern wenn man nichts mehr weglassen kann."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</German>
 		<Italian>"Un progettista sa di aver raggiunto la perfezione non quando non c'&#232; pi&#249; niente da aggiungere, ma quando non c'&#232; pi&#249; nulla da eliminare."[PARAGRAPH:2]- Antoine de Saint-Exupry</Italian>
 		<Spanish>"Un dise&#241;ador sabe que ha alcanzado la perfecci&#243;n no cuando ya no tiene nada m&#225;s que a&#241;adir, sino cuando no le queda nada m&#225;s que quitar."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</Spanish>
@@ -2017,7 +2017,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GENERALSHIP_QUOTE</Tag>
 		<English>"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win."[PARAGRAPH:2]- Sun Tzu, The Art of War</English>
-		<French>"Le vainqueur triomphe avant m&#234;me de partir &#224; la guerre, le vaincu part &#224; la guerre puis r&#234;ve de triomphe."[PARAGRAPH:2]- Sun-Tzu, L'Art de la guerre</French>
+		<French>"Le vainqueur triomphe avant m&#234;me de partir &#224; la guerre, le vaincu part &#224; la guerre puis r&#234;ve de triomphe."[PARAGRAPH:2]- Sun Tzu, L'Art de la guerre</French>
 		<German>"Der General, der eine Schlacht gewinnt, stellt vor dem Kampf viele Berechnungen an. Der General, der verliert, stellt vorher kaum Berechnungen an."[PARAGRAPH:2]- Sun-Tzu</German>
 		<Italian>"I guerrieri vittoriosi prima vincono e poi vanno in guerra; quelli sconfitti, prima vanno in guerra e poi cercano di vincere."[PARAGRAPH:2]- Sun-Tzu</Italian>
 		<Spanish>"Los guerreros vencedores ganan primero y luego van a la guerra, mientras que los perdedores van a la guerra primero y luego pretenden ganar."[PARAGRAPH:2]- Sun Tzu</Spanish>
@@ -2192,7 +2192,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GUILDS_QUOTE</Tag>
 		<English>"People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public."[PARAGRAPH:2]- Adam Smith, The Wealth of Nations</English>
-		<French>"Ceux qui partagent le m&#234;me m&#233;tier se r&#233;unissent rarement, m&#234;me pour se divertir, mais leur conversation se fait in&#233;vitablement au d&#233;triment du public."[PARAGRAPH:2]- Adam Smith</French>
+		<French>"Il est rare que des gens du m&#234;me m&#233;tier se trouvent r&#233;unis, f&#251;t-ce pour quelque partie de plaisir ou pour se distraire, sans que la conversation finisse par quelque conspiration contre le public."[PARAGRAPH:2]- Adam Smith, La Richesse des nations</French>
 		<German>"Gesch&#228;ftsleute des gleichen Gewerbes kommen selten, selbst zu Festen und zur Zerstreuung, zusammen, ohne dass das Gespr&#228;ch in einer Verschw&#246;rung gegen die &#214;ffentlichkeit endet."[PARAGRAPH:2]- Adam Smith</German>
 		<Italian>"&#200; raro che quelli che fanno lo stesso lavoro si riuniscano, nemmeno per divertirsi o fare baldoria, ma la conversazione termina sempre con una cospirazione ai danni della clientela."[PARAGRAPH:2]- Adam Smith</Italian>
 		<Spanish>"Gente del mismo oficio rara vez se re&#250;ne, ni tan solo para alegrarse o divertirse, sin que la conversaci&#243;n termine en una conspiraci&#243;n contra el p&#250;blico."[PARAGRAPH:2]- Adam Smith</Spanish>
@@ -4739,7 +4739,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THEOLOGY_QUOTE</Tag>
 		<English>"Two cities have been formed by two loves: the earthly by the love of self; the heavenly by the love of God."[PARAGRAPH:2]- Augustine of Hippo, The City of God</English>
-		<French>"Deux amours ont fait deux cit&#233;s : l'amour de soi, la cit&#233; terrestre ; l'amour de Dieu, la cit&#233; c&#233;leste."[PARAGRAPH:2]- Augustin d'Hippone</French>
+		<French>"Deux amours ont fait deux cit&#233;s : l'amour de soi, la cit&#233; terrestre ; l'amour de Dieu, la cit&#233; c&#233;leste."[PARAGRAPH:2]- Augustin d'Hippone, La Cit&#233; de Dieu</French>
 		<German>"Es gibt zwei St&#228;dte auf der Welt. Die eine ist auf der Liebe zu sich selbst, die andere auf der Liebe zu Gott errichtet."[PARAGRAPH:2]- Augustinus</German>
 		<Italian>"Esistono due tipi di citt&#224;, fondate su due tipi d'amore: quello terreno per s&#233; stessi e quello celeste per di Dio."[PARAGRAPH:2]- Sant'Agostino</Italian>
 		<Spanish>"Dos amores han fundado dos ciudades: el amor a uno mismo, la terrenal; y el amor a Dios, la celestial."[PARAGRAPH:2]- San Agust&#237;n</Spanish>
@@ -4791,8 +4791,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TOURISM_QUOTE</Tag>
-		<English>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</English>
-		<French>"Le monde est un livre et ceux qui ne voyagent pas n'en lisent qu'une page."[PARAGRAPH:2]- Augustin d'Hippone</French>
+		<English>"The universe is a sort of book, whose first page one has read when one has seen only one's own country."[PARAGRAPH:2]- Louis-Charles Fougeret de Monbron, Le Cosmopolite</English>
+		<French>"L’Univers est une esp&#232;ce de livre, dont on n’a lu que la premi&#232;re page quand on n’a vu que son pays."[PARAGRAPH:2]- Louis-Charles Fougeret de Monbron, Le Cosmopolite</French>
 		<German>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</German>
 		<Italian>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</Italian>
 		<Spanish>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</Spanish>
@@ -5020,8 +5020,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_WRITING_QUOTE</Tag>
-		<English>"True glory consists in doing what deserves to be written; in writing what deserves to be read."[PARAGRAPH:2]- Pliny the Elder</English>
-		<French>"La gloire s'acquiert en accomplissant ce qui m&#233;rite d'&#234;tre &#233;crit et en &#233;crivant ce qui m&#233;rite d'&#234;tre lu."[PARAGRAPH:2]- Pline l'Ancien</French>
+		<English>"I deem those blessed to whom, by favour of the gods, it has been granted either to do what is worth writing of, or to write what is worth reading."[PARAGRAPH:2]- Pliny the Younger, Letter to Tacitus</English>
+		<French>"J’estime heureux les hommes auxquels les dieux ont accord&#233; le privil&#232;ge de faire des actions dignes d’&#234;tre &#233;crites ou d’&#233;crire des livres dignes d’&#234;tre lus."[PARAGRAPH:2]- Pline le Jeune, Lettre &#224; Tacite</French>
 		<German>"Gl&#252;cklich sind jene, die Taten vollbringen, die es wert sind, aufgezeichnet zu werden, oder Schriften verfassen, die es wert sind, gelesen zu werden."[PARAGRAPH:2]- Plinius der &#196;ltere</German>
 		<Italian>"La vera gloria consiste nel fare ci&#242; che merita di essere scritto e nello scrivere ci&#242; che merita di essere letto."[PARAGRAPH:2]- Plinio il Vecchio</Italian>
 		<Spanish>"La verdadera gloria consiste en hacer lo que merece escribirse y en escribir lo que merece leerse."[PARAGRAPH:2]- Plinio el Viejo</Spanish>
