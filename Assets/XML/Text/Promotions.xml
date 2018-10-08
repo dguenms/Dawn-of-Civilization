@@ -100,7 +100,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DESERT_ADAPTATION</Tag>
 		<English>Desert Adaptation</English>
-		<French>Desert Adaptation</French>
+		<French>
+			<Text>Adaptation au d&#233;sert</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Desert Adaptation</German>
 		<Italian>Desert Adaptation</Italian>
 		<Spanish>Desert Adaptation</Spanish>
@@ -108,7 +112,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SKIRMISH</Tag>
 		<English>Skirmish</English>
-		<French>Skirmish</French>
+		<French>
+			<Text>Escarmouche</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Skirmish</German>
 		<Italian>Skirmish</Italian>
 		<Spanish>Skirmish</Spanish>
@@ -116,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DISENGAGE1</Tag>
 		<English>Disengage I</English>
-		<French>Disengage I</French>
+		<French>
+			<Text>D&#233;sengagement I</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Disengage I</German>
 		<Italian>Disengage I</Italian>
 		<Spanish>Disengage I</Spanish>
@@ -124,7 +136,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DISENGAGE2</Tag>
 		<English>Disengage II</English>
-		<French>Disengage II</French>
+		<French>
+			<Text>D&#233;sengagement II</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Disengage II</German>
 		<Italian>Disengage II</Italian>
 		<Spanish>Disengage II</Spanish>
@@ -132,7 +148,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FLANKING3</Tag>
 		<English>Flanking III</English>
-		<French>Flanking III</French>
+		<French>
+			<Text>Contournement III</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Flanking III</German>
 		<Italian>Flanking III</Italian>
 		<Spanish>Flanking III</Spanish>

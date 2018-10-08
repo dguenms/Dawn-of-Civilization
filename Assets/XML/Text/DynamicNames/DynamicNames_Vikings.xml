@@ -280,7 +280,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORTH_SEA_EMPIRE</Tag>
 		<English>North Sea Empire</English>
-		<French>North Sea Empire</French>
+		<French>
+			<Text>Empire de la mer du Nord</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>North Sea Empire</German>
 		<Italian>North Sea Empire</Italian>
 		<Spanish>North Sea Empire</Spanish>

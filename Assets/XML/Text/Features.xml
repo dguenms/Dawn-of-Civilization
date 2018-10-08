@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_CAPE</Tag>
 		<English>Cape</English>
-		<French>Cape</French>
+		<French>
+			<Text>Cap</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Kap</Text>
 			<Gender>Male</Gender>
@@ -20,7 +24,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
 		<English>Islands</English>
-		<French>Islands</French>
+		<French>
+			<Text>&#206;les</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Inseln</German>
 		<Italian> 
 			<Text>Isole</Text>
@@ -32,7 +40,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_RAINFOREST</Tag>
 		<English>Rainforest</English>
-		<French>Rainforest</French>
+		<French>
+			<Text>For&#234;t tropicale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Regenwald</German>
 		<Italian>
 			<Text>Foresta pluviale</Text>
@@ -68,7 +80,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_NO_IMPROVEMENT</Tag>
 		<English>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</English>
-		<French>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</French>
+		<French>[NEWLINE][ICON_BULLET]Les am&#233;nagements ne peuvent &#234;tre construits ici</French>
 		<German>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</German>
 		<Italian>[NEWLINE][ICON_BULLET]Non si possono costruire miglioramenti su questo terreno</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</Spanish>
