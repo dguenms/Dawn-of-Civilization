@@ -635,11 +635,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_39</Tag>
-		<English>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</English>
-		<French>Les v&#233;rifications de stabilit&#233; peuvent augmenter ou diminuer votre niveau de stabilit&#233;. S'il diminue, cela pourrait causer une crise ou m&#234;me un effondrement de votre civilisation !</French>
-		<German>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</German>
-		<Italian>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</Italian>
-		<Spanish>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</Spanish>
+		<English>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</English>
+		<French>Attention &#224; votre niveau de stabilit&#233;. Selon votre situation, il peut augmenter ou diminuer lors d'&#233;v&#233;nements importants. Si votre civilisation est au bord de la chute et que votre stabilit&#233; ne s'am&#233;liore pas avant la prochaine v&#233;rification, vous vous effondrerez !</French>
+		<German>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</German>
+		<Italian>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</Italian>
+		<Spanish>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_40</Tag>

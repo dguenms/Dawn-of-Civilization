@@ -58,6 +58,8 @@ from RFCUtils import utils
 import Victory as vic
 import CityNameManager as cnm
 import Congresses as cong
+import RiseAndFall as rnf
+
 gc = CyGlobalContext()
 
 def getStabilityLevel(argsList):
@@ -1210,6 +1212,11 @@ def applyBriberyEvent(argsList):
 	
 def applyBriberyResultEvent(argsList):
 	data.currentCongress.applyBriberyResultEvent()
+	
+### Rise And Fall
+
+def applyNewCivSwitchEvent(argsList):
+	rnf.applyNewCivSwitchEvent(argsList)
 
 
 #######################################################################################
