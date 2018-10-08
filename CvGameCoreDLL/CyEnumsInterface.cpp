@@ -760,6 +760,10 @@ void CyEnumsPythonInterface()
 		.value("NO_ARTSTYLE", NO_ARTSTYLE)
 		;
 
+	python::enum_<UnitArtStyleTypes>("UnitArtStyleTypes")
+		.value("NO_UNIT_ARTSTYLE", NO_UNIT_ARTSTYLE)
+		;
+
 	python::enum_<CitySizeTypes>("CitySizeTypes")
 		.value("NO_CITYSIZE", NO_CITYSIZE)
 		.value("CITYSIZE_SMALL", CITYSIZE_SMALL)
