@@ -1245,7 +1245,7 @@ enum ArtStyleTypes				// Exposed to Python
 	ARTSTYLE_AFRICAN,
 };
 
-enum UnitArtStyleTypes
+enum UnitArtStyleTypes			// Exposed to Python
 {
 	NO_UNIT_ARTSTYLE = -1,
 };

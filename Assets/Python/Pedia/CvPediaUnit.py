@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 from RFCUtils import utils
 import CvUtil
+from Consts import *
 
 gc = CyGlobalContext()
 
@@ -71,7 +72,10 @@ class CvPediaUnit:
 	def interfaceScreen(self, iUnit):
 		self.iUnit = iUnit
 		screen = self.top.getScreen()
-		screen.addUnitGraphicGFC(self.top.getNextWidgetName(), self.iUnit, self.X_UNIT_ANIMATION, self.Y_UNIT_ANIMATION, self.W_UNIT_ANIMATION, self.H_UNIT_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_UNIT_ANIMATION, self.Z_ROTATION_UNIT_ANIMATION, self.SCALE_ANIMATION, True)
+		if iUnit == iSatellite:
+			self.spaceGraphic(iUnit)
+		else:
+			screen.addUnitGraphicGFC(self.top.getNextWidgetName(), self.iUnit, self.X_UNIT_ANIMATION, self.Y_UNIT_ANIMATION, self.W_UNIT_ANIMATION, self.H_UNIT_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_UNIT_ANIMATION, self.Z_ROTATION_UNIT_ANIMATION, self.SCALE_ANIMATION, True)
 
 		self.placeInfo()
 		self.placeRequires()
@@ -81,6 +85,15 @@ class CvPediaUnit:
 		self.placeUpgrades()
 		self.placeHistory()
 
+	def spaceGraphic(self, iUnit):
+		screen = self.top.getScreen()
+		szImage = self.top.getNextWidgetName()
+		screen.addModelGraphicGFC(szImage, "Art/Interface/Screens/Civilopedia/Space_Environment.nif", self.X_UNIT_ANIMATION, self.Y_UNIT_ANIMATION, self.W_UNIT_ANIMATION, self.H_UNIT_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_UNIT_ANIMATION,  self.Z_ROTATION_UNIT_ANIMATION, self.SCALE_ANIMATION)
+		
+		if iUnit == iSatellite: # the satellite has a special nif file because it is so high in the air
+			screen.addToModelGraphicGFC(szImage, "Art/Units/Satellite/satellite_pedia.nif")
+		else:
+			screen.addToModelGraphicGFC(szImage, gc.getUnitInfo(iUnit).getArtInfo(0, EraTypes.NO_ERA, UnitArtStyleTypes.NO_UNIT_ARTSTYLE).getNIF())
 
 
 	def placeInfo(self):
