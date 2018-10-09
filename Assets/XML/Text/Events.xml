@@ -283,11 +283,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BEST_DEFENSE_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], [COLOR_TECH_TEXT]Railroad[COLOR_REVERT], or [COLOR_TECH_TEXT]Economics[COLOR_REVERT] without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_BUILDING_TEXT]ch&#226;teaux[COLOR_REVERT] dans vos villes.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le la Grande Muraille.[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez le [COLOR_TECH_TEXT]fusil[COLOR_REVERT], les [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT] ou les [COLOR_TECH_TEXT]sciences &#233;conomiques[COLOR_REVERT] sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Schl&#246;sser[COLOR_REVERT] in Ihren St&#228;dten bauen.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Sie bei Erf&#252;llung der Quest die Gro&#223;e Mauer kontrollieren.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Technologie [COLOR_TECH_TEXT]Drall[COLOR_REVERT], [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT] oder [COLOR_TECH_TEXT]Wirtschaftswesen[COLOR_REVERT] entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 [COLOR_BUILDING_TEXT]Castelli[COLOR_REVERT] nelle tue citt&#224;.[PARAGRAPH:1]Se la tua civilt&#224; controlla la Grande Muraglia otterrai un'ulteriore ricompensa.[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se scoprirai [COLOR_TECH_TEXT]Rigatura delle canne[COLOR_REVERT], [COLOR_TECH_TEXT]Ferrovia[COLOR_REVERT] o [COLOR_TECH_TEXT]Economia[COLOR_REVERT] senza aver soddisfatto le condizioni.</Italian>
-		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, deb&#233;is construir %d1 [COLOR_BUILDING_TEXT]Castillos[COLOR_REVERT] en vuestras ciudades.[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n controla la Gran Muralla.[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si descubres el [COLOR_TECH_TEXT]Fusil[COLOR_REVERT], el [COLOR_TECH_TEXT]Ferrocarril[COLOR_REVERT] o la [COLOR_TECH_TEXT]Econom&#237;a[COLOR_REVERT] sin haber cumplido las condiciones.</Spanish>
+		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Urban Planning[COLOR_REVERT] without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Urban Planning[COLOR_REVERT] without having met the conditions.</French>
+		<German>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Urban Planning[COLOR_REVERT] without having met the conditions.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Urban Planning[COLOR_REVERT] without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] in your cities.[PARAGRAPH:1]An additional reward option will be available if your civilization controls the Great Wall.[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Urban Planning[COLOR_REVERT] without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BETTER_COAL</Tag>
@@ -1572,19 +1572,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_1</Tag>
-		<English>Guns Not Butter[PARAGRAPH:1]You are tasked by your military leaders to train a sizable force of musket units.</English>
-		<French>Pas de beurre, mais des canons[PARAGRAPH:1]Vos dirigeants militaires vous chargent d'entra&#238;ner un nombre important d'unit&#233;s de mousquetaires.</French>
-		<German>Feuer statt Butter[PARAGRAPH:1]Eure Milit&#228;rf&#252;hrer verlangen von Euch, eine gro&#223;e Truppe Musketier-Einheiten auszubilden.</German>
-		<Italian>Fucili, non banane.[PARAGRAPH:1]I capi militari ti hanno incaricato di creare un esercito di unit&#224; con moschetto.</Italian>
-		<Spanish>Armas de fuego, no mantequilla[PARAGRAPH:1]Los l&#237;deres militares han encargado llevar a cabo el entrenamiento de una fuerza considerable de unidades de mosquete.</Spanish>
+		<English>Guns Not Butter[PARAGRAPH:1]You are tasked by your military leaders to train a sizable force of arquebus units.</English>
+		<French>Guns Not Butter[PARAGRAPH:1]You are tasked by your military leaders to train a sizable force of arquebus units.</French>
+		<German>Guns Not Butter[PARAGRAPH:1]You are tasked by your military leaders to train a sizable force of arquebus units.</German>
+		<Italian>Guns Not Butter[PARAGRAPH:1]You are tasked by your military leaders to train a sizable force of arquebus units.</Italian>
+		<Spanish>Guns Not Butter[PARAGRAPH:1]You are tasked by your military leaders to train a sizable force of arquebus units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_DONE_1</Tag>
-		<English>With such a large force of musketmen working together, additional training for these units can be achieved.</English>
-		<French>Avec un tel nombre de mousquetaires op&#233;rant ensemble, un entra&#238;nement suppl&#233;mentaire pour ces unit&#233;s peut &#234;tre effectu&#233;.</French>
-		<German>Mit einer so gro&#223;en Truppe Musketiere k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
-		<Italian>Con tanti soldati con moschetto che lavorano insieme &#232; possibile ottenere un ulteriore addestramento per queste unit&#224;.</Italian>
-		<Spanish>Al tratarse de una fuerza de mosquetes tan grande y unida, estas unidades pueden obtener m&#225;s entrenamiento.</Spanish>
+		<English>With such a large force of arquebusiers working together, additional training for these units can be achieved.</English>
+		<French>With such a large force of arquebusiers working together, additional training for these units can be achieved.</French>
+		<German>With such a large force of arquebusiers working together, additional training for these units can be achieved.</German>
+		<Italian>With such a large force of arquebusiers working together, additional training for these units can be achieved.</Italian>
+		<Spanish>With such a large force of arquebusiers working together, additional training for these units can be achieved.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_DONE_2</Tag>
@@ -1596,19 +1596,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_DONE_3</Tag>
-		<English>Enjoy our Golden Age of Muskets.</English>
-		<French>Profitons de notre &#194;ge d'or des mousquets.</French>
-		<German>Genie&#223;t das Goldene Zeitalter der Musketiere.</German>
-		<Italian>Goditi l'et&#224; dell'oro dei moschetti.</Italian>
-		<Spanish>Disfrutad de vuestra edad de oro de los mosquetes.</Spanish>
+		<English>Enjoy our Golden Age of Gunpowder.</English>
+		<French>Enjoy our Golden Age of Gunpowder.</French>
+		<German>Enjoy our Golden Age of Gunpowder.</German>
+		<Italian>Enjoy our Golden Age of Gunpowder.</Italian>
+		<Spanish>Enjoy our Golden Age of Gunpowder.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_GUNS_BUTTER_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Musketman[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Rifling[COLOR_REVERT] or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 unit&#233;s de [COLOR_UNIT_TEXT]mousquetaires[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation utilise la [COLOR_HIGHLIGHT_TEXT]Vassalit&#233;[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es (technologies du [COLOR_TECH_TEXT]fusil[COLOR_REVERT] ou des [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [NUM1:Einheit:Einheiten] [COLOR_UNIT_TEXT]Musketiere[COLOR_REVERT] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Vasallentum[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine weitere Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Drall[COLOR_REVERT] oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 unit&#224; di [COLOR_UNIT_TEXT]Soldati con moschetto[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; ha come forma di governo preferita il [COLOR_HIGHLIGHT_TEXT]Vassallaggio[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; controlla [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se una civilt&#224; rivale la completa per prima, o se scoprirai armi da fuoco avanzate (le tecnologie [COLOR_TECH_TEXT]Rigatura delle canne[COLOR_REVERT] o [COLOR_TECH_TEXT]Ferrovia[COLOR_REVERT]) senza aver soddisfatto le condizioni.</Italian>
-		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Mosquetes[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n utiliza el principio de [COLOR_HIGHLIGHT_TEXT]Vasallaje[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n controla [NUM2:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si descubres armas de fuego avanzadas (las tecnolog&#237;as [COLOR_TECH_TEXT]Fusil[COLOR_REVERT] o [COLOR_TECH_TEXT]Ferrocarril[COLOR_REVERT]) sin haber cumplido las condiciones.</Spanish>
+		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Arquebusier[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Arquebusier[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] without having met the conditions.</French>
+		<German>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Arquebusier[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] without having met the conditions.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Arquebusier[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT] Arquebusier[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HALBERD_1</Tag>
@@ -2564,43 +2564,43 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_1</Tag>
-		<English>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Knight[COLOR_REVERT] units.</English>
-		<French>Nobles Chevaliers[PARAGRAPH:1]Votre peuple vous charge d'entra&#238;ner un nombre important d'unit&#233;s de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].</French>
-		<German>Edle Ritter[PARAGRAPH:1]Das Volk verlangt von Euch, dass Ihr eine gro&#223;e Truppe [COLOR_UNIT_TEXT]Ritter[COLOR_REVERT] ausbildet.</German>
-		<Italian>Nobili cavalieri[PARAGRAPH:1]Il tuo popolo ti ha incaricato di creare un esercito di [COLOR_UNIT_TEXT]Cavalieri[COLOR_REVERT].</Italian>
-		<Spanish>Caballeros nobles[PARAGRAPH:1]Por mandato de vuestra gente, deb&#233;is entrenar a una fuerza considerable de unidades de [COLOR_UNIT_TEXT]Caballeros[COLOR_REVERT].</Spanish>
+		<English>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</English>
+		<French>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</French>
+		<German>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</German>
+		<Italian>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Italian>
+		<Spanish>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_1</Tag>
-		<English>With such a large force of Knights working together, additional training for these units can be achieved.</English>
-		<French>Avec autant de chevaliers op&#233;rant ensemble, un entra&#238;nement suppl&#233;mentaire pour ces unit&#233;s peut &#234;tre effectu&#233;.</French>
-		<German>Mit einer so gro&#223;en Truppe Ritter k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
-		<Italian>Con tanti cavalieri che lavorano insieme &#232; possibile ottenere un ulteriore addestramento per queste unit&#224;.</Italian>
-		<Spanish>Al tratarse de una fuerza de caballeros tan grande y unida, estas unidades pueden obtener m&#225;s entrenamiento.</Spanish>
+		<English>With such a large force of Lancers working together, additional training for these units can be achieved.</English>
+		<French>With such a large force of Lancers working together, additional training for these units can be achieved.</French>
+		<German>With such a large force of Lancers working together, additional training for these units can be achieved.</German>
+		<Italian>With such a large force of Lancers working together, additional training for these units can be achieved.</Italian>
+		<Spanish>With such a large force of Lancers working together, additional training for these units can be achieved.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_2</Tag>
-		<English>Enlist our noble Knights into a drive to spread our faith.</English>
-		<French>Engager les nobles chevaliers pour r&#233;pandre notre foi.</French>
-		<German>Startet mit Euren edlen Rittern eine Kampagne, um unseren Glauben zu verbreiten.</German>
-		<Italian>Sprona i nostri nobili cavalieri a diffondere la nostra fede.</Italian>
-		<Spanish>Que nuestros caballeros nobles se inscriban en una campa&#241;a de difusi&#243;n de nuestra fe.</Spanish>
+		<English>Enlist our noble Lancers into a drive to spread our faith.</English>
+		<French>Enlist our noble Lancers into a drive to spread our faith.</French>
+		<German>Enlist our noble Lancers into a drive to spread our faith.</German>
+		<Italian>Enlist our noble Lancers into a drive to spread our faith.</Italian>
+		<Spanish>Enlist our noble Lancers into a drive to spread our faith.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_3</Tag>
-		<English>From among our most faithful knights emerges one with holy vision.</English>
-		<French>L'un de nos chevaliers les plus z&#233;l&#233;s re&#231;oit une vision divine.</French>
-		<German>Einer unserer gl&#228;ubigsten Ritter hatte eine g&#246;ttliche Vision.</German>
-		<Italian>Dai nostri cavalieri pi&#249; fedeli ne emerge uno con una visione sacra.</Italian>
-		<Spanish>De entre nuestros m&#225;s fieles caballeros, surge uno iluminado por la divinidad.</Spanish>
+		<English>From among our most faithful lancers emerges one with holy vision.</English>
+		<French>From among our most faithful lancers emerges one with holy vision.</French>
+		<German>From among our most faithful lancers emerges one with holy vision.</German>
+		<Italian>From among our most faithful lancers emerges one with holy vision.</Italian>
+		<Spanish>From among our most faithful lancers emerges one with holy vision.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Knights[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 unit&#233;s de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation contr&#244;le le b&#226;timent : [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es (technologie de la [COLOR_TECH_TEXT]tradition militaire[COLOR_REVERT], du [COLOR_TECH_TEXT]fusil[COLOR_REVERT], ou des [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Ritter[COLOR_REVERT]-Einheiten ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie Fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Milit&#228;rwesen[COLOR_REVERT], [COLOR_TECH_TEXT]Drall[COLOR_REVERT], oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 unit&#224; di [COLOR_UNIT_TEXT]Cavalieri[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; ha come forma di governo preferita la [COLOR_HIGHLIGHT_TEXT]Religione organizzata[COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; controlla [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se una civilt&#224; rivale la completa per prima, o se scoprirai armi da fuoco avanzate (le tecnologie [COLOR_TECH_TEXT]Tradizione militare[COLOR_REVERT], [COLOR_TECH_TEXT]Rigatura delle canne[COLOR_REVERT], o [COLOR_TECH_TEXT]Ferrovia[COLOR_REVERT]) senza aver soddisfatto le condizioni.</Italian>
-		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Caballeros[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n utiliza el principio de [COLOR_HIGHLIGHT_TEXT]Religi&#243;n organizada[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n controla [NUM2:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si descubres armas de fuego avanzadas (las tecnolog&#237;as [COLOR_TECH_TEXT]Tradici&#243;n militar[COLOR_REVERT], [COLOR_TECH_TEXT]Fusil[COLOR_REVERT], o [COLOR_TECH_TEXT]Ferrocarril[COLOR_REVERT]) sin haber cumplido las condiciones.</Spanish>
+		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Clergy[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Clergy[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] without having met the conditions.</French>
+		<German>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Clergy[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] without having met the conditions.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Clergy[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Clergy[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Combined Arms[COLOR_REVERT] without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_PROTEST</Tag>
@@ -2692,11 +2692,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_OVERWHELM_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], and %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT] units. A source of [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] will be required to fuel the planes.[PARAGRAPH:1]An additional reward option will be available if your civilization was the one to build [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 unit&#233;s : [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 unit&#233;s : [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 unit&#233;s : [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT] et %d7 unit&#233;s : [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT]. Une source de [COLOR_HIGHLIGHT_TEXT]P&#233;trole[COLOR_REVERT] sera n&#233;cessaire pour ravitailler les avions.[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation est la seule &#224; construire le b&#226;timent : [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT]-, %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT]-, %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT]- und %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT]-Einheiten errichten. F&#252;r den Flugzeugtreibstoff wird [COLOR_HIGHLIGHT_TEXT]&#214;l[COLOR_REVERT] ben&#246;tigt.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t.</German>
-		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire queste unit&#224;: %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], e %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT]. &#200; necessaria una fonte di [COLOR_HIGHLIGHT_TEXT]Petrolio[COLOR_REVERT] per fornire carburante agli aerei.[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se sar&#224; stata la tua civilt&#224; a costruire [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima.</Italian>
-		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, deb&#233;is construir %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]%s2:2_unit[COLOR_REVERT], %d3 [NUM3:unidad:unidades] de[COLOR_UNIT_TEXT]%s4:2_unit[COLOR_REVERT], %d5 [NUM5:unidad:unidades] de [COLOR_UNIT_TEXT]%s6:2_unit[COLOR_REVERT], y %d7 [NUM7:unidad:unidades] de [COLOR_UNIT_TEXT]%s8:2_unit[COLOR_REVERT]. Ser&#225; necesaria una fuente de [COLOR_HIGHLIGHT_TEXT]Petr&#243;leo[COLOR_REVERT] para alimentar los aviones.[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n es la que construye [NUM9:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la completa antes.</Spanish>
+		<English>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], and %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT] units. A source of [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] will be required to fuel the planes.[PARAGRAPH:1]An additional reward option will be available if your civilization was the one to build [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Satellites[COLOR_REVERT] or [COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], and %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT] units. A source of [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] will be required to fuel the planes.[PARAGRAPH:1]An additional reward option will be available if your civilization was the one to build [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Satellites[COLOR_REVERT] or [COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] without having met the conditions.</French>
+		<German>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], and %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT] units. A source of [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] will be required to fuel the planes.[PARAGRAPH:1]An additional reward option will be available if your civilization was the one to build [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Satellites[COLOR_REVERT] or [COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] without having met the conditions.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], and %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT] units. A source of [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] will be required to fuel the planes.[PARAGRAPH:1]An additional reward option will be available if your civilization was the one to build [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Satellites[COLOR_REVERT] or [COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must build %d1 [COLOR_UNIT_TEXT]%s2_unit[COLOR_REVERT], %d3 [COLOR_UNIT_TEXT]%s4_unit[COLOR_REVERT], %d5 [COLOR_UNIT_TEXT]%s6_unit[COLOR_REVERT], and %d7 [COLOR_UNIT_TEXT]%s8_unit[COLOR_REVERT] units. A source of [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] will be required to fuel the planes.[PARAGRAPH:1]An additional reward option will be available if your civilization was the one to build [COLOR_BUILDING_TEXT]%s9_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover [COLOR_TECH_TEXT]Satellites[COLOR_REVERT] or [COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PARROTS_1</Tag>
@@ -4076,19 +4076,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_GUNS_BUTTER_1</Tag>
-		<English>Our generals request that we focus on making guns. These are the weapons of the future![PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units, we should be able to command any battlefield.</English>
-		<French>Nos g&#233;n&#233;raux nous demandent de nous concentrer sur la fabrication d'armes &#224; feu. Ce sont les armes du futur ![PARAGRAPH:1]Si nous entra&#238;nons suffisamment d'unit&#233;s d'[COLOR_UNIT_TEXT]Arquebusiers[COLOR_REVERT], nous serons en mesure de dominer tous les champs de bataille.</French>
-		<German>Unsere Gener&#228;le verlangen, dass wir uns auf die Herstellung von Feuerwaffen konzentrieren. Das sind die Waffen der Zukunft![PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Musketier[COLOR_REVERT]-Einheiten ausbilden, k&#246;nnen wir jedes Schlachtfeld beherrschen.</German>
-		<Italian>I nostri generali richiedono che ci concentriamo nella produzione di armi da fuoco. Sono le armi del futuro![PARAGRAPH:1]Se addestriamo abbastanza [COLOR_UNIT_TEXT]Soldati con moschetto[COLOR_REVERT], dovremmo riuscire a dominare qualsiasi campo di battaglia!</Italian>
-		<Spanish>Nuestros generales solicitan que nos concentremos en fabricar armas de fuego. &#161;Son las armas del futuro![PARAGRAPH:1]Si entrenamos a las unidades de [COLOR_UNIT_TEXT]Mosquetes[COLOR_REVERT] suficientes, seremos capaces de dominar cualquier campo de batalla.</Spanish>
+		<English>Our generals request that we focus on making guns. These are the weapons of the future![PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] units, we should be able to command any battlefield.</English>
+		<French>Our generals request that we focus on making guns. These are the weapons of the future![PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] units, we should be able to command any battlefield.</French>
+		<German>Our generals request that we focus on making guns. These are the weapons of the future![PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] units, we should be able to command any battlefield.</German>
+		<Italian>Our generals request that we focus on making guns. These are the weapons of the future![PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] units, we should be able to command any battlefield.</Italian>
+		<Spanish>Our generals request that we focus on making guns. These are the weapons of the future![PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] units, we should be able to command any battlefield.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_GUNS_BUTTER_DONE_1</Tag>
-		<English>Congratulations! You have trained a large enough force of musket units. Please choose your reward.</English>
-		<French>F&#233;licitations ! Vous avez entra&#238;n&#233; suffisamment de mousquetaires. Veuillez choisir votre r&#233;compense.</French>
-		<German>Gl&#252;ckwunsch! Die von Ihnen ausgebildete Truppe Musketier-Einheiten ist gro&#223; genug. W&#228;hlen Sie Ihre Belohnung aus.</German>
-		<Italian>Congratulazioni! Hai addestrato abbastanza unit&#224; con moschetto. Scegli la ricompensa.</Italian>
-		<Spanish>&#161;Felicidades! Se ha entrenado a una fuerza lo bastante grande de unidades de mosquetes. Elegid vuestra recompensa.</Spanish>
+		<English>Congratulations! You have trained a large enough force of arquebus units. Please choose your reward.</English>
+		<French>Congratulations! You have trained a large enough force of arquebus units. Please choose your reward.</French>
+		<German>Congratulations! You have trained a large enough force of arquebus units. Please choose your reward.</German>
+		<Italian>Congratulations! You have trained a large enough force of arquebus units. Please choose your reward.</Italian>
+		<Spanish>Congratulations! You have trained a large enough force of arquebus units. Please choose your reward.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_HALBERD_1</Tag>
@@ -4132,11 +4132,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_HARBORMASTER</Tag>
-		<English>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</English>
-		<French>Nos capitaines de port demandent une aide gouvernementale pour &#233;tendre notre empire commercial &#224; l'&#233;tranger.[PARAGRAPH:1]Nous aurons besoin de construire suffisamment de [COLOR_BUILDING_TEXT]ports[COLOR_REVERT] dans nos villes, ainsi que de bons navires de haute mer.</French>
-		<German>Unsere Hafenmeister fordern Hilfe von der Regierung, um unseren &#220;berseehandel auszudehnen.[PARAGRAPH:1]Wir m&#252;ssen genug[COLOR_BUILDING_TEXT]H&#228;fen[COLOR_REVERT] in unseren St&#228;dten bauen und genug hochseetaugliche Schiffe konstruieren.</German>
-		<Italian>I nostri armatori richiedono l'aiuto del governo per espandere il nostro impero commerciale oltremare.[PARAGRAPH:1]Abbiamo bisogno di costruire abbastanza [COLOR_BUILDING_TEXT]Porti[COLOR_REVERT] nelle nostre citt&#224;, e produrre abbastanza navi in grado di affrontare l'oceano.</Italian>
-		<Spanish>Los pr&#225;cticos de nuestros puertos solicitan al gobierno ayuda para extender nuestro imperio comercial de ultramar.[PARAGRAPH:1]Tendremos que construir suficientes [COLOR_BUILDING_TEXT]Puertos[COLOR_REVERT] en nuestras ciudades y construir suficientes barcos aptos para navegar por el oc&#233;ano.</Spanish>
+		<English>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</English>
+		<French>Nos capitaines de port demandent une aide gouvernementale pour &#233;tendre notre empire commercial &#224; l'&#233;tranger.[PARAGRAPH:1]Nous aurons besoin de construire suffisamment de [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] dans nos villes, ainsi que de bons navires de haute mer.</French>
+		<German>Unsere Hafenmeister fordern Hilfe von der Regierung, um unseren &#220;berseehandel auszudehnen.[PARAGRAPH:1]Wir m&#252;ssen genug[COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in unseren St&#228;dten bauen und genug hochseetaugliche Schiffe konstruieren.</German>
+		<Italian>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</Italian>
+		<Spanish>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_HARBORMASTER_DONE_1</Tag>
@@ -4604,19 +4604,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_1</Tag>
-		<English>Our civilization cries out for nobility to lead our people forward into a brighter future.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Knights[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</English>
-		<French>Notre civilisation r&#233;clame &#224; la noblesse de guider le peuple vers un futur meilleur.[PARAGRAPH:1]Si nous entra&#238;nons suffisamment de [COLOR_UNIT_TEXT]Chevaliers[COLOR_REVERT], nous pourrons aller de l'avant, en temps de paix comme en temps de guerre.</French>
-		<German>Unsere Zivilisation d&#252;rstet nach Adeligen, die unser Volk in eine bessere Zukunft f&#252;hren werden.[PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Ritter[COLOR_REVERT] ausbilden, sollten wir unseren Weg finden, sei es in Zeiten des Friedens oder in Zeiten des Krieges.</German>
-		<Italian>La nostra civilt&#224; chiede a gran voce che la nobilt&#224; la guidi verso un futuro pi&#249; luminoso.[PARAGRAPH:1]Se addestriamo abbastanza [COLOR_UNIT_TEXT]Cavalieri[COLOR_REVERT], dovremmo riuscire a sopravvivere ai tempi che verranno, siano essi pacifici o meno.</Italian>
-		<Spanish>Nuestra civilizaci&#243;n implora a la nobleza que gu&#237;e a nuestra gente hacia un futuro m&#225;s brillante.[PARAGRAPH:1]Si entrenamos a los [COLOR_UNIT_TEXT]Caballeros[COLOR_REVERT] suficientes, deber&#237;amos ser capaces de encontrar la forma de avanzar a trav&#233;s de tiempos de paz o de guerra.</Spanish>
+		<English>Our civilization cries out for nobility to lead our people forward into a brighter future.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</English>
+		<French>Our civilization cries out for nobility to lead our people forward into a brighter future.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</French>
+		<German>Our civilization cries out for nobility to lead our people forward into a brighter future.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</German>
+		<Italian>Our civilization cries out for nobility to lead our people forward into a brighter future.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Italian>
+		<Spanish>Our civilization cries out for nobility to lead our people forward into a brighter future.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_DONE_1</Tag>
-		<English>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Knight[COLOR_REVERT] units. Please choose your reward.</English>
-		<French>F&#233;licitations ! Vous avez entra&#238;n&#233; suffisamment d'unit&#233;s de [COLOR_UNIT_TEXT]Chevaliers[COLOR_REVERT]. Veuillez choisir votre r&#233;compense.</French>
-		<German>Gl&#252;ckwunsch! Die von Ihnen ausgebildete Truppe [COLOR_UNIT_TEXT]Ritter[COLOR_REVERT] ist gro&#223; genug. W&#228;hlen Sie Ihre Belohnung aus.</German>
-		<Italian>Congratulazioni! Hai addestrato abbastanza [COLOR_UNIT_TEXT]Cavalieri[COLOR_REVERT]. Scegli la ricompensa.</Italian>
-		<Spanish>&#161;Felicidades! Se ha entrenado a una fuerza lo bastante grande de [COLOR_UNIT_TEXT]Caballeros[COLOR_REVERT]. Elegid vuestra recompensa.</Spanish>
+		<English>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</English>
+		<French>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</French>
+		<German>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</German>
+		<Italian>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Italian>
+		<Spanish>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_OVERWHELM_1</Tag>
@@ -4732,11 +4732,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REINFORCED_HULL_1</Tag>
-		<English>Our shipmasters have devised a way to reinforce the hulls of our triremes. This will help with both ramming and being rammed.</English>
-		<French>Nos capitaines de navire ont invent&#233; un moyen de renforcer la coque des trir&#232;mes. Cela sera utile en cas d'&#233;peronnage.</French>
-		<German>Unsere Schiffbauer haben einen Weg gefunden, den Rumpf unserer Trieren zu verst&#228;rken. Dies kommt uns sowohl beim Rammen als auch beim Gerammtwerden zugute.</German>
-		<Italian>I nostri capitani hanno trovato un modo per rinforzare gli scafi delle nostre triremi, che le aiuter&#224; negli speronamenti (sia inflitti che subiti).</Italian>
-		<Spanish>Nuestros oficiales han ideado una forma de reforzar los cascos de nuestros trirremes. Esto ser&#225; &#250;til tanto a la hora de embestir como de ser embestidos.</Spanish>
+		<English>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</English>
+		<French>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</French>
+		<German>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</German>
+		<Italian>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Italian>
+		<Spanish>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_RIFLED_CANNON_1</Tag>
@@ -5044,11 +5044,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_WARSHIPS_1</Tag>
-		<English>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Trireme units[COLOR_REVERT], we could dominate the seas!</English>
-		<French>Nos commandants navals d&#233;sirent se pr&#233;parer &#224; la guerre.[PARAGRAPH:1]Si nous entra&#238;nons suffisamment d'[COLOR_UNIT_TEXT]unit&#233;s de trir&#232;mes[COLOR_REVERT], nous pourrons dominer les oc&#233;ans !</French>
-		<German>Unsere Marinekommandanten wollen sich auf den Krieg vorbereiten.[PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-Einheiten ausbilden, k&#246;nnten wir &#252;ber die Meere herrschen!</German>
-		<Italian>I nostri comandanti di marina desiderano prepararsi per la guerra.[PARAGRAPH:1]Se addestriamo abbastanza [COLOR_UNIT_TEXT]Triremi[COLOR_REVERT] potremo dominare il mondo!</Italian>
-		<Spanish>Nuestros mandos navales quieren prepararse para la guerra.[PARAGRAPH:1]Si entrenamos a las unidades de [COLOR_UNIT_TEXT]Trirremes[COLOR_REVERT] suficientes, &#161;podr&#237;amos dominar los mares!</Spanish>
+		<English>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</English>
+		<French>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</French>
+		<German>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</German>
+		<Italian>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Italian>
+		<Spanish>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_WARSHIPS_DONE_1</Tag>
@@ -5204,11 +5204,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_1</Tag>
-		<English>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]Triremes[COLOR_REVERT].</English>
-		<French>Navires de guerre[PARAGRAPH:1]Vos commandants navals vous chargent de construire un nombre important de [COLOR_UNIT_TEXT]trir&#232;mes[COLOR_REVERT].</French>
-		<German>Kriegsschiffe[PARAGRAPH:1]Eure Marinekommandanten verlangen von Euch, eine gro&#223;e [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-Flotte aufzubauen.</German>
-		<Italian>Navi da guerra[PARAGRAPH:1]I comandanti di marina ti hanno incaricato di creare una flotta di [COLOR_UNIT_TEXT]Triremi[COLOR_REVERT].</Italian>
-		<Spanish>Barco de guerra[PARAGRAPH:1]Los l&#237;deres navales han encargado la creaci&#243;n de una fuerza considerable de [COLOR_UNIT_TEXT]Trirremes[COLOR_REVERT].</Spanish>
+		<English>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</English>
+		<French>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</French>
+		<German>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</German>
+		<Italian>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Italian>
+		<Spanish>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_DONE_1</Tag>
@@ -5228,11 +5228,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez entra&#238;ner %d1 [NUM1:unit&#233;:unit&#233;s] de [COLOR_UNIT_TEXT]trir&#232;mes[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez la Renaissance sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Renaissance erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]Per completare l'impresa devi costruire %d1 [COLOR_UNIT_TEXT][NUM1:Trireme:Triremi][COLOR_REVERT].[PARAGRAPH:1]Otterrai un'ulteriore ricompensa se la tua civilt&#224; avr&#224; costruito [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Fallirai nell'impresa se un'altra civilt&#224; la completa per prima, o se raggiungerai il Rinascimento senza aver soddisfatto le condizioni.</Italian>
-		<Spanish>[PARAGRAPH:1]Para completar esta misi&#243;n, es necesario entrenar a %d1 [NUM1:unidad:unidades] de [COLOR_UNIT_TEXT]Trirremes[COLOR_REVERT].[PARAGRAPH:1]Ser&#225; posible elegir una opci&#243;n de recompensa adicional si vuestra civilizaci&#243;n ha construido [NUM2:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Esta misi&#243;n fracasar&#225; si una civilizaci&#243;n rival la cumple antes o si se alcanza el Renacimiento sin haber cumplido las condiciones.</Spanish>
+		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</English>
+		<French>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</French>
+		<German>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</German>
+		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Italian>
+		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WASHED_OUT_1</Tag>
@@ -5948,11 +5948,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_GUNS_BUTTER_DONE</Tag>
-		<English>The %s1_civ_adjective people have trained the largest force of musket units. Advisors across the known world are panicking at the thought of their nation being ground under the thundering clatter and deadly terror of an endless hail of bullets.</English>
-		<French>Le peuple %s1_civ_adjective a entra&#238;n&#233; le plus grand nombre d'unit&#233;s de mousquetaires. Les conseillers de tout le monde connu paniquent &#224; la pens&#233;e de leur nation mise &#224; terre par le fracas assourdissant et la terreur mortelle d'une gr&#234;le de balles sans fin.</French>
-		<German>Das %s1:3_civ_adjective Volk hat die gr&#246;&#223;te Truppe Musketier-Einheiten ausgebildet. Berater der gesamten entdeckten Welt brechen in Panik aus beim Gedanken daran, dass ihre Nation unter dem donnernden L&#228;rm des endlosen Kugelhagels zermalmt wird.</German>
-		<Italian>La popolazione %s1:2_civ_adjective ha addestrato la pi&#249; grande forza militare composta da soldati con moschetto. I consiglieri di tutto il mondo si stanno lasciando prendere dal panico, al pensiero della propria nazione investita da un'interminabile pioggia di proiettili.</Italian>
-		<Spanish>Los %s1:3_civ_adjective han entrenado a la mayor fuerza de mosquetes. Consejeros de todo el mundo conocido tiemblan ante la idea de que su naci&#243;n pueda ser aplastada por el estr&#233;pito y el terror de una interminable lluvia de balas.</Spanish>
+		<English>The %s1_civ_adjective people have trained the largest force of arquebus units. Advisors across the known world are panicking at the thought of their nation being ground under the thundering clatter and deadly terror of an endless hail of bullets.</English>
+		<French>The %s1_civ_adjective people have trained the largest force of arquebus units. Advisors across the known world are panicking at the thought of their nation being ground under the thundering clatter and deadly terror of an endless hail of bullets.</French>
+		<German>The %s1_civ_adjective people have trained the largest force of arquebus units. Advisors across the known world are panicking at the thought of their nation being ground under the thundering clatter and deadly terror of an endless hail of bullets.</German>
+		<Italian>The %s1_civ_adjective people have trained the largest force of arquebus units. Advisors across the known world are panicking at the thought of their nation being ground under the thundering clatter and deadly terror of an endless hail of bullets.</Italian>
+		<Spanish>The %s1_civ_adjective people have trained the largest force of arquebus units. Advisors across the known world are panicking at the thought of their nation being ground under the thundering clatter and deadly terror of an endless hail of bullets.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_HALBERD_1</Tag>
@@ -6332,11 +6332,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NOBLE_KNIGHTS_DONE</Tag>
-		<English>The %s1_civ_adjective people have trained the largest force of knights. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</English>
-		<French>Le peuple %s1_civ_adjective a entra&#238;n&#233; le plus grand nombre de chevaliers. Les conseillers du monde entier tremblent &#224; l'id&#233;e de faire face aux rang&#233;es de lances qui chargent au grand galop au c&#339;ur de la bataille.</French>
-		<German>Das %s1:3_civ_adjective Volk hat die gr&#246;&#223;te Ritter-Truppe ausgebildet. Berater der gesamten entdeckten Welt erzittern beim Gedanken an die von donnernden Hufen angetriebenen Lanzenreihen auf dem Schlachtfeld.</German>
-		<Italian>La popolazione %s1:2_civ_adjective ha addestrato la pi&#249; grande forza militare composta da cavalieri. I consiglieri di tutto il mondo tremano al pensiero di affrontare le file di lance spinte da tonanti zoccoli di una carica di cavalleria.</Italian>
-		<Spanish>Los %s1:3_civ_adjective han entrenado a la mayor fuerza de caballeros. Consejeros de todo el mundo conocido se estremecen al pensar en hileras de lanzas impulsadas por el atronador galope de una carga en plena batalla.</Spanish>
+		<English>The %s1_civ_adjective people have trained the largest force of lancers. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</English>
+		<French>The %s1_civ_adjective people have trained the largest force of lancers. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</French>
+		<German>The %s1_civ_adjective people have trained the largest force of lancers. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</German>
+		<Italian>The %s1_civ_adjective people have trained the largest force of lancers. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</Italian>
+		<Spanish>The %s1_civ_adjective people have trained the largest force of lancers. Advisors across the known world tremble at the thought of facing rows of lances powered by the thundering hooves of a full battle charge.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_PROTEST</Tag>
@@ -6436,11 +6436,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REINFORCED_HULL_1</Tag>
-		<English>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their trireme fleet.</English>
-		<French>Selon certaines rumeurs, les capitaines de navires %s1:2_civ_adjective effectuent des modifications importantes sur leurs trir&#232;mes.</French>
-		<German>Es gibt Ger&#252;chte, dass %s1:3_civ_adjective Schiffbauer ihre Trieren-Flotte &#252;berarbeiten.</German>
-		<Italian>Pare che i capitani %s1:3_civ_adjective stiano facendo grossi lavori sulla loro flotta di triremi.</Italian>
-		<Spanish>Numerosos rumores apuntan a que los oficiales %s1:3_civ_adjective est&#225;n realizando amplios trabajos de mejora en su flota de trirremes.</Spanish>
+		<English>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</English>
+		<French>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</French>
+		<German>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</German>
+		<Italian>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Italian>
+		<Spanish>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_RIFLED_CANNON_1</Tag>
@@ -6907,14 +6907,6 @@
 		<Spanish>[ICON_BULLET]Nuclear Plants will become obsolete.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_HARBORMASTER</Tag>
-		<English>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</English>
-		<French>Nos capitaines de port demandent une aide gouvernementale pour &#233;tendre notre empire commercial &#224; l'&#233;tranger.[PARAGRAPH:1]Nous aurons besoin de construire suffisamment de [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] dans nos villes, ainsi que de bons navires de haute mer.</French>
-		<German>Unsere Hafenmeister fordern Hilfe von der Regierung, um unseren &#220;berseehandel auszudehnen.[PARAGRAPH:1]Wir m&#252;ssen genug[COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in unseren St&#228;dten bauen und genug hochseetaugliche Schiffe konstruieren.</German>
-		<Italian>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</Italian>
-		<Spanish>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_1</Tag>
 		<English>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</English>
 		<French>Le Capitaine de port[PARAGRAPH:1]Votre industrie de la marine marchande vous demande de construire suffisamment de [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] pour leur permettre de dominer le commerce maritime mondial. Vous devrez aussi construire une flotte de [COLOR_UNIT_TEXT]caravelles[COLOR_REVERT] pour aider au transport de marchandises &#224; travers les mers.</French>
@@ -6929,93 +6921,5 @@
 		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in Ihren K&#252;stenst&#228;dten bauen. Au&#223;erdem m&#252;ssen Sie %d2 [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Industriezeitalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
 		<Italian>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</Italian>
 		<Spanish>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]trir&#232;mes[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez le Moyen &#194;ge sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Mittelalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Italian>
-		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Middle Ages without having met the conditions.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_1</Tag>
-		<English>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</English>
-		<French>Notre civilisation appelle la noblesse &#224; mener notre peuple vers un meilleur futur. [PARAGRAPH:1]Si nous formons assez de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT], nous serons capables de trouver notre voie, que ce soit en temps de paix ou en temps de guerre.</French>
-		<German>Unsere Zivilisation d&#252;rstet nach Adeligen, die unser Volk in eine bessere Zukunft f&#252;hren werden. [PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbilden, sollten wir unseren Weg finden, sei es in Zeiten des Friedens oder in Zeiten des Krieges.</German>
-		<Italian>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Italian>
-		<Spanish>Our civilization cries out for nobility to lead our people forward into a brighter future. [PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]Lancers[COLOR_REVERT], we should be able to find our way forward, through times peaceful or warlike.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_1</Tag>
-		<English>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</English>
-		<French>Nobles Chevaliers[PARAGRAPH:1]Votre peuple vous donne le mandat de former une arm&#233;e suffisamment puissante d'unit&#233;s de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].</French>
-		<German>Edle Ritter[PARAGRAPH:1]Das Volk verlangt von Euch, dass Ihr eine gro&#223;e Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ausbildet.</German>
-		<Italian>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Italian>
-		<Spanish>Noble Knights[PARAGRAPH:1]You are tasked by the mandate of your people to train a sizable force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a adopt&#233; la doctrine [COLOR_HIGHLIGHT_TEXT]religion organis&#233;e[COLOR_REVERT].[PARAGRAPH:1]Une autre option de r&#233;compense sera disponible si votre civilisation contr&#244;le le [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous d&#233;couvrez les armes &#224; feu avanc&#233;es ([COLOR_TECH_TEXT]tradition militaire[COLOR_REVERT], [COLOR_TECH_TEXT]fusil[COLOR_REVERT] ou [COLOR_TECH_TEXT]voies ferr&#233;es[COLOR_REVERT]) sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT]-Einheiten ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn in Ihrer Zivilisation die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT] herrscht.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] kontrolliert.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie Fortgeschrittene Feuerwaffen (die Technologien [COLOR_TECH_TEXT]Milit&#228;rwesen[COLOR_REVERT], [COLOR_TECH_TEXT]Drall[COLOR_REVERT], oder [COLOR_TECH_TEXT]Eisenbahn[COLOR_REVERT]) entdecken, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</Italian>
-		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units.[PARAGRAPH:1]An additional reward option will be available if your civilization is operating in the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic.[PARAGRAPH:1]An additional reward option will be available if your civilization controls [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you discover advanced firearms ([COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT], [COLOR_TECH_TEXT]Rifling[COLOR_REVERT], or [COLOR_TECH_TEXT]Railroad[COLOR_REVERT] technologies) without having met the conditions.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_NOBLE_KNIGHTS_DONE_1</Tag>
-		<English>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</English>
-		<French>F&#233;licitations ! Vous avez form&#233; une arm&#233;e suffisamment puissante de [COLOR_UNIT_TEXT]chevaliers[COLOR_REVERT]. Choisissez votre r&#233;compense.</French>
-		<German>Gl&#252;ckwunsch! Die von Ihnen ausgebildete Truppe [COLOR_UNIT_TEXT]Lanzenreiter[COLOR_REVERT] ist gro&#223; genug. W&#228;hlen Sie Ihre Belohnung aus.</German>
-		<Italian>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Italian>
-		<Spanish>Congratulations! You have trained a large enough force of [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units. Please choose your reward.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_NOBLE_KNIGHTS_DONE_1</Tag>
-		<English>With such a large force of Lancers working together, additional training for these units can be achieved.</English>
-		<French>Avec une telle arm&#233;e de chevaliers travaillant ensemble, de l'entra&#238;nement suppl&#233;mentaire peut leur &#234;tre apport&#233;.</French>
-		<German>Mit einer so gro&#223;en Truppe Lanzenreiter k&#246;nnen diese Einheiten weiter ausgebildet werden.</German>
-		<Italian>With such a large force of Lancers working together, additional training for these units can be achieved.</Italian>
-		<Spanish>With such a large force of Lancers working together, additional training for these units can be achieved.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENTTRIGGER_REINFORCED_HULL_1</Tag>
-		<English>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</English>
-		<French>La rumeur veut que les capitaines %s1_civ_adjective soient en train de r&#233;nover massivement leur flotte de gal&#232;res de guerre.</French>
-		<German>Es gibt Ger&#252;chte, dass %s1:3_civ_adjective Schiffbauer ihre Kriegsgaleeren-Flotte &#252;berarbeiten.</German>
-		<Italian>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Italian>
-		<Spanish>Rumors abound that %s1_civ_adjective shipmasters are doing extensive refitting work on their war galley fleet.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_REINFORCED_HULL_1</Tag>
-		<English>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</English>
-		<French>Nos capitaines ont invent&#233; un moyen de renforcer la coque de nos gal&#232;res de guerre. Cela les aidera &#224; la fois &#224; &#233;peronner et &#224; r&#233;sister &#224; l'&#233;peronnage.</French>
-		<German>Unsere Schiffbauer haben einen Weg gefunden, den Rumpf unserer Kriegsgaleeren zu verst&#228;rken. Dies kommt uns sowohl beim Rammen als auch beim Gerammtwerden zugute.</German>
-		<Italian>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Italian>
-		<Spanish>Our shipmasters have devised a way to reinforce the hulls of our war galleys. This will help with both ramming and being rammed.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_TRIGGER_WARSHIPS_1</Tag>
-		<English>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</English>
-		<French>Nos commandants navals aimeraient se pr&#233;parer pour la guerre.[PARAGRAPH:1]Si nous construisons suffisamment de [COLOR_UNIT_TEXT]gal&#232;res de guerre[COLOR_REVERT], nous pourrons dominer les mers !</French>
-		<German>Unsere Marinekommandanten wollen sich auf den Krieg vorbereiten.[PARAGRAPH:1]Wenn wir gen&#252;gend [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Einheiten ausbilden, k&#246;nnten wir &#252;ber die Meere herrschen!</German>
-		<Italian>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Italian>
-		<Spanish>Our naval commanders wish to prepare for war.[PARAGRAPH:1]If we train enough [COLOR_UNIT_TEXT]War Galley units[COLOR_REVERT], we could dominate the seas!</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_WARSHIPS_1</Tag>
-		<English>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</English>
-		<French>Navires de guerre[PARAGRAPH:1]Vos commandants navals vous chargent de construire un nombre important de [COLOR_UNIT_TEXT]gal&#232;res de guerre[COLOR_REVERT]</French>
-		<German>Kriegsschiffe[PARAGRAPH:1]Eure Marinekommandanten verlangen von Euch, eine gro&#223;e [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-Flotte aufzubauen.</German>
-		<Italian>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Italian>
-		<Spanish>Warships[PARAGRAPH:1]You are tasked by your naval commanders to build a sizable force of [COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT].</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_WARSHIPS_HELP_1</Tag>
-		<English>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</English>
-		<French>[PARAGRAPH:1]Pour achever cette qu&#234;te, vous devez construire %d1 [COLOR_UNIT_TEXT]gal&#232;res de guerre[COLOR_REVERT].[PARAGRAPH:1]Une option de r&#233;compense suppl&#233;mentaire sera disponible si votre civilisation a construit le b&#226;timent [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]Vous &#233;chouerez si une civilisation rivale ach&#232;ve cette qu&#234;te avant vous ou si vous atteignez la Renaissance sans avoir rempli les conditions de victoire.</French>
-		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_UNIT_TEXT]Kriegsgaleeren[COLOR_REVERT]-[NUM1:Einheit:Einheiten] ausbilden.[PARAGRAPH:1]Sie erhalten eine zus&#228;tzliche Belohnung, wenn Ihre Zivilisation das Geb&#228;ude [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT] errichtet hat.[PARAGRAPH:1]Sie scheitern, wenn eine gegnerische Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie die Renaissance erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
-		<Italian>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</Italian>
-		<Spanish>[PARAGRAPH:1]To complete this quest, you must train %d1 [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT] [NUM1:unit:units].[PARAGRAPH:1]An additional reward option will be available if your civilization has built [COLOR_BUILDING_TEXT]%s2_building[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you arrive at the Renaissance without having met the conditions.</Spanish>
 	</TEXT>
 </Civ4GameText>
