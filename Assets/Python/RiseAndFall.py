@@ -2054,6 +2054,9 @@ class RiseAndFall:
 		targetList = utils.getColonialTargets(iPlayer, True)
 		targetCivList = []
 		settlerList = []
+		
+		if not targetList:
+			return
 
 		iGold = len(targetList) * 200
 
@@ -2135,6 +2138,10 @@ class RiseAndFall:
 
 	def handleColonialConquest(self, iPlayer):
 		targetList = utils.getColonialTargets(iPlayer)
+		
+		if not targetList:
+			self.handleColonialAcquisition(iPlayer)
+			return
 
 		for tPlot in targetList:
 			data.timedConquest(iPlayer, tPlot)
