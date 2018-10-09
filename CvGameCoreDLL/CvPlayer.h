@@ -377,10 +377,12 @@ public:
 
 	int getGreatPeopleCreated() const;																																		// Exposed to Python
 	void incrementGreatPeopleCreated();
+	void changeGreatPeopleCreated(int iChange);
 
 	int getGreatGeneralsCreated() const;																																		// Exposed to Python
 	void incrementGreatGeneralsCreated();
 	void decrementGreatGeneralsCreated();
+	void changeGreatGeneralsCreated(int iChange);
 
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated();

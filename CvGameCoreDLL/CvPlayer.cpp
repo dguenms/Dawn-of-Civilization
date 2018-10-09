@@ -9348,6 +9348,11 @@ void CvPlayer::incrementGreatPeopleCreated()
 	m_iGreatPeopleCreated++;
 }
 
+void CvPlayer::changeGreatPeopleCreated(int iChange)
+{
+	m_iGreatPeopleCreated += iChange;
+}
+
 int CvPlayer::getGreatGeneralsCreated() const
 {
 	return m_iGreatGeneralsCreated;
@@ -9356,6 +9361,11 @@ int CvPlayer::getGreatGeneralsCreated() const
 void CvPlayer::incrementGreatGeneralsCreated()
 {
 	m_iGreatGeneralsCreated++;
+}
+
+void CvPlayer::changeGreatGeneralsCreated(int iChange)
+{
+	m_iGreatGeneralsCreated += iChange;
 }
 
 void CvPlayer::decrementGreatGeneralsCreated()
