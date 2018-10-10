@@ -376,16 +376,16 @@ public:
 	void createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY);
 
 	int getGreatPeopleCreated() const;																																		// Exposed to Python
-	void incrementGreatPeopleCreated();
-	void changeGreatPeopleCreated(int iChange);
+	void incrementGreatPeopleCreated(bool bUpdate = true);
+	void changeGreatPeopleCreated(int iChange, bool bUpdate = true);
 
 	int getGreatGeneralsCreated() const;																																		// Exposed to Python
-	void incrementGreatGeneralsCreated();
+	void incrementGreatGeneralsCreated(bool bUpdate = true);
 	void decrementGreatGeneralsCreated();
-	void changeGreatGeneralsCreated(int iChange);
+	void changeGreatGeneralsCreated(int iChange, bool bUpdate = true);
 
 	int getGreatSpiesCreated() const;
-	void incrementGreatSpiesCreated();
+	void incrementGreatSpiesCreated(bool bUpdate = true);
 
 	void resetGreatPeopleCreated();
 
