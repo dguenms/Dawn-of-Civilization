@@ -1939,11 +1939,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN_HELP</Tag>
-		<English>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</English>
-		<French>[ICON_BULLET]Ordonner &#224; un personnage illustre de rejoindre une ville y restaure 50% des [ICON_GREATPEOPLE]</French>
-		<German>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</German>
-		<Italian>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</Italian>
-		<Spanish>[ICON_BULLET]Settling a Great Person restores 50% [ICON_GREATPEOPLE]</Spanish>
+		<English>[ICON_BULLET]Settling a Great Person restores 25% [ICON_GREATPEOPLE]</English>
+		<French>[ICON_BULLET]Ordonner &#224; un personnage illustre de rejoindre une ville y restaure 25% des [ICON_GREATPEOPLE]</French>
+		<German>[ICON_BULLET]Settling a Great Person restores 25% [ICON_GREATPEOPLE]</German>
+		<Italian>[ICON_BULLET]Settling a Great Person restores 25% [ICON_GREATPEOPLE]</Italian>
+		<Spanish>[ICON_BULLET]Settling a Great Person restores 25% [ICON_GREATPEOPLE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NEUSCHWANSTEIN_STRATEGY</Tag>

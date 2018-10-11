@@ -13554,7 +13554,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NEUSCHWANSTEIN</ArtDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
-			<PrereqTech>TECH_FILM</PrereqTech>
+			<PrereqTech>TECH_JOURNALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
