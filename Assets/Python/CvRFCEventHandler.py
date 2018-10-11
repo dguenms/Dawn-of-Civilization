@@ -698,7 +698,7 @@ class CvRFCEventHandler:
 			if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() == 0 and gc.getUnitInfo(pUnit.getUnitType()).getEspionagePoints() == 0:
 				for iLoopPlayer in range(iNumPlayers):
 					if gc.getPlayer(iLoopPlayer).isHasBuildingEffect(iNobelPrize):
-						if gc.getPlayer(pUnit.getOwner()).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
+						if pUnit.getOwner() != iLoopPlayer and gc.getPlayer(pUnit.getOwner()).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
 							for pLoopCity in utils.getCityList(iLoopPlayer):
 								if pLoopCity.isHasBuildingEffect(iNobelPrize):
 									iGreatPersonType = pUnit.getUnitType()
@@ -708,7 +708,7 @@ class CvRFCEventHandler:
 												iGreatPersonType = iLoopGreatPerson
 												break
 								
-									iGreatPeoplePoints = gc.getPlayer(iLoopPlayer).greatPeopleThreshold(False) / 4
+									iGreatPeoplePoints = max(4, gc.getPlayer(iLoopPlayer).getGreatPeopleCreated())
 								
 									pLoopCity.changeGreatPeopleProgress(iGreatPeoplePoints)
 									pLoopCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
