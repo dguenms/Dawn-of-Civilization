@@ -2943,11 +2943,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Tag>
-		<English>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</English>
-		<French>[ICON_BULLET]+1 [ICON_COMMERCE] par b&#226;timent dans la ville</French>
-		<German>[ICON_BULLET]+1 [ICON_COMMERCE] pro Geb&#228;ude in der Stadt</German>
-		<Italian>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Italian>
-		<Spanish>[ICON_BULLET]+1 [ICON_COMMERCE] per building in the city</Spanish>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] pro +2[ICON_CULTURE] von Geb&#228;uden in der Stadt</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_STRATEGY</Tag>

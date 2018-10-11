@@ -4746,21 +4746,23 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Metropolitain
 		else if (eBuilding == METROPOLITAIN)
 		{
-			for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 			{
-				int iNumBuildings = 0;
-				if (isHasRealBuilding((BuildingTypes)iI))
-				{
-					iNumBuildings += 1;
-				}
-					
-				changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), YIELD_COMMERCE, iChange * iNumBuildings);
-			}
-		}
+				BuildingClassTypes eBuildingClass = (BuildingClassTypes)iI;
 
-		if (isHasBuildingEffect((BuildingTypes)METROPOLITAIN) && eBuilding != METROPOLITAIN)
-		{
-			changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)METROPOLITAIN).getBuildingClassType(), YIELD_COMMERCE, iChange);
+				if (::isNationalWonderClass(eBuildingClass) || ::isWorldWonderClass(eBuildingClass))
+				{
+					continue;
+				}
+
+				BuildingTypes eCivilizationBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+				int iCulture = GC.getBuildingInfo(eCivilizationBuilding).getCommerceChange(COMMERCE_CULTURE) + GC.getBuildingInfo(eCivilizationBuilding).getObsoleteSafeCommerceChange(COMMERCE_CULTURE);
+
+				if (iCulture > 0)
+				{
+					changeBuildingYieldChange(eBuildingClass, YIELD_COMMERCE, iChange * iCulture / 2);
+				}
+			}
 		}
 
 		// Berlaymont
@@ -16504,7 +16506,7 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 	// if both the river and water flags are set, we require one of the two conditions, not both
 	if (GC.getBuildingInfo(eBuilding).isWater())
 	{
-		if (eBuilding == GOLDEN_GATE_BRIDGE || eBuilding == BROOKLYN_BRIDGE)
+		if (eBuilding == GOLDEN_GATE_BRIDGE || eBuilding == BROOKLYN_BRIDGE || eBuilding == DELTA_WORKS)
 		{
 			if (!plot()->isRiver() || !plot()->isCoastalLand(GC.getBuildingInfo(eBuilding).getMinAreaSize()))
 			{
