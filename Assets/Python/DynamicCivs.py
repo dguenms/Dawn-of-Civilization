@@ -874,6 +874,8 @@ def getMaster(iPlayer):
 	return utils.getMaster(iPlayer)
 	
 def isEmpire(iPlayer):
+	if isVassal(iPlayer): return False
+
 	return gc.getPlayer(iPlayer).getNumCities() >= getEmpireThreshold(iPlayer)
 	
 def getEmpireThreshold(iPlayer):
