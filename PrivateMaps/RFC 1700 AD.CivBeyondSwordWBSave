@@ -20444,6 +20444,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=42
+	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,23,25,30,39,
@@ -20849,8 +20851,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=42
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,22,23,25,30,39,
