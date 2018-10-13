@@ -356,6 +356,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
 	dPossibleResurrections = {}
 	
+	bComplete = len(lCities) == gc.getPlayer(iPlayer).getNumCities()
+	
 	utils.clearPlague(iPlayer)
 	
 	# if smaller cities are supposed to be destroyed, do that first
@@ -501,6 +503,11 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
 	else:
 		utils.killUnits(lRelocatedUnits)
+		
+	# notify for partial secessions
+	if not bComplete:
+		if gc.getPlayer(utils.getHumanID()).canContact(iPlayer):
+			CyInterface().addMessage(utils.getHumanID(), False, iDuration, localText.getText("TXT_KEY_STABILITY_CITIES_SECEDED", (gc.getPlayer(iPlayer).getCivilizationDescription(0), len(lCededCities))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		
 	# execute possible resurrections
 	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
