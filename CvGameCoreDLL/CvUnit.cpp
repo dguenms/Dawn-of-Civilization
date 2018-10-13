@@ -6731,26 +6731,20 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 }
 
 //SuperSpies: TSHEEP start
-bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iModifier)
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission)
 {
-	// cheap missions do not give XP: avoid farming
-	if (iCost < std::min(100, GET_TEAM(getTeam()).getEspionagePointsAgainstTeam(eTargetTeam)))
+	int iExperience = GC.getEspionageMissionInfo(eMission).getBaseExperience();
+	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + GC.getEspionageMissionInfo(eMission).getDifficultyMod())) / 100;
+
+	iExperience *= 2 * iDifficulty;
+	iExperience /= 100;
+
+	if (iExperience < 100)
 	{
 		return false;
 	}
 
-	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + iModifier)) / 100;
-	int iExperience = 1;
-
-	if (iDifficulty >= 90) iExperience += 4;
-	else if (iDifficulty >= 80) iExperience += 3;
-	else if (iDifficulty >= 65) iExperience += 2;
-	else if (iDifficulty >= 50) iExperience += 1;
-
-	if (iExperience == 0)
-	{
-		return false;
-	}
+	iExperience /= 100;
 
 	changeExperience(iExperience);
 	testPromotionReady();
@@ -6949,7 +6943,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), iMissionCost, GC.getEspionageMissionInfo(eMission).getDifficultyMod());
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), eMission);
 			}
 
 			return true;

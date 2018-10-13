@@ -24146,6 +24146,12 @@ int CvEspionageMissionInfo::getDifficultyMod() const
 	return m_iDifficultyMod;
 }
 
+// Leoreth
+int CvEspionageMissionInfo::getBaseExperience() const
+{
+	return m_iBaseExperience;
+}
+
 bool CvEspionageMissionInfo::read(CvXMLLoadUtility* pXML)
 {
 	CvString szTextVal;
@@ -24189,6 +24195,7 @@ bool CvEspionageMissionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCounterespionageNumTurns, "iCounterespionageNumTurns");
 	pXML->GetChildXmlValByName(&m_iCounterespionageMod, "iCounterespionageMod");
 	pXML->GetChildXmlValByName(&m_iDifficultyMod, "iDifficultyMod");
+	pXML->GetChildXmlValByName(&m_iBaseExperience, "iBaseExperience"); // Leoreth
 
 	return true;
 }
