@@ -4301,6 +4301,11 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		{
 			CvCity* pCityTraded = getCity(item.m_iData);
 
+			if (!pCityTraded->isRevealed(GET_PLAYER(eWhoTo).getTeam(), true))
+			{
+				return false;
+			}
+
 			if (NULL != pCityTraded && pCityTraded->getLiberationPlayer(false) == eWhoTo)
 			{
 				return true;

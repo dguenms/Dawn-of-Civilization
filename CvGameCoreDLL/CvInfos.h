@@ -6466,6 +6466,7 @@ public:
 	int getCounterespionageNumTurns() const;
 	int getCounterespionageMod() const;
 	int getDifficultyMod() const;
+	int getBaseExperience() const;
 
 	bool read(CvXMLLoadUtility* pXML);
 
@@ -6505,6 +6506,7 @@ protected:
 	int m_iCounterespionageNumTurns;
 	int m_iCounterespionageMod;
 	int m_iDifficultyMod;
+	int m_iBaseExperience; // Leoreth
 };
 
 

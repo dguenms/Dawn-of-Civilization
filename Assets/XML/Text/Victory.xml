@@ -147,27 +147,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG2</Tag>
-		<English>Have 25000 culture in Buenos Aires by 1960 AD</English>
-		<French>Avoir 25 000 en culture &#224; Buenos Aires avant 1960 ap. J.-C.</French>
-		<German>Haben Sie bis zum Jahr 1960 n. Chr. 25.000 Kultur in Buenos Aires</German>
-		<Italian>Have 25000 culture in Buenos Aires by 1960 AD</Italian>
-		<Spanish>Have 25000 culture in Buenos Aires by 1960 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARG2_EPIC</Tag>
-		<English>Have 37500 culture in Buenos Aires by 1960 AD</English>
-		<French>Avoir 37 500 en culture &#224; Buenos Aires avant 1960 ap. J.-C.D</French>
-		<German>Haben Sie bis zum Jahr 1960 n. Chr. 37.500 Kultur in Buenos Aires</German>
-		<Italian>Have 37500 culture in Buenos Aires by 1960 AD</Italian>
-		<Spanish>Have 37500 culture in Buenos Aires by 1960 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARG2_MARATHON</Tag>
-		<English>Have 75000 culture in Buenos Aires by 1960 AD</English>
-		<French>Avoir 75 000 en culture &#224; Buenos Aires avant 1960 ap. J.-C.</French>
-		<German>Haben Sie bis zum Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
-		<Italian>Have 75000 culture in Buenos Aires by 1960 AD</Italian>
-		<Spanish>Have 75000 culture in Buenos Aires by 1960 AD</Spanish>
+		<English>Have legendary culture in Buenos Aires by 1960 AD</English>
+		<French>Have legendary culture in Buenos Aires by 1960 AD</French>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. legend&#228;re Kultur in Buenos Aires</German>
+		<Italian>Have legendary culture in Buenos Aires by 1960 AD</Italian>
+		<Spanish>Have legendary culture in Buenos Aires by 1960 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3_TITLE</Tag>
@@ -179,11 +163,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3</Tag>
-		<English>Experience five golden ages by 2000 AD</English>
-		<French>Traverser cinq &#226;ges d'or avant 2000 ap. J.-C.</French>
-		<German>Erleben Sie bis zum Jahr 2000 n. Chr. f&#252;nf goldene Zeitalter</German>
-		<Italian>Experience five golden ages by 2000 AD</Italian>
-		<Spanish>Experience five golden ages by 2000 AD</Spanish>
+		<English>Experience six golden ages by 2000 AD</English>
+		<French>Traverser six &#226;ges d'or avant 2000 ap. J.-C.</French>
+		<German>Erleben Sie bis zum Jahr 2000 n. Chr. sechs goldene Zeitalter</German>
+		<Italian>Experience six golden ages by 2000 AD</Italian>
+		<Spanish>Experience six golden ages by 2000 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT1_TITLE</Tag>

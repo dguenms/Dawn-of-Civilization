@@ -3904,6 +3904,35 @@ bool CvPlot::isFriendlyCity(const CvUnit& kUnit, bool bCheckImprovement) const
 }
 
 
+// Leoreth
+bool CvPlot::isAlliedCity(const CvUnit& kUnit, bool bCheckImprovement) const
+{
+	if (!isFriendlyCity(kUnit, bCheckImprovement))
+	{
+		return false;
+	}
+
+	TeamTypes eTeam = GET_PLAYER(kUnit.getCombatOwner(getTeam(), this)).getTeam();
+
+	if (getTeam() == eTeam)
+	{
+		return true;
+	}
+
+	if (GET_TEAM(getTeam()).isVassal(eTeam))
+	{
+		return true;
+	}
+
+	if (GET_TEAM(eTeam).isDefensivePact(getTeam()))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+
 bool CvPlot::isEnemyCity(const CvUnit& kUnit) const
 {
 	CvCity* pCity = getPlotCity();
