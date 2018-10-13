@@ -14481,6 +14481,9 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 				pCity->setHasReligion(eReligion, false, true);
 			}
 
+			pCity->changeCultureUpdateTimer(1);
+			pCity->changeOccupationTimer(1);
+
 			gDLL->getInterfaceIFace()->addMessage(getOwner(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_PERSECUTION", pCity->getName().c_str(), GC.getReligionInfo(eReligion).getDescription(), iLoot), "AS2D_PLAGUE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
 		}
 		else
@@ -14488,8 +14491,6 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 			gDLL->getInterfaceIFace()->addMessage(getOwner(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_PERSECUTION_FAIL", pCity->getName().c_str()), "AS2D_PLAGUE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 		}
 
-		pCity->changeCultureUpdateTimer(1);
-		pCity->changeOccupationTimer(1);
 		pCity->changeHurryAngerTimer(pCity->flatHurryAngerLength());
 
 		if (plot()->isActiveVisible(false))
