@@ -4,7 +4,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_0</Tag>
 		<English>Diplomacy</English>
-		<French>Diplomacy</French>
+		<French>Diplomatie</French>
 		<German>Diplomacy</German>
 		<Italian>Diplomacy</Italian>
 		<Spanish>Diplomacy</Spanish>
@@ -12,7 +12,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_1</Tag>
 		<English>Neighbors</English>
-		<French>Neighbors</French>
+		<French>Voisins</French>
 		<German>Neighbors</German>
 		<Italian>Neighbors</Italian>
 		<Spanish>Neighbors</Spanish>
@@ -20,7 +20,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_10</Tag>
 		<English>Civic Number of Cities</English>
-		<French>Civic Number of Cities</French>
+		<French>Doctrines (nombre de villes)</French>
 		<German>Civic Number of Cities</German>
 		<Italian>Civic Number of Cities</Italian>
 		<Spanish>Civic Number of Cities</Spanish>
@@ -28,7 +28,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_11</Tag>
 		<English>Civic Cap</English>
-		<French>Civic Cap</French>
+		<French>Limite des doctrines</French>
 		<German>Civic Cap</German>
 		<Italian>Civic Cap</Italian>
 		<Spanish>Civic Cap</Spanish>
@@ -36,7 +36,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_12</Tag>
 		<English>Civic Techs</English>
-		<French>Civic Techs</French>
+		<French>Doctrines (technologies)</French>
 		<German>Civic Techs</German>
 		<Italian>Civic Techs</Italian>
 		<Spanish>Civic Techs</Spanish>
@@ -44,7 +44,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_13</Tag>
 		<English>Foreign Core Cities</English>
-		<French>Foreign Core Cities</French>
+		<French>Villes dans les c&#156;urs historiques &#233;trangers</French>
 		<German>Foreign Core Cities</German>
 		<Italian>Foreign Core Cities</Italian>
 		<Spanish>Foreign Core Cities</Spanish>
@@ -52,7 +52,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_14</Tag>
 		<English>City Happiness</English>
-		<French>City Happiness</French>
+		<French>Bonheur des villes</French>
 		<German>City Happiness</German>
 		<Italian>City Happiness</Italian>
 		<Spanish>City Happiness</Spanish>
@@ -60,7 +60,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_15</Tag>
 		<English>City Civics</English>
-		<French>City Civics</French>
+		<French>Doctrines (villes)</French>
 		<German>City Civics</German>
 		<Italian>City Civics</Italian>
 		<Spanish>City Civics</Spanish>
@@ -68,7 +68,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_16</Tag>
 		<English>City Culture</English>
-		<French>City Culture</French>
+		<French>Culture des villes</French>
 		<German>City Culture</German>
 		<Italian>City Culture</Italian>
 		<Spanish>City Culture</Spanish>
@@ -76,7 +76,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_17</Tag>
 		<English>Total City Stability</English>
-		<French>Total City Stability</French>
+		<French>Stabilit&#233; totale des villes</French>
 		<German>Total City Stability</German>
 		<Italian>Total City Stability</Italian>
 		<Spanish>Total City Stability</Spanish>
@@ -84,7 +84,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_18</Tag>
 		<English>Trade</English>
-		<French>Trade</French>
+		<French>Commerce</French>
 		<German>Trade</German>
 		<Italian>Trade</Italian>
 		<Spanish>Trade</Spanish>
@@ -92,7 +92,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_19</Tag>
 		<English>Economy</English>
-		<French>Economy</French>
+		<French>&#201;conomie</French>
 		<German>Economy</German>
 		<Italian>Economy</Italian>
 		<Spanish>Economy</Spanish>
@@ -100,7 +100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_2</Tag>
 		<English>Vassals</English>
-		<French>Vassals</French>
+		<French>Vassaux</French>
 		<German>Vassals</German>
 		<Italian>Vassals</Italian>
 		<Spanish>Vassals</Spanish>
@@ -108,7 +108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_20</Tag>
 		<English>Happiness</English>
-		<French>Happiness</French>
+		<French>Bonheur</French>
 		<German>Happiness</German>
 		<Italian>Happiness</Italian>
 		<Spanish>Happiness</Spanish>
@@ -116,7 +116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_21</Tag>
 		<English>Economy Extra</English>
-		<French>Economy Extra</French>
+		<French>Bonus &#233;conomique</French>
 		<German>Economy Extra</German>
 		<Italian>Economy Extra</Italian>
 		<Spanish>Economy Extra</Spanish>
@@ -124,7 +124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_22</Tag>
 		<English>Great Depression</English>
-		<French>Great Depression</French>
+		<French>Grande D&#233;pression</French>
 		<German>Great Depression</German>
 		<Italian>Great Depression</Italian>
 		<Spanish>Great Depression</Spanish>
@@ -132,7 +132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_23</Tag>
 		<English>Foreign Great Depression</English>
-		<French>Foreign Great Depression</French>
+		<French>Grande D&#233;pression &#224; l'&#233;tranger</French>
 		<German>Foreign Great Depression</German>
 		<Italian>Foreign Great Depression</Italian>
 		<Spanish>Foreign Great Depression</Spanish>
@@ -140,7 +140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_24</Tag>
 		<English>Post-Communist Crisis</English>
-		<French>Post-Communist Crisis</French>
+		<French>Crise post-communiste</French>
 		<German>Post-Communist Crisis</German>
 		<Italian>Post-Communist Crisis</Italian>
 		<Spanish>Post-Communist Crisis</Spanish>
@@ -148,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_25</Tag>
 		<English>Transition to Democracy</English>
-		<French>Transition to Democracy</French>
+		<French>Transition d&#233;mocratique</French>
 		<German>Transition to Democracy</German>
 		<Italian>Transition to Democracy</Italian>
 		<Spanish>Transition to Democracy</Spanish>
@@ -156,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_26</Tag>
 		<English>Number of Cities</English>
-		<French>Number of Cities</French>
+		<French>Nombre de villes</French>
 		<German>Number of Cities</German>
 		<Italian>Number of Cities</Italian>
 		<Spanish>Number of Cities</Spanish>
@@ -172,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_28</Tag>
 		<English>Combat Extra</English>
-		<French>Combat Extra</French>
+		<French>Bonus de combat</French>
 		<German>Combat Extra</German>
 		<Italian>Combat Extra</Italian>
 		<Spanish>Combat Extra</Spanish>
@@ -180,7 +180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_29</Tag>
 		<English>Anarchy</English>
-		<French>Anarchy</French>
+		<French>Anarchie</French>
 		<German>Anarchy</German>
 		<Italian>Anarchy</Italian>
 		<Spanish>Anarchy</Spanish>
@@ -188,7 +188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_3</Tag>
 		<English>Imperialism</English>
-		<French>Imperialism</French>
+		<French>Imp&#233;rialisme</French>
 		<German>Imperialism</German>
 		<Italian>Imperialism</Italian>
 		<Spanish>Imperialism</Spanish>
@@ -196,7 +196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_30</Tag>
 		<English>Golden Age</English>
-		<French>Golden Age</French>
+		<French>&#194;ge d'or</French>
 		<German>Golden Age</German>
 		<Italian>Golden Age</Italian>
 		<Spanish>Golden Age</Spanish>
@@ -204,7 +204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_31</Tag>
 		<English>Fall</English>
-		<French>Fall</French>
+		<French>Chute</French>
 		<German>Fall</German>
 		<Italian>Fall</Italian>
 		<Spanish>Fall</Spanish>
@@ -212,7 +212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_32</Tag>
 		<English>Base Stability</English>
-		<French>Base Stability</French>
+		<French>Stabilit&#233; de base</French>
 		<German>Base Stability</German>
 		<Italian>Base Stability</Italian>
 		<Spanish>Base Stability</Spanish>
@@ -236,7 +236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_6</Tag>
 		<English>Outer Expansion</English>
-		<French>Outer Expansion</French>
+		<French>Expansion ext&#233;rieure</French>
 		<German>Outer Expansion</German>
 		<Italian>Outer Expansion</Italian>
 		<Spanish>Outer Expansion</Spanish>
@@ -244,7 +244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_7</Tag>
 		<English>Occupied Core</English>
-		<French>Occupied Core</French>
+		<French>C&#156;ur historique occup&#233;</French>
 		<German>Occupied Core</German>
 		<Italian>Occupied Core</Italian>
 		<Spanish>Occupied Core</Spanish>
@@ -252,7 +252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_8</Tag>
 		<English>Civic Combinations</English>
-		<French>Civic Combinations</French>
+		<French>Combinaisons de doctrines</French>
 		<German>Civic Combinations</German>
 		<Italian>Civic Combinations</Italian>
 		<Spanish>Civic Combinations</Spanish>
@@ -260,7 +260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_9</Tag>
 		<English>Civic Era</English>
-		<French>Civic Era</French>
+		<French>&#200;re des doctrines</French>
 		<German>Civic Era</German>
 		<Italian>Civic Era</Italian>
 		<Spanish>Civic Era</Spanish>
@@ -268,7 +268,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ADVISOR_TITLE</Tag>
 		<English>STABILITY: </English>
-		<French>STABILITE : </French>
+		<French>STABILIT&#201; : </French>
 		<German>STABILIT&#196;T: </German>
 		<Italian>STABILIT&#192;: </Italian>
 		<Spanish>ESTABILIDAD: </Spanish>
@@ -276,7 +276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ANARCHY</Tag>
 		<English>Anarchy</English>
-		<French>Anarchy</French>
+		<French>Anarchie</French>
 		<German>Anarchy</German>
 		<Italian>Anarchy</Italian>
 		<Spanish>Anarchy</Spanish>
@@ -284,7 +284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_BAD_RELATIONS</Tag>
 		<English>Bad Relations</English>
-		<French>Bad Relations</French>
+		<French>Mauvaises relations</French>
 		<German>Bad Relations</German>
 		<Italian>Bad Relations</Italian>
 		<Spanish>Bad Relations</Spanish>
@@ -292,7 +292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_BARBARIAN_LOSSES</Tag>
 		<English>Lost Battles to Barbarians</English>
-		<French>Lost Battles to Barbarians</French>
+		<French>Batailles perdues contre les barbares</French>
 		<German>Lost Battles to Barbarians</German>
 		<Italian>Lost Battles to Barbarians</Italian>
 		<Spanish>Lost Battles to Barbarians</Spanish>
@@ -300,7 +300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_BASE</Tag>
 		<English>Base Stability</English>
-		<French>Base Stability</French>
+		<French>Stabilit&#233; de base</French>
 		<German>Base Stability</German>
 		<Italian>Base Stability</Italian>
 		<Spanish>Base Stability</Spanish>
@@ -308,7 +308,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_BUILDINGS</Tag>
 		<English>Buildings</English>
-		<French>Buildings</French>
+		<French>B&#226;timents</French>
 		<German>Buildings</German>
 		<Italian>Buildings</Italian>
 		<Spanish>Buildings</Spanish>
@@ -316,7 +316,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CANCEL_CAPITULATION</Tag>
 		<English>%s1 no longer recognizes our overlordship and declares sovereignty!</English>
-		<French>%s1 no longer recognizes our overlordship and declares sovereignty!</French>
+		<French>%s1 ne reconna&#238;t plus votre suzerainet&#233; et affirme sa souverainet&#233; !</French>
 		<German>%s1 no longer recognizes our overlordship and declares sovereignty!</German>
 		<Italian>%s1 no longer recognizes our overlordship and declares sovereignty!</Italian>
 		<Spanish>%s1 no longer recognizes our overlordship and declares sovereignty!</Spanish>
@@ -324,7 +324,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CANCEL_DEFENSIVE_PACT</Tag>
 		<English>%s1 has canceled their defensive pact with us!</English>
-		<French>%s1 has canceled their defensive pact with us!</French>
+		<French>%s1 a annul&#233; son pacte de d&#233;fense avec nous !</French>
 		<German>%s1 has canceled their defensive pact with us!</German>
 		<Italian>%s1 has canceled their defensive pact with us!</Italian>
 		<Spanish>%s1 has canceled their defensive pact with us!</Spanish>
@@ -332,7 +332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CANCEL_PEACE_VASSAL</Tag>
 		<English>%s1 no longer wishes to be our vassal!</English>
-		<French>%s1 no longer wishes to be our vassal!</French>
+		<French>%s1 ne souhaite plus &#234;tre notre vassal !</French>
 		<German>%s1 no longer wishes to be our vassal!</German>
 		<Italian>%s1 no longer wishes to be our vassal!</Italian>
 		<Spanish>%s1 no longer wishes to be our vassal!</Spanish>
@@ -340,7 +340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CANCEL_TRADE</Tag>
 		<English>%s1 has canceled their open borders agreement with us!</English>
-		<French>%s1 has canceled their open borders agreement with us!</French>
+		<French>%s1 a annul&#233; son accord de libre passage avec nous !</French>
 		<German>%s1 has canceled their open borders agreement with us!</German>
 		<Italian>%s1 has canceled their open borders agreement with us!</Italian>
 		<Spanish>%s1 has canceled their open borders agreement with us!</Spanish>
@@ -348,7 +348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CAP</Tag>
 		<English>Stability Limits</English>
-		<French>Stability Limits</French>
+		<French>Limites &#224; la stabilit&#233;</French>
 		<German>Stability Limits</German>
 		<Italian>Stability Limits</Italian>
 		<Spanish>Stability Limits</Spanish>
@@ -356,7 +356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CATEGORY_DOMESTIC</Tag>
 		<English>Domestic</English>
-		<French>Domestic</French>
+		<French>int&#233;rieure</French>
 		<German>Domestic</German>
 		<Italian>Domestic</Italian>
 		<Spanish>Domestic</Spanish>
@@ -364,7 +364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CATEGORY_ECONOMY</Tag>
 		<English>Economy</English>
-		<French>Economy</French>
+		<French>&#233;conomique</French>
 		<German>Economy</German>
 		<Italian>Economy</Italian>
 		<Spanish>Economy</Spanish>
@@ -372,7 +372,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CATEGORY_EXPANSION</Tag>
 		<English>Expansion</English>
-		<French>Expansion</French>
+		<French>territoriale</French>
 		<German>Expansion</German>
 		<Italian>Expansion</Italian>
 		<Spanish>Expansion</Spanish>
@@ -380,7 +380,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CATEGORY_FOREIGN</Tag>
 		<English>Foreign</English>
-		<French>Foreign</French>
+		<French>&#233;trang&#232;re</French>
 		<German>Foreign</German>
 		<Italian>Foreign</Italian>
 		<Spanish>Foreign</Spanish>
@@ -388,7 +388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CATEGORY_MILITARY</Tag>
 		<English>Military</English>
-		<French>Military</French>
+		<French>militaire</French>
 		<German>Military</German>
 		<Italian>Military</Italian>
 		<Spanish>Military</Spanish>
@@ -396,7 +396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CHANGE_NEGATIVE</Tag>
 		<English>If our stability does not improve, we will lose a stability level at the next check</English>
-		<French>If our stability does not improve, we will lose a stability level at the next check</French>
+		<French>Si notre stabilit&#233; ne s'am&#233;liore pas, nous perdrons un niveau de stabilit&#233; &#224; la prochaine v&#233;rification</French>
 		<German>If our stability does not improve, we will lose a stability level at the next check</German>
 		<Italian>If our stability does not improve, we will lose a stability level at the next check</Italian>
 		<Spanish>If our stability does not improve, we will lose a stability level at the next check</Spanish>
@@ -404,7 +404,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CHANGE_POSITIVE</Tag>
 		<English>Unless our stability decreases, we will gain a stability level at the next check</English>
-		<French>Unless our stability decreases, we will gain a stability level at the next check</French>
+		<French>&#192; moins que notre stabilit&#233; ne diminue d'ici l&#224;, nous gagnerons un niveau de stabilit&#233; &#224; la prochaine v&#233;rification</French>
 		<German>Unless our stability decreases, we will gain a stability level at the next check</German>
 		<Italian>Unless our stability decreases, we will gain a stability level at the next check</Italian>
 		<Spanish>Unless our stability decreases, we will gain a stability level at the next check</Spanish>
@@ -412,7 +412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CENTRAL_PLANNING_TRADE_FREE_MARKET</Tag>
 		<English>Central Planning: Trade with Free Market Civilizations</English>
-		<French>Central Planning: Trade with Free Market Civilizations</French>
+		<French>&#201;conomie planifi&#233;e : commerce avec des civilisations adeptes du libre march&#233;</French>
 		<German>Central Planning: Trade with Free Market Civilizations</German>
 		<Italian>Central Planning: Trade with Free Market Civilizations</Italian>
 		<Spanish>Central Planning: Trade with Free Market Civilizations</Spanish>
@@ -428,7 +428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITIES_BUILT</Tag>
 		<English>Cities Built</English>
-		<French>Cities Built</French>
+		<French>Villes construites</French>
 		<German>Cities Built</German>
 		<Italian>Cities Built</Italian>
 		<Spanish>Cities Built</Spanish>
@@ -436,7 +436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITIES_CONQUERED</Tag>
 		<English>Cities Conquered</English>
-		<French>Cities Conquered</French>
+		<French>Villes conquises</French>
 		<German>Cities Conquered</German>
 		<Italian>Cities Conquered</Italian>
 		<Spanish>Cities Conquered</Spanish>
@@ -444,7 +444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITIES_LOST</Tag>
 		<English>Cities Lost</English>
-		<French>Cities Lost</French>
+		<French>Villes perdues</French>
 		<German>Cities Lost</German>
 		<Italian>Cities Lost</Italian>
 		<Spanish>Cities Lost</Spanish>
@@ -452,7 +452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITIES_RAZED</Tag>
 		<English>Cities Razed</English>
-		<French>Cities Razed</French>
+		<French>Villes ras&#233;es</French>
 		<German>Cities Razed</German>
 		<Italian>Cities Razed</Italian>
 		<Spanish>Cities Razed</Spanish>
@@ -460,7 +460,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITIES_TITLE</Tag>
 		<English>CITIES</English>
-		<French>CITIES</French>
+		<French>VILLES</French>
 		<German>CITIES</German>
 		<Italian>CITIES</Italian>
 		<Spanish>CITIES</Spanish>
@@ -468,7 +468,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITY_CHANGED_OWNER</Tag>
 		<English>%s1 has joined the %s2 civilization!</English>
-		<French>%s1 has joined the %s2 civilization!</French>
+		<French>%s1 a rejoint la civilisation %s2 !</French>
 		<German>%s1 has joined the %s2 civilization!</German>
 		<Italian>%s1 has joined the %s2 civilization!</Italian>
 		<Spanish>%s1 has joined the %s2 civilization!</Spanish>
@@ -476,7 +476,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US</Tag>
 		<English>%s1 has joined our civilization!</English>
-		<French>%s1 has joined our civilization!</French>
+		<French>%s1 a rejoint notre civilisation !</French>
 		<German>%s1 has joined our civilization!</German>
 		<Italian>%s1 has joined our civilization!</Italian>
 		<Spanish>%s1 has joined our civilization!</Spanish>
@@ -484,7 +484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITY_CIVICS</Tag>
 		<English>Civics</English>
-		<French>Civics</French>
+		<French>Doctrines</French>
 		<German>Civics</German>
 		<Italian>Civics</Italian>
 		<Spanish>Civics</Spanish>
@@ -500,7 +500,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITY_HAPPINESS</Tag>
 		<English>Happiness</English>
-		<French>Happiness</French>
+		<French>Bonheur</French>
 		<German>Happiness</German>
 		<Italian>Happiness</Italian>
 		<Spanish>Happiness</Spanish>
@@ -508,7 +508,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITY_INDEPENDENCE</Tag>
 		<English>%s1 has declared independence!</English>
-		<French>%s1 has declared independence!</French>
+		<French>%s1 a d&#233;clar&#233; son ind&#233;pendance !</French>
 		<German>%s1 has declared independence!</German>
 		<Italian>%s1 has declared independence!</Italian>
 		<Spanish>%s1 has declared independence!</Spanish>
@@ -516,7 +516,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CITY_TERRITORY</Tag>
 		<English>City Territory</English>
-		<French>City Territory</French>
+		<French>Territoire des villes</French>
 		<German>City Territory</German>
 		<Italian>City Territory</Italian>
 		<Spanish>City Territory</Spanish>
@@ -524,7 +524,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CIVIC_COMBINATIONS</Tag>
 		<English>Combinations</English>
-		<French>Combinations</French>
+		<French>Combinaisons</French>
 		<German>Combinations</German>
 		<Italian>Combinations</Italian>
 		<Spanish>Combinations</Spanish>
@@ -532,7 +532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CIVIC_ERA</Tag>
 		<English>Era</English>
-		<French>Era</French>
+		<French>&#200;re</French>
 		<German>Era</German>
 		<Italian>Era</Italian>
 		<Spanish>Era</Spanish>
@@ -540,7 +540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CIVIC_NUMBER_CITIES</Tag>
 		<English>Number of Cities</English>
-		<French>Number of Cities</French>
+		<French>Nombre de villes</French>
 		<German>Number of Cities</German>
 		<Italian>Number of Cities</Italian>
 		<Spanish>Number of Cities</Spanish>
@@ -556,7 +556,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CIVICS_TITLE</Tag>
 		<English>CIVICS</English>
-		<French>CIVICS</French>
+		<French>DOCTRINES</French>
 		<German>CIVICS</German>
 		<Italian>CIVICS</Italian>
 		<Spanish>CIVICS</Spanish>
@@ -580,7 +580,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_COLLAPSE_TO_CORE</Tag>
 		<English>We are losing control over our entire empire!</English>
-		<French>We are losing control over our entire empire!</French>
+		<French>Nous sommes en train de perdre le contr&#244;le de l'empire au grand complet !</French>
 		<German>We are losing control over our entire empire!</German>
 		<Italian>We are losing control over our entire empire!</Italian>
 		<Spanish>We are losing control over our entire empire!</Spanish>
@@ -604,7 +604,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_COMPATIBLE_CIVICS</Tag>
 		<English>Compatible Civics</English>
-		<French>Compatible Civics</French>
+		<French>Doctrines compatibles</French>
 		<German>Compatible Civics</German>
 		<Italian>Compatible Civics</Italian>
 		<Spanish>Compatible Civics</Spanish>
@@ -612,7 +612,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_COMPLETE_COLLAPSE</Tag>
 		<English>The %s1 civilization has collapsed!</English>
-		<French>The %s1 civilization has collapsed!</French>
+		<French>La civilisation %s1 s'est effondr&#233;e !</French>
 		<German>The %s1 civilization has collapsed!</German>
 		<Italian>The %s1 civilization has collapsed!</Italian>
 		<Spanish>The %s1 civilization has collapsed!</Spanish>
@@ -620,7 +620,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CONQUERED_CITIES</Tag>
 		<English>Conquered Cities</English>
-		<French>Conquered Cities</French>
+		<French>Villes conquises</French>
 		<German>Conquered Cities</German>
 		<Italian>Conquered Cities</Italian>
 		<Spanish>Conquered Cities</Spanish>
@@ -636,7 +636,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CONTEMPORARY_CIVICS</Tag>
 		<English>Contemporary Civics</English>
-		<French>Contemporary Civics</French>
+		<French>Doctrines contemporaines</French>
 		<German>Contemporary Civics</German>
 		<Italian>Contemporary Civics</Italian>
 		<Spanish>Contemporary Civics</Spanish>
@@ -644,7 +644,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CONTESTED_AREA</Tag>
 		<English>Contested Area</English>
-		<French>Contested Area</French>
+		<French>Zone contest&#233;e</French>
 		<German>Contested Area</German>
 		<Italian>Contested Area</Italian>
 		<Spanish>Contested Area</Spanish>
@@ -652,7 +652,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CORE_AREA</Tag>
 		<English>Core Area</English>
-		<French>Core Area</French>
+		<French>Zone centrale</French>
 		<German>Core Area</German>
 		<Italian>Core Area</Italian>
 		<Spanish>Core Area</Spanish>
@@ -668,7 +668,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE</Tag>
 		<English>Overextension</English>
-		<French>Overextension</French>
+		<French>Surextension</French>
 		<German>Overextension</German>
 		<Italian>Overextension</Italian>
 		<Spanish>Overextension</Spanish>
@@ -676,7 +676,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT</Tag>
 		<English>If our stability does not improve, we will experience a crisis at the next stability check!</English>
-		<French>If our stability does not improve, we will experience a crisis at the next stability check!</French>
+		<French>Si notre stabilit&#233; ne s'am&#233;liore pas, nous traverserons une crise &#224; la prochaine v&#233;rification de stabilit&#233; !</French>
 		<German>If our stability does not improve, we will experience a crisis at the next stability check!</German>
 		<Italian>If our stability does not improve, we will experience a crisis at the next stability check!</Italian>
 		<Spanish>If our stability does not improve, we will experience a crisis at the next stability check!</Spanish>
@@ -684,7 +684,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE</Tag>
 		<English>A %s1 crisis is imminent!</English>
-		<French>A %s1 crisis is imminent!</French>
+		<French>Une crise %s1 est imminente !</French>
 		<German>A %s1 crisis is imminent!</German>
 		<Italian>A %s1 crisis is imminent!</Italian>
 		<Spanish>A %s1 crisis is imminent!</Spanish>
@@ -692,7 +692,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_MINOR</Tag>
 		<English>minor</English>
-		<French>minor</French>
+		<French>mineure</French>
 		<German>minor</German>
 		<Italian>minor</Italian>
 		<Spanish>minor</Spanish>
@@ -700,7 +700,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_MODERATE</Tag>
 		<English>moderate</English>
-		<French>moderate</French>
+		<French>mod&#233;r&#233;e</French>
 		<German>moderate</German>
 		<Italian>moderate</Italian>
 		<Spanish>moderate</Spanish>
@@ -708,7 +708,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_SEVERE</Tag>
 		<English>severe</English>
-		<French>evere</French>
+		<French>majeure</French>
 		<German>evere</German>
 		<Italian>evere</Italian>
 		<Spanish>evere</Spanish>
@@ -716,7 +716,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_TERMINAL</Tag>
 		<English>terminal</English>
-		<French>terminal</French>
+		<French>terminale</French>
 		<German>terminal</German>
 		<Italian>terminal</Italian>
 		<Spanish>terminal</Spanish>
@@ -724,7 +724,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_MESSAGE</Tag>
 		<English>Our civilization is experiencing a %s1 %s2 crisis!</English>
-		<French>Our civilization is experiencing a %s1 %s2 crisis!</French>
+		<French>Notre civilisation traverse une crise %s1 %s2 !</French>
 		<German>Our civilization is experiencing a %s1 %s2 crisis!</German>
 		<Italian>Our civilization is experiencing a %s1 %s2 crisis!</Italian>
 		<Spanish>Our civilization is experiencing a %s1 %s2 crisis!</Spanish>
@@ -732,7 +732,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_DOMESTIC</Tag>
 		<English>domestic</English>
-		<French>domestic</French>
+		<French>int&#233;rieure</French>
 		<German>domestic</German>
 		<Italian>domestic</Italian>
 		<Spanish>domestic</Spanish>
@@ -740,7 +740,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_ECONOMY</Tag>
 		<English>economic</English>
-		<French>economic</French>
+		<French>&#233;conomique</French>
 		<German>economic</German>
 		<Italian>economic</Italian>
 		<Spanish>economic</Spanish>
@@ -748,7 +748,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_EXPANSION</Tag>
 		<English>territorial</English>
-		<French>territorial</French>
+		<French>territoriale</French>
 		<German>territorial</German>
 		<Italian>territorial</Italian>
 		<Spanish>territorial</Spanish>
@@ -756,7 +756,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_FOREIGN</Tag>
 		<English>diplomatic</English>
-		<French>diplomatic</French>
+		<French>diplomatique</French>
 		<German>diplomatic</German>
 		<Italian>diplomatic</Italian>
 		<Spanish>diplomatic</Spanish>
@@ -764,7 +764,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY</Tag>
 		<English>military</English>
-		<French>military</French>
+		<French>militaire</French>
 		<German>military</German>
 		<Italian>military</Italian>
 		<Spanish>military</Spanish>
@@ -772,7 +772,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DAMAGE_RELATIONS</Tag>
 		<English>Our relations with %s1 have deteriorated!</English>
-		<French>Our relations with %s1 have deteriorated!</French>
+		<French>Nos relations avec la civilisation : %s1 se sont d&#233;t&#233;rior&#233;es !</French>
 		<German>Our relations with %s1 have deteriorated!</German>
 		<Italian>Our relations with %s1 have deteriorated!</Italian>
 		<Spanish>Our relations with %s1 have deteriorated!</Spanish>
@@ -780,7 +780,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DEFENSIVE_PACTS</Tag>
 		<English>Defensive Pacts</English>
-		<French>Defensive Pacts</French>
+		<French>Pactes de d&#233;fense</French>
 		<German>Defensive Pacts</German>
 		<Italian>Defensive Pacts</Italian>
 		<Spanish>Defensive Pacts</Spanish>
@@ -796,7 +796,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DEMOCRACY_TRANSITION</Tag>
 		<English>Transition to Democracy</English>
-		<French>Transition to Democracy</French>
+		<French>Transition d&#233;mocratique</French>
 		<German>Transition to Democracy</German>
 		<Italian>Transition to Democracy</Italian>
 		<Spanish>Transition to Democracy</Spanish>
@@ -804,7 +804,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DIFFICULTY</Tag>
 		<English>Difficulty Level</English>
-		<French>Difficulty Level</French>
+		<French>Niveau de difficult&#233;</French>
 		<German>Difficulty Level</German>
 		<Italian>Difficulty Level</Italian>
 		<Spanish>Difficulty Level</Spanish>
@@ -812,7 +812,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DIPLOMACY</Tag>
 		<English>Diplomacy</English>
-		<French>Diplomacy</French>
+		<French>Diplomatie</French>
 		<German>Diplomacy</German>
 		<Italian>Diplomacy</Italian>
 		<Spanish>Diplomacy</Spanish>
@@ -820,7 +820,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DIPLOMACY_TITLE</Tag>
 		<English>FOREIGN</English>
-		<French>FOREIGN</French>
+		<French>AFFAIRES &#201;TRANG&#200;RES</French>
 		<German>FOREIGN</German>
 		<Italian>FOREIGN</Italian>
 		<Spanish>FOREIGN</Spanish>
@@ -828,7 +828,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DOMESTIC_CRISIS</Tag>
 		<English>Our civilization is descending into a period of civil war!</English>
-		<French>Our civilization is descending into a period of civil war!</French>
+		<French>Notre civilisation sombre dans une p&#233;riode de guerre civile !</French>
 		<German>Our civilization is descending into a period of civil war!</German>
 		<Italian>Our civilization is descending into a period of civil war!</Italian>
 		<Spanish>Our civilization is descending into a period of civil war!</Spanish>
@@ -836,7 +836,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_DOWNGRADE_COTTAGES</Tag>
 		<English>The economic crisis is impeding our cottage growth!</English>
-		<French>The economic crisis is impeding our cottage growth!</French>
+		<French>La crise &#233;conomique ralentit la croissance de nos cottages !</French>
 		<German>The economic crisis is impeding our cottage growth!</German>
 		<Italian>The economic crisis is impeding our cottage growth!</Italian>
 		<Spanish>The economic crisis is impeding our cottage growth!</Spanish>
@@ -844,7 +844,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMIC_CRISIS</Tag>
 		<English>The economic crisis is paralyzing our civilization!</English>
-		<French>The economic crisis is paralyzing our civilization!</French>
+		<French>La crise &#233;conomique paralyse notre civilisation !</French>
 		<German>The economic crisis is paralyzing our civilization!</German>
 		<Italian>The economic crisis is paralyzing our civilization!</Italian>
 		<Spanish>The economic crisis is paralyzing our civilization!</Spanish>
@@ -852,7 +852,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMIC_DECLINE</Tag>
 		<English>Recession</English>
-		<French>Recession</French>
+		<French>R&#233;cession</French>
 		<German>Recession</German>
 		<Italian>Recession</Italian>
 		<Spanish>Recession</Spanish>
@@ -860,7 +860,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMIC_GROWTH</Tag>
 		<English>Economic Growth</English>
-		<French>Economic Growth</French>
+		<French>Croissance &#233;conomique</French>
 		<German>Economic Growth</German>
 		<Italian>Economic Growth</Italian>
 		<Spanish>Economic Growth</Spanish>
@@ -868,7 +868,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMIC_STAGNATION</Tag>
 		<English>Economic Stagnation</English>
-		<French>Economic Stagnation</French>
+		<French>Stagnation &#233;conomique</French>
 		<German>Economic Stagnation</German>
 		<Italian>Economic Stagnation</Italian>
 		<Spanish>Economic Stagnation</Spanish>
@@ -876,7 +876,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMY</Tag>
 		<English>Economy</English>
-		<French>Economy</French>
+		<French>&#201;conomie</French>
 		<German>Economy</German>
 		<Italian>Economy</Italian>
 		<Spanish>Economy</Spanish>
@@ -884,7 +884,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ECONOMY_TITLE</Tag>
 		<English>ECONOMY</English>
-		<French>ECONOMIE</French>
+		<French>&#201;CONOMIE</French>
 		<German>WIRTSCHAFT</German>
 		<Italian>ECONOMIA</Italian>
 		<Spanish>ECONOM&#205;A</Spanish>
@@ -892,7 +892,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_EXPANSION_TITLE</Tag>
 		<English>EXPANSION</English>
-		<French>XPANSION</French>
+		<French>EXPANSION</French>
 		<German>XPANSION</German>
 		<Italian>ESPANSIONE</Italian>
 		<Spanish>EXPANSI&#211;N</Spanish>
@@ -900,7 +900,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_FALL</Tag>
 		<English>Historicity</English>
-		<French>Historicity</French>
+		<French>Historicit&#233;</French>
 		<German>Historicity</German>
 		<Italian>Historicity</Italian>
 		<Spanish>Historicity</Spanish>
@@ -908,7 +908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_FOREIGN_AREA</Tag>
 		<English>Foreign Area</English>
-		<French>Foreign Area</French>
+		<French>Zone &#233;trang&#232;re</French>
 		<German>Foreign Area</German>
 		<Italian>Foreign Area</Italian>
 		<Spanish>Foreign Area</Spanish>
@@ -916,7 +916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_FOREIGN_CORE_AREA</Tag>
 		<English>Foreign Core Area</English>
-		<French>Foreign Core Area</French>
+		<French>Zone &#233;trang&#232;re centrale</French>
 		<German>Foreign Core Area</German>
 		<Italian>Foreign Core Area</Italian>
 		<Spanish>Foreign Core Area</Spanish>
@@ -924,7 +924,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_FOREIGN_GREAT_DEPRESSION</Tag>
 		<English>Great Depression (foreign)</English>
-		<French>Great Depression (foreign)</French>
+		<French>Grande D&#233;pression (&#224; l'&#233;tranger)</French>
 		<German>Great Depression (foreign)</German>
 		<Italian>Great Depression (foreign)</Italian>
 		<Spanish>Great Depression (foreign)</Spanish>
@@ -932,7 +932,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_FOREIGN_SECESSION</Tag>
 		<English>We are losing control over our foreign territory!</English>
-		<French>We are losing control over our foreign territory!</French>
+		<French>Nous sommes en train de perdre le contr&#244;le de nos territoires &#224; l'&#233;tranger !</French>
 		<German>We are losing control over our foreign territory!</German>
 		<Italian>We are losing control over our foreign territory!</Italian>
 		<Spanish>We are losing control over our foreign territory!</Spanish>
@@ -940,7 +940,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_GOLDEN_AGE</Tag>
 		<English>Golden Age</English>
-		<French>Golden Age</French>
+		<French>&#194;ge d'or</French>
 		<German>Golden Age</German>
 		<Italian>Golden Age</Italian>
 		<Spanish>Golden Age</Spanish>
@@ -948,7 +948,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_GOOD_RELATIONS</Tag>
 		<English>Good Relations</English>
-		<French>Good Relations</French>
+		<French>Bonnes relations</French>
 		<German>Good Relations</German>
 		<Italian>Good Relations</Italian>
 		<Spanish>Good Relations</Spanish>
@@ -964,7 +964,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE</Tag>
 		<English>The period of Great Depression in the %s1 is negatively influencing our economy!</English>
-		<French>La p&#233;riode de Grande D&#233;pression en %s1influence n&#233;gativement notre &#233;conomie ! </French>
+		<French>La p&#233;riode de Grande D&#233;pression en %s1 influence n&#233;gativement notre &#233;conomie ! </French>
 		<German>Die Phase der Gro&#223;en Depression im %s1:2 Reich hat negative Auswirkungen auf unsere Wirtschaft!</German>
 		<Italian>Il periodo di Grande Depressione nell'%s1 sta influenzando negativamente la nostra economia!</Italian>
 		<Spanish>&#161;El periodo de Gran Depresi&#243;n de %s1 est&#225; afectando negativamente a nuestra econom&#237;a!</Spanish>
@@ -988,7 +988,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_HAPPINESS</Tag>
 		<English>Happiness</English>
-		<French>Happiness</French>
+		<French>Bonheur</French>
 		<German>Happiness</German>
 		<Italian>Happiness</Italian>
 		<Spanish>Happiness</Spanish>
@@ -996,7 +996,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_HISTORICAL_AREA</Tag>
 		<English>Historical Area</English>
-		<French>Historical Area</French>
+		<French>Zone historique</French>
 		<German>Historical Area</German>
 		<Italian>Historical Area</Italian>
 		<Spanish>Historical Area</Spanish>
@@ -1004,7 +1004,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_IMMOBILIZED_UNITS</Tag>
 		<English>Due to the military crisis, we have temporarily lost control over our units!</English>
-		<French>Due to the military crisis, we have temporarily lost control over our units!</French>
+		<French>&#192; cause de la crise militaire, nous avons temporairement perdu le contr&#244;le de nos unit&#233;s militaires !</French>
 		<German>Due to the military crisis, we have temporarily lost control over our units!</German>
 		<Italian>Due to the military crisis, we have temporarily lost control over our units!</Italian>
 		<Spanish>Due to the military crisis, we have temporarily lost control over our units!</Spanish>
@@ -1012,7 +1012,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_INCOMPATIBLE_CIVICS</Tag>
 		<English>Incompatible Civics</English>
-		<French>Incompatible Civics</French>
+		<French>Doctrines incompatibles</French>
 		<German>Incompatible Civics</German>
 		<Italian>Incompatible Civics</Italian>
 		<Spanish>Incompatible Civics</Spanish>
@@ -1020,7 +1020,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_INSUFFICIENT_TRADE</Tag>
 		<English>Economic Isolation</English>
-		<French>Economic Isolation</French>
+		<French>Isolation &#233;conomique</French>
 		<German>Economic Isolation</German>
 		<Italian>Economic Isolation</Italian>
 		<Spanish>Economic Isolation</Spanish>
@@ -1028,7 +1028,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_ISOLATIONISM</Tag>
 		<English>Isolationism: no Cities outside of Core Area</English>
-		<French>Isolationism: no Cities outside of Core Area</French>
+		<French>Isolationnisme : pas de villes en dehors du c&#156;ur historique</French>
 		<German>Isolationism: no Cities outside of Core Area</German>
 		<Italian>Isolationism: no Cities outside of Core Area</Italian>
 		<Spanish>Isolationism: no Cities outside of Core Area</Spanish>
@@ -1036,7 +1036,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOSING_WARS</Tag>
 		<English>Losing Wars</English>
-		<French>Losing Wars</French>
+		<French>Perdre des guerres</French>
 		<German>Losing Wars</German>
 		<Italian>Losing Wars</Italian>
 		<Spanish>Losing Wars</Spanish>
@@ -1044,7 +1044,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOST_BATTLES</Tag>
 		<English>Lost Battles</English>
-		<French>Lost Battles</French>
+		<French>Batailles perdues</French>
 		<German>Lost Battles</German>
 		<Italian>Lost Battles</Italian>
 		<Spanish>Lost Battles</Spanish>
@@ -1052,7 +1052,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOST_CITIES</Tag>
 		<English>Lost Cities</English>
-		<French>Lost Cities</French>
+		<French>Villes perdues</French>
 		<German>Lost Cities</German>
 		<Italian>Lost Cities</Italian>
 		<Spanish>Lost Cities</Spanish>
@@ -1060,7 +1060,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOST_COMMERCE</Tag>
 		<English>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</English>
-		<French>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</French>
+		<French>La crise &#233;conomique que nous traversons nous a fait perdre %d1[ICON_GOLD] et %d2[ICON_RESEARCH] !</French>
 		<German>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</German>
 		<Italian>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</Italian>
 		<Spanish>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</Spanish>
@@ -1068,7 +1068,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOST_TERRITORY</Tag>
 		<English>We have lost control over our territory around %s1!</English>
-		<French>We have lost control over our territory around %s1!</French>
+		<French>Nous avons perdu le contr&#244;le du territoire pr&#232;s de %s1 !</French>
 		<German>We have lost control over our territory around %s1!</German>
 		<Italian>We have lost control over our territory around %s1!</Italian>
 		<Spanish>We have lost control over our territory around %s1!</Spanish>
@@ -1076,7 +1076,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER</Tag>
 		<English>Mercantilism: Trade with Wealthier Civilizations</English>
-		<French>Mercantilism: Trade with Wealthier Civilizations</French>
+		<French>Mercantilisme : commerce des avec des civilisations plus riches</French>
 		<German>Mercantilism: Trade with Wealthier Civilizations</German>
 		<Italian>Mercantilism: Trade with Wealthier Civilizations</Italian>
 		<Spanish>Mercantilism: Trade with Wealthier Civilizations</Spanish>
@@ -1084,7 +1084,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_MISC_TITLE</Tag>
 		<English>MISCELLANEOUS</English>
-		<French>MISCELLANEOUS</French>
+		<French>DIVERS</French>
 		<German>MISCELLANEOUS</German>
 		<Italian>MISCELLANEOUS</Italian>
 		<Spanish>MISCELLANEOUS</Spanish>
@@ -1092,7 +1092,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_NEIGHBORS</Tag>
 		<English>Collapsing Neighbors</English>
-		<French>Collapsing Neighbors</French>
+		<French>Voisins en voie de s'effondrer</French>
 		<German>Collapsing Neighbors</German>
 		<Italian>Collapsing Neighbors</Italian>
 		<Spanish>Collapsing Neighbors</Spanish>
@@ -1100,7 +1100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_NO_CHANGE</Tag>
 		<English>If our stability does not change, the stability level will remain constant at the next check</English>
-		<French>If our stability does not change, the stability level will remain constant at the next check</French>
+		<French>&#192; moins que notre stabilit&#233; ne change d'ici l&#224;, notre niveau de stabilit&#233; demeureura constant lors de la prochaine v&#233;rification</French>
 		<German>If our stability does not change, the stability level will remain constant at the next check</German>
 		<Italian>If our stability does not change, the stability level will remain constant at the next check</Italian>
 		<Spanish>If our stability does not change, the stability level will remain constant at the next check</Spanish>
@@ -1108,7 +1108,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_NORMALIZATION</Tag>
 		<English>Normalization</English>
-		<French>Normalization</French>
+		<French>Normalisation</French>
 		<German>Normalization</German>
 		<Italian>Normalization</Italian>
 		<Spanish>Normalization</Spanish>
@@ -1116,7 +1116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_OCCUPIED_CORE</Tag>
 		<English>Occupied Core</English>
-		<French>Occupied Core</French>
+		<French>C&#156;ur historique occup&#233;</French>
 		<German>Occupied Core</German>
 		<Italian>Occupied Core</Italian>
 		<Spanish>Occupied Core</Spanish>
@@ -1124,7 +1124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_OCCUPIED_FOREIGN_CORE</Tag>
 		<English>Occupied Foreign Core</English>
-		<French>Occupied Foreign Core</French>
+		<French>C&#156;ur historique &#233;tranger occup&#233;</French>
 		<German>Occupied Foreign Core</German>
 		<Italian>Occupied Foreign Core</Italian>
 		<Spanish>Occupied Foreign Core</Spanish>
@@ -1132,7 +1132,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_OUTDATED_CIVICS</Tag>
 		<English>Outdated Civics</English>
-		<French>Outdated Civics</French>
+		<French>Doctrines d&#233;su&#232;tes</French>
 		<German>Outdated Civics</German>
 		<Italian>Outdated Civics</Italian>
 		<Spanish>Outdated Civics</Spanish>
@@ -1140,7 +1140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_OUTER_TERRITORY</Tag>
 		<English>Outer Territory</English>
-		<French>Outer Territory</French>
+		<French>Territoire ext&#233;rieur</French>
 		<German>Outer Territory</German>
 		<Italian>Outer Territory</Italian>
 		<Spanish>Outer Territory</Spanish>
@@ -1148,7 +1148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_OVERALL</Tag>
 		<English>Overall Stability</English>
-		<French>Overall Stability</French>
+		<French>Stabilit&#233; globale</French>
 		<German>Overall Stability</German>
 		<Italian>Overall Stability</Italian>
 		<Spanish>Overall Stability</Spanish>
@@ -1164,7 +1164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_PARAMETER_CIVICS</Tag>
 		<English>CIVICS</English>
-		<French>REGIME</French>
+		<French>R&#201;GIME</French>
 		<German>STAATSFORMEN</German>
 		<Italian>FORME DI GOVERNO</Italian>
 		<Spanish>PRINCIPIOS</Spanish>
@@ -1172,7 +1172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_PARAMETER_ECONOMY</Tag>
 		<English>ECONOMY</English>
-		<French>ECONOMIE</French>
+		<French>&#201;CONOMIE</French>
 		<German>WIRTSCHAFT</German>
 		<Italian>ECONOMIA</Italian>
 		<Spanish>ECONOM&#205;A</Spanish>
@@ -1180,7 +1180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_PARAMETER_EXPANSION</Tag>
 		<English>EXPANSION</English>
-		<French>XPANSION</French>
+		<French>EXPANSION</French>
 		<German>XPANSION</German>
 		<Italian>ESPANSIONE</Italian>
 		<Spanish>EXPANSI&#211;N</Spanish>
@@ -1188,7 +1188,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_PARAMETER_FOREIGN</Tag>
 		<English>FOREIGN</English>
-		<French>ETRANGER</French>
+		<French>AFFAIRES &#201;TRANG&#200;RES</French>
 		<German>AUSLAND</German>
 		<Italian>ESTERO</Italian>
 		<Spanish>ASUNTOS EXTERIORES</Spanish>
@@ -1204,7 +1204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_POST_COMMUNISM</Tag>
 		<English>Post-Communist Crisis</English>
-		<French>de Crise Post-Communiste</French>
+		<French>de crise post-communiste</French>
 		<German>Post-Kommunistischen Krise</German>
 		<Italian>Crisi Post-Comunista</Italian>
 		<Spanish>Crisis Post-Comunista</Spanish>
@@ -1212,7 +1212,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RAZED_CITIES</Tag>
 		<English>Razed Cities</English>
-		<French>Razed Cities</French>
+		<French>Villes ras&#233;es</French>
 		<German>Razed Cities</German>
 		<Italian>Razed Cities</Italian>
 		<Spanish>Razed Cities</Spanish>
@@ -1220,7 +1220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RECENT_EXPANSION</Tag>
 		<English>Recent Expansion</English>
-		<French>Recent Expansion</French>
+		<French>Expansion r&#233;cente</French>
 		<German>Recent Expansion</German>
 		<Italian>Recent Expansion</Italian>
 		<Spanish>Recent Expansion</Spanish>
@@ -1236,7 +1236,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RELIGIOUS_DISUNITY</Tag>
 		<English>Religious Disunity</English>
-		<French>Religious Disunity</French>
+		<French>Manque d'unit&#233; religieuse</French>
 		<German>Religious Disunity</German>
 		<Italian>Religious Disunity</Italian>
 		<Spanish>Religious Disunity</Spanish>
@@ -1244,7 +1244,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RELIGIOUS_UNITY</Tag>
 		<English>Religious Unity</English>
-		<French>Religious Unity</French>
+		<French>Unit&#233; religieuse</French>
 		<German>Religious Unity</German>
 		<Italian>Religious Unity</Italian>
 		<Spanish>Religious Unity</Spanish>
@@ -1252,7 +1252,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_REMOVE_DEFENSES</Tag>
 		<English>The military crisis leaves our cities without effective defenses!</English>
-		<French>The military crisis leaves our cities without effective defenses!</French>
+		<French>La crise militaire laisse nos villes sans d&#233;fenses efficaces !</French>
 		<German>The military crisis leaves our cities without effective defenses!</German>
 		<Italian>The military crisis leaves our cities without effective defenses!</Italian>
 		<Spanish>The military crisis leaves our cities without effective defenses!</Spanish>
@@ -1260,7 +1260,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_REMOVE_GPP</Tag>
 		<English>The economic crisis is preventing the emergence of great people!</English>
-		<French>The economic crisis is preventing the emergence of great people!</French>
+		<French>La crise &#233;conomique emp&#234;che l'apparition de personnages illustres !</French>
 		<German>The economic crisis is preventing the emergence of great people!</German>
 		<Italian>The economic crisis is preventing the emergence of great people!</Italian>
 		<Spanish>The economic crisis is preventing the emergence of great people!</Spanish>
@@ -1268,7 +1268,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_SECEDE_UNHAPPY</Tag>
 		<English>Unhappy cities are leaving our civilization!</English>
-		<French>Unhappy cities are leaving our civilization!</French>
+		<French>Nos villes malheureuses quittent notre civilisation !</French>
 		<German>Unhappy cities are leaving our civilization!</German>
 		<Italian>Unhappy cities are leaving our civilization!</Italian>
 		<Spanish>Unhappy cities are leaving our civilization!</Spanish>
@@ -1292,7 +1292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_SOCIETY_TITLE</Tag>
 		<English>SOCIETY</English>
-		<French>SOCIETY</French>
+		<French>SOCI&#201;T&#201;</French>
 		<German>SOCIETY</German>
 		<Italian>SOCIETY</Italian>
 		<Spanish>SOCIETY</Spanish>
@@ -1316,7 +1316,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_STABLE_VASSALS</Tag>
 		<English>Stable Vassals</English>
-		<French>Stable Vassals</French>
+		<French>Vassaux stables</French>
 		<German>Stable Vassals</German>
 		<Italian>Stable Vassals</Italian>
 		<Spanish>Stable Vassals</Spanish>
@@ -1324,7 +1324,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_SUMMARY_TITLE</Tag>
 		<English>SUMMARY</English>
-		<French>SUMMARY</French>
+		<French>R&#201;SUM&#201;</French>
 		<German>SUMMARY</German>
 		<Italian>SUMMARY</Italian>
 		<Spanish>SUMMARY</Spanish>
@@ -1332,7 +1332,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_TARGET_CITY_UNREST</Tag>
 		<English>Cities sympathetic to the enemy are in open revolt!</English>
-		<French>Cities sympathetic to the enemy are in open revolt!</French>
+		<French>Celles de nos villes qui sympathisent avec l'ennemi sont en r&#233;bellion !</French>
 		<German>Cities sympathetic to the enemy are in open revolt!</German>
 		<Italian>Cities sympathetic to the enemy are in open revolt!</Italian>
 		<Spanish>Cities sympathetic to the enemy are in open revolt!</Spanish>
@@ -1340,7 +1340,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_TECH</Tag>
 		<English>Technology</English>
-		<French>Technology</French>
+		<French>Technologie</French>
 		<German>Technology</German>
 		<Italian>Technology</Italian>
 		<Spanish>Technology</Spanish>
@@ -1348,7 +1348,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_TITLE</Tag>
 		<English>STABILITY: %s1</English>
-		<French>STABILITY: %s1</French>
+		<French>STABILIT&#201; : %s1</French>
 		<German>STABILITY: %s1</German>
 		<Italian>STABILITY: %s1</Italian>
 		<Spanish>STABILITY: %s1</Spanish>
@@ -1356,7 +1356,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_TRADE</Tag>
 		<English>Trade</English>
-		<French>Trade</French>
+		<French>Commerce</French>
 		<German>Trade</German>
 		<Italian>Trade</Italian>
 		<Spanish>Trade</Spanish>
@@ -1364,7 +1364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_UNHAPPINESS</Tag>
 		<English>Unhappiness</English>
-		<French>Unhappiness</French>
+		<French>Malheur</French>
 		<German>Unhappiness</German>
 		<Italian>Unhappiness</Italian>
 		<Spanish>Unhappiness</Spanish>
@@ -1372,7 +1372,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_UNIT_DESERTION</Tag>
 		<English>The military crisis led to the desertion of %d1 units!</English>
-		<French>The military crisis led to the desertion of %d1 units!</French>
+		<French>La crise militaire a men&#233; &#224; la d&#233;sertion d'unit&#233;s %d1 !</French>
 		<German>The military crisis led to the desertion of %d1 units!</German>
 		<Italian>The military crisis led to the desertion of %d1 units!</Italian>
 		<Spanish>The military crisis led to the desertion of %d1 units!</Spanish>
@@ -1388,7 +1388,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_UNSTABLE_VASSALS</Tag>
 		<English>Unstable Vassals</English>
-		<French>Unstable Vassals</French>
+		<French>Vassaux instables</French>
 		<German>Unstable Vassals</German>
 		<Italian>Unstable Vassals</Italian>
 		<Spanish>Unstable Vassals</Spanish>
@@ -1396,7 +1396,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_VASSALS</Tag>
 		<English>Vassals</English>
-		<French>Vassals</French>
+		<French>Vassaux</French>
 		<German>Vassals</German>
 		<Italian>Vassals</Italian>
 		<Spanish>Vassals</Spanish>
@@ -1412,7 +1412,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WAR_WEARINESS</Tag>
 		<English>War Weariness</English>
-		<French>War Weariness</French>
+		<French>Lassitude de guerre</French>
 		<German>War Weariness</German>
 		<Italian>War Weariness</Italian>
 		<Spanish>War Weariness</Spanish>
@@ -1420,7 +1420,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARFARE_TITLE</Tag>
 		<English>WARFARE</English>
-		<French>WARFARE</French>
+		<French>GUERRE</French>
 		<German>WARFARE</German>
 		<Italian>WARFARE</Italian>
 		<Spanish>WARFARE</Spanish>
@@ -1428,7 +1428,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_NATIONHOOD</Tag>
 		<English>Nationhood: Waging Wars</English>
-		<French>Nationhood: Waging Wars</French>
+		<French>Nation : faire la guerre</French>
 		<German>Nationhood: Waging Wars</German>
 		<Italian>Nationhood: Waging Wars</Italian>
 		<Spanish>Nationhood: Waging Wars</Spanish>
@@ -1436,7 +1436,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH</Tag>
 		<English>Theocracy: Fighting Brothers of Faith</English>
-		<French>Theocracy: Fighting Brothers of Faith</French>
+		<French>Th&#233;ocratie : combattre des fr&#232;res de foi</French>
 		<German>Theocracy: Fighting Brothers of Faith</German>
 		<Italian>Theocracy: Fighting Brothers of Faith</Italian>
 		<Spanish>Theocracy: Fighting Brothers of Faith</Spanish>
@@ -1444,7 +1444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_HEATHENS</Tag>
 		<English>Theocracy: Fighting Heathens</English>
-		<French>Theocracy: Fighting Heathens</French>
+		<French>Th&#233;ocratie : combattre des infid&#232;les</French>
 		<German>Theocracy: Fighting Heathens</German>
 		<Italian>Theocracy: Fighting Heathens</Italian>
 		<Spanish>Theocracy: Fighting Heathens</Spanish>
@@ -1452,7 +1452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WARS_MULTILATERALISM</Tag>
 		<English>Multilateralism: Being at War</English>
-		<French>Multilateralism: Being at War</French>
+		<French>Multilat&#233;ralisme : &#234;tre en guerre</French>
 		<German>Multilateralism: Being at War</German>
 		<Italian>Multilateralism: Being at War</Italian>
 		<Spanish>Multilateralism: Being at War</Spanish>
@@ -1460,7 +1460,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WINNING_WARS</Tag>
 		<English>Winning Wars</English>
-		<French>Winning Wars</French>
+		<French>Gagner des guerres</French>
 		<German>Winning Wars</German>
 		<Italian>Winning Wars</Italian>
 		<Spanish>Winning Wars</Spanish>
@@ -1468,7 +1468,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WON_BATTLES</Tag>
 		<English>Won Battles</English>
-		<French>Won Battles</French>
+		<French>Batailles gagn&#233;es</French>
 		<German>Won Battles</German>
 		<Italian>Won Battles</Italian>
 		<Spanish>Won Battles</Spanish>
@@ -1476,7 +1476,7 @@
 	<TEXT> <!-- Merijn, by edead -->
 		<Tag>TXT_KEY_STABILITY_OVERLAY_WIDGET</Tag>
 		<English>Toggle Stability Display</English>
-		<French>Toggle Stability Display</French>
+		<French>Activer l'affichage de la stabilit&#233;</French>
 		<German>Toggle Stability Display</German>
 		<Italian>Toggle Stability Display</Italian>
 		<Spanish>Toggle Stability Display</Spanish>
@@ -1484,7 +1484,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_OVERLAY_HELP</Tag>
 		<English>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</English>
-		<French>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</French>
+		<French>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: c&#156;ur historique[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Vert[COLOR_REVERT]: zone historique[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Jaune[COLOR_REVERT]: zone contest&#233;e[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Rouge[COLOR_REVERT]: c&#156;ur historique &#233;tranger</French>
 		<German>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</German>
 		<Italian>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</Italian>
 		<Spanish>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</Spanish>

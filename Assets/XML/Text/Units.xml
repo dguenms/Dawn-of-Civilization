@@ -808,7 +808,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREAT_STATESMAN</Tag>
 		<English>Great Statesman</English>
-		<French>Homme d'&#201;tat illustre</French>
+		<French>
+			<Text>Homme d'&#201;tat illustre:Femme d'&#201;tat illustre</Text>
+			<Gender>Male:Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Gro&#223;er Staatsmann</German>
 		<Italian>Great Statesman</Italian>
 		<Spanish>Great Statesman</Spanish>

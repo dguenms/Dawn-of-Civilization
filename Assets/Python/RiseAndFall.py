@@ -23,12 +23,68 @@ import CvEspionageAdvisor
 ##############
 
 gc = CyGlobalContext()
+localText = CyTranslator()
 
 iCheatersPeriod = 12
 iBetrayalPeriod = 8
 iBetrayalThreshold = 80
 iRebellionDelay = 15
 iEscapePeriod = 30
+
+### Screen popups ###
+# (Slowly migrate event handlers here when rewriting to use BUTTONPOPUP_PYTHON and more idiomatic code)
+
+def startNewCivSwitchEvent(iPlayer):
+	popup = CyPopupInfo()
+	popup.setText(localText.getText("TXT_KEY_INTERFACE_NEW_CIV_SWITCH", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),)))
+	popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+	popup.setOnClickedPythonCallback("applyNewCivSwitchEvent")
+	
+	popup.setData1(iPlayer)
+	popup.addPythonButton(localText.getText("TXT_KEY_POPUP_NO", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+	popup.addPythonButton(localText.getText("TXT_KEY_POPUP_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+	
+	popup.addPopup(utils.getHumanID())
+	
+def applyNewCivSwitchEvent(argsList):
+	iButton = argsList[0]
+	iPlayer = argsList[1]
+	
+	if iButton == 1:
+		handleNewCiv(iPlayer)
+		
+### Utility methods ###
+
+def handleNewCiv(iPlayer):
+	iPreviousPlayer = utils.getHumanID()
+	iOldHandicap = gc.getActivePlayer().getHandicapType()
+	
+	pPlayer = gc.getPlayer(iPlayer)
+	
+	gc.getActivePlayer().setHandicapType(pPlayer.getHandicapType())
+	gc.getGame().setActivePlayer(iPlayer, False)
+	pPlayer.setHandicapType(iOldHandicap)
+	
+	for iMaster in range(iNumPlayers):
+		if (gc.getTeam(pPlayer.getTeam()).isVassal(iMaster)):
+			gc.getTeam(pPlayer.getTeam()).setVassal(iMaster, False, False)
+	
+	data.bAlreadySwitched = True
+	gc.getPlayer(iPlayer).setPlayable(True)
+	
+	data.resetHumanStability()
+
+	for city in utils.getCityList(iPlayer):
+		city.setInfoDirty(True)
+		city.setLayoutDirty(True)
+					
+	for i in range(3):
+		data.players[iPlayer].lGoals[i] = -1
+					
+	if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
+		vic.loseAll(iPreviousPlayer)
+		
+	CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
 
 class RiseAndFall:
 
@@ -45,10 +101,6 @@ class RiseAndFall:
 		    popup.addButton( i )
 		popup.launch(False)
 
-	def newCivPopup(self, iCiv):
-		self.showPopup(7614, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-		data.addNewCiv(iCiv)
-
 	def eventApply7614(self, popupReturn):
 		iNewCiv = data.getNewCiv()
 		if popupReturn.getButtonClicked() == 0: # 1st button
@@ -61,32 +113,6 @@ class RiseAndFall:
 	def eventApply7628(self, popupReturn):
 		if popupReturn.getButtonClicked() == 0:
 			self.handleNewCiv(data.iRespawnCiv)
-		
-	def handleNewCiv(self, iCiv):
-		iPreviousCiv = utils.getHumanID()
-		iOldHandicap = gc.getActivePlayer().getHandicapType()
-		gc.getActivePlayer().setHandicapType(gc.getPlayer(iCiv).getHandicapType())
-		gc.getGame().setActivePlayer(iCiv, False)
-		gc.getPlayer(iCiv).setHandicapType(iOldHandicap)
-		for iMaster in range(iNumPlayers):
-			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
-				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
-		data.bAlreadySwitched = True
-		gc.getPlayer(iCiv).setPlayable(True)
-		
-		data.resetHumanStability()
-
-		for city in utils.getCityList(iCiv):
-			city.setInfoDirty(True)
-			city.setLayoutDirty(True)
-						
-		for i in range(3):
-			data.players[iCiv].lGoals[i] = -1
-						
-		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
-			vic.loseAll(iPreviousCiv)
-			
-		CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
 			
 	def scheduleFlipPopup(self, iNewCiv, lPlots):
 		data.lTempEvents.append((iNewCiv, lPlots))
@@ -265,6 +291,7 @@ class RiseAndFall:
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
 			self.adjust600ADWonders()
+			self.adjust600ADGreatPeople()
 			
 		if utils.getScenario() == i1700AD:
 			self.create1700ADstartingUnits()
@@ -272,6 +299,7 @@ class RiseAndFall:
 			self.prepareColonists()
 			self.adjust1700ADCulture()
 			self.adjust1700ADWonders()
+			self.adjust1700ADGreatPeople()
 			
 			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans]:
 				utils.setReborn(iPlayer, True)
@@ -285,10 +313,6 @@ class RiseAndFall:
 		self.updateExtraOptions()
 		
 	def updateExtraOptions(self):
-		# Human player can't collapse
-		data.bNoHumanStability = (gc.getDefineINT("NO_HUMAN_STABILITY") != 0)
-		# No stability checks at all
-		data.bNoAIStability = (gc.getDefineINT("NO_STABILITY") != 0)
 		# Human player can switch infinite times
 		data.bUnlimitedSwitching = (gc.getDefineINT("UNLIMITED_SWITCHING") != 0)
 		# No congresses
@@ -504,6 +528,9 @@ class RiseAndFall:
 			pShenyang.setHasRealBuilding(iConfucianTemple, True)
 			
 	def adjust600ADWonders(self):
+		lExpiredWonders = [iOracle, iIshtarGate, iTerracottaArmy, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya]
+		self.expireWonders(lExpiredWonders)
+		
 		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
 		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
 		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
@@ -536,6 +563,9 @@ class RiseAndFall:
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 		
 	def adjust1700ADWonders(self):
+		lExpiredWonders = [iOracle, iIshtarGate, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya, iGreatLighthouse, iMoaiStatues, iColosseum, iGreatLibrary, iGondeshapur, iSilverTreeFountain, iAlamut]
+		self.expireWonders(lExpiredWonders)
+	
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()
 		pMilan.setBuildingOriginalOwner(iSantaMariaDelFiore, iItaly)
 		pMilan.setBuildingOriginalOwner(iSanMarcoBasilica, iItaly)
@@ -590,6 +620,85 @@ class RiseAndFall:
 		
 		pMecca = gc.getMap().plot(75, 33).getPlotCity()
 		pMecca.setBuildingOriginalOwner(iIslamicShrine, iArabia)
+		
+	def expireWonders(self, lWonders):
+		for iWonder in lWonders:
+			gc.getGame().incrementBuildingClassCreatedCount(gc.getBuildingInfo(iWonder).getBuildingClassType())
+			
+	def adjust600ADGreatPeople(self):
+		dGreatPeopleCreated = {
+			iChina: 4,
+			iKorea: 1,
+			iByzantium: 1,
+			iJapan: 0,
+			iVikings: 0,
+			iTurks: 0,
+		}
+		
+		dGreatGeneralsCreated = {
+			iChina: 1,
+			iKorea: 0,
+			iByzantium: 0,
+			iJapan: 0,
+			iVikings: 0,
+			iTurks: 0,
+		}
+		
+		for iPlayer, iGreatPeople in dGreatPeopleCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatPeopleCreated(iGreatPeople)
+			
+		for iPlayer, iGreatGenerals in dGreatGeneralsCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatGeneralsCreated(iGreatGenerals)
+		
+	def adjust1700ADGreatPeople(self):
+		dGreatPeopleCreated = {
+			iChina: 12,
+			iIndia: 8,
+			iPersia: 4,
+			iTamils: 5,
+			iKorea: 6,
+			iJapan: 6,
+			iVikings: 8,
+			iTurks: 4,
+			iSpain: 8,
+			iFrance: 8,
+			iEngland: 8,
+			iHolyRome: 8,
+			iPoland: 8,
+			iPortugal: 8,
+			iMughals: 8,
+			iOttomans: 8,
+			iThailand: 8,
+			iCongo: 4,
+			iNetherlands: 6,
+		}
+		
+		dGreatGeneralsCreated = {
+			iChina: 4,
+			iIndia: 3,
+			iPersia: 2,
+			iTamils: 2,
+			iKorea: 3,
+			iJapan: 3,
+			iVikings: 3,
+			iSpain: 4,
+			iFrance: 3,
+			iEngland: 3,
+			iHolyRome: 4,
+			iPoland: 3,
+			iPortugal: 3,
+			iMughals: 4,
+			iOttomans: 5,
+			iThailand: 3,
+			iCongo: 2,
+			iNetherlands: 3,
+		}
+		
+		for iPlayer, iGreatPeople in dGreatPeopleCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatPeopleCreated(iGreatPeople)
+			
+		for iPlayer, iGreatGenerals in dGreatGeneralsCreated.iteritems():
+			gc.getPlayer(iPlayer).changeGreatGeneralsCreated(iGreatGenerals)
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
@@ -1301,7 +1410,7 @@ class RiseAndFall:
 			self.setStateReligion(iCiv)
 			
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
-			self.newCivPopup(iCiv)
+			startNewCivSwitchEvent(iCiv)
 
 	def moveOutInvaders(self, tTL, tBR):
 		if pMongolia.isAlive():
@@ -1601,7 +1710,7 @@ class RiseAndFall:
 			lCanadaCities.extend(utils.getCityList(iAmerica))
 			
 			for city in lCanadaCities:
-				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0] and city not in lCities:
+				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0] and (city.getX(), city.getY()) not in [(c.getX(), c.getY()) for c in lCities]:
 					lCities.append(city)
 					
 		# Leoreth: remove capital locations
@@ -2025,6 +2134,9 @@ class RiseAndFall:
 		targetList = utils.getColonialTargets(iPlayer, True)
 		targetCivList = []
 		settlerList = []
+		
+		if not targetList:
+			return
 
 		iGold = len(targetList) * 200
 
@@ -2106,6 +2218,10 @@ class RiseAndFall:
 
 	def handleColonialConquest(self, iPlayer):
 		targetList = utils.getColonialTargets(iPlayer)
+		
+		if not targetList:
+			self.handleColonialAcquisition(iPlayer)
+			return
 
 		for tPlot in targetList:
 			data.timedConquest(iPlayer, tPlot)
@@ -2660,7 +2776,7 @@ class RiseAndFall:
 		elif iCiv == iAztecs:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnit(iJaguar, iCiv, tPlot, 4)
-			utils.makeUnit(iArcher, iCiv, tPlot, 4)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
 		elif iCiv == iMughals:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iSiegeElephant, iCiv, tPlot, 3)

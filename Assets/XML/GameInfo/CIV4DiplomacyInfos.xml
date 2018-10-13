@@ -1009,6 +1009,20 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_BUMIN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_BUMIN_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_BEN_GURION</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -1017,6 +1031,34 @@
 					<DiplomacyPowers/>
 					<DiplomacyText>
 						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_BEN_GURION_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_ALP_ARSLAN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ALP_ARSLAN_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_TAMERLANE</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_TAMERLANE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1204,10 +1246,6 @@
 						</Leader>
 						<Leader>
 							<LeaderType>LEADER_PERON</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
-							<LeaderType>LEADER_ALP_ARSLAN</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>

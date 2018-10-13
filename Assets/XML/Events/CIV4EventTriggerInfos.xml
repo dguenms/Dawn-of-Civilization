@@ -13864,15 +13864,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs/>
 			<AndPreReqs/>
-			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
-				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
-				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
-				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
-			</ObsoleteTechs>
+			<ObsoleteTechs/>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>1</bGlobal>

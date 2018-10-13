@@ -7266,7 +7266,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 1)
 							{
-								iWeight += GET_PLAYER(ePlayer).AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), getID(), 1);
+								iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}

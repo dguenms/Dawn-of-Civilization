@@ -12,7 +12,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME</Tag>
 		<English>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</English>
-		<French>Bonheur additionnel avec les doctrines D&#233;mocratie, Constitution, Individualisme et Libre entreprise</French>
+		<French>Bonheur additionnel avec les doctrines d&#233;mocratie, constitution, individualisme et libre entreprise</French>
 		<German>Zus&#228;tzliche Zufriedenheit unter Demokratie, Verfassung, Individualismus und Freiem Unternehmertum</German>
 		<Italian>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Italian>
 		<Spanish>Additional happiness from running Democracy, Constitution, Individualism and Free Enterprise</Spanish>
@@ -268,7 +268,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ENG</Tag>
 		<English>Faraway Cities incur no extra Maintenance</English>
-		<French>Les unit&#233;s navales ont 2 chances de premi&#232;re attaque suppl&#233;mentaires</French>
+		<French>Les villes lointaines ne n&#233;cessitent pas d'entretien suppl&#233;mentaire</French>
 		<German>Weit entfernte St&#228;dte kosten keinen zus&#228;tzlichen Unterhalt</German>
 		<Italian>Le unit&#224; navali hanno 2 possibilit&#224; di Attacchi improvvisi supplementari</Italian>
 		<Spanish>Las unidades navales tienen 2 posibilidades adicionales de ataque de iniciativa</Spanish>
@@ -284,7 +284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH</Tag>
 		<English>Land units receive +10% additional strength within cultural borders</English>
-		<French>Les villes &#233;thiopiennes ne peuvent pas &#234;tre exig&#233;es dans un congr&#232;s</French>
+		<French>Les unit&#233;s terrestres re&#231;oivent +10% de puissance au sein de vos fronti&#232;res culturelles</French>
 		<German>Landeinheiten erhalten +10% zus&#228;tzliche St&#228;rke innerhalb kultureller Grenzen</German>
 		<Italian>Le citt&#224; etiopi non possono essere richieste durante un congresso</Italian>
 		<Spanish>No se pueden pedir ciudades et&#237;opes en un Congreso</Spanish>
@@ -444,7 +444,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_INO</Tag>
 		<English>Additional gold from foreign ships passing through your core</English>
-		<French>Les navires &#233;trangers qui passent par votre c&#339;ur rapportent de l'or additionnel</French>
+		<French>Les navires &#233;trangers qui passent par votre c&#156;ur historique rapportent de l'or additionnel</French>
 		<German>Zus&#228;tzliches Gold von ausl&#228;ndischen Schiffen, die unser Kerngebiet passieren</German>
 		<Italian>Additional gold from foreign ships passing through your core</Italian>
 		<Spanish>Additional gold from foreign ships passing through your core</Spanish>
@@ -899,11 +899,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR</Tag>
-		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</English>
+		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</English>
 		<French>En temps de paix, les barbares ne peuvent pas entrer dans votre territoire ; en temps de guerre, les barbares mont&#233;s se joignent &#224; votre arm&#233;e si vous les attaquez</French>
-		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren werden in Kriegszeiten Ihren Armeen beitreten</German>
-		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Italian>
-		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies during wartime</Spanish>
+		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren, die in Kriegszeiten angegriffen werden, treten Ihren Armeen bei</German>
+		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</Italian>
+		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT_TITLE</Tag>
@@ -916,7 +916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_OTT</Tag>
 		<English>Can Conscript two extra Units in Cities with Non-State Religions</English>
-		<French>Vous pouvez enr&#244;ler deux unit&#233;s suppl&#233;mentaires dans les villes adeptes de religions autres que la religion d'&#201;tat</French>
+		<French>Vous pouvez enr&#244;ler deux unit&#233;s suppl&#233;mentaires dans les villes adeptes de religions non officielles</French>
 		<German>Kann zwei zus&#228;tzliche Einheiten in St&#228;dten mit Nicht-Staatsreligionen rekrutieren</German>
 		<Italian>La maggioranza di cultura straniera nelle citt&#224; turche &#232; convertita in cultura turca</Italian>
 		<Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>

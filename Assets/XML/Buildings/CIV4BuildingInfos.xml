@@ -11931,7 +11931,7 @@
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iForeignTradeRouteModifier>100</iForeignTradeRouteModifier>
 			<iAsset>16</iAsset>
@@ -12065,7 +12065,7 @@
 			<Description>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HARMANDIR_SAHIB_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HARMANDIR_SAHIB_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_HELP_HARMANDIR_SAHIB</Help>
+			<Help>TXT_KEY_BUILDING_HARMANDIR_SAHIB_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HARMANDIR_SAHIB</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HARMANDIR_SAHIB</MovieDefineTag>
@@ -12191,7 +12191,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>600</iCost>
+			<iCost>400</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -12250,7 +12250,7 @@
 			<iCost>600</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>14</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -12451,7 +12451,7 @@
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			<ObsoleteTech>TECH_SOCIAL_SERVICES</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -12499,7 +12499,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_TRAFALGAR_SQUARE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_MEASUREMENT</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -12672,7 +12672,7 @@
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_GEOLOGY</PrereqTech>
 			<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -12786,7 +12786,7 @@
 			<iCost>1500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iGlobalFreeSpecialist>1</iGlobalFreeSpecialist>
 			<iAsset>16</iAsset>
@@ -12936,7 +12936,7 @@
 			<iCoastalTradeRoutes>1</iCoastalTradeRoutes>
 			<iCost>1000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>14</iAsset>
@@ -13027,7 +13027,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_EIFFEL_TOWER</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_EIFFEL_TOWER</MovieDefineTag>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -13245,7 +13245,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>1200</iCost>
+			<iCost>800</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -13300,7 +13300,7 @@
 			<iCost>1000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>16</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -13350,7 +13350,7 @@
 			<iCost>1500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>16</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -13634,7 +13634,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NEUSCHWANSTEIN</ArtDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
-			<PrereqTech>TECH_FILM</PrereqTech>
+			<PrereqTech>TECH_JOURNALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -13841,7 +13841,7 @@
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<OrPrereqReligion>RELIGION_PROTESTANTISM</OrPrereqReligion>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -13990,7 +13990,7 @@
 			<iCost>2000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -14101,7 +14101,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SAGRADA_FAMILIA</ArtDefineTag>
 			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_MACROECONOMICS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -14435,7 +14435,7 @@
 					<YieldChanges>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>1</iYield>
+						<iYield>2</iYield>
 					</YieldChanges>
 				</SpecialistYieldChange>
 			</SpecialistYieldChanges>
@@ -14703,7 +14703,7 @@
 			<iCost>1800</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -14842,7 +14842,7 @@
 			<iCost>2000</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -15142,7 +15142,7 @@
 			<iCost>2500</iCost>
 			<iHurryCostModifier>200</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>25</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>

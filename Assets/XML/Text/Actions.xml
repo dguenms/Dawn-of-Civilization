@@ -4,7 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_DEFORESTATION</Tag>
 		<English>Deforestation</English>
-		<French>Deforestation</French>
+		<French>
+			<Text>D&#233;forestation</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Deforestation</German>
 		<Italian>Deforestation</Italian>
 		<Spanish>Deforestation</Spanish>
@@ -12,7 +16,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_OCEAN_FISHERY</Tag>
 		<English>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</English>
-		<French>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</French>
+		<French>construire une [LINK=IMPROVEMENT_OCEAN_FISHERY]p&#234;cherie en haute mer[\LINK]</French>
 		<German>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</German>
 		<Italian>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</Spanish>
@@ -20,7 +24,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>
 		<English>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</English>
-		<French>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</French>
+		<French>construire une [LINK=IMPROVEMENT_SLAVE_PLANTATION]plantation &#224; esclaves[\LINK]</French>
 		<German>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</German>
 		<Italian>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</Spanish>
@@ -28,7 +32,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_REMOVE_RAINFOREST</Tag>
 		<English>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</English>
-		<French>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</French>
+		<French>d&#233;fricher la [LINK=FEATURE_RAINFOREST]for&#234;t tropicale[\LINK]</French>
 		<German>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</German>
 		<Italian>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</Italian>
 		<Spanish>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</Spanish>
@@ -36,7 +40,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
 		<English>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</English>
-		<French>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</French>
+		<French>construire une [LINK=ROUTE_ROMAN_ROAD]voie romaine[\LINK]</French>
 		<German>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</German>
 		<Italian>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</Italian>
 		<Spanish>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</Spanish>
@@ -44,7 +48,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HIGHWAY</Tag>
 		<English>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</English>
-		<French>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</French>
+		<French>construire une [LINK=ROUTE_HIGHWAY]autoroute[\LINK]</French>
 		<German>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</German>
 		<Italian>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</Italian>
 		<Spanish>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</Spanish>
@@ -52,7 +56,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_ORCHARD</Tag>
 		<English>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</English>
-		<French>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</French>
+		<French>construire un [LINK=IMPROVEMENT_ORCHARD]verger[\LINK]</French>
 		<German>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</German>
 		<Italian>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</Spanish>
@@ -60,7 +64,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_PADDY_FIELD</Tag>
 		<English>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</English>
-		<French>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</French>
+		<French>construire une [LINK=IMPROVEMENT_PADDY_FIELD]rizi&#232;re[\LINK]</French>
 		<German>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</German>
 		<Italian>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_PADDY_FIELD]Paddy Field[\LINK]</Spanish>
@@ -68,7 +72,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_NATURE_RESERVE</Tag>
 		<English>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</English>
-		<French>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</French>
+		<French>construire une [LINK=IMPROVEMENT_NATURE_RESERVE]r&#233;serve naturelle[\LINK]</French>
 		<German>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</German>
 		<Italian>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</Spanish>
@@ -76,7 +80,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_MARINE_RESERVE</Tag>
 		<English>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</English>
-		<French>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</French>
+		<French>construire une [LINK=IMPROVEMENT_MARINE_RESERVE]aire marine prot&#233;g&#233;e[\LINK]</French>
 		<German>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</German>
 		<Italian>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</Spanish>
@@ -84,7 +88,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HAMLET</Tag>
 		<English>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</English>
-		<French>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</French>
+		<French>construire un [LINK=IMPROVEMENT_HAMLET]hameau[\LINK]</French>
 		<German>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</German>
 		<Italian>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</Italian>
 		<Spanish>Build a [LINK=IMPROVEMENT_HAMLET]Hamlet[\LINK]</Spanish>
@@ -92,7 +96,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</French>
+		<French>[COLOR_HIGHLIGHT_TEXT]Sacrifier[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] pendant %d1 tours.[NEWLINE]Cet ordre sacrifie l'esclave, causant des c&#233;l&#233;brations et du bonheur dans la ville pendant %d2 tours. L'esclave sera d&#233;truit.</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</Spanish>
@@ -100,7 +104,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE</Tag>
 		<English>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</English>
-		<French>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</French>
+		<French>Le personnage illustre fera oublier &#224; la civilisation vos transgressions pass&#233;es et am&#233;liorera vos relations. Cela consomme le personnage illustre.</French>
 		<German>Die Gro&#223;e Pers&#246;nlichkeit wird eine andere Zivilisation eure Vergehen aus der Vergangenheit vergessen lassen und eure Beziehungen verbessern. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
 		<Italian>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</Italian>
 		<Spanish>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</Spanish>
@@ -108,7 +112,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_WAR</Tag>
 		<English>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</English>
-		<French>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</French>
+		<French>Le personnage illustre n&#233;gociera un trait&#233; de paix imm&#233;diat entre vous et votre ennemi. Cela consomme le personnage illustre.</French>
 		<German>Die Gro&#223;e Pers&#246;nlichkeit wird einen unmittelbaren Friedensvertrag zwischen Euch und Eurem Feind aushandeln. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
 		<Italian>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</Italian>
 		<Spanish>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</Spanish>
@@ -116,7 +120,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
 		<English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
-		<French>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</French>
+		<French>Tente de purger la ville d'une religion non officielle. Cela consomme l'inquisiteur.</French>
 		<German>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</German>
 		<Italian>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Italian>
 		<Spanish>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Spanish>
@@ -124,7 +128,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_REFORM_GOVERNMENT</Tag>
 		<English>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</English>
-		<French>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</French>
+		<French>Ordonne au personnage illustre de r&#233;former votre gouvernement, ce qui vous permet de changer vos doctrines sans anarchie pour ce tour. Cela consomme le personnage illustre.</French>
 		<German>Dies wird die Gro&#223;en Pers&#246;nlichkeit veranlassen, Eure Regierung zu reformieren, was Euch erlaubt diese Runde Staatsformen ohne jegliche Anarchie zu wechseln. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
 		<Italian>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</Italian>
 		<Spanish>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</Spanish>
@@ -132,7 +136,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_RESOLVE_CRISIS</Tag>
 		<English>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</English>
-		<French>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</French>
+		<French>Ordonne au personnage illustre de mettre fin &#224; l'anarchie de votre civilisation et &#224; l'agitation dans toutes vos villes. Cela consomme le personnage illustre.</French>
 		<German>Dies wird die Gro&#223;e Pers&#246;nlichkeit veranlassen, the Anarchie in Eurer Zivilisation sowie den Aufruhr in all Euren St&#228;dten zu beenden. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
 		<Italian>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</Italian>
 		<Spanish>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</Spanish>
@@ -140,15 +144,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_GREAT_MISSION</Tag>
 		<English>The Great Person will spread your state religion in several surrounding cities, potentially causing other religions to leave. It consumes the Great Person.</English>
-		<French>The Great Person will spread your state religion in several surrounding cities, potentially causing other religions to leave. It consumes the Great Person.</French>
-		<German>Die Gro&#223;e Pers&#246;nlichkeit wird Eure Staatsreligion in mehreren Städten in der Umgebung verbreiten und dabei möglicherweise andere Religionen entfernen. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+		<French>Le personnage illustre propagera votre religion d'&#201;tat dans plusieurs villes environnantes, faisant &#233;ventuellement dispara&#238;tre d'autres religions. Cela consomme le personnage illustre.</French>
+		<German>Die Gro&#223;e Pers&#246;nlichkeit wird Eure Staatsreligion in mehreren St&#228;dten in der Umgebung verbreiten und dabei m&#246;glicherweise andere Religionen entfernen. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
 		<Italian>The Great Person will spread your state religion in several surrounding cities, potentially causing other religions to leave. It consumes the Great Person.</Italian>
 		<Spanish>The Great Person will spread your state religion in several surrounding cities, potentially causing other religions to leave. It consumes the Great Person.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_DIPLOMATIC_MISSION</Tag>
 		<English>Diplomatic Mission</English>
-		<French>Diplomatic Mission</French>
+		<French>Mission diplomatique</French>
 		<German>Diplomatische Mission</German>
 		<Italian>Diplomatic Mission</Italian>
 		<Spanish>Diplomatic Mission</Spanish>
@@ -156,7 +160,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_PERSECUTE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</French>
+		<French>[COLOR_HIGHLIGHT_TEXT]Pers&#233;cution[COLOR_REVERT]</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Spanish>
@@ -164,7 +168,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_REFORM_GOVERNMENT</Tag>
 		<English>Reform Government</English>
-		<French>Reform Government</French>
+		<French>R&#233;former le gouvernement</French>
 		<German>Regierung Reformieren</German>
 		<Italian>Reform Government</Italian>
 		<Spanish>Reform Government</Spanish>
@@ -172,7 +176,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_RESOLVE_CRISIS</Tag>
 		<English>Resolve Crisis</English>
-		<French>Resolve Crisis</French>
+		<French>R&#233;soudre la crise</French>
 		<German>Krise &#220;berwinden</German>
 		<Italian>Resolve Crisis</Italian>
 		<Spanish>Resolve Crisis</Spanish>
@@ -180,15 +184,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_GREAT_MISSION</Tag>
 		<English>Great Mission</English>
-		<French>Great Mission</French>
-		<German>Große Mission</German>
+		<French>Grande Mission</French>
+		<German>Gro&#223;e Mission</German>
 		<Italian>Great Mission</Italian>
 		<Spanish>Great Mission</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_START_GOLDENAGE_HELP</Tag>
 		<English>This order will consume one or more Great People (of different types) and initiate a Golden Age (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</English>
-		<French>Cette ordre consommera plusieurs personnages illustres (de types diff&#233;rents) et d&#233;clenchera un &#226;ge d'or ([ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE] suppl&#233;mentaires).</French>
+		<French>Cet ordre consommera plusieurs personnages illustres (de types diff&#233;rents) et d&#233;clenchera un &#226;ge d'or ([ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE] suppl&#233;mentaires).</French>
 		<German>Opfern Sie eine oder mehrere Gro&#223;e Pers&#246;nlichkeiten (unterschiedlicher Klassen), um ein Goldenes Zeitalter (zus&#228;tzliche [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE], keine Anarchie) zu begr&#252;nden.</German>
 		<Italian>Con questo ordine si consumano uno o pi&#249; Grandi Personaggi (di tipi differenti) e si avvia un'Et&#224; dell'Oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Italian>
 		<Spanish>Esta orden consume uno o m&#225;s grandes personajes (de diferentes tipos) e inicia una edad de oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Spanish>
@@ -196,7 +200,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE</Tag>
 		<English>See Espionage</English>
-		<French>See Espionage</French>
+		<French>Voir l'espionnage</French>
 		<German>Spionage Anzeigen</German>
 		<Italian>See Espionage</Italian>
 		<Spanish>See Espionage</Spanish>
@@ -204,8 +208,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE_HELP</Tag>
 		<English>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</English>
-		<French>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</French>
-		<German>Zeigt zusÃ¤tzliche Details Ã¼ber die Spionage einer gegnerischen Zivilisation im Spionageberater an</German>
+		<French>Vous donne davantage de d&#233;tails (dans l'&#233;cran du conseiller &#224; l'espionnage) sur l'espionnage qu'une civilisation rivale a contre vous.</French>
+		<German>Zeigt zus&#228;tzliche Details &#252;ber die Spionage einer gegnerischen Zivilisation im Spionageberater an</German>
 		<Italian>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</Italian>
 		<Spanish>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</Spanish>
 	</TEXT>

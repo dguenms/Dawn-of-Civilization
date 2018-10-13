@@ -590,6 +590,8 @@ public:
 	void changeYieldRateModifier(int iYieldType, int iChange);
 	void setBuildingPreference(int iBuilding, int iNewValue);
 	int getBuildingPreference(int iBuilding);
+	void changeGreatPeopleCreated(int iChange);
+	void changeGreatGeneralsCreated(int iChange);
 
 private:
 	CvPlayer* m_pPlayer;

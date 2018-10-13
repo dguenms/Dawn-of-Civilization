@@ -2676,3 +2676,13 @@ int CyPlayer::getBuildingPreference(int iBuilding)
 {
 	return m_pPlayer ? m_pPlayer->getBuildingPreference((BuildingTypes)iBuilding) : -1;
 }
+
+void CyPlayer::changeGreatPeopleCreated(int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeGreatPeopleCreated(iChange);
+}
+
+void CyPlayer::changeGreatGeneralsCreated(int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeGreatGeneralsCreated(iChange);
+}

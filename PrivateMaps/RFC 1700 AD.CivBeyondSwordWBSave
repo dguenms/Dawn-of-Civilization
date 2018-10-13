@@ -6484,7 +6484,6 @@ EndPlot
 BeginPlot
 	x=15,y=41
 	BonusType=BONUS_COTTON
-	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -7674,6 +7673,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=22, (Spain)
+	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
 		CityName=Ciudad de M&#233;xico
@@ -7735,7 +7737,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_CORN
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -8136,7 +8137,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
@@ -9368,10 +9368,10 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -9780,7 +9780,7 @@ EndPlot
 BeginPlot
 	x=23,y=36
 	BonusType=BONUS_DYE
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -10185,7 +10185,6 @@ EndPlot
 BeginPlot
 	x=24,y=28
 	BonusType=BONUS_DYE
-	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -10577,7 +10576,6 @@ EndPlot
 BeginPlot
 	x=25,y=24
 	BonusType=BONUS_CORN
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -11560,7 +11558,7 @@ EndPlot
 BeginPlot
 	x=27,y=30
 	BonusType=BONUS_COFFEE
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -11569,7 +11567,6 @@ EndPlot
 BeginPlot
 	x=27,y=31
 	BonusType=BONUS_BANANA
-	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -12387,7 +12384,6 @@ EndPlot
 BeginPlot
 	x=29,y=19
 	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -12526,7 +12522,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -13149,13 +13145,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -15222,7 +15218,6 @@ BeginPlot
 	RiverWEDirection=3
 	isWOfRiver
 	BonusType=BONUS_CORN
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,24,31,48,
@@ -16237,7 +16232,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -16579,6 +16574,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=31, (Portugal)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=30, (Portugal)
+	EndUnit
 	BeginCity
 		CityOwner=31, (Portugal)
 		CityName=S&#227;o Paulo
@@ -16652,7 +16650,6 @@ EndPlot
 BeginPlot
 	x=38,y=25
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -17076,7 +17073,6 @@ EndPlot
 BeginPlot
 	x=39,y=25
 	BonusType=BONUS_SUGAR
-	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -17085,7 +17081,6 @@ EndPlot
 BeginPlot
 	x=39,y=26
 	BonusType=BONUS_BANANA
-	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
@@ -18317,6 +18312,9 @@ BeginPlot
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=31, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=30, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=31, (Portugal)
@@ -19778,7 +19776,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -20474,6 +20472,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=42
+	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=23,24,26,31,40,
@@ -20805,7 +20805,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -20879,8 +20879,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=42
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=17,23,24,26,31,40,
@@ -20963,7 +20961,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=55
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,40,48,
@@ -21281,7 +21279,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=41
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,31,40,47,48,
@@ -21378,7 +21376,7 @@ BeginPlot
 	x=49,y=45
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,31,40,48,
@@ -21501,7 +21499,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=58
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,40,48,
@@ -21807,7 +21805,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=42
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,31,40,48,
@@ -22146,13 +22144,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=48, (Independent2)
@@ -22209,10 +22208,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -22379,7 +22378,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=53
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,40,48,
@@ -22797,6 +22796,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=23, (Spain)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=22, (Spain)
+	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
 		CityName=Madrid
@@ -22888,7 +22890,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=53
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,40,41,
@@ -23208,16 +23210,17 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=48, (Independent2)
@@ -23302,7 +23305,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=43
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23321,7 +23324,7 @@ BeginPlot
 	x=53,y=45
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,31,40,48,
@@ -23360,7 +23363,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -23407,7 +23410,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=51
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,31,40,41,
@@ -23480,6 +23483,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=26, (England)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=25, (England)
+	EndUnit
 	BeginCity
 		CityOwner=26, (England)
 		CityName=London
@@ -23521,7 +23527,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=55
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23539,7 +23545,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,40,48,
@@ -23552,7 +23558,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=59
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,40,48,
@@ -23746,7 +23752,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Netherlands)
@@ -23838,7 +23844,7 @@ BeginPlot
 	x=54,y=35
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=47,
+	TeamReveal=47,48,
 EndPlot
 BeginPlot
 	x=54,y=36
@@ -23920,7 +23926,7 @@ BeginPlot
 	x=54,y=44
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,31,40,48,
@@ -23966,7 +23972,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_URANIUM
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23985,7 +23991,7 @@ BeginPlot
 	x=54,y=51
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,27,31,40,41,
@@ -24013,7 +24019,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=55
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -24388,7 +24394,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -24433,40 +24439,40 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=24, (France)
@@ -24494,6 +24500,9 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CUIRASSIER, UnitOwner=24, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -24814,10 +24823,10 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=48, (Independent2)
@@ -24943,7 +24952,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=24, (France)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -25020,7 +25029,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_COAL
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,27,40,41,
@@ -25412,7 +25421,7 @@ BeginPlot
 	x=57,y=49
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,27,31,40,41,47,48,
@@ -25421,7 +25430,7 @@ BeginPlot
 	x=57,y=50
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -25462,19 +25471,19 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=40, (Netherlands)
@@ -25954,7 +25963,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=53
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_VILLAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -25964,7 +25973,7 @@ BeginPlot
 	x=58,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,27,40,41,47,48,
@@ -26012,10 +26021,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -26478,10 +26487,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=41, (Germany)
@@ -26549,10 +26558,10 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=41, (Germany)
@@ -26581,7 +26590,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=55
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -26597,6 +26606,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=57
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,26,40,41,47,48,
@@ -26901,7 +26911,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=37
-	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -26953,16 +26962,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=48, (Independent2)
@@ -27058,7 +27067,7 @@ BeginPlot
 	x=60,y=52
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27092,16 +27101,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -27141,13 +27150,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -27554,7 +27563,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=47
-	ImprovementType=IMPROVEMENT_TOWN
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27596,7 +27605,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=52
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27617,7 +27626,7 @@ BeginPlot
 	x=61,y=54
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,27,28,30,40,41,47,48,
@@ -27651,7 +27660,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=59
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,41,47,48,
@@ -27685,10 +27694,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -27900,6 +27909,9 @@ BeginPlot
 		UnitType=UNIT_SLAVE, UnitOwner=39, (Congo)
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=39, (Congo)
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=39, (Congo)
 	EndUnit
 	BeginCity
@@ -28031,7 +28043,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=36
-	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -28076,7 +28087,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=27, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Holy Rome)
@@ -28173,6 +28184,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=27, (Holy Rome)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=26, (Holy Rome)
+	EndUnit
 	BeginCity
 		CityOwner=27, (Holy Rome)
 		CityName=Wien
@@ -28225,7 +28239,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=52
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28237,28 +28251,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CUIRASSIER, UnitOwner=41, (Germany)
@@ -28306,7 +28320,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=54
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,26,27,28,30,40,41,47,48,
@@ -28350,7 +28364,7 @@ EndPlot
 BeginPlot
 	x=62,y=60
 	BonusType=BONUS_URANIUM
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,47,
@@ -28469,7 +28483,7 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Netherlands)
@@ -28732,7 +28746,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=47
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,24,26,27,28,37,40,41,47,48,
@@ -28784,7 +28798,7 @@ BeginPlot
 	x=63,y=53
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,23,24,26,27,28,30,40,41,47,48,
@@ -28793,7 +28807,7 @@ BeginPlot
 	x=63,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28813,13 +28827,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=57
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,30,41,47,48,
 EndPlot
 BeginPlot
 	x=63,y=58
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28899,7 +28914,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=60
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28907,7 +28922,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=61
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,47,48,
@@ -29237,7 +29252,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=44
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=27,37,47,48,
@@ -29261,7 +29276,7 @@ BeginPlot
 	x=64,y=47
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=27,28,37,47,48,
@@ -29270,7 +29285,7 @@ BeginPlot
 	x=64,y=48
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -29667,7 +29682,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=37
-	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -29869,6 +29883,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=30, (Poland)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=29, (Poland)
+	EndUnit
 	BeginCity
 		CityOwner=30, (Poland)
 		CityName=Warszawa
@@ -29891,6 +29908,9 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		BuildingType=BUILDING_JEWISH_TEMPLE
+		BuildingType=BUILDING_JEWISH_MONASTERY
+		BuildingType=BUILDING_OLD_SYNAGOGUE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player30Culture=250, (Poland)
@@ -29912,7 +29932,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=41, (Germany)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=41, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=41, (Germany)
@@ -29940,7 +29960,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=55
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,27,28,30,41,48,
@@ -29949,6 +29969,7 @@ BeginPlot
 	x=65,y=56
 	RiverNSDirection=0
 	isWOfRiver
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,30,41,48,
@@ -30288,7 +30309,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=36
-	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=37,47,
@@ -30367,7 +30387,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=27,28,37,47,
@@ -30406,7 +30426,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=51
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -30754,7 +30774,6 @@ BeginPlot
 	x=67,y=32
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -30895,7 +30914,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=27,28,37,47,
@@ -30955,7 +30974,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=53
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,27,28,30,41,48,
@@ -31310,7 +31329,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -31318,7 +31336,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=31
-	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=37,
@@ -31329,7 +31346,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -31351,7 +31367,7 @@ BeginPlot
 	x=68,y=34
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -31361,7 +31377,7 @@ BeginPlot
 	x=68,y=35
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -31498,6 +31514,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=36, (Turkey)
+	EndUnit
 	BeginCity
 		CityOwner=37, (Turkey)
 		CityName=Kostantiniyye
@@ -31597,7 +31616,7 @@ BeginPlot
 	x=68,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,30,41,48,
@@ -31613,14 +31632,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=56
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,30,41,48,
 EndPlot
 BeginPlot
 	x=68,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -31894,7 +31913,6 @@ BeginPlot
 	x=69,y=31
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -31924,7 +31942,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=33
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -31980,7 +31998,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32025,7 +32043,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=43
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=37,47,
@@ -32153,7 +32171,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=56
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32161,7 +32179,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=57
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,30,41,48,
@@ -32354,7 +32372,6 @@ BeginPlot
 	x=70,y=16
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WATERMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=26,31,40,47,
@@ -32449,7 +32466,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=30
-	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -32490,7 +32506,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=35
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -32498,7 +32514,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=36
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -32553,7 +32569,7 @@ EndPlot
 BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -32602,7 +32618,7 @@ BeginPlot
 	x=70,y=51
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,27,28,30,37,41,48,
@@ -32621,7 +32637,7 @@ BeginPlot
 	x=70,y=53
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32638,7 +32654,7 @@ BeginPlot
 	x=70,y=55
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32648,7 +32664,7 @@ BeginPlot
 	x=70,y=56
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,30,41,48,
@@ -32838,14 +32854,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=17
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,26,31,40,47,
 EndPlot
 BeginPlot
 	x=71,y=18
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=31,47,
@@ -32871,10 +32885,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -33074,7 +33088,7 @@ BeginPlot
 	x=71,y=45
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,37,47,
@@ -33135,7 +33149,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=53
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=17,28,30,48,
@@ -33174,7 +33187,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=58
-	ImprovementType=IMPROVEMENT_VILLAGE
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,30,
@@ -33420,10 +33433,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -33598,7 +33611,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=53
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=17,28,
@@ -33607,7 +33619,7 @@ BeginPlot
 	x=72,y=54
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -33645,7 +33657,7 @@ BeginPlot
 	x=72,y=58
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,
@@ -34098,7 +34110,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=51
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,37,47,48,
@@ -34107,7 +34118,7 @@ BeginPlot
 	x=73,y=52
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,37,47,48,
@@ -34116,7 +34127,7 @@ BeginPlot
 	x=73,y=53
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -34177,6 +34188,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=28, (Russia)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=27, (Russia)
+	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
 		CityName=Moskva
@@ -34195,6 +34209,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
+		BuildingType=BUILDING_KREMLIN
 		BuildingType=BUILDING_ST_BASILS_CATHEDRAL
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
@@ -34221,7 +34236,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -34468,10 +34483,10 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -34676,7 +34691,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=48
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=28,37,47,48,
@@ -34722,7 +34737,6 @@ BeginPlot
 	x=74,y=51
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -34761,7 +34775,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=55
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -34769,14 +34783,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=56
-	ImprovementType=IMPROVEMENT_VILLAGE
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=17,28,
 EndPlot
 BeginPlot
 	x=74,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=17,28,
@@ -35111,7 +35125,7 @@ BeginPlot
 	x=75,y=40
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -35204,7 +35218,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=50
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,37,47,48,
@@ -35215,7 +35228,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,37,47,48,
@@ -35224,21 +35236,19 @@ BeginPlot
 	x=75,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=28,37,47,48,
 EndPlot
 BeginPlot
 	x=75,y=53
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=28,47,48,
 EndPlot
 BeginPlot
 	x=75,y=54
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=28,
@@ -35247,7 +35257,7 @@ BeginPlot
 	x=75,y=55
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=28,
@@ -35510,7 +35520,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=48, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=48, (Independent2)
@@ -35582,7 +35592,6 @@ BeginPlot
 	x=76,y=39
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -35592,7 +35601,6 @@ BeginPlot
 	x=76,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -35600,7 +35608,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=41
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -35665,7 +35673,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=50
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,48,
@@ -36011,7 +36018,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=38
-	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -36042,7 +36048,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=37, (Turkey)
-		CityName=Baghdad
+		CityName=Bagdat
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -36054,6 +36060,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		BuildingType=BUILDING_HOUSE_OF_WISDOM
 		BuildingType=BUILDING_SPIRAL_MINARET
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
@@ -36067,7 +36074,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_OIL
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -36077,7 +36083,6 @@ BeginPlot
 	x=77,y=42
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,37,47,48,
@@ -36155,7 +36160,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WATERMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,
@@ -36164,7 +36168,6 @@ BeginPlot
 	x=77,y=54
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WATERMILL
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -36501,7 +36504,6 @@ BeginPlot
 	x=78,y=39
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -36519,7 +36521,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=41
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,36,37,47,48,
@@ -36659,7 +36660,6 @@ EndPlot
 BeginPlot
 	x=78,y=55
 	BonusType=BONUS_OIL
-	ImprovementType=IMPROVEMENT_WORKSHOP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,
@@ -36961,14 +36961,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=39
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,31,36,37,47,48,
 EndPlot
 BeginPlot
 	x=79,y=40
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,36,37,47,48,
@@ -36990,7 +36988,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=43
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,36,37,47,48,
@@ -37049,7 +37046,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=52
-	ImprovementType=IMPROVEMENT_WORKSHOP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=28,48,
@@ -37062,7 +37058,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=54
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -37381,7 +37376,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=40
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,36,37,47,48,
@@ -37880,6 +37875,12 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=8, (Iran)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=8, (Iran)
+	EndUnit
 	BeginCity
 		CityOwner=8, (Iran)
 		CityName=Isfahan
@@ -38284,10 +38285,10 @@ BeginPlot
 		UnitType=UNIT_CANNON, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -38362,14 +38363,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=39
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,36,47,48,
 EndPlot
 BeginPlot
 	x=82,y=40
-	ImprovementType=IMPROVEMENT_WINDMILL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=8,36,47,48,
@@ -38411,6 +38412,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=46
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
@@ -38765,13 +38767,14 @@ EndPlot
 BeginPlot
 	x=83,y=36
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=8,23,26,31,36,40,47,48,
 EndPlot
 BeginPlot
 	x=83,y=37
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,23,31,36,40,47,48,
@@ -38785,7 +38788,6 @@ EndPlot
 BeginPlot
 	x=83,y=39
 	BonusType=BONUS_INCENSE
-	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
@@ -38816,7 +38818,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=43
-	ImprovementType=IMPROVEMENT_COTTAGE
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -38848,7 +38850,7 @@ BeginPlot
 	x=83,y=47
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -39200,7 +39202,6 @@ EndPlot
 BeginPlot
 	x=84,y=38
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,26,36,47,48,
@@ -39281,7 +39282,7 @@ BeginPlot
 	x=84,y=46
 	isNOfRiver
 	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -39297,7 +39298,7 @@ BeginPlot
 	x=84,y=48
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -39696,7 +39697,6 @@ EndPlot
 BeginPlot
 	x=85,y=39
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,36,47,48,
@@ -39717,7 +39717,6 @@ EndPlot
 BeginPlot
 	x=85,y=42
 	BonusType=BONUS_COTTON
-	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,36,47,48,
@@ -39725,7 +39724,6 @@ EndPlot
 BeginPlot
 	x=85,y=43
 	BonusType=BONUS_GEMS
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,36,47,48,
@@ -39800,6 +39798,9 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Turks)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=17, (Turks)
 	EndUnit
 	BeginCity
 		CityOwner=18, (Turks)
@@ -40137,21 +40138,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=35
-	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=5,8,23,26,31,36,40,47,48,
 EndPlot
 BeginPlot
 	x=86,y=36
-	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=5,8,23,26,36,40,47,48,
 EndPlot
 BeginPlot
 	x=86,y=37
-	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -40564,7 +40562,6 @@ EndPlot
 BeginPlot
 	x=87,y=36
 	BonusType=BONUS_COTTON
-	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=5,8,23,26,36,40,47,48,
@@ -40583,7 +40580,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=39
-	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -40625,7 +40621,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=8,36,47,48,
@@ -41043,6 +41039,12 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=5, (India)
 	EndUnit
 	BeginCity
 		CityOwner=5, (India)
@@ -41543,14 +41545,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=41
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=8,36,47,
 EndPlot
 BeginPlot
 	x=89,y=42
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=8,36,47,
@@ -41589,10 +41591,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -41967,6 +41969,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=10, (Tamils)
+	EndUnit
 	BeginCity
 		CityOwner=11, (Tamils)
 		CityName=Mahishuru
@@ -42109,6 +42114,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_PIKEMAN, UnitOwner=36, (Mughals)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=35, (Mughals)
+	EndUnit
 	BeginCity
 		CityOwner=36, (Mughals)
 		CityName=Delhi
@@ -42126,6 +42134,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_IRON_PILLAR
+		BuildingType=BUILDING_KHAJURAHO
 		BuildingType=BUILDING_RED_FORT
 		BuildingType=BUILDING_TAJ_MAHAL
 		ReligionType=RELIGION_ISLAM
@@ -42138,7 +42147,7 @@ BeginPlot
 	x=90,y=41
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=8,36,47,48,
@@ -42600,7 +42609,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_DYE
-	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -42637,7 +42645,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -43075,7 +43083,7 @@ BeginPlot
 	x=92,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -43413,7 +43421,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Netherlands)
@@ -43520,7 +43528,7 @@ BeginPlot
 	x=93,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -43927,7 +43935,6 @@ EndPlot
 BeginPlot
 	x=94,y=39
 	BonusType=BONUS_DYE
-	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -43961,6 +43968,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_HINDU_SHRINE
 		BuildingType=BUILDING_BUDDHIST_SHRINE
+		BuildingType=BUILDING_NALANDA
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		HolyCityReligionType=RELIGION_HINDUISM
@@ -44025,7 +44033,7 @@ BeginPlot
 		UnitType=UNIT_CUIRASSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -44417,7 +44425,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_BANANA
-	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -44830,7 +44837,7 @@ BeginPlot
 	x=96,y=40
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -44897,7 +44904,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=47
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -45626,13 +45633,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=47, (Independent)
@@ -45676,7 +45683,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -46105,7 +46111,6 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_GOLD
-	ImprovementType=IMPROVEMENT_MINE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -46976,10 +46981,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Netherlands)
@@ -47063,6 +47068,9 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_PIKEMAN, UnitOwner=38, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=37, (Thailand)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Thailand)
@@ -47170,7 +47178,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=39
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=1,47,48,
@@ -47225,7 +47232,6 @@ BeginPlot
 	x=101,y=45
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=1,48,
@@ -47607,7 +47613,6 @@ EndPlot
 BeginPlot
 	x=102,y=39
 	BonusType=BONUS_COPPER
-	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -47660,14 +47665,13 @@ EndPlot
 BeginPlot
 	x=102,y=43
 	BonusType=BONUS_ALUMINUM
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=1,47,48,
 EndPlot
 BeginPlot
 	x=102,y=44
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_CAMP
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -47677,7 +47681,7 @@ BeginPlot
 	x=102,y=45
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -47748,6 +47752,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=1, (Kangxi)
+	EndUnit
 	BeginCity
 		CityOwner=1, (China)
 		CityName=Beijing
@@ -47785,7 +47792,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=49
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=1,47,48,
@@ -48138,7 +48144,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=39
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,23,31,47,48,
@@ -48154,7 +48160,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=41
-	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -48225,7 +48230,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=46
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,47,48,
@@ -48515,10 +48520,10 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Netherlands)
@@ -48533,6 +48538,7 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_BOROBUDUR
+		BuildingType=BUILDING_PRAMBANAN
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
@@ -48683,7 +48689,7 @@ BeginPlot
 	x=104,y=39
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,23,31,47,48,
@@ -48701,14 +48707,13 @@ EndPlot
 BeginPlot
 	x=104,y=41
 	BonusType=BONUS_TEA
-	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,48,
 EndPlot
 BeginPlot
 	x=104,y=42
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,48,
@@ -48745,7 +48750,7 @@ BeginPlot
 	x=104,y=46
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,14,47,48,
@@ -49152,7 +49157,6 @@ EndPlot
 BeginPlot
 	x=105,y=40
 	BonusType=BONUS_BANANA
-	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49162,7 +49166,7 @@ BeginPlot
 	x=105,y=41
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,48,
@@ -49181,7 +49185,7 @@ BeginPlot
 	x=105,y=43
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49197,7 +49201,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,14,16,47,48,
@@ -49617,7 +49621,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=42
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,16,48,
@@ -49667,7 +49671,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=45
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,14,16,47,48,
@@ -50088,7 +50092,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=43
-	ImprovementType=IMPROVEMENT_VILLAGE
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -51821,7 +51825,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=40, (Netherlands)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=40, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=40, (Netherlands)

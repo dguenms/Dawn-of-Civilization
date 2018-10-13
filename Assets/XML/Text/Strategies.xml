@@ -12,7 +12,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Tag>
 		<English>Conditional Spawns</English>
-		<French>Conditional Spawns</French>
+		<French>Naissances conditionnelles</French>
 		<German>Conditional Spawns</German>
 		<Italian>Conditional Spawns</Italian>
 		<Spanish>Conditional Spawns</Spanish>
@@ -20,7 +20,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_CONGRESSES</Tag>
 		<English>Congresses</English>
-		<French>Congresses</French>
+		<French>Congr&#232;s</French>
 		<German>Congresses</German>
 		<Italian>Congresses</Italian>
 		<Spanish>Congresses</Spanish>
@@ -36,7 +36,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS</Tag>
 		<English>Diplomatic Institutions</English>
-		<French>Diplomatic Institutions</French>
+		<French>Institutions diplomatiques</French>
 		<German>Diplomatic Institutions</German>
 		<Italian>Diplomatic Institutions</Italian>
 		<Spanish>Diplomatic Institutions</Spanish>
@@ -44,7 +44,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_DOC_ODDS</Tag>
 		<English>Odds and Ends in DoC</English>
-		<French>Odds and Ends in DoC</French>
+		<French>Pr&#233;cisions de DoC</French>
 		<German>Odds and Ends in DoC</German>
 		<Italian>Odds and Ends in DoC</Italian>
 		<Spanish>Odds and Ends in DoC</Spanish>
@@ -92,7 +92,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Tag>
 		<English>Corporations in DoC</English>
-		<French>Corporations in DoC</French>
+		<French>Soci&#233;t&#233;s commerciales dans DoC</French>
 		<German>Corporations in DoC</German>
 		<Italian>Corporations in DoC</Italian>
 		<Spanish>Corporations in DoC</Spanish>
@@ -116,7 +116,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_REFORMATION</Tag>
 		<English>Reformation</English>
-		<French>Reformation</French>
+		<French>R&#233;forme</French>
 		<German>Reformation</German>
 		<Italian>Reformation</Italian>
 		<Spanish>Reformation</Spanish>
@@ -124,7 +124,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_RESPAWNS</Tag>
 		<English>Respawns in DoC</English>
-		<French>Respawns in DoC</French>
+		<French>R&#233;apparition dans DoC</French>
 		<German>Respawns in DoC</German>
 		<Italian>Respawns in DoC</Italian>
 		<Spanish>Respawns in DoC</Spanish>
@@ -140,7 +140,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SCHISM</Tag>
 		<English>Great Christian Schism</English>
-		<French>Great Christian Schism</French>
+		<French>Grand schisme chr&#233;tien</French>
 		<German>Great Christian Schism</German>
 		<Italian>Great Christian Schism</Italian>
 		<Spanish>Great Christian Schism</Spanish>
@@ -148,7 +148,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SLAVERY</Tag>
 		<English>Slavery</English>
-		<French>Slavery</French>
+		<French>Esclavage</French>
 		<German>Slavery</German>
 		<Italian>Slavery</Italian>
 		<Spanish>Slavery</Spanish>
@@ -156,7 +156,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STABILITY</Tag>
 		<English>Stability</English>
-		<French>Stability</French>
+		<French>Stabilit&#233;</French>
 		<German>Stability</German>
 		<Italian>Stability</Italian>
 		<Spanish>Stability</Spanish>
@@ -164,7 +164,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STABILITY_INFLUENCES</Tag>
 		<English>Stability Influence Factors</English>
-		<French>Stability Influence Factors</French>
+		<French>Facteurs influen&#231;ant la stabilit&#233;</French>
 		<German>Stability Influence Factors</German>
 		<Italian>Stability Influence Factors</Italian>
 		<Spanish>Stability Influence Factors</Spanish>
@@ -172,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Tag>
 		<English>Tile Stability Display</English>
-		<French>Tile Stability Display</French>
+		<French>Affichage de la stabilit&#233; par case</French>
 		<German>Tile Stability Display</German>
 		<Italian>Tile Stability Display</Italian>
 		<Spanish>Tile Stability Display</Spanish>
@@ -180,7 +180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Tag>
 		<English>Trading Companies</English>
-		<French>Trading Companies</French>
+		<French>Compagnies commerciales</French>
 		<German>Trading Companies</German>
 		<Italian>Trading Companies</Italian>
 		<Spanish>Trading Companies</Spanish>

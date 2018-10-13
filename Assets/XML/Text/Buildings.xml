@@ -568,7 +568,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL</Tag>
 		<English>Temazcal</English>
-		<French>Temazcal</French>
+		<French>
+			<Text>Temazcal:Temazcals</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Temazcal</German>
 		<Italian>Temazcal</Italian>
 		<Spanish>Temazcal</Spanish>
@@ -2920,7 +2924,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ</Tag>
 		<English>Kibbutz</English>
-		<French>Kibboutz</French>
+		<French>
+			<Text>Kibboutz:Kibboutzim</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Kibbutz</German>
 		<Italian>Kibbutz</Italian>
 		<Spanish>Kibbutz</Spanish>
@@ -2932,6 +2940,38 @@
 		<German>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
+		<English>Garden</English>
+		<French>
+			<Text>Jardin:Jardins</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Garten</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Giardino:Giardini</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Jard&#237;n:Jardines</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</English>
+		<French>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</French>
+		<German>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
