@@ -168,6 +168,7 @@ public:
 	DllExport bool isCity(bool bCheckImprovement = false, TeamTypes eForTeam = NO_TEAM) const;																																		// Exposed to Python
 	bool isFriendlyCity(const CvUnit& kUnit, bool bCheckImprovement) const;																												// Exposed to Python
 	bool isEnemyCity(const CvUnit& kUnit) const;																													// Exposed to Python
+	bool isAlliedCity(const CvUnit& kUnit, bool bCheckImprovement) const; // Leoreth
 
 	bool isOccupation() const;																																				// Exposed to Python
 	bool isBeingWorked() const;																															// Exposed to Python
