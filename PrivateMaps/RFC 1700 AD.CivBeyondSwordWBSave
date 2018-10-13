@@ -7674,7 +7674,7 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=22, (Spain)
+		UnitType=UNIT_WORKER, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -16575,7 +16575,7 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=31, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=30, (Portugal)
+		UnitType=UNIT_WORKER, UnitOwner=31, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=31, (Portugal)
@@ -18314,7 +18314,7 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=31, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=30, (Portugal)
+		UnitType=UNIT_WORKER, UnitOwner=31, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=31, (Portugal)
@@ -22797,7 +22797,7 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=22, (Spain)
+		UnitType=UNIT_WORKER, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -23484,7 +23484,7 @@ BeginPlot
 		UnitType=UNIT_CANNON, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=25, (England)
+		UnitType=UNIT_WORKER, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -24502,7 +24502,7 @@ BeginPlot
 		UnitType=UNIT_CUIRASSIER, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=23, (France)
+		UnitType=UNIT_WORKER, UnitOwner=24, (France)
 	EndUnit
 	BeginCity
 		CityOwner=24, (France)
@@ -28185,7 +28185,7 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=27, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=26, (Holy Rome)
+		UnitType=UNIT_WORKER, UnitOwner=27, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Holy Rome)
@@ -29884,7 +29884,7 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=30, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=29, (Poland)
+		UnitType=UNIT_WORKER, UnitOwner=30, (Poland)
 	EndUnit
 	BeginCity
 		CityOwner=30, (Poland)
@@ -31515,7 +31515,7 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=36, (Turkey)
+		UnitType=UNIT_WORKER, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginCity
 		CityOwner=37, (Turkey)
@@ -34189,7 +34189,7 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=27, (Russia)
+		UnitType=UNIT_WORKER, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -39800,7 +39800,7 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=18, (Turks)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=17, (Turks)
+		UnitType=UNIT_WORKER, UnitOwner=18, (Turks)
 	EndUnit
 	BeginCity
 		CityOwner=18, (Turks)
@@ -41970,7 +41970,7 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_WORKER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginCity
 		CityOwner=11, (Tamils)
@@ -42115,7 +42115,7 @@ BeginPlot
 		UnitType=UNIT_PIKEMAN, UnitOwner=36, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=35, (Mughals)
+		UnitType=UNIT_WORKER, UnitOwner=36, (Mughals)
 	EndUnit
 	BeginCity
 		CityOwner=36, (Mughals)
@@ -47070,7 +47070,7 @@ BeginPlot
 		UnitType=UNIT_PIKEMAN, UnitOwner=38, (Thailand)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=37, (Thailand)
+		UnitType=UNIT_WORKER, UnitOwner=38, (Thailand)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Thailand)
