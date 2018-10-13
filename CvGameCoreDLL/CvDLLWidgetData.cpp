@@ -2646,10 +2646,12 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 						
 						eSecondDiscovery = pSelectedUnit->getDiscoveryTech(eFirstDiscovery);
 						iSecondResearch = 0;
+						iSecondResearchLeft = -1;
 
 						if (eSecondDiscovery != NO_TECH && iFirstResearch >= iFirstResearchLeft)
 						{
 							iSecondResearch = std::max(0, pSelectedUnit->getDiscoverResearch(eSecondDiscovery) - iFirstResearchLeft);
+							iSecondResearchLeft = pSelectedUnit->getDiscoveryTech(eSecondDiscovery);
 						}
 						
 						szBuffer.append(NEWLINE);

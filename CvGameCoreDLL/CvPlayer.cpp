@@ -7427,12 +7427,12 @@ int CvPlayer::calculateUnitSupply(int& iPaidUnits, int& iBaseSupplyCost) const
 
 int CvPlayer::calculatePreInflatedCosts() const
 {
-	CyArgsList argsList;
+	/*CyArgsList argsList;
 	argsList.add(getID());
 	long lResult;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExtraCost", argsList.makeFunctionArgs(), &lResult);
+	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExtraCost", argsList.makeFunctionArgs(), &lResult);*/
 
-	return (calculateUnitCost() + calculateUnitSupply() + getTotalMaintenance() + getCivicUpkeep() + (int)lResult);
+	return (calculateUnitCost() + calculateUnitSupply() + getTotalMaintenance() + getCivicUpkeep() /*+ (int)lResult*/);
 }
 
 
@@ -7441,10 +7441,10 @@ int CvPlayer::calculateInflationRate() const
 	//int iTurns = ((GC.getGameINLINE().getGameTurn() + GC.getGameINLINE().getElapsedGameTurns()) / 2);
 	int iTurns = GC.getGameINLINE().getGameTurn();
 
-	if (GC.getGameINLINE().getMaxTurns() > 0)
+	/*if (GC.getGameINLINE().getMaxTurns() > 0)
 	{
 		iTurns = std::min(GC.getGameINLINE().getMaxTurns(), iTurns);
-	}
+	}*/
 
 	iTurns += GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getInflationOffset();
 
@@ -9343,9 +9343,30 @@ int CvPlayer::getGreatPeopleCreated() const
 }
 
 
-void CvPlayer::incrementGreatPeopleCreated()
+void CvPlayer::incrementGreatPeopleCreated(bool bUpdate)
 {
 	m_iGreatPeopleCreated++;
+
+	if (bUpdate)
+	{
+		changeGreatPeopleThresholdModifier(GC.getDefineINT("GREAT_PEOPLE_THRESHOLD_INCREASE") * ((getGreatPeopleCreated() / 10) + 1));
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+			{
+				GET_PLAYER((PlayerTypes)iI).changeGreatPeopleThresholdModifier(GC.getDefineINT("GREAT_PEOPLE_THRESHOLD_INCREASE_TEAM") * ((getGreatPeopleCreated() / 10) + 1));
+			}
+		}
+	}
+}
+
+void CvPlayer::changeGreatPeopleCreated(int iChange, bool bUpdate)
+{
+	for (int iI = 0; iI < iChange; iI++)
+	{
+		incrementGreatPeopleCreated(bUpdate);
+	}
 }
 
 int CvPlayer::getGreatGeneralsCreated() const
@@ -9353,9 +9374,30 @@ int CvPlayer::getGreatGeneralsCreated() const
 	return m_iGreatGeneralsCreated;
 }
 
-void CvPlayer::incrementGreatGeneralsCreated()
+void CvPlayer::incrementGreatGeneralsCreated(bool bUpdate)
 {
 	m_iGreatGeneralsCreated++;
+
+	if (bUpdate)
+	{
+		changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+			{
+				GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
+			}
+		}
+	}
+}
+
+void CvPlayer::changeGreatGeneralsCreated(int iChange, bool bUpdate)
+{
+	for (int iI = 0; iI < iChange; iI++)
+	{
+		incrementGreatGeneralsCreated(bUpdate);
+	}
 }
 
 void CvPlayer::decrementGreatGeneralsCreated()
@@ -9369,9 +9411,22 @@ int CvPlayer::getGreatSpiesCreated() const
 	return m_iGreatSpiesCreated;
 }
 
-void CvPlayer::incrementGreatSpiesCreated()
+void CvPlayer::incrementGreatSpiesCreated(bool bUpdate)
 {
 	m_iGreatSpiesCreated++;
+
+	if (bUpdate)
+	{
+		changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatSpiesCreated() / 10) + 1));
+
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+			{
+				GET_PLAYER((PlayerTypes)iI).changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatSpiesCreated() / 10) + 1));
+			}
+		}
+	}
 }
 
 int CvPlayer::getGreatPeopleThresholdModifier() const
@@ -19208,16 +19263,6 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 	if (bIncrementThreshold)
 	{
 		incrementGreatPeopleCreated();
-
-		changeGreatPeopleThresholdModifier(GC.getDefineINT("GREAT_PEOPLE_THRESHOLD_INCREASE") * ((getGreatPeopleCreated() / 10) + 1));
-
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
-			{
-				GET_PLAYER((PlayerTypes)iI).changeGreatPeopleThresholdModifier(GC.getDefineINT("GREAT_PEOPLE_THRESHOLD_INCREASE_TEAM") * ((getGreatPeopleCreated() / 10) + 1));
-			}
-		}
 	}
 
 	if (bIncrementExperience)
@@ -19226,30 +19271,10 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 		if (GC.getUnitInfo(eGreatPersonUnit).getLeaderExperience() > 0)
 		{
 			incrementGreatGeneralsCreated();
-
-			changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
-
-			for (int iI = 0; iI < MAX_PLAYERS; iI++)
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
-				{
-					GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
-				}
-			}
 		}
 		else
 		{
 			incrementGreatSpiesCreated();
-
-			changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatSpiesCreated() / 10) + 1));
-
-			for (int iI = 0; iI < MAX_PLAYERS; iI++)
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
-				{
-					GET_PLAYER((PlayerTypes)iI).changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatSpiesCreated() / 10) + 1));
-				}
-			}
 		}
 	}
 

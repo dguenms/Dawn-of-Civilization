@@ -236,12 +236,10 @@ class WBGameDataScreen:
 
 		# Merijn: Add extra DoC options
 		lList2 = []
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_STABILITY", ()), 2000])
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY", ()), 2001])
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV", ()), 2002])
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING", ()), 2003])
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS", ()), 2004])
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE", ()), 2005])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV", ()), 2000])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING", ()), 2001])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS", ()), 2002])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE", ()), 2003])
 		lList2.sort()
 
 		# Stored variables
@@ -296,17 +294,13 @@ class WBGameDataScreen:
 			bDefault = False
 
 			if item == 2000:
-				bEnabled = data.bNoAIStability
-			elif item == 2001:
-				bEnabled = data.bNoHumanStability
-			elif item == 2002:
 				bEnabled = data.bIgnoreAI
 				bDefault = True
-			elif item == 2003:
+			elif item == 2001:
 				bEnabled = data.bUnlimitedSwitching
-			elif item == 2004:
+			elif item == 2002:
 				bEnabled = data.bNoCongressOption
-			elif item == 2005:
+			elif item == 2003:
 				bEnabled = data.bNoPlagues
 
 			sText = self.colorText(lList2[i][0], bEnabled)
@@ -445,16 +439,12 @@ class WBGameDataScreen:
 					data.setPlayerEnabled(iItem, not data.isPlayerEnabled(iItem))
 				# Enabling/disabling RFC options
 				elif iGameOption == 2000:
-					data.bNoAIStability = not data.bNoAIStability
-				elif iGameOption == 2001:
-					data.bNoHumanStability = not data.bNoHumanStability
-				elif iGameOption == 2002:
 					data.bIgnoreAI = not data.bIgnoreAI
-				elif iGameOption == 2003:
+				elif iGameOption == 2001:
 					data.bUnlimitedSwitching = not data.bUnlimitedSwitching
-				elif iGameOption == 2004:
+				elif iGameOption == 2002:
 					data.bNoCongressOption = not data.bNoCongressOption
-				elif iGameOption == 2005:
+				elif iGameOption == 2003:
 					data.bNoPlagues = not data.bNoPlagues
 				# Stored Variables
 				elif iGameOption == 3001:

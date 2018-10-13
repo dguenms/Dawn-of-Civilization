@@ -19,7 +19,7 @@ def testunit(iPlayer, iUnit):
 def create(iPlayer, iUnit, (x, y)):
 	gc.getPlayer(iPlayer).createGreatPeople(utils.getUniqueUnit(iPlayer, iUnit), True, True, x, y)
 
-def getAlias(iCiv, iType):
+def getAlias(iCiv, iType, iEra):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivIran: return iCivPersia
@@ -33,8 +33,8 @@ def getType(iUnit):
 
 def getAvailableNames(iPlayer, iType):
 	pPlayer = gc.getPlayer(iPlayer)
-	iCiv = getAlias(pPlayer.getCivilizationType(), iType)
 	iEra = pPlayer.getCurrentEra()
+	iCiv = getAlias(pPlayer.getCivilizationType(), iType, iEra)
 	
 	return getEraNames(iCiv, iType, iEra)
 

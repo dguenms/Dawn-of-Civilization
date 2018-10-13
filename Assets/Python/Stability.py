@@ -44,9 +44,6 @@ tEraCorePopulationModifiers = (
 )
 
 def checkTurn(iGameTurn):
-	if data.bNoAIStability:
-		return
-	
 	for iPlayer in range(iNumPlayers):
 		if data.players[iPlayer].iTurnsToCollapse == 0:
 			data.players[iPlayer].iTurnsToCollapse = -1
@@ -117,9 +114,6 @@ def onCityAcquired(city, iOwner, iPlayer):
 		checkBarbarianCollapse(iOwner)
 		
 def onCityRazed(iPlayer, city):
-	if data.bNoAIStability:
-		return
-	
 	iOwner = city.getOwner()
 	
 	if iOwner == iBarbarian: return
@@ -138,17 +132,11 @@ def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
 	
 def onVassalState(iMaster, iVassal):
-	if data.bNoAIStability:
-		return
-		
 	checkStability(iMaster, True)
 	
 	balanceStability(iVassal, iStabilityShaky)
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
-	if data.bNoAIStability:
-		return
-	
 	if iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
 		checkStability(iTeam, not bWar)
 		checkStability(iOtherTeam, not bWar)
@@ -176,16 +164,10 @@ def onGreatPersonBorn(iPlayer):
 	checkStability(iPlayer, True)
 	
 def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
-	if data.bNoAIStability:
-		return
-	
 	if iWinningPlayer == iBarbarian and iLosingPlayer < iNumPlayers:
 		data.players[iLosingPlayer].iBarbarianLosses += 1
 	
 def onCivSpawn(iPlayer):
-	if data.bNoAIStability:
-		return
-	
 	for iOlderNeighbor in lOlderNeighbours[iPlayer]:
 		if gc.getPlayer(iOlderNeighbor).isAlive() and getStabilityLevel(iOlderNeighbor) > iStabilityShaky:
 			decrementStability(iOlderNeighbor)
@@ -213,10 +195,6 @@ def isImmune(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
-	# immune if stability disabled
-	if data.bNoAIStability:
-		return True
-	
 	# must not be dead
 	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
 		return True
@@ -235,10 +213,6 @@ def isImmune(iPlayer):
 		
 	# immune right after resurrection
 	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
-		return True
-		
-	# human player immunity if option is enabled
-	if iPlayer == utils.getHumanID() and data.bNoHumanStability:
 		return True
 		
 	return False
@@ -317,9 +291,6 @@ def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
 	return iCurrentLevel
 
 def checkStability(iPlayer, bPositive = False, iMaster = -1):
-	if data.bNoAIStability:
-		return
-	
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
