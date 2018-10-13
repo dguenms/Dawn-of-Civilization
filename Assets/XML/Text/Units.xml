@@ -2920,7 +2920,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN</Tag>
 		<English>Artisan</English>
-		<French>Artisan</French>
+		<French>
+			<Text>Artisan:Artisans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Artisan</German>
 		<Italian>Artisan</Italian>
 		<Spanish>Artisan</Spanish>
@@ -2944,7 +2948,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA</Tag>
 		<English>Merkava</English>
-		<French>Merkava</French>
+		<French>
+			<Text>Merkava:Merkavas</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Merkava</German>
 		<Italian>Merkava</Italian>
 		<Spanish>Merkava</Spanish>

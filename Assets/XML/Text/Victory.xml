@@ -1508,7 +1508,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR1_TITLE</Tag>
 		<English>The Samson Option</English>
-		<French>L'option Samson</French>
+		<French>L'option Samson </French>
 		<German>The Samson Option</German>
 		<Italian>The Samson Option</Italian>
 		<Spanish>The Samson Option</Spanish>
@@ -1524,7 +1524,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
 		<English>Start-up Nation</English>
-		<French>La nation startup</French>
+		<French>La nation startup </French>
 		<German>Start-up Nation</German>
 		<Italian>Start-up Nation</Italian>
 		<Spanish>Start-up Nation</Spanish>
@@ -1540,7 +1540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
 		<English>By Stratagem You Wage War</English>
-		<French>Tu feras la guerre avec prudence</French>
+		<French>Tu feras la guerre avec prudence </French>
 		<German>By Stratagem You Wage War</German>
 		<Italian>By Stratagem You Wage War</Italian>
 		<Spanish>By Stratagem You Wage War</Spanish>
@@ -2788,47 +2788,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
 		<English>Mesoamerican Metropolis</English>
-		<French>M&#233;tropole m&#233;soam&#233;ricaine</French>
+		<French>M&#233;tropole m&#233;soam&#233;ricaine </French>
+		<German>Mesoamerican Metropolis</German>
+		<Italian>Mesoamerican Metropolis</Italian>
+		<Spanish>Mesoamerican Metropolis</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1</Tag>
 		<English>Have more than 500 culture in 550 AD</English>
 		<French>Avoir plus de 500 culture en 550 ap. J.-C.</French>
+		<German>Have more than 500 culture in 550 AD</German>
+		<Italian>Have more than 500 culture in 550 AD</Italian>
+		<Spanish>Have more than 500 culture in 550 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_EPIC</Tag>
 		<English>Have more than 750 culture in 550 AD</English>
 		<French>Avoir plus de 750 culture en 550 ap. J.-C.</French>
+		<German>Have more than 750 culture in 550 AD</German>
+		<Italian>Have more than 750 culture in 550 AD</Italian>
+		<Spanish>Have more than 750 culture in 550 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO1_MARATHON</Tag>
 		<English>Have more than 1500 culture in 550 AD</English>
 		<French>Avoir plus de 1500 culture en 550 ap. J.-C.</French>
+		<German>Have more than 1500 culture in 550 AD</German>
+		<Italian>Have more than 1500 culture in 550 AD</Italian>
+		<Spanish>Have more than 1500 culture in 550 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
 		<English>Birthplace of the Gods</English>
-		<French>L&#224; o&#249; naquirent les dieux</French>
+		<French>L&#224; o&#249; naquirent les dieux </French>
+		<German>Birthplace of the Gods</German>
+		<Italian>Birthplace of the Gods</Italian>
+		<Spanish>Birthplace of the Gods</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2</Tag>
 		<English>Experience a golden age by 550 AD</English>
 		<French>Traverser un âge d'or avant 550 ap. J.-C.</French>
+		<German>Experience a golden age by 550 AD</German>
+		<Italian>Experience a golden age by 550 AD</Italian>
+		<Spanish>Experience a golden age by 550 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>
-		<English>The Toltec Empire</English>
-		<French>L'Empire tolt&#232;que</French>
+		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
+		<French>L'Empire tolt&#232;que </French>
+		<German>Percentage of Mesoamerica: %s1 / %s2%%</German>
+		<Italian>Percentage of Mesoamerica: %s1 / %s2%%</Italian>
+		<Spanish>Percentage of Mesoamerica: %s1 / %s2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO3</Tag>
 		<English>Control all tiles in Mesoamerica in 1000 AD</English>
 		<French>Contr&#244;ler toute la M&#233;soam&#233;rique en 1000 ap. J.-C.</French>
+		<German>Control all tiles in Mesoamerica in 1000 AD</German>
+		<Italian>Control all tiles in Mesoamerica in 1000 AD</Italian>
+		<Spanish>Control all tiles in Mesoamerica in 1000 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN</Tag>
 		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
 		<French>Pourcentage de la M&#233;soam&#233;rique : %s1 / %s2%%</French>
+		<German>Percentage of Mesoamerica: %s1 / %s2%%</German>
+		<Italian>Percentage of Mesoamerica: %s1 / %s2%%</Italian>
+		<Spanish>Percentage of Mesoamerica: %s1 / %s2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>

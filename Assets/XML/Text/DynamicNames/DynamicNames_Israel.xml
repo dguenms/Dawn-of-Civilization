@@ -9,6 +9,9 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>The Israelis</German>
+		<Italian>The Israelis</Italian>
+		<Spanish>The Israelis</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_PEOPLES</Tag>
@@ -18,6 +21,9 @@
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>Zionist Peoples</German>
+		<Italian>Zionist Peoples</Italian>
+		<Spanish>Zionist Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_DEFAULT</Tag>
@@ -27,6 +33,9 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_REPUBLIC</Tag>
@@ -36,6 +45,9 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_COMMUNIST</Tag>
@@ -45,6 +57,9 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Labor Zionist State of %s1</German>
+		<Italian>Labor Zionist State of %s1</Italian>
+		<Spanish>Labor Zionist State of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_FASCIST</Tag>
@@ -54,6 +69,9 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Land of Greater %s1</German>
+		<Italian>Land of Greater %s1</Italian>
+		<Spanish>Land of Greater %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_PALESTINE</Tag>
@@ -63,6 +81,9 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Palestine</German>
+		<Italian>Palestine</Italian>
+		<Spanish>Palestine</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_ADJECTIVE</Tag>
@@ -72,6 +93,9 @@
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
+		<German>Israeli</German>
+		<Italian>Israeli</Italian>
+		<Spanish>Israeli</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ISRAEL_SHORT_DESC</Tag>
@@ -81,5 +105,8 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>Israel</German>
+		<Italian>Israel</Italian>
+		<Spanish>Israel</Spanish>
 	</TEXT>
 </Civ4GameText>

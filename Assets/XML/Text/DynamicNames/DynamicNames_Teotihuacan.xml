@@ -9,6 +9,9 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>The Teotihuacanos</German>
+		<Italian>The Teotihuacanos</Italian>
+		<Spanish>The Teotihuacanos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_SHORT_DESC</Tag>
@@ -18,6 +21,9 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Teotihuacan</German>
+		<Italian>Teotihuacan</Italian>
+		<Spanish>Teotihuacan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ADJECTIVE</Tag>
@@ -27,6 +33,9 @@
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
+		<German>Teotihuacan</German>
+		<Italian>Teotihuacan</Italian>
+		<Spanish>Teotihuacan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_PEOPLES</Tag>
@@ -36,6 +45,9 @@
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>Mexico Valley Peoples</German>
+		<Italian>Mexico Valley Peoples</Italian>
+		<Spanish>Mexico Valley Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DEFAULT</Tag>
@@ -45,6 +57,9 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Altepetl of %s1</German>
+		<Italian>Altepetl of %s1</Italian>
+		<Spanish>Altepetl of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL</Tag>
@@ -54,6 +69,9 @@
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
+		<German>%s2 Altepemeh</German>
+		<Italian>%s2 Altepemeh</Italian>
+		<Spanish>%s2 Altepemeh</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TOLTEC</Tag>
@@ -63,6 +81,9 @@
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
+		<German>Toltec</German>
+		<Italian>Toltec</Italian>
+		<Spanish>Toltec</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TULA</Tag>
@@ -72,5 +93,8 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Tula</German>
+		<Italian>Tula</Italian>
+		<Spanish>Tula</Spanish>
 	</TEXT>
 </Civ4GameText>
