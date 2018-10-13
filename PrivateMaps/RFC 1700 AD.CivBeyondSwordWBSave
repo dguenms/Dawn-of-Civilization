@@ -12384,7 +12384,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 	TeamReveal=22,23,46,
 EndPlot
 BeginPlot
