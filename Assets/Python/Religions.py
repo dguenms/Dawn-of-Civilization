@@ -93,6 +93,7 @@ class Religions:
 
 		self.spreadJudaismEurope(iGameTurn)
 		self.spreadJudaismMiddleEast(iGameTurn)
+		self.spreadJudaismAmerica(iGameTurn)
 		
 		self.spreadIslamIndonesia(iGameTurn)
 
@@ -247,32 +248,27 @@ class Religions:
 			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
 			
 	def spreadJudaismEurope(self, iGameTurn):
-		if not gc.getGame().isReligionFounded(iJudaism): return
-		if iGameTurn < getTurnForYear(1000): return
-		
-		if iGameTurn % utils.getTurns(10) != 0: return
-	
-		lEuropeanCities = utils.getRegionCities([rIberia, rEurope, rItaly, rBritain, rRussia, rBalkans])
-		lJewishCities = [city for city in lEuropeanCities if city.isHasReligion(iJudaism)]
-		
-		if 2 * len(lJewishCities) < len(lEuropeanCities):
-			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lEuropeanCities, iJudaism))
-			if pSpreadCity:
-				pSpreadCity.spreadReligion(iJudaism)
+		self.spreadReligionToRegion(iJudaism, [rIberia, rEurope, rItaly, rBritain, rRussia, rBalkans], iGameTurn, 1000, 10, 0)
 				
 	def spreadJudaismMiddleEast(self, iGameTurn):
-		if not gc.getGame().isReligionFounded(iJudaism): return
-		if iGameTurn < getTurnForYear(600): return
+		self.spreadReligionToRegion(iJudaism, [rMesopotamia, rAnatolia, rEgypt], iGameTurn, 600, 20, 5)
 		
-		if iGameTurn % utils.getTurns(20) != utils.getTurns(5): return
+	def spreadJudaismAmerica(self, iGameTurn):
+		self.spreadReligionToRegion(iJudaism, [rCanada, rAlaska, rUnitedStates], iGameTurn, 1850, 10, 4)
+				
+	def spreadReligionToRegion(self, iReligion, lRegions, iGameTurn, iStartDate, iInterval, iOffset):
+		if not gc.getGame().isReligionFounded(iReligion): return
+		if iGameTurn < getTurnForYear(iStartDate): return
 		
-		lMiddleEastCities = utils.getRegionCities([rMesopotamia, rAnatolia, rEgypt])
-		lJewishCities = [city for city in lMiddleEastCities if city.isHasReligion(iJudaism)]
+		if iGameTurn % utils.getTurns(iInterval) != iOffset: return
 		
-		if 2 * len(lJewishCities) < len(lMiddleEastCities):
-			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lMiddleEastCities, iJudaism))
+		lRegionCities = utils.getRegionCities(lRegions)
+		lReligionCities = [city for city in lRegionCities if city.isHasReligion(iReligion)]
+		
+		if 2 * len(lReligionCities) < len(lRegionCities):
+			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lRegionCities, iReligion))
 			if pSpreadCity:
-				pSpreadCity.spreadReligion(iJudaism)
+				pSpreadCity.spreadReligion(iReligion)
 				
 ## ISLAM
 
