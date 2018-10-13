@@ -490,6 +490,86 @@
 		<Spanish>Dadnos esto o sentir?is la c?lera de nuestra &quot;terrible y veloz espada&quot;. </Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ATLATL_CAUAC_1</Tag>
+		<English>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</English>
+		<French>Bienvenue dans notre cit&#233;, [CT_NAME]. On m'appelle Atlatl Cauac. Je vous en prie, accompagnez-moi au sommet d'une de nos pyramides : la vue de la vall&#233;e est magnifique...</French>
+		<German>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</German>
+		<Italian>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</Italian>
+		<Spanish>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BEN_GURION_1</Tag>
+		<English>Shalom, [CT_NAME]. Let us hope you bring with you peaceful relations, for aggression against [OUR_CIV_SHORT] will be answered with equal or greater force.</English>
+		<French>Shalom, [CT_NAME]. Souhaitons que vos intentions soient paisibles, car toute agression contre [OUR_CIV_SHORT] recevra une r&#233;ponse de force &#233;gale ou sup&#233;rieure.</French>
+		<German>Shalom, [CT_NAME]. Let us hope you bring with you peaceful relations, for aggression against [OUR_CIV_SHORT] will be answered with equal or greater force.</German>
+		<Italian>Shalom, [CT_NAME]. Let us hope you bring with you peaceful relations, for aggression against [OUR_CIV_SHORT] will be answered with equal or greater force.</Italian>
+		<Spanish>Shalom, [CT_NAME]. Let us hope you bring with you peaceful relations, for aggression against [OUR_CIV_SHORT] will be answered with equal or greater force.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_BEN_GURION_1</Tag>
+		<English>The most dangerous enemy to the security of [OUR_CIV_SHORT] is the intellectual inertia of those who are responsible for security. As it stands, I'm the minister of defense, and I can't let you fool me.</English>
+		<French>L'ennemi le plus dangereux pour la s&#233;curit&#233; d'[OUR_CIV_SHORT] est l'inertie intellectuelle de ceux qui sont responsables de la s&#233;curit&#233;. En tant que ministre de la d&#233;fense, je ne peux vous laisser me berner.</French>
+		<German>The most dangerous enemy to the security of [OUR_CIV_SHORT] is the intellectual inertia of those who are responsible for security. As it stands, I'm the minister of defense, and I can't let you fool me.</German>
+		<Italian>The most dangerous enemy to the security of [OUR_CIV_SHORT] is the intellectual inertia of those who are responsible for security. As it stands, I'm the minister of defense, and I can't let you fool me.</Italian>
+		<Spanish>The most dangerous enemy to the security of [OUR_CIV_SHORT] is the intellectual inertia of those who are responsible for security. As it stands, I'm the minister of defense, and I can't let you fool me.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DECLARE_WAR_LEADER_BEN_GURION_1</Tag>
+		<English>When faced with a situation that necessitates an armed solution, our national doctrine dictates that we don't sit around like lambs for slaughter. You [CT_CIV_ADJ:1] brought this upon yourselves. ([OUR_NAME] declares war!)</English>
+		<French>Face &#224; toute situation n&#233;cessitant une solution arm&#233;e, notre doctrine nationale nous interdit de nous laisser mener comme des agneaux &#224; l'abattoir. Vous autres [CT_CIV_ADJ:1] saviez ce qui vous attendait. ([OUR_NAME] vous d&#233;clare la guerre !)</French>
+		<German>When faced with a situation that necessitates an armed solution, our national doctrine dictates that we don't sit around like lambs for slaughter. You [CT_CIV_ADJ:1] brought this upon yourselves. ([OUR_NAME] declares war!)</German>
+		<Italian>When faced with a situation that necessitates an armed solution, our national doctrine dictates that we don't sit around like lambs for slaughter. You [CT_CIV_ADJ:1] brought this upon yourselves. ([OUR_NAME] declares war!)</Italian>
+		<Spanish>When faced with a situation that necessitates an armed solution, our national doctrine dictates that we don't sit around like lambs for slaughter. You [CT_CIV_ADJ:1] brought this upon yourselves. ([OUR_NAME] declares war!)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_BEN_GURION_1</Tag>
+		<English>What matters is not what the goyim say, but what the [OUR_CIV_ADJ:1] do. Unless we make a stand here and show the world that there is a high a price for murdering our brothers and sisters, we won't survive.</English>
+		<French>L'important n'est pas ce que disent les Gentils, mais ce que font les [OUR_CIV_ADJ:1]. Si nous ne nous d&#233;fendons pas et ne montrons pas au monde le prix &#224; payer pour tuer nos fr&#232;res et no s&#156;urs, nous ne survivrons pas.</French>
+		<German>What matters is not what the goyim say, but what the [OUR_CIV_ADJ:1] do. Unless we make a stand here and show the world that there is a high a price for murdering our brothers and sisters, we won't survive.</German>
+		<Italian>What matters is not what the goyim say, but what the [OUR_CIV_ADJ:1] do. Unless we make a stand here and show the world that there is a high a price for murdering our brothers and sisters, we won't survive.</Italian>
+		<Spanish>What matters is not what the goyim say, but what the [OUR_CIV_ADJ:1] do. Unless we make a stand here and show the world that there is a high a price for murdering our brothers and sisters, we won't survive.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_BEN_GURION_1</Tag>
+		<English>Glad to have you back, [CT_NAME]. Your continued support for the state of [OUR_CIV_SHORT] will be appreciated for generations to come.</English>
+		<French>Content de vous revoir, [CT_NAME]. Votre soutien continuel &#224; l'&#201;tat d'[OUR_CIV_SHORT] sera appr&#233;ci&#233; par les g&#233;n&#233;rations &#224; venir.</French>
+		<German>Glad to have you back, [CT_NAME]. Your continued support for the state of [OUR_CIV_SHORT] will be appreciated for generations to come.</German>
+		<Italian>Glad to have you back, [CT_NAME]. Your continued support for the state of [OUR_CIV_SHORT] will be appreciated for generations to come.</Italian>
+		<English>Glad to have you back, [CT_NAME]. Your continued support for the state of [OUR_CIV_SHORT] will be appreciated for generations to come.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_BEN_GURION_1</Tag>
+		<English>When we put forth the motion to form the state of [OUR_CIV_SHORT], we thought we would no longer have to put up with the politics of people like you... yet here you are. I'm listening, [CT_NAME], but with strained ears.</English>
+		<French>Quand nous avons enclench&#233; le mouvement pour former l'&#201;tat d'[OUR_CIV_SHORT], nous pensions ne plus avoir &#224; s'occuper de politique avec des gens comme vous... et pourtant vous &#234;tes l&#224;. J'&#233;coute, [CT_NAME], mais mes oreilles sont fatigu&#233;es.</French>
+		<German>When we put forth the motion to form the state of [OUR_CIV_SHORT], we thought we would no longer have to put up with the politics of people like you... yet here you are. I'm listening, [CT_NAME], but with strained ears.</German>
+		<Italian>When we put forth the motion to form the state of [OUR_CIV_SHORT], we thought we would no longer have to put up with the politics of people like you... yet here you are. I'm listening, [CT_NAME], but with strained ears.</Italian>
+		<Spanish>When we put forth the motion to form the state of [OUR_CIV_SHORT], we thought we would no longer have to put up with the politics of people like you... yet here you are. I'm listening, [CT_NAME], but with strained ears.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_BEN_GURION_1</Tag>
+		<English>Ideally the national estate of [OUR_CIV_SHORT] should be created through our own labor alone, but when afflicted with reality's setbacks, we have no choice but to bend our principles a little. Care to help?</English>
+		<French>Dans un monde id&#233;al, les biens nationaux d'[OUR_CIV_SHORT] devraient &#234;tre cr&#233;&#233;es par notre labeur seul, mais lorsque la r&#233;alit&#233; nous inflige des revers, nous devons quelque peu d&#233;laisser nos principes. Pourriez-vous nous aider ?</French>
+		<German>Ideally the national estate of [OUR_CIV_SHORT] should be created through our own labor alone, but when afflicted with reality's setbacks, we have no choice but to bend our principles a little. Care to help?</German>
+		<Italian>Ideally the national estate of [OUR_CIV_SHORT] should be created through our own labor alone, but when afflicted with reality's setbacks, we have no choice but to bend our principles a little. Care to help?</Italian>
+		<Spanish>Ideally the national estate of [OUR_CIV_SHORT] should be created through our own labor alone, but when afflicted with reality's setbacks, we have no choice but to bend our principles a little. Care to help?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_BEN_GURION_1</Tag>
+		<English>Children of [OUR_CIV_SHORT] are in need of new settlements. Prove yourself our friend, or you will know the backs of our guns.</English>
+		<French>Les enfants d'[OUR_CIV_SHORT] ont besoin de nouvelles colonies. Montrez que vous &#234;tes notre ami, ou vous t&#226;terez de nos fusils.</French>
+		<German>Children of [OUR_CIV_SHORT] are in need of new settlements. Prove yourself our friend, or you will know the backs of our guns.</German>
+		<Italian>Children of [OUR_CIV_SHORT] are in need of new settlements. Prove yourself our friend, or you will know the backs of our guns.</Italian>
+		<Spanish>Children of [OUR_CIV_SHORT] are in need of new settlements. Prove yourself our friend, or you will know the backs of our guns.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BEN_GURION_1</Tag>
+		<English>We [OUR_CIV_ADJ:1] are a people of peerless zeal. Should you evoke our wrath, we would plunge you into a vortex worthy of the end times. Instead, let's see that it needn't come to that.</English>
+		<French>Nous autres [OUR_CIV_ADJ:1] sommes un peuple au z&#232;le hors pair. Si vous suscitez notre col&#232;re, nous vous plongerons dans un vortex digne de la fin des temps. &#201;vitons ensemble d'en arriver l&#224;.</French>
+		<German>We [OUR_CIV_ADJ:1] are a people of peerless zeal. Should you evoke our wrath, we would plunge you into a vortex worthy of the end times. Instead, let's see that it needn't come to that.</German>
+		<Italian>We [OUR_CIV_ADJ:1] are a people of peerless zeal. Should you evoke our wrath, we would plunge you into a vortex worthy of the end times. Instead, let's see that it needn't come to that.</Italian>
+		<Spanish>We [OUR_CIV_ADJ:1] are a people of peerless zeal. Should you evoke our wrath, we would plunge you into a vortex worthy of the end times. Instead, let's see that it needn't come to that.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BUMIN_1</Tag>
 		<English>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</English>
 		<French>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</French>
