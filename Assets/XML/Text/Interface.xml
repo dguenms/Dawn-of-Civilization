@@ -2687,6 +2687,14 @@
 		<Spanish>%D1%%: for Friendly Relations</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EXPANSION_STABILITY</Tag>
+		<English>[ICON_BULLET]Reduces expansion stability penalty</English>
+		<French>[ICON_BULLET]Reduces expansion stability penalty</French>
+		<German>[ICON_BULLET]Reduces expansion stability penalty</German>
+		<Italian>[ICON_BULLET]Reduces expansion stability penalty</Italian>
+		<Spanish>[ICON_BULLET]Reduces expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

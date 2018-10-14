@@ -11045,6 +11045,15 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		}
 	}
 
+	if (kBuilding.getMaintenanceModifier() != 0)
+	{
+		if (pCity != NULL && !pCity->plot()->isCore(ePlayer))
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_EXPANSION_STABILITY"));
+		}
+	}
+
 	if (!CvWString(kBuilding.getHelp()).empty())
 	{
 		szBuffer.append(NEWLINE);
