@@ -583,6 +583,8 @@ public:
 	bool hasBonusEffect(int iBonus);
 	int getCultureRank();
 	bool isHasBuildingEffect(int eBuilding);
+	int getStabilityPopulation();
+	void setStabilityPopulation(int iNewValue);
 
 private:
 	CvCity* m_pCity;

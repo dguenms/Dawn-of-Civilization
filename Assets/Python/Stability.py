@@ -689,8 +689,11 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += iCorePopulationModifier * iPopulation / 100
-			if bSingleCoreCity and iCurrentEra > iAncient: iCorePopulation += iCorePopulationModifier * iPopulation / 100
+			iStabilityPopulation = iCorePopulationModifier * iPopulation / 100
+			if bSingleCoreCity and iCurrentEra > iAncient: iStabilityPopulation += iCorePopulationModifier * iPopulation / 100
+			
+			iCorePopulation += iStabilityPopulation
+			city.setStabilityPopulation(iStabilityPopulation)
 		else:
 			iOwnCulture = plot.getCulture(iPlayer)
 			
@@ -736,7 +739,10 @@ def calculateStability(iPlayer):
 			# cap
 			if iModifier < -1: iModifier = -1
 			
-			iPeripheryPopulation += (100 + iModifier * 50) * iPopulation / 100
+			iStabilityPopulation = (100 + iModifier * 50) * iPopulation / 100
+			
+			iPeripheryPopulation += iStabilityPopulation
+			city.setStabilityPopulation(-iStabilityPopulation)
 			
 		# Recent conquests
 		if bHistorical and iGameTurn - city.getGameTurnAcquired() <= utils.getTurns(20):

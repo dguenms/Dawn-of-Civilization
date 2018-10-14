@@ -592,6 +592,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iCultureRank = 0;
 
+	m_iStabilityPopulation = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -15752,6 +15754,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureTradeRouteModifier);
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 	pStream->Read(&m_iCultureRank);
+	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15933,7 +15936,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=1; // Leoreth: 1 for wonder effect changes
+	uint uiFlag=2; // Leoreth: 1 for wonder effect changes, 2 for stability population
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16045,6 +16048,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingUnignorableBombardDefense);
 
 	pStream->Write(m_iCultureRank);
+
+	pStream->Write(m_iStabilityPopulation); // Leoreth
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -18867,4 +18872,14 @@ void CvCity::setCultureRank(int iNewValue)
 			}
 		}
 	}
+}
+
+int CvCity::getStabilityPopulation() const
+{
+	return m_iStabilityPopulation;
+}
+
+void CvCity::setStabilityPopulation(int iNewValue)
+{
+	m_iStabilityPopulation = iNewValue;
 }

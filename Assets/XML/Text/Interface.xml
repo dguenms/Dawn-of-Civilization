@@ -2711,6 +2711,22 @@
 		<Spanish>Low Culture: severe expansion stability penalty</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CITY_CORE_POPULATION</Tag>
+		<English>Core Population: %d1</English>
+		<French>Core Population: %d1</French>
+		<German>Core Population: %d1</German>
+		<Italian>Core Population: %d1</Italian>
+		<Spanish>Core Population: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CITY_PERIPHERY_POPULATION</Tag>
+		<English>Periphery Population: %d1</English>
+		<French>Periphery Population: %d1</French>
+		<German>Periphery Population: %d1</German>
+		<Italian>Periphery Population: %d1</Italian>
+		<Spanish>Periphery Population: %d1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

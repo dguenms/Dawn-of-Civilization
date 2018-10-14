@@ -2745,3 +2745,13 @@ bool CyCity::isHasBuildingEffect(int eBuilding)
 {
 	return m_pCity ? m_pCity->isHasBuildingEffect((BuildingTypes)eBuilding) : false;
 }
+
+int CyCity::getStabilityPopulation()
+{
+	return m_pCity ? m_pCity->getStabilityPopulation() : -1;
+}
+
+void CyCity::setStabilityPopulation(int iNewValue)
+{
+	if (m_pCity) m_pCity->setStabilityPopulation(iNewValue);
+}
