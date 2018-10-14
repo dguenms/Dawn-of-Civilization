@@ -1238,7 +1238,7 @@ def calculateTrendScore(lTrend):
 	return 0
 	
 def calculateSumScore(lScores, iThreshold = 1):
-	lThresholdScores = [sign(iScore) for iScore in lScores if iScore >= iThreshold]
+	lThresholdScores = [sign(iScore) for iScore in lScores if abs(iScore) >= iThreshold]
 	iSum = sum(lThresholdScores)
 	iCap = len(lScores) / 2
 	
