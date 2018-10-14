@@ -5509,6 +5509,19 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 // BUG - Base Values - end
 	szString.append(CvWString::format(L" -%d.%02d %c", iMaintenance/100, iMaintenance%100, GC.getCommerceInfo(COMMERCE_GOLD).getChar()));
 
+	// Leoreth
+	int iStabilityPopulation = pCity->getStabilityPopulation();
+	if (iStabilityPopulation > 0)
+	{
+		szString.append(NEWLINE);
+		szString.append(gDLL->getText("TXT_KEY_INTERFACE_CITY_CORE_POPULATION", iStabilityPopulation));
+	}
+	else if (iStabilityPopulation < 0)
+	{
+		szString.append(NEWLINE);
+		szString.append(gDLL->getText("TXT_KEY_INTERFACE_CITY_PERIPHERY_POPULATION", abs(iStabilityPopulation)));
+	}
+
 // BUG - Building Icons - start
 	if (getBugOptionBOOL("CityBar__BuildingIcons", true, "BUG_CITYBAR_BUILDING_ICONS"))
 	{
@@ -11042,6 +11055,15 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		{
 			szTempBuffer.Format(L" (+%d%c)", abs(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE")), ((GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE") > 0) ? gDLL->getSymbolID(HEALTHY_CHAR): gDLL->getSymbolID(UNHEALTHY_CHAR)));
 			szBuffer.append(szTempBuffer);
+		}
+	}
+
+	if (kBuilding.getMaintenanceModifier() != 0)
+	{
+		if (pCity != NULL && !pCity->plot()->isCore(ePlayer))
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_EXPANSION_STABILITY"));
 		}
 	}
 

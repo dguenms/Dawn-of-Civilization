@@ -1102,6 +1102,9 @@ public:
 	bool hasBonusEffect(BonusTypes eBonus) const;
 	void processBonusEffect(BonusTypes eBonus, int iChange);
 
+	int getStabilityPopulation() const;
+	void setStabilityPopulation(int iNewValue);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1281,6 +1284,8 @@ protected:
 	int m_iBuildingUnignorableBombardDefense;
 
 	int m_iCultureRank;
+
+	int m_iStabilityPopulation;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

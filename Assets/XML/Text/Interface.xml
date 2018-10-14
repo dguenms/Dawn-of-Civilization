@@ -1695,20 +1695,12 @@
 		<Spanish>&#205;ndice</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REBELLION_MESSAGE</Tag>
-		<English>cities have declared their independence from us and expelled our garrisons. Shall we leave them free?</English>
-		<French>ont d&#233;clar&#233; leur ind&#233;pendance et attaquent nos garnisons. Devons-nous les laisser libres ?</French>
-		<German>St&#228;dte haben ihre Unabh&#228;ngigkeit von uns erkl&#228;rt und unsere Garnisonen vertrieben. Sollen wir sie gew&#228;hren lassen?</German>
-		<Italian>citt&#224; hanno dichiarato la propria indipendenza, espellendo le nostre guarnigioni. Dobbiamo lasciarle libere?</Italian>
-		<Spanish>ciudades han declarado su independencia de nosotros y han expulsado a nuestras guarniciones. &#191;Debeos permitir su libertad?</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_REBELLION_TEXT</Tag>
-		<English>%s1 cities have declared their independence from us and expelled our garrisons. Shall we leave them free?</English>
-		<French>Les villes %s1 ont d&#233;clar&#233; leur ind&#233;pendance et attaquent nos garnisons. Devons-nous les laisser libres ?</French>
-		<German>%s1:3 St&#228;dte haben ihre Unabh&#228;ngigkeit von uns erkl&#228;rt und unsere Garnisonen vertrieben. Sollen wir sie gew&#228;hren lassen?</German>
-		<Italian>Le citt&#224; %s1:4 hanno dichiarato la propria indipendenza, espellendo le nostre guarnigioni. Dobbiamo lasciarle libere?</Italian>
-		<Spanish>Las ciudades %s1:4 han declarado su independencia de nosotros y han expulsado a nuestras guarniciones. &#191;Debemos permitir su libertad?</Spanish>
+		<English>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
+		<French>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</French>
+		<German>%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
+		<Italian>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
+		<Spanish>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBELLION_TITLE</Tag>
@@ -2685,6 +2677,46 @@
 		<German>%D1%%: f&#252;r Freundliche Beziehungen</German>
 		<Italian>%D1%%: for Friendly Relations</Italian>
 		<Spanish>%D1%%: for Friendly Relations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EXPANSION_STABILITY</Tag>
+		<English>[ICON_BULLET]Reduces expansion stability penalty</English>
+		<French>[ICON_BULLET]Reduces expansion stability penalty</French>
+		<German>[ICON_BULLET]Reduces expansion stability penalty</German>
+		<Italian>[ICON_BULLET]Reduces expansion stability penalty</Italian>
+		<Spanish>[ICON_BULLET]Reduces expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE</Tag>
+		<English>Cultural Minority: expansion stability penalty</English>
+		<French>Cultural Minority: expansion stability penalty</French>
+		<German>Cultural Minority: expansion stability penalty</German>
+		<Italian>Cultural Minority: expansion stability penalty</Italian>
+		<Spanish>Cultural Minority: expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE_HIGH</Tag>
+		<English>Low Culture: severe expansion stability penalty</English>
+		<French>Low Culture: severe expansion stability penalty</French>
+		<German>Low Culture: severe expansion stability penalty</German>
+		<Italian>Low Culture: severe expansion stability penalty</Italian>
+		<Spanish>Low Culture: severe expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CITY_CORE_POPULATION</Tag>
+		<English>Core Population: %d1</English>
+		<French>Core Population: %d1</French>
+		<German>Core Population: %d1</German>
+		<Italian>Core Population: %d1</Italian>
+		<Spanish>Core Population: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_CITY_PERIPHERY_POPULATION</Tag>
+		<English>Periphery Population: %d1</English>
+		<French>Periphery Population: %d1</French>
+		<German>Periphery Population: %d1</German>
+		<Italian>Periphery Population: %d1</Italian>
+		<Spanish>Periphery Population: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

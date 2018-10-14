@@ -139,5 +139,7 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("hasBonusEffect", &CyCity::hasBonusEffect, "bool ()")
 		.def("getCultureRank", &CyCity::getCultureRank, "int ()")
 		.def("isHasBuildingEffect", &CyCity::isHasBuildingEffect, "bool (int eBuilding)")
+		.def("getStabilityPopulation", &CyCity::getStabilityPopulation, "int ()")
+		.def("setStabilityPopulation", &CyCity::setStabilityPopulation, "void (int iNewValue)")
 		;
 }
