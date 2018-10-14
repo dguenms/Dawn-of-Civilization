@@ -4239,15 +4239,18 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 		// Leoreth: stability effects of cultural control
 		int iOwnCulture = iTotalCulture == 0 ? 100 : 100 * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE()) / iTotalCulture;
 
-		if (iOwnCulture < 20)
+		if (pHeadSelectedCity->getOwnerINLINE() != PERSIA || (pHeadSelectedCity->getOwnerINLINE() == PERSIA && GET_PLAYER((PlayerTypes)PERSIA).isReborn()))
 		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE"));
-		}
-		else if (iOwnCulture < 50)
-		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_INSTABILITY_CULTURE"));
+			if (iOwnCulture < 20)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE"));
+			}
+			else if (iOwnCulture < 50)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_INSTABILITY_CULTURE"));
+			}
 		}
 
 		eCulturalOwner = pHeadSelectedCity->plot()->calculateCulturalOwner();
