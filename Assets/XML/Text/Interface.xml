@@ -1695,20 +1695,12 @@
 		<Spanish>&#205;ndice</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REBELLION_MESSAGE</Tag>
-		<English>cities have declared their independence from us and expelled our garrisons. Shall we leave them free?</English>
-		<French>ont d&#233;clar&#233; leur ind&#233;pendance et attaquent nos garnisons. Devons-nous les laisser libres ?</French>
-		<German>St&#228;dte haben ihre Unabh&#228;ngigkeit von uns erkl&#228;rt und unsere Garnisonen vertrieben. Sollen wir sie gew&#228;hren lassen?</German>
-		<Italian>citt&#224; hanno dichiarato la propria indipendenza, espellendo le nostre guarnigioni. Dobbiamo lasciarle libere?</Italian>
-		<Spanish>ciudades han declarado su independencia de nosotros y han expulsado a nuestras guarniciones. &#191;Debeos permitir su libertad?</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_REBELLION_TEXT</Tag>
-		<English>%s1 cities have declared their independence from us and expelled our garrisons. Shall we leave them free?</English>
-		<French>Les villes %s1 ont d&#233;clar&#233; leur ind&#233;pendance et attaquent nos garnisons. Devons-nous les laisser libres ?</French>
-		<German>%s1:3 St&#228;dte haben ihre Unabh&#228;ngigkeit von uns erkl&#228;rt und unsere Garnisonen vertrieben. Sollen wir sie gew&#228;hren lassen?</German>
-		<Italian>Le citt&#224; %s1:4 hanno dichiarato la propria indipendenza, espellendo le nostre guarnigioni. Dobbiamo lasciarle libere?</Italian>
-		<Spanish>Las ciudades %s1:4 han declarado su independencia de nosotros y han expulsado a nuestras guarniciones. &#191;Debemos permitir su libertad?</Spanish>
+		<English>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
+		<French>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</French>
+		<German>%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
+		<Italian>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
+		<Spanish>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REBELLION_TITLE</Tag>
