@@ -2695,6 +2695,22 @@
 		<Spanish>[ICON_BULLET]Reduces expansion stability penalty</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE</Tag>
+		<English>Cultural Minority: expansion stability penalty</English>
+		<French>Cultural Minority: expansion stability penalty</French>
+		<German>Cultural Minority: expansion stability penalty</German>
+		<Italian>Cultural Minority: expansion stability penalty</Italian>
+		<Spanish>Cultural Minority: expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE_HIGH</Tag>
+		<English>Low Culture: severe expansion stability penalty</English>
+		<French>Low Culture: severe expansion stability penalty</French>
+		<German>Low Culture: severe expansion stability penalty</German>
+		<Italian>Low Culture: severe expansion stability penalty</Italian>
+		<Spanish>Low Culture: severe expansion stability penalty</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
