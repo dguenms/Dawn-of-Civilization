@@ -1874,9 +1874,9 @@ def onProjectBuilt(iPlayer, iProject):
 	
 	# second Russian goal: be the first civilization to complete the Manhattan Project and the Apollo Program
 	if isPossible(iRussia, 1):
-		if iProject in [iApolloProgram, iManhattanProject]:
+		if iProject in [iLunarLanding, iManhattanProject]:
 			if iPlayer == iRussia:
-				bApolloProgram = iProject == iApolloProgram or teamRussia.getProjectCount(iApolloProgram) > 0
+				bApolloProgram = iProject == iLunarLanding or teamRussia.getProjectCount(iLunarLanding) > 0
 				bManhattanProject = iProject == iManhattanProject or teamRussia.getProjectCount(iManhattanProject) > 0
 				if bApolloProgram and bManhattanProject:
 					win(iRussia, 1)
@@ -3819,8 +3819,8 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bSiberia) + siberiaText + ' ' + getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
 		elif iGoal == 1:
 			bManhattanProject = teamRussia.getProjectCount(iManhattanProject) > 0
-			bApolloProgram = teamRussia.getProjectCount(iApolloProgram) > 0
-			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))
+			bApolloProgram = teamRussia.getProjectCount(iLunarLanding) > 0
+			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_LUNAR_LANDING", ()))
 		elif iGoal == 2:
 			bCommunism = pRussia.getCivics(iCivicsEconomy) == iCentralPlanning
 			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))
