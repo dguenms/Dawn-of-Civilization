@@ -51,11 +51,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2</Tag>
-		<English>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</English>
-		<French>Construire la Statue de la Libert&#233;, l'Empire State Building, le Pentagone et les Nations Unies avant 1950 ap. J.-C.</French>
-		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, das Empire State Building, das Pentagon und the Vereinten Nationen</German>
-		<Italian>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</Italian>
-		<Spanish>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</Spanish>
+		<English>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</English>
+		<French>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</French>
+		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, die Brooklyn Bridge, das Empire State Building, die Golden Gate Bridge, das Pentagon und the Vereinten Nationen</German>
+		<Italian>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</Italian>
+		<Spanish>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3_TITLE</Tag>
@@ -963,9 +963,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA3</Tag>
-		<English>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</English>
-		<French>Construire Notre-Dame, Versailles, la Statue de la Libert&#233; et la Tour Eiffel avant 1900 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, die Freiheitsstatue und den Eiffelturm</German>
+		<English>Build Notre Dame, Versailles, the Louvre, the Eiffel Tower and the Metropolitain by 1900 AD</English>
+		<French>Build Notre Dame, Versailles, the Louvre, the Eiffel Tower and the Metropolitain by 1900 AD</French>
+		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, den Louvre, den Eiffelturm und die Metropolitain</German>
 		<Italian>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</Italian>
 		<Spanish>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</Spanish>
 	</TEXT>
@@ -2099,11 +2099,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2</Tag>
-		<English>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</English>
-		<French>Construire le Fort rouge, le Harmandir Sahib et le Taj Mahal avant 1660 ap. J.-C.</French>
-		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, Harmandir Sahib und den Taj Mahal.</German>
-		<Italian>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</Italian>
-		<Spanish>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</Spanish>
+		<English>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</English>
+		<French>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</French>
+		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, die Shalimar-G&#228;rten und den Taj Mahal.</German>
+		<Italian>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</Italian>
+		<Spanish>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3_TITLE</Tag>

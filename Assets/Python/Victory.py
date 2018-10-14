@@ -213,11 +213,11 @@ dWonderGoals = {
 	iMaya: (1, [iTempleOfKukulkan], True),
 	iMoors: (1, [iMezquita], False),
 	iKhmer: (0, [iWatPreahPisnulok], False),
-	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
+	iFrance: (2, [iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain], True),
 	iMali: (1, [iUniversityOfSankore], False),
 	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore], True),
-	iMughals: (1, [iTajMahal, iRedFort, iHarmandirSahib], True),
-	iAmerica: (1, [iStatueOfLiberty, iEmpireStateBuilding, iPentagon, iUnitedNations], True),
+	iMughals: (1, [iTajMahal, iRedFort, iShalimarGardens], True),
+	iAmerica: (1, [iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations], True),
 	iBrazil: (1, [iWembley, iCristoRedentor, iItaipuDam], True),
 }
 
@@ -242,6 +242,7 @@ def setup():
 		# French goal needs to be winnable
 		data.setWonderBuilder(iNotreDame, iFrance)
 		data.setWonderBuilder(iVersailles, iFrance)
+		data.setWonderBuilder(iLouvre, iFrance)
 		
 		# help Congo
 		data.iCongoSlaveCounter += 500
@@ -930,7 +931,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iFrance, 1)
 				
-		# third goal: build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD
+		# third goal: build Notre Dame, Versailles, the Louvre, the Eiffel Tower and the Metropolitain by 1900 AD
 		if iGameTurn == getTurnForYear(1900):
 			expire(iFrance, 2)
 			
@@ -1177,7 +1178,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1500):
 			expire(iMughals, 0)
 			
-		# second goal: build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD
+		# second goal: build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD
 		if iGameTurn == getTurnForYear(1660):
 			expire(iMughals, 1)
 			
@@ -1360,7 +1361,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iAmerica, 0)
 				
-		# second goal: build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD
+		# second goal: build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD
 		if iGameTurn == getTurnForYear(1950):
 			expire(iAmerica, 1)
 			
@@ -3730,9 +3731,11 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			bNotreDame = data.getWonderBuilder(iNotreDame) == iFrance
 			bVersailles = data.getWonderBuilder(iVersailles) == iFrance
-			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iFrance
+			bLouvre = data.getWonderBuilder(iLouvre) == iFrance
 			bEiffelTower = data.getWonderBuilder(iEiffelTower) == iFrance
-			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + ' ' + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + ' ' + getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()))
+			bMetropolitain = data.getWonderBuilder(iMetropolitain) == iFrance
+			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + ' ' + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + ' ' + getIcon(bLouvre) + localText.getText("TXT_KEY_BUILDING_LOUVRE", ()))
+			aHelp.append(getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()) + ' ' + getIcon(bMetropolitain) + localText.getText("TXT_KEY_BUILDING_METROPOLITAIN", ()))
 
 	elif iPlayer == iKhmer:
 		if iGoal == 0:
@@ -3881,9 +3884,9 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iNumMosques >= 3) + localText.getText("TXT_KEY_VICTORY_MOSQUES_BUILT", (iNumMosques, 3)))
 		elif iGoal == 1:
 			bRedFort = data.getWonderBuilder(iRedFort) == iMughals
-			bHarmandirSahib = data.getWonderBuilder(iHarmandirSahib) == iMughals
+			bShalimarGardens = data.getWonderBuilder(iShalimarGardens) == iMughals
 			bTajMahal = data.getWonderBuilder(iTajMahal) == iMughals
-			aHelp.append(getIcon(bRedFort) + localText.getText("TXT_KEY_BUILDING_RED_FORT", ()) + ' ' + getIcon(bHarmandirSahib) + localText.getText("TXT_KEY_BUILDING_HARMANDIR_SAHIB", ()) + ' ' + getIcon(bTajMahal) + localText.getText("TXT_KEY_BUILDING_TAJ_MAHAL", ()))
+			aHelp.append(getIcon(bRedFort) + localText.getText("TXT_KEY_BUILDING_RED_FORT", ()) + ' ' + getIcon(bShalimarGardens) + localText.getText("TXT_KEY_BUILDING_SHALIMAR_GARDENS", ()) + ' ' + getIcon(bTajMahal) + localText.getText("TXT_KEY_BUILDING_TAJ_MAHAL", ()))
 		elif iGoal == 2:
 			iCulture = pMughals.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= utils.getTurns(50000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(50000))))
@@ -3996,10 +3999,13 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bAmericas) + localText.getText("TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES", ()) + ' ' + getIcon(bMexico) + localText.getText("TXT_KEY_CIV_MEXICO_SHORT_DESC", ()))
 		elif iGoal == 1:
 			bUnitedNations = data.getWonderBuilder(iUnitedNations) == iAmerica
+			bBrooklynBridge = data.getWonderBuilder(iBrooklynBridge) == iAmerica
 			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iAmerica
+			bGoldenGateBridge = data.getWonderBuilder(iGoldenGateBridge) == iAmerica
 			bPentagon = data.getWonderBuilder(iPentagon) == iAmerica
 			bEmpireState = data.getWonderBuilder(iEmpireStateBuilding) == iAmerica
-			aHelp.append(getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bEmpireState) + localText.getText("TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING", ()) + ' ' + getIcon(bPentagon) + localText.getText("TXT_KEY_BUILDING_PENTAGON", ()) + ' ' + getIcon(bUnitedNations) + localText.getText("TXT_KEY_BUILDING_UNITED_NATIONS", ()))
+			aHelp.append(getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bBrooklynBridge) + localText.getText("TXT_KEY_BUILDING_BROOKLYN_BRIDGE", ()) + ' ' + getIcon(bEmpireState) + localText.getText("TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING", ()))
+			aHelp.append(getIcon(bGoldenGateBridge) + localText.getText("TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE", ()) + ' ' + getIcon(bPentagon) + localText.getText("TXT_KEY_BUILDING_PENTAGON", ()) + ' ' + getIcon(bUnitedNations) + localText.getText("TXT_KEY_BUILDING_UNITED_NATIONS", ()))
 		elif iGoal == 2:
 			iCounter = countResources(iAmerica, iOil)
 			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_OIL_SECURED", (iCounter, 10)))
