@@ -10955,6 +10955,38 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += AI_neededWorkers() * iWarmongerPercent / 15;
 	}
 
+	// Leoreth: enabled wonders with civic prereq
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+		if (kBuilding.getPrereqCivic() == eCivic)
+		{
+			if (!GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI))
+			{
+				if (isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && !GC.getGame().isBuildingClassMaxedOut((BuildingClassTypes)kBuilding.getBuildingClassType()))
+				{
+					bool bPrereqTech = GET_TEAM(getTeam()).isHasTech((TechTypes)kBuilding.getPrereqAndTech());
+					if (bPrereqTech)
+					{
+						for (iJ = 0; iJ < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iJ++)
+						{
+							TechTypes ePrereqTech = (TechTypes)kBuilding.getPrereqAndTechs(iJ);
+							if (ePrereqTech != NO_TECH && !GET_TEAM(getTeam()).isHasTech(ePrereqTech))
+							{
+								bPrereqTech = false;
+							}
+						}
+
+						if (bPrereqTech)
+						{
+							iValue += 100;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	// Leoreth: trade slaves and use in colonies
 	/*if (kCivic.isColonialSlavery())
 	{
