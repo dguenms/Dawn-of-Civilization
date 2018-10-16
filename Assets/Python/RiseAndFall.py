@@ -2790,12 +2790,12 @@ class RiseAndFall:
 		elif iCiv == iGermany:
 			utils.createSettlers(iCiv, 4)
 			utils.createMissionaries(iCiv, 2)
-			utils.makeUnit(iMusketman, iCiv, tPlot, 3, "", 2)
-			utils.makeUnitAI(iMusketman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			utils.makeUnit(iCannon, iCiv, tPlot, 3, "", 2)
+			utils.makeUnit(iArquebusier, iCiv, tPlot, 3, "", 2)
+			utils.makeUnitAI(iArquebusier, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(iBombard, iCiv, tPlot, 3, "", 2)
 			if utils.getHumanID() != iGermany:
-				utils.makeUnit(iMusketman, iCiv, tPlot, 10, "", 2)
-				utils.makeUnit(iCannon, iCiv, tPlot, 5, "", 2)
+				utils.makeUnit(iArquebusier, iCiv, tPlot, 10, "", 2)
+				utils.makeUnit(iBombard, iCiv, tPlot, 5, "", 2)
 		elif iCiv == iAmerica:
 			utils.createSettlers(iCiv, 8)
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 2)
