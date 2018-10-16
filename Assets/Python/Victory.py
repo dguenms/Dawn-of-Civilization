@@ -1365,12 +1365,12 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1950):
 			expire(iAmerica, 1)
 			
-		# third goal: secure 10 oil resources by 2000 AD
+		# third goal: control 75% of the world's commerce output and military power between you, your vassals and allies by 1990 AD
 		if isPossible(iAmerica, 2):
-			if countResources(iAmerica, iOil) >= 10:
+			if calculateAlliedCommercePercent(iAmerica) >= 75.0 and calculateAlliedPowerPercent(iAmerica) >= 75.0:
 				win(iAmerica, 2)
 				
-		if iGameTurn == getTurnForYear(2000):
+		if iGameTurn == getTurnForYear(1990):
 			expire(iAmerica, 2)
 			
 	elif iPlayer == iArgentina:
@@ -3059,6 +3059,31 @@ def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
 			iCount += 1
 	return iCount
 	
+def calculateAlliedPercent(iPlayer, function):
+	pTeam = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
+
+	iAlliedValue = 0
+	iTotalValue = 0
+	
+	for iLoopPlayer in range(iNumPlayers):
+		pLoopPlayer = gc.getPlayer(iLoopPlayer)
+		iValue = function(iLoopPlayer)
+		
+		iTotalValue += iValue
+		
+		if iLoopPlayer == iPlayer or pTeam.isVassal(pLoopPlayer.getTeam()) or pTeam.isDefensivePact(pLoopPlayer.getTeam()):
+			iAlliedValue += iValue
+			
+	if iTotalValue == 0: return 0
+	
+	return 100.0 * iAlliedValue / iTotalValue
+	
+def calculateAlliedCommercePercent(iPlayer):
+	return calculateAlliedPercent(iPlayer, lambda x: gc.getPlayer(x).calculateTotalCommerce())
+	
+def calculateAlliedPowerPercent(iPlayer):
+	return calculateAlliedPercent(iPlayer, lambda x: gc.getPlayer(x).getPower())
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -4007,8 +4032,10 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bBrooklynBridge) + localText.getText("TXT_KEY_BUILDING_BROOKLYN_BRIDGE", ()) + ' ' + getIcon(bEmpireState) + localText.getText("TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING", ()))
 			aHelp.append(getIcon(bGoldenGateBridge) + localText.getText("TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE", ()) + ' ' + getIcon(bPentagon) + localText.getText("TXT_KEY_BUILDING_PENTAGON", ()) + ' ' + getIcon(bUnitedNations) + localText.getText("TXT_KEY_BUILDING_UNITED_NATIONS", ()))
 		elif iGoal == 2:
-			iCounter = countResources(iAmerica, iOil)
-			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_OIL_SECURED", (iCounter, 10)))
+			fAlliedCommercePercent = calculateAlliedCommercePercent(iAmerica)
+			fAlliedPowerPercent = calculateAlliedPowerPercent(iAmerica)
+			aHelp.append(getIcon(fAlliedCommercePercent >= 75.0) + localText.getText("TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT", (str(u"%.2f%%" % fAlliedCommercePercent), str(75))))
+			aHelp.append(getIcon(fAlliedPowerPercent >= 75.0) + localText.getText("TXT_KEY_VICTORY_ALLIED_POWER_PERCENT", (str(u"%.2f%%" % fAlliedPowerPercent), str(75))))
 
 	elif iPlayer == iArgentina:
 		if iGoal == 0:

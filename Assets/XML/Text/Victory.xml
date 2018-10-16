@@ -43,11 +43,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2_TITLE</Tag>
-		<English>The American Dream</English>
-		<French>Le r&#234;ve am&#233;ricain </French>
-		<German>Der amerikanische Traum</German>
-		<Italian>The American Dream</Italian>
-		<Spanish>The American Dream</Spanish>
+		<English>Shining City on a Hill</English>
+		<French>Shining City on a Hill</French>
+		<German>Shining City on a Hill</German>
+		<Italian>Shining City on a Hill</Italian>
+		<Spanish>Shining City on a Hill</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2</Tag>
@@ -59,19 +59,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3_TITLE</Tag>
-		<English>The World's Policeman</English>
-		<French>Le gendarme du monde </French>
-		<German>Die Weltpolizei</German>
-		<Italian>The World's Policeman</Italian>
-		<Spanish>The World's Policeman</Spanish>
+		<English>Pax Americana</English>
+		<French>Pax Americana</French>
+		<German>Pax Americana</German>
+		<Italian>Pax Americana</Italian>
+		<Spanish>Pax Americana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3</Tag>
-		<English>Secure 10 Oil resources by 2000 AD</English>
-		<French>S&#233;curiser 10 gisements de p&#233;trole avant 2000 ap. J.-C.</French>
-		<German>Sichern Sie sich bis zum Jahr 2000 n. Chr. 10 &#214;l-Vorkommen</German>
-		<Italian>Assicurati 10 fonti di petrolio entro il 2000 d.C.</Italian>
-		<Spanish>Controlar 10 recursos petrol&#237;feros en el 2000 d. C.</Spanish>
+		<English>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</English>
+		<French>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</French>
+		<German>Kontrollieren Sie bis zum Jahr 1990 n. Chr. 75% der Wirtschaftsleistung und milit&#228;rischen Macht zwischen Ihnen, Ihrer Vasallen und Alliierten</German>
+		<Italian>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</Italian>
+		<Spanish>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARA1_TITLE</Tag>
@@ -5225,5 +5225,21 @@
 		<German>Culture in %s1: %d2 / %d3</German>
 		<Italian>Culture in %s1: %d2 / %d3</Italian>
 		<Spanish>Culture in %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT</Tag>
+		<English>Global allied commerce: %s1 / %s2%</English>
+		<French>Global allied commerce: %s1 / %s2%</French>
+		<German>Global allied commerce: %s1 / %s2%</German>
+		<Italian>Global allied commerce: %s1 / %s2%</Italian>
+		<Spanish>Global allied commerce: %s1 / %s2%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALLIED_POWER_PERCENT</Tag>
+		<English>Global power commerce: %s1 / %s2%</English>
+		<French>Global power commerce: %s1 / %s2%</French>
+		<German>Global power commerce: %s1 / %s2%</German>
+		<Italian>Global power commerce: %s1 / %s2%</Italian>
+		<Spanish>Global power commerce: %s1 / %s2%</Spanish>
 	</TEXT>
 </Civ4GameText>
