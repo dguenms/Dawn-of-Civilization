@@ -313,7 +313,8 @@ class CvRFCEventHandler:
 						utils.makeUnit(iNumidianCavalry, iCarthage, (58, 39), 3)
 						utils.makeUnitAI(iAtlasElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
 					
-				utils.setReborn(iCarthage, True)
+				if utils.getOwnedCoreCities(iCarthage) > 0:
+					utils.setReborn(iCarthage, True)
 				
 		if iOwner == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
 			if city.getPopulation() < 5:
