@@ -1418,7 +1418,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	bool bRecapture;
 	bool bRaze;
 	bool bGift;
-	//int iRange;
+	int iOldCultureLevel;
 	int iCaptureGold;
 	int iGameTurnFounded;
 	int iPopulation;
@@ -1596,6 +1596,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	iOccupationTimer = pOldCity->getOccupationTimer();
 	szName = pOldCity->getNameKey();
 	iDamage = pOldCity->getDefenseDamage();
+	iOldCultureLevel = pOldCity->getCultureLevel();
 	int iOldCityId = pOldCity->getID();
 
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
@@ -1848,17 +1849,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
 		{
-            // Leoreth - UP replaced
-			//Rhye - start UP (Babylonian)
-			//pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
-			//if (getID() != BABYLONIA)
-			//pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
-			//else
-				//pNewCity->changeOccupationTimer(0);
-			//Rhye - end UP
-
-			// Leoreth: occupation timer depends on culture level
-			pNewCity->changeOccupationTimer((pNewCity->getCultureLevel() + 1) * (100 - iTeamCulturePercent) / 100);
+            // Leoreth: occupation timer depends on culture level
+			pNewCity->changeOccupationTimer(getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100));
 		}
 
 		GC.getMapINLINE().verifyUnitValidPlot();
