@@ -158,8 +158,12 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
-					<UnitType>UNIT_ARABIAN_CAMEL_ARCHER</UnitType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_ARABIAN_MOBILE_GUARD</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GHAZI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
