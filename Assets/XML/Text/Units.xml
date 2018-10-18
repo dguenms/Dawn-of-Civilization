@@ -2966,6 +2966,30 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_RIDER</Tag>
+		<English>Camel Rider</English>
+		<French>Camel Rider</French>
+		<German>Kamelreiter</German>
+		<Italian>Camel Rider</Italian>
+		<Spanish>Camel Rider</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_ARCHER</Tag>
+		<English>Camel Archer</English>
+		<French>Camel Archer</French>
+		<German>Camel Archer</German>
+		<Italian>Camel Archer</Italian>
+		<Spanish>Camel Archer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_GUNNER</Tag>
+		<English>Camel Gunner</English>
+		<French>Camel Gunner</French>
+		<German>Camel Gunner</German>
+		<Italian>Camel Gunner</Italian>
+		<Spanish>Camel Gunner</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
