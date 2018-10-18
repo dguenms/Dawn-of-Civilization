@@ -2990,6 +2990,22 @@
 		<Spanish>Camel Gunner</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_MOBILE_GUARD</Tag>
+		<English>Mobile Guard</English>
+		<French>Mobile Guard</French>
+		<German>Mobile Garde</German>
+		<Italian>Mobile Guard</Italian>
+		<Spanish>Mobile Guard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_GHAZI</Tag>
+		<English>Ghazi</English>
+		<French>Ghazi</French>
+		<German>Ghazi</German>
+		<Italian>Ghazi</Italian>
+		<Spanish>Ghazi</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
