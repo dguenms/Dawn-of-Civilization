@@ -9104,16 +9104,27 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 
 	for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)
 	{
-		if (GC.getUnitInfo(eUnit).getTerrainDefenseModifier(iI) != 0)
+		if (GC.getUnitInfo(eUnit).getTerrainDefenseModifier(iI) == GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI))
 		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_DEFENSE", GC.getUnitInfo(eUnit).getTerrainDefenseModifier(iI), GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+			if (GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_ATTACK_AND_DEFENSE", GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI), GC.getTerrainInfo((TerrainTypes)iI).getTextKeyWide()));
+			}
 		}
-
-		if (GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI) != 0)
+		else
 		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_ATTACK", GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI), GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+			if (GC.getUnitInfo(eUnit).getTerrainDefenseModifier(iI) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_DEFENSE", GC.getUnitInfo(eUnit).getTerrainDefenseModifier(iI), GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+			}
+
+			if (GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_ATTACK", GC.getUnitInfo(eUnit).getTerrainAttackModifier(iI), GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+			}
 		}
 	}
 

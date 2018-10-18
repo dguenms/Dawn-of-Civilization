@@ -2719,6 +2719,14 @@
 		<Spanish>Periphery Population: %d1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ATTACK_AND_DEFENSE</Tag>
+		<English>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</English>
+		<French>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</French>
+		<German>[ICON_BULLET]%D1_Change%% St&#228;rke f&#252;r %s2_TerrOrFeat</German>
+		<Italian>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
