@@ -1652,8 +1652,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_ASKARI</UnitType>
+					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_SHOTELAI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>

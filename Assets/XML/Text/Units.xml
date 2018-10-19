@@ -2,14 +2,6 @@
 <!-- Units -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
 		<English>Minuteman</English>
 		<French>
@@ -546,24 +538,16 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], causes collateral damage.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI</Tag>
-		<English>Askari</English>
+		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>
+		<English>Oromo Warrior</English>
 		<French>
-			<Text>Askari</Text>
+			<Text>Oromo Warrior</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Askari</German>
-		<Italian>Askari</Italian>
-		<Spanish>Askari</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
-		<French>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</French>
-		<German>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Spanish>
+		<German>Oromo Warrior</German>
+		<Italian>Oromo Warrior</Italian>
+		<Spanish>Oromo Warrior</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_1</Tag>
@@ -2956,5 +2940,21 @@
 		<German>Ghazi</German>
 		<Italian>Ghazi</Italian>
 		<Spanish>Ghazi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_SHOTELAI</Tag>
+		<English>Shotelai</English>
+		<French>Shotelai</French>
+		<German>Shotelai</German>
+		<Italian>Shotelai</Italian>
+		<Spanish>Shotelai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 </Civ4GameText>
