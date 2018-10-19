@@ -1537,6 +1537,10 @@
 					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<UnitType>UNIT_ENGLISH_REDCOAT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SHIP_OF_THE_LINE</UnitClassType>
+					<UnitType>UNIT_ENGLISH_MAN_OF_WAR</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
