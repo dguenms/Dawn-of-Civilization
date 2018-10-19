@@ -220,24 +220,13 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		}
 	}
 	//Rhye - start UP (start switch)
-	switch (getOwnerINLINE())
+	if (getOwnerINLINE() == SPAIN)
 	{
-    case KOREA:
-        if (getUnitCombatType() == 9) //naval
-            {
-                setHasPromotion(PROMOTION_DRILL1, true);
-                setHasPromotion(PROMOTION_DRILL2, true);
-            }
-        break;
-	case SPAIN:
 		if (getUnitCombatType() == 9) //naval
-			{
-				setHasPromotion(PROMOTION_NAVIGATION1, true);
-				setHasPromotion(PROMOTION_NAVIGATION2, true);
-			}
-		break;
-	default:
-		break;
+		{
+			setHasPromotion(PROMOTION_NAVIGATION1, true);
+			setHasPromotion(PROMOTION_NAVIGATION2, true);
+		}
 	}
 	//Rhye - end
 
