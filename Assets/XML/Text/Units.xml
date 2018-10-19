@@ -3006,6 +3006,14 @@
 		<Spanish>Shotelai</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER</Tag>
+		<English>Pioneer</English>
+		<French>Pioneer</French>
+		<German>Pionier</German>
+		<Italian>Pioneer</Italian>
+		<Spanish>Pioneer</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
