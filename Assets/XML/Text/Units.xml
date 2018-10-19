@@ -2966,6 +2966,14 @@
 		<Spanish>Companion</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ENGLISH_MAN_OF_WAR</Tag>
+		<English>Man-of-War</English>
+		<French>Man-of-War</French>
+		<German>Man-of-War</German>
+		<Italian>Man-of-War</Italian>
+		<Spanish>Man-of-War</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
