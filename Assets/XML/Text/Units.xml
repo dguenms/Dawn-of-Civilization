@@ -3014,6 +3014,14 @@
 		<Spanish>Pioneer</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_GREEK_COMPANION</Tag>
+		<English>Companion</English>
+		<French>Companion</French>
+		<German>Companion</German>
+		<Italian>Companion</Italian>
+		<Spanish>Companion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
