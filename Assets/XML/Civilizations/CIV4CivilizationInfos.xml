@@ -2860,6 +2860,10 @@
 					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_JAPANESE_SAMURAI</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_FIGHTER</UnitClassType>
+					<UnitType>UNIT_JAPANESE_ZERO</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>

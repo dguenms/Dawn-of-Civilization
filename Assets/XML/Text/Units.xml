@@ -3046,6 +3046,14 @@
 		<Spanish>Ballista</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAPANESE_ZERO</Tag>
+		<English>Zero</English>
+		<French>Zero</French>
+		<German>Zero</German>
+		<Italian>Zero</Italian>
+		<Spanish>Zero</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

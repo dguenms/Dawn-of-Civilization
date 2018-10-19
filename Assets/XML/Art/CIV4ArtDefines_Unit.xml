@@ -8748,14 +8748,14 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_JAPANESE_ZERO</Type>
-			<Button>Art/Interface/Buttons/Units/fighter_japan (zero).dds</Button>
+			<Button>Art/Units/Zero/Zero.dds</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Unique/Japan/Zero/Fighter.nif</NIF>
+			<NIF>Art/Units/Zero/Fighter.nif</NIF>
 			<KFM>Art/Units/Fighter/Fighter.kfm</KFM>
-			<SHADERNIF>Art/Units/Unique/Japan/Zero/Fighter_FX.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/Zero/Fighter_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/FighterShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
