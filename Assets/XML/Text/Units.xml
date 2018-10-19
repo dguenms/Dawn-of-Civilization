@@ -2,14 +2,6 @@
 <!-- Units -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
 		<English>Minuteman</English>
 		<French>
@@ -3004,6 +2996,14 @@
 		<German>Ghazi</German>
 		<Italian>Ghazi</Italian>
 		<Spanish>Ghazi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_SHOTELAI</Tag>
+		<English>Shotelai</English>
+		<French>Shotelai</French>
+		<German>Shotelai</German>
+		<Italian>Shotelai</Italian>
+		<Spanish>Shotelai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
