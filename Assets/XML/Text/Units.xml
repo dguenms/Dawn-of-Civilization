@@ -3038,6 +3038,14 @@
 		<Spanish>Kobukson</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROMAN_BALLISTA</Tag>
+		<English>Ballista</English>
+		<French>Ballista</French>
+		<German>Balliste</German>
+		<Italian>Ballista</Italian>
+		<Spanish>Ballista</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
