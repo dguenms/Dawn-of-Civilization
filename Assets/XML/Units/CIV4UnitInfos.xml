@@ -14165,7 +14165,7 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_FIGHTER</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_JAPANESE_ZERO</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
