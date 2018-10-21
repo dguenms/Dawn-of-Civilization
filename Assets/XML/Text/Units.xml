@@ -3062,6 +3062,14 @@
 		<Spanish>Sacred Band</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPANISH_TERCIO</Tag>
+		<English>Tercio</English>
+		<French>Tercio</French>
+		<German>Tercio</German>
+		<Italian>Tercio</Italian>
+		<Spanish>Tercio</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
