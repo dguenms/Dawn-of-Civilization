@@ -3014,6 +3014,22 @@
 		<Spanish>Tercio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_FRENCH_GUARD</Tag>
+		<English>Guard</English>
+		<French>Guard</French>
+		<German>Guard</German>
+		<Italian>Guard</Italian>
+		<Spanish>Guard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FRENCH_GENDARME</Tag>
+		<English>Gendarme</English>
+		<French>Gendarme</French>
+		<German>Gendarme</German>
+		<Italian>Gendarme</Italian>
+		<Spanish>Gendarme</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
