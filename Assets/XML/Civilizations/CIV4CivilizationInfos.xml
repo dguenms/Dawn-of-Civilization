@@ -897,6 +897,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_SACRED_BAND</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_WAR_ELEPHANT</UnitClassType>
 					<UnitType>UNIT_PHOENICIAN_ATLAS_ELEPHANT</UnitType>
 				</Unit>
