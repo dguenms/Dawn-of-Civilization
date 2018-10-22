@@ -2762,10 +2762,14 @@
 					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
-			<Units>
+			<Units>>
 				<Unit>
-					<UnitClassType>UNITCLASS_INFANTRY</UnitClassType>
-					<UnitType>UNIT_ITALIAN_BERSAGLIERE</UnitType>
+					<UnitClassType>UNITCLASS_CROSSBOWMAN</UnitClassType>
+					<UnitType>UNIT_ITALIAN_BALESTRIERE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
+					<UnitType>UNIT_ITALIAN_LANTERNAS</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
