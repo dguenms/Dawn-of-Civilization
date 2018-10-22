@@ -684,6 +684,10 @@
 					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_BYZANTINE_CATAPHRACT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_DROMON</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
