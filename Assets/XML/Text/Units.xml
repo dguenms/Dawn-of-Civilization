@@ -3070,6 +3070,14 @@
 		<Spanish>Balestriere</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_GERMAN_FUSILIER</Tag>
+		<English>Fusilier</English>
+		<French>Fusilier</French>
+		<German>Fusilier</German>
+		<Italian>Fusilier</Italian>
+		<Spanish>Fusilier</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
