@@ -3054,6 +3054,22 @@
 		<Spanish>Dromon</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNAS</Tag>
+		<English>Lanternas</English>
+		<French>Lanternas</French>
+		<German>Lanternas</German>
+		<Italian>Lanternas</Italian>
+		<Spanish>Lanternas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ITALIAN_BALESTRIERE</Tag>
+		<English>Balestriere</English>
+		<French>Balestriere</French>
+		<German>Balestriere</German>
+		<Italian>Balestriere</Italian>
+		<Spanish>Balestriere</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
