@@ -3046,6 +3046,14 @@
 		<Spanish>Longship</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_BYZANTINE_DROMON</Tag>
+		<English>Dromon</English>
+		<French>Dromon</French>
+		<German>Dromone</German>
+		<Italian>Dromon</Italian>
+		<Spanish>Dromon</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
