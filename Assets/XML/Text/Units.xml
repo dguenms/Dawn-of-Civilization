@@ -3030,6 +3030,14 @@
 		<Spanish>Gendarme</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER</Tag>
+		<English>Grenzer</English>
+		<French>Grenzer</French>
+		<German>Grenzer</German>
+		<Italian>Grenzer</Italian>
+		<Spanish>Grenzer</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
