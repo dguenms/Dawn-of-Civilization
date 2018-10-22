@@ -5641,6 +5641,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
+					<UnitType>UNIT_VIKING_LONGSHIP</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_VIKING_HUSCARL</UnitType>
 				</Unit>

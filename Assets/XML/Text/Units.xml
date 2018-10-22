@@ -3038,6 +3038,14 @@
 		<Spanish>Grenzer</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_VIKING_LONGSHIP</Tag>
+		<English>Longship</English>
+		<French>Longship</French>
+		<German>Langboot</German>
+		<Italian>Longship</Italian>
+		<Spanish>Longship</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
