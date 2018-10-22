@@ -1899,6 +1899,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
+					<UnitType>UNIT_GERMAN_FUSILIER</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_TANK</UnitClassType>
 					<UnitType>UNIT_GERMAN_PANZER</UnitType>
 				</Unit>
