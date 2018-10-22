@@ -2241,6 +2241,10 @@
 					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
 					<UnitType>UNIT_HOLY_ROMAN_LANDSKNECHT</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitType>UNIT_HOLY_ROMAN_GRENZER</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
