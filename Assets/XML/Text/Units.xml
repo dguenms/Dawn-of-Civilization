@@ -3110,6 +3110,14 @@
 		<Spanish>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSIAN_SAVARAN</Tag>
+		<English>Savaran</English>
+		<French>Savaran</French>
+		<German>Savaran</German>
+		<Italian>Savaran</Italian>
+		<Spanish>Savaran</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
