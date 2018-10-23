@@ -3637,6 +3637,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_MANGUDAI</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_MONGOLIAN_KESHIK</UnitType>
 				</Unit>
