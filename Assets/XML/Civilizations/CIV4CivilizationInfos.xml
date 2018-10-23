@@ -4684,6 +4684,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_EXPLORER</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_BANDEIRANTE</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
 					<UnitType>UNIT_PORTUGUESE_CARRACK</UnitType>
 				</Unit>

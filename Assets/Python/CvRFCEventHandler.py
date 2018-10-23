@@ -416,7 +416,10 @@ class CvRFCEventHandler:
 		elif iLosingPlayer == iNative:
 			if iWinningPlayer not in lCivBioNewWorld or True in data.lFirstContactConquerors:
 				if gc.getPlayer(iWinningPlayer).isSlavery() or gc.getPlayer(iWinningPlayer).isColonialSlavery():
-					utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
+					if pWinningUnit.getUnitType() == iBandeirante:
+						utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 100)
+					else:
+						utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
 		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:

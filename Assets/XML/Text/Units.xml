@@ -3150,6 +3150,22 @@
 		<Spanish>Mangudai</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE</Tag>
+		<English>Bandeirante</English>
+		<French>Bandeirante</French>
+		<German>Bandeirante</German>
+		<Italian>Bandeirante</Italian>
+		<Spanish>Bandeirante</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_HELP</Tag>
+		<English>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</English>
+		<French>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</French>
+		<German>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</German>
+		<Italian>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
