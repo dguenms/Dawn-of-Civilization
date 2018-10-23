@@ -1104,6 +1104,64 @@
 			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_EXPLORER</Class>
+			<Type>UNIT_PORTUGUESE_BANDEIRANTE</Type>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Combat>UNITCOMBAT_RECON</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE</Description>
+			<Civilopedia>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_HELP</Help>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bNoBadGoodies>1</bNoBadGoodies>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bIgnoreTerrainCost>1</bIgnoreTerrainCost>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
+			<iCost>40</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iCombat>8</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<iWithdrawalProb>30</iWithdrawalProb>
+			<iAsset>2</iAsset>
+			<iPower>5</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>2</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>2</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_PORTUGUESE_BANDEIRANTE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_GUERILLA1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_WOODSMAN1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_SPY</Class>
 			<Type>UNIT_SPY</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>
