@@ -1319,6 +1319,10 @@
 					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
 					<UnitType>UNIT_COLOMBIAN_ALBION_LEGION</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_HUSSAR</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_LLANERO</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>

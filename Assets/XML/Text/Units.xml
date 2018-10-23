@@ -3078,6 +3078,14 @@
 		<Spanish>Fusilier</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOMBIAN_LLANERO</Tag>
+		<English>Llanero</English>
+		<French>Llanero</French>
+		<German>Llanero</German>
+		<Italian>Llanero</Italian>
+		<Spanish>Llanero</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
