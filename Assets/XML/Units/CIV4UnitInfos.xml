@@ -13103,7 +13103,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_ALCHEMY</PrereqTech>
+			<PrereqTech>TECH_ARTISANRY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
 			</TechTypes>

@@ -6467,7 +6467,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -6860,7 +6860,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -7643,7 +7643,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=22, (Spain)
@@ -7690,7 +7690,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -9719,7 +9719,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -9765,7 +9765,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -10138,7 +10138,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -10978,7 +10978,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -11115,7 +11115,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -11512,7 +11512,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -12289,7 +12289,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -12937,7 +12937,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -13359,7 +13359,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -13965,7 +13965,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -15619,7 +15619,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -21359,7 +21359,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -22241,7 +22241,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -22745,22 +22745,22 @@ BeginPlot
 		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=22, (Spain)
@@ -23444,16 +23444,16 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=25, (England)
@@ -24339,7 +24339,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
@@ -24462,16 +24462,16 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=23, (France)
@@ -38254,7 +38254,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=45, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=45, (Independent)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
@@ -44357,13 +44357,13 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginCity
 		CityOwner=25, (England)
@@ -50923,7 +50923,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
