@@ -2568,8 +2568,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_ORANG_LAUT</UnitType>
+					<UnitClassType>UNITCLASS_GALLEASS</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_DJONG</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
