@@ -6372,14 +6372,14 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Type>
-			<Button>,Art/Interface/Buttons/Units/WarElephant.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,2</Button>
-			<fScale>0.34</fScale>
+			<Button>,Art/Interface/Buttons/Units/WarElephant.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,8</Button>
+			<fScale>0.32</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/carthage warelephant/warelephant.nif</NIF>
+			<NIF>Art/Units/WarElephant_Carthage/WarElephant_Carthage.nif</NIF>
 			<KFM>Art/Units/WarElephant_Carthage/WarElephant_Carthage.kfm</KFM>
-			<SHADERNIF>Art/Units/carthage warelephant/warelephant_fx.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/WarElephant_Carthage/WarElephant_Carthage_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/WarElephantShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
