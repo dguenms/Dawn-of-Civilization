@@ -10558,13 +10558,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_CAVALRY</Class>
-			<Type>UNIT_MEXICAN_RURALES</Type>
+			<Type>UNIT_MEXICAN_RURAL</Type>
 			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_MEXICAN_RURALES</Description>
-			<Civilopedia>TXT_KEY_UNIT_MEXICAN_RURALES_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_MEXICAN_RURALES_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_MEXICAN_RURAL</Description>
+			<Civilopedia>TXT_KEY_UNIT_MEXICAN_RURAL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_MEXICAN_RURAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -10668,7 +10668,7 @@
 				<iRangedWaveSize>3</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_MEXICAN_RURALES</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_MEXICAN_RURAL</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>

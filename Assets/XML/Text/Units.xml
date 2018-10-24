@@ -1334,16 +1334,16 @@
 		<Spanish>Medjay</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES</Tag>
-		<English>Rurales</English>
+		<Tag>TXT_KEY_UNIT_MEXICAN_RURAL</Tag>
+		<English>Rural</English>
 		<French>
-			<Text>Rurales</Text>
+			<Text>Rural</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>Rurales</German>
-		<Italian>Rurales</Italian>
-		<Spanish>Rurales</Spanish>
+		<German>Rural</German>
+		<Italian>Rural</Italian>
+		<Spanish>Rural</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOBILE_ARTILLERY_STRATEGY</Tag>
