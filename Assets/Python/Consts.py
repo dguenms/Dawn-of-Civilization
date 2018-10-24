@@ -842,7 +842,7 @@ iLongbowman, iPatiyodha, iCrossbowman, iChokonu, iBalestriere, iChariot, iWarCha
 iCompanion, iNumidianCavalry, iAsvaka, iCamelRider, iHorseArcher, iMangudai, iKhampa, iOghuz, iCamelArcher, iLancer, 
 iSavaran, iMobileGuard, iKeshik, iCataphract, iChangSuek, iGhulamWarrior, iFarari, iPistolier, iCamelGunner, iCuirassier, 
 iGendarme, iConquistador, iWingedHussar, iMountedBrave, iCamelGunner, iHussar, iLlanero, iDragoon, iGuard, iCossack, 
-iGrenadierCavalry, iCavalry, iRurales, iWarElephant, iBallistaElephant, iAtlasElephant, iTank, iPanzer, iMainBattleTank, iGunship, 
+iGrenadierCavalry, iCavalry, iRural, iWarElephant, iBallistaElephant, iAtlasElephant, iTank, iPanzer, iMainBattleTank, iGunship, 
 iCatapult, iBallista, iHwacha, iTrebuchet, iBombard, iSiegeElephant, iCannon, iArtillery, iMachineGun, iHowitzer, 
 iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDromon, iLongship, iDharani, 
 iCog, iGalleass, iKobukson, iLanternas, iCaravel, iCarrack, iGalleon, iEastIndiaman, iPrivateer, iOrangLaut, 

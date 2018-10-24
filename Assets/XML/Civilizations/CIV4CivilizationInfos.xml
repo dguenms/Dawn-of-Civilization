@@ -3540,7 +3540,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
-					<UnitType>UNIT_MEXICAN_RURALES</UnitType>
+					<UnitType>UNIT_MEXICAN_RURAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses/>
