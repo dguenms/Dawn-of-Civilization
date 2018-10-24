@@ -5230,6 +5230,10 @@
 					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
 					<UnitType>UNIT_TAMIL_DHARANI</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitType>UNIT_TAMIL_ROCKETEER</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
