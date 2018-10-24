@@ -2458,6 +2458,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitType>UNIT_INDIAN_VARU</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
 					<UnitType>UNIT_INDIAN_PATIYODHA</UnitType>
 				</Unit>
