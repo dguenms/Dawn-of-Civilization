@@ -5646,7 +5646,7 @@ int CvCity::unhappyLevel(int iExtra) const
 }
 
 
-int CvCity::happyLevel() const
+int CvCity::happyLevel(bool bSpecial) const
 {
 	int iHappiness;
 
@@ -5677,9 +5677,9 @@ int CvCity::happyLevel() const
 	}
 
 	// Leoreth: Shalimar Gardens effect
-	if (isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
+	if (bSpecial && isHasBuildingEffect((BuildingTypes)SHALIMAR_GARDENS))
 	{
-		iHappiness += std::max(0, goodHealth() - badHealth());
+		iHappiness += std::max(0, goodHealth(false) - badHealth());
 	}
 
 	return std::max(0, iHappiness);
@@ -5769,7 +5769,7 @@ int CvCity::totalBadBuildingHealth() const
 }
 
 
-int CvCity::goodHealth() const
+int CvCity::goodHealth(bool bSpecial) const
 {
 	int iTotalHealth;
 	int iHealth;
@@ -5844,9 +5844,9 @@ int CvCity::goodHealth() const
 	}*/
 
 	// Leoreth: Indian UP: +1 health for every 3 excess happiness
-	if (getOwner() == INDIA)
+	if (bSpecial && getOwner() == INDIA)
 	{
-		iHealth = (happyLevel() - unhappyLevel()) / 3;
+		iHealth = (happyLevel(false) - unhappyLevel()) / 3;
 		if (iHealth > 0)
 		{
 			iTotalHealth += iHealth;
