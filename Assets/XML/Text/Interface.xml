@@ -2231,6 +2231,14 @@
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_HEADER_SATELLITE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Satelliten[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Satellites[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Sp&#233;cialistes illustres[COLOR_REVERT]</French>

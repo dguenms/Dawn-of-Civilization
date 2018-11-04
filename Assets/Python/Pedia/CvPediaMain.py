@@ -479,6 +479,8 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeSpecialists(self):
 		lSpecialists = []
 		hSpecialists = CyTranslator().getText("TXT_KEY_PEDIA_HEADER_SPECIALIST", ())
+		lSatellites = []
+		hSatellites = CyTranslator().getText("TXT_KEY_PEDIA_HEADER_SATELLITE", ())
 		lGreatSpecialists = []
 		hGreatSpecialists = CyTranslator().getText("TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST", ())
 
@@ -489,16 +491,21 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			sSpecialist = SpecialistInfo.getType()
 			if sSpecialist.find("GREAT_") > -1:
 				lGreatSpecialists.append((SpecialistInfo.getDescription(), iSpecialist))
+			elif SpecialistInfo.isSatellite():
+				lSatellites.append((SpecialistInfo.getDescription(), iSpecialist))
 			else:
 				lSpecialists.append((SpecialistInfo.getDescription(), iSpecialist))
 
 		lSpecialists.sort()
+		lSatellites.sort()
 		lGreatSpecialists.sort()
 		lSpecialists.insert(0, (hSpecialists, -1))
+		lSatellites.insert(0, (hSatellites, -1))
+		lSatellites.insert(0, ("", -1))
 		lGreatSpecialists.insert(0, (hGreatSpecialists, -1))
 		lGreatSpecialists.insert(0, ("", -1))
 
-		self.list = lSpecialists + lGreatSpecialists
+		self.list = lSpecialists + lSatellites + lGreatSpecialists
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_SPECIALIST, gc.getSpecialistInfo)
 
 
