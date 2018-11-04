@@ -99,11 +99,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_GOLDEN_RECORD_HELP</Tag>
-		<English>[ICON_BULLET]+5[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</English>
-		<French>[ICON_BULLET]+5[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</French>
-		<German>[ICON_BULLET]+5[ICON_CULTURE] f&#252;r Satelliten[NEWLINE][ICON_BULLET]Die H&#228;lfte der Raumschiffproduktion erh&#246;ht ebenfalls die Kulturproduktion</German>
-		<Italian>[ICON_BULLET]+5[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</Italian>
-		<Spanish>[ICON_BULLET]+5[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</Spanish>
+		<English>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</English>
+		<French>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</French>
+		<German>[ICON_BULLET]+3[ICON_CULTURE] f&#252;r Satelliten[NEWLINE][ICON_BULLET]Die H&#228;lfte der Raumschiffproduktion erh&#246;ht ebenfalls die Kulturproduktion</German>
+		<Italian>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</Italian>
+		<Spanish>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_LUNAR_COLONY</Tag>
@@ -115,11 +115,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_LUNAR_COLONY_HELP</Tag>
-		<English>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</English>
-		<French>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</French>
-		<German>[ICON_BULLET]+3[ICON_PRODUCTION] f&#252;r Satelliten</German>
-		<Italian>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</Italian>
-		<Spanish>[ICON_BULLET]+3[ICON_PRODUCTION] for Satellites</Spanish>
+		<English>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</English>
+		<French>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</French>
+		<German>[ICON_BULLET]+2[ICON_PRODUCTION] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE</Tag>
@@ -147,11 +147,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_HELP</Tag>
-		<English>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</English>
-		<French>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</French>
-		<German>[ICON_BULLET]+3[ICON_GREATPEOPLE] f&#252;r Satelliten</German>
-		<Italian>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</Italian>
-		<Spanish>[ICON_BULLET]+3[ICON_GREATPEOPLE] for Satellites</Spanish>
+		<English>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</English>
+		<French>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</French>
+		<German>[ICON_BULLET]+2[ICON_GREATPEOPLE] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_BALLISTIC_MISSILE</Tag>

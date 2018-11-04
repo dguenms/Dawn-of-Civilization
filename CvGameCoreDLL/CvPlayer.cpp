@@ -25901,15 +25901,15 @@ int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
 	{
 		if (isHasBuildingEffect((BuildingTypes)HUBBLE_SPACE_TELESCOPE))
 		{
-			iCommerce += 5;
+			iCommerce += 3;
 		}
 	}
 
 	else if (eCommerce == COMMERCE_CULTURE)
 	{
-		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD))
+		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_GOLDEN_RECORD) > 0)
 		{
-			iCommerce += 5;
+			iCommerce += 3;
 		}
 	}
 

@@ -4938,7 +4938,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							CvCity* pCity;
 							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
 							{
-								pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 3);
+								pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 2);
 							}
 						}
 
@@ -4951,7 +4951,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							{
 								if (GC.getSpecialistInfo((SpecialistTypes)iJ).isSatellite())
 								{
-									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_PRODUCTION, iChange * 3);
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_PRODUCTION, iChange * 2);
 								}
 							}
 						}

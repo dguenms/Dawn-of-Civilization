@@ -4932,13 +4932,13 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 	if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
 	{
 		iValue += 5;
-		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageCommerceMultiplier(COMMERCE_RESEARCH) * iSatelliteCount * 3 / 1000;
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageCommerceMultiplier(COMMERCE_RESEARCH) * iSatelliteCount * 2 / 1000;
 	}
 
 	if (eProject == PROJECT_LUNAR_COLONY)
 	{
 		iValue += 5;
-		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION) * iSatelliteCount * 3 / 1000;
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION) * iSatelliteCount * 2 / 1000;
 		iValue += GET_PLAYER(getOwnerINLINE()).getNumCities() / 2;
 	}
 

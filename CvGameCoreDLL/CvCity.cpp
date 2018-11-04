@@ -19034,7 +19034,7 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 	{
 		if (GET_TEAM(getTeam()).getProjectCount(PROJECT_INTERNATIONAL_SPACE_STATION))
 		{
-			iGreatPeopleRate += 3;
+			iGreatPeopleRate += 2;
 		}
 	}
 
