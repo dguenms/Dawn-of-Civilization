@@ -19020,6 +19020,24 @@ int CvCity::countSatellites() const
 	return iCount;
 }
 
+bool CvCity::canSatelliteJoin() const
+{
+	int iSpecialistSlots = 0;
+	int iSatellites = 0;
+
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		iSpecialistSlots += getMaxSpecialistCount((SpecialistTypes)iI);
+
+		if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
+		{
+			iSatellites += getSpecialistCount((SpecialistTypes)iI);
+		}
+	}
+
+	return iSatellites < iSpecialistSlots / 5;
+}
+
 int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const
 {
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);

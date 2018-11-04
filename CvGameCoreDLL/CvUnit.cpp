@@ -6163,6 +6163,14 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 		}
 	}
 
+	if (GC.getSpecialistInfo(eSpecialist).isSatellite())
+	{
+		if (!pCity->canSatelliteJoin())
+		{
+			return false;
+		}
+	}
+
 	return true;
 }
 

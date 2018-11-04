@@ -1115,6 +1115,7 @@ public:
 
 	int countNoGlobalEffectsFreeSpecialists() const;
 	int countSatellites() const;
+	bool canSatelliteJoin() const;
 
 	int getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const;
 
