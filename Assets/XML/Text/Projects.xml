@@ -10,6 +10,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERSTELLAR_PROBE</Tag>
+		<English>Interstellar Probe</English>
+		<French>Interstellar Probe</French>
+		<German>Interstellare Sonde</German>
+		<Italian>Interstellar Probe</Italian>
+		<Spanish>Interstellar Probe</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT</Tag>
 		<English>Human Genome Project</English>
 		<French>Human Genome Project</French>

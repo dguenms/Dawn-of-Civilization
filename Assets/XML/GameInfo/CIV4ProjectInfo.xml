@@ -602,6 +602,54 @@
 			<MovieDefineTag>ART_DEF_MOVIE_LUNAR_LANDING</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
+			<Type>PROJECT_INTERSTALLAR_PROBE</Type>
+			<Description>TXT_KEY_PROJECT_INTERSTELLAR_PROBE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_INTERSTALLAR_PROBE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_INTERSTELLAR_PROBE_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_UNIFIED_THEORY</TechPrereq>
+			<AnyonePrereqProject>PROJECT_INTERNATIONAL_SPACE_STATION</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>4000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>1</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/InterstellarProbe.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
 			<Type>PROJECT_MARS_FRAMING</Type>
 			<Description>TXT_KEY_PROJECT_MARS_FRAMING</Description>
 			<Civilopedia>TXT_KEY_PROJECT_MARS_FRAMING_PEDIA</Civilopedia>
