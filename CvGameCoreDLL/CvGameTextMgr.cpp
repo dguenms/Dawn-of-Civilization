@@ -8708,6 +8708,7 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 	}
 
 	bFirst = true;
+	bool bSatellite = false;
 
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
 	{
@@ -8717,7 +8718,24 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 			CvWString szSpecialistLink = CvWString::format(L"<link=literal>%s</link>", GC.getSpecialistInfo((SpecialistTypes) iI).getDescription());
 			setListHelp(szBuffer, szTempBuffer, szSpecialistLink.GetCString(), L", ", bFirst);
 			bFirst = false;
+
+			if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
+			{
+				bSatellite = true;
+			}
 		}
+	}
+
+	if (GC.getUnitInfo(eUnit).isSlave())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_SLAVE_LIMIT"));
+	}
+
+	if (bSatellite)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_SATELLITE_LIMIT"));
 	}
 
 	bFirst = true;

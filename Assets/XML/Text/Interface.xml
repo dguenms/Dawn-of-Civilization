@@ -2937,6 +2937,22 @@
 		<Spanish>[SPACE]on the Coast</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_LIMIT</Tag>
+		<English>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</English>
+		<French>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</French>
+		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Sklaven geringer als die H&#228;lfte ihrer Bev&#246;lkerung ist</German>
+		<Italian>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Italian>
+		<Spanish>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SATELLITE_LIMIT</Tag>
+		<English>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</English>
+		<French>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</French>
+		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Satelliten gering als ein F&#252;nftel ihrer Anzahl verf&#252;gbarer Spezialisten ist</German>
+		<Italian>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Italian>
+		<Spanish>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
