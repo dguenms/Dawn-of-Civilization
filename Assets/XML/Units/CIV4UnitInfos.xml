@@ -5160,7 +5160,7 @@
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
