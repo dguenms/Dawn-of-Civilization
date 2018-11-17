@@ -25,6 +25,8 @@ class PlayerData:
 	
 		# Rise and Fall
 		
+		self.bSpawned = False
+		
 		self.iColonistsAlreadyGiven = 0
 		self.iSpawnDelay = 0
 		self.iFlipsDelay = 0

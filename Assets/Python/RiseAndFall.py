@@ -1411,6 +1411,8 @@ class RiseAndFall:
 			
 		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			startNewCivSwitchEvent(iCiv)
+			
+		data.players[iCiv].bSpawned = True
 
 	def moveOutInvaders(self, tTL, tBR):
 		if pMongolia.isAlive():

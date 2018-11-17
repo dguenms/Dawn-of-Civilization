@@ -466,6 +466,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		for iLoopPlayer in range(iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
 			if gc.getPlayer(iLoopPlayer).isAlive(): continue
+			if not data.players[iLoopPlayer].bSpawned: continue
 			if gc.getGame().getGameTurn() - data.players[iLoopPlayer].iLastTurnAlive < utils.getTurns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
