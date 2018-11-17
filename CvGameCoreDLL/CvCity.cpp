@@ -1086,6 +1086,8 @@ void CvCity::doTurn()
 
 	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
 
+	updateHappinessYield();
+
 	doProduction(bAllowNoProduction);
 
 	doDecay();
@@ -1178,8 +1180,6 @@ void CvCity::doTurn()
 			setWeLoveTheKingDay(false);
 		}
 	}
-
-	updateHappinessYield();
 
 	// Leoreth: update art style type once per turn
 	updateArtStyleType();
@@ -10494,13 +10494,14 @@ int CvCity::getHappinessYield(YieldTypes eIndex) const
 // Leoreth
 void CvCity::updateHappinessYield()
 {
-	int iHappinessDifference = std::min(getPopulation(), happyLevel() - unhappyLevel(0));
+	int iHappinessDifference = happyLevel() - unhappyLevel(0);
+	int iHappinessMultiplier = std::min(getPopulation(), abs(iHappinessDifference));
 
 	int iOldYield, iNewYield;
 	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		iOldYield = getHappinessYield((YieldTypes)iI);
-		iNewYield = iHappinessDifference > 0 ? abs(iHappinessDifference) * GET_PLAYER(getOwnerINLINE()).getHappinessExtraYield((YieldTypes)iI) : abs(iHappinessDifference) * GET_PLAYER(getOwnerINLINE()).getUnhappinessExtraYield((YieldTypes)iI);
+		iNewYield = iHappinessMultiplier * (iHappinessDifference > 0 ? GET_PLAYER(getOwnerINLINE()).getHappinessExtraYield((YieldTypes)iI) : GET_PLAYER(getOwnerINLINE()).getUnhappinessExtraYield((YieldTypes)iI));
 
 		if (iOldYield != iNewYield)
 		{
