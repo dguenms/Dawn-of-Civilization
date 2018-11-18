@@ -2443,7 +2443,7 @@ bool CvUnit::generatePath(const CvPlot* pToPlot, int iFlags, bool bReuse, int* p
 bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) const
 {
 	// Leoreth: allow entering enemy territory while you have no cities to avoid being pushed out after spawn
-	if (GET_PLAYER(getOwner()).getNumCities() == 0)
+	if (!GET_PLAYER(getOwnerINLINE()).isBarbarian() && GET_PLAYER(getOwner()).getNumCities() == 0)
 	{
 		return true;
 	}
@@ -2459,9 +2459,12 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 	}
 
 	// Leoreth: Turkic UP
-	if (getOwnerINLINE() == BARBARIAN && eTeam == TURKS && !GET_TEAM(eTeam).isAtWarWithMajorPlayer())
+	if (getOwnerINLINE() == BARBARIAN && eTeam == TURKS)
 	{
-		return false;
+		if (!GET_TEAM(eTeam).isAtWarWithMajorPlayer())
+		{
+			return false;
+		}
 	}
 
 	if (isEnemy(eTeam))
