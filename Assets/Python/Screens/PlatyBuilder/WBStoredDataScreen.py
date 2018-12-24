@@ -27,6 +27,7 @@ iWarList = 0
 
 from StoredData import data
 from Consts import *
+import RFCUtils as utils
 
 class WBStoredDataScreen:
 

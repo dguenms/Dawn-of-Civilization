@@ -54,6 +54,7 @@ VICTORY_CONDITION_SCREEN = 0
 GAME_SETTINGS_SCREEN = 1
 UN_RESOLUTION_SCREEN = 2
 UN_MEMBERS_SCREEN = 3
+MARS_BASE_SCREEN = 4
 
 class CvVictoryScreen:
 	"Keeps track of victory conditions"
@@ -72,7 +73,9 @@ class CvVictoryScreen:
 		self.SETTINGS_TAB_ID = "SettingsTabWidget"
 		self.UN_RESOLUTION_TAB_ID = "VotingTabWidget"
 		self.UN_MEMBERS_TAB_ID = "MembersTabWidget"
+		self.MARS_CLOSE_ID = "MarsBaseScreenWidget"
 		self.SPACESHIP_LAUNCH_BUTTON = 1234
+		self.MARS_VIEW_BUTTON = 1235
 
 		self.Z_BACKGROUND = -6.1
 		self.Z_CONTROLS = self.Z_BACKGROUND - 0.2
@@ -211,14 +214,23 @@ class CvVictoryScreen:
 			self.showVotingScreen()
 		elif self.iScreen == UN_MEMBERS_SCREEN:
 			self.showMembersScreen()
+		elif self.iScreen == MARS_BASE_SCREEN:
+			self.iScreen = VICTORY_CONDITION_SCREEN
+			self.showVictoryConditionScreen()
 
 	def drawTabs(self):
 		screen = self.getScreen()
 
 		xLink = self.X_LINK
-		if (self.iScreen != VICTORY_CONDITION_SCREEN):
-			screen.setText(self.VC_TAB_ID, "", u"<font=4>" + localText.getText("TXT_KEY_MAIN_MENU_VICTORIES", ()).upper() + "</font>", CvUtil.FONT_CENTER_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		if self.iScreen == MARS_BASE_SCREEN:
+			screen.setText(self.MARS_CLOSE_ID, "", u"<font=4>" + localText.getText("TXT_KEY_MAIN_MENU_VICTORIES", ()).upper() + "</font>", CvUtil.FONT_CENTER_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			screen.deleteWidget(self.VC_TAB_ID)
+			screen.deleteWidget(self.UN_RESOLUTION_TAB_ID)
+			screen.deleteWidget(self.UN_MEMBERS_TAB_ID)
 		else:
+			screen.deleteWidget(self.MARS_CLOSE_ID)
+			if (self.iScreen != VICTORY_CONDITION_SCREEN):
+				screen.setText(self.VC_TAB_ID, "", u"<font=4>" + localText.getText("TXT_KEY_MAIN_MENU_VICTORIES", ()).upper() + "</font>", CvUtil.FONT_CENTER_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			screen.setText(self.VC_TAB_ID, "", u"<font=4>" + localText.getColorText("TXT_KEY_MAIN_MENU_VICTORIES", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + "</font>", CvUtil.FONT_CENTER_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		xLink += self.DX_LINK
 
@@ -1451,12 +1463,16 @@ class CvVictoryScreen:
 						
 				#add spaceship button
 				if (bSpaceshipFound):
+					screen.setButtonGFC("MarsViewButton" + str(iLoopVC), localText.getText("TXT_KEY_GLOBELAYER_STRATEGY_VIEW", ()), "", 0, 0, 15, 10, WidgetTypes.WIDGET_GENERAL, self.MARS_VIEW_BUTTON, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+					iRow = screen.appendTableRow(szTable)
+					screen.attachControlToTableCell("MarsViewButton" + str(iLoopVC), szTable, iRow, 2)
+
 					if gc.getTeam(self.activePlayer.getTeam()).canLaunch(iLoopVC):
 						screen.setButtonGFC("SpaceShipButton" + str(iLoopVC), localText.getText("TXT_KEY_BUTTON_LAUNCH_SPACESHIP", ()), "", 0, 0, 15, 10, WidgetTypes.WIDGET_GENERAL, self.SPACESHIP_LAUNCH_BUTTON, iLoopVC, ButtonStyles.BUTTON_STYLE_STANDARD )
 						#Rhye - start
-						iRow = screen.appendTableRow(szTable)
+						#iRow = screen.appendTableRow(szTable)
 						#screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iVictoryTitleRow, 1)
-						screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iRow, 2)
+						screen.attachControlToTableCell("SpaceShipButton" + str(iLoopVC), szTable, iRow, 3)
 						#Rhye - end
 					
 					victoryDelay = gc.getTeam(iActiveTeam).getVictoryCountdown(iLoopVC)
@@ -1824,6 +1840,40 @@ class CvVictoryScreen:
 		return False
 # BUG Additions End
 
+	# Merijn: Mars Base viewer
+	def drawMarsBaseScreen(self):
+		self.deleteAllWidgets()
+		
+		screen = self.getScreen()
+		szImage = self.getNextWidgetName()
+		#screen.addModelGraphicGFC(szImage, "Art/Interface/Screens/MarsScreen/marsfield.nif", 25, 55, self.W_SCREEN-50, self.H_SCREEN - 55 - 55, WidgetTypes.WIDGET_GENERAL, -1, -1, 0.0, 30, 1.0)
+		
+		# Use addBuildingGraphicGFC() for better camera control
+		# The observatory is a relatively small building that is easy to hide under the main building
+		screen.addBuildingGraphicGFC(szImage, iObservatory, 25, 55, self.W_SCREEN-50, self.H_SCREEN - 55 - 55, WidgetTypes.WIDGET_GENERAL, -1, -1, 0.0, 0.0, 0.7, False)
+		
+		screen.addToModelGraphicGFC(szImage, "Art/Interface/Screens/MarsScreen/marsfield.nif")
+		
+		# Central base
+		screen.addToModelGraphicGFC(szImage, "Art/Interface/Screens/MarsScreen/MarsColony_Base.nif")
+		
+		# Components
+		bAll = True
+		for i, iComponent in enumerate(lMarsColonyComponents):
+			for iNum in range(gc.getProjectInfo(iComponent).getMaxTeamInstances()):
+				if gc.getTeam(gc.getPlayer(self.iActivePlayer).getTeam()).getProjectCount(iComponent) > iNum:
+					sNifKey = "Art/Interface/Screens/MarsScreen/MarsColony_" + str(i) + "_" + str(iNum) + ".nif"
+					screen.addToModelGraphicGFC(szImage, sNifKey)
+				else:
+					bAll = False
+					break
+					
+		# Easter Egg for the completionists
+		if bAll:
+			screen.addToModelGraphicGFC(szImage, "Art/Interface/Screens/MarsScreen/X.nif")
+		
+		self.drawTabs()
+
 	# returns a unique ID for a widget in this screen
 	def getNextWidgetName(self):
 		szName = self.WIDGET_ID + str(self.nWidgetCount)
@@ -1868,6 +1918,9 @@ class CvVictoryScreen:
 			elif (sWidget == self.UN_MEMBERS_TAB_ID):
 				self.iScreen = UN_MEMBERS_SCREEN
 				self.showMembersScreen()
+			elif (sWidget == self.MARS_CLOSE_ID):
+				self.iScreen = VICTORY_CONDITION_SCREEN
+				self.showVictoryConditionScreen()
 
 			elif (sWidget == self.Vote_Pope_ID and self.VoteType == 2):
 				self.VoteType = 1
@@ -1897,6 +1950,10 @@ class CvVictoryScreen:
 
 				# launch spaceship
 				self.activePlayer.launch(inputClass.getData2())
+
+			elif (inputClass.getData1() == self.MARS_VIEW_BUTTON):
+				self.iScreen = MARS_BASE_SCREEN
+				self.drawMarsBaseScreen()
 
 	def update(self, fDelta):
 		return
