@@ -105,19 +105,11 @@ class RiseAndFall:
 		iNewCiv = data.getNewCiv()
 		if popupReturn.getButtonClicked() == 0: # 1st button
 			self.handleNewCiv(iNewCiv)
-			
-	def respawnPopup(self, iCiv):
-		self.showPopup(7628, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-		data.iRespawnCiv = iCiv
-		
-	def eventApply7628(self, popupReturn):
-		if popupReturn.getButtonClicked() == 0:
-			self.handleNewCiv(data.iRespawnCiv)
-			
+
 	def scheduleFlipPopup(self, iNewCiv, lPlots):
 		data.lTempEvents.append((iNewCiv, lPlots))
 		self.checkFlipPopup()
-		
+
 	def checkFlipPopup(self):
 		for tEvent in data.lTempEvents:
 			iNewCiv, lPlots = tEvent
@@ -1001,7 +993,7 @@ class RiseAndFall:
 
 		self.assignTechs(iCiv)
 		if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[gc.getGame().getActivePlayer()]):
-			self.respawnPopup(iCiv)
+			startNewCivSwitchEvent(iCiv)
 
 		gc.getPlayer(iCiv).setLatestRebellionTurn(getTurnForYear(dRebirth[iCiv]))
 
