@@ -3711,7 +3711,7 @@ int CvPlayer::countOwnedBonuses(BonusTypes eBonus) const
 	//count bonuses inside city radius or easily claimed
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		iCount += pLoopCity->AI_countNumBonuses(eBonus, true, pLoopCity->getCommerceRate(COMMERCE_CULTURE) > 0, -1);
+		iCount += pLoopCity->AI_countNumBonuses(eBonus, true, pLoopCity->getModifiedCultureRate() > 0, -1);
 	}
 
 	return iCount;

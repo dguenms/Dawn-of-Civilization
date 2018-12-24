@@ -2763,3 +2763,13 @@ void CyCity::setStabilityPopulation(int iNewValue)
 {
 	if (m_pCity) m_pCity->setStabilityPopulation(iNewValue);
 }
+
+int CyCity::getModifiedCultureRate()
+{
+	return m_pCity ? m_pCity->getModifiedCultureRate() : -1;
+}
+
+int CyCity::getModifiedCultureRateTimes100()
+{
+	return m_pCity ? m_pCity->getModifiedCultureRateTimes100() : -1;
+}

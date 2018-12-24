@@ -9105,7 +9105,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 		if (GET_TEAM(getTeam()).canSatelliteIntercept() && GC.getGameINLINE().isNukesValid()) iValue += 100;
 
 		if (getSatelliteExtraCommerce(COMMERCE_RESEARCH)) iValue += 100;
-		if (getSatelliteExtraCommerce(COMMERCE_CULTURE)) iValue + 50;
+		if (getSatelliteExtraCommerce(COMMERCE_CULTURE)) iValue += 50;
 
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{

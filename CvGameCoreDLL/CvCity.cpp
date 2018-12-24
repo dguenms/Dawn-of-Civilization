@@ -1084,7 +1084,7 @@ void CvCity::doTurn()
 /**	END                                                                  						**/
 /*************************************************************************************************/
 
-	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
+	doPlotCulture(false, getOwnerINLINE(), getModifiedCultureRate());
 
 	updateHappinessYield();
 
@@ -10541,6 +10541,27 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 }
 
 
+// Leoreth
+int CvCity::getModifiedCultureRateTimes100() const
+{
+	int iCultureTimes100 = getCommerceRateTimes100(COMMERCE_CULTURE);
+
+	if (iCultureTimes100 <= 400)
+	{
+		return iCultureTimes100;
+	}
+
+	return iCultureTimes100 * GET_PLAYER(getOwnerINLINE()).getModifier(MODIFIER_CULTURE) / 100;
+}
+
+
+// Leoreth
+int CvCity::getModifiedCultureRate() const
+{
+	return getModifiedCultureRateTimes100() / 100;
+}
+
+
 int CvCity::getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const
 {
 	int iCommerce;
@@ -14760,16 +14781,7 @@ void CvCity::doGrowth()
 
 void CvCity::doCulture()
 {
-	if 	(getCommerceRate(COMMERCE_CULTURE) <= 4)
-	{
-		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
-		return;
-	}
-
-	PlayerTypes eOwner = getOwnerINLINE();
-	int iCultureModifier = GET_PLAYER(eOwner).getModifier(MODIFIER_CULTURE);
-
-	changeCultureTimes100(eOwner, getCommerceRateTimes100(COMMERCE_CULTURE) * iCultureModifier / 100, false, true);
+	changeCultureTimes100(getOwnerINLINE(), getModifiedCultureRateTimes100(), false, true);
 
 	// Leoreth: let culture of dead civilizations decay
 	int iTotalCultureTimes100 = countTotalCultureTimes100();

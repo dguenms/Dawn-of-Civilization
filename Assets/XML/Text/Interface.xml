@@ -2953,6 +2953,14 @@
 		<Spanish>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CIVILIZATION_CULTURE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Civilization modifier</English>
+		<French>[ICON_BULLET]%D1%%%F2 from Civilization modifier</French>
+		<German>[ICON_BULLET]%D1%%%F2 durch Zivilisationsmodifikator</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

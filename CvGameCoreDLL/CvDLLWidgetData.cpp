@@ -4359,7 +4359,7 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE_FLOAT", szCulture.GetCString(), iThreshold));
 		}
 
-		int iCultureRateTimes100 = pHeadSelectedCity->getCommerceRateTimes100(COMMERCE_CULTURE);
+		int iCultureRateTimes100 = pHeadSelectedCity->getModifiedCultureRateTimes100();
 		if (iCultureRateTimes100 > 0)
 		{
 			int iCultureLeftTimes100 = 100 * iThreshold - iCultureTimes100;

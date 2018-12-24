@@ -4533,7 +4533,7 @@ class CvMainInterface:
 
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
 					#bDisplayCoverage = False #(pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)
-					iRate = pHeadSelectedCity.getCommerceRateTimes100(CommerceTypes.COMMERCE_CULTURE)
+					iRate = pHeadSelectedCity.getModifiedCultureRateTimes100()
 					szCommerceLevel = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey()
 					#if bDisplayCoverage: szCommerceLevel = localText.getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT", ())
 					if (iRate%100 == 0):
@@ -4593,9 +4593,9 @@ class CvMainInterface:
 				iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * pHeadSelectedCity.getCultureThreshold())
 				screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst )
 				if ( iFirst == 1 ):
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) )
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getModifiedCultureRate()) / float(pHeadSelectedCity.getCultureThreshold()) ) )
 				else:
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getModifiedCultureRate()) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
 				screen.show( "CultureBar" )
 				
 				lCultureCosts = []

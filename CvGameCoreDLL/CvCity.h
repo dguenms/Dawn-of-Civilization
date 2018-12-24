@@ -716,6 +716,10 @@ public:
 	void updateCommerce(CommerceTypes eIndex);
 	void updateCommerce();
 
+	// Leoreth
+	int getModifiedCultureRateTimes100() const;
+	int getModifiedCultureRate() const;
+
 	int getProductionToCommerceModifier(CommerceTypes eIndex) const;						// Exposed to Python
 	void changeProductionToCommerceModifier(CommerceTypes eIndex, int iChange);
 
