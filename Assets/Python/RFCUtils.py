@@ -1637,7 +1637,7 @@ class RFCUtils:
 	def evacuate(self, tPlot):
 		for tLoopPlot in self.surroundingPlots(tPlot):
 			for unit in self.getUnitList(tLoopPlot):
-				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): self.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True) and tPlot == (x, y))
+				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): not self.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True) or tPlot == (x, y))
 				tTargetPlot = self.getRandomEntry(lPossibleTiles)
 				if tTargetPlot:
 					x, y = tTargetPlot

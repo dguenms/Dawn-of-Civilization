@@ -946,6 +946,7 @@ enum BonusTypes						// Exposed to Python
 	NO_BONUS = -1,
 	
 	BONUS_ALUMINUM,
+	BONUS_CAMEL,
 	BONUS_COAL,
 	BONUS_COPPER,
 	BONUS_HORSE,
