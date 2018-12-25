@@ -11474,7 +11474,7 @@ int CvPlot::calculateCultureCost() const
 	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
 	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
 
-	return iCost;
+	return getTurns(iCost);
 }
 
 // Leoreth
