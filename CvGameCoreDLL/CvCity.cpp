@@ -12650,7 +12650,7 @@ void CvCity::setGreatPeopleUnitRate(UnitTypes eIndex, int iNewValue)
 
 void CvCity::changeGreatPeopleUnitRate(UnitTypes eIndex, int iChange)
 {
-	setGreatPeopleUnitRate(eIndex, (getGreatPeopleUnitRate(eIndex) + iChange));
+	setGreatPeopleUnitRate(eIndex, std::max(0, getGreatPeopleUnitRate(eIndex) + iChange));
 }
 
 
@@ -15649,7 +15649,8 @@ void CvCity::doGreatPeople()
 		int iTotalGreatPeopleUnitProgress = 0;
 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
 		{
-			iTotalGreatPeopleUnitProgress += getGreatPeopleUnitProgress((UnitTypes)iI);
+			int iProgress = getGreatPeopleUnitProgress((UnitTypes)iI);
+			iTotalGreatPeopleUnitProgress += iProgress;
 		}
 
 		int iGreatPeopleUnitRand = GC.getGameINLINE().getSorenRandNum(iTotalGreatPeopleUnitProgress, "Great Person");

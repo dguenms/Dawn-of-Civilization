@@ -18154,7 +18154,11 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 
 	for (iI = 0; iI < GC.getNumUnitInfos(); ++iI)
 	{
-		iTotalGreatPeopleUnitProgress += city.getGreatPeopleUnitProgress((UnitTypes)iI);
+		int iProgress = city.getGreatPeopleUnitProgress((UnitTypes)iI);
+		if (iProgress > 0)
+		{
+			iTotalGreatPeopleUnitProgress += city.getGreatPeopleUnitProgress((UnitTypes)iI);
+		}
 	}
 
 	if (iTotalGreatPeopleUnitProgress > 0)
