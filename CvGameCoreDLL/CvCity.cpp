@@ -2158,6 +2158,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		{
 			bException = true;
 		}
+		else if ((iCapitalRegion == REGION_CENTRAL_ASIA && iRegion == REGION_PERSIA) || (iCapitalRegion == REGION_PERSIA && iRegion == REGION_CENTRAL_ASIA))
+		{
+			bException = true;
+		}
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
