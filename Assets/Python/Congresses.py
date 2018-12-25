@@ -115,11 +115,13 @@ def endGlobalWar(iAttacker, iDefender):
 	
 	# force peace for all allies of the belligerents
 	for iLoopPlayer in lAttackers:
+		if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 		if utils.isAVassal(iLoopPlayer): continue
 		if iLoopPlayer == iAttacker: continue
 		gc.getTeam(iLoopPlayer).makePeace(iDefender)
 		
 	for iLoopPlayer in lDefenders:
+		if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 		if utils.isAVassal(iLoopPlayer): continue
 		if iLoopPlayer == iDefender: continue
 		gc.getTeam(iLoopPlayer).makePeace(iAttacker)
