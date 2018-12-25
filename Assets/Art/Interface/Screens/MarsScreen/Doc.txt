@@ -1,0 +1,37 @@
+Mars environment
+
+Base
+
+Component 0: Framing (utilities)
+- Air Lock
+- Parabolic Antenna
+- Storage facility
+- Landing pad
+- Vehicle
+
+Component 1: Power source
+- 3 arrays of solar panels
+- 2 additional arrays of solar panels
+
+Component 2: Mars extractor
+- FF extraction facility
+
+Component 3: Mars habitat
+- Habitat 1
+- Habitat 2
+- Expansion Habitat 1
+- 2nd Expansion Habitat 1
+- Expansion Habitat 2
+
+Component 4: Hydroponics
+- Hydroponics 1
+- Hydroponics 2
+- Hydroponics 3
+
+Component 5: Laboratories
+- Laboratory 1
+- Laboratory 2
+- Laboratory 3
+
+Component 6: Control Center
+- Control Center
