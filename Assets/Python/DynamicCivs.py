@@ -572,6 +572,7 @@ dStartingLeaders = [
 	iIndia : iShahuji,
 	iPersia : iAbbas,
 	iJapan : iOdaNobunaga,
+	iTurks : iTamerlane,
 	iVikings : iGustav,
 	iSpain : iPhilip,
 	iFrance : iLouis,
