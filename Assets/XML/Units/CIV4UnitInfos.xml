@@ -14758,7 +14758,7 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
+					<BuildingType>BUILDING_ARMOURY</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
