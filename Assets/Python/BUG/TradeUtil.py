@@ -525,6 +525,7 @@ def initTradeableItems():
 	addPlainTrade("alliance", TradeableItems.TRADE_PERMANENT_ALLIANCE, "TXT_KEY_TRADE_PERMANENT_ALLIANCE_STRING")
 	addComplexTrade("peace treaty", TradeableItems.TRADE_PEACE_TREATY, getTradePeaceDeal)
 	addComplexTrade("technology", TradeableItems.TRADE_TECHNOLOGIES, getTradeTech)
+	addComplexTrade("slave", TradeableItems.TRADE_SLAVE, getTradeUnit)
 	addComplexTrade("resource", TradeableItems.TRADE_RESOURCES, getTradeBonus)
 	addComplexTrade("city", TradeableItems.TRADE_CITIES, getTradeCity)
 	addAppendingTrade("peace", TradeableItems.TRADE_PEACE, "TXT_KEY_TRADE_PEACE_WITH", getTradePlayer)
@@ -582,6 +583,9 @@ def getTradeReligion(player, trade):
 
 def getTradePlayer(player, trade):
 	return PlayerUtil.getPlayer(trade.iData).getCivilizationShortDescription(0)
+	
+def getTradeUnit(player, trade):
+	return gc.getUnitInfo(trade.iData).getText()
 
 def getTradePeaceDeal(player, trade):
 	BugUtil.debug("TradeUtil - peace treaty has iData %d", trade.iData)
