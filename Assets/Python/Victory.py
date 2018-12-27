@@ -735,7 +735,7 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iTurks, 0)
 				
 		if iGameTurn == getTurnForYear(900):
-			expire(iVikings, 0)
+			expire(iTurks, 0)
 			
 		# second goal: create an overland trade route between a Chinese and a Mediterranean city and spread the Silk Route to ten of your cities by 1100 AD
 		if isPossible(iTurks, 1):
@@ -763,11 +763,11 @@ def checkTurn(iGameTurn, iPlayer):
 					win(iTurks, 2)
 					
 		if iGameTurn == getTurnForYear(900):
-			if not data.tTurkicCapitals[0]:
+			if not data.tFirstTurkicCapital:
 				expire(iTurks, 2)
 				
 		if iGameTurn == getTurnForYear(1100):
-			if not data.tTurkicCapitals[1]:
+			if not data.tSecondTurkicCapital:
 				expire(iTurks, 2)
 				
 		if iGameTurn == getTurnForYear(1400):
