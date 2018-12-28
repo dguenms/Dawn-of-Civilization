@@ -4914,7 +4914,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							{
 								if (!GC.getSpecialistInfo((SpecialistTypes)iJ).isNoGlobalEffects())
 								{
-									GET_PLAYER((PlayerTypes)iJ).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
 								}
 							}
 						}
