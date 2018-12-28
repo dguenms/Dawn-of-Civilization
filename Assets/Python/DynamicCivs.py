@@ -1485,8 +1485,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_MONGOLIA_MONGOL"
 				
 	elif iPlayer == iOttomans:
-		if iReligion == iIslam:
-			return "TXT_KEY_CIV_OTTOMANS_OTTOMAN"
+		return "TXT_KEY_CIV_OTTOMANS_OTTOMAN"
 			
 	elif iPlayer == iNetherlands:
 		if isCapital(iPlayer, ["Brussels", "Antwerpen"]):
