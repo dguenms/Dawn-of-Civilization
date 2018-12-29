@@ -35,6 +35,9 @@ tAnatoliaTL = (69, 41)
 tAnatoliaBR = (75, 45)
 iTurkicEastWestBorder = 89
 
+tColombiaTL = (24, 26)
+tColombiaBR = (28, 32)
+
 ### Setup methods ###
 
 def findCapitalLocations(dCapitals):
@@ -905,15 +908,23 @@ def isCapital(iPlayer, lNames):
 			
 	return False
 	
-def countAreaCities(tTL, tBR, tExceptions=()):
-	return len(utils.getAreaCities(utils.getPlotList(tTL, tBR, tExceptions)))
+def countAreaCities(lPlots):
+	return len(utils.getAreaCities(lPlots))
 	
-def countPlayerAreaCities(iPlayer, tTL, tBR, tExceptions=()):
-	return len(utils.getAreaCitiesCiv(iPlayer, utils.getPlotList(tTL, tBR, tExceptions)))
+def countPlayerAreaCities(iPlayer, lPlots):
+	return len(utils.getAreaCitiesCiv(iPlayer, lPlots))
 	
 def isAreaControlled(iPlayer, tTL, tBR, iMinCities=1, tExceptions=()):
-	iTotalCities = countAreaCities(tTL, tBR, tExceptions)
-	iPlayerCities = countPlayerAreaCities(iPlayer, tTL, tBR, tExceptions)
+	lPlots = utils.getPlotList(tTL, tBR, tExceptions)
+	return isPlotListControlled(iPlayer, lPlots, iMinCities)
+	
+def isRegionControlled(iPlayer, iRegion, iMinCities=1):
+	lPlots = utils.getRegionPlots(iRegion)
+	return isPlotListControlled(iPlayer, lPlots, iMinCities)
+	
+def isPlotListControlled(iPlayer, lPlots, iMinCities=1):
+	iTotalCities = countAreaCities(lPlots)
+	iPlayerCities = countPlayerAreaCities(iPlayer, lPlots)
 	
 	if iPlayerCities < iTotalCities: return False
 	if iPlayerCities < iMinCities: return False
@@ -1148,7 +1159,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
+		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iPlayer == iHolyRome:
@@ -1439,7 +1450,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
+		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iPlayer == iHolyRome:
@@ -1587,6 +1598,11 @@ def republicTitle(iPlayer):
 		_, _, iCivicSociety, _, _, _ = getCivics(iPlayer)
 		if iCivicSociety in [iManorialism, iSlavery]:
 			return key(iPlayer, "CSA")
+			
+	if iPlayer == iMaya:
+		if gc.getPlayer(iMaya).isReborn():
+			if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
+				return "TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES"
 			
 	if gc.getPlayer(iPlayer).getStateReligion() == iIslam:
 		if iPlayer in lIslamicRepublicOf: return "TXT_KEY_ISLAMIC_REPUBLIC_OF"
@@ -1760,6 +1776,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iMaya:
 		if bReborn:
 			if bEmpire:
+				if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
+					return "TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES"
+			
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
 			
 	elif iPlayer == iByzantium:
@@ -1886,7 +1905,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bEmpire:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
-			if countPlayerAreaCities(iPlayer, tBritainTL, tBritainBR) >= 3:
+			if countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:
 				return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iPlayer == iHolyRome:
