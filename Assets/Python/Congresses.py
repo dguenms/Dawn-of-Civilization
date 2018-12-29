@@ -35,14 +35,14 @@ def setup():
 
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
-		if not data.currentCongress:
+		if data.iCongressTurns > 0:
 			data.iCongressTurns -= 1
-			
-			if data.iCongressTurns == 0:
-				data.iCongressTurns = getCongressInterval()
-				currentCongress = Congress()
-				data.currentCongress = currentCongress
-				currentCongress.startCongress()
+	
+		if not data.currentCongress and data.iCongressTurns == 0:
+			data.iCongressTurns = getCongressInterval()
+			currentCongress = Congress()
+			data.currentCongress = currentCongress
+			currentCongress.startCongress()
 
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
 	if isCongressEnabled():
