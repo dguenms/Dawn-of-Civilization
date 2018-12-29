@@ -12476,7 +12476,7 @@ bool CvUnitAI::AI_pillage(int iBonusValueThreshold)
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()))
+		if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()) && !(pLoopPlot->isOwned() && GET_PLAYER(pLoopPlot->getOwner()).isMinorCiv()))
 		{
 			if (potentialWarAction(pLoopPlot))
 			{
