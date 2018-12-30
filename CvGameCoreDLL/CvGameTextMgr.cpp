@@ -21310,3 +21310,23 @@ void CvGameTextMgr::parseMinorReligionHelp(CvWStringBuffer &szBuffer, Civilizati
 
 	szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szPaganReligionName, gDLL->getText("TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM").c_str()));
 }
+
+void CvGameTextMgr::setWonderLimitHelp(CvWStringBuffer &szBuffer, CvCity& city, int iWonderType)
+{
+	FAssertMsg(NO_PLAYER != city.getOwnerINLINE(), "City must have an owner");
+
+	int iCultureLevel = city.getCultureLevel();
+	
+	if (iWonderType == 0) // National wonders
+	{
+		int iNationalWonders = city.getNumNationalWonders();
+		int iNationalWondersLimit = GC.getCultureLevelInfo((CultureLevelTypes)iCultureLevel).getNationalWonderLimit();
+		szBuffer.append(gDLL->getText("INTERFACE_CITY_NATIONAL_WONDER_LIMIT_HELP", iNationalWonders, iNationalWondersLimit, GC.getCultureLevelInfo((CultureLevelTypes)iCultureLevel).getTextKeyWide()));
+	}
+	else
+	{
+		int iWorldWonders = city.getNumWorldWonders();
+		int iWorldWondersLimit = GC.getCultureLevelInfo((CultureLevelTypes)iCultureLevel).getWonderLimit();
+		szBuffer.append(gDLL->getText("INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP", iWorldWonders, iWorldWondersLimit, GC.getCultureLevelInfo((CultureLevelTypes)iCultureLevel).getTextKeyWide()));
+	}
+}
