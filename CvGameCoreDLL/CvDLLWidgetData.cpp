@@ -707,6 +707,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		break;
 // BUG - Trade Hover - end
 
+	// Merijn
+	case WIDGET_HELP_WONDER_LIMIT:
+		parseWonderLimitHelp(widgetDataStruct, szBuffer);
+		break;
+
 	}
 }
 
@@ -5393,4 +5398,13 @@ void CvDLLWidgetData::parseStabilityMilitaryHelp(CvWidgetDataStruct& widgetDataS
 void CvDLLWidgetData::parseStabilityHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
 {
 	GAMETEXT.buildStabilityString(szBuffer, widgetDataStruct.m_iData1);
+}
+
+void CvDLLWidgetData::parseWonderLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	CvCity* pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pHeadSelectedCity)
+	{
+		GAMETEXT.setWonderLimitHelp(szBuffer, *pHeadSelectedCity, widgetDataStruct.m_iData1);
+	}
 }
