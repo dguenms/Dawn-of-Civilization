@@ -18228,7 +18228,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 			int iCount = city.getNumBuilding((BuildingTypes)i);
 			if (iCount > 0)
 			{
-				iRate += iCount * GC.getBuildingInfo((BuildingTypes)i).getGreatPeopleRateChange();
+				iRate += iCount * (GC.getBuildingInfo((BuildingTypes)i).getGreatPeopleRateChange() + city.getBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)i).getBuildingClassType()));
 			}
 		}
 		if (iRate > 0)
