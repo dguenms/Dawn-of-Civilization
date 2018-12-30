@@ -14002,6 +14002,66 @@
 			<iLeaderExperience>20</iLeaderExperience>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_GREAT_GENERAL</Class>
+			<Type>UNIT_ARGENTINE_GREAT_GENERAL</Type>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_GENERAL</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bGoldenAge>1</bGoldenAge>
+			<bNukeImmune>1</bNukeImmune>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_GENERAL</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<GreatPeoples>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_GREAT_GENERAL</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_ARMOURY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>1</iFlavor>
+				</Flavor>
+			</Flavors>
+			<iCost>-1</iCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iAsset>5</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<LeaderPromotion>PROMOTION_LEADER</LeaderPromotion>
+			<iLeaderExperience>20</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_GREAT_SPY</Class>
 			<Type>UNIT_GREAT_SPY</Type>
 			<UniqueNames>
@@ -14730,66 +14790,6 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<bGraphicalOnly>1</bGraphicalOnly>
-		</UnitInfo>
-		<UnitInfo>
-			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_ARGENTINE_GREAT_GENERAL</Type>
-			<Special>SPECIALUNIT_PEOPLE</Special>
-			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_GENERAL</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<bGoldenAge>1</bGoldenAge>
-			<bNukeImmune>1</bNukeImmune>
-			<UnitAIs>
-				<UnitAI>
-					<UnitAIType>UNITAI_GENERAL</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-			</UnitAIs>
-			<GreatPeoples>
-				<GreatPeople>
-					<GreatPeopleType>SPECIALIST_GREAT_GENERAL</GreatPeopleType>
-					<bGreatPeople>1</bGreatPeople>
-				</GreatPeople>
-			</GreatPeoples>
-			<Buildings>
-				<Building>
-					<BuildingType>BUILDING_ARMOURY</BuildingType>
-					<bBuilding>1</bBuilding>
-				</Building>
-			</Buildings>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>1</iFlavor>
-				</Flavor>
-			</Flavors>
-			<iCost>-1</iCost>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iMoves>2</iMoves>
-			<iNukeRange>-1</iNukeRange>
-			<iAsset>5</iAsset>
-			<UnitMeshGroups>
-				<iGroupSize>1</iGroupSize>
-				<fMaxSpeed>1.75</fMaxSpeed>
-				<fPadTime>1</fPadTime>
-				<iMeleeWaveSize>1</iMeleeWaveSize>
-				<iRangedWaveSize>1</iRangedWaveSize>
-				<UnitMeshGroup>
-					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
-				</UnitMeshGroup>
-			</UnitMeshGroups>
-			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<LeaderPromotion>PROMOTION_LEADER</LeaderPromotion>
-			<iLeaderExperience>20</iLeaderExperience>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 	</UnitInfos>
