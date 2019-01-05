@@ -1347,9 +1347,9 @@ class RFCUtils:
 		if gc.getMap().plot(x, y).isCity(): bCapital = True
 		
 		if iNumCities < iTargetCities:
-			self.makeUnit(iSettler, iPlayer, (x, y), iTargetCities - iNumCities)
+			self.makeUnit(self.getUniqueUnit(iPlayer, iSettler), iPlayer, (x, y), iTargetCities - iNumCities)
 		else:
-			if not bCapital: self.makeUnit(iSettler, iPlayer, (x, y), 1)
+			if not bCapital: self.makeUnit(self.getUniqueUnit(iPlayer, iSettler), iPlayer, (x, y), 1)
 			
 	def createMissionaries(self, iPlayer, iNumUnits, iReligion=None):
 		if iReligion == None:

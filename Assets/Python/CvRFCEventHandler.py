@@ -116,9 +116,6 @@ class CvRFCEventHandler:
 		Civilizations.init()
 		AIParameters.init()
 		
-		for iBuilding in range(iNumBuildings):
-			print "%d -> %s" % (iBuilding, gc.getBuildingInfo(iBuilding).getText())
-		
 		return 0
 
 
@@ -381,6 +378,12 @@ class CvRFCEventHandler:
 				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
 				CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
 				gc.getPlayer(iOwner).changeGold(iGold)
+				
+		# Leoreth: free defender and worker for cities founded by American Pioneer in North America
+		if iOwner == iAmerica:
+			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
+				utils.createGarrisons(tCity, iOwner, 1)
+				utils.makeUnit(iWorker, iOwner, tCity, 1)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'

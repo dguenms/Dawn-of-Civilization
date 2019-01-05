@@ -3198,6 +3198,38 @@
 		<Spanish>Rocketeer</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>
+		<English>Oromo Warrior</English>
+		<French>
+			<Text>Guerrier Oromo:Guerriers Oromo</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Oromo-Krieger</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Guerriero Oromo:Guerrieri Oromo</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Guerrero oromo:Guerreros oromos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR_STRATEGY</Tag>
+		<English>This early gunpowder unit (the Ethiopian replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT]) is immune to first strikes, has 1 first strike of its own and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
+		<French>Cette unit&#233; primitive &#233;quip&#233;e d'une arme &#224; feu (unit&#233; &#233;thiopienne qui remplace l'[COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT]) est insensible aux premi&#232;res attaques, dispose d'1 premi&#232;re attaque et d&#233;bute avec les promotions :[COLOR_HIGHLIGHT_TEXT]Exercice I[COLOR_REVERT] et [COLOR_HIGHLIGHT_TEXT]Exercice II[COLOR_REVERT].</French>
+		<German>Diese fr&#252;he Schie&#223;pulver-Einheit (die &#228;thiopische Variante des [COLOR_UNIT_TEXT]Musketiers[COLOR_REVERT]) ist gegen Erstangriffe immun, hat selbst 1 Erstangriff zur Verf&#252;gung und startet mit den Bef&#246;rderungen [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] und [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT].</German>
+		<Italian>Questa unit&#224; base con arma da fuoco (l'equivalente etiope del [COLOR_UNIT_TEXT]Soldato con moschetto[COLOR_REVERT]) &#232; immune agli attacchi improvvisi, ha 1 attacco improvviso e comincia con le promozioni [COLOR_HIGHLIGHT_TEXT]Addestramento I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Addestramento II[COLOR_REVERT].</Italian>
+		<Spanish>Esta unidad temprana con armas de p&#243;lvora (el sustituto et&#237;ope del [COLOR_UNIT_TEXT]Mosquete[COLOR_REVERT]) es inmune a los ataques de iniciativa, tiene un ataque de iniciativa propio y empieza con los ascensos [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n II[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

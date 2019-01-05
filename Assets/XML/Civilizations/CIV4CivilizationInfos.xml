@@ -62,7 +62,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
 					<UnitType>UNIT_AMERICAN_PIONEER</UnitType>
 				</Unit>
 				<Unit>
