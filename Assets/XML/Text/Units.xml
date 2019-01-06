@@ -3238,6 +3238,14 @@
 		<Spanish>[ICON_BULLET]New cities in North America start with a defender and a worker</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTTOMAN_GREAT_BOMBARD</Tag>
+		<English>Great Bombard</English>
+		<French>Great Bombard</French>
+		<German>Great Bombard</German>
+		<Italian>Great Bombard</Italian>
+		<Spanish>Great Bombard</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

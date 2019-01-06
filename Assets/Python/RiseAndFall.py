@@ -2709,11 +2709,11 @@ class RiseAndFall:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iLancer, iCiv, tPlot, 3)
 			utils.makeUnit(iJanissary, iCiv, tPlot, 2)
-			utils.makeUnit(iBombard, iCiv, tPlot, 4)
+			utils.makeUnit(iGreatBombard, iCiv, tPlot, 2)
 			utils.makeUnit(iTrebuchet, iCiv, tPlot, 2)
 			utils.createMissionaries(iCiv, 3)
 			if utils.getHumanID() != iOttomans:
-				utils.makeUnit(iBombard, iCiv, tPlot, 4)
+				utils.makeUnit(iGreatBombard, Civ, tPlot, 4)
 				utils.makeUnit(iJanissary, iCiv, tPlot, 5)
 				utils.makeUnit(iLancer, iCiv, tPlot, 4)
 		elif iCiv == iPortugal:
