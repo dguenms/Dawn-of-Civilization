@@ -27000,6 +27000,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=43
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28538,7 +28539,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
-	BonusType=BONUS_HORSE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1

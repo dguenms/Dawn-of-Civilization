@@ -32535,7 +32535,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=43
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_HORSE
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=36,45,
@@ -34638,9 +34640,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
-	BonusType=BONUS_HORSE
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,36,45,
