@@ -3230,6 +3230,14 @@
 		<Spanish>Esta unidad temprana con armas de p&#243;lvora (el sustituto et&#237;ope del [COLOR_UNIT_TEXT]Mosquete[COLOR_REVERT]) es inmune a los ataques de iniciativa, tiene un ataque de iniciativa propio y empieza con los ascensos [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n II[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER_HELP</Tag>
+		<English>[ICON_BULLET]New cities in North America start with a defender and a worker</English>
+		<French>[ICON_BULLET]New cities in North America start with a defender and a worker</French>
+		<German>[ICON_BULLET]New cities in North America start with a defender and a worker</German>
+		<Italian>[ICON_BULLET]New cities in North America start with a defender and a worker</Italian>
+		<Spanish>[ICON_BULLET]New cities in North America start with a defender and a worker</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
