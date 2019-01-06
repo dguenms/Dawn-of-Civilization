@@ -32088,10 +32088,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -32166,10 +32166,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -33662,7 +33662,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -34127,28 +34127,28 @@ BeginPlot
 		UnitType=UNIT_CUIRASSIER, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=27, (Russia)
@@ -34222,7 +34222,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -34676,10 +34676,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -36178,7 +36178,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -36607,7 +36607,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -37521,7 +37521,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -37984,7 +37984,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -39348,7 +39348,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
@@ -41668,7 +41668,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=27, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)

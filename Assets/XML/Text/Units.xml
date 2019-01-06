@@ -3254,6 +3254,14 @@
 		<Spanish>Firelancer</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUSSIAN_STRELETS</Tag>
+		<English>Strelets</English>
+		<French>Strelets</French>
+		<German>Strelets</German>
+		<Italian>Strelets</Italian>
+		<Spanish>Strelets</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

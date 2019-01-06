@@ -4917,6 +4917,10 @@
 			</Buildings>
 			<Units>
 				<Unit>
+					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_STRELETS</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
 					<UnitType>UNIT_RUSSIAN_COSSACK</UnitType>
 				</Unit>
