@@ -46107,7 +46107,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -46615,7 +46615,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -47606,7 +47606,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -47676,40 +47676,40 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
@@ -48162,7 +48162,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -49106,7 +49106,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -49204,10 +49204,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -49618,7 +49618,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -50044,7 +50044,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)

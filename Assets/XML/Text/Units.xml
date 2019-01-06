@@ -3246,6 +3246,14 @@
 		<Spanish>Great Bombard</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHINESE_FIRELANCER</Tag>
+		<English>Firelancer</English>
+		<French>Firelancer</French>
+		<German>Firelancer</German>
+		<Italian>Firelancer</Italian>
+		<Spanish>Firelancer</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
