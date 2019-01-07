@@ -51047,16 +51047,16 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
 	EndUnit
 	BeginCity
 		CityOwner=12, (Korea)

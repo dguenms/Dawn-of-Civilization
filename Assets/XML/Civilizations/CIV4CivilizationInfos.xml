@@ -3215,7 +3215,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
+					<UnitClassType>UNITCLASS_BOMBARD</UnitClassType>
 					<UnitType>UNIT_KOREAN_HWACHA</UnitType>
 				</Unit>
 				<Unit>
