@@ -5239,7 +5239,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
+					<UnitClassType>UNITCLASS_COG</UnitClassType>
 					<UnitType>UNIT_TAMIL_DHARANI</UnitType>
 				</Unit>
 				<Unit>
