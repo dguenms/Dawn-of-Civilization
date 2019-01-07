@@ -318,7 +318,7 @@
 		<Spanish>Corvette</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_NUMIDIAN_CAVALRY</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_NUMIDIAN_CAVALRY</Tag>
 		<English>Numidian Cavalry</English>
 		<French>
 			<Text>Cavalerie numide</Text>
@@ -650,7 +650,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_NUMIDIAN_CAVALRY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</English>
 		<French>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</French>
 		<German>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</German>

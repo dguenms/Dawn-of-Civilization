@@ -308,7 +308,7 @@ class CvRFCEventHandler:
 						carthage.setHasRealBuilding(iWalls, True)
 						utils.makeUnitAI(iArcher, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 						utils.makeUnit(iNumidianCavalry, iCarthage, (58, 39), 3)
-						utils.makeUnitAI(iAtlasElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
+						utils.makeUnitAI(iWarElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
 					
 				if utils.getOwnedCoreCities(iCarthage) > 0:
 					utils.setReborn(iCarthage, True)

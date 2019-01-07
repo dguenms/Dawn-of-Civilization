@@ -802,7 +802,7 @@ class RiseAndFall:
 			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
 			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
-			utils.makeUnit(iAtlasElephant, iCarthage, (58, 39), 2)
+			utils.makeUnit(iWarElephant, iCarthage, (58, 39), 2)
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
@@ -2328,7 +2328,8 @@ class RiseAndFall:
 		elif iCiv == iPersia:
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
 		elif iCiv == iCarthage:
-			utils.makeUnit(iAtlasElephant, iCiv, tPlot, 1)
+			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
+			utils.makeUnit(iNumidianCavalry, iCiv, tPlot, 1)
 		elif iCiv == iPolynesia:
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 		elif iCiv == iRome:
@@ -2467,7 +2468,7 @@ class RiseAndFall:
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
+			utils.makeUnit(iSacredBand, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
