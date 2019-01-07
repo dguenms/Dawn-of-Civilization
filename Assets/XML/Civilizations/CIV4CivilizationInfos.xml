@@ -4921,7 +4921,7 @@
 					<UnitType>UNIT_RUSSIAN_STRELETS</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
+					<UnitClassType>UNITCLASS_PISTOLIER</UnitClassType>
 					<UnitType>UNIT_RUSSIAN_COSSACK</UnitType>
 				</Unit>
 			</Units>

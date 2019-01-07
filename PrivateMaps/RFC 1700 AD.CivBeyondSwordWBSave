@@ -32093,6 +32093,21 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=27, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=27, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=27, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=27, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=27, (Russia)
+	EndUnit
 	BeginCity
 		CityOwner=27, (Russia)
 		CityName=Kiev
@@ -34116,21 +34131,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=27, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=27, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=27, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=27, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
-	EndUnit
 	BeginUnit
 		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=27, (Russia)
 	EndUnit
