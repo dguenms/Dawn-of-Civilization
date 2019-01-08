@@ -148,10 +148,10 @@ iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, i
 iCivCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
 iCivPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
 iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
+iCivMaya :	Techs([iProperty, iLeverage, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
 iCivTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivKorea :	Techs(column=5, exceptions=[iGeneralship, iEngineering, iCurrency]),
-iCivMaya :	Techs([iProperty, iLeverage, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
 iCivByzantium :	Techs([iArchitecture, iPolitics, iEthics], column=5),
 iCivJapan :	Techs([iNobility, iSteel, iArtisanry, iPolitics], column=5),
 iCivVikings : 	Techs([iNobility, iSteel, iArtisanry, iPolitics, iScholarship, iArchitecture, iGuilds], column=5),
@@ -343,6 +343,10 @@ dTechPreferences = {
 		
 		iCalendar: -20,
 	},
+	iCivMaya : {
+		iCalendar: 40,
+		iAesthetics: 30,
+	},
 	iCivTamils : {
 		iCement: 20,
 		iCompass: 20,
@@ -360,10 +364,6 @@ dTechPreferences = {
 		iExploration: -40,
 		iReplaceableParts: -40,
 		iScientificMethod: -40,
-	},
-	iCivMaya : {
-		iCalendar: 40,
-		iAesthetics: 30,
 	},
 	iCivByzantium : {
 		iFinance: -50,
@@ -727,6 +727,9 @@ dBuildingPreferences = {
 		
 		iGreatWall: -100,
 	},
+	iCivMaya : {
+		iTempleOfKukulkan: 40,
+	},
 	iCivTamils : {
 		iJetavanaramaya: 30,
 		iKhajuraho: 20,
@@ -736,9 +739,6 @@ dBuildingPreferences = {
 	},
 	iCivKorea : {
 		iCheomseongdae: 30,
-	},
-	iCivMaya : {
-		iTempleOfKukulkan: 40,
 	},
 	iCivByzantium : {
 		iHagiaSophia: 40,

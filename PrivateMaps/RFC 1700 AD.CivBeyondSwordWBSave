@@ -40,16 +40,16 @@ BeginTeam
 	TeamID=9, (Rome)
 EndTeam
 BeginTeam
-	TeamID=10, (Tamils)
+	TeamID=10, (Colombia)
 EndTeam
 BeginTeam
-	TeamID=11, (Ethiopia)
+	TeamID=11, (Tamils)
 EndTeam
 BeginTeam
-	TeamID=12, (Korea)
+	TeamID=12, (Ethiopia)
 EndTeam
 BeginTeam
-	TeamID=13, (Colombia)
+	TeamID=13, (Korea)
 EndTeam
 BeginTeam
 	TeamID=14, (Byzantium)
@@ -260,6 +260,13 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=10
+	LeaderType=LEADER_PACAL
+	CivType=CIVILIZATION_MAYA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=11
 	LeaderType=LEADER_KRISHNA_DEVA_RAYA
 	LeaderName=TXT_KEY_LEADER_TIPU_SULTAN
 	CivType=CIVILIZATION_TAMILS
@@ -275,14 +282,14 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=11
+	Team=12
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=12
+	Team=13
 	LeaderType=LEADER_SEJONG
 	CivType=CIVILIZATION_KOREA
 	PlayableCiv=1
@@ -295,13 +302,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_ISOLATIONISM
 	AttitudePlayer=1, AttitudeExtra=2, (China)
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=13
-	LeaderType=LEADER_PACAL
-	CivType=CIVILIZATION_MAYA
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -41914,40 +41914,40 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+		UnitType=UNIT_BOMBARD, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=10, (Tamils)
+		UnitType=UNIT_WORKER, UnitOwner=11, (Tamils)
 	EndUnit
 	BeginCity
-		CityOwner=10, (Tamils)
+		CityOwner=11, (Tamils)
 		CityName=Mahishuru
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
@@ -41966,7 +41966,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player10Culture=50, (Tamils)
+		Player11Culture=50, (Tamils)
 	EndCity
 	TeamReveal=5,10,22,25,30,35,39,45,46,
 EndPlot
@@ -50570,13 +50570,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginCity
-		CityOwner=12, (Korea)
+		CityOwner=13, (Korea)
 		CityName=Pyongyang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -50595,7 +50595,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player12Culture=80, (Korea)
+		Player13Culture=80, (Korea)
 	EndCity
 	TeamReveal=1,12,15,46,
 EndPlot
@@ -51029,37 +51029,37 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=13, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=12, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=13, (Korea)
 	EndUnit
 	BeginCity
-		CityOwner=12, (Korea)
+		CityOwner=13, (Korea)
 		CityName=Hanseong
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -51084,7 +51084,7 @@ BeginPlot
 		BuildingType=BUILDING_CHEOMSEONGDAE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player12Culture=250, (Korea)
+		Player13Culture=250, (Korea)
 	EndCity
 	TeamReveal=1,12,15,45,46,
 EndPlot

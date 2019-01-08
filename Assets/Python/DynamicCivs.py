@@ -529,11 +529,11 @@ dStartingLeaders = [
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,
 	iRome : iJuliusCaesar,
+	iMaya : iPacal,
 	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iZaraYaqob,
 	iKorea : iWangKon,
-	iMaya : iPacal,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
 	iTurks : iBumin,
@@ -1728,6 +1728,14 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_REPUBLIC_ADJECTIVE"
 			
+	elif iPlayer == iMaya:
+		if bReborn:
+			if bEmpire:
+				if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
+					return "TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES"
+			
+				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
+			
 	elif iPlayer == iJapan:
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_OF"
@@ -1772,14 +1780,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if iReligion >= 0:
 			return "TXT_KEY_KINGDOM_OF"
-			
-	elif iPlayer == iMaya:
-		if bReborn:
-			if bEmpire:
-				if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
-					return "TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES"
-			
-				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
 			
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
@@ -2146,15 +2146,15 @@ def leader(iPlayer):
 		
 	elif iPlayer == iRome:
 		if bEmpire or not bCityStates: return iAugustus
+	
+	elif iPlayer == iMaya:
+		if bReborn:
+			return iBolivar
 		
 	elif iPlayer == iKorea:		
 		if iEra >= iRenaissance: return iSejong
 		
 		if utils.getScenario() >= i1700AD: return iSejong
-	
-	elif iPlayer == iMaya:
-		if bReborn:
-			return iBolivar
 		
 	elif iPlayer == iJapan:
 		if iEra >= iIndustrial: return iMeiji

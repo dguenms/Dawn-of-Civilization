@@ -110,10 +110,10 @@ tCapitals = (
 (4, 18), # Tonga
 (82, 38), # Persepolis
 (60, 44), # Rome
+(22, 35), # Tikal
 (91, 30), # Thanjavur
 (72, 29), # Aksum
 (109, 46), # Seoul
-(22, 35), # Tikal
 (68, 45), # Constantinople
 (113, 45), # Kyoto
 (60, 59), # Oslo
@@ -152,8 +152,8 @@ iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
-iTamils : (90, 30),	# Vijayanagara
 iMaya : (27, 29),	# Bogota (Colombia)
+iTamils : (90, 30),	# Vijayanagara
 iKhmer : (101, 37),	# Hanoi
 iHolyRome : (62, 49),	# Vienna
 }
@@ -200,10 +200,10 @@ tBirthArea = (
 ((3, 17), 	(7, 22)), 	# Polynesia
 ((79, 37), 	(85, 44)), 	# Persia
 ((59, 41), 	(63, 47)), 	# Rome
+((20, 35), 	(23, 37)), 	# Maya
 ((90, 27), 	(93, 32)), 	# Tamils
 ((69, 27), 	(73, 30)), 	# Ethiopia
 ((107, 45), 	(110, 49)), 	# Korea
-((20, 35), 	(23, 37)), 	# Maya
 ((64, 38), 	(74, 45)), 	# Byzantium
 ((111, 41), 	(116, 49)), 	# Japan
 ((58, 56), 	(64, 62)), 	# Vikings
@@ -288,10 +288,10 @@ tCoreArea = (
 ((4, 18),	(6, 21)),	# Polynesia
 ((79, 37),	(85, 44)),	# Persia
 ((59, 41),	(63, 47)),	# Rome
+((20, 35),	(23, 37)),	# Maya
 ((90, 27),	(93, 32)),	# Tamils
 ((69, 27),	(73, 30)),	# Ethiopia
 ((108, 45),	(110, 48)),	# Korea
-((20, 35),	(23, 37)),	# Maya
 ((64, 40),	(72, 46)),	# Byzantium
 ((112, 45),	(116, 47)),	# Japan
 ((58, 56),	(64, 62)),	# Vikings
@@ -398,10 +398,10 @@ tNormalArea = (
 ((3, 15), 	(13, 21)), 	# Polynesia
 ((79, 37), 	(86, 46)), 	# Persia
 ((57, 40), 	(63, 47)), 	# Rome
+((20, 32), 	(23, 37)), 	# Maya
 ((90, 28), 	(93, 34)), 	# Tamils
 ((68, 25), 	(77, 30)), 	# Ethiopia
 ((108, 45), 	(110, 49)), 	# Korea
-((20, 32), 	(23, 37)), 	# Maya
 ((64, 40), 	(72, 45)), 	# Byzantium
 ((111, 41), 	(116, 52)), 	# Japan
 ((58, 56), 	(67, 65)), 	# Vikings
@@ -484,10 +484,10 @@ tBroaderArea = (
 ((1, 15), 	(17, 38)), 	# Polynesia
 ((70, 37), 	(87, 49)), 	# Persia
 ((49, 35), 	(73, 50)), 	# Rome
+((19, 30), 	(26, 37)), 	# Maya
 ((90, 28), 	(93, 34)), 	# Tamils
 ((67, 21), 	(77, 30)), 	# Ethiopia
 ((106, 45), 	(110, 52)), 	# Korea
-((19, 30), 	(26, 37)), 	# Maya
 ((58, 34), 	(74, 45)), 	# Byzantium
 ((110, 40), 	(116, 56)), 	# Japan
 ((58, 56), 	(71, 65)), 	# Vikings
