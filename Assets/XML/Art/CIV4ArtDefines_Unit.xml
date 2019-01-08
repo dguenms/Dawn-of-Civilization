@@ -5861,9 +5861,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Qizilbash/HeavySwordsman.nif</NIF>
-			<KFM>Art/Units/Qizilbash/HeavySwordsman.kfm</KFM>
-			<SHADERNIF>Art/Units/Qizilbash/HeavySwordsman_FX.nif</SHADERNIF>
+			<NIF>Art/Units/Qizilbash/SafavidArquebusier.nif</NIF>
+			<KFM>Art/Units/Musketman/Musketman.kfm</KFM>
+			<SHADERNIF>Art/Units/Qizilbash/SafavidArquebusier.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -5871,7 +5871,7 @@
 			</ShadowDef>
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
-			<bActAsRanged>0</bActAsRanged>
+			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds/>
 		</UnitArtInfo>
