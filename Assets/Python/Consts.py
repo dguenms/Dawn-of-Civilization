@@ -844,7 +844,7 @@ iFarari, iPistolier, iCossack, iMountedBrave, iCamelGunner, iCuirassier, iGendar
 iLlanero, iDragoon, iGuard, iGrenadierCavalry, iCavalry, iRural, iWarElephant, iBallistaElephant, iTank, iPanzer, 
 iMainBattleTank, iGunship, iCatapult, iBallista, iTrebuchet, iBombard, iHwacha, iSiegeElephant, iGreatBombard, iCannon, 
 iArtillery, iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, 
-iDromon, iLongship, iDharani, iCog, iGalleass, iDjong, iKobukson, iLanternas, iCaravel, iCarrack, 
+iDromon, iLongship, iCog, iDharani, iGalleass, iDjong, iKobukson, iLanternas, iCaravel, iCarrack, 
 iGalleon, iEastIndiaman, iPrivateer, iCorsair, iFrigate, iShipOfTheLine, iManOfWar, iIronclad, iTorpedoBoat, iCruiser, 
 iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, iBiplane, 
 iFighter, iZero, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iDrone, iNuclearBomber, iICBM, iSatellite, 
