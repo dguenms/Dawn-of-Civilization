@@ -29,9 +29,9 @@ tMinorCities = (
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
 (-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
+(-250, (19, 35), iNative, 'Danibaan', 2, iHolkan, 1),	# Monte Albán
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-(-100, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Albán
 (100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
@@ -156,6 +156,8 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
 		# Holkans in classical Mesoamerica
+		if utils.isYearIn(-200, 100):
+			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 7, 5)
 		if utils.isYearIn(100, 600):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
@@ -286,6 +288,10 @@ class Barbs:
 			if utils.isYearIn(1500, 1850):
 				self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
 				
+		if iGameTurn == getTurnForYear(-500):
+			gc.getMap().plot(19, 35).setImprovementType(iHut)
+			utils.makeUnitAI(iHolkan, iNative, (19, 35), UnitAITypes.UNITAI_ATTACK, 2)
+				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
 			self.checkSpawn(iNative, iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
@@ -325,7 +331,7 @@ class Barbs:
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
-			utils.evacuate(tPlot)
+			utils.evacuate(iPlayer, tPlot)
 		
 			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions):
 				data.lMinorCityFounded[i] = True

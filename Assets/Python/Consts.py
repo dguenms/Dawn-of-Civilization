@@ -257,7 +257,7 @@ tBirth = (
 -1000,					# Polynesia
 -850, # 84, #844BC			# Persia
 -753, # 90, #753BC			# Rome
--750, 					# Maya
+-400, 					# Maya
 -300,					# Tamils
 -290, # 121, #300BC			# Ethiopia
 -50,					# Korea

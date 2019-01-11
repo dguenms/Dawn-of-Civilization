@@ -3386,9 +3386,9 @@
 			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
 			<Identifier>MAY</Identifier>
-			<StartingYear>-750</StartingYear>
+			<StartingYear>-400</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>5</LoadingTime>
+				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>

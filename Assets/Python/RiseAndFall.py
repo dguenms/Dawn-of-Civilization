@@ -2492,6 +2492,9 @@ class RiseAndFall:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
 				pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+		elif iCiv == iMaya:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
 		elif iCiv == iJapan:
 			utils.createSettlers(iCiv, 3)
 			utils.createMissionaries(iCiv, 1)
@@ -2537,9 +2540,6 @@ class RiseAndFall:
 			if utils.getHumanID() != iKorea:
 				utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 				utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
-		elif iCiv == iMaya:
-			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iHolkan, iCiv, tPlot, 2)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iLegion, iCiv, tPlot, 4)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
@@ -2904,6 +2904,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iRome:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iMaya:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iJapan:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iTamils:
@@ -2912,8 +2914,6 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-		elif iCiv == iMaya:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iByzantium:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 			#utils.makeUnit(iSettler, iCiv, tPlot, 1)
