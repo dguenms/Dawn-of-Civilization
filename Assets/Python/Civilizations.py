@@ -140,7 +140,7 @@ lStartingTechs = [
 iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
-iCivChina :	Techs([iTanning, iMining, iAgriculture]),
+iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
@@ -235,6 +235,30 @@ dTechPreferences = {
 		iAlloys: -20,
 		iBloomery: -50,
 	},
+	iCivBabylonia : {
+		iWriting: 30,
+		iContract: 30,
+		iCalendar: 30,
+		iMasonry: 20,
+		iProperty: 20,
+		iDivination: 20,
+		iConstruction: 20,
+	
+		iPriesthood: -50,
+		iMathematics: -30,
+		iAlloys: -30,
+		iBloomery: -30,
+		iSteel: -30,
+	},
+	iCivHarappa : {
+		iMasonry: 20,
+		iPastoralism: 20,
+		iPottery: 20,
+		
+		iMythology: -50,
+		iDivination: -50,
+		iCeremony: -50,
+	},
 	iCivChina : {
 		iAesthetics: 40,
 		iContract: 40,
@@ -259,30 +283,6 @@ dTechPreferences = {
 		iCombinedArms: -40,
 		iDivination: -20,
 		iSailing: -20,	
-	},
-	iCivBabylonia : {
-		iWriting: 30,
-		iContract: 30,
-		iCalendar: 30,
-		iMasonry: 20,
-		iProperty: 20,
-		iDivination: 20,
-		iConstruction: 20,
-	
-		iPriesthood: -50,
-		iMathematics: -30,
-		iAlloys: -30,
-		iBloomery: -30,
-		iSteel: -30,
-	},
-	iCivHarappa : {
-		iMasonry: 20,
-		iPastoralism: 20,
-		iPottery: 20,
-		
-		iMythology: -50,
-		iDivination: -50,
-		iCeremony: -50,
 	},
 	iCivGreece : {
 		iSailing: 40,
@@ -638,6 +638,17 @@ dBuildingPreferences = {
 		iGreatLighthouse: 30,
 		iGreatSphinx: 30,
 	},
+	iCivBabylonia : {
+		iHangingGardens: 50,
+		iIshtarGate: 50,
+		iSpiralMinaret: 20,
+		iGreatMausoleum: 15,
+		
+		iPyramids: 0,
+		iGreatSphinx: 0,
+		
+		iOracle: -60,
+	},
 	iCivChina : {
 		iGreatWall: 80,
 		iForbiddenPalace: 40,
@@ -651,17 +662,6 @@ dBuildingPreferences = {
 		iHimejiCastle: -30,
 		iBorobudur: -30,
 		iBrandenburgGate: -30,
-	},
-	iCivBabylonia : {
-		iHangingGardens: 50,
-		iIshtarGate: 50,
-		iSpiralMinaret: 20,
-		iGreatMausoleum: 15,
-		
-		iPyramids: 0,
-		iGreatSphinx: 0,
-		
-		iOracle: -60,
 	},
 	iCivGreece : {
 		iColossus: 30,

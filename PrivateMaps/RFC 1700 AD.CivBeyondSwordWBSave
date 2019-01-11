@@ -13,13 +13,13 @@ BeginTeam
 	TeamID=0, (Egypt)
 EndTeam
 BeginTeam
-	TeamID=1, (China)
+	TeamID=1, (Babylonia)
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
+	TeamID=2, (Harappa)
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
+	TeamID=3, (China)
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -168,6 +168,20 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=1
+	LeaderType=LEADER_HAMMURABI
+	CivType=CIVILIZATION_BABYLONIA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=2
+	LeaderType=LEADER_VATAVELLI
+	CivType=CIVILIZATION_HARAPPANS
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=3
 	LeaderType=LEADER_HONGWU
 	LeaderName=TXT_KEY_LEADER_KANGXI
 	CivType=CIVILIZATION_CHINA
@@ -181,20 +195,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_ISOLATIONISM
 	AttitudePlayer=12, AttitudeExtra=2, (Korea)
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=2
-	LeaderType=LEADER_HAMMURABI
-	CivType=CIVILIZATION_BABYLONIA
-	PlayableCiv=0
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=3
-	LeaderType=LEADER_VATAVELLI
-	CivType=CIVILIZATION_HARAPPANS
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -46107,10 +46107,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Chengdu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -46120,7 +46120,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_DUJIANGYAN
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,45,46,
 EndPlot
@@ -46615,10 +46615,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Xi'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -46640,7 +46640,7 @@ BeginPlot
 		BuildingType=BUILDING_TERRACOTTA_ARMY
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=300, (China)
+		Player3Culture=300, (China)
 	EndCity
 	TeamReveal=1,45,46,
 EndPlot
@@ -47606,10 +47606,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Chongqing
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -47619,7 +47619,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,45,46,
 EndPlot
@@ -47676,61 +47676,61 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=1, (Kangxi)
+		UnitType=UNIT_WORKER, UnitOwner=3, (Kangxi)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Beijing
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
@@ -47753,7 +47753,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player1Culture=150, (China)
+		Player3Culture=150, (China)
 	EndCity
 	TeamReveal=1,46,
 EndPlot
@@ -48162,10 +48162,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Kaifeng
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -48186,7 +48186,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,46,
 EndPlot
@@ -49106,10 +49106,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Guangzhou
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -49124,7 +49124,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,22,30,45,46,
 EndPlot
@@ -49204,19 +49204,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Shenyang
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		Player1Culture=80, (China)
+		Player3Culture=80, (China)
 	EndCity
 	TeamReveal=1,12,45,46,
 EndPlot
@@ -49618,10 +49618,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Shanghai
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -49639,7 +49639,7 @@ BeginPlot
 		BuildingType=BUILDING_PORCELAIN_TOWER
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,12,15,45,46,
 EndPlot
@@ -50044,10 +50044,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Hangzhou
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -50060,7 +50060,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,12,15,45,46,
 EndPlot

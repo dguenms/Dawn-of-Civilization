@@ -1161,9 +1161,9 @@
 			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
 			<Identifier>CHI</Identifier>
-			<StartingYear>-3000</StartingYear>
+			<StartingYear>-2070</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>

@@ -521,9 +521,9 @@ dStartingLeaders = [
 {
 	iEgypt : iRamesses,
 	iIndia : iAsoka,
-	iChina : iQinShiHuang,
 	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
+	iChina : iQinShiHuang,
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
@@ -1018,18 +1018,18 @@ def specificName(iPlayer):
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = gc.getGame().getCurrentEra()
 	bWar = isAtWar(iPlayer)
+			
+	if iPlayer == iBabylonia:
+		if isCapital(iPlayer, ["Ninua", "Kalhu"]):
+			return "TXT_KEY_CIV_BABYLONIA_ASSYRIA"
 	
-	if iPlayer == iChina:
+	elif iPlayer == iChina:
 		if bEmpire:
 			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
 				return "TXT_KEY_CIV_CHINA_QING"
 			
 			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
-			
-	elif iPlayer == iBabylonia:
-		if isCapital(iPlayer, ["Ninua", "Kalhu"]):
-			return "TXT_KEY_CIV_BABYLONIA_ASSYRIA"
 			
 	elif iPlayer == iGreece:
 		if not bCityStates and bEmpire and iEra <= iClassical:

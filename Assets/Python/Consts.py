@@ -9,19 +9,19 @@ iWorldY = 68
 
 # initialise player variables to player IDs from WBS
 iNumPlayers = 45
-(iEgypt, iChina, iBabylonia, iHarappa, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
+(iEgypt, iBabylonia, iHarappa, iChina, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
 iMaya, iTamils, iEthiopia, iKorea, iByzantium, iJapan, iVikings, iTurks, iArabia, iTibet, 
 iIndonesia, iMoors, iSpain, iFrance, iKhmer, iEngland, iHolyRome, iRussia, iMali, iPoland, 
 iPortugal, iInca, iItaly, iMongolia, iAztecs, iMughals, iOttomans, iThailand, iCongo, iNetherlands, 
 iGermany, iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
 
-(pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
+(pEgypt, pBabylonia, pHarappa, pChina, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
 pMaya, pTamils, pEthiopia, pKorea, pByzantium, pJapan, pVikings, pTurks, pArabia, pTibet, 
 pIndonesia, pMoors, pSpain, pFrance, pKhmer, pEngland, pHolyRome, pRussia, pMali, pPoland, 
 pPortugal, pInca, pItaly, pMongolia, pAztecs, pMughals, pOttomans, pThailand, pCongo, pNetherlands, 
 pGermany, pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
-(teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
+(teamEgypt, teamBabylonia, teamHarappa, teamChina, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
 teamMaya, teamTamils, teamEthiopia, teamKorea, teamByzantium, teamJapan, teamVikings, teamTurks, teamArabia, teamTibet, 
 teamIndonesia, teamMoors, teamSpain, teamFrance, teamKhmer, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, 
 teamPortugal, teamInca, teamItaly, teamMongolia, teamAztecs, teamMughals, teamOttomans, teamThailand, teamCongo, teamNetherlands, 
@@ -148,9 +148,9 @@ iNumConquests = 13
 #neighbours
 lNeighbours = [
 [iBabylonia, iGreece, iPersia, iCarthage, iRome, iEthiopia, iByzantium, iArabia, iMoors, iOttomans], #Egypt
-[iIndia, iJapan, iKorea, iTurks, iTibet, iKhmer, iMongolia, iThailand], #China
 [iEgypt, iGreece, iPersia, iTurks, iOttomans, iMongolia, iCarthage, iByzantium], #Babylonia
 [iIndia, iPersia, iTamils, iTibet, iMughals], #Harappa
+[iIndia, iJapan, iKorea, iTurks, iTibet, iKhmer, iMongolia, iThailand], #China
 [iPersia, iCarthage, iRome, iByzantium, iHolyRome, iRussia, iOttomans, iItaly], #Greece
 [iChina, iHarappa, iPersia, iTamils, iTibet, iKhmer, iMongolia, iMughals, iThailand], #India
 [iEgypt, iGreece, iRome, iSpain, iMali, iPortugal, iBabylonia, iPersia, iArabia, iMoors, iOttomans, iItaly], #Carthage
@@ -197,9 +197,9 @@ lNeighbours = [
 #for stability hit on spawn
 lOlderNeighbours = [
 [], #Egypt
-[], #China
 [], #Babylonia
 [], #Harappa
+[], #China
 [iEgypt, iBabylonia], #Greece
 [iHarappa], #India
 [iEgypt, iBabylonia], #Carthage
@@ -248,9 +248,9 @@ lOlderNeighbours = [
 # converted to years - edead
 tBirth = (
 -3000, # 0, #3000BC			# Egypt
--3000, # 0, #3000BC			# China
 -3000, # 0, #3000BC			# Babylonia
 -3000,					# Harappa
+-2070,					# China
 -1600, # 50, #1600BC			# Greece
 -1500, # 0, #3000BC			# India
 -1200, # 66, #814BC # Leoreth: 1200 BC	# Carthage
@@ -304,9 +304,9 @@ tBirth = (
 # Leoreth: stability penalty from this date on
 tFall = (
 -343,					# Egypt
-1127,					# China
 -539,					# Babylonia
 -1700,					# Harappa
+1127,					# China
 -146,					# Greece
 600, # end of Gupta Empire		# India
 -146,					# Phoenicia
@@ -351,9 +351,9 @@ tFall = (
 
 dVictoryYears = {
 iCivEgypt : (-850, -100, 170),
-iCivChina : (1000, -1, 1800),
 iCivBabylonia : (-1, -850, -700),
 iCivHarappa : (-1600, -1500, -800),
+iCivChina : (1000, -1, 1800),
 iCivGreece : (-1, -330, -250),
 iCivIndia : (-100, 700, 1200),
 iCivCarthage : (-300, -100, 200),
@@ -415,9 +415,9 @@ iAztecs : iCivMexico,
 
 tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
-[(600, 2020)], #China
 [(-3000, -500)], #Babylonia
 [],		# Harappa
+[(600, 2020)], #China
 [(1800, 2020)], #Greece
 [(1600, 1800), (1900, 2020)], #India
 [(-1000, -150)], #Carthage
@@ -464,9 +464,9 @@ tResurrectionIntervals = (
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
 [], #Egypt
-[iIndependent,iIndependent2,iIndependent2], #China
 [iIndependent,iIndependent2], #Babylonia
 [], #Harappa
+[iIndependent,iIndependent2,iIndependent2], #China
 [iIndependent,iIndependent2,iBabylonia], #Greece
 [], #India
 [], #Carthage
@@ -513,9 +513,9 @@ lEnemyCivsOnSpawn = [
 # Leoreth
 lTotalWarOnSpawn = [
 [], #Egypt
-[], #China
 [], #Babylonia
 [], #Harappa
+[], #China
 [], #Greece
 [], #India
 [], #Phoenicia
@@ -563,9 +563,9 @@ lTotalWarOnSpawn = [
 #AIWars
 tAggressionLevel = (
 0, #Egypt
-1, #China
 1, #Babylonia
 0, #Harappa
+1, #China
 2, #Greece
 0, #India
 0, #Carthage
@@ -613,9 +613,9 @@ tAggressionLevel = (
 #war during rise of new civs
 tAIStopBirthThreshold = (
     80, #Egypt
-    60, #China
     50, #Babylonia
     50, #Harappa
+    60, #China
     50, #Greece #would be 80 but with Turks must be lower
     80, #India
     80, #Carthage
@@ -667,9 +667,9 @@ tAIStopBirthThreshold = (
 #RiseAndFall
 tResurrectionProb = (
 25, #Egypt
-100, #China
 40, #Babylonia
 0, #Harappa
+100, #China
 60, #Greece
 50, #India
 30, #Carthage
@@ -719,9 +719,9 @@ tResurrectionProb = (
 #Congresses.
 tPatienceThreshold = (
 30, #Egypt
-30, #China
 30, #Babylonia
 30, #Harappa
+30, #China
 35, #Greece
 50, #India
 35, #Carthage

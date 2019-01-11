@@ -34,11 +34,11 @@ def getLanguages(iCiv):
 	if iCiv == iEgypt:
 		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
 		return (iLangEgyptian,)
-	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iBabylonia: return (iLangBabylonian,)
 	elif iCiv == iHarappa: return (iLangHarappan, iLangIndian)
-	elif iCiv == iIndia: return (iLangIndian,)
+	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iGreece: return (iLangGreek,)
+	elif iCiv == iIndia: return (iLangIndian,)
 	elif iCiv == iCarthage: return (iLangPhoenician,)
 	elif iCiv == iPolynesia: return (iLangPolynesian,)
 	elif iCiv == iPersia: 

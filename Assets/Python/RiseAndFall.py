@@ -857,14 +857,7 @@ class RiseAndFall:
 				#utils.killAndFragmentCiv(iAztecs, iIndependent, iIndependent2, -1, False)
 				
 				
-		if utils.getScenario() == i3000BC:
-			iFirstSpawn = iGreece
-		elif utils.getScenario() == i600AD:
-			iFirstSpawn = iArabia
-		else:
-			iFirstSpawn = iAmerica
-			
-		for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
+		for iLoopCiv in [iPlayer for iPlayer in range(iNumMajorPlayers) if tBirth[iPlayer] > utils.getScenarioStartYear()]:
 			if iGameTurn >= getTurnForYear(tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(tBirth[iLoopCiv]) + 6:
 				self.initBirth(iGameTurn, tBirth[iLoopCiv], iLoopCiv)
 
@@ -2441,6 +2434,10 @@ class RiseAndFall:
 
 
 	def createStartingUnits(self, iCiv, tPlot):
+		if iCiv == iChina:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(iMilitia, iCiv, tPlot, 1)
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 1)
@@ -2893,7 +2890,9 @@ class RiseAndFall:
 
 				
 	def createStartingWorkers( self, iCiv, tPlot ):
-		if iCiv == iIndia:
+		if iCiv == iChina:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
+		elif iCiv == iIndia:
 			#utils.makeUnit(iPunjabiWorker, iCiv, tPlot, 2)
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iGreece:

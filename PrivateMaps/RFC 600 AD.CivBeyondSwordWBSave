@@ -13,13 +13,13 @@ BeginTeam
 	TeamID=0, (Egypt)
 EndTeam
 BeginTeam
-	TeamID=1, (China)
+	TeamID=1, (Babylonia)
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
+	TeamID=2, (Harappa)
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
+	TeamID=3, (China)
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -168,6 +168,20 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=1
+	LeaderType=LEADER_HAMMURABI
+	CivType=CIVILIZATION_BABYLONIA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=2
+	LeaderType=LEADER_VATAVELLI
+	CivType=CIVILIZATION_HARAPPANS
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=3
 	LeaderType=LEADER_TAIZONG
 	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
@@ -178,20 +192,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=2
-	LeaderType=LEADER_HAMMURABI
-	CivType=CIVILIZATION_BABYLONIA
-	PlayableCiv=0
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=3
-	LeaderType=LEADER_VATAVELLI
-	CivType=CIVILIZATION_HARAPPANS
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -39220,31 +39220,31 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 (	BeginUnit)
-(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=1, (China))
+(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
+(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
+(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
+(		UnitType=UNIT_SWORDSMAN, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
+(		UnitType=UNIT_SWORDSMAN, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China))
+(		UnitType=UNIT_SPEARMAN, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=1, (China))
+(		UnitType=UNIT_ARCHER, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
+(		UnitType=UNIT_WORKER, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
+(		UnitType=UNIT_WORKER, UnitOwner=3, (China))
 (	EndUnit)
 	BeginCity
 		CityOwner=46, (China)
