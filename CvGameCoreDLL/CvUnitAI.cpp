@@ -1722,7 +1722,7 @@ void CvUnitAI::AI_barbAttackMove()
 
 	if (plot()->isGoody())
 	{
-		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) == 1)
+		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) <= 2)
 		{
 			getGroup()->pushMission(MISSION_SKIP);
 			return;

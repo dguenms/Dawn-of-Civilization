@@ -2740,12 +2740,6 @@ int CvTeam::getCivilizationResearchModifier() const
 
 	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
-	// Maya UP
-	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= ERA_CLASSICAL)
-	{
-		if (getLeaderID() == MAYA) iCivModifier -= 50; // Maya UP
-	}
-
 	// nerf late game China
 	if (getLeaderID() == CHINA)
 	{

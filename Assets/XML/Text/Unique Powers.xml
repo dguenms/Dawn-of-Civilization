@@ -563,19 +563,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
-		<English>The Power of Astronomy:</English>
-		<French>Le pouvoir de l'astronomie :</French>
-		<German>Die Macht der Astronomie:</German>
-		<Italian>Il potere dell'astronomia:</Italian>
-		<Spanish>El poder de la astronom&#237;a:</Spanish>
+		<English>The Power of the Long Count:</English>
+		<French>The Power of the Long Count:</French>
+		<German>Die Macht der Langen Z&#228;hlung:</German>
+		<Italian>The Power of the Long Count:</Italian>
+		<Spanish>The Power of the Long Count:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
-		<English>-50% research cost until beginning of the Middle Ages</English>
-		<French>-50 % sur les co&#251;ts de recherche jusqu'au d&#233;but du Moyen &#194;ge</French>
-		<German>-50% Forschungskosten bis zum Anfang des Mittelalters</German>
-		<Italian>-50% ai costi di ricerca fino alla fine del Medioevo</Italian>
-		<Spanish>-50% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
+		<English>Cities receive additional food whenever a technology is discovered before the Middle Ages</English>
+		<French>Cities receive additional food whenever a technology is discovered before the Middle Ages</French>
+		<German>St&#228;dte erhalten zus&#228;tzliche Nahrung f&#252;r jede Technologie, die vor dem Mittelalter entdeckt wird</German>
+		<Italian>Cities receive additional food whenever a technology is discovered before the Middle Ages</Italian>
+		<Spanish>Cities receive additional food whenever a technology is discovered before the Middle Ages</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>

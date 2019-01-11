@@ -807,6 +807,14 @@ class CvRFCEventHandler:
 			elif iPlayer == iHolyRome and iEra == iRenaissance:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
 				
+		# Maya UP: +20 food when a city is discovered before the medieval era
+		if iPlayer == iMaya and not pMaya.isReborn() and iEra < iMedieval:
+			if pMaya.getNumCities() > 0:
+				iFood = 20 / pMaya.getNumCities()
+				for city in utils.getCityList(iMaya):
+					city.changeFood(iFood)
+				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_MAYA_UP_EFFECT", (gc.getTechInfo(iTech).getText(), iFood)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+				
 		# Spain's core extends when reaching the Renaissance and there are no Moors in Iberia
 		# at the same time, the Moorish core relocates to Africa
 		if iPlayer == iSpain and iEra == iRenaissance and not utils.isReborn(iSpain):

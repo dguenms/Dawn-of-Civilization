@@ -2993,6 +2993,14 @@
 		<Spanish>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MAYA_UP_EFFECT</Tag>
+		<English>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</English>
+		<French>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</French>
+		<German>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</German>
+		<Italian>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Italian>
+		<Spanish>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
