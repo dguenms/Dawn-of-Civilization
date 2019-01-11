@@ -807,7 +807,7 @@ class CvRFCEventHandler:
 			elif iPlayer == iHolyRome and iEra == iRenaissance:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
 				
-		# Maya UP: +20 food when a city is discovered before the medieval era
+		# Maya UP: +20 food when a tech is discovered before the medieval era
 		if iPlayer == iMaya and not pMaya.isReborn() and iEra < iMedieval:
 			if pMaya.getNumCities() > 0:
 				iFood = 20 / pMaya.getNumCities()

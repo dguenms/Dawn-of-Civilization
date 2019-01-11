@@ -1684,7 +1684,7 @@ def onTechAcquired(iPlayer, iTech):
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkEraGoal(iLoopPlayer, lEras): win(iLoopPlayer, iGoal)
 				
-	# first Maya goal: discover Calendar by 600 AD
+	# first Maya goal: discover Calendar by 200 AD
 	if iPlayer == iMaya:
 		if not pMaya.isReborn() and isPossible(iMaya, 0):
 			if iTech == iCalendar:
