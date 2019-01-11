@@ -1851,35 +1851,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_NOTURN</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
@@ -1907,11 +1907,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3</Tag>
-		<English>Make contact with a European civilization before they discover America</English>
+		<English>Make contact with a European civilization before any European discovers America</English>
 		<French>&#201;tablir un contact avec une civilisation europ&#233;enne avant qu'elle ne d&#233;couvre l'Am&#233;rique</French>
-		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor diese Amerika entdecken</German>
-		<Italian>Make contact with a European civilization before they discover America</Italian>
-		<Spanish>Make contact with a European civilization before they discover America</Spanish>
+		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor eine von ihnen Amerika entdeckt</German>
+		<Italian>Make contact with a European civilization before any European discovers America</Italian>
+		<Spanish>Make contact with a European civilization before any European discovers America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
