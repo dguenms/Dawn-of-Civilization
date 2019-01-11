@@ -213,7 +213,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -375,7 +375,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -437,7 +437,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -581,7 +581,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -618,7 +618,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -655,7 +655,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -977,7 +977,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -1129,7 +1129,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -1167,7 +1167,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -1325,7 +1325,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BLOOMERY</PrereqTech>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
