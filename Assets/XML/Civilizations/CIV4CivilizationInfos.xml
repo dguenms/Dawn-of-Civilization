@@ -306,9 +306,9 @@
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_AZTEC</Type>
-			<Description>TXT_KEY_CIV_AZTEC_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_AZTEC_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_AZTEC_ADJECTIVE</Adjective>
+			<Description>TXT_KEY_CIV_AZTECS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_AZTECS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_AZTECS_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_AZTEC_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AZTEC</ArtDefineTag>

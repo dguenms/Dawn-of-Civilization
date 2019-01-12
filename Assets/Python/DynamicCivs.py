@@ -2007,7 +2007,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 		if bCityStates:
-			return "TXT_KEY_CIV_AZTEC_ALTEPETL"
+			return "TXT_KEY_CIV_AZTECS_ALTEPETL"
 				
 	elif iPlayer == iMughals:
 		if bResurrected:
