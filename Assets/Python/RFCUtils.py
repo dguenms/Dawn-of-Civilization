@@ -1836,6 +1836,7 @@ class RFCUtils:
 		return lUnits
 		
 	def variation(self, iVariation):
+		iVariation = self.getTurns(iVariation)
 		return gc.getGame().getSorenRandNum(2 * iVariation, 'Variation') - iVariation
 		
 	def relocateGarrisonToClosestCity(self, city):
