@@ -71,11 +71,11 @@
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURRENCE_POLYNESIA</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+		<DefineName>PLAYER_OCCURRENCE_HARAPPA</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURRENCE_HARAPPA</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_POLYNESIA</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
 	</Define>
 	<!-- Disable the respawn by setting the value to 0 -->
