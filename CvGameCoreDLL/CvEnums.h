@@ -1305,9 +1305,9 @@ enum PlayerTypes				// Exposed to Python
 {
 	NO_PLAYER = -1,
 	EGYPT,
-	CHINA,
 	BABYLONIA,
 	HARAPPA,
+	CHINA,
 	GREECE,
 	INDIA,
 	PHOENICIA,

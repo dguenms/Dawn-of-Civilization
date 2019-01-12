@@ -44,6 +44,10 @@ def initScenarioTechs(iScenario):
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
+	
+	if iPlayer == iChina and utils.getScenario() == i3000BC:
+		initTech(iPlayer, iProperty)
+		initTech(iPlayer, iAlloys)
 				
 def initTechs(iPlayer, lTechs):
 	pPlayer = gc.getPlayer(iPlayer)
