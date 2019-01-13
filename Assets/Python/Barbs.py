@@ -38,6 +38,7 @@ tMinorCities = (
 (100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
+(650, (75, 28), iIndependent, 'Barbara', 2, iArcher, 2),	# Berbera
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
@@ -48,6 +49,7 @@ tMinorCities = (
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (69, 52), iIndependent, 'Kyiv', 2, iCrossbowman, 2),		# Kiev
+(900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
 (990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
@@ -325,9 +327,10 @@ class Barbs:
 			lReligions = []
 			bForceSpawn = False
 			
-			if sName == 'Kyiv': lReligions = [iOrthodoxy, iCatholicism]
+			if sName == 'Kyiv': lReligions = [iOrthodoxy]
 			if iPlayer == iCeltia and utils.getScenario() != i3000BC: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
+			if sName in ['Berbera', 'Muqdisho']: lReligions = [iIslam]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
