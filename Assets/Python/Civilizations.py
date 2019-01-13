@@ -45,7 +45,7 @@ def initScenarioTechs(iScenario):
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
 	
-	if iPlayer == iChina and utils.getScenario() == i3000BC:
+	if iPlayer == iChina and utils.getScenario() == i3000BC and utils.getHumanID() != iPlayer:
 		initTech(iPlayer, iProperty)
 		initTech(iPlayer, iAlloys)
 				
@@ -143,9 +143,9 @@ lStartingTechs = [
 {
 iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
+iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
 iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
-iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
