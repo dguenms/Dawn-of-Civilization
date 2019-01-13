@@ -34456,16 +34456,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=45, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=46, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45, (Independent)
+		CityOwner=46, (Independent2)
 		CityName=Muqdisho
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34475,8 +34475,9 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player45Culture=100, (Independent)
+		Player46Culture=100, (Independent2)
 	EndCity
 	TeamReveal=23,25,30,39,45,46,
 EndPlot
