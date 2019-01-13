@@ -293,6 +293,14 @@ class Barbs:
 		if iGameTurn == getTurnForYear(-500):
 			gc.getMap().plot(19, 35).setImprovementType(iHut)
 			utils.makeUnitAI(iHolkan, iNative, (19, 35), UnitAITypes.UNITAI_ATTACK, 2)
+			
+		# Oromos in the Horn of Africa
+		if utils.isYearIn(1500, 1700):
+			iNumUnits = 1
+			if pEthiopia.isAlive():
+				iNumUnits += 1
+				if utils.isYearIn(1600, 1700): iNumUnits += 1
+			self.checkSpawn(iBarbarian, iOromoWarrior, iNumUnits, (69, 25), (74, 28), self.spawnInvaders, iGameTurn, 8, 3)
 				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):

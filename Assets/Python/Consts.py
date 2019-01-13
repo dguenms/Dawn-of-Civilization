@@ -834,7 +834,7 @@ iMadeireiro, iScout, iExplorer, iBandeirante, iSpy, iReligiousPersecutor, iJewis
 iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, 
 iVulture, iDogSoldier, iSwordsman, iJaguar, iLegion, iGallicWarrior, iAucac, iShotelai, iHeavySwordsman, iSamurai, 
 iHuscarl, iGhazi, iPombos, iSpearman, iHoplite, iSacredBand, iImmortal, iImpi, iHeavySpearman, iPikeman, 
-iLandsknecht, iArquebusier, iFirelancer, iTercio, iStrelets, iJanissary, iAskari, iQizilbash, iMohawk, iMusketeer, 
+iLandsknecht, iArquebusier, iFirelancer, iTercio, iStrelets, iJanissary, iOromoWarrior, iQizilbash, iMohawk, iMusketeer, 
 iMusketman, iRedcoat, iFusilier, iMinuteman, iRifleman, iGrenadier, iRocketeer, iGrenzer, iAlbionLegion, iAntiTank, 
 iInfantry, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, 
 iSkirmisher, iHolkan, iKelebolo, iLongbowman, iPatiyodha, iCrossbowman, iChokonu, iBalestriere, iChariot, iWarChariot, 
