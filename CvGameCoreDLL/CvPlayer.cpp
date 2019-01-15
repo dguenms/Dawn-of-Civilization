@@ -23172,6 +23172,19 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 		return true;
 	}
 
+	// Ethiopian UP: trade connection to all cities with state religion
+	if (getID() == ETHIOPIA)
+	{
+		ReligionTypes eStateReligion = getStateReligion();
+		if (eStateReligion != NO_RELIGION)
+		{
+			if (kOtherPlayer.getHasReligionCount(eStateReligion) > 0)
+			{
+				return true;
+			}
+		}
+	}
+
 	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()))
 	{
 		if (GET_TEAM(getTeam()).isVassal(kOtherPlayer.getTeam()))

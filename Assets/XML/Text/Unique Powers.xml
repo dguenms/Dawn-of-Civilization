@@ -275,19 +275,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
-		<English>The Power of Sovereignty:</English>
-		<French>Le pouvoir de la souverainet&#233; :</French>
-		<German>Die Macht der Souver&#228;nit&#228;t:</German>
-		<Italian>Il potere della sovranit&#224;:</Italian>
-		<Spanish>El poder de la soberan&#237;a:</Spanish>
+		<English>The Power of Communion:</English>
+		<French>The Power of Communion:</French>
+		<German>Die Macht der Kommunion:</German>
+		<Italian>The Power of Communion:</Italian>
+		<Spanish>The Power of Communion:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH</Tag>
-		<English>Land units receive +10% additional strength within cultural borders</English>
-		<French>Les unit&#233;s terrestres re&#231;oivent +10% de puissance au sein de vos fronti&#232;res culturelles</French>
-		<German>Landeinheiten erhalten +10% zus&#228;tzliche St&#228;rke innerhalb kultureller Grenzen</German>
-		<Italian>Le citt&#224; etiopi non possono essere richieste durante un congresso</Italian>
-		<Spanish>No se pueden pedir ciudades et&#237;opes en un Congreso</Spanish>
+		<English>Cities have a trade connection to all other cities with your state religion</English>
+		<French>Cities have a trade connection to all other cities with your state religion</French>
+		<German>St&#228;dte haben eine Handelsverbindung zu allen anderen St&#228;dten mit Ihrer Staatsreligion</German>
+		<Italian>Cities have a trade connection to all other cities with your state religion</Italian>
+		<Spanish>Cities have a trade connection to all other cities with your state religion</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA_TITLE</Tag>
