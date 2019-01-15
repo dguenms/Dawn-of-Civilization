@@ -21,7 +21,6 @@ def create(iPlayer, iUnit, (x, y)):
 
 def getAlias(iCiv, iType, iEra):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
-	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivIran: return iCivPersia
 	
 	return iCiv
@@ -160,6 +159,7 @@ iCivEgypt : {
 	iGreatEngineer : [
 		"Imhotep", # 27th BC
 		"Sneferu", # 27th BC
+		"Hemiunu", # 26th BC
 		"Senenmut", # 17th BC
 		"Ineni", # 15th BC
 		"Amenhotep", # 14th BC
@@ -1041,7 +1041,7 @@ iCivEthiopia : {
 		"Yusuf bin Ahmad al-Kawneyn", # 13th
 		iGlobal,
 		"Berhanu Nega", # 20th
-		"Eleni Gebre-Medhin", # 20th
+		"fEleni Gebre-Medhin", # 20th
 		"Mohammed Al Amoudi", # 20th
 	],
 	iGreatEngineer : [
@@ -1050,6 +1050,9 @@ iCivEthiopia : {
 		"Gebre Mesqel Lalibela", # 13th
 		iRenaissance,
 		"Fasiladas", # 17th
+		iGlobal,
+		"Simegnew Bekele", # 20th
+		"fSossina Haile", # 20th
 	],
 	iGreatStatesman : [
 		"Ezana", # 4th
@@ -1060,6 +1063,7 @@ iCivEthiopia : {
 		"Tewodros", # 19th
 		"Menelik", # 19th
 		iGlobal,
+		u"Gäbre-Heywät Baykädañ", # 20th
 		"Mengistu Haile Mariam", # 20th
 		"Meles Zenawi", # 20th
 	],
@@ -1079,6 +1083,7 @@ iCivEthiopia : {
 		"Yohannis", # 19th
 		"Alula Engida", # 19th
 		iGlobal,
+		"Habte Giyorgis Dinagde", # 20th
 		"Aman Andom", # 20th
 	],
 },
@@ -1576,8 +1581,11 @@ iCivVikings : {
 	],
 	iGreatSpy : [
 		"fBrita Tott", # 15th swedish/danish
+		"fAnna Maria Clodt", # 17th swedish
 		"fCharlotte Eckerman", # 18th swedish
 		u"fEva Löwen", # 18th swedish
+		iIndustrial,
+		u"Jørgen Jørgensen", # 19th danish
 		iGlobal,
 		"Carlos Adlercreutz", # 20th swedish
 		"Kai Henning Bothildsen Nielsen", # 20th danish
@@ -2255,6 +2263,7 @@ iCivFrance : {
 		u"Bertrandon de la Broquière", # 15th
 		iRenaissance,
 		"fCharlotte de Sauve", # 16th
+		u"fMarie Anne de La Trémoille", # 17th
 		"fCharlotte Corday", # 18th
 		"Pierre Beaumarchais", # 18th
 		u"Chevalier d'Éon", # 18th
@@ -2477,6 +2486,7 @@ iCivEngland : {
 	iGreatSpy : [
 		"Francis Walsingham", # 16th
 		"Guy Fawkes", # 16th
+		"Robert Poley", # 16th
 		"fElizabeth Alkin", # 17th
 		u"John André", # 18th
 		"Edward Bancroft", # 18th
@@ -2493,68 +2503,73 @@ iCivEngland : {
 		"Kim Philby", # 20th
 	],
 },
-iCivGermany : {
+iCivHolyRome : {
 	iGreatProphet : [
-		"fHildegard von Bingen", # 12th
 		"Albertus Magnus", # 13th
+		"fGertrud von Helfta", # 13th
 		"Jan Hus", # 14th
 		iRenaissance,
 		"Martin Luther", # 16th
+		"fArgula von Grumbach", # 16th
 		"Philip Melanchthon", # 16th
+		"fAnne Catherine Emmerich", # 18th
 		iIndustrial,
 		"Theodor Herzl", # 19th
+		"Rudolf Steiner", # 19th
 		iGlobal,
-		"Dietrich Bonhoeffer", # 20th
-		"fEdith Stein", # 20th
-		"Joseph Ratzinger", # 20th
+		u"Franz König", # 20th
 	],
 	iGreatArtist : [
 		"fRoswitha von Gandersheim", # 10th
+		"Walther von der Vogelweide", # 13th
 		u"Albrecht Dürer", # 15th
 		iRenaissance,
-		"Johann Sebastian Bach", # 17th
+		"Johann Sebastian Bach", # 18th
+		"Joseph Haydn", # 18th
 		"Ludwig van Beethoven", # 18th
 		"Wolfgang Amadeus Mozart", # 18th
 		"Johann Wolfgang von Goethe", # 18th
 		"Friedrich Schiller", # 18th
 		iIndustrial,
-		"fClara Schumann", # 19th
+		"Franz Liszt", # 19th
 		"Johann Strauss", # 19th
-		"Richard Wagner", # 19th
+		u"Antonín Dvorák", # 19th
+		"Gustav Mahler", # 19th
 		"Gustav Klimt", # 19th
 		iGlobal,
+		u"Arnold Schönberg", # 20th
+		"Rainer Maria Rilke", # 20th
+		"Franz Kafka", # 20th
 		"Stefan Zweig", # 20th
-		"Paul Klee", # 20th
-		"fLeni Riefenstahl", # 20th
-		"Leoreth", # 21st
+		"Egon Schiele", # 20th
+		"Fritz Lang", # 20th
 	],
 	iGreatScientist : [
+		"fHildegard von Bingen", # 12th
 		"Nikolaus von Kues", # 15th
+		"Konrad Celtes", # 15th
 		iRenaissance,
 		"Theophrastus von Hohenheim", # 16th
 		"Gerhard Mercator", # 16th
 		"Johannes Kepler", # 17th
 		"Gottfried Leibniz", # 17th
-		"Leonhard Euler", # 18th
-		"fCaroline Herschel", # 18th
 		iIndustrial,
-		"Alexander von Humboldt", # 19th
-		u"Carl Friedrich Gauß", # 19th
 		"Ignaz Semmelweis", # 19th
 		"Gregor Mendel", # 19th
-		"Ernst Haeckel", # 19th
 		"Sigmund Freud", # 19th
 		iGlobal,
-		"Albert Einstein", # 20th
-		"Werner Heisenberg", # 20th
-		"fEmmy Noether", # 20th
-		"Max Planck", # 20th
-		u"Erwin Schrödinger", # 20th
 		"fLise Meitner", # 20th
+		u"Erwin Schrödinger", # 20th
+		"Ludwig Wittgenstein", # 20th
+		u"Albert Szent-Györgyi", # 20th
+		"Wolfgang Pauli", # 20th
+		u"Kurt Gödel", # 20th
 	],
 	iGreatMerchant : [
+		"Hildebrand Veckinchusen", # 14th
 		"Jakob Fugger", # 15th
 		iRenaissance,
+		"Bartholomeus Welser", # 16th
 		"fBarbara Uthmann", # 16th
 		"Johann Hinrich Gossler", # 18th
 		"Mayer Amschel Rothschild", # 18th
@@ -2563,14 +2578,118 @@ iCivGermany : {
 		"Carl Menger", # 19th
 		iGlobal,
 		"Joseph Schumpeter", # 20th
-		"fMelitta Bentz", # 20th
 		"Ludwig von Mises", # 20th
+		"Ferdinand Anton Ernst Porsche", # 20th
 	],
 	iGreatEngineer : [
 		"Heinrich Parler", # 14th
 		"Peter Parler", # 14th
+		"Johannes Gutenberg", # 15th
+		"Benedikt Ried", # 15th
 		iRenaissance,
+		"Elias Holl", # 17th
+		"Balthasar Neumann", # 18th
 		"Johann Lukas von Hildebrandt", # 18th
+		iIndustrial,
+		"Alois Negrelli", # 19th
+		iGlobal,
+		"Friedensreich Hundertwasser", # 20th
+	],
+	iGreatStatesman : [
+		"Heinrich der Vogler", # 10th
+		"Hermann von Salza", # 12th
+		iRenaissance,
+		"Nikolaus Georg von Reigersberg", # 17th
+		u"Heinrich von Brühl", # 18th
+		iIndustrial,
+		u"István Széchenyi", # 19th
+		"Klemens von Metternich", # 19th
+		"Lajos Kossuth", # 19th
+		"Friedrich Ferdinand von Beust", # 19th
+		"fBertha von Suttner", # 19th
+		iGlobal,
+		"Karl Renner", # 20th
+		"Richard von Coudenhove-Kalergi", # 20th
+		"Kurt Waldheim", # 20th
+	],
+	iGreatGeneral : [
+		u"Otto der Große", # 10th
+		u"Heinrich der Löwe", # 12th
+		iRenaissance,
+		u"Götz von Berlichingen", # 16th
+		"Albrecht von Wallenstein", # 17th
+		"Eugen von Savoyen", # 17th
+		iIndustrial,
+		"Josef Wenzel Radetzky von Radetz", # 19th
+		u"Karl von Österreich-Teschen", # 19th
+		"Wilhelm von Tegetthoff", # 19th
+		iGlobal,
+		u"Franz Conrad von Hötzendorf", # 20th
+	],
+	iGreatSpy : [
+		"fAgnes Le Louchier", # 17th
+		iIndustrial,
+		"Alfred Redl", # 19th
+		iGlobal,
+		"fStephanie von Hohenlohe", # 20th
+		"Wilhelm Franz von Habsburg-Lothringen", # 20th
+	],
+},
+iCivGermany : {
+	iGreatProphet : [
+		"Moses Mendelssohn", # 18th
+		iIndustrial,
+		"Friedrich Nietzsche", # 19th
+		"Adolph Kolping", # 19th
+		iGlobal,
+		"Dietrich Bonhoeffer", # 20th
+		"fEdith Stein", # 20th
+		"Joseph Ratzinger", # 20th
+	],
+	iGreatArtist : [
+		"Carl Philipp Emanuel Bach", # 18th
+		"Gotthold Ephraim Lessing", # 18th
+		iIndustrial,
+		"Caspar David Friedrich", # 19th
+		"Felix Mendelssohn", # 19th
+		"fClara Schumann", # 19th
+		"Richard Wagner", # 19th
+		iGlobal,
+		"Thomas Mann", # 20th
+		"Hermann Hesse", # 20th
+		"Paul Klee", # 20th
+		"fLeni Riefenstahl", # 20th
+		u"Günter Grass", # 20th
+		"Leoreth", # 21st
+	],
+	iGreatScientist : [
+		"Leonhard Euler", # 18th
+		"Johann Heinrich Lambert", # 18th
+		"fCaroline Herschel", # 18th
+		iIndustrial,
+		"Alexander von Humboldt", # 19th
+		"Georg Wilhelm Friedrich Hegel", # 19th
+		u"Carl Friedrich Gauß", # 19th
+		"Ernst Haeckel", # 19th
+		u"Wilhelm Röntgen", # 19th
+		iGlobal,
+		"Albert Einstein", # 20th
+		"Werner Heisenberg", # 20th
+		"fEmmy Noether", # 20th
+		"Max Planck", # 20th
+	],
+	iGreatMerchant : [
+		"Johann Philipp Graumann", # 18th
+		"Johann Ernst Gotzkowsky", # 18th
+		iIndustrial,
+		u"Gerson von Bleichröder", # 19th
+		"Marcus Goldman", # 19th
+		iGlobal,
+		"fMelitta Bentz", # 20th
+	],
+	iGreatEngineer : [
+		"Georg Wenzeslaus von Knobelsdorff", # 18th
+		"Carl Gotthard Langhans", # 18th
 		iIndustrial,
 		"Alfred Krupp", # 19th
 		"Nikolaus Otto", # 19th
@@ -2580,42 +2699,40 @@ iCivGermany : {
 		"Ferdinand Porsche", # 20th
 		"August Horch", # 20th
 		"Ludwig Mies van der Rohe", # 20th
-		"Friedensreich Hundertwasser", # 20th
+		"Konrad Zuse", # 20th
+		"Wernher von Braun", # 20th
 	],
 	iGreatStatesman : [
+		"Jakob Friedrich von Bielfeld", # 18th
 		"Immanuel Kant", # 18th
+		"Heinrich Friedrich Karl vom Stein", # 18th
 		iIndustrial,
-		"Heinrich Friedrich Karl vom Stein", # 19th
-		"Klemens von Metternich", # 19th
 		"Karl Marx", # 19th
-		"fBertha von Suttner", # 19th
 		"Wilhelm Liebknecht", # 19th
 		"Friedrich Ebert", # 19th
 		"fRosa Luxemburg", # 19th
 		iGlobal,
 		"Konrad Adenauer", # 20th
 		"fHannah Arendt", # 20th
+		"Willy Brandt", # 20th
 		"Helmut Kohl", # 20th
 	],
 	iGreatGeneral : [
-		u"Otto der Große", # 10th
-		iRenaissance,
-		"Albrecht von Wallenstein", # 17th
-		"Eugen von Savoyen", # 17th
 		u"Gebhard Leberecht von Blücher", # 18th
+		"Gerhard von Scharnhorst", # 18th
 		iIndustrial,
 		"Carl von Clausewitz", # 19th
+		"Helmuth von Moltke", # 19th
 		"Paul von Hindenburg", # 19th
 		iGlobal,
+		"Erich von Manstein", # 20th
 		"Erwin Rommel", # 20th
 		"Heinz Guderian", # 20th
 	],
 	iGreatSpy : [
 		u"Christian Andreas Käsebier", # 18th
-		iIndustrial,
 		"Georg Klindworth", # 19th
 		"Wilhelm Stieber", # 19th
-		"Alfred Redl", # 19th
 		"fMaria de Victorica", # 19th
 		iGlobal,
 		u"fElsbeth Schragmüller", # 20th
@@ -3205,6 +3322,7 @@ iCivItaly : {
 	],
 	iGreatSpy : [
 		"Andrea Gritti", # 15th
+		"Petros Lantzas", # 16th
 		"Gaspar Graziani", # 17th
 		"Giacomo Casanova", # 18th
 		iGlobal,
@@ -3476,6 +3594,8 @@ iCivOttomans : {
 		"Ismail Enver", # 20th
 	],
 	iGreatSpy : [
+		"Petar Ovcarevic", # 16th
+		iGlobal,
 		u"Süleyman Askerî", # 20th
 		"fDespina Storch", # 20th
 	],
@@ -3688,6 +3808,8 @@ iCivNetherlands : {
 		"Henri Winkelman", # 20th
 	],
 	iGreatSpy : [
+		"fEtta Palm d'Aelders", # 18th
+		iIndustrial,
 		"fJohanna Brandt", # 19th
 		"Christiaan Snouck Hurgronje", # 19th
 		iGlobal,
@@ -3742,9 +3864,14 @@ iCivAmerica : {
 		"John D. Rockefeller", # 19th
 		"Andrew Carnegie", # 19th
 		"fHetty Green", # 19th
+		"John Pierpont Morgan", # 19th
 		iGlobal,
 		"fHelena Rubinstein", # 20th
 		"William Edward Boeing", # 20th
+		"Walt Disney", # 20th
+		"Ray Kroc", # 20th
+		"Thomas Watson", # 20th
+		"Sam Walton", # 20th
 		"Bill Gates", # 20th
 	],
 	iGreatEngineer : [
@@ -3778,12 +3905,16 @@ iCivAmerica : {
 	],
 	iGreatGeneral : [
 		"Andrew Jackson", # 19th
+		"Winfield Scott", # 19th
 		"Ulysses S. Grant", # 19th
 		"Robert E. Lee", # 19th
 		iGlobal,
+		"John J. Pershing", # 20th
 		"Dwight D. Eisenhower", # 20th
 		"George Patton", # 20th
 		"Douglas MacArthur", # 20th
+		"Matthew Ridgway", # 20th
+		"Norman Schwarzkopf", # 20th
 	],
 	iGreatSpy : [
 		"Benjamin Tallmadge", # 18th
