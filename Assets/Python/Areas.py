@@ -112,7 +112,7 @@ tCapitals = (
 (60, 44), # Rome
 (22, 35), # Tikal
 (91, 30), # Thanjavur
-(72, 29), # Aksum
+(72, 30), # Aksum
 (109, 46), # Seoul
 (68, 45), # Constantinople
 (113, 45), # Kyoto
