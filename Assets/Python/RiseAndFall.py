@@ -813,7 +813,7 @@ class RiseAndFall:
 				sta.completeCollapse(iGreece)
 				
 		if iGameTurn == getTurnForYear(-1300) + utils.variation(10):
-			if not pHarappa.isHuman():
+			if pHarappa.isAlive() and not pHarappa.isHuman():
 				sta.completeCollapse(iHarappa)
 			
 		#Colonists
