@@ -4221,6 +4221,7 @@ iCivCanada : {
 		"Tom Thomson", # 19th
 		u"Émile Nelligan", # 19th
 		iGlobal,
+		"fLucy Maud Montgomery", # 20th
 		"Lawren Harris", # 20th
 		"fEmily Carr", # 20th
 		"Jean-Paul Riopelle", # 20th
