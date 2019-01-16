@@ -2588,11 +2588,14 @@ iCivHolyRome : {
 		"Benedikt Ried", # 15th
 		iRenaissance,
 		"Elias Holl", # 17th
+		"Johann Bernhard Fischer von Erlach", # 17th
 		"Balthasar Neumann", # 18th
 		"Johann Lukas von Hildebrandt", # 18th
 		iIndustrial,
 		"Alois Negrelli", # 19th
+		"Carl Auer von Welsbach", # 19th
 		iGlobal,
+		u"fMargarete Schütte-Lihotzky", # 20th
 		"Friedensreich Hundertwasser", # 20th
 	],
 	iGreatStatesman : [
@@ -2638,6 +2641,7 @@ iCivHolyRome : {
 iCivGermany : {
 	iGreatProphet : [
 		"Moses Mendelssohn", # 18th
+		"Friedrich Schleiermacher", # 18th
 		iIndustrial,
 		"Friedrich Nietzsche", # 19th
 		"Adolph Kolping", # 19th
@@ -2682,16 +2686,20 @@ iCivGermany : {
 		"Johann Philipp Graumann", # 18th
 		"Johann Ernst Gotzkowsky", # 18th
 		iIndustrial,
+		"Nathan Mayer Rothschild", # 19th
 		u"Gerson von Bleichröder", # 19th
 		"Marcus Goldman", # 19th
 		iGlobal,
 		"fMelitta Bentz", # 20th
+		"Adolf Dassler", # 20th
+		"Philip Rosenthal", # 20th
 	],
 	iGreatEngineer : [
 		"Georg Wenzeslaus von Knobelsdorff", # 18th
 		"Carl Gotthard Langhans", # 18th
 		iIndustrial,
 		"Alfred Krupp", # 19th
+		"Werner von Siemens", # 19th
 		"Nikolaus Otto", # 19th
 		"Gottlieb Daimler", # 19th
 		"Carl Benz", # 19th
