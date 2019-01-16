@@ -14546,13 +14546,30 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 bool CvUnit::canGreatMission(const CvPlot* pPlot) const
 {
-	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) return false;
+	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) 
+	{
+		return false;
+	}
 
-	if (GET_PLAYER(getOwner()).getStateReligion() == NO_RELIGION) return false;
+	if (!pPlot->isCity())
+	{
+		return false;
+	}
 
-	if (!pPlot->isCity()) return false;
+	if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION) 
+	{
+		return true;
+	}
 
-	return true;
+	for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		if (GC.getGame().isReligionFounded((ReligionTypes)iI) && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 bool CvUnit::greatMission()
@@ -14565,6 +14582,18 @@ bool CvUnit::greatMission()
 	int iNumCities = 4 + GC.getGame().getSorenRandNum(3, "Great Mission");
 	iNumCities = std::max(iNumCities, GC.getMap().getArea(getArea())->getCitiesPerPlayer(getOwner()));
 	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
+
+	if (eReligion == NO_RELIGION)
+	{
+		for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			if (plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
+			{
+				eReligion = (ReligionTypes)iI;
+				break;
+			}
+		}
+	}
 
 	CvPlot* pSpreadPlot;
 	CvCity* pSpreadCity;
