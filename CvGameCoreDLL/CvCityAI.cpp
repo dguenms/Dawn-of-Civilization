@@ -10294,10 +10294,15 @@ BuildingTypes CvCityAI::AI_bestAdvancedStartBuilding(int iPass)
 }
 
 // Leoreth: return first non-state religion to make it work for now
-ReligionTypes CvCityAI::AI_getPersecutionReligion()
+ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion)
 {
 	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
+		if (eIgnoredReligion == iI)
+		{
+			continue;
+		}
+
 		if (GET_PLAYER(getOwner()).getStateReligion() != iI)
 		{
 			if (GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI) < 0)

@@ -14587,7 +14587,7 @@ bool CvUnit::greatMission()
 	{
 		for (int iI = 0; iI < NUM_RELIGIONS; iI++)
 		{
-			if (plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
+			if (!GC.getReligionInfo((ReligionTypes)iI).isLocal() && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
 			{
 				eReligion = (ReligionTypes)iI;
 				break;
@@ -14597,6 +14597,7 @@ bool CvUnit::greatMission()
 
 	CvPlot* pSpreadPlot;
 	CvCity* pSpreadCity;
+	ReligionTypes eRemovedReligion;
 	int iSpreads = 0;
 
 	// spread to eligible cities
@@ -14616,7 +14617,11 @@ bool CvUnit::greatMission()
 
 		if (pSpreadCity == NULL) break;
 
-		pSpreadCity->removeReligion(pSpreadCity->AI_getPersecutionReligion());
+		eRemovedReligion = pSpreadCity->AI_getPersecutionReligion(eReligion);
+
+		if (eRemovedReligion == NO_RELIGION) continue;
+
+		pSpreadCity->removeReligion(eRemovedReligion);
 	}
 
 	if (plot()->isActiveVisible(false))
