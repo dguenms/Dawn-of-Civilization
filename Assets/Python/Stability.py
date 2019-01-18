@@ -1812,6 +1812,7 @@ def setStateReligion(iCiv):
 	
 	for city in lCities:
 		for iReligion in range(iNumReligions):
+			if gc.getReligionInfo(iReligion).isLocal() and city.plot().getSpreadFactor(iReligion) != RegionSpreadTypes.REGION_SPREAD_CORE: continue
 			if city.isHasReligion(iReligion): lReligions[iReligion] += 1
 			
 	iHighestEntry = utils.getHighestEntry(lReligions)
