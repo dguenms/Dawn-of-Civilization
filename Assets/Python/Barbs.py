@@ -35,10 +35,10 @@ tMinorCities = (
 (100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
-(100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
+(100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
+(200, (75, 28), iIndependent, 'Barbara', 2, iArcher, 2),	# Berbera
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
-(650, (75, 28), iIndependent, 'Barbara', 2, iArcher, 2),	# Berbera
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
@@ -338,7 +338,7 @@ class Barbs:
 			if sName == 'Kyiv': lReligions = [iOrthodoxy]
 			if iPlayer == iCeltia and utils.getScenario() != i3000BC: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
-			if sName in ['Berbera', 'Muqdisho']: lReligions = [iIslam]
+			if sName == 'Muqdisho': lReligions = [iIslam]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
