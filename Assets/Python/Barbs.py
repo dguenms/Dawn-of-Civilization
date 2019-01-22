@@ -37,7 +37,7 @@ tMinorCities = (
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
-(200, (75, 28), iIndependent, 'Barbara', 2, iArcher, 2),	# Berbera
+(200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
