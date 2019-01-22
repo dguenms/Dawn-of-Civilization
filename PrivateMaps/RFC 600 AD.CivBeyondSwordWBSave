@@ -27258,6 +27258,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=26
+	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -28068,7 +28069,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	BonusType=BONUS_COFFEE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot

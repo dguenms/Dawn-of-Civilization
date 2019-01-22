@@ -32428,13 +32428,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=26
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_COFFEE
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=45,46,
 EndPlot
 BeginPlot
 	x=70,y=27
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=45, (Independent)
+		CityName=Bonga
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_ISLAM
+		Player45Culture=25, (Independent)
+	EndCity
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=45,46,
@@ -33448,9 +33467,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	BonusType=BONUS_COFFEE
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=36,45,46,
