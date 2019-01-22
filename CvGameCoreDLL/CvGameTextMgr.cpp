@@ -3182,16 +3182,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 
                     iModifier = pDefender->getExtraCombatPercent();
 
-					// Leoreth: Ethiopian UP: +10% strength for land units in own borders
-					if (pPlot != NULL)
-					{
-						if (pDefender->getOwnerINLINE() == ETHIOPIA && pDefender->getDomainType() == DOMAIN_LAND && pPlot->getOwnerINLINE() == ETHIOPIA)
-						{
-							iModifier += 10;
-						}
-					}
-
-                    if (iModifier != 0)
+					if (iModifier != 0)
                     {
                         szString.append(NEWLINE);
                         szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_EXTRA_STRENGTH", iModifier));
