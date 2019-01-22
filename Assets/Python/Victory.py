@@ -623,12 +623,12 @@ def checkTurn(iGameTurn, iPlayer):
 		if isPossible(iEthiopia, 1):
 			iNumOrthodoxCathedrals = getNumBuildings(iEthiopia, iOrthodoxCathedral)
 			iGreatProphets = countSpecialists(iEthiopia, iSpecialistGreatProphet)
-			if iNumOrthodoxCathedrals >= 1 and iGreatProphets >= 3:
+			if data.bEthiopiaConverted and iNumOrthodoxCathedrals >= 1 and iGreatProphets >= 3:
 				win(iEthiopia, 1)
 		
-		if gc.getGame().getReligionGameTurnFounded(iOrthodoxy) >= 0 and iGameTurn == gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5):
-			if pEthiopia.getStateReligion() != iOrthodoxy:
-				lose(iEthiopia, 1)
+		if iGameTurn == gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5) + 1:
+			if not data.bEthiopiaConverted:
+				expire(iEthiopia, 1)
 				
 		if iGameTurn == getTurnForYear(1200):
 			expire(iEthiopia, 1)
@@ -2010,6 +2010,15 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 				if plot.isRevealed(iEuropean, False) and not plot.isWater():
 					lose(iMaya, 2)
 					return
+					
+def onPlayerChangeStateReligion(iPlayer, iStateReligion):
+
+	# second Ethiopian goal: convert to Orthodoxy five turns after it is founded
+	if iPlayer == iEthiopia:
+		if iStateReligion == iOrthodoxy:
+			if gc.getGame().isReligionFounded(iOrthodoxy):
+				if gc.getGame().getGameTurn() <= gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5):
+					data.bEthiopiaConverted = True
 			
 def checkReligiousGoals(iPlayer):
 	for i in range(3):
@@ -3603,7 +3612,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumIncense = pEthiopia.getNumAvailableBonuses(iIncense)
 			aHelp.append(getIcon(iNumIncense >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 3)))
 		elif iGoal == 1:
-			bConverted = pEthiopia.getStateReligion() == iOrthodoxy or (gc.getGame().getReligionGameTurnFounded(iOrthodoxy) >= 0 and gc.getGame().getGameTurn() > gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5))
+			bConverted = data.bEthiopiaConverted
 			iNumOrthodoxCathedrals = getNumBuildings(iEthiopia, iOrthodoxCathedral)
 			iGreatProphets = countSpecialists(iEthiopia, iSpecialistGreatProphet)
 			aHelp.append(getIcon(bConverted) + localText.getText("TXT_KEY_VICTORY_CONVERTED_TO_ORTHODOXY", ()))

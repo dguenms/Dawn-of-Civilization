@@ -393,6 +393,7 @@ class CvRFCEventHandler:
 			dc.onPlayerChangeStateReligion(iPlayer, iNewReligion)
 			
 		sta.onPlayerChangeStateReligion(iPlayer)
+		vic.onPlayerChangeStateReligion(iPlayer, iNewReligion)
 
 	def onCombatResult(self, argsList):
 		self.rnf.immuneMode(argsList)

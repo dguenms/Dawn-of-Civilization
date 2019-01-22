@@ -220,6 +220,8 @@ class GameData:
 		
 		self.bIgnoreAI = True
 		
+		self.bEthiopiaConverted = False
+		
 		self.lWonderBuilder = [-1] * (iNumBuildings - iBeginWonders)
 		self.lReligionFounder = [-1] * iNumReligions
 		self.lFirstDiscovered = [-1] * iNumTechs
