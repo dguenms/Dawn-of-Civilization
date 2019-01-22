@@ -2521,6 +2521,7 @@ iCivHolyRome : {
 	],
 	iGreatArtist : [
 		"fRoswitha von Gandersheim", # 10th
+		"Wolfram von Eschenbach", # 12th
 		"Walther von der Vogelweide", # 13th
 		u"Albrecht Dürer", # 15th
 		iRenaissance,
@@ -3346,13 +3347,21 @@ iCivMongols : {
 		"Sartaq", # 13th
 		iRenaissance,
 		"Zanabazar", # 17th
+		"Zaya Pandita", # 17th
+		iGlobal,
+		"Bogd Khan", # 20th
 	],
 	iGreatArtist : [
 		"Oghul Qaimish", # 13th
 		"Tolui", # 13th
+		"Guillaume Boucher", # 13th
 		"Uzbeg", # 14th
+		iIndustrial, 
+		"Dulduityn Danzanravjaa", # 19th
 		iGlobal,
-		"Siqin Gaowa", # 20th
+		"Marzan Sharav", # 20th
+		"Byambyn Rinchen", # 20th
+		"fSiqin Gaowa", # 20th
 	],
 	iGreatScientist : [
 		"Isa Khelmerchi", # 13th
@@ -3362,6 +3371,8 @@ iCivMongols : {
 		"Mandukhai", # 15th
 		iRenaissance,
 		"Nurhaci", # 16th
+		iGlobal, 
+		"Jamsrangiin Tseveen", # 20th
 	],
 	iGreatMerchant : [
 		"Hulagu", # 13th
@@ -3381,6 +3392,7 @@ iCivMongols : {
 		"Li Siguang", # 20th
 	],
 	iGreatStatesman : [
+		"fSorghaghtani Beki", # 13th
 		"Batu Khan", # 13th
 		"Urtu Saqal", # 13th
 		"fOrghana", # 13th
@@ -3389,13 +3401,19 @@ iCivMongols : {
 		"Dayan Khan", # 15th
 		iIndustrial,
 		"Balingiin Tserendorj", # 19th
+		iGlobal, 
+		"Damdin Sükhbaatar", # 20th
+		"Tsakhiagiin Elbegdorj", # 20th
 	],
 	iGreatGeneral : [
 		"Toghril", # 12th
-		"Ogodei", # 13th
+		"Subutai", # 13th
+		u"Ögodei", # 13th
 		"Chagatai", # 13th
 		u"Möngke", # 13th
 		"fKhutulun", # 13th
+		iGlobal, 
+		"Khorloogiin Choibalsan", # 20th
 	],
 },
 iCivAztecs : {
