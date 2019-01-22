@@ -13929,7 +13929,7 @@ bool CvCity::canHaveTradeRouteWith(const CvCity* pCity) const
 		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 		if (eStateReligion != NO_RELIGION)
 		{
-			if (pCity->isHasReligion(eStateReligion))
+			if (isHasReligion(eStateReligion) && pCity->isHasReligion(eStateReligion))
 			{
 				return true;
 			}
