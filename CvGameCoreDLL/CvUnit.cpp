@@ -14563,7 +14563,7 @@ bool CvUnit::canGreatMission(const CvPlot* pPlot) const
 
 	for (int iI = 0; iI < NUM_RELIGIONS; iI++)
 	{
-		if (GC.getGame().isReligionFounded((ReligionTypes)iI) && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
+		if (GC.getGame().isReligionFounded((ReligionTypes)iI) && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE && !GC.getReligionInfo((ReligionTypes)iI).isLocal())
 		{
 			return true;
 		}
