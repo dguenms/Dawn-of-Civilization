@@ -1117,4 +1117,16 @@
 		<Italian>Khosrow I</Italian>
 		<Spanish>Khosrow I</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_EZANA</Tag>
+		<English>Ezana</English>
+		<French>
+			<Text>Ezana</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ezana</German>
+		<Italian>Ezana</Italian>
+		<Spanish>Ezana</Spanish>
+	</TEXT>
 </Civ4GameText>

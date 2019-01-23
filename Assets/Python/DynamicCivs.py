@@ -532,7 +532,7 @@ dStartingLeaders = [
 	iMaya : iPacal,
 	iJapan : iKammu,
 	iTamils : iRajendra,
-	iEthiopia : iZaraYaqob,
+	iEthiopia : iEzana,
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
@@ -2163,6 +2163,8 @@ def leader(iPlayer):
 		
 	elif iPlayer == iEthiopia:
 		if iEra >= iIndustrial: return iHaileSelassie
+		
+		if iEra >= iMedieval: return iZaraYaqob
 		
 	elif iPlayer == iTamils:
 		if iEra >= iRenaissance: return iKrishnaDevaRaya

@@ -1708,6 +1708,10 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
+					<LeaderName>LEADER_EZANA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_ZARA_YAQOB</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>

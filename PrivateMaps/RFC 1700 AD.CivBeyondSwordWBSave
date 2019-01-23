@@ -283,7 +283,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=12
-	LeaderType=LEADER_ZARA_YAQOB
+	LeaderType=LEADER_EZANA
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT

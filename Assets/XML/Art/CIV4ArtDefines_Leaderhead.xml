@@ -424,11 +424,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ZARA_YAQOB</Type>
-			<Button>,Art/interface/LeaderHeads/Btn_LH_Mali_MansaMusa.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,2</Button>
-			<NIF>art/LeaderHeads/Zara Yaqob/Zara Yaqob.nif</NIF>
-			<KFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Zara Yaqob/Zara_Yaqob_NONSHADER.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob_BG.kfm</BackgroundKFM>
+			<Button>Art/Leaderheads/Zara_Yaqob/Button_Lalibela.dds</Button>
+			<NIF>Art/Leaderheads/Zara_Yaqob/asoka.nif</NIF>
+			<KFM>Art/Leaderheads/Zara_Yaqob/asoka.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Zara_Yaqob/asoka.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Zara_Yaqob/charlemagne_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_JIMMU</Type>
@@ -1013,6 +1013,14 @@
 			<KFM>art/LeaderHeads/Bumin/genghis_khan.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Bumin/genghis_khan_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Bumin/genghis_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_EZANA</Type>
+			<Button>,Art/interface/LeaderHeads/Btn_LH_Mali_MansaMusa.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,2</Button>
+			<NIF>art/LeaderHeads/Zara Yaqob/Zara Yaqob.nif</NIF>
+			<KFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Zara Yaqob/Zara_Yaqob_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
