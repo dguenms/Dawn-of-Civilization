@@ -31742,11 +31742,11 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_HAILE_SELASSIE</Type> <!-- Personality: Asoka -->
-			<Description>TXT_KEY_LEADER_HAILE_SELASSIE</Description>
-			<Civilopedia>TXT_KEY_LEADER_HAILE_SELASSIE_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_HAILE_SELASSIE</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<Type>LEADER_MENELIK</Type> <!-- Personality: Asoka -->
+			<Description>TXT_KEY_LEADER_MENELIK</Description>
+			<Civilopedia>TXT_KEY_LEADER_MENELIK_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_MENELIK</ArtDefineTag>
+			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>8</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -31769,7 +31769,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>20</iBuildUnitProb>
+			<iBuildUnitProb>40</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
@@ -31817,17 +31817,17 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
 			<ContactRands>

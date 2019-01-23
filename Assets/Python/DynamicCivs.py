@@ -2162,7 +2162,7 @@ def leader(iPlayer):
 		if tPlayer.isHasTech(iFeudalism): return iOdaNobunaga
 		
 	elif iPlayer == iEthiopia:
-		if iEra >= iIndustrial: return iHaileSelassie
+		if iEra >= iIndustrial: return iMenelik
 		
 		if iEra >= iMedieval: return iZaraYaqob
 		
