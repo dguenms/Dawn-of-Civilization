@@ -1702,6 +1702,7 @@ iCivArabia : {
 		"Muhammad ibn Abd al-Wahhab", # 18th
 		iIndustrial, 
 		"Muhammad Abduh", # 19th
+		"Abd al-Rahman al-Kawakibi", # 19th
 	],
 	iGreatArtist : [
 		"Ibn Muqla", # 10th
@@ -1774,6 +1775,7 @@ iCivArabia : {
 		iRenaissance,
 		"Rahmah ibn Jabir Al Jalhami", # 18th
 		iGlobal, 
+		"Yusuf al-'Azma", # 20th
 		"Abd al-Karim Qasim", # 20th
 	],
 	iGreatSpy : [
@@ -3537,10 +3539,13 @@ iCivOttomans : {
 	iGreatProphet : [
 		"Sheikh Bedreddin", # 14th
 		"Akshamsaddin", # 15th
+		"Otman Baba", # 15th
 		iRenaissance,
-		"Sabatai Zevi", # 17th
+		"Ebussuud Effendi", # 16th
+		"Sabbatai Zevi", # 17th
 		"Yaakov Culi", # 18th
 		iGlobal,
+		"Bartholomeos", # 20th
 		u"Fethullah Gülen", # 20th
 		u"Mustafa Çagrici", # 20th
 	],
@@ -3553,11 +3558,13 @@ iCivOttomans : {
 		u"Ahmet Nedîm Efendi", # 18th
 		"Abdullah Buhari", # 18th
 		iIndustrial,
+		"Hamparsum Limonciyan", # 19th
 		"Osman Hamdi Bey", # 19th
 		"fFatma Aliye Topuz", # 19th
 		iGlobal,
-		"fHalide Edib Adivar", # 20th
 		"Mehmet Akif Ersoy", # 20th
+		"fHalide Edib Adivar", # 20th
+		u"Nâzim Hikmet Ran", # 20th
 	],
 	iGreatScientist : [
 		"Qazi Zada", # 14th
@@ -3567,18 +3574,23 @@ iCivOttomans : {
 		u"Matrakçi Nasuh", # 16th
 		u"Takiyüddin", # 16th
 		u"Ibrahim Müteferrika", # 18th
+		iIndustrial, 
+		"Hasan Tahsini", # 19th
 		iGlobal,
 		"Cahit Arf", # 20th
 		"Oktay Sinanoglu", # 20th
 		u"Feza Gürsey", # 20th
-		"Aziz Sancar", # 21th
+		"Aziz Sancar", # 20th
 	],
 	iGreatMerchant : [
 		"Piri Reis", # 16th
 		"Seydi Ali Reis", # 16th
+		"Michael Kantakouzenos Seytanoglu", # 16th
+		"fEsther Handali", # 16th
 		u"Evliya Çelebi", # 17th
 		iIndustrial,
-		u"Abdülmecid", # 19th
+		"Ahmed Fethi", # 19th
+		"Calouste Gulbenkian", # 19th
 		iGlobal,
 		"Hormuzd Rassam", # 20th
 		"Nejat Eczacibashi", # 20th
@@ -3593,6 +3605,7 @@ iCivOttomans : {
 		u"Takiyüddin", # 16th
 		iIndustrial,
 		"Ishak Efendi", # 19th
+		"Garabet Amira Balyan", # 19th
 		iGlobal,
 		"Mimar Kemaleddin", # 20th
 		u"Ekmel Özbay", # 20th
@@ -3600,22 +3613,32 @@ iCivOttomans : {
 	iGreatStatesman : [
 		"Sheikh Edebali", # 13th
 		iRenaissance,
-		"Pargali Ibrahim Pasha", # 16th
+		"Pargali Ibrahim", # 16th
 		"fHurrem Sultan", # 16th
-		"Sokollu Mehmet Pasha", # 16th
+		"Sokollu Mehmet", # 16th
+		u"Köprülü Mehmed", # 17th
 		u"fKösem Sultan", # 17th
+		iIndustrial,
+		"Mustafa Resid", # 19th
+		u"Abdülmecid", # 19th
+		u"Mehmed Emin Âli", # 19th
+		"Ahmed Cevdet", # 19th
 		iGlobal,
 		u"Ismet Inönü", # 20th
 		u"Süleyman Demirel", # 20th
 	],
 	iGreatGeneral : [
 		"Orhan", # 14th
+		"Birinci Selim", # 15th
 		iRenaissance,
-		"Hayreddin Barbarossa", # 16th
-		"Selim", # 16th
+		"Barbaros Hayreddin", # 16th
 		"Turgut Reis", # 16th
-		"Kara Mustafa Pasha", # 17th
+		"Kara Mustafa", # 17th
+		iIndustrial, 
+		"Omar Latas", # 19th
+		"Osman Nuri", # 19th
 		iGlobal,
+		u"Fevzi Çakmak", # 20th
 		"fKara Fatma", # 20th
 		"Ismail Enver", # 20th
 	],
