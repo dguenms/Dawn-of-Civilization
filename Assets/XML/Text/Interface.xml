@@ -2711,7 +2711,7 @@
 		<Spanish>Cultural Control: expansion stability penalty</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE_HIGH</Tag>
+		<Tag>TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE</Tag>
 		<English>Cultural Control: severe expansion stability penalty</English>
 		<French>Cultural Control: severe expansion stability penalty</French>
 		<German>Cultural Control: severe expansion stability penalty</German>
