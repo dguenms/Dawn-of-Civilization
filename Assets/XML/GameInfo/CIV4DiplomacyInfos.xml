@@ -105,14 +105,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HAILE_SELASSIE</LeaderType>
+							<LeaderType>LEADER_MENELIK</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_HAILE_SELASSIE_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_MENELIK_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -744,6 +744,10 @@
 					<Leaders>
 						<Leader>
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1859,6 +1863,10 @@
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
@@ -2671,6 +2679,10 @@
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
@@ -2973,7 +2985,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HAILE_SELASSIE</LeaderType>
+							<LeaderType>LEADER_MENELIK</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2993,7 +3005,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HAILE_SELASSIE_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MENELIK_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -4060,6 +4072,10 @@
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes>
 						<Attitude>
@@ -4533,7 +4549,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HAILE_SELASSIE</LeaderType>
+							<LeaderType>LEADER_MENELIK</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4549,7 +4565,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HAILE_SELASSIE_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MENELIK_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -5481,6 +5497,10 @@
 					<Leaders>
 						<Leader>
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7341,6 +7361,10 @@
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers>
@@ -8372,6 +8396,10 @@
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers>
@@ -9364,6 +9392,10 @@
 					<Leaders>
 						<Leader>
 							<LeaderType>LEADER_ZARA_YAQOB</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_EZANA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
