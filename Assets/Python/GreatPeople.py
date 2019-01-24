@@ -2774,6 +2774,7 @@ iCivRussia : {
 		"Feofan Grek", # 14th
 		"Andrei Rublev", # 15th
 		iRenaissance,
+		"Antiokh Kantemir", # 18th
 		"Alexander Sumarokov", # 18th
 		"Fedot Shubin", # 18th
 		"Gavrila Derzhavin", # 18th
@@ -2872,7 +2873,7 @@ iCivRussia : {
 	iGreatSpy : [
 		"Fyodor Romodanovsky", # 17th
 		iIndustrial,
-		"Aleksandr Benkendorf", # 19th
+		"Alexander Benkendorf", # 19th
 		"Pyotr Rachkovsky", # 19th
 		iGlobal,
 		"Ilie Catarau", # 20th
