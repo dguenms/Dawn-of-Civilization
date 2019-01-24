@@ -34369,6 +34369,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=47
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
