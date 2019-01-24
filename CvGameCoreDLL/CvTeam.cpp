@@ -2740,12 +2740,6 @@ int CvTeam::getCivilizationResearchModifier() const
 
 	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
-	// Maya UP
-	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= ERA_CLASSICAL)
-	{
-		if (getLeaderID() == MAYA) iCivModifier -= 50; // Maya UP
-	}
-
 	// nerf late game China
 	if (getLeaderID() == CHINA)
 	{
@@ -4914,7 +4908,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 							{
 								if (!GC.getSpecialistInfo((SpecialistTypes)iJ).isNoGlobalEffects())
 								{
-									GET_PLAYER((PlayerTypes)iJ).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
 								}
 							}
 						}
@@ -4935,7 +4929,6 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						else if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
 						{
 							int iLoop;
-							CvCity* pCity;
 							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
 							{
 								pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 2);

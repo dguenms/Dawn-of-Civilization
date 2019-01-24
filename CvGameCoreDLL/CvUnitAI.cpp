@@ -1722,7 +1722,7 @@ void CvUnitAI::AI_barbAttackMove()
 
 	if (plot()->isGoody())
 	{
-		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) == 1)
+		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) <= 2)
 		{
 			getGroup()->pushMission(MISSION_SKIP);
 			return;
@@ -12476,7 +12476,7 @@ bool CvUnitAI::AI_pillage(int iBonusValueThreshold)
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()))
+		if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()) && !(pLoopPlot->isOwned() && GET_PLAYER(pLoopPlot->getOwner()).isMinorCiv()))
 		{
 			if (potentialWarAction(pLoopPlot))
 			{

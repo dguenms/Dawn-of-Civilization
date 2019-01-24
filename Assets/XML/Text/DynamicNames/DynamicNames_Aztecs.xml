@@ -2,7 +2,7 @@
 <!-- Aztecs -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_DESC</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC</Tag>
 		<English>The Aztecs</English>
 		<French>
 			<Text>Les Azt&#232;ques</Text>
@@ -26,7 +26,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_PEOPLES</Tag>
 		<English>Mexica Peoples</English>
 		<French>
 			<Text>Peuplades mexicatl</Text>
@@ -50,7 +50,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_DEFAULT</Tag>
 		<English>%s2 Triple Alliance</English>
 		<French>
 			<Text>Triple Alliance %s2</Text>
@@ -86,7 +86,7 @@
 		<Spanish>New Mexica Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_ALTEPETL</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
 		<English>Mexican Altepetl</English>
 		<French>
 			<Text>Altepetl mexicain</Text>
@@ -98,7 +98,7 @@
 		<Spanish>Mexican Altepetl</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_EMPIRE</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_EMPIRE</Tag>
 		<English>Aztec Empire</English>
 		<French>
 			<Text>Empire azt&#232;que</Text>
@@ -110,7 +110,7 @@
 		<Spanish>Aztec Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_ADJECTIVE</Tag>
 		<English>Aztec</English>
 		<French>
 			<Text>azt&#232;que:azt&#232;que:azt&#232;ques:azt&#232;ques</Text>
@@ -134,8 +134,8 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_SHORT_DESC</Tag>
-		<English>Aztec</English>
+		<Tag>TXT_KEY_CIV_AZTECS_SHORT_DESC</Tag>
+		<English>Aztecs</English>
 		<French>
 			<Text>Azt&#232;ques</Text>
 			<Gender>Male</Gender>

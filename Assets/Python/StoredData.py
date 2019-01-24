@@ -25,6 +25,8 @@ class PlayerData:
 	
 		# Rise and Fall
 		
+		self.bSpawned = False
+		
 		self.iColonistsAlreadyGiven = 0
 		self.iSpawnDelay = 0
 		self.iFlipsDelay = 0
@@ -217,6 +219,8 @@ class GameData:
 		# Victories
 		
 		self.bIgnoreAI = True
+		
+		self.bEthiopiaConverted = False
 		
 		self.lWonderBuilder = [-1] * (iNumBuildings - iBeginWonders)
 		self.lReligionFounder = [-1] * iNumReligions

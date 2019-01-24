@@ -196,11 +196,11 @@ class CvPediaBuilding:
 			screen.attachLabel(panel, "", "(")
 		
 		if iPrereq >= 0:
-			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, -1, False )
+			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, self.isStateReligionRequirement(iPrereq, [iStatePrereq, iOrStatePrereq]), False )
 
 		if iOrPrereq >= 0:
 			screen.attachLabel(panel, "", CyTranslator().getText("TXT_KEY_OR", ()))
-			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, -1, False )
+			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, self.isStateReligionRequirement(iPrereq, [iStatePrereq, iOrStatePrereq]), False )
 			
 		if iOrPrereq >= 0 and iStatePrereq >= 0:
 			screen.attachLabel(panel, "", ")")
@@ -229,6 +229,11 @@ class CvPediaBuilding:
 				if button:
 					screen.attachImageButton(panel, "", button, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION, gc.getPlayer(self.top.iActivePlayer).getCivilizationType(), 1, False)
 
+	
+	def isStateReligionRequirement(self, iPrereq, lStateReligions):
+		if iPrereq in lStateReligions: return 1
+		
+		return -1
 
 	def placeEffects(self):
 		screen = self.top.getScreen()

@@ -1084,7 +1084,9 @@ void CvCity::doTurn()
 /**	END                                                                  						**/
 /*************************************************************************************************/
 
-	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
+	doPlotCulture(false, getOwnerINLINE(), getModifiedCultureRate());
+
+	updateHappinessYield();
 
 	doProduction(bAllowNoProduction);
 
@@ -1178,8 +1180,6 @@ void CvCity::doTurn()
 			setWeLoveTheKingDay(false);
 		}
 	}
-
-	updateHappinessYield();
 
 	// Leoreth: update art style type once per turn
 	updateArtStyleType();
@@ -2158,6 +2158,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		{
 			bException = true;
 		}
+		else if ((iCapitalRegion == REGION_CENTRAL_ASIA && iRegion == REGION_PERSIA) || (iCapitalRegion == REGION_PERSIA && iRegion == REGION_CENTRAL_ASIA))
+		{
+			bException = true;
+		}
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
@@ -2243,7 +2247,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	// Leoreth: pagan buildings require no religion in the city
 	if (GC.getBuildingInfo(eBuilding).isPagan())
 	{
-		if ((!isHasReligion(JUDAISM) && !GET_PLAYER(getOwnerINLINE()).getStateReligion() == JUDAISM && getReligionCount() > 0) || getReligionCount() > 1)
+		if ((getReligionCount() > 0 && (!isHasReligion(JUDAISM) || GET_PLAYER(getOwnerINLINE()).getStateReligion() == JUDAISM)) || getReligionCount() > 1)
 		{
 			return false;
 		}
@@ -10494,13 +10498,14 @@ int CvCity::getHappinessYield(YieldTypes eIndex) const
 // Leoreth
 void CvCity::updateHappinessYield()
 {
-	int iHappinessDifference = std::min(getPopulation(), happyLevel() - unhappyLevel(0));
+	int iHappinessDifference = happyLevel() - unhappyLevel(0);
+	int iHappinessMultiplier = std::min(getPopulation(), abs(iHappinessDifference));
 
 	int iOldYield, iNewYield;
 	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		iOldYield = getHappinessYield((YieldTypes)iI);
-		iNewYield = iHappinessDifference > 0 ? abs(iHappinessDifference) * GET_PLAYER(getOwnerINLINE()).getHappinessExtraYield((YieldTypes)iI) : abs(iHappinessDifference) * GET_PLAYER(getOwnerINLINE()).getUnhappinessExtraYield((YieldTypes)iI);
+		iNewYield = iHappinessMultiplier * (iHappinessDifference > 0 ? GET_PLAYER(getOwnerINLINE()).getHappinessExtraYield((YieldTypes)iI) : GET_PLAYER(getOwnerINLINE()).getUnhappinessExtraYield((YieldTypes)iI));
 
 		if (iOldYield != iNewYield)
 		{
@@ -10537,6 +10542,27 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 	}
 
 	return iRate;
+}
+
+
+// Leoreth
+int CvCity::getModifiedCultureRateTimes100() const
+{
+	int iCultureTimes100 = getCommerceRateTimes100(COMMERCE_CULTURE);
+
+	if (iCultureTimes100 <= 400)
+	{
+		return iCultureTimes100;
+	}
+
+	return iCultureTimes100 * GET_PLAYER(getOwnerINLINE()).getModifier(MODIFIER_CULTURE) / 100;
+}
+
+
+// Leoreth
+int CvCity::getModifiedCultureRate() const
+{
+	return getModifiedCultureRateTimes100() / 100;
 }
 
 
@@ -12628,7 +12654,7 @@ void CvCity::setGreatPeopleUnitRate(UnitTypes eIndex, int iNewValue)
 
 void CvCity::changeGreatPeopleUnitRate(UnitTypes eIndex, int iChange)
 {
-	setGreatPeopleUnitRate(eIndex, (getGreatPeopleUnitRate(eIndex) + iChange));
+	setGreatPeopleUnitRate(eIndex, std::max(0, getGreatPeopleUnitRate(eIndex) + iChange));
 }
 
 
@@ -12788,47 +12814,15 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
 
 	int iMaxSpecialistCount = m_paiMaxSpecialistCount[eIndex];
-	
-	// srpt new Canadian UP
-	/*if (getOwnerINLINE() == CANADA)
-	{
-		int iMulticulturalism = 0;
-		for (int iI =  0; iI < NUM_RELIGIONS; iI++)
-		{
-			if ((GET_PLAYER(getOwnerINLINE()).getStateReligion() != ((ReligionTypes)iI)) && (isHasReligion((ReligionTypes)iI)))
-			{
-				iMulticulturalism += 1;
-			}
-		}
-		if ((eIndex == (SpecialistTypes)2) && (hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_THEATRE")))) // artist
-		{
-			iMaxSpecialistCount += iMulticulturalism;
-		}
-		if ((eIndex == (SpecialistTypes)3) && (hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_LIBRARY")))) // scientist
-		{
-			iMaxSpecialistCount += iMulticulturalism;
-		}
-	}*/
-	// srpt end
-				
-
-	// Leoreth: Wat Preah Pisnulok effect
-	/*if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)WAT_PREAH_PISNULOK) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
-	{
-		if (eIndex == (SpecialistTypes)2) // artist
-		{
-			iMaxSpecialistCount += m_paiMaxSpecialistCount[(SpecialistTypes)1]; // priest
-		}
-
-		if (eIndex == (SpecialistTypes)1) // priest
-		{
-			int iPriestsToArtists = max(0, getSpecialistCount((SpecialistTypes)2) - getFreeSpecialistCount((SpecialistTypes)2) - m_paiMaxSpecialistCount[(SpecialistTypes)2]);
-			iMaxSpecialistCount -= iPriestsToArtists;
-		}
-	}*/
 
 	// Leoreth: unlimited specialist effects now only double available specialists
 	if (GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex))
+	{
+		iMaxSpecialistCount *= 2;
+	}
+
+	// Leoreth: Korean UP
+	if (getOwnerINLINE() == KOREA && isCapital())
 	{
 		iMaxSpecialistCount *= 2;
 	}
@@ -13921,6 +13915,31 @@ void CvCity::clearTradeRoutes()
 }
 
 
+// Leoreth
+bool CvCity::canHaveTradeRouteWith(const CvCity* pCity) const
+{
+	if (GC.getDefineINT("IGNORE_PLOT_GROUP_FOR_TRADE_ROUTES"))
+	{
+		return true;
+	}
+
+	// Ethiopian UP: cities can trade with other cities of the same state religion
+	if (getOwnerINLINE() == ETHIOPIA)
+	{
+		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
+		if (eStateReligion != NO_RELIGION)
+		{
+			if (isHasReligion(eStateReligion) && pCity->isHasReligion(eStateReligion))
+			{
+				return true;
+			}
+		}
+	}
+
+	return pCity->plotGroup(getOwnerINLINE()) == plotGroup(getOwnerINLINE());
+}
+
+
 // XXX eventually, this needs to be done when roads are built/destroyed...
 void CvCity::updateTradeRoutes()
 {
@@ -13957,7 +13976,7 @@ void CvCity::updateTradeRoutes()
 					{
 						if (!(pLoopCity->isTradeRoute(getOwnerINLINE())) || (getTeam() == GET_PLAYER((PlayerTypes)iI).getTeam()))
 						{
-							if (pLoopCity->plotGroup(getOwnerINLINE()) == plotGroup(getOwnerINLINE()) || GC.getDefineINT("IGNORE_PLOT_GROUP_FOR_TRADE_ROUTES"))
+							if (canHaveTradeRouteWith(pLoopCity)) // Leoreth: includes Ethiopian UP
 							{
 // BUG - Fractional Trade Routes - start
 #ifdef _MOD_FRACTRADE
@@ -14759,16 +14778,7 @@ void CvCity::doGrowth()
 
 void CvCity::doCulture()
 {
-	if 	(getCommerceRate(COMMERCE_CULTURE) <= 4)
-	{
-		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
-		return;
-	}
-
-	PlayerTypes eOwner = getOwnerINLINE();
-	int iCultureModifier = GET_PLAYER(eOwner).getModifier(MODIFIER_CULTURE);
-
-	changeCultureTimes100(eOwner, getCommerceRateTimes100(COMMERCE_CULTURE) * iCultureModifier / 100, false, true);
+	changeCultureTimes100(getOwnerINLINE(), getModifiedCultureRateTimes100(), false, true);
 
 	// Leoreth: let culture of dead civilizations decay
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
@@ -15636,7 +15646,8 @@ void CvCity::doGreatPeople()
 		int iTotalGreatPeopleUnitProgress = 0;
 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
 		{
-			iTotalGreatPeopleUnitProgress += getGreatPeopleUnitProgress((UnitTypes)iI);
+			int iProgress = getGreatPeopleUnitProgress((UnitTypes)iI);
+			iTotalGreatPeopleUnitProgress += iProgress;
 		}
 
 		int iGreatPeopleUnitRand = GC.getGameINLINE().getSorenRandNum(iTotalGreatPeopleUnitProgress, "Great Person");

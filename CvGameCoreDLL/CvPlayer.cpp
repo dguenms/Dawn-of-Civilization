@@ -3711,7 +3711,7 @@ int CvPlayer::countOwnedBonuses(BonusTypes eBonus) const
 	//count bonuses inside city radius or easily claimed
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		iCount += pLoopCity->AI_countNumBonuses(eBonus, true, pLoopCity->getCommerceRate(COMMERCE_CULTURE) > 0, -1);
+		iCount += pLoopCity->AI_countNumBonuses(eBonus, true, pLoopCity->getModifiedCultureRate() > 0, -1);
 	}
 
 	return iCount;
@@ -23170,6 +23170,19 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 	if (getTeam() == kOtherPlayer.getTeam())
 	{
 		return true;
+	}
+
+	// Ethiopian UP: trade connection to all cities with state religion
+	if (getID() == ETHIOPIA)
+	{
+		ReligionTypes eStateReligion = getStateReligion();
+		if (eStateReligion != NO_RELIGION)
+		{
+			if (kOtherPlayer.getHasReligionCount(eStateReligion) > 0)
+			{
+				return true;
+			}
+		}
 	}
 
 	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()))

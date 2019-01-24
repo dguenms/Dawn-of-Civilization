@@ -44,6 +44,10 @@ def initScenarioTechs(iScenario):
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
+	
+	if iPlayer == iChina and utils.getScenario() == i3000BC and utils.getHumanID() != iPlayer:
+		initTech(iPlayer, iProperty)
+		initTech(iPlayer, iAlloys)
 				
 def initTechs(iPlayer, lTechs):
 	pPlayer = gc.getPlayer(iPlayer)
@@ -139,19 +143,19 @@ lStartingTechs = [
 {
 iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
-iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
-iCivChina :	Techs([iTanning, iMining, iAgriculture]),
 iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
+iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
+iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
 iCivCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
 iCivPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
 iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
+iCivMaya :	Techs([iProperty, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
 iCivTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivKorea :	Techs(column=5, exceptions=[iGeneralship, iEngineering, iCurrency]),
-iCivMaya :	Techs([iProperty, iLeverage, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
 iCivByzantium :	Techs([iArchitecture, iPolitics, iEthics], column=5),
 iCivJapan :	Techs([iNobility, iSteel, iArtisanry, iPolitics], column=5),
 iCivVikings : 	Techs([iNobility, iSteel, iArtisanry, iPolitics, iScholarship, iArchitecture, iGuilds], column=5),
@@ -235,6 +239,30 @@ dTechPreferences = {
 		iAlloys: -20,
 		iBloomery: -50,
 	},
+	iCivBabylonia : {
+		iWriting: 30,
+		iContract: 30,
+		iCalendar: 30,
+		iMasonry: 20,
+		iProperty: 20,
+		iDivination: 20,
+		iConstruction: 20,
+	
+		iPriesthood: -50,
+		iMathematics: -30,
+		iAlloys: -30,
+		iBloomery: -30,
+		iSteel: -30,
+	},
+	iCivHarappa : {
+		iMasonry: 20,
+		iPastoralism: 20,
+		iPottery: 20,
+		
+		iMythology: -50,
+		iDivination: -50,
+		iCeremony: -50,
+	},
 	iCivChina : {
 		iAesthetics: 40,
 		iContract: 40,
@@ -259,30 +287,6 @@ dTechPreferences = {
 		iCombinedArms: -40,
 		iDivination: -20,
 		iSailing: -20,	
-	},
-	iCivBabylonia : {
-		iWriting: 30,
-		iContract: 30,
-		iCalendar: 30,
-		iMasonry: 20,
-		iProperty: 20,
-		iDivination: 20,
-		iConstruction: 20,
-	
-		iPriesthood: -50,
-		iMathematics: -30,
-		iAlloys: -30,
-		iBloomery: -30,
-		iSteel: -30,
-	},
-	iCivHarappa : {
-		iMasonry: 20,
-		iPastoralism: 20,
-		iPottery: 20,
-		
-		iMythology: -50,
-		iDivination: -50,
-		iCeremony: -50,
 	},
 	iCivGreece : {
 		iSailing: 40,
@@ -343,6 +347,10 @@ dTechPreferences = {
 		
 		iCalendar: -20,
 	},
+	iCivMaya : {
+		iCalendar: 40,
+		iAesthetics: 30,
+	},
 	iCivTamils : {
 		iCement: 20,
 		iCompass: 20,
@@ -360,10 +368,6 @@ dTechPreferences = {
 		iExploration: -40,
 		iReplaceableParts: -40,
 		iScientificMethod: -40,
-	},
-	iCivMaya : {
-		iCalendar: 40,
-		iAesthetics: 30,
 	},
 	iCivByzantium : {
 		iFinance: -50,
@@ -638,6 +642,17 @@ dBuildingPreferences = {
 		iGreatLighthouse: 30,
 		iGreatSphinx: 30,
 	},
+	iCivBabylonia : {
+		iHangingGardens: 50,
+		iIshtarGate: 50,
+		iSpiralMinaret: 20,
+		iGreatMausoleum: 15,
+		
+		iPyramids: 0,
+		iGreatSphinx: 0,
+		
+		iOracle: -60,
+	},
 	iCivChina : {
 		iGreatWall: 80,
 		iForbiddenPalace: 40,
@@ -651,17 +666,6 @@ dBuildingPreferences = {
 		iHimejiCastle: -30,
 		iBorobudur: -30,
 		iBrandenburgGate: -30,
-	},
-	iCivBabylonia : {
-		iHangingGardens: 50,
-		iIshtarGate: 50,
-		iSpiralMinaret: 20,
-		iGreatMausoleum: 15,
-		
-		iPyramids: 0,
-		iGreatSphinx: 0,
-		
-		iOracle: -60,
 	},
 	iCivGreece : {
 		iColossus: 30,
@@ -727,6 +731,9 @@ dBuildingPreferences = {
 		
 		iGreatWall: -100,
 	},
+	iCivMaya : {
+		iTempleOfKukulkan: 40,
+	},
 	iCivTamils : {
 		iJetavanaramaya: 30,
 		iKhajuraho: 20,
@@ -736,9 +743,6 @@ dBuildingPreferences = {
 	},
 	iCivKorea : {
 		iCheomseongdae: 30,
-	},
-	iCivMaya : {
-		iTempleOfKukulkan: 40,
 	},
 	iCivByzantium : {
 		iHagiaSophia: 40,

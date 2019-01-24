@@ -35,14 +35,14 @@ def setup():
 
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
-		if not data.currentCongress:
+		if data.iCongressTurns > 0:
 			data.iCongressTurns -= 1
-			
-			if data.iCongressTurns == 0:
-				data.iCongressTurns = getCongressInterval()
-				currentCongress = Congress()
-				data.currentCongress = currentCongress
-				currentCongress.startCongress()
+	
+		if not data.currentCongress and data.iCongressTurns == 0:
+			data.iCongressTurns = getCongressInterval()
+			currentCongress = Congress()
+			data.currentCongress = currentCongress
+			currentCongress.startCongress()
 
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
 	if isCongressEnabled():
@@ -115,11 +115,13 @@ def endGlobalWar(iAttacker, iDefender):
 	
 	# force peace for all allies of the belligerents
 	for iLoopPlayer in lAttackers:
+		if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 		if utils.isAVassal(iLoopPlayer): continue
 		if iLoopPlayer == iAttacker: continue
 		gc.getTeam(iLoopPlayer).makePeace(iDefender)
 		
 	for iLoopPlayer in lDefenders:
+		if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 		if utils.isAVassal(iLoopPlayer): continue
 		if iLoopPlayer == iDefender: continue
 		gc.getTeam(iLoopPlayer).makePeace(iAttacker)

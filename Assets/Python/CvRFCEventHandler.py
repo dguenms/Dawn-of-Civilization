@@ -116,9 +116,6 @@ class CvRFCEventHandler:
 		Civilizations.init()
 		AIParameters.init()
 		
-		for iBuilding in range(iNumBuildings):
-			print "%d -> %s" % (iBuilding, gc.getBuildingInfo(iBuilding).getText())
-		
 		return 0
 
 
@@ -311,7 +308,7 @@ class CvRFCEventHandler:
 						carthage.setHasRealBuilding(iWalls, True)
 						utils.makeUnitAI(iArcher, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 						utils.makeUnit(iNumidianCavalry, iCarthage, (58, 39), 3)
-						utils.makeUnitAI(iAtlasElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
+						utils.makeUnitAI(iWarElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
 					
 				if utils.getOwnedCoreCities(iCarthage) > 0:
 					utils.setReborn(iCarthage, True)
@@ -381,6 +378,12 @@ class CvRFCEventHandler:
 				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
 				CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
 				gc.getPlayer(iOwner).changeGold(iGold)
+				
+		# Leoreth: free defender and worker for cities founded by American Pioneer in North America
+		if iOwner == iAmerica:
+			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
+				utils.createGarrisons(tCity, iOwner, 1)
+				utils.makeUnit(iWorker, iOwner, tCity, 1)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'
@@ -390,6 +393,7 @@ class CvRFCEventHandler:
 			dc.onPlayerChangeStateReligion(iPlayer, iNewReligion)
 			
 		sta.onPlayerChangeStateReligion(iPlayer)
+		vic.onPlayerChangeStateReligion(iPlayer, iNewReligion)
 
 	def onCombatResult(self, argsList):
 		self.rnf.immuneMode(argsList)
@@ -416,7 +420,10 @@ class CvRFCEventHandler:
 		elif iLosingPlayer == iNative:
 			if iWinningPlayer not in lCivBioNewWorld or True in data.lFirstContactConquerors:
 				if gc.getPlayer(iWinningPlayer).isSlavery() or gc.getPlayer(iWinningPlayer).isColonialSlavery():
-					utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
+					if pWinningUnit.getUnitType() == iBandeirante:
+						utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 100)
+					else:
+						utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
 		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:
@@ -800,6 +807,14 @@ class CvRFCEventHandler:
 				utils.moveCapital(iPlayer, (63, 59)) # Stockholm
 			elif iPlayer == iHolyRome and iEra == iRenaissance:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
+				
+		# Maya UP: +20 food when a tech is discovered before the medieval era
+		if iPlayer == iMaya and not pMaya.isReborn() and iEra < iMedieval:
+			if pMaya.getNumCities() > 0:
+				iFood = 20 / pMaya.getNumCities()
+				for city in utils.getCityList(iMaya):
+					city.changeFood(iFood)
+				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_MAYA_UP_EFFECT", (gc.getTechInfo(iTech).getText(), iFood)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 				
 		# Spain's core extends when reaching the Renaissance and there are no Moors in Iberia
 		# at the same time, the Moorish core relocates to Africa

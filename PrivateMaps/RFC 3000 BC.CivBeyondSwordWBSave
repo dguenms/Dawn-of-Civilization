@@ -13,13 +13,13 @@ BeginTeam
 	TeamID=0, (Egypt)
 EndTeam
 BeginTeam
-	TeamID=1, (China)
+	TeamID=1, (Babylonia)
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
+	TeamID=2, (Harappa)
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
+	TeamID=3, (China)
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -40,16 +40,16 @@ BeginTeam
 	TeamID=9, (Rome)
 EndTeam
 BeginTeam
-	TeamID=10, (Tamils)
+	TeamID=10, (Maya)
 EndTeam
 BeginTeam
-	TeamID=11, (Ethiopia)
+	TeamID=11, (Tamils)
 EndTeam
 BeginTeam
-	TeamID=12, (Korea)
+	TeamID=12, (Ethiopia)
 EndTeam
 BeginTeam
-	TeamID=13, (Maya)
+	TeamID=13, (Korea)
 EndTeam
 BeginTeam
 	TeamID=14, (Byzantium)
@@ -171,22 +171,22 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=1
-	LeaderType=LEADER_QIN_SHI_HUANG
-	CivType=CIVILIZATION_CHINA
-	PlayableCiv=1
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=2
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=3
+	Team=2
 	LeaderType=LEADER_VATAVELLI
 	CivType=CIVILIZATION_HARAPPANS
+	PlayableCiv=1
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=3
+	LeaderType=LEADER_QIN_SHI_HUANG
+	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -255,6 +255,16 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=10
+	LeaderType=LEADER_PACAL
+	CivType=CIVILIZATION_MAYA
+	PlayableCiv=1
+	StartingGold=200
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=11
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
 	PlayableCiv=1
@@ -267,8 +277,8 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=11
-	LeaderType=LEADER_ZARA_YAQOB
+	Team=12
+	LeaderType=LEADER_EZANA
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=1
 	StartingGold=100
@@ -278,7 +288,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=12
+	Team=13
 	LeaderType=LEADER_WANGKON
 	CivType=CIVILIZATION_KOREA
 	PlayableCiv=1
@@ -287,16 +297,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=13
-	LeaderType=LEADER_PACAL
-	CivType=CIVILIZATION_MAYA
-	PlayableCiv=1
-	StartingGold=200
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -26905,6 +26905,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=26
+	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -27000,6 +27001,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=43
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27688,7 +27690,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	BonusType=BONUS_COFFEE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28538,7 +28539,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
-	BonusType=BONUS_HORSE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -29272,10 +29272,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_MILITIA, UnitOwner=1, (Babylonia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_SETTLER, UnitOwner=1, (Babylonia)
 	EndUnit
 EndPlot
 BeginPlot
@@ -38345,12 +38345,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=1, (China)
-	EndUnit
 EndPlot
 BeginPlot
 	x=100,y=45

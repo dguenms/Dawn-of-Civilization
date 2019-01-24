@@ -264,6 +264,8 @@ public:
 	bool setBuildingAdditionalBombardDefenseHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
 // BUG - Building Additional Bombard Defense - end
 
+	void setWonderLimitHelp(CvWStringBuffer &szBuffer, CvCity& city, int iWonderType);
+
 	DllExport void getGlobeLayerName(GlobeLayerTypes eType, int iOption, CvWString& strName);
 
 	DllExport void getPlotHelp(CvPlot* pMouseOverPlot, CvCity* pCity, CvPlot* pFlagPlot, bool bAlt, CvWStringBuffer& strHelp);

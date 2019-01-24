@@ -36,7 +36,7 @@ class BugFinanceAdvisor:
 		self.H_SCREEN = 768
 		self.Y_TITLE = 12
 		self.BORDER_WIDTH = 4
-		self.PANE_HEIGHT = 380
+		self.PANE_HEIGHT = 390
 		self.PANE_WIDTH = 283
 		self.X_SLIDERS = 50
 		self.X_INCOME = 373
@@ -53,9 +53,9 @@ class BugFinanceAdvisor:
 		self.Y_EXIT = 726
 		
 		# Leoreth: stability display
-		self.Y_STABILITY = 520
-		self.Y_PARAMETERS = 580
-		self.H_PARAMETERS = 120
+		self.Y_STABILITY = 530
+		self.Y_PARAMETERS = 590
+		self.H_PARAMETERS = 110
 		self.PARAMETERS_WIDTH = 180
 		self.X_PARAMETERS1 = self.X_SLIDERS
 		self.X_PARAMETERS2 = self.X_PARAMETERS1 + self.PARAMETERS_WIDTH + 7
@@ -235,8 +235,6 @@ class BugFinanceAdvisor:
 		iDomesticTrade, _, iForeignTrade, _ = TradeUtil.calculateTradeRoutes(player)
 		
 		if iDomesticTrade > 0:
-			if TradeUtil.isFractionalTrade():
-				iDomesticTrade //= 100
 			yLocation += self.Y_SPACING
 			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_CONCEPT_DOMESTIC_TRADE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_SLIDERS + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, 
 							*BugDll.widget("WIDGET_HELP_FINANCE_DOMESTIC_TRADE", self.iActiveLeader, 1) )
@@ -245,8 +243,6 @@ class BugFinanceAdvisor:
 			iCommerce += iDomesticTrade
 		
 		if iForeignTrade > 0:
-			if TradeUtil.isFractionalTrade():
-				iForeignTrade //= 100
 			yLocation += self.Y_SPACING
 			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_CONCEPT_FOREIGN_TRADE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_SLIDERS + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, 
 							*BugDll.widget("WIDGET_HELP_FINANCE_FOREIGN_TRADE", self.iActiveLeader, 1) )
@@ -280,9 +276,11 @@ class BugFinanceAdvisor:
 			iCommerce += iSpecialists
 		
 		# buildings
-		iTotalCommerce = player.calculateTotalYield(YieldTypes.YIELD_COMMERCE)
-		# buildings includes 50% capital bonus for Bureaucracy civic
-		iBuildings = iTotalCommerce - iCommerce
+		iBuildings = 0
+		for city in utils.getCityList(ePlayer):
+			for iBuilding in range(gc.getNumBuildingInfos()):
+				if city.isHasRealBuilding(iBuilding):
+					iBuildings += gc.getBuildingInfo(iBuilding).getYieldChange(YieldTypes.YIELD_COMMERCE) + city.getBuildingYieldChange(iBuilding, YieldTypes.YIELD_COMMERCE)
 		if iBuildings > 0:
 			yLocation += self.Y_SPACING
 			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_CONCEPT_BUILDINGS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_SLIDERS + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )

@@ -130,7 +130,7 @@
 		<Spanish>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HAILE_SELASSIE_1</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MENELIK_1</Tag>
 		<English>Greetings in the name of God, [CT_NAME] of [CT_CIV_SHORT]. We are Emperor [OUR_NAME] of [OUR_CIV_SHORT]. We know that material and spiritual progress are essential to man. Will you join us as we ceaselessly work for the equal attainment of both?</English>
 		<French>Au nom de Dieu, salut, [CT_NAME] de [CT_CIV_SHORT]. Nous sommes l'empereur [OUR_NAME] de l'[OUR_CIV_SHORT]. Nous savons que le progr&#232;s mat&#233;riel et spirituel est essentiel &#224; l'homme. Vous joindrez-vous &#224; nous dans notre labeur incessant pour atteindre les deux ?</French>
 		<German>Gr&#252;&#223;e im Namen Gottes, [CT_NAME] von [CT_CIV_SHORT]. Wir sind Kaiser [OUR_NAME] von [OUR_CIV_SHORT]. Wir wissen, dass k&#246;rperlicher und spiritueller Fortschritt essentiell f&#252;r den Menschen sind. Werdet Ihr daran teilhaben, wie wir ununterbrochen f&#252;r das gleichzeitige Erlangen von beidem arbeiten?</German>
@@ -210,7 +210,7 @@
 		<Spanish>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religon is a bridge... History is a bridge...</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HAILE_SELASSIE_1</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MENELIK_1</Tag>
 		<English>Welcome, [CT_NAME]. Imagination, devotion, perseverance, together with divine grace, will assure your success. What shall we discuss?</English>
 		<French>Bienvenue, [CT_NAME]. Imagination, d&#233;vouement et pers&#233;v&#233;rance, avec la gr&#226;ce divine, assureront votre succ&#232;s. De quoi voulez-vous discuter ?</French>
 		<German>Willkommen, [CT_NAME]. Vorstellungskraft, Hingabe, Durchhalteverm&#246;gen, zusammen mit Gottes Gnade, wird Euren Erfolg sichern. Was sollen wir besprechen?</German>
@@ -242,7 +242,7 @@
 		<Spanish>Saludos, [CT_NAME]. Sentaos y charlemos un rato.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HAILE_SELASSIE_1</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MENELIK_1</Tag>
 		<English>The world is well supplied with people who wish to rule and dominate others. People like you.</English>
 		<French>Le monde est rempli de gens qui veulent r&#233;gner et dominer les autres. Des gens comme vous.</French>
 		<German>Die Welt ist gut versorgt mit Menschen, die andere beherrschen und dominieren wollen. Menschen wie Euch.</German>

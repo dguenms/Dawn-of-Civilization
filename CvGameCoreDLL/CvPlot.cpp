@@ -3813,7 +3813,7 @@ bool CvPlot::isAdjacentNonvisible(TeamTypes eTeam) const
 
 bool CvPlot::isGoody(TeamTypes eTeam) const
 {
-	if ((eTeam != NO_TEAM) && GET_TEAM(eTeam).isBarbarian())
+	if ((eTeam != NO_TEAM) && (GET_TEAM(eTeam).isBarbarian() || GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv()))
 	{
 		return false;
 	}
@@ -6906,7 +6906,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
 	if (ePlayer == MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
 	{
-		if ((int)eYield == 0 && iYield > 0 && getTerrainType() == GC.getInfoTypeForString("TERRAIN_PLAINS"))
+		if (eYield == YIELD_FOOD && iYield > 0 && getTerrainType() == TERRAIN_PLAINS)
 		{
 			iYield += 1;
 		}
@@ -6976,7 +6976,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 				{
 					if (pWorkingCity->isHasBuildingEffect((BuildingTypes)BURJ_KHALIFA))
 					{
-						iYield = std::max(2, iYield);;
+						iYield = std::max(2, iYield);
 					}
 				}
 			}
@@ -11474,7 +11474,7 @@ int CvPlot::calculateCultureCost() const
 	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
 	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
 
-	return iCost;
+	return getTurns(iCost);
 }
 
 // Leoreth

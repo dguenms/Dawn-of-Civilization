@@ -4623,3 +4623,9 @@ def doNuclearMeltdown(argsList):
 	
 	pCity = gc.getPlayer(iPlayer).getCity(iCity)
 	pCity.triggerMeltdown(gc.getInfoTypeForString("BUILDING_NUCLEAR_PLANT"))
+	
+def canTriggerWedding(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	
+	return gc.getPlayer(iPlayer).getCivics(iCivicsGovernment) not in [iStateParty, iDemocracy]

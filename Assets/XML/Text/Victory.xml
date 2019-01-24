@@ -843,22 +843,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
-		<English>Nine Saints</English>
-		<French>Les Neuf Saints </French>
-		<German>Neun Heilige</German>
-		<Italian>Nine Saints</Italian>
-		<Spanish>Nine Saints</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Settle a Great Prophet in two Orthodox cities by 500 AD</English>
-		<French>Faire rejoindre un proph&#232;te illustre &#224; deux villes orthodoxes avant 500 ap. J.-C.</French>
-		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen Gro&#223;en Propheten in zwei orthodoxen St&#228;dten an</German>
-		<Italian>Settle a Great Prophet in two Orthodox cities by 500 AD</Italian>
-		<Spanish>Settle a Great Prophet in two Orthodox cities by 500 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
 		<English>Incense Road</English>
 		<French>La route de l'encens </French>
 		<German>Weihrauchstra&#223;e</German>
@@ -866,44 +850,60 @@
 		<Spanish>Incense Road</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH1</Tag>
+		<English>Acquire 3 incense resources by 400 AD</English>
+		<French>Acqu&#233;rir trois sources d'encens avant 400 ap. J.-C.</French>
+		<German>Erlangen Sie bis 400 n. Chr. 3 Weihrauch-Ressourcen</German>
+		<Italian>Acquire 3 incense resources by 400 AD</Italian>
+		<Spanish>Acquire 3 incense resources by 400 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
+		<English>Nine Saints</English>
+		<French>Les Neuf Saints </French>
+		<German>Neun Heilige</German>
+		<Italian>Nine Saints</Italian>
+		<Spanish>Nine Saints</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<French>Acqu&#233;rir trois sources d'encens avant 600 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-		<Italian>Acquire 3 incense resources by 600 AD</Italian>
-		<Spanish>Acquire 3 incense resources by 600 AD</Spanish>
+		<English>Convert to Orthodoxy five turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</English>
+		<French>Convert to Orthodoxy five turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</French>
+		<German>Konvertieren Sie zum Orthodoxen Christentum f&#252;nf Runden nach seiner Gr&#252;ndung und haben Sie bis zum Jahr 1200 n. Chr. drei angesiedelte gro&#223;e Propheten und eine orthodoxe Kathedrale</German>
+		<Italian>Convert to Orthodoxy five turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</Italian>
+		<Spanish>Convert to Orthodoxy five turns after its foundation and settle three Great Prophets in a city with an Orthodox Cathedral by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_EPIC</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<French>Acqu&#233;rir trois sources d'encens avant 600 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-		<Italian>Acquire 3 incense resources by 600 AD</Italian>
-		<Spanish>Acquire 3 incense resources by 600 AD</Spanish>
+		<English>Convert to Orthodoxy eight turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</English>
+		<French>Convert to Orthodoxy eight turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</French>
+		<German>Konvertieren Sie zum Orthodoxen Christentum acht Runden nach seiner Gr&#252;ndung und haben Sie bis zum Jahr 1200 n. Chr. drei angesiedelte gro&#223;e Propheten und eine orthodoxe Kathedrale</German>
+		<Italian>Convert to Orthodoxy eight turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</Italian>
+		<Spanish>Convert to Orthodoxy eight turns after its foundation and settle three Great Prophets in a city with an Orthodox Cathedral by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_MARATHON</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<French>Acqu&#233;rir trois sources d'encens avant 600 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-		<Italian>Acquire 3 incense resources by 600 AD</Italian>
-		<Spanish>Acquire 3 incense resources by 600 AD</Spanish>
+		<English>Convert to Orthodoxy fifteen turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</English>
+		<French>Convert to Orthodoxy fifteen turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</French>
+		<German>Konvertieren Sie zum Orthodoxen Christentum f&#252;nfzehn Runden nach seiner Gr&#252;ndung und haben Sie bis zum Jahr 1200 n. Chr. drei angesiedelte gro&#223;e Propheten und eine orthodoxe Kathedrale</German>
+		<Italian>Convert to Orthodoxy fifteen turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</Italian>
+		<Spanish>Convert to Orthodoxy fifteen turns after its foundation and settle three Great Prophets in a city with an Orthodox Cathedral by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3_TITLE</Tag>
-		<English>Resisting the Scramble</English>
-		<French>R&#233;sister au partage </French>
-		<German>Dem Wettlauf Widerstand leisten</German>
-		<Italian>Resisting the Scramble</Italian>
-		<Spanish>Resisting the Scramble</Spanish>
+		<English>Prester John</English>
+		<French>Prester John</French>
+		<German>Priesterk&#246;nig Johannes</German>
+		<Italian>Prester John</Italian>
+		<Spanish>Prester John</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3</Tag>
-		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</English>
-		<French>Emp&#234;cher la pr&#233;sence de colonies europ&#233;ennes en Afrique orientale et sub&#233;quatoriale en 1500 et en 1910 ap. J.-C.</French>
-		<German>Lassen Sie im Jahr 1910 n. Chr. keine europ&#228;ischen Kolonien im &#246;stlichen und sub&#228;quatorialen Afrika zu</German>
-		<Italian>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</Italian>
-		<Spanish>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</Spanish>
+		<English>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</English>
+		<French>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</French>
+		<German>Stellen Sie sicher, dass es im Jahr 1500 n. Chr. mehr orthodoxe als muslimische St&#228;dte in Afrika gibt</German>
+		<Italian>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</Italian>
+		<Spanish>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>
@@ -1851,35 +1851,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_NOTURN</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
@@ -1907,11 +1907,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3</Tag>
-		<English>Make contact with a European civilization before they discover America</English>
+		<English>Make contact with a European civilization before any European discovers America</English>
 		<French>&#201;tablir un contact avec une civilisation europ&#233;enne avant qu'elle ne d&#233;couvre l'Am&#233;rique</French>
-		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor diese Amerika entdecken</German>
-		<Italian>Make contact with a European civilization before they discover America</Italian>
-		<Spanish>Make contact with a European civilization before they discover America</Spanish>
+		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor eine von ihnen Amerika entdeckt</German>
+		<Italian>Make contact with a European civilization before any European discovers America</Italian>
+		<Spanish>Make contact with a European civilization before any European discovers America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
@@ -5241,5 +5241,37 @@
 		<German>Global power commerce: %s1 / %s2%</German>
 		<Italian>Global power commerce: %s1 / %s2%</Italian>
 		<Spanish>Global power commerce: %s1 / %s2%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONVERTED_TO_ORTHODOXY</Tag>
+		<English>Converted to Orthodoxy</English>
+		<French>Converted to Orthodoxy</French>
+		<German>Converted to Orthodoxy</German>
+		<Italian>Converted to Orthodoxy</Italian>
+		<Spanish>Converted to Orthodoxy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES</Tag>
+		<English>Orthodox Cities: %d1</English>
+		<French>Orthodox Cities: %d1</French>
+		<German>Orthodoxe St&#228;dte: %d1</German>
+		<Italian>Orthodox Cities: %d1</Italian>
+		<Spanish>Orthodox Cities: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MUSLIM_CITIES</Tag>
+		<English>Muslim Cities: %d1</English>
+		<French>Muslim Cities: %d1</French>
+		<German>Muslimische St&#228;dte: %d1</German>
+		<Italian>Muslim Cities: %d1</Italian>
+		<Spanish>Muslim Cities: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PROPHETS</Tag>
+		<English>Great Prophets: %d1 / %d2</English>
+		<French>Great Prophets: %d1 / %d2</French>
+		<German>Gro&#223;e Propheten: %d1 / %d2</German>
+		<Italian>Great Prophets: %d1 / %d2</Italian>
+		<Spanish>Great Prophets: %d1 / %d2</Spanish>
 	</TEXT>
 </Civ4GameText>

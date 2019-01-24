@@ -2,14 +2,6 @@
 <!-- Units -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
 		<English>Minuteman</English>
 		<French>
@@ -326,7 +318,7 @@
 		<Spanish>Corvette</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_NUMIDIAN_CAVALRY</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_NUMIDIAN_CAVALRY</Tag>
 		<English>Numidian Cavalry</English>
 		<French>
 			<Text>Cavalerie numide</Text>
@@ -658,7 +650,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_NUMIDIAN_CAVALRY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</English>
 		<French>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</French>
 		<German>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</German>
@@ -1342,16 +1334,16 @@
 		<Spanish>Medjay</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES</Tag>
-		<English>Rurales</English>
+		<Tag>TXT_KEY_UNIT_MEXICAN_RURAL</Tag>
+		<English>Rural</English>
 		<French>
-			<Text>Rurales</Text>
+			<Text>Rural</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>Rurales</German>
-		<Italian>Rurales</Italian>
-		<Spanish>Rurales</Spanish>
+		<German>Rural</German>
+		<Italian>Rural</Italian>
+		<Spanish>Rural</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOBILE_ARTILLERY_STRATEGY</Tag>
@@ -2964,6 +2956,318 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_RIDER</Tag>
+		<English>Camel Rider</English>
+		<French>Camel Rider</French>
+		<German>Kamelreiter</German>
+		<Italian>Camel Rider</Italian>
+		<Spanish>Camel Rider</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_ARCHER</Tag>
+		<English>Camel Archer</English>
+		<French>Camel Archer</French>
+		<German>Camel Archer</German>
+		<Italian>Camel Archer</Italian>
+		<Spanish>Camel Archer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAMEL_GUNNER</Tag>
+		<English>Camel Gunner</English>
+		<French>Camel Gunner</French>
+		<German>Camel Gunner</German>
+		<Italian>Camel Gunner</Italian>
+		<Spanish>Camel Gunner</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_MOBILE_GUARD</Tag>
+		<English>Mobile Guard</English>
+		<French>Mobile Guard</French>
+		<German>Mobile Garde</German>
+		<Italian>Mobile Guard</Italian>
+		<Spanish>Mobile Guard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_GHAZI</Tag>
+		<English>Ghazi</English>
+		<French>Ghazi</French>
+		<German>Ghazi</German>
+		<Italian>Ghazi</Italian>
+		<Spanish>Ghazi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_SHOTELAI</Tag>
+		<English>Shotelai</English>
+		<French>Shotelai</French>
+		<German>Shotelai</German>
+		<Italian>Shotelai</Italian>
+		<Spanish>Shotelai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER</Tag>
+		<English>Pioneer</English>
+		<French>Pioneer</French>
+		<German>Pionier</German>
+		<Italian>Pioneer</Italian>
+		<Spanish>Pioneer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GREEK_COMPANION</Tag>
+		<English>Companion</English>
+		<French>Companion</French>
+		<German>Companion</German>
+		<Italian>Companion</Italian>
+		<Spanish>Companion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ENGLISH_MAN_OF_WAR</Tag>
+		<English>Man-of-War</English>
+		<French>Man-of-War</French>
+		<German>Man-of-War</German>
+		<Italian>Man-of-War</Italian>
+		<Spanish>Man-of-War</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KOREAN_KOBUKSON</Tag>
+		<English>Kobukson</English>
+		<French>Kobukson</French>
+		<German>Kobukson</German>
+		<Italian>Kobukson</Italian>
+		<Spanish>Kobukson</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROMAN_BALLISTA</Tag>
+		<English>Ballista</English>
+		<French>Ballista</French>
+		<German>Balliste</German>
+		<Italian>Ballista</Italian>
+		<Spanish>Ballista</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAPANESE_ZERO</Tag>
+		<English>Zero</English>
+		<French>Zero</French>
+		<German>Zero</German>
+		<Italian>Zero</Italian>
+		<Spanish>Zero</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_SACRED_BAND</Tag>
+		<English>Sacred Band</English>
+		<French>Sacred Band</French>
+		<German>Heilige Bande</German>
+		<Italian>Sacred Band</Italian>
+		<Spanish>Sacred Band</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPANISH_TERCIO</Tag>
+		<English>Tercio</English>
+		<French>Tercio</French>
+		<German>Tercio</German>
+		<Italian>Tercio</Italian>
+		<Spanish>Tercio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FRENCH_GUARD</Tag>
+		<English>Guard</English>
+		<French>Guard</French>
+		<German>Guard</German>
+		<Italian>Guard</Italian>
+		<Spanish>Guard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FRENCH_GENDARME</Tag>
+		<English>Gendarme</English>
+		<French>Gendarme</French>
+		<German>Gendarme</German>
+		<Italian>Gendarme</Italian>
+		<Spanish>Gendarme</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER</Tag>
+		<English>Grenzer</English>
+		<French>Grenzer</French>
+		<German>Grenzer</German>
+		<Italian>Grenzer</Italian>
+		<Spanish>Grenzer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_VIKING_LONGSHIP</Tag>
+		<English>Longship</English>
+		<French>Longship</French>
+		<German>Langboot</German>
+		<Italian>Longship</Italian>
+		<Spanish>Longship</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BYZANTINE_DROMON</Tag>
+		<English>Dromon</English>
+		<French>Dromon</French>
+		<German>Dromone</German>
+		<Italian>Dromon</Italian>
+		<Spanish>Dromon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNAS</Tag>
+		<English>Lanternas</English>
+		<French>Lanternas</French>
+		<German>Lanternas</German>
+		<Italian>Lanternas</Italian>
+		<Spanish>Lanternas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ITALIAN_BALESTRIERE</Tag>
+		<English>Balestriere</English>
+		<French>Balestriere</French>
+		<German>Balestriere</German>
+		<Italian>Balestriere</Italian>
+		<Spanish>Balestriere</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GERMAN_FUSILIER</Tag>
+		<English>Fusilier</English>
+		<French>Fusilier</French>
+		<German>Fusilier</German>
+		<Italian>Fusilier</Italian>
+		<Spanish>Fusilier</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOMBIAN_LLANERO</Tag>
+		<English>Llanero</English>
+		<French>Llanero</French>
+		<German>Llanero</German>
+		<Italian>Llanero</Italian>
+		<Spanish>Llanero</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MONGOLIAN_MANGUDAI</Tag>
+		<English>Mangudai</English>
+		<French>Mangudai</French>
+		<German>Mangudai</German>
+		<Italian>Mangudai</Italian>
+		<Spanish>Mangudai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE</Tag>
+		<English>Bandeirante</English>
+		<French>Bandeirante</French>
+		<German>Bandeirante</German>
+		<Italian>Bandeirante</Italian>
+		<Spanish>Bandeirante</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_HELP</Tag>
+		<English>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</English>
+		<French>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</French>
+		<German>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</German>
+		<Italian>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSIAN_SAVARAN</Tag>
+		<English>Savaran</English>
+		<French>Savaran</French>
+		<German>Savaran</German>
+		<Italian>Savaran</Italian>
+		<Spanish>Savaran</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_VARU</Tag>
+		<English>Varu</English>
+		<French>Varu</French>
+		<German>Varu</German>
+		<Italian>Varu</Italian>
+		<Spanish>Varu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDONESIAN_DJONG</Tag>
+		<English>Djong</English>
+		<French>Djong</French>
+		<German>Djong</German>
+		<Italian>Djong</Italian>
+		<Spanish>Djong</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TAMIL_ROCKETEER</Tag>
+		<English>Rocketeer</English>
+		<French>Rocketeer</French>
+		<German>Raketensch&#252;tze</German>
+		<Italian>Rocketeer</Italian>
+		<Spanish>Rocketeer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>
+		<English>Oromo Warrior</English>
+		<French>
+			<Text>Guerrier Oromo:Guerriers Oromo</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Oromo-Krieger</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Guerriero Oromo:Guerrieri Oromo</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Guerrero oromo:Guerreros oromos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR_STRATEGY</Tag>
+		<English>This early gunpowder unit (the Ethiopian replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT]) is immune to first strikes, has 1 first strike of its own and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
+		<French>Cette unit&#233; primitive &#233;quip&#233;e d'une arme &#224; feu (unit&#233; &#233;thiopienne qui remplace l'[COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT]) est insensible aux premi&#232;res attaques, dispose d'1 premi&#232;re attaque et d&#233;bute avec les promotions :[COLOR_HIGHLIGHT_TEXT]Exercice I[COLOR_REVERT] et [COLOR_HIGHLIGHT_TEXT]Exercice II[COLOR_REVERT].</French>
+		<German>Diese fr&#252;he Schie&#223;pulver-Einheit (die &#228;thiopische Variante des [COLOR_UNIT_TEXT]Musketiers[COLOR_REVERT]) ist gegen Erstangriffe immun, hat selbst 1 Erstangriff zur Verf&#252;gung und startet mit den Bef&#246;rderungen [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] und [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT].</German>
+		<Italian>Questa unit&#224; base con arma da fuoco (l'equivalente etiope del [COLOR_UNIT_TEXT]Soldato con moschetto[COLOR_REVERT]) &#232; immune agli attacchi improvvisi, ha 1 attacco improvviso e comincia con le promozioni [COLOR_HIGHLIGHT_TEXT]Addestramento I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Addestramento II[COLOR_REVERT].</Italian>
+		<Spanish>Esta unidad temprana con armas de p&#243;lvora (el sustituto et&#237;ope del [COLOR_UNIT_TEXT]Mosquete[COLOR_REVERT]) es inmune a los ataques de iniciativa, tiene un ataque de iniciativa propio y empieza con los ascensos [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n II[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER_HELP</Tag>
+		<English>[ICON_BULLET]New cities in North America start with a defender and a worker</English>
+		<French>[ICON_BULLET]New cities in North America start with a defender and a worker</French>
+		<German>[ICON_BULLET]New cities in North America start with a defender and a worker</German>
+		<Italian>[ICON_BULLET]New cities in North America start with a defender and a worker</Italian>
+		<Spanish>[ICON_BULLET]New cities in North America start with a defender and a worker</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTTOMAN_GREAT_BOMBARD</Tag>
+		<English>Great Bombard</English>
+		<French>Great Bombard</French>
+		<German>Great Bombard</German>
+		<Italian>Great Bombard</Italian>
+		<Spanish>Great Bombard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHINESE_FIRELANCER</Tag>
+		<English>Firelancer</English>
+		<French>Firelancer</French>
+		<German>Firelancer</German>
+		<Italian>Firelancer</Italian>
+		<Spanish>Firelancer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUSSIAN_STRELETS</Tag>
+		<English>Strelets</English>
+		<French>Strelets</French>
+		<German>Strelets</German>
+		<Italian>Strelets</Italian>
+		<Spanish>Strelets</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_MEHAL_SEFARI</Tag>
+		<English>Mehal Sefari</English>
+		<French>Mehal Sefari</French>
+		<German>Mehal Sefari</German>
+		<Italian>Mehal Sefari</Italian>
+		<Spanish>Mehal Sefari</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>

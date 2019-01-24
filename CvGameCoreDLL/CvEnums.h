@@ -593,6 +593,8 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_HELP_BONUS_CITY, // Leoreth
 	WIDGET_HELP_REMOVE, // Leoreth
 
+	WIDGET_HELP_WONDER_LIMIT, // Merijn
+
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
 #endif
@@ -946,6 +948,7 @@ enum BonusTypes						// Exposed to Python
 	NO_BONUS = -1,
 	
 	BONUS_ALUMINUM,
+	BONUS_CAMEL,
 	BONUS_COAL,
 	BONUS_COPPER,
 	BONUS_HORSE,
@@ -1302,19 +1305,19 @@ enum PlayerTypes				// Exposed to Python
 {
 	NO_PLAYER = -1,
 	EGYPT,
-	CHINA,
 	BABYLONIA,
 	HARAPPA,
+	CHINA,
 	GREECE,
 	INDIA,
 	PHOENICIA,
 	POLYNESIA,
 	PERSIA,
 	ROME,
+	MAYA,
 	TAMILS,
 	ETHIOPIA,
 	KOREA,
-	MAYA,
 	BYZANTIUM,
 	JAPAN,
 	VIKINGS,

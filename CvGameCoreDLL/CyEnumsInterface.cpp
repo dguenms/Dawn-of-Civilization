@@ -440,6 +440,8 @@ void CyEnumsPythonInterface()
 		.value("WIDGET_LEADERHEAD_RELATIONS", WIDGET_LEADERHEAD_RELATIONS)
 // BUG - Leaderhead Relations - end
 
+		.value("WIDGET_HELP_WONDER_LIMIT", WIDGET_HELP_WONDER_LIMIT)
+
 		.value("NUM_WIDGET_TYPES", NUM_WIDGET_TYPES)
 		;
 

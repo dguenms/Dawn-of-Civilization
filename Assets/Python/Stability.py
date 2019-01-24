@@ -466,6 +466,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		for iLoopPlayer in range(iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
 			if gc.getPlayer(iLoopPlayer).isAlive(): continue
+			if not data.players[iLoopPlayer].bSpawned: continue
 			if gc.getGame().getGameTurn() - data.players[iLoopPlayer].iLastTurnAlive < utils.getTurns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
@@ -615,6 +616,11 @@ def downgradeCottages(iPlayer):
 			elif iImprovement == iVillage: plot.setImprovementType(iCottage)
 			elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
 			elif iImprovement == iCottage: plot.setImprovementType(-1)
+			
+			# Destroy all Harappan improvements
+			if iPlayer == iHarappa and utils.getHumanID() != iPlayer:
+				if iImprovement >= 0:
+					plot.setImprovementType(-1)
 				
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_DOWNGRADE_COTTAGES", ())
@@ -1806,6 +1812,7 @@ def setStateReligion(iCiv):
 	
 	for city in lCities:
 		for iReligion in range(iNumReligions):
+			if gc.getReligionInfo(iReligion).isLocal() and city.plot().getSpreadFactor(iReligion) != RegionSpreadTypes.REGION_SPREAD_CORE: continue
 			if city.isHasReligion(iReligion): lReligions[iReligion] += 1
 			
 	iHighestEntry = utils.getHighestEntry(lReligions)

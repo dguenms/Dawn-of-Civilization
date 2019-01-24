@@ -977,8 +977,8 @@ def getUHVTileInfo(argsList):
 			return 19
 			
 	elif iPlayer == iEthiopia:
-		if utils.isPlotInArea((x, y), vic.tSomaliaTL, vic.tSomaliaBR) or utils.isPlotInArea((x, y), vic.tSubeqAfricaTL, vic.tSubeqAfricaBR):
-			return 20
+		if gc.getMap().plot(x, y).getRegionID() in lAfrica:
+			return 33
 		
 	elif iPlayer == iByzantium:
 		if utils.isPlotInArea((x, y), vic.tBalkansTL, vic.tBalkansBR):
@@ -1165,6 +1165,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
 			return 71
 				
+		# free IDs: 20
 		# continue with ID 72
 			
 	return -1

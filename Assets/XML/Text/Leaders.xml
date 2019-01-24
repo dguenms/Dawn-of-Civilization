@@ -362,16 +362,16 @@
 		<Spanish>Gustav Adolph</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_HAILE_SELASSIE</Tag>
-		<English>Haile Selassie</English>
+		<Tag>TXT_KEY_LEADER_MENELIK</Tag>
+		<English>Menelik</English>
 		<French>
-			<Text>Ha&#239;l&#233; S&#233;lassi&#233;</Text>
+			<Text>Menelik</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Haile Selassie</German>
-		<Italian>Haile Selassie</Italian>
-		<Spanish>Haile Selassie</Spanish>
+		<German>Menelik</German>
+		<Italian>Menelik</Italian>
+		<Spanish>Menelik</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_HANNIBAL</Tag>
@@ -1116,5 +1116,17 @@
 		<German>Khosrow I</German>
 		<Italian>Khosrow I</Italian>
 		<Spanish>Khosrow I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_EZANA</Tag>
+		<English>Ezana</English>
+		<French>
+			<Text>Ezana</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ezana</German>
+		<Italian>Ezana</Italian>
+		<Spanish>Ezana</Spanish>
 	</TEXT>
 </Civ4GameText>

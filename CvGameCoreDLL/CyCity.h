@@ -586,6 +586,8 @@ public:
 	bool isHasBuildingEffect(int eBuilding);
 	int getStabilityPopulation();
 	void setStabilityPopulation(int iNewValue);
+	int getModifiedCultureRateTimes100();
+	int getModifiedCultureRate();
 
 private:
 	CvCity* m_pCity;

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Effect Infos -->
+<Civ4EffectInfos xmlns="x-schema:Dromon_CIV4MiscSchema.xml">
+	<EffectInfos>
+		<EffectInfo>
+			<Type>EFFECT_RIFLEBLAST_FLAMES</Type>
+			<Description>Rifleblast for Flamethrower</Description>
+			<fScale>2.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Modules/Units/Naval/Dromon/Effects/firespray_sfx.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+	</EffectInfos>
+</Civ4EffectInfos>

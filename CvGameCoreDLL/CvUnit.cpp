@@ -220,24 +220,13 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		}
 	}
 	//Rhye - start UP (start switch)
-	switch (getOwnerINLINE())
+	if (getOwnerINLINE() == SPAIN)
 	{
-    case KOREA:
-        if (getUnitCombatType() == 9) //naval
-            {
-                setHasPromotion(PROMOTION_DRILL1, true);
-                setHasPromotion(PROMOTION_DRILL2, true);
-            }
-        break;
-	case SPAIN:
 		if (getUnitCombatType() == 9) //naval
-			{
-				setHasPromotion(PROMOTION_NAVIGATION1, true);
-				setHasPromotion(PROMOTION_NAVIGATION2, true);
-			}
-		break;
-	default:
-		break;
+		{
+			setHasPromotion(PROMOTION_NAVIGATION1, true);
+			setHasPromotion(PROMOTION_NAVIGATION2, true);
+		}
 	}
 	//Rhye - end
 
@@ -2443,7 +2432,7 @@ bool CvUnit::generatePath(const CvPlot* pToPlot, int iFlags, bool bReuse, int* p
 bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) const
 {
 	// Leoreth: allow entering enemy territory while you have no cities to avoid being pushed out after spawn
-	if (GET_PLAYER(getOwner()).getNumCities() == 0)
+	if (!GET_PLAYER(getOwnerINLINE()).isBarbarian() && GET_PLAYER(getOwner()).getNumCities() == 0)
 	{
 		return true;
 	}
@@ -2459,9 +2448,12 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 	}
 
 	// Leoreth: Turkic UP
-	if (getOwnerINLINE() == BARBARIAN && eTeam == TURKS && !GET_TEAM(eTeam).isAtWarWithMajorPlayer())
+	if (getOwnerINLINE() == BARBARIAN && eTeam == TURKS)
 	{
-		return false;
+		if (!GET_TEAM(eTeam).isAtWarWithMajorPlayer())
+		{
+			return false;
+		}
 	}
 
 	if (isEnemy(eTeam))
@@ -8530,12 +8522,6 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 
 	iExtraModifier = getExtraCombatPercent();
 
-	// Leoreth: Ethiopian UP: +10% strength for land units in own borders
-	if (getOwnerINLINE() == ETHIOPIA && getDomainType() == DOMAIN_LAND && plot()->getOwnerINLINE() == ETHIOPIA)
-	{
-		iExtraModifier += 10;
-	}
-
 	iModifier += iExtraModifier;
 	if (pCombatDetails != NULL)
 	{
@@ -14560,13 +14546,30 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 bool CvUnit::canGreatMission(const CvPlot* pPlot) const
 {
-	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) return false;
+	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) 
+	{
+		return false;
+	}
 
-	if (GET_PLAYER(getOwner()).getStateReligion() == NO_RELIGION) return false;
+	if (!pPlot->isCity())
+	{
+		return false;
+	}
 
-	if (!pPlot->isCity()) return false;
+	if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION) 
+	{
+		return true;
+	}
 
-	return true;
+	for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		if (GC.getGame().isReligionFounded((ReligionTypes)iI) && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE && !GC.getReligionInfo((ReligionTypes)iI).isLocal())
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 bool CvUnit::greatMission()
@@ -14580,8 +14583,21 @@ bool CvUnit::greatMission()
 	iNumCities = std::max(iNumCities, GC.getMap().getArea(getArea())->getCitiesPerPlayer(getOwner()));
 	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
 
+	if (eReligion == NO_RELIGION)
+	{
+		for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			if (!GC.getReligionInfo((ReligionTypes)iI).isLocal() && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
+			{
+				eReligion = (ReligionTypes)iI;
+				break;
+			}
+		}
+	}
+
 	CvPlot* pSpreadPlot;
 	CvCity* pSpreadCity;
+	ReligionTypes eRemovedReligion;
 	int iSpreads = 0;
 
 	// spread to eligible cities
@@ -14601,7 +14617,11 @@ bool CvUnit::greatMission()
 
 		if (pSpreadCity == NULL) break;
 
-		pSpreadCity->removeReligion(pSpreadCity->AI_getPersecutionReligion());
+		eRemovedReligion = pSpreadCity->AI_getPersecutionReligion(eReligion);
+
+		if (eRemovedReligion == NO_RELIGION) continue;
+
+		pSpreadCity->removeReligion(eRemovedReligion);
 	}
 
 	if (plot()->isActiveVisible(false))

@@ -2704,19 +2704,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE</Tag>
-		<English>Cultural Minority: expansion stability penalty</English>
-		<French>Cultural Minority: expansion stability penalty</French>
-		<German>Cultural Minority: expansion stability penalty</German>
-		<Italian>Cultural Minority: expansion stability penalty</Italian>
-		<Spanish>Cultural Minority: expansion stability penalty</Spanish>
+		<English>Cultural Control: expansion stability penalty</English>
+		<French>Cultural Control: expansion stability penalty</French>
+		<German>Cultural Control: expansion stability penalty</German>
+		<Italian>Cultural Control: expansion stability penalty</Italian>
+		<Spanish>Cultural Control: expansion stability penalty</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE_HIGH</Tag>
-		<English>Low Culture: severe expansion stability penalty</English>
-		<French>Low Culture: severe expansion stability penalty</French>
-		<German>Low Culture: severe expansion stability penalty</German>
-		<Italian>Low Culture: severe expansion stability penalty</Italian>
-		<Spanish>Low Culture: severe expansion stability penalty</Spanish>
+		<English>Cultural Control: severe expansion stability penalty</English>
+		<French>Cultural Control: severe expansion stability penalty</French>
+		<German>Cultural Control: severe expansion stability penalty</German>
+		<Italian>Cultural Control: severe expansion stability penalty</Italian>
+		<Spanish>Cultural Control: severe expansion stability penalty</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_CITY_CORE_POPULATION</Tag>
@@ -2951,6 +2951,54 @@
 		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Satelliten gering als ein F&#252;nftel ihrer Anzahl verf&#252;gbarer Spezialisten ist</German>
 		<Italian>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Italian>
 		<Spanish>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CIVILIZATION_CULTURE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from Civilization modifier</English>
+		<French>[ICON_BULLET]%D1%%%F2 from Civilization modifier</French>
+		<German>[ICON_BULLET]%D1%%%F2 durch Zivilisationsmodifikator</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_WONDER_LIMIT</Tag>
+		<English>%d1/%d2%F3</English>
+		<French>%d1/%d2%F3</French>
+		<German>%d1/%d2%F3</German>
+		<Italian>%d1/%d2%F3</Italian>
+		<Spanish>%d1/%d2%F3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_NATIONAL_WONDER_LIMIT_HELP</Tag>
+		<English>%d1 out of %d2 National Wonders at %s3 culture</English>
+		<French>%d1 out of %d2 National Wonders at %s3 culture</French>
+		<German>%d1 out of %d2 National Wonders at %s3 culture</German>
+		<Italian>%d1 out of %d2 National Wonders at %s3 culture</Italian>
+		<Spanish>%d1 out of %d2 National Wonders at %s3 culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP</Tag>
+		<English>%d1 out of %d2 World Wonders at %s3 culture</English>
+		<French>%d1 out of %d2 World Wonders at %s3 culture</French>
+		<German>%d1 out of %d2 World Wonders at %s3 culture</German>
+		<Italian>%d1 out of %d2 World Wonders at %s3 culture</Italian>
+		<Spanish>%d1 out of %d2 World Wonders at %s3 culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ATTACK_AND_DEFENSE</Tag>
+		<English>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</English>
+		<French>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</French>
+		<German>[ICON_BULLET]%D1_Change%% St&#228;rke f&#252;r %s2_TerrOrFeat</German>
+		<Italian>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAYA_UP_EFFECT</Tag>
+		<English>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</English>
+		<French>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</French>
+		<German>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</German>
+		<Italian>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Italian>
+		<Spanish>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
