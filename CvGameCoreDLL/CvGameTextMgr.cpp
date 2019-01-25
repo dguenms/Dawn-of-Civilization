@@ -15955,12 +15955,14 @@ void CvGameTextMgr::setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerr
 			szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_COASTAL_CITIES"));
 			bFirst = false;
 		}
-		if (!bFirst)
-		{
-			szBuffer.append(gDLL->getText("TXT_KEY_OR"));
-		}
+
 		if (terrain.isFoundFreshWater())
 		{
+			if (!bFirst)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_OR"));
+			}
+
 			szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_FRESH_WATER_CITIES"));
 			bFirst = false;
 		}
