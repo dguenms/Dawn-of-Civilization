@@ -179,6 +179,9 @@ def getStabilityLevel(iPlayer):
 def setStabilityLevel(iPlayer, iStabilityLevel):
 	data.setStabilityLevel(iPlayer, iStabilityLevel)
 	
+	if iStabilityLevel == iStabilityCollapsing:
+		CyInterface().addMessage(iPlayer, False, iDuration, localText.getText("TXT_KEY_STABILITY_COLLAPSING_WARNING", ()), "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+	
 def incrementStability(iPlayer):
 	data.setStabilityLevel(iPlayer, min(iStabilitySolid, data.getStabilityLevel(iPlayer) + 1))
 	
