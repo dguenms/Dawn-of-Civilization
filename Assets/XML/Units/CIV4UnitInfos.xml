@@ -8457,7 +8457,7 @@
 			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_PISTOLIER</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_CAMEL_GUNNER</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
