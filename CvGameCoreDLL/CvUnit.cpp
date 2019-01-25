@@ -2741,7 +2741,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 
 		// Leoreth: make sure that hidden nationality units that entered cities through open borders cannot attack from there
-		if (bAttack && m_pUnitInfo->isHiddenNationality() && plot()->isCity())
+		if (bAttack && m_pUnitInfo->isHiddenNationality() && plot()->isCity() && plot()->getPlotCity()->getOwner() != getOwner())
 		{
 			return false;
 		}
