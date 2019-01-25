@@ -1005,8 +1005,10 @@ iCivEthiopia : {
 		"Abba Samuel", # 14th
 		"fKristos Samra", # 15th
 		iRenaissance,
+		"Abba Enbaqom", # 16th
 		"fWalatta Petros", # 17th
 		iGlobal,
+		"Haile Selassie", # 20th
 		"Abune Tewophilos", # 20th
 	],
 	iGreatArtist : [
@@ -1017,10 +1019,11 @@ iCivEthiopia : {
 		"Gebre Hanna", # 19th
 		"Afevork Ghevre Jesus", # 19th
 		iGlobal,
-		"Gebre Kristos Desta", # 20th
-		"Tsegaye Gabre-Medhin", # 20th
+		"Haddis Alemayehu", # 20th
 		"Adamu Tesfaw", # 20th
-		"Afeworq Tekle", # 20th
+		"Gebre Kristos Desta", # 20th
+		"Afewerk Tekle", # 20th
+		"Tsegaye Gabre-Medhin", # 20th
 		"Alexander Boghossian", # 20th
 	],
 	iGreatScientist : [
@@ -1045,25 +1048,25 @@ iCivEthiopia : {
 		"Mohammed Al Amoudi", # 20th
 	],
 	iGreatEngineer : [
-		"Ezana", # 4th
-		iMedieval,
 		"Gebre Mesqel Lalibela", # 13th
 		iRenaissance,
+		"Sarsa Dengel", # 16th
 		"Fasiladas", # 17th
 		iGlobal,
 		"Simegnew Bekele", # 20th
 		"fSossina Haile", # 20th
 	],
 	iGreatStatesman : [
-		"Ezana", # 4th
+		"Kaleb Ella Asbeha", # 6th
 		iRenaissance,
 		"fEleni", # 16th
 		"Susenyos", # 17th
 		iIndustrial,
 		"Tewodros", # 19th
-		"Menelik", # 19th
-		iGlobal,
+		"fTaytu Betul", # 19th
+		"fZewditu", # 20th
 		u"Gäbre-Heywät Baykädañ", # 20th
+		iGlobal,
 		"Mengistu Haile Mariam", # 20th
 		"Meles Zenawi", # 20th
 	],
