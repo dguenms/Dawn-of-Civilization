@@ -9426,10 +9426,10 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 				}
 			}
 
-			if (pCity->isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+			if (kUnit.getCombat() > 0 && pCity->isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
 			{
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText(pCity->isHasReligion(kPlayer.getStateReligion()) ? "TXT_KEY_BUILDING_FREE_EXPERIENCE" : "TXT_KEY_NO_BUILDING_FREE_EXPERIENCE", pCity->getCultureLevel(), GC.getBuildingInfo((BuildingTypes)CHAPULTEPEC_CASTLE).getText()));
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_EXPERIENCE", pCity->getCultureLevel(), GC.getBuildingInfo((BuildingTypes)CHAPULTEPEC_CASTLE).getText()));
 			}
 		}
 	}

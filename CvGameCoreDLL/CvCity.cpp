@@ -2883,7 +2883,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 	}
 	
 	// Leoreth: Chapultepec Castle
-	if (isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+	if (GC.getUnitInfo(eUnit).getCombat() > 0 && isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
 	{
 		iExperience += getCultureLevel();
 	}
