@@ -31474,19 +31474,19 @@ BeginPlot
 		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=36, (Turkey)
