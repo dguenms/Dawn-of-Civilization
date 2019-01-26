@@ -2883,9 +2883,12 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 	}
 	
 	// Leoreth: Chapultepec Castle
-	if (GC.getUnitInfo(eUnit).getCombat() > 0 && isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+	if (eUnit != NO_UNIT)
 	{
-		iExperience += getCultureLevel();
+		if (GC.getUnitInfo(eUnit).getCombat() > 0 && isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+		{
+			iExperience += getCultureLevel();
+		}
 	}
 	
 	//SuperSpies: TSHEEP - Only give spies spy specific xp
