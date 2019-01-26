@@ -1008,7 +1008,7 @@ class CvWorldBuilderScreen:
 		if self.bRegion:
 			iRegion = self.m_pCurrentPlot.getRegionID()
 			if iRegion == -1: return [self.m_pCurrentPlot]
-			lPlots = self.getRegionPlots(iRegion)
+			lPlots = [gc.getMap().plot(x, y) for (x, y) in utils.getRegionPlots(iRegion)]
 			return lPlots
 
 		iMinX = self.m_pCurrentPlot.getX()
@@ -1028,14 +1028,6 @@ class CvWorldBuilderScreen:
 		for x in range(iMinX, iMaxX):
 			for y in range(iMinY, iMaxY):
 				lPlots.append(gc.getMap().plot(x, y))
-		return lPlots
-
-	def getRegionPlots(self, iRegion):
-		lPlots = []
-		for i in range(CyMap().numPlots()):
-			plot = CyMap().plotByIndex(i)
-			if plot.getRegionID() == iRegion:
-				lPlots.append(plot)
 		return lPlots
 
 	def setMultipleReveal(self, bReveal):
@@ -1954,9 +1946,9 @@ class CvWorldBuilderScreen:
 
 	def showRegionOverlay(self):
 		utils.removeStabilityOverlay()
-		lPlots = self.getRegionPlots(self.m_iRegionMapID)
-		for plot in lPlots:
-			CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_BLUE", 0.7)
+		lPlots = utils.getRegionPlots(self.m_iRegionMapID)
+		for (x, y) in lPlots:
+			CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_BLUE", 0.7)
 
 	def getPlotItems(self, tPlot):
 		x, y = tPlot
