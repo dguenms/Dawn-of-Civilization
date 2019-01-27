@@ -1431,6 +1431,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	CvWString szName;
 	bool abEverOwned[MAX_PLAYERS];
 	int aiCulture[MAX_PLAYERS];
+	int aiGameTurnPlayerLost[MAX_PLAYERS];
 	PlayerTypes eOldOwner;
 	PlayerTypes eOriginalOwner;
 	PlayerTypes eHighestCulturePlayer;
@@ -1628,6 +1629,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		abEverOwned[iI] = pOldCity->isEverOwned((PlayerTypes)iI);
 		aiCulture[iI] = pOldCity->getCultureTimes100((PlayerTypes)iI);
+		aiGameTurnPlayerLost[iI] = pOldCity->getGameTurnPlayerLost((PlayerTypes)iI);
 	}
 
 	abEverOwned[getID()] = true;
@@ -1738,9 +1740,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setOriginalOwner(eOriginalOwner);
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 
-	// Leoreth: log game turn of losing this city for previous owner
-	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
-
 	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
@@ -1752,7 +1751,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		pNewCity->setEverOwned(((PlayerTypes)iI), abEverOwned[iI]);
 		pNewCity->setCultureTimes100(((PlayerTypes)iI), aiCulture[iI], (getID() == iI), false);
+		pNewCity->setGameTurnPlayerLost((PlayerTypes)iI, aiGameTurnPlayerLost[iI]);
 	}
+
+	// Leoreth: log game turn of losing this city for previous owner
+	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
