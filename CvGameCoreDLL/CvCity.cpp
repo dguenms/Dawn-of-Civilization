@@ -11728,7 +11728,7 @@ int CvCity::countTotalCultureTimes100() const
 }
 
 
-PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors) const
+PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors, PlayerTypes eIgnoredPlayer) const
 {
 	PlayerTypes eBestPlayer;
 	int iValue;
@@ -11741,6 +11741,8 @@ PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors) const
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		if (bIgnoreMinors && GET_PLAYER((PlayerTypes)iI).isMinorCiv()) continue;
+
+		if (iI == eIgnoredPlayer) continue;
 
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
