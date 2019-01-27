@@ -291,24 +291,24 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ETHIOPIA</Tag>
-		<English>Abyssinia</English>
+		<English>Al-Habash</English>
 		<French>
-			<Text>Abyssinie</Text>
+			<Text>Al-Habash</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Abessinien:Abessinien:Abessinien</Text>
+			<Text>Al-Habash:Al-Habash:Al-Habash</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>1:1:1</Plural>
 		</German>
 		<Italian>
-			<Text>Abissinia</Text>
+			<Text>Al-Habash</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Abisinia</Text>
+			<Text>Al-Habash</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</Spanish>
