@@ -993,6 +993,58 @@ iCivRome : {
 		"fAlbia Dominica", # 4th AD
 	],
 },
+iCivMaya : {
+	iGreatProphet : [
+		"Junajpu", # mythological
+		"Xb'alanke", # mythological
+		"Kukulkan", # 10th, named after the god
+		"Ce Acatl Topiltzin", # 10th toltec
+	],
+	iGreatArtist : [
+		"Uaxaclajuun Ub'aah K'awiil", # 8th
+		"Chakalte'", # 8th
+		"Jun Nat Omootz", # 8th
+		"Asan Winik Tu'ub", # 8th
+		"Chan Ch'ok Wayib Xok", # 8th
+		"Waj Tan Chak", # 8th
+		iGlobal,
+		"fMarisol Ceh Moo", # 20th
+	],
+	iGreatScientist : [
+		"Itzamna", # mythological
+		"Huematzin", # 8th toltec
+		"Papantzin", # 9th toltec
+	],
+	iGreatMerchant : [
+		"Ek Chuaj", # mythological
+		"Apoxpalon", # 16th
+		"Tabscoob", # 16th
+	],
+	iGreatEngineer : [
+		"Chan Imix K'awiil", # 7th
+		"fK'ab'al Xook", # 8th
+		"Ha' K'in Xook", # 8th
+		"Itzam K'an Ahk", # 8th
+		"K'inich Yat Ahk", # 8th
+	],
+	iGreatStatesman : [
+		"Yax Ehb Xook", # 1st
+		"fYohl Ik'nal", # 6th
+		"Yuknoom Ch'een", # 7th
+		"Jasaw Chan K'awiil", # 8th
+		iGlobal,
+		u"fRigoberta Menchú", # 20th
+	],
+	iGreatGeneral : [
+		"Siyaj K'ak'", # 4th teotihuacan
+		"K'inich Yo'nal Ahk", # 7th
+		"fXochitl", # 9th toltec
+		"Hunac Ceel", # 12th
+		iRenaissance,
+		"Napuc Chi", # 16th
+		"Tecun Uman", # 16th
+	],
+},
 iCivEthiopia : {
 	iGreatProphet : [
 		"Gabra Manfas Qeddus", # legendary
@@ -1174,58 +1226,6 @@ iCivKorea : {
 	iGreatSpy : [
 		"An Jung-geun", # 20th
 		"Kim Chang-ryong", # 20th
-	],
-},
-iCivMaya : {
-	iGreatProphet : [
-		"Junajpu", # mythological
-		"Xb'alanke", # mythological
-		"Kukulkan", # 10th, named after the god
-		"Ce Acatl Topiltzin", # 10th toltec
-	],
-	iGreatArtist : [
-		"Uaxaclajuun Ub'aah K'awiil", # 8th
-		"Chakalte'", # 8th
-		"Jun Nat Omootz", # 8th
-		"Asan Winik Tu'ub", # 8th
-		"Chan Ch'ok Wayib Xok", # 8th
-		"Waj Tan Chak", # 8th
-		iGlobal,
-		"fMarisol Ceh Moo", # 20th
-	],
-	iGreatScientist : [
-		"Itzamna", # mythological
-		"Huematzin", # 8th toltec
-		"Papantzin", # 9th toltec
-	],
-	iGreatMerchant : [
-		"Ek Chuaj", # mythological
-		"Apoxpalon", # 16th
-		"Tabscoob", # 16th
-	],
-	iGreatEngineer : [
-		"Chan Imix K'awiil", # 7th
-		"fK'ab'al Xook", # 8th
-		"Ha' K'in Xook", # 8th
-		"Itzam K'an Ahk", # 8th
-		"K'inich Yat Ahk", # 8th
-	],
-	iGreatStatesman : [
-		"Yax Ehb Xook", # 1st
-		"fYohl Ik'nal", # 6th
-		"Yuknoom Ch'een", # 7th
-		"Jasaw Chan K'awiil", # 8th
-		iGlobal,
-		u"fRigoberta Menchú", # 20th
-	],
-	iGreatGeneral : [
-		"Siyaj K'ak'", # 4th teotihuacan
-		"K'inich Yo'nal Ahk", # 7th
-		"fXochitl", # 9th toltec
-		"Hunac Ceel", # 12th
-		iRenaissance,
-		"Napuc Chi", # 16th
-		"Tecun Uman", # 16th
 	],
 },
 iCivByzantium : {
