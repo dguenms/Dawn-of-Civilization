@@ -8473,8 +8473,8 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ENGLISH_MAN_OF_WAR</Type>
 			<Button>Art/Units/Man-of-War/Button_ManOfWar.dds</Button>
-			<fScale>0.15</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fScale>0.21</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Man-of-War/Man_O_War.nif</NIF>
