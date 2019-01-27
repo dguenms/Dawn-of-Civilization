@@ -1498,7 +1498,10 @@ def checkHistoricalVictory(iPlayer):
 		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
-			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeLength())
+			iGoldenAgeTurns = gc.getPlayer(iPlayer).getGoldenAgeLength()
+			if not gc.getPlayer(iPlayer).isAnarchy(): iGoldenAgeTurns += 1
+			
+			gc.getPlayer(iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
 			
 			if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)

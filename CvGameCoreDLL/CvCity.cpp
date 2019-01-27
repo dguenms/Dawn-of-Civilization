@@ -13322,10 +13322,7 @@ bool CvCity::isHasRealBuilding(BuildingTypes eIndex) const
 
 void CvCity::setHasRealBuilding(BuildingTypes eIndex, bool bNewValue)
 {
-    if (bNewValue == true)
-        setNumRealBuilding(eIndex, 1);
-    else
-        setNumRealBuilding(eIndex, 0);
+    setNumRealBuilding(eIndex, bNewValue ? 1 : 0);
 }
 //Rhye - end
 
