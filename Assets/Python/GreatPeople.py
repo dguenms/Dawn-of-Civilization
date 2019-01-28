@@ -1255,6 +1255,7 @@ iCivByzantium : {
 	],
 	iGreatScientist : [
 		"fHypatia", # 4th
+		"Paulos Aiginitis", # 7th
 		"Stephanos Alexandrinos", # 7th
 		"Theophylaktos Simokates", # 7th
 		"Leon o Mathematikos", # 9th
@@ -2171,6 +2172,7 @@ iCivFrance : {
 	],
 	iGreatScientist : [
 		"Gerbert d'Aurillac", # 10th
+		"Guy de Chauliac", # 14th
 		"Nicole Oresme", # 14th
 		iRenaissance,
 		u"René Descartes", # 17th
@@ -2396,6 +2398,7 @@ iCivEngland : {
 		"John Lennon", # 20th
 	],
 	iGreatScientist : [
+		"Robert Grosseteste", # 13th
 		"Roger Bacon", # 13th
 		"William of Ockham", # 14th
 		iRenaissance,
@@ -2553,8 +2556,9 @@ iCivHolyRome : {
 		"Fritz Lang", # 20th
 	],
 	iGreatScientist : [
+		"Hrabanus Maurus", # 9th
 		"fHildegard von Bingen", # 12th
-		"Nikolaus von Kues", # 15th
+		"Regiomontanus", # 15th
 		"Konrad Celtes", # 15th
 		iRenaissance,
 		"Theophrastus von Hohenheim", # 16th
@@ -2611,6 +2615,7 @@ iCivHolyRome : {
 	iGreatStatesman : [
 		"Heinrich der Vogler", # 10th
 		"Hermann von Salza", # 12th
+		"Nikolaus von Kues", # 15th
 		iRenaissance,
 		"Nikolaus Georg von Reigersberg", # 17th
 		u"Heinrich von Brühl", # 18th
@@ -3840,6 +3845,7 @@ iCivGermany : {
 		"Immanuel Kant", # 18th
 		"Heinrich Friedrich Karl vom Stein", # 18th
 		iIndustrial,
+		"Wilhelm von Humboldt", # 19th
 		"Karl Marx", # 19th
 		"Wilhelm Liebknecht", # 19th
 		"Friedrich Ebert", # 19th
