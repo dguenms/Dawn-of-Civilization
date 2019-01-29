@@ -2379,6 +2379,7 @@ iCivEngland : {
 	],
 	iGreatArtist : [
 		"Geoffrey Chaucer", # 14th
+		"Thomas Malory", # 15th
 		iRenaissance,
 		"William Shakespeare", # 17th
 		"John Milton", # 17th
@@ -2423,6 +2424,7 @@ iCivEngland : {
 	iGreatMerchant : [
 		"Alan Rufus", # 11th
 		"Aaron of Lincoln", # 12th
+		"William Caxton", # 15th
 		iRenaissance,
 		"Francis Drake", # 16th
 		"William Petty", # 17th
@@ -2999,7 +3001,6 @@ iCivPortugal : {
 		"Garcia de Orta", # 16th
 		"Pedro Nunes", # 16th
 		"Amato Lusitano", # 16th
-		"Bartolomeu de Gusmao", # 18th
 		"Jacob de Castro Sarmento", # 18th
 		iGlobal,
 		"Froilano de Mello", # 20th
@@ -3040,7 +3041,11 @@ iCivPortugal : {
 		u"Tristão da Cunha", # 16th
 		u"João o Restaurador", # 17th
 		u"fLuisa de Guzmán", # 17th
+		u"Alexandre de Gusmão", # 18th
 		u"Sebastião José de Carvalho e Melo", # 18th
+		iIndustrial,
+		"Mouzinho da Silveira", # 19th
+		u"António Luís de Seabra", # 19th
 		iGlobal,
 		"Afonso Costa", # 20th
 		u"António de Oliveria Salazar", # 20th
