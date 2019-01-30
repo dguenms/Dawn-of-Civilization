@@ -3380,11 +3380,15 @@ iCivMughals : {
 		"Mirza Ghulam Ahmad", # 19th
 	],
 	iGreatArtist : [
+		"Amir Khusrow Dehlavi", # 13th
+		iRenaissance,
 		"Basawan", # 16th
 		"fShahzadi Gulbadan Begum", # 16th
 		"Abu al-Faiz ibn Mubarak", # 16th
 		"Abd al-Samad", # 16th
 		"Ustad Mansur", # 17th
+		iGlobal,
+		"Muhammad Iqbal", # 20th
 	],
 	iGreatScientist : [
 		"Ali Kashmiri ibn Luqman", # 16th
