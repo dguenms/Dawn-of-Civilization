@@ -668,7 +668,7 @@ iCivIndia : {
 },
 iCivCarthage : {
 	iGreatProphet : [
-		"Sanchuniathon", # unknown date
+		"Sakun-yaton", # unknown date
 		"fJezebel", # 9th BC
 		iClassical,
 		"Tertullianus", # 2nd
@@ -683,7 +683,7 @@ iCivCarthage : {
 	iGreatScientist : [
 		"Mochus", # 14th BC
 		"Hiram", # 10th BC
-		"Sanchuniathon", # unknown date
+		"Sakun-yaton", # unknown date
 		iClassical,
 		"Mago", # 4th BC
 		"Hasdrubal Clitomachus", # 2nd BC
@@ -707,7 +707,7 @@ iCivCarthage : {
 	iGreatStatesman : [
 		"Ashtar-rom", # 9th BC
 		"Ithobaal", # 9th BC
-		"Pygmalion", # 9th BC
+		"Pu'mayyaton", # 9th BC
 		"fElishat", # 8th BC
 		iClassical,
 		"Hanno", # 4th BC
