@@ -7793,13 +7793,13 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 				//Rhye - start
 				int maxDistance = 15;
 				switch (GC.getGameINLINE().getCurrentEra()) {
-					case 0:
+					case ERA_ANCIENT:
 						maxDistance = 15;
 						break;
-					case 1:
+					case ERA_CLASSICAL:
 						maxDistance = 30;
 						break;
-					case 2:
+					case ERA_MEDIEVAL:
 						maxDistance = 45;
 						break;
 					default:
@@ -7811,6 +7811,14 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 				//Rhye - end
 				{
 					return DENIAL_UNKNOWN;
+				}
+
+				if (!pCity->getPreviousOwner() != getID())
+				{
+					if (pCity->plot()->getSettlerValue(getID()) < 90 && pCity->plot()->getWarValue(getID()) == 0)
+					{
+						return DENIAL_UNKNOWN;
+					}
 				}
 			}
 		}

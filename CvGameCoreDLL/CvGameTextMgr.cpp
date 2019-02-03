@@ -9418,6 +9418,18 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 						szBuffer.append(gDLL->getText("TXT_KEY_NO_STATE_RELIGION_FREE_EXPERIENCE", iExperience));
 					}
 				}
+
+				if (pCity->isHasBuildingEffect((BuildingTypes)HARMANDIR_SAHIB))
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText(pCity->isHasReligion(kPlayer.getStateReligion()) ? "TXT_KEY_BUILDING_FREE_EXPERIENCE" : "TXT_KEY_NO_BUILDING_FREE_EXPERIENCE", 2, GC.getBuildingInfo((BuildingTypes)HARMANDIR_SAHIB).getText()));
+				}
+			}
+
+			if (kUnit.getCombat() > 0 && pCity->isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_FREE_EXPERIENCE", pCity->getCultureLevel(), GC.getBuildingInfo((BuildingTypes)CHAPULTEPEC_CASTLE).getText()));
 			}
 		}
 	}
@@ -15955,12 +15967,14 @@ void CvGameTextMgr::setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerr
 			szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_COASTAL_CITIES"));
 			bFirst = false;
 		}
-		if (!bFirst)
-		{
-			szBuffer.append(gDLL->getText("TXT_KEY_OR"));
-		}
+
 		if (terrain.isFoundFreshWater())
 		{
+			if (!bFirst)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_OR"));
+			}
+
 			szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_FRESH_WATER_CITIES"));
 			bFirst = false;
 		}

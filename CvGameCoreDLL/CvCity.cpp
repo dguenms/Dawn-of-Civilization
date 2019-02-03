@@ -2883,9 +2883,12 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 	}
 	
 	// Leoreth: Chapultepec Castle
-	if (isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+	if (eUnit != NO_UNIT)
 	{
-		iExperience += getCultureLevel();
+		if (GC.getUnitInfo(eUnit).getCombat() > 0 && isHasBuildingEffect((BuildingTypes)CHAPULTEPEC_CASTLE))
+		{
+			iExperience += getCultureLevel();
+		}
 	}
 	
 	//SuperSpies: TSHEEP - Only give spies spy specific xp
@@ -13319,10 +13322,7 @@ bool CvCity::isHasRealBuilding(BuildingTypes eIndex) const
 
 void CvCity::setHasRealBuilding(BuildingTypes eIndex, bool bNewValue)
 {
-    if (bNewValue == true)
-        setNumRealBuilding(eIndex, 1);
-    else
-        setNumRealBuilding(eIndex, 0);
+    setNumRealBuilding(eIndex, bNewValue ? 1 : 0);
 }
 //Rhye - end
 

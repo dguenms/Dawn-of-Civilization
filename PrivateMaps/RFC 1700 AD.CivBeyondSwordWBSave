@@ -31474,19 +31474,19 @@ BeginPlot
 		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=36, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=36, (Turkey)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=36, (Turkey)
@@ -44856,7 +44856,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=45, (China)
 	EndUnit
 	BeginCity
 		CityOwner=45, (China)
@@ -50162,7 +50162,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=45, (China)
 	EndUnit
 	BeginCity
 		CityOwner=45, (China)

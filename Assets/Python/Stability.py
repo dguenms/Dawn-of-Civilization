@@ -179,6 +179,9 @@ def getStabilityLevel(iPlayer):
 def setStabilityLevel(iPlayer, iStabilityLevel):
 	data.setStabilityLevel(iPlayer, iStabilityLevel)
 	
+	if iStabilityLevel == iStabilityCollapsing:
+		CyInterface().addMessage(iPlayer, False, iDuration, localText.getText("TXT_KEY_STABILITY_COLLAPSING_WARNING", ()), "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+	
 def incrementStability(iPlayer):
 	data.setStabilityLevel(iPlayer, min(iStabilitySolid, data.getStabilityLevel(iPlayer) + 1))
 	
@@ -419,7 +422,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner:
+			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in Areas.getBirthArea(iPlayer) and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner:
 				if iOriginalOwner < iNumPlayers and iGameTurnYear < tFall[iOriginalOwner]:
 					# cities lost too long ago don't return
 					if city.getGameTurnPlayerLost(iOriginalOwner) >= gc.getGame().getGameTurn() - utils.getTurns(25):

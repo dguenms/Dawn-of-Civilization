@@ -1498,6 +1498,14 @@
 		<Spanish>The %s1 is going through a period of instability, and %d2 cities have seceded from their civilization!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COLLAPSING_WARNING</Tag>
+		<English>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</English>
+		<French>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</French>
+		<German>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</German>
+		<Italian>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Italian>
+		<Spanish>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_</Tag>
 		<English></English>
 		<French></French>

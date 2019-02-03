@@ -230,6 +230,11 @@ class CvRFCEventHandler:
 		
 		vic.onCityAcquired(iPlayer, iOwner, city, bConquest)
 		
+		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
+		
+		if bTrade and iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
+			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
+		
 		return 0
 		
 	def onCityAcquiredAndKept(self, argsList):
@@ -239,16 +244,7 @@ class CvRFCEventHandler:
 		if city.isCapital():
 			self.rnf.createStartingWorkers(iPlayer, (city.getX(), city.getY()))
 		
-		#utils.debugTextPopup('City acquired and kept: ' + city.getName() + '\nPlayer: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0))
-		
-		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-			
-		if gc.getPlayer(iPlayer).isHasBuildingEffect(iTopkapiPalace):
-			self.up.ottomanUP(city, iPlayer, iOwner)
-		elif iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
-			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
-		else:
-			utils.cityConquestCulture(city, iPlayer, iOwner)
+		utils.cityConquestCulture(city, iPlayer, iOwner)
 
 	def onCityRazed(self, argsList):
 		city, iPlayer = argsList

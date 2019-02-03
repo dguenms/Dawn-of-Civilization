@@ -626,9 +626,9 @@ def checkTurn(iGameTurn, iPlayer):
 			if data.bEthiopiaConverted and iNumOrthodoxCathedrals >= 1 and iGreatProphets >= 3:
 				win(iEthiopia, 1)
 		
-		if iGameTurn == gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5) + 1:
-			if not data.bEthiopiaConverted:
-				expire(iEthiopia, 1)
+			if iGameTurn > gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5):
+				if not data.bEthiopiaConverted:
+					expire(iEthiopia, 1)
 				
 		if iGameTurn == getTurnForYear(1200):
 			expire(iEthiopia, 1)
@@ -1498,7 +1498,10 @@ def checkHistoricalVictory(iPlayer):
 		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
 			
-			gc.getPlayer(iPlayer).changeGoldenAgeTurns(gc.getPlayer(iPlayer).getGoldenAgeLength())
+			iGoldenAgeTurns = gc.getPlayer(iPlayer).getGoldenAgeLength()
+			if not gc.getPlayer(iPlayer).isAnarchy(): iGoldenAgeTurns += 1
+			
+			gc.getPlayer(iPlayer).changeGoldenAgeTurns(iGoldenAgeTurns)
 			
 			if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_VICTORY_INTERMEDIATE", ()), "", 0, "", ColorTypes(iPurple), -1, -1, True, True)
