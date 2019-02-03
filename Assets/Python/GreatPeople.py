@@ -2622,6 +2622,7 @@ iCivHolyRome : {
 		iRenaissance,
 		"Nikolaus Georg von Reigersberg", # 17th
 		u"Heinrich von Brühl", # 18th
+		"Wenzel Anton von Kaunitz-Rietberg", # 18th
 		iIndustrial,
 		u"István Széchenyi", # 19th
 		"Klemens von Metternich", # 19th
@@ -2640,6 +2641,7 @@ iCivHolyRome : {
 		u"Götz von Berlichingen", # 16th
 		"Albrecht von Wallenstein", # 17th
 		"Eugen von Savoyen", # 17th
+		"Gideon Ernst von Laudon", # 18th
 		iIndustrial,
 		"Josef Wenzel Radetzky von Radetz", # 19th
 		u"Karl von Österreich-Teschen", # 19th
