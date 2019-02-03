@@ -2567,6 +2567,7 @@ iCivHolyRome : {
 		"Gerhard Mercator", # 16th
 		"Johannes Kepler", # 17th
 		"Gottfried Leibniz", # 17th
+		"fCaroline Herschel", # 18th
 		iIndustrial,
 		"Ignaz Semmelweis", # 19th
 		"Gregor Mendel", # 19th
@@ -3781,6 +3782,7 @@ iCivGermany : {
 	iGreatProphet : [
 		"Moses Mendelssohn", # 18th
 		"Friedrich Schleiermacher", # 18th
+		"fAnne Catherine Emmerich", # 18th
 		iIndustrial,
 		"Friedrich Nietzsche", # 19th
 		"Adolph Kolping", # 19th
@@ -3790,8 +3792,11 @@ iCivGermany : {
 		"Joseph Ratzinger", # 20th
 	],
 	iGreatArtist : [
+		"Johann Sebastian Bach", # 18th
 		"Carl Philipp Emanuel Bach", # 18th
 		"Gotthold Ephraim Lessing", # 18th
+		"Johann Wolfgang von Goethe", # 18th
+		"Friedrich Schiller", # 18th
 		iIndustrial,
 		"Caspar David Friedrich", # 19th
 		"Felix Mendelssohn", # 19th
@@ -3824,6 +3829,7 @@ iCivGermany : {
 	iGreatMerchant : [
 		"Johann Philipp Graumann", # 18th
 		"Johann Ernst Gotzkowsky", # 18th
+		"Mayer Amschel Rothschild", # 18th
 		iIndustrial,
 		"Nathan Mayer Rothschild", # 19th
 		u"Gerson von Bleichröder", # 19th
