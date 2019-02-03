@@ -1436,7 +1436,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	PlayerTypes eOriginalOwner;
 	PlayerTypes eHighestCulturePlayer;
 	BuildingTypes eBuilding;
-	bool bRecentRecapture;
 	bool bRecapture;
 	bool bRaze;
 	bool bGift;
@@ -1479,6 +1478,22 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			{
 				pLoopUnit->kill(false, getID());
 			}
+		}
+	}
+
+	log(CvWString::format(L"%s acquires city from %s (culture conversion player %s)", getCivilizationShortDescription(), GET_PLAYER(pOldCity->getOwner()).getCivilizationShortDescription(), pOldCity->getCultureConversionPlayer() != NO_PLAYER ? GET_PLAYER(pOldCity->getCultureConversionPlayer()).getCivilizationShortDescription() : L"none"));
+
+	// Leoreth: undo culture conversion
+	pOldCity->resetCultureConversion();
+	pOldCity->plot()->resetCultureConversion();
+	for (int iDirection = 0; iDirection < NUM_DIRECTION_TYPES; iDirection++)
+	{
+		pLoopPlot = plotDirection(pOldCity->getX(), pOldCity->getY(), (DirectionTypes)iDirection);
+		log(CvWString::format(L"check culture conversion at (%d, %d)", pLoopPlot->getX(), pLoopPlot->getY()));
+		if (pLoopPlot->getCultureConversionPlayer() == pOldCity->getOwnerINLINE())
+		{
+			log("reset culture conversion");
+			pLoopPlot->resetCultureConversion();
 		}
 	}
 
@@ -1608,6 +1623,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	eOldOwner = pOldCity->getOwnerINLINE();
 	eOriginalOwner = pOldCity->getOriginalOwner();
+	eHighestCulturePlayer = pOldCity->findHighestCulture();
 	iGameTurnFounded = pOldCity->getGameTurnFounded();
 	iPopulation = pOldCity->getPopulation();
 	iHighestPopulation = pOldCity->getHighestPopulation();
@@ -1702,12 +1718,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
-	bRecentRecapture = pOldCity->getPreviousOwner() == getID() && pOldCity->getGameTurnPlayerLost(getID()) != -1 && GC.getGame().getGameTurn() - pOldCity->getGameTurnPlayerLost(getID()) <= getTurns(10);
-
-	eHighestCulturePlayer = pOldCity->findHighestCulture(false, bRecentRecapture ? eOldOwner : NO_PLAYER);
-
 	bRecapture = ((eHighestCulturePlayer != NO_PLAYER) ? (GET_PLAYER(eHighestCulturePlayer).getTeam() == getTeam()) : false);
-	
+
 	// Leoreth: peaceful acquisition of minor cities makes original owner
 	if (!bConquest && (GET_PLAYER(pOldCity->getOwnerINLINE()).isMinorCiv() || GET_PLAYER(pOldCity->getOwnerINLINE()).isBarbarian()))
 	{

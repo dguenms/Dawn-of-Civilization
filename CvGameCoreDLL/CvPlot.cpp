@@ -210,6 +210,10 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	// Leoreth: graphics paging
 	m_iGraphicsPageIndex = -1;
 
+	// Leoreth
+	m_iCultureConversionRate = 0;
+	m_iTotalCulture = 0;
+
 	m_bStartingPlot = false;
 	m_bHills = false;
 	m_bNOfRiver = false;
@@ -223,6 +227,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bWithinGreatWall = false;
 
 	m_eOwner = NO_PLAYER;
+	m_eCultureConversionPlayer = NO_PLAYER; // Leoreth
 	m_ePlotType = PLOT_OCEAN;
 	m_eTerrainType = NO_TERRAIN;
 	m_eFeatureType = NO_FEATURE;
@@ -7288,7 +7293,7 @@ void CvPlot::updateYield()
 }
 
 
-int CvPlot::getCulture(PlayerTypes eIndex) const
+int CvPlot::getActualCulture(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
@@ -7307,6 +7312,25 @@ int CvPlot::getCulture(PlayerTypes eIndex) const
 	}
 
 	return m_aiCulture[eIndex];
+}
+
+
+// Leoreth
+int CvPlot::getCulture(PlayerTypes ePlayer) const
+{
+	if (getCultureConversionPlayer() == ePlayer)
+	{
+		return (getActualTotalCulture() - getActualCulture(ePlayer)) * getCultureConversionRate() / 100 + getActualCulture(ePlayer);
+	}
+
+	return getActualCulture(ePlayer) * (100 - getCultureConversionRate()) / 100;
+}
+
+
+// Leoreth
+int CvPlot::getActualTotalCulture() const
+{
+	return m_iTotalCulture;
 }
 
 
@@ -7425,7 +7449,9 @@ void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bU
 	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
 
-	if (getCulture(eIndex) != iNewValue)
+	int iOldValue = getCulture(eIndex);
+
+	if (iOldValue != iNewValue)
 	{
 		if(NULL == m_aiCulture)
 		{
@@ -7437,6 +7463,7 @@ void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bU
 		}
 
 		m_aiCulture[eIndex] = iNewValue;
+		m_iTotalCulture += (iNewValue - iOldValue);
 		FAssert(getCulture(eIndex) >= 0);
 
 		if (bUpdate)
@@ -9783,7 +9810,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// Init saved data
 	reset();
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: 1 for culture conversion
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iX);
@@ -9800,6 +9827,8 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMinOriginalStartDist);
 	pStream->Read(&m_iReconCount);
 	pStream->Read(&m_iRiverCrossingCount);
+	if (uiFlag >= 1) pStream->Read(&m_iCultureConversionRate);
+	if (uiFlag >= 1) pStream->Read(&m_iTotalCulture);
 
 	pStream->Read(&bVal);
 	m_bStartingPlot = bVal;
@@ -9820,6 +9849,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bWithinGreatWall); // Leoreth
 
 	pStream->Read(&m_eOwner);
+	if (uiFlag >= 1) pStream->Read((int*)&m_eCultureConversionPlayer); // Leoreth
 	pStream->Read(&m_ePlotType);
 	pStream->Read(&m_eTerrainType);
 	pStream->Read(&m_eFeatureType);
@@ -10046,7 +10076,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 {
 	uint iI;
 
-	uint uiFlag=0;
+	uint uiFlag=1; // Leoreth: 1 for culture conversion
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iX);
@@ -10063,6 +10093,8 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_iMinOriginalStartDist);
 	pStream->Write(m_iReconCount);
 	pStream->Write(m_iRiverCrossingCount);
+	pStream->Write(m_iCultureConversionRate); // Leoreth
+	pStream->Write(m_iTotalCulture); // Leoreth
 
 	pStream->Write(m_bStartingPlot);
 	pStream->Write(m_bHills);
@@ -10077,6 +10109,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_bWithinGreatWall);
 
 	pStream->Write(m_eOwner);
+	pStream->Write(m_eCultureConversionPlayer); // Leoreth
 	pStream->Write(m_ePlotType);
 	pStream->Write(m_eTerrainType);
 	pStream->Write(m_eFeatureType);
@@ -11533,4 +11566,34 @@ bool CvPlot::canSpread(ReligionTypes eReligion) const
 bool CvPlot::isPlains() const
 {
 	return isFlatlands() && (getFeatureType() == NO_FEATURE || GC.getFeatureInfo(getFeatureType()).getDefenseModifier() <= 0) && !isCity(true);
+}
+
+PlayerTypes CvPlot::getCultureConversionPlayer() const
+{
+	return m_eCultureConversionPlayer;
+}
+
+int CvPlot::getCultureConversionRate() const
+{
+	return m_iCultureConversionRate;
+}
+
+void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
+{
+	log(CvWString::format(L"culture conversion to %s at (%d, %d) at year %d", ePlayer != NO_PLAYER ? GET_PLAYER(ePlayer).getCivilizationShortDescription() : L"none", getX(), getY(), GC.getGame().getGameTurnYear()));
+
+	m_eCultureConversionPlayer = iRate == 0 ? NO_PLAYER : ePlayer;
+	m_iCultureConversionRate = iRate;
+
+	updateCulture(true, true);
+
+	if (getPlotCity() != NULL)
+	{
+		getPlotCity()->AI_setAssignWorkDirty(true);
+	}
+}
+
+void CvPlot::resetCultureConversion()
+{
+	setCultureConversion(NO_PLAYER, 0);
 }

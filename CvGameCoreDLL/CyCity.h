@@ -588,6 +588,9 @@ public:
 	void setStabilityPopulation(int iNewValue);
 	int getModifiedCultureRateTimes100();
 	int getModifiedCultureRate();
+	void setCultureConversion(int ePlayer, int iRate);
+	void resetCultureConversion();
+	int getCultureConversionPlayer();
 
 private:
 	CvCity* m_pCity;

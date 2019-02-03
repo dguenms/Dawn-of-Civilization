@@ -597,6 +597,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iBuildingUnhealthModifier = 0;
 	m_iCorporationUnhealthModifier = 0;
 
+	m_iTotalCultureTimes100 = 0;
+	m_iCultureConversionRate = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -623,6 +626,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_eOwner = eOwner;
 	m_ePreviousOwner = NO_PLAYER;
 	m_eOriginalOwner = eOwner;
+	m_eCultureConversionPlayer = NO_PLAYER; // Leoreth
 	m_eCultureLevel = NO_CULTURELEVEL;
 	m_eArtStyle = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getArtStyleType() : NO_ARTSTYLE;
 
@@ -11697,15 +11701,26 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
-	return (m_aiCulture[eIndex]) / 100;
+	return getCultureTimes100(eIndex) / 100;
 }
 
-int CvCity::getCultureTimes100(PlayerTypes eIndex) const
+int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
 	return m_aiCulture[eIndex];
+}
+
+// Leoreth
+int CvCity::getCultureTimes100(PlayerTypes ePlayer) const
+{
+	if (getCultureConversionPlayer() == ePlayer)
+	{
+		return (getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer)) * getCultureConversionRate() / 100 + getActualCultureTimes100(ePlayer);
+	}
+
+	return getActualCultureTimes100(ePlayer) * (100 - getCultureConversionRate()) / 100;
 }
 
 
@@ -11728,7 +11743,7 @@ int CvCity::countTotalCultureTimes100() const
 }
 
 
-PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors, PlayerTypes eIgnoredPlayer) const
+PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors) const
 {
 	PlayerTypes eBestPlayer;
 	int iValue;
@@ -11741,8 +11756,6 @@ PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors, PlayerTypes eIgnoredP
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		if (bIgnoreMinors && GET_PLAYER((PlayerTypes)iI).isMinorCiv()) continue;
-
-		if (iI == eIgnoredPlayer) continue;
 
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
@@ -11832,15 +11845,17 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
 	// Leoreth: includes K-Mod fixes / culture spread changes
-	//int iOldValue = getCultureTimes100(eIndex);
+	int iOldValue = getCultureTimes100(eIndex);
 
-	if (getCultureTimes100(eIndex) != iNewValue)
+	if (iOldValue != iNewValue)
 	{
 		m_aiCulture[eIndex] = iNewValue;
 		FAssert(getCultureTimes100(eIndex) >= 0);
 
 		updateCultureLevel(bUpdatePlotGroups);
 		updateCoveredPlots(bUpdatePlotGroups); // Leoreth
+
+		m_iTotalCultureTimes100 += (iNewValue - iOldValue); // Leoreth
 
 		if (bPlots)
 		{
@@ -15747,7 +15762,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: up to 3 (culture conversion)
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iID);
@@ -15855,6 +15870,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 	pStream->Read(&m_iCultureRank);
 	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
+	if (uiFlag >= 3) pStream->Read(&m_iTotalCultureTimes100);
+	if (uiFlag >= 3) pStream->Read(&m_iCultureConversionRate);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15872,6 +15889,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eOwner);
 	pStream->Read((int*)&m_ePreviousOwner);
 	pStream->Read((int*)&m_eOriginalOwner);
+	if (uiFlag >= 3) pStream->Read((int*)&m_eCultureConversionPlayer);
 	pStream->Read((int*)&m_eCultureLevel);
 	pStream->Read((int*)&m_eArtStyle); // Leoreth
 
@@ -16036,7 +16054,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=2; // Leoreth: 1 for wonder effect changes, 2 for stability population
+	uint uiFlag=3; // Leoreth: 1 for wonder effect changes, 2 for stability population, 3 for culture conversion
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iID);
@@ -16151,6 +16169,9 @@ void CvCity::write(FDataStreamBase* pStream)
 
 	pStream->Write(m_iStabilityPopulation); // Leoreth
 
+	pStream->Write(m_iTotalCultureTimes100); // Leoreth
+	pStream->Write(m_iCultureConversionRate); // Leoreth
+
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
 	pStream->Write(m_bDrafted);
@@ -16167,6 +16188,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePreviousOwner);
 	pStream->Write(m_eOriginalOwner);
+	pStream->Write(m_eCultureConversionPlayer); // Leoreth
 	pStream->Write(m_eCultureLevel);
 	pStream->Write(m_eArtStyle); // Leoreth
 
@@ -19070,4 +19092,35 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 	}
 
 	return iGreatPeopleRate;
+}
+
+PlayerTypes CvCity::getCultureConversionPlayer() const
+{
+	return m_eCultureConversionPlayer;
+}
+
+int CvCity::getCultureConversionRate() const
+{
+	return getCultureConversionPlayer() != NO_PLAYER ? m_iCultureConversionRate : 0;
+}
+
+void CvCity::setCultureConversion(PlayerTypes ePlayer, int iRate)
+{
+	m_eCultureConversionPlayer = ePlayer;
+	m_iCultureConversionRate = iRate;
+
+	if (ePlayer != NO_PLAYER)
+	{
+		doPlotCulture(true, ePlayer, 0);
+	}
+}
+
+void CvCity::resetCultureConversion()
+{
+	setCultureConversion(NO_PLAYER, 0);
+}
+
+int CvCity::getActualTotalCultureTimes100() const
+{
+	return m_iTotalCultureTimes100;
 }

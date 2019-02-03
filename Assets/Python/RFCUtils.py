@@ -425,6 +425,15 @@ class RFCUtils:
 		
 		if bOwner:
 			plot.setOwner(iPlayer)
+			
+	def convertTemporaryCulture(self, plot, iPlayer, iPercent, bOwner):
+		if plot.isCity():
+			plot.getPlotCity().setCultureConversion(iPlayer, iPercent)
+			
+		plot.setCultureConversion(iPlayer, iPercent)
+		
+		if bOwner:
+			plot.setOwner(iPlayer)
 
 	#DynamicCivs
 	def getMaster(self, iCiv):
@@ -1432,11 +1441,11 @@ class RFCUtils:
 		for (i, j) in self.surroundingPlots((x, y)):
 			plot = gc.getMap().plot(i, j)
 			if (i, j) == (x, y):
-				self.convertPlotCulture(plot, iPlayer, 25, False)
+				self.convertTemporaryCulture(plot, iPlayer, 25, False)
 			elif plot.getOwner() == iPreviousOwner:
-				self.convertPlotCulture(plot, iPlayer, 50, True)
+				self.convertTemporaryCulture(plot, iPlayer, 50, True)
 			else:
-				self.convertPlotCulture(plot, iPlayer, 25, True)
+				self.convertTemporaryCulture(plot, iPlayer, 25, True)
 					
 	def getAllDeals(self, iFirstPlayer, iSecondPlayer):
 		lDeals = []

@@ -1133,3 +1133,28 @@ void CyPlot::updateCulture()
 {
 	if (m_pPlot) m_pPlot->updateCulture(true, true);
 }
+
+void CyPlot::setCultureConversion(int ePlayer, int iRate)
+{
+	if (m_pPlot) m_pPlot->setCultureConversion((PlayerTypes)ePlayer, iRate);
+}
+
+void CyPlot::resetCultureConversion()
+{
+	if (m_pPlot) m_pPlot->resetCultureConversion();
+}
+
+int CyPlot::getActualTotalCulture() 
+{
+	return m_pPlot ? m_pPlot->getActualTotalCulture() : -1;
+}
+
+int CyPlot::getCultureConversionPlayer()
+{
+	return m_pPlot ? (int)m_pPlot->getCultureConversionPlayer() : -1;
+}
+
+int CyPlot::getCultureConversionRate()
+{
+	return m_pPlot ? m_pPlot->getCultureConversionRate() : -1;
+}

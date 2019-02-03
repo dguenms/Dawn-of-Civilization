@@ -794,7 +794,8 @@ public:
 	int getCultureTimes100(PlayerTypes eIndex) const;													// Exposed to Python
 	//int countTotalCultureTimes100() const;			//Rhye																				// Exposed to Python
 	int countTotalCultureTimes100() const;		//Rhye																					// Exposed to Python
-	PlayerTypes findHighestCulture(bool bIgnoreMinors = false, PlayerTypes eIgnoredPlayer = NO_PLAYER) const;																			// Exposed to Python
+	int getActualTotalCultureTimes100() const; // Leoreth
+	PlayerTypes findHighestCulture(bool bIgnoreMinors = false) const;																			// Exposed to Python
 	int calculateCulturePercent(PlayerTypes eIndex) const;											// Exposed to Python
 	int calculateOverallCulturePercent(PlayerTypes eIndex) const; // Leoreth
 	int calculateTeamCulturePercent(TeamTypes eIndex) const;										// Exposed to Python
@@ -802,6 +803,13 @@ public:
 	void setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
+
+	PlayerTypes getCultureConversionPlayer() const;
+	int getCultureConversionRate() const;
+	void setCultureConversion(PlayerTypes ePlayer, int iRate);
+	void resetCultureConversion();
+
+	int getActualCultureTimes100(PlayerTypes ePlayer) const;
 
 	int getNumRevolts(PlayerTypes eIndex) const;
 	void changeNumRevolts(PlayerTypes eIndex, int iChange);
@@ -1309,6 +1317,9 @@ protected:
 	int m_iBuildingUnhealthModifier;
 	int m_iCorporationUnhealthModifier;
 
+	int m_iTotalCultureTimes100;
+	int m_iCultureConversionRate;
+
 	bool m_bNeverLost;
 	bool m_bBombarded;
 	bool m_bDrafted;
@@ -1335,6 +1346,7 @@ protected:
 	PlayerTypes m_eOwner;
 	PlayerTypes m_ePreviousOwner;
 	PlayerTypes m_eOriginalOwner;
+	PlayerTypes m_eCultureConversionPlayer; // Leoreth
 	CultureLevelTypes m_eCultureLevel;
 	ArtStyleTypes m_eArtStyle; // Leoreth
 
