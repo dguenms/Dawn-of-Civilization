@@ -181,6 +181,60 @@ iCivEgypt : {
 		"Sethi", # 13th BC
 	],
 },
+iCivBabylonia : {
+	iGreatProphet : [
+		"Utnapishtim", # legendary
+		"Gilgamesh", # legendary
+		"fAmat-Mamu", # 18th BC
+		iClassical,
+		"fAdad-guppi", # 6th BC
+		"Ezra", # 5th BC
+	],
+	iGreatArtist : [
+		"fEnheduanna", # 23rd BC
+		"Gudea", # 22nd BC
+		"Samsu-ditana", # 17th BC
+		"Sin-leqi-unninni", # 13th BC
+	],
+	iGreatScientist : [
+		"fTapputi", # legendary
+		"Esagil-kin-apli", # 11th BC
+		iClassical,
+		"fEnnigaldi", # 6th BC
+		"Nabu-rimanni", # 6th BC
+		"Kidinnu", # 4th BC
+		"Sudines", # 3rd BC
+		"Bel-reu-su", # 3rd BC
+	],
+	iGreatMerchant : [
+		"fIltani", # 18th BC
+		"Burna-Buriash", # 14th BC
+		"Kadashman-Enlil", # 14th BC
+		iClassical,
+		"Itti-Marduk-balatu", # 6th BC
+	],
+	iGreatEngineer : [
+		"Naram-Sin", # 22nd BC
+		"Ur-Nammu", # 21st BC
+		iClassical,
+		"Nabopolassar", # 7th BC
+	],
+	iGreatStatesman : [
+		"Urukagina", # 24th BC
+		"Ur-Nammu", # 21st BC
+		"Bilalama", # 20th BC
+		"Lipit-Ishtar", # 19th BC
+		iClassical,
+		"fShammuramat", # 9th BC
+	],
+	iGreatGeneral : [
+		"Tiglath-Pileser", # 10th BC
+		iClassical,
+		"Sennacherib", # 7th BC
+		"Nebukanezar", # 7th BC
+		"Shalmaneser", # 7th BC
+	],
+},
 iCivChina : {
 	iGreatProphet : [
 		"Lao Tzu", # 6th BC
@@ -336,60 +390,6 @@ iCivChina : {
 		"Kang Sheng", # 20th
 		"fXu Lai", # 20th
 		"Li Bai", # 20th
-	],
-},
-iCivBabylonia : {
-	iGreatProphet : [
-		"Utnapishtim", # legendary
-		"Gilgamesh", # legendary
-		"fAmat-Mamu", # 18th BC
-		iClassical,
-		"fAdad-guppi", # 6th BC
-		"Ezra", # 5th BC
-	],
-	iGreatArtist : [
-		"fEnheduanna", # 23rd BC
-		"Gudea", # 22nd BC
-		"Samsu-ditana", # 17th BC
-		"Sin-leqi-unninni", # 13th BC
-	],
-	iGreatScientist : [
-		"fTapputi", # legendary
-		"Esagil-kin-apli", # 11th BC
-		iClassical,
-		"fEnnigaldi", # 6th BC
-		"Nabu-rimanni", # 6th BC
-		"Kidinnu", # 4th BC
-		"Sudines", # 3rd BC
-		"Bel-reu-su", # 3rd BC
-	],
-	iGreatMerchant : [
-		"fIltani", # 18th BC
-		"Burna-Buriash", # 14th BC
-		"Kadashman-Enlil", # 14th BC
-		iClassical,
-		"Itti-Marduk-balatu", # 6th BC
-	],
-	iGreatEngineer : [
-		"Naram-Sin", # 22nd BC
-		"Ur-Nammu", # 21st BC
-		iClassical,
-		"Nabopolassar", # 7th BC
-	],
-	iGreatStatesman : [
-		"Urukagina", # 24th BC
-		"Ur-Nammu", # 21st BC
-		"Bilalama", # 20th BC
-		"Lipit-Ishtar", # 19th BC
-		iClassical,
-		"fShammuramat", # 9th BC
-	],
-	iGreatGeneral : [
-		"Tiglath-Pileser", # 10th BC
-		iClassical,
-		"Sennacherib", # 7th BC
-		"Nebukanezar", # 7th BC
-		"Shalmaneser", # 7th BC
 	],
 },
 iCivGreece : {
