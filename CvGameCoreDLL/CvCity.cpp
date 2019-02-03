@@ -598,7 +598,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iCorporationUnhealthModifier = 0;
 
 	m_iTotalCultureTimes100 = 0;
-	m_iCultureConversionRate = 0;
 
 	m_bNeverLost = true;
 	m_bBombarded = false;
@@ -626,7 +625,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_eOwner = eOwner;
 	m_ePreviousOwner = NO_PLAYER;
 	m_eOriginalOwner = eOwner;
-	m_eCultureConversionPlayer = NO_PLAYER; // Leoreth
 	m_eCultureLevel = NO_CULTURELEVEL;
 	m_eArtStyle = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getArtStyleType() : NO_ARTSTYLE;
 
@@ -6238,7 +6236,7 @@ int CvCity::cultureStrength(PlayerTypes ePlayer) const
 
 		if (pLoopPlot != NULL)
 		{
-			if (pLoopPlot->getOwnerINLINE() == ePlayer)
+			if (pLoopPlot->calculateCulturalOwner(true) == ePlayer)
 			{
 				iStrength += (GC.getGameINLINE().getCurrentEra() + 1);
 			}
@@ -11715,12 +11713,12 @@ int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
 // Leoreth
 int CvCity::getCultureTimes100(PlayerTypes ePlayer) const
 {
-	if (getCultureConversionPlayer() == ePlayer)
+	if (plot()->getCultureConversionPlayer() == ePlayer)
 	{
-		return (getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer)) * getCultureConversionRate() / 100 + getActualCultureTimes100(ePlayer);
+		return (getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer)) * plot()->getCultureConversionRate() / 100 + getActualCultureTimes100(ePlayer);
 	}
 
-	return getActualCultureTimes100(ePlayer) * (100 - getCultureConversionRate()) / 100;
+	return getActualCultureTimes100(ePlayer) * (100 - plot()->getCultureConversionRate()) / 100;
 }
 
 
@@ -11916,59 +11914,7 @@ int CvCity::getRevoltTestProbability() const
 	}
 	iBestModifier = range(iBestModifier, 0, 100);
 
-	//Rhye - start switch
-
-	//return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100);
-	int result = (GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100;
-	switch (getOwnerINLINE())
-	{
-		case MONGOLIA:
-			result *= 0;
-			break;
-		case TURKEY:
-			result /= 2;
-			break;
-		case NATIVE:
-			result *= 3;
-			result /= 2;
-			break;
-		case CELTIA:
-			result *= 3;
-			result /= 2;
-			break;
-		case INDEPENDENT:
-		case INDEPENDENT2:
-		case BARBARIAN:
-			result *= 3;
-			result = std::min(std::max(result, 3), 12);
-		default:
-			break;
-	}
-
-	if (getScenario() >= SCENARIO_600AD) { //late start condition
-		if (getX_INLINE() == 59 && getY_INLINE() == 47) //Mediolanum
-			result /= 8;
-		else if (getX_INLINE() == 60 && getY_INLINE() == 47) //Venice
-			result /= 8;
-		else if (getX_INLINE() == 60 && getY_INLINE() == 44) //Rome
-			result /= 8;
-		else if (getOwnerINLINE() == CELTIA) //Byzantium
-			result *= 2;
-		else if (getX_INLINE() == 68 && getY_INLINE() == 45) //Constantinopolis
-			result /= 16;
-	}
-	if (getX_INLINE() == 63 && getY_INLINE() == 49) //Vienna
-			result /= 16;
-
-	if (getX_INLINE() == 59 && getY_INLINE() == 53) //Hamburg
-			result /= 8;
-
-	if (isCapital() && getOwnerINLINE() < NUM_MAJOR_PLAYERS)
-		result /= 4;
-
-	return (result);
-
-	//Rhye - end
+	return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100) / (isHuman() ? 1 : 2); // Leoreth
 }
 
 bool CvCity::isEverOwned(PlayerTypes eIndex) const
@@ -15871,7 +15817,6 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureRank);
 	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
 	if (uiFlag >= 3) pStream->Read(&m_iTotalCultureTimes100);
-	if (uiFlag >= 3) pStream->Read(&m_iCultureConversionRate);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15889,7 +15834,6 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eOwner);
 	pStream->Read((int*)&m_ePreviousOwner);
 	pStream->Read((int*)&m_eOriginalOwner);
-	if (uiFlag >= 3) pStream->Read((int*)&m_eCultureConversionPlayer);
 	pStream->Read((int*)&m_eCultureLevel);
 	pStream->Read((int*)&m_eArtStyle); // Leoreth
 
@@ -16170,7 +16114,6 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iStabilityPopulation); // Leoreth
 
 	pStream->Write(m_iTotalCultureTimes100); // Leoreth
-	pStream->Write(m_iCultureConversionRate); // Leoreth
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -16188,7 +16131,6 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePreviousOwner);
 	pStream->Write(m_eOriginalOwner);
-	pStream->Write(m_eCultureConversionPlayer); // Leoreth
 	pStream->Write(m_eCultureLevel);
 	pStream->Write(m_eArtStyle); // Leoreth
 
@@ -19092,32 +19034,6 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 	}
 
 	return iGreatPeopleRate;
-}
-
-PlayerTypes CvCity::getCultureConversionPlayer() const
-{
-	return m_eCultureConversionPlayer;
-}
-
-int CvCity::getCultureConversionRate() const
-{
-	return getCultureConversionPlayer() != NO_PLAYER ? m_iCultureConversionRate : 0;
-}
-
-void CvCity::setCultureConversion(PlayerTypes ePlayer, int iRate)
-{
-	m_eCultureConversionPlayer = ePlayer;
-	m_iCultureConversionRate = iRate;
-
-	if (ePlayer != NO_PLAYER)
-	{
-		doPlotCulture(true, ePlayer, 0);
-	}
-}
-
-void CvCity::resetCultureConversion()
-{
-	setCultureConversion(NO_PLAYER, 0);
 }
 
 int CvCity::getActualTotalCultureTimes100() const

@@ -804,11 +804,7 @@ public:
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 
-	PlayerTypes getCultureConversionPlayer() const;
-	int getCultureConversionRate() const;
-	void setCultureConversion(PlayerTypes ePlayer, int iRate);
-	void resetCultureConversion();
-
+	// Leoreth
 	int getActualCultureTimes100(PlayerTypes ePlayer) const;
 
 	int getNumRevolts(PlayerTypes eIndex) const;
@@ -1318,7 +1314,6 @@ protected:
 	int m_iCorporationUnhealthModifier;
 
 	int m_iTotalCultureTimes100;
-	int m_iCultureConversionRate;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;
@@ -1346,7 +1341,6 @@ protected:
 	PlayerTypes m_eOwner;
 	PlayerTypes m_ePreviousOwner;
 	PlayerTypes m_eOriginalOwner;
-	PlayerTypes m_eCultureConversionPlayer; // Leoreth
 	CultureLevelTypes m_eCultureLevel;
 	ArtStyleTypes m_eArtStyle; // Leoreth
 

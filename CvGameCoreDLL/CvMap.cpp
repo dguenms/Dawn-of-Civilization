@@ -341,10 +341,24 @@ void CvMap::doTurn()
 	PROFILE("CvMap::doTurn()")
 
 	int iI;
+	CvPlot* pPlot;
+
+	int iGameTurn = GC.getGameINLINE().getGameTurn();
+	int iInterval = getTurns(10);
 
 	for (iI = 0; iI < numPlotsINLINE(); iI++)
 	{
-		plotByIndexINLINE(iI)->doTurn();
+		pPlot = plotByIndexINLINE(iI);
+
+		pPlot->doTurn();
+
+		if (iGameTurn % iInterval == 0)
+		{
+			if (pPlot->getCultureConversionPlayer() != NO_PLAYER)
+			{
+				pPlot->changeCultureConversionRate(-5);
+			}
+		}
 	}
 }
 

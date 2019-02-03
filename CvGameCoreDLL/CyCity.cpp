@@ -2773,18 +2773,3 @@ int CyCity::getModifiedCultureRateTimes100()
 {
 	return m_pCity ? m_pCity->getModifiedCultureRateTimes100() : -1;
 }
-
-void CyCity::setCultureConversion(int iPlayer, int iRate)
-{
-	if (m_pCity) m_pCity->setCultureConversion((PlayerTypes)iPlayer, iRate);
-}
-
-void CyCity::resetCultureConversion()
-{
-	if (m_pCity) m_pCity->resetCultureConversion();
-}
-
-int CyCity::getCultureConversionPlayer()
-{
-	return m_pCity ? (int)m_pCity->getCultureConversionPlayer() : -1;
-}

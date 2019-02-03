@@ -144,7 +144,7 @@ public:
 	bool isWithinCultureRange(PlayerTypes ePlayer) const;																						// Exposed to Python
 	int getNumCultureRangeCities(PlayerTypes ePlayer) const;																				// Exposed to Python
 
-	PlayerTypes calculateCulturalOwner() const;
+	PlayerTypes calculateCulturalOwner(bool bActual = false) const;
 
 	void plotAction(PlotUnitFunc func, int iData1 = -1, int iData2 = -1, PlayerTypes eOwner = NO_PLAYER, TeamTypes eTeam = NO_TEAM);
 	int plotCount(ConstPlotUnitFunc funcA, int iData1A = -1, int iData2A = -1, PlayerTypes eOwner = NO_PLAYER, TeamTypes eTeam = NO_TEAM, ConstPlotUnitFunc funcB = NULL, int iData1B = -1, int iData2B = -1) const;
@@ -372,6 +372,7 @@ public:
 
 	PlayerTypes getCultureConversionPlayer() const;
 	int getCultureConversionRate() const;
+	void changeCultureConversionRate(int iChange);
 	void setCultureConversion(PlayerTypes ePlayer, int iRate);
 	void resetCultureConversion();
 

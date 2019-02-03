@@ -427,9 +427,6 @@ class RFCUtils:
 			plot.setOwner(iPlayer)
 			
 	def convertTemporaryCulture(self, plot, iPlayer, iPercent, bOwner):
-		if plot.isCity():
-			plot.getPlotCity().setCultureConversion(iPlayer, iPercent)
-			
 		plot.setCultureConversion(iPlayer, iPercent)
 		
 		if bOwner:

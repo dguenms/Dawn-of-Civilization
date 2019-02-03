@@ -3434,7 +3434,7 @@ int CvPlot::getNumCultureRangeCities(PlayerTypes ePlayer) const
 }
 
 
-PlayerTypes CvPlot::calculateCulturalOwner() const
+PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 {
 	PROFILE("CvPlot::calculateCulturalOwner()")
 
@@ -3461,12 +3461,18 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 	{
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
-			iCulture = getCulture((PlayerTypes)iI);
+			iCulture = bActual ? getActualCulture((PlayerTypes)iI) : getCulture((PlayerTypes)iI);
 
 			if (iCulture > 0)
 			{
 				// All major civilizations have easier control over their own core (80% rule)
-				if (iI < NUM_MAJOR_PLAYERS) if (isCore((PlayerTypes)iI)) iCulture *= 4;
+				if (iI < NUM_MAJOR_PLAYERS) 
+				{
+					if (isCore((PlayerTypes)iI)) 
+					{
+						iCulture *= 4;
+					}
+				}
 
 				// Independents get the same advantage over a civ's core if that civ is dead
 				if (iI == INDEPENDENT || iI == INDEPENDENT2)
@@ -3533,12 +3539,13 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 									{
 									    if (pBestCity != NULL)
 									    {
-										if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1 || abs(pBestCity->getX() - getX()) == 1 || abs(pBestCity->getY() - getY()) == 1) // Leoreth: spare the first ring around the city to help small civs (except if it's the first ring of a master's city
-											iPriority += 5; // priority ranges from 0 to 4 -> give priority to Masters of a Vassal
+											if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1 || abs(pBestCity->getX() - getX()) == 1 || abs(pBestCity->getY() - getY()) == 1) // Leoreth: spare the first ring around the city to help small civs (except if it's the first ring of a master's city
+											{
+												iPriority += 5; // priority ranges from 0 to 4 -> give priority to Masters of a Vassal
+											}
 									    }
-										else
-									    {
-										if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1)
+										else if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1)
+										{
 											iPriority += 5;
 									    }
 									}
@@ -11580,10 +11587,8 @@ int CvPlot::getCultureConversionRate() const
 
 void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
 {
-	log(CvWString::format(L"culture conversion to %s at (%d, %d) at year %d", ePlayer != NO_PLAYER ? GET_PLAYER(ePlayer).getCivilizationShortDescription() : L"none", getX(), getY(), GC.getGame().getGameTurnYear()));
-
-	m_eCultureConversionPlayer = iRate == 0 ? NO_PLAYER : ePlayer;
-	m_iCultureConversionRate = iRate;
+	m_eCultureConversionPlayer = iRate <= 0 ? NO_PLAYER : ePlayer;
+	m_iCultureConversionRate = std::max(0, iRate);
 
 	updateCulture(true, true);
 
@@ -11596,4 +11601,9 @@ void CvPlot::setCultureConversion(PlayerTypes ePlayer, int iRate)
 void CvPlot::resetCultureConversion()
 {
 	setCultureConversion(NO_PLAYER, 0);
+}
+
+void CvPlot::changeCultureConversionRate(int iChange)
+{
+	setCultureConversion(getCultureConversionPlayer(), getCultureConversionRate() + iChange);
 }

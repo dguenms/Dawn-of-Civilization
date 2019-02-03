@@ -285,9 +285,6 @@ public:
 
 	void setCultureConversion(int ePlayer, int iRate);
 	void resetCultureConversion();
-	int getActualTotalCulture();
-	int getCultureConversionPlayer();
-	int getCultureConversionRate();
 
 private:
 	CvPlot* m_pPlot;
