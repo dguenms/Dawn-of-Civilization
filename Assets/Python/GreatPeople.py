@@ -2517,6 +2517,7 @@ iCivEngland : {
 },
 iCivHolyRome : {
 	iGreatProphet : [
+		"fHildegard von Bingen", # 12th
 		"Albertus Magnus", # 13th
 		"fGertrud von Helfta", # 13th
 		"Jan Hus", # 14th
@@ -2559,7 +2560,6 @@ iCivHolyRome : {
 	],
 	iGreatScientist : [
 		"Hrabanus Maurus", # 9th
-		"fHildegard von Bingen", # 12th
 		"Regiomontanus", # 15th
 		"Konrad Celtes", # 15th
 		iRenaissance,
@@ -3313,7 +3313,7 @@ iCivMongols : {
 		iIndustrial,
 		"Balingiin Tserendorj", # 19th
 		iGlobal, 
-		"Damdin Sükhbaatar", # 20th
+		u"Damdin Sükhbaatar", # 20th
 		"Tsakhiagiin Elbegdorj", # 20th
 	],
 	iGreatGeneral : [
