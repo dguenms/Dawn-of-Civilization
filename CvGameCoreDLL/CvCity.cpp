@@ -599,6 +599,12 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iTotalCultureTimes100 = 0;
 
+	m_iBuildingDamage = 0;
+	m_iBuildingDamageChange = 0;
+
+	m_iTotalPopulationLoss = 0;
+	m_iPopulationLoss = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -9098,11 +9104,9 @@ bool CvCity::isOccupation() const
 void CvCity::setOccupationTimer(int iNewValue)
 {
 	bool bOldOccupation;
+	int iOldValue = getOccupationTimer();
 
-	//Leoreth: cap city disorder at 5 turns
-	iNewValue = std::min(iNewValue, 5);
-
-	if (getOccupationTimer() != iNewValue)
+	if (iOldValue != iNewValue)
 	{
 		bOldOccupation = isOccupation();
 
@@ -9119,6 +9123,20 @@ void CvCity::setOccupationTimer(int iNewValue)
 			updateCoveredPlots(true); // Leoreth
 
 			AI_setAssignWorkDirty(true);
+		}
+
+		if (iNewValue < iOldValue)
+		{
+			applyBuildingDamage((iOldValue - iNewValue) * getBuildingDamageChange());
+			applyPopulationLoss((iOldValue - iNewValue) * getPopulationLoss());
+
+			if (iNewValue == 0)
+			{
+				setBuildingDamage(0);
+				setBuildingDamageChange(0);
+				setTotalPopulationLoss(0);
+				setPopulationLoss(0);
+			}
 		}
 
 		setInfoDirty(true);
@@ -15817,6 +15835,10 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureRank);
 	if (uiFlag >= 2) pStream->Read(&m_iStabilityPopulation);
 	if (uiFlag >= 3) pStream->Read(&m_iTotalCultureTimes100);
+	if (uiFlag >= 3) pStream->Read(&m_iBuildingDamage);
+	if (uiFlag >= 3) pStream->Read(&m_iBuildingDamageChange);
+	if (uiFlag >= 3) pStream->Read(&m_iTotalPopulationLoss);
+	if (uiFlag >= 3) pStream->Read(&m_iPopulationLoss);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -16114,6 +16136,11 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iStabilityPopulation); // Leoreth
 
 	pStream->Write(m_iTotalCultureTimes100); // Leoreth
+
+	pStream->Write(m_iBuildingDamage); // Leoreth
+	pStream->Write(m_iBuildingDamageChange); // Leoreth
+	pStream->Write(m_iTotalPopulationLoss); // Leoreth
+	pStream->Write(m_iPopulationLoss); // Leoreth
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -19039,4 +19066,127 @@ int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) cons
 int CvCity::getActualTotalCultureTimes100() const
 {
 	return m_iTotalCultureTimes100;
+}
+
+int CvCity::getBuildingDamage() const
+{
+	return m_iBuildingDamage;
+}
+
+void CvCity::setBuildingDamage(int iNewValue)
+{
+	m_iBuildingDamage = iNewValue;
+}
+
+void CvCity::changeBuildingDamage(int iChange)
+{
+	m_iBuildingDamage += iChange;
+}
+
+int CvCity::getBuildingDamageChange() const
+{
+	return m_iBuildingDamageChange;
+}
+
+void CvCity::setBuildingDamageChange(int iNewValue)
+{
+	m_iBuildingDamageChange = iNewValue;
+}
+
+void CvCity::changeBuildingDamageChange(int iChange)
+{
+	m_iBuildingDamageChange += iChange;
+}
+
+struct buildingDamageCompare
+{
+	bool operator() (int iBuilding1, int iBuilding2)
+	{
+		CvBuildingInfo& kBuilding1 = GC.getBuildingInfo((BuildingTypes)iBuilding1);
+		CvBuildingInfo& kBuilding2 = GC.getBuildingInfo((BuildingTypes)iBuilding2);
+
+		return kBuilding1.getConquestProbability() < kBuilding2.getConquestProbability() || (kBuilding1.getConquestProbability() == kBuilding2.getConquestProbability() && kBuilding1.getProductionCost() < kBuilding2.getProductionCost());
+	}
+};
+
+void CvCity::applyBuildingDamage(int iDamage)
+{
+	int iRemainingDamage = getBuildingDamage() + iDamage;
+
+	log(CvWString::format(L"apply building damage: %d", iRemainingDamage));
+
+	std::vector<int> buildings;
+
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (GC.getBuildingInfo((BuildingTypes)iI).getDefenseModifier() > 0)
+		{
+			continue;
+		}
+
+		for (int iJ = 0; iJ < getNumRealBuilding((BuildingTypes)iI); iJ++)
+		{
+			buildings.push_back(iI);
+		}
+	}
+
+	buildingDamageCompare cmp;
+	std::sort(buildings.begin(), buildings.end(), cmp);
+
+	BuildingTypes eBuilding;
+	int iCost;
+	for (std::vector<int>::iterator it = buildings.begin(); it != buildings.end(); ++it)
+	{
+		eBuilding = (BuildingTypes)*it;
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+		iCost = kBuilding.getProductionCost() * kBuilding.getConquestProbability() / 100;
+
+		log(CvWString::format(L"check %s, cost %d", kBuilding.getText(), iCost));
+
+		if (iCost > iRemainingDamage) break;
+
+		setNumRealBuilding(eBuilding, getNumRealBuilding(eBuilding) - 1);
+		iRemainingDamage -= iCost;
+
+		log(CvWString::format(L"removed, remaining damage: %d", iRemainingDamage));
+	}
+
+	log("done");
+
+	setBuildingDamage(getOccupationTimer() > 0 ? iRemainingDamage : 0);
+}
+
+int CvCity::getTotalPopulationLoss() const
+{
+	return m_iTotalPopulationLoss;
+}
+
+void CvCity::setTotalPopulationLoss(int iNewValue)
+{
+	m_iTotalPopulationLoss = iNewValue;
+}
+
+void CvCity::changeTotalPopulationLoss(int iChange)
+{
+	setTotalPopulationLoss(getTotalPopulationLoss() + iChange);
+}
+
+int CvCity::getPopulationLoss() const
+{
+	return m_iPopulationLoss;
+}
+
+void CvCity::setPopulationLoss(int iNewValue)
+{
+	m_iPopulationLoss = iNewValue;
+}
+
+void CvCity::applyPopulationLoss(int iLoss)
+{
+	int iLostPopulation = std::min(getTotalPopulationLoss(), iLoss);
+
+	log(CvWString::format(L"reduce population by %d", iLostPopulation));
+
+	changeTotalPopulationLoss(-iLostPopulation);
+	setPopulation(std::max(1, getPopulation() - iLostPopulation));
 }

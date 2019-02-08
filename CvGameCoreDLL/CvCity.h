@@ -1128,6 +1128,24 @@ public:
 
 	int getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const;
 
+	int getBuildingDamage() const;
+	void setBuildingDamage(int iNewValue);
+	void changeBuildingDamage(int iChange);
+
+	int getBuildingDamageChange() const;
+	void setBuildingDamageChange(int iNewValue);
+	void changeBuildingDamageChange(int iChange);
+
+	void applyBuildingDamage(int iDamage);
+	void applyPopulationLoss(int iLoss);
+
+	int getTotalPopulationLoss() const;
+	void setTotalPopulationLoss(int iNewValue);
+	void changeTotalPopulationLoss(int iChange);
+
+	int getPopulationLoss() const;
+	void setPopulationLoss(int iNewValue);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1314,6 +1332,12 @@ protected:
 	int m_iCorporationUnhealthModifier;
 
 	int m_iTotalCultureTimes100;
+
+	int m_iBuildingDamage;
+	int m_iBuildingDamageChange;
+
+	int m_iTotalPopulationLoss;
+	int m_iPopulationLoss;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

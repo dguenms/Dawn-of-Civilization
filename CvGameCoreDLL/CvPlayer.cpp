@@ -1449,6 +1449,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iDefyResolutionAngerTimer;
 	int iOccupationTimer;
 	int iTeamCulturePercent;
+	int iDefense;
 	int iDamage;
 	int iDX, iDY;
 	int iI, iJ;
@@ -1627,6 +1628,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	iDefyResolutionAngerTimer = pOldCity->getDefyResolutionAngerTimer();
 	iOccupationTimer = pOldCity->getOccupationTimer();
 	szName = pOldCity->getNameKey();
+	iDefense = pOldCity->getDefenseModifier(false);
 	iDamage = pOldCity->getDefenseDamage();
 	iOldCultureLevel = pOldCity->getCultureLevel();
 	int iOldCityId = pOldCity->getID();
@@ -1747,7 +1749,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setOriginalOwner(eOriginalOwner);
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 
-	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
+	//pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
+	pNewCity->setPopulation(iPopulation);
+	int iPopulationLoss = bRecapture ? 0 : 1 + iPopulation / 5 + std::max(0, (iPopulation - 10) / 5);
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
@@ -1763,6 +1767,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	// Leoreth: log game turn of losing this city for previous owner
 	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
+
+	int iTotalBuildingDamage = 0;
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
@@ -1782,24 +1788,32 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 			if (eBuilding != NO_BUILDING)
 			{
-				if (bTrade || !(GC.getBuildingInfo((BuildingTypes)iI).isNeverCapture()))
+				if (GC.getBuildingInfo((BuildingTypes)iI).getDefenseModifier() > 0 && iDamage > 0)
 				{
-					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())), true))
+					continue;
+				}
+
+				if (bTrade || !GC.getBuildingInfo((BuildingTypes)iI).isNeverCapture())
+				{
+					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()), true))
 					{
 						if (pNewCity->isValidBuildingLocation(eBuilding))
 						{
-							if (!bConquest || bRecapture || GC.getGameINLINE().getSorenRandNum(100, "Capture Probability") < GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability())
+							pNewCity->setNumRealBuildingTimed(eBuilding, std::min(pNewCity->getNumRealBuilding(eBuilding) + paiNumRealBuilding[iI], GC.getCITY_MAX_NUM_BUILDINGS()), false, (PlayerTypes)paiBuildingOriginalOwner[iI], paiBuildingOriginalTime[iI]);
+
+							if (bConquest && !bRecapture)
 							{
-								iNum += paiNumRealBuilding[iI];
+								iTotalBuildingDamage += GC.getBuildingInfo(eBuilding).getProductionCost() * (100 - GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability());
 							}
 						}
 					}
 				}
-
-				pNewCity->setNumRealBuildingTimed(eBuilding, std::min(pNewCity->getNumRealBuilding(eBuilding) + iNum, GC.getCITY_MAX_NUM_BUILDINGS()), false, ((PlayerTypes)(paiBuildingOriginalOwner[iI])), paiBuildingOriginalTime[iI]);
 			}
 		}
 	}
+
+	iTotalBuildingDamage *= std::max(0, 100 - iDefense);
+	iTotalBuildingDamage /= 10000;
 
 	for (std::vector<BuildingYieldChange>::iterator it = aBuildingYieldChange.begin(); it != aBuildingYieldChange.end(); ++it)
 	{
@@ -1884,7 +1898,23 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
 		{
             // Leoreth: occupation timer depends on culture level
-			pNewCity->changeOccupationTimer(getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100));
+			int iOccupationTime = getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100);
+
+			pNewCity->changeOccupationTimer(iOccupationTime);
+			pNewCity->changeBuildingDamageChange(iTotalBuildingDamage / iOccupationTime);
+			log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
+
+			if (iPopulationLoss > 0)
+			{
+				pNewCity->setTotalPopulationLoss(iPopulationLoss);
+				pNewCity->setPopulationLoss(std::max(1, iPopulationLoss / iOccupationTime));
+				log(CvWString::format(L"total population loss: %d, population loss: %d", pNewCity->getTotalPopulationLoss(), pNewCity->getPopulationLoss()));
+			}
+		}
+		else
+		{
+			pNewCity->applyBuildingDamage(iTotalBuildingDamage);
+			pNewCity->setPopulation(std::max(1, pNewCity->getPopulation() - iPopulationLoss));
 		}
 
 		GC.getMapINLINE().verifyUnitValidPlot();
