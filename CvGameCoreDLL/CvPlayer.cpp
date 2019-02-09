@@ -1732,7 +1732,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		{
 			for (iDY = -1; iDY <= 1; iDY++)
 			{
-				pLoopPlot	= plotXY(pCityPlot->getX_INLINE(), pCityPlot->getY_INLINE(), iDX, iDY);
+				pLoopPlot = plotXY(pCityPlot->getX_INLINE(), pCityPlot->getY_INLINE(), iDX, iDY);
 
 				if (pLoopPlot != NULL)
 				{
@@ -1792,6 +1792,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 			if (eBuilding != NO_BUILDING)
 			{
+				if (paiNumRealBuilding[iI] == 0)
+				{
+					continue;
+				}
+
 				if (iDamage > 0)
 				{
 					if (kOldBuilding.getDefenseModifier() > 0 || kOldBuilding.getBombardDefenseModifier() > 0 || kOldBuilding.getUnignorableBombardDefenseModifier() > 0)
@@ -1800,7 +1805,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					}
 				}
 
-				if (bTrade || !kOldBuilding.isNeverCapture())
+				if (bTrade || !kOldBuilding.isNeverCapture() || (kOldBuilding.getReligionType() != NO_RELIGION && getSpreadType(pCityPlot, (ReligionTypes)kOldBuilding.getReligionType()) >= RELIGION_SPREAD_NORMAL))
 				{
 					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)kNewBuilding.getBuildingClassType()), true))
 					{
@@ -25541,6 +25546,8 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 	if (!isStateReligion()) return true;
 
 	ReligionTypes eStateReligion = getStateReligion();
+
+	if (eStateReligion == eReligion) return true;
 
 	if (eStateReligion == HINDUISM && eReligion == BUDDHISM) return true;
 	if (eStateReligion == BUDDHISM && eReligion == HINDUISM) return true;

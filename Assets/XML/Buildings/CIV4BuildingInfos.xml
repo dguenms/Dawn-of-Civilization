@@ -5363,6 +5363,7 @@
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -5411,6 +5412,7 @@
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -5472,6 +5474,7 @@
 			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -5575,6 +5578,7 @@
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -5623,6 +5627,7 @@
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -5684,6 +5689,7 @@
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -5781,6 +5787,7 @@
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -5829,6 +5836,7 @@
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -5890,6 +5898,7 @@
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -5989,6 +5998,7 @@
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6037,6 +6047,7 @@
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -6098,6 +6109,7 @@
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -6195,6 +6207,7 @@
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6243,6 +6256,7 @@
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -6304,6 +6318,7 @@
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -6401,6 +6416,7 @@
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6449,6 +6465,7 @@
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -6510,6 +6527,7 @@
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -6607,6 +6625,7 @@
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6655,6 +6674,7 @@
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -6716,6 +6736,7 @@
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -6813,6 +6834,7 @@
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -6861,6 +6883,7 @@
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -6922,6 +6945,7 @@
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -7019,6 +7043,7 @@
 			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -7067,6 +7092,7 @@
 			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -7128,6 +7154,7 @@
 			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
@@ -7225,6 +7252,7 @@
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
@@ -7273,6 +7301,7 @@
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
+			<iConquestProb>50</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iStateReligionHappiness>2</iStateReligionHappiness>
@@ -7334,6 +7363,7 @@
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
+			<iConquestProb>70</iConquestProb>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iAsset>3</iAsset>
