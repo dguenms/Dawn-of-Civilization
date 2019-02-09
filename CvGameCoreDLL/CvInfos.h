@@ -2523,7 +2523,6 @@ public:
 	int getUnitCostPercent() const;				// Exposed to Python
 	int getUnitCostPercentByID(PlayerTypes pl) const;	//Rhye		// Exposed to Python
 	int getResearchPercent() const;				// Exposed to Python
-	int getResearchPercentByIDdebug(int pl) const;	//Rhye			// Exposed to Python
 	int getResearchPercentByID(PlayerTypes pl) const;	//Rhye			// Exposed to Python
 	int getDistanceMaintenancePercent() const;				// Exposed to Python
 	int getDistanceMaintenancePercentByID(PlayerTypes pl) const;	//Rhye			// Exposed to Python

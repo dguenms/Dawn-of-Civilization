@@ -11389,12 +11389,6 @@ int CvHandicapInfo::getResearchPercent() const
 	return m_iResearchPercent;
 }
 
-//Rhye - start switch
-int CvHandicapInfo::getResearchPercentByIDdebug(int pl) const
-{
-	return getResearchPercentByID((PlayerTypes) pl);
-}
-
 int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 {
 	int iResearchPercent = m_iResearchPercent;

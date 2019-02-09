@@ -113,7 +113,6 @@ void CyInfoPythonInterface2()
 		.def("getUnitCostPercent", &CvHandicapInfo::getUnitCostPercent, "int ()")
 		.def("getResearchPercent", &CvHandicapInfo::getResearchPercent, "int ()")
 		.def("getResearchPercentByID", &CvHandicapInfo::getResearchPercentByID, "int (int i)") //Rhye
-		.def("getResearchPercentByIDdebug", &CvHandicapInfo::getResearchPercentByIDdebug, "int (int i)") //Rhye
 		.def("getDistanceMaintenancePercent", &CvHandicapInfo::getDistanceMaintenancePercent, "int ()")
 		.def("getDistanceMaintenancePercentByID", &CvHandicapInfo::getDistanceMaintenancePercentByID, "int (int i)") //Rhye
 		.def("getNumCitiesMaintenancePercent", &CvHandicapInfo::getNumCitiesMaintenancePercent, "int ()")

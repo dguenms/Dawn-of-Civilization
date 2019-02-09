@@ -1818,6 +1818,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	iTotalBuildingDamage *= std::max(0, 100 - iDefense);
 	iTotalBuildingDamage /= 100;
 
+	if (!isHuman() && !isBarbarian())
+	{
+		iTotalBuildingDamage *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIConstructPercent();
+		iTotalBuildingDamage /= 100;
+	}
+
 	if (iCaptureMaxTurns > 0)
 	{
 		iTotalBuildingDamage *= std::max(0, std::min(GC.getGame().getGameTurn() - iGameTurnAcquired, getTurns(iCaptureMaxTurns)));
@@ -6680,7 +6686,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 		iCivModifier = getModifier(MODIFIER_WONDER_COST);
 
 		// Leoreth
-		if (!GET_PLAYER((PlayerTypes)getID()).isHuman())
+		if (!isHuman())
 		{
 			iProductionNeeded = iProductionNeeded * 3 / 4;
 
