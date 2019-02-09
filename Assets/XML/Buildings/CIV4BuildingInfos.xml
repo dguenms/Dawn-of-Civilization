@@ -2800,7 +2800,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CONSTABULARY</ArtDefineTag>
 			<PrereqTech>TECH_JUDICIARY</PrereqTech>
 			<iAIWeight>25</iAIWeight>
-			<iCost>180</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -2854,7 +2854,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</ArtDefineTag>
 			<PrereqTech>TECH_JUDICIARY</PrereqTech>
 			<iAIWeight>25</iAIWeight>
-			<iCost>180</iCost>
+			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
