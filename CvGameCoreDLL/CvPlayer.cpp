@@ -1442,6 +1442,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iOldCultureLevel;
 	int iCaptureGold;
 	int iGameTurnFounded;
+	int iGameTurnAcquired;
 	int iPopulation;
 	int iHighestPopulation;
 	int iHurryAngerTimer;
@@ -1456,6 +1457,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iI, iJ;
 	CLinkList<IDInfo> oldUnits;
 	std::vector<int> aeFreeSpecialists;
+
+	int iCaptureMaxTurns = GC.getDefineINT("CAPTURE_GOLD_MAX_TURNS");
 
 	pCityPlot = pOldCity->plot();
 
@@ -1582,20 +1585,16 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	if (bConquest)
 	{
-		long lCaptureGold;
-		// Use python to determine city capture gold amounts...
-		lCaptureGold = 0;
+		iCaptureGold += GC.getDefineINT("BASE_CAPTURE_GOLD");
+		iCaptureGold += pOldCity->getPopulation() * GC.getDefineINT("CAPTURE_GOLD_PER_POPULATION");
+		iCaptureGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Capture Gold 1");
+		iCaptureGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND2"), "Capture Gold 2");
 
-		CyCity* pyOldCity = new CyCity(pOldCity);
-
-		CyArgsList argsList;
-		argsList.add(gDLL->getPythonIFace()->makePythonObject(pyOldCity));	// pass in plot class
-
-		gDLL->getPythonIFace()->callFunction(PYGameModule, "doCityCaptureGold", argsList.makeFunctionArgs(),&lCaptureGold);
-
-		delete pyOldCity;	// python fxn must not hold on to this pointer
-
-		iCaptureGold = (int)lCaptureGold;
+		if (iCaptureMaxTurns > 0)
+		{
+			iCaptureGold *= std::max(0, std::min(GC.getGame().getGameTurn() - pOldCity->getGameTurnAcquired(), getTurns(iCaptureMaxTurns)));
+			iCaptureGold /= getTurns(iCaptureMaxTurns);
+		}
 
 		iCaptureGold *= (100 + getCaptureGoldModifier());
 		iCaptureGold /= 100;
@@ -1622,6 +1621,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	eOriginalOwner = pOldCity->getOriginalOwner();
 	eHighestCulturePlayer = pOldCity->findHighestCulture();
 	iGameTurnFounded = pOldCity->getGameTurnFounded();
+	iGameTurnAcquired = pOldCity->getGameTurnAcquired();
 	iPopulation = pOldCity->getPopulation();
 	iHighestPopulation = pOldCity->getHighestPopulation();
 	iHurryAngerTimer = 0; //pOldCity->getHurryAngerTimer(); // Leoreth: don't keep the unhappiness
@@ -1813,8 +1813,28 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
+	iTotalBuildingDamage /= 100;
+
 	iTotalBuildingDamage *= std::max(0, 100 - iDefense);
-	iTotalBuildingDamage /= 10000;
+	iTotalBuildingDamage /= 100;
+
+	if (iCaptureMaxTurns > 0)
+	{
+		iTotalBuildingDamage *= std::max(0, std::min(GC.getGame().getGameTurn() - iGameTurnAcquired, getTurns(iCaptureMaxTurns)));
+		iTotalBuildingDamage /= getTurns(iCaptureMaxTurns);
+	}
+
+	if (iCaptureGold > 0)
+	{
+		iCaptureGold += iTotalBuildingDamage * GC.getDefineINT("CAPTURE_GOLD_PER_BUILDING_COST") / 100;
+
+		iCaptureGold *= 100 + getCaptureGoldModifier();
+		iCaptureGold /= 100;
+
+		CvEventReporter::getInstance().cityCaptureGold(pNewCity, getID(), iCaptureGold);
+
+		changeGold(iCaptureGold);
+	}
 
 	for (std::vector<BuildingYieldChange>::iterator it = aBuildingYieldChange.begin(); it != aBuildingYieldChange.end(); ++it)
 	{

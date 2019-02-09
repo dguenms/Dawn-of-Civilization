@@ -951,7 +951,11 @@
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_PER_POPULATION</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>5</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>CAPTURE_GOLD_PER_BUILDING_COST</DefineName>
+		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_RAND1</DefineName>
