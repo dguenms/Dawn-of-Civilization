@@ -3815,7 +3815,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WAREHOUSE</ArtDefineTag>
 			<PrereqTech>TECH_MEASUREMENT</PrereqTech>
-			<iCost>250</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
