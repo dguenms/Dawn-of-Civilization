@@ -556,9 +556,9 @@
 			<ArtDefineTag>ART_DEF_BUILDING_WALLS</ArtDefineTag>
 			<ObsoleteTech>TECH_BALLISTICS</ObsoleteTech>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>50</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iDefense>50</iDefense>
@@ -591,9 +591,9 @@
 			<ObsoleteTech>TECH_BALLISTICS</ObsoleteTech>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<FreePromotion>PROMOTION_GUERILLA1</FreePromotion>
-			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>50</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iDefense>50</iDefense>
@@ -2133,9 +2133,9 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CASTLE</ArtDefineTag>
 			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
-			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>100</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iDefense>50</iDefense>
@@ -2189,9 +2189,9 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SPANISH_CITADEL</ArtDefineTag>
 			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
-			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>50</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMaintenanceModifier>-25</iMaintenanceModifier>
@@ -3367,9 +3367,9 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STAR_FORT</ArtDefineTag>
 			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
-			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>
+			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iUnignorableBombardDefense>50</iUnignorableBombardDefense>

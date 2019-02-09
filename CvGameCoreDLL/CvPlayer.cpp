@@ -1787,16 +1787,22 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 				eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 			}
 
+			CvBuildingInfo& kOldBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+			CvBuildingInfo& kNewBuilding = GC.getBuildingInfo(eBuilding);
+
 			if (eBuilding != NO_BUILDING)
 			{
-				if (GC.getBuildingInfo((BuildingTypes)iI).getDefenseModifier() > 0 && iDamage > 0)
+				if (iDamage > 0)
 				{
-					continue;
+					if (kOldBuilding.getDefenseModifier() > 0 || kOldBuilding.getBombardDefenseModifier() > 0 || kOldBuilding.getUnignorableBombardDefenseModifier() > 0)
+					{
+						continue;
+					}
 				}
 
-				if (bTrade || !GC.getBuildingInfo((BuildingTypes)iI).isNeverCapture())
+				if (bTrade || !kOldBuilding.isNeverCapture())
 				{
-					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()), true))
+					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)kNewBuilding.getBuildingClassType()), true))
 					{
 						if (pNewCity->isValidBuildingLocation(eBuilding))
 						{
@@ -1804,7 +1810,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 							if (bConquest && !bRecapture)
 							{
-								iTotalBuildingDamage += GC.getBuildingInfo(eBuilding).getProductionCost() * (100 - GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability());
+								iTotalBuildingDamage += kOldBuilding.getProductionCost() * (100 - kOldBuilding.getConquestProbability());
 							}
 						}
 					}
