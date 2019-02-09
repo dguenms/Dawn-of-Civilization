@@ -1449,6 +1449,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iDefyResolutionAngerTimer;
 	int iOccupationTimer;
 	int iTeamCulturePercent;
+	int iOccupationTime;
 	int iDefense;
 	int iDamage;
 	int iDX, iDY;
@@ -1894,21 +1895,35 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	if (bConquest)
 	{
 		iTeamCulturePercent = pNewCity->calculateTeamCulturePercent(getTeam());
+		iOccupationTime = 0;
 
 		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
 		{
-            // Leoreth: occupation timer depends on culture level
-			int iOccupationTime = getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100);
+			iOccupationTime = getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100);
+		}
 
+		log(CvWString::format(L"city (%d, %d)", pNewCity->getX(), pNewCity->getY()));
+		log(CvWString::format(L"occupation time: %d, old culture level: %d, team culture percent: %d", iOccupationTime, iOldCultureLevel, iTeamCulturePercent));
+
+		if (iOccupationTime > 0)
+		{
 			pNewCity->changeOccupationTimer(iOccupationTime);
 			pNewCity->changeBuildingDamageChange(iTotalBuildingDamage / iOccupationTime);
+
 			log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
 
 			if (iPopulationLoss > 0)
 			{
-				pNewCity->setTotalPopulationLoss(iPopulationLoss);
 				pNewCity->setPopulationLoss(std::max(1, iPopulationLoss / iOccupationTime));
+				pNewCity->setTotalPopulationLoss(iOccupationTime * pNewCity->getPopulationLoss());
+
 				log(CvWString::format(L"total population loss: %d, population loss: %d", pNewCity->getTotalPopulationLoss(), pNewCity->getPopulationLoss()));
+
+				if (pNewCity->getTotalPopulationLoss() < iPopulationLoss)
+				{
+					pNewCity->setPopulation(std::max(1, pNewCity->getPopulation() - (iPopulationLoss - pNewCity->getTotalPopulationLoss())));
+					log(CvWString::format(L"immediate population loss: %d", iPopulationLoss - pNewCity->getTotalPopulationLoss()));
+				}
 			}
 		}
 		else
