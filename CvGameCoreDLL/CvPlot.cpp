@@ -11238,6 +11238,12 @@ int CvPlot::get3DAudioScriptFootstepIndex(int iFootstepTag) const
 float CvPlot::getAqueductSourceWeight() const
 {
 	float fWeight = 0.0f;
+
+	if (at(97, 38))
+	{
+		return fWeight;
+	}
+
 	if (isLake() || isPeak() || (getFeatureType() != NO_FEATURE && GC.getFeatureInfo(getFeatureType()).isAddsFreshWater()))
 	{
 		fWeight = 1.0f;
