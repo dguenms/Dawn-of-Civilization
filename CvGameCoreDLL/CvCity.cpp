@@ -19190,3 +19190,32 @@ void CvCity::applyPopulationLoss(int iLoss)
 	changeTotalPopulationLoss(-iLostPopulation);
 	setPopulation(std::max(1, getPopulation() - iLostPopulation));
 }
+
+int CvCity::getRebuildProduction() const
+{
+	int iProduction = 0;
+
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			if (kBuilding.getFreeStartEra() != NO_ERA)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				{
+					if (!isHasRealBuilding(eBuilding) && canConstruct(eBuilding))
+					{
+						iProduction += kBuilding.getProductionCost();
+					}
+				}
+			}
+		}
+	}
+
+	return iProduction;
+}

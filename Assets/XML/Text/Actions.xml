@@ -237,4 +237,28 @@
 		<Italian>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</Italian>
 		<Spanish>Create [LINK=IMPROVEMENT_SOLAR_COLLECTOR]Solar Collector[\LINK]</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_REBUILD</Tag>
+		<English>Rebuild</English>
+		<French>Rebuild</French>
+		<German>Wiederaufbauen</German>
+		<Italian>Rebuild</Italian>
+		<Spanish>Rebuild</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_REBUILD</Tag>
+		<English>Free buildings will be constructed in the city:</English>
+		<French>Free buildings will be constructed in the city:</French>
+		<German>Frei verf&#252;gbare Geb&#228;ude werden in der Stadt errichtet:</German>
+		<Italian>Free buildings will be constructed in the city:</Italian>
+		<Spanish>Free buildings will be constructed in the city:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_REBUILD</Tag>
+		<English>[ICON_BULLET]Can rebuild free buildings in cities</English>
+		<French>[ICON_BULLET]Can rebuild free buildings in cities</French>
+		<German>[ICON_BULLET]Kann frei verf&#252;gbare Geb&#228;ude in St&#228;dten wiedererrichten</German>
+		<Italian>[ICON_BULLET]Can rebuild free buildings in cities</Italian>
+		<Spanish>[ICON_BULLET]Can rebuild free buildings in cities</Spanish>
+	</TEXT>
 </Civ4GameText>

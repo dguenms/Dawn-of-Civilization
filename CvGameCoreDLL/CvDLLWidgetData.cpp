@@ -2898,6 +2898,37 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_SATELLITE_ATTACK"));
 			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_REBUILD)
+			{
+				if (pMissionCity != NULL)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REBUILD"));
+
+					BuildingTypes eBuilding;
+					for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+					{
+						eBuilding = (BuildingTypes)GC.getCivilizationInfo(pMissionCity->getCivilizationType()).getCivilizationBuildings(iI);
+
+						if (eBuilding != NO_BUILDING)
+						{
+							CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+							if (kBuilding.getFreeStartEra() != NO_ERA)
+							{
+								if (GET_PLAYER(pMissionCity->getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+								{
+									if (!pMissionCity->isHasRealBuilding(eBuilding) && pMissionCity->canConstruct(eBuilding))
+									{
+										szBuffer.append(NEWLINE);
+										szBuffer.append(gDLL->getText("[ICON_BULLET]%s1", GC.getBuildingInfo(eBuilding).getText()));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_BUILD)
 			{
 				eBuild = ((BuildTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData()));

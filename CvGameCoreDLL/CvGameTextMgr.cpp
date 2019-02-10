@@ -4614,25 +4614,25 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}
 		
 		// Merijn: CNM in tooltip for settlers
-		CvWString szName;
-		CyArgsList argsList4;
-		argsList4.add(GC.getGameINLINE().getActivePlayer());
-		argsList4.add(pPlot->getX());
-		argsList4.add(pPlot->getY());
-		gDLL->getPythonIFace()->callFunction(PYScreensModule, "getCityName", argsList4.makeFunctionArgs(), &szName);
-		
 		CvUnit* pHeadSelectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
-		
-		if (!szName.empty())
+
+		if (pHeadSelectedUnit != NULL)
 		{
-			if (pHeadSelectedUnit != NULL)
+			if (pHeadSelectedUnit->isFound())
 			{
-				if (pHeadSelectedUnit->isFound())
+				if (!pPlot->isWater() && !pPlot->isPeak())
 				{
-					if (pPlot->getPlotType() == PLOT_LAND || pPlot->getPlotType() == PLOT_HILLS)
+					CvWString szName;
+					CyArgsList argsList4;
+					argsList4.add(GC.getGameINLINE().getActivePlayer());
+					argsList4.add(pPlot->getX());
+					argsList4.add(pPlot->getY());
+					gDLL->getPythonIFace()->callFunction(PYScreensModule, "getCityName", argsList4.makeFunctionArgs(), &szName);
+
+					if (!szName.empty())
 					{
-						szString.append(szName);
 						szString.append(NEWLINE);
+						szString.append(szName);
 					}
 				}
 			}
@@ -8853,6 +8853,9 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_FOUND_CITY"));
+
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_REBUILD"));
 	}
 
 	iCount = 0;

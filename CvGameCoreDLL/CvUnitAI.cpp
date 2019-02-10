@@ -1188,6 +1188,15 @@ void CvUnitAI::AI_settleMove()
 		}
 	}*/
 
+	// Leoreth: use for rebuilding if no settlement targets
+	if (GET_PLAYER(getOwnerINLINE()).AI_getNumCitySites() == 0)
+	{
+		if (AI_rebuildMove(2 * GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType())))
+		{
+			return;
+		}
+	}
+
 	int iAreaBestFoundValue = 0;
 	int iOtherBestFoundValue = 0;
 
@@ -1236,6 +1245,12 @@ void CvUnitAI::AI_settleMove()
 
 			if (NULL == getTransportUnit())
 			{
+				// Leoreth: rather use for rebuilding before scrapping them
+				if (AI_rebuildMove(GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType())))
+				{
+					return;
+				}
+
 				//may seem wasteful, but settlers confuse the AI.
 				scrap();
 				return;
@@ -1243,18 +1258,14 @@ void CvUnitAI::AI_settleMove()
 		}
 	}
 
-	//Rhye - start comment (restored Warlords settings)
-	//if ((iOtherBestFoundValue * 100) > (iAreaBestFoundValue * 110))
-	//{
-		if (plot()->getOwnerINLINE() == getOwnerINLINE())
+	// Rhye: restored Warlords settings
+	if (plot()->getOwnerINLINE() == getOwnerINLINE())
+	{
+		if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, 0, MOVE_SAFE_TERRITORY))
 		{
-			if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, 0, MOVE_SAFE_TERRITORY))
-			{
-				return;
-			}
+			return;
 		}
-	//}
-	//Rhye - end
+	}
 
 	if ((iAreaBestFoundValue > 0) && plot()->isBestAdjacentFound(getOwnerINLINE()))
 	{
@@ -1263,6 +1274,12 @@ void CvUnitAI::AI_settleMove()
 			getGroup()->pushMission(MISSION_FOUND);
 			return;
 		}
+	}
+
+	// Leoreth: rebuild move
+	if (AI_rebuildMove(2 * GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType())))
+	{
+		return;
 	}
 
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_PEACE) && !GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) && !getGroup()->canDefend())
@@ -1286,11 +1303,8 @@ void CvUnitAI::AI_settleMove()
 		}
 	}
 
-	//Rhye
-	//if (iAreaBestFoundValue > 0)
 	if (iAreaBestFoundValue > 0 || iOtherBestFoundValue > 0)
 	{
-		//Rhye - start switch
 		if (AI_foundRange(FOUND_RANGE))
 		{
 			return;
@@ -1300,61 +1314,6 @@ void CvUnitAI::AI_settleMove()
 		{
 			return;
 		}
-
-		/*if (AI_found())
-		{
-			return;
-		}*/
-		//AI_found() is readded in BTS;
-		//when it is active, the following is ignored unless the city site is < 150.
-		//The steps are added in CvPlayerAI::AI_updateCitySites() as well.
-		/*if (AI_found_map(700))
-		{
-			return;
-		}
-		if (AI_found_map(500))
-		{
-			return;
-		}
-		if (AI_found_map(400))
-		{
-			return;
-		}
-		if (AI_found_map(300))
-		{
-			return;
-		}
-		if (AI_found_map(200))
-		{
-			return;
-		}
-		if (AI_found_map(150))
-		{
-			return;
-		}
-		if (AI_found_map(90))
-		{
-			return;
-		}
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)COMPASS))
-		{
-			if (AI_found_map(60))
-			{
-				return;
-			}
-			if (AI_found_map(40))
-			{
-				return;
-			}
-		}
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
-		{
-			if (AI_found_map(20))
-			{
-				return;
-			}
-		}*/
-		//Rhye - end
 	}
 
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
@@ -18597,6 +18556,45 @@ bool CvUnitAI::AI_satelliteAttackMove()
 			getGroup()->pushMission(MISSION_SATELLITE_ATTACK);
 			return true;
 		}
+	}
+
+	return false;
+}
+
+
+bool CvUnitAI::AI_rebuildMove(int iMinimumCost)
+{
+	if (plot()->isCity())
+	{
+		if (plot()->getPlotCity()->getRebuildProduction() >= iMinimumCost)
+		{
+			getGroup()->pushMission(MISSION_REBUILD);
+			return true;
+		}
+	}
+
+	CvCity* pBestCity = NULL;
+	int iBestProduction = 0;
+
+	int iLoop, iCurrentProduction;
+	for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+	{
+		if (!atPlot(pLoopCity->plot()))
+		{
+			iCurrentProduction = pLoopCity->getRebuildProduction();
+
+			if (iCurrentProduction >= iMinimumCost && iCurrentProduction > iBestProduction)
+			{
+				pBestCity = pLoopCity;
+				iBestProduction = iCurrentProduction;
+			}
+		}
+	}
+
+	if (pBestCity != NULL)
+	{
+		getGroup()->pushMission(MISSION_MOVE_TO, pBestCity->getX(), pBestCity->getY());
+		return true;
 	}
 
 	return false;

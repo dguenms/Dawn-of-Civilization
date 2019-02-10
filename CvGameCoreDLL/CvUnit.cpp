@@ -8236,6 +8236,7 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_PERSECUTE: // Leoreth
 		case MISSION_GREAT_MISSION:
 		case MISSION_SATELLITE_ATTACK:
+		case MISSION_REBUILD:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -14714,4 +14715,101 @@ SpecialistTypes CvUnit::getSettledSpecialist() const
 bool CvUnit::isWorker() const
 {
 	return m_pUnitInfo->isWorker();
+}
+
+bool CvUnit::canRebuild(const CvPlot* pPlot) const
+{
+	if (!m_pUnitInfo->isFound())
+	{
+		return false;
+	}
+
+	if (!pPlot->isCity())
+	{
+		return false;
+	}
+
+	CvCity* pCity = pPlot->getPlotCity();
+
+	if (pCity->getOwner() != getOwner())
+	{
+		return false;
+	}
+
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			if (kBuilding.getFreeStartEra() != NO_ERA)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				{
+					if (!pCity->isHasRealBuilding(eBuilding) && pCity->canConstruct(eBuilding))
+					{
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool CvUnit::rebuild()
+{
+	if (!canRebuild(plot()))
+	{
+		return false;
+	}
+
+	if (!plot()->isCity())
+	{
+		return false;
+	}
+
+	bool bBuilt = false;
+	CvCity* pCity = plot()->getPlotCity();
+
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			if (kBuilding.getFreeStartEra() != NO_ERA)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				{
+					if (pCity->canConstruct(eBuilding))
+					{
+						pCity->setNumRealBuilding(eBuilding, 1);
+						bBuilt = true;
+					}
+				}
+			}
+		}
+	}
+
+	if (bBuilt)
+	{
+		if (plot()->isActiveVisible(false))
+		{
+			NotifyEntity(MISSION_REBUILD);
+		}
+
+		kill(true);
+
+		return true;
+	}
+
+	return false;
 }

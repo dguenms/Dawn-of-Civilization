@@ -217,6 +217,7 @@ protected:
 	bool AI_greatMission(int iCityPercent);
 	bool AI_satelliteDefendMove();
 	bool AI_satelliteAttackMove();
+	bool AI_rebuildMove(int iMinimumCost);
 
 	bool AI_followBombard();
 
