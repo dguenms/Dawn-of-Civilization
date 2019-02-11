@@ -9136,6 +9136,11 @@ void CvCity::setOccupationTimer(int iNewValue)
 				setBuildingDamageChange(0);
 				setTotalPopulationLoss(0);
 				setPopulationLoss(0);
+
+				if (!isProduction())
+				{
+					chooseProduction();
+				}
 			}
 		}
 
@@ -19218,4 +19223,51 @@ int CvCity::getRebuildProduction() const
 	}
 
 	return iProduction;
+}
+
+void CvCity::completeAcquisition(int iCaptureGold)
+{
+	int iOccupationTime = getOccupationTimer();
+	int iTotalBuildingDamage = getBuildingDamage();
+	int iTotalPopulationLoss = getTotalPopulationLoss();
+
+	log(CvWString::format(L"complete acquisition: (%d, %d)", getX(), getY()));
+
+	if (iCaptureGold > 0)
+	{
+		log(CvWString::format(L"capture gold: %d", iCaptureGold));
+
+		CvEventReporter::getInstance().cityCaptureGold(this, getOwnerINLINE(), iCaptureGold);
+
+		GET_PLAYER(getOwnerINLINE()).changeGold(iCaptureGold);
+	}
+
+	if (iOccupationTime > 0)
+	{
+		setBuildingDamage(0);
+		setBuildingDamageChange(iTotalBuildingDamage / iOccupationTime);
+
+		log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
+
+		if (iTotalPopulationLoss > 0)
+		{
+			setPopulationLoss(std::max(1, iTotalPopulationLoss / iOccupationTime));
+			setTotalPopulationLoss(iOccupationTime * getPopulationLoss());
+
+			log(CvWString::format(L"total population loss: %d, population loss: %d", getTotalPopulationLoss(), getPopulationLoss()));
+
+			if (getTotalPopulationLoss() < iTotalPopulationLoss)
+			{
+				setPopulation(std::max(1, getPopulation() - (iTotalPopulationLoss - getTotalPopulationLoss())));
+				log(CvWString::format(L"immediate population loss: %d", iTotalPopulationLoss - getTotalPopulationLoss()));
+			}
+		}
+	}
+	else
+	{
+		log("no occupation time");
+		applyBuildingDamage(iTotalBuildingDamage);
+		setPopulation(std::max(1, getPopulation() - iTotalPopulationLoss));
+		chooseProduction();
+	}
 }

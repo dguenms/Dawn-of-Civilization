@@ -1146,6 +1146,8 @@ public:
 	int getPopulationLoss() const;
 	void setPopulationLoss(int iNewValue);
 
+	void completeAcquisition(int iCaptureGold);
+
 	int getRebuildProduction() const;
 
 	DllExport int getMusicScriptId() const;

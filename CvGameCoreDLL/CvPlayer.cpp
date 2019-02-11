@@ -1590,7 +1590,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iCaptureGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Capture Gold 1");
 		iCaptureGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND2"), "Capture Gold 2");
 
-		if (iCaptureMaxTurns > 0)
+		if (iCaptureMaxTurns > 0 && GC.getGameINLINE().getGameTurn() > getScenarioStartTurn() + getTurns(iCaptureMaxTurns))
 		{
 			iCaptureGold *= std::max(0, std::min(GC.getGame().getGameTurn() - pOldCity->getGameTurnAcquired(), getTurns(iCaptureMaxTurns)));
 			iCaptureGold /= getTurns(iCaptureMaxTurns);
@@ -1752,7 +1752,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	//pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
 	pNewCity->setPopulation(iPopulation);
-	int iPopulationLoss = bRecapture ? 0 : 1 + iPopulation / 5 + std::max(0, (iPopulation - 10) / 5);
+	
+	if (!bRecapture)
+	{
+		pNewCity->setTotalPopulationLoss(1 + iPopulation / 5 + std::max(0, (iPopulation - 10) / 5));
+	}
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
@@ -1815,6 +1819,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 							if (bConquest && !bRecapture)
 							{
+								log(CvWString::format(L"add building damage of %s", kOldBuilding.getText()));
 								iTotalBuildingDamage += kOldBuilding.getProductionCost() * (100 - kOldBuilding.getConquestProbability());
 							}
 						}
@@ -1826,32 +1831,35 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	iTotalBuildingDamage /= 100;
 
+	log(CvWString::format(L"initial building damage: %d", iTotalBuildingDamage));
+
 	iTotalBuildingDamage *= std::max(0, 100 - iDefense);
 	iTotalBuildingDamage /= 100;
+
+	log(CvWString::format(L"defense modified building damage: %d", iTotalBuildingDamage));
 
 	if (!isHuman() && !isBarbarian())
 	{
 		iTotalBuildingDamage *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIConstructPercent();
 		iTotalBuildingDamage /= 100;
+		
+		log(CvWString::format(L"handicap modified building damage: %d", iTotalBuildingDamage));	
 	}
 
-	if (iCaptureMaxTurns > 0)
+	if (iCaptureMaxTurns > 0 && GC.getGameINLINE().getGameTurn() > getScenarioStartTurn() + getTurns(iCaptureMaxTurns))
 	{
 		iTotalBuildingDamage *= std::max(0, std::min(GC.getGame().getGameTurn() - iGameTurnAcquired, getTurns(iCaptureMaxTurns)));
 		iTotalBuildingDamage /= getTurns(iCaptureMaxTurns);
+
+		log(CvWString::format(L"capture turns building damage: %d", iTotalBuildingDamage));
 	}
 
-	if (iCaptureGold > 0)
-	{
-		iCaptureGold += iTotalBuildingDamage * GC.getDefineINT("CAPTURE_GOLD_PER_BUILDING_COST") / 100;
+	pNewCity->setBuildingDamage(iTotalBuildingDamage);
 
-		iCaptureGold *= 100 + getCaptureGoldModifier();
-		iCaptureGold /= 100;
+	iCaptureGold += iTotalBuildingDamage * GC.getDefineINT("CAPTURE_GOLD_PER_BUILDING_COST") / 100;
 
-		CvEventReporter::getInstance().cityCaptureGold(pNewCity, getID(), iCaptureGold);
-
-		changeGold(iCaptureGold);
-	}
+	iCaptureGold *= 100 + getCaptureGoldModifier();
+	iCaptureGold /= 100;
 
 	for (std::vector<BuildingYieldChange>::iterator it = aBuildingYieldChange.begin(); it != aBuildingYieldChange.end(); ++it)
 	{
@@ -1945,9 +1953,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		if (iOccupationTime > 0)
 		{
 			pNewCity->changeOccupationTimer(iOccupationTime);
-			pNewCity->changeBuildingDamageChange(iTotalBuildingDamage / iOccupationTime);
+		}
 
-			log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
+		/*if (iOccupationTime > 0)
+		{
+			pNewCity->changeOccupationTimer(iOccupationTime);
+			//pNewCity->changeBuildingDamageChange(iTotalBuildingDamage / iOccupationTime);
+
+			//log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
 
 			if (iPopulationLoss > 0)
 			{
@@ -1967,7 +1980,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		{
 			pNewCity->applyBuildingDamage(iTotalBuildingDamage);
 			pNewCity->setPopulation(std::max(1, pNewCity->getPopulation() - iPopulationLoss));
-		}
+		}*/
 
 		GC.getMapINLINE().verifyUnitValidPlot();
 	}
@@ -2045,10 +2058,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYRAZE", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pNewCity->getX_INLINE(), pNewCity->getY_INLINE(), true, true);
 				}
 
+				pNewCity->completeAcquisition(iCaptureGold);
 				pNewCity->doTask(TASK_RAZE);
 			}
 			else if (!isHuman())
 			{
+				pNewCity->completeAcquisition(iCaptureGold);
 				AI_conquerCity(pNewCity); // could delete the pointer...
 			}
 			else
@@ -2072,7 +2087,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 				}
 				else
 				{
-					pNewCity->chooseProduction();
+					//pNewCity->chooseProduction();
+					pNewCity->completeAcquisition(iCaptureGold);
 					CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pNewCity);
 				}
 			}
@@ -2088,6 +2104,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 		else
 		{
+			pNewCity->completeAcquisition(iCaptureGold);
 			CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pNewCity);
 		}
 	}
