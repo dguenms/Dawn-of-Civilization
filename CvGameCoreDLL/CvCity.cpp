@@ -9101,7 +9101,7 @@ bool CvCity::isOccupation() const
 }
 
 
-void CvCity::setOccupationTimer(int iNewValue)
+void CvCity::setOccupationTimer(int iNewValue, bool bEffects)
 {
 	bool bOldOccupation;
 	int iOldValue = getOccupationTimer();
@@ -9125,7 +9125,7 @@ void CvCity::setOccupationTimer(int iNewValue)
 			AI_setAssignWorkDirty(true);
 		}
 
-		if (iNewValue < iOldValue)
+		if (bEffects && iNewValue < iOldValue)
 		{
 			applyBuildingDamage((iOldValue - iNewValue) * getBuildingDamageChange());
 			applyPopulationLoss((iOldValue - iNewValue) * getPopulationLoss());
@@ -9149,9 +9149,9 @@ void CvCity::setOccupationTimer(int iNewValue)
 }
 
 
-void CvCity::changeOccupationTimer(int iChange)
+void CvCity::changeOccupationTimer(int iChange, bool bEffects)
 {
-	setOccupationTimer(getOccupationTimer() + iChange);
+	setOccupationTimer(getOccupationTimer() + iChange, bEffects);
 }
 
 
@@ -18632,7 +18632,7 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 	}
 }
 
-ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
+ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bConquest) const
 {
 	int iI;
 	ReligionTypes eReligion;
@@ -18655,14 +18655,19 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
 		return religions[GC.getGame().getSorenRandNum(religions.size(), "Disappearing religion")];
 	}
 
+	if (eNewReligion == NO_RELIGION && !bConquest)
+	{
+		return NO_RELIGION;
+	}
+
 	int iMaxReligions = std::max(2, 1 + getPopulation() / 5);
 
 	ReligionSpreadTypes eCurrentSpread;
-	ReligionSpreadTypes eNewReligionSpread = GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion);
+	ReligionSpreadTypes eNewReligionSpread = eNewReligion != NO_RELIGION ? GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eNewReligion) : RELIGION_SPREAD_MINORITY;
 	ReligionSpreadTypes eWorstSpread = RELIGION_SPREAD_FAST;
 	religions.clear();
 
-	if (getReligionCount() > iMaxReligions)
+	if (bConquest || getReligionCount() > iMaxReligions)
 	{
 		for (iI = 0; iI < NUM_RELIGIONS; iI++)
 		{
@@ -19231,15 +19236,14 @@ void CvCity::completeAcquisition(int iCaptureGold)
 	int iTotalBuildingDamage = getBuildingDamage();
 	int iTotalPopulationLoss = getTotalPopulationLoss();
 
-	log(CvWString::format(L"complete acquisition: (%d, %d)", getX(), getY()));
+	log(CvWString::format(L"complete acquisition: %s", getNameKey()));
+	log(CvWString::format(L"occupation time: %d, total building damage: %d, population loss: %d", iOccupationTime, iTotalBuildingDamage, iTotalPopulationLoss));
 
 	if (iCaptureGold > 0)
 	{
 		log(CvWString::format(L"capture gold: %d", iCaptureGold));
 
 		CvEventReporter::getInstance().cityCaptureGold(this, getOwnerINLINE(), iCaptureGold);
-
-		GET_PLAYER(getOwnerINLINE()).changeGold(iCaptureGold);
 	}
 
 	if (iOccupationTime > 0)

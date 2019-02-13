@@ -1598,8 +1598,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		iCaptureGold *= (100 + getCaptureGoldModifier());
 		iCaptureGold /= 100;
-
-		CvEventReporter::getInstance().cityCaptureGold(pOldCity, getID(), iCaptureGold);
 	}
 
 	changeGold(iCaptureGold);
@@ -1954,33 +1952,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		{
 			pNewCity->changeOccupationTimer(iOccupationTime);
 		}
-
-		/*if (iOccupationTime > 0)
-		{
-			pNewCity->changeOccupationTimer(iOccupationTime);
-			//pNewCity->changeBuildingDamageChange(iTotalBuildingDamage / iOccupationTime);
-
-			//log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
-
-			if (iPopulationLoss > 0)
-			{
-				pNewCity->setPopulationLoss(std::max(1, iPopulationLoss / iOccupationTime));
-				pNewCity->setTotalPopulationLoss(iOccupationTime * pNewCity->getPopulationLoss());
-
-				log(CvWString::format(L"total population loss: %d, population loss: %d", pNewCity->getTotalPopulationLoss(), pNewCity->getPopulationLoss()));
-
-				if (pNewCity->getTotalPopulationLoss() < iPopulationLoss)
-				{
-					pNewCity->setPopulation(std::max(1, pNewCity->getPopulation() - (iPopulationLoss - pNewCity->getTotalPopulationLoss())));
-					log(CvWString::format(L"immediate population loss: %d", iPopulationLoss - pNewCity->getTotalPopulationLoss()));
-				}
-			}
-		}
-		else
-		{
-			pNewCity->applyBuildingDamage(iTotalBuildingDamage);
-			pNewCity->setPopulation(std::max(1, pNewCity->getPopulation() - iPopulationLoss));
-		}*/
 
 		GC.getMapINLINE().verifyUnitValidPlot();
 	}
@@ -5111,28 +5082,8 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 			return false;
 		}
 
-		//Rhye - start UP (Turkish)
-		/*if (getID() == TURKEY)
-		{
-			return true;
-		}*/
-		//Rhye - end UP (Turkish)
-
-
 		if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
 		{
-			// Leoreth: else they can't raze cities in NA due to the "always 100% American culture" effect
-			/*if (getID() == AMERICA && pCity->getOriginalOwner() != AMERICA)
-			{
-				return true;
-			}*/
-
-			// Leoreth: not necessary anymore, culture spread now applies only after the raze decision
-			/*if (getID() != TURKEY)
-			{
-				return false;
-			}*/
-
 			return false;
 		}
 
@@ -5141,29 +5092,46 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		{
 			return false;
 		}
-
-		//Leoreth: protect Jerusalem
-		if (pCity->getX() == 73 && pCity->getY() == 38)
-		{
-			return false;
-		}
 	}
 
-	//Rhye - start
-//Speed: Modified by Kael 04/19/2007
-//	CyCity* pyCity = new CyCity(pCity);
-//	CyArgsList argsList;
-//	argsList.add(getID());	// Player ID
-//	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
-//	long lResult=0;
-//	gDLL->getPythonIFace()->callFunction(PYGameModule, "canRazeCity", argsList.makeFunctionArgs(), &lResult);
-//	delete pyCity;	// python fxn must not hold on to this pointer
-//	if (lResult == 0)
-//	{
-//		return (false);
-//	}
-//Speed: End Modify
-	//Rhye - end
+	return true;
+}
+
+
+bool CvPlayer::canSack(const CvCity* pCity) const
+{
+	if (pCity->getOwnerINLINE() != getID())
+	{
+		return false;
+	}
+
+	if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
+	{
+		return false;
+	}
+
+	return true;
+}
+
+
+bool CvPlayer::canSpare(const CvCity* pCity, PlayerTypes eHighestCulturePlayer, int iCaptureGold) const
+{
+	if (pCity->getOwnerINLINE() != getID())
+	{
+		return false;
+	}
+
+	if (eHighestCulturePlayer != NO_PLAYER && eHighestCulturePlayer != getID() && GET_PLAYER(eHighestCulturePlayer).AI_getAttitude(getID()) == ATTITUDE_FURIOUS)
+	{
+		return false;
+	}
+
+	int iSpareCost = pCity->getBuildingDamage() * 2 + iCaptureGold;
+
+	if (getGold() < iSpareCost)
+	{
+		return false;
+	}
 
 	return true;
 }

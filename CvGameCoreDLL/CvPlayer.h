@@ -192,6 +192,9 @@ public:
 	void raze(CvCity* pCity);																																				// Exposed to Python
 	void disband(CvCity* pCity);																																		// Exposed to Python
 
+	bool canSack(const CvCity* pCity) const;
+	bool canSpare(const CvCity* pCity, PlayerTypes eHighestCulturePlayer, int iCaptureGold) const;
+
 	bool canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) const;													// Exposed to Python
 	void receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit);															// Exposed to Python
 	void doGoody(CvPlot* pPlot, CvUnit* pUnit);																											// Exposed to Python

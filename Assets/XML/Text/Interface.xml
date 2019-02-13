@@ -3001,6 +3001,62 @@
 		<Spanish>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_GOLD_CITY_CAPTURE</Tag>
+		<English>You have pillaged %d1_Num [ICON_GOLD] from the capture of %s2_CityName!!! What are your next orders for our troops?</English>
+		<French>Vous avez pill&#233; %d1_Num [ICON_GOLD] en capturant %s2_CityName ! Voulez-vous le garder ?</French>
+		<German>Ihr habt durch die Eroberung von %s2_CityName %d1_Num [ICON_GOLD] erbeutet!!! Was sind Ihre n&#228;chsten Befehle an die Truppen?</German>
+		<Italian>Hai saccheggiato %d1_Num [ICON_GOLD] dalla conquista di %s2_CityName!!! Vuoi mantenerla?</Italian>
+		<Spanish>Hab&#233;is saqueado %d1_Num [ICON_GOLD] con la captura de %s2_CityName. &#191;Dese&#225;is conservarla?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_CITY_CAPTURE_KEEP</Tag>
+		<English>You have captured %s1_CityName!!! What are your next orders for our troops?</English>
+		<French>Vous avez captur&#233; %s1_CityName ! Voulez-vous garder cette ville ?</French>
+		<German>Ihr habt die Stadt %s1_CityName eingenommen!!! Was sind Ihre n&#228;chsten Befehle an die Truppen?</German>
+		<Italian>Hai conquistato %s1_CityName! Vuoi tenerla?</Italian>
+		<Spanish>Hab&#233;is capturado %s1_CityName. &#191;Dese&#225;is conservarla?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_KEEP_CAPTURED_CITY</Tag>
+		<English>Establish control and install a new governor.</English>
+		<French>Oui ! Qu'on installe un nouveau gouverneur...</French>
+		<German>&#220;bernehmt die Kontrolle und setzt einen neuen Statthalter ein.</German>
+		<Italian>S&#236;! Instaura un nuovo governatore...</Italian>
+		<Spanish>S&#237;. Que tome posesi&#243;n un nuevo gobernante.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_RAZE_CAPTURED_CITY</Tag>
+		<English>Destroy the city! Burn it all down!</English>
+		<French>NON ! REDUISEZ-LA EN CENDRES !</French>
+		<German>Zerst&#246;rt die Stadt und brennt sie nieder!</German>
+		<Italian>No! BRUCIAMO TUTTO!</Italian>
+		<Spanish>&#161;No! &#161;REDUCIDLA A CENIZAS!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_RETURN_ALLIED_CITY</Tag>
+		<English>Return control to the %s1_CivName</English>
+		<French>Non, rendez-la aux %s1_CivName.</French>
+		<German>&#250;bergebt sie wieder an das %s1:2_CivName</German>
+		<Italian>No, restituisci il controllo all'%s1_CivName</Italian>
+		<Spanish>No, devolvedle el control al %s1_CivName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_SACK_CITY</Tag>
+		<English>Sack the city! Take as much as you can!</English>
+		<French>Sack the city! Take as much as you can!</French>
+		<German>Pl&#252;ndert die Stadt! Nehmt euch soviel ihr k&#246;nnt!</German>
+		<Italian>Sack the city! Take as much as you can!</Italian>
+		<Spanish>Sack the city! Take as much as you can!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_SPARE_CITY</Tag>
+		<English>Take %d1 gold and see that the city is spared.</English>
+		<French>Take %d1 gold and see that the city is spared.</French>
+		<German>Nehmt %d1 Gold, und sorgt daf&#252;r dass die Stadt verschont bleibt.</German>
+		<Italian>Take %d1 gold and see that the city is spared.</Italian>
+		<Spanish>Take %d1 gold and see that the city is spared.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

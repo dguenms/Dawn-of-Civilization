@@ -307,6 +307,7 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 	case BUTTONPOPUP_RAZECITY:
 		if (pPopupReturn->getButtonClicked() == 1) // raze
 		{
+			log("selected raze");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
@@ -317,6 +318,7 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		else if (pPopupReturn->getButtonClicked() == 2) // gift
 		{
+			log("selected gift");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
@@ -328,6 +330,7 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		else if (pPopupReturn->getButtonClicked() == 3) // examine
 		{
+			log("selected examine");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
@@ -339,11 +342,82 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		}
 		else if (pPopupReturn->getButtonClicked() == 0) // keep
 		{
+			log("select keep");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
 				//pCity->chooseProduction();
 				pCity->completeAcquisition(info.getData3());
+				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
+			}
+		}
+		else if (pPopupReturn->getButtonClicked() == 4) // sack
+		{
+			log("select sack");
+			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
+			if (NULL != pCity)
+			{
+				log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss(), info.getData3()));
+
+				pCity->changeOccupationTimer(1 + pCity->getOccupationTimer() / 2);
+				pCity->changeBuildingDamage(pCity->getBuildingDamage());
+				pCity->changeTotalPopulationLoss(1 + pCity->getTotalPopulationLoss() / 2);
+
+				int iSackGold = info.getData3() / 2;
+				iSackGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Sack Gold 1");
+
+				GET_PLAYER(GC.getGameINLINE().getActivePlayer()).changeGold(iSackGold);
+
+				log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss(), iSackGold + info.getData3()));
+
+				for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+				{
+					if (pCity->isHasRealBuilding((BuildingTypes)iI))
+					{
+						CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+						if (kBuilding.getDefenseModifier() > 0 || kBuilding.getBombardDefenseModifier() > 0 || kBuilding.getUnignorableBombardDefenseModifier() > 0)
+						{
+							pCity->setHasRealBuilding((BuildingTypes)iI, false);
+						}
+					}
+				}
+
+				for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+				{
+					if (GC.getGameINLINE().getActivePlayer() != iI)
+					{
+						pCity->setCulture((PlayerTypes)iI, pCity->getCulture((PlayerTypes)iI) * 8 / 10, true, true);
+					}
+				}
+
+				ReligionTypes eDisappearingReligion = pCity->disappearingReligion(NO_RELIGION, true);
+				if (eDisappearingReligion != NO_RELIGION)
+				{
+					pCity->removeReligion(eDisappearingReligion);
+				}
+
+				pCity->completeAcquisition(info.getData3() + iSackGold);
+				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
+			}
+		}
+		else if (pPopupReturn->getButtonClicked() == 5) // spare
+		{
+			log("select spare");
+			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
+			int iSpareGold = 2 * pCity->getBuildingDamage() + info.getData3();
+			if (NULL != pCity)
+			{
+				log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss()));
+
+				pCity->changeOccupationTimer(-(1 + pCity->getOccupationTimer() / 2), false);
+				pCity->setBuildingDamage(pCity->getBuildingDamage() / 3);
+				pCity->changeTotalPopulationLoss(-(1 + pCity->getTotalPopulationLoss() / 2));
+				
+				log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss()));
+
+				GET_PLAYER(GC.getGameINLINE().getActivePlayer()).changeGold(-iSpareGold);
+
+				pCity->completeAcquisition(0);
 				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 			}
 		}
@@ -1447,7 +1521,9 @@ bool CvDLLButtonPopup::launchRazeCityPopup(CvPopup* pPopup, CvPopupInfo &info)
 	bool bGift = ((eHighestCulturePlayer != NO_PLAYER) 
 		&& (eHighestCulturePlayer != player.getID()) 
 		&& ((player.getTeam() == GET_PLAYER(eHighestCulturePlayer).getTeam()) || GET_TEAM(player.getTeam()).isOpenBorders(GET_PLAYER(eHighestCulturePlayer).getTeam()) || GET_TEAM(GET_PLAYER(eHighestCulturePlayer).getTeam()).isVassal(player.getTeam())));
-	
+	bool bSack = player.canSack(pNewCity);
+	bool bSpare = player.canSpare(pNewCity, eHighestCulturePlayer, iCaptureGold);
+
 	CvWString szBuffer;
 	if (iCaptureGold > 0)
 	{
@@ -1468,6 +1544,17 @@ bool CvDLLButtonPopup::launchRazeCityPopup(CvPopup* pPopup, CvPopupInfo &info)
 	{
 		szBuffer = gDLL->getText("TXT_KEY_POPUP_RETURN_ALLIED_CITY", GET_PLAYER(eHighestCulturePlayer).getCivilizationDescriptionKey());
 		gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, NULL, 2, WIDGET_GENERAL, 2, eHighestCulturePlayer);
+	}
+	if (bSack)
+	{
+		szBuffer = gDLL->getText("TXT_KEY_POPUP_SACK_CITY");
+		gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, NULL, 4, WIDGET_GENERAL);
+	}
+	if (bSpare)
+	{
+		int iSpareCost = 2 * pNewCity->getBuildingDamage() + iCaptureGold;
+		szBuffer = gDLL->getText("TXT_KEY_POPUP_SPARE_CITY", iSpareCost);
+		gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, NULL, 5, WIDGET_GENERAL);
 	}
 	gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, gDLL->getText("TXT_KEY_CITY_WARNING_ANSWER3").c_str(), NULL, 3, WIDGET_GENERAL, -1, -1);
 	gDLL->getInterfaceIFace()->popupLaunch(pPopup, false, POPUPSTATE_IMMEDIATE);

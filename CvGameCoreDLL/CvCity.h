@@ -575,8 +575,8 @@ public:
 
 	int getOccupationTimer() const;															// Exposed to Python
 	bool isOccupation() const;																	// Exposed to Python 
-	void setOccupationTimer(int iNewValue);													// Exposed to Python
-	void changeOccupationTimer(int iChange);												// Exposed to Python
+	void setOccupationTimer(int iNewValue, bool bEffects = true);													// Exposed to Python
+	void changeOccupationTimer(int iChange, bool bEffects = true);												// Exposed to Python
 
 	int getCultureUpdateTimer() const;															// Exposed to Python
 	void setCultureUpdateTimer(int iNewValue);
@@ -963,7 +963,7 @@ public:
 	void removeReligion(ReligionTypes eReligion);
 	void replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion);
 
-	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION) const;
+	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION, bool bConquest = false) const;
 
 	bool isHasCorporation(CorporationTypes eIndex) const;
 	void setHasCorporation(CorporationTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
