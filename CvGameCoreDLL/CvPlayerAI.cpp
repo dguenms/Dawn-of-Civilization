@@ -1236,10 +1236,12 @@ void CvPlayerAI::AI_makeProductionDirty()
 }
 
 
-void CvPlayerAI::AI_conquerCity(CvCity* pCity)
+void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, int iCaptureGold)
 {
 	CvCity* pNearestCity;
 	bool bRaze = false;
+	bool bSack = false;
+	bool bSpare = false;
 	int iRazeValue;
 	int iI;
 
@@ -1293,8 +1295,8 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
                         {
 							if (GET_TEAM(getTeam()).hasShrine(getStateReligion()))
 							{
-	                        iRazeValue -= 50;
-						}
+								iRazeValue -= 50;
+							}
 							else
 							{
 								iRazeValue -= 10;
@@ -1417,11 +1419,73 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 			}
 		}
 		//Rhye - end moved part
-
 	}
 
 	if (!bRaze)
 	{
+		if (ePreviousOwner != getID() && pCity->findHighestCulture() != getID())
+		{
+			int iSackValue = GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();	
+
+			if (AI_isFinancialTrouble())
+			{
+				iSackValue += 15;
+			}
+
+			int iCloseness = pCity->AI_playerCloseness(getID(), 5);
+			if (iCloseness > 0)
+			{
+				iSackValue -= 5;
+			}
+			else if (iCloseness < 0)
+			{
+				iSackValue += 5;
+			}
+
+			if (GC.getGameINLINE().getSorenRandNum(100, "AI sack city") < iSackValue)
+			{
+				bSack = true;
+			}
+		}
+
+		if (!bSack)
+		{
+			int iSpareCost = 2 * pCity->getBuildingDamage() + iCaptureGold;
+
+			if (getGold() >= iSpareCost && !AI_isFinancialTrouble() && pCity->getPreviousOwner() != getWorstEnemy())
+			{
+				int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
+
+				int iCostRatio = 100 * iSpareCost / getGold();
+				if (iCostRatio >= 50)
+				{
+					iSpareValue -= iCostRatio / 10;
+				}
+				else if (iCostRatio <= 20)
+				{
+					iSpareValue += 5;
+				}
+
+				if (GC.getGameINLINE().getSorenRandNum(100, "AI spare city") < iSpareValue)
+				{
+					bSpare = true;
+				}
+			}
+		}
+
+		if (bSack)
+		{
+			pCity->sack(iCaptureGold);
+		}
+		else if (bSpare)
+		{
+			pCity->spare(iCaptureGold);
+		}
+		else
+		{
+			pCity->completeAcquisition(iCaptureGold);
+		}
+
 		CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pCity);
 	}
 }

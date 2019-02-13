@@ -19275,3 +19275,64 @@ void CvCity::completeAcquisition(int iCaptureGold)
 		chooseProduction();
 	}
 }
+
+void CvCity::sack(int iCaptureGold) 
+{
+	log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss(), iCaptureGold));
+
+	changeOccupationTimer(1 + getOccupationTimer() / 2);
+	changeBuildingDamage(getBuildingDamage());
+	changeTotalPopulationLoss(1 + getTotalPopulationLoss() / 2);
+
+	int iSackGold = iCaptureGold / 2;
+	iSackGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Sack Gold 1");
+
+	GET_PLAYER(getOwnerINLINE()).changeGold(iSackGold);
+
+	log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss(), iSackGold + iCaptureGold));
+
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (isHasRealBuilding((BuildingTypes)iI))
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+			if (kBuilding.getDefenseModifier() > 0 || kBuilding.getBombardDefenseModifier() > 0 || kBuilding.getUnignorableBombardDefenseModifier() > 0)
+			{
+				setHasRealBuilding((BuildingTypes)iI, false);
+			}
+		}
+	}
+
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (getOwnerINLINE() != iI)
+		{
+			setCulture((PlayerTypes)iI, getCulture((PlayerTypes)iI) * 8 / 10, true, true);
+		}
+	}
+
+	ReligionTypes eDisappearingReligion = disappearingReligion(NO_RELIGION, true);
+	if (eDisappearingReligion != NO_RELIGION)
+	{
+		removeReligion(eDisappearingReligion);
+	}
+
+	completeAcquisition(iCaptureGold + iSackGold);
+}
+
+void CvCity::spare(int iCaptureGold)
+{
+	log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss()));
+
+	int iSpareGold = 2 * getBuildingDamage() + iCaptureGold;
+
+	changeOccupationTimer(-(1 + getOccupationTimer() / 2), false);
+	setBuildingDamage(getBuildingDamage() / 3);
+	changeTotalPopulationLoss(-(1 + getTotalPopulationLoss() / 2));
+				
+	log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss()));
+
+	GET_PLAYER(getOwnerINLINE()).changeGold(-iSpareGold);
+
+	completeAcquisition(0);
+}

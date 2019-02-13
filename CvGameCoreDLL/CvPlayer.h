@@ -1163,7 +1163,7 @@ public:
 	virtual void AI_assignWorkingPlots() = 0;
 	virtual void AI_updateAssignWork() = 0;
 	virtual void AI_makeProductionDirty() = 0;
-	virtual void AI_conquerCity(CvCity* pCity) = 0;
+	virtual void AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, int iCaptureGold) = 0;
 	virtual int AI_foundValue(int iX, int iY, int iMinUnitRange = -1, bool bStartingLoc = false) const = 0; // Exposed to Python
 	virtual bool AI_isCommercePlot(CvPlot* pPlot) const = 0;
 	virtual int AI_getPlotDanger(CvPlot* pPlot, int iRange = -1, bool bTestMoves = true) const = 0;

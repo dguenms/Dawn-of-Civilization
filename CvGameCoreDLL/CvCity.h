@@ -1150,6 +1150,9 @@ public:
 
 	int getRebuildProduction() const;
 
+	void sack(int iCaptureGold);
+	void spare(int iCaptureGold);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);

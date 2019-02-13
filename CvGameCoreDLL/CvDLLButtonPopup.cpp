@@ -357,46 +357,7 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
-				log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss(), info.getData3()));
-
-				pCity->changeOccupationTimer(1 + pCity->getOccupationTimer() / 2);
-				pCity->changeBuildingDamage(pCity->getBuildingDamage());
-				pCity->changeTotalPopulationLoss(1 + pCity->getTotalPopulationLoss() / 2);
-
-				int iSackGold = info.getData3() / 2;
-				iSackGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Sack Gold 1");
-
-				GET_PLAYER(GC.getGameINLINE().getActivePlayer()).changeGold(iSackGold);
-
-				log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss(), iSackGold + info.getData3()));
-
-				for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-				{
-					if (pCity->isHasRealBuilding((BuildingTypes)iI))
-					{
-						CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
-						if (kBuilding.getDefenseModifier() > 0 || kBuilding.getBombardDefenseModifier() > 0 || kBuilding.getUnignorableBombardDefenseModifier() > 0)
-						{
-							pCity->setHasRealBuilding((BuildingTypes)iI, false);
-						}
-					}
-				}
-
-				for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-				{
-					if (GC.getGameINLINE().getActivePlayer() != iI)
-					{
-						pCity->setCulture((PlayerTypes)iI, pCity->getCulture((PlayerTypes)iI) * 8 / 10, true, true);
-					}
-				}
-
-				ReligionTypes eDisappearingReligion = pCity->disappearingReligion(NO_RELIGION, true);
-				if (eDisappearingReligion != NO_RELIGION)
-				{
-					pCity->removeReligion(eDisappearingReligion);
-				}
-
-				pCity->completeAcquisition(info.getData3() + iSackGold);
+				pCity->sack(info.getData3());
 				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 			}
 		}
@@ -404,20 +365,9 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		{
 			log("select spare");
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
-			int iSpareGold = 2 * pCity->getBuildingDamage() + info.getData3();
 			if (NULL != pCity)
 			{
-				log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss()));
-
-				pCity->changeOccupationTimer(-(1 + pCity->getOccupationTimer() / 2), false);
-				pCity->setBuildingDamage(pCity->getBuildingDamage() / 3);
-				pCity->changeTotalPopulationLoss(-(1 + pCity->getTotalPopulationLoss() / 2));
-				
-				log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d", pCity->getOccupationTimer(), pCity->getBuildingDamage(), pCity->getTotalPopulationLoss()));
-
-				GET_PLAYER(GC.getGameINLINE().getActivePlayer()).changeGold(-iSpareGold);
-
-				pCity->completeAcquisition(0);
+				pCity->spare(info.getData3());
 				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 			}
 		}
