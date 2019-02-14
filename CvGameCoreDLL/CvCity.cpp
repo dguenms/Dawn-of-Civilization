@@ -19276,7 +19276,7 @@ void CvCity::completeAcquisition(int iCaptureGold)
 	}
 }
 
-void CvCity::sack(int iCaptureGold) 
+void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold) 
 {
 	log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss(), iCaptureGold));
 
@@ -19315,6 +19315,11 @@ void CvCity::sack(int iCaptureGold)
 	if (eDisappearingReligion != NO_RELIGION)
 	{
 		removeReligion(eDisappearingReligion);
+	}
+
+	if (eHighestCulturePlayer != NO_PLAYER && eHighestCulturePlayer != getOwnerINLINE())
+	{
+		GET_PLAYER(eHighestCulturePlayer).AI_changeMemoryCount(getOwnerINLINE(), MEMORY_SACKED_CITY, 1);
 	}
 
 	completeAcquisition(iCaptureGold + iSackGold);

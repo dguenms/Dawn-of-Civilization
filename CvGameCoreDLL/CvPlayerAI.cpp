@@ -1475,7 +1475,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (bSack)
 	{
-		pCity->sack(iCaptureGold);
+		pCity->sack(eHighestCulturePlayer, iCaptureGold);
 	}
 	else if (bSpare)
 	{

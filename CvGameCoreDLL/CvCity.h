@@ -1150,7 +1150,7 @@ public:
 
 	int getRebuildProduction() const;
 
-	void sack(int iCaptureGold);
+	void sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold);
 	void spare(int iCaptureGold);
 
 	DllExport int getMusicScriptId() const;

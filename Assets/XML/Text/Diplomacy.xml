@@ -514,6 +514,14 @@
 		<Spanish>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MEMORY_SACKED_CITY</Tag>
+		<English>"You sacked one of our cities!"</English>
+		<French>"Vous avez saccag&#233; l'une de nos villes !"</French>
+		<German>"Ihr habt eine unserer St&#228;dte gepl&#252;ndert!"</German>
+		<Italian>"Hai saccheggiato una delle nostre citt&#224;!"</Italian>
+		<Spanish>"&#161;Saqueasteis una de nuestras ciudades!"</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>
 		<French></French>
