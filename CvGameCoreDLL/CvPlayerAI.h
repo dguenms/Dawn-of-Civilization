@@ -58,7 +58,7 @@ public:
 
 	void AI_makeProductionDirty();
 
-	void AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, int iCaptureGold);
+	void AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold);
 
 	bool AI_acceptUnit(CvUnit* pUnit) const;
 	bool AI_captureUnit(UnitTypes eUnit, CvPlot* pPlot) const;

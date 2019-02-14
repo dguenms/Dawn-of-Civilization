@@ -2036,7 +2036,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			}
 			else if (!isHuman())
 			{
-				AI_conquerCity(pNewCity, eOldPreviousOwner, iCaptureGold); // could delete the pointer...
+				AI_conquerCity(pNewCity, eOldPreviousOwner, eHighestCulturePlayer, iCaptureGold); // could delete the pointer...
 			}
 			else
 			{

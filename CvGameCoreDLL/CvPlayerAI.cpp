@@ -1236,7 +1236,7 @@ void CvPlayerAI::AI_makeProductionDirty()
 }
 
 
-void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, int iCaptureGold)
+void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 {
 	CvCity* pNearestCity;
 	bool bRaze = false;
@@ -1421,9 +1421,9 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, int i
 		//Rhye - end moved part
 	}
 
-	if (!bRaze)
+	if (!bRaze && canSack(pCity))
 	{
-		if (ePreviousOwner != getID() && pCity->findHighestCulture() != getID())
+		if (ePreviousOwner != getID() && eHighestCulturePlayer != getID())
 		{
 			int iSackValue = GC.getLeaderHeadInfo(getPersonalityType()).getRazeCityProb();	
 
@@ -1447,47 +1447,46 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, int i
 				bSack = true;
 			}
 		}
+	}
 
-		if (!bSack)
+	if (!bRaze && !bSack && canSpare(pCity, eHighestCulturePlayer, iCaptureGold))
+	{
+		if (!AI_isFinancialTrouble() && pCity->getPreviousOwner() != getWorstEnemy())
 		{
+			int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
+
 			int iSpareCost = 2 * pCity->getBuildingDamage() + iCaptureGold;
-
-			if (getGold() >= iSpareCost && !AI_isFinancialTrouble() && pCity->getPreviousOwner() != getWorstEnemy())
+			int iCostRatio = 100 * iSpareCost / getGold();
+			if (iCostRatio >= 50)
 			{
-				int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
+				iSpareValue -= iCostRatio / 10;
+			}
+			else if (iCostRatio <= 20)
+			{
+				iSpareValue += 5;
+			}
 
-				int iCostRatio = 100 * iSpareCost / getGold();
-				if (iCostRatio >= 50)
-				{
-					iSpareValue -= iCostRatio / 10;
-				}
-				else if (iCostRatio <= 20)
-				{
-					iSpareValue += 5;
-				}
-
-				if (GC.getGameINLINE().getSorenRandNum(100, "AI spare city") < iSpareValue)
-				{
-					bSpare = true;
-				}
+			if (GC.getGameINLINE().getSorenRandNum(100, "AI spare city") < iSpareValue)
+			{
+				bSpare = true;
 			}
 		}
-
-		if (bSack)
-		{
-			pCity->sack(iCaptureGold);
-		}
-		else if (bSpare)
-		{
-			pCity->spare(iCaptureGold);
-		}
-		else
-		{
-			pCity->completeAcquisition(iCaptureGold);
-		}
-
-		CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pCity);
 	}
+
+	if (bSack)
+	{
+		pCity->sack(iCaptureGold);
+	}
+	else if (bSpare)
+	{
+		pCity->spare(iCaptureGold);
+	}
+	else
+	{
+		pCity->completeAcquisition(iCaptureGold);
+	}
+
+	CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pCity);
 }
 
 
