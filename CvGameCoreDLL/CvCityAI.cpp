@@ -3214,6 +3214,8 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	int iLimitedWonderLimit = limitedWonderClassLimit(eBuildingClass);
 	bool bIsLimitedWonder = (iLimitedWonderLimit >= 0);
 
+	int iBuildingWeight = AI_buildingWeight(eBuilding);
+
 	ReligionTypes eStateReligion = kOwner.getStateReligion();
 
 	bool bAreaAlone = kOwner.AI_isAreaAlone(area());
@@ -3297,6 +3299,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				break;
 			}
 		}
+	}
+
+	if (iBuildingWeight == -MAX_INT)
+	{
+		return 0;
 	}
 
 	if (kBuilding.isCapital())
@@ -4556,10 +4563,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				}
 			}
 
-			if (iPass > 0 && !isHuman())
+			if (iPass > 0 && !isHuman() && iBuildingWeight >= 0)
 			{
 				// Leoreth: 
-				iValue += AI_buildingWeight(eBuilding);
+				iValue += iBuildingWeight;
 				if (iValue > 0)
 				{
 					for (iI = 0; iI < GC.getNumFlavorTypes(); iI++)
@@ -10342,7 +10349,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iFloodPlainsCount < 2)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == TEMPLE_OF_KUKULKAN)
@@ -10358,7 +10365,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iRainforestCount < 4)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == MACHU_PICCHU || eBuilding == MOLE_ANTONELLIANA)
@@ -10374,7 +10381,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iPeakCount < 5)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == UNIVERSITY_OF_SANKORE || eBuilding == BURJ_KHALIFA)
@@ -10390,7 +10397,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iDesertCount < 5)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == POTALA_PALACE)
@@ -10406,7 +10413,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iHillCount < 8)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == ITSUKUSHIMA_SHRINE)
@@ -10422,28 +10429,28 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iWaterCount < 8)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE || eBuilding == HERMITAGE || eBuilding == CHAPULTEPEC_CASTLE)
 	{
 		if (getCultureLevel() < 3)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == HARBOUR_OPERA)
 	{
 		if (happyLevel() - unhappyLevel() < 4)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == SHALIMAR_GARDENS || eBuilding == GARDENS_BY_THE_BAY)
 	{
 		if (goodHealth() - badHealth() < 4)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == CHANNEL_TUNNEL)
@@ -10459,7 +10466,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iFriendlyRelationCount < 1)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 
