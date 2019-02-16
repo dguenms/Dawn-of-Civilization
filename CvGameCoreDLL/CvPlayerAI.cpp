@@ -1416,6 +1416,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 			{
 				bRaze = true;
 				pCity->doTask(TASK_RAZE);
+				return;
 			}
 		}
 		//Rhye - end moved part
