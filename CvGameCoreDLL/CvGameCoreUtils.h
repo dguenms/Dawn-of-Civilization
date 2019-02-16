@@ -393,6 +393,7 @@ void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue);
 void log(char* format, ...);
 void log(CvWString message);
 void log(CvString logfile, CvString message);
+void logMajorError(CvWString message, int iX = -1, int iY = -1);
 char* chars(const wchar_t* wchars);
 char* chars(CvWString string);
 
