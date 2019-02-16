@@ -8368,7 +8368,7 @@ bool CvUnit::canCoexistWithEnemyUnit(TeamTypes eTeam) const
 		return false;
 	}
 
-	if (getInvisibleType() != NO_INVISIBLE && isRivalTerritory())
+	if (getDomainType() == DOMAIN_AIR && getInvisibleType() != NO_INVISIBLE && isRivalTerritory())
 	{
 		return true;
 	}
