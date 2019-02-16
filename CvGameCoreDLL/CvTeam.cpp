@@ -4820,16 +4820,19 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 					{
 						if (GET_TEAM((TeamTypes)iI).getProjectMaking(eIndex) > 0)
 						{
-							for (iJ = 0; iJ > MAX_PLAYERS; iJ++)
+							for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
 							{
 								if (GET_PLAYER((PlayerTypes)iJ).isAlive() && GET_PLAYER((PlayerTypes)iJ).getTeam() == iI)
 								{
 									GET_PLAYER((PlayerTypes)iJ).changeAnarchyTurns(getTurns(1));
 
-									if (GC.getGame().isFinalInitialized() && GET_PLAYER((PlayerTypes)iJ).isHuman())
+									if (GC.getGame().isFinalInitialized())
 									{
-										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
-										gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iJ), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY", GET_PLAYER(getLeaderID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide());
+										gDLL->getInterfaceIFace()->addMessage((PlayerTypes)iJ, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"));
+
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY_CAUSED", GC.getProjectInfo(eIndex).getTextKeyWide(), GET_PLAYER((PlayerTypes)iJ).getCivilizationAdjective());
+										gDLL->getInterfaceIFace()->addMessage(getLeaderID(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 									}
 								}
 							}

@@ -2832,6 +2832,14 @@
 		<Spanish>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_PROJECT_ANARCHY_CAUSED</Tag>
+		<English>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</English>
+		<French>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</French>
+		<German>Unsere erfolgreiche Fertigstellung von %s1 hat einen gro&#223;en Schock in der %s2 Zivilisation ausgel&#246;st, die an demselben Projekt gearbeitet haben!</German>
+		<Italian>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</Italian>
+		<Spanish>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_FIRST_AIR_EXPERIENCE</Tag>
 		<English>[ICON_BULLET]First to complete receives %s1 experience for Air units</English>
 		<French>[ICON_BULLET]First to complete receives %s1 experience for Air units</French>
