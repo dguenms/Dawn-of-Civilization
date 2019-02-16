@@ -599,7 +599,7 @@
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<CreateSound/>
-			<MovieDefineTag>ART_DEF_MOVIE_LUNAR_LANDING</MovieDefineTag>
+			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
 			<Type>PROJECT_INTERSTALLAR_PROBE</Type>
