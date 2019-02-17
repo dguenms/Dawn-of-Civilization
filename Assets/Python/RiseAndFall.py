@@ -1348,7 +1348,7 @@ class RiseAndFall:
 						bDeleteEverything = True
 						for (i, j) in utils.surroundingPlots(tCapital):
 							pPlot=gc.getMap().plot(i, j)
-							if pPlot.isCity() and (pPlot.getPlotCity().getOwner() == iHuman or pPlot.getPlotCity().isHolyCity()):
+							if (pPlot.isCity() and (pPlot.getPlotCity().getOwner() == iHuman or pPlot.getPlotCity().isHolyCity())) or iCiv == iOttomans:
 								bDeleteEverything = False
 								print ("bDeleteEverything 2")
 								break
