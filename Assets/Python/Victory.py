@@ -626,7 +626,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if data.bEthiopiaConverted and iNumOrthodoxCathedrals >= 1 and iGreatProphets >= 3:
 				win(iEthiopia, 1)
 		
-			if iGameTurn > gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5):
+			if gc.getGame().isReligionFounded(iOrthodoxy) and iGameTurn > gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5):
 				if not data.bEthiopiaConverted:
 					expire(iEthiopia, 1)
 				
