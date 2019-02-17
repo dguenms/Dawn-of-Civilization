@@ -15047,7 +15047,7 @@ bool CvCity::doCheckProduction()
 		if (getBuildingProduction((BuildingTypes)iI) > 0)
 		{
 			bMaxedOut = GET_PLAYER(getOwnerINLINE()).isProductionMaxedBuildingClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()));
-			bObsolete = GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech() != NO_TECH && GC.getGameINLINE().countKnownTechNumTeams((TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech()) > 0;
+			bObsolete = isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()) && GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech() != NO_TECH && GC.getGameINLINE().countKnownTechNumTeams((TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getObsoleteTech()) > 0;
 
 			if (bMaxedOut || bObsolete)
 			{
