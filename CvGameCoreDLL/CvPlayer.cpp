@@ -4412,7 +4412,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 			{
 				if (0 == GC.getGameINLINE().getMaxCityElimination())
 				{
-					if (!GET_TEAM(getTeam()).isAVassal() && !GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isVassal(getTeam()))
+					if (!GET_TEAM(getTeam()).isAVassal() && (!GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isVassal(getTeam()) || pCityTraded->plot()->isCore(eWhoTo)))
 					{
 						pOurCapitalCity = getCapitalCity();
 						if (pOurCapitalCity != NULL)
