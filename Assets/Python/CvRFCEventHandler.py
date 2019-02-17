@@ -378,7 +378,7 @@ class CvRFCEventHandler:
 		if iOwner == iAmerica:
 			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
 				utils.createGarrisons(tCity, iOwner, 1)
-				utils.makeUnit(iWorker, iOwner, tCity, 1)
+				utils.makeUnit(utils.getBestWorker(iOwner), iOwner, tCity, 1)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'

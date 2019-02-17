@@ -1253,6 +1253,17 @@ class RFCUtils:
 				
 		return iMilitia
 		
+	def getBestWorker(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lWorkerList = [iLabourer, iWorker]
+		
+		for iBaseUnit in lWorkerList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return iWorker
+		
 	def getPlotList(self, tTL, tBR, tExceptions=()):
 		return [(x, y) for x in range(tTL[0], tBR[0]+1) for y in range(tTL[1], tBR[1]+1) if (x, y) not in tExceptions]
 		
