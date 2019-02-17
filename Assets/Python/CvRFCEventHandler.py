@@ -210,9 +210,8 @@ class CvRFCEventHandler:
 				utils.setReborn(iByzantium, True)
 					
 		if bTrade:
-			for i in range(iNumBuildings):
-				iNationalWonder = i
-				if isNationalWonderClass(gc.getBuildingInfo(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
+			for iNationalWonder in range(iNumBuildings):
+				if iNationalWonder != iPalace and isNationalWonderClass(gc.getBuildingInfo(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
 					city.setHasRealBuilding(iNationalWonder, False)
 					
 		# Leoreth: Escorial effect
