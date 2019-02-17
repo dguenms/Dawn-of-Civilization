@@ -3065,6 +3065,14 @@
 		<Spanish>Take %d1 gold and see that the city is spared.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_CREATED_WORK_ON_NEXT_SPACESHIP</Tag>
+		<English>%s2_CityName has added [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] to the Mars colony. What would you like to work on next?</English>
+		<French>Ajout de : [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] au colonie de Mars par %s2_CityName. Que souhaitez-vous construire ensuite ?</French>
+		<German>%s2_CityName hat das Projekt [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] zur Marskolonie hinzugef&#252;gt. Woran m&#246;chtet Ihr als N&#228;chstes arbeiten?</German>
+		<Italian>%s2_CityName ha aggiunto [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] a la colonia Marziana. Qual &#232; il prossimo compito?</Italian>
+		<Spanish>%s2_CityName ha a&#241;adido [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] a la colonia de marte. &#191;Qu&#233; quer&#233;is hacer a continuaci&#243;n?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

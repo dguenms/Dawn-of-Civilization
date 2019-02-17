@@ -1104,10 +1104,14 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 	{
 		if (bFinish)
 		{
-			if(GC.getProjectInfo(eCreateProject).isSpaceship())
+			if (GC.getProjectInfo(eCreateProject).getVictoryMinThreshold(VICTORY_SPACE_RACE) > 0 || GC.getProjectInfo(eCreateProject).getVictoryThreshold(VICTORY_SPACE_RACE))
+			{
 				szBuffer = gDLL->getText("TXT_KEY_POPUP_CREATED_WORK_ON_NEXT_SPACESHIP", GC.getProjectInfo(eCreateProject).getTextKeyWide(), pCity->getNameKey());
+			}
 			else
+			{
 				szBuffer = gDLL->getText(((isLimitedProject(eCreateProject)) ? "TXT_KEY_POPUP_CREATED_WORK_ON_NEXT_LIMITED" : "TXT_KEY_POPUP_CREATED_WORK_ON_NEXT"), GC.getProjectInfo(eCreateProject).getTextKeyWide(), pCity->getNameKey());
+			}
 		}
 		else
 		{

@@ -925,6 +925,16 @@ enum LightTypes
 enum VictoryTypes					// Exposed to Python
 {
 	NO_VICTORY = -1,
+
+	VICTORY_SCORE,
+	VICTORY_TIME,
+	VICTORY_CONQUEST,
+	VICTORY_DOMINATION,
+	VICTORY_CULTURAL,
+	VICTORY_SPACE_RACE,
+	VICTORY_DIPLOMATIC,
+	VICTORY_HISTORICAL,
+	VICTORY_RELIGIOUS,
 };
 
 enum FeatureTypes					// Exposed to Python
