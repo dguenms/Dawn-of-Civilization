@@ -1317,8 +1317,8 @@ public:
 	void setFreeTechsOnDiscovery(int iNewValue);
 	void changeFreeTechsOnDiscovery(int iChange);
 
-	int getFreeTechDiscoveryTurn() const;
-	void setFreeTechDiscoveryTurn(int iNewValue);
+	TechTypes getFreeTechChosen() const;
+	void setFreeTechChosen(TechTypes eTech);
 
 	int calculateDistanceMaintenance() const;
 	int calculateColonyMaintenance() const;
@@ -1508,7 +1508,6 @@ protected:
 	int m_iCapitalCommerce;
 
 	int m_iFreeTechsOnDiscovery;
-	int m_iFreeTechDiscoveryTurn;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
@@ -1517,6 +1516,7 @@ protected:
 	ReligionTypes m_eLastStateReligion;
 	PlayerTypes m_eParent;
 	TeamTypes m_eTeamType;
+	TechTypes m_eFreeTechChosen; // Leoreth
 
 	int* m_aiSeaPlotYield;
 	int* m_aiYieldRateModifier;

@@ -375,6 +375,9 @@ void CvNetResearch::Execute()
 
 		if (iDiscover > 0)
 		{
+			// Leoreth: remember free techs chosen
+			kPlayer.setFreeTechChosen(m_eTech);
+
 			GET_TEAM(kPlayer.getTeam()).setHasTech(m_eTech, true, m_ePlayer, true, true);
 
 			if (iDiscover > 1)

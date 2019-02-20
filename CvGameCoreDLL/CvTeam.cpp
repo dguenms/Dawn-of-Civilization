@@ -5506,6 +5506,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 	CivicTypes eCivicType;
 	BonusTypes eBonus;
 	UnitTypes eFreeUnit;
+	bool bFreeTech = false;
 	bool bReligionFounded;
 	bool bFirstBonus;
 	int iI, iJ, iK;
@@ -5814,15 +5815,6 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					GET_PLAYER((PlayerTypes)iI).AI_nowHasTech(eIndex);
 
 					GET_PLAYER((PlayerTypes)iI).invalidateYieldRankCache();
-
-					if (bNewValue && GET_PLAYER((PlayerTypes)iI).getFreeTechsOnDiscovery() > 0)
-					{
-						log(CvWString::format(L"current turn: %d, free tech discovery turn: %d", GC.getGame().getGameTurn(), GET_PLAYER((PlayerTypes)iI).getFreeTechDiscoveryTurn()));
-						if (GC.getGameINLINE().getGameTurn() > GET_PLAYER((PlayerTypes)iI).getFreeTechDiscoveryTurn() + 1)
-						{
-							GET_PLAYER((PlayerTypes)iI).setFreeTechDiscoveryTurn(GC.getGame().getGameTurn());
-						}
-					}
 				}
 			}
 
@@ -5846,6 +5838,16 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 					iFreeTechs += GC.getTechInfo(eIndex).getFirstFreeTechs();
 					szBuffer = gDLL->getText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", GC.getTechInfo(eIndex).getTextKeyWide());
+				}
+			}
+
+			if (bNewValue && GET_PLAYER(ePlayer).getFreeTechsOnDiscovery() > 0)
+			{
+				if (GET_PLAYER(ePlayer).getFreeTechChosen() != eIndex)
+				{
+					iFreeTechs += 1;
+					szBuffer = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
+					GET_PLAYER(ePlayer).changeFreeTechsOnDiscovery(-1);
 				}
 			}
 			

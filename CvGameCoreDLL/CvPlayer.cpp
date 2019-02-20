@@ -578,7 +578,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iReligiousTolerance = 0;
 
 	m_iFreeTechsOnDiscovery = 0;
-	m_iFreeTechDiscoveryTurn = -1;
+	m_eFreeTechChosen = NO_TECH;
 
 	m_eID = eID;
 	updateTeamType();
@@ -15042,24 +15042,6 @@ void CvPlayer::doResearch()
 			clearResearchQueue();
 		}
 	}
-
-	if (getFreeTechDiscoveryTurn() == GC.getGame().getGameTurn())
-	{
-		if (getFreeTechsOnDiscovery() > 0)
-		{
-			if (isHuman())
-			{
-				CvWString szMessage = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
-				chooseTech(1, szMessage.GetCString());
-			}
-			else
-			{
-				AI_chooseFreeTech();
-			}
-
-			changeFreeTechsOnDiscovery(-1);
-		}
-	}
 }
 
 void CvPlayer::doEspionagePoints()
@@ -18513,7 +18495,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iReligiousTolerance);
 
 	pStream->Read(&m_iFreeTechsOnDiscovery);
-	pStream->Read(&m_iFreeTechDiscoveryTurn);
 
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
@@ -18521,6 +18502,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eStartingEra); // Leoreth
 	pStream->Read((int*)&m_eLastStateReligion);
 	pStream->Read((int*)&m_eParent);
+	pStream->Read((int*)&m_eFreeTechChosen); // Leoreth
 	updateTeamType(); //m_eTeamType not saved
 	updateHuman();
 
@@ -19053,7 +19035,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iReligiousTolerance);
 
 	pStream->Write(m_iFreeTechsOnDiscovery);
-	pStream->Write(m_iFreeTechDiscoveryTurn);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
@@ -19061,6 +19042,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_eStartingEra); // Leoreth
 	pStream->Write(m_eLastStateReligion);
 	pStream->Write(m_eParent);
+	pStream->Write(m_eFreeTechChosen); // Leorethr
 	//m_eTeamType not saved
 
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
@@ -25837,14 +25819,14 @@ void CvPlayer::changeFreeTechsOnDiscovery(int iChange)
 	m_iFreeTechsOnDiscovery += iChange;
 }
 
-int CvPlayer::getFreeTechDiscoveryTurn() const
+TechTypes CvPlayer::getFreeTechChosen() const
 {
-	return m_iFreeTechDiscoveryTurn;
+	return m_eFreeTechChosen;
 }
 
-void CvPlayer::setFreeTechDiscoveryTurn(int iNewValue) 
+void CvPlayer::setFreeTechChosen(TechTypes eNewValue)
 {
-	m_iFreeTechDiscoveryTurn = iNewValue;
+	m_eFreeTechChosen = eNewValue;
 }
 
 bool CvPlayer::canBuySlaves() const
