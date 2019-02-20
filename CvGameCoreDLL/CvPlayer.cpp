@@ -578,7 +578,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iReligiousTolerance = 0;
 
 	m_iFreeTechsOnDiscovery = 0;
-	m_bFreeTechReceived = false;
+	m_iFreeTechDiscoveryTurn = -1;
 
 	m_eID = eID;
 	updateTeamType();
@@ -15005,8 +15005,6 @@ void CvPlayer::doResearch()
 /**	END	                                        												**/
 /*************************************************************************************************/
 
-	setFreeTechReceived(false);
-
 	if (isResearch())
 	{
 		bForceResearchChoice = false;
@@ -15042,6 +15040,24 @@ void CvPlayer::doResearch()
 		if (bForceResearchChoice)
 		{
 			clearResearchQueue();
+		}
+	}
+
+	if (getFreeTechDiscoveryTurn() == GC.getGame().getGameTurn())
+	{
+		if (getFreeTechsOnDiscovery() > 0)
+		{
+			if (isHuman())
+			{
+				CvWString szMessage = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
+				chooseTech(1, szMessage.GetCString());
+			}
+			else
+			{
+				AI_chooseFreeTech();
+			}
+
+			changeFreeTechsOnDiscovery(-1);
 		}
 	}
 }
@@ -18497,7 +18513,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iReligiousTolerance);
 
 	pStream->Read(&m_iFreeTechsOnDiscovery);
-	pStream->Read(&m_bFreeTechReceived);
+	pStream->Read(&m_iFreeTechDiscoveryTurn);
 
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
@@ -19037,7 +19053,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iReligiousTolerance);
 
 	pStream->Write(m_iFreeTechsOnDiscovery);
-	pStream->Write(m_bFreeTechReceived);
+	pStream->Write(m_iFreeTechDiscoveryTurn);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
@@ -25821,14 +25837,14 @@ void CvPlayer::changeFreeTechsOnDiscovery(int iChange)
 	m_iFreeTechsOnDiscovery += iChange;
 }
 
-bool CvPlayer::isFreeTechReceived() const
+int CvPlayer::getFreeTechDiscoveryTurn() const
 {
-	return m_bFreeTechReceived;
+	return m_iFreeTechDiscoveryTurn;
 }
 
-void CvPlayer::setFreeTechReceived(bool bNewValue)
+void CvPlayer::setFreeTechDiscoveryTurn(int iNewValue) 
 {
-	m_bFreeTechReceived = bNewValue;
+	m_iFreeTechDiscoveryTurn = iNewValue;
 }
 
 bool CvPlayer::canBuySlaves() const

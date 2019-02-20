@@ -1317,8 +1317,8 @@ public:
 	void setFreeTechsOnDiscovery(int iNewValue);
 	void changeFreeTechsOnDiscovery(int iChange);
 
-	bool isFreeTechReceived() const;
-	void setFreeTechReceived(bool bNewValue);
+	int getFreeTechDiscoveryTurn() const;
+	void setFreeTechDiscoveryTurn(int iNewValue);
 
 	int calculateDistanceMaintenance() const;
 	int calculateColonyMaintenance() const;
@@ -1508,7 +1508,7 @@ protected:
 	int m_iCapitalCommerce;
 
 	int m_iFreeTechsOnDiscovery;
-	int m_bFreeTechReceived;
+	int m_iFreeTechDiscoveryTurn;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

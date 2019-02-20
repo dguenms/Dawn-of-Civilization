@@ -186,7 +186,6 @@ class GameData:
 		# Unique Powers
 		
 		self.iImmigrationTimer = 0
-		self.iRomanVictories = 0
 		
 		self.lByzantineBribes = []
 		

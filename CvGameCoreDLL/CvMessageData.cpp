@@ -375,14 +375,6 @@ void CvNetResearch::Execute()
 
 		if (iDiscover > 0)
 		{
-			if (kPlayer.isHuman() && kPlayer.getFreeTechsOnDiscovery() > 0 && !kPlayer.isFreeTechReceived())
-			{
-				iDiscover++;
-				szMessage = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
-				kPlayer.changeFreeTechsOnDiscovery(-1);
-				kPlayer.setFreeTechReceived(true);
-			}
-
 			GET_TEAM(kPlayer.getTeam()).setHasTech(m_eTech, true, m_ePlayer, true, true);
 
 			if (iDiscover > 1)
