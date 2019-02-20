@@ -1455,16 +1455,25 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 		if (!AI_isFinancialTrouble() && pCity->getPreviousOwner() != getWorstEnemy())
 		{
 			int iSpareValue = GC.getLeaderHeadInfo(getPersonalityType()).getBasePeaceWeight() + GC.getLeaderHeadInfo(getPersonalityType()).getPeaceWeightRand();
+			int iGold = getGold();
 
-			int iSpareCost = 2 * pCity->getBuildingDamage() + iCaptureGold;
-			int iCostRatio = 100 * iSpareCost / getGold();
-			if (iCostRatio >= 50)
+			if (iGold > 0)
 			{
-				iSpareValue -= iCostRatio / 10;
+				int iSpareCost = 2 * pCity->getBuildingDamage() + iCaptureGold;
+				int iCostRatio = 100 * iSpareCost / iGold;
+				
+				if (iCostRatio >= 50)
+				{
+					iSpareValue -= iCostRatio / 10;
+				}
+				else if (iCostRatio <= 20)
+				{
+					iSpareValue += 5;
+				}
 			}
-			else if (iCostRatio <= 20)
+			else
 			{
-				iSpareValue += 5;
+				iSpareValue = 0;
 			}
 
 			if (GC.getGameINLINE().getSorenRandNum(100, "AI spare city") < iSpareValue)

@@ -5117,6 +5117,11 @@ bool CvPlayer::canSack(const CvCity* pCity) const
 
 bool CvPlayer::canSpare(const CvCity* pCity, PlayerTypes eHighestCulturePlayer, int iCaptureGold) const
 {
+	if (isBarbarian())
+	{
+		return false;
+	}
+
 	if (pCity->getOwnerINLINE() != getID())
 	{
 		return false;
