@@ -2910,6 +2910,14 @@
 		<Spanish>Oghuz</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</English>
+		<French>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</French>
+		<German>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_DRONE</Tag>
 		<English>Drone</English>
 		<French>Drone</French>
