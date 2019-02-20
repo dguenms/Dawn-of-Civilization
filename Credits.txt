@@ -66,6 +66,7 @@ MODULES
 
 GAME TEXT
 * Dominus the Mentat: Turkic civilization civilopedia and strategy texts
+* freethink: Chinese diplomacy greetings
 
 MISCELLANEOUS
 * Corossol: Phoenicia
