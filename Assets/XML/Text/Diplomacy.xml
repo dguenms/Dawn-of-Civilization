@@ -538,6 +538,22 @@
 		<Spanish>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOSROW</Tag>
+		<English>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</English>
+		<French>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</French>
+		<German>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</German>
+		<Italian>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Italian>
+		<Spanish>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_LEADER_KHOSROW</Tag>
+		<English>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</English>
+		<French>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</French>
+		<German>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</German>
+		<Italian>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Italian>
+		<Spanish>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>
 		<French></French>

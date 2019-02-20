@@ -65,7 +65,7 @@ MODULES
 * Empire State Building: Voyhkah
 
 GAME TEXT
-* Dominus the Mentat: Turkic civilization civilopedia and strategy texts
+* Dominus the Mentat: Turkic civilization civilopedia and strategy texts, Khosrow diplomacy greetings
 * freethink: Chinese diplomacy greetings
 
 MISCELLANEOUS

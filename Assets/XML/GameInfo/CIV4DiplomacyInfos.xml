@@ -63,6 +63,20 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_KHOSROW</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_KHOSROW</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_HONGWU</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -6631,6 +6645,20 @@
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_3</Text>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_4</Text>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_5</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_KHOSROW</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_LEADER_KHOSROW</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
