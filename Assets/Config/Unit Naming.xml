@@ -38,9 +38,15 @@
 					type="string" default="DEFAULT"/>
 			<option id="Combat_MOUNTED" key="CombatMOUNTED" 
 					type="string" default="DEFAULT"/>
+			<option id="Combat_LIGHT_CAVALRY" key="CombatLIGHT_CAVALRY" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_HEAVY_CAVALRY" key="CombatHEAVY_CAVALRY" 
+					type="string" default="DEFAULT"/>
 			<option id="Combat_NAVAL" key="CombatNAVAL" 
 					type="string" default="DEFAULT"/>
 			<option id="Combat_RECON" key="CombatRECON" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_SPY" key="CombatSPY" 
 					type="string" default="DEFAULT"/>
 			<option id="Combat_SIEGE" key="CombatSIEGE" 
 					type="string" default="DEFAULT"/>
