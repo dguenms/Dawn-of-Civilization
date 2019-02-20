@@ -10,6 +10,7 @@ BASE MODS
 	* Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders
 	* Civics advisor screen
 	* Civilopedia design
+* Realism Invictus by Walter Hawkwood: unique units and civilization specific unit art
 * Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
 * SuperSpies by Trojan Sheep, glider1 and Lord Tirian
 * Caveman2Cosmos for its graphics paging modifications
@@ -61,7 +62,10 @@ OTHER GRAPHICS
 * Smokehouse building: History Rewritten by Xyth
 
 MODULES
-* Himeji Castle, Empire State Building: Voyhkah
+* Empire State Building: Voyhkah
+
+GAME TEXT
+* Dominus the Mentat: Turkic civilization civilopedia and strategy texts
 
 MISCELLANEOUS
 * Corossol: Phoenicia
