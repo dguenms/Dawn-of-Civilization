@@ -2879,11 +2879,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs.</English>
-		<French>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs.</French>
-		<German>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</English>
+		<French>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</French>
+		<German>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
