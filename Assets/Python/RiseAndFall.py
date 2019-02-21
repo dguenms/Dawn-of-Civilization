@@ -297,6 +297,9 @@ class RiseAndFall:
 				utils.setReborn(iPlayer, True)
 			
 			pChina.updateTradeRoutes()
+			
+		for iPlayer in [iPlayer for iPlayer in range(iNumPlayers) if tBirth[iPlayer] < utils.getScenarioStartYear()]:
+			data.players[iPlayer].bSpawned = True
 		
 		self.invalidateUHVs()
 		
