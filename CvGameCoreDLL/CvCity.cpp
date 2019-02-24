@@ -19351,7 +19351,7 @@ void CvCity::spare(int iCaptureGold)
 
 bool CvCity::canLiberate() const
 {
-	if (getOccupationTimer() > 0)
+	if (isOccupation())
 	{
 		return false;
 	}
