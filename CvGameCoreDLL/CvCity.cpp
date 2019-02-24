@@ -11735,10 +11735,10 @@ int CvCity::getCultureTimes100(PlayerTypes ePlayer) const
 {
 	if (plot()->getCultureConversionPlayer() == ePlayer)
 	{
-		return (getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer)) * plot()->getCultureConversionRate() / 100 + getActualCultureTimes100(ePlayer);
+		return percent(getActualTotalCultureTimes100() - getActualCultureTimes100(ePlayer), plot()->getCultureConversionRate()) + getActualCultureTimes100(ePlayer);
 	}
 
-	return getActualCultureTimes100(ePlayer) * (100 - plot()->getCultureConversionRate()) / 100;
+	return percent(getActualCultureTimes100(ePlayer), 100 - plot()->getCultureConversionRate());
 }
 
 
@@ -11818,7 +11818,7 @@ int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
 
 	if (iTotalCulture > 0)
 	{
-		return (getCultureTimes100(eIndex) * 100 / iTotalCulture);
+		return percent(getCultureTimes100(eIndex), 100, iTotalCulture);
 	}
 
 	if (eIndex == getOwner())

@@ -222,6 +222,13 @@ inline int sgn(int x)
 	return (x > 0) - (x < 0);
 }
 
+// Leoreth: multiply and divide ints without overflow as long as the result is an int
+inline int percent(int iValue, int iFactor, int iDivisor = 100)
+{
+	FAssertMsg(iDivisor >= iFactor, "Percent calculation may overflow");
+	return (long long)iValue * (long long)iFactor / (long long)iDivisor;
+}
+
 bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer);
 
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
