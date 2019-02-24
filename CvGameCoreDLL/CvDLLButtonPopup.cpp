@@ -2647,6 +2647,11 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 	for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 	{
+		if (!pLoopCity->canLiberate())
+		{
+			continue;
+		}
+
 		PlayerTypes eLiberationPlayer = pLoopCity->getLiberationPlayer(false);
 		if (NO_PLAYER != eLiberationPlayer)
 		{

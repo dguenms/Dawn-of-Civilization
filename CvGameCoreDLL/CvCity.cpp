@@ -19348,3 +19348,23 @@ void CvCity::spare(int iCaptureGold)
 
 	completeAcquisition(0);
 }
+
+bool CvCity::canLiberate() const
+{
+	if (getOccupationTimer() > 0)
+	{
+		return false;
+	}
+
+	if (getOwner() == getOriginalOwner())
+	{
+		return false;
+	}
+
+	if (GC.getGameINLINE().getGameTurn() - getGameTurnAcquired() < getTurns(10))
+	{
+		return false;
+	}
+
+	return true;
+}
