@@ -15,6 +15,7 @@ BASE MODS
 * SuperSpies by Trojan Sheep, glider1 and Lord Tirian
 * Caveman2Cosmos for its graphics paging modifications
 * 2nd UU and UB modmod by merijn_v1: Alchemist UB concept and graphics
+* Platybuilder by Platyping
 
 LEADERHEADS
 * melcher kürzer: Catherine the Great, Isabella, Barbarossa
