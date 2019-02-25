@@ -11281,7 +11281,6 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
-
 			if (eBonus == NO_BONUS)
 			{
 				continue;
@@ -18141,6 +18140,12 @@ int CvCity::getCorporationHappinessByCorporation(CorporationTypes eCorporation) 
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
+			if (eBonus == NO_BONUS)
+			{
+				continue;
+			}
+
+			iNumBonuses = getNumBonuses(eBonus);
 
 			if (eBonus != NO_BONUS)
 			{

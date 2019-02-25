@@ -2965,7 +2965,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2;
 	}
 
-	//Leoreth: even more emphasis on city of own state religion, for more wars about Rome especially
+	// Leoreth: even more emphasis on city of own state religion, for more wars about Rome especially
 	if (getStateReligion() != NO_RELIGION && pCity->isHolyCity(getStateReligion()))
 	{
 	    iValue += 3;
