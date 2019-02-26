@@ -19299,6 +19299,12 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 	int iSackGold = iCaptureGold / 2;
 	iSackGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Sack Gold 1");
 
+	// Leoreth: Viking UP
+	if (getOwnerINLINE() == VIKINGS && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
+	{
+		iSackGold += iCaptureGold + iSackGold;
+	}
+
 	GET_PLAYER(getOwnerINLINE()).changeGold(iSackGold);
 
 	log(CvWString::format(L"after: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss(), iSackGold + iCaptureGold));

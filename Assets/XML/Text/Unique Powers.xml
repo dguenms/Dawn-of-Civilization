@@ -907,7 +907,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
-		<English>The Power of Raid:</English>
+		<English>The Power of Raids:</English>
 		<French>Le pouvoir du pillage :</French>
 		<German>Die Macht des Raubens:</German>
 		<Italian>Il potere dell'incursione:</Italian>
@@ -915,9 +915,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK</Tag>
-		<English>Additional gold from pillaging, conquering cities and sinking ships during the Middle Ages</English>
+		<English>Additional gold from pillaging, sacking cities and sinking ships during the Middle Ages</English>
 		<French>Piller, conqu&#233;rir des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
-		<German>Zus&#228;tzliches gold durch Pl&#252;nderung, Stadteroberung und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
+		<German>Zus&#228;tzliches gold durch Pl&#252;nderung von St&#228;dten und Verbesserungen und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
 	</TEXT>

@@ -10869,15 +10869,7 @@ void CvPlayer::changeColonyCommerce(int iChange)
 // Leoreth
 int CvPlayer::getCaptureGoldModifier() const
 {
-	int iModifier = m_iCaptureGoldModifier;
-
-	// Viking UP
-	if (getID() == VIKINGS && getCurrentEra() <= ERA_MEDIEVAL)
-	{
-		iModifier += 100;
-	}
-
-	return iModifier;
+	return m_iCaptureGoldModifier;
 }
 
 
