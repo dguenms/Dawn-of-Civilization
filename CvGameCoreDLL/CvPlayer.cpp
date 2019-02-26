@@ -1601,8 +1601,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iCaptureGold /= 100;
 	}
 
-	changeGold(iCaptureGold);
-
 	pabHasReligion = new bool[GC.getNumReligionInfos()];
 	pabHolyCity = new bool[GC.getNumReligionInfos()];
 	pabHasCorporation = new bool[GC.getNumCorporationInfos()];
@@ -1860,6 +1858,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	iCaptureGold *= 100 + getCaptureGoldModifier();
 	iCaptureGold /= 100;
+	
+	changeGold(iCaptureGold);
 
 	for (std::vector<BuildingYieldChange>::iterator it = aBuildingYieldChange.begin(); it != aBuildingYieldChange.end(); ++it)
 	{
