@@ -1874,7 +1874,7 @@ class RFCUtils:
 		
 		for tPlot in self.surroundingPlots((x, y), 2):
 			for unit in self.getUnitList(tPlot):
-				if unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
+				if (not self.plot(tPlot).isCity() or self.plot(tPlot).getPlotCity() != city) and unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 					if len(lFlippedUnits) < iNumDefenders:
 						lFlippedUnits.append(unit)
 					else:
