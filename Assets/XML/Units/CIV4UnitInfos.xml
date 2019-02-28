@@ -14544,6 +14544,63 @@
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_STEAMSHIP</Class>
+			<Type>UNIT_STEAMSHIP</Type>
+			<Combat>UNITCOMBAT_NAVAL</Combat>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_STEAMSHIP</Description>
+			<Civilopedia>TXT_KEY_UNIT_STEAMSHIP_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_STEAMSHIP_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<bMechanized>1</bMechanized>
+			<bRenderBelowWater>1</bRenderBelowWater>
+			<iWithdrawalProb>25</iWithdrawalProb>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_SETTLER_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
+			<PrereqBonuses>
+				<BonusType>BONUS_COAL</BonusType>
+			</PrereqBonuses>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>20</iMinAreaSize>
+			<iMoves>7</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iCombat>12</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<DomainCargo>DOMAIN_LAND</DomainCargo>
+			<iCargo>3</iCargo>
+			<iAsset>3</iAsset>
+			<iPower>12</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>2.25</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>1</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_STEAMSHIP</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_IRONCLAD</Class>
 			<Type>UNIT_IRONCLAD</Type>
 			<Combat>UNITCOMBAT_NAVAL</Combat>

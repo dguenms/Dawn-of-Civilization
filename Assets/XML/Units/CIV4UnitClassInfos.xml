@@ -647,6 +647,14 @@
 			<DefaultUnit>UNIT_SHIP_OF_THE_LINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_STEAMSHIP</Type>
+			<Description>TXT_KEY_UNIT_STEAMSHIP</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_STEAMSHIP</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_IRONCLAD</Type>
 			<Description>TXT_KEY_UNIT_IRONCLAD</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

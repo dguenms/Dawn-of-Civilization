@@ -3278,6 +3278,14 @@
 		<Spanish>Mehal Sefari</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_STEAMSHIP</Tag>
+		<English>Steamship</English>
+		<French>Steamship</French>
+		<German>Steamship</German>
+		<Italian>Steamship</Italian>
+		<Spanish>Steamship</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>
