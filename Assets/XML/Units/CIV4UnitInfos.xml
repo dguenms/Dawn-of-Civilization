@@ -14790,7 +14790,7 @@
 			<iCost>125</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>20</iMinAreaSize>
-			<iMoves>8</iMoves>
+			<iMoves>9</iMoves>
 			<iNukeRange>-1</iNukeRange>
 			<iCombat>16</iCombat>
 			<iCombatLimit>100</iCombatLimit>
