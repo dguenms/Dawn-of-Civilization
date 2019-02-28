@@ -3301,7 +3301,7 @@
 			<Type>ART_DEF_BUILDING_TAJ_MAHAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
+			<fScale>1.8</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Taj_Mahal/TajMahal.nif</NIF>
 			<KFM/>
