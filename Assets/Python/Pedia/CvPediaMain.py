@@ -556,12 +556,21 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			if self.getUnitCategory(iUnit) == 1:
 				UnitInfo = gc.getUnitInfo(iUnit)
 				iUnitCombat = UnitInfo.getUnitCombatType()
-				if UnitInfo.isSuicide():
+				if UnitInfo.getDomainType() == 0:
+					if UnitInfo.getCargoSpace() == 0 or UnitInfo.getSpecialCargo() != -1:
+						iUnitCombat = 97
+					else:
+						iUnitCombat = 98
+				elif UnitInfo.isSuicide():
 					iUnitCombat = 99
 				if not iUnitCombat in UnitDict.keys():
 					UnitDict[iUnitCombat] = []
 					if iUnitCombat == -1:
 						sHeader = "Needs Sorting"
+					elif iUnitCombat == 97:
+						sHeader = "Naval Combat Units"
+					elif iUnitCombat == 98:
+						sHeader = "Naval Transport Units"
 					elif iUnitCombat == 99:
 						sHeader = "Missiles"
 					else:
