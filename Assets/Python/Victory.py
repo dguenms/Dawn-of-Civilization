@@ -1139,12 +1139,9 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iInca, 1)
 			
-		# third goal: control 60% of South America in 1700 AD
+		# third goal: allow no other civilisations in South America in 1700 AD
 		if iGameTurn == getTurnForYear(1700):
-			iControl, iTotal = countControlledTiles(iInca, tSAmericaTL, tSAmericaBR, False, tSouthAmericaExceptions)
-			fControl = iControl * 100.0 / iTotal
-			
-			if fControl >= 60.0:
+			if isAreaOnlyCivs(tSAmericaTL, tSAmericaBR, [iInca]):
 				win(iInca, 2)
 			else:
 				lose(iInca, 2)
@@ -3949,9 +3946,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iTreasury = pInca.getGold()
 			aHelp.append(getIcon(iTreasury >= utils.getTurns(2500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(2500))))
 		elif iGoal == 2:
-			iControl, iTotal = countControlledTiles(iInca, tSAmericaTL, tSAmericaBR, False, tSouthAmericaExceptions)
-			fControl = iControl * 100.0 / iTotal
-			aHelp.append(getIcon(fControl >= 60.0) + localText.getText("TXT_KEY_VICTORY_SOUTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fControl), str(60))))
+			bSouthAmerica = isAreaOnlyCivs(tSAmericaTL, tSAmericaBR, [iInca])
+			aHelp.append(getIcon(bSouthAmerica) + localText.getText("TXT_KEY_VICTORY_NO_FOREIGN_CITIES_SOUTH_AMERICA", ()))
 
 	elif iPlayer == iItaly:
 		if iGoal == 0:

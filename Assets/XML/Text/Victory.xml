@@ -1307,11 +1307,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC3</Tag>
-		<English>Control 60% of South America in 1700 AD</English>
-		<French>Contr&#244;ler 60% de l'Am&#233;rique du Sud en 1700 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 1700 n. Chr. 60% von S&#252;damerika</German>
-		<Italian>Control 60% of South America in 1700 AD</Italian>
-		<Spanish>Control 60% of South America in 1700 AD</Spanish>
+		<English>Allow no foreign cities in South America in 1700 AD</English>
+		<French>Allow no foreign cities in South America in 1700 AD</French>
+		<German>Erlauben Sie im Jahr 1700 n. Chr. keine St&#228;dte anderer Zivilisationen in S&#205;damerika</German>
+		<Italian>Allow no foreign cities in South America in 1700 AD</Italian>
+		<Spanish>Allow no foreign cities in South America in 1700 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1_TITLE</Tag>
@@ -5297,5 +5297,13 @@
 		<German>Great artists and statesmen settled in %s1: %d2 / %d3</German>
 		<Italian>Great artists and statesmen settled in %s1: %d2 / %d3</Italian>
 		<Spanish>Great artists and statesmen settled in %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_FOREIGN_CITIES_SOUTH_AMERICA</Tag>
+		<English>No foreign cities in South America</English>
+		<French>No foreign cities in South America (needs update)</French>
+		<German>No foreign cities in South America</German>
+		<Italian>No foreign cities in South America</Italian>
+		<Spanish>No foreign cities in South America</Spanish>
 	</TEXT>
 </Civ4GameText>
