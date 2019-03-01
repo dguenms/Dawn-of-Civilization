@@ -990,21 +990,21 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1000):
 			if isPossible(iHolyRome, 0):
 				if getNumBuildings(iHolyRome, iCatholicShrine) > 0:
-					data.tHolyRomanShrines[0] = True
+					data.lHolyRomanShrines[0] = True
 				else:
 					expire(iHolyRome, 0)
 					
 		if iGameTurn == getTurnForYear(1200):
 			if isPossible(iHolyRome, 0):
 				if getNumBuildings(iHolyRome, iOrthodoxShrine) > 0:
-					data.tHolyRomanShrines[1] = True
+					data.lHolyRomanShrines[1] = True
 				else:
 					expire(iHolyRome, 0)
 					
 		if iGameTurn == getTurnForYear(1550):
 			if isPossible(iHolyRome, 0):
 				if getNumBuildings(iHolyRome, iProtestantShrine) > 0:
-					data.tHolyRomanShrines[2] = True
+					data.lHolyRomanShrines[2] = True
 					win(iHolyRome, 0)
 				else:
 					expire(iHolyRome, 0)
@@ -3865,9 +3865,9 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iHolyRome:
 		if iGoal == 0:
-			bSaintPeters = data.tHolyRomanShrines[0] or getNumBuildings(iHolyRome, iCatholicShrine) > 0
-			bAnastasis = data.tHolyRomanShrines[1] or getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
-			bAllSaints = data.tHolyRomanShrines[2] or getNumBuildings(iHolyRome, iProtestantShrine) > 0
+			bSaintPeters = data.lHolyRomanShrines[0] or getNumBuildings(iHolyRome, iCatholicShrine) > 0
+			bAnastasis = data.lHolyRomanShrines[1] or getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
+			bAllSaints = data.lHolyRomanShrines[2] or getNumBuildings(iHolyRome, iProtestantShrine) > 0
 			aHelp.append(getIcon(bSaintPeters) + localText.getText("TXT_KEY_BUILDING_CATHOLIC_SHRINE", ()) + ' ' + getIcon(bAnastasis) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_SHRINE", ()) + ' ' + getIcon(bAllSaints) + localText.getText("TXT_KEY_BUILDING_PROTESTANT_SHRINE", ()))
 		elif iGoal == 1:
 			iNumVassals = countVassals(iHolyRome, lCivGroups[0], iCatholicism)
