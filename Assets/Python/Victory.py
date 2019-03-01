@@ -2029,7 +2029,7 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 			elif iHasMetPlayer == iMaya and iPlayer in lCivGroups[0]: iEuropean = iPlayer
 			else: return
 		
-			lPlots = utils.getPlotList(tNorthAmericaTL, tNorthAmericaBR) + utils.getPlotList(tSouthCentralAmericaTL, tSouthCentralAmericaBR)
+			lPlots = utils.getPlotList(tNorthAmericaTL, (tNorthAmericaBR[0]+2, tNorthAmericaBR)) + utils.getPlotList(tSouthCentralAmericaTL, (tSouthCentralAmericaBR[0]+2, tSouthCentralAmericaBR[1]))
 			for (x, y) in lPlots:
 				plot = gc.getMap().plot(x, y)
 				if plot.isRevealed(iEuropean, False) and not plot.isWater():
