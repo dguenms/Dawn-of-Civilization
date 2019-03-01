@@ -10,6 +10,7 @@ import Areas
 from RFCUtils import utils
 import UniquePowers
 from StoredData import data # edead
+import Stability as sta
 
 # globals
 gc = CyGlobalContext()
@@ -171,6 +172,10 @@ class AIWars:
 		return True
 			
 	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
+		if not gc.getPlayer(iPlayer).isAlive():
+			for iTech in sta.getResurrectionTechs(iPlayer):
+				gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
+	
 		lCities = []
 		for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)):
 			if city.getOwner() != iPlayer and not gc.getTeam(city.getOwner()).isVassal(iPlayer):
