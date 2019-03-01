@@ -221,9 +221,7 @@ dWonderGoals = {
 	iBrazil: (1, [iWembley, iCristoRedentor, iItaipuDam], True),
 }
 
-dReligionGoals = {
-	iHolyRome: (1, [iProtestantism]),
-}
+dReligionGoals = {}
 		
 ### EVENT HANDLING ###
 
