@@ -1203,51 +1203,51 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1_TITLE</Tag>
-		<English>Translatio Imperii</English>
-		<French>Translatio imperii </French>
-		<German>Translatio Imperii</German>
-		<Italian>Translatio Imperii</Italian>
-		<Spanish>Translatio Imperii</Spanish>
+		<English>Translatio Imperii and Reformation</English>
+		<French>Translatio imperii and Reformation </French>
+		<German>Translatio Imperii and Reformation</German>
+		<Italian>Translatio Imperii and Reformation</Italian>
+		<Spanish>Translatio Imperii and Reformation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1</Tag>
-		<English>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</English>
-		<French>Contr&#244;ler la Basilique Saint-Pierre et la Basilique de la R&#233;surrection en 1200 ap. J.-C.</French>
-		<German>Kontrollieren Sie den Petersdom und die Kirche der Anastasis im Jahr 1200 n. Chr.</German>
-		<Italian>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</Italian>
-		<Spanish>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</Spanish>
+		<English>Control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD</English>
+		<French>Contr&#244;ler la Basilique Saint-Pierre et la Basilique de la R&#233;surrection en 1200 ap. J.-C. (needs update)</French>
+		<German>Kontrollieren Sie den Petersdom im Jahr 1000 n. Chr., die Kirche der Anastasis im Jahr 1200 n. Chr. und die Kirche der Reformation im Jahr 1550 n. Chr.</German>
+		<Italian>Control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD</Italian>
+		<Spanish>Control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE2_TITLE</Tag>
-		<English>The Reformation</English>
-		<French>La R&#233;forme </French>
-		<German>Die Reformation</German>
-		<Italian>The Reformation</Italian>
-		<Spanish>The Reformation</Spanish>
+		<English>Habsburg Monarchy</English>
+		<French>Monarchie de Habsbourg </French>
+		<German>Habsburgermonarchie</German>
+		<Italian>Habsburg Monarchy</Italian>
+		<Spanish>Habsburg Monarchy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE2</Tag>
-		<English>Found Protestantism</English>
-		<French>Fonder le protestantisme</French>
-		<German>Begr&#252;nden Sie den Protestantismus</German>
-		<Italian>Found Protestantism</Italian>
-		<Spanish>Found Protestantism</Spanish>
+		<English>Have three Catholic vassals in Europe by 1650 AD</English>
+		<French>Have three Catholic vassals in Europe by 1650 AD (needs update)</French>
+		<German>Haben Sie bis zum Jahr 1650 n. Chr. drei katholische Vasallen in Europa</German>
+		<Italian>Have three Catholic vassals in Europe by 1650 AD</Italian>
+		<Spanish>Have three Catholic vassals in Europe by 1650 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE3_TITLE</Tag>
-		<English>City of Music</English>
-		<French>La ville de la musique </French>
-		<German>Stadt der Musik</German>
-		<Italian>City of Music</Italian>
-		<Spanish>City of Music</Spanish>
+		<English>Concert of Europe</English>
+		<French>Concert europ&#233;en </French>
+		<German>Konzert Europas</German>
+		<Italian>Concert of Europe</Italian>
+		<Spanish>Concert of Europe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE3</Tag>
-		<English>Settle three great artists in Vienna by 1700 AD</English>
+		<English>Settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilisations by 1850 AD</English>
 		<French>Faire rejoinre trois artistes illustres &#224; Vienne avant 1700 ap. J.-C.</French>
-		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. drei gro&#223;e K&#252;nstler in Wien an</German>
-		<Italian>Settle three great artists in Vienna by 1700 AD</Italian>
-		<Spanish>Settle three great artists in Vienna by 1700 AD</Spanish>
+		<German>Siedeln Sie bis zum Jahr 1850 n. Chr. insgesamt acht gro&#223;e K&#252;nstler und Staatsm&#228;nner in Wien an und haben Sie freundliche Beziehungen mit sechs unabh&#228;ngigen europ&#228;ischen Zivilisationen</German>
+		<Italian>Settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilisations by 1850 AD</Italian>
+		<Spanish>Settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilisations by 1850 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC1_TITLE</Tag>
@@ -5273,5 +5273,29 @@
 		<German>Gro&#223;e Propheten: %d1 / %d2</German>
 		<Italian>Great Prophets: %d1 / %d2</Italian>
 		<Spanish>Great Prophets: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CATHOLIC_EUROPEAN_VASSALS</Tag>
+		<English>Catholic vassals in Europe: %d1 / %d2</English>
+		<French>Catholic vassals in Europe: %d1 / %d2</French>
+		<German>Katholische Vasallen in Europa: %d1 / %d2</German>
+		<Italian>Catholic vassals in Europe: %d1 / %d2</Italian>
+		<Spanish>Catholic vassals in Europe: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_EUROPEANS</Tag>
+		<English>Friendly relations with independent European civilisations: %d1 / %d2</English>
+		<French>Friendly relations with independent European civilisations: %d1 / %d2</French>
+		<German>Freundliche Beziehungen mit unabh&#228;ngigen europ&#228;ischen Zivilisationen: %d1 / %d2</German>
+		<Italian>Friendly relations with independent European civilisations: %d1 / %d2</Italian>
+		<Spanish>Friendly relations with independent European civilisations: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED</Tag>
+		<English>Great artists and statesmen settled in %s1: %d2 / %d3</English>
+		<French>Great artists and statesmen settled in %s1: %d2 / %d3</French>
+		<German>Great artists and statesmen settled in %s1: %d2 / %d3</German>
+		<Italian>Great artists and statesmen settled in %s1: %d2 / %d3</Italian>
+		<Spanish>Great artists and statesmen settled in %s1: %d2 / %d3</Spanish>
 	</TEXT>
 </Civ4GameText>

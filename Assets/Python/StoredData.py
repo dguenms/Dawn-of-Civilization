@@ -235,6 +235,7 @@ class GameData:
 		self.iVikingGold = 0
 		self.iTurkicPillages = 0
 		self.iMoorishGold = 0
+		self.tHolyRomanShrines = (False, False, False)
 		self.iEnglishSinks = 0
 		self.iMongolRazes = 0
 		self.iAztecSlaves = 0

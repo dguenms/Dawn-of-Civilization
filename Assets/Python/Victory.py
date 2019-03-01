@@ -986,23 +986,47 @@ def checkTurn(iGameTurn, iPlayer):
 		
 	elif iPlayer == iHolyRome:
 	
-		# first goal: control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD
+		# first goal: control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD
+		if iGameTurn == getTurnForYear(1000):
+			if isPossible(iHolyRome, 0):
+				if getNumBuildings(iHolyRome, iCatholicShrine) > 0:
+					data.tHolyRomanShrines[0] = True
+				else:
+					expire(iHolyRome, 0)
+					
 		if iGameTurn == getTurnForYear(1200):
-			bSaintPeters = getNumBuildings(iHolyRome, iCatholicShrine) > 0
-			bAnastasis = getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
-			if bSaintPeters and bAnastasis:
-				win(iHolyRome, 0)
-			else:
-				lose(iHolyRome, 0)
-				
-		# second goal: found Protestantism
+			if isPossible(iHolyRome, 0):
+				if getNumBuildings(iHolyRome, iOrthodoxShrine) > 0:
+					data.tHolyRomanShrines[1] = True
+				else:
+					expire(iHolyRome, 0)
+					
+		if iGameTurn == getTurnForYear(1550):
+			if isPossible(iHolyRome, 0):
+				if getNumBuildings(iHolyRome, iProtestantShrine) > 0:
+					data.tHolyRomanShrines[2] = True
+					win(iHolyRome, 0)
+				else:
+					expire(iHolyRome, 0)
+
+		# second goal: have three Catholic vassals in Europe by 1650 AD
+		if isPossible(iHolyRome, 1):
+			if countVassals(iHolyRome, lCivGroups[0], iCatholicism) >= 3:
+				win(iHolyRome, 1)
 		
-		# third goal: settle three great artists in Vienna by 1700 AD
+		if iGameTurn == getTurnForYear(1650):
+			expire(iHolyRome, 1)
+		
+		# third goal: settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilizationsby 1850 AD
 		if isPossible(iHolyRome, 2):
-			if countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist) >= 3:
+			iGreatArtists = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist)
+			iGreatStatesmen = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatStatesman)
+			iFriendlyEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_FRIENDLY, lCivGroups[0])
+			
+			if iGreatArtists + iGreatStatesmen >= 8 and iFriendlyEuropeans >= 6:
 				win(iHolyRome, 2)
-				
-		if iGameTurn == getTurnForYear(1700):
+		
+		if iGameTurn == getTurnForYear(1850):
 			expire(iHolyRome, 2)
 			
 	elif iPlayer == iRussia:
@@ -2762,6 +2786,10 @@ def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
 					break
 	return iCount
 	
+def countPlayersWithAttitudeInGroup(iPlayer, eAttitude, lOtherPlayers):
+	lPlayers = [iOtherPlayer for iOtherPlayer in lOtherPlayers if iPlayer != iOtherPlayer and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and not gc.getTeam(iOtherPlayer).isAVassal()]
+	return len(lPlayers)
+	
 def getLargestCities(iPlayer, iNumCities):
 	lCities = utils.getSortedList(utils.getCityList(iPlayer), lambda x: x.getPopulation(), True)
 	return lCities[:iNumCities]
@@ -3111,6 +3139,10 @@ def countRegionReligion(iReligion, lRegions):
 def findBestCityWith(iPlayer, filter, sort):
 	lCities = [city for city in utils.getCityList(iPlayer) if filter(city)]
 	return utils.getHighestEntry(lCities, sort)
+	
+def countVassals(iPlayer, lPlayers=None, iReligion=-1):
+	lVassals = [iVassal for iVassal in range(iNumPlayers) if gc.getTeam(iVassal).isVassal(iPlayer) and (not lPlayers or iVassal in lPlayers) and (iReligion < 0 or gc.getPlayer(iVassal).getStateReligion() == iReligion)]
+	return len(lVassals)
 	
 ### UHV HELP SCREEN ###
 
@@ -3833,12 +3865,19 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iHolyRome:
 		if iGoal == 0:
-			bSaintPeters = getNumBuildings(iHolyRome, iCatholicShrine) > 0
-			bAnastasis = getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
-			aHelp.append(getIcon(bSaintPeters) + localText.getText("TXT_KEY_BUILDING_CATHOLIC_SHRINE", ()) + ' ' + getIcon(bAnastasis) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_SHRINE", ()))
+			bSaintPeters = data.tHolyRomanShrines[0] or getNumBuildings(iHolyRome, iCatholicShrine) > 0
+			bAnastasis = data.tHolyRomanShrines[1] or getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
+			bAllSaints = data.tHolyRomanShrines[2] or getNumBuildings(iHolyRome, iProtestantShrine) > 0
+			aHelp.append(getIcon(bSaintPeters) + localText.getText("TXT_KEY_BUILDING_CATHOLIC_SHRINE", ()) + ' ' + getIcon(bAnastasis) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_SHRINE", ()) + ' ' + getIcon(bAllSaints) + localText.getText("TXT_KEY_BUILDING_PROTESTANT_SHRINE", ()))
+		elif iGoal == 1:
+			iNumVassals = countVassals(iHolyRome, lCivGroups[0], iCatholicism)
+			aHelp.append(getIcon(iNumVassals >= 3) + localText.getText("TXT_KEY_VICTORY_CATHOLIC_EUROPEAN_VASSALS", (iNumVassals, 3)))
 		elif iGoal == 2:
 			iGreatArtists = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist)
-			aHelp.append(getIcon(iGreatArtists >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED", ('Vienna', iGreatArtists, 3)))
+			iGreatStatesmen = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatStatesman)
+			iFriendlyEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_FRIENDLY, lCivGroups[0])
+			aHelp.append(getIcon(iGreatArtists + iGreatStatesmen >= 8) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED", ('Vienna', iGreatArtists + iGreatStatesmen, 8)))
+			aHelp.append(getIcon(iFriendlyEuropeans >= 6) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_EUROPEANS", (iFriendlyEuropeans, 6)))
 
 	elif iPlayer == iRussia:
 		if iGoal == 0:
