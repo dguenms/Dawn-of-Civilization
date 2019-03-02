@@ -216,7 +216,7 @@
 			<TechPrereq>TECH_LAW</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Citizenship.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iLargestCityHappiness>2</iLargestCityHappiness>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
