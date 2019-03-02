@@ -231,6 +231,10 @@
 					<BuildingType>BUILDINGCLASS_MARKET</BuildingType>
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_THEATRE</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
 		</CivicInfo>
 		<CivicInfo>
