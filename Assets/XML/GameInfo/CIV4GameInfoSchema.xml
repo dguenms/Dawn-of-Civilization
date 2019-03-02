@@ -695,6 +695,7 @@
 	<ElementType name="bColonialSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoUnhealthyPopulation" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iExpInBorderModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iLevelExperienceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bBuildingOnlyHealthy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iLargestCityHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeSpecialist" content="textOnly" dt:type="int"/>
@@ -895,6 +896,7 @@
 		<element type="bColonialSlavery" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoUnhealthyPopulation" minOccurs="0"/>
 		<element type="iExpInBorderModifier" minOccurs="0"/>
+		<element type="iLevelExperienceModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
 		<element type="iLargestCityHappiness" minOccurs="0"/>
 		<element type="iSpecialistHappiness" minOccurs="0"/> <!-- Leoreth -->

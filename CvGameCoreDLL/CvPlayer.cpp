@@ -95,6 +95,7 @@ CvPlayer::CvPlayer()
 	m_paiHasCorporationCount = NULL;
 	m_paiUpkeepCount = NULL;
 	m_paiSpecialistValidCount = NULL;
+	m_paiPotentialSpecialistCount = NULL;
 	m_paiTechPreferences = NULL; // Leoreth
 
 	m_pabResearchingTech = NULL;
@@ -364,6 +365,8 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiHasCorporationCount);
 	SAFE_DELETE_ARRAY(m_paiUpkeepCount);
 	SAFE_DELETE_ARRAY(m_paiSpecialistValidCount);
+	SAFE_DELETE_ARRAY(m_paiPotentialSpecialistCount); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCount); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiTechPreferences); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_pabResearchingTech);
@@ -820,6 +823,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
 			m_paiSpecialistValidCount[iI] = 0;
+			m_paiPotentialSpecialistCount[iI] = 0; // Leoreth
+			m_paiMinimalSpecialistCount[iI] = 0; // Leoreth
 		}
 
 		FAssertMsg(0 < GC.getNumTechInfos(), "GC.getNumTechInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
@@ -18057,6 +18062,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeStateReligionBuildingProductionModifier(GC.getCivicInfo(eCivic).getStateReligionBuildingProductionModifier() * iChange);
 	changeStateReligionFreeExperience(GC.getCivicInfo(eCivic).getStateReligionFreeExperience() * iChange);
 	changeExpInBorderModifier(GC.getCivicInfo(eCivic).getExpInBorderModifier() * iChange);
+	changeLevelExperienceModifier(GC.getCivicInfo(eCivic).getLevelExperienceModifier() * iChange); // Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -18350,7 +18356,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 3
+	// Leoreth: using flag = 4
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18566,6 +18572,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumCorporationInfos(), m_paiHasCorporationCount);
 	pStream->Read(GC.getNumUpkeepInfos(), m_paiUpkeepCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiSpecialistValidCount);
+	if (uiFlag >= 4) pStream->Read(GC.getNumSpecialistInfos(), m_paiPotentialSpecialistCount);
+	if (uiFlag >= 4) pStream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCount);
 	if (uiFlag >= 2) pStream->Read(GC.getNumTechInfos(), m_paiTechPreferences);
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::read");
@@ -18891,7 +18899,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 3;
+	uint uiFlag = 4;
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19106,6 +19114,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumCorporationInfos(), m_paiHasCorporationCount);
 	pStream->Write(GC.getNumUpkeepInfos(), m_paiUpkeepCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiSpecialistValidCount);
+	pStream->Write(GC.getNumSpecialistInfos(), m_paiPotentialSpecialistCount); // Leoreth
+	pStream->Write(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCount); // Leoreth
 	pStream->Write(GC.getNumTechInfos(), m_paiTechPreferences); // Leoreth
 
 	FAssertMsg((0 < GC.getNumTechInfos()), "GC.getNumTechInfos() is not greater than zero but it is expected to be in CvPlayer::write");
@@ -26017,4 +26027,24 @@ int CvPlayer::getSatelliteExtraCommerce(CommerceTypes eCommerce) const
 	}
 
 	return iCommerce;
+}
+
+int CvPlayer::getPotentialSpecialistCount(SpecialistTypes eSpecialist) const
+{
+	return m_paiPotentialSpecialistCount[eSpecialist];
+}
+
+void CvPlayer::changePotentialSpecialistCount(SpecialistTypes eSpecialist, int iChange)
+{
+	m_paiPotentialSpecialistCount[eSpecialist] += iChange;
+}
+
+int CvPlayer::getMinimalSpecialistCount(SpecialistTypes eSpecialist) const
+{
+	return m_paiMinimalSpecialistCount[eSpecialist];
+}
+
+void CvPlayer::changeMinimalSpecialistCount(SpecialistTypes eSpecialist, int iChange)
+{
+	m_paiMinimalSpecialistCount[eSpecialist] += iChange;
 }

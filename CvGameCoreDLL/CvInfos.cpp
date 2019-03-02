@@ -5768,6 +5768,7 @@ m_iStateReligionUnitProductionModifier(0),
 m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
+m_iLevelExperienceModifier(0), // Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -6101,6 +6102,11 @@ int CvCivicInfo::getExpInBorderModifier() const
 	return m_iExpInBorderModifier;
 }
 
+int CvCivicInfo::getLevelExperienceModifier() const
+{
+	return m_iLevelExperienceModifier;
+}
+
 bool CvCivicInfo::isMilitaryFoodProduction() const
 {
 	return m_bMilitaryFoodProduction;
@@ -6383,7 +6389,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: 1 for level experience modifier
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6435,6 +6441,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
+	if (uiFlag >= 1) stream->Read(&m_iLevelExperienceModifier); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6557,7 +6564,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=1; // Leoreth: 1 for level experience modifier
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -6609,6 +6616,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionBuildingProductionModifier);
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
+	stream->Write(m_iLevelExperienceModifier); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6734,6 +6742,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionBuildingProductionModifier, "iStateReligionBuildingProductionModifier");
 	pXML->GetChildXmlValByName(&m_iStateReligionFreeExperience, "iStateReligionFreeExperience");
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
+	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{

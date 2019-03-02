@@ -7384,11 +7384,18 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_BUILDING_UNHEALTHY"));
 	}
 
-	//	Population Unhealthiness
+	//	Experience in borders modifier
 	if (0 != GC.getCivicInfo(eCivic).getExpInBorderModifier())
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_EXPERIENCE_IN_BORDERS", GC.getCivicInfo(eCivic).getExpInBorderModifier()));
+	}
+
+	//  Leoreth: Level experience modifier
+	if (GC.getCivicInfo(eCivic).getLevelExperienceModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_LEVEL_MODIFIER", GC.getCivicInfo(eCivic).getLevelExperienceModifier()));
 	}
 
 	//	War Weariness

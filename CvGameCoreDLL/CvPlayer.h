@@ -917,6 +917,14 @@ public:
 	DllExport bool isSpecialistValid(SpecialistTypes eIndex) const;																		// Exposed to Python
 	void changeSpecialistValidCount(SpecialistTypes eIndex, int iChange);
 
+	// Leoreth
+	int getPotentialSpecialistCount(SpecialistTypes eIndex) const;
+	void changePotentialSpecialistCount(SpecialistTypes eIndex, int iChange);
+
+	// Leoreth
+	int getMinimalSpecialistCount(SpecialistTypes eIndex) const;
+	void changeMinimalSpecialistCount(SpecialistTypes eIndex, int iChange);
+
 	DllExport bool isResearchingTech(TechTypes eIndex) const;																					// Exposed to Python
 	void setResearchingTech(TechTypes eIndex, bool bNewValue);
 
@@ -1575,6 +1583,8 @@ protected:
 	int* m_paiHasCorporationCount;
 	int* m_paiUpkeepCount;
 	int* m_paiSpecialistValidCount;
+	int* m_paiPotentialSpecialistCount; // Leoreth
+	int* m_paiMinimalSpecialistCount; // Leoreth
 
 	bool* m_pabResearchingTech;
 	bool* m_pabLoyalMember;

@@ -6413,6 +6413,17 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 			GET_PLAYER((PlayerTypes)iI).changeAssets(GC.getTechInfo(eTech).getAssetValue() * iChange);
 			GET_PLAYER((PlayerTypes)iI).changePower(GC.getTechInfo(eTech).getPowerValue() * iChange);
 			GET_PLAYER((PlayerTypes)iI).changeTechScore(getTechScore(eTech) * iChange);
+
+			for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+			{
+				if (GC.getBuildingInfo((BuildingTypes)iJ).getPrereqAndTech() == eTech)
+				{
+					for (int iK = 0; iK < GC.getNumSpecialistInfos(); iK++)
+					{
+						GET_PLAYER((PlayerTypes)iI).changePotentialSpecialistCount((SpecialistTypes)iK, GC.getBuildingInfo((BuildingTypes)iJ).getSpecialistCount((SpecialistTypes)iK) * iChange);
+					}
+				}
+			}
 		}
 	}
 

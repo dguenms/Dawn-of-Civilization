@@ -275,7 +275,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Meritocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iExpInBorderModifier>50</iExpInBorderModifier>
+			<iLevelExperienceModifier>-25</iLevelExperienceModifier>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
