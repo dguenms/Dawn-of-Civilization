@@ -2979,6 +2979,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	//Rhye - start
 	int iSettlerMapValue = pCity->plot()->getSettlerValue(getID());
 
+	// Leoreth: discourage vassals from excessive independent conquests
+	if (GET_TEAM(getTeam()).isAVassal() && GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() && iSettlerMapValue < 90)
+	{
+		return 0;
+	}
+
 	if (iSettlerMapValue <= 3)
 		iValue -= 2;
 	else if (iSettlerMapValue <= 20)
