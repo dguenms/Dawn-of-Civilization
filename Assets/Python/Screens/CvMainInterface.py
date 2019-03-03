@@ -3803,7 +3803,14 @@ class CvMainInterface:
 					eCommerce = (i + 1) % CommerceTypes.NUM_COMMERCE_TYPES
 
 					if ((gc.getPlayer(pHeadSelectedCity.getOwner()).isCommerceFlexible(eCommerce)) or (eCommerce == CommerceTypes.COMMERCE_GOLD)):
-						szBuffer = u"%d.%02d %c" %(pHeadSelectedCity.getCommerceRate(eCommerce), pHeadSelectedCity.getCommerceRateTimes100(eCommerce)%100, gc.getCommerceInfo(eCommerce).getChar())
+						if eCommerce == CommerceTypes.COMMERCE_CULTURE:
+							iCommerceRate = pHeadSelectedCity.getModifiedCultureRate()
+							iCommerceRateTimes100 = pHeadSelectedCity.getModifiedCultureRateTimes100()
+						else:
+							iCommerceRate = pHeadSelectedCity.getCommerceRate(eCommerce)
+							iCommerceRateTimes100 = pHeadSelectedCity.getCommerceRateTimes100(eCommerce)
+					
+						szBuffer = u"%d.%02d %c" %(iCommerceRate, iCommerceRateTimes100%100, gc.getCommerceInfo(eCommerce).getChar())
 
 						iHappiness = pHeadSelectedCity.getCommerceHappinessByType(eCommerce)
 
