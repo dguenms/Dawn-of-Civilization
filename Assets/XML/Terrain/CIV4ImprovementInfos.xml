@@ -2265,7 +2265,7 @@
 			<bRequiresRiverSide>0</bRequiresRiverSide>
 			<bRequiresIrrigation>0</bRequiresIrrigation>
 			<bCarriesIrrigation>0</bCarriesIrrigation>
-			<bRequiresFeature>1</bRequiresFeature>
+			<bRequiresFeature>0</bRequiresFeature>
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
