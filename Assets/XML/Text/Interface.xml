@@ -3074,11 +3074,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_SPARE_CITY</Tag>
-		<English>Take %d1 gold and see that the city is spared.</English>
-		<French>Take %d1 gold and see that the city is spared.</French>
-		<German>Nehmt %d1 Gold, und sorgt daf&#252;r dass die Stadt verschont bleibt.</German>
-		<Italian>Take %d1 gold and see that the city is spared.</Italian>
-		<Spanish>Take %d1 gold and see that the city is spared.</Spanish>
+		<English>Distribute %d1 gold and see that the city is spared.</English>
+		<French>Distribute %d1 gold and see that the city is spared.</French>
+		<German>Verteilt %d1 Gold, und sorgt daf&#252;r dass die Stadt verschont bleibt.</German>
+		<Italian>Distribute %d1 gold and see that the city is spared.</Italian>
+		<Spanish>Distribute %d1 gold and see that the city is spared.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CREATED_WORK_ON_NEXT_SPACESHIP</Tag>
