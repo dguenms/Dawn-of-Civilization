@@ -1648,13 +1648,12 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bWar = isAtWar(iPlayer)
 
 	if iPlayer == iEgypt:
-		if bResurrected:
-			if data.players[iPlayer].iResurrections < 2:
-				if iReligion == iIslam:
-					if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
-					return "TXT_KEY_SULTANATE_ADJECTIVE"
-				return "TXT_KEY_KINGDOM_ADJECTIVE"
-				
+		if bResurrected or utils.getScenario() >= i600AD:
+			if iReligion == iIslam:
+				if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
+				return "TXT_KEY_SULTANATE_ADJECTIVE"
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
+			
 		if iGreece in lPreviousOwners:
 			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
 			
