@@ -5053,6 +5053,12 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 			{
 				sendPlayerOptions(true);
 			}
+
+			// Leoreth: allow winning again after switching
+			if (getGameState() == GAMESTATE_EXTENDED)
+			{
+				setGameState(GAMESTATE_ON);
+			}
 		}
 
 		if (GC.IsGraphicsInitialized())
