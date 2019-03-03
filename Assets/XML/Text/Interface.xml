@@ -282,7 +282,23 @@
 		<Spanish>[ICON_BULLET]+4 puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
+		<Tag>TXT_KEY_CIVIC_MINIMAL_SPECIALISTS</Tag>
+		<English>[ICON_BULLET]At least %D1 slots for[SPACE]</English>
+		<French>[ICON_BULLET]At least %D1 slots for[SPACE]</French>
+		<German>[ICON_BULLET]Erlaubt mindestens %D1[SPACE]</German>
+		<Italian>[ICON_BULLET]At least %D1 for[SPACE]</Italian>
+		<Spanish>[ICON_BULLET]At least %D1 for[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AT_LEAST_ONE_SPECIALIST</Tag>
+		<English>[ICON_BULLET]At least one slot for[SPACE]</English>
+		<French>[ICON_BULLET]At least one slot for[SPACE]</French>
+		<German>[ICON_BULLET]Erlaubt mindestens einen[SPACE]</German>
+		<Italian>[ICON_BULLET]At least one slot for[SPACE]</Italian>
+		<Spanish>[ICON_BULLET]At least one slot for[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UNLIMITED</Tag>
 		<English>[ICON_BULLET]Double slots for[SPACE]</English>
 		<French>[ICON_BULLET]Permet deux fois plus de[SPACE]</French>
 		<German>[ICON_BULLET]Erlaubt doppelt soviele[SPACE]</German>

@@ -122,6 +122,24 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
+			<MinimalSpecialists>
+				<MinimalSpecialist>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iMinimalSpecialistCount>1</iMinimalSpecialistCount>
+				</MinimalSpecialist>
+				<MinimalSpecialist>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iMinimalSpecialistCount>1</iMinimalSpecialistCount>
+				</MinimalSpecialist>
+				<MinimalSpecialist>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iMinimalSpecialistCount>1</iMinimalSpecialistCount>
+				</MinimalSpecialist>
+				<MinimalSpecialist>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iMinimalSpecialistCount>1</iMinimalSpecialistCount>
+				</MinimalSpecialist>
+			</MinimalSpecialists>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_CONSUL</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>

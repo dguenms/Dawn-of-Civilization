@@ -6414,13 +6414,14 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 			GET_PLAYER((PlayerTypes)iI).changePower(GC.getTechInfo(eTech).getPowerValue() * iChange);
 			GET_PLAYER((PlayerTypes)iI).changeTechScore(getTechScore(eTech) * iChange);
 
-			for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+			for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
 			{
-				if (GC.getBuildingInfo((BuildingTypes)iJ).getPrereqAndTech() == eTech)
+				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationBuildings(iJ);
+				if (GC.getBuildingInfo(eBuilding).getPrereqAndTech() == eTech && !isWorldWonderClass((BuildingClassTypes)iJ))
 				{
 					for (int iK = 0; iK < GC.getNumSpecialistInfos(); iK++)
 					{
-						GET_PLAYER((PlayerTypes)iI).changePotentialSpecialistCount((SpecialistTypes)iK, GC.getBuildingInfo((BuildingTypes)iJ).getSpecialistCount((SpecialistTypes)iK) * iChange);
+						GET_PLAYER((PlayerTypes)iI).changePotentialSpecialistCount((SpecialistTypes)iK, GC.getBuildingInfo(eBuilding).getSpecialistCount((SpecialistTypes)iK) * iChange);
 					}
 				}
 			}

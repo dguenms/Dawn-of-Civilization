@@ -95,7 +95,8 @@ CvPlayer::CvPlayer()
 	m_paiHasCorporationCount = NULL;
 	m_paiUpkeepCount = NULL;
 	m_paiSpecialistValidCount = NULL;
-	m_paiPotentialSpecialistCount = NULL;
+	m_paiPotentialSpecialistCount = NULL; // Leoreth
+	m_paiMinimalSpecialistCount = NULL; // Leoreth
 	m_paiTechPreferences = NULL; // Leoreth
 
 	m_pabResearchingTech = NULL;
@@ -820,6 +821,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		FAssertMsg(0 < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
 		FAssertMsg(m_paiSpecialistValidCount==NULL, "about to leak memory, CvPlayer::m_paiSpecialistValidCount");
 		m_paiSpecialistValidCount = new int[GC.getNumSpecialistInfos()];
+		m_paiPotentialSpecialistCount = new int[GC.getNumSpecialistInfos()];
+		m_paiMinimalSpecialistCount = new int[GC.getNumSpecialistInfos()];
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
 			m_paiSpecialistValidCount[iI] = 0;
@@ -18114,6 +18117,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		changeSpecialistValidCount(((SpecialistTypes)iI), ((GC.getCivicInfo(eCivic).isSpecialistValid(iI)) ? iChange : 0));
+		changeMinimalSpecialistCount((SpecialistTypes)iI, GC.getCivicInfo(eCivic).getMinimalSpecialistCount(iI) * iChange); // Leoreth
 	}
 
 	for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
@@ -26036,7 +26040,15 @@ int CvPlayer::getPotentialSpecialistCount(SpecialistTypes eSpecialist) const
 
 void CvPlayer::changePotentialSpecialistCount(SpecialistTypes eSpecialist, int iChange)
 {
-	m_paiPotentialSpecialistCount[eSpecialist] += iChange;
+	if (iChange != 0)
+	{
+		m_paiPotentialSpecialistCount[eSpecialist] += iChange;
+
+		if (getMinimalSpecialistCount(eSpecialist) > 0)
+		{
+			AI_makeAssignWorkDirty();
+		}
+	}
 }
 
 int CvPlayer::getMinimalSpecialistCount(SpecialistTypes eSpecialist) const
@@ -26046,5 +26058,13 @@ int CvPlayer::getMinimalSpecialistCount(SpecialistTypes eSpecialist) const
 
 void CvPlayer::changeMinimalSpecialistCount(SpecialistTypes eSpecialist, int iChange)
 {
-	m_paiMinimalSpecialistCount[eSpecialist] += iChange;
+	if (iChange != 0)
+	{
+		m_paiMinimalSpecialistCount[eSpecialist] += iChange;
+
+		if (getPotentialSpecialistCount(eSpecialist) > 0)
+		{
+			AI_makeAssignWorkDirty();
+		}
+	}
 }

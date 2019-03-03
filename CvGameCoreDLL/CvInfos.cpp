@@ -5797,6 +5797,7 @@ m_paiBuildingProductionModifiers(NULL), //Leoreth
 m_paiFeatureHappinessChanges(NULL),
 m_paiDomainProductionModifiers(NULL), // Leoreth
 m_paiDomainExperienceModifiers(NULL), // Leoreth
+m_paiMinimalSpecialistCounts(NULL), // Leoreth
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
 m_pabSpecialistValid(NULL),
@@ -5831,6 +5832,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiDomainProductionModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts); // Leoreth
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
 	SAFE_DELETE_ARRAY(m_pabSpecialistValid);
@@ -6385,11 +6387,23 @@ int CvCivicInfo::getImprovementYieldChanges(int i, int j) const
 	return m_ppiImprovementYieldChanges[i][j];
 }
 
+int* CvCivicInfo::getMinimalSpecialistCountsArray() const
+{
+	return m_paiMinimalSpecialistCounts;
+}
+
+int CvCivicInfo::getMinimalSpecialistCount(int i) const
+{
+	FAssertMsg(i < GC.getNumSpecialistInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_paiMinimalSpecialistCounts ? m_paiMinimalSpecialistCounts[i] : -1;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for level experience modifier
+	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6482,7 +6496,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_piSpecialistExtraCommerce = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 
-	//Leoreth
+	// Leoreth
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield);
 	m_piSpecialistExtraYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piSpecialistExtraYield);
@@ -6522,12 +6536,20 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	// Leoreth
 	SAFE_DELETE_ARRAY(m_paiDomainProductionModifiers);
 	m_paiDomainProductionModifiers = new int[NUM_DOMAIN_TYPES];
-	stream->Read(4, m_paiDomainProductionModifiers);
+	stream->Read(NUM_DOMAIN_TYPES, m_paiDomainProductionModifiers);
 
 	// Leoreth
 	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers);
 	m_paiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES];
-	stream->Read(4, m_paiDomainExperienceModifiers);
+	stream->Read(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers);
+
+	// Leoreth
+	if (uiFlag >= 1)
+	{
+		SAFE_DELETE_ARRAY(m_paiMinimalSpecialistCounts);
+		m_paiMinimalSpecialistCounts = new int[GC.getNumSpecialistInfos()];
+		stream->Read(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts);
+	}
 
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	m_pabHurry = new bool[GC.getNumHurryInfos()];
@@ -6564,7 +6586,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1; // Leoreth: 1 for level experience modifier
+	uint uiFlag=1; // Leoreth: 1 for level experience modifier and minimal specialist count
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -6649,6 +6671,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
 	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainProductionModifiers); // Leoreth
 	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers); // Leoreth
+	stream->Write(GC.getNumSpecialistInfos(), m_paiMinimalSpecialistCounts); // Leoreth
 	stream->Write(GC.getNumHurryInfos(), m_pabHurry);
 	stream->Write(GC.getNumSpecialBuildingInfos(), m_pabSpecialBuildingNotRequired);
 	stream->Write(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
@@ -6854,6 +6877,9 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_paiBuildingHappinessChanges, "BuildingHappinessChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_paiBuildingHealthChanges, "BuildingHealthChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
+
+	// Leoreth
+	pXML->SetVariableListTagPair(&m_paiMinimalSpecialistCounts, "MinimalSpecialists", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 
 	// Leoreth
 	pXML->SetVariableListTagPair(&m_paiBuildingProductionModifiers, "BuildingProductionModifiers", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());

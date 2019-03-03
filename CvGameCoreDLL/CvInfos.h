@@ -1455,6 +1455,9 @@ public:
 	int getDomainProductionModifier(int i) const; // Leoreth
 	int getDomainExperienceModifier(int i) const; // Leoreth
 
+	int* getMinimalSpecialistCountsArray() const; // Leoreth
+	int getMinimalSpecialistCount(int i) const; // Leoreth
+
 	bool isHurry(int i) const;													// Exposed to Python
 	bool isSpecialBuildingNotRequired(int i) const;			// Exposed to Python
 	bool isSpecialistValid(int i) const;								// Exposed to Python
@@ -1551,6 +1554,7 @@ protected:
 	int* m_paiBuildingHealthChanges;
 	int* m_paiBuildingProductionModifiers; // Leoreth
 	int* m_paiFeatureHappinessChanges;
+	int* m_paiMinimalSpecialistCounts; // Leoreth
 
 	int* m_paiDomainProductionModifiers; // Leoreth
 	int* m_paiDomainExperienceModifiers; // Leoreth

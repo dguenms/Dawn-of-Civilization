@@ -12812,7 +12812,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 		iMaxSpecialistCount *= 2;
 	}
 
-	return iMaxSpecialistCount;
+	return std::max(std::min(GET_PLAYER(getOwnerINLINE()).getPotentialSpecialistCount(eIndex), GET_PLAYER(getOwnerINLINE()).getMinimalSpecialistCount(eIndex)), iMaxSpecialistCount);
 }
 
 
