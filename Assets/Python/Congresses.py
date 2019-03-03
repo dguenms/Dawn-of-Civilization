@@ -532,7 +532,7 @@ class Congress:
 		if self.bPostWar:
 			iHostPlayer = [iWinner for iWinner in self.lWinners if gc.getPlayer(iWinner).isAlive()][0]
 		else:
-			iHostPlayer = utils.getRandomEntry(self.lInvites)
+			iHostPlayer = utils.getRandomEntry([iInvitee for iInvitee in self.lInvites if gc.getPlayer(iInvitee).getNumCities() > 0])
 			
 		# establish contact between all participants
 		for iThisPlayer in self.lInvites:
