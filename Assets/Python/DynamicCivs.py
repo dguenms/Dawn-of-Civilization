@@ -1108,7 +1108,7 @@ def specificName(iPlayer):
 		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_RUM"
 			
-		if iEra >= iRenaissance:
+		if iEra >= iRenaissance and not tPlayer.isAVassal():
 			if bEmpire:
 				return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
 				
