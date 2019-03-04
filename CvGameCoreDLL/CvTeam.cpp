@@ -2922,7 +2922,7 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
 		TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
-		if (!GET_TEAM(eTeam).isHuman() && canContact(eTeam) && GET_TEAM(eTeam).isHasTech(eTech) && GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL)
+		if (GET_TEAM(eTeam).isHasTech(eTech) && (!isHuman() || canContact(eTeam)) && (GET_TEAM(eTeam).isHuman() || GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL))
 		{
 			if (!isAtWar(eTeam))
 			{
