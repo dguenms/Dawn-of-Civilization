@@ -2945,6 +2945,11 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 		return -50;
 	}
 
+	if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
+	{
+		return isHuman() ? -20 : -40;
+	}
+
 	return 0;
 }
 
