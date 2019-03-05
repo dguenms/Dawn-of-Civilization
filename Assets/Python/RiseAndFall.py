@@ -293,7 +293,7 @@ class RiseAndFall:
 			self.adjust1700ADWonders()
 			self.adjust1700ADGreatPeople()
 			
-			for iPlayer in [iIndia, iPersia, iTurks, iSpain, iHolyRome, iOttomans]:
+			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans]:
 				utils.setReborn(iPlayer, True)
 			
 			pChina.updateTradeRoutes()
@@ -676,6 +676,7 @@ class RiseAndFall:
 			iKorea: 3,
 			iJapan: 3,
 			iVikings: 3,
+			iTurks: 3,
 			iSpain: 4,
 			iFrance: 3,
 			iEngland: 3,
