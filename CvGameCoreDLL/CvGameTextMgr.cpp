@@ -4631,8 +4631,8 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 					if (!szName.empty())
 					{
-						szString.append(NEWLINE);
 						szString.append(szName);
+						szString.append(NEWLINE);
 					}
 				}
 			}
