@@ -39265,6 +39265,7 @@ BeginPlot
 	x=84,y=45
 	RiverNSDirection=0
 	isWOfRiver
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,45,46,
@@ -39804,6 +39805,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_BATH
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_GUR_E_AMIR
@@ -39824,6 +39827,7 @@ EndPlot
 BeginPlot
 	x=85,y=49
 	BonusType=BONUS_COTTON
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
