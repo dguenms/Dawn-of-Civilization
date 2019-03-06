@@ -1878,7 +1878,6 @@ def checkReligionGoal(iPlayer, lReligions):
 	return True
 				
 def onCityRazed(iPlayer, city):
-
 	if not gc.getGame().isVictoryValid(7): return
 	
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return

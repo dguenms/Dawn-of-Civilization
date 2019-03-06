@@ -248,7 +248,7 @@ class CvRFCEventHandler:
 	def onCityRazed(self, argsList):
 		city, iPlayer = argsList
 
-		dc.onCityRazed(city.getOwner())
+		dc.onCityRazed(city.getPreviousOwner())
 		self.pla.onCityRazed(city, iPlayer) #Plague
 			
 		vic.onCityRazed(iPlayer, city)	

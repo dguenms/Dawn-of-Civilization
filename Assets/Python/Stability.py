@@ -114,7 +114,7 @@ def onCityAcquired(city, iOwner, iPlayer):
 		checkBarbarianCollapse(iOwner)
 		
 def onCityRazed(iPlayer, city):
-	iOwner = city.getOwner()
+	iOwner = city.getPreviousOwner()
 	
 	if iOwner == iBarbarian: return
 
