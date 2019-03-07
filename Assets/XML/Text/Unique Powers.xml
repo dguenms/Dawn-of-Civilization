@@ -83,11 +83,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB</Tag>
-		<English>Receives a free technology for the first four technologies discovered</English>
-		<French>Une technologie gratuite pour les quatre premi&#232;res technologies d&#233;couvertes</French>
-		<German>Erhält eine weitere Technologie für die ersten vier entdeckten Technologien</German>
-		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
-		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
+		<English>Receives a free technology for the first five technologies discovered</English>
+		<French>Une technologie gratuite pour les cinq premi&#232;res technologies d&#233;couvertes</French>
+		<German>Erhält eine weitere Technologie für die ersten f&#252;nf entdeckten Technologien</German>
+		<Italian>Receives a free technology for the first five technologies discovered</Italian>
+		<Spanish>Receives a free technology for the first five technologies discovered</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>

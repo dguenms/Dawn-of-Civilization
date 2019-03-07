@@ -78,8 +78,8 @@ class UniquePowers:
 					city.setMongolUP(False)
 			
 	def setup(self):
-		# Babylonian UP: receive a free tech after discovering the first four techs
-		pBabylonia.setFreeTechsOnDiscovery(4)
+		# Babylonian UP: receive a free tech after discovering the first five techs
+		pBabylonia.setFreeTechsOnDiscovery(5)
 		
 	def onBuildingBuilt(self, city, iOwner, iBuilding):
 		if iOwner == iMughals:
