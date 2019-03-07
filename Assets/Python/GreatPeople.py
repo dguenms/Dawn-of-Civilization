@@ -1709,6 +1709,7 @@ iCivArabia : {
 		"Abd al-Rahman al-Kawakibi", # 19th
 	],
 	iGreatArtist : [
+		"Al-Asma'i", # 8th
 		"Ibn Muqla", # 10th
 		"Ibn al-Nadim", # 10th
 		"Al-Mutanabbi", # 10th
