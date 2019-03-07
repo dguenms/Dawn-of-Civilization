@@ -278,6 +278,18 @@
 		<Spanish>Parthian</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_SCYTHIAN</Tag>
+		<English>Scythian</English>
+		<French>
+			<Text>scythe;scythe;scythes;scythes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Scythian</German>
+		<Italian>Scythian</Italian>
+		<Spanish>Scythian</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SIBIR</Tag>
 		<English>Sibir</English>
 		<French>
@@ -1320,18 +1332,6 @@
 		<German>Scottish</German>
 		<Italian>Scottish</Italian>
 		<Spanish>Scottish</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MERCENARY_SCYTHIAN</Tag>
-		<English>Scythian</English>
-		<French>
-			<Text>scythe;scythe;scythes;scythes</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
-		<German>Scythian</German>
-		<Italian>Scythian</Italian>
-		<Spanish>Scythian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MERCENARY_SELJUK</Tag>
