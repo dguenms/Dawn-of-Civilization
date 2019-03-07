@@ -38,7 +38,7 @@ def checkTurn(iGameTurn):
 		if data.iCongressTurns > 0:
 			data.iCongressTurns -= 1
 	
-		if not data.currentCongress and data.iCongressTurns == 0:
+		if data.iCongressTurns == 0:
 			data.iCongressTurns = getCongressInterval()
 			currentCongress = Congress()
 			data.currentCongress = currentCongress
@@ -134,15 +134,12 @@ def endGlobalWar(iAttacker, iDefender):
 		lLosers = lAttackers
 	
 	currentCongress = Congress(lWinners, lLosers)
+	data.iCongressTurns = getCongressInterval()
 	data.currentCongress = currentCongress
 	currentCongress.startCongress()
 	
 def getNumInvitations():
 	return min(10, gc.getGame().countCivPlayersAlive())
-	
-def start():
-	currentCongress = Congress()
-	currentCongress.startCongress()
 			
 class Congress:
 	
