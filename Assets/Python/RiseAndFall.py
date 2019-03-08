@@ -3033,7 +3033,7 @@ class RiseAndFall:
 		if tSeaPlot:
 			utils.makeUnit(iWorkboat, iVikings, tSeaPlot, 1)
 			if utils.getHumanID() == iVikings:
-				utils.makeUnitAI(iLongship, iVikings, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
+				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iVikings, tSeaPlot, 1)
 				utils.makeUnitAI(iLongship, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 2)
