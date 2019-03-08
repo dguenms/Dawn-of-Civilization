@@ -1019,6 +1019,12 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iFreeSpecialist>1</iFreeSpecialist>
 			<bNoForeignTrade>1</bNoForeignTrade>
+			<CapitalCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>50</iCommerce>
+			</CapitalCommerceModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
