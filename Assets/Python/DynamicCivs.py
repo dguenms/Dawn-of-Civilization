@@ -574,6 +574,8 @@ dStartingLeaders = [
 	iChina : iHongwu,
 	iIndia : iShahuji,
 	iPersia : iAbbas,
+	iTamils : iKrishnaDevaRaya,
+	iKorea : iSejong,
 	iJapan : iOdaNobunaga,
 	iTurks : iTamerlane,
 	iVikings : iGustav,
@@ -611,7 +613,7 @@ def setup():
 		if gc.getPlayer(iPlayer).getNumCities() > 0:
 			checkName(iPlayer)
 		
-		if not gc.getPlayer(iPlayer).isHuman():
+		if (tBirth[iPlayer] >= gc.getGame().getGameTurnYear() or gc.getPlayer(iPlayer).getNumCities() > 0) and not gc.getPlayer(iPlayer).isHuman():
 			setLeader(iPlayer, startingLeader(iPlayer))
 		
 def onCivRespawn(iPlayer, tOriginalOwners):
