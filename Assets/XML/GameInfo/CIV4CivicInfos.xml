@@ -72,12 +72,6 @@
 			<SpecialistExtraYields>
 				<iYield>1</iYield>
 			</SpecialistExtraYields>
-			<Hurrys>
-				<Hurry>
-					<HurryType>HURRY_GOLD_UNITS</HurryType>
-					<bHurry>1</bHurry>
-				</Hurry>
-			</Hurrys>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
