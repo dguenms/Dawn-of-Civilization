@@ -3090,11 +3090,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LEVEL_MODIFIER</Tag>
-		<English>[NEWLINE][SPACE][SPACE][ICON_BULLET]%D1%% experience needed for unit promotions</English>
-		<French>[NEWLINE][SPACE][SPACE][ICON_BULLET]%D1%% EXP pour la promotion des unit&#233;s</French>
-		<German>[NEWLINE][SPACE][SPACE][ICON_BULLET]%D1%% EP f&#252;r Einheitenbef&#246;rderungen erforderlich</German>
-		<Italian>[NEWLINE][SPACE][SPACE][ICON_BULLET]%D1%% PE richiesti per la promozione</Italian>
-		<Spanish>[NEWLINE][SPACE][SPACE][ICON_BULLET]%D1%% PX necesarios para ascender unidades.</Spanish>
+		<English>[ICON_BULLET]%D1%% experience needed for unit promotions</English>
+		<French>[ICON_BULLET]%D1%% EXP pour la promotion des unit&#233;s</French>
+		<German>[ICON_BULLET]%D1%% EP f&#252;r Einheitenbef&#246;rderungen erforderlich</German>
+		<Italian>[ICON_BULLET]%D1%% PE richiesti per la promozione</Italian>
+		<Spanish>[ICON_BULLET]%D1%% PX necesarios para ascender unidades.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
