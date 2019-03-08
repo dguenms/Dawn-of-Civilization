@@ -7,6 +7,7 @@ from RFCUtils import utils
 import heapq
 import Areas
 import CityNameManager as cnm
+import DynamicCivs as dc
 
 ### GLOBALS ###
 
@@ -1045,7 +1046,7 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: have friendly relations with five communist civilizations by 1950 AD
 		if isPossible(iRussia, 2):
-			if pPlayer.getCivics(iCivicsEconomy) == iCentralPlanning and countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning)) >= 5:
+			if gc.isCommunist(iPlayer) and countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, gc.isCommunist) >= 5:
 				win(iRussia, 2)
 				
 		if iGameTurn == getTurnForYear(1950):
@@ -2757,16 +2758,9 @@ def isConnectedByRailroad(iPlayer, tStart, lTargets):
 	plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() == iPlayer and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() == iRouteRailroad)
 	
 	return isConnected(tStart, lTargets, plotFunction)
-	
-def countPlayersWithAttitudeAndCivic(iPlayer, eAttitude, tCivic):
-	iCivicType, iCivic = tCivic
-	iCount = 0
-	for iLoopPlayer in range(iNumPlayers):
-		if iLoopPlayer == iPlayer: continue
-		pLoopPlayer = gc.getPlayer(iLoopPlayer)
-		if pLoopPlayer.AI_getAttitude(iPlayer) >= eAttitude and pLoopPlayer.getCivics(iCivicType) == iCivic:
-			iCount += 1
-	return iCount
+
+def countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, function):
+	return len([iOtherPlayer for iOtherPlayer in range(iNumPlayers) if iPlayer != iOtherPlayer and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and function(iOtherPlayer)])
 	
 def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
 	iCount = 0
@@ -3886,9 +3880,9 @@ def getUHVHelp(iPlayer, iGoal):
 			bApolloProgram = teamRussia.getProjectCount(iLunarLanding) > 0
 			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_LUNAR_LANDING", ()))
 		elif iGoal == 2:
-			bCommunism = pRussia.getCivics(iCivicsEconomy) == iCentralPlanning
-			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))
-			aHelp.append(getIcon(bCommunism) + gc.getCivicInfo(iCentralPlanning).getText() + ' ' + getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_WITH_CENTRAL_PLANNING", (iCount, 5)))
+			bCommunism = dc.isCommunist(iPlayer)
+			iCount = countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, dc.isCommunist)
+			aHelp.append(getIcon(bCommunism) + localText.getText("TXT_KEY_VICTORY_COMMUNISM", ()) + ' ' + getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_WITH_COMMUNISM", (iCount, 5)))
 
 	elif iPlayer == iMali:
 		if iGoal == 1:

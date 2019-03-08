@@ -3698,12 +3698,12 @@
 		<Spanish>Available colonial resources: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_CENTRAL_PLANNING</Tag>
-		<English>Friendly civilisations with Central Planning: %d1 / %d2</English>
-		<French>Civilisations enthousiastes ayant adopt&#233; l'&#233;conomie planifi&#233;e : %d1 / %d2</French>
-		<German>Friendly civilisations with Central Planning: %d1 / %d2</German>
-		<Italian>Friendly civilisations with Central Planning: %d1 / %d2</Italian>
-		<Spanish>Friendly civilisations with Central Planning: %d1 / %d2</Spanish>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_COMMUNISM</Tag>
+		<English>Friendly communist civilisations: %d1 / %d2</English>
+		<French>Civilisations enthousiastes ayant adopt&#233; le communisme : %d1 / %d2</French>
+		<German>Friendly communist civilisations: %d1 / %d2</German>
+		<Italian>Friendly communist civilisations: %d1 / %d2</Italian>
+		<Spanish>Friendly communist civilisations: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
@@ -5305,5 +5305,13 @@
 		<German>No foreign cities in South America</German>
 		<Italian>No foreign cities in South America</Italian>
 		<Spanish>No foreign cities in South America</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COMMUNISM</Tag>
+		<English>Communism</English>
+		<French>Communisme </French>
+		<German>Communism</German>
+		<Italian>Communism</Italian>
+		<Spanish>Communism</Spanish>
 	</TEXT>
 </Civ4GameText>
