@@ -2033,14 +2033,16 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			//auto raze based on game rules
 			if (pNewCity->isAutoRaze())
 			{
-				if (iCaptureGold > 0)
+				/*if (iCaptureGold > 0)
 				{
 					szBuffer = gDLL->getText("TXT_KEY_MISC_PILLAGED_CITY", iCaptureGold, pNewCity->getNameKey());
 					gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYRAZE", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pNewCity->getX_INLINE(), pNewCity->getY_INLINE(), true, true);
 				}
 
 				pNewCity->completeAcquisition(iCaptureGold);
-				pNewCity->doTask(TASK_RAZE);
+				pNewCity->doTask(TASK_RAZE);*/
+
+				pNewCity->raze(iCaptureGold);
 			}
 			else if (!isHuman())
 			{

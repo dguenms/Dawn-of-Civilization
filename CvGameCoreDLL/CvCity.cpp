@@ -1143,6 +1143,13 @@ void CvCity::doTurn()
 		changeOccupationTimer(-1);
 	}
 
+	// razing cities reduces population to 0 during occupation, so if that happened raze the city and return
+	if (getPopulation() == 0)
+	{
+		doTask(TASK_RAZE);
+		return;
+	}
+
 	if (getHurryAngerTimer() > 0)
 	{
 		changeHurryAngerTimer(-1);
@@ -9124,19 +9131,26 @@ void CvCity::setOccupationTimer(int iNewValue, bool bEffects)
 
 		if (bEffects && iNewValue < iOldValue)
 		{
-			applyBuildingDamage((iOldValue - iNewValue) * getBuildingDamageChange());
-			applyPopulationLoss((iOldValue - iNewValue) * getPopulationLoss());
-
-			if (iNewValue == 0)
+			if (getPopulation() <= (iOldValue - iNewValue) * getPopulationLoss())
 			{
-				setBuildingDamage(0);
-				setBuildingDamageChange(0);
-				setTotalPopulationLoss(0);
-				setPopulationLoss(0);
+				setPopulation(0);
+			}
+			else
+			{
+				applyBuildingDamage((iOldValue - iNewValue) * getBuildingDamageChange());
+				applyPopulationLoss((iOldValue - iNewValue) * getPopulationLoss());
 
-				if (!isProduction())
+				if (iNewValue == 0)
 				{
-					chooseProduction();
+					setBuildingDamage(0);
+					setBuildingDamageChange(0);
+					setTotalPopulationLoss(0);
+					setPopulationLoss(0);
+
+					if (!isProduction())
+					{
+						chooseProduction();
+					}
 				}
 			}
 		}
@@ -19283,8 +19297,16 @@ void CvCity::completeAcquisition(int iCaptureGold)
 	{
 		log("no occupation time");
 		applyBuildingDamage(iTotalBuildingDamage);
-		setPopulation(std::max(1, getPopulation() - iTotalPopulationLoss));
-		chooseProduction();
+
+		if (getPopulation() > iTotalPopulationLoss)
+		{
+			setPopulation(std::max(1, getPopulation() - iTotalPopulationLoss));
+			chooseProduction();
+		}
+		else
+		{
+			doTask(TASK_RAZE);
+		}
 	}
 }
 
@@ -19358,6 +19380,12 @@ void CvCity::spare(int iCaptureGold)
 	GET_PLAYER(getOwnerINLINE()).changeGold(-iSpareGold);
 
 	completeAcquisition(0);
+}
+
+void CvCity::raze(int iCaptureGold)
+{
+	setTotalPopulationLoss(getPopulation());
+	completeAcquisition(iCaptureGold);
 }
 
 bool CvCity::canLiberate() const

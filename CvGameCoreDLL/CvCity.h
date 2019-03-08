@@ -1152,6 +1152,7 @@ public:
 
 	void sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold);
 	void spare(int iCaptureGold);
+	void raze(int iCaptureGold);
 
 	bool canLiberate() const;
 

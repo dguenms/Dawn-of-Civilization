@@ -1415,7 +1415,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
             if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue)
 			{
 				bRaze = true;
-				pCity->doTask(TASK_RAZE);
+				pCity->raze(iCaptureGold);
 				return;
 			}
 		}

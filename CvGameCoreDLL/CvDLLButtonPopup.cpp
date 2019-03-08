@@ -311,10 +311,8 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
-				pCity->completeAcquisition(info.getData3());
+				pCity->raze(info.getData3());
 			}
-
-			CvMessageControl::getInstance().sendDoTask(info.getData1(), TASK_RAZE, -1, -1, false, false, false, false);
 		}
 		else if (pPopupReturn->getButtonClicked() == 2) // gift
 		{
