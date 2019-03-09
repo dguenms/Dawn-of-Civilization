@@ -38361,7 +38361,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=40
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=8,35,45,46,
