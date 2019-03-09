@@ -862,8 +862,8 @@ class CvUnitDesc:
 		self.leaderUnitType = None
 		self.owner =-1
 		self.damage = 0
-		self.level = 0
-		self.experience = 0
+		self.level = -1
+		self.experience = -1
 		self.promotionType = []
 		self.facingDirection = DirectionTypes.NO_DIRECTION;
 		self.isSleep = False
