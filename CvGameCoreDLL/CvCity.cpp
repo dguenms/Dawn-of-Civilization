@@ -6638,6 +6638,12 @@ void CvCity::setPopulation(int iNewValue)
 			gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
 		}
 
+		// Leoreth: adjust population loss
+		if (iNewValue < iOldPopulation)
+		{
+			setTotalPopulationLoss(std::max(0, getTotalPopulationLoss() + iNewValue - iOldPopulation));
+		}
+
 		//updateGenericBuildings();
 	}
 }
@@ -19216,7 +19222,6 @@ void CvCity::applyPopulationLoss(int iLoss)
 
 	log(CvWString::format(L"%s: population: %d, total loss: %d, current loss: %d, resulting loss: %d", getNameKey(), getPopulation(), getTotalPopulationLoss(), iLoss, iLostPopulation));
 
-	changeTotalPopulationLoss(-iLostPopulation);
 	setPopulation(std::max(0, getPopulation() - iLostPopulation));
 
 	log(CvWString::format(L"%s: population after: %d", getNameKey(), getPopulation()));

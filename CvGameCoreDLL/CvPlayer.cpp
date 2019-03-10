@@ -5126,6 +5126,11 @@ bool CvPlayer::canSack(const CvCity* pCity) const
 		return false;
 	}
 
+	if (pCity->getTotalPopulationLoss() + pCity->getTotalPopulationLoss() / 2 + 1 >= pCity->getPopulation())
+	{
+		return false;
+	}
+
 	return true;
 }
 
