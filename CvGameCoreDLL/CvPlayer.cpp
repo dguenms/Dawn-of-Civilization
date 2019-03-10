@@ -1761,7 +1761,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	
 	if (!bRecapture)
 	{
-		pNewCity->setTotalPopulationLoss(1 + iPopulation / 5 + std::max(0, (iPopulation - 10) / 5));
+		pNewCity->setTotalPopulationLoss(std::min(pNewCity->getPopulation() - 1, 1 + iPopulation / 5 + std::max(0, (iPopulation - 10) / 5)));
 	}
 
 	pNewCity->setHighestPopulation(iHighestPopulation);

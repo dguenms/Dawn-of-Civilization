@@ -1415,6 +1415,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
             if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue)
 			{
 				bRaze = true;
+				log(CvWString::format(L"AI chose raze: %s", pCity->getNameKey()));
 				pCity->raze(iCaptureGold);
 				return;
 			}
@@ -1485,14 +1486,17 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (bSack)
 	{
+		log(CvWString::format(L"AI chose sack: %s", pCity->getNameKey()));
 		pCity->sack(eHighestCulturePlayer, iCaptureGold);
 	}
 	else if (bSpare)
 	{
+		log(CvWString::format(L"AI chose spare: %s", pCity->getNameKey()));
 		pCity->spare(iCaptureGold);
 	}
 	else
 	{
+		log(CvWString::format(L"AI chose conquest: %s", pCity->getNameKey()));
 		pCity->completeAcquisition(iCaptureGold);
 	}
 

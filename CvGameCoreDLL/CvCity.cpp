@@ -9131,26 +9131,19 @@ void CvCity::setOccupationTimer(int iNewValue, bool bEffects)
 
 		if (bEffects && iNewValue < iOldValue)
 		{
-			if (getPopulation() <= (iOldValue - iNewValue) * getPopulationLoss())
-			{
-				setPopulation(0);
-			}
-			else
-			{
-				applyBuildingDamage((iOldValue - iNewValue) * getBuildingDamageChange());
-				applyPopulationLoss((iOldValue - iNewValue) * getPopulationLoss());
+			applyBuildingDamage((iOldValue - iNewValue) * getBuildingDamageChange());
+			applyPopulationLoss((iOldValue - iNewValue) * getPopulationLoss());
 
-				if (iNewValue == 0)
+			if (iNewValue == 0)
+			{
+				setBuildingDamage(0);
+				setBuildingDamageChange(0);
+				setTotalPopulationLoss(0);
+				setPopulationLoss(0);
+
+				if (getPopulation() > 0 && !isProduction())
 				{
-					setBuildingDamage(0);
-					setBuildingDamageChange(0);
-					setTotalPopulationLoss(0);
-					setPopulationLoss(0);
-
-					if (!isProduction())
-					{
-						chooseProduction();
-					}
+					chooseProduction();
 				}
 			}
 		}
@@ -19221,10 +19214,12 @@ void CvCity::applyPopulationLoss(int iLoss)
 {
 	int iLostPopulation = std::min(getTotalPopulationLoss(), iLoss);
 
-	log(CvWString::format(L"total loss: %d, current loss: %d, resulting loss: %d", getTotalPopulationLoss(), iLoss, iLostPopulation));
+	log(CvWString::format(L"%s: population: %d, total loss: %d, current loss: %d, resulting loss: %d", getNameKey(), getPopulation(), getTotalPopulationLoss(), iLoss, iLostPopulation));
 
 	changeTotalPopulationLoss(-iLostPopulation);
-	setPopulation(std::max(1, getPopulation() - iLostPopulation));
+	setPopulation(std::max(0, getPopulation() - iLostPopulation));
+
+	log(CvWString::format(L"%s: population after: %d", getNameKey(), getPopulation()));
 }
 
 int CvCity::getRebuildProduction() const
@@ -19263,7 +19258,7 @@ void CvCity::completeAcquisition(int iCaptureGold)
 	int iTotalPopulationLoss = getTotalPopulationLoss();
 
 	log(CvWString::format(L"complete acquisition: %s", getNameKey()));
-	log(CvWString::format(L"occupation time: %d, total building damage: %d, population loss: %d", iOccupationTime, iTotalBuildingDamage, iTotalPopulationLoss));
+	log(CvWString::format(L"population: %d, occupation time: %d, total building damage: %d, population loss: %d", getPopulation(), iOccupationTime, iTotalBuildingDamage, iTotalPopulationLoss));
 
 	if (iCaptureGold > 0)
 	{
