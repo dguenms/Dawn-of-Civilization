@@ -1952,6 +1952,23 @@ void CvUnitAI::AI_attackMove()
 		}
 	}
 
+	// Leoreth: Roman Legions
+	if (!bDanger)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
+	}
+
 	{
 		PROFILE("CvUnitAI::AI_attackMove() 2");
 
@@ -2542,6 +2559,23 @@ void CvUnitAI::AI_attackCityMove()
 		return;
 	}
 
+	// Leoreth: Roman Legions
+	if (!bAtWar)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
+	}
+
 	if (AI_retreatToCity())
 	{
 		return;
@@ -2901,6 +2935,23 @@ void CvUnitAI::AI_reserveMove()
 	if (AI_heal(30, 1))
 	{
 		return;
+	}
+
+	// Leoreth: Roman Legions
+	if (!bDanger)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
 	}
 
 	if (bDanger)

@@ -2718,24 +2718,24 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 
 	if (foodDifference() > 0)
 	{
-	if (GET_PLAYER(getOwnerINLINE()).getNumCities() <= 2)
-	{
-		bGrowMore = ((getPopulation() < 3) && (AI_countGoodTiles(true, false, 100) >= getPopulation()));
-	}
-	else
-	{
-		bGrowMore = ((getPopulation() < 3) || (AI_countGoodTiles(true, false, 100) >= getPopulation()));
-	}
-	if (!bGrowMore && (getPopulation() < 6) && (AI_countGoodTiles(true, false, 80) >= getPopulation()))
-	{
-		if ((getFood() - (getFoodKept() / 2)) >= (growthThreshold() / 2))
+		if (GET_PLAYER(getOwnerINLINE()).getNumCities() <= 2)
 		{
-			if ((angryPopulation(1) == 0) && (healthRate(false, 1) == 0))
+			bGrowMore = ((getPopulation() < 3) && (AI_countGoodTiles(true, false, 100) >= getPopulation()));
+		}
+		else
+		{
+			bGrowMore = ((getPopulation() < 3) || (AI_countGoodTiles(true, false, 100) >= getPopulation()));
+		}
+		if (!bGrowMore && (getPopulation() < 6) && (AI_countGoodTiles(true, false, 80) >= getPopulation()))
+		{
+			if ((getFood() - (getFoodKept() / 2)) >= (growthThreshold() / 2))
 			{
-				bGrowMore = true;
+				if ((angryPopulation(1) == 0) && (healthRate(false, 1) == 0))
+				{
+					bGrowMore = true;
+				}
 			}
 		}
-	}
 	}
 	iBestOriginalValue = 0;
 

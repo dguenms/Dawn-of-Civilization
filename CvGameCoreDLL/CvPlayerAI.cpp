@@ -8349,12 +8349,15 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 			break;
 
 		case UNITAI_WORKER:
-			for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
+			if (GC.getUnitInfo(eUnit).isWorker())
 			{
-				if (GC.getUnitInfo(eUnit).getBuilds(iI))
+				for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
 				{
-					bValid = true;
-					break;
+					if (GC.getUnitInfo(eUnit).getBuilds(iI))
+					{
+						bValid = true;
+						break;
+					}
 				}
 			}
 			break;
