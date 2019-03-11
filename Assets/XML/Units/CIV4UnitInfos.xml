@@ -13233,6 +13233,7 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>5</iMoves>
+			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iCargo>2</iCargo>
 			<iNukeRange>-1</iNukeRange>
 			<TerrainImpassables>
