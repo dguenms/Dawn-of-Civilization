@@ -41984,7 +41984,6 @@ BeginPlot
 		BuildingType=BUILDING_TAMIL_SANGAM
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		Player11Culture=50, (Tamils)
 	EndCity
