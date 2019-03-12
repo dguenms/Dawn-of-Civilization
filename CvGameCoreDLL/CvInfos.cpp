@@ -5781,6 +5781,7 @@ m_bNoNonStateReligionSpread(false),
 m_bSlavery(false), // Leoreth
 m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
+m_bNoResistance(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -6399,11 +6400,16 @@ int CvCivicInfo::getMinimalSpecialistCount(int i) const
 	return m_paiMinimalSpecialistCounts ? m_paiMinimalSpecialistCounts[i] : -1;
 }
 
+bool CvCivicInfo::isNoResistance() const
+{
+	return m_bNoResistance;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts
+	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts, 2 for no resistance
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6469,6 +6475,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bSlavery); // Leoreth
 	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
+	if (uiFlag >= 2) stream->Read(&m_bNoResistance); // Leoreth
 
 	// Arrays
 
@@ -6586,7 +6593,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=1; // Leoreth: 1 for level experience modifier and minimal specialist count
+	uint uiFlag=2; // Leoreth: 1 for level experience modifier and minimal specialist count, 2 for no resistance
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -6652,6 +6659,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bSlavery); // Leoreth
 	stream->Write(m_bNoSlavery); // Leoreth
 	stream->Write(m_bColonialSlavery); // Leoreth
+	stream->Write(m_bNoResistance); // Leoreth
 
 	// Arrays
 
@@ -6759,6 +6767,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");

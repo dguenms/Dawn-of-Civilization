@@ -955,6 +955,11 @@ public:
 	int getCaptureGoldModifier() const;
 	void changeCaptureGoldModifier(int iChange);
 
+	// Leoreth
+	bool isNoResistance() const;
+	int getNoResistanceCount() const;
+	void changeNoResistanceCount(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1441,6 +1446,7 @@ protected:
 	int m_iSlaveryCount; // Leoreth
 	int m_iNoSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth
+	int m_iNoResistanceCount; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

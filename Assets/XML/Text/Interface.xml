@@ -3097,6 +3097,14 @@
 		<Spanish>[ICON_BULLET]%D1%% PX necesarios para ascender unidades.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_RESISTANCE</Tag>
+		<English>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</English>
+		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest (needs update)</French>
+		<German>[ICON_BULLET]Kein [ICON_OCCUPATION] nach Stadteroberung</German>
+		<Italian>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Italian>
+		<Spanish>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

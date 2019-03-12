@@ -19314,7 +19314,11 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 {
 	log(CvWString::format(L"before: occupation time %d, building damage: %d, population loss: %d, capture gold: %d", getOccupationTimer(), getBuildingDamage(), getTotalPopulationLoss(), iCaptureGold));
 
-	changeOccupationTimer(1 + getOccupationTimer() / 2);
+	if (!GET_PLAYER(getOwnerINLINE()).isNoResistance())
+	{
+		changeOccupationTimer(1 + getOccupationTimer() / 2);
+	}
+	
 	changeBuildingDamage(getBuildingDamage());
 	changeTotalPopulationLoss(1 + getTotalPopulationLoss() / 2);
 
@@ -19371,7 +19375,11 @@ void CvCity::spare(int iCaptureGold)
 
 	int iSpareGold = 2 * getBuildingDamage() + iCaptureGold;
 
-	changeOccupationTimer(-(1 + getOccupationTimer() / 2), false);
+	if (!GET_PLAYER(getOwnerINLINE()).isNoResistance())
+	{
+		changeOccupationTimer(-(1 + getOccupationTimer() / 2), false);
+	}
+		
 	setBuildingDamage(getBuildingDamage() / 3);
 	changeTotalPopulationLoss(-(1 + getTotalPopulationLoss() / 2));
 				

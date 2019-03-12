@@ -7708,6 +7708,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER", GC.getCivicInfo(eCivic).getCaptureGoldModifier()));
 	}
 
+	// No resistance
+	if (GC.getCivicInfo(eCivic).isNoResistance())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_RESISTANCE"));
+	}
+
 	//	Improvement Yields
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{

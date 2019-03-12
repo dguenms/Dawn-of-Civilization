@@ -526,6 +526,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iSlaveryCount = 0; // Leoreth
 	m_iNoSlaveryCount = 0;
 	m_iColonialSlaveryCount = 0; // Leoreth
+	m_iNoResistanceCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -1950,7 +1951,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iTeamCulturePercent = pNewCity->calculateTeamCulturePercent(getTeam());
 		iOccupationTime = 0;
 
-		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
+		if (!isNoResistance() && iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
 		{
 			iOccupationTime = getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100);
 		}
@@ -18060,6 +18061,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeSlaveryCount(GC.getCivicInfo(eCivic).isSlavery() * iChange); // Leoreth
 	changeNoSlaveryCount(GC.getCivicInfo(eCivic).isNoSlavery() * iChange); // Leoreth
 	changeColonialSlaveryCount(GC.getCivicInfo(eCivic).isColonialSlavery() * iChange); // Leoreth
+	changeNoResistanceCount(GC.getCivicInfo(eCivic).isNoResistance() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
@@ -18367,7 +18369,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 4
+	// Leoreth: using flag = 5
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18465,6 +18467,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iSlaveryCount); // Leoreth
 	pStream->Read(&m_iNoSlaveryCount); // Leoreth
 	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
+	if (uiFlag >= 5) pStream->Read(&m_iNoResistanceCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18910,7 +18913,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 4;
+	uint uiFlag = 5; // Leoreth: 5 for no resistance
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19006,6 +19009,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iSlaveryCount); // Leoreth
 	pStream->Write(m_iNoSlaveryCount); // Leoreth
 	pStream->Write(m_iColonialSlaveryCount); // Leoreth
+	pStream->Write(m_iNoResistanceCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -26074,4 +26078,19 @@ void CvPlayer::changeMinimalSpecialistCount(SpecialistTypes eSpecialist, int iCh
 			AI_makeAssignWorkDirty();
 		}
 	}
+}
+
+int CvPlayer::getNoResistanceCount() const
+{
+	return m_iNoResistanceCount;
+}
+
+void CvPlayer::changeNoResistanceCount(int iChange)
+{
+	m_iNoResistanceCount += iChange;
+}
+
+bool CvPlayer::isNoResistance() const
+{
+	return getNoResistanceCount() > 0;
 }

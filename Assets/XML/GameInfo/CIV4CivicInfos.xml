@@ -552,6 +552,7 @@
 			<Upkeep>NONE</Upkeep>
 			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
 			<iWarWearinessModifier>-100</iWarWearinessModifier>
+			<bNoResistance>1</bNoResistance>
 			<UnhappinessExtraYields>
 				<iYield>0</iYield>
 				<iYield>2</iYield>
