@@ -385,6 +385,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Constitution.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<iFreeSpecialist>1</iFreeSpecialist>
 			<SpecialistValids>
 				<SpecialistValid>
 					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
