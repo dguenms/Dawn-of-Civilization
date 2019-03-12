@@ -10784,7 +10784,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	// Leoreth: boost some modern civics as soon as available
 	switch (eCivic)
 	{
-	case CIVIC_IDEOLOGY:
+	case CIVIC_REVOLUTIONISM:
 	case CIVIC_CONSTITUTION:
 	case CIVIC_INDIVIDUALISM:
 	case CIVIC_TOTALITARIANISM:

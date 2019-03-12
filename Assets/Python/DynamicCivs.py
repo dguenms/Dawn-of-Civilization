@@ -1895,7 +1895,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iEra >= iIndustrial and bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if iCivicLegitimacy == iIdeology:
+		if iCivicLegitimacy == iRevolutionism:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 		if not pHolyRome.isAlive() and iEra == iMedieval:

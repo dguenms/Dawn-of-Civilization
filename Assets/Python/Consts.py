@@ -922,7 +922,7 @@ iNumBuildingsPlague = iNumBuildings+1
 #Civics
 iNumCivics = 42
 (iChiefdom, iDespotism, iMonarchy, iRepublic, iElective, iStateParty, iDemocracy,
-iAuthority, iCitizenship, iVassalage, iMeritocracy, iCentralism, iIdeology, iConstitution,
+iAuthority, iCitizenship, iVassalage, iMeritocracy, iCentralism, iRevolutionism, iConstitution,
 iTraditionalism, iSlavery, iManorialism, iCasteSystem, iIndividualism, iTotalitarianism, iEgalitarianism,
 iReciprocity, iRedistribution, iMerchantTrade, iRegulatedTrade, iFreeEnterprise, iCentralPlanning, iPublicWelfare,
 iAnimism, iDeification, iClergy, iMonasticism, iTheocracy, iTolerance, iSecularism,

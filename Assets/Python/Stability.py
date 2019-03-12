@@ -903,7 +903,7 @@ def calculateStability(iPlayer):
 		if iCurrentEra >= iIndustrial: iCivicEraTechStability -= (iCurrentEra - iRenaissance) * 3
 		
 	if tPlayer.isHasTech(iRepresentation):
-		if iCivicGovernment not in [iRepublic, iDemocracy] and iCivicLegitimacy not in [iIdeology, iConstitution]: iCivicEraTechStability -= 5
+		if iCivicGovernment not in [iRepublic, iDemocracy] and iCivicLegitimacy not in [iRevolutionism, iConstitution]: iCivicEraTechStability -= 5
 		
 	if tPlayer.isHasTech(iCivilRights):
 		if iCivicSociety in [iSlavery, iManorialism, iCasteSystem]: iCivicEraTechStability -= 5
@@ -1132,7 +1132,7 @@ def getCivicStability(iPlayer, lCivics):
 	if iTotalitarianism in civics:
 		if iStateParty in civics: iStability += 5
 		if iDespotism in civics: iStability += 3
-		if iIdeology in civics: iStability += 3
+		if iRevolutionism in civics: iStability += 3
 		if iCentralPlanning in civics: iStability += 3
 		if iDemocracy in civics: iStability -= 3
 		if iConstitution in civics: iStability -= 5
@@ -1212,7 +1212,7 @@ def getCivicStability(iPlayer, lCivics):
 	if iConstitution in civics:
 		if iDemocracy in civics: iStability += 2
 		
-	if iIdeology in civics:
+	if iRevolutionism in civics:
 		if civics.no(iSecularism) and civics.no(iTolerance): iStability -= 3
 		
 	if iRegulatedTrade in civics:

@@ -338,10 +338,10 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
-			<Type>CIVIC_IDEOLOGY</Type>
-			<Description>TXT_KEY_CIVIC_IDEOLOGY</Description>
-			<Civilopedia>TXT_KEY_CIVIC_IDEOLOGY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_IDEOLOGY_STRATEGY</Strategy>
+			<Type>CIVIC_REVOLUTIONISM</Type>
+			<Description>TXT_KEY_CIVIC_REVOLUTIONISM</Description>
+			<Civilopedia>TXT_KEY_CIVIC_REVOLUTIONISM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_REVOLUTIONISM_STRATEGY</Strategy>
 			<TechPrereq>TECH_JOURNALISM</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Ideology.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>

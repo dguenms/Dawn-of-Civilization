@@ -430,19 +430,19 @@
 		<Spanish>Increased production and gold in capital</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_IDEOLOGY</Tag>
-		<English>Ideology</English>
+		<Tag>TXT_KEY_CIVIC_REVOLUTIONISM</Tag>
+		<English>Revolutionism</English>
 		<French>
-			<Text>Id&#233;ologie</Text>
+			<Text>R&#233;volutionnisme</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Ideology</German>
-		<Italian>Ideology</Italian>
-		<Spanish>Ideology</Spanish>
+		<German>Revolutionism</German>
+		<Italian>Revolutionism</Italian>
+		<Spanish>Revolutionism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_IDEOLOGY_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_REVOLUTIONISM_STRATEGY</Tag>
 		<English>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</English>
 		<French>Taux de natalit&#233; des g&#233;n&#233;raux illustres augment&#233; ; les ateliers et les scieries rapportent de la production additionnelle ; les Journaux et les Tours de radiodiffusion cr&#233;ent du bonheur additionnel</French>
 		<German>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</German>
