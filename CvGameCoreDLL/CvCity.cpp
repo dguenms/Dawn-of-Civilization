@@ -5516,6 +5516,11 @@ int CvCity::getReligionPercentAnger() const
 
 int CvCity::getHurryPercentAnger(int iExtra) const
 {
+	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
+	{
+		return 0;
+	}
+
 	if (getHurryAngerTimer() == 0)
 	{
 		return 0;
@@ -5534,6 +5539,11 @@ int CvCity::getHurryPercentAnger(int iExtra) const
 
 int CvCity::getConscriptPercentAnger(int iExtra) const
 {
+	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
+	{
+		return 0;
+	}
+
 	if (getConscriptAngerTimer() == 0)
 	{
 		return 0;
@@ -5551,6 +5561,11 @@ int CvCity::getConscriptPercentAnger(int iExtra) const
 
 int CvCity::getDefyResolutionPercentAnger(int iExtra) const
 {
+	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
+	{
+		return 0;
+	}
+
 	if (getDefyResolutionAngerTimer() == 0)
 	{
 		return 0;
@@ -7392,6 +7407,11 @@ void CvCity::changeEspionageHealthCounter(int iChange)
 
 int CvCity::getEspionageHappinessCounter() const
 {
+	if (GET_PLAYER(getOwnerINLINE()).isNoTemporaryUnhappiness())
+	{
+		return 0;
+	}
+
 	return m_iEspionageHappinessCounter;
 }
 

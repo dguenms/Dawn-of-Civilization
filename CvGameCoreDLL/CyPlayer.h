@@ -592,6 +592,7 @@ public:
 	void changeGreatPeopleCreated(int iChange);
 	void changeGreatGeneralsCreated(int iChange);
 	void launch(int iVictory);
+	bool isNoTemporaryUnhappiness();
 
 private:
 	CvPlayer* m_pPlayer;

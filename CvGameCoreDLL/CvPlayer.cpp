@@ -527,6 +527,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNoSlaveryCount = 0;
 	m_iColonialSlaveryCount = 0; // Leoreth
 	m_iNoResistanceCount = 0; // Leoreth
+	m_iNoTemporaryUnhappinessCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -18063,6 +18064,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeNoSlaveryCount(GC.getCivicInfo(eCivic).isNoSlavery() * iChange); // Leoreth
 	changeColonialSlaveryCount(GC.getCivicInfo(eCivic).isColonialSlavery() * iChange); // Leoreth
 	changeNoResistanceCount(GC.getCivicInfo(eCivic).isNoResistance() * iChange); // Leoreth
+	changeNoTemporaryUnhappinessCount(GC.getCivicInfo(eCivic).isNoTemporaryUnhappiness() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
@@ -18469,6 +18471,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNoSlaveryCount); // Leoreth
 	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
 	if (uiFlag >= 5) pStream->Read(&m_iNoResistanceCount); // Leoreth
+	if (uiFlag >= 5) pStream->Read(&m_iNoTemporaryUnhappinessCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18914,7 +18917,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 5; // Leoreth: 5 for no resistance
+	uint uiFlag = 5; // Leoreth: 5 for no resistance and no temporary unhappiness
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19011,6 +19014,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNoSlaveryCount); // Leoreth
 	pStream->Write(m_iColonialSlaveryCount); // Leoreth
 	pStream->Write(m_iNoResistanceCount); // Leoreth
+	pStream->Write(m_iNoTemporaryUnhappinessCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -26094,4 +26098,19 @@ void CvPlayer::changeNoResistanceCount(int iChange)
 bool CvPlayer::isNoResistance() const
 {
 	return getNoResistanceCount() > 0;
+}
+
+int CvPlayer::getNoTemporaryUnhappinessCount() const
+{
+	return m_iNoTemporaryUnhappinessCount;
+}
+
+void CvPlayer::changeNoTemporaryUnhappinessCount(int iChange)
+{
+	m_iNoTemporaryUnhappinessCount += iChange;
+}
+
+bool CvPlayer::isNoTemporaryUnhappiness() const
+{
+	return getNoTemporaryUnhappinessCount() > 0;
 }

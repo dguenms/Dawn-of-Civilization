@@ -1421,6 +1421,7 @@ public:
 	bool isNoSlavery() const; // Leoreth
 	bool isColonialSlavery() const; // Leoreth
 	bool isNoResistance() const; // Leoreth
+	bool isNoTemporaryUnhappiness() const; // Leoreth
 
 	std::wstring pyGetWeLoveTheKing() { return getWeLoveTheKing(); }			// Exposed to Python
 	const wchar* getWeLoveTheKing();
@@ -1537,6 +1538,7 @@ protected:
 	bool m_bNoSlavery; // Leoreth
 	bool m_bColonialSlavery; // Leoreth
 	bool m_bNoResistance; // Leoreth
+	bool m_bNoTemporaryUnhappiness; // Leoreth
 
 	CvWString m_szWeLoveTheKingKey;
 

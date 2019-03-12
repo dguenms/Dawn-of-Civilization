@@ -2686,3 +2686,8 @@ void CyPlayer::launch(int iVictory)
 {
 	if (m_pPlayer) m_pPlayer->launch((VictoryTypes)iVictory);
 }
+
+bool CyPlayer::isNoTemporaryUnhappiness()
+{
+	return m_pPlayer ? m_pPlayer->isNoTemporaryUnhappiness() : false;
+}

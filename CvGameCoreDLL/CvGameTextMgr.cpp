@@ -7715,6 +7715,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_RESISTANCE"));
 	}
 
+	// No temporary unhappiness
+	if (GC.getCivicInfo(eCivic).isNoTemporaryUnhappiness())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_TEMPORARY_UNHAPPINESS"));
+	}
+
 	//	Improvement Yields
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{

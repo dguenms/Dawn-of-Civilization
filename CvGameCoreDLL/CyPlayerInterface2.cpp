@@ -129,5 +129,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("changeGreatPeopleCreated", &CyPlayer::changeGreatPeopleCreated, "void (int iChange)")
 		.def("changeGreatGeneralsCreated", &CyPlayer::changeGreatGeneralsCreated, "void (int iChange)")
 		.def("launch", &CyPlayer::launch, "void (int iVictory)")
+		.def("isNoTemporaryUnhappiness", &CyPlayer::isNoTemporaryUnhappiness, "bool ()")
 		;
 }

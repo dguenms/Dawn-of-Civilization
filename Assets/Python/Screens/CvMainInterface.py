@@ -3755,7 +3755,7 @@ class CvMainInterface:
 					if (CityScreenOpt.isShowAngerCounter()
 					and pHeadSelectedCity.getTeam() == gc.getGame().getActiveTeam()):
 						iAngerTimer = max(pHeadSelectedCity.getHurryAngerTimer(), pHeadSelectedCity.getConscriptAngerTimer())
-						if iAngerTimer > 0:
+						if not gc.getPlayer(pHeadSelectedCity.getOwner()).isNoTemporaryUnhappiness() and iAngerTimer > 0:
 							szBuffer += u" (%i)" % iAngerTimer
 # BUG - Anger Display - end
 

@@ -346,6 +346,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Ideology.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
+			<bNoTemporaryUnhappiness>1</bNoTemporaryUnhappiness>
 			<iGreatGeneralRateModifier>100</iGreatGeneralRateModifier>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>

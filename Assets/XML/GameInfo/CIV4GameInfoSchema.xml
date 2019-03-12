@@ -859,7 +859,8 @@
 	<ElementType name="iColonyCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iCaptureGoldModifier" content="textOnly" dt:type="int"/>
-	<ElementType name="bNoResistance" content="textOnly" dt:type="int"/>
+	<ElementType name="bNoResistance" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bNoTemporaryUnhappiness" content="textOnly" dt:type="boolean"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -924,6 +925,7 @@
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoCorporations" minOccurs="0"/>
 		<element type="bNoForeignCorporations" minOccurs="0"/>
+		<element type="bNoTemporaryUnhappiness" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCivicPercentAnger" minOccurs="0"/>
 		<element type="bStateReligion" minOccurs="0"/>
 		<element type="bNoNonStateReligionSpread" minOccurs="0"/>

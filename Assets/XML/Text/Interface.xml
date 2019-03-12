@@ -3099,7 +3099,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NO_RESISTANCE</Tag>
 		<English>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</English>
-		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest (needs update)</French>
+		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</French> <!-- to translate -->
 		<German>[ICON_BULLET]Kein [ICON_OCCUPATION] nach Stadteroberung</German>
 		<Italian>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Spanish>
@@ -3107,10 +3107,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NO_RESISTANCE</Tag>
 		<English>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</English>
-		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest (needs update)</French>
+		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</French> <!-- to translate -->
 		<German>[ICON_BULLET]Kein [ICON_OCCUPATION] nach Stadteroberung</German>
 		<Italian>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_TEMPORARY_UNHAPPINESS</Tag>
+		<English>[ICON_BULLET]No temporary [ICON_UNHAPPY]</English>
+		<French>[ICON_BULLET]No temporary [ICON_UNHAPPY]</French> <!-- to translate -->
+		<German>[ICON_BULLET]Keine tempor&#228;re [ICON_UNHAPPY]</German>
+		<Italian>[ICON_BULLET]No temporary [ICON_UNHAPPY]</Italian>
+		<Spanish>[ICON_BULLET]No temporary [ICON_UNHAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

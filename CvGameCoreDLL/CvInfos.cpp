@@ -5782,6 +5782,7 @@ m_bSlavery(false), // Leoreth
 m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
 m_bNoResistance(false), // Leoreth
+m_bNoTemporaryUnhappiness(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -5902,7 +5903,7 @@ int CvCivicInfo::getCorporationMaintenanceModifier() const
 	return m_iCorporationMaintenanceModifier;
 }
 
-//Leoreth
+// Leoreth
 int CvCivicInfo::getCorporationCommerceModifier() const
 {
 	return m_iCorporationCommerceModifier;
@@ -6405,11 +6406,16 @@ bool CvCivicInfo::isNoResistance() const
 	return m_bNoResistance;
 }
 
+bool CvCivicInfo::isNoTemporaryUnhappiness() const
+{
+	return m_bNoTemporaryUnhappiness;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts, 2 for no resistance
+	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts, 2 for no resistance and no temporary unhappiness
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6476,6 +6482,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
 	if (uiFlag >= 2) stream->Read(&m_bNoResistance); // Leoreth
+	if (uiFlag >= 2) stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
 
 	// Arrays
 
@@ -6660,6 +6667,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNoSlavery); // Leoreth
 	stream->Write(m_bColonialSlavery); // Leoreth
 	stream->Write(m_bNoResistance); // Leoreth
+	stream->Write(m_bNoTemporaryUnhappiness); // Leoreth
 
 	// Arrays
 
@@ -6768,6 +6776,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoTemporaryUnhappiness, "bNoTemporaryUnhappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
