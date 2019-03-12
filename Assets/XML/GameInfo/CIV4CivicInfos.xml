@@ -385,7 +385,6 @@
 			<Button>,Art/Interface/Buttons/Civics/Constitution.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
 			<SpecialistValids>
 				<SpecialistValid>
 					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
