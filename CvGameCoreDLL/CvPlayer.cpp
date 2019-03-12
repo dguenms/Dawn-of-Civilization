@@ -7018,6 +7018,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	changeCityDefenseModifier(GC.getBuildingInfo(eBuilding).getAllCityDefenseModifier() * iChange);
 	pArea->changeCleanPowerCount(getTeam(), ((GC.getBuildingInfo(eBuilding).isAreaCleanPower()) ? iChange : 0));
 	pArea->changeBorderObstacleCount(getTeam(), ((GC.getBuildingInfo(eBuilding).isAreaBorderObstacle()) ? iChange : 0));
+	changeNoResistanceCount(GC.getBuildingInfo(eBuilding).isNoResistance() ? iChange : 0);
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{

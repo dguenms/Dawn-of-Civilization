@@ -1789,6 +1789,7 @@ public:
 	bool isCenterInCity() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isAllowsNukes() const;				// Exposed to Python
+	bool isNoResistance() const; // Leoreth
 
 	const TCHAR* getConstructSound() const;				// Exposed to Python
 	void setConstructSound(const TCHAR* szVal);
@@ -2017,6 +2018,7 @@ protected:
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;
+	bool m_bNoResistance; // Leoreth
 
 	CvString m_szConstructSound;
 	CvString m_szArtDefineTag;

@@ -201,10 +201,6 @@ class CvRFCEventHandler:
 				if utils.isPlotInArea(tCity, tSouthCentralAmericaTL, tSouthCentralAmericaBR):
 					city.setOccupationTimer(0)
 					
-			# Statue of Zeus effect: no city resistance on conquest
-			if gc.getPlayer(iPlayer).isHasBuildingEffect(iStatueOfZeus):
-				city.setOccupationTimer(0)
-				
 			# Byzantium reduced to four cities: core shrinks to Constantinople
 			if iOwner == iByzantium and gc.getPlayer(iByzantium).getNumCities <= 4:
 				utils.setReborn(iByzantium, True)

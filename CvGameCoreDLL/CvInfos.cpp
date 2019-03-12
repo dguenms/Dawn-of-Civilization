@@ -7353,6 +7353,7 @@ m_bPagan(false), // Leoreth
 m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
+m_bNoResistance(false), // Leoreth
 m_piPrereqAndTechs(NULL),
 m_piPrereqOrBonuses(NULL),
 m_piProductionTraits(NULL),
@@ -8597,6 +8598,12 @@ int CvBuildingInfo::getPrereqBuildingClassPercent(int i) const
 	return m_piPrereqBuildingClassPercent[i];
 }
 
+// Leoreth
+bool CvBuildingInfo::isNoResistance() const
+{
+	return m_bNoResistance;
+}
+
 const TCHAR* CvBuildingInfo::getButton() const
 {
 	const CvArtInfoBuilding * pBuildingArtInfo;
@@ -8651,7 +8658,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::read(stream);
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: 1 for corporation happiness/health modifiers, 2 for no resistance
 	stream->Read(&uiFlag);	// flags for expansion
 
 	stream->Read(&m_iBuildingClassType);
@@ -8777,6 +8784,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
+	if (uiFlag >= 2) stream->Read(&m_bNoResistance); // Leoreth
 
 	stream->ReadString(m_szConstructSound);
 	stream->ReadString(m_szArtDefineTag);
@@ -9027,7 +9035,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 {
 	CvHotkeyInfo::write(stream);
 
-	uint uiFlag=1; // Leoreth: 1 for building/corporation health modifiers
+	uint uiFlag=2; // Leoreth: 1 for building/corporation health modifiers, 2 for no resistance
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iBuildingClassType);
@@ -9153,6 +9161,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
+	stream->Write(m_bNoResistance); // Leoreth
 
 	stream->WriteString(m_szConstructSound);
 	stream->WriteString(m_szArtDefineTag);
@@ -9433,6 +9442,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bPagan, "bPagan"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
+	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
 	pXML->GetChildXmlValByName(&m_iProductionCost, "iCost");
 	pXML->GetChildXmlValByName(&m_iHurryCostModifier, "iHurryCostModifier");

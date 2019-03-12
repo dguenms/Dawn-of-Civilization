@@ -8987,7 +8987,6 @@
 			<Description>TXT_KEY_BUILDING_STATUE_OF_ZEUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_STATUE_OF_ZEUS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_STATUE_OF_ZEUS_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_ZEUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_ZEUS</MovieDefineTag>
@@ -8999,6 +8998,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
 			<bPagan>1</bPagan>
+			<bNoResistance>1</bNoResistance>
 			<iAIWeight>100</iAIWeight>
 			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>

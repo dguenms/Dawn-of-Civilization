@@ -10450,6 +10450,13 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	}
 
 	// Leoreth
+	if (kBuilding.isNoResistance())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NO_RESISTANCE"));
+	}
+
+	// Leoreth
 	if (kBuilding.getBuildingUnhealthModifier() != 0)
 	{
 		szBuffer.append(NEWLINE);
