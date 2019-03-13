@@ -8479,7 +8479,7 @@
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Man-of-War/Man_O_War.nif</NIF>
 			<KFM>Art/Units/Man-of-War/Man_O_War.kfm</KFM>
-			<SHADERNIF>Art/Units/Man-of-War/Man_O_War.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/Man-of-War/Man_O_War_fx.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/FrigateShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>

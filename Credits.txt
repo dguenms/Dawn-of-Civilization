@@ -81,6 +81,9 @@ MISCELLANEOUS
 * andrewv42: map changes in India and Indochina
 * Steb: city names in Canada and the Americas
 
+HELP AND ADVICE
+* Walter Hawkwood: fixing issues with unit and building models
+
 GITHUB PROJECT CONTRIBUTORS
 Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon
 
