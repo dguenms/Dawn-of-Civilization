@@ -338,6 +338,12 @@ void CvPlayer::init(PlayerTypes eID)
 				makeSpecialUnitValid((SpecialUnitTypes)iI);
 			}
 		}
+
+		// Leoreth: make sure Phoenicia can always hurry units
+		if (eID == PHOENICIA)
+		{
+			changeHurryCount((HurryTypes)1, 1);
+		}
 	}
 
 	AI_init();
