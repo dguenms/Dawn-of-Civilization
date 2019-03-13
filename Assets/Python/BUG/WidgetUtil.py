@@ -144,6 +144,31 @@ def getWidgetHelp(argsList):
 		if iData1 == -1:
 			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
 
+	# Espionage Advisor
+	elif eWidgetType == WidgetTypes.WIDGET_ESPIONAGE_SELECT_PLAYER:
+		pPlayer = gc.getPlayer(iData1)
+		szHelp = CyTranslator().changeTextColor(pPlayer.getName(), gc.getInfoTypeForString('COLOR_HIGHLIGHT_TEXT'))
+		szHelp += "\n"
+		szHelp += pPlayer.getCivilizationDescription(0)
+		szHelp += "\n\n"
+		szHelp += CyGameTextMgr().getAttitudeString(iData1, iData2)
+		return szHelp
+
+	elif eWidgetType == WidgetTypes.WIDGET_ESPIONAGE_SELECT_CITY:
+		return " "
+
+	elif eWidgetType == WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION:
+		MissionInfo = gc.getEspionageMissionInfo(iData1)
+		szHelp = CyTranslator().changeTextColor(MissionInfo.getDescription(), gc.getInfoTypeForString('COLOR_HIGHLIGHT_TEXT'))
+		szHelp += "\n"
+		szHelp += MissionInfo.getHelp()
+		return szHelp
+
+	# Go to City
+	elif eWidgetType == WidgetTypes.WIDGET_GO_TO_CITY:
+		szHelp = "Locate this city in the world"
+		return szHelp
+
 ## Platy WorldBuilder ##
 	elif eWidgetType == WidgetTypes.WIDGET_PYTHON:
 		if iData1 == 1027:
