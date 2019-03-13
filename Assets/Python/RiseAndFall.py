@@ -2843,6 +2843,11 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(iDragoon, iCiv, tPlot, 3)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 5)
+			tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iSteamship, iCiv, tSeaPlot, 2)
+				utils.makeUnit(iIronclad, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iTorpedoBoat, iCiv, tSeaPlot, 1)
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iCiv)
