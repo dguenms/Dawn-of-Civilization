@@ -113,7 +113,7 @@ tSouthCentralAmericaBR = (41, 39)
 # third Portuguese goal: control 15 cities in Brazil, Africa and Asia in 1700 AD
 tAfricaTL = (45, 10)
 tAfricaBR = (76, 39)
-tAsiaTL = (73, 29)
+tAsiaTL = (73, 24)
 tAsiaBR = (121, 64)
 
 # first Russian goal: found seven cities in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
@@ -1116,8 +1116,8 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1700):
 			iCount = 0
 			iCount += getNumCitiesInArea(iPortugal, utils.getPlotList(tBrazilTL, tBrazilBR))
-			iCount += getNumCitiesInArea(iPortugal, utils.getPlotList(tAfricaTL, tAfricaBR))
-			iCount += getNumCitiesInArea(iPortugal, utils.getPlotList(tAsiaTL, tAsiaBR))
+			iCount += getNumCitiesInRegions(iPortugal, lAfrica)
+			iCount += getNumCitiesInRegions(iPortugal, lAsia)
 			if iCount >= 15:
 				win(iPortugal, 2)
 			else:
@@ -1592,11 +1592,11 @@ def onCityBuilt(iPlayer, city):
 	# first English goal: colonize every continent by 1730 AD
 	elif iPlayer == iEngland:
 		if isPossible(iEngland, 0):
-			bNAmerica = getNumCitiesInArea(iEngland, utils.getPlotList(tNorthAmericaTL, tNorthAmericaBR)) >= 5
-			bSCAmerica = getNumCitiesInArea(iEngland, utils.getPlotList(tSouthCentralAmericaTL, tSouthCentralAmericaBR)) >= 3
-			bAfrica = getNumCitiesInArea(iEngland, utils.getPlotList(tAfricaTL, tAfricaBR)) >= 4
-			bAsia = getNumCitiesInArea(iEngland, utils.getPlotList(tAsiaTL, tAsiaBR)) >= 5
-			bOceania = getNumCitiesInArea(iEngland, utils.getPlotList(tOceaniaTL, tOceaniaBR)) >= 3
+			bNAmerica = getNumCitiesInRegions(iEngland, lNorthAmerica) >= 5
+			bSCAmerica = getNumCitiesInRegions(iEngland, lSouthAmerica) >= 3
+			bAfrica = getNumCitiesInRegions(iEngland, lAfrica) >= 4
+			bAsia = getNumCitiesInRegions(iEngland, lAsia) >= 5
+			bOceania = getNumCitiesInRegions(iEngland, lOceania) >= 3
 			if bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania:
 				win(iEngland, 0)
 				
@@ -1619,11 +1619,11 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	# first English goal: colonize every continent by 1730 AD
 	elif iPlayer == iEngland:
 		if isPossible(iEngland, 0):
-			bNAmerica = getNumCitiesInArea(iEngland, utils.getPlotList(tNorthAmericaTL, tNorthAmericaBR)) >= 5
-			bSCAmerica = getNumCitiesInArea(iEngland, utils.getPlotList(tSouthCentralAmericaTL, tSouthCentralAmericaBR)) >= 3
-			bAfrica = getNumCitiesInArea(iEngland, utils.getPlotList(tAfricaTL, tAfricaBR)) >= 4
-			bAsia = getNumCitiesInArea(iEngland, utils.getPlotList(tAsiaTL, tAsiaBR)) >= 5
-			bOceania = getNumCitiesInArea(iEngland, utils.getPlotList(tOceaniaTL, tOceaniaBR)) >= 3
+			bNAmerica = getNumCitiesInRegions(iEngland, lNorthAmerica) >= 5
+			bSCAmerica = getNumCitiesInRegions(iEngland, lSouthAmerica) >= 3
+			bAfrica = getNumCitiesInRegions(iEngland, lAfrica) >= 4
+			bAsia = getNumCitiesInRegions(iEngland, lAsia) >= 5
+			bOceania = getNumCitiesInRegions(iEngland, lOceania) >= 3
 			if bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania:
 				win(iEngland, 0)
 				
@@ -2522,6 +2522,9 @@ def isBuildingInCity(tPlot, iBuilding):
 	
 def getNumCitiesInArea(iPlayer, lPlots):
 	return len(utils.getAreaCitiesCiv(iPlayer, lPlots))
+	
+def getNumCitiesInRegions(iPlayer, lRegions):
+	return len([city for city in utils.getCityList(iPlayer) if city.getRegionID() in lRegions])
 	
 def getNumFoundedCitiesInArea(iPlayer, lPlots):
 	return len([city for city in utils.getAreaCitiesCiv(iPlayer, lPlots) if city.getOriginalOwner() == iPlayer])
@@ -3832,11 +3835,11 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iEngland:
 		if iGoal == 0:
-			iNAmerica = getNumCitiesInArea(iEngland, utils.getPlotList(tNorthAmericaTL, tNorthAmericaBR))
-			iSCAmerica = getNumCitiesInArea(iEngland, utils.getPlotList(tSouthCentralAmericaTL, tSouthCentralAmericaBR))
-			iAfrica = getNumCitiesInArea(iEngland, utils.getPlotList(tAfricaTL, tAfricaBR))
-			iAsia = getNumCitiesInArea(iEngland, utils.getPlotList(tAsiaTL, tAsiaBR))
-			iOceania = getNumCitiesInArea(iEngland, utils.getPlotList(tOceaniaTL, tOceaniaBR))
+			iNAmerica = getNumCitiesInRegions(iEngland, lNorthAmerica)
+			iSCAmerica = getNumCitiesInRegions(iEngland, lSouthAmerica)
+			iAfrica = getNumCitiesInRegions(iEngland, lAfrica)
+			iAsia = getNumCitiesInRegions(iEngland, lAsia)
+			iOceania = getNumCitiesInRegions(iEngland, lOceania)
 			aHelp.append(getIcon(iNAmerica >= 5) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_NORTH_AMERICA", (iNAmerica, 5)) + ' ' + getIcon(iAsia >= 5) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_ASIA", (iAsia, 5)) + ' ' + getIcon(iAfrica >= 4) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_AFRICA", (iAfrica, 4)))
 			aHelp.append(getIcon(iSCAmerica >= 3) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_SOUTH_AMERICA", (iSCAmerica, 3)))
 			aHelp.append(getIcon(iOceania >= 3) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_OCEANIA", (iOceania, 3)))
@@ -3926,8 +3929,8 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCount >= 12) + localText.getText("TXT_KEY_VICTORY_COLONIAL_RESOURCES", (iCount, 12)))
 		elif iGoal == 2:
 			iColonies = getNumCitiesInArea(iPortugal, utils.getPlotList(tBrazilTL, tBrazilBR))
-			iColonies += getNumCitiesInArea(iPortugal, utils.getPlotList(tAfricaTL, tAfricaBR))
-			iColonies += getNumCitiesInArea(iPortugal, utils.getPlotList(tAsiaTL, tAsiaBR))
+			iColonies += getNumCitiesInRegions(iPortugal, lAfrica)
+			iColonies += getNumCitiesInRegions(iPortugal, lAsia)
 			aHelp.append(getIcon(iColonies >= 15) + localText.getText("TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES", (iColonies, 15)))
 
 	elif iPlayer == iInca:

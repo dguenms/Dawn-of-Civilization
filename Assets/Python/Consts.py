@@ -970,6 +970,9 @@ lEastAsia = [rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]
 lAfrica = [rEgypt, rMaghreb, rEthiopia, rSouthAfrica, rWestAfrica]
 lSouthAmerica = [rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
 lNorthAmerica = [rCanada, rAlaska, rUnitedStates]
+lOceania = [rAustralia, rOceania]
+
+lAsia = lMiddleEast + lIndia + lEastAsia
 
 iArea_Europe = 1000
 iArea_MiddleEast = 1001

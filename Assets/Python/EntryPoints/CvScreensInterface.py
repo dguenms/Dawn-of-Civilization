@@ -904,6 +904,8 @@ def getUHVTileInfo(argsList):
 	y = argsList[1]
 	iPlayer = argsList[2]
 	
+	plot = gc.getMap().plot(x, y)
+	
 	if iPlayer == iGreece:
 		if (x, y) in Areas.getNormalArea(iEgypt, False):
 			return 0
@@ -1018,19 +1020,19 @@ def getUHVTileInfo(argsList):
 			return 30
 			
 	elif iPlayer == iEngland:
-		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
+		if plot.getRegionID() in lNorthAmerica:
 			return 31
 				
-		if utils.isPlotInArea((x, y), vic.tSouthCentralAmericaTL, vic.tSouthCentralAmericaBR):
+		if plot.getRegionID() in lSouthAmerica:
 			return 32
 				
-		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
+		if plot.getRegionID() in lAfrica:
 			return 33
 				
-		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
+		if plot.getRegionID() in lAsia:
 			return 34
 			
-		if utils.isPlotInArea((x, y), vic.tOceaniaTL, vic.tOceaniaBR):
+		if plot.getRegionID() in lOceania:
 			return 35
 			
 	elif iPlayer == iGermany:
@@ -1105,10 +1107,10 @@ def getUHVTileInfo(argsList):
 			return 59
 			
 	elif iPlayer == iPortugal:
-		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
+		if plot.getRegionID() in lAfrica:
 			return 33
 					
-		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
+		if plot.getRegionID() in lAsia:
 			return 34
 					
 		if utils.isPlotInArea((x, y), vic.tBrazilTL, vic.tBrazilBR):
