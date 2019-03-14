@@ -10234,6 +10234,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += -(kCivic.getGoldPerMilitaryUnit() * getNumMilitaryUnits() * iWarmongerPercent) / 200;
 	iValue += (kCivic.getCaptureGoldModifier() * iWarmongerPercent / (bWarPlan ? 100 : 500)); // Leoreth
 
+	// Leoreth: experience cost reduction
+	iValue += -kCivic.getLevelExperienceModifier() * getNumCities() * iWarmongerPercent / 100;
+
 	//iValue += ((kCivic.isMilitaryFoodProduction()) ? 0 : 0);
 	iValue += (getWorldSizeMaxConscript(eCivic) * ((bWarPlan) ? (20 + getNumCities()) : ((8 + getNumCities()) / 2)));
 	iValue += ((kCivic.isNoUnhealthyPopulation()) ? (getTotalPopulation() / 3) : 0);
@@ -10274,16 +10277,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				iValue += kCivic.getCoreFreeSpecialist() * 12;
 			}
 		}
-
-		/*if (getID() == MALI || getID() == EGYPT)
-		{
-			iValue -= 40;
-		}
-
-		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
-		{
-			iValue += 40;
-		}*/
 	}
 
 	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 8) + (getNumCities() * 2));
@@ -10698,6 +10691,26 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += AI_neededWorkers() * iWarmongerPercent / 15;
 	}
 
+	// Leoreth: no resistance on city conquest
+	if (kCivic.isNoResistance())
+	{
+		iValue += (bWarPlan ? 200 : 120) * iWarmongerPercent / 100;
+	}
+
+	// Leoreth: no temporary unhappiness
+	if (kCivic.isNoTemporaryUnhappiness())
+	{
+		for (iI = 0; iI < GC.getNumHurryInfos(); iI++)
+		{
+			if (GC.getHurryInfo((HurryTypes)iI).isAnger() && canHurry((HurryTypes)iI))
+			{
+				iValue += AI_getHappinessWeight(3, 1) * getNumCities();
+			}
+		}
+
+		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1);
+	}
+
 	// Leoreth: enabled wonders with civic prereq
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
@@ -10749,6 +10762,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		if (getStabilityParameter(PARAMETER_ECONOMIC_GROWTH) < 15)
 		{
 			iValue += 200;
+		}
+	}
+	else if (eCivic == CIVIC_ISOLATIONISM)
+	{
+		if (getStabilityParameter(PARAMETER_RELATIONS) < -10)
+		{
+			iValue += -20 * getStabilityParameter(PARAMETER_RELATIONS);
 		}
 	}
 	else if (eCivic == CIVIC_PUBLIC_WELFARE)
