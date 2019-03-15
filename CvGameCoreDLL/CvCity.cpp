@@ -19280,10 +19280,9 @@ void CvCity::completeAcquisition(int iCaptureGold)
 {
 	int iOccupationTime = getOccupationTimer();
 	int iTotalBuildingDamage = getBuildingDamage();
-	int iTotalPopulationLoss = getTotalPopulationLoss();
 
 	log(CvWString::format(L"complete acquisition: %s", getNameKey()));
-	log(CvWString::format(L"population: %d, occupation time: %d, total building damage: %d, population loss: %d", getPopulation(), iOccupationTime, iTotalBuildingDamage, iTotalPopulationLoss));
+	log(CvWString::format(L"population: %d, occupation time: %d, total building damage: %d, population loss: %d", getPopulation(), iOccupationTime, iTotalBuildingDamage, getTotalPopulationLoss()));
 
 	if (iCaptureGold > 0)
 	{
@@ -19299,18 +19298,12 @@ void CvCity::completeAcquisition(int iCaptureGold)
 
 		log(CvWString::format(L"set building damage change: %d", iTotalBuildingDamage / iOccupationTime));
 
-		if (iTotalPopulationLoss > 0)
+		if (getTotalPopulationLoss() > 0)
 		{
-			setPopulationLoss(std::max(1, iTotalPopulationLoss / iOccupationTime));
-			setTotalPopulationLoss(std::min(iTotalPopulationLoss, iOccupationTime * getPopulationLoss()));
+			setPopulationLoss(std::max(1, getTotalPopulationLoss() / iOccupationTime));
+			changePopulation(-(getTotalPopulationLoss() % getPopulationLoss()));
 
 			log(CvWString::format(L"total population loss: %d, population loss: %d", getTotalPopulationLoss(), getPopulationLoss()));
-
-			if (getTotalPopulationLoss() < iTotalPopulationLoss)
-			{
-				setPopulation(std::max(1, getPopulation() - (iTotalPopulationLoss - getTotalPopulationLoss())));
-				log(CvWString::format(L"immediate population loss: %d", iTotalPopulationLoss - getTotalPopulationLoss()));
-			}
 		}
 	}
 	else
@@ -19318,9 +19311,9 @@ void CvCity::completeAcquisition(int iCaptureGold)
 		log("no occupation time");
 		applyBuildingDamage(iTotalBuildingDamage);
 
-		if (getPopulation() > iTotalPopulationLoss)
+		if (getPopulation() > getTotalPopulationLoss())
 		{
-			setPopulation(std::max(1, getPopulation() - iTotalPopulationLoss));
+			changePopulation(-getTotalPopulationLoss());
 			chooseProduction();
 		}
 		else

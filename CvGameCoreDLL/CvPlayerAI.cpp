@@ -10235,7 +10235,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += (kCivic.getCaptureGoldModifier() * iWarmongerPercent / (bWarPlan ? 100 : 500)); // Leoreth
 
 	// Leoreth: experience cost reduction
-	iValue += -kCivic.getLevelExperienceModifier() * getNumCities() * iWarmongerPercent / 100;
+	iValue += -kCivic.getLevelExperienceModifier() * getNumMilitaryUnits() * iWarmongerPercent / 2500;
 
 	//iValue += ((kCivic.isMilitaryFoodProduction()) ? 0 : 0);
 	iValue += (getWorldSizeMaxConscript(eCivic) * ((bWarPlan) ? (20 + getNumCities()) : ((8 + getNumCities()) / 2)));
