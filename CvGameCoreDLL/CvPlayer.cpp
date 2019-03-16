@@ -1819,7 +1819,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 				{
 					if (kOldBuilding.getDefenseModifier() > 0 || kOldBuilding.getBombardDefenseModifier() > 0 || kOldBuilding.getUnignorableBombardDefenseModifier() > 0)
 					{
-						continue;
+						if (!::isWorldWonderClass((BuildingClassTypes)kOldBuilding.getBuildingClassType()))
+						{
+							continue;
+						}
 					}
 				}
 
