@@ -3002,11 +3002,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP</Tag>
-		<English>%d1 out of %d2 World Wonders at %s3 culture</English>
-		<French>%d1 out of %d2 World Wonders at %s3 culture</French>
-		<German>%d1 out of %d2 World Wonders at %s3 culture</German>
-		<Italian>%d1 out of %d2 World Wonders at %s3 culture</Italian>
-		<Spanish>%d1 out of %d2 World Wonders at %s3 culture</Spanish>
+		<English>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</English>
+		<French>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</French>
+		<German>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</German>
+		<Italian>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</Italian>
+		<Spanish>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ATTACK_AND_DEFENSE</Tag>

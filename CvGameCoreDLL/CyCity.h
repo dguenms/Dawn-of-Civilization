@@ -588,6 +588,7 @@ public:
 	void setStabilityPopulation(int iNewValue);
 	int getModifiedCultureRateTimes100();
 	int getModifiedCultureRate();
+	int getNumActiveWorldWonders();
 
 private:
 	CvCity* m_pCity;

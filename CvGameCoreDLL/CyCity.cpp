@@ -2773,3 +2773,8 @@ int CyCity::getModifiedCultureRateTimes100()
 {
 	return m_pCity ? m_pCity->getModifiedCultureRateTimes100() : -1;
 }
+
+int CyCity::getNumActiveWorldWonders()
+{
+	return m_pCity ? m_pCity->getNumActiveWorldWonders() : -1;
+}
