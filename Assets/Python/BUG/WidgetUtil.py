@@ -179,16 +179,12 @@ def getWidgetHelp(argsList):
 			elif iData2 < 2000:
 				return CyTranslator().getText("TXT_KEY_WB_OPTIONS_ENABLE_CIV",())
 			elif iData2 == 2000:
-				return CyTranslator().getText("TXT_KEY_WB_NO_STABILITY_HELP",())
-			elif iData2 == 2001:
-				return CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY_HELP",())
-			elif iData2 == 2002:
 				return CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV_HELP",())
-			elif iData2 == 2003:
+			elif iData2 == 2001:
 				return CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING_HELP",())
-			elif iData2 == 2004:
+			elif iData2 == 2002:
 				return CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS_HELP",())
-			elif iData2 == 2005:
+			elif iData2 == 2003:
 				return CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE_HELP",())
 			elif iData2 == 3001:
 				return CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED_HELP",())
