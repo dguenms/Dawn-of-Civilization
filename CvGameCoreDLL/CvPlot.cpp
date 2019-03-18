@@ -7310,14 +7310,6 @@ int CvPlot::getActualCulture(PlayerTypes eIndex) const
 		return 0;
 	}
 
-	if (eIndex == VIKINGS && GC.getGameINLINE().getGameTurnYear() < 1000)
-	{
-		if (getY_INLINE() == 54 && (getX_INLINE() == 59 || getX_INLINE() == 60 || getX_INLINE() == 61))
-		{
-			return 0;
-		}
-	}
-
 	return m_aiCulture[eIndex];
 }
 
@@ -7456,7 +7448,7 @@ void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bU
 	FAssertMsg(eIndex >= 0, "iIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "iIndex is expected to be within maximum bounds (invalid Index)");
 
-	int iOldValue = getCulture(eIndex);
+	int iOldValue = getActualCulture(eIndex);
 
 	if (iOldValue != iNewValue)
 	{
@@ -7471,7 +7463,9 @@ void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bU
 
 		m_aiCulture[eIndex] = iNewValue;
 		m_iTotalCulture += (iNewValue - iOldValue);
-		FAssert(getCulture(eIndex) >= 0);
+		FAssert(getActualCulture(eIndex) >= 0, "expected actual culture to be positive");
+		FAssert(getCulture(eIndex) >= 0, "expected culture to be positive");
+		FAssert(getActualTotalCulture() >= 0, "expected actual total culture to be positive");
 
 		if (bUpdate)
 		{

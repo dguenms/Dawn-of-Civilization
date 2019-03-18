@@ -441,7 +441,7 @@ class UniquePowers:
 			iTargetPlayer = targetCity.getOwner()
 			iSourcePlayer = sourceCity.getOwner()
 			iCultureChange = targetPlot.getCulture(iTargetPlayer) / targetCity.getPopulation()
-			targetPlot.setCulture(iSourcePlayer, iCultureChange, False)
+			targetPlot.changeCulture(iSourcePlayer, iCultureChange, False)
 			
 			# chance to spread state religion if in source city
 			if gc.getPlayer(iSourcePlayer).isStateReligion():
