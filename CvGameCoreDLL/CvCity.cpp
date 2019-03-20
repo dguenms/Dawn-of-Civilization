@@ -6760,7 +6760,7 @@ int CvCity::getGreatPeopleRate() const
 		return 0;
 	}
 
-	return (getBaseGreatPeopleRate() + calculateCultureSpecialistGreatPeopleRate()) * getTotalGreatPeopleRateModifier() / 100;
+	return getBaseGreatPeopleRate() * getTotalGreatPeopleRateModifier() / 100;
 }
 
 
@@ -9502,7 +9502,7 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 	CultureLevelTypes eOldValue;
 	//int iCultureRange;
 	//int iDX, iDY;
-	int iI;
+	int iI, iSpecialistCount;
 
 	eOldValue = getCultureLevel();
 
@@ -9510,60 +9510,31 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 	{
 		m_eCultureLevel = eNewValue;
 
-		/*if (eOldValue != NO_CULTURELEVEL)
-		{
-			for (iDX = -eOldValue; iDX <= eOldValue; iDX++)
-			{
-				for (iDY = -eOldValue; iDY <= eOldValue; iDY++)
-				{
-					iCultureRange = cultureDistance(iDX, iDY);
-
-					if (iCultureRange > getCultureLevel())
-					{
-						if (iCultureRange <= eOldValue)
-						{
-							FAssert(iCultureRange <= GC.getNumCultureLevelInfos());
-
-							pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-
-							if (pLoopPlot != NULL)
-							{
-								pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
-							}
-						}
-					}
-				}
-			}
-		}
-
-		if (getCultureLevel() != NO_CULTURELEVEL)
-		{
-			for (iDX = -getCultureLevel(); iDX <= getCultureLevel(); iDX++)
-			{
-				for (iDY = -getCultureLevel(); iDY <= getCultureLevel(); iDY++)
-				{
-					iCultureRange = cultureDistance(iDX, iDY);
-
-					if (iCultureRange > eOldValue)
-					{
-						if (iCultureRange <= getCultureLevel())
-						{
-							FAssert(iCultureRange <= GC.getNumCultureLevelInfos());
-
-							pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-
-							if (pLoopPlot != NULL)
-							{
-								pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
-							}
-						}
-					}
-				}
-			}
-		}*/
-
 		if (GC.getGameINLINE().isFinalInitialized())
 		{
+			// Leoreth: culture level specialist effects
+			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+			{
+				CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo((SpecialistTypes)iI);
+
+				if (!kSpecialist.isNoGlobalEffects())
+				{
+					iSpecialistCount = getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI);
+
+					for (int iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+					{
+						changeBaseYieldRate((YieldTypes)iJ, iSpecialistCount * (kSpecialist.getCultureLevelYieldChange(eNewValue, (YieldTypes)iJ) - kSpecialist.getCultureLevelYieldChange(eOldValue, (YieldTypes)iJ)));
+					}
+
+					for (int iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+					{
+						changeSpecialistCommerce((CommerceTypes)iJ, iSpecialistCount * (kSpecialist.getCultureLevelCommerceChange(eNewValue, (CommerceTypes)iJ) - kSpecialist.getCultureLevelCommerceChange(eOldValue, (CommerceTypes)iJ)));
+					}
+
+					changeBaseGreatPeopleRate(iSpecialistCount * (kSpecialist.getCultureLevelGreatPeopleRateChange(eNewValue) - kSpecialist.getCultureLevelGreatPeopleRateChange(eOldValue)));
+				}
+			}
+
 			if (isHasBuildingEffect((BuildingTypes)IMAGE_OF_THE_WORLD_SQUARE))
 			{
 				changeExtraTradeRoutes(eNewValue - eOldValue);
