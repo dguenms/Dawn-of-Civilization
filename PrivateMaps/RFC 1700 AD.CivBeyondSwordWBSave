@@ -12926,8 +12926,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	BonusType=BONUS_HORSE
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,23,30,46,
 EndPlot

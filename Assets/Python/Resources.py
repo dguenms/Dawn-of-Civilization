@@ -219,6 +219,7 @@ class Resources:
 			self.createResource(40, 25, iHorse) # Brazil
 			self.createResource(33, 10, iHorse) # Buenos Aires area
 			self.createResource(32, 8, iHorse) # Pampas
+			self.createResource(30, 30, iHorse) # Venezuela
 			
 			self.createResource(27, 36, iSugar) # Caribbean
 			self.createResource(39, 25, iSugar) # Brazil

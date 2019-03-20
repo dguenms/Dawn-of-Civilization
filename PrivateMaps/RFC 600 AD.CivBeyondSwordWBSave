@@ -11929,8 +11929,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
