@@ -725,7 +725,7 @@ def calculateStability(iPlayer):
 				if city.getOriginalOwner() != iPlayer and iGameTurn - city.getGameTurnAcquired() < utils.getTurns(25): iModifier += 1
 			
 			# not majority culture (includes foreign core and Persian UP)
-			if iPlayer != iPersia:
+			if iPlayer != iPersia or pPersia.isReborn():
 				if iCulturePercent < 50: iModifier += 1
 				if iCulturePercent < 20: iModifier += 1
 			
@@ -817,7 +817,7 @@ def calculateStability(iPlayer):
 	# recent expansion stability
 	iConquestModifier = 1
 	if bConquest: iConquestModifier += 1
-	if iPlayer == iPersia: iConquestModifier += 1 # Persian UP
+	if iPlayer == iPersia and not pPersia.isReborn(): iConquestModifier += 1 # Persian UP
 	
 	iRecentExpansionStability += iRecentlyFounded
 	iRecentExpansionStability += iConquestModifier * iRecentlyConquered
