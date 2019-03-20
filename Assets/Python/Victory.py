@@ -1548,7 +1548,7 @@ def onCityBuilt(iPlayer, city):
 	
 	# record first colony in the Americas for various UHVs
 	if not data.isFirstWorldColonized():
-		if utils.isPlotInArea((city.getX(), city.getY()), tAmericasTL, tAmericasBR):
+		if city.getRegionID() in lNorthAmerica + lSouthAmerica:
 			if iPlayer not in lCivGroups[5]:
 				data.iFirstNewWorldColony = iPlayer
 			
