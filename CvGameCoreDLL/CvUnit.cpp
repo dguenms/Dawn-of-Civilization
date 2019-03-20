@@ -14789,7 +14789,7 @@ bool CvUnit::rebuild()
 			{
 				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
 				{
-					if (pCity->canConstruct(eBuilding))
+					if (pCity->canConstruct(eBuilding) || pCity->getFirstBuildingOrder(eBuilding) != -1)
 					{
 						pCity->setNumRealBuilding(eBuilding, 1);
 						bBuilt = true;

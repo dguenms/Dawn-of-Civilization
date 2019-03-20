@@ -2918,7 +2918,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 							{
 								if (GET_PLAYER(pMissionCity->getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
 								{
-									if (!pMissionCity->isHasRealBuilding(eBuilding) && pMissionCity->canConstruct(eBuilding))
+									if (!pMissionCity->isHasRealBuilding(eBuilding) && (pMissionCity->canConstruct(eBuilding) || pMissionCity->getFirstBuildingOrder(eBuilding) != -1))
 									{
 										szBuffer.append(NEWLINE);
 										szBuffer.append(gDLL->getText("[ICON_BULLET]%s1", GC.getBuildingInfo(eBuilding).getText()));
