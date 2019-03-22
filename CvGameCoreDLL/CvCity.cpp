@@ -19272,9 +19272,11 @@ void CvCity::completeAcquisition(int iCaptureGold)
 		if (getTotalPopulationLoss() > 0)
 		{
 			setPopulationLoss(std::max(1, getTotalPopulationLoss() / iOccupationTime));
-			changePopulation(-(getTotalPopulationLoss() % getPopulationLoss()));
 
-			log(CvWString::format(L"total population loss: %d, population loss: %d", getTotalPopulationLoss(), getPopulationLoss()));
+			int iImmediateLoss = getTotalPopulationLoss() % iOccupationTime;
+			changePopulation(-iImmediateLoss);
+
+			log(CvWString::format(L"total population loss: %d, continuous population loss: %d, immediate population loss: %d", getTotalPopulationLoss(), getPopulationLoss(), iImmediateLoss));
 		}
 	}
 	else
