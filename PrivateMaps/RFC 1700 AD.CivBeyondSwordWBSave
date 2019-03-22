@@ -14704,7 +14704,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=22, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=22, (Spain)
