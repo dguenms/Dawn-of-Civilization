@@ -1212,7 +1212,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIUM"
 			
 	elif iPlayer == iGermany:
-		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
+		if getColumn(iGermany) <= 14 and pHolyRome.isAlive() and not teamHolyRome.isVassal(iGermany):
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
 	
 def adjective(iPlayer, bIgnoreVassal = False):
@@ -1511,7 +1511,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIAN"
 			
 	elif iPlayer == iGermany:
-		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
+		if getColumn(iGermany) <= 14 and pHolyRome.isAlive() and not teamHolyRome.isVassal(iGermany):
 			return "TXT_KEY_CIV_GERMANY_PRUSSIAN"
 	
 ### Title methods ###
