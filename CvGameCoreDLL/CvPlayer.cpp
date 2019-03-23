@@ -1607,7 +1607,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iCaptureGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Capture Gold 1");
 		iCaptureGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND2"), "Capture Gold 2");
 
-		if (iCaptureMaxTurns > 0 && GC.getGameINLINE().getGameTurn() > getScenarioStartTurn() + getTurns(iCaptureMaxTurns))
+		if (iCaptureMaxTurns > 0)
 		{
 			iCaptureGold *= std::max(0, std::min(GC.getGame().getGameTurn() - pOldCity->getGameTurnAcquired(), getTurns(iCaptureMaxTurns)));
 			iCaptureGold /= getTurns(iCaptureMaxTurns);
