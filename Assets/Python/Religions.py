@@ -553,3 +553,5 @@ class Religions:
 				rndnum = gc.getGame().getSorenRandNum(100, 'ReformationAnyway')
 				if rndnum >= lReformationMatrix[iCiv]:
 					city.setHasReligion(iProtestantism, True, False, False)
+					
+rel = Religions()

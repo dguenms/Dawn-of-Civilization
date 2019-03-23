@@ -3,6 +3,7 @@ from RFCUtils import utils
 from sets import Set
 from StoredData import data
 import Victory as vic
+from Religions import rel
 
 ### Class for easier tech specification ###
 
@@ -61,6 +62,7 @@ def initTechs(iPlayer, lTechs):
 def initTech(iPlayer, iTech):
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
+	rel.onTechAcquired(iPlayer, iTech)
 
 ### Tech preference functions ###
 

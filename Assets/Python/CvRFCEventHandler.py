@@ -6,7 +6,7 @@ import Popup as PyPopup
 from StoredData import data # edead
 import RiseAndFall
 import Barbs
-import Religions
+from Religions import rel
 import Resources
 import CityNameManager as cnm
 import UniquePowers     
@@ -85,7 +85,6 @@ class CvRFCEventHandler:
 
 		self.rnf = RiseAndFall.RiseAndFall()
 		self.barb = Barbs.Barbs()
-		self.rel = Religions.Religions()
 		self.res = Resources.Resources()
 		self.up = UniquePowers.UniquePowers()
 		self.aiw = AIWars.AIWars()
@@ -348,7 +347,7 @@ class CvRFCEventHandler:
 		if iOwner == iArabia:
 			if not gc.getGame().isReligionFounded(iIslam):
 				if tCity == (75, 33):
-					self.rel.foundReligion(tCity, iIslam)
+					rel.foundReligion(tCity, iIslam)
 				
 		# Leoreth: free defender and worker for AI colonies
 		if iOwner in lCivGroups[0]:
@@ -452,7 +451,7 @@ class CvRFCEventHandler:
 			return
 	
 		vic.onReligionFounded(iFounder, iReligion)
-		self.rel.onReligionFounded(iReligion, iFounder)
+		rel.onReligionFounded(iReligion, iFounder)
 		dc.onReligionFounded(iFounder)
 
 	def onVassalState(self, argsList):
@@ -568,7 +567,7 @@ class CvRFCEventHandler:
 		tCity = (city.getX(), city.getY())
 		
 		vic.onBuildingBuilt(iOwner, iBuildingType)
-		self.rel.onBuildingBuilt(city, iOwner, iBuildingType)
+		rel.onBuildingBuilt(city, iOwner, iBuildingType)
 		self.up.onBuildingBuilt(city, iOwner, iBuildingType)
 		
 		if iOwner < iNumPlayers:
@@ -650,7 +649,7 @@ class CvRFCEventHandler:
 		
 		self.rnf.checkTurn(iGameTurn)
 		self.barb.checkTurn(iGameTurn)
-		self.rel.checkTurn(iGameTurn)
+		rel.checkTurn(iGameTurn)
 		self.res.checkTurn(iGameTurn)
 		self.up.checkTurn(iGameTurn)
 		self.aiw.checkTurn(iGameTurn)
@@ -760,8 +759,8 @@ class CvRFCEventHandler:
 			cnm.onTechAcquired(iPlayer)
 			dc.onTechAcquired(iPlayer, iTech)
 
-		if gc.getPlayer(iPlayer).isAlive() and iGameTurn > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
-			self.rel.onTechAcquired(iTech, iPlayer)
+		if gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
+			rel.onTechAcquired(iTech, iPlayer)
 			if iGameTurn > getTurnForYear(1700):
 				self.aiw.forgetMemory(iTech, iPlayer)
 
