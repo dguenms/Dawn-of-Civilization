@@ -19309,7 +19309,6 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 	changeTotalPopulationLoss(1 + getTotalPopulationLoss() / 2);
 
 	int iSackGold = iCaptureGold / 2;
-	iSackGold += GC.getGame().getSorenRandNum(GC.getDefineINT("CAPTURE_GOLD_RAND1"), "Sack Gold 1");
 
 	// Leoreth: Viking UP
 	if (getOwnerINLINE() == VIKINGS && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
