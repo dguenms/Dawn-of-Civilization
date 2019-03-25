@@ -6907,6 +6907,14 @@
 		<Spanish>[ICON_BULLET]Nuclear Plants will become obsolete.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_MELTDOWN</Tag>
+		<English>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</English>
+		<French>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</French> <!-- needs translation -->
+		<German>Der Schlimmstfall ist eingetreten! Einer unserer Reaktoren hat eine Kernschmelze erlittern!</German>
+		<Italian>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</Italian>
+		<Spanish>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_HARBORMASTER_1</Tag>
 		<English>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</English>
 		<French>Le Capitaine de port[PARAGRAPH:1]Votre industrie de la marine marchande vous demande de construire suffisamment de [COLOR_BUILDING_TEXT]quais[COLOR_REVERT] pour leur permettre de dominer le commerce maritime mondial. Vous devrez aussi construire une flotte de [COLOR_UNIT_TEXT]caravelles[COLOR_REVERT] pour aider au transport de marchandises &#224; travers les mers.</French>
