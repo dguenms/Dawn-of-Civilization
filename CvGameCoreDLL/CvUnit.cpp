@@ -5110,7 +5110,8 @@ bool CvUnit::pillage()
 		gDLL->getEntityIFace()->AddMission(&kDefiniton);
 	}
 
-	if (eTempImprovement != NO_IMPROVEMENT || eTempRoute != NO_ROUTE)
+	// Leoreth: added positive pillage gold requirement, removed routes from checks
+	if (eTempImprovement != NO_IMPROVEMENT /*|| eTempRoute != NO_ROUTE*/)
 	{
 	    if (iPillageGold > 0)
 	    {
