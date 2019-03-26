@@ -6287,7 +6287,7 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		case TRADE_RESOURCES:
 			if (!bIgnoreAnnual)
 			{
-				iValue += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, iChange);
+				iValue += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, iChange);
 			}
 			break;
 		case TRADE_CITIES:
@@ -6691,7 +6691,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 							{
 								if (GET_PLAYER(ePlayer).AI_corporationBonusVal((BonusTypes)(pNode->m_data.m_iData)) == 0)
 								{
-									iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+									iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 									pabBonusDeal[pNode->m_data.m_iData] = true;
 								}
 							}
@@ -6795,7 +6795,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (GET_PLAYER(ePlayer).getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 0)
 							{
-								iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+								iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -6972,7 +6972,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 1)
 							{
-								iWeight += AI_relativeBonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+								iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -7156,88 +7156,59 @@ int CvPlayerAI::AI_bonusVal(BonusTypes eBonus, int iChange) const
 }
 
 // Leoreth
-int CvPlayerAI::AI_bonusHappinessVal(BonusTypes eBonus, int iChange) const
-{
-	int iValue = 0;
-	int iHappinessDifference;
-
-	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iHappinessDifference = std::max(0, iChange * (pLoopCity->unhappyLevel() - pLoopCity->happyLevel()));
-		
-		if (pLoopCity->foodDifference() > 0) iHappinessDifference += iChange * std::min(5, pLoopCity->estimateGrowth(getTurns(25)));
-
-		iValue += iChange * range(pLoopCity->getBonusHappiness(eBonus), 0, iHappinessDifference);
-	}
-
-	return iValue;
-}
-
-// Leoreth
-int CvPlayerAI::AI_bonusHealthVal(BonusTypes eBonus, int iChange) const
-{
-	int iValue = 0;
-	int iHealthDifference;
-
-	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iHealthDifference = std::max(0, iChange * (pLoopCity->badHealth() - pLoopCity->goodHealth()));
-
-		if (pLoopCity->foodDifference() > 0) iHealthDifference += iChange * std::min(5, pLoopCity->estimateGrowth(getTurns(25)));
-
-		iValue += iChange * range(pLoopCity->getBonusHealth(eBonus), 0, iHealthDifference);
-	}
-
-	return iValue;
-}
-
-// Leoreth
+// note: the returned value is always positive, even if iChange is negative
+// this is because negative value is being used when we calculate the value of our bonus we trade away
 int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
 {
-	int iHappinessValue = 0;
-	int iHealthValue = 0;
+	int iI, iNumBuildings;
+	BuildingClassTypes eBuildingClass;
+	BuildingTypes eBuilding;
 
-	int iCurrentAffectedCities = getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities();
-	int iAffectedCitiesChange = iChange * GC.getBonusInfo(eBonus).getAffectedCities();
+	CvBonusInfo& kBonus = GC.getBonusInfo(eBonus);
 
-	int iLeft = iCurrentAffectedCities + (iChange < 0 ? iAffectedCitiesChange : 0);
-	int iRight = iCurrentAffectedCities + (iChange > 0 ? iAffectedCitiesChange : 0);
+	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	int iNumCities = getNumCities();
 
-	int iHappiness, iHealth, iModifier;
+	int iCurrentAffectedCities = iNumBonuses * kBonus.getAffectedCities();
+	int iAffectedCitiesChange = iChange * kBonus.getAffectedCities();
 
-	int iLoop;
-	CvCity* pCity;
-	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	int iNewAffectedCities = std::max(0, std::min(iCurrentAffectedCities + iAffectedCitiesChange, iNumCities));
+	int iDiffAffectedCities = abs(iNewAffectedCities - iCurrentAffectedCities);
+
+	int iHappinessValue = kBonus.getHappiness() * iDiffAffectedCities * 100;
+	int iHealthValue = kBonus.getHealth() * iDiffAffectedCities * 100;
+
+	// Leoreth: getting first resource or losing last resource (building effects)
+	if ((iNumBonuses == 0 && iChange > 0) || (iNumBonuses > 0 && iNumBonuses + iChange <= 0))
 	{
-		iHappiness = pCity->getBonusHappiness(eBonus) * sgn(iChange);
-		iHealth = pCity->getBonusHealth(eBonus) * sgn(iChange);
-
-		iModifier = pCity->getCultureRank() < iRight ? 100 : 20;
-			
-		if (pCity->getCultureRank() >= iLeft && (pCity->getCultureRank() < iRight || iChange > 0))
+		for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
 		{
-			if (sgn(iChange) * (pCity->happyLevel() - pCity->unhappyLevel()) < 0)
+			eBuildingClass = (BuildingClassTypes)iI;
+			eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			iNumBuildings = getBuildingClassCountPlusMaking(eBuildingClass);
+
+			if (kBuilding.getBonusHappinessChanges(eBonus) > 0)
 			{
-				iHappinessValue += iHappiness * iModifier;
+				iHappinessValue += iNumBuildings * kBuilding.getBonusHappinessChanges(eBonus) * 100;
+
+				if (canConstruct(eBuilding))
+				{
+					iHappinessValue += (iNumCities - iNumBuildings) * kBuilding.getBonusHappinessChanges(eBonus) * 25;
+				}
 			}
 
-			if (sgn(iChange) * (pCity->goodHealth() - pCity->badHealth()) < 0)
+			if (kBuilding.getBonusHealthChanges(eBonus) > 0)
 			{
-				iHealthValue += iHealth * iModifier;
+				iHealthValue += iNumBuildings * kBuilding.getBonusHealthChanges(eBonus) * 100;
+
+				if (canConstruct(eBuilding))
+				{
+					iHealthValue += (iNumCities - iNumBuildings) * kBuilding.getBonusHealthChanges(eBonus) * 25;
+				}
 			}
 		}
-	}
-
-	if (abs(iHappinessValue) < 50 && GC.getBonusInfo(eBonus).getHappiness() > 0)
-	{
-		iHappinessValue = sgn(iChange) * 50;
-	}
-
-	if (abs(iHealthValue) < 50 && GC.getBonusInfo(eBonus).getHealth() > 0)
-	{
-		iHealthValue = sgn(iChange) * 50;
 	}
 
 	return iHappinessValue + iHealthValue;
@@ -7249,7 +7220,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 	PROFILE_FUNC();
 
 	//recalculate if not defined
-	if (m_aiBonusValue[eBonus] == -1 || m_aiLastBonusValueChange[eBonus] != iChange)
+	if (m_aiBonusValue[eBonus] == -1 || m_aiLastBonusValueChange[eBonus] == -1)
 	{
 		PROFILE("CvPlayerAI::AI_baseBonusVal::recalculate");
 
@@ -7262,204 +7233,248 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 
 		if (!GET_TEAM(getTeam()).isBonusObsolete(eBonus))
 		{
-			// Leoreth: value depends on access to resource and need
-			//iValue += (GC.getBonusInfo(eBonus).getHappiness() * 100);
-			//iValue += (GC.getBonusInfo(eBonus).getHealth() * 100);
-
 			iValue += AI_bonusEffectVal(eBonus, iChange);
 
-			CvTeam& kTeam = GET_TEAM(getTeam());
+			bool bFirstOrLast = (getNumAvailableBonuses(eBonus) == 0 && iChange > 0) || (getNumAvailableBonuses(eBonus) > 0 && getNumAvailableBonuses(eBonus) + iChange <= 0);
 
-			CvCity* pCapital = getCapitalCity();
-			int iCityCount = getNumCities();
-			int iCoastalCityCount = countNumCoastalCities();
-			
-			// find the first coastal city
-			CvCity* pCoastalCity = NULL;
-			CvCity* pUnconnectedCoastalCity = NULL;
-			if (iCoastalCityCount > 0)
+			if (bFirstOrLast)
 			{
-				int iLoop;
-				for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+				CvTeam& kTeam = GET_TEAM(getTeam());
+
+				CvCity* pCapital = getCapitalCity();
+				int iCityCount = getNumCities();
+				int iCoastalCityCount = countNumCoastalCities();
+			
+				// find the first coastal city
+				CvCity* pCoastalCity = NULL;
+				CvCity* pUnconnectedCoastalCity = NULL;
+				if (iCoastalCityCount > 0)
 				{
-					if (pLoopCity->isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
+					int iLoop;
+						for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 					{
-						if (pLoopCity->isConnectedToCapital(getID()))
+						if (pLoopCity->isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
 						{
-							pCoastalCity = pLoopCity;
-							break;
-						}
-						else if (pUnconnectedCoastalCity == NULL)
-						{
-							pUnconnectedCoastalCity = pLoopCity;
+							if (pLoopCity->isConnectedToCapital(getID()))
+							{
+								pCoastalCity = pLoopCity;
+									break;
+							}
+							else if (pUnconnectedCoastalCity == NULL)
+							{
+								pUnconnectedCoastalCity = pLoopCity;
+							}
 						}
 					}
 				}
-			}
-			if (pCoastalCity == NULL && pUnconnectedCoastalCity != NULL)
-			{
-				pCoastalCity = pUnconnectedCoastalCity;
-			}
 
-			for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
-			{
-				eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
-
-				if (eLoopUnit != NO_UNIT)
+				if (pCoastalCity == NULL && pUnconnectedCoastalCity != NULL)
 				{
-					CvUnitInfo& kLoopUnit = GC.getUnitInfo(eLoopUnit);
+					pCoastalCity = pUnconnectedCoastalCity;
+				}
 
-					iTempValue = 0;
 
-					if (kLoopUnit.getPrereqAndBonus() == eBonus)
+				for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+				{
+					eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+
+					if (eLoopUnit != NO_UNIT)
 					{
-						iTempValue += 50;
-					}
+						CvUnitInfo& kLoopUnit = GC.getUnitInfo(eLoopUnit);
 
-					for (iJ = 0; iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
-					{
-						if (kLoopUnit.getPrereqOrBonuses(iJ) == eBonus)
+						iTempValue = 0;
+
+						if (kLoopUnit.getPrereqAndBonus() == eBonus)
 						{
-							iTempValue += 40;
-						}
-					}
-
-					iTempValue += kLoopUnit.getBonusProductionModifier(eBonus) / 10;
-
-					if (iTempValue > 0)
-					{
-						bool bIsWater = (kLoopUnit.getDomainType() == DOMAIN_SEA);
-						
-						// if non-limited water unit, weight by coastal cities
-						if (bIsWater && !isLimitedUnitClass((UnitClassTypes)(kLoopUnit.getUnitClassType())))
-						{
-							iTempValue *= std::min(iCoastalCityCount * 2, iCityCount);	// double coastal cities, cap at total cities
-							iTempValue /= std::max(1, iCityCount);
+							iTempValue += 50;
 						}
 
-						if (canTrain(eLoopUnit))
+						for (iJ = 0; iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
 						{
-							// is it a water unit and no coastal cities or our coastal city cannot build because its obsolete
-							if ((bIsWater && (pCoastalCity == NULL || (pCoastalCity->allUpgradesAvailable(eLoopUnit) != NO_UNIT))) ||
-								// or our capital cannot build because its obsolete (we can already build all its upgrades)
-								(pCapital != NULL && pCapital->allUpgradesAvailable(eLoopUnit) != NO_UNIT))
+							if (kLoopUnit.getPrereqOrBonuses(iJ) == eBonus)
 							{
-								// its worthless
-								iTempValue = 2;
+								iTempValue += 40;
 							}
-							// otherwise, value units we could build if we had this bonus double
-							else
+						}
+
+						iTempValue += kLoopUnit.getBonusProductionModifier(eBonus) / 10;
+
+						if (iTempValue > 0)
+						{
+							bool bIsWater = (kLoopUnit.getDomainType() == DOMAIN_SEA);
+						
+							// if non-limited water unit, weight by coastal cities
+							if (bIsWater && !isLimitedUnitClass((UnitClassTypes)(kLoopUnit.getUnitClassType())))
+							{
+								iTempValue *= std::min(iCoastalCityCount * 2, iCityCount);	// double coastal cities, cap at total cities
+								iTempValue /= std::max(1, iCityCount);
+							}
+
+							if (canTrain(eLoopUnit))
+							{
+								// is it a water unit and no coastal cities or our coastal city cannot build because its obsolete
+								if ((bIsWater && (pCoastalCity == NULL || (pCoastalCity->allUpgradesAvailable(eLoopUnit) != NO_UNIT))) ||
+									// or our capital cannot build because its obsolete (we can already build all its upgrades)
+									(pCapital != NULL && pCapital->allUpgradesAvailable(eLoopUnit) != NO_UNIT))
+								{
+									// its worthless
+									iTempValue = 2;
+								}
+								// otherwise, value units we could build if we had this bonus double
+								else
+								{
+									iTempValue *= 2;
+								}
+							}
+
+							if (kLoopUnit.getPrereqAndTech() != NO_TECH)
+							{
+								iDiff = abs(GC.getTechInfo((TechTypes)(kLoopUnit.getPrereqAndTech())).getEra() - getCurrentEra());
+
+								if (iDiff == 0)
+								{
+									iTempValue *= 3;
+									iTempValue /= 2;
+								}
+								else
+								{
+									iTempValue /= iDiff;
+								}
+							}
+
+							iValue += iTempValue;
+						}
+					}
+				}
+
+				for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+				{
+					eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI)));
+
+					if (eLoopBuilding != NO_BUILDING)
+					{
+						CvBuildingInfo& kLoopBuilding = GC.getBuildingInfo(eLoopBuilding);
+					
+						iTempValue = 0;
+
+						if (kLoopBuilding.getPrereqAndBonus() == eBonus)
+						{
+							iTempValue += 30;
+						}
+
+						for (iJ = 0; iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
+						{
+							if (kLoopBuilding.getPrereqOrBonuses(iJ) == eBonus)
+							{
+								iTempValue += 20;
+							}
+						}
+
+						iTempValue += kLoopBuilding.getBonusProductionModifier(eBonus) / 10;
+
+						if (kLoopBuilding.getPowerBonus() == eBonus)
+						{
+							iTempValue += 60;
+						}
+					
+						for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+						{
+							iTempValue += kLoopBuilding.getBonusYieldModifier(eBonus, iJ) / 2;
+							if (kLoopBuilding.getPowerBonus() == eBonus)
+							{
+								iTempValue += kLoopBuilding.getPowerYieldModifier(iJ);
+							}
+						}
+					
+						{
+							// determine whether we have the tech for this building
+							bool bHasTechForBuilding = true;
+							if (!(kTeam.isHasTech((TechTypes)(kLoopBuilding.getPrereqAndTech()))))
+							{
+								bHasTechForBuilding = false;
+							}
+							for (int iPrereqIndex = 0; bHasTechForBuilding && iPrereqIndex < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iPrereqIndex++)
+							{
+								if (kLoopBuilding.getPrereqAndTechs(iPrereqIndex) != NO_TECH)
+								{
+									if (!(kTeam.isHasTech((TechTypes)(kLoopBuilding.getPrereqAndTechs(iPrereqIndex)))))
+									{
+										bHasTechForBuilding = false;
+									}
+								}
+							}
+						
+							bool bIsStateReligion = (((ReligionTypes) kLoopBuilding.getStateReligion()) != NO_RELIGION);
+
+							//check if function call is cached
+							bool bCanConstruct = canConstruct(eLoopBuilding, false, /*bTestVisible*/ true, /*bIgnoreCost*/ true);
+						
+							// bCanNeverBuild when true is accurate, it may be false in some cases where we will never be able to build 
+							bool bCanNeverBuild = (bHasTechForBuilding && !bCanConstruct && !bIsStateReligion);
+
+							// if we can never build this, it is worthless
+							if (bCanNeverBuild)
+							{
+								iTempValue = 0;
+							}
+							// double value if we can build it right now
+							else if (bCanConstruct)
 							{
 								iTempValue *= 2;
 							}
-						}
 
-						if (kLoopUnit.getPrereqAndTech() != NO_TECH)
-						{
-							iDiff = abs(GC.getTechInfo((TechTypes)(kLoopUnit.getPrereqAndTech())).getEra() - getCurrentEra());
-
-							if (iDiff == 0)
+							// if non-limited water building, weight by coastal cities
+							if (kLoopBuilding.isWater() && !isLimitedWonderClass((BuildingClassTypes)(kLoopBuilding.getBuildingClassType())))
 							{
-								iTempValue *= 3;
-								iTempValue /= 2;
+								iTempValue *= iCoastalCityCount;
+								iTempValue /= std::max(1, iCityCount/2);
 							}
-							else
+
+							if (kLoopBuilding.getPrereqAndTech() != NO_TECH)
 							{
-								iTempValue /= iDiff;
-							}
-						}
+								iDiff = abs(GC.getTechInfo((TechTypes)(kLoopBuilding.getPrereqAndTech())).getEra() - getCurrentEra());
 
-						iValue += iTempValue;
-					}
-				}
-			}
-
-			for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
-			{
-				eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI)));
-
-				if (eLoopBuilding != NO_BUILDING)
-				{
-					CvBuildingInfo& kLoopBuilding = GC.getBuildingInfo(eLoopBuilding);
-					
-					iTempValue = 0;
-
-					if (kLoopBuilding.getPrereqAndBonus() == eBonus)
-					{
-						iTempValue += 30;
-					}
-
-					for (iJ = 0; iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
-					{
-						if (kLoopBuilding.getPrereqOrBonuses(iJ) == eBonus)
-						{
-							iTempValue += 20;
-						}
-					}
-
-					iTempValue += kLoopBuilding.getBonusProductionModifier(eBonus) / 10;
-
-					if (kLoopBuilding.getPowerBonus() == eBonus)
-					{
-						iTempValue += 60;
-					}
-					
-					for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-					{
-						iTempValue += kLoopBuilding.getBonusYieldModifier(eBonus, iJ) / 2;
-						if (kLoopBuilding.getPowerBonus() == eBonus)
-						{
-							iTempValue += kLoopBuilding.getPowerYieldModifier(iJ);
-						}
-					}
-					
-					{
-						// determine whether we have the tech for this building
-						bool bHasTechForBuilding = true;
-						if (!(kTeam.isHasTech((TechTypes)(kLoopBuilding.getPrereqAndTech()))))
-						{
-							bHasTechForBuilding = false;
-						}
-						for (int iPrereqIndex = 0; bHasTechForBuilding && iPrereqIndex < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iPrereqIndex++)
-						{
-							if (kLoopBuilding.getPrereqAndTechs(iPrereqIndex) != NO_TECH)
-							{
-								if (!(kTeam.isHasTech((TechTypes)(kLoopBuilding.getPrereqAndTechs(iPrereqIndex)))))
+								if (iDiff == 0)
 								{
-									bHasTechForBuilding = false;
+									iTempValue *= 3;
+									iTempValue /= 2;
+								}
+								else
+								{
+									iTempValue /= iDiff;
 								}
 							}
+
+							iValue += iTempValue;
 						}
-						
-						bool bIsStateReligion = (((ReligionTypes) kLoopBuilding.getStateReligion()) != NO_RELIGION);
+					}
+				}
 
-						//check if function call is cached
-						bool bCanConstruct = canConstruct(eLoopBuilding, false, /*bTestVisible*/ true, /*bIgnoreCost*/ true);
-						
-						// bCanNeverBuild when true is accurate, it may be false in some cases where we will never be able to build 
-						bool bCanNeverBuild = (bHasTechForBuilding && !bCanConstruct && !bIsStateReligion);
+				for (iI = 0; iI < GC.getNumProjectInfos(); iI++)
+				{
+					ProjectTypes eProject = (ProjectTypes) iI;
+					CvProjectInfo& kLoopProject = GC.getProjectInfo(eProject);
+					iTempValue = 0;
 
-						// if we can never build this, it is worthless
-						if (bCanNeverBuild)
+					iTempValue += kLoopProject.getBonusProductionModifier(eBonus) / 10;
+
+					if (iTempValue > 0)
+					{
+						bool bMaxedOut = (GC.getGameINLINE().isProjectMaxedOut(eProject) || kTeam.isProjectMaxedOut(eProject));
+
+						if (bMaxedOut)
 						{
+							// project worthless
 							iTempValue = 0;
 						}
-						// double value if we can build it right now
-						else if (bCanConstruct)
+						else if (canCreate(eProject))
 						{
 							iTempValue *= 2;
 						}
 
-						// if non-limited water building, weight by coastal cities
-						if (kLoopBuilding.isWater() && !isLimitedWonderClass((BuildingClassTypes)(kLoopBuilding.getBuildingClassType())))
+						if (kLoopProject.getTechPrereq() != NO_TECH)
 						{
-							iTempValue *= iCoastalCityCount;
-							iTempValue /= std::max(1, iCityCount/2);
-						}
-
-						if (kLoopBuilding.getPrereqAndTech() != NO_TECH)
-						{
-							iDiff = abs(GC.getTechInfo((TechTypes)(kLoopBuilding.getPrereqAndTech())).getEra() - getCurrentEra());
+							iDiff = abs(GC.getTechInfo((TechTypes)(kLoopProject.getTechPrereq())).getEra() - getCurrentEra());
 
 							if (iDiff == 0)
 							{
@@ -7475,75 +7490,34 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 						iValue += iTempValue;
 					}
 				}
-			}
 
-			for (iI = 0; iI < GC.getNumProjectInfos(); iI++)
-			{
-				ProjectTypes eProject = (ProjectTypes) iI;
-				CvProjectInfo& kLoopProject = GC.getProjectInfo(eProject);
-				iTempValue = 0;
-
-				iTempValue += kLoopProject.getBonusProductionModifier(eBonus) / 10;
-
-				if (iTempValue > 0)
+				RouteTypes eBestRoute = getBestRoute();
+				for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
 				{
-					bool bMaxedOut = (GC.getGameINLINE().isProjectMaxedOut(eProject) || kTeam.isProjectMaxedOut(eProject));
+					RouteTypes eRoute = (RouteTypes)(GC.getBuildInfo((BuildTypes)iI).getRoute());
 
-					if (bMaxedOut)
+					if (eRoute != NO_ROUTE)
 					{
-						// project worthless
 						iTempValue = 0;
-					}
-					else if (canCreate(eProject))
-					{
-						iTempValue *= 2;
-					}
-
-					if (kLoopProject.getTechPrereq() != NO_TECH)
-					{
-						iDiff = abs(GC.getTechInfo((TechTypes)(kLoopProject.getTechPrereq())).getEra() - getCurrentEra());
-
-						if (iDiff == 0)
+						if (GC.getRouteInfo(eRoute).getPrereqBonus() == eBonus)
 						{
-							iTempValue *= 3;
-							iTempValue /= 2;
+							iTempValue += 80;
+						}
+						for (iJ = 0; iJ < GC.getNUM_ROUTE_PREREQ_OR_BONUSES(); iJ++)
+						{
+							if (GC.getRouteInfo(eRoute).getPrereqOrBonus(iJ) == eBonus)
+							{
+								iTempValue += 40;
+							}
+						}
+						if ((eBestRoute != NO_ROUTE) && (GC.getRouteInfo(getBestRoute()).getValue() <= GC.getRouteInfo(eRoute).getValue()))
+						{
+							iValue += iTempValue;
 						}
 						else
 						{
-							iTempValue /= iDiff;
+							iValue += iTempValue / 2;
 						}
-					}
-
-					iValue += iTempValue;
-				}
-			}
-
-			RouteTypes eBestRoute = getBestRoute();
-			for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
-			{
-				RouteTypes eRoute = (RouteTypes)(GC.getBuildInfo((BuildTypes)iI).getRoute());
-
-				if (eRoute != NO_ROUTE)
-				{
-					iTempValue = 0;
-					if (GC.getRouteInfo(eRoute).getPrereqBonus() == eBonus)
-					{
-						iTempValue += 80;
-					}
-					for (iJ = 0; iJ < GC.getNUM_ROUTE_PREREQ_OR_BONUSES(); iJ++)
-					{
-						if (GC.getRouteInfo(eRoute).getPrereqOrBonus(iJ) == eBonus)
-						{
-							iTempValue += 40;
-						}
-					}
-					if ((eBestRoute != NO_ROUTE) && (GC.getRouteInfo(getBestRoute()).getValue() <= GC.getRouteInfo(eRoute).getValue()))
-					{
-						iValue += iTempValue;
-					}
-					else
-					{
-						iValue += iTempValue / 2;
 					}
 				}
 			}
@@ -7561,9 +7535,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 
 
 		//clamp value non-negative
-		//m_aiBonusValue[eBonus] = std::max(0, iValue);
-
-		m_aiBonusValue[eBonus] = iValue;
+		m_aiBonusValue[eBonus] = std::max(0, iValue);
 		m_aiLastBonusValueChange[eBonus] = iChange;
 	}
 
@@ -7618,13 +7590,6 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 	//iValue /= 10;
 
 	return iValue;
-}
-
-
-// Leoreth
-int CvPlayerAI::AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
-{
-	return AI_bonusTradeVal(eBonus, ePlayer, iChange) - GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), -iChange) / 2;
 }
 
 
@@ -7700,6 +7665,11 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 	{
 		return DENIAL_JOKING;
 	}*/
+
+	if (GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) > AI_corporationBonusVal(eBonus) * 2)
+	{
+		return DENIAL_JOKING;
+	}
 
 	bStrategic = false;
 
@@ -12835,7 +12805,7 @@ void CvPlayerAI::AI_doDiplo()
 								{
 									if (getNumTradeableBonuses((BonusTypes)iJ) > 1)
 									{
-										if ((GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
+										if ((GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
 											&& (GET_PLAYER((PlayerTypes)iI).AI_bonusVal((BonusTypes)iJ, 1) > AI_bonusVal((BonusTypes)iJ, -1)))
 										{
 											setTradeItem(&item, TRADE_RESOURCES, iJ);
@@ -12948,7 +12918,7 @@ void CvPlayerAI::AI_doDiplo()
 									{
 										if (GET_PLAYER((PlayerTypes)iI).getNumTradeableBonuses((BonusTypes)iJ) > 0 && getNumAvailableBonuses((BonusTypes)iJ) == 0)
 										{
-											iValue = AI_relativeBonusTradeVal((BonusTypes)iJ, (PlayerTypes)iI, 1);
+											iValue = AI_bonusTradeVal((BonusTypes)iJ, (PlayerTypes)iI, 1);
 
 											if (iValue > iBestValue)
 											{
@@ -13610,7 +13580,7 @@ void CvPlayerAI::AI_doDiplo()
 															{
 																if (GET_PLAYER((PlayerTypes)iI).getNumTradeableBonuses((BonusTypes)iJ) > 1)
 																{
-																	if (AI_relativeBonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
+																	if (AI_bonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
 																	{
 																		setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -13978,7 +13948,7 @@ void CvPlayerAI::AI_doDiplo()
 												{
 													if (GET_PLAYER((PlayerTypes)iI).AI_corporationBonusVal((BonusTypes)iJ) == 0)
 													{
-														if (AI_relativeBonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
+														if (AI_bonusTradeVal(((BonusTypes)iJ), ((PlayerTypes)iI), 1) > 0)
 													{
 														setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14008,7 +13978,7 @@ void CvPlayerAI::AI_doDiplo()
 													{
 														if (getNumTradeableBonuses((BonusTypes)iJ) > 1)
 														{
-															if (GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
+															if (GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(((BonusTypes)iJ), getID(), 1) > 0)
 															{
 																setTradeItem(&item, TRADE_RESOURCES, iJ);
 
@@ -14029,7 +13999,7 @@ void CvPlayerAI::AI_doDiplo()
 
 												if (eBestGiveBonus != NO_BONUS)
 												{
-													if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || (AI_relativeBonusTradeVal(eBestReceiveBonus, ((PlayerTypes)iI), -1) >= GET_PLAYER((PlayerTypes)iI).AI_relativeBonusTradeVal(eBestGiveBonus, getID(), 1)))
+													if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || (AI_bonusTradeVal(eBestReceiveBonus, ((PlayerTypes)iI), -1) >= GET_PLAYER((PlayerTypes)iI).AI_bonusTradeVal(eBestGiveBonus, getID(), 1)))
 													{
 														ourList.clear();
 														theirList.clear();
