@@ -4416,7 +4416,6 @@ def doTradingCompanyConquerors1(argsList):
 					gc.getPlayer(iTargetCiv).changeGold(200)
 				else:
 					utils.colonialConquest(iPlayer, tPlot)
-				targetList.remove(tPlot)
 
 	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
 
