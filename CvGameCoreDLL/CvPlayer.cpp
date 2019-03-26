@@ -2101,6 +2101,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pNewCity);
 		}
 	}
+	else
+	{
+		CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pNewCity);
+	}
 
 	// Leoreth: make sure flip at the beginning creates a capital
 	BuildingClassTypes eCapitalBuildingClass = (BuildingClassTypes)GC.getDefineINT("CAPITAL_BUILDINGCLASS");
