@@ -7185,6 +7185,12 @@ int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
 		{
 			eBuildingClass = (BuildingClassTypes)iI;
 			eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+
+			if (eBuilding == NO_BUILDING)
+			{
+				continue;
+			}
+
 			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 
 			iNumBuildings = getBuildingClassCountPlusMaking(eBuildingClass);
