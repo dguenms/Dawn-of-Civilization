@@ -7722,6 +7722,20 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_TEMPORARY_UNHAPPINESS"));
 	}
 
+	// Unhappiness decay modifier
+	if (GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		if (GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() == 100)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER_DOUBLE"));
+		}
+		else
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER", GC.getCivicInfo(eCivic).getUnhappinessDecayModifier()));
+		}
+	}
+
 	//	Improvement Yields
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{

@@ -3121,6 +3121,22 @@
 		<Spanish>[ICON_BULLET]No temporary [ICON_UNHAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER</Tag>
+		<English>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</English>
+		<French>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</French>
+		<German>[ICON_BULLET]Tempor&#228;re [ICON_UNHAPPY] nimmt %D1%% schneller ab</German>
+		<Italian>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</Italian>
+		<Spanish>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER_DOUBLE</Tag>
+		<English>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</English>
+		<French>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</French>
+		<German>[ICON_BULLET]Tempor&#228;re [ICON_UNHAPPY] nimmt zweimal schneller ab</German>
+		<Italian>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</Italian>
+		<Spanish>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

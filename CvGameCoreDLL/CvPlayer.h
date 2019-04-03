@@ -965,6 +965,10 @@ public:
 	int getNoTemporaryUnhappinessCount() const;
 	void changeNoTemporaryUnhappinessCount(int iChange);
 
+	// Leoreth
+	int getUnhappinessDecayModifier() const;
+	void changeUnhappinessDecayModifier(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1453,6 +1457,7 @@ protected:
 	int m_iColonialSlaveryCount; // Leoreth
 	int m_iNoResistanceCount; // Leoreth
 	int m_iNoTemporaryUnhappinessCount; // Leoreth
+	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

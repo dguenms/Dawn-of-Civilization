@@ -5769,6 +5769,7 @@ m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
 m_iLevelExperienceModifier(0), // Leoreth
+m_iUnhappinessDecayModifier(0), // Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -6411,11 +6412,16 @@ bool CvCivicInfo::isNoTemporaryUnhappiness() const
 	return m_bNoTemporaryUnhappiness;
 }
 
+int CvCivicInfo::getUnhappinessDecayModifier() const
+{
+	return m_iUnhappinessDecayModifier;
+}
+
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
 
-	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts, 2 for no resistance and no temporary unhappiness
+	uint uiFlag=0; // Leoreth: 1 for level experience modifier and minimal specialist counts, 2 for no resistance and no temporary unhappiness, 3 for unhappiness decay modifier
 	stream->Read(&uiFlag);		// flag for expansion
 
 	stream->Read(&m_iCivicOptionType);
@@ -6468,6 +6474,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
 	if (uiFlag >= 1) stream->Read(&m_iLevelExperienceModifier); // Leoreth
+	if (uiFlag >= 3) stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6600,7 +6607,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
 
-	uint uiFlag=2; // Leoreth: 1 for level experience modifier and minimal specialist count, 2 for no resistance
+	uint uiFlag=3; // Leoreth: 1 for level experience modifier and minimal specialist count, 2 for no resistance, 3 for unhappiness decay modifier
 	stream->Write(uiFlag);		// flag for expansion
 
 	stream->Write(m_iCivicOptionType);
@@ -6653,6 +6660,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
 	stream->Write(m_iLevelExperienceModifier); // Leoreth
+	stream->Write(m_iUnhappinessDecayModifier); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6784,6 +6792,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionFreeExperience, "iStateReligionFreeExperience");
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iUnhappinessDecayModifier, "iUnhappinessDecayModifier"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{

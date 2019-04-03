@@ -1163,24 +1163,26 @@ void CvCity::doTurn()
 		return;
 	}
 
+	int iUnhappinessDecay = -1 * (100 + GET_PLAYER(getOwnerINLINE()).getUnhappinessDecayModifier()) / 100;
+
 	if (getHurryAngerTimer() > 0)
 	{
-		changeHurryAngerTimer(-1);
+		changeHurryAngerTimer(iUnhappinessDecay);
 	}
 
 	if (getConscriptAngerTimer() > 0)
 	{
-		changeConscriptAngerTimer(-1);
+		changeConscriptAngerTimer(iUnhappinessDecay);
 	}
 
 	if (getDefyResolutionAngerTimer() > 0)
 	{
-		changeDefyResolutionAngerTimer(-1);
+		changeDefyResolutionAngerTimer(iUnhappinessDecay);
 	}
 
 	if (getHappinessTimer() > 0)
 	{
-		changeHappinessTimer(-1);
+		changeHappinessTimer(iUnhappinessDecay);
 	}
 
 	if (getEspionageHealthCounter() > 0)
@@ -1190,7 +1192,7 @@ void CvCity::doTurn()
 
 	if (getEspionageHappinessCounter() > 0)
 	{
-		changeEspionageHappinessCounter(-1);
+		changeEspionageHappinessCounter(iUnhappinessDecay);
 	}
 
 	if (isOccupation() || (angryPopulation() > 0) || (healthRate() < 0))
@@ -7405,7 +7407,7 @@ void CvCity::changeEspionageHappinessCounter(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iEspionageHappinessCounter += iChange;
+		m_iEspionageHappinessCounter = std::max(0, m_iEspionageHappinessCounter + iChange);
 	}
 }
 
@@ -8427,7 +8429,7 @@ void CvCity::changeHurryAngerTimer(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iHurryAngerTimer = (m_iHurryAngerTimer + iChange);
+		m_iHurryAngerTimer = std::max(0, m_iHurryAngerTimer + iChange);
 		FAssert(getHurryAngerTimer() >= 0);
 
 		AI_setAssignWorkDirty(true);
@@ -8445,7 +8447,7 @@ void CvCity::changeConscriptAngerTimer(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iConscriptAngerTimer = (m_iConscriptAngerTimer + iChange);
+		m_iConscriptAngerTimer = std::max(0, m_iConscriptAngerTimer + iChange);
 		FAssert(getConscriptAngerTimer() >= 0);
 
 		AI_setAssignWorkDirty(true);
@@ -8462,7 +8464,7 @@ void CvCity::changeDefyResolutionAngerTimer(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iDefyResolutionAngerTimer += iChange;
+		m_iDefyResolutionAngerTimer = std::max(0, m_iDefyResolutionAngerTimer + iChange);
 		FAssert(getDefyResolutionAngerTimer() >= 0);
 
 		AI_setAssignWorkDirty(true);
@@ -8492,7 +8494,7 @@ void CvCity::changeHappinessTimer(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iHappinessTimer += iChange;
+		m_iHappinessTimer = std::max(0, m_iHappinessTimer + iChange);
 		FAssert(getHappinessTimer() >= 0);
 
 		AI_setAssignWorkDirty(true);

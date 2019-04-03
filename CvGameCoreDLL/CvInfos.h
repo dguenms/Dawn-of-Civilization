@@ -1407,6 +1407,7 @@ public:
 	int getStateReligionFreeExperience() const;								// Exposed to Python
 	int getExpInBorderModifier() const;				// Exposed to Python
 	int getLevelExperienceModifier() const; // Leoreth
+	int getUnhappinessDecayModifier() const; // Leoreth
 
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
@@ -1524,6 +1525,7 @@ protected:
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 	int m_iLevelExperienceModifier; // Leoreth
+	int m_iUnhappinessDecayModifier; // Leoreth
 
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;
