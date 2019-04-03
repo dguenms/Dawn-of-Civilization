@@ -42,8 +42,9 @@ class Resources:
 				bWater = gc.getMap().plot(iX, iY).isWater()
 				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not bWater, bWater, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				if not city.isNone():
-					szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
-					CyInterface().addMessage(iOwner, False, iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
+					if gc.getBonusInfo(iBonus).getTechReveal() == -1 or gc.getTeam(city.getTeam()).isHasTech(gc.getBonusInfo(iBonus).getTechReveal()):
+						szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
+						CyInterface().addMessage(iOwner, False, iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
 
 
 	def removeResource(self, iX, iY, textKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
