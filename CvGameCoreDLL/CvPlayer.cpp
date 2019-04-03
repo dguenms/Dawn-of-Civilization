@@ -1454,7 +1454,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	PlayerTypes eHighestCulturePlayer;
 	BuildingTypes eBuilding;
 	bool bRecapture;
-	bool bRaze;
+	bool bDecide;
 	bool bGift;
 	int iOldCultureLevel;
 	int iCaptureGold;
@@ -2063,14 +2063,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			{
 				//popup raze option
 				eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
-				bRaze = canRaze(pNewCity);
+				bDecide = canRaze(pNewCity) || canSack(pNewCity) || canSpare(pNewCity, eHighestCulturePlayer, iCaptureGold);
 				bGift = ((eHighestCulturePlayer != NO_PLAYER)
 						&& (eHighestCulturePlayer != getID())
 						&& ((getTeam() == GET_PLAYER(eHighestCulturePlayer).getTeam())
 							|| GET_TEAM(getTeam()).isOpenBorders(GET_PLAYER(eHighestCulturePlayer).getTeam())
 							|| GET_TEAM(GET_PLAYER(eHighestCulturePlayer).getTeam()).isVassal(getTeam())));
 
-				if (bRaze || bGift)
+				if (bDecide || bGift)
 				{
 					CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_RAZECITY);
 					pInfo->setData1(pNewCity->getID());
