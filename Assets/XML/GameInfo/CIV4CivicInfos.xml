@@ -205,7 +205,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Democracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iGreatPeopleRateModifier>50</iGreatPeopleRateModifier>
+			<iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_PRESIDENT</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
