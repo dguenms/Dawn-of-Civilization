@@ -240,8 +240,6 @@ class Resources:
 			
 			self.createResource(67, 44, iTobacco) # Turkey
 			
-			self.createResource(90, 35, iTea) # West Bengal
-			
 			self.createResource(39, 16, iFish) # Brazil
 			
 			self.createResource(70, 59, iDeer) # St Petersburg
