@@ -46,7 +46,6 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
-			<iDistanceMaintenanceModifier>-25</iDistanceMaintenanceModifier>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_CONSTABULARY</BuildingType>
