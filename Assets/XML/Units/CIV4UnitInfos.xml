@@ -325,6 +325,7 @@
 			<Class>UNITCLASS_SETTLER</Class>
 			<Type>UNIT_AMERICAN_PIONEER</Type>
 			<Capture>UNITCLASS_WORKER</Capture>
+			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AMERICAN_PIONEER</Description>
