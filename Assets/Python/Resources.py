@@ -33,6 +33,11 @@ class Resources:
 			if iBonus == -1:
 				iBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
 				gc.getMap().plot(iX,iY).setBonusType(-1)
+				
+				iImprovement = gc.getMap().plot(iX, iY).getImprovementType()
+				if iImprovement >= 0:
+					if gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(iBonus):
+						gc.getMap().plot(iX, iY).setImprovementType(-1)
 			else:
 				gc.getMap().plot(iX,iY).setBonusType(iBonus)
 				
