@@ -10274,6 +10274,13 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	{
 		pOldPlot->removeUnit(this, bUpdate && !hasCargo());
 
+#ifdef _DEBUG
+		for (int i = 0; i < pOldPlot->getNumUnits(); i++)
+		{
+			FAssert(pOldPlot->getUnitByIndex(i) != this);
+		}
+#endif
+
 		pOldPlot->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
 
 		pOldPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), -1);
@@ -10365,6 +10372,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	}
 
 	FAssertMsg(plot() == pNewPlot, "plot is expected to equal pNewPlot");
+	FAssert(at(iX, iY));
 
 	if (pNewPlot != NULL)
 	{
@@ -10409,6 +10417,19 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
 
 		pNewPlot->addUnit(this, bUpdate && !hasCargo());
+
+#ifdef _DEBUG
+		bool bFound = false;
+		for (int i = 0; i < pNewPlot->getNumUnits(); i++)
+		{
+			if (pNewPlot->getUnitByIndex(i) == this)
+			{
+				bFound = true;
+				break;
+			}
+		}
+		FAssert(bFound);
+#endif
 
 		pNewPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), 1);
 		pNewPlot->area()->changePower(getOwnerINLINE(), m_pUnitInfo->getPowerValue());

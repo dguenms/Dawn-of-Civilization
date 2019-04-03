@@ -948,6 +948,8 @@ void CvCity::kill(bool bUpdatePlotGroups)
 
 	setPopulation(0);
 
+	updateHappinessYield();
+
 	AI_assignWorkingPlots();
 
 	clearOrderQueue();
@@ -984,6 +986,17 @@ void CvCity::kill(bool bUpdatePlotGroups)
 	FAssertMsg(getNumGreatPeople() == 0, "getNumGreatPeople is expected to be 0");
 	FAssertMsg(getBaseYieldRate(YIELD_FOOD) == 0, "getBaseYieldRate(YIELD_FOOD) is expected to be 0");
 	FAssertMsg(getBaseYieldRate(YIELD_PRODUCTION) == 0, "getBaseYieldRate(YIELD_PRODUCTION) is expected to be 0");
+
+#ifdef _DEBUG
+	if (getBaseYieldRate(YIELD_COMMERCE) != 0)
+	{
+		FAssert(getTradeYield(YIELD_COMMERCE) == 0);
+		FAssert(getExtraSpecialistYield(YIELD_COMMERCE) == 0);
+		FAssert(getHappinessYield(YIELD_COMMERCE) == 0);
+		FAssert(getCorporationYield(YIELD_COMMERCE) == 0);
+	}
+#endif
+
 	FAssertMsg(getBaseYieldRate(YIELD_COMMERCE) == 0, "getBaseYieldRate(YIELD_COMMERCE) is expected to be 0");
 	FAssertMsg(!isProduction(), "isProduction is expected to be false");
 
@@ -1213,47 +1226,17 @@ void CvCity::doTurn()
 	// XXX
 #ifdef _DEBUG
 	{
-		CvPlot* pPlot;
-		int iCount;
-		int iI, iJ;
+		int iI;
 
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			FAssert(getBaseYieldRate((YieldTypes)iI) >= 0);
 			FAssert(getYieldRate((YieldTypes)iI) >= 0);
 
-			iCount = 0;
-
-			for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
-			{
-				if (isWorkingPlot(iJ))
-				{
-					pPlot = getCityIndexPlot(iJ);
-
-					if (pPlot != NULL)
-					{
-						iCount += pPlot->getYield((YieldTypes)iI);
-					}
-				}
-			}
-
-			for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
-			{
-				iCount += (GET_PLAYER(getOwnerINLINE()).specialistYield(((SpecialistTypes)iJ), ((YieldTypes)iI)) * (getSpecialistCount((SpecialistTypes)iJ) + getFreeSpecialistCount((SpecialistTypes)iJ)));
-			}
-
-			for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
-			{
-				iCount += getNumActiveBuilding((BuildingTypes)iJ) * (GC.getBuildingInfo((BuildingTypes) iJ).getYieldChange(iI) + getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes) iJ).getBuildingClassType(), (YieldTypes)iI));
-			}
-
-			iCount += getTradeYield((YieldTypes)iI);
-			iCount += getCorporationYield((YieldTypes)iI);
-			iCount += getHappinessYield((YieldTypes)iI);
-
 			int iBaseYieldRate = getBaseYieldRate((YieldTypes)iI);
+			int iCalculatedYieldRate = calculateBaseYieldRate((YieldTypes)iI);
 
-			FAssert(iCount == getBaseYieldRate((YieldTypes)iI));
+			FAssert(iCalculatedYieldRate == getBaseYieldRate((YieldTypes)iI));
 		}
 
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -9473,16 +9456,21 @@ TeamTypes CvCity::getTeam() const
 
 CultureLevelTypes CvCity::getCultureLevel() const
 {
-	//Leoreth: cap at two for minors
-	if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2)
-		return std::min(m_eCultureLevel, (CultureLevelTypes)2);
-
 	return m_eCultureLevel;
 }
 
 
 int CvCity::getCultureThreshold() const
 {
+	// Leoreth: cap at two for minors
+	if (GET_PLAYER(getOwnerINLINE()).isMinorCiv())
+	{
+		if (getCultureLevel() >= 2)
+		{
+			return MAX_INT;
+		}
+	}
+
 	return getCultureThreshold(getCultureLevel());
 }
 
@@ -9499,11 +9487,8 @@ int CvCity::getCultureThreshold(CultureLevelTypes eLevel)
 
 void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups)
 {
-	//CvPlot* pLoopPlot;
 	CvWString szBuffer;
 	CultureLevelTypes eOldValue;
-	//int iCultureRange;
-	//int iDX, iDY;
 	int iI, iSpecialistCount;
 
 	eOldValue = getCultureLevel();
@@ -19370,7 +19355,7 @@ void CvCity::spare(int iCaptureGold)
 
 	int iSpareGold = 2 * getBuildingDamage() + iCaptureGold;
 
-	if (!GET_PLAYER(getOwnerINLINE()).isNoResistance())
+	if (getOccupationTimer() > 0)
 	{
 		changeOccupationTimer(-(1 + getOccupationTimer() / 2), false);
 	}
@@ -19409,4 +19394,85 @@ bool CvCity::canLiberate() const
 	}
 
 	return true;
+}
+
+int CvCity::calculateBaseYieldRate(YieldTypes eYield) const
+{
+	int iNumSpecialists;
+
+	int iYield = 0;
+
+	for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		if (isWorkingPlot(iI))
+		{
+			iYield += getCityIndexPlot(iI)->getYield(eYield);
+		}
+	}
+
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (isHasRealBuilding((BuildingTypes)iI))
+		{
+			if (!GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI))
+			{
+				iYield += GC.getBuildingInfo((BuildingTypes)iI).getYieldChange(eYield);
+				iYield += getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType(), eYield);
+			}
+		}
+	}
+
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		iNumSpecialists = getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI);
+
+		iYield += iNumSpecialists * GC.getSpecialistInfo((SpecialistTypes)iI).getYieldChange(eYield);
+
+		iYield += iNumSpecialists * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield((SpecialistTypes)iI, eYield);
+		
+		if (!GC.getSpecialistInfo((SpecialistTypes)iI).isNoGlobalEffects())
+		{
+			iYield += iNumSpecialists * GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelYieldChange(getCultureLevel(), eYield);
+		}
+	}
+
+	iYield += getTradeYield(eYield);
+
+	iYield += getHappinessYield(eYield);
+
+	iYield += getCorporationYield(eYield);
+
+	return iYield;
+}
+
+int CvCity::calculateBaseGreatPeopleRate() const
+{
+	int iRate = 0;
+
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (isHasRealBuilding((BuildingTypes)iI))
+		{
+			iRate += GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
+		}
+	}
+
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (isHasRealBuilding((BuildingTypes)iI))
+		{
+			if (!GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI))
+			{
+				iRate += getBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType());
+			}
+		}
+	}
+
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		int iChange = (getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI)) * getSpecialistGreatPeopleRateChange((SpecialistTypes)iI);
+		iRate += iChange;
+	}
+
+	return iRate;
 }

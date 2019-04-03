@@ -1223,6 +1223,9 @@ public:
 
 	int getBestYieldAvailable(YieldTypes eYield) const;
 
+	int calculateBaseYieldRate(YieldTypes eYield) const;
+	int calculateBaseGreatPeopleRate() const;
+
 protected:
 
 	int m_iID;
