@@ -21404,7 +21404,7 @@ void CvGameTextMgr::setWonderLimitHelp(CvWStringBuffer &szBuffer, CvCity& city, 
 	}
 	else
 	{
-		int iWorldWonders = city.getNumWorldWonders();
+		int iWorldWonders = city.getNumActiveWorldWonders();
 		int iWorldWondersLimit = GC.getCultureLevelInfo((CultureLevelTypes)iCultureLevel).getWonderLimit();
 		szBuffer.append(gDLL->getText("INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP", iWorldWonders, iWorldWondersLimit, GC.getCultureLevelInfo((CultureLevelTypes)iCultureLevel).getTextKeyWide()));
 	}
