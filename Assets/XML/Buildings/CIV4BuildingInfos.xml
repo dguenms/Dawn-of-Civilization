@@ -5296,7 +5296,6 @@
 			<Strategy>TXT_KEY_BUILDING_AUTOMATED_FACTORY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AUTOMATED_FACTORY</ArtDefineTag>
-			<FreeStartEra>NONE</FreeStartEra>
 			<PrereqTech>TECH_AUTOMATION</PrereqTech>
 			<iCost>500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
