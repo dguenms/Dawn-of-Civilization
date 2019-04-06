@@ -1168,6 +1168,8 @@ void CvPlot::verifyUnitValidPlot()
 		}
 	}
 
+	bool bAutoplay = GC.getGame().isPlayerAutoplay();
+
 	std::vector<CvUnit*>::iterator it = aUnits.begin();
 	while (it != aUnits.end())
 	{
@@ -1183,8 +1185,8 @@ void CvPlot::verifyUnitValidPlot()
 					if (!(pLoopUnit->isCombat()))
 					{
 						//Rhye - breaks the auto-play
-						//if (!isValidDomainForLocation(*pLoopUnit) || !(pLoopUnit->canEnterArea(getTeam(), area())))
-						if (!(pLoopUnit->canEnterArea(getTeam(), area())))
+						if ((!bAutoplay && !isValidDomainForLocation(*pLoopUnit)) || !pLoopUnit->canEnterArea(getTeam(), area()))
+						//if (!(pLoopUnit->canEnterArea(getTeam(), area())))
 						{
 							if (!pLoopUnit->jumpToNearestValidPlot())
 							{

@@ -575,6 +575,7 @@ public:
 	bool isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const;
 	TeamTypes determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const;
 	void autosave();
+	bool isPlayerAutoplay(PlayerTypes ePlayer = NO_PLAYER);
 
 	// Leoreth: graphics paging
 	int getXResolution() const;

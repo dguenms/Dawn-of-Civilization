@@ -5183,6 +5183,7 @@ void CvPlayer::raze(CvCity* pCity)
 {
 	wchar szBuffer[1024];
 	PlayerTypes eHighestCulturePlayer;
+	CvPlot* pPlot;
 	int iI, iJ;
 
 	if (!canRaze(pCity))
@@ -5193,6 +5194,7 @@ void CvPlayer::raze(CvCity* pCity)
 	FAssert(pCity->getOwnerINLINE() == getID());
 
 	eHighestCulturePlayer = pCity->findHighestCulture();
+	pPlot = pCity->plot();
 
 	if (eHighestCulturePlayer != NO_PLAYER)
 	{
@@ -5249,7 +5251,7 @@ void CvPlayer::raze(CvCity* pCity)
 	disband(pCity);
 
 	// Leoreth
-	//GET_PLAYER(pCity->getOwnerINLINE()).updateMaintenance();
+	pPlot->verifyUnitValidPlot();
 }
 
 

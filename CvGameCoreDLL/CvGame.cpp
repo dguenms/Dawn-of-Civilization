@@ -10515,3 +10515,13 @@ void CvGame::autosave()
 {
 	gDLL->getEngineIFace()->AutoSave();
 }
+
+bool CvGame::isPlayerAutoplay(PlayerTypes ePlayer)
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		ePlayer = getActivePlayer();
+	}
+
+	return getGameTurnYear() < GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear();
+}
