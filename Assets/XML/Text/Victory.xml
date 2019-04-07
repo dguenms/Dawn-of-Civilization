@@ -915,11 +915,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1</Tag>
-		<English>Have 25000 culture in Paris in 1700 AD</English>
-		<French>Avoir 25 000 en culture &#224; Paris en 1700 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1700 n. Chr. 25.000 Kulturpunkte in Paris</German>
-		<Italian>Have 25000 culture in Paris in 1700 AD</Italian>
-		<Spanish>Have 25000 culture in Paris in 1700 AD</Spanish>
+		<English>Have legendary culture in Paris in 1700 AD</English>
+		<French>Avoir 25 000 en culture &#224; Paris en 1700 ap. J.-C.</French> <!-- needs update -->
+		<German>Haben Sie im Jahr 1700 n. Chr. legend&#228;re Kultur in Paris</German>
+		<Italian>Have legendary culture in Paris in 1700 AD</Italian>
+		<Spanish>Have legendary culture in Paris in 1700 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_EPIC</Tag>
