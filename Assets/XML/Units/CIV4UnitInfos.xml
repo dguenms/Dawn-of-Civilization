@@ -6506,8 +6506,8 @@
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iFirstStrikes>1</iFirstStrikes>
-			<iWithdrawalProb>50</iWithdrawalProb>
-			<iCollateralDamage>100</iCollateralDamage>
+			<iWithdrawalProb>30</iWithdrawalProb>
+			<iCollateralDamage>50</iCollateralDamage>
 			<iCollateralDamageLimit>25</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
 			<iHillsAttack>25</iHillsAttack>
@@ -6590,7 +6590,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<iFirstStrikes>1</iFirstStrikes>
 			<iWithdrawalProb>50</iWithdrawalProb>
-			<iCollateralDamage>100</iCollateralDamage>
+			<iCollateralDamage>50</iCollateralDamage>
 			<iCollateralDamageLimit>25</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
 			<iHillsAttack>25</iHillsAttack>
