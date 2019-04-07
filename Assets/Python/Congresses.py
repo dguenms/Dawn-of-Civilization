@@ -531,6 +531,12 @@ class Congress:
 		else:
 			iHostPlayer = utils.getRandomEntry([iInvitee for iInvitee in self.lInvites if gc.getPlayer(iInvitee).getNumCities() > 0])
 			
+		# normal congresses during war time may be too small because all civilisations are tied up in global wars
+		if len(self.lInvites) < 3:
+			data.iCongressTurns /= 2
+			data.currentCongress = None
+			return
+			
 		# establish contact between all participants
 		for iThisPlayer in self.lInvites:
 			for iThatPlayer in self.lInvites:
@@ -1118,16 +1124,16 @@ class Congress:
 	def inviteToCongress(self):
 		rank = lambda x: gc.getGame().getPlayerRank(x)
 		lPossibleInvites = []
-	
+
 		if self.bPostWar:
 			iLowestWinnerRank = rank(utils.getSortedList(self.lWinners, rank)[0])
 			lPossibleInvites.extend(self.lWinners)
 			lPossibleInvites.extend([iLoser for iLoser in self.lLosers if rank(iLoser) < iLowestWinnerRank])
 			
 		lPossibleInvites.extend(utils.getSortedList([iPlayer for iPlayer in range(iNumPlayers) if iPlayer not in lPossibleInvites], rank))
-	
+
 		self.lInvites = lPossibleInvites[:getNumInvitations()]
-		
+	
 		lRemove = []
 		
 		# if not a war congress, exclude civs in global wars
@@ -1138,11 +1144,11 @@ class Congress:
 			
 		for iLoopPlayer in self.lInvites:
 			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.append(iLoopPlayer)
-			
+	
 		for iLoopPlayer in lRemove:
 			if iLoopPlayer in self.lInvites:
 				self.lInvites.remove(iLoopPlayer)
-		
+	
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
 			lAmericanClaimCities = utils.getAreaCities(utils.getPlotList(tAmericanClaimsTL, tAmericanClaimsBR))
