@@ -2907,11 +2907,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
-		<English>[ICON_BULLET]Units are completely healed when promoted</English>
-		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French>
-		<German>[ICON_BULLET]Units are completely healed when promoted</German>
-		<Italian>[ICON_BULLET]Units are completely healed when promoted</Italian>
-		<Spanish>[ICON_BULLET]Units are completely healed when promoted</Spanish>
+		<English>[ICON_BULLET]+50% healing when units are promoted</English>
+		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French> <!-- needs update -->
+		<German>[ICON_BULLET]+50% healing when units are promoted</German>
+		<Italian>[ICON_BULLET]+50% healing when units are promoted</Italian>
+		<Spanish>[ICON_BULLET]+50% healing when units are promoted</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Tag>

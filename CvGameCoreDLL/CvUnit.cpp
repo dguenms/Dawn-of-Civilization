@@ -7387,7 +7387,7 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 		changeLevel(1);
 
 		// Leoreth: Triumphal Arch effect
-		int iDamageHealed = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)TRIUMPHAL_ARCH) ? getDamage() : getDamage() / 2;
+		int iDamageHealed = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)TRIUMPHAL_ARCH) ? getDamage() * 3 / 4 : getDamage() / 2;
 		changeDamage(-iDamageHealed);
 	}
 
