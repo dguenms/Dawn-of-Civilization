@@ -1425,9 +1425,9 @@ def checkTurn(iGameTurn, iPlayer):
 			
 	elif iPlayer == iBrazil:
 	
-		# first goal: control 10 slave plantations and 4 pastures in 1880 AD
+		# first goal: control 8 slave plantations and 4 pastures in 1880 AD
 		if iGameTurn == getTurnForYear(1880):
-			if countImprovements(iBrazil, iSlavePlantation) >= 10 and countImprovements(iBrazil, iPasture) >= 4:
+			if countImprovements(iBrazil, iSlavePlantation) >= 8 and countImprovements(iBrazil, iPasture) >= 4:
 				win(iBrazil, 0)
 			else:
 				lose(iBrazil, 0)
@@ -4117,7 +4117,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iSlavePlantations = countImprovements(iBrazil, iSlavePlantation)
 			iPastures = countImprovements(iBrazil, iPasture)
-			aHelp.append(getIcon(iSlavePlantations >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iSlavePlantation).getText(), iSlavePlantations, 10)) + ' ' + getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iPasture).getText(), iPastures, 4)))
+			aHelp.append(getIcon(iSlavePlantations >= 8) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iSlavePlantation).getText(), iSlavePlantations, 8)) + ' ' + getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iPasture).getText(), iPastures, 4)))
 		elif iGoal == 1:
 			bWembley = data.getWonderBuilder(iWembley) == iBrazil
 			bCristoRedentor = data.getWonderBuilder(iCristoRedentor) == iBrazil
