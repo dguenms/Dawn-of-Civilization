@@ -1047,7 +1047,8 @@ def calculateStability(iPlayer):
 		
 	# attitude stability
 	
-	iRelationStability += calculateSumScore(lAttitudes)
+	iRelationStability += calculateSumScore(lAttitudes) / 2
+	iRelationStability += calculateSumScore(lAttitudes, 2) / 2
 	iRelationStability += calculateSumScore(lAttitudes, 3)
 		
 	if bIsolationism:
