@@ -262,10 +262,12 @@ class Congress:
 		
 		if plot.isCity():
 			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_CITY", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), plot.getPlotCity().getName())))
+		elif plot.getOwner() == iClaimant:
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
 		elif plot.isOwned():
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWNED", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cnm.getFoundName(iClaimant, tPlot))))
 		else:
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
 			
 		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_VOTE_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
 		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_ABSTAIN", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
