@@ -808,13 +808,13 @@ dBuildingPreferences = {
 		iSagradaFamilia: 30,
 		iCristoRedentor: 20,
 		iWembley: 20,
-		iIberianTradingCompany: 20,
+		iIberianTradingCompanyBuilding: 20,
 		iTorreDeBelem: 15,
 		iNotreDame: 15,
 		iMezquita: 15,
 	},
 	iCivFrance : {
-		iTradingCompany: 40,
+		iTradingCompanyBuilding: 40,
 		iNotreDame: 40,
 		iEiffelTower: 30,
 		iVersailles: 30,
@@ -838,7 +838,7 @@ dBuildingPreferences = {
 		iNalanda: 20,
 	},
 	iCivEngland : {
-		iTradingCompany: 50,
+		iTradingCompanyBuilding: 50,
 		iOxfordUniversity: 30,
 		iWembley: 30,
 		iWestminsterPalace: 30,
@@ -881,7 +881,7 @@ dBuildingPreferences = {
 	iCivPortugal : {
 		iCristoRedentor: 40,
 		iTorreDeBelem: 40,
-		iIberianTradingCompany: 40,
+		iIberianTradingCompanyBuilding: 40,
 		iWembley: 20,
 		iEscorial: 20,
 		iNotreDame: 15,
@@ -940,7 +940,7 @@ dBuildingPreferences = {
 		iShalimarGardens: 20,
 	},
 	iCivNetherlands : {
-		iTradingCompany: 60,
+		iTradingCompanyBuilding: 60,
 		iBourse: 40,
 		iDeltaWorks: 40,
 		iAtomium: 30,
