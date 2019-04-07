@@ -13363,6 +13363,7 @@
 			<PrereqCivic>CIVIC_CONSTITUTION</PrereqCivic>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			<ObsoleteTech>TECH_RADAR</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
