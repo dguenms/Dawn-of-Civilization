@@ -2774,7 +2774,7 @@ class RiseAndFall:
 		elif iCiv == iMughals:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iSiegeElephant, iCiv, tPlot, 3)
-			utils.makeUnit(iArquebusier, iCiv, tPlot, 4)
+			utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 4, "", 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 			utils.createMissionaries(iCiv, 1)
 			if utils.getHumanID() == iMughals:
