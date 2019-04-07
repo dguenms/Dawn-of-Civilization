@@ -1012,8 +1012,9 @@ class RiseAndFall:
 				city = gc.getMap().plot(18, 37).getPlotCity()
 				if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iFloatingGardens).getBuildingClassType()) == 0:
 					city.setHasRealBuilding(iFloatingGardens, True)
+					
 				iStateReligion = pAztecs.getStateReligion()
-				if city.isHasReligion(iStateReligion):
+				if iStateReligion >= 0 and city.isHasReligion(iStateReligion):
 					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
 			
 			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
@@ -3236,6 +3237,17 @@ class RiseAndFall:
 		lReligions = [0 for i in range(iNumReligions)]
 		
 		for city in lCities:
+			if city.getReligionCount() == 0:
+				iOwner = city.getOwner()
+				if iOwner == iCiv:
+					iOwner = city.getPreviousOwner()
+
+				if iOwner != -1:
+					iReligion = gc.getPlayer(iOwner).getStateReligion()
+					if iReligion >= 0:
+						lReligions[iReligion] += 1
+						continue
+		
 			for iReligion in range(iNumReligions):
 				if iReligion not in [iJudaism] and city.isHasReligion(iReligion): lReligions[iReligion] += 1
 				
