@@ -1016,13 +1016,14 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1650):
 			expire(iHolyRome, 1)
 		
-		# third goal: settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilizationsby 1850 AD
+		# third goal: settle a total of ten great artists and statesmen in Vienna and have friendly relations with six independent European civilizations by 1850 AD
 		if isPossible(iHolyRome, 2):
 			iGreatArtists = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist)
 			iGreatStatesmen = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatStatesman)
 			iFriendlyEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_FRIENDLY, lCivGroups[0])
+			iPleasedEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_PLEASED, lCivGroups[0])
 			
-			if iGreatArtists + iGreatStatesmen >= 8 and iFriendlyEuropeans >= 6:
+			if iGreatArtists + iGreatStatesmen >= 10 and iPleasedEuropeans + iFriendlyEuropeans >= 8:
 				win(iHolyRome, 2)
 		
 		if iGameTurn == getTurnForYear(1850):
@@ -2763,7 +2764,7 @@ def isConnectedByRailroad(iPlayer, tStart, lTargets):
 	return isConnected(tStart, lTargets, plotFunction)
 
 def countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, function):
-	return len([iOtherPlayer for iOtherPlayer in range(iNumPlayers) if iPlayer != iOtherPlayer and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and function(iOtherPlayer)])
+	return len([iOtherPlayer for iOtherPlayer in range(iNumPlayers) if gc.getPlayer(iPlayer).canContact(iOtherPlayer) and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and function(iOtherPlayer)])
 	
 def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
 	iCount = 0
@@ -2778,8 +2779,7 @@ def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
 	return iCount
 	
 def countPlayersWithAttitudeInGroup(iPlayer, eAttitude, lOtherPlayers):
-	lPlayers = [iOtherPlayer for iOtherPlayer in lOtherPlayers if iPlayer != iOtherPlayer and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and not gc.getTeam(iOtherPlayer).isAVassal()]
-	return len(lPlayers)
+	return countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, lambda x: gc.getTeam(gc.getPlayer(x).getTeam()).isAVassal())
 	
 def getLargestCities(iPlayer, iNumCities):
 	lCities = utils.getSortedList(utils.getCityList(iPlayer), lambda x: x.getPopulation(), True)
@@ -3867,8 +3867,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iGreatArtists = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist)
 			iGreatStatesmen = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatStatesman)
 			iFriendlyEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_FRIENDLY, lCivGroups[0])
-			aHelp.append(getIcon(iGreatArtists + iGreatStatesmen >= 8) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED", ('Vienna', iGreatArtists + iGreatStatesmen, 8)))
-			aHelp.append(getIcon(iFriendlyEuropeans >= 6) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_EUROPEANS", (iFriendlyEuropeans, 6)))
+			iPleasedEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_PLEASED, lCivGroups[0])
+			aHelp.append(getIcon(iGreatArtists + iGreatStatesmen >= 10) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED", ('Vienna', iGreatArtists + iGreatStatesmen, 10)))
+			aHelp.append(getIcon(iPleasedEuropeans + iFriendlyEuropeans >= 8) + localText.getText("TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_EUROPEANS", (iPleasedEuropeans + iFriendlyEuropeans, 8)))
 
 	elif iPlayer == iRussia:
 		if iGoal == 0:

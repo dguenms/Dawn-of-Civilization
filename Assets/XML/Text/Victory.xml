@@ -1243,11 +1243,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE3</Tag>
-		<English>Settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilisations by 1850 AD</English>
-		<French>Faire rejoinre trois artistes illustres &#224; Vienne avant 1700 ap. J.-C.</French>
-		<German>Siedeln Sie bis zum Jahr 1850 n. Chr. insgesamt acht gro&#223;e K&#252;nstler und Staatsm&#228;nner in Wien an und haben Sie freundliche Beziehungen mit sechs unabh&#228;ngigen europ&#228;ischen Zivilisationen</German>
-		<Italian>Settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilisations by 1850 AD</Italian>
-		<Spanish>Settle a total of eight great artists and statesmen in Vienna and have friendly relations with six independent European civilisations by 1850 AD</Spanish>
+		<English>Settle a total of ten great artists and statesmen in Vienna and have at least pleased relations with eight independent European civilisations by 1850 AD</English>
+		<French>Faire rejoinre trois artistes illustres &#224; Vienne avant 1700 ap. J.-C.</French> <!-- needs update -->
+		<German>Siedeln Sie bis zum Jahr 1850 n. Chr. insgesamt zehn gro&#223;e K&#252;nstler und Staatsm&#228;nner in Wien an und haben Sie mindestens erfreute Beziehungen mit acht unabh&#228;ngigen europ&#228;ischen Zivilisationen</German>
+		<Italian>Settle a total of ten great artists and statesmen in Vienna and have at least pleased relations with eight independent European civilisations by 1850 AD</Italian>
+		<Spanish>Settle a total of ten great artists and statesmen in Vienna and have at least pleased relations with eight independent European civilisations by 1850 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC1_TITLE</Tag>
@@ -5283,12 +5283,12 @@
 		<Spanish>Catholic vassals in Europe: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_FRIENDLY_EUROPEANS</Tag>
-		<English>Friendly relations with independent European civilisations: %d1 / %d2</English>
-		<French>Friendly relations with independent European civilisations: %d1 / %d2</French>
-		<German>Freundliche Beziehungen mit unabh&#228;ngigen europ&#228;ischen Zivilisationen: %d1 / %d2</German>
-		<Italian>Friendly relations with independent European civilisations: %d1 / %d2</Italian>
-		<Spanish>Friendly relations with independent European civilisations: %d1 / %d2</Spanish>
+		<Tag>TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_EUROPEANS</Tag>
+		<English>Pleased or friendly relations with independent European civilisations: %d1 / %d2</English>
+		<French>Pleased or friendly relations with independent European civilisations: %d1 / %d2</French>
+		<German>Erfreute oder freundliche Beziehungen mit unabh&#228;ngigen europ&#228;ischen Zivilisationen: %d1 / %d2</German>
+		<Italian>Pleased or friendly relations with independent European civilisations: %d1 / %d2</Italian>
+		<Spanish>Pleased or friendly relations with independent European civilisations: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED</Tag>
