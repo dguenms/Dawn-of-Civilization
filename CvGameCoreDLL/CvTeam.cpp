@@ -2747,6 +2747,15 @@ int CvTeam::getCivilizationResearchModifier() const
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
 	}
 
+	// buff late game Japan
+	else if (getLeaderID() == JAPAN)
+	{
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
+		{
+			iCivModifier += isHuman() ? -20 : -40;
+		}
+	}
+
 	return iCivModifier;
 }
 
@@ -2942,12 +2951,13 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 
 	if (iCount >= 3)
 	{
-		return -50;
-	}
+		// account of the base modifier that Japan receives in the global era
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
+		{
+			return isHuman() ? -30 : -10;
+		}
 
-	if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
-	{
-		return isHuman() ? -20 : -40;
+		return -50;
 	}
 
 	return 0;
