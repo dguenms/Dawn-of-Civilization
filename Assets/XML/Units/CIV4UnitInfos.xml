@@ -6790,11 +6790,11 @@
 			<FeatureAttacks>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>50</iFeatureAttack>
+					<iFeatureAttack>25</iFeatureAttack>
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<iFeatureAttack>50</iFeatureAttack>
+					<iFeatureAttack>25</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<iCombat>6</iCombat>
@@ -6802,11 +6802,12 @@
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iFirstStrikes>1</iFirstStrikes>
-			<iWithdrawalProb>50</iWithdrawalProb>
-			<iCollateralDamage>100</iCollateralDamage>
-			<iCollateralDamageLimit>50</iCollateralDamageLimit>
-			<iCollateralDamageMaxUnits>3</iCollateralDamageMaxUnits>
-			<iHillsAttack>50</iHillsAttack>
+			<iWithdrawalProb>30</iWithdrawalProb>
+			<iCollateralDamage>50</iCollateralDamage>
+			<iCollateralDamageLimit>30</iCollateralDamageLimit>
+			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
+			<iHillsAttack>25</iHillsAttack>
+			<iHillsDefense>25</iHillsDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
 			<iPower>6</iPower>
@@ -6892,11 +6893,12 @@
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iFirstStrikes>1</iFirstStrikes>
-			<iWithdrawalProb>50</iWithdrawalProb>
-			<iCollateralDamage>100</iCollateralDamage>
-			<iCollateralDamageLimit>50</iCollateralDamageLimit>
-			<iCollateralDamageMaxUnits>3</iCollateralDamageMaxUnits>
-			<iHillsAttack>50</iHillsAttack>
+			<iWithdrawalProb>30</iWithdrawalProb>
+			<iCollateralDamage>50</iCollateralDamage>
+			<iCollateralDamageLimit>25</iCollateralDamageLimit>
+			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
+			<iHillsAttack>25</iHillsAttack>
+			<iHillsDefense>25</iHillsDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
 			<iPower>5</iPower>
