@@ -4669,12 +4669,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				{
 					if (::isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()) && pLoopCity->isHasRealBuilding((BuildingTypes)iI))
 					{
-						iWonderCulture += GC.getBuildingInfo((BuildingTypes)iI).getObsoleteSafeCommerceChange(COMMERCE_CULTURE);
+						iWonderCulture += 2;
 					}
 				}
 			}
 
-			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_CULTURE, iChange * iWonderCulture / 2);
+			changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), COMMERCE_CULTURE, iChange * iWonderCulture);
 		}
 
 		if (::isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
@@ -4685,7 +4685,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				{
 					if (pLoopCity->isHasRealBuilding((BuildingTypes)LOUVRE))
 					{
-						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)LOUVRE).getBuildingClassType(), COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getObsoleteSafeCommerceChange(COMMERCE_CULTURE) / 2);
+						pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)LOUVRE).getBuildingClassType(), COMMERCE_CULTURE, 2 * iChange);
 						break;
 					}
 				}

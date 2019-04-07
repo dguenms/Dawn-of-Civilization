@@ -1807,11 +1807,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
-		<English>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</English>
-		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French>
-		<German>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</German>
-		<Italian>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Italian>
-		<Spanish>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Spanish>
+		<English>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</English>
+		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French> <!-- needs update -->
+		<German>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</German>
+		<Italian>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_STRATEGY</Tag>
