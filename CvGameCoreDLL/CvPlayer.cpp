@@ -4677,7 +4677,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 
 	// edead: start Relic trade based on Afforess' Advanced Diplomacy
    case TRADE_SLAVE:
-	    if (GC.getGame().getActivePlayer() == eWhoTo && GET_PLAYER(eWhoTo).countColonies() <= 0)
+	    if (GC.getGame().getActivePlayer() == getID() && countColonies() <= 0)
 		{
 			return false;
 		}
@@ -25872,7 +25872,10 @@ void CvPlayer::setFreeTechChosen(TechTypes eNewValue)
 
 bool CvPlayer::canBuySlaves() const
 {
-	if (isMinorCiv() || isBarbarian()) return false;
+	if (isMinorCiv() || isBarbarian()) 
+	{
+		return false;
+	}
 
 	if (isSlavery())
 	{
@@ -25897,7 +25900,10 @@ bool CvPlayer::canBuySlaves() const
 		}
 	}
 
-	if (countColonies() > 0) return true;
+	if (countColonies() > 0) 
+	{
+		return true;
+	}
 
 	return false;
 }
