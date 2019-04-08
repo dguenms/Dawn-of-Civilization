@@ -2346,6 +2346,11 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		{
 			return false;
 		}
+
+		if (getRegionID() == REGION_SCANDINAVIA)
+		{
+			return false;
+		}
 	}
 
 	// Leoreth: Lotus Temple needs four religions
