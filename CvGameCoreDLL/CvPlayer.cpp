@@ -1806,11 +1806,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 				eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 			}
 
-			CvBuildingInfo& kOldBuilding = GC.getBuildingInfo((BuildingTypes)iI);
-			CvBuildingInfo& kNewBuilding = GC.getBuildingInfo(eBuilding);
-
 			if (eBuilding != NO_BUILDING)
 			{
+				CvBuildingInfo& kOldBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+				CvBuildingInfo& kNewBuilding = GC.getBuildingInfo(eBuilding);
+
 				if (paiNumRealBuilding[iI] == 0)
 				{
 					continue;
@@ -12345,7 +12345,7 @@ void CvPlayer::setParent(PlayerTypes eParent)
 TeamTypes CvPlayer::getTeam() const
 {
 	//return m_eTeamType; //Rhye - breaks python globals initialization
-	return GC.getInitCore().getTeam(getID()); //Rhye
+	return getID() == NO_PLAYER ? NO_TEAM : GC.getInitCore().getTeam(getID()); //Rhye
 }
 
 void CvPlayer::updateTeamType()
@@ -22879,8 +22879,7 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 		}
 		else
 		{
-			//iVotes = (int)std::sqrt((double)getTotalPopulation());
-			iVotes = (int)std::sqrt((double)getReligionPopulation(eReligion));
+			iVotes = (int)std::sqrt((double)getTotalPopulation());
 		}
 	}
 	else

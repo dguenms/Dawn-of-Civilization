@@ -58781,7 +58781,7 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-				</MemoryAttitudePercent>3
+				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>

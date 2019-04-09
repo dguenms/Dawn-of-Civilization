@@ -6432,6 +6432,12 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 			for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
 			{
 				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationBuildings(iJ);
+
+				if (eBuilding == NO_BUILDING)
+				{
+					continue;
+				}
+
 				if (GC.getBuildingInfo(eBuilding).getPrereqAndTech() == eTech && !isWorldWonderClass((BuildingClassTypes)iJ))
 				{
 					for (int iK = 0; iK < GC.getNumSpecialistInfos(); iK++)

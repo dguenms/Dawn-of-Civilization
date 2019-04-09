@@ -12407,14 +12407,6 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 			}
 		}
 	}
-
-
-	// Leoreth
-	if (eProject == GC.getInfoTypeForString("PROJECT_PERSECUTION"))
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_PERSECUTION_HELP"));
-	}
 }
 
 
