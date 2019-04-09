@@ -8644,7 +8644,7 @@ const CvArtInfoBuilding* CvBuildingInfo::getArtInfo() const
 const CvArtInfoMovie* CvBuildingInfo::getMovieInfo() const
 {
 	const TCHAR* pcTag = getMovieDefineTag();
-	if (NULL != pcTag && 0 != _tcscmp(pcTag, "NONE"))
+	if (NULL != pcTag && 0 != _tcscmp(pcTag, ""))
 	{
 		return ARTFILEMGR.getMovieArtInfo(pcTag);
 	}
