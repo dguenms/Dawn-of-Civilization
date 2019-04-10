@@ -5236,11 +5236,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ALLIED_POWER_PERCENT</Tag>
-		<English>Global power commerce: %s1 / %s2%</English>
-		<French>Global power commerce: %s1 / %s2%</French>
-		<German>Global power commerce: %s1 / %s2%</German>
-		<Italian>Global power commerce: %s1 / %s2%</Italian>
-		<Spanish>Global power commerce: %s1 / %s2%</Spanish>
+		<English>Global allied power: %s1 / %s2%</English>
+		<French>Global allied power: %s1 / %s2%</French>
+		<German>Global allied power: %s1 / %s2%</German>
+		<Italian>Global allied power: %s1 / %s2%</Italian>
+		<Spanish>Global allied power: %s1 / %s2%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONVERTED_TO_ORTHODOXY</Tag>

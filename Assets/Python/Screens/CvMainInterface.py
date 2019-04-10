@@ -4539,6 +4539,8 @@ class CvMainInterface:
 				# National and Worldwonder limit indicator
 				iWorldWonders = pHeadSelectedCity.getNumActiveWorldWonders()
 				iWorldWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getWonderLimit()
+				if pHeadSelectedCity.isCapital():
+					iWorldWondersLimit += 1
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iWorldWonders, iWorldWondersLimit, CyGame().getSymbolID(FontSymbols.STAR_CHAR)))
 				screen.setLabel( "WorldWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 400, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 1, -1 )
 				screen.show( "WorldWonderLimitText" )
