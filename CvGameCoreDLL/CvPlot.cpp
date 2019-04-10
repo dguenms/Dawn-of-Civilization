@@ -6980,7 +6980,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	// Leoreth + Merijn: Burj Khalifa effect
 	if (ePlayer != NO_PLAYER)
 	{
-		if (getTerrainType() == TERRAIN_DESERT)
+		if (getTerrainType() == TERRAIN_DESERT && !isPeak())
 		{
 			if (eYield == YIELD_FOOD || eYield == YIELD_COMMERCE)
 			{
