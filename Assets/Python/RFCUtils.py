@@ -2015,5 +2015,12 @@ class RFCUtils:
 						return city
 						
 		return None
+		
+	def getDefaultGreatPerson(self, iGreatPersonType):
+		if iGreatPersonType in dFemaleGreatPeople.values():
+			for iLoopGreatPerson in dFemaleGreatPeople:
+				if iGreatPersonType == dFemaleGreatPeople[iLoopGreatPerson]:
+					return iLoopGreatPerson
+		return iGreatPersonType
 			
 utils = RFCUtils()
