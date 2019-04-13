@@ -710,12 +710,7 @@ class CvRFCEventHandler:
 						if pUnit.getOwner() != iLoopPlayer and gc.getPlayer(pUnit.getOwner()).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
 							for pLoopCity in utils.getCityList(iLoopPlayer):
 								if pLoopCity.isHasBuildingEffect(iNobelPrize):
-									iGreatPersonType = pUnit.getUnitType()
-									if iGreatPersonType in dFemaleGreatPeople.values():
-										for iLoopGreatPerson in dFemaleGreatPeople:
-											if iGreatPersonType == dFemaleGreatPeople[iLoopGreatPerson]:
-												iGreatPersonType = iLoopGreatPerson
-												break
+									iGreatPersonType = utils.getDefaultGreatPerson(pUnit.getUnitType())
 								
 									iGreatPeoplePoints = max(4, gc.getPlayer(iLoopPlayer).getGreatPeopleCreated())
 								
