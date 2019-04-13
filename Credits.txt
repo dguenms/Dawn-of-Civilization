@@ -58,12 +58,18 @@ UNITS
 * Bakuel: Patiyodha (Gupta Longbowman)
 * RFC Classical World (srpt): Patiyodha name and button
 
+WONDERS
+* merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
+
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
 * Smokehouse building: History Rewritten by Xyth
 
 MODULES
 * Empire State Building: Voyhkah
+
+TRANSLATION
+* French: Steb
 
 GAME TEXT
 * Dominus the Mentat: Turkic civilization civilopedia and strategy texts, Khosrow diplomacy greetings
@@ -92,7 +98,8 @@ iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jus
 
 GREAT PEOPLE NAMES
 Too many people to list for their contributions of Great Statesmen, Female Great People and Canadian Great People names,
-in particular Hightower, DC123456789, borhap88, Panopticon and Chep
+in particular Hightower, DC123456789, borhap88, Panopticon and Chep,
+as well as significant overall contributions by Steb
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
 If someone feels they should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.
