@@ -1144,6 +1144,9 @@ iCivEthiopia : {
 },
 iCivKorea : {
 	iGreatProphet : [
+		"Marananta", # 4th
+		iMedieval,
+		"Doseon", # 9th
 		"Jinul", # 12th
 		"Uicheon", # 12th
 		"Baegun", # 13th
@@ -1151,44 +1154,55 @@ iCivKorea : {
 		iRenaissance,
 		"Yi Hwang", # 16th
 		"Yi I", # 16th
+		"Yi Seung-hun", # 18th
 		iIndustrial,
 		"Choe Je-u", # 19th
 		iGlobal,
 		"Sun Myung Moon", # 20th
 	],
 	iGreatArtist : [
+		"fYeo Ok", # Gojoseon era
+		iMedieval,
 		"Damjing", # 7th
 		"Yi Nyeong", # 9th
 		"Yi Je-hyeon", # 9th
 		iRenaissance,
-		"Hwang Jip-jung", # 16th
+		"fHwang Jini", # 16th
+		"fSin Saimdang", # 16th
 		"fHeo Nanseolheon", # 16th
 		"Yan Duseo", # 17th
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
 		iGlobal,
+		"fNa Hye-sok", # 20th
 		"Im Kwon-taek", # 20th
 		"Seo Tae-Ji", # 20th
 	],
 	iGreatScientist : [
 		"Uisan", # 7th
 		"Wonhyo", # 7th
+		"Kim Am", # 8th
 		iRenaissance,
 		"Jeong Inji", # 15th
 		"Seong Sammun", # 15th
 		"Yu Seong-won", # 15th
 		"Heo Jun", # 16th
+		"fSeo Yeongsuhap", # 18th
 		iIndustrial,
 		"Jeong Yakyong", # 19th
+		"Gim Jeong-ho", # 19th
 		iGlobal,
-		"Hwang Woo-Suk", # 20th
+		"Woo Jang-choon", # 20th
 	],
 	iGreatMerchant : [
 		"Hyecho", # 8th
 		"Kim Sa-hyeong", # 15th
 		"Yi Mu", # 15th
 		"Yi Hoe", # 15th
+		"fGim Man-deok", # 18th
+		iIndustrial, 
+		"fPaek Son-haeng", # 19th
 		iGlobal,
 		"Lee Byung-chul", # 20th
 		"Chung Ju-yung", # 20th
@@ -1199,33 +1213,50 @@ iCivKorea : {
 		iRenaissance,
 		"Jang Yeong-sil", # 15th
 		"Song I-yeong", # 16th
+		"Bak Jiwon", # 18th
+		iGlobal, 
+		"Ri Sung-gi", # 20th
+		"Kim Swoo-geun", # 20th
 	],
 	iGreatStatesman : [
 		"Myeongnim Dap-bo", # 2nd
+		iMedieval,
 		"fSeondeok", # 7th
+		"Choe Chiwon", # 9th
 		"Kim Bu-sik", # 12th
 		"Jeong Dojeon", # 14th
 		iRenaissance,
 		"Yi Hwang", # 16th
+		"Yi Ji-ham", # 16th
 		iIndustrial,
+		"Heungseon Daewongun", # 19th
 		"Kim Ok-gyun", # 19th
 		"fMyeongseong", # 19th
 		iGlobal,
+		"Sin Chaeho", # 20th
+		"Soh Jaipil", # 20th
 		"fRyu Gwansun", # 20th
 		"Kim Gu", # 20th
 		"Kim Dae-jung", # 20th
 	],
 	iGreatGeneral : [
 		"Gim Yu-sin", # 7th
+		"Eulji Mundeok", # 7th
+		"Yeon Gaesomun", # 7th
 		"Gang Gam-chan", # 11th
 		"Choe Woo", # 13th
 		"Yi Seong-gye", # 14th
 		iRenaissance,
+		"Gwon Ryul", # 16th
 		"Yi Sun-sin", # 16th
+		iGlobal, 
+		"Choe Hyon", # 20th
+		"Paik Sun-yup", # 20th
 	],
 	iGreatSpy : [
 		"An Jung-geun", # 20th
 		"Kim Chang-ryong", # 20th
+		"Kim Jae-gyu", # 20th
 	],
 },
 iCivByzantium : {
@@ -1535,6 +1566,7 @@ iCivVikings : {
 		"Roald Amundsen", # 20th norwegian
 		iGlobal,
 		"Ole Kirk Christiansen", # 20th danish
+		"Ragnar Frisch", # 20th norwegian
 		"Ingvar Kamprad", # 20th swedish
 	],
 	iGreatEngineer : [
@@ -2176,6 +2208,7 @@ iCivFrance : {
 		"Guy de Chauliac", # 14th
 		"Nicole Oresme", # 14th
 		iRenaissance,
+		"Marin Mersenne", # 17th
 		u"René Descartes", # 17th
 		"Pierre de Fermat", # 17th
 		"Blaise Pascal", # 17th
@@ -2752,6 +2785,7 @@ iCivRussia : {
 		"fYekaterina Vorontsova-Dashkova", # 18th
 		iIndustrial,
 		"Mikhail Speransky", # 19th
+		"Mikhail Bakunin", # 19th
 		"Vladimir Lenin", # 19th
 		iGlobal,
 		"Leon Trotsky", # 20th
@@ -3731,6 +3765,7 @@ iCivNetherlands : {
 		"Clemens Brenninkmeijer", # 19th
 		"August Kessler", # 19th
 		iGlobal,
+		"Jan Tinbergen", # 20th
 		"Freddy Heineken", # 20th
 	],
 	iGreatEngineer : [
