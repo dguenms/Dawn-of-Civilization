@@ -325,8 +325,8 @@ UNIQUE UNITS
     * Holy Rome: Grenzer (Grenadier): -2 strength, +25% retreat chance, starts with Guerilla, Disengage
     * Italy: Balestriere (Crossbow): +1 first strike, +25% city attack, starts with Amphibious
     * Italy: Lanternas (Galleass): +2 strength
-    * Mongols: Mangudai (Horse Archer): +2 strength, +1 move
     * Portugal: Bandeirante (Explorer): +4 strength, can attack, 30% retreat chance, guaranteed to capture slaves
+    * Mongols: Mangudai (Horse Archer): +2 strength, +1 move
     * Ottomans: Great Bombard (Bombard): +50% city attack
     * Germany: Fusilier (Musketeer): starts with Drill I and II
     * America: Pioneer (Settler): can fight, strength 10, +50% open terrain strength, cities founded in North America receive a free worker and defender
@@ -339,11 +339,13 @@ UNIQUE UNITS
     * Mughal Siege Elephant: +1 strength and +25% against Archers and Gunpowder units
     * Mounted Brave (replaces Pistolier): +20% retreat chance
     * Mexican Rurales renamed to Rural
-* Removed three unique units:
+* Removed four unique units:
     * Arabian Camel Archer
+    * Indonesian Orang Laut
     * French Heavy Cannon
     * Italian Bersagliere
 * Improved unique unit art:
+    * Mongol Keshik
     * Iranian Qizilbash
     * Mexican Rural
     * Argentine Horse Grenadier

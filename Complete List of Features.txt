@@ -260,10 +260,11 @@ CIVILISATIONS
     * Unique Building: Obelisk (Monument): +1 Priest slot, +25% culture
     * Unique Power: enables Monarchy, Redistribution and Deification
 * China
-    * Spawn: Chang'an
+    * Spawn: 2070 AD at Chang'an
     * Leaders: Qin Shi Huang, Tang Taizong, Hongwu, Mao Zedong
     * Color: Light Yellow / Black
     * Unique Unit: Cho-Ko-Nu (Crossbowman): +1 first strike, causes collateral damage, +25% against light cavalry
+    * Unique Unit: Firelancer (Arquebusier): requires Gunpowder, -1 strength, causes collateral damage
     * Unique Building: Taixue (Library): +1 Statesman slot
     * Unique Power: The Power of Invention: Before the Renaissance, technologies not discovered by anyone else cost -20% research
     * Unique Historical Victory:
@@ -281,6 +282,7 @@ CIVILISATIONS
 * Greece
     * Leaders: Pericles, Alexander, George I (respawn)
     * Unique Unit: Hoplite (Spearman): strength 5, starts with Cover, Shock
+    * Unique Unit: Companion (Horseman): no reduced city strength, starts with March, Blitz
     * Unique Building: Odeon (Theater): +1 happiness, +1 Statesman slot
     * Unique Power: expires after the Classical Era
     * Unique Historical Victory:
@@ -288,11 +290,11 @@ CIVILISATIONS
         * Control Egypt, Phoenicia, Babylonia and Persia by 330 BC
         * Build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
 * India
-    * Spawn: Pataliputra
     * Leaders: Ashoka, Chandragupta, Shahuji, Gandhi
     * Color: Orange / Yellow
     * Spawn: 1500 BC at Pataliputra
     * Unique Unit: Patiyodha (Longbowman): strength 5, requires Nobility, can enter Jungle and Rainforest, starts with Formation and Woodsman I
+    * Unique Unit: Varu (Lancer): requires Ivory instead of Horse, +2 strength, no reduced city strength
     * Unique Building: Edict (Monument): -10% maintenance
     * Unique Power: The Power of Purity: +1 health for every three excess happiness
     * Unique Historical Victory:
@@ -300,9 +302,11 @@ CIVILISATIONS
         * Build 20 temples by 700 AD
         * Control 20% of the world's population in 1200 AD
 * Persia
+    * Leaders: Cyrus, Darius, Khosrow
     * Color: Light Orange / Red
     * Coat of arms: Achaemenid Eagle
     * Unique Unit: Immortal (Spearman): now starts with March
+    * Unique Unit: Savaran (Lancer): requires Generalship, -2 strength, no reduced city strength
     * Unique Building: Apothecary (Market): +2 food from improved Incense tiles, +1 food from improved Spice and Silk tiles
     * Unique Power: Additional stability from recently conquered cities
     * Unique Historical Victory:
@@ -310,23 +314,16 @@ CIVILISATIONS
 	* Control 7 world wonders by 350 AD
 	* Control 2 holy city shrines by 350 AD
 * Rome
-    * Unique Unit: Legion (Swordsman): increased cost, +2 strength, +25% against Axeman, can build Roman Road (+1 movement with Masonry)
+    * Unique Unit: Legion (Swordsman): increased cost, +2 strength, can build Roman Road (+1 movement with Masonry)
+    * Unique Unit: Ballista (Catapult): +2 strength, no city attack modifier
     * Unique Building: Forum (Market): +25% Great People birth rate, +2 Statesman slots
     * Unique Power: The Power of Infrastructure: +30% construction speed for buildings already present in your capital
     * Unique Historical Victory:
         * Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
         * Control the entire historical area of the Roman Empire in 320 AD
         * Be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service
-* Ethiopia
-    * Leaders: Zara Yaqob, Haile Selassie
-    * Unique Unit: Askari (Arquebusier): +1 first strike, immune to first strikes, starts with Drill I and Drill II
-    * Unique Building: Stele (Monument): +2 Priest slots
-    * Unique Power: The Power of Sovereignty: +10% land unit strength within cultural borders
-    * Unique Historical Victory:
-        * Settle a Great Prophet in two Orthodox cities by 500 AD
-        * Acquire three Incense resources by 600 AD
-        * Allow no European colonies in Ethiopia and Sub-Saharan Africa in 1500 AD and 1910 AD
 * Maya
+    * Spawn: 400 BC
     * Unique Unit: Holkan (Skirmisher): requires Smelting, can enter Jungle and Rainforest, +5 food for nearest city after victory
     * Unique Building: Ball Court (Amphitheatre): +1 happiness, +2 experience for Melee and Archery units
     * Unique Power: expires with the Medieval Era
@@ -334,10 +331,21 @@ CIVILISATIONS
         * Discover Writing and Mathematics by 600 AD
         * Build the Temple of Kukulkan by 900 AD
         * Make contact with a European civilization before they discover America
+* Ethiopia
+    * Leaders: Ezana, Zara Yaqub, Menelik
+    * Unique Unit: Shotelai (Swordsman): does not require Iron, starts with Guerilla
+    * Unique Unit: Mehal Sefari (Rifleman): starts with Drill I and II
+    * Unique Building: Stele (Monument): +2 Priest slots
+    * Unique Power: The Power of Sovereignty: +10% land unit strength within cultural borders
+    * Unique Historical Victory:
+        * Settle a Great Prophet in two Orthodox cities by 500 AD
+        * Acquire three Incense resources by 600 AD
+        * Allow no European colonies in Ethiopia and Sub-Saharan Africa in 1500 AD and 1910 AD
 * Japan
     * Spawn: 525 AD
     * Leaders: Kammu, Oda Nobunaga (Tokugawa), Meiji
     * Unique Unit: Samurai (Heavy Swordsman): starts with Leadership
+    * Unique Unit: Zero (Fighter): halved cost, +50% against water units, +25% evade chance
     * Unique Building: Zaibatsu (Factory): halved production cost, +1 commerce on water tiles, +1 free engineer
     * Unique Power: The Power of Modernisation: After all Medieval technologies are discovered, technologies that three civilizations are willing to trade cost -50% research
     * Unique Historical Victory:
@@ -349,6 +357,7 @@ CIVILISATIONS
     * Color: Light Purple / Black
     * Spawn: Oslo
     * Unique Unit: Huscarl (Heavy Swordman): +10% city attack, starts with Amphibious
+    * Unique Unit: Longship (Heavy Galley): +2 moves, 2 cargo, can bombard cities, starts with Disengage
     * Unique Power: The Power of Raids: Additional gold from pillaging, conquering cities and sinking ships
     * Unique Historical Victory:
          * Control the core of another European civilization in 1050 AD
@@ -358,7 +367,8 @@ CIVILISATIONS
     * Leaders: Harun al-Rashid, Saladin
     * Coat of arms: Shahada
     * Spawn: 620 AD (in all scenarios)
-    * Unique Unit: Camel Archer (Horse Archer): +25% desert strength, +50% against heavy cavalry
+    * Unique Unit: Ghazi (Heavy Swordsman): strength 8, 2 moves, +20% city attack
+    * Unique Unit: Mobile Guard (Lancer): does not require Iron, no reduced city strength
     * Unique Building: Alchemist (Pharmacy): +1 scientist slot
     * Unique Historical Victory:
         * Be the most advanced civilization in 1300 AD
@@ -366,6 +376,7 @@ CIVILISATIONS
         * Spread Islam to 30% of the world population
 * Spain
     * Leaders: Isabella, Philip II, Franco
+    * Unique Unit: Tercio (Arquebusier): starts with Pinch, Formation
     * Unique Unit: Conquistador (Cuirassier): can fortify, +50% attack against Spearman, Swordsman, Axeman, Heavy Swordsman
     * Unique Building: Citadel (Castle): halved cost, no extra production with Stone, +5 experience for Siege units
     * Unique Historical Victory:
@@ -374,7 +385,8 @@ CIVILISATIONS
         * Spread Catholicism to 30% and allow no Protestant civilizations in Europe in 1650 AD
 * France
     * Leaders: Charlemagne, Louis XIV, Napoleon, De Gaulle
-    * Unique Unit: Heavy Cannon (Cannon): +25% against Gunpowder and Siege units
+    * Unique Unit: Gendarme (Cuirassier): starts with Pinch, Leadership
+    * Unique Unit: Guard (Dragoon): starts with Pinch, Leadership
     * Unique Building: Salon (Coffeehouse): +25% Great People birth rate, +25% culture, +2 Statesman slots
     * Unique Power: The Power of Diplomacy: Negative opinions and refusal to talk expire faster, other civilizations are more favorable during Congresses
     * Unique Historical Victory:
@@ -385,6 +397,7 @@ CIVILISATIONS
     * Leaders: Alfred the Great, Elizabeth, Victoria, Churchill
     * Color: Red / Yellow
     * Unique Unit: Redcoat (Musketman): deals collateral damage
+    * Unique Unit: Man-of-War (Ship of the Line): +3 strength, +1 move, collateral damage affects one more unit
     * Unique Power: The Power of Indirect Rule: City distance is capped for city maintenance
     * Unique Historical Victory:
         * Colonize every continent by 1730 AD (North America: 5, Asia: 5, Africa: 4, South/Central America and Caribbean: 3, Australia/Oceania: 3)
@@ -400,7 +413,8 @@ CIVILISATIONS
         * Have 8000 culture by 1450 AD
 * Russia
     * Leaders: Ivan IV, Peter the Great, Catherine the Great, Alexander II, Stalin
-    * Unique Unit: Cossack (Dragoon): +20% retreat chance, +50% against heavy cavalry
+    * Unique Unit: Strelets (Arquebusier): +1 move, starts with City Garrison
+    * Unique Unit: Cossack (Pistolier): +2 strength, +50% against Cannon, Artillery
     * Unique Building: Research Institute (Laboratory): +1 Scientist Slot, +1 free Scientist
     * Unique Historical Victory:
         * Found seven colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
@@ -416,6 +430,7 @@ CIVILISATIONS
         * Have 5000 gold in 1500 AD and 15000 gold in 1700 AD
 * Portugal
     * Leaders: Afonso Henriques, Joao II, Maria II
+    * Unique Unit: Bandeirante (Explorer): +4 strength, can attack, 30% retreat chance, guaranteed to capture slaves
     * Unique Unit: Carrack (Caravel): cargo space 2 (all units), starts with Sentry
     * Unique Building: Feitoria (Customs House): +1 commerce on water tiles
     * Unique Power: The Power of Exploration: Ocean trade enables with Optics, reduced expansion penalty for overseas colonies
@@ -433,6 +448,7 @@ CIVILISATIONS
         * Control 60% of South America in 1700 AD
 * Mongolia
     * Unique Unit: Keshik (Lancer): Light Cavalry, three moves, +1 first strike, causes collateral damage, no city attack penalty
+    * Unique Unit: Mangudai (Horse Archer): +2 strength, +1 move
     * Unique Building: Ger (Stable): +2 experience for Mounted units, +2 food on improved Horse tiles, +1 food on improved Cow and Sheep tiles
     * Unique Power: The Power of Terror: Approaching armies can send enemy cities into disorder
 * Aztecs
@@ -442,9 +458,10 @@ CIVILISATIONS
         * Make Tenochtitlan the largest city in the world in 1520 AD
         * Build 6 Step Pyramids and 6 Sacrificial Altars by 1650 AD
         * Enslave 20 Old World units
-* Turkey
+* Ottomans
     * Leaders: Mehmed II, Suleiman the Magnificent, Atatürk
     * Unique Power: The Power of Devshirme: can conscript two additional units in cities with a non-state religion
+    * Unique Unit: Great Bombard (Bombard): +50% city attack
     * Unique Unit: Janissary (Arquebusier): +25% against archery, melee and heavy cavalry units
     * Unique Building: Hammam (Bath): +2 happiness
     * Unique Historical Victory:
@@ -461,6 +478,7 @@ CIVILISATIONS
         * Conquer four European colonies by 1745 AD
         * Acquire seven Spice resources by 1775 AD
 * America
+    * Unique Unit: Pioneer (Settler): can fight, strength 10, +50% open terrain strength, cities founded in North America receive a free worker and defender
     * Unique Unit: Minuteman (Musketman): costs 30 production less, starts with March
     * Unique Building: Mall (Department Store): +50% gold with power, +1 happiness with Hit Movies, Hit Singles, Hit Football Games
     * Unique Historical Victory:
@@ -471,7 +489,6 @@ CIVILISATIONS
 NEW CIVILISATIONS
 * Harappa
     * Spawn: 3000 BC at Harappa
-    * Human player only
     * Leader: Vatavelli
     * Color: Purple / Yellow
     * Coat of Arms: Bull Sigil
@@ -486,7 +503,8 @@ NEW CIVILISATIONS
     * Spawn: 1200 BC at Sur
     * Leaders: Hiram, Hannibal
     * Color: Middle Purple / Yellow
-    * Unique Unit: Atlas Elephant (War Elephant): requires Mathematics, 2 moves, starts with Shock
+    * Unique Unit: Sacred Band (Spearman): +25% city strength, starts with Amphibious
+    * Unique Unit: Numidian Cavalry (Horseman): no reduced city strength, +50% against Melee units, starts with Disengage and Desert Adaptation
     * Unique Building: Glassmaker (Market): +50% trade route yield
     * Unique Power: The Power of Mercenaries: starts with the Mercenary civic, mercenary costs halved, no extra mercenary upkeep
     * Unique Historical Victory:
@@ -512,6 +530,7 @@ NEW CIVILISATIONS
     * Color: Light Blue / Yellow
     * Coat of Arms: Buddha Statue
     * Unique Unit: Dharani (Heavy Galley): 2 cargo, +2 first strikes
+    * Unique Unit: Rocketeer (Grenadier): +2 strength, +25% against Musketman, Rifleman, collateral damage affects two more units
     * Unique Building: Sangam (Library): +25% culture, +1 Artist slot
     * Unique Power: The Power of Thalassocracy: +1 commerce on water tiles
     * Unique Historical Victory:
@@ -523,7 +542,8 @@ NEW CIVILISATIONS
     * Leader: Wang Kon, Sejong
     * Color: Light Red / White
     * Coat of Arms: Korean Imperial Sigil
-    * Unique Unit: Hwacha (Catapult): +50% against melee units
+    * Unique Unit: Hwacha (Bombard): +3 strength, -75% city attack
+    * Unique Unit: Kobukson (Galleass): +2 strength
     * Unique Building: Seowon (University): requires Paper
     * Unique Power: The Power of Kobuksons: Naval units start with Drill I and Drill II
     * Unique Historical Victory:
@@ -537,12 +557,25 @@ NEW CIVILISATIONS
     * Color: Dark Purple / Dark Yellow
     * Coat of Arms: Chi Rho
     * Unique Unit: Cataphract (Lancer): +25% against melee units
+    * Unique Unit: Dromon (Heavy Galley): +1 strength, causes collateral damage
     * Unique Building: Hippodrome (Theatre): extra happiness from culture rate and Horses
     * Unique Power: The Power of Bribery: double gold from trades, Spies can bribe Barbarian units
     * Unique Historical Victory:
         * Have 5000 gold in 1000 AD
         * Make Constantinople the largest and most cultured city in the world in 1200 AD
         * Control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
+* Turks
+    * Spawn: 552 AD at Orduqent
+    * Leaders: Bumin, Alp Arslan, Tamerlane
+    * Color: Blue / White
+    * Coat of Arms: Bow and Arrow
+    * Unique Unit: Oghuz (Horse Archer): 3 moves, hidden nationality, starts with March
+    * Unique Building: Divan (Jail): -25% city maintenance, +1 Statesman slot
+    * Unique Power: The Power of Orda: Barbarians cannot enter your territory during peace time, and mounted barbarians join your forces if attacked during war time
+    * Unique Historical Victory:
+        * Control 6% of the world and pillage 20 improvements by 900 AD
+	* Create an overland trade route from any city in China to one of your Mediterranean ports and spread the Silk Route to 10 of your cities by 1100 AD
+	* Have a capital with developing culture by 900 AD, a different capital with refined culture by 1100 AD, and another capital with influential culture by 1400 AD
 * Tibet
     * Spawn: 630 AD at Lhasa
     * Leader: Songtsen Gampo, Lobsang Gyatso
@@ -560,7 +593,7 @@ NEW CIVILISATIONS
     * Leaders: Dharmasetu, Hayam Wuruk, Suharto
     * Color: Blue / Green
     * Coat of Arms: Javanese Sun
-    * Unique Unit: Orang Laut (Privateer): available with Compass, cheaper, strength 8, +50% against Privateer
+    * Unique Unit: Djong (Galleass): +50% coast defense, +50% against Privateer
     * Unique Building: Candi (Pagan Temple): +1 production, +1 culture
     * Unique Power: The Power of Straits: additional gold for every foreign ship within your borders
     * Unique Historical Victory:
@@ -585,6 +618,7 @@ NEW CIVILISATIONS
     * Color: Lemon / Black
     * Coat of Arms: Imperial Eagle
     * Unique Unit: Landsknecht (Pikeman): +100% against melee units
+    * Unique Unit: Grenzer (Grenadier): -2 strength, +25% retreat chance, starts with Guerilla, Disengage
     * Unique Building: Rathaus (Civic Square): -25% upkeep
     * Unique Power: The Power of Investiture: double production for state religion buildings
     * Unique Historical Victory:
@@ -603,17 +637,14 @@ NEW CIVILISATIONS
         * Have three cities with 12 population by 1400 AD
         * Be the first to discover Civil Liberties
         * Build three Christian cathedrals by 1600 AD
-* Seljuks
-    * Unplayable
-    * Spawn in 1040 AD and 1070 AD with armies in the Middle East
-    * Unique Unit: Ghulam Warrior (Knight): +50% against Pikeman
 * Italy
     * Spawn: 1167 AD at Florence
     * Conditional: requires at least one independent city on the Italian peninsula
     * Leaders: Lorenzo de' Medici, Cavour, Mussolini
     * Color: Dark Red / Dark Yellow
     * Coat of Arms: Lion of Mark
-    * Unique Unit: Bersagliere (Infantry): 2 movement
+    * Unique Unit: Balestriere (Crossbow): +1 first strike, +25% city attack, starts with Amphibious
+    * Unique Unit: Lanternas (Galleass): +2 strength
     * Unique Building: Art Studio (Forge): +25% culture, +1 artist slot
     * Unique Power: The Power of Renaissance: Free specialist in all cities until the end of the Renaissance
     * Unique Historical Victory:
@@ -625,7 +656,7 @@ NEW CIVILISATIONS
     * Leaders: Muhammad ibn Tughluq, Akbar, Benazir Bhutto
     * Color: Brownish Green / Yellow
     * Coat of Arms: Half Moon
-    * Unique Unit: Siege Elephant (Cannon): +25% city attack
+    * Unique Unit: Siege Elephant (Cannon): +1 strength and +25% against Archers and Gunpowder units
     * Unique Building: Mausoleum (Estate): +1 free Artist
     * Unique Power: The Power of Architecture: Cities receive half of construction cost as culture on building completion
     * Unique Historical Victory:
@@ -673,6 +704,7 @@ NEW CIVILISATIONS
     * Leaders: Frederick, Bismarck
     * Color: Dark Gray / Black
     * Coat of Arms: Iron Cross
+    * Unique Unit: Fusilier (Musketeer): starts with Drill I and II
     * Unique Unit: Panzer (Tank): +25% against Rifleman, Infantry, starts with Blitz, Leadership
     * Unique Building: Assembly Plant (Factory): +1 free engineer, +2 experience for Armoured units
     * Unique Power: The Power of Doctrine: Units retain all their experience when upgraded
@@ -686,7 +718,7 @@ NEW CIVILISATIONS
     * Leaders: Juarez, Santa Anna, Cardenas
     * Color: Green / Black
     * Coat of Arms: Mexican Eagle
-    * Unique Unit: Rurales (Cavalry): -20 cost, can fortify, starts with Combat I
+    * Unique Unit: Rural (Cavalry): -20 cost, can fortify, starts with Combat I
     * Unique Building: Charreada Arena (Amphitheatre): +1 happiness with Horse, +2 experience for Mounted units
     * Unique Power: The Power of Arid Agriculture: Can build farms on hills
     * Unique Historical Victory:
@@ -713,6 +745,7 @@ NEW CIVILISATIONS
     * Color: Purple / Dark Yellow
     * Coat of Arms: Colombian Eagle
     * Unique Unit: Albion Legion (Grenadier): +1 move, +2 strength
+    * Unique Unit: Llanero (Hussar): +50% attack against Musketeer, Rifleman, starts with Mobility
     * Unique Building: Hacienda (Estate): +1 food for improved Banana, +3 commerce for improved Coffee
     * Unique Power: The Power of the Liberator: No City Resistance on Conquest in Latin America
     * Unique Historical Victory:
@@ -778,12 +811,15 @@ UNITS
     * Maceman replaced by Heavy Swordsman
     * Knight has been renamed to Lancer
     * Crossbowman (Machinery): Strength 6, +25% against Melee, +25% against Light Cavalry, +25% city defense, +25% hill defense
-    * Longbowman (Commune): Strength 6, 50% retreat chance, collateral damage against 3 units (max. 50%), +50% hills, forest, rainforest
+    * Longbowman (Commune): Strength 6, 30% retreat chance, halved collateral damage against 2 units (max. 30%), +25% hills, forest, rainforest attack, +25% hills defense
     * Pikeman (Companies): Strength 8, +50% against Melee and Heavy Cavalry
-    * Musketman (Replaceable Parts): Strength 12, +10% against Arquebusier
+    * Galleon (Exploration): 5 moves
+    * Musketman renamed to Musketeer (Replaceable Parts): Strength 12, +10% against Arquebusier
     * Grenadier (Chemistry): Strength 10, 50% retreat chance, collateral damage against 3 units (max. 50%), +25% against Rifleman, starts with City Raider I
     * Artillery (Ballistics): Strength 14, 50% retreat chance, collateral damage against 5 units (max. 50%), 12% bombard rate
-    * Infantry (Social Services): does not receive +25% against gunpowder units
+    * Infantry (Social Services): does not receive +25% against gunpowder units, +20% against Marine and Paratrooper
+    * Transport (Infrastructure): 9 moves
+    * Marine (Globalism): starts with Woodsman and Guerilla
     * Gunship (Aerodynamics): starts with Amphibious
     * Stealth Destroyer (Superconductors): can bombard cities
 * New unit attributes: open terrain attack and defense in open terrain (flat terrain, no feature defense modifier, no city or fort)
@@ -798,8 +834,8 @@ UNITS
 * Changes to barbarian and native only units:
     * Vulture: now replaces Light Swordsman
     * Dog Soldier: now replaces Light Swordsman, only +75% against melee units
-    * Numidian Cavalry: now replaces Horseman
     * Impi: cannot enter Desert
+    * Mounted Brave: now replaces Pistolier, +20% retreat chance
 * Removed Airships
 * Promotion changes:
     * Mercenary: +2 gold upkeep, cannot be upgraded
@@ -810,29 +846,35 @@ UNITS
     * City Raider II and III: enabled access for gunpowder units
 
 NEW UNITS
-* 13 new land units
+* 16 new land units
     * Militia (none): Strength 2, +25% city defense
     * Light Swordsman (Alloys): Strength 5
     * Horseman (Riding): Strength 6, 20% retreat chance, +25% against siege units, -25% city strength
-    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 50% retreat chance, collateral damage against 2 units (max. 25%), +25% hills, forest, rainforest attack
+    * Camel Rider (Riding): Strength 5, 20% retreat chance, +25% against siege units, -25% city strength, +25% desert strength, +25% against heavy cavalry, starts with Desert Adaptation
+    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 30% retreat chance, 50% collateral damage against 2 units (max. 25%), +25% hills, forest, rainforest attack
+    * Camel Archer (Nobility): Strength 5, 30% retreat chance, +50% open terrain strength, +25% desert strength, +25% against heavy cavalry, starts with Desert Adaptation
     * Heavy Spearman (Civil Service): Strength 6, +100% against Heavy Cavalry
     * Bombard (Gunpowder): Strength 5, 75% retreat chance, collateral damage against 5 units (max. 60%), +100% city attack, 12% bombard rate
-    * Persecutor (Judiciary): can remove non-state religion
+    * Persecutor (Doctrine): can remove non-state religion
     * Arquebusier (Firearms): Strength 10
     * Pistolier (Firearms): Strength 8, 40% retreat chance, +25% open terrain strength
-    * Dragoon (Biology): Strength 14, -25% city strength
+    * Camel Gunner (Firearms): Strength 7, 40% retreat chance, +25% open terrain strength, +25% desert strength, +25% against heavy cavalry, starts with Desert Adaptation
+    * Dragoon (Biology): Strength 14, -25% city strength, immune to first strikes
     * Hussar (Nationalism): Strength 10, 50% retreat chance, +25% open terrain strength
     * Labourer (Labour Unions): +50% work rate, can build Hamlets and Highways
     * Howitzer (Flight): Strength 15, 50% retreat chance, collateral damage against 6 units (max. 60%), +25% city attack, 16% bombard rate
-* 5 new naval units:
+* 6 new naval units:
     * Heavy Galley (Alchemy): Strength 5, 50% retreat chance, +25% coast attack
     * Cog (Guilds): Strength 5, 25% retreat chance, 2 cargo
     * Galleass (Gunpowder): Strength 6, 25% retreat chance, +50% coast strength
+    * Steamship (Thermodynamics): Strength 12, 25% retreat chance, 3 cargo
     * Torpedo Boat (Ballistics): Strength 18, 50% retreat chance, +50% coast attack
     * Cruiser (Engine, Refining): Strength 28, 25% retreat chance, 16% bombard rate
 * 2 new air units:
     * Biplane (Flight): Strength 12, range 6, 50% interception chance, 8% bombard rate
     * Nuclear Bomber (Fission): Range 6, can drop a nuclear bomb
+    * Satellite (Satellites): invisible to most units, can see Satellites, can explore rival territory, starts with Sentry, can join city as Research Satellite, Commercial Satellite, Military Satellite
+    * Drone (Automation): invisible to all units, can explore enemy territory, can bombard improvements and city defenses, 50% chance to evade enemy detection, can execute some espionage missions
 * 6 new barbarian only unique units:
     * Huluganni (Hittite Chariot): +1 strength
     * Medjay (Nubian Archer): +1 strength, +1 first strike
@@ -1385,9 +1427,9 @@ INTERFACE
 HISTORICAL IMMERSION
 * Civilizations are more likely to collapse after a certain historical date
 * Christianity is removed from Anatolia when Byzantium collapses
-* Mongol Hordes event: armies spawn at their borders when AI Mongolia makes first contact with Seljuks, Persia and Russia
+* Mongol Hordes event: armies spawn at their borders when AI Mongolia makes first contact with the Turks, Persia and Russia
 * Predetermined capitals for respawning civilizations
-* Seljuk and independent cities immediately flip to Turkey to balance their lack of starting settlers
+* Independent cities immediately flip to Turkey to balance their lack of starting settlers
 * City garrisons are pushed out to their owner's capital for certain spawns (e.g. Italy, Turkey)
 * India cannot respawn as long as the Mughals are still alive
 * AI Russia and America receive settlers or conquerors to reach the American West Coast and Siberian Pacific coast respectively
@@ -1397,7 +1439,7 @@ HISTORICAL IMMERSION
 * The existence of the Catholic shrine and the Apostolic Palace is guaranteed by the time of the Holy Roman spawn
 * AI civilizations receive a free worker and defender when founding a colony
 * The capital of AI civilizations automatically relocates under appropriate circumstances
-* AI Seljuks and Mughals spread state religion on city conquest
+* AI Mughals spread state religion on city conquest
 * Islam spreads to Indonesia around 1500 AD
 * Semi-scripting to help Chinese city placement
 * Wonders in scenarios have the correct original owners
@@ -1426,7 +1468,6 @@ AI BEHAVIOUR
 
 BALANCE
 * Several classical wonders are prevented from being built in later eras
-* China cannot trade techs it has a monopoly on to reduce the benefit of its UP
 * The AI cannot start wonders before the player spawns if they are part of the player UHV
 * The AI receives a free civic switch on respawn
 
@@ -1434,7 +1475,7 @@ PERFORMANCE
 * Relocated AI war maps to the DLL to improve performance
 * Included an option to ignore UHV checks for AI civs (enabled by default)
 * Included an option to enable graphics paging to reduce memory consumption
- * Optimised how persistent data is stored and accessed in Python
+* Optimised how persistent data is stored and accessed in Python
    
 BUGFIXES
 * Included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move
