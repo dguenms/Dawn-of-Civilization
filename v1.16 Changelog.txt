@@ -141,7 +141,7 @@ UNIQUE BUILDINGS
     * Iranian Caravanserai: replaces Post Office
 
 NATIONAL WONDERS
-* Added Spaceport (Spaceflight, maximum 30 degrees): +100% spaceship production in all cities
+* Added Spaceport (Spaceflight, maximum 30 degrees): +100% space production in all cities
 * Triumphal Arch is no longer a National Wonder
 * Improved art:
     * Administrative Center
@@ -151,7 +151,7 @@ NATIONAL WONDERS
 WONDERS
 * Changed twelve wonder effects:
     * Temple of Kukulkan: +1 food on Rainforest
-    * Shwedagon Paya: double production for state religion buildings
+    * Shwedagon Paya: +100% production for state religion buildings
     * Hagia Sophia: +2 espionage from state religion buildings
     * Notre Dame: only two temples required to build cathedrals
     * University of Sankore: +1 commerce on desert tiles
@@ -160,14 +160,15 @@ WONDERS
     * Blue Mosque: temporary unhappiness limited to 1
     * Saint Basil's Cathedral: +2 production from state religion buildings
     * Versailles: free Estate in every city, +2 free Statesmen
-    * Triumphal Arch (Rifling): units heal +50% after being promoted (no longer a National Wonder)
+    * Triumphal Arch (Ballistics): units heal +50% more when being promoted (no longer a National Wonder)
     * Space Elevator: +100% space production, +1 commerce per constructed Satellite, +5 commerce per completed space project
 * Renamed wonders:
     * Mausoleum of Maussollos to Great Mausoleum
-    * The Collosseum to Flavian Amphitheatre
+    * The Colosseum to Flavian Amphitheatre
 * Changed wonder requirements:
     * Colossus requires Bloomery
     * Great Mausoleum requires Cement
+    * Himeji Castle requires Feudalism
     * Notre Dame requires Commune
     * Blue Mosque requires Academia
     * Taj Mahal requires Urban Planning
@@ -176,9 +177,9 @@ WONDERS
     * Dujiangyan (Writing, Rice): +1 food on river tiles
     * Jetavanaramaya (Aesthetics, Buddhism with Buddhist or Hindu state religion): +1 food from Artist
     * Al Khazneh (Currency, Judaism, Oasis in city radius): +1 trade route in all cities
+    * Nalanda University (Philosophy, Buddishm with Hindu state religion): +2 research per state religion building
     * Gondeshapur (Medicine, Zoroastrianism): free Medic improvement for units built in the city, +1 food from Scientist
     * Prambanan (Politics, Hinduism with Buddhist or Hindu state religion): +25% food stored on growth in all cities
-    * Nalanda University (Philosophy, Buddishm with Hindu state religion): +2 research per state religion building
     * Salsal Buddha (Artisanry, Buddhism, Camels): trade routes remain connected during war
     * Iron Pillar (Steel, Hinduism): free Forge in every city
     * Cheomseongdae (Scholarship, Confucianism with Buddhist state religion): +1 happiness per 10% research rate
@@ -193,7 +194,7 @@ WONDERS
     * Saint Sophia's Cathedral (Doctrine, Orthodoxy): +1 food from Merchant
     * Gur-E-Amir (Cartography, Islam): city receives additional culture equal to gold pillaged in conquered cities
     * Kremlin (Gunpowder, Orthodoxy): +25% defense in all cities, +1 movement for civilian units
-    * Vijaya Stambha (Companies, Hinduism): free City Defender I promotion for units built in the city, 
+    * Vijaya Stambha (Companies, Hinduism): free City Defender I promotion for units built in the city, +50% great general birth rate within own borders
     * El Escorial (Exploration, Catholicism): additional gold for every acquired colony
     * Torre de Belem (Optics, Catholicism): +100% foreign trade route yield
     * Saint Thomas Church (Humanities, Protestantism): +2 happiness in every city
@@ -221,32 +222,32 @@ WONDERS
     * Mole Antonelliana (Assembly Line, Catholicism): +2 production per peak in city radius
     * Nobel Prize (Refining): extra great people point when a great person is born in a pleased or friendly civilisation
     * Chateau Frontenac (Refining): free Railway Station in every city, +50% Railway construction speed
-    * Bletchley Park (Radio): +50% chance to avoid spy detection, +50% chance to detect enemy spies
     * Las Lajas Sanctuary (Microbiology, Catholicism): +10% unit heal rate in all cities
     * Palace of Nations (Civil Rights): congresses occur every four turns, cities cannot be demanded in congresses, other civilisations are more likely to approve your congress requests
     * Golden Gate Bridge (Infrastructure): +1 commerce from Scientist and Engineer
+    * Bletchley Park (Radio): +50% chance to avoid spy detection, +50% chance to detect enemy spies
     * Sagrada Familia (Macroeconomics): +1 production from Artist, +25% production converted to commerce
-    * Atomium (Nuclear Power): +1 research per nuclear weapon in the world
     * Crystal Cathedral (Television, Protestantism): +1 happiness per 10% gold rate, +2 commerce from Priest
-    * Harbour Opera (Tourism): +1 food per two excess happiness
-    * Lotus Temple (Tourism, four religions in city): +1 food per non-state religion in all cities
+    * The Motherland Calls (Power Projection, Central Planning): a free unit is draft every time a unit of level three or higher is lost
     * World Trade Center (Globalism, Free Enterprise): +50% corporation commerce
     * Berlaymont (Globalism, Multilateralism): +2 possible defensive pacts, +1 free specialist per defensive pact
-    * The Motherland Calls (Power Projection, Central Planning): a free unit is draft every time a unit of level three or higher is lost
+    * Atomium (Nuclear Power): +1 research per nuclear weapon in the world
+    * Iron Dome (Laser): +50% intercept chance in own territory
+    * Harbour Opera (Tourism): +1 food per two excess happiness
+    * Lotus Temple (Tourism, four religions in city): +1 food per non-state religion in all cities
+    * Gardens by the Bay (Ecology): +2 commerce per excess health
     * Burj Khalifa (Aerodynamics, desert): +2 food, +2 commerce on desert tiles
     * Hubble Space Telescope (Satellites): +3 research from satellites
-    * Iron Dome (Laser): +50% intercept chance in own territory
+    * Large Hadron Collider (Superconductors): +100% research
+    * Channel Tunnel (Robotics): +100% trade route yield with friendly relations
     * Oriental Pearl Tower (Telecommunications): +2 research per city population
     * Skytree (Telecommunications): +1 production from Scientist, +1 food from Engineer
-    * Gardens by the Bay (Ecology): +2 commerce per excess health
-    * Global Seed Vault (Genetics, tundra in city radius): +1 research per Farm, Paddy Field, Orchard and Plantation resource
     * Delta Works (Renewable Energy, only flat land in city radius): +1 food, production, commerce on water tiles
-    * Channel Tunnel (Robotics): +100% trade route yield with friendly relations
-    * Large Hadron Collider (Superconductors): +100% research
+    * Global Seed Vault (Genetics, tundra in city radius): +1 research per Farm, Paddy Field, Orchard and Plantation resource
     * ITER (Fusion): provides power for all cities on the continent, +1 commerce per power consumed in all cities
 * Improved wonder art:
     * Parthenon
-    * Angkor Wat
+    * Wat Preah Pisnulok
     * Hagia Sophia only has minarets when controlled by a Middle Eastern civilisation
     * Taj Mahal
 * Removed the Leaning Tower
@@ -355,7 +356,7 @@ CIVICS
     * Despotism: removed happiness from Palace and Monument
     * Monarchy: double production for Jail
     * Republic: allows at least one Artist, Merchant, Scientist or Statesman slot, removed hurrying units with gold
-    * Democracy: removed free specialist, added +100% great people
+    * Democracy: removed free specialist, added +100% great people rate
     * Citizenship: increased maintenance to high, removed happiness in largest cities, removed double production for Jail and Forge, added double production of Theatre, added hurrying units with gold
     * Vassalage: +2 happiness in largest cities, removed happiness from Castle
     * Meritocracy: removed increased experience within own borders, added -25% experience required for unit promotions, added +1 commerce per specialist
@@ -450,6 +451,7 @@ IMPROVEMENTS
     * Automation: +2 commerce for Well, Offshore Platform
     * Nanotechnology: +1 production, +1 commerce for Workshop
 * Removed unhealth from cottage improvements
+* Reverted Workshop to +1 production, -1 food
 * Scrub Fallout requires Nuclear Power and takes longer
 * Farms can be built without irrigation with Biology
 * Improvements can be built on Rainforest with Alloys
