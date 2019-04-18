@@ -1808,7 +1808,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</English>
-		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French> <!-- needs update -->
+		<French>[ICON_BULLET]+2 [ICON_CULTURE] pour chaque merveille du monde sous votre contr&#244;le</French>
 		<German>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</German>
 		<Italian>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Spanish>
@@ -2908,7 +2908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
 		<English>[ICON_BULLET]+50% healing when units are promoted</English>
-		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French> <!-- needs update -->
+		<French>[ICON_BULLET]Vos unit&#233;s sont soign&#233;es de 50% lorsqu'elles sont promues</French>
 		<German>[ICON_BULLET]+50% healing when units are promoted</German>
 		<Italian>[ICON_BULLET]+50% healing when units are promoted</Italian>
 		<Spanish>[ICON_BULLET]+50% healing when units are promoted</Spanish>
