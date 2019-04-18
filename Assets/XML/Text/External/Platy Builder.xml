@@ -1410,4 +1410,44 @@
 		<Italian>Show full rectangles</Italian>
 		<Spanish>Show full rectangles</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER</Tag>
+		<English>Area Exporter</English>
+		<French>Area Exporter</French>
+		<German>Area Exporter</German>
+		<Italian>Area Exporter</Italian>
+		<Spanish>Area Exporter</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_WATER</Tag>
+		<English>Add water tiles to lExceptions</English>
+		<French>Add water tiles to lExceptions</French>
+		<German>Add water tiles to lExceptions</German>
+		<Italian>Add water tiles to lExceptions</Italian>
+		<Spanish>Add water tiles to lExceptions</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_PEAKS</Tag>
+		<English>Add peak tiles to lExceptions</English>
+		<French>Add peak tiles to lExceptions</French>
+		<German>Add peak tiles to lExceptions</German>
+		<Italian>Add peak tiles to lExceptions</Italian>
+		<Spanish>Add peak tiles to lExceptions</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_CLICK</Tag>
+		<English>Paint</English>
+		<French>Paint</French>
+		<German>Paint</German>
+		<Italian>Paint</Italian>
+		<Spanish>Paint</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_TLBR</Tag>
+		<English>TL-BR</English>
+		<French>TL-BR</French>
+		<German>TL-BR</German>
+		<Italian>TL-BR</Italian>
+		<Spanish>TL-BR</Spanish>
+	</TEXT>
 </Civ4GameText>

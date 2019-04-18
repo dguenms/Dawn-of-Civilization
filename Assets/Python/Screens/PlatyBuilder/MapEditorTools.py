@@ -64,6 +64,13 @@ def resetReligionMap(iReligion):
 def resetRegionMap():
 	RegionMap.updateRegionMap()
 
+def getTLBR(lPlots):
+	lPlotX = [x for (x, y) in lPlots]
+	lPlotY = [y for (x, y) in lPlots]
+	TL = (min(lPlotX), min(lPlotY))
+	BR = (max(lPlotX), max(lPlotY))
+	return TL, BR
+
 def exportFlip(iPlayer, dFlipZoneEdits):
 	if iPlayer not in dFlipZoneEdits.keys():
 		sText = "No changes between current flipzone and flipzone defined in python"
@@ -104,22 +111,8 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 						break
 
 	if bFlipChanged:
-		Bottom = iWorldY
-		Top = 0
-		Left = iWorldX
-		Right = 0
-		for (x, y) in lNewFlipPlotList:
-			if (x, y) in lNewAIPlotList: continue
-			if x < Left:
-				Left = x
-			if x > Right:
-				Right = x
-			if y < Bottom:
-				Bottom = y
-			if y > Top:
-				Top = y
-		BL = (Left, Bottom)
-		TR = (Right, Top)
+		lPlots = [tPlot for tPlot in lNewFlipPlotList if tPlot not in lNewAIPlotList]
+		BL, TR = getTLBR(lPlots)
 
 		lExceptions = []
 		for tPlot in utils.getPlotList(BL, TR):
@@ -127,21 +120,8 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 				lExceptions.append(tPlot)
 
 		if lNewAIPlotList:
-			BottomAI = iWorldY
-			TopAI = 0
-			LeftAI = iWorldX
-			RightAI = 0
-			for (x, y) in lNewAIPlotList+lNewFlipPlotList:
-				if x < LeftAI:
-					LeftAI = x
-				if x > RightAI:
-					RightAI = x
-				if y < BottomAI:
-					BottomAI = y
-				if y > TopAI:
-					TopAI = y
-			BLAI = (LeftAI, BottomAI)
-			TRAI = (RightAI, TopAI)
+			lPlots = lNewAIPlotList+lNewFlipPlotList
+			BLAI, TRAI = getTLBR(lPlots)
 
 		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
 		try:
@@ -196,22 +176,8 @@ def exportAllFlip(dFlipZoneEdits):
 			else:
 				lNewAIPlotList = []
 
-		Bottom = iWorldY
-		Top = 0
-		Left = iWorldX
-		Right = 0
-		for (x, y) in lNewFlipPlotList:
-			if (x, y) in lNewAIPlotList: continue
-			if x < Left:
-				Left = x
-			if x > Right:
-				Right = x
-			if y < Bottom:
-				Bottom = y
-			if y > Top:
-				Top = y
-		BL = (Left, Bottom)
-		TR = (Right, Top)
+		lPlots = [tPlot for tPlot in lNewFlipPlotList if tPlot not in lNewAIPlotList]
+		BL, TR = getTLBR(lPlots)
 
 		lExceptions = []
 		for tPlot in utils.getPlotList(BL, TR):
@@ -219,22 +185,8 @@ def exportAllFlip(dFlipZoneEdits):
 				lExceptions.append(tPlot)
 
 		if lNewAIPlotList:
-			BottomAI = iWorldY
-			TopAI = 0
-			LeftAI = iWorldX
-			RightAI = 0
-			for (x, y) in lNewAIPlotList+lNewFlipPlotList:
-				if (x, y) in lExceptions: continue
-				if x < LeftAI:
-					LeftAI = x
-				if x > RightAI:
-					RightAI = x
-				if y < BottomAI:
-					BottomAI = y
-				if y > TopAI:
-					TopAI = y
-			BLAI = (LeftAI, BottomAI)
-			TRAI = (RightAI, TopAI)
+			lPlots = [tPlot for tPlot in lNewAIPlotList+lNewFlipPlotList if tPlot not in lExceptions]
+			BLAI, TRAI = getTLBR(lPlots)
 
 		lAllFlips.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
 		if lExceptions:
@@ -282,22 +234,8 @@ def exportCore(iPlayer, bForce = False):
 				bCoreChanged = True
 				break
 	if bCoreChanged:
-		Bottom = iWorldY
-		Top = 0
-		Left = iWorldX
-		Right = 0
-		for (x, y) in utils.getWorldPlotsList():
-			if gc.getMap().plot(x, y).isCore(iPlayer):
-				if x < Left:
-					Left = x
-				if x > Right:
-					Right = x
-				if y < Bottom:
-					Bottom = y
-				if y > Top:
-					Top = y
-		BL = (Left, Bottom)
-		TR = (Right, Top)
+		lCorePlots = [(x, y) for (x, y) in utils.getWorldPlotsList() if gc.getMap().plot(x, y).isCore(iPlayer)]
+		BL, TR = getTLBR(lCorePlots)
 
 		lExceptions = []
 		for (x, y) in utils.getPlotList(BL, TR):
@@ -339,22 +277,8 @@ def exportAllCores():
 		elif iPlayer == iAztecs:
 			sName = "Aztecs"
 
-		Bottom = iWorldY
-		Top = 0
-		Left = iWorldX
-		Right = 0
-		for (x, y) in utils.getWorldPlotsList():
-			if gc.getMap().plot(x, y).isCore(iPlayer):
-				if x < Left:
-					Left = x
-				if x > Right:
-					Right = x
-				if y < Bottom:
-					Bottom = y
-				if y > Top:
-					Top = y
-		BL = (Left, Bottom)
-		TR = (Right, Top)
+		lCorePlots = [(x, y) for (x, y) in utils.getWorldPlotsList() if gc.getMap().plot(x, y).isCore(iPlayer)]
+		BL, TR = getTLBR(lCorePlots)
 
 		lExceptions = []
 		for (x, y) in utils.getPlotList(BL, TR):
@@ -510,6 +434,32 @@ def exportRegionMap(bForce = False):
 		sText = "Regionmap exported"
 	else:
 		sText = "No changes between current regionmap and values defined in python"
+	popup = PyPopup.PyPopup()
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
+def exportAreaExport(lPlots, bWaterException, bPeakException):
+	if lPlots:
+		BL, TR = getTLBR(lPlots)
+		lExceptions = [tPlot for tPlot in utils.getPlotList(BL, TR) if tPlot not in lPlots]
+		
+		if bWaterException:
+			lExceptions.extend([(x, y) for (x, y) in lPlots if gc.getMap().plot(x, y).isWater() and (x, y) not in lExceptions])
+		if bPeakException:
+			lExceptions.extend([(x, y) for (x, y) in lPlots if gc.getMap().plot(x, y).isPeak() and (x, y) not in lExceptions])
+
+		file = open(IMAGE_LOCATION + "\Other\\NewArea.txt", 'wt')
+		try:
+			file.write("# tBL, tTR\n")
+			file.write("("+ str(BL) + ",\t" + str(TR) + ")")
+			if lExceptions:
+				file.write("\n\n# lExceptions\n")
+				file.write(str(lExceptions))
+		finally:
+			file.close()
+		sText = "Area exported"
+	else:
+		sText = "No area selected"
 	popup = PyPopup.PyPopup()
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)

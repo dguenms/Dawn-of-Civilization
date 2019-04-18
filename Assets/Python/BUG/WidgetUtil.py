@@ -310,6 +310,12 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_VICTORYMAP", ())
 			elif iData2 == 47:
 				return CyTranslator().getText("TXT_KEY_WB_VICTORYMAP_RECTANGLE", ())
+			elif iData2 == 48:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER", ())
+			elif iData2 == 49:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_WATER", ())
+			elif iData2 == 50:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_PEAKS", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
