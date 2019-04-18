@@ -472,6 +472,7 @@ iCivGreece : {
 		"Zenon", # 4th BC
 		"Satyros", # 4th BC
 		"Archimedes", # 3rd BC
+		"Sostratos", # 3rd BC
 		"Heron", # 1st
 		iIndustrial,
 		"Ernestos Tsiller", # 19th
