@@ -4549,6 +4549,10 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 						iValue += bWarPlan ? 40 : 20;
 						break;
 
+					case UNITAI_SATELLITE:
+						iValue += 50;
+						break;
+
 					default:
 						FAssert(false);
 						break;

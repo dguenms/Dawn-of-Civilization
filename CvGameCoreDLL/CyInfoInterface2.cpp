@@ -113,7 +113,6 @@ void CyInfoPythonInterface2()
 		.def("getUnitCostPercent", &CvHandicapInfo::getUnitCostPercent, "int ()")
 		.def("getResearchPercent", &CvHandicapInfo::getResearchPercent, "int ()")
 		.def("getResearchPercentByID", &CvHandicapInfo::getResearchPercentByID, "int (int i)") //Rhye
-		.def("getResearchPercentByIDdebug", &CvHandicapInfo::getResearchPercentByIDdebug, "int (int i)") //Rhye
 		.def("getDistanceMaintenancePercent", &CvHandicapInfo::getDistanceMaintenancePercent, "int ()")
 		.def("getDistanceMaintenancePercentByID", &CvHandicapInfo::getDistanceMaintenancePercentByID, "int (int i)") //Rhye
 		.def("getNumCitiesMaintenancePercent", &CvHandicapInfo::getNumCitiesMaintenancePercent, "int ()")
@@ -329,6 +328,7 @@ void CyInfoPythonInterface2()
 		.def("getRiverSideYieldChange", &CvImprovementInfo::getRiverSideYieldChange, "int (int i)")
 		.def("getHillsYieldChange", &CvImprovementInfo::getHillsYieldChange, "int (int i)")
 		.def("getIrrigatedYieldChange", &CvImprovementInfo::getIrrigatedYieldChange, "int (int i)")
+		.def("getCoastalYieldChange", &CvImprovementInfo::getCoastalYieldChange, "int (int i)") // Leoreth
 
 		.def("getTerrainMakesValid", &CvImprovementInfo::getTerrainMakesValid, "bool (int i)")
 		.def("getFeatureMakesValid", &CvImprovementInfo::getFeatureMakesValid, "bool (int i)")

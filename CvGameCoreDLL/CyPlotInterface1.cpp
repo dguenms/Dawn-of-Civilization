@@ -272,5 +272,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("cameraLookAt", &CyPlot::cameraLookAt, "void ()")
 		.def("calculateOverallCulturePercent", &CyPlot::calculateOverallCulturePercent, "int (int ePlayer)")
 		.def("updateCulture", &CyPlot::updateCulture, "void ()")
+		.def("setCultureConversion", &CyPlot::setCultureConversion, "void (int ePlayer, int iRate)")
+		.def("resetCultureConversion", &CyPlot::resetCultureConversion, "void ()")
 	;
 }

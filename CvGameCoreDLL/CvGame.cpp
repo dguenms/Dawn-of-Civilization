@@ -36,6 +36,7 @@
 // BUG - end
 
 #include "CvRhyes.h" //Rhye
+#include <algorithm>
 
 // Public Functions...
 
@@ -2336,49 +2337,35 @@ void CvGame::update()
 	}
 }
 
+struct techRankCompare
+{
+	bool operator() (TeamTypes eTeam1, TeamTypes eTeam2)
+	{
+		return GET_TEAM(eTeam1).getTotalTechValue() > GET_TEAM(eTeam2).getTotalTechValue();
+	}
+};
 
 void CvGame::updateTechRanks()
 {
-	int iValue;
-	int iBestValue;
-	int iI, iJ;
-
-	TeamTypes eBestTeam;
-	bool* abTeamRanked = new bool[MAX_TEAMS];
-
-	for (iI = 0; iI < MAX_TEAMS; iI++)
+	std::vector<TeamTypes> techRankedTeams;
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		abTeamRanked[iI] = false;
+		techRankedTeams.push_back((TeamTypes)iI);
 	}
 
-	for (iI = 0; iI < MAX_TEAMS; iI++)
+	techRankCompare cmp;
+	std::sort(techRankedTeams.begin(), techRankedTeams.end(), cmp);
+
+	int iIndex = 0;
+	for (std::vector<TeamTypes>::iterator it = techRankedTeams.begin(); it != techRankedTeams.end(); ++it)
 	{
-		iBestValue = MIN_INT;
-		eBestTeam = NO_TEAM;
-
-		for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
-		{
-			if (!abTeamRanked[iJ])
-			{
-				iValue = GET_TEAM((TeamTypes)iJ).getTotalTechValue();
-
-				if (iValue >= iBestValue)
-				{
-					iBestValue = iValue;
-					eBestTeam = (TeamTypes)iJ;
-				}
-			}
-		}
-
-		abTeamRanked[eBestTeam] = true;
-
-		setTechRank(iI, eBestTeam);
+		setTechRank(iIndex++, *it);
 	}
 }
 
 void CvGame::setTechRank(int iRank, TeamTypes eTeam)
 {
-	m_aiTechRankTeam[(int)eTeam] = iRank;
+	m_aiTechRankTeam[eTeam] = iRank;
 }
 
 int CvGame::getTechRank(TeamTypes eTeam) const
@@ -5065,6 +5052,12 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 			if (isHotSeat() || bForceHotSeat)
 			{
 				sendPlayerOptions(true);
+			}
+
+			// Leoreth: allow winning again after switching
+			if (getGameState() == GAMESTATE_EXTENDED)
+			{
+				setGameState(GAMESTATE_ON);
 			}
 		}
 
@@ -10521,4 +10514,14 @@ void CvGame::changeYResolution(int iChange)
 void CvGame::autosave()
 {
 	gDLL->getEngineIFace()->AutoSave();
+}
+
+bool CvGame::isPlayerAutoplay(PlayerTypes ePlayer)
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		ePlayer = getActivePlayer();
+	}
+
+	return getGameTurnYear() < GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear();
 }

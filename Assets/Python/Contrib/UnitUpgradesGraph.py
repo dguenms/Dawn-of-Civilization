@@ -175,6 +175,16 @@ class UnitUpgradesGraph:
 		mGraph.matrix[x][yA] = unitB
 		mGraph.matrix[x][yB] = unitA
 		return
+		
+	def canDisplay(self, item):
+		if item == -1:
+			return False
+		elif gc.getUnitInfo(item).isGraphicalOnly():
+			return False
+		elif self.getUnitType(item) in self.exceptionList:
+			return False
+			
+		return True
 
 	def getGraph(self):
 		"Goes through all the units and adds upgrade paths to the graph.  The MGraph data structure is complete by the end of this function."
@@ -184,12 +194,10 @@ class UnitUpgradesGraph:
 		
 		for k in range(self.getNumberOfUnits()):
 			unit = self.getUnitNumber(k)
-			if (unit == -1):
+			if not self.canDisplay(unit):
 				continue
-			if (gc.getUnitInfo(unit).isGraphicalOnly()):
-				continue
-			if (self.getUnitType(unit) not in self.exceptionList):
-				graph[unit] = Node()
+				
+			graph[unit] = Node()
 		
 		self.getGraphEdges(graph)
 		#CvUtil.pyPrint("1:\n" + str(graph))
@@ -568,6 +576,11 @@ class PromotionsGraph(UnitUpgradesGraph):
 		
 		# No unique promotions, so very simple
 		return k
+		
+	def canDisplay(self, item):
+		if item == -1: return False
+		
+		return True
 
 	def getUnitType(self, e):
 		"Returns the type of the units with the specified id"

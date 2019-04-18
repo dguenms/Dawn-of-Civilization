@@ -43,35 +43,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2_TITLE</Tag>
-		<English>The American Dream</English>
-		<French>Le r&#234;ve am&#233;ricain </French>
-		<German>Der amerikanische Traum</German>
-		<Italian>The American Dream</Italian>
-		<Spanish>The American Dream</Spanish>
+		<English>Shining City on a Hill</English>
+		<French>Shining City on a Hill</French>
+		<German>Shining City on a Hill</German>
+		<Italian>Shining City on a Hill</Italian>
+		<Spanish>Shining City on a Hill</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2</Tag>
-		<English>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</English>
-		<French>Construire la Statue de la Libert&#233;, l'Empire State Building, le Pentagone et les Nations Unies avant 1950 ap. J.-C.</French>
-		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, das Empire State Building, das Pentagon und the Vereinten Nationen</German>
-		<Italian>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</Italian>
-		<Spanish>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</Spanish>
+		<English>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</English>
+		<French>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</French>
+		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, die Brooklyn Bridge, das Empire State Building, die Golden Gate Bridge, das Pentagon und the Vereinten Nationen</German>
+		<Italian>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</Italian>
+		<Spanish>Build the Statue of Liberty, the Brooklyn Bridge, the Empire State Building, the Golden Gate Bridge, the Pentagon and the United Nations by 1950 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3_TITLE</Tag>
-		<English>The World's Policeman</English>
-		<French>Le gendarme du monde </French>
-		<German>Die Weltpolizei</German>
-		<Italian>The World's Policeman</Italian>
-		<Spanish>The World's Policeman</Spanish>
+		<English>Pax Americana</English>
+		<French>Pax Americana</French>
+		<German>Pax Americana</German>
+		<Italian>Pax Americana</Italian>
+		<Spanish>Pax Americana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3</Tag>
-		<English>Secure 10 Oil resources by 2000 AD</English>
-		<French>S&#233;curiser 10 gisements de p&#233;trole avant 2000 ap. J.-C.</French>
-		<German>Sichern Sie sich bis zum Jahr 2000 n. Chr. 10 &#214;l-Vorkommen</German>
-		<Italian>Assicurati 10 fonti di petrolio entro il 2000 d.C.</Italian>
-		<Spanish>Controlar 10 recursos petrol&#237;feros en el 2000 d. C.</Spanish>
+		<English>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</English>
+		<French>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</French>
+		<German>Kontrollieren Sie bis zum Jahr 1990 n. Chr. 75% der Wirtschaftsleistung und milit&#228;rischen Macht zwischen Ihnen, Ihrer Vasallen und Alliierten</German>
+		<Italian>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</Italian>
+		<Spanish>Control 75% of the world's commerce and military power between you, your vassals and allies by 1990 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARA1_TITLE</Tag>
@@ -147,27 +147,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG2</Tag>
-		<English>Have 25000 culture in Buenos Aires by 1960 AD</English>
-		<French>Avoir 25 000 en culture &#224; Buenos Aires avant 1960 ap. J.-C.</French>
-		<German>Haben Sie bis zum Jahr 1960 n. Chr. 25.000 Kultur in Buenos Aires</German>
-		<Italian>Have 25000 culture in Buenos Aires by 1960 AD</Italian>
-		<Spanish>Have 25000 culture in Buenos Aires by 1960 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARG2_EPIC</Tag>
-		<English>Have 37500 culture in Buenos Aires by 1960 AD</English>
-		<French>Avoir 37 500 en culture &#224; Buenos Aires avant 1960 ap. J.-C.D</French>
-		<German>Haben Sie bis zum Jahr 1960 n. Chr. 37.500 Kultur in Buenos Aires</German>
-		<Italian>Have 37500 culture in Buenos Aires by 1960 AD</Italian>
-		<Spanish>Have 37500 culture in Buenos Aires by 1960 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARG2_MARATHON</Tag>
-		<English>Have 75000 culture in Buenos Aires by 1960 AD</English>
-		<French>Avoir 75 000 en culture &#224; Buenos Aires avant 1960 ap. J.-C.</French>
-		<German>Haben Sie bis zum Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
-		<Italian>Have 75000 culture in Buenos Aires by 1960 AD</Italian>
-		<Spanish>Have 75000 culture in Buenos Aires by 1960 AD</Spanish>
+		<English>Have legendary culture in Buenos Aires by 1960 AD</English>
+		<French>Have legendary culture in Buenos Aires by 1960 AD</French>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. legend&#228;re Kultur in Buenos Aires</German>
+		<Italian>Have legendary culture in Buenos Aires by 1960 AD</Italian>
+		<Spanish>Have legendary culture in Buenos Aires by 1960 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3_TITLE</Tag>
@@ -179,11 +163,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3</Tag>
-		<English>Experience five golden ages by 2000 AD</English>
-		<French>Traverser cinq &#226;ges d'or avant 2000 ap. J.-C.</French>
-		<German>Erleben Sie bis zum Jahr 2000 n. Chr. f&#252;nf goldene Zeitalter</German>
-		<Italian>Experience five golden ages by 2000 AD</Italian>
-		<Spanish>Experience five golden ages by 2000 AD</Spanish>
+		<English>Experience six golden ages by 2000 AD</English>
+		<French>Traverser six &#226;ges d'or avant 2000 ap. J.-C.</French>
+		<German>Erleben Sie bis zum Jahr 2000 n. Chr. sechs goldene Zeitalter</German>
+		<Italian>Experience six golden ages by 2000 AD</Italian>
+		<Spanish>Experience six golden ages by 2000 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT1_TITLE</Tag>
@@ -339,11 +323,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA1</Tag>
-		<English>Control 10 Slave Plantations and 4 Pastures in 1880 AD</English>
-		<French>Contr&#244;ler 10 plantations &#224; esclaves et 4 p&#226;turages en 1880 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 10 Sklaven-Plantagen und 4 Weidel&#228;nder</German>
-		<Italian>Control 10 Slave Plantations and 4 Pastures in 1880 AD</Italian>
-		<Spanish>Control 10 Slave Plantations and 4 Pastures in 1880 AD</Spanish>
+		<English>Control 8 Slave Plantations and 4 Pastures in 1880 AD</English>
+		<French>Contr&#244;ler 8 plantations &#224; esclaves et 4 p&#226;turages en 1880 ap. J.-C.</French>
+		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 8 Sklaven-Plantagen und 4 Weidel&#228;nder</German>
+		<Italian>Control 8 Slave Plantations and 4 Pastures in 1880 AD</Italian>
+		<Spanish>Control 8 Slave Plantations and 4 Pastures in 1880 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA2_TITLE</Tag>
@@ -355,11 +339,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA2</Tag>
-		<English>Build Wembley, Cristo Redentor and the Three Gorges Dam</English>
+		<English>Build Wembley, Cristo Redentor and the Itaipu Dam</English>
 		<French>Construire Wembley, le Christ r&#233;dempteur et le Barrage d'Itaipu</French>
-		<German>Bauen Sie Wembley, Cristo Redentor und den Drei-Schluchten-Damm</German>
-		<Italian>Build Wembley, Cristo Redentor and the Three Gorges Dam</Italian>
-		<Spanish>Build Wembley, Cristo Redentor and the Three Gorges Dam</Spanish>
+		<German>Bauen Sie Wembley, Cristo Redentor und den Itaipu-Damm</German>
+		<Italian>Build Wembley, Cristo Redentor and the Itaipu Dam</Italian>
+		<Spanish>Build Wembley, Cristo Redentor and the Itaipu Dam</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA3_TITLE</Tag>
@@ -859,22 +843,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
-		<English>Nine Saints</English>
-		<French>Les Neuf Saints </French>
-		<German>Neun Heilige</German>
-		<Italian>Nine Saints</Italian>
-		<Spanish>Nine Saints</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Settle a Great Prophet in two Orthodox cities by 500 AD</English>
-		<French>Faire rejoindre un proph&#232;te illustre &#224; deux villes orthodoxes avant 500 ap. J.-C.</French>
-		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen Gro&#223;en Propheten in zwei orthodoxen St&#228;dten an</German>
-		<Italian>Settle a Great Prophet in two Orthodox cities by 500 AD</Italian>
-		<Spanish>Settle a Great Prophet in two Orthodox cities by 500 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
 		<English>Incense Road</English>
 		<French>La route de l'encens </French>
 		<German>Weihrauchstra&#223;e</German>
@@ -882,44 +850,60 @@
 		<Spanish>Incense Road</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH1</Tag>
+		<English>Acquire 3 incense resources by 400 AD</English>
+		<French>Acqu&#233;rir trois sources d'encens avant 400 ap. J.-C.</French>
+		<German>Erlangen Sie bis 400 n. Chr. 3 Weihrauch-Ressourcen</German>
+		<Italian>Acquire 3 incense resources by 400 AD</Italian>
+		<Spanish>Acquire 3 incense resources by 400 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
+		<English>Nine Saints</English>
+		<French>Les Neuf Saints </French>
+		<German>Neun Heilige</German>
+		<Italian>Nine Saints</Italian>
+		<Spanish>Nine Saints</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<French>Acqu&#233;rir trois sources d'encens avant 600 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-		<Italian>Acquire 3 incense resources by 600 AD</Italian>
-		<Spanish>Acquire 3 incense resources by 600 AD</Spanish>
+		<English>Convert to Orthodoxy five turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</English>
+		<French>Convert to Orthodoxy five turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</French>
+		<German>Konvertieren Sie zum Orthodoxen Christentum f&#252;nf Runden nach seiner Gr&#252;ndung und haben Sie bis zum Jahr 1200 n. Chr. drei angesiedelte gro&#223;e Propheten und eine orthodoxe Kathedrale</German>
+		<Italian>Convert to Orthodoxy five turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</Italian>
+		<Spanish>Convert to Orthodoxy five turns after its foundation and settle three Great Prophets in a city with an Orthodox Cathedral by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_EPIC</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<French>Acqu&#233;rir trois sources d'encens avant 600 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-		<Italian>Acquire 3 incense resources by 600 AD</Italian>
-		<Spanish>Acquire 3 incense resources by 600 AD</Spanish>
+		<English>Convert to Orthodoxy eight turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</English>
+		<French>Convert to Orthodoxy eight turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</French>
+		<German>Konvertieren Sie zum Orthodoxen Christentum acht Runden nach seiner Gr&#252;ndung und haben Sie bis zum Jahr 1200 n. Chr. drei angesiedelte gro&#223;e Propheten und eine orthodoxe Kathedrale</German>
+		<Italian>Convert to Orthodoxy eight turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</Italian>
+		<Spanish>Convert to Orthodoxy eight turns after its foundation and settle three Great Prophets in a city with an Orthodox Cathedral by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_MARATHON</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
-		<French>Acqu&#233;rir trois sources d'encens avant 600 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
-		<Italian>Acquire 3 incense resources by 600 AD</Italian>
-		<Spanish>Acquire 3 incense resources by 600 AD</Spanish>
+		<English>Convert to Orthodoxy fifteen turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</English>
+		<French>Convert to Orthodoxy fifteen turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</French>
+		<German>Konvertieren Sie zum Orthodoxen Christentum f&#252;nfzehn Runden nach seiner Gr&#252;ndung und haben Sie bis zum Jahr 1200 n. Chr. drei angesiedelte gro&#223;e Propheten und eine orthodoxe Kathedrale</German>
+		<Italian>Convert to Orthodoxy fifteen turns after its foundation and have three settled Great Prophets and an Orthodox Cathedral by 1200 AD</Italian>
+		<Spanish>Convert to Orthodoxy fifteen turns after its foundation and settle three Great Prophets in a city with an Orthodox Cathedral by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3_TITLE</Tag>
-		<English>Resisting the Scramble</English>
-		<French>R&#233;sister au partage </French>
-		<German>Dem Wettlauf Widerstand leisten</German>
-		<Italian>Resisting the Scramble</Italian>
-		<Spanish>Resisting the Scramble</Spanish>
+		<English>Prester John</English>
+		<French>Prester John</French>
+		<German>Priesterk&#246;nig Johannes</German>
+		<Italian>Prester John</Italian>
+		<Spanish>Prester John</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH3</Tag>
-		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</English>
-		<French>Emp&#234;cher la pr&#233;sence de colonies europ&#233;ennes en Afrique orientale et sub&#233;quatoriale en 1500 et en 1910 ap. J.-C.</French>
-		<German>Lassen Sie im Jahr 1910 n. Chr. keine europ&#228;ischen Kolonien im &#246;stlichen und sub&#228;quatorialen Afrika zu</German>
-		<Italian>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</Italian>
-		<Spanish>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</Spanish>
+		<English>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</English>
+		<French>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</French>
+		<German>Stellen Sie sicher, dass es im Jahr 1500 n. Chr. mehr orthodoxe als muslimische St&#228;dte in Afrika gibt</German>
+		<Italian>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</Italian>
+		<Spanish>Ensure there are more Orthodox than Muslim cities in Africa in 1500 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>
@@ -931,11 +915,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1</Tag>
-		<English>Have 25000 culture in Paris in 1700 AD</English>
-		<French>Avoir 25 000 en culture &#224; Paris en 1700 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1700 n. Chr. 25.000 Kulturpunkte in Paris</German>
-		<Italian>Have 25000 culture in Paris in 1700 AD</Italian>
-		<Spanish>Have 25000 culture in Paris in 1700 AD</Spanish>
+		<English>Have legendary culture in Paris in 1700 AD</English>
+		<French>Avoir 25 000 en culture &#224; Paris en 1700 ap. J.-C.</French> <!-- needs update -->
+		<German>Haben Sie im Jahr 1700 n. Chr. legend&#228;re Kultur in Paris</German>
+		<Italian>Have legendary culture in Paris in 1700 AD</Italian>
+		<Spanish>Have legendary culture in Paris in 1700 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_EPIC</Tag>
@@ -979,9 +963,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA3</Tag>
-		<English>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</English>
-		<French>Construire Notre-Dame, Versailles, la Statue de la Libert&#233; et la Tour Eiffel avant 1900 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, die Freiheitsstatue und den Eiffelturm</German>
+		<English>Build Notre Dame, Versailles, the Louvre, the Eiffel Tower and the Metropolitain by 1900 AD</English>
+		<French>Build Notre Dame, Versailles, the Louvre, the Eiffel Tower and the Metropolitain by 1900 AD</French>
+		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, den Louvre, den Eiffelturm und die Metropolitain</German>
 		<Italian>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</Italian>
 		<Spanish>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</Spanish>
 	</TEXT>
@@ -1219,51 +1203,51 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1_TITLE</Tag>
-		<English>Translatio Imperii</English>
-		<French>Translatio imperii </French>
-		<German>Translatio Imperii</German>
-		<Italian>Translatio Imperii</Italian>
-		<Spanish>Translatio Imperii</Spanish>
+		<English>Translatio Imperii and Reformation</English>
+		<French>Translatio imperii and Reformation </French>
+		<German>Translatio Imperii and Reformation</German>
+		<Italian>Translatio Imperii and Reformation</Italian>
+		<Spanish>Translatio Imperii and Reformation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1</Tag>
-		<English>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</English>
-		<French>Contr&#244;ler la Basilique Saint-Pierre et la Basilique de la R&#233;surrection en 1200 ap. J.-C.</French>
-		<German>Kontrollieren Sie den Petersdom und die Kirche der Anastasis im Jahr 1200 n. Chr.</German>
-		<Italian>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</Italian>
-		<Spanish>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</Spanish>
+		<English>Control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD</English>
+		<French>Contr&#244;ler la Basilique Saint-Pierre et la Basilique de la R&#233;surrection en 1200 ap. J.-C. (needs update)</French>
+		<German>Kontrollieren Sie den Petersdom im Jahr 1000 n. Chr., die Kirche der Anastasis im Jahr 1200 n. Chr. und die Kirche der Reformation im Jahr 1550 n. Chr.</German>
+		<Italian>Control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD</Italian>
+		<Spanish>Control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE2_TITLE</Tag>
-		<English>The Reformation</English>
-		<French>La R&#233;forme </French>
-		<German>Die Reformation</German>
-		<Italian>The Reformation</Italian>
-		<Spanish>The Reformation</Spanish>
+		<English>Habsburg Monarchy</English>
+		<French>Monarchie de Habsbourg </French>
+		<German>Habsburgermonarchie</German>
+		<Italian>Habsburg Monarchy</Italian>
+		<Spanish>Habsburg Monarchy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE2</Tag>
-		<English>Found Protestantism</English>
-		<French>Fonder le protestantisme</French>
-		<German>Begr&#252;nden Sie den Protestantismus</German>
-		<Italian>Found Protestantism</Italian>
-		<Spanish>Found Protestantism</Spanish>
+		<English>Have three Catholic vassals in Europe by 1650 AD</English>
+		<French>Have three Catholic vassals in Europe by 1650 AD (needs update)</French>
+		<German>Haben Sie bis zum Jahr 1650 n. Chr. drei katholische Vasallen in Europa</German>
+		<Italian>Have three Catholic vassals in Europe by 1650 AD</Italian>
+		<Spanish>Have three Catholic vassals in Europe by 1650 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE3_TITLE</Tag>
-		<English>City of Music</English>
-		<French>La ville de la musique </French>
-		<German>Stadt der Musik</German>
-		<Italian>City of Music</Italian>
-		<Spanish>City of Music</Spanish>
+		<English>Concert of Europe</English>
+		<French>Concert europ&#233;en </French>
+		<German>Konzert Europas</German>
+		<Italian>Concert of Europe</Italian>
+		<Spanish>Concert of Europe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE3</Tag>
-		<English>Settle three great artists in Vienna by 1700 AD</English>
-		<French>Faire rejoinre trois artistes illustres &#224; Vienne avant 1700 ap. J.-C.</French>
-		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. drei gro&#223;e K&#252;nstler in Wien an</German>
-		<Italian>Settle three great artists in Vienna by 1700 AD</Italian>
-		<Spanish>Settle three great artists in Vienna by 1700 AD</Spanish>
+		<English>Settle a total of ten great artists and statesmen in Vienna and have at least pleased relations with eight independent European civilisations by 1850 AD</English>
+		<French>Faire rejoinre trois artistes illustres &#224; Vienne avant 1700 ap. J.-C.</French> <!-- needs update -->
+		<German>Siedeln Sie bis zum Jahr 1850 n. Chr. insgesamt zehn gro&#223;e K&#252;nstler und Staatsm&#228;nner in Wien an und haben Sie mindestens erfreute Beziehungen mit acht unabh&#228;ngigen europ&#228;ischen Zivilisationen</German>
+		<Italian>Settle a total of ten great artists and statesmen in Vienna and have at least pleased relations with eight independent European civilisations by 1850 AD</Italian>
+		<Spanish>Settle a total of ten great artists and statesmen in Vienna and have at least pleased relations with eight independent European civilisations by 1850 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC1_TITLE</Tag>
@@ -1323,11 +1307,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC3</Tag>
-		<English>Control 60% of South America in 1700 AD</English>
-		<French>Contr&#244;ler 60% de l'Am&#233;rique du Sud en 1700 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 1700 n. Chr. 60% von S&#252;damerika</German>
-		<Italian>Control 60% of South America in 1700 AD</Italian>
-		<Spanish>Control 60% of South America in 1700 AD</Spanish>
+		<English>Allow no foreign cities in South America in 1700 AD</English>
+		<French>Allow no foreign cities in South America in 1700 AD</French>
+		<German>Erlauben Sie im Jahr 1700 n. Chr. keine St&#228;dte anderer Zivilisationen in S&#205;damerika</German>
+		<Italian>Allow no foreign cities in South America in 1700 AD</Italian>
+		<Spanish>Allow no foreign cities in South America in 1700 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1_TITLE</Tag>
@@ -1867,35 +1851,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_NOTURN</Tag>
-		<English>Discover Writing and Mathematics by 600 AD</English>
-		<French>D&#233;couvrir l'&#233;criture et les math&#233;matiques avant 600 ap. J.-C.</French>
-		<German>Erforschen Sie bis zum Jahr 600 n. Chr. Schrift und Mathematik</German>
-		<Italian>Discover Writing and Mathematics by 600 AD</Italian>
-		<Spanish>Discover Writing and Mathematics by 600 AD</Spanish>
+		<English>Discover Calendar by 200 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
+		<Italian>Discover Calendar by 200 AD</Italian>
+		<Spanish>Discover Calendar by 200 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
@@ -1923,11 +1907,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3</Tag>
-		<English>Make contact with a European civilization before they discover America</English>
+		<English>Make contact with a European civilization before any European discovers America</English>
 		<French>&#201;tablir un contact avec une civilisation europ&#233;enne avant qu'elle ne d&#233;couvre l'Am&#233;rique</French>
-		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor diese Amerika entdecken</German>
-		<Italian>Make contact with a European civilization before they discover America</Italian>
-		<Spanish>Make contact with a European civilization before they discover America</Spanish>
+		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor eine von ihnen Amerika entdeckt</German>
+		<Italian>Make contact with a European civilization before any European discovers America</Italian>
+		<Spanish>Make contact with a European civilization before any European discovers America</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
@@ -2115,11 +2099,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2</Tag>
-		<English>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</English>
-		<French>Construire le Fort rouge, le Harmandir Sahib et le Taj Mahal avant 1660 ap. J.-C.</French>
-		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, Harmandir Sahib und den Taj Mahal.</German>
-		<Italian>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</Italian>
-		<Spanish>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</Spanish>
+		<English>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</English>
+		<French>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</French>
+		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, die Shalimar-G&#228;rten und den Taj Mahal.</German>
+		<Italian>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</Italian>
+		<Spanish>Build the Red Fort, Shalimar Gardens and the Taj Mahal by 1660 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3_TITLE</Tag>
@@ -2475,35 +2459,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Construire 6 casernes, 5 aqueducs, 4 amphith&#233;&#226;tres et 3 forums avant 100 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
-		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</English>
+		<French>Construire 6 casernes, 5 aqueducs, 4 ar&#232;nes et 3 forums avant 100 ap. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Arenas und 3 Foren</German>
+		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Italian>
+		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Construire 6 casernes, 5 aqueducs, 4 amphith&#233;&#226;tres et 3 forums avant 100 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
-		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</English>
+		<French>Construire 6 casernes, 5 aqueducs, 4 ar&#232;nes et 3 forums avant 100 ap. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Arenas und 3 Foren</German>
+		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Italian>
+		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Construire 6 casernes, 5 aqueducs, 4 amphith&#233;&#226;tres et 3 forums avant 100 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
-		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
-		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</English>
+		<French>Construire 6 casernes, 5 aqueducs, 4 ar&#232;nes et 3 forums avant 100 ap. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Arenas und 3 Foren</German>
+		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Italian>
+		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1_NOTURN</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
-		<French>Construire 6 casernes, 5 aqueducs, 4 amphith&#233;&#226;tres et 3 forums avant 100 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukten, 4 Amphitheatern und 3 Foren</German>
-		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Italian>
-		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</Spanish>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</English>
+		<French>Construire 6 casernes, 5 aqueducs, 4 ar&#232;nes et 3 forums avant 100 ap. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukten, 4 Arenas und 3 Foren</German>
+		<Italian>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Italian>
+		<Spanish>Build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
@@ -3714,12 +3698,12 @@
 		<Spanish>Available colonial resources: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_CENTRAL_PLANNING</Tag>
-		<English>Friendly civilisations with Central Planning: %d1 / %d2</English>
-		<French>Civilisations enthousiastes ayant adopt&#233; l'&#233;conomie planifi&#233;e : %d1 / %d2</French>
-		<German>Friendly civilisations with Central Planning: %d1 / %d2</German>
-		<Italian>Friendly civilisations with Central Planning: %d1 / %d2</Italian>
-		<Spanish>Friendly civilisations with Central Planning: %d1 / %d2</Spanish>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_COMMUNISM</Tag>
+		<English>Friendly communist civilisations: %d1 / %d2</English>
+		<French>Civilisations enthousiastes ayant adopt&#233; le communisme : %d1 / %d2</French>
+		<German>Friendly communist civilisations: %d1 / %d2</German>
+		<Italian>Friendly communist civilisations: %d1 / %d2</Italian>
+		<Spanish>Friendly communist civilisations: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
@@ -4539,12 +4523,12 @@
 		<Spanish>Sacrificial Altars: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_AMPHITHEATRES</Tag>
-		<English>Amphitheatres: %d1 / %d2</English>
-		<French>Amphith&#233;atres : %d1 / %d2</French>
-		<German>Amphitheatres: %d1 / %d2</German>
-		<Italian>Amphitheatres: %d1 / %d2</Italian>
-		<Spanish>Amphitheatres: %d1 / %d2</Spanish>
+		<Tag>TXT_KEY_VICTORY_NUM_ARENAS</Tag>
+		<English>Arenas: %d1 / %d2</English>
+		<French>Ar&#232;nes: %d1 / %d2</French>
+		<German>Arenas: %d1 / %d2</German>
+		<Italian>Arenas: %d1 / %d2</Italian>
+		<Spanish>Arenas: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_AQUEDUCTS</Tag>
@@ -5241,5 +5225,93 @@
 		<German>Culture in %s1: %d2 / %d3</German>
 		<Italian>Culture in %s1: %d2 / %d3</Italian>
 		<Spanish>Culture in %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT</Tag>
+		<English>Global allied commerce: %s1 / %s2%</English>
+		<French>Global allied commerce: %s1 / %s2%</French>
+		<German>Global allied commerce: %s1 / %s2%</German>
+		<Italian>Global allied commerce: %s1 / %s2%</Italian>
+		<Spanish>Global allied commerce: %s1 / %s2%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ALLIED_POWER_PERCENT</Tag>
+		<English>Global allied power: %s1 / %s2%</English>
+		<French>Global allied power: %s1 / %s2%</French>
+		<German>Global allied power: %s1 / %s2%</German>
+		<Italian>Global allied power: %s1 / %s2%</Italian>
+		<Spanish>Global allied power: %s1 / %s2%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONVERTED_TO_ORTHODOXY</Tag>
+		<English>Converted to Orthodoxy</English>
+		<French>Converted to Orthodoxy</French>
+		<German>Converted to Orthodoxy</German>
+		<Italian>Converted to Orthodoxy</Italian>
+		<Spanish>Converted to Orthodoxy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES</Tag>
+		<English>Orthodox Cities: %d1</English>
+		<French>Orthodox Cities: %d1</French>
+		<German>Orthodoxe St&#228;dte: %d1</German>
+		<Italian>Orthodox Cities: %d1</Italian>
+		<Spanish>Orthodox Cities: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MUSLIM_CITIES</Tag>
+		<English>Muslim Cities: %d1</English>
+		<French>Muslim Cities: %d1</French>
+		<German>Muslimische St&#228;dte: %d1</German>
+		<Italian>Muslim Cities: %d1</Italian>
+		<Spanish>Muslim Cities: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PROPHETS</Tag>
+		<English>Great Prophets: %d1 / %d2</English>
+		<French>Great Prophets: %d1 / %d2</French>
+		<German>Gro&#223;e Propheten: %d1 / %d2</German>
+		<Italian>Great Prophets: %d1 / %d2</Italian>
+		<Spanish>Great Prophets: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CATHOLIC_EUROPEAN_VASSALS</Tag>
+		<English>Catholic vassals in Europe: %d1 / %d2</English>
+		<French>Catholic vassals in Europe: %d1 / %d2</French>
+		<German>Katholische Vasallen in Europa: %d1 / %d2</German>
+		<Italian>Catholic vassals in Europe: %d1 / %d2</Italian>
+		<Spanish>Catholic vassals in Europe: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_EUROPEANS</Tag>
+		<English>Pleased or friendly relations with independent European civilisations: %d1 / %d2</English>
+		<French>Pleased or friendly relations with independent European civilisations: %d1 / %d2</French>
+		<German>Erfreute oder freundliche Beziehungen mit unabh&#228;ngigen europ&#228;ischen Zivilisationen: %d1 / %d2</German>
+		<Italian>Pleased or friendly relations with independent European civilisations: %d1 / %d2</Italian>
+		<Spanish>Pleased or friendly relations with independent European civilisations: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED</Tag>
+		<English>Great artists and statesmen settled in %s1: %d2 / %d3</English>
+		<French>Great artists and statesmen settled in %s1: %d2 / %d3</French>
+		<German>Great artists and statesmen settled in %s1: %d2 / %d3</German>
+		<Italian>Great artists and statesmen settled in %s1: %d2 / %d3</Italian>
+		<Spanish>Great artists and statesmen settled in %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_FOREIGN_CITIES_SOUTH_AMERICA</Tag>
+		<English>No foreign cities in South America</English>
+		<French>No foreign cities in South America (needs update)</French>
+		<German>No foreign cities in South America</German>
+		<Italian>No foreign cities in South America</Italian>
+		<Spanish>No foreign cities in South America</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COMMUNISM</Tag>
+		<English>Communism</English>
+		<French>Communisme </French>
+		<German>Communism</German>
+		<Italian>Communism</Italian>
+		<Spanish>Communism</Spanish>
 	</TEXT>
 </Civ4GameText>

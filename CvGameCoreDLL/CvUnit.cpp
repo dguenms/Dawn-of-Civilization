@@ -220,24 +220,13 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		}
 	}
 	//Rhye - start UP (start switch)
-	switch (getOwnerINLINE())
+	if (getOwnerINLINE() == SPAIN)
 	{
-    case KOREA:
-        if (getUnitCombatType() == 9) //naval
-            {
-                setHasPromotion(PROMOTION_DRILL1, true);
-                setHasPromotion(PROMOTION_DRILL2, true);
-            }
-        break;
-	case SPAIN:
 		if (getUnitCombatType() == 9) //naval
-			{
-				setHasPromotion(PROMOTION_NAVIGATION1, true);
-				setHasPromotion(PROMOTION_NAVIGATION2, true);
-			}
-		break;
-	default:
-		break;
+		{
+			setHasPromotion(PROMOTION_NAVIGATION1, true);
+			setHasPromotion(PROMOTION_NAVIGATION2, true);
+		}
 	}
 	//Rhye - end
 
@@ -2443,7 +2432,7 @@ bool CvUnit::generatePath(const CvPlot* pToPlot, int iFlags, bool bReuse, int* p
 bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) const
 {
 	// Leoreth: allow entering enemy territory while you have no cities to avoid being pushed out after spawn
-	if (GET_PLAYER(getOwner()).getNumCities() == 0)
+	if (!GET_PLAYER(getOwnerINLINE()).isBarbarian() && GET_PLAYER(getOwner()).getNumCities() == 0)
 	{
 		return true;
 	}
@@ -2459,9 +2448,12 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 	}
 
 	// Leoreth: Turkic UP
-	if (getOwnerINLINE() == BARBARIAN && eTeam == TURKS && !GET_TEAM(eTeam).isAtWarWithMajorPlayer())
+	if (getOwnerINLINE() == BARBARIAN && eTeam == TURKS)
 	{
-		return false;
+		if (!GET_TEAM(eTeam).isAtWarWithMajorPlayer())
+		{
+			return false;
+		}
 	}
 
 	if (isEnemy(eTeam))
@@ -2712,7 +2704,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		{
 			bool bValid = false;
 
-			if (pPlot->isFriendlyCity(*this, true))
+			if (pPlot->isAlliedCity(*this, true) || isRivalTerritory())
 			{
 				bValid = true;
 
@@ -2746,6 +2738,12 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 					return false;
 				}
 			}
+		}
+
+		// Leoreth: make sure that hidden nationality units that entered cities through open borders cannot attack from there
+		if (bAttack && m_pUnitInfo->isHiddenNationality() && plot()->isCity() && plot()->getPlotCity()->getOwner() != getOwner())
+		{
+			return false;
 		}
 		break;
 
@@ -4236,6 +4234,7 @@ bool CvUnit::nuke(int iX, int iY)
 	bool abTeamsAffected[MAX_TEAMS];
 	TeamTypes eBestTeam;
 	int iBestInterception;
+	CvUnit* bestInterceptor;
 	int iI, iJ, iK;
 
 	if (!canNukeAt(plot(), iX, iY))
@@ -4272,11 +4271,34 @@ bool CvUnit::nuke(int iX, int iY)
 
 	iBestInterception = 0;
 	eBestTeam = NO_TEAM;
+	bestInterceptor = NULL;
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
 		if (abTeamsAffected[iI])
 		{
+			if (GET_TEAM((TeamTypes)iI).canSatelliteIntercept())
+			{
+				for (int iJ = NO_DIRECTION; iJ < NUM_DIRECTION_TYPES; iJ++)
+				{
+					CvPlot* pPlot = plotDirection(iX, iY, (DirectionTypes)iJ);
+					for (int iK = 0; iK < pPlot->getNumUnits(); iK++)
+					{
+						CvUnit* pUnit = pPlot->getUnitByIndex(iK);
+						if (pUnit != this && pUnit->getTeam() == iI && pUnit->getSpecialUnitType() == SPECIALUNIT_SATELLITE)
+						{
+							bestInterceptor = pUnit;
+							break;
+						}
+					}
+				}
+			}
+
+			if (bestInterceptor != NULL)
+			{
+				break;
+			}
+
 			if (GET_TEAM((TeamTypes)iI).getNukeInterception() > iBestInterception)
 			{
 				iBestInterception = GET_TEAM((TeamTypes)iI).getNukeInterception();
@@ -4290,11 +4312,27 @@ bool CvUnit::nuke(int iX, int iY)
 
 	setReconPlot(pPlot);
 
-	if (GC.getGameINLINE().getSorenRandNum(100, "Nuke") < iBestInterception)
+	// Leoreth: if a satellite can intercept, it will
+	if (bestInterceptor != NULL)
 	{
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			if (GET_PLAYER((PlayerTypes)iI).isAlive() && (getOwner() == iI || abTeamsAffected[GET_PLAYER((PlayerTypes)iI).getTeam()]))
+			{
+				szBuffer = gDLL->getText("TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE", GET_PLAYER(getOwnerINLINE()).getCivilizationAdjective(), getNameKey(), GET_PLAYER(bestInterceptor->getOwnerINLINE()).getCivilizationAdjective(), bestInterceptor->getNameKey());
+				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), (((PlayerTypes)iI) == getOwnerINLINE()), GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_NUKE_INTERCEPTED", MESSAGE_TYPE_MAJOR_EVENT, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
+			}
+		}
+
+		bestInterceptor->kill(true);
+		kill(true);
+		return true;
+	}
+	else if (GC.getGameINLINE().getSorenRandNum(100, "Nuke") < iBestInterception)
+	{
+		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).isAlive() && (getOwner() == iI || abTeamsAffected[GET_PLAYER((PlayerTypes)iI).getTeam()]))
 			{
 				szBuffer = gDLL->getText("TXT_KEY_MISC_NUKE_INTERCEPTED", GET_PLAYER(getOwnerINLINE()).getNameKey(), getNameKey(), GET_TEAM(eBestTeam).getName().GetCString());
 				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), (((PlayerTypes)iI) == getOwnerINLINE()), GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_NUKE_INTERCEPTED", MESSAGE_TYPE_MAJOR_EVENT, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
@@ -5072,7 +5110,8 @@ bool CvUnit::pillage()
 		gDLL->getEntityIFace()->AddMission(&kDefiniton);
 	}
 
-	if (eTempImprovement != NO_IMPROVEMENT || eTempRoute != NO_ROUTE)
+	// Leoreth: added positive pillage gold requirement, removed routes from checks
+	if (eTempImprovement != NO_IMPROVEMENT /*|| eTempRoute != NO_ROUTE*/)
 	{
 	    if (iPillageGold > 0)
 	    {
@@ -6123,6 +6162,14 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 		}
 	}
 
+	if (GC.getSpecialistInfo(eSpecialist).isSatellite())
+	{
+		if (!pCity->canSatelliteJoin())
+		{
+			return false;
+		}
+	}
+
 	return true;
 }
 
@@ -6731,26 +6778,20 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 }
 
 //SuperSpies: TSHEEP start
-bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iModifier)
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission)
 {
-	// cheap missions do not give XP: avoid farming
-	if (iCost < std::min(100, GET_TEAM(getTeam()).getEspionagePointsAgainstTeam(eTargetTeam)))
+	int iExperience = GC.getEspionageMissionInfo(eMission).getBaseExperience();
+	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + GC.getEspionageMissionInfo(eMission).getDifficultyMod())) / 100;
+
+	iExperience *= 2 * iDifficulty;
+	iExperience /= 100;
+
+	if (iExperience < 100)
 	{
 		return false;
 	}
 
-	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + iModifier)) / 100;
-	int iExperience = 1;
-
-	if (iDifficulty >= 90) iExperience += 4;
-	else if (iDifficulty >= 80) iExperience += 3;
-	else if (iDifficulty >= 65) iExperience += 2;
-	else if (iDifficulty >= 50) iExperience += 1;
-
-	if (iExperience == 0)
-	{
-		return false;
-	}
+	iExperience /= 100;
 
 	changeExperience(iExperience);
 	testPromotionReady();
@@ -6949,7 +6990,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), iMissionCost, GC.getEspionageMissionInfo(eMission).getDifficultyMod());
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), eMission);
 			}
 
 			return true;
@@ -7346,7 +7387,7 @@ void CvUnit::promote(PromotionTypes ePromotion, int iLeaderUnitId)
 		changeLevel(1);
 
 		// Leoreth: Triumphal Arch effect
-		int iDamageHealed = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)TRIUMPHAL_ARCH) ? getDamage() : getDamage() / 2;
+		int iDamageHealed = GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)TRIUMPHAL_ARCH) ? getDamage() * 3 / 4 : getDamage() / 2;
 		changeDamage(-iDamageHealed);
 	}
 
@@ -8195,6 +8236,8 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_PERSECUTE: // Leoreth
 		case MISSION_GREAT_MISSION:
+		case MISSION_SATELLITE_ATTACK:
+		case MISSION_REBUILD:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -8324,6 +8367,11 @@ bool CvUnit::canCoexistWithEnemyUnit(TeamTypes eTeam) const
 		}
 
 		return false;
+	}
+
+	if (getDomainType() == DOMAIN_AIR && getInvisibleType() != NO_INVISIBLE && isRivalTerritory())
+	{
+		return true;
 	}
 
 	if (isInvisible(eTeam, false))
@@ -8481,12 +8529,6 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 	int iExtraModifier;
 
 	iExtraModifier = getExtraCombatPercent();
-
-	// Leoreth: Ethiopian UP: +10% strength for land units in own borders
-	if (getOwnerINLINE() == ETHIOPIA && getDomainType() == DOMAIN_LAND && plot()->getOwnerINLINE() == ETHIOPIA)
-	{
-		iExtraModifier += 10;
-	}
 
 	iModifier += iExtraModifier;
 	if (pCombatDetails != NULL)
@@ -10232,6 +10274,13 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	{
 		pOldPlot->removeUnit(this, bUpdate && !hasCargo());
 
+#ifdef _DEBUG
+		for (int i = 0; i < pOldPlot->getNumUnits(); i++)
+		{
+			FAssert(pOldPlot->getUnitByIndex(i) != this);
+		}
+#endif
+
 		pOldPlot->changeAdjacentSight(getTeam(), visibilityRange(), false, this, true);
 
 		pOldPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), -1);
@@ -10323,6 +10372,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	}
 
 	FAssertMsg(plot() == pNewPlot, "plot is expected to equal pNewPlot");
+	FAssert(at(iX, iY));
 
 	if (pNewPlot != NULL)
 	{
@@ -10367,6 +10417,19 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 		pNewPlot->changeAdjacentSight(getTeam(), visibilityRange(), true, this, true); // needs to be here so that the square is considered visible when we move into it...
 
 		pNewPlot->addUnit(this, bUpdate && !hasCargo());
+
+#ifdef _DEBUG
+		bool bFound = false;
+		for (int i = 0; i < pNewPlot->getNumUnits(); i++)
+		{
+			if (pNewPlot->getUnitByIndex(i) == this)
+			{
+				bFound = true;
+				break;
+			}
+		}
+		FAssert(bFound);
+#endif
 
 		pNewPlot->area()->changeUnitsPerPlayer(getOwnerINLINE(), 1);
 		pNewPlot->area()->changePower(getOwnerINLINE(), m_pUnitInfo->getPowerValue());
@@ -14487,6 +14550,9 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 				pCity->setHasReligion(eReligion, false, true);
 			}
 
+			pCity->changeCultureUpdateTimer(1);
+			pCity->changeOccupationTimer(1);
+
 			gDLL->getInterfaceIFace()->addMessage(getOwner(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_PERSECUTION", pCity->getName().c_str(), GC.getReligionInfo(eReligion).getDescription(), iLoot), "AS2D_PLAGUE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
 		}
 		else
@@ -14494,8 +14560,6 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 			gDLL->getInterfaceIFace()->addMessage(getOwner(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_PERSECUTION_FAIL", pCity->getName().c_str()), "AS2D_PLAGUE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 		}
 
-		pCity->changeCultureUpdateTimer(1);
-		pCity->changeOccupationTimer(1);
 		pCity->changeHurryAngerTimer(pCity->flatHurryAngerLength());
 
 		if (plot()->isActiveVisible(false))
@@ -14511,13 +14575,30 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 bool CvUnit::canGreatMission(const CvPlot* pPlot) const
 {
-	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) return false;
+	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) 
+	{
+		return false;
+	}
 
-	if (GET_PLAYER(getOwner()).getStateReligion() == NO_RELIGION) return false;
+	if (!pPlot->isCity())
+	{
+		return false;
+	}
 
-	if (!pPlot->isCity()) return false;
+	if (GET_PLAYER(getOwner()).getStateReligion() != NO_RELIGION) 
+	{
+		return true;
+	}
 
-	return true;
+	for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		if (GC.getGame().isReligionFounded((ReligionTypes)iI) && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE && !GC.getReligionInfo((ReligionTypes)iI).isLocal())
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 bool CvUnit::greatMission()
@@ -14531,8 +14612,21 @@ bool CvUnit::greatMission()
 	iNumCities = std::max(iNumCities, GC.getMap().getArea(getArea())->getCitiesPerPlayer(getOwner()));
 	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
 
+	if (eReligion == NO_RELIGION)
+	{
+		for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			if (!GC.getReligionInfo((ReligionTypes)iI).isLocal() && plot()->getSpreadFactor((ReligionTypes)iI) == REGION_SPREAD_CORE)
+			{
+				eReligion = (ReligionTypes)iI;
+				break;
+			}
+		}
+	}
+
 	CvPlot* pSpreadPlot;
 	CvCity* pSpreadCity;
+	ReligionTypes eRemovedReligion;
 	int iSpreads = 0;
 
 	// spread to eligible cities
@@ -14552,7 +14646,11 @@ bool CvUnit::greatMission()
 
 		if (pSpreadCity == NULL) break;
 
-		pSpreadCity->removeReligion(pSpreadCity->AI_getPersecutionReligion());
+		eRemovedReligion = pSpreadCity->AI_getPersecutionReligion(eReligion);
+
+		if (eRemovedReligion == NO_RELIGION) continue;
+
+		pSpreadCity->removeReligion(eRemovedReligion);
 	}
 
 	if (plot()->isActiveVisible(false))
@@ -14563,6 +14661,63 @@ bool CvUnit::greatMission()
 	kill(true);
 
 	return true;
+}
+
+bool CvUnit::canSatelliteAttack(const CvPlot* pPlot) const
+{
+	if (getSpecialUnitType() != SPECIALUNIT_SATELLITE)
+	{
+		return false;
+	}
+
+	if (!GET_TEAM(getTeam()).canSatelliteAttack())
+	{
+		return false;
+	}
+
+	for (int iI = 0; iI < pPlot->getNumUnits(); iI++)
+	{
+		CvUnit* pUnit = pPlot->getUnitByIndex(iI);
+		if (pUnit != this && pUnit->getSpecialUnitType() == SPECIALUNIT_SATELLITE)
+		{
+			if (atWar(getTeam(), pUnit->getTeam()))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+bool CvUnit::satelliteAttack()
+{
+	if (!canSatelliteAttack(plot()))
+	{
+		return false;
+	}
+
+	for (int iI = 0; iI < plot()->getNumUnits(); iI++)
+	{
+		CvUnit* pUnit = plot()->getUnitByIndex(iI);
+		if (pUnit != this && pUnit->getSpecialUnitType() == SPECIALUNIT_SATELLITE)
+		{
+			if (atWar(getTeam(), pUnit->getTeam()))
+			{
+				pUnit->kill(true, getOwnerINLINE());
+
+				if (plot()->isActiveVisible(false))
+				{
+					NotifyEntity(MISSION_SATELLITE_ATTACK);
+				}
+
+				finishMoves();
+				return true;
+			}
+		}
+	}
+
+	return false;
 }
 
 SpecialistTypes CvUnit::getSettledSpecialist() const
@@ -14582,4 +14737,101 @@ SpecialistTypes CvUnit::getSettledSpecialist() const
 bool CvUnit::isWorker() const
 {
 	return m_pUnitInfo->isWorker();
+}
+
+bool CvUnit::canRebuild(const CvPlot* pPlot) const
+{
+	if (!m_pUnitInfo->isFound())
+	{
+		return false;
+	}
+
+	if (!pPlot->isCity())
+	{
+		return false;
+	}
+
+	CvCity* pCity = pPlot->getPlotCity();
+
+	if (pCity->getOwner() != getOwner())
+	{
+		return false;
+	}
+
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			if (kBuilding.getFreeStartEra() != NO_ERA)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				{
+					if (!pCity->isHasRealBuilding(eBuilding) && pCity->canConstruct(eBuilding))
+					{
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool CvUnit::rebuild()
+{
+	if (!canRebuild(plot()))
+	{
+		return false;
+	}
+
+	if (!plot()->isCity())
+	{
+		return false;
+	}
+
+	bool bBuilt = false;
+	CvCity* pCity = plot()->getPlotCity();
+
+	BuildingTypes eBuilding;
+	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+		if (eBuilding != NO_BUILDING)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+			if (kBuilding.getFreeStartEra() != NO_ERA)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+				{
+					if (pCity->canConstruct(eBuilding) || pCity->getFirstBuildingOrder(eBuilding) != -1)
+					{
+						pCity->setNumRealBuilding(eBuilding, 1);
+						bBuilt = true;
+					}
+				}
+			}
+		}
+	}
+
+	if (bBuilt)
+	{
+		if (plot()->isActiveVisible(false))
+		{
+			NotifyEntity(MISSION_REBUILD);
+		}
+
+		kill(true);
+
+		return true;
+	}
+
+	return false;
 }

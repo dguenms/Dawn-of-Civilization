@@ -33,6 +33,11 @@ class Resources:
 			if iBonus == -1:
 				iBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
 				gc.getMap().plot(iX,iY).setBonusType(-1)
+				
+				iImprovement = gc.getMap().plot(iX, iY).getImprovementType()
+				if iImprovement >= 0:
+					if gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(iBonus):
+						gc.getMap().plot(iX, iY).setImprovementType(-1)
 			else:
 				gc.getMap().plot(iX,iY).setBonusType(iBonus)
 				
@@ -42,8 +47,9 @@ class Resources:
 				bWater = gc.getMap().plot(iX, iY).isWater()
 				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not bWater, bWater, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				if not city.isNone():
-					szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
-					CyInterface().addMessage(iOwner, False, iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
+					if gc.getBonusInfo(iBonus).getTechReveal() == -1 or gc.getTeam(city.getTeam()).isHasTech(gc.getBonusInfo(iBonus).getTechReveal()):
+						szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
+						CyInterface().addMessage(iOwner, False, iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
 
 
 	def removeResource(self, iX, iY, textKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
@@ -219,6 +225,7 @@ class Resources:
 			self.createResource(40, 25, iHorse) # Brazil
 			self.createResource(33, 10, iHorse) # Buenos Aires area
 			self.createResource(32, 8, iHorse) # Pampas
+			self.createResource(30, 30, iHorse) # Venezuela
 			
 			self.createResource(27, 36, iSugar) # Caribbean
 			self.createResource(39, 25, iSugar) # Brazil
@@ -237,8 +244,6 @@ class Resources:
 			self.createResource(104, 25, iCoffee) # Java
 			
 			self.createResource(67, 44, iTobacco) # Turkey
-			
-			self.createResource(90, 35, iTea) # West Bengal
 			
 			self.createResource(39, 16, iFish) # Brazil
 			

@@ -525,6 +525,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -1062,6 +1066,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -1625,6 +1633,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -2164,6 +2176,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -2722,6 +2738,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -3261,6 +3281,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -3813,6 +3837,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -4361,6 +4389,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -4917,6 +4949,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -5456,6 +5492,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -6001,6 +6041,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -6555,6 +6599,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -7114,6 +7162,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -7667,6 +7719,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -8215,6 +8271,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -8771,6 +8831,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -9323,6 +9387,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -9837,6 +9905,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -10389,6 +10461,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -10936,6 +11012,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -11496,6 +11576,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -12052,6 +12136,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -12597,6 +12685,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -13145,6 +13237,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -13708,6 +13804,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -14266,6 +14366,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -14811,6 +14915,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -15354,6 +15462,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -15910,6 +16022,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -16464,6 +16580,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -17003,6 +17123,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -17559,6 +17683,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -18107,6 +18235,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -18669,6 +18801,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -18964,7 +19100,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REVOLUTIONISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -19215,6 +19351,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -19769,6 +19909,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -20329,6 +20473,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -20881,6 +21029,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -21444,6 +21596,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -21983,6 +22139,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -22542,6 +22702,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -23090,6 +23254,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -23633,6 +23801,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -24187,6 +24359,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -24730,6 +24906,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -25291,6 +25471,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -25865,6 +26049,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -26430,6 +26618,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -26993,6 +27185,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -27553,6 +27749,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -28121,6 +28321,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -28700,6 +28904,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -28946,7 +29154,7 @@
 			<Description>TXT_KEY_LEADER_ZARA_YAQOB</Description>
 			<Civilopedia>TXT_KEY_LEADER_ZARA_YAQOB_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_ZARA_YAQOB</ArtDefineTag>
-			<iWonderConstructRand>20</iWonderConstructRand>
+			<iWonderConstructRand>30</iWonderConstructRand>
 			<iBaseAttitude>2</iBaseAttitude>
 			<iBasePeaceWeight>6</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -28969,7 +29177,7 @@
 			<iDemandRebukedSneakProb>50</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>10</iDemandRebukedWarProb>
 			<iRazeCityProb>5</iRazeCityProb>
-			<iBuildUnitProb>30</iBuildUnitProb>
+			<iBuildUnitProb>20</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
@@ -29017,17 +29225,17 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_CLERGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>2</iFlavor>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>5</iFlavor>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<ContactRands>
@@ -29268,6 +29476,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -29831,6 +30043,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -30385,6 +30601,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -30955,6 +31175,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -31500,6 +31724,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -31742,11 +31970,11 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_HAILE_SELASSIE</Type> <!-- Personality: Asoka -->
-			<Description>TXT_KEY_LEADER_HAILE_SELASSIE</Description>
-			<Civilopedia>TXT_KEY_LEADER_HAILE_SELASSIE_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_HAILE_SELASSIE</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<Type>LEADER_MENELIK</Type> <!-- Personality: Asoka -->
+			<Description>TXT_KEY_LEADER_MENELIK</Description>
+			<Civilopedia>TXT_KEY_LEADER_MENELIK_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_MENELIK</ArtDefineTag>
+			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>8</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -31769,7 +31997,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>20</iBuildUnitProb>
+			<iBuildUnitProb>40</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
@@ -31817,17 +32045,17 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
 			<ContactRands>
@@ -32068,6 +32296,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -32615,6 +32847,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -33160,6 +33396,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -33703,6 +33943,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -34262,6 +34506,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -34807,6 +35055,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -35350,6 +35602,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -35906,6 +36162,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -36452,6 +36712,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -37012,6 +37276,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -37568,6 +37836,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -38118,6 +38390,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -38664,6 +38940,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -39218,6 +39498,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -39764,6 +40048,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -40316,6 +40604,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -40836,6 +41128,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -40941,7 +41237,29 @@
 				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers/>
-			<DiplomacyIntroMusicPeace/>
+			<DiplomacyIntroMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_GLOBAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_DIGITAL</EraType>
+				</DiploMusicPeaceEra>
+			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
@@ -41353,6 +41671,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -41900,6 +42222,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -42439,6 +42765,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -42987,6 +43317,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -43288,7 +43622,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REVOLUTIONISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -43541,6 +43875,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -43655,7 +43993,29 @@
 					<iWeightModifier>20</iWeightModifier>
 				</ImprovementWeightModifier>
 			</ImprovementWeightModifiers>
-			<DiplomacyIntroMusicPeace/>
+			<DiplomacyIntroMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_GLOBAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_DIGITAL</EraType>
+				</DiploMusicPeaceEra>
+			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
@@ -44067,6 +44427,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -44614,6 +44978,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -45178,6 +45546,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -45315,31 +45687,31 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_GLOBAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_DIGITAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_ALP_ARSLAN</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
@@ -45723,6 +46095,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -46271,6 +46647,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -46829,6 +47209,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -47373,6 +47757,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -47925,6 +48313,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -48472,6 +48864,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -49015,6 +49411,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -49562,6 +49962,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -50105,6 +50509,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -50653,6 +51061,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -51173,6 +51585,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -51729,6 +52145,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -52277,6 +52697,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -52820,6 +53244,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -53374,6 +53802,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -53881,6 +54313,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -54435,6 +54871,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -54987,6 +55427,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -55279,7 +55723,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REVOLUTIONISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -55530,6 +55974,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -56084,6 +56532,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -56656,6 +57108,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -57222,6 +57678,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -57514,7 +57974,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REVOLUTIONISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -57765,6 +58225,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -58062,7 +58526,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REVOLUTIONISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -58313,6 +58777,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -58872,6 +59340,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -59418,6 +59890,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -59958,6 +60434,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -60508,6 +60988,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -61047,6 +61531,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -61593,6 +62081,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -62132,6 +62624,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -62688,6 +63184,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -63204,6 +63704,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -63760,6 +64264,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -64312,6 +64820,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -64868,6 +65380,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -65422,6 +65938,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -65969,6 +66489,10 @@
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
@@ -66525,6 +67049,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -67062,6 +67590,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -67149,91 +67681,77 @@
 			<DiplomacyIntroMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_GLOBAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_DIGITAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_GLOBAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_DIGITAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BUMIN</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
 				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_EARLY</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_EARLY</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_MIDDLE</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_MIDDLE</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_GLOBAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
 				</DiploMusicWarEra>
 				<DiploMusicWarEra>
 					<EraType>ERA_DIGITAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUNS_LATE</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyIntroMusicWar>
 			<DiplomacyMusicWar>
@@ -67596,6 +68114,10 @@
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
 					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
@@ -67759,31 +68281,31 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_GLOBAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_DIGITAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_TIMUR_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_TAMERLANE</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
@@ -67837,6 +68359,571 @@
 				<DiploMusicWarEra>
 					<EraType>ERA_DIGITAL</EraType>
 					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+			</DiplomacyMusicWar>
+		</LeaderHeadInfo>
+		<LeaderHeadInfo>
+			<Type>LEADER_EZANA</Type>
+			<Description>TXT_KEY_LEADER_EZANA</Description>
+			<Civilopedia>TXT_KEY_LEADER_EZANA_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_EZANA</ArtDefineTag>
+			<iWonderConstructRand>20</iWonderConstructRand>
+			<iBaseAttitude>2</iBaseAttitude>
+			<iBasePeaceWeight>6</iBasePeaceWeight>
+			<iPeaceWeightRand>3</iPeaceWeightRand>
+			<iWarmongerRespect>0</iWarmongerRespect>
+			<iEspionageWeight>100</iEspionageWeight>
+			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
+			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
+			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
+			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
+			<iMaxWarRand>200</iMaxWarRand>
+			<iMaxWarNearbyPowerRatio>100</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
+			<iMaxWarMinAdjacentLandPercent>2</iMaxWarMinAdjacentLandPercent>
+			<iLimitedWarRand>100</iLimitedWarRand>
+			<iLimitedWarPowerRatio>110</iLimitedWarPowerRatio>
+			<iDogpileWarRand>50</iDogpileWarRand>
+			<iMakePeaceRand>10</iMakePeaceRand>
+			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
+			<iDemandRebukedSneakProb>50</iDemandRebukedSneakProb>
+			<iDemandRebukedWarProb>10</iDemandRebukedWarProb>
+			<iRazeCityProb>5</iRazeCityProb>
+			<iBuildUnitProb>35</iBuildUnitProb>
+			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
+			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
+			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
+			<iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
+			<iCloseBordersAttitudeChange>-2</iCloseBordersAttitudeChange>
+			<iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
+			<iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
+			<iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
+			<iAtPeaceAttitudeDivisor>60</iAtPeaceAttitudeDivisor>
+			<iAtPeaceAttitudeChangeLimit>1</iAtPeaceAttitudeChangeLimit>
+			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
+			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
+			<iSameReligionAttitudeChangeLimit>7</iSameReligionAttitudeChangeLimit>
+			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
+			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
+			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
+			<iBonusTradeAttitudeChangeLimit>2</iBonusTradeAttitudeChangeLimit>
+			<iOpenBordersAttitudeDivisor>25</iOpenBordersAttitudeDivisor>
+			<iOpenBordersAttitudeChangeLimit>2</iOpenBordersAttitudeChangeLimit>
+			<iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor>
+			<iDefensivePactAttitudeChangeLimit>2</iDefensivePactAttitudeChangeLimit>
+			<iShareWarAttitudeChange>1</iShareWarAttitudeChange>
+			<iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
+			<iShareWarAttitudeChangeLimit>3</iShareWarAttitudeChangeLimit>
+			<iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange>
+			<iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor>
+			<iFavoriteCivicAttitudeChangeLimit>4</iFavoriteCivicAttitudeChangeLimit>
+			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
+			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
+			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StrategicBonusRefuseAttitudeThreshold>
+			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
+			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HealthBonusRefuseAttitudeThreshold>
+			<MapRefuseAttitudeThreshold>ATTITUDE_ANNOYED</MapRefuseAttitudeThreshold>
+			<DeclareWarRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DeclareWarRefuseAttitudeThreshold>
+			<DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_PLEASED</DeclareWarThemRefuseAttitudeThreshold>
+			<StopTradingRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingRefuseAttitudeThreshold>
+			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
+			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold>
+			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
+			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
+			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
+			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
+			<iVassalPowerModifier>0</iVassalPowerModifier>
+			<iFreedomAppreciation>10</iFreedomAppreciation>
+			<FavoriteCivic>CIVIC_CLERGY</FavoriteCivic>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
+			<Traits/>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+			<ContactRands>
+				<ContactRand>
+					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
+					<iContactRand>100</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
+					<iContactRand>250</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_JOIN_WAR</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_STOP_TRADING</ContactType>
+					<iContactRand>50</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_GIVE_HELP</ContactType>
+					<iContactRand>50</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
+					<iContactRand>50</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
+					<iContactRand>500</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
+					<iContactRand>80</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
+					<iContactRand>80</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_PEACE_TREATY</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_TECH</ContactType>
+					<iContactRand>1</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_BONUS</ContactType>
+					<iContactRand>1</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_MAP</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
+					<iContactRand>10</iContactRand>
+				</ContactRand>
+			</ContactRands>
+			<ContactDelays>
+				<ContactDelay>
+					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_JOIN_WAR</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_STOP_TRADING</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_GIVE_HELP</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_PEACE_TREATY</ContactType>
+					<iContactDelay>10</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_TECH</ContactType>
+					<iContactDelay>15</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_BONUS</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_MAP</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+			</ContactDelays>
+			<MemoryDecays>
+				<MemoryDecay>
+					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
+					<iMemoryRand>200</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
+					<iMemoryRand>150</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType>
+					<iMemoryRand>150</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType>
+					<iMemoryRand>30</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType>
+					<iMemoryRand>20</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType>
+					<iMemoryRand>10</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType>
+					<iMemoryRand>20</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
+					<iMemoryRand>10</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
+					<iMemoryRand>10</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+			</MemoryDecays>
+			<MemoryAttitudePercents>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DECLARED_WAR</MemoryType>
+					<iMemoryAttitudePercent>-300</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_NUKED_US</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_RAZED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SACKED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
+					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
+					<iMemoryAttitudePercent>10</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
+					<iMemoryAttitudePercent>5</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
+					<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
+					<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+			</MemoryAttitudePercents>
+			<NoWarAttitudeProbs>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+					<iNoWarProb>10</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
+					<iNoWarProb>50</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+					<iNoWarProb>90</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+					<iNoWarProb>100</iNoWarProb>
+				</NoWarAttitudeProb>
+			</NoWarAttitudeProbs>
+			<UnitAIWeightModifiers>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+			</UnitAIWeightModifiers>
+			<ImprovementWeightModifiers/>
+			<DiplomacyIntroMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_GLOBAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_DIGITAL</EraType>
+				</DiploMusicPeaceEra>
+			</DiplomacyIntroMusicPeace>
+			<DiplomacyMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_EARLY</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_EARLY</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_MIDDLE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_MIDDLE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_GLOBAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_DIGITAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_ZARA_YAQOB_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+			</DiplomacyMusicPeace>
+			<DiplomacyIntroMusicWar>
+				<DiploMusicWarEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_GLOBAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_DIGITAL</EraType>
+				</DiploMusicWarEra>
+			</DiplomacyIntroMusicWar>
+			<DiplomacyMusicWar>
+				<DiploMusicWarEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_GLOBAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_DIGITAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>

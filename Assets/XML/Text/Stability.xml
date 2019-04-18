@@ -1489,4 +1489,28 @@
 		<Italian>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</Italian>
 		<Spanish>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITIES_SECEDED</Tag>
+		<English>The %s1 is going through a period of instability, and %d2 cities have seceded from their civilization!</English>
+		<French>The %s1 is going through a period of instability, and %d2 cities have seceded from their civilization!</French>
+		<German>The %s1 is going through a period of instability, and %d2 cities have seceded from their civilization!</German>
+		<Italian>The %s1 is going through a period of instability, and %d2 cities have seceded from their civilization!</Italian>
+		<Spanish>The %s1 is going through a period of instability, and %d2 cities have seceded from their civilization!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COLLAPSING_WARNING</Tag>
+		<English>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</English>
+		<French>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</French>
+		<German>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</German>
+		<Italian>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Italian>
+		<Spanish>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -1131,38 +1131,6 @@
 		<Spanish>Core</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_NO_STABILITY</Tag>
-		<English>No Stability (all civs)</English>
-		<French>No Stability (all civs)</French>
-		<German>No Stability (all civs)</German>
-		<Italian>No Stability (all civs)</Italian>
-		<Spanish>No Stability (all civs)</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_STABILITY_HELP</Tag>
-		<English>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</English>
-		<French>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</French>
-		<German>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</German>
-		<Italian>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</Italian>
-		<Spanish>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY</Tag>
-		<English>No collapsing Human Player</English>
-		<French>No collapsing Human Player</French>
-		<German>No collapsing Human Player</German>
-		<Italian>No collapsing Human Player</Italian>
-		<Spanish>No collapsing Human Player</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_HELP</Tag>
-		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</English>
-		<French>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</French>
-		<German>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</German>
-		<Italian>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</Italian>
-		<Spanish>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV</Tag>
 		<English>Ignore AI UHV Checks</English>
 		<French>Ignore AI UHV Checks</French>
@@ -1425,5 +1393,21 @@
 		<German>AI only flipzone</German>
 		<Italian>AI only flipzone</Italian>
 		<Spanish>AI only flipzone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VICTORYMAP</Tag>
+		<English>Victory Maps (view only)</English>
+		<French>Victory Maps (view only)</French>
+		<German>Victory Maps (view only)</German>
+		<Italian>Victory Maps (view only)</Italian>
+		<Spanish>Victory Maps (view only)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VICTORYMAP_RECTANGLE</Tag>
+		<English>Show full rectangles</English>
+		<French>Show full rectangles</French>
+		<German>Show full rectangles</German>
+		<Italian>Show full rectangles</Italian>
+		<Spanish>Show full rectangles</Spanish>
 	</TEXT>
 </Civ4GameText>

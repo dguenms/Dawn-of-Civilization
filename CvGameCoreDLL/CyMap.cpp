@@ -277,11 +277,11 @@ int CyMap::calculatePathDistance(CyPlot* pSource, CyPlot* pDest)
 	return -1;
 }
 
-void CyMap::rebuild(int iGridW, int iGridH, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions)
+void CyMap::rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions)
 {
 	if (m_pMap)
 	{
-		m_pMap->rebuild(iGridW, iGridH, iTopLatitude, iBottomLatitude, bWrapX, bWrapY, eWorldSize, eClimate, eSeaLevel, iNumCustomMapOptions, aeCustomMapOptions);
+		m_pMap->rebuild(iGridW, iGridH, iPrimeMeridian, iEquator, iTopLatitude, iBottomLatitude, bWrapX, bWrapY, eWorldSize, eClimate, eSeaLevel, iNumCustomMapOptions, aeCustomMapOptions);
 	}
 }
 
@@ -322,3 +322,12 @@ void CyMap::updateMinOriginalStartDist(CyArea* pArea)
 	}
 }
 
+int CyMap::getPrimeMeridian()
+{
+	return m_pMap ? m_pMap->getPrimeMeridian() : -1;
+}
+
+int CyMap::getEquator()
+{
+	return m_pMap ? m_pMap->getEquator() : -1;
+}

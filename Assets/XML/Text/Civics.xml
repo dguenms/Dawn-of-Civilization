@@ -15,11 +15,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
-		<English>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories and Coal Plants</English>
-		<French>Les sp&#233;cialistes rapportent de la production additionnelle, les ateliers et les moulins &#224; eau rapportent de la nourriture additionnelle, et les moulins &#224; eau et les mines rapportent du commerce additionnel ; vitesse de production doubl&#233;e pour les Usines et les Centrales au charbon</French>
-		<German>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories and Coal Plants</German>
-		<Italian>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories and Coal Plants</Italian>
-		<Spanish>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories and Coal Plants</Spanish>
+		<English>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories, Coal Plants, Hydro Plants, Electrical Grids and Automated Factories</English>
+		<French>Les sp&#233;cialistes rapportent de la production additionnelle, les ateliers et les moulins &#224; eau rapportent de la nourriture additionnelle, et les moulins &#224; eau et les mines rapportent du commerce additionnel ; vitesse de production doubl&#233;e pour les Usines et les Centrales au charbon</French> <!-- needs update -->
+		<German>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories, Coal Plants, Hydro Plants, Electrical Grids and Automated Factories</German>
+		<Italian>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories, Coal Plants, Hydro Plants, Electrical Grids and Automated Factories</Italian>
+		<Spanish>Extra production from specialists; extra food from Workshops and Watermills; extra commerce from Mines and Watermills; double production speed for Factories, Coal Plants, Hydro Plants, Electrical Grids and Automated Factories</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
@@ -75,11 +75,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
-		<English>Double available slots for artists, scientists and engineers; extra research from specialists</English>
-		<French>Vous pouvez embaucher deux fois plus d'artistes, de scientifiques et d'ing&#233;nieurs ; les sp&#233;cialistes rapportent de la recherche additionnelle</French>
-		<German>Double available slots for artists, scientists and engineers; extra research from specialists</German>
-		<Italian>Double available slots for artists, scientists and engineers; extra research from specialists</Italian>
-		<Spanish>Double available slots for artists, scientists and engineers; extra research from specialists</Spanish>
+		<English>Double available slots for artists, scientists and engineers; extra research from specialists; cannot use slaves</English>
+		<French>Vous pouvez embaucher deux fois plus d'artistes, de scientifiques et d'ing&#233;nieurs ; les sp&#233;cialistes rapportent de la recherche additionnelle</French> <!-- needs update -->
+		<German>Double available slots for artists, scientists and engineers; extra research from specialists; cannot use slaves</German>
+		<Italian>Double available slots for artists, scientists and engineers; extra research from specialists; cannot use slaves</Italian>
+		<Spanish>Double available slots for artists, scientists and engineers; extra research from specialists; cannot use slaves</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
@@ -95,11 +95,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MULTILATERALISM_STRATEGY</Tag>
-		<English>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness</English>
-		<French>Exp&#233;rience additionnelle pour les unit&#233;s a&#233;rienne ; les routes commerciales avec les civilisations li&#233;es par un pacte de d&#233;fense rapportent davantage ; les routes commerciales rapportent de la production ; lassitude de guerre additionnelle</French>
-		<German>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness</German>
-		<Italian>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness</Italian>
-		<Spanish>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness</Spanish>
+		<English>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness; cannot use slaves</English>
+		<French>Exp&#233;rience additionnelle pour les unit&#233;s a&#233;rienne ; les routes commerciales avec les civilisations li&#233;es par un pacte de d&#233;fense rapportent davantage ; les routes commerciales rapportent de la production ; lassitude de guerre additionnelle</French> <!-- needs update -->
+		<German>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness; cannot use slaves</German>
+		<Italian>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness; cannot use slaves</Italian>
+		<Spanish>Extra experience for air units; extra yield from trade routes with defensive pact partners; trade routes yield production; extra war weariness; cannot use slaves</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
@@ -135,11 +135,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Tag>
-		<English>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; can spend gold to finish unit production</English>
-		<French>Les sp&#233;cialistes rapportent de la nourriture ; les fermes, plantations, cottages, hameaux, villages et villes en rapportent moins ; vous pouvez d&#233;penser de l'or pour acc&#233;l&#233;rer la production d'unit&#233;s</French>
-		<German>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; can spend gold to finish unit production</German>
-		<Italian>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; can spend gold to finish unit production</Italian>
-		<Spanish>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; can spend gold to finish unit production</Spanish>
+		<English>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; at least one slot for artists, scientists, merchants and statesmen</English>
+		<French>Les sp&#233;cialistes rapportent de la nourriture ; les fermes, plantations, cottages, hameaux, villages et villes en rapportent moins ; vous pouvez d&#233;penser de l'or pour acc&#233;l&#233;rer la production d'unit&#233;s</French> <!-- needs update -->
+		<German>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; at least one slot for artists, scientists, merchants and statesmen</German>
+		<Italian>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; at least one slot for artists, scientists, merchants and statesmen</Italian>
+		<Spanish>Extra food from specialists; reduced food from farms, plantations, cottages, hamlets, villages and towns; at least one slot for artists, scientists, merchants and statesmen</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
@@ -155,11 +155,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
-		<English>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Laboratories; can build wonders that require a state religion</English>
-		<French>Pas de religion d'&#201;tat ; science additionnelle dans toutes les villes ; bonheur additionnel pour toutes les religions ; vitesse de production doubl&#233;e pour les H&#244;pitaux, les Universit&#233;s et les Laboratoires; vous pouvez construire les merveilles qui n&#233;cessitent une religion d'&#201;tat</French>
-		<German>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Laboratories; can build wonders that require a state religion</German>
-		<Italian>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Laboratories; can build wonders that require a state religion</Italian>
-		<Spanish>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Laboratories; can build wonders that require a state religion</Spanish>
+		<English>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Observatories, Laboratories and Supercomputers; can build wonders that require a state religion</English>
+		<French>Pas de religion d'&#201;tat ; science additionnelle dans toutes les villes ; bonheur additionnel pour toutes les religions ; vitesse de production doubl&#233;e pour les H&#244;pitaux, les Universit&#233;s et les Laboratoires; vous pouvez construire les merveilles qui n&#233;cessitent une religion d'&#201;tat</French> <!-- needs update -->
+		<German>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Observatories, Laboratories and Supercomputers; can build wonders that require a state religion</German>
+		<Italian>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Observatories, Laboratories and Supercomputers; can build wonders that require a state religion</Italian>
+		<Spanish>No state religion; increased science in all cities; extra happiness from non-state religions; double production speed for Hospitals, Universities, Observatories, Laboratories and Supercomputers; can build wonders that require a state religion</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
@@ -191,11 +191,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Tag>
-		<English>Faster military unit production; no war weariness; extra production from unhappy population</English>
-		<French>Production plus rapide d'unit&#233;s militaires ; pas de lassitude de guerre ; la population m&#233;contente rapporte de la production</French>
-		<German>Faster military unit production; no war weariness; extra production from unhappy population</German>
-		<Italian>Faster military unit production; no war weariness; extra production from unhappy population</Italian>
-		<Spanish>Faster military unit production; no war weariness; extra production from unhappy population</Spanish>
+		<English>Faster military unit production; no war weariness; extra production from unhappy population; no unrest on city conquest</English>
+		<French>Production plus rapide d'unit&#233;s militaires ; pas de lassitude de guerre ; la population m&#233;contente rapporte de la production</French> <!-- needs update -->
+		<German>Faster military unit production; no war weariness; extra production from unhappy population; no unrest on city conquest</German>
+		<Italian>Faster military unit production; no war weariness; extra production from unhappy population; no unrest on city conquest</Italian>
+		<Spanish>Faster military unit production; no war weariness; extra production from unhappy population; no unrest on city conquest</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TRIBALISM_STRATEGY</Tag>
@@ -207,11 +207,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
-		<English>Additional units without upkeep; extra production from Farms; extra happiness from Castles</English>
-		<French>Le nombre d'unit&#233;s ne n&#233;cessitant pas d'entretien est accru ; les fermes rapportent de la production additionnelle ; les Ch&#226;teaux cr&#233;ent du bonheur</French>
-		<German>Additional units without upkeep; extra production from Farms; extra happiness from Castles</German>
-		<Italian>Additional units without upkeep; extra production from Farms; extra happiness from Castles</Italian>
-		<Spanish>Additional units without upkeep; extra production from Farms; extra happiness from Castles</Spanish>
+		<English>Additional units without upkeep; extra happiness in largest cities; extra production from Farms</English>
+		<French>Le nombre d'unit&#233;s ne n&#233;cessitant pas d'entretien est accru ; les fermes rapportent de la production additionnelle ; les Ch&#226;teaux cr&#233;ent du bonheur</French> <!-- needs update -->
+		<German>Additional units without upkeep; extra happiness in largest cities; extra production from Farms</German>
+		<Italian>Additional units without upkeep; extra happiness in largest cities; extra production from Farms</Italian>
+		<Spanish>Additional units without upkeep; extra happiness in largest cities; extra production from Farms</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_TERRITORY</Tag>
@@ -283,11 +283,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MONARCHY_STRATEGY</Tag>
-		<English>Extra happiness from military units</English>
+		<English>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</English>
 		<French>Les unit&#233;s militaires cr&#233;ent du bonheur</French>
-		<German>Extra happiness from military units</German>
-		<Italian>Extra happiness from military units</Italian>
-		<Spanish>Extra happiness from military units</Spanish>
+		<German>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</German>
+		<Italian>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</Italian>
+		<Spanish>Extra happiness from military units; reduced maintenance from distance to Palace; double production speed for Jails</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ELECTIVE</Tag>
@@ -303,11 +303,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ELECTIVE_STRATEGY</Tag>
-		<English>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for palace</English>
+		<English>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</English>
 		<French>Les cases non am&#233;lior&#233;es, les camps et les p&#226;turages rapportent du commerce additionnel ; vitesse de production doubl&#233;e pour les Palais</French>
-		<German>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for palace</German>
-		<Italian>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for palace</Italian>
-		<Spanish>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for palace</Spanish>
+		<German>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</German>
+		<Italian>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</Italian>
+		<Spanish>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STATE_PARTY</Tag>
@@ -343,11 +343,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CONSTITUTION_STRATEGY</Tag>
-		<English>Double available slots for statesmen; increased great people birth rate</English>
-		<French>Vous pouvez embaucher deux fois plus d'hommes d'&#201;tat ; taux de natalit&#233; des personnages illustres augment&#233;</French>
-		<German>Double available slots for statesmen; increased great people birth rate</German>
-		<Italian>Double available slots for statesmen; increased great people birth rate</Italian>
-		<Spanish>Double available slots for statesmen; increased great people birth rate</Spanish>
+		<English>Extra free specialist in all cities; double available slots for statesmen; double production speed for Courthouses</English>
+		<French>Vous pouvez embaucher deux fois plus d'hommes d'&#201;tat ; taux de natalit&#233; des personnages illustres augment&#233;</French> <!-- needs update -->
+		<German>Extra free specialist in all cities; double available slots for statesmen; double production speed for Courthouses</German>
+		<Italian>Extra free specialist in all cities; double available slots for statesmen; double production speed for Courthouses</Italian>
+		<Spanish>Extra free specialist in all cities; double available slots for statesmen; double production speed for Courthouses</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AUTHORITY</Tag>
@@ -383,11 +383,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CITIZENSHIP_STRATEGY</Tag>
-		<English>Extra happiness in largest cities; double production speed for Aqueduct, Forge, Library, Market and Jail</English>
-		<French>Bonheur additionnel dans les villes les plus grandes ; vitesse de production doubl&#233;e pour les Aqueducs, Forges, Biblioth&#232;ques, March&#233;s et Prisons</French>
-		<German>Extra happiness in largest cities; double production speed for Aqueduct, Forge, Library, Market and Jail</German>
-		<Italian>Extra happiness in largest cities; double production speed for Aqueduct, Forge, Library, Market and Jail</Italian>
-		<Spanish>Extra happiness in largest cities; double production speed for Aqueduct, Forge, Library, Market and Jail</Spanish>
+		<English>Double production speed for Libraries, Aqueducts, Theatres and Markets; can spend gold to finish unit production</English>
+		<French>Bonheur additionnel dans les villes les plus grandes ; vitesse de production doubl&#233;e pour les Aqueducs, Forges, Biblioth&#232;ques, March&#233;s et Prisons</French> <!-- needs update -->
+		<German>Double production speed for Libraries, Aqueducts, Theatres and Markets; can spend gold to finish unit production</German>
+		<Italian>Double production speed for Libraries, Aqueducts, Theatres and Markets; can spend gold to finish unit production</Italian>
+		<Spanish>Double production speed for Libraries, Aqueducts, Theatres and Markets; can spend gold to finish unit production</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERITOCRACY</Tag>
@@ -403,11 +403,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERITOCRACY_STRATEGY</Tag>
-		<English>Extra experience for units within borders; extra food from Paddy Fields; extra commerce from Windmills and Watermills</English>
+		<English>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</English>
 		<French>Exp&#233;rience additionnelle pour les unit&#233;s &#224; l'int&#233;rieur de vos fronti&#232;res ; les rizi&#232;res rapportend de la nourriture additionnelle ; les moulins &#224; vent et &#224; eau rapportent du commerce additionnel</French>
-		<German>Extra experience for units within borders; extra food from Paddy Fields; extra commerce from Windmills and Watermills</German>
-		<Italian>Extra experience for units within borders; extra food from Paddy Fields; extra commerce from Windmills and Watermills</Italian>
-		<Spanish>Extra experience for units within borders; extra food from Paddy Fields; extra commerce from Windmills and Watermills</Spanish>
+		<German>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</German>
+		<Italian>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</Italian>
+		<Spanish>Less experience needed for unit promotions; extra food from Paddy Fields; extra commerce from Windmills and Watermills; extra commerce from specialists</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRALISM</Tag>
@@ -430,24 +430,24 @@
 		<Spanish>Increased production and gold in capital</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_IDEOLOGY</Tag>
-		<English>Ideology</English>
+		<Tag>TXT_KEY_CIVIC_REVOLUTIONISM</Tag>
+		<English>Revolutionism</English>
 		<French>
-			<Text>Id&#233;ologie</Text>
+			<Text>R&#233;volutionnisme</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Ideology</German>
-		<Italian>Ideology</Italian>
-		<Spanish>Ideology</Spanish>
+		<German>Revolutionism</German>
+		<Italian>Revolutionism</Italian>
+		<Spanish>Revolutionism</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_IDEOLOGY_STRATEGY</Tag>
-		<English>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</English>
-		<French>Taux de natalit&#233; des g&#233;n&#233;raux illustres augment&#233; ; les ateliers et les scieries rapportent de la production additionnelle ; les Journaux et les Tours de radiodiffusion cr&#233;ent du bonheur additionnel</French>
-		<German>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</German>
-		<Italian>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</Italian>
-		<Spanish>Increased great general birth rate; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</Spanish>
+		<Tag>TXT_KEY_CIVIC_REVOLUTIONISM_STRATEGY</Tag>
+		<English>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</English>
+		<French>Taux de natalit&#233; des g&#233;n&#233;raux illustres augment&#233; ; les ateliers et les scieries rapportent de la production additionnelle ; les Journaux et les Tours de radiodiffusion cr&#233;ent du bonheur additionnel</French> <!-- needs update -->
+		<German>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</German>
+		<Italian>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</Italian>
+		<Spanish>Increased great general birth rate; no temporary unhappiness; extra production from Workshops and Lumbermills; extra happiness from News Press and Broadcasting Tower</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
@@ -463,11 +463,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEMOCRACY_STRATEGY</Tag>
-		<English>Extra free specialist in all cities</English>
-		<French>Un sp&#233;cialiste gratuit dans chaque ville</French>
-		<German>Extra free specialist in all cities</German>
-		<Italian>Extra free specialist in all cities</Italian>
-		<Spanish>Extra free specialist in all cities</Spanish>
+		<English>Increased great people birth rate</English>
+		<French>Un sp&#233;cialiste gratuit dans chaque ville</French> <!-- needs update -->
+		<German>Increased great people birth rate</German>
+		<Italian>Increased great people birth rate</Italian>
+		<Spanish>Increased great people birth rate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TRADITIONALISM</Tag>
@@ -763,11 +763,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ISOLATIONISM_STRATEGY</Tag>
-		<English>Extra free specialist in all cities; no foreign trade routes</English>
-		<French>Un sp&#233;cialiste gratuit dans chaque ville ; pas de routes commerciales &#233;trang&#232;res</French>
-		<German>Extra free specialist in all cities; no foreign trade routes</German>
-		<Italian>Extra free specialist in all cities; no foreign trade routes</Italian>
-		<Spanish>Extra free specialist in all cities; no foreign trade routes</Spanish>
+		<English>Extra free specialist in all cities; no foreign trade routes; increased espionage in capital</English>
+		<French>Un sp&#233;cialiste gratuit dans chaque ville ; pas de routes commerciales &#233;trang&#232;res</French> <!-- needs update -->
+		<German>Extra free specialist in all cities; no foreign trade routes; increased espionage in capital</German>
+		<Italian>Extra free specialist in all cities; no foreign trade routes; increased espionage in capital</Italian>
+		<Spanish>Extra free specialist in all cities; no foreign trade routes; increased espionage in capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COLONIALISM</Tag>
@@ -811,11 +811,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Tag>
-		<English>Can hurry unit production by sacrificing population; extra happiness from Palace and Monument</English>
-		<French>Vous pouvez acc&#233;l&#233;rer la production en sacrifiant de la population ; le Palais et les Monuments cr&#233;ent du bonheur</French>
-		<German>Can hurry unit production by sacrificing population; extra happiness from Palace and Monument</German>
-		<Italian>Can hurry unit production by sacrificing population; extra happiness from Palace and Monument</Italian>
-		<Spanish>Can hurry unit production by sacrificing population; extra happiness from Palace and Monument</Spanish>
+		<English>Can hurry unit production by sacrificing population</English>
+		<French>Vous pouvez acc&#233;l&#233;rer la production en sacrifiant de la population</French>
+		<German>Can hurry unit production by sacrificing population</German>
+		<Italian>Can hurry unit production by sacrificing population</Italian>
+		<Spanish>Can hurry unit production by sacrificing population</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CASTE_SYSTEM_STRATEGY</Tag>

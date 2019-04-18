@@ -707,6 +707,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		break;
 // BUG - Trade Hover - end
 
+	// Merijn
+	case WIDGET_HELP_WONDER_LIMIT:
+		parseWonderLimitHelp(widgetDataStruct, szBuffer);
+		break;
+
 	}
 }
 
@@ -2888,6 +2893,42 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE"));
 				}
 			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_SATELLITE_ATTACK)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_SATELLITE_ATTACK"));
+			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_REBUILD)
+			{
+				if (pMissionCity != NULL)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REBUILD"));
+
+					BuildingTypes eBuilding;
+					for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+					{
+						eBuilding = (BuildingTypes)GC.getCivilizationInfo(pMissionCity->getCivilizationType()).getCivilizationBuildings(iI);
+
+						if (eBuilding != NO_BUILDING)
+						{
+							CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+							if (kBuilding.getFreeStartEra() != NO_ERA)
+							{
+								if (GET_PLAYER(pMissionCity->getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+								{
+									if (!pMissionCity->isHasRealBuilding(eBuilding) && (pMissionCity->canConstruct(eBuilding) || pMissionCity->getFirstBuildingOrder(eBuilding) != -1))
+									{
+										szBuffer.append(NEWLINE);
+										szBuffer.append(gDLL->getText("[ICON_BULLET]%s1", GC.getBuildingInfo(eBuilding).getText()));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_BUILD)
 			{
 				eBuild = ((BuildTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData()));
@@ -4219,12 +4260,13 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 
 	if (pHeadSelectedCity != NULL)
 	{
+		int iTotalCulture = 0;
+
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
 			if (true) //GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
-				// Leoreth: count dead civs as well
-				//iCulturePercent = pHeadSelectedCity->plot()->calculateOverallCulturePercent((PlayerTypes)iI);
+				iTotalCulture += (pHeadSelectedCity->plot()->isCore((PlayerTypes)iI) ? 2 : 1) * pHeadSelectedCity->plot()->getCulture((PlayerTypes)iI);
 				iCulturePercent = pHeadSelectedCity->calculateOverallCulturePercent((PlayerTypes)iI);
 
 				if (iCulturePercent > 0)
@@ -4232,6 +4274,23 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 					swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, GET_PLAYER((PlayerTypes)iI).getPlayerTextColorR(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorG(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorB(), GET_PLAYER((PlayerTypes)iI).getPlayerTextColorA(), GET_PLAYER((PlayerTypes)iI).getCivilizationAdjective());
 					szBuffer.append(szTempBuffer);
 				}
+			}
+		}
+
+		// Leoreth: stability effects of cultural control
+		int iOwnCulture = iTotalCulture == 0 ? 100 : 100 * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE()) / iTotalCulture;
+
+		if (pHeadSelectedCity->getOwnerINLINE() != PERSIA || (pHeadSelectedCity->getOwnerINLINE() == PERSIA && GET_PLAYER((PlayerTypes)PERSIA).isReborn()))
+		{
+			if (iOwnCulture < 20)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE"));
+			}
+			else if (iOwnCulture < 50)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_INSTABILITY_CULTURE"));
 			}
 		}
 
@@ -4336,7 +4395,7 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE_FLOAT", szCulture.GetCString(), iThreshold));
 		}
 
-		int iCultureRateTimes100 = pHeadSelectedCity->getCommerceRateTimes100(COMMERCE_CULTURE);
+		int iCultureRateTimes100 = pHeadSelectedCity->getModifiedCultureRateTimes100();
 		if (iCultureRateTimes100 > 0)
 		{
 			int iCultureLeftTimes100 = 100 * iThreshold - iCultureTimes100;
@@ -5370,4 +5429,13 @@ void CvDLLWidgetData::parseStabilityMilitaryHelp(CvWidgetDataStruct& widgetDataS
 void CvDLLWidgetData::parseStabilityHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
 {
 	GAMETEXT.buildStabilityString(szBuffer, widgetDataStruct.m_iData1);
+}
+
+void CvDLLWidgetData::parseWonderLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	CvCity* pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pHeadSelectedCity)
+	{
+		GAMETEXT.setWonderLimitHelp(szBuffer, *pHeadSelectedCity, widgetDataStruct.m_iData1);
+	}
 }

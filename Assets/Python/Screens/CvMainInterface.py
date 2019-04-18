@@ -320,10 +320,6 @@ class CvMainInterface:
 		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_CITY")
 		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_MISSION")
 		WidgetUtil.createWidget("WIDGET_GO_TO_CITY")
-		
-		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_PLAYER")
-		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_CITY")
-		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_MISSION")
 
 		
 		
@@ -3461,6 +3457,8 @@ class CvMainInterface:
 		screen.hide( "NationalityText" )
 		screen.hide( "NationalityBar" )
 		screen.hide( "DefenseText" )
+		screen.hide( "NationalWonderLimitText" )
+		screen.hide( "WorldWonderLimitText" )
 		screen.hide( "CityScrollMinus" )
 		screen.hide( "CityScrollPlus" )
 		screen.hide( "CityNameText" )
@@ -3753,7 +3751,7 @@ class CvMainInterface:
 					if (CityScreenOpt.isShowAngerCounter()
 					and pHeadSelectedCity.getTeam() == gc.getGame().getActiveTeam()):
 						iAngerTimer = max(pHeadSelectedCity.getHurryAngerTimer(), pHeadSelectedCity.getConscriptAngerTimer())
-						if iAngerTimer > 0:
+						if not gc.getPlayer(pHeadSelectedCity.getOwner()).isNoTemporaryUnhappiness() and iAngerTimer > 0:
 							szBuffer += u" (%i)" % iAngerTimer
 # BUG - Anger Display - end
 
@@ -3801,7 +3799,14 @@ class CvMainInterface:
 					eCommerce = (i + 1) % CommerceTypes.NUM_COMMERCE_TYPES
 
 					if ((gc.getPlayer(pHeadSelectedCity.getOwner()).isCommerceFlexible(eCommerce)) or (eCommerce == CommerceTypes.COMMERCE_GOLD)):
-						szBuffer = u"%d.%02d %c" %(pHeadSelectedCity.getCommerceRate(eCommerce), pHeadSelectedCity.getCommerceRateTimes100(eCommerce)%100, gc.getCommerceInfo(eCommerce).getChar())
+						if eCommerce == CommerceTypes.COMMERCE_CULTURE:
+							iCommerceRate = pHeadSelectedCity.getModifiedCultureRate()
+							iCommerceRateTimes100 = pHeadSelectedCity.getModifiedCultureRateTimes100()
+						else:
+							iCommerceRate = pHeadSelectedCity.getCommerceRate(eCommerce)
+							iCommerceRateTimes100 = pHeadSelectedCity.getCommerceRateTimes100(eCommerce)
+					
+						szBuffer = u"%d.%02d %c" %(iCommerceRate, iCommerceRateTimes100%100, gc.getCommerceInfo(eCommerce).getChar())
 
 						iHappiness = pHeadSelectedCity.getCommerceHappinessByType(eCommerce)
 
@@ -4531,9 +4536,24 @@ class CvMainInterface:
 					screen.setLabel( "DefenseText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 270, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_DEFENSE, -1, -1 )
 					screen.show( "DefenseText" )
 
+				# National and Worldwonder limit indicator
+				iWorldWonders = pHeadSelectedCity.getNumActiveWorldWonders()
+				iWorldWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getWonderLimit()
+				if pHeadSelectedCity.isCapital():
+					iWorldWondersLimit += 1
+				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iWorldWonders, iWorldWondersLimit, CyGame().getSymbolID(FontSymbols.STAR_CHAR)))
+				screen.setLabel( "WorldWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 400, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 1, -1 )
+				screen.show( "WorldWonderLimitText" )
+
+				iNationalWonders = pHeadSelectedCity.getNumNationalWonders()
+				iNationalWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getNationalWonderLimit()
+				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iNationalWonders, iNationalWondersLimit, CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)))
+				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 440, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
+				screen.show( "NationalWonderLimitText" )
+
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
 					#bDisplayCoverage = False #(pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)
-					iRate = pHeadSelectedCity.getCommerceRateTimes100(CommerceTypes.COMMERCE_CULTURE)
+					iRate = pHeadSelectedCity.getModifiedCultureRateTimes100()
 					szCommerceLevel = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey()
 					#if bDisplayCoverage: szCommerceLevel = localText.getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT", ())
 					if (iRate%100 == 0):
@@ -4546,7 +4566,7 @@ class CvMainInterface:
 					if CityScreenOpt.isShowCultureTurns() and iRate > 0:
 						iCultureTimes100 = pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())
 						iCultureLeftTimes100 = 100 * pHeadSelectedCity.getCultureThreshold() - iCultureTimes100
-						szBuffer += u" " + localText.getText("INTERFACE_CITY_TURNS", (((iCultureLeftTimes100 + iRate - 1) / iRate),))
+						szBuffer += u" " + localText.getText("INTERFACE_CITY_TURNS", ((max(1, iCultureLeftTimes100 + iRate - 1) / iRate),))
 # BUG - Culture Turns - end
 
 					screen.setLabel( "CultureText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, 125, yResolution - 184, -1.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -4593,9 +4613,9 @@ class CvMainInterface:
 				iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * pHeadSelectedCity.getCultureThreshold())
 				screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst )
 				if ( iFirst == 1 ):
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) )
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getModifiedCultureRate()) / float(pHeadSelectedCity.getCultureThreshold()) ) )
 				else:
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getModifiedCultureRate()) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
 				screen.show( "CultureBar" )
 				
 				lCultureCosts = []

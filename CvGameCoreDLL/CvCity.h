@@ -189,7 +189,7 @@ public:
 	int getVassalHappiness() const;																		// Exposed to Python
 	int getVassalUnhappiness() const;																		// Exposed to Python
 	int unhappyLevel(int iExtra = 0) const;																	// Exposed to Python 
-	int happyLevel() const;																				// Exposed to Python				
+	int happyLevel(bool bSpecial = true) const;																				// Exposed to Python				
 	int angryPopulation(int iExtra = 0) const;										// Exposed to Python
 
 	int visiblePopulation() const;
@@ -201,7 +201,7 @@ public:
 	int unhealthyPopulation(bool bNoAngry = false, int iExtra = 0) const;	// Exposed to Python
 	int totalGoodBuildingHealth() const;																		// Exposed to Python
 	int totalBadBuildingHealth() const;														// Exposed to Python
-	int goodHealth() const;																				// Exposed to Python
+	int goodHealth(bool bSpecial = true) const;																				// Exposed to Python
 	int badHealth(bool bNoAngry = false, int iExtra = 0) const;		// Exposed to Python
 	int healthRate(bool bNoAngry = false, int iExtra = 0) const;	// Exposed to Python
 	int foodConsumption(bool bNoAngry = false, int iExtra = 0) const;				// Exposed to Python
@@ -575,8 +575,8 @@ public:
 
 	int getOccupationTimer() const;															// Exposed to Python
 	bool isOccupation() const;																	// Exposed to Python 
-	void setOccupationTimer(int iNewValue);													// Exposed to Python
-	void changeOccupationTimer(int iChange);												// Exposed to Python
+	void setOccupationTimer(int iNewValue, bool bEffects = true);													// Exposed to Python
+	void changeOccupationTimer(int iChange, bool bEffects = true);												// Exposed to Python
 
 	int getCultureUpdateTimer() const;															// Exposed to Python
 	void setCultureUpdateTimer(int iNewValue);
@@ -716,6 +716,10 @@ public:
 	void updateCommerce(CommerceTypes eIndex);
 	void updateCommerce();
 
+	// Leoreth
+	int getModifiedCultureRateTimes100() const;
+	int getModifiedCultureRate() const;
+
 	int getProductionToCommerceModifier(CommerceTypes eIndex) const;						// Exposed to Python
 	void changeProductionToCommerceModifier(CommerceTypes eIndex, int iChange);
 
@@ -790,6 +794,7 @@ public:
 	int getCultureTimes100(PlayerTypes eIndex) const;													// Exposed to Python
 	//int countTotalCultureTimes100() const;			//Rhye																				// Exposed to Python
 	int countTotalCultureTimes100() const;		//Rhye																					// Exposed to Python
+	int getActualTotalCultureTimes100() const; // Leoreth
 	PlayerTypes findHighestCulture(bool bIgnoreMinors = false) const;																			// Exposed to Python
 	int calculateCulturePercent(PlayerTypes eIndex) const;											// Exposed to Python
 	int calculateOverallCulturePercent(PlayerTypes eIndex) const; // Leoreth
@@ -798,6 +803,9 @@ public:
 	void setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
+
+	// Leoreth
+	int getActualCultureTimes100(PlayerTypes ePlayer) const;
 
 	int getNumRevolts(PlayerTypes eIndex) const;
 	void changeNumRevolts(PlayerTypes eIndex, int iChange);
@@ -955,7 +963,7 @@ public:
 	void removeReligion(ReligionTypes eReligion);
 	void replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion);
 
-	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION) const;
+	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION, bool bConquest = false) const;
 
 	bool isHasCorporation(CorporationTypes eIndex) const;
 	void setHasCorporation(CorporationTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
@@ -964,6 +972,7 @@ public:
 	int getTradeRoutes() const;																										// Exposed to Python
 	void clearTradeRoutes();
 	void updateTradeRoutes();
+	bool canHaveTradeRouteWith(const CvCity* pCity) const; // Leoreth
 
 	void clearOrderQueue();																														// Exposed to Python
 	void pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bool bPop, bool bAppend, bool bForce = false);		// Exposed to Python
@@ -1007,10 +1016,10 @@ public:
 
 	int getBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;           // Exposed to Python
 	void setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange);          // Exposed to Python
-	void changeBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange);
+	void changeBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange);			// Exposed to Python
 	int getBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce) const;           // Exposed to Python
 	void setBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange);          // Exposed to Python
-	void changeBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange);
+	void changeBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange);			// Exposed to Python
 	int getBuildingHappyChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
 	void setBuildingHappyChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
 	int getBuildingHealthChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
@@ -1102,6 +1111,51 @@ public:
 	bool hasBonusEffect(BonusTypes eBonus) const;
 	void processBonusEffect(BonusTypes eBonus, int iChange);
 
+	int getStabilityPopulation() const;
+	void setStabilityPopulation(int iNewValue);
+
+	int getBuildingUnhealthModifier() const;
+	void setBuildingUnhealthModifier(int iNewValue);
+	void changeBuildingUnhealthModifier(int iChange);
+
+	int getCorporationUnhealthModifier() const;
+	void setCorporationUnhealthModifier(int iNewValue);
+	void changeCorporationUnhealthModifier(int iChange);
+
+	int countNoGlobalEffectsFreeSpecialists() const;
+	int countSatellites() const;
+	bool canSatelliteJoin() const;
+
+	int getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const;
+
+	int getBuildingDamage() const;
+	void setBuildingDamage(int iNewValue);
+	void changeBuildingDamage(int iChange);
+
+	int getBuildingDamageChange() const;
+	void setBuildingDamageChange(int iNewValue);
+	void changeBuildingDamageChange(int iChange);
+
+	void applyBuildingDamage(int iDamage);
+	void applyPopulationLoss(int iLoss);
+
+	int getTotalPopulationLoss() const;
+	void setTotalPopulationLoss(int iNewValue);
+	void changeTotalPopulationLoss(int iChange);
+
+	int getPopulationLoss() const;
+	void setPopulationLoss(int iNewValue);
+
+	void completeAcquisition(int iCaptureGold);
+
+	int getRebuildProduction() const;
+
+	void sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold);
+	void spare(int iCaptureGold);
+	void raze(int iCaptureGold);
+
+	bool canLiberate() const;
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1154,7 +1208,7 @@ public:
 	virtual int AI_playerCloseness(PlayerTypes eIndex, int iMaxDistance = 7) = 0;
 	virtual int AI_cityThreat(bool bDangerPercent = false) = 0;
 	virtual BuildingTypes AI_bestAdvancedStartBuilding(int iPass) = 0;
-	virtual ReligionTypes AI_getPersecutionReligion() = 0;
+	virtual ReligionTypes AI_getPersecutionReligion(ReligionTypes eIgnoredReligion = NO_RELIGION) = 0;
 	
 	virtual int AI_getWorkersHave() = 0;
 	virtual int AI_getWorkersNeeded() = 0;
@@ -1168,6 +1222,9 @@ public:
 	void invalidateCommerceRankCache(CommerceTypes eCommerce = NO_COMMERCE);
 
 	int getBestYieldAvailable(YieldTypes eYield) const;
+
+	int calculateBaseYieldRate(YieldTypes eYield) const;
+	int calculateBaseGreatPeopleRate() const;
 
 protected:
 
@@ -1281,6 +1338,19 @@ protected:
 	int m_iBuildingUnignorableBombardDefense;
 
 	int m_iCultureRank;
+
+	int m_iStabilityPopulation;
+
+	int m_iBuildingUnhealthModifier;
+	int m_iCorporationUnhealthModifier;
+
+	int m_iTotalCultureTimes100;
+
+	int m_iBuildingDamage;
+	int m_iBuildingDamageChange;
+
+	int m_iTotalPopulationLoss;
+	int m_iPopulationLoss;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

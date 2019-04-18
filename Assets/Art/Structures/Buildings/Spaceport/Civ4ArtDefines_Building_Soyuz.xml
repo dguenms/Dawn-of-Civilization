@@ -1,0 +1,10 @@
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SOYUZ</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Buildings/Soyuz/Soyuz.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/ApolloProgram.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,1</Button>
+		</BuildingArtInfo>

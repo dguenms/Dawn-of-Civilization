@@ -98,6 +98,22 @@
 		<Spanish>Empire of Gran Colombia</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES</Tag>
+		<English>Empire of the Andes</English>
+		<French>Empire of the Andes</French>
+		<German>Empire of the Andes</German>
+		<Italian>Empire of the Andes</Italian>
+		<Spanish>Empire of the Andes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES</Tag>
+		<English>Federation of the Andes</English>
+		<French>Federation of the Andes</French>
+		<German>Federation of the Andes</German>
+		<Italian>Federation of the Andes</Italian>
+		<Spanish>Federation of the Andes</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Tag>
 		<English>Colombian</English>
 		<French>

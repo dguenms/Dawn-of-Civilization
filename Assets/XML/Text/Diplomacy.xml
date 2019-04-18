@@ -130,7 +130,7 @@
 		<Spanish>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HAILE_SELASSIE_1</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_MENELIK_1</Tag>
 		<English>Greetings in the name of God, [CT_NAME] of [CT_CIV_SHORT]. We are Emperor [OUR_NAME] of [OUR_CIV_SHORT]. We know that material and spiritual progress are essential to man. Will you join us as we ceaselessly work for the equal attainment of both?</English>
 		<French>Au nom de Dieu, salut, [CT_NAME] de [CT_CIV_SHORT]. Nous sommes l'empereur [OUR_NAME] de l'[OUR_CIV_SHORT]. Nous savons que le progr&#232;s mat&#233;riel et spirituel est essentiel &#224; l'homme. Vous joindrez-vous &#224; nous dans notre labeur incessant pour atteindre les deux ?</French>
 		<German>Gr&#252;&#223;e im Namen Gottes, [CT_NAME] von [CT_CIV_SHORT]. Wir sind Kaiser [OUR_NAME] von [OUR_CIV_SHORT]. Wir wissen, dass k&#246;rperlicher und spiritueller Fortschritt essentiell f&#252;r den Menschen sind. Werdet Ihr daran teilhaben, wie wir ununterbrochen f&#252;r das gleichzeitige Erlangen von beidem arbeiten?</German>
@@ -210,7 +210,7 @@
 		<Spanish>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religon is a bridge... History is a bridge...</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HAILE_SELASSIE_1</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MENELIK_1</Tag>
 		<English>Welcome, [CT_NAME]. Imagination, devotion, perseverance, together with divine grace, will assure your success. What shall we discuss?</English>
 		<French>Bienvenue, [CT_NAME]. Imagination, d&#233;vouement et pers&#233;v&#233;rance, avec la gr&#226;ce divine, assureront votre succ&#232;s. De quoi voulez-vous discuter ?</French>
 		<German>Willkommen, [CT_NAME]. Vorstellungskraft, Hingabe, Durchhalteverm&#246;gen, zusammen mit Gottes Gnade, wird Euren Erfolg sichern. Was sollen wir besprechen?</German>
@@ -242,7 +242,7 @@
 		<Spanish>Saludos, [CT_NAME]. Sentaos y charlemos un rato.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HAILE_SELASSIE_1</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MENELIK_1</Tag>
 		<English>The world is well supplied with people who wish to rule and dominate others. People like you.</English>
 		<French>Le monde est rempli de gens qui veulent r&#233;gner et dominer les autres. Des gens comme vous.</French>
 		<German>Die Welt ist gut versorgt mit Menschen, die andere beherrschen und dominieren wollen. Menschen wie Euch.</German>
@@ -491,11 +491,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BUMIN_1</Tag>
-		<English>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</English>
-		<French>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</French>
-		<German>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</German>
-		<Italian>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Italian>
-		<Spanish>I, Qaghan Budin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Spanish>
+		<English>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</English>
+		<French>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</French>
+		<German>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</German>
+		<Italian>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Italian>
+		<Spanish>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALP_ARSLAN_1</Tag>
@@ -512,6 +512,46 @@
 		<German>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</German>
 		<Italian>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Italian>
 		<Spanish>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MEMORY_SACKED_CITY</Tag>
+		<English>"You sacked one of our cities!"</English>
+		<French>"Vous avez saccag&#233; l'une de nos villes !"</French>
+		<German>"Ihr habt eine unserer St&#228;dte gepl&#252;ndert!"</German>
+		<Italian>"Hai saccheggiato una delle nostre citt&#224;!"</Italian>
+		<Spanish>"&#161;Saqueasteis una de nuestras ciudades!"</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HONGWU</Tag>
+		<English>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</English>
+		<French>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</French>
+		<German>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</German>
+		<Italian>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</Italian>
+		<Spanish>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_TAIZONG</Tag>
+		<English>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</English>
+		<French>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</French>
+		<German>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</German>
+		<Italian>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Italian>
+		<Spanish>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOSROW</Tag>
+		<English>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</English>
+		<French>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</French>
+		<German>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</German>
+		<Italian>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Italian>
+		<Spanish>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_LEADER_KHOSROW</Tag>
+		<English>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</English>
+		<French>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</French>
+		<German>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</German>
+		<Italian>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Italian>
+		<Spanish>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>

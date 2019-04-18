@@ -83,11 +83,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB</Tag>
-		<English>Receives a free technology for the first four technologies discovered</English>
-		<French>Une technologie gratuite pour les quatre premi&#232;res technologies d&#233;couvertes</French>
-		<German>Erhält eine weitere Technologie für die ersten vier entdeckten Technologien</German>
-		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
-		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
+		<English>Receives a free technology for the first five technologies discovered</English>
+		<French>Une technologie gratuite pour les cinq premi&#232;res technologies d&#233;couvertes</French>
+		<German>Erhält eine weitere Technologie für die ersten f&#252;nf entdeckten Technologien</German>
+		<Italian>Receives a free technology for the first five technologies discovered</Italian>
+		<Spanish>Receives a free technology for the first five technologies discovered</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
@@ -195,9 +195,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR</Tag>
-		<English>Halved costs and no extra upkeep for hurried units</English>
+		<English>Can always hurry units with gold and pays half the cost and no extra upkeep for hurried units</English>
 		<French>Co&#251;t d'acc&#233;l&#233;ration des unit&#233;s divis&#233; par deux, et absence de co&#251;t d'entretien suppl&#233;mentaire pour ces unit&#233;s</French>
-		<German>Halbierte Kosten und kein zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>
+		<German>Kann immer Einheiten mit Gold beschleunigen und bezahlt halbe Kosten und keinen zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>
 		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
 	</TEXT>
@@ -275,19 +275,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
-		<English>The Power of Sovereignty:</English>
-		<French>Le pouvoir de la souverainet&#233; :</French>
-		<German>Die Macht der Souver&#228;nit&#228;t:</German>
-		<Italian>Il potere della sovranit&#224;:</Italian>
-		<Spanish>El poder de la soberan&#237;a:</Spanish>
+		<English>The Power of Communion:</English>
+		<French>The Power of Communion:</French>
+		<German>Die Macht der Kommunion:</German>
+		<Italian>The Power of Communion:</Italian>
+		<Spanish>The Power of Communion:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH</Tag>
-		<English>Land units receive +10% additional strength within cultural borders</English>
-		<French>Les unit&#233;s terrestres re&#231;oivent +10% de puissance au sein de vos fronti&#232;res culturelles</French>
-		<German>Landeinheiten erhalten +10% zus&#228;tzliche St&#228;rke innerhalb kultureller Grenzen</German>
-		<Italian>Le citt&#224; etiopi non possono essere richieste durante un congresso</Italian>
-		<Spanish>No se pueden pedir ciudades et&#237;opes en un Congreso</Spanish>
+		<English>Cities have a trade connection to all other cities with your state religion</English>
+		<French>Cities have a trade connection to all other cities with your state religion</French>
+		<German>St&#228;dte haben eine Handelsverbindung zu allen anderen St&#228;dten mit Ihrer Staatsreligion</German>
+		<Italian>Cities have a trade connection to all other cities with your state religion</Italian>
+		<Spanish>Cities have a trade connection to all other cities with your state religion</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA_TITLE</Tag>
@@ -531,19 +531,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR_TITLE</Tag>
-		<English>The Power of Kobuksons:</English>
-		<French>Le pouvoir des bateaux tortues :</French>
-		<German>Die Macht der Kobuksons:</German>
-		<Italian>The Power of Kobuksons:</Italian>
-		<Spanish>The Power of Kobuksons:</Spanish>
+		<English>The Power of Education:</English>
+		<French>The Power of Education:</French>
+		<German>Die Macht der Bildung:</German>
+		<Italian>The Power of Education:</Italian>
+		<Spanish>The Power of Education:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>
-		<English>Free Drill I and Drill II promotions for all naval units</English>
-		<French>Promotions Exercice I et Exercice II gratuites pour les unit&#233;s navales</French>
-		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Bef&#246;rderung</German>
-		<Italian>Free Drill I and Drill II promotions for all naval units</Italian>
-		<Spanish>Free Drill I and Drill II promotions for all naval units</Spanish>
+		<English>Double specialist slots in capital</English>
+		<French>Double specialist slots in capital</French>
+		<German>Doppelte Anzahl verf&#252;gbarer Spezialisten in der Hauptstadt</German>
+		<Italian>Double specialist slots in capital</Italian>
+		<Spanish>Double specialist slots in capital</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
@@ -563,19 +563,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
-		<English>The Power of Astronomy:</English>
-		<French>Le pouvoir de l'astronomie :</French>
-		<German>Die Macht der Astronomie:</German>
-		<Italian>Il potere dell'astronomia:</Italian>
-		<Spanish>El poder de la astronom&#237;a:</Spanish>
+		<English>The Power of the Long Count:</English>
+		<French>The Power of the Long Count:</French>
+		<German>Die Macht der Langen Z&#228;hlung:</German>
+		<Italian>The Power of the Long Count:</Italian>
+		<Spanish>The Power of the Long Count:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
-		<English>-50% research cost until beginning of the Middle Ages</English>
-		<French>-50 % sur les co&#251;ts de recherche jusqu'au d&#233;but du Moyen &#194;ge</French>
-		<German>-50% Forschungskosten bis zum Anfang des Mittelalters</German>
-		<Italian>-50% ai costi di ricerca fino alla fine del Medioevo</Italian>
-		<Spanish>-50% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
+		<English>Cities receive additional food whenever a technology is discovered before the Middle Ages</English>
+		<French>Cities receive additional food whenever a technology is discovered before the Middle Ages</French>
+		<German>St&#228;dte erhalten zus&#228;tzliche Nahrung f&#252;r jede Technologie, die vor dem Mittelalter entdeckt wird</German>
+		<Italian>Cities receive additional food whenever a technology is discovered before the Middle Ages</Italian>
+		<Spanish>Cities receive additional food whenever a technology is discovered before the Middle Ages</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>
@@ -907,7 +907,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
-		<English>The Power of Raid:</English>
+		<English>The Power of Raids:</English>
 		<French>Le pouvoir du pillage :</French>
 		<German>Die Macht des Raubens:</German>
 		<Italian>Il potere dell'incursione:</Italian>
@@ -915,9 +915,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK</Tag>
-		<English>Additional gold from pillaging, conquering cities and sinking ships during the Middle Ages</English>
+		<English>Additional gold from pillaging, sacking cities and sinking ships during the Middle Ages</English>
 		<French>Piller, conqu&#233;rir des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
-		<German>Zus&#228;tzliches gold durch Pl&#252;nderung, Stadteroberung und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
+		<German>Zus&#228;tzliches gold durch Pl&#252;nderung von St&#228;dten und Verbesserungen und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
 	</TEXT>

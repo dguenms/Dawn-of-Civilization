@@ -2580,5 +2580,13 @@
 			<fSpeed>500.0</fSpeed>
 			<fArcValue>0.0</fArcValue>
 		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RIFLEBLAST_FLAMES</Type>
+			<Description>Rifleblast for Flamethrower</Description>
+			<fScale>2.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Dromon/Effect/firespray_sfx.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
 	</EffectInfos>
 </Civ4EffectInfos>

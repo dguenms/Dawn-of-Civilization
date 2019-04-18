@@ -2551,6 +2551,14 @@ void CyCity::setBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, i
 	}
 }
 
+void CyCity::changeBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)
+{
+	if (m_pCity)
+	{
+		m_pCity->changeBuildingYieldChange((BuildingClassTypes)eBuildingClass, (YieldTypes)eYield, iChange);
+	}
+}
+
 void CyCity::updateBuildingCommerce()
 {
 	if (m_pCity)
@@ -2744,4 +2752,29 @@ int CyCity::getCultureRank()
 bool CyCity::isHasBuildingEffect(int eBuilding)
 {
 	return m_pCity ? m_pCity->isHasBuildingEffect((BuildingTypes)eBuilding) : false;
+}
+
+int CyCity::getStabilityPopulation()
+{
+	return m_pCity ? m_pCity->getStabilityPopulation() : -1;
+}
+
+void CyCity::setStabilityPopulation(int iNewValue)
+{
+	if (m_pCity) m_pCity->setStabilityPopulation(iNewValue);
+}
+
+int CyCity::getModifiedCultureRate()
+{
+	return m_pCity ? m_pCity->getModifiedCultureRate() : -1;
+}
+
+int CyCity::getModifiedCultureRateTimes100()
+{
+	return m_pCity ? m_pCity->getModifiedCultureRateTimes100() : -1;
+}
+
+int CyCity::getNumActiveWorldWonders()
+{
+	return m_pCity ? m_pCity->getNumActiveWorldWonders() : -1;
 }

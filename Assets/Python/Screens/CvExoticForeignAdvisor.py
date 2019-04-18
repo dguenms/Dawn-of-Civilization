@@ -651,8 +651,6 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 			# Trade
 			if (bIsActivePlayer or objLoopPlayer.canHaveTradeRoutesWith(self.iActiveLeader)):
 				(iTradeCommerce, iTradeRoutes) = self.calculateTrade (self.iActiveLeader, iLoopPlayer)
-				if TradeUtil.isFractionalTrade():
-					iTradeCommerce //= 100
 				szTradeYield = u"%d %c" % (iTradeCommerce, gc.getYieldInfo(YieldTypes.YIELD_COMMERCE).getChar())
 				szTradeRoutes = u"%d" % (iTradeRoutes)
 			else:

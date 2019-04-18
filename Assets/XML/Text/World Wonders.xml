@@ -338,36 +338,20 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
-		<English>The Colosseum</English>
-		<French>
-			<Text>Colis&#233;e</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Das Kolosseum</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Il Colosseo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Coliseo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
+		<English>Flavian Amphitheatre</English>
+		<French>Flavian Amphitheatre</French>
+		<German>Flavian Amphitheatre</German>
+		<Italian>Flavian Amphitheatre</Italian>
+		<Spanish>Flavian Amphitheatre</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Flavian Amphitheatre[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON</Tag>
@@ -1823,11 +1807,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
-		<English>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</English>
-		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French>
-		<German>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</German>
-		<Italian>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Italian>
-		<Spanish>[ICON_BULLET]Additional [ICON_CULTURE] from controlled Great Wonders</Spanish>
+		<English>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</English>
+		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French> <!-- needs update -->
+		<German>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</German>
+		<Italian>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Italian>
+		<Spanish>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_STRATEGY</Tag>
@@ -2232,6 +2216,14 @@
 		<German>The [COLOR_BUILDING_TEXT]Hubble Space Telescope[COLOR_REVERT] adds additional science to all of your settled satellites. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Hubble Space Telescope[COLOR_REVERT] adds additional science to all of your settled satellites. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Hubble Space Telescope[COLOR_REVERT] adds additional science to all of your settled satellites. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Tag>
+		<English>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</English>
+		<French>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</French>
+		<German>[ICON_BULLET]+3[ICON_RESEARCH] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Tag>
@@ -2915,11 +2907,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
-		<English>[ICON_BULLET]Units are completely healed when promoted</English>
-		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French>
-		<German>[ICON_BULLET]Units are completely healed when promoted</German>
-		<Italian>[ICON_BULLET]Units are completely healed when promoted</Italian>
-		<Spanish>[ICON_BULLET]Units are completely healed when promoted</Spanish>
+		<English>[ICON_BULLET]+50% healing when units are promoted</English>
+		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French> <!-- needs update -->
+		<German>[ICON_BULLET]+50% healing when units are promoted</German>
+		<Italian>[ICON_BULLET]+50% healing when units are promoted</Italian>
+		<Spanish>[ICON_BULLET]+50% healing when units are promoted</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Tag>
@@ -3220,6 +3212,14 @@
 		<German>Die [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT]-Statue erm&#246;glicht ihrem Erbauer, einmal pro Runde augenblicklich die [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] oder [COLOR_HIGHLIGHT_TEXT]Staatsform[COLOR_REVERT] zu wechseln, ohne dadurch Anarchie zu verursachen. Sie erh&#246;ht auch die Wahrscheinlichkeit, dass ein [COLOR_UNIT_TEXT]Gro&#223;er Prophet[COLOR_REVERT] auftaucht.</German>
 		<Italian>Il [COLOR_BUILDING_TEXT]Cristo Redentore[COLOR_REVERT] permette a chi lo costruisce di cambiare [COLOR_HIGHLIGHT_TEXT]Religione[COLOR_REVERT] o [COLOR_HIGHLIGHT_TEXT]Forma di governo[COLOR_REVERT] istantaneamente una volta per turno, senza generare anarchia. Aumenta inoltre le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Sacerdote[COLOR_REVERT].</Italian>
 		<Spanish>El [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT] permite a su constructor cambiar instant&#225;neamente de [COLOR_HIGHLIGHT_TEXT]religi&#243;n[COLOR_REVERT] o de [COLOR_HIGHLIGHT_TEXT]principios[COLOR_REVERT] una vez por turno, sin sufrir los efectos de la anarqu&#237;a. Tambi&#233;n aumenta las posibilidades de que aparezca un [COLOR_UNIT_TEXT]Sumo sacerdote[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPACE_ELEVATOR_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] f&#252;r jeden gebauten [LINK=literal]Satellit[\LINK][NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] f&#252;r jedes vollendete Weltraumprojekt</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

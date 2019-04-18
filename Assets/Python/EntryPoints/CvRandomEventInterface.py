@@ -2921,7 +2921,7 @@ def canTriggerSportsLeagueDone(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCastle = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_AMPHITHEATRE')
+	iCastle = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_ARENA')
 
 	#Rhye - start
 	#iBuildingsRequired = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers()
@@ -4416,7 +4416,6 @@ def doTradingCompanyConquerors1(argsList):
 					gc.getPlayer(iTargetCiv).changeGold(200)
 				else:
 					utils.colonialConquest(iPlayer, tPlot)
-				targetList.remove(tPlot)
 
 	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
 
@@ -4623,3 +4622,9 @@ def doNuclearMeltdown(argsList):
 	
 	pCity = gc.getPlayer(iPlayer).getCity(iCity)
 	pCity.triggerMeltdown(gc.getInfoTypeForString("BUILDING_NUCLEAR_PLANT"))
+	
+def canTriggerWedding(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	
+	return gc.getPlayer(iPlayer).getCivics(iCivicsGovernment) not in [iStateParty, iDemocracy]

@@ -12,7 +12,7 @@ class CvPediaProject:
 
 		self.X_INFO_PANE = self.top.X_PEDIA_PAGE
 		self.Y_INFO_PANE = self.top.Y_PEDIA_PAGE
-		self.W_INFO_PANE = 290
+		self.W_INFO_PANE = 380 #290
 		self.H_INFO_PANE = 120
 
 		self.W_ICON = 100
@@ -23,7 +23,7 @@ class CvPediaProject:
 
 		self.X_INFO_TEXT = self.X_INFO_PANE + 110
 		self.Y_INFO_TEXT = self.Y_ICON + 15
-		self.W_INFO_TEXT = 220
+		self.W_INFO_TEXT = self.W_INFO_PANE - 70
 		self.H_INFO_TEXT = self.H_INFO_PANE - 20
 
 		self.X_REQUIRES = self.X_INFO_PANE + self.W_INFO_PANE + 10
@@ -90,7 +90,13 @@ class CvPediaProject:
 		if iTech >= -1:
 			screen.attachImageButton(panel, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
 
-
+		iAnyoneProjectPrereq = info.getAnyoneProjectPrereq()
+		if iAnyoneProjectPrereq != -1:
+			screen.attachImageButton(panel, "", gc.getProjectInfo(iAnyoneProjectPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, iAnyoneProjectPrereq, 1, False)
+			
+		for iProject in range(gc.getNumProjectInfos()):
+			if info.getProjectsNeeded(iProject) > 0:
+				screen.attachImageButton(panel, "", gc.getProjectInfo(iProject).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, iProject, 1, False)		
 
 	def placeDetails(self):
 		screen = self.top.getScreen()

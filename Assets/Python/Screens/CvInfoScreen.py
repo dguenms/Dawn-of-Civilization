@@ -1450,7 +1450,7 @@ class CvInfoScreen:
 		# Loop through all players to determine Rank and relative Strength
 		for iPlayerLoop in range(gc.getMAX_PLAYERS()):
 
-			if (gc.getPlayer(iPlayerLoop).isAlive() and not gc.getPlayer(iPlayerLoop).isBarbarian()):
+			if (gc.getPlayer(iPlayerLoop).isAlive() and not gc.getPlayer(iPlayerLoop).isBarbarian() and not gc.getPlayer(iPlayerLoop).isMinorCiv()):
 
 				iNumActivePlayers += 1
 

@@ -286,36 +286,12 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_AMPHITHEATRE</Tag>
-		<English>Amphitheatre</English>
-		<French>
-			<Text>Amphith&#233;&#226;tre</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Amphitheater</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Anfiteatro</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Anfiteatro:Anfiteatros</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_AMPHITHEATRE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</English>
-		<French>[COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</French>
-		<German>[COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</German>
-		<Italian>[COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</Spanish>
+		<Tag>TXT_KEY_BUILDING_ARENA_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Arenas[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</English>
+		<French>[COLOR_BUILDING_TEXT]Arenas[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</French>
+		<German>[COLOR_BUILDING_TEXT]Arenas[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Arenas[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Arenas[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COURTHOUSE_STRATEGY</Tag>
@@ -895,11 +871,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAYAN_BALL_COURT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</English>
-		<French>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</French>
-		<German>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</English>
+		<French>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</French>
+		<German>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Tag>
@@ -915,11 +891,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOORISH_NORIA</Tag>
@@ -2902,6 +2878,14 @@
 		<Spanish>Divan</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</English>
+		<French>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</French>
+		<German>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Divan[COLOR_REVERT], the Turkic replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers the city's maintenance costs and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
 		<English>Garden</English>
 		<French>
@@ -2932,6 +2916,78 @@
 		<German>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides bonus health.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WAREHOUSE</Tag>
+		<English>Warehouse</English>
+		<French>Warehouse</French>
+		<German>Warenhaus</German>
+		<Italian>Warehouse</Italian>
+		<Spanish>Warehouse</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Tag>
+		<English>Automated Factory</English>
+		<French>Automated Factory</French>
+		<German>Automatisierte Fabrik</German>
+		<Italian>Automated Factory</Italian>
+		<Spanish>Automated Factory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Tag>
+		<English>Container Terminal</English>
+		<French>Container Terminal</French>
+		<German>Container Terminal</German>
+		<Italian>Container Terminal</Italian>
+		<Spanish>Container Terminal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LOGISTICS_CENTER</Tag>
+		<English>Logistics Center</English>
+		<French>Logistics Center</French>
+		<German>Logistikzentrum</German>
+		<Italian>Logistics Center</Italian>
+		<Spanish>Logistics Center</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERTICAL_FARM</Tag>
+		<English>Vertical Farm</English>
+		<French>Vertical Farm</French>
+		<German>Vertikale Landwirtschaft</German>
+		<Italian>Vertical Farm</Italian>
+		<Spanish>Vertical Farm</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FIBER_NETWORK</Tag>
+		<English>Fiber Network</English>
+		<French>Fiber Network</French>
+		<German>Glasfasernetzwerk</German>
+		<Italian>Fiber Network</Italian>
+		<Spanish>Fiber Network</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUPERCOMPUTER</Tag>
+		<English>Supercomputer</English>
+		<French>Supercomputer</French>
+		<German>Supercomputer</German>
+		<Italian>Supercomputer</Italian>
+		<Spanish>Supercomputer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STADIUM</Tag>
+		<English>Stadium</English>
+		<French>Stadium</French>
+		<German>Stadion</German>
+		<Italian>Stadium</Italian>
+		<Spanish>Stadium</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARENA</Tag>
+		<English>Arena</English>
+		<French>Arena</French>
+		<German>Arena</German>
+		<Italian>Arena</Italian>
+		<Spanish>Arena</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

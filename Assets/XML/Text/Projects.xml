@@ -2,28 +2,204 @@
 <!-- Projects -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM</Tag>
-		<English>Apollo Program</English>
-		<French>
-			<Text>Programme Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Apollo-Programm</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Programma Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Programa Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_PROJECT_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERSTELLAR_PROBE</Tag>
+		<English>Interstellar Probe</English>
+		<French>Interstellar Probe</French>
+		<German>Interstellare Sonde</German>
+		<Italian>Interstellar Probe</Italian>
+		<Spanish>Interstellar Probe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT</Tag>
+		<English>Human Genome Project</English>
+		<French>Human Genome Project</French>
+		<German>Human Genome Project</German>
+		<Italian>Human Genome Project</Italian>
+		<Spanish>Human Genome Project</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] f&#252;r [LINK=literal]Stadt[\LINK]</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_THE_INTERNET_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</English>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</French>
+		<German>[ICON_BULLET]+1[ICON_COMMERCE] pro Spezialist</German>
+		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_FRAMING</Tag>
+		<English>Mars Framing</English>
+		<French>Mars Framing</French>
+		<German>Mars Struktur</German>
+		<Italian>Mars Framing</Italian>
+		<Spanish>Mars Framing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_POWER_SOURCE</Tag>
+		<English>Mars Power Source</English>
+		<French>Mars Power Source</French>
+		<German>Mars Energiequelle</German>
+		<Italian>Mars Power Source</Italian>
+		<Spanish>Mars Power Source</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_EXTRACTOR</Tag>
+		<English>Mars Extractor</English>
+		<French>Mars Extractor</French>
+		<German>Mars Extraktor</German>
+		<Italian>Mars Extractor</Italian>
+		<Spanish>Mars Extractor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_HABITAT</Tag>
+		<English>Mars Habitat</English>
+		<French>Mars Habitat</French>
+		<German>Mars Habitat</German>
+		<Italian>Mars Habitat</Italian>
+		<Spanish>Mars Habitat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_HYDROPONICS</Tag>
+		<English>Mars Hydroponics</English>
+		<French>Mars Hydroponics</French>
+		<German>Mars Hydroponics</German>
+		<Italian>Mars Hydroponics</Italian>
+		<Spanish>Mars Hydroponics</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_LABORATORY</Tag>
+		<English>Mars Laboratory</English>
+		<French>Mars Laboratory</French>
+		<German>Mars Labor</German>
+		<Italian>Mars Laboratory</Italian>
+		<Spanish>Mars Laboratory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_CONTROL_CENTER</Tag>
+		<English>Mars Control Center</English>
+		<French>Mars Control Center</French>
+		<German>Mars Kontrollzentrum</German>
+		<Italian>Mars Control Center</Italian>
+		<Spanish>Mars Control Center</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GOLDEN_RECORD</Tag>
+		<English>Golden Record</English>
+		<French>Golden Record</French>
+		<German>Golden Record</German>
+		<Italian>Golden Record</Italian>
+		<Spanish>Golden Record</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GOLDEN_RECORD_HELP</Tag>
+		<English>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</English>
+		<French>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</French>
+		<German>[ICON_BULLET]+3[ICON_CULTURE] f&#252;r Satelliten[NEWLINE][ICON_BULLET]Die H&#228;lfte der Raumschiffproduktion erh&#246;ht ebenfalls die Kulturproduktion</German>
+		<Italian>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</Italian>
+		<Spanish>[ICON_BULLET]+3[ICON_CULTURE] for Satellites[NEWLINE][ICON_BULLET]Half the spaceship production modifier also increases culture output</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_LUNAR_COLONY</Tag>
+		<English>Lunar Colony</English>
+		<French>Lunar Colony</French>
+		<German>Mondkolonie</German>
+		<Italian>Lunar Colony</Italian>
+		<Spanish>Lunar Colony</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_LUNAR_COLONY_HELP</Tag>
+		<English>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</English>
+		<French>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</French>
+		<German>[ICON_BULLET]+2[ICON_PRODUCTION] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_PRODUCTION] for Satellites</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE</Tag>
+		<English>Strategic Defense Initiative</English>
+		<French>Strategic Defense Initiative</French>
+		<German>Strategische Verteidigungsinitiative</German>
+		<Italian>Strategic Defense Initiative</Italian>
+		<Spanish>Strategic Defense Initiative</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM</Tag>
+		<English>Global Positioning System</English>
+		<French>Global Positioning System</French>
+		<German>Globales Positionierungssystem</German>
+		<Italian>Global Positioning System</Italian>
+		<Spanish>Global Positioning System</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION</Tag>
+		<English>International Space Station</English>
+		<French>International Space Station</French>
+		<German>Internationale Raumstation</German>
+		<Italian>International Space Station</Italian>
+		<Spanish>International Space Station</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_HELP</Tag>
+		<English>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</English>
+		<French>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</French>
+		<German>[ICON_BULLET]+2[ICON_GREATPEOPLE] f&#252;r Satelliten</German>
+		<Italian>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_GREATPEOPLE] for Satellites</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_BALLISTIC_MISSILE</Tag>
+		<English>Ballistic Missile</English>
+		<French>Ballistic Missile</French>
+		<German>Ballistische Rakete</German>
+		<Italian>Ballistic Missile</Italian>
+		<Spanish>Ballistic Missile</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_FIRST_SATELLITE</Tag>
+		<English>First Satellite</English>
+		<French>First Satellite</French>
+		<German>Erster Satellit</German>
+		<Italian>First Satellite</Italian>
+		<Spanish>First Satellite</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MAN_IN_SPACE</Tag>
+		<English>Man in Space</English>
+		<French>Man in Space</French>
+		<German>Mann im Weltraum</German>
+		<Italian>Man in Space</Italian>
+		<Spanish>Man in Space</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_LUNAR_LANDING</Tag>
+		<English>Lunar Landing</English>
+		<French>Lunar Landing</French>
+		<German>Mondlandung</German>
+		<Italian>Lunar Landing</Italian>
+		<Spanish>Lunar Landing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_MARS_MISSION</Tag>
+		<English>Mission to Mars</English>
+		<French>Mission to Mars</French>
+		<German>Mission to Mars</German>
+		<Italian>Mission to Mars</Italian>
+		<Spanish>Mission to Mars</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Tag>

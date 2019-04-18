@@ -444,8 +444,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 
 	iValue = AI_yieldValue(aiYields, aiCommerceYields, bAvoidGrowth, bRemove);
 
-	iGreatPeopleRate = GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
-	iGreatPeopleRate += GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel());
+	iGreatPeopleRate = getSpecialistGreatPeopleRateChange(eSpecialist);
 
 	int iEmphasisCount = 0;
 	if (iGreatPeopleRate != 0)
@@ -2719,24 +2718,24 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync, AdvisorTypes
 
 	if (foodDifference() > 0)
 	{
-	if (GET_PLAYER(getOwnerINLINE()).getNumCities() <= 2)
-	{
-		bGrowMore = ((getPopulation() < 3) && (AI_countGoodTiles(true, false, 100) >= getPopulation()));
-	}
-	else
-	{
-		bGrowMore = ((getPopulation() < 3) || (AI_countGoodTiles(true, false, 100) >= getPopulation()));
-	}
-	if (!bGrowMore && (getPopulation() < 6) && (AI_countGoodTiles(true, false, 80) >= getPopulation()))
-	{
-		if ((getFood() - (getFoodKept() / 2)) >= (growthThreshold() / 2))
+		if (GET_PLAYER(getOwnerINLINE()).getNumCities() <= 2)
 		{
-			if ((angryPopulation(1) == 0) && (healthRate(false, 1) == 0))
+			bGrowMore = ((getPopulation() < 3) && (AI_countGoodTiles(true, false, 100) >= getPopulation()));
+		}
+		else
+		{
+			bGrowMore = ((getPopulation() < 3) || (AI_countGoodTiles(true, false, 100) >= getPopulation()));
+		}
+		if (!bGrowMore && (getPopulation() < 6) && (AI_countGoodTiles(true, false, 80) >= getPopulation()))
+		{
+			if ((getFood() - (getFoodKept() / 2)) >= (growthThreshold() / 2))
 			{
-				bGrowMore = true;
+				if ((angryPopulation(1) == 0) && (healthRate(false, 1) == 0))
+				{
+					bGrowMore = true;
+				}
 			}
 		}
-	}
 	}
 	iBestOriginalValue = 0;
 
@@ -3215,6 +3214,8 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	int iLimitedWonderLimit = limitedWonderClassLimit(eBuildingClass);
 	bool bIsLimitedWonder = (iLimitedWonderLimit >= 0);
 
+	int iBuildingWeight = AI_buildingWeight(eBuilding);
+
 	ReligionTypes eStateReligion = kOwner.getStateReligion();
 
 	bool bAreaAlone = kOwner.AI_isAreaAlone(area());
@@ -3300,6 +3301,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 		}
 	}
 
+	if (iBuildingWeight == -MAX_INT)
+	{
+		return 0;
+	}
+
 	if (kBuilding.isCapital())
 	{
 		return 0;
@@ -3328,7 +3334,6 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	{
 		if ((iFocusFlags == 0) || (iValue > 0) || (iPass == 0))
 		{
-
 		    if ((iFocusFlags & BUILDINGFOCUS_WORLDWONDER) || (iPass > 0))
 		    {
 		        if (isWorldWonderClass(eBuildingClass))
@@ -3478,6 +3483,20 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					int iBuildingBadHealth = -getBuildingBadHealth();
 					iValue += (std::min(iBuildingBadHealth, iBadHealth) * 12)
 						+ ((std::max(0, iBuildingBadHealth - iBadHealth) + 1) * iHealthModifier);
+				}
+
+				// Leoreth: building health modifier
+				if (kBuilding.getBuildingUnhealthModifier() != 0)
+				{
+					int iBadHealthRemoved = (-getBuildingBadHealth() * kBuilding.getBuildingUnhealthModifier()) / 100;
+					iValue += (std::min(iBadHealthRemoved, iBadHealth) * 12) + ((std::max(0, iBadHealthRemoved - iBadHealth) + 1) * iHealthModifier);
+				}
+
+				// Leoreth: corporation health modifier
+				if (kBuilding.getCorporationUnhealthModifier() != 0)
+				{
+					int iBadHealthRemoved = (-getCorporationUnhealth() * kBuilding.getCorporationUnhealthModifier()) / 100;
+					iValue += (std::min(iBadHealthRemoved, iBadHealth) * 12) + ((std::max(0, iBadHealthRemoved - iBadHealth) + 1) * iHealthModifier);
 				}
 
 				int iBuildingHealth = kBuilding.getHealth();
@@ -4544,10 +4563,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				}
 			}
 
-			if (iPass > 0 && !isHuman())
+			if (iPass > 0 && !isHuman() && iBuildingWeight >= 0)
 			{
 				// Leoreth: 
-				iValue += AI_buildingWeight(eBuilding);
+				iValue += iBuildingWeight;
 				if (iValue > 0)
 				{
 					for (iI = 0; iI < GC.getNumFlavorTypes(); iI++)
@@ -4677,6 +4696,7 @@ ProjectTypes CvCityAI::AI_bestProject()
 			iValue = AI_projectValue((ProjectTypes)iI);
 
 			if ((GC.getProjectInfo((ProjectTypes)iI).getEveryoneSpecialUnit() != NO_SPECIALUNIT) ||
+				(GC.getProjectInfo((ProjectTypes)iI).getSpecialUnit() != NO_SPECIALUNIT) ||
 				  (GC.getProjectInfo((ProjectTypes)iI).getEveryoneSpecialBuilding() != NO_SPECIALBUILDING) ||
 				  GC.getProjectInfo((ProjectTypes)iI).isAllowsNukes())
 			{
@@ -4732,21 +4752,34 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 	int iValue;
 	int iI;
 
+	CvProjectInfo& kProject = GC.getProjectInfo(eProject);
+
+	bool bWarPlan = (GET_TEAM(getTeam()).getAnyWarPlanCount(true) > 0);
+	int iWarmongerPercent = 25000 / std::max(100, (100 + GC.getLeaderHeadInfo(getPersonalityType()).getMaxWarRand()));
+
+	int iSatelliteCount = 0;
+
+	int iLoop;
+	for (CvCity* pCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+	{
+		iSatelliteCount += pCity->countSatellites();
+	}
+
 	iValue = 0;
 
-	if (GC.getProjectInfo(eProject).getNukeInterception() > 0)
+	if (kProject.getNukeInterception() > 0)
 	{
 		if (GC.getGameINLINE().canTrainNukes())
 		{
-			iValue += (GC.getProjectInfo(eProject).getNukeInterception() / 10);
+			iValue += (kProject.getNukeInterception() / 10);
 		}
 	}
 
-	if (GC.getProjectInfo(eProject).getTechShare() > 0)
+	if (kProject.getTechShare() > 0)
 	{
-		if (GC.getProjectInfo(eProject).getTechShare() < GET_TEAM(getTeam()).getHasMetCivCount(true))
+		if (kProject.getTechShare() < GET_TEAM(getTeam()).getHasMetCivCount(true))
 		{
-			iValue += (20 / GC.getProjectInfo(eProject).getTechShare());
+			iValue += (20 / kProject.getTechShare());
 		}
 	}
 
@@ -4754,13 +4787,166 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 	{
 		if (GC.getGameINLINE().isVictoryValid((VictoryTypes)iI))
 		{
-			iValue += (std::max(0, (GC.getProjectInfo(eProject).getVictoryThreshold(iI) - GET_TEAM(getTeam()).getProjectCount(eProject))) * 20);
+			iValue += (std::max(0, (kProject.getVictoryThreshold(iI) - GET_TEAM(getTeam()).getProjectCount(eProject))) * 20);
 		}
 	}
 
 	for (iI = 0; iI < GC.getNumProjectInfos(); iI++)
 	{
 		iValue += (std::max(0, (GC.getProjectInfo((ProjectTypes)iI).getProjectsNeeded(eProject) - GET_TEAM(getTeam()).getProjectCount(eProject))) * 10);
+	}
+
+	// Leoreth
+	if (kProject.isRevealsMap())
+	{
+		iValue += 5;
+	}
+
+	if (kProject.isSatelliteAttack())
+	{
+		for (iI = 0; iI < GC.getNumProjectInfos(); iI++)
+		{
+			if (GC.getProjectInfo((ProjectTypes)iI).isSatelliteAttack() || GC.getProjectInfo((ProjectTypes)iI).isSatelliteIntercept())
+			{
+				iValue += GC.getGameINLINE().getProjectCreatedCount((ProjectTypes)iI) * 5;
+			}
+		}
+	}
+
+	if (kProject.isSatelliteIntercept())
+	{
+		if (GC.getGameINLINE().canTrainNukes())
+		{
+			iValue += 10;
+		}
+	}
+
+	if (kProject.isFirstEnemyAnarchy())
+	{
+		if (GC.getGameINLINE().getProjectCreatedCount(eProject) == 0)
+		{
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).getProjectMaking(eProject) > 0)
+				{
+					if (GET_PLAYER(getOwnerINLINE()).AI_getAttitude((PlayerTypes)iI) < ATTITUDE_PLEASED)
+					{
+						iValue += 10;
+					}
+				}
+			}
+		}
+	}
+
+	if (kProject.getFirstAirExperience() != 0)
+	{
+		if (GC.getGameINLINE().getProjectCreatedCount(eProject) == 0)
+		{	
+			iValue += (kProject.getFirstAirExperience() * GET_PLAYER(getOwnerINLINE()).getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 500;
+		}
+	}
+
+	iValue += (kProject.getAirExperience() * GET_PLAYER(getOwnerINLINE()).getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 500;
+
+	if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
+	{
+		for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
+		{
+			if (GC.getUnitInfo((UnitTypes)iI).getSpecialUnitType() == kProject.getSpecialUnit())
+			{
+				iValue += GET_PLAYER(getOwnerINLINE()).AI_getUnitEnabledValue((UnitTypes)iI) / 20;
+			}
+		}
+	}
+
+	if (kProject.isGoldenAge())
+	{
+		iValue += 10;
+	}
+
+	if (kProject.getFreePromotion() != NO_PROMOTION)
+	{
+		iValue += 5;
+	}
+
+	// project is anywhere on the prereq chain for a victory project
+	for (iI = 0; iI < GC.getNumVictoryInfos(); iI++)
+	{
+		for (int iJ = 0; iJ < GC.getNumProjectInfos(); iJ++)
+		{
+			if (GC.getProjectInfo((ProjectTypes)iJ).getVictoryThreshold(iI) > 0)
+			{
+				if (GC.getProjectInfo((ProjectTypes)iJ).getAnyoneProjectPrereq() == eProject)
+				{
+					iValue += 5;
+				}
+
+				ProjectTypes ePrereq = (ProjectTypes)iJ;
+				while (true)
+				{
+					if (ePrereq == eProject && ePrereq != iJ)
+					{
+						iValue += 10;
+						break;
+					}
+
+					for (int iK = 0; iK < GC.getNumProjectInfos(); iK++)
+					{
+						if (GC.getProjectInfo(ePrereq).getProjectsNeeded(iK) > 0)
+						{
+							ePrereq = (ProjectTypes)iK;
+							continue;
+						}
+					}
+
+					break;
+				}
+			}
+		}
+	}
+
+	if (eProject == PROJECT_GOLDEN_RECORD)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE2))
+		{
+			iValue += 5;
+			iValue += iSatelliteCount / 5;
+		}
+
+		if (GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE4))
+		{
+			iValue += 10;
+			iValue += iSatelliteCount / 2;
+		}
+	}
+
+	if (eProject == PROJECT_THE_INTERNET)
+	{
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE) * GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / 15 / 1000;
+	}
+
+	if (eProject == PROJECT_HUMAN_GENOME_PROJECT)
+	{
+		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+		{
+			if (GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(YIELD_COMMERCE) > 3)
+			{
+				iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD) * GET_PLAYER(getOwnerINLINE()).getImprovementCount((ImprovementTypes)iI) / 1000;
+			}
+		}
+	}
+
+	if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
+	{
+		iValue += 5;
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageCommerceMultiplier(COMMERCE_RESEARCH) * iSatelliteCount * 2 / 1000;
+	}
+
+	if (eProject == PROJECT_LUNAR_COLONY)
+	{
+		iValue += 5;
+		iValue += GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION) * iSatelliteCount * 2 / 1000;
+		iValue += GET_PLAYER(getOwnerINLINE()).getNumCities() / 2;
 	}
 
 	return iValue;
@@ -9365,8 +9551,7 @@ int CvCityAI::AI_countGoodSpecialists(bool bHealthy)
 		iValue += 40 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_GOLD);
 		iValue += 20 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_ESPIONAGE);
 		iValue += 15 * kPlayer.specialistCommerce(eSpecialist, COMMERCE_CULTURE);
-		iValue += 25 * GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
-		iValue += 25 * GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel());
+		iValue += 25 * getSpecialistGreatPeopleRateChange(eSpecialist);
 
 		if (iValue >= (bHealthy ? 200 : 300))
 		{
@@ -10116,10 +10301,15 @@ BuildingTypes CvCityAI::AI_bestAdvancedStartBuilding(int iPass)
 }
 
 // Leoreth: return first non-state religion to make it work for now
-ReligionTypes CvCityAI::AI_getPersecutionReligion()
+ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion)
 {
 	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
+		if (eIgnoredReligion == iI)
+		{
+			continue;
+		}
+
 		if (GET_PLAYER(getOwner()).getStateReligion() != iI)
 		{
 			if (GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI) < 0)
@@ -10159,7 +10349,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iFloodPlainsCount < 2)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == TEMPLE_OF_KUKULKAN)
@@ -10175,7 +10365,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iRainforestCount < 4)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == MACHU_PICCHU || eBuilding == MOLE_ANTONELLIANA)
@@ -10191,7 +10381,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iPeakCount < 5)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == UNIVERSITY_OF_SANKORE || eBuilding == BURJ_KHALIFA)
@@ -10207,7 +10397,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iDesertCount < 5)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == POTALA_PALACE)
@@ -10223,7 +10413,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iHillCount < 8)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == ITSUKUSHIMA_SHRINE)
@@ -10239,28 +10429,28 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iWaterCount < 8)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == IMAGE_OF_THE_WORLD_SQUARE || eBuilding == HERMITAGE || eBuilding == CHAPULTEPEC_CASTLE)
 	{
 		if (getCultureLevel() < 3)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == HARBOUR_OPERA)
 	{
 		if (happyLevel() - unhappyLevel() < 4)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == SHALIMAR_GARDENS || eBuilding == GARDENS_BY_THE_BAY)
 	{
 		if (goodHealth() - badHealth() < 4)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 	else if (eBuilding == CHANNEL_TUNNEL)
@@ -10276,7 +10466,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 
 		if (iFriendlyRelationCount < 1)
 		{
-			return 0;
+			return -MAX_INT;
 		}
 	}
 

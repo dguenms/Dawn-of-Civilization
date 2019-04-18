@@ -364,7 +364,7 @@ void FFreeListTrashArray<T>::load(T* pData)
 	int iIndex;
 
 	assert(pData != NULL);
-	assert((pData->getID() & FLTA_ID_MASK) < m_iCurrentID);
+	//assert((pData->getID() & FLTA_ID_MASK) < m_iCurrentID);
 	assert(m_pArray != NULL);
 
 	iIndex = (pData->getID() & FLTA_INDEX_MASK);

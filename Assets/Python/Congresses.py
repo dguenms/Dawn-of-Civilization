@@ -35,14 +35,14 @@ def setup():
 
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
-		if not data.currentCongress:
+		if data.iCongressTurns > 0:
 			data.iCongressTurns -= 1
-			
-			if data.iCongressTurns == 0:
-				data.iCongressTurns = getCongressInterval()
-				currentCongress = Congress()
-				data.currentCongress = currentCongress
-				currentCongress.startCongress()
+	
+		if data.iCongressTurns == 0:
+			data.iCongressTurns = getCongressInterval()
+			currentCongress = Congress()
+			data.currentCongress = currentCongress
+			currentCongress.startCongress()
 
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
 	if isCongressEnabled():
@@ -115,11 +115,13 @@ def endGlobalWar(iAttacker, iDefender):
 	
 	# force peace for all allies of the belligerents
 	for iLoopPlayer in lAttackers:
+		if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 		if utils.isAVassal(iLoopPlayer): continue
 		if iLoopPlayer == iAttacker: continue
 		gc.getTeam(iLoopPlayer).makePeace(iDefender)
 		
 	for iLoopPlayer in lDefenders:
+		if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 		if utils.isAVassal(iLoopPlayer): continue
 		if iLoopPlayer == iDefender: continue
 		gc.getTeam(iLoopPlayer).makePeace(iAttacker)
@@ -132,15 +134,12 @@ def endGlobalWar(iAttacker, iDefender):
 		lLosers = lAttackers
 	
 	currentCongress = Congress(lWinners, lLosers)
+	data.iCongressTurns = getCongressInterval()
 	data.currentCongress = currentCongress
 	currentCongress.startCongress()
 	
 def getNumInvitations():
 	return min(10, gc.getGame().countCivPlayersAlive())
-	
-def start():
-	currentCongress = Congress()
-	currentCongress.startCongress()
 			
 class Congress:
 	
@@ -263,10 +262,12 @@ class Congress:
 		
 		if plot.isCity():
 			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_CITY", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), plot.getPlotCity().getName())))
+		elif plot.getOwner() == iClaimant:
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
 		elif plot.isOwned():
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWNED", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cnm.getFoundName(iClaimant, tPlot))))
 		else:
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
 			
 		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_VOTE_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
 		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_ABSTAIN", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
@@ -530,7 +531,13 @@ class Congress:
 		if self.bPostWar:
 			iHostPlayer = [iWinner for iWinner in self.lWinners if gc.getPlayer(iWinner).isAlive()][0]
 		else:
-			iHostPlayer = utils.getRandomEntry(self.lInvites)
+			iHostPlayer = utils.getRandomEntry([iInvitee for iInvitee in self.lInvites if gc.getPlayer(iInvitee).getNumCities() > 0])
+			
+		# normal congresses during war time may be too small because all civilisations are tied up in global wars
+		if len(self.lInvites) < 3:
+			data.iCongressTurns /= 2
+			data.currentCongress = None
+			return
 			
 		# establish contact between all participants
 		for iThisPlayer in self.lInvites:
@@ -1106,9 +1113,8 @@ class Congress:
 					if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
 						iSettlerMapValue = plot.getSettlerValue(iPlayer)
 						if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
-							closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-							if stepDistance(x, y, closestCity.getX(), closestCity.getY()) > 2:
-								lPlots.append((x, y, max(1, iSettlerMapValue / 100 - 1)))
+							iFoundValue = gc.getPlayer(iPlayer).AI_foundValue(x, y, -1, False)
+							lPlots.append((x, y, max(1, min(5, iFoundValue / 2500 - 1))))
 						
 		lPlots = utils.getSortedList(lPlots, lambda x: x[2] + gc.getGame().getSorenRandNum(3, 'Randomize city value'), True)
 		return lPlots[:10]
@@ -1120,16 +1126,16 @@ class Congress:
 	def inviteToCongress(self):
 		rank = lambda x: gc.getGame().getPlayerRank(x)
 		lPossibleInvites = []
-	
+
 		if self.bPostWar:
 			iLowestWinnerRank = rank(utils.getSortedList(self.lWinners, rank)[0])
 			lPossibleInvites.extend(self.lWinners)
 			lPossibleInvites.extend([iLoser for iLoser in self.lLosers if rank(iLoser) < iLowestWinnerRank])
 			
 		lPossibleInvites.extend(utils.getSortedList([iPlayer for iPlayer in range(iNumPlayers) if iPlayer not in lPossibleInvites], rank))
-	
+
 		self.lInvites = lPossibleInvites[:getNumInvitations()]
-		
+	
 		lRemove = []
 		
 		# if not a war congress, exclude civs in global wars
@@ -1140,11 +1146,11 @@ class Congress:
 			
 		for iLoopPlayer in self.lInvites:
 			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.append(iLoopPlayer)
-			
+	
 		for iLoopPlayer in lRemove:
 			if iLoopPlayer in self.lInvites:
 				self.lInvites.remove(iLoopPlayer)
-		
+	
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
 			lAmericanClaimCities = utils.getAreaCities(utils.getPlotList(tAmericanClaimsTL, tAmericanClaimsBR))

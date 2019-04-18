@@ -58,7 +58,7 @@ public:
 
 	void AI_makeProductionDirty();
 
-	void AI_conquerCity(CvCity* pCity);
+	void AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold);
 
 	bool AI_acceptUnit(CvUnit* pUnit) const;
 	bool AI_captureUnit(UnitTypes eUnit, CvPlot* pPlot) const;
@@ -148,13 +148,6 @@ public:
 	int AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) const;
 	int AI_corporationBonusVal(BonusTypes eBonus) const;
-
-	// Leoreth: relative bonus trade value
-	int AI_relativeBonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
-
-	// Leoreth: more detailed bonus value
-	int AI_bonusHappinessVal(BonusTypes eBonus, int iChange) const;
-	int AI_bonusHealthVal(BonusTypes eBonus, int iChange) const;
 
 	// Leoreth: determine value provided by additional resource instances
 	int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const;
@@ -366,6 +359,9 @@ public:
 	int AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
 	int AI_getPersecutionValue(ReligionTypes eReligion) const; // Leoreth
 	int AI_neededPersecutors(CvArea* pArea) const;
+	int AI_getUnitEnabledValue(UnitTypes eUnit, TechTypes eTech, CvCity* pCapitalCity, int iHasMetCount, int iCoastalCities, bool bWarPlan, bool bCapitalAlone) const;
+	int AI_getUnitEnabledValue(UnitTypes eUnit) const;
+	bool AI_enablesUnitWonder(UnitClassTypes eUnitClass, int iPathLength) const;
 
 	// for serialization
   virtual void read(FDataStreamBase* pStream);

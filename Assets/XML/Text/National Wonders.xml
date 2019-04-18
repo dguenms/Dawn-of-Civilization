@@ -358,6 +358,14 @@
 		<Spanish>El [COLOR_BUILDING_TEXT]Banco Central[COLOR_REVERT] dobla la producci&#243;n de riqueza de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPACEPORT</Tag>
+		<English>Spaceport</English>
+		<French>Spaceport</French>
+		<German>Raumhafen</German>
+		<Italian>Spaceport</Italian>
+		<Spanish>Spaceport</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
