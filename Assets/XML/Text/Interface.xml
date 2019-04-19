@@ -333,7 +333,7 @@
 		<Tag>TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS</Tag>
 		<English>[SPACE]per Excess Happiness</English>
 		<French>[SPACE]par bonheur en exc&#232;s</French>
-		<German>[SPACE]pro Überschuss an Zufriedenheit</German>
+		<German>[SPACE]pro &#220;berschuss an Zufriedenheit</German>
 		<Italian>[SPACE]per Excess Happiness</Italian>
 		<Spanish>[SPACE]per Excess Happiness</Spanish>
 	</TEXT>
@@ -1281,7 +1281,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GREAT_SPY</Tag>
 		<English>Great Spy: %d1_Curr/%d2_Need Experience</English>
-		<French>Espion illustre : %d1_Curr/%d2_Need exp&#233;rience</French>
+		<French>Espion illustre : %d1_Curr/%d2_Need points d'exp&#233;rience</French>
 		<German>Gro&#223;er Spion: %d1_Curr/%d2_Need Erfahrung</German>
 		<Italian>Great Spy: %d1_Curr/%d2_Need Experience</Italian>
 		<Spanish>Great Spy: %d1_Curr/%d2_Need Experience</Spanish>
@@ -1713,7 +1713,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_REBELLION_TEXT</Tag>
 		<English>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</English>
-		<French>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</French>
+		<French>Les villes %s1 sont sur le point de d&#233;clarer leur ind&#233;pendance et de se s&#233;parer de notre civilisation. Doit-on les laisser partir pacifiquement ?</French>
 		<German>%s1:3 St&#228;dte sind kurz davor, ihre Unabh&#228;ngigkeit von uns zu erkl&#228;ren und sich von unserer Zivilisation zu trennen. Sollen wir sie friedlich gehen lassen?</German>
 		<Italian>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Italian>
 		<Spanish>%s1 cities are about to declare their independence and break away from our civilization. Shall we let them go peacefully?</Spanish>
@@ -2713,7 +2713,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EXPANSION_STABILITY</Tag>
 		<English>[ICON_BULLET]Reduces expansion stability penalty</English>
-		<French>[ICON_BULLET]Reduces expansion stability penalty</French>
+		<French>[ICON_BULLET]R&#233;duit la p&#233;nalit&#233; de stabilit&#233; li&#233;e &#224; l'expansion</French>
 		<German>[ICON_BULLET]Reduces expansion stability penalty</German>
 		<Italian>[ICON_BULLET]Reduces expansion stability penalty</Italian>
 		<Spanish>[ICON_BULLET]Reduces expansion stability penalty</Spanish>
@@ -2721,7 +2721,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_INSTABILITY_CULTURE</Tag>
 		<English>Cultural Control: expansion stability penalty</English>
-		<French>Cultural Control: expansion stability penalty</French>
+		<French>Contr&#244;le culturel : p&#233;nalit&#233; de stabilit&#233; pour l'expansion</French>
 		<German>Cultural Control: expansion stability penalty</German>
 		<Italian>Cultural Control: expansion stability penalty</Italian>
 		<Spanish>Cultural Control: expansion stability penalty</Spanish>
@@ -2729,7 +2729,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_HIGH_INSTABILITY_CULTURE</Tag>
 		<English>Cultural Control: severe expansion stability penalty</English>
-		<French>Cultural Control: severe expansion stability penalty</French>
+		<French>Contr&#244;le culturel : grave p&#233;nalit&#233; de stabilit&#233; pour l'expansion</French>
 		<German>Cultural Control: severe expansion stability penalty</German>
 		<Italian>Cultural Control: severe expansion stability penalty</Italian>
 		<Spanish>Cultural Control: severe expansion stability penalty</Spanish>
@@ -2737,7 +2737,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_CITY_CORE_POPULATION</Tag>
 		<English>Core Population: %d1</English>
-		<French>Core Population: %d1</French>
+		<French>Population du c&#156;ur : %d1</French>
 		<German>Core Population: %d1</German>
 		<Italian>Core Population: %d1</Italian>
 		<Spanish>Core Population: %d1</Spanish>
@@ -2745,7 +2745,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_INTERFACE_CITY_PERIPHERY_POPULATION</Tag>
 		<English>Periphery Population: %d1</English>
-		<French>Periphery Population: %d1</French>
+		<French>Population p&#233;riph&#233;rique : %d1</French>
 		<German>Periphery Population: %d1</German>
 		<Italian>Periphery Population: %d1</Italian>
 		<Spanish>Periphery Population: %d1</Spanish>
@@ -2753,7 +2753,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUILDING_UNHEALTH_MODIFIER</Tag>
 		<English>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</English>
-		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</French>
+		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] &#224; cause des b&#226;timents</French>
 		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Geb&#228;ude</German>
 		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</Italian>
 		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Buildings</Spanish>
@@ -2761,7 +2761,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CORPORATION_UNHEALTH_MODIFIER</Tag>
 		<English>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</English>
-		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</French>
+		<French>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] &#224; cause des soci&#233;t&#233;s commerciales</French>
 		<German>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] Durch Kapitalgesellschaften</German>
 		<Italian>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Italian>
 		<Spanish>[ICON_BULLET]%s1%% [ICON_UNHEALTHY] From Corporations</Spanish>
@@ -2769,7 +2769,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVED_RESOURCE_YIELDS</Tag>
 		<English>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</English>
-		<French>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</French>
+		<French>[ICON_BULLET]%s1 sur les ressources am&#233;nag&#233;es de [LINK=literal]%s2[\LINK]</French>
 		<German>[ICON_BULLET]%s1 auf verbesserten [LINK=literal]%s2[\LINK] Rohstoffen</German>
 		<Italian>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</Italian>
 		<Spanish>[ICON_BULLET]%s1 on improved [LINK=literal]%s2[\LINK] resources</Spanish>
@@ -2777,7 +2777,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_RESEARCH_SATELLITE</Tag>
 		<English>Research Satellite</English>
-		<French>Research Satellite</French>
+		<French>Satellite </French>
 		<German>Forschungssatellit</German>
 		<Italian>Research Satellite</Italian>
 		<Spanish>Research Satellite</Spanish>
@@ -2785,7 +2785,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_COMMERCIAL_SATELLITE</Tag>
 		<English>Commercial Satellite</English>
-		<French>Commercial Satellite</French>
+		<French>Satellite commercial</French>
 		<German>Kommerzieller Satellit</German>
 		<Italian>Commercial Satellite</Italian>
 		<Spanish>Commercial Satellite</Spanish>
@@ -2793,7 +2793,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_MILITARY_SATELLITE</Tag>
 		<English>Military Satellite</English>
-		<French>Military Satellite</French>
+		<French>Satellite militaire</French>
 		<German>Milit&#228;rischer Satellit</German>
 		<Italian>Military Satellite</Italian>
 		<Spanish>Military Satellite</Spanish>
@@ -2818,7 +2818,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_GOLDEN_AGE</Tag>
 		<English>[ICON_BULLET]Starts a Golden Age</English>
-		<French>[ICON_BULLET]Starts a Golden Age</French>
+		<French>[ICON_BULLET]D&#233;clenche un &#226;ge d'or</French>
 		<German>[ICON_BULLET]Startet ein Goldenes Zeitalter</German>
 		<Italian>[ICON_BULLET]Starts a Golden Age</Italian>
 		<Spanish>[ICON_BULLET]Starts a Golden Age</Spanish>
@@ -2826,7 +2826,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_FIRST_FREE_UNIT</Tag>
 		<English>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</English>
-		<French>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</French>
+		<French>[ICON_BULLET]La premi&#232;re civilisation &#224; compl&#233;ter le projet re&#231;oit un [LINK=literal]%s1_Name[\LINK] gratuit</French>
 		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet erh&#228;lt: [LINK=literal]%s1_Name[\LINK]</German>
 		<Italian>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</Italian>
 		<Spanish>[ICON_BULLET]First to complete receives a free [LINK=literal]%s1_Name[\LINK]</Spanish>
@@ -2834,7 +2834,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_FIRST_ENEMY_ANARCHY</Tag>
 		<English>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</English>
-		<French>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</French>
+		<French>[ICON_BULLET]Compl&#233;ter le projet en premier cause de l'anarchie chez les civilisations l'ayant commenc&#233;</French>
 		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet l&#246;st Anarchie bei allen aus, die an dem Projekt arbeiten</German>
 		<Italian>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</Italian>
 		<Spanish>[ICON_BULLET]First to complete causes Anarchy for everyone working on the project</Spanish>
@@ -2842,7 +2842,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROJECT_ANARCHY</Tag>
 		<English>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</English>
-		<French>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</French>
+		<French>C'est un choc inou&#239; pour notre civilisation d'apprendre que la civilisation : %s1 est parvenue &#224; compl&#233;ter le %s2 avant nous !</French>
 		<German>Es war ein gewaltiger Schock f&#252;r unsere Zivilisation zu erfahren, dass %s1 es geschafft hat, %s2 vor uns zu vollenden!</German>
 		<Italian>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Italian>
 		<Spanish>It's been a huge shock to our civilization to learn that %s1 has managed to complete the %s2 before we could!</Spanish>
@@ -2850,7 +2850,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROJECT_ANARCHY_CAUSED</Tag>
 		<English>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</English>
-		<French>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</French>
+		<French>Notre succ&#232;s &#224; compl&#233;ter le %s1 a caus&#233; un grand choc chez la civilisation %s2, qui travaillait sur le m&#234;me projet !</French>
 		<German>Unsere erfolgreiche Fertigstellung von %s1 hat einen gro&#223;en Schock in der %s2 Zivilisation ausgel&#246;st, die an demselben Projekt gearbeitet haben!</German>
 		<Italian>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</Italian>
 		<Spanish>Our success in completing the %s1 has caused great shock in the %s2 civilization, who were working on the same project!</Spanish>
@@ -2858,15 +2858,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_FIRST_AIR_EXPERIENCE</Tag>
 		<English>[ICON_BULLET]First to complete receives %s1 experience for Air units</English>
-		<French>[ICON_BULLET]First to complete receives %s1 experience for Air units</French>
-		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet, erh&#228;lt %s1 Erfahrung für Luft-Einheiten</German>
+		<French>[ICON_BULLET]La premi&#232;re civilisation &#224; compl&#233;ter le projet re&#231;oit %s1 EXP pour les unit&#233;s a&#233;riennes</French>
+		<German>[ICON_BULLET]Die erste Zivilisation, die das Projekt vollendet, erh&#228;lt %s1 Erfahrung f&#252;r Luft-Einheiten</German>
 		<Italian>[ICON_BULLET]First to complete receives %s1 experience for Air units</Italian>
 		<Spanish>[ICON_BULLET]First to complete receives %s1 experience for Air units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_EXISTING_PROJECT</Tag>
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</English>
-		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</French>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] pour la construction d'un projet d&#233;j&#224; existant</French>
 		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] f&#252;r die Errichtung eines existierenden Projekts</German>
 		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for building an existing project</Spanish>
@@ -2874,7 +2874,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_DOUBLE_SPEED_EXISTING</Tag>
 		<English>Double Production Speed when already completed by another civilization</English>
-		<French>Double Production Speed when already completed by another civilization</French>
+		<French>Vitesse de production doubl&#233;e si d&#233;j&#224; compl&#233;t&#233; par une autre civilisation</French>
 		<German>Doppelte Produktionsgeschwindigkeit falls bereits von einer anderen Zivilisation vollendet</German>
 		<Italian>Double Production Speed when already completed by another civilization</Italian>
 		<Spanish>Double Production Speed when already completed by another civilization</Spanish>
@@ -2882,7 +2882,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_BUILDS_FASTER_EXISTING</Tag>
 		<English>Builds %d1_Mod%% Faster when already completed by another civilization</English>
-		<French>Builds %d1_Mod%% Faster when already completed by another civilization</French>
+		<French>Vitesse de production augment&#233;e de %d1_Mod%% si d&#233;j&#224; compl&#233;t&#233; par une autre civilisation</French>
 		<German>Baut %d1_Mod%% schneller falls bereits von einer anderen Zivilisation vollendet</German>
 		<Italian>Builds %d1_Mod%% Faster when already completed by another civilization</Italian>
 		<Spanish>Builds %d1_Mod%% Faster when already completed by another civilization</Spanish>
@@ -2890,7 +2890,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_AIR_EXPERIENCE</Tag>
 		<English>[ICON_BULLET]%s1 experience for Air units</English>
-		<French>[ICON_BULLET]%s1 experience for Air units</French>
+		<French>[ICON_BULLET]%s1 EXP pour les unit&#233;s a&#233;riennes</French>
 		<German>[ICON_BULLET]%s1 Erfahrung f&#252;r Luft-Einheiten</German>
 		<Italian>[ICON_BULLET]%s1 experience for Air units</Italian>
 		<Spanish>[ICON_BULLET]%s1 experience for Air units</Spanish>
@@ -2898,7 +2898,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_FREE_PROMOTION</Tag>
 		<English>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</English>
-		<French>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</French>
+		<French>[ICON_BULLET]Toutes les unit&#233;s re&#231;oivent la promotion [LINK=literal]%s1[\LINK]</French>
 		<German>[ICON_BULLET]Alle Einheiten erhalten die [LINK=literal]%s1[\LINK]-Bef&#246;rderung</German>
 		<Italian>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Italian>
 		<Spanish>[ICON_BULLET]All units receive the [LINK=literal]%s1[\LINK] promotion</Spanish>
@@ -2906,7 +2906,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SATELLITE_INTERCEPT</Tag>
 		<English>[ICON_BULLET]Satellites can intercept Nuclear Weapons</English>
-		<French>[ICON_BULLET]Satellites can intercept Nuclear Weapons</French>
+		<French>[ICON_BULLET]Les satellites peuvent intercepter les armes nucl&#233;aires</French>
 		<German>[ICON_BULLET]Satelliten k&#246;nnen nukleare Waffen abfangen</German>
 		<Italian>[ICON_BULLET]Satellites can intercept Nuclear Weapons</Italian>
 		<Spanish>[ICON_BULLET]Satellites can intercept Nuclear Weapons</Spanish>
@@ -2914,7 +2914,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE</Tag>
 		<English>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</English>
-		<French>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</French>
+		<French>Un %s2_UnitName %s1 a &#233;t&#233; intercept&#233; par un %s4 de l'IDS %s3!!!</French>
 		<German>Eine %s1 %s2_UnitName wurde von einem %s3 SDI-%s4 abgefangen!!!</German>
 		<Italian>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</Italian>
 		<Spanish>A %s1 %s2_UnitName has been intercepted by a %s3 SDI %s4!!!</Spanish>
@@ -2922,7 +2922,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PROJECT_SATELLITE_ATTACK</Tag>
 		<English>[ICON_BULLET]Satellites can attack enemy Satellites</English>
-		<French>[ICON_BULLET]Satellites can attack enemy Satellites</French>
+		<French>[ICON_BULLET]Les satellites peuvent attaquer les satellites ennemis</French>
 		<German>[ICON_BULLET]Satelliten k&#246;nnen gegnerische Satelliten angreifen</German>
 		<Italian>[ICON_BULLET]Satellites can attack enemy Satellites</Italian>
 		<Spanish>[ICON_BULLET]Satellites can attack enemy Satellites</Spanish>
@@ -2939,7 +2939,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_COMMERCE_SPACE_PRODUCTION</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Spaceship Production</English>
-		<French>[ICON_BULLET]%D1%%%F2 from Spaceship Production</French>
+		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce &#224; la production du vaisseau spatial</French>
 		<German>[ICON_BULLET]%D1%%%F2 durch Raumschiffproduktion</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Spanish>
@@ -2947,7 +2947,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_LAUNCH_SPACESHIP</Tag>
 		<English>Launch</English>
-		<French>Launch</French>
+		<French>Lancement</French>
 		<German>Starten</German>
 		<Italian>Launch</Italian>
 		<Spanish>Launch</Spanish>
@@ -2955,7 +2955,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_COASTAL</Tag>
 		<English>[SPACE]on the Coast</English>
-		<French>[SPACE]on the Coast</French>
+		<French>[SPACE]sur la c&#244;te</French>
 		<German>[SPACE]an der K&#252;ste</German>
 		<Italian>[SPACE]on the Coast</Italian>
 		<Spanish>[SPACE]on the Coast</Spanish>
@@ -2963,7 +2963,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_LIMIT</Tag>
 		<English>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</English>
-		<French>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</French>
+		<French>[ICON_BULLET]Peut rejoindre une ville seulement si son nombre d'esclaves est inf&#233;rieur &#224; la moiti&#233; de sa population</French>
 		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Sklaven geringer als die H&#228;lfte ihrer Bev&#246;lkerung ist</German>
 		<Italian>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Italian>
 		<Spanish>[ICON_BULLET]Can join a city only if its number of slaves is less than half its population</Spanish>
@@ -2971,7 +2971,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SATELLITE_LIMIT</Tag>
 		<English>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</English>
-		<French>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</French>
+		<French>[ICON_BULLET]Peut rejoindre une ville seulement si son nombre de satellites est inf&#233;rieur &#224; un cinqui&#232;me de sa capacit&#233; totale de sp&#233;cialistes</French>
 		<German>[ICON_BULLET]Kann einer Stadt nur beitreten, wenn die Anzahl ihrer Satelliten gering als ein F&#252;nftel ihrer Anzahl verf&#252;gbarer Spezialisten ist</German>
 		<Italian>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Italian>
 		<Spanish>[ICON_BULLET]Can join a city only if its number of satellites is less than a fifth of its total specialist slots</Spanish>
@@ -2979,7 +2979,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CIVILIZATION_CULTURE_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Civilization modifier</English>
-		<French>[ICON_BULLET]%D1%%%F2 from Civilization modifier</French>
+		<French>[ICON_BULLET]%D1%%%F2 pour le modificateur de civilisation</French>
 		<German>[ICON_BULLET]%D1%%%F2 durch Zivilisationsmodifikator</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Spanish>
@@ -2995,7 +2995,7 @@
 	<TEXT>
 		<Tag>INTERFACE_CITY_NATIONAL_WONDER_LIMIT_HELP</Tag>
 		<English>%d1 out of %d2 National Wonders at %s3 culture</English>
-		<French>%d1 out of %d2 National Wonders at %s3 culture</French>
+		<French>%d1 sur %d2 merveilles nationales avec une culture %s3</French>
 		<German>%d1 out of %d2 National Wonders at %s3 culture</German>
 		<Italian>%d1 out of %d2 National Wonders at %s3 culture</Italian>
 		<Spanish>%d1 out of %d2 National Wonders at %s3 culture</Spanish>
@@ -3003,7 +3003,7 @@
 	<TEXT>
 		<Tag>INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP</Tag>
 		<English>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</English>
-		<French>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</French>
+		<French>%d1 sur %d2 merveilles mondiales non obsol&#232;tes avec une culture %s3</French>
 		<German>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</German>
 		<Italian>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</Italian>
 		<Spanish>%d1 out of %d2 non-obsolete World Wonders at %s3 culture</Spanish>
@@ -3011,7 +3011,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ATTACK_AND_DEFENSE</Tag>
 		<English>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</English>
-		<French>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</French>
+		<French>[ICON_BULLET]%D1_Change%% puissance sur les %s2_TerrOrFeat</French>
 		<German>[ICON_BULLET]%D1_Change%% St&#228;rke f&#252;r %s2_TerrOrFeat</German>
 		<Italian>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change%% %s2_TerrOrFeat Strength</Spanish>
@@ -3019,7 +3019,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MAYA_UP_EFFECT</Tag>
 		<English>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</English>
-		<French>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</French>
+		<French>Apr&#232;s la d&#233;couverte de la technologie : %s1, vos villes on re&#231;u %d2 [ICON_FOOD]</French>
 		<German>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</German>
 		<Italian>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Italian>
 		<Spanish>After the discovery of %s1, your cities have received %d2 [ICON_FOOD]</Spanish>
@@ -3027,7 +3027,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_GOLD_CITY_CAPTURE</Tag>
 		<English>You have pillaged %d1_Num [ICON_GOLD] from the capture of %s2_CityName!!! What are your next orders for our troops?</English>
-		<French>Vous avez pill&#233; %d1_Num [ICON_GOLD] en capturant %s2_CityName ! Voulez-vous le garder ?</French>
+		<French>Vous avez pill&#233; %d1_Num [ICON_GOLD] en capturant %s2_CityName ! Quels sont vos ordres ?</French>
 		<German>Ihr habt durch die Eroberung von %s2_CityName %d1_Num [ICON_GOLD] erbeutet!!! Was sind Ihre n&#228;chsten Befehle an die Truppen?</German>
 		<Italian>Hai saccheggiato %d1_Num [ICON_GOLD] dalla conquista di %s2_CityName!!! Vuoi mantenerla?</Italian>
 		<Spanish>Hab&#233;is saqueado %d1_Num [ICON_GOLD] con la captura de %s2_CityName. &#191;Dese&#225;is conservarla?</Spanish>
@@ -3035,7 +3035,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CITY_CAPTURE_KEEP</Tag>
 		<English>You have captured %s1_CityName!!! What are your next orders for our troops?</English>
-		<French>Vous avez captur&#233; %s1_CityName ! Voulez-vous garder cette ville ?</French>
+		<French>Vous avez captur&#233; %s1_CityName ! Quels sont vos ordres ?</French>
 		<German>Ihr habt die Stadt %s1_CityName eingenommen!!! Was sind Ihre n&#228;chsten Befehle an die Truppen?</German>
 		<Italian>Hai conquistato %s1_CityName! Vuoi tenerla?</Italian>
 		<Spanish>Hab&#233;is capturado %s1_CityName. &#191;Dese&#225;is conservarla?</Spanish>
@@ -3043,7 +3043,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_KEEP_CAPTURED_CITY</Tag>
 		<English>Establish control and install a new governor.</English>
-		<French>Oui ! Qu'on installe un nouveau gouverneur...</French>
+		<French>&#201;tablissez le contr&#244;le et installez un nouveau gouverneur.</French>
 		<German>&#220;bernehmt die Kontrolle und setzt einen neuen Statthalter ein.</German>
 		<Italian>S&#236;! Instaura un nuovo governatore...</Italian>
 		<Spanish>S&#237;. Que tome posesi&#243;n un nuevo gobernante.</Spanish>
@@ -3051,7 +3051,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_RAZE_CAPTURED_CITY</Tag>
 		<English>Destroy the city! Burn it all down!</English>
-		<French>NON ! REDUISEZ-LA EN CENDRES !</French>
+		<French>D&#233;truisez la ville ! Qu'on la r&#233;duise en cendres !</French>
 		<German>Zerst&#246;rt die Stadt und brennt sie nieder!</German>
 		<Italian>No! BRUCIAMO TUTTO!</Italian>
 		<Spanish>&#161;No! &#161;REDUCIDLA A CENIZAS!</Spanish>
@@ -3067,7 +3067,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_SACK_CITY</Tag>
 		<English>Sack the city! Take as much as you can!</English>
-		<French>Sack the city! Take as much as you can!</French>
+		<French>Saccagez la ville ! Prenez tout ce que vous pouvez !</French>
 		<German>Pl&#252;ndert die Stadt! Nehmt euch soviel ihr k&#246;nnt!</German>
 		<Italian>Sack the city! Take as much as you can!</Italian>
 		<Spanish>Sack the city! Take as much as you can!</Spanish>
@@ -3075,7 +3075,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_SPARE_CITY</Tag>
 		<English>Distribute %d1 gold and see that the city is spared.</English>
-		<French>Distribute %d1 gold and see that the city is spared.</French>
+		<French>Distribuez %d1 or et assurez-vous que la ville soit &#233;pargn&#233;e.</French>
 		<German>Verteilt %d1 Gold, und sorgt daf&#252;r dass die Stadt verschont bleibt.</German>
 		<Italian>Distribute %d1 gold and see that the city is spared.</Italian>
 		<Spanish>Distribute %d1 gold and see that the city is spared.</Spanish>
@@ -3083,7 +3083,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CREATED_WORK_ON_NEXT_SPACESHIP</Tag>
 		<English>%s2_CityName has added [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] to the Mars colony. What would you like to work on next?</English>
-		<French>Ajout de : [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] au colonie de Mars par %s2_CityName. Que souhaitez-vous construire ensuite ?</French>
+		<French>%s2_CityName a ajout&#233; : [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] aux colonies martiennes. Que souhaitez-vous construire ensuite ?</French>
 		<German>%s2_CityName hat das Projekt [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] zur Marskolonie hinzugef&#252;gt. Woran m&#246;chtet Ihr als N&#228;chstes arbeiten?</German>
 		<Italian>%s2_CityName ha aggiunto [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] a la colonia Marziana. Qual &#232; il prossimo compito?</Italian>
 		<Spanish>%s2_CityName ha a&#241;adido [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] a la colonia de marte. &#191;Qu&#233; quer&#233;is hacer a continuaci&#243;n?</Spanish>
@@ -3099,7 +3099,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NO_RESISTANCE</Tag>
 		<English>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</English>
-		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</French> <!-- to translate -->
+		<French>[ICON_BULLET]Pas de [ICON_OCCUPATION] lors de la conqu&#234;te d'une ville</French>
 		<German>[ICON_BULLET]Kein [ICON_OCCUPATION] nach Stadteroberung</German>
 		<Italian>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Spanish>
@@ -3107,7 +3107,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NO_RESISTANCE</Tag>
 		<English>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</English>
-		<French>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</French> <!-- to translate -->
+		<French>[ICON_BULLET]Pas de [ICON_OCCUPATION] lors de la conqu&#234;te d'une ville</French>
 		<German>[ICON_BULLET]Kein [ICON_OCCUPATION] nach Stadteroberung</German>
 		<Italian>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Italian>
 		<Spanish>[ICON_BULLET]No [ICON_OCCUPATION] on City Conquest</Spanish>
@@ -3115,7 +3115,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NO_TEMPORARY_UNHAPPINESS</Tag>
 		<English>[ICON_BULLET]No temporary [ICON_UNHAPPY]</English>
-		<French>[ICON_BULLET]No temporary [ICON_UNHAPPY]</French> <!-- to translate -->
+		<French>[ICON_BULLET]Pas de [ICON_UNHAPPY] temporaires</French>
 		<German>[ICON_BULLET]Keine tempor&#228;re [ICON_UNHAPPY]</German>
 		<Italian>[ICON_BULLET]No temporary [ICON_UNHAPPY]</Italian>
 		<Spanish>[ICON_BULLET]No temporary [ICON_UNHAPPY]</Spanish>
@@ -3123,7 +3123,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER</Tag>
 		<English>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</English>
-		<French>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</French>
+		<French>[ICON_BULLET]Les [ICON_UNHAPPY] temporaires disparaissent %D1%% plus vite</French>
 		<German>[ICON_BULLET]Tempor&#228;re [ICON_UNHAPPY] nimmt %D1%% schneller ab</German>
 		<Italian>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</Italian>
 		<Spanish>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays %D1%% faster</Spanish>
@@ -3131,7 +3131,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_UNHAPPINESS_DECAY_MODIFIER_DOUBLE</Tag>
 		<English>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</English>
-		<French>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</French>
+		<French>[ICON_BULLET]Les [ICON_UNHAPPY] temporaires disparaissent deux fois plus vite</French>
 		<German>[ICON_BULLET]Tempor&#228;re [ICON_UNHAPPY] nimmt zweimal schneller ab</German>
 		<Italian>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</Italian>
 		<Spanish>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</Spanish>
