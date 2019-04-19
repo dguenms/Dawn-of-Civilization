@@ -2065,7 +2065,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_PEOPLE_BUILDINGS</Tag>
 		<English>Great Buildings</English>
-		<French>Great Buildings</French>
+		<French>B&#226;timents illustres</French>
 		<German>Great Buildings</German>
 		<Italian>Great Buildings</Italian>
 		<Spanish>Great Buildings</Spanish>
@@ -2777,7 +2777,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_RESEARCH_SATELLITE</Tag>
 		<English>Research Satellite</English>
-		<French>Satellite </French>
+		<French>Satellite scientifique</French>
 		<German>Forschungssatellit</German>
 		<Italian>Research Satellite</Italian>
 		<Spanish>Research Satellite</Spanish>
@@ -2939,7 +2939,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_COMMERCE_SPACE_PRODUCTION</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Spaceship Production</English>
-		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce &#224; la production du vaisseau spatial</French>
+		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce &#224; la production spatiale</French>
 		<German>[ICON_BULLET]%D1%%%F2 durch Raumschiffproduktion</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Spaceship Production</Spanish>

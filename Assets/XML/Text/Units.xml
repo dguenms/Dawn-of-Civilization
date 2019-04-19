@@ -2920,7 +2920,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_DRONE</Tag>
 		<English>Drone</English>
-		<French>Drone</French>
+		<French>
+			<Text>Drone</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Drone</German>
 		<Italian>Drone</Italian>
 		<Spanish>Drone</Spanish>
@@ -2928,7 +2932,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SATELLITE</Tag>
 		<English>Satellite</English>
-		<French>Satellite</French>
+		<French>
+			<Text>Satellite</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Satellit</German>
 		<Italian>Satellite</Italian>
 		<Spanish>Satellite</Spanish>
@@ -2936,7 +2944,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALUNIT_SATELLITE</Tag>
 		<English>Satellite</English>
-		<French>Satellite</French>
+		<French>
+			<Text>Satellite</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Satellit</German>
 		<Italian>Satellite</Italian>
 		<Spanish>Satellite</Spanish>

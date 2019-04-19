@@ -360,7 +360,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPACEPORT</Tag>
 		<English>Spaceport</English>
-		<French>Spaceport</French>
+		<French>
+			<Text>Base de lancement</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Raumhafen</German>
 		<Italian>Spaceport</Italian>
 		<Spanish>Spaceport</Spanish>

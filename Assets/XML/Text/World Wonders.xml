@@ -340,7 +340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
 		<English>Flavian Amphitheatre</English>
-		<French>Flavian Amphitheatre</French>
+		<French>
+			<Text>Ampith&#233;&#226;tre Flavien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Flavian Amphitheatre</German>
 		<Italian>Flavian Amphitheatre</Italian>
 		<Spanish>Flavian Amphitheatre</Spanish>
@@ -2220,7 +2224,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Tag>
 		<English>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</English>
-		<French>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</French>
+		<French>[ICON_BULLET]+3[ICON_RESEARCH] par satellites</French>
 		<German>[ICON_BULLET]+3[ICON_RESEARCH] f&#252;r Satelliten</German>
 		<Italian>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Italian>
 		<Spanish>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Spanish>
