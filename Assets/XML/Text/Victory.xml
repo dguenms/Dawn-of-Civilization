@@ -1852,7 +1852,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1</Tag>
 		<English>Discover Calendar by 200 AD</English>
-		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<French>D&#233;couvrir le calendrier avant 200 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
 		<Italian>Discover Calendar by 200 AD</Italian>
 		<Spanish>Discover Calendar by 200 AD</Spanish>
@@ -1860,7 +1860,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
 		<English>Discover Calendar by 200 AD</English>
-		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<French>D&#233;couvrir le calendrier avant 200 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
 		<Italian>Discover Calendar by 200 AD</Italian>
 		<Spanish>Discover Calendar by 200 AD</Spanish>
@@ -1868,7 +1868,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
 		<English>Discover Calendar by 200 AD</English>
-		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<French>D&#233;couvrir le calendrier avant 200 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
 		<Italian>Discover Calendar by 200 AD</Italian>
 		<Spanish>Discover Calendar by 200 AD</Spanish>
@@ -1876,7 +1876,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1_NOTURN</Tag>
 		<English>Discover Calendar by 200 AD</English>
-		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<French>D&#233;couvrir le calendrier avant 200 ap. J.-C.</French>
 		<German>Erforschen Sie bis zum Jahr 200 n. Chr. den Kalender</German>
 		<Italian>Discover Calendar by 200 AD</Italian>
 		<Spanish>Discover Calendar by 200 AD</Spanish>
@@ -1908,7 +1908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3</Tag>
 		<English>Make contact with a European civilization before any European discovers America</English>
-		<French>&#201;tablir un contact avec une civilisation europ&#233;enne avant qu'elle ne d&#233;couvre l'Am&#233;rique</French>
+		<French>&#201;tablir un contact avec une civilisation europ&#233;enne avant qu'une civilisation europ&#233;enne ne d&#233;couvre l'Am&#233;rique</French>
 		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation her, bevor eine von ihnen Amerika entdeckt</German>
 		<Italian>Make contact with a European civilization before any European discovers America</Italian>
 		<Spanish>Make contact with a European civilization before any European discovers America</Spanish>
