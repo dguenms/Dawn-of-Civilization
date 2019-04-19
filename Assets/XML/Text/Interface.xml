@@ -2979,7 +2979,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_CIVILIZATION_CULTURE_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Civilization modifier</English>
-		<French>[ICON_BULLET]%D1%%%F2 pour le modificateur de civilisation</French>
+		<French>[ICON_BULLET]%D1%%%F2 via le modificateur de civilisation</French>
 		<German>[ICON_BULLET]%D1%%%F2 durch Zivilisationsmodifikator</German>
 		<Italian>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Italian>
 		<Spanish>[ICON_BULLET]%D1%%%F2 from Civilization modifier</Spanish>
