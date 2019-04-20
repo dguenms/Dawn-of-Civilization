@@ -1729,7 +1729,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_MESSAGE</Tag>
 		<English>The establishment of Academia has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</English>
-		<French>L'invention de l'universit&#233; a permis la diffusion de nouvelles id&#233;ologies, et des &#233;glises dites protestantes commencent &#224; s'opposer au pouvoir du pape sur la chr&#233;tient&#233;. Adh&#233;rerons-nous &#224; la R&#233;forme ? Nos villes et b&#226;timents catholiques se convertiront alors &#224; la nouvelle religion. Si nous nous convertissons maintenant, nous recevrons un bonus de 500 or pour avoir rapidement pris le contr&#244;le des biens de l'&#201;glise.</French>
+		<French>Le d&#233;veloppement des universit&#233; a permis la diffusion de nouvelles id&#233;ologies, et des &#233;glises dites protestantes commencent &#224; s'opposer au pouvoir du pape sur la chr&#233;tient&#233;. Adh&#233;rerons-nous &#224; la R&#233;forme ? Nos villes et b&#226;timents catholiques se convertiront alors &#224; la nouvelle religion. Si nous nous convertissons maintenant, nous recevrons un bonus de 500 or pour avoir rapidement pris le contr&#244;le des biens de l'&#201;glise.</French>
 		<German>The establishment of Academia has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</German>
 		<Italian>The establishment of Academia has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Italian>
 		<Spanish>The establishment of Academia has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Spanish>
@@ -3027,7 +3027,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_GOLD_CITY_CAPTURE</Tag>
 		<English>You have pillaged %d1_Num [ICON_GOLD] from the capture of %s2_CityName!!! What are your next orders for our troops?</English>
-		<French>Vous avez pill&#233; %d1_Num [ICON_GOLD] en capturant %s2_CityName ! Quels sont vos ordres ?</French>
+		<French>Vous avez pill&#233; %d1_Num [ICON_GOLD] en capturant %s2_CityName !!! Quels sont vos ordres ?</French>
 		<German>Ihr habt durch die Eroberung von %s2_CityName %d1_Num [ICON_GOLD] erbeutet!!! Was sind Ihre n&#228;chsten Befehle an die Truppen?</German>
 		<Italian>Hai saccheggiato %d1_Num [ICON_GOLD] dalla conquista di %s2_CityName!!! Vuoi mantenerla?</Italian>
 		<Spanish>Hab&#233;is saqueado %d1_Num [ICON_GOLD] con la captura de %s2_CityName. &#191;Dese&#225;is conservarla?</Spanish>
@@ -3035,7 +3035,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CITY_CAPTURE_KEEP</Tag>
 		<English>You have captured %s1_CityName!!! What are your next orders for our troops?</English>
-		<French>Vous avez captur&#233; %s1_CityName ! Quels sont vos ordres ?</French>
+		<French>Vous avez captur&#233; %s1_CityName !!! Quels sont vos ordres ?</French>
 		<German>Ihr habt die Stadt %s1_CityName eingenommen!!! Was sind Ihre n&#228;chsten Befehle an die Truppen?</German>
 		<Italian>Hai conquistato %s1_CityName! Vuoi tenerla?</Italian>
 		<Spanish>Hab&#233;is capturado %s1_CityName. &#191;Dese&#225;is conservarla?</Spanish>
@@ -3083,7 +3083,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_CREATED_WORK_ON_NEXT_SPACESHIP</Tag>
 		<English>%s2_CityName has added [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] to the Mars colony. What would you like to work on next?</English>
-		<French>%s2_CityName a ajout&#233; : [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] aux colonies martiennes. Que souhaitez-vous construire ensuite ?</French>
+		<French>%s2_CityName a ajout&#233; le projet : [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] aux colonies martiennes. Que souhaitez-vous construire ensuite ?</French>
 		<German>%s2_CityName hat das Projekt [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] zur Marskolonie hinzugef&#252;gt. Woran m&#246;chtet Ihr als N&#228;chstes arbeiten?</German>
 		<Italian>%s2_CityName ha aggiunto [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] a la colonia Marziana. Qual &#232; il prossimo compito?</Italian>
 		<Spanish>%s2_CityName ha a&#241;adido [COLOR_HIGHLIGHT_TEXT]%s1_PrjtName[COLOR_REVERT] a la colonia de marte. &#191;Qu&#233; quer&#233;is hacer a continuaci&#243;n?</Spanish>

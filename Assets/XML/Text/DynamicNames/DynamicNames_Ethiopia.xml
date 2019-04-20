@@ -132,7 +132,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUMITE</Tag>
 		<English>Aksumite</English>
-		<French>Aksumite</French>
+		<French>
+			<Text>aksoumite:aksoumite:aksoumites:aksoumites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Aksumite</German>
 		<Italian>Aksumite</Italian>
 		<Spanish>Aksumite</Spanish>
