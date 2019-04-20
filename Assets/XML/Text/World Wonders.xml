@@ -1812,7 +1812,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</English>
-		<French>[ICON_BULLET]+2 [ICON_CULTURE] pour chaque merveille du monde sous votre contr&#244;le</French>
+		<French>[ICON_BULLET]+2 [ICON_CULTURE] par merveille du monde sous votre contr&#244;le</French>
 		<German>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</German>
 		<Italian>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Spanish>

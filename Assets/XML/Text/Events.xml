@@ -6909,7 +6909,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NUCLEAR_MELTDOWN</Tag>
 		<English>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</English>
-		<French>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</French> <!-- needs translation -->
+		<French>Le pire est arriv&#233; ! L'un de nos r&#233;acteurs a subi une fusion du c&#339;ur !</French>
 		<German>Der Schlimmstfall ist eingetreten! Einer unserer Reaktoren hat eine Kernschmelze erlittern!</German>
 		<Italian>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</Italian>
 		<Spanish>The worst has occurred! One of our reactors has suffered a nuclear meltdown!</Spanish>
