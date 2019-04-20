@@ -594,7 +594,7 @@
 		<English>Maria II</English>
 		<French>
 			<Text>Marie II</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Maria II</German>
@@ -966,7 +966,7 @@
 		<English>Benazir Bhutto</English>
 		<French>
 			<Text>Benazir Bhutto</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Benazir Bhutto</German>
