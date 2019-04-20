@@ -495,6 +495,7 @@ ARTIFICIAL INTELLIGENCE
 * Mostly reverted resource trade AI changes, besides allowing to trade corporation resources and multiple instances of resources to account for resource health/happiness rule changes
 
 SCENARIOS
+* Improved consistency between scenarios
 * Moved Pontic Horses to Western Anatolia
 * Moved fish near Lisbon 1W
 * Rearranged Coffee resources in Ethiopia
