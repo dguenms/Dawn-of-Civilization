@@ -9475,7 +9475,7 @@
 			<Type>ART_DEF_UNIT_STEAMSHIP</Type>
 			<Button>Art/Units/Steamship/paddlewheeler.dds</Button>
 			<fScale>0.67</fScale>
-			<fInterfaceScale>0.3</fInterfaceScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Steamship/paddlewheeler.nif</NIF>
