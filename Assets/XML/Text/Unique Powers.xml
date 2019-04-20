@@ -196,7 +196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR</Tag>
 		<English>Can always hurry units with gold and pays half the cost and no extra upkeep for hurried units</English>
-		<French>Co&#251;t d'acc&#233;l&#233;ration des unit&#233;s divis&#233; par deux, et absence de co&#251;t d'entretien suppl&#233;mentaire pour ces unit&#233;s</French>
+		<French>L'acc&#233;l&#233;ration des unit&#233;s est toujours disponible et co&#251;te deux fois moins cher ; pas de co&#251;t d'entretien suppl&#233;mentaire pour ces unit&#233;s</French>
 		<German>Kann immer Einheiten mit Gold beschleunigen und bezahlt halbe Kosten und keinen zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>
 		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
@@ -908,7 +908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
 		<English>The Power of Raids:</English>
-		<French>Le pouvoir du pillage :</French>
+		<French>Le pouvoir des raids :</French>
 		<German>Die Macht des Raubens:</German>
 		<Italian>Il potere dell'incursione:</Italian>
 		<Spanish>El poder del pillaje:</Spanish>
@@ -916,7 +916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK</Tag>
 		<English>Additional gold from pillaging, sacking cities and sinking ships during the Middle Ages</English>
-		<French>Piller, conqu&#233;rir des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
+		<French>Piller, saccager des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
 		<German>Zus&#228;tzliches gold durch Pl&#252;nderung von St&#228;dten und Verbesserungen und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>

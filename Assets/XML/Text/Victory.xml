@@ -1204,7 +1204,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1_TITLE</Tag>
 		<English>Translatio Imperii and Reformation</English>
-		<French>Translatio imperii and Reformation </French>
+		<French>Translatio imperii et Réforme </French>
 		<German>Translatio Imperii and Reformation</German>
 		<Italian>Translatio Imperii and Reformation</Italian>
 		<Spanish>Translatio Imperii and Reformation</Spanish>
@@ -3700,7 +3700,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_WITH_COMMUNISM</Tag>
 		<English>Friendly communist civilisations: %d1 / %d2</English>
-		<French>Civilisations enthousiastes ayant adopt&#233; le communisme : %d1 / %d2</French>
+		<French>Civilisations communistes enthousiastes : %d1 / %d2</French>
 		<German>Friendly communist civilisations: %d1 / %d2</German>
 		<Italian>Friendly communist civilisations: %d1 / %d2</Italian>
 		<Spanish>Friendly communist civilisations: %d1 / %d2</Spanish>

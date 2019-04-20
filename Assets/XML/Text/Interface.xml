@@ -284,7 +284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MINIMAL_SPECIALISTS</Tag>
 		<English>[ICON_BULLET]At least %D1 slots for[SPACE]</English>
-		<French>[ICON_BULLET]At least %D1 slots for[SPACE]</French>
+		<French>[ICON_BULLET]Capacité minimale de %D1[SPACE]</French>
 		<German>[ICON_BULLET]Erlaubt mindestens %D1[SPACE]</German>
 		<Italian>[ICON_BULLET]At least %D1 for[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]At least %D1 for[SPACE]</Spanish>
@@ -292,7 +292,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AT_LEAST_ONE_SPECIALIST</Tag>
 		<English>[ICON_BULLET]At least one slot for[SPACE]</English>
-		<French>[ICON_BULLET]At least one slot for[SPACE]</French>
+		<French>[ICON_BULLET]Capacité minimale d'un[SPACE]</French>
 		<German>[ICON_BULLET]Erlaubt mindestens einen[SPACE]</German>
 		<Italian>[ICON_BULLET]At least one slot for[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]At least one slot for[SPACE]</Spanish>
@@ -1545,7 +1545,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_NO_RELIGIOUS_GOALS</Tag>
 		<English>You lack a state religion with religious goals!</English>
-		<French>Vous n'avez pas de religion d'&#201;tat poss&#233;dant des objectifs religieux !</French>
+		<French>Vous n'avez pas de religion d'&#201;tat avec des objectifs religieux !</French>
 		<German>Euch fehlt eine Staatsreligion mit religi&#246;sen Zielen!</German>
 		<Italian>You lack a state religion with religious goals!</Italian>
 		<Spanish>You lack a state religion with religious goals!</Spanish>
@@ -3091,7 +3091,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LEVEL_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1%% experience needed for unit promotions</English>
-		<French>[ICON_BULLET]%D1%% EXP pour la promotion des unit&#233;s</French>
+		<French>[ICON_BULLET]%D1%% EXP requis pour la promotion des unit&#233;s</French>
 		<German>[ICON_BULLET]%D1%% EP f&#252;r Einheitenbef&#246;rderungen erforderlich</German>
 		<Italian>[ICON_BULLET]%D1%% PE richiesti per la promozione</Italian>
 		<Spanish>[ICON_BULLET]%D1%% PX necesarios para ascender unidades.</Spanish>
