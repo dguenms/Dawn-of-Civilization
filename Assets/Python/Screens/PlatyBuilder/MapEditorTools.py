@@ -441,7 +441,7 @@ def exportRegionMap(bForce = False):
 def exportAreaExport(lPlots, bWaterException, bPeakException):
 	if lPlots:
 		BL, TR = getTLBR(lPlots)
-		lExceptions = [tPlot for tPlot in utils.getPlotList(BL, TR) if tPlot not in lPlots]
+		lExceptions = [(x, y) for (x, y) in utils.getPlotList(BL, TR) if (x, y) not in lPlots and (bWaterException and gc.getMap().plot(x, y).isWater()) and (bPeakException and gc.getMap().plot(x, y).isPeak())]
 		
 		if bWaterException:
 			lExceptions.extend([(x, y) for (x, y) in lPlots if gc.getMap().plot(x, y).isWater() and (x, y) not in lExceptions])
