@@ -1530,4 +1530,20 @@
 		<Italian>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</Italian>
 		<Spanish>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REGION_ALLREGIONS</Tag>
+		<English>Show all region borders</English>
+		<French>Show all region borders</French>
+		<German>Show all region borders</German>
+		<Italian>Show all region borders</Italian>
+		<Spanish>Show all region borders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REGION_CHECK</Tag>
+		<English>Check if all land tiles have a defined region</English>
+		<French>Check if all land tiles have a defined region</French>
+		<German>Check if all land tiles have a defined region</German>
+		<Italian>Check if all land tiles have a defined region</Italian>
+		<Spanish>Check if all land tiles have a defined region</Spanish>
+	</TEXT>
 </Civ4GameText>

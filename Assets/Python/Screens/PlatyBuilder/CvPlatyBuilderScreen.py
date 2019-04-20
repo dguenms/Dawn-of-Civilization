@@ -113,6 +113,8 @@ class CvWorldBuilderScreen:
 		self.iMoveMapReset = 0
 		self.bWaterException = False
 		self.bPeaksException = False
+		self.bAllRegions = False
+		self.dRegionColors = {}
 
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
@@ -1288,6 +1290,8 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("AreaExportWater")
 			screen.deleteWidget("AreaExportPeak")
 			screen.deleteWidget("ToolHelp")
+			screen.deleteWidget("AllRegionsButton")
+			screen.deleteWidget("CheckRegionsButton")
 
 ## Panel Screen ##
 			nRows = 1
@@ -1452,7 +1456,14 @@ class CvWorldBuilderScreen:
 					screen.addCheckBoxGFC("VictoryRectangleButton", "Art/Interface/Buttons/TechTree/Engineering.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 47, ButtonStyles.BUTTON_STYLE_LABEL)
 					iX += iAdjust
-				elif self.iPlayerAddMode not in ["RegionMap", "Core"]:
+				elif self.iPlayerAddMode == "RegionMap":
+					screen.addCheckBoxGFC("AllRegionsButton", ",-,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,4,5", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
+						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 52, ButtonStyles.BUTTON_STYLE_LABEL)
+					iX += iAdjust
+					screen.addCheckBoxGFC("CheckRegionsButton", ",-,Art/Interface/Buttons/FinalFrontier1_Atlas.dds,3,13", "",
+						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 53, ButtonStyles.BUTTON_STYLE_LABEL)
+					iX += iAdjust
+				elif self.iPlayerAddMode != "Core":
 					screen.addDropDownBoxGFC("PresetValue", iX, iY, iAdjust * 2 - 3, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 					if self.iPlayerAddMode == "ReligionMap":
 						for i in range(5):
@@ -1693,6 +1704,7 @@ class CvWorldBuilderScreen:
 		screen.setState("AreaExporterScreen", self.iPlayerAddMode in self.AreaExport)
 		screen.setState("AreaExportWater", self.bWaterException)
 		screen.setState("AreaExportPeak", self.bPeaksException)
+		screen.setState("AllRegionsButton", self.bAllRegions)
 
 	def setSelectionTable(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
@@ -2047,9 +2059,41 @@ class CvWorldBuilderScreen:
 
 	def showRegionOverlay(self):
 		utils.removeStabilityOverlay()
-		lPlots = utils.getRegionPlots(self.m_iRegionMapID)
-		for (x, y) in lPlots:
-			CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_BLUE", 0.7)
+		for (x, y) in utils.getWorldPlotsList():
+			plot = gc.getMap().plot(x, y)
+			iRegion = plot.getRegionID()
+			if iRegion == -1: continue
+			if iRegion == self.m_iRegionMapID:
+				CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_BLUE", 0.7)
+			elif self.bAllRegions:
+				CyEngine().fillAreaBorderPlotAlt(x, y, 1000+iRegion, self.dRegionColors[iRegion], 0.7)
+			
+	def determineRegionColors(self):
+		lColors = ["COLOR_PLAYER_LIGHT_PURPLE", "COLOR_PLAYER_LIGHT_YELLOW", "COLOR_PLAYER_LIGHT_ORANGE", "COLOR_SILVER"]
+		
+		dNeighbourRegions = dict([(i, []) for i in range(iNumRegions)])
+		dRegionColors = dict([(i, "") for i in range(iNumRegions)])
+		
+		for (x, y) in utils.getWorldPlotsList():
+			plot = gc.getMap().plot(x, y)
+			iRegion = plot.getRegionID()
+			if iRegion == -1: continue
+			for (i, j) in utils.surroundingPlots((x, y)):
+				surroundingPlot = gc.getMap().plot(i, j)
+				iNeighbourRegion = surroundingPlot.getRegionID()
+				if iNeighbourRegion != iRegion and iNeighbourRegion != -1 and iNeighbourRegion not in dNeighbourRegions[iRegion]:
+					dNeighbourRegions[iRegion].append(iNeighbourRegion)
+
+		for iRegion in range(iNumRegions):
+			for color in lColors:
+				bColorUsed = False
+				for iNeighbourRegion in dNeighbourRegions[iRegion]:
+					if dRegionColors[iNeighbourRegion] == color:
+						break
+				else:
+					dRegionColors[iRegion] = color
+					break
+		self.dRegionColors = dRegionColors
 
 	def showVictoryOverlay(self):
 		utils.removeStabilityOverlay()
@@ -2096,6 +2140,20 @@ class CvWorldBuilderScreen:
 			sText = CyTranslator().getText("TXT_KEY_WB_AREAEXPORT_HELP", ())
 		else:
 			return
+		utils.show(sText)
+
+	def checkRegionTiles(self):
+		lPlots = []
+		for (x, y) in utils.getWorldPlotsList():
+			plot = gc.getMap().plot(x, y)
+			if plot.isWater(): continue
+			iRegion = plot.getRegionID()
+			if iRegion == -1:
+				lPlots.append((x, y))
+		if lPlots:
+			sText = "Land tiles without a defined region:\n" + str(lPlots)
+		else:
+			sText = "All land tiles have a defined region"
 		utils.show(sText)
 
 	def getPlotItems(self, tPlot):
@@ -2886,6 +2944,18 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "ToolHelp":
 			bDeleteOverlay = False
 			self.showToolHelp()
+
+		elif inputClass.getFunctionName() == "AllRegionsButton":
+			bDeleteOverlay = False
+			if not self.dRegionColors:
+				self.determineRegionColors()
+			self.bAllRegions = not self.bAllRegions
+			self.refreshSideMenu()
+			self.showRegionOverlay()
+
+		elif inputClass.getFunctionName() == "CheckRegionsButton":
+			bDeleteOverlay = False
+			self.checkRegionTiles()
 
 		elif inputClass.getFunctionName() == "MoveMapReset":
 			self.iMoveMapReset = screen.getPullDownData("MoveMapReset", screen.getSelectedPullDownID("MoveMapReset"))
