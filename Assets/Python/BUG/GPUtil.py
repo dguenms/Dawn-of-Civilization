@@ -178,8 +178,7 @@ def calcPercentages(city):
 	# Calc total rate
 	iTotal = 0
 	for iUnit in g_gpUnitTypes:
-		iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnitType(city.getOwner(), gc.getUnitInfo(iUnit).getUnitClassType()))
-		if iProgress > 0: iTotal += iProgress
+		iTotal += city.getGreatPeopleUnitProgress(utils.getUniqueUnitType(city.getOwner(), gc.getUnitInfo(iUnit).getUnitClassType()))
 	# Calc individual percentages based on rates and total
 	percents = []
 	if (iTotal > 0):
