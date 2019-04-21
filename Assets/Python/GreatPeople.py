@@ -1520,6 +1520,8 @@ iCivVikings : {
 	],
 	iGreatArtist : [
 		"Bragi Boddason", # 9th norwegian
+		u"fJórunn skáldmær", # 10th norwegian
+		"Fotr", # 11th swedish
 		"Snorri Sturluson", # 13th icelandic
 		u"Nils Håkansson", # 14th swedish
 		iRenaissance,
@@ -1539,6 +1541,8 @@ iCivVikings : {
 		"Ingmar Bergman", # 20th swedish
 	],
 	iGreatScientist : [
+		"Oddi Helgason", # 12th icelandic
+		iRenaissance,
 		"Tycho Brahe", # 16th danish
 		"fSophia Brahe", # 16th danish
 		"Mikael Agricola", # 16th finnish
@@ -1554,9 +1558,10 @@ iCivVikings : {
 		"Niels Bohr", # 20th danish
 	],
 	iGreatMerchant : [
+		u"Håkon Sigurdsson", # 10th norwegian
 		u"Eiríkr Rauði", # 10th norwegian
 		u"Leifr Eiríksson", # 10th icelandic
-		u"Håkon Sigurdsson", # 10th norwegian
+		"fGudrid Thorbjarnardóttir", # 10th icelandic
 		iRenaissance,
 		"fSigbrit Willoms", # 16th danish
 		"fChristina Piper", # 18th swedish
@@ -1586,6 +1591,7 @@ iCivVikings : {
 	],
 	iGreatStatesman : [
 		"Gorm den Gamle", # 10th danish
+		u"fGunnhildr Gormsdóttir", # 10th norwegian
 		"Birger Jarl", # 13th swedish
 		"fMargrete Valdemarsdatter", # 14th danish
 		iRenaissance,
@@ -1603,6 +1609,7 @@ iCivVikings : {
 		"Olof Palme", # 20th swedish
 	],
 	iGreatGeneral : [
+		u"fHlaðgerðr", # 9th danish
 		u"Eiríkr Blóðøx", # 10th norwegian
 		u"Sveinn Tjúguskegg", # 10th danish
 		u"Harald Harðráði", # 11th norwegian
