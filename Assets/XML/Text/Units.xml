@@ -3425,7 +3425,7 @@
 		<Tag>TXT_KEY_UNIT_STEAMSHIP</Tag>
 		<English>Steamship</English>
 		<French>
-			<Text>Paquebot</Text>
+			<Text>Bateau &#224; vapeur</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
