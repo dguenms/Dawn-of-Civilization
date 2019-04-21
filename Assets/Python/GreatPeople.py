@@ -554,8 +554,9 @@ iCivIndia : {
 		"fAvvaiyar", # 10th tamil
 		"Abhinavagupta", # 10th
 		"Nakkirar", # medieval tamil
+		"fKanhopatra", # 15th
 		iRenaissance,
-		"Purandara Dasa", # 15th
+		"Purandara Dasa", # 16th
 		"Tansen", # 16th
 		"Nainsukh", # 18th
 		iIndustrial,
@@ -1521,7 +1522,7 @@ iCivVikings : {
 	iGreatArtist : [
 		"Bragi Boddason", # 9th norwegian
 		u"fJórunn skáldmær", # 10th norwegian
-		"Fotr", # 11th swedish
+		u"Ofæigr Øpir", # 11th swedish
 		"Snorri Sturluson", # 13th icelandic
 		u"Nils Håkansson", # 14th swedish
 		iRenaissance,
@@ -2639,6 +2640,7 @@ iCivHolyRome : {
 		"Ferdinand Anton Ernst Porsche", # 20th
 	],
 	iGreatEngineer : [
+		"fSabina von Steinbach", # 13th
 		"Heinrich Parler", # 14th
 		"Peter Parler", # 14th
 		"Johannes Gutenberg", # 15th
