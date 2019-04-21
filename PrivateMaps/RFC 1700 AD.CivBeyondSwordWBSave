@@ -26316,6 +26316,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=37
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -27444,8 +27446,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=36
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -32562,7 +32562,6 @@ EndPlot
 BeginPlot
 	x=70,y=42
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=36,45,
@@ -32571,7 +32570,7 @@ BeginPlot
 	x=70,y=43
 	BonusType=BONUS_HORSE
 	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=36,45,
@@ -32580,7 +32579,6 @@ BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
 	ImprovementType=IMPROVEMENT_COTTAGE
-	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=36,45,
@@ -33059,7 +33057,8 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -34058,16 +34057,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=43
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
-	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=36,45,
 EndPlot
 BeginPlot
 	x=73,y=44
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=36,45,
@@ -34658,6 +34657,7 @@ EndPlot
 BeginPlot
 	x=74,y=44
 	ImprovementType=IMPROVEMENT_WINDMILL
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,36,45,

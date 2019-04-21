@@ -27350,8 +27350,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=42
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27359,7 +27358,7 @@ BeginPlot
 	x=70,y=43
 	BonusType=BONUS_HORSE
 	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27367,7 +27366,6 @@ BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27742,7 +27740,8 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -28554,13 +28553,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=43
-	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=73,y=44
+	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28968,6 +28967,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
+	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
