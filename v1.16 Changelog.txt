@@ -466,6 +466,7 @@ STABILITY
 * Core cities do not revert to previous owner on collapse
 * Cities that flipped on spawn do not revert to the original owner on collapse
 * Only slightly negative or positive diplomatic opinions are weighted less in relations stability
+* Instability from razing cities depends on the highest population the city has ever had
 
 BALANCE
 * Inflation rate is the same between scenarios

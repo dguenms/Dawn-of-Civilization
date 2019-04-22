@@ -120,8 +120,8 @@ def onCityRazed(iPlayer, city):
 
 	if utils.getHumanID() == iPlayer and iPlayer != iMongolia:
 		iRazePenalty = -10
-		if city.getPopulation() < 5 and not city.isCapital():
-			iRazePenalty = -2 * city.getPopulation()
+		if city.getHighestPopulation() < 5 and not city.isCapital():
+			iRazePenalty = -2 * city.getHighestPopulation()
 			
 		if iOwner >= iNumPlayers: iRazePenalty /= 2
 			
