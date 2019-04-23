@@ -1565,7 +1565,7 @@ iCivVikings : {
 		u"Håkon Sigurdsson", # 10th norwegian
 		u"Eiríkr Rauði", # 10th norwegian
 		u"Leifr Eiríksson", # 10th icelandic
-		"fGudrid Thorbjarnardóttir", # 10th icelandic
+		u"fGudrid Thorbjarnardóttir", # 10th icelandic
 		iRenaissance,
 		"fSigbrit Willoms", # 16th danish
 		"Magnus Heinason", # 16th faroese
