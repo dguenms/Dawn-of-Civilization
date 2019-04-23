@@ -1515,6 +1515,7 @@ iCivVikings : {
 		"Johannes Campanius", # 17th swedish
 		"Emanuel Swedenborg", # 18th swedish
 		iIndustrial,
+		"Hans Nielsen Hauge", # 19th norwegian
 		u"Søren Kierkegaard", # 19th danish
 		iGlobal,
 		u"Sveinbjörn Beinteinsson", # 20th icelandic
@@ -1538,6 +1539,7 @@ iCivVikings : {
 		iGlobal,
 		"Jean Sibelius", # 20th finnish
 		"fKaren Blixen", # 20th danish
+		u"Halldór Laxness", # 20th icelandic
 		"fAstrid Lindgren", # 20th swedish
 		"Ingmar Bergman", # 20th swedish
 	],
@@ -1555,6 +1557,7 @@ iCivVikings : {
 		"Niels Henrik Abel", # 19th norwegian
 		"Johannes Rydberg", # 19th swedish
 		u"Anders Ångström", # 19th swedish
+		"Niels Ryberg Finsen", # 19th faroese
 		iGlobal,
 		"Niels Bohr", # 20th danish
 	],
@@ -1565,6 +1568,7 @@ iCivVikings : {
 		"fGudrid Thorbjarnardóttir", # 10th icelandic
 		iRenaissance,
 		"fSigbrit Willoms", # 16th danish
+		"Magnus Heinason", # 16th faroese
 		"fChristina Piper", # 18th swedish
 		"Niclas Sahlgren", # 18th swedish
 		"Rutger Macklean", # 18th swedish
