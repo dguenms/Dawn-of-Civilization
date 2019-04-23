@@ -1420,7 +1420,7 @@ class RiseAndFall:
 						if utils.getHumanID() != iMongolia:
 							unit.setXY(mongolCapital.getX(), mongolCapital.getY(), False, True, False)
 					else:
-						if unit.getUnitType() == iGhulamWarrior or unit.getUnitType() == iKeshik:
+						if unit.getUnitType() == iKeshik:
 							unit.kill(False, iBarbarian)
 
 	def deleteMode(self, iCurrentPlayer):
