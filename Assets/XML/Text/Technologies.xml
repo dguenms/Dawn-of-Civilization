@@ -538,7 +538,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AVIATION_QUOTE</Tag>
 		<English>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</English>
-		<French>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</French>
+		<French>"Ce que le chemin de fer a fait pour les pays du monde, le transport a&#233;rien le fera pour le monde entier."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</French>
 		<German>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</German>
 		<Italian>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</Italian>
 		<Spanish>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</Spanish>
@@ -1438,8 +1438,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ECONOMICS_QUOTE</Tag>
-		<English>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</English>
-		<French>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</French>
+		<English>"The engine which drives enterprise is not thrift, but profit."[PARAGRAPH:2]- John Maynard Keynes, A Treatise on Money</English>
+		<French>"Le moteur de l'esprit d'entreprise, ce n'est pas l'&#233;pargne, c'est le profit."[PARAGRAPH:2]- John Maynard Keynes, Trait&#233; sur la monnaie</French>
 		<German>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</German>
 		<Italian>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</Italian>
 		<Spanish>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</Spanish>
@@ -2060,7 +2060,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GENETICS_QUOTE</Tag>
 		<English>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</English>
-		<French>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</French>
+		<French>"Chaque g&#232;ne humain est apparent&#233; &#224; ceux des autres animaux et des bact&#233;ries dans cette grande cha&#238;ne de la vie."[PARAGRAPH:2]- Walter Gilbert</French>
 		<German>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</German>
 		<Italian>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</Italian>
 		<Spanish>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</Spanish>
@@ -2225,8 +2225,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GUNPOWDER_QUOTE</Tag>
-		<English>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</English>
-		<French>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</French>
+		<English>"Such I hold to be the genuine use of gunpowder: that it makes all men alike tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</English>
+		<French>"L'utilisation r&#233;elle de la poudre est de rendre tous les hommes grands."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</French>
 		<German>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</German>
 		<Italian>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</Italian>
 		<Spanish>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</Spanish>
@@ -2715,7 +2715,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LOGISTICS_QUOTE</Tag>
 		<English>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</English>
-		<French>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</French>
+		<French>"L'officier qui ne conna&#238;t pas la communication et le ravitaillement aussi bien que la tactique est parfaitement inutile."[PARAGRAPH:2]- George S. Patton</French>
 		<German>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</German>
 		<Italian>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</Italian>
 		<Spanish>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</Spanish>
@@ -2781,7 +2781,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACHINE_TOOLS_QUOTE</Tag>
 		<English>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</English>
-		<French>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</French>
+		<French>"Je pourrais en faire des comme &#231;a si j'avais des outils, et je pourrais faire des outils si j'avais des outils pour les faire."[PARAGRAPH:2]- Eli Whitney</French>
 		<German>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</German>
 		<Italian>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</Italian>
 		<Spanish>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</Spanish>
@@ -3006,7 +3006,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CEMENT_QUOTE</Tag>
 		<English>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</English>
-		<French>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</French>
+		<French>"L'homme qui b&#226;tit son propre pi&#233;destal ferait bien de choisir un ciment fort."[PARAGRAPH:2] - Anna Quidlen</French>
 		<German>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</German>
 		<Italian>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</Italian>
 		<Spanish>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</Spanish>
@@ -3103,7 +3103,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY_QUOTE</Tag>
 		<English>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</English>
-		<French>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</French>
+		<French>"Avec la nanotechnologie, la mati&#232;re devient du code."[PARAGRAPH:2]- Steve Jurvetson</French>
 		<German>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</German>
 		<Italian>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</Italian>
 		<Spanish>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</Spanish>
@@ -3251,7 +3251,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_OPTICS_QUOTE</Tag>
 		<English>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</English>
-		<French>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, &#201;chantillons de civilisations</French>
+		<French>"Nous ne voyons pas la lunette &#224; travers laquelle nous regardons."[PARAGRAPH:2]- Ruth Benedict, &#201;chantillons de civilisations</French>
 		<German>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</German>
 		<Italian>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</Italian>
 		<Spanish>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</Spanish>
