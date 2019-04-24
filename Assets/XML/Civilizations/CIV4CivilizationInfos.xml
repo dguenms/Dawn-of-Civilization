@@ -4929,7 +4929,7 @@
 					<UnitType>UNIT_RUSSIAN_STRELETS</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PISTOLIER</UnitClassType>
+					<UnitClassType>UNITCLASS_HUSSAR</UnitClassType>
 					<UnitType>UNIT_RUSSIAN_COSSACK</UnitType>
 				</Unit>
 			</Units>

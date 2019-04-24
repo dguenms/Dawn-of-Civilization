@@ -337,7 +337,7 @@ CIVILISATIONS
     * Color: Orange / Yellow
     * Spawn: 1500 BC at Pataliputra
     * Unique Unit: Patiyodha (Longbowman): strength 5, requires Nobility, can enter Jungle and Rainforest, starts with Formation and Woodsman I
-    * Unique Unit: Varu (Lancer): requires Ivory instead of Horse, +2 strength, no reduced city strength
+    * Unique Unit: Varu (Lancer): requires Ivory instead of Horse, +2 strength, can enter Rainforest and Jungle
     * Unique Building: Edict (Monument): -10% maintenance
     * Unique Power: The Power of Purity: +1 health for every three excess happiness
     * Unique Historical Victory:
@@ -457,7 +457,7 @@ CIVILISATIONS
 * Russia
     * Leaders: Ivan IV, Peter the Great, Catherine the Great, Alexander II, Stalin
     * Unique Unit: Strelets (Arquebusier): +1 move, starts with City Garrison
-    * Unique Unit: Cossack (Pistolier): +2 strength, +50% against Cannon, Artillery
+    * Unique Unit: Cossack (Hussar): requires Measurement, +25% against light and heavy cavalry
     * Unique Building: Research Institute (Laboratory): +1 Scientist Slot, +1 free Scientist
     * Unique Historical Victory:
         * Found seven colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
