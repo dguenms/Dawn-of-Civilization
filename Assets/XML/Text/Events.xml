@@ -4,7 +4,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
 		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
-		<French>La compagnie commerciale %s1 demande le contr&#244;le de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter leur offre ?</French>
+		<French>La compagnie commerciale %s1:2 demande le contr&#244;le de %s3 et offre %d2 or en retour. Refuser causera une guerre. Devons-nous accepter son offre ?</French>
 		<German>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</German>
 		<Italian>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Italian>
 		<Spanish>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</Spanish>
@@ -12,7 +12,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_TITLE</Tag>
 		<English>The %s1 Trading Company</English>
-		<French>La compagnie commerciale %s1</French>
+		<French>La compagnie commerciale %s1:2</French>
 		<German>The %s1 Trading Company</German>
 		<Italian>The %s1 Trading Company</Italian>
 		<Spanish>The %s1 Trading Company</Spanish>
@@ -2829,7 +2829,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_1</Tag>
 		<English>Embrace the Reformation.</English>
-		<French>Adh&#233;rer &#224; la R&#233;forme</French>
+		<French>Adh&#233;rer &#224; la R&#233;forme.</French>
 		<German>Nehmt die Reformation an.</German>
 		<Italian>mbrace the Reformation.</Italian>
 		<Spanish>mbrace the Reformation.</Spanish>
@@ -4725,7 +4725,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_REFORMATION</Tag>
 		<English>The introduction of academic traditions has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</English>
-		<French>L'invention de l'imprimerie a permis la diffusion de nouvelles id&#233;ologies. &#192; travers le monde catholique, des r&#233;formistes d&#233;fient l'autorit&#233; du pape sur des questions de th&#233;ologie. Comment devons-nous r&#233;agir ?</French>
+		<French>Le d&#233;veloppement de nouvelles traditions universitaires a permis la diffusion de nouvelles id&#233;ologies. &#192; travers le monde catholique, des r&#233;formistes d&#233;fient l'autorit&#233; du pape sur des questions de th&#233;ologie. Comment devons-nous r&#233;agir ?</French>
 		<German>Die Erfindung der Druckerpresse hat eine Welle neuer Doktrinen ausgel&#246;st. Reformer aus der gesamten katholischen Welt fordern die Autorit&#228;t des Papstes &#252;ber theologische Fragen heraus. Wie sollen wir reagieren?</German>
 		<Italian>The introduction of academic traditions has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</Italian>
 		<Spanish>The introduction of academic traditions has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</Spanish>
