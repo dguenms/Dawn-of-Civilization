@@ -45,7 +45,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AERODYNAMICS_QUOTE</Tag>
 		<English>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</English>
-		<French>"Je me suis lib&#233;r&#233; des emprises de la Terre ; J'ai dans&#233; dans le ciel sur les ailes argent&#233;es du rire."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</French>
+		<French>"Je me suis lib&#233;r&#233; des emprises de la Terre ; j'ai dans&#233; dans le ciel sur les ailes argent&#233;es du rire."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</French>
 		<German>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</German>
 		<Italian>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</Italian>
 		<Spanish>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</Spanish>
@@ -2554,7 +2554,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_QUOTE</Tag>
 		<English>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</English>
-		<French>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</French>
+		<French>"Que les ouvriers s'organisent, que les travailleurs s'assemblent ! Que leur voix cristallis&#233;e d&#233;nonce l'injustice et exige des privil&#232;ges ! Que tous les citoyens charitables les soutiennent !"[PARAGRAPH:2]- John L. Lewis</French>
 		<German>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</German>
 		<Italian>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Italian>
 		<Spanish>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Spanish>
@@ -2909,7 +2909,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEASUREMENT_QUOTE</Tag>
 		<English>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</English>
-		<French>"Mesure ce qui est mesurable et rends mesurable ce qui ne peut l'&#234;tre."[PARAGRAPH:2]- Galil&#233;e</French>
+		<French>"Mesure ce qui est mesurable et rends mesurable ce qui ne l'est pas."[PARAGRAPH:2]- Galil&#233;e</French>
 		<German>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</German>
 		<Italian>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</Italian>
 		<Spanish>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</Spanish>
@@ -2974,8 +2974,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MICROBIOLOGY_QUOTE</Tag>
-		<English>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</English>
-		<French>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Recherches microscopiques sur la similarit&#233; de structure et de d&#233;veloppement des cellules animales et v&#233;g&#233;tales</French>
+		<English>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopical Researches into the Accordance in the Structure and Growth of Animals and Plants</English>
+		<French>"Les parties &#233;l&#233;mentaires les plus diff&#233;rentes des animaux et des plantes ont un mode commun de d&#233;veloppement : leur origine est toujours une cellule."[PARAGRAPH:2]- Theodor Schwann, Recherches microscopiques sur la conformit&#233; de structure et d'accroissement des animaux et des plantes</French>
 		<German>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</German>
 		<Italian>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</Italian>
 		<Spanish>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</Spanish>
@@ -3177,7 +3177,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NOBILITY_QUOTE</Tag>
 		<English>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</English>
-		<French>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</French>
+		<French>"L'absurdit&#233; est le privil&#232;ge de l'aristocratie. Les soucis de la vie sont pour les gens ordinaires."[PARAGRAPH:2]- George Jean Nathan</French>
 		<German>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</German>
 		<Italian>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</Italian>
 		<Spanish>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</Spanish>
@@ -4120,7 +4120,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SATELLITES_QUOTE</Tag>
 		<English>"The earth is the cradle of the mind but one cannot eternally live in a cradle."[PARAGRAPH:2]- Konstantin Tsiolkovsky</English>
-		<French> "La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?"[PARAGRAPH:2]- Constantin Tsiolkovski</French>
+		<French>"La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?"[PARAGRAPH:2]- Constantin Tsiolkovski</French>
 		<German>"Die Erde ist die Wiege der Menschheit, aber welches Kind bleibt schon ewig in seiner Wiege."[PARAGRAPH:2]- Konstantin Ciolkowski</German>
 		<Italian>"La Terra &#232; la culla della mente... ma non si pu&#242; vivere sempre in una culla..."[PARAGRAPH:2]- Konstantin Tsiolkovksy</Italian>
 		<Spanish>"La Tierra es la cuna de la Humanidad, pero no puedes vivir en una cuna eternamente."[PARAGRAPH:2]- Konstant&#237;n Tsiolkovksi</Spanish>
@@ -4532,7 +4532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERMATERIALS_QUOTE</Tag>
 		<English>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</English>
-		<French>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</French>
+		<French>"La mati&#232;re est devant les yeux de tous ; chacun la voit, la touche, l'aime, mais ne la conna&#238;t pas."[PARAGRAPH:2]- Lucas Jennis, Musaeum Hermeticum</French>
 		<German>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</German>
 		<Italian>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</Italian>
 		<Spanish>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</Spanish>
