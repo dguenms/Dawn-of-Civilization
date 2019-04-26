@@ -124,7 +124,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SOLAR_COLLECTOR</Tag>
 		<English>Solar Collector</English>
-		<French>Solar Collector</French>
+		<French>
+			<Text>Collecteur solaire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Solaranlage</German>
 		<Italian>Solar Collector</Italian>
 		<Spanish>Solar Collector</Spanish>

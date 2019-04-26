@@ -340,7 +340,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
 		<English>Flavian Amphitheatre</English>
-		<French>Flavian Amphitheatre</French>
+		<French>
+			<Text>Ampith&#233;&#226;tre Flavien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Flavian Amphitheatre</German>
 		<Italian>Flavian Amphitheatre</Italian>
 		<Spanish>Flavian Amphitheatre</Spanish>
@@ -1808,7 +1812,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOUVRE_HELP</Tag>
 		<English>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</English>
-		<French>[ICON_BULLET][ICON_CULTURE] additionnelle pour chaque merveille du monde sous votre contr&#244;le</French> <!-- needs update -->
+		<French>[ICON_BULLET]+2 [ICON_CULTURE] par merveille du monde sous votre contr&#244;le</French>
 		<German>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</German>
 		<Italian>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Italian>
 		<Spanish>[ICON_BULLET]+2 [ICON_CULTURE] per controlled Great Wonder</Spanish>
@@ -2220,7 +2224,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HUBBLE_SPACE_TELESCOPE_HELP</Tag>
 		<English>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</English>
-		<French>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</French>
+		<French>[ICON_BULLET]+3[ICON_RESEARCH] par satellite</French>
 		<German>[ICON_BULLET]+3[ICON_RESEARCH] f&#252;r Satelliten</German>
 		<Italian>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Italian>
 		<Spanish>[ICON_BULLET]+3[ICON_RESEARCH] for Satellites</Spanish>
@@ -2908,7 +2912,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
 		<English>[ICON_BULLET]+50% healing when units are promoted</English>
-		<French>[ICON_BULLET]Vos unit&#233;s sont compl&#232;tement soign&#233;es lorsqu'elles sont promues</French> <!-- needs update -->
+		<French>[ICON_BULLET]Vos unit&#233;s sont soign&#233;es de 50% lorsqu'elles sont promues</French>
 		<German>[ICON_BULLET]+50% healing when units are promoted</German>
 		<Italian>[ICON_BULLET]+50% healing when units are promoted</Italian>
 		<Spanish>[ICON_BULLET]+50% healing when units are promoted</Spanish>
@@ -2936,7 +2940,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_METROPOLITAIN_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</French>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] par +2[ICON_CULTURE] des b&#226;timents dans la ville</French>
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] pro +2[ICON_CULTURE] von Geb&#228;uden in der Stadt</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every +2[ICON_CULTURE] on buildings in the city</Spanish>
@@ -3216,7 +3220,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPACE_ELEVATOR_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</English>
-		<French>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</French>
+		<French>[ICON_BULLET]+1[ICON_COMMERCE] par [LINK=literal]satellite[\LINK] construit[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] par projet spatial compl&#233;t&#233;</French>
 		<German>[ICON_BULLET]+1[ICON_COMMERCE] f&#252;r jeden gebauten [LINK=literal]Satellit[\LINK][NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] f&#252;r jedes vollendete Weltraumprojekt</German>
 		<Italian>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Italian>
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] for every [LINK=literal]Satellite[\LINK] constructed[NEWLINE][ICON_BULLET]+5[ICON_COMMERCE] for every space project completed</Spanish>

@@ -45,7 +45,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AERODYNAMICS_QUOTE</Tag>
 		<English>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</English>
-		<French>"Je me suis lib&#233;r&#233; des emprises de la Terre ; J'ai dans&#233; dans le ciel sur les ailes argent&#233;es du rire."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</French>
+		<French>"Je me suis lib&#233;r&#233; des emprises de la Terre ; j'ai dans&#233; dans le ciel sur les ailes argent&#233;es du rire."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</French>
 		<German>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</German>
 		<Italian>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</Italian>
 		<Spanish>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee Jr., High Flight</Spanish>
@@ -538,7 +538,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AVIATION_QUOTE</Tag>
 		<English>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</English>
-		<French>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</French>
+		<French>"Ce que le chemin de fer a fait pour les pays du monde, le transport a&#233;rien le fera pour le monde entier."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</French>
 		<German>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</German>
 		<Italian>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</Italian>
 		<Spanish>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</Spanish>
@@ -635,7 +635,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOLOGY_QUOTE</Tag>
 		<English>"From so simple a beginning, endless forms most beautiful and most wonderful have been, and are being, evolved."[PARAGRAPH:2]- Charles Darwin, On the Origin of Species</English>
-		<French>"Une quantit&#233; infinie de belles et admirables formes, sorties d’un commencement si simple, n’ont pas cess&#233; de se d&#233;velopper et se d&#233;veloppent encore."[PARAGRAPH:2]- Charles Darwin, L'Origine des esp&#232;ces</French>
+		<French>"Une quantit&#233; infinie de belles et admirables formes, sorties d'un commencement si simple, n'ont pas cess&#233; de se d&#233;velopper et se d&#233;veloppent encore."[PARAGRAPH:2]- Charles Darwin, L'Origine des esp&#232;ces</French>
 		<German>"Nicht die st&#228;rksten Spezies werden &#252;berleben, sondern jene, die sich Ver&#228;nderungen am besten anpassen k&#246;nnen."[PARAGRAPH:2]- Charles Darwin</German>
 		<Italian>"Non sopravvive la specie pi&#249; forte, ma quella pi&#249; adatta al cambiamento."[PARAGRAPH:2]- Charles Darwin</Italian>
 		<Spanish>"No sobrevive la especie m&#225;s fuerte, sino la m&#225;s adaptable al cambio."[PARAGRAPH:2]- Charles Darwin</Spanish>
@@ -1272,7 +1272,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CURRENCY_QUOTE</Tag>
 		<English>"Everything is worth what its purchaser will pay for it."[PARAGRAPH:2]- Publilius Syrus</English>
-		<French>"Les choses n’ont que le prix qu’y veut mettre l’acheteur."[PARAGRAPH:2]- Publilius Syrus</French>
+		<French>"Les choses n'ont que le prix qu'y veut mettre l'acheteur."[PARAGRAPH:2]- Publilius Syrus</French>
 		<German>"Jedes Ding ist wert, was der K&#228;ufer daf&#252;r zahlen will."[PARAGRAPH:2]- Publius Syrus</German>
 		<Italian>"Ogni cosa vale il prezzo che un acquirente &#232; disposto a pagare."[PARAGRAPH:2]- Publilio Siro</Italian>
 		<Spanish>"Las cosas valen lo que su comprador est&#233; dispuesto a pagar por ellas."[PARAGRAPH:2]- Publio Siro</Spanish>
@@ -1438,8 +1438,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ECONOMICS_QUOTE</Tag>
-		<English>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</English>
-		<French>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</French>
+		<English>"The engine which drives enterprise is not thrift, but profit."[PARAGRAPH:2]- John Maynard Keynes, A Treatise on Money</English>
+		<French>"Le moteur de l'esprit d'entreprise, ce n'est pas l'&#233;pargne, c'est le profit."[PARAGRAPH:2]- John Maynard Keynes, Trait&#233; sur la monnaie</French>
 		<German>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</German>
 		<Italian>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</Italian>
 		<Spanish>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</Spanish>
@@ -2060,7 +2060,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GENETICS_QUOTE</Tag>
 		<English>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</English>
-		<French>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</French>
+		<French>"Chaque g&#232;ne humain est apparent&#233; &#224; ceux des autres animaux et des bact&#233;ries dans cette grande cha&#238;ne de la vie."[PARAGRAPH:2]- Walter Gilbert</French>
 		<German>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</German>
 		<Italian>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</Italian>
 		<Spanish>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</Spanish>
@@ -2225,8 +2225,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GUNPOWDER_QUOTE</Tag>
-		<English>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</English>
-		<French>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</French>
+		<English>"Such I hold to be the genuine use of gunpowder: that it makes all men alike tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</English>
+		<French>"L'utilisation r&#233;elle de la poudre est de rendre tous les hommes grands."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</French>
 		<German>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</German>
 		<Italian>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</Italian>
 		<Spanish>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</Spanish>
@@ -2554,7 +2554,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_QUOTE</Tag>
 		<English>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</English>
-		<French>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</French>
+		<French>"Que les ouvriers s'organisent, que les travailleurs s'assemblent ! Que leur voix cristallis&#233;e d&#233;nonce l'injustice et exige des privil&#232;ges ! Que tous les citoyens charitables les soutiennent !"[PARAGRAPH:2]- John L. Lewis</French>
 		<German>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</German>
 		<Italian>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Italian>
 		<Spanish>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Spanish>
@@ -2715,7 +2715,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LOGISTICS_QUOTE</Tag>
 		<English>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</English>
-		<French>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</French>
+		<French>"L'officier qui ne conna&#238;t pas la communication et le ravitaillement aussi bien que la tactique est parfaitement inutile."[PARAGRAPH:2]- George S. Patton</French>
 		<German>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</German>
 		<Italian>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</Italian>
 		<Spanish>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</Spanish>
@@ -2781,7 +2781,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACHINE_TOOLS_QUOTE</Tag>
 		<English>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</English>
-		<French>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</French>
+		<French>"Je pourrais en faire des comme &#231;a si j'avais des outils, et je pourrais faire des outils si j'avais des outils pour les faire."[PARAGRAPH:2]- Eli Whitney</French>
 		<German>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</German>
 		<Italian>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</Italian>
 		<Spanish>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</Spanish>
@@ -2909,7 +2909,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEASUREMENT_QUOTE</Tag>
 		<English>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</English>
-		<French>"Mesure ce qui est mesurable et rends mesurable ce qui ne peut l'&#234;tre."[PARAGRAPH:2]- Galil&#233;e</French>
+		<French>"Mesure ce qui est mesurable et rends mesurable ce qui ne l'est pas."[PARAGRAPH:2]- Galil&#233;e</French>
 		<German>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</German>
 		<Italian>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</Italian>
 		<Spanish>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</Spanish>
@@ -2974,8 +2974,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MICROBIOLOGY_QUOTE</Tag>
-		<English>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</English>
-		<French>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Recherches microscopiques sur la similarit&#233; de structure et de d&#233;veloppement des cellules animales et v&#233;g&#233;tales</French>
+		<English>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopical Researches into the Accordance in the Structure and Growth of Animals and Plants</English>
+		<French>"Les parties &#233;l&#233;mentaires les plus diff&#233;rentes des animaux et des plantes ont un mode commun de d&#233;veloppement : leur origine est toujours une cellule."[PARAGRAPH:2]- Theodor Schwann, Recherches microscopiques sur la conformit&#233; de structure et d'accroissement des animaux et des plantes</French>
 		<German>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</German>
 		<Italian>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</Italian>
 		<Spanish>"The cause of nutrition and growth resides not in the organism as a whole but in the separate elementary parts - the cells."[PARAGRAPH:2]- Theodor Schwann, Microscopic Researches into the Structure and Growth of Animals and Plants</Spanish>
@@ -3006,7 +3006,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CEMENT_QUOTE</Tag>
 		<English>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</English>
-		<French>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</French>
+		<French>"L'homme qui b&#226;tit son propre pi&#233;destal ferait bien de choisir un ciment fort."[PARAGRAPH:2] - Anna Quidlen</French>
 		<German>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</German>
 		<Italian>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</Italian>
 		<Spanish>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</Spanish>
@@ -3103,7 +3103,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY_QUOTE</Tag>
 		<English>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</English>
-		<French>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</French>
+		<French>"Avec la nanotechnologie, la mati&#232;re devient du code."[PARAGRAPH:2]- Steve Jurvetson</French>
 		<German>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</German>
 		<Italian>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</Italian>
 		<Spanish>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</Spanish>
@@ -3177,7 +3177,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NOBILITY_QUOTE</Tag>
 		<English>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</English>
-		<French>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</French>
+		<French>"L'absurdit&#233; est le privil&#232;ge de l'aristocratie. Les soucis de la vie sont pour les gens ordinaires."[PARAGRAPH:2]- George Jean Nathan</French>
 		<German>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</German>
 		<Italian>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</Italian>
 		<Spanish>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</Spanish>
@@ -3251,7 +3251,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_OPTICS_QUOTE</Tag>
 		<English>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</English>
-		<French>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, &#201;chantillons de civilisations</French>
+		<French>"Nous ne voyons pas la lunette &#224; travers laquelle nous regardons."[PARAGRAPH:2]- Ruth Benedict, &#201;chantillons de civilisations</French>
 		<German>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</German>
 		<Italian>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</Italian>
 		<Spanish>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict, Patterns of Culture</Spanish>
@@ -4120,7 +4120,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SATELLITES_QUOTE</Tag>
 		<English>"The earth is the cradle of the mind but one cannot eternally live in a cradle."[PARAGRAPH:2]- Konstantin Tsiolkovsky</English>
-		<French> "La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?"[PARAGRAPH:2]- Constantin Tsiolkovski</French>
+		<French>"La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?"[PARAGRAPH:2]- Constantin Tsiolkovski</French>
 		<German>"Die Erde ist die Wiege der Menschheit, aber welches Kind bleibt schon ewig in seiner Wiege."[PARAGRAPH:2]- Konstantin Ciolkowski</German>
 		<Italian>"La Terra &#232; la culla della mente... ma non si pu&#242; vivere sempre in una culla..."[PARAGRAPH:2]- Konstantin Tsiolkovksy</Italian>
 		<Spanish>"La Tierra es la cuna de la Humanidad, pero no puedes vivir en una cuna eternamente."[PARAGRAPH:2]- Konstant&#237;n Tsiolkovksi</Spanish>
@@ -4532,7 +4532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERMATERIALS_QUOTE</Tag>
 		<English>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</English>
-		<French>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</French>
+		<French>"La mati&#232;re est devant les yeux de tous ; chacun la voit, la touche, l'aime, mais ne la conna&#238;t pas."[PARAGRAPH:2]- Lucas Jennis, Musaeum Hermeticum</French>
 		<German>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</German>
 		<Italian>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</Italian>
 		<Spanish>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</Spanish>
@@ -4792,7 +4792,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TOURISM_QUOTE</Tag>
 		<English>"The universe is a sort of book, whose first page one has read when one has seen only one's own country."[PARAGRAPH:2]- Louis-Charles Fougeret de Monbron, Le Cosmopolite</English>
-		<French>"L’Univers est une esp&#232;ce de livre, dont on n’a lu que la premi&#232;re page quand on n’a vu que son pays."[PARAGRAPH:2]- Louis-Charles Fougeret de Monbron, Le Cosmopolite</French>
+		<French>"L'Univers est une esp&#232;ce de livre, dont on n'a lu que la premi&#232;re page quand on n'a vu que son pays."[PARAGRAPH:2]- Louis-Charles Fougeret de Monbron, Le Cosmopolite</French>
 		<German>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</German>
 		<Italian>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</Italian>
 		<Spanish>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Augustine of Hippo</Spanish>
@@ -5021,7 +5021,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_WRITING_QUOTE</Tag>
 		<English>"I deem those blessed to whom, by favour of the gods, it has been granted either to do what is worth writing of, or to write what is worth reading."[PARAGRAPH:2]- Pliny the Younger, Letter to Tacitus</English>
-		<French>"J’estime heureux les hommes auxquels les dieux ont accord&#233; le privil&#232;ge de faire des actions dignes d’&#234;tre &#233;crites ou d’&#233;crire des livres dignes d’&#234;tre lus."[PARAGRAPH:2]- Pline le Jeune, Lettre &#224; Tacite</French>
+		<French>"J'estime heureux les hommes auxquels les dieux ont accord&#233; le privil&#232;ge de faire des actions dignes d'&#234;tre &#233;crites ou d'&#233;crire des livres dignes d'&#234;tre lus."[PARAGRAPH:2]- Pline le Jeune, Lettre &#224; Tacite</French>
 		<German>"Gl&#252;cklich sind jene, die Taten vollbringen, die es wert sind, aufgezeichnet zu werden, oder Schriften verfassen, die es wert sind, gelesen zu werden."[PARAGRAPH:2]- Plinius der &#196;ltere</German>
 		<Italian>"La vera gloria consiste nel fare ci&#242; che merita di essere scritto e nello scrivere ci&#242; che merita di essere letto."[PARAGRAPH:2]- Plinio il Vecchio</Italian>
 		<Spanish>"La verdadera gloria consiste en hacer lo que merece escribirse y en escribir lo que merece leerse."[PARAGRAPH:2]- Plinio el Viejo</Spanish>

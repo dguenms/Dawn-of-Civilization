@@ -281,7 +281,7 @@
 		<Tag>TXT_KEY_ADJECTIVE_SCYTHIAN</Tag>
 		<English>Scythian</English>
 		<French>
-			<Text>scythe;scythe;scythes;scythes</Text>
+			<Text>scythe:scythe:scythes:scythes</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>

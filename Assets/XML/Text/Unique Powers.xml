@@ -85,7 +85,7 @@
 		<Tag>TXT_KEY_UP_BAB</Tag>
 		<English>Receives a free technology for the first five technologies discovered</English>
 		<French>Une technologie gratuite pour les cinq premi&#232;res technologies d&#233;couvertes</French>
-		<German>Erhält eine weitere Technologie für die ersten f&#252;nf entdeckten Technologien</German>
+		<German>Erh&#228;lt eine weitere Technologie f&#252;r die ersten f&#252;nf entdeckten Technologien</German>
 		<Italian>Receives a free technology for the first five technologies discovered</Italian>
 		<Spanish>Receives a free technology for the first five technologies discovered</Spanish>
 	</TEXT>
@@ -196,7 +196,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR</Tag>
 		<English>Can always hurry units with gold and pays half the cost and no extra upkeep for hurried units</English>
-		<French>Co&#251;t d'acc&#233;l&#233;ration des unit&#233;s divis&#233; par deux, et absence de co&#251;t d'entretien suppl&#233;mentaire pour ces unit&#233;s</French>
+		<French>L'acc&#233;l&#233;ration des unit&#233;s est toujours disponible et co&#251;te deux fois moins cher ; pas de co&#251;t d'entretien suppl&#233;mentaire pour ces unit&#233;s</French>
 		<German>Kann immer Einheiten mit Gold beschleunigen und bezahlt halbe Kosten und keinen zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>
 		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
@@ -253,7 +253,7 @@
 		<Tag>TXT_KEY_UP_EGY</Tag>
 		<English>Monarchy, Redistribution and Deification are enabled at start</English>
 		<French>La monarchie, la redistribution et la d&#233;ification sont activ&#233;es au d&#233;part</French>
-		<German>Aktivierung von Monarchie, Umverteilung und Vergötterung beim Spielstart</German>
+		<German>Aktivierung von Monarchie, Umverteilung und Verg&#246;tterung beim Spielstart</German>
 		<Italian>All'avvio sono abilitati governo ereditario e schiavit&#249;</Italian>
 		<Spanish>Gobierno hereditario y Esclavitud est&#225;n activados al principio</Spanish>
 	</TEXT>
@@ -276,7 +276,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
 		<English>The Power of Communion:</English>
-		<French>The Power of Communion:</French>
+		<French>Le pouvoir de la communion :</French>
 		<German>Die Macht der Kommunion:</German>
 		<Italian>The Power of Communion:</Italian>
 		<Spanish>The Power of Communion:</Spanish>
@@ -284,7 +284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_ETH</Tag>
 		<English>Cities have a trade connection to all other cities with your state religion</English>
-		<French>Cities have a trade connection to all other cities with your state religion</French>
+		<French>Vos villes ont une connexion commerciale avec toutes les villes adeptes de votre religion d'&#201;tat</French>
 		<German>St&#228;dte haben eine Handelsverbindung zu allen anderen St&#228;dten mit Ihrer Staatsreligion</German>
 		<Italian>Cities have a trade connection to all other cities with your state religion</Italian>
 		<Spanish>Cities have a trade connection to all other cities with your state religion</Spanish>
@@ -532,7 +532,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR_TITLE</Tag>
 		<English>The Power of Education:</English>
-		<French>The Power of Education:</French>
+		<French>Le pouvoir de l'&#233;ducation :</French>
 		<German>Die Macht der Bildung:</German>
 		<Italian>The Power of Education:</Italian>
 		<Spanish>The Power of Education:</Spanish>
@@ -540,7 +540,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>
 		<English>Double specialist slots in capital</English>
-		<French>Double specialist slots in capital</French>
+		<French>Vous pouvez embaucher deux fois plus de sp&#233;cialistes dans la capitale</French>
 		<German>Doppelte Anzahl verf&#252;gbarer Spezialisten in der Hauptstadt</German>
 		<Italian>Double specialist slots in capital</Italian>
 		<Spanish>Double specialist slots in capital</Spanish>
@@ -564,7 +564,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
 		<English>The Power of the Long Count:</English>
-		<French>The Power of the Long Count:</French>
+		<French>Le pouvoir du compte long :</French>
 		<German>Die Macht der Langen Z&#228;hlung:</German>
 		<Italian>The Power of the Long Count:</Italian>
 		<Spanish>The Power of the Long Count:</Spanish>
@@ -572,7 +572,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MAY</Tag>
 		<English>Cities receive additional food whenever a technology is discovered before the Middle Ages</English>
-		<French>Cities receive additional food whenever a technology is discovered before the Middle Ages</French>
+		<French>Les villes re&#231;oivent de la nourriture lors de la d&#233;couverte de technologies avant le Moyen &#194;ge</French>
 		<German>St&#228;dte erhalten zus&#228;tzliche Nahrung f&#252;r jede Technologie, die vor dem Mittelalter entdeckt wird</German>
 		<Italian>Cities receive additional food whenever a technology is discovered before the Middle Ages</Italian>
 		<Spanish>Cities receive additional food whenever a technology is discovered before the Middle Ages</Spanish>
@@ -588,7 +588,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MEX</Tag>
 		<English>Can build farms on hills</English>
-		<French>Les fermes peuvent &#234;tres construites sur les collines</French>
+		<French>Les fermes peuvent &#234;tre construites sur les collines</French>
 		<German>Kann Farmen auf H&#252;geln errichten</German>
 		<Italian>Can build farms on hills</Italian>
 		<Spanish>Can build farms on hills</Spanish>
@@ -677,7 +677,7 @@
 		<Tag>TXT_KEY_UP_MUG</Tag>
 		<English>Cities receive half the construction cost as culture after a building is completed</English>
 		<French>Au moment de compl&#233;ter un b&#226;timent, les villes re&#231;oivent en culture la moiti&#233; du co&#251;t de construction</French>
-		<German>Städte erhalten die Hälfte der Baukosten als Kultur, wenn ein Gebäude errichtet wird</German>
+		<German>St&#228;dte erhalten die H&#228;lfte der Baukosten als Kultur, wenn ein Geb&#228;ude errichtet wird</German>
 		<Italian>Cities receive half the construction cost as culture after a building is completed</Italian>
 		<Spanish>Cities receive half the construction cost as culture after a building is completed</Spanish>
 	</TEXT>
@@ -693,7 +693,7 @@
 		<Tag>TXT_KEY_UP_PER</Tag>
 		<English>Additional stability for recently conquered cities</English>
 		<French>Stabilit&#233; additionnelle pour les villes r&#233;cemment conquises</French>
-		<German>Zusätzliche Stabilität für kürzlich eroberte Städte</German>
+		<German>Zus&#228;tzliche Stabilit&#228;t f&#252;r k&#252;rzlich eroberte St&#228;dte</German>
 		<Italian>Additional stability for recently conquered cities</Italian>
 		<Spanish>Additional stability for recently conquered cities</Spanish>
 	</TEXT>
@@ -853,7 +853,7 @@
 		<Tag>TXT_KEY_UP_THA</Tag>
 		<English>+1 Commerce per Excess Happiness</English>
 		<French>+1 commerce par [ICON_HAPPY] en exc&#232;s</French>
-		<German>+1 Kommerz pro überzählige Zufriedenheit</German>
+		<German>+1 Kommerz pro &#252;berz&#228;hlige Zufriedenheit</German>
 		<Italian>+1 Commerce per Excess Happiness</Italian>
 		<Spanish>+1 Commerce per Excess Happiness</Spanish>
 	</TEXT>
@@ -885,7 +885,7 @@
 		<Tag>TXT_KEY_UP_TUR</Tag>
 		<English>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</English>
 		<French>En temps de paix, les barbares ne peuvent pas entrer dans votre territoire ; en temps de guerre, les barbares mont&#233;s se joignent &#224; votre arm&#233;e si vous les attaquez</French>
-		<German>Barbaren können Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren, die in Kriegszeiten angegriffen werden, treten Ihren Armeen bei</German>
+		<German>Barbaren k&#246;nnen Ihr Territorium in Friedenszeiten nicht betreten und berittene Barbaren, die in Kriegszeiten angegriffen werden, treten Ihren Armeen bei</German>
 		<Italian>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</Italian>
 		<Spanish>Barbarians cannot enter your territory during peacetime and mounted barbarians will join your armies if attacked during wartime</Spanish>
 	</TEXT>
@@ -908,7 +908,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
 		<English>The Power of Raids:</English>
-		<French>Le pouvoir du pillage :</French>
+		<French>Le pouvoir des raids :</French>
 		<German>Die Macht des Raubens:</German>
 		<Italian>Il potere dell'incursione:</Italian>
 		<Spanish>El poder del pillaje:</Spanish>
@@ -916,7 +916,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK</Tag>
 		<English>Additional gold from pillaging, sacking cities and sinking ships during the Middle Ages</English>
-		<French>Piller, conqu&#233;rir des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
+		<French>Piller, saccager des villes et couler des navires vous rapporte de l'or suppl&#233;mentaire pendant le Moyen &#194;ge</French>
 		<German>Zus&#228;tzliches gold durch Pl&#252;nderung von St&#228;dten und Verbesserungen und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>

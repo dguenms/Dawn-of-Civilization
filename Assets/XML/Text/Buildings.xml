@@ -1548,7 +1548,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Basílica de San Pedro</Text>
+			<Text>Bas&#237;lica de San Pedro</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -2920,7 +2920,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAREHOUSE</Tag>
 		<English>Warehouse</English>
-		<French>Warehouse</French>
+		<French>
+			<Text>Entrep&#244;t:Entrep&#244;ts</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Warenhaus</German>
 		<Italian>Warehouse</Italian>
 		<Spanish>Warehouse</Spanish>
@@ -2928,7 +2932,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Tag>
 		<English>Automated Factory</English>
-		<French>Automated Factory</French>
+		<French>
+			<Text>Usine automatis&#233;e:Usines automatis&#233;es</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Automatisierte Fabrik</German>
 		<Italian>Automated Factory</Italian>
 		<Spanish>Automated Factory</Spanish>
@@ -2936,7 +2944,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Tag>
 		<English>Container Terminal</English>
-		<French>Container Terminal</French>
+		<French>
+			<Text>Terminal &#224; conteneurs:Terminaux &#224; conteneurs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Container Terminal</German>
 		<Italian>Container Terminal</Italian>
 		<Spanish>Container Terminal</Spanish>
@@ -2944,7 +2956,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LOGISTICS_CENTER</Tag>
 		<English>Logistics Center</English>
-		<French>Logistics Center</French>
+		<French>
+			<Text>Centre logistique:Centres logistiques</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Logistikzentrum</German>
 		<Italian>Logistics Center</Italian>
 		<Spanish>Logistics Center</Spanish>
@@ -2952,7 +2968,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VERTICAL_FARM</Tag>
 		<English>Vertical Farm</English>
-		<French>Vertical Farm</French>
+		<French>
+			<Text>Ferme verticale:Fermes verticales</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Vertikale Landwirtschaft</German>
 		<Italian>Vertical Farm</Italian>
 		<Spanish>Vertical Farm</Spanish>
@@ -2960,7 +2980,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIBER_NETWORK</Tag>
 		<English>Fiber Network</English>
-		<French>Fiber Network</French>
+		<French>
+			<Text>R&#233;seau de fibre optique:R&#233;seaux de fibre optique</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Glasfasernetzwerk</German>
 		<Italian>Fiber Network</Italian>
 		<Spanish>Fiber Network</Spanish>
@@ -2968,7 +2992,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUPERCOMPUTER</Tag>
 		<English>Supercomputer</English>
-		<French>Supercomputer</French>
+		<French>
+			<Text>Superordinateur:Superordinateurs</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Supercomputer</German>
 		<Italian>Supercomputer</Italian>
 		<Spanish>Supercomputer</Spanish>
@@ -2976,7 +3004,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STADIUM</Tag>
 		<English>Stadium</English>
-		<French>Stadium</French>
+		<French>
+			<Text>Stade:Stades</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Stadion</German>
 		<Italian>Stadium</Italian>
 		<Spanish>Stadium</Spanish>
@@ -2984,7 +3016,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARENA</Tag>
 		<English>Arena</English>
-		<French>Arena</French>
+		<French>
+			<Text>Ar&#232;ne:Ar&#232;nes</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
 		<German>Arena</German>
 		<Italian>Arena</Italian>
 		<Spanish>Arena</Spanish>

@@ -116,7 +116,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CARDENAS_1</Tag>
 		<English>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</English>
-		<French>Hola. Je suis [OUR_NAME] du [OUR_EMPIRE]. Je suis convaincu que les bonnes intentions d'un souverain ne sont pas suffisantes et que ke facteur collectif repr&#233;sent&#233; par les travailleurs est indispensable. N'&#234;tes-vous pas d'accord, [CT_NAME] ?</French>
+		<French>Hola. Je suis [OUR_NAME] du [OUR_EMPIRE]. Je suis convaincu que les bonnes intentions d'un souverain ne sont pas suffisantes et que le facteur collectif repr&#233;sent&#233; par les travailleurs est indispensable. N'&#234;tes-vous pas d'accord, [CT_NAME] ?</French>
 		<German>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</German>
 		<Italian>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</Italian>
 		<Spanish>Hola. I am [OUR_NAME] of the [OUR_EMPIRE]. I am convinced that the good intentions of a ruler are simply not enough and that the collective factor represented by the workers is indispensable. Don't you agree [CT_NAME]?</Spanish>
@@ -124,7 +124,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CHARLES_1</Tag>
 		<English>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</English>
-		<French>Bienvenue, [CT_NAME]. Nous nous lierons volontiers d'amiti&#233; avec vous. Êtes-vous avare de territoire, ou avare de paix et de tranquilit&#233; ?</French>
+		<French>Bienvenue, [CT_NAME]. Nous nous lierons volontiers d'amiti&#233; avec vous. &#202;tes-vous avare de territoire, ou avare de paix et de tranquilit&#233; ?</French>
 		<German>Willkommen, [CT_NAME]. Wir w&#252;rden Freundschaft mit Euch willkommen hei&#223;en. Giert Ihr nach Eroberungen, oder nach Frieden und Ruhe?</German>
 		<Italian>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</Italian>
 		<Spanish>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</Spanish>
@@ -300,7 +300,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_NO_PEACE_LEADER_PEDRO_II</Tag>
 		<English>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</English>
-		<French>Jamais ! Je vous punierai pour vos crimes contre le [OUR_CIV_SHORT] et son peuple !</French>
+		<French>Jamais ! Je vous punirai pour vos crimes contre le [OUR_CIV_SHORT] et son peuple !</French>
 		<German>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</German>
 		<Italian>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</Italian>
 		<Spanish>No way! I shall punish you for your crimes against [OUR_CIV_SHORT] and its people!</Spanish>
@@ -428,7 +428,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TRUDEAU_1</Tag>
 		<English>Good day and bonjour to you, [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insists that masters in our own house we must be.</English>
-		<French>Bonjour et good day, [CT_NAME]. Le peuple [OUR_CIV_ADJ] souhaite la paix, mais nous insistons pour que nous soyons ma&#238;tres chez nous.</French>
+		<French>Bonjour et good day, [CT_NAME]. Le peuple [OUR_CIV_ADJ] souhaite la paix, mais nous insistons pour &#234;tre ma&#238;tres chez nous.</French>
 		<German>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</German>
 		<Italian>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</Italian>
 		<Spanish>Good day and bonjour, to you [CT_NAME]. The [OUR_CIV_ADJ] people wish for peace, but insist that masters in our own house we must be.</Spanish>
@@ -476,7 +476,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AFONSO_1</Tag>
 		<English>Any chance you share your wealth with [OUR_CIV_SHORT]?</English>
-		<French>Y a-t-il une chance pour que vous partagiez votre richesse avec le [OUR_CIV_SHORT] ?</French>
+		<French>Y a-t-il une chance que vous partagiez votre richesse avec le [OUR_CIV_SHORT] ?</French>
 		<German>Helfen hei?t br?derlich teilen, [CT_NAME].</German>
 		<Italian>Se ci tieni a me, condividi, [CT_NAME].</Italian>
 		<Spanish>Compartir es de generosos, [CT_NAME].</Spanish>
@@ -492,7 +492,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BUMIN_1</Tag>
 		<English>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</English>
-		<French>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</French>
+		<French>Moi, Bumin Qaghan, fus jadis un esclave, mais suis d&#233;sormais libre. Fils des hommes libres par la loi de l'&#233;p&#233;e, je forge la puissance de mon peuple chevauchant sous le ciel de Tengri.</French>
 		<German>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</German>
 		<Italian>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Italian>
 		<Spanish>I, Qaghan Bumin, was called slave, but I am free. And by rights of sharp swords the son of free men, forging the strength of my people to ride under the sky of Tengri.</Spanish>
@@ -500,7 +500,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ALP_ARSLAN_1</Tag>
 		<English>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</English>
-		<French>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</French>
+		<French>J'aimerais savoir ce que vous faites de vos prisonniers. Nul ch&#226;timent n'est plus lourd que le mien : je vous pardonnerais et vous ferais chevaucher librement d'ouest en est.</French>
 		<German>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</German>
 		<Italian>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</Italian>
 		<Spanish>I would like to know as to what you do with your prisoners. My punishment is the heaviest, for I would forgive you and set you to ride free between the west and the east.</Spanish>
@@ -508,7 +508,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TAMERLANE_1</Tag>
 		<English>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</English>
-		<French>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</French>
+		<French>Avec mon &#233;p&#233;e tremp&#233;e, j'ai conquis de vastes pans du monde pour agrandir Samarcande et Boukhara, mes capitales et r&#233;sidences ; et toi, cr&#233;ature pitoyable, tu &#233;changerais ces deux cit&#233;s contre une taupe. La v&#233;rit&#233; est la seule s&#251;ret&#233;.</French>
 		<German>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</German>
 		<Italian>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Italian>
 		<Spanish>By the blows of my well tempered sword I have conquered the greater part of the world to enlarge Samarkand and Bukhara, my capitals and residences; and you, pitiful creature, would exchange these two cities for a mole. Indeed, truth is safety.</Spanish>
@@ -524,7 +524,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HONGWU</Tag>
 		<English>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</English>
-		<French>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</French>
+		<French>Camarade souverain, l'Empire du Milieu peut t'apprendre l'importance de ta voix. Pour servir tes sujets, ne bredouille pas, n'h&#233;site pas ! Parle fort, avec clart&#233;, sans crainte !</French>
 		<German>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</German>
 		<Italian>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</Italian>
 		<Spanish>My fellow ruler, the Middle Kingdom will teach you that your voice is all too important. To serve your subjects, do not mumble, do not hesitate! Speak loudly, clearly, and without fear!</Spanish>
@@ -532,15 +532,15 @@
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_TAIZONG</Tag>
 		<English>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</English>
-		<French>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</French>
+		<French>Tant de choses dans la vie sont des miroirs. Le miroir de bronze m'a donn&#233; de beaux habits, celui de l'antiquit&#233; m'a montr&#233; la grandeur et le d&#233;clin de mon royaume, celui de tes amis te montrera tel que tu es. J'ai perdu mon miroir ! Ne perds pas le tien ! N'oublie pas ceux qui te sont chers !</French>
 		<German>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</German>
 		<Italian>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Italian>
 		<Spanish>So much in life is a mirror. The mirror of bronze gave me better clothes, the mirror of antiquity showed me the rise and fall of my realm, the mirror of friends will show you yourself. I have lost my mirror! Do not lose yours! Do not forget who is dear to you!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOSROW</Tag>
-		<English>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</English>
-		<French>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</French>
+		<English>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered by our vast armies. It would be wise that you leave aside your pride and accept my greatness, unless you want to be a new acquisition for it.</English>
+		<French>En tant que shahanshah de Perse, j'ai h&#233;rit&#233; de la puissance et de la richesse de mille terres conquises par nos vastes arm&#233;es. Il serait sage de laisser votre orgueil de c&#244;t&#233; et d'accepter ma grandeur, &#224; moins de vouloir &#234;tre la prochaine acquisition &#224; y contribuer.</French>
 		<German>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</German>
 		<Italian>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Italian>
 		<Spanish>As Shahanshah of Persia, I have inherited the power and richness of a thousand lands conquered under our vast armies. It is wise to you stand dawn your pride and accept my greatness or be a new acquisition for it.</Spanish>
@@ -548,7 +548,7 @@
 	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_LEADER_KHOSROW</Tag>
 		<English>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</English>
-		<French>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</French>
+		<French>En tant que roi des rois, l'empire que vous exercez sur nous laisse croire que vos sages sont plus sages que les n&#244;tres. Soit vous nous expliquez ce jeu des &#233;checs, soit vous nous demandez un tribut.</French>
 		<German>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</German>
 		<Italian>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Italian>
 		<Spanish>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Spanish>
