@@ -411,14 +411,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_12</Tag>
-		<English>The Seljuks appear in the Middle East in the 11th century. Be prepared!</English>
-		<French>Les Seldjoukides apparaissent au Moyen-Orient au 11e si&#232;cle. Soyez pr&#234;t !</French>
-		<German>The Seljuks appear in the Middle East in the 11th century. Be prepared!</German>
-		<Italian>The Seljuks appear in the Middle East in the 11th century. Be prepared!</Italian>
-		<Spanish>The Seljuks appear in the Middle East in the 11th century. Be prepared!</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_13</Tag>
 		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</English>
 		<French>Les religions apparent&#233;es, comme l'hindouisme et le bouddhisme ou encore le confucianisme et le tao&#239;sme, cr&#233;ent des p&#233;nalit&#233;s diplomatiques moindres.</French>
 		<German>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</German>
@@ -426,7 +418,7 @@
 		<Spanish>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_14</Tag>
+		<Tag>TXT_KEY_HINT_DOC_13</Tag>
 		<English>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</English>
 		<French>Les si&#232;ges sociaux des soci&#233;t&#233;s commerciales ont &#233;t&#233; retir&#233;s du jeu ; les soci&#233;t&#233;s commerciales se propagent par elles-m&#234;mes lorsque les conditions sont r&#233;unies.</French>
 		<German>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</German>
@@ -434,7 +426,7 @@
 		<Spanish>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_15</Tag>
+		<Tag>TXT_KEY_HINT_DOC_14</Tag>
 		<English>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</English>
 		<French>Les soci&#233;t&#233;s commerciales de la route de la soie et de la compagnie commerciale ne peuvent se propager que dans les r&#233;gions appropri&#233;es d'un point de vue historique.</French>
 		<German>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</German>
@@ -442,7 +434,7 @@
 		<Spanish>The Silk Route and Trading Company corporations can only spread in historically appropriate regions.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_16</Tag>
+		<Tag>TXT_KEY_HINT_DOC_15</Tag>
 		<English>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</English>
 		<French>Pour attirer une soci&#233;t&#233; commerciale, obtenez davantage de ressources reli&#233;es, construisez les b&#226;timents associ&#233;s, ou adoptez la doctrine de la libre entreprise.</French>
 		<German>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</German>
@@ -450,7 +442,7 @@
 		<Spanish>To attract a corporation, acquire more of its resources, build associated buildings, or adopt the Free Enterprise civic.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_17</Tag>
+		<Tag>TXT_KEY_HINT_DOC_16</Tag>
 		<English>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</English>
 		<French>Dans Dawn of Civilization, de nombreuses merveilles n&#233;cessitent des religions ou des doctrines sp&#233;cifiques afin d'encourager leur construction dans les r&#233;gions appropri&#233;es.</French>
 		<German>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</German>
@@ -458,7 +450,7 @@
 		<Spanish>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_18</Tag>
+		<Tag>TXT_KEY_HINT_DOC_17</Tag>
 		<English>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</English>
 		<French>La premi&#232;re civilisation catholique &#224; d&#233;couvrir l'universit&#233; d&#233;clenche la R&#233;forme. Toutes les civilisations catholiques doivent alors d&#233;cider si elles se convertissent au protestantisme.</French>
 		<German>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</German>
@@ -466,7 +458,7 @@
 		<Spanish>Researching Academia as a Catholic civilization starts the Reformation, prompting all Catholic civilizations to decide if they want to convert to Protestantism.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_19</Tag>
+		<Tag>TXT_KEY_HINT_DOC_18</Tag>
 		<English>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</English>
 		<French>Dans Dawn of Civilization, les vassaux ne c&#232;dent pas &#224; leur ma&#238;tre le contr&#244;le des cases adjacentes &#224; leurs villes.</French>
 		<German>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</German>
@@ -474,7 +466,7 @@
 		<Spanish>In Dawn of Civilization, vassals do not have to give up tile control to their masters in the first ring around their cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_20</Tag>
+		<Tag>TXT_KEY_HINT_DOC_19</Tag>
 		<English>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</English>
 		<French>Quand un objectif de VHU n&#233;cessite de contr&#244;ler une civilisation, il faut poss&#233;der plus de villes dans leur c&#156;ur historique qu'eux.</French>
 		<German>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</German>
@@ -482,7 +474,7 @@
 		<Spanish>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_21</Tag>
+		<Tag>TXT_KEY_HINT_DOC_20</Tag>
 		<English>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</English>
 		<French>Les r&#233;gions pertinentes pour votre VHU apparaissent en bleu p&#226;le dans l'information de chaque case.</French>
 		<German>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</German>
@@ -490,7 +482,7 @@
 		<Spanish>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_22</Tag>
+		<Tag>TXT_KEY_HINT_DOC_21</Tag>
 		<English>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</English>
 		<French>Dawn of Civilization est encore en d&#233;veloppement. Vous pouvez obtenir les derni&#232;res mises &#224; jour gr&#226;ce &#224; la version Git du mod. Visitez le forum &#224; l'adresse http://forums.civfanatics.com/forumdisplay.php?f=452 pour en savoir plus.</French>
 		<German>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</German>
@@ -498,7 +490,7 @@
 		<Spanish>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the Git version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_23</Tag>
+		<Tag>TXT_KEY_HINT_DOC_22</Tag>
 		<English>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</English>
 		<French>Le catholicisme est fond&#233; au moment du Grand Schisme, qui se produit lorsque plus de la moiti&#233; des villes orthodoxes tombent hors du contr&#244;le des civilisations orthodoxes.</French>
 		<German>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</German>
@@ -506,7 +498,7 @@
 		<Spanish>Catholicism is founded by the Great Schism, which occurs when more than half of all Orthodox cities fall outside of the control of Orthodox civilisations.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_24</Tag>
+		<Tag>TXT_KEY_HINT_DOC_23</Tag>
 		<English>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</English>
 		<French>La quantit&#233; de culture engendr&#233;e lorsqu'un artiste illustre cr&#233;e un chef d'&#339;uvre d&#233;pend de l'&#232;re actuelle.</French>
 		<German>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</German>
@@ -514,7 +506,7 @@
 		<Spanish>The amount of cultures that Great Artists can generate using Great Works depends on the game era.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_25</Tag>
+		<Tag>TXT_KEY_HINT_DOC_24</Tag>
 		<English>Train a persecutor to remove non-state religions from your cities.</English>
 		<French>Formez un inquisiteur si vous voulez retirer les religions non officielles de vos villes.</French>
 		<German>Train a persecutor to remove non-state religions from your cities.</German>
@@ -522,7 +514,7 @@
 		<Spanish>Train a persecutor to remove non-state religions from your cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_26</Tag>
+		<Tag>TXT_KEY_HINT_DOC_25</Tag>
 		<English>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</English>
 		<French>Confus quant aux r&#232;gles qui r&#233;gissent la stabilit&#233; li&#233;e &#224; l'expansion et aux doctrines ? Consultez la section Concepts de la Civilop&#233;dia !</French>
 		<German>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</German>
@@ -530,7 +522,7 @@
 		<Spanish>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_27</Tag>
+		<Tag>TXT_KEY_HINT_DOC_26</Tag>
 		<English>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</English>
 		<French>La musique d'ambiance de l'&#232;re classique, du Moyen &#194;ge et de la Renaissance d&#233;pend de votre religion d'&#201;tat.</French>
 		<German>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</German>
@@ -538,7 +530,7 @@
 		<Spanish>The soundtracks you hear during the Classical, Medieval and Renaissance eras depend on your state religion.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_28</Tag>
+		<Tag>TXT_KEY_HINT_DOC_27</Tag>
 		<English>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</English>
 		<French>Lorsqu'ils sont contr&#244;l&#233;s par l'IA, les Romains et les Grecs re&#231;oivent des arm&#233;es pour conqu&#233;rir la r&#233;gion m&#233;diterran&#233;enne et la M&#233;sopotamie. Soyez pr&#234;t !</French>
 		<German>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</German>
@@ -546,7 +538,7 @@
 		<Spanish>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_29</Tag>
+		<Tag>TXT_KEY_HINT_DOC_28</Tag>
 		<English>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</English>
 		<French>Lorsqu'une ville se situe sur une case de ressource au sein d'une &#238;le de cinq cases ou moins, sa case rapporte autant que production et de commerce que si l'am&#233;nagement appropri&#233; y &#233;tait construit.</French>
 		<German>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</German>
@@ -554,7 +546,7 @@
 		<Spanish>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_30</Tag>
+		<Tag>TXT_KEY_HINT_DOC_29</Tag>
 		<English>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</English>
 		<French>Vaincre des unit&#233;s indig&#232;nes sur votre territoire peut cr&#233;er une unit&#233; d'esclave si vous avez adopt&#233; la doctrine de l'esclavage.</French>
 		<German>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</German>
@@ -562,7 +554,7 @@
 		<Spanish>Defeating Native units on your territory while using Slavery has a chance to create a slave unit.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_31</Tag>
+		<Tag>TXT_KEY_HINT_DOC_30</Tag>
 		<English>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</English>
 		<French>Obtenez des esclaves pour construire des plantations &#224; esclaves ou pour les ajouter &#224; vos villes. Cette option est possible uniquement en Am&#233;rique du Nord et en Afrique, sauf si votre capitale se situe en Afrique.</French>
 		<German>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</German>
@@ -570,7 +562,7 @@
 		<Spanish>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_32</Tag>
+		<Tag>TXT_KEY_HINT_DOC_31</Tag>
 		<English>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</English>
 		<French>Si vous avez adopt&#233; l'esclavage ou le colonialisme, vous pouvez &#233;changer des esclaves dans l'interface de diplomatie avec les autres civilisations.</French>
 		<German>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</German>
@@ -578,7 +570,7 @@
 		<Spanish>If you run Slavery or Colonialism, you can trade slaves when interacting with other civilizations in the diplomacy interface.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_33</Tag>
+		<Tag>TXT_KEY_HINT_DOC_32</Tag>
 		<English>Tribal villages are placed randomly at the beginning of the game.</English>
 		<French>Les villages tribaux sont plac&#233;s al&#233;atoirement au d&#233;but du jeu.</French>
 		<German>Tribal villages are placed randomly at the beginning of the game.</German>
@@ -586,7 +578,7 @@
 		<Spanish>Tribal villages are placed randomly at the beginning of the game.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_34</Tag>
+		<Tag>TXT_KEY_HINT_DOC_33</Tag>
 		<English>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</English>
 		<French>Lorsqu'une nouvelle civilisation appara&#238;t, la r&#233;gion qui lui revient automatiquement n'est pas forc&#233;ment identique &#224; son c&#156;ur historique. Plusieurs civilisations re&#231;oivent des r&#233;gions beaucoup plus &#233;tendues.</French>
 		<German>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</German>
@@ -594,7 +586,7 @@
 		<Spanish>The area certain civilisations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_35</Tag>
+		<Tag>TXT_KEY_HINT_DOC_34</Tag>
 		<English>The core of several civilisations expands on certain conditions, such as entering a new era.</English>
 		<French>Le c&#156;ur historique de plusieurs civilisations prend de l'expansion lorsque certaines conditions sont r&#233;unies, par exemple l'entr&#233;e dans une nouvelle &#232;re.</French>
 		<German>The core of several civilisations expands on certain conditions, such as entering a new era.</German>
@@ -602,7 +594,7 @@
 		<Spanish>The core of several civilisations expands on certain conditions, such as entering a new era.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_36</Tag>
+		<Tag>TXT_KEY_HINT_DOC_35</Tag>
 		<English>The stability and flip zone maps for all civilizations can be found in the Maps folder.</English>
 		<French>Des cartes montrant pour chaque civilisation les zones de stabilit&#233; et le territoire &#224; la naissance peuvent &#234;tre consult&#233;es dans le dossier Maps.</French>
 		<German>The stability and flip zone maps for all civilizations can be found in the Maps folder.</German>
@@ -610,15 +602,15 @@
 		<Spanish>The stability and flip zone maps for all civilizations can be found in the Maps folder.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_37</Tag>
-		<English>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</English>
+		<Tag>TXT_KEY_HINT_DOC_36</Tag>
+		<English>The Tamil, Moorish, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</English>
 		<French>Les civilisations tamoule, maure, tib&#233;taine, polonaise et congolaise peuvent &#234;tre configur&#233;es de telle sorte qu'elles n'apparaissent pas &#224; chaque partie. Pour ce faire, il faut modifier le fichier XML\GlobalDefinesAlt.xml.</French>
-		<German>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</German>
-		<Italian>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</Italian>
-		<Spanish>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</Spanish>
+		<German>The Tamil, Moorish, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</German>
+		<Italian>The Tamil, Moorish, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</Italian>
+		<Spanish>The Tamil, Moorish, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_38</Tag>
+		<Tag>TXT_KEY_HINT_DOC_37</Tag>
 		<English>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</English>
 		<French>Les civilisations polyn&#233;sienne et harapp&#233;enne sont r&#233;serv&#233;es aux joueurs humains. Vous pouvez les activer pour l'IA dans le fichier XML\GlobalDefinesAlt.xml, mais sans garantie que l'IA les incarnera de fa&#231;on r&#233;aliste ou fructueuse.</French>
 		<German>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</German>
@@ -626,7 +618,7 @@
 		<Spanish>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_39</Tag>
+		<Tag>TXT_KEY_HINT_DOC_38</Tag>
 		<English>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</English>
 		<French>Attention &#224; votre niveau de stabilit&#233;. Selon votre situation, il peut augmenter ou diminuer lors d'&#233;v&#233;nements importants. Si votre civilisation est au bord de la chute et que votre stabilit&#233; ne s'am&#233;liore pas avant la prochaine v&#233;rification, vous vous effondrerez !</French>
 		<German>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</German>
@@ -634,7 +626,7 @@
 		<Spanish>Watch your stability level closely. Depending on your situation, it can increase or decrease after significant game events. If your civilisation is collapsing and your stability does not improve until the next check, it will collapse!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_40</Tag>
+		<Tag>TXT_KEY_HINT_DOC_39</Tag>
 		<English>Stability checks are triggered by a variety of events including discovering techs, changing civics and losing or acquiring cities.</English>
 		<French>Les v&#233;rifications de stabilit&#233; sont caus&#233;es par divers &#233;v&#233;nements, comme la d&#233;couverte de technologies, les changements de doctrines et la perte ou l'acquisition de villes.</French>
 		<German>Stability checks are triggered by a variety of events including discovering techs, changing civics and losing or acquiring cities.</German>
@@ -642,7 +634,7 @@
 		<Spanish>Stability checks are triggered by a variety of events including discovering techs, changing civics and losing or acquiring cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_41</Tag>
+		<Tag>TXT_KEY_HINT_DOC_40</Tag>
 		<English>Golden Ages protect you from most negative effects of being unstable. The protection only lasts as long as the Golden Age, however.</English>
 		<French>Les &#226;ges d'or vous prot&#232;gent de la plupart des effets n&#233;gatifs de l'instabilit&#233;. Cependant, cette protection prend fin en m&#234;me temps que l'&#226;ge d'or.</French>
 		<German>Golden Ages protect you from most negative effects of being unstable. The protection only lasts as long as the Golden Age, however.</German>
@@ -650,7 +642,7 @@
 		<Spanish>Golden Ages protect you from most negative effects of being unstable. The protection only lasts as long as the Golden Age, however.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_42</Tag>
+		<Tag>TXT_KEY_HINT_DOC_41</Tag>
 		<English>DoC adds a new terrain feature, Rainforests. They resemble Jungles, but cause no unhealthiness and can be improved after the discovery of Alloys.</English>
 		<French>Dans Dawn of Civilization, une nouvelle caract&#233;ristique de terrain fait son apparition : les for&#234;ts tropicales. Elles sont similaires aux jungles, mais ne causent pas de maladie et peuvent &#234;tre am&#233;nag&#233;es apr&#232;s la d&#233;couverte des alliages.</French>
 		<German>DoC adds a new terrain feature, Rainforests. They resemble Jungles, but cause no unhealthiness and can be improved after the discovery of Alloys.</German>
@@ -658,7 +650,7 @@
 		<Spanish>DoC adds a new terrain feature, Rainforests. They resemble Jungles, but cause no unhealthiness and can be improved after the discovery of Alloys.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_43</Tag>
+		<Tag>TXT_KEY_HINT_DOC_42</Tag>
 		<English>In DoC, Ocean tiles start out yielding no food. Improvements on Ocean tiles require Compass, but in turn provide one additional food.</English>
 		<French>Dans Dawn of Civilization, les cases d'oc&#233;an ne rapportent pas de nourriture pour commencer. Les am&#233;nagements sur les cases d'oc&#233;an n&#233;cessitent la d&#233;couverte de la boussole, mais ils fournissent une nourriture additionnelle.</French>
 		<German>In DoC, Ocean tiles start out yielding no food. Improvements on Ocean tiles require Compass, but in turn provide one additional food.</German>
@@ -666,7 +658,7 @@
 		<Spanish>In DoC, Ocean tiles start out yielding no food. Improvements on Ocean tiles require Compass, but in turn provide one additional food.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_44</Tag>
+		<Tag>TXT_KEY_HINT_DOC_43</Tag>
 		<English>Islands are a new maritime terrain feature that provides additional production, tile defense and faster culture spread.</English>
 		<French>Les &#238;les sont une nouvelle caract&#233;ristique des terrains maritimes. Elles rapportent de la production, fournissent un bonus de d&#233;fense et facilitent l'expansion culturelle.</French>
 		<German>Islands are a new maritime terrain feature that provides additional production, tile defense and faster culture spread.</German>
@@ -674,7 +666,7 @@
 		<Spanish>Islands are a new maritime terrain feature that provides additional production, tile defense and faster culture spread.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_45</Tag>
+		<Tag>TXT_KEY_HINT_DOC_44</Tag>
 		<English>Instead of spreading their culture in rings with every new culture level, cities spread cultural control over individual tiles as their culture grows.</English>
 		<French>Au lieu de prendre de l'expansion en cercles concentriques &#224; chaque niveau culturel, les villes &#233;tendent leur contr&#244;le sur des cases individuelles &#224; mesure que cro&#238;t leur culture.</French>
 		<German>Instead of spreading their culture in rings with every new culture level, cities spread cultural control over individual tiles as their culture grows.</German>
@@ -682,7 +674,7 @@
 		<Spanish>Instead of spreading their culture in rings with every new culture level, cities spread cultural control over individual tiles as their culture grows.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_46</Tag>
+		<Tag>TXT_KEY_HINT_DOC_45</Tag>
 		<English>The amount of culture needed to cover a tile depends on its terrain type and features, as well as the distance to cities.</English>
 		<French>La quantit&#233; de culture requise pour recouvrir une case d&#233;pend de son type de terrain et des caract&#233;ristiques du terrain, ainsi que de la distance entre la case et les villes.</French>
 		<German>The amount of culture needed to cover a tile depends on its terrain type and features, as well as the distance to cities.</German>
@@ -690,7 +682,7 @@
 		<Spanish>The amount of culture needed to cover a tile depends on its terrain type and features, as well as the distance to cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_47</Tag>
+		<Tag>TXT_KEY_HINT_DOC_46</Tag>
 		<English>City culture will never expand beyond the third ring.</English>
 		<French>La culture d'une ville ne s'&#233;tendra jamais au-del&#224; du troisi&#232;me cercle concentrique.</French>
 		<German>City culture will never expand beyond the third ring.</German>
@@ -698,7 +690,7 @@
 		<Spanish>City culture will never expand beyond the third ring.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_48</Tag>
+		<Tag>TXT_KEY_HINT_DOC_47</Tag>
 		<English>The amount of culture required for the next tile to be covered is displayed as tick marks on the culture bar in the city screen.</English>
 		<French>La quantit&#233; de culture requise pour recouvrir la prochaine case est montr&#233;e sous forme de graduations sur la barre de culture dans l'&#233;cran de la ville.</French>
 		<German>The amount of culture required for the next tile to be covered is displayed as tick marks on the culture bar in the city screen.</German>
@@ -706,7 +698,7 @@
 		<Spanish>The amount of culture required for the next tile to be covered is displayed as tick marks on the culture bar in the city screen.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_49</Tag>
+		<Tag>TXT_KEY_HINT_DOC_48</Tag>
 		<English>A purple circle marks the next tile to be culturally covered in the city screen.</English>
 		<French>Un cercle violet montre la prochaine case &#224; &#234;tre recouverte culturellement dans l'&#233;cran de la ville.</French>
 		<German>A purple circle marks the next tile to be culturally covered in the city screen.</German>
@@ -714,7 +706,7 @@
 		<Spanish>A purple circle marks the next tile to be culturally covered in the city screen.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_50</Tag>
+		<Tag>TXT_KEY_HINT_DOC_49</Tag>
 		<English>A Great Statesman can put an end to war or anarchy, improve diplomatic relations, build an Administrative Center or reform your civics for free.</English>
 		<French>Un homme d'&#201;tat illustre peut mettre fin &#224; une guerre ou &#224; l'anarchie, am&#233;liorer les relations diplomatiques, construire un centre administratif, ou r&#233;former vos doctrines gratuitement.</French>
 		<German>A Great Statesman can put an end to war or anarchy, improve diplomatic relations, build an Administrative Center or reform your civics for free.</German>
@@ -722,7 +714,7 @@
 		<Spanish>A Great Statesman can put an end to war or anarchy, improve diplomatic relations, build an Administrative Center or reform your civics for free.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_51</Tag>
+		<Tag>TXT_KEY_HINT_DOC_50</Tag>
 		<English>Oases provide more food and less commerce. It is also possible to build Cottages on Oases.</English>
 		<French>Les oasis rapportent plus de nourriture et moins de commerce. Il est aussi possible de construire des cottages sur les oasis.</French>
 		<German>Oases provide more food and less commerce. It is also possible to build Cottages on Oases.</German>
@@ -730,7 +722,7 @@
 		<Spanish>Oases provide more food and less commerce. It is also possible to build Cottages on Oases.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_52</Tag>
+		<Tag>TXT_KEY_HINT_DOC_51</Tag>
 		<English>Spies can now accumulate experience and acquire promotions by successfully completing missions.</English>
 		<French>Les espions peuvent d&#233;sormais accumuler de l'exp&#233;rience et obtenir des promotions lorsqu'ils r&#233;ussissent des missions.</French>
 		<German>Spies can now accumulate experience and acquire promotions by successfully completing missions.</German>
@@ -738,7 +730,7 @@
 		<Spanish>Spies can now accumulate experience and acquire promotions by successfully completing missions.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_53</Tag>
+		<Tag>TXT_KEY_HINT_DOC_52</Tag>
 		<English>Spy specialists have been removed. Instead, global spy experience is accumulated similar to military experience. If the bar is full, your most experienced spy becomes a Great Spy.</English>
 		<French>Il n'y a plus de sp&#233;cialistes espions. &#192; la place, l'exp&#233;rience de tous vous espions s'accumule globalement comme l'exp&#233;rience des unit&#233;s militaires. Quand la barre est pleine, votre espion le plus exp&#233;riment&#233; devient un espion illustre.</French>
 		<German>Spy specialists have been removed. Instead, global spy experience is accumulated similar to military experience. If the bar is full, your most experienced spy becomes a Great Spy.</German>
@@ -746,7 +738,7 @@
 		<Spanish>Spy specialists have been removed. Instead, global spy experience is accumulated similar to military experience. If the bar is full, your most experienced spy becomes a Great Spy.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_54</Tag>
+		<Tag>TXT_KEY_HINT_DOC_53</Tag>
 		<English>If you have problems with game performance in the late game, enabling graphics paging in the BUG menu can help on some machines.</English>
 		<French>Si vous &#233;prouvez des probl&#232;mes avec la performance de jeu vers la fin de la partie, vous pouvez activer la pagination graphique dans le menu BUG. Cela peut am&#233;liorer la situation sur certains ordinateurs.</French>
 		<German>If you have problems with game performance in the late game, enabling graphics paging in the BUG menu can help on some machines.</German>
@@ -754,7 +746,7 @@
 		<Spanish>If you have problems with game performance in the late game, enabling graphics paging in the BUG menu can help on some machines.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_55</Tag>
+		<Tag>TXT_KEY_HINT_DOC_54</Tag>
 		<English>Civic combinations with positive or negative effects on stability are highlighted in the civics advisor.</English>
 		<French>Les combinaisons de doctrines avec des effets positifs ou n&#233;gatifs sur la stabilit&#233; sont mises en &#233;vidence dans l'&#233;cran du conseillers aux doctrines.</French>
 		<German>Civic combinations with positive or negative effects on stability are highlighted in the civics advisor.</German>
@@ -762,7 +754,7 @@
 		<Spanish>Civic combinations with positive or negative effects on stability are highlighted in the civics advisor.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_56</Tag>
+		<Tag>TXT_KEY_HINT_DOC_55</Tag>
 		<English>Religions spread gradually from around cities where the religion is already present. The presence of religious buildings increases the spread range.</English>
 		<French>Une religion se propage graduellement &#224; partir des villes o&#249; elle est d&#233;j&#224; pr&#233;sente. L'existence de b&#226;timents religieux augmente la port&#233;e de la propagation.</French>
 		<German>Religions spread gradually from around cities where the religion is already present. The presence of religious buildings increases the spread range.</German>
@@ -770,7 +762,7 @@
 		<Spanish>Religions spread gradually from around cities where the religion is already present. The presence of religious buildings increases the spread range.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_57</Tag>
+		<Tag>TXT_KEY_HINT_DOC_56</Tag>
 		<English>Religions spread faster in regions where they were historically present. In some regions religions can only spread if they are the state religion of the owner.</English>
 		<French>Une religion se propagera plus vite dans les r&#233;gions o&#249; elle a une pr&#233;sence historique. Dans certaines r&#233;gions, une religion donn&#233;e ne pourra se propager que si elle est la religion d'&#201;tat du propri&#233;taire des villes.</French>
 		<German>Religions spread faster in regions where they were historically present. In some regions religions can only spread if they are the state religion of the owner.</German>
@@ -778,7 +770,7 @@
 		<Spanish>Religions spread faster in regions where they were historically present. In some regions religions can only spread if they are the state religion of the owner.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_58</Tag>
+		<Tag>TXT_KEY_HINT_DOC_57</Tag>
 		<English>There is a chance that an existing religion disappears when a new religion spreads to a city. Religions can also disappear when too many of them are present, especially in smaller cities.</English>
 		<French>Lorsqu'une nouvelle religion se propage dans une ville, il est possible qu'une religion d&#233;j&#224; pr&#233;sente disparaisse. Les religions peuvent &#233;galement dispara&#238;tre lorsque trop d'entre elles sont pr&#233;sentes, en particulier dans les petites villes.</French>
 		<German>There is a chance that an existing religion disappears when a new religion spreads to a city. Religions can also disappear when too many of them are present, especially in smaller cities.</German>
@@ -786,7 +778,7 @@
 		<Spanish>There is a chance that an existing religion disappears when a new religion spreads to a city. Religions can also disappear when too many of them are present, especially in smaller cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_59</Tag>
+		<Tag>TXT_KEY_HINT_DOC_58</Tag>
 		<English>Only proselytizing religions, that is Buddhism, Christianity and Islam, can be spread by missionaries in civilizations with a different state religion.</English>
 		<French>Seules les religions poss&#233;dant une tradition de pros&#233;lytisme, soit le bouddhisme, le christianisme et l'islam, peuvent &#234;tre propag&#233;es par des missionnaires dans les civilisations ayant adopt&#233; une religion d'&#201;tat diff&#233;rente.</French>
 		<German>Only proselytizing religions, that is Buddhism, Christianity and Islam, can be spread by missionaries in civilizations with a different state religion.</German>
@@ -794,7 +786,7 @@
 		<Spanish>Only proselytizing religions, that is Buddhism, Christianity and Islam, can be spread by missionaries in civilizations with a different state religion.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_60</Tag>
+		<Tag>TXT_KEY_HINT_DOC_59</Tag>
 		<English>Dawn of Civilization features a completely new tech tree, consisting of 141 technologies spread over 7 eras.</English>
 		<French>Dawn of Civilization poss&#232;de un tout nouvel arbre technologique fait de 141 technologies r&#233;parties sur 7 &#232;res.</French>
 		<German>Dawn of Civilization features a completely new tech tree, consisting of 141 technologies spread over 7 eras.</German>
@@ -802,7 +794,7 @@
 		<Spanish>Dawn of Civilization features a completely new tech tree, consisting of 141 technologies spread over 7 eras.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_61</Tag>
+		<Tag>TXT_KEY_HINT_DOC_60</Tag>
 		<English>The last two eras are now called the Global and Digital eras.</English>
 		<French>Les deux derni&#232;res &#232;res s'appellent d&#233;sormais l'&#232;re mondiale et l'&#232;re num&#233;rique.</French>
 		<German>The last two eras are now called the Global and Digital eras.</German>
@@ -810,7 +802,7 @@
 		<Spanish>The last two eras are now called the Global and Digital eras.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_62</Tag>
+		<Tag>TXT_KEY_HINT_DOC_61</Tag>
 		<English>Siege units are now much more expensive, but their increased withdrawal chance also makes them less expendable.</English>
 		<French>Les unit&#233;s de si&#232;ge sont d&#233;sormais plus co&#251;teuses, mais leur chance &#233;lev&#233;e de battre en retraite les rend plus durables.</French>
 		<German>Siege units are now much more expensive, but their increased withdrawal chance also makes them less expendable.</German>
@@ -818,7 +810,7 @@
 		<Spanish>Siege units are now much more expensive, but their increased withdrawal chance also makes them less expendable.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_63</Tag>
+		<Tag>TXT_KEY_HINT_DOC_62</Tag>
 		<English>Instead of starting with no religion, each civilisation starts with its own specific pagan religion. These religions do not have any of the benefits of major religions, however.</English>
 		<French>Au lieu de commencer la partie sans religion, chaque civilisation na&#238;t avec sa propre religion pa&#239;enne. Ces religions n'ont toutefois aucun des avantages des religions majeures.</French>
 		<German>Instead of starting with no religion, each civilisation starts with its own specific pagan religion. These religions do not have any of the benefits of major religions, however.</German>
@@ -826,7 +818,7 @@
 		<Spanish>Instead of starting with no religion, each civilisation starts with its own specific pagan religion. These religions do not have any of the benefits of major religions, however.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_64</Tag>
+		<Tag>TXT_KEY_HINT_DOC_63</Tag>
 		<English>The presence of non-state religions causes unhappiness in your cities, unless you adopt the Tolerance civic.</English>
 		<French>La pr&#233;sence de religions non officielles cause du malheur dans vos villes, &#224; moins que vous n'adoptiez la doctrine de la tol&#233;rance.</French>
 		<German>The presence of non-state religions causes unhappiness in your cities, unless you adopt the Tolerance civic.</German>
@@ -834,7 +826,7 @@
 		<Spanish>The presence of non-state religions causes unhappiness in your cities, unless you adopt the Tolerance civic.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_65</Tag>
+		<Tag>TXT_KEY_HINT_DOC_64</Tag>
 		<English>Units lose all their promotions when upgraded. A portion of the experience earned is refunded, depending on the strength difference between the previous and current unit type.</English>
 		<French>Les unit&#233;s perdent toutes leurs promotions lorsqu'elles sont am&#233;lior&#233;es. Une partie de leur exp&#233;rience leur est alors rembours&#233;e selon la diff&#233;rence de puissance entre les deux types d'unit&#233;s.</French>
 		<German>Units lose all their promotions when upgraded. A portion of the experience earned is refunded, depending on the strength difference between the previous and current unit type.</German>
@@ -842,7 +834,7 @@
 		<Spanish>Units lose all their promotions when upgraded. A portion of the experience earned is refunded, depending on the strength difference between the previous and current unit type.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_66</Tag>
+		<Tag>TXT_KEY_HINT_DOC_65</Tag>
 		<English>City defense now also protects against collateral damage: unit strength can never be reduced below the current defense modifier.</English>
 		<French>La d&#233;fense des villes prot&#232;ge maintenant contre les dommages collat&#233;raux : la sant&#233; des unit&#233;s ne peut jamais &#234;tre diminu&#233;e par les dommages collat&#233;raux au-del&#224; du modificateur de d&#233;fense actuel.</French>
 		<German>City defense now also protects against collateral damage: unit strength can never be reduced below the current defense modifier.</German>
@@ -850,7 +842,7 @@
 		<Spanish>City defense now also protects against collateral damage: unit strength can never be reduced below the current defense modifier.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_67</Tag>
+		<Tag>TXT_KEY_HINT_DOC_66</Tag>
 		<English>Entering enemy waters consumes all remaining movement points.</English>
 		<French>Entrer dans les eaux territoriales de l'ennemi utilise tous les points de mouvements restants.</French>
 		<German>Entering enemy waters consumes all remaining movement points.</German>
@@ -858,7 +850,7 @@
 		<Spanish>Entering enemy waters consumes all remaining movement points.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_68</Tag>
+		<Tag>TXT_KEY_HINT_DOC_67</Tag>
 		<English>Bad health from power is multiplied by the number of buildings that consume power.</English>
 		<French>La maladie cr&#233;&#233;e par la production d'&#233;lectricit&#233; est multipli&#233;e par le nombre de b&#226;timents qui consomment de l'&#233;lectricit&#233;.</French>
 		<German>Bad health from power is multiplied by the number of buildings that consume power.</German>
@@ -866,7 +858,7 @@
 		<Spanish>Bad health from power is multiplied by the number of buildings that consume power.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_69</Tag>
+		<Tag>TXT_KEY_HINT_DOC_68</Tag>
 		<English>Enemy workers cannot be captured unless enabled by a civic.</English>
 		<French>Les ouvriers ennemis ne peuvent &#234;tre captur&#233;s sauf si vous adoptez la doctrine appropri&#233;e.</French>
 		<German>Enemy workers cannot be captured unless enabled by a civic.</German>
@@ -874,7 +866,7 @@
 		<Spanish>Enemy workers cannot be captured unless enabled by a civic.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_70</Tag>
+		<Tag>TXT_KEY_HINT_DOC_69</Tag>
 		<English>The number of National Wonders and Great Wonders that can be built in a city is limited by its culture level.</English>
 		<French>Le nombre de merveilles nationales et de merveilles du monde pouvant &#234;tre construites dans une ville est limit&#233; par son niveau culturel.</French>
 		<German>The number of National Wonders and Great Wonders that can be built in a city is limited by its culture level.</German>
@@ -882,7 +874,7 @@
 		<Spanish>The number of National Wonders and Great Wonders that can be built in a city is limited by its culture level.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_71</Tag>
+		<Tag>TXT_KEY_HINT_DOC_70</Tag>
 		<English>Many classical wonders can only be built with no state religion in cities without any religions.</English>
 		<French>De nombreuses merveilles de l'&#232;re classique ne peuvent &#234;tre constuites que par des civilisations sans religion d'&#201;tat, et dans des villes sans religions.</French>
 		<German>Many classical wonders can only be built with no state religion in cities without any religions.</German>
@@ -890,7 +882,7 @@
 		<Spanish>Many classical wonders can only be built with no state religion in cities without any religions.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_72</Tag>
+		<Tag>TXT_KEY_HINT_DOC_71</Tag>
 		<English>Mounted units have been split into Light Cavalry and Heavy Cavalry.</English>
 		<French>Les unit&#233;s mont&#233;es ont &#233;t&#233; divis&#233;es en deux cat&#233;gories : cavalerie l&#233;g&#232;re et cavalerie lourde.</French>
 		<German>Mounted units have been split into Light Cavalry and Heavy Cavalry.</German>
@@ -898,7 +890,7 @@
 		<Spanish>Mounted units have been split into Light Cavalry and Heavy Cavalry.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_73</Tag>
+		<Tag>TXT_KEY_HINT_DOC_72</Tag>
 		<English>Some units are stronger in open terrain. Tiles that are flat, have no features with defensive bonuses, and do not contain a city or fort count as open terrain.</English>
 		<French>Certaines unit&#233;s sont plus puissantes en terrain d&#233;gag&#233;. Pour compter comme un terrain d&#233;gag&#233;, une case doit &#234;tre plate, ne pas poss&#233;der de caract&#233;ristique avec un bonus de d&#233;fense, et ne pas contenir de ville ou de fort.</French>
 		<German>Some units are stronger in open terrain. Tiles that are flat, have no features with defensive bonuses, and do not contain a city or fort count as open terrain.</German>
@@ -906,15 +898,7 @@
 		<Spanish>Some units are stronger in open terrain. Tiles that are flat, have no features with defensive bonuses, and do not contain a city or fort count as open terrain.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_74</Tag>
-		<English>Invest in culture. Your specialists become more effective with higher culture levels.</English>
-		<French>Investissez dans la culture ! Vos sp&#233;cialistes produisent davantage aux niveaux culturels &#233;lev&#233;s.</French>
-		<German>Invest in culture. Your specialists become more effective with higher culture levels.</German>
-		<Italian>Invest in culture. Your specialists become more effective with higher culture levels.</Italian>
-		<Spanish>Invest in culture. Your specialists become more effective with higher culture levels.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_75</Tag>
+		<Tag>TXT_KEY_HINT_DOC_73</Tag>
 		<English>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</English>
 		<French>Pour fonder une religion, vous devez non seulement d&#233;couvrir la technologie appropri&#233;e, mais aussi contr&#244;ler une ville dans le c&#156;ur historique de la religion.</French>
 		<German>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</German>
@@ -922,12 +906,76 @@
 		<Spanish>In addition to discovering the associated technology, to found a religion you also need to control a city in its historical core region.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HINT_DOC_76</Tag>
+		<Tag>TXT_KEY_HINT_DOC_74</Tag>
 		<English>Resources now only supply a limited number of cities with happiness or health. Acquire additional instances of a resource to keep your growing empire supplied!</English>
 		<French>Les ressources fournissent de la sant&#233; et du bonheur &#224; un nombre d&#233;sormais limit&#233; de villes. Obtenez davantage de copies d'une ressource pour approvisionner votre empire en expansion !</French>
 		<German>Resources now only supply a limited number of cities with happiness or health. Acquire additional instances of a resource to keep your growing empire supplied!</German>
 		<Italian>Resources now only supply a limited number of cities with happiness or health. Acquire additional instances of a resource to keep your growing empire supplied!</Italian>
 		<Spanish>Resources now only supply a limited number of cities with happiness or health. Acquire additional instances of a resource to keep your growing empire supplied!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_75</Tag>
+		<English>The late game has been expanded: the last technologies in the tech tree are more expensive to research, but also provide more content in the form of additional buildings and projects as well as the ability to build satellites.</English>
+		<French>The late game has been expanded: the last technologies in the tech tree are more expensive to research, but also provide more content in the form of additional buildings and projects as well as the ability to build satellites.</French>
+		<German>The late game has been expanded: the last technologies in the tech tree are more expensive to research, but also provide more content in the form of additional buildings and projects as well as the ability to build satellites.</German>
+		<Italian>The late game has been expanded: the last technologies in the tech tree are more expensive to research, but also provide more content in the form of additional buildings and projects as well as the ability to build satellites.</Italian>
+		<Spanish>The late game has been expanded: the last technologies in the tech tree are more expensive to research, but also provide more content in the form of additional buildings and projects as well as the ability to build satellites.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_76</Tag>
+		<English>To win the Space Victory, you now have to construct a permanent base on Mars, instead of sending a colony ship to Alpha Centauri</English>
+		<French>To win the Space Victory, you now have to construct a permanent base on Mars, instead of sending a colony ship to Alpha Centauri</French>
+		<German>To win the Space Victory, you now have to construct a permanent base on Mars, instead of sending a colony ship to Alpha Centauri</German>
+		<Italian>To win the Space Victory, you now have to construct a permanent base on Mars, instead of sending a colony ship to Alpha Centauri</Italian>
+		<Spanish>To win the Space Victory, you now have to construct a permanent base on Mars, instead of sending a colony ship to Alpha Centauri</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_77</Tag>
+		<English>The space race has become a lot more detailed: many projects are required to enable the Space Victory, each giving additional benefits to the first civilisation to complete them. Several projects unrelated to the Space Victory also synergise with investing in space production.</English>
+		<French>The space race has become a lot more detailed: many projects are required to enable the Space Victory, each giving additional benefits to the first civilisation to complete them. Several projects unrelated to the Space Victory also synergise with investing in space production.</French>
+		<German>The space race has become a lot more detailed: many projects are required to enable the Space Victory, each giving additional benefits to the first civilisation to complete them. Several projects unrelated to the Space Victory also synergise with investing in space production.</German>
+		<Italian>The space race has become a lot more detailed: many projects are required to enable the Space Victory, each giving additional benefits to the first civilisation to complete them. Several projects unrelated to the Space Victory also synergise with investing in space production.</Italian>
+		<Spanish>The space race has become a lot more detailed: many projects are required to enable the Space Victory, each giving additional benefits to the first civilisation to complete them. Several projects unrelated to the Space Victory also synergise with investing in space production.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_78</Tag>
+		<English>Some major civilisations have a second unique unit.</English>
+		<French>Some major civilisations have a second unique unit.</French>
+		<German>Some major civilisations have a second unique unit.</German>
+		<Italian>Some major civilisations have a second unique unit.</Italian>
+		<Spanish>Some major civilisations have a second unique unit.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_77</Tag>
+		<English>When capturing a city, you now have the additional options to sack or spare it. More gold can be plundered in sacked cities, at the cost of more severe building damage and unrest. Sparing cities reduces unrest and building damage but instead costs money.</English>
+		<French>When capturing a city, you now have the additional options to sack or spare it. More gold can be plundered in sacked cities, at the cost of more severe building damage and unrest. Sparing cities reduces unrest and building damage but instead costs money.</French>
+		<German>When capturing a city, you now have the additional options to sack or spare it. More gold can be plundered in sacked cities, at the cost of more severe building damage and unrest. Sparing cities reduces unrest and building damage but instead costs money.</German>
+		<Italian>When capturing a city, you now have the additional options to sack or spare it. More gold can be plundered in sacked cities, at the cost of more severe building damage and unrest. Sparing cities reduces unrest and building damage but instead costs money.</Italian>
+		<Spanish>When capturing a city, you now have the additional options to sack or spare it. More gold can be plundered in sacked cities, at the cost of more severe building damage and unrest. Sparing cities reduces unrest and building damage but instead costs money.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_78</Tag>
+		<English>Cities no longer just lose one population when captured. Large cities can lose additional population, especially if you decide to sack them.</English>
+		<French>Cities no longer just lose one population when captured. Large cities can lose additional population, especially if you decide to sack them.</French>
+		<German>Cities no longer just lose one population when captured. Large cities can lose additional population, especially if you decide to sack them.</German>
+		<Italian>Cities no longer just lose one population when captured. Large cities can lose additional population, especially if you decide to sack them.</Italian>
+		<Spanish>Cities no longer just lose one population when captured. Large cities can lose additional population, especially if you decide to sack them.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_79</Tag>
+		<English>Cities cannot be instantly razed anymore. After ordering a city to be razed, it will lose population each turn while in unrest, and finally be destroyed when the population reaches zero.</English>
+		<French>Cities cannot be instantly razed anymore. After ordering a city to be razed, it will lose population each turn while in unrest, and finally be destroyed when the population reaches zero.</French>
+		<German>Cities cannot be instantly razed anymore. After ordering a city to be razed, it will lose population each turn while in unrest, and finally be destroyed when the population reaches zero.</German>
+		<Italian>Cities cannot be instantly razed anymore. After ordering a city to be razed, it will lose population each turn while in unrest, and finally be destroyed when the population reaches zero.</Italian>
+		<Spanish>Cities cannot be instantly razed anymore. After ordering a city to be razed, it will lose population each turn while in unrest, and finally be destroyed when the population reaches zero.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_80</Tag>
+		<English>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</English>
+		<French>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</French>
+		<German>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</German>
+		<Italian>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</Italian>
+		<Spanish>You can use a settler to immediately construct buildings in a city. This will give all buildings that a new city would receive for free when founded.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_</Tag>
