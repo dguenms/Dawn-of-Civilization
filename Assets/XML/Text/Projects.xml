@@ -42,6 +42,14 @@
 		<Spanish>[ICON_BULLET]+1[ICON_FOOD] for [LINK=literal]Town[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT_IMPROVEMENT_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_FOOD] with [LINK=literal]Human Genome Project[\LINK]</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] avec [LINK=literal]projet g&#233;nome humain[\LINK]</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] mit [LINK=literal]Human Genome Project[\LINK]</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] with [LINK=literal]Human Genome Project[\LINK]</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] with [LINK=literal]Human Genome Project[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_THE_INTERNET_HELP</Tag>
 		<English>[ICON_BULLET]+1[ICON_COMMERCE] per Specialist</English>
 		<French>[ICON_BULLET]+1[ICON_COMMERCE] par sp&#233;cialiste</French>
