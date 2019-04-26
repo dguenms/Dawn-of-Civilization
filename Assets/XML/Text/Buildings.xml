@@ -2993,7 +2993,7 @@
 		<Tag>TXT_KEY_BUILDING_SUPERCOMPUTER</Tag>
 		<English>Supercomputer</English>
 		<French>
-			<Text>Superorinateur:Superordinateurs</Text>
+			<Text>Superordinateur:Superordinateurs</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
