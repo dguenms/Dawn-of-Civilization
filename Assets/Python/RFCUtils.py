@@ -1727,7 +1727,7 @@ class RFCUtils:
 	def removeStabilityOverlay(self):
 		engine = CyEngine()
 		# clear the highlight
-		for i in range(10):
+		for i in range(50):
 			engine.clearAreaBorderPlots(1000+i)
 		self.bStabilityOverlay = False
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
