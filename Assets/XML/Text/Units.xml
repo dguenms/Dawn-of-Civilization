@@ -3100,7 +3100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROMAN_BALLISTA</Tag>
 		<English>Ballista</English>
-		<<French>
+		<French>
 			<Text>Baliste</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
