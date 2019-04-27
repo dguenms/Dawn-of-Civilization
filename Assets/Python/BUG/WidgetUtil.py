@@ -547,6 +547,16 @@ def getWidgetHelp(argsList):
 			return CyTranslator().getText("TXT_KEY_WB_RESTORE_SD_BACKUP_HELP", ())
 		elif iData1 == 22014:
 			return CyTranslator().getText("TXT_KEY_WB_CREATE_SD_BACKUP_HELP", ())
+
+		# technology advisor
+		elif iData1 == 7800:
+			return gc.getTechInfo(iData2).getHelp()
+		elif iData1 == 7801:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_TECH_SCREEN_FILTER_KNOWN", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_TECH_SCREEN_FILTER_CLAIMED", ())
+
 	return u""
 
 ## Configuration Handler

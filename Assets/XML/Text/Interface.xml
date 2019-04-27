@@ -3137,6 +3137,22 @@
 		<Spanish>[ICON_BULLET]Temporary [ICON_UNHAPPY] decays twice as fast</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_SCREEN_FILTER_KNOWN</Tag>
+		<English>Hide Known Technologies</English>
+		<French>Hide Known Technologies</French>
+		<German>Hide Known Technologies</German>
+		<Italian>Hide Known Technologies</Italian>
+		<Spanish>Hide Known Technologies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SCREEN_FILTER_CLAIMED</Tag>
+		<English>Hide Benefits No Longer Available</English>
+		<French>Hide Benefits No Longer Available</French>
+		<German>Hide Benefits No Longer Available</German>
+		<Italian>Hide Benefits No Longer Available</Italian>
+		<Spanish>Hide Benefits No Longer Available</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
