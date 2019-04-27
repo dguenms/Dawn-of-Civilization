@@ -4056,7 +4056,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 						// 1SDAN
 						if (kBuilding.getBonusYieldChange(iJ, iI) > 0)
 						{
-							iTempValue += (kBuilding.getBonusYieldChange(iJ, iI) * countNumBonusPlots() * 6);
+							iTempValue += (kBuilding.getBonusYieldChange(iJ, iI) * countNumBonusPlots((BonusTypes)iJ) * 6);
 						}
 					}
 
