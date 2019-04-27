@@ -1625,6 +1625,41 @@ int CvCity::countNumImprovedPlots(ImprovementTypes eImprovement, bool bPotential
 	return iCount;
 }
 
+// 1SDAN
+int CvCity::countNumBonusPlots(BonusTypes eBonus) const
+{
+	CvPlot* pLoopPlot;
+	int iCount;
+	int iI;
+
+	iCount = 0;
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+
+		if (pLoopPlot != NULL)
+		{
+			if (pLoopPlot->getWorkingCity() == this)
+			{
+				if (eBonus != NO_BONUS)
+				{
+					if (pLoopPlot->getBonusType() == eBonus)
+					{
+						++iCount;
+					}
+				}
+				else if (pLoopPlot->getBonusType() != NO_BONUS)
+				{
+					iCount++;
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
+
 
 int CvCity::countNumWaterPlots() const
 {
