@@ -10180,6 +10180,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			if (NULL != pCity)
 			{
 				aiYields[iI] += pCity->getBuildingYieldChange((BuildingClassTypes)kBuilding.getBuildingClassType(), (YieldTypes)iI);
+				
+				// Leoreth
+				for (int iJ = 0; iJ < GC.getNumBonusInfos(); iJ++)
+				{
+					aiYields[iI] += kBuilding.getBonusYieldChange(iJ, iI) * pCity->countNumBonusPlots((BonusTypes)iJ);
+				}
 			}
 		}
 		setYieldChangeHelp(szBuffer, L", ", L"", L"", aiYields, false, false);
