@@ -13022,10 +13022,10 @@ void CvCity::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
 	{
 		m_paiReligionInfluence[eReligion] = iNewValue;
 
-		int iFactor = GC.getReligionInfo(eReligion).isProselytizing() ? 2 : 1;
+		int iExtraRange = GC.getReligionInfo(eReligion).isProselytizing() ? 3 : 0;
 
-		spreadReligionInfluence(eReligion, iFactor * iOldValue, -1);
-		spreadReligionInfluence(eReligion, iFactor * iNewValue, 1);
+		spreadReligionInfluence(eReligion, iOldValue + iExtraRange, -1);
+		spreadReligionInfluence(eReligion, iNewValue + iExtraRange, 1);
 	}
 }
 
@@ -13043,7 +13043,7 @@ void CvCity::spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iC
 
 			if (pLoopPlot != NULL)
 			{
-				if (iDistance <= iRange || (plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL && iDistance <= iSpreadRange))
+				if (iDistance <= iRange || (!pLoopPlot->isOverseas(plot()) && pLoopPlot->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL && iDistance <= iSpreadRange))
 				{
 					pLoopPlot->changeReligionInfluence(eReligion, iChange);
 				}
@@ -18260,7 +18260,7 @@ bool CvCity::isColony() const
 
 	if (pCapital == NULL) return false;
 
-	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCapital->getArea())->getClosestAreaSize(30));
+	return plot()->isOverseas(pCapital->plot());
 }
 
 // Leoreth: at most half of the population may be slaves

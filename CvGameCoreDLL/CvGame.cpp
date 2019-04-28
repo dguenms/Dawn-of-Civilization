@@ -9850,7 +9850,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							for (CvCity* pLoopCity = kPlayer.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kPlayer.nextCity(&iLoop))
 							{
 								if (pLoopCity->plot()->isCore(ePlayer)) continue;
-								if (GC.getMap().getArea(pLoopCity->plot()->getArea())->getClosestAreaSize(30) == GC.getMap().getArea(kPlayer.getCapitalCity()->plot()->getArea())->getClosestAreaSize(30)) continue;
+								if (pLoopCity->plot()->isOverseas(kPlayer.getCapitalCity()->plot())) continue;
 
 								if (NO_PLAYER == pLoopCity->getLiberationPlayer(false))
 								{

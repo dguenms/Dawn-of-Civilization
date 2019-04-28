@@ -230,6 +230,10 @@ public:
 	int getArea() const;																																		// Exposed to Python
 	void setArea(int iNewValue);			
 
+	// Leoreth
+	int getContinentArea() const;
+	void setContinentArea(int iNewValue);
+
 	DllExport int getFeatureVariety() const;																													// Exposed to Python
 
 	int getOwnershipDuration() const;																																	// Exposed to Python
@@ -541,6 +545,8 @@ public:
 
 	bool canSpread(ReligionTypes eReligion) const;
 
+	bool isOverseas(const CvPlot* pPlot) const;
+
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
 	void pageGraphicsOut();
@@ -568,6 +574,7 @@ protected:
 	short m_iRiverCrossingCount;
 
 	// Leoreth
+	int m_iContinentArea;
 	short m_iCultureConversionRate;
 	int m_iTotalCulture;
 

@@ -1479,6 +1479,14 @@ void CvMap::calculateAreas()
 			}
 		}
 	}
+
+	// Leoreth: store closest area of size 30+
+	for (iI = 0; iI < numPlotsINLINE(); iI++)
+	{
+		pLoopPlot = plotByIndexINLINE(iI);
+
+		pLoopPlot->setContinentArea(getArea(pLoopPlot->getArea())->getClosestAreaSize(30));
+	}
 }
 
 int CvMap::plotIndex(int iX, int iY) const

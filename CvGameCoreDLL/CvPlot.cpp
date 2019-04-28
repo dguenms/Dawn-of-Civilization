@@ -211,6 +211,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iGraphicsPageIndex = -1;
 
 	// Leoreth
+	m_iContinentArea = FFreeList::INVALID_INDEX;
 	m_iCultureConversionRate = 0;
 	m_iTotalCulture = 0;
 
@@ -9814,7 +9815,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// Init saved data
 	reset();
 
-	uint uiFlag=0; // Leoreth: 1 for culture conversion
+	uint uiFlag=0; // Leoreth: 1 for culture conversion, 2 for continent area
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iX);
@@ -9833,6 +9834,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iRiverCrossingCount);
 	if (uiFlag >= 1) pStream->Read(&m_iCultureConversionRate);
 	if (uiFlag >= 1) pStream->Read(&m_iTotalCulture);
+	if (uiFlag >= 2) pStream->Read(&m_iContinentArea);
 
 	pStream->Read(&bVal);
 	m_bStartingPlot = bVal;
@@ -10080,7 +10082,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 {
 	uint iI;
 
-	uint uiFlag=1; // Leoreth: 1 for culture conversion
+	uint uiFlag=2; // Leoreth: 1 for culture conversion, 2 for continent area
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iX);
@@ -10099,6 +10101,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_iRiverCrossingCount);
 	pStream->Write(m_iCultureConversionRate); // Leoreth
 	pStream->Write(m_iTotalCulture); // Leoreth
+	pStream->Write(m_iContinentArea); // Leoreth
 
 	pStream->Write(m_bStartingPlot);
 	pStream->Write(m_bHills);
@@ -11609,4 +11612,19 @@ void CvPlot::resetCultureConversion()
 void CvPlot::changeCultureConversionRate(int iChange)
 {
 	setCultureConversion(getCultureConversionPlayer(), getCultureConversionRate() + iChange);
+}
+
+int CvPlot::getContinentArea() const
+{
+	return m_iContinentArea;
+}
+
+void CvPlot::setContinentArea(int iNewValue)
+{
+	m_iContinentArea = iNewValue;
+}
+
+bool CvPlot::isOverseas(const CvPlot* pPlot) const
+{
+	return getContinentArea() != pPlot->getContinentArea();
 }

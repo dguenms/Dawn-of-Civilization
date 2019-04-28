@@ -25152,14 +25152,13 @@ int CvPlayer::countColonies() const
 		return 0;
 	}
 
-	int iHomeArea = GC.getMapINLINE().getArea(getCapitalCity()->getArea())->getClosestAreaSize(30);
 	int iNumColonies = 0;
 
 	int iLoop;
 	CvCity* pLoopCity;
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (GC.getMapINLINE().getArea(pLoopCity->getArea())->getClosestAreaSize(30) != iHomeArea)
+		if (pLoopCity->isColony())
 		{
 			iNumColonies++;
 		}
@@ -25648,7 +25647,7 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 		CvCity* pCapitalCity = getCapitalCity();
 		if (pCapitalCity != NULL)
 		{
-			if (GC.getMap().getArea(pCapitalCity->getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCity->getArea())->getClosestAreaSize(30))
+			if (pCity->plot()->isOverseas(pCapitalCity->plot()))
 			{
 				if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
 				{
