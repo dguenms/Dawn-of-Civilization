@@ -2248,7 +2248,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HERITAGE_QUOTE</Tag>
 		<English>"And how can man die better, than facing fearful odds, for the ashes of his fathers, and the temples of his gods?"[PARAGRAPH:2]- Thomas Macaulay, Lays of Ancient Rome</English>
-		<French>"And how can man die better, than facing fearful odds, for the ashes of his fathers, and the temples of his gods?"[PARAGRAPH:2]- Thomas Macaulay, Lays of Ancient Rome</French>
+		<French>"Comment mourir mieux qu'en affrontant un danger terrible pour les cendres de ses p&#232;res et l'autel de ses dieux ?"[PARAGRAPH:2]- Thomas Macaulay, Chants de l'Ancienne Rome</French>
 		<German>"And how can man die better, than facing fearful odds, for the ashes of his fathers, and the temples of his gods?"[PARAGRAPH:2]- Thomas Macaulay, Lays of Ancient Rome</German>
 		<Italian>"And how can man die better, than facing fearful odds, for the ashes of his fathers, and the temples of his gods?"[PARAGRAPH:2]- Thomas Macaulay, Lays of Ancient Rome</Italian>
 		<Spanish>"And how can man die better, than facing fearful odds, for the ashes of his fathers, and the temples of his gods?"[PARAGRAPH:2]- Thomas Macaulay, Lays of Ancient Rome</Spanish>
@@ -4209,7 +4209,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SEAFARING_QUOTE</Tag>
 		<English>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</English>
-		<French>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</French>
+		<French>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</French> <!-- needs translation -->
 		<German>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</German>
 		<Italian>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</Italian>
 		<Spanish>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</Spanish>
@@ -4247,7 +4247,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SHIPBUILDING_PEDIA</Tag>
-		<English>Shipbuilding is the art of constructing large watergoing vessels for travel on large bodies of water.As the demand for larger, safer vessels to cross the oceans of the ancient world grew, so did knowledge of ship construction. By far the preferred method for building such ships was to make them out of wood - preferably the hardest, strongest timber available, even if this had to be imported over long distances. Great strides in the art of carpentry made it possible to assemble large ships that would be strong enough to withstand the forces of the sea, but flexible enough not to break under heavy impact.[PARAGRAPH:2]Larger, heavier ships were generally more useful for trade because they could carry a greater volume of goods. They were also more useful for warfare. Ancient naval war revolved around deliberate ramming attacks, boarding parties and sailors firing musclepowered missile weapons at each other. A larger ship would be harder to damage by ramming, would have the tactical advantage of being 'the high ground' in combat, and could carry a larger army with which to capture enemy ships.[PARAGRAPH:2]Ongoing advances in shipbuilding continued steadily from the Bronze Age up to the present day in many parts of the world. Nations which enjoyed an advantage in the art at any particular time were usually able to dominate the seas for vast distances around their homeland.</English>
+		<English>Shipbuilding is the art of constructing large watergoing vessels for travel on large bodies of water. As the demand for larger, safer vessels to cross the oceans of the ancient world grew, so did knowledge of ship construction. By far the preferred method for building such ships was to make them out of wood - preferably the hardest, strongest timber available, even if this had to be imported over long distances. Great strides in the art of carpentry made it possible to assemble large ships that would be strong enough to withstand the forces of the sea, but flexible enough not to break under heavy impact.[PARAGRAPH:2]Larger, heavier ships were generally more useful for trade because they could carry a greater volume of goods. They were also more useful for warfare. Ancient naval war revolved around deliberate ramming attacks, boarding parties and sailors firing musclepowered missile weapons at each other. A larger ship would be harder to damage by ramming, would have the tactical advantage of being 'the high ground' in combat, and could carry a larger army with which to capture enemy ships.[PARAGRAPH:2]Ongoing advances in shipbuilding continued steadily from the Bronze Age up to the present day in many parts of the world. Nations which enjoyed an advantage in the art at any particular time were usually able to dominate the seas for vast distances around their homeland.</English>
 		<French>No Translation</French>
 		<German>No Translation</German>
 		<Italian>No Translation</Italian>
@@ -4302,7 +4302,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SMELTING_QUOTE</Tag>
 		<English>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</English>
-		<French>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- S&#233;n&#232;que</French>
+		<French>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- S&#233;n&#232;que</French> <!-- needs translation -->
 		<German>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</German>
 		<Italian>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</Italian>
 		<Spanish>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</Spanish>
