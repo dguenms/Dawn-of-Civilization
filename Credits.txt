@@ -86,12 +86,13 @@ MISCELLANEOUS
 * Sgt. Bears: text and XML work
 * andrewv42: map changes in India and Indochina
 * Steb: city names in Canada and the Americas
+* devolution (AdvCiv mod): DLL compiler options (Final_Release target)
 
 HELP AND ADVICE
 * Walter Hawkwood: fixing issues with unit and building models
 
 GITHUB PROJECT CONTRIBUTORS
-Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon
+Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon, 1SDAN
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others

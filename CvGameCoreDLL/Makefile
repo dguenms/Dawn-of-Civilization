@@ -152,6 +152,7 @@ FILE_DEPENDS = $(TEMP_TARGET_FILES)\depends
 GLOBAL_CFLAGS=/GR /Gy /W3 /EHsc /Gd /Gm- /Fd"$(Target_PDB)" $(CUSTOM_CFLAGS) $(PROJECT_CFLAGS) /D_MOD_FRACTRADE
 Debug_CFLAGS=/MD /Zi /Od /RTC1 $(Debug_DEFINES) $(GLOBAL_CFLAGS)
 Release_CFLAGS= /MD /O2 /Oy /Oi /G7 $(Release_DEFINES) $(GLOBAL_CFLAGS)
+Final_Release_CFLAGS= /MD /O2 /Oy /Oi /G7 /arch:SSE2 /GL $(Release_DEFINES) $(GLOBAL_CFLAGS)
 
 PRECOMPILE_CFLAGS1 = /Yu"
 PRECOMPILE_CFLAGS2 = CvGameCoreDLL.h" /Fp"$(Target_PCH)"
@@ -160,6 +161,8 @@ PRECOMPILE_CFLAGS2 = CvGameCoreDLL.h" /Fp"$(Target_PCH)"
 GLOBAL_LDFLAGS=/DLL /NOLOGO /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /PDB:"$(Target_PDB)" $(CUSTOM_LDFLAGS) $(PROJECT_LDFLAGS)
 Debug_LDFLAGS=/INCREMENTAL /DEBUG /IMPLIB:"$(Target_STATICLIB)" $(GLOBAL_LDFLAGS)
 Release_LDFLAGS=/INCREMENTAL:NO /OPT:REF /OPT:ICF $(GLOBAL_LDFLAGS)
+Final_Release_LDFLAGS=/LTCG /INCREMENTAL:NO /OPT:REF /OPT:ICF $(GLOBAL_LDFLAGS)
+Final_Profile_LDFLAGS=/LTCG /DEBUG /IMPLIB:"$(Target_STATICLIB)" $(GLOBAL_LDFLAGS)
 
 #### INCLUDES ####
 GLOBAL_INCS=/I"$(TOOLKIT)/include" /I"$(PSDK)/Include" /I"$(PSDK)/Include/mfc"
@@ -213,9 +216,13 @@ LDFLAGS = $(Release_LDFLAGS)
 CFLAGS  = $(Release_CFLAGS) /Zi
 LDFLAGS = $(Debug_LDFLAGS)
 !ENDIF
+!IF "$(TARGET)" == "Final_Release"
+CFLAGS  = $(Final_Release_CFLAGS)
+LDFLAGS = $(Final_Release_LDFLAGS)
+!ENDIF
 
 !IFNDEF CFLAGS
-!ERROR Target "$(TARGET)" not supported. Supported targets: Debug Release Assert Profile
+!ERROR Target "$(TARGET)" not supported. Supported targets: Debug Release Assert Profile Final_Release
 !ENDIF
 
 !IF EXIST ($(FILE_DEPENDS))
