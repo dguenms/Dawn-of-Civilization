@@ -1266,7 +1266,7 @@ iCivKorea : {
 		"Kim Young-Sam", # 20th
 	],
 	iGreatGeneral : [
-		"King Gwanggaeto", # 4th
+		"Gwanggaeto", # 4th
 		"Kim Yu-Sin", # 7th
 		"GyeBaek", # 7th
 		"Eulji Mundeok", # 7th
