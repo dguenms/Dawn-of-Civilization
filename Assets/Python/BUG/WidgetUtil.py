@@ -310,6 +310,18 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_VICTORYMAP", ())
 			elif iData2 == 47:
 				return CyTranslator().getText("TXT_KEY_WB_VICTORYMAP_RECTANGLE", ())
+			elif iData2 == 48:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER", ())
+			elif iData2 == 49:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_WATER", ())
+			elif iData2 == 50:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_PEAKS", ())
+			elif iData2 == 51:
+				return CyTranslator().getText("TXT_KEY_WB_TOOL_HELP", ())
+			elif iData2 == 52:
+				return CyTranslator().getText("TXT_KEY_WB_REGION_ALLREGIONS", ())
+			elif iData2 == 53:
+				return CyTranslator().getText("TXT_KEY_WB_REGION_CHECK", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -535,6 +547,16 @@ def getWidgetHelp(argsList):
 			return CyTranslator().getText("TXT_KEY_WB_RESTORE_SD_BACKUP_HELP", ())
 		elif iData1 == 22014:
 			return CyTranslator().getText("TXT_KEY_WB_CREATE_SD_BACKUP_HELP", ())
+
+		# technology advisor
+		elif iData1 == 7800:
+			return gc.getTechInfo(iData2).getHelp()
+		elif iData1 == 7801:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_TECH_SCREEN_FILTER_KNOWN", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_TECH_SCREEN_FILTER_CLAIMED", ())
+
 	return u""
 
 ## Configuration Handler

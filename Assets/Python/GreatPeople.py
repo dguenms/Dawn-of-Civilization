@@ -472,6 +472,7 @@ iCivGreece : {
 		"Zenon", # 4th BC
 		"Satyros", # 4th BC
 		"Archimedes", # 3rd BC
+		"Sostratos", # 3rd BC
 		"Heron", # 1st
 		iIndustrial,
 		"Ernestos Tsiller", # 19th
@@ -553,8 +554,9 @@ iCivIndia : {
 		"fAvvaiyar", # 10th tamil
 		"Abhinavagupta", # 10th
 		"Nakkirar", # medieval tamil
+		"fKanhopatra", # 15th
 		iRenaissance,
-		"Purandara Dasa", # 15th
+		"Purandara Dasa", # 16th
 		"Tansen", # 16th
 		"Nainsukh", # 18th
 		iIndustrial,
@@ -1144,6 +1146,9 @@ iCivEthiopia : {
 },
 iCivKorea : {
 	iGreatProphet : [
+		"Marananta", # 4th
+		iMedieval,
+		"Doseon", # 9th
 		"Jinul", # 12th
 		"Uicheon", # 12th
 		"Baegun", # 13th
@@ -1151,44 +1156,55 @@ iCivKorea : {
 		iRenaissance,
 		"Yi Hwang", # 16th
 		"Yi I", # 16th
+		"Yi Seung-hun", # 18th
 		iIndustrial,
 		"Choe Je-u", # 19th
 		iGlobal,
 		"Sun Myung Moon", # 20th
 	],
 	iGreatArtist : [
+		"fYeo Ok", # Gojoseon era
+		iMedieval,
 		"Damjing", # 7th
 		"Yi Nyeong", # 9th
 		"Yi Je-hyeon", # 9th
 		iRenaissance,
-		"Hwang Jip-jung", # 16th
+		"fHwang Jini", # 16th
+		"fSin Saimdang", # 16th
 		"fHeo Nanseolheon", # 16th
 		"Yan Duseo", # 17th
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
 		iGlobal,
+		"fNa Hye-sok", # 20th
 		"Im Kwon-taek", # 20th
 		"Seo Tae-Ji", # 20th
 	],
 	iGreatScientist : [
 		"Uisan", # 7th
 		"Wonhyo", # 7th
+		"Kim Am", # 8th
 		iRenaissance,
 		"Jeong Inji", # 15th
 		"Seong Sammun", # 15th
 		"Yu Seong-won", # 15th
 		"Heo Jun", # 16th
+		"fSeo Yeongsuhap", # 18th
 		iIndustrial,
 		"Jeong Yakyong", # 19th
+		"Gim Jeong-ho", # 19th
 		iGlobal,
-		"Hwang Woo-Suk", # 20th
+		"Woo Jang-choon", # 20th
 	],
 	iGreatMerchant : [
 		"Hyecho", # 8th
 		"Kim Sa-hyeong", # 15th
 		"Yi Mu", # 15th
 		"Yi Hoe", # 15th
+		"fGim Man-deok", # 18th
+		iIndustrial, 
+		"fPaek Son-haeng", # 19th
 		iGlobal,
 		"Lee Byung-chul", # 20th
 		"Chung Ju-yung", # 20th
@@ -1199,33 +1215,50 @@ iCivKorea : {
 		iRenaissance,
 		"Jang Yeong-sil", # 15th
 		"Song I-yeong", # 16th
+		"Bak Jiwon", # 18th
+		iGlobal, 
+		"Ri Sung-gi", # 20th
+		"Kim Swoo-geun", # 20th
 	],
 	iGreatStatesman : [
 		"Myeongnim Dap-bo", # 2nd
+		iMedieval,
 		"fSeondeok", # 7th
+		"Choe Chiwon", # 9th
 		"Kim Bu-sik", # 12th
 		"Jeong Dojeon", # 14th
 		iRenaissance,
 		"Yi Hwang", # 16th
+		"Yi Ji-ham", # 16th
 		iIndustrial,
+		"Heungseon Daewongun", # 19th
 		"Kim Ok-gyun", # 19th
 		"fMyeongseong", # 19th
 		iGlobal,
+		"Sin Chaeho", # 20th
+		"Soh Jaipil", # 20th
 		"fRyu Gwansun", # 20th
 		"Kim Gu", # 20th
 		"Kim Dae-jung", # 20th
 	],
 	iGreatGeneral : [
 		"Gim Yu-sin", # 7th
+		"Eulji Mundeok", # 7th
+		"Yeon Gaesomun", # 7th
 		"Gang Gam-chan", # 11th
 		"Choe Woo", # 13th
 		"Yi Seong-gye", # 14th
 		iRenaissance,
+		"Gwon Ryul", # 16th
 		"Yi Sun-sin", # 16th
+		iGlobal, 
+		"Choe Hyon", # 20th
+		"Paik Sun-yup", # 20th
 	],
 	iGreatSpy : [
 		"An Jung-geun", # 20th
 		"Kim Chang-ryong", # 20th
+		"Kim Jae-gyu", # 20th
 	],
 },
 iCivByzantium : {
@@ -1482,12 +1515,15 @@ iCivVikings : {
 		"Johannes Campanius", # 17th swedish
 		"Emanuel Swedenborg", # 18th swedish
 		iIndustrial,
+		"Hans Nielsen Hauge", # 19th norwegian
 		u"Søren Kierkegaard", # 19th danish
 		iGlobal,
 		u"Sveinbjörn Beinteinsson", # 20th icelandic
 	],
 	iGreatArtist : [
 		"Bragi Boddason", # 9th norwegian
+		u"fJórunn skáldmær", # 10th norwegian
+		u"Ofæigr Øpir", # 11th swedish
 		"Snorri Sturluson", # 13th icelandic
 		u"Nils Håkansson", # 14th swedish
 		iRenaissance,
@@ -1503,10 +1539,13 @@ iCivVikings : {
 		iGlobal,
 		"Jean Sibelius", # 20th finnish
 		"fKaren Blixen", # 20th danish
+		u"Halldór Laxness", # 20th icelandic
 		"fAstrid Lindgren", # 20th swedish
 		"Ingmar Bergman", # 20th swedish
 	],
 	iGreatScientist : [
+		"Oddi Helgason", # 12th icelandic
+		iRenaissance,
 		"Tycho Brahe", # 16th danish
 		"fSophia Brahe", # 16th danish
 		"Mikael Agricola", # 16th finnish
@@ -1518,15 +1557,18 @@ iCivVikings : {
 		"Niels Henrik Abel", # 19th norwegian
 		"Johannes Rydberg", # 19th swedish
 		u"Anders Ångström", # 19th swedish
+		"Niels Ryberg Finsen", # 19th faroese
 		iGlobal,
 		"Niels Bohr", # 20th danish
 	],
 	iGreatMerchant : [
+		u"Håkon Sigurdsson", # 10th norwegian
 		u"Eiríkr Rauði", # 10th norwegian
 		u"Leifr Eiríksson", # 10th icelandic
-		u"Håkon Sigurdsson", # 10th norwegian
+		u"fGudrid Thorbjarnardóttir", # 10th icelandic
 		iRenaissance,
 		"fSigbrit Willoms", # 16th danish
+		"Magnus Heinason", # 16th faroese
 		"fChristina Piper", # 18th swedish
 		"Niclas Sahlgren", # 18th swedish
 		"Rutger Macklean", # 18th swedish
@@ -1535,6 +1577,7 @@ iCivVikings : {
 		"Roald Amundsen", # 20th norwegian
 		iGlobal,
 		"Ole Kirk Christiansen", # 20th danish
+		"Ragnar Frisch", # 20th norwegian
 		"Ingvar Kamprad", # 20th swedish
 	],
 	iGreatEngineer : [
@@ -1553,6 +1596,7 @@ iCivVikings : {
 	],
 	iGreatStatesman : [
 		"Gorm den Gamle", # 10th danish
+		u"fGunnhildr Gormsdóttir", # 10th norwegian
 		"Birger Jarl", # 13th swedish
 		"fMargrete Valdemarsdatter", # 14th danish
 		iRenaissance,
@@ -1570,6 +1614,7 @@ iCivVikings : {
 		"Olof Palme", # 20th swedish
 	],
 	iGreatGeneral : [
+		u"fHlaðgerðr", # 9th danish
 		u"Eiríkr Blóðøx", # 10th norwegian
 		u"Sveinn Tjúguskegg", # 10th danish
 		u"Harald Harðráði", # 11th norwegian
@@ -2176,6 +2221,7 @@ iCivFrance : {
 		"Guy de Chauliac", # 14th
 		"Nicole Oresme", # 14th
 		iRenaissance,
+		"Marin Mersenne", # 17th
 		u"René Descartes", # 17th
 		"Pierre de Fermat", # 17th
 		"Blaise Pascal", # 17th
@@ -2598,6 +2644,7 @@ iCivHolyRome : {
 		"Ferdinand Anton Ernst Porsche", # 20th
 	],
 	iGreatEngineer : [
+		"fSabina von Steinbach", # 13th
 		"Heinrich Parler", # 14th
 		"Peter Parler", # 14th
 		"Johannes Gutenberg", # 15th
@@ -2752,6 +2799,7 @@ iCivRussia : {
 		"fYekaterina Vorontsova-Dashkova", # 18th
 		iIndustrial,
 		"Mikhail Speransky", # 19th
+		"Mikhail Bakunin", # 19th
 		"Vladimir Lenin", # 19th
 		iGlobal,
 		"Leon Trotsky", # 20th
@@ -3731,6 +3779,7 @@ iCivNetherlands : {
 		"Clemens Brenninkmeijer", # 19th
 		"August Kessler", # 19th
 		iGlobal,
+		"Jan Tinbergen", # 20th
 		"Freddy Heineken", # 20th
 	],
 	iGreatEngineer : [

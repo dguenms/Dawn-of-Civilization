@@ -1743,11 +1743,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RUSSIAN_COSSACK_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], requires [COLOR_TECH_TEXT]Measurement[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] and [COLOR_TECH_TEXT]Biology[COLOR_REVERT], and has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], requires [COLOR_TECH_TEXT]Measurement[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] and [COLOR_TECH_TEXT]Biology[COLOR_REVERT], and has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], requires [COLOR_TECH_TEXT]Measurement[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] and [COLOR_TECH_TEXT]Biology[COLOR_REVERT], and has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], requires [COLOR_TECH_TEXT]Measurement[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] and [COLOR_TECH_TEXT]Biology[COLOR_REVERT], and has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], requires [COLOR_TECH_TEXT]Measurement[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] and [COLOR_TECH_TEXT]Biology[COLOR_REVERT], and has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROMAN_LEGION_STRATEGY</Tag>
@@ -3100,7 +3100,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROMAN_BALLISTA</Tag>
 		<English>Ballista</English>
-		<<French>
+		<French>
 			<Text>Baliste</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>

@@ -51,7 +51,7 @@ MAJOR FEATURES
 * Extensive unique unit expansion, see unique units section for details:
     * Added 31 new unique units
     * Many major civilisations received a second unique unit
-    * Changed seven existing unique units
+    * Changed eight existing unique units
     * Removed five existing unique units
 * Resources only provide happiness and health to a limited number of cities depending on the number of controlled resources, see game rules section for details
 * Redesign and expansion of the rules around city conquest and its consequences, see game rules section for details
@@ -303,7 +303,7 @@ UNIQUE UNITS
 * Added 31 new unique units, giving a second unique unit to many major civilisations:
     * China: Firelancer (Arquebusier): required Gunpowder, -1 strength, causes collateral damage
     * Greece: Companion (Horseman): no reduced city strength, starts with March, Blitz
-    * India: Varu (Lancer): requires Ivory instead of Horse, +2 strength, no reduced city strength
+    * India: Varu (Lancer): requires Ivory instead of Horse, +2 strength, can enter Rainforest and Jungle
     * Phoenicia: Sacred Band (Spearman): +25% city strength, starts with Amphibious
     * Phoenicia: Numidian Cavalry (Horseman): no reduced city strength, +50% against Melee units, starts with Disengage and Desert Adaptation
     * Persia: Savaran (Lancer): requires Generalship, -2 strength, no reduced city strength
@@ -332,11 +332,12 @@ UNIQUE UNITS
     * Germany: Fusilier (Musketeer): starts with Drill I and II
     * America: Pioneer (Settler): can fight, strength 10, +50% open terrain strength, cities founded in North America receive a free worker and defender
     * Colombia: Llanero (Hussar): +50% attack against Musketeer, Rifleman, starts with Mobility
-* Changed seven unique units:
+* Changed eight unique units:
+    * Chinese Cho-Ko-Nu: reduced number of units affected by collateral damage
     * Roman Legion: removed bonus against Axeman
     * Ethiopian Askari renamed to Oromo Warrior, now a barbarian unique unit
     * Korean Hwacha (replaces Bombard): +3 strength, -75% city attack
-    * Russian Cossack (replaces Pistolier): +2 strength, +50% against Cannon, Artillery
+    * Russian Cossack (replaces Hussar): requires Measurement, +25% against light and heavy cavalry
     * Mughal Siege Elephant: +1 strength and +25% against Archers and Gunpowder units
     * Mounted Brave (replaces Pistolier): +20% retreat chance
     * Mexican Rurales renamed to Rural
