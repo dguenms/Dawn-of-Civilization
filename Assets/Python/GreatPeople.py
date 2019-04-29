@@ -1148,116 +1148,154 @@ iCivKorea : {
 	iGreatProphet : [
 		"Marananta", # 4th
 		iMedieval,
+		"Uisang", # 7th
 		"Doseon", # 9th
 		"Jinul", # 12th
-		"Uicheon", # 12th
-		"Baegun", # 13th
 		"An Hyang", # 13th
+		"Gil Jae", # 14th
+		"Bo-u", # 14th
 		iRenaissance,
 		"Yi Hwang", # 16th
 		"Yi I", # 16th
+		"Jo Shik", # 16th
+		"Song Si-Yeol", # 17th
 		"Yi Seung-hun", # 18th
 		iIndustrial,
 		"Choe Je-u", # 19th
 		iGlobal,
-		"Sun Myung Moon", # 20th
+		"Moon Sun-Myung", # 20th
+		"Kim Su-Hwan", #20th
 	],
 	iGreatArtist : [
 		"fYeo Ok", # Gojoseon era
+		"Sol Geo", # Silla
 		iMedieval,
 		"Damjing", # 7th
 		"Yi Nyeong", # 9th
 		"Yi Je-hyeon", # 9th
+		"Yangnyeong", # 15th
+		"Anpyeong", # 15th
 		iRenaissance,
 		"fHwang Jini", # 16th
 		"fSin Saimdang", # 16th
 		"fHeo Nanseolheon", # 16th
-		"Yan Duseo", # 17th
+		"Jeong Seon", # 17th
+		"Yun Duseo", # 17th
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
 		iGlobal,
+		"Paik Nam-Jun", # 20th
 		"fNa Hye-sok", # 20th
 		"Im Kwon-taek", # 20th
 		"Seo Tae-Ji", # 20th
 	],
 	iGreatScientist : [
-		"Uisan", # 7th
 		"Wonhyo", # 7th
 		"Kim Am", # 8th
-		iRenaissance,
+		"Seo Gyung-Deok", # 15th
 		"Jeong Inji", # 15th
 		"Seong Sammun", # 15th
-		"Yu Seong-won", # 15th
+		iRenaissance,
 		"Heo Jun", # 16th
+		"Choi Seok-Jeong", # 17th
+		"Hong Jeong-Ha", # 17th
 		"fSeo Yeongsuhap", # 18th
+		"Hong Dae-Yong", # 18th
+		"Park Jiwon", # 18th
 		iIndustrial,
-		"Jeong Yakyong", # 19th
-		"Gim Jeong-ho", # 19th
+		"Jeong Yak-Yong", # 19th
 		iGlobal,
 		"Woo Jang-choon", # 20th
 	],
 	iGreatMerchant : [
 		"Hyecho", # 8th
+		"Uicheon", # 12th
 		"Kim Sa-hyeong", # 15th
 		"Yi Mu", # 15th
 		"Yi Hoe", # 15th
-		"fGim Man-deok", # 18th
+		iRenaissance,
+		"fKim Man-deok", # 18th
+		"Im Sang-Ok", # 18th
+		"Park Jega", #1 8th
 		iIndustrial, 
+		"Kim Jeong-ho", # 19th
 		"fPaek Son-haeng", # 19th
 		iGlobal,
+		"Yu Il-Han", # 20th
 		"Lee Byung-chul", # 20th
 		"Chung Ju-yung", # 20th
 	],
 	iGreatEngineer : [
 		"Choe Yun-ui", # 13th
 		"Choe Mu-seon", # 14th
+		"Park Ja-Cheong", # 14th
 		iRenaissance,
-		"Jang Yeong-sil", # 15th
-		"Song I-yeong", # 16th
-		"Bak Jiwon", # 18th
+		"Munjong", # 15th
+		"Jang Yeong-Sil", # 15th
+		"Song I-Yeong", # 16th
 		iGlobal, 
 		"Ri Sung-gi", # 20th
 		"Kim Swoo-geun", # 20th
 	],
 	iGreatStatesman : [
-		"Myeongnim Dap-bo", # 2nd
 		iMedieval,
 		"fSeondeok", # 7th
 		"Choe Chiwon", # 9th
+		"Seo Hui", # 10th
 		"Kim Bu-sik", # 12th
 		"Jeong Dojeon", # 14th
+		"Yi Saek", # 14th
+		"Jeong Mong Ju", # 14th
 		iRenaissance,
-		"Yi Hwang", # 16th
-		"Yi Ji-ham", # 16th
+		"Hwang Hui", # 15th
+		"Ryu Seong-Ryong", # 16th
+		"Yi Won-Ik", # 16th
+		"Che Je-Gong", # 18th
 		iIndustrial,
 		"Heungseon Daewongun", # 19th
-		"Kim Ok-gyun", # 19th
+		"Kim Ok-Gyun", # 19th
 		"fMyeongseong", # 19th
 		iGlobal,
 		"Sin Chaeho", # 20th
 		"Soh Jaipil", # 20th
 		"fRyu Gwansun", # 20th
+		"Rhee Syngman", # 20th
 		"Kim Gu", # 20th
-		"Kim Dae-jung", # 20th
+		"Kim Dae-Jung", # 20th
+		"Kim Young-Sam", # 20th
 	],
 	iGreatGeneral : [
-		"Gim Yu-sin", # 7th
+		"King Gwanggaeto", # 4th
+		"Kim Yu-Sin", # 7th
+		"GyeBaek", # 7th
 		"Eulji Mundeok", # 7th
 		"Yeon Gaesomun", # 7th
+		"Jang Bogo", # 8th
 		"Gang Gam-chan", # 11th
-		"Choe Woo", # 13th
+		"Yun Gwan", # 12th
+		"Choe Young", # 14th
 		"Yi Seong-gye", # 14th
 		iRenaissance,
+		"Nam I", # 15th
 		"Gwon Ryul", # 16th
-		"Yi Sun-sin", # 16th
-		iGlobal, 
+		"Yi Sun-Shin", # 16th
+		"Gwak Jae-Woo", # 16th
+		iGlobal,
+		"Kim Jwa Jin", # 20th
+		"Hong Beom Do", # 20th
 		"Choe Hyon", # 20th
 		"Paik Sun-yup", # 20th
 	],
 	iGreatSpy : [
+		"Park Je Sang", # 4th
+		"Moon Ik Jeom", # 14th
+		"Nongae", # 16th
+		iRenaissance,
+		"Park Mun Soo", # 18th
+		iGlobal,
 		"An Jung-geun", # 20th
-		"Kim Chang-ryong", # 20th
+		"Yi Bong-Chang", # 20th
 		"Kim Jae-gyu", # 20th
 	],
 },
