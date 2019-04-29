@@ -1175,7 +1175,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONSTRUCTION_QUOTE</Tag>
 		<English>"And on the pedestal these words appear: 'My name is Ozymandias, king of kings: Look on my works, ye Mighty, and despair!'"[PARAGRAPH:2]- Percy Bysshe Shelley, Ozymandias</English>
-		<French>"Et sur le pi&#233;destal apparaissent ces mots : 'Je suis Ozymandias, le Roi des Rois ; contemple mon &#339;uvre, &#212; Tout-puissant, et d&#233;sesp&#232;re !'"[PARAGRAPH:2]- Percy Bysshe Shelley</French>
+		<French>"Et sur le pi&#233;destal apparaissent ces mots : 'Je suis Ozymandias, le Roi des Rois ; contemple mon &#339;uvre, &#212; Tout-puissant, et d&#233;sesp&#232;re !'"[PARAGRAPH:2]- Percy Bysshe Shelley, Ozymandias</French>
 		<German>"Und auf dem Sockel erscheinen folgende Worte: 'Mein Name ist Ozymandias, K&#246;nig der K&#246;nige: Betrachtet mein Werk, ihr M&#228;chtigen, und verzweifelt!'"[PARAGRAPH:2]- Percy Bysshe Shelley</German>
 		<Italian>"E sul mio piedistallo saranno incise queste parole: 'Il mio nome &#232; Ozymandias, re dei re; guarda il mio operato e ammutolisci!'"[PARAGRAPH:2]- Percy Bysshe Shelley</Italian>
 		<Spanish>"Y en el pedestal se leen estas palabras: 'Mi nombre es Ozymandias, rey de reyes: &#161;Contemplad mis obras, poderosos, y perded la esperanza!' "[PARAGRAPH:2]- Percy Bysshe Shelley</Spanish>
@@ -1271,8 +1271,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CURRENCY_QUOTE</Tag>
-		<English>"Everything is worth what its purchaser will pay for it."[PARAGRAPH:2]- Publilius Syrus</English>
-		<French>"Les choses n'ont que le prix qu'y veut mettre l'acheteur."[PARAGRAPH:2]- Publilius Syrus</French>
+		<English>"Everything is worth what its purchaser will pay for it."[PARAGRAPH:2]- Publilius Syrus, Sentences</English>
+		<French>"Les choses n'ont que le prix qu'y veut mettre l'acheteur."[PARAGRAPH:2]- Publilius Syrus, Sentences</French>
 		<German>"Jedes Ding ist wert, was der K&#228;ufer daf&#252;r zahlen will."[PARAGRAPH:2]- Publius Syrus</German>
 		<Italian>"Ogni cosa vale il prezzo che un acquirente &#232; disposto a pagare."[PARAGRAPH:2]- Publilio Siro</Italian>
 		<Spanish>"Las cosas valen lo que su comprador est&#233; dispuesto a pagar por ellas."[PARAGRAPH:2]- Publio Siro</Spanish>
@@ -1574,8 +1574,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINEERING_QUOTE</Tag>
-		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Terre des Hommes</English>
-		<French>"Il semble que la perfection soit atteinte non quand il n'y a plus rien &#224; ajouter, mais quand il n'y a plus rien &#224; retrancher."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Terre des Hommes</French>
+		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Wind, Sand and Stars</English>
+		<French>"Il semble que la perfection soit atteinte non quand il n'y a plus rien &#224; ajouter, mais quand il n'y a plus rien &#224; retrancher."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry, Terre des hommes</French>
 		<German>"Perfektion ist nicht dann erreicht, wenn es nichts mehr hinzuzuf&#252;gen gibt, sondern wenn man nichts mehr weglassen kann."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</German>
 		<Italian>"Un progettista sa di aver raggiunto la perfezione non quando non c'&#232; pi&#249; niente da aggiungere, ma quando non c'&#232; pi&#249; nulla da eliminare."[PARAGRAPH:2]- Antoine de Saint-Exupry</Italian>
 		<Spanish>"Un dise&#241;ador sabe que ha alcanzado la perfecci&#243;n no cuando ya no tiene nada m&#225;s que a&#241;adir, sino cuando no le queda nada m&#225;s que quitar."[PARAGRAPH:2]- Antoine de Saint-Exup&#233;ry</Spanish>
@@ -2554,7 +2554,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_QUOTE</Tag>
 		<English>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</English>
-		<French>"Que les ouvriers s'organisent, que les travailleurs s'assemblent ! Que leur voix cristallis&#233;e d&#233;nonce l'injustice et exige des privil&#232;ges ! Que tous les citoyens charitables les soutiennent !"[PARAGRAPH:2]- John L. Lewis</French>
+		<French>"Que les ouvriers s'organisent, que les travailleurs s'assemblent ! Que leur voix cristallis&#233;e d&#233;nonce l'injustice et exige des privil&#232;ges ! Que chaque citoyen charitable les soutienne !"[PARAGRAPH:2]- John L. Lewis</French>
 		<German>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</German>
 		<Italian>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Italian>
 		<Spanish>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</Spanish>
@@ -4209,7 +4209,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SEAFARING_QUOTE</Tag>
 		<English>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</English>
-		<French>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</French> <!-- needs translation -->
+		<French>"Par temps de bourrasques, hisse tes voiles. Vents et mar&#233;es n'emp&#234;chent point le plaisir."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</French>
 		<German>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</German>
 		<Italian>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</Italian>
 		<Spanish>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell, Loss in Delay</Spanish>
@@ -4301,8 +4301,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SMELTING_QUOTE</Tag>
-		<English>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</English>
-		<French>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- S&#233;n&#232;que</French> <!-- needs translation -->
+		<English>"God has concealed in every place huge masses of silver, copper and iron, and has bestowed upon you the means of discovering them, placing upon the surface of the earth signs of the treasures hidden below; and yet do you say that you have received no benefit?"[PARAGRAPH:2]- Seneca, On Benefits</English>
+		<French>"Cette immense quantit&#233; d'argent, de fer et d'airain cach&#233;e dans les entrailles de la terre, livr&#233;e &#224; vos industrieuses recherches, et dont le secret vous est r&#233;v&#233;l&#233; par maints signes ext&#233;rieurs, n'est donc pas &#224; votre gr&#233; un bienfait ?"[PARAGRAPH:2]- S&#233;n&#232;que, Des bienfaits</French>
 		<German>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</German>
 		<Italian>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</Italian>
 		<Spanish>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</Spanish>
@@ -4823,7 +4823,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TRANSHUMANISM_QUOTE</Tag>
 		<English>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</English>
-		<French>"Que r&#233;serve le futur &#224; cet &#234;tre &#233;trange, n&#233; d'un souffle, fait de tissus p&#233;rissables, et pourtant immortel et dot&#233; de pouvoirs dignes d'un dieu ?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</French>
+		<French>"Que r&#233;serve le futur &#224; cet &#234;tre &#233;trange, n&#233; d'un souffle, fait de tissus p&#233;rissables, et pourtant immortel et dot&#233; de pouvoirs dignes d'un dieu ?"[PARAGRAPH:2]- Nikola Tesla, La plus grande r&#233;ussite de l'Homme</French>
 		<German>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</German>
 		<Italian>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</Italian>
 		<Spanish>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla, Man's Greatest Achievement</Spanish>
