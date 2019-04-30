@@ -1158,7 +1158,7 @@ iCivKorea : {
 		"Yi Hwang", # 16th
 		"Yi I", # 16th
 		"Jo Shik", # 16th
-		"Song Si-Yeol", # 17th
+		"Song Si-yeol", # 17th
 		"Yi Seung-hun", # 18th
 		iIndustrial,
 		"Choe Je-u", # 19th
@@ -1185,26 +1185,26 @@ iCivKorea : {
 		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
 		iGlobal,
-		"Paik Nam-Jun", # 20th
+		"Paik Nam-jun", # 20th
 		"fNa Hye-sok", # 20th
 		"Im Kwon-taek", # 20th
-		"Seo Tae-Ji", # 20th
+		"Seo Taeji", # 20th
 	],
 	iGreatScientist : [
 		"Wonhyo", # 7th
 		"Kim Am", # 8th
-		"Seo Gyung-Deok", # 15th
+		"Seo Gyung-deok", # 15th
 		"Jeong Inji", # 15th
 		"Seong Sammun", # 15th
 		iRenaissance,
 		"Heo Jun", # 16th
-		"Choi Seok-Jeong", # 17th
-		"Hong Jeong-Ha", # 17th
+		"Choi Seok-jeong", # 17th
+		"Hong Jeong-ha", # 17th
 		"fSeo Yeongsuhap", # 18th
-		"Hong Dae-Yong", # 18th
+		"Hong Dae-yong", # 18th
 		"Park Jiwon", # 18th
 		iIndustrial,
-		"Jeong Yak-Yong", # 19th
+		"Jeong Yak-yong", # 19th
 		iGlobal,
 		"Woo Jang-choon", # 20th
 	],
@@ -1216,7 +1216,7 @@ iCivKorea : {
 		"Yi Hoe", # 15th
 		iRenaissance,
 		"fKim Man-deok", # 18th
-		"Im Sang-Ok", # 18th
+		"Im Sang-ok", # 18th
 		"Park Jega", #1 8th
 		iIndustrial, 
 		"Kim Jeong-ho", # 19th
@@ -1229,11 +1229,11 @@ iCivKorea : {
 	iGreatEngineer : [
 		"Choe Yun-ui", # 13th
 		"Choe Mu-seon", # 14th
-		"Park Ja-Cheong", # 14th
+		"Park Ja-cheong", # 14th
 		iRenaissance,
 		"Munjong", # 15th
-		"Jang Yeong-Sil", # 15th
-		"Song I-Yeong", # 16th
+		"Jang Yeong-sil", # 15th
+		"Song I-yeong", # 16th
 		iGlobal, 
 		"Ri Sung-gi", # 20th
 		"Kim Swoo-geun", # 20th
@@ -1246,15 +1246,15 @@ iCivKorea : {
 		"Kim Bu-sik", # 12th
 		"Jeong Dojeon", # 14th
 		"Yi Saek", # 14th
-		"Jeong Mong Ju", # 14th
+		"Jeong Mongju", # 14th
 		iRenaissance,
 		"Hwang Hui", # 15th
-		"Ryu Seong-Ryong", # 16th
-		"Yi Won-Ik", # 16th
+		"Ryu Seong-ryong", # 16th
+		"Yi Won-ik", # 16th
 		"Che Je-Gong", # 18th
 		iIndustrial,
 		"Heungseon Daewongun", # 19th
-		"Kim Ok-Gyun", # 19th
+		"Kim Ok-gyun", # 19th
 		"fMyeongseong", # 19th
 		iGlobal,
 		"Sin Chaeho", # 20th
@@ -1262,13 +1262,13 @@ iCivKorea : {
 		"fRyu Gwansun", # 20th
 		"Rhee Syngman", # 20th
 		"Kim Gu", # 20th
-		"Kim Dae-Jung", # 20th
-		"Kim Young-Sam", # 20th
+		"Kim Dae-jung", # 20th
+		"Kim Young-sam", # 20th
 	],
 	iGreatGeneral : [
 		"Gwanggaeto", # 4th
-		"Kim Yu-Sin", # 7th
-		"GyeBaek", # 7th
+		"Kim Yu-sin", # 7th
+		"Gyebaek", # 7th
 		"Eulji Mundeok", # 7th
 		"Yeon Gaesomun", # 7th
 		"Jang Bogo", # 8th
@@ -1279,23 +1279,23 @@ iCivKorea : {
 		iRenaissance,
 		"Nam I", # 15th
 		"Gwon Ryul", # 16th
-		"Yi Sun-Shin", # 16th
-		"Gwak Jae-Woo", # 16th
+		"Yi Sun-shin", # 16th
+		"Gwak Jae-woo", # 16th
 		iGlobal,
-		"Kim Jwa Jin", # 20th
-		"Hong Beom Do", # 20th
+		"Kim Jwa-jin", # 20th
+		"Hong Beom-do", # 20th
 		"Choe Hyon", # 20th
 		"Paik Sun-yup", # 20th
 	],
 	iGreatSpy : [
-		"Park Je Sang", # 4th
-		"Moon Ik Jeom", # 14th
+		"Park Je-sang", # 4th
+		"Moon Ik-jeom", # 14th
 		"Nongae", # 16th
 		iRenaissance,
-		"Park Mun Soo", # 18th
+		"Park Mun-soo", # 18th
 		iGlobal,
 		"An Jung-geun", # 20th
-		"Yi Bong-Chang", # 20th
+		"Yi Bong-chang", # 20th
 		"Kim Jae-gyu", # 20th
 	],
 },
