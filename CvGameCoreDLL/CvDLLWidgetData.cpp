@@ -3300,6 +3300,19 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 						iThenWorkRate += pSelectedUnit->workRate(true);
 					}
 
+					// Leoreth: Chateau Frontenac effect, turn indication fix by merijn
+					if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)FRONTENAC))
+					{
+						if (GC.getBuildInfo(eBuild).getTechPrereq() == RAILROAD)
+						{
+							iNowWorkRate *= 150;
+							iNowWorkRate /= 100;
+							
+							iThenWorkRate *= 150;
+							iThenWorkRate /= 100;
+						}
+					}
+
 					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
 				}
 
