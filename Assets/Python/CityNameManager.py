@@ -3658,7 +3658,7 @@ dIdentifiers = {
 	"Nikolaevsk-na-Amure"	:	"Fuyori",
 	"Fukushuu"		:	"Fuzhou",
 	"Fuzhou"		:	"Fuzhou",
-	"Bokju"		:	"Fuzhou",
+	"Bokju"			:	"Fuzhou",
 	"G&#246;teborg"		:	"G&#246;teborg",
 	"Gothenburg"		:	"G&#246;teborg",
 	"Fort Willoughby"	:	"Gaoxiong",
