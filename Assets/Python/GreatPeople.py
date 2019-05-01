@@ -1163,8 +1163,8 @@ iCivKorea : {
 		iIndustrial,
 		"Choe Je-u", # 19th
 		iGlobal,
-		"Moon Sun-Myung", # 20th
-		"Kim Su-Hwan", #20th
+		"Moon Sun-myung", # 20th
+		"Kim Su-hwan", #20th
 	],
 	iGreatArtist : [
 		"fYeo Ok", # Gojoseon era
@@ -1251,7 +1251,7 @@ iCivKorea : {
 		"Hwang Hui", # 15th
 		"Ryu Seong-ryong", # 16th
 		"Yi Won-ik", # 16th
-		"Che Je-Gong", # 18th
+		"Che Je-gong", # 18th
 		iIndustrial,
 		"Heungseon Daewongun", # 19th
 		"Kim Ok-gyun", # 19th
