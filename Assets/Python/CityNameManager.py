@@ -4933,7 +4933,7 @@ dIdentifiers = {
 	"Jianghu"		:	"Toukyou",
 	"Tokio"			:	"Toukyou",
 	"Toukyou"		:	"Toukyou",
-	"Donggyeong"	:	"Toukyou",
+	"Donggyeong"		:	"Toukyou",
 	"Tolosa"		:	"Toulouse",
 	"Toulouse"		:	"Toulouse",
 	"Tuluza"		:	"Toulouse",
