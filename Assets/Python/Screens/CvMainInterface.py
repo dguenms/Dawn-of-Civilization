@@ -3569,8 +3569,10 @@ class CvMainInterface:
 				elif (pHeadSelectedCity.isGovernmentCenter()):
 					szBuffer += u"%c" %(CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR))
 
-				if (pHeadSelectedCity.isPower()):
+				if (pHeadSelectedCity.isDirtyPower()):
 					szBuffer += u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR))
+				elif (pHeadSelectedCity.isPower()):
+					szBuffer += u"%c" %(CyGame().getSymbolID(FontSymbols.CLEAN_POWER_CHAR))
 					
 				szBuffer += u"%s: %d" %(pHeadSelectedCity.getName(), pHeadSelectedCity.getPopulation())
 
