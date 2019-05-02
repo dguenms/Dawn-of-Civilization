@@ -1081,6 +1081,7 @@ enum FontSymbols					// Exposed to Python
 	FAILURE_CHAR,
 	SCALES_CHAR,
 	AIRPORT_CHAR,
+	CLEAN_POWER_CHAR,
 
 #ifdef _USRDLL
 	MAX_NUM_SYMBOLS

@@ -731,6 +731,8 @@ void CyEnumsPythonInterface()
 		.value("SUCCESS_CHAR", SUCCESS_CHAR)
 		.value("FAILURE_CHAR", FAILURE_CHAR)
 		.value("SCALES_CHAR", SCALES_CHAR)
+		.value("AIRPORT_CHAR", AIRPORT_CHAR)
+		.value("CLEAN_POWER_CHAR", CLEAN_POWER_CHAR)
 		.value("MAX_NUM_SYMBOLS", MAX_NUM_SYMBOLS)
 		;
 

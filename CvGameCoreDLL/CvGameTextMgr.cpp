@@ -18599,9 +18599,13 @@ void CvGameTextMgr::buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvC
 
 	if (pCity->getTeam() == GC.getGameINLINE().getActiveTeam())
 	{
-		if (pCity->isPower())
+		if (pCity->isDirtyPower())
 		{
 			szBuffer.append(CvWString::format(L"%c", gDLL->getSymbolID(POWER_CHAR)));
+		}
+		else if (pCity->isPower())
+		{
+			szBuffer.append(CvWString::format(L"%c", gDLL->getSymbolID(CLEAN_POWER_CHAR)));
 		}
 	}
 
