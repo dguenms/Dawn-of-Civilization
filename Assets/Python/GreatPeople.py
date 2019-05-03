@@ -1182,7 +1182,6 @@ iCivKorea : {
 		"Jeong Seon", # 17th
 		"Yun Duseo", # 17th
 		"Kim Hong-do", # 18th
-		"Jeong Seon", # 18th
 		"Shin Yun-bok", # 18th
 		iGlobal,
 		"Paik Nam-jun", # 20th
