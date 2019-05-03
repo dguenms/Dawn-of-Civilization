@@ -1179,7 +1179,6 @@ iCivKorea : {
 		"fHwang Jini", # 16th
 		"fSin Saimdang", # 16th
 		"fHeo Nanseolheon", # 16th
-		"Jeong Seon", # 17th
 		"Yun Duseo", # 17th
 		"Kim Hong-do", # 18th
 		"Jeong Seon", # 18th
