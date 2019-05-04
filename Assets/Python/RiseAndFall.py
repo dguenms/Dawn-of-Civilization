@@ -1866,12 +1866,10 @@ class RiseAndFall:
 					if lColonialCities:
 						lCities = lColonialCities
 						
-				for city in lCities:
-					if not city.isCoastal(20):
-						lCities.remove(city)
+				lCoastalCities = [city for city in lCities if city.isCoastal(20)]
 						
-				if lCities:
-					city = utils.getRandomEntry(lCities)
+				if lCoastalCities:
+					city = utils.getRandomEntry(lCoastalCities)
 					tPlot = (city.getX(), city.getY())
 					tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 					if not tSeaPlot: tSeaPlot = tPlot
