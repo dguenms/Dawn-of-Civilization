@@ -13133,7 +13133,7 @@
 			<UnitCombatPromotions/>
 			<UnitClassPromotions>
 				<UnitClassPromotion>
-					<UnitClass>UNITCLASS_PIKEMAN</UnitClass>
+					<UnitClass>UNITCLASS_HEAVY_SPEARMAN</UnitClass>
 					<UnitPromotion>PROMOTION_SHOCK</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>

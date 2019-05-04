@@ -1612,11 +1612,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HALBERD_1</Tag>
-		<English>Issue the new weapons to all of our pikemen.</English>
-		<French>Donner les nouvelles armes &#224; tous nos piquiers.</French>
-		<German>Gebt die neuen Waffen an alle Pikeniere aus.</German>
-		<Italian>Equipaggia tutti i nostri picchieri con le nuove armi.</Italian>
-		<Spanish>Que todos nuestros piqueros reciban las nuevas armas.</Spanish>
+		<English>Issue the new weapons to all of our heavy spearmen.</English>
+		<French>Donner les nouvelles armes &#224; tous nos hallebardiers.</French>
+		<German>Issue the new weapons to all of our heavy spearmen.</German>
+		<Italian>Issue the new weapons to all of our heavy spearmen.</Italian>
+		<Spanish>Issue the new weapons to all of our heavy spearmen.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HAMBURGER_JOINT_1</Tag>
