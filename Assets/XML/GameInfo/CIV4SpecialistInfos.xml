@@ -423,7 +423,7 @@
 			<Civilopedia>TXT_KEY_SPECIALIST_RESEARCH_SATELLITE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_RESEARCH_SATELLITE_STRATEGY</Strategy>
 			<Help/>
-			<Texture>Art/Interface/MainScreen/CityScreen/Satellite.dds</Texture>
+			<Texture>Art/Interface/MainScreen/CityScreen/Satellite_Research.dds</Texture>
 			<bVisible>0</bVisible>
 			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
@@ -448,7 +448,7 @@
 			<Civilopedia>TXT_KEY_SPECIALIST_COMMERCIAL_SATELLITE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_COMMERCIAL_SATELLITE_STRATEGY</Strategy>
 			<Help/>
-			<Texture>Art/Interface/MainScreen/CityScreen/Satellite.dds</Texture>
+			<Texture>Art/Interface/MainScreen/CityScreen/Satellite_Commerce.dds</Texture>
 			<bVisible>0</bVisible>
 			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
@@ -472,7 +472,7 @@
 			<Civilopedia>TXT_KEY_SPECIALIST_MILITARY_SATELLITE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_MILITARY_SATELLITE_STRATEGY</Strategy>
 			<Help/>
-			<Texture>Art/Interface/MainScreen/CityScreen/Satellite.dds</Texture>
+			<Texture>Art/Interface/MainScreen/CityScreen/Satellite_Military.dds</Texture>
 			<bVisible>0</bVisible>
 			<bNoGlobalEffects>1</bNoGlobalEffects>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
