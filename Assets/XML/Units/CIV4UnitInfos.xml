@@ -483,6 +483,10 @@
 					<BuildType>BUILD_NATURE_RESERVE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
+				<Build>
+					<BuildType>BUILD_SOLAR_COLLECTOR</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
 			</Builds>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -614,6 +618,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_NATURE_RESERVE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_SOLAR_COLLECTOR</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -749,6 +757,10 @@
 					<BuildType>BUILD_NATURE_RESERVE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
+				<Build>
+					<BuildType>BUILD_SOLAR_COLLECTOR</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
 			</Builds>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -880,6 +892,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_NATURE_RESERVE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_SOLAR_COLLECTOR</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
