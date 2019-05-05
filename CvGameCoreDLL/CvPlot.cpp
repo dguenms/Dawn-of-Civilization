@@ -11239,7 +11239,7 @@ float CvPlot::getAqueductSourceWeight() const
 {
 	float fWeight = 0.0f;
 
-	if (at(97, 38))
+	if (at(97, 38) || at(71, 59))
 	{
 		return fWeight;
 	}
