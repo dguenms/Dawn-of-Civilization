@@ -17985,6 +17985,31 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 	CvPlayer& owner = GET_PLAYER(city.getOwnerINLINE());
 
 	int iBaseProduction = city.getBaseYieldRate(eYieldType);
+
+	if (eYieldType == YIELD_FOOD)
+	{
+		// Harappan UP: Sanitation (positive health contributes to city growth)
+		if (city.getOwnerINLINE() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
+		{
+			if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * city.getBaseYieldRateModifier(YIELD_FOOD) - city.foodConsumption() * 100 > 1 && city.goodHealth() > city.badHealth())
+			{
+				iBaseProduction += city.goodHealth() - city.badHealth();
+			}
+		}
+
+		// Harbour Opera effect
+		if (city.isHasBuildingEffect((BuildingTypes)HARBOUR_OPERA))
+		{
+			iBaseProduction += std::max(0, (city.happyLevel() - city.unhappyLevel()) / 2);
+		}
+
+		// Lotus Temple effect
+		if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
+		{
+			iBaseProduction += city.getReligionCount() - (GET_PLAYER(city.getOwnerINLINE()).getStateReligion() != NO_RELIGION && city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()) ? 1 : 0);
+		}
+	}
+
 	szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_BASE_YIELD", info.getTextKeyWide(), iBaseProduction, info.getChar()));
 	szBuffer.append(NEWLINE);
 
