@@ -19076,7 +19076,7 @@ int CvCity::countSatellites() const
 bool CvCity::canSatelliteJoin() const
 {
 	int iSpecialistSlots = 0;
-	int iSatellites = 0;
+	int iSatellites = 1;
 
 	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
@@ -19084,11 +19084,11 @@ bool CvCity::canSatelliteJoin() const
 
 		if (GC.getSpecialistInfo((SpecialistTypes)iI).isSatellite())
 		{
-			iSatellites += getSpecialistCount((SpecialistTypes)iI);
+			iSatellites += getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI);
 		}
 	}
 
-	return iSatellites < iSpecialistSlots / 5;
+	return 5 * iSatellites < iSpecialistSlots;
 }
 
 int CvCity::getSpecialistGreatPeopleRateChange(SpecialistTypes eSpecialist) const
