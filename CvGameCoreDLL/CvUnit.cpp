@@ -2704,7 +2704,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		{
 			bool bValid = false;
 
-			if (pPlot->isAlliedCity(*this, true) || isRivalTerritory())
+			if (pPlot->isAlliedCity(*this, true) || (isRivalTerritory() && pPlot->isCity()))
 			{
 				bValid = true;
 
