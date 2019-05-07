@@ -19164,11 +19164,26 @@ void CvCity::applyBuildingDamage(int iDamage)
 
 	log(CvWString::format(L"apply building damage: %d", iRemainingDamage));
 
+	if (iRemainingDamage == 0)
+	{
+		return;
+	}
+
 	std::vector<int> buildings;
 
 	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		if (GC.getBuildingInfo((BuildingTypes)iI).getDefenseModifier() > 0)
+		{
+			continue;
+		}
+
+		if (GC.getBuildingInfo((BuildingTypes)iI).getProductionCost() == 0)
+		{
+			continue;
+		}
+
+		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 0)
 		{
 			continue;
 		}
