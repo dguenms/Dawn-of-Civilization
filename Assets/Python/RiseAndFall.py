@@ -2385,7 +2385,7 @@ class RiseAndFall:
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 		elif iCiv == iNetherlands:
-			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
+			utils.makeUnit(iMusketeer, iCiv, tPlot, 3)
 			utils.makeUnit(iPikeman, iCiv, tPlot, 3)
 		elif iCiv == iMali:
 			utils.makeUnit(iKelebolo, iCiv, tPlot, 4)
@@ -2813,7 +2813,7 @@ class RiseAndFall:
 				utils.makeUnit(iMissionary + iReligion, iCiv, tPlot, 1)
 		elif iCiv == iArgentina:
 			utils.createSettlers(iCiv, 2)
-			utils.makeUnit(iMusketman, iCiv, tPlot, 3, "", 2)
+			utils.makeUnit(iMusketeer, iCiv, tPlot, 3, "", 2)
 			utils.makeUnit(iGrenadierCavalry, iCiv, tPlot, 3, "", 2)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2, "", 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
@@ -2821,14 +2821,14 @@ class RiseAndFall:
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 2)
 			if utils.getHumanID() != iArgentina:
-				utils.makeUnitAI(iMusketman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-				utils.makeUnit(iMusketman, iCiv, tPlot, 2, "", 2)
+				utils.makeUnitAI(iMusketeer, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+				utils.makeUnit(iMusketeer, iCiv, tPlot, 2, "", 2)
 				utils.makeUnit(iGrenadierCavalry, iCiv, tPlot, 2, "", 2)
 				utils.makeUnit(iCannon, iCiv, tPlot, 2, "", 2)
 		elif iCiv == iBrazil:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 3)
-			utils.makeUnit(iMusketman, iCiv, tPlot, 3)
+			utils.makeUnit(iMusketeer, iCiv, tPlot, 3)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
@@ -2860,11 +2860,11 @@ class RiseAndFall:
 				utils.makeUnit(iBombard, iCiv, tPlot, 3)
 		elif iCiv == iAztecs:
 			utils.makeUnit(iDragoon, iCiv, tPlot, 4, "", 2)
-			utils.makeUnit(iMusketman, iCiv, tPlot, 5, "", 2)
+			utils.makeUnit(iMusketeer, iCiv, tPlot, 5, "", 2)
 			utils.makeUnit(iGrenadier, iCiv, tPlot, 2, "", 2)
 			utils.makeUnit(iWorker, iCiv, tPlot, 3, "", 2)
 		elif iCiv == iMaya:
-			utils.makeUnit(iMusketman, iCiv, tPlot, 5, "", 2)
+			utils.makeUnit(iMusketeer, iCiv, tPlot, 5, "", 2)
 			utils.makeUnit(iCannon, iCiv, tPlot, 5, "", 2)
 			utils.makeUnit(iAlbionLegion, iCiv, tPlot, 5, "", 2)
 			utils.makeUnit(iWorker, iCiv, tPlot, 3, "", 2)
