@@ -72,6 +72,9 @@ def handleNewCiv(iPlayer):
 	data.bAlreadySwitched = True
 	gc.getPlayer(iPlayer).setPlayable(True)
 	
+	if gc.getGame().getWinner() == iPreviousPlayer:
+		gc.getGame().setWinner(-1, -1)
+	
 	data.resetHumanStability()
 
 	for city in utils.getCityList(iPlayer):
