@@ -15974,6 +15974,7 @@
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
 			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_GREAT_PROPHET_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bGoldenAge>1</bGoldenAge>
 			<bGreatMission>1</bGreatMission>
@@ -17158,7 +17159,7 @@
 			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AZTEC_SLAVE</Description>
 			<Civilopedia>TXT_KEY_UNIT_AZTEC_SLAVE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_SLAVE_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_AZTEC_SLAVE_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_SLAVE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bSlave>1</bSlave>
