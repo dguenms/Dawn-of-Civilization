@@ -421,7 +421,7 @@ class CvRFCEventHandler:
 			if gc.getPlayer(iOwner).getNumCities() > 0:
 				city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				if city: 
-					city.changeFood(5)
+					city.changeFood(utils.getTurns(5))
 					if utils.getHumanID() == pWinningUnit.getOwner(): data.iTeotlSacrifices += 1
 					sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
 					CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MAYA_HOLKAN_EFFECT", (sAdjective, pLosingUnit.getNameKey(), 5, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

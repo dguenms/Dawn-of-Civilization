@@ -5699,7 +5699,7 @@ class CvMainInterface:
 			iX = self.pPushedButtonUnit.getX()
 			iY = self.pPushedButtonUnit.getY()
 			city = gc.getMap().plot(iX, iY).getPlotCity()
-			city.changeHappinessTimer(5)
+			city.changeHappinessTimer(utils.getTurns(5))
 			city.setWeLoveTheKingDay(True)
 			if utils.getHumanID() == self.pPushedButtonUnit.getOwner(): data.iTeotlSacrifices += 1
 			self.pPushedButtonUnit.kill(false, city.getOwner())
