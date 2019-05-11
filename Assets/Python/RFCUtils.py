@@ -1759,7 +1759,7 @@ class RFCUtils:
 		return ""
 		
 	def isGreatPeopleBuilding(self, iBuilding):
-		for iUnit in lGreatPeopleUnits:
+		for iUnit in lGreatPeopleUnits + [iGreatGeneral, iGreatSpy]:
 			unit = gc.getUnitInfo(iUnit)
 			if unit.getBuildings(iBuilding):
 				return True

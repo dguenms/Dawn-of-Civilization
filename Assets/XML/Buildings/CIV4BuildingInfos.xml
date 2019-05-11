@@ -7505,8 +7505,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ADMINISTRATIVE_CENTER</ArtDefineTag>
 			<PrereqTech>TECH_POLITICS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>

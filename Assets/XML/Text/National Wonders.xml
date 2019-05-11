@@ -179,11 +179,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>La [COLOR_BUILDING_TEXT]bourse[COLOR_REVERT] augmente la production de richesse d'une ville et les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</English>
+		<French>La [COLOR_BUILDING_TEXT]bourse[COLOR_REVERT] augmente la production de richesse d'une ville.</French>
+		<German>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRONWORKS</Tag>

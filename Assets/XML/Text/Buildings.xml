@@ -39,11 +39,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities.</English>
+		<French>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities.</French>
+		<German>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST</Tag>
