@@ -15,11 +15,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Minuteman[COLOR_REVERT], the American replacement for the the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY</Tag>
@@ -267,11 +267,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Cataphract[COLOR_REVERT], the Byzantine replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAN_DIPLOMATIC_MISSION</Tag>
@@ -419,11 +419,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_GALLIC_WARRIOR_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT], the Celtic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires an [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT], the Celtic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires an [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT], the Celtic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires an [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT], the Celtic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires an [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT], the Celtic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires an [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT] is a barbarian unit that spawns in Europe from 650 to 110 BC.</English>
+		<French>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT] is a barbarian unit that spawns in Europe from 650 to 110 BC.</French>
+		<German>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT] is a barbarian unit that spawns in Europe from 650 to 110 BC.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT] is a barbarian unit that spawns in Europe from 650 to 110 BC.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT] is a barbarian unit that spawns in Europe from 650 to 110 BC.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH</Tag>
@@ -531,31 +531,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ENGLISH_REDCOAT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], causes collateral damage.</English>
-		<French>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], causes collateral damage.</French>
-		<German>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], causes collateral damage.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], causes collateral damage.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], causes collateral damage.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI</Tag>
-		<English>Askari</English>
-		<French>
-			<Text>Askari</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Askari</German>
-		<Italian>Askari</Italian>
-		<Spanish>Askari</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
-		<French>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</French>
-		<German>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], causes collateral damage.</English>
+		<French>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], causes collateral damage.</French>
+		<German>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], causes collateral damage.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], causes collateral damage.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], causes collateral damage.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_1</Tag>
@@ -651,11 +631,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</English>
-		<French>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</French>
-		<German>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CARRIER_STRATEGY</Tag>
@@ -791,7 +771,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GERMAN_PANZER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Panzer[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Tank[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and has a combat bonus against the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] units.</English>
+		<English>The [COLOR_UNIT_TEXT]Panzer[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Tank[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</English>
 		<French>The [COLOR_UNIT_TEXT]Panzer[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Tank[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and has a combat bonus against the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] units.</French>
 		<German>The [COLOR_UNIT_TEXT]Panzer[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Tank[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and has a combat bonus against the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] units.</German>
 		<Italian>The [COLOR_UNIT_TEXT]Panzer[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Tank[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and has a combat bonus against the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] units.</Italian>
@@ -859,11 +839,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREEK_HOPLITE_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has one additional strength point and begins with the [COLOR_HIGHLIGHT_TEXT]Cover[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has one additional strength point and begins with the [COLOR_HIGHLIGHT_TEXT]Cover[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has one additional strength point and begins with the [COLOR_HIGHLIGHT_TEXT]Cover[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has one additional strength point and begins with the [COLOR_HIGHLIGHT_TEXT]Cover[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has one additional strength point and begins with the [COLOR_HIGHLIGHT_TEXT]Cover[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSE_ARCHER_STRATEGY</Tag>
@@ -875,11 +855,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_LANDSKNECHT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Melee Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER</Tag>
@@ -958,20 +938,12 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and has a higher chance to withdraw from combat.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Punjabi Worker[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], is faster.</English>
-		<French>The [COLOR_UNIT_TEXT]Punjabi Worker[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], is faster.</French>
-		<German>The [COLOR_UNIT_TEXT]Punjabi Worker[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], is faster.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Punjabi Worker[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], is faster.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Punjabi Worker[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], is faster.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
-		<French>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</French>
-		<German>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
@@ -1167,11 +1139,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KHMER_BALLISTA_ELEPHANT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</English>
-		<French>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</French>
-		<German>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Ballista Elephant[COLOR_REVERT], the Khmer replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], will attack [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] in a stack before other units in combat outside of cities and has a combat bonus when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JET_FIGHTER_STRATEGY</Tag>
@@ -1259,11 +1231,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KOREAN_HWACHA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points.</English>
+		<French>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points.</French>
+		<German>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LION_STRATEGY</Tag>
@@ -1362,12 +1334,12 @@
 		<Spanish>[COLOR_UNIT_TEXT]Missile Cruiser[COLOR_REVERT] can bombard city defenses, causes collateral damage and can carry four [COLOR_UNIT_TEXT]Missile Units[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</Spanish>
+		<Tag>TXT_KEY_UNIT_MEXICAN_RURAL_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rural[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Rural[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Rural[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Rural[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Rural[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAIN_BATTLE_TANK</Tag>
@@ -1475,11 +1447,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOORISH_CORSAIR_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has three less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</English>
-		<French>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has three less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</French>
-		<German>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has three less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has three less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has three less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</English>
+		<French>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</French>
+		<German>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE</Tag>
@@ -1503,11 +1475,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OTTOMAN_JANISSARY_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PARATROOPER_STRATEGY</Tag>
@@ -1611,11 +1583,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and has a combat bonus when attacking cities.</English>
-		<French>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and has a combat bonus when attacking cities.</French>
-		<German>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and has a combat bonus when attacking cities.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and has a combat bonus when attacking cities.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and has a combat bonus when attacking cities.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, has one additional strength point and has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, has one additional strength point and has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, has one additional strength point and has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, has one additional strength point and has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, has one additional strength point and has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OTTOMAN_JANISSARY</Tag>
@@ -1751,11 +1723,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROMAN_LEGION_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive, has a combat bonus against the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] unit and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive, has a combat bonus against the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] unit and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive, has a combat bonus against the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] unit and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive, has a combat bonus against the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] unit and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive, has a combat bonus against the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] unit and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive and can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RIFLEMAN_STRATEGY</Tag>
@@ -1835,11 +1807,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</English>
-		<French>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</French>
-		<German>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</English>
+		<French>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</French>
+		<German>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Winged Hussar[COLOR_REVERT], the Polish replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_POLYNESIAN_WAKA</Tag>
@@ -2099,11 +2071,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, two first strikes and two cargo spaces.</English>
-		<French>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, two first strikes and two cargo spaces.</French>
-		<German>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, two first strikes and two cargo spaces.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, two first strikes and two cargo spaces.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, two first strikes and two cargo spaces.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</English>
+		<French>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</French>
+		<German>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
@@ -2119,11 +2091,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</English>
-		<French>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</French>
-		<German>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT] units.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</English>
+		<French>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</French>
+		<German>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Chang Suek[COLOR_REVERT], the Thai replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT], doesn't require [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Heavy Cavalry Units[COLOR_REVERT] and receives an offensive bonus against [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TIBETAN_KHAMPA</Tag>
@@ -2911,11 +2883,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</English>
-		<French>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</French>
-		<German>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March promotion[COLOR_REVERT], have hidden nationality and can attack units of other civilizations without declaring war.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</English>
+		<French>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</French>
+		<German>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_DRONE</Tag>
@@ -3026,6 +2998,14 @@
 		<Spanish>Mobile Guard</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_MOBILE_GUARD_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Mobile Guard[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat and doesn't have a combat penalty when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Mobile Guard[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat and doesn't have a combat penalty when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Mobile Guard[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat and doesn't have a combat penalty when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Mobile Guard[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat and doesn't have a combat penalty when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Mobile Guard[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat and doesn't have a combat penalty when attacking cities.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARABIAN_GHAZI</Tag>
 		<English>Ghazi</English>
 		<French>
@@ -3036,6 +3016,14 @@
 		<German>Ghazi</German>
 		<Italian>Ghazi</Italian>
 		<Spanish>Ghazi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_GHAZI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Ghazi[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], has one additional movement point and has an additional attack bonus when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Ghazi[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], has one additional movement point and has an additional attack bonus when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Ghazi[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], has one additional movement point and has an additional attack bonus when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Ghazi[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], has one additional movement point and has an additional attack bonus when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Ghazi[COLOR_REVERT], the Arabian replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], has one additional movement point and has an additional attack bonus when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ETHIOPIAN_SHOTELAI</Tag>
@@ -3050,6 +3038,14 @@
 		<Spanish>Shotelai</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_SHOTELAI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Shotelai[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Shotelai[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Shotelai[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Shotelai[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Shotelai[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER</Tag>
 		<English>Pioneer</English>
 		<French>
@@ -3060,6 +3056,14 @@
 		<German>Pionier</German>
 		<Italian>Pioneer</Italian>
 		<Spanish>Pioneer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Pioneer[COLOR_REVERT], the American replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can defend itself and spawns a defender and a worker in when it founds a city in North America.</English>
+		<French>The [COLOR_UNIT_TEXT]Pioneer[COLOR_REVERT], the American replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can defend itself and spawns a defender and a worker in when it founds a city in North America.</French>
+		<German>The [COLOR_UNIT_TEXT]Pioneer[COLOR_REVERT], the American replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can defend itself and spawns a defender and a worker in when it founds a city in North America.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Pioneer[COLOR_REVERT], the American replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can defend itself and spawns a defender and a worker in when it founds a city in North America.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Pioneer[COLOR_REVERT], the American replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can defend itself and spawns a defender and a worker in when it founds a city in North America.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREEK_COMPANION</Tag>
@@ -3074,6 +3078,14 @@
 		<Spanish>Companion</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_GREEK_COMPANION_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Companion[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Companion[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Companion[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Companion[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Companion[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Horseman[COLOR_REVERT], doesn't have a combat penalty when attacking cities and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ENGLISH_MAN_OF_WAR</Tag>
 		<English>Man-of-War</English>
 		<French>
@@ -3084,6 +3096,14 @@
 		<German>Man-of-War</German>
 		<Italian>Man-of-War</Italian>
 		<Spanish>Man-of-War</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ENGLISH_MAN_OF_WAR_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Man-of-War[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Ship of the Line[COLOR_REVERT], has three additional strength points, one additional movement point and does collateral damage to one more unit.</English>
+		<French>The [COLOR_UNIT_TEXT]Man-of-War[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Ship of the Line[COLOR_REVERT], has three additional strength points, one additional movement point and does collateral damage to one more unit.</French>
+		<German>The [COLOR_UNIT_TEXT]Man-of-War[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Ship of the Line[COLOR_REVERT], has three additional strength points, one additional movement point and does collateral damage to one more unit.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Man-of-War[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Ship of the Line[COLOR_REVERT], has three additional strength points, one additional movement point and does collateral damage to one more unit.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Man-of-War[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Ship of the Line[COLOR_REVERT], has three additional strength points, one additional movement point and does collateral damage to one more unit.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KOREAN_KOBUKSON</Tag>
@@ -3098,6 +3118,14 @@
 		<Spanish>Kobukson</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_KOREAN_KOBUKSON_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kobukson[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], has two additional strength points and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Kobukson[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], has two additional strength points and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Kobukson[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], has two additional strength points and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Kobukson[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], has two additional strength points and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Kobukson[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], has two additional strength points and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROMAN_BALLISTA</Tag>
 		<English>Ballista</English>
 		<French>
@@ -3108,6 +3136,14 @@
 		<German>Balliste</German>
 		<Italian>Ballista</Italian>
 		<Spanish>Ballista</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROMAN_BALLISTA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Ballista[COLOR_REVERT], the Roman replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has two additional strength points and doesn't have a bonus when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Ballista[COLOR_REVERT], the Roman replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has two additional strength points and doesn't have a bonus when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Ballista[COLOR_REVERT], the Roman replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has two additional strength points and doesn't have a bonus when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Ballista[COLOR_REVERT], the Roman replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has two additional strength points and doesn't have a bonus when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Ballista[COLOR_REVERT], the Roman replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has two additional strength points and doesn't have a bonus when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JAPANESE_ZERO</Tag>
@@ -3122,6 +3158,14 @@
 		<Spanish>Zero</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAPANESE_ZERO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Zero[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Fighter[COLOR_REVERT], is cheaper, can evade interception and has a combat bonus against [COLOR_UNIT_TEXT]Water Units[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Zero[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Fighter[COLOR_REVERT], is cheaper, can evade interception and has a combat bonus against [COLOR_UNIT_TEXT]Water Units[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Zero[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Fighter[COLOR_REVERT], is cheaper, can evade interception and has a combat bonus against [COLOR_UNIT_TEXT]Water Units[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Zero[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Fighter[COLOR_REVERT], is cheaper, can evade interception and has a combat bonus against [COLOR_UNIT_TEXT]Water Units[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Zero[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Fighter[COLOR_REVERT], is cheaper, can evade interception and has a combat bonus against [COLOR_UNIT_TEXT]Water Units[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIAN_SACRED_BAND</Tag>
 		<English>Sacred Band</English>
 		<French>
@@ -3132,6 +3176,14 @@
 		<German>Heilige Bande</German>
 		<Italian>Sacred Band</Italian>
 		<Spanish>Sacred Band</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_SACRED_BAND_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Sacred Band[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has a combat bonus when attacking and defending cities and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Sacred Band[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has a combat bonus when attacking and defending cities and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Sacred Band[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has a combat bonus when attacking and defending cities and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Sacred Band[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has a combat bonus when attacking and defending cities and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Sacred Band[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has a combat bonus when attacking and defending cities and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SPANISH_TERCIO</Tag>
@@ -3146,6 +3198,14 @@
 		<Spanish>Tercio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPANISH_TERCIO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Tercio[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Tercio[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Tercio[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Tercio[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Tercio[COLOR_REVERT], the Spanish replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRENCH_GUARD</Tag>
 		<English>Guard</English>
 		<French>
@@ -3156,6 +3216,14 @@
 		<German>Guard</German>
 		<Italian>Guard</Italian>
 		<Spanish>Guard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FRENCH_GUARD_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Guard[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRENCH_GENDARME</Tag>
@@ -3170,6 +3238,14 @@
 		<Spanish>Gendarme</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_FRENCH_GENDARME_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Gendarme[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Gendarme[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Gendarme[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Gendarme[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Gendarme[COLOR_REVERT], the French replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER</Tag>
 		<English>Grenzer</English>
 		<French>
@@ -3180,6 +3256,14 @@
 		<German>Grenzer</German>
 		<Italian>Grenzer</Italian>
 		<Spanish>Grenzer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Grenzer[COLOR_REVERT], the Holy Roman replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Geography[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT], and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Grenzer[COLOR_REVERT], the Holy Roman replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Geography[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT], and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Grenzer[COLOR_REVERT], the Holy Roman replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Geography[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT], and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Grenzer[COLOR_REVERT], the Holy Roman replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Geography[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT], and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Grenzer[COLOR_REVERT], the Holy Roman replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Geography[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT], and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VIKING_LONGSHIP</Tag>
@@ -3194,6 +3278,14 @@
 		<Spanish>Longship</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_VIKING_LONGSHIP_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Longship[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has two extra movement points, can bombard city defenses, has two cargo spaces and begins with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_DROMON</Tag>
 		<English>Dromon</English>
 		<French>
@@ -3204,6 +3296,14 @@
 		<German>Dromone</German>
 		<Italian>Dromon</Italian>
 		<Spanish>Dromon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BYZANTINE_DROMON_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Dromon[COLOR_REVERT], the Byzantine replacement for the [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT], has one additional strength point and causes collateral damage.</English>
+		<French>The [COLOR_UNIT_TEXT]Dromon[COLOR_REVERT], the Byzantine replacement for the [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT], has one additional strength point and causes collateral damage.</French>
+		<German>The [COLOR_UNIT_TEXT]Dromon[COLOR_REVERT], the Byzantine replacement for the [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT], has one additional strength point and causes collateral damage.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Dromon[COLOR_REVERT], the Byzantine replacement for the [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT], has one additional strength point and causes collateral damage.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Dromon[COLOR_REVERT], the Byzantine replacement for the [COLOR_UNIT_TEXT]War Galley[COLOR_REVERT], has one additional strength point and causes collateral damage.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNAS</Tag>
@@ -3218,6 +3318,14 @@
 		<Spanish>Lanternas</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ITALIAN_LANTERNAS_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</English>
+		<French>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</French>
+		<German>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Lanternas[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Galleass[COLOR_REVERT], is cheaper, has two additional strength points and one additional movement point.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ITALIAN_BALESTRIERE</Tag>
 		<English>Balestriere</English>
 		<French>
@@ -3228,6 +3336,14 @@
 		<German>Balestriere</German>
 		<Italian>Balestriere</Italian>
 		<Spanish>Balestriere</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ITALIAN_BALESTRIERE_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Balestriere[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an additional first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Balestriere[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an additional first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Balestriere[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an additional first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Balestriere[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an additional first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Balestriere[COLOR_REVERT], the Italian replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an additional first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GERMAN_FUSILIER</Tag>
@@ -3242,6 +3358,14 @@
 		<Spanish>Fusilier</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_GERMAN_FUSILIER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Fusilier[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Fusilier[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Fusilier[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Fusilier[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Fusilier[COLOR_REVERT], the Prussian replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOMBIAN_LLANERO</Tag>
 		<English>Llanero</English>
 		<French>
@@ -3254,6 +3378,14 @@
 		<Spanish>Llanero</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOMBIAN_LLANERO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_MONGOLIAN_MANGUDAI</Tag>
 		<English>Mangudai</English>
 		<French>
@@ -3264,6 +3396,14 @@
 		<German>Mangudai</German>
 		<Italian>Mangudai</Italian>
 		<Spanish>Mangudai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MONGOLIAN_MANGUDAI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Mangudai[COLOR_REVERT], the Mongolian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], has two additional strength points and one additional movement point.</English>
+		<French>The [COLOR_UNIT_TEXT]Mangudai[COLOR_REVERT], the Mongolian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], has two additional strength points and one additional movement point.</French>
+		<German>The [COLOR_UNIT_TEXT]Mangudai[COLOR_REVERT], the Mongolian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], has two additional strength points and one additional movement point.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Mangudai[COLOR_REVERT], the Mongolian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], has two additional strength points and one additional movement point.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Mangudai[COLOR_REVERT], the Mongolian replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], has two additional strength points and one additional movement point.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE</Tag>
@@ -3286,6 +3426,14 @@
 		<Spanish>[ICON_BULLET]Guaranteed to Capture [LINK=UNIT_SLAVE]Slaves[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Bandeirante[COLOR_REVERT], the Portuguese replacement for the [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], has four more strength points, can attack, can withdraw from combat and is guaranteed to capture slaves.</English>
+		<French>The [COLOR_UNIT_TEXT]Bandeirante[COLOR_REVERT], the Portuguese replacement for the [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], has four more strength points, can attack, can withdraw from combat and is guaranteed to capture slaves.</French>
+		<German>The [COLOR_UNIT_TEXT]Bandeirante[COLOR_REVERT], the Portuguese replacement for the [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], has four more strength points, can attack, can withdraw from combat and is guaranteed to capture slaves.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Bandeirante[COLOR_REVERT], the Portuguese replacement for the [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], has four more strength points, can attack, can withdraw from combat and is guaranteed to capture slaves.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Bandeirante[COLOR_REVERT], the Portuguese replacement for the [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], has four more strength points, can attack, can withdraw from combat and is guaranteed to capture slaves.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_PERSIAN_SAVARAN</Tag>
 		<English>Savaran</English>
 		<French>
@@ -3296,6 +3444,14 @@
 		<German>Savaran</German>
 		<Italian>Savaran</Italian>
 		<Spanish>Savaran</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSIAN_SAVARAN_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_VARU</Tag>
@@ -3310,6 +3466,14 @@
 		<Spanish>Varu</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_VARU_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], is more expensive, has two additional strength points and one less movement point, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Heavy Mounted Units[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], is more expensive, has two additional strength points and one less movement point, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Heavy Mounted Units[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], is more expensive, has two additional strength points and one less movement point, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Heavy Mounted Units[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], is more expensive, has two additional strength points and one less movement point, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Heavy Mounted Units[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] instead of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], is more expensive, has two additional strength points and one less movement point, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Heavy Mounted Units[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDONESIAN_DJONG</Tag>
 		<English>Djong</English>
 		<French>
@@ -3322,6 +3486,14 @@
 		<Spanish>Djong</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDONESIAN_DJONG_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAMIL_ROCKETEER</Tag>
 		<English>Rocketeer</English>
 		<French>
@@ -3332,6 +3504,14 @@
 		<German>Raketensch&#252;tze</German>
 		<Italian>Rocketeer</Italian>
 		<Spanish>Rocketeer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TAMIL_ROCKETEER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
+		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
+		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>
@@ -3359,11 +3539,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR_STRATEGY</Tag>
-		<English>This early gunpowder unit (the Ethiopian replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT]) is immune to first strikes, has 1 first strike of its own and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
-		<French>Cette unit&#233; primitive &#233;quip&#233;e d'une arme &#224; feu (unit&#233; &#233;thiopienne qui remplace l'[COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT]) est insensible aux premi&#232;res attaques, dispose d'1 premi&#232;re attaque et d&#233;bute avec les promotions :[COLOR_HIGHLIGHT_TEXT]Exercice I[COLOR_REVERT] et [COLOR_HIGHLIGHT_TEXT]Exercice II[COLOR_REVERT].</French>
-		<German>Diese fr&#252;he Schie&#223;pulver-Einheit (die &#228;thiopische Variante des [COLOR_UNIT_TEXT]Musketiers[COLOR_REVERT]) ist gegen Erstangriffe immun, hat selbst 1 Erstangriff zur Verf&#252;gung und startet mit den Bef&#246;rderungen [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] und [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT].</German>
-		<Italian>Questa unit&#224; base con arma da fuoco (l'equivalente etiope del [COLOR_UNIT_TEXT]Soldato con moschetto[COLOR_REVERT]) &#232; immune agli attacchi improvvisi, ha 1 attacco improvviso e comincia con le promozioni [COLOR_HIGHLIGHT_TEXT]Addestramento I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Addestramento II[COLOR_REVERT].</Italian>
-		<Spanish>Esta unidad temprana con armas de p&#243;lvora (el sustituto et&#237;ope del [COLOR_UNIT_TEXT]Mosquete[COLOR_REVERT]) es inmune a los ataques de iniciativa, tiene un ataque de iniciativa propio y empieza con los ascensos [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n I[COLOR_REVERT] e [COLOR_HIGHLIGHT_TEXT]Instrucci&#243;n II[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Oromo Warrior[COLOR_REVERT] is a barbarian unit that spawns in Africa from 1500 to 1700 AD.</English>
+		<French>The [COLOR_UNIT_TEXT]Oromo Warrior[COLOR_REVERT] is a barbarian unit that spawns in Africa from 1500 to 1700 AD.</French>
+		<German>The [COLOR_UNIT_TEXT]Oromo Warrior[COLOR_REVERT] is a barbarian unit that spawns in Africa from 1500 to 1700 AD.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Oromo Warrior[COLOR_REVERT] is a barbarian unit that spawns in Africa from 1500 to 1700 AD.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Oromo Warrior[COLOR_REVERT] is a barbarian unit that spawns in Africa from 1500 to 1700 AD.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_PIONEER_HELP</Tag>
@@ -3386,6 +3566,14 @@
 		<Spanish>Great Bombard</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_OTTOMAN_GREAT_BOMBARD_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Great Bombard[COLOR_REVERT], the Ottoman replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], has a combat bonus when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Great Bombard[COLOR_REVERT], the Ottoman replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], has a combat bonus when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Great Bombard[COLOR_REVERT], the Ottoman replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], has a combat bonus when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Great Bombard[COLOR_REVERT], the Ottoman replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], has a combat bonus when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Great Bombard[COLOR_REVERT], the Ottoman replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], has a combat bonus when attacking cities.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHINESE_FIRELANCER</Tag>
 		<English>Firelancer</English>
 		<French>
@@ -3396,6 +3584,14 @@
 		<German>Firelancer</German>
 		<Italian>Firelancer</Italian>
 		<Spanish>Firelancer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHINESE_FIRELANCER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Firelancer[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Firearms[COLOR_REVERT], has one less strength point and causes collateral damage.</English>
+		<French>The [COLOR_UNIT_TEXT]Firelancer[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Firearms[COLOR_REVERT], has one less strength point and causes collateral damage.</French>
+		<German>The [COLOR_UNIT_TEXT]Firelancer[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Firearms[COLOR_REVERT], has one less strength point and causes collateral damage.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Firelancer[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Firearms[COLOR_REVERT], has one less strength point and causes collateral damage.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Firelancer[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], requires [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Firearms[COLOR_REVERT], has one less strength point and causes collateral damage.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RUSSIAN_STRELETS</Tag>
@@ -3410,6 +3606,14 @@
 		<Spanish>Strelets</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUSSIAN_STRELETS_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Strelets[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has one additional movement point and begins with the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Strelets[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has one additional movement point and begins with the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Strelets[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has one additional movement point and begins with the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Strelets[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has one additional movement point and begins with the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Strelets[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], has one additional movement point and begins with the [COLOR_HIGHLIGHT_TEXT]City Garrison I[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ETHIOPIAN_MEHAL_SEFARI</Tag>
 		<English>Mehal Sefari</English>
 		<French>
@@ -3420,6 +3624,14 @@
 		<German>Mehal Sefari</German>
 		<Italian>Mehal Sefari</Italian>
 		<Spanish>Mehal Sefari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_MEHAL_SEFARI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Mehal Sefari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Mehal Sefari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Mehal Sefari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Mehal Sefari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Mehal Sefari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_STEAMSHIP</Tag>

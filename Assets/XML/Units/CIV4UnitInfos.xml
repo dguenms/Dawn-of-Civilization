@@ -12814,7 +12814,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HEAVY_GALLEY</Description>
 			<Civilopedia>TXT_KEY_UNIT_HEAVY_GALLEY_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_HEAVY_GALLEY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -12910,7 +12910,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BYZANTINE_DROMON</Description>
 			<Civilopedia>TXT_KEY_UNIT_BYZANTINE_DROMON_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_BYZANTINE_DROMON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -13009,7 +13009,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_VIKING_LONGSHIP</Description>
 			<Civilopedia>TXT_KEY_UNIT_VIKING_LONGSHIP_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_VIKING_LONGSHIP_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -13309,7 +13309,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_GALLEASS</Description>
 			<Civilopedia>TXT_KEY_UNIT_GALLEASS_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_GALLEASS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -13404,7 +13404,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_KOREAN_KOBUKSON</Description>
 			<Civilopedia>TXT_KEY_UNIT_KOREAN_KOBUKSON_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_KOREAN_KOBUKSON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -13509,7 +13509,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_INDONESIAN_DJONG</Description>
 			<Civilopedia>TXT_KEY_UNIT_INDONESIAN_DJONG_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_INDONESIAN_DJONG_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -13604,7 +13604,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ITALIAN_LANTERNAS</Description>
 			<Civilopedia>TXT_KEY_UNIT_ITALIAN_LANTERNAS_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_ITALIAN_LANTERNAS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -14516,7 +14516,7 @@
 			<DefaultUnitAI>UNITAI_RESERVE_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_TORPEDO_BOAT</Description>
 			<Civilopedia>TXT_KEY_UNIT_TORPEDO_BOAT_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_TORPEDO_BOAT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -15329,7 +15329,7 @@
 			<DefaultUnitAI>UNITAI_DEFENSE_AIR</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BIPLANE</Description>
 			<Civilopedia>TXT_KEY_UNIT_BIPLANE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_BIPLANE_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_CARRIER_BASE</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
