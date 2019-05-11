@@ -170,8 +170,8 @@ class CvRFCEventHandler:
 		if iPlayer == iOttomans and tCity == (68, 45):
 			utils.setReborn(iOttomans, True)
 			
-		if iPlayer == iTurks:
-			if utils.isAreaControlled(iPlayer, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+		if iTurks in [iPlayer, iOwner]:
+			if utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 				utils.setReborn(iTurks, True)
 			else:
 				utils.setReborn(iTurks, False)
