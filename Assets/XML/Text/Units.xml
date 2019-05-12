@@ -66,14 +66,6 @@
 		<Spanish>[COLOR_UNIT_TEXT]Archers[COLOR_REVERT] have one first strike, have a defensive bonus in cities, have a defensive bonus in hills and have a bonus against [COLOR_UNIT_TEXT]Light Cavalry Units[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_AIRSHIP_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Airships[COLOR_REVERT] can perform air strikes, perform recon missions and see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</English>
-		<French>[COLOR_UNIT_TEXT]Airships[COLOR_REVERT] can perform air strikes, perform recon missions and see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</French>
-		<German>[COLOR_UNIT_TEXT]Airships[COLOR_REVERT] can perform air strikes, perform recon missions and see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</German>
-		<Italian>[COLOR_UNIT_TEXT]Airships[COLOR_REVERT] can perform air strikes, perform recon missions and see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</Italian>
-		<Spanish>[COLOR_UNIT_TEXT]Airships[COLOR_REVERT] can perform air strikes, perform recon missions and see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Grenadier Cavalry[COLOR_REVERT], the Argentine replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units.</English>
 		<French>The [COLOR_UNIT_TEXT]Grenadier Cavalry[COLOR_REVERT], the Argentine replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units.</French>
@@ -131,11 +123,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</English>
-		<French>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</French>
-		<German>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</German>
-		<Italian>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</Italian>
-		<Spanish>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</Spanish>
+		<English>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</English>
+		<French>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</French>
+		<German>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</German>
+		<Italian>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</Italian>
+		<Spanish>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] units, can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AT_INFANTRY_STRATEGY</Tag>
@@ -366,26 +358,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Atlas Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Atlas Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Atlas Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Atlas Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Atlas Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Tag>
-		<English>Atlas Elephant</English>
-		<French>
-			<Text>&#201;l&#233;phant de l'Atlas</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Atlas Elephant</German>
-		<Italian>Atlas Elephant</Italian>
-		<Spanish>Atlas Elephant</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHINESE_CHOKONU_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cho Ko Nu[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an extra first strike and causes collateral damage.</English>
 		<French>The [COLOR_UNIT_TEXT]Cho Ko Nu[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], has an extra first strike and causes collateral damage.</French>
@@ -530,62 +502,6 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT], causes collateral damage.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_1</Tag>
-		<English>Cereal Industry Executive</English>
-		<French>Cadre de l'industrie c&#233;r&#233;ali&#232;re</French>
-		<German>Cereal Industry Executive</German>
-		<Italian>Cereal Industry Executive</Italian>
-		<Spanish>Cereal Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_2</Tag>
-		<English>Fishing Industry Executive</English>
-		<French>Cadre de l'industrie de la p&#234;che</French>
-		<German>Fishing Industry Executive</German>
-		<Italian>Fishing Industry Executive</Italian>
-		<Spanish>Fishing Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_3</Tag>
-		<English>Oil Industry Executive</English>
-		<French>Cadre de l'industrie p&#233;troli&#232;re</French>
-		<German>Oil Industry Executive</German>
-		<Italian>Oil Industry Executive</Italian>
-		<Spanish>Oil Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_4</Tag>
-		<English>Computer Industry Executive</English>
-		<French>Cadre de l'industrie informatique</French>
-		<German>Computer Industry Executive</German>
-		<Italian>Computer Industry Executive</Italian>
-		<Spanish>Computer Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_5</Tag>
-		<English>Textile Industry Executive</English>
-		<French>Cadre de l'industrie textile</French>
-		<German>Textile Industry Executive</German>
-		<Italian>Textile Industry Executive</Italian>
-		<Spanish>Textile Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_6</Tag>
-		<English>Steel Industry Executive</English>
-		<French>Cadre de l'industrie sid&#233;rurgique</French>
-		<German>Steel Industry Executive</German>
-		<Italian>Steel Industry Executive</Italian>
-		<Spanish>Steel Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_EXECUTIVE_7</Tag>
-		<English>Luxury Industry Executive</English>
-		<French>Cadre de l'industrie du luxe</French>
-		<German>Luxury Industry Executive</German>
-		<Italian>Luxury Industry Executive</Italian>
-		<Spanish>Luxury Industry Executive</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXPLORER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Explorers[COLOR_REVERT] can enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend, ignores terrain movement costs and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 		<French>[COLOR_UNIT_TEXT]Explorers[COLOR_REVERT] can enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend, ignores terrain movement costs and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</French>
@@ -676,18 +592,6 @@
 		<German>[COLOR_UNIT_TEXT]Galleons[COLOR_REVERT] have three cargo spaces and can withdraw from combat.</German>
 		<Italian>[COLOR_UNIT_TEXT]Galleons[COLOR_REVERT] have three cargo spaces and can withdraw from combat.</Italian>
 		<Spanish>[COLOR_UNIT_TEXT]Galleons[COLOR_REVERT] have three cargo spaces and can withdraw from combat.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_FRENCH_HEAVY_CANNON</Tag>
-		<English>Heavy Cannon</English>
-		<French>
-			<Text>Canon lourd</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Heavy Cannon</German>
-		<Italian>Heavy Cannon</Italian>
-		<Spanish>Heavy Cannon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Tag>
@@ -1038,26 +942,6 @@
 		<Spanish>[COLOR_UNIT_TEXT]Infantry[COLOR_REVERT] is the basic [COLOR_UNIT_TEXT]Gunpowder Unit[COLOR_REVERT] of the Modern Era.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT</Tag>
-		<English>Orang Laut</English>
-		<French>
-			<Text>Orang Laut</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Orang Laut</German>
-		<Italian>Orang Laut</Italian>
-		<Spanish>Orang Laut</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Orang Laut[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Compass[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Explorationi[COLOR_REVERT] or [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] technologies, has three less strength points, is cheaper, has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit, cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</English>
-		<French>The [COLOR_UNIT_TEXT]Orang Laut[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Compass[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Explorationi[COLOR_REVERT] or [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] technologies, has three less strength points, is cheaper, has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit, cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</French>
-		<German>The [COLOR_UNIT_TEXT]Orang Laut[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Compass[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Explorationi[COLOR_REVERT] or [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] technologies, has three less strength points, is cheaper, has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit, cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</German>
-		<Italian>The [COLOR_UNIT_TEXT]Orang Laut[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Compass[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Explorationi[COLOR_REVERT] or [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] technologies, has three less strength points, is cheaper, has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit, cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Orang Laut[COLOR_REVERT], the Indonesian replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Compass[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Explorationi[COLOR_REVERT] or [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] technologies, has three less strength points, is cheaper, has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit, cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_INFORMATION</Tag>
 		<English>Unit Information</English>
 		<French>Informations d'unit&#233;</French>
@@ -1096,26 +980,6 @@
 		<German>The [COLOR_UNIT_TEXT]Samurai[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource.</German>
 		<Italian>The [COLOR_UNIT_TEXT]Samurai[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource.</Italian>
 		<Spanish>The [COLOR_UNIT_TEXT]Samurai[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ITALIAN_BERSAGLIERE</Tag>
-		<English>Bersagliere</English>
-		<French>
-			<Text>Bersaglier</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Bersagliere</German>
-		<Italian>Bersagliere</Italian>
-		<Spanish>Bersagliere</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ITALIAN_BERSAGLIERE_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</English>
-		<French>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</French>
-		<German>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LANCER</Tag>
@@ -1268,14 +1132,6 @@
 		<German>[COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT] have one first strike, don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</German>
 		<Italian>[COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT] have one first strike, don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</Italian>
 		<Spanish>[COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT] have one first strike, don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LEVY</Tag>
-		<English>Levy</English>
-		<French>Lev&#233;e</French>
-		<German>Miliz</German>
-		<Italian>Levy</Italian>
-		<Spanish>Levy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MOBILE_SAM_STRATEGY</Tag>
@@ -1870,32 +1726,12 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_SELJUK_GHULAM_WARRIOR</Tag>
-		<English>Ghulam Warrior</English>
-		<French>
-			<Text>Guerrier ghulam</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Ghulam-Krieger</German>
-		<Italian>Ghulam Warrior</Italian>
-		<Spanish>Ghulam Warrior</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_SHIP_OF_THE_LINE_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT] can bombard city defenses and are basic [COLOR_UNIT_TEXT]Naval Units[COLOR_REVERT] in the late Renaissance.</English>
 		<French>[COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT] can bombard city defenses and are basic [COLOR_UNIT_TEXT]Naval Units[COLOR_REVERT] in the late Renaissance.</French>
 		<German>[COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT] can bombard city defenses and are basic [COLOR_UNIT_TEXT]Naval Units[COLOR_REVERT] in the late Renaissance.</German>
 		<Italian>[COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT] can bombard city defenses and are basic [COLOR_UNIT_TEXT]Naval Units[COLOR_REVERT] in the late Renaissance.</Italian>
 		<Spanish>[COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT] can bombard city defenses and are basic [COLOR_UNIT_TEXT]Naval Units[COLOR_REVERT] in the late Renaissance.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SELJUK_GHULAM_WARRIOR_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</English>
-		<French>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</French>
-		<German>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</German>
-		<Italian>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</Italian>
-		<Spanish>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT] units and cannot be upgraded.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER_STRATEGY</Tag>
@@ -1955,11 +1791,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SUBMARINE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</English>
-		<French>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</French>
-		<German>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</German>
-		<Italian>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</Italian>
-		<Spanish>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Airship[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</Spanish>
+		<English>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</English>
+		<French>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</French>
+		<German>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</German>
+		<Italian>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</Italian>
+		<Spanish>[COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] can see [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Nuclear Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_STEALTH_DESTROYER_STRATEGY</Tag>
@@ -3001,9 +2837,21 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Camel Archer</German>
-		<Italian>Camel Archer</Italian>
-		<Spanish>Camel Archer</Spanish>
+		<German>
+			<Text>Kamel-Bogensch&#252;tze</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Arciere su cammello:Arcieri su cammello</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Arquero a camello:Arqueros a camello</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CAMEL_ARCHER_STRATEGY</Tag>
