@@ -1283,12 +1283,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
 			</CommerceHappinesses>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
@@ -1328,10 +1322,6 @@
 					<BonusType>BONUS_HORSE</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
@@ -1361,12 +1351,6 @@
 			<iHappiness>2</iHappiness>
 			<iAsset>5</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<BonusHappinessChanges>
-				<BonusHappinessChange>
-					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-			</BonusHappinessChanges>
 			<CommerceHappinesses>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
