@@ -31,11 +31,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AMERICAN_MALL_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Department Store[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Department Store[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Department Store[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Department Store[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Department Store[COLOR_REVERT], greatly increases the wealth output of the city when it has access to power and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_STRATEGY</Tag>
@@ -95,11 +95,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AZTEC_SACRIFICIAL_ALTAR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], reduces the anger duration from sacrificing population and is cheaper.</English>
-		<French>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], reduces the anger duration from sacrificing population and is cheaper.</French>
-		<German>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], reduces the anger duration from sacrificing population and is cheaper.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], reduces the anger duration from sacrificing population and is cheaper.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], reduces the anger duration from sacrificing population and is cheaper.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</English>
+		<French>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</French>
+		<German>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Sacrificial Altar[COLOR_REVERT], the Aztec replacements for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], is cheaper and reduces the anger duration from sacrificing population.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BANK_STRATEGY</Tag>
@@ -203,11 +203,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BYZANTINE_HIPPODROME_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness and culture output, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and doubles the happiness output from using the culture slider.</English>
-		<French>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness and culture output, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and doubles the happiness output from using the culture slider.</French>
-		<German>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness and culture output, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and doubles the happiness output from using the culture slider.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness and culture output, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and doubles the happiness output from using the culture slider.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness and culture output, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and doubles the happiness output from using the culture slider.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and increases the happiness output from using the culture slider.</English>
+		<French>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and increases the happiness output from using the culture slider.</French>
+		<German>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and increases the happiness output from using the culture slider.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and increases the happiness output from using the culture slider.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT] and increases the happiness output from using the culture slider.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Tag>
@@ -243,11 +243,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHINESE_TAIXUE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</English>
-		<French>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</French>
-		<German>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] and one more [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</English>
+		<French>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] and one more [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</French>
+		<German>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] and one more [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] and one more [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] and one more [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialist.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COAL_PLANT_STRATEGY</Tag>
@@ -271,11 +271,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Estate[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARENA_STRATEGY</Tag>
@@ -387,11 +387,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth more.</English>
-		<French>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth more.</French>
-		<German>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth more.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth more.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth more.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</English>
+		<French>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the French replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</French>
+		<German>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the German replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the Italian replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the Spanish replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's wealth more.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
@@ -439,11 +439,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Post Office[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORGE_STRATEGY</Tag>
@@ -463,11 +463,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GERMAN_ASSEMBLY_PLANT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], increases a city's unit production, increases a city's military unit production, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], increases a city's unit production, increases a city's military unit production, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], increases a city's unit production, increases a city's military unit production, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], increases a city's unit production, increases a city's military unit production, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], increases a city's unit production, increases a city's military unit production, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], grants experience points to armored units built in its city, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist, allows you to hire one more [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], grants experience points to armored units built in its city, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist, allows you to hire one more [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], grants experience points to armored units built in its city, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist, allows you to hire one more [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], grants experience points to armored units built in its city, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist, allows you to hire one more [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Assembly Plant[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT], grants experience points to armored units built in its city, gives one free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist, allows you to hire one more [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and is produced 50% faster with access to [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRANARY_STRATEGY</Tag>
@@ -519,11 +519,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</English>
-		<French>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</French>
-		<German>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>
@@ -535,11 +535,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOLY_ROMAN_RATHAUS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance, increases a city's cultural output and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
-		<French>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance, increases a city's cultural output and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</French>
-		<German>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance, increases a city's cultural output and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance, increases a city's cultural output and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance, increases a city's cultural output and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance.</English>
+		<French>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance.</French>
+		<German>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Rathaus[COLOR_REVERT], the German replacement for the [COLOR_BUILDING_TEXT]Civic Square[COLOR_REVERT], lowers city maintenance.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOSPITAL_STRATEGY</Tag>
@@ -835,11 +835,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MAYAN_BALL_COURT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</English>
-		<French>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</French>
-		<German>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], provides one extra happiness and grants experience points to melee and archery units built in its city.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], is cheaper, increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] and grants experience points to melee and archery units built in its city.</English>
+		<French>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], is cheaper, increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] and grants experience points to melee and archery units built in its city.</French>
+		<German>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], is cheaper, increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] and grants experience points to melee and archery units built in its city.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], is cheaper, increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] and grants experience points to melee and archery units built in its city.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Arena[COLOR_REVERT], is cheaper, increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] and grants experience points to melee and archery units built in its city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Tag>
@@ -875,11 +875,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOORISH_NORIA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus and is cheaper.</English>
-		<French>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus and is cheaper.</French>
-		<German>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus and is cheaper.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus and is cheaper.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus and is cheaper.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], is cheaper and provides a production bonus.</English>
+		<French>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], is cheaper and provides a production bonus.</French>
+		<German>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], is cheaper and provides a production bonus.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], is cheaper and provides a production bonus.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], is cheaper and provides a production bonus.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DUTCH_DIKE</Tag>
@@ -939,11 +939,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PERSIAN_APOTHECARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], requires [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Alchemy[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], requires [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Alchemy[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], requires [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Alchemy[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], requires [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Alchemy[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Apothecary[COLOR_REVERT], the Persian replacement for the [COLOR_BUILDING_TEXT]Pharmacy[COLOR_REVERT], requires [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Alchemy[COLOR_REVERT], increases a city's health and increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PAGAN_TEMPLE_STRATEGY</Tag>
@@ -955,11 +955,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness and increases the city's culture output.</English>
-		<French>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness and increases the city's culture output.</French>
-		<German>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness and increases the city's culture output.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness and increases the city's culture output.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness and increases the city's culture output.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness.</English>
+		<French>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness.</French>
+		<German>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], increases a city's happiness.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Tag>
