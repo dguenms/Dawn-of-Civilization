@@ -2960,14 +2960,24 @@ def canTriggerCrusade(argsList):
 
 	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ONE_CITY_CHALLENGE) and gc.getPlayer(kTriggeredData.ePlayer).isHuman():
 		return false
-
-	if holyCity.getOwner() != kTriggeredData.eOtherPlayer:
-		return false
 		
-	kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
-	kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()	
+	if holyCity.getOwner() == kTriggeredData.eOtherPlayer:
+		kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
+		kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
+		
+		return true
+		
+	if kTriggeredData.eReligion == iCatholicism:
+		holyCity = gc.getGame().getHolyCity(iOrthodoxy)
+		if not holyCity.isNone():
+			if holyCity.getOwner() == kTriggeredData.eOtherPlayer:
+				kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
+				kActualTriggeredDataObject.iOtherPlayerCityId = holyCity.getID()
+				kActualTriggeredDataObject.eReligion = ReligionTypes(iOrthodoxy)
+				
+				return true
 			
-	return true
+	return false
 
 def getHelpCrusade1(argsList):
 	iEvent = argsList[0]
