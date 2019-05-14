@@ -305,6 +305,9 @@ void CyGamePythonInterface()
 		.def("autosave", &CyGame::autosave, "void ()")
 
 		.def("incrementBuildingClassCreatedCount", &CyGame::incrementBuildingClassCreatedCount, "void (int iBuildingClass)")
+
+		.def("setCityScreenOwner", &CyGame::setCityScreenOwner, "void (int iPlayer)")
+		.def("resetCityScreenOwner", &CyGame::resetCityScreenOwner, "void ()")
 		;
 
 	python::class_<CyDeal>("CyDeal")

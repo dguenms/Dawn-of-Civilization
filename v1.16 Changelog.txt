@@ -524,6 +524,7 @@ HISTORICAL IMMERSION
 * Arabian starting core includes Mesopotamia, moved core includes Lower Egypt and Hejaz
 
 INTERFACE
+* When viewing the city screen of another player (e.g. via espionage), the currently trained unit is displayed using the owner's unit art style
 * The year (and turn if enabled) when a UHV goal was achieved is displayed in the victory screen
 * Worker actions take up less space in the tech tree
 * Undiscovered cities are not shown in the diplomacy screen

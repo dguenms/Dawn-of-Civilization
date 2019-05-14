@@ -24665,11 +24665,24 @@ void CvPlayer::cheat(bool bCtrl, bool bAlt, bool bShift)
 
 const CvArtInfoUnit* CvPlayer::getUnitArtInfo(UnitTypes eUnit, int iMeshGroup) const
 {
-	CivilizationTypes eCivilization = getCivilizationType();
+	// Leoreth: if city screen is up, use unit art style of player who owns the city
+	CivilizationTypes eCivilization;
+
+	PlayerTypes eCityScreenOwner = GC.getGameINLINE().getCityScreenOwner();
+	if (eCityScreenOwner == NO_PLAYER)
+	{
+		eCivilization = getCivilizationType();
+	} 
+	else 
+	{
+		eCivilization = GET_PLAYER(eCityScreenOwner).getCivilizationType();
+	}
+
 	if (eCivilization == NO_CIVILIZATION)
 	{
 		eCivilization = (CivilizationTypes) GC.getDefineINT("BARBARIAN_CIVILIZATION");
 	}
+
 	UnitArtStyleTypes eStyle = (UnitArtStyleTypes) GC.getCivilizationInfo(eCivilization).getUnitArtStyleType();
 	EraTypes eEra = getCurrentEra();
 	if (eEra == NO_ERA)

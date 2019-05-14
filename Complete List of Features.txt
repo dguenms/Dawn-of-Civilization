@@ -1595,6 +1595,7 @@ INTERFACE
 * The Plague symbol is displayed over the city bar of affected cities
 * New high resolution waiting cursor
 * Removed victory announcement in the middle of the screen
+* When viewing the city screen of another player (e.g. via espionage), the currently trained unit is displayed using the owner's unit art style
 * Included a city name viewer into the World Builder (credit to merijn_v1)
 * The year (and turn if enabled) when a UHV goal was achieved is displayed in the victory screen
 * Worker actions take up less space in the tech tree

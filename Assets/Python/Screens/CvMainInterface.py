@@ -1788,7 +1788,9 @@ class CvMainInterface:
 					if ( bHandled == False ):
 						eOrderNodeType = CyInterface().getOrderNodeType(i)
 						if (eOrderNodeType  == OrderTypes.ORDER_TRAIN ):
+							gc.getGame().setCityScreenOwner(CyInterface().getHeadSelectedCity().getOwner())
 							screen.addUnitGraphicGFC( "InterfaceUnitModel", CyInterface().getOrderNodeData1(i), 175, yResolution - 138, 123, 132, WidgetTypes.WIDGET_HELP_SELECTED, 0, -1,  -20, 30, 1, False )
+							gc.getGame().resetCityScreenOwner()
 							bHandled = True
 						elif ( eOrderNodeType == OrderTypes.ORDER_CONSTRUCT ):
 							screen.addBuildingGraphicGFC( "InterfaceUnitModel", CyInterface().getOrderNodeData1(i), 175, yResolution - 138, 123, 132, WidgetTypes.WIDGET_HELP_SELECTED, 0, -1,  -20, 30, 0.8, False )

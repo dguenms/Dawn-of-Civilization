@@ -576,6 +576,9 @@ public:
 	TeamTypes determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const;
 	void autosave();
 	bool isPlayerAutoplay(PlayerTypes ePlayer = NO_PLAYER);
+	void setCityScreenOwner(PlayerTypes ePlayer);
+	void resetCityScreenOwner();
+	PlayerTypes getCityScreenOwner() const;
 
 	// Leoreth: graphics paging
 	int getXResolution() const;
@@ -630,6 +633,7 @@ protected:
 	VictoryTypes m_eVictory;
 	GameStateTypes m_eGameState;
 	PlayerTypes m_eEventPlayer;
+	PlayerTypes m_eCityScreenOwner;
 
 	CvString m_szScriptData;
 

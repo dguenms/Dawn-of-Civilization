@@ -529,6 +529,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	m_eWinner = NO_TEAM;
 	m_eVictory = NO_VICTORY;
 	m_eGameState = GAMESTATE_ON;
+	m_eCityScreenOwner = NO_PLAYER;
 
 	m_szScriptData = "";
 
@@ -8704,7 +8705,7 @@ void CvGame::read(FDataStreamBase* pStream)
 
 	reset(NO_HANDICAP);
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: 2 for city screen owner
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	if (uiFlag < 1)
@@ -8753,6 +8754,7 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eWinner);
 	pStream->Read((int*)&m_eVictory);
 	pStream->Read((int*)&m_eGameState);
+	if (uiFlag >= 2) pStream->Read((int*)&m_eCityScreenOwner); // Leoreth
 
 	//Rhye - start bugfix (thanks Gyathaar)
 	//pStream->ReadString(m_szScriptData);
@@ -8944,7 +8946,7 @@ void CvGame::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=1;
+	uint uiFlag=2; // Leoreth: 2 for city screen owner
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iElapsedGameTurns);
@@ -8988,6 +8990,7 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_eWinner);
 	pStream->Write(m_eVictory);
 	pStream->Write(m_eGameState);
+	if (uiFlag >= 2) pStream->Write(m_eCityScreenOwner); // Leoreth
 
 	pStream->WriteString(m_szScriptData);
 
@@ -10524,4 +10527,19 @@ bool CvGame::isPlayerAutoplay(PlayerTypes ePlayer)
 	}
 
 	return getGameTurnYear() < GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear();
+}
+
+void CvGame::setCityScreenOwner(PlayerTypes ePlayer)
+{
+	m_eCityScreenOwner = ePlayer;
+}
+
+void CvGame::resetCityScreenOwner()
+{
+	setCityScreenOwner(NO_PLAYER);
+}
+
+PlayerTypes CvGame::getCityScreenOwner() const
+{
+	return m_eCityScreenOwner;
 }
