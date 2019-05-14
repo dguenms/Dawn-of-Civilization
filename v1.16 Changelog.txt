@@ -461,6 +461,7 @@ IMPROVEMENTS
 
 EVENTS
 * Royal Wedding event cannot be triggered when running State Party or Democracy
+* Halberd event affects Heavy Spearman instead of Pikeman
 
 STABILITY
 * Improvements need to be worked to count toward expansion stability
