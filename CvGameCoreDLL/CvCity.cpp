@@ -13629,7 +13629,10 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		{
 			if (!GC.getGameINLINE().isReligionFounded(eIndex))
 			{
-				GET_PLAYER(getOwnerINLINE()).foundReligion(eIndex, eIndex, true);
+				if (GC.getGameINLINE().isFinalInitialized())
+				{
+					GET_PLAYER(getOwnerINLINE()).foundReligion(eIndex, eIndex, true);
+				}
 
 				GC.getGameINLINE().makeReligionFounded(eIndex, getOwnerINLINE());
 			}
