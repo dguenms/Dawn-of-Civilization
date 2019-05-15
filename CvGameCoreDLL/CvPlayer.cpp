@@ -4677,12 +4677,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 
 	// edead: start Relic trade based on Afforess' Advanced Diplomacy
    case TRADE_SLAVE:
-	    if (GC.getGame().getActivePlayer() == getID() && countColonies() <= 0)
-		{
-			return false;
-		}
-
-        CvUnit* pUnitTraded = getUnit(item.m_iData);
+	    CvUnit* pUnitTraded = getUnit(item.m_iData);
         CvCity* pTheirCapitalCity = GET_PLAYER(eWhoTo).getCapitalCity();
 		if (pUnitTraded != NULL)
 		{
