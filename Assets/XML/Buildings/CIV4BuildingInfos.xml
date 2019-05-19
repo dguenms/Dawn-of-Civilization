@@ -10788,7 +10788,7 @@
 			<BuildingClass>BUILDINGCLASS_HOUSE_OF_WISDOM</BuildingClass>
 			<Type>BUILDING_HOUSE_OF_WISDOM</Type>
 			<Description>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HOUSE_OF_WISDOM_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
