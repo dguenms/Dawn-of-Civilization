@@ -1095,11 +1095,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KOREAN_HWACHA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reducde attack bonus when attacking cities.</English>
-		<French>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reducde attack bonus when attacking cities.</French>
-		<German>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reducde attack bonus when attacking cities.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reducde attack bonus when attacking cities.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reducde attack bonus when attacking cities.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reduced attack bonus when attacking cities.</English>
+		<French>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reduced attack bonus when attacking cities.</French>
+		<German>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reduced attack bonus when attacking cities.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reduced attack bonus when attacking cities.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Hwacha[COLOR_REVERT], the Korean replacement for the [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], has three extra strength points and has an reduced attack bonus when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LION_STRATEGY</Tag>
