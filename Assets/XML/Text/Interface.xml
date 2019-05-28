@@ -3153,6 +3153,46 @@
 		<Spanish>Hide Benefits No Longer Available</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PROVIDES_POWER</Tag>
+		<English>[ICON_BULLET]Provides Power ([ICON_POWER])</English>
+		<French>[ICON_BULLET]Fournit de l'&#233;lectricit&#233; ([ICON_POWER])</French>
+		<German>[ICON_BULLET]Liefert Energie ([ICON_POWER])</German>
+		<Italian>[ICON_BULLET]Fornisce energia([ICON_POWER])</Italian>
+		<Spanish>[ICON_BULLET]Proporciona energ&#237;a ([ICON_POWER])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PROVIDES_CLEAN_POWER</Tag>
+		<English>[ICON_BULLET]Provides clean Power ([ICON_CLEAN_POWER])</English>
+		<French>[ICON_BULLET]Fournit de l'&#233;lectricit&#233; propre ([ICON_CLEAN_POWER])</French>
+		<German>[ICON_BULLET]Liefert saubere Energie ([ICON_CLEAN_POWER])</German>
+		<Italian>[ICON_BULLET]Fornisce energia pulita([ICON_CLEAN_POWER])</Italian>
+		<Spanish>[ICON_BULLET]Proporciona energ&#237;a limpia ([ICON_CLEAN_POWER])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PROVIDES_AREA_CLEAN_POWER</Tag>
+		<English>[ICON_BULLET]Provides clean Power ([ICON_CLEAN_POWER]) for All Cities on this Continent</English>
+		<French>[ICON_BULLET]Fournit de l'&#233;nergie propre ([ICON_CLEAN_POWER]) &#224; toutes les villes de ce continent</French>
+		<German>[ICON_BULLET]Liefert saubere Energie ([ICON_CLEAN_POWER]) f&#252;r alle St&#228;dte auf diesem Kontinent</German>
+		<Italian>[ICON_BULLET]Fornisce energia pulita ([ICON_CLEAN_POWER]) a tutte le citt&#224; in questo continente</Italian>
+		<Spanish>[ICON_BULLET]Proporciona energ&#237;a limpia ([ICON_CLEAN_POWER]) a todas las ciudades de este continente</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PROVIDES_POWER_WITH</Tag>
+		<English>[ICON_BULLET]Provides Power ([ICON_POWER]) with [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</English>
+		<French>[ICON_BULLET]Fournit de l'&#233;lectricit&#233; ([ICON_POWER]) avec [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</French>
+		<German>[ICON_BULLET]Liefert Energie ([ICON_POWER]) mit dem Bonusgut [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]Fornisce energia ([ICON_POWER]) insieme a [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]Proporciona energ&#237;a ([ICON_POWER]) con [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PROVIDES_CLEAN_POWER_WITH</Tag>
+		<English>[ICON_BULLET]Provides clean Power ([ICON_CLEAN_POWER]) with [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</English>
+		<French>[ICON_BULLET]Fournit de l'&#233;lectricit&#233; propre ([ICON_CLEAN_POWER]) avec [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</French>
+		<German>[ICON_BULLET]Liefert saubere Energie ([ICON_CLEAN_POWER]) mit dem Bonusgut [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]Fornisce energia pulita ([ICON_CLEAN_POWER]) insieme a [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]Proporciona energ&#237;a limpia ([ICON_CLEAN_POWER]) con [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
