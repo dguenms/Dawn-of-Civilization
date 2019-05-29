@@ -3293,7 +3293,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 		CvCity* pTradeCity = getTradeCity(iI);
 		if (NULL != pTradeCity)
 		{
-			if (GET_PLAYER(pTradeCity->getOwnerINLINE()).getTeam() != getTeam() || pTradeCity->area() != area())
+			if (GET_PLAYER(pTradeCity->getOwnerINLINE()).getTeam() != getTeam() || pTradeCity->plot()->getContinentArea() != plot()->getContinentArea())
 			{
 				bForeignTrade = true;
 				break;

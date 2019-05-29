@@ -13005,7 +13005,7 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 		iOldAnger = iNewAnger;
 
-		iNewAnger -= std::min(0, city.area()->getBuildingHappiness(city.getOwnerINLINE()));
+		iNewAnger -= std::min(0, city.continentArea()->getBuildingHappiness(city.getOwnerINLINE()));
 		iAnger = ((iNewAnger - iOldAnger) + std::min(0, iOldAnger));
 		if (iAnger > 0)
 		{
@@ -13167,7 +13167,7 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		iHappy = city.area()->getBuildingHappiness(city.getOwnerINLINE());
+		iHappy = city.continentArea()->getBuildingHappiness(city.getOwnerINLINE());
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
@@ -18070,9 +18070,10 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 			}
 		}
 	}
-	if (NULL != city.area())
+	CvArea* pArea = city.continentArea();
+	if (NULL != pArea)
 	{
-		iBuildingMod += city.area()->getYieldRateModifier(city.getOwnerINLINE(), eYieldType);
+		iBuildingMod += pArea->getYieldRateModifier(city.getOwnerINLINE(), eYieldType);
 	}
 	if (0 != iBuildingMod)
 	{
@@ -19730,7 +19731,7 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 
 			if (NULL != pOtherCity)
 			{
-				if (pCity->area() != pOtherCity->area() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+				if (pCity->plot()->getContinentArea() != pOtherCity->plot()->getContinentArea() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 				{
 					iNewMod = GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 					if (0 != iNewMod)

@@ -227,6 +227,7 @@ public:
 	CvArea* area() const;																																							// Exposed to Python
 	CvArea* waterArea() const;
 	CvArea* secondWaterArea() const;
+	CvArea* continentArea() const;
 	int getArea() const;																																		// Exposed to Python
 	void setArea(int iNewValue);			
 

@@ -271,6 +271,7 @@ public:
 	int getArea() const;
 	CvArea* area() const;																						// Exposed to Python
 	CvArea* waterArea() const;																			// Exposed to Python
+	CvArea* continentArea() const; // Leoreth
 
 	CvPlot* getRallyPlot() const;																// Exposed to Python
 	void setRallyPlot(CvPlot* pPlot);

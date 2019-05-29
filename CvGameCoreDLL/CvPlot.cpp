@@ -4500,6 +4500,18 @@ CvArea* CvPlot::area() const
 }
 
 
+// Leoreth
+CvArea* CvPlot::continentArea() const
+{
+	if (m_pPlotArea != NULL && m_pPlotArea->getID() == getContinentArea())
+	{
+		return m_pPlotArea;
+	}
+
+	return GC.getMapINLINE().getArea(getArea());
+}
+
+
 CvArea* CvPlot::waterArea() const
 {
 	CvArea* pBestArea;

@@ -4893,7 +4893,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
 
-		area()->changePower(getOwnerINLINE(), (GC.getBuildingInfo(eBuilding).getPowerValue() * iChange));
+		continentArea()->changePower(getOwnerINLINE(), (GC.getBuildingInfo(eBuilding).getPowerValue() * iChange));
 		GET_PLAYER(getOwnerINLINE()).changePower(GC.getBuildingInfo(eBuilding).getPowerValue() * iChange);
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -4902,7 +4902,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			{
 				if (GC.getBuildingInfo(eBuilding).isTeamShare() || (iI == getOwnerINLINE()))
 				{
-					GET_PLAYER((PlayerTypes)iI).processBuilding(eBuilding, iChange, area());
+					GET_PLAYER((PlayerTypes)iI).processBuilding(eBuilding, iChange, continentArea());
 				}
 			}
 		}
@@ -5695,7 +5695,7 @@ int CvCity::unhappyLevel(int iExtra) const
 		iUnhappiness -= std::min(0, getBonusBadHappiness());
 		iUnhappiness -= std::min(0, getReligionBadHappiness());
 		iUnhappiness -= std::min(0, getCommerceHappiness());
-		iUnhappiness -= std::min(0, area()->getBuildingHappiness(getOwnerINLINE()));
+		iUnhappiness -= std::min(0, continentArea()->getBuildingHappiness(getOwnerINLINE()));
 		iUnhappiness -= std::min(0, GET_PLAYER(getOwnerINLINE()).getBuildingHappiness());
 		iUnhappiness -= std::min(0, (getExtraHappiness() + GET_PLAYER(getOwnerINLINE()).getExtraHappiness()));
 		iUnhappiness -= std::min(0, GC.getHandicapInfo(getHandicapType()).getHappyBonusByID(getOwner()));
@@ -5728,7 +5728,7 @@ int CvCity::happyLevel(bool bSpecial) const
 	iHappiness += std::max(0, getCorporationGoodHappiness()); // Leoreth
 	iHappiness += std::max(0, getSpecialistGoodHappiness()); // Leoreth
 	iHappiness += std::max(0, getCommerceHappiness());
-	iHappiness += std::max(0, area()->getBuildingHappiness(getOwnerINLINE()));
+	iHappiness += std::max(0, continentArea()->getBuildingHappiness(getOwnerINLINE()));
 	iHappiness += std::max(0, GET_PLAYER(getOwnerINLINE()).getBuildingHappiness());
 	iHappiness += std::max(0, (getExtraHappiness() + GET_PLAYER(getOwnerINLINE()).getExtraHappiness()));
 	iHappiness += std::max(0, GC.getHandicapInfo(getHandicapType()).getHappyBonusByID(getOwner()));
@@ -5769,7 +5769,7 @@ int CvCity::totalFreeSpecialists() const
 	if (getPopulation() > 0)
 	{
 		iCount += getFreeSpecialist();
-		iCount += area()->getFreeSpecialist(getOwnerINLINE());
+		iCount += continentArea()->getFreeSpecialist(getOwnerINLINE());
 		iCount += GET_PLAYER(getOwnerINLINE()).getFreeSpecialist();
 
 		for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); ++iImprovement)
@@ -5817,7 +5817,7 @@ int CvCity::unhealthyPopulation(bool bNoAngry, int iExtra) const
 
 int CvCity::totalGoodBuildingHealth() const
 {
-	return (getBuildingGoodHealth() + area()->getBuildingGoodHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingGoodHealth() + getExtraBuildingGoodHealth());
+	return (getBuildingGoodHealth() + continentArea()->getBuildingGoodHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingGoodHealth() + getExtraBuildingGoodHealth());
 }
 
 
@@ -5828,7 +5828,7 @@ int CvCity::totalBadBuildingHealth() const
 		return 0;
 	}
 
-	int iBuildingHealth = getBuildingBadHealth() + area()->getBuildingBadHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingBadHealth() + getExtraBuildingBadHealth();
+	int iBuildingHealth = getBuildingBadHealth() + continentArea()->getBuildingBadHealth(getOwnerINLINE()) + GET_PLAYER(getOwnerINLINE()).getBuildingBadHealth() + getExtraBuildingBadHealth();
 
 	// Leoreth: building health modifier
 	iBuildingHealth *= 100 + getBuildingUnhealthModifier();
@@ -6527,6 +6527,7 @@ int CvCity::getArea() const
 	return plot()->getArea();
 }
 
+
 CvArea* CvCity::area() const
 {
 	return plot()->area();
@@ -6536,6 +6537,13 @@ CvArea* CvCity::area() const
 CvArea* CvCity::waterArea() const
 {
 	return plot()->waterArea();
+}
+
+
+// Leoreth
+CvArea* CvCity::continentArea() const
+{
+	return plot()->continentArea();
 }
 
 
@@ -8986,12 +8994,12 @@ bool CvCity::isPower() const
 
 bool CvCity::isAreaCleanPower() const
 {
-	if (area() == NULL)
+	if (continentArea() == NULL)
 	{
 		return false;
 	}
 
-	return area()->isCleanPower(getTeam());
+	return continentArea()->isCleanPower(getTeam());
 }
 
 
@@ -9931,9 +9939,10 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra) const
 		iModifier += getPowerYieldRateModifier(eIndex);
 	}
 
-	if (area() != NULL)
+	CvArea* pArea = continentArea();
+	if (pArea != NULL)
 	{
-		iModifier += area()->getYieldRateModifier(getOwnerINLINE(), eIndex);
+		iModifier += pArea->getYieldRateModifier(getOwnerINLINE(), eIndex);
 	}
 
 	iModifier += GET_PLAYER(getOwnerINLINE()).getYieldRateModifier(eIndex);
@@ -10180,7 +10189,7 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	if (NULL != pOtherCity)
 	{
-	    if (area() != pOtherCity->area())
+	    if (plot()->getContinentArea() != pOtherCity->plot()->getContinentArea())
 		{
 			iModifier += GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 		}
