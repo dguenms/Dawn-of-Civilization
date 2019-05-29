@@ -16128,6 +16128,11 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 					pCity->changeCulture(getID(), iCultureAmount % iNumTurnsApplied, false, true);
 				}
 
+				if (pCity->plot()->getCultureConversionPlayer() != getID())
+				{
+					pCity->plot()->changeCultureConversionRate(-kMission.getCityInsertCultureAmountFactor());
+				}
+
 				// K-Mod. apply culture in one hit. We don't need fake 'free city culture' anymore.
 				//int iCultureTimes100 = std::max(1, kMission.getCityInsertCultureAmountFactor() * pCity->countTotalCultureTimes100() / 100);
 
