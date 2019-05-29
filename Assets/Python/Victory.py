@@ -708,7 +708,7 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: control the core of a European civilization in 1050 AD
 		if iGameTurn == getTurnForYear(1050):
-			lEuroCivs = [iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]
+			lEuroCivs = [iLoopPlayer for iLoopPlayer in lCivGroups[0] if tBirth[iLoopPlayer] < 1050 and iPlayer != iLoopPlayer]
 			if isCoreControlled(iVikings, lEuroCivs):
 				win(iVikings, 0)
 			else:
@@ -3693,7 +3693,7 @@ def getUHVHelp(iPlayer, iGoal):
 			
 	elif iPlayer == iVikings:
 		if iGoal == 0:
-			lEuroCivs = [iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]
+			lEuroCivs = [iLoopPlayer for iLoopPlayer in lCivGroups[0] if tBirth[iLoopPlayer] < 1050 and iLoopPlayer != iPlayer]
 			bEuropeanCore = isCoreControlled(iVikings, lEuroCivs)
 			aHelp.append(getIcon(bEuropeanCore) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_CORE", ()))
 		elif iGoal == 2:
