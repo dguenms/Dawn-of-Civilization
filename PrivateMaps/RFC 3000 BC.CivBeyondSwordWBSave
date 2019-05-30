@@ -31274,6 +31274,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=57
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
