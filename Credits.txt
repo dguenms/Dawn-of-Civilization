@@ -88,6 +88,9 @@ MISCELLANEOUS
 * Steb: city names in Canada and the Americas
 * devolution (AdvCiv mod): DLL compiler options (Final_Release target)
 
+PEDIA
+* Wikipedia
+
 HELP AND ADVICE
 * Walter Hawkwood: fixing issues with unit and building models
 

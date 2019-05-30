@@ -1,4 +1,4 @@
-RFC Dawn of Civilization
+﻿RFC Dawn of Civilization
 Complete List of Features (as of version 1.15)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
@@ -940,7 +940,7 @@ BUILDINGS
     * Wharf (Compass): +50% trade route yield, +1 health from Fish, Clam, Crab
     * Constabulary (Judiciary): -25% war weariness, +25% espionage
     * Civic Square (Statecraft): +25% great people birth, +1 statesman slot
-    * Sewer (Urban Planning): +3 health
+    * Sewer (Urban Planning): +2 health
     * Star Fort (Urban Planning): -50% bombard damage
     * Estate (Horticulture): +1 artist slot, +1 statesman slot, +1 happiness per 20% culture rate
     * Warehouse (Measurement): +25% gold, +1 merchant slot

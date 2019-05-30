@@ -819,11 +819,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG2</Tag>
-		<English>Control a total of 25 frigates or ships of the line and sink 50 enemy ships by 1800 AD</English>
-		<French>Contr&#244;ler un total de 25 fr&#233;gates et navires de ligne et couler 50 navires ennemis avant 1800 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 1800 n. Chr. insgesamt 25 Fregatten oder Linienschiffe und versenken Sie 50 gegnerische Schiffe</German>
-		<Italian>Control a total of 25 frigates or ships of the line and sink 50 enemy ships by 1800 AD</Italian>
-		<Spanish>Control a total of 25 frigates or ships of the line and sink 50 enemy ships by 1800 AD</Spanish>
+		<English>Control a total of 25 frigates or man-o-wars and sink 50 enemy ships by 1800 AD</English>
+		<French>Contr&#244;ler un total de 25 fr&#233;gates et man'o'wars et couler 50 navires ennemis avant 1800 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 1800 n. Chr. insgesamt 25 Fregatten oder Man-o-wars und versenken Sie 50 gegnerische Schiffe</German>
+		<Italian>Control a total of 25 frigates or man-o-wars and sink 50 enemy ships by 1800 AD</Italian>
+		<Spanish>Control a total of 25 frigates or man-o-wars and sink 50 enemy ships by 1800 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG3_TITLE</Tag>
@@ -4340,11 +4340,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAVY_SIZE</Tag>
-		<English>Total of frigates and ships of the line: %d1 / %d2</English>
-		<French>Total des fr&#233;gates et navires de ligne : %d1 / %d2</French>
-		<German>Total of frigates and ships of the line: %d1 / %d2</German>
-		<Italian>Total of frigates and ships of the line: %d1 / %d2</Italian>
-		<Spanish>Total of frigates and ships of the line: %d1 / %d2</Spanish>
+		<English>Total of frigates and man-o-wars: %d1 / %d2</English>
+		<French>Total des fr&#233;gates et man'o'wars : %d1 / %d2</French>
+		<German>Total of frigates and man-o-wars: %d1 / %d2</German>
+		<Italian>Total of frigates and man-o-wars: %d1 / %d2</Italian>
+		<Spanish>Total of frigates and man-o-wars: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NEAR_EAST</Tag>
