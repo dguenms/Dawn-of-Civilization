@@ -6192,7 +6192,10 @@ bool CvUnit::join(SpecialistTypes eSpecialist)
 		// Leoreth: Neuschwanstein Castle effect
 		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)NEUSCHWANSTEIN))
 		{
-			pCity->changeGreatPeopleProgress(GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false) / 4);
+			if (!GC.getSpecialistInfo(eSpecialist).isNoGlobalEffects())
+			{
+				pCity->changeGreatPeopleProgress(GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false) / 4);
+			}
 		}
 	}
 
