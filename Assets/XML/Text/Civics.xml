@@ -825,4 +825,20 @@
 		<Italian>Faster improvement construction; extra food from Plantations</Italian>
 		<Spanish>Faster improvement construction; extra food from Plantations</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_IGNORE_STATE_RELIGION</Tag>
+		<English>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</English>
+		<French>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</French>
+		<German>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</German>
+		<Italian>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</Italian>
+		<Spanish>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>
