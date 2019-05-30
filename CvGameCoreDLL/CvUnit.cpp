@@ -8085,7 +8085,7 @@ int CvUnit::baseMoves() const
 	// Leoreth: Kremlin effect
 	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)KREMLIN))
 	{
-		if (!canFight())
+		if (!canFight() && getDomainType() == DOMAIN_LAND)
 		{
 			iMoves += 1;
 		}
