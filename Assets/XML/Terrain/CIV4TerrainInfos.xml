@@ -1535,11 +1535,11 @@
 			<bFound>1</bFound>
 			<bFoundCoast>0</bFoundCoast>
 			<bFoundFreshWater>0</bFoundFreshWater>
-			<iMovement>1</iMovement>
+			<iMovement>2</iMovement>
 			<iSeeFrom>1</iSeeFrom>
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>0</iBuildModifier>
-			<iDefense>100</iDefense>
+			<iDefense>50</iDefense>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Coast.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
