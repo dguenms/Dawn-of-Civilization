@@ -110,6 +110,8 @@
 				<iYieldChange>1</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
+			<iHealth>1</iHealth>
+			<iAffectedCities>2</iAffectedCities>
 			<iPlacementOrder>1</iPlacementOrder>
 			<iConstAppearance>100</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
