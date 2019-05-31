@@ -950,6 +950,9 @@ class RiseAndFall:
 		# reset diplomacy
 		pCiv.AI_reset()
 		
+		# reset player espionage weights
+		gc.getPlayer(gc.getGame().getActivePlayer()).setEspionageSpendingWeightAgainstTeam(pCiv.getTeam(), 0)
+		
 		# reset great people
 		pCiv.resetGreatPeopleCreated()
 		

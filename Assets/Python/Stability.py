@@ -1590,6 +1590,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	pPlayer.AI_reset()
 	
 	iHuman = utils.getHumanID()
+	
+	# reset player espionage weight
+	gc.getPlayer(gc.getGame().getActivePlayer()).setEspionageSpendingWeightAgainstTeam(pPlayer.getTeam(), 0)
 			
 	# assign technologies
 	lTechs = getResurrectionTechs(iPlayer)
