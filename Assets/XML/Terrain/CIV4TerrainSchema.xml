@@ -22,6 +22,7 @@
 	</ElementType>
 	<ElementType name="bWater" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bImpassable" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bSaline" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bFound" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFoundCoast" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFoundFreshWater" content="textOnly" dt:type="boolean"/>
@@ -54,6 +55,7 @@
 		<element type="HillsYieldChange"/>
 		<element type="bWater"/>
 		<element type="bImpassable"/>
+		<element type="bSaline" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bFound"/>
 		<element type="bFoundCoast"/>
 		<element type="bFoundFreshWater"/>
