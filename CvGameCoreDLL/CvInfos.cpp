@@ -15135,6 +15135,12 @@ bool CvTerrainInfo::isImpassable() const
 	return m_bImpassable;
 }
 
+// Leoreth
+bool CvTerrainInfo::isSaline() const
+{
+	return m_bSaline;
+}
+
 bool CvTerrainInfo::isFound() const
 {
 	return m_bFound;
@@ -15238,6 +15244,7 @@ bool CvTerrainInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_bWater, "bWater");
 	pXML->GetChildXmlValByName(&m_bImpassable, "bImpassable");
+	pXML->GetChildXmlValByName(&m_bSaline, "bSaline");
 	pXML->GetChildXmlValByName(&m_bFound, "bFound");
 	pXML->GetChildXmlValByName(&m_bFoundCoast, "bFoundCoast");
 	pXML->GetChildXmlValByName(&m_bFoundFreshWater, "bFoundFreshWater");

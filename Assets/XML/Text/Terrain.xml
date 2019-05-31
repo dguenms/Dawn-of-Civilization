@@ -55,4 +55,20 @@
 		<English>Taiga</English>
 		<German>Taiga</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_SALTLAKE</Tag>
+		<English>Salt Lake</English>
+		<French>Lac salé</French>
+		<German>Salzsee</German>
+		<Italian>Lago salato</Italian>
+		<Spanish>Lago salado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_SALTFLAT</Tag>
+		<English>Salt Flat</English>
+		<French>Salar</French>
+		<German>Salztonebene</German>
+		<Italian>Piana di sale</Italian>
+		<Spanish>Salar</Spanish>
+	</TEXT>
 </Civ4GameText>
