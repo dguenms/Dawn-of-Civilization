@@ -5786,8 +5786,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=55
-	TerrainType=TERRAIN_DESERT
-	PlotType=1
+	TerrainType=TERRAIN_SALTFLAT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=11,y=56
@@ -6230,7 +6230,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=56
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15826,12 +15826,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=19
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SALTFLAT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=34,y=20
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -16290,7 +16290,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=19
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -16731,7 +16731,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -28570,7 +28570,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=46
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -29445,7 +29445,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=46
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -29875,7 +29875,7 @@ EndPlot
 BeginPlot
 	x=66,y=45
 	BonusType=BONUS_SALT
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -30317,7 +30317,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=45
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -31967,8 +31967,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=19
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SALTFLAT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=20
@@ -33344,7 +33344,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=18
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33813,7 +33813,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=18
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -40472,7 +40472,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=52
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42164,7 +42164,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=37
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -42179,7 +42179,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=40
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -42605,7 +42605,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=38
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43513,7 +43513,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=46
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45697,7 +45697,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=43
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45814,7 +45814,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=62
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46149,7 +46149,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -47608,7 +47608,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=60
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -48063,7 +48063,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=60
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -48981,7 +48981,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=60
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -50696,8 +50696,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=49
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	TerrainType=TERRAIN_SALTLAKE
+	PlotType=3
 EndPlot
 BeginPlot
 	x=112,y=50
@@ -51208,7 +51208,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=63
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -52492,7 +52492,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=53
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -60990,7 +60990,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=14
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -61416,22 +61416,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=13
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=136,y=14
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=136,y=15
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
 	x=136,y=16
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -61854,7 +61854,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=15
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
