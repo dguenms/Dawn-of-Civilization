@@ -1717,6 +1717,12 @@ bool CvPlot::isFreshWater() const
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
 
+	// Leoreth: salt lakes
+	if (GC.getTerrainInfo(getTerrainType()).isSaline())
+	{
+		return false;
+	}
+
 	if (isWater())
 	{
 		return false;
@@ -1732,16 +1738,6 @@ bool CvPlot::isFreshWater() const
 		return true;
 	}
 
-	//Leoreth: Great Bath effect
-	/*if (isCity())
-	{
-	    CvCity* pCity = getPlotCity();
-	    if (pCity->isHasRealBuilding((BuildingTypes)GREAT_BATH))
-	    {
-	        return true;
-	    }
-	}*/
-
 	for (iDX = -1; iDX <= 1; iDX++)
 	{
 		for (iDY = -1; iDY <= 1; iDY++)
@@ -1750,7 +1746,8 @@ bool CvPlot::isFreshWater() const
 
 			if (pLoopPlot != NULL)
 			{
-				if (pLoopPlot->isLake())
+				// Leoreth: salt lakes
+				if (pLoopPlot->isLake() && !GC.getTerrainInfo(pLoopPlot->getTerrainType()).isSaline())
 				{
 					return true;
 				}

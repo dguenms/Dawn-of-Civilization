@@ -4759,7 +4759,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(gDLL->getText("TXT_KEY_PLOT_FRESH_WATER"));
 		}
 
-		if (pPlot->isLake())
+		if (pPlot->isLake() && !GC.getTerrainInfo(pPlot->getTerrainType()).isSaline())
 		{
 			szString.append(NEWLINE);
 			szString.append(gDLL->getText("TXT_KEY_PLOT_FRESH_WATER_LAKE"));
