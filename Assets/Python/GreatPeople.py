@@ -283,6 +283,7 @@ iCivChina : {
 		iGlobal,
 		"Qi Baishi", # 20th
 		"Lu Xun", # 20th
+		"Lin Yutang", # 20th
 		"Wu Guanzhong", # 20th
 	],
 	iGreatScientist : [
@@ -2266,13 +2267,14 @@ iCivFrance : {
 		u"fÉmilie du Châtelet", # 18th
 		iIndustrial,
 		"Pierre-Simon Laplace", # 18th
-		"Sadi Carnot", # 19th
+		"Georges Cuvier", # 19th
 		"Louis Pasteur", # 19th
 		"fMarie-Sophie Germain", # 19th
 		"fMarie Curie", # 19th
+		"Antoine Henri Becquerel", # 19th
 		iGlobal,
-		"Antoine Henri Becquerel", # 20th
 		"Jacques Monod", # 20th
+		u"Benoît Mandelbrot", # 20th
 	],
 	iGreatMerchant : [
 		u"Éloi de Noyon", # 7th
@@ -2303,6 +2305,7 @@ iCivFrance : {
 		"Joseph-Michel Montgolfier", # 18th
 		iIndustrial,
 		"Joseph Marie Jacquard", # 18th
+		"Sadi Carnot", # 19th
 		"Louis Daguerre", # 19th
 		"Norbert Rillieux", # 19th
 		"Alexandre Gustave Eiffel", # 19th
