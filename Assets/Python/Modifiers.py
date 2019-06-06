@@ -43,6 +43,8 @@ def init():
 		if utils.getScenario() > i3000BC and iPlayer < iVikings:
 			adjustModifiers(iPlayer)
 		
+		gc.getPlayer(iPlayer).updateMaintenance()
+		
 
 ### Modifier types ###
 
