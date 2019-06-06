@@ -30,6 +30,10 @@ class Resources:
 		"""Creates a bonus resource and alerts the plot owner"""
 		
 		iRemovedBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
+		
+		if iRemovedBonus == iBonus:
+			return
+		
 		gc.getMap().plot(iX, iY).setBonusType(iBonus)
 				
 		if iBonus == -1:
