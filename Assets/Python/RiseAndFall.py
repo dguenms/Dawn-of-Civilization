@@ -87,7 +87,8 @@ def handleNewCiv(iPlayer):
 	if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 		vic.loseAll(iPreviousPlayer)
 		
-	CvEspionageAdvisor.CvEspionageAdvisor().resetEspionageWeights()
+	for iLoopPlayer in range(iNumPlayers):
+		gc.getPlayer(iPlayer).setEspionageSpendingWeightAgainstTeam(iLoopPlayer, 0)
 
 class RiseAndFall:
 
