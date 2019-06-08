@@ -1626,16 +1626,17 @@ class RFCUtils:
 				
 		return False
 		
-	def canEverRespawn(self, iPlayer, iGameTurn = gc.getGame().getGameTurn()):
-		iNumIntervals = len(tResurrectionIntervals[iPlayer])
-		
-		if iNumIntervals == 0:
+	def canEverRespawn(self, iPlayer, iGameTurn = None):
+		if not tResurrectionIntervals[iPlayer]:
 			return False
-		else:
-			iStart, iEnd = tResurrectionIntervals[iPlayer][iNumIntervals-1]
-			if getTurnForYear(iEnd) < iGameTurn:
-				return False
-				
+			
+		if iGameTurn is None:
+			iGameTurn = gc.getGame().getGameTurn()
+			
+		_, iEnd = tResurrectionIntervals[iPlayer][-1]
+		if getTurnForYear(iEnd) < iGameTurn:
+			return False
+			
 		return True
 
 	# Leoreth: returns True if function returns True for at least one member, otherwise False	
@@ -1712,11 +1713,11 @@ class RFCUtils:
 					if bWB and iSettlerValue == 3:
 						iPlotType = iAIForbidden
 					elif iSettlerValue >= 90:
-						if Areas.isForeignCore(iPlayer, tPlot):
+						if self.isPossibleForeignCore(iPlayer, tPlot):
 							iPlotType = iContest
 						else:
 							iPlotType = iHistorical
-					elif Areas.isForeignCore(iPlayer, tPlot):
+					elif self.isPossibleForeignCore(iPlayer, tPlot):
 						iPlotType = iForeignCore
 					else:
 						iPlotType = -1
@@ -2022,5 +2023,15 @@ class RFCUtils:
 				if iGreatPersonType == dFemaleGreatPeople[iLoopGreatPerson]:
 					return iLoopGreatPerson
 		return iGreatPersonType
+	
+	def isPossibleForeignCore(self, iPlayer, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		for iLoopPlayer in range(iNumPlayers):
+			if iLoopPlayer == iPlayer: continue
+			if not gc.getPlayer(iLoopPlayer).isAlive() and not self.canEverRespawn(iLoopPlayer): continue
+			if plot.isCore(iLoopPlayer):
+				return True
+		return False
 			
 utils = RFCUtils()

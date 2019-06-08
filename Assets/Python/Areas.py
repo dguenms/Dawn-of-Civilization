@@ -77,7 +77,7 @@ def updateCore(iPlayer):
 			plot.setCore(iPlayer, (x, y) in lCore)
 			
 def isForeignCore(iPlayer, tPlot):
-	x, y =  tPlot
+	x, y = tPlot
 	plot = gc.getMap().plot(x, y)
 	for iLoopPlayer in range(iNumPlayers):
 		if iLoopPlayer == iPlayer: continue
