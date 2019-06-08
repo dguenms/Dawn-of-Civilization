@@ -132,6 +132,7 @@
 	<ElementType name="bVisibleAlways" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNukeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bTerrain" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bMakesPassable" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="TerrainBoolean" content="eltOnly">
 		<element type="TerrainType"/>
 		<element type="bTerrain"/>
@@ -160,6 +161,7 @@
 		<element type="iDisappearance"/>
 		<element type="iGrowth"/>
 		<element type="iTurnDamage"/>
+		<element type="bMakesPassable" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoCoast"/>
 		<element type="bNoRiver"/>
 		<element type="bNoAdjacent"/>
