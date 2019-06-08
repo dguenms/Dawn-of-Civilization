@@ -3358,6 +3358,7 @@ public:
 	bool isRequiresRiver() const;			// Exposed to Python
 	bool isAddsFreshWater() const;		// Exposed to Python
 	bool isImpassable() const;				// Exposed to Python
+	bool isMakesPassable() const; // Leoreth
 	bool isNoCity() const;						// Exposed to Python
 	bool isNoImprovement() const;			// Exposed to Python
 	bool isVisibleAlways() const;			// Exposed to Python
@@ -3419,6 +3420,7 @@ protected:
 	bool m_bNoImprovement;
 	bool m_bVisibleAlways;
 	bool m_bNukeImmune;
+	bool m_bMakesPassable; // Leoreth
 	CvString m_szOnUnitChangeTo;
 
 	int m_iWorldSoundscapeScriptId;
