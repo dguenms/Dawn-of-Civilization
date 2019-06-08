@@ -14473,6 +14473,7 @@ m_bNoCity(false),
 m_bNoImprovement(false),
 m_bVisibleAlways(false),
 m_bNukeImmune(false),
+m_bMakesPassable(false), // Leoreth
 m_iWorldSoundscapeScriptId(0),
 m_iEffectProbability(0),
 m_piYieldChange(NULL),
@@ -14591,6 +14592,12 @@ bool CvFeatureInfo::isAddsFreshWater() const
 bool CvFeatureInfo::isImpassable() const
 {
 	return m_bImpassable;
+}
+
+// Leoreth
+bool CvFeatureInfo::isMakesPassable() const
+{
+	return m_bMakesPassable;
 }
 
 bool CvFeatureInfo::isNoCity() const
@@ -14771,6 +14778,7 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoImprovement, "bNoImprovement");
 	pXML->GetChildXmlValByName(&m_bVisibleAlways, "bVisibleAlways");
 	pXML->GetChildXmlValByName(&m_bNukeImmune, "bNukeImmune");
+	pXML->GetChildXmlValByName(&m_bMakesPassable, "bMakesPassable");
 	pXML->GetChildXmlValByName(m_szOnUnitChangeTo, "OnUnitChangeTo");
 
 	pXML->SetVariableListTagPairForAudioScripts(&m_pi3DAudioScriptFootstepIndex, "FootstepSounds", GC.getFootstepAudioTypes(), GC.getNumFootstepAudioTypes());

@@ -4392,7 +4392,20 @@ bool CvPlot::isImpassable() const
 		return false;
 	}
 
-	return ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).isImpassable() : GC.getFeatureInfo(getFeatureType()).isImpassable());
+	if (GC.getTerrainInfo(getTerrainType()).isImpassable())
+	{
+		if (getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(getFeatureType()).isMakesPassable())
+		{
+			return true;
+		}
+	}
+
+	if (getFeatureType() != NO_FEATURE && GC.getFeatureInfo(getFeatureType()).isImpassable())
+	{
+		return true;
+	}
+
+	return false;
 }
 
 
