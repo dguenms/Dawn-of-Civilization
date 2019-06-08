@@ -3153,6 +3153,22 @@
 		<Spanish>Hide Benefits No Longer Available</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_IMPASSABLE_MOST_UNITS</Tag> <!-- needs translation -->
+		<English>[NEWLINE][ICON_BULLET]Impassable for most units</English>
+		<French>[NEWLINE][ICON_BULLET]Impassable for most units</French>
+		<German>[NEWLINE][ICON_BULLET]Unpassierbar f&#252;r die meisten Einheiten</German>
+		<Italian>[NEWLINE][ICON_BULLET]Impassable for most units</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Impassable for most units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAN_ENTER</Tag>
+		<English>[ICON_BULLET]Can Enter</English>
+		<French>[ICON_BULLET]Peut entrer dans :</French>
+		<German>[ICON_BULLET]Fortbewegung auf</German>
+		<Italian>[ICON_BULLET]Pu&#242; entrare nell'</Italian>
+		<Spanish>[ICON_BULLET]Pede entrar en</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
