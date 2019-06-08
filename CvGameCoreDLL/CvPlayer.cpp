@@ -1837,7 +1837,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 							if (bConquest && !bRecapture)
 							{
-								log(CvWString::format(L"add building damage of %s", kOldBuilding.getText()));
 								iTotalBuildingDamage += kOldBuilding.getProductionCost() * (100 - kOldBuilding.getConquestProbability());
 							}
 						}
@@ -1849,27 +1848,19 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	iTotalBuildingDamage /= 100;
 
-	log(CvWString::format(L"initial building damage: %d", iTotalBuildingDamage));
-
 	iTotalBuildingDamage *= std::max(0, 100 - iDefense);
 	iTotalBuildingDamage /= 100;
-
-	log(CvWString::format(L"defense modified building damage: %d", iTotalBuildingDamage));
 
 	if (!isHuman() && !isBarbarian())
 	{
 		iTotalBuildingDamage *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIConstructPercent();
 		iTotalBuildingDamage /= 100;
-		
-		log(CvWString::format(L"handicap modified building damage: %d", iTotalBuildingDamage));	
 	}
 
 	if (iCaptureMaxTurns > 0 && GC.getGameINLINE().getGameTurn() > getScenarioStartTurn() + getTurns(iCaptureMaxTurns))
 	{
 		iTotalBuildingDamage *= std::max(0, std::min(GC.getGame().getGameTurn() - iGameTurnAcquired, getTurns(iCaptureMaxTurns)));
 		iTotalBuildingDamage /= getTurns(iCaptureMaxTurns);
-
-		log(CvWString::format(L"capture turns building damage: %d", iTotalBuildingDamage));
 	}
 
 	pNewCity->setBuildingDamage(iTotalBuildingDamage);
@@ -1967,9 +1958,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			iOccupationTime = getTurns((iOldCultureLevel + 1) * (100 - iTeamCulturePercent) / 100);
 		}
 
-		log(CvWString::format(L"city (%d, %d)", pNewCity->getX(), pNewCity->getY()));
-		log(CvWString::format(L"occupation time: %d, old culture level: %d, team culture percent: %d", iOccupationTime, iOldCultureLevel, iTeamCulturePercent));
-
 		if (iOccupationTime > 0)
 		{
 			pNewCity->changeOccupationTimer(iOccupationTime);
@@ -1983,17 +1971,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		pNewCity->changeProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2);
 	}
-
-	// Leoreth: receive slaves with slavery proportional to capture gold (disabled)
-	/*if (bConquest && isSlavery())
-	{
-		int iNumCapturedSlaves = 1 + iCaptureGold / GC.getDefineINT("CAPTURE_GOLD_FOR_CAPTURED_SLAVES");
-
-		for (int iI = 0; iI < iNumCapturedSlaves; iI++)
-		{
-			initUnit((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE")), pNewCity->getX(), pNewCity->getY());
-		}
-	}*/
 
 	pCityPlot->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true, false, NO_TEAM, false);
 
