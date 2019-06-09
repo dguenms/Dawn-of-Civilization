@@ -252,7 +252,7 @@
 			<Grid>Art/Terrain/Textures/SemidesertGrids.dds</Grid>
 			<Detail>Art/Terrain/Textures/PlainsDETAIL.dds</Detail>
 			<Button>Art/Interface/Buttons/BaseTerrain/Semidesert.dds</Button>
-			<LayerOrder>5</LayerOrder>
+			<LayerOrder>6</LayerOrder>
 			<AlphaShader>0</AlphaShader>
 			<TextureBlend01>8,0</TextureBlend01>
 			<TextureBlend02>1,0</TextureBlend02>
@@ -276,7 +276,7 @@
 			<Grid>Art/Terrain/Textures/MoorlandGrids.dds</Grid>
 			<Detail>Art/Terrain/Textures/MoorlandDetail.dds</Detail>
 			<Button>,Art/Interface/Buttons/BaseTerrain/Plains.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,8,1</Button>
-			<LayerOrder>6</LayerOrder>
+			<LayerOrder>7</LayerOrder>
 			<AlphaShader>0</AlphaShader>
 			<TextureBlend01>8,0</TextureBlend01>
 			<TextureBlend02>1,0</TextureBlend02>
@@ -300,7 +300,7 @@
 			<Grid>Art/Terrain/Textures/SteppeGrids.dds</Grid>
 			<Detail>Art/Terrain/Textures/PlainsDETAIL.dds</Detail>
 			<Button>,Art/Interface/Buttons/BaseTerrain/Plains.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,8,1</Button>
-			<LayerOrder>7</LayerOrder>
+			<LayerOrder>8</LayerOrder>
 			<AlphaShader>0</AlphaShader>
 			<TextureBlend01>8,0</TextureBlend01>
 			<TextureBlend02>1,0</TextureBlend02>
@@ -317,6 +317,30 @@
 			<TextureBlend10>7,0</TextureBlend10>
 			<TextureBlend05>13,0</TextureBlend05>
 			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_LAGOON</Type>
+			<Path>Art/Terrain/Textures/LagoonBLEND.dds</Path>
+			<Grid>Art/Terrain/Textures/LagoonGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/LagoonDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Coast.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,1</Button>
+			<LayerOrder>9</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>1,180 5,270 9,180  13,270 17,180 21,270 26,270</TextureBlend01>
+			<TextureBlend02>1,270 5,0   9,270  13,0   17,270 21,0   26,0</TextureBlend02>
+			<TextureBlend04>1,0   5,90  9,0    13,90  17,0   21,90  26,90</TextureBlend04>
+			<TextureBlend08>1,90  5,180 9,90   13,180 17,90  21,180 26,180</TextureBlend08>
+			<TextureBlend03>3,0   7,180 11,0   15,180 19,0   23,180 27,0   31,180</TextureBlend03>
+			<TextureBlend06>3,90  7,270 11,90  15,270 19,90  23,270 27,90  31,270</TextureBlend06>
+			<TextureBlend12>3,180 7,0   11,180 15,0   19,180 23,0   27,180 31,0</TextureBlend12>
+			<TextureBlend09>3,270 7,90  11,270 15,90  19,270 23,90  27,270 31,90</TextureBlend09>
+			<TextureBlend07>4,0   8,270 12,0   16,270 20,0   24,270 28,0   32,270</TextureBlend07>
+			<TextureBlend14>4,90  8,0   12,90  16,0   20,90  24,0   28,90  32,0</TextureBlend14>
+			<TextureBlend13>4,180 8,90  12,180 16,90  20,180 24,90  28,180 32,90</TextureBlend13>
+			<TextureBlend11>4,270 8,180 12,270 16,180 20,270 24,180 28,270 32,180</TextureBlend11>
+			<TextureBlend10>2,0   6,90  10,0   14,90  18,0   22,90  </TextureBlend10>
+			<TextureBlend05>2,90  6,0   10,90  14,0   18,90  22,0   </TextureBlend05>
+			<TextureBlend15>29,0 </TextureBlend15>
 		</TerrainArtInfo>
 	</TerrainArtInfos>
 </Civ4ArtDefines>
