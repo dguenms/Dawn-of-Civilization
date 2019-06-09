@@ -35729,7 +35729,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=24
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37171,7 +37171,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=30
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
