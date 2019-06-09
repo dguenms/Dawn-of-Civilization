@@ -1522,7 +1522,7 @@
 			<Type>TERRAIN_LAGOON</Type>
 			<Description>TXT_KEY_TERRAIN_LAGOON</Description>
 			<Civilopedia>TXT_KEY_TERRAIN_LAGOON_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_TERRAIN_COAST</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_TERRAIN_LAGOON</ArtDefineTag>
 			<Yields>
 				<iYield>1</iYield>
 				<iYield>0</iYield>
