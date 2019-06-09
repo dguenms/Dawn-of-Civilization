@@ -71,4 +71,9 @@
 		<Italian>Piana di sale</Italian>
 		<Spanish>Salar</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_ATOLL</Tag>
+		<English>Atoll</English>
+		<German>Atoll</German>
+	</TEXT>
 </Civ4GameText>
