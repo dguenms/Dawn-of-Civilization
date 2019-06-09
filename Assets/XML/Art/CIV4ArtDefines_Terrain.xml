@@ -319,7 +319,7 @@
 			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
 		</TerrainArtInfo>
 		<TerrainArtInfo>
-			<Type>ART_DEF_TERRAIN_LAGOON</Type>
+			<Type>ART_DEF_TERRAIN_ATOLL</Type>
 			<Path>Art/Terrain/Textures/LagoonBLEND.dds</Path>
 			<Grid>Art/Terrain/Textures/LagoonGrids.dds</Grid>
 			<Detail>Art/Terrain/Textures/LagoonDetail.dds</Detail>
