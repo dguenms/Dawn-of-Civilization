@@ -2858,14 +2858,6 @@
 		<ArtRef Name="goal:BONUS_RUBBER">
 			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">bPlace:0</Attribute>
-			<Attribute Class="Scalar">iCropArea:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
-			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-		</ArtRef>
-		<ArtRef Name="goal:BONUS_RUBBER">
-			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
-			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:20</Attribute>
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:1</Attribute>
