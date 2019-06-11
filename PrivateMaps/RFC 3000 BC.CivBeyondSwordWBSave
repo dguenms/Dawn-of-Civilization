@@ -1577,7 +1577,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=71
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -2001,7 +2001,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=72
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -2397,13 +2397,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=3,y=70
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -2414,7 +2414,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=72
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -2830,7 +2830,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=72
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -2838,7 +2838,7 @@ BeginPlot
 	x=4,y=73
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -2846,7 +2846,7 @@ BeginPlot
 	x=4,y=74
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -3197,21 +3197,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=62
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=63
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=64
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=65
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -3244,7 +3245,7 @@ BeginPlot
 	x=5,y=71
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -3252,7 +3253,7 @@ BeginPlot
 	x=5,y=72
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -3260,7 +3261,7 @@ BeginPlot
 	x=5,y=73
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -3270,13 +3271,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=5,y=75
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
@@ -3625,12 +3626,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=63
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=6,y=64
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3665,7 +3666,7 @@ BeginPlot
 	x=6,y=70
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -3673,19 +3674,19 @@ BeginPlot
 	x=6,y=71
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=6,y=72
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=6,y=73
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -4085,7 +4086,7 @@ BeginPlot
 	x=7,y=68
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
@@ -4100,7 +4101,7 @@ BeginPlot
 	x=7,y=70
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -4108,7 +4109,7 @@ BeginPlot
 	x=7,y=71
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -4127,7 +4128,7 @@ BeginPlot
 	x=7,y=74
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -4511,15 +4512,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
 BeginPlot
 	x=8,y=67
 	BonusType=BONUS_SILVER
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -4529,8 +4530,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -4558,7 +4559,7 @@ BeginPlot
 	x=8,y=73
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -4952,8 +4953,9 @@ BeginPlot
 	x=9,y=65
 	RiverNSDirection=2
 	isWOfRiver
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=9,y=66
@@ -4978,7 +4980,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -4997,7 +4999,7 @@ BeginPlot
 	x=9,y=72
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -5383,6 +5385,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=63
+	RiverNSDirection=2
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -5412,7 +5416,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -5422,7 +5426,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -5430,7 +5434,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -5439,7 +5443,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -5447,7 +5451,7 @@ BeginPlot
 	x=10,y=71
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -5455,7 +5459,7 @@ BeginPlot
 	x=10,y=72
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -5863,13 +5867,13 @@ EndPlot
 BeginPlot
 	x=11,y=68
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=11,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6278,7 +6282,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6304,7 +6308,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -6312,13 +6316,13 @@ BeginPlot
 	x=12,y=68
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=12,y=69
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6715,19 +6719,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=62
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=63
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6746,14 +6750,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=68
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -7158,19 +7162,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=62
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
 BeginPlot
 	x=14,y=63
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=14,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -7188,23 +7192,23 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_OIL
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=14,y=67
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=14,y=68
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -7214,7 +7218,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -7611,12 +7615,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=62
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=63
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -7635,18 +7639,18 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=15,y=66
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -7657,7 +7661,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8051,7 +8055,7 @@ BeginPlot
 	x=16,y=62
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -8078,12 +8082,12 @@ EndPlot
 BeginPlot
 	x=16,y=66
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8094,13 +8098,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=70
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8492,7 +8496,7 @@ BeginPlot
 	x=17,y=62
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -8509,8 +8513,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=17,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -8524,13 +8528,13 @@ EndPlot
 BeginPlot
 	x=17,y=67
 	BonusType=BONUS_URANIUM
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=68
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8541,7 +8545,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=17,y=70
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8936,7 +8940,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=62
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -8954,14 +8958,14 @@ EndPlot
 BeginPlot
 	x=18,y=65
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=66
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8972,13 +8976,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=68
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -9396,26 +9400,26 @@ BeginPlot
 	x=19,y=65
 	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=66
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=68
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -9426,7 +9430,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=70
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -9842,13 +9846,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -10277,32 +10281,33 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=64
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=66
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=67
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=68
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -10716,7 +10721,7 @@ EndPlot
 BeginPlot
 	x=22,y=63
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -10724,12 +10729,12 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -10739,13 +10744,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -11163,25 +11168,25 @@ EndPlot
 BeginPlot
 	x=23,y=63
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=23,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=23,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=23,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -11189,6 +11194,7 @@ BeginPlot
 	x=23,y=67
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -11595,34 +11601,34 @@ EndPlot
 BeginPlot
 	x=24,y=62
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=24,y=63
 	BonusType=BONUS_GOLD
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=24,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=24,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=24,y=66
 	BonusType=BONUS_FUR
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -12026,25 +12032,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=62
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=25,y=63
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -12461,20 +12468,20 @@ EndPlot
 BeginPlot
 	x=26,y=62
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=63
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -12895,8 +12902,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=62
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -12909,7 +12916,7 @@ BeginPlot
 	x=27,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -13333,8 +13340,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=62
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -13783,12 +13790,12 @@ BeginPlot
 	x=29,y=62
 	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=29,y=63
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -14244,20 +14251,20 @@ EndPlot
 BeginPlot
 	x=30,y=62
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=63
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=64
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -14697,7 +14704,7 @@ BeginPlot
 	x=31,y=63
 	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -14710,7 +14717,7 @@ BeginPlot
 	x=31,y=65
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -15154,12 +15161,12 @@ BeginPlot
 	x=32,y=63
 	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=64
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -15170,13 +15177,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -15622,7 +15629,7 @@ EndPlot
 BeginPlot
 	x=33,y=63
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -15640,13 +15647,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=33,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -16092,7 +16099,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -16542,7 +16549,7 @@ EndPlot
 BeginPlot
 	x=35,y=62
 	BonusType=BONUS_FUR
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -16559,7 +16566,7 @@ EndPlot
 BeginPlot
 	x=35,y=65
 	BonusType=BONUS_IRON
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -17033,13 +17040,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=64
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=36,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -17505,13 +17512,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=65
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=37,y=66
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -17954,18 +17961,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=62
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=38,y=63
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=38,y=64
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -18403,7 +18410,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=62
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -18411,8 +18418,8 @@ BeginPlot
 	x=39,y=63
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
