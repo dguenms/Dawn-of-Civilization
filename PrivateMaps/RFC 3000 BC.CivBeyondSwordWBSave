@@ -8375,8 +8375,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_LAGOON
+	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=44
@@ -10619,7 +10619,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=49
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_LAGOON
 	PlotType=2
 EndPlot
 BeginPlot
@@ -50830,6 +50830,7 @@ BeginPlot
 	x=112,y=72
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_RARE_EARTHS
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -54457,6 +54458,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=70
+	BonusType=BONUS_RARE_EARTHS
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
