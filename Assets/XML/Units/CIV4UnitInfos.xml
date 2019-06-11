@@ -32,6 +32,14 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>2</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -92,6 +100,10 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>3</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -144,6 +156,14 @@
 					<TerrainType>TERRAIN_DESERT</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>2</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -194,6 +214,10 @@
 			<TerrainImpassables>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -263,6 +287,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>4</iAsset>
 			<UnitMeshGroups>
@@ -316,6 +344,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -373,6 +405,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -532,6 +568,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iWorkRate>100</iWorkRate>
 			<iAsset>2</iAsset>
@@ -677,6 +717,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -826,6 +870,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iWorkRate>150</iWorkRate>
 			<iAsset>2</iAsset>
@@ -971,6 +1019,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1205,6 +1257,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
@@ -1251,6 +1307,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1300,6 +1360,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
@@ -1345,6 +1409,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1394,6 +1462,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
@@ -1439,6 +1511,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1488,6 +1564,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
@@ -1533,6 +1613,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1582,6 +1666,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
@@ -1627,6 +1715,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1676,6 +1768,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iAsset>2</iAsset>
 			<UnitMeshGroups>
@@ -1721,6 +1817,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1786,6 +1886,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1882,6 +1986,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -1984,6 +2092,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -2094,6 +2206,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -2193,6 +2309,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -2302,6 +2422,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -2392,6 +2516,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -2488,6 +2616,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -2580,6 +2712,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -2668,6 +2804,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -2768,6 +2908,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -2983,6 +3127,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -3079,6 +3227,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -3188,6 +3340,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -3295,6 +3451,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -3400,6 +3560,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>8</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -3480,6 +3644,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -3587,6 +3755,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -3702,6 +3874,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -3807,6 +3983,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -3920,6 +4100,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -4005,6 +4189,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -4105,6 +4293,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -4211,6 +4403,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -4313,6 +4509,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -4397,6 +4597,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -4486,6 +4690,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -4588,6 +4796,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -4678,6 +4890,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -4789,6 +5005,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -4894,6 +5114,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -4990,6 +5214,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -5092,6 +5320,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -5192,6 +5424,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -5297,6 +5533,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -5411,6 +5651,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -5519,6 +5763,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -5607,6 +5855,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -5707,6 +5959,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -5814,6 +6070,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -5915,6 +6175,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -6030,6 +6294,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -6118,6 +6386,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -6216,6 +6488,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -6328,6 +6604,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -6421,6 +6701,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -6509,6 +6793,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -6611,6 +6899,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -6701,6 +6993,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -6866,6 +7162,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -6959,6 +7259,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -7049,6 +7353,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -7145,6 +7453,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -7246,6 +7558,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -7469,6 +7785,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -7576,6 +7896,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -7690,6 +8014,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -7786,6 +8114,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -7887,6 +8219,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -8007,6 +8343,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -8206,6 +8546,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -8300,6 +8644,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -8404,6 +8752,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -8515,6 +8867,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -8751,6 +9107,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -8979,6 +9339,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -9066,6 +9430,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -9158,6 +9526,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -9240,6 +9612,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -9460,6 +9836,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -9570,6 +9950,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -9664,6 +10048,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -9766,6 +10154,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -9864,6 +10256,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -9971,6 +10367,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -10076,6 +10476,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -10302,6 +10706,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -10419,6 +10827,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -10648,6 +11060,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -10741,6 +11157,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -10856,6 +11276,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -10963,6 +11387,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -11089,6 +11517,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -11345,6 +11777,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -11462,6 +11898,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -11551,6 +11991,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -11653,6 +12097,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -11782,6 +12230,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -11909,6 +12361,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -12015,6 +12471,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -12102,6 +12562,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -12527,6 +12991,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -12621,6 +13089,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -12720,6 +13192,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -12815,6 +13291,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -12914,6 +13394,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -13009,6 +13493,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -13119,6 +13607,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -13214,6 +13706,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -13314,6 +13810,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -13408,6 +13908,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -13511,6 +14015,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
@@ -13610,6 +14118,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -17339,6 +17851,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iBaseDiscover>1000</iBaseDiscover>
 			<iDiscoverMultiplier>2</iDiscoverMultiplier>
@@ -17404,6 +17920,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -17475,6 +17995,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iBaseDiscover>1500</iBaseDiscover>
 			<iDiscoverMultiplier>3</iDiscoverMultiplier>
@@ -17542,6 +18066,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -17612,6 +18140,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -17688,6 +18220,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iBaseDiscover>1000</iBaseDiscover>
 			<iDiscoverMultiplier>2</iDiscoverMultiplier>
@@ -17752,6 +18288,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -17821,6 +18361,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -17938,6 +18482,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iEspionagePoints>3000</iEspionagePoints>
 			<iAsset>5</iAsset>
@@ -18042,6 +18590,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iBaseDiscover>1000</iBaseDiscover>
 			<iDiscoverMultiplier>2</iDiscoverMultiplier>
@@ -18108,6 +18660,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -18180,6 +18736,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iBaseDiscover>1500</iBaseDiscover>
 			<iDiscoverMultiplier>3</iDiscoverMultiplier>
@@ -18248,6 +18808,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -18319,6 +18883,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -18396,6 +18964,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iBaseDiscover>1000</iBaseDiscover>
 			<iDiscoverMultiplier>2</iDiscoverMultiplier>
@@ -18461,6 +19033,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
@@ -18534,6 +19110,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iEspionagePoints>3000</iEspionagePoints>
 			<iAsset>5</iAsset>
@@ -18600,6 +19180,10 @@
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
 			</TerrainImpassables>
 			<iWorkRate>100</iWorkRate>
 			<iAsset>2</iAsset>
@@ -18663,6 +19247,10 @@
 				</TerrainImpassable>
 				<TerrainImpassable>
 					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>

@@ -8819,7 +8819,7 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 
 	for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)
 	{
-		if (iI == TERRAIN_DESERT || iI == TERRAIN_TUNDRA)
+		if (iI == TERRAIN_DESERT || iI == TERRAIN_TUNDRA || iI == TERRAIN_SNOW)
 		{
 			continue;
 		}
@@ -8871,7 +8871,7 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 
 	for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
 	{
-		if (iI == TERRAIN_DESERT || iI == TERRAIN_TUNDRA)
+		if (iI == TERRAIN_DESERT || iI == TERRAIN_TUNDRA || iI == TERRAIN_SNOW)
 		{
 			if (!GC.getUnitInfo(eUnit).getTerrainImpassable(iI))
 			{
@@ -16096,7 +16096,7 @@ void CvGameTextMgr::setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerr
 		szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_IMPASSABLE"));
 	}
 
-	if (eTerrain == TERRAIN_DESERT || eTerrain == TERRAIN_TUNDRA)
+	if (eTerrain == TERRAIN_DESERT || eTerrain == TERRAIN_TUNDRA || eTerrain == TERRAIN_SNOW)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_IMPASSABLE_MOST_UNITS"));
 	}
