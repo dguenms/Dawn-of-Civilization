@@ -774,6 +774,8 @@ EndPlayer
 BeginMap
 	grid width=150
 	grid height=80
+	prime meridian=75
+	equator=40
 	top latitude=90
 	bottom latitude=-90
 	wrap X=1
@@ -1355,7 +1357,7 @@ EndPlot
 BeginPlot
 	x=1,y=27
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_ATOLL
 	PlotType=2
 EndPlot
 BeginPlot
@@ -2606,7 +2608,7 @@ EndPlot
 BeginPlot
 	x=4,y=28
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_ATOLL
 	PlotType=2
 EndPlot
 BeginPlot
@@ -3057,7 +3059,7 @@ EndPlot
 BeginPlot
 	x=5,y=34
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_ATOLL
 	PlotType=2
 EndPlot
 BeginPlot
@@ -64151,7 +64153,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=32
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -64583,8 +64585,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=33
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=143,y=34
@@ -64991,13 +64994,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=144,y=32
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=144,y=33
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_LAGOON
 	PlotType=2
 EndPlot
 BeginPlot
@@ -65402,7 +65406,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=145,y=32
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -66653,7 +66656,7 @@ EndPlot
 BeginPlot
 	x=148,y=34
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_ATOLL
 	PlotType=2
 EndPlot
 BeginPlot
@@ -67061,7 +67064,7 @@ EndPlot
 BeginPlot
 	x=149,y=31
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_ATOLL
 	PlotType=2
 EndPlot
 BeginPlot
