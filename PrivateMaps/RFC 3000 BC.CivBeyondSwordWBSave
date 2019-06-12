@@ -61187,12 +61187,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=49
-	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=135,y=50
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -61204,7 +61204,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=52
-	BonusType=BONUS_TEA
+	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -61615,12 +61615,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=48
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=136,y=49
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61631,6 +61631,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=51
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -62053,6 +62054,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=51
+	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -62071,7 +62073,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=54
-	BonusType=BONUS_IRON
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -62498,6 +62500,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=52
+	BonusType=BONUS_TEA
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -62509,13 +62512,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=54
+	isNOfRiver
+	RiverWEDirection=3
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=138,y=55
-	BonusType=BONUS_COPPER
+	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -62543,7 +62548,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=60
-	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -62963,34 +62967,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=55
+	isNOfRiver
+	RiverWEDirection=1
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=139,y=56
-	BonusType=BONUS_ALUMINUM
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=139,y=57
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=139,y=58
-	BonusType=BONUS_PIG
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=139,y=59
-	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -63002,14 +63006,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=61
+	BonusType=BONUS_RARE_EARTHS
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=139,y=62
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=139,y=63
@@ -63426,7 +63431,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=58
-	BonusType=BONUS_SILK
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -63448,12 +63453,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=62
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=140,y=63
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63874,22 +63878,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=61
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=141,y=62
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=141,y=63
-	TerrainType=TERRAIN_OCEAN
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=141,y=64
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64314,12 +64318,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=63
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=142,y=64
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64739,6 +64743,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=63
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
