@@ -2555,11 +2555,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2</Tag>
-		<English>Be the first civilization to complete the Manhattan Project and the Lunar Landing</English>
+		<English>Be the first civilization to complete the Manhattan Project and a Lunar Landing</English>
 		<French>&#202;tre la premi&#232;re civilisation &#224; compl&#233;ter le projet Manhattan et le programme Apollo</French>
-		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und die Mondlandung vervollst&#228;ndigt</German>
-		<Italian>Be the first civilization to complete the Manhattan Project and the Lunar Landing</Italian>
-		<Spanish>Be the first civilization to complete the Manhattan Project and the Lunar Landing</Spanish>
+		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und eine Mondlandung vervollst&#228;ndigt</German>
+		<Italian>Be the first civilization to complete the Manhattan Project and a Lunar Landing</Italian>
+		<Spanish>Be the first civilization to complete the Manhattan Project and a Lunar Landing</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3_TITLE</Tag>
@@ -4878,7 +4878,7 @@
 		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA</Tag>
 		<English>Cities in Siberia: %d1 / %d2</English>
 		<French>Villes en Sib&#233;rie : %d1 / %d2</French>
-		<German>Staedte in Sibirien: %d1 / %d2</German>
+		<German>St&#228;dte in Sibirien: %d1 / %d2</German>
 		<Italian>Cities in Siberia: %d1 / %d2</Italian>
 		<Spanish>Cities in Siberia: %d1 / %d2</Spanish>
 	</TEXT>
@@ -5094,7 +5094,7 @@
 		<Tag>TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY</Tag>
 		<English>Railroad from Moscow to a Siberian port</English>
 		<French>Chemin de fer de Moscou &#224; un port sib&#233;rien</French>
-		<German>Eisenbahn von Moskau an einen sibirischen Hafen</German>
+		<German>Eisenbahn von Moskau zu einem sibirischen Hafen</German>
 		<Italian>Railroad from Moscow to a Siberian port</Italian>
 		<Spanish>Railroad from Moscow to a Siberian port</Spanish>
 	</TEXT>
