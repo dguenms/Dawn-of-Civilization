@@ -29492,6 +29492,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=53
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -29515,7 +29516,6 @@ BeginPlot
 	x=65,y=57
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -29920,6 +29920,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=51
+	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -29947,7 +29948,7 @@ EndPlot
 BeginPlot
 	x=66,y=56
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -30380,7 +30381,7 @@ EndPlot
 BeginPlot
 	x=67,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -30398,6 +30399,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -30820,7 +30822,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_PIG
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -31260,24 +31262,25 @@ EndPlot
 BeginPlot
 	x=69,y=53
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=69,y=54
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=69,y=55
 	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=56
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_LAGOON
 	PlotType=2
 EndPlot
@@ -31725,12 +31728,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=55
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=56
+	BonusType=BONUS_CLAM
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
@@ -32636,7 +32639,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=52
-	BonusType=BONUS_SHEEP
+	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
