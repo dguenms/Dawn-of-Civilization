@@ -1539,19 +1539,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1_EPIC</Tag>
-		<English>Have an average city culture of 9000 by 1600 AD</English>
+		<English>Have an average city culture of 9000 by 1600 AD without ever losing a city</English>
 		<French>Avoir une culture moyenne de 9000 par ville avant 1600 ap. J.-C. sans jamais perdre une ville</French>
-		<German>Haben Sie bis zum Jahr 1600 n. Chr. durchschnittlich 9000 Kulturpunkte in Ihren St&#228;dten</German>
-		<Italian>Have an average city culture of 9000 by 1600 AD</Italian>
-		<Spanish>Have an average city culture of 9000 by 1600 AD</Spanish>
+		<German>Haben Sie bis zum Jahr 1600 n. Chr. durchschnittlich 9000 Kulturpunkte pro Stadt, ohne jemals eine Stadt zu verlieren</German>
+		<Italian>Have an average city culture of 9000 by 1600 AD without ever losing a city</Italian>
+		<Spanish>Have an average city culture of 9000 by 1600 AD without ever losing a city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1_MARATHON</Tag>
-		<English>Have an average city culture of 18000 by 1600 AD</English>
+		<English>Have an average city culture of 18000 by 1600 AD without ever losing a city</English>
 		<French>Avoir une culture moyenne de 18 000 par ville avant 1600 ap. J.-C. sans jamais perdre une ville</French>
-		<German>Haben Sie bis zum Jahr 1600 n. Chr. durchschnittlich 18000 Kulturpunkte in Ihren St&#228;dten</German>
-		<Italian>Have an average city culture of 18000 by 1600 AD</Italian>
-		<Spanish>Have an average city culture of 18000 by 1600 AD</Spanish>
+		<German>Haben Sie bis zum Jahr 1600 n. Chr. durchschnittlich 18000 Kulturpunkte pro Stadt, ohne jemals eine Stadt zu verlieren</German>
+		<Italian>Have an average city culture of 18000 by 1600 AD without ever losing a city</Italian>
+		<Spanish>Have an average city culture of 18000 by 1600 AD without ever losing a city</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP2_TITLE</Tag>
@@ -2429,7 +2429,7 @@
 		<Tag>TXT_KEY_UHV_POR3</Tag>
 		<English>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</English>
 		<French>Contr&#244;ler 15 colonies au Br&#233;sil, en Afrique et en Asie en 1700 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 1700 AD 15 Kolonien in Brasilien, Afrika und Asien</German>
+		<German>Kontrollieren Sie im Jahr 1700 n. Chr. 15 Kolonien in Brasilien, Afrika und Asien</German>
 		<Italian>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</Italian>
 		<Spanish>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</Spanish>
 	</TEXT>
@@ -2555,11 +2555,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2</Tag>
-		<English>Be the first civilization to complete the Manhattan Project and the Apollo Program</English>
+		<English>Be the first civilization to complete the Manhattan Project and a Lunar Landing</English>
 		<French>&#202;tre la premi&#232;re civilisation &#224; compl&#233;ter le projet Manhattan et le programme Apollo</French>
-		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und das Apollo-Programm vervollst&#228;ndigt</German>
-		<Italian>Be the first civilization to complete the Manhattan Project and the Apollo Program</Italian>
-		<Spanish>Be the first civilization to complete the Manhattan Project and the Apollo Program</Spanish>
+		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und eine Mondlandung vervollst&#228;ndigt</German>
+		<Italian>Be the first civilization to complete the Manhattan Project and a Lunar Landing</Italian>
+		<Spanish>Be the first civilization to complete the Manhattan Project and a Lunar Landing</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3_TITLE</Tag>
@@ -4878,7 +4878,7 @@
 		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA</Tag>
 		<English>Cities in Siberia: %d1 / %d2</English>
 		<French>Villes en Sib&#233;rie : %d1 / %d2</French>
-		<German>Cities in Siberia: %d1 / %d2</German>
+		<German>St&#228;dte in Sibirien: %d1 / %d2</German>
 		<Italian>Cities in Siberia: %d1 / %d2</Italian>
 		<Spanish>Cities in Siberia: %d1 / %d2</Spanish>
 	</TEXT>
@@ -4886,7 +4886,7 @@
 		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA_COMPLETE</Tag>
 		<English>Colonize Siberia</English>
 		<French>Coloniser la Sib&#233;rie</French>
-		<German>Colonize Siberia</German>
+		<German>Sibirien kolonisiert</German>
 		<Italian>Colonize Siberia</Italian>
 		<Spanish>Colonize Siberia</Spanish>
 	</TEXT>
@@ -5094,7 +5094,7 @@
 		<Tag>TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY</Tag>
 		<English>Railroad from Moscow to a Siberian port</English>
 		<French>Chemin de fer de Moscou &#224; un port sib&#233;rien</French>
-		<German>Railroad from Moscow to a Siberian port</German>
+		<German>Eisenbahn von Moskau zu einem sibirischen Hafen</German>
 		<Italian>Railroad from Moscow to a Siberian port</Italian>
 		<Spanish>Railroad from Moscow to a Siberian port</Spanish>
 	</TEXT>
