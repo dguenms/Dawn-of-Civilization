@@ -15285,7 +15285,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=5
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -15296,7 +15296,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=7
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -24605,27 +24605,27 @@ BeginPlot
 	x=54,y=37
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=38
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=39
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=40
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=41
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -25035,22 +25035,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=39
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=40
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=41
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=55,y=42
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -25469,13 +25469,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=41
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=56,y=42
 	BonusType=BONUS_IRON
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -25898,17 +25898,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=41
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=57,y=42
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=57,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -26341,12 +26341,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=42
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=58,y=43
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -31675,12 +31675,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=44
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=45
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -32134,7 +32134,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=44
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -32599,12 +32599,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=44
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33055,7 +33055,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33509,7 +33509,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=42
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33977,7 +33977,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34471,7 +34471,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34933,7 +34933,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43600,12 +43600,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=58
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
 	x=96,y=59
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44035,12 +44035,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=58
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
 	x=97,y=59
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
