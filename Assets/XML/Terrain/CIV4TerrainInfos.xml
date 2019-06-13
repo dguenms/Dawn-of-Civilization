@@ -1832,6 +1832,8 @@
 				<iYield>1</iYield>
 			</Yields>
 			<RiverYieldChange>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
 				<iYield>1</iYield>
 			</RiverYieldChange>
 			<HillsYieldChange/>
