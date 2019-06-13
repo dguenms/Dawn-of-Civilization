@@ -42666,7 +42666,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=46
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -42694,6 +42694,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=51
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -43102,17 +43103,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=45
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=95,y=46
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=95,y=47
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43123,8 +43124,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=49
-	BonusType=BONUS_MILLET
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43515,17 +43515,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=43
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=96,y=44
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=96,y=45
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -43540,12 +43540,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=48
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=96,y=49
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43951,7 +43951,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=44
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -44386,7 +44386,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=44
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
