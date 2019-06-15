@@ -4498,7 +4498,7 @@
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_B">
 		<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-		<Attribute Class="Bonus">BONUS_SILK</Attribute>
+		<Attribute Class="Bonus">BONUS_SILK,BONUS_RUBBER</Attribute>
 		<Attribute Class="RegionTest">0</Attribute>
 		<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 		<To Name="BLeaf_4x2"/>
