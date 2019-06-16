@@ -25547,6 +25547,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=54
+	BonusType=BONUS_MARBLE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -27291,6 +27292,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=51
+	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
