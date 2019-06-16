@@ -12470,6 +12470,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=62
+	BonusType=BONUS_RARE_EARTHS
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
@@ -16586,6 +16587,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=67
+	BonusType=BONUS_RARE_EARTHS
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -56165,6 +56167,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=124,y=36
+	BonusType=BONUS_RARE_EARTHS
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
