@@ -322,8 +322,9 @@ class BugFinanceAdvisor:
 		for eBldg in range(gc.getNumBuildingInfos()):
 			info = gc.getBuildingInfo(eBldg)
 			iMultiplier = info.getCommerceModifier(CommerceTypes.COMMERCE_GOLD)
-			if iMultiplier > 0:
-				multipliers.append([eBldg, iMultiplier, 0, 0.0])
+			iPowerMultiplier = info.getPowerCommerceModifier(CommerceTypes.COMMERCE_GOLD)
+			if iMultiplier > 0 or iPowerMultiplier > 0:
+				multipliers.append([eBldg, iMultiplier, iPowerMultiplier, 0, 0.0])
 		
 		iBuildingCount = 0
 		iHeadquartersCount = 0
@@ -384,14 +385,17 @@ class BugFinanceAdvisor:
 				# buildings don't multiply wealth
 				fCityTotel = fCityTaxes + fCityBuildings + fCityHeadquarters + fCityCorporations + fCitySpecialists
 				for entry in multipliers:
-					eBldg, iMultiplier, _, _ = entry
+					eBldg, iMultiplier, iPowerMultiplier, _, _ = entry
 					iCount = city.getNumRealBuilding(eBldg)
 					if iCount > 0:
-						entry[2] += iCount
-						entry[3] += iCount * fCityTotel * iMultiplier / 100.0
+						entry[3] += iCount
+						if iMultiplier > 0:
+							entry[4] += iCount * fCityTotel * iMultiplier / 100.0
+						if city.isPower() and iPowerMultiplier > 0:
+							entry[4] += iCount * fCityTotel * iPowerMultiplier / 100.0
 		
 		iTotalMinusTaxes = int(fBuildings) + int(fCorporations) + int(fSpecialists) + int(fWealth)
-		for _, _, _, fGold in multipliers:
+		for _, _, _, _, fGold in multipliers:
 			iTotalMinusTaxes += int(fGold)
 		
 		yLocation += 1.5 * self.Y_SPACING
@@ -425,7 +429,7 @@ class BugFinanceAdvisor:
 			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(int(fSpecialists)) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_INCOME + self.PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT,  
 			 				*BugDll.widget("WIDGET_HELP_FINANCE_SPECIALISTS", self.iActiveLeader, 1))
 		
-		for eBldg, iMultiplier, iCount, fGold in multipliers:
+		for eBldg, iMultiplier, iPowerMultiplier, iCount, fGold in multipliers:
 			if iCount > 0 and fGold > 0.0:
 				fAverage = fGold / iCount
 				szDescription = gc.getBuildingInfo(eBldg).getDescription() + u" " + localText.getText("TXT_KEY_BUG_FINANCIAL_ADVISOR_BUILDING_COUNT_AVERAGE", (iCount, BugUtil.formatFloat(fAverage, 2)))
