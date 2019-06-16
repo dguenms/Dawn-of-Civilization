@@ -24249,7 +24249,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -24665,8 +24665,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=49
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=50
