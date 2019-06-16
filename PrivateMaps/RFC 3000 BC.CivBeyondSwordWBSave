@@ -12772,6 +12772,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=39
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -14605,8 +14606,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=45
+	BonusType=BONUS_SALT
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
