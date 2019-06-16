@@ -39596,8 +39596,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=54
-	BonusType=BONUS_HORSE
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_WINE
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -40044,8 +40045,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=52
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	TerrainType=TERRAIN_SALTLAKE
+	PlotType=3
 EndPlot
 BeginPlot
 	x=88,y=53
@@ -40503,8 +40504,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=52
-	TerrainType=TERRAIN_SALTLAKE
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=0
 EndPlot
 BeginPlot
 	x=89,y=53
@@ -40514,6 +40515,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=54
+	BonusType=BONUS_DEER
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -40957,10 +40960,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=53
-	BonusType=BONUS_DEER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=90,y=54
