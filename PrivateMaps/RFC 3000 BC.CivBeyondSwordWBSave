@@ -38617,7 +38617,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=41
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -39066,7 +39066,7 @@ EndPlot
 BeginPlot
 	x=86,y=41
 	BonusType=BONUS_CAMEL
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -39511,7 +39511,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=40
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -39942,7 +39942,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=36
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SHEEP
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -39952,13 +39953,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=38
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=88,y=39
 	BonusType=BONUS_INCENSE
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -39973,7 +39974,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=42
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -40408,7 +40409,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=37
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -40429,12 +40429,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=41
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=89,y=42
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -40852,13 +40852,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=36
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=90,y=37
 	BonusType=BONUS_INCENSE
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -40878,7 +40878,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=41
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -41315,7 +41315,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=36
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -41346,7 +41346,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=42
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -41755,7 +41755,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=36
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -41776,12 +41776,12 @@ EndPlot
 BeginPlot
 	x=92,y=40
 	BonusType=BONUS_CAMEL
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=92,y=41
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -42631,7 +42631,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=37
-	TerrainType=TERRAIN_DESERT
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
