@@ -2858,14 +2858,6 @@
 		<ArtRef Name="goal:BONUS_RUBBER">
 			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">bPlace:0</Attribute>
-			<Attribute Class="Scalar">iCropArea:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
-			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-		</ArtRef>
-		<ArtRef Name="goal:BONUS_RUBBER">
-			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
-			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:20</Attribute>
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:1</Attribute>
@@ -4506,7 +4498,7 @@
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_B">
 		<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-		<Attribute Class="Bonus">BONUS_SILK</Attribute>
+		<Attribute Class="Bonus">BONUS_SILK,BONUS_RUBBER</Attribute>
 		<Attribute Class="RegionTest">0</Attribute>
 		<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 		<To Name="BLeaf_4x2"/>
