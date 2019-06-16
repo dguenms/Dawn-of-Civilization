@@ -7075,6 +7075,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=47
+	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
