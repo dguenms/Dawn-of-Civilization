@@ -50757,8 +50757,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=55
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_SALTLAKE
+	PlotType=3
 EndPlot
 BeginPlot
 	x=112,y=56
