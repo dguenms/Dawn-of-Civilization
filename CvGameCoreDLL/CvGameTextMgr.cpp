@@ -509,6 +509,19 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 	bool bShift = gDLL->shiftKey();
 	bool bAlt = gDLL->altKey();
 
+//KNOEDELstart
+//FlavourMod: Added by Jean Elcard (display unit combat symbol in unit tool tip) - integrated into BUG by Tholal
+	if (getBugOptionBOOL("MainInterface__UnitCombatIcons", true, "BUG_UNIT_COMBAT_ICONS"))
+	{
+		if (pUnit->getUnitCombatType() != NO_UNITCOMBAT)
+		{
+			szTempBuffer.Format(L"<img=%S size=16></img> ", GC.getUnitCombatInfo(pUnit->getUnitCombatType()).getButton());
+			szString.append(szTempBuffer);
+		}
+	}
+//FlavourMod: End
+//KNOEDELend
+
 	szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), pUnit->getName().GetCString());
 	szString.append(szTempBuffer);
 
