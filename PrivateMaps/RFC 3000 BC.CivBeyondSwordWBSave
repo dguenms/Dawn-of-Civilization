@@ -51942,7 +51942,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=30
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -52846,12 +52845,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=30
+	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=117,y=31
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -53302,7 +53303,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=29
-	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -55663,6 +55663,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=29
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -56124,12 +56125,14 @@ BeginPlot
 	x=124,y=28
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_SPICES
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=124,y=29
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -56575,6 +56578,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=27
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -56586,7 +56590,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=29
-	BonusType=BONUS_RICE
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57048,6 +57052,7 @@ BeginPlot
 	x=126,y=28
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57074,6 +57079,7 @@ BeginPlot
 	x=126,y=32
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57486,6 +57492,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=24
+	BonusType=BONUS_RICE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -57503,7 +57510,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=27
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57516,6 +57522,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=29
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -57539,6 +57546,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=33
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -58421,7 +58429,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=27
-	BonusType=BONUS_RICE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -58432,6 +58439,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=29
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -58861,6 +58869,7 @@ EndPlot
 BeginPlot
 	x=130,y=24
 	BonusType=BONUS_WHALE
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58876,8 +58885,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=27
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=130,y=28
@@ -59339,8 +59348,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=27
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=131,y=28
@@ -59797,7 +59806,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=26
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59808,9 +59816,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=28
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=132,y=29
@@ -60249,16 +60257,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=26
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=133,y=27
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=133,y=28
+	BonusType=BONUS_SPICES
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -60706,7 +60718,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=29
-	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61124,6 +61135,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=26
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62000,7 +62012,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=29
-	BonusType=BONUS_GOLD
+	RiverNSDirection=0
+	isWOfRiver
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -62430,9 +62443,10 @@ BeginPlot
 	x=138,y=27
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_PIG
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=138,y=28
@@ -62441,6 +62455,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=29
+	isNOfRiver
+	RiverWEDirection=3
 	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -63766,7 +63782,7 @@ EndPlot
 BeginPlot
 	x=141,y=27
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -64627,7 +64643,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=28
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
