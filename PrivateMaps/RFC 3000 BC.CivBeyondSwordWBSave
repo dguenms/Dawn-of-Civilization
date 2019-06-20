@@ -55794,6 +55794,7 @@ BeginPlot
 	x=123,y=50
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -56231,6 +56232,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=124,y=46
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -56690,7 +56692,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=47
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -57191,7 +57192,6 @@ BeginPlot
 	x=126,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -58120,7 +58120,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=54
-	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -62760,7 +62759,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=5
-	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_WHALE
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -63217,8 +63217,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=6
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=140,y=7
@@ -63654,8 +63654,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=6
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=141,y=7
@@ -64088,8 +64088,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=5
-	BonusType=BONUS_WHALE
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -64130,6 +64129,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=13
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
