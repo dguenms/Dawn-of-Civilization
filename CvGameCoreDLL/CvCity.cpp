@@ -10989,8 +10989,22 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 	{
 		return 0;
 	}
+	
+	int iExtraModifier = 0;
+	
+	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+	if (!isPower())
+	{
+		if (kBuilding.isPower() || kBuilding.isAreaCleanPower() || (kBuilding.getPowerBonus() != NO_BONUS && hasBonus((BonusTypes)kBuilding.getPowerBonus())))
+		{
+			for (int i = 0; i < GC.getNumBuildingInfos(); i++)
+			{
+				iExtraModifier += getNumActiveBuilding((BuildingTypes)i) * GC.getBuildingInfo((BuildingTypes)i).getPowerCommerceModifier(eIndex);
+			}
+		}
+	}
 
-	int iExtraModifier = getAdditionalCommerceRateModifierByBuildingImpl(eIndex, eBuilding);
+	iExtraModifier += getAdditionalCommerceRateModifierByBuildingImpl(eIndex, eBuilding);
 	if (bNoEspionage && eIndex == COMMERCE_CULTURE)
 	{
 		iExtraModifier += getAdditionalCommerceRateModifierByBuildingImpl(COMMERCE_ESPIONAGE, eBuilding);
@@ -11018,6 +11032,10 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 	{
 		iExtraModifier += kBuilding.getCommerceModifier(eIndex);
 		iExtraModifier += kBuilding.getGlobalCommerceModifier(eIndex);
+		if (isPower())
+		{
+			iExtraModifier += kBuilding.getPowerCommerceModifier(eIndex);
+		}
 	}
 	
 	return iExtraModifier;
