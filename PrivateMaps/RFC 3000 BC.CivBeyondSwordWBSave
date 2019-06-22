@@ -4026,6 +4026,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=56
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -4896,7 +4897,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=56
-	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -6710,6 +6710,7 @@ BeginPlot
 	x=13,y=59
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -7134,6 +7135,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -8019,7 +8021,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -8028,7 +8029,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_GOLD
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -8477,6 +8477,7 @@ EndPlot
 BeginPlot
 	x=17,y=56
 	BonusType=BONUS_OIL
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
