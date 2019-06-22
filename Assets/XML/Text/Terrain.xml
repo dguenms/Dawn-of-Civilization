@@ -28,32 +28,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_LAGOON</Tag>
 		<English>Lagoon</English>
+		<French>Lagoon</French>
 		<German>Lagune</German>
+		<Italian>Lagoon</Italian>
+		<Spanish>Lagoon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_ARCTIC_COAST</Tag>
 		<English>Arctic Coast</English>
+		<French>Arctic Coast</French>
 		<German>Arktische Küste</German>
+		<Italian>Arctic Coast</Italian>
+		<Spanish>Arctic Coast</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_SEMIDESERT</Tag>
 		<English>Semidesert</English>
+		<French>Semidesert</French>
 		<German>Halbwüste</German>
+		<Italian>Semidesert</Italian>
+		<Spanish>Semidesert</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_MOORLAND</Tag>
 		<English>Moorland</English>
+		<French>Moorland</French>
 		<German>Moor</German>
+		<Italian>Moorland</Italian>
+		<Spanish>Moorland</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_STEPPE</Tag>
 		<English>Steppe</English>
+		<French>Steppe</French>
 		<German>Steppe</German>
+		<Italian>Steppe</Italian>
+		<Spanish>Steppe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_TAIGA</Tag>
 		<English>Taiga</English>
+		<French>Taiga</French>
 		<German>Taiga</German>
+		<Italian>Taiga</Italian>
+		<Spanish>Taiga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_SALTLAKE</Tag>
@@ -74,6 +92,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_ATOLL</Tag>
 		<English>Atoll</English>
+		<French>Atoll</French>
 		<German>Atoll</German>
+		<Italian>Atoll</Italian>
+		<Spanish>Atoll</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_SAVANNA</Tag>
+		<English>Savanna</English>
+		<French>Savanna</French>
+		<German>Savanne</German>
+		<Italian>Savanna</Italian>
+		<Spanish>Savanna</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_SAVANNA</Tag>
+		<English>Savanna</English>
+		<French>Savanna</French>
+		<German>Savanne</German>
+		<Italian>Savanna</Italian>
+		<Spanish>Savanna</Spanish>
 	</TEXT>
 </Civ4GameText>
