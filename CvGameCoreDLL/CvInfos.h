@@ -1828,7 +1828,7 @@ public:
 	int getCommerceChangeDoubleTime(int i) const;				// Exposed to Python
 	int getCommerceModifier(int i) const;				// Exposed to Python
 	int* getCommerceModifierArray() const;
-	int getPowerCommerceModifier(int i) const; // Leoreth
+	int getPowerCommerceModifier(int i) const; // Leoreth, Merijn: Exposed to Python
 	int* getPowerCommerceModifierArray() const; // Leoreth
 	int getCultureCommerceModifier(int i) const; // Leoreth
 	int* getCultureCommerceModifierArray() const; // Leoreth
