@@ -31826,8 +31826,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=58
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=70,y=59
