@@ -25142,6 +25142,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=49
+	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25571,14 +25572,14 @@ BeginPlot
 	x=56,y=49
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=56,y=50
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=56,y=51
@@ -29963,12 +29964,12 @@ EndPlot
 BeginPlot
 	x=66,y=46
 	BonusType=BONUS_IVORY
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=66,y=47
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -30406,12 +30407,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=46
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=67,y=47
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -30725,6 +30726,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=23
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -32527,7 +32529,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=19
-	RiverNSDirection=2
+	RiverNSDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
@@ -32984,7 +32986,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=18
-	RiverNSDirection=2
+	RiverNSDirection=0
 	isWOfRiver
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
@@ -32992,7 +32994,7 @@ EndPlot
 BeginPlot
 	x=73,y=19
 	isNOfRiver
-	RiverWEDirection=1
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -33628,7 +33630,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -33638,6 +33640,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=50
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -34090,13 +34093,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=75,y=49
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=50
@@ -35478,6 +35481,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=40
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -38322,6 +38326,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=47
+	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -38751,13 +38756,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=44
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_STONE
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=85,y=45
 	BonusType=BONUS_SALT
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -38767,6 +38773,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=47
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -38778,6 +38785,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=49
+	BonusType=BONUS_OLIVES
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -39209,18 +39217,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=46
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=86,y=47
-	BonusType=BONUS_SHEEP
+	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=86,y=48
-	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -39235,7 +39242,6 @@ BeginPlot
 	x=86,y=50
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -39674,11 +39680,12 @@ BeginPlot
 	x=87,y=49
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=87,y=50
+	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -40146,7 +40153,6 @@ BeginPlot
 	x=88,y=50
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
