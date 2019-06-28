@@ -59913,8 +59913,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=22
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -60362,7 +60362,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=21
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -60804,13 +60804,13 @@ EndPlot
 BeginPlot
 	x=134,y=21
 	BonusType=BONUS_ALUMINUM
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=134,y=22
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -61244,13 +61244,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=22
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=135,y=23
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
@@ -61679,13 +61679,13 @@ BeginPlot
 	RiverWEDirection=1
 	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=136,y=23
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -62101,7 +62101,7 @@ EndPlot
 BeginPlot
 	x=137,y=21
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -62534,7 +62534,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -62976,7 +62976,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=19
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -62990,7 +62990,7 @@ EndPlot
 BeginPlot
 	x=139,y=21
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -62998,19 +62998,19 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=139,y=23
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=139,y=24
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -63434,21 +63434,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=20
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=140,y=21
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=140,y=22
 	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -63870,13 +63870,13 @@ BeginPlot
 	x=141,y=19
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=141,y=20
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
