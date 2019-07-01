@@ -14577,6 +14577,15 @@ int CvFeatureInfo::getEffectProbability() const
 	return m_iEffectProbability;
 }
 
+const TCHAR* CvFeatureInfo::getVarietyButton(int variety) const
+{
+	if (getArtInfo()->getVariety(variety).getVarietyButton().empty())
+	{
+		return NULL;
+	}
+	return getArtInfo()->getVariety(variety).getVarietyButton();
+}
+
 // Arrays
 
 int CvFeatureInfo::getYieldChange(int i) const
