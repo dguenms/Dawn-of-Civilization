@@ -26897,12 +26897,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=49
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=59,y=50
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -27346,7 +27346,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=50
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -32529,7 +32529,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=19
-	RiverNSDirection=0
+	RiverNSDirection=2
 	isWOfRiver
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
@@ -32986,7 +32986,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=18
-	RiverNSDirection=0
+	RiverNSDirection=2
 	isWOfRiver
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
@@ -32994,7 +32994,7 @@ EndPlot
 BeginPlot
 	x=73,y=19
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -41493,7 +41493,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=46
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -47598,6 +47598,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=33
+	BonusType=BONUS_RARE_EARTHS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -48068,7 +48069,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=35
-	BonusType=BONUS_RARE_EARTHS
+	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
