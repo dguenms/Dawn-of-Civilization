@@ -3387,6 +3387,8 @@ public:
 
 	DllExport const CvArtInfoFeature* getArtInfo() const;
 	const TCHAR* getButton() const;
+	
+	const TCHAR* getVarietyButton(int variety) const; // Exposed to Python
 
 	bool read(CvXMLLoadUtility* pXML);
 
