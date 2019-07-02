@@ -1837,12 +1837,13 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == iModeFeatures:
 			ItemInfo = gc.getFeatureInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
-			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7874, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 			if ItemInfo.getNumVarieties() > 1:
+				screen.setTableText("WBCurrentItem", 0, 0, sText, ItemInfo.getVarietyButton(self.iSelectClass), WidgetTypes.WIDGET_PYTHON, 7874, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 				screen.addDropDownBoxGFC("WBSelectClass", 0, 25, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 				for i in xrange(ItemInfo.getNumVarieties()):
 					screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_FEATURE_VARIETY", (i,)), i, i, i == self.iSelectClass)
 			else:
+				screen.setTableText("WBCurrentItem", 0, 0, sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7874, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 				self.iSelectClass = 0
 				screen.hide("WBSelectClass")
 		elif self.iPlayerAddMode == iModeImprovements:
@@ -2759,6 +2760,8 @@ class CvWorldBuilderScreen:
 			if self.iPlayerAddMode != iModeFeatures:
 				self.iSelection = -1
 				self.refreshSideMenu()
+			else:
+				self.refreshSelection()
 
 		elif inputClass.getFunctionName() == "WBSelectItem":
 			self.iSelection = inputClass.getData2()
