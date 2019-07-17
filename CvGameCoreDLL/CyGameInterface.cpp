@@ -302,7 +302,12 @@ void CyGamePythonInterface()
 		.def("addGreatPersonBornName", &CyGame::addGreatPersonBornName, "void (string sName)")
 		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)")
 
-		.def("autosave", &CyGame::autosave, "void ()");
+		.def("autosave", &CyGame::autosave, "void ()")
+
+		.def("incrementBuildingClassCreatedCount", &CyGame::incrementBuildingClassCreatedCount, "void (int iBuildingClass)")
+
+		.def("setCityScreenOwner", &CyGame::setCityScreenOwner, "void (int iPlayer)")
+		.def("resetCityScreenOwner", &CyGame::resetCityScreenOwner, "void ()")
 		;
 
 	python::class_<CyDeal>("CyDeal")

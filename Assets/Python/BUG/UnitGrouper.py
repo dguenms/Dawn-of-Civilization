@@ -9,6 +9,8 @@
 from CvPythonExtensions import *
 import BugUtil
 import UnitUtil
+from Consts import *
+from RFCUtils import utils
 
 # BUG - Mac Support - start
 BugUtil.fixSets(globals())
@@ -108,12 +110,14 @@ class UnitTypeGrouping(Grouping):
 		Grouping.__init__(self, "type", "TXT_KEY_UNIT_GROUPER_TYPE_GROUPING")
 		
 		for i in range(gc.getNumUnitInfos()):
+			if i in dFemaleGreatPeople.values(): continue # combine female and male units
 			info = gc.getUnitInfo(i)
 			if info:
 				self._addGroup(Group(self, i, info.getDescription()))
 	
 	def calcGroupKeys(self, unit, player, team):
-		return (unit.getUnitType(),)
+		iUnitType = utils.getDefaultGreatPerson(unit.getUnitType()) # merge male and female GP
+		return (iUnitType,)
 
 class UnitCombatGrouping(Grouping):
 	"""

@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_GREECE_PEOPLES</Tag>
 		<English>Mycenean Peoples</English>
 		<French>
-			<Text>Peuplades Myc&#233;niennes</Text>
+			<Text>Peuplades myc&#233;niennes</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_GREECE_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -76,12 +76,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_REPUBLIC</Tag>
 		<English>Hellenic Republic</English>
+		<French>
+			<Text>R&#233;publique hell&#233;nique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Hellenic Republic</German>
+		<Italian>Hellenic Republic</Italian>
+		<Spanish>Hellenic Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_COMMUNIST</Tag>
 		<English>Democratic Army of %s1</English>
 		<French>
-			<Text>Arm&#233;e D&#233;mocratique de %s1</Text>
+			<Text>Arm&#233;e d&#233;mocratique de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -104,6 +112,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_FASCIST</Tag>
 		<English>Patriotic Alliance of %s1</English>
+		<French>
+			<Text>Alliance patriotique de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Patriotic Alliance of %s1</German>
+		<Italian>Patriotic Alliance of %s1</Italian>
+		<Spanish>Patriotic Alliance of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_LEAGUE</Tag>
@@ -132,26 +148,86 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_PERSIA</Tag>
 		<English>Seleucid Empire</English>
+		<French>
+			<Text>Empire s&#233;leucide</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Seleucid Empire</German>
+		<Italian>Seleucid Empire</Italian>
+		<Spanish>Seleucid Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_EGYPT</Tag>
 		<English>Ptolemaic Kingdom</English>
+		<French>
+			<Text>Royaume lagide</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ptolemaic Kingdom</German>
+		<Italian>Ptolemaic Kingdom</Italian>
+		<Spanish>Ptolemaic Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_INDIA</Tag>
 		<English>Greco-Bactrian Kingdom</English>
+		<French>
+			<Text>Royaume gr&#233;co-bactrien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Greco-Bactrian Kingdom</German>
+		<Italian>Greco-Bactrian Kingdom</Italian>
+		<Spanish>Greco-Bactrian Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_ROME</Tag>
 		<English>Magna Graecia</English>
+		<French>
+			<Text>Grande-Gr&#232;ce</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Magna Graecia</German>
+		<Italian>Magna Graecia</Italian>
+		<Spanish>Magna Graecia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA</Tag>
 		<English>Macedonia</English>
+		<French>
+			<Text>Mac&#233;doine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Macedonia</German>
+		<Italian>Macedonia</Italian>
+		<Spanish>Macedonia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIAN</Tag>
 		<English>Macedonian</English>
+		<French>
+			<Text>mac&#233;donien:mac&#233;donienne:mac&#233;doniens:mac&#233;doniennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Macedonian</German>
+		<Italian>Macedonian</Italian>
+		<Spanish>Macedonian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREEK_NAME_TURKS</Tag>
+		<English>Transoxiana</English>
+		<French>
+			<Text>Transoxiane</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Transoxiana</German>
+		<Italian>Transoxiana</Italian>
+		<Spanish>Transoxiana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_ADJECTIVE</Tag>
@@ -182,8 +258,8 @@
 		<English>Greece</English>
 		<French>
 			<Text>Gr&#232;ce</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Griechenland</Text>

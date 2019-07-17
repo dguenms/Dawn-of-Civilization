@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Basic Infos -->
+<Civ4InvisibleInfos xmlns="x-schema:CIV4BasicInfoSchema.xml">
+	<InvisibleInfos>
+		<InvisibleInfo>
+			<Type>INVISIBLE_SUBMARINE</Type>
+			<Description>TXT_KEY_INVISIBLE_SUBMARINE</Description>
+		</InvisibleInfo>
+		<InvisibleInfo>
+			<Type>INVISIBLE_STEALTH</Type>
+			<Description>TXT_KEY_INVISIBLE_STEALTH_NAVY</Description>
+		</InvisibleInfo>
+		<InvisibleInfo>
+			<Type>INVISIBLE_SATELLITE</Type>
+			<Description>TXT_KEY_INVISIBLE_SATELLITE</Description>
+		</InvisibleInfo>
+	</InvisibleInfos>
+</Civ4InvisibleInfos>

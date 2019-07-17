@@ -4,40 +4,66 @@
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_EMPEROR_HELP</Tag>
 		<English>The Emperor level is for experienced players. You will play under significant research, unit production, upkeep and happiness penalties, while the AI receives even more advantages in these areas.</English>
+		<French>Le niveau Empereur est destin&#233; aux joueurs exp&#233;riment&#233;s. Vous subirez d'importantes p&#233;nalit&#233;s en mati&#232;re de science, de production d'unit&#233;s, d'entretien et de bonheur, tandis que l'IA recevra encore plus de bonus quant &#224; ces aspects du jeu.</French>
 		<German>Die Kaiser-Stufe ist f&#252;r erfahrene Spieler. Ihr werdet unter erheblichen Forschungs-, Produktions-, Unterhalts- und Zufriedenheits-Mali, w&#228;hrend die KI in diesen Bereichen noch mehr Vorteile erh&#228;lt.</German>
+		<Italian>The Emperor level is for experienced players. You will play under significant research, unit production, upkeep and happiness penalties, while the AI receives even more advantages in these areas.</Italian>
+		<Spanish>The Emperor level is for experienced players. You will play under significant research, unit production, upkeep and happiness penalties, while the AI receives even more advantages in these areas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_HEIR</Tag>
 		<English>Heir</English>
+		<French>H&#233;ritier</French>
 		<German>Erbe</German>
+		<Italian>Heir</Italian>
+		<Spanish>Heir</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_HEIR_HELP</Tag>
 		<English>The Heir difficulty is the right level for beginners. Your cities receive additional happiness and your research, unit production and upkeep costs are lower than those of your AI opponents.</English>
+		<French>La difficult&#233; H&#233;ritier est appropri&#233;e pour les d&#233;butants. Vos villes b&#233;n&#233;ficient de bonheur suppl&#233;mentaire et la science, la production d'unit&#233;s et l'entretien vous co&#251;tent moins cher que pour vos adversaires contr&#244;l&#233;s par l'IA.</French>
 		<German>Dieser Schwierigkeitsgrad ist die richtige Stufe f&#252;r Anf&#228;nger. Eure St&#228;dte erhalten zus&#228;tzliche Zufriedenheit und Eure Forschungs-, Produktions- und Unterhaltskosten sind geringer als die Eurer KI-Gegner</German>
+		<Italian>The Heir difficulty is the right level for beginners. Your cities receive additional happiness and your research, unit production and upkeep costs are lower than those of your AI opponents.</Italian>
+		<Spanish>The Heir difficulty is the right level for beginners. Your cities receive additional happiness and your research, unit production and upkeep costs are lower than those of your AI opponents.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_MONARCH_HELP</Tag>
 		<English>Monarch players play under the same conditions as Regents, but will face more formidable AI opponents.</English>
+		<French>Les joueurs Monarques sont soumis aux m&#234;mes conditions que les R&#233;gents, mais feront face &#224; des adversaires IA plus redoutables.</French>
 		<German>Monarchen-Spieler spielen unter denselben Bedingungen wie Regenten, stehen allerdings st&#228;rkeren KI-Gegnern gegen&#252;ber.</German>
+		<Italian>Monarch players play under the same conditions as Regents, but will face more formidable AI opponents.</Italian>
+		<Spanish>Monarch players play under the same conditions as Regents, but will face more formidable AI opponents.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_PARAGON</Tag>
 		<English>Paragon</English>
+		<French>Parangon</French>
+		<German>Paragon</German>
+		<Italian>Paragon</Italian>
+		<Spanish>Paragon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_PARAGON_HELP</Tag>
 		<English>Can you beat this game on this level and prove that you are truly a Paragon? Compared to Emperor, your AI adversaries will receive even more unit production and research advantages.</English>
+		<French>Pouvez-vous gagner &#224; ce niveau et prouver que vous &#234;tes un vrai Parangon? Par rapport au niveau Empereur, vous adversaires IA recevront encore plus de b&#233;n&#233;fices en production et en science.</French>
 		<German>K&#246;nnt Ihr dieses Spiel auf diesem Level gewinnen und beweisen, dass ihr wirklich ein Paragon seid? Verglichen mit Kaiser werden Eure KI-Widersacher noch mehr Produktions- und Forschungsvorteile erhalten.</German>
+		<Italian>Can you beat this game on this level and prove that you are truly a Paragon? Compared to Emperor, your AI adversaries will receive even more unit production and research advantages.</Italian>
+		<Spanish>Can you beat this game on this level and prove that you are truly a Paragon? Compared to Emperor, your AI adversaries will receive even more unit production and research advantages.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_REGENT</Tag>
 		<English>Regent</English>
+		<French>R&#233;gent</French>
+		<German>Regent</German>
+		<Italian>Regent</Italian>
+		<Spanish>Regent</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_REGENT_HELP</Tag>
 		<English>As a Regent, you are facing a fairly balanced challenge and are evenly matched in terms of modifiers with your AI adversaries.</English>
+		<French>En tant que R&#233;gent, vous aurez un d&#233;fi &#233;quilibr&#233; et des modificateurs comparables &#224; ceux des adversaires contr&#244;l&#233;s par l'IA.</French>
 		<German>Als Regent, Ihr steht einer relativ balancierten Herausforderung gegen&#252;ber und seid auf demselben Level wie Eure KI-Widersacher was Modifikatoren angeht.</German>
+		<Italian>As a Regent, you are facing a fairly balanced challenge and are evenly matched in terms of modifiers with your AI adversaries.</Italian>
+		<Spanish>As a Regent, you are facing a fairly balanced challenge and are evenly matched in terms of modifiers with your AI adversaries.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_VICEROY</Tag>

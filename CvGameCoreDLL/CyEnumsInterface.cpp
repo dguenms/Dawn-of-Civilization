@@ -335,6 +335,7 @@ void CyEnumsPythonInterface()
 		.value("WIDGET_HELP_IGNORE_IRRIGATION", WIDGET_HELP_IGNORE_IRRIGATION)
 		.value("WIDGET_HELP_WATER_WORK", WIDGET_HELP_WATER_WORK)
 		.value("WIDGET_HELP_IMPROVEMENT", WIDGET_HELP_IMPROVEMENT)
+		.value("WIDGET_HELP_REMOVE", WIDGET_HELP_REMOVE)
 		.value("WIDGET_HELP_DOMAIN_EXTRA_MOVES", WIDGET_HELP_DOMAIN_EXTRA_MOVES)
 		.value("WIDGET_HELP_ADJUST", WIDGET_HELP_ADJUST)
 		.value("WIDGET_HELP_TERRAIN_TRADE", WIDGET_HELP_TERRAIN_TRADE)
@@ -367,6 +368,8 @@ void CyEnumsPythonInterface()
 
 		.value("WIDGET_HELP_GREAT_SPY", WIDGET_HELP_GREAT_SPY)
 		.value("WIDGET_HELP_BONUS_PLAYER_TRADE", WIDGET_HELP_BONUS_PLAYER_TRADE)
+
+		.value("WIDGET_HELP_BONUS_CITY", WIDGET_HELP_BONUS_CITY)
 
 		.value("WIDGET_CHOOSE_EVENT", WIDGET_CHOOSE_EVENT)
 		.value("WIDGET_PEDIA_JUMP_TO_TECH", WIDGET_PEDIA_JUMP_TO_TECH)
@@ -436,6 +439,8 @@ void CyEnumsPythonInterface()
 // BUG - Leaderhead Relations - start
 		.value("WIDGET_LEADERHEAD_RELATIONS", WIDGET_LEADERHEAD_RELATIONS)
 // BUG - Leaderhead Relations - end
+
+		.value("WIDGET_HELP_WONDER_LIMIT", WIDGET_HELP_WONDER_LIMIT)
 
 		.value("NUM_WIDGET_TYPES", NUM_WIDGET_TYPES)
 		;
@@ -726,6 +731,8 @@ void CyEnumsPythonInterface()
 		.value("SUCCESS_CHAR", SUCCESS_CHAR)
 		.value("FAILURE_CHAR", FAILURE_CHAR)
 		.value("SCALES_CHAR", SCALES_CHAR)
+		.value("AIRPORT_CHAR", AIRPORT_CHAR)
+		.value("CLEAN_POWER_CHAR", CLEAN_POWER_CHAR)
 		.value("MAX_NUM_SYMBOLS", MAX_NUM_SYMBOLS)
 		;
 
@@ -755,6 +762,10 @@ void CyEnumsPythonInterface()
 
 	python::enum_<ArtStyleTypes>("ArtStyleTypes")
 		.value("NO_ARTSTYLE", NO_ARTSTYLE)
+		;
+
+	python::enum_<UnitArtStyleTypes>("UnitArtStyleTypes")
+		.value("NO_UNIT_ARTSTYLE", NO_UNIT_ARTSTYLE)
 		;
 
 	python::enum_<CitySizeTypes>("CitySizeTypes")

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Turkey -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_DESC</Tag>
+		<English>The Turks</English>
+		<French>
+			<Text>Les Turcs</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Turks</German>
+		<Italian>The Turks</Italian>
+		<Spanish>The Turks</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_SHORT_DESC</Tag>
+		<English>Turkestan</English>
+		<French>
+			<Text>Turkestan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Turkestan</German>
+		<Italian>Turkestan</Italian>
+		<Spanish>Turkestan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_ADJECTIVE</Tag>
+		<English>Turkic</English>
+		<French>
+			<Text>turc:turque:turcs:turques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Turkic</German>
+		<Italian>Turkic</Italian>
+		<Spanish>Turkic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKS_DESC</Tag>
+		<English>The Uzbeks</English>
+		<French>
+			<Text>Les Ouzbeks</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Die Usbeken</German>
+		<Italian>The Uzbeks</Italian>
+		<Spanish>The Uzbeks</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKS_SHORT_DESC</Tag>
+		<English>Uzbekistan</English>
+		<French>
+			<Text>Ouzb&#233;kistan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Uzbekistan</German>
+		<Italian>Uzbekistan</Italian>
+		<Spanish>Uzbekistan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UZBEKS_ADJECTIVE</Tag>
+		<English>Uzbek</English>
+		<French>
+			<Text>ouzbek:ouzb&#232;ke:ouzbeks:ouzb&#232;kes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Uzbek</German>
+		<Italian>Uzbek</Italian>
+		<Spanish>Uzbek</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKESTAN_PEOPLES</Tag>
+		<English>Turkic Peoples</English>
+		<French>
+			<Text>Peuplades turques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Turkic Peoples</German>
+		<Italian>Turkic Peoples</Italian>
+		<Spanish>Turkic Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKESTAN_DEFAULT</Tag>
+		<English>%s2 Khanate</English>
+		<French>
+			<Text>Khanat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Khanate</German>
+		<Italian>%s2 Khanate</Italian>
+		<Spanish>%s2 Khanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKESTAN_FASCIST</Tag>
+		<English>Pan-Turkic Empire</English>
+		<French>
+			<Text>Empire panturc</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pan-Turkic Empire</German>
+		<Italian>Pan-Turkic Empire</Italian>
+		<Spanish>Pan-Turkic Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KURULTAI</Tag>
+		<English>%s2 Kurultai</English>
+		<French>
+			<Text>Qurultay %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Kurultai</German>
+		<Italian>%s2 Kurultai</Italian>
+		<Spanish>%s2 Kurultai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_GREAT_EMPIRE</Tag>
+		<English>Great %s2 Empire</English>
+		<French>
+			<Text>Grand Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Great %s2 Empire</German>
+		<Italian>Great %s2 Empire</Italian>
+		<Spanish>Great %s2 Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KHAGANATE</Tag>
+		<English>%s2 Khaganate</English>
+		<French>
+			<Text>Khaganat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Khaganate</German>
+		<Italian>%s2 Khaganate</Italian>
+		<Spanish>%s2 Khaganate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KHANATE_OF</Tag>
+		<English>Khanate of %s1</English>
+		<French>
+			<Text>Khanat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_TIMURID</Tag>
+		<English>Timurid</English>
+		<French>
+			<Text>timouride:timouride:timourides:timourides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Timurid</German>
+		<Italian>Timurid</Italian>
+		<Spanish>Timurid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_SHAYBANID</Tag>
+		<English>Shaybanid</English>
+		<French>
+			<Text>chaybanide:chaybanide:chaybanides:chaybanides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Shaybanid</German>
+		<Italian>Shaybanid</Italian>
+		<Spanish>Shaybanid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KHAZARIA</Tag>
+		<English>Khazaria</English>
+		<French>
+			<Text>Khazarie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khazaria</German>
+		<Italian>Khazaria</Italian>
+		<Spanish>Khazaria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KHAZAR</Tag>
+		<English>Khazar</English>
+		<French>
+			<Text>khazar:khazare:khazars:khazares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Khazar</German>
+		<Italian>Khazar</Italian>
+		<Spanish>Khazar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_RUM</Tag>
+		<English>Rum</English>
+		<French>
+			<Text>Roum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Rum</German>
+		<Italian>Rum</Italian>
+		<Spanish>Rum</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_SELJUK</Tag>
+		<English>Seljuk</English>
+		<French>
+			<Text>seldjoukide:seldjoukide:seldjoukides:seldjoukides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Seljuk</German>
+		<Italian>Seljuk</Italian>
+		<Spanish>Seljuk</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_UZBEKISTAN</Tag>
+		<English>Uzbekistan</English>
+		<French>
+			<Text>Ouzb&#233;kistan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Uzbekistan</German>
+		<Italian>Uzbekistan</Italian>
+		<Spanish>Uzbekistan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_UZBEK</Tag>
+		<English>Uzbek</English>
+		<French>
+			<Text>ouzbek:ouzb&#232;ke:ouzbeks:ouzb&#232;kes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Uzbek</German>
+		<Italian>Uzbek</Italian>
+		<Spanish>Uzbek</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_WESTERN_TURKIC</Tag>
+		<English>Western Turkic</English>
+		<French>turc occidental</French>
+		<German>Western Turkic</German>
+		<Italian>Western Turkic</Italian>
+		<Spanish>Western Turkic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_EASTERN_TURKIC</Tag>
+		<English>Eastern Turkic</English>
+		<French>turc oriental</French>
+		<German>Eastern Turkic</German>
+		<Italian>Eastern Turkic</Italian>
+		<Spanish>Eastern Turkic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKIC_VASSAL</Tag>
+		<English>Atabeylik of %s3</English>
+		<French>
+			<Text>Atabeylik de %s3</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Atabeylik of %s3</German>
+		<Italian>Atabeylik of %s3</Italian>
+		<Spanish>Atabeylik of %s3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+</Civ4GameText>

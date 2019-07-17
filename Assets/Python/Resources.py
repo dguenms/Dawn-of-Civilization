@@ -27,30 +27,44 @@ lAustraliaCapes = [(106, 21), (107, 21), (107, 22), (108, 22), (109, 22), (109, 
 class Resources:
 
 	# Leoreth: bonus removal alerts by edead
-	def createResource(self, iX, iY, iBonus, textKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE"):
+	def createResource(self, iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", removeTextKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
 		"""Creates a bonus resource and alerts the plot owner"""
 		
-		if gc.getMap().plot(iX,iY).getBonusType(-1) == -1 or iBonus == -1: # only proceed if the bonus isn't already there or if we're removing the bonus
-			if iBonus == -1:
-				iBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
-				gc.getMap().plot(iX,iY).setBonusType(-1)
-			else:
-				gc.getMap().plot(iX,iY).setBonusType(iBonus)
+		iRemovedBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
+		
+		if iRemovedBonus == iBonus:
+			return
+		
+		gc.getMap().plot(iX, iY).setBonusType(iBonus)
 				
-			iOwner = gc.getMap().plot(iX,iY).getOwner()
-			if iOwner >= 0 and textKey != -1: # only show alert to the tile owner
-				# Leoreth: changed so different area cities are found if water resource is added (because sea is automatically a different area than land)
-				bWater = gc.getMap().plot(iX, iY).isWater()
-				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not bWater, bWater, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-				if not city.isNone():
-					szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
-					CyInterface().addMessage(iOwner, False, iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
+		if iBonus == -1:
+			iImprovement = gc.getMap().plot(iX, iY).getImprovementType()
+			if iImprovement >= 0:
+				if gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(iBonus):
+					gc.getMap().plot(iX, iY).setImprovementType(-1)
+			
+		iOwner = gc.getMap().plot(iX,iY).getOwner()
+		if iOwner >= 0: # only show alert to the tile owner
+			bWater = gc.getMap().plot(iX, iY).isWater()
+			city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not bWater, bWater, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+			
+			if iRemovedBonus >= 0:
+				self.notifyResource(iOwner, city, iX, iY, iRemovedBonus, removeTextKey)
+			
+			if iBonus >= 0:
+				self.notifyResource(iOwner, city, iX, iY, iBonus, createTextKey)
+					
+	def notifyResource(self, iPlayer, city, iX, iY, iBonus, textKey):
+		if city.isNone(): return
+		
+		if gc.getBonusInfo(iBonus).getTechReveal() == -1 or gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(gc.getBonusInfo(iBonus).getTechReveal()):
+			text = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
+			CyInterface().addMessage(iPlayer, False, iDuration, text, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
 
-
-	def removeResource(self, iX, iY, textKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
+	def removeResource(self, iX, iY):
 		"""Removes a bonus resource and alerts the plot owner"""
 		if gc.getMap().plot(iX, iY).getBonusType(-1) == -1: return
-		self.createResource(iX, iY, -1, textKey)
+		self.createResource(iX, iY, -1)
        	
 	def checkTurn(self, iGameTurn):
 		
@@ -105,14 +119,13 @@ class Resources:
 			if utils.getHumanID() == iVikings:
 				gc.getMap().plot(41, 58).setFeatureType(-1, 0)
 		
+		# Leoreth: for respawned Egypt
+		elif iGameTurn == getTurnForYear(900):
+			self.createResource(71, 34, iIron)
+		
 		# Leoreth: New Guinea can be settled
 		elif iGameTurn == getTurnForYear(1000):
 			gc.getMap().plot(113, 25).setFeatureType(-1, 0)
-		
-		# Leoreth: for respawned Egypt
-		elif iGameTurn == getTurnForYear(900):
-			self.removeResource(71, 34)
-			self.createResource(71, 34, iIron)
 		    
 		elif iGameTurn == getTurnForYear(950):
 			#gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt
@@ -138,6 +151,9 @@ class Resources:
 			self.createResource(57, 45, iClam) # Savoy
 			
 			self.createResource(50, 44, iIron) # Portugal
+			
+			self.removeResource(87, 49) # Orduqent
+			self.removeResource(89, 51) # Orduqent
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
 		elif iGameTurn == getTurnForYear(tBirth[iMongolia]):
@@ -226,6 +242,7 @@ class Resources:
 			self.createResource(40, 25, iHorse) # Brazil
 			self.createResource(33, 10, iHorse) # Buenos Aires area
 			self.createResource(32, 8, iHorse) # Pampas
+			self.createResource(30, 30, iHorse) # Venezuela
 			
 			self.createResource(27, 36, iSugar) # Caribbean
 			self.createResource(39, 25, iSugar) # Brazil
@@ -244,8 +261,6 @@ class Resources:
 			self.createResource(104, 25, iCoffee) # Java
 			
 			self.createResource(67, 44, iTobacco) # Turkey
-			
-			self.createResource(90, 35, iTea) # West Bengal
 			
 			self.createResource(39, 16, iFish) # Brazil
 			

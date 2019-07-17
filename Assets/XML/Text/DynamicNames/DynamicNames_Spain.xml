@@ -28,12 +28,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_PEOPLES</Tag>
 		<English>Asturian Peoples</English>
+		<French>
+			<Text>Peuplades asturiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Asturian Peoples</German>
+		<Italian>Asturian Peoples</Italian>
+		<Spanish>Asturian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -57,7 +65,7 @@
 		<Tag>TXT_KEY_CIV_SPAIN_COMMUNIST</Tag>
 		<English>Republic of %s1</English>
 		<French>
-			<Text>R&#233;publique de %s1</Text>
+			<Text>R&#233;publique d'%s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -81,7 +89,7 @@
 		<Tag>TXT_KEY_CIV_SPAIN_FASCIST</Tag>
 		<English>%s2 State</English>
 		<French>
-			<Text>Etat %s2</Text>
+			<Text>&#201;tat %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -128,22 +136,46 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CASTILE</Tag>
 		<English>Castile</English>
+		<French>
+			<Text>Castille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Castile</German>
+		<Italian>Castile</Italian>
+		<Spanish>Castile</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CASTILIAN</Tag>
 		<English>Castilian</English>
+		<French>
+			<Text>castillan:castillane:castillans:castillanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Castilian</German>
+		<Italian>Castilian</Italian>
+		<Spanish>Castilian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_IBERIA</Tag>
 		<English>Iberia</English>
+		<French>
+			<Text>Ib&#233;rie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Iberia</German>
+		<Italian>Iberia</Italian>
+		<Spanish>Iberia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_IBERIAN</Tag>
 		<English>Iberian</English>
 		<French>
-			<Text>Ib&#232;res</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
+			<Text>ib&#232;re:ib&#232;res:ib&#232;re:ib&#232;res</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Iberische:Iberischen:Iberischen</Text>
@@ -164,20 +196,44 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CROWN_OF</Tag>
 		<English>Crown of %s1</English>
+		<French>
+			<Text>Couronne de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Crown of %s1</German>
+		<Italian>Crown of %s1</Italian>
+		<Spanish>Crown of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ARAGON</Tag>
 		<English>Aragon</English>
+		<French>
+			<Text>Aragon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Aragon</German>
+		<Italian>Aragon</Italian>
+		<Spanish>Aragon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ARAGONESE</Tag>
 		<English>Aragonese</English>
+		<French>
+			<Text>aragonais:aragonais:aragonaise:aragonaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Aragonese</German>
+		<Italian>Aragonese</Italian>
+		<Spanish>Aragonese</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_VASSAL</Tag>
 		<English>Viceroyalty of %s1</English>
 		<French>
-			<Text>Vice Royaut&#233; de %s1</Text>
+			<Text>Vice-royaut&#233; de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -200,12 +256,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_CARTHAGE</Tag>
 		<English>%s2 Lebanon</English>
+		<French>
+			<Text>Liban %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Lebanon</German>
+		<Italian>%s2 Lebanon</Italian>
+		<Spanish>%s2 Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
 		<French>
-			<Text>Afrique Orientale %s2</Text>
+			<Text>Afrique orientale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -252,16 +316,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
+		<French>
+			<Text>Empire latin d'Orient</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Latin Empire</German>
+		<Italian>Latin Empire</Italian>
+		<Spanish>Latin Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_INDONESIA</Tag>
 		<English>%s2 East Indies</English>
+		<French>
+			<Text>Indes orientales %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 East Indies</German>
+		<Italian>%s2 East Indies</Italian>
+		<Spanish>%s2 East Indies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MOORS</Tag>
 		<English>%s2 Protectorate of %s1</English>
 		<French>
-			<Text>Protectorat %s2 de %s1</Text>
+			<Text>Protectorat %s2 du %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -285,7 +365,7 @@
 		<Tag>TXT_KEY_CIV_SPANISH_FRANCE</Tag>
 		<English>Autonomous Community of %s1</English>
 		<French>
-			<Text>Communaut&#233; Autonome du %s1</Text>
+			<Text>Communaut&#233; autonome de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -308,12 +388,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NETHERLANDS</Tag>
 		<English>%s2 %s1</English>
+		<French>
+			<Text>%s1 %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 %s1</German>
+		<Italian>%s2 %s1</Italian>
+		<Spanish>%s2 %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MALI</Tag>
 		<English>%s2 West Africa</English>
 		<French>
-			<Text>Afrique Occidentale %s2</Text>
+			<Text>Afrique occidentale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -337,7 +425,7 @@
 		<Tag>TXT_KEY_CIV_SPANISH_PORTUGAL</Tag>
 		<English>Autonomous Community of %s1</English>
 		<French>
-			<Text>Communaut&#233; Autonome du %s1</Text>
+			<Text>Communaut&#233; autonome du %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -361,7 +449,7 @@
 		<Tag>TXT_KEY_CIV_SPANISH_AMERICA</Tag>
 		<English>Province of New Mexico</English>
 		<French>
-			<Text>Province du Nouveau M&#233;xique</Text>
+			<Text>Province du Nouveau-Mexique</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -384,10 +472,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_ARGENTINA</Tag>
 		<English>Viceroyalty of the Rio de la Plata</English>
+		<French>
+			<Text>Vice-royaut&#233; du R&#237;o de la Plata</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Viceroyalty of the Rio de la Plata</German>
+		<Italian>Viceroyalty of the Rio de la Plata</Italian>
+		<Spanish>Viceroyalty of the Rio de la Plata</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_COLOMBIA</Tag>
 		<English>Viceroyalty of New Granada</English>
+		<French>
+			<Text>Vice-royaut&#233; de Nouvelle-Grenade</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Viceroyalty of New Granada</German>
+		<Italian>Viceroyalty of New Granada</Italian>
+		<Spanish>Viceroyalty of New Granada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_KHMER</Tag>
@@ -416,10 +520,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_AZTECS</Tag>
 		<English>New Spain</English>
+		<French>
+			<Text>Nouvelle-Espagne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Spain</German>
+		<Italian>New Spain</Italian>
+		<Spanish>New Spain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_MUGHALS</Tag>
 		<English>West India</English>
+		<French>
+			<Text>Inde de l'ouest</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>West India</German>
+		<Italian>West India</Italian>
+		<Spanish>West India</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_ADJECTIVE</Tag>
@@ -450,8 +570,8 @@
 		<English>Spain</English>
 		<French>
 			<Text>Espagne</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Spanien</Text>

@@ -4,6 +4,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_DESC</Tag>
 		<English>The Mexicans</English>
+		<French>
+			<Text>Les Mexicains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Mexicans</German>
+		<Italian>The Mexicans</Italian>
+		<Spanish>The Mexicans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
@@ -29,10 +37,11 @@
 		<Tag>TXT_KEY_CIV_MEXICO_ADJECTIVE</Tag>
 		<English>Mexican</English>
 		<French>
-			<Text>Mexicains</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>mexicain:mexicaine:mexicains:mexicaines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
+		<German>Mexican</German>
 		<Italian>
 			<Text>Messicani</Text>
 			<Gender>Male</Gender>
@@ -47,6 +56,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_PEOPLES</Tag>
 		<English>Mexican Peoples</English>
+		<French>
+			<Text>Peuplades mexicaines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Mexican Peoples</German>
+		<Italian>Mexican Peoples</Italian>
+		<Spanish>Mexican Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_DEFAULT</Tag>
@@ -76,7 +93,7 @@
 		<Tag>TXT_KEY_CIV_MEXICO_REPUBLIC</Tag>
 		<English>United %s2 States</English>
 		<French>
-			<Text>Etats %s2 Unis</Text>
+			<Text>&#201;tats-Unis %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -100,7 +117,7 @@
 		<Tag>TXT_KEY_CIV_MEXICO_COMMUNIST</Tag>
 		<English>Anti-Reelectionist %s1</English>
 		<French>
-			<Text>%s1 Anti-R&#233;electioniste</Text>
+			<Text>%s1 anti-r&#233;&#233;lectionniste</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -123,5 +140,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_FASCIST</Tag>
 		<English>Synarchist Union of %s1</English>
+		<French>
+			<Text>Union synarchique du %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Synarchist Union of %s1</German>
+		<Italian>Synarchist Union of %s1</Italian>
+		<Spanish>Synarchist Union of %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

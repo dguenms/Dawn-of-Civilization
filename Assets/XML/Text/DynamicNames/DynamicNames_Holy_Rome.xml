@@ -28,12 +28,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_DESC</Tag>
 		<English>The Austrians</English>
+		<French>
+			<Text>Les Autrichiens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Austrians</German>
+		<Italian>The Austrians</Italian>
+		<Spanish>The Austrians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_PEOPLES</Tag>
 		<English>Germanic Peoples</English>
 		<French>
-			<Text>Peuplades Germaniques</Text>
+			<Text>Peuplades germaniques</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -57,7 +65,7 @@
 		<Tag>TXT_KEY_CIV_HOLY_ROME_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -80,28 +88,64 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_FASCIST</Tag>
 		<English>Greater %s2 Empire</English>
+		<French>
+			<Text>Grand Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Greater %s2 Empire</German>
+		<Italian>Greater %s2 Empire</Italian>
+		<Spanish>Greater %s2 Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRO_HUNGARIAN</Tag>
 		<English>Austro-Hungarian</English>
+		<French>
+			<Text>austro-hongrois:austro-hongroise:austro-hongrois:austro-hongroises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Austro-Hungarian</German>
+		<Italian>Austro-Hungarian</Italian>
+		<Spanish>Austro-Hungarian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_ARCHDUCHY_OF</Tag>
 		<English>Archduchy of %s1</English>
+		<French>
+			<Text>Archiduch&#233; de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Archduchy of %s1</German>
+		<Italian>Archduchy of %s1</Italian>
+		<Spanish>Archduchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_HABSBURG</Tag>
 		<English>Habsburg</English>
+		<French>Habsbourg</French>
+		<German>Habsburg</German>
+		<Italian>Habsburg</Italian>
+		<Spanish>Habsburg</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMANY</Tag>
 		<English>Germany</English>
+		<French>
+			<Text>Germanie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Germany</German>
+		<Italian>Germany</Italian>
+		<Spanish>Germany</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMAN</Tag>
 		<English>German</English>
 		<French>
-			<Text>allemand:allemande:allemands:allemandes</Text>
+			<Text>germanique:germanique:germaniques:germaniques</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
@@ -124,53 +168,157 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_DEFAULT</Tag>
 		<English>Archduchy of %s1</English>
+		<French>
+			<Text>Archiduch&#233; d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Archduchy of %s1</German>
+		<Italian>Archduchy of %s1</Italian>
+		<Spanish>Archduchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_FASCIST</Tag>
 		<English>Federal State of %s1</English>
+		<French>
+			<Text>&#201;tat f&#233;d&#233;ral %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Federal State of %s1</German>
+		<Italian>Federal State of %s1</Italian>
+		<Spanish>Federal State of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_SHORT_DESC</Tag>
 		<English>Austria</English>
+		<French>
+			<Text>Autriche</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Austria</German>
+		<Italian>Austria</Italian>
+		<Spanish>Austria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_ADJECTIVE</Tag>
 		<English>Austrian</English>
+		<French>
+			<Text>autrichien:autrichienne:autrichiens:autrichiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Austrian</German>
+		<Italian>Austrian</Italian>
+		<Spanish>Austrian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROMAN_ITALY</Tag>
 		<English>Crown of %s1</English>
+		<French>
+			<Text>Couronne d'%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Crown of %s1</German>
+		<Italian>Crown of %s1</Italian>
+		<Spanish>Crown of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROMAN_FRANCE</Tag>
 		<English>West Francia</English>
+		<French>
+			<Text>Francie occidentale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>West Francia</German>
+		<Italian>West Francia</Italian>
+		<Spanish>West Francia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROMAN_NETHERLANDS</Tag>
 		<English>Duchy of Brabant</English>
+		<French>
+			<Text>Duch&#233; de Brabant</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of Brabant</German>
+		<Italian>Duchy of Brabant</Italian>
+		<Spanish>Duchy of Brabant</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROMAN_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
+		<French>
+			<Text>Empire latin d'Orient</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Latin Empire</German>
+		<Italian>Latin Empire</Italian>
+		<Spanish>Latin Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROMAN_POLAND</Tag>
 		<English>Duchy of %s1</English>
+		<French>
+			<Text>Duch&#233; de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of %s1</German>
+		<Italian>Duchy of %s1</Italian>
+		<Spanish>Duchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIAN_POLAND</Tag>
 		<English>Kingdom of Galicia and Lodomeria</English>
+		<French>
+			<Text>Royaume de Galicie et de Lodom&#233;rie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kingdom of Galicia and Lodomeria</German>
+		<Italian>Kingdom of Galicia and Lodomeria</Italian>
+		<Spanish>Kingdom of Galicia and Lodomeria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIAN_ITALY</Tag>
 		<English>Grand Duchy of Tuscany</English>
+		<French>
+			<Text>Grand-duch&#233; de Toscane</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Grand Duchy of Tuscany</German>
+		<Italian>Grand Duchy of Tuscany</Italian>
+		<Spanish>Grand Duchy of Tuscany</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_HUNGARY</Tag>
 		<English>Hungary</English>
+		<French>
+			<Text>Hongrie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Hungary</German>
+		<Italian>Hungary</Italian>
+		<Spanish>Hungary</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_HUNGARIAN</Tag>
 		<English>Hungarian</English>
+		<French>
+			<Text>hongrois:hongroise:hongrois:hongroises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Hungarian</German>
+		<Italian>Hungarian</Italian>
+		<Spanish>Hungarian</Spanish>
 	</TEXT>
 </Civ4GameText>

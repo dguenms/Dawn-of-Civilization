@@ -28,6 +28,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_PEOPLES</Tag>
 		<English>Indo-Aryan Peoples</English>
+		<French>
+			<Text>Peuplades indo-aryennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Indo-Aryan Peoples</German>
+		<Italian>Indo-Aryan Peoples</Italian>
+		<Spanish>Indo-Aryan Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_DEFAULT</Tag>
@@ -57,7 +65,7 @@
 		<Tag>TXT_KEY_CIV_INDIA_FASCIST</Tag>
 		<English>Undivided %s1</English>
 		<French>
-			<Text>L'Indivisible %s1</Text>
+			<Text>Indivisible %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -80,42 +88,106 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MARATHA</Tag>
 		<English>Maratha</English>
+		<French>
+			<Text>marathe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Maratha</German>
+		<Italian>Maratha</Italian>
+		<Spanish>Maratha</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAHAJANAPADAS</Tag>
 		<English>%s2 Mahajanapadas</English>
+		<French>
+			<Text>Mahajanapadas %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 Mahajanapadas</German>
+		<Italian>%s2 Mahajanapadas</Italian>
+		<Spanish>%s2 Mahajanapadas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAURYA</Tag>
 		<English>Maurya</English>
+		<French>
+			<Text>Maurya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Maurya</German>
+		<Italian>Maurya</Italian>
+		<Spanish>Maurya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_GUPTA</Tag>
 		<English>Gupta</English>
+		<French>
+			<Text>Gupta</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Gupta</German>
+		<Italian>Gupta</Italian>
+		<Spanish>Gupta</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_PALA</Tag>
 		<English>Pala</English>
+		<French>
+			<Text>Pala</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pala</German>
+		<Italian>Pala</Italian>
+		<Spanish>Pala</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_VIJAYANAGARA</Tag>
 		<English>Vijayanagara</English>
+		<French>
+			<Text>Vijayanagara</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Vijayanagara</German>
+		<Italian>Vijayanagara</Italian>
+		<Spanish>Vijayanagara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIAN_VASSAL</Tag>
 		<English>Janapada of %s1</English>
+		<French>
+			<Text>Janapada de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Janapada of %s1</German>
+		<Italian>Janapada of %s1</Italian>
+		<Spanish>Janapada of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIAN_AZTECS</Tag>
 		<English>Aztec Janapada</English>
+		<French>
+			<Text>Janapada azt&#232;que</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Aztec Janapada</German>
+		<Italian>Aztec Janapada</Italian>
+		<Spanish>Aztec Janapada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_ADJECTIVE</Tag>
 		<English>Indian</English>
 		<French>
 			<Text>indien:indienne:indiens:indiennes</Text>
-			<Gender>Male:Female</Gender>
-			<Plural>0:1</Plural>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Indisch:indischen:indische</Text>
@@ -138,8 +210,8 @@
 		<English>India</English>
 		<French>
 			<Text>Inde</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Indien</Text>

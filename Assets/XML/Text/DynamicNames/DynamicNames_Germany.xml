@@ -4,16 +4,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_DESC</Tag>
 		<English>The Prussians</English>
+		<French>
+			<Text>Les Prussiens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Prussians</German>
+		<Italian>The Prussians</Italian>
+		<Spanish>The Prussians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_PEOPLES</Tag>
 		<English>Prussian Peoples</English>
+		<French>
+			<Text>Peuplades prussiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Prussian Peoples</German>
+		<Italian>Prussian Peoples</Italian>
+		<Spanish>Prussian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -37,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_GERMANY_REPUBLIC</Tag>
 		<English>Federal Republic of %s1</English>
 		<French>
-			<Text>R&#233;publique F&#233;d&#233;rale d'%s1</Text>
+			<Text>R&#233;publique f&#233;d&#233;rale d'%s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -60,36 +76,92 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_COMMUNIST</Tag>
 		<English>Free Socialist Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique socialiste libre d'%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Free Socialist Republic of %s1</German>
+		<Italian>Free Socialist Republic of %s1</Italian>
+		<Spanish>Free Socialist Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_FASCIST</Tag>
 		<English>Third Reich</English>
+		<French>
+			<Text>Troisi&#232;me Reich</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Third Reich</German>
+		<Italian>Third Reich</Italian>
+		<Spanish>Third Reich</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_PRUSSIA</Tag>
 		<English>Prussia</English>
+		<French>
+			<Text>Prusse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Prussia</German>
+		<Italian>Prussia</Italian>
+		<Spanish>Prussia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_PRUSSIAN</Tag>
 		<English>Prussian</English>
+		<French>
+			<Text>prussien:prussienne:prussiens:prussiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Prussian</German>
+		<Italian>Prussian</Italian>
+		<Spanish>Prussian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_EMPIRE</Tag>
 		<English>%s2 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_GREATER_EMPIRE</Tag>
 		<English>Greater %s2 Empire</English>
+		<French>
+			<Text>Grand Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Greater %s2 Empire</German>
+		<Italian>Greater %s2 Empire</Italian>
+		<Spanish>Greater %s2 Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMAN_HOLY_ROME</Tag>
 		<English>State of %s2 %s1</English>
+		<French>
+			<Text>&#201;tat d'%s1 %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>State of %s2 %s1</German>
+		<Italian>State of %s2 %s1</Italian>
+		<Spanish>State of %s2 %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMAN_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
 		<French>
-			<Text>Afrique Orientale %s2</Text>
+			<Text>Afrique orientale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -113,7 +185,7 @@
 		<Tag>TXT_KEY_CIV_GERMAN_MALI</Tag>
 		<English>%s2 West Africa</English>
 		<French>
-			<Text>Afrique Occidentale %s2</Text>
+			<Text>Afrique occidentale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -136,14 +208,38 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMAN_POLAND</Tag>
 		<English>South Prussia</English>
+		<French>
+			<Text>Prusse-M&#233;ridionale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>South Prussia</German>
+		<Italian>South Prussia</Italian>
+		<Spanish>South Prussia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMAN_NAME_MOORS</Tag>
 		<English>Maghreb</English>
+		<French>
+			<Text>Maghreb</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Maghreb</German>
+		<Italian>Maghreb</Italian>
+		<Spanish>Maghreb</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_REICHSPROTEKTORAT</Tag>
 		<English>Reichsprotektorat %s1</English>
+		<French>
+			<Text>Reichsprotektorat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Reichsprotektorat %s1</German>
+		<Italian>Reichsprotektorat %s1</Italian>
+		<Spanish>Reichsprotektorat %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT</Tag>
@@ -172,12 +268,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_GREECE</Tag>
 		<English>Hellenic State</English>
+		<French>
+			<Text>&#201;tat grec</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Hellenic State</German>
+		<Italian>Hellenic State</Italian>
+		<Spanish>Hellenic State</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
 		<French>
-			<Text>Afrique Orientale %s2</Text>
+			<Text>Afrique orientale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -200,6 +304,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_BYZANTIUM</Tag>
 		<English>Reichskommissariat Bosporus</English>
+		<French>
+			<Text>Reichskommissariat du Bosphore</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Reichskommissariat Bosporus</German>
+		<Italian>Reichskommissariat Bosporus</Italian>
+		<Spanish>Reichskommissariat Bosporus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_VIKINGS</Tag>
@@ -252,10 +364,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_HOLY_ROME</Tag>
 		<English>Ostmark</English>
+		<French>
+			<Text>Ostmark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ostmark</German>
+		<Italian>Ostmark</Italian>
+		<Spanish>Ostmark</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_RUSSIA</Tag>
 		<English>Reichskommissariat Moskowien</English>
+		<French>
+			<Text>Reichskommissariat de Moscovie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Reichskommissariat Moskowien</German>
+		<Italian>Reichskommissariat Moskowien</Italian>
+		<Spanish>Reichskommissariat Moskowien</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_NETHERLANDS</Tag>
@@ -285,7 +413,7 @@
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_MALI</Tag>
 		<English>%s2 West Africa</English>
 		<French>
-			<Text>Afrique Occidentale %s2</Text>
+			<Text>Afrique occidentale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -308,18 +436,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_POLAND</Tag>
 		<English>General Government</English>
+		<French>
+			<Text>Gouvernement g&#233;n&#233;ral de Pologne</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>General Government</German>
+		<Italian>General Government</Italian>
+		<Spanish>General Government</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_ITALY</Tag>
 		<English>%s2 Social Republic</English>
+		<French>
+			<Text>R&#233;publique sociale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Social Republic</German>
+		<Italian>%s2 Social Republic</Italian>
+		<Spanish>%s2 Social Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_MUGHALS</Tag>
 		<English>%s2 West India</English>
+		<French>
+			<Text>Inde de l'ouest %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 West India</German>
+		<Italian>%s2 West India</Italian>
+		<Spanish>%s2 West India</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_NAZI_CANADA</Tag>
 		<English>Reichskommissariat Kanada</English>
+		<French>
+			<Text>Reichskommissariat du Canada</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Reichskommissariat Kanada</German>
+		<Italian>Reichskommissariat Kanada</Italian>
+		<Spanish>Reichskommissariat Kanada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_ADJECTIVE</Tag>
@@ -350,8 +510,8 @@
 		<English>Germany</English>
 		<French>
 			<Text>Allemagne</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Deutschland</Text>

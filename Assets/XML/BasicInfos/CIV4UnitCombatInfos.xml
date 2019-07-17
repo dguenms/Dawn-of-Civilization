@@ -24,7 +24,7 @@
 		<UnitCombatInfo>
 			<Type>UNITCOMBAT_LIGHT_CAVALRY</Type>
 			<Description>TXT_KEY_UNITCOMBAT_LIGHT_CAVALRY</Description>
-			<Button>,Art/Interface/Buttons/Promotions/Formation.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,2</Button>
+			<Button>Art/Interface/Buttons/Promotions/Skirmish.dds</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
 			<Type>UNITCOMBAT_MELEE</Type>

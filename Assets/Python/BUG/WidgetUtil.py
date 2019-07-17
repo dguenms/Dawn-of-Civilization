@@ -147,6 +147,31 @@ def getWidgetHelp(argsList):
 		if iData1 == -1:
 			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
 
+	# Espionage Advisor
+	elif eWidgetType == WidgetTypes.WIDGET_ESPIONAGE_SELECT_PLAYER:
+		pPlayer = gc.getPlayer(iData1)
+		szHelp = CyTranslator().changeTextColor(pPlayer.getName(), gc.getInfoTypeForString('COLOR_HIGHLIGHT_TEXT'))
+		szHelp += "\n"
+		szHelp += pPlayer.getCivilizationDescription(0)
+		szHelp += "\n\n"
+		szHelp += CyGameTextMgr().getAttitudeString(iData1, iData2)
+		return szHelp
+
+	elif eWidgetType == WidgetTypes.WIDGET_ESPIONAGE_SELECT_CITY:
+		return " "
+
+	elif eWidgetType == WidgetTypes.WIDGET_ESPIONAGE_SELECT_MISSION:
+		MissionInfo = gc.getEspionageMissionInfo(iData1)
+		szHelp = CyTranslator().changeTextColor(MissionInfo.getDescription(), gc.getInfoTypeForString('COLOR_HIGHLIGHT_TEXT'))
+		szHelp += "\n"
+		szHelp += MissionInfo.getHelp()
+		return szHelp
+
+	# Go to City
+	elif eWidgetType == WidgetTypes.WIDGET_GO_TO_CITY:
+		szHelp = "Locate this city in the world"
+		return szHelp
+
 ## Platy WorldBuilder ##
 	elif eWidgetType == WidgetTypes.WIDGET_PYTHON:
 		if iData1 == 1027:
@@ -157,16 +182,12 @@ def getWidgetHelp(argsList):
 			elif iData2 < 2000:
 				return CyTranslator().getText("TXT_KEY_WB_OPTIONS_ENABLE_CIV",())
 			elif iData2 == 2000:
-				return CyTranslator().getText("TXT_KEY_WB_NO_STABILITY_HELP",())
-			elif iData2 == 2001:
-				return CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY_HELP",())
-			elif iData2 == 2002:
 				return CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV_HELP",())
-			elif iData2 == 2003:
+			elif iData2 == 2001:
 				return CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING_HELP",())
-			elif iData2 == 2004:
+			elif iData2 == 2002:
 				return CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS_HELP",())
-			elif iData2 == 2005:
+			elif iData2 == 2003:
 				return CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE_HELP",())
 			elif iData2 == 3001:
 				return CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED_HELP",())
@@ -289,6 +310,22 @@ def getWidgetHelp(argsList):
 			elif iData2 == 45:
 				return CyTranslator().getText("TXT_KEY_WB_FLIPAI", ())
 			elif iData2 == 46:
+				return CyTranslator().getText("TXT_KEY_WB_VICTORYMAP", ())
+			elif iData2 == 47:
+				return CyTranslator().getText("TXT_KEY_WB_VICTORYMAP_RECTANGLE", ())
+			elif iData2 == 48:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER", ())
+			elif iData2 == 49:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_WATER", ())
+			elif iData2 == 50:
+				return CyTranslator().getText("TXT_KEY_WB_AREA_EXPORTER_PEAKS", ())
+			elif iData2 == 51:
+				return CyTranslator().getText("TXT_KEY_WB_TOOL_HELP", ())
+			elif iData2 == 52:
+				return CyTranslator().getText("TXT_KEY_WB_REGION_ALLREGIONS", ())
+			elif iData2 == 53:
+				return CyTranslator().getText("TXT_KEY_WB_REGION_CHECK", ())
+			elif iData2 == 54:
 				return CyTranslator().getText("TXT_KEY_WB_SPAWN_MENU", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
@@ -515,6 +552,16 @@ def getWidgetHelp(argsList):
 			return CyTranslator().getText("TXT_KEY_WB_RESTORE_SD_BACKUP_HELP", ())
 		elif iData1 == 22014:
 			return CyTranslator().getText("TXT_KEY_WB_CREATE_SD_BACKUP_HELP", ())
+
+		# technology advisor
+		elif iData1 == 7800:
+			return gc.getTechInfo(iData2).getHelp()
+		elif iData1 == 7801:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_TECH_SCREEN_FILTER_KNOWN", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_TECH_SCREEN_FILTER_CLAIMED", ())
+
 		elif iData1 == 22020:
 			return CyTranslator().getText("TXT_KEY_WB_TOGGLE_SPAWN_TYPE", ())
 	return u""

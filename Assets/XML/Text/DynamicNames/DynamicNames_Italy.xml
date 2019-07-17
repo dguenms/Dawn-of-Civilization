@@ -4,12 +4,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_PEOPLES</Tag>
 		<English>Lombard Peoples</English>
+		<French>
+			<Text>Peuplades lombardes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Lombard Peoples</German>
+		<Italian>Lombard Peoples</Italian>
+		<Spanish>Lombard Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -32,6 +40,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_FASCIST</Tag>
 		<English>National Fascist %s1</English>
+		<French>
+			<Text>%s1 nationale fasciste</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>National Fascist %s1</German>
+		<Italian>National Fascist %s1</Italian>
+		<Spanish>National Fascist %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_LEAGUE</Tag>
@@ -60,27 +76,71 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_LOMBARD</Tag>
 		<English>Lombard</English>
+		<French>
+			<Text>lombard:lombarde:lombards:lombardes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Lombard</German>
+		<Italian>Lombard</Italian>
+		<Spanish>Lombard</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_TUSCANY</Tag>
 		<English>Tuscany</English>
+		<French>
+			<Text>Toscane</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Tuscany</German>
+		<Italian>Tuscany</Italian>
+		<Spanish>Tuscany</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
 		<English>%s2 Maritime Republics</English>
+		<French>
+			<Text>R&#233;publiques maritimes %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 Maritime Republics</German>
+		<Italian>%s2 Maritime Republics</Italian>
+		<Spanish>%s2 Maritime Republics</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DUCHY_OF</Tag>
 		<English>Duchy of %s1</English>
+		<French>
+			<Text>Duch&#233; d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of %s1</German>
+		<Italian>Duchy of %s1</Italian>
+		<Spanish>Duchy of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATES</Tag>
 		<English>Papal States</English>
+		<French>
+			<Text>&#201;tats pontificaux</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Papal States</German>
+		<Italian>Papal States</Italian>
+		<Spanish>Papal States</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_ADJECTIVE</Tag>
 		<English>Italian</English>
-		<French>Italien</French>
+		<French>
+			<Text>italien:italienne:italiens:italiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Italienisch</German>
 		<Italian>Italiano</Italian>
 		<Spanish>Italiano</Spanish>
@@ -88,11 +148,23 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DESC</Tag>
 		<English>The Italians</English>
+		<French>
+			<Text>Les Italiens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Italians</German>
+		<Italian>The Italians</Italian>
+		<Spanish>The Italians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_SHORT_DESC</Tag>
 		<English>Italy</English>
-		<French>Italie</French>
+		<French>
+			<Text>Italie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Italien</German>
 		<Italian>L'Italia</Italian>
 		<Spanish>Italia</Spanish>

@@ -4,18 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DESC</Tag>
 		<English>The Mughals</English>
+		<French>
+			<Text>Les Moghols</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Mughals</German>
+		<Italian>The Mughals</Italian>
+		<Spanish>The Mughals</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_ADJECTIVE</Tag>
 		<English>Pakistani</English>
+		<French>
+			<Text>pakistanais:pakistanaise:pakistanais:pakistanaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Pakistani</German>
+		<Italian>Pakistani</Italian>
+		<Spanish>Pakistani</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_SHORT_DESC</Tag>
 		<English>Pakistan</English>
+		<French>
+			<Text>Pakistan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pakistan</German>
+		<Italian>Pakistan</Italian>
+		<Spanish>Pakistan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_PEOPLES</Tag>
 		<English>Ghorid Peoples</English>
+		<French>
+			<Text>Peuplades ghorides</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Ghorid Peoples</German>
+		<Italian>Ghorid Peoples</Italian>
+		<Spanish>Ghorid Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DEFAULT</Tag>
@@ -44,6 +76,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_FASCIST</Tag>
 		<English>%s2 Military Government</English>
+		<French>
+			<Text>Gouvernement militaire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Military Government</German>
+		<Italian>%s2 Military Government</Italian>
+		<Spanish>%s2 Military Government</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_DEFAULT</Tag>
@@ -72,27 +112,73 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PAKISTAN_FASCIST</Tag>
 		<English>%s2 Military Government</English>
+		<French>
+			<Text>Gouvernement militaire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Military Government</German>
+		<Italian>%s2 Military Government</Italian>
+		<Spanish>%s2 Military Government</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
 		<English>Delhi</English>
+		<French>
+			<Text>Delhi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Delhi</German>
+		<Italian>Delhi</Italian>
+		<Spanish>Delhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_VASSAL</Tag>
 		<English>Kewab of %s1</English>
+		<French>
+			<Text>Kewab de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kewab of %s1</German>
+		<Italian>Kewab of %s1</Italian>
+		<Spanish>Kewab of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
 		<English>Deccan Sultanates</English>
+		<French>
+			<Text>Sultatnats du Deccan</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Deccan Sultanates</German>
+		<Italian>Deccan Sultanates</Italian>
+		<Spanish>Deccan Sultanates</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_ADJECTIVE</Tag>
 		<English>Mughal</English>
+		<French>
+			<Text>moghol:moghole:moghols:mogholes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Mogul</German>
+		<Italian>Mughal</Italian>
+		<Spanish>Mughal</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>
 		<English>Mughals</English>
+		<French>
+			<Text>Moghols</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Moguln</German>
+		<Italian>Mughals</Italian>
+		<Spanish>Mughals</Spanish>
 	</TEXT>
 </Civ4GameText>

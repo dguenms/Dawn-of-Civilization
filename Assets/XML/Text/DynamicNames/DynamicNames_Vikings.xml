@@ -28,32 +28,80 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_SHORT_DESC</Tag>
 		<English>Denmark</English>
+		<French>
+			<Text>Danemark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Denmark</German>
+		<Italian>Denmark</Italian>
+		<Spanish>Denmark</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DENMARK_ADJECTIVE</Tag>
 		<English>Danish</English>
+		<French>
+			<Text>danois:danoise:danois:danoises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Danish</German>
+		<Italian>Danish</Italian>
+		<Spanish>Danish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_SHORT_DESC</Tag>
 		<English>Norway</English>
+		<French>
+			<Text>Norv&#232;ge</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Norway</German>
+		<Italian>Norway</Italian>
+		<Spanish>Norway</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NORWAY_ADJECTIVE</Tag>
 		<English>Norwegian</English>
+		<French>
+			<Text>norv&#233;gien:norv&#233;gienne:norv&#233;giens:norv&#233;giennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Norwegian</German>
+		<Italian>Norwegian</Italian>
+		<Spanish>Norwegian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
 		<English>Norse Peoples</English>
 		<French>
-			<Text>Peuplades Nordiques</Text>
+			<Text>Peuplades nordiques</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -77,7 +125,7 @@
 		<Tag>TXT_KEY_CIV_VIKINGS_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -101,7 +149,7 @@
 		<Tag>TXT_KEY_CIV_VIKINGS_COMMUNIST</Tag>
 		<English>Democratic Republic of %s1</English>
 		<French>
-			<Text>R&#233;publique D&#233;mocratique de %s1</Text>
+			<Text>R&#233;publique d&#233;mocratique de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -124,30 +172,98 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_FASCIST</Tag>
 		<English>National Gathering of %s1</English>
+		<French>
+			<Text>Rassemblement national de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>National Gathering of %s1</German>
+		<Italian>National Gathering of %s1</Italian>
+		<Spanish>National Gathering of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS</Tag>
 		<English>Norse Kingdoms</English>
+		<French>
+			<Text>Royaumes scandinaves</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Norse Kingdoms</German>
+		<Italian>Norse Kingdoms</Italian>
+		<Spanish>Norse Kingdoms</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_KALMAR_UNION</Tag>
 		<English>Kalmar Union</English>
+		<French>
+			<Text>Union de Kalmar</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kalmar Union</German>
+		<Italian>Kalmar Union</Italian>
+		<Spanish>Kalmar Union</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_ALTHINGS</Tag>
 		<English>%s2 Althings</English>
+		<French>
+			<Text>Althings %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 Althings</German>
+		<Italian>%s2 Althings</Italian>
+		<Spanish>%s2 Althings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_NORTH_SEA_EMPIRE</Tag>
+		<English>North Sea Empire</English>
+		<French>
+			<Text>Empire de la mer du Nord</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>North Sea Empire</German>
+		<Italian>North Sea Empire</Italian>
+		<Spanish>North Sea Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY</Tag>
 		<English>Denmark-Norway</English>
+		<French>
+			<Text>Danemark-Norv&#232;ge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Denmark-Norway</German>
+		<Italian>Denmark-Norway</Italian>
+		<Spanish>Denmark-Norway</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORWAY</Tag>
 		<English>Norway</English>
+		<French>
+			<Text>Norv&#232;ge</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Norway</German>
+		<Italian>Norway</Italian>
+		<Spanish>Norway</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK</Tag>
 		<English>Denmark</English>
+		<French>
+			<Text>Danemark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Denmark</German>
+		<Italian>Denmark</Italian>
+		<Spanish>Denmark</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIA</Tag>
@@ -176,22 +292,46 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIAN</Tag>
 		<English>Scandinavian</English>
+		<French>
+			<Text>scandinave:scandinave:scandinaves:scandinaves</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Scandinavian</German>
+		<Italian>Scandinavian</Italian>
+		<Spanish>Scandinavian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKING_ENGLAND</Tag>
 		<English>Danelaw</English>
+		<French>
+			<Text>Danelaw</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Danelaw</German>
+		<Italian>Danelaw</Italian>
+		<Spanish>Danelaw</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKING_RUSSIA</Tag>
 		<English>Varangian Principalities</English>
+		<French>
+			<Text>Principaut&#233;s var&#232;gues</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Varangian Principalities</German>
+		<Italian>Varangian Principalities</Italian>
+		<Spanish>Varangian Principalities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKING_ADJECTIVE</Tag>
 		<English>Viking</English>
 		<French>
-			<Text>Viking</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
+			<Text>viking:viking:vikings:vikings</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Wikingisch:wikingischen:wikingische</Text>

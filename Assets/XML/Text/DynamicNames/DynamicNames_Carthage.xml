@@ -4,29 +4,60 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DESC</Tag>
 		<English>The Phoenicians</English>
+		<French>
+			<Text>Les Ph&#233;niciens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Phoenicians</German>
+		<Italian>The Phoenicians</Italian>
+		<Spanish>The Phoenicians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</Tag>
 		<English>Phoenicia</English>
+		<French>
+			<Text>Ph&#233;nicie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Phoenicia</German>
+		<Italian>Phoenicia</Italian>
+		<Spanish>Phoenicia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Tag>
 		<English>Phoenician</English>
+		<French>
+			<Text>ph&#233;nicien:ph&#233;nicienne;ph&#233;niciens:ph&#233;niciennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>
 			<Text>Ph&#246;nizisch:ph&#246;nizischen:ph&#246;nizische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>Phoenician</Italian>
+		<Spanish>Phoenician</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_PEOPLES</Tag>
 		<English>Canaanite Peoples</English>
+		<French>
+			<Text>Peuplades canan&#233;ennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Canaanite Peoples</German>
+		<Italian>Canaanite Peoples</Italian>
+		<Spanish>Canaanite Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -48,37 +79,93 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_REPUBLIC</Tag>
-		<English>Republic of Lebanon</English>
+		<English>Lebanese Republic</English>
+		<French>
+			<Text>R&#233;publique libanaise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Republic of Lebanon</German>
+		<Italian>Republic of Lebanon</Italian>
+		<Spanish>Republic of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_COMMUNIST</Tag>
 		<English>People's Republic of Lebanon</English>
+		<French>
+			<Text>R&#233;publique populaire libanaise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>People's Republic of Lebanon</German>
+		<Italian>People's Republic of Lebanon</Italian>
+		<Spanish>People's Republic of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_FASCIST</Tag>
 		<English>National Lebanon</English>
+		<French>
+			<Text>Liban ph&#233;nicianiste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>National Lebanon</German>
+		<Italian>National Lebanon</Italian>
+		<Spanish>National Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_REPUBLIC</Tag>
 		<English>Punic Republic</English>
+		<French>
+			<Text>R&#233;publique punique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Punic Republic</German>
+		<Italian>Punic Republic</Italian>
+		<Spanish>Punic Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_COMMUNIST</Tag>
 		<English>Punic People's Republic</English>
+		<French>
+			<Text>R&#233;publique populaire punique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Punic People's Republic</German>
+		<Italian>Punic People's Republic</Italian>
+		<Spanish>Punic People's Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_FASCIST</Tag>
 		<English>New Carthaginian Empire</English>
+		<French>
+			<Text>Nouvel Empire carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Carthaginian Empire</German>
+		<Italian>New Carthaginian Empire</Italian>
+		<Spanish>New Carthaginian Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_DEFAULT</Tag>
 		<English>Carthaginian Empire</English>
+		<French>
+			<Text>Empire carthaginois</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Carthaginian Empire</German>
+		<Italian>Carthaginian Empire</Italian>
+		<Spanish>Carthaginian Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_EMPIRE</Tag>
 		<English>Carthaginian Empire</English>
 		<French>
-			<Text>Empire Carthaginois</Text>
+			<Text>Empire carthaginois</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -130,9 +217,9 @@
 		<Tag>TXT_KEY_CIV_CARTHAGE_SHORT_DESC</Tag>
 		<English>Carthage</English>
 		<French>
-			<Text>Carthaginois</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>Carthage</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Karthago</Text>

@@ -11410,6 +11410,27 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>DIPLO_BUMIN</SoundID>
+			<Filename>Sounds/Diplomacy/Bumin</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_ALP_ARSLAN</SoundID>
+			<Filename>Sounds/Diplomacy/AlpArslan</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_TAMERLANE</SoundID>
+			<Filename>Sounds/Diplomacy/Tamerlane</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>DIPLO_CHRISTIAN_IV</SoundID>
 			<Filename>Sounds/Diplomacy/Christian_IV</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>

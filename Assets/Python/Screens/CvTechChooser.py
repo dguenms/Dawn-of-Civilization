@@ -309,7 +309,7 @@ class CvTechChooser:
 				for iFeature in xrange(gc.getNumFeatureInfos()):
 					iTech = gc.getBuildInfo(iBuild).getFeatureTech(iFeature)
 					if iTech > -1:
-						self.TechEffects[iTech].append(("Improvement", iBuild))
+						self.TechEffects[iTech].append(("Remove", iBuild))
 
 		# Resources
 		for iResource in xrange(gc.getNumBonusInfos()):
@@ -331,7 +331,8 @@ class CvTechChooser:
 			for iImprovement in xrange(gc.getNumImprovementInfos()):
 				for iYieldType in xrange(YieldTypes.NUM_YIELD_TYPES):
 					if gc.getImprovementInfo(iImprovement).getTechYieldChanges(iTech, iYieldType):
-						self.TechEffects[iTech].append(("ImprovementYield", iImprovement))
+						if ("ImprovementYield", iImprovement) not in self.TechEffects[iTech]:
+							self.TechEffects[iTech].append(("ImprovementYield", iImprovement))
 
 			if TechInfo.isIrrigation():
 				self.TechEffects[iTech].append(("EnableIrrigation", -1))
@@ -470,12 +471,13 @@ class CvTechChooser:
 
 		### Effects
 			fX = self.X_ITEMS
+			lRemoves = []
 			for index in xrange(len(self.TechEffects[tech])):
 				type = self.TechEffects[tech][index][0]
 				item = self.TechEffects[tech][index][1]
 				szItem = "Item" + str(tech * 1000 + index)
 				szObsolete = "Obsolete" + str(tech * 1000 + index)
-
+				
 				if type == "Civic":
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getCivicInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIVIC, item, 1, False)
 
@@ -539,9 +541,13 @@ class CvTechChooser:
 				elif type == "Improvement":
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_IMPROVEMENT, tech, item, False)
 
+				elif type == "Remove":
+					lRemoves.append(item)
+					continue
+					
 				elif type == "ImprovementYield":
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getImprovementInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_YIELD_CHANGE, tech, item, False)
-
+					
 				elif type == "RevealResource":
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getBonusInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_BONUS_REVEAL, tech, item, False)
 
@@ -643,6 +649,11 @@ class CvTechChooser:
 					szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath()
 					screen.addDDSGFCAt(szItem, szTechBox, szFileName, iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PYTHON, 7800, tech, False)
 
+				fX += self.X_INCREMENT
+				
+			if len(lRemoves) > 0:
+				szItem = "Item" + str(tech * 1000 + index + 1)
+				screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildInfo(lRemoves[0]).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_REMOVE, tech, tech, False)
 				fX += self.X_INCREMENT
 
 			fX = self.BOX_WIDTH - (self.PIXEL_INCREMENT * 2)

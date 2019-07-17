@@ -4,10 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_DESC</Tag>
 		<English>The Brazilians</English>
+		<French>
+			<Text>Les Br&#233;siliens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Brazilians</German>
+		<Italian>The Brazilians</Italian>
+		<Spanish>The Brazilians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_PEOPLES</Tag>
 		<English>Brazilian Peoples</English>
+		<French>
+			<Text>Peuplades br&#233;siliennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Brazilian Peoples</German>
+		<Italian>Brazilian Peoples</Italian>
+		<Spanish>Brazilian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_DEFAULT</Tag>
@@ -36,12 +52,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_REPUBLIC</Tag>
 		<English>Federative Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique f&#233;d&#233;rative du %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Federative Republic of %s1</German>
+		<Italian>Federative Republic of %s1</Italian>
+		<Spanish>Federative Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_FASCIST</Tag>
 		<English>United States of %s1</English>
 		<French>
-			<Text>Etats Unis d'%s1</Text>
+			<Text>&#233;tats-Unis du %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -64,13 +88,37 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZILIAN_ARGENTINA</Tag>
 		<English>Transplatine Province</English>
+		<French>
+			<Text>Province transplatine</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Transplatine Province</German>
+		<Italian>Transplatine Province</Italian>
+		<Spanish>Transplatine Province</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_ADJECTIVE</Tag>
 		<English>Brazilian</English>
+		<French>
+			<Text>br&#233;silien:br&#233;silienne:br&#233;siliens:br&#233;siliennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Brazilian</German>
+		<Italian>Brazilian</Italian>
+		<Spanish>Brazilian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_SHORT_DESC</Tag>
 		<English>Brazil</English>
+		<French>
+			<Text>Br&#233;sil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Brazil</German>
+		<Italian>Brazil</Italian>
+		<Spanish>Brazil</Spanish>
 	</TEXT>
 </Civ4GameText>

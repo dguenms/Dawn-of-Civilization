@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_ROME_PEOPLES</Tag>
 		<English>Italic Peoples</English>
 		<French>
-			<Text>Peuplades Italiques</Text>
+			<Text>Peuplades italiques</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -52,16 +52,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_DEFAULT</Tag>
 		<English>%s2 Kingdom</English>
+		<French>
+			<Text>Royaut&#233; %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_COMMUNIST</Tag>
 		<English>Plebeian Republic</English>
+		<French>
+			<Text>R&#233;publique pl&#233;b&#233;ienne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Plebeian Republic</German>
+		<Italian>Plebeian Republic</Italian>
+		<Spanish>Plebeian Republic</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_FASCIST</Tag>
 		<English>New Roman Empire</English>
 		<French>
-			<Text>Nouvel Empire Romain</Text>
+			<Text>Nouvel Empire romain</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -84,12 +100,16 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_WESTERN</Tag>
 		<English>Western Roman</English>
+		<French>romain d'Occident</French>
+		<German>Western Roman</German>
+		<Italian>Western Roman</Italian>
+		<Spanish>Western Roman</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_VASSAL</Tag>
 		<English>Province of %s1</English>
 		<French>
-			<Text>Province des %s1</Text>
+			<Text>Province de %s1</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -184,12 +204,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_GREECE</Tag>
 		<English>Magna Graecia</English>
+		<French>
+			<Text>Grande-Gr&#232;ce</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Magna Graecia</German>
+		<Italian>Magna Graecia</Italian>
+		<Spanish>Magna Graecia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_PERSIA</Tag>
 		<English>Parthia</English>
 		<French>
-			<Text>Parthia</Text>
+			<Text>Parthie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -212,6 +240,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_PHOENICIA</Tag>
 		<English>Syria</English>
+		<French>
+			<Text>Syrie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Syria</German>
+		<Italian>Syria</Italian>
+		<Spanish>Syria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_CARTHAGE</Tag>
@@ -264,6 +300,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_BYZANTIUM</Tag>
 		<English>Thracia</English>
+		<French>
+			<Text>Thrace</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Thracia</German>
+		<Italian>Thracia</Italian>
+		<Spanish>Thracia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_VIKINGS</Tag>
@@ -340,16 +384,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_THAILAND</Tag>
 		<English>Siam</English>
+		<French>
+			<Text>Siam</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Siam</German>
+		<Italian>Siam</Italian>
+		<Spanish>Siam</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_FRANCE</Tag>
 		<English>Gaul</English>
+		<French>
+			<Text>Gaule</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Gaul</German>
+		<Italian>Gaul</Italian>
+		<Spanish>Gaul</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_ENGLAND</Tag>
 		<English>Britannia</English>
 		<French>
-			<Text>Britannia</Text>
+			<Text>Britannie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -396,6 +456,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_GERMANY</Tag>
 		<English>Borussia</English>
+		<French>
+			<Text>Borussie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Borussia</German>
+		<Italian>Borussia</Italian>
+		<Spanish>Borussia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKS</Tag>
+		<English>Transoxiana</English>
+		<French>
+			<Text>Transoxiane</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Transoxiana</German>
+		<Italian>Transoxiana</Italian>
+		<Spanish>Transoxiana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
@@ -425,7 +505,7 @@
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_NETHERLANDS</Tag>
 		<English>Belgica</English>
 		<French>
-			<Text>Belgica</Text>
+			<Text>Gaule belgique</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -449,7 +529,7 @@
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_MALI</Tag>
 		<English>Gaetulia</English>
 		<French>
-			<Text>Gaetulia</Text>
+			<Text>G&#233;tulie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -497,7 +577,7 @@
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_MONGOLIA</Tag>
 		<English>Serica</English>
 		<French>
-			<Text>Serica</Text>
+			<Text>S&#233;rique</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -518,7 +598,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKEY</Tag>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_OTTOMANS</Tag>
 		<English>Asia Minor</English>
 		<French>
 			<Text>Asie Mineure</Text>
@@ -570,8 +650,8 @@
 		<English>Rome</English>
 		<French>
 			<Text>Rome</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Rom</Text>

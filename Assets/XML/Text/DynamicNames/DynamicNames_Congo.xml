@@ -4,33 +4,97 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_DESC</Tag>
 		<English>The Congolese</English>
+		<French>
+			<Text>Les Congolais</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Congolese</German>
+		<Italian>The Congolese</Italian>
+		<Spanish>The Congolese</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_PEOPLES</Tag>
 		<English>Congolese Peoples</English>
+		<French>
+			<Text>Peuplades congolaises</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Congolese Peoples</German>
+		<Italian>Congolese Peoples</Italian>
+		<Spanish>Congolese Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_DEFAULT</Tag>
 		<English>Kingdom of Kongo</English>
+		<French>
+			<Text>Royaume du Kongo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kingdom of Kongo</German>
+		<Italian>Kingdom of Kongo</Italian>
+		<Spanish>Kingdom of Kongo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_REPUBLIC</Tag>
 		<English>Democratic Republic of the Congo</English>
+		<French>
+			<Text>R&#233;publique d&#233;mocratique du Congo</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Democratic Republic of the Congo</German>
+		<Italian>Democratic Republic of the Congo</Italian>
+		<Spanish>Democratic Republic of the Congo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_FASCIST</Tag>
 		<English>Republic of Zaire</English>
+		<French>
+			<Text>R&#233;publique du Za&#239;re</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Republic of Zaire</German>
+		<Italian>Republic of Zaire</Italian>
+		<Spanish>Republic of Zaire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_ARTICLE</Tag>
 		<English>the Congo</English>
+		<French>
+			<Text>le Congo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>the Congo</German>
+		<Italian>the Congo</Italian>
+		<Spanish>the Congo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_ADJECTIVE</Tag>
 		<English>Congolese</English>
+		<French>
+			<Text>congolais:congolaise:congolais:congolaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Congolese</German>
+		<Italian>Congolese</Italian>
+		<Spanish>Congolese</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_SHORT_DESC</Tag>
 		<English>Congo</English>
+		<French>
+			<Text>Congo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Congo</German>
+		<Italian>Congo</Italian>
+		<Spanish>Congo</Spanish>
 	</TEXT>
 </Civ4GameText>

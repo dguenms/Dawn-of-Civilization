@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_JAPAN_DEFAULT</Tag>
 		<English>%s2 Shogunate</English>
 		<French>
-			<Text>Sh&#244;gunat %s2</Text>
+			<Text>Shogunat %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -81,6 +81,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
+		<German>Empire of Greater %s1</German>
 		<Italian>
 			<Text>Impero del Grande %s1</Text>
 			<Gender>Male</Gender>
@@ -95,22 +96,62 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL</Tag>
 		<English>Co-Prosperity %s1</English>
+		<French>
+			<Text>Sph&#232;re %s2 de coprosp&#233;rit&#233;</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Co-Prosperity %s1</German>
+		<Italian>Co-Prosperity %s1</Italian>
+		<Spanish>Co-Prosperity %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_CHINA</Tag>
 		<English>Reorganized National Government of China</English>
+		<French>
+			<Text>Gouvernement national r&#233;organis&#233; de Chine</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Reorganized National Government of China</German>
+		<Italian>Reorganized National Government of China</Italian>
+		<Spanish>Reorganized National Government of China</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_KOREA</Tag>
 		<English>Governor-General of Chosen</English>
+		<French>
+			<Text>Gouvernement-g&#233;n&#233;ral de Chosen</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Governor-General of Chosen</German>
+		<Italian>Governor-General of Chosen</Italian>
+		<Spanish>Governor-General of Chosen</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_MONGOLIA</Tag>
 		<English>Mengjiang United Autonomous Government</English>
+		<French>
+			<Text>Gouvernement autonome uni du Mengjiang</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Mengjiang United Autonomous Government</German>
+		<Italian>Mengjiang United Autonomous Government</Italian>
+		<Spanish>Mengjiang United Autonomous Government</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_INDIA</Tag>
 		<English>Azad Hind</English>
+		<French>
+			<Text>Gouvernement provisoire de l'Inde libre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Azad Hind</German>
+		<Italian>Azad Hind</Italian>
+		<Spanish>Azad Hind</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPAN_ADJECTIVE</Tag>
@@ -142,7 +183,7 @@
 		<French>
 			<Text>Japon</Text>
 			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Japan</Text>

@@ -5,7 +5,7 @@
 		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC</Tag>
 		<English>The Ethiopians</English>
 		<French>
-			<Text>Les Ethiopiens</Text>
+			<Text>Les &#201;thiopiens</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_ETHIOPIA_PEOPLES</Tag>
 		<English>Abyssinian Peoples</English>
 		<French>
-			<Text>Peuplades Abyssiniennes</Text>
+			<Text>Peuplades abyssiniennes</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_ETHIOPIA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -100,18 +100,54 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_REPUBLIC</Tag>
 		<English>Federal Democratic Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique d&#233;mocratique f&#233;d&#233;rale d’%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Federal Democratic Republic of %s1</German>
+		<Italian>Federal Democratic Republic of %s1</Italian>
+		<Spanish>Federal Democratic Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_COMMUNIST</Tag>
 		<English>People's Democratic Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique d&#233;mocratique populaire d’%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>People's Democratic Republic of %s1</German>
+		<Italian>People's Democratic Republic of %s1</Italian>
+		<Spanish>People's Democratic Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUM</Tag>
 		<English>Aksum</English>
+		<French>Aksoum</French>
+		<German>Aksum</German>
+		<Italian>Aksum</Italian>
+		<Spanish>Aksum</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUMITE</Tag>
+		<English>Aksumite</English>
+		<French>
+			<Text>aksoumite:aksoumite:aksoumites:aksoumites</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Aksumite</German>
+		<Italian>Aksumite</Italian>
+		<Spanish>Aksumite</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_ADAL</Tag>
 		<English>Adal</English>
+		<French>Adal</French>
+		<German>Adal</German>
+		<Italian>Adal</Italian>
+		<Spanish>Adal</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_ADJECTIVE</Tag>
@@ -146,8 +182,8 @@
 		<English>Ethiopia</English>
 		<French>
 			<Text>&#201;thiopie</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>&#196;thiopien</Text>

@@ -36,6 +36,7 @@
 // BUG - end
 
 #include "CvRhyes.h" //Rhye
+#include <algorithm>
 
 // Public Functions...
 
@@ -528,6 +529,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	m_eWinner = NO_TEAM;
 	m_eVictory = NO_VICTORY;
 	m_eGameState = GAMESTATE_ON;
+	m_eCityScreenOwner = NO_PLAYER;
 
 	m_szScriptData = "";
 
@@ -2336,49 +2338,35 @@ void CvGame::update()
 	}
 }
 
+struct techRankCompare
+{
+	bool operator() (TeamTypes eTeam1, TeamTypes eTeam2)
+	{
+		return GET_TEAM(eTeam1).getTotalTechValue() > GET_TEAM(eTeam2).getTotalTechValue();
+	}
+};
 
 void CvGame::updateTechRanks()
 {
-	int iValue;
-	int iBestValue;
-	int iI, iJ;
-
-	TeamTypes eBestTeam;
-	bool abTeamRanked[MAX_TEAMS];
-
-	for (iI = 0; iI < MAX_TEAMS; iI++)
+	std::vector<TeamTypes> techRankedTeams;
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		abTeamRanked[iI] = false;
+		techRankedTeams.push_back((TeamTypes)iI);
 	}
 
-	for (iI = 0; iI < MAX_TEAMS; iI++)
+	techRankCompare cmp;
+	std::sort(techRankedTeams.begin(), techRankedTeams.end(), cmp);
+
+	int iIndex = 0;
+	for (std::vector<TeamTypes>::iterator it = techRankedTeams.begin(); it != techRankedTeams.end(); ++it)
 	{
-		iBestValue = MIN_INT;
-		eBestTeam = NO_TEAM;
-
-		for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
-		{
-			if (!abTeamRanked[iJ])
-			{
-				iValue = GET_TEAM((TeamTypes)iJ).getTotalTechValue();
-
-				if (iValue >= iBestValue)
-				{
-					iBestValue = iValue;
-					eBestTeam = (TeamTypes)iJ;
-				}
-			}
-		}
-
-		abTeamRanked[eBestTeam] = true;
-
-		setTechRank(iI, eBestTeam);
+		setTechRank(iIndex++, *it);
 	}
 }
 
 void CvGame::setTechRank(int iRank, TeamTypes eTeam)
 {
-	m_aiTechRankTeam[(int)eTeam] = iRank;
+	m_aiTechRankTeam[eTeam] = iRank;
 }
 
 int CvGame::getTechRank(TeamTypes eTeam) const
@@ -2915,7 +2903,7 @@ bool CvGame::isTeamVoteEligible(TeamTypes eTeam, VoteSourceTypes eVoteSource) co
 	CvTeam& kTeam = GET_TEAM(eTeam);
 
 	//Rhye - start
-	if (eTeam == INDEPENDENT || eTeam == INDEPENDENT2 || eTeam == NATIVE || eTeam == CELTIA || eTeam == SELJUKS)
+	if (eTeam == INDEPENDENT || eTeam == INDEPENDENT2 || eTeam == NATIVE || eTeam == CELTIA)
 	{
 		return false;
 	}
@@ -5065,6 +5053,12 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 			if (isHotSeat() || bForceHotSeat)
 			{
 				sendPlayerOptions(true);
+			}
+
+			// Leoreth: allow winning again after switching
+			if (getGameState() == GAMESTATE_EXTENDED)
+			{
+				setGameState(GAMESTATE_ON);
 			}
 		}
 
@@ -8711,7 +8705,7 @@ void CvGame::read(FDataStreamBase* pStream)
 
 	reset(NO_HANDICAP);
 
-	uint uiFlag=0;
+	uint uiFlag=0; // Leoreth: 2 for city screen owner
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	if (uiFlag < 1)
@@ -8760,6 +8754,7 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eWinner);
 	pStream->Read((int*)&m_eVictory);
 	pStream->Read((int*)&m_eGameState);
+	if (uiFlag >= 2) pStream->Read((int*)&m_eCityScreenOwner); // Leoreth
 
 	//Rhye - start bugfix (thanks Gyathaar)
 	//pStream->ReadString(m_szScriptData);
@@ -8951,7 +8946,7 @@ void CvGame::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag=1;
+	uint uiFlag=2; // Leoreth: 2 for city screen owner
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iElapsedGameTurns);
@@ -8995,6 +8990,7 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_eWinner);
 	pStream->Write(m_eVictory);
 	pStream->Write(m_eGameState);
+	if (uiFlag >= 2) pStream->Write(m_eCityScreenOwner); // Leoreth
 
 	pStream->WriteString(m_szScriptData);
 
@@ -9857,7 +9853,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							for (CvCity* pLoopCity = kPlayer.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kPlayer.nextCity(&iLoop))
 							{
 								if (pLoopCity->plot()->isCore(ePlayer)) continue;
-								if (GC.getMap().getArea(pLoopCity->plot()->getArea())->getClosestAreaSize(30) == GC.getMap().getArea(kPlayer.getCapitalCity()->plot()->getArea())->getClosestAreaSize(30)) continue;
+								if (pLoopCity->plot()->isOverseas(kPlayer.getCapitalCity()->plot())) continue;
 
 								if (NO_PLAYER == pLoopCity->getLiberationPlayer(false))
 								{
@@ -10521,4 +10517,29 @@ void CvGame::changeYResolution(int iChange)
 void CvGame::autosave()
 {
 	gDLL->getEngineIFace()->AutoSave();
+}
+
+bool CvGame::isPlayerAutoplay(PlayerTypes ePlayer)
+{
+	if (ePlayer == NO_PLAYER)
+	{
+		ePlayer = getActivePlayer();
+	}
+
+	return getGameTurnYear() < GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear();
+}
+
+void CvGame::setCityScreenOwner(PlayerTypes ePlayer)
+{
+	m_eCityScreenOwner = ePlayer;
+}
+
+void CvGame::resetCityScreenOwner()
+{
+	setCityScreenOwner(NO_PLAYER);
+}
+
+PlayerTypes CvGame::getCityScreenOwner() const
+{
+	return m_eCityScreenOwner;
 }

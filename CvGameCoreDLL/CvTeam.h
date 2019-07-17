@@ -6,6 +6,7 @@
 #define CIV4_TEAM_H
 
 //#include "CvEnums.h"
+#include <set>
 
 class CvArea;
 
@@ -360,6 +361,14 @@ public:
 
 	bool isAtWarWithMajorPlayer() const;
 
+	bool canSatelliteIntercept() const;
+	void changeSatelliteInterceptCount(int iChange);
+
+	bool canSatelliteAttack() const;
+	void changeSatelliteAttackCount(int iChange);
+
+	std::set<TeamTypes> determineDefensivePactPartners(std::set<TeamTypes> visited) const;
+
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
 	virtual void AI_doTurnPre() = 0;
@@ -424,6 +433,8 @@ protected:
 	int m_iEspionagePointsEver;
 
 	int m_iTotalTechValue; // Leoreth
+	int m_iSatelliteInterceptCount; // Leoreth
+	int m_iSatelliteAttackCount; // Leoreth
 
 	bool m_bMapCentering;
 	bool m_bCapitulated;

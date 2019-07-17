@@ -1958,21 +1958,6 @@
 			<Button>Art/Interface/Buttons/Promotions/Alchemist2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
-			<Type>PROMOTION_ALCHEMIST3</Type>
-			<Description>TXT_KEY_PROMOTION_ALCHEMIST3</Description>
-			<Sound>AS2D_PING</Sound>
-			<PromotionPrereqOr1>PROMOTION_ALCHEMIST2</PromotionPrereqOr1>
-			<TechPrereq>TECH_BIOTECHNOLOGY</TechPrereq>
-			<bAmphib>1</bAmphib>
-			<UnitCombats>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SPY</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-			</UnitCombats>
-			<Button>Art/Interface/Buttons/Promotions/Alchemist3.dds</Button>
-		</PromotionInfo>
-		<PromotionInfo>
 			<Type>PROMOTION_ESCAPE1</Type>
 			<Description>TXT_KEY_PROMOTION_ESCAPE1</Description>
 			<Sound>AS2D_PING</Sound>

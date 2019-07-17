@@ -53,6 +53,7 @@
 		<Tag>TXT_KEY_PROMOTION_SECURITY1</Tag>
 		<English>Informant I</English>
 		<French>Dénonciateur  I</French>
+		<German>Informant I</German>
 		<Italian>Informatore I</Italian>
 		<Spanish>Denunciante I</Spanish>
 	</TEXT>
@@ -60,6 +61,7 @@
 		<Tag>TXT_KEY_PROMOTION_SECURITY2</Tag>
 		<English>Informant II</English>
 		<French>Dénonciateur  II</French>
+		<German>Informant II</German>
 		<Italian>Informatore II</Italian>
 		<Spanish>Denunciante II</Spanish>
 	</TEXT>
@@ -67,6 +69,7 @@
 		<Tag>TXT_KEY_PROMOTION_SECURITY3</Tag>
 		<English>Informant III</English>
 		<French>Dénonciateur  III</French>
+		<German>Informant III</German>
 		<Italian>Informatore III</Italian>
 		<Spanish>Denunciante III</Spanish>
 	</TEXT>
@@ -146,6 +149,7 @@
 		<Tag>TXT_KEY_PROMOTION_ALCHEMIST1</Tag>
 		<English>Alchemist I</English>
 		<French>Alchimiste I</French>
+		<German>Alchemist I</German>
 		<Italian>Alchimista I</Italian>
 		<Spanish>Alquimista I</Spanish>
 	</TEXT>
@@ -153,6 +157,7 @@
 		<Tag>TXT_KEY_PROMOTION_ALCHEMIST2</Tag>
 		<English>Alchemist II</English>
 		<French>Alchimiste II</French>
+		<German>Alchemist II</German>
 		<Italian>Alchimista II</Italian>
 		<Spanish>Alquimista II</Spanish>
 	</TEXT>
@@ -160,6 +165,7 @@
 		<Tag>TXT_KEY_PROMOTION_ALCHEMIST3</Tag>
 		<English>Alchemist III</English>
 		<French>Alchimiste III</French>
+		<German>Alchemist III</German>
 		<Italian>Alchimista III</Italian>
 		<Spanish>Alquimista III</Spanish>
 	</TEXT>
@@ -326,13 +332,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_NEAR_CITY</Tag>
 		<English>A %s1_ThingName was destroyed by enemy infiltrators near %s2_CityName!</English>
+		<French>A %s1_ThingName was destroyed by enemy infiltrators near %s2_CityName!</French>
 		<German>Eine %s1_ThingName nahe %s2_CityName wurde durch einen feindlichen Geheimdienst zerstört!</German>
+		<Italian>A %s1_ThingName was destroyed by enemy infiltrators near %s2_CityName!</Italian>
+		<Spanish>A %s1_ThingName was destroyed by enemy infiltrators near %s2_CityName!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_ASSASSINATED</Tag>
 		<English>A %s1_ThingName was assassinated by enemy infiltrators at %s2_CityName!</English>
 		<French>Un %s1_ThingName a été assassiné par les envahisseurs ennemis à %s2_CityName!</French>
 		<German>Ein %s1_ThingName wurde durch einen feindlichen Geheimdienst in %s2_CityName ermordet!</German>
+		<Italian>A %s1_ThingName was assassinated by enemy infiltrators at %s2_CityName!</Italian>
 		<Spanish>Un %s1_ThingName fue asesinado por los infiltrados enemigos en %s2_CityName!</Spanish>
 	</TEXT>
 	<TEXT>

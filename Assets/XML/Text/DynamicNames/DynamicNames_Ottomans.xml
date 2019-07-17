@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Turkey -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
+		<English>The Ottomans</English>
+		<French>
+			<Text>Les Ottomans</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Ottomans</German>
+		<Italian>The Ottomans</Italian>
+		<Spanish>The Ottomans</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
+		<English>Ottoman Peoples</English>
+		<French>
+			<Text>Peuplades ottomanes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Ottoman Peoples</German>
+		<Italian>Ottoman Peoples</Italian>
+		<Spanish>Ottoman Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
+		<English>Sublime %s2 State</English>
+		<French>
+			<Text>&#201;tat %s2 exalt&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Erhabener %s2 Staat:Erhabene %s2 Staat:Erhabenen %s2 Staat</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sublime Stato %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sublime Estado %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_COMMUNIST</Tag>
+		<English>National Democratic Popular %s1</English>
+		<French>
+			<Text>%s1 nationale d&#233;mocratique populaire</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationales Demokratisches Volk der %s1:Nationale Demokratische Volk der %s1:Nationalen Demokratischen Volk der %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Nazional Democratica Popolare</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Nacional Democr&#225;tica Popular</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
+		<English>Pan-Turkic Empire</English>
+		<French>
+			<Text>Empire panturc</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pan-Turkic Empire</German>
+		<Italian>Pan-Turkic Empire</Italian>
+		<Spanish>Pan-Turkic Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMANS_OTTOMAN</Tag>
+		<English>Ottoman</English>
+		<French>
+			<Text>ottoman:ottomane:ottomans:ottomanes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Ottoman</German>
+		<Italian>Ottoman</Italian>
+		<Spanish>Ottoman</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
+		<English>Islamic %s2 Democracy</English>
+		<French>
+			<Text>D&#233;mocratie islamique %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Islamisch-%s2 Demokratie:Islamisch-%s2 Demokratie:Islamisch-%s2 Demokratie</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Democrazia Islamica %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Democracia Isl&#225;mica %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_VASSAL</Tag>
+		<English>Eyalet of %s1</English>
+		<French>
+			<Text>Eyalet de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Eyalet %s1:Eyalet %s1:Eyalet %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Eyalet d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Eyalet de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_EGYPT</Tag>
+		<English>Khedivate of %s1</English>
+		<French>
+			<Text>Kh&#233;divat d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khedivate of %s1</German>
+		<Italian>Khedivate of %s1</Italian>
+		<Spanish>Khedivate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_BABYLONIA</Tag>
+		<English>Eyalet of Mesopotamia</English>
+		<French>
+			<Text>Eyalet de M&#233;sopotamie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eyalet of Mesopotamia</German>
+		<Italian>Eyalet of Mesopotamia</Italian>
+		<Spanish>Eyalet of Mesopotamia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_PERSIA</Tag>
+		<English>Eyalet of Sharazor</English>
+		<French>
+			<Text>Eyalet de Sharazor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Eyalet Shehrizor:Eyalet Shehrizor:Eyalet Shehrizor</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Eyalet di Sharazor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Eyalet de Sharazor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_GREECE</Tag>
+		<English>Eyalet of Rumelia</English>
+		<French>
+			<Text>Eyalet de Roum&#233;lie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Eyalet Rumelien:Eyalet Rumelien:Eyalet Rumelien</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Eyalet di Rumelia</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Eyalet de Rumelia</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_PHOENICIA</Tag>
+		<English>Eyalet of Syria</English>
+		<French>
+			<Text>Eyalet de Syrie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eyalet of Syria</German>
+		<Italian>Eyalet of Syria</Italian>
+		<Spanish>Eyalet of Syria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_ETHIOPIA</Tag>
+		<English>Eyalet of Habes</English>
+		<French>
+			<Text>Eyalet d'&#201;thiopie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Eyalet Abessinien:Eyalet Abessinien:Eyalet Abessinien</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Eyalet di Habes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Eyalet de Habes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_BYZANTIUM</Tag>
+		<English>Eyalet of R&#251;m</English>
+		<French>
+			<Text>Eyalet de Roum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eyalet of R&#251;m</German>
+		<Italian>Eyalet of R&#251;m</Italian>
+		<Spanish>Eyalet of R&#251;m</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_ARABIA</Tag>
+		<English>Sharifate of Mekke</English>
+		<French>
+			<Text>Ch&#233;rifat de Mekke</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Scherifat von Mekka:Scherifat von Mekka:Scherifat von Mekka</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sharifato di Mekke</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Jarifato de Mekke</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_RUSSIA</Tag>
+		<English>Eyalet of Yedisan</English>
+		<French>
+			<Text>Eyalet du Yedisan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eyalet of Yedisan</German>
+		<Italian>Eyalet of Yedisan</Italian>
+		<Spanish>Eyalet of Yedisan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_INDONESIA</Tag>
+		<English>Eyalet of Aceh</English>
+		<French>
+			<Text>Eyalet d'Aceh</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eyalet of Aceh</German>
+		<Italian>Eyalet of Aceh</Italian>
+		<Spanish>Eyalet of Aceh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_ADJECTIVE</Tag>
+		<English>
+			<Text>Turkish:Turks</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>turc:turque:turcs:turques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>t&#252;rkisch:t&#252;rkischen:t&#252;rkische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>turco:turca:turchi:turche</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>turco:turca:turcos:turcas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_SHORT_DESC</Tag>
+		<English>Turkey</English>
+		<French>
+			<Text>Turquie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>T&#252;rkei</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Turchia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Turqu&#237;a</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

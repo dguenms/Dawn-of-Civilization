@@ -163,7 +163,7 @@ class WBStoredDataScreen:
 			else:
 				if item == "iStabilityLevel":
 					sText += u" (%s)" % CyTranslator().getText(StabilityLevelTexts[scriptDict[item]], ())
-				elif item in ["iAstronomyTurn", "iNextTurnAIWar"]:
+				elif item in ["iNextTurnAIWar"]:
 					sText += u" (Turn %s)" % getTurnForYear(scriptDict[item])
 				elif item == "iFirstNewWorldColony":
 					sText = self.getCivName(scriptDict[item])
@@ -259,7 +259,7 @@ class WBStoredDataScreen:
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lGoals":
 				sText = u"UHV%d: " % (i+1)
-				sText += CyTranslator().getText(tGoals[gc.getPlayer(iSelectedCiv).getReborn()][2][iSelectedCiv][i] + "_TITLE", ())
+				sText += utils.getGoalText(iSelectedCiv, i, True)
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			else:
 				screen.setTableText("WBListTableTwo", 0, i, str(i), "", WidgetTypes.WIDGET_PYTHON, -1, i, CvUtil.FONT_LEFT_JUSTIFY)

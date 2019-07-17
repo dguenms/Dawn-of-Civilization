@@ -2646,3 +2646,48 @@ void CyPlayer::resetGreatPeopleCreated()
 {
 	if (m_pPlayer) m_pPlayer->resetGreatPeopleCreated();
 }
+
+void CyPlayer::changeYieldRateModifier(int iYieldType, int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeYieldRateModifier((YieldTypes)iYieldType, iChange);
+}
+
+int CyPlayer::getTechPreference(int eTech)
+{
+	return m_pPlayer ? m_pPlayer->getTechPreference((TechTypes)eTech) : 0;
+}
+
+void CyPlayer::setTechPreference(int eTech, int iNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setTechPreference((TechTypes)eTech, iNewValue);
+}
+
+void CyPlayer::setBuildingPreference(int iBuilding, int iNewValue)
+{
+	if (m_pPlayer) m_pPlayer->setBuildingPreference((BuildingTypes)iBuilding, iNewValue);
+}
+
+int CyPlayer::getBuildingPreference(int iBuilding)
+{
+	return m_pPlayer ? m_pPlayer->getBuildingPreference((BuildingTypes)iBuilding) : -1;
+}
+
+void CyPlayer::changeGreatPeopleCreated(int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeGreatPeopleCreated(iChange);
+}
+
+void CyPlayer::changeGreatGeneralsCreated(int iChange)
+{
+	if (m_pPlayer) m_pPlayer->changeGreatGeneralsCreated(iChange);
+}
+
+void CyPlayer::launch(int iVictory)
+{
+	if (m_pPlayer) m_pPlayer->launch((VictoryTypes)iVictory);
+}
+
+bool CyPlayer::isNoTemporaryUnhappiness()
+{
+	return m_pPlayer ? m_pPlayer->isNoTemporaryUnhappiness() : false;
+}

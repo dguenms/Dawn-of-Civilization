@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_INCA_PEOPLES</Tag>
 		<English>Andean Peoples</English>
 		<French>
-			<Text>Peuplades Andines</Text>
+			<Text>Peuplades andines</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_INCA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -77,7 +77,7 @@
 		<Tag>TXT_KEY_CIV_INCA_COMMUNIST</Tag>
 		<English>%s2 Revolutionary Movement</English>
 		<French>
-			<Text>Mouvement R&#233;volutionnaire %s2</Text>
+			<Text>Mouvement r&#233;volutionnaire %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -100,6 +100,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_FASCIST</Tag>
 		<English>Revolutionary Union of %s1</English>
+		<French>
+			<Text>Union r&#233;volutionnaire %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Revolutionary Union of %s1</German>
+		<Italian>Revolutionary Union of %s1</Italian>
+		<Spanish>Revolutionary Union of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_DEFAULT</Tag>
@@ -129,7 +137,7 @@
 		<Tag>TXT_KEY_CIV_PERU_COMMUNIST</Tag>
 		<English>%s2 Revolutionary Movement</English>
 		<French>
-			<Text>Mouvement R&#233;volutionnaire %s2</Text>
+			<Text>Mouvement r&#233;volutionnaire %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -153,7 +161,7 @@
 		<Tag>TXT_KEY_CIV_PERU_FASCIST</Tag>
 		<English>Government of the %s2 Armed Forces</English>
 		<French>
-			<Text>Gouvernement des Forces Arm&#233;es %s2</Text>
+			<Text>Gouvernement des Forces arm&#233;es %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -176,10 +184,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_SHORT_DESC</Tag>
 		<English>Peru</English>
+		<French>
+			<Text>P&#233;rou</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Peru</German>
+		<Italian>Peru</Italian>
+		<Spanish>Peru</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_ADJECTIVE</Tag>
 		<English>Peruvian</English>
+		<French>
+			<Text>p&#233;ruvien:p&#233;ruvienne:p&#233;ruviens:p&#233;ruviennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Peruvian</German>
+		<Italian>Peruvian</Italian>
+		<Spanish>Peruvian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_FOUR_REGIONS</Tag>
@@ -208,10 +232,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_BOLIVIA</Tag>
 		<English>Bolivia</English>
+		<French>
+			<Text>Bolivie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Bolivia</German>
+		<Italian>Bolivia</Italian>
+		<Spanish>Bolivia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_BOLIVIAN</Tag>
 		<English>Bolivian</English>
+		<French>
+			<Text>bolivien:bolivienne:boliviens:boliviennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Bolivian</German>
+		<Italian>Bolivian</Italian>
+		<Spanish>Bolivian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_ADJECTIVE</Tag>
@@ -241,7 +281,7 @@
 		<Tag>TXT_KEY_CIV_INCA_SHORT_DESC</Tag>
 		<English>Inca</English>
 		<French>
-			<Text>Inca</Text>
+			<Text>Incas</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>

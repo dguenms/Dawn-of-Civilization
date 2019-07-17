@@ -178,5 +178,9 @@
 			<Type>UNITAI_PERSECUTOR</Type>
 			<Description>UNITAI_PERSECUTOR</Description>
 		</UnitAIInfo>
+		<UnitAIInfo>
+			<Type>UNITAI_SATELLITE</Type>
+			<Description>UNITAI_SATELLITE</Description>
+		</UnitAIInfo>
 	</UnitAIInfos>
 </Civ4UnitAIInfos>

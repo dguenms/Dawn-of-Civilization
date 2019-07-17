@@ -925,10 +925,7 @@ class CvEventManager(object):
 		
 		#Rhye - start bugfix
 		#owner = PyPlayer(city.getOwner())
-		owner = PyPlayer(city.getOwner())
-		if (city.getOwner() == iPlayer):
-			if (city.getPreviousOwner() != -1):
-				owner = PyPlayer(city.getPreviousOwner())
+		owner = PyPlayer(city.getPreviousOwner())
 		#Rhye - end bugfix
 		
 		razor = PyPlayer(iPlayer)

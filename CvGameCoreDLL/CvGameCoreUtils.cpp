@@ -1234,6 +1234,12 @@ int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 	iResearch *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitDiscoverPercent();
 	iResearch /= 100;
 
+	// Leoreth: House of Wisdom effect
+	if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)HOUSE_OF_WISDOM))
+	{
+		iResearch *= 3;
+	}
+
 	return std::max(0, iResearch);
 }
 
@@ -1393,6 +1399,20 @@ bool PUF_canDefend(const CvUnit* pUnit, int iData1, int iData2)
 	return pUnit->canDefend();
 }
 
+bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
+{
+	// Leoreth: Turkic UP
+	if (pUnit->getOwnerINLINE() == BARBARIAN && iData1 == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
+	{
+		if (pUnit->getUnitCombatType() == 2 || pUnit->getUnitCombatType() == 3)
+		{
+			return false;
+		}
+	}
+
+	return pUnit->canDefend();
+}
+
 bool PUF_cannotDefend(const CvUnit* pUnit, int iData1, int iData2)
 {
 	return !(pUnit->canDefend());
@@ -1408,6 +1428,13 @@ bool PUF_canDefendEnemy(const CvUnit* pUnit, int iData1, int iData2)
 	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
 	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
 	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
+}
+
+bool PUF_canDefendAgainstEnemy(const CvUnit* pUnit, int iData1, int iData2)
+{
+	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
+	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
+	return PUF_canDefendAgainst(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2);
 }
 
 bool PUF_canDefendPotentialEnemy(const CvUnit* pUnit, int iData1, int iData2)
@@ -2494,6 +2521,8 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_DIPLOMATIC_MISSION: szString = L"MISSION_DIPLOMATIC_MISSION"; break;
 	case MISSION_PERSECUTE: szString = L"MISSION_PERSECUTION"; break;
 	case MISSION_GREAT_MISSION: szString = L"MISSION_GREAT_MISSION"; break;
+	case MISSION_SATELLITE_ATTACK: szString = L"MISSION_SATELLITE_ATTACK"; break;
+	case MISSION_REBUILD: szString = L"MISSION_REBUILD"; break;
 
 	case MISSION_DIE_ANIMATION: szString = L"MISSION_DIE_ANIMATION"; break;
 
@@ -2606,7 +2635,7 @@ void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 int calculateExperience(int iLevel, PlayerTypes ePlayer)
 {
 	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
-	FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
+	//FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
 
 	// Japanese UP: cheaper promotions
 	/*if (ePlayer == JAPAN)
@@ -2692,6 +2721,14 @@ void log(CvWString message)
 void log(CvString logfile, CvString message)
 {
 	gDLL->logMsg(logfile, message);
+}
+
+void logMajorError(CvWString message, int iX, int iY)
+{
+	log(message);
+	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), message, "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), iX, iY, true, true);
+	GC.getGameINLINE().setAIAutoPlay(0);
+	GC.getGameINLINE().setAIAutoPlayCatapult(0);
 }
 
 bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer)

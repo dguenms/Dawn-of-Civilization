@@ -4,61 +4,153 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DESC</Tag>
 		<English>The Tamils</English>
+		<French>
+			<Text>Les Tamouls</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Tamils</German>
+		<Italian>The Tamils</Italian>
+		<Spanish>The Tamils</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_PEOPLES</Tag>
 		<English>Dravidian Peoples</English>
+		<French>
+			<Text>Peuplades dravidiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Dravidian Peoples</German>
+		<Italian>Dravidian Peoples</Italian>
+		<Spanish>Dravidian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DEFAULT</Tag>
 		<English>%s2 Kingdom</English>
+		<French>
+			<Text>Royaume %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_REPUBLIC</Tag>
 		<English>Republic of Tamil Nadu</English>
+		<French>
+			<Text>R&#233;publique du Tamil Nadu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Republic of Tamil Nadu</German>
+		<Italian>Republic of Tamil Nadu</Italian>
+		<Spanish>Republic of Tamil Nadu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_FASCIST</Tag>
 		<English>Dravidian Empire</English>
+		<French>
+			<Text>Empire dravidien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Dravidian Empire</German>
+		<Italian>Dravidian Empire</Italian>
+		<Spanish>Dravidian Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
 		<English>Vijayanagara</English>
+		<French>Vijayan&#226;gara</French>
+		<German>Vijayanagara</German>
+		<Italian>Vijayanagara</Italian>
+		<Spanish>Vijayanagara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_MYSORE</Tag>
 		<English>Mysore</English>
+		<French>Mysore</French>
+		<German>Mysore</German>
+		<Italian>Mysore</Italian>
+		<Spanish>Mysore</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_CHOLA</Tag>
 		<English>Chola</English>
+		<French>Chola</French>
+		<German>Chola</German>
+		<Italian>Chola</Italian>
+		<Spanish>Chola</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN</Tag>
 		<English>Pandyan</English>
+		<French>Pandyan</French>
+		<German>Pandyan</German>
+		<Italian>Pandyan</Italian>
+		<Spanish>Pandyan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_CHERA</Tag>
 		<English>Chera</English>
+		<French>Chera</French>
+		<German>Chera</German>
+		<Italian>Chera</Italian>
+		<Spanish>Chera</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DRAVIDA</Tag>
 		<English>Dravida</English>
+		<French>Dr&#226;vida</French>
+		<German>Dravida</German>
+		<Italian>Dravida</Italian>
+		<Spanish>Dravida</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_BAHMANI</Tag>
 		<English>Bahmani</English>
+		<French>Bahman&#238;</French>
+		<German>Bahmani</German>
+		<Italian>Bahmani</Italian>
+		<Spanish>Bahmani</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_TAMIL_NADU</Tag>
 		<English>Tamil Nadu</English>
+		<French>
+			<Text>Tamil Nadu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Tamil Nadu</German>
+		<Italian>Tamil Nadu</Italian>
+		<Spanish>Tamil Nadu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_ADJECTIVE</Tag>
 		<English>Tamil</English>
+		<French>
+			<Text>tamoul:tamoule:tamouls:tamoules</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Tamil</German>
+		<Italian>Tamil</Italian>
+		<Spanish>Tamil</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_SHORT_DESC</Tag>
 		<English>Tamils</English>
+		<French>
+			<Text>Tamouls</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Tamils</German>
+		<Italian>Tamils</Italian>
+		<Spanish>Tamils</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -1310,3 +1310,18 @@ void CyGame::autosave()
 {
 	if (m_pGame) m_pGame->autosave();
 }
+
+void CyGame::incrementBuildingClassCreatedCount(int iBuildingClass)
+{
+	if (m_pGame) m_pGame->incrementBuildingClassCreatedCount((BuildingClassTypes)iBuildingClass);
+}
+
+void CyGame::setCityScreenOwner(int iPlayer)
+{
+	if (m_pGame) m_pGame->setCityScreenOwner((PlayerTypes)iPlayer);
+}
+
+void CyGame::resetCityScreenOwner()
+{
+	if (m_pGame) m_pGame->resetCityScreenOwner();
+}

@@ -4,32 +4,76 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_DESC</Tag>
 		<English>The Mandinka</English>
+		<French>
+			<Text>Les Mandingues</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Mandinka</German>
+		<Italian>The Mandinka</Italian>
+		<Spanish>The Mandinka</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_ADJECTIVE</Tag>
 		<English>Mande</English>
+		<French>
+			<Text>mandingue:mandingue:mandingues:mandingues</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Mande</German>
+		<Italian>Mande</Italian>
+		<Spanish>Mande</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SONGHAI_ADJECTIVE</Tag>
 		<English>Songhai</English>
+		<French>
+			<Text>songha&#239;:songha&#239;:songha&#239;s:songha&#239;s</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Songhai</German>
+		<Italian>Songhai</Italian>
+		<Spanish>Songhai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SONGHAI_SHORT_DESC</Tag>
 		<English>Songhai</English>
+		<French>
+			<Text>Songha&#239;s</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Songhai</German>
+		<Italian>Songhai</Italian>
+		<Spanish>Songhai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SONGHAI_DEFAULT</Tag>
 		<English>%s2 Empire</English>
+		<French>Empire %s2</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_PEOPLES</Tag>
 		<English>Mandinka Peoples</English>
+		<French>
+			<Text>Peuplades mandingues</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Mandinka Peoples</German>
+		<Italian>Mandinka Peoples</Italian>
+		<Spanish>Mandinka Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_DEFAULT</Tag>
 		<English>%s1 Empire</English>
 		<French>
-			<Text>Empire %s1</Text>
+			<Text>Empire du %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -52,6 +96,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_FASCIST</Tag>
 		<English>Military Committee of %s1</English>
+		<French>
+			<Text>Comit&#233; militaire du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Military Committee of %s1</German>
+		<Italian>Military Committee of %s1</Italian>
+		<Spanish>Military Committee of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_ADJECTIVE_OLD</Tag>
@@ -83,7 +135,7 @@
 		<French>
 			<Text>Mali</Text>
 			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Mali</Text>
