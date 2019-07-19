@@ -19895,7 +19895,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=17, (Independent)
@@ -26140,10 +26140,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=17, (Vikings)
@@ -27222,16 +27222,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=17, (Vikings)
@@ -27271,13 +27271,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=17, (Vikings)
@@ -27813,10 +27813,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=17, (Vikings)
+		UnitType=UNIT_MUSKETEER, UnitOwner=17, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=17, (Vikings)
