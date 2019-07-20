@@ -5,7 +5,7 @@
 		<Tag>TXT_KEY_CIV_NETHERLANDS_DESC</Tag>
 		<English>The Dutch</English>
 		<French>
-			<Text>Les Neerlandais</Text>
+			<Text>Les N&#233;erlandais</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -28,12 +28,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_PEOPLES</Tag>
 		<English>Dutch Peoples</English>
+		<French>
+			<Text>Peuplades n&#233;erlandaises</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Dutch Peoples</German>
+		<Italian>Dutch Peoples</Italian>
+		<Spanish>Dutch Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume des %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -57,7 +65,7 @@
 		<Tag>TXT_KEY_CIV_NETHERLANDS_REPUBLIC</Tag>
 		<English>Republic of the Seven United %s1</English>
 		<French>
-			<Text>R&#233;publique des Sept Provinces Unies</Text>
+			<Text>R&#233;publique des sept Provinces-Unies</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -80,6 +88,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_COMMUNIST</Tag>
 		<English>Democratic Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique d&#233;mocratique des %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Democratic Republic of %s1</German>
+		<Italian>Democratic Republic of %s1</Italian>
+		<Spanish>Democratic Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_FASCIST</Tag>
@@ -108,44 +124,116 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_UNITED_KINGDOM_OF</Tag>
 		<English>United Kingdom of %s1</English>
+		<French>
+			<Text>Royaume uni des %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>United Kingdom of %s1</German>
+		<Italian>United Kingdom of %s1</Italian>
+		<Spanish>United Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_EXILE</Tag>
 		<English>%s2 Government in Exile</English>
+		<French>
+			<Text>Gouvernement %s2 en exil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Government in Exile</German>
+		<Italian>%s2 Government in Exile</Italian>
+		<Spanish>%s2 Government in Exile</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_BELGIUM</Tag>
 		<English>Belgium</English>
+		<French>
+			<Text>Belgique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Belgium</German>
+		<Italian>Belgium</Italian>
+		<Spanish>Belgium</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_BELGIAN</Tag>
 		<English>Belgian</English>
+		<French>
+			<Text>belge:belge:belges:belges</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Belgian</German>
+		<Italian>Belgian</Italian>
+		<Spanish>Belgian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_INDONESIA</Tag>
 		<English>%s2 East Indies</English>
+		<French>
+			<Text>Indes orientales %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 East Indies</German>
+		<Italian>%s2 East Indies</Italian>
+		<Spanish>%s2 East Indies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_CONGO</Tag>
 		<English>Congo Free State</English>
+		<French>
+			<Text>&#201;tat ind&#233;pendant du Congo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Congo Free State</German>
+		<Italian>Congo Free State</Italian>
+		<Spanish>Congo Free State</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_AMERICA</Tag>
 		<English>New Netherlands</English>
+		<French>
+			<Text>Nouvelle-N&#233;erlande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Netherlands</German>
+		<Italian>New Netherlands</Italian>
+		<Spanish>New Netherlands</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_BRAZIL</Tag>
 		<English>New Holland</English>
+		<French>
+			<Text>Nouvelle-Hollande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Holland</German>
+		<Italian>New Holland</Italian>
+		<Spanish>New Holland</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_MALI</Tag>
 		<English>%s2 Gold Coast</English>
+		<French>
+			<Text>C&#244;te-de-l'Or %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Gold Coast</German>
+		<Italian>%s2 Gold Coast</Italian>
+		<Spanish>%s2 Gold Coast</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
 		<French>
-			<Text>Afrique Orientale %s2</Text>
+			<Text>Afrique orientale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -168,6 +256,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_ARTICLE</Tag>
 		<English>the Netherlands</English>
+		<French>
+			<Text>Pays-Bas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>the Netherlands</German>
+		<Italian>the Netherlands</Italian>
+		<Spanish>the Netherlands</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_ADJECTIVE</Tag>

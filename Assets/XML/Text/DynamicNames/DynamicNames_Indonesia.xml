@@ -4,16 +4,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_DESC</Tag>
 		<English>The Indonesians</English>
+		<French>
+			<Text>Les Indon&#233;siens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Indonesians</German>
+		<Italian>The Indonesians</Italian>
+		<Spanish>The Indonesians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_PEOPLES</Tag>
 		<English>Malay Peoples</English>
+		<French>
+			<Text>Peuplades malaises</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Malay Peoples</German>
+		<Italian>Malay Peoples</Italian>
+		<Spanish>Malay Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -36,31 +52,85 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_FASCIST</Tag>
 		<English>%s2 New Order</English>
+		<French>
+			<Text>Ordre nouveau %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 New Order</German>
+		<Italian>%s2 New Order</Italian>
+		<Spanish>%s2 New Order</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_MATARAM</Tag>
 		<English>Mataram</English>
+		<French>
+			<Text>Mataram</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Mataram</German>
+		<Italian>Mataram</Italian>
+		<Spanish>Mataram</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_SRIVIJAYA</Tag>
 		<English>Srivijaya</English>
+		<French>
+			<Text>Srivijaya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Srivijaya</German>
+		<Italian>Srivijaya</Italian>
+		<Spanish>Srivijaya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_MAJAPAHIT</Tag>
 		<English>Majapahit</English>
+		<French>
+			<Text>Majahapit</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Majapahit</German>
+		<Italian>Majapahit</Italian>
+		<Spanish>Majapahit</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIAN_VASSAL</Tag>
 		<English>Kedatuan of %s1</English>
+		<French>
+			<Text>Kedatuan de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kedatuan of %s1</German>
+		<Italian>Kedatuan of %s1</Italian>
+		<Spanish>Kedatuan of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_ADJECTIVE</Tag>
 		<English>Indonesian</English>
+		<French>
+			<Text>indon&#233;sien:indon&#233;sienne:indon&#233;siens:indon&#233;siennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>Indonesisch</German>
+		<Italian>Indonesian</Italian>
+		<Spanish>Indonesian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_SHORT_DESC</Tag>
 		<English>Indonesia</English>
+		<French>
+			<Text>Indon&#233;sie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Indonesien</German>
+		<Italian>Indonesia</Italian>
+		<Spanish>Indonesia</Spanish>
 	</TEXT>
 </Civ4GameText>

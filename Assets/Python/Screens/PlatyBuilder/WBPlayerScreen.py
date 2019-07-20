@@ -390,6 +390,7 @@ class WBPlayerScreen:
 		elif inputClass.getFunctionName() == "CurrentEra":
 			pPlayer.setCurrentEra(screen.getPullDownData("CurrentEra", screen.getSelectedPullDownID("CurrentEra")))
 			dc.checkName(iPlayer)
+			screen.setLabel("CivilizationName", "Background", "<font=4b>" + pPlayer.getCivilizationDescription(0) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 50, -0.1, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		elif inputClass.getFunctionName().find("PlayerGold") > -1:
 			if inputClass.getData1() == 1030:
@@ -468,7 +469,8 @@ class WBPlayerScreen:
 		elif inputClass.getFunctionName() == "WBPlayerReligions":
 			iReligion = inputClass.getData1()
 			pPlayer.setLastStateReligion(inputClass.getData1())
-			# dc.checkName(iPlayer)
+			dc.checkName(iPlayer)
+			screen.setLabel("CivilizationName", "Background", "<font=4b>" + pPlayer.getCivilizationDescription(0) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 50, -0.1, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			self.placeReligions()
 
 		elif inputClass.getFunctionName().find("StateReligionUnit") > -1:
@@ -490,6 +492,7 @@ class WBPlayerScreen:
 			if pPlayer.canDoCivics(iCivic) or not CvPlatyBuilderScreen.bHideInactive:
 				pPlayer.setCivics(gc.getCivicInfo(iCivic).getCivicOptionType(), iCivic)
 				dc.checkName(iPlayer)
+				screen.setLabel("CivilizationName", "Background", "<font=4b>" + pPlayer.getCivilizationDescription(0) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 50, -0.1, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "CivEnabledButton":

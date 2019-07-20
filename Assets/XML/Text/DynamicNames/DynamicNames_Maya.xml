@@ -5,7 +5,7 @@
 		<Tag>TXT_KEY_CIV_MAYA_DESC</Tag>
 		<English>The Maya</English>
 		<French>
-			<Text>Les Maya</Text>
+			<Text>Les Mayas</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_MAYA_PEOPLES</Tag>
 		<English>Maya Peoples</English>
 		<French>
-			<Text>Peuplades Mayas</Text>
+			<Text>Peuplades mayas</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_MAYA_DEFAULT</Tag>
 		<English>%s2 City-States</English>
 		<French>
-			<Text>Cit&#233;s-Etats %s2</Text>
+			<Text>Cit&#233;s-&#201;tats %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -77,7 +77,7 @@
 		<Tag>TXT_KEY_CIV_MAYA_REPUBLIC</Tag>
 		<English>%s2 Federal Republic</English>
 		<French>
-			<Text>R&#233;publique F&#233;d&#233;rale %s2</Text>
+			<Text>R&#233;publique f&#233;d&#233;rale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -101,7 +101,7 @@
 		<Tag>TXT_KEY_CIV_MAYA_COMMUNIST</Tag>
 		<English>%s2 Free State</English>
 		<French>
-			<Text>Etat Libre %s2</Text>
+			<Text>&#201;tat libre %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>

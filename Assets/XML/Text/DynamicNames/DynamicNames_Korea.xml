@@ -4,38 +4,110 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_DESC</Tag>
 		<English>The Koreans</English>
+		<French>
+			<Text>Les Cor&#233;ens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Koreans</German>
+		<Italian>The Koreans</Italian>
+		<Spanish>The Koreans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_DEFAULT</Tag>
 		<English>Three Kingdoms of %s1</English>
+		<French>
+			<Text>Trois Royaumes de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Three Kingdoms of %s1</German>
+		<Italian>Three Kingdoms of %s1</Italian>
+		<Spanish>Three Kingdoms of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_PEOPLES</Tag>
 		<English>Korean Peoples</English>
+		<French>
+			<Text>Peuplades cor&#233;ennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Korean Peoples</German>
+		<Italian>Korean Peoples</Italian>
+		<Spanish>Korean Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_COMMUNIST</Tag>
 		<English>Democratic People's Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique populaire d&#233;mocratique de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Democratic People's Republic of %s1</German>
+		<Italian>Democratic People's Republic of %s1</Italian>
+		<Spanish>Democratic People's Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_FASCIST</Tag>
 		<English>Supreme Council for National Reconstruction</English>
+		<French>
+			<Text>Conseil supr&#234;me pour la reconstruction nationale</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Supreme Council for National Reconstruction</German>
+		<Italian>Supreme Council for National Reconstruction</Italian>
+		<Spanish>Supreme Council for National Reconstruction</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_SAMHAN</Tag>
 		<English>Samhan Confederacies</English>
+		<French>
+			<Text>Conf&#233;d&#233;rations Samhan</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Samhan Confederacies</German>
+		<Italian>Samhan Confederacies</Italian>
+		<Spanish>Samhan Confederacies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_GORYEO</Tag>
 		<English>Goryeo</English>
+		<French>
+			<Text>Goryeo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Goryeo</German>
+		<Italian>Goryeo</Italian>
+		<Spanish>Goryeo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_GOGURYEO</Tag>
 		<English>Goguryeo</English>
+		<French>
+			<Text>Goguryeo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Goguryeo</German>
+		<Italian>Goguryeo</Italian>
+		<Spanish>Goguryeo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_JOSEON</Tag>
 		<English>Greater Joseon</English>
+		<French>
+			<Text>Joseon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Greater Joseon</German>
+		<Italian>Greater Joseon</Italian>
+		<Spanish>Greater Joseon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_ADJECTIVE</Tag>

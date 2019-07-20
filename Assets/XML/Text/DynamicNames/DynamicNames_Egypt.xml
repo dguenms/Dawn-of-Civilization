@@ -5,7 +5,7 @@
 		<Tag>TXT_KEY_CIV_EGYPT_DESC</Tag>
 		<English>The Egyptians</English>
 		<French>
-			<Text>Les Egyptiens</Text>
+			<Text>Les &#201;gyptiens</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_EGYPT_PEOPLES</Tag>
 		<English>Peoples of the Nile</English>
 		<French>
-			<Text>Peuplades Nilotiques</Text>
+			<Text>Peuplades nilotiques</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_EGYPT_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -124,42 +124,122 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_PTOLEMAIC</Tag>
 		<English>Ptolemaic Empire</English>
+		<French>
+			<Text>Empire lagide</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ptolemaic Empire</German>
+		<Italian>Ptolemaic Empire</Italian>
+		<Spanish>Ptolemaic Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_OLD_KINGDOM</Tag>
 		<English>Old Kingdom of %s1</English>
+		<French>
+			<Text>Ancien Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Old Kingdom of %s1</German>
+		<Italian>Old Kingdom of %s1</Italian>
+		<Spanish>Old Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM</Tag>
 		<English>Middle Kingdom of %s1</English>
+		<French>
+			<Text>Moyen Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Middle Kingdom of %s1</German>
+		<Italian>Middle Kingdom of %s1</Italian>
+		<Spanish>Middle Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_NEW_KINGDOM</Tag>
 		<English>New Kingdom of %s1</English>
+		<French>
+			<Text>Nouvel Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Kingdom of %s1</German>
+		<Italian>New Kingdom of %s1</Italian>
+		<Spanish>New Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_COPTIC</Tag>
 		<English>Coptic Kingdom</English>
+		<French>
+			<Text>Royaume copte</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Coptic Kingdom</German>
+		<Italian>Coptic Kingdom</Italian>
+		<Spanish>Coptic Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK</Tag>
 		<English>Mamluk</English>
+		<French>
+			<Text>mamelouk:mamelouke:mamelouks:mameloukes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Mamluk</German>
+		<Italian>Mamluk</Italian>
+		<Spanish>Mamluk</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_FATIMID</Tag>
 		<English>Fatimid</English>
+		<French>
+			<Text>fatimide:fatimide:fatimides:fatimides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Fatimid</German>
+		<Italian>Fatimid</Italian>
+		<Spanish>Fatimid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_AYYUBID</Tag>
 		<English>Ayyubid</English>
+		<French>
+			<Text>ayyoubide:ayyoubide:ayyoubides:ayyoubides</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Ayyubid</German>
+		<Italian>Ayyubid</Italian>
+		<Spanish>Ayyubid</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPTIAN_PHOENICIA</Tag>
 		<English>Province of Retjenu</English>
+		<French>
+			<Text>Province du R&#233;tj&#233;nou</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Province of Retjenu</German>
+		<Italian>Province of Retjenu</Italian>
+		<Spanish>Province of Retjenu</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPTIAN_ETHIOPIA</Tag>
 		<English>Kingdom of Punt</English>
+		<French>
+			<Text>Pays de Pount</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kingdom of Punt</German>
+		<Italian>Kingdom of Punt</Italian>
+		<Spanish>Kingdom of Punt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_ADJECTIVE</Tag>
@@ -190,8 +270,8 @@
 		<English>Egypt</English>
 		<French>
 			<Text>&#201;gypte</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>&#196;gypten</Text>

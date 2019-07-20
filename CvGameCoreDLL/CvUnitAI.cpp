@@ -403,6 +403,10 @@ bool CvUnitAI::AI_update()
 			AI_persecutorMove();
 			break;
 
+		case UNITAI_SATELLITE:
+			AI_satelliteMove();
+			break;
+
 		default:
 			FAssert(false);
 			break;
@@ -1184,6 +1188,15 @@ void CvUnitAI::AI_settleMove()
 		}
 	}*/
 
+	// Leoreth: use for rebuilding if no settlement targets
+	if (GET_PLAYER(getOwnerINLINE()).AI_getNumCitySites() == 0)
+	{
+		if (AI_rebuildMove(2 * GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType())))
+		{
+			return;
+		}
+	}
+
 	int iAreaBestFoundValue = 0;
 	int iOtherBestFoundValue = 0;
 
@@ -1232,6 +1245,12 @@ void CvUnitAI::AI_settleMove()
 
 			if (NULL == getTransportUnit())
 			{
+				// Leoreth: rather use for rebuilding before scrapping them
+				if (AI_rebuildMove(GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType())))
+				{
+					return;
+				}
+
 				//may seem wasteful, but settlers confuse the AI.
 				scrap();
 				return;
@@ -1239,18 +1258,14 @@ void CvUnitAI::AI_settleMove()
 		}
 	}
 
-	//Rhye - start comment (restored Warlords settings)
-	//if ((iOtherBestFoundValue * 100) > (iAreaBestFoundValue * 110))
-	//{
-		if (plot()->getOwnerINLINE() == getOwnerINLINE())
+	// Rhye: restored Warlords settings
+	if (plot()->getOwnerINLINE() == getOwnerINLINE())
+	{
+		if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, 0, MOVE_SAFE_TERRITORY))
 		{
-			if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, 0, MOVE_SAFE_TERRITORY))
-			{
-				return;
-			}
+			return;
 		}
-	//}
-	//Rhye - end
+	}
 
 	if ((iAreaBestFoundValue > 0) && plot()->isBestAdjacentFound(getOwnerINLINE()))
 	{
@@ -1259,6 +1274,12 @@ void CvUnitAI::AI_settleMove()
 			getGroup()->pushMission(MISSION_FOUND);
 			return;
 		}
+	}
+
+	// Leoreth: rebuild move
+	if (AI_rebuildMove(2 * GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType())))
+	{
+		return;
 	}
 
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_PEACE) && !GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) && !getGroup()->canDefend())
@@ -1282,11 +1303,8 @@ void CvUnitAI::AI_settleMove()
 		}
 	}
 
-	//Rhye
-	//if (iAreaBestFoundValue > 0)
 	if (iAreaBestFoundValue > 0 || iOtherBestFoundValue > 0)
 	{
-		//Rhye - start switch
 		if (AI_foundRange(FOUND_RANGE))
 		{
 			return;
@@ -1296,61 +1314,6 @@ void CvUnitAI::AI_settleMove()
 		{
 			return;
 		}
-
-		/*if (AI_found())
-		{
-			return;
-		}*/
-		//AI_found() is readded in BTS;
-		//when it is active, the following is ignored unless the city site is < 150.
-		//The steps are added in CvPlayerAI::AI_updateCitySites() as well.
-		/*if (AI_found_map(700))
-		{
-			return;
-		}
-		if (AI_found_map(500))
-		{
-			return;
-		}
-		if (AI_found_map(400))
-		{
-			return;
-		}
-		if (AI_found_map(300))
-		{
-			return;
-		}
-		if (AI_found_map(200))
-		{
-			return;
-		}
-		if (AI_found_map(150))
-		{
-			return;
-		}
-		if (AI_found_map(90))
-		{
-			return;
-		}
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)COMPASS))
-		{
-			if (AI_found_map(60))
-			{
-				return;
-			}
-			if (AI_found_map(40))
-			{
-				return;
-			}
-		}
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
-		{
-			if (AI_found_map(20))
-			{
-				return;
-			}
-		}*/
-		//Rhye - end
 	}
 
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
@@ -1718,7 +1681,7 @@ void CvUnitAI::AI_barbAttackMove()
 
 	if (plot()->isGoody())
 	{
-		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) == 1)
+		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) <= 2)
 		{
 			getGroup()->pushMission(MISSION_SKIP);
 			return;
@@ -1989,6 +1952,23 @@ void CvUnitAI::AI_attackMove()
 		}
 	}
 
+	// Leoreth: Roman Legions
+	if (!bDanger)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
+	}
+
 	{
 		PROFILE("CvUnitAI::AI_attackMove() 2");
 
@@ -2054,13 +2034,6 @@ void CvUnitAI::AI_attackMove()
 			if (area()->getCitiesPerPlayer((PlayerTypes)CELTIA) > 0)
 			{
 				if (AI_targetMinorCity(CELTIA))
-				{
-					return;
-				}
-			}
-			if (area()->getCitiesPerPlayer((PlayerTypes)SELJUKS) > 0)
-			{
-				if (AI_targetMinorCity(SELJUKS))
 				{
 					return;
 				}
@@ -2396,7 +2369,6 @@ void CvUnitAI::AI_attackCityMove()
 	//Rhye - start
 	bool bHuntNatives = false;
 	bool bHuntCelts = false;
-	bool bHuntSeljuks = false;
 	bool bHuntIndependents = false;
 	bool bHuntIndependents2 = false;
 	if (area()->getCitiesPerPlayer((PlayerTypes)NATIVE) > 0)
@@ -2411,13 +2383,6 @@ void CvUnitAI::AI_attackCityMove()
 		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
 		{
 			bool bHuntCelts = true;
-		}
-	}
-	if (area()->getCitiesPerPlayer((PlayerTypes)SELJUKS) > 0)
-	{
-		if ((area()->getAreaAIType(getTeam()) != AREAAI_OFFENSIVE) && (area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
-		{
-			bool bHuntSeljuks = true;
 		}
 	}
 	if (area()->getCitiesPerPlayer((PlayerTypes)INDEPENDENT) > 0)
@@ -2435,12 +2400,6 @@ void CvUnitAI::AI_attackCityMove()
 		}
 	}
 	//Rhye - end
-
-	// Leoreth: Mughals should not target Seljuks
-	if (getOwnerINLINE() == MUGHALS)
-	{
-		bHuntSeljuks = false;
-	}
 
 	bool bReadyToAttack = ((getGroup()->getNumUnits() >= (bHuntBarbs ? 3 : AI_stackOfDoomExtra())));
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
@@ -2542,10 +2501,6 @@ void CvUnitAI::AI_attackCityMove()
 		{
 			return;
 		}
-		else if (bHuntSeljuks && AI_targetMinorCity(SELJUKS))
-		{
-			return;
-		}
 		else if (bHuntIndependents && AI_targetMinorCity(INDEPENDENT))
 		{
 			return;
@@ -2602,6 +2557,23 @@ void CvUnitAI::AI_attackCityMove()
 	if (AI_offensiveAirlift())
 	{
 		return;
+	}
+
+	// Leoreth: Roman Legions
+	if (!bAtWar)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
 	}
 
 	if (AI_retreatToCity())
@@ -2963,6 +2935,23 @@ void CvUnitAI::AI_reserveMove()
 	if (AI_heal(30, 1))
 	{
 		return;
+	}
+
+	// Leoreth: Roman Legions
+	if (!bDanger)
+	{
+		if (canBuildRoute())
+		{
+			if (AI_connectCity())
+			{
+				return;
+			}
+
+			if (AI_routeCity())
+			{
+				return;
+			}
+		}
 	}
 
 	if (bDanger)
@@ -9690,7 +9679,6 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 	bool bIsFirstTech;
 	int iFirstLeft, iSecondLeft;
 	int iFirstResearch, iSecondResearch;
-	int iNumTechsDiscovered;
 	int iPercentWasted = 0;
 
 	if (canDiscover(plot()))
@@ -9707,24 +9695,22 @@ bool CvUnitAI::AI_discover(bool bThisTurnOnly, bool bFirstResearchOnly)
 
 		iFirstResearch = 0;
 		iSecondResearch = 0;
-		iNumTechsDiscovered = 0;
 
 		if (eFirstDiscoverTech != NO_TECH)
 		{
 			iFirstLeft = GET_TEAM(getTeam()).getResearchLeft(eFirstDiscoverTech);
 			iFirstResearch = std::min(getDiscoverResearch(eFirstDiscoverTech), iFirstLeft);
-			iNumTechsDiscovered++;
 
 			if (eSecondDiscoverTech != NO_TECH)
 			{
 				iSecondLeft = GET_TEAM(getTeam()).getResearchLeft(eSecondDiscoverTech);
 				iSecondResearch = std::max(0, std::min(getDiscoverResearch(eSecondDiscoverTech) - iFirstLeft, iSecondLeft));
-				iNumTechsDiscovered++;
 			}
 		}
 
-		iPercentWasted = iNumTechsDiscovered > 0 ? (100 - (((iFirstResearch + iSecondResearch) * 100) / iNumTechsDiscovered * getDiscoverResearch(NO_TECH))) : 100;
-		FAssert(((iPercentWasted >= 0) && (iPercentWasted <= 100)));
+		iPercentWasted = 100 - (iFirstResearch + iSecondResearch) * 100 / getDiscoverResearch(NO_TECH);
+		FAssertMsg(iPercentWasted >= 0, "iPercentWasted expected to be positive");
+		FAssertMsg(iPercentWasted <= 100, "iPercentWaster expected to be at most 100");
 
 		if (iFirstResearch >= iFirstLeft)
         {
@@ -11664,7 +11650,7 @@ bool CvUnitAI::AI_targetMinorCity(int iMinorCiv)
 
 		if (pBestPlot != NULL)
 		{
-			FAssert(!(pBestCity->at(pBestPlot))); // no suicide missions...
+			//FAssert(!(pBestCity->at(pBestPlot))); // no suicide missions...
 			if (atPlot(pBestPlot))
 			{
 				getGroup()->pushMission(MISSION_SKIP);
@@ -12500,7 +12486,7 @@ bool CvUnitAI::AI_pillage(int iBonusValueThreshold)
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()))
+		if (AI_plotValid(pLoopPlot) && !(pLoopPlot->isBarbarian()) && !(pLoopPlot->isOwned() && GET_PLAYER(pLoopPlot->getOwner()).isMinorCiv()))
 		{
 			if (potentialWarAction(pLoopPlot))
 			{
@@ -12902,7 +12888,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		{
 			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
 
-			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) == modifier)
+			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) >= modifier)
 			{
 				if (pLoopPlot != NULL)
 				{
@@ -12950,7 +12936,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		}
 		else
 		{
-			FAssert(!atPlot(pBestPlot));
+			//FAssert(!atPlot(pBestPlot));
 			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), MOVE_SAFE_TERRITORY, false, false, MISSIONAI_FOUND, pBestFoundPlot);
 			return true;
 		}
@@ -13311,7 +13297,7 @@ bool CvUnitAI::AI_settlerSeaTransport()
 	//to inland sites
 
 	pWaterArea = plot()->waterArea();
-	FAssertMsg(pWaterArea != NULL, "Ship out of water?");
+	//FAssertMsg(pWaterArea != NULL, "Ship out of water?");
 
 	CvUnit* pSettlerUnit = NULL;
 	pPlot = plot();
@@ -16447,6 +16433,25 @@ bool CvUnitAI::AI_nuke()
 {
 	PROFILE_FUNC();
 
+	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isMinorCiv())
+	{
+		return false;
+	}
+
+	CvCity* pNukedCity = AI_nukeTarget();
+
+	if (pNukedCity != NULL)
+	{
+		getGroup()->pushMission(MISSION_NUKE, pNukedCity->getX_INLINE(), pNukedCity->getY_INLINE());
+		return true;
+	}
+
+	return false;
+}
+
+// Leoreth
+CvCity* CvUnitAI::AI_nukeTarget()
+{
 	CvCity* pLoopCity;
 	CvCity* pBestCity;
 	int iValue;
@@ -16457,11 +16462,6 @@ bool CvUnitAI::AI_nuke()
 	pBestCity = NULL;
 
 	iBestValue = 0;
-
-	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isMinorCiv())
-	{
-		return false;
-	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
@@ -16490,13 +16490,7 @@ bool CvUnitAI::AI_nuke()
 		}
 	}
 
-	if (pBestCity != NULL)
-	{
-		getGroup()->pushMission(MISSION_NUKE, pBestCity->getX_INLINE(), pBestCity->getY_INLINE());
-		return true;
-	}
-
-	return false;
+	return pBestCity;
 }
 
 bool CvUnitAI::AI_nukeRange(int iRange)
@@ -18425,7 +18419,7 @@ bool CvUnitAI::AI_diplomaticMission(int iPowerMultiplier)
 	{
 		ePlayer = (PlayerTypes)iI;
 
-		if (GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian() || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAVassal())
+		if (ePlayer == getOwnerINLINE() || GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian() || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAVassal())
 		{
 			continue;
 		}
@@ -18489,6 +18483,169 @@ bool CvUnitAI::AI_greatMission(int iCityPercent)
 			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), 0, false, false, MISSIONAI_SPREAD, pBestSpreadPlot);
 			return true;
 		}
+	}
+
+	return false;
+}
+
+
+// Leoreth
+void CvUnitAI::AI_satelliteMove() 
+{
+	if (GET_TEAM(getTeam()).isAtWarWithMajorPlayer())
+	{
+		if (AI_satelliteDefendMove())
+		{
+			return;
+		}
+
+		if (AI_satelliteAttackMove())
+		{
+			return;
+		}
+	}
+
+	if (AI_join(3))
+	{
+		return;
+	}
+
+	if (AI_satelliteDefendMove())
+	{
+		return;
+	}
+
+	if (AI_join())
+	{
+		return;
+	}
+
+	getGroup()->pushMission(MISSION_SKIP);
+	return;
+}
+
+
+// Leoreth
+bool CvUnitAI::AI_satelliteDefendMove()
+{
+	if (!GC.getGameINLINE().isNukesValid())
+	{
+		return false;
+	}
+
+	if (!GET_TEAM(getTeam()).canSatelliteIntercept())
+	{
+		return false;
+	}
+
+	int iNukeValue = 8;
+	CvCity* pDefendedCity = NULL;
+
+	int iLoop, iCurrentNukeValue;
+	for (CvCity* pCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+	{
+		int iSatellites = pCity->plot()->plotCount(PUF_isUnitAIType, UNITAI_SATELLITE, -1, getOwnerINLINE());
+
+		if (iSatellites == 0 || (atPlot(pCity->plot()) && iSatellites == 1))
+		{
+			iCurrentNukeValue = 1;
+
+			iCurrentNukeValue += GC.getGameINLINE().getSorenRandNum((pCity->getPopulation() + 1), "AI Nuke City Value");
+			iCurrentNukeValue += std::max(0, pCity->getPopulation() - 10);
+
+			iCurrentNukeValue += ((pCity->getPopulation() * (100 + pCity->calculateCulturePercent(pCity->getOwnerINLINE()))) / 100);
+
+			if (iCurrentNukeValue > iNukeValue)
+			{
+				iNukeValue = iCurrentNukeValue;
+				pDefendedCity = pCity;
+			}
+		}
+	}
+
+	if (pDefendedCity != NULL)
+	{
+		if (atPlot(pDefendedCity->plot()))
+		{
+			getGroup()->pushMission(MISSION_FORTIFY);
+			return true;
+		}
+
+		getGroup()->pushMission(MISSION_MOVE_TO, pDefendedCity->getX(), pDefendedCity->getY());
+		return true;
+	}
+
+	return false;
+}
+
+
+// Leoreth
+bool CvUnitAI::AI_satelliteAttackMove()
+{
+	if (!GC.getGameINLINE().isNukesValid())
+	{
+		return false;
+	}
+
+	if (!GET_TEAM(getTeam()).canSatelliteAttack())
+	{
+		return false;
+	}
+
+	CvCity* pNukeTarget = AI_nukeTarget();
+
+	if (pNukeTarget != NULL)
+	{
+		if (canSatelliteAttack(pNukeTarget->plot()))
+		{
+			if (!atPlot(pNukeTarget->plot()))
+			{
+				getGroup()->pushMission(MISSION_MOVE_TO, pNukeTarget->getX(), pNukeTarget->getY());
+				return true;
+			}
+
+			getGroup()->pushMission(MISSION_SATELLITE_ATTACK);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+
+bool CvUnitAI::AI_rebuildMove(int iMinimumCost)
+{
+	if (plot()->isCity())
+	{
+		if (plot()->getPlotCity()->getRebuildProduction() >= iMinimumCost)
+		{
+			getGroup()->pushMission(MISSION_REBUILD);
+			return true;
+		}
+	}
+
+	CvCity* pBestCity = NULL;
+	int iBestProduction = 0;
+
+	int iLoop, iCurrentProduction;
+	for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+	{
+		if (!atPlot(pLoopCity->plot()))
+		{
+			iCurrentProduction = pLoopCity->getRebuildProduction();
+
+			if (iCurrentProduction >= iMinimumCost && iCurrentProduction > iBestProduction)
+			{
+				pBestCity = pLoopCity;
+				iBestProduction = iCurrentProduction;
+			}
+		}
+	}
+
+	if (pBestCity != NULL)
+	{
+		getGroup()->pushMission(MISSION_MOVE_TO, pBestCity->getX(), pBestCity->getY());
+		return true;
 	}
 
 	return false;

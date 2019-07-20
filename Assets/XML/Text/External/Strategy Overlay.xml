@@ -10,72 +10,95 @@
 		<French>Activ&#233;</French>
 		<German>Aktivieren</German>
 		<Italian>Attivata</Italian>
+		<Spanish>Enabled</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__ENABLED_HOVER</Tag>
 		<English>When checked, the shortcut keys and features of the Strategy Layer are activated.</English>
+		<French>When checked, the shortcut keys and features of the Strategy Layer are activated.</French>
 		<German>Aktiviert die Tastenkombinationen und F&#228;higkeiten des Strategie-Overlays</German>
 		<Italian>Quando &#232; selezionato, vengono attivate le scorciatoie da tastiera e le funzionalit&#224; del Livello Strategico.</Italian>
+		<Spanish>When checked, the shortcut keys and features of the Strategy Layer are activated.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__SHOWDOTMAP_TEXT</Tag>
 		<English>Show Dot Map</English>
+		<French>Show Dot Map</French>
 		<German>Overlay-Karte anzeigen</German>
 		<Italian>Mostra la Mappa di posizionamento</Italian>
+		<Spanish>Show Dot Map</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__SHOWDOTMAP_HOVER</Tag>
 		<English>When checked, the city-planning dot map layer is shown overlaying the terrain.</English>
+		<French>When checked, the city-planning dot map layer is shown overlaying the terrain.</French>
 		<German>L&#228;sst die Overlay-Karte zur Planung von Stadtgr&#252;ndungen das Gel&#228;nde &#252;berlagern</German>
 		<Italian>Quando &#232; selezionato, il livello di pianificazione delle Citt&#224; detto "Mappa di posizionamento" viene mostrato come sovrapposto al terreno.</Italian>
+		<Spanish>When checked, the city-planning dot map layer is shown overlaying the terrain.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPDRAWDOTS_TEXT</Tag>
 		<English>Draw City Dots</English>
+		<French>Draw City Dots</French>
 		<German>St&#228;dte markieren</German>
 		<Italian>Disegna le icone per le Citt&#224;</Italian>
+		<Spanish>Draw City Dots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPDRAWDOTS_HOVER</Tag>
 		<English>When checked, an icon is drawn in the center of the borders of planned cities.</English>
+		<French>When checked, an icon is drawn in the center of the borders of planned cities.</French>
 		<German>Zeigt im Zentrum der Grenzen von geplanten St&#228;dten ein Symbol an</German>
 		<Italian>Quando &#232; selezionato, viene disegnata un'icona al centro delle aree di posizionamento delle citt&#224;.</Italian>
+		<Spanish>When checked, an icon is drawn in the center of the borders of planned cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPDOTICON_TEXT</Tag>
 		<English>City Dot Icon</English>
+		<French>City Dot Icon</French>
 		<German>St&#228;dtesymbol</German>
 		<Italian>Icona delle Citt&#224;</Italian>
+		<Spanish>City Dot Icon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPDOTICON_HOVER</Tag>
 		<English>The index number of the icon to be placed in the center of the borders of planned cities.</English>
+		<French>The index number of the icon to be placed in the center of the borders of planned cities.</French>
 		<German>Die Indexnummer des Symbols, das im Zentrum der Grenzen von geplanten St&#228;dten angezeigt werden soll</German>
 		<Italian>Indica il numero d'indice dell'icona che deve essere posizionata al centro delle aree di posizionamento delle citt&#224;.</Italian>
+		<Spanish>The index number of the icon to be placed in the center of the borders of planned cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPBRIGHTNESS_TEXT</Tag>
 		<English>Brightness</English>
+		<French>Brightness</French>
 		<German>Transparenz</German>
 		<Italian>Trasparenza</Italian>
+		<Spanish>Brightness</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPBRIGHTNESS_HOVER</Tag>
 		<English>Determines the brightness of planned cities.</English>
+		<French>Determines the brightness of planned cities.</French>
 		<German>Bestimmt den Grad der Transparenz, in der geplante Stadtkreuze erscheinen sollen</German>
 		<Italian>Determina la trasparenza delle Citt&#224; posizionate.</Italian>
+		<Spanish>Determines the brightness of planned cities.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPHIGHLIGHTBRIGHTNESS_TEXT</Tag>
 		<English>Highlight Brightness</English>
+		<French>Highlight Brightness</French>
 		<German>Transparenz beim Platzieren</German>
 		<Italian>Trasparenza di selezione</Italian>
+		<Spanish>Highlight Brightness</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_STRATEGYOVERLAY__DOTMAPHIGHLIGHTBRIGHTNESS_HOVER</Tag>
 		<English>Determines the brightness of the highlighted city being placed.</English>
+		<French>Determines the brightness of the highlighted city being placed.</French>
 		<German>Bestimmt den Grad der Transparenz, in der das zu platzierende Stadtkreuz erscheinen soll</German>
 		<Italian>Determina la trasparenza della Citt&#224; selezionata che viene posizionata.</Italian>
+		<Spanish>Determines the brightness of the highlighted city being placed.</Spanish>
 	</TEXT>
 
 <!-- StrategyOverlay_CIV4GameText -->
@@ -83,67 +106,89 @@
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_TITLE</Tag>
 		<English>Strategy Overlay</English>
+		<French>Strategy Overlay</French>
 		<German>Strategie-Overlay</German>
 		<Italian>Livello Strategico</Italian>
+		<Spanish>Strategy Overlay</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_DOTMAPPER</Tag>
 		<English>Dot Mapper</English>
+		<French>Dot Mapper</French>
 		<German>Punkt-Werkzeug</German>
 		<Italian>Mappa di posizionamento</Italian>
+		<Spanish>Dot Mapper</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_PLACECITY</Tag>
 		<English>Place City</English>
+		<French>Place City</French>
 		<German>Stadt platzieren</German>
 		<Italian>Posiziona citt&#224;</Italian>
+		<Spanish>Place City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_REMOVECITY</Tag>
 		<English>Remove City</English>
+		<French>Remove City</French>
 		<German>Stadt entfernen</German>
 		<Italian>Rimuovi Citt&#224;</Italian>
+		<Spanish>Remove City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_COLORSELECT</Tag>
 		<English>Color Selection</English>
+		<French>Color Selection</French>
 		<German>Farbauswahl</German>
 		<Italian>Seleziona colore</Italian>
+		<Spanish>Color Selection</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_SIGNS</Tag>
 		<English>Signs</English>
+		<French>Signs</French>
 		<German>Markierungen</German>
 		<Italian>Etichette</Italian>
+		<Spanish>Signs</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_ADDSIGN_TITLE</Tag>
 		<English>Add Overlay Sign</English>
+		<French>Add Overlay Sign</French>
 		<German>Overlay-Markierung hinzuf&#252;gen</German>
 		<Italian>Aggiungi livello etichette</Italian>
+		<Spanish>Add Overlay Sign</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_ADDSIGN_BODY</Tag>
 		<English>Caption for the sign</English>
+		<French>Caption for the sign</French>
 		<German>Text der Markierung</German>
 		<Italian>Testo dell'etichetta</Italian>
+		<Spanish>Caption for the sign</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_ADDSIGN</Tag>
 		<English>Add Sign</English>
+		<French>Add Sign</French>
 		<German>Markierung hinzuf&#252;gen</German>
 		<Italian>Aggiungi etichetta</Italian>
+		<Spanish>Add Sign</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_REMOVESIGN</Tag>
 		<English>Remove Sign</English>
+		<French>Remove Sign</French>
 		<German>Markierung entfernen</German>
 		<Italian>Rimuovi etichetta</Italian>
+		<Spanish>Remove Sign</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STRATOVERLAY_ADDSIGN_EDITBOX_HELP</Tag>
 		<English>Enter the text to be displayed on the sign</English>
+		<French>ter the text to be displayed on the sign</French>
 		<German>Eingabe des Textes, der auf der Markierung erscheinen soll</German>
 		<Italian>Digita il testo che deve essere visualizzato sull'etichetta</Italian>
+		<Spanish>Enter the text to be displayed on the sign</Spanish>
 	</TEXT>
 </Civ4GameText>

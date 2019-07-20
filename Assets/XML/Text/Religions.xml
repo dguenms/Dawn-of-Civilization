@@ -9,7 +9,7 @@
 			<Plural>0</Plural>
 		</English>
 		<French>
-			<Text>portugais:portugaise:portugais:portugaises</Text>
+			<Text>catholique:catholique:catholiques:catholiques</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
@@ -37,7 +37,7 @@
 			<Plural>0</Plural>
 		</English>
 		<French>
-			<Text>portugais:portugaise:portugais:portugaises</Text>
+			<Text>protestant:protestante:protestants:protestantes</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
@@ -112,6 +112,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CATHOLICISM</Tag>
 		<English>Catholicism</English>
+		<French>
+			<Text>Catholicisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Catholicism</German>
+		<Italian>Catholicism</Italian>
+		<Spanish>Catholicism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Tag>
@@ -120,11 +128,26 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
+		<French>
+			<Text>catholique:catholique:catholiques:catholiques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>
 			<Text>Katholisch:katholischen:katholische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>
+			<Text>Cattolico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misticismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CONFUCIANISM_ADJECTIVE</Tag>
@@ -213,20 +236,46 @@
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PROTESTANTISM</Tag>
 		<English>Protestantism</English>
+		<French>
+			<Text>Protestantisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Protestantism</German>
+		<Italian>Protestantism</Italian>
+		<Spanish>Protestantism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Tag>
 		<English>Protestant</English>
+		<French>
+			<Text>protestant:protestante:protestants:protestantes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>
 			<Text>J&#252;disch:j&#252;dischen:j&#252;dische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>
+			<Text>Protestante</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>Protestant</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ORTHODOXY</Tag>
 		<English>Orthodoxy</English>
+		<French>
+			<Text>Orthodoxie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Orthodoxie</German>
+		<Italian>Orthodoxy</Italian>
+		<Spanish>Orthodoxy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Tag>
@@ -235,20 +284,38 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
+		<French>
+			<Text>orthodoxe:orthodoxe:orthodoxes:orthodoxes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
 		<German>
 			<Text>Orthodox:orthodoxen:orthodoxe</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
+		<Italian>
+			<Text>Ortodosso</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>Orthodox</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_REFORMATION</Tag>
 		<English>[ICON_BULLET]Founding Protestantism triggers the Reformation</English>
+		<French>[ICON_BULLET]Fonder le protestantisme provoque la R&#233;forme</French>
+		<German>[ICON_BULLET]Founding Protestantism triggers the Reformation</German>
+		<Italian>[ICON_BULLET]Founding Protestantism triggers the Reformation</Italian>
+		<Spanish>[ICON_BULLET]Founding Protestantism triggers the Reformation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_SCREEN_DATE_FOUNDED</Tag>
 		<English>Founded:</English>
+		<French>Fond&#233; en :</French>
 		<German>Gegr&#252;ndet:</German>
+		<Italian>Founded:</Italian>
+		<Spanish>Founded:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_TAOISM_ADJECTIVE</Tag>
@@ -309,90 +376,217 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
+		<French>
+			<Text>zoroastrien:zoroastrienne:zoroastriens:zoroastriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Zoroastrian</German>
+		<Italian>Zoroastrian</Italian>
+		<Spanish>Zoroastrian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PAGANISM</Tag>
 		<English>Paganism</English>
+		<French>
+			<Text>Paganisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Heidentum</German>
+		<Italian>Paganism</Italian>
+		<Spanish>Paganism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_PESEDJET</Tag>
 		<English>Pesedjet</English>
+		<French>
+			<Text>Pesedjet</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Pesedjet</German>
+		<Italian>Pesedjet</Italian>
+		<Spanish>Pesedjet</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_SHENDAO</Tag>
 		<English>Shendao</English>
+		<French>
+			<Text>Shenisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Shendao</German>
+		<Italian>Shendao</Italian>
+		<Spanish>Shendao</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ANUNNAKI</Tag>
 		<English>Anunnaki</English>
+		<French>
+			<Text>Anunnaki</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Anunnaki</German>
+		<Italian>Anunnaki</Italian>
+		<Spanish>Anunnaki</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_VEDISM</Tag>
 		<English>Vedism</English>
+		<French>
+			<Text>V&#233;disme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Vedismus</German>
+		<Italian>Vedism</Italian>
+		<Spanish>Vedism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_OLYMPIANISM</Tag>
 		<English>Olympianism</English>
+		<French>
+			<Text>Olympisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Olympismus</German>
+		<Italian>Olympianism</Italian>
+		<Spanish>Olympianism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_BAALISM</Tag>
 		<English>Baalism</English>
+		<French>
+			<Text>Baalisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Baalismus</German>
+		<Italian>Baalism</Italian>
+		<Spanish>Baalism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ATUA</Tag>
 		<English>Atua</English>
+		<French>
+			<Text>Atua</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
 		<German>Atua</German>
+		<Italian>Atua</Italian>
+		<Spanish>Atua</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_MAZDAISM</Tag>
 		<English>Mazdaism</English>
+		<French>
+			<Text>Mazd&#233;isme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Masdaismus</German>
+		<Italian>Mazdaism</Italian>
+		<Spanish>Mazdaism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_TEOTL</Tag>
 		<English>Teotl</English>
+		<French>
+			<Text>Teotl</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Teotl</German>
+		<Italian>Teotl</Italian>
+		<Spanish>Teotl</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_SHINTO</Tag>
 		<English>Shinto</English>
+		<French>
+			<Text>Shinto&#239;sme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Schinto</German>
+		<Italian>Shinto</Italian>
+		<Spanish>Shinto</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ASATRU</Tag>
 		<English>Asatru</English>
+		<French>
+			<Text>&#193;satr&#250;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Asatru</German>
+		<Italian>Asatru</Italian>
+		<Spanish>Asatru</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_DRUIDISM</Tag>
 		<English>Druidism</English>
+		<French>
+			<Text>Druidisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Druidentum</German>
+		<Italian>Druidism</Italian>
+		<Spanish>Druidism</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_RODNOVERY</Tag>
 		<English>Rodnovery</English>
+		<French>
+			<Text>Rodnov&#233;rie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Rodnowerie</German>
+		<Italian>Rodnovery</Italian>
+		<Spanish>Rodnovery</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_YORUBA</Tag>
 		<English>Yoruba</English>
+		<French>
+			<Text>Yoruba</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Yoruba</German>
+		<Italian>Yoruba</Italian>
+		<Spanish>Yoruba</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_INTI</Tag>
 		<English>Inti</English>
+		<French>
+			<Text>Inti</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Inti</German>
+		<Italian>Inti</Italian>
+		<Spanish>Inti</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_TENGRI</Tag>
 		<English>Tengri</English>
+		<French>
+			<Text>Tengrisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>Tengri</German>
+		<Italian>Tengri</Italian>
+		<Spanish>Tengri</Spanish>
 	</TEXT>
 </Civ4GameText>

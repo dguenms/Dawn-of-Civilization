@@ -4,122 +4,225 @@
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_SILK_ROUTE</Tag>
 		<English>Silk Route</English>
+		<French>
+			<Text>Route de la soie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Seidenstra&#195;&#159;e</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Silk Route</Italian>
+		<Spanish>Silk Route</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_TRADING_COMPANY</Tag>
 		<English>Trading Company</English>
+		<French>
+			<Text>Compagnie commerciale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Handelskompanie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Trading Company</Italian>
+		<Spanish>Trading Company</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_CEREAL_INDUSTRY</Tag>
 		<English>Cereal Industry</English>
+		<French>
+			<Text>Industrie c&#233;r&#233;ali&#232;re</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Getreideindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Cereal Industry</Italian>
+		<Spanish>Cereal Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_FISHING_INDUSTRY</Tag>
 		<English>Fishing Industry</English>
+		<French>
+			<Text>Industrie de la p&#234;che</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Fischereiindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Fishing Industry</Italian>
+		<Spanish>Fishing Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Tag>
 		<English>Textile Industry</English>
+		<French>
+			<Text>Industrie textile</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Textilindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Textile Industry</Italian>
+		<Spanish>Textile Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Tag>
 		<English>Steel Industry</English>
+		<French>
+			<Text>Industrie sid&#233;rurgique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Stahlindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Steel Industry</Italian>
+		<Spanish>Steel Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_OIL_INDUSTRY</Tag>
 		<English>Oil Industry</English>
+		<French>
+			<Text>Industrie p&#233;troli&#232;re</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>&#195;&#150;lindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Oil Industry</Italian>
+		<Spanish>Oil Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Tag>
 		<English>Luxury Industry</English>
+		<French>
+			<Text>Industrie du luxe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Luxusindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Luxury Industry</Italian>
+		<Spanish>Luxury Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_COMPUTER_INDUSTRY</Tag>
 		<English>Computer Industry</English>
+		<French>
+			<Text>Industrie informatique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
 		<German>
 			<Text>Computerindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
+		<Italian>Computer Industry</Italian>
+		<Spanish>Computer Industry</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_0</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Merchant Trade or Free Enterprise civics[NEWLINE][ICON_BULLET]Location is in Central Asia or Persia[NEWLINE][ICON_BULLET]Markets and Stables[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Location is in China[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</English>
+		<French>Pr&#233;requis additionnels:[NEWLINE][ICON_BULLET]Peut se propager uniquement dans les villes situ&#233;e sur la route historique de la soie[NEWLINE][ICON_BULLET]Ne peut se propager pass&#233; 1500 ap. J.-C.[NEWLINE][NEWLINE]Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires (en particulier la soie)[NEWLINE][ICON_BULLET]Doctrines Commerce marchand et Libre entreprise[NEWLINE][ICON_BULLET]Villes situ&#233;es en Asie centrale ou en Perse[NEWLINE][ICON_BULLET]March&#233;s et &#233;tables[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Villes situ&#233;es en Chine[NEWLINE][ICON_BULLET]Villes c&#244;ti&#232;res sans port[NEWLINE][ICON_BULLET]Christianisme comme religion d'&#201;tat[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries</French>
+		<German>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Merchant Trade or Free Enterprise civics[NEWLINE][ICON_BULLET]Location is in Central Asia or Persia[NEWLINE][ICON_BULLET]Markets and Stables[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Location is in China[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</German>
+		<Italian>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Merchant Trade or Free Enterprise civics[NEWLINE][ICON_BULLET]Location is in Central Asia or Persia[NEWLINE][ICON_BULLET]Markets and Stables[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Location is in China[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</Italian>
+		<Spanish>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Merchant Trade or Free Enterprise civics[NEWLINE][ICON_BULLET]Location is in Central Asia or Persia[NEWLINE][ICON_BULLET]Markets and Stables[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Location is in China[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_1</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Colonialism or Free Enterprise civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</English>
+		<French>Pr&#233;requis additionnels:[NEWLINE][ICON_BULLET]Peut se propager uniquement dans les villes appartenant aux Espagnols, aux Fran&#231;ais, aux Anglais, aux Portugais, aux N&#233;erlandais ou aux Vikings[NEWLINE][ICON_BULLET]Ne peut se propager pass&#233; 1800 ap. J.-C.[NEWLINE][ICON_BULLET]Peut se propager uniquement dans les Cara&#239;bes, l'Afrique subsaharienne et l'Asie du Sud ainsi que dans les villes avec la compagnie commerciale (merveille nationale)[NEWLINE][ICON_BULLET]Peut se propager uniquement dans les villes c&#244;ti&#232;res[NEWLINE][NEWLINE]Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrines Colonialisme et Libre entreprise[NEWLINE][ICON_BULLET]La civilisation n&#233;erlandaise[NEWLINE][ICON_BULLET]Ports, postes de douane, banques, compagnie commerciale (merveille nationale)[NEWLINE][ICON_BULLET]Villes situ&#233;es dans les Cara&#239;bes[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries</French>
+		<German>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Colonialism or Free Enterprise civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</German>
+		<Italian>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Colonialism or Free Enterprise civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</Italian>
+		<Spanish>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Colonialism or Free Enterprise civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_2</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Granaries, Sewers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+		<French>Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]Greniers, &#233;gouts, supermarch&#233;s[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Comp&#233;tition avec l'industrie de la p&#234;che[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] dans vos villes</French>
+		<German>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Granaries, Sewers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</German>
+		<Italian>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Granaries, Sewers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</Italian>
+		<Spanish>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Granaries, Sewers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_3</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+		<French>Pr&#233;requis additionnels:[NEWLINE][ICON_BULLET]Peut se propager uniquement dans les villes c&#244;ti&#232;res[NEWLINE][NEWLINE]Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]Phares, ports, supermarch&#233;s[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Comp&#233;tition avec l'industrie c&#233;r&#233;ali&#232;re[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] dans vos villes</French>
+		<German>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</German>
+		<Italian>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</Italian>
+		<Spanish>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_4</Tag>
 		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Markets, Weavers, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>Pr&#233;requis additionnels:[NEWLINE][ICON_BULLET]Ne peut se propager pass&#233; 1920 ap. J.-C.[NEWLINE][NEWLINE]Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]March&#233;s, tisseranderies, usines[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Comp&#233;tition avec l'industrie sid&#233;rurgique[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] et des [ICON_UNHEALTHY] dans vos villes</French>
+		<German>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Markets, Weavers, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</German>
+		<Italian>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Markets, Weavers, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Italian>
+		<Spanish>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Markets, Weavers, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_5</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]Usines, centrales thermiques, parcs industriels, usine sid&#233;rurgique[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Comp&#233;tition avec l'industrie textile[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] et des [ICON_UNHEALTHY] dans vos villes</French>
+		<German>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</German>
+		<Italian>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Italian>
+		<Spanish>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_6</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Banks, Distilleries, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]Banques, distilleries, parcs industriels, bourse[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Comp&#233;tition avec l'industrie informatique[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] et des [ICON_UNHEALTHY] dans vos villes</French>
+		<German>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Banks, Distilleries, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</German>
+		<Italian>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Banks, Distilleries, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Italian>
+		<Spanish>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Banks, Distilleries, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_7</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Weavers, Department Stores, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]Usines, tisseranderies, grands magasins, galerie nationale[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] et des [ICON_UNHEALTHY] dans vos villes</French>
+		<German>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Weavers, Department Stores, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</German>
+		<Italian>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Weavers, Department Stores, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Italian>
+		<Spanish>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Weavers, Department Stores, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_8</Tag>
 		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+		<French>Attir&#233;e par :[NEWLINE][ICON_BULLET]Ressources industrielles suppl&#233;mentaires[NEWLINE][ICON_BULLET]Doctrine Libre entreprise[NEWLINE][ICON_BULLET]Usines, laboratoires, universit&#233;s, CERN[NEWLINE][ICON_BULLET]Routes commerciales[NEWLINE][NEWLINE]Repouss&#233;e par :[NEWLINE][ICON_BULLET]Comp&#233;tition avec l'industrie p&#233;troli&#232;re[NEWLINE][ICON_BULLET]Pr&#233;sence d'autres industries[NEWLINE][NEWLINE]Effets secondaires :[NEWLINE][ICON_BULLET]Peut causer des [ICON_UNHAPPY] et des [ICON_UNHEALTHY] dans vos villes</French>
+		<German>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</German>
+		<Italian>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Italian>
+		<Spanish>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Enterprise civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CORPORATION_REMOVED</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] a quitt&#233; %s2_CityName.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Spanish>
 	</TEXT>
 </Civ4GameText>

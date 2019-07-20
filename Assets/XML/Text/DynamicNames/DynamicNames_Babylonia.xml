@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_BABYLONIA_PEOPLES</Tag>
 		<English>Mesopotamian Peoples</English>
 		<French>
-			<Text>Peuplades M&#233;sopotamiennes</Text>
+			<Text>Peuplades m&#233;sopotamiennes</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -77,7 +77,7 @@
 		<Tag>TXT_KEY_CIV_BABYLONIA_FASCIST</Tag>
 		<English>Baathist %s1</English>
 		<French>
-			<Text>%s1 Baasiste</Text>
+			<Text>%s1 baathiste</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -101,7 +101,7 @@
 		<Tag>TXT_KEY_CIV_BABYLONIA_COMMUNIST</Tag>
 		<English>%s2 Golden Square</English>
 		<French>
-			<Text>Carr&#233; d'Or %s2</Text>
+			<Text>Carr&#233; d'or %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -124,26 +124,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_MESOPOTAMIAN</Tag>
 		<English>Mesopotamian</English>
+		<French>
+			<Text>m&#233;sopotamien:m&#233;sopotamienne:m&#233;sopotamiens:m&#233;sopotamiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Mesopotamian</German>
+		<Italian>Mesopotamian</Italian>
+		<Spanish>Mesopotamian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_ASSYRIA</Tag>
 		<English>Assyria</English>
+		<French>
+			<Text>Assyrie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Assyria</German>
+		<Italian>Assyria</Italian>
+		<Spanish>Assyria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_ASSYRIAN</Tag>
 		<English>Assyrian</English>
+		<French>
+			<Text>assyrien:assyrienne:assyriens:assyriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Assyrian</German>
+		<Italian>Assyrian</Italian>
+		<Spanish>Assyrian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_ASSYRIA_ADJECTIVE</Tag>
 		<English>Assyrian</English>
+		<French>
+			<Text>assyrien:assyrienne:assyriens:assyriennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Assyrian</German>
+		<Italian>Assyrian</Italian>
+		<Spanish>Assyrian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE</Tag>
 		<English>Neo-%s2 Empire</English>
+		<French>
+			<Text>Empire n&#233;o-%s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Neo-%s2 Empire</German>
+		<Italian>Neo-%s2 Empire</Italian>
+		<Spanish>Neo-%s2 Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_BABYLONIAN_VASSAL</Tag>
 		<English>Babylonian Phoenicia</English>
+		<French>
+			<Text>Ph&#233;nicie babylonienne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Babylonian Phoenicia</German>
+		<Italian>Babylonian Phoenicia</Italian>
+		<Spanish>Babylonian Phoenicia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_ADJECTIVE</Tag>
@@ -178,7 +226,7 @@
 		<English>Babylonia</English>
 		<French>
 			<Text>Babylone</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>

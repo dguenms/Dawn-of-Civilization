@@ -28,12 +28,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_PEOPLES</Tag>
 		<English>Anglo-Saxon Peoples</English>
+		<French>
+			<Text>Peuplades anglo-saxonnes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Anglo-Saxon Peoples</German>
+		<Italian>Anglo-Saxon Peoples</Italian>
+		<Spanish>Anglo-Saxon Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -80,6 +88,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_COMMUNIST</Tag>
 		<English>%s2 Worker's Commonwealth</English>
+		<French>
+			<Text>Commonwealth %s2 des travailleurs</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Worker's Commonwealth</German>
+		<Italian>%s2 Worker's Commonwealth</Italian>
+		<Spanish>%s2 Worker's Commonwealth</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_FASCIST</Tag>
@@ -109,8 +125,8 @@
 		<Tag>TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN</Tag>
 		<English>Great Britain</English>
 		<French>
-			<Text>Grande Bretagne</Text>
-			<Gender>Male</Gender>
+			<Text>Grande-Bretagne</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -132,6 +148,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_BRITISH</Tag>
 		<English>British</English>
+		<French>
+			<Text>britannique:britannique:britanniques:britanniques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>British</German>
+		<Italian>British</Italian>
+		<Spanish>British</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF</Tag>
@@ -160,20 +184,44 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE</Tag>
 		<English>Angevin Empire</English>
+		<French>
+			<Text>Empire Plantagen&#234;t</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Angevin Empire</German>
+		<Italian>Angevin Empire</Italian>
+		<Spanish>Angevin Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_REPUBLIC</Tag>
 		<English>United Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique-Unie de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>United Republic of %s1</German>
+		<Italian>United Republic of %s1</Italian>
+		<Spanish>United Republic of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_EXILE</Tag>
 		<English>%s2 Government in Exile</English>
+		<French>
+			<Text>Gouvernement %s2 en exil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Government in Exile</German>
+		<Italian>%s2 Government in Exile</Italian>
+		<Spanish>%s2 Government in Exile</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_VASSAL</Tag>
 		<English>Dominion of %s1</English>
 		<French>
-			<Text>Dominion du %s1</Text>
+			<Text>Dominion de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -220,16 +268,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_BABYLONIA</Tag>
 		<English>%s2 Mandate of Mesopotamia</English>
+		<French>
+			<Text>Mandat %s2 de M&#233;sopotamie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Mandate of Mesopotamia</German>
+		<Italian>%s2 Mandate of Mesopotamia</Italian>
+		<Spanish>%s2 Mandate of Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_PHOENICIA</Tag>
 		<English>%s2 Mandate of Lebanon</English>
+		<French>
+			<Text>Mandat %s2 sur le Liban</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Mandate of Lebanon</German>
+		<Italian>%s2 Mandate of Lebanon</Italian>
+		<Spanish>%s2 Mandate of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
 		<French>
-			<Text>Afrique Orientale %s2</Text>
+			<Text>Afrique orientale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -276,36 +340,92 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
+		<French>
+			<Text>Empire latin d'Orient</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Latin Empire</German>
+		<Italian>Latin Empire</Italian>
+		<Spanish>Latin Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_VIKINGS</Tag>
 		<English>Duchy of Scandinavia</English>
+		<French>
+			<Text>Duch&#233; de Scandinavie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of Scandinavia</German>
+		<Italian>Duchy of Scandinavia</Italian>
+		<Spanish>Duchy of Scandinavia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_INDONESIA</Tag>
 		<English>Federated Malay States</English>
+		<French>
+			<Text>&#201;tats malais f&#233;d&#233;r&#233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Federated Malay States</German>
+		<Italian>Federated Malay States</Italian>
+		<Spanish>Federated Malay States</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_FRANCE</Tag>
 		<English>Duchy of Anjou</English>
+		<French>
+			<Text>Duch&#233; d'Anjou</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of Anjou</German>
+		<Italian>Duchy of Anjou</Italian>
+		<Spanish>Duchy of Anjou</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_HOLY_ROME</Tag>
 		<English>Duchy of Hanover</English>
+		<French>
+			<Text>Duch&#233; de Hanovre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of Hanover</German>
+		<Italian>Duchy of Hanover</Italian>
+		<Spanish>Duchy of Hanover</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_GERMANY</Tag>
 		<English>%s2-Occupied Germany</English>
+		<French>
+			<Text>Zone d'occupation %s2 en Allemagne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2-Occupied Germany</German>
+		<Italian>%s2-Occupied Germany</Italian>
+		<Spanish>%s2-Occupied Germany</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_NETHERLANDS</Tag>
 		<English>Duchy of Flanders</English>
+		<French>
+			<Text>Duch&#233; de Flandre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Duchy of Flanders</German>
+		<Italian>Duchy of Flanders</Italian>
+		<Spanish>Duchy of Flanders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_MALI</Tag>
 		<English>%s2 West Africa</English>
 		<French>
-			<Text>Afrique Occidentale %s2</Text>
+			<Text>Afrique occidentale %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -330,8 +450,8 @@
 		<English>Thirteen Colonies</English>
 		<French>
 			<Text>Treize Colonies</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
 		</French>
 		<German>
 			<Text>Dreizehn Kolonien:Dreizehn Kolonien:Dreizehn Kolonien</Text>
@@ -376,6 +496,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_NAME_MUGHALS</Tag>
 		<English>Pakistan</English>
+		<French>
+			<Text>Pakistan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pakistan</German>
+		<Italian>Pakistan</Italian>
+		<Spanish>Pakistan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_ADJECTIVE</Tag>
@@ -407,7 +535,7 @@
 		<French>
 			<Text>Angleterre</Text>
 			<Gender>Female</Gender>
-			<Plural>1</Plural>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>England</Text>

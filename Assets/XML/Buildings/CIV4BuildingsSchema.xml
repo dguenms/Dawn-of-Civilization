@@ -113,6 +113,7 @@
 	<ElementType name="bNukeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPrereqReligion" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPagan" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bNoResistance" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
@@ -155,6 +156,8 @@
 	<ElementType name="iHealthPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iAreaHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHealth" content="textOnly" dt:type="int"/>
+	<ElementType name="iBuildingUnhealthModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iCorporationUnhealthModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappinessPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iCultureHappiness" content="textOnly" dt:type="int"/>
@@ -502,6 +505,7 @@
 		<element type="bPrereqReligion" minOccurs="0"/>
 		<element type="bPagan" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bCenterInCity" minOccurs="0"/>
+		<element type="bNoResistance" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iAIWeight" minOccurs="0"/>
 		<element type="iCost" minOccurs="0"/>
 		<element type="iHurryCostModifier" minOccurs="0"/>
@@ -542,6 +546,8 @@
 		<element type="iHealth" minOccurs="0"/>
 		<element type="iAreaHealth" minOccurs="0"/>
 		<element type="iGlobalHealth" minOccurs="0"/>
+		<element type="iBuildingUnhealthModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iCorporationUnhealthModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iHappiness" minOccurs="0"/>
 		<element type="iCultureHappiness" minOccurs="0"/>
 		<element type="iAreaHappiness" minOccurs="0"/>

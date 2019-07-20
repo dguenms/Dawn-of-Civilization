@@ -81,5 +81,9 @@ void CyMapPythonInterface()
 		.def("updateFog", &CyMap::updateFog, "void ()")
 		.def("updateMinimapColor", &CyMap::updateMinimapColor, "void ()")
 		.def("updateMinOriginalStartDist", &CyMap::updateMinOriginalStartDist, "void (CyArea* pArea)")
+
+		.def("plotIndex", &CyMap::plotIndex, "int (int iX, int iY)")
+		.def("getPrimeMeridian", &CyMap::getPrimeMeridian, "int ()")
+		.def("getEquator", &CyMap::getEquator, "int ()")
 		;
 }

@@ -1,0 +1,8 @@
+This unit was created by PPQ_Purple on CivFanatics. However it also contains elements taken from existing units. 
+Credits therefore are as follows:
+
+Model and Textures: Vanilla CIV
+Animations: PPQ_PUrple
+
+When distributing this unit do not remove this file.
+When altering the unit your self, add your name to the list.

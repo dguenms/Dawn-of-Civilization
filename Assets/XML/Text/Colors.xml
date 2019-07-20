@@ -20,6 +20,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_COLOR_CYAN</Tag>
 		<English>Cyan</English>
+		<French>Cyan</French>
 		<German>T&#252;rkis</German>
 		<Italian>Azzurro</Italian>
 		<Spanish>Ci&#225;nico</Spanish>
@@ -59,6 +60,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_COLOR_MAGENTA</Tag>
 		<English>Magenta</English>
+		<French>Magenta</French>
+		<German>Magenta</German>
+		<Italian>Magenta</Italian>
+		<Spanish>Magenta</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COLOR_RED</Tag>

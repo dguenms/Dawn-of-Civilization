@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_PORTUGAL_PEOPLES</Tag>
 		<English>Lusitanian Peoples</English>
 		<French>
-			<Text>Peuplades Lusitaniennes</Text>
+			<Text>Peuplades lusitaniennes</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -52,12 +52,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_COMMUNIST</Tag>
 		<English>%s2 Continuing Revolutionary Process</English>
 		<French>
-			<Text>Processus R&#233;volutionnaire %s2 en Cours</Text>
+			<Text>Processus r&#233;volutionnaire %s2 en cours</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -81,7 +89,7 @@
 		<Tag>TXT_KEY_CIV_PORTUGAL_FASCIST</Tag>
 		<English>New State of %s1</English>
 		<French>
-			<Text>Etat Nouveau du %s1</Text>
+			<Text>Estado Novo %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -104,20 +112,44 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EMPIRE</Tag>
 		<English>Portuguese Empire</English>
+		<French>
+			<Text>Empire portugais</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Portuguese Empire</German>
+		<Italian>Portuguese Empire</Italian>
+		<Spanish>Portuguese Empire</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_BRAZIL</Tag>
 		<English>United Kingdom of %s1 and Brazil</English>
+		<French>
+			<Text>Royaume-Uni de %s1 et du Br&#233;sil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>United Kingdom of %s1 and Brazil</German>
+		<Italian>United Kingdom of %s1 and Brazil</Italian>
+		<Spanish>United Kingdom of %s1 and Brazil</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EXILE</Tag>
 		<English>%s2 Government in Exile</English>
+		<French>
+			<Text>Gouvernement %s2 en exil</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Government in Exile</German>
+		<Italian>%s2 Government in Exile</Italian>
+		<Spanish>%s2 Government in Exile</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_INDIA</Tag>
 		<English>Viceroyalty of %s2 %s1</English>
 		<French>
-			<Text>Vice Royaut&#233; de %s2 %s1</Text>
+			<Text>Vice-royaut&#233; de l'%s1 %s2</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -140,18 +172,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_INDONESIA</Tag>
 		<English>%s2 East Indies</English>
+		<French>
+			<Text>Indes orientales %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 East Indies</German>
+		<Italian>%s2 East Indies</Italian>
+		<Spanish>%s2 East Indies</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_CONGO</Tag>
 		<English>%s2 West Africa</English>
+		<French>
+			<Text>Afrique occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 West Africa</German>
+		<Italian>%s2 West Africa</Italian>
+		<Spanish>%s2 West Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_MALI</Tag>
 		<English>%s2 Gold Coast</English>
+		<French>
+			<Text>C&#244;te-de-l'Or %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Gold Coast</German>
+		<Italian>%s2 Gold Coast</Italian>
+		<Spanish>%s2 Gold Coast</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGUESE_BRAZIL</Tag>
 		<English>State of %s1</English>
+		<French>
+			<Text>Vice-royaut&#233; du %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_ADJECTIVE</Tag>
@@ -187,7 +251,7 @@
 		<French>
 			<Text>Portugal</Text>
 			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Portugal</Text>

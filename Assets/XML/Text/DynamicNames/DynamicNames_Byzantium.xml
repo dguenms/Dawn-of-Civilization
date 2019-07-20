@@ -4,10 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_DESC</Tag>
 		<English>The Byzantines</English>
+		<French>
+			<Text>Les Byzantins</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Byzantines</German>
+		<Italian>The Byzantines</Italian>
+		<Spanish>The Byzantines</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_PEOPLES</Tag>
 		<English>Byzantine Peoples</English>
+		<French>
+			<Text>Peuplades byzantines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Byzantine Peoples</German>
+		<Italian>Byzantine Peoples</Italian>
+		<Spanish>Byzantine Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_DEFAULT</Tag>
@@ -36,70 +52,186 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_REPUBLIC</Tag>
 		<English>Republic of Rhomania</English>
+		<French>
+			<Text>R&#233;publique de Rhomanie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Republic of Rhomania</German>
+		<Italian>Republic of Rhomania</Italian>
+		<Spanish>Republic of Rhomania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_FASCIST</Tag>
 		<English>Despotate of %s1</English>
+		<French>
+			<Text>Despotat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Despotate of %s1</German>
+		<Italian>Despotate of %s1</Italian>
+		<Spanish>Despotate of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_EASTERN</Tag>
 		<English>Eastern Roman</English>
+		<French>
+			<Text>romain d'Orient</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eastern Roman</German>
+		<Italian>Eastern Roman</Italian>
+		<Spanish>Eastern Roman</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_TREBIZOND</Tag>
 		<English>Trebizond</English>
+		<French>Tr&#233;bizonde</French>
+		<German>Trebizond</German>
+		<Italian>Trebizond</Italian>
+		<Spanish>Trebizond</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_DESPOTATE</Tag>
 		<English>Despotate of %s1</English>
+		<French>
+			<Text>Despotat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Despotate of %s1</German>
+		<Italian>Despotate of %s1</Italian>
+		<Spanish>Despotate of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_RUM</Tag>
-		<English>Rûm</English>
+		<English>R&#251;m</English>
+		<French>R&#251;m</French>
+		<German>R&#251;m</German>
+		<Italian>R&#251;m</Italian>
+		<Spanish>R&#251;m</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_MOREA</Tag>
 		<English>the Morea</English>
+		<French>Mor&#233;e</French>
+		<German>the Morea</German>
+		<Italian>the Morea</Italian>
+		<Spanish>the Morea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_NICAEA</Tag>
 		<English>Nicaea</English>
+		<French>Nic&#233;e</French>
+		<German>Nicaea</German>
+		<Italian>Nicaea</Italian>
+		<Spanish>Nicaea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_EPIRUS</Tag>
 		<English>Epirus</English>
+		<French>&#201;pire</French>
+		<German>Epirus</German>
+		<Italian>Epirus</Italian>
+		<Spanish>Epirus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_VASSAL</Tag>
 		<English>Exarchate of %s1</English>
+		<French>
+			<Text>Exarchat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of %s1</German>
+		<Italian>Exarchate of %s1</Italian>
+		<Spanish>Exarchate of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_EGYPT</Tag>
 		<English>Exarchate of Alexandria</English>
+		<French>
+			<Text>Exarchat d'Alexandrie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Alexandria</German>
+		<Italian>Exarchate of Alexandria</Italian>
+		<Spanish>Exarchate of Alexandria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_BABYLONIA</Tag>
 		<English>Exarchate of Ctesiphon</English>
+		<French>
+			<Text>Exarchat de Ct&#233;siphon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Ctesiphon</German>
+		<Italian>Exarchate of Ctesiphon</Italian>
+		<Spanish>Exarchate of Ctesiphon</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_GREECE</Tag>
 		<English>Exarchate of Achaia</English>
+		<French>
+			<Text>Exarchat d'Acha&#239;e</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Achaia</German>
+		<Italian>Exarchate of Achaia</Italian>
+		<Spanish>Exarchate of Achaia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_CARTHAGE</Tag>
 		<English>Exarchate of Africa</English>
+		<French>
+			<Text>Exarchat d'Afrique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Africa</German>
+		<Italian>Exarchate of Africa</Italian>
+		<Spanish>Exarchate of Africa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_PERSIA</Tag>
 		<English>Exarchate of Parthia</English>
+		<French>
+			<Text>Exarchat de Parthie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Parthia</German>
+		<Italian>Exarchate of Parthia</Italian>
+		<Spanish>Exarchate of Parthia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_ROME</Tag>
 		<English>Exarchate of Ravenna</English>
+		<French>
+			<Text>Exarchat de Ravenne</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Ravenna</German>
+		<Italian>Exarchate of Ravenna</Italian>
+		<Spanish>Exarchate of Ravenna</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_SPAIN</Tag>
 		<English>Exarchate of Spania</English>
+		<French>
+			<Text>Exarchat de Spania</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Exarchate of Spania</German>
+		<Italian>Exarchate of Spania</Italian>
+		<Spanish>Exarchate of Spania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_ADJECTIVE</Tag>
@@ -109,7 +241,7 @@
 			<Plural>0:1</Plural>
 		</English>
 		<French>
-			<Text>byzantin:byzantine;byzantins:bizantines</Text>
+			<Text>byzantin:byzantine;byzantins:byzantines</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
 		</French>
@@ -134,7 +266,7 @@
 		<English>Byzantium</English>
 		<French>
 			<Text>Byzance</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>

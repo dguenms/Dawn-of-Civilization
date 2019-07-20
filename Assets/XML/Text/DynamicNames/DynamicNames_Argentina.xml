@@ -4,29 +4,85 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_DESC</Tag>
 		<English>The Argentinians</English>
+		<French>
+			<Text>Les Argentins</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Argentinians</German>
+		<Italian>The Argentinians</Italian>
+		<Spanish>The Argentinians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_PEOPLES</Tag>
 		<English>Argentine Peoples</English>
+		<French>
+			<Text>Peuplades argentines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Argentine Peoples</German>
+		<Italian>Argentine Peoples</Italian>
+		<Spanish>Argentine Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_DEFAULT</Tag>
 		<English>United Provinces of the River Plate</English>
+		<French>
+			<Text>Provinces-Unies du R&#237;o de la Plata</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>United Provinces of the River Plate</German>
+		<Italian>United Provinces of the River Plate</Italian>
+		<Spanish>United Provinces of the River Plate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_FASCIST</Tag>
 		<English>Tacuara Nationalist Movement</English>
+		<French>
+			<Text>Mouvement nationaliste Tacuara</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Tacuara Nationalist Movement</German>
+		<Italian>Tacuara Nationalist Movement</Italian>
+		<Spanish>Tacuara Nationalist Movement</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_CONFEDERATION</Tag>
 		<English>%s2 Confederation</English>
+		<French>
+			<Text>Conf&#233;d&#233;ration %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Confederation</German>
+		<Italian>%s2 Confederation</Italian>
+		<Spanish>%s2 Confederation</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_ADJECTIVE</Tag>
 		<English>Argentine</English>
+		<French>
+			<Text>argentin:argentine:argentins:argentines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Argentine</German>
+		<Italian>Argentine</Italian>
+		<Spanish>Argentine</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_SHORT_DESC</Tag>
 		<English>Argentina</English>
+		<French>
+			<Text>Argentine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Argentina</German>
+		<Italian>Argentina</Italian>
+		<Spanish>Argentina</Spanish>
 	</TEXT>
 </Civ4GameText>

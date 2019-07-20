@@ -6,130 +6,258 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_TARGET_PLOT</Tag>
 		<English>Target Plot</English>
+		<French>Target Plot</French>
+		<German>Target Plot</German>
+		<Italian>Target Plot</Italian>
+		<Spanish>Target Plot</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PUSH_MISSION</Tag>
 		<English>Push Mission</English>
+		<French>Push Mission</French>
+		<German>Push Mission</German>
+		<Italian>Push Mission</Italian>
+		<Spanish>Push Mission</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ACTIVITY</Tag>
 		<English>Activity</English>
+		<French>Activity</French>
+		<German>Activity</German>
+		<Italian>Activity</Italian>
+		<Spanish>Activity</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FORTIFY</Tag>
 		<English>Fortifying</English>
+		<French>Fortifying</French>
+		<German>Fortifying</German>
+		<Italian>Fortifying</Italian>
+		<Spanish>Fortifying</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DONE</Tag>
 		<English>Done</English>
+		<French>Done</French>
+		<German>Done</German>
+		<Italian>Done</Italian>
+		<Spanish>Done</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_WAIT</Tag>
 		<English>Waiting</English>
+		<French>Waiting</French>
+		<German>Waiting</German>
+		<Italian>Waiting</Italian>
+		<Spanish>Waiting</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DUPLICATE_CITY</Tag>
 		<English>Duplicate City</English>
+		<French>Duplicate City</French>
+		<German>Duplicate City</German>
+		<Italian>Duplicate City</Italian>
+		<Spanish>Duplicate City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVE_CITY</Tag>
 		<English>Move City</English>
+		<French>Move City</French>
+		<German>Move City</German>
+		<Italian>Move City</Italian>
+		<Spanish>Move City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RAZE_CITY</Tag>
 		<English>Raze City</English>
+		<French>Raze City</French>
+		<German>Raze City</German>
+		<Italian>Raze City</Italian>
+		<Spanish>Raze City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SENSIBILITY</Tag>
 		<English>Checks Prerequisites for Multiple Tiles Mode</English>
+		<French>Checks Prerequisites for Multiple Tiles Mode</French>
+		<German>Checks Prerequisites for Multiple Tiles Mode</German>
+		<Italian>Checks Prerequisites for Multiple Tiles Mode</Italian>
+		<Spanish>Checks Prerequisites for Multiple Tiles Mode</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REGION_SELECTION</Tag>
 		<English>Selects all tiles in a region</English>
+		<French>Selects all tiles in a region</French>
+		<German>Selects all tiles in a region</German>
+		<Italian>Selects all tiles in a region</Italian>
+		<Spanish>Selects all tiles in a region</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT_TYPE</Tag>
 		<English>Plot Type</English>
+		<French>Plot Type</French>
+		<German>Plot Type</German>
+		<Italian>Plot Type</Italian>
+		<Spanish>Plot Type</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STARTING_PLOT</Tag>
 		<English>Starting Plot</English>
+		<French>Starting Plot</French>
+		<German>Starting Plot</German>
+		<Italian>Starting Plot</Italian>
+		<Spanish>Starting Plot</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PYTHON</Tag>
 		<English>Triggers Python Effects:</English>
+		<French>Triggers Python Effects:</French>
+		<German>Triggers Python Effects:</German>
+		<Italian>Triggers Python Effects:</Italian>
+		<Spanish>Triggers Python Effects:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNIT_AI</Tag>
 		<English>Unit AI</English>
+		<French>Unit AI</French>
+		<German>Unit AI</German>
+		<Italian>Unit AI</Italian>
+		<Spanish>Unit AI</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EVER</Tag>
 		<English>Ever</English>
+		<French>Ever</French>
+		<German>Ever</German>
+		<Italian>Ever</Italian>
+		<Spanish>Ever</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_HIDE_DEAD</Tag>
 		<English>Hide Dead</English>
+		<French>Hide Dead</French>
+		<German>Hide Dead</German>
+		<Italian>Hide Dead</Italian>
+		<Spanish>Hide Dead</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STATE_RELIGION</Tag>
 		<English>State Religion</English>
+		<French>State Religion</French>
+		<German>State Religion</German>
+		<Italian>State Religion</Italian>
+		<Spanish>State Religion</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_COMMANDS</Tag>
 		<English>Commands</English>
+		<French>Commands</French>
+		<German>Commands</German>
+		<Italian>Commands</Italian>
+		<Spanish>Commands</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_XLEVEL</Tag>
 		<English>Level</English>
+		<French>Level</French>
+		<German>Level</German>
+		<Italian>Level</Italian>
+		<Spanish>Level</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_OWNER</Tag>
 		<English>Owner</English>
+		<French>Owner</French>
+		<German>Owner</German>
+		<Italian>Owner</Italian>
+		<Spanish>Owner</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT</Tag>
 		<English>Plot</English>
+		<French>Plot</French>
+		<German>Plot</German>
+		<Italian>Plot</Italian>
+		<Spanish>Plot</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNIT</Tag>
 		<English>Unit</English>
+		<French>Unit</French>
+		<German>Unit</German>
+		<Italian>Unit</Italian>
+		<Spanish>Unit</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CITY</Tag>
 		<English>City</English>
+		<French>City</French>
+		<German>City</German>
+		<Italian>City</Italian>
+		<Spanish>City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GROUP</Tag>
 		<English>Group</English>
+		<French>Group</French>
+		<German>Group</German>
+		<Italian>Group</Italian>
+		<Spanish>Group</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_LANDMARKS</Tag>
 		<English>Landmarks</English>
+		<French>Landmarks</French>
+		<German>Landmarks</German>
+		<Italian>Landmarks</Italian>
+		<Spanish>Landmarks</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MODIFY</Tag>
 		<English>Modify %s1</English>
+		<French>Modify %s1</French>
+		<German>Modify %s1</German>
+		<Italian>Modify %s1</Italian>
+		<Spanish>Modify %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AI_AUTOPLAY_WARNING</Tag>
 		<English>AI AutoPlay can be stopped with [COLOR_POSITIVE_TEXT]SPACE[COLOR_REVERT] or [COLOR_POSITIVE_TEXT]ESCAPE[COLOR_REVERT]</English>
+		<French>AI AutoPlay can be stopped with [COLOR_POSITIVE_TEXT]SPACE[COLOR_REVERT] or [COLOR_POSITIVE_TEXT]ESCAPE[COLOR_REVERT]</French>
+		<German>AI AutoPlay can be stopped with [COLOR_POSITIVE_TEXT]SPACE[COLOR_REVERT] or [COLOR_POSITIVE_TEXT]ESCAPE[COLOR_REVERT]</German>
+		<Italian>AI AutoPlay can be stopped with [COLOR_POSITIVE_TEXT]SPACE[COLOR_REVERT] or [COLOR_POSITIVE_TEXT]ESCAPE[COLOR_REVERT]</Italian>
+		<Spanish>AI AutoPlay can be stopped with [COLOR_POSITIVE_TEXT]SPACE[COLOR_REVERT] or [COLOR_POSITIVE_TEXT]ESCAPE[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_COASTAL_TRADE</Tag>
 		<English>Coastal [ICON_TRADE]: %d1</English>
+		<French>Coastal [ICON_TRADE]: %d1</French>
+		<German>Coastal [ICON_TRADE]: %d1</German>
+		<Italian>Coastal [ICON_TRADE]: %d1</Italian>
+		<Spanish>Coastal [ICON_TRADE]: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_BASE_YIELD</Tag>
 		<English>Base %s1: %d2</English>
+		<French>Base %s1: %d2</French>
+		<German>Base %s1: %d2</German>
+		<Italian>Base %s1: %d2</Italian>
+		<Spanish>Base %s1: %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CITY_DATA2</Tag>
 		<English>City Data II</English>
+		<French>City Data II</French>
+		<German>City Data II</German>
+		<Italian>City Data II</Italian>
+		<Spanish>City Data II</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_BASE_RATE</Tag>
 		<English>Base Rate: %d1</English>
+		<French>Base Rate: %d1</French>
+		<German>Base Rate: %d1</German>
+		<Italian>Base Rate: %d1</Italian>
+		<Spanish>Base Rate: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLAYER_DATA</Tag>
@@ -144,16 +272,23 @@
 		<English>Erase all plots</English>
 		<French>Effacer toutes les cases</French>
 		<German>Alle Felder l&#246;schen</German>
+		<Italian>Erase all plots</Italian>
+		<Spanish>Erase all plots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REPEATABLE</Tag>
 		<English>Can use Civilizations and Leaders already in the Game</English>
+		<French>Can use Civilizations and Leaders already in the Game</French>
+		<German>Can use Civilizations and Leaders already in the Game</German>
+		<Italian>Can use Civilizations and Leaders already in the Game</Italian>
+		<Spanish>Can use Civilizations and Leaders already in the Game</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REVEAL_PLOT</Tag>
 		<English>Reveal Plot</English>
 		<French>R&#233;v&#233;ler case</French>
 		<German>Feld sichtbar</German>
+		<Italian>Reveal Plot</Italian>
 		<Spanish>Revelar casilla</Spanish>
 	</TEXT>
 	<TEXT>
@@ -161,6 +296,7 @@
 		<English>Reveal Submarine</English>
 		<French>R&#233;v&#233;ler sous-marin</French>
 		<German>U-Boote sichtbar</German>
+		<Italian>Reveal Submarine</Italian>
 		<Spanish>Revelar submarinos</Spanish>
 	</TEXT>
 	<TEXT>
@@ -168,11 +304,16 @@
 		<English>Reveal Stealth</English>
 		<French>R&#233;v&#233;ler furtivit&#233;</French>
 		<German>Tarnzerst&#246;rer sichtbar</German>
+		<Italian>Reveal Stealth</Italian>
 		<Spanish>Revelar unidades invisibles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ADD_UNITS</Tag>
 		<English>Add Units</English>
+		<French>Add Units</French>
+		<German>Add Units</German>
+		<Italian>Add Units</Italian>
+		<Spanish>Add Units</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT_DATA</Tag>
@@ -185,15 +326,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_DEFAULT</Tag>
 		<English>Default</English>
+		<French>Default</French>
+		<German>Default</German>
+		<Italian>Default</Italian>
+		<Spanish>Default</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SHOW_HIDDEN</Tag>
 		<English>Show Hidden Options</English>
+		<French>Show Hidden Options</French>
+		<German>Show Hidden Options</German>
+		<Italian>Show Hidden Options</Italian>
+		<Spanish>Show Hidden Options</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SCRIPT_DATA</Tag>
 		<English>Script Data</English>
 		<French>Donn&#233;es Script</French>
+		<German>Script Data</German>
+		<Italian>Script Data</Italian>
 		<Spanish>Datos de script</Spanish>
 	</TEXT>
 	<TEXT>
@@ -201,40 +352,72 @@
 		<English>Start Year</English>
 		<French>Ann&#233;e de d&#233;part</French>
 		<German>Startjahr</German>
+		<Italian>Start Year</Italian>
 		<Spanish>A&#241;o de inicio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GAME_YEAR</Tag>
 		<English>Game Year: %s1</English>
+		<French>Game Year: %s1</French>
+		<German>Game Year: %s1</German>
+		<Italian>Game Year: %s1</Italian>
+		<Spanish>Game Year: %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MAX_TURNS</Tag>
 		<English>Max Turns: %d1</English>
+		<French>Max Turns: %d1</French>
+		<German>Max Turns: %d1</German>
+		<Italian>Max Turns: %d1</Italian>
+		<Spanish>Max Turns: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AI_AUTOPLAY</Tag>
 		<English>AI AutoPlay: %d1</English>
+		<French>AI AutoPlay: %d1</French>
+		<German>AI AutoPlay: %d1</German>
+		<Italian>AI AutoPlay: %d1</Italian>
+		<Spanish>AI AutoPlay: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GAME_TURN</Tag>
 		<English>Game Turn: %d1</English>
+		<French>Game Turn: %d1</French>
+		<German>Game Turn: %d1</German>
+		<Italian>Game Turn: %d1</Italian>
+		<Spanish>Game Turn: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ESTIMATED_END_TURN</Tag>
 		<English>Estimated End Turn: %d1</English>
+		<French>Estimated End Turn: %d1</French>
+		<German>Estimated End Turn: %d1</German>
+		<Italian>Estimated End Turn: %d1</Italian>
+		<Spanish>Estimated End Turn: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MAX_CITY_ELIMINATION</Tag>
 		<English>Max City Elimination: %d1</English>
+		<French>Max City Elimination: %d1</French>
+		<German>Max City Elimination: %d1</German>
+		<Italian>Max City Elimination: %d1</Italian>
+		<Spanish>Max City Elimination: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TARGET_SCORE</Tag>
 		<English>Target Score: %d1</English>
+		<French>Target Score: %d1</French>
+		<German>Target Score: %d1</German>
+		<Italian>Target Score: %d1</Italian>
+		<Spanish>Target Score: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NUKES_EXPLODED</Tag>
 		<English>Nukes Exploded: %d1</English>
+		<French>Nukes Exploded: %d1</French>
 		<German>Explodierte Atomraketen: %d1</German>
+		<Italian>Nukes Exploded: %d1</Italian>
+		<Spanish>Nukes Exploded: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ADD_NEW_PLAYER</Tag>
@@ -247,18 +430,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_AREA_ID</Tag>
 		<English>Area ID</English>
+		<French>Area ID</French>
+		<German>Area ID</German>
+		<Italian>Area ID</Italian>
+		<Spanish>Area ID</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SINGLE_PLOT</Tag>
 		<English>Single Plot</English>
+		<French>Single Plot</French>
+		<German>Single Plot</German>
+		<Italian>Single Plot</Italian>
+		<Spanish>Single Plot</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AREA_PLOTS</Tag>
 		<English>Area Plots</English>
+		<French>Area Plots</French>
+		<German>Area Plots</German>
+		<Italian>Area Plots</Italian>
+		<Spanish>Area Plots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALL_PLOTS</Tag>
 		<English>All Plots</English>
+		<French>All Plots</French>
+		<German>All Plots</German>
+		<Italian>All Plots</Italian>
+		<Spanish>All Plots</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNIT_DATA</Tag>
@@ -273,10 +472,16 @@
 		<English>Damage</English>
 		<French>D&#233;g&#226;ts</French>
 		<German>Schaden</German>
+		<Italian>Damage</Italian>
+		<Spanish>Damage</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CARGO_SPACE</Tag>
 		<English>Cargo</English>
+		<French>Cargo</French>
+		<German>Cargo</German>
+		<Italian>Cargo</Italian>
+		<Spanish>Cargo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVES</Tag>
@@ -321,22 +526,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_DIRECTION</Tag>
 		<English>Direction</English>
+		<French>Direction</French>
 		<German>Blickrichtung</German>
+		<Italian>Direction</Italian>
 		<Spanish>Direcci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_HURRY_ANGER</Tag>
 		<English>Hurry [ICON_UNHAPPY]: %d1</English>
+		<French>Hurry [ICON_UNHAPPY]: %d1</French>
+		<German>Hurry [ICON_UNHAPPY]: %d1</German>
+		<Italian>Hurry [ICON_UNHAPPY]: %d1</Italian>
+		<Spanish>Hurry [ICON_UNHAPPY]: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DEFY_RESOLUTION</Tag>
 		<English>Defy Resolution [ICON_UNHAPPY]: %d1</English>
 		<French>D&#233;fier r&#233;solution [ICON_UNHAPPY]: %d1</French>
+		<German>Defy Resolution [ICON_UNHAPPY]: %d1</German>
+		<Italian>Defy Resolution [ICON_UNHAPPY]: %d1</Italian>
 		<Spanish>Desafiar resoluci&#243;n [ICON_UNHAPPY]: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TEMP_HAPPY</Tag>
 		<English>Temporary [ICON_HAPPY]: %d1</English>
+		<French>Temporary [ICON_HAPPY]: %d1</French>
+		<German>Temporary [ICON_HAPPY]: %d1</German>
+		<Italian>Temporary [ICON_HAPPY]: %d1</Italian>
+		<Spanish>Temporary [ICON_HAPPY]: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DEFENSE</Tag>
@@ -351,26 +568,40 @@
 		<English>Grant Available</English>
 		<French>Accorder disponible</French>
 		<German>Verlehe alle verf&#252;gbaren</German>
+		<Italian>Grant Available</Italian>
+		<Spanish>Grant Available</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_COPY_ALL</Tag>
 		<English>Apply to All %s1</English>
+		<French>Apply to All %s1</French>
+		<German>Apply to All %s1</German>
+		<Italian>Apply to All %s1</Italian>
+		<Spanish>Apply to All %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FREE_SPECIALISTS</Tag>
 		<English>Free Specialists</English>
 		<French>Sp&#233;cialistes gratuits</French>
 		<German>Freie Spezialisten</German>
+		<Italian>Free Specialists</Italian>
+		<Spanish>Free Specialists</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PROGRESS</Tag>
 		<English>Progress: %d1</English>
 		<French>Progr&#232;s: %d1</French>
 		<German>Fortschritt: %d1</German>
+		<Italian>Progress: %d1</Italian>
+		<Spanish>Progress: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GOLDEN_AGE_UNITS</Tag>
 		<English>[ICON_GREATPEOPLE] Required: %d1</English>
+		<French>[ICON_GREATPEOPLE] Required: %d1</French>
+		<German>[ICON_GREATPEOPLE] Required: %d1</German>
+		<Italian>[ICON_GREATPEOPLE] Required: %d1</Italian>
+		<Spanish>[ICON_GREATPEOPLE] Required: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ANARCHY</Tag>
@@ -383,10 +614,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_STATE_RELIGION_UNIT</Tag>
 		<English>[ICON_RELIGION] Unit [ICON_PRODUCTION]: %d1%%</English>
+		<French>[ICON_RELIGION] Unit [ICON_PRODUCTION]: %d1%%</French>
+		<German>[ICON_RELIGION] Unit [ICON_PRODUCTION]: %d1%%</German>
+		<Italian>[ICON_RELIGION] Unit [ICON_PRODUCTION]: %d1%%</Italian>
+		<Spanish>[ICON_RELIGION] Unit [ICON_PRODUCTION]: %d1%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STATE_RELIGION_BUILDING</Tag>
 		<English>[ICON_RELIGION] Building [ICON_PRODUCTION]: %d1%%</English>
+		<French>[ICON_RELIGION] Building [ICON_PRODUCTION]: %d1%%</French>
+		<German>[ICON_RELIGION] Building [ICON_PRODUCTION]: %d1%%</German>
+		<Italian>[ICON_RELIGION] Building [ICON_PRODUCTION]: %d1%%</Italian>
+		<Spanish>[ICON_RELIGION] Building [ICON_PRODUCTION]: %d1%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TEAM_DATA</Tag>
@@ -449,6 +688,8 @@
 		<English>Extra Water Sight</English>
 		<French>Vision suppl&#233;mentaire sur eau</French>
 		<German>Zus&#228;tzliche Sicht &#252;ber Wasser</German>
+		<Italian>Extra Water Sight</Italian>
+		<Spanish>Extra Water Sight</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_BRIDGE_BUILDING</Tag>
@@ -487,6 +728,7 @@
 		<English>Enemy War Weariness: %d1</English>
 		<French>Lassitude de la guerre chez ennemi: %d1</French>
 		<German>Feindliche Kriegsm&#252;digkeit: %d1</German>
+		<Italian>Enemy War Weariness: %d1</Italian>
 		<Spanish>Hast&#237;o b&#233;lico del enemigo: %d1</Spanish>
 	</TEXT>
 	<TEXT>
@@ -494,12 +736,16 @@
 		<English>Guaranteed Eligibility</English>
 		<French>Eligibilit&#233; garantie</French>
 		<German>Teilnahmeberechtigt</German>
+		<Italian>Guaranteed Eligibility</Italian>
 		<Spanish>Elegibilidad garantizada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FEATURE_VARIETY</Tag>
 		<English>Variety: %d1</English>
 		<French>vari&#233;t&#233;: %d1</French>
+		<German>Variety: %d1</German>
+		<Italian>Variety: %d1</Italian>
+		<Spanish>Variety: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UPGRADE_PROGRESS</Tag>
@@ -512,16 +758,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_TRIGGER_EVENT</Tag>
 		<English>Trigger %s1</English>
+		<French>Trigger %s1</French>
+		<German>Trigger %s1</German>
+		<Italian>Trigger %s1</Italian>
+		<Spanish>Trigger %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_LATITUDE</Tag>
 		<English>Latitude: %d1</English>
+		<French>Latitude: %d1</French>
 		<German>Spielraum: %d1</German>
+		<Italian>Latitude: %d1</Italian>
+		<Spanish>Latitude: %d1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ATTITUDE</Tag>
 		<English>Attitude</English>
+		<French>Attitude</French>
 		<German>Verh&#228;ltnis</German>
+		<Italian>Attitude</Italian>
 		<Spanish>Actitud</Spanish>
 	</TEXT>
 	<TEXT>
@@ -535,7 +790,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_MODIFIER</Tag>
 		<English>Modifier</English>
+		<French>Modifier</French>
 		<German>Multiplikator</German>
+		<Italian>Modifier</Italian>
 		<Spanish>Modificador</Spanish>
 	</TEXT>
 	<TEXT>
@@ -543,27 +800,40 @@
 		<English>Counter Espionage</English>
 		<French>Contre-espionnage</French>
 		<German>Spionagepunkte</German>
+		<Italian>Counter Espionage</Italian>
+		<Spanish>Counter Espionage</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MEMORY</Tag>
 		<English>Memory</English>
 		<French>M&#233;moire</French>
 		<German>Erinnerung</German>
+		<Italian>Memory</Italian>
+		<Spanish>Memory</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_KILL</Tag>
 		<English>Kill</English>
 		<French>Tuer</French>
 		<German>L&#246;schen</German>
+		<Italian>Kill</Italian>
 		<Spanish>Matar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ENABLE_CIV</Tag>
 		<English>This civ is enabled. (Click to disable)</English>
+		<French>This civ is enabled. (Click to disable)</French>
+		<German>This civ is enabled. (Click to disable)</German>
+		<Italian>This civ is enabled. (Click to disable)</Italian>
+		<Spanish>This civ is enabled. (Click to disable)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DISABLE_CIV</Tag>
 		<English>This civ is disabled. (Click to enable)</English>
+		<French>This civ is disabled. (Click to enable)</French>
+		<German>This civ is disabled. (Click to enable)</German>
+		<Italian>This civ is disabled. (Click to enable)</Italian>
+		<Spanish>This civ is disabled. (Click to enable)</Spanish>
 	</TEXT>
 
 <!-- Sevopedia_CIV4GameText -->
@@ -571,11 +841,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_SEVOPEDIA_TITLE</Tag>
 		<English>SEVOPEDIA</English>
+		<French>SEVOPEDIA</French>
+		<German>SEVOPEDIA</German>
+		<Italian>SEVOPEDIA</Italian>
+		<Spanish>SEVOPEDIA</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_SCREEN_INDEX</Tag>
 		<English>Index</English>
-		<Italian>[SPACE][SPACE][SPACE][SPACE][SPACE]Indice</Italian>
+		<French>Index</French>
+		<German>Index</German>
+		<Italian>Indice</Italian>
 		<Spanish>Indice</Spanish>
 	</TEXT>
 	<TEXT>
@@ -589,23 +865,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_UPGRADES</Tag>
 		<English>Unit Upgrades</English>
-		<French>Am&#233;liorations des Unit&#233;s</French>
+		<French>Am&#233;liorations des unit&#233;s</French>
 		<German>Modernisierungen</German>
 		<Italian>Avanzamenti</Italian>
+		<Spanish>Unit Upgrades</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION_TREE</Tag>
 		<English>Promotion Tree</English>
-		<French>Arborescence des Promotions</French>
+		<French>Arborescence des promotions</French>
 		<German>Bef&#246;rderungsbaum</German>
 		<Italian>Albero Promoz.</Italian>
+		<Spanish>Promotion Tree</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS</Tag>
 		<English>National Wonders</English>
-		<French>Merveilles Nationales</French>
+		<French>Merveilles nationales</French>
 		<German>Nationalwunder</German>
 		<Italian>Merav. Naz.</Italian>
+		<Spanish>National Wonders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_WONDERS</Tag>
@@ -613,6 +892,7 @@
 		<French>Merveilles Mondiales</French>
 		<German>Weltwunder</German>
 		<Italian>Grandi Merav.</Italian>
+		<Spanish>Great Wonders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_NEW</Tag>
@@ -620,6 +900,7 @@
 		<French>Conceptes BTS</French>
 		<German>Beyond the Sword-Konzepte</German>
 		<Italian>Concetti di BTS</Italian>
+		<Spanish>BTS Concepts</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIQUE_BUILDINGS</Tag>
@@ -627,6 +908,7 @@
 		<French>B&#226;timents Uniques</French>
 		<German>Einzigartige Geb&#228;ude</German>
 		<Italian>Edifici Unici</Italian>
+		<Spanish>Unique Buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_FAV_CIVIC_AND_RELIGION</Tag>
@@ -642,26 +924,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HIDE_INACTIVE</Tag>
 		<English>Hide Inactive</English>
+		<French>Hide Inactive</French>
+		<German>Hide Inactive</German>
+		<Italian>Hide Inactive</Italian>
+		<Spanish>Hide Inactive</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_ROUTE</Tag>
 		<English>Routes</English>
+		<French>Routes</French>
+		<German>Routes</German>
+		<Italian>Routes</Italian>
+		<Spanish>Routes</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_DOMAIN</Tag>
 		<English>Domain</English>
+		<French>Domain</French>
+		<German>Domain</German>
+		<Italian>Domain</Italian>
+		<Spanish>Domain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_NATIONAL_STUFF</Tag>
 		<English>National %s1</English>
+		<French>National %s1</French>
+		<German>National %s1</German>
+		<Italian>National %s1</Italian>
+		<Spanish>National %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_TEAM_STUFF</Tag>
 		<English>Team %s1</English>
+		<French>Team %s1</French>
+		<German>Team %s1</German>
+		<Italian>Team %s1</Italian>
+		<Spanish>Team %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_WORLD_STUFF</Tag>
 		<English>World %s1</English>
+		<French>World %s1</French>
+		<German>World %s1</German>
+		<Italian>World %s1</Italian>
+		<Spanish>World %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_NON_COMBAT</Tag>
@@ -675,226 +981,570 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_MAPS</Tag>
 		<English>Stability Maps</English>
+		<French>Stability Maps</French>
+		<German>Stability Maps</German>
+		<Italian>Stability Maps</Italian>
+		<Spanish>Stability Maps</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPAWN_MAPS</Tag>
 		<English>Flipzone Maps</English>
+		<French>Flipzone Maps</French>
+		<German>Flipzone Maps</German>
+		<Italian>Flipzone Maps</Italian>
+		<Spanish>Flipzone Maps</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IN_SPAWN</Tag>
 		<English>Flipzone</English>
+		<French>Flipzone</French>
+		<German>Flipzone</German>
+		<Italian>Flipzone</Italian>
+		<Spanish>Flipzone</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CORE</Tag>
 		<English>Core</English>
+		<French>Core</French>
+		<German>Core</German>
+		<Italian>Core</Italian>
+		<Spanish>Core</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SETTLERVALUE</Tag>
 		<English>Settlervalue</English>
+		<French>Settlervalue</French>
+		<German>Settlervalue</German>
+		<Italian>Settlervalue</Italian>
+		<Spanish>Settlervalue</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EXTENDED</Tag>
 		<English>Reborn</English>
+		<French>Reborn</French>
+		<German>Reborn</German>
+		<Italian>Reborn</Italian>
+		<Spanish>Reborn</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NA</Tag>
 		<English>N/A</English>
+		<French>N/A</French>
+		<German>N/A</German>
+		<Italian>N/A</Italian>
+		<Spanish>N/A</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FLIP</Tag>
 		<English>Flip</English>
+		<French>Flip</French>
+		<German>Flip</German>
+		<Italian>Flip</Italian>
+		<Spanish>Flip</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SET_VALUE</Tag>
 		<English>Set Value</English>
+		<French>Set Value</French>
+		<German>Set Value</German>
+		<Italian>Set Value</Italian>
+		<Spanish>Set Value</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_INPUT</Tag>
 		<English>Keyboard input</English>
+		<French>Keyboard input</French>
+		<German>Keyboard input</German>
+		<Italian>Keyboard input</Italian>
+		<Spanish>Keyboard input</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EXPORT</Tag>
 		<English>Export</English>
+		<French>Export</French>
+		<German>Export</German>
+		<Italian>Export</Italian>
+		<Spanish>Export</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REVERT_CHANGES</Tag>
 		<English>Reset</English>
+		<French>Reset</French>
+		<German>Reset</German>
+		<Italian>Reset</Italian>
+		<Spanish>Reset</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
 		<English>Warvalue</English>
+		<French>Warvalue</French>
+		<German>Warvalue</German>
+		<Italian>Warvalue</Italian>
+		<Spanish>Warvalue</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP</Tag>
 		<English>Religion values</English>
+		<French>Religion values</French>
+		<German>Religion values</German>
+		<Italian>Religion values</Italian>
+		<Spanish>Religion values</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REGIONMAP</Tag>
 		<English>Region IDs</English>
+		<French>Region IDs</French>
+		<German>Region IDs</German>
+		<Italian>Region IDs</Italian>
+		<Spanish>Region IDs</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_MINORITY</Tag>
 		<English>Minority</English>
+		<French>Minority</French>
+		<German>Minority</German>
+		<Italian>Minority</Italian>
+		<Spanish>Minority</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_PERIPHERY</Tag>
 		<English>Periphery</English>
+		<French>Periphery</French>
+		<German>Periphery</German>
+		<Italian>Periphery</Italian>
+		<Spanish>Periphery</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_HISTORICAL</Tag>
 		<English>Historical</English>
+		<French>Historical</French>
+		<German>Historical</German>
+		<Italian>Historical</Italian>
+		<Spanish>Historical</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RELIGIONMAP_CORE</Tag>
 		<English>Core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_STABILITY</Tag>
-		<English>No Stability (all civs)</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_STABILITY_HELP</Tag>
-		<English>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY</Tag>
-		<English>No collapsing Human Player</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_HELP</Tag>
-		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</English>
+		<French>Core</French>
+		<German>Core</German>
+		<Italian>Core</Italian>
+		<Spanish>Core</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV</Tag>
 		<English>Ignore AI UHV Checks</English>
+		<French>Ignore AI UHV Checks</French>
+		<German>Ignore AI UHV Checks</German>
+		<Italian>Ignore AI UHV Checks</Italian>
+		<Spanish>Ignore AI UHV Checks</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV_HELP</Tag>
 		<English>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</English>
+		<French>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</French>
+		<German>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</German>
+		<Italian>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</Italian>
+		<Spanish>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING</Tag>
 		<English>Unlimited Civ Switching</English>
+		<French>Unlimited Civ Switching</French>
+		<German>Unlimited Civ Switching</German>
+		<Italian>Unlimited Civ Switching</Italian>
+		<Spanish>Unlimited Civ Switching</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING_HELP</Tag>
 		<English>Allows the human player to switch multiple times.</English>
+		<French>Allows the human player to switch multiple times.</French>
+		<German>Allows the human player to switch multiple times.</German>
+		<Italian>Allows the human player to switch multiple times.</Italian>
+		<Spanish>Allows the human player to switch multiple times.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALREADY_SWITCHED</Tag>
 		<English>Already Switched Civ</English>
+		<French>Already Switched Civ</French>
+		<German>Already Switched Civ</German>
+		<Italian>Already Switched Civ</Italian>
+		<Spanish>Already Switched Civ</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALREADY_SWITCHED_HELP</Tag>
 		<English>Variable which stores if the player has already switched. (Red means the player CAN still switch)</English>
+		<French>Variable which stores if the player has already switched. (Red means the player CAN still switch)</French>
+		<German>Variable which stores if the player has already switched. (Red means the player CAN still switch)</German>
+		<Italian>Variable which stores if the player has already switched. (Red means the player CAN still switch)</Italian>
+		<Spanish>Variable which stores if the player has already switched. (Red means the player CAN still switch)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_CONGRESS</Tag>
 		<English>No congresses</English>
+		<French>No congresses</French>
+		<German>No congresses</German>
+		<Italian>No congresses</Italian>
+		<Spanish>No congresses</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_CONGRESS_HELP</Tag>
 		<English>Disables congresses. Both normal and war congresses.</English>
+		<French>Disables congresses. Both normal and war congresses.</French>
+		<German>Disables congresses. Both normal and war congresses.</German>
+		<Italian>Disables congresses. Both normal and war congresses.</Italian>
+		<Spanish>Disables congresses. Both normal and war congresses.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_PLAGUE</Tag>
 		<English>No plagues</English>
+		<French>No plagues</French>
+		<German>No plagues</German>
+		<Italian>No plagues</Italian>
+		<Spanish>No plagues</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_PLAGUE_HELP</Tag>
 		<English>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</English>
+		<French>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</French>
+		<German>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</German>
+		<Italian>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</Italian>
+		<Spanish>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CONGRESS_TURNS</Tag>
 		<English>Congress turns</English>
+		<French>Congress turns</French>
+		<German>Congress turns</German>
+		<Italian>Congress turns</Italian>
+		<Spanish>Congress turns</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CONGRESS_TURNS_HELP</Tag>
 		<English>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</English>
+		<French>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</French>
+		<German>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</German>
+		<Italian>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</Italian>
+		<Spanish>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SECONDARY_CIVS</Tag>
 		<English>Enabled secondary civilizations</English>
+		<French>Enabled secondary civilizations</French>
+		<German>Enabled secondary civilizations</German>
+		<Italian>Enabled secondary civilizations</Italian>
+		<Spanish>Enabled secondary civilizations</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RFC_OPTIONS</Tag>
 		<English>RFC DoC options</English>
+		<French>RFC DoC options</French>
+		<German>RFC DoC options</German>
+		<Italian>RFC DoC options</Italian>
+		<Spanish>RFC DoC options</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RFC_VARIABLES</Tag>
 		<English>Stored variables</English>
+		<French>Stored variables</French>
+		<German>Stored variables</German>
+		<Italian>Stored variables</Italian>
+		<Spanish>Stored variables</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_OPTIONS_ENABLE_CIV</Tag>
 		<English>Enable/disable civ</English>
+		<French>Enable/disable civ</French>
+		<German>Enable/disable civ</German>
+		<Italian>Enable/disable civ</Italian>
+		<Spanish>Enable/disable civ</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STOREDDATA</Tag>
 		<English>StoredData</English>
+		<French>StoredData</French>
+		<German>StoredData</German>
+		<Italian>StoredData</Italian>
+		<Spanish>StoredData</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RESTORE_SD_BACKUP</Tag>
 		<English>Restore backup</English>
+		<French>Restore backup</French>
+		<German>Restore backup</German>
+		<Italian>Restore backup</Italian>
+		<Spanish>Restore backup</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_RESTORE_SD_BACKUP_HELP</Tag>
 		<English>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</English>
+		<French>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</French>
+		<German>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</German>
+		<Italian>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</Italian>
+		<Spanish>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CREATE_SD_BACKUP</Tag>
 		<English>Create backup</English>
+		<French>Create backup</French>
+		<German>Create backup</German>
+		<Italian>Create backup</Italian>
+		<Spanish>Create backup</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CREATE_SD_BACKUP_HELP</Tag>
 		<English>Saves the current state of the StoredData.</English>
+		<French>Saves the current state of the StoredData.</French>
+		<German>Saves the current state of the StoredData.</German>
+		<Italian>Saves the current state of the StoredData.</Italian>
+		<Spanish>Saves the current state of the StoredData.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_GLOBAL</Tag>
 		<English>Global data</English>
+		<French>Global data</French>
+		<German>Global data</German>
+		<Italian>Global data</Italian>
+		<Spanish>Global data</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CIVS</Tag>
 		<English>Civilization data</English>
+		<French>Civilization data</French>
+		<German>Civilization data</German>
+		<Italian>Civilization data</Italian>
+		<Spanish>Civilization data</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_STOREDDATA_WARNING</Tag>
 		<English>Be careful with your changes! Any change can seriously effect your game!</English>
+		<French>Be careful with your changes! Any change can seriously effect your game!</French>
+		<German>Be careful with your changes! Any change can seriously effect your game!</German>
+		<Italian>Be careful with your changes! Any change can seriously effect your game!</Italian>
+		<Spanish>Be careful with your changes! Any change can seriously effect your game!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CHANGE</Tag>
 		<English>Click to change</English>
+		<French>Click to change</French>
+		<German>Click to change</German>
+		<Italian>Click to change</Italian>
+		<Spanish>Click to change</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SELECT</Tag>
 		<English>Click to select</English>
+		<French>Click to select</French>
+		<German>Click to select</German>
+		<Italian>Click to select</Italian>
+		<Spanish>Click to select</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CANNOT_CHANGE</Tag>
 		<English>Cannot change this</English>
+		<French>Cannot change this</French>
+		<German>Cannot change this</German>
+		<Italian>Cannot change this</Italian>
+		<Spanish>Cannot change this</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DOCMAPS</Tag>
 		<English>DoC Maps</English>
+		<French>DoC Maps</French>
+		<German>DoC Maps</German>
+		<Italian>DoC Maps</Italian>
+		<Spanish>DoC Maps</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP</Tag>
 		<English>Move large portions of map at once</English>
+		<French>Move large portions of map at once</French>
+		<German>Move large portions of map at once</German>
+		<Italian>Move large portions of map at once</Italian>
+		<Spanish>Move large portions of map at once</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET0</Tag>
 		<English>Do not change old area</English>
+		<French>Do not change old area</French>
+		<German>Do not change old area</German>
+		<Italian>Do not change old area</Italian>
+		<Spanish>Do not change old area</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET1</Tag>
 		<English>Turn old area to water tiles</English>
+		<French>Turn old area to water tiles</French>
+		<German>Turn old area to water tiles</German>
+		<Italian>Turn old area to water tiles</Italian>
+		<Spanish>Turn old area to water tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MOVEMAP_RESET2</Tag>
 		<English>Turn old area to grass tiles</English>
+		<French>Turn old area to grass tiles</French>
+		<German>Turn old area to grass tiles</German>
+		<Italian>Turn old area to grass tiles</Italian>
+		<Spanish>Turn old area to grass tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FLIPAI</Tag>
 		<English>AI only flipzone</English>
+		<French>AI only flipzone</French>
+		<German>AI only flipzone</German>
+		<Italian>AI only flipzone</Italian>
+		<Spanish>AI only flipzone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VICTORYMAP</Tag>
+		<English>Victory Maps (view only)</English>
+		<French>Victory Maps (view only)</French>
+		<German>Victory Maps (view only)</German>
+		<Italian>Victory Maps (view only)</Italian>
+		<Spanish>Victory Maps (view only)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VICTORYMAP_RECTANGLE</Tag>
+		<English>Show full rectangles</English>
+		<French>Show full rectangles</French>
+		<German>Show full rectangles</German>
+		<Italian>Show full rectangles</Italian>
+		<Spanish>Show full rectangles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER</Tag>
+		<English>Area Exporter</English>
+		<French>Area Exporter</French>
+		<German>Area Exporter</German>
+		<Italian>Area Exporter</Italian>
+		<Spanish>Area Exporter</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_WATER</Tag>
+		<English>Add water tiles to lExceptions</English>
+		<French>Add water tiles to lExceptions</French>
+		<German>Add water tiles to lExceptions</German>
+		<Italian>Add water tiles to lExceptions</Italian>
+		<Spanish>Add water tiles to lExceptions</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_PEAKS</Tag>
+		<English>Add peak tiles to lExceptions</English>
+		<French>Add peak tiles to lExceptions</French>
+		<German>Add peak tiles to lExceptions</German>
+		<Italian>Add peak tiles to lExceptions</Italian>
+		<Spanish>Add peak tiles to lExceptions</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_CLICK</Tag>
+		<English>Paint</English>
+		<French>Paint</French>
+		<German>Paint</German>
+		<Italian>Paint</Italian>
+		<Spanish>Paint</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREA_EXPORTER_TLBR</Tag>
+		<English>TL-BR</English>
+		<French>TL-BR</French>
+		<German>TL-BR</German>
+		<Italian>TL-BR</Italian>
+		<Spanish>TL-BR</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TOOL_HELP</Tag>
+		<English>Open tool help menu</English>
+		<French>Open tool help menu</French>
+		<German>Open tool help menu</German>
+		<Italian>Open tool help menu</Italian>
+		<Spanish>Open tool help menu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_FLIPMAP_HELP</Tag>
+		<English>The flipzone tool is created to view and export the flipzone of a civ. All changes made in the WB will have NO ingame effect. The changes first need to be exported and applied to the Python files to have an effect.[NEWLINE][NEWLINE]Left clicking on tiles will add them to the flipzone. Right clicking will remove them from the flipzone. Tiles can be made AI only by left clicking on them when the "AI only" option is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Spawn plot[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: Flipzone[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: AI only flipzone[NEWLINE][COLOR_PLAYER_DARK_DARK_GREEN]Dark green[COLOR_REVERT]: Special additional flip plots (currently only used for additional Canadian cities)[NEWLINE][NEWLINE]Changes can be exported by clicking on the export button. One can export the flipzones of all civs by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</English>
+		<French>The flipzone tool is created to view and export the flipzone of a civ. All changes made in the WB will have NO ingame effect. The changes first need to be exported and applied to the Python files to have an effect.[NEWLINE][NEWLINE]Left clicking on tiles will add them to the flipzone. Right clicking will remove them from the flipzone. Tiles can be made AI only by left clicking on them when the "AI only" option is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Spawn plot[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: Flipzone[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: AI only flipzone[NEWLINE][COLOR_PLAYER_DARK_DARK_GREEN]Dark green[COLOR_REVERT]: Special additional flip plots (currently only used for additional Canadian cities)[NEWLINE][NEWLINE]Changes can be exported by clicking on the export button. One can export the flipzones of all civs by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</French>
+		<German>The flipzone tool is created to view and export the flipzone of a civ. All changes made in the WB will have NO ingame effect. The changes first need to be exported and applied to the Python files to have an effect.[NEWLINE][NEWLINE]Left clicking on tiles will add them to the flipzone. Right clicking will remove them from the flipzone. Tiles can be made AI only by left clicking on them when the "AI only" option is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Spawn plot[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: Flipzone[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: AI only flipzone[NEWLINE][COLOR_PLAYER_DARK_DARK_GREEN]Dark green[COLOR_REVERT]: Special additional flip plots (currently only used for additional Canadian cities)[NEWLINE][NEWLINE]Changes can be exported by clicking on the export button. One can export the flipzones of all civs by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</German>
+		<Italian>The flipzone tool is created to view and export the flipzone of a civ. All changes made in the WB will have NO ingame effect. The changes first need to be exported and applied to the Python files to have an effect.[NEWLINE][NEWLINE]Left clicking on tiles will add them to the flipzone. Right clicking will remove them from the flipzone. Tiles can be made AI only by left clicking on them when the "AI only" option is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Spawn plot[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: Flipzone[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: AI only flipzone[NEWLINE][COLOR_PLAYER_DARK_DARK_GREEN]Dark green[COLOR_REVERT]: Special additional flip plots (currently only used for additional Canadian cities)[NEWLINE][NEWLINE]Changes can be exported by clicking on the export button. One can export the flipzones of all civs by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</Italian>
+		<Spanish>The flipzone tool is created to view and export the flipzone of a civ. All changes made in the WB will have NO ingame effect. The changes first need to be exported and applied to the Python files to have an effect.[NEWLINE][NEWLINE]Left clicking on tiles will add them to the flipzone. Right clicking will remove them from the flipzone. Tiles can be made AI only by left clicking on them when the "AI only" option is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Spawn plot[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: Flipzone[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: AI only flipzone[NEWLINE][COLOR_PLAYER_DARK_DARK_GREEN]Dark green[COLOR_REVERT]: Special additional flip plots (currently only used for additional Canadian cities)[NEWLINE][NEWLINE]Changes can be exported by clicking on the export button. One can export the flipzones of all civs by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_COREMAP_HELP</Tag>
+		<English>The core editor tool is created to view, edit and export the core of a civ.[NEWLINE][NEWLINE]Left clicking on non-core tiles will add them tiles to the core.[NEWLINE]Right clicking on core tiles will remove them from the core.[NEWLINE]The reset button will revert the core to the default core defined in Python. Holding the alt-key when clicking the reset button will revert the cores of all civs.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old core defined in Python. You have to export the new core and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The core maps will be exported in the TL-BR format with a list of exceptions. (The latter only if applicable.) There is an autodection if the core has changed or not. One can force the game to export the core area by holding the shift-key when clicking on the export button. The cores of all civs can be exported at once by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</English>
+		<French>The core editor tool is created to view, edit and export the core of a civ.[NEWLINE][NEWLINE]Left clicking on non-core tiles will add them tiles to the core.[NEWLINE]Right clicking on core tiles will remove them from the core.[NEWLINE]The reset button will revert the core to the default core defined in Python. Holding the alt-key when clicking the reset button will revert the cores of all civs.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old core defined in Python. You have to export the new core and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The core maps will be exported in the TL-BR format with a list of exceptions. (The latter only if applicable.) There is an autodection if the core has changed or not. One can force the game to export the core area by holding the shift-key when clicking on the export button. The cores of all civs can be exported at once by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</French>
+		<German>The core editor tool is created to view, edit and export the core of a civ.[NEWLINE][NEWLINE]Left clicking on non-core tiles will add them tiles to the core.[NEWLINE]Right clicking on core tiles will remove them from the core.[NEWLINE]The reset button will revert the core to the default core defined in Python. Holding the alt-key when clicking the reset button will revert the cores of all civs.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old core defined in Python. You have to export the new core and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The core maps will be exported in the TL-BR format with a list of exceptions. (The latter only if applicable.) There is an autodection if the core has changed or not. One can force the game to export the core area by holding the shift-key when clicking on the export button. The cores of all civs can be exported at once by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</German>
+		<Italian>The core editor tool is created to view, edit and export the core of a civ.[NEWLINE][NEWLINE]Left clicking on non-core tiles will add them tiles to the core.[NEWLINE]Right clicking on core tiles will remove them from the core.[NEWLINE]The reset button will revert the core to the default core defined in Python. Holding the alt-key when clicking the reset button will revert the cores of all civs.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old core defined in Python. You have to export the new core and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The core maps will be exported in the TL-BR format with a list of exceptions. (The latter only if applicable.) There is an autodection if the core has changed or not. One can force the game to export the core area by holding the shift-key when clicking on the export button. The cores of all civs can be exported at once by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</Italian>
+		<Spanish>The core editor tool is created to view, edit and export the core of a civ.[NEWLINE][NEWLINE]Left clicking on non-core tiles will add them tiles to the core.[NEWLINE]Right clicking on core tiles will remove them from the core.[NEWLINE]The reset button will revert the core to the default core defined in Python. Holding the alt-key when clicking the reset button will revert the cores of all civs.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old core defined in Python. You have to export the new core and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The core maps will be exported in the TL-BR format with a list of exceptions. (The latter only if applicable.) There is an autodection if the core has changed or not. One can force the game to export the core area by holding the shift-key when clicking on the export button. The cores of all civs can be exported at once by holding the alt-key when clicking the export button. The exported areas should be copy-pasted to Areas.py.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SETTLERMAP_HELP</Tag>
+		<English>The settlermap editor tool is created to view, edit and export the settlervalues of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the settlervalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (20).[NEWLINE]The reset button will revert all settlervalues to the default values of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the settlervalues of all civs.[NEWLINE][NEWLINE]The higher the settlervalue, the more likely the AI will settle on those tiles. All tiles with a settervalue 90 or higher are considered historical by the game. The AI is forbidden to settle on tiles with a settlervalue of 3.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old settlervalues defined in Python. You have to export the new settlervalues and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The settlervalue maps will be exported value map format. There is an autodection if the settlervalues have changed or not. One can force the game to export the settlervalue map by holding the shift-key when clicking on the export button. The settlervalues of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Settlermaps.py.</English>
+		<French>The settlermap editor tool is created to view, edit and export the settlervalues of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the settlervalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (20).[NEWLINE]The reset button will revert all settlervalues to the default values of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the settlervalues of all civs.[NEWLINE][NEWLINE]The higher the settlervalue, the more likely the AI will settle on those tiles. All tiles with a settervalue 90 or higher are considered historical by the game. The AI is forbidden to settle on tiles with a settlervalue of 3.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old settlervalues defined in Python. You have to export the new settlervalues and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The settlervalue maps will be exported value map format. There is an autodection if the settlervalues have changed or not. One can force the game to export the settlervalue map by holding the shift-key when clicking on the export button. The settlervalues of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Settlermaps.py.</French>
+		<German>The settlermap editor tool is created to view, edit and export the settlervalues of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the settlervalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (20).[NEWLINE]The reset button will revert all settlervalues to the default values of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the settlervalues of all civs.[NEWLINE][NEWLINE]The higher the settlervalue, the more likely the AI will settle on those tiles. All tiles with a settervalue 90 or higher are considered historical by the game. The AI is forbidden to settle on tiles with a settlervalue of 3.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old settlervalues defined in Python. You have to export the new settlervalues and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The settlervalue maps will be exported value map format. There is an autodection if the settlervalues have changed or not. One can force the game to export the settlervalue map by holding the shift-key when clicking on the export button. The settlervalues of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Settlermaps.py.</German>
+		<Italian>The settlermap editor tool is created to view, edit and export the settlervalues of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the settlervalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (20).[NEWLINE]The reset button will revert all settlervalues to the default values of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the settlervalues of all civs.[NEWLINE][NEWLINE]The higher the settlervalue, the more likely the AI will settle on those tiles. All tiles with a settervalue 90 or higher are considered historical by the game. The AI is forbidden to settle on tiles with a settlervalue of 3.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old settlervalues defined in Python. You have to export the new settlervalues and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The settlervalue maps will be exported value map format. There is an autodection if the settlervalues have changed or not. One can force the game to export the settlervalue map by holding the shift-key when clicking on the export button. The settlervalues of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Settlermaps.py.</Italian>
+		<Spanish>The settlermap editor tool is created to view, edit and export the settlervalues of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the settlervalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (20).[NEWLINE]The reset button will revert all settlervalues to the default values of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the settlervalues of all civs.[NEWLINE][NEWLINE]The higher the settlervalue, the more likely the AI will settle on those tiles. All tiles with a settervalue 90 or higher are considered historical by the game. The AI is forbidden to settle on tiles with a settlervalue of 3.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old settlervalues defined in Python. You have to export the new settlervalues and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical (settlervalue >= 90)[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Contested (historical and in foreign core)[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: Foreign core[NEWLINE][COLOR_PLAYER_LIGHT_PURPLE]Light Purple[COLOR_REVERT]: Forbidden for AI to settle (settlervalue = 3)[NEWLINE][NEWLINE]Exporting:[NEWLINE]The settlervalue maps will be exported value map format. There is an autodection if the settlervalues have changed or not. One can force the game to export the settlervalue map by holding the shift-key when clicking on the export button. The settlervalues of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Settlermaps.py.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_WARMAP_HELP</Tag>
+		<English>The warmap editor tool is created to view, edit and export the warmap of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the warvalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (0).[NEWLINE]The reset button will revert the warmap to the default map of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the warmaps of all civs.[NEWLINE][NEWLINE]The higher the warvalue, the more likely the AI will try to conquer those tiles.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old warmaps defined in Python. You have to export the new warmaps and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: 2[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: 4[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: 6[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: 8[NEWLINE][COLOR_PLAYER_DARK_GREEN]Dark green[COLOR_REVERT]: 10[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: 12 or higher[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the warvalues have changed or not. One can force the game to export the warmap by holding the shift-key when clicking on the export button. The warmaps of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Warmaps.py.</English>
+		<French>The warmap editor tool is created to view, edit and export the warmap of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the warvalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (0).[NEWLINE]The reset button will revert the warmap to the default map of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the warmaps of all civs.[NEWLINE][NEWLINE]The higher the warvalue, the more likely the AI will try to conquer those tiles.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old warmaps defined in Python. You have to export the new warmaps and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: 2[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: 4[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: 6[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: 8[NEWLINE][COLOR_PLAYER_DARK_GREEN]Dark green[COLOR_REVERT]: 10[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: 12 or higher[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the warvalues have changed or not. One can force the game to export the warmap by holding the shift-key when clicking on the export button. The warmaps of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Warmaps.py.</French>
+		<German>The warmap editor tool is created to view, edit and export the warmap of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the warvalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (0).[NEWLINE]The reset button will revert the warmap to the default map of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the warmaps of all civs.[NEWLINE][NEWLINE]The higher the warvalue, the more likely the AI will try to conquer those tiles.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old warmaps defined in Python. You have to export the new warmaps and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: 2[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: 4[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: 6[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: 8[NEWLINE][COLOR_PLAYER_DARK_GREEN]Dark green[COLOR_REVERT]: 10[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: 12 or higher[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the warvalues have changed or not. One can force the game to export the warmap by holding the shift-key when clicking on the export button. The warmaps of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Warmaps.py.</German>
+		<Italian>The warmap editor tool is created to view, edit and export the warmap of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the warvalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (0).[NEWLINE]The reset button will revert the warmap to the default map of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the warmaps of all civs.[NEWLINE][NEWLINE]The higher the warvalue, the more likely the AI will try to conquer those tiles.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old warmaps defined in Python. You have to export the new warmaps and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: 2[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: 4[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: 6[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: 8[NEWLINE][COLOR_PLAYER_DARK_GREEN]Dark green[COLOR_REVERT]: 10[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: 12 or higher[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the warvalues have changed or not. One can force the game to export the warmap by holding the shift-key when clicking on the export button. The warmaps of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Warmaps.py.</Italian>
+		<Spanish>The warmap editor tool is created to view, edit and export the warmap of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the warvalue of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the settlervalue to the default value (0).[NEWLINE]The reset button will revert the warmap to the default map of the civ defined in Python. Holding the alt-key when clicking the reset button will revert the warmaps of all civs.[NEWLINE][NEWLINE]The higher the warvalue, the more likely the AI will try to conquer those tiles.[NEWLINE][NEWLINE]All changes made to the core in the WB are applied immediately to that savegame. But a new game starts with the old warmaps defined in Python. You have to export the new warmaps and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_RED]Red[COLOR_REVERT]: 2[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: 4[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: 6[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: 8[NEWLINE][COLOR_PLAYER_DARK_GREEN]Dark green[COLOR_REVERT]: 10[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: 12 or higher[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the warvalues have changed or not. One can force the game to export the warmap by holding the shift-key when clicking on the export button. The warmaps of all civs can be exported at once by holding the alt-key when clicking the export button. The exported maps should be copy-pasted to Warmaps.py.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGIONMAP_HELP</Tag>
+		<English>The religionmap editor tool is created toview the religion maps of a religion.[NEWLINE][NEWLINE]Left clicking on a tile will set the spreadfactor of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the spreadfactor to the default value (none).[NEWLINE]The reset button will revert the spreadfactor of the selected religion of all tiles to the default value defined in Python. Holding the alt-key when clicking the reset button will revert the spreadfactors of all religions.[NEWLINE][NEWLINE]All changes made to the spreadfactors in the WB are applied immediately to that savegame. But a new game starts with the old spreadfactors defined in Python. You have to manually edit the spreadfactors to effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Periphery[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: Minority[NEWLINE][NEWLINE]Exporting:[NEWLINE]The religionmaps cannot be exported, because the spreadfactors are linked to the regions instead of individual tiles. Manual changes should be made in RegionMap.py.</English>
+		<French>The religionmap editor tool is created toview the religion maps of a religion.[NEWLINE][NEWLINE]Left clicking on a tile will set the spreadfactor of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the spreadfactor to the default value (none).[NEWLINE]The reset button will revert the spreadfactor of the selected religion of all tiles to the default value defined in Python. Holding the alt-key when clicking the reset button will revert the spreadfactors of all religions.[NEWLINE][NEWLINE]All changes made to the spreadfactors in the WB are applied immediately to that savegame. But a new game starts with the old spreadfactors defined in Python. You have to manually edit the spreadfactors to effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Periphery[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: Minority[NEWLINE][NEWLINE]Exporting:[NEWLINE]The religionmaps cannot be exported, because the spreadfactors are linked to the regions instead of individual tiles. Manual changes should be made in RegionMap.py.</French>
+		<German>The religionmap editor tool is created toview the religion maps of a religion.[NEWLINE][NEWLINE]Left clicking on a tile will set the spreadfactor of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the spreadfactor to the default value (none).[NEWLINE]The reset button will revert the spreadfactor of the selected religion of all tiles to the default value defined in Python. Holding the alt-key when clicking the reset button will revert the spreadfactors of all religions.[NEWLINE][NEWLINE]All changes made to the spreadfactors in the WB are applied immediately to that savegame. But a new game starts with the old spreadfactors defined in Python. You have to manually edit the spreadfactors to effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Periphery[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: Minority[NEWLINE][NEWLINE]Exporting:[NEWLINE]The religionmaps cannot be exported, because the spreadfactors are linked to the regions instead of individual tiles. Manual changes should be made in RegionMap.py.</German>
+		<Italian>The religionmap editor tool is created toview the religion maps of a religion.[NEWLINE][NEWLINE]Left clicking on a tile will set the spreadfactor of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the spreadfactor to the default value (none).[NEWLINE]The reset button will revert the spreadfactor of the selected religion of all tiles to the default value defined in Python. Holding the alt-key when clicking the reset button will revert the spreadfactors of all religions.[NEWLINE][NEWLINE]All changes made to the spreadfactors in the WB are applied immediately to that savegame. But a new game starts with the old spreadfactors defined in Python. You have to manually edit the spreadfactors to effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Periphery[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: Minority[NEWLINE][NEWLINE]Exporting:[NEWLINE]The religionmaps cannot be exported, because the spreadfactors are linked to the regions instead of individual tiles. Manual changes should be made in RegionMap.py.</Italian>
+		<Spanish>The religionmap editor tool is created toview the religion maps of a religion.[NEWLINE][NEWLINE]Left clicking on a tile will set the spreadfactor of that tile to the preset value.[NEWLINE]Right clicking on a tile will set the spreadfactor to the default value (none).[NEWLINE]The reset button will revert the spreadfactor of the selected religion of all tiles to the default value defined in Python. Holding the alt-key when clicking the reset button will revert the spreadfactors of all religions.[NEWLINE][NEWLINE]All changes made to the spreadfactors in the WB are applied immediately to that savegame. But a new game starts with the old spreadfactors defined in Python. You have to manually edit the spreadfactors to effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_CYAN]Cyan[COLOR_REVERT]: Core[NEWLINE][COLOR_GREEN]Green[COLOR_REVERT]: Historical[NEWLINE][COLOR_YELLOW]Yellow[COLOR_REVERT]: Periphery[NEWLINE][COLOR_PLAYER_ORANGE]Orange[COLOR_REVERT]: Minority[NEWLINE][NEWLINE]Exporting:[NEWLINE]The religionmaps cannot be exported, because the spreadfactors are linked to the regions instead of individual tiles. Manual changes should be made in RegionMap.py.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REGIONMAP_HELP</Tag>
+		<English>The regionmap editor tool is created to edit and export the religion maps of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the region ID of that tile to the preset region.[NEWLINE]Right clicking on a tile will set the region ID to "no region" (-1).[NEWLINE]The reset button will revert the region ID of all tiles to the default region IDs in Python.[NEWLINE][NEWLINE]All changes made to the regions in the WB are applied immediately to that savegame. But a new game starts with the old regions defined in Python. You have to export the new regions and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: Current region[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the regionmap has changed or not. One can force the game to export the regionmap by holding the shift-key when clicking on the export button. The export function automatically sets the region ID of water tiles to "no region". The exported map should be copy-pasted to RegionMap.py.</English>
+		<French>The regionmap editor tool is created to edit and export the religion maps of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the region ID of that tile to the preset region.[NEWLINE]Right clicking on a tile will set the region ID to "no region" (-1).[NEWLINE]The reset button will revert the region ID of all tiles to the default region IDs in Python.[NEWLINE][NEWLINE]All changes made to the regions in the WB are applied immediately to that savegame. But a new game starts with the old regions defined in Python. You have to export the new regions and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: Current region[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the regionmap has changed or not. One can force the game to export the regionmap by holding the shift-key when clicking on the export button. The export function automatically sets the region ID of water tiles to "no region". The exported map should be copy-pasted to RegionMap.py.</French>
+		<German>The regionmap editor tool is created to edit and export the religion maps of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the region ID of that tile to the preset region.[NEWLINE]Right clicking on a tile will set the region ID to "no region" (-1).[NEWLINE]The reset button will revert the region ID of all tiles to the default region IDs in Python.[NEWLINE][NEWLINE]All changes made to the regions in the WB are applied immediately to that savegame. But a new game starts with the old regions defined in Python. You have to export the new regions and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: Current region[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the regionmap has changed or not. One can force the game to export the regionmap by holding the shift-key when clicking on the export button. The export function automatically sets the region ID of water tiles to "no region". The exported map should be copy-pasted to RegionMap.py.</German>
+		<Italian>The regionmap editor tool is created to edit and export the religion maps of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the region ID of that tile to the preset region.[NEWLINE]Right clicking on a tile will set the region ID to "no region" (-1).[NEWLINE]The reset button will revert the region ID of all tiles to the default region IDs in Python.[NEWLINE][NEWLINE]All changes made to the regions in the WB are applied immediately to that savegame. But a new game starts with the old regions defined in Python. You have to export the new regions and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: Current region[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the regionmap has changed or not. One can force the game to export the regionmap by holding the shift-key when clicking on the export button. The export function automatically sets the region ID of water tiles to "no region". The exported map should be copy-pasted to RegionMap.py.</Italian>
+		<Spanish>The regionmap editor tool is created to edit and export the religion maps of a civ.[NEWLINE][NEWLINE]Left clicking on a tile will set the region ID of that tile to the preset region.[NEWLINE]Right clicking on a tile will set the region ID to "no region" (-1).[NEWLINE]The reset button will revert the region ID of all tiles to the default region IDs in Python.[NEWLINE][NEWLINE]All changes made to the regions in the WB are applied immediately to that savegame. But a new game starts with the old regions defined in Python. You have to export the new regions and copy-paste it to the Python files to make the changes effect new games.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_BLUE]Blue[COLOR_REVERT]: Current region[NEWLINE][NEWLINE]Exporting:[NEWLINE]The warmaps will be exported value map format. There is an autodection if the regionmap has changed or not. One can force the game to export the regionmap by holding the shift-key when clicking on the export button. The export function automatically sets the region ID of water tiles to "no region". The exported map should be copy-pasted to RegionMap.py.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VICTORYMAP_HELP</Tag>
+		<English>The victorymap tool is created to view the maps used in Victory.py. It uses the getUHVTileInfo() function from CvScreensInterface.py to determine which tiles do count towards the UHV. It can only show the maps and it mainly meant for easy checking of the victory areas.[NEWLINE][NEWLINE]The areas highlighted are only land tiles. It also highlights the peak tiles, although some UHV do not include those. The full TL-BR area can be viewed when the option "show full rectangle" is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: UHV land area[NEWLINE][COLOR_LIGHT_GREY]Light grey[COLOR_REVERT]: Water tiles in the full TL-BR square</English>
+		<French>The victorymap tool is created to view the maps used in Victory.py. It uses the getUHVTileInfo() function from CvScreensInterface.py to determine which tiles do count towards the UHV. It can only show the maps and it mainly meant for easy checking of the victory areas.[NEWLINE][NEWLINE]The areas highlighted are only land tiles. It also highlights the peak tiles, although some UHV do not include those. The full TL-BR area can be viewed when the option "show full rectangle" is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: UHV land area[NEWLINE][COLOR_LIGHT_GREY]Light grey[COLOR_REVERT]: Water tiles in the full TL-BR square</French>
+		<German>The victorymap tool is created to view the maps used in Victory.py. It uses the getUHVTileInfo() function from CvScreensInterface.py to determine which tiles do count towards the UHV. It can only show the maps and it mainly meant for easy checking of the victory areas.[NEWLINE][NEWLINE]The areas highlighted are only land tiles. It also highlights the peak tiles, although some UHV do not include those. The full TL-BR area can be viewed when the option "show full rectangle" is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: UHV land area[NEWLINE][COLOR_LIGHT_GREY]Light grey[COLOR_REVERT]: Water tiles in the full TL-BR square</German>
+		<Italian>The victorymap tool is created to view the maps used in Victory.py. It uses the getUHVTileInfo() function from CvScreensInterface.py to determine which tiles do count towards the UHV. It can only show the maps and it mainly meant for easy checking of the victory areas.[NEWLINE][NEWLINE]The areas highlighted are only land tiles. It also highlights the peak tiles, although some UHV do not include those. The full TL-BR area can be viewed when the option "show full rectangle" is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: UHV land area[NEWLINE][COLOR_LIGHT_GREY]Light grey[COLOR_REVERT]: Water tiles in the full TL-BR square</Italian>
+		<Spanish>The victorymap tool is created to view the maps used in Victory.py. It uses the getUHVTileInfo() function from CvScreensInterface.py to determine which tiles do count towards the UHV. It can only show the maps and it mainly meant for easy checking of the victory areas.[NEWLINE][NEWLINE]The areas highlighted are only land tiles. It also highlights the peak tiles, although some UHV do not include those. The full TL-BR area can be viewed when the option "show full rectangle" is enabled.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta[COLOR_REVERT]: UHV land area[NEWLINE][COLOR_LIGHT_GREY]Light grey[COLOR_REVERT]: Water tiles in the full TL-BR square</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MOVEMAP_HELP</Tag>
+		<English>The movemap tool is created to easily move large portions of the map. Select size of the selection and what should be done with this after you moved this with the options in the dropdown menus. By clicking on the map, you will select the highlighted green area. This area will get a red highlight to indicate that you selected this area. Clicking again on the map, the red area will be pasted to the highlighted green cursor area.[NEWLINE][NEWLINE]If you copy parts of the map (especially sea tiles), the tile texture can be a bit off. You can fix this by exiting the worldbuilder, saving the game and loading it again. This will rerender the all tiles and everything should be fine.</English>
+		<French>The movemap tool is created to easily move large portions of the map. Select size of the selection and what should be done with this after you moved this with the options in the dropdown menus. By clicking on the map, you will select the highlighted green area. This area will get a red highlight to indicate that you selected this area. Clicking again on the map, the red area will be pasted to the highlighted green cursor area.[NEWLINE][NEWLINE]If you copy parts of the map (especially sea tiles), the tile texture can be a bit off. You can fix this by exiting the worldbuilder, saving the game and loading it again. This will rerender the all tiles and everything should be fine.</French>
+		<German>The movemap tool is created to easily move large portions of the map. Select size of the selection and what should be done with this after you moved this with the options in the dropdown menus. By clicking on the map, you will select the highlighted green area. This area will get a red highlight to indicate that you selected this area. Clicking again on the map, the red area will be pasted to the highlighted green cursor area.[NEWLINE][NEWLINE]If you copy parts of the map (especially sea tiles), the tile texture can be a bit off. You can fix this by exiting the worldbuilder, saving the game and loading it again. This will rerender the all tiles and everything should be fine.</German>
+		<Italian>The movemap tool is created to easily move large portions of the map. Select size of the selection and what should be done with this after you moved this with the options in the dropdown menus. By clicking on the map, you will select the highlighted green area. This area will get a red highlight to indicate that you selected this area. Clicking again on the map, the red area will be pasted to the highlighted green cursor area.[NEWLINE][NEWLINE]If you copy parts of the map (especially sea tiles), the tile texture can be a bit off. You can fix this by exiting the worldbuilder, saving the game and loading it again. This will rerender the all tiles and everything should be fine.</Italian>
+		<Spanish>The movemap tool is created to easily move large portions of the map. Select size of the selection and what should be done with this after you moved this with the options in the dropdown menus. By clicking on the map, you will select the highlighted green area. This area will get a red highlight to indicate that you selected this area. Clicking again on the map, the red area will be pasted to the highlighted green cursor area.[NEWLINE][NEWLINE]If you copy parts of the map (especially sea tiles), the tile texture can be a bit off. You can fix this by exiting the worldbuilder, saving the game and loading it again. This will rerender the all tiles and everything should be fine.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AREAEXPORT_HELP</Tag>
+		<English>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</English>
+		<French>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</French>
+		<German>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</German>
+		<Italian>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</Italian>
+		<Spanish>The export area tool is designed to easily create the TL-BR coordinates with the list of exception tiles.[NEWLINE][NEWLINE][ICON_BULLET]Paint mode: Left click on tiles to add them to the selection. Right click to remove them from selection. The large brush and region selection is only enabled in this mode.[NEWLINE][ICON_BULLET]TL-BR mode: First left click to select on of the corners of the square. Second left click to add the highlighted tiles to the selection. Second right click to remove the highlighted tiles from the selection.[NEWLINE][NEWLINE]Most scripts ignore peak and water tiles that are in the rectangle, so the do not have to be added to lExceptions. If you do want to add these tiles to lExceptions, you can enable that by clicking on the water or peak button.[NEWLINE][NEWLINE]Legend:[NEWLINE][COLOR_MAGENTA]Magenta tiles[COLOR_REVERT]: Selection[NEWLINE][COLOR_LIGHT_GREY]Light grey tiles[COLOR_REVERT]: Selected water or peak tiles when the "Add to lExceptions" option is enabled.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REGION_ALLREGIONS</Tag>
+		<English>Show all region borders</English>
+		<French>Show all region borders</French>
+		<German>Show all region borders</German>
+		<Italian>Show all region borders</Italian>
+		<Spanish>Show all region borders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REGION_CHECK</Tag>
+		<English>Check if all land tiles have a defined region</English>
+		<French>Check if all land tiles have a defined region</French>
+		<German>Check if all land tiles have a defined region</German>
+		<Italian>Check if all land tiles have a defined region</Italian>
+		<Spanish>Check if all land tiles have a defined region</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_PLAYER_ENABLED</Tag>

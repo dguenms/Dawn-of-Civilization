@@ -4,57 +4,169 @@
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS</Tag>
 		<English>Modifiers</English>
+		<French>
+			<Text>Modificateurs</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Modifiers</German>
+		<Italian>Modifiers</Italian>
+		<Spanish>Modifiers</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_0</Tag>
 		<English>Culture</English>
+		<French>
+			<Text>Culture</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Culture</German>
+		<Italian>Culture</Italian>
+		<Spanish>Culture</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_1</Tag>
 		<English>Unit upkeep</English>
+		<French>
+			<Text>Entretien des unit&#233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Unit upkeep</German>
+		<Italian>Unit upkeep</Italian>
+		<Spanish>Unit upkeep</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_2</Tag>
 		<English>Research cost</English>
+		<French>
+			<Text>Co&#251;t de recherche</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Research cost</German>
+		<Italian>Research cost</Italian>
+		<Spanish>Research cost</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_3</Tag>
 		<English>Distance maintenance</English>
+		<French>
+			<Text>Entretien li&#233; &#224; la distance</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Distance maintenance</German>
+		<Italian>Distance maintenance</Italian>
+		<Spanish>Distance maintenance</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_4</Tag>
 		<English>Cities maintenance</English>
+		<French>
+			<Text>Entretien des villes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Cities maintenance</German>
+		<Italian>Cities maintenance</Italian>
+		<Spanish>Cities maintenance</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_5</Tag>
 		<English>Civic upkeep</English>
+		<French>
+			<Text>Entretien des doctrines</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Civic upkeep</German>
+		<Italian>Civic upkeep</Italian>
+		<Spanish>Civic upkeep</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_6</Tag>
 		<English>Free health</English>
+		<French>
+			<Text>Sant&#233; bonus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Free health</German>
+		<Italian>Free health</Italian>
+		<Spanish>Free health</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_7</Tag>
 		<English>Unit production costs</English>
+		<French>
+			<Text>Co&#251;t de production des unit&#233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Unit production costs</German>
+		<Italian>Unit production costs</Italian>
+		<Spanish>Unit production costs</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_8</Tag>
 		<English>Wonder costs</English>
+		<French>
+			<Text>Co&#251;t des merveilles</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Wonder costs</German>
+		<Italian>Wonder costs</Italian>
+		<Spanish>Wonder costs</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_9</Tag>
 		<English>Building costs</English>
+		<French>
+			<Text>Co&#251;t des b&#226;timents</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Building costs</German>
+		<Italian>Building costs</Italian>
+		<Spanish>Building costs</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_10</Tag>
 		<English>Inflation rate</English>
+		<French>
+			<Text>Taux d'inflation</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Inflation rate</German>
+		<Italian>Inflation rate</Italian>
+		<Spanish>Inflation rate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_11</Tag>
 		<English>GP threshold</English>
+		<French>
+			<Text>Seuil des personnages illustres</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>GP threshold</German>
+		<Italian>GP threshold</Italian>
+		<Spanish>GP threshold</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MODIFIERS_12</Tag>
 		<English>Growth threshold</English>
+		<French>
+			<Text>Seuil de croissance</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Growth threshold</German>
+		<Italian>Growth threshold</Italian>
+		<Spanish>Growth threshold</Spanish>
 	</TEXT>
 </Civ4GameText>

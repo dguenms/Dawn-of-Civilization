@@ -915,7 +915,7 @@ class RefusesToTalk(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
 		
 	def onDealCanceled(self, argsList):
 		eOfferPlayer, eTargetPlayer, pTrade = argsList
@@ -931,6 +931,8 @@ class RefusesToTalk(AbstractStatefulAlert):
 		"""
 		eActiveTeam, activeTeam = PlayerUtil.getActiveTeamAndID()
 		for eTeam in eTeams:
+			if eTeam == -1:
+				return
 			if eActiveTeam != eTeam and not activeTeam.isHasMet(eTeam):
 				return
 		self.check()
@@ -993,7 +995,7 @@ class WorstEnemy(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
 	
 	def onVassalState(self, argsList):
 		eMaster, eVassal, bVassal = argsList
@@ -1029,7 +1031,7 @@ class WorstEnemy(AbstractStatefulAlert):
 				if eOldEnemy != -1 and not gc.getTeam(eOldEnemy).isAlive():
 					eOldEnemy = -1
 					enemies[eTeam] = -1
-				if eActiveTeam != eNewEnemy and not activeTeam.isHasMet(eNewEnemy):
+				if eActiveTeam != eNewEnemy and eNewEnemy != -1 and not activeTeam.isHasMet(eNewEnemy):
 					eNewEnemy = -1
 				if eOldEnemy != eNewEnemy:
 					enemies[eTeam] = eNewEnemy

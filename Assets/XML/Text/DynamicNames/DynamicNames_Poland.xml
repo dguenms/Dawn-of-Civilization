@@ -4,16 +4,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_DESC</Tag>
 		<English>The Polish</English>
+		<French>
+			<Text>Les Polonais</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Polish</German>
+		<Italian>The Polish</Italian>
+		<Spanish>The Polish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_PEOPLES</Tag>
 		<English>Polish Peoples</English>
+		<French>
+			<Text>Peuplades polanes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Polish Peoples</German>
+		<Italian>Polish Peoples</Italian>
+		<Spanish>Polish Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -36,21 +52,61 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_COMMONWEALTH</Tag>
 		<English>Polish-Lithuanian Commonwealth</English>
+		<French>
+			<Text>R&#233;publique des Deux Nations</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Polish-Lithuanian Commonwealth</German>
+		<Italian>Polish-Lithuanian Commonwealth</Italian>
+		<Spanish>Polish-Lithuanian Commonwealth</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLAND_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_POLAND_FASCIST</Tag>
 		<English>Sanacja %s1</English>
+		<French>
+			<Text>%s1 du Sanacja</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Sanacja %s1</German>
+		<Italian>Sanacja %s1</Italian>
+		<Spanish>Sanacja %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF</Tag>
 		<English>Grand Duchy of Lithuania</English>
+		<French>
+			<Text>Grand-duch&#233; de Lituanie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Grand Duchy of Lithuania</German>
+		<Italian>Grand Duchy of Lithuania</Italian>
+		<Spanish>Grand Duchy of Lithuania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_ADJECTIVE</Tag>
 		<English>Polish</English>
+		<French>
+			<Text>polonais:polonaise:polonais:polonaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Polish</German>
+		<Italian>Polish</Italian>
+		<Spanish>Polish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_SHORT_DESC</Tag>
 		<English>Poland</English>
+		<French>
+			<Text>Pologne</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Poland</German>
+		<Italian>Poland</Italian>
+		<Spanish>Poland</Spanish>
 	</TEXT>
 </Civ4GameText>

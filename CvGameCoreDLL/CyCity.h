@@ -102,7 +102,7 @@ public:
 	int conscriptMinCityPopulation();
 	int flatConscriptAngerLength();
 	bool canConscript();
-	void conscript();
+	void conscript(bool bForce);
 	int getBonusHealth(int /*BonusTypes*/ iBonus);
 	int getBonusHappiness(int /*BonusTypes*/ iBonus);
 	int getBonusPower(int /*BonusTypes*/ eBonus, bool bDirty);										 
@@ -538,6 +538,7 @@ public:
 
 	int getBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield) const;
 	void setBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange);
+	void changeBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange);
 	int getBuildingCommerceChange(int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce) const;
 	void setBuildingCommerceChange(int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce, int iChange);
 	int getBuildingHappyChange(int /*BuildingClassTypes*/ eBuildingClass) const;
@@ -580,6 +581,14 @@ public:
 	int getHappinessYield(int eYield);
 	void triggerMeltdown(int eBuilding);
 	bool isColony();
+	bool hasBonusEffect(int iBonus);
+	int getCultureRank();
+	bool isHasBuildingEffect(int eBuilding);
+	int getStabilityPopulation();
+	void setStabilityPopulation(int iNewValue);
+	int getModifiedCultureRateTimes100();
+	int getModifiedCultureRate();
+	int getNumActiveWorldWonders();
 
 private:
 	CvCity* m_pCity;

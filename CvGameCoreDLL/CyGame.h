@@ -315,6 +315,11 @@ public:
 
 	void autosave();
 
+	void incrementBuildingClassCreatedCount(int iBuildingClass);
+
+	void setCityScreenOwner(int iPlayer);
+	void resetCityScreenOwner();
+
 protected:
 	CvGame* m_pGame;
 };

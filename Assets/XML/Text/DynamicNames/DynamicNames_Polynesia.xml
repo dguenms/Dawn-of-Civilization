@@ -4,16 +4,32 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_DESC</Tag>
 		<English>The Polynesians</English>
+		<French>
+			<Text>Les Polyn&#233;siens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Polynesians</German>
+		<Italian>The Polynesians</Italian>
+		<Spanish>The Polynesians</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_PEOPLES</Tag>
 		<English>Polynesian Peoples</English>
+		<French>
+			<Text>Peuplades polyn&#233;siennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Polynesian Peoples</German>
+		<Italian>Polynesian Peoples</Italian>
+		<Spanish>Polynesian Peoples</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>
-			<Text>Royaume du %s1</Text>
+			<Text>Royaume de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -36,45 +52,125 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_REPUBLIC</Tag>
 		<English>Polynesian Republics</English>
+		<French>
+			<Text>R&#233;publiques polyn&#233;siennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Polynesian Republics</German>
+		<Italian>Polynesian Republics</Italian>
+		<Spanish>Polynesian Republics</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_FASCIST</Tag>
 		<English>Oceania</English>
+		<French>
+			<Text>Oc&#233;anie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Oceania</German>
+		<Italian>Oceania</Italian>
+		<Spanish>Oceania</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TONGA</Tag>
 		<English>Tonga</English>
+		<French>
+			<Text>Tonga</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Tonga</German>
+		<Italian>Tonga</Italian>
+		<Spanish>Tonga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TUI_TONGA</Tag>
 		<English>Tu'i Tonga</English>
+		<French>Tu'i Tonga</French>
+		<German>Tu'i Tonga</German>
+		<Italian>Tu'i Tonga</Italian>
+		<Spanish>Tu'i Tonga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_HAWAII</Tag>
 		<English>Hawaii</English>
+		<French>
+			<Text>Hawa&#239;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Hawaii</German>
+		<Italian>Hawaii</Italian>
+		<Spanish>Hawaii</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_SAMOA</Tag>
 		<English>Samoa</English>
+		<French>
+			<Text>Samoa</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Samoa</German>
+		<Italian>Samoa</Italian>
+		<Spanish>Samoa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TUI_MANUA</Tag>
 		<English>Tu'i Manu'a</English>
+		<French>Tu'i Manu'a</French>
+		<German>Tu'i Manu'a</German>
+		<Italian>Tu'i Manu'a</Italian>
+		<Spanish>Tu'i Manu'a</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_NIUE</Tag>
 		<English>Niue</English>
+		<French>
+			<Text>Niue</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Niue</German>
+		<Italian>Niue</Italian>
+		<Spanish>Niue</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TAHITI</Tag>
 		<English>Tahiti</English>
+		<French>
+			<Text>Tahiti</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Tahiti</German>
+		<Italian>Tahiti</Italian>
+		<Spanish>Tahiti</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_ADJECTIVE</Tag>
 		<English>Polynesian</English>
+		<French>
+			<Text>polyn&#233;sien:polyn&#233;sienne:polyn&#233;siens:polyn&#233;siennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Polynesian</German>
+		<Italian>Polynesian</Italian>
+		<Spanish>Polynesian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_SHORT_DESC</Tag>
 		<English>Polynesia</English>
+		<French>
+			<Text>Polyn&#233;sie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Polynesia</German>
+		<Italian>Polynesia</Italian>
+		<Spanish>Polynesia</Spanish>
 	</TEXT>
 </Civ4GameText>

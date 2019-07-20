@@ -29,8 +29,8 @@
 		<Tag>TXT_KEY_CIV_AMERICA_PEOPLES</Tag>
 		<English>American Peoples</English>
 		<French>
-			<Text>Peuplades Am&#233;ricaines</Text>
-			<Gender>Male</Gender>
+			<Text>Peuplades am&#233;ricaines</Text>
+			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>
@@ -52,12 +52,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_DEFAULT</Tag>
 		<English>United Principalities of %s1</English>
+		<French>
+			<Text>Principaut&#233;s unies d'%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>United Principalities of %s1</German>
+		<Italian>United Principalities of %s1</Italian>
+		<Spanish>United Principalities of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_REPUBLIC</Tag>
 		<English>United States of %s1</English>
 		<French>
-			<Text>Etats Unis d'%s1</Text>
+			<Text>&#201;tats-Unis d'%s1</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -80,38 +88,110 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_COMMUNIST</Tag>
 		<English>United Socialist States of %s1</English>
+		<French>
+			<Text>&#201;tats socialistes unis d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>United Socialist States of %s1</German>
+		<Italian>United Socialist States of %s1</Italian>
+		<Spanish>United Socialist States of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_FASCIST</Tag>
 		<English>New World Order</English>
+		<French>
+			<Text>Nouvel ordre mondial</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New World Order</German>
+		<Italian>New World Order</Italian>
+		<Spanish>New World Order</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_CSA</Tag>
 		<English>Confederate States of %s1</English>
+		<French>
+			<Text>&#201;tats conf&#233;d&#233;r&#233;s d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Confederate States of %s1</German>
+		<Italian>Confederate States of %s1</Italian>
+		<Spanish>Confederate States of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_ENGLAND</Tag>
 		<English>Airstrip One</English>
+		<French>
+			<Text>Airstrip One</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Airstrip One</German>
+		<Italian>Airstrip One</Italian>
+		<Spanish>Airstrip One</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_JAPAN</Tag>
 		<English>Allied Council for %s1</English>
+		<French>
+			<Text>Conseil alli&#233; pour le %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Allied Council for %s1</German>
+		<Italian>Allied Council for %s1</Italian>
+		<Spanish>Allied Council for %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_GERMANY</Tag>
 		<English>US-Occupied %s1</English>
+		<French>
+			<Text>Zone d'occupation am&#233;ricaine en %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>US-Occupied %s1</German>
+		<Italian>US-Occupied %s1</Italian>
+		<Spanish>US-Occupied %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_KOREA</Tag>
 		<English>Commander Naval Forces %s1</English>
+		<French>
+			<Text>Commandement des forces navales en %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Commander Naval Forces %s1</German>
+		<Italian>Commander Naval Forces %s1</Italian>
+		<Spanish>Commander Naval Forces %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_MEXICO</Tag>
 		<English>New Mexico</English>
+		<French>
+			<Text>Nouveau-Mexique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Mexico</German>
+		<Italian>New Mexico</Italian>
+		<Spanish>New Mexico</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_MAYA</Tag>
-		<English>%s2 Yucatán</English>
+		<English>%s2 Yucat&#225;n</English>
+		<French>
+			<Text>Yucat&#225;n %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Yucat&#225;n</German>
+		<Italian>%s2 Yucat&#225;n</Italian>
+		<Spanish>%s2 Yucat&#225;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_ADJECTIVE</Tag>
@@ -141,9 +221,9 @@
 		<Tag>TXT_KEY_CIV_AMERICA_SHORT_DESC</Tag>
 		<English>America</English>
 		<French>
-			<Text>America</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>Am&#233;rique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Amerika</Text>

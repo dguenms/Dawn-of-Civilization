@@ -283,6 +283,9 @@ public:
 	void cameraLookAt();
 	void updateCulture();
 
+	void setCultureConversion(int ePlayer, int iRate);
+	void resetCultureConversion();
+
 private:
 	CvPlot* m_pPlot;
 };

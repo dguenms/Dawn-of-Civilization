@@ -58,6 +58,8 @@ from RFCUtils import utils
 import Victory as vic
 import CityNameManager as cnm
 import Congresses as cong
+import RiseAndFall as rnf
+
 gc = CyGlobalContext()
 
 def getStabilityLevel(argsList):
@@ -232,8 +234,9 @@ def showEraMovie(argsList):
 	
 spaceShip = CvSpaceShipScreen.CvSpaceShipScreen()
 def showSpaceShip(argsList):
-	if (-1 != CyGame().getActivePlayer()):
-		spaceShip.interfaceScreen(argsList[0])
+	showVictoryScreen(argsList)
+	#if (-1 != CyGame().getActivePlayer()):
+	#	spaceShip.interfaceScreen(argsList[0])
 	
 replayScreen = CvReplayScreen.CvReplayScreen(REPLAY_SCREEN)
 def showReplay(argsList):
@@ -902,6 +905,8 @@ def getUHVTileInfo(argsList):
 	y = argsList[1]
 	iPlayer = argsList[2]
 	
+	plot = gc.getMap().plot(x, y)
+	
 	if iPlayer == iGreece:
 		if (x, y) in Areas.getNormalArea(iEgypt, False):
 			return 0
@@ -975,8 +980,8 @@ def getUHVTileInfo(argsList):
 			return 19
 			
 	elif iPlayer == iEthiopia:
-		if utils.isPlotInArea((x, y), vic.tSomaliaTL, vic.tSomaliaBR) or utils.isPlotInArea((x, y), vic.tSubeqAfricaTL, vic.tSubeqAfricaBR):
-			return 20
+		if gc.getMap().plot(x, y).getRegionID() in lAfrica:
+			return 33
 		
 	elif iPlayer == iByzantium:
 		if utils.isPlotInArea((x, y), vic.tBalkansTL, vic.tBalkansBR):
@@ -1016,19 +1021,19 @@ def getUHVTileInfo(argsList):
 			return 30
 			
 	elif iPlayer == iEngland:
-		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
+		if plot.getRegionID() in lNorthAmerica:
 			return 31
 				
-		if utils.isPlotInArea((x, y), vic.tSouthCentralAmericaTL, vic.tSouthCentralAmericaBR):
+		if plot.getRegionID() in lSouthAmerica:
 			return 32
 				
-		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
+		if plot.getRegionID() in lAfrica:
 			return 33
 				
-		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
+		if plot.getRegionID() in lAsia:
 			return 34
 			
-		if utils.isPlotInArea((x, y), vic.tOceaniaTL, vic.tOceaniaBR):
+		if plot.getRegionID() in lOceania:
 			return 35
 			
 	elif iPlayer == iGermany:
@@ -1058,7 +1063,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
 			return 43
 			
-	elif iPlayer == iTurkey:
+	elif iPlayer == iOttomans:
 		if (x,y) in vic.lEasternMediterranean:
 			return 47
 			
@@ -1103,10 +1108,10 @@ def getUHVTileInfo(argsList):
 			return 59
 			
 	elif iPlayer == iPortugal:
-		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
+		if plot.getRegionID() in lAfrica:
 			return 33
 					
-		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
+		if plot.getRegionID() in lAsia:
 			return 34
 					
 		if utils.isPlotInArea((x, y), vic.tBrazilTL, vic.tBrazilBR):
@@ -1156,65 +1161,76 @@ def getUHVTileInfo(argsList):
 		if (x, y) in Areas.getNormalArea(iChina, False):
 			return 69
 			
+	elif iPlayer == iTurks:
+		if (x, y) in vic.lMediterraneanPorts:
+			return 70
+			
+		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
+			return 71
+				
+		# free IDs: 20
+		# continue with ID 72
+		
 	elif iPlayer == iSweden:
 		if (x, y) in vic.lSkagerrak or (x, y) in vic.lSkagerrak:
-			return 70
+			return 72
 		
 		if (x, y) in vic.lBalticSea or (x, y) in vic.lBalticSea:
-			return 71
+			return 73
 				
 
 	elif iPlayer == iAustralia:
 		if utils.isPlotInArea((x, y), vic.tAustraliaTL, vic.tAustraliaBR):
-			return 72
+			return 74
 			
 		if utils.isPlotInArea((x, y), vic.tNewZealandTL, vic.tNewZealandBR):
 			return 66
 			
+			
 		if utils.isPlotInArea((x, y), vic.tNewGuineaTL, vic.tNewGuineaBR):
-			return 73
+			return 75
 			
 		if utils.isPlotInArea((x, y), vic.tPacific1TL, vic.tPacific1BR) or utils.isPlotInArea((x, y), vic.tPacific2TL, vic.tPacific2BR) or utils.isPlotInArea((x, y), vic.tPacific3TL, vic.tPacific3BR) or utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
-			return 74
+			return 76
 				
 	elif iPlayer == iMamluks:
 		if utils.isPlotInArea((x, y), vic.tLowerNileTL, vic.tLowerNileBR) and gc.getMap().plot(x, y).isRiver():
 			if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
-				return 78
-			return 77
+				return 80
+			return 79
 		
 		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
 			return 22
 		
 		if utils.isPlotInArea((x, y), vic.tHejazTL, vic.tHejazBR, vic.tHejazExceptions):
-			return 75
+			return 77
 		
 		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
-			return 76
+			return 78
 		
 		if (x, y) in Areas.getCoreArea(iBabylonia, False):
 			return 4
 		
 	elif iPlayer == iManchuria:
 		if gc.getMap().plot(x, y).getSettlerValue(iManchuria) >= 90:
-			return 79
+			return 81
 				
 	elif iPlayer == iBoers:
 		if utils.isPlotInArea((x, y), vic.tBoerAfricaTL, vic.tBoerAfricaBR):
-			return 80
+			return 82
 			
 	elif iPlayer == iZimbabwe:
 		if utils.isPlotInArea((x, y), vic.tSubeqAfricaTL, vic.tSubeqAfricaBR):
-			return 81
+			return 83
 			
 		if utils.isPlotInArea((x, y), vic.tSubSaharaTL, vic.tSubSaharaBR, vic.tSubSaharaExceptions):
-			return 82
+			return 84
 			
-		# continue with ID 83
+		# continue with ID 85
 			
 	elif iPlayer == iSwahili:
 		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
-			return 72
+			return 74
 				
 		# continue with 81
 	return -1
@@ -1263,6 +1279,11 @@ def applyBriberyEvent(argsList):
 	
 def applyBriberyResultEvent(argsList):
 	data.currentCongress.applyBriberyResultEvent()
+	
+### Rise And Fall
+
+def applyNewCivSwitchEvent(argsList):
+	rnf.applyNewCivSwitchEvent(argsList)
 
 
 #######################################################################################

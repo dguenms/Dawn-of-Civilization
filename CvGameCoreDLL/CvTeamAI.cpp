@@ -16,6 +16,7 @@
 #include "CvDLLPythonIFaceBase.h"
 
 #include "CvRhyes.h" //Rhye
+#include <set>
 
 // statics
 
@@ -467,7 +468,7 @@ AreaAITypes CvTeamAI::AI_calculateAreaAIType(CvArea* pArea, bool bPreparingTotal
 				if (AI_getWarPlan((TeamTypes)iI) != NO_WARPLAN)
 				{
 					FAssert(((TeamTypes)iI) != getID());
-					FAssert(isHasMet((TeamTypes)iI) || GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR));
+					//FAssert(isHasMet((TeamTypes)iI) || GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR));
 
 					if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_ATTACKED_RECENT)
 					{
@@ -1361,6 +1362,13 @@ int CvTeamAI::AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const
 	iValue /= 100;
 
 	iValue -= (iValue % GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
+
+	// Leoreth: Hermitage effect
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)HERMITAGE))
+	{
+		iValue *= 3;
+		iValue /= 4;
+	}
 
 	if (isHuman())
 	{
@@ -2574,12 +2582,13 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 {
 	//Rhye - start
 	//return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * 3); //Rhye
-	int modifier = 280;
+	int iModifier = 280;
 	if (isHasTech((TechTypes)ELECTRICITY) || isHasTech((TechTypes)ASSEMBLY_LINE)) {
-		modifier = 200;
+		iModifier = 200;
 	}
-	else if (GC.getGameINLINE().getGameTurn() > getTurnForYear(400)) { //the last 100 turns, starting from 1900
-		modifier = 160;
+	else if (GC.getGameINLINE().getGameTurn() > getTurnForYear(400)) 
+	{ //the last 100 turns, starting from 1900
+		iModifier = 160;
 	}
 
 	//discount if in a chain of alliances but not directly allied yet
@@ -2589,13 +2598,25 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 		{
 			if (GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI) && isDefensivePact((TeamTypes)iI))
 			{
-				modifier -= 70;
+				iModifier -= 70;
 			}
 		}
 	}
 
-	return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * std::max(modifier,10) / 100); //Rhye
-	//Rhye - end
+	int iNumCities = getNumCities() + GET_TEAM(eTeam).getNumCities();
+
+	// Leoreth: Amber Room effect
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect((BuildingTypes)AMBER_ROOM))
+	{
+		iModifier -= 60;
+
+		if (2 * GET_TEAM(eTeam).getNumCities() < iNumCities)
+		{
+			iNumCities = 2 * GET_TEAM(eTeam).getNumCities();
+		}
+	}
+
+	return iNumCities * std::max(iModifier, 10) / 100;
 }
 
 
@@ -2613,168 +2634,111 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 		return NO_DENIAL;
 	}
 
-	//Rhye - start
 	int iGameTurn = GC.getGameINLINE().getGameTurn();
 
-	//no deal if at war with a friend (moved from CvPlayer::canTradeItem)
+	// Rhye: no deal if at war with a friend (moved from CvPlayer::canTradeItem)
 	for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
 		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
-			if ((isAtWar((TeamTypes)iI) && GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI)) ||
-				(GET_TEAM((TeamTypes)eTeam).isAtWar((TeamTypes)iI) && isDefensivePact((TeamTypes)iI)))
+			if ((isAtWar((TeamTypes)iI) && GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI)) || (GET_TEAM((TeamTypes)eTeam).isAtWar((TeamTypes)iI) && isDefensivePact((TeamTypes)iI)))
 			{
-				/*char buf[50];
-				sprintf(buf, "getID = %d; eTeam: %d; iI = %d", getID(), eTeam, iI);
-				GC.getGameINLINE().logMsg(buf);*/
 				return DENIAL_JOKING;
 			}
 		}
 	}
-	//Rhye - end
 
-	//Rhye - start
-	//no world alliances until industrial era
+	// Rhye: no world alliances until industrial era
 	if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0 && GET_PLAYER((PlayerTypes)eTeam).getCurrentEra() <= 3)
 	{
 		return DENIAL_TOO_FAR;
 	}
-	//Rhye - end
 
-	//Rhye - start
-	//due to easier pact trading, there's a cap of civs alliances
-	//exploring the pacts tree without recursion
-	vector<int> players(NUM_MAJOR_PLAYERS, 0);
+	// Leoreth: collect all defensive pact partners and vassals in the possible coalition
+	std::set<TeamTypes> partners;
+	std::set<TeamTypes> vassals;
 
-	players[getID()] = 1;
-	players[eTeam] = 1;
-	int iJ;
-	bool bContinue = true;
-	int targetFlag = 1;
-	while (bContinue) {
-		bContinue = false;
-		for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-		{
-			if (players[iI] == targetFlag)
-			{
-				if (GET_PLAYER((PlayerTypes)iI).isAlive())
-				{
-					for (iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
-					{
-						if (iI != iJ && GET_PLAYER((PlayerTypes)iJ).isAlive())
-						{
-							if (GET_TEAM((TeamTypes)iI).isDefensivePact((TeamTypes)iJ) && players[iJ] == 0)
-							{
-								players[iJ] = targetFlag + 1;
-								bContinue = true;
-								/*char buf4[50];
-								sprintf(buf4, "iI = %d; iJ = %d; targetFlag: %d;", iI, iJ, targetFlag);
-								GC.getGameINLINE().logMsg(buf4);*/
-							}
-						}
-					}
-				}
-			}
-		}
-		targetFlag++;
+	std::set<TeamTypes> ourPartners = determineDefensivePactPartners(std::set<TeamTypes>());
+	std::set<TeamTypes> theirPartners = GET_TEAM(eTeam).determineDefensivePactPartners(std::set<TeamTypes>());
+
+	for (std::set<TeamTypes>::iterator it = ourPartners.begin(); it != ourPartners.end(); ++it)
+	{
+		partners.insert(*it);
 	}
-	int totalNodes = 0;
-	int numVassalsCoalition = 0;
-	int maxNumVassalsPlayer = 0;
+
+	for (std::set<TeamTypes>::iterator it = theirPartners.begin(); it != theirPartners.end(); ++it)
+	{
+		partners.insert(*it);
+	}
+
+	bool bBerlaymont = false;
 	int iMaxEra = 0;
-	for (int iK = 0; iK < NUM_MAJOR_PLAYERS; iK++) {
-		if (players[iK] > 0) {
-			totalNodes++;
-			if (GET_PLAYER((PlayerTypes)iK).getCurrentEra() > iMaxEra)
-				iMaxEra = GET_PLAYER((PlayerTypes)iK).getCurrentEra();
-			/*char buf2[50];
-			sprintf(buf2, "True: player %d: %d", iK, civsArray[iK]);
-			GC.getGameINLINE().logMsg(buf2);*/
-			int numVassalsPlayer = 0;
-			for (int iL = 0; iL < NUM_MAJOR_PLAYERS; iL++) {
-				if (GET_TEAM((TeamTypes)iL).isVassal((TeamTypes)iK)) {
-					numVassalsCoalition++;
-					numVassalsPlayer++;
-					if (numVassalsPlayer > maxNumVassalsPlayer)
-						maxNumVassalsPlayer = numVassalsPlayer;
-				}
-				/*char buf5[50];
-				sprintf(buf5, "iL: %d; numVassalsPlayer: %d; maxNumVassalsPlayer: %d; numVassalsCoalition: %d", iL, numVassalsPlayer, maxNumVassalsPlayer, numVassalsCoalition);
-				GC.getGameINLINE().logMsg(buf5);*/
+	int iMaxVassals = 0;
+	for (std::set<TeamTypes>::iterator it = partners.begin(); it != partners.end(); ++it)
+	{
+
+		int iCurrentEra = GET_PLAYER(GET_TEAM(*it).getLeaderID()).getCurrentEra();
+		if (iCurrentEra > iMaxEra)
+		{
+			iMaxEra = iCurrentEra;
+		}
+
+		if (GET_PLAYER(GET_TEAM(*it).getLeaderID()).isHasBuildingEffect((BuildingTypes)BERLAYMONT))
+		{
+			bBerlaymont = true;
+		}
+
+		int iNumVassals = 0;
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isMinorCiv() && GET_TEAM((TeamTypes)iI).isVassal(*it))
+			{
+				iNumVassals += 1;
+				vassals.insert((TeamTypes)iI);
 			}
 		}
-	}
-	bool bTech = false;
-	for (int iK = 0; iK < NUM_MAJOR_PLAYERS; iK++) {
-		if (players[iK] > 0) {
-			if (GET_TEAM((TeamTypes)iK).isHasTech((TechTypes)PSYCHOLOGY) || isHasTech((TechTypes)FISSION)) {
-				bTech = true;
-				break;
-			}
+
+		if (iNumVassals > iMaxVassals)
+		{
+			iMaxVassals = iNumVassals;
 		}
 	}
 
-	//now the cap
-	int iCap = 3;
-	//if (iMaxEra >= 5 && iGameTurn > 420) //modern && year > 1940
-	if (iMaxEra >= 5 && iGameTurn > getTurnForYear(1940)) //modern && year > 1940 // edead
-		iCap = 4 + GC.getGameINLINE().countCivPlayersAlive()/20 + (bTech? 1:0); //16 Warlords, 13 vanilla (higher because of the addition of bTech)
-	//else if (iMaxEra >= 4 && iGameTurn > 355) //industrial && year > 1800
-	else if (iMaxEra >= 4 && iGameTurn > getTurnForYear(1800)) //industrial && year > 1800
-		iCap = 3 + GC.getGameINLINE().countCivPlayersAlive()/20 + (bTech? 1:0);
-	/*char buf3[50];
-	sprintf(buf3, "totalNodes: %d; iCap: %d; civsArray: [%d,%d,%d,%d,%d]", totalNodes, iCap, civsArray[0], civsArray[1], civsArray[2], civsArray[16], civsArray[26]);
-	GC.getGameINLINE().logMsg(buf3);*/
+	// Leoreth: determine defensive pact limit
+	int iDefensivePactLimit = 2;
 
-	if (totalNodes > iCap)
+	if (iMaxEra >= ERA_INDUSTRIAL)
+	{
+		iDefensivePactLimit += 1;
+	}
+
+	if (iMaxEra >= ERA_GLOBAL)
+	{
+		iDefensivePactLimit += 1;
+	}
+
+	if (bBerlaymont)
+	{
+		iDefensivePactLimit += 2;
+	}
+
+	// Leoreth: never more defensive pact partners than limit
+	if (partners.size() > iDefensivePactLimit)
 	{
 		return DENIAL_NO_GAIN;
 	}
 
-	if (maxNumVassalsPlayer >= 5)
+	// Leoreth: defensive pact partners and member with highest vassal count may not exceed twice the limit
+	if (partners.size() + iMaxVassals > 2 * iDefensivePactLimit)
 	{
-		if (totalNodes > 1)
-		{
-			return DENIAL_NO_GAIN;
-		}
-	}if (maxNumVassalsPlayer >= 4)
-	{
-		if (totalNodes > 2)
-		{
-			return DENIAL_NO_GAIN;
-		}
-	}
-	else if (maxNumVassalsPlayer == 3 && numVassalsCoalition > 3)
-	{
-		if (totalNodes > 3)
-		{
-			return DENIAL_NO_GAIN;
-		}
-	}
-	else if (maxNumVassalsPlayer == 3)
-	{
-		if (totalNodes > 4)
-		{
-			return DENIAL_NO_GAIN;
-		}
+		return DENIAL_NO_GAIN;
 	}
 
-	if (numVassalsCoalition >= 6) //5 in Warlords
+	// Leoreth: sum of defensive pact partners and half of all their vassals may not exceed twice the limit
+	if (partners.size() + vassals.size() / 2 > 2 * iDefensivePactLimit)
 	{
-		if (totalNodes > 4)
-		{
-			return DENIAL_NO_GAIN;
-		}
+		return DENIAL_NO_GAIN;
 	}
-
-	if (numVassalsCoalition >= 2) //1 in Warlords
-	{
-		if (totalNodes > 5)
-		{
-			return DENIAL_NO_GAIN;
-		}
-	}
-	//Rhye - end
 
 	if (GC.getGameINLINE().countCivTeamsAlive() == 2)
 	{
@@ -2804,12 +2768,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				//Rhye - start
-				//if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold())
-				//if ((eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold() && iGameTurn < 400) ||
-				//	(eAttitude <= (AttitudeTypes)std::max(0,GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold()-1) && iGameTurn >= 400)) //1906, the last 100 turns
-				//Rhye - end
-				// Sanguo mod / edead - start
+				/// Sanguo mod / edead - start
 				if ((eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold() && iGameTurn < getTurnForYear(1906)) ||
 					(eAttitude <= (AttitudeTypes)std::max(0,GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold()-1) && iGameTurn >= getTurnForYear(1906))) //1906, the last 100 turns
 				// Sanguo mod / edead - end
@@ -3908,7 +3867,7 @@ void CvTeamAI::AI_doWar()
 				}
 				else if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_PREPARING_LIMITED)
 				{
-					FAssert(canDeclareWar((TeamTypes)iI));
+					//FAssert(canDeclareWar((TeamTypes)iI));
 
 					if (AI_getWarPlanStateCounter((TeamTypes)iI) > ((5 * iTimeModifier) / 100))
 					{
@@ -3917,7 +3876,7 @@ void CvTeamAI::AI_doWar()
 				}
 				else if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_PREPARING_TOTAL)
 				{
-					FAssert(canDeclareWar((TeamTypes)iI));
+					//FAssert(canDeclareWar((TeamTypes)iI));
 
 					if (AI_getWarPlanStateCounter((TeamTypes)iI) > ((10 * iTimeModifier) / 100))
 					{
@@ -4524,6 +4483,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 
 					case UNITAI_EXPLORE:
 					case UNITAI_MISSIONARY:
+					case UNITAI_PERSECUTOR:
 						break;
 
 					case UNITAI_PROPHET:
@@ -4532,6 +4492,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 					case UNITAI_GENERAL:
 					case UNITAI_MERCHANT:
 					case UNITAI_ENGINEER:
+					case UNITAI_STATESMAN:
 						break;
 
 					case UNITAI_SPY:
@@ -4586,6 +4547,10 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 
 					case UNITAI_MISSILE_AIR:
 						iValue += bWarPlan ? 40 : 20;
+						break;
+
+					case UNITAI_SATELLITE:
+						iValue += 50;
 						break;
 
 					default:

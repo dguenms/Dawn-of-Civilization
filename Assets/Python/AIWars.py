@@ -10,6 +10,7 @@ import Areas
 from RFCUtils import utils
 import UniquePowers
 from StoredData import data # edead
+import Stability as sta
 
 # globals
 gc = CyGlobalContext()
@@ -54,7 +55,7 @@ tRomeEgyptBR = (72, 36)
 tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
 tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
 tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
-tConquestRomeCelts = (3, iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeAnatoliaYear, 10)
+tConquestRomeCelts = (3, iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
 tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
@@ -88,7 +89,25 @@ tConquestChinaVietnam1 = (8, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR,
 tConquestChinaVietnam2 = (8, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestChinaVietnam1, tConquestChinaVietnam2]
+
+iTurksPersiaYear = 1000
+tTurksPersiaTL = (78, 37)
+tTurksPersiaBR = (85, 43)
+
+iTurksAnatoliaYear = 1100
+tTurksAnatoliaTL = (69, 37)
+tTurksAnatoliaBR = (78, 45)
+
+tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
+tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
+
+iMongolsPersiaYear = 1220
+tMongolsPersiaTL = (79, 37)
+tMongolsPersiaBR = (85, 49)
+
+tConquestMongolsPersia = (12, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia, tConquestChinaVietnam2]
 
 class AIWars:
 		
@@ -102,8 +121,6 @@ class AIWars:
 
 
 	def checkTurn(self, iGameTurn):
-
-		print "Check AI wars"
 
 		#turn automatically peace on between independent cities and all the major civs
 		if iGameTurn % 20 == 7:
@@ -121,19 +138,9 @@ class AIWars:
 			utils.minorWars(iIndependent2)
 		if iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50):
 			utils.minorWars(iCeltia)
-			utils.minorWars(iSeljuks)
-		
-		self.checkConquest(tConquestGreeceMesopotamia)
-		self.checkConquest(tConquestGreeceEgypt)
-		self.checkConquest(tConquestGreecePersia, tConquestGreeceMesopotamia)
-		
-		self.checkConquest(tConquestRomeCarthage)
-		self.checkConquest(tConquestRomeGreece)
-		self.checkConquest(tConquestRomeAnatolia, tConquestRomeGreece)
-		self.checkConquest(tConquestRomeCelts)
-		self.checkConquest(tConquestRomeEgypt)
-		
-		self.checkConquest(tConquestSpainMoors)
+			
+		for tConquest in lConquests:
+			self.checkConquest(tConquest)
 		
 		self.checkConquest(tConquestChinaVietnam1)
 		self.checkConquest(tConquestChinaVietnam2)
@@ -148,18 +155,15 @@ class AIWars:
 		iID, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
 	
 		if utils.getHumanID() == iPlayer: return
-		
-		if not gc.getPlayer(iPlayer).isAlive(): return
-		
+		if not gc.getPlayer(iPlayer).isAlive() and iPlayer != iTurks: return
 		if data.lConquest[iID]: return
-		
-		if gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
+		if iPreferredTarget >= 0 and gc.getPlayer(iPreferredTarget).isAlive() and gc.getTeam(iPreferredTarget).isVassal(iPlayer): return
 		
 		iGameTurn = gc.getGame().getGameTurn()
 		iStartTurn = getTurnForYear(iYear) - 5 + (data.iSeed % 10)
 		
+		if iGameTurn <= getTurnForYear(tBirth[iPlayer])+3: return
 		if not (iStartTurn <= iGameTurn <= iStartTurn + iIntervalTurns): return
-		
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
 		# Only Chinsesd conquerors for human Vietnam
@@ -182,6 +186,10 @@ class AIWars:
 		return True
 			
 	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
+		if not gc.getPlayer(iPlayer).isAlive():
+			for iTech in sta.getResurrectionTechs(iPlayer):
+				gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
+	
 		lCities = []
 		for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)):
 			if city.getOwner() != iPlayer and not gc.getTeam(city.getOwner()).isVassal(iPlayer):
@@ -202,7 +210,7 @@ class AIWars:
 			if city.getOwner() not in lOwners:
 				lOwners.append(city.getOwner())
 				
-		if iPreferredTarget not in lOwners and gc.getPlayer(iPreferredTarget).isAlive():
+		if iPreferredTarget >= 0 and iPreferredTarget not in lOwners and gc.getPlayer(iPreferredTarget).isAlive():
 			gc.getTeam(iPlayer).declareWar(iPreferredTarget, True, iWarPlan)
 				
 		for iOwner in lOwners:
@@ -211,7 +219,11 @@ class AIWars:
 			
 		for city in lTargetCities:
 			iExtra = 0
-			if utils.getHumanID() not in [iPlayer, city.getOwner()]: iExtra = 1 #max(1, gc.getPlayer(iPlayer).getCurrentEra())
+			if utils.getHumanID() not in [iPlayer, city.getOwner()]: 
+				iExtra += 1 #max(1, gc.getPlayer(iPlayer).getCurrentEra())
+				
+			if iPlayer == iMongolia and utils.getHumanID() != iPlayer:
+				iExtra += 1
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
 			
@@ -225,11 +237,17 @@ class AIWars:
 			utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 			utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
 			
+			if iPlayer == iGreece:
+				utils.makeUnitAI(iCompanion, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+			
 			if iPlayer == iTamils:
 				utils.makeUnitAI(iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 				
 			if iPlayer == iSpain:
 				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 * iExtra)
+				
+			if iPlayer == iTurks:
+				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 	
 	def forgetMemory(self, iTech, iPlayer):
 		if iTech in [iPsychology, iTelevision]:
@@ -275,15 +293,19 @@ class AIWars:
 		if iTargetPlayer == -1:
 			return
 			
-		gc.getTeam(iAttackingPlayer).AI_setWarPlan(iTargetPlayer, WarPlanTypes.WARPLAN_PREPARING_LIMITED)
+		if gc.getTeam(iAttackingPlayer).canDeclareWar(iTargetPlayer):
+			gc.getTeam(iAttackingPlayer).AI_setWarPlan(iTargetPlayer, WarPlanTypes.WARPLAN_PREPARING_LIMITED)
 		
 		data.iNextTurnAIWar = iGameTurn + self.getNextInterval(iGameTurn)
 		
 	def determineAttackingPlayer(self):
-		lAggressionLevels = [data.players[i].iAggressionLevel for i in range(iNumPlayers)]
+		lAggressionLevels = [data.players[i].iAggressionLevel for i in range(iNumPlayers) if self.possibleTargets(i)]
 		iHighestEntry = utils.getHighestEntry(lAggressionLevels)
 		
 		return lAggressionLevels.index(iHighestEntry)
+		
+	def possibleTargets(self, iPlayer):
+		return [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if iPlayer != iLoopPlayer and gc.getTeam(gc.getPlayer(iPlayer).getTeam()).canDeclareWar(gc.getPlayer(iLoopPlayer).getTeam())]
 		
 	def determineTargetPlayer(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -292,9 +314,11 @@ class AIWars:
 		lTargetValues = [0 for i in range(iNumPlayers)]
 
 		# determine potential targets
-		for iLoopPlayer in range(iNumPlayers):
+		for iLoopPlayer in self.possibleTargets(iPlayer):
 			pLoopPlayer = gc.getPlayer(iLoopPlayer)
 			tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
+			
+			if iLoopPlayer == iPlayer: continue
 			
 			# requires live civ and past contact
 			if not pLoopPlayer.isAlive(): continue

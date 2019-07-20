@@ -78,7 +78,7 @@ public:
 	void resetPathDistance();
 
 	int calculatePathDistance(CyPlot* pSource, CyPlot* pDest);
-	void rebuild(int iGridW, int iGridH, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions);
+	void rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions);
 	void regenerateGameElements();
 	void updateFog();
 	void updateMinimapColor();
@@ -86,6 +86,11 @@ public:
 
 	// PYTHON HELPER FUNCTIONS
 	//int getNumPlayerOwnedPlots(int /*PlayerTypes*/ iPlayer);
+
+	// Leoreth
+	int plotIndex(int iX, int iY);
+	int getPrimeMeridian();
+	int getEquator();
 
 protected:
 	CvMap* m_pMap;

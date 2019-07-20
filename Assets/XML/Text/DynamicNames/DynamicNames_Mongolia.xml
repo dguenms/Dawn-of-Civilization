@@ -29,7 +29,7 @@
 		<Tag>TXT_KEY_CIV_MONGOLIA_PEOPLES</Tag>
 		<English>Mongolian Peoples</English>
 		<French>
-			<Text>Peuplades Mongoles</Text>
+			<Text>Peuplades mongoles</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_MONGOLIA_DEFAULT</Tag>
 		<English>%s2 State</English>
 		<French>
-			<Text>Etat %s2</Text>
+			<Text>&#201;tat %s2</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -77,9 +77,9 @@
 		<Tag>TXT_KEY_CIV_MONGOLIA_REPUBLIC</Tag>
 		<English>United %s1</English>
 		<French>
-			<Text>%s2 Unis</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>%s1-Unie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Vereinigte %s2:Vereinigten %s2:Vereinigten %s2</Text>
@@ -101,8 +101,8 @@
 		<Tag>TXT_KEY_CIV_MONGOLIA_FASCIST</Tag>
 		<English>Nationalist %s1</English>
 		<French>
-			<Text>%s1 Nationaliste</Text>
-			<Gender>Male</Gender>
+			<Text>%s1 nationaliste</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
@@ -124,28 +124,76 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_TIMURID</Tag>
 		<English>Timurid</English>
+		<French>timouride</French>
+		<German>Timurid</German>
+		<Italian>Timurid</Italian>
+		<Spanish>Timurid</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_HULAGU</Tag>
+		<English>Hulagu</English>
+		<French>houlagide</French>
+		<German>Hulagu</German>
+		<Italian>Hulagu</Italian>
+		<Spanish>Hulagu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_ILKHANATE</Tag>
+		<English>Ilkhanate</English>
+		<French>
+			<Text>Ilkhanat</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ilkhanate</German>
+		<Italian>Ilkhanate</Italian>
+		<Spanish>Ilkhanate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_KHANATE</Tag>
 		<English>%s2 Khanate</English>
+		<French>
+			<Text>Khanat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>		
+		<German>%s2 Khanate</German>
+		<Italian>%s2 Khanate</Italian>
+		<Spanish>%s2 Khanate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_CHAGATAI</Tag>
 		<English>Chagatai</English>
+		<French>de Djaghata&#239;</French>
+		<German>Chagatai</German>
+		<Italian>Chagatai</Italian>
+		<Spanish>Chagatai</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_YUAN</Tag>
 		<English>Yuan</English>
+		<French>Yuan</French>
+		<German>Yuan</German>
+		<Italian>Yuan</Italian>
+		<Spanish>Yuan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_KHAMAG</Tag>
 		<English>Khamag Mongol</English>
+		<French>
+			<Text>Khamag Mongol</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khamag Mongol</German>
+		<Italian>Khamag Mongol</Italian>
+		<Spanish>Khamag Mongol</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_VASSAL</Tag>
 		<English>Khanate of %s1</English>
 		<French>
-			<Text>Khanat du %s1</Text>
+			<Text>Khanat de %s1</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -192,20 +240,44 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_CHINA</Tag>
 		<English>Yuan Khanate</English>
+		<French>
+			<Text>Khanat Yuan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Yuan Khanate</German>
+		<Italian>Yuan Khanate</Italian>
+		<Spanish>Yuan Khanate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_BABYLONIA</Tag>
 		<English>Ilkhanate of Mesopotamia</English>
+		<French>
+			<Text>Ilkhanat de M&#233;sopotamie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ilkhanate of Mesopotamia</German>
+		<Italian>Ilkhanate of Mesopotamia</Italian>
+		<Spanish>Ilkhanate of Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_PHOENICIA</Tag>
 		<English>Ilkhanate of Syria</English>
+		<French>
+			<Text>Ilkhanat de Syrie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Ilkhanate of Syria</German>
+		<Italian>Ilkhanate of Syria</Italian>
+		<Spanish>Ilkhanate of Syria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_BYZANTIUM</Tag>
 		<English>Khanate of Anatolia</English>
 		<French>
-			<Text>Khanat du Anatolie</Text>
+			<Text>Khanat d'Anatolie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -229,7 +301,7 @@
 		<Tag>TXT_KEY_CIV_MONGOL_RUSSIA</Tag>
 		<English>Khanate of the Golden Horde</English>
 		<French>
-			<Text>Khanat de la Horde d'Or</Text>
+			<Text>Khanat de la Horde d'or</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -250,7 +322,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOL_TURKEY</Tag>
+		<Tag>TXT_KEY_CIV_MONGOL_OTTOMANS</Tag>
 		<English>Khanate of Turkestan</English>
 		<French>
 			<Text>Khanat du Turkestan</Text>
@@ -276,10 +348,38 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_MUGHALS</Tag>
 		<English>Khanate of Delhi</English>
+		<French>
+			<Text>Khanat de Delhi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khanate of Delhi</German>
+		<Italian>Khanate of Delhi</Italian>
+		<Spanish>Khanate of Delhi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_MONGOL</Tag>
 		<English>Mongol</English>
+		<French>
+			<Text>mongol:mongole:mongols:mongoles</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Mongol</German>
+		<Italian>Mongol</Italian>
+		<Spanish>Mongol</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOL_NAME_TURKS</Tag>
+		<English>Moghulistan</English>
+		<French>
+			<Text>Mogholistan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Moghulistan</German>
+		<Italian>Moghulistan</Italian>
+		<Spanish>Moghulistan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_ADJECTIVE</Tag>
@@ -309,9 +409,9 @@
 		<Tag>TXT_KEY_CIV_MONGOL_SHORT_DESC</Tag>
 		<English>Mongolia</English>
 		<French>
-			<Text>Mongolia</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>Mongolie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</French>
 		<German>
 			<Text>Mongolei</Text>
