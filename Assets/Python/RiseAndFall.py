@@ -2290,28 +2290,28 @@ class RiseAndFall:
 		iMin = 10
 		
 		if gc.getGame().getSorenRandNum(100, 'Trigger spawn wars') >= iMin:
-		if bRespawn:
-				lEnemies = lEnemyCivsOnRespawn[iCiv]
-			else:
-				lEnemies = lEnemyCivsOnSpawn[iCiv]
-			
-			for iLoopCiv in lEnemies:
-				if utils.isAVassal(iLoopCiv): continue
-				if not gc.getPlayer(iLoopCiv).isAlive(): continue
-				if teamCiv.isAtWar(iLoopCiv): continue
-				if utils.getHumanID() == iCiv and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
+			if bRespawn:
+					lEnemies = lEnemyCivsOnRespawn[iCiv]
+				else:
+					lEnemies = lEnemyCivsOnSpawn[iCiv]
 				
-				iLoopMin = 50
-				if iLoopCiv >= iNumMajorPlayers: iLoopMin = 30
-				if utils.getHumanID() == iLoopCiv: iLoopMin += 10
-				
-				if gc.getGame().getSorenRandNum(100, 'Check spawn war') >= iLoopMin:
-					iWarPlan = -1
-					if iLoopCiv in lTotalWarOnSpawn[iCiv]:
-						iWarPlan = WarPlanTypes.WARPLAN_TOTAL
-					teamCiv.declareWar(iLoopCiv, False, iWarPlan)
+				for iLoopCiv in lEnemies:
+					if utils.isAVassal(iLoopCiv): continue
+					if not gc.getPlayer(iLoopCiv).isAlive(): continue
+					if teamCiv.isAtWar(iLoopCiv): continue
+					if utils.getHumanID() == iCiv and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
 					
-					if utils.getHumanID() == iCiv: data.iBetrayalTurns = 0
+					iLoopMin = 50
+					if iLoopCiv >= iNumMajorPlayers: iLoopMin = 30
+					if utils.getHumanID() == iLoopCiv: iLoopMin += 10
+					
+					if gc.getGame().getSorenRandNum(100, 'Check spawn war') >= iLoopMin:
+						iWarPlan = -1
+						if iLoopCiv in lTotalWarOnSpawn[iCiv]:
+							iWarPlan = WarPlanTypes.WARPLAN_TOTAL
+						teamCiv.declareWar(iLoopCiv, False, iWarPlan)
+						
+						if utils.getHumanID() == iCiv: data.iBetrayalTurns = 0
 					
 					
 	def immuneMode(self, argsList): 
