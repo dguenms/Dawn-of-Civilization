@@ -8099,7 +8099,7 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 	}
 
 	// Power
-	if (kBuilding.isPower() || kBuilding.isAreaCleanPower() || (kBuilding.getPowerBonus() != NO_BONUS && hasBonus((BonusTypes)kBuilding.getPowerBonus())))
+	if (kBuilding.isPower() || kBuilding.isAreaCleanPower() || (kBuilding.getPowerBonus() != NO_BONUS && hasBonus((BonusTypes)kBuilding.getPowerBonus())) || kBuilding.isDirtyPower())
 	{
 		// adding power
 		if (!isPower())
@@ -8109,7 +8109,7 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 			// adding dirty power
 			if (kBuilding.isDirtyPower())
 			{
-				addGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
+				addGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE") * getPowerConsumedCount(), iGood, iBad);
 			}
 		}
 		else
@@ -8117,7 +8117,7 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 			// replacing dirty power with clean power
 			if (isDirtyPower() && !kBuilding.isDirtyPower())
 			{
-				subtractGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
+				subtractGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE") * getPowerConsumedCount(), iGood, iBad);
 			}
 		}
 	}
@@ -8138,6 +8138,34 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 	if (kBuilding.getCorporationUnhealthModifier() != 0)
 	{
 		iBad -= (getCorporationUnhealth() * (100 + kBuilding.getCorporationUnhealthModifier())) / 100;
+	}
+
+	// Merijn: dirty power unhealth
+	if (isDirtyPower())
+	{
+		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+		{
+			if (kBuilding.getPowerYieldModifier(iI) > 0)
+			{
+				addGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
+			}
+			else if (kBuilding.getPowerYieldModifier(iI) < 0)
+			{
+				subtractGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
+			}
+		}
+
+		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+		{
+			if (kBuilding.getPowerCommerceModifier(iI) > 0)
+			{
+				addGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
+			}
+			else if (kBuilding.getPowerCommerceModifier(iI) < 0)
+			{
+				subtractGoodOrBad(GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE"), iGood, iBad);
+			}
+		}
 	}
 
 	// Effect on Spoiled Food
@@ -11291,24 +11319,31 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 	FAssertMsg(eCorporation < GC.getNumCorporationInfos(), "GC.getNumCorporationInfos expected to be >= 0");
 
 	int iYield = 0;
+	int iNumBonuses = 0;
 
 	if (isActiveCorporation(eCorporation) && !isDisorder())
 	{
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
-			if (NO_BONUS != eBonus && getNumBonuses(eBonus) > 0)
+			if (eBonus == NO_BONUS)
 			{
-				// Leoreth: Dutch UP
-				if (getOwner() == (PlayerTypes)NETHERLANDS && eCorporation == (CorporationTypes)1) // trading company
-				{
-					iYield += 2 * (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;;
-				}
-				else
-				{
-					//iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-					iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
-				}
+				continue;
+			}
+
+			iNumBonuses += getNumBonuses(eBonus);
+		}
+		
+		// Merijn: Oil Industry doesn't provide yield, so Brazil UP not required here
+		
+		if (iNumBonuses > 0)
+		{
+			iYield = (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12, iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+			
+			// Dutch UP: double yield from trading company
+			if (getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+			{
+				iYield *= 2;
 			}
 		}
 	}
@@ -11336,19 +11371,24 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 				continue;
 			}
 
-			iNumBonuses = getNumBonuses(eBonus);
+			iNumBonuses += getNumBonuses(eBonus);
+		}
 
-			// Leoreth: Brazilian UP (sugar counts as oil for oil industry)
-			if (getOwner() == BRAZIL && eBonus == BONUS_OIL && eCorporation == (CorporationTypes)6)
-			{
-				iNumBonuses += getNumBonuses(BONUS_SUGAR);
-			}
+		// Leoreth: Brazilian UP (sugar counts as oil for oil industry)
+		if (getOwner() == BRAZIL && eCorporation == (CorporationTypes)6)
+		{
+			iNumBonuses += getNumBonuses(BONUS_SUGAR);
+		}
 
-			// Leoreth: includes Dutch UP (double yield from trading company)
-			if (iNumBonuses > 0)
+		if (iNumBonuses > 0)
+		{
+			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
+			iCommerce = (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12, iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+			
+			// Dutch UP: double commerce from trading company
+			if (getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1)
 			{
-				//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-				iCommerce += ((getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1) ? 2 : 1) * (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+				iCommerce *= 2;
 			}
 		}
 	}
@@ -11362,8 +11402,6 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 		//Leoreth: civic corporation commerce modifier
 		iCommerce = iCommerce * (100 + GET_PLAYER(getOwner()).getCorporationCommerceModifier()) / 100;
 	}
-
-	
 
 	return (iCommerce + 99) / 100;
 }
@@ -12365,7 +12403,19 @@ bool CvCity::isCorporationBonus(BonusTypes eBonus) const
 			}
 		}
 	}
-
+	
+	// Merijn: Brazilian UP
+	if (GET_PLAYER(getOwnerINLINE()).isActiveCorporation((CorporationTypes)6))
+	{
+		if (getOwner() == BRAZIL && eBonus == BONUS_SUGAR)
+		{
+			if (isHasCorporation((CorporationTypes)6))
+			{
+				return true;
+			}
+		}
+	}
+	
 	return false;
 }
 
