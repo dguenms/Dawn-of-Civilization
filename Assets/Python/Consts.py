@@ -465,7 +465,7 @@ iAztecs : iCivMexico,
 }
 
 tResurrectionIntervals = (
-[(900, 1300), (1800, 2020)], #Egypt
+[], #Egypt
 [(-3000, -500)], #Babylonia
 [],		# Harappa
 [(600, 2020)], #China
@@ -580,6 +580,13 @@ lEnemyCivsOnSpawn = [
 [iEngland, iNetherlands], #Boers
 [], #Canada
 ]
+
+# Leoreth: date-triggered respawn for certain civs
+lEnemyCivsOnRespawn = {
+iPersia : [iOttomans, iRussia],		# Iran
+iMaya : [iPeru],		# Colombia
+iAztecs : [iAmerica],		# Mexico
+}
 
 # Leoreth
 lTotalWarOnSpawn = [
