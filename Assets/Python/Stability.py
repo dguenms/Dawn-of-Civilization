@@ -1014,17 +1014,25 @@ def calculateStability(iPlayer):
 			
 		# relations
 		if tPlayer.canContact(iLoopPlayer):
-			iNumContacts += 1
-
-			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS: iFuriousRelations += 1
-			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY: iFriendlyRelations += 1
-			
 			iAttitude = 0
-			for iMemory in range(MemoryTypes.NUM_MEMORY_TYPES):
-				iAttitude += pLoopPlayer.AI_getMemoryAttitude(iPlayer, iMemory)
+			
+			if pLoopPlayer.AI_getAttitude(iPlayer) > AttitudeTypes.ATTITUDE_CAUTIOUS:
+				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
+					iAttitude += 3
+				else:
+					iAttitude += 2
+			
+			if pLoopPlayer.AI_getAttitude(iPlayer) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
+					iAttitude -= 3
+				else:
+					iAttitude -= 2
+				
+				if pLoopPlayer.getStateReligion() != iStateReligion or  pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
+					iAttitude /= 2
 			
 			lAttitudes.append(iAttitude)
-			
+		
 		# defensive pacts
 		if tPlayer.isDefensivePact(iLoopPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 3
