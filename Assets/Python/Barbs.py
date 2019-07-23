@@ -242,7 +242,7 @@ class Barbs:
 		#camels in arabia
 		if utils.isYearIn(190, 550):
 			self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), self.spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
-		if utils.isYearIn(-800, 1300) and self.includesActiveHuman([iEgypt, iArabia]):
+		if utils.isYearIn(-800, 1300) and self.includesActiveHuman([iEgypt, iMamluks, iArabia]):
 			iNumUnits = iHandicap
 			if utils.getScenario() == i3000BC: iNumUnits += 1
 			self.checkSpawn(iBarbarian, iMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
