@@ -42921,7 +42921,7 @@ EndPlot
 BeginPlot
 	x=94,y=53
 	TerrainType=TERRAIN_DESERT
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=94,y=54
@@ -43359,16 +43359,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=52
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=95,y=53
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=95,y=54
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -43379,12 +43380,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=56
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=95,y=57
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -43396,7 +43398,7 @@ EndPlot
 BeginPlot
 	x=95,y=59
 	TerrainType=TERRAIN_DESERT
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=95,y=60
@@ -43781,13 +43783,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=52
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=96,y=53
-	BonusType=BONUS_COW
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43797,6 +43798,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=55
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -43811,14 +43813,16 @@ EndPlot
 BeginPlot
 	x=96,y=57
 	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=3
 	isWOfRiver
-	BonusType=BONUS_COTTON
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	TerrainType=TERRAIN_DESERT
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=96,y=58
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
@@ -44215,20 +44219,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=52
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=53
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=55
@@ -44660,30 +44665,31 @@ BeginPlot
 	x=98,y=53
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=54
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=55
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=56
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=57
 	BonusType=BONUS_STONE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -44696,7 +44702,7 @@ BeginPlot
 	x=98,y=59
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -44720,12 +44726,12 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	TerrainType=TERRAIN_STEPPE
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=64
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45096,24 +45102,23 @@ BeginPlot
 	x=99,y=53
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=99,y=54
-	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=99,y=55
 	BonusType=BONUS_SHEEP
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=99,y=56
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -45125,7 +45130,7 @@ BeginPlot
 	x=99,y=58
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45143,7 +45148,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=61
-	TerrainType=TERRAIN_STEPPE
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45153,8 +45158,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=63
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45163,8 +45167,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45564,29 +45567,30 @@ BeginPlot
 	x=100,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=100,y=56
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_OPIUM
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_COTTON
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=100,y=57
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_HORSE
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=100,y=58
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45596,7 +45600,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=60
-	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -45607,6 +45610,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=62
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -46003,7 +46007,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=52
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -46024,18 +46028,18 @@ BeginPlot
 	x=101,y=55
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=56
-	BonusType=BONUS_HORSE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=57
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -46050,12 +46054,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=60
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=61
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -46065,13 +46069,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=63
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=64
-	BonusType=BONUS_SHEEP
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -46463,14 +46467,15 @@ BeginPlot
 	x=102,y=53
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_OPIUM
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=102,y=54
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -46480,7 +46485,7 @@ BeginPlot
 	RiverWEDirection=3
 	isWOfRiver
 	BonusType=BONUS_MILLET
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -46490,12 +46495,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=57
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=102,y=58
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -46505,12 +46510,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=60
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=102,y=61
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -46909,11 +46914,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=54
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=103,y=55
+	BonusType=BONUS_RARE_EARTHS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -46921,7 +46927,7 @@ BeginPlot
 	x=103,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_CAMEL
+	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -46932,12 +46938,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=58
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_OPIUM
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=103,y=59
-	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -46948,23 +46954,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=61
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_COPPER
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=103,y=62
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
 BeginPlot
 	x=103,y=63
-	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=103,y=64
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -47375,8 +47380,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=57
-	TerrainType=TERRAIN_DESERT
-	PlotType=0
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=104,y=58
@@ -47395,33 +47400,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=61
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=104,y=62
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=104,y=63
-	TerrainType=TERRAIN_STEPPE
-	PlotType=2
+	BonusType=BONUS_COAL
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=104,y=64
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=104,y=65
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -47849,6 +47853,7 @@ BeginPlot
 	x=105,y=59
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -47859,33 +47864,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=61
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=105,y=62
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=105,y=63
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=105,y=64
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=105,y=65
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -48310,25 +48314,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=61
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=106,y=62
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=106,y=63
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=106,y=64
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -48759,23 +48762,23 @@ BeginPlot
 	x=107,y=59
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_STEPPE
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=60
-	BonusType=BONUS_CAMEL
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=61
-	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_HORSE
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=62
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -48783,12 +48786,12 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	BonusType=BONUS_WHEAT
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=64
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -49217,14 +49220,15 @@ EndPlot
 BeginPlot
 	x=108,y=58
 	TerrainType=TERRAIN_STEPPE
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=108,y=59
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_STEPPE
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=108,y=60
@@ -49233,19 +49237,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=61
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=108,y=62
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
 	x=108,y=63
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -49661,7 +49665,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=58
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -49670,7 +49673,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	TerrainType=TERRAIN_STEPPE
-	PlotType=2
+	PlotType=0
 EndPlot
 BeginPlot
 	x=109,y=60
