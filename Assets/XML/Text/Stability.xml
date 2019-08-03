@@ -1505,6 +1505,22 @@
 		<Italian>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Italian>
 		<Spanish>Our civilisation is collapsing! Unless our stability improves, we are in danger of a complete collapse.</Spanish>
 	</TEXT>
+		<Tag>TXT_KEY_STABILITY_WORSENING</Tag>
+		<English>Your nation's stability has worsened, it is now</English>
+		<French>Your nation's stability has worsened, it is now</French>
+		<German>Your nation's stability has worsened, it is now</German>
+		<Italian>Your nation's stability has worsened, it is now</Italian>
+		<Spanish>Your nation's stability has worsened, it is now</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_IMPROVING</Tag>
+		<English>Your nation's stability has improved, it is now</English>
+		<French>Your nation's stability has improved, it is now</French>
+		<German>Your nation's stability has improved, it is now</German>
+		<Italian>Your nation's stability has improved, it is now</Italian>
+		<Spanish>Your nation's stability has improved, it is now %s1</Spanish>
+	</TEXT>
+	<TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_</Tag>
 		<English></English>
