@@ -1323,7 +1323,7 @@ class RiseAndFall:
 					sta.completeCollapse(iRome)
 			elif iCiv == iMamluks:
 				if pEgypt.isAlive():
-					sta.completCollapse(iEgypt)
+					sta.completeCollapse(iEgypt)
 				
 		tCapital = Areas.getCapital(iCiv)
 				

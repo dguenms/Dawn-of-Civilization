@@ -77821,7 +77821,7 @@
 					<iFlavor>8</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
