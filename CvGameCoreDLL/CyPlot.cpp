@@ -777,10 +777,20 @@ int /* BonusTypes */ CyPlot::getNonObsoleteBonusType(int /*TeamTypes*/ eTeam)
 	return m_pPlot ? m_pPlot->getNonObsoleteBonusType((TeamTypes)eTeam) : -1;
 }
 
+int /* BonusTypes */ CyPlot::getBonusVarietyType(int /*TeamTypes*/ eTeam)
+{
+	return m_pPlot ? m_pPlot->getBonusVarietyType((TeamTypes)eTeam) : -1;
+}
+
 void CyPlot::setBonusType(int /* BonusTypes */ eNewValue)
 {
 	if (m_pPlot)
 		m_pPlot->setBonusType((BonusTypes)eNewValue);
+}
+
+void CyPlot::setBonusVarietyType(int /* BonusTypes */ eNewValue)
+{
+	if (m_pPlot) m_pPlot->setBonusVarietyType((BonusTypes)eNewValue);
 }
 
 int /* ImprovementTypes */ CyPlot::getImprovementType()
