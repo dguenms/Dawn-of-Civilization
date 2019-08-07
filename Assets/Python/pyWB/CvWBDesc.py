@@ -1425,6 +1425,7 @@ class CvPlotDesc:
 		self.isWOfRiver = 0
 		self.isStartingPlot = 0
 		self.bonusType = None
+		self.bonusVarietyType = None
 		self.improvementType = None
 		self.featureType = None
 		self.featureVariety = 0
@@ -1474,6 +1475,8 @@ class CvPlotDesc:
 			f.write("\tStartingPlot\n")
 		if (plot.getBonusType(-1)!=-1):
 			f.write("\tBonusType=%s\n" %(gc.getBonusInfo(plot.getBonusType(-1)).getType()) )
+		if (plot.getBonusVarietyType(-1) != -1):
+			f.write("\tBonusVarietyType=%s\n" % gc.getBonusInfo(plot.getBonusVarietyType(-1)).getType())
 		if (plot.getImprovementType()!=-1):
 			f.write("\tImprovementType=%s\n" %(gc.getImprovementInfo(plot.getImprovementType()).getType()) )
 		if (plot.getFeatureType()!=-1):
@@ -1572,6 +1575,11 @@ class CvPlotDesc:
 			if v!=-1:
 				self.bonusType = v
 				continue
+				
+			v = parser.findTokenValue(toks, "BonusVarietyType")
+			if v != -1:
+				self.bonusVarietyType = v
+				continue
 
 			v = parser.findTokenValue(toks, "ImprovementType")
 			if v!=-1:
@@ -1649,6 +1657,9 @@ class CvPlotDesc:
 		if (self.bonusType):
 			bonusTypeNum = CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), self.bonusType)
 			plot.setBonusType(bonusTypeNum)
+		if (self.bonusVarietyType):
+			bonusVarietyTypeNum = CvUtil.findInfoTypeNum(gc.getBonusInfo, gc.getNumBonusInfos(), self.bonusVarietyType)
+			plot.setBonusVarietyType(bonusVarietyTypeNum)
 		if (self.improvementType):
 			improvementTypeNum = CvUtil.findInfoTypeNum(gc.getImprovementInfo, gc.getNumImprovementInfos(), self.improvementType)
 			plot.setImprovementType(improvementTypeNum)

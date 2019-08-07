@@ -14064,6 +14064,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_SHEEP
+	BonusVarietyType=BONUS_SHEEP_LLAMA
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -15904,6 +15905,7 @@ EndPlot
 BeginPlot
 	x=34,y=21
 	BonusType=BONUS_SHEEP
+	BonusVarietyType=BONUS_SHEEP_LLAMA
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -26457,6 +26459,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=47
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_MUREX
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -27798,7 +27802,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=46
-	BonusType=BONUS_DYE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27810,6 +27813,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=48
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_MUREX
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30891,6 +30896,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=47
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_MUREX
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31815,6 +31822,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=50
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_MUREX
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32278,7 +32287,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=50
-	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -32546,6 +32554,7 @@ EndPlot
 BeginPlot
 	x=72,y=16
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -33917,6 +33926,7 @@ EndPlot
 BeginPlot
 	x=75,y=12
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -35836,6 +35846,7 @@ EndPlot
 BeginPlot
 	x=79,y=16
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -37916,6 +37927,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=47
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_MUREX
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -38380,7 +38393,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=47
-	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -44232,6 +44244,7 @@ EndPlot
 BeginPlot
 	x=97,y=48
 	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -44654,7 +44667,7 @@ EndPlot
 BeginPlot
 	x=98,y=45
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -45121,6 +45134,7 @@ EndPlot
 BeginPlot
 	x=99,y=51
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot

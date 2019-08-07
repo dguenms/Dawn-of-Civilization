@@ -231,4 +231,59 @@
 		<English>Millet</English>
 		<German>Hirse</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_DYE_MUREX</Tag>
+		<English>Dye (Murex)</English>
+		<German>Farbmittel (Murex)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_DYE_HENNA</Tag>
+		<English>Dye (Henna)</English>
+		<German>Farbmittel (Henna)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SPICES_SAFFRON</Tag>
+		<English>Spices (Saffron)</English>
+		<German>Gew&#252;rze (Safran)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SPICES_VANILLA</Tag>
+		<English>Spices (Vanilla)</English>
+		<German>Gew&#252;rze (Vanille)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_GEMS_TURQUOISE</Tag>
+		<English>Gems (Turquoise)</English>
+		<German>Edelsteine (T&#252;rkis)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_GEMS_DIAMONDS</Tag>
+		<English>Gems (Diamonds)</English>
+		<German>Edelsteine (Diamanten)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_GEMS_RUBIES</Tag>
+		<English>Gems (Rubies)</English>
+		<German>Edelsteine (Rubine)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_GEMS_SAPPHIRES</Tag>
+		<English>Gems (Sapphires)</English>
+		<German>Edelsteine (Saphire)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SHEEP_LLAMA</Tag>
+		<English>Sheep (Llama)</English>
+		<German>Schaf (Llama)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_COW_BROWN</Tag>
+		<English>Cow (Brown)</English>
+		<German>Kuh (Braun)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_PIG_FURRY</Tag>
+		<English>Pig (Furry)</English>
+		<German>Schwein (Fellig)</German>
+	</TEXT>
 </Civ4GameText>
