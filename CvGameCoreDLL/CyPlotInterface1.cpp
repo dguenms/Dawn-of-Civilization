@@ -291,6 +291,8 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getExpansion", &CyPlot::getExpansion, "int ()")
 		.def("isExpansion", &CyPlot::isExpansion, "bool ()")
 		.def("setRevealedOwner", &CyPlot::setRevealedOwner, "void (int eTeam, int eNewValue)")
+		.def("setBonusVarietyType", &CyPlot::setBonusVarietyType, "void (int eBonusType)")
+		.def("getBonusVarietyType", &CyPlot::getBonusVarietyType, "int ()")
 		.def("updateRevealedOwner", &CyPlot::updateRevealedOwner, "void (int eTeam)")
 	;
 }

@@ -322,6 +322,9 @@ public:
 	BonusTypes getNonObsoleteBonusType(TeamTypes eTeam = NO_TEAM) const;																	// Exposed to Python
 	void setBonusType(BonusTypes eNewValue);																															// Exposed to Python
 
+	BonusTypes getBonusVarietyType(TeamTypes eTeam = NO_TEAM) const;
+	void setBonusVarietyType(BonusTypes eNewValue);
+
 	DllExport ImprovementTypes getImprovementType() const;																													// Exposed to Python
 	DllExport void setImprovementType(ImprovementTypes eNewValue);																									// Exposed to Python
 
@@ -621,6 +624,7 @@ protected:
 	short /*TerrainTypes*/ m_eTerrainType;
 	short /*FeatureTypes*/ m_eFeatureType;
 	short /*BonusTypes*/ m_eBonusType;
+	short /*BonusTypes*/ m_eBonusVarietyType;
 	short /*ImprovementTypes*/ m_eImprovementType;
 	short /*RouteTypes*/ m_eRouteType;
 	char /*CardinalDirectionTypes*/ m_eRiverNSDirection;

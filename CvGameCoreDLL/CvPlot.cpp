@@ -235,6 +235,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_eTerrainType = NO_TERRAIN;
 	m_eFeatureType = NO_FEATURE;
 	m_eBonusType = NO_BONUS;
+	m_eBonusVarietyType = NO_BONUS;
 	m_eImprovementType = NO_IMPROVEMENT;
 	m_eRouteType = NO_ROUTE;
 	m_eRiverNSDirection = NO_CARDINALDIRECTION;
@@ -6037,6 +6038,11 @@ BonusTypes CvPlot::getNonObsoleteBonusType(TeamTypes eTeam) const
 
 void CvPlot::setBonusType(BonusTypes eNewValue)
 {
+	if (eNewValue != NO_BONUS && GC.getBonusInfo(eNewValue).isGraphicalOnly())
+	{
+		return;
+	}
+
 	if (getBonusType() != eNewValue)
 	{
 		if (getBonusType() != NO_BONUS)
@@ -6056,6 +6062,8 @@ void CvPlot::setBonusType(BonusTypes eNewValue)
 		updatePlotGroupBonus(false);
 		m_eBonusType = eNewValue;
 		updatePlotGroupBonus(true);
+
+		setBonusVarietyType(NO_BONUS);
 
 		if (getBonusType() != NO_BONUS)
 		{
@@ -6088,6 +6096,36 @@ void CvPlot::setBonusType(BonusTypes eNewValue)
 				pLoopPlot->getPlotCity()->updateCoveredPlots(true);
 			}
 		}
+	}
+}
+
+
+// Leoreth
+BonusTypes CvPlot::getBonusVarietyType(TeamTypes eTeam) const
+{
+	if (getBonusType(eTeam) == NO_BONUS)
+	{
+		return NO_BONUS;
+	}
+
+	return (BonusTypes)m_eBonusVarietyType;
+}
+
+
+// Leoreth
+void CvPlot::setBonusVarietyType(BonusTypes eNewValue)
+{
+	if (eNewValue != NO_BONUS && !GC.getBonusInfo(eNewValue).isGraphicalOnly())
+	{
+		return;
+	}
+
+	if (getBonusVarietyType() != eNewValue)
+	{
+		m_eBonusVarietyType = eNewValue;
+
+		setLayoutDirty(true);
+		gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
 	}
 }
 
@@ -9788,6 +9826,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&m_eTerrainType);
 	pStream->Read(&m_eFeatureType);
 	pStream->Read(&m_eBonusType);
+	pStream->Read(&m_eBonusVarietyType); // Leoreth
 	pStream->Read(&m_eImprovementType);
 	pStream->Read(&m_eRouteType);
 	pStream->Read(&m_eRiverNSDirection);
@@ -10051,6 +10090,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	pStream->Write(m_eTerrainType);
 	pStream->Write(m_eFeatureType);
 	pStream->Write(m_eBonusType);
+	pStream->Write(m_eBonusVarietyType); // Leoreth
 	pStream->Write(m_eImprovementType);
 	pStream->Write(m_eRouteType);
 	pStream->Write(m_eRiverNSDirection);
@@ -10388,11 +10428,19 @@ void CvPlot::getVisibleBonusState(BonusTypes& eType, bool& bImproved, bool& bWor
 
 	if (GC.getGameINLINE().isDebugMode())
 	{
-		eType = getBonusType();
+		eType = getBonusVarietyType();
+		if (eType == NO_BONUS)
+		{
+			eType = getBonusType();
+		}
 	}
 	else if (isRevealed(GC.getGameINLINE().getActiveTeam(), false))
 	{
-		eType = getBonusType(GC.getGameINLINE().getActiveTeam());
+		eType = getBonusVarietyType(GC.getGameINLINE().getActiveTeam());
+		if (eType == NO_BONUS)
+		{
+			eType = getBonusType(GC.getGameINLINE().getActiveTeam());
+		}
 	}
 
 	// improved and worked states ...
