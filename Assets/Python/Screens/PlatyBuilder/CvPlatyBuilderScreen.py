@@ -515,8 +515,7 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Bonus":
 			self.m_pCurrentPlot.setBonusType(self.iSelection)
 		elif self.iPlayerAddMode == "BonusVariety":
-			if self.m_pCurrentPlot.getBonusType(-1) != -1:
-				self.m_pCurrentPlot.setBonusVarietyType(self.iSelection)
+			self.m_pCurrentPlot.setBonusVarietyType(self.iSelection)
 		elif self.iPlayerAddMode == "Routes":
 			self.m_pCurrentPlot.setRouteType(self.iSelection)
 		elif self.iPlayerAddMode == "Terrain":

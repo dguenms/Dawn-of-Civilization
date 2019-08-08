@@ -6236,6 +6236,11 @@ void CvPlot::setBonusVarietyType(BonusTypes eNewValue)
 	{
 		return;
 	}
+	
+	if (getBonusType() == NO_BONUS && eNewValue != NO_BONUS)
+	{
+		return;
+	}
 
 	if (getBonusVarietyType() != eNewValue)
 	{
