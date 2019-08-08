@@ -322,6 +322,8 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_REGION_ALLREGIONS", ())
 			elif iData2 == 53:
 				return CyTranslator().getText("TXT_KEY_WB_REGION_CHECK", ())
+			elif iData2 == 54:
+				return CyTranslator().getText("TXT_KEY_WB_BONUS_VARIETY", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"

@@ -1546,4 +1546,12 @@
 		<Italian>Check if all land tiles have a defined region</Italian>
 		<Spanish>Check if all land tiles have a defined region</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_BONUS_VARIETY</Tag>
+		<English>Bonus Varieties</English>
+		<French>Bonus Varieties</French>
+		<German>Bonus Varieties</German>
+		<Italian>Bonus Varieties</Italian>
+		<Spanish>Bonus Varieties</Spanish>
+	</TEXT>
 </Civ4GameText>
