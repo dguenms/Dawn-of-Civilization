@@ -34,7 +34,7 @@
 			<YieldsProduced>
 				<iYieldProduced>50</iYieldProduced>
 			</YieldsProduced>
-			<Button>Art/Interface/Buttons/civics/SilkIndustry.dds</Button>
+			<Button>Art/Interface/Buttons/Corporations/SilkRoute.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_MARKETPLACE</Sound>
@@ -70,7 +70,7 @@
 			<YieldsProduced>
 				<iYieldProduced>50</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,11</Button>
+			<Button>Art/Interface/Buttons/Corporations/TradingCompany.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -105,7 +105,7 @@
 			<YieldsProduced>
 				<iYieldProduced>75</iYieldProduced>
 			</YieldsProduced>
-			<Button>Art/Interface/Buttons/civics/WheatIndustry.dds</Button>
+			<Button>Art/Interface/Buttons/Corporations/Cereal.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -143,7 +143,7 @@
 				<iYieldProduced>0</iYieldProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>Art/Interface/Buttons/civics/FishIndustry.dds</Button>
+			<Button>Art/Interface/Buttons/Corporations/Fishing.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -182,7 +182,7 @@
 				<iYieldProduced>25</iYieldProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>Art/Interface/Buttons/civics/CottonIndustry.dds</Button>
+			<Button>Art/Interface/Buttons/Corporations/Textile.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -220,7 +220,7 @@
 				<iYieldProduced>125</iYieldProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,6,6</Button>
+			<Button>Art/Interface/Buttons/Corporations/Steel.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -253,7 +253,7 @@
 			<YieldsProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>Art/Interface/Buttons/civics/OilIndustry.dds</Button>
+			<Button>Art/Interface/Buttons/Corporations/Oil.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -291,7 +291,7 @@
 			<YieldsProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,6</Button>
+			<Button>Art/Interface/Buttons/Corporations/Luxury.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
