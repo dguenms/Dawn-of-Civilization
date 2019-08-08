@@ -87,7 +87,7 @@ class CvWorldBuilderScreen:
 
 ## Platy Builder ##
 		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot"]
-		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
+		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features", "BonusVariety"]
 		self.DoCMapMode = ["Flip", "Core", "SettlerValue", "WarMap", "ReligionMap", "RegionMap", "VictoryMap"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
 		self.AreaExport = ["AreaExporter1", "AreaExporter2", "AreaExporter3"]
@@ -514,6 +514,8 @@ class CvWorldBuilderScreen:
 			self.m_pCurrentPlot.setImprovementType(self.iSelection)
 		elif self.iPlayerAddMode == "Bonus":
 			self.m_pCurrentPlot.setBonusType(self.iSelection)
+		elif self.iPlayerAddMode == "BonusVariety":
+			self.m_pCurrentPlot.setBonusVarietyType(self.iSelection)
 		elif self.iPlayerAddMode == "Routes":
 			self.m_pCurrentPlot.setRouteType(self.iSelection)
 		elif self.iPlayerAddMode == "Terrain":
@@ -702,6 +704,8 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Bonus":
 			self.m_pCurrentPlot.setBonusType(-1)
 			return 1
+		elif self.iPlayerAddMode == "BonusVariety":
+			self.m_pCurrentPlot.setBonusVarietyType(-1)
 		elif self.iPlayerAddMode == "Features":
 			self.m_pCurrentPlot.setFeatureType(FeatureTypes.NO_FEATURE, -1)
 		elif self.iPlayerAddMode == "Routes":
@@ -964,11 +968,13 @@ class CvWorldBuilderScreen:
 						self.placeObject()
 				elif self.iPlayerAddMode == "Bonus":
 					iOldBonus = self.m_pCurrentPlot.getBonusType(-1)
+					iOldBonusVariety = self.m_pCurrentPlot.getBonusVarietyType(-1)
 					self.m_pCurrentPlot.setBonusType(-1)
 					if self.m_pCurrentPlot.canHaveBonus(self.iSelection, False):
 						self.placeObject()
 					else:
 						self.m_pCurrentPlot.setBonusType(iOldBonus)
+						self.m_pCurrentPlot.setBonusVarietyType(iOldBonusVariety)
 				elif self.iPlayerAddMode == "Features":
 					iOldFeature = self.m_pCurrentPlot.getFeatureType()
 					iOldVariety = self.m_pCurrentPlot.getFeatureVariety()
@@ -1074,6 +1080,8 @@ class CvWorldBuilderScreen:
 		if self.iPlayerAddMode == "Improvements":
 			return True
 		if self.iPlayerAddMode == "Bonus":
+			return True
+		if self.iPlayerAddMode == "BonusVariety":
 			return True
 		if self.iPlayerAddMode == "PlotType":
 			return True
@@ -1258,6 +1266,7 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("EditPlotData")
 			screen.deleteWidget("AddImprovementButton")
 			screen.deleteWidget("AddBonusButton")
+			screen.deleteWidget("AddBonusVarietyButton")
 			screen.deleteWidget("AddPlotTypeButton")
 			screen.deleteWidget("AddTerrainButton")
 			screen.deleteWidget("AddRouteButton")
@@ -1296,8 +1305,10 @@ class CvWorldBuilderScreen:
 
 ## Panel Screen ##
 			nRows = 1
-			if self.iPlayerAddMode in self.PlayerMode + self.RevealMode + self.MapMode:
+			if self.iPlayerAddMode in self.PlayerMode + self.RevealMode:
 				nRows = 3
+			elif self.iPlayerAddMode in self.MapMode:
+				nRows = 4
 			elif self.iPlayerAddMode in ["VictoryMap"] + self.AreaExport:
 				nRows = 3
 			elif self.iPlayerAddMode in self.DoCMapMode:
@@ -1401,6 +1412,11 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.addCheckBoxGFC("AddFeatureButton", ",-,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,3,3", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 17, ButtonStyles.BUTTON_STYLE_LABEL)
+
+				iX = iXStart + 8
+				iY += iAdjust
+				screen.addCheckBoxGFC("AddBonusVarietyButton", ",-,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,1", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
+					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 54, ButtonStyles.BUTTON_STYLE_LABEL)
 
 				iX = iXStart + 8
 				iY += iAdjust
@@ -1680,6 +1696,7 @@ class CvWorldBuilderScreen:
 		screen.setState("AddRiverButton", self.iPlayerAddMode == "River")
 		screen.setState("AddImprovementButton", self.iPlayerAddMode == "Improvements")
 		screen.setState("AddBonusButton", self.iPlayerAddMode == "Bonus")
+		screen.setState("AddBonusVarietyButton", self.iPlayerAddMode == "BonusVariety")
 		screen.setState("AddPlotTypeButton", self.iPlayerAddMode == "PlotType")
 		screen.setState("AddTerrainButton", self.iPlayerAddMode == "Terrain")
 		screen.setState("AddRouteButton", self.iPlayerAddMode == "Routes")
@@ -1836,10 +1853,30 @@ class CvWorldBuilderScreen:
 			lItems = []
 			for i in xrange(gc.getNumBonusInfos()):
 				ItemInfo = gc.getBonusInfo(i)
+				if ItemInfo.isGraphicalOnly(): continue
 				if ItemInfo.getBonusClassType() != self.iSelectClass and self.iSelectClass > -1: continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
 
+			iY += 30
+			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
+			screen.addTableControlGFC("WBSelectItem", 1, 0, iY, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
+			screen.setTableColumnHeader("WBSelectItem", 0, "", iWidth)
+			for item in lItems:
+				iRow = screen.appendTableRow("WBSelectItem")
+				if self.iSelection == -1:
+					self.iSelection = item[1]
+				screen.setTableText("WBSelectItem", 0, iRow, "<font=3>" + item[0] + "</font>", gc.getBonusInfo(item[1]).getButton(), WidgetTypes.WIDGET_PYTHON, 7878, item[1], CvUtil.FONT_LEFT_JUSTIFY)
+
+		elif self.iPlayerAddMode == "BonusVariety":
+			iY = 25
+			lItems = []
+			for i in xrange(gc.getNumBonusInfos()):
+				ItemInfo = gc.getBonusInfo(i)
+				if not ItemInfo.isGraphicalOnly(): continue
+				lItems.append([ItemInfo.getDescription(), i])
+			lItems.sort()
+			
 			iY += 30
 			iHeight = min(len(lItems) * 24 + 2, screen.getYResolution() - iY)
 			screen.addTableControlGFC("WBSelectItem", 1, 0, iY, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
@@ -1936,6 +1973,10 @@ class CvWorldBuilderScreen:
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7877, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 		elif self.iPlayerAddMode == "Bonus":
+			ItemInfo = gc.getBonusInfo(self.iSelection)
+			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
+			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7878, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
+		elif self.iPlayerAddMode == "BonusVariety":
 			ItemInfo = gc.getBonusInfo(self.iSelection)
 			sText = "<font=3>" + CyTranslator().getText("[COLOR_HIGHLIGHT_TEXT]", ()) + ItemInfo.getDescription() + "</color></font>"
 			screen.setTableText("WBCurrentItem", 0, 0 , sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7878, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
@@ -2164,7 +2205,7 @@ class CvWorldBuilderScreen:
 	def getPlotItems(self, tPlot):
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
-		lInfo = [tPlot, plot.getPlotType(), plot.getTerrainType(), plot.getRouteType(), (plot.getFeatureType(), plot.getFeatureVariety()), plot.getBonusType(-1), plot.getImprovementType(), (plot.getRiverNSDirection(), plot.getRiverWEDirection())]
+		lInfo = [tPlot, plot.getPlotType(), plot.getTerrainType(), plot.getRouteType(), (plot.getFeatureType(), plot.getFeatureVariety()), plot.getBonusType(-1), plot.getBonusVarietyType(-1), plot.getImprovementType(), (plot.getRiverNSDirection(), plot.getRiverWEDirection())]
 		return lInfo
 
 	def placePlotItems(self, tPlot):
@@ -2181,9 +2222,10 @@ class CvWorldBuilderScreen:
 				plot.setRouteType(item[3])
 				plot.setFeatureType(item[4][0], item[4][1])
 				plot.setBonusType(item[5])
-				plot.setImprovementType(item[6])
-				plot.setWOfRiver(item[7][0] != -1, item[7][0])
-				plot.setNOfRiver(item[7][1] != -1, item[7][1])
+				plot.setBonusVarietyType(item[6])
+				plot.setImprovementType(item[7])
+				plot.setWOfRiver(item[8][0] != -1, item[8][0])
+				plot.setNOfRiver(item[8][1] != -1, item[8][1])
 
 	def moveMapReset(self):
 		if self.iMoveMapReset == 0:
@@ -2687,6 +2729,11 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "AddBonusButton":
 			self.iPlayerAddMode = "Bonus"
 			self.iSelectClass = -1
+			self.iSelection = -1
+			self.refreshSideMenu()
+
+		elif inputClass.getFunctionName() == "AddBonusVarietyButton":
+			self.iPlayerAddMode = "BonusVariety"
 			self.iSelection = -1
 			self.refreshSideMenu()
 
