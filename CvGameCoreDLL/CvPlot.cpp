@@ -6119,6 +6119,11 @@ void CvPlot::setBonusVarietyType(BonusTypes eNewValue)
 	{
 		return;
 	}
+	
+	if (getBonusType() == NO_BONUS && eNewValue != NO_BONUS)
+	{
+		return;
+	}
 
 	if (getBonusVarietyType() != eNewValue)
 	{
@@ -10420,6 +10425,7 @@ void CvPlot::getVisibleBonusState(BonusTypes& eType, bool& bImproved, bool& bWor
 	eType = NO_BONUS;
 	bImproved = false;
 	bWorked = false;
+	BonusTypes eVarietyType;
 
 	if (GC.getGameINLINE().getActiveTeam() == NO_TEAM)
 	{
@@ -10428,19 +10434,13 @@ void CvPlot::getVisibleBonusState(BonusTypes& eType, bool& bImproved, bool& bWor
 
 	if (GC.getGameINLINE().isDebugMode())
 	{
-		eType = getBonusVarietyType();
-		if (eType == NO_BONUS)
-		{
-			eType = getBonusType();
-		}
+		eVarietyType = getBonusVarietyType();
+		eType = getBonusType();
 	}
 	else if (isRevealed(GC.getGameINLINE().getActiveTeam(), false))
 	{
-		eType = getBonusVarietyType(GC.getGameINLINE().getActiveTeam());
-		if (eType == NO_BONUS)
-		{
-			eType = getBonusType(GC.getGameINLINE().getActiveTeam());
-		}
+		eVarietyType = getBonusVarietyType(GC.getGameINLINE().getActiveTeam());
+		eType = getBonusType(GC.getGameINLINE().getActiveTeam());
 	}
 
 	// improved and worked states ...
@@ -10453,6 +10453,10 @@ void CvPlot::getVisibleBonusState(BonusTypes& eType, bool& bImproved, bool& bWor
 			bImproved = true;
 			bWorked = isBeingWorked();
 		}
+	}
+	if (eVarietyType != NO_BONUS)
+	{
+		eType = eVarietyType;
 	}
 }
 

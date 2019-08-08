@@ -508,8 +508,8 @@
 			<Type>ART_DEF_BONUS_SPICES_VANILLA</Type>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/vanilla/wine.nif</NIF>
-			<KFM>Art/Terrain/Resources/vanilla/wine.kfm</KFM>
+			<NIF>Art/Terrain/Resources/vanilla/vanilla.nif</NIF>
+			<KFM>Art/Terrain/Resources/vanilla/vanilla.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/vanilla.dds</Button>
 			<FontButtonIndex>28</FontButtonIndex>
 		</BonusArtInfo>
@@ -574,7 +574,7 @@
 			<Type>ART_DEF_BONUS_COW_BROWN</Type>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/Cow_Brown/Cow.nif</NIF>
+			<NIF>Art/Terrain/Resources/Cow_Brown/Cow_brown.nif</NIF>
 			<KFM>Art/Terrain/Resources/Cow_Brown/Cow.kfm</KFM>
 			<SHADERNIF>Art/Terrain/Resources/Cow_Brown/Cow_FX.nif</SHADERNIF>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Cow.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,12</Button>
