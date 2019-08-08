@@ -6217,6 +6217,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=52
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -7094,6 +7096,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=49
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -8406,6 +8410,7 @@ EndPlot
 BeginPlot
 	x=17,y=44
 	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_VANILLA
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -8859,6 +8864,8 @@ BeginPlot
 	x=18,y=45
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_VANILLA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -37453,6 +37460,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=44
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -37978,6 +37987,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -46947,6 +46958,8 @@ BeginPlot
 	x=103,y=50
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
