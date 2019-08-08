@@ -778,12 +778,12 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		
 		for iImprovement in xrange(gc.getNumImprovementInfos()):
 			ImprovementInfo = gc.getImprovementInfo(iImprovement)
-			lImprovementResources = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if ImprovementInfo.isBonusTrade(iBonus) and iBonus not in [item for sublist in dResourceMap.values() for item in sublist]]
+			lImprovementResources = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if ImprovementInfo.isBonusTrade(iBonus) and iBonus not in [item for sublist in dResourceMap.values() for item in sublist] and not gc.getBonusInfo(iBonus).isGraphicalOnly()]
 			
 			if lImprovementResources:
 				dResourceMap[ImprovementInfo.getText()] = lImprovementResources
 		
-		lOther = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if iBonus not in [item for sublist in dResourceMap.values() for item in sublist]]
+		lOther = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if iBonus not in [item for sublist in dResourceMap.values() for item in sublist] and not gc.getBonusInfo(iBonus).isGraphicalOnly()]
 		if lOther:
 			dResourceMap["Media"] = lOther
 				
