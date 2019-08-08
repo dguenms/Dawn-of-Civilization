@@ -1836,6 +1836,7 @@ class CvWorldBuilderScreen:
 			lItems = []
 			for i in xrange(gc.getNumBonusInfos()):
 				ItemInfo = gc.getBonusInfo(i)
+				if ItemInfo.isGraphicalOnly(): continue
 				if ItemInfo.getBonusClassType() != self.iSelectClass and self.iSelectClass > -1: continue
 				lItems.append([ItemInfo.getDescription(), i])
 			lItems.sort()
