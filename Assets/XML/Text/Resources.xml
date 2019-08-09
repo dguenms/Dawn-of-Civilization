@@ -359,4 +359,28 @@
 		<Italian>Avorio (African)</Italian>
 		<Spanish>Marfil (African)</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITRUS</Tag>
+		<English>Citrus</English>
+		<French>Citrus</French>
+		<German>Zitrusfr&#252;chte</German>
+		<Italian>Citrus</Italian>
+		<Spanish>Citrus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_DATES</Tag>
+		<English>Dates</English>
+		<French>Dates</French>
+		<German>Datteln</German>
+		<Italian>Dates</Italian>
+		<Spanish>Dates</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CITRUS_ORANGES</Tag>
+		<English>Citrus (Oranges)</English>
+		<French>Citrus (Oranges)</French>
+		<German>Zitrusfr&#252;chte (Orangen)</German>
+		<Italian>Citrus (Oranges)</Italian>
+		<Spanish>Citrus (Oranges)</Spanish>
+	</TEXT>
 </Civ4GameText>

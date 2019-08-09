@@ -609,5 +609,32 @@
 			<Button>Art/Interface/Buttons/Resources/Elephant_african.dds</Button>
 			<FontButtonIndex>25</FontButtonIndex>
 		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_CITRUS</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Citrus/Lemqes.nif</NIF>
+			<KFM>Art/Terrain/Resources/Citrus/Lemqes.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Citrus.dds</Button>
+			<FontButtonIndex>52</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_DATES</Type>
+			<fScale>2.1</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Dates/date.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Resources/Dates.dds</Button>
+			<FontButtonIndex>53</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_CITRUS_ORANGES</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Oranges/Lemqes.nif</NIF>
+			<KFM>Art/Terrain/Resources/Oranges/Lemqes.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Oranges.dds</Button>
+			<FontButtonIndex>52</FontButtonIndex>
+		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>

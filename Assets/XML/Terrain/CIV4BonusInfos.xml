@@ -140,6 +140,48 @@
 			</TerrainBooleans>
 		</BonusInfo>
 		<BonusInfo>
+			<Type>BONUS_CITRUS</Type>
+			<Description>TXT_KEY_BONUS_CITRUS</Description>
+			<Civilopedia>TXT_KEY_BONUS_CITRUS_PEDIA</Civilopedia>
+			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<ArtDefineTag>ART_DEF_BONUS_CITRUS</ArtDefineTag>
+			<TechCityTrade>TECH_POTTERY</TechCityTrade>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<iHealth>1</iHealth>
+			<iAffectedCities>2</iAffectedCities>
+			<iPlacementOrder>5</iPlacementOrder>
+			<iConstAppearance>50</iConstAppearance>
+			<iMinAreaSize>3</iMinAreaSize>
+			<iMinLatitude>20</iMinLatitude>
+			<iMaxLatitude>50</iMaxLatitude>
+			<Rands>
+				<iRandApp1>25</iRandApp1>
+				<iRandApp2>25</iRandApp2>
+				<iRandApp3>0</iRandApp3>
+				<iRandApp4>0</iRandApp4>
+			</Rands>
+			<iPlayer>100</iPlayer>
+			<iGroupRange>1</iGroupRange>
+			<iGroupRand>50</iGroupRand>
+			<bArea>1</bArea>
+			<bHills>1</bHills>
+			<bFlatlands>1</bFlatlands>
+			<bNormalize>1</bNormalize>
+			<TerrainBooleans>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+			</TerrainBooleans>
+			<bUseLSystem>1</bUseLSystem>
+		</BonusInfo>
+		<BonusInfo>
 			<Type>BONUS_COAL</Type>
 			<Description>TXT_KEY_BONUS_COAL</Description>
 			<Civilopedia>TXT_KEY_BONUS_COAL_PEDIA</Civilopedia>
@@ -227,6 +269,48 @@
 					<bTerrain>1</bTerrain>
 				</TerrainBoolean>
 			</TerrainBooleans>
+		</BonusInfo>
+		<BonusInfo>
+			<Type>BONUS_DATES</Type>
+			<Description>TXT_KEY_BONUS_DATES</Description>
+			<Civilopedia>TXT_KEY_BONUS_DATES_PEDIA</Civilopedia>
+			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<ArtDefineTag>ART_DEF_BONUS_DATES</ArtDefineTag>
+			<TechCityTrade>TECH_POTTERY</TechCityTrade>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<iHealth>1</iHealth>
+			<iAffectedCities>2</iAffectedCities>
+			<iPlacementOrder>5</iPlacementOrder>
+			<iConstAppearance>50</iConstAppearance>
+			<iMinAreaSize>3</iMinAreaSize>
+			<iMinLatitude>20</iMinLatitude>
+			<iMaxLatitude>50</iMaxLatitude>
+			<Rands>
+				<iRandApp1>25</iRandApp1>
+				<iRandApp2>25</iRandApp2>
+				<iRandApp3>0</iRandApp3>
+				<iRandApp4>0</iRandApp4>
+			</Rands>
+			<iPlayer>100</iPlayer>
+			<iGroupRange>1</iGroupRange>
+			<iGroupRand>50</iGroupRand>
+			<bArea>1</bArea>
+			<bHills>1</bHills>
+			<bFlatlands>1</bFlatlands>
+			<bNormalize>1</bNormalize>
+			<TerrainBooleans>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+			</TerrainBooleans>
+			<bUseLSystem>1</bUseLSystem>
 		</BonusInfo>
 		<BonusInfo>
 			<Type>BONUS_HORSE</Type>
@@ -2438,6 +2522,24 @@
 			<Civilopedia>TXT_KEY_BONUS_IVORY_AFRICAN_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IVORY_AFRICAN</ArtDefineTag>
+			<iPlacementOrder>-1</iPlacementOrder>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>90</iMaxLatitude>
+			<Rands>
+				<iRandApp1>0</iRandApp1>
+				<iRandApp2>0</iRandApp2>
+				<iRandApp3>0</iRandApp3>
+				<iRandApp4>0</iRandApp4>
+			</Rands>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BonusInfo>
+		<BonusInfo>
+			<Type>BONUS_CITRUS_ORANGES</Type>
+			<Description>TXT_KEY_BONUS_CITRUS_ORANGES</Description>
+			<Civilopedia>TXT_KEY_BONUS_CITRUS_ORANGES_PEDIA</Civilopedia>
+			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<ArtDefineTag>ART_DEF_BONUS_CITRUS_ORANGES</ArtDefineTag>
 			<iPlacementOrder>-1</iPlacementOrder>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMinLatitude>0</iMinLatitude>
