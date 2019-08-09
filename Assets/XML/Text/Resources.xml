@@ -194,96 +194,161 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_OPIUM</Tag>
 		<English>Opium</English>
+		<French>Opium</French>
 		<German>Opium</German>
+		<Italian>Opium</Italian>
+		<Spanish>Opium</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_RUBBER</Tag>
 		<English>Rubber</English>
+		<French>Rubber</French>
 		<German>Kautschuk</German>
+		<Italian>Rubber</Italian>
+		<Spanish>Rubber</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_SALT</Tag>
 		<English>Salt</English>
+		<French>Sel</French>
 		<German>Salz</German>
+		<Italian>Salt</Italian>
+		<Spanish>Salt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_JADE</Tag>
 		<English>Jade</English>
+		<French>Jade</French>
 		<German>Jade</German>
+		<Italian>Jade</Italian>
+		<Spanish>Jade</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_OBSIDIAN</Tag>
 		<English>Obsidian</English>
+		<French>Obsidian</French>
 		<German>Obsidian</German>
+		<Italian>Obsidian</Italian>
+		<Spanish>Obsidian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_RARE_EARTHS</Tag>
 		<English>Rare Earths</English>
+		<French>Rare Earths</French>
 		<German>Seltene Erden</German>
+		<Italian>Rare Earths</Italian>
+		<Spanish>Rare Earths</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_AMBER</Tag>
 		<English>Amber</English>
+		<French>Amber</French>
 		<German>Bernstein</German>
+		<Italian>Amber</Italian>
+		<Spanish>Amber</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_MILLET</Tag>
 		<English>Millet</English>
+		<French>Millet</French>
 		<German>Hirse</German>
+		<Italian>Millet</Italian>
+		<Spanish>Millet</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_DYE_MUREX</Tag>
 		<English>Dye (Murex)</English>
+		<French>Dye (Murex)</French>
 		<German>Farbmittel (Murex)</German>
+		<Italian>Dye (Murex)</Italian>
+		<Spanish>Dye (Murex)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_DYE_HENNA</Tag>
 		<English>Dye (Henna)</English>
+		<French>Dye (Henna)</French>
 		<German>Farbmittel (Henna)</German>
+		<Italian>Dye (Henna)</Italian>
+		<Spanish>Dye (Henna)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SPICES_NUTMEG</Tag>
+		<English>Spices (Nutmeg)</English>
+		<French>Spices (Nutmeg)</French>
+		<German>Gew&#252;rze (Muskatnuss)</German>
+		<Italian>Spices (Nutmeg)</Italian>
+		<Spanish>Spices (Nutmeg)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_SPICES_SAFFRON</Tag>
 		<English>Spices (Saffron)</English>
+		<French>Spices (Saffron)</French>
 		<German>Gew&#252;rze (Safran)</German>
+		<Italian>Spices (Saffron)</Italian>
+		<Spanish>Spices (Saffron)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_SPICES_VANILLA</Tag>
 		<English>Spices (Vanilla)</English>
+		<French>Spices (Vanilla)</French>
 		<German>Gew&#252;rze (Vanille)</German>
+		<Italian>Spices (Vanilla)</Italian>
+		<Spanish>Spices (Vanilla)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_GEMS_TURQUOISE</Tag>
 		<English>Gems (Turquoise)</English>
+		<French>Gems (Turquoise)</French>
 		<German>Edelsteine (T&#252;rkis)</German>
+		<Italian>Gems (Turquoise)</Italian>
+		<Spanish>Gems (Turquoise)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_GEMS_DIAMONDS</Tag>
 		<English>Gems (Diamonds)</English>
+		<French>Gems (Diamonds)</French>
 		<German>Edelsteine (Diamanten)</German>
+		<Italian>Gems (Diamonds)</Italian>
+		<Spanish>Gems (Diamonds)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_GEMS_RUBIES</Tag>
 		<English>Gems (Rubies)</English>
+		<French>Gems (Rubies)</French>
 		<German>Edelsteine (Rubine)</German>
+		<Italian>Gems (Rubies)</Italian>
+		<Spanish>Gems (Rubies)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_GEMS_SAPPHIRES</Tag>
 		<English>Gems (Sapphires)</English>
+		<French>Gems (Sapphires)</French>
 		<German>Edelsteine (Saphire)</German>
+		<Italian>Gems (Sapphires)</Italian>
+		<Spanish>Gems (Sapphires)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_SHEEP_LLAMA</Tag>
 		<English>Sheep (Llama)</English>
+		<French>Sheep (Llama)</French>
 		<German>Schaf (Llama)</German>
+		<Italian>Sheep (Llama)</Italian>
+		<Spanish>Sheep (Llama)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_COW_BROWN</Tag>
 		<English>Cow (Brown)</English>
+		<French>Cow (Brown)</French>
 		<German>Kuh (Braun)</German>
+		<Italian>Cow (Brown)</Italian>
+		<Spanish>Cow (Brown)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_PIG_FURRY</Tag>
 		<English>Pig (Furry)</English>
+		<French>Pig (Furry)</French>
 		<German>Schwein (Fellig)</German>
+		<Italian>Pig (Furry)</Italian>
+		<Spanish>Pig (Furry)</Spanish>
 	</TEXT>
 </Civ4GameText>

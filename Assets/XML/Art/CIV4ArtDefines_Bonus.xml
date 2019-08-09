@@ -491,7 +491,7 @@
 			<fScale>1.2</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/murex/murex.nif</NIF>
-			<KFM></KFM>
+			<KFM/>
 			<Button>Art/Interface/Buttons/Resources/murex.dds</Button>
 			<FontButtonIndex>20</FontButtonIndex>
 		</BonusArtInfo>
@@ -503,6 +503,15 @@
 			<KFM>Art/Terrain/Resources/Henna/Dye.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/Henna.dds</Button>
 			<FontButtonIndex>20</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_SPICES_NUTMEG</Type>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.6</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Nutmeg/olives.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Resources/nutmeg.dds</Button>
+			<FontButtonIndex>28</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_SPICES_VANILLA</Type>
@@ -520,7 +529,7 @@
 			<NIF>Art/Terrain/Resources/Saffron/Wheat.nif</NIF>
 			<KFM>Art/Terrain/Resources/Saffron/Wheat.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/Saffron.dds</Button>
-			<FontButtonIndex>15</FontButtonIndex>
+			<FontButtonIndex>28</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_GEMS_TURQUOISE</Type>
@@ -563,10 +572,10 @@
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_SHEEP_LLAMA</Type>
-			<fScale>10.0</fScale>
+			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/llama/llama_adult_f.nif</NIF>
-			<KFM></KFM>
+			<NIF>Art/Terrain/Resources/llama/llama.nif</NIF>
+			<KFM>Art/Terrain/Resources/Horse/Horse.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/llama.dds</Button>
 			<FontButtonIndex>18</FontButtonIndex>
 		</BonusArtInfo>
@@ -574,10 +583,10 @@
 			<Type>ART_DEF_BONUS_COW_BROWN</Type>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/Cow_Brown/Cow_brown.nif</NIF>
-			<KFM>Art/Terrain/Resources/Cow_Brown/Cow.kfm</KFM>
+			<NIF>Art/Terrain/Resources/Cow_Brown/Cow.nif</NIF>
+			<KFM>Art/Terrain/Resources/Cow/Cow.kfm</KFM>
 			<SHADERNIF>Art/Terrain/Resources/Cow_Brown/Cow_FX.nif</SHADERNIF>
-			<Button>,Art/Interface/Buttons/WorldBuilder/Cow.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,12</Button>
+			<Button>Art/Interface/Buttons/Resources/cow_brown.dds</Button>
 			<FontButtonIndex>12</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
@@ -585,9 +594,9 @@
 			<fScale>1.1</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/Pig_Furry/Pig.nif</NIF>
-			<KFM>Art/Terrain/Resources/Pig_Furry/Pig.kfm</KFM>
+			<KFM>Art/Terrain/Resources/Pig/Pig.kfm</KFM>
 			<SHADERNIF>Art/Terrain/Resources/Pig_Furry/Pig_FX.nif</SHADERNIF>
-			<Button>,Art/Interface/Buttons/WorldBuilder/Pig.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,15</Button>
+			<Button>Art/Interface/Buttons/Resources/pig_furry.dds</Button>
 			<FontButtonIndex>16</FontButtonIndex>
 		</BonusArtInfo>
 	</BonusArtInfos>
