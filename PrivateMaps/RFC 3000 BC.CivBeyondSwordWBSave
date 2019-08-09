@@ -26444,6 +26444,7 @@ EndPlot
 BeginPlot
 	x=58,y=44
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27274,6 +27275,7 @@ EndPlot
 BeginPlot
 	x=60,y=32
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -27745,6 +27747,7 @@ EndPlot
 BeginPlot
 	x=61,y=35
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -29061,6 +29064,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -30005,6 +30009,7 @@ EndPlot
 BeginPlot
 	x=66,y=46
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -33144,6 +33149,7 @@ EndPlot
 BeginPlot
 	x=73,y=33
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -34918,6 +34924,7 @@ EndPlot
 BeginPlot
 	x=77,y=18
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -34935,6 +34942,7 @@ EndPlot
 BeginPlot
 	x=77,y=20
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -35528,6 +35536,7 @@ EndPlot
 BeginPlot
 	x=78,y=40
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35924,6 +35933,7 @@ EndPlot
 BeginPlot
 	x=79,y=27
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -35993,6 +36003,7 @@ EndPlot
 BeginPlot
 	x=79,y=37
 	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
