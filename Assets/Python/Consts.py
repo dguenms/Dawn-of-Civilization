@@ -791,13 +791,13 @@ iAttackSea, iFerry, iEscort, iExplore, iShockCity, iSiege, iCitySiege, iExploreS
 iWork, iMissionary) = range(iNumUnitRoles)
 
 
-iNumBonuses = 52
-(iAluminium, iAmber, iCamel, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone,
-iUranium, iBanana, iClam, iCorn, iCow, iCrab, iDeer, iFish, iPig, iPotato,
-iRice, iSheep, iWheat, iCocoa, iCoffee, iCotton, iDye, iFur, iGems, iGold,
-iIncense, iIvory, iJade, iMillet, iObsidian, iOlives, iOpium, iPearls, iRareEarths, iRubber,
-iSalt, iSilk, iSilver, iSpices, iSugar, iTea, iTobacco, iWine, iWhales, iSoccer,
-iSongs, iMovies) = range(iNumBonuses)
+iNumBonuses = 54
+(iAluminium, iAmber, iCamel, iCitrus, iCoal, iCopper, iDates, iHorse, iIron, iMarble,
+iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab, iDeer, iFish,
+iPig, iPotato, iRice, iSheep, iWheat, iCocoa, iCoffee, iCotton, iDye, iFur,
+iGems, iGold, iIncense, iIvory, iJade, iMillet, iObsidian, iOlives, iOpium, iPearls,
+iRareEarths, iRubber, iSalt, iSilk, iSilver, iSpices, iSugar, iTea, iTobacco, iWine,
+iWhales, iSoccer, iSongs, iMovies) = range(iNumBonuses)
 
 
 iNumBuildings = 318
