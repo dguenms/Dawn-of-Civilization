@@ -599,5 +599,15 @@
 			<Button>Art/Interface/Buttons/Resources/pig_furry.dds</Button>
 			<FontButtonIndex>16</FontButtonIndex>
 		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_IVORY_AFRICAN</Type>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Elephant_african/Elephant.nif</NIF>
+			<KFM>Art/Terrain/Resources/Elephant/Elephant.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Elephant_african/Elephant_FX.nif</SHADERNIF>
+			<Button>Art/Interface/Buttons/Resources/Elephant_african.dds</Button>
+			<FontButtonIndex>25</FontButtonIndex>
+		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>
