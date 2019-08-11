@@ -29575,12 +29575,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=28
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=65,y=29
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -30013,12 +30013,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=29
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=66,y=30
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30042,6 +30042,7 @@ BeginPlot
 	x=66,y=33
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -30453,7 +30454,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=27
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -30463,12 +30464,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=29
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=67,y=30
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30845,37 +30846,36 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=18
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=19
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=20
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=23
-	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -30891,7 +30891,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=26
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -30901,32 +30901,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=28
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=68,y=29
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=68,y=30
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=68,y=31
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=68,y=30
-	BonusType=BONUS_OIL
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=68,y=31
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
-EndPlot
-BeginPlot
 	x=68,y=32
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -31290,7 +31288,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -31300,45 +31298,43 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=18
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=19
-	isNOfRiver
-	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=20
-	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=21
-	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=22
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=23
-	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_OIL
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=24
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=25
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -31348,32 +31344,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=27
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=28
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=29
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=30
+	isNOfRiver
+	RiverWEDirection=3
+	BonusType=BONUS_OIL
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=31
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
 EndPlot
 BeginPlot
 	x=69,y=32
@@ -31746,13 +31744,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=17
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=18
 	TerrainType=TERRAIN_DESERT
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=19
@@ -31760,75 +31758,69 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=20
-	RiverNSDirection=2
-	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
-EndPlot
-BeginPlot
-	x=70,y=21
-	FeatureType=FEATURE_FOREST, FeatureVariety=5
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
-EndPlot
-BeginPlot
-	x=70,y=22
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
-	x=70,y=23
-	TerrainType=TERRAIN_PLAINS
+	x=70,y=21
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
+EndPlot
+BeginPlot
+	x=70,y=22
+	BonusType=BONUS_FISH
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=70,y=23
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=24
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=25
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=26
-	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=3
-	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=27
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=28
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=29
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=70,y=30
+	isNOfRiver
+	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=70,y=31
@@ -32206,7 +32198,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=17
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_DESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -32228,70 +32220,62 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=21
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=71,y=22
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=23
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=71,y=24
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=71,y=24
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=1
-EndPlot
-BeginPlot
 	x=71,y=25
-	BonusType=BONUS_COTTON
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
-EndPlot
-BeginPlot
-	x=71,y=26
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=71,y=27
+	x=71,y=26
 	RiverNSDirection=2
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=71,y=27
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=28
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=29
-	RiverNSDirection=2
-	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=30
-	RiverNSDirection=2
-	isWOfRiver
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -32300,7 +32284,7 @@ BeginPlot
 	x=71,y=31
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=32
@@ -32702,9 +32686,8 @@ BeginPlot
 	x=72,y=21
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=72,y=22
@@ -32721,33 +32704,39 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=24
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=72,y=25
+	BonusType=BONUS_COTTON
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=72,y=26
-	RiverNSDirection=0
-	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=72,y=27
-	isNOfRiver
-	RiverWEDirection=3
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
+	x=72,y=27
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+EndPlot
+BeginPlot
 	x=72,y=28
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
@@ -32755,8 +32744,6 @@ EndPlot
 BeginPlot
 	x=72,y=29
 	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=3
 	isWOfRiver
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
@@ -32764,14 +32751,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=31
-	isNOfRiver
-	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -33166,69 +33153,61 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=22
-	RiverNSDirection=0
-	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=23
-	RiverNSDirection=0
-	isWOfRiver
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=24
-	RiverNSDirection=0
-	isWOfRiver
-	BonusType=BONUS_GEMS
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=25
-	RiverNSDirection=0
-	isWOfRiver
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=26
-	isNOfRiver
-	RiverWEDirection=3
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=27
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
-EndPlot
-BeginPlot
-	x=73,y=28
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
+	x=73,y=28
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
+	PlotType=2
+EndPlot
+BeginPlot
 	x=73,y=29
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=30
-	isNOfRiver
-	RiverWEDirection=3
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
@@ -33239,7 +33218,7 @@ BeginPlot
 	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=73,y=32
@@ -33634,8 +33613,8 @@ BeginPlot
 	x=74,y=22
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33646,23 +33625,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=24
+	RiverNSDirection=0
+	isWOfRiver
 	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=25
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_GEMS
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=26
-	RiverNSDirection=0
-	isWOfRiver
+	isNOfRiver
+	RiverWEDirection=3
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
@@ -33677,14 +33659,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=28
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=29
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33697,14 +33679,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=31
+	RiverNSDirection=2
 	isNOfRiver
 	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=32
+	RiverNSDirection=2
+	isWOfRiver
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -34119,18 +34105,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=25
+	RiverNSDirection=0
+	isWOfRiver
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=26
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=27
+	isNOfRiver
+	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -34153,8 +34145,8 @@ BeginPlot
 	x=75,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34591,7 +34583,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=25
-	RiverNSDirection=0
+	RiverNSDirection=2
 	isWOfRiver
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -34609,8 +34601,8 @@ BeginPlot
 	x=76,y=27
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34625,8 +34617,8 @@ BeginPlot
 	x=76,y=29
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34640,7 +34632,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -35076,7 +35068,7 @@ EndPlot
 BeginPlot
 	x=77,y=25
 	isNOfRiver
-	RiverWEDirection=3
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -35100,7 +35092,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=29
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	isNOfRiver
+	RiverWEDirection=3
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -35115,7 +35109,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -39254,7 +39248,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=15
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39274,7 +39268,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=19
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39703,7 +39697,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=14
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39713,8 +39707,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=16
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=87,y=17
@@ -39723,8 +39717,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=18
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=87,y=19
@@ -39738,7 +39732,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -39778,8 +39772,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=29
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=87,y=30
@@ -40161,34 +40155,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=14
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
-EndPlot
-BeginPlot
-	x=88,y=15
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=88,y=16
+	x=88,y=15
 	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=88,y=17
+	x=88,y=16
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=88,y=18
+	x=88,y=17
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=88,y=19
+	x=88,y=18
 	isNOfRiver
 	RiverWEDirection=3
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
@@ -40196,10 +40185,15 @@ BeginPlot
 	PlotType=2
 EndPlot
 BeginPlot
-	x=88,y=20
+	x=88,y=19
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+EndPlot
+BeginPlot
+	x=88,y=20
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=88,y=21
@@ -40208,7 +40202,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=22
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40239,7 +40234,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=28
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40250,8 +40245,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=30
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=88,y=31
@@ -40633,7 +40628,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=14
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40643,36 +40638,36 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=16
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
 EndPlot
 BeginPlot
 	x=89,y=17
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=89,y=18
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
-EndPlot
-BeginPlot
-	x=89,y=19
-	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
-	x=89,y=20
+	x=89,y=19
 	BonusType=BONUS_RARE_EARTHS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
-	x=89,y=21
+	x=89,y=20
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+EndPlot
+BeginPlot
+	x=89,y=21
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=89,y=22
@@ -40681,7 +40676,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=23
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40711,7 +40706,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=29
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41103,7 +41098,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=15
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41118,8 +41113,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=18
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=90,y=19
@@ -41129,24 +41125,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=20
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=90,y=21
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
-	x=90,y=22
+	x=90,y=21
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=90,y=23
+	x=90,y=22
 	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=90,y=23
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41196,8 +41191,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=33
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=90,y=34
@@ -41576,7 +41571,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41586,12 +41581,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=19
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=91,y=20
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41607,7 +41602,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=23
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -41653,7 +41648,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=32
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42464,7 +42459,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42479,7 +42474,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=20
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -42901,33 +42896,33 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=94,y=18
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=94,y=19
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=94,y=20
+	x=94,y=19
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=94,y=21
+	x=94,y=20
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
-	x=94,y=22
+	x=94,y=21
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=94,y=22
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43349,7 +43344,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43369,7 +43364,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43780,22 +43775,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=96,y=19
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=96,y=20
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=96,y=21
+	x=96,y=20
 	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=96,y=21
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44213,7 +44208,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44228,7 +44223,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
