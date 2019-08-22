@@ -6332,7 +6332,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=69
-	TerrainType=TERRAIN_MOORLAND
+	FeatureType=FEATURE_MARSH, FeatureVariety=1
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6775,9 +6776,8 @@ BeginPlot
 	x=13,y=69
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_FUR
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -7226,8 +7226,8 @@ BeginPlot
 	x=14,y=68
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_TAIGA, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=1
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -7236,7 +7236,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -7680,6 +7680,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=69
+	BonusType=BONUS_FUR
 	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
@@ -10791,6 +10792,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=68
+	FeatureType=FEATURE_MARSH, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -11706,13 +11708,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=75
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
 BeginPlot
 	x=24,y=76
-	RiverNSDirection=0
-	isWOfRiver
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
@@ -12085,8 +12087,8 @@ BeginPlot
 	x=25,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -12133,8 +12135,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=73
-	TerrainType=TERRAIN_ARCTIC_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=74
@@ -12148,8 +12150,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=76
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_ARCTIC_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=77
@@ -12530,8 +12532,8 @@ BeginPlot
 	x=26,y=64
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_TAIGA, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -12567,8 +12569,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=71
-	TerrainType=TERRAIN_ARCTIC_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=72
@@ -12577,14 +12579,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=73
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
-EndPlot
-BeginPlot
-	x=26,y=74
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
+EndPlot
+BeginPlot
+	x=26,y=74
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=75
@@ -12962,8 +12964,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=63
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -13002,6 +13004,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=70
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -13013,19 +13016,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=72
-	TerrainType=TERRAIN_ARCTIC_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=27,y=73
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
 BeginPlot
-	x=27,y=74
+	x=27,y=73
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
+EndPlot
+BeginPlot
+	x=27,y=74
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=27,y=75
@@ -13429,12 +13432,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=68
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=69
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13857,14 +13860,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=63
-	FeatureType=FEATURE_TAIGA, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=64
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -13872,6 +13876,7 @@ BeginPlot
 	x=29,y=65
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -13893,8 +13898,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=69
-	TerrainType=TERRAIN_ARCTIC_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=70
@@ -14337,6 +14342,7 @@ BeginPlot
 	x=30,y=65
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -14784,14 +14790,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=65
-	isNOfRiver
-	RiverWEDirection=3
-	FeatureType=FEATURE_TAIGA, FeatureVariety=0
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=31,y=66
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -15247,12 +15251,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=64
-	FeatureType=FEATURE_TAIGA, FeatureVariety=0
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=65
+	FeatureType=FEATURE_TAIGA, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -15729,6 +15734,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=65
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -43072,7 +43078,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=50
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43083,7 +43089,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=52
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -43093,12 +43099,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=54
+	BonusType=BONUS_SALT
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=94,y=55
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43495,6 +43502,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=46
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -43517,13 +43526,13 @@ EndPlot
 BeginPlot
 	x=95,y=50
 	BonusType=BONUS_CAMEL
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=95,y=51
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=95,y=52
@@ -43905,7 +43914,7 @@ EndPlot
 BeginPlot
 	x=96,y=43
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=96,y=44
@@ -43945,12 +43954,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=51
-	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=96,y=52
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -44338,12 +44348,12 @@ EndPlot
 BeginPlot
 	x=97,y=43
 	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=97,y=44
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=97,y=45
@@ -44352,39 +44362,37 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=46
-	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=47
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_OPIUM
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=48
 	BonusType=BONUS_SPICES
 	BonusVarietyType=BONUS_SPICES_SAFFRON
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=97,y=49
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=97,y=50
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=97,y=51
 	BonusType=BONUS_COTTON
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=97,y=52
@@ -44776,37 +44784,37 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=43
+	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=98,y=44
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=98,y=45
-	BonusType=BONUS_SPICES
-	BonusVarietyType=BONUS_SPICES_SAFFRON
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=98,y=46
+	BonusType=BONUS_DEER
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=98,y=47
-	BonusType=BONUS_DEER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=98,y=48
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=98,y=49
@@ -45226,9 +45234,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=46
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=99,y=47
@@ -45253,14 +45261,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=51
-	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_TURQUOISE
+	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=99,y=52
-	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -45700,11 +45706,13 @@ BeginPlot
 	x=100,y=49
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
+	TeamReveal=2,
 EndPlot
 BeginPlot
 	x=100,y=50
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -45715,7 +45723,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=52
-	BonusType=BONUS_COAL
+	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -46165,7 +46173,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -46176,6 +46183,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=52
+	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -46667,6 +46675,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=57
+	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
