@@ -50347,6 +50347,7 @@ BeginPlot
 	x=110,y=64
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -50805,6 +50806,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=66
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -51243,6 +51245,7 @@ BeginPlot
 	x=112,y=65
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -51256,7 +51259,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
@@ -51688,6 +51691,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=66
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
@@ -52122,22 +52126,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=65
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=114,y=66
+	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=114,y=67
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=114,y=68
+	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
@@ -52575,13 +52583,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=67
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=115,y=68
-	BonusType=BONUS_URANIUM
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
@@ -53019,7 +53027,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=65
-	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -53032,7 +53039,8 @@ BeginPlot
 	x=116,y=67
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_MOORLAND
+	FeatureType=FEATURE_MARSH, FeatureVariety=2
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -53492,6 +53500,7 @@ BeginPlot
 	x=117,y=66
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -53499,6 +53508,7 @@ BeginPlot
 	x=117,y=67
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
