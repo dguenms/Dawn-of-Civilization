@@ -35249,6 +35249,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=55
+	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -36216,6 +36217,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=53
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36702,18 +36704,21 @@ BeginPlot
 	x=80,y=52
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=80,y=53
+	BonusType=BONUS_OLIVES
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=80,y=54
-	BonusType=BONUS_OLIVES
+	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37157,26 +37162,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=51
-	BonusType=BONUS_HORSE
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=81,y=52
-	BonusType=BONUS_WHEAT
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_OPIUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=81,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=81,y=54
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_COAL
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -37612,24 +37617,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=51
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=82,y=52
-	BonusType=BONUS_COAL
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=82,y=53
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=82,y=54
@@ -37642,6 +37643,7 @@ EndPlot
 BeginPlot
 	x=82,y=55
 	BonusType=BONUS_SHEEP
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -38078,20 +38080,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	TerrainType=TERRAIN_SALTFLAT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=83,y=53
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=83,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -38103,6 +38104,7 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_SPICES
 	BonusVarietyType=BONUS_SPICES_SAFFRON
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -38540,31 +38542,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=51
-	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=84,y=52
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=84,y=53
-	BonusType=BONUS_OPIUM
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=84,y=54
-	BonusType=BONUS_WHEAT
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=84,y=55
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -38981,7 +38982,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=49
-	BonusType=BONUS_OLIVES
+	BonusType=BONUS_WINE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -38998,7 +38999,7 @@ BeginPlot
 	x=85,y=51
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_WHEAT
+	BonusType=BONUS_CITRUS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -39011,13 +39012,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=85,y=54
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -39472,7 +39472,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=54
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -40390,6 +40391,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=53
+	BonusType=BONUS_OBSIDIAN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
