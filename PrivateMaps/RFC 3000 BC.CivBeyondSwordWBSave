@@ -28515,7 +28515,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=72
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -28946,29 +28945,28 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=70
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=63,y=71
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=63,y=72
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_WHALE
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=63,y=73
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=63,y=74
-	BonusType=BONUS_OIL
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -29393,34 +29391,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=71
-	FeatureType=FEATURE_FOREST, FeatureVariety=4
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=64,y=72
-	isNOfRiver
-	RiverWEDirection=3
-	TerrainType=TERRAIN_MOORLAND
-	PlotType=1
-EndPlot
-BeginPlot
-	x=64,y=73
-	isNOfRiver
-	RiverWEDirection=3
-	BonusType=BONUS_ALUMINUM
-	TerrainType=TERRAIN_MOORLAND
-	PlotType=1
-EndPlot
-BeginPlot
-	x=64,y=74
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=64,y=75
+	x=64,y=73
 	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=64,y=74
+	BonusType=BONUS_OIL
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=64,y=75
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -29837,18 +29830,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=72
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	isNOfRiver
+	RiverWEDirection=3
+	TerrainType=TERRAIN_MOORLAND
+	PlotType=1
 EndPlot
 BeginPlot
 	x=65,y=73
+	isNOfRiver
+	RiverWEDirection=3
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=65,y=74
-	TerrainType=TERRAIN_MOORLAND
-	PlotType=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=65,y=75
@@ -30277,17 +30276,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=71
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=66,y=72
-	RiverNSDirection=2
-	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=66,y=73
@@ -30296,10 +30292,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=74
-	BonusType=BONUS_FUR
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=66,y=75
@@ -30721,25 +30715,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=71
-	BonusType=BONUS_FISH
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=67,y=72
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=67,y=73
+	x=67,y=72
+	RiverNSDirection=2
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_MOORLAND
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
-	x=67,y=74
+	x=67,y=73
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=0
+EndPlot
+BeginPlot
+	x=67,y=74
+	BonusType=BONUS_FUR
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_MOORLAND
+	PlotType=1
 EndPlot
 BeginPlot
 	x=67,y=75
@@ -31169,18 +31167,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=71
+	BonusType=BONUS_FISH
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=68,y=72
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=68,y=72
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_MOORLAND
-	PlotType=2
-EndPlot
-BeginPlot
 	x=68,y=73
-	FeatureType=FEATURE_TAIGA, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
@@ -31605,10 +31603,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=69
-	BonusType=BONUS_COPPER
-	FeatureType=FEATURE_FOREST, FeatureVariety=4
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=69,y=70
@@ -31617,14 +31613,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=71
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=72
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=73
@@ -31634,10 +31630,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=74
-	BonusType=BONUS_IRON
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=69,y=75
@@ -32047,40 +32041,37 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=70,y=68
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=69
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=70
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=70,y=71
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=70,y=71
-	BonusType=BONUS_IRON
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
 	x=70,y=72
-	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=70,y=73
@@ -32090,7 +32081,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=74
-	FeatureType=FEATURE_TAIGA, FeatureVariety=1
+	BonusType=BONUS_IRON
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
@@ -32500,52 +32492,52 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=67
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=71,y=68
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=69
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=71,y=70
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=71,y=71
-	isNOfRiver
-	RiverWEDirection=1
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=71,y=72
-	BonusType=BONUS_RARE_EARTHS
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=71,y=73
-	BonusType=BONUS_DEER
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
-	x=71,y=74
-	RiverNSDirection=2
-	isWOfRiver
+	x=71,y=73
 	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=2
+	PlotType=1
+EndPlot
+BeginPlot
+	x=71,y=74
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
+	TerrainType=TERRAIN_MOORLAND
+	PlotType=1
 EndPlot
 BeginPlot
 	x=71,y=75
@@ -32983,40 +32975,47 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=69
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=72,y=70
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=71
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=72
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_RARE_EARTHS
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=73
+	BonusType=BONUS_DEER
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=74
-	isNOfRiver
-	RiverWEDirection=1
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_TAIGA, FeatureVariety=1
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
 	x=72,y=75
+	isNOfRiver
+	RiverWEDirection=1
 	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_TAIGA, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
@@ -33428,9 +33427,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=66
-	FeatureType=FEATURE_CAPE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=67
@@ -33444,10 +33442,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=69
-	BonusType=BONUS_STONE
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=73,y=70
@@ -33456,8 +33453,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=71
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=72
@@ -33466,13 +33463,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=73
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_MOORLAND
+	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=74
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_MOORLAND
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33912,12 +33911,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=69
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=70
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -33934,11 +33934,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=73
-	TerrainType=TERRAIN_ARCTIC_COAST
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=74,y=74
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
@@ -34396,6 +34397,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=70
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34416,8 +34418,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=74
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_MOORLAND
+	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=75
@@ -34887,7 +34889,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=74
-	TerrainType=TERRAIN_ARCTIC_COAST
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
