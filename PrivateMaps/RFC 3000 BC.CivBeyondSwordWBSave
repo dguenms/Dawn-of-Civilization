@@ -24853,40 +24853,40 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=49
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=50
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=51
-	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=3
-	isWOfRiver
 	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=54,y=52
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=54,y=53
 	isNOfRiver
 	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
+	x=54,y=53
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
 	x=54,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25263,7 +25263,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=47
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -25274,34 +25274,38 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=49
+	RiverNSDirection=2
+	isWOfRiver
 	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=50
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=51
+	isNOfRiver
+	RiverWEDirection=3
 	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=52
+	RiverNSDirection=2
 	isNOfRiver
 	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=55,y=53
-	isNOfRiver
-	RiverWEDirection=3
 	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
@@ -25699,39 +25703,40 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=48
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_WINE
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=56,y=49
-	RiverNSDirection=2
-	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=56,y=50
+	isNOfRiver
+	RiverWEDirection=3
 	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=56,y=51
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=56,y=52
 	isNOfRiver
 	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
+	x=56,y=52
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
 	x=56,y=53
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -26132,13 +26137,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=48
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_CITRUS
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=57,y=49
-	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26151,14 +26155,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=51
-	BonusType=BONUS_COW
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=57,y=52
-	isNOfRiver
-	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -26166,13 +26169,13 @@ BeginPlot
 	x=57,y=53
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_HORSE
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=57,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -26581,32 +26584,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=48
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=58,y=49
-	BonusType=BONUS_WINE
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=58,y=50
-	isNOfRiver
-	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
+	x=58,y=49
+	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
+EndPlot
+BeginPlot
+	x=58,y=50
+	BonusType=BONUS_HORSE
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
+EndPlot
+BeginPlot
 	x=58,y=51
-	BonusType=BONUS_WHEAT
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=58,y=52
-	isNOfRiver
-	RiverWEDirection=3
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26623,7 +26626,7 @@ BeginPlot
 	x=58,y=54
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -27039,12 +27042,13 @@ EndPlot
 BeginPlot
 	x=59,y=49
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=59,y=50
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=59,y=51
@@ -27053,7 +27057,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=4
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27481,8 +27485,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=49
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_CITRUS
+	TerrainType=TERRAIN_SEMIDESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=60,y=50
@@ -28379,7 +28384,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=50
-	TerrainType=TERRAIN_OCEAN
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -28818,14 +28824,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=50
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=63,y=51
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=63,y=52
@@ -29263,12 +29268,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=50
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=64,y=51
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
