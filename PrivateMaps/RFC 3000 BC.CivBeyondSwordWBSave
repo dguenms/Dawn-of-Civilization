@@ -50730,7 +50730,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=47
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_STEPPE
 	PlotType=0
 EndPlot
 BeginPlot
@@ -50738,7 +50738,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_INCENSE
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
 BeginPlot
@@ -51187,7 +51187,7 @@ BeginPlot
 	x=112,y=48
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -51633,12 +51633,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=49
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=113,y=50
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
@@ -52069,6 +52069,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=49
+	BonusType=BONUS_COW
+	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -52076,21 +52078,21 @@ BeginPlot
 	x=114,y=50
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=114,y=51
 	RiverNSDirection=2
 	isWOfRiver
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=114,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -52527,19 +52529,19 @@ BeginPlot
 	x=115,y=50
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=115,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=115,y=52
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
