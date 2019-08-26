@@ -6388,6 +6388,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=79
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
@@ -10851,13 +10852,14 @@ EndPlot
 BeginPlot
 	x=22,y=78
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_ARCTIC_COAST
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=22,y=79
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_ARCTIC_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=23,y=0
@@ -11730,8 +11732,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=79
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_ARCTIC_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=0
@@ -13004,7 +13007,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=70
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -22520,6 +22523,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=75
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -22936,13 +22940,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=76
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=49,y=77
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -23353,7 +23355,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=78
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -24172,7 +24173,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=77
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -25884,6 +25884,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=79
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -44142,6 +44143,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=78
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
@@ -60141,6 +60143,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=79
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -61042,6 +61045,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=79
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
