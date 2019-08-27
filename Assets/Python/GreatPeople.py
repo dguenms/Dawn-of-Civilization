@@ -2051,6 +2051,8 @@ iCivIndonesia : {
 		"Sudirman", # 20th
 	],
 },
+iCivBurma : {
+},
 iCivMoors : {
 	iGreatProphet : [
 		"Ibn Masarra", # 10th

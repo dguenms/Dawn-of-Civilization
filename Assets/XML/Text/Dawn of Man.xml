@@ -661,4 +661,12 @@
 		<Tag>TXT_KEY_DOM_ZIMBABWE</Tag>
 		<English>It is the year 1075 AD. The hills at the confluence of the Shashi and Limpopo rivers control the local gold and cattle trade and are also prime country for hunting elephants for their valuable ivory. From this vantage point new innovations in stonework will take place, and these structures will grow ever grander as the grandeur of these kingdoms grows.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BURMA</Tag>
+		<English>It is the year 650 AD. Bamar settlers from the Pyu City states at the confluence of the Irrawaddy and Chindwin Rivers have migrated west to found the Kingdom of Pagan...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BURMA_1700AD</Tag>
+		<English>It is the year 1700 AD. The golden age of the Toungoo Empire has long since ended...</English>
+	</TEXT>
 </Civ4GameText>

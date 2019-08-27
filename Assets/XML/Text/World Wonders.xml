@@ -2531,11 +2531,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_HELP</Tag>
-		<English>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</English>
-		<French>[ICON_BULLET][ICON_PRODUCTION] doubl&#233;e pour les b&#226;timents de la [ICON_RELIGION] d'&#201;tat</French>
-		<German>[ICON_BULLET]Doppelte [ICON_PRODUCTION] f&#252;r Geb&#228;ude der Staats [ICON_RELIGION]</German>
-		<Italian>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Italian>
-		<Spanish>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings</Spanish>
+		<English>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings[NEWLINE][ICON_BULLET]Requires Jungle or Rainforest in city radius</English>
+		<French>[ICON_BULLET][ICON_PRODUCTION] doubl&#233;e pour les b&#226;timents de la [ICON_RELIGION] d'&#201;tat[NEWLINE][ICON_BULLET]Requires Jungle or Rainforest in city radius</French>
+		<German>[ICON_BULLET]Doppelte [ICON_PRODUCTION] f&#252;r Geb&#228;ude der Staats [ICON_RELIGION][NEWLINE][ICON_BULLET]Requires Jungle or Rainforest in city radius</German>
+		<Italian>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings[NEWLINE][ICON_BULLET]Requires Jungle or Rainforest in city radius</Italian>
+		<Spanish>[ICON_BULLET]Double [ICON_PRODUCTION] for state [ICON_RELIGION] buildings[NEWLINE][ICON_BULLET]Requires Jungle or Rainforest in city radius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_STRATEGY</Tag>

@@ -1089,4 +1089,20 @@
 		<Italian>Extra production and commerce on city tiles</Italian>
 		<Spanish>Extra production and commerce on city tiles</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BUR_TITLE</Tag>
+		<English>The Power of Monks Kings:</English>
+		<French>The Power of Monks Kings:</French>
+		<German>The Power of Monks Kings:</German>
+		<Italian>The Power of Monks Kings:</Italian>
+		<Spanish>The Power of Monks Kings:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BUR</Tag>
+		<English>Religious buildings provide +1 Great Person Point</English>
+		<French>Religious buildings provide +1 Great Person Point</French>
+		<German>Religious buildings provide +1 Great Person Point</German>
+		<Italian>Religious buildings provide +1 Great Person Point</Italian>
+		<Spanish>Religious buildings provide +1 Great Person Point</Spanish>
+	</TEXT>
 </Civ4GameText>

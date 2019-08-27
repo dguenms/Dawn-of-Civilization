@@ -2466,6 +2466,25 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	// Leoreth: Shwedagon Paya requires Rainforest or Jungle in city radius
+	if (eBuilding == SHWEDAGON_PAYA)
+	{
+		bool bFound = false;
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_RAINFOREST || getCityIndexPlot(iI)->getFeatureType() == FEATURE_JUNGLE)
+			{
+				bFound = true;
+				break;
+			}
+		}
+
+		if (!bFound)
+		{
+			return false;
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (!bContinue)
@@ -4682,6 +4701,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 					if (pLoopCity->isHasRealBuilding((BuildingTypes)iI))
 					{
 						iGreatPeopleRate = GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
+						if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)iI).isPagan()))
+						{
+							iGreatPeopleRate += 1;
+						}
 						if (iGreatPeopleRate > 0)
 						{
 							pLoopCity->changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType(), iChange * iGreatPeopleRate);
@@ -4695,7 +4718,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
 			{
-				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange());
+				int iGreatPeopleRate = GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange();
+				if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+				{
+					iGreatPeopleRate += 1;
+				}
+				changeBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange * iGreatPeopleRate);
 			}
 		}
 
@@ -4934,6 +4962,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			{
 				changeGreatPeopleUnitRate(eGreatPeopleUnit, GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() * iChange);
 			}
+		}
+
+		if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+		{
+			if (GC.getBuildingInfo(eBuilding).getGreatPeopleUnitClass() == NO_UNITCLASS)
+			{
+				eGreatPeopleUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"));
+			}
+			else
+			{
+				eGreatPeopleUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getBuildingInfo(eBuilding).getGreatPeopleUnitClass())));
+			}
+			
+			changeBaseGreatPeopleRate(iChange);
+			changeGreatPeopleUnitRate(eGreatPeopleUnit, iChange);
 		}
 
 		GET_TEAM(getTeam()).changeBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), iChange);
@@ -6894,6 +6937,11 @@ int CvCity::getAdditionalBaseGreatPeopleRateByBuilding(BuildingTypes eBuilding) 
 	int iExtraRate = 0;
 
 	iExtraRate += kBuilding.getGreatPeopleRateChange();
+	
+	if (getOwnerINLINE() == BURMA && (kBuilding.getPrereqReligion() != NO_RELIGION || kBuilding.isPagan()))
+	{
+		iExtraRate += 1;
+	}
 
 	// Specialists
 	if (!bObsolete)
@@ -19529,13 +19577,12 @@ int CvCity::calculateBaseGreatPeopleRate() const
 		if (isHasRealBuilding((BuildingTypes)iI))
 		{
 			iRate += GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
-		}
-	}
 
-	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-	{
-		if (isHasRealBuilding((BuildingTypes)iI))
-		{
+			if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)iI).isPagan()))
+			{
+				iRate += 1;
+			}
+
 			if (!GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI))
 			{
 				iRate += getBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType());

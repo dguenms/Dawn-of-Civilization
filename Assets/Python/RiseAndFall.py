@@ -687,6 +687,7 @@ class RiseAndFall:
 			iThailand: 8,
 			iCongo: 4,
 			iNetherlands: 6,
+			iBurma: 3,
 		}
 		
 		dGreatGeneralsCreated = {
@@ -1330,6 +1331,10 @@ class RiseAndFall:
 		x, y = tCapital
 		bCapitalSettled = False
 		
+		if iCiv == iBurma:
+			if gc.getMap().plot(x, y).isCity():
+				bCapitalSettled = True
+		
 		if iCiv == iItaly:
 			for (i, j) in utils.surroundingPlots(tCapital):
 				if gc.getMap().plot(i, j).isCity():
@@ -1716,7 +1721,8 @@ class RiseAndFall:
 				# notify dynamic names
 				dc.onCityAcquired(iCiv, iOwner)
 				
-				self.createStartingWorkers(iCiv, tCapital)
+				if iCiv != iBurma:
+					self.createStartingWorkers(iCiv, tCapital)
 
 		else: # starting units have already been placed, now to the second part
 			lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
@@ -2425,6 +2431,9 @@ class RiseAndFall:
 		elif iCiv == iIndonesia:
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
+		elif iCiv == iBurma:
+			utils.makeUnit(iArcher, iCiv, tPlot, 3)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 3)
 		elif iCiv == iMoors:
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 2)
 		elif iCiv == iSpain:
@@ -2707,6 +2716,11 @@ class RiseAndFall:
 				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
+		elif iCiv == iBurma:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK, 1)
+			if gc.getMap().plot(tPlot[0], tPlot[1]).isCity() and not gc.getMap().plot(tPlot[0], tPlot[1]).getPlotCity().isHasReligion(iBuddhism):
+				utils.createMissionaries(iCiv, 1, iBuddhism)
 		elif iCiv == iMoors:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -3104,6 +3118,8 @@ class RiseAndFall:
 		elif iCiv == iKhmer:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iIndonesia:
+			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iBurma:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMoors:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)

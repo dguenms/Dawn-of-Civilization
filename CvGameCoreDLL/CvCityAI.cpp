@@ -2509,6 +2509,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		aiUnitAIVal[UNITAI_PIRATE_SEA] *= 2;
 		break;
+	case BURMA:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
 	case MOORS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		//aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
@@ -3912,13 +3915,18 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				iValue += ((kBuilding.getGlobalSpaceProductionModifier() * iNumCities) / 20);
 
 
-				if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS)
+				if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (getOwnerINLINE() == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
 				{
 					iValue++; // XXX improve this for diversity...
 				}
 
 				// prefer to build great people buildings in places that already have some GP points
 				iValue += (kBuilding.getGreatPeopleRateChange() * 10) * (1 + (getBaseGreatPeopleRate() / 2));
+				
+				if (getOwnerINLINE() == BURMA && (kBuilding.getPrereqReligion() != NO_RELIGION || kBuilding.isPagan()))
+				{
+					iValue += (1 * 10) * (1 + (1 / 2));
+				}
 
 				if (!bAreaAlone)
 				{

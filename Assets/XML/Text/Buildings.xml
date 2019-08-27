@@ -3213,4 +3213,20 @@
 		<Italian>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Kraal[COLOR_REVERT], the Zimbabwean replacement for the [COLOR_BUILDING_TEXT]Smokehouse[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Deer[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BURMA_PAYA</Tag>
+		<English>Paya</English>
+		<French>Paya</French>
+		<German>Paya</German>
+		<Italian>Paya</Italian>
+		<Spanish>Paya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TTXT_KEY_BUILDING_BURMA_PAYA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Paya[COLOR_REVERT], the Burmese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], allow you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
+		<French>The [COLOR_BUILDING_TEXT]Paya[COLOR_REVERT], the Burmese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], allow you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</French>
+		<German>The [COLOR_BUILDING_TEXT]Paya[COLOR_REVERT], the Burmese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], allow you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Paya[COLOR_REVERT], the Burmese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], allow you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Paya[COLOR_REVERT], the Burmese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], allow you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</Spanish>
+	</TEXT>
 </Civ4GameText>

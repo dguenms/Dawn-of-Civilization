@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Khmer -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_DESC</Tag>
+		<English>The Burmese</English>
+		<French>The Burmese</French>
+		<German>The Burmese</German>
+		<Italian>The Burmese</Italian>
+		<Spanish>The Burmese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_ADJECTIVE</Tag>
+		<English>Burmese</English>
+		<French>Burmese</French>
+		<German>Burmese</German>
+		<Italian>Burmese</Italian>
+		<Spanish>Burmese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_SHORT_DESC</Tag>
+		<English>Burma</English>
+		<French>Burma</French>
+		<German>Burma</German>
+		<Italian>Burma</Italian>
+		<Spanish>Burma</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_PEOPLES</Tag>
+		<English>Pyu City States</English>
+		<French>Pyu City States</French>
+		<German>Pyu City States</German>
+		<Italian>Pyu City States</Italian>
+		<Spanish>Pyu City States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_CITY_STATES</Tag>
+		<English>Pyu City States</English>
+		<French>Pyu City States</French>
+		<German>Pyu City States</German>
+		<Italian>Pyu City States</Italian>
+		<Spanish>Pyu City States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
+		<French>
+			<Text>Royaume %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_TOUNGOO</Tag>
+		<English>Toungoo</English>
+		<French>Toungoo</French>
+		<German>Toungoo</German>
+		<Italian>Toungoo</Italian>
+		<Spanish>Toungoo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UNION_OF</Tag>
+		<English>Union of %s1</English>
+		<French>Union of %s1</French>
+		<German>Union of %s1</German>
+		<Italian>Union of %s1</Italian>
+		<Spanish>Union of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_COMMUNIST</Tag>
+		<English>Socialist Republic of the Union of %s1</English>
+		<French>Socialist Republic of the Union of %s1</French>
+		<German>Socialist Republic of the Union of %s1</German>
+		<Italian>Socialist Republic of the Union of %s1</Italian>
+		<Spanish>Socialist Republic of the Union of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_FASCIST</Tag>
+		<English>Nationalist %s1</English>
+		<French>
+			<Text>%s1 nationaliste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalistisches %s1:Nationalistische %s1:Nationalistischen %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Nazionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Nacionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_MYANMAR_SHORT_DESC</Tag>
+		<English>Myanmar</English>
+		<French>Myanmar</French>
+		<German>Myanmar</German>
+		<Italian>Myanmar</Italian>
+		<Spanish>Myanmar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYANMAR_DEFAULT</Tag>
+		<English>Union of %s1</English>
+		<French>Union of %s1</French>
+		<German>Union of %s1</German>
+		<Italian>Union of %s1</Italian>
+		<Spanish>Union of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYANMAR_COMMUNIST</Tag>
+		<English>State Peace and Development Council</English>
+		<English>State Peace and Development Council</English>
+		<French>State Peace and Development Council</French>
+		<German>State Peace and Development Council</German>
+		<Italian>State Peace and Development Council</Italian>
+		<Spanish>State Peace and Development Council</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYANMAR_REPUBLIC</Tag>
+		<English>Republic of the Union of %s1</English>
+		<French>Republic of the Union of %s1</French>
+		<German>Republic of the Union of %s1</German>
+		<Italian>Republic of the Union of %s1</Italian>
+		<Spanish>Republic of the Union of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MYANMAR_FASCIST</Tag>
+		<English>Nationalist %s1</English>
+		<French>
+			<Text>%s1 nationaliste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalistisches %s1:Nationalistische %s1:Nationalistischen %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Nazionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Nacionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_HANTHAWADDY_SHORT_DESC</Tag>
+		<English>Hanthawaddy</English>
+		<French>Hanthawaddy</French>
+		<German>Hanthawaddy</German>
+		<Italian>Hanthawaddy</Italian>
+		<Spanish>Hanthawaddy</Spanish>
+	</TEXT>
+</Civ4GameText>

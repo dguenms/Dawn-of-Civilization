@@ -1263,6 +1263,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	HOCHIMINH,
 	RUSVINGO,
 	MUTOTA,
+	ANAWRAHTA,
+	SHINSAWBU,
+	BAYINNUANG,
 	NUM_LEADERHEADS
 };
 
@@ -1359,6 +1362,7 @@ enum PlayerTypes				// Exposed to Python
 	ARABIA,
 	TIBET,
 	INDONESIA,
+	BURMA,
 	MOORS,
 	SPAIN,
 	FRANCE,

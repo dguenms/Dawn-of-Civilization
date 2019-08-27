@@ -6053,4 +6053,68 @@
 		<Italian>Currently no European colonies in Subequatorial Africa</Italian>
 		<Spanish>Currently no European colonies in Subequatorial Africa</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUR1_TITLE</Tag>
+		<English>Indochinese Buddhism</English>
+		<French>Indochinese Buddhism</French>
+		<German>Indochinese Buddhism</German>
+		<Italian>Indochinese Buddhism</Italian>
+		<Spanish>Indochinese Buddhism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUR1</Tag>
+		<English>Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD</English>
+		<French>Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD</French>
+		<German>Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD</German>
+		<Italian>Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD</Italian>
+		<Spanish>Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUR2_TITLE</Tag>
+		<English>The Five Temples</English>
+		<French>The Five Temples</French>
+		<German>The Five Temples</German>
+		<Italian>The Five Temples</Italian>
+		<Spanish>The Five Temples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUR2</Tag>
+		<English>Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD</English>
+		<French>Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD</French>
+		<German>Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD</German>
+		<Italian>Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD</Italian>
+		<Spanish>Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUR3_TITLE</Tag>
+		<English>The Toungoo Dynasty</English>
+		<French>The Toungoo Dynasty</French>
+		<German>The Toungoo Dynasty</German>
+		<Italian>The Toungoo Dynasty</Italian>
+		<Spanish>The Toungoo Dynasty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BUR3</Tag>
+		<English>Control all of Indochina in 1580 AD</English>
+		<French>Control all of Indochina in 1580 AD</French>
+		<German>Control all of Indochina in 1580 AD</German>
+		<Italian>Control all of Indochina in 1580 AD</Italian>
+		<Spanish>Control all of Indochina in 1580 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BUDDHIST_TEMPLES</Tag>
+		<English>Buddhist Stupa: %d1 / %d2</English>
+		<French>Stupa bouddhistes : %d1 / %d2</French>
+		<German>Buddhist Stupa: %d1 / %d2</German>
+		<Italian>Buddhist Stupa: %d1 / %d2</Italian>
+		<Spanish>Buddhist Stupa: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROPHETS_SCIENTISTS_ARTISTS</Tag>
+		<English>Great Prophets, Scientists, and Artists: %d1 / %d2</English>
+		<French>Great Prophets, Scientists, Artists: %d1 / %d2</French>
+		<German>Great Prophets, Scientists, Artists: %d1 / %d2</German>
+		<Italian>Great Prophets, Scientists, Artists: %d1 / %d2</Italian>
+		<Spanish>Great Prophets, Scientists, Artists: %d1 / %d2</Spanish>
+	</TEXT>
 </Civ4GameText>

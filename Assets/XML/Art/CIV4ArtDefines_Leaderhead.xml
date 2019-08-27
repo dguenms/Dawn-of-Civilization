@@ -1198,5 +1198,29 @@
 			<NoShaderNIF>Art/LeaderHeads/Mutota/shaka_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/LeaderHeads/Mutota/shaka_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ANAWRAHTA</Type>
+			<Button>Art/Leaderheads/Anawrahta/Button_Anawrahta.dds</Button>
+			<NIF>Art/Leaderheads/Anawrahta/thaiguy.nif</NIF>
+			<KFM>Art/Leaderheads/Anawrahta/cunne_shote.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Anawrahta/thaiguy.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Anawrahta/cunne_shote_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SHIN_SAWBU</Type>
+			<Button>Art/Leaderheads/Shin Sawbu/Button_ShinSawbu.dds</Button>
+			<NIF>Art/Leaderheads/Shin Sawbu/asoka.nif</NIF>
+			<KFM>Art/Leaderheads/Asoka/asoka.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Shin Sawbu/asoka.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Shin Sawbu/catherine_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BAYINNAUNG</Type>
+			<Button>Art/LeaderHeads/Bayinnaung/Button_Bayinnaung.dds</Button>
+			<NIF>Art/LeaderHeads/Bayinnaung/Gilgamesh.nif</NIF>
+			<KFM>Art/LeaderHeads/Bayinnaung/Gilgamesh.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Bayinnaung/Gilgamesh.nif</NoShaderNIF>
+			<BackgroundKFM>Art/LeaderHeads/Bayinnaung/Gilgamesh_Backgrnd.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -468,5 +468,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_MIDDLE_RED_INDIGO</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_PEACH_AND_DARK_BLUE</Type> <!-- Burma -->
+			<ColorTypePrimary>COLOR_PLAYER_PEACH</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_BLUE</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_PEACH_TEXT</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

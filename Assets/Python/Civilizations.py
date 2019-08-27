@@ -166,6 +166,7 @@ iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedic
 iCivArabia :	Techs([iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivTibet :	Techs([iNobility, iScholarship, iEthics], column=5),
 iCivIndonesia :	Techs([iEthics], column=5, exceptions=[iGeneralship]),
+iCivBurma :		Techs(column=5, exceptions=[iGeneralship]),
 iCivMoors :	Techs([iMachinery, iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
 iCivFrance :	Techs([iFeudalism, iTheology], column=6),
@@ -225,6 +226,7 @@ iCivKorea :	Techs(column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivJapan :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
 iCivTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
+iCivBurma :		Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
 iCivFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iEconomics]),
 iCivEngland :	Techs(column=11, exceptions=[iUrbanPlanning, iHorticulture]),
@@ -436,6 +438,10 @@ dTechPreferences = {
 		iAesthetics: 30,
 		iArtisanry: 30,
 		iExploration: -20,
+	},
+	iCivBurma : {
+		iSteel : 30,
+		iFortification : 20,
 	},
 	iCivMoors : {
 		iCivilService: 20,
@@ -704,6 +710,7 @@ dDefaultWonderPreferences = {
 	iCivRome: -20,
 	iCivArabia: -15,
 	iCivIndonesia: -15,
+	iCivBurma: -15,
 	iCivFrance: -12,
 	iCivKhmer: -15,
 	iCivEngland: -12,
@@ -839,6 +846,7 @@ dBuildingPreferences = {
 		iTsukijiFishMarket: 30,
 		iSkytree: 30,
 	
+		iShwedagonPaya: -100,
 		iGreatWall: -100,
 	},
 	iCivTurks : {
@@ -870,6 +878,14 @@ dBuildingPreferences = {
 		iGardensByTheBay: 40,
 		iShwedagonPaya: 20,
 		iWatPreahPisnulok: 20,
+		iNalanda: 20,
+	},
+	iCivBurma : {
+		iShwedagonPaya: 40,
+		iWatPreahPisnulok: 20,
+		iTajMahal: 20,
+		iBorobudur: 20,
+		iPrambanan: 20,
 		iNalanda: 20,
 	},
 	iCivMoors : {

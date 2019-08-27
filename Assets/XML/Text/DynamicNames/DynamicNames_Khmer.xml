@@ -122,18 +122,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_BURMA</Tag>
-		<English>Burma</English>
-		<French>
-			<Text>Birmanie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Burma</German>
-		<Italian>Burma</Italian>
-		<Spanish>Burma</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_NANZHAO</Tag>
 		<English>Nanzhao</English>
 		<French>

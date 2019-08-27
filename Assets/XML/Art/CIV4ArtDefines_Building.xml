@@ -3637,5 +3637,15 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Great_Zimbabwe/Great_Zimbabwe_Button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BURMA_PAYA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Paya/Theatre.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Paya/Button_Paya.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

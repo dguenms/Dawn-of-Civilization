@@ -3741,4 +3741,20 @@
 		<Italian>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</Italian>
 		<Spanish>The [COLOR_UNIT_TEXT]Yan Lifida[COLOR_REVERT], the Nigerian replacement for the the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and receives a defensive bonus.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BURMA_KYUNDAW</Tag>
+		<English>Kyundaw</English>
+		<French>Kyundaw</French>
+		<German>Kyundaw</German>
+		<Italian>Kyundaw</Italian>
+		<Spanish>Kyundaw</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BURMA_KYUNDAW_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</English>
+		<French>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</French>
+		<German>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</German>
+		<Italian>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</Spanish>
+	</TEXT>
 </Civ4GameText>

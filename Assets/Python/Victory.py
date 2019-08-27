@@ -251,6 +251,7 @@ dWonderGoals = {
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
+	iBurma: (0, [iShwedagonPaya], False),
 	iMoors: (1, [iMezquita], False),
 	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain], True),
@@ -270,7 +271,7 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
+		for iPlayer in [iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
@@ -904,6 +905,37 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iIndonesia, 2)
 			else:
 				lose(iIndonesia, 2)
+			
+	elif iPlayer == iBurma:
+		# first goal: Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD
+		if iGameTurn == getTurnForYear(1000):
+			expire(iBurma, 0)
+		
+		# second goal: Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD
+		if iGameTurn == getTurnForYear(1211):
+			iProphets = 0
+			iScientists = 0
+			iArtists = 0
+			for city in utils.getCityList(iPlayer):
+				iProphets += city.getFreeSpecialistCount(iSpecialistGreatProphet)
+				iScientists += city.getFreeSpecialistCount(iSpecialistGreatScientist)
+				iArtists += city.getFreeSpecialistCount(iSpecialistGreatArtist)
+			
+			bProphets = iProphets >= 1
+			bScientists = iScientists >= 1
+			bArtists = iArtists >= 1
+			if bProphets and bScientists and bArtists:
+				win(iBurma, 1)
+			else:
+				lose(iBurma, 1)
+		
+		# third goal: Control all of Indochina in 1580 AD
+		if iGameTurn == getTurnForYear(1580):
+			bIndochina = isControlled(iBurma, utils.getPlotList(tIndochinaTL, tIndochinaBR, tIndochinaExceptions))
+			if bIndochina:
+				win(iBurma, 2)
+			else:
+				lose(iBurma, 2)
 				
 	elif iPlayer == iMoors:
 	
@@ -2147,6 +2179,15 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				bConfucian = getNumBuildings(iKorea, iConfucianCathedral) > 0
 				if bBuddhist and bConfucian:
 					win(iKorea, 0)
+				
+	# first Burmese goal: Build the Shwedagon Paya, 2 Buddhist Temples, and 2 Buddhist Monasteries by 1000 AD
+	elif iPlayer == iBurma:
+		if isPossible(iBurma, 0):
+			bShwedagon = data.getWonderBuilder(iShwedagonPaya) == iBurma
+			bTemples = getNumBuildings(iBurma, iBuddhistTemple) >= 2
+			bMonasteries = getNumBuildings(iBurma, iBuddhistMonastery) >= 2
+			if bShwedagon and bTemples and bMonasteries:
+				win(iBurma, 0)
 					
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
 	elif iPlayer == iPoland:
@@ -4231,6 +4272,26 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iIndonesia)
 			aHelp.append(getIcon(popPercent >= 9.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(9))))
+
+	elif iPlayer == iBurma:
+		if iGoal == 0:
+			bShwedagon = data.getWonderBuilder(iWatPreahPisnulok) == iBurma
+			iTemples = getNumBuildings(iBurma, iBuddhistTemple)
+			iMonasteries = getNumBuildings(iBurma, iBuddhistMonastery)
+			aHelp.append(getIcon(bShwedagon) + localText.getText("TXT_KEY_BUILDING_SHWEDAGON_PAYA", ()) + ' ' + getIcon(iTemples >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_TEMPLES", (iTemples, 2)) + ' ' + getIcon(iMonasteries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iMonasteries, 2)))
+		if iGoal == 1:
+			iProphets = 0
+			iScientists = 0
+			iArtists = 0
+			for city in utils.getCityList(iPlayer):
+				iProphets += city.getFreeSpecialistCount(iSpecialistGreatProphet)
+				iScientists += city.getFreeSpecialistCount(iSpecialistGreatScientist)
+				iArtists += city.getFreeSpecialistCount(iSpecialistGreatArtist)
+			
+			aHelp.append(getIcon(iProphets >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_PROPHET", ()) + ' ' + getIcon(iScientists >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_SCIENTIST", ()) + ' ' + getIcon(iArtists >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_ARTIST", ()))
+		if iGoal == 2:
+			bIndochina = isControlled(iBurma, utils.getPlotList(tIndochinaTL, tIndochinaBR, tIndochinaExceptions))
+			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()))
 
 	elif iPlayer == iMoors:
 		if iGoal == 0:
