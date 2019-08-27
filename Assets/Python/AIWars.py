@@ -166,8 +166,8 @@ class AIWars:
 		if not (iStartTurn <= iGameTurn <= iStartTurn + iIntervalTurns): return
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
-		# Only Chinsesd conquerors for human Vietnam
-		if iPreferredTarget == iVietnam and utils.getHumanID() != iVietnam: return
+		# Only Chinsesd conquerors for human Vietnam 1SDAN: Disabled
+		# if iPreferredTarget == iVietnam and utils.getHumanID() != iVietnam: return
 		
 		self.spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan)
 		data.lConquest[iID] = True

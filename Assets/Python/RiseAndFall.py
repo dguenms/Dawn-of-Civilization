@@ -2288,7 +2288,7 @@ class RiseAndFall:
 		if tSeaPlot != -1:
 			utils.makeUnit(utils.getUniqueUnitType(iPlayer, gc.getUnitInfo(iGalleon).getUnitClassType()), iPlayer, tSeaPlot, 1)
 	
-	def startWarsOnSpawn(self, iCiv):
+	def startWarsOnSpawn(self, iCiv, bRespawn):
 	
 		pCiv = gc.getPlayer(iCiv)
 		teamCiv = gc.getTeam(pCiv.getTeam())
@@ -2296,7 +2296,12 @@ class RiseAndFall:
 		iMin = 10
 		
 		if gc.getGame().getSorenRandNum(100, 'Trigger spawn wars') >= iMin:
-			for iLoopCiv in lEnemyCivsOnSpawn[iCiv]:
+			if bRespawn:
+					lEnemies = lEnemyCivsOnRespawn[iCiv]
+			else:
+				lEnemies = lEnemyCivsOnSpawn[iCiv]
+				
+			for iLoopCiv in lEnemies:
 				if utils.isAVassal(iLoopCiv): continue
 				if not gc.getPlayer(iLoopCiv).isAlive(): continue
 				if teamCiv.isAtWar(iLoopCiv): continue
@@ -3026,7 +3031,7 @@ class RiseAndFall:
 				utils.makeUnit(iTorpedoBoat, iCiv, tSeaPlot, 1)
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
-		self.startWarsOnSpawn(iCiv)
+		self.startWarsOnSpawn(iCiv, false)
 
 	def createRespawnUnits(self, iCiv, tPlot):
 		if iCiv == iPersia:
@@ -3050,7 +3055,9 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
-				
+		
+		self.startWarsOnSpawn(iCiv, true)
+		
 	def findAreaReligion(self, iPlayer, lPlots):
 		lReligions = [0 for i in range(iNumReligions)]
 		

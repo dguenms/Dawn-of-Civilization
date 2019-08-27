@@ -1014,26 +1014,34 @@ def calculateStability(iPlayer):
 			
 		# relations
 		if tPlayer.canContact(iLoopPlayer):
-			iNumContacts += 1
-
-			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS: iFuriousRelations += 1
-			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY: iFriendlyRelations += 1
-			
 			iAttitude = 0
-			for iMemory in range(MemoryTypes.NUM_MEMORY_TYPES):
-				iAttitude += pLoopPlayer.AI_getMemoryAttitude(iPlayer, iMemory)
+			
+			if pLoopPlayer.AI_getAttitude(iPlayer) > AttitudeTypes.ATTITUDE_CAUTIOUS:
+				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
+					iAttitude += 3
+				else:
+					iAttitude += 2
+			
+			if pLoopPlayer.AI_getAttitude(iPlayer) < AttitudeTypes.ATTITUDE_CAUTIOUS:
+				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
+					iAttitude -= 3
+				else:
+					iAttitude -= 2
+				
+				# worst enemies
+				if pLoopPlayer.getWorstEnemy() == iPlayer:
+					if iLoopScore > iPlayerScore: iRelationStability -= 3
+				
+				if pLoopPlayer.getStateReligion() != iStateReligion or  pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
+					iAttitude /= 2
 			
 			lAttitudes.append(iAttitude)
-			
+		
 		# defensive pacts
 		if tPlayer.isDefensivePact(iLoopPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 3
 			if bMultilateralism: iDefensivePactStability += 3
 		
-		# worst enemies
-		if pLoopPlayer.getWorstEnemy() == iPlayer:
-			if iLoopScore > iPlayerScore: iRelationStability -= 3
-			
 		# wars
 		if tPlayer.isAtWar(iLoopPlayer):
 			if bMultilateralism: iMultilateralismStability -= 2
@@ -1047,9 +1055,7 @@ def calculateStability(iPlayer):
 		
 	# attitude stability
 	
-	iRelationStability += calculateSumScore(lAttitudes) / 2
-	iRelationStability += calculateSumScore(lAttitudes, 2) / 2
-	iRelationStability += calculateSumScore(lAttitudes, 3)
+	iRelationStability += calculateSumScore(lAttitudes)
 		
 	if bIsolationism:
 		if iRelationStability < 0: iRelationStability = 0

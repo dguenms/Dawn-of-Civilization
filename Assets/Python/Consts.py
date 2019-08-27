@@ -589,6 +589,13 @@ lEnemyCivsOnSpawn = [
 [], #Canada
 ]
 
+# Leoreth: date-triggered respawn for certain civs
+lEnemyCivsOnRespawn = {
+iPersia : [iOttomans, iRussia],		# Iran
+iMaya : [],		# Colombia
+iAztecs : [iAmerica],		# Mexico
+}
+
 # Leoreth
 lTotalWarOnSpawn = [
 [], #Egypt

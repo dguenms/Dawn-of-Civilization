@@ -323,6 +323,18 @@ class GameData:
 		return self.players[iPlayer].iStabilityLevel
 		
 	def setStabilityLevel(self, iPlayer, iValue):
+		if gc.getGame().getActivePlayer() == iPlayer: # if utils.getHumanID() == iPlayer
+			iOldStabilityLevel = self.getStabilityLevel(iPlayer)
+			if iValue == iStabilityCollapsing: szTempBuffer = CyTranslator().getText("TXT_KEY_STABILITY_COLLAPSING", ())
+			elif iValue == iStabilityUnstable: szTempBuffer = CyTranslator().getText("TXT_KEY_STABILITY_UNSTABLE", ())
+			elif iValue == iStabilityShaky: szTempBuffer = CyTranslator().getText("TXT_KEY_STABILITY_SHAKY", ())
+			elif iValue == iStabilityStable: szTempBuffer = CyTranslator().getText("TXT_KEY_STABILITY_STABLE", ())
+			elif iValue == iStabilitySolid: szTempBuffer = CyTranslator().getText("TXT_KEY_STABILITY_SOLID", ())
+			
+			if iValue > iOldStabilityLevel:
+				CyInterface().addMessage(gc.getGame().getActivePlayer(), True, iDuration, (CyTranslator().getText("TXT_KEY_STABILITY_IMPROVING", ()) + " " + szTempBuffer), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+			elif iValue < iOldStabilityLevel:
+				CyInterface().addMessage(gc.getGame().getActivePlayer(), True, iDuration, (CyTranslator().getText("TXT_KEY_STABILITY_WORSENING", ()) + " " + szTempBuffer), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		self.players[iPlayer].iStabilityLevel = iValue
 		
 	def getWonderBuilder(self, iWonder):
