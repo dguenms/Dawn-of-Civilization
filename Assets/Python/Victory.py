@@ -911,7 +911,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1000):
 			expire(iBurma, 0)
 		
-		# second goal: Have at least one Great Priest, Great Scientist and Great Artist settled in your cities in 1211 AD
+		# second goal: Have five Great Priests, Great Scientists, or Great Artists and one of each settled in your cities in 1211 AD
 		if iGameTurn == getTurnForYear(1211):
 			iProphets = 0
 			iScientists = 0
@@ -920,11 +920,13 @@ def checkTurn(iGameTurn, iPlayer):
 				iProphets += city.getFreeSpecialistCount(iSpecialistGreatProphet)
 				iScientists += city.getFreeSpecialistCount(iSpecialistGreatScientist)
 				iArtists += city.getFreeSpecialistCount(iSpecialistGreatArtist)
+			iSpecialists = iProphets + iScientists + iArtists
 			
 			bProphets = iProphets >= 1
 			bScientists = iScientists >= 1
 			bArtists = iArtists >= 1
-			if bProphets and bScientists and bArtists:
+			bSpecialists = iSpecialists >= 5
+			if bProphets and bScientists and bArtists and bSpecialists:
 				win(iBurma, 1)
 			else:
 				lose(iBurma, 1)
@@ -4287,8 +4289,9 @@ def getUHVHelp(iPlayer, iGoal):
 				iProphets += city.getFreeSpecialistCount(iSpecialistGreatProphet)
 				iScientists += city.getFreeSpecialistCount(iSpecialistGreatScientist)
 				iArtists += city.getFreeSpecialistCount(iSpecialistGreatArtist)
+			iSpecialists = iProphets + iScientists + iArtists
 			
-			aHelp.append(getIcon(iProphets >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_PROPHET", ()) + ' ' + getIcon(iScientists >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_SCIENTIST", ()) + ' ' + getIcon(iArtists >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_ARTIST", ()))
+			aHelp.append(getIcon(iProphets >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_PROPHET", ()) + ' ' + getIcon(iScientists >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_SCIENTIST", ()) + ' ' + getIcon(iArtists >= 1) + localText.getText("TXT_KEY_UNIT_GREAT_ARTIST", ()) + ' ' + getIcon(iSpecialists >= 5) + localText.getText("TXT_KEY_VICTORY_PROPHETS_SCIENTISTS_ARTISTS", (iSpecialists, 5)))
 		if iGoal == 2:
 			bIndochina = isControlled(iBurma, utils.getPlotList(tIndochinaTL, tIndochinaBR, tIndochinaExceptions))
 			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()))

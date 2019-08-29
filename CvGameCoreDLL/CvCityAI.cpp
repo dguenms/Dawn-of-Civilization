@@ -3915,7 +3915,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				iValue += ((kBuilding.getGlobalSpaceProductionModifier() * iNumCities) / 20);
 
 
-				if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (getOwnerINLINE() == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
+				if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
 				{
 					iValue++; // XXX improve this for diversity...
 				}
@@ -3923,7 +3923,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				// prefer to build great people buildings in places that already have some GP points
 				iValue += (kBuilding.getGreatPeopleRateChange() * 10) * (1 + (getBaseGreatPeopleRate() / 2));
 				
-				if (getOwnerINLINE() == BURMA && (kBuilding.getPrereqReligion() != NO_RELIGION || kBuilding.isPagan()))
+				if (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)kBuilding.getBuildingClassType()).getMaxGlobalInstances() != 1 && (kBuilding.getPrereqReligion() != NO_RELIGION || kBuilding.isPagan()))
 				{
 					iValue += (1 * 10) * (1 + (1 / 2));
 				}
