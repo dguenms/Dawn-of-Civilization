@@ -298,7 +298,7 @@ class RiseAndFall:
 			self.adjust1700ADWonders()
 			self.adjust1700ADGreatPeople()
 			
-			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria]:
+			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria, iKhmer]:
 				utils.setReborn(iPlayer, True)
 			
 			pManchuria.updateTradeRoutes()
@@ -589,9 +589,6 @@ class RiseAndFall:
 		pSeville = gc.getMap().plot(51, 41).getPlotCity()
 		pSeville.setBuildingOriginalOwner(iMezquita, iMoors)
 		
-		pBangkok = gc.getMap().plot(101, 33).getPlotCity()
-		pBangkok.setBuildingOriginalOwner(iWatPreahPisnulok, iKhmer)
-		
 		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 		
@@ -685,9 +682,10 @@ class RiseAndFall:
 			iMughals: 8,
 			iOttomans: 8,
 			iThailand: 8,
+			iKhmer: 8,
 			iCongo: 4,
 			iNetherlands: 6,
-			iBurma: 3,
+			iBurma: 6,
 		}
 		
 		dGreatGeneralsCreated = {

@@ -669,4 +669,8 @@
 		<Tag>TXT_KEY_DOM_BURMA_1700AD</Tag>
 		<English>It is the year 1700 AD. The golden age of the Toungoo Empire has long since ended...</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KHMER_1700AD</Tag>
+		<English>It is the year 1700 AD. We don't know a lot about this era in the history of the Khmer.</English>
+	</TEXT>
 </Civ4GameText>

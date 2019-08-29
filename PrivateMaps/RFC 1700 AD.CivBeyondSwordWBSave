@@ -491,7 +491,16 @@ BeginPlayer
 	Team=26
 	LeaderType=LEADER_SURYAVARMAN
 	CivType=CIVILIZATION_KHMER
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=200
+	StateReligion=RELIGION_BUDDHISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
+	AttitudePlayer=44, AttitudeExtra=-2, (Thailand)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -702,6 +711,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
+	AttitudePlayer=26, AttitudeExtra=-2, (Khmer)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -47277,10 +47287,9 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_WAT_PREAH_PISNULOK
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player44Culture=250, (Thailand)
+		Player44Culture=150, (Thailand)
 	EndCity
 	TeamReveal=1,24,36,44,47,56,
 EndPlot
@@ -48273,6 +48282,67 @@ BeginPlot
 	x=103,y=32
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_KHMER_BALLISTA_ELEPHANT, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_KHMER_BALLISTA_ELEPHANT, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_KHMER_BALLISTA_ELEPHANT, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=26, (Khmer)
+	EndUnit
+	BeginCity
+		CityOwner=26, (Khmer)
+		CityName=Oudong
+		CityPopulation=8
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_KHMER_BARAY
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_PHARMACY
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_BATH
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		BuildingType=BUILDING_WAT_PREAH_PISNULOK
+		ReligionType=RELIGION_BUDDHISM
+		Player26Culture=350, (Thailand)
+	EndCity
 	TeamReveal=1,24,36,44,47,56,
 EndPlot
 BeginPlot
@@ -48800,6 +48870,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=32
+	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=1,24,36,44,47,56,
@@ -48807,6 +48879,13 @@ EndPlot
 BeginPlot
 	x=104,y=33
 	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	TeamReveal=1,24,36,44,47,56,
+EndPlot
+BeginPlot
+	x=104,y=34
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
@@ -48835,13 +48914,6 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		Player56Culture=50, (Independent)
 	EndCity
-	TeamReveal=1,24,36,44,47,56,
-EndPlot
-BeginPlot
-	x=104,y=34
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
 	TeamReveal=1,24,36,44,47,56,
 EndPlot
 BeginPlot
@@ -49274,8 +49346,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=33
-	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=25,36,44,56,

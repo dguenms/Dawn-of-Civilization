@@ -126,7 +126,7 @@ tCapitals = (
 (51, 41), # Cordoba
 (52, 44), # Madrid
 (55, 50), # Paris
-(102, 33), # Angkor
+(103, 32), # Angkor
 (53, 54), # London
 (59, 51), # Frankfurt
 (73, 54), # Moskow

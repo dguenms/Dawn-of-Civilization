@@ -227,6 +227,7 @@ iCivJapan :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExplo
 iCivVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
 iCivTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
 iCivBurma :		Techs(column=10, exceptions=[iExploration, iOptics]),
+iCivKhmer :	Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
 iCivFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iEconomics]),
 iCivEngland :	Techs(column=11, exceptions=[iUrbanPlanning, iHorticulture]),
