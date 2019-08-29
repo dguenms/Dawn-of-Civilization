@@ -4701,7 +4701,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 					if (pLoopCity->isHasRealBuilding((BuildingTypes)iI))
 					{
 						iGreatPeopleRate = GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
-						if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)iI).isPagan()))
+						if (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)iI).isPagan()))
 						{
 							iGreatPeopleRate += 1;
 						}
@@ -4719,7 +4719,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)MOUNT_ATHOS) && eBuilding != MOUNT_ATHOS)
 			{
 				int iGreatPeopleRate = GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange();
-				if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+				if (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
 				{
 					iGreatPeopleRate += 1;
 				}
@@ -4964,7 +4964,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			}
 		}
 
-		if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+		if (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
 		{
 			if (GC.getBuildingInfo(eBuilding).getGreatPeopleUnitClass() == NO_UNITCLASS)
 			{
@@ -6938,7 +6938,7 @@ int CvCity::getAdditionalBaseGreatPeopleRateByBuilding(BuildingTypes eBuilding) 
 
 	iExtraRate += kBuilding.getGreatPeopleRateChange();
 	
-	if (getOwnerINLINE() == BURMA && (kBuilding.getPrereqReligion() != NO_RELIGION || kBuilding.isPagan()))
+	if (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)kBuilding.getBuildingClassType()).getMaxGlobalInstances() != 1 && (kBuilding.getPrereqReligion() != NO_RELIGION || kBuilding.isPagan()))
 	{
 		iExtraRate += 1;
 	}
@@ -19578,7 +19578,7 @@ int CvCity::calculateBaseGreatPeopleRate() const
 		{
 			iRate += GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
 
-			if (getOwnerINLINE() == BURMA && (GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)iI).isPagan()))
+			if (getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)iI).isPagan()))
 			{
 				iRate += 1;
 			}

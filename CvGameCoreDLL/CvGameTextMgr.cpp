@@ -3841,8 +3841,8 @@ It is fine for a human player mouse-over (which is what it is used for).
 void createTestFontString(CvWStringBuffer& szString)
 {
 	int iI;
-	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[�]^_`abcdefghijklmnopqrstuvwxyz\n");
-	szString.append(L"{}~\\������������������������������ޟ�������������������������������������������������������");
+	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[×]^_`abcdefghijklmnopqrstuvwxyz\n");
+	szString.append(L"{}~\\ßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ¿¡«»°©®£¢");
 	for (iI=0;iI<NUM_YIELD_TYPES;++iI)
 		szString.append(CvWString::format(L"%c", GC.getYieldInfo((YieldTypes) iI).getChar()));
 
@@ -10239,7 +10239,7 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 		// Leoreth
 		int iTotalGreatPeopleRateChange = kBuilding.getGreatPeopleRateChange() + (pCity != NULL ? pCity->getBuildingGreatPeopleRateChange((BuildingClassTypes)kBuilding.getBuildingClassType()) : 0);
-		if (ePlayer == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+		if (ePlayer == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
 		{
 			iTotalGreatPeopleRateChange += 1;
 		}
@@ -10248,11 +10248,11 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			szTempBuffer.Format(L", %s%d%c", ((iTotalGreatPeopleRateChange > 0) ? "+" : ""), iTotalGreatPeopleRateChange, gDLL->getSymbolID(GREAT_PEOPLE_CHAR));
 			szBuffer.append(szTempBuffer);
 
-			if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (ePlayer == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
+			if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (ePlayer == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
 			{
 				if (ePlayer != NO_PLAYER)
 				{
-					if (ePlayer == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+					if (ePlayer == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
 					{
 						eGreatPeopleUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"));
 					}
@@ -11324,11 +11324,11 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	if (bCivilopediaText)
 	{
-		if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (ePlayer == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
+		if (kBuilding.getGreatPeopleUnitClass() != NO_UNITCLASS || (ePlayer == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan())))
 		{
 			if (ePlayer != NO_PLAYER)
 			{
-				if (ePlayer == BURMA && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
+				if (ePlayer == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo(eBuilding).isPagan()))
 				{
 					eGreatPeopleUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"));
 				}
@@ -18396,7 +18396,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 			if (iCount > 0)
 			{
 				iRate += iCount * (GC.getBuildingInfo((BuildingTypes)i).getGreatPeopleRateChange() + city.getBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)i).getBuildingClassType()));
-				if (city.getOwnerINLINE() == BURMA && (GC.getBuildingInfo((BuildingTypes)i).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)i).isPagan()))
+				if (city.getOwnerINLINE() == BURMA && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)i).getBuildingClassType()).getMaxGlobalInstances() != 1 && (GC.getBuildingInfo((BuildingTypes)i).getPrereqReligion() != NO_RELIGION || GC.getBuildingInfo((BuildingTypes)i).isPagan()))
 				{
 					iRate += 1;
 				}
