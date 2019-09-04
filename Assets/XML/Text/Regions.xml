@@ -17,132 +17,220 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Britain</German>
+		<German>Britannien</German>
 		<Italian>Britain</Italian>
 		<Spanish>Britain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_1</Tag>
+		<English>Ireland</English>
+		<French>Ireland</French>
+		<German>Irland</German>
+		<Italian>Ireland</Italian>
+		<Spanish>Ireland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_2</Tag>
+		<English>France</English>
+		<French>France</French>
+		<German>Frankreich</German>
+		<Italian>France</Italian>
+		<Spanish>France</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_3</Tag>
 		<English>Iberia</English>
 		<French>
 			<Text>P&#233;ninsule Ib&#233;rique</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Iberia</German>
+		<German>Iberien</German>
 		<Italian>Iberia</Italian>
 		<Spanish>Iberia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_2</Tag>
+		<Tag>TXT_KEY_REGION_4</Tag>
 		<English>Italy</English>
 		<French>
 			<Text>Italie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Italy</German>
+		<German>Italien</German>
 		<Italian>Italy</Italian>
 		<Spanish>Italy</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_3</Tag>
+		<Tag>TXT_KEY_REGION_5</Tag>
+		<English>Lower Germany</English>
+		<French>Lower Germany</French>
+		<German>Niederdeutschland</German>
+		<Italian>Lower Germany</Italian>
+		<Spanish>Lower Germany</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_6</Tag>
+		<English>Central Europe</English>
+		<French>Central Europe</French>
+		<German>Mitteleuropa</German>
+		<Italian>Central Europe</Italian>
+		<Spanish>Central Europe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_7</Tag>
 		<English>Balkans</English>
 		<French>
 			<Text>Balkans</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>Balkans</German>
+		<German>Balkan</German>
 		<Italian>Balkans</Italian>
 		<Spanish>Balkans</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_4</Tag>
-		<English>Europe</English>
-		<French>
-			<Text>Europe</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Europe</German>
-		<Italian>Europe</Italian>
-		<Spanish>Europe</Spanish>
+		<Tag>TXT_KEY_REGION_8</Tag>
+		<English>Greece</English>
+		<French>Greece</French>
+		<German>Griechenland</German>
+		<Italian>Greece</Italian>
+		<Spanish>Greece</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_5</Tag>
+		<Tag>TXT_KEY_REGION_9</Tag>
+		<English>Poland</English>
+		<French>Poland</French>
+		<German>Polen</German>
+		<Italian>Poland</Italian>
+		<Spanish>Poland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_10</Tag>
+		<English>Baltics</English>
+		<French>Baltics</French>
+		<German>Baltikum</German>
+		<Italian>Baltics</Italian>
+		<Spanish>Baltics</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_11</Tag>
 		<English>Scandinavia</English>
 		<French>
 			<Text>Scandinavie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Scandinavia</German>
+		<German>Skandinavien</German>
 		<Italian>Scandinavia</Italian>
 		<Spanish>Scandinavia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_6</Tag>
-		<English>Russia</English>
-		<French>
-			<Text>Russie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Russia</German>
-		<Italian>Russia</Italian>
-		<Spanish>Russia</Spanish>
+		<Tag>TXT_KEY_REGION_12</Tag>
+		<English>Ruthenia</English>
+		<French>Ruthenia</French>
+		<German>Ruthenien</German>
+		<Italian>Ruthenia</Italian>
+		<Spanish>Ruthenia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_7</Tag>
+		<Tag>TXT_KEY_REGION_13</Tag>
+		<English>Pontic Steppe</English>
+		<French>Pontic Steppe</French>
+		<German>Pontische Steppe</German>
+		<Italian>Pontic Steppe</Italian>
+		<Spanish>Pontic Steppe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_14</Tag>
+		<English>European Arctic</English>
+		<French>European Arctic</French>
+		<German>Europ&#228;ische Arktis</German>
+		<Italian>European Arctic</Italian>
+		<Spanish>European Arctic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_15</Tag>
+		<English>Urals</English>
+		<French>Urals</French>
+		<German>Ural</German>
+		<Italian>Urals</Italian>
+		<Spanish>Urals</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_16</Tag>
 		<English>Anatolia</English>
 		<French>
 			<Text>Anatolie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Anatolia</German>
+		<German>Anatolien</German>
 		<Italian>Anatolia</Italian>
 		<Spanish>Anatolia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_8</Tag>
+		<Tag>TXT_KEY_REGION_17</Tag>
+		<English>Caucasus</English>
+		<French>Caucasus</French>
+		<German>Kaukasus</German>
+		<Italian>Caucasus</Italian>
+		<Spanish>Caucasus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_18</Tag>
+		<English>Levant</English>
+		<French>Levant</French>
+		<German>Levante</German>
+		<Italian>Levant</Italian>
+		<Spanish>Levant</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_19</Tag>
 		<English>Mesopotamia</English>
 		<French>
 			<Text>M&#233;sopotamie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Mesopotamia</German>
+		<German>Mesopotamien</German>
 		<Italian>Mesopotamia</Italian>
 		<Spanish>Mesopotamia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_9</Tag>
+		<Tag>TXT_KEY_REGION_20</Tag>
 		<English>Arabia</English>
 		<French>
 			<Text>Arabie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Arabia</German>
+		<German>Arabien</German>
 		<Italian>Arabia</Italian>
 		<Spanish>Arabia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_10</Tag>
+		<Tag>TXT_KEY_REGION_21</Tag>
 		<English>Egypt</English>
 		<French>
 			<Text>&#201;gypte</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Egypt</German>
+		<German>&#196;gypten</German>
 		<Italian>Egypt</Italian>
 		<Spanish>Egypt</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_11</Tag>
+		<Tag>TXT_KEY_REGION_22</Tag>
+		<English>Nubia</English>
+		<French>Nubia</French>
+		<German>Nubien</German>
+		<Italian>Nubia</Italian>
+		<Spanish>Nubia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_23</Tag>
 		<English>Maghreb</English>
 		<French>
 			<Text>Maghreb</Text>
@@ -154,43 +242,95 @@
 		<Spanish>Maghreb</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_12</Tag>
+		<Tag>TXT_KEY_REGION_24</Tag>
 		<English>Persia</English>
 		<French>
 			<Text>Perse</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Persia</German>
+		<German>Persien</German>
 		<Italian>Persia</Italian>
 		<Spanish>Persia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_13</Tag>
-		<English>India</English>
-		<French>
-			<Text>Inde</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>India</German>
-		<Italian>India</Italian>
-		<Spanish>India</Spanish>
+		<Tag>TXT_KEY_REGION_25</Tag>
+		<English>Khorasan</English>
+		<French>Khorasan</French>
+		<German>Chorasan</German>
+		<Italian>Khorasan</Italian>
+		<Spanish>Khorasan</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_14</Tag>
+		<Tag>TXT_KEY_REGION_26</Tag>
+		<English>Transoxiana</English>
+		<French>Transoxiana</French>
+		<German>Transoxanien</German>
+		<Italian>Transoxiana</Italian>
+		<Spanish>Transoxiana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_27</Tag>
+		<English>Sindh</English>
+		<French>Sindh</French>
+		<German>Sindh</German>
+		<Italian>Sindh</Italian>
+		<Spanish>Sindh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_28</Tag>
+		<English>Punjab</English>
+		<French>Punjab</French>
+		<German>Pandschab</German>
+		<Italian>Punjab</Italian>
+		<Spanish>Punjab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_29</Tag>
+		<English>Rajputana</English>
+		<French>Rajputana</French>
+		<German>Rajputana</German>
+		<Italian>Rajputana</Italian>
+		<Spanish>Rajputana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_30</Tag>
+		<English>Hindustan</English>
+		<French>Hindustan</French>
+		<German>Hindustan</German>
+		<Italian>Hindustan</Italian>
+		<Spanish>Hindustan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_31</Tag>
+		<English>Bengal</English>
+		<French>Bengal</French>
+		<German>Bengalen</German>
+		<Italian>Bengal</Italian>
+		<Spanish>Bengal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_32</Tag>
 		<English>Deccan</English>
 		<French>
 			<Text>Deccan</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Deccan</German>
+		<German>Dekkan</German>
 		<Italian>Deccan</Italian>
 		<Spanish>Deccan</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_15</Tag>
+		<Tag>TXT_KEY_REGION_33</Tag>
+		<English>Dravida</English>
+		<French>Dravida</French>
+		<German>Dravida</German>
+		<Italian>Dravida</Italian>
+		<Spanish>Dravida</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_34</Tag>
 		<English>Indochina</English>
 		<French>
 			<Text>Indochine</Text>
@@ -202,31 +342,43 @@
 		<Spanish>Indochina</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_16</Tag>
+		<Tag>TXT_KEY_REGION_35</Tag>
 		<English>Indonesia</English>
 		<French>
 			<Text>Indon&#233;sie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Indonesia</German>
+		<German>Indonesien</German>
 		<Italian>Indonesia</Italian>
 		<Spanish>Indonesia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_17</Tag>
-		<English>China</English>
-		<French>
-			<Text>Chine</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>China</German>
-		<Italian>China</Italian>
-		<Spanish>China</Spanish>
+		<Tag>TXT_KEY_REGION_36</Tag>
+		<English>Philippines</English>
+		<French>Philippines</French>
+		<German>Philippinen</German>
+		<Italian>Philippines</Italian>
+		<Spanish>Philippines</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_18</Tag>
+		<Tag>TXT_KEY_REGION_37</Tag>
+		<English>South China</English>
+		<French>South China</French>
+		<German>S&#252;dchina</German>
+		<Italian>South China</Italian>
+		<Spanish>South China</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_38</Tag>
+		<English>North China</English>
+		<French>North China</French>
+		<German>Nordchina</German>
+		<Italian>North China</Italian>
+		<Spanish>North China</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_39</Tag>
 		<English>Korea</English>
 		<French>
 			<Text>Cor&#233;e</Text>
@@ -238,7 +390,7 @@
 		<Spanish>Korea</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_19</Tag>
+		<Tag>TXT_KEY_REGION_40</Tag>
 		<English>Japan</English>
 		<French>
 			<Text>Japon</Text>
@@ -250,19 +402,7 @@
 		<Spanish>Japan</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_20</Tag>
-		<English>Manchuria</English>
-		<French>
-			<Text>Mandchourie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Manchuria</German>
-		<Italian>Manchuria</Italian>
-		<Spanish>Manchuria</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_REGION_21</Tag>
+		<Tag>TXT_KEY_REGION_41</Tag>
 		<English>Tibet</English>
 		<French>
 			<Text>Tibet</Text>
@@ -274,196 +414,356 @@
 		<Spanish>Tibet</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_22</Tag>
-		<English>Central Asia</English>
+		<Tag>TXT_KEY_REGION_42</Tag>
+		<English>Tarim Basin</English>
+		<French>Tarim Basin</French>
+		<German>Tarimbecken</German>
+		<Italian>Tarim Basin</Italian>
+		<Spanish>Tarim Basin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_43</Tag>
+		<English>Mongolia</English>
+		<French>Mongolia</French>
+		<German>Mongolei</German>
+		<Italian>Mongolia</Italian>
+		<Spanish>Mongolia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_44</Tag>
+		<English>Manchuria</English>
 		<French>
-			<Text>Asie centrale</Text>
+			<Text>Mandchourie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Central Asia</German>
-		<Italian>Central Asia</Italian>
-		<Spanish>Central Asia</Spanish>
+		<German>Mandschurei</German>
+		<Italian>Manchuria</Italian>
+		<Spanish>Manchuria</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_23</Tag>
+		<Tag>TXT_KEY_REGION_45</Tag>
+		<English>Amur</English>
+		<French>Amur</French>
+		<German>Amur</German>
+		<Italian>Amur</Italian>
+		<Spanish>Amur</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_46</Tag>
+		<English>Central Asian Steppe</English>
+		<French>Central Asian Steppe</French>
+		<German>Zentralasiatische Steppe</German>
+		<Italian>Central Asian Steppe</Italian>
+		<Spanish>Central Asian Steppe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_47</Tag>
 		<English>Siberia</English>
 		<French>
 			<Text>Sib&#233;rie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Siberia</German>
+		<German>Sibirien</German>
 		<Italian>Siberia</Italian>
 		<Spanish>Siberia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_24</Tag>
+		<Tag>TXT_KEY_REGION_48</Tag>
 		<English>Australia</English>
 		<French>
 			<Text>Australie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Australia</German>
+		<German>Australien</German>
 		<Italian>Australia</Italian>
 		<Spanish>Australia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_25</Tag>
+		<Tag>TXT_KEY_REGION_49</Tag>
 		<English>Oceania</English>
 		<French>
 			<Text>Oc&#233;anie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Oceania</German>
+		<German>Ozeanien</German>
 		<Italian>Oceania</Italian>
 		<Spanish>Oceania</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_26</Tag>
+		<Tag>TXT_KEY_REGION_50</Tag>
 		<English>Ethiopia</English>
 		<French>
 			<Text>&#201;thiopie</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Ethiopia</German>
+		<German>&#196;thiopien</German>
 		<Italian>Ethiopia</Italian>
 		<Spanish>Ethiopia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_27</Tag>
-		<English>West Africa</English>
-		<French>
-			<Text>Afrique de l'Ouest</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>West Africa</German>
-		<Italian>West Africa</Italian>
-		<Spanish>West Africa</Spanish>
+		<Tag>TXT_KEY_REGION_51</Tag>
+		<English>Horn of Africa</English>
+		<French>Horn of Africa</French>
+		<German>Horn von Afrika</German>
+		<Italian>Horn of Africa</Italian>
+		<Spanish>Horn of Africa</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_28</Tag>
-		<English>South Africa</English>
-		<French>
-			<Text>Afrique australe</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>South Africa</German>
-		<Italian>South Africa</Italian>
-		<Spanish>South Africa</Spanish>
+		<Tag>TXT_KEY_REGION_52</Tag>
+		<English>Swahili Coast</English>
+		<French>Swahili Coast</French>
+		<German>Suahelik&#252;ste</German>
+		<Italian>Swahili Coast</Italian>
+		<Spanish>Swahili Coast</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_29</Tag>
-		<English>Canada</English>
-		<French>
-			<Text>Canada</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Canada</German>
-		<Italian>Canada</Italian>
-		<Spanish>Canada</Spanish>
+		<Tag>TXT_KEY_REGION_53</Tag>
+		<English>Great Lakes</English>
+		<French>Great Lakes</French>
+		<German>Gro&#223;e Seen</German>
+		<Italian>Great Lakes</Italian>
+		<Spanish>Great Lakes</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_30</Tag>
-		<English>Alaska</English>
-		<French>
-			<Text>Alaska</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Alaska</German>
-		<Italian>Alaska</Italian>
-		<Spanish>Alaska</Spanish>
+		<Tag>TXT_KEY_REGION_54</Tag>
+		<English>Zambezi</English>
+		<French>Zambezi</French>
+		<German>Sambesi</German>
+		<Italian>Zambezi</Italian>
+		<Spanish>Zambezi</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_31</Tag>
-		<English>United States</English>
-		<French>
-			<Text>&#201;tats-Unis</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>United States</German>
-		<Italian>United States</Italian>
-		<Spanish>United States</Spanish>
+		<Tag>TXT_KEY_REGION_55</Tag>
+		<English>Madagascar</English>
+		<French>Madagascar</French>
+		<German>Madagaskar</German>
+		<Italian>Madagascar</Italian>
+		<Spanish>Madagascar</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_32</Tag>
+		<Tag>TXT_KEY_REGION_56</Tag>
+		<English>Cape</English>
+		<French>Cape</French>
+		<German>Kap</German>
+		<Italian>Cape</Italian>
+		<Spanish>Cape</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_57</Tag>
+		<English>Kalahari</English>
+		<French>Kalahari</French>
+		<German>Kalahari</German>
+		<Italian>Kalahari</Italian>
+		<Spanish>Kalahari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_58</Tag>
+		<English>Congo</English>
+		<French>Congo</French>
+		<German>Kongo</German>
+		<Italian>Congo</Italian>
+		<Spanish>Congo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_59</Tag>
+		<English>Guinea</English>
+		<French>Guinea</French>
+		<German>Guinea</German>
+		<Italian>Guinea</Italian>
+		<Spanish>Guinea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_60</Tag>
+		<English>Sahel</English>
+		<French>Sahel</French>
+		<German>Sahel</German>
+		<Italian>Sahel</Italian>
+		<Spanish>Sahel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_61</Tag>
+		<English>Sahara</English>
+		<French>Sahara</French>
+		<German>Sahara</German>
+		<Italian>Sahara</Italian>
+		<Spanish>Sahara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_62</Tag>
+		<English>Atlantic Seaboard</English>
+		<French>Atlantic Seaboard</French>
+		<German>Atlantikk&#252;ste</German>
+		<Italian>Atlantic Seaboard</Italian>
+		<Spanish>Atlantic Seaboard</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_63</Tag>
+		<English>Deep South</English>
+		<French>Deep South</French>
+		<German>Tiefer S&#252;den</German>
+		<Italian>Deep South</Italian>
+		<Spanish>Deep South</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_64</Tag>
+		<English>Midwest</English>
+		<French>Midwest</French>
+		<German>Mittlerer Westen</German>
+		<Italian>Midwest</Italian>
+		<Spanish>Midwest</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_65</Tag>
+		<English>Great Plains</English>
+		<French>Great Plains</French>
+		<German>Gro&#223;e Ebenen</German>
+		<Italian>Great Plains</Italian>
+		<Spanish>Great Plains</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_66</Tag>
+		<English>Aridoamerica</English>
+		<French>Aridoamerica</French>
+		<German>Aridoamerika</German>
+		<Italian>Aridoamerica</Italian>
+		<Spanish>Aridoamerica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_67</Tag>
+		<English>California</English>
+		<French>California</French>
+		<German>Kalifornien</German>
+		<Italian>California</Italian>
+		<Spanish>California</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_68</Tag>
+		<English>Cascadia</English>
+		<French>Cascadia</French>
+		<German>Cascadia</German>
+		<Italian>Cascadia</Italian>
+		<Spanish>Cascadia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_69</Tag>
+		<English>Ontario</English>
+		<French>Ontario</French>
+		<German>Ontario</German>
+		<Italian>Ontario</Italian>
+		<Spanish>Ontario</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_70</Tag>
+		<English>Quebec</English>
+		<French>Quebec</French>
+		<German>Quebec</German>
+		<Italian>Quebec</Italian>
+		<Spanish>Quebec</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_71</Tag>
+		<English>Maritimes</English>
+		<French>Maritimes</French>
+		<German>Maritime Provinzen</German>
+		<Italian>Maritimes</Italian>
+		<Spanish>Maritimes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_72</Tag>
+		<English>American Arctic</English>
+		<French>American Arctic</French>
+		<German>Amerikanische Arktis</German>
+		<Italian>American Arctic</Italian>
+		<Spanish>American Arctic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_73</Tag>
 		<English>Caribbean</English>
 		<French>
 			<Text>Cara&#239;bes</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
-		<German>Caribbean</German>
+		<German>Karibik</German>
 		<Italian>Caribbean</Italian>
 		<Spanish>Caribbean</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_33</Tag>
+		<Tag>TXT_KEY_REGION_74</Tag>
 		<English>Mesoamerica</English>
 		<French>
 			<Text>M&#233;soam&#233;rique</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Mesoamerica</German>
+		<German>Mittelamerika</German>
 		<Italian>Mesoamerica</Italian>
 		<Spanish>Mesoamerica</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_34</Tag>
+		<Tag>TXT_KEY_REGION_75</Tag>
+		<English>Central America</English>
+		<French>Central America</French>
+		<German>Zentralamerika</German>
+		<Italian>Central America</Italian>
+		<Spanish>Central America</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_76</Tag>
+		<English>New Granada</English>
+		<French>New Granada</French>
+		<German>Neu-Granada</German>
+		<Italian>New Granada</Italian>
+		<Spanish>New Granada</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_77</Tag>
+		<English>Andes</English>
+		<French>Andes</French>
+		<German>Anden</German>
+		<Italian>Andes</Italian>
+		<Spanish>Andes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_78</Tag>
+		<English>Amazonia</English>
+		<French>Amazonia</French>
+		<German>Amazonien</German>
+		<Italian>Amazonia</Italian>
+		<Spanish>Amazonia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REGION_79</Tag>
 		<English>Brazil</English>
 		<French>
 			<Text>Br&#233;sil</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Brazil</German>
+		<German>Brasilien</German>
 		<Italian>Brazil</Italian>
 		<Spanish>Brazil</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_35</Tag>
-		<English>Argentina</English>
-		<French>
-			<Text>Argentine</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Argentina</German>
-		<Italian>Argentina</Italian>
-		<Spanish>Argentina</Spanish>
+		<Tag>TXT_KEY_REGION_80</Tag>
+		<English>Southern Cone</English>
+		<French>Southern Cone</French>
+		<German>S&#252;dkegel</German>
+		<Italian>Southern Cone</Italian>
+		<Spanish>Southern Cone</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REGION_36</Tag>
-		<English>Peru</English>
-		<French>
-			<Text>P&#233;rou</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Peru</German>
-		<Italian>Peru</Italian>
-		<Spanish>Peru</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_REGION_37</Tag>
-		<English>Colombia</English>
-		<French>
-			<Text>Colombie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Colombia</German>
-		<Italian>Colombia</Italian>
-		<Spanish>Colombia</Spanish>
+		<Tag>TXT_KEY_REGION_81</Tag>
+		<English>Antarctica</English>
+		<French>Antarctica</French>
+		<German>Antarktis</German>
+		<Italian>Antarctica</Italian>
+		<Spanish>Antarctica</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_</Tag>
