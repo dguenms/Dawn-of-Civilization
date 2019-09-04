@@ -31642,8 +31642,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=75
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=69,y=76
@@ -32053,7 +32054,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=68
-	BonusType=BONUS_COPPER
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=4
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32088,7 +32089,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=74
-	BonusType=BONUS_IRON
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
