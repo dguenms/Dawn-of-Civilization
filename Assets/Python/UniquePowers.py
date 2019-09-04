@@ -388,7 +388,7 @@ class UniquePowers:
 				if city.getRegionID() in lNewWorld and bNewWorld:
 					if iFoodDifference <= 0 or iHappinessDifference <= 0: continue
 					iNorthAmericaBonus = 0
-					if city.getRegionID() in [rCanada, rUnitedStates]: iNorthAmericaBonus = 5
+					if city.getRegionID() in [rMaritimes, rOntario, rAtlanticSeaboard, rDeepSouth, rMidwest, rGreatPlains, rCalifornia, rCascadia]: iNorthAmericaBonus = 5
 					lCities.append((city, iHappinessDifference + iFoodDifference / 2 + city.getPopulation() / 2 + iNorthAmericaBonus))
 				elif city.getRegionID() not in lNewWorld and not bNewWorld:
 					iValue = 0

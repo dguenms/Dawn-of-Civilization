@@ -144,9 +144,9 @@ class Companies:
 			if iOwner == iNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
-			if city.getRegionID() in [rCentralAsia, rPersia]:
+			if city.getRegionID() in [rTarimBasin, rTransoxiana, rKhorasan]:
 				iValue += 2
-			elif city.getRegionID() == rChina:
+			elif city.getRegionID() in [rNorthChina, rSouthChina]:
 				iValue -= 2
 		
 		# geographical requirements

@@ -1712,7 +1712,7 @@ class RiseAndFall:
 			lCanadaCities.extend(utils.getCityList(iAmerica))
 			
 			for city in lCanadaCities:
-				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0] and (city.getX(), city.getY()) not in [(c.getX(), c.getY()) for c in lCities]:
+				if city.getRegionID() in [rMaritimes, rQuebec, rOntario] and city.getX() < Areas.getCapital(iCanada)[0] and (city.getX(), city.getY()) not in [(c.getX(), c.getY()) for c in lCities]:
 					lCities.append(city)
 					
 		# Leoreth: remove capital locations

@@ -702,7 +702,7 @@ def onPalaceMoved(iPlayer):
 	iEra = gc.getPlayer(iPlayer).getCurrentEra()
 
 	if iPlayer == iPhoenicia:
-		if capital.getRegionID() not in [rMesopotamia, rAnatolia]:
+		if capital.getRegionID() not in [rLevant, rMesopotamia, rAnatolia]:
 			nameChange(iPlayer)
 			adjectiveChange(iPlayer)
 		else:
@@ -1491,13 +1491,13 @@ def specificAdjective(iPlayer):
 				
 	elif iPlayer == iMongolia:
 		if not bEmpire and iEra <= iRenaissance:
-			if capital.getRegionID() == rChina:
+			if capital.getRegionID() in [rNorthChina, rSouthChina]:
 				return "TXT_KEY_CIV_MONGOLIA_YUAN"
 				
-			if capital.getRegionID() == rPersia:
+			if capital.getRegionID() in [rPersia, rKhorasan, rTransoxiana]:
 				return "TXT_KEY_CIV_MONGOLIA_HULAGU"
 				
-			if capital.getRegionID() == rCentralAsia:
+			if capital.getRegionID() in [rCentralAsianSteppe, rTarimBasin, rMongolia]:
 				return "TXT_KEY_CIV_MONGOLIA_CHAGATAI"
 				
 		if bMonarchy:
@@ -1609,7 +1609,7 @@ def republicTitle(iPlayer):
 			
 	if iPlayer == iMaya:
 		if gc.getPlayer(iMaya).isReborn():
-			if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
+			if isRegionControlled(iPlayer, rAndes) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
 				return "TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES"
 			
 	if gc.getPlayer(iPlayer).getStateReligion() == iIslam:
@@ -1738,7 +1738,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iMaya:
 		if bReborn:
 			if bEmpire:
-				if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
+				if isRegionControlled(iPlayer, rAndes) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
 					return "TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES"
 			
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
@@ -1997,7 +1997,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iMongolia:
-		if capital.getRegionID() == rPersia:
+		if capital.getRegionID() in [rMesopotamia, rPersia, rKhorasan]:
 			return "TXT_KEY_CIV_MONGOLIA_ILKHANATE"
 	
 		if bEmpire:
@@ -2149,7 +2149,7 @@ def leader(iPlayer):
 	elif iPlayer == iPhoenicia:
 		if not bCityStates: return iHannibal
 		
-		if capital.getRegionID() not in [rMesopotamia, rAnatolia]: return iHannibal
+		if capital.getRegionID() not in [rLevant, rMesopotamia, rAnatolia]: return iHannibal
 		
 	elif iPlayer == iRome:
 		if bEmpire or not bCityStates: return iAugustus

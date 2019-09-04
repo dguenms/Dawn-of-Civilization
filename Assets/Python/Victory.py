@@ -1631,7 +1631,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	elif iPlayer == iNetherlands:
 		if isPossible(iNetherlands, 1):
 			if iOwner in [iSpain, iFrance, iEngland, iPortugal, iVikings, iItaly, iRussia, iGermany, iHolyRome, iPoland]:
-				bColony = city.getRegionID() not in [rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]
+				bColony = city.getRegionID() not in lEurope
 			
 				if bColony and bConquest:
 					data.iDutchColonies += 1

@@ -351,7 +351,7 @@ class CvRFCEventHandler:
 				
 		# Leoreth: free defender and worker for AI colonies
 		if iOwner in lCivGroups[0]:
-			if city.getRegionID() not in mercRegions[iArea_Europe]:
+			if city.getRegionID() not in lEurope:
 				if utils.getHumanID() != iOwner:
 					utils.createGarrisons(tCity, iOwner, 1)
 					utils.makeUnit(iWorker, iOwner, tCity, 1)

@@ -1133,11 +1133,11 @@ class RFCUtils:
 		return CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
 		
 	def moveSlaveToNewWorld(self, iPlayer, unit):
-		lEurope = [rBritain, rIberia, rEurope, rItaly, rScandinavia, rRussia, rBalkans, rAnatolia, rMaghreb]
+		lOldWorld = lEurope + [rAnatolia, rMaghreb]
 		
 		lColonies = []
 		for city in self.getCityList(iPlayer):
-			if city.getRegionID() not in lEurope:
+			if city.getRegionID() not in lOldWorld:
 				lColonies.append(city)
 				
 		if len(lColonies) == 0: return

@@ -1110,7 +1110,7 @@ class Congress:
 				if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
 				plot = gc.getMap().plot(x, y)
 				if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
-					if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
+					if plot.getRegionID() in lAfrica + lOceania:
 						iSettlerMapValue = plot.getSettlerValue(iPlayer)
 						if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
 							iFoundValue = gc.getPlayer(iPlayer).AI_foundValue(x, y, -1, False)

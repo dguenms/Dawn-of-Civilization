@@ -4648,11 +4648,12 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}*/
 
 		//Leoreth: display region, only bugfix purposes
-		/*if (!pPlot->isWater() && gDLL->getChtLvl() > 0)
+		//if (!pPlot->isWater() && gDLL->getChtLvl() > 0)
+		if (pPlot->getRegionID() >= 0)
 		{
 			szString.append(pPlot->getRegionName());
 			szString.append(NEWLINE);
-		}*/
+		}
 
 		// Leoreth: display plot index, only bugfix purposes
 		/*szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
