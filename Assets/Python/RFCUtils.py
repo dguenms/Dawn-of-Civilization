@@ -11,6 +11,8 @@ import Areas
 import SettlerMaps
 import WarMaps
 import CvScreenEnums
+import BugPath as path
+import csv
 
 
 # globals
@@ -2033,5 +2035,23 @@ class RFCUtils:
 			if plot.isCore(iLoopPlayer):
 				return True
 		return False
+		
+	def readNumberMap(self, filename):
+		def parse(x):
+			if x == '': return -1
+			return int(x)
+			
+		return self.readMap(filename, parse)
+		
+	def readMap(self, filename, parse = lambda x: x):
+		filePath = '%s/Assets/Maps/%s' % (path.getModDir(), filename)
+		
+		file = open(filePath)
+		try:
+			map = tuple([tuple([parse(x) for x in line]) for line in csv.reader(file)])
+		finally:
+			file.close()
+			
+		return map
 			
 utils = RFCUtils()
