@@ -17,7 +17,7 @@ def getSpreadFactor(iReligion, x, y):
 	return iNone
 	
 def updateRegionMap():
-	tRegionMap = utils.readNumberMap('Regions.csv')
+	tRegionMap = utils.readNumberMap('Regions')
 
 	for x in range(iWorldX):
 		for y in range(iWorldY):

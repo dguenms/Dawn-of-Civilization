@@ -2044,14 +2044,23 @@ class RFCUtils:
 		return self.readMap(filename, parse)
 		
 	def readMap(self, filename, parse = lambda x: x):
-		filePath = '%s/Assets/Maps/%s' % (path.getModDir(), filename)
+		filePath = '%s/Assets/Maps/%s.csv' % (path.getModDir(), filename)
 		
 		file = open(filePath)
 		try:
 			map = tuple([tuple([parse(x) for x in line]) for line in csv.reader(file)])
 		finally:
 			file.close()
-			
+
 		return map
+		
+	def writeMap(self, rows, filename):
+		filePath = '%s/Assets/Maps/%s.csv' % (path.getModDir(), filename)
+		
+		file = open(filePath, 'wb')
+		try:
+			csv.writer(file).writerows(rows)
+		finally:
+			file.close()
 			
 utils = RFCUtils()
