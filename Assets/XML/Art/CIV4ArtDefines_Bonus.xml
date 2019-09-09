@@ -491,7 +491,7 @@
 			<fScale>1.2</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/murex/murex.nif</NIF>
-			<KFM/>
+			<KFM>Art/Terrain/Resources/murex/murex.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/murex.dds</Button>
 			<FontButtonIndex>20</FontButtonIndex>
 		</BonusArtInfo>
