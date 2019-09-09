@@ -409,33 +409,30 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 
 def exportRegionMap(bForce = False):
 	bAutoWater = True
-
+	
 	bMapChanged = bForce
 	if not bMapChanged:
+		tRegionMap = utils.readNumberMap('Regions')
 		for (x, y) in utils.getWorldPlotsList():
 			plot = gc.getMap().plot(x, y)
-			if plot.getRegionID() != RegionMap.getMapValue(x, y):
+			if plot.getRegionID() != RegionMap.getMapValue(tRegionMap, x, y):
 				bMapChanged = True
 				break
 	if bMapChanged:
-		fileName = '%s\\Export\\Other\\RegionMap.txt' % (path.getModDir())
-		file = open(fileName, 'wt')
-		try:
-			file.write("tRegionMap = ( \n")
-			for y in reversed(range(iWorldY)):
-				sLine = "(\t"
-				for x in range(iWorldX):
-					plot = gc.getMap().plot(x, y)
-					if plot.isWater() and bAutoWater:
-						iValue = -1
-					else:
-						iValue = plot.getRegionID()
-					sLine += "%d,\t" % iValue
-				sLine += "),\n"
-				file.write(sLine)
-			file.write(")")
-		finally:
-			file.close()
+		rows = []
+		for y in reversed(range(iWorldY)):
+			row = []
+			for x in range(iWorldX):
+				plot = gc.getMap().plot(x, y)
+				iRegion = plot.getRegionID()
+				if plot.isWater() and bAutoWater:
+					iRegion = -1
+				if iRegion == -1:
+					row.append('')
+				else:
+					row.append(str(iRegion))
+			rows.append(row)
+		utils.writeMap(rows, 'Regions')
 		sText = "Regionmap exported"
 	else:
 		sText = "No changes between current regionmap and values defined in python"
