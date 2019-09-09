@@ -2109,7 +2109,7 @@ class CvWorldBuilderScreen:
 			if iRegion == self.m_iRegionMapID:
 				CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_BLUE", 0.7)
 			elif self.bAllRegions:
-				CyEngine().fillAreaBorderPlotAlt(x, y, 1000+iRegion, self.dRegionColors[iRegion], 0.7)
+				CyEngine().fillAreaBorderPlotAlt(x, y, 1000+iRegion+1, self.dRegionColors[iRegion], 0.7)
 			
 	def determineRegionColors(self):
 		lColors = ["COLOR_PLAYER_LIGHT_PURPLE", "COLOR_PLAYER_LIGHT_YELLOW", "COLOR_PLAYER_LIGHT_ORANGE", "COLOR_SILVER"]
@@ -2128,14 +2128,17 @@ class CvWorldBuilderScreen:
 					dNeighbourRegions[iRegion].append(iNeighbourRegion)
 
 		for iRegion in range(iNumRegions):
-			for color in lColors:
-				bColorUsed = False
-				for iNeighbourRegion in dNeighbourRegions[iRegion]:
-					if dRegionColors[iNeighbourRegion] == color:
-						break
-				else:
-					dRegionColors[iRegion] = color
-					break
+			if dRegionColors[iRegion] == "":
+				dRegionColors[iRegion] = lColors[0]
+			for iNeighbourRegion in dNeighbourRegions[iRegion]:
+				if dRegionColors[iNeighbourRegion] == "":
+					for color in lColors:
+						for iNeighbourRegion2 in dNeighbourRegions[iNeighbourRegion]:
+							if dRegionColors[iNeighbourRegion2] == color:
+								break
+						else:
+							dRegionColors[iNeighbourRegion] = color
+
 		self.dRegionColors = dRegionColors
 
 	def showVictoryOverlay(self):

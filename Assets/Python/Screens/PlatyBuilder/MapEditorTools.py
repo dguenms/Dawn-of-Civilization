@@ -6,9 +6,7 @@ import Areas
 import SettlerMaps
 import WarMaps
 import RegionMap
-import os
-
-IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"
+import BugPath as path
 
 gc = CyGlobalContext()
 
@@ -123,7 +121,8 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 			lPlots = lNewAIPlotList+lNewFlipPlotList
 			BLAI, TRAI = getTLBR(lPlots)
 
-		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
+		fileName = '%s\\Export\\FlipZones\\%s.txt' % (path.getModDir(), sName)
+		file = open(fileName, 'wt')
 		try:
 			if not utils.isReborn(iPlayer):
 				file.write("# tBirthArea\n")
@@ -194,7 +193,8 @@ def exportAllFlip(dFlipZoneEdits):
 		if lNewAIPlotList:
 			lAllAIPlots.append("i" + sName + " : (" + str(BLAI) + ",\t" + str(TRAI) + "),")
 
-	file = open(IMAGE_LOCATION + "\FlipZones\\AllFlipZones.txt", 'wt')
+	fileName = '%s\\Export\\FlipZones\\AllFlipZones.txt' % (path.getModDir())
+	file = open(fileName, 'wt')
 	try:
 		file.write("tBirthArea = (\n")
 		for sString in lAllFlips:
@@ -243,7 +243,8 @@ def exportCore(iPlayer, bForce = False):
 			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
 				lExceptions.append((x, y))
 
-		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
+		fileName = '%s\\Export\\Cores\\%s.txt' % (path.getModDir(), sName)
+		file = open(fileName, 'wt')
 		try:
 			if not utils.isReborn(iPlayer):
 				file.write("# tCoreArea\n")
@@ -290,7 +291,8 @@ def exportAllCores():
 		if lExceptions:
 			lAllExceptions.append("i" + sName + " : " + str(lExceptions) + ",")
 
-	file = open(IMAGE_LOCATION + "\Cores\\AllCores.txt", 'wt')
+	fileName = '%s\\Export\\Cores\\AllCores.txt' % (path.getModDir())
+	file = open(fileName, 'wt')
 	try:
 		file.write("tCoreArea = (\n")
 		for sString in lAllCores:
@@ -323,7 +325,8 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 				bSettlerValueChanged = True
 				break
 	if bSettlerValueChanged:
-		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName + ".txt", 'wt')
+		fileName = '%s\\Export\\SettlerValues\\%s.txt' % (path.getModDir(), sName)
+		file = open(fileName, 'wt')
 		try:
 			file.write("(")
 			for y in reversed(range(iWorldY)):
@@ -370,7 +373,8 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 				bWarMapChanged = True
 				break
 	if bWarMapChanged:
-		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName + ".txt", 'wt')
+		fileName = '%s\\Export\\WarMaps\\%s.txt' % (path.getModDir(), sName)
+		file = open(fileName, 'wt')
 		try:
 			file.write("(")
 			for y in reversed(range(iWorldY)):
@@ -414,7 +418,8 @@ def exportRegionMap(bForce = False):
 				bMapChanged = True
 				break
 	if bMapChanged:
-		file = open(IMAGE_LOCATION + "\Other\\RegionMap.txt", 'wt')
+		fileName = '%s\\Export\\Other\\RegionMap.txt' % (path.getModDir())
+		file = open(fileName, 'wt')
 		try:
 			file.write("tRegionMap = ( \n")
 			for y in reversed(range(iWorldY)):
@@ -448,7 +453,8 @@ def exportAreaExport(lPlots, bWaterException, bPeakException):
 		if bPeakException:
 			lExceptions.extend([(x, y) for (x, y) in lPlots if gc.getMap().plot(x, y).isPeak() and (x, y) not in lExceptions])
 
-		file = open(IMAGE_LOCATION + "\Other\\NewArea.txt", 'wt')
+		fileName = '%s\\Export\\Other\\NewArea.txt' % (path.getModDir())
+		file = open(fileName, 'wt')
 		try:
 			file.write("# tBL, tTR\n")
 			file.write("("+ str(BL) + ",\t" + str(TR) + ")")
