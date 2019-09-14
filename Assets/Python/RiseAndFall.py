@@ -8,7 +8,7 @@ from StoredData import data # edead
 import CvTranslator
 from RFCUtils import utils
 from Consts import *
-import CityNameManager as cnm
+import CityNames as cn
 import Victory as vic
 import DynamicCivs as dc
 from operator import itemgetter
@@ -1023,7 +1023,7 @@ class RiseAndFall:
 				if iStateReligion >= 0 and city.isHasReligion(iStateReligion):
 					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
 			
-			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
+			cn.checkCities(iAztecs) # use name of the plots in their city name map
 			
 			pAztecs.setGold(500)
 			

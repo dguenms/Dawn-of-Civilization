@@ -6,7 +6,7 @@ from Consts import *
 from RFCUtils import utils
 import heapq
 import Areas
-import CityNameManager as cnm
+import CityNames as cn
 import DynamicCivs as dc
 
 ### GLOBALS ###
@@ -3719,7 +3719,7 @@ def getUHVHelp(iPlayer, iGoal):
 					capitalPlot = utils.plot(tCapital)
 					if capitalPlot.isCity():
 						name = capitalPlot.getPlotCity().getName()
-						ownName = cnm.getRenameName(iTurks, name)
+						ownName = cn.translate(iTurks, name)
 						if ownName: name = ownName
 						aHelp.append(getIcon(True) + name)
 			

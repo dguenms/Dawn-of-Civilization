@@ -197,6 +197,11 @@ class GameData:
 		
 		self.lConquest = [False] * iNumConquests
 		
+		# City Names
+		
+		self.dChangedCities = {}
+		self.dChangedNames = {}
+		
 		# Congresses
 		
 		self.iGlobalWarAttacker = -1

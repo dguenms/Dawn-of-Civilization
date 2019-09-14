@@ -8,7 +8,7 @@ import RiseAndFall
 import Barbs
 from Religions import rel
 import Resources
-import CityNameManager as cnm
+import CityNames as cn
 import UniquePowers     
 import AIWars
 import Congresses as cong
@@ -99,10 +99,11 @@ class CvRFCEventHandler:
 
 		self.rnf.setup()
 		self.pla.setup()
-		dc.setup()
 		self.aiw.setup()
 		self.up.setup()
 		
+		cn.setup()
+		dc.setup()
 		vic.setup()
 		cong.setup()
 		
@@ -122,7 +123,7 @@ class CvRFCEventHandler:
 		iOwner, iPlayer, city, bConquest, bTrade = argsList
 		tCity = (city.getX(), city.getY())
 		
-		cnm.onCityAcquired(city, iPlayer)
+		cn.onCityAcquired(city, iPlayer)
 		
 		if bConquest:
 			sta.onCityAcquired(city, iOwner, iPlayer)
@@ -256,7 +257,7 @@ class CvRFCEventHandler:
 		x, y = tCity
 		
 		if iOwner < iNumActivePlayers: 
-			cnm.onCityBuilt(city)
+			cn.onCityBuilt(city)
 			
 		# starting workers
 		if city.isCapital():
@@ -482,7 +483,7 @@ class CvRFCEventHandler:
 		utils.checkSlaves(iPlayer)
 			
 		if iPlayer in [iEgypt]:
-			cnm.onRevolution(iPlayer)
+			cn.onRevolution(iPlayer)
 			
 	def onCityGrowth(self, argsList):
 		'City Population Growth'
@@ -724,7 +725,7 @@ class CvRFCEventHandler:
 	def onReligionSpread(self, argsList):
 		iReligion, iOwner, pSpreadCity = argsList
 		
-		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
+		cn.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
 	def onFirstContact(self, argsList):
 		iTeamX,iHasMetTeamY = argsList
@@ -751,7 +752,7 @@ class CvRFCEventHandler:
 
 		if iGameTurn > getTurnForYear(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
-			cnm.onTechAcquired(iPlayer)
+			cn.onTechAcquired(iPlayer)
 			dc.onTechAcquired(iPlayer, iTech)
 
 		if gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:

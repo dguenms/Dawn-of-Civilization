@@ -25,7 +25,7 @@ import WBInfoScreen
 import WBTradeScreen
 import CvEventManager
 import Popup
-import CityNameManager as cnm
+import CityNames as cn
 import WBStoredDataScreen
 import GreatPeople as gp
 
@@ -168,9 +168,9 @@ class CvWorldBuilderScreen:
 						TextKey = "TXT_KEY_UHV_AREA_%d" % iVictoryRegion
 						sDoCText += "<font=3b>%s</font>" % CyTranslator().getText(str(TextKey), ())
 				else:
-					# CNM and settlervalue
+					# city names and settlervalue
 					if self.m_iCurrentX > -1 and self.m_iCurrentY > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
-						sCityName = cnm.getFoundName(self.m_iCurrentPlayer, (self.m_iCurrentX, self.m_iCurrentY))
+						sCityName = cn.getName(self.m_iCurrentPlayer, (self.m_iCurrentX, self.m_iCurrentY))
 						sDoCText += "<font=3b>%s</font>" % sCityName
 					if self.iPlayerAddMode == "WarMap":
 						iPlotWarValue = self.m_pCurrentPlot.getWarValue(self.m_iCurrentPlayer)
@@ -503,7 +503,7 @@ class CvWorldBuilderScreen:
 			x = self.m_pCurrentPlot.getX()
 			y = self.m_pCurrentPlot.getY()
 			pCity = gc.getPlayer(self.m_iCurrentPlayer).initCity(x, y)
-			sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+			sName = cn.getName(self.m_iCurrentPlayer, (x, y))
 			if sName:
 				pCity.setName(sName, True)
 			if bPython:
@@ -2381,7 +2381,7 @@ class CvWorldBuilderScreen:
 				x = self.m_pCurrentPlot.getX()
 				y = self.m_pCurrentPlot.getY()
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+				sName = cn.getName(self.m_iCurrentPlayer, (x, y))
 				if not sName:
 					sName = pOldCity.getName()
 				pOldCity.setName("ToBeRazed", False)
@@ -2406,7 +2406,7 @@ class CvWorldBuilderScreen:
 				x = self.m_pCurrentPlot.getX()
 				y = self.m_pCurrentPlot.getY()
 				pNewCity = pPlayer.initCity(x, y)
-				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+				sName = cn.getName(self.m_iCurrentPlayer, (x, y))
 				if sName:
 					pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, False)

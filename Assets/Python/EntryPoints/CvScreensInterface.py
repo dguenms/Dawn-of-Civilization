@@ -56,7 +56,7 @@ from Consts import *
 import Areas
 from RFCUtils import utils
 import Victory as vic
-import CityNameManager as cnm
+import CityNames as cn
 import Congresses as cong
 import RiseAndFall as rnf
 
@@ -1175,7 +1175,7 @@ def getUHVTileInfo(argsList):
 def getCityName(argsList):
 	iPlayer, x, y = argsList
 	
-	result = cnm.getFoundName(iPlayer, (x,y))
+	result = cn.getName(iPlayer, (x,y))
 	
 	if result == -1:
 		return ""

@@ -7,7 +7,7 @@ from Consts import *
 import Victory as vic
 from StoredData import data
 from RFCUtils import utils
-import CityNameManager as cnm
+import CityNames as cn
 import Areas
 
 ### Constants ###
@@ -44,7 +44,7 @@ def findCapitalLocations(dCapitals):
 	dLocations = {}
 	for iPlayer in dCapitals:
 		for sCapital in dCapitals[iPlayer]:
-			dLocations[sCapital] = cnm.findLocations(iPlayer, sCapital)
+			dLocations[sCapital] = cn.findLocations(iPlayer, sCapital)
 	return dLocations
 
 ### Dictionaries with text keys
@@ -514,7 +514,7 @@ dCapitals = {
 	iNetherlands : ["Brussels", "Antwerpen"],
 }
 
-dCapitalLocations = findCapitalLocations(dCapitals)
+dCapitalLocations = None
 
 dStartingLeaders = [
 # 3000 BC
@@ -594,7 +594,10 @@ dStartingLeaders = [
 
 ### Event handlers
 
-def setup():			
+def setup():
+	global dCapitalLocations
+	dCapitalLocations = findCapitalLocations(dCapitals)
+
 	iScenario = utils.getScenario()
 	
 	if iScenario == i600AD:
@@ -805,7 +808,7 @@ def civAdjective(iPlayer):
 def capitalName(iPlayer):
 	capital = gc.getPlayer(iPlayer).getCapitalCity()
 	if capital: 
-		sCapitalName = cnm.getRenameName(iEngland, capital.getName())
+		sCapitalName = cn.translateName(iEngland, capital.getName())
 		if sCapitalName: return sCapitalName
 		else: return capital.getName()
 	

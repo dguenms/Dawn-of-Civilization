@@ -7,7 +7,7 @@ import Popup
 from RFCUtils import utils
 from Consts import *
 import Areas
-import CityNameManager as cnm
+import CityNames as cn
 from StoredData import data # edead
 
 ### Globals ###
@@ -233,7 +233,7 @@ class Congress:
 			if plot.isCity():
 				popup.addPythonButton(plot.getPlotCity().getName(), gc.getCivilizationInfo(gc.getPlayer(plot.getPlotCity().getOwner()).getCivilizationType()).getButton())
 			else:
-				popup.addPythonButton(cnm.getFoundName(utils.getHumanID(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
+				popup.addPythonButton(cn.getName(utils.getHumanID(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
 			
 		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_REQUEST", ()), 'Art/Interface/Buttons/Actions/Cancel.dds')
 		popup.addPopup(utils.getHumanID())
@@ -263,11 +263,11 @@ class Congress:
 		if plot.isCity():
 			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_CITY", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), plot.getPlotCity().getName())))
 		elif plot.getOwner() == iClaimant:
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", (sClaimant, cn.getName(iClaimant, tPlot))))
 		elif plot.isOwned():
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cn.getName(iClaimant, tPlot))))
 		else:
-			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", (sClaimant, cn.getName(iClaimant, tPlot))))
 			
 		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_VOTE_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
 		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_ABSTAIN", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
@@ -615,7 +615,7 @@ class Congress:
 				else:
 					self.assignCity(iClaimant, plot.getOwner(), (x, y))
 			else:
-				self.lColonies.append((cnm.getFoundName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
+				self.lColonies.append((cn.getName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
 				if bCanRefuse:
 					self.lHumanAssignments.append((iClaimant, (x, y)))
 				else:
@@ -1112,7 +1112,7 @@ class Congress:
 				if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
 					if plot.getRegionID() in lAfrica + lOceania:
 						iSettlerMapValue = plot.getSettlerValue(iPlayer)
-						if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
+						if iSettlerMapValue >= 90 and cn.getName(iPlayer, (x, y)):
 							iFoundValue = gc.getPlayer(iPlayer).AI_foundValue(x, y, -1, False)
 							lPlots.append((x, y, max(1, min(5, iFoundValue / 2500 - 1))))
 						

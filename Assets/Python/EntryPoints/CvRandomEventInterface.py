@@ -16,7 +16,7 @@ from Consts import * #Rhye
 import RFCUtils #Leoreth
 import Religions #Leoreth
 import PyHelpers #Leoreth
-import CityNameManager as cnm
+import CityNames as cn
 from StoredData import data
 from RFCUtils import utils
 
@@ -4373,7 +4373,7 @@ def getTradingCompanyConquerors1HelpText(argsList):
 		if gc.getMap().plot(x, y).isCity():
 			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
 		else:
-			sTargetCities += cnm.getFoundName(iPlayer, (x,y))
+			sTargetCities += cn.getName(iPlayer, (x,y))
 
 	if len(targetCivList) > 0:
 		text = localText.getText("TXT_KEY_EVENT_TCC_ACQUIRE", (len(targetList) * 200, sTargetCivs, sTargetCities))
