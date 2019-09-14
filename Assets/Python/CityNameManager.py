@@ -5251,7 +5251,7 @@ dIdentifiers = {
 	"Zhongdu"		:	"Zhongdu",
 	"Zurych"		:	"Zurich",}
 
-	
+
 tRenames = (
 #Language: Egyptian
 {
