@@ -101,6 +101,7 @@ class CvRFCEventHandler:
 		self.pla.setup()
 		self.aiw.setup()
 		self.up.setup()
+		self.res.setup()
 		
 		cn.setup()
 		dc.setup()

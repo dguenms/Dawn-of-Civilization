@@ -352,6 +352,14 @@
 		<Spanish>Pig (Furry)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_SHEEP_BLACK</Tag>
+		<English>Sheep (Black)</English>
+		<French>Sheep (Black)</French>
+		<German>Schaf (Schwarz)</German>
+		<Italian>Sheep (Black)</Italian>
+		<Spanish>Sheep (Black)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_IVORY_AFRICAN</Tag>
 		<English>Ivory (African)</English>
 		<French>Ivoire (African)</French>
