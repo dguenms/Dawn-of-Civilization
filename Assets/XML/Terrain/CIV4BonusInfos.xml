@@ -2481,6 +2481,24 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BonusInfo>
 		<BonusInfo>
+			<Type>BONUS_SHEEP_BLACK</Type>
+			<Description>TXT_KEY_BONUS_SHEEP_BLACK</Description>
+			<Civilopedia>TXT_KEY_BONUS_SHEEP_BLACK_PEDIA</Civilopedia>
+			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<ArtDefineTag>ART_DEF_BONUS_SHEEP_BLACK</ArtDefineTag>
+			<iPlacementOrder>-1</iPlacementOrder>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>90</iMaxLatitude>
+			<Rands>
+				<iRandApp1>0</iRandApp1>
+				<iRandApp2>0</iRandApp2>
+				<iRandApp3>0</iRandApp3>
+				<iRandApp4>0</iRandApp4>
+			</Rands>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BonusInfo>
+		<BonusInfo>
 			<Type>BONUS_COW_BROWN</Type>
 			<Description>TXT_KEY_BONUS_COW_BROWN</Description>
 			<Civilopedia>TXT_KEY_BONUS_COW_BROWN_PEDIA</Civilopedia>
