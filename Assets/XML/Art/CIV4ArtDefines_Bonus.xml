@@ -636,5 +636,15 @@
 			<Button>Art/Interface/Buttons/Resources/Oranges.dds</Button>
 			<FontButtonIndex>52</FontButtonIndex>
 		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_SHEEP_BLACK</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/sheep_black/Sheep.nif</NIF>
+			<KFM>Art/Terrain/Resources/Sheep/Sheep.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/sheep_black/Sheep_FX.nif</SHADERNIF>
+			<Button>,Art/Interface/Buttons/WorldBuilder/Sheep.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,14</Button>
+			<FontButtonIndex>18</FontButtonIndex>
+		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>

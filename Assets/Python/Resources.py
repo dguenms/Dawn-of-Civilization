@@ -25,6 +25,11 @@ lNewfoundlandCapes = [(38, 60), (39, 60), (39, 61), (38, 61), (37, 61), (37, 62)
 
 class Resources:
 
+	def setup(self):
+	
+		# Merijn: "Where is Waldo" easter egg minigame
+		self.setBillyTheBlackSheep()
+
 	# Leoreth: bonus removal alerts by edead
 	def createResource(self, iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", removeTextKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
 		"""Creates a bonus resource and alerts the plot owner"""
@@ -330,3 +335,9 @@ class Resources:
 			for tPlot in [(9, 52), (9, 53), (8, 54), (9, 55)]:
 				x, y = tPlot
 				gc.getMap().plot(x,y).setFeatureType(iFloodPlains, 0)
+				
+	def setBillyTheBlackSheep(self):
+		lPlots = [(x, y) for (x, y) in utils.getWorldPlotsList() if gc.getMap().plot(x, y).getBonusType(-1) == iSheep and gc.getMap().plot(x, y).getBonusVarietyType(-1) == -1]
+		tSheepPlot = utils.getRandomEntry(lPlots)
+		if tSheepPlot:
+			gc.getMap().plot(tSheepPlot[0], tSheepPlot[1]).setBonusVarietyType(iSheepBlack)
