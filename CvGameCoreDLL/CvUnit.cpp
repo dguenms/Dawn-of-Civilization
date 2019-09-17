@@ -14440,10 +14440,12 @@ bool CvUnit::diplomaticMission()
 	TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();
 
 	TeamTypes ourTeam = GET_PLAYER(getOwner()).getTeam();
+	bool bMadePeace = false;
 
 	if (GET_TEAM(eTeam).isAtWar(ourTeam))
 	{
 		GET_TEAM(eTeam).makePeace(ourTeam);
+		bMadePeace = true;
 	}
 	else
 	{
@@ -14457,6 +14459,8 @@ bool CvUnit::diplomaticMission()
 
 		GET_PLAYER(ePlayer).AI_changeAttitudeExtra(getOwner(), 4);
 	}
+
+	CvEventReporter::getInstance().diplomaticMission(getUnitType(), getOwnerINLINE(), getX(), getY(), bMadePeace);
 
 	if (plot()->isActiveVisible(false))
 	{

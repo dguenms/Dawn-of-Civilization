@@ -1515,11 +1515,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Saint Sophia's Cathedral[COLOR_REVERT] spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAINT_SOPHIA_HELP</Tag>
+		<English>[ICON_BULLET]Spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction</English>
+		<French>[ICON_BULLET]Spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction</French>
+		<German>[ICON_BULLET]Spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction</German>
+		<Italian>[ICON_BULLET]Spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction</Italian>
+		<Spanish>[ICON_BULLET]Spreads Orthodoxy to all cities you own in Orthodoxy's Core or Historical area upon construction</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Tag>

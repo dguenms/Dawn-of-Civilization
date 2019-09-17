@@ -483,6 +483,12 @@ void CvEventReporter::tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX
 	m_kPythonEventMgr.reportTradeMission(unitID, ePlayer, iX, iY, iGold);
 }
 
+// 1SDAN: diplomatic mission (great statesmen)
+void CvEventReporter::diplomaticMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, bool bMadePeace)
+{
+	m_kPythonEventMgr.reportDiplomaticMission(unitID, ePlayer, iX, iY, bMadePeace);
+}
+
 // Leoreth: slave trade (amount of gold received)
 void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
 {

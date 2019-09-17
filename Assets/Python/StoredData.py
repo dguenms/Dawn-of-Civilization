@@ -236,6 +236,7 @@ class GameData:
 		self.iChineseGoldenAgeTurns = 0
 		self.iKoreanSinks = 0
 		self.iTamilTradeGold = 0.0
+		self.iKievanRusMissions = 0
 		self.iColombianTradeGold = 0
 		self.iNigeriaTradeGold = 0
 		self.iVikingGold = 0

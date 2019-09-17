@@ -2560,6 +2560,14 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
 		break;
+	case KIEVAN_RUS:
+		aiUnitAIVal[UNITAI_EXPLORE] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE] *= 2;
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
 	case RUSSIA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 3;
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;

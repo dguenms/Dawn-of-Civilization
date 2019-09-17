@@ -232,6 +232,12 @@ tSubSaharaTL = (48, 10)
 tSubSaharaBR = (79, 30)
 tSubSaharaExceptions = ((76, 30), (77, 30))
 
+# second Kievan Rus goal: control a continuous empire from the Barents Sea to the Mediterranean Sea in 1400 AD
+lBarents = [(63, 64), (65, 64),  (65, 65), (66, 65), (67, 65), (67, 64), (68, 64), (69, 64),(70, 63), (69, 63), (68, 63), (68, 62), (68, 61), (69, 61), (70, 61), (70, 60), (71, 60), (72, 60), (72, 61), (72, 62), (73, 62), (73, 61), (74, 61), (75, 61), (75, 62), (76, 62), (77, 62), (78, 62), (78, 63), (79, 62)]
+tMediterraneanCoastExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,46),(73,44),(73,45),(72,45),(71,45),(71,44),(70,44),(73,36),(51, 42),(51, 43),(51, 44),(51, 45),(52, 36),(52, 37),(52, 42),(52, 43),(52, 44),(52, 45),(53, 36),(53, 37),(53, 43),(53, 44),(53, 45),(54, 36),(54, 37),(54, 45),(54, 46),(54, 47),(55, 36),(55, 37),(55, 38),(55, 47),(56, 36),(56, 37),(56, 38),(56, 47),(57, 36),(57, 37),(57, 38),(57, 47),(58, 36),(58, 47),(59, 36),(59, 47),(60, 36),(64, 47),(65, 45),(65, 46),(65, 47),(66, 45),(66, 46),(66, 47),(71, 43),(72, 43),(72, 44),(73, 43))
+lMediterraneanCoast = utils.getPlotList(tMediterraneanTL, tMediterraneanBR, tMediterraneanCoastExceptions)
+
+	
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -255,6 +261,7 @@ dWonderGoals = {
 	iMoors: (1, [iMezquita], False),
 	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain], True),
+	iKievanRus: (0, [iSaintSophia], False),
 	iMali: (1, [iUniversityOfSankore], False),
 	iZimbabwe: (0, [iGreatZimbabwe], False),
 	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore], True),
@@ -268,6 +275,9 @@ dReligionGoals = {}
 ### EVENT HANDLING ###
 
 def setup():
+
+	
+	
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
@@ -301,7 +311,6 @@ def setup():
 				loseAll(iPlayer)
 				
 def checkTurn(iGameTurn, iPlayer):
-
 	if not gc.getGame().isVictoryValid(7): return
 	
 	if iPlayer >= iNumPlayers: return
@@ -1122,6 +1131,32 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		if iGameTurn == getTurnForYear(1850):
 			expire(iHolyRome, 2)
+			
+	elif iPlayer == iKievanRus:
+		
+		# first goal: build the St. Sophia Cathedral and 1 Orthodox Cathedrals by 1327 AD
+		
+		if isPossible(iKievanRus, 0):
+			iCathedral = getNumBuildings(iKievanRus, iOrthodoxCathedral)
+			bSophia = data.getWonderBuilder(iSaintSophia) == iKievanRus
+			if iCathedral >= 1 and bSophia:
+				win(iKievanRus, 0)
+				
+		if iGameTurn == getTurnForYear(1327):
+			expire(iKievanRus, 0)
+			
+		# second goal: control a continuous empire from the Barents Sea to the Mediterranean Sea
+		if isPossible(iKievanRus, 1):
+			if isConnectedByLand(iKievanRus, lMediterraneanCoast, lBarents):
+				win(iKievanRus, 1)
+			
+		# third goal: Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD
+		if isPossible(iKievanRus, 2):
+			if data.iKievanRusMissions >= 2:
+				win(iKievanRus, 2)
+		
+		if iGameTurn == getTurnForYear(1327):
+			expire(iKievanRus, 2)
 			
 	elif iPlayer == iRussia:
 	
@@ -2412,6 +2447,45 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 				if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
 					win(iMali, 0)
 					
+	# first Kievan Rus goal: Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD
+	elif iPlayer == iKievanRus:
+		if isPossible(iKievanRus, 2):
+			if gc.getMap().plot(iX, iY).getOwner() in lCivGroups[0]:
+				lTopCivs = []
+				iTopScore = -1
+				iCurrentScore = -1
+				for iCiv in lCivGroups[0]:
+					if gc.getPlayer(iCiv).isAlive():
+						if iCiv != iKievanRus:
+							iCurrentScore = gc.getPlayer(iCiv).calculateScore(False, False)
+							if iCurrentScore == iTopScore:
+								lTopCivs.append(iCiv)
+							elif iCurrentScore > iTopScore:
+								lTopCivs = [iCiv]
+								iTopScore = iCurrentScore
+				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
+					data.iKievanRusMissions += 1
+					
+def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
+	# first Kievan Rus goal: Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD
+	if iPlayer == iKievanRus:
+		if isPossible(iKievanRus, 2):
+			if gc.getMap().plot(iX, iY).getOwner() in lCivGroups[0]:
+				lTopCivs = []
+				iTopScore = -1
+				iCurrentScore = -1
+				for iCiv in lCivGroups[0]:
+					if gc.getPlayer(iCiv).isAlive():
+						if iCiv != iKievanRus:
+							iCurrentScore = gc.getPlayer(iCiv).calculateScore(False, False)
+							if iCurrentScore == iTopScore:
+								lTopCivs.append(iCiv)
+							elif iCurrentScore > iTopScore:
+								lTopCivs = [iCiv]
+								iTopScore = iCurrentScore
+				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
+					data.iKievanRusMissions += 1
+					
 def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
 	# third Canadian goal: end twelve wars through diplomacy by 2000 AD
@@ -3211,6 +3285,22 @@ def isConnectedByTradeRoute(iPlayer, lStarts, lTargets):
 		if not startPlot.isCity(): continue
 		
 		plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() in [iPlayer, startPlot.getOwner()] and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() in [iRouteRoad, iRouteRailroad, iRouteRomanRoad, iRouteHighway])
+	
+		if isConnected(tStart, lTargets, plotFunction): return True
+		
+	return False
+	
+def isConnectedByLand(iPlayer, lStarts, lTargets):
+	lValidTargets = lTargets
+	for tTarget in lValidTargets:
+		if not utils.plot(tTarget).isCity:
+			lValidTargets.remove(tTarget)
+	
+	for tStart in lStarts:
+		startPlot = utils.plot(tStart)
+		if not startPlot.isCity(): continue
+		
+		plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() == iPlayer and not utils.plot(tPlot).isWater()
 	
 		if isConnected(tStart, lTargets, plotFunction): return True
 		
@@ -4392,6 +4482,23 @@ def getUHVHelp(iPlayer, iGoal):
 			iPleasedOrBetterEuropeans = countPlayersWithAttitudeInGroup(iHolyRome, AttitudeTypes.ATTITUDE_PLEASED, lCivGroups[0])
 			aHelp.append(getIcon(iGreatArtists + iGreatStatesmen >= 10) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED", ('Vienna', iGreatArtists + iGreatStatesmen, 10)))
 			aHelp.append(getIcon(iPleasedOrBetterEuropeans >= 8) + localText.getText("TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_EUROPEANS", (iPleasedOrBetterEuropeans, 8)))
+
+	elif iPlayer == iKievanRus:
+		# first goal: build the St. Sophia Cathedral and 1 Orthodox Cathedral by 1327 AD
+		if iGoal == 0:
+			iCathedral = getNumBuildings(iKievanRus, iOrthodoxCathedral)
+			bSophia = data.getWonderBuilder(iSaintSophia) == iKievanRus
+			aHelp.append(getIcon(bSophia) + localText.getText("TXT_KEY_BUILDING_SAINT_SOPHIA", ()) + ' ' + getIcon(iCathedral >= 1) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL", ()))
+			
+		# second goal: control a continuous empire from the Barents Sea to the Mediterranean Sea
+		if iGoal == 1:
+			bContinuous = isConnectedByLand(iKievanRus, lMediterraneanCoast, lBarents)
+			aHelp.append(getIcon(bContinuous) + localText.getText("TXT_KEY_VICTORY_BLACK_TO_BARENTS", ()))
+			
+		# third goal: Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD
+		if iGoal == 2:
+			iMissions = data.iKievanRusMissions
+			aHelp.append(getIcon(iMissions >= 2) + localText.getText("TXT_KEY_VICTORY_TRADE_OR_DIPLOMATIC_MISSIONS", (iMissions, 2)))
 
 	elif iPlayer == iRussia:
 		if iGoal == 0:

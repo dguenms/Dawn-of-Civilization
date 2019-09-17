@@ -6117,4 +6117,68 @@
 		<Italian>Great Prophets, Scientists, Artists: %d1 / %d2</Italian>
 		<Spanish>Great Prophets, Scientists, Artists: %d1 / %d2</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BLACK_TO_BARENTS</Tag>
+		<English>Continuous empire from the Barents Sea to the Mediterranean Sea</English>
+		<French>Continuous empire from the Barents Sea to the Mediterranean Sea</French>
+		<German>Continuous empire from the Barents Sea to the Mediterranean Sea</German>
+		<Italian>Continuous empire from the Barents Sea to the Mediterranean Sea</Italian>
+		<Spanish>Continuous empire from the Barents Sea to the Mediterranean Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_OR_DIPLOMATIC_MISSIONS</Tag>
+		<English>Trade or Diplomatic Missions: %d1 / %d2</English>
+		<French>Trade or Diplomatic Missions: %d1 / %d2</French>
+		<German>Trade or Diplomatic Missions: %d1 / %d2</German>
+		<Italian>Trade or Diplomatic Missions: %d1 / %d2</Italian>
+		<Spanish>Trade or Diplomatic Missions: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KRS1_TITLE</Tag>
+		<English>Christianization of the Slavs</English>
+		<French>Christianization of the Slavs</French>
+		<German>Christianization of the Slavs</German>
+		<Italian>Christianization of the Slavs</Italian>
+		<Spanish>Christianization of the Slavs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KRS1</Tag>
+		<English>Build the St. Sophia Cathedral and an Orthodox Cathedral by 1327 AD</English>
+		<French>Build the St. Sophia Cathedral and an Orthodox Cathedral by 1327 AD</French>
+		<German>Build the St. Sophia Cathedral and an Orthodox Cathedral by 1327 AD</German>
+		<Italian>Build the St. Sophia Cathedral and an Orthodox Cathedral by 1327 AD</Italian>
+		<Spanish>Build the St. Sophia Cathedral and an Orthodox Cathedral by 1327 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KRS2_TITLE</Tag>
+		<English>The Wise Prince</English>
+		<French>The Wise Prince</French>
+		<German>The Wise Prince</German>
+		<Italian>The Wise Prince</Italian>
+		<Spanish>The Wise Prince</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KRS2</Tag>
+		<English>Control a continuous empire from a port on the Barents Sea to a port on the Mediterranean Sea</English>
+		<French>Control a continuous empire from a port on the Barents Sea to a port on the Mediterranean Sea</French>
+		<German>Control a continuous empire from a port on the Barents Sea to a port on the Mediterranean Sea</German>
+		<Italian>Control a continuous empire from a port on the Barents Sea to a port on the Mediterranean Sea</Italian>
+		<Spanish>Control a continuous empire from a port on the Barents Sea to a port on the Mediterranean Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KRS3_TITLE</Tag>
+		<English>The Varangian Way</English>
+		<French>The Varangian Way</French>
+		<German>The Varangian Way</German>
+		<Italian>The Varangian Way</Italian>
+		<Spanish>The Varangian Way</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KRS3</Tag>
+		<English>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</English>
+		<French>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</French>
+		<German>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</German>
+		<Italian>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</Italian>
+		<Spanish>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</Spanish>
+	</TEXT>
 </Civ4GameText>

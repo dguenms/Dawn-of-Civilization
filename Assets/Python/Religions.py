@@ -438,6 +438,11 @@ class Religions:
 			self.checkLateReligionFounding(iReligion, iTech)
 					
 	def onBuildingBuilt(self, city, iPlayer, iBuilding):
+		if iBuilding == iSaintSophia:
+			for city in utils.getCityList(iPlayer):
+				if city.plot().getSpreadFactor(iOrthodoxy) in [RegionSpreadTypes.REGION_SPREAD_CORE, RegionSpreadTypes.REGION_SPREAD_HISTORICAL]:
+					city.spreadReligion(iOrthodoxy)
+					
 		if iBuilding == iHinduTemple:
 			if gc.getGame().isReligionFounded(iBuddhism): return
 			self.foundBuddhism(city)

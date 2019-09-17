@@ -84,6 +84,7 @@ tPool3 = (iEgypt,
 	iBoers,
 	iVietnam,
 	iZimbabwe,
+	iKievanRus,
 	iBurma)
 
 

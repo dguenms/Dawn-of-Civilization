@@ -3381,6 +3381,111 @@
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_KIEVAN_RUS</Type>
+			<Description>TXT_KEY_CIV_RUS'_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_RUS'_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_RUS'_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_RUS'_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DARK_YELLOW_AND_LIGHT_SKY_BLUE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_KIEVAN_RUS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_RODNOVERY</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Rodnovery.dds</PaganReligionButton>
+			<Identifier>KRS</Identifier>
+			<StartingYear>882</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>30</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>1</Trade>
+				<Production>4</Production>
+				<Culture>2</Culture>
+				<Growth>4</Growth>
+				<Start>5</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Kiev</City>
+				<City>Lvov</City>
+				<City>Kharkov</City>
+				<City>Dnepropetrovsk</City>
+				<City>Donetsk</City>
+				<City>Odessa</City>
+				<City>Zaporizhina</City>
+				<City>Lugansk</City>
+				<City>Chernihov</City>
+				<City>Zhitomir</City>
+				<City>Korosten</City>
+				<City>Poltava</City>
+				<City>Kherson</City>
+				<City>Nikolaev</City>
+				<City>Rovno</City>
+				<City>Sumy</City>
+				<City>Vinnitsa</City>
+				<City>Simferopol</City>
+				<City>Striy</City>
+				<City>Kovel</City>
+				<City>Tarnopol</City>
+				<City>Lutsk</City>
+				<City>Chernobyl</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_KIEVAN_RUS_VECHE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HEAVY_SPEARMAN</UnitClassType>
+					<UnitType>UNIT_KIEVAN_RUS_DRUZHINA</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_YAROSLAV</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BOHDAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_POLAND</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_RUSSIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_CONGO</Type>
 			<Description>TXT_KEY_CIV_CONGO_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_CONGO_SHORT_DESC</ShortDescription>
@@ -5640,10 +5745,10 @@
 			<PaganReligionName>TXT_KEY_RELIGION_RODNOVERY</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Rodnovery.dds</PaganReligionButton>
 			<Identifier>RUS</Identifier>
-			<StartingYear>860</StartingYear>
+			<StartingYear>1283</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>30</LoadingTime>
-				<LoadingTime>10</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
@@ -5726,7 +5831,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_POLAND</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_KIEVAN_RUS</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_RUSSIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>

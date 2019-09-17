@@ -4357,6 +4357,55 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_COURTHOUSE</BuildingClass>
+			<Type>BUILDING_KIEVAN_RUS_VECHE</Type>
+			<Description>TXT_KEY_BUILDING_KIEVAN_RUS_VECHE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_KIEVAN_RUS_VECHE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KIEVAN_RUS_VECHE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_KIEVAN_RUS_VECHE</ArtDefineTag>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
+			<PrereqTech>TECH_LAW</PrereqTech>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>50</iConquestProb>
+			<iMaintenanceModifier>-25</iMaintenanceModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</CommerceChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_COURTHOUSE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_FACTORY</BuildingClass>
 			<Type>BUILDING_FACTORY</Type>
 			<Description>TXT_KEY_BUILDING_FACTORY</Description>
@@ -11602,6 +11651,7 @@
 			<Description>TXT_KEY_BUILDING_SAINT_SOPHIA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SAINT_SOPHIA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SAINT_SOPHIA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SAINT_SOPHIA_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SAINT_SOPHIA</ArtDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
@@ -11635,14 +11685,6 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<SpecialistYieldChanges>
-				<SpecialistYieldChange>
-					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</SpecialistYieldChange>
-			</SpecialistYieldChanges>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -11652,7 +11694,7 @@
 			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

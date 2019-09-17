@@ -2062,9 +2062,9 @@ class RiseAndFall:
 						elif utils.getHumanID() == iOldWorldCiv:
 							CyInterface().addMessage(iOldWorldCiv, True, iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 							
-		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
+		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Kievan Rus
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
-			if iTeamX in [iPersia, iByzantium, iRussia]:
+			if iTeamX in [iPersia, iByzantium, iKievanRus]:
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols(iTeamX):
 
 					data.setFirstContactMongols(iTeamX, False)
@@ -2083,7 +2083,7 @@ class RiseAndFall:
 						tTL = (68, 41)
 						tBR = (77, 46)
 						iDirection = DirectionTypes.DIRECTION_EAST
-					elif iTeamX == iRussia:
+					elif iTeamX == iKievanRus:
 						tTL = (68, 48)
 						tBR = (81, 62)
 						iDirection = DirectionTypes.DIRECTION_EAST
@@ -2450,6 +2450,10 @@ class RiseAndFall:
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
 		elif iCiv == iRussia:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
+			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
+		elif iCiv == iKievanRus:
+			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 		elif iCiv == iNetherlands:
@@ -2782,6 +2786,11 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 4)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 4)
+		elif iCiv == iKievanRus:
+			utils.createSettlers(iCiv, 1)
+			utils.createMissionaries(iCiv, 1)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(iDruzhina, iCiv, tPlot, 4)
 		elif iCiv == iHolland:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnit(iArquebusier, iCiv, tPlot, 6)
@@ -3133,6 +3142,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iRussia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iKievanRus:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iNetherlands:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3) 
 		elif iCiv == iPhilippines:

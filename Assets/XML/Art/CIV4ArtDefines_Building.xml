@@ -3647,5 +3647,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Paya/Button_Paya.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KIEVAN_RUS_VECHE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Veche/veche.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Veche/Veche.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

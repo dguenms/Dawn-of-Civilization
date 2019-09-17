@@ -3757,4 +3757,12 @@
 		<Italian>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</Italian>
 		<Spanish>The [COLOR_UNIT_TEXT]Kyundaw[COLOR_REVERT], the Burmese replacement for the the [COLOR_UNIT_TEXT]Heavy Spearman[COLOR_REVERT], is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungles[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Marshes[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Raider I[COLOR_REVERT] promotion, and has an attack bonus in [COLOR_HIGHLIGHT_TEXT]Rainforests[COLOR_REVERT].</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KIEVAN_RUS_DRUZHINA</Tag>
+		<English>Druzhina</English>
+		<French>Druzhina</French>
+		<German>Druzhina</German>
+		<Italian>Druzhina</Italian>
+		<Spanish>Druzhina</Spanish>
+	</TEXT>
 </Civ4GameText>

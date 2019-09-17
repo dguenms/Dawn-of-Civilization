@@ -1236,6 +1236,13 @@ def getUHVTileInfo(argsList):
 		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
 			return 74
 				
+	elif iPlayer == iKievanRus:
+		if (x, y) in vic.lMediterraneanCoast:
+			return 7
+			
+		if (x, y) in vic.lBarents:
+			return 85
+			
 		# continue with 81
 	return -1
 		
