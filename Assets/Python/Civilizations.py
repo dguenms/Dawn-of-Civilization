@@ -517,6 +517,7 @@ dTechPreferences = {
 		iEconomics : 20,
 	},
 	iCivHungary : {
+		iCivilLiberties : 20,
 	},
 	iCivPhilippines : {
 		iLogistics : 30,

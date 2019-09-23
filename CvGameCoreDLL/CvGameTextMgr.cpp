@@ -7412,6 +7412,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_FOOD"));
 	}
 
+	//	Buildings produced with food
+	if (GC.getCivicInfo(eCivic).isBuildingFoodProduction())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_FOOD"));
+	}
+
 	//	Conscription
 	if (getWorldSizeMaxConscript(eCivic) != 0)
 	{
@@ -7862,6 +7869,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 /************************************************************************************************/
 			}
 		}
+	}
+
+	// 1SDAN: halved diplomatic penalties from differing state religions with Tolerance
+	if (eCivic == CIVIC_TOLERANCE)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_HALVED_STATE_RELIGION_DIPLO"));
 	}
 
 	// Leoreth: ignore state religion requirements with Secularism

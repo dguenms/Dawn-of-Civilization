@@ -5771,6 +5771,7 @@ m_iExpInBorderModifier(0),
 m_iLevelExperienceModifier(0), // Leoreth
 m_iUnhappinessDecayModifier(0), // Leoreth
 m_bMilitaryFoodProduction(false),
+m_bBuildingFoodProduction(false), // 1SDAN
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
 m_bNoForeignTrade(false),
@@ -6115,6 +6116,12 @@ int CvCivicInfo::getLevelExperienceModifier() const
 bool CvCivicInfo::isMilitaryFoodProduction() const
 {
 	return m_bMilitaryFoodProduction;
+}
+
+// 1SDAN
+bool CvCivicInfo::isBuildingFoodProduction() const
+{
+	return m_bBuildingFoodProduction;
 }
 
 bool CvCivicInfo::isNoUnhealthyPopulation() const
@@ -6477,6 +6484,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	if (uiFlag >= 3) stream->Read(&m_iUnhappinessDecayModifier); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
+	stream->Read(&m_bBuildingFoodProduction); // 1SDAN
 	stream->Read(&m_bNoUnhealthyPopulation);
 	stream->Read(&m_bBuildingOnlyHealthy);
 	stream->Read(&m_bNoForeignTrade);
@@ -6663,6 +6671,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUnhappinessDecayModifier); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
+	stream->Write(m_bBuildingFoodProduction); // 1SDAN
 	stream->Write(m_bNoUnhealthyPopulation);
 	stream->Write(m_bBuildingOnlyHealthy);
 	stream->Write(m_bNoForeignTrade);
@@ -6759,6 +6768,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iGoldPerMilitaryUnit, "iGoldPerMilitaryUnit");
 	pXML->GetChildXmlValByName(&m_iHappyPerMilitaryUnit, "iHappyPerMilitaryUnit");
 	pXML->GetChildXmlValByName(&m_bMilitaryFoodProduction, "bMilitaryFoodProduction");
+	pXML->GetChildXmlValByName(&m_bBuildingFoodProduction, "bBuildingFoodProduction"); // 1SDAN
 	pXML->GetChildXmlValByName(&m_iMaxConscript, "iMaxConscript");
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");

@@ -488,6 +488,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNumMilitaryUnits = 0;
 	m_iHappyPerMilitaryUnit = 0;
 	m_iMilitaryFoodProductionCount = 0;
+	m_iBuildingFoodProductionCount = 0; // 1SDAN
 	m_iConscriptCount = 0;
 	m_iMaxConscript = 0;
 	m_iHighestUnitLevel = 1;
@@ -10093,6 +10094,34 @@ void CvPlayer::changeMilitaryFoodProductionCount(int iChange)
 }
 
 
+// 1SDAN
+int CvPlayer::getBuildingFoodProductionCount() const
+{
+	return m_iBuildingFoodProductionCount;
+}
+
+// 1SDAN
+bool CvPlayer::isBuildingFoodProduction() const
+{
+	return (getBuildingFoodProductionCount() > 0);
+}
+
+// 1SDAN
+void CvPlayer::changeBuildingFoodProductionCount(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iBuildingFoodProductionCount = (m_iBuildingFoodProductionCount + iChange);
+		FAssert(getBuildFoodProductionCount() >= 0);
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
+}
+
+
 int CvPlayer::getHighestUnitLevel()	const
 {
 	return m_iHighestUnitLevel;
@@ -18047,6 +18076,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeGoldPerMilitaryUnit(GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() * iChange);
 	changeHappyPerMilitaryUnit(GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() * iChange);
 	changeMilitaryFoodProductionCount((GC.getCivicInfo(eCivic).isMilitaryFoodProduction()) ? iChange : 0);
+	changeBuildingFoodProductionCount((GC.getCivicInfo(eCivic).isBuildingFoodProduction()) ? iChange : 0); // 1SDAN
 	changeMaxConscript(getWorldSizeMaxConscript(eCivic) * iChange);
 	changeNoUnhealthyPopulationCount((GC.getCivicInfo(eCivic).isNoUnhealthyPopulation()) ? iChange : 0);
 	changeBuildingOnlyHealthyCount((GC.getCivicInfo(eCivic).isBuildingOnlyHealthy()) ? iChange : 0);
@@ -18428,6 +18458,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNumMilitaryUnits);
 	pStream->Read(&m_iHappyPerMilitaryUnit);
 	pStream->Read(&m_iMilitaryFoodProductionCount);
+	pStream->Read(&m_iBuildingFoodProductionCount); // 1SDAN
 	pStream->Read(&m_iConscriptCount);
 	pStream->Read(&m_iMaxConscript);
 	pStream->Read(&m_iHighestUnitLevel);
@@ -18972,6 +19003,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNumMilitaryUnits);
 	pStream->Write(m_iHappyPerMilitaryUnit);
 	pStream->Write(m_iMilitaryFoodProductionCount);
+	pStream->Write(m_iBuildingFoodProductionCount); // 1SDAN
 	pStream->Write(m_iConscriptCount);
 	pStream->Write(m_iMaxConscript);
 	pStream->Write(m_iHighestUnitLevel);

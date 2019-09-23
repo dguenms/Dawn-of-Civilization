@@ -689,6 +689,7 @@
 	<ElementType name="iHappyPerMilitaryUnit" content="textOnly" dt:type="int"/>
 	<ElementType name="iMilitaryHappinessLimit" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bMilitaryFoodProduction" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bBuildingFoodProduction" content="textOnly" dt:type="boolean"/> <!-- 1SDAN -->
 	<ElementType name="iMaxConscript" content="textOnly" dt:type="int"/>
 	<ElementType name="bSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
@@ -902,6 +903,7 @@
 		<element type="iGoldPerMilitaryUnit" minOccurs="0"/>
 		<element type="iHappyPerMilitaryUnit" minOccurs="0"/>
 		<element type="bMilitaryFoodProduction" minOccurs="0"/>
+		<element type="bBuildingFoodProduction" minOccurs="0"/> <!-- 1SDAN -->
 		<element type="iMaxConscript" minOccurs="0"/>
 		<element type="bSlavery" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoSlavery" minOccurs="0"/> <!-- Leoreth -->

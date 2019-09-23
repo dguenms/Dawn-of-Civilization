@@ -1410,6 +1410,7 @@ public:
 	int getUnhappinessDecayModifier() const; // Leoreth
 
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
+	bool isBuildingFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
 	bool isBuildingOnlyHealthy() const;				// Exposed to Python
 	bool isNoForeignTrade() const;				// Exposed to Python
@@ -1528,6 +1529,7 @@ protected:
 	int m_iUnhappinessDecayModifier; // Leoreth
 
 	bool m_bMilitaryFoodProduction;
+	bool m_bBuildingFoodProduction; // 1SDAN
 	bool m_bNoUnhealthyPopulation;
 	bool m_bBuildingOnlyHealthy;
 	bool m_bNoForeignTrade;

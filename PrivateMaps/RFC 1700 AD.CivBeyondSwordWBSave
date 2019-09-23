@@ -47312,6 +47312,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player46Culture=150, (Thailand)
+	EndCity
 	TeamReveal=1,24,37,46,49,58,
 EndPlot
 BeginPlot

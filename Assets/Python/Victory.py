@@ -1175,7 +1175,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iHungary, 0)
 		# Win and attend the congress for two world wars
-		if isPossible(iHungary, 2)
+		if isPossible(iHungary, 2):
 			if data.iHungaryGlobalWars >= 2:
 				win(iHungary, 2)
 			

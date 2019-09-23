@@ -1165,6 +1165,12 @@ bool CyPlayer::isMilitaryFoodProduction()
 	return m_pPlayer ? m_pPlayer->isMilitaryFoodProduction() : false;
 }
 
+// 1SDAN
+bool CyPlayer::isBuildingFoodProduction()
+{
+	return m_pPlayer ? m_pPlayer->isBuildingFoodProduction() : false;
+}
+
 int CyPlayer::getHighestUnitLevel()
 {
 	return m_pPlayer ? m_pPlayer->getHighestUnitLevel() : -1;

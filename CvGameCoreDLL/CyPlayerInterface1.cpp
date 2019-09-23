@@ -262,6 +262,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getNumMilitaryUnits", &CyPlayer::getNumMilitaryUnits, "int ()")
 		.def("getHappyPerMilitaryUnit", &CyPlayer::getHappyPerMilitaryUnit, "int ()")
 		.def("isMilitaryFoodProduction", &CyPlayer::isMilitaryFoodProduction, "bool ()")
+		.def("isBuildingFoodProduction", &CyPlayer::isBuildingFoodProduction, "bool ()")
 		.def("getHighestUnitLevel", &CyPlayer::getHighestUnitLevel, "int ()")
 
 		.def("getConscriptCount", &CyPlayer::getConscriptCount, "int ()")

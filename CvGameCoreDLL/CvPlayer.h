@@ -485,8 +485,11 @@ public:
 	void changeHappyPerMilitaryUnit(int iChange);
 
 	int getMilitaryFoodProductionCount() const;
-	bool isMilitaryFoodProduction() const;																																		// Exposed to Python
+	bool isMilitaryFoodProduction() const;																														// Exposed to Python
 	void changeMilitaryFoodProductionCount(int iChange);
+	int getBuildingFoodProductionCount() const;	 // 1SDAN	
+	bool isBuildingFoodProduction() const; // 1SDAN																														// Exposed to Python
+	void changeBuildingFoodProductionCount(int iChange); // 1SDAN		
 
 	int getHighestUnitLevel() const;																																					// Exposed to Python
 	void setHighestUnitLevel(int iNewValue);
@@ -1412,6 +1415,7 @@ protected:
 	int m_iNumMilitaryUnits;
 	int m_iHappyPerMilitaryUnit;
 	int m_iMilitaryFoodProductionCount;
+	int m_iBuildingFoodProductionCount; // 1SDAN
 	int m_iConscriptCount;
 	int m_iMaxConscript;
 	int m_iHighestUnitLevel;

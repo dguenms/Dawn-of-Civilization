@@ -275,6 +275,7 @@ public:
 	int getNumMilitaryUnits();
 	int getHappyPerMilitaryUnit();
 	bool isMilitaryFoodProduction();
+	bool isBuildingFoodProduction(); //1SDAN
 	int getHighestUnitLevel();
 
 	int getConscriptCount();

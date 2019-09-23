@@ -427,6 +427,7 @@ void CyInfoPythonInterface1()
 		.def("getExpInBorderModifier", &CvCivicInfo::getExpInBorderModifier, "bool ()")
 
 		.def("isMilitaryFoodProduction", &CvCivicInfo::isMilitaryFoodProduction, "bool ()")
+		.def("isBuildingFoodProduction", &CvCivicInfo::isBuildingFoodProduction, "bool ()")
 		.def("isNoUnhealthyPopulation", &CvCivicInfo::isNoUnhealthyPopulation, "bool ()")
 		.def("isBuildingOnlyHealthy", &CvCivicInfo::isBuildingOnlyHealthy, "bool ()")
 		.def("isNoForeignTrade", &CvCivicInfo::isNoForeignTrade, "bool ()")

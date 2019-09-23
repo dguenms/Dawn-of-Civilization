@@ -5522,6 +5522,11 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		iAttitude *= 2;
 	}
 
+	if (getCivics(CIVICOPTION_RELIGION) == CIVIC_TOLERANCE || GET_PLAYER(ePlayer).getCivics(CIVICOPTION_RELIGION) == CIVIC_TOLERANCE)
+	{
+		iAttitude = iAttitude / 2;
+	}
+
 	return iAttitude;
 }
 

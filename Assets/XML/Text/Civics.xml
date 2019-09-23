@@ -171,7 +171,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
-		<English>Double available slots for priests; cities with state religion give extra experience; no spread of non-state religions</English>
+		<English>cities with state religion give extra experience; no spread of non-state religions</English>
 		<French>Vous pouvez embaucher deux fois plus de pr&#234;tres ; les unit&#233;s construites dans les villes avec la religion d'&#201;tat re&#231;oivent de l'exp&#233;rience additionnelle ; les autres religions ne se propagent pas</French>
 		<German>Double available slots for priests; cities with state religion give extra experience; no spread of non-state religions</German>
 		<Italian>Double available slots for priests; cities with state religion give extra experience; no spread of non-state religions</Italian>
@@ -683,11 +683,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MONASTICISM_STRATEGY</Tag>
-		<English>Increased great people birth rate in cities with state religion</English>
-		<French>Taux de natalit&#233; des personnages illustres augment&#233; dans les villes avec la religion d'&#201;tat</French>
-		<German>Increased great people birth rate in cities with state religion</German>
-		<Italian>Increased great people birth rate in cities with state religion</Italian>
-		<Spanish>Increased great people birth rate in cities with state religion</Spanish>
+		<English>Increased great people birth rate in cities with state religion; Double available slots for priests; at least one slot for priests</English>
+		<French>Taux de natalit&#233; des personnages illustres augment&#233; dans les villes avec la religion d'&#201;tat; Vous pouvez embaucher deux fois plus de pr&#234;tres; vous pouvez embaucher au moins un pr&#234;tres</French>
+		<German>Increased great people birth rate in cities with state religion; Double available slots for priests; at least one slot for priests</German>
+		<Italian>Increased great people birth rate in cities with state religion; Double available slots for priests; at least one slot for priests</Italian>
+		<Spanish>Increased great people birth rate in cities with state religion; Double available slots for priests; at least one slot for priests</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOLERANCE</Tag>
@@ -703,11 +703,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOLERANCE_STRATEGY</Tag>
-		<English>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</English>
-		<French>Les religions non officielles cr&#233;ent du bonheur ; culture augment&#233;e dans la capitale ; vous pouvez produire des missionnaires sans monast&#232;re</French>
-		<German>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</German>
-		<Italian>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</Italian>
-		<Spanish>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries</Spanish>
+		<English>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</English>
+		<French>Les religions non officielles cr&#233;ent du bonheur ; culture augment&#233;e dans la capitale ; halved diplomatic penalties from state religion differences</French>
+		<German>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</German>
+		<Italian>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</Italian>
+		<Spanish>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CONQUEST</Tag>
@@ -832,6 +832,38 @@
 		<German>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</German>
 		<Italian>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</Italian>
 		<Spanish>[ICON_BULLET]Can build wonders regardless of State [ICON_RELIGION] requirements</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_HALVED_STATE_RELIGION_DIPLO</Tag>
+		<English>[ICON_BULLET]Halved diplomatic penalties from differing State [ICON_RELIGION]</English>
+		<French>[ICON_BULLET]Halved diplomatic penalties from differing State [ICON_RELIGION]</French>
+		<German>[ICON_BULLET]Halved diplomatic penalties from differing State [ICON_RELIGION]</German>
+		<Italian>[ICON_BULLET]Halved diplomatic penalties from differing State [ICON_RELIGION]</Italian>
+		<Spanish>[ICON_BULLET]Halved diplomatic penalties from differing State [ICON_RELIGION]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDING_FOOD</Tag>
+		<English>[ICON_BULLET]Buildings Produced with [ICON_FOOD]</English>
+		<French>[ICON_BULLET]B&#226;timents produites avec : [ICON_FOOD]</French>
+		<German>[ICON_BULLET]Mit [ICON_FOOD] produzierte Geb&#228;ude</German>
+		<Italian>[ICON_BULLET]Unit&#224; edifici prodotte con [ICON_FOOD]</Italian>
+		<Spanish>[ICON_BULLET]Las edificios se producen con [ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_POPULATION_UNITS</Tag>
+		<English>Can Sacrifice Population to Finish Unit Production in a City</English>
+		<French>Can Sacrifice Population to Finish Unit Production in a City</French>
+		<German>Can Sacrifice Population to Finish Unit Production in a City</German>
+		<Italian>Can Sacrifice Population to Finish Unit Production in a City</Italian>
+		<Spanish>Can Sacrifice Population to Finish Unit Production in a City</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_POPULATION_BUILDINGS</Tag>
+		<English>Can Sacrifice Population to Finish Building Production in a City</English>
+		<French>Can Sacrifice Population to Finish Building Production in a City</French>
+		<German>Can Sacrifice Population to Finish Building Production in a City</German>
+		<Italian>Can Sacrifice Population to Finish Building Production in a City</Italian>
+		<Spanish>Can Sacrifice Population to Finish Building Production in a City</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_</Tag>

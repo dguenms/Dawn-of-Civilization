@@ -3232,7 +3232,7 @@ bool CvCity::isFoodProduction() const
 
 		// Kievan Rus UP: Cities produce buildings with food
 		case ORDER_CONSTRUCT:
-			return getOwnerINLINE() == KIEVAN_RUS || isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX);
+			return GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() || getOwnerINLINE() == KIEVAN_RUS || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
 			break;
 
 		case ORDER_CREATE:
@@ -3542,7 +3542,7 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 
 	iProductionModifier = getProductionModifier(eBuilding);
 
-	bFoodProduction = getOwnerINLINE() == KIEVAN_RUS ||  (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
+	bFoodProduction = GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() || getOwnerINLINE() == KIEVAN_RUS ||  (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
 
 	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, false));
 }

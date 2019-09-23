@@ -7,12 +7,22 @@
 <Civ4HurryInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<HurryInfos>
 		<HurryInfo>
-			<Type>HURRY_POPULATION</Type>
+			<Type>HURRY_POPULATION_UNITS</Type>
 			<Description>TXT_KEY_HURRY_POPULATION</Description>
 			<iGoldPerProduction>0</iGoldPerProduction>
 			<iProductionPerPopulation>30</iProductionPerPopulation>
 			<bAnger>1</bAnger>
 			<bUnits>1</bUnits>
+			<bBuildings>0</bBuildings>
+			<Button>Art/Interface/MainScreen/CityScreen/hurry_slavery.dds</Button>
+		</HurryInfo>
+		<HurryInfo>
+			<Type>HURRY_POPULATION_BUILDINGS</Type>
+			<Description>TXT_KEY_HURRY_POPULATION</Description>
+			<iGoldPerProduction>0</iGoldPerProduction>
+			<iProductionPerPopulation>30</iProductionPerPopulation>
+			<bAnger>1</bAnger>
+			<bUnits>0</bUnits>
 			<bBuildings>1</bBuildings>
 			<Button>Art/Interface/MainScreen/CityScreen/hurry_slavery.dds</Button>
 		</HurryInfo>
