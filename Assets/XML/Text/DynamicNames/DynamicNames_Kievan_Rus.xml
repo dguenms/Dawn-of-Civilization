@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Russian -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_DESC</Tag>
+		<English>The Rus'</English>
+		<French>
+			<Text>Les Rus'</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Rus':Die Rus':den Rus'</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Rus'</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Rus'</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_PEOPLES</Tag>
+		<English>Rus' Peoples</English>
+		<French>
+			<Text>Peuplades de la Rus'</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Rus' Peoples</German>
+		<Italian>Rus' Peoples</Italian>
+		<Spanish>Rus' Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_REPUBLIC</Tag>
+		<English>%s1 Republic</English>
+		<French>%s1 Republic</French>
+		<German>%s1 Republic</German>
+		<Italian>%s1 Republic</Italian>
+		<Spanish>%s1 Republic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_FASCIST</Tag>
+		<English>Panslavic Empire</English>
+		<French>
+			<Text>Empire panslave</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Panslavic Empire</German>
+		<Italian>Panslavic Empire</Italian>
+		<Spanish>Panslavic Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_DEFAULT</Tag>
+		<English>Kievan Rus</English>
+		<French>
+			<Text>Rus' de Kiev</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Kievan Rus</German>
+		<Italian>Kievan Rus</Italian>
+		<Spanish>Kievan Rus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_OF</Tag>
+		<English>Rus of %s1</English>
+		<French>
+			<Text>Rus' de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Rus of %s1</German>
+		<Italian>Rus of %s1</Italian>
+		<Spanish>Rus of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_VASSAL</Tag>
+		<English>%s1 Krai</English>
+		<French>
+			<Text>Kra&#239; de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s1 Krai</German>
+		<Italian>%s1 Krai</Italian>
+		<Spanish>%s1 Krai</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_ADJECTIVE</Tag>
+		<English>Rus'</English>
+		<French>
+			<Text>rus':rus':rus':rus'</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Rus':rus':rus'</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>rus':rus':rus':rus'</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rus':Rus':Rus':Rus'</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUS'_SHORT_DESC</Tag>
+		<English>Rus'</English>
+		<French>
+			<Text>Rus'</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Rus'</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Rus'</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rus'</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UKRAINE_DEFAULT</Tag>
+		<English>Ukraine</English>
+		<French>Ukraine</French>
+		<German>Ukraine</German>
+		<Italian>Ukraine</Italian>
+		<Spanish>Ukraine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UKRAINE_REPUBLIC</Tag>
+		<English>Ukraine</English>
+		<French>Ukraine</French>
+		<German>Ukraine</German>
+		<Italian>Ukraine</Italian>
+		<Spanish>Ukraine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UKRAINE_DESC</Tag>
+		<English>Ukraine</English>
+		<French>Ukraine</French>
+		<German>Ukraine</German>
+		<Italian>Ukraine</Italian>
+		<Spanish>Ukraine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UKRAINE_ADJECTIVE</Tag>
+		<English>Ukrainian</English>
+		<French>Ukrainian</French>
+		<German>Ukrainian</German>
+		<Italian>Ukrainian</Italian>
+		<Spanish>Ukrainian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UKRAINE_SHORT_DESC</Tag>
+		<English>Ukraine</English>
+		<French>Ukraine</French>
+		<German>Ukraine</German>
+		<Italian>Ukraine</Italian>
+		<Spanish>Ukraine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UKRAINE_FASCIST</Tag>
+		<English>Panslavic Empire</English>
+		<French>
+			<Text>Empire panslave</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Panslavic Empire</German>
+		<Italian>Panslavic Empire</Italian>
+		<Spanish>Panslavic Empire</Spanish>
+	</TEXT>
+</Civ4GameText>

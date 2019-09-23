@@ -68,7 +68,8 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getBestAttackUnitKey", &CyPlayer::getBestAttackUnitKey, "str () - returns the name of the best attack unit")
 		.def("getArtStyleType", &CyPlayer::getArtStyleType, " int () - Returns the ArtStyleType for this player (e.g. European)")
 		.def("getUnitButton", &CyPlayer::getUnitButton, " string (int eUnit) - Returns the unit button for this player")
-
+		
+		.def("calculateScore", &CyPlayer::calculateScore, " int (bFinal, bVictory) - calculates the player's score")
 		.def("findBestFoundValue", &CyPlayer::findBestFoundValue, " int () - Finds best found value")
 
 		.def("countNumCoastalCities", &CyPlayer::countNumCoastalCities, "int ()")

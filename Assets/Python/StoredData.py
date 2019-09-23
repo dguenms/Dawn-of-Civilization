@@ -236,6 +236,7 @@ class GameData:
 		self.iChineseGoldenAgeTurns = 0
 		self.iKoreanSinks = 0
 		self.iTamilTradeGold = 0.0
+		self.iKievanRusMissions = 0
 		self.iColombianTradeGold = 0
 		self.iNigeriaTradeGold = 0
 		self.iVikingGold = 0
@@ -256,6 +257,8 @@ class GameData:
 		self.iAustraliaGifts = 0
 		self.lAustralianGiftReceivers = []
 		self.iAustraliaHappinessTurns = 0
+		self.iHungaryGlobalWars = 0
+		self.bHungaryTolerance = False
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

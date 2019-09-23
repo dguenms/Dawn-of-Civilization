@@ -142,6 +142,7 @@ public:
 	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 
 	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
+	void diplomaticMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, bool bMadePeace); // 1SDAN
 	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); // Leoreth
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth

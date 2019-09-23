@@ -8634,7 +8634,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 	// add defensive bonuses (leaving these out for bAttackingUnknownDefender case)
 	if (pPlot != NULL)
 	{
-		if (!noDefensiveBonus())
+		if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 		{
 			iExtraModifier = pPlot->defenseModifier(getTeam(), (pAttacker != NULL) ? pAttacker->ignoreBuildingDefense() : true);
 			iModifier += iExtraModifier;
@@ -9399,7 +9399,7 @@ bool CvUnit::isWaiting() const
 
 bool CvUnit::isFortifyable() const
 {
-	if (!canFight() || noDefensiveBonus() || ((getDomainType() != DOMAIN_LAND) && (getDomainType() != DOMAIN_IMMOBILE)))
+	if (!canFight() || (noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())) || ((getDomainType() != DOMAIN_LAND) && (getDomainType() != DOMAIN_IMMOBILE)))
 	{
 		return false;
 	}
@@ -9507,6 +9507,12 @@ bool CvUnit::immuneToFirstStrikes() const
 bool CvUnit::noDefensiveBonus() const
 {
 	return m_pUnitInfo->isNoDefensiveBonus();
+}
+
+
+bool CvUnit::isMounted() const
+{
+	return getUnitCombatType() == (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_LIGHT_CAVALRY") || getUnitCombatType() == (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_HEAVY_CAVALRY");
 }
 
 
@@ -14440,10 +14446,12 @@ bool CvUnit::diplomaticMission()
 	TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();
 
 	TeamTypes ourTeam = GET_PLAYER(getOwner()).getTeam();
+	bool bMadePeace = false;
 
 	if (GET_TEAM(eTeam).isAtWar(ourTeam))
 	{
 		GET_TEAM(eTeam).makePeace(ourTeam);
+		bMadePeace = true;
 	}
 	else
 	{
@@ -14457,6 +14465,8 @@ bool CvUnit::diplomaticMission()
 
 		GET_PLAYER(ePlayer).AI_changeAttitudeExtra(getOwner(), 4);
 	}
+
+	CvEventReporter::getInstance().diplomaticMission(getUnitType(), getOwnerINLINE(), getX(), getY(), bMadePeace);
 
 	if (plot()->isActiveVisible(false))
 	{

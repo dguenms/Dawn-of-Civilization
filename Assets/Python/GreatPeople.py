@@ -2798,6 +2798,10 @@ iCivHolyRome : {
 		"Wilhelm Franz von Habsburg-Lothringen", # 20th
 	],
 },
+iCivKievanRus : {
+},
+iCivHungary : {
+},
 iCivRussia : {
 	iGreatProphet : [
 		"fOlga", # 10th

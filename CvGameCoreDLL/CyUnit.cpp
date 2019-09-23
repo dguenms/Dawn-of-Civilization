@@ -864,7 +864,7 @@ bool CyUnit::immuneToFirstStrikes()
 
 bool CyUnit::noDefensiveBonus()
 {
-	return m_pUnit ? m_pUnit->noDefensiveBonus() : false;
+	return m_pUnit ? (m_pUnit->noDefensiveBonus() && !(m_pUnit->getOwnerINLINE() == HUNGARY && m_pUnit->isMounted())) : false;
 }
 
 bool CyUnit::ignoreBuildingDefense()

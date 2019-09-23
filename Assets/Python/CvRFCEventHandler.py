@@ -67,6 +67,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("cityCaptureGold", self.onCityCaptureGold)
 		eventManager.addEventHandler("playerGoldTrade", self.onPlayerGoldTrade)
 		eventManager.addEventHandler("tradeMission", self.onTradeMission)
+		eventManager.addEventHandler("diplomaticMission", self.onDiplomaticMission)
 		eventManager.addEventHandler("playerSlaveTrade", self.onPlayerSlaveTrade)
 		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
 				
@@ -540,8 +541,14 @@ class CvRFCEventHandler:
 	def onTradeMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, iGold = argsList
 		
-		if iPlayer in [iTamils, iMali]:
+		if iPlayer in [iTamils, iMali, iKievanRus]:
 			vic.onTradeMission(iPlayer, iX, iY, iGold)
+			
+	def onDiplomaticMission(self, argsList):
+		iUnitType, iPlayer, iX, iY, bMadePeace = argsList
+		
+		if iPlayer in [iKievanRus]:
+			vic.onDiplomaticMission(iPlayer, iX, iY, bMadePeace)
 		
 	def onPlayerSlaveTrade(self, argsList):
 		iPlayer, iGold = argsList

@@ -1274,5 +1274,26 @@
 			<fBlue>0.93</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_LIGHT_SKY_BLUE</Type>
+			<fRed>0.53</fRed>
+			<fGreen>0.81</fGreen>
+			<fBlue>0.98</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_SIENNA</Type>
+			<fRed>0.55</fRed>
+			<fGreen>0.15</fGreen>
+			<fBlue>0.00</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_SIENNA_TEXT</Type>
+			<fRed>0.55</fRed>
+			<fGreen>0.15</fGreen>
+			<fBlue>0.00</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

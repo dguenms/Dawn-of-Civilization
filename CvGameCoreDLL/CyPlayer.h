@@ -68,7 +68,8 @@ public:
 	std::wstring getBestAttackUnitKey();
 	int /*ArtStyleTypes*/ getArtStyleType();
 	std::string getUnitButton(int eUnit);
-
+	
+	int calculateScore(bool bFinal, bool bVictory); //1SDAN
 	int findBestFoundValue();
 
 	int countReligionSpreadUnits(CyArea* pArea, int /*ReligionTypes*/ eReligion);

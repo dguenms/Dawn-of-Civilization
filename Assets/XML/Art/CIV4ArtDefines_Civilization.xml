@@ -408,5 +408,17 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Burma.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_KIEVAN_RUS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Ukraine.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Ukraine.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_HUNGARY</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Hungary.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Hungary.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

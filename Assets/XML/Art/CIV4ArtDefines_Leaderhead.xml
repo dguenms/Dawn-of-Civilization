@@ -1222,5 +1222,37 @@
 			<NoShaderNIF>Art/Leaderheads/Bayinnaung/Gilgamesh.nif</NoShaderNIF>
 			<BackgroundKFM>Art/LeaderHeads/Bayinnaung/Gilgamesh_Backgrnd.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_YAROSLAV</Type>
+			<Button>Art/Leaderheads/Yaroslav/yaroslav.dds</Button>
+			<NIF>Art/Leaderheads/Yaroslav/Yaroslav.nif</NIF>
+			<KFM>Art/Leaderheads/Yaroslav/alexander.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Yaroslav/Yaroslav.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Yaroslav/kublai_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BOHDAN</Type>
+			<Button>Art/Leaderheads/Bohdan/bohdan.dds</Button>
+			<NIF>Art/Leaderheads/Bohdan/bismarck.nif</NIF>
+			<KFM>art/LeaderHeads/Bismarck/bismarck.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Bohdan/bismarck.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Bohdan/bismarck_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ISTVAN</Type>
+			<Button>Art/Leaderheads/Istvan/Button_Istvan.dds</Button>
+			<NIF>Art/Leaderheads/Istvan/Justinian.nif</NIF>
+			<KFM>Art/Leaderheads/Istvan/Justinian.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Istvan/Justinian.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Istvan/Justinian_Background.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KOSSUTH</Type>
+			<Button>Art/Leaderheads/Kossuth/Btn_LH_Kossuth.dds</Button>
+			<NIF>Art/Leaderheads/Kossuth/Kossuth.nif</NIF>
+			<KFM>Art/Leaderheads/Kossuth/Kossuth.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Kossuth/Kossuth.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Kossuth/Kossuth_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

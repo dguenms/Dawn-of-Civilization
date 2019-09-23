@@ -1230,13 +1230,21 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tSubSaharaTL, vic.tSubSaharaBR, vic.tSubSaharaExceptions):
 			return 84
 			
-		# continue with ID 85
-			
 	elif iPlayer == iSwahili:
 		if gc.getMap().plot(x, y).getRegionID() == rAustralia:
 			return 74
 				
-		# continue with 81
+	elif iPlayer == iKievanRus:
+		if (x, y) in vic.lMediterraneanCoast:
+			return 7
+			
+		if (x, y) in vic.lBarents:
+			return 85
+			
+	elif iPlayer == iHungary:
+		if gc.getMap().plot(x, y).getRegionID() in [rIberia, rEurope, rItaly, rBalkans]: return 29
+			
+		# continue with 86
 	return -1
 		
 def getCityName(argsList):

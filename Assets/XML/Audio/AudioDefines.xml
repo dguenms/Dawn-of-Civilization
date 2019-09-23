@@ -11451,6 +11451,27 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_KOSSUTH_EARLY</SoundID>
+			<Filename>Sounds/Diplomacy/KOSSUTH_early</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_KOSSUTH_MIDDLE</SoundID>
+			<Filename>Sounds/Diplomacy/KOSSUTH_middle</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_KOSSUTH_LATE</SoundID>
+			<Filename>Sounds/Diplomacy/KOSSUTH_late</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>

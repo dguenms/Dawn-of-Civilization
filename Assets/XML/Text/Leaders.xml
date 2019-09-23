@@ -1321,4 +1321,36 @@
 		<Italian>Anawrahta</Italian>
 		<Spanish>Anawrahta</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BOHDAN</Tag>
+		<English>Bohdan Khmelnytsky</English>
+		<French>Bohdan Khmelnytsky</French>
+		<German>Bohdan Khmelnytsky</German>
+		<Italian>Bohdan Khmelnytsky</Italian>
+		<Spanish>Bohdan Khmelnytsky</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_YAROSLAV</Tag>
+		<English>Yaroslav I</English>
+		<French>Yaroslav I</French>
+		<German>Yaroslav I</German>
+		<Italian>Yaroslav I</Italian>
+		<Spanish>Yaroslav I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ISTVAN</Tag>
+		<English>Istvan</English>
+		<French>Istvan</French>
+		<German>Istvan</German>
+		<Italian>Istvan</Italian>
+		<Spanish>Istvan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>LEADER_KOSSUTH</Tag>
+		<English>Lajos Kossuth</English>
+		<French>Lajos Kossuth</French>
+		<German>Lajos Kossuth</German>
+		<Italian>Lajos Kossuth</Italian>
+		<Spanish>Lajos Kossuth</Spanish>
+	</TEXT>
 </Civ4GameText>

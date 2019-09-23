@@ -146,30 +146,6 @@
 		<Spanish>Muscovy</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_KIEVAN_RUS</Tag>
-		<English>Kievan Rus</English>
-		<French>
-			<Text>Rus' de Kiev</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Kievan Rus</German>
-		<Italian>Kievan Rus</Italian>
-		<Spanish>Kievan Rus</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_RUS</Tag>
-		<English>Rus of %s1</English>
-		<French>
-			<Text>Rus' de %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Rus of %s1</German>
-		<Italian>Rus of %s1</Italian>
-		<Spanish>Rus of %s1</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIAN_VASSAL</Tag>
 		<English>%s1 Krai</English>
 		<French>
@@ -360,5 +336,13 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_RUS'</Tag>
+		<English>Ukrainian Soviet Socialist Republic</English>
+		<French>Ukrainian Soviet Socialist Republic</French>
+		<German>Ukrainian Soviet Socialist Republic</German>
+		<Italian>Ukrainian Soviet Socialist Republic</Italian>
+		<Spanish>Ukrainian Soviet Socialist Republic</Spanish>
 	</TEXT>
 </Civ4GameText>

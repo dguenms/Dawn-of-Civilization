@@ -224,6 +224,11 @@ std::string CyPlayer::getUnitButton(int eUnit)
 	return m_pPlayer ? m_pPlayer->getUnitButton((UnitTypes)eUnit) : "";
 }
 
+int CyPlayer::calculateScore(bool bFinal, bool bVictory)
+{
+	return m_pPlayer ? m_pPlayer->calculateScore(bFinal, bVictory) : -1;
+}
+
 int CyPlayer::findBestFoundValue( )
 {
 	return m_pPlayer ? m_pPlayer->findBestFoundValue() : -1;

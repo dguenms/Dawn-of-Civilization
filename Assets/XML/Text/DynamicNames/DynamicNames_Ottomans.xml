@@ -302,8 +302,28 @@
 		<Spanish>Eyalet of Yedisan</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_RUS'</Tag>
+		<English>Cossack Hetmanate</English>
+		<French>Cossack Hetmanate</French>
+		<German>Cossack Hetmanate</German>
+		<Italian>Cossack Hetmanate</Italian>
+		<Spanish>Cossack Hetmanate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_INDONESIA</Tag>
 		<English>Eyalet of Aceh</English>
+		<French>
+			<Text>Eyalet d'Aceh</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Eyalet of Aceh</German>
+		<Italian>Eyalet of Aceh</Italian>
+		<Spanish>Eyalet of Aceh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_HUNGARY</Tag>
+		<English>Eastern Hungarian Kingdom</English>
 		<French>
 			<Text>Eyalet d'Aceh</Text>
 			<Gender>Male</Gender>

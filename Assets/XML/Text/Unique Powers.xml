@@ -1105,4 +1105,36 @@
 		<Italian>Religious buildings provide +1 Great Person Point</Italian>
 		<Spanish>Religious buildings provide +1 Great Person Point</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KRS_TITLE</Tag>
+		<English>The Power of Chernozem Soil</English>
+		<French>The Power of Chernozem Soil</French>
+		<German>The Power of Chernozem Soil</German>
+		<Italian>The Power of Chernozem Soil</Italian>
+		<Spanish>The Power of Chernozem Soil</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KRS</Tag>
+		<English>Cities produce buildings with Food</English>
+		<French>Cities produce buildings with Food</French>
+		<German>Cities produce buildings with Food</German>
+		<Italian>Cities produce buildings with Food</Italian>
+		<Spanish>Cities produce buildings with Food</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HUN_TITLE</Tag>
+		<English>The Power of Horsemanship</English>
+		<French>The Power of Horsemanship</French>
+		<German>The Power of Horsemanship</German>
+		<Italian>The Power of Horsemanship</Italian>
+		<Spanish>The Power of Horsemanship</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HUN</Tag>
+		<English>Mounted units recieve defensive bonuses</English>
+		<French>Mounted units recieve defensive bonuses</French>
+		<German>Mounted units recieve defensive bonuses</German>
+		<Italian>Mounted units recieve defensive bonuses</Italian>
+		<Spanish>Mounted units recieve defensive bonuses</Spanish>
+	</TEXT>
 </Civ4GameText>

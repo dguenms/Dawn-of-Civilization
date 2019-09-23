@@ -777,7 +777,7 @@ CvUnit* CvSelectionGroupAI::AI_ejectBestDefender(CvPlot* pDefendPlot)
 		pLoopUnit = ::getUnit(pEntityNode->m_data);
 		pEntityNode = nextUnitNode(pEntityNode);
 		
-		if (!pLoopUnit->noDefensiveBonus())
+		if (!(pLoopUnit->noDefensiveBonus() && !(pLoopUnit->getOwnerINLINE() == HUNGARY && pLoopUnit->isMounted())))
 		{
 			int iValue = pLoopUnit->currEffectiveStr(pDefendPlot, NULL) * 100;
 			

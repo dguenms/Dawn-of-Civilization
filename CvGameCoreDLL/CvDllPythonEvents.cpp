@@ -1347,6 +1347,24 @@ void CvDllPythonEvents::reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer
 	}
 }
 
+// 1SDAN: diplomatic mission (great statesman)
+void CvDllPythonEvents::reportDiplomaticMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, bool bMadePeace)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("diplomaticMission");
+
+		eventData.add((int)unitID);
+		eventData.add((int)ePlayer);
+		eventData.add((int)iX);
+		eventData.add((int)iY);
+		eventData.add((bool)bMadePeace);
+
+		postEvent(eventData);
+	}
+}
+
 // Leoreth: slave trade (amount of gold received)
 void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
 {

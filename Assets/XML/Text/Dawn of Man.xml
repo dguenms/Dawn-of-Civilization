@@ -515,11 +515,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_RUSSIA</Tag>
-		<English>It is the year 860 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</English>
-		<French>Nous sommes en l'an 860 ap. J.-C. Sur la route de l'ambre, entre la Scandinavie et Byzance, des voyageurs var&#232;gues commencent &#224; fonder de nouveaux &#201;tats. En se m&#234;lant &#224; leurs sujets slaves, ils deviendront la Rus' et entreprendront de coloniser les vastes r&#233;gions d'Europe de l'Est et au-del&#224;.</French>
-		<German>It is the year 860 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</German>
-		<Italian>It is the year 860 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Italian>
-		<Spanish>It is the year 860 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Spanish>
+		<English>It is the year 1283 AD...</English>
+		<French>It is the year 1283 AD...</French>
+		<German>It is the year 1283 AD...</German>
+		<Italian>It is the year 1283 AD..</Italian>
+		<Spanish>It is the year 1283 AD...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_RUSSIA_1700AD</Tag>
@@ -672,5 +672,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KHMER_1700AD</Tag>
 		<English>It is the year 1700 AD. We don't know a lot about this era in the history of the Khmer.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_RUS'</Tag>
+		<English>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</English>
+		<French>Nous sommes en l'an 882 ap. J.-C. Sur la route de l'ambre, entre la Scandinavie et Byzance, des voyageurs var&#232;gues commencent &#224; fonder de nouveaux &#201;tats. En se m&#234;lant &#224; leurs sujets slaves, ils deviendront la Rus' et entreprendront de coloniser les vastes r&#233;gions d'Europe de l'Est et au-del&#224;.</French>
+		<German>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</German>
+		<Italian>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Italian>
+		<Spanish>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_HUNGARY</Tag>
+		<English>It is the year 895 AD. Following their conquest of the Carpathian Basin, the Magyar peoples form the Principality of Hungary...</English>
+		<French>Nous sommes en l'an 882 ap. J.-C. Sur la route de l'ambre, entre la Scandinavie et Byzance, des voyageurs var&#232;gues commencent &#224; fonder de nouveaux &#201;tats. En se m&#234;lant &#224; leurs sujets slaves, ils deviendront la Rus' et entreprendront de coloniser les vastes r&#233;gions d'Europe de l'Est et au-del&#224;.</French>
+		<German>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</German>
+		<Italian>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Italian>
+		<Spanish>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Spanish>
 	</TEXT>
 </Civ4GameText>

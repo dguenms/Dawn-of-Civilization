@@ -136,6 +136,10 @@ def endGlobalWar(iAttacker, iDefender):
 		lWinners = lDefenders
 		lLosers = lAttackers
 	
+	# Hungarian UHV3: Win and attend the congress for two world wars.
+	if pHungary.isAlive() and not utils.isAVassal(iHungary) and iHungary in lWinners:
+		data.iHungaryGlobalWars += 1
+	
 	currentCongress = Congress(lWinners, lLosers)
 	data.iCongressTurns = getCongressInterval()
 	data.currentCongress = currentCongress
