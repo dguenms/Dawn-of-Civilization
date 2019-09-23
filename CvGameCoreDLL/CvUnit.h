@@ -406,6 +406,7 @@ public:
 	bool alwaysInvisible() const;																						// Exposed to Python
 	bool immuneToFirstStrikes() const;																			// Exposed to Python
 	bool noDefensiveBonus() const;																					// Exposed to Python
+	bool isMounted() const;
 	bool ignoreBuildingDefense() const;																								// Exposed to Python
 	bool canMoveImpassable() const;																										// Exposed to Python
 	bool canMoveAllTerrain() const;																										// Exposed to Python

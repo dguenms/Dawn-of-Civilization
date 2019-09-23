@@ -1337,4 +1337,20 @@
 		<Italian>Yaroslav I</Italian>
 		<Spanish>Yaroslav I</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ISTVAN</Tag>
+		<English>Istvan</English>
+		<French>Istvan</French>
+		<German>Istvan</German>
+		<Italian>Istvan</Italian>
+		<Spanish>Istvan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>LEADER_KOSSUTH</Tag>
+		<English>Lajos Kossuth</English>
+		<French>Lajos Kossuth</French>
+		<German>Lajos Kossuth</German>
+		<Italian>Lajos Kossuth</Italian>
+		<Spanish>Lajos Kossuth</Spanish>
+	</TEXT>
 </Civ4GameText>

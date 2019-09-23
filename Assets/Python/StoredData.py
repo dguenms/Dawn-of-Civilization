@@ -257,6 +257,8 @@ class GameData:
 		self.iAustraliaGifts = 0
 		self.lAustralianGiftReceivers = []
 		self.iAustraliaHappinessTurns = 0
+		self.iHungaryGlobalWars = 0
+		self.bHungaryTolerance = False
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

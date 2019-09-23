@@ -1039,7 +1039,7 @@ int CvPlayerAI::AI_movementPriority(CvSelectionGroup* pGroup) const
 			iCurrCombat = pHeadUnit->currCombatStr(NULL, NULL);
 			iBestCombat = (GC.getGameINLINE().getBestLandUnitCombat() * 100);
 
-			if (pHeadUnit->noDefensiveBonus())
+			if (pHeadUnit->noDefensiveBonus() && !(pHeadUnit->getOwnerINLINE() == HUNGARY && pHeadUnit->isMounted()))
 			{
 				iCurrCombat *= 3;
 				iCurrCombat /= 2;

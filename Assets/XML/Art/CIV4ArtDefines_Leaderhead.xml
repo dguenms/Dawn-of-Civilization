@@ -1238,5 +1238,21 @@
 			<NoShaderNIF>Art/Leaderheads/Bohdan/bismarck.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Bohdan/bismarck_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ISTVAN</Type>
+			<Button>Art/Leaderheads/Istvan/Button_Istvan.dds</Button>
+			<NIF>Art/Leaderheads/Istvan/Justinian.nif</NIF>
+			<KFM>Art/Leaderheads/Istvan/Justinian.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Istvan/Justinian.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Istvan/Justinian_Background.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KOSSUTH</Type>
+			<Button>Art/Leaderheads/Kossuth/Btn_LH_Kossuth.dds</Button>
+			<NIF>Art/Leaderheads/Kossuth/Kossuth.nif</NIF>
+			<KFM>Art/Leaderheads/Kossuth/Kossuth.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Kossuth/Kossuth.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Kossuth/Kossuth_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

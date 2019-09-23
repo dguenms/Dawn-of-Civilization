@@ -3657,5 +3657,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Veche/Veche.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HUNGARY_VEGVAR</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.75</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Vegvar/castle2.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Vegvar/Vegvar.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

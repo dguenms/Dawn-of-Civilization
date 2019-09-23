@@ -1770,7 +1770,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 				{
 					if (iMovesLeft == 0)
 					{
-						iCost += (PATH_DEFENSE_WEIGHT * std::max(0, (200 - ((pLoopUnit->noDefensiveBonus()) ? 0 : pToPlot->defenseModifier(pLoopUnit->getTeam(), false)))));
+						iCost += (PATH_DEFENSE_WEIGHT * std::max(0, (200 - ((pLoopUnit->noDefensiveBonus() && !(pLoopUnit->getOwnerINLINE() == HUNGARY && pLoopUnit->isMounted())) ? 0 : pToPlot->defenseModifier(pLoopUnit->getTeam(), false)))));
 					}
 
 					if (pSelectionGroup->AI_isControlled())
@@ -1781,7 +1781,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 							{
 								if (pToPlot->isVisibleEnemyDefender(pLoopUnit))
 								{
-									iCost += (PATH_DEFENSE_WEIGHT * std::max(0, (200 - ((pLoopUnit->noDefensiveBonus()) ? 0 : pFromPlot->defenseModifier(pLoopUnit->getTeam(), false)))));
+									iCost += (PATH_DEFENSE_WEIGHT * std::max(0, (200 - ((pLoopUnit->noDefensiveBonus() && !(pLoopUnit->getOwnerINLINE() == HUNGARY && pLoopUnit->isMounted())) ? 0 : pFromPlot->defenseModifier(pLoopUnit->getTeam(), false)))));
 
 									if (!(pFromPlot->isCity()))
 									{

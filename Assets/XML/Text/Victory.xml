@@ -6181,4 +6181,76 @@
 		<Italian>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</Italian>
 		<Spanish>Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_CATHOLICS</Tag>
+		<English>Friendly catholic civilizations: %d1 / %d2</English>
+		<French>Friendly catholic civilizations: %d1 / %d2</French>
+		<German>Friendly catholic civilizations: %d1 / %d2</German>
+		<Italian>Friendly catholic civilizations: %d1 / %d2</Italian>
+		<Spanish>Friendly catholic civilizations: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MAINLAND_EUROPEAN_TERRITORY</Tag>
+		<English>Mainland European territory: %s1 / %s2%%</English>
+		<French>Territoire europ&#233;en : %s1 / %s2%%</French>
+		<German>Mainland European territory: %s1 / %s2%%</German>
+		<Italian>Mainland European territory: %s1 / %s2%%</Italian>
+		<Spanish>Mainland European territory: %s1 / %s2%%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GLOBAL_WARS</Tag>
+		<English>World Wars: %d1 / %d2</English>
+		<French>World Wars: %d1 / %d2</French>
+		<German>World Wars: %d1 / %d2</German>
+		<Italian>World Wars: %d1 / %d2</Italian>
+		<Spanish>World Wars: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HUN1_TITLE</Tag>
+		<English>Kalandoz&#225;sok</English>
+		<French>Kalandoz&#225;sok</French>
+		<German>Kalandoz&#225;sok</German>
+		<Italian>Kalandoz&#225;sok</Italian>
+		<Spanish>Kalandoz&#225;sok</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HUN1</Tag>
+		<English>Control 20% of Europe in 1301 AD</English>
+		<French>Control 20% of Europe in 1301 AD</French>
+		<German>Control 20% of Europe in 1301 AD</German>
+		<Italian>Control 20% of Europe in 1301 AD</Italian>
+		<Spanish>Control 20% of Europe in 1301 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HUN2_TITLE</Tag>
+		<English>The Shield of Christianity</English>
+		<French>The Shield of Christianity</French>
+		<German>The Shield of Christianity</German>
+		<Italian>The Shield of Christianity</Italian>
+		<Spanish>The Shield of Christianity</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HUN2</Tag>
+		<English>Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD</English>
+		<French>Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD</French>
+		<German>Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD</German>
+		<Italian>Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD</Italian>
+		<Spanish>Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HUN3_TITLE</Tag>
+		<English>Ensured Autonomy</English>
+		<French>Ensured Autonomy</French>
+		<German>Ensured Autonomy</German>
+		<Italian>Ensured Autonomy</Italian>
+		<Spanish>Ensured Autonomy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HUN3</Tag>
+		<English>Win and attend the congress for two world wars</English>
+		<French>Win and attend the congress for two world wars</French>
+		<German>Win and attend the congress for two world wars</German>
+		<Italian>Win and attend the congress for two world wars</Italian>
+		<Spanish>Win and attend the congress for two world wars</Spanish>
+	</TEXT>
 </Civ4GameText>

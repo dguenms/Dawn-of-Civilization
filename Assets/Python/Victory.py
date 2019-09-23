@@ -1158,6 +1158,27 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1327):
 			expire(iKievanRus, 2)
 			
+	elif iPlayer == iHungary:
+		# Control 20% of Europe in 1301 AD
+		if iGameTurn == getTurnForYear(1327):
+			iEurope, iTotalEurope = countControlledTilesInRegions(iPlayer, [rIberia, rEurope, rItaly, rBalkans], False, True)
+			fEurope = (iEurope) * 100.0 / (iTotalEurope)
+			if fEurope >= 19.995:
+				win(iHungary, 0)
+			else:
+				lose(iHungary, 0)
+		# Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD
+		if iGameTurn == getTurnForYear(1867):
+			iCount = countPlayersWithAttitudeAndReligion(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, iCatholicism, True)
+			if data.bHungaryTolerance and iCount >= 5:
+				win(iHungary, 0)
+			else:
+				lose(iHungary, 0)
+		# Win and attend the congress for two world wars
+		if isPossible(iHungary, 2)
+			if data.iHungaryGlobalWars >= 2:
+				win(iHungary, 2)
+			
 	elif iPlayer == iRussia:
 	
 		# first goal: found seven cities in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
@@ -2152,6 +2173,10 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	
 	# handle all "build wonders" goals
 	if isWonder(iBuilding) and not isWonderBuilt(iBuilding):
+		# Expire Hungarian UHV2 when UN is built (No more Congresses)
+		if iBuilding == iUnitedNations:
+			expire(iHungary, 2)
+		
 		data.setWonderBuilder(iBuilding, iPlayer)
 		
 		for iLoopPlayer in dWonderGoals.keys():
@@ -2539,6 +2564,13 @@ def onPlayerChangeStateReligion(iPlayer, iStateReligion):
 			if gc.getGame().isReligionFounded(iOrthodoxy):
 				if gc.getGame().getGameTurn() <= gc.getGame().getReligionGameTurnFounded(iOrthodoxy) + utils.getTurns(5):
 					data.bEthiopiaConverted = True
+			
+def onRevolution(iPlayer):
+	if gc.getPlayer(iLoopPlayer).getCivics(iCivicsReligion) == iTolerance:
+		if isPossible(iHungary, 1):
+			if iPlayer == iHungary:
+				data.bHungaryTolerance = True
+			else: lose(iHungary, 1)
 			
 def checkReligiousGoals(iPlayer):
 	for i in range(3):
@@ -3129,6 +3161,45 @@ def countControlledTiles(iPlayer, tTopLeft, tBottomRight, bVassals=False, lExcep
 		
 	return iCount, iTotal
 	
+def countControlledTilesInRegion(iPlayer, rRegion, bVassals=False, bCoastalOnly=False):
+	lValidOwners = [iPlayer]
+	iCount = 0
+	iTotal = 0
+	
+	if bVassals:
+		for iLoopPlayer in range(iNumPlayers):
+			if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
+				lValidOwners.append(iLoopPlayer)
+				
+	for (x, y) in utils.getRegionPlots(rRegion):
+		plot = gc.getMap().plot(x, y)
+		if plot.isWater(): continue
+		if bCoastalOnly and not plot.isCoastalLand(): continue
+		iTotal += 1
+		if plot.getOwner() in lValidOwners: iCount += 1
+		
+	return iCount, iTotal
+	
+def countControlledTilesInRegions(iPlayer, lRegions, bVassals=False, bCoastalOnly=False):
+	lValidOwners = [iPlayer]
+	iCount = 0
+	iTotal = 0
+	
+	if bVassals:
+		for iLoopPlayer in range(iNumPlayers):
+			if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
+				lValidOwners.append(iLoopPlayer)
+				
+	for rRegion in lRegions:
+		for (x, y) in utils.getRegionPlots(rRegion):
+			plot = gc.getMap().plot(x, y)
+			if plot.isWater(): continue
+			if bCoastalOnly and not plot.isCoastalLand(): continue
+			iTotal += 1
+			if plot.getOwner() in lValidOwners: iCount += 1
+		
+	return iCount, iTotal
+	
 def countWonders(iPlayer):
 	iCount = 0
 	for iWonder in range(iBeginWonders, iNumBuildings):
@@ -3319,16 +3390,21 @@ def isConnectedByRailroad(iPlayer, tStart, lTargets):
 def countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, function):
 	return len([iOtherPlayer for iOtherPlayer in range(iNumPlayers) if gc.getPlayer(iPlayer).canContact(iOtherPlayer) and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and function(iOtherPlayer)])
 	
-def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
+def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion, bStateReligion = False):
 	iCount = 0
 	for iLoopPlayer in range(iNumPlayers):
 		if iLoopPlayer == iPlayer: continue
 		pLoopPlayer = gc.getPlayer(iLoopPlayer)
 		if pLoopPlayer.AI_getAttitude(iPlayer) >= eAttitude:
-			for city in utils.getCityList(iLoopPlayer):
-				if city.isHasReligion(iReligion):
+			if bStateReligion:
+				if pLoopPlayer.getStateReligion() == iReligion:
 					iCount += 1
 					break
+			else:
+				for city in utils.getCityList(iLoopPlayer):
+					if city.isHasReligion(iReligion):
+						iCount += 1
+						break
 	return iCount
 	
 def countPlayersWithAttitudeInGroup(iPlayer, eAttitude, lOtherPlayers):
@@ -4499,6 +4575,21 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 2:
 			iMissions = data.iKievanRusMissions
 			aHelp.append(getIcon(iMissions >= 2) + localText.getText("TXT_KEY_VICTORY_TRADE_OR_DIPLOMATIC_MISSIONS", (iMissions, 2)))
+
+	elif iPlayer == iHungary:
+		# Control 20% of Europe in 1301 AD
+		if iGoal == 0:
+			iEurope, iTotalEurope = countControlledTilesInRegions(iPlayer, [rIberia, rEurope, rItaly, rBalkans], False, True)
+			fEurope = (iEurope) * 100.0 / (iTotalEurope)
+			aHelp.append(getIcon(fEurope >= 19.995) + localText.getText("TXT_KEY_VICTORY_MAINLAND_EUROPEAN_TERRITORY", (str(u"%.2f%%" % fEurope), "?")))
+			
+		# Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD
+		if iGoal == 1:
+			iCount = countPlayersWithAttitudeAndReligion(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, iCatholicism, True)
+			aHelp.append(getIcon(data.bHungaryTolerance) + localText.getText("TXT_KEY_CIVIC_TOLERANCE", ()) + '' + getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_CATHOLICS", (iCount, 5)))
+		# Win and attend the congress for two world wars
+		if iGoal == 2:
+			aHelp.append(getIcon(data.iHungaryGlobalWars >= 2) + localText.getText("TXT_KEY_VICTORY_GLOBAL_WARS", (data.iHungaryGlobalWars, 2)))
 
 	elif iPlayer == iRussia:
 		if iGoal == 0:

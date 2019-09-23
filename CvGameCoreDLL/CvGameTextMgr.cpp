@@ -745,7 +745,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 
 		if (!bShort)
 		{
-			if (pUnit->noDefensiveBonus())
+			if (pUnit->noDefensiveBonus() && !(pUnit->getOwnerINLINE() == HUNGARY && pUnit->isMounted()))
 			{
 				szString.append(NEWLINE);
 				szString.append(gDLL->getText("TXT_KEY_UNIT_NO_DEFENSE_BONUSES"));
@@ -3228,7 +3228,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                         szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_MOD_VS_TYPE", iModifier, GC.getDomainInfo(pAttacker->getDomainType()).getTextKeyWide()));
                     }
 
-                    if (!(pDefender->noDefensiveBonus()))
+                    if (!(pDefender->noDefensiveBonus() && !(pDefender->getOwnerINLINE() == HUNGARY && pDefender->isMounted())))
                     {
                         iModifier = pPlot->defenseModifier(pDefender->getTeam(), (pAttacker != NULL) ? pAttacker->ignoreBuildingDefense() : true);
 
@@ -3698,7 +3698,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 				szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_MOD_VS_TYPE", iModifier, GC.getDomainInfo(pAttacker->getDomainType()).getTextKeyWide()));
 			}
 
-			if (!(pDefender->noDefensiveBonus()))
+			if (!(pDefender->noDefensiveBonus() && !(pDefender->getOwnerINLINE() == HUNGARY && pDefender->isMounted())))
 			{
 				iModifier = pPlot->defenseModifier(pDefender->getTeam(), (pAttacker != NULL) ? pAttacker->ignoreBuildingDefense() : true);
 

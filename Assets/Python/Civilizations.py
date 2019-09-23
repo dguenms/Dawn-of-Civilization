@@ -174,6 +174,7 @@ iCivKhmer :	Techs([iNobility, iArchitecture, iArtisanry, iScholarship, iEthics],
 iCivEngland :	Techs([iFeudalism, iTheology], column=6),
 iCivHolyRome :	Techs([iFeudalism, iTheology], column=6),
 iCivKievanRus :	Techs([iFeudalism, iTheology, iDoctrine], column=6, exceptions=[iArtisanry, iArchitecture]),
+iCivHungary :	Techs([iFeudalism, iFortification, iMachinery], column=6, exceptions=[iPolitics, iScholarship]),
 iCivPhilippines : 	Techs(column=6),
 iCivSwahili : 	Techs([iTheology], column=6, exceptions=[iArtisanry, iPolitics]),
 iCivMamluks : 	Techs([iTheology], column=6),
@@ -513,6 +514,8 @@ dTechPreferences = {
 		iTheology : 20,
 		iDoctrine : 20,
 		iEconomics : 20,
+	},
+	iCivHungary : {
 	},
 	iCivPhilippines : {
 		iLogistics : 30,

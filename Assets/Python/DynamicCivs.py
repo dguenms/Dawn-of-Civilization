@@ -249,6 +249,7 @@ dSpecificVassalTitles = {
 		iIndonesia : "TXT_KEY_CIV_OTTOMAN_INDONESIA",
 		iRussia : "TXT_KEY_CIV_OTTOMAN_RUSSIA",
 		iKievanRus : "TXT_KEY_CIV_OTTOMAN_RUS'",
+		iHungary : "TXT_KEY_CIV_OTTOMAN_HUNGARY"
 	},
 	iGermany : {
 		iHolyRome : "TXT_KEY_CIV_GERMAN_HOLY_ROME",
@@ -459,13 +460,13 @@ dForeignNames = {
 }
 
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
-lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria]
+lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
-lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iArgentina, iAustralia, iManchuria]
+lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iArgentina, iAustralia]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
-lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia, iAustralia, iManchuria, iKievanRus]
+lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia, iAustralia, iManchuria, iKievanRus, iHungary]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
 
@@ -577,6 +578,7 @@ dStartingLeaders = [
 	iEngland : iAlfred,
 	iHolyRome : iBarbarossa,
 	iKievanRus : iYaroslav,
+	iHungary : iIstvan,
 	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
 	iPhilippines : iLapuLapu,
@@ -2066,6 +2068,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iKievanRus:
 		if data.players[iPlayer].iResurrections == 0 and not isCapital(iPlayer, ["Kiev"]):
 			return "TXT_KEY_CIV_RUS'_OF"
+			
+	elif iPlayer == iHungary:
+		if iReligion != -1 or iCivicReligion == iSecularism:
+			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iPhilippines:
 		if iReligion == iHinduism:

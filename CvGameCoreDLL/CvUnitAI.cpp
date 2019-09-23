@@ -1881,7 +1881,7 @@ void CvUnitAI::AI_attackMove()
 			}
 		}
 
-		if (!noDefensiveBonus())
+		if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 		{
 			if (AI_guardCity(false, false))
 			{
@@ -2474,7 +2474,7 @@ void CvUnitAI::AI_attackCityMove()
 		}
 	}
 
-	if (!bReadyToAttack && !noDefensiveBonus())
+	if (!bReadyToAttack && !(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardCity(false, false))
 		{
@@ -2533,7 +2533,7 @@ void CvUnitAI::AI_attackCityMove()
 	}
 	else
 	{
-		if ((bombardRate() > 0) && noDefensiveBonus())
+		if ((bombardRate() > 0) && (noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 		{
 			if (AI_group(UNITAI_ATTACK_CITY, -1, -1, -1, bIgnoreFaster, true, true, /*iMaxPath*/ 10, /*bAllowRegrouping*/ true))
 			{
@@ -2681,7 +2681,7 @@ void CvUnitAI::AI_collateralMove()
 		return;
 	}
 
-	if (!noDefensiveBonus())
+	if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardCity(false, false))
 		{
@@ -2762,7 +2762,7 @@ void CvUnitAI::AI_pillageMove()
 		return;
 	}
 
-	if (!noDefensiveBonus())
+	if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardCity(false, false))
 		{
@@ -2896,7 +2896,7 @@ void CvUnitAI::AI_reserveMove()
 		return;
 	}
 
-	if (!noDefensiveBonus())
+	if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardFort(false))
 		{
@@ -2919,7 +2919,7 @@ void CvUnitAI::AI_reserveMove()
 		return;
 	}
 
-	if (!noDefensiveBonus())
+	if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardFort(true))
 		{
@@ -2967,7 +2967,7 @@ void CvUnitAI::AI_reserveMove()
 		}
 	}
 
-	if (!noDefensiveBonus())
+	if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardCity(false, false))
 		{
@@ -3068,7 +3068,7 @@ void CvUnitAI::AI_counterMove()
 		}
 	}
 
-	if (!noDefensiveBonus())
+	if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 	{
 		if (AI_guardCity(false, false))
 		{
@@ -6978,7 +6978,7 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 			iTemp *= (100 + iExtra * 2);
 			iTemp /= 100;
 
-			if (!noDefensiveBonus())
+			if (!(noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 			{
 				if (AI_getUnitAIType() == UNITAI_COUNTER)
 				{
@@ -12908,7 +12908,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 										{
 											iValue *= 1000;
 
-											iValue /= (iPathTurns + 2); //Rhye - più aumenta il valore (default +1) più preferisce fondare lontano
+											iValue /= (iPathTurns + 2); //Rhye - piï¿½ aumenta il valore (default +1) piï¿½ preferisce fondare lontano
 
 											if (iValue > iBestValue)
 											{
@@ -18049,7 +18049,7 @@ bool CvUnitAI::AI_choke(int iRange)
 						iValue += pLoopPlot->getYield(YIELD_FOOD) * 10;
 						iValue += pLoopPlot->getYield(YIELD_COMMERCE) * 5;
 
-						if (noDefensiveBonus())
+						if ((noDefensiveBonus() && !(getOwnerINLINE() == HUNGARY && isMounted())))
 						{
 							iValue *= std::max(0, ((baseCombatStr() * 120) - GC.getGame().getBestLandUnitCombat()));
 						}

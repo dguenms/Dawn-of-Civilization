@@ -1266,6 +1266,10 @@ enum LeaderHeadTypes			// Exposed to Python
 	ANAWRAHTA,
 	SHINSAWBU,
 	BAYINNUANG,
+	BOHDAN,
+	YAROSLAV,
+	ISTVAN,
+	KOSSUTH,
 	NUM_LEADERHEADS
 };
 
@@ -1370,6 +1374,7 @@ enum PlayerTypes				// Exposed to Python
 	ENGLAND,
 	HOLY_ROME,
 	KIEVAN_RUS,
+	HUNGARY,
 	PHILIPPINES,
 	SWAHILI,
 	MAMLUKS,

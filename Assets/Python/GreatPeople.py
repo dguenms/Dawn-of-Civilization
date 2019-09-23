@@ -2800,6 +2800,8 @@ iCivHolyRome : {
 },
 iCivKievanRus : {
 },
+iCivHungary : {
+},
 iCivRussia : {
 	iGreatProphet : [
 		"fOlga", # 10th

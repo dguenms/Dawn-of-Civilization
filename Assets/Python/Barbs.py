@@ -45,7 +45,6 @@ tMinorCities = (
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# L�beck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
-(880, (65, 48), iIndependent2, 'Buda', 3, iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
