@@ -850,22 +850,6 @@
 		<Spanish>[ICON_BULLET]Las edificios se producen con [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_HURRY_POPULATION_UNITS</Tag>
-		<English>Can Sacrifice Population to Finish Unit Production in a City</English>
-		<French>Can Sacrifice Population to Finish Unit Production in a City</French>
-		<German>Can Sacrifice Population to Finish Unit Production in a City</German>
-		<Italian>Can Sacrifice Population to Finish Unit Production in a City</Italian>
-		<Spanish>Can Sacrifice Population to Finish Unit Production in a City</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_HURRY_POPULATION_BUILDINGS</Tag>
-		<English>Can Sacrifice Population to Finish Building Production in a City</English>
-		<French>Can Sacrifice Population to Finish Building Production in a City</French>
-		<German>Can Sacrifice Population to Finish Building Production in a City</German>
-		<Italian>Can Sacrifice Population to Finish Building Production in a City</Italian>
-		<Spanish>Can Sacrifice Population to Finish Building Production in a City</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_</Tag>
 		<English></English>
 		<French></French>

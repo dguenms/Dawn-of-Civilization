@@ -29,7 +29,7 @@
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<Hurrys>
 				<Hurry>
-					<HurryType>HURRY_POPULATION_BUILDINGS</HurryType>
+					<HurryType>HURRY_POPULATION</HurryType>
 					<bHurry>1</bHurry>
 				</Hurry>
 			</Hurrys>
@@ -905,18 +905,13 @@
 			<bStateReligion>1</bStateReligion>
 			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
+			<iStateReligionUnitProductionModifier>10</iStateReligionUnitProductionModifier>
 			<SpecialBuildingNotRequireds>
 				<SpecialBuildingNotRequired>
 					<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
 					<bNotRequired>1</bNotRequired>
 				</SpecialBuildingNotRequired>
 			</SpecialBuildingNotRequireds>
-			<Hurrys>
-				<Hurry>
-					<HurryType>HURRY_POPULATION_UNITS</HurryType>
-					<bHurry>1</bHurry>
-				</Hurry>
-			</Hurrys>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
