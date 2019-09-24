@@ -906,12 +906,6 @@
 			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
 			<iStateReligionUnitProductionModifier>10</iStateReligionUnitProductionModifier>
-			<SpecialBuildingNotRequireds>
-				<SpecialBuildingNotRequired>
-					<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
-					<bNotRequired>1</bNotRequired>
-				</SpecialBuildingNotRequired>
-			</SpecialBuildingNotRequireds>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
@@ -930,6 +924,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>50</iCommerce>
 			</CapitalCommerceModifiers>
+			<SpecialBuildingNotRequireds>
+				<SpecialBuildingNotRequired>
+					<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
+					<bNotRequired>1</bNotRequired>
+				</SpecialBuildingNotRequired>
+			</SpecialBuildingNotRequireds>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>

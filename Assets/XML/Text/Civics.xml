@@ -171,11 +171,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
-		<English>cities with state religion give extra experience; no spread of non-state religions</English>
-		<French>Vous pouvez embaucher deux fois plus de pr&#234;tres ; les unit&#233;s construites dans les villes avec la religion d'&#201;tat re&#231;oivent de l'exp&#233;rience additionnelle ; les autres religions ne se propagent pas</French>
-		<German>Double available slots for priests; cities with state religion give extra experience; no spread of non-state religions</German>
-		<Italian>Double available slots for priests; cities with state religion give extra experience; no spread of non-state religions</Italian>
-		<Spanish>Double available slots for priests; cities with state religion give extra experience; no spread of non-state religions</Spanish>
+		<English>Cities with state religion give extra experience; no spread of non-state religions; Increased unit production in cities with state religion</English>
+		<French>les unit&#233;s construites dans les villes avec la religion d'&#201;tat re&#231;oivent de l'exp&#233;rience additionnelle ; les autres religions ne se propagent pas; Vitesse de production acc&#233;l&#233;r&#233;e pour les unit&#233;s dans les villes avec la religion d'&#201;tat</French>
+		<German>Cities with state religion give extra experience; no spread of non-state religions; Increased unit production in cities with state religion</German>
+		<Italian>Cities with state religion give extra experience; no spread of non-state religions; Increased unit production in cities with state religion</Italian>
+		<Spanish>Cities with state religion give extra experience; no spread of non-state religions; Increased unit production in cities with state religion</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM</Tag>
@@ -703,11 +703,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOLERANCE_STRATEGY</Tag>
-		<English>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</English>
-		<French>Les religions non officielles cr&#233;ent du bonheur ; culture augment&#233;e dans la capitale ; halved diplomatic penalties from state religion differences</French>
-		<German>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</German>
-		<Italian>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</Italian>
-		<Spanish>Extra happiness from non-state religions; increased culture in capital; halved diplomatic penalties from state religion differences</Spanish>
+		<English>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries; halved diplomatic penalties from state religion differences</English>
+-		<French>Les religions non officielles cr&#233;ent du bonheur ; culture augment&#233;e dans la capitale ; vous pouvez produire des missionnaires sans monast&#232;re; halved diplomatic penalties from state religion differences</French>
+-		<German>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries; halved diplomatic penalties from state religion differences</German>
+-		<Italian>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries; halved diplomatic penalties from state religion differences</Italian>
+-		<Spanish>Extra happiness from non-state religions; increased culture in capital; can train missionaries without monasteries; halved diplomatic penalties from state religion differences</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CONQUEST</Tag>
