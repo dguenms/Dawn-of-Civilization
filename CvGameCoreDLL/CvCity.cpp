@@ -2466,8 +2466,8 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	// Leoreth: Shwedagon Paya requires Rainforest or Jungle in city radius
-	if (eBuilding == SHWEDAGON_PAYA)
+	// 1SDAN: Shwedagon Paya and Borobudur requires Rainforest or Jungle in city radius
+	if (eBuilding == SHWEDAGON_PAYA || eBuilding == BOROBUDUR)
 	{
 		bool bFound = false;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -3230,9 +3230,8 @@ bool CvCity::isFoodProduction() const
 			return isFoodProduction((UnitTypes)(pOrderNode->m_data.iData1));
 			break;
 
-		// Kievan Rus UP: Cities produce buildings with food
 		case ORDER_CONSTRUCT:
-			return GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() || getOwnerINLINE() == KIEVAN_RUS || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
+			return GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
 			break;
 
 		case ORDER_CREATE:
@@ -3542,7 +3541,7 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 
 	iProductionModifier = getProductionModifier(eBuilding);
 
-	bFoodProduction = GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() || getOwnerINLINE() == KIEVAN_RUS ||  (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
+	bFoodProduction = GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
 
 	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, false));
 }

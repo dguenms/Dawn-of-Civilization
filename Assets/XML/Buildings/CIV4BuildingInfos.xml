@@ -10541,6 +10541,7 @@
 			<Description>TXT_KEY_BUILDING_BOROBUDUR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BOROBUDUR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BOROBUDUR_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SHWEDAGON_PAYA_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BOROBUDUR</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BOROBUDUR</MovieDefineTag>

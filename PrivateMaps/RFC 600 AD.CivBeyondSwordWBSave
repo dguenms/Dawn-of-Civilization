@@ -39788,7 +39788,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=33
-	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40201,6 +40200,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=33
+	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

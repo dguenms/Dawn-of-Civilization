@@ -1184,6 +1184,10 @@ def specificName(iPlayer):
 	elif iPlayer == iKhmer:
 		if isCapital(iPlayer, ["Dali"]):
 			return "TXT_KEY_CIV_KHMER_NANZHAO"
+		if isCommunist(iPlayer):
+			return "TXT_KEY_CIV_KHMER_KAMPUCHEA"
+		if iEra > iRenaissance and iCivicGovernment != iDespotism:
+			return "TXT_KEY_CIV_KHMER_CAMBODIA"
 			
 	elif iPlayer == iIndonesia:
 		if iReligion == iIslam:
@@ -1539,6 +1543,12 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_ARABIA_UMMAYAD"
 				
 			return "TXT_KEY_CIV_ARABIA_ABBASID"
+			
+	elif iPlayer == iKhmer:
+		if isCommunist(iPlayer):
+			return "TXT_KEY_CIV_KHMER_KAMPUCHEAN"
+		if iEra > iRenaissance and iCivicGovernment != iDespotism:
+			return "TXT_KEY_CIV_KHMER_CAMBODIAN"
 			
 	elif iPlayer == iBurma:
 		if (iNumCities > 2 or civAdjective(iBurma) == "Toungoo") and not bReborn:

@@ -47245,9 +47245,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=33
-	BonusType=BONUS_SUGAR
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
+	RouteType=ROUTE_ROAD
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_THAI_CHANG_SUEK, UnitOwner=46, (Thailand)
@@ -47778,6 +47777,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=33
+	BonusType=BONUS_SUGAR
+	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,24,37,46,49,58,
@@ -48356,14 +48358,11 @@ BeginPlot
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_BATH
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_WAT_PREAH_PISNULOK
 		ReligionType=RELIGION_BUDDHISM
-		Player26Culture=350, (Thailand)
+		Player26Culture=100, (Thailand)
 	EndCity
 	TeamReveal=1,24,36,44,47,56,
 EndPlot
@@ -48911,16 +48910,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=58, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=58, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Vietnam)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=58, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=13, (Vietnam)
 	EndUnit
 	BeginCity
-		CityOwner=58, (Independent)
+		CityOwner=13, (Vietnam)
 		CityName=Saigon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -48934,7 +48933,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player58Culture=50, (Independent)
+		Player13Culture=150, (Vietnam)
 	EndCity
 	TeamReveal=1,24,37,46,49,58,
 EndPlot

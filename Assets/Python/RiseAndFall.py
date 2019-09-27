@@ -564,7 +564,7 @@ class RiseAndFall:
 		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
 		
 	def adjust1700ADWonders(self):
-		lExpiredWonders = [iOracle, iIshtarGate, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, iGreatLibrary, iGondeshapur, iSilverTreeFountain, iAlamut]
+		lExpiredWonders = [iOracle, iIshtarGate, iHangingGardens, iGreatCothon, iApadanaPalace, iColossus, iStatueOfZeus, iGreatMausoleum, iTempleOfArtemis, iAquaAppia, iAlKhazneh, iJetavanaramaya, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, iGreatLibrary, iGondeshapur, iSilverTreeFountain, iAlamut, iWatPreahPisnulok]
 		self.expireWonders(lExpiredWonders)
 	
 		pMilan = gc.getMap().plot(59, 47).getPlotCity()

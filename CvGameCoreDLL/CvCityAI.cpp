@@ -601,6 +601,7 @@ void CvCityAI::AI_chooseProduction()
 	CvArea* pWaterArea;
 	UnitTypes eProductionUnit;
 	bool bWasFoodProduction;
+	bool bWasBuildingFoodProduction;
 	bool bHasMetHuman;
 	bool bMajorWar;
 	bool bLandWar;
@@ -627,7 +628,7 @@ void CvCityAI::AI_chooseProduction()
 
 			}
 			//if we are killing our growth to train this, then finish it.
-			else if (!bDanger && isFoodProduction())
+			else if (!bDanger && (isFoodProduction() || GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction()))
 			{
 				if ((area()->getAreaAIType(getTeam()) != AREAAI_DEFENSIVE))
 				{
@@ -710,6 +711,7 @@ void CvCityAI::AI_chooseProduction()
 	}
 
 	bWasFoodProduction = isFoodProduction();
+	bWasBuildingFoodProduction = GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction();
 	bHasMetHuman = GET_TEAM(getTeam()).hasMetHuman();
 	bMajorWar = GET_TEAM(getTeam()).isAtWarWithMajorPlayer();
 	bLandWar = ((pArea->getAreaAIType(getTeam()) == AREAAI_OFFENSIVE) || (pArea->getAreaAIType(getTeam()) == AREAAI_DEFENSIVE) || (pArea->getAreaAIType(getTeam()) == AREAAI_MASSING));
@@ -815,7 +817,7 @@ void CvCityAI::AI_chooseProduction()
 
 	clearOrderQueue();
 
-	if (bWasFoodProduction)
+	if (bWasFoodProduction || bWasBuildingFoodProduction)
 	{
 		AI_assignWorkingPlots();
 	}
@@ -7150,6 +7152,25 @@ bool CvCityAI::AI_bestSpreadUnit(bool bMissionary, bool bExecutive, int iBaseCha
 bool CvCityAI::AI_chooseBuilding(int iFocusFlags, int iMaxTurns, int iMinThreshold)
 {
 	BuildingTypes eBestBuilding;
+
+	if (GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction() && foodDifference() > 0)
+	{
+		int iTurnMult;
+		switch (GC.getGameINLINE().getGameSpeedType())
+		{
+		case 0: iTurnMult = 1;
+		case 1: iTurnMult = 2;
+		default: iTurnMult = 3;
+		}
+		int iGrowthTurns = (growthThreshold() - getFood()) / foodDifference();
+		if (happyLevel() > 0)
+		{
+			if (getPopulation() < 3 || (iGrowthTurns * iTurnMult / 3) <= 5)
+			{
+				return false;
+			}
+		}
+	}
 
 	eBestBuilding = AI_bestBuildingThreshold(iFocusFlags, iMaxTurns, iMinThreshold);
 
