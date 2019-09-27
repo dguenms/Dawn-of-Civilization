@@ -2436,6 +2436,10 @@ def leader(iPlayer):
 		if data.players[iPlayer].iResurrections > 0 and not isCapitulated(iPlayer):
 			return iBohdan
 			
+	elif iPlayer == iHungary:
+		if data.players[iPlayer].iResurrections > 0:
+			return iKossuth
+			
 	elif iPlayer == iSwahili:
 		if iEra >= iIndustrial: return iBarghash
 		
