@@ -836,9 +836,9 @@
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
-				<Trade>3</Trade>
-				<Production>2</Production>
-				<Culture>4</Culture>
+				<Trade>2</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
 				<Growth>3</Growth>
 				<Start>2</Start>
 			</Rating>
@@ -2653,11 +2653,11 @@
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
-				<Trade>1</Trade>
-				<Production>1</Production>
-				<Culture>1</Culture>
-				<Growth>1</Growth>
-				<Start>1</Start>
+				<Trade>2</Trade>
+				<Production>4</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
 			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -3523,11 +3523,11 @@
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<Rating>
-				<Trade>1</Trade>
+				<Trade>3</Trade>
 				<Production>4</Production>
 				<Culture>2</Culture>
 				<Growth>4</Growth>
-				<Start>5</Start>
+				<Start>1</Start>
 			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
