@@ -853,6 +853,12 @@
 					<iHappinessChange>1</iHappinessChange>
 				</BuildingHappinessChange>
 			</BuildingHappinessChanges>
+			<MinimalSpecialists>
+				<MinimalSpecialist>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iMinimalSpecialistCount>1</iMinimalSpecialistCount>
+				</MinimalSpecialist>
+			</MinimalSpecialists>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
@@ -879,18 +885,6 @@
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<bStateReligion>1</bStateReligion>
 			<iStateReligionGreatPeopleRateModifier>50</iStateReligionGreatPeopleRateModifier>
-			<SpecialistValids>
-				<SpecialistValid>
-					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<bValid>1</bValid>
-				</SpecialistValid>
-			</SpecialistValids>
-			<MinimalSpecialists>
-				<MinimalSpecialist>
-					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iMinimalSpecialistCount>1</iMinimalSpecialistCount>
-				</MinimalSpecialist>
-			</MinimalSpecialists>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
@@ -905,7 +899,12 @@
 			<bStateReligion>1</bStateReligion>
 			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
-			<iStateReligionUnitProductionModifier>10</iStateReligionUnitProductionModifier>
+			<SpecialistValids>
+				<SpecialistValid>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<bValid>1</bValid>
+				</SpecialistValid>
+			</SpecialistValids>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
