@@ -2476,18 +2476,7 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	elif iPlayer == iKievanRus:
 		if isPossible(iKievanRus, 2):
 			if gc.getMap().plot(iX, iY).getOwner() in lCivGroups[0]:
-				lTopCivs = []
-				iTopScore = -1
-				iCurrentScore = -1
-				for iCiv in lCivGroups[0]:
-					if gc.getPlayer(iCiv).isAlive():
-						if iCiv != iKievanRus:
-							iCurrentScore = gc.getPlayer(iCiv).calculateScore(False, False)
-							if iCurrentScore == iTopScore:
-								lTopCivs.append(iCiv)
-							elif iCurrentScore > iTopScore:
-								lTopCivs = [iCiv]
-								iTopScore = iCurrentScore
+				lTopCivs = getTopCivsInGroup(0, [iKievanRus])
 				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
 					data.iKievanRusMissions += 1
 					
@@ -2496,18 +2485,7 @@ def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
 	if iPlayer == iKievanRus:
 		if isPossible(iKievanRus, 2):
 			if gc.getMap().plot(iX, iY).getOwner() in lCivGroups[0]:
-				lTopCivs = []
-				iTopScore = -1
-				iCurrentScore = -1
-				for iCiv in lCivGroups[0]:
-					if gc.getPlayer(iCiv).isAlive():
-						if iCiv != iKievanRus:
-							iCurrentScore = gc.getPlayer(iCiv).calculateScore(False, False)
-							if iCurrentScore == iTopScore:
-								lTopCivs.append(iCiv)
-							elif iCurrentScore > iTopScore:
-								lTopCivs = [iCiv]
-								iTopScore = iCurrentScore
+				lTopCivs = getTopCivsInGroup(0, [iKievanRus])
 				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
 					data.iKievanRusMissions += 1
 					
@@ -2519,6 +2497,21 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 			data.iCanadianPeaceDeals += 1
 			if data.iCanadianPeaceDeals >= 12:
 				win(iCanada, 2)
+
+def getTopCivsInGroup(iGroup, lExclude):
+	lTopCivs = []
+	iTopScore = -1
+	iCurrentScore = -1
+	for iCiv in lCivGroups[iGroup]:
+		if gc.getPlayer(iCiv).isAlive():
+			if iCiv not in lExclude:
+				iCurrentScore = gc.getPlayer(iCiv).calculateScore(False, False)
+				if iCurrentScore == iTopScore:
+					lTopCivs.append(iCiv)
+				elif iCurrentScore > iTopScore:
+					lTopCivs = [iCiv]
+					iTopScore = iCurrentScore
+	return lTopCivs
 
 def onUnitGifted(unit, iOwner, plot):
 
@@ -3181,22 +3174,12 @@ def countControlledTilesInRegion(iPlayer, rRegion, bVassals=False, bCoastalOnly=
 	return iCount, iTotal
 	
 def countControlledTilesInRegions(iPlayer, lRegions, bVassals=False, bCoastalOnly=False):
-	lValidOwners = [iPlayer]
 	iCount = 0
 	iTotal = 0
-	
-	if bVassals:
-		for iLoopPlayer in range(iNumPlayers):
-			if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
-				lValidOwners.append(iLoopPlayer)
-				
 	for rRegion in lRegions:
-		for (x, y) in utils.getRegionPlots(rRegion):
-			plot = gc.getMap().plot(x, y)
-			if plot.isWater(): continue
-			if bCoastalOnly and not plot.isCoastalLand(): continue
-			iTotal += 1
-			if plot.getOwner() in lValidOwners: iCount += 1
+		iTempCount, iTempTotal = countControlledTilesInRegion(iPlayer, rRegion, bVassals, bCoastalOnly)
+		iCount += iTempCount
+		iTotal += iTempTotal
 		
 	return iCount, iTotal
 	
