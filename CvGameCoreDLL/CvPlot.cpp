@@ -1074,23 +1074,44 @@ void CvPlot::updateSymbols()
 
 	if(maxYield>0)
 	{
-		int maxYieldStack = GC.getDefineINT("MAX_YIELD_STACK");
-		int layers = maxYield /maxYieldStack + 1;
-
 		CvSymbol *pSymbol= NULL;
-		for(int i=0;i<layers;i++)
+		
+		// merijn: 5x symbols
+		if (maxYield >= 5)
 		{
 			pSymbol = addSymbol();
 			for (int iYieldType = 0; iYieldType < NUM_YIELD_TYPES; iYieldType++)
 			{
-				int iYield = yieldAmounts[iYieldType] - (maxYieldStack * i);
-				LIMIT_RANGE(0,iYield, maxYieldStack);
-				if(yieldAmounts[iYieldType])
+				if (yieldAmounts[iYieldType] > 0)
 				{
-					gDLL->getSymbolIFace()->setTypeYield(pSymbol,iYieldType,iYield);
+					if (yieldAmounts[iYieldType] >= 5)
+					{
+						int iYield = yieldAmounts[iYieldType] / 5 - 1 + 5;
+						gDLL->getSymbolIFace()->setTypeYield(pSymbol,iYieldType,iYield);
+					}
+					else
+					{
+						gDLL->getSymbolIFace()->setTypeYield(pSymbol, iYieldType, GC.getDefineINT("MAX_YIELD_STACK"));
+					}
 				}
 			}
 		}
+		
+		// merijn: 1x symbols
+		pSymbol = addSymbol();
+		for (int iYieldType = 0; iYieldType < NUM_YIELD_TYPES; iYieldType++)
+		{
+			if (yieldAmounts[iYieldType] > 0)
+			{
+				int iYield = yieldAmounts[iYieldType] % 5;
+				if (iYield == 0) // set to last in stack for empty symbol
+				{
+					iYield = GC.getDefineINT("MAX_YIELD_STACK");
+				}
+				gDLL->getSymbolIFace()->setTypeYield(pSymbol, iYieldType, iYield);
+			}
+		}
+		
 		for(int i=0;i<getNumSymbols();i++)
 		{
 			SymbolTypes eSymbol  = (SymbolTypes)0;

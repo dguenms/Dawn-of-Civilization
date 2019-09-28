@@ -187,7 +187,7 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_YIELD_STACK</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MOVE_DENOMINATOR</DefineName>
