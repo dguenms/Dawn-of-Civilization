@@ -3867,7 +3867,7 @@ iCivSweden : {
 		"Anders Celsius", # 18th
 		u"Carl von Linné", # 18th
 		iIndustrial,
-		"Jöns Jacob Berzelius", # 19th
+		u"Jöns Jacob Berzelius", # 19th
 		"Johannes Rydberg", # 19th
 		u"Anders Ångström", # 19th
 	],
