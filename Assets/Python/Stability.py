@@ -1024,12 +1024,12 @@ def calculateStability(iPlayer):
 			
 			elif pLoopPlayer.AI_getAttitude(iPlayer) < AttitudeTypes.ATTITUDE_CAUTIOUS:
 				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
-					iAttitude = 3
+					iAttitude = -3
 				else:
-					iAttitude = 2
+					iAttitude = -2
 				
 				if pLoopPlayer.getStateReligion() != iStateReligion or  pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
-					iAttitude -= 1
+					iAttitude += 1
 				
 				# worst enemies
 				if pLoopPlayer.getWorstEnemy() == iPlayer:
