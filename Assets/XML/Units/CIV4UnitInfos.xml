@@ -980,6 +980,7 @@
 			<Civilopedia>TXT_KEY_UNIT_SCOUT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SCOUT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bOnlyDefensive>1</bOnlyDefensive>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -1000,14 +1001,14 @@
 			<iCost>15</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iMoves>1</iMoves>
+			<iMoves>2</iMoves>
 			<iNukeRange>-1</iNukeRange>
-			<iCombat>1</iCombat>
+			<iCombat>2</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iAnimalCombat>100</iAnimalCombat>
-			<iAsset>1</iAsset>
+			<iAsset>2</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -1032,6 +1033,7 @@
 			<Civilopedia>TXT_KEY_UNIT_EXPLORER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_EXPLORER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bOnlyDefensive>1</bOnlyDefensive>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -1090,6 +1092,7 @@
 			<Strategy>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>

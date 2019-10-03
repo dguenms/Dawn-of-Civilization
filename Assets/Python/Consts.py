@@ -374,7 +374,7 @@ tFall = (
 2020,					# England
 2020, #1648,			# Holy Rome
 2020,					# Hungary
-2020,					# Kievan Rus
+1240,					# Kievan Rus
 1570,					# Philippines
 1600,					# Swahili
 1517,					# Mamluks

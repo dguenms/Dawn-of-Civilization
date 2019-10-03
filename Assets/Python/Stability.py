@@ -8,6 +8,7 @@ import DynamicCivs as dc
 from operator import itemgetter
 import math
 import Areas
+import RegionMap
 
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
@@ -1016,25 +1017,25 @@ def calculateStability(iPlayer):
 		if tPlayer.canContact(iLoopPlayer):
 			iAttitude = 0
 			
-			if pLoopPlayer.AI_getAttitude(iPlayer) > AttitudeTypes.ATTITUDE_CAUTIOUS:
-				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
-					iAttitude = 3
-				else:
-					iAttitude = 2
-			
-			elif pLoopPlayer.AI_getAttitude(iPlayer) < AttitudeTypes.ATTITUDE_CAUTIOUS:
-				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
-					iAttitude = -3
-				else:
-					iAttitude = -2
+			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
+				iAttitude = 2
+			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_PLEASED:
+				iAttitude = 1
+			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_ANNOYED:
+				iAttitude = -1
+			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
+				iAttitude = -2
 				
-				if pLoopPlayer.getStateReligion() != iStateReligion or  pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
-					iAttitude += 1
+			x, y = Areas.getCapital(iPlayer, utils.isReborn(iPlayer))
+			if pLoopPlayer.getStateReligion() != iStateReligion or pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
+				iAttitude += 1
+			elif (RegionMap.getSpreadFactor(iStateReligion, x, y) == iCore or RegionMap.getSpreadFactor(iStateReligion, x, y) == iHistorical):
+				iAttitude -= 1
 				
-				# worst enemies
-				if pLoopPlayer.getWorstEnemy() == iPlayer:
-					if iLoopScore > iPlayerScore: iRelationStability -= 3
-			
+			# worst enemies
+			if pLoopPlayer.getWorstEnemy() == iPlayer:
+				if iLoopScore > iPlayerScore: iRelationStability -= 3
+				
 			lAttitudes.append(iAttitude)
 		
 		# defensive pacts

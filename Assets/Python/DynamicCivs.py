@@ -495,7 +495,7 @@ dEmpireThreshold = {
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
 
 lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali, iKievanRus]
-lVassalNameChanges = [iInca, iAztecs, iMughals, iKievanRus]
+lVassalNameChanges = [iInca, iAztecs, iMughals]
 lChristianityNameChanges = [iInca, iAztecs]
 
 lRebirths = [iAztecs, iMaya, iPersia]
@@ -2433,7 +2433,7 @@ def leader(iPlayer):
 			return iPeter
 			
 	elif iPlayer == iKievanRus:
-		if data.players[iPlayer].iResurrections > 0 and not isCapitulated(iPlayer):
+		if data.players[iPlayer].iResurrections > 0:
 			return iBohdan
 			
 	elif iPlayer == iHungary:
