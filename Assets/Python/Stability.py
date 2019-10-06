@@ -1018,13 +1018,13 @@ def calculateStability(iPlayer):
 			iAttitude = 0
 			
 			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
-				iAttitude = 2
+				iAttitude = 3
 			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_PLEASED:
-				iAttitude = 1
+				iAttitude = 2
 			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_ANNOYED:
-				iAttitude = -1
-			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
 				iAttitude = -2
+			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
+				iAttitude = -3
 				
 			x, y = Areas.getCapital(iPlayer, utils.isReborn(iPlayer))
 			if pLoopPlayer.getStateReligion() != iStateReligion or pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
