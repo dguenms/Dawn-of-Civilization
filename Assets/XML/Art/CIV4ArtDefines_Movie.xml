@@ -219,7 +219,7 @@
 			<Path>Art/Movies/Wonders/Forbiddenpalace.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_COLOSSEUM</Type>
+			<Type>ART_DEF_MOVIE_FLAVIAN_AMPHITHEATRE</Type>
 			<Path>Art/Movies/Wonders/flavian.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -331,7 +331,7 @@
 			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_APOLLO_PROGRAM</Type>
+			<Type>ART_DEF_MOVIE_LUNAR_LANDING</Type>
 			<Path>Art/Movies/Wonders/ApolloProject.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>

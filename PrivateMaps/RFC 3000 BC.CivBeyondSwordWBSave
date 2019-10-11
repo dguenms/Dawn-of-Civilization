@@ -13,13 +13,13 @@ BeginTeam
 	TeamID=0, (Egypt)
 EndTeam
 BeginTeam
-	TeamID=1, (China)
+	TeamID=1, (Babylonia)
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
+	TeamID=2, (Harappa)
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
+	TeamID=3, (China)
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -177,22 +177,22 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=1
-	LeaderType=LEADER_QIN_SHI_HUANG
-	CivType=CIVILIZATION_CHINA
-	PlayableCiv=1
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=2
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=3
+	Team=2
 	LeaderType=LEADER_VATAVELLI
 	CivType=CIVILIZATION_HARAPPANS
+	PlayableCiv=1
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=3
+	LeaderType=LEADER_QIN_SHI_HUANG
+	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -265,6 +265,8 @@ BeginPlayer
 	CivType=CIVILIZATION_MAYA
 	PlayableCiv=1
 	StartingGold=200
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -282,7 +284,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=12
-	LeaderType=LEADER_ZARA_YAQOB
+	LeaderType=LEADER_EZANA
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=1
 	StartingGold=100
@@ -346,7 +348,7 @@ BeginPlayer
 	CivType=CIVILIZATION_VIKING
 	PlayableCiv=1
 	StartingGold=150
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_ELECTIVE
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
@@ -374,6 +376,7 @@ BeginPlayer
 	StartingGold=300
 	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
@@ -677,9 +680,9 @@ BeginPlayer
 	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -723,7 +726,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -801,8 +804,10 @@ EndPlayer
 BeginMap
 	grid width=124
 	grid height=68
-	top latitude=90
-	bottom latitude=-90
+	prime meridian=53
+	equator=26
+	top latitude=75
+	bottom latitude=-75
 	wrap X=1
 	wrap Y=0
 	world size=WORLDSIZE_HUGE
@@ -11957,8 +11962,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -26931,6 +26935,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=26
+	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -27026,6 +27031,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=43
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27714,7 +27720,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	BonusType=BONUS_COFFEE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28564,7 +28569,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
-	BonusType=BONUS_HORSE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -29298,10 +29302,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_MILITIA, UnitOwner=1, (Babylonia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_SETTLER, UnitOwner=1, (Babylonia)
 	EndUnit
 EndPlot
 BeginPlot
@@ -38371,12 +38375,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=1, (China)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=1, (China)
-	EndUnit
 EndPlot
 BeginPlot
 	x=100,y=45

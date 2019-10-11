@@ -25,6 +25,8 @@ class PlayerData:
 	
 		# Rise and Fall
 		
+		self.bSpawned = False
+		
 		self.iColonistsAlreadyGiven = 0
 		self.iSpawnDelay = 0
 		self.iFlipsDelay = 0
@@ -184,7 +186,6 @@ class GameData:
 		# Unique Powers
 		
 		self.iImmigrationTimer = 0
-		self.iRomanVictories = 0
 		
 		self.lByzantineBribes = []
 		
@@ -201,7 +202,7 @@ class GameData:
 		self.iGlobalWarAttacker = -1
 		self.iGlobalWarDefender = -1
 		
-		self.iCongressTurns = 0
+		self.iCongressTurns = 8
 		self.iCivsWithNationalism = 0
 		
 		self.currentCongress = None
@@ -218,6 +219,8 @@ class GameData:
 		
 		self.bIgnoreAI = True
 		
+		self.bEthiopiaConverted = False
+		
 		self.lWonderBuilder = [-1] * (iNumBuildings - iBeginWonders)
 		self.lReligionFounder = [-1] * iNumReligions
 		self.lFirstDiscovered = [-1] * iNumTechs
@@ -233,6 +236,7 @@ class GameData:
 		self.iVikingGold = 0
 		self.iTurkicPillages = 0
 		self.iMoorishGold = 0
+		self.lHolyRomanShrines = [False] * 3
 		self.iEnglishSinks = 0
 		self.iMongolRazes = 0
 		self.iAztecSlaves = 0

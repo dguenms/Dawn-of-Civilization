@@ -215,6 +215,23 @@ void CvMap::reset(CvMapInitData* pInitInfo)
 		//Rhye - end
 	}
 
+	// Leoreth: prime meridian and equator
+	m_iPrimeMeridian = m_iGridWidth / 2;
+	m_iEquator = m_iGridHeight / 2;
+
+	if (pInitInfo)
+	{
+		if (0 <= pInitInfo->m_iPrimeMeridian && pInitInfo->m_iPrimeMeridian < m_iGridWidth)
+		{
+			m_iPrimeMeridian = pInitInfo->m_iPrimeMeridian;
+		}
+
+		if (0 <= pInitInfo->m_iEquator && pInitInfo->m_iEquator < m_iGridHeight)
+		{
+			m_iEquator = pInitInfo->m_iEquator;
+		}
+	}
+
 	if (GC.getNumBonusInfos())
 	{
 		FAssertMsg((0 < GC.getNumBonusInfos()), "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvMap::reset");
@@ -324,10 +341,24 @@ void CvMap::doTurn()
 	PROFILE("CvMap::doTurn()")
 
 	int iI;
+	CvPlot* pPlot;
+
+	int iGameTurn = GC.getGameINLINE().getGameTurn();
+	int iInterval = getTurns(10);
 
 	for (iI = 0; iI < numPlotsINLINE(); iI++)
 	{
-		plotByIndexINLINE(iI)->doTurn();
+		pPlot = plotByIndexINLINE(iI);
+
+		pPlot->doTurn();
+
+		if (iGameTurn % iInterval == 0)
+		{
+			if (pPlot->getCultureConversionPlayer() != NO_PLAYER)
+			{
+				pPlot->changeCultureConversionRate(-5);
+			}
+		}
 	}
 }
 
@@ -1254,7 +1285,7 @@ void CvMap::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset(&defaultMapData);
 
-	uint uiFlag=0;
+	uint uiFlag=0; // 1
 	pStream->Read(&uiFlag);	// flags for expansion
 
 	pStream->Read(&m_iGridWidth);
@@ -1264,6 +1295,9 @@ void CvMap::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTopLatitude);
 	pStream->Read(&m_iBottomLatitude);
 	pStream->Read(&m_iNextRiverID);
+
+	if (uiFlag >= 1) pStream->Read(&m_iPrimeMeridian);
+	if (uiFlag >= 1) pStream->Read(&m_iEquator);
 
 	pStream->Read(&m_bWrapX);
 	pStream->Read(&m_bWrapY);
@@ -1293,7 +1327,7 @@ void CvMap::read(FDataStreamBase* pStream)
 //
 void CvMap::write(FDataStreamBase* pStream)
 {
-	uint uiFlag=0;
+	uint uiFlag=1; // Leoreth
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iGridWidth);
@@ -1303,6 +1337,9 @@ void CvMap::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTopLatitude);
 	pStream->Write(m_iBottomLatitude);
 	pStream->Write(m_iNextRiverID);
+
+	pStream->Write(m_iPrimeMeridian);
+	pStream->Write(m_iEquator);
 
 	pStream->Write(m_bWrapX);
 	pStream->Write(m_bWrapY);
@@ -1325,9 +1362,9 @@ void CvMap::write(FDataStreamBase* pStream)
 //
 // used for loading WB maps
 //
-void CvMap::rebuild(int iGridW, int iGridH, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions)
+void CvMap::rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions)
 {
-	CvMapInitData initData(iGridW, iGridH, iTopLatitude, iBottomLatitude, bWrapX, bWrapY);
+	CvMapInitData initData(iGridW, iGridH, iPrimeMeridian, iEquator, iTopLatitude, iBottomLatitude, bWrapX, bWrapY);
 
 	// Set init core data
 	GC.getInitCore().setWorldSize(eWorldSize);
@@ -1442,6 +1479,14 @@ void CvMap::calculateAreas()
 			}
 		}
 	}
+
+	// Leoreth: store closest area of size 30+
+	for (iI = 0; iI < numPlotsINLINE(); iI++)
+	{
+		pLoopPlot = plotByIndexINLINE(iI);
+
+		pLoopPlot->setContinentArea(getArea(pLoopPlot->getArea())->getClosestAreaSize(30));
+	}
 }
 
 int CvMap::plotIndex(int iX, int iY) const
@@ -1452,6 +1497,16 @@ int CvMap::plotIndex(int iX, int iY) const
 	int iMapY = coordRange(iY, getGridHeightINLINE(), isWrapYINLINE());
 
 	return (isPlot(iMapX, iMapY)) ? plotNum(iMapX, iMapY) : -1;
+}
+
+int CvMap::getPrimeMeridian() const
+{
+	return m_iPrimeMeridian;
+}
+
+int CvMap::getEquator() const
+{
+	return m_iEquator;
 }
 
 // Private Functions...

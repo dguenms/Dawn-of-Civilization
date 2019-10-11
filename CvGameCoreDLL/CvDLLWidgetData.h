@@ -252,6 +252,8 @@ public:
 	void parseRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void doPediaRouteJump(CvWidgetDataStruct &widgetDataStruct);
 
+	void parseWonderLimitHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+
 protected:
 	
 	static CvDLLWidgetData* m_pInst;

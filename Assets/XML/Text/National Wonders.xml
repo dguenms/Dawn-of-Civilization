@@ -62,38 +62,6 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK</Tag>
-		<English>Olympic Park</English>
-		<French>
-			<Text>Parc olympique</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Olympiapark</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Parco olimpico</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Estadio Ol&#237;mpico</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>Le [COLOR_BUILDING_TEXT]parc olympique[COLOR_REVERT] d&#233;clenche un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SECRET_SERVICE</Tag>
 		<English>Secret Service</English>
 		<French>
@@ -147,11 +115,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city that Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>La [COLOR_BUILDING_TEXT]compagnie commerciale[COLOR_REVERT] g&#233;n&#232;re un revenu pour chaque ville o&#249; s'est propag&#233;e la Compagnie commerciale. Elle procure de la sant&#233; si sa ville a acc&#232;s &#224; des [COLOR_HIGHLIGHT_TEXT]&#233;pices[COLOR_REVERT] ou du [COLOR_HIGHLIGHT_TEXT]sucre[COLOR_REVERT], et du bonheur si sa ville a acc&#232;s &#224; du [COLOR_HIGHLIGHT_TEXT]caf&#233;[COLOR_REVERT], du [COLOR_HIGHLIGHT_TEXT]th&#233;[COLOR_REVERT] ou du [COLOR_HIGHLIGHT_TEXT]tabac[COLOR_REVERT]. Elle augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city that Trading Company has spread to and provides two trade routes. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]compagnie commerciale[COLOR_REVERT] g&#233;n&#232;re un revenu pour chaque ville o&#249; s'est propag&#233;e la Compagnie commerciale. Elle procure de la sant&#233; si sa ville a acc&#232;s &#224; des [COLOR_HIGHLIGHT_TEXT]&#233;pices[COLOR_REVERT], et du bonheur si sa ville a acc&#232;s &#224; du [COLOR_HIGHLIGHT_TEXT]caf&#233;[COLOR_REVERT], du [COLOR_HIGHLIGHT_TEXT]sucre[COLOR_REVERT], du [COLOR_HIGHLIGHT_TEXT]th&#233;[COLOR_REVERT] ou du [COLOR_HIGHLIGHT_TEXT]tabac[COLOR_REVERT]. Elle augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city that Trading Company has spread to and provides two trade routes. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city that Trading Company has spread to and provides two trade routes. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city that Trading Company has spread to and provides two trade routes. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE</Tag>
@@ -179,11 +147,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-		<French>La [COLOR_BUILDING_TEXT]bourse[COLOR_REVERT] augmente la production de richesse d'une ville et les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</English>
+		<French>La [COLOR_BUILDING_TEXT]bourse[COLOR_REVERT] augmente la production de richesse d'une ville.</French>
+		<German>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] increases its city's production of wealth.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IRONWORKS</Tag>
@@ -356,6 +324,26 @@
 		<German>Die [COLOR_BUILDING_TEXT]Zentralbank[COLOR_REVERT] verdoppelt die Wohlstandsproduktion einer Stadt und erh&#246;ht die Chance, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
 		<Italian>La [COLOR_BUILDING_TEXT]Banca centrale[COLOR_REVERT] raddoppia la produzione di ricchezza della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
 		<Spanish>El [COLOR_BUILDING_TEXT]Banco Central[COLOR_REVERT] dobla la producci&#243;n de riqueza de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPACEPORT</Tag>
+		<English>Spaceport</English>
+		<French>
+			<Text>Base de lancement</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Raumhafen</German>
+		<Italian>Spaceport</Italian>
+		<Spanish>Spaceport</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPACEPORT_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Spaceport[COLOR_REVERT] increases spaceship production in all cities and increases its chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Spaceport[COLOR_REVERT] increases spaceship production in all cities and increases its chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Spaceport[COLOR_REVERT] increases spaceship production in all cities and increases its chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Spaceport[COLOR_REVERT] increases spaceship production in all cities and increases its chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Spaceport[COLOR_REVERT] increases spaceship production in all cities and increases its chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

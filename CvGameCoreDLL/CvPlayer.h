@@ -192,6 +192,9 @@ public:
 	void raze(CvCity* pCity);																																				// Exposed to Python
 	void disband(CvCity* pCity);																																		// Exposed to Python
 
+	bool canSack(const CvCity* pCity) const;
+	bool canSpare(const CvCity* pCity, PlayerTypes eHighestCulturePlayer, int iCaptureGold) const;
+
 	bool canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) const;													// Exposed to Python
 	void receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit);															// Exposed to Python
 	void doGoody(CvPlot* pPlot, CvUnit* pUnit);																											// Exposed to Python
@@ -914,6 +917,14 @@ public:
 	DllExport bool isSpecialistValid(SpecialistTypes eIndex) const;																		// Exposed to Python
 	void changeSpecialistValidCount(SpecialistTypes eIndex, int iChange);
 
+	// Leoreth
+	int getPotentialSpecialistCount(SpecialistTypes eIndex) const;
+	void changePotentialSpecialistCount(SpecialistTypes eIndex, int iChange);
+
+	// Leoreth
+	int getMinimalSpecialistCount(SpecialistTypes eIndex) const;
+	void changeMinimalSpecialistCount(SpecialistTypes eIndex, int iChange);
+
 	DllExport bool isResearchingTech(TechTypes eIndex) const;																					// Exposed to Python
 	void setResearchingTech(TechTypes eIndex, bool bNewValue);
 
@@ -943,6 +954,20 @@ public:
 	// Leoreth
 	int getCaptureGoldModifier() const;
 	void changeCaptureGoldModifier(int iChange);
+
+	// Leoreth
+	bool isNoResistance() const;
+	int getNoResistanceCount() const;
+	void changeNoResistanceCount(int iChange);
+
+	// Leoreth
+	bool isNoTemporaryUnhappiness() const;
+	int getNoTemporaryUnhappinessCount() const;
+	void changeNoTemporaryUnhappinessCount(int iChange);
+
+	// Leoreth
+	int getUnhappinessDecayModifier() const;
+	void changeUnhappinessDecayModifier(int iChange);
 
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
@@ -1160,7 +1185,7 @@ public:
 	virtual void AI_assignWorkingPlots() = 0;
 	virtual void AI_updateAssignWork() = 0;
 	virtual void AI_makeProductionDirty() = 0;
-	virtual void AI_conquerCity(CvCity* pCity) = 0;
+	virtual void AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, PlayerTypes eHighestCulturePlayer, int iCaptureGold) = 0;
 	virtual int AI_foundValue(int iX, int iY, int iMinUnitRange = -1, bool bStartingLoc = false) const = 0; // Exposed to Python
 	virtual bool AI_isCommercePlot(CvPlot* pPlot) const = 0;
 	virtual int AI_getPlotDanger(CvPlot* pPlot, int iRange = -1, bool bTestMoves = true) const = 0;
@@ -1314,8 +1339,8 @@ public:
 	void setFreeTechsOnDiscovery(int iNewValue);
 	void changeFreeTechsOnDiscovery(int iChange);
 
-	bool isFreeTechReceived() const;
-	void setFreeTechReceived(bool bNewValue);
+	TechTypes getFreeTechChosen() const;
+	void setFreeTechChosen(TechTypes eTech);
 
 	int calculateDistanceMaintenance() const;
 	int calculateColonyMaintenance() const;
@@ -1328,6 +1353,11 @@ public:
 
 	void updateCultureRanks() const;
 	void updateCultureRanks(CvPlotGroup* pPlotGroup) const;
+
+	bool isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const;
+	void makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit);
+
+	int getSatelliteExtraCommerce(CommerceTypes eCommerce) const;
 
 	bool m_bTurnPlayed;
 
@@ -1425,6 +1455,9 @@ protected:
 	int m_iSlaveryCount; // Leoreth
 	int m_iNoSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth
+	int m_iNoResistanceCount; // Leoreth
+	int m_iNoTemporaryUnhappinessCount; // Leoreth
+	int m_iUnhappinessDecayModifier; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;
@@ -1500,7 +1533,6 @@ protected:
 	int m_iCapitalCommerce;
 
 	int m_iFreeTechsOnDiscovery;
-	int m_bFreeTechReceived;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
@@ -1509,6 +1541,7 @@ protected:
 	ReligionTypes m_eLastStateReligion;
 	PlayerTypes m_eParent;
 	TeamTypes m_eTeamType;
+	TechTypes m_eFreeTechChosen; // Leoreth
 
 	int* m_aiSeaPlotYield;
 	int* m_aiYieldRateModifier;
@@ -1567,9 +1600,13 @@ protected:
 	int* m_paiHasCorporationCount;
 	int* m_paiUpkeepCount;
 	int* m_paiSpecialistValidCount;
+	int* m_paiPotentialSpecialistCount; // Leoreth
+	int* m_paiMinimalSpecialistCount; // Leoreth
 
 	bool* m_pabResearchingTech;
 	bool* m_pabLoyalMember;
+
+	bool* m_pabSpecialUnitValid; // Leoreth
 
 	std::vector<EventTriggerTypes> m_triggersFired;
 

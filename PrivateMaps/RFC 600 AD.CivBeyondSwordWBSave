@@ -13,13 +13,13 @@ BeginTeam
 	TeamID=0, (Egypt)
 EndTeam
 BeginTeam
-	TeamID=1, (China)
+	TeamID=1, (Babylonia)
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
+	TeamID=2, (Harappa)
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
+	TeamID=3, (China)
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -174,6 +174,20 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=1
+	LeaderType=LEADER_HAMMURABI
+	CivType=CIVILIZATION_BABYLONIA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=2
+	LeaderType=LEADER_VATAVELLI
+	CivType=CIVILIZATION_HARAPPANS
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=3
 	LeaderType=LEADER_TAIZONG
 	CivType=CIVILIZATION_CHINA
 	PlayableCiv=1
@@ -184,20 +198,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=2
-	LeaderType=LEADER_HAMMURABI
-	CivType=CIVILIZATION_BABYLONIA
-	PlayableCiv=0
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=3
-	LeaderType=LEADER_VATAVELLI
-	CivType=CIVILIZATION_HARAPPANS
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -258,7 +258,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=12
-	LeaderType=LEADER_ZARA_YAQOB
+	LeaderType=LEADER_EZANA
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
@@ -318,7 +318,7 @@ BeginPlayer
 	CivType=CIVILIZATION_VIKING
 	PlayableCiv=1
 	StartingGold=150
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_ELECTIVE
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
@@ -345,6 +345,7 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=300
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DESPOTISM
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CITIZENSHIP
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
@@ -649,9 +650,9 @@ BeginPlayer
 	StateReligion=RELIGION_CATHOLICISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -695,7 +696,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -773,8 +774,10 @@ EndPlayer
 BeginMap
 	grid width=124
 	grid height=68
-	top latitude=90
-	bottom latitude=-90
+	prime meridian=53
+	equator=26
+	top latitude=75
+	bottom latitude=-75
 	wrap X=1
 	wrap Y=0
 	world size=WORLDSIZE_HUGE
@@ -11955,8 +11958,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -23195,7 +23197,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_CATHOLIC_SHRINE
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		HolyCityReligionType=RELIGION_CATHOLICISM
@@ -23630,19 +23632,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ITALIAN_BALESTRIERE, UnitOwner=47, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ITALIAN_BALESTRIERE, UnitOwner=47, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=47, (Independent)
+		UnitType=UNIT_ITALIAN_BALESTRIERE, UnitOwner=47, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
@@ -27284,6 +27286,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=26
+	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -27376,13 +27379,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=42
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=70,y=43
+	BonusType=BONUS_HORSE
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27390,7 +27395,6 @@ BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27765,7 +27769,8 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -28091,7 +28096,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	BonusType=BONUS_COFFEE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28578,13 +28582,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=43
-	BonusType=BONUS_WHEAT
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=73,y=44
+	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -28992,9 +28996,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
-	BonusType=BONUS_HORSE
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -34394,6 +34397,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=47
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_SILK
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -39245,31 +39249,31 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 (	BeginUnit)
-(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=1, (China))
+(		UnitType=UNIT_HORSE_ARCHER, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
+(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=1, (China))
+(		UnitType=UNIT_CHINESE_CHOKONU, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
+(		UnitType=UNIT_SWORDSMAN, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SWORDSMAN, UnitOwner=1, (China))
+(		UnitType=UNIT_SWORDSMAN, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SPEARMAN, UnitOwner=1, (China))
+(		UnitType=UNIT_SPEARMAN, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=1, (China))
+(		UnitType=UNIT_ARCHER, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
+(		UnitType=UNIT_WORKER, UnitOwner=3, (China))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WORKER, UnitOwner=1, (China))
+(		UnitType=UNIT_WORKER, UnitOwner=3, (China))
 (	EndUnit)
 	BeginCity
 		CityOwner=48, (China)

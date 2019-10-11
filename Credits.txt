@@ -10,10 +10,12 @@ BASE MODS
 	* Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders
 	* Civics advisor screen
 	* Civilopedia design
+* Realism Invictus by Walter Hawkwood: unique units and civilization specific unit art
 * Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
 * SuperSpies by Trojan Sheep, glider1 and Lord Tirian
 * Caveman2Cosmos for its graphics paging modifications
 * 2nd UU and UB modmod by merijn_v1: Alchemist UB concept and graphics
+* Platybuilder by Platyping
 
 LEADERHEADS
 * melcher kürzer: Catherine the Great, Isabella, Barbarossa
@@ -56,12 +58,22 @@ UNITS
 * Bakuel: Patiyodha (Gupta Longbowman)
 * RFC Classical World (srpt): Patiyodha name and button
 
+WONDERS
+* merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
+
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
 * Smokehouse building: History Rewritten by Xyth
 
 MODULES
-* Himeji Castle, Empire State Building: Voyhkah
+* Empire State Building: Voyhkah
+
+TRANSLATION
+* French: Steb
+
+GAME TEXT
+* Dominus the Mentat: Turkic civilization civilopedia and strategy texts, Khosrow diplomacy greetings
+* freethink: Chinese diplomacy greetings
 
 MISCELLANEOUS
 * Corossol: Phoenicia
@@ -74,16 +86,24 @@ MISCELLANEOUS
 * Sgt. Bears: text and XML work
 * andrewv42: map changes in India and Indochina
 * Steb: city names in Canada and the Americas
+* devolution (AdvCiv mod): DLL compiler options (Final_Release target)
+
+PEDIA
+* Wikipedia
+
+HELP AND ADVICE
+* Walter Hawkwood: fixing issues with unit and building models
 
 GITHUB PROJECT CONTRIBUTORS
-Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon
+Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon, 1SDAN
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others
 
 GREAT PEOPLE NAMES
 Too many people to list for their contributions of Great Statesmen, Female Great People and Canadian Great People names,
-in particular Hightower, DC123456789, borhap88, Panopticon and Chep
+in particular Hightower, DC123456789, borhap88, Panopticon and Chep,
+as well as significant overall contributions by Steb
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
 If someone feels they should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.

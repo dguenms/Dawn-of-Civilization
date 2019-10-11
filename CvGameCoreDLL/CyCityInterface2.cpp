@@ -100,6 +100,7 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 
 		.def("getBuildingYieldChange", &CyCity::getBuildingYieldChange, "int (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield)")
 		.def("setBuildingYieldChange", &CyCity::setBuildingYieldChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)")
+		.def("changeBuildingYieldChange", &CyCity::changeBuildingYieldChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)")
 		.def("getBuildingCommerceChange", &CyCity::getBuildingCommerceChange, "int (int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce)")
 		.def("setBuildingCommerceChange", &CyCity::setBuildingCommerceChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce, int iChange)")
 		.def("getBuildingHappyChange", &CyCity::getBuildingHappyChange, "int (int /*BuildingClassTypes*/ eBuildingClass)")
@@ -141,5 +142,8 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("isHasBuildingEffect", &CyCity::isHasBuildingEffect, "bool (int eBuilding)")
 		.def("getStabilityPopulation", &CyCity::getStabilityPopulation, "int ()")
 		.def("setStabilityPopulation", &CyCity::setStabilityPopulation, "void (int iNewValue)")
+		.def("getModifiedCultureRate", &CyCity::getModifiedCultureRate, "int ()")
+		.def("getModifiedCultureRateTimes100", &CyCity::getModifiedCultureRateTimes100, "int ()")
+		.def("getNumActiveWorldWonders", &CyCity::getNumActiveWorldWonders, "int ()")
 		;
 }

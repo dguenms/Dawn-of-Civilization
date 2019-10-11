@@ -707,6 +707,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		break;
 // BUG - Trade Hover - end
 
+	// Merijn
+	case WIDGET_HELP_WONDER_LIMIT:
+		parseWonderLimitHelp(widgetDataStruct, szBuffer);
+		break;
+
 	}
 }
 
@@ -2888,6 +2893,42 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE"));
 				}
 			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_SATELLITE_ATTACK)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_SATELLITE_ATTACK"));
+			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_REBUILD)
+			{
+				if (pMissionCity != NULL)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REBUILD"));
+
+					BuildingTypes eBuilding;
+					for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+					{
+						eBuilding = (BuildingTypes)GC.getCivilizationInfo(pMissionCity->getCivilizationType()).getCivilizationBuildings(iI);
+
+						if (eBuilding != NO_BUILDING)
+						{
+							CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+							if (kBuilding.getFreeStartEra() != NO_ERA)
+							{
+								if (GET_PLAYER(pMissionCity->getOwnerINLINE()).getCurrentEra() >= kBuilding.getFreeStartEra())
+								{
+									if (!pMissionCity->isHasRealBuilding(eBuilding) && (pMissionCity->canConstruct(eBuilding) || pMissionCity->getFirstBuildingOrder(eBuilding) != -1))
+									{
+										szBuffer.append(NEWLINE);
+										szBuffer.append(gDLL->getText("[ICON_BULLET]%s1", GC.getBuildingInfo(eBuilding).getText()));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_BUILD)
 			{
 				eBuild = ((BuildTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData()));
@@ -3257,6 +3298,19 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					{
 						iNowWorkRate += pSelectedUnit->workRate(false);
 						iThenWorkRate += pSelectedUnit->workRate(true);
+					}
+
+					// Leoreth: Chateau Frontenac effect, turn indication fix by merijn
+					if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)FRONTENAC))
+					{
+						if (GC.getBuildInfo(eBuild).getTechPrereq() == RAILROAD)
+						{
+							iNowWorkRate *= 150;
+							iNowWorkRate /= 100;
+							
+							iThenWorkRate *= 150;
+							iThenWorkRate /= 100;
+						}
 					}
 
 					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
@@ -4354,7 +4408,7 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE_FLOAT", szCulture.GetCString(), iThreshold));
 		}
 
-		int iCultureRateTimes100 = pHeadSelectedCity->getCommerceRateTimes100(COMMERCE_CULTURE);
+		int iCultureRateTimes100 = pHeadSelectedCity->getModifiedCultureRateTimes100();
 		if (iCultureRateTimes100 > 0)
 		{
 			int iCultureLeftTimes100 = 100 * iThreshold - iCultureTimes100;
@@ -5388,4 +5442,13 @@ void CvDLLWidgetData::parseStabilityMilitaryHelp(CvWidgetDataStruct& widgetDataS
 void CvDLLWidgetData::parseStabilityHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
 {
 	GAMETEXT.buildStabilityString(szBuffer, widgetDataStruct.m_iData1);
+}
+
+void CvDLLWidgetData::parseWonderLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	CvCity* pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pHeadSelectedCity)
+	{
+		GAMETEXT.setWonderLimitHelp(szBuffer, *pHeadSelectedCity, widgetDataStruct.m_iData1);
+	}
 }

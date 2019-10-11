@@ -7,6 +7,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Assert|Win32 = Assert|Win32
 		Debug|Win32 = Debug|Win32
+		Final_Release|Win32 = Final_Release|Win32
 		Profile|Win32 = Profile|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
@@ -15,6 +16,8 @@ Global
 		{0839103A-3707-457B-A5A2-BEB34D674844}.Assert|Win32.Build.0 = Profile|Win32
 		{0839103A-3707-457B-A5A2-BEB34D674844}.Debug|Win32.ActiveCfg = Debug|Win32
 		{0839103A-3707-457B-A5A2-BEB34D674844}.Debug|Win32.Build.0 = Debug|Win32
+		{0839103A-3707-457B-A5A2-BEB34D674844}.Final_Release|Win32.ActiveCfg = Final_Release|Win32
+		{0839103A-3707-457B-A5A2-BEB34D674844}.Final_Release|Win32.Build.0 = Final_Release|Win32
 		{0839103A-3707-457B-A5A2-BEB34D674844}.Profile|Win32.ActiveCfg = Profile|Win32
 		{0839103A-3707-457B-A5A2-BEB34D674844}.Profile|Win32.Build.0 = Profile|Win32
 		{0839103A-3707-457B-A5A2-BEB34D674844}.Release|Win32.ActiveCfg = Release|Win32

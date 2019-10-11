@@ -50,6 +50,8 @@ void CyInfoPythonInterface1()
 		.def("getCultureLevelGreatPeopleRateChange", &CvSpecialistInfo::getCultureLevelGreatPeopleRateChange, "int (CultureLevelTypes eCultureLevel")
 
 		.def("getTexture", &CvSpecialistInfo::getTexture, "string ()")
+
+		.def("isSatellite", &CvSpecialistInfo::isSatellite, "bool ()")
 		;
 
 	python::class_<CvTechInfo, python::bases<CvInfoBase> >("CvTechInfo")
@@ -594,6 +596,7 @@ void CyInfoPythonInterface1()
 		.def("getYieldChange", &CvBuildingInfo::getYieldChange, "int (int i)")
 		.def("getYieldModifier", &CvBuildingInfo::getYieldModifier, "int (int i)")
 		.def("getPowerYieldModifier", &CvBuildingInfo::getPowerYieldModifier, "int (int i)")
+		.def("getPowerCommerceModifier", &CvBuildingInfo::getPowerCommerceModifier, "int (int i)")
 		.def("getGlobalYieldModifier", &CvBuildingInfo::getGlobalYieldModifier, "int (int i)")
 		.def("getSeaPlotYieldChange", &CvBuildingInfo::getSeaPlotYieldChange, "int (int i)")
 		.def("getRiverPlotYieldChange", &CvBuildingInfo::getRiverPlotYieldChange, "int (int i)")

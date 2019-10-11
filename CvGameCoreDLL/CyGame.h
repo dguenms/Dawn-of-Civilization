@@ -317,6 +317,9 @@ public:
 
 	void incrementBuildingClassCreatedCount(int iBuildingClass);
 
+	void setCityScreenOwner(int iPlayer);
+	void resetCityScreenOwner();
+
 protected:
 	CvGame* m_pGame;
 };

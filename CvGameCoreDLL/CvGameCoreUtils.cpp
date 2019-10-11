@@ -2521,6 +2521,8 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_DIPLOMATIC_MISSION: szString = L"MISSION_DIPLOMATIC_MISSION"; break;
 	case MISSION_PERSECUTE: szString = L"MISSION_PERSECUTION"; break;
 	case MISSION_GREAT_MISSION: szString = L"MISSION_GREAT_MISSION"; break;
+	case MISSION_SATELLITE_ATTACK: szString = L"MISSION_SATELLITE_ATTACK"; break;
+	case MISSION_REBUILD: szString = L"MISSION_REBUILD"; break;
 
 	case MISSION_DIE_ANIMATION: szString = L"MISSION_DIE_ANIMATION"; break;
 
@@ -2719,6 +2721,14 @@ void log(CvWString message)
 void log(CvString logfile, CvString message)
 {
 	gDLL->logMsg(logfile, message);
+}
+
+void logMajorError(CvWString message, int iX, int iY)
+{
+	log(message);
+	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), message, "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), iX, iY, true, true);
+	GC.getGameINLINE().setAIAutoPlay(0);
+	GC.getGameINLINE().setAIAutoPlayCatapult(0);
 }
 
 bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer)

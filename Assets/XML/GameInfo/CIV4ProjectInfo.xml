@@ -20,10 +20,21 @@
 			<iCost>1500</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>SPECIALBUILDING_BOMB_SHELTER</EveryoneSpecialBuilding>
+			<FirstFreeUnit>UNIT_NUCLEAR_BOMBER</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>1</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
 			<Button>,Art/Interface/Buttons/Buildings/ManhattanProject.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,4</Button>
 			<PrereqProjects/>
 			<VictoryThresholds/>
@@ -45,17 +56,28 @@
 			<Civilopedia>TXT_KEY_PROJECT_THE_INTERNET_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_THE_INTERNET_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
-			<TechPrereq>TECH_TELECOMMUNICATIONS</TechPrereq>
+			<TechPrereq>TECH_COMPUTERS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>2</iTechShare>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
 			<Button>,Art/Interface/Buttons/Buildings/Internet.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,4</Button>
 			<PrereqProjects/>
 			<VictoryThresholds/>
@@ -72,24 +94,78 @@
 			<MovieDefineTag>ART_DEF_MOVIE_INTERNET</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_SDI</Type>
-			<Description>TXT_KEY_PROJECT_SDI</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SDI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SDI_STRATEGY</Strategy>
+			<Type>PROJECT_HUMAN_GENOME_PROJECT</Type>
+			<Description>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT</Description>
+			<Civilopedia>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_HUMAN_GENOME_PROJECT_STRATEGY</Strategy>
 			<VictoryPrereq>NONE</VictoryPrereq>
-			<TechPrereq>TECH_SATELLITES</TechPrereq>
+			<TechPrereq>TECH_GENETICS</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>3000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>0</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/HumanGenomeProject.dds</Button>
+			<PrereqProjects/>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers/>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_STRATEGIC_DEFENSE_INITIATIVE</Type>
+			<Description>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_STRATEGIC_DEFENSE_INITIATIVE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_STATEGIC_DEFENSE_INITIATIVE_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_LASER</TechPrereq>
 			<AnyonePrereqProject>PROJECT_MANHATTAN_PROJECT</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1000</iCost>
-			<iNukeInterception>50</iNukeInterception>
+			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>0</bSpaceship>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>1</bSatelliteIntercept>
+			<bSatelliteAttack>1</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
 			<Button>,Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,6</Button>
-			<PrereqProjects/>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
 			<VictoryThresholds/>
 			<VictoryMinThresholds/>
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
@@ -104,24 +180,40 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SDI</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_APOLLO_PROGRAM</Type>
-			<Description>TXT_KEY_PROJECT_APOLLO_PROGRAM</Description>
-			<Civilopedia>TXT_KEY_PROJECT_APOLLO_PROGRAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
+			<Type>PROJECT_GLOBAL_POSITIONING_SYSTEM</Type>
+			<Description>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM</Description>
+			<Civilopedia>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_GLOBAL_POSITIONING_SYSTEM_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_TELECOMMUNICATIONS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>1600</iCost>
+			<iCost>1500</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>4</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>0</bSpaceship>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>PROMOTION_COMMANDO</FreePromotion>
+			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/ApolloProgram.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,1</Button>
-			<PrereqProjects/>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/GPS.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
 			<VictoryThresholds/>
 			<VictoryMinThresholds/>
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
@@ -133,159 +225,44 @@
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<CreateSound/>
-			<MovieDefineTag>ART_DEF_MOVIE_APOLLO_PROGRAM</MovieDefineTag>
-		</ProjectInfo>
-		<ProjectInfo>
-			<Type>PROJECT_SS_COCKPIT</Type>
-			<Description>TXT_KEY_PROJECT_SS_COCKPIT</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_COCKPIT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_COCKPIT_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_ARTIFICIAL_INTELLIGENCE</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>700</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_Cockpit.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,6</Button>
-			<PrereqProjects>
-				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
-					<iNeeded>1</iNeeded>
-				</PrereqProject>
-			</PrereqProjects>
-			<VictoryThresholds>
-				<VictoryThreshold>
-					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
-					<iThreshold>1</iThreshold>
-				</VictoryThreshold>
-			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_COPPER</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_SS_LIFE_SUPPORT</Type>
-			<Description>TXT_KEY_PROJECT_SS_LIFE_SUPPORT</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_LIFE_SUPPORT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_LIFE_SUPPORT_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_BIOTECHNOLOGY</TechPrereq>
+			<Type>PROJECT_INTERNATIONAL_SPACE_STATION</Type>
+			<Description>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION</Description>
+			<Civilopedia>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_INTERNATIONAL_SPACE_STATION_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_SATELLITES</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>800</iCost>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_LifeSupport.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,10</Button>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/ISS.dds</Button>
 			<PrereqProjects>
 				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
 					<iNeeded>1</iNeeded>
 				</PrereqProject>
 			</PrereqProjects>
-			<VictoryThresholds>
-				<VictoryThreshold>
-					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
-					<iThreshold>1</iThreshold>
-				</VictoryThreshold>
-			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_COPPER</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
-			<CreateSound/>
-			<MovieDefineTag/>
-		</ProjectInfo>
-		<ProjectInfo>
-			<Type>PROJECT_SS_STASIS_CHAMBER</Type>
-			<Description>TXT_KEY_PROJECT_SS_STASIS_CHAMBER</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_STASIS_CHAMBER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_STASIS_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_NANOTECHNOLOGY</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>900</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_StasisChamber.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,10</Button>
-			<PrereqProjects>
-				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
-					<iNeeded>1</iNeeded>
-				</PrereqProject>
-			</PrereqProjects>
-			<VictoryThresholds>
-				<VictoryThreshold>
-					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
-					<iThreshold>1</iThreshold>
-				</VictoryThreshold>
-			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
-			<BonusProductionModifiers/>
-			<CreateSound/>
-			<MovieDefineTag/>
-		</ProjectInfo>
-		<ProjectInfo>
-			<Type>PROJECT_SS_DOCKING_BAY</Type>
-			<Description>TXT_KEY_PROJECT_SS_DOCKING_BAY</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_DOCKING_BAY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_DOCKING_BAY_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_AUTOMATION</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<iCost>1700</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_DockingBay.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,6</Button>
-			<PrereqProjects>
-				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
-					<iNeeded>1</iNeeded>
-				</PrereqProject>
-			</PrereqProjects>
-			<VictoryThresholds>
-				<VictoryThreshold>
-					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
-					<iThreshold>1</iThreshold>
-				</VictoryThreshold>
-			</VictoryThresholds>
+			<VictoryThresholds/>
 			<VictoryMinThresholds/>
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
 			<iSuccessRate>0</iSuccessRate>
@@ -299,68 +276,411 @@
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_SS_ENGINE</Type>
-			<Description>TXT_KEY_PROJECT_SS_ENGINE</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_ENGINE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_ENGINE_STRATEGY</Strategy>
-			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_FUSION</TechPrereq>
+			<Type>PROJECT_BALLISTIC_MISSILE</Type>
+			<Description>TXT_KEY_PROJECT_BALLISTIC_MISSILE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_BALLISTIC_MISSILE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_BALLISTIC_MISSILE_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_ROCKETRY</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>2</iMaxTeamInstances>
-			<iCost>1300</iCost>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>400</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>100</iExistingProductionModifier>
+			<SpecialUnit>SPECIALUNIT_ICBM</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>UNIT_GREAT_ENGINEER</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_Engine.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,6</Button>
-			<PrereqProjects>
-				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
-					<iNeeded>1</iNeeded>
-				</PrereqProject>
-			</PrereqProjects>
-			<VictoryThresholds>
-				<VictoryThreshold>
-					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
-					<iThreshold>2</iThreshold>
-				</VictoryThreshold>
-			</VictoryThresholds>
-			<VictoryMinThresholds>
-				<VictoryMinThreshold>
-					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
-					<iThreshold>1</iThreshold>
-				</VictoryMinThreshold>
-			</VictoryMinThresholds>
-			<iVictoryDelayPercent>50</iVictoryDelayPercent>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/BallisticMissile.dds</Button>
+			<PrereqProjects/>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
 			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers/>
 			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_SS_CASING</Type>
-			<Description>TXT_KEY_PROJECT_SS_CASING</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_CASING_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_CASING_STRATEGY</Strategy>
+			<Type>PROJECT_FIRST_SATELLITE</Type>
+			<Description>TXT_KEY_PROJECT_FIRST_SATELLITE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_FIRST_SATELLITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_FIRST_SATELLITE_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>800</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>100</iExistingProductionModifier>
+			<SpecialUnit>SPECIALUNIT_SATELLITE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>1</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/FirstSatellite.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_BALLISTIC_MISSILE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MAN_IN_SPACE</Type>
+			<Description>TXT_KEY_PROJECT_MAN_IN_SPACE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MAN_IN_SPACE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MAN_IN_SPACE_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>800</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>4</iFirstAirExperience>
+			<iExistingProductionModifier>100</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>1</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/ManInSpace.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_FIRST_SATELLITE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_LUNAR_LANDING</Type>
+			<Description>TXT_KEY_PROJECT_LUNAR_LANDING</Description>
+			<Civilopedia>TXT_KEY_PROJECT_LUNAR_LANDING_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_LUNAR_LANDING_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>1200</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>1</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>,Art/Interface/Buttons/Buildings/ApolloProgram.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,1</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag>ART_DEF_MOVIE_LUNAR_LANDING</MovieDefineTag>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_GOLDEN_RECORD</Type>
+			<Description>TXT_KEY_PROJECT_GOLDEN_RECORD</Description>
+			<Civilopedia>TXT_KEY_PROJECT_GOLDEN_RECORD_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_GOLDEN_RECORD_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_CULTURAL</VictoryPrereq>
+			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
+			<AnyonePrereqProject>PROJECT_LUNAR_LANDING</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>1600</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/GoldenRecord.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_MISSION</Type>
+			<Description>TXT_KEY_PROJECT_MARS_MISSION</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_MISSION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_MISSION_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<TechPrereq>TECH_SATELLITES</TechPrereq>
+			<AnyonePrereqProject>PROJECT_LUNAR_LANDING</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>1600</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>50</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsMission.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_LUNAR_COLONY</Type>
+			<Description>TXT_KEY_PROJECT_LUNAR_COLONY</Description>
+			<Civilopedia>TXT_KEY_PROJECT_LUNAR_COLONY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_LUNAR_COLONY_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_FUSION</TechPrereq>
+			<AnyonePrereqProject>PROJECT_LUNAR_LANDING</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>2400</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/LunarColony.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MAN_IN_SPACE</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_INTERSTALLAR_PROBE</Type>
+			<Description>TXT_KEY_PROJECT_INTERSTELLAR_PROBE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_INTERSTALLAR_PROBE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_INTERSTELLAR_PROBE_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_UNIFIED_THEORY</TechPrereq>
+			<AnyonePrereqProject>PROJECT_INTERNATIONAL_SPACE_STATION</AnyonePrereqProject>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iCost>4000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>1</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/InterstellarProbe.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_FRAMING</Type>
+			<Description>TXT_KEY_PROJECT_MARS_FRAMING</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_FRAMING_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_FRAMING_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_SUPERMATERIALS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>
-			<iCost>600</iCost>
+			<iCost>1500</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_Casing.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,6</Button>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsFraming.dds</Button>
 			<PrereqProjects>
 				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
 					<iNeeded>1</iNeeded>
 				</PrereqProject>
 			</PrereqProjects>
@@ -388,26 +708,138 @@
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_SS_THRUSTERS</Type>
-			<Description>TXT_KEY_PROJECT_SS_THRUSTERS</Description>
-			<Civilopedia>TXT_KEY_PROJECT_SS_THRUSTERS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_THRUSTERS_STRATEGY</Strategy>
+			<Type>PROJECT_MARS_POWER_SOURCE</Type>
+			<Description>TXT_KEY_PROJECT_MARS_POWER_SOURCE</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_POWER_SOURCE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_POWER_SOURCE_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_UNIFIED_THEORY</TechPrereq>
+			<TechPrereq>TECH_FUSION</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>2</iMaxTeamInstances>
+			<iCost>2500</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsPowerSource.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds>
+				<VictoryThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>2</iThreshold>
+				</VictoryThreshold>
+			</VictoryThresholds>
+			<VictoryMinThresholds>
+				<VictoryMinThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>1</iThreshold>
+				</VictoryMinThreshold>
+			</VictoryMinThresholds>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>50</iSuccessRate>
+			<BonusProductionModifiers/>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_EXTRACTOR</Type>
+			<Description>TXT_KEY_PROJECT_MARS_EXTRACTOR</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_EXTRACTOR_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_EXTRACTOR_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<TechPrereq>TECH_NANOTECHNOLOGY</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>3000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsExtractor.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds>
+				<VictoryThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>1</iThreshold>
+				</VictoryThreshold>
+			</VictoryThresholds>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers/>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_HABITAT</Type>
+			<Description>TXT_KEY_PROJECT_MARS_HABITAT</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_HABITAT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_HABITAT_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<TechPrereq>TECH_AUTOMATION</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>
-			<iCost>900</iCost>
+			<iCost>2000</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
 			<bSpaceship>1</bSpaceship>
 			<bAllowsNukes>0</bAllowsNukes>
-			<Button>,Art/Interface/Buttons/Buildings/SS_Thrusters.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,10</Button>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsHabitat.dds</Button>
 			<PrereqProjects>
 				<PrereqProject>
-					<ProjectType>PROJECT_APOLLO_PROGRAM</ProjectType>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
 					<iNeeded>1</iNeeded>
 				</PrereqProject>
 			</PrereqProjects>
@@ -428,6 +860,175 @@
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_HYDROPONICS</Type>
+			<Description>TXT_KEY_PROJECT_MARS_HYDROPONICS</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_HYDROPONICS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_HYDROPONICS_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<TechPrereq>TECH_BIOTECHNOLOGY</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>3</iMaxTeamInstances>
+			<iCost>2000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsHydroponics.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds>
+				<VictoryThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>3</iThreshold>
+				</VictoryThreshold>
+			</VictoryThresholds>
+			<VictoryMinThresholds>
+				<VictoryMinThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>1</iThreshold>
+				</VictoryMinThreshold>
+			</VictoryMinThresholds>
+			<iVictoryDelayPercent>75</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_COPPER</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_LABORATORY</Type>
+			<Description>TXT_KEY_PROJECT_MARS_LABORATORY</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_LABORATORY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_LABORATORY_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<TechPrereq>TECH_UNIFIED_THEORY</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>3</iMaxTeamInstances>
+			<iCost>2000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsLaboratory.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds>
+				<VictoryThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>3</iThreshold>
+				</VictoryThreshold>
+			</VictoryThresholds>
+			<VictoryMinThresholds>
+				<VictoryMinThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>3</iThreshold>
+				</VictoryMinThreshold>
+			</VictoryMinThresholds>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_ALUMINUM</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_MARS_CONTROL_CENTER</Type>
+			<Description>TXT_KEY_PROJECT_MARS_CONTROL_CENTER</Description>
+			<Civilopedia>TXT_KEY_PROJECT_MARS_CONTROL_CENTER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_MARS_CONTROL_CENTER_STRATEGY</Strategy>
+			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
+			<TechPrereq>TECH_ARTIFICIAL_INTELLIGENCE</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>4000</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<iAirExperience>0</iAirExperience>
+			<iFirstAirExperience>0</iFirstAirExperience>
+			<iExistingProductionModifier>0</iExistingProductionModifier>
+			<SpecialUnit>NONE</SpecialUnit>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<FirstFreeUnit>NONE</FirstFreeUnit>
+			<FreePromotion>NONE</FreePromotion>
+			<bSpaceship>1</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<bSatelliteIntercept>0</bSatelliteIntercept>
+			<bSatelliteAttack>0</bSatelliteAttack>
+			<bGoldenAge>0</bGoldenAge>
+			<bFirstEnemyAnarchy>0</bFirstEnemyAnarchy>
+			<bRevealsMap>0</bRevealsMap>
+			<Button>Art/Interface/Buttons/Buildings/MarsControlCenter.dds</Button>
+			<PrereqProjects>
+				<PrereqProject>
+					<ProjectType>PROJECT_MARS_MISSION</ProjectType>
+					<iNeeded>1</iNeeded>
+				</PrereqProject>
+			</PrereqProjects>
+			<VictoryThresholds>
+				<VictoryThreshold>
+					<VictoryType>VICTORY_SPACE_RACE</VictoryType>
+					<iThreshold>1</iThreshold>
+				</VictoryThreshold>
+			</VictoryThresholds>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_COPPER</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>

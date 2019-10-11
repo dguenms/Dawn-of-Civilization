@@ -30,13 +30,15 @@ tMinorCities = (
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
 (-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
+(-250, (19, 35), iNative, 'Danibaan', 2, iHolkan, 1),	# Monte Albán
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
 #(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
-(100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
+(100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
+(200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
@@ -48,6 +50,7 @@ tMinorCities = (
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (69, 52), iIndependent, 'Kyiv', 2, iCrossbowman, 2),		# Kiev
+(900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
 (990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
@@ -156,7 +159,9 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
 		# Holkans in classical Mesoamerica
-		if utils.isYearIn(-350, 600):
+		if utils.isYearIn(-200, 100):
+			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 7, 5)
+		if utils.isYearIn(100, 600):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
@@ -209,14 +214,16 @@ class Barbs:
 		#barbarians in central asia
 		if utils.isYearIn(-1600, -850):
 			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 3, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
-		elif utils.isYearIn(-850, 600):
+		elif utils.isYearIn(-850, -200):
+			self.checkSpawn(iBarbarian, iHorseman, 1 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 10-2*iHandicap, 3, ["TXT_KEY_ADJECTIVE_SCYTHIAN"])
+		elif utils.isYearIn(-200, 600):
 			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
 		elif utils.isYearIn(600, 900):
 			#if utils.getScenario() == i3000BC:  #late start condition
-			self.checkSpawn(iBarbarian, iOghuz, 2 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
+			self.checkSpawn(iBarbarian, iOghuz, 2 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2)
 		elif utils.isYearIn(900, 1040):
 			#if utils.getScenario() == i3000BC:  #late start condition
-			self.checkSpawn(iBarbarian, iOghuz, 2 + iHandicap, (78, 42), (90, 52), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
+			self.checkSpawn(iBarbarian, iOghuz, 2 + iHandicap, (78, 42), (90, 52), self.spawnNomads, iGameTurn, 6-iHandicap, 2)
 
 		# late Central Asian barbarians
 		if utils.isYearIn(1200, 1600):
@@ -232,10 +239,10 @@ class Barbs:
 
 		#barbarians in north africa
 		if utils.isYearIn(-210, 50):
-			self.checkSpawn(iBarbarian, iNumidianCavalry, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
+			self.checkSpawn(iBarbarian, iCamelRider, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
 		elif utils.isYearIn(50, 900):
 			if utils.getScenario() == i3000BC:  #late start condition
-				self.checkSpawn(iBarbarian, iNumidianCavalry, 1 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
+				self.checkSpawn(iBarbarian, iCamelRider, 1 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
 		elif utils.isYearIn(900, 1800):
 			self.checkSpawn(iBarbarian, iCamelArcher, 1, (54, 27), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 4, ["TXT_KEY_ADJECTIVE_BERBER"])
 			
@@ -292,6 +299,18 @@ class Barbs:
 			if utils.isYearIn(1500, 1850):
 				self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
 				
+		if iGameTurn == getTurnForYear(-500):
+			gc.getMap().plot(19, 35).setImprovementType(iHut)
+			utils.makeUnitAI(iHolkan, iNative, (19, 35), UnitAITypes.UNITAI_ATTACK, 2)
+			
+		# Oromos in the Horn of Africa
+		if utils.isYearIn(1500, 1700):
+			iNumUnits = 1
+			if pEthiopia.isAlive():
+				iNumUnits += 1
+				if utils.isYearIn(1600, 1700): iNumUnits += 1
+			self.checkSpawn(iBarbarian, iOromoWarrior, iNumUnits, (69, 25), (74, 28), self.spawnInvaders, iGameTurn, 8, 3)
+				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
 			self.checkSpawn(iNative, iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
@@ -325,13 +344,14 @@ class Barbs:
 			lReligions = []
 			bForceSpawn = False
 			
-			if sName == 'Kyiv': lReligions = [iOrthodoxy, iCatholicism]
+			if sName == 'Kyiv': lReligions = [iOrthodoxy]
 			if iPlayer == iCeltia and utils.getScenario() != i3000BC: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
+			if sName == 'Muqdisho': lReligions = [iIslam]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
-			utils.evacuate(tPlot)
+			utils.evacuate(iPlayer, tPlot)
 		
 			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions):
 				data.lMinorCityFounded[i] = True

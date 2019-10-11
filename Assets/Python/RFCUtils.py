@@ -425,6 +425,13 @@ class RFCUtils:
 		
 		if bOwner:
 			plot.setOwner(iPlayer)
+			
+	def convertTemporaryCulture(self, plot, iPlayer, iPercent, bOwner):
+		if not plot.isCore(plot.getOwner()):
+			plot.setCultureConversion(iPlayer, iPercent)
+		
+		if bOwner:
+			plot.setOwner(iPlayer)
 
 	#DynamicCivs
 	def getMaster(self, iCiv):
@@ -1191,7 +1198,7 @@ class RFCUtils:
 		
 	def getBestInfantry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lInfantryList = [iInfantry, iRifleman, iMusketman, iArquebusier, iPikeman, iHeavySwordsman, iCrossbowman, iSwordsman, iLightSwordsman, iMilitia]
+		lInfantryList = [iInfantry, iRifleman, iMusketeer, iArquebusier, iPikeman, iHeavySwordsman, iCrossbowman, iSwordsman, iLightSwordsman, iMilitia]
 		
 		for iBaseUnit in lInfantryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1238,7 +1245,7 @@ class RFCUtils:
 		if iPlayer == iBarbarian: iPlayer = iIndependent
 		
 		pPlayer = gc.getPlayer(iPlayer)
-		lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketman, iArquebusier, iCrossbowman, iArcher, iMilitia]
+		lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketeer, iArquebusier, iCrossbowman, iArcher, iMilitia]
 		
 		for iBaseUnit in lDefenderList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1246,6 +1253,17 @@ class RFCUtils:
 				return iUnit
 				
 		return iMilitia
+		
+	def getBestWorker(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lWorkerList = [iLabourer, iWorker]
+		
+		for iBaseUnit in lWorkerList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return iWorker
 		
 	def getPlotList(self, tTL, tBR, tExceptions=()):
 		return [(x, y) for x in range(tTL[0], tBR[0]+1) for y in range(tTL[1], tBR[1]+1) if (x, y) not in tExceptions]
@@ -1347,9 +1365,9 @@ class RFCUtils:
 		if gc.getMap().plot(x, y).isCity(): bCapital = True
 		
 		if iNumCities < iTargetCities:
-			self.makeUnit(iSettler, iPlayer, (x, y), iTargetCities - iNumCities)
+			self.makeUnit(self.getUniqueUnit(iPlayer, iSettler), iPlayer, (x, y), iTargetCities - iNumCities)
 		else:
-			if not bCapital: self.makeUnit(iSettler, iPlayer, (x, y), 1)
+			if not bCapital: self.makeUnit(self.getUniqueUnit(iPlayer, iSettler), iPlayer, (x, y), 1)
 			
 	def createMissionaries(self, iPlayer, iNumUnits, iReligion=None):
 		if iReligion == None:
@@ -1432,11 +1450,11 @@ class RFCUtils:
 		for (i, j) in self.surroundingPlots((x, y)):
 			plot = gc.getMap().plot(i, j)
 			if (i, j) == (x, y):
-				self.convertPlotCulture(plot, iPlayer, 25, False)
+				self.convertTemporaryCulture(plot, iPlayer, 25, False)
 			elif plot.getOwner() == iPreviousOwner:
-				self.convertPlotCulture(plot, iPlayer, 50, True)
+				self.convertTemporaryCulture(plot, iPlayer, 50, True)
 			else:
-				self.convertPlotCulture(plot, iPlayer, 25, True)
+				self.convertTemporaryCulture(plot, iPlayer, 25, True)
 					
 	def getAllDeals(self, iFirstPlayer, iSecondPlayer):
 		lDeals = []
@@ -1608,16 +1626,17 @@ class RFCUtils:
 				
 		return False
 		
-	def canEverRespawn(self, iPlayer, iGameTurn = gc.getGame().getGameTurn()):
-		iNumIntervals = len(tResurrectionIntervals[iPlayer])
-		
-		if iNumIntervals == 0:
+	def canEverRespawn(self, iPlayer, iGameTurn = None):
+		if not tResurrectionIntervals[iPlayer]:
 			return False
-		else:
-			iStart, iEnd = tResurrectionIntervals[iPlayer][iNumIntervals-1]
-			if getTurnForYear(iEnd) < iGameTurn:
-				return False
-				
+			
+		if iGameTurn is None:
+			iGameTurn = gc.getGame().getGameTurn()
+			
+		_, iEnd = tResurrectionIntervals[iPlayer][-1]
+		if getTurnForYear(iEnd) < iGameTurn:
+			return False
+			
 		return True
 
 	# Leoreth: returns True if function returns True for at least one member, otherwise False	
@@ -1634,10 +1653,11 @@ class RFCUtils:
 		if x < 0 or y < 0: unit.kill(False, -1)
 		else: unit.setXY(x, y, False, True, False)
 		
-	def evacuate(self, tPlot):
+	def evacuate(self, iPlayer, tPlot):
 		for tLoopPlot in self.surroundingPlots(tPlot):
 			for unit in self.getUnitList(tLoopPlot):
-				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): self.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True) and tPlot == (x, y))
+				if unit.getOwner() == iPlayer: continue
+				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): not self.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True) or tPlot == (x, y))
 				tTargetPlot = self.getRandomEntry(lPossibleTiles)
 				if tTargetPlot:
 					x, y = tTargetPlot
@@ -1693,11 +1713,11 @@ class RFCUtils:
 					if bWB and iSettlerValue == 3:
 						iPlotType = iAIForbidden
 					elif iSettlerValue >= 90:
-						if Areas.isForeignCore(iPlayer, tPlot):
+						if self.isPossibleForeignCore(iPlayer, tPlot):
 							iPlotType = iContest
 						else:
 							iPlotType = iHistorical
-					elif Areas.isForeignCore(iPlayer, tPlot):
+					elif self.isPossibleForeignCore(iPlayer, tPlot):
 						iPlotType = iForeignCore
 					else:
 						iPlotType = -1
@@ -1708,18 +1728,17 @@ class RFCUtils:
 	def removeStabilityOverlay(self):
 		engine = CyEngine()
 		# clear the highlight
-		for i in range(10):
+		for i in range(50):
 			engine.clearAreaBorderPlots(1000+i)
 		self.bStabilityOverlay = False
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
+		
+	def getRegionPlots(self, lRegions):
+		if isinstance(lRegions, int): lRegions = [lRegions]
+		return [(x, y) for (x, y) in self.getWorldPlotsList() if gc.getMap().plot(x, y).getRegionID() in lRegions]
 			
 	def getRegionCities(self, lRegions):
-		lCities = []
-		for (x, y) in self.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
-			if plot.getRegionID() in lRegions and plot.isCity():
-				lCities.append(plot.getPlotCity())
-		return lCities
+		return [gc.getMap().plot(x, y).getPlotCity() for (x, y) in self.getRegionPlots(lRegions) if gc.getMap().plot(x, y).isCity()]
 		
 	def getAdvisorString(self, iBuilding):
 		''
@@ -1740,22 +1759,33 @@ class RFCUtils:
 
 		return ""
 		
+	def isGreatPeopleBuilding(self, iBuilding):
+		for iUnit in lGreatPeopleUnits + [iGreatGeneral, iGreatSpy]:
+			unit = gc.getUnitInfo(iUnit)
+			if unit.getBuildings(iBuilding):
+				return True
+				
+		return False
+		
 	def getBuildingCategory(self, iBuilding):
 		'0 = Building'
 		'1 = Religious Building'
 		'2 = Unique Building'
-		'3 = National Wonder'
-		'4 = World Wonder'
+		'3 = Great People Building'
+		'4 = National Wonder'
+		'5 = World Wonder'
 
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
 		if BuildingInfo.getReligionType() > -1:
 			return 1
 		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()):
-			return 4
+			return 5
 		else:
 			iBuildingClass = BuildingInfo.getBuildingClassType()
 			iDefaultBuilding = gc.getBuildingClassInfo(iBuildingClass).getDefaultBuildingIndex()
 			if isNationalWonderClass(iBuildingClass):
+				return 4
+			elif self.isGreatPeopleBuilding(iBuilding):
 				return 3
 			else:
 				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
@@ -1825,6 +1855,7 @@ class RFCUtils:
 		return lUnits
 		
 	def variation(self, iVariation):
+		iVariation = self.getTurns(iVariation)
 		return gc.getGame().getSorenRandNum(2 * iVariation, 'Variation') - iVariation
 		
 	def relocateGarrisonToClosestCity(self, city):
@@ -1845,7 +1876,7 @@ class RFCUtils:
 		
 		for tPlot in self.surroundingPlots((x, y), 2):
 			for unit in self.getUnitList(tPlot):
-				if unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
+				if (not self.plot(tPlot).isCity() or self.plot(tPlot).getPlotCity() != city) and unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 					if len(lFlippedUnits) < iNumDefenders:
 						lFlippedUnits.append(unit)
 					else:
@@ -1973,5 +2004,34 @@ class RFCUtils:
 		iHuman = self.getHumanID()
 		if gc.getGame().getGameTurnYear() < tBirth[iHuman]:
 			self.makeUnit(iSettler, iHuman, (0, 0), 1)
+			
+	def getBuildingEffectCity(self, iBuilding):
+		if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iBuilding).getBuildingClassType()) == 0:
+			return None
+			
+		for iPlayer in range(iNumTotalPlayersB):
+			if gc.getPlayer(iPlayer).isHasBuildingEffect(iBuilding):
+				for city in self.getCityList(iPlayer):
+					if city.isHasBuildingEffect(iBuilding):
+						return city
+						
+		return None
+		
+	def getDefaultGreatPerson(self, iGreatPersonType):
+		if iGreatPersonType in dFemaleGreatPeople.values():
+			for iLoopGreatPerson in dFemaleGreatPeople:
+				if iGreatPersonType == dFemaleGreatPeople[iLoopGreatPerson]:
+					return iLoopGreatPerson
+		return iGreatPersonType
+	
+	def isPossibleForeignCore(self, iPlayer, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		for iLoopPlayer in range(iNumPlayers):
+			if iLoopPlayer == iPlayer: continue
+			if not gc.getPlayer(iLoopPlayer).isAlive() and not self.canEverRespawn(iLoopPlayer): continue
+			if plot.isCore(iLoopPlayer):
+				return True
+		return False
 			
 utils = RFCUtils()

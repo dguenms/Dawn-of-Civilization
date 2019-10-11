@@ -915,7 +915,7 @@ class RefusesToTalk(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
 		
 	def onDealCanceled(self, argsList):
 		eOfferPlayer, eTargetPlayer, pTrade = argsList
@@ -995,7 +995,7 @@ class WorstEnemy(AbstractStatefulAlert):
 		
 	def onCityRazed(self, argsList):
 		city, ePlayer = argsList
-		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
+		self.checkIfIsAnyOrHasMetAllTeams(PlayerUtil.getPlayerTeamID(city.getPreviousOwner()), PlayerUtil.getPlayerTeamID(ePlayer))
 	
 	def onVassalState(self, argsList):
 		eMaster, eVassal, bVassal = argsList

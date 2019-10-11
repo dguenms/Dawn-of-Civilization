@@ -452,7 +452,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_REQUEST3</Tag>
 		<English>control.[NEWLINE]Do you agree? (Our refusal may lead to a war)</English>
-		<French>[NEWLINE]&#202;tes-vous d'accord ? (Notre refus pourrait mener &#224; une guerre)</French>
+		<French>[NEWLINE]&#202;tes-vous d'accord ? (Notre refus pourrait causer une guerre)</French>
 		<German>&#252;bereignet werden sollte.[NEWLINE]Seid Ihr einverstanden? (Unsere Weigerung k&#246;nnte einen Krieg nach sich ziehen)</German>
 		<Italian>.[NEWLINE]Sei d'accordo? (Il rifiuto potrebbe portare a una guerra)</Italian>
 		<Spanish> [NEWLINE]&#191;Est&#225;is de acuerdo? (Una negativa podr&#237;a provocar una guerra)</Spanish>
@@ -466,7 +466,7 @@
 		<Spanish>%s1 claims the %s2 city of %s3</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE</Tag>
+		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY</Tag>
 		<English>%s1 claims unsettled territory to found %s2</English>
 		<French>%s1 revendique un territoire non colonis&#233; pour fonder %s2</French>
 		<German>%s1 fordert unbesiedeltes Gebiet, um %s2 zu gr&#252;nden</German>
@@ -474,12 +474,20 @@
 		<Spanish>%s1 claims unsettled territory to found %s2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE_OWNED</Tag>
+		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN</Tag>
 		<English>%s1 claims %s2 territory to found %s3</English>
 		<French>%s1 revendique un territoire %s2 pour fonder %s3</French>
 		<German>%s1 fordert %s2 Gebiet, um %s3 zu gr&#252;nden</German>
 		<Italian>%s1 claims %s2 territory to found %s3</Italian>
 		<Spanish>%s1 claims %s2 territory to found %s3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN</Tag>
+		<English>%s1 requests to found %s2 on their own territory</English>
+		<French>%s1 demande &#224; fonder %s2 sur son propre territoire</French>
+		<German>%s1 beantragt, %s2 im eigenen Gebiet zu gr&#252;nden</German>
+		<Italian>%s1 requests to found %s2 on their own territory</Italian>
+		<Spanish>%s1 requests to found %s2 on their own territory</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_ASSIGNMENT</Tag>

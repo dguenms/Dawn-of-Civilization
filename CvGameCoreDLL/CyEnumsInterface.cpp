@@ -440,6 +440,8 @@ void CyEnumsPythonInterface()
 		.value("WIDGET_LEADERHEAD_RELATIONS", WIDGET_LEADERHEAD_RELATIONS)
 // BUG - Leaderhead Relations - end
 
+		.value("WIDGET_HELP_WONDER_LIMIT", WIDGET_HELP_WONDER_LIMIT)
+
 		.value("NUM_WIDGET_TYPES", NUM_WIDGET_TYPES)
 		;
 
@@ -729,6 +731,8 @@ void CyEnumsPythonInterface()
 		.value("SUCCESS_CHAR", SUCCESS_CHAR)
 		.value("FAILURE_CHAR", FAILURE_CHAR)
 		.value("SCALES_CHAR", SCALES_CHAR)
+		.value("AIRPORT_CHAR", AIRPORT_CHAR)
+		.value("CLEAN_POWER_CHAR", CLEAN_POWER_CHAR)
 		.value("MAX_NUM_SYMBOLS", MAX_NUM_SYMBOLS)
 		;
 
@@ -758,6 +762,10 @@ void CyEnumsPythonInterface()
 
 	python::enum_<ArtStyleTypes>("ArtStyleTypes")
 		.value("NO_ARTSTYLE", NO_ARTSTYLE)
+		;
+
+	python::enum_<UnitArtStyleTypes>("UnitArtStyleTypes")
+		.value("NO_UNIT_ARTSTYLE", NO_UNIT_ARTSTYLE)
 		;
 
 	python::enum_<CitySizeTypes>("CitySizeTypes")

@@ -13,13 +13,13 @@ BeginTeam
 	TeamID=0, (Egypt)
 EndTeam
 BeginTeam
-	TeamID=1, (China)
+	TeamID=1, (Babylonia)
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
+	TeamID=2, (Harappa)
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
+	TeamID=3, (China)
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -174,6 +174,20 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=1
+	LeaderType=LEADER_HAMMURABI
+	CivType=CIVILIZATION_BABYLONIA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=2
+	LeaderType=LEADER_VATAVELLI
+	CivType=CIVILIZATION_HARAPPANS
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=3
 	LeaderType=LEADER_HONGWU
 	LeaderName=TXT_KEY_LEADER_KANGXI
 	CivType=CIVILIZATION_CHINA
@@ -187,20 +201,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_ISOLATIONISM
 	AttitudePlayer=12, AttitudeExtra=2, (Korea)
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=2
-	LeaderType=LEADER_HAMMURABI
-	CivType=CIVILIZATION_BABYLONIA
-	PlayableCiv=0
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=3
-	LeaderType=LEADER_VATAVELLI
-	CivType=CIVILIZATION_HARAPPANS
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -289,7 +289,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=12
-	LeaderType=LEADER_ZARA_YAQOB
+	LeaderType=LEADER_EZANA
 	CivType=CIVILIZATION_ETHIOPIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
@@ -528,7 +528,7 @@ BeginPlayer
 	StateReligion=RELIGION_CATHOLICISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
@@ -661,9 +661,9 @@ BeginPlayer
 	StateReligion=RELIGION_PROTESTANTISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -707,7 +707,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_NATIONHOOD
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -785,8 +785,10 @@ EndPlayer
 BeginMap
 	grid width=124
 	grid height=68
-	top latitude=90
-	bottom latitude=-90
+	prime meridian=53
+	equator=26
+	top latitude=75
+	bottom latitude=-75
 	wrap X=1
 	wrap Y=0
 	world size=WORLDSIZE_HUGE
@@ -6495,7 +6497,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -6888,7 +6890,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -7671,7 +7673,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=23, (Spain)
@@ -7691,6 +7693,7 @@ BeginPlot
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		BuildingType=BUILDING_FLOATING_GARDENS
 		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=100, (Spain)
@@ -7718,7 +7721,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -9747,7 +9750,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -9793,7 +9796,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -10166,7 +10169,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -11006,7 +11009,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -11021,6 +11024,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MONUMENT
 		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=100, (Spain)
 	EndCity
@@ -11143,7 +11147,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -11540,7 +11544,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -12317,7 +12321,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -12952,8 +12956,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MARSH, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	BonusType=BONUS_HORSE
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=23,24,31,48,
 EndPlot
@@ -12965,7 +12969,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -13387,7 +13391,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -13993,7 +13997,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -14730,7 +14734,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -15647,7 +15651,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -21387,7 +21391,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -22269,7 +22273,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -22773,22 +22777,22 @@ BeginPlot
 		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=23, (Spain)
@@ -23472,16 +23476,16 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=26, (England)
@@ -24367,7 +24371,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -24490,16 +24494,16 @@ BeginPlot
 		UnitType=UNIT_BOMBARD, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=24, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=24, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=24, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=24, (France)
+		UnitType=UNIT_FRENCH_GENDARME, UnitOwner=24, (France)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=24, (France)
@@ -24516,7 +24520,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
@@ -26342,6 +26346,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=37
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -26501,7 +26507,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
@@ -26993,7 +26999,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_CATHOLIC_SHRINE
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
 		BuildingType=BUILDING_SISTINE_CHAPEL
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
@@ -27124,7 +27130,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
@@ -27470,8 +27476,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=36
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -30878,7 +30882,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_PARTHENON
 		BuildingType=BUILDING_MOUNT_ATHOS
 		ReligionType=RELIGION_JUDAISM
@@ -31500,19 +31504,19 @@ BeginPlot
 		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=37, (Turkey)
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD, UnitOwner=37, (Turkey)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER, UnitOwner=37, (Turkey)
@@ -31532,7 +31536,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_AMPHITHEATRE
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
@@ -32114,10 +32118,25 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=28, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=28, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=28, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=28, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_COSSACK, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -32192,10 +32211,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -32439,13 +32458,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=26
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_COFFEE
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=47,48,
 EndPlot
 BeginPlot
 	x=70,y=27
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
+	EndUnit
+	BeginCity
+		CityOwner=47, (Independent)
+		CityName=Bonga
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_ISLAM
+		Player47Culture=25, (Independent)
+	EndCity
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=47,48,
@@ -32554,14 +32592,15 @@ EndPlot
 BeginPlot
 	x=70,y=42
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=37,47,
 EndPlot
 BeginPlot
 	x=70,y=43
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_HORSE
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=37,47,
@@ -32570,7 +32609,6 @@ BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
 	ImprovementType=IMPROVEMENT_COTTAGE
-	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=37,47,
@@ -33049,7 +33087,8 @@ BeginPlot
 	x=71,y=43
 	RiverNSDirection=0
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -33457,9 +33496,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
-	BonusType=BONUS_COFFEE
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=37,47,48,
@@ -33688,7 +33724,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -34051,16 +34087,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=43
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
-	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=37,47,
 EndPlot
 BeginPlot
 	x=73,y=44
-	ImprovementType=IMPROVEMENT_WINDMILL
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=37,47,
@@ -34141,40 +34177,25 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=28, (Russia)
@@ -34248,7 +34269,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -34480,16 +34501,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=47, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=48, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=47, (Independent)
+		CityOwner=48, (Independent2)
 		CityName=Muqdisho
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34499,8 +34520,9 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player47Culture=100, (Independent)
+		Player48Culture=100, (Independent2)
 	EndCity
 	TeamReveal=24,26,31,40,47,48,
 EndPlot
@@ -34664,8 +34686,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=44
-	BonusType=BONUS_HORSE
-	ImprovementType=IMPROVEMENT_PASTURE
+	ImprovementType=IMPROVEMENT_WINDMILL
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -34702,10 +34723,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -36204,7 +36225,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -36633,7 +36654,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -37547,7 +37568,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -38010,7 +38031,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -38282,7 +38303,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=47, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=47, (Independent)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (Independent)
@@ -38370,7 +38391,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=40
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=8,36,47,48,
@@ -39274,6 +39294,7 @@ BeginPlot
 	x=84,y=45
 	RiverNSDirection=0
 	isWOfRiver
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,47,48,
@@ -39374,7 +39395,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -39813,6 +39834,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_BATH
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_GUR_E_AMIR
@@ -39833,6 +39856,7 @@ EndPlot
 BeginPlot
 	x=85,y=49
 	BonusType=BONUS_COTTON
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -41694,7 +41718,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Russia)
+		UnitType=UNIT_RUSSIAN_STRELETS, UnitOwner=28, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Russia)
@@ -41990,7 +42014,6 @@ BeginPlot
 		BuildingType=BUILDING_TAMIL_SANGAM
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		Player11Culture=50, (Tamils)
 	EndCity
@@ -44385,13 +44408,13 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=26, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (England)
 	EndUnit
 	BeginCity
 		CityOwner=26, (England)
@@ -44865,7 +44888,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=47, (China)
 	EndUnit
 	BeginCity
 		CityOwner=47, (China)
@@ -46133,10 +46156,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Chengdu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -46146,7 +46169,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_DUJIANGYAN
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,47,48,
 EndPlot
@@ -46641,10 +46664,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Xi'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -46666,7 +46689,7 @@ BeginPlot
 		BuildingType=BUILDING_TERRACOTTA_ARMY
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=300, (China)
+		Player3Culture=300, (China)
 	EndCity
 	TeamReveal=1,47,48,
 EndPlot
@@ -47632,10 +47655,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Chongqing
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -47645,7 +47668,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,47,48,
 EndPlot
@@ -47702,61 +47725,61 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+		UnitType=UNIT_BOMBARD, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=1, (Kangxi)
+		UnitType=UNIT_WORKER, UnitOwner=3, (Kangxi)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Beijing
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
@@ -47779,7 +47802,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player1Culture=150, (China)
+		Player3Culture=150, (China)
 	EndCity
 	TeamReveal=1,48,
 EndPlot
@@ -48188,10 +48211,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Kaifeng
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -48212,7 +48235,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,48,
 EndPlot
@@ -49132,10 +49155,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Guangzhou
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -49150,7 +49173,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,23,31,47,48,
 EndPlot
@@ -49230,19 +49253,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Shenyang
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		Player1Culture=80, (China)
+		Player3Culture=80, (China)
 	EndCity
 	TeamReveal=1,14,47,48,
 EndPlot
@@ -49644,10 +49667,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Shanghai
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -49665,7 +49688,7 @@ BeginPlot
 		BuildingType=BUILDING_PORCELAIN_TOWER
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,14,16,47,48,
 EndPlot
@@ -50070,10 +50093,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=3, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1, (China)
+		CityOwner=3, (China)
 		CityName=Hangzhou
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -50086,7 +50109,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=100, (China)
+		Player3Culture=100, (China)
 	EndCity
 	TeamReveal=1,14,16,47,48,
 EndPlot
@@ -50171,7 +50194,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=47, (China)
+		UnitType=UNIT_CHINESE_FIRELANCER, UnitOwner=47, (China)
 	EndUnit
 	BeginCity
 		CityOwner=47, (China)
@@ -50951,7 +50974,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=23, (Spain)
+		UnitType=UNIT_SPANISH_TERCIO, UnitOwner=23, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=23, (Spain)
@@ -51073,16 +51096,16 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=14, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=14, (Korea)
+		UnitType=UNIT_KOREAN_HWACHA, UnitOwner=14, (Korea)
 	EndUnit
 	BeginCity
 		CityOwner=14, (Korea)

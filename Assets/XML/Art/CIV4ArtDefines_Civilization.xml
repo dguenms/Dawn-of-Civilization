@@ -26,7 +26,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_BABYLON</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Babylonia.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Babylonia.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Lamassu.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -92,7 +92,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_GREECE</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Greece.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Greece.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Owl.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -248,67 +248,67 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_INDONESIA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Indonesia.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Indonesia.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_SuryaMajapahit.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_THAILAND</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/thailand.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/thailand.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Garuda.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_MUGHALS</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Mughals.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Mughals.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Mughals.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_TURKS</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Turks.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Turks.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Bow.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_IRAN</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Iran.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Iran.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Safavid_Lion2.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_MOORS</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Moors.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Moors.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Moon.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_TAMILS</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Tamil.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_TIBET</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Tibet.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Tibet.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Tibet.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_POLAND</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Poland.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Poland.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Poland.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_HARAPPANS</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Harappa.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Harappa.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Indus.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_CONGO</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Kongo.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Kongo.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Kongo.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>

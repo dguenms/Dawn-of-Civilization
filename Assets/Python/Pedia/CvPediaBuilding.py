@@ -56,13 +56,25 @@ class CvPediaBuilding:
 	def interfaceScreen(self, iBuilding):
 		self.iBuilding = iBuilding
 		screen = self.top.getScreen()
-		screen.addBuildingGraphicGFC(self.top.getNextWidgetName(), self.iBuilding, self.X_BUILDING_ANIMATION, self.Y_BUILDING_ANIMATION, self.W_BUILDING_ANIMATION, self.H_BUILDING_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_BUILDING_ANIMATION, self.Z_ROTATION_BUILDING_ANIMATION, self.SCALE_ANIMATION, True)
+		if iBuilding == iHubbleSpaceTelescope:
+			self.spaceGraphic(iBuilding)
+		else:
+			screen.addBuildingGraphicGFC(self.top.getNextWidgetName(), self.iBuilding, self.X_BUILDING_ANIMATION, self.Y_BUILDING_ANIMATION, self.W_BUILDING_ANIMATION, self.H_BUILDING_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_BUILDING_ANIMATION, self.Z_ROTATION_BUILDING_ANIMATION, self.SCALE_ANIMATION, True)
 
 		self.placeInfo()
 		self.placeRequires()
 		self.placeEffects()
 		self.placeHistory()
 
+	def spaceGraphic(self, iBuilding):
+		screen = self.top.getScreen()
+		szImage = self.top.getNextWidgetName()
+		screen.addModelGraphicGFC(szImage, "Art/Interface/Screens/Civilopedia/Space_Environment.nif", self.X_BUILDING_ANIMATION, self.Y_BUILDING_ANIMATION, self.W_BUILDING_ANIMATION, self.H_BUILDING_ANIMATION, WidgetTypes.WIDGET_GENERAL, -1, -1, self.X_ROTATION_BUILDING_ANIMATION,  self.Z_ROTATION_BUILDING_ANIMATION, 1.0)
+		
+		if iBuilding == iHubbleSpaceTelescope: #Hubble has a special nif file because it is so high in the air
+			screen.addToModelGraphicGFC(szImage, "Art/Structures/Wonders/HubbleSpaceTelescope/Hubble_Pedia.nif")
+		else:
+			screen.addToModelGraphicGFC(szImage, gc.getBuildingInfo(iBuilding).getArtInfo().getNIF())
 
 
 	def placeInfo(self):
@@ -184,11 +196,11 @@ class CvPediaBuilding:
 			screen.attachLabel(panel, "", "(")
 		
 		if iPrereq >= 0:
-			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, -1, False )
+			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]), False )
 
 		if iOrPrereq >= 0:
 			screen.attachLabel(panel, "", CyTranslator().getText("TXT_KEY_OR", ()))
-			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, -1, False )
+			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]), False )
 			
 		if iOrPrereq >= 0 and iStatePrereq >= 0:
 			screen.attachLabel(panel, "", ")")
@@ -217,6 +229,11 @@ class CvPediaBuilding:
 				if button:
 					screen.attachImageButton(panel, "", button, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION, gc.getPlayer(self.top.iActivePlayer).getCivilizationType(), 1, False)
 
+	
+	def isStateReligionRequirement(self, lReligions, lStateReligions):
+		if set(lReligions) == set(lStateReligions): return 1
+		
+		return -1
 
 	def placeEffects(self):
 		screen = self.top.getScreen()

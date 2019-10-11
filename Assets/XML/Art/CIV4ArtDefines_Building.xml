@@ -538,12 +538,12 @@
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,7</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_AMPHITHEATRE</Type>
+			<Type>ART_DEF_BUILDING_ARENA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.80</fScale>
-			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Colosseum/Colosseum.nif</NIF>
+			<fScale>1.05</fScale>
+			<fInterfaceScale>1.3</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Arena/Colosseum.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,2</Button>
 		</BuildingArtInfo>
@@ -1158,7 +1158,7 @@
 			<Button>Art/Structures/Buildings/Adur_Farnbag/AdurFarnbag_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_COLOSSEUM</Type>
+			<Type>ART_DEF_BUILDING_FLAVIAN_AMPHITHEATRE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
@@ -1219,11 +1219,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TRADING_COMPANY</Type>
-			<LSystem>LSYSTEM_2x4</LSystem>
+			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1</fScale>
+			<fScale>0.85</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Trading_Company/navalmanufacture.nif</NIF>
+			<NIF>Art/Structures/Buildings/Trading_Company/trade.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/TradingCompany.dds</Button>
 		</BuildingArtInfo>
@@ -2371,11 +2371,11 @@
 			<Type>ART_DEF_BUILDING_SOLAR_PLANT</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.5</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Solar_Plant/solarplant.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Solar_Plant/solar.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Solar_Plant/Button_SolarPlant.dds</Button>
+			<Button>Art/Structures/Buildings/Solar_Plant/SolarPlant.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MONUMENT</Type>
@@ -3331,7 +3331,7 @@
 			<Type>ART_DEF_BUILDING_TAJ_MAHAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
+			<fScale>1.8</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Taj_Mahal/TajMahal.nif</NIF>
 			<KFM/>
@@ -3456,6 +3456,96 @@
 			<NIF>Art/Structures/Buildings/AdministrativeCenter/gymnasium2.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/AdministrativeCenter/AdministrativeCenter.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_WAREHOUSE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.00</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Warehouse/NavalManufacture.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Warehouse/Warehouse.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_AUTOMATED_FACTORY</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Advanced_Factories/Advanced_Factories.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/AutomatedFactory/AutomatedFactory.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CONTAINER_TERMINAL</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Container_Terminal/Dock.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Container_Terminal/ContainerTerminal.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_LOGISTICS_CENTER</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Logistics_Center/warehouse.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Logistics_Center/LogisticsCenter.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_VERTICAL_FARM</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.3</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Vertical_Farm/condenser.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Vertical_Farm/VerticalFarm.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_FIBER_NETWORK</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.4</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Fiber_Network/trunkline.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/TechTree/FiberOptics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,8,8</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SUPERCOMPUTER</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Center_for_Disease_Control/Center_for_Disease_Control.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Supercomputer/Supercomputer.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SPACEPORT</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Spaceport/Soyuz.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Spaceport/Spaceport.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_STADIUM</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.55</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Stadium/veterans04.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Stadium/stadium.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

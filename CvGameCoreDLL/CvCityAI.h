@@ -115,7 +115,7 @@ public:
 	BuildingTypes AI_bestAdvancedStartBuilding(int iPass);
 
 	// Leoreth
-	ReligionTypes AI_getPersecutionReligion();
+	ReligionTypes AI_getPersecutionReligion(ReligionTypes eIgnoredReligion);
 	int AI_buildingWeight(BuildingTypes eBuilding) const;
 	
 	void read(FDataStreamBase* pStream);

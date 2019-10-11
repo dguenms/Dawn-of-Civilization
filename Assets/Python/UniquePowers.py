@@ -81,8 +81,8 @@ class UniquePowers:
 					city.setMongolUP(False)
 			
 	def setup(self):
-		# Babylonian UP: receive a free tech after discovering the first four techs
-		pBabylonia.setFreeTechsOnDiscovery(4)
+		# Babylonian UP: receive a free tech after discovering the first five techs
+		pBabylonia.setFreeTechsOnDiscovery(5)
 		
 	def onBuildingBuilt(self, city, iOwner, iBuilding):
 		if iOwner == iMughals:
@@ -445,7 +445,7 @@ class UniquePowers:
 			iTargetPlayer = targetCity.getOwner()
 			iSourcePlayer = sourceCity.getOwner()
 			iCultureChange = targetPlot.getCulture(iTargetPlayer) / targetCity.getPopulation()
-			targetPlot.setCulture(iSourcePlayer, iCultureChange, False)
+			targetPlot.changeCulture(iSourcePlayer, iCultureChange, False)
 			
 			# chance to spread state religion if in source city
 			if gc.getPlayer(iSourcePlayer).isStateReligion():

@@ -78,7 +78,7 @@
 		<English>Falangist %s1</English>
 		<French>
 			<Text>%s1 phalangiste</Text>
-			<Gender>Male</Gender>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Falangist %s1</German>
@@ -90,12 +90,36 @@
 		<English>Empire of Gran Colombia</English>
 		<French>
 			<Text>Empire de Grande Colombie</Text>
-			<Gender>Female</Gender>
+			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>Empire of Gran Colombia</German>
 		<Italian>Empire of Gran Colombia</Italian>
 		<Spanish>Empire of Gran Colombia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_EMPIRE_ANDES</Tag>
+		<English>Empire of the Andes</English>
+		<French>
+			<Text>Empire des Andes</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Empire of the Andes</German>
+		<Italian>Empire of the Andes</Italian>
+		<Spanish>Empire of the Andes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES</Tag>
+		<English>Federation of the Andes</English>
+		<French>
+			<Text>F&#233;d&#233;ration des Andes</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Federation of the Andes</German>
+		<Italian>Federation of the Andes</Italian>
+		<Spanish>Federation of the Andes</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Tag>

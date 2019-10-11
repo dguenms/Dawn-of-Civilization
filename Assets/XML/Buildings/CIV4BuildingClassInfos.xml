@@ -117,14 +117,14 @@
 			<DefaultBuilding>BUILDING_THEATRE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_AMPHITHEATRE</Type>
-			<Description>TXT_KEY_BUILDING_AMPHITHEATRE</Description>
+			<Type>BUILDINGCLASS_ARENA</Type>
+			<Description>TXT_KEY_BUILDING_ARENA</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_AMPHITHEATRE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ARENA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LIGHTHOUSE</Type>
@@ -325,13 +325,13 @@
 			<DefaultBuilding>BUILDING_OBSERVATORY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_PARK</Type>
-			<Description>TXT_KEY_BUILDING_PARK</Description>
+			<Type>BUILDINGCLASS_WAREHOUSE</Type>
+			<Description>TXT_KEY_BUILDING_WAREHOUSE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_PARK</DefaultBuilding>
+			<DefaultBuilding>BUILDING_WAREHOUSE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_COURTHOUSE</Type>
@@ -359,6 +359,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_DISTILLERY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_PARK</Type>
+			<Description>TXT_KEY_BUILDING_PARK</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_PARK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_COAL_PLANT</Type>
@@ -488,6 +497,15 @@
 			<DefaultBuilding>BUILDING_AIRPORT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BUNKER</Type>
+			<Description>TXT_KEY_BUILDING_BUNKER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_BUNKER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BOMB_SHELTER</Type>
 			<Description>TXT_KEY_BUILDING_BOMB_SHELTER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -506,13 +524,31 @@
 			<DefaultBuilding>BUILDING_HYDRO_PLANT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_BUNKER</Type>
-			<Description>TXT_KEY_BUILDING_BUNKER</Description>
+			<Type>BUILDINGCLASS_SECURITY_BUREAU</Type>
+			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_BUNKER</DefaultBuilding>
+			<DefaultBuilding>BUILDING_SECURITY_BUREAU</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_STADIUM</Type>
+			<Description>TXT_KEY_BUILDING_STADIUM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_STADIUM</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CONTAINER_TERMINAL</Type>
+			<Description>TXT_KEY_BUILDING_CONTAINER_TERMINAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CONTAINER_TERMINAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NUCLEAR_PLANT</Type>
@@ -524,13 +560,13 @@
 			<DefaultBuilding>BUILDING_NUCLEAR_PLANT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_SECURITY_BUREAU</Type>
-			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
+			<Type>BUILDINGCLASS_SUPERCOMPUTER</Type>
+			<Description>TXT_KEY_BUILDING_SUPERCOMPUTER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_SECURITY_BUREAU</DefaultBuilding>
+			<DefaultBuilding>BUILDING_SUPERCOMPUTER</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_HOTEL</Type>
@@ -551,6 +587,15 @@
 			<DefaultBuilding>BUILDING_RECYCLING_CENTER</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LOGISTICS_CENTER</Type>
+			<Description>TXT_KEY_BUILDING_LOGISTICS_CENTER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LOGISTICS_CENTER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SOLAR_PLANT</Type>
 			<Description>TXT_KEY_BUILDING_SOLAR_PLANT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -558,6 +603,33 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SOLAR_PLANT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FIBER_NETWORK</Type>
+			<Description>TXT_KEY_BUILDING_FIBER_NETWORK</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FIBER_NETWORK</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_AUTOMATED_FACTORY</Type>
+			<Description>TXT_KEY_BUILDING_AUTOMATED_FACTORY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_AUTOMATED_FACTORY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_VERTICAL_FARM</Type>
+			<Description>TXT_KEY_BUILDING_VERTICAL_FARM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_VERTICAL_FARM</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_JEWISH_TEMPLE</Type>
@@ -1093,8 +1165,17 @@
 			<DefaultBuilding>BUILDING_CENTRAL_BANK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SPACEPORT</Type>
+			<Description>TXT_KEY_BUILDING_SPACEPORT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SPACEPORT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_SPHINX</Type>
-			<Description>TXT_KEY_BUILDING_SPHINX</Description>
+			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1255,14 +1336,14 @@
 			<DefaultBuilding>BUILDING_MOAI_STATUES</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_COLOSSEUM</Type>
-			<Description>TXT_KEY_BUILDING_COLOSSEUM</Description>
+			<Type>BUILDINGCLASS_FLAVIAN_AMPHITHEATRE</Type>
+			<Description>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_COLOSSEUM</DefaultBuilding>
+			<DefaultBuilding>BUILDING_FLAVIAN_AMPHITHEATRE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_AQUA_APPIA</Type>
@@ -1419,7 +1500,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SALSAL_BUDDHA</Type>
-			<Description>TXT_KEY_SALSAL_BUDDHA</Description>
+			<Description>TXT_KEY_BUILDING_SALSAL_BUDDHA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1554,7 +1635,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SILVER_TREE_FOUNTAIN</Type>
-			<Description>TXT_KEY_SILVER_TREE_FOUNTAIN</Description>
+			<Description>TXT_KEY_BUILDING_SILVER_TREE_FOUNTAIN</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1563,7 +1644,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SANTA_MARIA_DEL_FIORE</Type>
-			<Description>TXT_KEY_SANTA_MARIA_DEL_FIORE</Description>
+			<Description>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1707,7 +1788,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TORRE_DE_BELEM</Type>
-			<Description>TXT_KEY_TORRE_DE_BELEM</Description>
+			<Description>TXT_KEY_BUILDING_TORRE_DE_BELEM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>

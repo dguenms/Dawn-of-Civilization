@@ -3,6 +3,7 @@ from RFCUtils import utils
 from sets import Set
 from StoredData import data
 import Victory as vic
+from Religions import rel
 
 ### Class for easier tech specification ###
 
@@ -44,6 +45,10 @@ def initScenarioTechs(iScenario):
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
+	
+	if iPlayer == iChina and utils.getScenario() == i3000BC and utils.getHumanID() != iPlayer:
+		initTech(iPlayer, iProperty)
+		initTech(iPlayer, iAlloys)
 				
 def initTechs(iPlayer, lTechs):
 	pPlayer = gc.getPlayer(iPlayer)
@@ -57,6 +62,7 @@ def initTechs(iPlayer, lTechs):
 def initTech(iPlayer, iTech):
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
+	rel.onTechAcquired(iPlayer, iTech)
 
 ### Tech preference functions ###
 
@@ -139,16 +145,16 @@ lStartingTechs = [
 {
 iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
-iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
-iCivChina :	Techs([iTanning, iMining, iAgriculture]),
 iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
+iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
+iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
 iCivCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
 iCivPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
 iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
-iCivMaya :	Techs(column=1, exceptions=[iSailing]),
+iCivMaya :	Techs([iProperty, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
 iCivTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivTeotihuacan :	Techs([iProperty, iLeverage, iCeremony], column=1, exceptions=[iSailing]),
@@ -180,12 +186,12 @@ iCivCongo : 	Techs([iMachinery, iCivilService, iTheology], column=6),
 iCivThailand : 	Techs(column=8, exceptions=[iCompass, iDoctrine, iCommune, iPatronage]),
 iCivIran : 	Techs([iHeritage, iFirearms], column=9),
 iCivNetherlands:Techs(column=10),
-iCivGermany :	Techs([iReplaceableParts], column=11),
+iCivGermany :	Techs(column=11, exceptions=[iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning]),
 iCivAmerica :	Techs([iRepresentation, iChemistry], column=12),
-iCivArgentina :	Techs(column=13, exceptions=[iMachineTools]),
-iCivMexico :	Techs(column=13, exceptions=[iMachineTools]),
-iCivColombia :	Techs(column=13, exceptions=[iMachineTools]),
-iCivBrazil :	Techs(column=13),
+iCivArgentina :	Techs([iRepresentation, iNationalism], column=12),
+iCivMexico :	Techs([iRepresentation, iNationalism], column=12),
+iCivColombia :	Techs([iRepresentation, iNationalism], column=12),
+iCivBrazil :	Techs([iRepresentation, iNationalism, iBiology], column=12),
 iCivCanada :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
 iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 },
@@ -211,7 +217,7 @@ iCivJapan :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExplo
 iCivVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
 iCivTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
 iCivSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
-iCivFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iGeography, iEconomics]),
+iCivFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iEconomics]),
 iCivEngland :	Techs(column=11, exceptions=[iUrbanPlanning, iHorticulture]),
 iCivHolyRome :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
 iCivRussia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
@@ -221,7 +227,7 @@ iCivOttomans :	Techs([iUrbanPlanning, iHorticulture], column=10, exceptions=[iEx
 iCivMughals :	Techs([iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration, iOptics]),
 iCivThailand :	Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivCongo :	Techs([iCartography, iJudiciary], column=8),
-iCivNetherlands:Techs(column=11, exceptions=[iHorticulture, iCivilLiberties, iUrbanPlanning]),
+iCivNetherlands:Techs(column=11, exceptions=[iHorticulture, iScientificMethod, iUrbanPlanning]),
 iCivGermany :	Techs(column=11, exceptions=[iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning]),
 }]
 
@@ -236,6 +242,30 @@ dTechPreferences = {
 		
 		iAlloys: -20,
 		iBloomery: -50,
+	},
+	iCivBabylonia : {
+		iWriting: 30,
+		iContract: 30,
+		iCalendar: 30,
+		iMasonry: 20,
+		iProperty: 20,
+		iDivination: 20,
+		iConstruction: 20,
+	
+		iPriesthood: -50,
+		iMathematics: -30,
+		iAlloys: -30,
+		iBloomery: -30,
+		iSteel: -30,
+	},
+	iCivHarappa : {
+		iMasonry: 20,
+		iPastoralism: 20,
+		iPottery: 20,
+		
+		iMythology: -50,
+		iDivination: -50,
+		iCeremony: -50,
 	},
 	iCivChina : {
 		iAesthetics: 40,
@@ -261,30 +291,6 @@ dTechPreferences = {
 		iCombinedArms: -40,
 		iDivination: -20,
 		iSailing: -20,	
-	},
-	iCivBabylonia : {
-		iWriting: 30,
-		iContract: 30,
-		iCalendar: 30,
-		iMasonry: 20,
-		iProperty: 20,
-		iDivination: 20,
-		iConstruction: 20,
-	
-		iPriesthood: -50,
-		iMathematics: -30,
-		iAlloys: -30,
-		iBloomery: -30,
-		iSteel: -30,
-	},
-	iCivHarappa : {
-		iMasonry: 20,
-		iPastoralism: 20,
-		iPottery: 20,
-		
-		iMythology: -50,
-		iDivination: -50,
-		iCeremony: -50,
 	},
 	iCivGreece : {
 		iSailing: 40,
@@ -345,6 +351,10 @@ dTechPreferences = {
 		
 		iCalendar: -20,
 	},
+	iCivMaya : {
+		iCalendar: 40,
+		iAesthetics: 30,
+	},
 	iCivTamils : {
 		iCement: 20,
 		iCompass: 20,
@@ -366,10 +376,6 @@ dTechPreferences = {
 		iExploration: -40,
 		iReplaceableParts: -40,
 		iScientificMethod: -40,
-	},
-	iCivMaya : {
-		iCalendar: 40,
-		iAesthetics: 30,
 	},
 	iCivByzantium : {
 		iFinance: -50,
@@ -644,6 +650,17 @@ dBuildingPreferences = {
 		iGreatLighthouse: 30,
 		iGreatSphinx: 30,
 	},
+	iCivBabylonia : {
+		iHangingGardens: 50,
+		iIshtarGate: 50,
+		iSpiralMinaret: 20,
+		iGreatMausoleum: 15,
+		
+		iPyramids: 0,
+		iGreatSphinx: 0,
+		
+		iOracle: -60,
+	},
 	iCivChina : {
 		iGreatWall: 80,
 		iForbiddenPalace: 40,
@@ -657,17 +674,6 @@ dBuildingPreferences = {
 		iHimejiCastle: -30,
 		iBorobudur: -30,
 		iBrandenburgGate: -30,
-	},
-	iCivBabylonia : {
-		iHangingGardens: 50,
-		iIshtarGate: 50,
-		iSpiralMinaret: 20,
-		iGreatMausoleum: 15,
-		
-		iPyramids: 0,
-		iGreatSphinx: 0,
-		
-		iOracle: -60,
 	},
 	iCivGreece : {
 		iColossus: 30,
@@ -724,7 +730,7 @@ dBuildingPreferences = {
 		iOracle: 15,
 	},
 	iCivRome : {
-		iColosseum: 30,
+		iFlavianAmphitheatre: 30,
 		iAquaAppia: 30,
 		iSantaMariaDelFiore: 30,
 		iSistineChapel: 30,
@@ -811,13 +817,13 @@ dBuildingPreferences = {
 		iSagradaFamilia: 30,
 		iCristoRedentor: 20,
 		iWembley: 20,
-		iIberianTradingCompany: 20,
+		iIberianTradingCompanyBuilding: 20,
 		iTorreDeBelem: 15,
 		iNotreDame: 15,
 		iMezquita: 15,
 	},
 	iCivFrance : {
-		iTradingCompany: 40,
+		iTradingCompanyBuilding: 40,
 		iNotreDame: 40,
 		iEiffelTower: 30,
 		iVersailles: 30,
@@ -841,7 +847,7 @@ dBuildingPreferences = {
 		iNalanda: 20,
 	},
 	iCivEngland : {
-		iTradingCompany: 50,
+		iTradingCompanyBuilding: 50,
 		iOxfordUniversity: 30,
 		iWembley: 30,
 		iWestminsterPalace: 30,
@@ -884,7 +890,7 @@ dBuildingPreferences = {
 	iCivPortugal : {
 		iCristoRedentor: 40,
 		iTorreDeBelem: 40,
-		iIberianTradingCompany: 40,
+		iIberianTradingCompanyBuilding: 40,
 		iWembley: 20,
 		iEscorial: 20,
 		iNotreDame: 15,
@@ -894,7 +900,7 @@ dBuildingPreferences = {
 		iTempleOfKukulkan: 20,
 	},
 	iCivItaly : {
-		iColosseum: 30,
+		iFlavianAmphitheatre: 30,
 		iSantaMariaDelFiore: 30,
 		iSistineChapel: 30,
 		iSanMarcoBasilica: 30,
@@ -943,7 +949,7 @@ dBuildingPreferences = {
 		iShalimarGardens: 20,
 	},
 	iCivNetherlands : {
-		iTradingCompany: 60,
+		iTradingCompanyBuilding: 60,
 		iBourse: 40,
 		iDeltaWorks: 40,
 		iAtomium: 30,
