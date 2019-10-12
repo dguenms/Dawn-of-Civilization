@@ -52,76 +52,79 @@ BeginTeam
 	TeamID=13, (Vietnam)
 EndTeam
 BeginTeam
+	TeamID=14, (Teotihuacan)
+EndTeam
+BeginTeam
 	TeamID=15, (Korea)
 EndTeam
 BeginTeam
-	TeamID=17, (Byzantium)
+	TeamID=16, (Byzantium)
 EndTeam
 BeginTeam
-	TeamID=18, (Japan)
+	TeamID=17, (Japan)
 EndTeam
 BeginTeam
-	TeamID=19, (Vikings)
+	TeamID=18, (Vikings)
 EndTeam
 BeginTeam
-	TeamID=20, (Turks)
+	TeamID=19, (Turks)
 EndTeam
 BeginTeam
-	TeamID=21, (Arabia)
+	TeamID=20, (Arabia)
 EndTeam
 BeginTeam
-	TeamID=22, (Tibet)
+	TeamID=21, (Tibet)
 EndTeam
 BeginTeam
-	TeamID=23, (Indonesia)
+	TeamID=22, (Indonesia)
 EndTeam
 BeginTeam
-	TeamID=24, (Burma)
+	TeamID=23, (Burma)
 EndTeam
 BeginTeam
-	TeamID=25, (Moors)
+	TeamID=24, (Moors)
 EndTeam
 BeginTeam
-	TeamID=26, (Spain)
+	TeamID=25, (Spain)
 EndTeam
 BeginTeam
-	TeamID=27, (France)
+	TeamID=26, (France)
 EndTeam
 BeginTeam
-	TeamID=28, (Khmer)
+	TeamID=27, (Khmer)
 EndTeam
 BeginTeam
-	TeamID=29, (England)
+	TeamID=28, (England)
 EndTeam
 BeginTeam
-	TeamID=30, (HolyRome)
+	TeamID=29, (HolyRome)
 EndTeam
 BeginTeam
-	TeamID=31, (KievanRus)
+	TeamID=30, (KievanRus)
 EndTeam
 BeginTeam
-	TeamID=32, (Hungary)
+	TeamID=31, (Hungary)
 EndTeam
 BeginTeam
-	TeamID=33, (Philippines)
+	TeamID=32, (Philippines)
 EndTeam
 BeginTeam
-	TeamID=34, (Swahili)
+	TeamID=33, (Swahili)
 EndTeam
 BeginTeam
-	TeamID=35, (Mamluks)
+	TeamID=34, (Mamluks)
 EndTeam
 BeginTeam
-	TeamID=36, (Mali)
+	TeamID=35, (Mali)
 EndTeam
 BeginTeam
-	TeamID=37, (Poland)
+	TeamID=36, (Poland)
 EndTeam
 BeginTeam
-	TeamID=38, (Zimbabwe)
+	TeamID=37, (Zimbabwe)
 EndTeam
 BeginTeam
-	TeamID=39, (Portugal)
+	TeamID=38, (Portugal)
 EndTeam
 BeginTeam
 	TeamID=39, (Inca)
@@ -182,6 +185,9 @@ BeginTeam
 EndTeam
 BeginTeam
 	TeamID=58, (Canada)
+EndTeam
+BeginTeam
+	TeamID=59, (Israel)
 EndTeam
 BeginTeam
 	TeamID=60, (Independent)
@@ -325,7 +331,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=17
+	Team=16
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM
 	PlayableCiv=1
@@ -339,7 +345,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=18
+	Team=17
 	LeaderType=LEADER_TOKUGAWA
 	CivType=CIVILIZATION_JAPAN
 	PlayableCiv=1
@@ -353,7 +359,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=19
+	Team=18
 	LeaderType=LEADER_RAGNAR
 	CivType=CIVILIZATION_VIKING
 	PlayableCiv=1
@@ -366,7 +372,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=20
+	Team=19
 	LeaderType=LEADER_ALP_ARSLAN
 	CivType=CIVILIZATION_TURKS
 	PlayableCiv=1
@@ -379,7 +385,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=21
+	Team=20
 	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_ARABIA
 	PlayableCiv=1
@@ -394,7 +400,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=22
+	Team=21
 	LeaderType=LEADER_LOBSANG_GYATSO
 	CivType=CIVILIZATION_TIBET
 	PlayableCiv=1
@@ -408,7 +414,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=23
+	Team=22
 	LeaderType=LEADER_HAYAM_WURUK
 	CivType=CIVILIZATION_INDONESIA
 	PlayableCiv=1
@@ -421,7 +427,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=24
+	Team=23
 	LeaderType=LEADER_ANAWRAHTA
 	CivType=CIVILIZATION_BURMA
 	PlayableCiv=1
@@ -433,7 +439,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=25
+	Team=24
 	LeaderType=LEADER_RAHMAN
 	CivType=CIVILIZATION_MOORS
 	PlayableCiv=1
@@ -447,7 +453,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=26
+	Team=25
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN
 	PlayableCiv=1
@@ -461,7 +467,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=27
+	Team=26
 	LeaderType=LEADER_LOUIS_XIV
 	CivType=CIVILIZATION_FRANCE
 	PlayableCiv=1
@@ -476,7 +482,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=28
+	Team=27
 	LeaderType=LEADER_SURYAVARMAN
 	CivType=CIVILIZATION_KHMER
 	PlayableCiv=1
@@ -489,7 +495,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=29
+	Team=28
 	LeaderType=LEADER_VICTORIA
 	CivType=CIVILIZATION_ENGLAND
 	PlayableCiv=1
@@ -503,7 +509,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=30
+	Team=29
 	LeaderType=LEADER_BARBAROSSA
 	CivType=CIVILIZATION_HOLY_ROMAN
 	PlayableCiv=1
@@ -517,7 +523,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=31
+	Team=30
 	LeaderType=LEADER_YAROSLAV
 	CivType=CIVILIZATION_KIEVAN_RUS
 	PlayableCiv=1
@@ -532,7 +538,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=32
+	Team=31
 	LeaderType=LEADER_ISTVAN
 	CivType=CIVILIZATION_HUNGARY
 	PlayableCiv=1
@@ -546,7 +552,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=33
+	Team=32
 	LeaderType=LEADER_LAPU_LAPU
 	CivType=CIVILIZATION_PHILIPPINES
 	PlayableCiv=1
@@ -560,7 +566,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=34
+	Team=33
 	LeaderType=LEADER_SHIRAZI
 	CivType=CIVILIZATION_SWAHILI
 	PlayableCiv=1
@@ -574,7 +580,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=35
+	Team=34
 	LeaderType=LEADER_BAIBARS
 	CivType=CIVILIZATION_MAMLUKS
 	PlayableCiv=1
@@ -589,7 +595,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=36
+	Team=35
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI
 	PlayableCiv=1
@@ -603,7 +609,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=37
+	Team=36
 	LeaderType=LEADER_SOBIESKI
 	CivType=CIVILIZATION_POLAND
 	PlayableCiv=1
@@ -617,7 +623,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
  BeginPlayer
- 	Team=38
+ 	Team=37
 	LeaderType=LEADER_RUSVINGO
 	CivType=CIVILIZATION_ZIMBABWE
 	PlayableCiv=1
@@ -630,7 +636,7 @@ EndPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=39
+	Team=38
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL
 	PlayableCiv=1
@@ -23506,29 +23512,29 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=19, (Vikings)
+		UnitType=UNIT_ARCHER, UnitOwner=18, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=19, (Vikings)
+		UnitType=UNIT_ARCHER, UnitOwner=18, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=19, (Vikings)
+		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=18, (Vikings)
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=19, (Vikings)
+		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=18, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=19, (Vikings)
+		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=18, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SCOUT, UnitOwner=19, (Vikings)
+		UnitType=UNIT_SCOUT, UnitOwner=18, (Vikings)
 	EndUnit
 (	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=19, (Vikings)) (Human only)
+(		UnitType=UNIT_SETTLER, UnitOwner=18, (Vikings)) (Human only)
 (	EndUnit)
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=19, (Vikings)
+		UnitType=UNIT_SETTLER, UnitOwner=18, (Vikings)
 	EndUnit
 EndPlot
 BeginPlot
@@ -24230,15 +24236,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Neapolis
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CATHOLICISM
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -24743,10 +24749,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=19, (Vikings)) (AI only)
+(		UnitType=UNIT_ARCHER, UnitOwner=18, (Vikings)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=19, (Vikings)) (AI only)
+(		UnitType=UNIT_SETTLER, UnitOwner=18, (Vikings)) (AI only)
 (	EndUnit)
 EndPlot
 BeginPlot
@@ -25472,15 +25478,15 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Singidunon
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -26262,10 +26268,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_SPEARMAN, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Alexandreia
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
@@ -26274,7 +26280,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CATHOLICISM
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -26304,16 +26310,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_SPEARMAN, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_WORKER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Athinai
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -26323,7 +26329,7 @@ BeginPlot
 		BuildingType=BUILDING_PARTHENON
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
-		Player17Culture=50, (Byzantium)
+		Player16Culture=50, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -26765,34 +26771,34 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_SPEARMAN, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_SPEARMAN, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_WORKER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_WORKER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_WORKER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Konstantinoupolis
 		CityPopulation=4
 		BuildingType=BUILDING_PALACE
@@ -26811,7 +26817,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CATHOLICISM
-		Player17Culture=250, (Byzantium)
+		Player16Culture=250, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -27152,20 +27158,20 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_SPEARMAN, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMIDS
 		BuildingType=BUILDING_GREAT_SPHINX
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -28380,15 +28386,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Ikonion
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_ORTHODOXY
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -28746,10 +28752,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Hierousalem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -28761,7 +28767,7 @@ BeginPlot
 		ReligionType=RELIGION_ORTHODOXY
 		HolyCityReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CATHOLICISM
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -29165,10 +29171,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Damaskos
 		CityPopulation=3
 		BuildingType=BUILDING_WALLS
@@ -29176,7 +29182,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -29589,17 +29595,17 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=17, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=17, (Byzantium)
+		CityOwner=16, (Byzantium)
 		CityName=Trapezounta
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_ORTHODOXY
-		Player17Culture=10, (Byzantium)
+		Player16Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -32611,14 +32617,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=20, (Turks)
+		UnitType=UNIT_ARCHER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=20, (Turks)
+		CityOwner=19, (Turks)
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player20Culture=10, (Turks)
+		Player19Culture=10, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -33422,14 +33428,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=20, (Turks)
+		UnitType=UNIT_ARCHER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=20, (Turks)
+		CityOwner=19, (Turks)
 		CityName=Samarqand
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
-		Player20Culture=10, (Turks)
+		Player19Culture=10, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -34624,21 +34630,21 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=20, (Turks)
+		UnitType=UNIT_WORKER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=20, (Turks)
+		UnitType=UNIT_WORKER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=20, (Turks)
+		UnitType=UNIT_WORKER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=20, (Turks)
+		CityOwner=19, (Turks)
 		CityName=Orduqent
 		CityPopulation=2
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
-		Player20Culture=10, (Turks)
+		Player19Culture=10, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -35015,14 +35021,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=20, (Turks)
+		UnitType=UNIT_ARCHER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=20, (Turks)
+		CityOwner=19, (Turks)
 		CityName=Kashgar
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
-		Player20Culture=40, (Turks)
+		Player19Culture=40, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -37533,15 +37539,15 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=20, (Turks)
+		UnitType=UNIT_ARCHER, UnitOwner=19, (Turks)
 	EndUnit
 	BeginCity
-		CityOwner=20, (Turks)
+		CityOwner=19, (Turks)
 		CityName=Dukhan
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_BUDDHISM
-		Player20Culture=20, (Turks)
+		Player19Culture=20, (Turks)
 	EndCity
 EndPlot
 BeginPlot
@@ -39489,7 +39495,7 @@ BeginPlot
 		CityOwner=3, (China)
 		CityName=Chang'an, (Xi'an)
 		CityPopulation=1, (4)
-(		BuildingType=BUILDING_PALACE)
+		BuildingType=BUILDING_PALACE
 (		BuildingType=BUILDING_BARRACKS)
 (		BuildingType=BUILDING_FORGE)
 (		BuildingType=BUILDING_CHINESE_TAIXUE)
@@ -44635,49 +44641,49 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 (	BeginUnit)
-(		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=18, (Japan)) (AI only)
+(		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=17, (Japan)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=18, (Japan)) (AI only)
+(		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=17, (Japan)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=18, (Japan)) (AI only)
+(		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=17, (Japan)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=18, (Japan)) (AI only)
+(		UnitType=UNIT_ARCHER, UnitOwner=17, (Japan)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=18, (Japan)) (AI only)
+(		UnitType=UNIT_ARCHER, UnitOwner=17, (Japan)) (AI only)
 (	EndUnit)
 	BeginUnit
-		UnitType=UNIT_SWORDSMAN, UnitOwner=18, (Japan)
+		UnitType=UNIT_SWORDSMAN, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SWORDSMAN, UnitOwner=18, (Japan)
+		UnitType=UNIT_SWORDSMAN, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=18, (Japan)
+		UnitType=UNIT_ARCHER, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=18, (Japan)
+		UnitType=UNIT_ARCHER, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BUDDHIST_MISSIONARY, UnitOwner=18, (Japan)
+		UnitType=UNIT_BUDDHIST_MISSIONARY, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BUDDHIST_MISSIONARY, UnitOwner=18, (Japan)
+		UnitType=UNIT_BUDDHIST_MISSIONARY, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BUDDHIST_MISSIONARY, UnitOwner=18, (Japan)
+		UnitType=UNIT_BUDDHIST_MISSIONARY, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=18, (Japan)
+		UnitType=UNIT_SETTLER, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=18, (Japan)
+		UnitType=UNIT_SETTLER, UnitOwner=17, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=18, (Japan)
+		UnitType=UNIT_SETTLER, UnitOwner=17, (Japan)
 	EndUnit
 EndPlot
 BeginPlot

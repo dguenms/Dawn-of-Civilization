@@ -52,6 +52,9 @@ BeginTeam
 	TeamID=13, (Vietnam)
 EndTeam
 BeginTeam
+	TeamID=14, (Teotihuacan)
+EndTeam
+BeginTeam
 	TeamID=15, (Korea)
 EndTeam
 BeginTeam
@@ -182,6 +185,9 @@ BeginTeam
 EndTeam
 BeginTeam
 	TeamID=58, (Canada)
+EndTeam
+BeginTeam
+	TeamID=59, (Israel)
 EndTeam
 BeginTeam
 	TeamID=60, (Independent)
