@@ -4716,7 +4716,7 @@ dIdentifiers = {
 	"Quitu"			:	"Quitu",
 	"Q'umarkaj"		:	"Q'umarkaj",
 	"Santa Cruz del Quich&#233;" :		"Q'umarkaj",
-	"Utatl&#225;n"		:	"Q'umarkaj",
+	"Utatlan"		:	"Q'umarkaj",
 	"C&#243;rdoba"		:	"Qurtubah",
 	"C&#243;rdova"		:	"Qurtubah",
 	"Cordoba"		:	"Qurtubah",
