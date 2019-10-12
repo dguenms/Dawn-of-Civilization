@@ -114,6 +114,7 @@ tCapitals = (
 (91, 30), # Thanjavur
 (72, 30), # Aksum
 (101, 37), # Co Loa (Hanoi)
+(18, 37), # Tenotihuacan (Tollan)
 (109, 46), # Seoul
 (68, 45), # Constantinople
 (113, 45), # Kyoto
@@ -158,6 +159,7 @@ tCapitals = (
 (118, 13),# Sydney
 (68, 15), # Pretoria
 (30, 52), # Montreal
+(73, 38), # Jerusalem
 )
 
 dChangedCapitals = {
@@ -216,6 +218,7 @@ tBirthArea = (
 ((90, 27), 	(93, 32)), 	# Tamils
 ((70, 27),	(73, 30)),	# Ethiopia
 ((100, 35),	(104, 39)),	# Vietnam
+((15, 36), 	(20, 41)), 	# Teotihuacan
 ((107, 45), (110, 49)), 	# Korea
 ((64, 38), 	(74, 45)), 	# Byzantium
 ((111, 41), (116, 49)), 	# Japan
@@ -260,6 +263,7 @@ tBirthArea = (
 ((112, 9),	(120, 19)),	# Australia
 ((66, 13),	(69, 17)),	# Boer
 ((20, 50), 	(35, 60)), 	# Canada
+((72, 37), 	(74, 39)), 	# Israel
 )
 
 dChangedBirthArea = {
@@ -326,6 +330,7 @@ tCoreArea = (
 ((90, 27),	(93, 32)),	# Tamils
 ((70, 27),	(73, 30)),	# Ethiopia
 ((100, 35),	(104, 38)),	# Vietnam
+((17, 36),	(19, 37)),	# Teotihuacan
 ((108, 45),	(110, 48)),	# Korea
 ((64, 40),	(72, 46)),	# Byzantium
 ((112, 45),	(116, 47)),	# Japan
@@ -370,6 +375,7 @@ tCoreArea = (
 ((112, 10),	(118, 18)),	# Australia
 ((62, 10),	(70, 17)),	# Boer
 ((27, 50),	(35, 52)),	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedCoreArea = {
@@ -457,6 +463,7 @@ tNormalArea = (
 ((90, 28), 	(93, 34)), 	# Tamils
 ((68, 25), 	(77, 30)), 	# Ethiopia
 ((101, 35), 	(104, 39)), 	# Vietnam
+((15, 35), 	(20, 40)), 	# Teotihuacan
 ((108, 45), 	(110, 49)), 	# Korea
 ((64, 40), 	(72, 45)), 	# Byzantium
 ((111, 41), 	(116, 52)), 	# Japan
@@ -501,6 +508,7 @@ tNormalArea = (
 ((101, 6),	(123, 23)), # Australia
 ((60, 8),	(72, 17)),	# Boers
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedNormalArea = {
@@ -556,6 +564,7 @@ tBroaderArea = (
 ((90, 28), 	(93, 34)), 	# Tamils
 ((67, 21), 	(77, 30)), 	# Ethiopia
 ((101, 35), 	(104, 39)), 	# Vietnam
+((14, 32), 	(24, 43)), 	# Teotihuacan
 ((106, 45), 	(110, 52)), 	# Korea
 ((58, 34), 	(74, 45)), 	# Byzantium
 ((110, 40), 	(116, 56)), 	# Japan
@@ -600,6 +609,7 @@ tBroaderArea = (
 ((112, 10),	(118, 20)), # Australia
 ((60, 8),	(72, 17)),	# Boers
 (( 8, 50), 	(37, 67)), 	# Canada
+((72, 37), 	(73, 39)), 	# Israel
 )
 
 dChangedBroaderArea = {

@@ -2726,6 +2726,54 @@
 		<Spanish>Oghuz</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN</Tag>
+		<English>Artisan</English>
+		<French>
+			<Text>Artisan:Artisans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Artisan</German>
+		<Italian>Artisan</Italian>
+		<Spanish>Artisan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Artisan[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], can be stationed in a city to provide it with two culture points per turn.</English>
+		<French>The [COLOR_UNIT_TEXT]artisan[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], can be stationed in a city to provide it with two culture points per turn.</French>
+		<German>The [COLOR_UNIT_TEXT]Artisan[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], can be stationed in a city to provide it with two culture points per turn.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Artisan[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], can be stationed in a city to provide it with two culture points per turn.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Artisan[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], can be stationed in a city to provide it with two culture points per turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TEOTIHUACAN_ARTISAN_HELP</Tag>
+		<English>[ICON_BULLET]Creates 2 [ICON_CULTURE] when it ends its turn in a city</English>
+		<French>[ICON_BULLET]Cr&#233;e 2 [ICON_CULTURE] lorsqu'il termine son tour dans une ville</French>
+		<German>[ICON_BULLET]Creates 2 [ICON_CULTURE] when it ends its turn in a city</German>
+		<Italian>[ICON_BULLET]Creates 2 [ICON_CULTURE] when it ends its turn in a city</Italian>
+		<Spanish>[ICON_BULLET]Creates 2 [ICON_CULTURE] when it ends its turn in a city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA</Tag>
+		<English>Merkava</English>
+		<French>
+			<Text>Merkava:Merkavas</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Merkava</German>
+		<Italian>Merkava</Italian>
+		<Spanish>Merkava</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ISRAELI_MERKAVA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</English>
+		<French>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</French>
+		<German>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Merkava[COLOR_REVERT], the Israeli replacement for the [COLOR_UNIT_TEXT]Main Battle Tank[COLOR_REVERT], receives a defensive bonus, begins with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion, and has no resource requirements.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_TURKIC_OGHUZ_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</English>
 		<French>The [COLOR_UNIT_TEXT]Oghuz[COLOR_REVERT], the Turkic replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion, have hidden nationality and can attack units of other civilizations without declaring war.</French>

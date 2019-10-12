@@ -158,6 +158,7 @@ iCivMaya :	Techs([iProperty, iMasonry, iSmelting, iCeremony], column=1, exceptio
 iCivTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivVietnam :	Techs([iAlloys, iWriting, iCalendar, iPriesthood, iBloomery], column=2),
+iCivTeotihuacan :	Techs([iProperty, iLeverage, iCeremony], column=1, exceptions=[iSailing]),
 iCivKorea :	Techs(column=5, exceptions=[iGeneralship, iEngineering, iCurrency]),
 iCivByzantium :	Techs([iArchitecture, iPolitics, iEthics], column=5),
 iCivJapan :	Techs([iNobility, iSteel, iArtisanry, iPolitics], column=5),
@@ -205,6 +206,7 @@ iCivBrazil :	Techs([iRepresentation, iNationalism, iBiology], column=12),
 iCivAustralia :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
 iCivBoers :		Techs(column=13),
 iCivCanada :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
+iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 },
 {
 iCivIndependent:Techs(column=5),
@@ -385,6 +387,10 @@ dTechPreferences = {
 		iHeritage : 20,
 		iFortification : 40,
 		iOptics : -20,
+	},
+	iCivTeotihuacan : {
+		iMasonry: 30,
+		iSmelting: 30,
 	},
 	iCivKorea : {
 		iPrinting: 30,
@@ -841,6 +847,9 @@ dBuildingPreferences = {
 		iMonolithicChurch: 40,
 	},
 	iCivVietnam : {
+	},
+	iCivTeotihuacan : {
+		iPyramidOfTheSun: 40,
 	},
 	iCivKorea : {
 		iCheomseongdae: 30,

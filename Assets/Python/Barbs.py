@@ -24,6 +24,7 @@ tMinorCities = (
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
+(-500, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 (-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
@@ -32,7 +33,7 @@ tMinorCities = (
 (-250, (19, 35), iNative, 'Danibaan', 2, iHolkan, 1),	# Monte Alb�n
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
+#(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
@@ -162,6 +163,12 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
+		
+		# Jaguars in classical Mesoamerica
+		if utils.isYearIn(150, 500):
+			self.checkSpawn(iBarbarian, iJaguar, 1, (15, 36), (20, 41), self.spawnUprising, iGameTurn, 6, 4)	
+		elif utils.isYearIn(500, 1150):
+			self.checkSpawn(iBarbarian, iJaguar, 1, (15, 36), (20, 41), self.spawnUprising, iGameTurn, 4, 2)
 			
 		#pirates in Mediterranean
 		if utils.isYearIn(-210, 50):
@@ -264,7 +271,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 
 		#American natives
-		if utils.isYearIn(600, 1100):
+		if utils.isYearIn(400, 1100):
 			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
 			if utils.getScenario() == i3000BC:  #late start condition
 				self.checkSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)

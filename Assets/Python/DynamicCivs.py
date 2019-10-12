@@ -123,6 +123,7 @@ dSpecificVassalTitles = {
 	iArabia : {
 		iOttomans : "TXT_KEY_CIV_ARABIAN_OTTOMANS",
 		iMughals : "TXT_KEY_CIV_ARABIAN_MUGHALS",
+		iIsrael : "TXT_KEY_CIV_ARABIAN_ISRAEL",
 	},
 	iMoors : {
 		iArabia : "TXT_KEY_CIV_MOORISH_ARABIA",
@@ -169,6 +170,7 @@ dSpecificVassalTitles = {
 		iCongo : "TXT_KEY_ADJECTIVE_TITLE",
 		iOttomans : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_FRENCH_AMERICA",
+		iIsrael : "TXT_KEY_CIV_FRENCH_ISRAEL",
 	},
 	iEngland : {
 		iEgypt : "TXT_KEY_MANDATE_OF",
@@ -192,6 +194,7 @@ dSpecificVassalTitles = {
 		iOttomans : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_ENGLISH_AMERICA",
 		iZimbabwe : "TXT_KEY_CIV_ENGLISH_ZIMBABWE",
+		iIsrael : "TXT_KEY_CIV_ENGLISH_ISRAEL",
 	},
 	iHolyRome : {
 		iItaly : "TXT_KEY_CIV_HOLY_ROMAN_ITALY",
@@ -249,7 +252,8 @@ dSpecificVassalTitles = {
 		iIndonesia : "TXT_KEY_CIV_OTTOMAN_INDONESIA",
 		iRussia : "TXT_KEY_CIV_OTTOMAN_RUSSIA",
 		iKievanRus : "TXT_KEY_CIV_OTTOMAN_RUS'",
-		iHungary : "TXT_KEY_CIV_OTTOMAN_HUNGARY"
+		iHungary : "TXT_KEY_CIV_OTTOMAN_HUNGARY",
+		iIsrael : "TXT_KEY_CIV_OTTOMAN_ISRAEL",
 	},
 	iGermany : {
 		iHolyRome : "TXT_KEY_CIV_GERMAN_HOLY_ROME",
@@ -476,6 +480,7 @@ dEmpireThreshold = {
 	iCarthage : 4,
 	iIndonesia : 4,
 	iBurma : 2,
+	iTeotihuacan : 3,
 	iKorea : 4,
 	iRussia : 8,
 	iHolyRome : 3,
@@ -527,6 +532,7 @@ dAdjectiveChanges = {
 dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu"],
+	iTeotihuacan : ["Tollan"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Oslo", "Nidaros", "Roskilde"],
 	iKhmer : ["Pagan", "Dali", "Angkor"],
@@ -563,6 +569,7 @@ dStartingLeaders = [
 	iTamils : iRajendra,
 	iEthiopia : iEzana,
 	iVietnam : iTrung,
+	iTeotihuacan : iAtlatlCauac,
 	iKorea : iWangKon,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
@@ -606,6 +613,7 @@ dStartingLeaders = [
 	iBrazil : iPedro,
 	iBoers : iKruger,
 	iCanada : iMacDonald,
+	iIsrael : iBenGurion,
 },
 # 600 AD
 {
@@ -1133,6 +1141,13 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_KOREA_GORYEO"
 			
 		return "TXT_KEY_CIV_KOREA_JOSEON"
+	
+	elif iPlayer == iTeotihuacan:
+		if not isCapital(iPlayer, ["Tollan"]):
+				return capitalName(iPlayer)
+				
+		if iGameTurn >= getTurnForYear(800):
+			return "TXT_KEY_CIV_TEOTIHUACAN_TULA"
 		
 	elif iPlayer == iByzantium:
 		if iReligion == iIslam:
@@ -1330,6 +1345,10 @@ def specificName(iPlayer):
 		if getColumn(iGermany) <= 14 and pHolyRome.isAlive() and not teamHolyRome.isVassal(iGermany):
 			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
 	
+	elif iPlayer == iIsrael:
+		if iReligion == iIslam:
+			return "TXT_KEY_CIV_ISRAEL_PALESTINE"
+	
 def adjective(iPlayer, bIgnoreVassal = False):
 	if isCapitulated(iPlayer):
 		sForeignAdjective = getOrElse(getOrElse(dForeignAdjectives, getMaster(iPlayer), {}), iPlayer)
@@ -1496,6 +1515,10 @@ def specificAdjective(iPlayer):
 			
 		if not gc.getGame().isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
+			
+	elif iPlayer == iTeotihuacan:
+		if iGameTurn >= getTurnForYear(800):
+			return "TXT_KEY_CIV_TEOTIHUACAN_TOLTEC"
 			
 	elif iPlayer == iByzantium:
 		if pRome.getNumCities() > 0:
@@ -1916,6 +1939,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	# elif iPlayer == iVietnam:
 		# pass
 	
+	elif iPlayer == iTeotihuacan:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if bCityStates:
+			return "TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL"
+				
 	elif iPlayer == iKorea:
 		if iEra >= iIndustrial:
 			if bEmpire:

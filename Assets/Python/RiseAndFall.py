@@ -1967,6 +1967,9 @@ class RiseAndFall:
 					if iNewWorldCiv == iMaya:
 						tContactZoneTL = (15, 30)
 						tContactZoneBR = (34, 42)
+					elif iNewWorldCiv == iTeotihuacan:
+						tContactZoneTL = (11, 31)
+						tContactZoneBR = (34, 43)
 					elif iNewWorldCiv == iAztecs:
 						tContactZoneTL = (11, 31)
 						tContactZoneBR = (34, 43)
@@ -2048,7 +2051,7 @@ class RiseAndFall:
 							
 						if iNewWorldCiv == iInca:
 							utils.makeUnitAI(iAucac, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-						elif iNewWorldCiv == iAztecs:
+						elif iNewWorldCiv == iAztecs or iNewWorldCiv == iTeotihuacan:
 							utils.makeUnitAI(iJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 							utils.makeUnitAI(iHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 						elif iNewWorldCiv == iMaya:
@@ -2539,6 +2542,8 @@ class RiseAndFall:
 			utils.makeUnit(iCavalry, iCiv, tPlot, 2)
 			utils.makeUnit(iRifleman, iCiv, tPlot, 4)
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iInfantry, iCiv, tPlot, 2)
 
 
 	def createStartingUnits(self, iCiv, tPlot):
@@ -2645,6 +2650,9 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iGalley, iCiv, tSeaPlot, 1)
+		elif iCiv == iTeotihuacan:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
 			utils.createMissionaries(iCiv, 1)
@@ -3045,6 +3053,15 @@ class RiseAndFall:
 				utils.makeUnit(iSteamship, iCiv, tSeaPlot, 2)
 				utils.makeUnit(iIronclad, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iTorpedoBoat, iCiv, tSeaPlot, 1)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iInfantry, iCiv, tPlot, 3)
+			utils.makeUnit(iTank, iCiv, tPlot, 3)
+			utils.makeUnit(iFighter, iCiv, tPlot, 3)
+			utils.makeUnit(iSpy, iCiv, tPlot, 3)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iTransport, iCiv, tSeaPlot, 1)
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iCiv, false)
@@ -3125,6 +3142,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iVietnam:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iTeotihuacan:
+			utils.makeUnit(iArtisan, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iByzantium:
@@ -3218,6 +3237,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iCanada:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iIsrael:
+			utils.makeUnit(iLabourer, iCiv, tPlot, 2)
 			
 	def create1700ADstartingUnits(self):
 

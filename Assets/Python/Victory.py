@@ -54,6 +54,10 @@ tSomaliaBR = (77, 29)
 tSubeqAfricaTL = (60, 10)
 tSubeqAfricaBR = (72, 29)
 
+# third Teotihuacan goal: control 100% of Mesoamerica in 1000 AD 
+tMesoamericaTL = (15, 32)
+tMesoamericaBR = (23, 40)
+
 # third Byzantine goal: control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
 tNearEastTL = (69, 37)
 tNearEastBR = (76, 45)
@@ -711,6 +715,35 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iVietnam, 2)
 			else:
 				lose(iVietnam, 2)
+				
+	elif iPlayer == iTeotihuacan:
+		
+		# first goal: have 500 culture in 550
+		if iGameTurn == getTurnForYear(550):
+			if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
+				win(iTeotihuacan, 0)
+			else:
+				lose(iTeotihuacan, 0)
+			
+		# second goal: experience a golden age by 550 AD
+		if isPossible(iTeotihuacan, 1):
+			if data.iTeotihuacanGoldenAgeTurns >= utils.getTurns(8):
+				win(iTeotihuacan, 1)
+				
+			if pTeotihuacan.isGoldenAge() and not pTeotihuacan.isAnarchy():
+				data.iTeotihuacanGoldenAgeTurns += 1
+				
+		if iGameTurn == getTurnForYear(550):
+			expire(iTeotihuacan, 1)
+		
+		# third goal: control all tiles in Mesoamerica in 1000 AD
+		if iGameTurn == getTurnForYear(1000):
+			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+			if percentMesoamerica >= 99.5:
+				win(iTeotihuacan, 2)
+			else: 
+				lose(iTeotihuacan, 2)
 				
 	elif iPlayer == iKorea:
 	
@@ -1863,6 +1896,33 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(2000):
 			expire(iCanada, 2)
 			
+	elif iPlayer == iIsrael :
+
+		# first goal: build an ICBM by 1980
+		if isPossible(iIsrael, 0):
+			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
+			if iIsraeliNuclearArsenal >= 1:
+				win(iIsrael, 0)
+
+		if iGameTurn == getTurnForYear(1980):
+			expire(iIsrael, 0)
+
+		# second goal: have the city with the highest research output for 10 turns (no time limit)
+		if isPossible(iIsrael, 1):
+			if data.iIsraeliResearchTurns >= 10:
+				win(iIsrael, 1)
+			
+			x, y = 0, 0
+			capital = pPlayer.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			if pBestCity.getOwner() == iPlayer: 
+				data.iIsraeliResearchTurns += 1
+
+		# third goal: create two great spies (no time limit)
+		# see onGreatPersonBorn()
+		
 			
 	# check religious victory (human only)
 	if utils.getHumanID() == iPlayer:
@@ -2407,6 +2467,13 @@ def onGreatPersonBorn(iPlayer, unit):
 				if data.iVietnamGreatGenerals >= 3:
 					win(iVietnam, 1)
 					
+	# third Israeli goal: get two great spies (no time limit)
+	if iPlayer == iIsrael:
+		if isPossible(iIsrael, 2):
+			if pUnitInfo.getGreatPeoples(iSpecialistGreatSpy):
+				if pIsrael.getGreatSpiesCreated() >= 2:
+					win(iIsrael, 2)
+					
 def onUnitPillage(iPlayer, iGold, iUnit):
 	if iGold >= 1000: return
 
@@ -2836,7 +2903,10 @@ def checkReligiousGoal(iPlayer, iGoal):
 				
 			# Teotl: sacrifice ten slaves
 			elif paganReligion == "Teotl":
-				if data.iTeotlSacrifices >= 10:
+				if iPlayer == iTeotihuacan:
+					if data.iTeotlSacrifices >= 200:
+						return 1
+				elif data.iTeotlSacrifices >= 10:
 					return 1
 					
 			# Vedism: have 100 turns of cities celebrating "We Love the King" day
@@ -2982,7 +3052,11 @@ def cityWonders(city):
 def cityTradeIncome(city):
 	if not city: return 0
 	return city.getTradeYield(YieldTypes.YIELD_COMMERCE)
-	
+
+def cityResearchOutput(city):
+	if not city: return 0
+	return city.getCommerceRate(CommerceTypes.COMMERCE_RESEARCH)
+
 def cityHappiness(city):
 	if not city: return 0
 	
@@ -4045,6 +4119,8 @@ def getPaganGoalHelp(iPlayer):
 		iCount = data.iTeotlSacrifices
 		if iPlayer == iMaya:
 			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
+		if iPlayer == iTeotihuacan:
+			return getIcon(iCount >= 200) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 200))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 	
 	elif paganReligion == "Vedism":
@@ -4300,6 +4376,15 @@ def getUHVHelp(iPlayer, iGoal):
 			bSouthAsia = isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs)
 			aHelp.append(getIcon(bSouthAsia) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES", ()))
 
+	elif iPlayer == iTeotihuacan:
+		if iGoal == 0:
+			iCulture = pTeotihuacan.countTotalCulture()
+			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+		elif iGoal == 2: 
+			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))))
+	
 	elif iPlayer == iKorea:
 		if iGoal == 0:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)
@@ -4962,5 +5047,21 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iPeaceDeals = data.iCanadianPeaceDeals
 			aHelp.append(getIcon(iPeaceDeals >= 12) + localText.getText("TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS", (iPeaceDeals, 12)))
+	
+	elif iPlayer == iIsrael:
+		if iGoal == 0:
+			iIsraeliNuclearArsenal = pIsrael.getUnitClassCount(gc.getUnitInfo(iICBM).getUnitClassType())
+			aHelp.append(getIcon(iIsraeliNuclearArsenal >= 1) + localText.getText("TXT_KEY_VICTORY_NUCLEAR_ARSENAL", (iIsraeliNuclearArsenal, 1)))
+		elif iGoal == 1:
+			x, y = 0, 0
+			capital = pIsrael.getCapitalCity()
+			if capital:
+				x, y = capital.getX(), capital.getY()
+			pBestCity = getBestCity(iPlayer, (x, y), cityResearchOutput)
+			iResearchTurns = data.iIsraeliResearchTurns
+			aHelp.append(getIcon(pBestCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_CITY", (pBestCity.getName(),)) + ' ' + getIcon(iResearchTurns >= 10) + localText.getText("TXT_KEY_VICTORY_MOST_RESEARCH_TURNS", (iResearchTurns, 10)))
+		elif iGoal == 2:
+			iSpies = pIsrael.getGreatSpiesCreated()
+			aHelp.append(getIcon(iSpies >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_SPIES", (iSpies, 2)))
 			
 	return aHelp

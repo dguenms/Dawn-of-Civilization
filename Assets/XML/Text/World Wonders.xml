@@ -234,6 +234,34 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] adds extra food to all rainforest tiles worked by its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN</Tag>
+		<English>Pyramid of the Sun</English>
+		<French>
+			<Text>Pyramide du Soleil</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pyramid of the Sun</German>
+		<Italian>Pyramid of the Sun</Italian>
+		<Spanish>Pyramid of the Sun</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_HELP</Tag>
+		<English>[ICON_BULLET]Golden Ages require one fewer Great Person</English>
+		<French>[ICON_BULLET]Les &#194;ges d'or n&#233;cessitent un personnage illustre de moins</French>
+		<German>[ICON_BULLET]Golden Ages require one fewer Great Person</German>
+		<Italian>[ICON_BULLET]Golden Ages require one fewer Great Person</Italian>
+		<Spanish>[ICON_BULLET]Golden Ages require one fewer Great Person</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] reduces by 1 the number of Great People required to start a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT]. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Pyramide du Soleil[COLOR_REVERT] r&#233;duit de 1 le nombre de personnages illustres n&#233;cessaires pour d&#233;clencher un [COLOR_HIGHLIGHT_TEXT]&#194;ge d'or[COLOR_REVERT]. Elle augmente les chances de produire un [COLOR_UNIT_TEXT]Proph&#232;te illustre[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] reduces by 1 the number of Great People required to start a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT]. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] reduces by 1 the number of Great People required to start a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT]. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pyramid of the Sun[COLOR_REVERT] reduces by 1 the number of Great People required to start a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT]. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
 		<French>

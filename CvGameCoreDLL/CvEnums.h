@@ -1270,6 +1270,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	YAROSLAV,
 	ISTVAN,
 	KOSSUTH,
+	ATLATL_CAUAC,
+	BEN_GURION,
 	NUM_LEADERHEADS
 };
 
@@ -1358,6 +1360,7 @@ enum PlayerTypes				// Exposed to Python
 	TAMILS,
 	ETHIOPIA,
 	VIETNAM,
+	TEOTIHUACAN,
 	KOREA,
 	BYZANTIUM,
 	JAPAN,
@@ -1402,6 +1405,7 @@ enum PlayerTypes				// Exposed to Python
 	AUSTRALIA,
 	BOERS,
 	CANADA,
+	ISRAEL,
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,

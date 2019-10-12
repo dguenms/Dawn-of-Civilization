@@ -1171,6 +1171,10 @@ def getUHVTileInfo(argsList):
 			
 		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
 			return 71
+
+	elif iPlayer == iTeotihuacan:
+		if utils.isPlotInArea((x, y), vic.tMesoamericaTL, vic.tMesoamericaBR):
+			return 86
 				
 		# free IDs: 20
 		# continue with ID 72

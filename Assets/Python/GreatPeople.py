@@ -23,6 +23,7 @@ def getAlias(iCiv, iType, iEra):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivIran: return iCivPersia
 	elif iCiv == iCivManchuria: return iCivChina
+	elif iCiv == iCivTeotihuacan: return iCivMaya
 	
 	return iCiv
 	
@@ -4646,6 +4647,65 @@ iCivCanada : {
 		"William Stephenson", # 20th
 		"Guy D'Artois", # 20th
 		"Igor Gouzenko", # 20th
+	],
+},
+iCivIsrael : { # all 20th century
+	iGreatProphet : [
+		"Martin Buber",
+		"Ovadia Yosef",
+		"Yeshayahu Leibowitz",
+		"Adin Steinsalz",
+		"fNaamah Kelman",
+	],
+	iGreatArtist : [
+		"fRachel Bluwstein",
+		"Marcel Janco",
+		"Joseph Zartsky",
+		"Shmuel Yosef Agnon",
+		"fNaomi Shemer",
+		"Amos Oz",
+	],
+	iGreatScientist : [
+		"Yuval Ne'eman",
+		"fAda Yonath",
+		"Aaron Ciechanover",
+		"Robert Aumann",
+		"Arieh Warshel",
+		"Adi Shamir",
+	],
+	iGreatMerchant : [
+		"Michael Bruno",
+		"Daniel Kahneman",
+		"Moshe Schnitzer",
+		"fShari Arison",
+	],
+	iGreatEngineer : [
+		"Moshe Novomeysky",
+		"Arieh Sharon",
+		"fRachel Shalon",
+		"Dan Shechtman",
+		"Dov Frohman",
+	],
+	iGreatStatesman : [
+		"Abba Eban",
+		"fGolda Meir",
+		"Menachem Begin",
+		"Yitzhak Rabin",
+		"Shimon Peres",
+	],
+	iGreatGeneral : [
+		"Moshe Dayan",
+		"Israel Tal",
+		"Michael Barkai",
+		"fOrna Barbivai",
+	],
+	iGreatSpy : [
+		"fHannah Szenes",
+		"Isser Harel",
+		"Jonathan Pollard",
+		"Eli Cohen",
+		"Gamliel Cohen",
+		"fYolande Harmer",
 	],
 },
 }

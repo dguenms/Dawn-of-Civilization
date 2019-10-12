@@ -218,6 +218,18 @@
 		<Spanish>French Mandate of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_ISRAEL</Tag>
+		<English>French Mandatory Palestine</English>
+		<French>
+			<Text>Palestine mandataire fran&#231;aise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>French Mandatory Palestine</German>
+		<Italian>French Mandatory Palestine</Italian>
+		<Spanish>French Mandatory Palestine</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>
 		<English>Cisalpine Republic</English>
 		<French>

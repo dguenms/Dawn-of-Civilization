@@ -82,6 +82,8 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("blockade", self.onBlockade)
 		eventManager.addEventHandler("peaceBrokered", self.onPeaceBrokered)
 		eventManager.addEventHandler("EndPlayerTurn", self.onEndPlayerTurn)
+		eventManager.addEventHandler("bordersOpened", self.onBordersOpened)
+		eventManager.addEventHandler("bordersClosed", self.onBordersClosed)
 	       
 		self.eventManager = eventManager
 
@@ -245,6 +247,10 @@ class CvRFCEventHandler:
 		if city.isCapital():
 			self.rnf.createStartingWorkers(iPlayer, (city.getX(), city.getY()))
 		
+		# Israeli UP
+		if city.isHasReligion(iJudaism):
+			self.up.computeAliyahBonus()
+			
 		utils.cityConquestCulture(city, iPlayer, iOwner)
 		
 		if iOwner == iBoers:
@@ -258,6 +264,10 @@ class CvRFCEventHandler:
 			
 		vic.onCityRazed(iPlayer, city)	
 		sta.onCityRazed(iPlayer, city)
+		
+		# Israeli UP
+		if city.isHasReligion(iJudaism):
+			self.up.computeAliyahBonus()
 
 	def onCityBuilt(self, argsList):
 		city = argsList[0]
@@ -748,6 +758,17 @@ class CvRFCEventHandler:
 		iReligion, iOwner, pSpreadCity = argsList
 		
 		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
+		
+		# Israeli UP
+		if iReligion == iJudaism:
+			self.up.computeAliyahBonus()
+
+	def onReligionRemove(self, argsList):
+		iReligion, iOwner, pRemoveCity = argsList
+
+		# Israeli UP
+		if iReligion == iJudaism:
+			self.up.computeAliyahBonus()
 
 	def onFirstContact(self, argsList):
 		iTeamX,iHasMetTeamY = argsList
@@ -894,7 +915,21 @@ class CvRFCEventHandler:
 		iBroker, iPlayer1, iPlayer2 = argsList
 		
 		vic.onPeaceBrokered(iBroker, iPlayer1, iPlayer2)
-		
+	
+	def onBordersOpened(self, argsList):
+		iPlayer1, iPlayer2 = argsList
+
+		# Israeli UP
+		if iPlayer1 == iIsrael or iPlayer2 == iIsrael:
+			self.up.computeAliyahBonus()
+
+	def onBordersClosed(self, argsList):
+		iPlayer1, iPlayer2 = argsList
+
+		# Israeli UP
+		if iPlayer1 == iIsrael or iPlayer2 == iIsrael:
+			self.up.computeAliyahBonus()
+	
 	def onEndPlayerTurn(self, argsList):
 		iGameTurn, iPlayer = argsList
 		

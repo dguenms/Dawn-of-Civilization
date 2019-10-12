@@ -334,6 +334,18 @@
 		<Spanish>Eyalet of Aceh</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_ISRAEL</Tag>
+		<English>Mutasarrifate of Jerusalem</English>
+		<French>
+			<Text>Moutassarifat de J&#233;rusalem</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Mutasarrifate of Jerusalem</German>
+		<Italian>Mutasarrifate of Jerusalem</Italian>
+		<Spanish>Mutasarrifate of Jerusalem</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_OTTOMAN_ADJECTIVE</Tag>
 		<English>
 			<Text>Turkish:Turks</Text>

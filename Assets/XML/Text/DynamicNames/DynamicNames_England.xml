@@ -290,6 +290,18 @@
 		<Spanish>%s2 Mandate of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_ISRAEL</Tag>
+		<English>%s2 Mandatory Palestine</English>
+		<French>
+			<Text>Palestine mandataire %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Mandatory Palestine</German>
+		<Italian>%s2 Mandatory Palestine</Italian>
+		<Spanish>%s2 Mandatory Palestine</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
 		<French>

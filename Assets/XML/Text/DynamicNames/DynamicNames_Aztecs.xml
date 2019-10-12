@@ -53,7 +53,7 @@
 		<Tag>TXT_KEY_CIV_AZTECS_DEFAULT</Tag>
 		<English>%s2 Triple Alliance</English>
 		<French>
-			<Text>Triple Alliance %s2</Text>
+			<Text>Altepetl de Tenochtitlan</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -89,13 +89,13 @@
 		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
 		<English>Mexican Altepetl</English>
 		<French>
-			<Text>Altepetl mexicain</Text>
-			<Gender>Male</Gender>
+			<Text>Triple alliance %s2</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Mexican Altepetl</German>
-		<Italian>Mexican Altepetl</Italian>
-		<Spanish>Mexican Altepetl</Spanish>
+		<German>%s2 Triple Alliance</German>
+		<Italian>%s2 Triple Alliance</Italian>
+		<Spanish>%s2 Triple Alliance</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_EMPIRE</Tag>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Israel -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_DESC</Tag>
+		<English>The Israelis</English>
+		<French>
+			<Text>Les Isra&#233;liens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Israelis</German>
+		<Italian>The Israelis</Italian>
+		<Spanish>The Israelis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_PEOPLES</Tag>
+		<English>Zionist Peoples</English>
+		<French>
+			<Text>Peuplades sionistes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Zionist Peoples</German>
+		<Italian>Zionist Peoples</Italian>
+		<Spanish>Zionist Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_DEFAULT</Tag>
+		<English>State of %s1</English>
+		<French>
+			<Text>&#201;tat d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_REPUBLIC</Tag>
+		<English>State of %s1</English>
+		<French>
+			<Text>&#201;tat d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>State of %s1</German>
+		<Italian>State of %s1</Italian>
+		<Spanish>State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_COMMUNIST</Tag>
+		<English>Labor Zionist State of %s1</English>
+		<French>
+			<Text>&#201;tat sioniste travailliste d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Labor Zionist State of %s1</German>
+		<Italian>Labor Zionist State of %s1</Italian>
+		<Spanish>Labor Zionist State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_FASCIST</Tag>
+		<English>Land of Greater %s1</English>
+		<French>
+			<Text>Terre du Grand %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Land of Greater %s1</German>
+		<Italian>Land of Greater %s1</Italian>
+		<Spanish>Land of Greater %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_PALESTINE</Tag>
+		<English>Palestine</English>
+		<French>
+			<Text>Palestine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Palestine</German>
+		<Italian>Palestine</Italian>
+		<Spanish>Palestine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_ADJECTIVE</Tag>
+		<English>Israeli</English>
+		<French>
+			<Text>isra&#233;lien:isra&#233;lienne:isra&#233;liens:isra&#233;liennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Israeli</German>
+		<Italian>Israeli</Italian>
+		<Spanish>Israeli</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ISRAEL_SHORT_DESC</Tag>
+		<English>Israel</English>
+		<French>
+			<Text>Isra&#235;l</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Israel</German>
+		<Italian>Israel</Italian>
+		<Spanish>Israel</Spanish>
+	</TEXT>
+</Civ4GameText>

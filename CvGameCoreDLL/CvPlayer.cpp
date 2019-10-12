@@ -8751,6 +8751,11 @@ int CvPlayer::getReligionAnarchyLength() const
 
 int CvPlayer::unitsRequiredForGoldenAge() const
 {
+	// Pyramid of the Sun: requires 1 less GP for a golden age
+	if (isHasBuildingEffect((BuildingTypes)PYRAMID_OF_THE_SUN))
+	{
+		return (GC.getDefineINT("BASE_GOLDEN_AGE_UNITS") + (getNumUnitGoldenAges() * GC.getDefineINT("GOLDEN_AGE_UNITS_MULTIPLIER")) - 1);
+	}
 	return (GC.getDefineINT("BASE_GOLDEN_AGE_UNITS") + (getNumUnitGoldenAges() * GC.getDefineINT("GOLDEN_AGE_UNITS_MULTIPLIER")));
 }
 
@@ -10113,7 +10118,7 @@ void CvPlayer::changeBuildingFoodProductionCount(int iChange)
 	if (iChange != 0)
 	{
 		m_iBuildingFoodProductionCount = (m_iBuildingFoodProductionCount + iChange);
-		FAssert(getBuildFoodProductionCount() >= 0);
+		FAssert(getBuildingFoodProductionCount() >= 0);
 
 		if (getTeam() == GC.getGameINLINE().getActiveTeam())
 		{

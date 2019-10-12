@@ -526,6 +526,26 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Masonry[COLOR_REVERT] technology instead of the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL</Tag>
+		<English>Temazcal</English>
+		<French>
+			<Text>Temazcal:Temazcals</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Temazcal</German>
+		<Italian>Temazcal</Italian>
+		<Spanish>Temazcal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Teotihuacano replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], provides additional health and doesn't require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] improve the food output of water plots. [COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Customs Houses[COLOR_REVERT], [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] world wonder.</English>
 		<French>[COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] improve the food output of water plots. [COLOR_BUILDING_TEXT]Harbors[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Customs Houses[COLOR_REVERT], [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] world wonder.</French>
@@ -2832,6 +2852,26 @@
 		<German>Divan</German>
 		<Italian>Divan</Italian>
 		<Spanish>Divan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ</Tag>
+		<English>Kibbutz</English>
+		<French>
+			<Text>Kibboutz:Kibboutzim</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Kibbutz</German>
+		<Italian>Kibbutz</Italian>
+		<Spanish>Kibbutz</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</English>
+		<French>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</French>
+		<German>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Kibbutz[COLOR_REVERT], the Israeli replacement for the [COLOR_BUILDING_TEXT]Park[COLOR_REVERT], grants additional food and increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TURKIC_DIVAN_STRATEGY</Tag>

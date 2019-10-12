@@ -1570,6 +1570,54 @@
 		<Spanish>Have a city of at least 60000 culture in 1800 AD</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1_TITLE</Tag>
+		<English>The Samson Option</English>
+		<French>L'option Samson </French>
+		<German>The Samson Option</German>
+		<Italian>The Samson Option</Italian>
+		<Spanish>The Samson Option</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR1</Tag>
+		<English>Build an ICBM by 1980 AD</English>
+		<French>Cr&#233;er un ICBM avant 1980</French>
+		<German>Build an ICBM by 1980 AD</German>
+		<Italian>Build an ICBM by 1980 AD</Italian>
+		<Spanish>Build an ICBM by 1980 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2_TITLE</Tag>
+		<English>Start-up Nation</English>
+		<French>La nation startup </French>
+		<German>Start-up Nation</German>
+		<Italian>Start-up Nation</Italian>
+		<Spanish>Start-up Nation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR2</Tag>
+		<English>Control the city with the highest research for 10 turns</English>
+		<French>Contr&#244;ler la ville produisant le plus de science au monde pendant 10 tours</French>
+		<German>Control the city with the highest research for 10 turns</German>
+		<Italian>Control the city with the highest research for 10 turns</Italian>
+		<Spanish>Control the city with the highest research for 10 turns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3_TITLE</Tag>
+		<English>By Stratagem You Wage War</English>
+		<French>Tu feras la guerre avec prudence </French>
+		<German>By Stratagem You Wage War</German>
+		<Italian>By Stratagem You Wage War</Italian>
+		<Spanish>By Stratagem You Wage War</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ISR3</Tag>
+		<English>Create two Great Spies</English>
+		<French>Cr&#233;er deux espions illustres</French>
+		<German>Create two Great Spies</German>
+		<Italian>Create two Great Spies</Italian>
+		<Spanish>Create two Great Spies</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
 		<English>Renaissance Architecture</English>
 		<French>Architecture de la Renaissance </French>
@@ -3126,6 +3174,78 @@
 		<Spanish>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_TITLE</Tag>
+		<English>Mesoamerican Metropolis</English>
+		<French>M&#233;tropole m&#233;soam&#233;ricaine </French>
+		<German>Mesoamerican Metropolis</German>
+		<Italian>Mesoamerican Metropolis</Italian>
+		<Spanish>Mesoamerican Metropolis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1</Tag>
+		<English>Have more than 500 culture in 550 AD</English>
+		<French>Avoir plus de 500 culture en 550 ap. J.-C.</French>
+		<German>Have more than 500 culture in 550 AD</German>
+		<Italian>Have more than 500 culture in 550 AD</Italian>
+		<Spanish>Have more than 500 culture in 550 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_EPIC</Tag>
+		<English>Have more than 750 culture in 550 AD</English>
+		<French>Avoir plus de 750 culture en 550 ap. J.-C.</French>
+		<German>Have more than 750 culture in 550 AD</German>
+		<Italian>Have more than 750 culture in 550 AD</Italian>
+		<Spanish>Have more than 750 culture in 550 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO1_MARATHON</Tag>
+		<English>Have more than 1500 culture in 550 AD</English>
+		<French>Avoir plus de 1500 culture en 550 ap. J.-C.</French>
+		<German>Have more than 1500 culture in 550 AD</German>
+		<Italian>Have more than 1500 culture in 550 AD</Italian>
+		<Spanish>Have more than 1500 culture in 550 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO2_TITLE</Tag>
+		<English>Birthplace of the Gods</English>
+		<French>L&#224; o&#249; naquirent les dieux </French>
+		<German>Birthplace of the Gods</German>
+		<Italian>Birthplace of the Gods</Italian>
+		<Spanish>Birthplace of the Gods</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO2</Tag>
+		<English>Experience a golden age by 550 AD</English>
+		<French>Traverser un âge d'or avant 550 ap. J.-C.</French>
+		<German>Experience a golden age by 550 AD</German>
+		<Italian>Experience a golden age by 550 AD</Italian>
+		<Spanish>Experience a golden age by 550 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO3_TITLE</Tag>
+		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
+		<French>L'Empire tolt&#232;que </French>
+		<German>Percentage of Mesoamerica: %s1 / %s2%%</German>
+		<Italian>Percentage of Mesoamerica: %s1 / %s2%%</Italian>
+		<Spanish>Percentage of Mesoamerica: %s1 / %s2%%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TEO3</Tag>
+		<English>Control all tiles in Mesoamerica in 1000 AD</English>
+		<French>Contr&#244;ler toute la M&#233;soam&#233;rique en 1000 ap. J.-C.</French>
+		<German>Control all tiles in Mesoamerica in 1000 AD</German>
+		<Italian>Control all tiles in Mesoamerica in 1000 AD</Italian>
+		<Spanish>Control all tiles in Mesoamerica in 1000 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN</Tag>
+		<English>Percentage of Mesoamerica: %s1 / %s2%%</English>
+		<French>Pourcentage de la M&#233;soam&#233;rique : %s1 / %s2%%</French>
+		<German>Percentage of Mesoamerica: %s1 / %s2%%</German>
+		<Italian>Percentage of Mesoamerica: %s1 / %s2%%</Italian>
+		<Spanish>Percentage of Mesoamerica: %s1 / %s2%%</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
 		<English>The King and I</English>
 		<French>Le Roi et moi </French>
@@ -3806,6 +3926,11 @@
 		<Spanish>Acquire 50 food from combat</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TEOTL_TEOTIHUACAN</Tag>
+		<English>Produce 200 culture with artisans</English>
+		<French>Produire 200 culture par les artisans</French>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
 		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
 		<French>Avoir l'&#233;quivalent de 100 tours de villes c&#233;l&#233;brant "La f&#234;te du roi"</French>
@@ -4428,6 +4553,10 @@
 		<German>Food acquired from combat: %d1 / %d2</German>
 		<Italian>Food acquired from combat: %d1 / %d2</Italian>
 		<Spanish>Food acquired from combat: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS</Tag>
+		<English>Culture produced with artisans: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
@@ -5748,6 +5877,38 @@
 		<German>Culture in %s1: %d2 / %d3</German>
 		<Italian>Culture in %s1: %d2 / %d3</Italian>
 		<Spanish>Culture in %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUCLEAR_ARSENAL</Tag>
+		<English>ICBMs built: %d1 / %d2</English>
+		<French>Nombre d'ICBM : %d1 / %d2</French>
+		<German>ICBMs built: %d1 / %d2</German>
+		<Italian>ICBMs built: %d1 / %d2</Italian>
+		<Spanish>ICBMs built: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_SPIES</Tag>
+		<English>Great Spies created: %d1 / %d2</English>
+		<French>Espions illustres cr&#233;&#233;s : %d1 / %d2</French>
+		<German>Great Spies created: %d1 / %d2</German>
+		<Italian>Great Spies created: %d1 / %d2</Italian>
+		<Spanish>Great Spies created: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_CITY</Tag>
+		<English>City with highest research: %s1</English>
+		<French>Ville produisant le plus de science : %s1</French>
+		<German>City with highest research: %s1</German>
+		<Italian>City with highest research: %s1</Italian>
+		<Spanish>City with highest research: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_RESEARCH_TURNS</Tag>
+		<English>Turns with highest research city: %d1 / %d2</English>
+		<French>Tours pass&#233;s avec la ville produisant le plus de science : %d1 / %d2</French>
+		<German>Turns with highest research city: %d1 / %d2</German>
+		<Italian>Turns with highest research city: %d1 / %d2</Italian>
+		<Spanish>Turns with highest research city: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT</Tag>

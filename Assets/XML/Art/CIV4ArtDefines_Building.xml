@@ -1358,6 +1358,16 @@
 			<Button>,Art/Interface/Buttons/Buildings/ChichenItza.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.53</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/PyramidOfTheSun/pyramid.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Wonders/PyramidOfTheSun.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SISTINE_CHAPEL</Type>
 			<LSystem>LSYSTEM_1x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -2118,6 +2128,16 @@
 			<Button>Art/Structures/Buildings/Bath/Button_Bath.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TEOTIHUACAN_TEMAZCAL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Temazcal/SA_workshop.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/temazcal.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MEXICAN_CHARREADA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
@@ -2336,6 +2356,16 @@
 			<NIF>Art/Structures/Buildings/Central_Park/Central_Park.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/HangingGardens.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,8</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ISRAELI_KIBBUTZ</Type>
+			<LSystem>LSYSTEM_4x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Central_Park/Central_Park.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/kibbutz.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SOLAR_PLANT</Type>

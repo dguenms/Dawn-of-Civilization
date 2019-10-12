@@ -70,6 +70,9 @@ class UniquePowers:
 
 		if iGameTurn >= getTurnForYear(tBirth[iSwahili]) and pSwahili.isAlive():
 			self.swahiliDhow()
+			
+		if iGameTurn >= getTurnForYear(tBirth[iTeotihuacan]) and pTeotihuacan.isAlive():
+			self.teotihuacanArtisan()
 		
 		data.bBabyloniaTechReceived = False
 					
@@ -372,6 +375,7 @@ class UniquePowers:
 	
 		if data.iImmigrationTimer == 0:
 			self.doImmigration()
+			self.doAliyah()
 			iRandom = gc.getGame().getSorenRandNum(5, 'random')
 			data.iImmigrationTimer = 3 + iRandom # 3-7 turns
 		else:
@@ -587,3 +591,105 @@ class UniquePowers:
 				data.iSwahiliTradeGold += iGold * 100
 				if utils.getHumanID() == iSwahili:
 					CyInterface().addMessage(iSwahili, False, iDuration, CyTranslator().getText("TXT_KEY_SWAHILI_DHOW_GOLD", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+					
+	# Teotihuacan artisan: 2 culture per Toltec Artisan stationed in a city
+	def teotihuacanArtisan(self):
+		unitList = PyPlayer(iTeotihuacan).getUnitsOfType(iArtisan)
+		if unitList:
+			totalCulture = 0
+			for unit in unitList:
+				x = unit.getX()
+				y = unit.getY()
+				plot = gc.getMap().plot(x, y)
+				if plot.isCity():
+					city = plot.getPlotCity()
+					if city.getOwner() == iTeotihuacan:
+						city.changeCulture(iTeotihuacan, 2, True)
+						totalCulture += 2
+			if utils.getHumanID() == iTeotihuacan and totalCulture > 0:
+					data.iTeotlSacrifices += totalCulture # for pagan victory
+					CyInterface().addMessage(iTeotihuacan, False, iDuration, CyTranslator().getText("TXT_KEY_TEOTIHUACAN_ARTISAN_CULTURE", (totalCulture,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+
+
+#------------------ISRAELI U.P.-------------------
+
+	#done at same time as other immigration (in checkImmigration())
+	def doAliyah(self):
+
+		# get available emigration cities
+		lSourceCities = []
+		# get target city: always the israeli capital
+		pIsrael = gc.getPlayer(iIsrael)
+		targetCity = pIsrael.getCapitalCity()
+
+
+		for iPlayer in range(iNumPlayers):
+			pPlayer = gc.getPlayer(iPlayer)
+
+			# get Jewish cities of civs at war with Israel
+			if gc.getTeam(pPlayer.getTeam()).isAtWar(iIsrael):
+				for city in utils.getCityList(iPlayer):
+					if city.isHasReligion(iJudaism):
+						lSourceCities.append(city)
+
+		#utils.debugTextPopup(str([(x.getName(), y) for (x,y) in lTargetCities]))
+		#utils.debugTextPopup("Target city: "+targetCity.getName())
+		#utils.debugTextPopup("Source city: "+sourceCity.getName())
+
+		iNumMigrations = 0
+		if len(lSourceCities) > 0:
+			iNumMigrations = (len(lSourceCities) / 4) + 1
+
+		for iMigration in range(iNumMigrations):
+			sourceCity = utils.getRandomEntry(lSourceCities)
+			lSourceCities.remove(sourceCity)
+
+			sourceCity.changePopulation(-1)
+			targetCity.changePopulation(1)
+
+			# if sourceCity.getPopulation() >= 9:
+			# 	sourceCity.changePopulation(-1)
+			# 	targetCity.changePopulation(1)
+
+			# extra cottage growth for target city's vicinity
+			x = targetCity.getX()
+			y = targetCity.getY()
+			for (i, j) in utils.surroundingPlots((x, y), 2):
+				pCurrent = gc.getMap().plot(i, j)
+				if pCurrent.getWorkingCity() == targetCity:
+					pCurrent.changeUpgradeProgress(utils.getTurns(10))
+
+			# migration brings culture
+			targetPlot = gc.getMap().plot(x, y)
+			iTargetPlayer = targetCity.getOwner()
+			iSourcePlayer = sourceCity.getOwner()
+			iCultureChange = targetPlot.getCulture(iTargetPlayer) / targetCity.getPopulation()
+			targetPlot.setCulture(iSourcePlayer, iCultureChange, False)
+
+			# remove Judaism from source city
+			if sourceCity.isHasReligion(iJudaism) and not sourceCity.isHolyCityByType(iJudaism):
+				sourceCity.setHasReligion(iJudaism, False, True, True)
+
+			# in the rare event that the Israeli capital is not Jewish, make it so
+			if not targetCity.isHasReligion(iJudaism):
+				targetCity.setHasReligion(iJudaism, True, True, True)
+
+			# notify affected players
+			if utils.getHumanID() == iSourcePlayer:
+				CyInterface().addMessage(iSourcePlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_EMIGRATION_ALIYAH", (sourceCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), sourceCity.getX(), sourceCity.getY(), True, True)
+			elif utils.getHumanID() == iTargetPlayer:
+				CyInterface().addMessage(iTargetPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_IMMIGRATION_ALIYAH", (sourceCity.getName(), gc.getPlayer(iSourcePlayer).getCivilizationShortDescriptionKey(), targetCity.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), x, y, True, True)
+
+	def computeAliyahBonus(self):
+		capital = gc.getPlayer(iIsrael).getCapitalCity()
+
+		#count all cities with Judaism in civs who have open borders with Israel
+		openjewishcities = 0
+		for iPlayer in range(iNumPlayers):
+			if gc.getTeam(iPlayer).isOpenBorders(iIsrael):
+				openjewishcities += len([city for city in utils.getCityList(iPlayer) if city.isHasReligion(iJudaism)])
+
+		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, openjewishcities)
+		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, openjewishcities)
+		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, openjewishcities)
+		

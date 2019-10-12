@@ -1015,6 +1015,22 @@
 			<BackgroundKFM>art/LeaderHeads/Bumin/genghis_khan_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ATLATL_CAUAC</Type>
+			<Button>art/LeaderHeads/Topiltzin/topiltzin.dds</Button>
+			<NIF>art/LeaderHeads/Topiltzin/pacal.nif</NIF>
+			<KFM>art/LeaderHeads/Topiltzin/pacal.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Topiltzin/pacal_nonshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Topiltzin/pacal_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BEN_GURION</Type>
+			<Button>Art/Leaderheads/BenGurion/btn_Israel_BenGurion.dds</Button>
+			<NIF>Art/Leaderheads/BenGurion/winston_churchill.nif</NIF>
+			<KFM>Art/Leaderheads/BenGurion/winston_churchill.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/BenGurion/winston_churchill_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/BenGurion/winston_churchill_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_EZANA</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_Mali_MansaMusa.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,2</Button>
 			<NIF>art/LeaderHeads/Zara Yaqob/Zara Yaqob.nif</NIF>

@@ -160,7 +160,7 @@ class GameData:
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.lDeleteMode = [-1] * 3
-		self.lFirstContactConquerors = [False] * 3
+		self.lFirstContactConquerors = [False] * 4
 		self.lFirstContactMongols = [True] * 5
 		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
 		
@@ -234,6 +234,7 @@ class GameData:
 		self.iFirstNewWorldColony = -1
 		
 		self.iChineseGoldenAgeTurns = 0
+		self.iTeotihuacanGoldenAgeTurns = 0
 		self.iKoreanSinks = 0
 		self.iTamilTradeGold = 0.0
 		self.iKievanRusMissions = 0
@@ -259,6 +260,7 @@ class GameData:
 		self.iAustraliaHappinessTurns = 0
 		self.iHungaryGlobalWars = 0
 		self.bHungaryTolerance = False
+		self.iIsraeliResearchTurns = 0
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

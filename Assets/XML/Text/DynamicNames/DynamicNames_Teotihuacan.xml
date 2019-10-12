@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Aztecs -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DESC</Tag>
+		<English>The Teotihuacanos</English>
+		<French>
+			<Text>Les Teotihuacanos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>The Teotihuacanos</German>
+		<Italian>The Teotihuacanos</Italian>
+		<Spanish>The Teotihuacanos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_SHORT_DESC</Tag>
+		<English>Teotihuacan</English>
+		<French>
+			<Text>Teotihuacan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Teotihuacan</German>
+		<Italian>Teotihuacan</Italian>
+		<Spanish>Teotihuacan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ADJECTIVE</Tag>
+		<English>Teotihuacan</English>
+		<French>
+			<Text>teotihuacano:teotihuacana:teotihuacanos:teotihuacanas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Teotihuacan</German>
+		<Italian>Teotihuacan</Italian>
+		<Spanish>Teotihuacan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_PEOPLES</Tag>
+		<English>Mexico Valley Peoples</English>
+		<French>
+			<Text>Peuplades de la Vall&#233;e de Mexico</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Mexico Valley Peoples</German>
+		<Italian>Mexico Valley Peoples</Italian>
+		<Spanish>Mexico Valley Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_DEFAULT</Tag>
+		<English>Altepetl of %s1</English>
+		<French>
+			<Text>Altepetl de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Altepetl of %s1</German>
+		<Italian>Altepetl of %s1</Italian>
+		<Spanish>Altepetl of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_ALTEPETL</Tag>
+		<English>%s2 Altepemeh</English>
+		<French>
+			<Text>Altepeme %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>%s2 Altepemeh</German>
+		<Italian>%s2 Altepemeh</Italian>
+		<Spanish>%s2 Altepemeh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TOLTEC</Tag>
+		<English>Toltec</English>
+		<French>
+			<Text>tolt&#232;que:tolt&#232;que:tolt&#232;ques:tolt&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Toltec</German>
+		<Italian>Toltec</Italian>
+		<Spanish>Toltec</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TEOTIHUACAN_TULA</Tag>
+		<English>Tula</English>
+		<French>
+			<Text>Tula</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Tula</German>
+		<Italian>Tula</Italian>
+		<Spanish>Tula</Spanish>
+	</TEXT>
+</Civ4GameText>

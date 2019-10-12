@@ -2188,6 +2188,45 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BATH</BuildingClass>
+			<Type>BUILDING_TEOTIHUACAN_TEMAZCAL</Type>
+			<Description>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEOTIHUACAN_TEMAZCAL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TEOTIHUACAN_TEMAZCAL</ArtDefineTag>
+			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iHealth>4</iHealth>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>1</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BATH</BuildingClass>
 			<Type>BUILDING_OTTOMAN_HAMMAM</Type>
 			<Description>TXT_KEY_BUILDING_OTTOMAN_HAMMAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_PEDIA</Civilopedia>
@@ -4694,6 +4733,47 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>8</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PARK</BuildingClass>
+			<Type>BUILDING_ISRAELI_KIBBUTZ</Type>
+			<Description>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ISRAELI_KIBBUTZ_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ISRAELI_KIBBUTZ</ArtDefineTag>
+			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<iMaxLatitude>90</iMaxLatitude>
+			<iGreatPeopleRateModifier>15</iGreatPeopleRateModifier>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>2</iYield>
+			</YieldChanges>
+			<ImprovementHealths>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+			</ImprovementHealths>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -9014,6 +9094,62 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PYRAMID_OF_THE_SUN</BuildingClass>
+			<Type>BUILDING_PYRAMID_OF_THE_SUN</Type>
+			<Description>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_PYRAMID_OF_THE_SUN_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PYRAMID_OF_THE_SUN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_PYRAMID_OF_THE_SUN</MovieDefineTag>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<PrereqTech>TECH_MASONRY</PrereqTech>
+			<ObsoleteTech>TECH_CARTOGRAPHY</ObsoleteTech>
+			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
+			<iCost>300</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>12</iAsset>
+			<iPower>8</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

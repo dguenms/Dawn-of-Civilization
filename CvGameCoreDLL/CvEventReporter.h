@@ -148,6 +148,9 @@ public:
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
 
+	void bordersOpened(PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Steb
+	void bordersClosed(PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Steb
+
 	DllExport void preSave();
 
 	DllExport void getGameStatistics(std::vector<CvStatBase*>& aStats);

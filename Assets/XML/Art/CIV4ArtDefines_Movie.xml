@@ -394,5 +394,9 @@
 			<Type>ART_DEF_MOVIE_GREAT_ZIMBABWE</Type>
 			<Path>Art/Movies/Wonders/Great_Zimbabwe.dds</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PYRAMID_OF_THE_SUN</Type>
+			<Path>Art/Movies/Wonders/PyramidOfTheSun.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

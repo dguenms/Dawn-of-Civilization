@@ -174,6 +174,8 @@ class CvEventManager(object):
 			'releasedPlayer'		: self.onReleasedPlayer,
 			'blockade'			: self.onBlockade,
 			'peaceBrokered'			: self.onPeaceBrokered,
+			'bordersOpened'			: self.onBordersOpened,
+			'bordersClosed'			: self.onBordersClosed,
 		}
 
 		################## Events List ###############################
@@ -1249,3 +1251,9 @@ class CvEventManager(object):
 		
 	def onPeaceBrokered(self, argsList):
 		iBroker, iPlayer1, iPlayer2 = argsList
+		
+	def onBordersOpened(self, argsList):
+		iPlayer1, iPlayer2 = argsList
+
+	def onBordersClosed(self, argsList):
+		iPlayer1, iPlayer2 = argsList

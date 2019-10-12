@@ -117,7 +117,9 @@ public:
 	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
 	void reportBlockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
-
+	void reportBordersOpened(PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Steb
+	void reportBordersClosed(PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Steb
+	
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
 	void reportPlayerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount);

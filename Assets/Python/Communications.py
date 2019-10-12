@@ -27,7 +27,8 @@ tPool2 = (iEgypt, -1,
 	iGreece, -1,
 	iIndia, iEthiopia,
 	iJapan, -1,	    
-	iPersia, -1)
+	iPersia, -1,
+	iTeotihuacan, -1)
 
 
 tPool3 = (iEgypt,  
@@ -74,6 +75,7 @@ tPool3 = (iEgypt,
 	iBrazil,
 	iArgentina,
 	iCanada,
+	iIsrael,
 	iPolynesia,
 	iHarappa,
 	iAustralia,

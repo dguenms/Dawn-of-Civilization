@@ -517,7 +517,7 @@ class TeamScores:
 		return self._team
 		
 	def rank(self):
-		if self.isVassal():
+		if self.isVassal() and self._master is not None:
 			return self._master.rank()
 		else:
 			return self._rank

@@ -1295,5 +1295,26 @@
 			<fBlue>0.00</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MESOAMERICAN_RED</Type>
+			<fRed>0.58</fRed>
+			<fGreen>0.20</fGreen>
+			<fBlue>0.13</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MESOAMERICAN_JADE</Type>
+			<fRed>0.56</fRed>
+			<fGreen>0.93</fGreen>
+			<fBlue>0.56</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ISRAEL_BLUE</Type>
+			<fRed>0.37</fRed>
+			<fGreen>0.53</fGreen>
+			<fBlue>0.69</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>
