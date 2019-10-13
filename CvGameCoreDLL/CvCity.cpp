@@ -10777,6 +10777,8 @@ void CvCity::updateCommerce(CommerceTypes eIndex)
 
 		GET_PLAYER(getOwnerINLINE()).changeCommerceRate(eIndex, (iNewCommerce - iOldCommerce));
 
+		GET_PLAYER(getOwnerINLINE()).verifyCommerceRates(eIndex);
+
 		if (isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true );

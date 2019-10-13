@@ -3314,6 +3314,8 @@ void CvPlayer::updateCommerce(CommerceTypes eCommerce)
 	{
 		pLoopCity->updateCommerce(eCommerce);
 	}
+
+	verifyCommerceRates(eCommerce);
 }
 
 
@@ -3325,6 +3327,11 @@ void CvPlayer::updateCommerce()
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 		pLoopCity->updateCommerce();
+	}
+
+	for (int iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+	{
+		verifyCommerceRates((CommerceTypes)iI);
 	}
 }
 
@@ -12680,6 +12687,8 @@ int CvPlayer::getCommerceRate(CommerceTypes eIndex) const
 		}
 	}
 
+	FAssert(iRate >= 0);
+
 	return iRate / 100;
 }
 
@@ -12698,6 +12707,25 @@ void CvPlayer::changeCommerceRate(CommerceTypes eIndex, int iChange)
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
+	}
+}
+
+void CvPlayer::verifyCommerceRates(CommerceTypes eCommerce) const
+{
+	int iCityCommerce = 0;
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		iCityCommerce += pCity->getCommerceRateTimes100(eCommerce);
+	}
+
+	iCityCommerce /= 100;
+
+	int iTotalCommerce = getCommerceRate(eCommerce);
+
+	if (iTotalCommerce != iCityCommerce)
+	{
+		warn(CvWString::format(L"Player commerce (%d) and sum of city commerce (%d) do not match", iTotalCommerce, iCityCommerce));
 	}
 }
 
