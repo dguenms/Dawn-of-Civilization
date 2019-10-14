@@ -1054,7 +1054,7 @@ def getUHVTileInfo(argsList):
 			
 	elif iPlayer == iBurma:
 		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR, vic.tIndochinaExceptions):
-			return 15
+			return 17
 			
 	elif iPlayer == iRussia:
 		if utils.isPlotInArea((x, y), vic.tSiberiaTL, vic.tSiberiaBR):

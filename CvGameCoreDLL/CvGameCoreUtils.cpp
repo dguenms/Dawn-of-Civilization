@@ -2723,6 +2723,13 @@ void log(CvString logfile, CvString message)
 	gDLL->logMsg(logfile, message);
 }
 
+void warn(CvWString message)
+{
+	CvWString fullMessage = CvWString::format(L"Detected a bug, please report latest autosave in the Dawn of Civilization forums: %s", message.c_str());
+	log(fullMessage);
+	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), fullMessage, "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), -1, -1, true, true);
+}
+
 void logMajorError(CvWString message, int iX, int iY)
 {
 	log(message);

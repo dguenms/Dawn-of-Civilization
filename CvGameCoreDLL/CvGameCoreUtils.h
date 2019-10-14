@@ -404,6 +404,8 @@ void logMajorError(CvWString message, int iX = -1, int iY = -1);
 char* chars(const wchar_t* wchars);
 char* chars(CvWString string);
 
+void warn(CvWString message);
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);

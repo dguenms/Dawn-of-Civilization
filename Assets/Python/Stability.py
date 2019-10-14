@@ -1326,8 +1326,12 @@ def updateHappinessTrend(iPlayer):
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
 			
-	if iHappyCities - iUnhappyCities > math.ceil(iNumCities / 5.0): data.players[iPlayer].pushHappinessTrend(1)
-	elif iUnhappyCities - iHappyCities > math.ceil(iNumCities / 5.0): data.players[iPlayer].pushHappinessTrend(-1)
+	iCurrentTrend = 0
+			
+	if iHappyCities - iUnhappyCities > math.ceil(iNumCities / 5.0): iCurrentTrend = 1
+	elif iUnhappyCities - iHappyCities > math.ceil(iNumCities / 5.0): iCurrentTrend = -1
+	
+	data.players[iPlayer].pushHappinessTrend(iCurrentTrend)
 	
 def updateWarTrend(iPlayer, iEnemy):
 	iOurCurrentSuccess = gc.getTeam(iPlayer).AI_getWarSuccess(iEnemy)
