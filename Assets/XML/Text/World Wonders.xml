@@ -3310,6 +3310,14 @@
 		<Spanish>[ICON_BULLET]All city tiles: +1[ICON_FOOD], +1[ICON_PRODUCTION], +1[ICON_COMMERCE]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOROBUDUR_HELP</Tag>
+		<English>[ICON_BULLET]Requires Jungle or Rainforest in city radius</English>
+		<French>[ICON_BULLET]Requires Jungle or Rainforest in city radius</French>
+		<German>[ICON_BULLET]Requires Jungle or Rainforest in city radius</German>
+		<Italian>[ICON_BULLET]Requires Jungle or Rainforest in city radius</Italian>
+		<Spanish>[ICON_BULLET]Requires Jungle or Rainforest in city radius</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
