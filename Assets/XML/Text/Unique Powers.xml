@@ -1185,4 +1185,20 @@
 		<Italian>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Italian>
 		<Spanish>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_OMA_TITLE</Tag>
+		<English>The Power of Aflaj:</English>
+		<French>Le Pouvoir de Aflaj :</French>
+		<German>The Power of Aflaj:</German>
+		<Italian>The Power of Aflaj:</Italian>
+		<Spanish>The Power of Aflaj:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_OMA</Tag>
+		<English>Extra production, commerce, and can build farms on desert</English>
+		<French>Extra production, commerce, and can build farms on desert</French>
+		<German>Extra production, commerce, and can build farms on desert</German>
+		<Italian>Extra production, commerce, and can build farms on desert</Italian>
+		<Spanish>Extra production, commerce, and can build farms on desert</Spanish>
+	</TEXT>
 </Civ4GameText>

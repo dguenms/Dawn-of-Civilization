@@ -261,6 +261,9 @@ class GameData:
 		self.iHungaryGlobalWars = 0
 		self.bHungaryTolerance = False
 		self.iIsraeliResearchTurns = 0
+		self.lOmaniEnemies = []
+		self.iOmaniCities = 0
+		self.iOmaniTradeGold = 0
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

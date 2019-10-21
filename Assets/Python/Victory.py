@@ -622,6 +622,18 @@ def checkTurn(iGameTurn, iPlayer):
 					
 			if iGameTurn == getTurnForYear(1950):
 				expire(iMaya, 2)
+				
+			# third goal: acquire X gold by selling resources and technologies
+			if isPossible(iOman, 2):
+				iTradeGold = 0
+				
+				for iLoopPlayer in range(iNumPlayers):
+					iTradeGold += pOman.getGoldPerTurnByPlayer(iLoopPlayer)
+				
+				data.iOmaniTradeGold += iTradeGold
+				
+				#if data.iOmaniTradeGold >= utils.getTurns(3000):
+					#win(iOman, 2)
 		
 	elif iPlayer == iTamils:
 	
@@ -1962,6 +1974,10 @@ def checkTurn(iGameTurn, iPlayer):
 def checkHistoricalVictory(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
+	if iPlayer == iOman:
+		if isPossible(iOman, 0) and countAchievedGoals(iPlayer) >= 2:
+			win(iOman, 0)
+	
 	if not data.players[iPlayer].bHistoricalGoldenAge:
 		if countAchievedGoals(iPlayer) >= 2:	
 			data.players[iPlayer].bHistoricalGoldenAge = True
@@ -2073,6 +2089,16 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
+	# first Omani goal: Never lose a city
+	if isPossible(iOman, 0) and iOwner == iOman:
+		expire(iOman, 0)
+	
+	# second Omani goal: Conquer 4 cities from civs that have declared war on you
+	if isPossible(iOman, 1) and iPlayer == iOman and iOwner in data.lOmaniEnemies:
+		data.iOmaniCities += 1
+		if data.iOmaniCities >= 4:
+			win(iOman, 1)
+		
 	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
 	if iOwner == iJapan:
 		expire(iJapan, 0)
@@ -2509,6 +2535,11 @@ def onPlayerGoldTrade(iPlayer, iGold):
 	elif iPlayer == iSwahili:
 		if isPossible(iSwahili, 0):
 			data.iSwahiliTradeGold += iGold * 100
+			
+	# third Omani goal: Produce X gold from trading resources and technologies
+	elif iPlayer == iOman:
+		if isPossible(iOman, 2):
+			data.iOmaniTradeGold += iGold
 		
 def onPlayerSlaveTrade(iPlayer, iGold):
 
@@ -2632,6 +2663,11 @@ def onRevolution(iPlayer):
 				data.bHungaryTolerance = True
 			else: lose(iHungary, 1)
 			
+def onChangeWar(bWar, iTeam, iOtherTeam):
+	if bWar:
+		if iOtherTeam == iOman:
+			data.lOmaniEnemies.append(iTeam)
+	
 def checkReligiousGoals(iPlayer):
 	for i in range(3):
 		if checkReligiousGoal(iPlayer, i) != 1:
@@ -4576,6 +4612,14 @@ def getUHVHelp(iPlayer, iGoal):
 			bMetropolitain = data.getWonderBuilder(iMetropolitain) == iFrance
 			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + ' ' + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + ' ' + getIcon(bLouvre) + localText.getText("TXT_KEY_BUILDING_LOUVRE", ()))
 			aHelp.append(getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()) + ' ' + getIcon(bMetropolitain) + localText.getText("TXT_KEY_BUILDING_METROPOLITAIN", ()))
+
+	elif iPlayer == iOman:
+		if iGoal == 0:
+			aHelp.append(getIcon(isPossible(iOman, 0)) + localText.getText("TXT_KEY_NEVER_LOST_A_CITY", ()))
+		if iGoal == 1:
+			aHelp.append(getIcon(data.iOmaniCities >= 4) + localText.getText("TXT_KEY_CITIES_CONQUERED", (data.iOmaniCities, 4)))
+		if iGoal == 2:
+			aHelp.append(getIcon(false) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (data.iOmaniTradeGold, utils.getTurns(3000))))
 
 	elif iPlayer == iKhmer:
 		if iGoal == 0:

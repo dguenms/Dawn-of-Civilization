@@ -6414,4 +6414,68 @@
 		<Italian>Win and attend the congress for two world wars</Italian>
 		<Spanish>Win and attend the congress for two world wars</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OMA1_TITLE</Tag>
+		<English>The Impenetrable Forts</English>
+		<French>The Impenetrable Forts</French>
+		<German>The Impenetrable Forts</German>
+		<Italian>The Impenetrable Forts</Italian>
+		<Spanish>The Impenetrable Forts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OMA1</Tag>
+		<English>Never lose a city</English>
+		<French>Never lose a city</French>
+		<German>Never lose a city</German>
+		<Italian>Never lose a city</Italian>
+		<Spanish>Never lose a city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OMA2_TITLE</Tag>
+		<English>Colonized to Colonizer</English>
+		<French>Colonized to Colonizer</French>
+		<German>Colonized to Colonizer</German>
+		<Italian>Colonized to Colonizer</Italian>
+		<Spanish>Colonized to Colonizer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OMA2</Tag>
+		<English>Conquer 4 cities from civs that have declared war on you</English>
+		<French>Conquer 4 cities from civs that have declared war on you</French>
+		<German>Conquer 4 cities from civs that have declared war on you</German>
+		<Italian>Conquer 4 cities from civs that have declared war on you</Italian>
+		<Spanish>Conquer 4 cities from civs that have declared war on you</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OMA3_TITLE</Tag>
+		<English>Chain of the Earth</English>
+		<French>Chain of the Earth</French>
+		<German>Chain of the Earth</German>
+		<Italian>Chain of the Earth</Italian>
+		<Spanish>Chain of the Earth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OMA3</Tag>
+		<English>Produce X gold from trading resources and technologies</English>
+		<French>Produce X gold from trading resources and technologies</French>
+		<German>Produce X gold from trading resources and technologies</German>
+		<Italian>Produce X gold from trading resources and technologies</Italian>
+		<Spanish>Produce X gold from trading resources and technologies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NEVER_LOST_A_CITY</Tag>
+		<English>Never lost a city</English>
+		<French>Never lost a city</French>
+		<German>Never lost a city</German>
+		<Italian>Never lost a city</Italian>
+		<Spanish>Never lost a city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITIES_CONQUERED</Tag>
+		<English>Cities conquered: %d1 / %d2</English>
+		<French>Cities conquered: %d1 / %d2</French>
+		<German>Cities conquered: %d1 / %d2</German>
+		<Italian>Cities conquered: %d1 / %d2</Italian>
+		<Spanish>Cities conquered: %d1 / %d2</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -463,13 +463,13 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
 lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iArgentina, iAustralia]
 
-lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
+lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia, iAustralia, iManchuria, iKievanRus, iHungary]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
@@ -490,6 +490,7 @@ dEmpireThreshold = {
 	iMongolia : 6,
 	iPoland : 3,
 	iMoors : 3,
+	iOman : 4,
 	iTibet : 2,
 	iPolynesia : 3,
 	iTamils : 3,
@@ -582,6 +583,7 @@ dStartingLeaders = [
 	iMoors : iRahman,
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
+	iOman : iSaif,
 	iEngland : iAlfred,
 	iHolyRome : iBarbarossa,
 	iKievanRus : iYaroslav,
@@ -1144,8 +1146,8 @@ def specificName(iPlayer):
 	
 	elif iPlayer == iTeotihuacan:
 		if not isCapital(iPlayer, ["Tollan"]):
-				return capitalName(iPlayer)
-				
+			return capitalName(iPlayer)
+			
 		if iGameTurn >= getTurnForYear(800):
 			return "TXT_KEY_CIV_TEOTIHUACAN_TULA"
 		
@@ -1254,6 +1256,10 @@ def specificName(iPlayer):
 			else:
 				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
 	
+	elif iPlayer == iKievanRus:
+		if data.players[iPlayer].iResurrections == 0 and not isCapital(iPlayer, ["Kiev"]):
+			return capitalName(iPlayer)
+			
 	elif iPlayer == iRussia:
 		if not (bEmpire and iEra >= iRenaissance) and not isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
 			if not bCityStates and isCapital(iPlayer, ["Moskva"]):
@@ -2072,6 +2078,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 		if not pHolyRome.isAlive() and iEra == iMedieval:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	elif iPlayer == iOman:
+		if iReligion == iIslam and iCivicGovernment == iDespotism:
+			return "TXT_KEY_SULTANATE_OF"
+		
+		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iEngland:

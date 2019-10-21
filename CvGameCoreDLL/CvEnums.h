@@ -1272,6 +1272,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	KOSSUTH,
 	ATLATL_CAUAC,
 	BEN_GURION,
+	SAIF,
 	NUM_LEADERHEADS
 };
 
@@ -1373,6 +1374,7 @@ enum PlayerTypes				// Exposed to Python
 	MOORS,
 	SPAIN,
 	FRANCE,
+	OMAN,
 	KHMER,
 	ENGLAND,
 	HOLY_ROME,

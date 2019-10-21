@@ -545,7 +545,7 @@ class CvRFCEventHandler:
 	def onPlayerGoldTrade(self, argsList):
 		iFromPlayer, iToPlayer, iGold = argsList
 		
-		if iToPlayer == iTamils:
+		if iToPlayer in [iTamils, iSwahili, iOman]:
 			vic.onPlayerGoldTrade(iToPlayer, iGold)
 			
 	def onTradeMission(self, argsList):
@@ -880,6 +880,7 @@ class CvRFCEventHandler:
 		
 		sta.onChangeWar(bWar, iTeam, iOtherTeam)
 		self.up.onChangeWar(bWar, iTeam, iOtherTeam)
+		vic.onChangeWar(bWar, iTeam, iOtherTeam)
 		
 		if iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
 			cong.onChangeWar(bWar, iTeam, iOtherTeam)

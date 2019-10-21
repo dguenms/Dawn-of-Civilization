@@ -2537,6 +2537,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
+	case OMAN:
+		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
 	case KHMER:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;

@@ -432,5 +432,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Israel.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_OMAN</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/oman.dds</Button>
+			<Path>Art/Interface/TeamColor/flagdecal_oman.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

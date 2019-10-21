@@ -10898,7 +10898,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == MAMLUKS || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA || getID() == SWAHILI || getID() == ISRAEL)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == MAMLUKS || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA || getID() == SWAHILI || getID() == ISRAEL || getID() == OMAN)
 				{
 					iValue /= 2;
 				}

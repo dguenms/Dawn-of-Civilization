@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Harappa -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OMAN_DESC</Tag>
+		<English>The Omani</English>
+		<French>The Omani</French>
+		<German>The Omani</German>
+		<Italian>The Omani</Italian>
+		<Spanish>The Omani</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OMAN_PEOPLES</Tag>
+		<English>Azd Peoples</English>
+		<French>Azd Peoples</French>
+		<German>Azd Peoples</German>
+		<Italian>Azd Peoples</Italian>
+		<Spanish>Azd Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OMAN_DEFAULT</Tag>
+		<English>Imamate of %s1</English>
+		<French>Imamate of %s1</French>
+		<German>Imamate of %s1</German>
+		<Italian>Imamate of %s1</Italian>
+		<Spanish>Imamate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OMAN_FASCIST</Tag>
+		<English>%s2 Empire</English>
+		<French>%s2 Empire</French>
+		<German>%s2 Empire</German>
+		<Italian>%s2 Empire</Italian>
+		<Spanish>%s2 Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OMAN_ADJECTIVE</Tag>
+		<English>Omani</English>
+		<French>Omani</French>
+		<German>Omani</German>
+		<Italian>Omani</Italian>
+		<Spanish>Omani</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OMAN_SHORT_DESC</Tag>
+		<English>Oman</English>
+		<French>Oman</French>
+		<German>Oman</German>
+		<Italian>Oman</Italian>
+		<Spanish>OMAN</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -5134,6 +5134,94 @@
 			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_OMAN</Type>
+			<Description>TXT_KEY_CIV_OMAN_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_OMAN_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_OMAN_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_OMAN_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_AMANITA_MUSCARIA</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_OMAN</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
+			<Identifier>OMA</Identifier>
+			<StartingYear>751</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>25</LoadingTime>
+				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>1</Production>
+				<Culture>2</Culture>
+				<Growth>2</Growth>
+				<Start>1</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Kufah</City>
+				<City>Khurasan</City>
+				<City>Anjar</City>
+				<City>Yamama</City>
+				<City>Mansura</City>
+				<City>Aydab</City>
+				<City>Bayt Ras</City>
+				<City>Taif</City>
+				<City>Shihr</City>
+				<City>Abu Dhabi</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+					<BuildingType>BUILDING_OMAN_MINA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+					<UnitType>UNIT_OMAN_BAGHLAH</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_SAIF</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_ARABIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ARABIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_OTTOMAN</Type>
 			<Description>TXT_KEY_CIV_OTTOMAN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_OTTOMAN_SHORT_DESC</ShortDescription>

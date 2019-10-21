@@ -2563,7 +2563,7 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, bool bPotential) const
 {
 	CvPlot* pLoopPlot;
-	bool bValid, bMexico;
+	bool bValid, bMexico, bOman;
 	int iI;
 
 	FAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
@@ -2571,6 +2571,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	bValid = false;
 	bMexico = false;
+	bOman = false;
 
 	if (isCity())
 	{
@@ -2591,6 +2592,12 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	if (eTeam == AZTECS && GET_PLAYER((PlayerTypes)AZTECS).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
+	}
+
+	// 1SDAN: Omani UP (Power of Aflaj): Extra production and can build farms on desert
+	if (getOwnerINLINE() == OMAN && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() == GC.getInfoTypeForString("TERRAIN_DESERT"))
+	{
+		bOman = true;
 	}
 
 	// Leoreth: different fishing boats for different sea levels
@@ -2644,7 +2651,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		bValid = true;
 	}
 
-	if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()))
+	if (GC.getImprovementInfo(eImprovement).getTerrainMakesValid(getTerrainType()) || bOman)
 	{
 		bValid = true;
 	}
@@ -2688,7 +2695,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
-		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI) && !bMexico) // Mexican UP
+		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI) && !bMexico && !bOman) // Mexican UP Omani UP
 		{
 			return false;
 		}
@@ -6837,6 +6844,18 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	if (isHills())
 	{
 		iYield += ((bIgnoreFeature || (getFeatureType() == NO_FEATURE)) ? GC.getTerrainInfo(getTerrainType()).getHillsYieldChange(eYield) : GC.getFeatureInfo(getFeatureType()).getHillsYieldChange(eYield));
+	}
+
+	// Omani UP +1 Production, Commerce on Desert Tiles
+	if (getOwnerINLINE() == OMAN)
+	{
+		if (getTerrainType() == GC.getInfoTypeForString("TERRAIN_DESERT"))
+		{
+			if (eYield == YIELD_PRODUCTION || eYield == YIELD_COMMERCE)
+			{
+				iYield += 1;
+			}
+		}
 	}
 
 	if (!bIgnoreFeature)

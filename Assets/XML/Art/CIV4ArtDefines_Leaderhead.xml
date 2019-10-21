@@ -1270,5 +1270,13 @@
 			<NoShaderNIF>Art/Leaderheads/Kossuth/Kossuth.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Kossuth/Kossuth_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SAIF</Type>
+			<Button>Art/Leaderheads/AbuBakr/Button_AbuBakr.dds</Button>
+			<NIF>Art/Leaderheads/AbuBakr/abubakr.nif</NIF>
+			<KFM>Art/Leaderheads/AbuBakr/frederick_the_great.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/AbuBakr/abubakr.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/AbuBakr/frederick_the_great_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

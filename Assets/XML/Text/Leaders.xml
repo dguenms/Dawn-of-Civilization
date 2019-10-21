@@ -1362,11 +1362,19 @@
 		<Spanish>Istvan</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>LEADER_KOSSUTH</Tag>
+		<Tag>TXT_KEY_LEADER_KOSSUTH</Tag>
 		<English>Lajos Kossuth</English>
 		<French>Lajos Kossuth</French>
 		<German>Lajos Kossuth</German>
 		<Italian>Lajos Kossuth</Italian>
 		<Spanish>Lajos Kossuth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SAIF</Tag>
+		<English>Saif bin Sultan</English>
+		<French>Saif bin Sultan</French>
+		<German>Saif bin Sultan</German>
+		<Italian>Saif bin Sultan</Italian>
+		<Spanish>Saif bin Sultan</Spanish>
 	</TEXT>
 </Civ4GameText>

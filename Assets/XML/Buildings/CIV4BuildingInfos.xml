@@ -1205,6 +1205,39 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HARBOR</BuildingClass>
+			<Type>BUILDING_OMAN_MINA</Type>
+			<Description>TXT_KEY_BUILDING_OMAN_MINA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_OMAN_MINA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_OMAN_MINA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_OMAN_MINA</ArtDefineTag>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
+			<bWater>1</bWater>
+			<iCost>60</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>1</iMinAreaSize>
+			<iConquestProb>80</iConquestProb>
+			<iTradeRoutes>1</iTradeRoutes>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SeaPlotYieldChanges>
+				<iYield>1</iYield>
+			</SeaPlotYieldChanges>
+			<ConstructSound>AS2D_BUILD_DRYDOCK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
 			<Type>BUILDING_AQUEDUCT</Type>
 			<Description>TXT_KEY_BUILDING_AQUEDUCT</Description>
