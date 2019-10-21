@@ -85940,34 +85940,34 @@
 			<Civilopedia>TXT_KEY_LEADER_SAIF_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_SAIF</ArtDefineTag>
 			<iWonderConstructRand>20</iWonderConstructRand>
-			<iBaseAttitude>0</iBaseAttitude>
-			<iBasePeaceWeight>0</iBasePeaceWeight>
-			<iPeaceWeightRand>3</iPeaceWeightRand>
-			<iWarmongerRespect>2</iWarmongerRespect>
+			<iBaseAttitude>1</iBaseAttitude>
+			<iBasePeaceWeight>3</iBasePeaceWeight>
+			<iPeaceWeightRand>2</iPeaceWeightRand>
+			<iWarmongerRespect>0</iWarmongerRespect>
 			<iEspionageWeight>60</iEspionageWeight>
-			<iRefuseToTalkWarThreshold>10</iRefuseToTalkWarThreshold>
+			<iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>35</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>10</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
-			<iMaxWarRand>50</iMaxWarRand>
-			<iMaxWarNearbyPowerRatio>110</iMaxWarNearbyPowerRatio>
-			<iMaxWarDistantPowerRatio>80</iMaxWarDistantPowerRatio>
+			<iMaxWarRand>20</iMaxWarRand>
+			<iMaxWarNearbyPowerRatio>40</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>110</iMaxWarDistantPowerRatio>
 			<iMaxWarMinAdjacentLandPercent>0</iMaxWarMinAdjacentLandPercent>
 			<iLimitedWarRand>60</iLimitedWarRand>
 			<iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
-			<iDogpileWarRand>25</iDogpileWarRand>
+			<iDogpileWarRand>60</iDogpileWarRand>
 			<iMakePeaceRand>60</iMakePeaceRand>
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
-			<iDemandRebukedSneakProb>70</iDemandRebukedSneakProb>
-			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
+			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
+			<iDemandRebukedWarProb>30</iDemandRebukedWarProb>
 			<iRazeCityProb>20</iRazeCityProb>
 			<iBuildUnitProb>35</iBuildUnitProb>
-			<iBaseAttackOddsChange>6</iBaseAttackOddsChange>
-			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
+			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
+			<iAttackOddsChangeRand>1</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
 			<iBetterRankDifferenceAttitudeChange>1</iBetterRankDifferenceAttitudeChange>
-			<iCloseBordersAttitudeChange>-2</iCloseBordersAttitudeChange>
+			<iCloseBordersAttitudeChange>1</iCloseBordersAttitudeChange>
 			<iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
 			<iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
 			<iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
@@ -86391,7 +86391,11 @@
 			</NoWarAttitudeProbs>
 			<UnitAIWeightModifiers>
 				<UnitAIWeightModifier>
-					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
 					<iWeightModifier>100</iWeightModifier>
 				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>

@@ -2298,7 +2298,7 @@ class RiseAndFall:
 		
 		if gc.getGame().getSorenRandNum(100, 'Trigger spawn wars') >= iMin:
 			if bRespawn:
-					lEnemies = lEnemyCivsOnRespawn[iCiv]
+				lEnemies = lEnemyCivsOnRespawn[iCiv]
 			else:
 				lEnemies = lEnemyCivsOnSpawn[iCiv]
 				

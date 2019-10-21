@@ -1175,9 +1175,6 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iTeotihuacan:
 		if utils.isPlotInArea((x, y), vic.tMesoamericaTL, vic.tMesoamericaBR):
 			return 86
-				
-		# free IDs: 20
-		# continue with ID 72
 		
 	elif iPlayer == iSweden:
 		if (x, y) in vic.lSkagerrak or (x, y) in vic.lSkagerrak:
@@ -1248,7 +1245,7 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == iHungary:
 		if gc.getMap().plot(x, y).getRegionID() in [rIberia, rEurope, rItaly, rBalkans]: return 29
 			
-		# continue with 86
+		# continue with 87
 	return -1
 		
 def getCityName(argsList):
