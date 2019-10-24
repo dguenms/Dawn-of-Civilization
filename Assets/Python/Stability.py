@@ -9,6 +9,7 @@ from operator import itemgetter
 import math
 import Areas
 import RegionMap
+import Victory as vic
 
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
@@ -102,8 +103,10 @@ def triggerCollapse(iPlayer):
 		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 			if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
 				collapseToCore(iPlayer)
+				vic.onCollapse(iPlayer, False)
 				return
-
+	
+	vic.onCollapse(iPlayer, True)
 	data.players[iPlayer].iTurnsToCollapse = 1
 
 def onCityAcquired(city, iOwner, iPlayer):

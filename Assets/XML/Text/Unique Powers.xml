@@ -1201,4 +1201,20 @@
 		<Italian>Extra production, commerce, and can build farms on desert</Italian>
 		<Spanish>Extra production, commerce, and can build farms on desert</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_YEM_TITLE</Tag>
+		<English>The Power of Spices:</English>
+		<French>The Power of Spices:</French>
+		<German>The Power of Spices:</German>
+		<Italian>The Power of Spices:</Italian>
+		<Spanish>The Power of Spices:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_YEM</Tag>
+		<English>25% of Commerce from Trade Routes is converted to Food</English>
+		<French>25% of Commerce from Trade Routes is converted to Food</French>
+		<German>25% of Commerce from Trade Routes is converted to Food</German>
+		<Italian>25% of Commerce from Trade Routes is converted to Food</Italian>
+		<Spanish>25% of Commerce from Trade Routes is converted to Food</Spanish>
+	</TEXT>
 </Civ4GameText>

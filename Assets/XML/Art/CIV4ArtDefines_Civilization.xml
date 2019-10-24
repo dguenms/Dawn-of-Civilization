@@ -438,5 +438,11 @@
 			<Path>Art/Interface/TeamColor/flagdecal_oman.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_YEMEN</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Yemen.dds</Button>
+			<Path>Art/Interface/TeamColor/flagdecal_Yemen.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Harappa -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_DESC</Tag>
+		<English>The Yemeni</English>
+		<French>The Yemeni</French>
+		<German>The Yemeni</German>
+		<Italian>The Yemeni</Italian>
+		<Spanish>The Yemeni</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_PEOPLES</Tag>
+		<English>Arabian Peoples</English>
+		<French>Arabian Peoples</French>
+		<German>Arabian Peoples</German>
+		<Italian>Arabian Peoples</Italian>
+		<Spanish>Arabian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_DEFAULT</Tag>
+		<English>Ziyadid Emirate</English>
+		<French>Ziyadid Emirate</French>
+		<German>Ziyadid Emirate</German>
+		<Italian>Ziyadid Emirate</Italian>
+		<Spanish>Ziyadid Emirate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_COMMUNIST</Tag>
+		<English>People's Democratic Republic of Yemen</English>
+		<French>People's Democratic Republic of Yemen</French>
+		<German>People's Democratic Republic of Yemen</German>
+		<Italian>People's Democratic Republic of Yemen</Italian>
+		<Spanish>People's Democratic Republic of Yemen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_FASCIST</Tag>
+		<English>Federation of South Arabia</English>
+		<French>Federation of South Arabia</French>
+		<German>Federation of South Arabia</German>
+		<Italian>Federation of South Arabia</Italian>
+		<Spanish>Federation of South Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_STATE_PARTY</Tag>
+		<English>Yemen Arab Republic</English>
+		<French>Yemen Arab Republic</French>
+		<German>Yemen Arab Republic</German>
+		<Italian>Yemen Arab Republic</Italian>
+		<Spanish>Yemen Arab Republic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_MECCA</Tag>
+		<English>Rasulid Sultanate</English>
+		<French>Rasulid Sultanate</French>
+		<German>Rasulid Sultanate</German>
+		<Italian>Rasulid Sultanate</Italian>
+		<Spanish>Rasulid Sultanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_DEAD_ARABIA</Tag>
+		<English>Sulayhid Sultanate</English>
+		<French>Sulayhid Sultanate</French>
+		<German>Sulayhid Sultanate</German>
+		<Italian>Sulayhid Sultanate</Italian>
+		<Spanish>Sulayhid Sultanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_THEOCRACY</Tag>
+		<English>Mutawakkilite Kingdom of Yemen</English>
+		<French>Mutawakkilite Kingdom of Yemen</French>
+		<German>Mutawakkilite Kingdom of Yemen</German>
+		<Italian>Mutawakkilite Kingdom of Yemen</Italian>
+		<Spanish>Mutawakkilite Kingdom of Yemen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_ELECTIVE</Tag>
+		<English>Tahirid Sultanate</English>
+		<French>Tahirid Sultanate</French>
+		<German>Tahirid Sultanate</German>
+		<Italian>Tahirid Sultanate</Italian>
+		<Spanish>Tahirid Sultanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_ENGLAND</Tag>
+		<English>Aden Protectorate</English>
+		<French>Aden Protectorate</French>
+		<German>Aden Protectorate</German>
+		<Italian>Aden Protectorate</Italian>
+		<Spanish>Aden Protectorate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_OTTOMAN</Tag>
+		<English>Eyalet of Yemen</English>
+		<French>Eyalet of Yemen</French>
+		<German>Eyalet of Yemen</German>
+		<Italian>Eyalet of Yemen</Italian>
+		<Spanish>Eyalet of Yemen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_ADJECTIVE</Tag>
+		<English>Yemeni</English>
+		<French>Yemeni</French>
+		<German>Yemeni</German>
+		<Italian>Yemeni</Italian>
+		<Spanish>Yemeni</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_YEMEN_SHORT_DESC</Tag>
+		<English>Yemen</English>
+		<French>Yemen</French>
+		<German>Yemen</German>
+		<Italian>Yemen</Italian>
+		<Spanish>Yemen</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1329,7 +1329,7 @@ class RiseAndFall:
 		x, y = tCapital
 		bCapitalSettled = False
 		
-		if iCiv == iBurma:
+		if iCiv == iBurma or iCiv == iYemen:
 			if gc.getMap().plot(x, y).isCity():
 				bCapitalSettled = True
 		
@@ -1719,7 +1719,7 @@ class RiseAndFall:
 				# notify dynamic names
 				dc.onCityAcquired(iCiv, iOwner)
 				
-				if iCiv != iBurma:
+				if iCiv not in [iBurma, iYemen]:
 					self.createStartingWorkers(iCiv, tCapital)
 
 		else: # starting units have already been placed, now to the second part
@@ -2451,6 +2451,12 @@ class RiseAndFall:
 		elif iCiv == iOman:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 2)
+		elif iCiv == iYemen:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iHeavyGalley, iCiv, tPlot, 2)
 		elif iCiv == iEngland:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
@@ -2785,6 +2791,14 @@ class RiseAndFall:
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 2)
 			utils.createMissionaries(iCiv, 1)
+		elif iCiv == iYemen:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(iHeavyGalley, iCiv, tPlot, 1)
+				utils.makeUnit(iCog, iCiv, tPlot, 1)
 		elif iCiv == iEngland:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
@@ -3179,6 +3193,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iOman:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iYemen:
+			utils.makeUnit(iArchitect, iCiv, tPlot, 1)
 		elif iCiv == iEngland:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iHolyRome:

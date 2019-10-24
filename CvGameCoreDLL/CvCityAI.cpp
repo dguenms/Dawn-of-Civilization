@@ -2541,6 +2541,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
+	case YEMEN:
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
 	case KHMER:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;

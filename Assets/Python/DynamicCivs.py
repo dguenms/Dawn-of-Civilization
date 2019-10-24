@@ -272,6 +272,10 @@ dSpecificVassalTitles = {
 	iBrazil : {
 		iArgentina : "TXT_KEY_CIV_BRAZILIAN_ARGENTINA",
 	},
+	iYemen : {
+		iEngland : "TXT_KEY_CIV_YEMEN_ENGLAND",
+		iOttomans : "TXT_KEY_CIV_YEMEN_OTTOMAN",
+	},
 	iBoers	: {
 		iEngland : "TXT_KEY_CIV_BOER_ENGLAND",
 		iNetherlands : "TXT_KEY_CIV_BOER_NETHERLANDS",
@@ -584,6 +588,7 @@ dStartingLeaders = [
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
 	iOman : iSaif,
+	iYemen : iArwa,
 	iEngland : iAlfred,
 	iHolyRome : iBarbarossa,
 	iKievanRus : iYaroslav,
@@ -1241,6 +1246,19 @@ def specificName(iPlayer):
 	elif iPlayer == iFrance:
 		if iEra == iMedieval and not pHolyRome.isAlive():
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
+			
+	elif iPlayer == iYemen:
+		if gc.getGame().getHolyCity(iIslam).getOwner() == iYemen:
+			return "TXT_KEY_CIV_YEMEN_MECCA"
+		if iCivicReligion == iTheocracy:
+			return "TXT_KEY_CIV_YEMEN_THEOCRACY"
+		if iCivicGovernment == iDespotism or iCivicGovernment == iStateParty:
+			return "TXT_KEY_CIV_YEMEN_STATE_PARTY"
+		if iCivicGovernment == iElective:
+			return "TXT_KEY_CIV_YEMEN_ELECTIVE"
+		if not pArabia.isAlive():
+			return "TXT_KEY_CIV_YEMEN_DEAD_ARABIA"
+		return "TXT_KEY_CIV_YEMEN_DEFAULT"
 			
 	elif iPlayer == iEngland:
 		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:

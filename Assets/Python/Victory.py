@@ -1112,6 +1112,19 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1450):
 			expire(iKhmer, 2)
 			
+	elif iPlayer == iYemen:
+		# second goal: Control Mecca in 1265
+		if iGameTurn == getTurnForYear(1265) and gc.getMap().plot(tMecca[0], tMecca[1]).isCity() and controlsCity(iYemen, tMecca):
+			win(iYemen, 1)
+		else:
+			lose(iYemen, 1)
+			
+		# first goal: Control more culture producing buildings in your capital than any other nation in 1229
+		if iGameTurn == getTurnForYear(1229):
+			if getCapitalCultureBuildingsLeader()[0] == iYemen:
+				win(iYemen, 0)
+				
+		
 	elif iPlayer == iEngland:
 	
 		# first goal: colonize every continent by 1730 AD
@@ -2089,6 +2102,10 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
+	# third Yemeni goal: Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans
+	if isPossible(iYemen, 2) and city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans]:
+		lose(iYemen, 2)
+	
 	# first Omani goal: Never lose a city
 	if isPossible(iOman, 0) and iOwner == iOman:
 		expire(iOman, 0)
@@ -2667,6 +2684,11 @@ def onChangeWar(bWar, iTeam, iOtherTeam):
 	if bWar:
 		if iOtherTeam == iOman:
 			data.lOmaniEnemies.append(iTeam)
+	
+def onCollapse(iPlayer, bComplete):
+	# third Yemeni goal: Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans
+	if isPossible(iYemen, 2) and iPlayer == iOttomans:
+		win(iYemen, 2)
 	
 def checkReligiousGoals(iPlayer):
 	for i in range(3):
@@ -3885,6 +3907,37 @@ def isMonopoly(iPlayer, iBonus, lPlots, bIncludeVassals = True):
 		
 	return True
 	
+def getCapitalCultureBuildingsLeader(bIncludeWonders = True, bIncludeObsolete = False):
+	iLeader = -1
+	iLeaderScore = -1
+	
+	for iPlayer in range(iNumMajorPlayers):
+		pPlayer = gc.getPlayer(iPlayer)
+		if not pPlayer.isAlive(): continue
+		capital = pPlayer.getCapitalCity()
+		if capital:
+			iScore = countCultureBuildings(capital, bIncludeWonders, bIncludeObsolete)
+			if iScore > iLeaderScore:
+				iLeader = iPlayer
+				iLeaderScore = iScore
+	return (iLeader, iLeaderScore)
+	
+def countCultureBuildings(city, bIncludeWonders = True, bIncludeObsolete = False):
+	iCount = 0
+	for iBuilding in range(iNumBuildings):
+		if not bIncludeWonders and iBuilding == iBeginWonders: break
+		if not city.isHasRealBuilding(iBuilding): continue
+		BuildingInfo = gc.getBuildingInfo(iBuilding)
+		iObsoleteTech = BuildingInfo.getObsoleteTech()
+		if not bIncludeObsolete and iObsoleteTech != -1 and gc.getTeam(iPlayer).isHasTech(iObsoleteTech): continue
+		isCulture = False
+		if BuildingInfo.getCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
+		if BuildingInfo.getObsoleteSafeCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
+		if BuildingInfo.getCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
+		if BuildingInfo.getPowerCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
+		if not isCulture: continue
+		iCount += 1
+	return iCount
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -4547,7 +4600,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iBurma:
 		if iGoal == 0:
-			bShwedagon = data.getWonderBuilder(iWatPreahPisnulok) == iBurma
+			bShwedagon = data.getWonderBuilder(iShwedagonPaya) == iBurma
 			iTemples = getNumBuildings(iBurma, iBuddhistTemple)
 			iMonasteries = getNumBuildings(iBurma, iBuddhistMonastery)
 			aHelp.append(getIcon(bShwedagon) + localText.getText("TXT_KEY_BUILDING_SHWEDAGON_PAYA", ()) + ' ' + getIcon(iTemples >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_TEMPLES", (iTemples, 2)) + ' ' + getIcon(iMonasteries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iMonasteries, 2)))
@@ -4620,6 +4673,14 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(data.iOmaniCities >= 4) + localText.getText("TXT_KEY_CITIES_CONQUERED", (data.iOmaniCities, 4)))
 		if iGoal == 2:
 			aHelp.append(getIcon(false) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (data.iOmaniTradeGold, utils.getTurns(3000))))
+
+	elif iPlayer == iYemen:
+		if iGoal == 1:
+			bMecca = gc.getMap().plot(tMecca[0], tMecca[1]).isCity() and controlsCity(iYemen, tMecca)
+			aHelp.append(getIcon(bMecca) + localText.getText("TXT_KEY_VICTORY_CONTROLS_CITY", ("Mecca",)))
+		if iGoal == 0:
+			iLeader, iLeaderScore = getCapitalCultureBuildingsLeader()
+			aHelp.append(getIcon(iLeader == iYemen) + localText.getText("TXT_KEY_VICTORY_MOST_CAPITAL_CULTURE_BUILDINGS_CIV", (gc.getPlayer(iLeader).getCivilizationShortDescription(0),)) + " (" + str(iLeaderScore) + ")")
 
 	elif iPlayer == iKhmer:
 		if iGoal == 0:

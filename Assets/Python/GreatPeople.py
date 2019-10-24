@@ -2424,6 +2424,10 @@ iCivFrance : {
 		"Gilbert Renault", # 20th
 	],
 },
+iCivOman : {
+},
+iCivYemen : {
+},
 iCivKhmer : {
 	iGreatProphet : [
 		"Sanghapala", # 6th

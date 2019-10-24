@@ -692,17 +692,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_RUS'</Tag>
 		<English>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</English>
-		<French>Nous sommes en l'an 882 ap. J.-C. Sur la route de l'ambre, entre la Scandinavie et Byzance, des voyageurs var&#232;gues commencent &#224; fonder de nouveaux &#201;tats. En se m&#234;lant &#224; leurs sujets slaves, ils deviendront la Rus' et entreprendront de coloniser les vastes r&#233;gions d'Europe de l'Est et au-del&#224;.</French>
-		<German>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</German>
-		<Italian>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Italian>
-		<Spanish>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_HUNGARY</Tag>
 		<English>It is the year 895 AD. Following their conquest of the Carpathian Basin, the Magyar peoples form the Principality of Hungary...</English>
-		<French>Nous sommes en l'an 882 ap. J.-C. Sur la route de l'ambre, entre la Scandinavie et Byzance, des voyageurs var&#232;gues commencent &#224; fonder de nouveaux &#201;tats. En se m&#234;lant &#224; leurs sujets slaves, ils deviendront la Rus' et entreprendront de coloniser les vastes r&#233;gions d'Europe de l'Est et au-del&#224;.</French>
-		<German>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</German>
-		<Italian>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Italian>
-		<Spanish>It is the year 882 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_OMAN</Tag>
+		<English>It is the year 751 AD. Seeking to form a nation ruled not by an absolute political or military ruler but by the will of god, the Azd Ibadi Muslims form the Imamate of Oman...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_OMAN_1700AD</Tag>
+		<English>It is the year 1700 AD. Against all odds the Omani people have ousted their Portugese colonizers, invaded their colonies, and become an imperial power in their own right...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_YEMEN</Tag>
+		<English>It is the year 819 AD. Following his victories, a new amir of Yemen has been appointed Amir of Yemen with the task of restraining the Alid Shi'a influence in the area. As Abbasid rule continues to wane and the spice trade from India continues to bolster Yemen's growth, the Yemeni nation is in a prime position to become the new face of the Arabian peninsula.</English>
 	</TEXT>
 </Civ4GameText>

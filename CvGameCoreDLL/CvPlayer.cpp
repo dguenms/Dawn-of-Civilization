@@ -12617,7 +12617,7 @@ int CvPlayer::getTradeYieldModifier(YieldTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
-	return m_aiTradeYieldModifier[eIndex];
+	return m_aiTradeYieldModifier[eIndex] + (getID() == YEMEN && eIndex == YIELD_FOOD) ? 25 : 0;
 }
 
 

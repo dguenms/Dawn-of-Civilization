@@ -6456,11 +6456,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_OMA3</Tag>
-		<English>Produce X gold from trading resources and technologies</English>
-		<French>Produce X gold from trading resources and technologies</French>
-		<German>Produce X gold from trading resources and technologies</German>
-		<Italian>Produce X gold from trading resources and technologies</Italian>
-		<Spanish>Produce X gold from trading resources and technologies</Spanish>
+		<English>Produce X gold from trade deals</English>
+		<French>Produce X gold from trade deals</French>
+		<German>Produce X gold from trade deals</German>
+		<Italian>Produce X gold from trade deals</Italian>
+		<Spanish>Produce X gold from trade deals</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEVER_LOST_A_CITY</Tag>
@@ -6477,5 +6477,69 @@
 		<German>Cities conquered: %d1 / %d2</German>
 		<Italian>Cities conquered: %d1 / %d2</Italian>
 		<Spanish>Cities conquered: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEM2_TITLE</Tag>
+		<English>The Rasulid Dynasty</English>
+		<French>The Rasulid Dynasty</French>
+		<German>The Rasulid Dynasty</German>
+		<Italian>The Rasulid Dynasty</Italian>
+		<Spanish>The Rasulid Dynasty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEM2</Tag>
+		<English>Control Mecca in 1265</English>
+		<French>Control Mecca in 1265</French>
+		<German>Control Mecca in 1265</German>
+		<Italian>Control Mecca in 1265</Italian>
+		<Spanish>Control Mecca in 1265</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEM1_TITLE</Tag>
+		<English>The Land of Dreams</English>
+		<French>The Land of Dreams</French>
+		<German>The Land of Dreams</German>
+		<Italian>The Land of Dreams</Italian>
+		<Spanish>The Land of Dreams</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEM1</Tag>
+		<English>Control more culture producing buildings in your capital than any other nation in 1229</English>
+		<French>Control more culture producing buildings in your capital than any other nation in 1229</French>
+		<German>Control more culture producing buildings in your capital than any other nation in 1229</German>
+		<Italian>Control more culture producing buildings in your capital than any other nation in 1229</Italian>
+		<Spanish>Control more culture producing buildings in your capital than any other nation in 1229</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEM3_TITLE</Tag>
+		<English>Arabs and Turks</English>
+		<French>Arabs and Turks</French>
+		<German>Arabs and Turks</German>
+		<Italian>Arabs and Turks</Italian>
+		<Spanish>Arabs and Turks</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEM3</Tag>
+		<English>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</English>
+		<French>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</French>
+		<German>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</German>
+		<Italian>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</Italian>
+		<Spanish>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROLS_CITY</Tag>
+		<English>Controls %s1</English>
+		<French>Contr&#244;les de %s1</French>
+		<German>Controls %s1</German>
+		<Italian>Controls %s1</Italian>
+		<Spanish>Controls %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_CAPITAL_CULTURE_BUILDINGS_CIV</Tag>
+		<English>Civilization with the most culture producing buildings in their Capital: %s1</English>
+		<French>Civilization with the most culture producing buildings in their Capital: %s1</French>
+		<German>Civilization with the most culture producing buildings in their Capital: %s1</German>
+		<Italian>Civilization with the most culture producing buildings in their Capital: %s1</Italian>
+		<Spanish>Civilization with the most culture producing buildings in their Capital: %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

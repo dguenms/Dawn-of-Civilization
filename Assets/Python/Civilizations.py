@@ -173,6 +173,7 @@ iCivSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
 iCivFrance :	Techs([iFeudalism, iTheology], column=6),
 iCivOman :		Techs([iDoctrine, iTheology, iFeudalism], column=6, exceptions=[iArchitecture, iArtisanry]),
 iCivKhmer :	Techs([iNobility, iArchitecture, iArtisanry, iScholarship, iEthics], column=5),
+iCivYemen :		Techs([iGuilds, iTheology, iAlchemy], column=6),
 iCivEngland :	Techs([iFeudalism, iTheology], column=6),
 iCivHolyRome :	Techs([iFeudalism, iTheology], column=6),
 iCivKievanRus :	Techs([iFeudalism, iTheology, iDoctrine], column=6, exceptions=[iArtisanry, iArchitecture]),
@@ -504,6 +505,14 @@ dTechPreferences = {
 		
 		iCurrency: -30,
 		iExploration: -30,
+	},
+	iCivYemen : {
+		iGeography : 20,
+		iCartography : 20,
+		iStatecraft : 20,
+		iOptics : 20,
+		iCompass: 20,
+		iExploration : 20,
 	},
 	iCivEngland : {
 		iExploration: 40,

@@ -3707,5 +3707,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Mina/Mina.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_YEMEN_DAM</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.4</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Dam/Levee.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Dujiangyan/dujiangyan.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

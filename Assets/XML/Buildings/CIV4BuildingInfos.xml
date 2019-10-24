@@ -1266,6 +1266,49 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
+			<Type>BUILDING_YEMEN_DAM</Type>
+			<Description>TXT_KEY_BUILDING_YEMEN_DAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_YEMEN_DAM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_YEMEN_DAM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_YEMEN_DAM</ArtDefineTag>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<PrereqTech>TECH_CEMENT</PrereqTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>80</iConquestProb>
+			<iFoodKept>25</iFoodKept>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldChanges>
+				<iYield>1</iYield>
+			</YieldChanges>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>15</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
 			<Type>BUILDING_KHMER_BARAY</Type>
 			<Description>TXT_KEY_BUILDING_KHMER_BARAY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_KHMER_BARAY_PEDIA</Civilopedia>
