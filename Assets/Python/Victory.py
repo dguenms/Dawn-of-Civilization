@@ -1114,10 +1114,11 @@ def checkTurn(iGameTurn, iPlayer):
 			
 	elif iPlayer == iYemen:
 		# second goal: Control Mecca in 1265
-		if iGameTurn == getTurnForYear(1265) and gc.getMap().plot(tMecca[0], tMecca[1]).isCity() and controlsCity(iYemen, tMecca):
-			win(iYemen, 1)
-		else:
-			lose(iYemen, 1)
+		if iGameTurn == getTurnForYear(1265):
+			if gc.getMap().plot(tMecca[0], tMecca[1]).isCity() and controlsCity(iYemen, tMecca):
+				win(iYemen, 1)
+			else:
+				lose(iYemen, 1)
 			
 		# first goal: Control more culture producing buildings in your capital than any other nation in 1229
 		if iGameTurn == getTurnForYear(1229):
