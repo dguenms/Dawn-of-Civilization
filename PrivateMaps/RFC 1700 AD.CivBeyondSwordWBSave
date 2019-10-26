@@ -38037,6 +38037,8 @@ EndPlot
 BeginPlot
 	x=81,y=34
 	BonusType=BONUS_OIL
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=8,25,30,40,52,62,63,

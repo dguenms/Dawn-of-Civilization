@@ -31377,6 +31377,7 @@ EndPlot
 BeginPlot
 	x=81,y=34
 	BonusType=BONUS_OIL
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot

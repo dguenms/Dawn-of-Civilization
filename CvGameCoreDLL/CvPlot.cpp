@@ -2612,7 +2612,13 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		// Leoreth: unless the feature makes valid
 		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement() && !GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
 		{
-			return false;
+			// 1SDAN: unless the bonus is oil and the feature is an oasis and the improvement is a well
+			if (!(getBonusType(eTeam) == GC.getInfoTypeForString("BONUS_OIL") && 
+				getFeatureType() == GC.getInfoTypeForString("FEATURE_OASIS") &&
+				GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(getBonusType(eTeam))))
+			{
+				return false;
+			}
 		}
 	}
 
