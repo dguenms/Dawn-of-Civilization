@@ -623,7 +623,8 @@ def checkTurn(iGameTurn, iPlayer):
 			if iGameTurn == getTurnForYear(1950):
 				expire(iMaya, 2)
 				
-			# third goal: acquire X gold by selling resources and technologies
+	elif iPlayer == iOman:
+			# third goal: acquire 2000 gold from trade deals
 			if isPossible(iOman, 2):
 				iTradeGold = 0
 				
@@ -632,8 +633,8 @@ def checkTurn(iGameTurn, iPlayer):
 				
 				data.iOmaniTradeGold += iTradeGold
 				
-				#if data.iOmaniTradeGold >= utils.getTurns(3000):
-					#win(iOman, 2)
+				if data.iOmaniTradeGold >= utils.getTurns(2000):
+					win(iOman, 2)
 		
 	elif iPlayer == iTamils:
 	
@@ -2554,7 +2555,7 @@ def onPlayerGoldTrade(iPlayer, iGold):
 		if isPossible(iSwahili, 0):
 			data.iSwahiliTradeGold += iGold * 100
 			
-	# third Omani goal: Produce X gold from trading resources and technologies
+	# third Omani goal: Acquire 2000 gold from trade deals
 	elif iPlayer == iOman:
 		if isPossible(iOman, 2):
 			data.iOmaniTradeGold += iGold
@@ -4673,7 +4674,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 1:
 			aHelp.append(getIcon(data.iOmaniCities >= 4) + localText.getText("TXT_KEY_CITIES_CONQUERED", (data.iOmaniCities, 4)))
 		if iGoal == 2:
-			aHelp.append(getIcon(false) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (data.iOmaniTradeGold, utils.getTurns(3000))))
+			aHelp.append(getIcon(data.iOmaniTradeGold >= getTurns(2000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (data.iOmaniTradeGold, utils.getTurns(2000))))
 
 	elif iPlayer == iYemen:
 		if iGoal == 1:
