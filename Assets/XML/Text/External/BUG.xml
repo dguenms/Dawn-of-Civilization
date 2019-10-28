@@ -297,6 +297,22 @@
 		<Italian>Show additional popups about events in the game for debug purposes</Italian>
 		<Spanish>Show additional popups about events in the game for debug purposes</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__SWITCHPOPUP_TEXT</Tag>
+		<English>Switch popup</English>
+		<French>Switch popup</French>
+		<German>Switch popup</German>
+		<Italian>Switch popup</Italian>
+		<Spanish>Switch popup</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__SWITCHPOPUP_HOVER</Tag>
+		<English>When checked, a popup to take over newborn civilizations will appear</English>
+		<French>When checked, a popup to take over newborn civilizations will appear</French>
+		<German>When checked, a popup to take over newborn civilizations will appear</German>
+		<Italian>When checked, a popup to take over newborn civilizations will appear</Italian>
+		<Spanish>When checked, a popup to take over newborn civilizations will appear</Spanish>
+	</TEXT>
 
 <!-- BUG Core Options -->
 
