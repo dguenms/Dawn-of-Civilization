@@ -2104,7 +2104,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
-	# third Yemeni goal: Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans
+	# third Yemeni goal: Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans
 	if isPossible(iYemen, 2):
 		if city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans]:
 			lose(iYemen, 2)
@@ -2692,7 +2692,7 @@ def onChangeWar(bWar, iTeam, iOtherTeam):
 			data.lOmaniEnemies.append(iTeam)
 	
 def onCollapse(iPlayer, bComplete):
-	# third Yemeni goal: Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans
+	# third Yemeni goal: Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans
 	if isPossible(iYemen, 2) and iPlayer == iOttomans:
 		win(iYemen, 2)
 	

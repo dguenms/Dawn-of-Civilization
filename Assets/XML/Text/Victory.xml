@@ -6520,11 +6520,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_YEM3</Tag>
-		<English>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</English>
-		<French>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</French>
-		<German>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</German>
-		<Italian>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</Italian>
-		<Spanish>Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans</Spanish>
+		<English>Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans</English>
+		<French>Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans</French>
+		<German>Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans</German>
+		<Italian>Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans</Italian>
+		<Spanish>Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROLS_CITY</Tag>
