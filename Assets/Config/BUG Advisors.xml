@@ -76,6 +76,13 @@
 			<option id="UHVProgressAfterFinish" key="UHV Progress After Finish"
 					type = "boolean" default="False"
 					get="isUHVProgressAfterFinish"/>
+			<list   id="UHVFinishDate" key="UHV Finish Date" 
+					type="int" default="0" listType="string" 
+					get="getUHVFinishDate">
+				<choice id="None" get="isUHVFinishDateNone"/>
+				<choice id="Date" get="isUHVFinishDateDate"/>
+				<choice id="Date + Turn" get="isUHVFinishDateTurn"/>
+			</list>
 	
 			<!-- BUG Info Screen (F9) by Ruff_Hi -->
 			<option id="BugGraphsTab" key="Graphs" 

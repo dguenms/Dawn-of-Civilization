@@ -3430,7 +3430,9 @@ def getUHVHelp(iPlayer, iGoal):
 			sWinDate = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 		else:
 			sWinDate = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))
-		if not gc.getPlayer(iPlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
+		if AdvisorOpt.isUHVFinishDateNone():
+			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()))
+		elif AdvisorOpt.isUHVFinishDateDate():
 			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE", (sWinDate,)))
 		else:
 			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN", (sWinDate, iWinTurn - utils.getScenarioStartTurn())))

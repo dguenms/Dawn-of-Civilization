@@ -1073,6 +1073,30 @@
 		<Italian>When checked, displays the UHV progress after the UHV is completedieved/failed.</Italian>
 		<Spanish>When checked, displays the UHV progress after the UHV is completed/failed.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_TEXT</Tag>
+		<English>Show UHV completion</English>
+		<French>Show UHV completion</French>
+		<German>Show UHV completion</German>
+		<Italian>Show UHV completion</Italian>
+		<Spanish>Show UHV completion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_HOVER</Tag>
+		<English>Select what information about the completion of the UHV is displayed.</English>
+		<French>Select what information about the completion of the UHV is displayed.</French>
+		<German>Select what information about the completion of the UHV is displayed.</German>
+		<Italian>Select what information about the completion of the UHV is displayed.</Italian>
+		<Spanish>Select what information about the completion of the UHV is displayed.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_LIST</Tag>
+		<English>None|Date|Date + Turn</English>
+		<French>None|Date|Date + Turn</French>
+		<German>None|Date|Date + Turn</German>
+		<Italian>None|Date|Date + Turn</Italian>
+		<Spanish>None|Date|Date + Turn</Spanish>
+	</TEXT>
 <!-- Info Screen -->
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSTAB_TEXT</Tag>
