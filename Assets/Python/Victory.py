@@ -1116,7 +1116,7 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iYemen:
 		# second goal: Control Mecca in 1265
 		if iGameTurn == getTurnForYear(1265):
-			if gc.getMap().plot(tMecca[0], tMecca[1]).isCity() and controlsCity(iYemen, tMecca):
+			if controlsCity(iYemen, tMecca):
 				win(iYemen, 1)
 			else:
 				lose(iYemen, 1)
@@ -2105,8 +2105,12 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	if not gc.getGame().isVictoryValid(7): return
 	
 	# third Yemeni goal: Do not allow any Persian or Turkic nation to control a city in the Arabian Peninsula prior to the Collapse of the Ottomans
-	if isPossible(iYemen, 2) and city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans]:
-		lose(iYemen, 2)
+	if isPossible(iYemen, 2):
+		if city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans]:
+			lose(iYemen, 2)
+		
+		if iOwner == iOttomans and pOttomans.getNumCities() < 1:
+			win(iYemen, 2)
 	
 	# first Omani goal: Never lose a city
 	if isPossible(iOman, 0) and iOwner == iOman:
@@ -3932,11 +3936,11 @@ def countCultureBuildings(city, bIncludeWonders = True, bIncludeObsolete = False
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
 		iObsoleteTech = BuildingInfo.getObsoleteTech()
 		if not bIncludeObsolete and iObsoleteTech != -1 and gc.getTeam(iPlayer).isHasTech(iObsoleteTech): continue
-		isCulture = False
-		if BuildingInfo.getCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
-		if BuildingInfo.getObsoleteSafeCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
-		if BuildingInfo.getCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
-		if BuildingInfo.getPowerCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: isCulture = True
+		bIsCulture = False
+		if BuildingInfo.getCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
+		if BuildingInfo.getObsoleteSafeCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
+		if BuildingInfo.getCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
+		if BuildingInfo.getPowerCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
 		if not isCulture: continue
 		iCount += 1
 	return iCount
@@ -4678,7 +4682,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iYemen:
 		if iGoal == 1:
-			bMecca = gc.getMap().plot(tMecca[0], tMecca[1]).isCity() and controlsCity(iYemen, tMecca)
+			bMecca = controlsCity(iYemen, tMecca)
 			aHelp.append(getIcon(bMecca) + localText.getText("TXT_KEY_VICTORY_CONTROLS_CITY", ("Mecca",)))
 		if iGoal == 0:
 			iLeader, iLeaderScore = getCapitalCultureBuildingsLeader()
