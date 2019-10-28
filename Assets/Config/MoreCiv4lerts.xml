@@ -82,6 +82,9 @@
 					get="getDomLandThreshold" set="setDomLandThreshold" 
 					label="Land Threshold" 
 					help="Land threshold for Domination victory."/>
+			<option id="ShowUHVFailPopup" key="Show UHV Fail Popup" 
+					type="boolean" default="True"
+					get="isShowUHVFailPopup"/>
 		</section>
 	</options>
 	

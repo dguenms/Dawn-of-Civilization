@@ -782,6 +782,22 @@
 		<Italian>Livello limite di popolazione per una Vittoria di Dominazione.</Italian>
 		<Spanish>Land threshold for Domination victory.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVFAILPOPUP_TEXT</Tag>
+		<English>UHV Fail Popup</English>
+		<French>UHV Fail Popup</French>
+		<German>UHV Fail Popup</German>
+		<Italian>UHV Fail Popup</Italian>
+		<Spanish>UHV Fail Popup</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SHOWUHVFAILPOPUP_HOVER</Tag>
+		<English>When checked, a popup shows when the UHV fails</English>
+		<French>When checked, a popup shows when the UHV fails</French>
+		<German>When checked, a popup shows when the UHV fails</German>
+		<Italian>When checked, a popup shows when the UHV fails</Italian>
+		<Spanish>When checked, a popup shows when the UHV fails</Spanish>
+	</TEXT>
 
 	<!-- MoreCiv4lerts_CIV4GameText -->
 

@@ -1066,12 +1066,12 @@
 		<Spanish>Show UHV progress after finish</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGUHVPROGRESSAFTERFINISH_HOVER</Tag>
-		<English>When checked, displays the UHV progress after the UHV is completed/failed.</English>
-		<French>When checked, displays the UHV progress after the UHV is completed/failed.</French>
-		<German>When checked, displays the UHV progress after the UHV is completed/failed.</German>
-		<Italian>When checked, displays the UHV progress after the UHV is completedieved/failed.</Italian>
-		<Spanish>When checked, displays the UHV progress after the UHV is completed/failed.</Spanish>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVPROGRESSAFTERFINISH_HOVER</Tag>
+		<English>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</English>
+		<French>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</French>
+		<German>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</German>
+		<Italian>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</Italian>
+		<Spanish>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_TEXT</Tag>
