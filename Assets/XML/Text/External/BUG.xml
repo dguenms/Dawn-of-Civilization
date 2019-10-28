@@ -1057,6 +1057,22 @@
 		<Italian>Quando &#232; selezionato, mostra informazioni aggiuntive nella Scheda dei Membri della Schermata Condizioni di Vittoria.</Italian>
 		<Spanish>When checked, displays extra information on the Members tab.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVPROGRESSAFTERFINISH_TEXT</Tag>
+		<English>Show UHV progress after finish</English>
+		<French>Show UHV progress after finish</French>
+		<German>Show UHV progress after finish</German>
+		<Italian>Show UHV progress after finish</Italian>
+		<Spanish>Show UHV progress after finish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGUHVPROGRESSAFTERFINISH_HOVER</Tag>
+		<English>When checked, displays the UHV progress after the UHV is completed/failed.</English>
+		<French>When checked, displays the UHV progress after the UHV is completed/failed.</French>
+		<German>When checked, displays the UHV progress after the UHV is completed/failed.</German>
+		<Italian>When checked, displays the UHV progress after the UHV is completedieved/failed.</Italian>
+		<Spanish>When checked, displays the UHV progress after the UHV is completed/failed.</Spanish>
+	</TEXT>
 <!-- Info Screen -->
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSTAB_TEXT</Tag>

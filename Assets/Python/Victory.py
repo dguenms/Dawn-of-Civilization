@@ -8,6 +8,8 @@ import heapq
 import Areas
 import CityNameManager as cnm
 import DynamicCivs as dc
+import BugCore
+AdvisorOpt = BugCore.game.Advisors
 
 ### GLOBALS ###
 
@@ -3432,10 +3434,12 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE", (sWinDate,)))
 		else:
 			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN", (sWinDate, iWinTurn - utils.getScenarioStartTurn())))
-		return aHelp
+		if not AdvisorOpt.UHVProgressAfterFinish():
+			return aHelp
 	elif data.players[iPlayer].lGoals[iGoal] == 0:
 		aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_GOAL_FAILED", ()))
-		return aHelp
+		if not AdvisorOpt.UHVProgressAfterFinish():
+			return aHelp
 
 	if iPlayer == iEgypt:
 		if iGoal == 0:
