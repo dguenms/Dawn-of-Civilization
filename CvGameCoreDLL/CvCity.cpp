@@ -9049,6 +9049,7 @@ int CvCity::getFreeSpecialist() const
     // Leoreth: Italian UP, only until the industrial era
     int iItalianSpecialists = 0;
 	int iCoreSpecialists = 0;
+	int iCapitalCultureSpecialists = 0;
 
     if (getOwner() == ITALY && GET_PLAYER((PlayerTypes)ITALY).getCurrentEra() < 4)
     {
@@ -9061,7 +9062,13 @@ int CvCity::getFreeSpecialist() const
 		iCoreSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
 	}
 
-	return m_iFreeSpecialist+iItalianSpecialists+iCoreSpecialists;
+	//1SDAN: handle free specialists in capital per culture level here for simplicity
+	if (GET_PLAYER(getOwnerINLINE()).isCapitalCultureFreeSpecialist() && isCapital())
+	{
+		iCapitalCultureSpecialists += (0, getCultureLevel() - 1);
+	}
+
+	return m_iFreeSpecialist+iItalianSpecialists+iCoreSpecialists+iCapitalCultureSpecialists;
 }
 
 

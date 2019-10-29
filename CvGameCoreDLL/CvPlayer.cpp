@@ -518,6 +518,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iWarWearinessModifier = 0;
 	m_iFreeSpecialist = 0;
 	m_iCoreFreeSpecialist = 0; //Leoreth
+	m_iCapitalCultureFreeSpecialist = 0; //1SDAN
 	m_iNoForeignTradeCount = 0;
 	m_iNoForeignTradeModifierCount = 0; // Leoreth
 	m_iNoCorporationsCount = 0;
@@ -10716,6 +10717,24 @@ void CvPlayer::changeCoreFreeSpecialist(int iChange)
 	}
 }
 
+//1SDAN
+bool CvPlayer::isCapitalCultureFreeSpecialist() const
+{
+	return m_iCapitalCultureFreeSpecialist > 0;
+}
+
+//1SDAN
+void CvPlayer::changeCapitalCultureFreeSpecialist(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCapitalCultureFreeSpecialist += iChange;
+		FAssert(getCapitalCultureFreeSpecialist() >= 0);
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
 
 int CvPlayer::getNoForeignTradeCount() const
 {
@@ -18119,6 +18138,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
 	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
+	changeCapitalCultureFreeSpecialist((GC.getCivicInfo(eCivic).isCapitalCultureFreeSpecialists()) ? iChange : 0); //1SDAN
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
 	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
@@ -18522,6 +18542,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iWarWearinessModifier);
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iCoreFreeSpecialist); //Leoreth
+	pStream->Read(&m_iCapitalCultureFreeSpecialist); //1SDAN
 	pStream->Read(&m_iNoForeignTradeCount);
 	pStream->Read(&m_iNoForeignTradeModifierCount); // Leoreth
 	pStream->Read(&m_iNoCorporationsCount);
@@ -19067,6 +19088,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iWarWearinessModifier);
 	pStream->Write(m_iFreeSpecialist);
 	pStream->Write(m_iCoreFreeSpecialist); //Leoreth
+	pStream->Write(m_iCapitalCultureFreeSpecialist); //1SDAN
 	pStream->Write(m_iNoForeignTradeCount);
 	pStream->Write(m_iNoForeignTradeModifierCount); // Leoreth
 	pStream->Write(m_iNoCorporationsCount);

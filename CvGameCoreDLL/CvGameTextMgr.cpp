@@ -7490,6 +7490,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS", GC.getCivicInfo(eCivic).getCoreFreeSpecialist()));
 	}
 
+	// 1SDAN: free specialists in the capital based on culture level
+	if (GC.getCivicInfo(eCivic).isCapitalCultureFreeSpecialists())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPITAL_CULTURE_FREE_SPECIALISTS"));
+	}
+
 	//	Trade routes
 	if (GC.getCivicInfo(eCivic).getTradeRoutes() != 0)
 	{

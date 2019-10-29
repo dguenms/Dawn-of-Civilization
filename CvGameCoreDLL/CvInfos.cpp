@@ -5785,6 +5785,7 @@ m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
 m_bNoResistance(false), // Leoreth
 m_bNoTemporaryUnhappiness(false), // Leoreth
+m_bCapitalCultureFreeSpecialists(false), //1SDAN
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -6182,6 +6183,12 @@ bool CvCivicInfo::isColonialSlavery() const
 	return m_bColonialSlavery;
 }
 
+//1SDAN
+bool CvCivicInfo::isCapitalCultureFreeSpecialists() const
+{
+	return m_bCapitalCultureFreeSpecialists;
+}
+
 const wchar* CvCivicInfo::getWeLoveTheKing()
 {
 	return m_szWeLoveTheKingKey;
@@ -6496,6 +6503,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bSlavery); // Leoreth
 	stream->Read(&m_bNoSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
+	stream->Read(&m_bCapitalCultureFreeSpecialists); // 1SDAN
 	if (uiFlag >= 2) stream->Read(&m_bNoResistance); // Leoreth
 	if (uiFlag >= 2) stream->Read(&m_bNoTemporaryUnhappiness); // Leoreth
 
@@ -6685,6 +6693,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bColonialSlavery); // Leoreth
 	stream->Write(m_bNoResistance); // Leoreth
 	stream->Write(m_bNoTemporaryUnhappiness); // Leoreth
+	stream->Write(m_bCapitalCultureFreeSpecialists); // 1SDAN
 
 	// Arrays
 
@@ -6803,6 +6812,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iUnhappinessDecayModifier, "iUnhappinessDecayModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bCapitalCultureFreeSpecialists, "bCapitalCultureFreeSpecialists"); // 1SDAN
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{

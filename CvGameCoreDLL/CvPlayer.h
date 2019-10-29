@@ -591,6 +591,10 @@ public:
 	int getCoreFreeSpecialist() const;
 	void changeCoreFreeSpecialist(int iChange);
 
+	//1SDAN
+	bool isCapitalCultureFreeSpecialist() const;
+	void changeCapitalCultureFreeSpecialist(int iChange);
+
 	int getNoForeignTradeCount() const;
 	bool isNoForeignTrade() const;																																						// Exposed to Python
 	void changeNoForeignTradeCount(int iChange);
@@ -1448,6 +1452,7 @@ protected:
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
 	int m_iCoreFreeSpecialist; // Leoreth
+	int m_iCapitalCultureFreeSpecialist; // 1SDAN
 	int m_iNoForeignTradeCount;
 	int m_iNoForeignTradeModifierCount; // Leoreth
 	int m_iNoCorporationsCount;

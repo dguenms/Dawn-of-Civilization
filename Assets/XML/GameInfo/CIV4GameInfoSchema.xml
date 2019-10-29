@@ -701,6 +701,7 @@
 	<ElementType name="iLargestCityHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeSpecialist" content="textOnly" dt:type="int"/>
 	<ElementType name="iCoreFreeSpecialist" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="bCapitalCultureFreeSpecialists" content="textOnly" dt:type="boolean"/> <!-- 1SDAN -->
 	<ElementType name="iCapitalTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iDefensivePactTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bNoForeignTrade" content="textOnly" dt:type="boolean"/>
