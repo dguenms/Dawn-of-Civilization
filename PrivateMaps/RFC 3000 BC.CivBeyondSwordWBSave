@@ -13700,6 +13700,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_EMERALDS
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -21003,6 +21004,7 @@ EndPlot
 BeginPlot
 	x=45,y=25
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -35985,7 +35987,7 @@ EndPlot
 BeginPlot
 	x=79,y=16
 	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_DIAMONDS
+	BonusVarietyType=BONUS_GEMS_EMERALDS
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1

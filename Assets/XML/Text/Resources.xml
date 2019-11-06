@@ -328,6 +328,14 @@
 		<Spanish>Gems (Sapphires)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_GEMS_EMERALDS</Tag>
+		<English>Gems (Emeralds)</English>
+		<French>Gems (Emeralds)</French>
+		<German>Edelsteine (Smaragde)</German>
+		<Italian>Gems (Emeralds)</Italian>
+		<Spanish>Gems (Emeralds)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_SHEEP_LLAMA</Tag>
 		<English>Sheep (Llama)</English>
 		<French>Sheep (Llama)</French>

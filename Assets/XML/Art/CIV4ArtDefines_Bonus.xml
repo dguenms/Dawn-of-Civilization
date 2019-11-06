@@ -571,6 +571,16 @@
 			<FontButtonIndex>22</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_GEMS_EMERALDS</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Emeralds/gems.nif</NIF>
+			<KFM>Art/Terrain/Resources/Emeralds/gems.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Emeralds/gems.nif</SHADERNIF>
+			<Button>Art/Interface/Buttons/Resources/Emeralds.dds</Button>
+			<FontButtonIndex>22</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_SHEEP_LLAMA</Type>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
