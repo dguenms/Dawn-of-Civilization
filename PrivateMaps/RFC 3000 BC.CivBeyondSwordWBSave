@@ -11113,7 +11113,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=48
-	BonusType=BONUS_CLAM
+	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11901,6 +11902,7 @@ EndPlot
 BeginPlot
 	x=25,y=32
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12741,6 +12743,7 @@ EndPlot
 BeginPlot
 	x=27,y=23
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16166,6 +16169,7 @@ EndPlot
 BeginPlot
 	x=34,y=57
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18421,6 +18425,7 @@ EndPlot
 BeginPlot
 	x=39,y=36
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -22304,6 +22309,7 @@ EndPlot
 BeginPlot
 	x=48,y=31
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -54289,6 +54295,7 @@ EndPlot
 BeginPlot
 	x=119,y=35
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57058,6 +57065,7 @@ EndPlot
 BeginPlot
 	x=125,y=27
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57125,6 +57133,7 @@ EndPlot
 BeginPlot
 	x=125,y=39
 	BonusType=BONUS_CRAB
+	BonusVarietyType=BONUS_CRAB_SHRIMP
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

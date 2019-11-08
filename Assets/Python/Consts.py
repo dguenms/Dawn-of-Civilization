@@ -874,9 +874,9 @@ iGems, iGold, iIncense, iIvory, iJade, iMillet, iObsidian, iOlives, iOpium, iPea
 iRareEarths, iRubber, iSalt, iSilk, iSilver, iSpices, iSugar, iTea, iTobacco, iWine,
 iWhales, iSoccer, iSongs, iMovies) = range(iNumBonuses)
 
-iNumBonusVarieties = 16
+iNumBonusVarieties = 17
 (iDyeMurex, iDyeHenna, iSpicesNutmeg, iSpicesSaffron, iSpicesVanilla, iGemsTurquoise, iGemsDiamonds, iGemsRuby, iGemsSapphire, iGemsEmeralds,
-iSheepLlama, iSheepBlack, iCowBrown, iPigFurry, iIvoryAfrican, iCitrusOranges) = range(iNumBonuses, iNumBonuses + iNumBonusVarieties)
+iSheepLlama, iSheepBlack, iCowBrown, iPigFurry, iIvoryAfrican, iCitrusOranges, iCrabShrimp) = range(iNumBonuses, iNumBonuses + iNumBonusVarieties)
 
 # Buildings
 
