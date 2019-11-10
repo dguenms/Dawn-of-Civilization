@@ -3224,4 +3224,12 @@
 		<Italian>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</Italian>
 		<Spanish>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDINGS_BONUS</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Building Production</English>
+		<French>[ICON_BULLET]%D1_Mod%% Building Production</French>
+		<German>[ICON_BULLET]%D1_Mod%% Building Production</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Building Production</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Building Production</Spanish>
+	</TEXT>
 </Civ4GameText>

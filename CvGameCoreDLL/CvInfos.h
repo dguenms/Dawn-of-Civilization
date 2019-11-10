@@ -1404,6 +1404,7 @@ public:
 	int getNonStateReligionHappiness() const;				// Exposed to Python
 	int getStateReligionUnitProductionModifier() const;				// Exposed to Python
 	int getStateReligionBuildingProductionModifier() const;				// Exposed to Python
+	int getBuildingsProductionModifier() const;				// Exposed to Python
 	int getStateReligionFreeExperience() const;								// Exposed to Python
 	int getExpInBorderModifier() const;				// Exposed to Python
 	int getLevelExperienceModifier() const; // Leoreth
@@ -1524,6 +1525,7 @@ protected:
 	int m_iNonStateReligionHappiness;
 	int m_iStateReligionUnitProductionModifier;
 	int m_iStateReligionBuildingProductionModifier;
+	int m_iBuildingsProductionModifier;
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 	int m_iLevelExperienceModifier; // Leoreth

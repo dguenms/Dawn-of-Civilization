@@ -545,6 +545,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNonStateReligionHappiness = -1; // Leoreth: -1 is the default value
 	m_iStateReligionUnitProductionModifier = 0;
 	m_iStateReligionBuildingProductionModifier = 0;
+	m_iBuildingsProductionModifier = 0;
 	m_iStateReligionFreeExperience = 0;
 	m_iCapitalCityID = FFreeList::INVALID_INDEX;
 	m_iCitiesLost = 0;
@@ -11196,6 +11197,26 @@ void CvPlayer::changeStateReligionBuildingProductionModifier(int iChange)
 }
 
 
+int CvPlayer::getBuildingsProductionModifier() const
+{
+	return m_iBuildingsProductionModifier;
+}
+
+
+void CvPlayer::changeBuildingsProductionModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iBuildingsProductionModifier = (m_iBuildingsProductionModifier + iChange);
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
+}
+
+
 int CvPlayer::getStateReligionFreeExperience() const
 {
 	return m_iStateReligionFreeExperience;
@@ -18160,6 +18181,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeNonStateReligionHappiness(GC.getCivicInfo(eCivic).getNonStateReligionHappiness() * iChange);
 	changeStateReligionUnitProductionModifier(GC.getCivicInfo(eCivic).getStateReligionUnitProductionModifier() * iChange);
 	changeStateReligionBuildingProductionModifier(GC.getCivicInfo(eCivic).getStateReligionBuildingProductionModifier() * iChange);
+	changeBuildingsProductionModifier(GC.getCivicInfo(eCivic).getBuildingsProductionModifier() * iChange);
 	changeStateReligionFreeExperience(GC.getCivicInfo(eCivic).getStateReligionFreeExperience() * iChange);
 	changeExpInBorderModifier(GC.getCivicInfo(eCivic).getExpInBorderModifier() * iChange);
 	changeLevelExperienceModifier(GC.getCivicInfo(eCivic).getLevelExperienceModifier() * iChange); // Leoreth
@@ -18569,6 +18591,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNonStateReligionHappiness);
 	pStream->Read(&m_iStateReligionUnitProductionModifier);
 	pStream->Read(&m_iStateReligionBuildingProductionModifier);
+	pStream->Read(&m_iBuildingsProductionModifier);
 	pStream->Read(&m_iStateReligionFreeExperience);
 	pStream->Read(&m_iCapitalCityID);
 	pStream->Read(&m_iCitiesLost);
@@ -19115,6 +19138,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNonStateReligionHappiness);
 	pStream->Write(m_iStateReligionUnitProductionModifier);
 	pStream->Write(m_iStateReligionBuildingProductionModifier);
+	pStream->Write(m_iBuildingsProductionModifier);
 	pStream->Write(m_iStateReligionFreeExperience);
 	pStream->Write(m_iCapitalCityID);
 	pStream->Write(m_iCitiesLost);

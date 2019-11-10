@@ -715,6 +715,7 @@
 	<ElementType name="iNonStateReligionHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionUnitProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionBuildingProductionModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iBuildingsProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionFreeExperience" content="textOnly" dt:type="int"/>
 	<ElementType name="bStabilityVassalBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityFoundBonus" content="textOnly" dt:type="boolean"/>
@@ -938,6 +939,7 @@
 		<element type="iNonStateReligionHappiness" minOccurs="0"/>
 		<element type="iStateReligionUnitProductionModifier" minOccurs="0"/>
 		<element type="iStateReligionBuildingProductionModifier" minOccurs="0"/>
+		<element type="iBuildingsProductionModifier" minOccurs="0"/>
 		<element type="iStateReligionFreeExperience" minOccurs="0"/>
 		<element type="YieldModifiers" minOccurs="0"/>
 		<element type="CapitalYieldModifiers" minOccurs="0"/>

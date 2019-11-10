@@ -4832,16 +4832,8 @@
 			<YieldChanges>
 				<iYield>2</iYield>
 			</YieldChanges>
-			<ImprovementHealths>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealthPercent>50</iHealthPercent>
-				</ImprovementHealth>
-			</ImprovementHealths>
+			<iHappiness>2</iHappiness>
+			<iHealth>2</iHealth>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>

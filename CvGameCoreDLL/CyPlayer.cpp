@@ -1421,6 +1421,17 @@ void CyPlayer::changeStateReligionBuildingProductionModifier(int iChange)
 		m_pPlayer->changeStateReligionBuildingProductionModifier(iChange);
 }
 
+int CyPlayer::getBuildingsProductionModifier()
+{
+	return m_pPlayer ? m_pPlayer->getBuildingsProductionModifier() : -1;
+}
+
+void CyPlayer::changeBuildingsProductionModifier(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeBuildingsProductionModifier(iChange);
+}
+
 int CyPlayer::getStateReligionFreeExperience()
 {
 	return m_pPlayer ? m_pPlayer->getStateReligionFreeExperience() : -1;

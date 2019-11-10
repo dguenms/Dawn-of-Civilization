@@ -5766,6 +5766,7 @@ m_iStateReligionHappiness(0),
 m_iNonStateReligionHappiness(0),
 m_iStateReligionUnitProductionModifier(0),
 m_iStateReligionBuildingProductionModifier(0),
+m_iBuildingsProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
 m_iLevelExperienceModifier(0), // Leoreth
@@ -6097,6 +6098,11 @@ int CvCivicInfo::getStateReligionUnitProductionModifier() const
 int CvCivicInfo::getStateReligionBuildingProductionModifier() const
 {
 	return m_iStateReligionBuildingProductionModifier;
+}
+
+int CvCivicInfo::getBuildingsProductionModifier() const
+{
+	return m_iBuildingsProductionModifier;
 }
 
 int CvCivicInfo::getStateReligionFreeExperience() const
@@ -6485,6 +6491,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iNonStateReligionHappiness);
 	stream->Read(&m_iStateReligionUnitProductionModifier);
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
+	stream->Read(&m_iBuildingsProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
 	if (uiFlag >= 1) stream->Read(&m_iLevelExperienceModifier); // Leoreth
@@ -6673,6 +6680,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iNonStateReligionHappiness);
 	stream->Write(m_iStateReligionUnitProductionModifier);
 	stream->Write(m_iStateReligionBuildingProductionModifier);
+	stream->Write(m_iBuildingsProductionModifier);
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
 	stream->Write(m_iLevelExperienceModifier); // Leoreth
@@ -6808,6 +6816,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
 	pXML->GetChildXmlValByName(&m_iStateReligionBuildingProductionModifier, "iStateReligionBuildingProductionModifier");
+	pXML->GetChildXmlValByName(&m_iBuildingsProductionModifier, "iBuildingsProductionModifier");
 	pXML->GetChildXmlValByName(&m_iStateReligionFreeExperience, "iStateReligionFreeExperience");
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier"); // Leoreth

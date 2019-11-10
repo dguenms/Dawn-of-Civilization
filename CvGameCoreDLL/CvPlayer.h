@@ -683,6 +683,9 @@ public:
 	int getStateReligionBuildingProductionModifier() const;																										// Exposed to Python
 	void changeStateReligionBuildingProductionModifier(int iChange);																		// Exposed to Python
 
+	int getBuildingsProductionModifier() const;																										// Exposed to Python
+	void changeBuildingsProductionModifier(int iChange);																		// Exposed to Python
+
 	int getStateReligionFreeExperience() const;																																// Exposed to Python
 	void changeStateReligionFreeExperience(int iChange);
 
@@ -1478,6 +1481,7 @@ protected:
 	int m_iNonStateReligionHappiness;
 	int m_iStateReligionUnitProductionModifier;
 	int m_iStateReligionBuildingProductionModifier;
+	int m_iBuildingsProductionModifier;
 	int m_iStateReligionFreeExperience;
 	int m_iCapitalCityID;
 	int m_iCitiesLost;

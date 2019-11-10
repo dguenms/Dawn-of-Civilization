@@ -7650,6 +7650,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	//	Buildings Production Modifier
+	if (GC.getCivicInfo(eCivic).getBuildingsProductionModifier() != 0)
+	{
+			szHelpText.append(NEWLINE);
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDINGS_BONUS", GC.getCivicInfo(eCivic).getBuildingsProductionModifier()));
+	}
+
 	//	State Religion Free Experience
 	if (GC.getCivicInfo(eCivic).getStateReligionFreeExperience() != 0)
 	{
@@ -7876,13 +7883,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 /************************************************************************************************/
 			}
 		}
-	}
-
-	// 1SDAN: halved diplomatic penalties from differing state religions with Tolerance
-	if (eCivic == CIVIC_TOLERANCE)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_HALVED_STATE_RELIGION_DIPLO"));
 	}
 
 	// Leoreth: ignore state religion requirements with Secularism
@@ -17273,7 +17273,7 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 
 		// Civic (Leoreth)
-		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getBuildingProductionModifier(eBuilding);
+		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getBuildingProductionModifier(eBuilding) + GET_PLAYER(city.getOwnerINLINE()).getBuildingsProductionModifier();
 		if (0 != iCivicMod)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));

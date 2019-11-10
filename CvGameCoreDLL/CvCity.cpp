@@ -3708,6 +3708,8 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 {
 	int iMultiplier = GET_PLAYER(getOwnerINLINE()).getProductionModifier(eBuilding);
 
+	iMultiplier += GET_PLAYER(getOwnerINLINE()).getBuildingsProductionModifier();
+
 	for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		if (hasBonus((BonusTypes)iI))
@@ -9065,7 +9067,7 @@ int CvCity::getFreeSpecialist() const
 	//1SDAN: handle free specialists in capital per culture level here for simplicity
 	if (GET_PLAYER(getOwnerINLINE()).isCapitalCultureFreeSpecialist() && isCapital())
 	{
-		iCapitalCultureSpecialists += (0, getCultureLevel() - 1);
+		iCapitalCultureSpecialists += max(0, getCultureLevel() - 1);
 	}
 
 	return m_iFreeSpecialist+iItalianSpecialists+iCoreSpecialists+iCapitalCultureSpecialists;

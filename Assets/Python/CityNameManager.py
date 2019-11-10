@@ -7738,4 +7738,7 @@ tRenames = (
 #Language: Zimbabwean
 {
 },
+#Language: Hebrew
+{
+},
 )
