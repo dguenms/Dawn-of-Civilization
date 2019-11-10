@@ -518,6 +518,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iWarWearinessModifier = 0;
 	m_iFreeSpecialist = 0;
 	m_iCoreFreeSpecialist = 0; //Leoreth
+	m_iCapitalCultureFreeSpecialist = 0; //1SDAN
 	m_iNoForeignTradeCount = 0;
 	m_iNoForeignTradeModifierCount = 0; // Leoreth
 	m_iNoCorporationsCount = 0;
@@ -544,6 +545,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNonStateReligionHappiness = -1; // Leoreth: -1 is the default value
 	m_iStateReligionUnitProductionModifier = 0;
 	m_iStateReligionBuildingProductionModifier = 0;
+	m_iBuildingsProductionModifier = 0;
 	m_iStateReligionFreeExperience = 0;
 	m_iCapitalCityID = FFreeList::INVALID_INDEX;
 	m_iCitiesLost = 0;
@@ -10716,6 +10718,24 @@ void CvPlayer::changeCoreFreeSpecialist(int iChange)
 	}
 }
 
+//1SDAN
+bool CvPlayer::isCapitalCultureFreeSpecialist() const
+{
+	return m_iCapitalCultureFreeSpecialist > 0;
+}
+
+//1SDAN
+void CvPlayer::changeCapitalCultureFreeSpecialist(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCapitalCultureFreeSpecialist += iChange;
+		FAssert(getCapitalCultureFreeSpecialist() >= 0);
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
 
 int CvPlayer::getNoForeignTradeCount() const
 {
@@ -11168,6 +11188,26 @@ void CvPlayer::changeStateReligionBuildingProductionModifier(int iChange)
 	if (iChange != 0)
 	{
 		m_iStateReligionBuildingProductionModifier = (m_iStateReligionBuildingProductionModifier + iChange);
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
+}
+
+
+int CvPlayer::getBuildingsProductionModifier() const
+{
+	return m_iBuildingsProductionModifier;
+}
+
+
+void CvPlayer::changeBuildingsProductionModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iBuildingsProductionModifier = (m_iBuildingsProductionModifier + iChange);
 
 		if (getTeam() == GC.getGameINLINE().getActiveTeam())
 		{
@@ -18119,6 +18159,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
 	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
+	changeCapitalCultureFreeSpecialist((GC.getCivicInfo(eCivic).isCapitalCultureFreeSpecialists()) ? iChange : 0); //1SDAN
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
 	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
@@ -18140,6 +18181,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeNonStateReligionHappiness(GC.getCivicInfo(eCivic).getNonStateReligionHappiness() * iChange);
 	changeStateReligionUnitProductionModifier(GC.getCivicInfo(eCivic).getStateReligionUnitProductionModifier() * iChange);
 	changeStateReligionBuildingProductionModifier(GC.getCivicInfo(eCivic).getStateReligionBuildingProductionModifier() * iChange);
+	changeBuildingsProductionModifier(GC.getCivicInfo(eCivic).getBuildingsProductionModifier() * iChange);
 	changeStateReligionFreeExperience(GC.getCivicInfo(eCivic).getStateReligionFreeExperience() * iChange);
 	changeExpInBorderModifier(GC.getCivicInfo(eCivic).getExpInBorderModifier() * iChange);
 	changeLevelExperienceModifier(GC.getCivicInfo(eCivic).getLevelExperienceModifier() * iChange); // Leoreth
@@ -18522,6 +18564,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iWarWearinessModifier);
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iCoreFreeSpecialist); //Leoreth
+	pStream->Read(&m_iCapitalCultureFreeSpecialist); //1SDAN
 	pStream->Read(&m_iNoForeignTradeCount);
 	pStream->Read(&m_iNoForeignTradeModifierCount); // Leoreth
 	pStream->Read(&m_iNoCorporationsCount);
@@ -18548,6 +18591,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNonStateReligionHappiness);
 	pStream->Read(&m_iStateReligionUnitProductionModifier);
 	pStream->Read(&m_iStateReligionBuildingProductionModifier);
+	pStream->Read(&m_iBuildingsProductionModifier);
 	pStream->Read(&m_iStateReligionFreeExperience);
 	pStream->Read(&m_iCapitalCityID);
 	pStream->Read(&m_iCitiesLost);
@@ -19067,6 +19111,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iWarWearinessModifier);
 	pStream->Write(m_iFreeSpecialist);
 	pStream->Write(m_iCoreFreeSpecialist); //Leoreth
+	pStream->Write(m_iCapitalCultureFreeSpecialist); //1SDAN
 	pStream->Write(m_iNoForeignTradeCount);
 	pStream->Write(m_iNoForeignTradeModifierCount); // Leoreth
 	pStream->Write(m_iNoCorporationsCount);
@@ -19093,6 +19138,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNonStateReligionHappiness);
 	pStream->Write(m_iStateReligionUnitProductionModifier);
 	pStream->Write(m_iStateReligionBuildingProductionModifier);
+	pStream->Write(m_iBuildingsProductionModifier);
 	pStream->Write(m_iStateReligionFreeExperience);
 	pStream->Write(m_iCapitalCityID);
 	pStream->Write(m_iCitiesLost);

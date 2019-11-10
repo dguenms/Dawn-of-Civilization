@@ -5522,11 +5522,6 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		iAttitude *= 2;
 	}
 
-	if (getCivics(CIVICOPTION_RELIGION) == CIVIC_TOLERANCE || GET_PLAYER(ePlayer).getCivics(CIVICOPTION_RELIGION) == CIVIC_TOLERANCE)
-	{
-		iAttitude = iAttitude / 2;
-	}
-
 	return iAttitude;
 }
 
@@ -10209,6 +10204,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += (100 * AI_neededWorkers() / (std::max(1, 100 + kCivic.getWorkerCostModifier())) / 15); // Leoreth
 	iValue += ((kCivic.getImprovementUpgradeRateModifier() * getNumCities()) / 50);
 	iValue += (kCivic.getMilitaryProductionModifier() * getNumCities() * iWarmongerPercent) / (bWarPlan ? 300 : 500 );
+	iValue += (kCivic.getBuildingsProductionModifier() / 3);
 	iValue += (kCivic.getBaseFreeUnits() / 2);
 	iValue += (kCivic.getBaseFreeMilitaryUnits() / 3);
 	iValue += ((kCivic.getFreeUnitsPopulationPercent() * getTotalPopulation()) / 200);
@@ -10230,6 +10226,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
+	iValue += (pCapital) ? (kCivic.isCapitalCultureFreeSpecialists() * 12 * max(0, pCapital->getCultureLevel() - 1)) : 0;
 
 	// Leoreth: wonder production modifier
 	iTempValue = kCivic.getWonderProductionModifier();
@@ -10346,6 +10343,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += (6 * AI_getHealthWeight(isCivic(eCivic) ? -iHealthDifference : iHealthDifference, 1));
 		}
 		iValue = iTempValue / 100;
+	}
+
+	// 1SDAN: Specialist Happiness
+	iTempValue = kCivic.getSpecialistHappiness() * 3;
+	if (iTempValue != 0)
+	{
+		iValue += ((AI_getHappinessWeight(iTempValue, 1) * getTotalPopulation()) / 15) / 100;
 	}
 
 	iTempValue = kCivic.getHappyPerMilitaryUnit() * 3;
@@ -10692,6 +10696,20 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 
 		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1);
+	}
+
+	// 1SDAN: unhappiness decay modifier
+	if (kCivic.getUnhappinessDecayModifier())
+	{
+		for (iI = 0; iI < GC.getNumHurryInfos(); iI++)
+		{
+			if (GC.getHurryInfo((HurryTypes)iI).isAnger() && canHurry((HurryTypes)iI))
+			{
+				iValue += AI_getHappinessWeight(3, 1) * getNumCities() * kCivic.getUnhappinessDecayModifier() / 100 / 2;
+			}
+		}
+
+		iValue += getMaxConscript() * AI_getHappinessWeight(5, 1) * kCivic.getUnhappinessDecayModifier() / 100 / 2;
 	}
 
 	// Leoreth: enabled wonders with civic prereq

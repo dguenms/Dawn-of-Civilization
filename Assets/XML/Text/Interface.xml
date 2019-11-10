@@ -3216,4 +3216,20 @@
 		<Italian>Our artisans have created a total of %d1 [ICON_CULTURE] in our cities!</Italian>
 		<Spanish>Our artisans have created a total of %d1 [ICON_CULTURE] in our cities!</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPITAL_CULTURE_FREE_SPECIALISTS</Tag>
+		<English>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</English>
+		<French>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</French>
+		<German>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</German>
+		<Italian>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</Italian>
+		<Spanish>[ICON_BULLET]1 Free Specialist in the Capital per Culture Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDINGS_BONUS</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Building Production</English>
+		<French>[ICON_BULLET]%D1_Mod%% Building Production</French>
+		<German>[ICON_BULLET]%D1_Mod%% Building Production</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Building Production</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Building Production</Spanish>
+	</TEXT>
 </Civ4GameText>

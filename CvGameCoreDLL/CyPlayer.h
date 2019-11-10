@@ -332,6 +332,8 @@ public:
 	void changeStateReligionUnitProductionModifier(int iChange);
 	int getStateReligionBuildingProductionModifier();
 	void changeStateReligionBuildingProductionModifier(int iChange);
+	int getBuildingsProductionModifier();
+	void changeBuildingsProductionModifier(int iChange);
 	int getStateReligionFreeExperience();
 	CyCity* getCapitalCity();
 	int getCitiesLost();

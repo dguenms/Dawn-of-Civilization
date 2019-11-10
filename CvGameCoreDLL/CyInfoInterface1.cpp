@@ -423,6 +423,7 @@ void CyInfoPythonInterface1()
 		.def("getNonStateReligionHappiness", &CvCivicInfo::getNonStateReligionHappiness, "int ()")
 		.def("getStateReligionUnitProductionModifier", &CvCivicInfo::getStateReligionUnitProductionModifier, "int ()")
 		.def("getStateReligionBuildingProductionModifier", &CvCivicInfo::getStateReligionBuildingProductionModifier, "int ()")
+		.def("getBuildingsProductionModifier", &CvCivicInfo::getBuildingsProductionModifier, "int ()")
 		.def("getStateReligionFreeExperience", &CvCivicInfo::getStateReligionFreeExperience, "int ()")
 		.def("getExpInBorderModifier", &CvCivicInfo::getExpInBorderModifier, "bool ()")
 

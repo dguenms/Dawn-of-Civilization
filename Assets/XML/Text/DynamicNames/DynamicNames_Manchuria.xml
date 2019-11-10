@@ -25,4 +25,16 @@
 		<Tag>TXT_KEY_CIV_MANCHURIA_SHORT_DESC</Tag>
 		<English>Manchuria</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINA_FASCIST</Tag>
+		<English>Nation of %s1</English>
+		<French>
+			<Text>Nation de Chine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Nation of %s1</German>
+		<Italian>Nation of %s1</Italian>
+		<Spanish>Nation of %s1</Spanish>
+	</TEXT>
 </Civ4GameText>

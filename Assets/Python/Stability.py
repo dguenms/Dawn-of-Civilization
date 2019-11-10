@@ -550,6 +550,15 @@ def secedeCity(city, iNewOwner, bRelocate):
 def completeCollapse(iPlayer):
 	lCities = utils.getCityList(iPlayer)
 	
+	# help lategame ai not collapse so regularly
+	if utils.getHumanID() != iPlayer:
+		if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iNationalism):
+			if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
+				if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
+					collapseToCore(iPlayer)
+					vic.onCollapse(iPlayer, False)
+					return
+	
 	# before cities are seceded, downgrade their cottages
 	downgradeCottages(iPlayer)
 	
@@ -1031,7 +1040,8 @@ def calculateStability(iPlayer):
 				
 			x, y = Areas.getCapital(iPlayer, utils.isReborn(iPlayer))
 			if pLoopPlayer.getStateReligion() != iStateReligion or pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
-				iAttitude += 1
+				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_ANNOYED or pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
+					iAttitude += 1
 			elif (RegionMap.getSpreadFactor(iStateReligion, x, y) == iCore or RegionMap.getSpreadFactor(iStateReligion, x, y) == iHistorical):
 				iAttitude -= 1
 				
@@ -1543,18 +1553,21 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 				continue
 		
 			# owner stability below shaky: city always flips
-			if iOwnerStability < iStabilityShaky:
+			# 1SDAN: Requires below stable for China rising within AI Manchuria
+			if iOwnerStability < iStabilityStable or (iOwnerStability < iStabilityShaky and (utils.getHumanID() == iManchuria or iOwner != iManchuria or iPlayer != iChina)):
 				lFlippingCities.append(city)
 				
 			# owner stability below stable: city flips if far away from their capital, or is capital spot of the dead civ
-			elif iOwnerStability < iStabilityStable:
+			# 1SDAN: Requires below solid for China rising within AI Manchuria
+			elif iOwnerStability < iStabilitySolid or (iOwnerStability < iStabilityStable and (utils.getHumanID() == iManchuria or iOwner != iManchuria or iPlayer != iChina)):
 				ownerCapital = gc.getPlayer(iOwner).getCapitalCity()
 				iDistance = utils.calculateDistance(city.getX(), city.getY(), ownerCapital.getX(), ownerCapital.getY())
 				if bCapital or iDistance >= 8:
 					lFlippingCities.append(city)
 				
 			# owner stability below solid: only capital spot flips
-			elif iOwnerStability < iStabilitySolid:
+			# 1SDAN: Does not happen for China rising within AI Manchuria
+			elif (iOwnerStability < iStabilitySolid and (utils.getHumanID() == iManchuria or iOwner != iManchuria or iPlayer != iChina)):
 				if bCapital:
 					lFlippingCities.append(city)
 					
