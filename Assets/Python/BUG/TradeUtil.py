@@ -596,7 +596,7 @@ def getTradePlayer(player, trade):
 	return PlayerUtil.getPlayer(trade.iData).getCivilizationShortDescription(0)
 	
 def getTradeUnit(player, trade):
-	return gc.getUnitInfo(trade.iData).getText()
+	return PlayerUtil.getPlayer(player).getUnit(trade.iData).getName()
 
 def getTradePeaceDeal(player, trade):
 	BugUtil.debug("TradeUtil - peace treaty has iData %d", trade.iData)
