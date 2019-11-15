@@ -103,7 +103,6 @@ def triggerCollapse(iPlayer):
 		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 			if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
 				collapseToCore(iPlayer)
-				vic.onCollapse(iPlayer, False)
 				return
 				
 	scheduleCollapse(iPlayer)
@@ -558,8 +557,9 @@ def completeCollapse(iPlayer):
 			if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 				if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
 					collapseToCore(iPlayer)
-					vic.onCollapse(iPlayer, False)
 					return
+	
+	vic.onCollapse(iPlayer, False)
 	
 	# before cities are seceded, downgrade their cottages
 	downgradeCottages(iPlayer)
@@ -589,6 +589,7 @@ def completeCollapse(iPlayer):
 def collapseToCore(iPlayer):
 	lAhistoricalCities = []
 	lNonCoreCities = []
+	vic.onCollapse(iPlayer, False)
 	
 	for city in utils.getCityList(iPlayer):
 		plot = gc.getMap().plot(city.getX(), city.getY())
