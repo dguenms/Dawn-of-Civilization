@@ -103,11 +103,13 @@ def triggerCollapse(iPlayer):
 				collapseToCore(iPlayer)
 				return
 
+	scheduleCollapse(iPlayer)
+
+def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
-	
 	checkLostCoreCollapse(iOwner)
 	
 	if iPlayer == iBarbarian:
@@ -257,7 +259,7 @@ def checkLostCitiesCollapse(iPlayer):
 	
 		if getStabilityLevel(iPlayer) == iStabilityCollapsing:
 			utils.debugTextPopup('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
-			completeCollapse(iPlayer)
+			scheduleCollapse(iPlayer)
 		else:
 			utils.debugTextPopup('Collapse to core by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
 			setStabilityLevel(iPlayer, iStabilityCollapsing)
@@ -280,7 +282,7 @@ def checkLostCoreCollapse(iPlayer):
 			return
 	
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
-		completeCollapse(iPlayer)
+		scheduleCollapse(iPlayer)
 	
 def determineStabilityLevel(iCurrentLevel, iStability, bFall = False):
 	iThreshold = 10 * iCurrentLevel - 10
@@ -1852,6 +1854,8 @@ def getCorePopulationModifier(iEra):
 	return tEraCorePopulationModifiers[iEra]
 	
 def balanceStability(iPlayer, iNewStabilityLevel):
+	utils.debugTextPopup("Balance stability: %s" % gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
+
 	playerData = data.players[iPlayer]
 	
 	# set stability to at least the specified level
