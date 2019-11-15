@@ -29,8 +29,6 @@ tEuropeanRussiaTL = (68, 50)
 tEuropeanRussiaBR = (80, 62)
 tEuropeanRussiaExceptions = ((68, 59), (68, 60), (68, 61), (68, 62))
 
-tKhazariaTL = (71, 46)
-tKhazariaBR = (79, 53)
 tAnatoliaTL = (69, 41)
 tAnatoliaBR = (75, 45)
 iTurkicEastWestBorder = 89
@@ -466,11 +464,11 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
-lSocialistRepublicAdj = [iPersia, iTurks, iItaly, iAztecs, iArgentina, iAustralia]
+lSocialistRepublicAdj = [iPersia, iTurks, iKhazars, iItaly, iAztecs, iArgentina, iAustralia]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia, iAustralia, iManchuria, iKievanRus, iHungary]
@@ -483,6 +481,7 @@ dEmpireThreshold = {
 	iCarthage : 4,
 	iIndonesia : 4,
 	iBurma : 2,
+	iKhazars : 4,
 	iTeotihuacan : 3,
 	iKorea : 4,
 	iRussia : 8,
@@ -583,6 +582,7 @@ dStartingLeaders = [
 	iKhmer : iSuryavarman,
 	iIndonesia : iDharmasetu,
 	iBurma : iAnawrahta,
+	iKhazars : iBulan,
 	iMoors : iRahman,
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
@@ -1185,10 +1185,11 @@ def specificName(iPlayer):
 			
 		return "TXT_KEY_CIV_VIKING_SHORT_DESC"
 		
+	elif iPlayer == iKhazars:
+		if bEmpire: 
+			return "TXT_KEY_CIV_KHAZARIA_CUMANIA"
+		
 	elif iPlayer == iTurks:
-		if utils.isPlotInArea(tCapitalCoords, tKhazariaTL, tKhazariaTL):
-			return "TXT_KEY_CIV_TURKS_KHAZARIA"
-	
 		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_RUM"
 			
@@ -1537,12 +1538,13 @@ def specificAdjective(iPlayer):
 		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
 			return gc.getPlayer(iRome).getCivilizationAdjective(0)
 			
+	elif iPlayer == iKhazars:
+		if bEmpire: 
+			return "TXT_KEY_CIV_KHAZARIA_CUMAN"
+			
 	elif iPlayer == iTurks:
 		if bResurrected:
 			return "TXT_KEY_CIV_TURKS_TIMURID"
-	
-		if utils.isPlotInArea(tCapitalCoords, tKhazariaTL, tKhazariaBR):
-			return "TXT_KEY_CIV_TURKS_KHAZAR"
 			
 		if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
@@ -1994,6 +1996,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			if iEra == iRenaissance and utils.getScenario() != i1700AD:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
+				
+	elif iPlayer == iKhazars:
+		if bEmpire:
+			return "TXT_KEY_CIV_KHAZARIA_CONFEDERATION"
 				
 	elif iPlayer == iTurks:
 		if bCityStates or iCivicGovernment == iElective:

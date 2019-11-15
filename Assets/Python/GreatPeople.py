@@ -71,6 +71,10 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 	if sName:
 		gc.getGame().addGreatPersonBornName(sName)
 		
+		# Khazar Khagan Ability: Khagan born when a Bek is born
+		if iPlayer == iKhazars:
+			utils.makeUnit(iKhagan, iKhazars, (city.getX(), city.getY()), 1)
+		
 		# Leoreth: replace graphics for female GP names
 		if sName[0] == "f":
 			sName = sName[1:]
@@ -2053,6 +2057,8 @@ iCivIndonesia : {
 	],
 },
 iCivBurma : {
+},
+iCivKhazars : {
 },
 iCivMoors : {
 	iGreatProphet : [

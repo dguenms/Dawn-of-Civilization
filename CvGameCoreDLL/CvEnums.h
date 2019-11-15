@@ -1274,6 +1274,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	BEN_GURION,
 	SAIF,
 	ARWA,
+	BULIN,
 	NUM_LEADERHEADS
 };
 
@@ -1372,6 +1373,7 @@ enum PlayerTypes				// Exposed to Python
 	TIBET,
 	INDONESIA,
 	BURMA,
+	KHAZARS,
 	MOORS,
 	SPAIN,
 	FRANCE,

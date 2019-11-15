@@ -206,8 +206,8 @@ class Barbs:
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if utils.isYearIn(680, 1000):
 			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnInvaders, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_AVAR", "TXT_KEY_ADJECTIVE_BULGAR"])
-		if utils.isYearIn(900, 1200):
-			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
+		if utils.isYearIn(900, 1200) and utils.getHumanID() != iKhazars:
+			self.checkSpawn(iKhazars, iHorseArcher, 1 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
 			
 		#barbarians in central asia
 		if utils.isYearIn(-1600, -850):

@@ -6542,4 +6542,52 @@
 		<Italian>Civilization with the most culture producing buildings in their Capital: %s1</Italian>
 		<Spanish>Civilization with the most culture producing buildings in their Capital: %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA1_TITLE</Tag>
+		<English>Khazar Correspondence</English>
+		<French>Khazar Correspondence</French>
+		<German>Khazar Correspondence</German>
+		<Italian>Khazar Correspondence</Italian>
+		<Spanish>Khazar Correspondence</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA1</Tag>
+		<English>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</English>
+		<French>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</French>
+		<German>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</German>
+		<Italian>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</Italian>
+		<Spanish>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA2_TITLE</Tag>
+		<English>The Jewish Kingdom</English>
+		<French>The Jewish Kingdom</French>
+		<German>The Jewish Kingdom</German>
+		<Italian>The Jewish Kingdom</Italian>
+		<Spanish>The Jewish Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA2</Tag>
+		<English>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</English>
+		<French>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</French>
+		<German>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</German>
+		<Italian>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Italian>
+		<Spanish>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA3_TITLE</Tag>
+		<English>Rex Cumaniae</English>
+		<French>Rex Cumaniae</French>
+		<German>Rex Cumaniae</German>
+		<Italian>Rex Cumaniae</Italian>
+		<Spanish>Rex Cumaniae</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA3</Tag>
+		<English>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</English>
+		<French>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</French>
+		<German>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</German>
+		<Italian>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</Italian>
+		<Spanish>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</Spanish>
+	</TEXT>
 </Civ4GameText>

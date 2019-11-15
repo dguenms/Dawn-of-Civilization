@@ -2749,7 +2749,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_POLAND</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_KHAZARS</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_RUSSIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
@@ -3481,6 +3481,111 @@
 			<CivilizationActionSound>AS3D_JAPAN_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_KHAZARS</Type>
+			<Description>TXT_KEY_CIV_KHAZARS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_KHAZARS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_KHAZARS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_KHAZARS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_BLUISH_WHITE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_KHAZARS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
+			<Identifier>KHA</Identifier>
+			<StartingYear>650</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>30</LoadingTime>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>3</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Atil</City>
+				<City>Samandar</City>
+				<City>Sarkel</City>
+				<City>Khazaran</City>
+				<City>Tmutarakan</City>
+				<City>Tiflis</City>
+				<City>Derbent</City>
+				<City>Baku</City>
+				<City>Sambat</City>
+				<City>Balanjar</City>
+				<City>Theodosia</City>
+				<City>Karcha</City>
+				<City>Sugdaq</City>
+				<City>Chersonesos</City>
+				<City>Kazarki</City>
+				<City>Samiran</City>
+				<City>Guzliev</City>
+				<City>Khumar</City>
+				<City>Zolotiye Gorki</City>
+				<City>Sambalut</City>
+				<City>Makhachkala</City>
+				<City>Vulga Bulgar</City>
+				<City>Tschernigow</City>
+				<City>Azaq</City>
+				<City>Kursk</City>
+				<City>Murom</City>
+				<City>Samosdelka</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SMOKEHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_KHAZARS_SALTOVO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<UnitType>UNIT_KHAZARS_KHAGAN</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_BULAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_TURKS</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_OTTOMAN_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_OTTOMAN_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_KHMER</Type>
 			<Description>TXT_KEY_CIV_KHMER_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_KHMER_SHORT_DESC</ShortDescription>
@@ -3689,7 +3794,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_POLAND</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_VIKING</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_RUSSIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
@@ -5662,7 +5767,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_RUSSIA</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_KIEVAN_RUS</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_POLAND_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_POLAND_ORDER</CivilizationActionSound>
 		</CivilizationInfo>

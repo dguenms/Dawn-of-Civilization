@@ -3717,5 +3717,15 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/Dujiangyan/dujiangyan.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KHAZARS_SALTOVO</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.4</fScale>
+			<fInterfaceScale>1</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Pasture/Pasture.nif</NIF>
+			<KFM>Art/Structures/Improvements/Pasture/Pasture.kfm</KFM>
+			<Button>Art/Structures/Buildings/Yarmaq Mint/Yarmaq Mint.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -2514,6 +2514,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case BURMA:
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
 		break;
+	case KHAZARS:
+		break;
 	case MOORS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		//aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
@@ -2541,8 +2543,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
+		break;
 	case YEMEN:
 		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
+		break;
 	case KHMER:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
@@ -2576,6 +2580,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
 	case RUSSIA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 3;
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;

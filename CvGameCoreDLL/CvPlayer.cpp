@@ -8123,6 +8123,15 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 		}
 	}
 
+	// Khazar UP: starts with Tolerance
+	if (getID() == KHAZARS)
+	{
+		if (eCivic == CIVIC_TOLERANCE)
+		{
+			return true;
+		}
+	}
+
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))
 	{
 		return false;
@@ -10722,6 +10731,12 @@ void CvPlayer::changeCoreFreeSpecialist(int iChange)
 bool CvPlayer::isCapitalCultureFreeSpecialist() const
 {
 	return m_iCapitalCultureFreeSpecialist > 0;
+}
+
+//1SDAN
+int CvPlayer::getCapitalCultureFreeSpecialist() const
+{
+	return m_iCapitalCultureFreeSpecialist;
 }
 
 //1SDAN

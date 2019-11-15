@@ -10925,6 +10925,10 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 			{
 				iValue /= 2;
 			}
+			else if (iI != JUDAISM && iI != NO_RELIGION && getID() == KHAZARS)
+			{
+				iValue /= 2;
+			}
 			
 			if (iValue > iBestValue)
 			{

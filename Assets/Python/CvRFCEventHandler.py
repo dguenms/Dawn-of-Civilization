@@ -397,6 +397,10 @@ class CvRFCEventHandler:
 			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
 				utils.createGarrisons(tCity, iOwner, 1)
 				utils.makeUnit(utils.getBestWorker(iOwner), iOwner, tCity, 1)
+				
+		# 1SDAN: Free Armoury for cities founded by Khazarian Khagans
+		if iOwner == iKhazars:
+			city.setHasRealBuilding(iArmoury, True)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'

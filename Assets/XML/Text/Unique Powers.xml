@@ -1217,4 +1217,20 @@
 		<Italian>25% of Commerce from Trade Routes is converted to Food</Italian>
 		<Spanish>25% of Commerce from Trade Routes is converted to Food</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KHA_TITLE</Tag>
+		<English>The Power of Tolerance:</English>
+		<French>The Power of Tolerance:</French>
+		<German>The Power of Tolerance:</German>
+		<Italian>The Power of Tolerance:</Italian>
+		<Spanish>The Power of Tolerance:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KHA</Tag>
+		<English>Tolerance is enabled at the start. Immigration from Jewish cities</English>
+		<French>Tolerance is enabled at the start. Immigration from Jewish cities</French>
+		<German>Tolerance is enabled at the start. Immigration from Jewish cities</German>
+		<Italian>Tolerance is enabled at the start. Immigration from Jewish cities</Italian>
+		<Spanish>Tolerance is enabled at the start. Immigration from Jewish cities</Spanish>
+	</TEXT>
 </Civ4GameText>

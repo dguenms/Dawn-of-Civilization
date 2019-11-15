@@ -412,6 +412,51 @@
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_SETTLER</Class>
+			<Type>UNIT_KHAZARS_KHAGAN</Type>
+			<Capture>UNITCLASS_WORKER</Capture>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_KHAZARS_KHAGAN</Description>
+			<Civilopedia>TXT_KEY_UNIT_KHAZARS_KHAGAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_KHAZARS_KHAGAN_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_KHAZARS_KHAGAN_HELP</Help>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bFood>1</bFood>
+			<bFound>1</bFound>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_SETTLE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iAsset>4</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>4</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>4</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_MALE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_FEMALE</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_CHILD</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_WORKER</Class>
 			<Type>UNIT_WORKER</Type>
 			<Capture>UNITCLASS_WORKER</Capture>
