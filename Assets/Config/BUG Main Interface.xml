@@ -96,7 +96,7 @@
 			</list>
 
 			<!-- Leoreth: show debug popups -->
-			<option id="ShowDebugPopups" key="Show Debug Popups" 
+			<option id="ShowDebugPopups" key="ShowDebugPopups" 
 					type="boolean" default="False" 
 					get="isShowDebugPopups" dirtyBit="GameData"/>
       
