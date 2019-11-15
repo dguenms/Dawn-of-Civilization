@@ -85,5 +85,6 @@ class BugGeneralOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addTextDropdown(screen, panel, panel, "MainInterface__BuildIconSize", True)
 		self.addCheckbox(screen, panel, "MainInterface__CityArrows")
 
-		# Leoreth: graphics paging option
+		# Leoreth: custom options
+		self.addCheckbox(screen, panel, "MainInterface__ShowDebugPopups")
 		self.addCheckbox(screen, panel, "MainInterface__EnableGraphicalPaging")

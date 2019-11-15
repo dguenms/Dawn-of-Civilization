@@ -267,11 +267,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__ENABLEGRAPHICALPAGING_TEXT</Tag>
-		<English>Enable graphics paging</English>
+		<English>Enable Graphics Paging</English>
 		<French>Activer la Pagination Graphique</French>
-		<German>Enable graphics paging</German>
-		<Italian>Enable graphics paging</Italian>
-		<Spanish>Enable graphics paging</Spanish>
+		<German>Enable Graphics Paging</German>
+		<Italian>Enable Graphics Paging</Italian>
+		<Spanish>Enable Graphics Paging</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__ENABLEGRAPHICALPAGING_HOVER</Tag>
@@ -280,6 +280,22 @@
 		<German>Turn on or off paging out of off-focus graphics to save memory</German>
 		<Italian>Turn on or off paging out of off-focus graphics to save memory</Italian>
 		<Spanish>Turn on or off paging out of off-focus graphics to save memory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__SHOWDEBUGPOPUPS_TEXT</Tag>
+		<English>Display Debug Popups</English>
+		<French>Display Debug Popups</French>
+		<German>Display Debug Popups</German>
+		<Italian>Display Debug Popups</Italian>
+		<Spanish>Display Debug Popups</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__SHOWDEBUGPOPUPS_HOVER</Tag>
+		<English>Show additional popups about events in the game for debug purposes</English>
+		<French>Show additional popups about events in the game for debug purposes</French>
+		<German>Show additional popups about events in the game for debug purposes</German>
+		<Italian>Show additional popups about events in the game for debug purposes</Italian>
+		<Spanish>Show additional popups about events in the game for debug purposes</Spanish>
 	</TEXT>
 
 <!-- BUG Core Options -->
