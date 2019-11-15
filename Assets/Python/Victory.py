@@ -3941,7 +3941,7 @@ def countCultureBuildings(city, bIncludeWonders = True, bIncludeObsolete = False
 		if BuildingInfo.getObsoleteSafeCommerceChange(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
 		if BuildingInfo.getCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
 		if BuildingInfo.getPowerCommerceModifier(CommerceTypes.COMMERCE_CULTURE) > 0: bIsCulture = True
-		if not isCulture: continue
+		if not bIsCulture: continue
 		iCount += 1
 	return iCount
 ### UHV HELP SCREEN ###
