@@ -1,0 +1,5 @@
+# tCoreArea
+((73, 47),	(77, 51)),	# Khazaria
+
+# dCoreAreaExceptions
+iKhazaria : [(73, 50), (73, 51), (74, 51), (75, 51), (77, 51)],
