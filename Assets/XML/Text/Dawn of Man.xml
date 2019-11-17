@@ -709,4 +709,8 @@
 		<Tag>TXT_KEY_DOM_YEMEN</Tag>
 		<English>It is the year 819 AD. Following their victories, a new amir of Yemen has been appointed Amir of Yemen with the task of restraining the Alid Shi'a influence in the area. As Abbasid rule continues to wane and the spice trade from India continues to bolster Yemen's growth, the Yemeni nation is in a prime position to become the new face of the Arabian peninsula.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KHAZARIA</Tag>
+		<English>It is the year 650 AD. Following the breakup of the Western Turkic Khaganate, a group of Turkic peoples head west to found a new Khaganate. Positioned astride a major artery of the Silk Road, word of the tolerant Khazar Khaganate will soon spread far and wide, attracting a variety of peoples from disenfranchised faiths.</English>
+	</TEXT>
 </Civ4GameText>

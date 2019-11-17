@@ -185,6 +185,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getTotalPopulation", &CyPlayer::getTotalPopulation, "int ()")
 		.def("getAveragePopulation", &CyPlayer::getAveragePopulation, "int ()")
 		.def("getRealPopulation", &CyPlayer::getRealPopulation, "long int ()")
+		.def("getReligionPopulation", &CyPlayer::getReligionPopulation, "int (int eReligion)")
 
 		.def("getTotalLand", &CyPlayer::getTotalLand, "int ()")
 		.def("getTotalLandScored", &CyPlayer::getTotalLandScored, "int ()")

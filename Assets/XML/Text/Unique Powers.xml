@@ -1186,6 +1186,22 @@
 		<Spanish>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_EMIGRATION_JEWISH_KINGDOM</Tag>
+		<English>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</English>
+		<French>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</French>
+		<German>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</German>
+		<Italian>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</Italian>
+		<Spanish>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IMMIGRATION_JEWISH_KINGDOM</Tag>
+		<English>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations!</English>
+		<French>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</French>
+		<German>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</German>
+		<Italian>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</Italian>
+		<Spanish>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_OMA_TITLE</Tag>
 		<English>The Power of Aflaj:</English>
 		<French>Le Pouvoir de Aflaj :</French>

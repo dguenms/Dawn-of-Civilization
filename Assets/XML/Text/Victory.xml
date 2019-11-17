@@ -6552,11 +6552,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA1</Tag>
-		<English>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</English>
-		<French>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</French>
-		<German>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</German>
-		<Italian>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</Italian>
-		<Spanish>Perform a Diplomatic mission in a European City owned by a Muslim or Pagan Civilization by 1031 AD</Spanish>
+		<English>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</English>
+		<French>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</French>
+		<German>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</German>
+		<Italian>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</Italian>
+		<Spanish>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA2_TITLE</Tag>
@@ -6568,11 +6568,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA2</Tag>
-		<English>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</English>
-		<French>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</French>
-		<German>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</German>
-		<Italian>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Italian>
-		<Spanish>Have X Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Spanish>
+		<English>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</English>
+		<French>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</French>
+		<German>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</German>
+		<Italian>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Italian>
+		<Spanish>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA3_TITLE</Tag>
@@ -6584,10 +6584,34 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA3</Tag>
-		<English>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</English>
-		<French>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</French>
-		<German>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</German>
-		<Italian>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</Italian>
-		<Spanish>Control a continuous empire from the Danube River to Lake Zaysan by 1241 AD</Spanish>
+		<English>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</English>
+		<French>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</French>
+		<German>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</German>
+		<Italian>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</Italian>
+		<Spanish>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGION_HAPPINESS</Tag>
+		<English>Happiness from Religions: %d1 / %d2</English>
+		<French>Happiness from Religions: %d1 / %d2</French>
+		<German>Happiness from Religions: %d1 / %d2</German>
+		<Italian>Happiness from Religions: %d1 / %d2</Italian>
+		<Spanish>Happiness from Religions: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_JEWISH_POPULATION</Tag>
+		<English>Civilization with the largest Jewish Population: %s1</English>
+		<French>Civilization with the largest Jewish Population: %s1</French>
+		<German>Civilization with the largest Jewish Population: %s1</German>
+		<Italian>Civilization with the largest Jewish Population: %s1</Italian>
+		<Spanish>Civilization with the largest Jewish Population: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DANUBE_TO_ZAYSAN</Tag>
+		<English>Continuous empire from the Danube River to Lake Zaysan</English>
+		<French>Continuous empire from the Danube River to Lake Zaysan</French>
+		<German>Continuous empire from the Danube River to Lake Zaysan</German>
+		<Italian>Continuous empire from the Danube River to Lake Zaysan</Italian>
+		<Spanish>Continuous empire from the Danube River to Lake Zaysan</Spanish>
 	</TEXT>
 </Civ4GameText>

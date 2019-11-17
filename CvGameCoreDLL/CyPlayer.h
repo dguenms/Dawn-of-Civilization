@@ -196,6 +196,7 @@ public:
 	int getTotalPopulation();
 	int getAveragePopulation();
 	long getRealPopulation();
+	int getReligionPopulation(int eReligion);
 
 	int getTotalLand();
 	int getTotalLandScored();

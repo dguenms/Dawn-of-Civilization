@@ -791,6 +791,11 @@ long CyPlayer::getRealPopulation()
 	return m_pPlayer ? m_pPlayer->getRealPopulation() : -1;
 }
 
+int CyPlayer::getReligionPopulation(int eReligion)
+{
+	return m_pPlayer ? m_pPlayer->getReligionPopulation((ReligionTypes)eReligion) : -1;
+}
+
 int CyPlayer::getTotalLand()
 {
 	return m_pPlayer ? m_pPlayer->getTotalLand() : -1;
