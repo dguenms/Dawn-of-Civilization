@@ -10941,7 +10941,8 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 		}
 
 		// Leoreth: Terracotta Army effect
-		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY))
+		// 1SDAN: Help Khazars' expansion
+		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY) || getOwner() == KHAZARS)
 		{
 			kPlayer.changeCombatExperience((iChange * iCombatExperienceMod) / 100);
 		}

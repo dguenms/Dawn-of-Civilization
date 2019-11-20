@@ -253,16 +253,20 @@ class Companies:
 					else:
 						iTempValue += city.getNumBonuses(iBonus) * 2
 		
+		# Khazarian UB: Sheep and Cows attract the Silk Road
+		if iOwner == iKhazars and city.isHasRealBuilding(iSaltovo) and iCompany == iSilkRoute:
+			if city.getNumBonuses(iSheep) > 0:
+				bFound = True
+				iTempValue += city.getNumBonuses(iSheep) * 3
+			if city.getNumBonuses(iCow) > 0:
+				bFound = True
+				iTempValue += city.getNumBonuses(iCow) * 3
+		
 		# Brazilian UP: sugar counts as oil for Oil Industry
 		if iOwner == iBrazil and iCompany == iOilIndustry:
 			if city.getNumBonuses(iSugar) > 0:
 				bFound = True
 				iTempValue += city.getNumBonuses(iSugar) * 3
-				
-		# Allow Khazar cities to take part without required resources
-		if iOwner == iKhazars and iCompany == iSilkRoute:
-			bFound = True
-			iTempValue += 4
 		
 		if not bFound: return -1
 		iValue += iTempValue

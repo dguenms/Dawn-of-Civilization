@@ -530,7 +530,7 @@ tResurrectionIntervals = (
 [],		#Tibet
 [(1900, 2020)], #Indonesia
 [(1948, 2020)], #Burma
-[(1000, 1241)],				#Khazars
+[],				#Khazars
 [(1000, 2020)],	#Moors
 [(1700, 2020)], #Spain
 [(1700, 2020)], #France
@@ -671,7 +671,7 @@ lTotalWarOnSpawn = [
 [], #Tibet
 [], #Indonesia
 [], #Burma
-[iKievanRus, iKievanRus], #Khazars
+[iKievanRus, iKievanRus, iHungary], #Khazars
 [], #Moors
 [iMoors], #Spain
 [], #France
@@ -680,8 +680,8 @@ lTotalWarOnSpawn = [
 [], #Yemen
 [], #England
 [iRome], #Holy Rome
-[], #Kievan Rus
-[],	#Hungary
+[iKhazars, iKhazars], #Kievan Rus
+[iKhazars],	#Hungary
 [],	#Philippines
 [],	#Swahili
 [],	#Mamluks

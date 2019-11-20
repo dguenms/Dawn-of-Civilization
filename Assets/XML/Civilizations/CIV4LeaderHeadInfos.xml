@@ -87516,10 +87516,6 @@
 					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<iWeightModifier>100</iWeightModifier>
 				</UnitAIWeightModifier>
-				<UnitAIWeightModifier>
-					<UnitAIType>UNITAI_SETTLE</UnitAIType>
-					<iWeightModifier>-100</iWeightModifier>
-				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>

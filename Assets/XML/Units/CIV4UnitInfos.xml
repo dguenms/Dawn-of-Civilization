@@ -443,7 +443,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_MALE</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_KHAZARS_KHAGAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>

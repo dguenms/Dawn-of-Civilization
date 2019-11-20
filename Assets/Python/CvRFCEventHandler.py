@@ -561,7 +561,7 @@ class CvRFCEventHandler:
 	def onDiplomaticMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, bMadePeace = argsList
 		
-		if iPlayer in [iKievanRus]:
+		if iPlayer in [iKievanRus, iKhazars]:
 			vic.onDiplomaticMission(iPlayer, iX, iY, bMadePeace)
 		
 	def onPlayerSlaveTrade(self, argsList):
@@ -730,6 +730,7 @@ class CvRFCEventHandler:
 		gp.onGreatPersonBorn(pUnit, iPlayer, pCity)
 		vic.onGreatPersonBorn(iPlayer, pUnit)
 		sta.onGreatPersonBorn(iPlayer)
+		self.up.onGreatPersonBorn(pUnit, iPlayer,  pCity)
 		
 		# Leoreth: Silver Tree Fountain effect
 		if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() > 0 and gc.getPlayer(iPlayer).isHasBuildingEffect(iSilverTreeFountain):

@@ -1243,10 +1243,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHA</Tag>
-		<English>Tolerance is enabled at the start. Immigration from Jewish cities</English>
-		<French>Tolerance is enabled at the start. Immigration from Jewish cities</French>
-		<German>Tolerance is enabled at the start. Immigration from Jewish cities</German>
-		<Italian>Tolerance is enabled at the start. Immigration from Jewish cities</Italian>
-		<Spanish>Tolerance is enabled at the start. Immigration from Jewish cities</Spanish>
+		<English>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</English>
+		<French>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</French>
+		<German>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</German>
+		<Italian>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</Italian>
+		<Spanish>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</Spanish>
 	</TEXT>
 </Civ4GameText>

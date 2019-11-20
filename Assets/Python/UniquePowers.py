@@ -780,3 +780,9 @@ class UniquePowers:
 			elif utils.getHumanID() == iTargetPlayer:
 				CyInterface().addMessage(iTargetPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_IMMIGRATION_JEWISH_KINGDOM", (targetCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), x, y, True, True)
 				
+	def onGreatPersonBorn(self, unit, iPlayer, city):
+		# Khazar Khagan Ability: Khagan born when a Bek is born
+		iUnitType = utils.getBaseUnit(unit.getUnitType())
+		pUnitInfo = gc.getUnitInfo(iUnitType)
+		if pUnitInfo.getGreatPeoples(iSpecialistGreatGeneral) and iPlayer == iKhazars:
+			utils.makeUnit(iKhagan, iKhazars, (city.getX(), city.getY()), 1)

@@ -1001,7 +1001,7 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iBurma, 2)
 				
 	elif iPlayer == iKhazars:
-		# first goal: Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD
+		# first goal: Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD
 		if iGameTurn == getTurnForYear(1031):
 			expire(iKhazars, 0)
 		
@@ -1009,16 +1009,16 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1031):
 			iLeader, iPopulation = getLargestReligionPopulation(iReligion)
 			if iLeader == iKhazars and getReligionHappiness(iKhazars) >= 10:
-				win(iKhazars)
+				win(iKhazars, 1)
 			else:
-				lose(iKhazars)
+				lose(iKhazars, 1)
 				
 		# third goal: Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD
 		if iGameTurn == getTurnForYear(1241):
 			if isConnectedByLand(iKhazars, lDanube, lZaysan):
-				win(iKhazars)
+				win(iKhazars, 2)
 			else:
-				lose(iKhazars)
+				lose(iKhazars, 2)
 				
 	elif iPlayer == iMoors:
 	
@@ -2132,7 +2132,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	
 	# third Yemeni goal: Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans
 	if isPossible(iYemen, 2):
-		if city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans]:
+		if city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans, iKhazars]:
 			lose(iYemen, 2)
 		
 		if iOwner == iOttomans and pOttomans.getNumCities() < 1:
@@ -2636,12 +2636,13 @@ def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
 				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
 					data.iKievanRusMissions += 1
 					
-	# first Khazar goal: Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD
+	# first Khazar goal: Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD
 	if iPlayer == iKhazars:
 		if isPossible(iKhazars, 0):
-			city = gc.getMap().plot(iX, iY).getPlotCity()
-			if city.getRegionID() in lEurope and gc.getPlayer(city.getOwner()).getStateReligion() in [iIslam, -1]:
-				win(iKhazars, 0)
+			plot = gc.getMap().plot(iX, iY)
+			if plot.getRegionID() in lEurope:
+				if gc.getPlayer(plot.getOwner()).getStateReligion() == iIslam:
+					win(iKhazars, 0)
 					
 def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
@@ -4020,7 +4021,7 @@ def getReligionHappiness(iPlayer):
 				iHappiness += 1
 			if bTolerant:
 				iHappiness += city.getReligionCount()
-				if city.isHasReligion(iStateReligion):
+				if iStateReligion != -1 and city.isHasReligion(iStateReligion):
 					iHappiness -= 1
 	return iHappiness
 	
@@ -4706,10 +4707,12 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()))
 
 	elif iPlayer == iKhazars:
+		if iGoal == 0:
+			aHelp.append(getIcon(isWon(iPlayer, 0)) + localText.getText("TXT_KEY_VICTORY_DIPLOMATIC_MISSIONS", (isWon(iPlayer, 0), 1)))
 		if iGoal == 1:
 			iHappiness = getReligionHappiness(iKhazars)
 			iLeader, iPopulation = getLargestReligionPopulation(iJudaism)
-			aHelp.append(getIcon(iHappiness > 10) + localText.getText("TXT_KEY_VICTORY_RELIGION_HAPPINESS", (iHappiness, 10)))
+			aHelp.append(getIcon(iHappiness >= 10) + localText.getText("TXT_KEY_VICTORY_RELIGION_HAPPINESS", (iHappiness, 10)))
 			aHelp.append(getIcon(iLeader == iPlayer) + localText.getText("TXT_KEY_VICTORY_JEWISH_POPULATION", (gc.getPlayer(iLeader).getCivilizationShortDescription(0),)) + " (" + str(iPopulation) + ")")
 		
 		if iGoal == 2:

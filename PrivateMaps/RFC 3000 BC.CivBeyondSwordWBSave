@@ -30750,6 +30750,7 @@ BeginPlot
 	x=79,y=51
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot

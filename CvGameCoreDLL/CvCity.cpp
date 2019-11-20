@@ -11471,6 +11471,16 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			iNumBonuses += getNumBonuses(BONUS_SUGAR);
 		}
 
+		// Leoreth: Khazarian UB (Sheep and Cows attract the Silk Road)
+		if (getOwner() == KHAZARS && eCorporation == (CorporationTypes)GC.getInfoTypeForString("CORPORATION_SILK_ROUTE"))
+		{
+			if (isHasRealBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_KHAZARS_SALTOVO")))
+			{
+				iNumBonuses += getNumBonuses(BONUS_COW);
+				iNumBonuses += getNumBonuses(BONUS_SHEEP);
+			}
+		}
+
 		if (iNumBonuses > 0)
 		{
 			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
@@ -12501,6 +12511,18 @@ bool CvCity::isCorporationBonus(BonusTypes eBonus) const
 		if (getOwner() == BRAZIL && eBonus == BONUS_SUGAR)
 		{
 			if (isHasCorporation((CorporationTypes)6))
+			{
+				return true;
+			}
+		}
+	}
+
+	// Leoreth: Khazarian UB (Sheep and Cows attract the Silk Road)
+	if (GET_PLAYER(getOwnerINLINE()).isActiveCorporation((CorporationTypes)GC.getInfoTypeForString("CORPORATION_SILK_ROUTE")))
+	{
+		if (getOwner() == KHAZARS && (eBonus == BONUS_COW || eBonus == BONUS_SHEEP))
+		{
+			if (isHasCorporation((CorporationTypes)GC.getInfoTypeForString("CORPORATION_SILK_ROUTE")))
 			{
 				return true;
 			}

@@ -6552,11 +6552,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA1</Tag>
-		<English>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</English>
-		<French>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</French>
-		<German>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</German>
-		<Italian>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</Italian>
-		<Spanish>Conduct a Diplomatic mission in a European City controlled by a Muslim or Pagan Civilization by 1031 AD</Spanish>
+		<English>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</English>
+		<French>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</French>
+		<German>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</German>
+		<Italian>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</Italian>
+		<Spanish>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHA2_TITLE</Tag>
@@ -6613,5 +6613,13 @@
 		<German>Continuous empire from the Danube River to Lake Zaysan</German>
 		<Italian>Continuous empire from the Danube River to Lake Zaysan</Italian>
 		<Spanish>Continuous empire from the Danube River to Lake Zaysan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DIPLOMATIC_MISSIONS</Tag>
+		<English>Diplomatic Missions: %d1 / %d2</English>
+		<French>Diplomatic Missions: %d1 / %d2</French>
+		<German>Diplomatic Missions: %d1 / %d2</German>
+		<Italian>Diplomatic Missions: %d1 / %d2</Italian>
+		<Spanish>Diplomatic Missions: %d1 / %d2</Spanish>
 	</TEXT>
 </Civ4GameText>
