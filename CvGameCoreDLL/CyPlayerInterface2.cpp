@@ -130,5 +130,9 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("changeGreatGeneralsCreated", &CyPlayer::changeGreatGeneralsCreated, "void (int iChange)")
 		.def("launch", &CyPlayer::launch, "void (int iVictory)")
 		.def("isNoTemporaryUnhappiness", &CyPlayer::isNoTemporaryUnhappiness, "bool ()")
+		.def("AI_getAttitudeVal", &CyPlayer::AI_getAttitudeVal, "int (int iPlayer)")
+		.def("AI_getSameReligionAttitude", &CyPlayer::AI_getSameReligionAttitude, "int (int iPlayer)")
+		.def("AI_getDifferentReligionAttitude", &CyPlayer::AI_getDifferentReligionAttitude, "int (int iPlayer)")
+		.def("AI_getFirstImpressionAttitude", &CyPlayer::AI_getFirstImpressionAttitude, "int (int iPlayer)")
 		;
 }

@@ -2174,6 +2174,26 @@ AttitudeTypes CyPlayer::AI_getAttitude(int /*PlayerTypes*/ ePlayer)
 	return m_pPlayer ? m_pPlayer->AI_getAttitude((PlayerTypes)ePlayer) : NO_ATTITUDE;
 }
 
+int CyPlayer::AI_getAttitudeVal(int /*PlayerTypes*/ ePlayer)
+{
+	return m_pPlayer ? m_pPlayer->AI()->AI_getAttitudeVal((PlayerTypes)ePlayer) : -1;
+}
+
+int CyPlayer::AI_getSameReligionAttitude(int /*PlayerTypes*/ ePlayer)
+{
+	return m_pPlayer ? m_pPlayer->AI()->AI_getSameReligionAttitude((PlayerTypes)ePlayer) : -1;
+}
+
+int CyPlayer::AI_getDifferentReligionAttitude(int /*PlayerTypes*/ ePlayer)
+{
+	return m_pPlayer ? m_pPlayer->AI()->AI_getDifferentReligionAttitude((PlayerTypes)ePlayer) : -1;
+}
+
+int CyPlayer::AI_getFirstImpressionAttitude(int /*PlayerTypes*/ ePlayer)
+{
+	return m_pPlayer ? m_pPlayer->AI()->AI_getFirstImpressionAttitude((PlayerTypes)ePlayer) : -1;
+}
+
 int CyPlayer::AI_unitValue(int /*UnitTypes*/ eUnit, int /*UnitAITypes*/ eUnitAI, CyArea* pArea)
 {
 	return m_pPlayer ? m_pPlayer->AI_unitValue((UnitTypes)eUnit, (UnitAITypes)eUnitAI, pArea->getArea()) : -1;
