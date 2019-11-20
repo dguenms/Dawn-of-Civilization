@@ -6542,4 +6542,84 @@
 		<Italian>Civilization with the most culture producing buildings in their Capital: %s1</Italian>
 		<Spanish>Civilization with the most culture producing buildings in their Capital: %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA1_TITLE</Tag>
+		<English>Khazar Correspondence</English>
+		<French>Khazar Correspondence</French>
+		<German>Khazar Correspondence</German>
+		<Italian>Khazar Correspondence</Italian>
+		<Spanish>Khazar Correspondence</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA1</Tag>
+		<English>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</English>
+		<French>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</French>
+		<German>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</German>
+		<Italian>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</Italian>
+		<Spanish>Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA2_TITLE</Tag>
+		<English>The Jewish Kingdom</English>
+		<French>The Jewish Kingdom</French>
+		<German>The Jewish Kingdom</German>
+		<Italian>The Jewish Kingdom</Italian>
+		<Spanish>The Jewish Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA2</Tag>
+		<English>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</English>
+		<French>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</French>
+		<German>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</German>
+		<Italian>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Italian>
+		<Spanish>Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA3_TITLE</Tag>
+		<English>Rex Cumaniae</English>
+		<French>Rex Cumaniae</French>
+		<German>Rex Cumaniae</German>
+		<Italian>Rex Cumaniae</Italian>
+		<Spanish>Rex Cumaniae</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHA3</Tag>
+		<English>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</English>
+		<French>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</French>
+		<German>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</German>
+		<Italian>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</Italian>
+		<Spanish>Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGION_HAPPINESS</Tag>
+		<English>Happiness from Religions: %d1 / %d2</English>
+		<French>Happiness from Religions: %d1 / %d2</French>
+		<German>Happiness from Religions: %d1 / %d2</German>
+		<Italian>Happiness from Religions: %d1 / %d2</Italian>
+		<Spanish>Happiness from Religions: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_JEWISH_POPULATION</Tag>
+		<English>Civilization with the largest Jewish Population: %s1</English>
+		<French>Civilization with the largest Jewish Population: %s1</French>
+		<German>Civilization with the largest Jewish Population: %s1</German>
+		<Italian>Civilization with the largest Jewish Population: %s1</Italian>
+		<Spanish>Civilization with the largest Jewish Population: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DANUBE_TO_ZAYSAN</Tag>
+		<English>Continuous empire from the Danube River to Lake Zaysan</English>
+		<French>Continuous empire from the Danube River to Lake Zaysan</French>
+		<German>Continuous empire from the Danube River to Lake Zaysan</German>
+		<Italian>Continuous empire from the Danube River to Lake Zaysan</Italian>
+		<Spanish>Continuous empire from the Danube River to Lake Zaysan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DIPLOMATIC_MISSIONS</Tag>
+		<English>Diplomatic Missions: %d1 / %d2</English>
+		<French>Diplomatic Missions: %d1 / %d2</French>
+		<German>Diplomatic Missions: %d1 / %d2</German>
+		<Italian>Diplomatic Missions: %d1 / %d2</Italian>
+		<Spanish>Diplomatic Missions: %d1 / %d2</Spanish>
+	</TEXT>
 </Civ4GameText>

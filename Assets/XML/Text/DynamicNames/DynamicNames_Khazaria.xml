@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Harappa -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARS_DESC</Tag>
+		<English>The Khazars</English>
+		<French>The Khazars</French>
+		<German>The Khazars</German>
+		<Italian>The Khazars</Italian>
+		<Spanish>The Khazars</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_PEOPLES</Tag>
+		<English>Turkic Peoples</English>
+		<French>
+			<Text>Peuplades turques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Turkic Peoples</German>
+		<Italian>Turkic Peoples</Italian>
+		<Spanish>Turkic Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_DEFAULT</Tag>
+		<English>%s2 Khaganate</English>
+		<French>
+			<Text>Khaganat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Khaganate</German>
+		<Italian>%s2 Khaganate</Italian>
+		<Spanish>%s2 Khaganate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_FASCIST</Tag>
+		<English>Pan-Turkic Empire</English>
+		<French>
+			<Text>Empire panturc</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Pan-Turkic Empire</German>
+		<Italian>Pan-Turkic Empire</Italian>
+		<Spanish>Pan-Turkic Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARS_SHORT_DESC</Tag>
+		<English>Khazaria</English>
+		<French>
+			<Text>Khazarie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Khazaria</German>
+		<Italian>Khazaria</Italian>
+		<Spanish>Khazaria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARS_ADJECTIVE</Tag>
+		<English>Khazar</English>
+		<French>
+			<Text>khazar:khazare:KHAZARIA:khazares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Khazar</German>
+		<Italian>Khazar</Italian>
+		<Spanish>Khazar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_CUMANIA</Tag>
+		<English>Cumania</English>
+		<French>Cumania</French>
+		<German>Cumania</German>
+		<Italian>Cumania</Italian>
+		<Spanish>Cumania</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_CUMAN</Tag>
+		<English>Cuman-Kipchak</English>
+		<French>Cuman-Kipchak</French>
+		<German>Cuman-Kipchak</German>
+		<Italian>Cuman-Kipchak</Italian>
+		<Spanish>Cuman-Kipchak</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_CONFEDERATION</Tag>
+		<English>%s2 Confederation</English>
+		<French>%s2 Confederation</French>
+		<German>%s2 Confederation</German>
+		<Italian>%s2 Confederation</Italian>
+		<Spanish>%s2 Confederation</Spanish>
+	</TEXT>
+</Civ4GameText>

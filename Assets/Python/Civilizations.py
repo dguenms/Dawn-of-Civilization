@@ -168,6 +168,7 @@ iCivArabia :	Techs([iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivTibet :	Techs([iNobility, iScholarship, iEthics], column=5),
 iCivIndonesia :	Techs([iEthics], column=5, exceptions=[iGeneralship]),
 iCivBurma :		Techs(column=5, exceptions=[iGeneralship]),
+iCivKhazars :	Techs([iNobility, iGeneralship, iCurrency], column=4),
 iCivMoors :	Techs([iMachinery, iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
 iCivFrance :	Techs([iFeudalism, iTheology], column=6),
@@ -455,6 +456,10 @@ dTechPreferences = {
 	iCivBurma : {
 		iSteel : 30,
 		iFortification : 20,
+	},
+	iCivKhazars : {
+		iFortification : 20,
+		iCommune : 20,
 	},
 	iCivMoors : {
 		iCivilService: 20,
@@ -749,6 +754,7 @@ dDefaultWonderPreferences = {
 	iCivArabia: -15,
 	iCivIndonesia: -15,
 	iCivBurma: -15,
+	iCivKhazars: -15,
 	iCivFrance: -12,
 	iCivOman: -20,
 	iCivKhmer: -15,
@@ -929,6 +935,9 @@ dBuildingPreferences = {
 		iBorobudur: 20,
 		iPrambanan: 20,
 		iNalanda: 20,
+	},
+	iCivKhazars : {
+		
 	},
 	iCivMoors : {
 		iMezquita: 100,

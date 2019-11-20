@@ -1286,5 +1286,13 @@
 			<NoShaderNIF>Art/Leaderheads/Arwa/aminah.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Arwa/suleiman_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BULAN</Type>
+			<Button>art/Leaderheads/Bulan/Bulan.dds</Button>
+			<NIF>art/Leaderheads/Bulan/John II.nif</NIF>
+			<KFM>art/Leaderheads/Bulan/John II.kfm</KFM>
+			<NoShaderNIF>art/Leaderheads/Bulan/John_II_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Bulan/JohnII_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

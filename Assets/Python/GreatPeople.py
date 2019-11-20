@@ -2054,6 +2054,8 @@ iCivIndonesia : {
 },
 iCivBurma : {
 },
+iCivKhazars : {
+},
 iCivMoors : {
 	iGreatProphet : [
 		"Ibn Masarra", # 10th

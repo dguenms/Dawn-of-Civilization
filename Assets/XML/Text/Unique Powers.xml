@@ -1186,6 +1186,22 @@
 		<Spanish>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_EMIGRATION_JEWISH_KINGDOM</Tag>
+		<English>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</English>
+		<French>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</French>
+		<German>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</German>
+		<Italian>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</Italian>
+		<Spanish>The Jewish population of %s1 is emigrating to the Jewish Kingdom!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IMMIGRATION_JEWISH_KINGDOM</Tag>
+		<English>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations!</English>
+		<French>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</French>
+		<German>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</German>
+		<Italian>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</Italian>
+		<Spanish>Our population in %s1 is growing due to Jewish immigrants from less tolerant nations</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_OMA_TITLE</Tag>
 		<English>The Power of Aflaj:</English>
 		<French>Le Pouvoir de Aflaj :</French>
@@ -1216,5 +1232,21 @@
 		<German>25% of Commerce from Trade Routes is converted to Food</German>
 		<Italian>25% of Commerce from Trade Routes is converted to Food</Italian>
 		<Spanish>25% of Commerce from Trade Routes is converted to Food</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KHA_TITLE</Tag>
+		<English>The Power of Tolerance:</English>
+		<French>The Power of Tolerance:</French>
+		<German>The Power of Tolerance:</German>
+		<Italian>The Power of Tolerance:</Italian>
+		<Spanish>The Power of Tolerance:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KHA</Tag>
+		<English>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</English>
+		<French>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</French>
+		<German>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</German>
+		<Italian>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</Italian>
+		<Spanish>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</Spanish>
 	</TEXT>
 </Civ4GameText>

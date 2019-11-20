@@ -62,6 +62,9 @@ class UniquePowers:
 		if iGameTurn >= getTurnForYear(tBirth[iAmerica])+utils.getTurns(5):
 			self.checkImmigration()
 
+		if iGameTurn >= getTurnForYear(tBirth[iKhazars]) and pKhazars.isAlive():
+			self.doJewishKingdom()
+
 		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
 			
@@ -692,4 +695,94 @@ class UniquePowers:
 		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 0, openjewishcities)
 		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 1, openjewishcities)
 		capital.setBuildingYieldChange(gc.getBuildingInfo(iPalace).getBuildingClassType(), 2, openjewishcities)
+
+#------------------KHAZARIAN U.P.-------------------
+
+	#done at same time as other immigration (in checkImmigration())
+	def doJewishKingdom(self):
+		# get available migration and immigration cities
+		lSourceCities = []
+		lTargetCities = []
 		
+		for iPlayer in range(iNumPlayers):
+			pPlayer = gc.getPlayer(iPlayer)
+			lCities = []
+			for city in utils.getCityList(iPlayer):
+				iFoodDifference = city.foodDifference(False)
+				iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
+				if iPlayer == iKhazars:
+					if iFoodDifference <= 0 or iHappinessDifference <= 0: continue
+					lCities.append((city, iHappinessDifference + iFoodDifference / 2 + city.getPopulation() / 2))
+				else:
+					iValue = 0
+					if iFoodDifference < 0:
+						iValue -= iFoodDifference / 2
+					if iHappinessDifference < 0:
+						iValue -= iHappinessDifference
+					if iValue > 0:
+						lCities.append((city, iValue))
+			
+			if lCities:
+				lCities.sort(key=itemgetter(1), reverse=True)
+			
+				if iPlayer == iKhazars:
+					lTargetCities.append(lCities[0])
+				else:
+					lSourceCities.append(lCities[0])
+				
+		# sort highest to lowest for happiness/unhappiness
+		lSourceCities.sort(key=itemgetter(1), reverse=True)
+		lTargetCities.sort(key=itemgetter(1), reverse=True)
+		
+		#utils.debugTextPopup(str([(x.getName(), y) for (x,y) in lTargetCities]))
+		#utils.debugTextPopup("Target city: "+targetCity.getName())
+		#utils.debugTextPopup("Source city: "+sourceCity.getName())
+		
+		iNumMigrations = min(len(lSourceCities) / 4, len(lTargetCities))
+		
+		for iMigration in range(iNumMigrations):
+			sourceCity = lSourceCities[iMigration][0]
+			targetCity = lTargetCities[iMigration][0]
+		
+			sourceCity.changePopulation(-1)
+			targetCity.changePopulation(1)
+			
+			if sourceCity.getPopulation() >= 9:
+				sourceCity.changePopulation(-1)
+				targetCity.changePopulation(1)
+				
+			# extra cottage growth for target city's vicinity
+			x = targetCity.getX()
+			y = targetCity.getY()
+			for (i, j) in utils.surroundingPlots((x, y), 2):
+				pCurrent = gc.getMap().plot(i, j)
+				if pCurrent.getWorkingCity() == targetCity:
+					pCurrent.changeUpgradeProgress(utils.getTurns(10))
+						
+			# migration brings culture
+			targetPlot = gc.getMap().plot(x, y)
+			iTargetPlayer = targetCity.getOwner()
+			iSourcePlayer = sourceCity.getOwner()
+			iCultureChange = targetPlot.getCulture(iTargetPlayer) / targetCity.getPopulation()
+			targetPlot.changeCulture(iSourcePlayer, iCultureChange, False)
+			
+			# remove Judaism from source city
+			if sourceCity.isHasReligion(iJudaism) and not sourceCity.isHolyCityByType(iJudaism):
+				sourceCity.setHasReligion(iJudaism, False, True, True)
+			
+			# in the rare event that the Israeli capital is not Jewish, make it so
+			if not targetCity.isHasReligion(iJudaism):
+				targetCity.setHasReligion(iJudaism, True, True, True)
+			
+			# notify affected players
+			if utils.getHumanID() == iSourcePlayer:
+				CyInterface().addMessage(iSourcePlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_EMIGRATION_JEWISH_KINGDOM", (sourceCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), sourceCity.getX(), sourceCity.getY(), True, True)
+			elif utils.getHumanID() == iTargetPlayer:
+				CyInterface().addMessage(iTargetPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_UP_IMMIGRATION_JEWISH_KINGDOM", (targetCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iSettler).getButton(), ColorTypes(iYellow), x, y, True, True)
+				
+	def onGreatPersonBorn(self, unit, iPlayer, city):
+		# Khazar Khagan Ability: Khagan born when a Bek is born
+		iUnitType = utils.getBaseUnit(unit.getUnitType())
+		pUnitInfo = gc.getUnitInfo(iUnitType)
+		if pUnitInfo.getGreatPeoples(iSpecialistGreatGeneral) and iPlayer == iKhazars:
+			utils.makeUnit(iKhagan, iKhazars, (city.getX(), city.getY()), 1)

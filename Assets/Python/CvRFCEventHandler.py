@@ -397,6 +397,10 @@ class CvRFCEventHandler:
 			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
 				utils.createGarrisons(tCity, iOwner, 1)
 				utils.makeUnit(utils.getBestWorker(iOwner), iOwner, tCity, 1)
+				
+		# 1SDAN: Free Armoury for cities founded by Khazarian Khagans
+		if iOwner == iKhazars:
+			city.setHasRealBuilding(iArmoury, True)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'
@@ -557,7 +561,7 @@ class CvRFCEventHandler:
 	def onDiplomaticMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, bMadePeace = argsList
 		
-		if iPlayer in [iKievanRus]:
+		if iPlayer in [iKievanRus, iKhazars]:
 			vic.onDiplomaticMission(iPlayer, iX, iY, bMadePeace)
 		
 	def onPlayerSlaveTrade(self, argsList):
@@ -726,6 +730,7 @@ class CvRFCEventHandler:
 		gp.onGreatPersonBorn(pUnit, iPlayer, pCity)
 		vic.onGreatPersonBorn(iPlayer, pUnit)
 		sta.onGreatPersonBorn(iPlayer)
+		self.up.onGreatPersonBorn(pUnit, iPlayer,  pCity)
 		
 		# Leoreth: Silver Tree Fountain effect
 		if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() > 0 and gc.getPlayer(iPlayer).isHasBuildingEffect(iSilverTreeFountain):

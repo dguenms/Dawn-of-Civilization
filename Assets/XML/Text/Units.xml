@@ -3837,4 +3837,20 @@
 		<Italian>Architect</Italian>
 		<Spanish>Architect</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KHAZARS_KHAGAN</Tag>
+		<English>Khagan</English>
+		<French>Khagan</French>
+		<German>Khagan</German>
+		<Italian>Khagan</Italian>
+		<Spanish>Khagan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KHAZARS_KHAGAN_HELP</Tag>
+		<English>Trained when a Great General is born. Cities start with an Armoury.</English>
+		<French>Trained when a Great General is born. Cities start with an Armoury.</French>
+		<German>Trained when a Great General is born. Cities start with an Armoury.</German>
+		<Italian>Trained when a Great General is born. Cities start with an Armoury.</Italian>
+		<Spanish>Trained when a Great General is born. Cities start with an Armoury.</Spanish>
+	</TEXT>
 </Civ4GameText>

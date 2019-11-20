@@ -593,6 +593,7 @@ public:
 
 	//1SDAN
 	bool isCapitalCultureFreeSpecialist() const;
+	int getCapitalCultureFreeSpecialist() const;
 	void changeCapitalCultureFreeSpecialist(int iChange);
 
 	int getNoForeignTradeCount() const;

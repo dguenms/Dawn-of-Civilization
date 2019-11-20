@@ -17,7 +17,7 @@ tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary curren
 
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings, iSweden] # Vikings too now
 
-tSilkRouteTL = (80, 46)
+tSilkRouteTL = (72, 46)
 tSilkRouteBR = (99, 52)
 
 tMiddleEastTL = (68, 38)
@@ -144,7 +144,7 @@ class Companies:
 			if iOwner == iNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
-			if city.getRegionID() in [rCentralAsia, rPersia]:
+			if city.getRegionID() in [rCentralAsia, rPersia, rRussia]:
 				iValue += 2
 			elif city.getRegionID() == rChina:
 				iValue -= 2
@@ -183,6 +183,7 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if iOwner == iKhazars and city.hasBuilding(utils.getUniqueBuilding(iOwner, iSmokehouse)): iValue += 1
 
 		elif iCompany == iTradingCompany:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
@@ -252,12 +253,21 @@ class Companies:
 					else:
 						iTempValue += city.getNumBonuses(iBonus) * 2
 		
+		# Khazarian UB: Sheep and Cows attract the Silk Road
+		if iOwner == iKhazars and city.isHasRealBuilding(iSaltovo) and iCompany == iSilkRoute:
+			if city.getNumBonuses(iSheep) > 0:
+				bFound = True
+				iTempValue += city.getNumBonuses(iSheep) * 3
+			if city.getNumBonuses(iCow) > 0:
+				bFound = True
+				iTempValue += city.getNumBonuses(iCow) * 3
+		
 		# Brazilian UP: sugar counts as oil for Oil Industry
 		if iOwner == iBrazil and iCompany == iOilIndustry:
 			if city.getNumBonuses(iSugar) > 0:
 				bFound = True
 				iTempValue += city.getNumBonuses(iSugar) * 3
-					
+		
 		if not bFound: return -1
 		iValue += iTempValue
 		

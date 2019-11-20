@@ -182,30 +182,6 @@
 		<Spanish>Shaybanid</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKS_KHAZARIA</Tag>
-		<English>Khazaria</English>
-		<French>
-			<Text>Khazarie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Khazaria</German>
-		<Italian>Khazaria</Italian>
-		<Spanish>Khazaria</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKS_KHAZAR</Tag>
-		<English>Khazar</English>
-		<French>
-			<Text>khazar:khazare:khazars:khazares</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
-		<German>Khazar</German>
-		<Italian>Khazar</Italian>
-		<Spanish>Khazar</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKS_RUM</Tag>
 		<English>Rum</English>
 		<French>

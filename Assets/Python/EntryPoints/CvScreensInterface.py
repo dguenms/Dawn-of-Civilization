@@ -1056,6 +1056,13 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR, vic.tIndochinaExceptions):
 			return 17
 			
+	elif iPlayer == iKhazars:
+		if (x, y) in vic.lDanube:
+			return 87
+			
+		if (x, y) in vic.lZaysan:
+			return 88
+			
 	elif iPlayer == iRussia:
 		if utils.isPlotInArea((x, y), vic.tSiberiaTL, vic.tSiberiaBR):
 			return 41

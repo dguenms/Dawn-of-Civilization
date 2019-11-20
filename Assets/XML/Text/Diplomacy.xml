@@ -634,6 +634,70 @@
 		<Spanish>As your name is the King of Kings, all your emperorship over us connotes that your wise men should be wiser than ours. Either you send us an explanation of this game of chess or send revenue and tribute us.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BULAN</Tag>
+		<English>If the rich could hire the poor to die for them, the poor would make a very nice living. Anyhow, what riches may your so-called [CT_EMPIRE] possess?</English>
+		<French>Salutations ! Je suis [OUR_NAME], je r&#232;gne sur l'[OUR_EMPIRE]. Je souhaite que nos deux grands peuples puissent vivre en paix.</French>
+		<German>Seid gegr&#252;&#223;t! Ich bin [OUR_NAME], Staatsoberhaupt des [OUR_EMPIRE:3]es. Ich hoffe, unsere gro&#223;artigen V&#246;lker werden in Frieden zusammenleben.</German>
+		<Italian>Saluti! Io sono [OUR_NAME] dell'[OUR_EMPIRE]. Spero che i nostri due grandi popoli possano vivere in pace.</Italian>
+		<Spanish>Saludos. &#161;Soy [OUR_NAME], del [OUR_EMPIRE]! Espero que nuestros dos grandes pueblos puedan vivir en paz.</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_BULAN</Tag>
+		<English>You are a broken spirit, [CT_NAME]. First mend yourself, and then mend others!</English>
+		<French>Vos bavardages incessants ne nous amusent pas, [CT_NAME] !</French>
+		<German>Euer bedeutungsloses Geschwafel am&#252;siert uns ganz und gar nicht, [CT_NAME]!</German>
+		<Italian>I tuoi balbettii senza senso non sono affatto divertenti, [CT_NAME]!</Italian>
+		<Spanish>&#161;No nos hace gracia vuestra ch&#225;chara absurda, [CT_NAME]!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_BULAN</Tag>
+		<English>I have heard of an old saying amongst the elders here: Rejoice not at thine enemy's fall - but don't rush to pick him up either.</English>
+		<French>La guerre est tr&#232;s d&#233;plaisante, mais parfois n&#233;cessaire. Il appara&#238;t que nous sommes dans cette situation, aussi devons-nous rejeter votre requ&#234;te. Cette entrevue est termin&#233;e.</French>
+		<German>Kriege sind eine h&#246;chst unangenehme Sache, manchmal aber auch unumg&#228;nglich. Und wie ich h&#246;re, ist das in diesem Fall so, deshalb muss ich Euer Anliegen zur&#252;ckweisen. Diese Unterhaltung ist beendet!</German>
+		<Italian>La guerra non &#232; per niente piacevole, ma a volte &#232; necessaria. Questa &#232; una di quelle volte, perci&#242; dobbiamo respingere le tue suppliche. L'udienza termina qui.</Italian>
+		<Spanish>La guerra es harto desagradable, pero a veces resulta necesaria. Nos informan de que &#233;sta es una de esas veces, as&#237; que debemos rechazar vuestras s&#250;plicas. La audiencia ha terminado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_BULAN</Tag>
+		<English>Would you like some of our traditional soup, [CT_NAME]? Worries go down better with soup than without.</English>
+		<French>Je vous souhaite la bienvenue ! Venez, allons d&#233;truire nos ennemis du haut de nos chars et laissons cinquante mille cadavres sur le champ de bataille pour le festin des corbeaux !</French>
+		<German>Willkommen! Lasst uns unsere Streitwagen anspannen und unsere Feinde vernichten! M&#246;gen die Gefallenen auf dem Schlachtfeld ein Festmahl f&#252;r die Geier sein!</German>
+		<Italian>Salve, ti do il benvenuto! Montiamo sulle bighe e distruggiamo i nemici, lasceremo sul campo di battaglia solamente i cadaveri perch&#233; se ne sfamino i corvi!</Italian>
+		<Spanish>&#161;Os saludamos, camarada! Venga, montemos en los carros, destruyamos a nuestros enemigos y dejemos cincuenta mil cad&#225;veres pudri&#233;ndose en el campo de batalla como pasto para los cuervos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_BULAN</Tag>
+		<English>If not for fear, sin would be sweet. I would sin again and again, [CT_NAME], just to get rid of you...</English>
+		<French>Bonjour, [CT_NAME]. A quoi devons-nous cette interruption inattendue ?</French>
+		<German>Guten Tag, [CT_NAME]. Was beschert mir diese unerwartete St&#246;rung?</German>
+		<Italian>Buongiorno a te, [CT_NAME]. A cosa dobbiamo questa interruzione inaspettata?</Italian>
+		<Spanish>Buenos d&#237;as teng&#225;is, [CT_NAME]. &#191;A qu&#233; debemos esta interrupci&#243;n tan inesperada?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_BULAN</Tag>
+		<English>If charity cost nothing, the world would be full of philanthropists. Charity, [CT_NAME]. Charity.</English>
+		<French>Les [CT_CIV_ADJ] sont dans le besoin, [CT_NAME]. J'esp&#232;re que vous ne les d&#233;cevrez pas.</French>
+		<German>Das [CT_CIV_ADJ:3] Volk befindet sich in einer &#252;blen Notlage, [CT_NAME]! Entt&#228;uscht uns nicht!</German>
+		<Italian>Il popolo [CT_CIV_ADJ:1] vive nell'indigenza, [CT_NAME]. Non deluderci.</Italian>
+		<Spanish>El pueblo [CT_CIV_ADJ:1] tiene una gran necesidad, [CT_NAME]. No nos decepcion&#233;is.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_BULAN</Tag>
+		<English>Ask about your neighbors, then buy the house. That's what I've heard.</English>
+		<French>Nous avons des besoins, [CT_NAME]. Veuillez les satisfaire.</French>
+		<German>Auch wir haben Bed&#252;rfnisse, [CT_NAME]! Und es ist an Euch, sie zu befriedigen!</German>
+		<Italian>Abbiamo delle necessit&#224;, [CT_NAME]. Ti preghiamo di accettarle.</Italian>
+		<Spanish>Tenemos necesidades, [CT_NAME]. Satisfacedlas, por favor.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BULAN</Tag>
+		<English>We've all heard of charity to the weak, but what about charity to the strong, huh?</English>
+		<French>Donnez aux [CT_CIV_SHORT] ce qui leur revient, [CT_NAME] ! Nous ne vous le demanderons pas deux fois.</French>
+		<German>Gebt [CT_CIV_SHORT], was ihm zusteht, [CT_NAME]! Wir werden Euch kein zweites Mal darum bitten!</German>
+		<Italian>Dona ci&#242; che ti richiede [CT_CIV_SHORT:2], [CT_NAME]! Non te lo chiederemo una seconda volta!</Italian>
+		<Spanish>&#161;Dadle a [CT_CIV_SHORT] lo que le corresponde, [CT_NAME]! No os lo pediremos otra vez.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>
 		<French></French>

@@ -241,7 +241,13 @@ lBarents = [(63, 64), (65, 64),  (65, 65), (66, 65), (67, 65), (67, 64), (68, 64
 tMediterraneanCoastExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,46),(73,44),(73,45),(72,45),(71,45),(71,44),(70,44),(73,36),(51, 42),(51, 43),(51, 44),(51, 45),(52, 36),(52, 37),(52, 42),(52, 43),(52, 44),(52, 45),(53, 36),(53, 37),(53, 43),(53, 44),(53, 45),(54, 36),(54, 37),(54, 45),(54, 46),(54, 47),(55, 36),(55, 37),(55, 38),(55, 47),(56, 36),(56, 37),(56, 38),(56, 47),(57, 36),(57, 37),(57, 38),(57, 47),(58, 36),(58, 47),(59, 36),(59, 47),(60, 36),(64, 47),(65, 45),(65, 46),(65, 47),(66, 45),(66, 46),(66, 47),(71, 43),(72, 43),(72, 44),(73, 43))
 lMediterraneanCoast = utils.getPlotList(tMediterraneanTL, tMediterraneanBR, tMediterraneanCoastExceptions)
 
-	
+tDanubeTL = (64, 46)
+tDanubeBR = (68, 48)
+lDanube = utils.getPlotList(tDanubeTL, tDanubeBR)
+tZaysanTL = (89, 50)
+tZaysanBR = (91, 53)
+lZaysan = utils.getPlotList(tZaysanTL, tZaysanBR)
+
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -993,6 +999,26 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iBurma, 2)
 			else:
 				lose(iBurma, 2)
+				
+	elif iPlayer == iKhazars:
+		# first goal: Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD
+		if iGameTurn == getTurnForYear(1031):
+			expire(iKhazars, 0)
+		
+		# second goal: Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD
+		if iGameTurn == getTurnForYear(1031):
+			iLeader, iPopulation = getLargestReligionPopulation(iReligion)
+			if iLeader == iKhazars and getReligionHappiness(iKhazars) >= 10:
+				win(iKhazars, 1)
+			else:
+				lose(iKhazars, 1)
+				
+		# third goal: Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD
+		if iGameTurn == getTurnForYear(1241):
+			if isConnectedByLand(iKhazars, lDanube, lZaysan):
+				win(iKhazars, 2)
+			else:
+				lose(iKhazars, 2)
 				
 	elif iPlayer == iMoors:
 	
@@ -2106,7 +2132,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	
 	# third Yemeni goal: Do not allow any Persian or Turkic nation to conquer a city in the Arabian Peninsula prior to the Collapse of the Ottomans
 	if isPossible(iYemen, 2):
-		if city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans]:
+		if city.getRegionID() == rArabia and iPlayer in [iMongolia, iTurks, iPersia, iOttomans, iKhazars]:
 			lose(iYemen, 2)
 		
 		if iOwner == iOttomans and pOttomans.getNumCities() < 1:
@@ -2609,6 +2635,14 @@ def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
 				lTopCivs = getTopCivsInGroup(0, [iKievanRus])
 				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
 					data.iKievanRusMissions += 1
+					
+	# first Khazar goal: Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD
+	if iPlayer == iKhazars:
+		if isPossible(iKhazars, 0):
+			plot = gc.getMap().plot(iX, iY)
+			if plot.getRegionID() in lEurope:
+				if gc.getPlayer(plot.getOwner()).getStateReligion() == iIslam:
+					win(iKhazars, 0)
 					
 def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
@@ -3944,6 +3978,53 @@ def countCultureBuildings(city, bIncludeWonders = True, bIncludeObsolete = False
 		if not bIsCulture: continue
 		iCount += 1
 	return iCount
+	
+def getLargestReligionPopulation(iReligion):
+	iLeader = -1
+	iPopulation = -1
+	for iPlayer in range(iNumMajorPlayers):
+		pPlayer = gc.getPlayer(iPlayer)
+		if not pPlayer.isAlive(): continue
+		iCurrent = pPlayer.getReligionPopulation(iReligion)
+		if iCurrent > iPopulation:
+			iPopulation = iCurrent
+			iLeader = iPlayer
+	return (iLeader, iPopulation)
+	
+def getReligionHappiness(iPlayer):
+	iHappiness = 0
+	iHappiness += getNumBuildings(iPlayer, iJewishTemple)
+	iHappiness += getNumBuildings(iPlayer, iOrthodoxTemple)
+	iHappiness += getNumBuildings(iPlayer, iCatholicChurch)
+	iHappiness += getNumBuildings(iPlayer, iProtestantTemple)
+	iHappiness += getNumBuildings(iPlayer, iIslamicTemple)
+	iHappiness += getNumBuildings(iPlayer, iHinduTemple)
+	iHappiness += getNumBuildings(iPlayer, iBuddhistTemple)
+	iHappiness += getNumBuildings(iPlayer, iConfucianTemple)
+	iHappiness += getNumBuildings(iPlayer, iTaoistTemple)
+	iHappiness += getNumBuildings(iPlayer, iZoroastrianTemple)
+	iHappiness += 2 * getNumBuildings(iPlayer, iJewishCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iOrthodoxCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iCatholicCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iProtestantCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iIslamicCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iHinduCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iBuddhistCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iConfucianCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iTaoistCathedral)
+	iHappiness += 2 * getNumBuildings(iPlayer, iZoroastrianCathedral)
+	bTolerant = gc.getPlayer(iPlayer).getCivics(iCivicsReligion) in [iTolerance, iSecularism]
+	iStateReligion = gc.getPlayer(iPlayer).getStateReligion()
+	if bTolerant or iStateReligion != -1:
+		for city in utils.getCityList(iPlayer):
+			if iStateReligion != -1 and city.isHasReligion(iStateReligion):
+				iHappiness += 1
+			if bTolerant:
+				iHappiness += city.getReligionCount()
+				if iStateReligion != -1 and city.isHasReligion(iStateReligion):
+					iHappiness -= 1
+	return iHappiness
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -4625,6 +4706,19 @@ def getUHVHelp(iPlayer, iGoal):
 			bIndochina = isControlled(iBurma, utils.getPlotList(tIndochinaTL, tIndochinaBR, tIndochinaExceptions))
 			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()))
 
+	elif iPlayer == iKhazars:
+		if iGoal == 0:
+			aHelp.append(getIcon(isWon(iPlayer, 0)) + localText.getText("TXT_KEY_VICTORY_DIPLOMATIC_MISSIONS", (isWon(iPlayer, 0), 1)))
+		if iGoal == 1:
+			iHappiness = getReligionHappiness(iKhazars)
+			iLeader, iPopulation = getLargestReligionPopulation(iJudaism)
+			aHelp.append(getIcon(iHappiness >= 10) + localText.getText("TXT_KEY_VICTORY_RELIGION_HAPPINESS", (iHappiness, 10)))
+			aHelp.append(getIcon(iLeader == iPlayer) + localText.getText("TXT_KEY_VICTORY_JEWISH_POPULATION", (gc.getPlayer(iLeader).getCivilizationShortDescription(0),)) + " (" + str(iPopulation) + ")")
+		
+		if iGoal == 2:
+			bConnected = isConnectedByLand(iKhazars, lDanube, lZaysan)
+			aHelp.append(getIcon(bConnected) + localText.getText("TXT_KEY_VICTORY_DANUBE_TO_ZAYSAN", ()))
+			
 	elif iPlayer == iMoors:
 		if iGoal == 0:
 			iIberia = getNumConqueredCitiesInArea(iMoors, utils.getPlotList(tIberiaTL, tIberiaBR))

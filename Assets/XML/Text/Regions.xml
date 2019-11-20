@@ -1430,4 +1430,20 @@
 		<Italian>Mesoamerica</Italian>
 		<Spanish>Mesoamerica</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_87</Tag>
+		<English>Danube River</English>
+		<French>Danube River</French>
+		<German>Danube River</German>
+		<Italian>Danube River</Italian>
+		<Spanish>Danube River</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_88</Tag>
+		<English>Lake Zaysan</English>
+		<French>Lake Zaysan</French>
+		<German>Lake Zaysan</German>
+		<Italian>Lake Zaysan</Italian>
+		<Spanish>Lake Zaysan</Spanish>
+	</TEXT>
 </Civ4GameText>

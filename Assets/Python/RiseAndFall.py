@@ -2440,6 +2440,10 @@ class RiseAndFall:
 		elif iCiv == iBurma:
 			utils.makeUnit(iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(iSkirmisher, iCiv, tPlot, 3)
+		elif iCiv == iKhazars:
+			utils.makeUnit(iHorseArcher, iCiv, tPlot, 3)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
 		elif iCiv == iMoors:
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 2)
 		elif iCiv == iSpain:
@@ -2749,6 +2753,11 @@ class RiseAndFall:
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK, 1)
 			if gc.getMap().plot(tPlot[0], tPlot[1]).isCity() and not gc.getMap().plot(tPlot[0], tPlot[1]).getPlotCity().isHasReligion(iBuddhism):
 				utils.createMissionaries(iCiv, 1, iBuddhism)
+		elif iCiv == iKhazars:
+			utils.createSettlers(iCiv, 2)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			utils.makeUnitAI(iHorseArcher, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK, 4)
+			utils.makeUnitAI(iSkirmisher, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK, 3)
 		elif iCiv == iMoors:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -3185,6 +3194,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iBurma:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iKhazars:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iMoors:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iSpain:
