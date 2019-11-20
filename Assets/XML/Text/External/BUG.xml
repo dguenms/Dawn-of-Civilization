@@ -297,6 +297,22 @@
 		<Italian>Show additional popups about events in the game for debug purposes</Italian>
 		<Spanish>Show additional popups about events in the game for debug purposes</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__SWITCHPOPUP_TEXT</Tag>
+		<English>Switch popup</English>
+		<French>Switch popup</French>
+		<German>Switch popup</German>
+		<Italian>Switch popup</Italian>
+		<Spanish>Switch popup</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__SWITCHPOPUP_HOVER</Tag>
+		<English>When checked, a popup to take over newborn civilizations will appear</English>
+		<French>When checked, a popup to take over newborn civilizations will appear</French>
+		<German>When checked, a popup to take over newborn civilizations will appear</German>
+		<Italian>When checked, a popup to take over newborn civilizations will appear</Italian>
+		<Spanish>When checked, a popup to take over newborn civilizations will appear</Spanish>
+	</TEXT>
 
 <!-- BUG Core Options -->
 
@@ -1056,6 +1072,46 @@
 		<German>Zeigt zus&#228;tzliche Informationen auf der entsprechenden Seite des Sieg-Bildschirms an</German>
 		<Italian>Quando &#232; selezionato, mostra informazioni aggiuntive nella Scheda dei Membri della Schermata Condizioni di Vittoria.</Italian>
 		<Spanish>When checked, displays extra information on the Members tab.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVPROGRESSAFTERFINISH_TEXT</Tag>
+		<English>Show UHV progress after finish</English>
+		<French>Show UHV progress after finish</French>
+		<German>Show UHV progress after finish</German>
+		<Italian>Show UHV progress after finish</Italian>
+		<Spanish>Show UHV progress after finish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVPROGRESSAFTERFINISH_HOVER</Tag>
+		<English>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</English>
+		<French>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</French>
+		<German>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</German>
+		<Italian>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</Italian>
+		<Spanish>When checked, displays the UHV progress after the UHV is completed/failed.[NEWLINE]NOTE: Some UHV counters do not update anymore after completion/failure.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_TEXT</Tag>
+		<English>Show UHV completion</English>
+		<French>Show UHV completion</French>
+		<German>Show UHV completion</German>
+		<Italian>Show UHV completion</Italian>
+		<Spanish>Show UHV completion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_HOVER</Tag>
+		<English>Select what information about the completion of the UHV is displayed.</English>
+		<French>Select what information about the completion of the UHV is displayed.</French>
+		<German>Select what information about the completion of the UHV is displayed.</German>
+		<Italian>Select what information about the completion of the UHV is displayed.</Italian>
+		<Spanish>Select what information about the completion of the UHV is displayed.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__UHVFINISHDATE_LIST</Tag>
+		<English>None|Date|Date + Turn</English>
+		<French>None|Date|Date + Turn</French>
+		<German>None|Date|Date + Turn</German>
+		<Italian>None|Date|Date + Turn</Italian>
+		<Spanish>None|Date|Date + Turn</Spanish>
 	</TEXT>
 <!-- Info Screen -->
 	<TEXT>

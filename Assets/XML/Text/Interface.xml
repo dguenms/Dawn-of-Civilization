@@ -1623,22 +1623,6 @@
 		<Spanish>La peste se ha extendido por</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYER_OPTION_MODDER_1</Tag>
-		<English>Display UHV End Turns</English>
-		<French>Montrer le tour final des VHU</French>
-		<German>EHS Endrunden Anzeigen</German>
-		<Italian>Display UHV End Turns</Italian>
-		<Spanish>Display UHV End Turns</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PLAYER_OPTION_MODDER_1_HELP</Tag>
-		<English>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</English>
-		<French>Les tours auxquels vos objectifs de VHU doivent &#234;tre accomplis sont montr&#233;s m&#234;me apr&#232;s la d&#233;couverte du calendrier.</French>
-		<German>Die Runde, in der Ihre EHS-Ziele erf&#252;llt werden m&#252;ssen, wird auch nach der Entdeckung des Kalenders angezeigt.</German>
-		<Italian>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</Italian>
-		<Spanish>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELECTION_COLLECT_TITHE</Tag>
 		<English>Collect Tithe (Requires %d1 of %d2 Total Votes)</English>
 		<French>Percevoir la d&#238;me (n&#233;cessite %d1 votes sur %d2)</French>

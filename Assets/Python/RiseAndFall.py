@@ -17,6 +17,8 @@ import Areas
 import Civilizations
 import Modifiers
 import CvEspionageAdvisor
+import BugCore
+MainOpt = BugCore.game.MainInterface
 
 ################
 ### Globals ###
@@ -35,16 +37,17 @@ iEscapePeriod = 30
 # (Slowly migrate event handlers here when rewriting to use BUTTONPOPUP_PYTHON and more idiomatic code)
 
 def startNewCivSwitchEvent(iPlayer):
-	popup = CyPopupInfo()
-	popup.setText(localText.getText("TXT_KEY_INTERFACE_NEW_CIV_SWITCH", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),)))
-	popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-	popup.setOnClickedPythonCallback("applyNewCivSwitchEvent")
-	
-	popup.setData1(iPlayer)
-	popup.addPythonButton(localText.getText("TXT_KEY_POPUP_NO", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
-	popup.addPythonButton(localText.getText("TXT_KEY_POPUP_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
-	
-	popup.addPopup(utils.getHumanID())
+	if MainOpt.isSwitchPopup():
+		popup = CyPopupInfo()
+		popup.setText(localText.getText("TXT_KEY_INTERFACE_NEW_CIV_SWITCH", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),)))
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyNewCivSwitchEvent")
+		
+		popup.setData1(iPlayer)
+		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_NO", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		
+		popup.addPopup(utils.getHumanID())
 	
 def applyNewCivSwitchEvent(argsList):
 	iButton = argsList[0]
