@@ -430,8 +430,8 @@ class RFCUtils:
 		if not plot.isCore(plot.getOwner()):
 			plot.setCultureConversion(iPlayer, iPercent)
 		
-		if bOwner:
-			plot.setOwner(iPlayer)
+			if bOwner:
+				plot.setOwner(iPlayer)
 
 	#DynamicCivs
 	def getMaster(self, iCiv):

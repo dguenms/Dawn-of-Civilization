@@ -511,8 +511,14 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		if gc.getPlayer(utils.getHumanID()).canContact(iPlayer):
 			CyInterface().addMessage(utils.getHumanID(), False, iDuration, localText.getText("TXT_KEY_STABILITY_CITIES_SECEDED", (gc.getPlayer(iPlayer).getCivilizationDescription(0), len(lCededCities))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		
+	# collect additional cities that can be part of the resurrection
+	lCededTiles = [(city.getX(), city.getY()) for city in lCededCities]
+	for iResurrectionPlayer in dPossibleResurrections:
+		for city in getResurrectionCities(iResurrectionPlayer, True):
+			if (city.getX(), city.getY()) not in lCededTiles:
+				dPossibleResurrections[iResurrectionPlayer].append(city)
+
 	# execute possible resurrections
-	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
 	for iResurrectionPlayer in dPossibleResurrections:
 		utils.debugTextPopup('Resurrection: ' + gc.getPlayer(iResurrectionPlayer).getCivilizationShortDescription(0))
 		resurrectionFromCollapse(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
@@ -1589,13 +1595,8 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	return lFlippingCities
 	
 def resurrectionFromCollapse(iPlayer, lCityList):
-
-	# collect other cities that could flip
-	for city in getResurrectionCities(iPlayer, True):
-		if city not in lCityList:
-			lCityList.append(city)
-			
-	doResurrection(iPlayer, lCityList)
+	if lCityList:
+		doResurrection(iPlayer, lCityList)
 	
 def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	pPlayer = gc.getPlayer(iPlayer)
