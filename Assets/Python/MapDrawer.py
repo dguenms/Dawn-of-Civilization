@@ -5,7 +5,7 @@ from SettlerMaps import *
 from RFCUtils import utils
 import csv
 
-IMAGE_LOCATION = "E:\Dawn of Civ Maps"
+IMAGE_LOCATION = "D:\DoC Maps"
 
 DISPLAY_FOREIGN_CORE = False
 DISPLAY_CONTESTED = True

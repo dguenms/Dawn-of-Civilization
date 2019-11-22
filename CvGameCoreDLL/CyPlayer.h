@@ -495,6 +495,10 @@ public:
 	bool AI_isFinancialTrouble();
 	bool AI_demandRebukedWar(int /*PlayerTypes*/ ePlayer);
 	AttitudeTypes AI_getAttitude(int /*PlayerTypes*/ ePlayer);
+	int AI_getAttitudeVal(int /*PlayerTypes*/ ePlayer);
+	int AI_getSameReligionAttitude(int /*PlayerTypes*/ ePlayer);
+	int AI_getDifferentReligionAttitude(int /*PlayerTypes*/ ePlayer);
+	int AI_getFirstImpressionAttitude(int /*PlayerTypes*/ ePlayer);
 	int AI_unitValue(int /*UnitTypes*/ eUnit, int /*UnitAITypes*/ eUnitAI, CyArea* pArea);
 	int AI_civicValue(int /*CivicTypes*/ eCivic);
 	int AI_totalUnitAIs(int /*UnitAITypes*/ eUnitAI);

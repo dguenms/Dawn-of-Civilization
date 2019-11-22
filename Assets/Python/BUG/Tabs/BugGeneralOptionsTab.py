@@ -88,3 +88,4 @@ class BugGeneralOptionsTab(BugOptionsTab.BugOptionsTab):
 		# Leoreth: custom options
 		self.addCheckbox(screen, panel, "MainInterface__ShowDebugPopups")
 		self.addCheckbox(screen, panel, "MainInterface__EnableGraphicalPaging")
+		self.addCheckbox(screen, panel, "MainInterface__SwitchPopup")

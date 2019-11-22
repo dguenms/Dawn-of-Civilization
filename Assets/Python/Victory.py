@@ -9,6 +9,9 @@ import Areas
 import CityNameManager as cnm
 import DynamicCivs as dc
 import PyHelpers
+import BugCore
+AdvisorOpt = BugCore.game.Advisors
+AlertsOpt = BugCore.game.MoreCiv4lerts
 
 ### GLOBALS ###
 
@@ -3053,7 +3056,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 
 def lose(iPlayer, iGoal):
 	data.players[iPlayer].lGoals[iGoal] = 0
-	if utils.getHumanID() == iPlayer and gc.getGame().getGameTurn() > utils.getScenarioStartTurn():
+	if utils.getHumanID() == iPlayer and gc.getGame().getGameTurn() > utils.getScenarioStartTurn() and AlertsOpt.isShowUHVFailPopup():
 		utils.show(localText.getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (iGoal+1,)))
 	
 def win(iPlayer, iGoal):
@@ -4321,14 +4324,18 @@ def getUHVHelp(iPlayer, iGoal):
 			sWinDate = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 		else:
 			sWinDate = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))
-		if not gc.getPlayer(iPlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
+		if AdvisorOpt.isUHVFinishDateNone():
+			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()))
+		elif AdvisorOpt.isUHVFinishDateDate():
 			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE", (sWinDate,)))
 		else:
 			aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED_DATE_TURN", (sWinDate, iWinTurn - utils.getScenarioStartTurn())))
-		return aHelp
+		if not AdvisorOpt.UHVProgressAfterFinish():
+			return aHelp
 	elif data.players[iPlayer].lGoals[iGoal] == 0:
 		aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_GOAL_FAILED", ()))
-		return aHelp
+		if not AdvisorOpt.UHVProgressAfterFinish():
+			return aHelp
 
 	if iPlayer == iEgypt:
 		if iGoal == 0:

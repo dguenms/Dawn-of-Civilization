@@ -104,6 +104,10 @@
 		      <option id="EnableGraphicalPaging" key="EnableGraphicalPaging"
 							type="boolean" default="True"
 							get="isEnableGraphicalPaging" dirtyBit="MiscButtons"/>
+
+			<option id="SwitchPopup" key="Switch Popup"
+					type="boolean" default="true"
+					get="isSwitchPopup"/>
 		</section>
 	</options>
 	

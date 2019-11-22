@@ -1011,7 +1011,7 @@ def calculateStability(iPlayer):
 	iFriendlyRelations = 0
 	iFuriousRelations = 0
 	
-	lAttitudes = []
+	lContacts = []
 	
 	for iLoopPlayer in range(iNumPlayers):
 		pLoopPlayer = gc.getPlayer(iLoopPlayer)
@@ -1036,30 +1036,8 @@ def calculateStability(iPlayer):
 			
 		# relations
 		if tPlayer.canContact(iLoopPlayer):
-			iAttitude = 0
+			lContacts.append(iLoopPlayer)
 			
-			if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
-				iAttitude = 3
-			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_PLEASED:
-				iAttitude = 2
-			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_ANNOYED:
-				iAttitude = -2
-			elif pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
-				iAttitude = -3
-				
-			x, y = Areas.getCapital(iPlayer, utils.isReborn(iPlayer))
-			if pLoopPlayer.getStateReligion() != iStateReligion or pLoopPlayer.isStateReligion() != pPlayer.isStateReligion():
-				if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_ANNOYED or pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS:
-					iAttitude += 1
-			elif (RegionMap.getSpreadFactor(iStateReligion, x, y) == iCore or RegionMap.getSpreadFactor(iStateReligion, x, y) == iHistorical):
-				iAttitude -= 1
-				
-			# worst enemies
-			if pLoopPlayer.getWorstEnemy() == iPlayer:
-				if iLoopScore > iPlayerScore: iRelationStability -= 3
-				
-			lAttitudes.append(iAttitude)
-		
 		# defensive pacts
 		if tPlayer.isDefensivePact(iLoopPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 3
@@ -1077,8 +1055,25 @@ def calculateStability(iPlayer):
 					else: iTheocracyStability -= 2
 		
 	# attitude stability
+	lStrongerAttitudes, lEqualAttitudes, lWeakerAttitudes = calculateRankedAttitudes(iPlayer, lContacts)
 	
-	iRelationStability += calculateSumScore(lAttitudes)
+	iAttitudeThresholdModifier = pPlayer.getCurrentEra() / 2
+	
+	iRelationStronger = 0
+	iPositiveStronger = count(lStrongerAttitudes, lambda x: x >= 4 + iAttitudeThresholdModifier * 2)
+	if iPositiveStronger > len(lStrongerAttitudes) / 2:
+		iRelationStronger = 5 * (iPositiveStronger - len(lStrongerAttitudes)) / (len(lStrongerAttitudes) / 2)
+		iRelationStronger = min(iRelationStronger, len(lStrongerAttitudes))
+	
+	iRelationWeaker = 0
+	iNegativeWeaker = max(0, count(lWeakerAttitudes, lambda x: x < -1) - count(lWeakerAttitudes, lambda x: x >= 3 + iAttitudeThresholdModifier))
+	if iNegativeWeaker > 0:
+		iRelationWeaker = -8 * min(iNegativeWeaker, len(lWeakerAttitudes) / 2) / (len(lWeakerAttitudes) / 2)
+		iRelationWeaker = max(iRelationWeaker, -len(lWeakerAttitudes))
+		
+	iRelationEqual = sum(iAttitude / 5 for iAttitude in lEqualAttitudes if abs(iAttitude) > 2)
+
+	iRelationStability = iRelationStronger + iRelationEqual + iRelationWeaker
 		
 	if bIsolationism:
 		if iRelationStability < 0: iRelationStability = 0
@@ -1268,6 +1263,9 @@ def other(lCombination, *civics):
 def sigmoid(x):
 	return math.tanh(5 * x / 2)
 	
+def count(iterable, function = lambda x: True):
+	return len([element for element in iterable if function(element)])
+	
 def calculateTrendScore(lTrend):
 	iPositive = 0
 	iNeutral = 0
@@ -1450,6 +1448,35 @@ def calculateCommerceRank(iPlayer, iTurn):
 def calculatePowerRank(iPlayer, iTurn):
 	lPowerValues = utils.getSortedList([i for i in range(iNumPlayers)], lambda x : gc.getPlayer(x).getPowerHistory(iTurn), True)
 	return lPowerValues.index(iPlayer)
+	
+def calculateRankedAttitudes(iPlayer, lContacts):
+	lContacts.append(iPlayer)
+	lContacts = utils.getSortedList(lContacts, lambda iPlayer: gc.getGame().getPlayerScore(iPlayer), True)
+	iPlayerIndex = lContacts.index(iPlayer)
+	
+	iRangeSize = 4
+	if iPlayerIndex <= len(lContacts) / 5:
+		iRangeSize = 3
+	
+	iRange = len(lContacts) / iRangeSize
+	iLeft = max(0, iPlayerIndex - iRange/2)
+	iRight = min(iLeft + iRange, len(lContacts)-1)
+	
+	lStronger = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[:iLeft]]
+	lEqual = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iLeft:iRight] if iLoopPlayer != iPlayer]
+	lWeaker = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iRight:]]
+	
+	return lStronger, lEqual, lWeaker
+	
+def calculateAttitude(iFromPlayer, iToPlayer):
+	pPlayer = gc.getPlayer(iFromPlayer)
+
+	iAttitude = pPlayer.AI_getAttitudeVal(iToPlayer)
+	iAttitude -= pPlayer.AI_getSameReligionAttitude(iToPlayer)
+	iAttitude -= pPlayer.AI_getDifferentReligionAttitude(iToPlayer)
+	iAttitude -= pPlayer.AI_getFirstImpressionAttitude(iToPlayer)
+	
+	return iAttitude
 	
 def isTolerated(iPlayer, iReligion):
 	pPlayer = gc.getPlayer(iPlayer)
