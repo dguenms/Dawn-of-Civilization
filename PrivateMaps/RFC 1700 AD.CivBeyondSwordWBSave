@@ -42990,10 +42990,10 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (England)
 	EndUnit
 	BeginCity
 		CityOwner=25, (England)
