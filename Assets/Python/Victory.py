@@ -3995,38 +3995,25 @@ def getLargestReligionPopulation(iReligion):
 	return (iLeader, iPopulation)
 	
 def getReligionHappiness(iPlayer):
-	iHappiness = 0
-	iHappiness += getNumBuildings(iPlayer, iJewishTemple)
-	iHappiness += getNumBuildings(iPlayer, iOrthodoxTemple)
-	iHappiness += getNumBuildings(iPlayer, iCatholicChurch)
-	iHappiness += getNumBuildings(iPlayer, iProtestantTemple)
-	iHappiness += getNumBuildings(iPlayer, iIslamicTemple)
-	iHappiness += getNumBuildings(iPlayer, iHinduTemple)
-	iHappiness += getNumBuildings(iPlayer, iBuddhistTemple)
-	iHappiness += getNumBuildings(iPlayer, iConfucianTemple)
-	iHappiness += getNumBuildings(iPlayer, iTaoistTemple)
-	iHappiness += getNumBuildings(iPlayer, iZoroastrianTemple)
-	iHappiness += 2 * getNumBuildings(iPlayer, iJewishCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iOrthodoxCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iCatholicCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iProtestantCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iIslamicCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iHinduCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iBuddhistCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iConfucianCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iTaoistCathedral)
-	iHappiness += 2 * getNumBuildings(iPlayer, iZoroastrianCathedral)
-	bTolerant = gc.getPlayer(iPlayer).getCivics(iCivicsReligion) in [iTolerance, iSecularism]
-	iStateReligion = gc.getPlayer(iPlayer).getStateReligion()
-	if bTolerant or iStateReligion != -1:
-		for city in utils.getCityList(iPlayer):
-			if iStateReligion != -1 and city.isHasReligion(iStateReligion):
-				iHappiness += 1
-			if bTolerant:
-				iHappiness += city.getReligionCount()
-				if iStateReligion != -1 and city.isHasReligion(iStateReligion):
-					iHappiness -= 1
-	return iHappiness
+    iStateReligion = gc.getPlayer(iPlayer).getStateReligion()
+    iHappiness = 0
+    
+    for iReligion in range(iNumReligions):
+        iTemple = iJewishTemple + 4*iReligion
+        iCathedral = iJewishCathedral + 4*iReligion
+        
+        iHappiness += getNumBuildings(iPlayer, iTemple)
+        if iReligion == iStateReligion:
+            iHappiness += 2*getNumBuildings(iPlayer, iCathedral)
+            
+    bTolerant = gc.getPlayer(iPlayer).getCivics(iCivicsReligion) in [iTolerance, iSecularism]
+    for city in utils.getCityList(iPlayer):
+        if bTolerant:
+            iHappiness += city.getReligionCount()
+        elif iStateReligion != -1 and city.isHasReligion(iStateReligion):
+            iHappiness += 1
+            
+    return iHappiness
 	
 ### UHV HELP SCREEN ###
 
