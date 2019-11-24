@@ -1043,6 +1043,10 @@ def calculateStability(iPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 3
 			if bMultilateralism: iDefensivePactStability += 3
 		
+		# worst enemies
+		if pLoopPlayer.getWorstEnemy() == iPlayer:
+			if iLoopScore > iPlayerScore: iRelationStability -= 3
+			
 		# wars
 		if tPlayer.isAtWar(iLoopPlayer):
 			if bMultilateralism: iMultilateralismStability -= 2
