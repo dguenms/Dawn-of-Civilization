@@ -1921,7 +1921,7 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetWarTrends()
 	
 def isDecline(iPlayer):
-	return utils.getHumanID() != iPlayer and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
+	return utils.getHumanID() != iPlayer and not utils.isReborn(iPlayer) and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
 	
 class Civics:
 
