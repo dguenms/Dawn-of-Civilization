@@ -71,6 +71,7 @@ class PlayerData:
 		self.iTurnsToCollapse = -1
 		
 		self.iCrisisCountdown = 0
+		self.iLastStabilityTurn = 0
 		self.iLastStability = 0
 		self.iLastDifference = 0
 		self.iNumPreviousCities = 0

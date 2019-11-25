@@ -311,6 +311,11 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		
 	# immune during anarchy
 	if pPlayer.isAnarchy(): return
+	
+	# no repeated stability checks
+	if data.players[iPlayer].iLastStabilityTurn == iGameTurn: return
+	
+	data.players[iPlayer].iLastStabilityTurn = iGameTurn
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
