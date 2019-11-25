@@ -355,7 +355,8 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			CvCity* pCity = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCity(info.getData1());
 			if (NULL != pCity)
 			{
-				pCity->sack((PlayerTypes)info.getData2(), info.getData3());
+				PlayerTypes eHighestCulturePlayer = pCity->findHighestCulture(true);
+				pCity->sack(eHighestCulturePlayer, info.getData3());
 				CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
 			}
 		}

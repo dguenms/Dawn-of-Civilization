@@ -2043,19 +2043,19 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			else
 			{
 				//popup raze option
-				eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
+				PlayerTypes eLiberationPlayer = pNewCity->getLiberationPlayer(true);
 				bDecide = canRaze(pNewCity) || canSack(pNewCity) || canSpare(pNewCity, eHighestCulturePlayer, iCaptureGold);
-				bGift = ((eHighestCulturePlayer != NO_PLAYER)
-						&& (eHighestCulturePlayer != getID())
-						&& ((getTeam() == GET_PLAYER(eHighestCulturePlayer).getTeam())
-							|| GET_TEAM(getTeam()).isOpenBorders(GET_PLAYER(eHighestCulturePlayer).getTeam())
-							|| GET_TEAM(GET_PLAYER(eHighestCulturePlayer).getTeam()).isVassal(getTeam())));
+				bGift = ((eLiberationPlayer != NO_PLAYER)
+						&& (eLiberationPlayer != getID())
+						&& ((getTeam() == GET_PLAYER(eLiberationPlayer).getTeam())
+							|| GET_TEAM(getTeam()).isOpenBorders(GET_PLAYER(eLiberationPlayer).getTeam())
+							|| GET_TEAM(GET_PLAYER(eLiberationPlayer).getTeam()).isVassal(getTeam())));
 
 				if (bDecide || bGift)
 				{
 					CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_RAZECITY);
 					pInfo->setData1(pNewCity->getID());
-					pInfo->setData2(eHighestCulturePlayer);
+					pInfo->setData2(eLiberationPlayer);
 					pInfo->setData3(iCaptureGold);
 					gDLL->getInterfaceIFace()->addPopup(pInfo, getID());
 				}

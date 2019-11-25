@@ -6109,7 +6109,12 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 						else if (kVoteData.ePlayer == getID())
 						{
 							bValid = false;
-							if (GC.getGame().getSorenRandNum(3, "AI Erratic Defiance (Assign City)") == 0)
+
+							if (pCity->plot()->isCore(getID()))
+							{
+								bDefy = true;
+							}
+							else if (GC.getGame().getSorenRandNum(3, "AI Erratic Defiance (Assign City)") == 0)
 							{
 								bDefy = true;
 							}

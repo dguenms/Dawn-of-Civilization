@@ -9759,6 +9759,23 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							int iLoop;
 							for (CvCity* pLoopCity = kPlayer1.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kPlayer1.nextCity(&iLoop))
 							{
+								for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+								{
+									if (pLoopCity->plot()->isCore((PlayerTypes)iI))
+									{
+										kData.ePlayer = (PlayerTypes)iPlayer1;
+										kData.iCityId = pLoopCity->getID();
+										kData.eOtherPlayer = (PlayerTypes)iI;
+
+										if (isValidVoteSelection(eVoteSource, kData))
+										{
+											kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_ASSIGN_CITY", kPlayer1.getCivilizationAdjectiveKey(), pLoopCity->getNameKey(), GET_PLAYER(kData.eOtherPlayer).getCivilizationDescriptionKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+											pData->aVoteOptions.push_back(kData);
+											continue;
+										}
+									}
+								}
+
 								PlayerTypes eNewOwner = pLoopCity->plot()->findHighestCulturePlayer();
 								if (NO_PLAYER != eNewOwner)
 								{

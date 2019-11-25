@@ -43296,10 +43296,10 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=31, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=31, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=31, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=31, (England)
+		UnitType=UNIT_BOMBARD, UnitOwner=31, (England)
 	EndUnit
 	BeginCity
 		CityOwner=31, (England)

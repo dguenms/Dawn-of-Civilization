@@ -23,6 +23,8 @@ tSilkRouteBR = (99, 52)
 tMiddleEastTL = (68, 38)
 tMiddleEastBR = (85, 46)
 
+lMiddleEastExceptions = [(68, 39), (69, 39), (71, 40)]
+
 tCaribbeanTL = (26, 33)
 tCaribbeanBR = (34, 39)
 
@@ -154,8 +156,11 @@ class Companies:
 		
 		# geographical requirements
 		tPlot = (city.getX(), city.getY())
-		if iCompany == iSilkRoute and not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
-			return -1
+		if iCompany == iSilkRoute:
+			if tPlot in lMiddleEastExceptions:
+				return -1
+			if not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
+				return -1
 		if iCompany == iTradingCompany:
 			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompanyBuilding) or city.isHasRealBuilding(iIberianTradingCompanyBuilding)):
 				return -1
