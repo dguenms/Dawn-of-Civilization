@@ -188,7 +188,7 @@ def onCityAcquired(city, iNewOwner):
 	sNewName = None
 	
 	if sOldName == 'Inbhir Nis' and iNewOwner != iCeltia: sNewName = 'Inverness'
-	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCelta: sNewName = 'Edinburgh'
+	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCeltia: sNewName = 'Edinburgh'
 	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwner not in [iRome, iOttomans]: sNewName = 'Buda'
 	elif sOldName in ['Takao', 'Gaoxiong'] and iNewOwner >= iNumPlayers: sNewName = 'Kaohsiung'
 	elif sOldName == 'Momba&#231;a' and iNewOwner != iPortugal: sNewName = 'Mombasa'
@@ -295,8 +295,6 @@ def getEraRename(sName, iEra):
 def onTechAcquired(iCiv):
 	pCiv = gc.getPlayer(iCiv)
 	lCities = utils.getCityList(iCiv)
-	
-	iEra = pCiv.getCurrentEra()
 	
 	for iEra in range(pCiv.getCurrentEra()+1):
 		for city in lCities:
@@ -3192,7 +3190,6 @@ dIdentifiers = {
 	"Antiocheia"		:	"Antiocheia",
 	"Antiochia ad Orontem"	:	"Antiocheia",
 	"Antiochia"		:	"Antiocheia",
-	"Antiochia"		:	"Antiocheia",
 	"Antiokheia Megale"	:	"Antiocheia",
 	"Antio"			:	"Antium",
 	"Antium"		:	"Antium",
@@ -3623,7 +3620,6 @@ dIdentifiers = {
 	"Fderik"		:	"Fderik",
 	"Fort Gouraud"		:	"Fderik",
 	"Fiorenza"		:	"Fiorenza",
-	"Florencja"		:	"Fiorenza",
 	"Firenze"		:	"Firenze",
 	"Florence"		:	"Firenze",
 	"Florencja"		:	"Firenze",
@@ -3853,7 +3849,6 @@ dIdentifiers = {
 	"Junggyeong"		:	"Jilin",
 	"Gilim"			:	"Jilin",
 	"Chilin"		:	"Jilin",
-	"Gilim"			:	"Jilin",
 	"Dalju"			:	"Jilin",
 	"Czin'chzhou"		:	"Jinzhou",
 	"Jinzhou"		:	"Jinzhou",
@@ -4109,8 +4104,6 @@ dIdentifiers = {
 	"M&#252;nchen"		:	"M&#252;nchen",
 	"Monachium"		:	"M&#252;nchen",
 	"Munich"		:	"M&#252;nchen",
-	"Aomen"			:	"Macao",
-	"Aomen"			:	"Macau",
 	"Machu Picchu"		:	"Machu-Pikchu",
 	"Machu-Pikchu"		:	"Machu-Pikchu",
 	"Madinah"		:	"Madinah",
@@ -4194,7 +4187,6 @@ dIdentifiers = {
 	"Mediolan"		:	"Milano",
 	"Mediolanum"		:	"Milano",
 	"Melpum"		:	"Milano",
-	"Melpum"		:	"Milano",
 	"Mil&#225;n"		:	"Milano",
 	"Mil&#255;n"		:	"Milano",
 	"Milan"			:	"Milano",
@@ -4202,6 +4194,7 @@ dIdentifiers = {
 	"Mo&#231;&#226;medes"	:	"Mo&#231;&#226;medes",
 	"Namibe"		:	"Mo&#231;&#226;medes",
 	"Mo&#231;ambique"	:	"Mo&#231;ambique",
+	"Mozambique"	:	"Mo&#231;ambique",
 	"Essaouira"		:	"Mogador",
 	"Es-Sauirah"		:	"Mogador",
 	"Mogador"		:	"Mogador",
@@ -4216,14 +4209,11 @@ dIdentifiers = {
 	"Moskwa"		:	"Moskva",
 	"Mosul"			:	"Mosul",
 	"Musul"			:	"Mosul",
-	"Mo&#231;ambique"	:	"Mozambique",
-	"Mozambique"		:	"Mozambique",
 	"Botankou"		:	"Mudanjiang",
 	"Mudan bira"		:	"Mudanjiang",
 	"Mudan'czjan"		:	"Mudanjiang",
 	"Mudanjiang"		:	"Mudanjiang",
 	"Mokdangang"		:	"Mudanjiang",
-	"Sanggyeong"		:	"Mudanjiang",
 	"Hwaju"			:	"Mudanjiang",
 	"Kashtpur"		:	"Multan",
 	"Multan"		:	"Multan",
@@ -4380,7 +4370,6 @@ dIdentifiers = {
 	"Suiye"			:	"Orduqent",
 	"Aurelia"		:	"Orl&#233;ans",
 	"Cenabum Aureliani"	:	"Orl&#233;ans",
-	"Orl&#233;ans"		:	"Orl&#233;ans",
 	"Orl&#233;ans"		:	"Orl&#233;ans",
 	"Orlean"		:	"Orl&#233;ans",
 	"Fort Christiansborg"	:	"Osu",
@@ -4914,7 +4903,6 @@ dIdentifiers = {
 	"Tulaytulah"		:	"Toledo",
 	"Cuenca"		:	"Tomebamba",
 	"Tomebamba"		:	"Tomebamba",
-	"Dalju"			:	"Tongjiang",
 	"Tongjiang"		:	"Tongjiang",
 	"Tongliao"		:	"Tongliao",
 	"Tsuuryou"		:	"Tongliao",
@@ -5036,7 +5024,6 @@ dIdentifiers = {
 	"Vjatka"		:	"Vjatka",
 	"Fuladiwosituoke"	:	"Vladivostok",
 	"Haishenwai"		:	"Vladivostok",
-	"Haishenwai"		:	"Vladivostok",
 	"Port May"		:	"Vladivostok",
 	"Urajio"		:	"Vladivostok",
 	"Urajiosutokku"		:	"Vladivostok",
@@ -5142,7 +5129,6 @@ dIdentifiers = {
 	"Zhangjiakou"		:	"Zhangjiakou",
 	"Janggagu"		:	"Zhangjiakou",
 	"Zhongdu"		:	"Zhongdu",
-	"Bukgyeong"		:	"Zhongdu",
 	"Zurych"		:	"Zurich",}
 
 	
@@ -5779,6 +5765,7 @@ tRenames = (
 	"Vladivostok"		:	"Haesamwi",
 	"Wuzhou"		:	"Oju",
 	"Yokohama"		:	"Hoengbin",
+	"Sanggyeong"		:	"Sanggyeong",
 },
 #Language: Byzantine
 {
@@ -6842,7 +6829,7 @@ tRenames = (
 	"Makassar"		:	"Marca&#231;ar",
 	"Marrakus"		:	"Marrakech",
 	"Mo&#231;&#226;medes"	:	"Mo&#231;&#226;medes",
-	"Mozambique"		:	"Mo&#231;ambique",
+	"Mo&#231;ambique"		:	"Mo&#231;ambique",
 	"Mogador"		:	"Mogador",
 	"Mombasa"		:	"Momba&#231;a",
 	"Huambo"		:	"Nova Lisboa",
