@@ -611,11 +611,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_37</Tag>
-		<English>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</English>
-		<French>Les civilisations polyn&#233;sienne et harapp&#233;enne sont r&#233;serv&#233;es aux joueurs humains. Vous pouvez les activer pour l'IA dans le fichier XML\GlobalDefinesAlt.xml, mais sans garantie que l'IA les incarnera de fa&#231;on r&#233;aliste ou fructueuse.</French>
-		<German>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</German>
-		<Italian>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</Italian>
-		<Spanish>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</Spanish>
+		<English>The Polynesian civilization is intended for the human player only. You can enable it for the AI in XML\GlobalDefinesAlt.xml, however its AI will not be geared towards playing successfully or realistically.</English>
+		<French>The Polynesian civilization is intended for the human player only. You can enable it for the AI in XML\GlobalDefinesAlt.xml, however its AI will not be geared towards playing successfully or realistically.</French> <!-- translate -->
+		<German>The Polynesian civilization is intended for the human player only. You can enable it for the AI in XML\GlobalDefinesAlt.xml, however its AI will not be geared towards playing successfully or realistically.</German>
+		<Italian>The Polynesian civilization is intended for the human player only. You can enable it for the AI in XML\GlobalDefinesAlt.xml, however its AI will not be geared towards playing successfully or realistically.</Italian>
+		<Spanish>The Polynesian civilization is intended for the human player only. You can enable it for the AI in XML\GlobalDefinesAlt.xml, however its AI will not be geared towards playing successfully or realistically.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_38</Tag>
