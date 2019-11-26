@@ -1057,7 +1057,7 @@ def calculateStability(iPlayer):
 	iRelationStronger = 0
 	iPositiveStronger = count(lStrongerAttitudes, lambda x: x >= 4 + iAttitudeThresholdModifier * 2)
 	if iPositiveStronger > len(lStrongerAttitudes) / 2:
-		iRelationStronger = 5 * (iPositiveStronger - len(lStrongerAttitudes)) / (len(lStrongerAttitudes) / 2)
+		iRelationStronger = 5 * (iPositiveStronger - len(lStrongerAttitudes)) / max(1, len(lStrongerAttitudes) / 2)
 		iRelationStronger = min(iRelationStronger, len(lStrongerAttitudes))
 	
 	iRelationWeaker = 0
