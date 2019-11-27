@@ -421,6 +421,10 @@ UNIQUE POWERS
 * the Inca unique power does not apply after respawn
 
 UNIQUE HISTORICAL VICTORIES
+* new Ethiopian UHV:
+	* first goal: Acquire three Incense resources by 400 AD
+	* second goal: Convert to Orthodoxy five turns after it is founded and settle a total of three Great Prophets and build an Orthodox Cathedral by 1200 AD
+	* third goal: Make sure there are more Orthodox than Islamic cities in Africa in 1500 AD
 * changed the Maya UHV:
     * first goal now requires discovering Calendar by 200 AD
 * changed the French UHV:

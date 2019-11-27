@@ -381,9 +381,9 @@ CIVILISATIONS
     * Unique Building: Stele (Monument): +2 Priest slots
     * Unique Power: The Power of Sovereignty: +10% land unit strength within cultural borders
     * Unique Historical Victory:
-        * Settle a Great Prophet in two Orthodox cities by 500 AD
-        * Acquire three Incense resources by 600 AD
-        * Allow no European colonies in Ethiopia and Sub-Saharan Africa in 1500 AD and 1910 AD
+        * Acquire three Incense resources by 400 AD
+        * Convert to Orthodoxy five turns after it is founded and settle a total of three Great Prophets and build an Orthodox Cathedral by 1200 AD
+        * Make sure there are more Orthodox than Islamic cities in Africa in 1500 AD
 * Japan
     * Spawn: 525 AD
     * Leaders: Kammu, Oda Nobunaga (Tokugawa), Meiji

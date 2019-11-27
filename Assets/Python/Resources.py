@@ -220,6 +220,7 @@ class Resources:
 			self.createResource(67, 47, iCorn) # Romania
 			self.createResource(106, 50, iCorn) # Manchuria
 			self.createResource(77, 52, iCorn) # Caricyn
+			self.createResource(68, 25, iCorn) # Juba
 			
 			self.createResource(92, 35, iSpices) # Deccan
 			gc.getMap().plot(92, 35).setFeatureType(iRainforest, 0)

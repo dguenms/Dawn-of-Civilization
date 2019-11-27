@@ -314,6 +314,11 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		
 	# immune during anarchy
 	if pPlayer.isAnarchy(): return
+	
+	# no repeated stability checks
+	if data.players[iPlayer].iLastStabilityTurn == iGameTurn: return
+	
+	data.players[iPlayer].iLastStabilityTurn = iGameTurn
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
@@ -1066,7 +1071,7 @@ def calculateStability(iPlayer):
 	iRelationStronger = 0
 	iPositiveStronger = count(lStrongerAttitudes, lambda x: x >= 4 + iAttitudeThresholdModifier * 2)
 	if iPositiveStronger > len(lStrongerAttitudes) / 2:
-		iRelationStronger = 5 * (iPositiveStronger - len(lStrongerAttitudes)) / (len(lStrongerAttitudes) / 2)
+		iRelationStronger = 5 * (iPositiveStronger - len(lStrongerAttitudes)) / max(1, len(lStrongerAttitudes) / 2)
 		iRelationStronger = min(iRelationStronger, len(lStrongerAttitudes))
 	
 	iRelationWeaker = 0
@@ -1938,7 +1943,7 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetWarTrends()
 	
 def isDecline(iPlayer):
-	return utils.getHumanID() != iPlayer and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
+	return utils.getHumanID() != iPlayer and not utils.isReborn(iPlayer) and gc.getGame().getGameTurn() >= getTurnForYear(tFall[iPlayer])
 	
 class Civics:
 

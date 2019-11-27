@@ -28868,6 +28868,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=29
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=41,63,
@@ -29387,6 +29388,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=27
+	BonusType=BONUS_WINE
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -29403,6 +29405,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=30
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -29860,6 +29863,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=27
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -29892,6 +29896,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=33
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=48,63,
@@ -30492,11 +30497,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=28
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=66,y=29
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=48,
@@ -30513,6 +30520,7 @@ BeginPlot
 	x=66,y=31
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=48,
@@ -30982,6 +30990,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=28
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -31009,6 +31018,7 @@ BeginPlot
 	x=67,y=32
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_CAMEL
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -31539,6 +31549,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_COW
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
@@ -32101,6 +32112,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=25
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=63,64,
@@ -32114,6 +32126,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=27
+	BonusType=BONUS_OIL
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
@@ -32141,6 +32154,7 @@ BeginPlot
 	x=69,y=30
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=48,63,64,
