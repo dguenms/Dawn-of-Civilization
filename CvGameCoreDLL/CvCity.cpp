@@ -19554,13 +19554,7 @@ int CvCity::calculateBaseGreatPeopleRate() const
 		if (isHasRealBuilding((BuildingTypes)iI))
 		{
 			iRate += GC.getBuildingInfo((BuildingTypes)iI).getGreatPeopleRateChange();
-		}
-	}
 
-	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-	{
-		if (isHasRealBuilding((BuildingTypes)iI))
-		{
 			if (!GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI))
 			{
 				iRate += getBuildingGreatPeopleRateChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType());
