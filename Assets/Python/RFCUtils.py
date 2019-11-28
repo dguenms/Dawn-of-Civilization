@@ -1280,13 +1280,14 @@ class RFCUtils:
 	def getAreaCitiesCiv(self, iCiv, lPlots):
 		return [city for city in self.getAreaCities(lPlots) if city.getOwner() == iCiv]
 		
-	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False):
+	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
 		tPlot = (x, y)
 		plot = gc.getMap().plot(x, y)
 		
 		plot.setRevealed(iCiv, False, True, -1)
 	
-		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
+		if bPermanentCultureChange:
+			self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 		
 		if bFlipUnits: 
 			self.flipUnitsInCityBefore(tPlot, iCiv, iOwner)

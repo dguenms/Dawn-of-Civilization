@@ -651,7 +651,7 @@ class Congress:
 		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
 		lFlippingUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
 		
-		utils.completeCityFlip(x, y, iPlayer, iOwner, 80, False, False, True)
+		utils.completeCityFlip(x, y, iPlayer, iOwner, 80, False, False, True, bPermanentCultureChange=False)
 		
 		utils.flipOrCreateDefenders(iPlayer, lFlippingUnits, (x, y), iNumDefenders)
 		
