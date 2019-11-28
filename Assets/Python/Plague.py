@@ -334,9 +334,10 @@ class Plague:
 							iDamage /= 2
 					
 					if gc.getGame().getSorenRandNum(100, 'roll') > iThreshold:
-						if iDamage - unit.getExperience()/10 - unit.baseCombatStr()*3/7 >= 100 - unit.getDamage():
-							if unit.getOwner() != iOwner and gc.getPlayer(unit.getOwner()).isHuman():
-								CyInterface().addMessage(unit.getOwner(), False, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_PROCESS_UNIT", ()) + " " + city.getName(), "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
+						# Leoreth: disable damange announcements
+						#if iDamage - unit.getExperience()/10 - unit.baseCombatStr()*3/7 >= 100 - unit.getDamage():
+						#	if unit.getOwner() != iOwner and gc.getPlayer(unit.getOwner()).isHuman():
+						#		CyInterface().addMessage(unit.getOwner(), False, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_PROCESS_UNIT", ()) + " " + city.getName(), "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
 						#Leoreth: keep units at 50% minimum
 						iMaxDamage = 50
 						if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
