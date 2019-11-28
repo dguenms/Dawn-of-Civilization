@@ -759,8 +759,8 @@ class Congress:
 		
 		print sDebugText
 		
-		# everyone agrees on AI American claims in the west
-		if iClaimant == iAmerica and iVoter != iOwner:
+		# everyone agrees on AI American claims in the west, unless owner is native to the Americas
+		if iClaimant == iAmerica and iVoter != iOwner and iOwner not in lCivGroups[5]:
 			if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
 				self.vote(iVoter, iClaimant, 1)
 				return
