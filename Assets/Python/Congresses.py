@@ -1069,7 +1069,7 @@ class Congress:
 				# colonies
 				if iPlayer in lCivGroups[0]:
 					if iLoopPlayer >= iNumPlayers or (iLoopPlayer not in lCivGroups[0] and utils.getStabilityLevel(iLoopPlayer) < iStabilityShaky) or (iLoopPlayer in lCivGroups[0] and utils.getHumanID() != iLoopPlayer and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
-						if plot.getRegionID() not in lEurope and plot.getRegionID() not in lMiddleEast:
+						if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
 							if iSettlerMapValue > 90:
 								iValue += max(1, iSettlerMapValue / 100)
 									
