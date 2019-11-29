@@ -49236,6 +49236,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		ReligionType=RELIGION_CONFUCIANISM
 		Player3Culture=80, (China)
 	EndCity
 	TeamReveal=1,12,45,46,
