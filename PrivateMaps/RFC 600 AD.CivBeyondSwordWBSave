@@ -28048,6 +28048,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=29
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
+EndPlot
+BeginPlot
+	x=72,y=30
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -28065,11 +28070,6 @@ BeginPlot
 		ReligionType=RELIGION_ORTHODOXY
 		Player46Culture=50, (Independent2)
 	EndCity
-EndPlot
-BeginPlot
-	x=72,y=30
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
 EndPlot
 BeginPlot
 	x=72,y=31
