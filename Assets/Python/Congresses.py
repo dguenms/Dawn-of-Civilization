@@ -656,7 +656,7 @@ class Congress:
 		utils.flipOrCreateDefenders(iPlayer, lFlippingUnits, (x, y), iNumDefenders)
 		
 		if iOwner < iNumPlayers:
-			utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+			utils.relocateUnitsToCore(iOwner, lRelocatedUnits)
 		else:
 			utils.killUnits(lRelocatedUnits)
 		
