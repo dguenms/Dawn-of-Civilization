@@ -1904,6 +1904,9 @@ class RFCUtils:
 			return
 		
 		for unit in lUnits:
+			if unit.plot().getOwner() in [iPlayer, -1]:
+				continue
+			
 			iUnitType = unit.getUnitType()
 			if iUnitType in dUnits:
 				if unit not in dUnits[iUnitType]: dUnits[iUnitType].append(unit)
