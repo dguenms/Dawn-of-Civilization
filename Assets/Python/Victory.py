@@ -3879,7 +3879,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iRussia:
 		if iGoal == 0:
 			iSiberia = getNumFoundedCitiesInArea(iRussia, utils.getPlotList(tSiberiaTL, tSiberiaBR))
-			bSiberia = (iSiberia >= 7) or gc.getGame().getGameTurn() >= getTurnForYear(1700)
+			bSiberia = iSiberia >= 7 or utils.getScenario() == i1700AD
 			siberiaText = localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", (iSiberia, 7))
 			if bSiberia: siberiaText = localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA_COMPLETE", ()) 
 			bSiberianRailway = isConnectedByRailroad(iRussia, Areas.getCapital(iRussia), lSiberianCoast)
