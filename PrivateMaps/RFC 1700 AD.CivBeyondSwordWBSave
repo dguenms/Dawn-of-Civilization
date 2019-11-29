@@ -38810,7 +38810,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=43
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
