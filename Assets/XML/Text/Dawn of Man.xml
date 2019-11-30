@@ -713,4 +713,16 @@
 		<Tag>TXT_KEY_DOM_KHAZARIA</Tag>
 		<English>It is the year 650 AD. Following the breakup of the Western Turkic Khaganate, a group of Turkic peoples head west to found a new Khaganate. Positioned astride a major artery of the Silk Road, word of the tolerant Khazar Khaganate will soon spread far and wide, attracting a variety of peoples from disenfranchised faiths.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NUBIA</Tag>
+		<English>It is the year 2500 BC. Threatened and inspired by the growing might and culture of their northern neighbors, the Nubian peoples found the Kerma Kingdom...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NUBIA_600AD</Tag>
+		<English>It is the year 600 AD. Following the collapse of the Kingdom of Kush, the Kingdom of Makuria rises in hopes of reviving the Nubian Dynasty and maintaining the rule of Orthodox Christianity...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NUBIA_1700AD</Tag>
+		<English>It is the year 1700 AD. A center of the arts and sciences, the Funj Sultanate has managed to stave off the aggressions of their Ottoman neighbors...</English>
+	</TEXT>
 </Civ4GameText>

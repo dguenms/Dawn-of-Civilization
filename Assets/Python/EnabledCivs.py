@@ -15,9 +15,10 @@ Conditional Spawn: iConditionalSpawn
 
 dSpawnTypes = {
 iEgypt			: iConditionalSpawn,
-iChina			: iConditionalSpawn,
 iBabylonia		: iConditionalSpawn,
 iHarappa		: iConditionalSpawn,
+iNubia			: iConditionalSpawn,
+iChina			: iConditionalSpawn,
 iGreece			: iConditionalSpawn,
 iIndia			: iConditionalSpawn,
 iCarthage		: iConditionalSpawn,

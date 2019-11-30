@@ -237,6 +237,8 @@ iCivBabylonia : {
 		"Shalmaneser", # 7th BC
 	],
 },
+iCivNubia : {
+},
 iCivChina : {
 	iGreatProphet : [
 		"Lao Tzu", # 6th BC

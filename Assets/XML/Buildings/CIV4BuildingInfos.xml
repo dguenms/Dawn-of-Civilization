@@ -707,6 +707,45 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<Type>BUILDING_NUBIAN_DEFFUFAS</Type>
+			<Description>TXT_KEY_BUILDING_NUBIAN_DEFFUFAS</Description>
+			<Civilopedia>TXT_KEY_NEW_BUILDING_NUBIAN_DEFFUFAS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NUBIAN_DEFFUFAS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_NUBIAN_DEFFUFAS</ArtDefineTag>
+			<PrereqTech>TECH_CEREMONY</PrereqTech>
+			<FreePromotion>PROMOTION_COMBAT1</FreePromotion>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>40</iCost>
+			<iConquestProb>65</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_WALLS</BuildingClass>
 			<Type>BUILDING_WALLS</Type>
 			<Description>TXT_KEY_BUILDING_WALLS</Description>

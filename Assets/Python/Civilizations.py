@@ -147,6 +147,7 @@ iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
 iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
+iCivNubia : 	Techs([iAgriculture, iMythology, iCeremony, iPastoralism, iMining]),
 iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
@@ -214,7 +215,10 @@ iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 {
 iCivIndependent:Techs(column=5),
 iCivIndependent2:Techs(column=5),
+iCivNubia :	Techs([iSteel, iArchitecture], column=5),
+iCivPersia :	Techs([iNobility, iSteel, iFeudalism], column=5),
 iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[iNobility]),
+iCivEthiopia :	Techs([iFortification], column=6, exceptions=[iArtisanry]),
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iScholarship]),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
 iCivJapan :	Techs(column=6, exceptions=[iScholarship]),
@@ -224,6 +228,7 @@ iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedic
 {
 iCivIndependent:Techs(column=10),
 iCivIndependent2:Techs(column=10),
+iCivNubia : 	Techs(column=10),
 iCivManchuria :	Techs([iHorticulture, iUrbanPlanning, iCombinedArms], column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivIndia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration]),
 iCivTamils :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
@@ -287,6 +292,16 @@ dTechPreferences = {
 		iMythology: -50,
 		iDivination: -50,
 		iCeremony: -50,
+	},
+	iCivNubia : {
+		iSmelting: 20,
+		iBloomery: 20,
+		iMining: 20,
+		iMasonry: 20,
+		iPottery: 20,
+		iEthics: 20,
+		iConstruction: 20,
+		iSteel: 20,
 	},
 	iCivChina : {
 		iAesthetics: 40,
@@ -747,7 +762,9 @@ dTechPreferences = {
 
 dDefaultWonderPreferences = {
 	iCivEgypt: -15,
+	iCivNubia: -15,
 	iCivBabylonia: -40,
+	iCivHarappa: -15,
 	iCivGreece: -15,
 	iCivIndia: -15,
 	iCivRome: -20,
@@ -773,6 +790,9 @@ dBuildingPreferences = {
 		iGreatLighthouse: 30,
 		iGreatSphinx: 30,
 	},
+	iCivNubia : {
+		iPyramids: 100,
+	},
 	iCivBabylonia : {
 		iHangingGardens: 50,
 		iIshtarGate: 50,
@@ -783,6 +803,11 @@ dBuildingPreferences = {
 		iGreatSphinx: 0,
 		
 		iOracle: -60,
+	},
+	iCivHarappa : {
+		iHangingGardens : 20,
+		
+		iPyramids : -20,
 	},
 	iCivChina : {
 		iGreatWall: 80,

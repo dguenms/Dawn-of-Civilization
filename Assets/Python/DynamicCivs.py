@@ -478,6 +478,7 @@ lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
 lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
 
 dEmpireThreshold = {
+	iNubia: 3,
 	iCarthage : 4,
 	iIndonesia : 4,
 	iBurma : 2,
@@ -518,7 +519,7 @@ dNameChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iBurma : "TXT_KEY_CIV_BURMA_MYANMAR_SHORT_DESC",
-	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC",
+	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC"
 }
 
 dAdjectiveChanges = {
@@ -550,6 +551,7 @@ dCapitals = {
 	iNigeria : ["Oyo", "Ife", "Njimi", "Igbo-Ukwu", "Wukari"],
 	iNetherlands : ["Brussels", "Antwerpen"],
 	iBoers : ["Pretoria", "Johannesburg", "Pietermaritzburg", "Durban"],
+	iNubia : ["Meroe"]
 }
 
 dCapitalLocations = findCapitalLocations(dCapitals)
@@ -561,6 +563,7 @@ dStartingLeaders = [
 	iIndia : iAsoka,
 	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
+	iNubia : iPiye,
 	iChina : iQinShiHuang,
 	iGreece : iPericles,
 	iPersia : iCyrus,
@@ -661,6 +664,7 @@ def setup():
 		data.players[iChina].iAnarchyTurns += 3
 		
 	elif iScenario == i1700AD:
+		utils.setReborn(iNubia, True)
 		# data.players[iEgypt].iResurrections += 1
 		
 		for iPlayer in [iMoors, iKievanRus]:
@@ -717,6 +721,10 @@ def onRevolution(iPlayer):
 		iGovernment, iLegitimacy, _, _, _, _ = getCivics(iPlayer)
 		if iGovernment == iDespotism and iLegitimacy in [iCentralism, iRevolutionism, iConstitution]:
 			nameChange(iPlayer)
+			
+	if iPlayer == iNubia:
+		if not pNubia.isReborn() and pNubia.getStateReligion() == iIslam:
+			utils.setReborn(iPlayer, True)
 			
 	checkName(iPlayer)
 	
@@ -1090,6 +1098,21 @@ def specificName(iPlayer):
 	if iPlayer == iBabylonia:
 		if isCapital(iPlayer, ["Ninua", "Kalhu"]):
 			return "TXT_KEY_CIV_BABYLONIA_ASSYRIA"
+			
+	if iPlayer == iNubia:
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_SUDAN_SHORT_DESC"
+			
+		elif iReligion in lChristianity:
+			return "TXT_KEY_CIV_NUBIA_MAKURIA"
+			
+		elif iReligion == iIslam:
+			return "TXT_KEY_CIV_FUNJ"
+			
+		elif iReligion < 0 and pPlayer.isStateReligion():
+			if bEmpire:
+				return "TXT_KEY_CIV_NUBIA_KUSH"
+			return capitalName(iPlayer)
 	
 	elif iPlayer == iChina:
 		if bEmpire:
@@ -1442,6 +1465,10 @@ def specificAdjective(iPlayer):
 			
 			if iReligion == iHinduism:
 				return "TXT_KEY_CIV_INDIA_GUPTA"
+			
+	elif iPlayer == iNubia:
+		if iEra >= iIndustrial:
+			return "TXT_KEY_CIV_SUDAN_ADJECTIVE"
 			
 	elif iPlayer == iChina:
 		if bMonarchy:
@@ -1857,6 +1884,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bCityStates:
 			return "TXT_KEY_CIV_INDIA_MAHAJANAPADAS"
+			
+	elif iPlayer == iNubia:
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_NAME"
+			
+		if bEmpire or iReligion > 0 or not pPlayer.isStateReligion():
+			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iChina:
 		if bEmpire:
@@ -2630,5 +2664,11 @@ def leaderName(iPlayer):
 		if iLeader == iKrishnaDevaRaya:
 			if iGameTurn >= getTurnForYear(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"
+				
+	elif iPlayer == iNubia:
+		if pPlayer.getStateReligion() in lChristianity:
+			return "TXT_KEY_LEADER_GEORGIOS"
+		if pPlayer.getStateReligion() == iIslam:
+			return "TXT_KEY_LEADER_BADI"
 				
 	return None

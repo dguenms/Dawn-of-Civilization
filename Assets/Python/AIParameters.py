@@ -162,6 +162,7 @@ iCivEngland : 100,
 
 dCompactnessModifier = {
 iCivEgypt : 30,
+iCivNubia : 30,
 iCivChina : 80,
 iCivGreece : 10,
 iCivIndia : 20,

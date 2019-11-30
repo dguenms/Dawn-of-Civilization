@@ -11493,6 +11493,27 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_PIYE_EARLY</SoundID>
+			<Filename>Modules/AND_MP_40_Africa/Nubia/Soundpack/Piye_Early</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_PIYE_MIDDLE</SoundID>
+			<Filename>Modules/AND_MP_40_Africa/Nubia/Soundpack/Piye_Middle</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_PIYE_LATE</SoundID>
+			<Filename>Modules/AND_MP_40_Africa/Nubia/Soundpack/Piye_Late</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>

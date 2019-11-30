@@ -3747,6 +3747,15 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	// 1SDAN: Nubian UP: +50% production of ancient era buildings with Stone
+	if (getOwnerINLINE() == NUBIA)
+	{
+		if (hasBonus(BONUS_STONE) && GC.getTechInfo((TechTypes)GC.getBuildingInfo(eBuilding).getPrereqAndTech()).getEra() <= ERA_ANCIENT)
+		{
+			iMultiplier += 50;
+		}
+	}
+
 	return std::max(0, iMultiplier);
 }
 
@@ -18174,6 +18183,12 @@ bool CvCity::isAutoRaze() const
 	if (isHolyCity())
 	{
 		return false;
+	}
+
+	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
+	if (getPreviousOwner() == NUBIA && getX_INLINE() == 66 && getY_INLINE() == 31 && !isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
+	{
+		return true;
 	}
 
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_RAZING))

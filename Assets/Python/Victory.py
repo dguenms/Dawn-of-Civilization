@@ -10,6 +10,7 @@ import CityNameManager as cnm
 import DynamicCivs as dc
 import PyHelpers
 import BugCore
+from operator import itemgetter
 AdvisorOpt = BugCore.game.Advisors
 AlertsOpt = BugCore.game.MoreCiv4lerts
 
@@ -266,6 +267,7 @@ dEraGoals = {}
 
 dWonderGoals = {
 	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
+	iNubia: (0, [iPyramids], False),
 	iGreece: (2, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
@@ -289,12 +291,14 @@ dReligionGoals = {}
 
 def setup():
 
-	
-	
+	# 600 AD scenario: handle dates that have already been passed
+	if utils.getScenario() == i600AD:
+		for iPlayer in [iNubia, iEthiopia]:
+			loseAll(iPlayer)
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand, iKhmer]:
+		for iPlayer in [iNubia, iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand, iKhmer]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
@@ -397,6 +401,41 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(-800):
 			expire(iHarappa, 2)
 				
+	elif iPlayer == iNubia:
+		# first goal: Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years
+		if isPossible(iNubia, 0):
+			bPyramids = isBuildingInCity((66, 31), iPyramids)
+			bControlsEgypt = isControlled(iNubia, Areas.getCoreArea(iMamluks, False)) and isControlled(iNubia, Areas.getCoreArea(iEgypt, False))
+			if bControlsEgypt:
+				data.iNubiaEgyptYears += gc.getGame().getTurnYear(iGameTurn) - gc.getGame().getTurnYear(iGameTurn - 1)
+				if bPyramids and data.iNubiaEgyptYears >= 1000:
+					win(iNubia, 0)
+					
+		if iGameTurn == getTurnForYear(-656):
+			if not bPyramids:
+				expire(iNubia, 0)
+				
+		# second goal: Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365
+		if isPossible(iNubia, 1):
+			if iGameTurn == getTurnForYear(1365):
+				iNumOrthodoxCathedrals = getNumBuildings(iNubia, iOrthodoxCathedral)
+				iNumPleasedOrBetterChristians = countPlayersWithAttitudeInGroup(iNubia, AttitudeTypes.ATTITUDE_PLEASED, getReligionPlayers(dc.lChristianity)) >= 5
+				if iNumOrthodoxCathedrals >= 2 and iNumPleasedOrBetterChristians >= 5:
+					win(iNubia, 1)
+				else:
+					lose(iNubia, 1)
+					
+		# third goal: Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821
+		if isPossible(iNubia, 2):
+			if iGameTurn == getTurnForYear(1821):
+				iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
+				GreatestAfricanCity = getBestCityInRegion(lAfrica)[0]
+				bGreatestAfricanCityIsSennar = GreatestAfricanCity.getName() == 'Sennar'
+				if iBestIslamicCommerceOutput == iNubia and bGreatestAfricanCityIsSennar:
+					win(iNubia, 2)
+				else:
+					lose(iNubia, 2)
+			
 	elif iPlayer == iChina:
 	
 		# first goal: build two Confucian and Taoist Cathedrals by 1000 AD
@@ -3261,8 +3300,11 @@ def isBuildingInCity(tPlot, iBuilding):
 def getNumCitiesInArea(iPlayer, lPlots):
 	return len(utils.getAreaCitiesCiv(iPlayer, lPlots))
 	
+def getCitiesInRegions(iPlayer, lRegions):
+	return [city for city in utils.getCityList(iPlayer) if city.getRegionID() in lRegions]
+	
 def getNumCitiesInRegions(iPlayer, lRegions):
-	return len([city for city in utils.getCityList(iPlayer) if city.getRegionID() in lRegions])
+	return len(getCitiesInRegions(iPlayer, lRegions))
 	
 def getNumFoundedCitiesInArea(iPlayer, lPlots):
 	return len([city for city in utils.getAreaCitiesCiv(iPlayer, lPlots) if city.getOriginalOwner() == iPlayer])
@@ -4015,6 +4057,25 @@ def getReligionHappiness(iPlayer):
             
     return iHappiness
 	
+def getReligionPlayers(lReligions):
+	lPlayers = []
+	for iPlayer in range(iNumPlayers):
+		pPlayer = gc.getPlayer(iPlayer)
+		if pPlayer.isAlive():
+			if pPlayer.getStateReligion() in lReligions:
+				lPlayers.append(iPlayer)
+	return lPlayers
+	
+def getBestCityInRegion(lRegions):
+	lCities = []
+	for iLoopPlayer in range(iNumPlayers):
+		for city in getCitiesInRegions(iLoopPlayer, lRegions):
+			iValue = ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
+				+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
+			lCities.append((city, iValue))
+	lCities.sort(key=itemgetter(1), reverse=False)
+	return lCities[0]
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -4365,6 +4426,21 @@ def getUHVHelp(iPlayer, iGoal):
 			bBestCity = isBestCity(iBabylonia, (76, 40), cityCulture)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCity.getName(),)))
 			
+	elif iPlayer == iNubia:
+		if iGoal == 0:
+			bPyramids = isBuildingInCity((66, 31), iPyramids)
+			bEgypt = isControlled(iNubia, Areas.getCoreArea(iMamluks, False)) and isControlled(iNubia, Areas.getCoreArea(iEgypt, False))
+			aHelp.append(getIcon(bPyramids) + localText.getText("TXT_KEY_BUILDING_PYRAMIDS", ()) + ' ' + getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + getIcon(data.iNubiaEgyptYears >= 1000) + localText.getText("TXT_KEY_UHV_YEARS", (data.iNubiaEgyptYears, 1000)))
+		elif iGoal == 1:
+			iNumOrthodoxCathedrals = getNumBuildings(iNubia, iOrthodoxCathedral)
+			iNumPleasedOrBetterChristians = countPlayersWithAttitudeInGroup(iNubia, AttitudeTypes.ATTITUDE_PLEASED, getReligionPlayers(dc.lChristianity))
+			aHelp.append(getIcon(iNumOrthodoxCathedrals >= 2) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", (iNumOrthodoxCathedrals, 2)) + ' ' + getIcon(iNumPleasedOrBetterChristians >= 5) + localText.getText("TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_CHRISTIANS", (iNumPleasedOrBetterChristians, 5)))
+		elif iGoal == 2:
+			iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
+			GreatestAfricanCity = getBestCityInRegion(lAfrica)[0]
+			bGreatestAfricanCityIsSennar = GreatestAfricanCity.getName() == 'Sennar'
+			aHelp.append(getIcon(iBestIslamicCommerceOutput == iNubia) + localText.getText("TXT_KEY_VICTORY_MOST_AFRICAN_COMMERCE_CIV", (str(gc.getPlayer(iBestIslamicCommerceOutput).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(bGreatestAfricanCityIsSennar) + localText.getText("TXT_KEY_VICTORY_GREATEST_AFRICAN_CITY", (str(GreatestAfricanCity.getName()),)))
+			
 	elif iPlayer == iChina:
 		if iGoal == 0:
 			iConfucianCounter = getNumBuildings(iChina, iConfucianCathedral)
@@ -4706,8 +4782,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 1:
 			iHappiness = getReligionHappiness(iKhazars)
 			iLeader, iPopulation = getLargestReligionPopulation(iJudaism)
-			aHelp.append(getIcon(iHappiness >= 10) + localText.getText("TXT_KEY_VICTORY_RELIGION_HAPPINESS", (iHappiness, 10)))
-			aHelp.append(getIcon(iLeader == iPlayer) + localText.getText("TXT_KEY_VICTORY_JEWISH_POPULATION", (gc.getPlayer(iLeader).getCivilizationShortDescription(0),)) + " (" + str(iPopulation) + ")")
+			aHelp.append(getIcon(iHappiness >= 10) + localText.getText("TXT_KEY_VICTORY_RELIGION_HAPPINESS", (iHappiness, 10)) + ' ' + getIcon(iLeader == iPlayer) + localText.getText("TXT_KEY_VICTORY_JEWISH_POPULATION", (gc.getPlayer(iLeader).getCivilizationShortDescription(0),)) + " (" + str(iPopulation) + ")")
 		
 		if iGoal == 2:
 			bConnected = isConnectedByLand(iKhazars, lDanube, lZaysan)

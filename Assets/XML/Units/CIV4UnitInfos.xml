@@ -7181,8 +7181,12 @@
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
 			</UnitCombatMods>
-			<iFirstStrikes>2</iFirstStrikes>
+			<iFirstStrikes>1</iFirstStrikes>
 			<iCityDefense>50</iCityDefense>
 			<iHillsDefense>25</iHillsDefense>
 			<iCultureGarrison>4</iCultureGarrison>

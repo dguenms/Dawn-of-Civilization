@@ -103,6 +103,7 @@ tCapitals = (
 (69, 33), # Thebes
 (76, 40), # Babylon
 (87, 40), # Harappa
+(66, 31), # Kerma
 (100, 44), # Chang'an
 (67, 41), # Athens
 (94, 40), # Pataliputra
@@ -166,6 +167,7 @@ tCapitals = (
 )
 
 dChangedCapitals = {
+iNubia : (68, 29),	# Sennar
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
@@ -188,6 +190,7 @@ iOttomans : (68, 45),	# Istanbul
 
 # new capital locations on respawn
 dRespawnCapitals = {
+iNubia : (68, 31),	# Dongola
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
@@ -210,6 +213,7 @@ tBirthArea = (
 ((66, 30), 	(70, 36)), 	# Egypt
 ((75, 39), 	(77, 42)), 	# Babylonia
 ((85, 37), 	(88, 41)), 	# Harappa
+((66, 25), 	(69, 31)), 	# Nubia
 ((99, 43), 	(107, 47)), 	# China
 ((65, 39), 	(70, 45)), 	# Greece
 ((87, 36), 	(96, 40)), 	# India
@@ -328,6 +332,7 @@ tCoreArea = (
 ((67, 32),	(69, 36)),	# Egypt
 ((75, 39),	(77, 42)),	# Babylonia
 ((85, 37),	(88, 41)),	# Harappa
+((66, 29),	(70, 31)),	# Nubia
 ((99, 43),	(107, 47)),	# China
 ((64, 39),	(70, 45)),	# Greece
 ((90, 38),	(96, 40)),	# India
@@ -415,6 +420,7 @@ iGermany : 	((58, 49),	(63, 55)),
 
 dCoreAreaExceptions = {
 iHarappa : [(85, 41), (88, 37), (88, 38)],
+iNubia : [(70, 30), (70, 29)],
 iChina : [(99, 46), (99, 47), (104, 43), (105, 43), (106, 43), (107, 43), (105, 44), (106, 44), (106, 47)],
 iGreece : [(64, 45), (65, 45)],
 iPersia : [(85, 37), (85, 38), (85, 39)],
@@ -467,6 +473,7 @@ tNormalArea = (
 ((65, 30), 	(72, 37)), 	# Egypt
 ((74, 38), 	(79, 44)), 	# Babylonia
 ((84, 35), 	(88, 42)), 	# Harappa
+((66, 27), 	(72, 32)), 	# Nubia
 ((99, 39), 	(108, 50)), 	# China
 ((64, 39), 	(68, 44)), 	# Greece
 ((89, 38), 	(96, 42)), 	# India
@@ -573,6 +580,7 @@ tBroaderArea = (
 ((60, 26), 	(74, 38)), 	# Egypt
 ((72, 37), 	(78, 44)), 	# Babylonia
 ((90, 40), 	(90, 40)), 	# Harappa
+((66, 29), 	(69, 31)), 	# Nubia
 ((95, 38), 	(108, 50)), 	# China
 ((62, 39), 	(77, 47)), 	# Greece
 ((85, 28), 	(99, 43)), 	# India

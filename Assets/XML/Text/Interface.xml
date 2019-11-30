@@ -3216,4 +3216,12 @@
 		<Italian>[ICON_BULLET]%D1_Mod%% Building Production</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Building Production</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_NUBIA</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</English>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</French>
+		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</Spanish>
+	</TEXT>
 </Civ4GameText>

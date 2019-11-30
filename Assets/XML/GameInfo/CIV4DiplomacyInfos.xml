@@ -10017,6 +10017,25 @@
 			</Responses>
 		</DiplomacyInfo>
 		<DiplomacyInfo>
+			<Type>AI_DIPLOCOMMENT_FIRST_CONTACT</Type>
+			<Responses>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_PIYE</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_TAHARQA_1</Text>
+					</DiplomacyText>
+				</Response>
+			</Responses>
+		</DiplomacyInfo>
+		<DiplomacyInfo>
 			<Type>AI_DIPLOCOMMENT_DEMAND_REJECTED</Type>
 			<Responses>
 				<Response>

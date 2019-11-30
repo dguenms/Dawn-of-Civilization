@@ -17356,6 +17356,17 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 				}
 			}
 		}
+
+		// 1SDAN: display Nubian UP
+		if (city.getOwnerINLINE() == NUBIA)
+		{
+			if (city.hasBonus(BONUS_STONE) && GC.getTechInfo((TechTypes)GC.getBuildingInfo(eBuilding).getPrereqAndTech()).getEra() <= ERA_ANCIENT)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_NUBIA", 50));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += 50;
+			}
+		}
 	}
 
 	ProjectTypes eProject = city.getProductionProject();

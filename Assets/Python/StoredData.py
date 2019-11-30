@@ -265,6 +265,7 @@ class GameData:
 		self.lOmaniEnemies = []
 		self.iOmaniCities = 0
 		self.iOmaniTradeGold = 0
+		self.iNubiaEgyptYears = 0
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

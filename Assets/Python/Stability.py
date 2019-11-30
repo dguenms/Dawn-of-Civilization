@@ -115,6 +115,9 @@ def onCityAcquired(city, iOwner, iPlayer):
 	
 	checkLostCoreCollapse(iOwner)
 	
+	if iOwner == iPersia and not utils.isReborn(iPersia):
+		completeCollapse(iPersia)
+	
 	if iPlayer == iBarbarian:
 		checkBarbarianCollapse(iOwner)
 		
@@ -1745,7 +1748,10 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 				
 	if len(utils.getCityList(iPlayer)) == 0:
 		utils.debugTextPopup('Civ resurrected without any cities')
-			
+		
+	if iPlayer == iNubia and data.players[iPlayer].iResurrections == 1:
+		utils.setReborn(iNubia, True)
+		
 	relocateCapital(iPlayer, True)
 	
 	# give the new civ a starting army

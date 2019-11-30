@@ -6622,4 +6622,84 @@
 		<Italian>Diplomatic Missions: %d1 / %d2</Italian>
 		<Spanish>Diplomatic Missions: %d1 / %d2</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB1_TITLE</Tag>
+		<English>The Nubian Dynasty</English>
+		<French>The Nubian Dynasty</French>
+		<German>The Nubian Dynasty</German>
+		<Italian>The Nubian Dynasty</Italian>
+		<Spanish>The Nubian Dynasty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB1</Tag>
+		<English>Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years</English>
+		<French>Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years</French>
+		<German>Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years</German>
+		<Italian>Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years</Italian>
+		<Spanish>Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB2_TITLE</Tag>
+		<English>The Makurian Crusades</English>
+		<French>The Makurian Crusades</French>
+		<German>The Makurian Crusades</German>
+		<Italian>The Makurian Crusades</Italian>
+		<Spanish>The Makurian Crusades</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB2</Tag>
+		<English>Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365</English>
+		<French>Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365</French>
+		<German>Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365</German>
+		<Italian>Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365</Italian>
+		<Spanish>Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB3_TITLE</Tag>
+		<English>The Blue Sultanate</English>
+		<French>The Blue Sultanate</French>
+		<German>The Blue Sultanate</German>
+		<Italian>The Blue Sultanate</Italian>
+		<Spanish>The Blue Sultanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NUB3</Tag>
+		<English>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</English>
+		<French>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</French>
+		<German>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</German>
+		<Italian>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</Italian>
+		<Spanish>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_YEARS</Tag>
+		<English>Years: %d1 / %d2</English>
+		<French>Years: %d1 / %d2</French>
+		<German>Years: %d1 / %d2</German>
+		<Italian>Years: %d1 / %d2</Italian>
+		<Spanish>Years: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_CHRISTIANS</Tag>
+		<English>Pleased or friendly relations with Christian civilisations: %d1 / %d2</English>
+		<French>Relations favorables ou enthousiastes avec des civilisations chr&#233;tiennes : %d1 / %d2</French>
+		<German>Erfreute oder freundliche Beziehungen mit christliche Zivilisationen: %d1 / %d2</German>
+		<Italian>Pleased or friendly relations with Christian civilisations: %d1 / %d2</Italian>
+		<Spanish>Pleased or friendly relations with Christian civilisations: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_AFRICAN_COMMERCE_CIV</Tag>
+		<English>Highest commerces output in Africa: %s1</English>
+		<French>Highest production output in Africa: %s1</French>
+		<German>Highest production output in Africa: %s1</German>
+		<Italian>Highest production output in Africa: %s1</Italian>
+		<Spanish>Highest production output in Africa: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREATEST_AFRICAN_CITY</Tag>
+		<English>Greatest African City: %s1</English>
+		<French>Greatest African City: %s1</French>
+		<German>Greatest African City: %s1</German>
+		<Italian>Greatest African City: %s1</Italian>
+		<Spanish>Greatest African City: %s1</Spanish>
+	</TEXT>
 </Civ4GameText>
