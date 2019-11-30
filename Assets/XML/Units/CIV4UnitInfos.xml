@@ -1423,8 +1423,10 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
 			<bIgnoreTerrainCost>1</bIgnoreTerrainCost>
 			<UnitAIs>
 				<UnitAI>

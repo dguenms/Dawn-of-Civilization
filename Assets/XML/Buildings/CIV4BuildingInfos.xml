@@ -8504,6 +8504,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iColoniesPrereq>1</iColoniesPrereq>
 			<iTradeRoutes>2</iTradeRoutes>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8556,6 +8557,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iColoniesPrereq>1</iColoniesPrereq>
 			<iTradeRoutes>2</iTradeRoutes>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8608,6 +8610,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>10</iAsset>
 			<iPower>6</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8668,6 +8671,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iCultureHappiness>2</iCultureHappiness>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -8720,6 +8724,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
@@ -8762,6 +8767,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
@@ -8811,6 +8817,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iLevelPrereq>4</iLevelPrereq>
 			<iMaxLatitude>90</iMaxLatitude>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>10</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8857,6 +8864,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8896,6 +8904,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHealth>-2</iHealth>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8958,6 +8967,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -9001,6 +9011,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iHealth>8</iHealth>
 			<iAsset>7</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -9047,6 +9058,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
@@ -9095,6 +9107,7 @@
 			<iGlobalSpaceProductionModifier>100</iGlobalSpaceProductionModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<Flavors>

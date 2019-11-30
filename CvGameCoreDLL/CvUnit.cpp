@@ -3875,6 +3875,12 @@ bool CvUnit::canHeal(const CvPlot* pPlot) const
 		return false;
 	}
 
+	// Leoreth: hidden nationality units can enter cities with open borders but don't let them heal there because it's an easy area to retreat to
+	if (m_pUnitInfo->isHiddenNationality() && pPlot->isCity() && pPlot->getPlotCity()->getOwnerINLINE() != getOwnerINLINE())
+	{
+		return false;
+	}
+
 	return true;
 }
 

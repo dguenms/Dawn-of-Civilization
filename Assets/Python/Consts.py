@@ -1194,14 +1194,16 @@ rBrazil, rArgentina, rPeru, rColombia) = range(iNumRegions)
 lNewWorld = [rAustralia, rOceania, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
 
 lEurope = [rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]
-lMiddleEast = [rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb, rPersia, rCentralAsia]
+lMiddleEast = [rAnatolia, rMesopotamia, rArabia, rPersia, rCentralAsia]
 lIndia = [rIndia, rDeccan]
 lEastAsia = [rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]
-lAfrica = [rEgypt, rMaghreb, rEthiopia, rSouthAfrica, rWestAfrica]
+lNorthAfrica = [rEgypt, rMaghreb]
+lSubSaharanAfrica = [rEthiopia, rSouthAfrica, rWestAfrica]
 lSouthAmerica = [rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]
 lNorthAmerica = [rCanada, rAlaska, rUnitedStates]
 lOceania = [rAustralia, rOceania]
 
+lAfrica = lNorthAfrica + lSubSaharanAfrica
 lAsia = lMiddleEast + lIndia + lEastAsia
 
 iArea_Europe = 1000
