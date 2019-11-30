@@ -1280,13 +1280,14 @@ class RFCUtils:
 	def getAreaCitiesCiv(self, iCiv, lPlots):
 		return [city for city in self.getAreaCities(lPlots) if city.getOwner() == iCiv]
 		
-	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False):
+	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False, bPermanentCultureChange = True):
 		tPlot = (x, y)
 		plot = gc.getMap().plot(x, y)
 		
 		plot.setRevealed(iCiv, False, True, -1)
 	
-		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
+		if bPermanentCultureChange:
+			self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 		
 		if bFlipUnits: 
 			self.flipUnitsInCityBefore(tPlot, iCiv, iOwner)
@@ -1914,7 +1915,7 @@ class RFCUtils:
 		for tPlot in self.surroundingPlots((x, y), 2):
 			for unit in self.getUnitList(tPlot):
 				if (not self.plot(tPlot).isCity() or self.plot(tPlot).getPlotCity() != city) and unit.getOwner() == city.getOwner() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
-					if len(lFlippedUnits) < iNumDefenders:
+					if unit.canFight() and len(lFlippedUnits) < iNumDefenders:
 						lFlippedUnits.append(unit)
 					else:
 						lRelocatedUnits.append(unit)
@@ -1940,6 +1941,9 @@ class RFCUtils:
 			return
 		
 		for unit in lUnits:
+			if unit.plot().getOwner() in [iPlayer, -1]:
+				continue
+			
 			iUnitType = unit.getUnitType()
 			if iUnitType in dUnits:
 				if unit not in dUnits[iUnitType]: dUnits[iUnitType].append(unit)

@@ -39179,7 +39179,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=43
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -49695,6 +49694,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		ReligionType=RELIGION_CONFUCIANISM
 		Player55Culture=80, (Manchuria)
 	EndCity
 	TeamReveal=1,13,64,65,

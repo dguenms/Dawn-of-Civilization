@@ -3060,7 +3060,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SMOKELESS_POWDER_1</Tag>
-		<English>Convert our musketmen to the new gunpowder.</English>
+		<English>Convert our musketeers to the new gunpowder.</English>
 		<French>Adopter la nouvelle poudre pour nos mousquetaires.</French>
 		<German>R&#252;stet unsere Musketiere mit dem neuen Schie&#223;pulver aus.</German>
 		<Italian>Equipaggia i nostri soldati con moschetto con la nuova polvere da sparo.</Italian>
@@ -6548,7 +6548,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SMOKELESS_POWDER_1</Tag>
-		<English>%s1_civ_adjective weaponsmiths have invented smokeless powder, giving their musketmen a significant advantage.</English>
+		<English>%s1_civ_adjective weaponsmiths have invented smokeless powder, giving their musketeers a significant advantage.</English>
 		<French>Les fabricants d'armes %s1:2_civ_adjective ont invent&#233; une poudre sans fum&#233;e, qui donne aux mousquetaires un avantage significatif.</French>
 		<German>%s1:3_civ_adjective Waffenschmiede haben raucharmes Pulver erfunden, was ihren Musketieren einen erheblichen Vorteil verschafft.</German>
 		<Italian>Gli armaioli %s1:3_civ_adjective hanno inventato polvere da sparo senza fumo, dando ai loro soldati con moschetto un notevole vantaggio.</Italian>

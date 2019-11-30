@@ -19376,6 +19376,11 @@ void CvCity::applyBuildingDamage(int iDamage)
 
 	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
+		if (!isHasRealBuilding((BuildingTypes)iI))
+		{
+			continue;
+		}
+
 		if (GC.getBuildingInfo((BuildingTypes)iI).getDefenseModifier() > 0)
 		{
 			continue;
@@ -19386,7 +19391,7 @@ void CvCity::applyBuildingDamage(int iDamage)
 			continue;
 		}
 
-		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 0)
+		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 100)
 		{
 			continue;
 		}
