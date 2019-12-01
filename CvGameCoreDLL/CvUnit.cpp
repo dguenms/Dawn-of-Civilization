@@ -6636,6 +6636,11 @@ bool CvUnit::greatWork()
 		{
 			pCity->changeCultureTimes100(getOwnerINLINE(), iCultureToAdd % iNumTurnsApplied, false, true);
 		}
+
+		if (pCity->getPopulation() == 0)
+		{
+			pCity->doTask(TASK_RAZE);
+		}
 	}
 
 	if (plot()->isActiveVisible(false))
@@ -14363,6 +14368,11 @@ bool CvUnit::resolveCrisis()
 	for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
 	{
 		pLoopCity->setOccupationTimer(0);
+
+		if (pLoopCity->getPopulation() == 0)
+		{
+			pLoopCity->doTask(TASK_RAZE);
+		}
 	}
 
 	if (plot()->isActiveVisible(false))
