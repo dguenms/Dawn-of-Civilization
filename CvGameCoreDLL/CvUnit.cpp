@@ -6622,7 +6622,7 @@ bool CvUnit::greatWork()
 	if (pCity != NULL)
 	{
 		pCity->setCultureUpdateTimer(0);
-		pCity->setOccupationTimer(0);
+		//pCity->setOccupationTimer(0); // Leoreth: artists shouldn't solve occupation unrest
 
 		int iCultureToAdd = 100 * getGreatWorkCulture(plot());
 		int iNumTurnsApplied = (GC.getDefineINT("GREAT_WORKS_CULTURE_TURNS") * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitGreatWorkPercent()) / 100;
