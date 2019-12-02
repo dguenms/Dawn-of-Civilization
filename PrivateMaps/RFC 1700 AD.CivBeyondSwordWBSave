@@ -28900,6 +28900,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=31
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -29419,12 +29420,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=29
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=64,y=30
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot

@@ -569,7 +569,7 @@ def completeCollapse(iPlayer):
 	if utils.getHumanID() != iPlayer:
 		if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iNationalism):
 			if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
-				if len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
+				if len(utils.getOwnedCoreCities(iPlayer)) > 0 and len(utils.getOwnedCoreCities(iPlayer)) < len(utils.getCityList(iPlayer)):
 					collapseToCore(iPlayer)
 					return
 	

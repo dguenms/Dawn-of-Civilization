@@ -31,6 +31,7 @@ iHolland = iNetherlands
 iDelhi = iMughals
 iSiam = iThailand
 iPhoenicia = iCarthage
+iTunisia = iCarthage
 iHRE = iHolyRome
 iAustria = iHolyRome
 iPrussia = iGermany
@@ -512,14 +513,14 @@ iAztecs : iCivMexico,
 }
 
 tResurrectionIntervals = (
-[], #Egypt
+[(664, -343)], #Egypt
 [(-3000, -500)], #Babylonia
 [],		# Harappa
 [(-785, 350), (350, 1365), (1504, 1821)], #Nubia
 [(600, 2020)], #China
 [(1800, 2020)], #Greece
 [(1600, 1800), (1900, 2020)], #India
-[(-1000, -150)], #Carthage
+[(-1000, -150), (1956, 2020)], #Carthage
 [],		# Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome

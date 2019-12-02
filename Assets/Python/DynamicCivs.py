@@ -503,7 +503,7 @@ dEmpireThreshold = {
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
 
-lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali, iKievanRus]
+lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali, iKievanRus, iCarthage]
 lVassalNameChanges = [iInca, iAztecs, iMughals]
 lChristianityNameChanges = [iInca, iAztecs]
 
@@ -684,6 +684,10 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	data.players[iPlayer].iResurrections += 1
 	
 	if iPlayer in lRespawnNameChanges:
+		if iPlayer == iCarthage:
+			if gc.getGame().getGameTurnYear() >= 1956:
+				setShort(iPlayer, text("TXT_KEY_CIV_TUNISIA_SHORT_DESC"))
+				setAdjective(iPlayer, text("TXT_KEY_CIV_TUNISIA_ADJECTIVE"))
 		nameChange(iPlayer)
 		adjectiveChange(iPlayer)
 		

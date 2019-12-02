@@ -38,7 +38,7 @@ def getLanguages(iCiv):
 	elif iCiv == iHarappa: return (iLangHarappan, iLangIndian)
 	elif iCiv == iNubia: 
 		if data.lReligionFounder[iIslam] != -1:
-			return (iArabian, iLangNubian, iLangEgyptian)
+			return (iLangArabian, iLangNubian, iLangEgyptian)
 		return (iLangNubian, iLangEgyptian,)
 	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iGreece: return (iLangGreek,)
@@ -376,7 +376,7 @@ def onRevolution(iCiv):
 	if iCiv == iEgypt:
 		updateCityNames(iCiv)
 		
-	if gc.getPlayer(iCiv).getStateReligion() == iIslam():
+	if gc.getPlayer(iCiv).getStateReligion() == iIslam:
 		if gc.getPlayer(iCiv).getCapitalCity().getName() == "Soba":
 			city.setName('Sennar', False)
 

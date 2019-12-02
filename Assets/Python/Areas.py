@@ -277,6 +277,7 @@ tBirthArea = (
 )
 
 dChangedBirthArea = {
+iCarthage : ((57, 37), (59, 39)),
 iPersia :	((74, 37), 	(85, 44)), 	# includes Assyria and Anatolia
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
