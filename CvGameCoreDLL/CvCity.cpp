@@ -2932,6 +2932,18 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		{
 			iExperience += getCultureLevel();
 		}
+
+		// 1SDAN: Iron Helmet Effect
+		if (eUnit == GC.getInfoTypeForString("UNIT_CHAD_IRON_HELMET"))
+		{
+			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).AI_getAttitude((PlayerTypes)iI) >= ATTITUDE_PLEASED && GET_PLAYER((PlayerTypes)iI).isStateReligion() == GET_PLAYER(getOwnerINLINE()).isStateReligion() && GET_PLAYER((PlayerTypes)iI).getStateReligion() == GET_PLAYER(getOwnerINLINE()).getStateReligion() && GET_PLAYER((PlayerTypes)iI).getPower() > GET_PLAYER(getOwnerINLINE()).getPower())
+				{
+					iExperience += 2;
+				}
+			}
+		}
 	}
 	
 	//SuperSpies: TSHEEP - Only give spies spy specific xp

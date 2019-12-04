@@ -3737,5 +3737,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Deffufas/Deffufas.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CHAD_ZANGO</Type>
+			<LSystem>LSYSTEM_1x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.58</fScale>
+			<fInterfaceScale>0.67</fInterfaceScale>
+			<NIF>Art/Terrain/Features/Oasis/Oasis.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Zango/oasisbtn.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -38,6 +38,14 @@
 		<Spanish>Morocco</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOROCCO_DESC</Tag>
+		<English>The Moroccans</English>
+		<French>The Moroccans</French>
+		<German>The Moroccans</German>
+		<Italian>The Moroccans</Italian>
+		<Spanish>The Moroccans</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOROCCO_ADJECTIVE</Tag>
 		<English>Moroccan</English>
 		<French>

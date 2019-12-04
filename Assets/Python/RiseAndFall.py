@@ -689,6 +689,9 @@ class RiseAndFall:
 			iCongo: 4,
 			iNetherlands: 6,
 			iBurma: 6,
+			iNubia: 2,
+			iChad: 4,
+			iMoors: 2,
 		}
 		
 		dGreatGeneralsCreated = {
@@ -2449,6 +2452,9 @@ class RiseAndFall:
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 3)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
+		elif iCiv == iChad:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
 		elif iCiv == iMoors:
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 2)
 		elif iCiv == iSpain:
@@ -2766,6 +2772,10 @@ class RiseAndFall:
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnitAI(iHorseArcher, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK, 4)
 			utils.makeUnitAI(iSkirmisher, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK, 3)
+		elif iCiv == iChad:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iSkirmisher, iCiv, tPlot, 2)
 		elif iCiv == iMoors:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -3205,6 +3215,8 @@ class RiseAndFall:
 		elif iCiv == iBurma:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iKhazars:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
+		elif iCiv == iChad:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iMoors:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)

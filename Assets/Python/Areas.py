@@ -126,6 +126,7 @@ tCapitals = (
 (100, 26), # Palembang
 (99, 38), # Pagan (Ava, Mandalay)
 (77, 48), # Balanjar
+(64, 30), # Njimi
 (51, 41), # Cordoba
 (52, 44), # Madrid
 (55, 50), # Paris
@@ -174,6 +175,7 @@ iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
 iMaya : (27, 29),	# Bogota (Colombia)
 iTamils : (90, 30),	# Vijayanagara
+iChad : (64, 28), #N'Djamena
 iKhmer : (101, 37),	# Hanoi
 iHolyRome : (62, 49),	# Vienna
 }
@@ -199,6 +201,7 @@ iJapan : (116, 46),	# Tokyo
 #iVikings : (63, 59),	# Stockholm
 iTurks : (84, 41),	# Herat
 iIndonesia : (104, 25),	# Jakarta
+iChad : (61, 29),	#Ngazargamu
 iMoors : (51, 37),	# Marrakesh
 iHolyRome : (62, 49),	# Vienna
 iInca : (26, 22),	# Lima
@@ -236,6 +239,7 @@ tBirthArea = (
 ((98, 24), 	(107, 31)), 	# Indonesia
 ((97, 37),	(100, 39)),	# Burma
 ((73, 47),	(77, 51)),	# Khazars
+((63, 27), 	(65, 33)), # Chad
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 43), 	(53, 46)), 	# Spain
 ((51, 46), 	(57, 52)), 	# France
@@ -356,6 +360,7 @@ tCoreArea = (
 ((98, 24),	(107, 30)),	# Indonesia
 ((98, 35),	(99, 38)),	# Burma
 ((73, 47),	(77, 50)),	# Khazars
+((61, 28), 	(64, 32)), # Chad
 ((51, 37),	(53, 42)),	# Moors
 ((49, 43),	(53, 46)),	# Spain
 ((51, 46),	(57, 51)),	# France
@@ -497,6 +502,7 @@ tNormalArea = (
 ((98, 24), 	(113, 31)), 	# Indonesia
 ((98, 35), 	(101, 39)), 	# Burma
 ((74, 45), 	(80, 50)), 	# Khazar
+((61, 28), 	(66, 37)), # Chad
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 40), 	(55, 46)), 	# Spain
 ((51, 46), 	(58, 52)), 	# France
@@ -604,6 +610,7 @@ tBroaderArea = (
 ((98, 24), 	(113, 31)), 	# Indonesia
 ((97, 37),	(100, 39)),	# Burma
 ((76, 47),	(77, 50)),	# Khazar
+((63, 28), 	(64, 32)), # Chad
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 38), 	(55, 46)), 	# Spain
 ((49, 44), 	(61, 52)), 	# France

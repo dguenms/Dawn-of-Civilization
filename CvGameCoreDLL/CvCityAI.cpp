@@ -2520,6 +2520,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case KHAZARS:
 		break;
+	case CHAD:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
 	case MOORS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		//aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;

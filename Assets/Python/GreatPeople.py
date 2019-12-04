@@ -2058,6 +2058,8 @@ iCivBurma : {
 },
 iCivKhazars : {
 },
+iCivChad : {
+},
 iCivMoors : {
 	iGreatProphet : [
 		"Ibn Masarra", # 10th

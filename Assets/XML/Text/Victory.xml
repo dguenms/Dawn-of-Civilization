@@ -6664,11 +6664,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_NUB3</Tag>
-		<English>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</English>
-		<French>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</French>
-		<German>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</German>
-		<Italian>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</Italian>
-		<Spanish>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821</Spanish>
+		<English>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821</English>
+		<French>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821</French>
+		<German>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821</German>
+		<Italian>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821</Italian>
+		<Spanish>Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_YEARS</Tag>
@@ -6701,5 +6701,109 @@
 		<German>Greatest African City: %s1</German>
 		<Italian>Greatest African City: %s1</Italian>
 		<Spanish>Greatest African City: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHA1_TITLE</Tag>
+		<English>King of Kanem</English>
+		<French>King of Kanem</French>
+		<German>King of Kanem</German>
+		<Italian>King of Kanem</Italian>
+		<Spanish>King of Kanem</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHA1</Tag>
+		<English>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</English>
+		<French>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</French>
+		<German>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</German>
+		<Italian>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</Italian>
+		<Spanish>Conduct one Diplomatic Mission in Egypt and 3 Trade Missions in your state religion's Holy City by 1259</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHA2_TITLE</Tag>
+		<English>Mai of Chad</English>
+		<French>Mai of Chad</French>
+		<German>Mai of Chad</German>
+		<Italian>Mai of Chad</Italian>
+		<Spanish>Mai of Chad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHA2</Tag>
+		<English>Sell 5 Slaves and buy 10 Strategic Resources by 1380</English>
+		<French>Sell 5 Slaves and buy 10 Strategic Resources by 1380</French>
+		<German>Sell 5 Slaves and buy 10 Strategic Resources by 1380</German>
+		<Italian>Sell 5 Slaves and buy 10 Strategic Resources by 1380</Italian>
+		<Spanish>Sell 5 Slaves and buy 10 Strategic Resources by 1380</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHA3_TITLE</Tag>
+		<English>Lord of Bornu</English>
+		<French>Lord of Bornu</French>
+		<German>Lord of Bornu</German>
+		<Italian>Lord of Bornu</Italian>
+		<Spanish>Lord of Bornu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHA3</Tag>
+		<English>Control the largest army of any nation with holdings in Africa and control Libya, Nigeria, and Cameroon by 1603</English>
+		<French>Control the largest army of any nation with holdings in Africa and control Libya, Nigeria, and Cameroon by 1603</French>
+		<German>Control the largest army of any nation with holdings in Africa and control Libya, Nigeria, and Cameroon by 1603</German>
+		<Italian>Control the largest army of any nation with holdings in Africa and control Libya, Nigeria, and Cameroon by 1603</Italian>
+		<Spanish>Control the largest army of any nation with holdings in Africa and control Libya, Nigeria, and Cameroon by 1603</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_MISSIONS</Tag>
+		<English>Trade Missions: %d1 / %d2</English>
+		<French>Trade Missions: %d1 / %d2</French>
+		<German>Trade Missions: %d1 / %d2</German>
+		<Italian>Trade Missions: %d1 / %d2</Italian>
+		<Spanish>Trade Missions: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_STRONGEST_ARMY_AFRICA_HOLDINGS</Tag>
+		<English>Strongest army of any nation with holdings in Africa: %s1</English>
+		<French>Strongest army of any nation with holdings in Africa: %s1</French>
+		<German>Strongest army of any nation with holdings in Africa: %s1</German>
+		<Italian>Strongest army of any nation with holdings in Africa: %s1</Italian>
+		<Spanish>Strongest army of any nation with holdings in Africa: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAMEROON</Tag>
+		<English>Cameroon</English>
+		<French>Cameroon</French>
+		<German>Cameroon</German>
+		<Italian>Cameroon</Italian>
+		<Spanish>Cameroon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NIGERIA</Tag>
+		<English>Nigeria</English>
+		<French>Nigeria</French>
+		<German>Nigeria</German>
+		<Italian>Nigeria</Italian>
+		<Spanish>Nigeria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LIBYA</Tag>
+		<English>Libya</English>
+		<French>Libya</French>
+		<German>Libya</German>
+		<Italian>Libya</Italian>
+		<Spanish>Libya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SLAVES_SOLD</Tag>
+		<English>Slaves sold: %d1 / %d2</English>
+		<French>Slaves sold: %d1 / %d2</French>
+		<German>Slaves sold: %d1 / %d2</German>
+		<Italian>Slaves sold: %d1 / %d2</Italian>
+		<Spanish>Slaves sold: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_STRATEGIC_BONUSES_BOUGHT</Tag>
+		<English>Strategic Resources Purchased: %d1 / %d2</English>
+		<French>Strategic Resources Purchased: %d1 / %d2</French>
+		<German>Strategic Resources Purchased: %d1 / %d2</German>
+		<Italian>Strategic Resources Purchased: %d1 / %d2</Italian>
+		<Spanish>Strategic Resources Purchased: %d1 / %d2</Spanish>
 	</TEXT>
 </Civ4GameText>

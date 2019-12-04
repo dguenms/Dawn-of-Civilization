@@ -266,6 +266,12 @@ class Barbs:
 		if utils.isYearIn(1200, 1700):
 			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
 
+		#bulala in Chad
+		if iGameTurn == getTurnForYear(1200):
+			teamNative.declareWar((teamChad), false, WarPlanTypes.NO_WARPLAN)
+		if utils.isYearIn(1210, 1571):
+			self.checkSpawn(iNative, iLongbowman, 1, (61, 27), (66, 34), self.spawnNatives, iGameTurn, 12, 8, ["TXT_KEY_ADJECTIVE_BULALA"])
+
 		#American natives
 		if utils.isYearIn(400, 1100):
 			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)

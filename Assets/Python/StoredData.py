@@ -266,6 +266,10 @@ class GameData:
 		self.iOmaniCities = 0
 		self.iOmaniTradeGold = 0
 		self.iNubiaEgyptYears = 0
+		self.iChadTradeMissions = 0
+		self.iChadDiplomacyMissions = 0
+		self.iChadSlaves = 0
+		self.iChadStrategicBonuses = 0
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

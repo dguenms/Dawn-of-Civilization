@@ -170,6 +170,7 @@ iCivTibet :	Techs([iNobility, iScholarship, iEthics], column=5),
 iCivIndonesia :	Techs([iEthics], column=5, exceptions=[iGeneralship]),
 iCivBurma :		Techs(column=5, exceptions=[iGeneralship]),
 iCivKhazars :	Techs([iNobility, iGeneralship, iCurrency], column=4),
+iCivChad :	Techs([iFortification], column=6, exceptions=[iEthics, iArchitecture]),
 iCivMoors :	Techs([iMachinery, iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
 iCivFrance :	Techs([iFeudalism, iTheology], column=6),
@@ -228,7 +229,7 @@ iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedic
 {
 iCivIndependent:Techs(column=10),
 iCivIndependent2:Techs(column=10),
-iCivNubia : 	Techs(column=10),
+iCivNubia : 	Techs([iGeography], column=10, exceptions=[iHeritage, iLogistics]),
 iCivManchuria :	Techs([iHorticulture, iUrbanPlanning, iCombinedArms], column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivIndia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration]),
 iCivTamils :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
@@ -240,6 +241,8 @@ iCivVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
 iCivTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
 iCivBurma :		Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivKhmer :	Techs([iUrbanPlanning], column=10, exceptions=[iExploration, iOptics, iHeritage, iLogistics]),
+iCivChad :	Techs([iCombinedArms], column=10, exceptions=[iHeritage, iOptics, iExploration, iLogistics]),
+iCivMoors :	Techs([iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
 iCivFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iEconomics]),
 iCivOman :		Techs([iEconomics, iGeography], column=10, exceptions=[iHeritage]),
@@ -475,6 +478,8 @@ dTechPreferences = {
 	iCivKhazars : {
 		iFortification : 20,
 		iCommune : 20,
+	},
+	iCivChad : {
 	},
 	iCivMoors : {
 		iCivilService: 20,
@@ -963,6 +968,8 @@ dBuildingPreferences = {
 	},
 	iCivKhazars : {
 		
+	},
+	iCivChad : {
 	},
 	iCivMoors : {
 		iMezquita: 100,

@@ -765,7 +765,7 @@ void CvGame::initDiplomacy()
 			else { //barbarian
 				for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 				{
-					if (iI != iJ)
+					if (iI != iJ && !(iI == NATIVE && iJ == CHAD))
 					//if (iI != iJ && iJ != VIKINGS && iJ != MONGOLIA) //Rhye (useless)
 					{
 						GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)iJ), false, NO_WARPLAN);

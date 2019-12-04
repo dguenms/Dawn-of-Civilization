@@ -113,7 +113,8 @@ public:
 
 	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
 	void reportDiplomaticMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, bool bMadePeace); //1SDAN
-	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
+	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iSlaves, int iGold); //Leoreth
+	void reportPlayerBonusTrade(PlayerTypes ePlayer, int iStrategicBonuses, int iGold); //1SDAN
 	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
 	void reportBlockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth

@@ -143,7 +143,8 @@ public:
 
 	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
 	void diplomaticMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, bool bMadePeace); // 1SDAN
-	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
+	void playerSlaveTrade(PlayerTypes ePlayer, int iSlaves, int iGold); // Leoreth
+	void playerBonusTrade(PlayerTypes ePlayer, int iStrategicBonuses, int iGold); // 1SDAN
 	void releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); // Leoreth
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth

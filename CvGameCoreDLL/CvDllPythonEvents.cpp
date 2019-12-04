@@ -1366,7 +1366,7 @@ void CvDllPythonEvents::reportDiplomaticMission(UnitTypes unitID, PlayerTypes eP
 }
 
 // Leoreth: slave trade (amount of gold received)
-void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
+void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iSlaves, int iGold)
 {
 	if (preEvent())
 	{
@@ -1374,6 +1374,23 @@ void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
 		eventData.add("playerSlaveTrade");
 
 		eventData.add((int)ePlayer);
+		eventData.add(iSlaves);
+		eventData.add(iGold);
+
+		postEvent(eventData);
+	}
+}
+
+// 1SDAN: bonus trade (amount of gold received)
+void CvDllPythonEvents::reportPlayerBonusTrade(PlayerTypes ePlayer, int iStrategicBonuses, int iGold)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerBonusTrade");
+
+		eventData.add((int)ePlayer);
+		eventData.add(iStrategicBonuses);
 		eventData.add(iGold);
 
 		postEvent(eventData);

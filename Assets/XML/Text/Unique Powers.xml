@@ -1265,4 +1265,20 @@
 		<Italian>+50% construction speed of ancient era buildings in cities with Stone</Italian>
 		<Spanish>+50% construction speed of ancient era buildings in cities with Stone</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CHA_TITLE</Tag>
+		<English>The Power of Aquifiers:</English>
+		<French>The Power of Aquifiers:</French>
+		<German>The Power of Aquifiers:</German>
+		<Italian>The Power of Aquifiers:</Italian>
+		<Spanish>The Power of Aquifiers:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CHA</Tag>
+		<English>Core Cities also yield a Farm's base yields.</English>
+		<French>Core Cities also yield a Farm's base yields.</French>
+		<German>Core Cities also yield a Farm's base yields.</German>
+		<Italian>Core Cities also yield a Farm's base yields.</Italian>
+		<Spanish>Core Cities also yield a Farm's base yields.</Spanish>
+	</TEXT>
 </Civ4GameText>

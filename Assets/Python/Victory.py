@@ -252,6 +252,13 @@ tZaysanTL = (89, 50)
 tZaysanBR = (91, 53)
 lZaysan = utils.getPlotList(tZaysanTL, tZaysanBR)
 
+tLibyaTL = (60, 33)
+tLibyaBR = (66, 37)
+tNigeriaTL = (56, 25)
+tNigeriaBR = (61, 28)
+tCameroonTL = (60, 23)
+tCameroonBR = (64, 27)
+
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
@@ -298,7 +305,7 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iNubia, iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand, iKhmer]:
+		for iPlayer in [iMoors, iChad, iNubia, iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand, iKhmer]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
@@ -405,7 +412,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# first goal: Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years
 		if isPossible(iNubia, 0):
 			bPyramids = isBuildingInCity((66, 31), iPyramids)
-			bControlsEgypt = isControlled(iNubia, Areas.getCoreArea(iMamluks, False)) and isControlled(iNubia, Areas.getCoreArea(iEgypt, False))
+			bControlsEgypt = isControlled(iNubia, Areas.getCoreArea(iMamluks, False))
 			if bControlsEgypt:
 				data.iNubiaEgyptYears += gc.getGame().getTurnYear(iGameTurn) - gc.getGame().getTurnYear(iGameTurn - 1)
 				if bPyramids and data.iNubiaEgyptYears >= 1000:
@@ -425,16 +432,18 @@ def checkTurn(iGameTurn, iPlayer):
 				else:
 					lose(iNubia, 1)
 					
-		# third goal: Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa in 1821
+		# third goal: Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821
 		if isPossible(iNubia, 2):
+			iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
+			GreatestAfricanCity = getBestCityInRegion(lAfrica)[0]
+			bGreatestAfricanCityIsSennar = GreatestAfricanCity.getName() == 'Sennar'
+			if iBestIslamicCommerceOutput == iNubia and bGreatestAfricanCityIsSennar:
+				win(iNubia, 2)
+			else:
+				lose(iNubia, 2)
+				
 			if iGameTurn == getTurnForYear(1821):
-				iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
-				GreatestAfricanCity = getBestCityInRegion(lAfrica)[0]
-				bGreatestAfricanCityIsSennar = GreatestAfricanCity.getName() == 'Sennar'
-				if iBestIslamicCommerceOutput == iNubia and bGreatestAfricanCityIsSennar:
-					win(iNubia, 2)
-				else:
-					lose(iNubia, 2)
+				expire(iNubia, 2)
 			
 	elif iPlayer == iChina:
 	
@@ -1061,6 +1070,26 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iKhazars, 2)
 			else:
 				lose(iKhazars, 2)
+				
+	elif iPlayer == iChad:
+		if iGameTurn == getTurnForYear(1259):
+			expire(iChad, 0)
+			
+		if iGameTurn == getTurnForYear(1380):
+			expire(iChad, 1)
+			
+		if isPossible(iChad, 2):
+			bCameroon = isControlled(iChad, utils.getPlotList(tCameroonTL, tCameroonBR))
+			bNigeria = isControlled(iChad, utils.getPlotList(tNigeriaTL, tNigeriaBR))
+			bLibya = isControlled(iChad, utils.getPlotList(tLibyaTL, tLibyaBR))
+			if bCameroon and bNigeria and bLibya:
+				lAfricaCivs = getCivsWithHoldingsInRegion(lAfrica)
+				bArmy = isBestPlayer(iChad, playerArmyPower, lAfricaCivs)
+				if bArmy:
+					win(iChad, 2)
+				
+		if iGameTurn == getTurnForYear(1603):
+			expire(iChad, 2)
 				
 	elif iPlayer == iMoors:
 	
@@ -2632,7 +2661,7 @@ def onPlayerGoldTrade(iPlayer, iGold):
 		if isPossible(iOman, 2):
 			data.iOmaniTradeGold += iGold
 		
-def onPlayerSlaveTrade(iPlayer, iGold):
+def onPlayerSlaveTrade(iPlayer, iSlaves, iGold):
 
 	# second Congolese goal: gain 1000 gold through slave trade by 1800 AD
 	if iPlayer == iCongo:
@@ -2640,6 +2669,24 @@ def onPlayerSlaveTrade(iPlayer, iGold):
 			data.iCongoSlaveCounter += iGold
 			if data.iCongoSlaveCounter >= utils.getTurns(1000):
 				win(iCongo, 1)
+				
+	if iPlayer == iChad:
+		if isPossible(iChad, 1):
+			if iGold > 0:
+				data.iChadSlaves += iSlaves
+				
+			if data.iChadSlaves >= 5 and data.iChadStrategicBonuses >= 10:
+				win(iChad, 1)
+		
+def onPlayerBonusTrade(iPlayer, iStrategicBonuses, iGold):
+
+	if iPlayer == iChad:
+		if isPossible(iChad, 1):
+			if iGold > 0:
+				data.iChadStrategicBonuses += iStrategicBonuses
+				
+			if data.iChadSlaves >= 5 and data.iChadStrategicBonuses >= 10:
+				win(iChad, 1)
 				
 def onTradeMission(iPlayer, iX, iY, iGold):
 
@@ -2669,6 +2716,18 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 				if gc.getMap().plot(iX, iY).getOwner() in lTopCivs:
 					data.iKievanRusMissions += 1
 					
+	elif iPlayer == iChad:
+		if isPossible(iChad, 0):
+			iStateReligion = pChad.getStateReligion()
+			if iStateReligion != -1:
+				pHolyCity = gc.getGame().getHolyCity(iStateReligion)
+				
+				if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
+					data.iChadTradeMissions += 1
+					
+			if data.iChadTradeMissions >= 3 and data.iChadDiplomacyMissions >= 1:
+				win(iChad, 0)
+					
 def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
 	# first Kievan Rus goal: Conduct two trade or diplomatic missions with the most prominent (top scoring) European civilization by 1327 AD
 	if iPlayer == iKievanRus:
@@ -2685,6 +2744,14 @@ def onDiplomaticMission(iPlayer, iX, iY, bMadePeace):
 			if plot.getRegionID() in lEurope:
 				if gc.getPlayer(plot.getOwner()).getStateReligion() == iIslam:
 					win(iKhazars, 0)
+					
+	if iPlayer == iChad:
+		if isPossible(iChad, 0):
+			if (iX, iY) in Areas.getCoreArea(iMamluks, False):
+				data.iChadDiplomacyMissions += 1
+					
+			if data.iChadTradeMissions >= 3 and data.iChadDiplomacyMissions >= 1:
+				win(iChad, 0)
 					
 def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
@@ -3253,6 +3320,13 @@ def playerArmySize(iPlayer):
 	for unit in PyPlayer(iPlayer).getUnitList():
 		if unit.canFight() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 			iCount += 1
+	return iCount
+	
+def playerArmyPower(iPlayer):
+	iCount = 0
+	for unit in PyPlayer(iPlayer).getUnitList():
+		if unit.canFight() and unit.getDomainType() == DomainTypes.DOMAIN_LAND:
+			iCount += gc.getUnitInfo(unit.getUnitType()).getPowerValue()
 	return iCount
 	
 def getNumBuildings(iPlayer, iBuilding):
@@ -4076,6 +4150,13 @@ def getBestCityInRegion(lRegions):
 	lCities.sort(key=itemgetter(1), reverse=False)
 	return lCities[0]
 	
+def getCivsWithHoldingsInRegion(lRegions):
+	lAfricaCivs = []
+	for iLoopPlayer in range(iNumPlayers):
+		if len(getCitiesInRegions(iLoopPlayer, lRegions)) > 0:
+			lAfricaCivs.append(iLoopPlayer)
+	return lAfricaCivs
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -4429,7 +4510,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iNubia:
 		if iGoal == 0:
 			bPyramids = isBuildingInCity((66, 31), iPyramids)
-			bEgypt = isControlled(iNubia, Areas.getCoreArea(iMamluks, False)) and isControlled(iNubia, Areas.getCoreArea(iEgypt, False))
+			bEgypt = isControlled(iNubia, Areas.getCoreArea(iMamluks, False))
 			aHelp.append(getIcon(bPyramids) + localText.getText("TXT_KEY_BUILDING_PYRAMIDS", ()) + ' ' + getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + getIcon(data.iNubiaEgyptYears >= 1000) + localText.getText("TXT_KEY_UHV_YEARS", (data.iNubiaEgyptYears, 1000)))
 		elif iGoal == 1:
 			iNumOrthodoxCathedrals = getNumBuildings(iNubia, iOrthodoxCathedral)
@@ -4783,10 +4864,22 @@ def getUHVHelp(iPlayer, iGoal):
 			iHappiness = getReligionHappiness(iKhazars)
 			iLeader, iPopulation = getLargestReligionPopulation(iJudaism)
 			aHelp.append(getIcon(iHappiness >= 10) + localText.getText("TXT_KEY_VICTORY_RELIGION_HAPPINESS", (iHappiness, 10)) + ' ' + getIcon(iLeader == iPlayer) + localText.getText("TXT_KEY_VICTORY_JEWISH_POPULATION", (gc.getPlayer(iLeader).getCivilizationShortDescription(0),)) + " (" + str(iPopulation) + ")")
-		
 		if iGoal == 2:
 			bConnected = isConnectedByLand(iKhazars, lDanube, lZaysan)
 			aHelp.append(getIcon(bConnected) + localText.getText("TXT_KEY_VICTORY_DANUBE_TO_ZAYSAN", ()))
+			
+	elif iPlayer == iChad:
+		if iGoal == 0:
+			aHelp.append(getIcon(data.iChadDiplomacyMissions >= 1) + localText.getText("TXT_KEY_VICTORY_DIPLOMATIC_MISSIONS", (data.iChadDiplomacyMissions, 1)) + ' ' + getIcon(data.iChadTradeMissions >= 3) + localText.getText("TXT_KEY_VICTORY_TRADE_MISSIONS", (data.iChadTradeMissions, 3)))
+		if iGoal == 1:
+			aHelp.append(getIcon(data.iChadSlaves >= 5) + localText.getText("TXT_KEY_VICTORY_SLAVES_SOLD", (data.iChadSlaves, 5)) + ' ' + getIcon(data.iChadStrategicBonuses >= 10) + localText.getText("TXT_KEY_VICTORY_STRATEGIC_BONUSES_BOUGHT", (data.iChadStrategicBonuses, 10)))
+		if iGoal == 2:
+			lAfricaCivs = getCivsWithHoldingsInRegion(lAfrica)
+			iBestAfricanHoldingArmy = getBestPlayer(iChad, playerArmyPower, lAfricaCivs)
+			bCameroon = isControlled(iChad, utils.getPlotList(tCameroonTL, tCameroonBR))
+			bNigeria = isControlled(iChad, utils.getPlotList(tNigeriaTL, tNigeriaBR))
+			bLibya = isControlled(iChad, utils.getPlotList(tLibyaTL, tLibyaBR))
+			aHelp.append(getIcon(iBestAfricanHoldingArmy == iChad) + localText.getText("TXT_KEY_VICTORY_STRONGEST_ARMY_AFRICA_HOLDINGS", (str(gc.getPlayer(iBestAfricanHoldingArmy).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(bLibya) + localText.getText("TXT_KEY_VICTORY_LIBYA", ()) + ' ' + getIcon(bNigeria) + localText.getText("TXT_KEY_VICTORY_NIGERIA", ()) + ' ' + getIcon(bCameroon) + localText.getText("TXT_KEY_VICTORY_CAMEROON", ()))
 			
 	elif iPlayer == iMoors:
 		if iGoal == 0:

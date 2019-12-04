@@ -92,7 +92,8 @@ tPool3 = (iEgypt,
 	iOman,
 	iYemen,
 	iKhazars,
-	iNubia)
+	iNubia,
+	iChad)
 
 
 class Communications:

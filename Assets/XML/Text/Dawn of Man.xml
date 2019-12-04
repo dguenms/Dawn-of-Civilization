@@ -725,4 +725,12 @@
 		<Tag>TXT_KEY_DOM_NUBIA_1700AD</Tag>
 		<English>It is the year 1700 AD. A center of the arts and sciences, the Funj Sultanate has managed to stave off the aggressions of their Ottoman neighbors...</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KANEM-BORNU</Tag>
+		<English>It is the year 700 AD. The Kanembu peoples settle along the banks of Lake Chad. While lacking in fertility, the region's vast aquifiers and strategic position between the wealthy Arabians and resource rich Sub-Saharan will surely draw the attention of the Trans-Saharan trade that thrives to their west.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KANEM-BORNU_1700AD</Tag>
+		<English>It is the year 1700 AD. After the death of the Idris Alooma nearly a century ago, the Bornu Empire has been slowly fading. The Trans-Saharan trade no longer flows through the hear of the continent, and the western reaches of their former empire has since broke off from the crown...</English>
+	</TEXT>
 </Civ4GameText>

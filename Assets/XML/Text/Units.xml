@@ -3853,4 +3853,20 @@
 		<Italian>Trained when a Great General is born. Cities start with an Armoury.</Italian>
 		<Spanish>Trained when a Great General is born. Cities start with an Armoury.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHAD_IRON_HELMET</Tag>
+		<English>Iron Helmet</English>
+		<French>Iron Helmet</French>
+		<German>Iron Helmet</German>
+		<Italian>Iron Helmet</Italian>
+		<Spanish>Iron Helmet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHAD_IRON_HELMET_HELP</Tag>
+		<English>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</English>
+		<French>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</French>
+		<German>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</German>
+		<Italian>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</Italian>
+		<Spanish>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -1749,8 +1749,11 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	if len(utils.getCityList(iPlayer)) == 0:
 		utils.debugTextPopup('Civ resurrected without any cities')
 		
-	if iPlayer == iNubia and data.players[iPlayer].iResurrections == 1:
-		utils.setReborn(iNubia, True)
+	if data.players[iPlayer].iResurrections == 1:
+		if iPlayer == iNubia:
+			utils.setReborn(iPlayer, True)
+		if iPlayer == iChad:
+			utils.setReborn(iPlayer, True)
 		
 	relocateCapital(iPlayer, True)
 	

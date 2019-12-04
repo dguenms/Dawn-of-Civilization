@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Harappa -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_DESC</Tag>
+		<English>The Kanembu</English>
+		<French>The Kanembu</French>
+		<German>The Kanembu</German>
+		<Italian>The Kanembu</Italian>
+		<Spanish>The Kanembu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KANEM-BORNU_PEOPLES</Tag>
+		<English>Kanembu Peoples</English>
+		<French>Kanembu Peoples</French>
+		<German>Kanembu Peoples</German>
+		<Italian>Kanembu Peoples</Italian>
+		<Spanish>Kanembu Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KANEM-BORNU_DEFAULT</Tag>
+		<English>%s1 Empire</English>
+		<French>%s1 Empire</French>
+		<German>%s1 Empire</German>
+		<Italian>%s1 Empire</Italian>
+		<Spanish>%s1 Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KANEM-BORNU_FASCIST</Tag>
+		<English>%s1 Empire</English>
+		<French>%s1 Empire</French>
+		<German>%s1 Empire</German>
+		<Italian>%s1 Empire</Italian>
+		<Spanish>%s1 Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_ADJECTIVE</Tag>
+		<English>Kanembu</English>
+		<French>Kanembu</French>
+		<German>Kanembu</German>
+		<Italian>Kanembu</Italian>
+		<Spanish>Kanembu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_SHORT_DESC</Tag>
+		<English>Kanem-Bornu</English>
+		<French>Kanem-Bornu</French>
+		<German>Kanem-Bornu</German>
+		<Italian>Kanem-Bornu</Italian>
+		<Spanish>Kanem-Bornu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_EMPIRE</Tag>
+		<English>Kanem</English>
+		<French>Kanem</French>
+		<German>Kanem</German>
+		<Italian>Kanem</Italian>
+		<Spanish>Kanem</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_BORNU</Tag>
+		<English>Bornu</English>
+		<French>Bornu</French>
+		<German>Bornu</German>
+		<Italian>Bornu</Italian>
+		<Spanish>Bornu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_BORNU_DESC</Tag>
+		<English>The Bornu</English>
+		<French>The Bornu</French>
+		<German>The Bornu</German>
+		<Italian>The Bornu</Italian>
+		<Spanish>The Bornu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_MODERN_DESC</Tag>
+		<English>The Chadians</English>
+		<French>The Chadians</French>
+		<German>The Chadians</German>
+		<Italian>The Chadians</Italian>
+		<Spanish>The Chadians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_MODERN_ADJECTIVE</Tag>
+		<English>Chadian</English>
+		<French>Chadian</French>
+		<German>Chadian</German>
+		<Italian>Chadian</Italian>
+		<Spanish>Chadian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHAD_MODERN_SHORT_DESC</Tag>
+		<English>Chad</English>
+		<French>Chad</French>
+		<German>Chad</German>
+		<Italian>Chad</Italian>
+		<Spanish>Chad</Spanish>
+	</TEXT>
+</Civ4GameText>
