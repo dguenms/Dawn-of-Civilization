@@ -7362,6 +7362,7 @@ m_iMaintenanceModifier(0),
 m_iWarWearinessModifier(0),
 m_iGlobalWarWearinessModifier(0),
 m_iEnemyWarWearinessModifier(0),
+m_iGarrisonUnhappinessModifier(0),	//KNOEDEL
 m_iHealRateChange(0),
 m_iHealth(0),
 m_iAreaHealth(0),
@@ -7967,6 +7968,13 @@ int CvBuildingInfo::getEnemyWarWearinessModifier() const
 {
 	return m_iEnemyWarWearinessModifier;
 }
+
+//KNOEDELstart
+int CvBuildingInfo::getGarrisonUnhappinessModifier() const
+{
+	return m_iGarrisonUnhappinessModifier;
+}
+//KNOEDELend
 
 int CvBuildingInfo::getHealRateChange() const
 {
@@ -8791,6 +8799,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iGlobalWarWearinessModifier);
 	stream->Read(&m_iEnemyWarWearinessModifier);
+	stream->Read(&m_iGarrisonUnhappinessModifier);	//KNOEDEL
 	stream->Read(&m_iHealRateChange);
 	stream->Read(&m_iHealth);
 	stream->Read(&m_iAreaHealth);
@@ -9168,6 +9177,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iGlobalWarWearinessModifier);
 	stream->Write(m_iEnemyWarWearinessModifier);
+	stream->Write(m_iGarrisonUnhappinessModifier);	//KNOEDEL
 	stream->Write(m_iHealRateChange);
 	stream->Write(m_iHealth);
 	stream->Write(m_iAreaHealth);
@@ -9527,6 +9537,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iGlobalWarWearinessModifier, "iGlobalWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iEnemyWarWearinessModifier, "iEnemyWarWearinessModifier");
+	pXML->GetChildXmlValByName(&m_iGarrisonUnhappinessModifier, "iGarrisonUnhappinessModifier");	//KNOEDEL
 	pXML->GetChildXmlValByName(&m_iHealRateChange, "iHealRateChange");
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 	pXML->GetChildXmlValByName(&m_iAreaHealth, "iAreaHealth");

@@ -361,6 +361,9 @@ public:
 
 	int getWarWearinessModifier() const;																	// Exposed to Python
 	void changeWarWearinessModifier(int iChange);													
+	
+	int getGarrisonUnhappinessModifier() const;	//KNOEDEL																// Exposed to Python
+	void changeGarrisonUnhappinessModifier(int iChange);	//KNOEDEL
 
 	int getHurryAngerModifier() const;																	// Exposed to Python
 	void changeHurryAngerModifier(int iChange);													
@@ -1253,6 +1256,7 @@ protected:
 	int m_iMaintenance;
 	int m_iMaintenanceModifier;
 	int m_iWarWearinessModifier;
+	int m_iGarrisonUnhappinessModifier;	//KNOEDEL
 	int m_iHurryAngerModifier;
 	int m_iHealRate;
 	int m_iEspionageHealthCounter;
@@ -1479,8 +1483,8 @@ protected:
 	bool*	m_abYieldRankValid;
 	int*	m_aiCommerceRank;
 	bool*	m_abCommerceRankValid;
-
-	void doGrowth();
+	
+	bool doGrowth();	//KNOEDEL
 	void doCulture();
 	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 	void doProduction(bool bAllowNoProduction);
@@ -1507,6 +1511,14 @@ protected:
 
 	virtual bool AI_addBestCitizen(bool bWorkers, bool bSpecialists, int* piBestPlot = NULL, SpecialistTypes* peBestSpecialist = NULL) = 0;
 	virtual bool AI_removeWorstCitizen(SpecialistTypes eIgnoreSpecialist = NO_SPECIALIST) = 0;
+
+//KNOEDELstart
+public:
+	bool doRiots();
+
+protected:
+
+//KNOEDELend
 };
 
 #endif

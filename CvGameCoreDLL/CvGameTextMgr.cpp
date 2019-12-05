@@ -682,6 +682,14 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 
 		if (!bShort)
 		{
+//KNOEDELstart
+			if (pUnit->getUnitInfo().getCultureGarrisonValue() > 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_CULTURE_GARRISON_VALUE", pUnit->getUnitInfo().getCultureGarrisonValue()));
+			}
+//KNOEDELend
+
 			if (pUnit->nukeRange() >= 0)
 			{
 				szString.append(NEWLINE);

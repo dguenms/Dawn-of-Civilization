@@ -149,6 +149,7 @@
 	<ElementType name="iGlobalFreeSpecialist" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iWarWearinessModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iGarrisonUnhappinessModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalWarWearinessModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iEnemyWarWearinessModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iHealRateChange" content="textOnly" dt:type="int"/>
@@ -540,6 +541,7 @@
 		<element type="iGlobalFreeSpecialist" minOccurs="0"/>
 		<element type="iMaintenanceModifier" minOccurs="0"/>
 		<element type="iWarWearinessModifier" minOccurs="0"/>
+		<element type="iGarrisonUnhappinessModifier" minOccurs="0"/>
 		<element type="iGlobalWarWearinessModifier" minOccurs="0"/>
 		<element type="iEnemyWarWearinessModifier" minOccurs="0"/>
 		<element type="iHealRateChange" minOccurs="0"/>
