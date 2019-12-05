@@ -4043,6 +4043,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 								BuildingTypes eLoopBuilding = (BuildingTypes) iI;
 								CvBuildingInfo& kLoopBuilding = GC.getBuildingInfo(eLoopBuilding);
 								int iLoopBuildingCultureModifier = kLoopBuilding.getCommerceModifier(COMMERCE_CULTURE);
+								iLoopBuildingCultureModifier += (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(COMMERCE_CULTURE));
 								iLoopBuildingCultureModifier += kLoopBuilding.getCultureCommerceModifier(COMMERCE_CULTURE) * getCultureLevel(); // Leoreth
 								if (iLoopBuildingCultureModifier > 0)
 								{
@@ -4277,7 +4278,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					iTempValue += (kBuilding.getCommerceChange(iI) * 4);
 					iTempValue += (kBuilding.getObsoleteSafeCommerceChange(iI) * 4);
-					iTempValue *= 100 + kBuilding.getCommerceModifier(iI) + (isPower() ? kBuilding.getPowerCommerceModifier(iI) : 0) + kBuilding.getCultureCommerceModifier(iI) * getCultureLevel();
+					iTempValue *= 100 + kBuilding.getCommerceModifier(iI) + (isPower() ? kBuilding.getPowerCommerceModifier(iI) : 0) + kBuilding.getCultureCommerceModifier(iI) * getCultureLevel() + (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(iI));
 					iTempValue /= 100;
 
 					if ((CommerceTypes)iI == COMMERCE_CULTURE)
@@ -4298,8 +4299,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					// add value for a commerce modifier
 					int iCommerceModifier = kBuilding.getCommerceModifier(iI);
+					iCommerceModifier += (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(iI));
 					if (isPower()) iCommerceModifier += kBuilding.getPowerCommerceModifier(iI);
-					iCommerceModifier += kBuilding.getCommerceModifier(iI) * getCultureLevel();
+					iCommerceModifier += kBuilding.getCultureCommerceModifier(iI) * getCultureLevel();
 					int iBaseCommerceRate = getBaseCommerceRate((CommerceTypes) iI);
 					int iCommerceMultiplierValue = iCommerceModifier * iBaseCommerceRate;
 					if (((CommerceTypes) iI) == COMMERCE_CULTURE && iCommerceModifier != 0)
@@ -4516,7 +4518,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 			{
 				if (iFocusFlags & BUILDINGFOCUS_GOLD)
 				{
-					iTempValue = ((kBuilding.getCommerceModifier(COMMERCE_GOLD) * getBaseCommerceRate(COMMERCE_GOLD)) / 40);
+					iTempValue = (((kBuilding.getCommerceModifier(COMMERCE_GOLD) + (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(COMMERCE_GOLD))) * getBaseCommerceRate(COMMERCE_GOLD)) / 40);
 
 					if (iTempValue != 0)
 					{
@@ -4545,7 +4547,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				if (iFocusFlags & BUILDINGFOCUS_RESEARCH)
 				{
-					iTempValue = ((kBuilding.getCommerceModifier(COMMERCE_RESEARCH) * getBaseCommerceRate(COMMERCE_RESEARCH)) / 40);
+					iTempValue = (((kBuilding.getCommerceModifier(COMMERCE_RESEARCH) + (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(COMMERCE_RESEARCH))) * getBaseCommerceRate(COMMERCE_RESEARCH)) / 40);
 
 					if (iTempValue != 0)
 					{
@@ -4602,10 +4604,10 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 						iValue += iTempValue;
 					}
 
-					iValue += ((kBuilding.getCommerceModifier(COMMERCE_CULTURE) * getBaseCommerceRate(COMMERCE_CULTURE)) / 15);
+					iValue += (((kBuilding.getCommerceModifier(COMMERCE_CULTURE) + (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(COMMERCE_RESEARCH))) * getBaseCommerceRate(COMMERCE_CULTURE)) / 15);
 					if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
 					{
-						iValue += ((kBuilding.getCommerceModifier(COMMERCE_ESPIONAGE) * getBaseCommerceRate(COMMERCE_ESPIONAGE)) / 15);
+						iValue += (((kBuilding.getCommerceModifier(COMMERCE_ESPIONAGE) + (eStateReligion == NO_RELIGION && kOwner.getAllowStateReligionCommerceModifiers() ? 0 : kBuilding.getStateReligionCommerceModifier(COMMERCE_ESPIONAGE))) * getBaseCommerceRate(COMMERCE_ESPIONAGE)) / 15);
 					}
 				}
 
@@ -9819,6 +9821,7 @@ int CvCityAI::AI_yieldMultiplier(YieldTypes eYield)
 	PROFILE_FUNC();
 
 	int iMultiplier = getBaseYieldRateModifier(eYield);
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 
 	if (eYield == YIELD_PRODUCTION)
 	{
@@ -9827,9 +9830,9 @@ int CvCityAI::AI_yieldMultiplier(YieldTypes eYield)
 
 	if (eYield == YIELD_COMMERCE)
 	{
-		iMultiplier += ((getCommerceRateModifier(COMMERCE_RESEARCH) + getCultureCommerceRateModifier(COMMERCE_RESEARCH) * getCultureLevel()) * 60) / 100;
-		iMultiplier += ((getCommerceRateModifier(COMMERCE_GOLD) + getCultureCommerceRateModifier(COMMERCE_GOLD) * getCultureLevel()) * 35) / 100;
-		iMultiplier += ((getCommerceRateModifier(COMMERCE_CULTURE) + getCultureCommerceRateModifier(COMMERCE_CULTURE) * getCultureLevel()) * 15) / 100;
+		iMultiplier += ((getCommerceRateModifier(COMMERCE_RESEARCH) + getCultureCommerceRateModifier(COMMERCE_RESEARCH) * getCultureLevel() + (eReligion == NO_RELIGION ? 0 : getStateReligionCommerceRateModifier(eReligion, COMMERCE_RESEARCH))) * 60) / 100;
+		iMultiplier += ((getCommerceRateModifier(COMMERCE_GOLD) + getCultureCommerceRateModifier(COMMERCE_GOLD) * getCultureLevel() + (eReligion == NO_RELIGION ? 0 : getStateReligionCommerceRateModifier(eReligion, COMMERCE_GOLD))) * 35) / 100;
+		iMultiplier += ((getCommerceRateModifier(COMMERCE_CULTURE) + getCultureCommerceRateModifier(COMMERCE_CULTURE) * getCultureLevel() + (eReligion == NO_RELIGION ? 0 : getStateReligionCommerceRateModifier(eReligion, COMMERCE_CULTURE))) * 15) / 100;
 	}
 
 	return iMultiplier;

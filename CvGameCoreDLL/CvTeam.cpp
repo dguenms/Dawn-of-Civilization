@@ -6428,6 +6428,18 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 			GET_PLAYER((PlayerTypes)iI).changeAssets(GC.getTechInfo(eTech).getAssetValue() * iChange);
 			GET_PLAYER((PlayerTypes)iI).changePower(GC.getTechInfo(eTech).getPowerValue() * iChange);
 			GET_PLAYER((PlayerTypes)iI).changeTechScore(getTechScore(eTech) * iChange);
+			
+			if (GC.getTechInfo(eTech).getAllowStateReligionCommerceModifiers() != 0)
+			{
+				if (GC.getTechInfo(eTech).getAllowStateReligionCommerceModifiers() > 0)
+				{
+					GET_PLAYER((PlayerTypes)iI).changeAllowStateReligionCommerceModifiers(true);
+				}
+				else
+				{
+					GET_PLAYER((PlayerTypes)iI).changeAllowStateReligionCommerceModifiers(false);
+				}
+			}
 
 			for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
 			{

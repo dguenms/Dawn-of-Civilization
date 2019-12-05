@@ -1484,7 +1484,7 @@
 			<Civilopedia>TXT_KEY_CIV_CHAD_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_THISTLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CHAD</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
+			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>

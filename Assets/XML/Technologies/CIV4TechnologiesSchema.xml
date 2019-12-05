@@ -25,6 +25,7 @@
 	<ElementType name="iFirstFreeTechs" content="textOnly" dt:type="int"/>
 	<ElementType name="iAsset" content="textOnly" dt:type="int"/>
 	<ElementType name="iPower" content="textOnly" dt:type="int"/>
+	<ElementType name="iAllowStateReligionCommerceModifiers" content="textOnly" dt:type="int"/>
 	<ElementType name="bRepeat" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bTrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDisable" content="textOnly" dt:type="boolean"/>
@@ -118,6 +119,7 @@
 		<element type="iPower" minOccurs="0"/>
 		<element type="bRepeat" minOccurs="0"/>
 		<element type="bTrade" minOccurs="0"/>
+		<element type="iAllowStateReligionCommerceModifiers" minOccurs="0"/>
 		<element type="bDisable" minOccurs="0"/>
 		<element type="bGoodyTech" minOccurs="0"/>
 		<element type="bExtraWaterSeeFrom" minOccurs="0"/>

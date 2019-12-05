@@ -1242,6 +1242,7 @@ m_iHappiness(0),
 m_iFirstFreeTechs(0),
 m_iAssetValue(0),
 m_iPowerValue(0),
+m_iAllowStateReligionCommerceModifiers(0),
 m_iGridX(0),
 m_iGridY(0),
 m_bRepeat(false),
@@ -1367,6 +1368,11 @@ int CvTechInfo::getAssetValue() const
 int CvTechInfo::getPowerValue() const
 {
 	return m_iPowerValue;
+}
+
+int CvTechInfo::getAllowStateReligionCommerceModifiers() const
+{
+	return m_iAllowStateReligionCommerceModifiers;
 }
 
 int CvTechInfo::getGridX() const
@@ -1563,6 +1569,7 @@ void CvTechInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iFirstFreeTechs);
 	stream->Read(&m_iAssetValue);
 	stream->Read(&m_iPowerValue);
+	stream->Read(&m_iAllowStateReligionCommerceModifiers);
 	stream->Read(&m_bRepeat);
 	stream->Read(&m_bTrade);
 	stream->Read(&m_bDisable);
@@ -1637,6 +1644,7 @@ void CvTechInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iFirstFreeTechs);
 	stream->Write(m_iAssetValue);
 	stream->Write(m_iPowerValue);
+	stream->Write(m_iAllowStateReligionCommerceModifiers);
 	stream->Write(m_bRepeat);
 	stream->Write(m_bTrade);
 	stream->Write(m_bDisable);
@@ -1702,6 +1710,7 @@ bool CvTechInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iFirstFreeTechs, "iFirstFreeTechs");
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");
 	pXML->GetChildXmlValByName(&m_iPowerValue, "iPower");
+	pXML->GetChildXmlValByName(&m_iAllowStateReligionCommerceModifiers, "iAllowStateReligionCommerceModifiers");
 	pXML->GetChildXmlValByName(&m_bRepeat, "bRepeat");
 	pXML->GetChildXmlValByName(&m_bTrade, "bTrade");
 	pXML->GetChildXmlValByName(&m_bDisable, "bDisable");
@@ -7362,7 +7371,6 @@ m_iMaintenanceModifier(0),
 m_iWarWearinessModifier(0),
 m_iGlobalWarWearinessModifier(0),
 m_iEnemyWarWearinessModifier(0),
-m_iGarrisonUnhappinessModifier(0),	//KNOEDEL
 m_iHealRateChange(0),
 m_iHealth(0),
 m_iAreaHealth(0),
@@ -7480,6 +7488,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piGlobalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piStateReligionCommerce);
+	SAFE_DELETE_ARRAY(m_piStateReligionCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piCommerceHappiness);
 	SAFE_DELETE_ARRAY(m_piReligionChange);
 	SAFE_DELETE_ARRAY(m_piSpecialistCount);
@@ -8405,6 +8414,18 @@ int* CvBuildingInfo::getStateReligionCommerceArray() const
 	return m_piStateReligionCommerce;
 }
 
+int CvBuildingInfo::getStateReligionCommerceModifier(int i) const
+{
+	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piStateReligionCommerceModifier ? m_piStateReligionCommerceModifier[i] : -1;
+}
+
+int* CvBuildingInfo::getStateReligionCommerceModifierArray() const
+{
+	return m_piStateReligionCommerceModifier;
+}
+
 int CvBuildingInfo::getCommerceHappiness(int i) const
 {
 	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
@@ -8799,7 +8820,6 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iGlobalWarWearinessModifier);
 	stream->Read(&m_iEnemyWarWearinessModifier);
-	stream->Read(&m_iGarrisonUnhappinessModifier);	//KNOEDEL
 	stream->Read(&m_iHealRateChange);
 	stream->Read(&m_iHealth);
 	stream->Read(&m_iAreaHealth);
@@ -8929,6 +8949,10 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piStateReligionCommerce);
 	m_piStateReligionCommerce = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piStateReligionCommerce);
+
+	SAFE_DELETE_ARRAY(m_piStateReligionCommerceModifier);
+	m_piStateReligionCommerceModifier = new int[NUM_COMMERCE_TYPES];
+	stream->Read(NUM_COMMERCE_TYPES, m_piStateReligionCommerceModifier);
 
 	SAFE_DELETE_ARRAY(m_piCommerceHappiness);
 	m_piCommerceHappiness = new int[NUM_COMMERCE_TYPES];
@@ -9177,7 +9201,6 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iGlobalWarWearinessModifier);
 	stream->Write(m_iEnemyWarWearinessModifier);
-	stream->Write(m_iGarrisonUnhappinessModifier);	//KNOEDEL
 	stream->Write(m_iHealRateChange);
 	stream->Write(m_iHealth);
 	stream->Write(m_iAreaHealth);
@@ -9245,6 +9268,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piGlobalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_COMMERCE_TYPES, m_piStateReligionCommerce);
+	stream->Write(NUM_COMMERCE_TYPES, m_piStateReligionCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceHappiness);
 	stream->Write(GC.getNumReligionInfos(), m_piReligionChange);
 	stream->Write(GC.getNumSpecialistInfos(), m_piSpecialistCount);
@@ -9537,7 +9561,6 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iGlobalWarWearinessModifier, "iGlobalWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iEnemyWarWearinessModifier, "iEnemyWarWearinessModifier");
-	pXML->GetChildXmlValByName(&m_iGarrisonUnhappinessModifier, "iGarrisonUnhappinessModifier");	//KNOEDEL
 	pXML->GetChildXmlValByName(&m_iHealRateChange, "iHealRateChange");
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 	pXML->GetChildXmlValByName(&m_iAreaHealth, "iAreaHealth");
@@ -9765,6 +9788,16 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piStateReligionCommerce, NUM_COMMERCE_TYPES);
+	}
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"StateReligionCommerceModifiers"))
+	{
+		pXML->SetCommerce(&m_piStateReligionCommerceModifier);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piStateReligionCommerceModifier, NUM_COMMERCE_TYPES);
 	}
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CommerceHappinesses"))

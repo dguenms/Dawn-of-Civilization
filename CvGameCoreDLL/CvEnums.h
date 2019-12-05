@@ -594,6 +594,7 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_HELP_REMOVE, // Leoreth
 
 	WIDGET_HELP_WONDER_LIMIT, // Merijn
+	WIDGET_STATE_RELIGION_COMMERCE_MODIFIERS,
 
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES

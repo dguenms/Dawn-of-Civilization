@@ -327,6 +327,10 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseWorkerRateHelp(widgetDataStruct, szBuffer);
 		break;
 
+	case WIDGET_STATE_RELIGION_COMMERCE_MODIFIERS:
+		parseEnableStateReligionCommerceModifiersString(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_HELP_TRADE_ROUTES:
 		parseTradeRouteHelp(widgetDataStruct, szBuffer);
 		break;
@@ -1056,6 +1060,7 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 	case WIDGET_CLOSE_SCREEN:
 	case WIDGET_SCORE_BREAKDOWN:
 	case WIDGET_HELP_BONUS_CITY:
+	case WIDGET_STATE_RELIGION_COMMERCE_MODIFIERS:
 		//	Nothing on clicked
 		break;
 	}
@@ -4263,12 +4268,9 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 	CvCity* pHeadSelectedCity;
 	PlayerTypes eCulturalOwner;
 	int iCulturePercent;
-	int iCityStrength = 1;	//KNOEDEL
-	int iGarrison = 0;	//KNOEDEL
+	int iCityStrength;
+	int iGarrison;
 	int iI;
-	int iRiotChance = 0;	//KNOEDEL
-	int iGarrison2 = 1;	//KNOEDEL
-	bool bCultureRiot = false;	//KNOEDEL
 
 	szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CITY_NATIONALITY"));
 
@@ -4316,41 +4318,17 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 		{
 			if (GET_PLAYER(eCulturalOwner).getTeam() != pHeadSelectedCity->getTeam())
 			{
-//KNOEDELstart
-				iCityStrength = std::max(1, pHeadSelectedCity->cultureStrength(eCulturalOwner));
+				iCityStrength = pHeadSelectedCity->cultureStrength(eCulturalOwner);
 				iGarrison = pHeadSelectedCity->cultureGarrison(eCulturalOwner);
 
 				if (iCityStrength > iGarrison)
 				{
-					bool bCultureRiot = true;
-					/*swprintf(szTempBuffer, L"%.2f", std::max(0.0f, (1.0f - (((float)iGarrison) / ((float)iCityStrength))) * ((float)(std::min(100.0f, ((float)pHeadSelectedCity->getRevoltTestProbability())))));
+					swprintf(szTempBuffer, L"%.2f", std::max(0.0f, (1.0f - (((float)iGarrison) / ((float)iCityStrength)))) * ((float)(std::min(100.0f, ((float)pHeadSelectedCity->getRevoltTestProbability())))));
 					szBuffer.append(NEWLINE);
-					szBuffer.append(gDLL->getText("TXT_KEY_MISC_CHANCE_OF_REVOLT", szTempBuffer));*/
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_CHANCE_OF_REVOLT", szTempBuffer));
 				}
 			}
 		}
-		iGarrison2 = std::max(1, pHeadSelectedCity->cultureGarrison(NO_PLAYER)/8);
-		if (pHeadSelectedCity->getFood() == 0)
-		{
-			if (pHeadSelectedCity->getPopulation() > 1 && !(pHeadSelectedCity->isOccupation()) && !(pHeadSelectedCity->isBarbarian()) && GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getNumCities() > 1)
-			{
-				iRiotChance += -pHeadSelectedCity->foodDifference();
-			}
-		}
-		if (pHeadSelectedCity->angryPopulation() > 0)
-		{
-			if (!(pHeadSelectedCity->isOccupation()) && !(pHeadSelectedCity->isBarbarian()) && GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getNumCities() > 1)
-			{
-				iRiotChance += pHeadSelectedCity->angryPopulation();
-			}
-		}
-		if (bCultureRiot || iRiotChance > 0)
-		{
-			swprintf(szTempBuffer, L"%.2f", (bCultureRiot ? std::max(0.0f, (1.0f - (((float)iGarrison) / ((float)iCityStrength))) * ((float)(std::min(100.0f, ((float)pHeadSelectedCity->getRevoltTestProbability()))))) : 0.0f) + ( ( (float)(10 * pHeadSelectedCity->getRevoltTestProbability()) * ((float)iRiotChance)) / ( ((float)iGarrison2) * 30.0f ) ));
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_CHANCE_OF_REVOLT", szTempBuffer));
-		}
-//KNOEDELend
 	}
 }
 
@@ -4680,6 +4658,11 @@ void CvDLLWidgetData::parseFeatureProductionHelp(CvWidgetDataStruct &widgetDataS
 void CvDLLWidgetData::parseWorkerRateHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	GAMETEXT.buildWorkerRateString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData1)));
+}
+
+void CvDLLWidgetData::parseEnableStateReligionCommerceModifiersString(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	GAMETEXT.buildEnableStateReligionCommerceModifiersString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData1)));
 }
 
 void CvDLLWidgetData::parseTradeRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)

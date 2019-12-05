@@ -331,6 +331,7 @@ public:
 	int getFirstFreeTechs() const;				// Exposed to Python
 	int getAssetValue() const;						// Exposed to Python
 	int getPowerValue() const;						// Exposed to Python
+	int getAllowStateReligionCommerceModifiers() const;						// Exposed to Python
 
 	int getGridX() const;									// Exposed to Python
 	int getGridY() const;									// Exposed to Python
@@ -398,6 +399,7 @@ protected:
 	int m_iFirstFreeTechs;
 	int m_iAssetValue;
 	int m_iPowerValue;
+	int m_iAllowStateReligionCommerceModifiers;
 
 	int m_iGridX;
 	int m_iGridY;
@@ -1845,6 +1847,8 @@ public:
 	int* getSpecialistExtraCommerceArray() const;
 	int getStateReligionCommerce(int i) const;				// Exposed to Python
 	int* getStateReligionCommerceArray() const;
+	int getStateReligionCommerceModifier(int i) const;				// Exposed to Python
+	int* getStateReligionCommerceModifierArray() const;
 	int getCommerceHappiness(int i) const;				// Exposed to Python
 	int getReligionChange(int i) const;				// Exposed to Python
 	int getSpecialistCount(int i) const;				// Exposed to Python
@@ -2059,6 +2063,7 @@ protected:
 	int* m_piGlobalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
 	int* m_piStateReligionCommerce;
+	int* m_piStateReligionCommerceModifier;
 	int* m_piCommerceHappiness;
 	int* m_piReligionChange;
 	int* m_piSpecialistCount;

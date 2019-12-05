@@ -1776,6 +1776,7 @@
 			<Era>ERA_MEDIEVAL</Era>
 			<iAsset>28</iAsset>
 			<bTrade>1</bTrade>
+			<iAllowStateReligionCommerceModifiers>1</iAllowStateReligionCommerceModifiers>
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>7</iGridX>
 			<iGridY>13</iGridY>
@@ -1783,6 +1784,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
@@ -2711,6 +2716,7 @@
 			<FirstFreeUnitClass>UNITCLASS_GREAT_SCIENTIST</FirstFreeUnitClass>
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
+			<iAllowStateReligionCommerceModifiers>-1</iAllowStateReligionCommerceModifiers>
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>11</iGridX>
 			<iGridY>7</iGridY>

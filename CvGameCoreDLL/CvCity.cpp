@@ -104,6 +104,8 @@ CvCity::CvCity()
 
 	// Leoreth
 	m_ppaiBonusYield = NULL;
+	// 1SDAN
+	m_ppaiStateReligionCommerceRateModifier = NULL;
 
 	m_paTradeCities = NULL;
 
@@ -466,6 +468,16 @@ void CvCity::uninit()
 		SAFE_DELETE_ARRAY(m_ppaiBonusYield);
 	}
 
+	// 1SDAN
+	if (m_ppaiStateReligionCommerceRateModifier != NULL)
+	{
+		for (int i = 0; i < NUM_RELIGIONS; i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiStateReligionCommerceRateModifier[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiStateReligionCommerceRateModifier);
+	}
+
 	SAFE_DELETE_ARRAY(m_paTradeCities);
 
 	m_orderQueue.clear();
@@ -504,7 +516,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iMaintenance = 0;
 	m_iMaintenanceModifier = 0;
 	m_iWarWearinessModifier = 0;
-	m_iGarrisonUnhappinessModifier = 0;	//KNOEDEL
 	m_iHurryAngerModifier = 0;
 	m_iHealRate = 0;
 	m_iEspionageHealthCounter = 0;
@@ -840,6 +851,17 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 			}
 		}
 
+		// 1SDAN
+		m_ppaiStateReligionCommerceRateModifier = new int*[NUM_RELIGIONS];
+		for (iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			m_ppaiStateReligionCommerceRateModifier[iI] = new int[NUM_COMMERCE_TYPES];
+			for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+			{
+				m_ppaiStateReligionCommerceRateModifier[iI][iJ] = 0;
+			}
+		}
+
 		FAssertMsg((0 < GC.getDefineINT("MAX_TRADE_ROUTES")),  "GC.getMAX_TRADE_ROUTES() is not greater than zero but an array is being allocated in CvCity::reset");
 		m_paTradeCities = new IDInfo[GC.getDefineINT("MAX_TRADE_ROUTES")];
 		for (iI = 0; iI < GC.getDefineINT("MAX_TRADE_ROUTES"); iI++)
@@ -1088,16 +1110,7 @@ void CvCity::doTurn()
 
 	bool bAllowNoProduction = !doCheckProduction();
 
-//KNOEDELstart
-	if (doRiots())
-	{
-		return;
-	}
-	if (doGrowth())
-	{
-		return;
-	}
-//KNOEDELend
+	doGrowth();
 
 /*************************************************************************************************/
 /**	SPEEDTWEAK (BarbCities) Sephi                                            					**/
@@ -4565,7 +4578,6 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeFreeSpecialist(GC.getBuildingInfo(eBuilding).getFreeSpecialist() * iChange);
 		changeMaintenanceModifier(GC.getBuildingInfo(eBuilding).getMaintenanceModifier() * iChange);
 		changeWarWearinessModifier(GC.getBuildingInfo(eBuilding).getWarWearinessModifier() * iChange);
-		changeGarrisonUnhappinessModifier(GC.getBuildingInfo(eBuilding).getGarrisonUnhappinessModifier() * iChange);	//KNOEDEL
 		changeHurryAngerModifier(GC.getBuildingInfo(eBuilding).getHurryAngerModifier() * iChange);
 		changeHealRate(GC.getBuildingInfo(eBuilding).getHealRateChange() * iChange);
 
@@ -4633,6 +4645,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 		{
 			changeCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceModifier(iI) * iChange));
+			changeStateReligionCommerceRateModifier(((ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType()), ((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getStateReligionCommerceModifier((CommerceTypes)iI) * iChange));
 			changePowerCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerCommerceModifier(iI) * iChange));
 			changeCultureCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCultureCommerceModifier(iI) * iChange));
 			changeCommerceHappinessPer(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceHappiness(iI) * iChange));
@@ -5507,41 +5520,10 @@ int CvCity::getNoMilitaryPercentAnger() const
 
 	iAnger = 0;
 
-//KNOEDELstart
 	if (getMilitaryHappinessUnits() == 0)
 	{
 		iAnger += GC.getDefineINT("NO_MILITARY_PERCENT_ANGER");
 	}
-
-	else
-	{
-		CLLNode<IDInfo>* pUnitNode;
-		CvUnit* pLoopUnit;
-		int iGarrison;
-
-		iGarrison = 0;
-
-		pUnitNode = plot()->headUnitNode();
-
-		while (pUnitNode != NULL)
-		{
-			pLoopUnit = ::getUnit(pUnitNode->m_data);
-			pUnitNode = plot()->nextUnitNode(pUnitNode);
-
-			iGarrison += pLoopUnit->getUnitInfo().getCultureGarrisonValue();
-		}
-
-		if (getPopulation() > iGarrison)
-		{
-			iAnger += GC.getDefineINT("NO_MILITARY_PERCENT_ANGER");
-			iAnger *= (getPopulation()-iGarrison);
-			iAnger /= getPopulation();
-		}
-	}
-
-	iAnger *= std::max(0, (getGarrisonUnhappinessModifier() + 100));
-	iAnger /= 100;
-//KNOEDELend
 
 	return iAnger;
 }
@@ -9887,6 +9869,28 @@ void CvCity::changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange)
 	}
 }
 
+
+int CvCity::getStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce) const
+{
+	if (GET_PLAYER(getOwner()).getAllowStateReligionCommerceModifiers())
+	{
+		return m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce];
+	}
+	return 0;
+}
+
+void CvCity::changeStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce] += iChange;
+
+		updateCommerce(eCommerce);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
 // BUG - Building Additional Yield - start
 /*
  * Returns the total additional yield that adding one of the given buildings will provide.
@@ -10853,8 +10857,14 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 {
 	int iTotalModifier = 100;
-		
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
+
 	iTotalModifier += getCommerceRateModifier(eIndex);
+
+	if (eReligion != NO_RELIGION)
+	{
+		iTotalModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
+	}
 
 	iTotalModifier += getCultureCommerceRateModifier(eIndex) * getCultureLevel();
 
@@ -11165,6 +11175,8 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
 	FAssertMsg(eBuilding >= 0, "eBuilding expected to be >= 0");
 	FAssertMsg(eBuilding < GC.getNumBuildingInfos(), "eBuilding expected to be < GC.getNumBuildingInfos()");
+	
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 
 	bool bNoEspionage = GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE);
 	if (bNoEspionage && eIndex == COMMERCE_ESPIONAGE)
@@ -11184,6 +11196,11 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 				iExtraModifier += getNumActiveBuilding((BuildingTypes)i) * GC.getBuildingInfo((BuildingTypes)i).getPowerCommerceModifier(eIndex);
 			}
 		}
+	}
+
+	if (eReligion != NO_RELIGION)
+	{
+		iExtraModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
 	}
 
 	iExtraModifier += getAdditionalCommerceRateModifierByBuildingImpl(eIndex, eBuilding);
@@ -11209,6 +11226,7 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 	bool bObsolete = GET_TEAM(getTeam()).isObsoleteBuilding(eBuilding);
 	int iExtraModifier = 0;
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 
 	if (!bObsolete)
 	{
@@ -11217,6 +11235,10 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 		if (isPower())
 		{
 			iExtraModifier += kBuilding.getPowerCommerceModifier(eIndex);
+		}
+		if (eReligion != NO_RELIGION)
+		{
+			iExtraModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
 		}
 	}
 	
@@ -12170,12 +12192,10 @@ void CvCity::changeNumRevolts(PlayerTypes eIndex, int iChange)
 	FAssert(getNumRevolts(eIndex) >= 0);
 }
 
+
 int CvCity::getRevoltTestProbability() const
 {
-	//KNOEDELstart
 	int iBestModifier = 0;
-	int iTempRevoltProb = 0;
-	int iEspionagePerPop = 0;
 
 	CLLNode<IDInfo>* pUnitNode = plot()->headUnitNode();
 	while (pUnitNode)
@@ -12189,27 +12209,10 @@ int CvCity::getRevoltTestProbability() const
 		}
 	}
 	iBestModifier = range(iBestModifier, 0, 100);
-	iTempRevoltProb = ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100);
-	iEspionagePerPop = ((m_aiCommerceRate[COMMERCE_ESPIONAGE] / 100) / getPopulation());
 
-	if (iEspionagePerPop > 0)
-	{
-		if (iEspionagePerPop >= iTempRevoltProb)
-		{
-			return 0;
-		}
-		else
-		{
-			return (iTempRevoltProb - iEspionagePerPop);
-		}
-	}
-	else
-	{
-		return iTempRevoltProb;
-	}
-//KNOEDELend
-	//return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100) / (isHuman() ? 1 : 2); // Leoreth
+	return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100) / (isHuman() ? 1 : 2); // Leoreth
 }
+
 
 bool CvCity::isEverOwned(PlayerTypes eIndex) const
 {
@@ -15007,33 +15010,23 @@ const std::vector< std::pair<float, float> >& CvCity::getWallOverridePoints() co
 
 // Protected Functions...
 
-//KNOEDELstart
-bool CvCity::doGrowth()
+void CvCity::doGrowth()
 {
-	int iDiff, iI;
-	CvWString szBuffer;
-	CvWString szName;
-	CvPlot* pPlot = plot();
-	CvCity* pNewCity = NULL;
+	int iDiff;
 
-/*************************************************************************************************/
-/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
-/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
-/*************************************************************************************************/
-/**
-	CyCity* pyCity = new CyCity(this);
-	CyArgsList argsList;
-	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
-	long lResult=0;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "doGrowth", argsList.makeFunctionArgs(), &lResult);
-	delete pyCity;	// python fxn must not hold on to this pointer
-	if (lResult == 1)
-	{
-		return false;
-	}
-/*************************************************************************************************/
-/**	END	                                        												**/
-/*************************************************************************************************/
+	//Rhye - start
+//Speed: Modified by Kael 04/19/2007
+//	CyArgsList argsList;
+//	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
+//	long lResult=0;
+//	gDLL->getPythonIFace()->callFunction(PYGameModule, "doGrowth", argsList.makeFunctionArgs(), &lResult);
+//	delete pyCity;	// python fxn must not hold on to this pointer
+//	if (lResult == 1)
+//	{
+//		return;
+//	}
+//FfH: End Modify
+	//Rhye - end
 
 	iDiff = foodDifference();
 
@@ -15064,112 +15057,9 @@ bool CvCity::doGrowth()
 		if (getPopulation() > 1)
 		{
 			changePopulation(-1);
-	
-			if (!(isOccupation()) && !(isBarbarian()) && GET_PLAYER(getOwnerINLINE()).getNumCities() > 1)
-			{
-				if (GC.getGameINLINE().getSorenRandNum(10, "Revolt #1") < getRevoltTestProbability()) // test for units which reduce revolt chance
-				{
-					CLLNode<IDInfo>* pUnitNode;
-					CvUnit* pLoopUnit;
-					int iGarrisonModifier = std::max(1, cultureGarrison(NO_PLAYER)/8);
-					if (-iDiff > GC.getGameINLINE().getSorenRandNum(30 * iGarrisonModifier, "Revolt #2"))
-					{
-						CLinkList<IDInfo> oldUnits;
-
-						pUnitNode = plot()->headUnitNode();
-
-						while (pUnitNode != NULL)
-						{
-							oldUnits.insertAtEnd(pUnitNode->m_data);
-							pUnitNode = plot()->nextUnitNode(pUnitNode);
-						}
-
-						pUnitNode = oldUnits.head();
-
-						while (pUnitNode != NULL)
-						{
-							pLoopUnit = ::getUnit(pUnitNode->m_data);
-							pUnitNode = plot()->nextUnitNode(pUnitNode);
-
-							if (pLoopUnit)
-							{
-								if (pLoopUnit->canDefend())
-								{
-									pLoopUnit->changeDamage((pLoopUnit->currHitPoints() / 2), NO_PLAYER);
-								}
-							}
-						}
-						if (getNumRevolts(BARBARIAN_PLAYER) >= GC.getDefineINT("NUM_WARNING_REVOLTS"))
-						{
-							szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTED_JOINED_REBELS", getNameKey());
-							gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-							gDLL->getInterfaceIFace()->addMessage(BARBARIAN_PLAYER, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
-							szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTS_JOINS_REBELS", getNameKey());
-							GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getOwnerINLINE(), szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_ALT_HIGHLIGHT_TEXT"));
-							szName.Format(L"%s (%s)", getName().GetCString(), GET_PLAYER(getOwnerINLINE()).getName());
-							for (iI = 0; iI < MAX_PLAYERS; iI++)
-							{
-								if (GET_PLAYER((PlayerTypes)iI).isAlive())
-								{
-									if (iI != getOwnerINLINE())
-									{
-										if (isRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false))
-										{
-											szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTED_JOINED_REBELS", szName.GetCString());
-											gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYCAPTURED", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-										}
-									}
-								}
-							}
-							GET_PLAYER(BARBARIAN_PLAYER).acquireCity(this, false, false, true);
-							pNewCity = pPlot->getPlotCity();
-							if (pNewCity != NULL)
-							{
-								pNewCity->changeOccupationTimer(GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100));
-							}
-			//			GC.getMapINLINE().verifyUnitValidPlot();
-						int iFreeUnits = std::max(1, GC.getGameINLINE().getSorenRandNum((3 * iGarrisonModifier) / 2, "Free Units"));
-					//	for (int iI = 0; iI < iFreeUnits; ++iI)
-						//{
-							UnitTypes eBestUnit;
-	
-							eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
-	
-							if (eBestUnit == NO_UNIT)
-							{
-								eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_ATTACK);
-							}
-	
-							if (eBestUnit != NO_UNIT)
-							{
-								iFreeUnits = (GC.getDefineINT("BASE_REVOLT_FREE_UNITS") + ((pNewCity->getHighestPopulation() * GC.getDefineINT("REVOLT_FREE_UNITS_PERCENT")) / 100));
-	
-								for (iI = 0; iI < iFreeUnits; ++iI)
-								{
-									GET_PLAYER(BARBARIAN_PLAYER).initUnit(eBestUnit, getX_INLINE(), getY_INLINE(), UNITAI_CITY_DEFENSE);
-								}
-							}
-					//	}
-							return true;
-						}
-						else
-						{
-							changeNumRevolts(BARBARIAN_PLAYER, 1);
-							changeOccupationTimer(GC.getDefineINT("BASE_REVOLT_OCCUPATION_TURNS") + GC.getGameINLINE().getSorenRandNum(-(foodDifference() / 4), "Revolt Turns"));
-	
-							// XXX announce for all seen cities?
-							szBuffer = gDLL->getText("TXT_KEY_MISC_FOOD_RIOT_IN_CITY", getNameKey());
-							gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITY_REVOLT", MESSAGE_TYPE_MINOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_RESISTANCE")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-						}
-					}	
-				}
-			}
 		}
 	}
-
-	return false;
 }
-//KNOEDELend
 
 
 void CvCity::doCulture()
@@ -16166,7 +16056,6 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMaintenance);
 	pStream->Read(&m_iMaintenanceModifier);
 	pStream->Read(&m_iWarWearinessModifier);
-	pStream->Read(&m_iGarrisonUnhappinessModifier);	//KNOEDEL
 	pStream->Read(&m_iHurryAngerModifier);
 	pStream->Read(&m_iHealRate);
 	pStream->Read(&m_iEspionageHealthCounter);
@@ -16350,6 +16239,12 @@ void CvCity::read(FDataStreamBase* pStream)
 		pStream->Read(NUM_YIELD_TYPES, m_ppaiBonusYield[i]);
 	}
 
+	// 1SDAN
+	for (int i = 0; i < NUM_RELIGIONS; i++)
+	{
+		pStream->Read(NUM_COMMERCE_TYPES, m_ppaiStateReligionCommerceRateModifier[i]);
+	}
+
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
 	{
 		pStream->Read((int*)&m_paTradeCities[iI].eOwner);
@@ -16461,7 +16356,6 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iMaintenance);
 	pStream->Write(m_iMaintenanceModifier);
 	pStream->Write(m_iWarWearinessModifier);
-	pStream->Write(m_iGarrisonUnhappinessModifier);	//KNOEDEL
 	pStream->Write(m_iHurryAngerModifier);
 	pStream->Write(m_iHealRate);
 	pStream->Write(m_iEspionageHealthCounter);
@@ -16651,6 +16545,12 @@ void CvCity::write(FDataStreamBase* pStream)
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		pStream->Write(NUM_YIELD_TYPES, m_ppaiBonusYield[iI]);
+	}
+
+	// 1SDAN
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		pStream->Write(NUM_COMMERCE_TYPES, m_ppaiStateReligionCommerceRateModifier[iI]);
 	}
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
@@ -19891,133 +19791,3 @@ int CvCity::calculateBaseGreatPeopleRate() const
 
 	return iRate;
 }
-
-//KNOEDELstart
-int CvCity::getGarrisonUnhappinessModifier() const
-{
-	return m_iGarrisonUnhappinessModifier;
-}
-
-
-void CvCity::changeGarrisonUnhappinessModifier(int iChange)
-{
-	if (iChange != 0)
-	{
-		m_iGarrisonUnhappinessModifier = (m_iGarrisonUnhappinessModifier + iChange);
-
-		AI_setAssignWorkDirty(true);
-	}
-}
-//KNOEDELend
-
-//KNOEDELstart
-bool CvCity::doRiots()
-{
-	int iI;
-	CvWString szName;
-	CvWString szBuffer;
-	CvPlot* pPlot = plot();
-	CvCity* pNewCity = NULL;
-	int iAngryPopulation = angryPopulation();
-	if (!(isOccupation()) && !(isBarbarian()) && (GET_PLAYER(getOwnerINLINE()).getNumCities() > 1) && (iAngryPopulation > 0))
-	{
-		if (GC.getGameINLINE().getSorenRandNum(10, "Revolt #1") < getRevoltTestProbability()) // test for units which reduce revolt chance
-		{
-			CLLNode<IDInfo>* pUnitNode;
-			CvUnit* pLoopUnit;
-			int iGarrisonModifier = std::max(1, cultureGarrison(NO_PLAYER)/8);
-			if (iAngryPopulation > GC.getGameINLINE().getSorenRandNum(30 * iGarrisonModifier, "Revolt #2"))
-			{
-				CLinkList<IDInfo> oldUnits;
-
-				pUnitNode = plot()->headUnitNode();
-
-				while (pUnitNode != NULL)
-				{
-					oldUnits.insertAtEnd(pUnitNode->m_data);
-					pUnitNode = plot()->nextUnitNode(pUnitNode);
-				}
-
-				pUnitNode = oldUnits.head();
-
-				while (pUnitNode != NULL)
-				{
-					pLoopUnit = ::getUnit(pUnitNode->m_data);
-					pUnitNode = plot()->nextUnitNode(pUnitNode);
-
-					if (pLoopUnit)
-					{
-						if (pLoopUnit->canDefend())
-						{
-							pLoopUnit->changeDamage((pLoopUnit->currHitPoints() / 2), NO_PLAYER);
-						}
-					}
-				}
-				if (GC.getDefineINT("NUM_WARNING_REVOLTS") >= 0 && getNumRevolts(BARBARIAN_PLAYER) >= GC.getDefineINT("NUM_WARNING_REVOLTS"))
-				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTED_JOINED_REBELS", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-					gDLL->getInterfaceIFace()->addMessage(BARBARIAN_PLAYER, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREFLIP", MESSAGE_TYPE_MAJOR_EVENT,  ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
-					szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTS_JOINS_REBELS", getNameKey());
-					GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getOwnerINLINE(), szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_ALT_HIGHLIGHT_TEXT"));
-					szName.Format(L"%s (%s)", getName().GetCString(), GET_PLAYER(getOwnerINLINE()).getName());
-					for (iI = 0; iI < MAX_PLAYERS; iI++)
-					{
-						if (GET_PLAYER((PlayerTypes)iI).isAlive())
-						{
-							if (iI != getOwnerINLINE())
-							{
-								if (isRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false))
-								{
-									szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_REVOLTED_JOINED_REBELS", szName.GetCString());
-									gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYCAPTURED", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-								}
-							}
-						}
-					}
-					GET_PLAYER(BARBARIAN_PLAYER).acquireCity(this, false, false, true);
-					pNewCity = pPlot->getPlotCity();
-					if (pNewCity != NULL)
-					{
-						pNewCity->changeOccupationTimer(GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100));
-					}
-		//			GC.getMapINLINE().verifyUnitValidPlot();
-					int iFreeUnits = std::max(1, GC.getGameINLINE().getSorenRandNum((3 * iGarrisonModifier) / 2, "Free Units"));
-				//	for (int iI = 0; iI < iFreeUnits; ++iI)
-					//{
-						UnitTypes eBestUnit;
-
-						eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
-
-						if (eBestUnit == NO_UNIT)
-						{
-							eBestUnit = pNewCity->AI_bestUnitAI(UNITAI_ATTACK);
-						}
-
-						if (eBestUnit != NO_UNIT)
-						{
-							iFreeUnits = (GC.getDefineINT("BASE_REVOLT_FREE_UNITS") + ((pNewCity->getHighestPopulation() * GC.getDefineINT("REVOLT_FREE_UNITS_PERCENT")) / 100));
-
-							for (iI = 0; iI < iFreeUnits; ++iI)
-							{
-								GET_PLAYER(BARBARIAN_PLAYER).initUnit(eBestUnit, getX_INLINE(), getY_INLINE(), UNITAI_CITY_DEFENSE);
-							}
-						}
-				//	}
-					return true;
-				}
-				else
-				{
-					changeNumRevolts(BARBARIAN_PLAYER, 1);
-					changeOccupationTimer(GC.getDefineINT("BASE_REVOLT_OCCUPATION_TURNS") + GC.getGameINLINE().getSorenRandNum((iAngryPopulation / 2), "Revolt Turns"));
-
-					// XXX announce for all seen cities?
-					szBuffer = gDLL->getText("TXT_KEY_MISC_RIOT_IN_CITY", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITY_REVOLT", MESSAGE_TYPE_MINOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_RESISTANCE")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-				}
-			}
-		}	
-	}
-	return false;
-}
-//KNOEDELend

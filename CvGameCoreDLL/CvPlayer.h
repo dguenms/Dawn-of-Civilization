@@ -980,6 +980,10 @@ public:
 	int getUnhappinessDecayModifier() const;
 	void changeUnhappinessDecayModifier(int iChange);
 
+	// 1SDAN
+	bool getAllowStateReligionCommerceModifiers() const;
+	void changeAllowStateReligionCommerceModifiers(bool iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1510,6 +1514,7 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
+	bool m_bAllowStateReligionCommerceModifiers; // 1SDAN
 
 
 /************************************************************************************************/

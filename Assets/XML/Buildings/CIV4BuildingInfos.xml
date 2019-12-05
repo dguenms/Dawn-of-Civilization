@@ -6336,6 +6336,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_JUDAISM</ReligionType>
@@ -6551,6 +6555,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
@@ -6760,6 +6768,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
@@ -6971,6 +6983,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
@@ -7180,6 +7196,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ISLAM</ReligionType>
@@ -7389,6 +7409,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_HINDUISM</ReligionType>
@@ -7598,6 +7622,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_BUDDHISM</ReligionType>
@@ -7807,6 +7835,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
@@ -8016,6 +8048,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_TAOISM</ReligionType>
@@ -8225,6 +8261,10 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</CommerceChanges>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>

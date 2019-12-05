@@ -361,9 +361,6 @@ public:
 
 	int getWarWearinessModifier() const;																	// Exposed to Python
 	void changeWarWearinessModifier(int iChange);													
-	
-	int getGarrisonUnhappinessModifier() const;	//KNOEDEL																// Exposed to Python
-	void changeGarrisonUnhappinessModifier(int iChange);	//KNOEDEL
 
 	int getHurryAngerModifier() const;																	// Exposed to Python
 	void changeHurryAngerModifier(int iChange);													
@@ -654,6 +651,10 @@ public:
 	// Leoreth
 	int getBonusYield(BonusTypes eBonus, YieldTypes eYield) const;
 	void changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange);
+
+	// 1SDAN
+	int getStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce) const;
+	void changeStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce, int iChange);
 
 // BUG - Building Additional Yield - start
 	int getAdditionalYieldByBuilding(YieldTypes eIndex, BuildingTypes eBuilding) const;						// Exposed to Python
@@ -1256,7 +1257,6 @@ protected:
 	int m_iMaintenance;
 	int m_iMaintenanceModifier;
 	int m_iWarWearinessModifier;
-	int m_iGarrisonUnhappinessModifier;	//KNOEDEL
 	int m_iHurryAngerModifier;
 	int m_iHealRate;
 	int m_iEspionageHealthCounter;
@@ -1460,6 +1460,8 @@ protected:
 
 	// Leoreth
 	int** m_ppaiBonusYield;
+	// 1SDAN
+	int** m_ppaiStateReligionCommerceRateModifier;
 
 	IDInfo* m_paTradeCities;
 
@@ -1484,7 +1486,7 @@ protected:
 	int*	m_aiCommerceRank;
 	bool*	m_abCommerceRankValid;
 	
-	bool doGrowth();	//KNOEDEL
+	void doGrowth();
 	void doCulture();
 	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 	void doProduction(bool bAllowNoProduction);
@@ -1511,14 +1513,6 @@ protected:
 
 	virtual bool AI_addBestCitizen(bool bWorkers, bool bSpecialists, int* piBestPlot = NULL, SpecialistTypes* peBestSpecialist = NULL) = 0;
 	virtual bool AI_removeWorstCitizen(SpecialistTypes eIgnoreSpecialist = NO_SPECIALIST) = 0;
-
-//KNOEDELstart
-public:
-	bool doRiots();
-
-protected:
-
-//KNOEDELend
 };
 
 #endif

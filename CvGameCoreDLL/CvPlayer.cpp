@@ -564,7 +564,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_uiStartTime = 0;
 
 	m_iChoosingFreeTechCount = 0;
-
+	
 	m_bAlive = false;
 	m_bEverAlive = false;
 	m_bTurnActive = false;
@@ -574,6 +574,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bExtendedGame = false;
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
+	m_bAllowStateReligionCommerceModifiers = false; // 1SDAN
 
 	m_bTurnPlayed = false;
 
@@ -18642,6 +18643,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
+	pStream->Read(&m_bAllowStateReligionCommerceModifiers); // 1SDAN
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -19189,6 +19191,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
+	pStream->Write(m_bAllowStateReligionCommerceModifiers); // 1SDAN
 
 
 	//Rhye (jdog) -  start ---------------------
@@ -26282,4 +26285,18 @@ void CvPlayer::changeUnhappinessDecayModifier(int iChange)
 int CvPlayer::getUnhappinessDecayModifier() const
 {
 	return m_iUnhappinessDecayModifier;
+}
+
+bool CvPlayer::getAllowStateReligionCommerceModifiers() const
+{
+	return m_bAllowStateReligionCommerceModifiers;
+}
+
+void CvPlayer::changeAllowStateReligionCommerceModifiers(bool iChange)
+{
+	m_bAllowStateReligionCommerceModifiers = iChange;
+	for (int i = 0; i < NUM_COMMERCE_TYPES; i++)
+	{
+		updateCommerce((CommerceTypes)i);
+	}
 }
