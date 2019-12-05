@@ -114,7 +114,10 @@ def endGlobalWar(iAttacker, iDefender):
 	lAttackers = [iAttacker]
 	lDefenders = [iDefender]
 	
-	lAttackers, lDefenders = determineAlliances(iAttacker, iDefender)
+	lAttackerAllies, lDefenderAllies = determineAlliances(iAttacker, iDefender)
+	
+	lAttackers += lAttackerAllies
+	lDefenders += lDefenderAllies
 	
 	# force peace for all allies of the belligerents
 	for iLoopPlayer in lAttackers:

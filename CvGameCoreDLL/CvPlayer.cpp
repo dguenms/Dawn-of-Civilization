@@ -5094,7 +5094,7 @@ int CvPlayer::getNumGovernmentCenters() const
 
 bool CvPlayer::canRaze(CvCity* pCity) const
 {
-	if (!pCity->isAutoRaze())
+	if (!pCity->isAutoRaze() && pCity->getPopulation() > 0)
 	{
 		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_RAZING))
 		{
