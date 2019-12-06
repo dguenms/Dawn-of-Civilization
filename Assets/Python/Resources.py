@@ -40,7 +40,7 @@ class Resources:
 		if iBonus == -1:
 			iImprovement = gc.getMap().plot(iX, iY).getImprovementType()
 			if iImprovement >= 0:
-				if gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(iBonus):
+				if gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(iRemovedBonus):
 					gc.getMap().plot(iX, iY).setImprovementType(-1)
 			
 		iOwner = gc.getMap().plot(iX,iY).getOwner()

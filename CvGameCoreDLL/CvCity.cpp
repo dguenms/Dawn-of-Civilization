@@ -13646,6 +13646,8 @@ void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool b
 
 		m_paiNumRealBuilding[eIndex] = iNewValue;
 
+		FAssert(getNumRealBuilding(eIndex) >= 0);
+
 		if (getNumRealBuilding(eIndex) > 0)
 		{
 			m_paiBuildingOriginalOwner[eIndex] = eOriginalOwner;
