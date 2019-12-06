@@ -418,9 +418,9 @@ def checkTurn(iGameTurn, iPlayer):
 				if bPyramids and data.iNubiaEgyptYears >= 1000:
 					win(iNubia, 0)
 					
-		if iGameTurn == getTurnForYear(-656):
-			if not bPyramids:
-				expire(iNubia, 0)
+			if iGameTurn == getTurnForYear(-656):
+				if not bPyramids:
+					expire(iNubia, 0)
 				
 		# second goal: Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365
 		if isPossible(iNubia, 1):
@@ -435,12 +435,10 @@ def checkTurn(iGameTurn, iPlayer):
 		# third goal: Have the highest commerce output among Islamic civilizations and make Sennar the greatest city in all Africa by 1821
 		if isPossible(iNubia, 2):
 			iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
-			GreatestAfricanCity = getBestCityInRegion(lAfrica)[0]
-			bGreatestAfricanCityIsSennar = GreatestAfricanCity.getName() == 'Sennar'
+			GreatestAfricanCity = getBestCityInRegion(lAfrica, cityValue)[0]
+			bGreatestAfricanCityIsSennar = cnm.getFoundName(GreatestAfricanCity.getOwner(), GreatestAfricanCity.plot()) == 'Sennar'
 			if iBestIslamicCommerceOutput == iNubia and bGreatestAfricanCityIsSennar:
 				win(iNubia, 2)
-			else:
-				lose(iNubia, 2)
 				
 			if iGameTurn == getTurnForYear(1821):
 				expire(iNubia, 2)
@@ -4140,15 +4138,18 @@ def getReligionPlayers(lReligions):
 				lPlayers.append(iPlayer)
 	return lPlayers
 	
-def getBestCityInRegion(lRegions):
+def getBestCityInRegion(lRegions, function):
 	lCities = []
 	for iLoopPlayer in range(iNumPlayers):
 		for city in getCitiesInRegions(iLoopPlayer, lRegions):
-			iValue = ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
-				+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
+			iValue = function(city)
 			lCities.append((city, iValue))
 	lCities.sort(key=itemgetter(1), reverse=False)
 	return lCities[0]
+	
+def cityValue(city):
+	return ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
+				+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
 	
 def getCivsWithHoldingsInRegion(lRegions):
 	lAfricaCivs = []
@@ -4518,8 +4519,8 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iNumOrthodoxCathedrals >= 2) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", (iNumOrthodoxCathedrals, 2)) + ' ' + getIcon(iNumPleasedOrBetterChristians >= 5) + localText.getText("TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_CHRISTIANS", (iNumPleasedOrBetterChristians, 5)))
 		elif iGoal == 2:
 			iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
-			GreatestAfricanCity = getBestCityInRegion(lAfrica)[0]
-			bGreatestAfricanCityIsSennar = GreatestAfricanCity.getName() == 'Sennar'
+			GreatestAfricanCity = getBestCityInRegion(lAfrica, cityValue)[0]
+			bGreatestAfricanCityIsSennar = cnm.getFoundName(GreatestAfricanCity.getOwner(), GreatestAfricanCity.plot()) == 'Sennar'
 			aHelp.append(getIcon(iBestIslamicCommerceOutput == iNubia) + localText.getText("TXT_KEY_VICTORY_MOST_AFRICAN_COMMERCE_CIV", (str(gc.getPlayer(iBestIslamicCommerceOutput).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(bGreatestAfricanCityIsSennar) + localText.getText("TXT_KEY_VICTORY_GREATEST_AFRICAN_CITY", (str(GreatestAfricanCity.getName()),)))
 			
 	elif iPlayer == iChina:

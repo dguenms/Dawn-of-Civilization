@@ -853,6 +853,12 @@
 					<bValid>1</bValid>
 				</SpecialistValid>
 			</SpecialistValids>
+			<UnitProductionModifiers>
+				<UnitProductionModifier>
+					<UnitType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitType>
+					<iProductionModifier>100</iProductionModifier>
+				</UnitProductionModifier>
+			</UnitProductionModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
