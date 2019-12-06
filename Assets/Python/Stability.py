@@ -1068,10 +1068,6 @@ def calculateStability(iPlayer):
 		iRelationWeaker = max(iRelationWeaker, -len(lWeakerAttitudes))
 		
 	iRelationEqual = sum(iAttitude / 5 for iAttitude in lEqualAttitudes if abs(iAttitude) > 2)
-	
-	utils.show("iRelationStronger = %d" % iRelationStronger)
-	utils.show("iRelationEqual = %d" % iRelationEqual)
-	utils.show("iRelationWeaker = %d" % iRelationWeaker)
 
 	iRelationStability = iRelationStronger + iRelationEqual + iRelationWeaker
 		
