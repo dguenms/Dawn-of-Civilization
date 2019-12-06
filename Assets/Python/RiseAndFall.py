@@ -823,7 +823,7 @@ class RiseAndFall:
 			if pByzantium.isHuman() and pGreece.isAlive():
 				sta.completeCollapse(iGreece)
 				
-		if iGameTurn == getTurnForYear(tBirth[iIndia])-1:
+		if iGameTurn == getTurnForYear(tBirth[iIndia])-utils.getTurns(1):
 			if pHarappa.isAlive() and not pHarappa.isHuman():
 				sta.completeCollapse(iHarappa)
 			
