@@ -103,6 +103,7 @@ tCapitals = (
 (69, 33), # Thebes
 (76, 40), # Babylon
 (87, 40), # Harappa
+(66, 31), # Kerma
 (100, 44), # Chang'an
 (67, 41), # Athens
 (94, 40), # Pataliputra
@@ -125,6 +126,7 @@ tCapitals = (
 (100, 26), # Palembang
 (99, 38), # Pagan (Ava, Mandalay)
 (77, 48), # Balanjar
+(64, 30), # Njimi
 (51, 41), # Cordoba
 (52, 44), # Madrid
 (55, 50), # Paris
@@ -166,12 +168,14 @@ tCapitals = (
 )
 
 dChangedCapitals = {
+iNubia : (68, 29),	# Sennar
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
 iMaya : (27, 29),	# Bogota (Colombia)
 iTamils : (90, 30),	# Vijayanagara
+iChad : (64, 28), #N'Djamena
 iKhmer : (101, 37),	# Hanoi
 iHolyRome : (62, 49),	# Vienna
 }
@@ -188,6 +192,7 @@ iOttomans : (68, 45),	# Istanbul
 
 # new capital locations on respawn
 dRespawnCapitals = {
+iNubia : (68, 31),	# Dongola
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
@@ -196,6 +201,7 @@ iJapan : (116, 46),	# Tokyo
 #iVikings : (63, 59),	# Stockholm
 iTurks : (84, 41),	# Herat
 iIndonesia : (104, 25),	# Jakarta
+iChad : (61, 29),	#Ngazargamu
 iMoors : (51, 37),	# Marrakesh
 iHolyRome : (62, 49),	# Vienna
 iInca : (26, 22),	# Lima
@@ -210,6 +216,7 @@ tBirthArea = (
 ((66, 30), 	(70, 36)), 	# Egypt
 ((75, 39), 	(77, 42)), 	# Babylonia
 ((85, 37), 	(88, 41)), 	# Harappa
+((66, 25), 	(69, 31)), 	# Nubia
 ((99, 43), 	(107, 47)), 	# China
 ((65, 39), 	(70, 45)), 	# Greece
 ((87, 36), 	(96, 40)), 	# India
@@ -232,6 +239,7 @@ tBirthArea = (
 ((98, 24), 	(107, 31)), 	# Indonesia
 ((97, 37),	(100, 39)),	# Burma
 ((73, 47),	(77, 51)),	# Khazars
+((63, 27), 	(65, 33)), # Chad
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 43), 	(53, 46)), 	# Spain
 ((51, 46), 	(57, 52)), 	# France
@@ -273,6 +281,7 @@ tBirthArea = (
 )
 
 dChangedBirthArea = {
+iCarthage : ((57, 37), (59, 39)),
 iPersia :	((74, 37), 	(85, 44)), 	# includes Assyria and Anatolia
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
@@ -328,6 +337,7 @@ tCoreArea = (
 ((67, 32),	(69, 36)),	# Egypt
 ((75, 39),	(77, 42)),	# Babylonia
 ((85, 37),	(88, 41)),	# Harappa
+((66, 29),	(70, 31)),	# Nubia
 ((99, 43),	(107, 47)),	# China
 ((64, 39),	(70, 45)),	# Greece
 ((90, 38),	(96, 40)),	# India
@@ -350,6 +360,7 @@ tCoreArea = (
 ((98, 24),	(107, 30)),	# Indonesia
 ((98, 35),	(99, 38)),	# Burma
 ((73, 47),	(77, 50)),	# Khazars
+((61, 28), 	(64, 32)), # Chad
 ((51, 37),	(53, 42)),	# Moors
 ((49, 43),	(53, 46)),	# Spain
 ((51, 46),	(57, 51)),	# France
@@ -415,6 +426,7 @@ iGermany : 	((58, 49),	(63, 55)),
 
 dCoreAreaExceptions = {
 iHarappa : [(85, 41), (88, 37), (88, 38)],
+iNubia : [(70, 30), (70, 29)],
 iChina : [(99, 46), (99, 47), (104, 43), (105, 43), (106, 43), (107, 43), (105, 44), (106, 44), (106, 47)],
 iGreece : [(64, 45), (65, 45)],
 iPersia : [(85, 37), (85, 38), (85, 39)],
@@ -467,6 +479,7 @@ tNormalArea = (
 ((65, 30), 	(72, 37)), 	# Egypt
 ((74, 38), 	(79, 44)), 	# Babylonia
 ((84, 35), 	(88, 42)), 	# Harappa
+((66, 27), 	(72, 32)), 	# Nubia
 ((99, 39), 	(108, 50)), 	# China
 ((64, 39), 	(68, 44)), 	# Greece
 ((89, 38), 	(96, 42)), 	# India
@@ -489,6 +502,7 @@ tNormalArea = (
 ((98, 24), 	(113, 31)), 	# Indonesia
 ((98, 35), 	(101, 39)), 	# Burma
 ((74, 45), 	(80, 50)), 	# Khazar
+((61, 28), 	(66, 37)), # Chad
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 40), 	(55, 46)), 	# Spain
 ((51, 46), 	(58, 52)), 	# France
@@ -573,6 +587,7 @@ tBroaderArea = (
 ((60, 26), 	(74, 38)), 	# Egypt
 ((72, 37), 	(78, 44)), 	# Babylonia
 ((90, 40), 	(90, 40)), 	# Harappa
+((66, 29), 	(69, 31)), 	# Nubia
 ((95, 38), 	(108, 50)), 	# China
 ((62, 39), 	(77, 47)), 	# Greece
 ((85, 28), 	(99, 43)), 	# India
@@ -595,6 +610,7 @@ tBroaderArea = (
 ((98, 24), 	(113, 31)), 	# Indonesia
 ((97, 37),	(100, 39)),	# Burma
 ((76, 47),	(77, 50)),	# Khazar
+((63, 28), 	(64, 32)), # Chad
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 38), 	(55, 46)), 	# Spain
 ((49, 44), 	(61, 52)), 	# France

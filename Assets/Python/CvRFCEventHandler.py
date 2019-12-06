@@ -69,6 +69,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("tradeMission", self.onTradeMission)
 		eventManager.addEventHandler("diplomaticMission", self.onDiplomaticMission)
 		eventManager.addEventHandler("playerSlaveTrade", self.onPlayerSlaveTrade)
+		eventManager.addEventHandler("playerBonusTrade", self.onPlayerBonusTrade)
 		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
 				
 		#Leoreth
@@ -555,20 +556,26 @@ class CvRFCEventHandler:
 	def onTradeMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, iGold = argsList
 		
-		if iPlayer in [iTamils, iMali, iKievanRus]:
+		if iPlayer in [iTamils, iMali, iKievanRus, iChad]:
 			vic.onTradeMission(iPlayer, iX, iY, iGold)
 			
 	def onDiplomaticMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, bMadePeace = argsList
 		
-		if iPlayer in [iKievanRus, iKhazars]:
+		if iPlayer in [iKievanRus, iKhazars, iChad]:
 			vic.onDiplomaticMission(iPlayer, iX, iY, bMadePeace)
 		
 	def onPlayerSlaveTrade(self, argsList):
-		iPlayer, iGold = argsList
+		iPlayer, iSlaves, iGold = argsList
 		
-		if iPlayer == iCongo:
-			vic.onPlayerSlaveTrade(iPlayer, iGold)
+		if iPlayer in [iCongo, iChad]:
+			vic.onPlayerSlaveTrade(iPlayer, iSlaves, iGold)
+		
+	def onPlayerBonusTrade(self, argsList):
+		iPlayer, iStrategicBonuses, iGold = argsList
+		
+		if iPlayer in [iChad]:
+			vic.onPlayerBonusTrade(iPlayer, iStrategicBonuses, iGold)
 			
 	def onUnitGifted(self, argsList):
 		pUnit, iOwner, pPlot = argsList

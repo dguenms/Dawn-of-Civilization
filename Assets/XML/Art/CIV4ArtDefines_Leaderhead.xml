@@ -1288,11 +1288,27 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BULAN</Type>
-			<Button>art/Leaderheads/Bulan/Bulan.dds</Button>
-			<NIF>art/Leaderheads/Bulan/John II.nif</NIF>
-			<KFM>art/Leaderheads/Bulan/John II.kfm</KFM>
-			<NoShaderNIF>art/Leaderheads/Bulan/John_II_NONSHADER.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Bulan/JohnII_BG.kfm</BackgroundKFM>
+			<Button>Art/Leaderheads/Bulan/Bulan.dds</Button>
+			<NIF>Art/Leaderheads/Bulan/John II.nif</NIF>
+			<KFM>Art/Leaderheads/Bulan/John II.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Bulan/John_II_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>Art/LeaderHeads/Bulan/JohnII_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_TAHARQA</Type>
+			<Button>Art/Leaderheads/taharqa/Taharqa.dds</Button>
+			<NIF>Art/Leaderheads/taharqa/Tachnechobrus.nif</NIF>
+			<KFM>Art/Leaderheads/taharqa/Tachnechobrus.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/taharqa/Tachnechobrus.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/taharqa/Tachnechobrus_Background.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DUNAMA</Type>
+			<Button>Art/Leaderheads/Kanemi/KanemiBTN.dds</Button>
+			<NIF>Art/Leaderheads/Kanemi/Zara Yaqob.nif</NIF>
+			<KFM>Art/Leaderheads/Kanemi/Zara Yaqob.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Kanemi/Zara Yaqob.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Kanemi/Zara Yaqob_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

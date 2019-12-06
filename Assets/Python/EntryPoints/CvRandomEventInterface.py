@@ -3411,7 +3411,7 @@ def expireGreed1(argsList):
 	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
 	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 
-	if plot.getOwner() == kTriggeredData.ePlayer or plot.getOwner() == -1:
+	if plot.getOwner() == kTriggeredData.ePlayer or plot.getOwner() == -1 or gc.getPlayer(plot.getOwner()).isMinorCiv() or gc.getPlayer(plot.getOwner()).isBarbarian():
 		return false
 	
 	if gc.getGame().getGameTurn() >= kTriggeredData.iTurn + gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent():

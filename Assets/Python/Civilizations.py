@@ -147,6 +147,7 @@ iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
 iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
+iCivNubia : 	Techs([iAgriculture, iMythology, iCeremony, iPastoralism, iMining]),
 iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
@@ -169,6 +170,7 @@ iCivTibet :	Techs([iNobility, iScholarship, iEthics], column=5),
 iCivIndonesia :	Techs([iEthics], column=5, exceptions=[iGeneralship]),
 iCivBurma :		Techs(column=5, exceptions=[iGeneralship]),
 iCivKhazars :	Techs([iNobility, iGeneralship, iCurrency], column=4),
+iCivChad :	Techs([iFortification], column=6, exceptions=[iEthics, iArchitecture]),
 iCivMoors :	Techs([iMachinery, iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
 iCivSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
 iCivFrance :	Techs([iFeudalism, iTheology], column=6),
@@ -214,7 +216,10 @@ iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 {
 iCivIndependent:Techs(column=5),
 iCivIndependent2:Techs(column=5),
+iCivNubia :	Techs([iSteel, iArchitecture], column=5),
+iCivPersia :	Techs([iNobility, iSteel, iFeudalism], column=5),
 iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[iNobility]),
+iCivEthiopia :	Techs([iFortification], column=6, exceptions=[iArtisanry]),
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iScholarship]),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
 iCivJapan :	Techs(column=6, exceptions=[iScholarship]),
@@ -224,10 +229,11 @@ iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedic
 {
 iCivIndependent:Techs(column=10),
 iCivIndependent2:Techs(column=10),
+iCivNubia : 	Techs([iGeography], column=10, exceptions=[iHeritage, iLogistics]),
 iCivManchuria :	Techs([iHorticulture, iUrbanPlanning, iCombinedArms], column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivIndia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration]),
 iCivTamils :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
-iCivIran :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
+iCivIran :	Techs([iCombinedArms, iGeography, iUrbanPlanning, iHorticulture], column=10),
 iCivVietnam :	Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivKorea :	Techs(column=10, exceptions=[iExploration, iOptics, iAcademia]),
 iCivJapan :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
@@ -235,6 +241,8 @@ iCivVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
 iCivTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
 iCivBurma :		Techs(column=10, exceptions=[iExploration, iOptics]),
 iCivKhmer :	Techs([iUrbanPlanning], column=10, exceptions=[iExploration, iOptics, iHeritage, iLogistics]),
+iCivChad :	Techs([iCombinedArms], column=10, exceptions=[iHeritage, iOptics, iExploration, iLogistics]),
+iCivMoors :	Techs([iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
 iCivSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
 iCivFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iEconomics]),
 iCivOman :		Techs([iEconomics, iGeography], column=10, exceptions=[iHeritage]),
@@ -287,6 +295,16 @@ dTechPreferences = {
 		iMythology: -50,
 		iDivination: -50,
 		iCeremony: -50,
+	},
+	iCivNubia : {
+		iSmelting: 20,
+		iBloomery: 20,
+		iMining: 20,
+		iMasonry: 20,
+		iPottery: 20,
+		iEthics: 20,
+		iConstruction: 20,
+		iSteel: 20,
 	},
 	iCivChina : {
 		iAesthetics: 40,
@@ -460,6 +478,8 @@ dTechPreferences = {
 	iCivKhazars : {
 		iFortification : 20,
 		iCommune : 20,
+	},
+	iCivChad : {
 	},
 	iCivMoors : {
 		iCivilService: 20,
@@ -747,7 +767,9 @@ dTechPreferences = {
 
 dDefaultWonderPreferences = {
 	iCivEgypt: -15,
+	iCivNubia: -15,
 	iCivBabylonia: -40,
+	iCivHarappa: -15,
 	iCivGreece: -15,
 	iCivIndia: -15,
 	iCivRome: -20,
@@ -773,6 +795,9 @@ dBuildingPreferences = {
 		iGreatLighthouse: 30,
 		iGreatSphinx: 30,
 	},
+	iCivNubia : {
+		iPyramids: 100,
+	},
 	iCivBabylonia : {
 		iHangingGardens: 50,
 		iIshtarGate: 50,
@@ -783,6 +808,11 @@ dBuildingPreferences = {
 		iGreatSphinx: 0,
 		
 		iOracle: -60,
+	},
+	iCivHarappa : {
+		iHangingGardens : 20,
+		
+		iPyramids : -20,
 	},
 	iCivChina : {
 		iGreatWall: 80,
@@ -938,6 +968,8 @@ dBuildingPreferences = {
 	},
 	iCivKhazars : {
 		
+	},
+	iCivChad : {
 	},
 	iCivMoors : {
 		iMezquita: 100,

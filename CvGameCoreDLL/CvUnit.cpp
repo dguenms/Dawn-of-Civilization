@@ -3875,6 +3875,12 @@ bool CvUnit::canHeal(const CvPlot* pPlot) const
 		return false;
 	}
 
+	// Leoreth: hidden nationality units can enter cities with open borders but don't let them heal there because it's an easy area to retreat to
+	if (m_pUnitInfo->isHiddenNationality() && pPlot->isCity() && pPlot->getPlotCity()->getOwnerINLINE() != getOwnerINLINE())
+	{
+		return false;
+	}
+
 	return true;
 }
 
@@ -6616,7 +6622,7 @@ bool CvUnit::greatWork()
 	if (pCity != NULL)
 	{
 		pCity->setCultureUpdateTimer(0);
-		pCity->setOccupationTimer(0);
+		//pCity->setOccupationTimer(0); // Leoreth: artists shouldn't solve occupation unrest
 
 		int iCultureToAdd = 100 * getGreatWorkCulture(plot());
 		int iNumTurnsApplied = (GC.getDefineINT("GREAT_WORKS_CULTURE_TURNS") * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitGreatWorkPercent()) / 100;
@@ -6629,6 +6635,11 @@ bool CvUnit::greatWork()
 		if (iNumTurnsApplied > 0)
 		{
 			pCity->changeCultureTimes100(getOwnerINLINE(), iCultureToAdd % iNumTurnsApplied, false, true);
+		}
+
+		if (pCity->getPopulation() == 0)
+		{
+			pCity->doTask(TASK_RAZE);
 		}
 	}
 
@@ -14371,6 +14382,11 @@ bool CvUnit::resolveCrisis()
 	for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
 	{
 		pLoopCity->setOccupationTimer(0);
+
+		if (pLoopCity->getPopulation() == 0)
+		{
+			pLoopCity->doTask(TASK_RAZE);
+		}
 	}
 
 	if (plot()->isActiveVisible(false))

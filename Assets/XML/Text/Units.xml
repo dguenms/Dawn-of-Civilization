@@ -3323,11 +3323,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOMBIAN_LLANERO_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Llanero[COLOR_REVERT], the Colombian replacement for the [COLOR_UNIT_TEXT]Hussar[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Biology[COLOR_REVERT] technology, has a combat bonus against the [COLOR_UNIT_TEXT]Musketeer[COLOR_REVERT] and [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units and begins with the [COLOR_HIGHLIGHT_TEXT]Mobility[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MONGOLIAN_MANGUDAI</Tag>
@@ -3852,5 +3852,21 @@
 		<German>Trained when a Great General is born. Cities start with an Armoury.</German>
 		<Italian>Trained when a Great General is born. Cities start with an Armoury.</Italian>
 		<Spanish>Trained when a Great General is born. Cities start with an Armoury.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHAD_IRON_HELMET</Tag>
+		<English>Iron Helmet</English>
+		<French>Iron Helmet</French>
+		<German>Iron Helmet</German>
+		<Italian>Iron Helmet</Italian>
+		<Spanish>Iron Helmet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHAD_IRON_HELMET_HELP</Tag>
+		<English>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</English>
+		<French>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</French>
+		<German>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</German>
+		<Italian>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</Italian>
+		<Spanish>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</Spanish>
 	</TEXT>
 </Civ4GameText>

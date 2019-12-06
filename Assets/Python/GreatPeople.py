@@ -237,6 +237,8 @@ iCivBabylonia : {
 		"Shalmaneser", # 7th BC
 	],
 },
+iCivNubia : {
+},
 iCivChina : {
 	iGreatProphet : [
 		"Lao Tzu", # 6th BC
@@ -297,6 +299,7 @@ iCivChina : {
 		"Shen Kuo", # 11th
 		"Zhu Shijie", # 14th
 		iRenaissance,
+		"Li Shizhen", # 16th
 		"fTan Yunxian", # 16th
 		"Xu Guangqi", # 17th
 		"Song Yingxing", # 17th
@@ -2055,6 +2058,8 @@ iCivIndonesia : {
 iCivBurma : {
 },
 iCivKhazars : {
+},
+iCivChad : {
 },
 iCivMoors : {
 	iGreatProphet : [

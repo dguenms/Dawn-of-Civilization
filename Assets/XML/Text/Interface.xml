@@ -3185,6 +3185,14 @@
 		<Spanish>[ICON_BULLET]Proporciona energ&#237;a limpia ([ICON_CLEAN_POWER]) con [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_BonusName[\LINK][COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WITH_CLEAN_POWER</Tag>
+		<English>[SPACE]with Power ([ICON_CLEAN_POWER])</English>
+		<French>[SPACE]avec &#233;lectricit&#233; ([ICON_CLEAN_POWER])</French>
+		<German>[SPACE]mit Energie ([ICON_CLEAN_POWER])</German>
+		<Italian>[SPACE]con l'energia ([ICON_CLEAN_POWER])</Italian>
+		<Spanish>[SPACE]con energ&#237;a ([ICON_CLEAN_POWER])</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
@@ -3215,5 +3223,13 @@
 		<German>[ICON_BULLET]%D1_Mod%% Building Production</German>
 		<Italian>[ICON_BULLET]%D1_Mod%% Building Production</Italian>
 		<Spanish>[ICON_BULLET]%D1_Mod%% Building Production</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_NUBIA</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</English>
+		<French>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</French>
+		<German>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -1393,4 +1393,36 @@
 		<Italian>Bulan</Italian>
 		<Spanish>Bulan</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_PIYE</Tag>
+		<English>Piye</English>
+		<French>Piye</French>
+		<German>Piye</German>
+		<Italian>Piye</Italian>
+		<Spanish>Piye</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_GEORGIOS</Tag>
+		<English>Georgios I</English>
+		<French>Georgios I</French>
+		<German>Georgios I Iye</German>
+		<Italian>Georgios I</Italian>
+		<Spanish>Georgios I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BADI</Tag>
+		<English>Badi el Kawam</English>
+		<French>Badi el Kawam</French>
+		<German>Badi el Kawam</German>
+		<Italian>Badi el Kawam</Italian>
+		<Spanish>Badi el Kawam</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DUNAMA</Tag>
+		<English>Dunama Dabbalemi</English>
+		<French>Dunama Dabbalemi</French>
+		<German>Dunama Dabbalemi</German>
+		<Italian>Dunama Dabbalemi</Italian>
+		<Spanish>Dunama Dabbalemi</Spanish>
+	</TEXT>
 </Civ4GameText>

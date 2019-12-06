@@ -233,10 +233,14 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 		}
 	}
 
-	bool bFirstSlaves = false;
-	bool bSecondSlaves = false;
+	int iFirstSlaves = 0;
+	int iSecondSlaves = 0;
 	int iFirstGold = 0;
 	int iSecondGold = 0;
+	int iFirstStrategicBonuses = 0;
+	int iSecondStrategicBonuses = 0;
+	int iFirstGPT = 0;
+	int iSecondGPT = 0;
 
 	if (pFirstList != NULL)
 	{
@@ -257,12 +261,25 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 
 			if (pNode->m_data.m_eItemType == TRADE_SLAVE)
 			{
-				bFirstSlaves = true;
+				iFirstSlaves += pNode->m_data.m_iData;
 			}
 
 			if (pNode->m_data.m_eItemType == TRADE_GOLD)
 			{
 				iFirstGold += pNode->m_data.m_iData;
+			}
+
+			if (pNode->m_data.m_eItemType == TRADE_GOLD_PER_TURN)
+			{
+				iFirstGPT += pNode->m_data.m_iData;
+			}
+
+			if (pNode->m_data.m_eItemType == TRADE_RESOURCES)
+			{
+				if (GC.getBonusInfo((BonusTypes)pNode->m_data.m_iData).getHappiness() == 0 && GC.getBonusInfo((BonusTypes)pNode->m_data.m_iData).getHealth() == 0)
+				{
+					iFirstStrategicBonuses += 1;
+				}
 			}
 		}
 	}
@@ -286,25 +303,49 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 
 			if (pNode->m_data.m_eItemType == TRADE_SLAVE)
 			{
-				bSecondSlaves = true;
+				iSecondSlaves += pNode->m_data.m_iData;
 			}
 
 			if (pNode->m_data.m_eItemType == TRADE_GOLD)
 			{
 				iSecondGold += pNode->m_data.m_iData;
 			}
+
+			if (pNode->m_data.m_eItemType == TRADE_GOLD_PER_TURN)
+			{
+				iSecondGPT += pNode->m_data.m_iData;
+			}
+
+			if (pNode->m_data.m_eItemType == TRADE_RESOURCES)
+			{
+				if (GC.getBonusInfo((BonusTypes)pNode->m_data.m_iData).getHappiness() == 0 && GC.getBonusInfo((BonusTypes)pNode->m_data.m_iData).getHealth() == 0)
+				{
+					iSecondStrategicBonuses += 1;
+				}
+			}
 		}
 	}
 
 	// Python Event
-	if (bFirstSlaves)
+	if (iFirstSlaves > 0)
 	{
-		CvEventReporter::getInstance().playerSlaveTrade(getFirstPlayer(), iSecondGold);
+		CvEventReporter::getInstance().playerSlaveTrade(getFirstPlayer(), iFirstSlaves, iSecondGold);
 	}
 
-	if (bSecondSlaves)
+	if (iSecondSlaves > 0)
 	{
-		CvEventReporter::getInstance().playerSlaveTrade(getSecondPlayer(), iFirstGold);
+		CvEventReporter::getInstance().playerSlaveTrade(getSecondPlayer(), iSecondSlaves, iFirstGold);
+	}
+
+	// Python Event
+	if (iFirstStrategicBonuses > 0)
+	{
+		CvEventReporter::getInstance().playerBonusTrade(getSecondPlayer(), iFirstStrategicBonuses, iSecondGPT);
+	}
+
+	if (iSecondStrategicBonuses > 0)
+	{
+		CvEventReporter::getInstance().playerBonusTrade(getFirstPlayer(), iSecondStrategicBonuses, iFirstGPT);
 	}
 
 	bAlliance = false;

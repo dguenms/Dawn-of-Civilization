@@ -1477,6 +1477,105 @@
 			<CivilizationActionSound>AS3D_CELTS_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_CHAD</Type>
+			<Description>TXT_KEY_CIV_CHAD_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_CHAD_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_CHAD_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_CHAD_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_THISTLE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_CHAD</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_AFRICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_AFRICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
+			<Identifier>CHA</Identifier>
+			<StartingYear>700</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>2</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>2</Production>
+				<Culture>3</Culture>
+				<Growth>2</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Njimi</City>
+				<City>Kano</City>
+				<City>Ngzargamu</City>
+				<City>Ndjamena</City>
+				<City>Yaounde</City>
+				<City>Douala</City>
+				<City>Niamey</City>
+				<City>Manan</City>
+				<City>Maiduguri</City>
+				<City>Abeche</City>
+				<City>Garoua</City>
+				<City>Bamenda</City>
+				<City>Maroua</City>
+				<City>Bafoussam</City>
+				<City>Zonder</City>
+				<City>Maradi</City>
+				<City>Mondou</City>
+				<City>Sarh</City>
+				<City>Ngaoundere</City>
+				<City>Bertoua</City>
+				<City>Loum</City>
+				<City>Kumba</City>
+				<City>Edea</City>
+				<City>Bama</City>
+				<City>Sebha</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_CHAD_ZANGO</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MUSKETEER</UnitClassType>
+					<UnitType>UNIT_CHAD_IRON_HELMET</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_DUNAMA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_MALI_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_CHINA</Type>
 			<Description>TXT_KEY_CIV_CHINA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_CHINA_SHORT_DESC</ShortDescription>
@@ -5239,6 +5338,112 @@
 			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_NUBIA</Type>
+			<Description>TXT_KEY_CIV_NUBIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_NUBIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_NUBIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_NUBIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_ASPARAGUS</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_NUBIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_PESEDJET</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Pesedjet.dds</PaganReligionButton>
+			<Identifier>NUB</Identifier>
+			<StartingYear>-2500</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>3</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Meroe</City>
+				<City>Kerma</City>
+				<City>Napata</City>
+				<City>Khartoum</City>
+				<City>Dongola</City>
+				<City>Nuri</City>
+				<City>Naqa</City>
+				<City>Aswan</City>
+				<City>Dabod</City>
+				<City>Philae</City>
+				<City>Dakka</City>
+				<City>Ballana</City>
+				<City>Faras</City>
+				<City>Abindan</City>
+				<City>Buhen</City>
+				<City>Dorginarti</City>
+				<City>Sofeb</City>
+				<City>el Kurru</City>
+				<City>Gebel Barkal</City>
+				<City>Kalabsha</City>
+				<City>Qustul</City>
+				<City>Abu Simbel</City>
+				<City>Semna</City>
+				<City>Beit el Wali</City>
+				<City>Qasr Ibrim</City>
+				<City>Serra</City>
+				<City>Soba</City>
+				<City>Sanam</City>
+				<City>Firka</City>
+				<City>Gemai</City>
+				<City>Tabo</City>
+				<City>Kawa</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<BuildingType>BUILDING_NUBIAN_DEFFUFAS</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
+					<UnitType>UNIT_NUBIAN_MEDJAY</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_PIYE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_EGYPT</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_EGYPT_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_EGYPT_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_OMAN</Type>
 			<Description>TXT_KEY_CIV_OMAN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_OMAN_SHORT_DESC</ShortDescription>
@@ -8457,8 +8662,7 @@
 					<bFreeBuildingClass>1</bFreeBuildingClass>
 				</FreeBuildingClass>
 			</FreeBuildingClasses>
-			<FreeTechs>
-			</FreeTechs>
+			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
 				<CivicType>CIVIC_CHIEFDOM</CivicType>

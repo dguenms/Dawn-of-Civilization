@@ -10953,9 +10953,10 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_WATER_PLOTS_ALL_CITIES").c_str(), L": ", L"", kBuilding.getGlobalSeaPlotYieldChangeArray());
 
-	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerYieldModifierArray(), true);
+	bool bCleanPower = pCity != NULL && pCity->isPower() && !pCity->isDirtyPower();
+	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText(bCleanPower ? "TXT_KEY_BUILDING_WITH_CLEAN_POWER" : "TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerYieldModifierArray(), true);
 
-	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerCommerceModifierArray(), true);
+	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText(bCleanPower ? "TXT_KEY_BUILDING_WITH_CLEAN_POWER" : "TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerCommerceModifierArray(), true);
 
 	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_PER_CULTURE_LEVEL").c_str(), kBuilding.getCultureCommerceModifierArray(), true);
 
@@ -17354,6 +17355,17 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 					szBuffer.append(NEWLINE);
 					iBaseModifier += 100;
 				}
+			}
+		}
+
+		// 1SDAN: display Nubian UP
+		if (city.getOwnerINLINE() == NUBIA)
+		{
+			if (city.hasBonus(BONUS_STONE) && GC.getTechInfo((TechTypes)GC.getBuildingInfo(eBuilding).getPrereqAndTech()).getEra() <= ERA_ANCIENT)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_NUBIA", 50));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += 50;
 			}
 		}
 	}

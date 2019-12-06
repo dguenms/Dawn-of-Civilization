@@ -765,7 +765,7 @@ void CvGame::initDiplomacy()
 			else { //barbarian
 				for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 				{
-					if (iI != iJ)
+					if (iI != iJ && !(iI == NATIVE && iJ == CHAD))
 					//if (iI != iJ && iJ != VIKINGS && iJ != MONGOLIA) //Rhye (useless)
 					{
 						GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)iJ), false, NO_WARPLAN);
@@ -2310,7 +2310,7 @@ void CvGame::update()
 
 		testAlive();
 
-		if ((getAIAutoPlay() == 0) && !(gDLL->GetAutorun()) && GAMESTATE_EXTENDED != getGameState())
+		if ((getAIAutoPlay() == 0) && !(gDLL->GetAutorun()) /*&& GAMESTATE_EXTENDED != getGameState()*/)
 		{
 			if (countHumanPlayersAlive() == 0)
 			{

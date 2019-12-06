@@ -247,10 +247,6 @@ class Barbs:
 		#camels in arabia
 		if utils.isYearIn(190, 550):
 			self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), self.spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
-		if utils.isYearIn(-800, 1300) and self.includesActiveHuman([iEgypt, iMamluks, iArabia]):
-			iNumUnits = iHandicap
-			if utils.getScenario() == i3000BC: iNumUnits += 1
-			self.checkSpawn(iBarbarian, iMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
 		if utils.isYearIn(450, 1600):
 			if utils.getScenario() == i3000BC:
 				self.checkSpawn(iNative, iImpi, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 10, 4)
@@ -269,6 +265,12 @@ class Barbs:
 			
 		if utils.isYearIn(1200, 1700):
 			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
+
+		#bulala in Chad
+		if iGameTurn == getTurnForYear(1200):
+			teamNative.declareWar((teamChad), false, WarPlanTypes.NO_WARPLAN)
+		if utils.isYearIn(1210, 1571):
+			self.checkSpawn(iNative, iLongbowman, 1, (61, 27), (66, 34), self.spawnNatives, iGameTurn, 12, 8, ["TXT_KEY_ADJECTIVE_BULALA"])
 
 		#American natives
 		if utils.isYearIn(400, 1100):

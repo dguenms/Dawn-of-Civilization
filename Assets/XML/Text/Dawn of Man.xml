@@ -713,4 +713,24 @@
 		<Tag>TXT_KEY_DOM_KHAZARIA</Tag>
 		<English>It is the year 650 AD. Following the breakup of the Western Turkic Khaganate, a group of Turkic peoples head west to found a new Khaganate. Positioned astride a major artery of the Silk Road, word of the tolerant Khazar Khaganate will soon spread far and wide, attracting a variety of peoples from disenfranchised faiths.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NUBIA</Tag>
+		<English>It is the year 2500 BC. Threatened and inspired by the growing might and culture of their northern neighbors, the Nubian peoples found the Kerma Kingdom...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NUBIA_600AD</Tag>
+		<English>It is the year 600 AD. Following the collapse of the Kingdom of Kush, the Kingdom of Makuria rises in hopes of reviving the Nubian Dynasty and maintaining the rule of Orthodox Christianity...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NUBIA_1700AD</Tag>
+		<English>It is the year 1700 AD. A center of the arts and sciences, the Funj Sultanate has managed to stave off the aggressions of their Ottoman neighbors...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KANEM-BORNU</Tag>
+		<English>It is the year 700 AD. The Kanembu peoples settle along the banks of Lake Chad. While lacking in fertility, the region's vast aquifiers and strategic position between the wealthy Arabians and resource rich Sub-Saharan will surely draw the attention of the Trans-Saharan trade that thrives to their west.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KANEM-BORNU_1700AD</Tag>
+		<English>It is the year 1700 AD. After the death of the Idris Alooma nearly a century ago, the Bornu Empire has been slowly fading. The Trans-Saharan trade no longer flows through the hear of the continent, and the western reaches of their former empire has since broke off from the crown...</English>
+	</TEXT>
 </Civ4GameText>

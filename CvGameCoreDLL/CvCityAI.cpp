@@ -2388,6 +2388,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
 			aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
+	case NUBIA:
+		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
+		break;
 	case CHINA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 4;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 5;
@@ -2516,6 +2520,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case KHAZARS:
 		break;
+	case CHAD:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
 	case MOORS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		//aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;

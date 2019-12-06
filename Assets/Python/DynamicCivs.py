@@ -464,13 +464,13 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
 lSocialistRepublicAdj = [iPersia, iTurks, iKhazars, iItaly, iAztecs, iArgentina, iAustralia]
 
-lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman]
+lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iIndonesia, iMali, iPoland, iMughals, iThailand, iCongo, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad]
 lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia, iAustralia, iManchuria, iKievanRus, iHungary]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
@@ -478,10 +478,11 @@ lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
 lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
 
 dEmpireThreshold = {
+	iNubia: 3,
 	iCarthage : 4,
 	iIndonesia : 4,
 	iBurma : 2,
-	iKhazars : 4,
+	iKhazars : 6,
 	iTeotihuacan : 3,
 	iKorea : 4,
 	iRussia : 8,
@@ -491,6 +492,7 @@ dEmpireThreshold = {
 	iInca : 3,
 	iMongolia : 6,
 	iPoland : 3,
+	iChad : 2,
 	iMoors : 3,
 	iOman : 4,
 	iTibet : 2,
@@ -502,7 +504,7 @@ dEmpireThreshold = {
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
 
-lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali, iKievanRus]
+lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali, iKievanRus, iCarthage]
 lVassalNameChanges = [iInca, iAztecs, iMughals]
 lChristianityNameChanges = [iInca, iAztecs]
 
@@ -518,7 +520,7 @@ dNameChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iBurma : "TXT_KEY_CIV_BURMA_MYANMAR_SHORT_DESC",
-	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC",
+	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC"
 }
 
 dAdjectiveChanges = {
@@ -550,6 +552,7 @@ dCapitals = {
 	iNigeria : ["Oyo", "Ife", "Njimi", "Igbo-Ukwu", "Wukari"],
 	iNetherlands : ["Brussels", "Antwerpen"],
 	iBoers : ["Pretoria", "Johannesburg", "Pietermaritzburg", "Durban"],
+	iNubia : ["Meroe"]
 }
 
 dCapitalLocations = findCapitalLocations(dCapitals)
@@ -561,6 +564,7 @@ dStartingLeaders = [
 	iIndia : iAsoka,
 	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
+	iNubia : iPiye,
 	iChina : iQinShiHuang,
 	iGreece : iPericles,
 	iPersia : iCyrus,
@@ -583,6 +587,7 @@ dStartingLeaders = [
 	iIndonesia : iDharmasetu,
 	iBurma : iAnawrahta,
 	iKhazars : iBulan,
+	iChad : iDunama,
 	iMoors : iRahman,
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
@@ -637,6 +642,7 @@ dStartingLeaders = [
 	iTurks : iTamerlane,
 	iVikings : iChristian,
 	iBurma : iBayinnuang,
+	iMoors: iYaqub,
 	iSpain : iPhilip,
 	iFrance : iLouis,
 	iEngland : iVictoria,
@@ -661,6 +667,8 @@ def setup():
 		data.players[iChina].iAnarchyTurns += 3
 		
 	elif iScenario == i1700AD:
+		utils.setReborn(iNubia, True)
+		utils.setReborn(iChad, True)
 		# data.players[iEgypt].iResurrections += 1
 		
 		for iPlayer in [iMoors, iKievanRus]:
@@ -680,6 +688,10 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	data.players[iPlayer].iResurrections += 1
 	
 	if iPlayer in lRespawnNameChanges:
+		if iPlayer == iCarthage:
+			if gc.getGame().getGameTurnYear() >= 1956:
+				setShort(iPlayer, text("TXT_KEY_CIV_TUNISIA_SHORT_DESC"))
+				setAdjective(iPlayer, text("TXT_KEY_CIV_TUNISIA_ADJECTIVE"))
 		nameChange(iPlayer)
 		adjectiveChange(iPlayer)
 		
@@ -717,6 +729,10 @@ def onRevolution(iPlayer):
 		iGovernment, iLegitimacy, _, _, _, _ = getCivics(iPlayer)
 		if iGovernment == iDespotism and iLegitimacy in [iCentralism, iRevolutionism, iConstitution]:
 			nameChange(iPlayer)
+			
+	if iPlayer == iNubia:
+		if not pNubia.isReborn() and pNubia.getStateReligion() == iIslam:
+			utils.setReborn(iPlayer, True)
 			
 	checkName(iPlayer)
 	
@@ -1090,6 +1106,21 @@ def specificName(iPlayer):
 	if iPlayer == iBabylonia:
 		if isCapital(iPlayer, ["Ninua", "Kalhu"]):
 			return "TXT_KEY_CIV_BABYLONIA_ASSYRIA"
+			
+	if iPlayer == iNubia:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_SUDAN_SHORT_DESC"
+			
+		elif iReligion in lChristianity:
+			return "TXT_KEY_CIV_NUBIA_MAKURIA"
+			
+		elif iReligion == iIslam:
+			return "TXT_KEY_CIV_FUNJ"
+			
+		elif iReligion < 0 and pPlayer.isStateReligion():
+			if bEmpire:
+				return "TXT_KEY_CIV_NUBIA_KUSH"
+			return capitalName(iPlayer)
 	
 	elif iPlayer == iChina:
 		if bEmpire:
@@ -1221,6 +1252,14 @@ def specificName(iPlayer):
 				
 			return "TXT_KEY_CIV_INDONESIA_SRIVIJAYA"
 			
+	elif iPlayer == iChad:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_CHAD_MODERN_SHORT_DESC"
+		elif capital.getName == 'Ngazargamu':
+			return "TXT_KEY_CIV_CHAD_BORNU"
+		elif bEmpire:
+			return "TXT_KEY_CIV_CHAD_EMPIRE"
+	
 	elif iPlayer == iMoors:	
 		if utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
 			return capitalName(iPlayer)
@@ -1443,6 +1482,10 @@ def specificAdjective(iPlayer):
 			if iReligion == iHinduism:
 				return "TXT_KEY_CIV_INDIA_GUPTA"
 			
+	elif iPlayer == iNubia:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_SUDAN_ADJECTIVE"
+			
 	elif iPlayer == iChina:
 		if bMonarchy:
 			if iEra >= iMedieval:
@@ -1591,6 +1634,10 @@ def specificAdjective(iPlayer):
 			
 		if not iNumCities > 2 and not bReborn:
 			return capitalName(iPlayer)
+			
+	elif iPlayer == iChad:
+		if iEra >= iGlobal:
+			return "TXT_KEY_CIV_CHAD_MODERN_ADJECTIVE"
 			
 	elif iPlayer == iMoors:
 		if bEmpire and iEra <= iRenaissance:
@@ -1857,6 +1904,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bCityStates:
 			return "TXT_KEY_CIV_INDIA_MAHAJANAPADAS"
+			
+	elif iPlayer == iNubia:
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_NAME"
+			
+		if bEmpire or iReligion > 0 or not pPlayer.isStateReligion():
+			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iChina:
 		if bEmpire:
@@ -2630,5 +2684,11 @@ def leaderName(iPlayer):
 		if iLeader == iKrishnaDevaRaya:
 			if iGameTurn >= getTurnForYear(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"
+				
+	elif iPlayer == iNubia:
+		if pPlayer.getStateReligion() in lChristianity:
+			return "TXT_KEY_LEADER_GEORGIOS"
+		if pPlayer.getStateReligion() == iIslam:
+			return "TXT_KEY_LEADER_BADI"
 				
 	return None

@@ -3317,4 +3317,20 @@
 		<Italian>Sheep and Cows attract the Silk Route</Italian>
 		<Spanish>Sheep and Cows attract the Silk Route</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NUBIAN_DEFFUFAS</Tag>
+		<English>Deffufas</English>
+		<French>Deffufas</French>
+		<German>Deffufas</German>
+		<Italian>Deffufas</Italian>
+		<Spanish>Deffufas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHAD_ZANGO</Tag>
+		<English>Zango</English>
+		<French>Zango</French>
+		<German>Zango</German>
+		<Italian>Zango</Italian>
+		<Spanish>Zango</Spanish>
+	</TEXT>
 </Civ4GameText>

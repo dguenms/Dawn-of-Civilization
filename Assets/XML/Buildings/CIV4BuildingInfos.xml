@@ -707,6 +707,45 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<Type>BUILDING_NUBIAN_DEFFUFAS</Type>
+			<Description>TXT_KEY_BUILDING_NUBIAN_DEFFUFAS</Description>
+			<Civilopedia>TXT_KEY_NEW_BUILDING_NUBIAN_DEFFUFAS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NUBIAN_DEFFUFAS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_NUBIAN_DEFFUFAS</ArtDefineTag>
+			<PrereqTech>TECH_CEREMONY</PrereqTech>
+			<FreePromotion>PROMOTION_COMBAT1</FreePromotion>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>40</iCost>
+			<iConquestProb>65</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_WALLS</BuildingClass>
 			<Type>BUILDING_WALLS</Type>
 			<Description>TXT_KEY_BUILDING_WALLS</Description>
@@ -1767,6 +1806,43 @@
 			<iPower>1</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_LIGHTHOUSE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_LIGHTHOUSE</BuildingClass>
+			<Type>BUILDING_CHAD_ZANGO</Type>
+			<Description>TXT_KEY_BUILDING_CHAD_ZANGO</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CHAD_ZANGO_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHAD_ZANGO_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CHAD_ZANGO</ArtDefineTag>
+			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
+			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
+			<bWater>1</bWater>
+			<iCost>80</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iTradeRoutes>1</iTradeRoutes>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
@@ -8504,6 +8580,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iColoniesPrereq>1</iColoniesPrereq>
 			<iTradeRoutes>2</iTradeRoutes>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8556,6 +8633,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iColoniesPrereq>1</iColoniesPrereq>
 			<iTradeRoutes>2</iTradeRoutes>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8608,6 +8686,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iGreatPeopleRateModifier>100</iGreatPeopleRateModifier>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>10</iAsset>
 			<iPower>6</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8668,6 +8747,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iCultureHappiness>2</iCultureHappiness>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -8720,6 +8800,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
@@ -8762,6 +8843,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
@@ -8811,6 +8893,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iLevelPrereq>4</iLevelPrereq>
 			<iMaxLatitude>90</iMaxLatitude>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>10</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8857,6 +8940,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8896,6 +8980,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHealth>-2</iHealth>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -8958,6 +9043,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<iPower>4</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -9001,6 +9087,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iHealth>8</iHealth>
 			<iAsset>7</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -9047,6 +9134,7 @@
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
@@ -9095,6 +9183,7 @@
 			<iGlobalSpaceProductionModifier>100</iGlobalSpaceProductionModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>0</iConquestProb>
 			<iAsset>8</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<Flavors>

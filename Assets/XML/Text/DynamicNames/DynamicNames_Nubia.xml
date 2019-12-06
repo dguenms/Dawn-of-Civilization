@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Harappa -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_DESC</Tag>
+		<English>The Nubians</English>
+		<French>The Nubians</French>
+		<German>The Nubians</German>
+		<Italian>The Nubians</Italian>
+		<Spanish>The Nubians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_PEOPLES</Tag>
+		<English>Nubian Peoples</English>
+		<French>Nubian Peoples</French>
+		<German>Nubian Peoples</German>
+		<Italian>Nubian Peoples</Italian>
+		<Spanish>Nubian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_DEFAULT</Tag>
+		<English>%s1 Kingdom</English>
+		<French>%s1 Kingdom</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_KUSH</Tag>
+		<English>Kush</English>
+		<French>Kush</French>
+		<German>Kush</German>
+		<Italian>Kush</Italian>
+		<Spanish>Kush</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_MAKURIA</Tag>
+		<English>Makuria</English>
+		<French>Makuria</French>
+		<German>Makuria</German>
+		<Italian>Makuria</Italian>
+		<Spanish>Makuria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FUNJ</Tag>
+		<English>Funj</English>
+		<French>Funj</French>
+		<German>Funj</German>
+		<Italian>Funj</Italian>
+		<Spanish>Funj</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_FASCIST</Tag>
+		<English>Empire of the %s1</English>
+		<French>Empire of the %s1</French>
+		<German>Empire of the %s1</German>
+		<Italian>Empire of the %s1</Italian>
+		<Spanish>Empire of the %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_COMMUNIST</Tag>
+		<English>Democratic Republic of the %s1</English>
+		<French>Democratic Republic of the %s1</French>
+		<German>Democratic Republic of the %s1</German>
+		<Italian>Democratic Republic of the %s1</Italian>
+		<Spanish>Democratic Republic of the %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_REPUBLIC</Tag>
+		<English>Republic of the %s1</English>
+		<French>Republic of the %s1</French>
+		<German>Republic of the %s1</German>
+		<Italian>Republic of the %s1</Italian>
+		<Spanish>Republic of the %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_ADJECTIVE</Tag>
+		<English>Nubian</English>
+		<French>Nubian</French>
+		<German>Nubian</German>
+		<Italian>Nubian</Italian>
+		<Spanish>Nubian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NUBIA_SHORT_DESC</Tag>
+		<English>Nubia</English>
+		<French>Nubia</French>
+		<German>Nubia</German>
+		<Italian>Nubia</Italian>
+		<Spanish>Nubia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SUDAN_DESC</Tag>
+		<English>The Sudanese</English>
+		<French>The Sudanese</French>
+		<German>The Sudanese</German>
+		<Italian>The Sudanese</Italian>
+		<Spanish>The Sudanese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SUDAN_ADJECTIVE</Tag>
+		<English>Sudanese</English>
+		<French>Sudanese</French>
+		<German>Sudanese</German>
+		<Italian>Sudanese</Italian>
+		<Spanish>Sudanese</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SUDAN_SHORT_DESC</Tag>
+		<English>Sudan</English>
+		<French>Sudan</French>
+		<German>Sudan</German>
+		<Italian>Sudan</Italian>
+		<Spanish>Sudan</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -490,11 +490,17 @@ void CvEventReporter::diplomaticMission(UnitTypes unitID, PlayerTypes ePlayer, i
 }
 
 // Leoreth: slave trade (amount of gold received)
-void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
+void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iSlaves, int iGold)
 {
-	m_kPythonEventMgr.reportPlayerSlaveTrade(ePlayer, iGold);
+	m_kPythonEventMgr.reportPlayerSlaveTrade(ePlayer, iSlaves, iGold);
 }
 
+
+// 1SDAN: bonus trade (amount of gold received)
+void CvEventReporter::playerBonusTrade(PlayerTypes ePlayer, int iStrategicBonuses, int iGold)
+{
+	m_kPythonEventMgr.reportPlayerBonusTrade(ePlayer, iStrategicBonuses, iGold);
+}
 // Leoreth: release player
 void CvEventReporter::releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
 {

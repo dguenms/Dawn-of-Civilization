@@ -2932,6 +2932,18 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		{
 			iExperience += getCultureLevel();
 		}
+
+		// 1SDAN: Iron Helmet Effect
+		if (eUnit == GC.getInfoTypeForString("UNIT_CHAD_IRON_HELMET"))
+		{
+			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).AI_getAttitude((PlayerTypes)iI) >= ATTITUDE_PLEASED && GET_PLAYER((PlayerTypes)iI).isStateReligion() == GET_PLAYER(getOwnerINLINE()).isStateReligion() && GET_PLAYER((PlayerTypes)iI).getStateReligion() == GET_PLAYER(getOwnerINLINE()).getStateReligion() && GET_PLAYER((PlayerTypes)iI).getPower() > GET_PLAYER(getOwnerINLINE()).getPower())
+				{
+					iExperience += 2;
+				}
+			}
+		}
 	}
 	
 	//SuperSpies: TSHEEP - Only give spies spy specific xp
@@ -3744,6 +3756,15 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 			{
 				iMultiplier += 100;
 			}
+		}
+	}
+
+	// 1SDAN: Nubian UP: +50% production of ancient era buildings with Stone
+	if (getOwnerINLINE() == NUBIA)
+	{
+		if (hasBonus(BONUS_STONE) && GC.getTechInfo((TechTypes)GC.getBuildingInfo(eBuilding).getPrereqAndTech()).getEra() <= ERA_ANCIENT)
+		{
+			iMultiplier += 50;
 		}
 	}
 
@@ -18176,6 +18197,12 @@ bool CvCity::isAutoRaze() const
 		return false;
 	}
 
+	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
+	if (getPreviousOwner() == NUBIA && getX_INLINE() == 66 && getY_INLINE() == 31 && !isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
+	{
+		return true;
+	}
+
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_RAZING))
 	{
 		if (getHighestPopulation() == 1)
@@ -19361,6 +19388,11 @@ void CvCity::applyBuildingDamage(int iDamage)
 
 	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
+		if (!isHasRealBuilding((BuildingTypes)iI))
+		{
+			continue;
+		}
+
 		if (GC.getBuildingInfo((BuildingTypes)iI).getDefenseModifier() > 0)
 		{
 			continue;
@@ -19371,7 +19403,7 @@ void CvCity::applyBuildingDamage(int iDamage)
 			continue;
 		}
 
-		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 0)
+		if (GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability() == 100)
 		{
 			continue;
 		}

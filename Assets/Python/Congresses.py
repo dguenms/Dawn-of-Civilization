@@ -114,7 +114,10 @@ def endGlobalWar(iAttacker, iDefender):
 	lAttackers = [iAttacker]
 	lDefenders = [iDefender]
 	
-	lAttackers, lDefenders = determineAlliances(iAttacker, iDefender)
+	lAttackerAllies, lDefenderAllies = determineAlliances(iAttacker, iDefender)
+	
+	lAttackers += lAttackerAllies
+	lDefenders += lDefenderAllies
 	
 	# force peace for all allies of the belligerents
 	for iLoopPlayer in lAttackers:
@@ -658,12 +661,12 @@ class Congress:
 		iNumDefenders = max(2, gc.getPlayer(iPlayer).getCurrentEra()-1)
 		lFlippingUnits, lRelocatedUnits = utils.flipOrRelocateGarrison(city, iNumDefenders)
 		
-		utils.completeCityFlip(x, y, iPlayer, iOwner, 80, False, False, True)
+		utils.completeCityFlip(x, y, iPlayer, iOwner, 80, False, False, True, bPermanentCultureChange=False)
 		
 		utils.flipOrCreateDefenders(iPlayer, lFlippingUnits, (x, y), iNumDefenders)
 		
 		if iOwner < iNumPlayers:
-			utils.relocateUnitsToCore(iPlayer, lRelocatedUnits)
+			utils.relocateUnitsToCore(iOwner, lRelocatedUnits)
 		else:
 			utils.killUnits(lRelocatedUnits)
 		
@@ -766,8 +769,8 @@ class Congress:
 		
 		print sDebugText
 		
-		# everyone agrees on AI American claims in the west
-		if iClaimant == iAmerica and iVoter != iOwner:
+		# everyone agrees on AI American claims in the west, unless owner is native to the Americas
+		if iClaimant == iAmerica and iVoter != iOwner and iOwner not in lCivGroups[5]:
 			if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
 				self.vote(iVoter, iClaimant, 1)
 				return
@@ -1076,7 +1079,7 @@ class Congress:
 				# colonies
 				if iPlayer in lCivGroups[0]:
 					if iLoopPlayer >= iNumPlayers or (iLoopPlayer not in lCivGroups[0] and utils.getStabilityLevel(iLoopPlayer) < iStabilityShaky) or (iLoopPlayer in lCivGroups[0] and utils.getHumanID() != iLoopPlayer and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
-						if plot.getRegionID() not in lEurope and plot.getRegionID() not in lMiddleEast:
+						if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
 							if iSettlerMapValue > 90:
 								iValue += max(1, iSettlerMapValue / 100)
 									

@@ -237,4 +237,56 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNISIA_ADJECTIVE</Tag>
+		<English>Tunisian</English>
+		<French>Tunisian</French>
+		<German>Tunisian</German>
+		<Italian>Tunisian</Italian>
+		<Spanish>Tunisian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNISIA_SHORT_DESC</Tag>
+		<English>Tunisia</English>
+		<French>Tunisia</French>
+		<German>Tunisia</German>
+		<Italian>Tunisia</Italian>
+		<Spanish>Tunisia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNISIA_REPUBLIC</Tag>
+		<English>Republic of Tunisia</English>
+		<French>Republic of Tunisia</French>
+		<German>Republic of Tunisia</German>
+		<Italian>Republic of Tunisia</Italian>
+		<Spanish>Republic of Tunisia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNISIA_COMMUNIST</Tag>
+		<English>Tunisian People's Republic</English>
+		<French>Tunisian People's Republic</French>
+		<German>Tunisian People's Republic</German>
+		<Italian>Tunisian People's Republic</Italian>
+		<Spanish>Tunisian People's Republic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNISIA_FASCIST</Tag>
+		<English>New Carthaginian Empire</English>
+		<French>
+			<Text>Nouvel Empire carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>New Carthaginian Empire</German>
+		<Italian>New Carthaginian Empire</Italian>
+		<Spanish>New Carthaginian Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TUNISIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>Kingdom of %s1</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
+	</TEXT>
 </Civ4GameText>

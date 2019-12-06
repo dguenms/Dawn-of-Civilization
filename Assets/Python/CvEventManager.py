@@ -171,6 +171,7 @@ class CvEventManager(object):
 			'tradeMission'			: self.onTradeMission,
 			'diplomaticMission'			: self.onDiplomaticMission,
 			'playerSlaveTrade'		: self.onPlayerSlaveTrade,
+			'playerBonusTrade'		: self.onPlayerBonusTrade,
 			'releasedPlayer'		: self.onReleasedPlayer,
 			'blockade'			: self.onBlockade,
 			'peaceBrokered'			: self.onPeaceBrokered,
@@ -1241,7 +1242,10 @@ class CvEventManager(object):
 		iUnitType, iPlayer, iX, iY, bMadePeace = argsList
 		
 	def onPlayerSlaveTrade(self, argsList):
-		iPlayer, iGold = argsList
+		iPlayer, iSlaves, iGold = argsList
+		
+	def onPlayerBonusTrade(self, argsList):
+		iPlayer, iStrategicBonuses, iGold = argsList
 		
 	def onReleasedPlayer(self, argsList):
 		iPlayer, iReleasedPlayer = argsList

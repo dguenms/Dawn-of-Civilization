@@ -6902,7 +6902,7 @@ int CvPlot::calculateTotalBestNatureYield(TeamTypes eTeam) const
 }
 
 
-int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield, PlayerTypes ePlayer, bool bOptimal) const
+int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, YieldTypes eYield, PlayerTypes ePlayer, bool bOptimal, bool bIgnoreBonus) const
 {
 	PROFILE_FUNC();
 
@@ -6973,7 +6973,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		if (!isWater() && !isPeak()) iYield -= GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield);
 	}
 
-	if (ePlayer != NO_PLAYER)
+	if (ePlayer != NO_PLAYER && !bIgnoreBonus)
 	{
 		eBonus = getBonusType(GET_PLAYER(ePlayer).getTeam());
 
@@ -7232,6 +7232,12 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			{
 				iYield += 2;
 			}
+		}
+		
+		// 1SDAN: Chadian UP: Core Cities also yield a Farm's base yields.
+		if (ePlayer == CHAD)
+		{
+			iYield += calculateImprovementYieldChange((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_FARM"), eYield, ePlayer, false, true);
 		}
 		
 		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)GREAT_ZIMBABWE))

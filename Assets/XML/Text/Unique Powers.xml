@@ -1249,4 +1249,36 @@
 		<Italian>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</Italian>
 		<Spanish>Tolerance is enabled at the start. Immigration from Jewish cities. Victories against Barbarians contribute to Great General births.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUB_TITLE</Tag>
+		<English>The Power of Vaults:</English>
+		<French>The Power of Vaults:</French>
+		<German>The Power of Vaults:</German>
+		<Italian>The Power of Vaults:</Italian>
+		<Spanish>The Power of Vaults:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NUB</Tag>
+		<English>+50% construction speed of ancient era buildings in cities with Stone</English>
+		<French>+50% construction speed of ancient era buildings in cities with Stone</French>
+		<German>+50% construction speed of ancient era buildings in cities with Stone</German>
+		<Italian>+50% construction speed of ancient era buildings in cities with Stone</Italian>
+		<Spanish>+50% construction speed of ancient era buildings in cities with Stone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CHA_TITLE</Tag>
+		<English>The Power of Aquifiers:</English>
+		<French>The Power of Aquifiers:</French>
+		<German>The Power of Aquifiers:</German>
+		<Italian>The Power of Aquifiers:</Italian>
+		<Spanish>The Power of Aquifiers:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CHA</Tag>
+		<English>Core Cities also yield a Farm's base yields.</English>
+		<French>Core Cities also yield a Farm's base yields.</French>
+		<German>Core Cities also yield a Farm's base yields.</German>
+		<Italian>Core Cities also yield a Farm's base yields.</Italian>
+		<Spanish>Core Cities also yield a Farm's base yields.</Spanish>
+	</TEXT>
 </Civ4GameText>

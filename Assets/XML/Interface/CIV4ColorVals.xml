@@ -1330,5 +1330,26 @@
 			<fBlue>1.000</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ASPARAGUS</Type>
+			<fRed>0.60</fRed>
+			<fGreen>0.60</fGreen>
+			<fBlue>0.20</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_ASPARAGUS_TEXT</Type>
+			<fRed>0.82</fRed>
+			<fGreen>0.82</fGreen>
+			<fBlue>0.40</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_THISTLE</Type>
+			<fRed>0.85</fRed>
+			<fGreen>0.75</fGreen>
+			<fBlue>0.85</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>
