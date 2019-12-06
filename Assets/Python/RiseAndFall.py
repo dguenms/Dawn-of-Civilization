@@ -1791,7 +1791,7 @@ class RiseAndFall:
 	def convertSurroundingPlotCulture(self, iCiv, lPlots):
 		for (x, y) in lPlots:
 			pPlot = gc.getMap().plot(x, y)
-			if pPlot.getOwner() >= 0 and pPlot.isCore(pPlot.getOwner()) and not pPlot.isCore(iCiv): continue
+			if pPlot.isOwned() and pPlot.isCore(pPlot.getOwner()) and not pPlot.isCore(iCiv): continue
 			if not pPlot.isCity():
 				utils.convertPlotCulture(pPlot, iCiv, 100, False)
 

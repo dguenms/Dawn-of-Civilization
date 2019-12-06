@@ -1458,9 +1458,9 @@ def calculateRankedAttitudes(iPlayer, lContacts):
 	iLeft = max(0, iPlayerIndex - iRange/2)
 	iRight = min(iLeft + iRange, len(lContacts)-1)
 	
-	lStronger = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[:iLeft]]
+	lStronger = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[:iLeft] if iLoopPlayer != iPlayer]
 	lEqual = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iLeft:iRight] if iLoopPlayer != iPlayer]
-	lWeaker = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iRight:]]
+	lWeaker = [calculateAttitude(iLoopPlayer, iPlayer) for iLoopPlayer in lContacts[iRight:] if iLoopPlayer != iPlayer]
 	
 	return lStronger, lEqual, lWeaker
 	
