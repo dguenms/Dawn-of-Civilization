@@ -370,7 +370,6 @@
 	<ElementType name="iPlainsAttack" content="textOnly" dt:type="int"/>
 	<ElementType name="iPlainsDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iKamikazePercent" content="textOnly" dt:type="int"/>
-	<ElementType name="iRevoltProtection" content="textOnly" dt:type="int"/>
 	<ElementType name="iCollateralDamageProtection" content="textOnly" dt:type="int"/>
 	<ElementType name="iPillageChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iUpgradeDiscount" content="textOnly" dt:type="int"/>
@@ -894,7 +893,6 @@
 		<element type="iPlainsAttack" minOccurs="0"/>
 		<element type="iPlainsDefense" minOccurs="0"/>
 		<element type="iKamikazePercent" minOccurs="0"/>
-		<element type="iRevoltProtection" minOccurs="0"/>
 		<element type="iCollateralDamageProtection" minOccurs="0"/>
 		<element type="iPillageChange" minOccurs="0"/>
 		<element type="iUpgradeDiscount" minOccurs="0"/>

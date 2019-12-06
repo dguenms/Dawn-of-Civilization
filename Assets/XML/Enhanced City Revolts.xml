@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CULTURE_GARRISON_VALUE</Tag>
+		<English>[ICON_BULLET]Garrison Value: %d1</English>
+		<French>[ICON_BULLET]Garrison Value: %d1</French>
+		<German>[ICON_BULLET]Garrison Value: %d1</German>
+		<Italian>[ICON_BULLET]Garrison Value: %d1</Italian>
+		<Spanish>[ICON_BULLET]Garrison Value: %d1</Spanish>
+		<Finnish>[ICON_BULLET]Garrison Value: %d1</Finnish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CITY_REVOLTED_JOINED_REBELS</Tag>
+		<English>%s1_CityName has revolted and is now independent!</English>
+		<French>%s1_CityName has revolted and is now independent!</French>
+		<German>Nach einer Revolte hat die Stadt %s1_CityName ihre Unabhaengigkeit erklaert!</German>
+		<Italian>%s1_CityName has revolted and is now independent!</Italian>
+		<Spanish>%s1_CityName has revolted and is now independent!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CITY_REVOLTS_JOINS_REBELS</Tag>
+		<English>%s1_CityName revolts and declares its independence!</English>
+		<French>%s1_CityName revolts and declares its independence!</French>
+		<German>Die Stadt %s1_CityName revoltiert und erklaert ihre Unabhaengigkeit!</German>
+		<Italian>%s1_CityName revolts and declares its independence!</Italian>
+		<Spanish>%s1_CityName revolts and declares its independence!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_RIOT_IN_CITY</Tag>
+		<English>A riot has taken place in %s1_CityName!</English>
+		<French>A riot has taken place in %s1_CityName!</French>
+		<German>In %s1_CityName hat ein Aufstand stattgefunden!</German>
+		<Italian>A riot has taken place in %s1_CityName!</Italian>
+		<Spanish>A riot has taken place in %s1_CityName!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_FOOD_RIOT_IN_CITY</Tag>
+		<English>A food riot has taken place in %s1_CityName!</English>
+		<French>A food riot has taken place in %s1_CityName!</French>
+		<German>In %s1_CityName hat eine Hungerrevolte stattgefunden!</German>
+		<Italian>A food riot has taken place in %s1_CityName!</Italian>
+		<Spanish>A food riot has taken place in %s1_CityName!</Spanish>
+	</TEXT>
+</Civ4GameText>

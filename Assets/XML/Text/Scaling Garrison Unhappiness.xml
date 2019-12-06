@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CULTURE_GARRISON_VALUE</Tag>
+		<English>[ICON_BULLET]Garrison Value: %d1</English>
+		<French>[ICON_BULLET]Garrison Value: %d1</French>
+		<German>[ICON_BULLET]Garrison Value: %d1</German>
+		<Italian>[ICON_BULLET]Garrison Value: %d1</Italian>
+		<Spanish>[ICON_BULLET]Garrison Value: %d1</Spanish>
+		<Finnish>[ICON_BULLET]Garrison Value: %d1</Finnish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GARRISON_UNHAPPY_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from lack of military protection</English>
+		<French>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from lack of military protection</French>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] wegen mangelndem Schutz durch Milit&#228;r</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from lack of military protection</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from lack of military protection</Spanish>
+	</TEXT>
+</Civ4GameText>

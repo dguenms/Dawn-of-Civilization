@@ -327,6 +327,10 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseWorkerRateHelp(widgetDataStruct, szBuffer);
 		break;
 
+	case WIDGET_STATE_RELIGION_COMMERCE_MODIFIERS:
+		parseEnableStateReligionCommerceModifiersString(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_HELP_TRADE_ROUTES:
 		parseTradeRouteHelp(widgetDataStruct, szBuffer);
 		break;
@@ -1056,6 +1060,7 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 	case WIDGET_CLOSE_SCREEN:
 	case WIDGET_SCORE_BREAKDOWN:
 	case WIDGET_HELP_BONUS_CITY:
+	case WIDGET_STATE_RELIGION_COMMERCE_MODIFIERS:
 		//	Nothing on clicked
 		break;
 	}
@@ -4653,6 +4658,11 @@ void CvDLLWidgetData::parseFeatureProductionHelp(CvWidgetDataStruct &widgetDataS
 void CvDLLWidgetData::parseWorkerRateHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	GAMETEXT.buildWorkerRateString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData1)));
+}
+
+void CvDLLWidgetData::parseEnableStateReligionCommerceModifiersString(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	GAMETEXT.buildEnableStateReligionCommerceModifiersString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData1)));
 }
 
 void CvDLLWidgetData::parseTradeRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)

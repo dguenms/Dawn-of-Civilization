@@ -3232,4 +3232,44 @@
 		<Italian>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</Italian>
 		<Spanish>[ICON_BULLET]%D1%%[ICON_PRODUCTION] with Stone</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STATE_REL_SPECIFIC</Tag>
+		<English>% with %F1_RelIcon (State Religion) and Theology (Until Scientific Method)</English>
+		<French>% with %F1_RelIcon (State Religion) and Theology (Until Scientific Method)</French>
+		<German>% with %F1_RelIcon (State Religion) and Theology (Until Scientific Method)</German>
+		<Italian>% SPACE]with %F1_RelIcon (State Religion) and Theology (Until Scientific Method)</Italian>
+		<Spanish>% with %F1_RelIcon (State Religion) and Theology (Until Scientific Method)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STATE_REL_GENERIC</Tag>
+		<English>% with State [ICON_RELIGION] and Theology (Until Scientific Method)</English>
+		<French>% with State [ICON_RELIGION] and Theology (Until Scientific Method)</French>
+		<German>% with State [ICON_RELIGION] and Theology (Until Scientific Method)</German>
+		<Italian>% with State [ICON_RELIGION] and Theology (Until Scientific Method)</Italian>
+		<Spanish>% with State [ICON_RELIGION] and Theology (Until Scientific Method)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STATE_REL_BULLET</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from State [ICON_RELIGION] and Theology (Until Scientific Method)</English>
+		<French>[ICON_BULLET]%D1%%%F2 from State [ICON_RELIGION] and Theology (Until Scientific Method)</French>
+		<German>[ICON_BULLET]%D1%%%F2 from State [ICON_RELIGION] and Theology (Until Scientific Method)</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from State [ICON_RELIGION] and Theology (Until Scientific Method)</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from State [ICON_RELIGION] and Theology (Until Scientific Method)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ENABLE_STATE_REL_COMMERCE_MOD</Tag>
+		<English>[ICON_BULLET]Enables Science from Monasteries</English>
+		<French>[ICON_BULLET]Enables Science from Monasteries</French>
+		<German>[ICON_BULLET]Enables Science from Monasteries</German>
+		<Italian>[ICON_BULLET]Enables Science from Monasteries</Italian>
+		<Spanish>[ICON_BULLET]Enables Science from Monasteries</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DISABLE_STATE_REL_COMMERCE_MOD</Tag>
+		<English>[ICON_BULLET]Disables Science from Monasteries</English>
+		<French>[ICON_BULLET]Disables Science from Monasteries</French>
+		<German>[ICON_BULLET]Disables Science from Monasteries</German>
+		<Italian>[ICON_BULLET]Disables Science from Monasteries</Italian>
+		<Spanish>[ICON_BULLET]Disables Science from Monasteries</Spanish>
+	</TEXT>
 </Civ4GameText>

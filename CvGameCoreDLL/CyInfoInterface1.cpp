@@ -69,6 +69,7 @@ void CyInfoPythonInterface1()
 		.def("getFirstFreeTechs", &CvTechInfo::getFirstFreeTechs, "int ()")
 		.def("getAssetValue", &CvTechInfo::getAssetValue, "int ()")
 		.def("getPowerValue", &CvTechInfo::getPowerValue, "int ()")
+		.def("getAllowStateReligionCommerceModifiers", &CvTechInfo::getAllowStateReligionCommerceModifiers, "int ()")
 
 		.def("getGridX", &CvTechInfo::getGridX, "int ()")
 		.def("getGridY", &CvTechInfo::getGridY, "int ()")
@@ -634,6 +635,7 @@ void CyInfoPythonInterface1()
 
 		.def("getSpecialistYieldChange", &CvBuildingInfo::getSpecialistYieldChange, "int (int i, int j)")
 		.def("getBonusYieldModifier", &CvBuildingInfo::getBonusYieldModifier, "int (int i, int j)")
+		.def("getStateReligionCommerceModifier", &CvBuildingInfo::getStateReligionCommerceModifier, "int (int i, int j)")
 
 		.def("getArtInfo", &CvBuildingInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>())
 		;

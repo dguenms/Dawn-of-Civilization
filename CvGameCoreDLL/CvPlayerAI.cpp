@@ -3798,6 +3798,20 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								iValue += (GC.getTechInfo((TechTypes)iI).getFeatureProductionModifier() * 2);
 								iValue += (GC.getTechInfo((TechTypes)iI).getWorkerSpeedModifier() * 4);
 								iValue += (GC.getTechInfo((TechTypes)iI).getTradeRoutes() * (std::max((getNumCities() + 2), iConnectedForeignCities) + 1) * ((bFinancialTrouble) ? 200 : 100));
+								
+								if (getStateReligion() != NO_RELIGION)
+								{
+									iTempValue = 0;
+									int iLoop;
+									for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+									{
+										iTempValue += pLoopCity->getStateReligionCommerceRateModifier(getStateReligion(), COMMERCE_RESEARCH) * 60 / 100;
+										iTempValue += pLoopCity->getStateReligionCommerceRateModifier(getStateReligion(), COMMERCE_GOLD) * 35 / 100;
+										iTempValue += pLoopCity->getStateReligionCommerceRateModifier(getStateReligion(), COMMERCE_CULTURE) * 15 / 100;
+									}
+								
+									iValue += (GC.getTechInfo((TechTypes)iI).getAllowStateReligionCommerceModifiers() * iTempValue);
+								}
 
 								if (iPercentOfDomination < 90)
 								{

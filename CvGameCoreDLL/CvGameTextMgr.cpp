@@ -509,19 +509,6 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 	bool bShift = gDLL->shiftKey();
 	bool bAlt = gDLL->altKey();
 
-//KNOEDELstart
-//FlavourMod: Added by Jean Elcard (display unit combat symbol in unit tool tip) - integrated into BUG by Tholal
-	if (getBugOptionBOOL("MainInterface__UnitCombatIcons", true, "BUG_UNIT_COMBAT_ICONS"))
-	{
-		if (pUnit->getUnitCombatType() != NO_UNITCOMBAT)
-		{
-			szTempBuffer.Format(L"<img=%S size=16></img> ", GC.getUnitCombatInfo(pUnit->getUnitCombatType()).getButton());
-			szString.append(szTempBuffer);
-		}
-	}
-//FlavourMod: End
-//KNOEDELend
-
 	szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), pUnit->getName().GetCString());
 	szString.append(szTempBuffer);
 
@@ -8223,6 +8210,9 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 	//	Enables permanent alliances...
 	buildVassalStateString(szBuffer, eTech, true, bPlayerContext);
 
+	// Enables State Religion Commerce Modifiers
+	buildEnableStateReligionCommerceModifiersString(szBuffer, eTech, true, bPlayerContext);
+
 	//	Build farm, irrigation, etc...
 	for (iI = 0; iI < GC.getNumBuildInfos(); ++iI)
 	{
@@ -10976,7 +10966,20 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	{
 		szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_STATE_REL_BUILDINGS");
 	}
+
 	setCommerceChangeHelp(szBuffer, L"", L"", szTempBuffer, kBuilding.getStateReligionCommerceArray());
+
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getStateReligion() != NO_RELIGION && kBuilding.getReligionType() != NO_RELIGION)
+	{
+		szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_STATE_REL_SPECIFIC", GC.getReligionInfo((ReligionTypes)kBuilding.getReligionType()).getChar());
+	}
+	else
+	{
+		szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_STATE_REL_GENERIC");
+	}
+
+	setCommerceChangeHelp(szBuffer, L"", L"", szTempBuffer, kBuilding.getStateReligionCommerceModifierArray());
+
 
 	// Leoreth
 	if (kBuilding.getCultureHappiness() != 0)
@@ -14647,6 +14650,25 @@ void CvGameTextMgr::buildTradeRouteString(CvWStringBuffer &szBuffer, TechTypes e
 	}
 }
 
+void CvGameTextMgr::buildEnableStateReligionCommerceModifiersString(CvWStringBuffer &szBuffer, TechTypes eTech, bool bList, bool bPlayerContext)
+{
+	if (GC.getTechInfo(eTech).getAllowStateReligionCommerceModifiers() != 0)
+	{
+		if (bList)
+		{
+			szBuffer.append(NEWLINE);
+		}
+		if (GC.getTechInfo(eTech).getAllowStateReligionCommerceModifiers() > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_TECH_ENABLE_STATE_REL_COMMERCE_MOD"));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_TECH_DISABLE_STATE_REL_COMMERCE_MOD"));
+		}
+	}
+}
+
 void CvGameTextMgr::buildHealthRateString(CvWStringBuffer &szBuffer, TechTypes eTech, bool bList, bool bPlayerContext)
 {
 	if (GC.getTechInfo(eTech).getHealth() != 0)
@@ -17951,6 +17973,17 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_CULTURE", iCultureMod, info.getChar()));
 		iModifier += iCultureMod;
+	}
+
+	if (owner.getStateReligion() != NO_RELIGION && GET_PLAYER(city.getOwner()).getAllowStateReligionCommerceModifiers())
+	{
+		int iStateReligionMod = city.getStateReligionCommerceRateModifier(owner.getStateReligion(), eCommerceType);
+		if (iStateReligionMod != 0)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_STATE_REL_BULLET", iStateReligionMod, info.getChar()));
+			iModifier += iStateReligionMod;
+		}
 	}
 
 	// Power

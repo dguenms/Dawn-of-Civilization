@@ -104,6 +104,8 @@ CvCity::CvCity()
 
 	// Leoreth
 	m_ppaiBonusYield = NULL;
+	// 1SDAN
+	m_ppaiStateReligionCommerceRateModifier = NULL;
 
 	m_paTradeCities = NULL;
 
@@ -464,6 +466,16 @@ void CvCity::uninit()
 			SAFE_DELETE_ARRAY(m_ppaiBonusYield[i]);
 		}
 		SAFE_DELETE_ARRAY(m_ppaiBonusYield);
+	}
+
+	// 1SDAN
+	if (m_ppaiStateReligionCommerceRateModifier != NULL)
+	{
+		for (int i = 0; i < NUM_RELIGIONS; i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiStateReligionCommerceRateModifier[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiStateReligionCommerceRateModifier);
 	}
 
 	SAFE_DELETE_ARRAY(m_paTradeCities);
@@ -836,6 +848,17 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 			{
 				m_ppaiBonusYield[iI][iJ] = 0;
+			}
+		}
+
+		// 1SDAN
+		m_ppaiStateReligionCommerceRateModifier = new int*[NUM_RELIGIONS];
+		for (iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			m_ppaiStateReligionCommerceRateModifier[iI] = new int[NUM_COMMERCE_TYPES];
+			for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+			{
+				m_ppaiStateReligionCommerceRateModifier[iI][iJ] = 0;
 			}
 		}
 
@@ -4622,6 +4645,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 		{
 			changeCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceModifier(iI) * iChange));
+			changeStateReligionCommerceRateModifier(((ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType()), ((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getStateReligionCommerceModifier((CommerceTypes)iI) * iChange));
 			changePowerCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerCommerceModifier(iI) * iChange));
 			changeCultureCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCultureCommerceModifier(iI) * iChange));
 			changeCommerceHappinessPer(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceHappiness(iI) * iChange));
@@ -9845,6 +9869,28 @@ void CvCity::changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange)
 	}
 }
 
+
+int CvCity::getStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce) const
+{
+	if (GET_PLAYER(getOwner()).getAllowStateReligionCommerceModifiers())
+	{
+		return m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce];
+	}
+	return 0;
+}
+
+void CvCity::changeStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce] += iChange;
+
+		updateCommerce(eCommerce);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
 // BUG - Building Additional Yield - start
 /*
  * Returns the total additional yield that adding one of the given buildings will provide.
@@ -10811,8 +10857,14 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 {
 	int iTotalModifier = 100;
-		
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
+
 	iTotalModifier += getCommerceRateModifier(eIndex);
+
+	if (eReligion != NO_RELIGION)
+	{
+		iTotalModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
+	}
 
 	iTotalModifier += getCultureCommerceRateModifier(eIndex) * getCultureLevel();
 
@@ -11123,6 +11175,8 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
 	FAssertMsg(eBuilding >= 0, "eBuilding expected to be >= 0");
 	FAssertMsg(eBuilding < GC.getNumBuildingInfos(), "eBuilding expected to be < GC.getNumBuildingInfos()");
+	
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 
 	bool bNoEspionage = GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE);
 	if (bNoEspionage && eIndex == COMMERCE_ESPIONAGE)
@@ -11142,6 +11196,11 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 				iExtraModifier += getNumActiveBuilding((BuildingTypes)i) * GC.getBuildingInfo((BuildingTypes)i).getPowerCommerceModifier(eIndex);
 			}
 		}
+	}
+
+	if (eReligion != NO_RELIGION)
+	{
+		iExtraModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
 	}
 
 	iExtraModifier += getAdditionalCommerceRateModifierByBuildingImpl(eIndex, eBuilding);
@@ -11167,6 +11226,7 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 	bool bObsolete = GET_TEAM(getTeam()).isObsoleteBuilding(eBuilding);
 	int iExtraModifier = 0;
+	ReligionTypes eReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 
 	if (!bObsolete)
 	{
@@ -11175,6 +11235,10 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 		if (isPower())
 		{
 			iExtraModifier += kBuilding.getPowerCommerceModifier(eIndex);
+		}
+		if (eReligion != NO_RELIGION)
+		{
+			iExtraModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
 		}
 	}
 	
@@ -12128,6 +12192,7 @@ void CvCity::changeNumRevolts(PlayerTypes eIndex, int iChange)
 	FAssert(getNumRevolts(eIndex) >= 0);
 }
 
+
 int CvCity::getRevoltTestProbability() const
 {
 	int iBestModifier = 0;
@@ -12147,6 +12212,7 @@ int CvCity::getRevoltTestProbability() const
 
 	return ((GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100) / (isHuman() ? 1 : 2); // Leoreth
 }
+
 
 bool CvCity::isEverOwned(PlayerTypes eIndex) const
 {
@@ -16173,6 +16239,12 @@ void CvCity::read(FDataStreamBase* pStream)
 		pStream->Read(NUM_YIELD_TYPES, m_ppaiBonusYield[i]);
 	}
 
+	// 1SDAN
+	for (int i = 0; i < NUM_RELIGIONS; i++)
+	{
+		pStream->Read(NUM_COMMERCE_TYPES, m_ppaiStateReligionCommerceRateModifier[i]);
+	}
+
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
 	{
 		pStream->Read((int*)&m_paTradeCities[iI].eOwner);
@@ -16473,6 +16545,12 @@ void CvCity::write(FDataStreamBase* pStream)
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		pStream->Write(NUM_YIELD_TYPES, m_ppaiBonusYield[iI]);
+	}
+
+	// 1SDAN
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		pStream->Write(NUM_COMMERCE_TYPES, m_ppaiStateReligionCommerceRateModifier[iI]);
 	}
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)

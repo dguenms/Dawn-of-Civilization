@@ -1282,7 +1282,8 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 			if (getCombatFirstStrikes() == 0)	// Leoreth: let cavalry with first strikes flank too (side effects??)
 			//if (true)
 			{
-				if (getDamage() + iAttackerDamage >= maxHitPoints() && GC.getGameINLINE().getSorenRandNum(100, "Withdrawal") < withdrawalProbability())
+				// 1SDAN: Withdraw if win chance is >= 90%
+				if (getDamage() + iAttackerDamage >= maxHitPoints() && (GC.getGameINLINE().getSorenRandNum(100, "Withdrawal") < withdrawalProbability()) || getCombatOdds(this, pDefender) >= 900)
 				{
 					flankingStrikeCombat(pPlot, iAttackerStrength, iAttackerFirepower, iAttackerKillOdds, iDefenderDamage, pDefender);
 
@@ -1318,7 +1319,8 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 		{
 			if (pDefender->getCombatFirstStrikes() == 0)
 			{
-				if (std::min(GC.getMAX_HIT_POINTS(), pDefender->getDamage() + iDefenderDamage) > combatLimitAgainst(pDefender))
+				// 1SDAN: Withdraw if win chance is >= 90%
+				if (std::min(GC.getMAX_HIT_POINTS(), pDefender->getDamage() + iDefenderDamage) > combatLimitAgainst(pDefender) || 1000 - getCombatOdds(this, pDefender) >= 900)
 				{
 					changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
 					pDefender->setDamage(combatLimitAgainst(pDefender), getOwnerINLINE());
