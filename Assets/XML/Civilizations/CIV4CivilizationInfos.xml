@@ -2739,8 +2739,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HUNGARY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
-			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
-			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
 			<Identifier>HUN</Identifier>
 			<StartingYear>895</StartingYear>
 			<LoadingTimes>
@@ -2807,7 +2807,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

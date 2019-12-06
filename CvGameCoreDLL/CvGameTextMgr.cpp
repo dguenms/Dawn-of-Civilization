@@ -7932,6 +7932,58 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(NEWLINE);
 		szHelpText.append(szDoubleModifiers.getCString());
 	}
+	
+	iDoubleModifierCount = 0;
+
+	//  Building Production (Leoreth)
+	for (iI = 0; iI < GC.getNumUnitClassInfos(); ++iI)
+	{
+		int iProductionModifier = GC.getCivicInfo(eCivic).getUnitProductionModifier(iI);
+
+		if (iProductionModifier != 0)
+		{
+			if (bPlayerContext && NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+			{
+				UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationUnits(iI);
+				if (NO_UNIT != eUnit)
+				{
+					if (iProductionModifier == 100)
+					{
+						if (iDoubleModifierCount > 0) szDoubleModifiers.append(",");
+						szDoubleModifiers.append(" ");
+						szDoubleModifiers.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_BUILDING", GC.getUnitInfo(eUnit).getTextKeyWide()));
+						iDoubleModifierCount++;
+					}
+					else
+					{
+						szHelpText.append(NEWLINE);
+						szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER", iProductionModifier, GC.getUnitInfo(eUnit).getTextKeyWide()));
+					}
+				}
+			}
+			else
+			{
+				if (iProductionModifier == 100)
+				{
+					if (iDoubleModifierCount > 0) szDoubleModifiers.append(",");
+					szDoubleModifiers.append(" ");
+					szDoubleModifiers.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_BUILDING", GC.getUnitClassInfo((UnitClassTypes)iI).getTextKeyWide()));
+					iDoubleModifierCount++;
+				}
+				else
+				{
+					szHelpText.append(NEWLINE);
+					szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER", iProductionModifier, GC.getUnitClassInfo((UnitClassTypes)iI).getTextKeyWide()));
+				}
+			}
+		}
+	}
+
+	if (iDoubleModifierCount > 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(szDoubleModifiers.getCString());
+	}
 
 	//	Feature Happiness
 	iLast = 0;
@@ -17297,6 +17349,15 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 
 		// Civic (Leoreth)
 		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getBuildingProductionModifier(eBuilding) + GET_PLAYER(city.getOwnerINLINE()).getBuildingsProductionModifier();
+		if (0 != iCivicMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));
+			szBuffer.append(NEWLINE);
+			iBaseModifier += iCivicMod;
+		}
+
+		// Civic (1SDAN)
+		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getUnitProductionModifier(eUnit) + GET_PLAYER(city.getOwnerINLINE()).getUnitsProductionModifier();
 		if (0 != iCivicMod)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));
