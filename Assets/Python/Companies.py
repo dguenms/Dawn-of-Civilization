@@ -12,13 +12,16 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
 
-tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
-tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
+tCompanyTechs = (iCurrency, iScholarship, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
+tCompaniesLimit = (10, 15, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings, iSweden] # Vikings too now
 
 tSilkRouteTL = (72, 46)
 tSilkRouteBR = (99, 52)
+
+tTransSaharanRouteTL = (48, 30)
+tTransSaharanRouteBR = (70, 30)
 
 tMiddleEastTL = (68, 38)
 tMiddleEastBR = (85, 46)
@@ -46,7 +49,7 @@ class Companies:
 
 
 	def checkCompany(self, iCompany, iGameTurn):
-		if (iCompany == iSilkRoute and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)) or (iCompany == iTextileIndustry and iGameTurn > getTurnForYear(1920)):
+		if (iCompany in [iSilkRoute, iTransSaharanRoute] and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)) or (iCompany == iTextileIndustry and iGameTurn > getTurnForYear(1920)):
 			iMaxCompanies = 0
 		else:
 			iMaxCompanies = tCompaniesLimit[iCompany]
@@ -131,8 +134,8 @@ class Companies:
 		if iCompany == iTradingCompany and owner.getCivics(iCivicsTerritory) == iColonialism:
 			iValue += 2
 			
-		# Merchant Trade increases likeliness for silk route
-		if iCompany == iSilkRoute and owner.getCivics(iCivicsEconomy) == iMerchantTrade:
+		# Merchant Trade increases likeliness for silk route and Trans Saharan Route
+		if iCompany in [iSilkRoute, iTransSaharanRoute] and owner.getCivics(iCivicsEconomy) == iMerchantTrade:
 			iValue += 2
 
 		# Free Enterprise increases likeliness for all companies
@@ -160,6 +163,9 @@ class Companies:
 			if tPlot in lMiddleEastExceptions:
 				return -1
 			if not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
+				return -1
+		if iCompany == iTransSaharanRoute:
+			if not self.isCityInArea(tPlot, tTransSaharanRouteTL, tTransSaharanRouteBR) and not tPLot in [(51, 41), (76, 30)]:
 				return -1
 		if iCompany == iTradingCompany:
 			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompanyBuilding) or city.isHasRealBuilding(iIberianTradingCompanyBuilding)):
@@ -189,6 +195,14 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
 			if iOwner == iKhazars and city.hasBuilding(utils.getUniqueBuilding(iOwner, iSmokehouse)): iValue += 1
+		
+		# various bonuses
+		if iCompany == iTransSaharanRoute:
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iForge)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if iOwner == iChad and city.hasBuilding(utils.getUniqueBuilding(iOwner, iLighthouse)): iValue += 1
 
 		elif iCompany == iTradingCompany:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
@@ -252,6 +266,11 @@ class Companies:
 						iTempValue += city.getNumBonuses(iBonus) * 4
 					elif iCompany == iSilkRoute:
 						if iBonus == iSilk:
+							iTempValue += city.getNumBonuses(iBonus) * 4
+						else:
+							iTempValue += city.getNumBonuses(iBonus) * 2
+					elif iCompany == iTransSaharanRoute:
+						if iBonus == iGold:
 							iTempValue += city.getNumBonuses(iBonus) * 4
 						else:
 							iTempValue += city.getNumBonuses(iBonus) * 2

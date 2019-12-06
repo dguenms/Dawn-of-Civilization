@@ -20,6 +20,7 @@ localText = CyTranslator()
 
 iRoad = 0
 #Orka: Silk Road road locations
+lSubSaharanRoute = [(52,35), (52,34), (52,33), (56, 30), (57, 30), (58, 30), (59, 30),  (60, 30), (61, 30), (62, 30), (63, 30), (65, 30)]
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
 lAustraliaCapes = [(106, 21), (107, 21), (107, 22), (108, 22), (109, 22), (109, 23), (110, 23), (111, 23), (112, 23), (113, 23), (114, 23), (115, 23), (115, 22), (116, 22), (117, 22)]
@@ -84,6 +85,11 @@ class Resources:
 		elif iGameTurn == getTurnForYear(-200): 
 			for i in range( len(lSilkRoute) ):
 				gc.getMap().plot(lSilkRoute[i][0], lSilkRoute[i][1]).setRouteType(iRoad)
+
+		#Orka: Silk Road
+		elif iGameTurn == getTurnForYear(300): 
+			for i in range( len(lSubSaharanRoute) ):
+				gc.getMap().plot(lSubSaharanRoute[i][0], lSubSaharanRoute[i][1]).setRouteType(iRoad)
 		
 		#Orka: Silk Road
 		elif iGameTurn == getTurnForYear(-100):

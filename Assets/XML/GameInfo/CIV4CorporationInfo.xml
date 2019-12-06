@@ -39,6 +39,41 @@
 			<Sound>AS2D_BUILD_MARKETPLACE</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
+			<Type>CORPORATION_TRANS_SAHARAN_ROUTE</Type>
+			<Description>TXT_KEY_CORPORATION_TRANS_SAHARAN_ROUTE</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_TRANS_SAHARAN_ROUTE_PEDIA</Civilopedia>
+			<TechPrereq>TECH_SCHOLARSHIP</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>0</iMaintenance>
+			<iHappiness>0</iHappiness>
+			<iHealth>0</iHealth>
+			<PrereqBonuses>
+				<BonusType>BONUS_CAMEL</BonusType>
+				<BonusType>BONUS_IVORY</BonusType>
+				<BonusType>BONUS_COTTON</BonusType>
+				<BonusType>BONUS_GOLD</BonusType>
+				<BonusType>BONUS_SHEEP</BonusType>
+				<BonusType>BONUS_WHEAT</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>150</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>0</iYieldProduced>
+				<iYieldProduced>50</iYieldProduced>
+			</YieldsProduced>
+			<Button>Art/Structures/Buildings/Zango/oasisbtn.dds</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_MARKETPLACE</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
 			<Type>CORPORATION_TRADING_COMPANY</Type>
 			<Description>TXT_KEY_CORPORATION_TRADING_COMPANY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_TRADING_COMPANY_PEDIA</Civilopedia>
