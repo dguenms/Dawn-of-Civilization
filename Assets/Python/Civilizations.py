@@ -216,7 +216,7 @@ iCivIsrael :	Techs([iAviation, iFission, iGlobalism], column=16),
 {
 iCivIndependent:Techs(column=5),
 iCivIndependent2:Techs(column=5),
-iCivNubia :	Techs([iSteel, iArchitecture], column=5),
+iCivNubia :	Techs([iSteel, iArchitecture, iScholarship], column=5),
 iCivPersia :	Techs([iNobility, iSteel, iFeudalism], column=5),
 iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[iNobility]),
 iCivEthiopia :	Techs([iFortification], column=6, exceptions=[iArtisanry]),

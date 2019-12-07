@@ -165,7 +165,7 @@ class Companies:
 			if not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
 				return -1
 		if iCompany == iTransSaharanRoute:
-			if not self.isCityInArea(tPlot, tTransSaharanRouteTL, tTransSaharanRouteBR) and not tPLot in [(51, 41), (76, 30)]:
+			if not self.isCityInArea(tPlot, tTransSaharanRouteTL, tTransSaharanRouteBR) and not tPlot in [(51, 41), (76, 30)]:
 				return -1
 		if iCompany == iTradingCompany:
 			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompanyBuilding) or city.isHasRealBuilding(iIberianTradingCompanyBuilding)):
@@ -188,6 +188,11 @@ class Companies:
 			if owner.getStateReligion() in [iProtestantism, iCatholicism, iOrthodoxy]:
 				iValue -= 1
 		
+		# religions
+		if iCompany == iTransSaharanRoute:
+			if owner.getStateReligion() in [iProtestantism, iCatholicism]:
+				iValue -= 1
+		
 		# various bonuses
 		if iCompany == iSilkRoute:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
@@ -196,7 +201,6 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
 			if iOwner == iKhazars and city.hasBuilding(utils.getUniqueBuilding(iOwner, iSmokehouse)): iValue += 1
 		
-		# various bonuses
 		if iCompany == iTransSaharanRoute:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iForge)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
