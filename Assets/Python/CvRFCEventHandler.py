@@ -509,7 +509,7 @@ class CvRFCEventHandler:
 			
 		utils.checkSlaves(iPlayer)
 			
-		if iPlayer in [iEgypt]:
+		if iPlayer in [iEgypt, iNubia]:
 			cnm.onRevolution(iPlayer)
 			
 	def onCityGrowth(self, argsList):
