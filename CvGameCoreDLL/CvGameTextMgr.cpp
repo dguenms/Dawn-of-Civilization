@@ -17357,7 +17357,7 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 
 		// Civic (1SDAN)
-		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getUnitProductionModifier(eUnit) + GET_PLAYER(city.getOwnerINLINE()).getUnitsProductionModifier();
+		iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getUnitProductionModifier(eUnit) + GET_PLAYER(city.getOwnerINLINE()).getUnitProductionModifier(eUnit);
 		if (0 != iCivicMod)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));
