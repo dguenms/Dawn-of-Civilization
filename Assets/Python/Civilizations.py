@@ -268,6 +268,7 @@ dTechPreferences = {
 		iDivination: 20,
 		iPhilosophy: 20,
 		iPriesthood: 20,
+		iScholarship: 40,
 		
 		iAlloys: -20,
 		iBloomery: -50,
@@ -297,6 +298,7 @@ dTechPreferences = {
 		iCeremony: -50,
 	},
 	iCivNubia : {
+		iScholarship: 40,
 		iSmelting: 20,
 		iBloomery: 20,
 		iMining: 20,

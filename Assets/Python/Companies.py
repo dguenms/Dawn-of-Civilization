@@ -153,6 +153,9 @@ class Companies:
 				iValue += 2
 			elif city.getRegionID() == rChina:
 				iValue -= 2
+		elif iCompany == iTransSaharanRoute:
+			if city.getRegionID() in lAfrica and city.getRegionID() != rSouthAfrica:
+				iValue += 2
 		elif iCompany == iSteelIndustry:
 			if iOwner == iAustralia:
 				iValue += 2
@@ -322,7 +325,8 @@ class Companies:
 		if iValue < 4: return -1
 		
 		# spread it out
-		iValue -= owner.countCorporations(iCompany)*2
+		if iCompany != iTransSaharanRoute:
+			iValue -= owner.countCorporations(iCompany)*2
 		
 		return iValue
 
