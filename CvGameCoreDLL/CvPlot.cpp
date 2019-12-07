@@ -7529,7 +7529,7 @@ void CvPlot::changeCulture(PlayerTypes eIndex, int iChange, bool bUpdate)
 {
 	if (0 != iChange)
 	{
-		setCulture(eIndex, (getCulture(eIndex) + iChange), bUpdate, true);
+		setCulture(eIndex, (getActualCulture(eIndex) + iChange), bUpdate, true);
 	}
 }
 
