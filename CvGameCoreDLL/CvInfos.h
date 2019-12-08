@@ -1458,7 +1458,6 @@ public:
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getBuildingProductionModifier(int i) const;	//Leoreth
-	int getUnitProductionModifier(int i) const;	//1SDAN
 	int getFeatureHappinessChanges(int i) const;				// Exposed to Python
 
 	int getDomainProductionModifier(int i) const; // Leoreth
@@ -1568,7 +1567,6 @@ protected:
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiBuildingProductionModifiers; // Leoreth
-	int* m_paiUnitProductionModifiers; // 1SDAN
 	int* m_paiFeatureHappinessChanges;
 	int* m_paiMinimalSpecialistCounts; // Leoreth
 

@@ -7589,15 +7589,9 @@ void CvPlot::setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bU
 
 		m_aiCulture[eIndex] = iNewValue;
 		m_iTotalCulture += (iNewValue - iOldValue);
-		FAssert(getActualCulture(eIndex) >= 0, "expected actual culture to be positive");
-		FAssert(getCulture(eIndex) >= 0, "expected culture to be positive");
-		FAssert(getActualTotalCulture() >= 0, "expected actual total culture to be positive");
-
-		// Leoreth: let's crowdsource debugging this
-		if (getActualCulture(eIndex) < 0)
-		{
-			logMajorError(CvWString::format(L"%s culture at (%d, %d) is negative: %d. Please report a save of the previous turn in the DoC forum.", GET_PLAYER(eIndex).getCivilizationAdjective(), getX(), getY(), getActualCulture(eIndex)), getX(), getY());
-		}
+		FAssertMsg(getActualCulture(eIndex) >= 0, "expected actual culture to be positive");
+		FAssertMsg(getCulture(eIndex) >= 0, "expected culture to be positive");
+		FAssertMsg(getActualTotalCulture() >= 0, "expected actual total culture to be positive");
 
 		if (bUpdate)
 		{
@@ -7618,7 +7612,7 @@ void CvPlot::changeCulture(PlayerTypes eIndex, int iChange, bool bUpdate)
 {
 	if (0 != iChange)
 	{
-		setCulture(eIndex, (getCulture(eIndex) + iChange), bUpdate, true);
+		setCulture(eIndex, (getActualCulture(eIndex) + iChange), bUpdate, true);
 	}
 }
 

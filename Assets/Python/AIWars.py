@@ -184,6 +184,12 @@ class AIWars:
 		if 2 * iNumMinorCities > len(lAreaCities): return False
 		
 		return True
+		
+	def declareWar(self, iPlayer, iTarget, iWarPlan):
+		if gc.getTeam(iPlayer).isVassal(iTarget):
+			gc.getTeam(iPlayer).setVassal(iTarget, False, False)
+			
+		gc.getTeam(iPlayer).declareWar(iTarget, True, iWarPlan)
 			
 	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 		if not gc.getPlayer(iPlayer).isAlive():
@@ -211,10 +217,10 @@ class AIWars:
 				lOwners.append(city.getOwner())
 				
 		if iPreferredTarget >= 0 and iPreferredTarget not in lOwners and gc.getPlayer(iPreferredTarget).isAlive():
-			gc.getTeam(iPlayer).declareWar(iPreferredTarget, True, iWarPlan)
+			self.declareWar(iPlayer, iPreferredTarget, iWarPlan)
 				
 		for iOwner in lOwners:
-			gc.getTeam(iPlayer).declareWar(iOwner, True, iWarPlan)
+			self.declareWar(iPlayer, iOwner, iWarPlan)
 			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_UP_CONQUESTS_TARGET", (gc.getPlayer(iPlayer).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 			
 		for city in lTargetCities:

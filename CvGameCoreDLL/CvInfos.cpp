@@ -5809,7 +5809,6 @@ m_piUnimprovedTileYield(NULL), // Leoreth
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiBuildingProductionModifiers(NULL), //Leoreth
-m_paiUnitProductionModifiers(NULL), //1SDAN
 m_paiFeatureHappinessChanges(NULL),
 m_paiDomainProductionModifiers(NULL), // Leoreth
 m_paiDomainExperienceModifiers(NULL), // Leoreth
@@ -5845,7 +5844,6 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); //Leoreth
-	SAFE_DELETE_ARRAY(m_paiUnitProductionModifiers); //1SDAN
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiDomainProductionModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers); // Leoreth
@@ -6368,14 +6366,6 @@ int CvCivicInfo::getBuildingProductionModifier(int i) const
 	return m_paiBuildingProductionModifiers ? m_paiBuildingProductionModifiers[i] : -1;
 }
 
-// 1SDAN
-int CvCivicInfo::getUnitProductionModifier(int i) const
-{
-	FAssertMsg(i < GC.getNumUnitClassInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_paiUnitProductionModifiers ? m_paiUnitProductionModifiers[i] : -1;
-}
-
 int CvCivicInfo::getFeatureHappinessChanges(int i) const
 {
 	FAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
@@ -6592,11 +6582,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_paiBuildingProductionModifiers = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers);
 
-	// 1SDAN
-	SAFE_DELETE_ARRAY(m_paiUnitProductionModifiers);
-	m_paiUnitProductionModifiers = new int[GC.getNumUnitClassInfos()];
-	stream->Read(GC.getNumUnitClassInfos(), m_paiUnitProductionModifiers);
-
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	m_paiFeatureHappinessChanges = new int[GC.getNumFeatureInfos()];
 	stream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
@@ -6742,7 +6727,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); //Leoreth
-	stream->Write(GC.getNumUnitClassInfos(), m_paiUnitProductionModifiers); //1SDAN 
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
 	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainProductionModifiers); // Leoreth
 	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers); // Leoreth
@@ -6965,9 +6949,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	// Leoreth
 	pXML->SetVariableListTagPair(&m_paiBuildingProductionModifiers, "BuildingProductionModifiers", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 	
-	// 1SDAN
-	pXML->SetVariableListTagPair(&m_paiUnitProductionModifiers, "UnitProductionModifiers", sizeof(GC.getUnitClassInfo((UnitClassTypes)0)), GC.getNumUnitClassInfos());
-
 	pXML->SetVariableListTagPair(&m_paiFeatureHappinessChanges, "FeatureHappinessChanges", sizeof(GC.getFeatureInfo((FeatureTypes)0)), GC.getNumFeatureInfos());
 
 	// Leoreth
