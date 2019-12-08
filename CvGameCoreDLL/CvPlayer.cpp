@@ -12739,7 +12739,7 @@ void CvPlayer::verifyCommerceRates(CommerceTypes eCommerce) const
 
 	if (iTotalCommerce != iCityCommerce)
 	{
-		warn(CvWString::format(L"Player %s %s (%d) and sum of city commerce (%d) do not match", getCivilizationShortDescription(), GC.getCommerceInfo(eCommerce).getText(), iTotalCommerce, iCityCommerce));
+		warn(CvWString::format(L"Player %s %s (%d) and sum of city %s (%d) do not match", getCivilizationShortDescription(), GC.getCommerceInfo(eCommerce).getText(), iTotalCommerce, GC.getCommerceInfo(eCommerce).getText(), iCityCommerce));
 	}
 }
 
