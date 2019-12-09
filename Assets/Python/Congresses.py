@@ -172,7 +172,7 @@ class Congress:
 
 	### Popups ###
 	
-	def startIntroductionEvent(self, bHumanInvited):
+	def startIntroductionEvent(self, bHumanInvited, bHumanInGlobalWar = False):
 		popup = CyPopupInfo()
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 		popup.setOnClickedPythonCallback("applyIntroductionEvent")
@@ -186,10 +186,11 @@ class Congress:
 			if bHumanInvited: 
 				if utils.getHumanID() in self.lWinners: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON", (self.sHostCityName, sInviteString))
 				elif utils.getHumanID() in self.lLosers: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST", (self.sHostCityName, sInviteString))
-				else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString))
+				else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString)) 
 			else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", (self.sHostCityName, sInviteString))
 		else:
 			if bHumanInvited: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
+			elif bHumanInGlobalWar: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI_WAR_EXCLUDED", (self.sHostCityName, sInviteString))
 			else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI", (self.sHostCityName, sInviteString))
 			
 		popup.setText(sText)
@@ -557,11 +558,16 @@ class Congress:
 				
 		# procedure continues from the makeClaimHuman event
 		
+		bHumanInGlobalWar = False
+		if isGlobalWar():
+			lAttackers, lDefenders = determineAlliances(data.iGlobalWarAttacker, data.iGlobalWarDefender)
+			bHumanInGlobalWar = utils.getHumanID() in lAttackers + lDefenders
+		
 		# unless the player isn't involved, in that case resolve from here
 		if utils.getHumanID() not in self.lInvites:
 			# since Congresses now can occur during autoplay, don't display these congresses to the player
 			if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
-				self.startIntroductionEvent(False)
+				self.startIntroductionEvent(False, bHumanInGlobalWar)
 			else:
 				# select claims first, then move on to voting directly since the player isn't involved
 				for iLoopPlayer in self.lInvites:
