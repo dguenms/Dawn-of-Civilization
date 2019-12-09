@@ -12,16 +12,34 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
 
-tCompanyTechs = (iCurrency, iScholarship, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
-tCompaniesLimit = (10, 15, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
+tCompanyTechs = (iRiding, iNavigation, iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
+tCompaniesLimit = (15, 15, 10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings, iSweden] # Vikings too now
 
 tSilkRouteTL = (72, 46)
 tSilkRouteBR = (99, 52)
 
+tCordobaTL = (50, 40)
+tCordobaBR = (54, 42)
+
+tYemenTL = (75, 30)
+tYemenBR = (78, 32)
+
 tTransSaharanRouteTL = (48, 30)
-tTransSaharanRouteBR = (70, 30)
+tTransSaharanRouteBR = (72, 39)
+
+tSpiceIndonesiaTL = (98, 24)
+tSpiceIndonesiaBR = (111, 36)
+
+tSpiceIndiaTL = (84, 27)
+tSpiceIndiaBR = (96, 38)
+
+tSpiceArabiaTL = (73, 30)
+tSpiceArabiaBR = (82, 35)
+
+tSpiceAfricaTL = (70, 16)
+tSpiceAfricaBR = (72, 23)
 
 tMiddleEastTL = (68, 38)
 tMiddleEastBR = (85, 46)
@@ -49,7 +67,7 @@ class Companies:
 
 
 	def checkCompany(self, iCompany, iGameTurn):
-		if (iCompany in [iSilkRoute, iTransSaharanRoute] and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)) or (iCompany == iTextileIndustry and iGameTurn > getTurnForYear(1920)):
+		if (iCompany in [iTransSaharanRoute, iSpiceRoute, iSilkRoute] and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)) or (iCompany == iTextileIndustry and iGameTurn > getTurnForYear(1920)):
 			iMaxCompanies = 0
 		else:
 			iMaxCompanies = tCompaniesLimit[iCompany]
@@ -134,8 +152,8 @@ class Companies:
 		if iCompany == iTradingCompany and owner.getCivics(iCivicsTerritory) == iColonialism:
 			iValue += 2
 			
-		# Merchant Trade increases likeliness for silk route and Trans Saharan Route
-		if iCompany in [iSilkRoute, iTransSaharanRoute] and owner.getCivics(iCivicsEconomy) == iMerchantTrade:
+		# Merchant Trade increases likeliness for trans saharan route, spice route and silk route
+		if iCompany in [iTransSaharanRoute, iSpiceRoute, iSilkRoute] and owner.getCivics(iCivicsEconomy) == iMerchantTrade:
 			iValue += 2
 
 		# Free Enterprise increases likeliness for all companies
@@ -153,6 +171,9 @@ class Companies:
 				iValue += 2
 			elif city.getRegionID() == rChina:
 				iValue -= 2
+		elif iCompany == iSpiceRoute:
+			if city.getRegionID() in [rIndochina, rArabia, lAfrica]:
+				iValue += 2
 		elif iCompany == iTransSaharanRoute:
 			if city.getRegionID() in lAfrica and city.getRegionID() != rSouthAfrica:
 				iValue += 2
@@ -165,10 +186,13 @@ class Companies:
 		if iCompany == iSilkRoute:
 			if tPlot in lMiddleEastExceptions:
 				return -1
-			if not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
+			if not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR) and not self.isCityInArea(tPlot, tYemenTL, tYemenBR):
 				return -1
 		if iCompany == iTransSaharanRoute:
-			if not self.isCityInArea(tPlot, tTransSaharanRouteTL, tTransSaharanRouteBR) and not tPlot in [(51, 41), (76, 30)]:
+			if not self.isCityInArea(tPlot, tTransSaharanRouteTL, tTransSaharanRouteBR) and not self.isCityInArea(tPlot, tCordobaBR, tCordobaBR) and not self.isCityInArea(tPlot, tYemenTL, tYemenBR):
+				return -1
+		if iCompany == iSpiceRoute:
+			if not self.isCityInArea(tPlot, tSpiceIndiaTL, tSpiceIndiaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not self.isCityInArea(tPlot, tSpiceArabiaTL, tSpiceArabiaBR) and not self.isCityInArea(tPlot, tSpiceAfricaTL, tSpiceAfricaBR):
 				return -1
 		if iCompany == iTradingCompany:
 			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompanyBuilding) or city.isHasRealBuilding(iIberianTradingCompanyBuilding)):
@@ -176,8 +200,8 @@ class Companies:
 			elif self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR):
 				iValue += 1
 		
-		# trade companies and fishing industry - coastal cities only
-		if iCompany in [iTradingCompany, iFishingIndustry]:
+		# spice route, trade companies, and fishing industry - coastal cities only
+		if iCompany in [iSpiceRoute, iTradingCompany, iFishingIndustry]:
 			if not city.isCoastal(20):
 				return -1
 
@@ -210,6 +234,13 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
 			if iOwner == iChad and city.hasBuilding(utils.getUniqueBuilding(iOwner, iLighthouse)): iValue += 1
+		
+		if iCompany == iSpiceRoute:
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iLighthouse)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWharf)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if iOwner == iOman and city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
 
 		elif iCompany == iTradingCompany:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
@@ -278,6 +309,11 @@ class Companies:
 							iTempValue += city.getNumBonuses(iBonus) * 2
 					elif iCompany == iTransSaharanRoute:
 						if iBonus == iGold:
+							iTempValue += city.getNumBonuses(iBonus) * 4
+						else:
+							iTempValue += city.getNumBonuses(iBonus) * 2
+					elif iCompany == iSpiceRoute:
+						if iBonus == iSpices:
 							iTempValue += city.getNumBonuses(iBonus) * 4
 						else:
 							iTempValue += city.getNumBonuses(iBonus) * 2

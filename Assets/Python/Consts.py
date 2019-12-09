@@ -1050,8 +1050,8 @@ lCatholicStart = [iSpain, iFrance, iEngland, iHolyRome, iPoland, iPortugal, iIta
 lProtestantStart = [iSweden, iNetherlands, iGermany, iAmerica, iAustralia, iBoers]
 
 # corporations
-iNumCorporations = 10
-(iSilkRoute, iTransSaharanRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCorporations)
+iNumCorporations = 11
+(iTransSaharanRoute, iSpiceRoute, iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCorporations)
 
 # initialise tech variables to unit indices from XML
 

@@ -26,6 +26,14 @@
 		<Spanish>Trans Saharan Route</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_SPICE_ROUTE</Tag>
+		<English>Spice Route</English>
+		<French>Spice Route</French>
+		<German>Spice Route</German>
+		<Italian>Spice Route</Italian>
+		<Spanish>Spice Route</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_TRADING_COMPANY</Tag>
 		<English>Trading Company</English>
 		<French>
