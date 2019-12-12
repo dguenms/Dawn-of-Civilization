@@ -12,6 +12,9 @@ import Areas
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
 
+import BugPath
+from datetime import date
+
 # globals
 gc = CyGlobalContext()
 
@@ -107,6 +110,11 @@ def triggerCollapse(iPlayer):
 
 def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
+	
+	epoch = "BC"
+	if gc.getGame().getGameTurnYear() > 0: epoch = "AD"
+	filePath = BugPath.join(BugPath.getRootDir(), 'Saves', 'single', 'collapses', '%s Collapse %d %s (turn %d) %s.CivBeyondSwordSave' % (gc.getPlayer(iPlayer).getCivilizationAdjective(0), abs(gc.getGame().getGameTurnYear()), epoch, gc.getGame().getGameTurn(), date.today()))
+	gc.getGame().saveGame(filePath.encode('ascii', 'xmlcharrefreplace'))
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
