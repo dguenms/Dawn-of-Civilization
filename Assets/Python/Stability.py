@@ -301,6 +301,9 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	
 	bVassal = (iMaster != -1)
 	
+	# no check if already scheduled for collapse
+	if data.players[iPlayer].iTurnsToCollapse >= 0: return
+	
 	# vassal checks are made for triggers of their master civ
 	if gc.getTeam(pPlayer.getTeam()).isAVassal() and not bVassal: return
 	
