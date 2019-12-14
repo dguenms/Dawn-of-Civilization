@@ -24663,6 +24663,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=27
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25480,7 +25481,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=27
-	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25910,17 +25910,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=29
-	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_DESERT
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=66,y=30
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=66,y=31
@@ -26317,13 +26315,12 @@ EndPlot
 BeginPlot
 	x=67,y=27
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=67,y=28
-	ImprovementType=IMPROVEMENT_FARM
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26336,7 +26333,6 @@ BeginPlot
 	x=67,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -26790,38 +26786,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=31
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginCity
-		CityOwner=3, (Makuria)
-		CityName=Dongola
-		CityPopulation=3
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_NUBIAN_DEFFUFAS
-		ReligionType=RELIGION_ORTHODOXY
-		Player3Culture=100, (Makuria)
-	EndCity
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -27275,6 +27239,7 @@ BeginPlot
 	x=69,y=30
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -27686,6 +27651,38 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=31
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginCity
+		CityOwner=3, (Makuria)
+		CityName=Dongola
+		CityPopulation=3
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_NUBIAN_DEFFUFAS
+		ReligionType=RELIGION_ORTHODOXY
+		Player3Culture=100, (Makuria)
+	EndCity
 	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2

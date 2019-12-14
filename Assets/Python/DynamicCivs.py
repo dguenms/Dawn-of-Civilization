@@ -552,7 +552,7 @@ dCapitals = {
 	iNigeria : ["Oyo", "Ife", "Njimi", "Igbo-Ukwu", "Wukari"],
 	iNetherlands : ["Brussels", "Antwerpen"],
 	iBoers : ["Pretoria", "Johannesburg", "Pietermaritzburg", "Durban"],
-	iNubia : ["Meroe"]
+	iNubia : ["Kerma"]
 }
 
 dCapitalLocations = findCapitalLocations(dCapitals)
@@ -1118,7 +1118,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_FUNJ"
 			
 		elif iReligion < 0 and pPlayer.isStateReligion():
-			if bEmpire:
+			if bEmpire or not isCapital(iPlayer, ["Kerma"]):
 				return "TXT_KEY_CIV_NUBIA_KUSH"
 			return capitalName(iPlayer)
 	
@@ -1909,7 +1909,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_NAME"
 			
-		if bEmpire or iReligion > 0 or not pPlayer.isStateReligion():
+		if bEmpire or iReligion > 0 or not pPlayer.isStateReligion() or not isCapital(iPlayer, ["Kerma"]):
 			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iChina:

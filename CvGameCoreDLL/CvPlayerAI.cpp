@@ -2934,6 +2934,15 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
 
+	// 1SDAN: Egypt favours Kerma over Meroe
+	if (getID() == EGYPT && pCity->getX() == 66 && pCity->getY() == 31 && pCity->getOwner() == NUBIA)
+	{
+		if (GC.getMapINLINE().plot(68, 29)->isCity() && GC.getMapINLINE().plot(68, 29)->getPlotCity()->getOwner() == NUBIA)
+		{
+			return AI_targetCityValue(GC.getMapINLINE().plot(68, 29)->getPlotCity(), bRandomize, bIgnoreAttackers) + 2;
+		}
+	}
+
 	iValue = 1;
 
 	iValue += ((pCity->getPopulation() * (50 + pCity->calculateCulturePercent(getID()))) / 100);
@@ -2966,7 +2975,11 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 
 	if (pCity->isHolyCity())
 	{
-		iValue += 2;
+		// 1SDAN: Discourage Egypt from attacking Jerusalem, it currently does not attack any other nation 
+		if (!(getID() == EGYPT && pCity->isHolyCity(JUDAISM)))
+		{
+			iValue += 2;
+		}
 	}
 
 	// Leoreth: even more emphasis on city of own state religion, for more wars about Rome especially
@@ -3050,6 +3063,17 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (getID() == AMERICA && pCity->getRegionID() == REGION_CANADA)
 	{
 		iValue /= 3;
+	}
+
+	// 1SDAN: Encourage Egypt to attack Nubia and vice versa
+	if (getID() == EGYPT && pCity->getOwner() == NUBIA)
+	{
+		iValue += 2;
+	}
+	
+	if (getID() == NUBIA && pCity->getOwner() == EGYPT)
+	{
+		iValue += 2;
 	}
 
 	if (!bIgnoreAttackers)
