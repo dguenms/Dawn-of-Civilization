@@ -436,7 +436,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if isPossible(iNubia, 2):
 			iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
 			GreatestAfricanCity = getBestCityInRegion(lAfrica, cityValue)[0]
-			bGreatestAfricanCityIsSennar = cnm.getFoundName(GreatestAfricanCity.getOwner(), GreatestAfricanCity.plot()) == 'Sennar'
+			bGreatestAfricanCityIsSennar = cnm.getFoundName(GreatestAfricanCity.getOwner(), (GreatestAfricanCity.plot().getX(), GreatestAfricanCity.plot().getY())) == 'Sennar'
 			if iBestIslamicCommerceOutput == iNubia and bGreatestAfricanCityIsSennar:
 				win(iNubia, 2)
 				
@@ -4148,7 +4148,7 @@ def getBestCityInRegion(lRegions, function):
 	return lCities[0]
 	
 def cityValue(city):
-	return ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
+	return ((city.getCulture(city.getOwner()) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
 				+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
 	
 def getCivsWithHoldingsInRegion(lRegions):
@@ -4520,7 +4520,7 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iBestIslamicCommerceOutput = getBestPlayer(iNubia, playerCommerceOutput, getReligionPlayers([iIslam]))
 			GreatestAfricanCity = getBestCityInRegion(lAfrica, cityValue)[0]
-			bGreatestAfricanCityIsSennar = cnm.getFoundName(GreatestAfricanCity.getOwner(), GreatestAfricanCity.plot()) == 'Sennar'
+			bGreatestAfricanCityIsSennar = cnm.getFoundName(GreatestAfricanCity.getOwner(), (GreatestAfricanCity.plot().getX(), GreatestAfricanCity.plot().getY())) == 'Sennar'
 			aHelp.append(getIcon(iBestIslamicCommerceOutput == iNubia) + localText.getText("TXT_KEY_VICTORY_MOST_AFRICAN_COMMERCE_CIV", (str(gc.getPlayer(iBestIslamicCommerceOutput).getCivilizationShortDescriptionKey()),)) + ' ' + getIcon(bGreatestAfricanCityIsSennar) + localText.getText("TXT_KEY_VICTORY_GREATEST_AFRICAN_CITY", (str(GreatestAfricanCity.getName()),)))
 			
 	elif iPlayer == iChina:

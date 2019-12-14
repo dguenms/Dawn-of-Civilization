@@ -814,15 +814,6 @@
 		<element type="BuildingProductionModifier" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<!-- Leoreth end -->
-	<!-- 1SDAN start -->
-	<ElementType name="UnitProductionModifier" content="eltOnly">
-		<element type="UnitType"/>
-		<element type="iProductionModifier"/>
-	</ElementType>
-	<ElementType name="UnitProductionModifiers" content="eltOnly">
-		<element type="UnitProductionModifier" minOccurs="0" maxOccurs="*"/>
-	</ElementType>
-	<!-- 1SDAN end -->
 	<ElementType name="FeatureType" content="textOnly"/>
 	<ElementType name="FeatureHappinessChange" content="eltOnly">
 		<element type="FeatureType"/>
@@ -968,7 +959,6 @@
 		<element type="BuildingHappinessChanges" minOccurs="0"/>
 		<element type="BuildingHealthChanges" minOccurs="0"/>
 		<element type="BuildingProductionModifiers" minOccurs="0"/> <!-- Leoreth -->
-		<element type="UnitProductionModifiers" minOccurs="0"/> <!-- 1SDAN -->
 		<element type="FeatureHappinessChanges" minOccurs="0"/>
 		<element type="ImprovementYieldChanges" minOccurs="0"/>
 		<element type="DomainProductionModifiers" minOccurs="0"/> <!-- Leoreth -->

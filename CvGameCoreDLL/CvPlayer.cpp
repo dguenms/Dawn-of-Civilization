@@ -82,7 +82,6 @@ CvPlayer::CvPlayer()
 	m_paiExtraBuildingHappiness = NULL;
 	m_paiExtraBuildingHealth = NULL;
 	m_paiBuildingProductionModifiers = NULL; // Leoreth
-	m_paiUnitProductionModifiers = NULL; // 1SDAN
 	m_paiFeatureHappiness = NULL;
 	m_paiUnitClassCount = NULL;
 	m_paiUnitClassMaking = NULL;
@@ -360,7 +359,6 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHappiness);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHealth);
 	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); // Leoreth
-	SAFE_DELETE_ARRAY(m_paiUnitProductionModifiers); // 1SDAN
 	SAFE_DELETE_ARRAY(m_paiFeatureHappiness);
 	SAFE_DELETE_ARRAY(m_paiUnitClassCount);
 	SAFE_DELETE_ARRAY(m_paiUnitClassMaking);
@@ -727,8 +725,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_paiExtraBuildingHealth = new int [GC.getNumBuildingInfos()];
 		FAssertMsg(m_paiBuildingProductionModifiers==NULL, "about to leak memory, CvPlayer::m_paiBuildingProductionModifiers");
 		m_paiBuildingProductionModifiers = new int[GC.getNumBuildingInfos()];
-		FAssertMsg(m_paiUnitProductionModifiers==NULL, "about to leak memory, CvPlayer::m_paiUnitProductionModifiers");
-		m_paiUnitProductionModifiers = new int[GC.getNumUnitInfos()];
 		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 		{
 			m_paiFreeBuildingCount[iI] = 0;
@@ -752,7 +748,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_paiUnitClassCount[iI] = 0;
 			m_paiUnitClassMaking[iI] = 0;
-			m_paiUnitProductionModifiers[iI] = 0;
 		}
 
 		FAssertMsg(m_paiBuildingClassCount==NULL, "about to leak memory, CvPlayer::m_paiBuildingClassCount");
@@ -6783,9 +6778,6 @@ int CvPlayer::getProductionModifier(UnitTypes eUnit) const
 	{
 		iMultiplier += getMilitaryProductionModifier();
 	}
-
-	// 1SDAN: civics
-	iMultiplier += getUnitProductionModifier(eUnit);
 
 	// Leoreth: civic modifier for specific domains
 	if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
@@ -13294,25 +13286,6 @@ void CvPlayer::changeBuildingProductionModifier(BuildingTypes eIndex, int iChang
 	}
 }
 
-// 1SDAN
-int CvPlayer::getUnitProductionModifier(UnitTypes eIndex) const
-{
-	return m_paiUnitProductionModifiers[eIndex];
-}
-
-void CvPlayer::changeUnitProductionModifier(UnitTypes eIndex, int iChange)
-{
-	if (iChange != 0)
-	{
-		m_paiUnitProductionModifiers[eIndex] += iChange;
-
-		if (getTeam() == GC.getGameINLINE().getActiveTeam())
-		{
-			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
-		}
-	}
-}
-
 int CvPlayer::getFeatureHappiness(FeatureTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
@@ -18272,17 +18245,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 			changeBuildingProductionModifier(eOurBuilding, (GC.getCivicInfo(eCivic).getBuildingProductionModifier(iI) * iChange)); // Leoreth
 		}
 	}
-
-	//1SDAN
-	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
-	{
-		UnitTypes eOurUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
-		if (NO_UNIT != eOurUnit)
-		{
-			changeUnitProductionModifier(eOurUnit, (GC.getCivicInfo(eCivic).getUnitProductionModifier(iI) * iChange));
-		}
-	}
-
 	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
 	{
 		changeFeatureHappiness(((FeatureTypes)iI), (GC.getCivicInfo(eCivic).getFeatureHappinessChanges(iI) * iChange));
@@ -18754,7 +18716,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiBuildingProductionModifiers); // Leoreth
-	pStream->Read(GC.getNumUnitInfos(), m_paiUnitProductionModifiers); // Leoreth
 	pStream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassMaking);
@@ -19303,8 +19264,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
-	pStream->Write(GC.getNumBuildingInfos(), m_paiBuildingProductionModifiers); // Leoreth
-	pStream->Write(GC.getNumUnitInfos(), m_paiUnitProductionModifiers); // Leoreth
+	pStream->Write(GC.getNumBuildingInfos(), m_paiBuildingProductionModifiers); // Le
 	pStream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassMaking);

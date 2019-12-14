@@ -10635,22 +10635,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 	}
 
-	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
-	{
-		if (kCivic.getUnitProductionModifier(iI) != 0)
-		{
-			UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
-
-			if (eUnit != NO_UNIT && getNumCities() > 0 && canTrain(eUnit))
-			{
-				UnitAITypes eUnitAIType = (UnitAITypes)GC.getUnitInfo(eUnit).getDefaultUnitAIType();
-				CvArea* pUnitArea = (CvArea*)getCapitalCity()->getArea();
-				int iUnitValue = AI_unitValue(eUnit, eUnitAIType, pUnitArea);
-				iValue += (kCivic.getUnitProductionModifier(iI) * iUnitValue) / 4;
-			}
-		}
-	}
-
 	for (iI = 0; iI < GC.getNumFeatureInfos(); iI++)
 	{
 		iHappiness = kCivic.getFeatureHappinessChanges(iI);

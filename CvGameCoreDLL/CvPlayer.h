@@ -877,10 +877,6 @@ public:
 	int getBuildingProductionModifier(BuildingTypes eIndex) const;
 	void changeBuildingProductionModifier(BuildingTypes eIndex, int iChange);
 	
-	// 1SDAN
-	int getUnitProductionModifier(UnitTypes eIndex) const;
-	void changeUnitProductionModifier(UnitTypes eIndex, int iChange);
-
 	int getFeatureHappiness(FeatureTypes eIndex) const;																								// Exposed to Python
 	void changeFeatureHappiness(FeatureTypes eIndex, int iChange);
 
@@ -1611,7 +1607,6 @@ protected:
 	int* m_paiExtraBuildingHappiness;
 	int* m_paiExtraBuildingHealth;
 	int* m_paiBuildingProductionModifiers; // Leoreth
-	int* m_paiUnitProductionModifiers; // 1SDAN
 	int** m_paiExtraBuildingYield;
 	int** m_paiExtraBuildingCommerce;
 	int* m_paiFeatureHappiness;
