@@ -2287,6 +2287,7 @@ class RiseAndFall:
 	def initBetrayal( self ):
 		iFlipPlayer = data.iNewCivFlip
 		if not gc.getPlayer(iFlipPlayer).isAlive() or not gc.getTeam(iFlipPlayer).isAtWar(utils.getHumanID()):
+			data.iBetrayalTurns = 0
 			return
 	
 		iHuman = utils.getHumanID()
