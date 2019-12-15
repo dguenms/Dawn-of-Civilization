@@ -10143,6 +10143,7 @@ void CvCity::changeBonusYieldRateModifier(YieldTypes eIndex, int iChange)
 	{
 		m_aiBonusYieldRateModifier[eIndex] = (m_aiBonusYieldRateModifier[eIndex] + iChange);
 		FAssert(getYieldRate(eIndex) >= 0);
+		FAssert(getBonusYieldRateModifier(eIndex) < 1000);
 
 		GET_PLAYER(getOwnerINLINE()).invalidateYieldRankCache(eIndex);
 
