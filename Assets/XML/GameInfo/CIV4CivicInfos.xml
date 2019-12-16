@@ -114,6 +114,12 @@
 						<iYield>-1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+					<ImprovementYields>
+						<iYield>-1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 			<MinimalSpecialists>
 				<MinimalSpecialist>

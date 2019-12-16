@@ -358,7 +358,7 @@ CIVICS
     * Despotism: removed happiness from Palace and Monument
     * Monarchy: double production for Jail
 	* State Party: now requires Macroeconomics
-    * Republic: allows at least one Artist, Merchant, Scientist or Statesman slot, removed hurrying units with gold
+    * Republic: allows at least one Artist, Merchant, Scientist or Statesman slot, removed hurrying units with gold, -1 food for Paddy Field
     * Democracy: removed free specialist, added +100% great people rate
     * Citizenship: increased maintenance to high, removed happiness in largest cities, removed double production for Jail and Forge, added double production of Theatre, added hurrying units with gold
     * Vassalage: +2 happiness in largest cities, removed happiness from Castle
