@@ -1782,6 +1782,7 @@ public:
 
 	bool isTeamShare() const;				// Exposed to Python
 	bool isWater() const;				// Exposed to Python
+	bool isOverrideWaterGraphics() const;
 	bool isRiver() const;				// Exposed to Python
 	bool isPower() const;				// Exposed to Python
 	bool isDirtyPower() const;				// Exposed to Python
@@ -2014,6 +2015,7 @@ protected:
 
 	bool m_bTeamShare;
 	bool m_bWater;
+	bool m_bOverrideWaterGraphics;
 	bool m_bRiver;
 	bool m_bPower;
 	bool m_bDirtyPower;

@@ -65,8 +65,8 @@ class UniquePowers:
 		if iGameTurn >= getTurnForYear(tBirth[iKhazars]) and pKhazars.isAlive():
 			self.doJewishKingdom()
 
-		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
-			self.indonesianUP()
+		#if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
+		#	self.indonesianUP()
 			
 		if iGameTurn >= getTurnForYear(tBirth[iPhilippines]) and pPhilippines.isAlive():
 			utils.doPhilippineEmbassy()
@@ -786,3 +786,13 @@ class UniquePowers:
 		pUnitInfo = gc.getUnitInfo(iUnitType)
 		if pUnitInfo.getGreatPeoples(iSpecialistGreatGeneral) and iPlayer == iKhazars:
 			utils.makeUnit(iKhagan, iKhazars, (city.getX(), city.getY()), 1)
+			
+	def onCorporationSpread(self, iCorporation, iOwner, pSpreadCity):
+		if iCorporation == iSpiceRoute:
+			iValue = pSpreadCity.getCorporationCommerceByCorporation(CommerceTypes.COMMERCE_GOLD, iCorporation)
+			iGold = iValue * 25
+			if iGold >= 200:
+				iGold = 200
+			gc.getPlayer(iIndonesia).changeGold(iGold)
+			if utils.getHumanID() == iIndonesia:
+				CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

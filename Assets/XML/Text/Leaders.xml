@@ -1425,4 +1425,20 @@
 		<Italian>Dunama Dabbalemi</Italian>
 		<Spanish>Dunama Dabbalemi</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ABLAI_KHAN</Tag>
+		<English>Ablai Khan</English>
+		<French>Ablai Khan</French>
+		<German>Ablai Khan</German>
+		<Italian>Ablai Khan</Italian>
+		<Spanish>Ablai Khan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_NURSULTAN</Tag>
+		<English>Nursultan Nazarbayev</English>
+		<French>Nursultan Nazarbayev</French>
+		<German>Nursultan Nazarbayev</German>
+		<Italian>Nursultan Nazarbayev</Italian>
+		<Spanish>Nursultan Nazarbayev</Spanish>
+	</TEXT>
 </Civ4GameText>

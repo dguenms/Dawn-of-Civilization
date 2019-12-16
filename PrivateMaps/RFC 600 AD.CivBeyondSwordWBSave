@@ -329,7 +329,15 @@ BeginPlayer
 	Team=12
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=300
+	StateReligion=RELIGION_HINDUISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -462,7 +470,7 @@ BeginPlayer
 	LeaderType=LEADER_HAYAM_WURUK
 	CivType=CIVILIZATION_INDONESIA
 	PlayableCiv=1
-	StartingGold=300
+	StartingGold=400
 	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
@@ -34310,22 +34318,22 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=65, (Independent)
+		CityOwner=66, (Independent)
 		CityName=Lavapuri
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player65Culture=50, (Independent)
+		Player66Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -34678,16 +34686,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=65, (Independent)
+		CityOwner=66, (Independent2)
 		CityName=Mumbai
 		CityPopulation=3
 		BuildingType=BUILDING_STABLE
@@ -34700,7 +34708,7 @@ BeginPlot
 		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player65Culture=50, (Independent)
+		Player66Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -35495,16 +35503,16 @@ BeginPlot
 		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=66, (Independent2)
+		CityOwner=65, (Independent)
 		CityName=Vijayanagara
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35512,7 +35520,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player66Culture=10, (Independent2)
+		Player65Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -35554,19 +35562,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=65, (Independent)
+		CityOwner=66, (Independent2)
 		CityName=Bhopal
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -35574,7 +35582,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player65Culture=50, (Independent)
+		Player66Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -35928,6 +35936,7 @@ EndPlot
 BeginPlot
 	x=91,y=28
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -35938,27 +35947,26 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=12, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
+		UnitType=UNIT_SKIRMISHER, UnitOwner=12, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_WORKER, UnitOwner=12, (Tamils)
 	EndUnit
 	BeginCity
-		CityOwner=65, (Independent)
+		CityOwner=12, (Tamils)
 		CityName=Madurai
-		CityPopulation=2
+		CityPopulation=5
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player65Culture=10, (Independent)
+		Player12Culture=100, (Tamils)
 	EndCity
 EndPlot
 BeginPlot
@@ -36372,6 +36380,7 @@ EndPlot
 BeginPlot
 	x=92,y=27
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -36402,19 +36411,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_ARCHER, UnitOwner=12, (Tamils)
 	EndUnit
 	BeginCity
-		CityOwner=65, (Independent)
+		CityOwner=12, (Tamils)
 		CityName=Kanchipuram
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -36423,7 +36423,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player65Culture=50, (Independent)
+		Player12Culture=50, (Tamils)
 	EndCity
 EndPlot
 BeginPlot
@@ -36813,6 +36813,7 @@ EndPlot
 BeginPlot
 	x=93,y=33
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -37244,16 +37245,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=66, (Independent2)
+		UnitType=UNIT_ARCHER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=66, (Independent2)
+		CityOwner=65, (Independent)
 		CityName=Pataliputra
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -37274,7 +37275,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
-		Player66Culture=50, (Independent2)
+		Player65Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -37618,19 +37619,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=66, (Independent2)
+		UnitType=UNIT_INDIAN_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=66, (Independent2)
+		CityOwner=65, (Independent)
 		CityName=Kolkata
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
@@ -37639,7 +37640,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player66Culture=50, (Independent2)
+		Player65Culture=50, (Independent)
 	EndCity
 EndPlot
 BeginPlot

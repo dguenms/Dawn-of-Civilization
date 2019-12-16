@@ -38,6 +38,7 @@ iPrussia = iGermany
 iSouthAfrica = iBoers
 iMyanmar = iBurma
 iSudan = iNubia
+iKazakh = iKhazars
 
 iNumMajorPlayers = iNumPlayers
 iNumActivePlayers = iNumPlayers
@@ -72,6 +73,7 @@ iCivCongo = iCivKongo
 iCivAztecs = iCivAztec
 iCivCeltia = iCivCelt
 iCivSouthAfrica = iCivBoers
+iCivKazakhs = iCivKhazars
 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iKhazars, iKievanRus, iNetherlands, iItaly, iPoland, iPortugal, iGermany, iSweden, iHungary],  #Euros
@@ -544,7 +546,7 @@ tResurrectionIntervals = (
 [],		#Tibet
 [(1900, 2020)], #Indonesia
 [(1948, 2020)], #Burma
-[],				#Khazars
+[(1465, 1781), (1990, 2020)], #Khazars
 [(1380, 1522), (1960, 2020)], #Chad
 [(1000, 2020)],	#Moors
 [(1700, 2020)], #Spain

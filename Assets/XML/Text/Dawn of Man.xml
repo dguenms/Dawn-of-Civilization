@@ -582,6 +582,10 @@
 		<Spanish>It is the year 300 BC. With the development of their Sangam literature, the Tamil culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_TAMILS_600AD</Tag>
+		<English>It is the year 600 AD...</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_TAMILS_1700AD</Tag>
 		<English>It is the year 1700 AD. Since the decline of the Vijayanagara Empire in the 16th century, the Kingdom of Mysore has been the dominant power in the southern Deccan, resisting Mughal expansion. With the appearance of the Marathas and the British, the power structure in India has shifted, requiring Mysore to defend its sovereignty again.</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. Depuis le d&#233;clin du royaume de Vijayan&#226;gara au 16e si&#232;cle, le royaume de Mysore, qui a r&#233;sist&#233; &#224; l'expansion moghole, est la principale puissance dans le sud du Deccan. L'&#233;mergence des Marathes et l'apparition des Britanniques ont toutefois boulevers&#233; la structure politique de l'Inde. Mysore devra &#224; nouveau d&#233;fendre sa souverainet&#233;.</French>
@@ -712,6 +716,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KHAZARIA</Tag>
 		<English>It is the year 650 AD. Following the breakup of the Western Turkic Khaganate, a group of Turkic peoples head west to found a new Khaganate. Positioned astride a major artery of the Silk Road, word of the tolerant Khazar Khaganate will soon spread far and wide, attracting a variety of peoples from disenfranchised faiths.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KAZAKH</Tag>
+		<English>It is the year 1700 AD...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_NUBIA</Tag>

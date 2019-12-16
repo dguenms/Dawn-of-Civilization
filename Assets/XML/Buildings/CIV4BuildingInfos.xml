@@ -10936,12 +10936,14 @@
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
+			<bWater>1</bWater>
+			<bOverrideWaterGraphics>1</bOverrideWaterGraphics>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>200</iAIWeight>
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinAreaSize>10</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>15</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -11066,6 +11068,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
+			<bOverrideWaterGraphics>1</bOverrideWaterGraphics>
 			<bNukeImmune>1</bNukeImmune>
 			<iAIWeight>250</iAIWeight>
 			<iCost>200</iCost>

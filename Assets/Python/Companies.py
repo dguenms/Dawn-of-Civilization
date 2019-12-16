@@ -26,7 +26,7 @@ tCordobaBR = (54, 42)
 tYemenTL = (75, 30)
 tYemenBR = (78, 32)
 
-tTransSaharanRouteTL = (48, 30)
+tTransSaharanRouteTL = (48, 29)
 tTransSaharanRouteBR = (72, 39)
 
 tSpiceIndonesiaTL = (98, 24)
@@ -172,10 +172,10 @@ class Companies:
 			elif city.getRegionID() == rChina:
 				iValue -= 2
 		elif iCompany == iSpiceRoute:
-			if city.getRegionID() in [rIndochina, rArabia, lAfrica]:
+			if city.getRegionID() in [rIndonesia, rIndochina, rArabia, rDeccan]:
 				iValue += 2
 		elif iCompany == iTransSaharanRoute:
-			if city.getRegionID() in lAfrica and city.getRegionID() != rSouthAfrica:
+			if city.getRegionID() in lAfrica and city.getRegionID() not in  [rSouthAfrica, rMaghreb]:
 				iValue += 2
 		elif iCompany == iSteelIndustry:
 			if iOwner == iAustralia:
@@ -209,6 +209,11 @@ class Companies:
 		if iCompany == iSilkRoute:
 			if city.isCoastal(20):
 				iValue -= 1
+
+		# bonus for trans saharan route if coastal
+		if iCompany == iTransSaharanRoute:
+			if city.isCoastal(20):
+				iValue += 1
 		
 		# religions
 		if iCompany == iSilkRoute:

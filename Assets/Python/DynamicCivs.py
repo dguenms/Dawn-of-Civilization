@@ -1150,8 +1150,12 @@ def specificName(iPlayer):
 		if iEra >= iRenaissance:
 			return "TXT_KEY_CIV_TAMILS_MYSORE"
 			
+		if isCapital(iPlayer, ["Madurai", "Thiruvananthapuram"]):
+			return capitalName(iPlayer)
+			
 		if iEra >= iMedieval:
 			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
+			
 			
 	elif iPlayer == iEthiopia:
 		if not gc.getGame().isReligionFounded(iIslam):
@@ -1217,6 +1221,10 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_VIKING_SHORT_DESC"
 		
 	elif iPlayer == iKhazars:
+		if data.players[iPlayer].iResurrections > 1:
+			return "TXT_KEY_CIV_KHAZARIA_KAZAKHSTAN"
+		if bResurrected:
+			return "TXT_KEY_CIV_KHAZARIA_KAZAKH"
 		if bEmpire: 
 			return "TXT_KEY_CIV_KHAZARIA_CUMANIA"
 		
@@ -1301,7 +1309,7 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
 	
 	elif iPlayer == iKievanRus:
-		if data.players[iPlayer].iResurrections == 0 and not isCapital(iPlayer, ["Kiev"]):
+		if not bResurrected and not isCapital(iPlayer, ["Kiev"]):
 			return capitalName(iPlayer)
 			
 	elif iPlayer == iRussia:
@@ -1582,6 +1590,8 @@ def specificAdjective(iPlayer):
 			return gc.getPlayer(iRome).getCivilizationAdjective(0)
 			
 	elif iPlayer == iKhazars:
+		if bResurrected:
+			return "TXT_KEY_CIV_KHAZARIA_KAZAKH"
 		if bEmpire: 
 			return "TXT_KEY_CIV_KHAZARIA_CUMAN"
 			
@@ -1985,7 +1995,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iTamils:
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
-	
+			
+		if isCapital(iPlayer, ["Madurai", "Thiruvananthapuram"]):
+			return "TXT_KEY_CIV_TAMILS_PANDYA_OF"
+		
 		if iEra >= iMedieval:
 			return "TXT_KEY_KINGDOM_OF"
 		
@@ -2052,6 +2065,8 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
 	elif iPlayer == iKhazars:
+		if bReborn:
+			return "TXT_KEY_CIV_KHAZARIA_KHANATE"
 		if bEmpire:
 			return "TXT_KEY_CIV_KHAZARIA_CONFEDERATION"
 				
@@ -2690,5 +2705,11 @@ def leaderName(iPlayer):
 			return "TXT_KEY_LEADER_GEORGIOS"
 		if pPlayer.getStateReligion() == iIslam:
 			return "TXT_KEY_LEADER_BADI"
+			
+	elif iPlayer == iKazakh:
+		if data.players[iPlayer].iResurrections > 1:
+			return "TXT_KEY_LEADER_NURSULTAN"
+		if data.players[iPlayer].iResurrections > 0:
+			return "TXT_KEY_ABLAI_KHAN"
 				
 	return None

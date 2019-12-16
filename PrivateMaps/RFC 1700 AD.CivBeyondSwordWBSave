@@ -85,7 +85,7 @@ BeginTeam
 	TeamID=24, (Burma)
 EndTeam
 BeginTeam
-	TeamID=25, (Khazars)
+	TeamID=25, (Kazakhs)
 EndTeam
 BeginTeam
 	TeamID=26, (Bornu)
@@ -499,8 +499,20 @@ EndPlayer
 BeginPlayer
 	Team=25
 	LeaderType=LEADER_BULAN
+	LeaderName=TXT_KEY_LEADER_ABLAI_KHAN
+	CivDesc=TXT_KEY_CIV_KHAZARIA_KAZAKH_DESC
+	CivShortDesc=TXT_KEY_CIV_KHAZARIA_KAZAKH
+	CivAdjective=TXT_KEY_CIV_KHAZARIA_KAZAKH
 	CivType=CIVILIZATION_KHAZARS
-	PlayableCiv=0
+	PlayableCiv=1
+	StartingGold=50
+	StateReligion=RELIGION_ISLAM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_ELECTIVE
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -516,6 +528,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
+	AttitudePlayer=20, AttitudeExtra=-2, (Turks)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -37447,6 +37460,24 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginCity
+		CityOwner=25, (Kazakhs)
+		CityName=Saraishyq
+		CityPopulation=4
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		Player25Culture=50, (Kazakhs)
+	EndCity
 	PlotType=2
 	TeamReveal=51,66,
 EndPlot
@@ -39761,6 +39792,71 @@ EndPlot
 BeginPlot
 	x=84,y=50
 	TerrainType=TERRAIN_DESERT
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LANCER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginCity
+		CityOwner=25, (Kazakhs)
+		CityName=Turkistan
+		CityPopulation=6
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_BATH
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		Player25Culture=100, (Kazakhs)
+	EndCity
 	PlotType=2
 	TeamReveal=65,
 EndPlot
@@ -42095,6 +42191,18 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Kazakhs)
+	EndUnit
+	BeginCity
+		CityOwner=25, (Kazakhs)
+		CityName=Ust'-Kamenogorsk
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		Player25Culture=25, (Kazakhs)
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot

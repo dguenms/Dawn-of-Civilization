@@ -7389,6 +7389,7 @@ m_iVoteSourceType(NO_VOTESOURCE),
 m_fVisibilityPriority(0.0f),
 m_bTeamShare(false),
 m_bWater(false),
+m_bOverrideWaterGraphics(false),
 m_bRiver(false),
 m_bPower(false),
 m_bDirtyPower(false),
@@ -8080,6 +8081,11 @@ bool CvBuildingInfo::isTeamShare() const
 bool CvBuildingInfo::isWater() const
 {
 	return m_bWater;
+}
+
+bool CvBuildingInfo::isOverrideWaterGraphics() const
+{
+	return m_bOverrideWaterGraphics;
 }
 
 bool CvBuildingInfo::isRiver() const
@@ -8840,6 +8846,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 
 	stream->Read(&m_bTeamShare);
 	stream->Read(&m_bWater);
+	stream->Read(&m_bOverrideWaterGraphics);
 	stream->Read(&m_bRiver);
 	stream->Read(&m_bPower);
 	stream->Read(&m_bDirtyPower);
@@ -9221,6 +9228,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 
 	stream->Write(m_bTeamShare);
 	stream->Write(m_bWater);
+	stream->Write(m_bOverrideWaterGraphics);
 	stream->Write(m_bRiver);
 	stream->Write(m_bPower);
 	stream->Write(m_bDirtyPower);
@@ -9503,6 +9511,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iGreatPeopleRateChange, "iGreatPeopleRateChange");
 	pXML->GetChildXmlValByName(&m_bTeamShare, "bTeamShare");
 	pXML->GetChildXmlValByName(&m_bWater, "bWater");
+	pXML->GetChildXmlValByName(&m_bOverrideWaterGraphics, "bOverrideWaterGraphics");
 	pXML->GetChildXmlValByName(&m_bRiver, "bRiver");
 	pXML->GetChildXmlValByName(&m_bPower, "bPower");
 	pXML->GetChildXmlValByName(&m_bDirtyPower, "bDirtyPower");
