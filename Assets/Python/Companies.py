@@ -26,7 +26,7 @@ tCordobaBR = (54, 42)
 tYemenTL = (75, 30)
 tYemenBR = (78, 32)
 
-tTransSaharanRouteTL = (48, 29)
+tTransSaharanRouteTL = (48, 28)
 tTransSaharanRouteBR = (72, 39)
 
 tSpiceIndonesiaTL = (98, 24)
@@ -34,9 +34,6 @@ tSpiceIndonesiaBR = (111, 36)
 
 tSpiceIndiaTL = (84, 27)
 tSpiceIndiaBR = (96, 38)
-
-tSpiceArabiaTL = (73, 30)
-tSpiceArabiaBR = (82, 35)
 
 tSpiceAfricaTL = (70, 13)
 tSpiceAfricaBR = (76, 23)
