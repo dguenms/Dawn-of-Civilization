@@ -455,8 +455,9 @@ def canTriggerBabyBoom(argsList):
 
 	for iLoopTeam in range(gc.getMAX_CIV_TEAMS()):
 		if iLoopTeam != player.getTeam():
-			if team.AI_getAtPeaceCounter(iLoopTeam) == 1:
-				return true
+			if not team.isMinorCiv():
+				if team.AI_getAtPeaceCounter(iLoopTeam) == 1:
+					return true
 
 	return false
 

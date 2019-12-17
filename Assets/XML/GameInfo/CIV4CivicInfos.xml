@@ -137,7 +137,7 @@
 			<Description>TXT_KEY_CIVIC_STATE_PARTY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_STATE_PARTY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_STATE_PARTY_STRATEGY</Strategy>
-			<TechPrereq>TECH_SOCIAL_SERVICES</TechPrereq>
+			<TechPrereq>TECH_MACROECONOMICS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/State Party.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
@@ -673,7 +673,7 @@
 			<Description>TXT_KEY_CIVIC_CENTRAL_PLANNING</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CENTRAL_PLANNING_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Strategy>
-			<TechPrereq>TECH_MACROECONOMICS</TechPrereq>
+			<TechPrereq>TECH_LABOUR_UNIONS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/State_Property.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
@@ -734,7 +734,7 @@
 			<Description>TXT_KEY_CIVIC_PUBLIC_WELFARE</Description>
 			<Civilopedia>TXT_KEY_CIVIC_PUBLIC_WELFARE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Strategy>
-			<TechPrereq>TECH_LABOUR_UNIONS</TechPrereq>
+			<TechPrereq>TECH_SOCIAL_SERVICES</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Public Welfare.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>

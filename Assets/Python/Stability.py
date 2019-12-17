@@ -14,6 +14,9 @@ import Victory as vic
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
 
+import BugPath
+from datetime import date
+
 # globals
 gc = CyGlobalContext()
 
@@ -109,6 +112,11 @@ def triggerCollapse(iPlayer):
 
 def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
+	
+	epoch = "BC"
+	if gc.getGame().getGameTurnYear() > 0: epoch = "AD"
+	filePath = BugPath.join(BugPath.getRootDir(), 'Saves', 'single', 'collapses', '%s Collapse %d %s (turn %d) %s.CivBeyondSwordSave' % (gc.getPlayer(iPlayer).getCivilizationAdjective(0), abs(gc.getGame().getGameTurnYear()), epoch, gc.getGame().getGameTurn(), date.today()))
+	gc.getGame().saveGame(filePath.encode('ascii', 'xmlcharrefreplace'))
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
@@ -306,6 +314,9 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 	iGameTurn = gc.getGame().getGameTurn()
 	
 	bVassal = (iMaster != -1)
+	
+	# no check if already scheduled for collapse
+	if data.players[iPlayer].iTurnsToCollapse >= 0: return
 	
 	# vassal checks are made for triggers of their master civ
 	if gc.getTeam(pPlayer.getTeam()).isAVassal() and not bVassal: return
