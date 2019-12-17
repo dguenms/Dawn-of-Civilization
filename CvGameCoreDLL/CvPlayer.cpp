@@ -12829,6 +12829,8 @@ void CvPlayer::changeCommerceRate(CommerceTypes eIndex, int iChange)
 		m_aiCommerceRate[eIndex] += iChange;
 		FAssert(getCommerceRate(eIndex) >= 0);
 
+		verifyCommerceRates(eIndex);
+
 		if (getID() == GC.getGameINLINE().getActivePlayer())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
@@ -12849,9 +12851,11 @@ void CvPlayer::verifyCommerceRates(CommerceTypes eCommerce) const
 
 	int iTotalCommerce = getCommerceRate(eCommerce);
 
+	FAssert(iTotalCommerce == iCityCommerce);
+
 	if (iTotalCommerce != iCityCommerce)
 	{
-		warn(CvWString::format(L"Player commerce (%d) and sum of city commerce (%d) do not match", iTotalCommerce, iCityCommerce));
+		warn(CvWString::format(L"Player %s %s (%d) and sum of city %s (%d) do not match", getCivilizationShortDescription(), GC.getCommerceInfo(eCommerce).getText(), iTotalCommerce, GC.getCommerceInfo(eCommerce).getText(), iCityCommerce));
 	}
 }
 

@@ -1267,6 +1267,7 @@ void CvCity::doTurn()
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 		{
 			FAssert(getBuildingCommerce((CommerceTypes)iI) >= 0);
+			int iSpecialistCommerce = getSpecialistCommerce((CommerceTypes)iI);
 			FAssert(getSpecialistCommerce((CommerceTypes)iI) >= 0);
 			FAssert(getReligionCommerce((CommerceTypes)iI) >= 0);
 			FAssert(getCorporationCommerce((CommerceTypes)iI) >= 0);
@@ -9688,7 +9689,7 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 		if (GC.getGameINLINE().isFinalInitialized())
 		{
 			// Leoreth: culture level specialist effects
-			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+			/*for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 			{
 				CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo((SpecialistTypes)iI);
 
@@ -9708,7 +9709,7 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 
 					changeBaseGreatPeopleRate(iSpecialistCount * (kSpecialist.getCultureLevelGreatPeopleRateChange(eNewValue) - kSpecialist.getCultureLevelGreatPeopleRateChange(eOldValue)));
 				}
-			}
+			}*/
 
 			if (isHasBuildingEffect((BuildingTypes)IMAGE_OF_THE_WORLD_SQUARE))
 			{
@@ -10282,6 +10283,7 @@ void CvCity::changeBonusYieldRateModifier(YieldTypes eIndex, int iChange)
 	{
 		m_aiBonusYieldRateModifier[eIndex] = (m_aiBonusYieldRateModifier[eIndex] + iChange);
 		FAssert(getYieldRate(eIndex) >= 0);
+		FAssert(getBonusYieldRateModifier(eIndex) < 1000);
 
 		GET_PLAYER(getOwnerINLINE()).invalidateYieldRankCache(eIndex);
 

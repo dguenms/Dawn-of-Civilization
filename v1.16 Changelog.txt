@@ -357,7 +357,8 @@ CIVICS
 * Changed civics:
     * Despotism: removed happiness from Palace and Monument
     * Monarchy: double production for Jail
-    * Republic: allows at least one Artist, Merchant, Scientist or Statesman slot, removed hurrying units with gold
+	* State Party: now requires Macroeconomics
+    * Republic: allows at least one Artist, Merchant, Scientist or Statesman slot, removed hurrying units with gold, -1 food for Paddy Field
     * Democracy: removed free specialist, added +100% great people rate
     * Citizenship: increased maintenance to high, removed happiness in largest cities, removed double production for Jail and Forge, added double production of Theatre, added hurrying units with gold
     * Vassalage: +2 happiness in largest cities, removed happiness from Castle
@@ -365,7 +366,8 @@ CIVICS
     * Ideology renamed to Revolutionism: added faster expiration of temporary unhappiness effects
     * Constitution: removed great people rate modifier, added +1 free specialist, added double production for Courthouse
     * Totalitarianism: no resistance on city conquest
-    * Central Planning: added double production for Hydro Plant, Electrical Grid and Automated Factory
+	* Public Welfare: now requires Social Services
+    * Central Planning: now requires Labour Unions, added double production for Hydro Plant, Electrical Grid and Automated Factory
     * Secularism: added double production for Observatory and Supercomputer
     * Isolationism: added +50% espionage in capital
 
