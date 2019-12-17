@@ -793,6 +793,8 @@ class UniquePowers:
 			iGold = iValue * 25
 			if iGold >= 200:
 				iGold = 200
+			if iGold < 25:
+				iGold = 25
 			gc.getPlayer(iIndonesia).changeGold(iGold)
 			if utils.getHumanID() == iIndonesia:
 				CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
