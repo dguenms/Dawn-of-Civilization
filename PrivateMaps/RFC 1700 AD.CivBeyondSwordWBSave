@@ -26576,7 +26576,6 @@ BeginPlot
 	x=59,y=29
 	isNOfRiver
 	RiverWEDirection=1
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=43,65,66,

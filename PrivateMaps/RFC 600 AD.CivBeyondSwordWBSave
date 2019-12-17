@@ -19972,6 +19972,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=36
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -20345,22 +20346,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=32
+	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=52,y=33
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=52,y=34
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=52,y=35
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -22262,6 +22267,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -22631,6 +22637,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -23002,6 +23009,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -23386,6 +23394,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -23855,6 +23864,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -24276,6 +24286,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -24686,6 +24697,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -25089,6 +25101,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -25504,6 +25517,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=30
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -25926,6 +25940,7 @@ BeginPlot
 	x=66,y=30
 	RiverNSDirection=0
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2

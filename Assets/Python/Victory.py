@@ -305,7 +305,7 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i1700AD:
-		for iPlayer in [iMoors, iChad, iNubia, iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand, iKhmer, iKazakhs]:
+		for iPlayer in [iMoors, iChad, iNubia, iChina, iBurma, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand, iKhmer, iKazakh]:
 			loseAll(iPlayer)
 			
 		win(iPersia, 0)
