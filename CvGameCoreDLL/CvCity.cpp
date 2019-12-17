@@ -11566,6 +11566,26 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			}
 		}
 
+		// Leoreth: Slaves stationed in cities along the Trans Saharan Route count
+		if (eCorporation == (CorporationTypes)GC.getInfoTypeForString("CORPORATION_TRANS_SAHARAN_ROUTE"))
+		{
+			CvUnit* pUnit;
+			int iSlaves = 0;
+			for (int i = 0; i < plot()->getNumUnits(); i++)
+			{
+				pUnit = plot()->getUnitByIndex(i);
+
+				if (pUnit->getOwner() == getOwner() && pUnit->getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+				{
+					iSlaves++;
+				}
+			}
+			if (iSlaves)
+			{
+				iNumBonuses += iSlaves / 2;
+			}
+		}
+
 		if (iNumBonuses > 0)
 		{
 			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;

@@ -20,10 +20,8 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_CAMEL</BonusType>
 				<BonusType>BONUS_IVORY</BonusType>
-				<BonusType>BONUS_COTTON</BonusType>
 				<BonusType>BONUS_GOLD</BonusType>
 				<BonusType>BONUS_SHEEP</BonusType>
-				<BonusType>BONUS_WHEAT</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -54,8 +52,6 @@
 			<iHealth>0</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_SPICES</BonusType>
-				<BonusType>BONUS_GOLD</BonusType>
-				<BonusType>BONUS_GEMS</BonusType>
 				<BonusType>BONUS_INCENSE</BonusType>
 				<BonusType>BONUS_SUGAR</BonusType>
 				<BonusType>BONUS_BANANA</BonusType>

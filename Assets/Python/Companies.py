@@ -38,8 +38,10 @@ tSpiceIndiaBR = (96, 38)
 tSpiceArabiaTL = (73, 30)
 tSpiceArabiaBR = (82, 35)
 
-tSpiceAfricaTL = (70, 16)
-tSpiceAfricaBR = (72, 23)
+tSpiceAfricaTL = (70, 13)
+tSpiceAfricaBR = (76, 23)
+
+lSpiceAfricaExceptions = [(70, 15), (70, 14)]
 
 tMiddleEastTL = (68, 38)
 tMiddleEastBR = (85, 46)
@@ -172,7 +174,7 @@ class Companies:
 			elif city.getRegionID() == rChina:
 				iValue -= 2
 		elif iCompany == iSpiceRoute:
-			if city.getRegionID() in [rIndonesia, rIndochina, rArabia, rDeccan]:
+			if city.getRegionID() in [rIndonesia, rIndochina, rDeccan]:
 				iValue += 2
 		elif iCompany == iTransSaharanRoute:
 			if city.getRegionID() in lAfrica and city.getRegionID() not in  [rSouthAfrica, rMaghreb]:
@@ -192,7 +194,9 @@ class Companies:
 			if not self.isCityInArea(tPlot, tTransSaharanRouteTL, tTransSaharanRouteBR) and not self.isCityInArea(tPlot, tCordobaBR, tCordobaBR) and not self.isCityInArea(tPlot, tYemenTL, tYemenBR):
 				return -1
 		if iCompany == iSpiceRoute:
-			if not self.isCityInArea(tPlot, tSpiceIndiaTL, tSpiceIndiaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not self.isCityInArea(tPlot, tSpiceArabiaTL, tSpiceArabiaBR) and not self.isCityInArea(tPlot, tSpiceAfricaTL, tSpiceAfricaBR):
+			if tPlot in lSpiceAfricaExceptions:
+				return -1
+			if not self.isCityInArea(tPlot, tSpiceIndiaTL, tSpiceIndiaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not self.isCityInArea(tPlot, tSpiceAfricaTL, tSpiceAfricaBR):
 				return -1
 		if iCompany == iTradingCompany:
 			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompanyBuilding) or city.isHasRealBuilding(iIberianTradingCompanyBuilding)):
@@ -245,7 +249,7 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWharf)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
-			if iOwner == iOman and city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if iOwner == iSwahili and city.hasBuilding(utils.getUniqueBuilding(iOwner, iMonument)): iValue += 1
 
 		elif iCompany == iTradingCompany:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
@@ -298,6 +302,15 @@ class Companies:
 		# resources
 		iTempValue = 0
 		bFound = False
+		if iCompany == iTransSaharanRoute:
+			iSlaves = 0
+			for iUnit in range(city.plot().getNumUnits()):
+				unit = city.plot().getUnit(iUnit)
+				if unit.getUnitClassType() == gc.getUnitInfo(iSlave).getUnitClassType():
+					iSlaves += 1
+			if iSlaves > 0:
+				bFound = True
+				iTempValue += iSlaves / 2
 		for i in range(6):
 			iBonus = gc.getCorporationInfo(iCompany).getPrereqBonus(i)
 			if iBonus > -1:
