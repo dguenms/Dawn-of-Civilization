@@ -3267,7 +3267,7 @@ bool CvCity::isFoodProduction() const
 			break;
 
 		case ORDER_CONSTRUCT:
-			return (!isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction()) || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
+			return (!isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction()) || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS));
 			break;
 
 		case ORDER_CREATE:
@@ -3577,7 +3577,7 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 
 	iProductionModifier = getProductionModifier(eBuilding);
 
-	bFoodProduction = (!isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction()) || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX));
+	bFoodProduction = (!isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isBuildingFoodProduction()) || (isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS));
 
 	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, false));
 }
@@ -4022,7 +4022,7 @@ void CvCity::hurry(HurryTypes eHurry)
 	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
 
 	// Leoreth: Pyramids negate unhappiness scaling
-	//if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+	//if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX))
 	//	iHurryAngerModifier = 1;
 
 	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
@@ -6130,7 +6130,7 @@ int CvCity::foodDifference(bool bBottom) const
 		return 0;
 	}
 
-	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX))
 	{
 		iDifference = std::min(0, (getYieldRate(YIELD_FOOD) - foodConsumption()));
 	}
@@ -18280,7 +18280,7 @@ bool CvCity::isAutoRaze() const
 	}
 
 	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
-	if (getPreviousOwner() == NUBIA && getX_INLINE() == 66 && getY_INLINE() == 31 && !isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
+	if (getOriginalOwner() == NUBIA && getX_INLINE() == 66 && getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
 	{
 		return true;
 	}

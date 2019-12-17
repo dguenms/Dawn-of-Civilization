@@ -11826,7 +11826,7 @@
 			<iMaxWarRand>200</iMaxWarRand>
 			<iMaxWarNearbyPowerRatio>90</iMaxWarNearbyPowerRatio>
 			<iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
-			<iMaxWarMinAdjacentLandPercent>3</iMaxWarMinAdjacentLandPercent>
+			<iMaxWarMinAdjacentLandPercent>2</iMaxWarMinAdjacentLandPercent>
 			<iLimitedWarRand>200</iLimitedWarRand>
 			<iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
 			<iDogpileWarRand>100</iDogpileWarRand>
@@ -21845,7 +21845,7 @@
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
 			<iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
-			<iCloseBordersAttitudeChange>-2</iCloseBordersAttitudeChange>
+			<iCloseBordersAttitudeChange>-3</iCloseBordersAttitudeChange>
 			<iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
 			<iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
 			<iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
@@ -21893,8 +21893,12 @@
 			<Traits/>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -22250,6 +22254,14 @@
 			<UnitAIWeightModifiers>
 				<UnitAIWeightModifier>
 					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
 					<iWeightModifier>100</iWeightModifier>
 				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>
@@ -87639,10 +87651,10 @@
 			<Description>TXT_KEY_LEADER_PIYE</Description>
 			<Civilopedia>TXT_KEY_LEADER_TAHARQA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_TAHARQA</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
-			<iPeaceWeightRand>3</iPeaceWeightRand>
+			<iPeaceWeightRand>0</iPeaceWeightRand>
 			<iWarmongerRespect>2</iWarmongerRespect>
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
@@ -87650,11 +87662,11 @@
 			<iTechTradeKnownPercent>60</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
-			<iMaxWarRand>100</iMaxWarRand>
+			<iMaxWarRand>50</iMaxWarRand>
 			<iMaxWarNearbyPowerRatio>120</iMaxWarNearbyPowerRatio>
-			<iMaxWarDistantPowerRatio>100</iMaxWarDistantPowerRatio>
+			<iMaxWarDistantPowerRatio>70</iMaxWarDistantPowerRatio>
 			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
-			<iLimitedWarRand>40</iLimitedWarRand>
+			<iLimitedWarRand>50</iLimitedWarRand>
 			<iLimitedWarPowerRatio>120</iLimitedWarPowerRatio>
 			<iDogpileWarRand>50</iDogpileWarRand>
 			<iMakePeaceRand>40</iMakePeaceRand>
@@ -87664,10 +87676,10 @@
 			<iRazeCityProb>0</iRazeCityProb>
 			<iBuildUnitProb>40</iBuildUnitProb>
 			<iBaseAttackOddsChange>6</iBaseAttackOddsChange>
-			<iAttackOddsChangeRand>10</iAttackOddsChangeRand>
-			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
-			<iBetterRankDifferenceAttitudeChange>1</iBetterRankDifferenceAttitudeChange>
-			<iCloseBordersAttitudeChange>-3</iCloseBordersAttitudeChange>
+			<iAttackOddsChangeRand>3</iAttackOddsChangeRand>
+			<iWorseRankDifferenceAttitudeChange>1</iWorseRankDifferenceAttitudeChange>
+			<iBetterRankDifferenceAttitudeChange>-1</iBetterRankDifferenceAttitudeChange>
+			<iCloseBordersAttitudeChange>-4</iCloseBordersAttitudeChange>
 			<iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
 			<iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
 			<iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
@@ -88066,6 +88078,10 @@
 					<UnitAIType>UNITAI_COUNTER</UnitAIType>
 					<iWeightModifier>100</iWeightModifier>
 				</UnitAIWeightModifier>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<iWeightModifier>-100</iWeightModifier>
+				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>
 			<ImprovementWeightModifiers>
 				<ImprovementWeightModifier>
@@ -88074,6 +88090,10 @@
 				</ImprovementWeightModifier>
 				<ImprovementWeightModifier>
 					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
+					<iWeightModifier>20</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 					<iWeightModifier>20</iWeightModifier>
 				</ImprovementWeightModifier>
 			</ImprovementWeightModifiers>

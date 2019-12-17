@@ -192,7 +192,7 @@ iOttomans : (68, 45),	# Istanbul
 
 # new capital locations on respawn
 dRespawnCapitals = {
-iNubia : (68, 31),	# Dongola
+iNubia : (70, 31),	# Dongola
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
