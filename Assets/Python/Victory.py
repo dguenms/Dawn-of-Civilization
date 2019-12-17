@@ -1455,9 +1455,9 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1500):
 			expire(iMali, 1)
 			
-		# third goal: have 5000 gold in 1500 AD and 15000 gold in 1700 AD
+		# third goal: have 7500 gold in 1500 AD and 15000 gold in 1700 AD
 		if iGameTurn == getTurnForYear(1500):
-			if pMali.getGold() < utils.getTurns(5000):
+			if pMali.getGold() < utils.getTurns(7500):
 				lose(iMali, 2)
 				
 		if iGameTurn == getTurnForYear(1700) and isPossible(iMali, 2):
@@ -5090,7 +5090,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bSankore) + localText.getText("TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE", ()) + ' ' + getIcon(iProphets >= 1) + localText.getText("TXT_KEY_VICTORY_SANKORE_PROPHETS", (iProphets, 1)))
 		elif iGoal == 2:
 			iTreasury = pMali.getGold()
-			iThreshold = 5000
+			iThreshold = 7500
 			if gc.getGame().getGameTurn() > getTurnForYear(1500): iThreshold = 15000
 			aHelp.append(getIcon(iTreasury >= utils.getTurns(iThreshold)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(iThreshold))))
 		
