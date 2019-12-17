@@ -193,7 +193,7 @@ class Companies:
 		if iCompany == iSpiceRoute:
 			if tPlot in lSpiceAfricaExceptions:
 				return -1
-			if not self.isCityInArea(tPlot, tSpiceIndiaTL, tSpiceIndiaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not self.isCityInArea(tPlot, tSpiceAfricaTL, tSpiceAfricaBR):
+			if not self.isCityInArea(tPlot, tSpiceIndiaTL, tSpiceIndiaBR) and not self.isCityInArea(tPlot, tSpiceIndonesiaTL, tSpiceIndonesiaBR) and not self.isCityInArea(tPlot, tSpiceAfricaTL, tSpiceAfricaBR):
 				return -1
 		if iCompany == iTradingCompany:
 			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompanyBuilding) or city.isHasRealBuilding(iIberianTradingCompanyBuilding)):
