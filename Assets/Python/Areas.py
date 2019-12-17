@@ -173,6 +173,7 @@ iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
+iKazakh : (84, 52), # Astana
 iMaya : (27, 29),	# Bogota (Colombia)
 iTamils : (90, 30),	# Vijayanagara
 iChad : (64, 28), #N'Djamena
@@ -196,6 +197,7 @@ iNubia : (70, 31),	# Dongola
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
+iKazakh : (84, 50), # Sozak, Turkistan
 iEthiopia : (72, 28),	# Addis Ababa
 iJapan : (116, 46),	# Tokyo
 #iVikings : (63, 59),	# Stockholm
@@ -289,6 +291,7 @@ iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south
 iOttomans : 	((67, 41), 	(76, 48)), 	# 2 more west
 iArgentina : 	((29, 3), 	(35, 13)), 	# includes Chile
 iBoers :	((63, 10),	(69, 17)),	# More of South Africa
+iKazakh :	((79, 50),	(89, 54)),
 }
 
 dBirthAreaExceptions = {
@@ -412,6 +415,7 @@ iByzantium :	((67, 44),	(69, 46)),
 iJapan : 	((111, 41),	(116, 49)),
 iTurks : 	((79, 37),	(85, 44)),
 iArabia :	((73, 30),	(82, 36)),
+iKazakh :	((79, 49), (89, 54)),
 iMoors : 	((51, 37),	(56, 39)),
 iSpain : 	((49, 40),	(55, 46)),
 iHolyRome : 	((61, 46),	(66, 51)),
@@ -463,6 +467,7 @@ dChangedCoreAreaExceptions = {
 iChina : [(99, 46), (99, 47), (106, 47)],
 iGreece : [(64, 45), (65, 45), (66, 46)],
 iMaya : [(30, 26), (30, 27), (30, 28), (30, 29), (31, 26), (31, 27)], # Colombia
+iKazakh : [(79, 52), (80, 52), (81, 52), (82, 52), (79, 53), (80, 53), (81, 53), (82, 53), (79, 54), (80, 54), (81, 54), (82, 54)], # Khazar Respawn
 iSpain : [(49, 41), (49, 42), (49, 43), (49, 44), (50, 42), (50, 43), (50, 44), (55, 46)],
 iHolyRome : [(61, 51), (64, 51), (65, 51), (66, 51)],
 iItaly : [(63, 46), (63, 47)],

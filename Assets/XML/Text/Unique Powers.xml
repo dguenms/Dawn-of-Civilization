@@ -475,11 +475,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INO</Tag>
-		<English>Additional gold from foreign ships passing through your core</English>
-		<French>Les navires &#233;trangers qui passent par votre c&#156;ur historique rapportent de l'or additionnel</French>
-		<German>Zus&#228;tzliches Gold von ausl&#228;ndischen Schiffen, die unser Kerngebiet passieren</German>
-		<Italian>Additional gold from foreign ships passing through your core</Italian>
-		<Spanish>Additional gold from foreign ships passing through your core</Spanish>
+		<English>Additional gold from the spread of the spice route.</English>
+		<French>Additional gold from the spread of the spice route.</French>
+		<German>Additional gold from the spread of the spice route.</German>
+		<Italian>Additional gold from the spread of the spice route.</Italian>
+		<Spanish>Additional gold from the spread of the spice route.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA_TITLE</Tag>
@@ -1227,11 +1227,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_YEM</Tag>
-		<English>25% of Commerce from Trade Routes is converted to Food</English>
-		<French>25% of Commerce from Trade Routes is converted to Food</French>
-		<German>25% of Commerce from Trade Routes is converted to Food</German>
-		<Italian>25% of Commerce from Trade Routes is converted to Food</Italian>
-		<Spanish>25% of Commerce from Trade Routes is converted to Food</Spanish>
+		<English>25% of Commerce from trade routes is converted to Food</English>
+		<French>25% of Commerce from trade routes is converted to Food</French>
+		<German>25% of Commerce from trade routes is converted to Food</German>
+		<Italian>25% of Commerce from trade routes is converted to Food</Italian>
+		<Spanish>25% of Commerce from trade routes is converted to Food</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHA_TITLE</Tag>

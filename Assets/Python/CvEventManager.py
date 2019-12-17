@@ -20,6 +20,7 @@ import sys
 import CvAdvisorUtils
 import CvTechChooser
 import CvEspionageAdvisor
+import UniquePowers
 
 #Rhye
 from Consts import *
@@ -39,6 +40,7 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
 PyInfo = PyHelpers.PyInfo
+up = UniquePowers.UniquePowers()
 
 
 # globals
@@ -836,6 +838,8 @@ class CvEventManager(object):
 		'Corporation Has Spread to a City'
 		iCorporation, iOwner, pSpreadCity = argsList
 		player = PyPlayer(iOwner)
+		
+		up.onCorporationSpread(iCorporation, iOwner, pSpreadCity)
 		if (not self.__LOG_RELIGIONSPREAD):
 			return
 		CvUtil.pyPrint('%s has spread to Player %d Civilization %s city of %s'

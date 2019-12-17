@@ -55,7 +55,7 @@ class CvCorporationScreen:
 
 		self.LEFT_EDGE_TEXT = 10
 		self.X_CORPORATION_START = 65 # edead (155) # Leoreth (70)
-		self.DX_CORPORATION = 100 # edead (116) # Leoreth (113)
+		self.DX_CORPORATION = 113 # edead (116) # Leoreth (113)
 		self.Y_CORPORATION = 70 # edead (35)
 		self.Y_GREAT_PERSON = 90
 		self.Y_BONUSES = 112 # edead (77)
@@ -63,10 +63,13 @@ class CvCorporationScreen:
 		self.Y_HEADQUARTERS = 142
 		self.Y_CORPORATION_NAME = 58
 
+		self.X_SCROLLABLE_CORPORATION_AREA = 0
+		self.Y_SCROLLABLE_CORPORATION_AREA = 0
 		self.X_CORPORATION_AREA = 45
 		self.Y_CORPORATION_AREA = 84
 		self.W_CORPORATION_AREA = 934
 		self.H_CORPORATION_AREA = 180
+		self.H_SCROLL_OFFSET = 20
 
 		self.X_CITY1_AREA = 45
 		self.X_CITY2_AREA = 522
@@ -128,6 +131,7 @@ class CvCorporationScreen:
 
 		screen.addDDSGFC(self.BACKGROUND_ID, ArtFileMgr.getInterfaceArtInfo("MAINMENU_SLIDESHOW_LOAD").getPath(), 0, 0, self.W_SCREEN, self.H_SCREEN, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 		screen.addPanel( "TechTopPanel", u"", u"", True, False, 0, 0, self.W_SCREEN, 55, PanelStyles.PANEL_STYLE_TOPBAR )
+		screen.addScrollPanel( "CorporationList", u"", self.X_CORPORATION_AREA, self.Y_CORPORATION_AREA, self.W_CORPORATION_AREA, self.H_CORPORATION_AREA, PanelStyles.PANEL_STYLE_EXTERNAL )
 		screen.addPanel( "TechBottomPanel", u"", u"", True, False, 0, 713, self.W_SCREEN, 55, PanelStyles.PANEL_STYLE_BOTTOMBAR )
 
 		screen.showWindowBackground(False)
@@ -156,15 +160,15 @@ class CvCorporationScreen:
 		screen = self.getScreen()
 				
 		# Put everything on a scrollable area
-		szArea = self.CORPORATION_PANEL_ID
-		screen.addPanel(szArea, "", "", False, True, self.X_CORPORATION_AREA, self.Y_CORPORATION_AREA, self.W_CORPORATION_AREA, self.H_CORPORATION_AREA, PanelStyles.PANEL_STYLE_MAIN)
+		szArea = "CorporationList"
+		#screen.addPanel(szArea, "", "", False, True, self.X_CORPORATION_AREA, self.Y_CORPORATION_AREA, self.W_CORPORATION_AREA, self.H_CORPORATION_AREA, PanelStyles.PANEL_STYLE_MAIN)
 			
 		# Corporation buttons at the top
 		xLoop = self.X_CORPORATION_START
-		for i in range(gc.getNumCorporationInfos()):
-			szButtonName = self.getCorporationButtonName(i)
-			screen.addCheckBoxGFC(szButtonName, gc.getCorporationInfo(i).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), self.X_CORPORATION_AREA + xLoop - self.BUTTON_SIZE/2, self.Y_CORPORATION_AREA + self.Y_CORPORATION - self.BUTTON_SIZE/2, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)
-			xLoop += self.DX_CORPORATION
+		#for i in range(gc.getNumCorporationInfos()):
+		#	szButtonName = self.getCorporationButtonName(i)
+		#	screen.addCheckBoxGFC(szButtonName, gc.getCorporationInfo(i).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), self.X_CORPORATION_AREA + xLoop - self.BUTTON_SIZE/2, self.Y_CORPORATION_AREA + self.Y_CORPORATION - self.BUTTON_SIZE/2, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)
+		#	xLoop += self.DX_CORPORATION
 
 		# Great Person				
 		#xLoop = self.X_CORPORATION_START
@@ -180,10 +184,23 @@ class CvCorporationScreen:
 		#	screen.setLabelAt("", szArea, szGreatPerson, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_GREAT_PERSON, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		#	xLoop += self.DX_CORPORATION
-
-		# Bonuses
+		
 		xLoop = self.X_CORPORATION_START
 		for i in range(gc.getNumCorporationInfos()):
+			szButtonName = self.getCorporationButtonName(i)
+			szGreatPerson = ""
+			for iBuilding in range(gc.getNumBuildingInfos()):
+				if (gc.getBuildingInfo(iBuilding).getFoundsCorporation() == i):
+					break
+			for iUnit in range(gc.getNumUnitInfos()):
+				if gc.getUnitInfo(iUnit).getBuildings(iBuilding) or gc.getUnitInfo(iUnit).getForceBuildings(iBuilding):
+					szGreatPerson = gc.getUnitInfo(iUnit).getDescription()
+					break
+			screen.addCheckBoxGFCAt(szArea, szButtonName, gc.getCorporationInfo(i).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), self.X_SCROLLABLE_CORPORATION_AREA + xLoop - 25, self.Y_SCROLLABLE_CORPORATION_AREA + 5, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL, False)
+			szName = self.getCorporationTextName(i)
+			szLabel = gc.getCorporationInfo(i).getDescription()
+			screen.setLabelAt(szName, szArea, szLabel, CvUtil.FONT_CENTER_JUSTIFY, self.X_SCROLLABLE_CORPORATION_AREA + xLoop, self.Y_CORPORATION_NAME, self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			
 			szListLabels = []				
 			iNum = 0
 			szList = u""

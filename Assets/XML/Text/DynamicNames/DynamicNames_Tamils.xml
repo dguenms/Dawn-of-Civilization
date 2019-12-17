@@ -153,4 +153,12 @@
 		<Italian>Tamils</Italian>
 		<Spanish>Tamils</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_PANDYA_OF</Tag>
+		<English>Pandya of %s1</English>
+		<French>Pandya of %s1</French>
+		<German>Pandya of %s1</German>
+		<Italian>Pandya of %s1</Italian>
+		<Spanish>Pandya of %s1</Spanish>
+	</TEXT>
 </Civ4GameText>

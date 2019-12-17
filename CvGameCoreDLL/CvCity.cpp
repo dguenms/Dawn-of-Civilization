@@ -11199,10 +11199,10 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 			}
 		}
 	}
-
-	if (eReligion != NO_RELIGION)
+	
+	if (eReligion != NO_RELIGION && eReligion == kBuilding.getReligionType())
 	{
-		iExtraModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
+		iExtraModifier += kBuilding.getStateReligionCommerceModifier(eIndex);
 	}
 
 	iExtraModifier += getAdditionalCommerceRateModifierByBuildingImpl(eIndex, eBuilding);
@@ -11238,9 +11238,9 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 		{
 			iExtraModifier += kBuilding.getPowerCommerceModifier(eIndex);
 		}
-		if (eReligion != NO_RELIGION)
+		if (eReligion != NO_RELIGION && eReligion == kBuilding.getReligionType())
 		{
-			iExtraModifier += getStateReligionCommerceRateModifier(eReligion, eIndex);
+			iExtraModifier += kBuilding.getStateReligionCommerceModifier(eIndex);
 		}
 	}
 	
@@ -11565,6 +11565,26 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			{
 				iNumBonuses += getNumBonuses(BONUS_COW);
 				iNumBonuses += getNumBonuses(BONUS_SHEEP);
+			}
+		}
+
+		// Leoreth: Slaves stationed in cities along the Trans Saharan Route count
+		if (eCorporation == (CorporationTypes)GC.getInfoTypeForString("CORPORATION_TRANS_SAHARAN_ROUTE"))
+		{
+			CvUnit* pUnit;
+			int iSlaves = 0;
+			for (int i = 0; i < plot()->getNumUnits(); i++)
+			{
+				pUnit = plot()->getUnitByIndex(i);
+
+				if (pUnit->getOwner() == getOwner() && pUnit->getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+				{
+					iSlaves++;
+				}
+			}
+			if (iSlaves)
+			{
+				iNumBonuses += iSlaves / 2;
 			}
 		}
 

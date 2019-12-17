@@ -15,6 +15,8 @@
 #include "CvBugOptions.h"
 // BUG - end
 
+#include "CvRhyes.h" //1SDAN
+
 void CvGame::updateColoredPlots()
 {
 	PROFILE_FUNC();
@@ -2485,6 +2487,10 @@ const CvArtInfoBuilding* CvGame::getBuildingArtInfo(BuildingTypes eBuilding) con
 
 bool CvGame::isWaterBuilding(BuildingTypes eBuilding) const
 {
+	if (GC.getBuildingInfo(eBuilding).isOverrideWaterGraphics())
+	{
+		return false;
+	}
 	return GC.getBuildingInfo(eBuilding).isWater();
 }
 

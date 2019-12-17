@@ -697,6 +697,12 @@
 		<Italian>Dona ci&#242; che ti richiede [CT_CIV_SHORT:2], [CT_NAME]! Non te lo chiederemo una seconda volta!</Italian>
 		<Spanish>&#161;Dadle a [CT_CIV_SHORT] lo que le corresponde, [CT_NAME]! No os lo pediremos otra vez.</Spanish>
 	</TEXT>
+    <TEXT>
+        <Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KANEMI_1</Tag>
+        <English>You can discuss the almighty and the prophet with me or you can simply convert now.  What do you say [CT_NAME]?</English>
+        <French>Vous pouvez discuter terreur et prophétie avec moi ou simplement vous convertir maintenant. Qu'en pensez vous, [CT_NAME]?</French>
+        <Spanish>Puede debatir el todopoderoso y al profeta conmigo o puede simplemente convertirse ahora. ¿Qué dice, [CT_NAME]?</Spanish>
+    </TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_</Tag>
 		<English></English>

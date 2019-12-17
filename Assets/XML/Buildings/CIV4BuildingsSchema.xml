@@ -95,6 +95,7 @@
 	<ElementType name="FreeBuilding" content="textOnly"/>
 	<ElementType name="bTeamShare" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bWater" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bOverrideWaterGraphics" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bRiver" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPower" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDirtyPower" content="textOnly" dt:type="boolean"/>
@@ -489,6 +490,7 @@
 		<element type="bBorderObstacle" minOccurs="0"/>
 		<element type="bTeamShare" minOccurs="0"/>
 		<element type="bWater" minOccurs="0"/>
+		<element type="bOverrideWaterGraphics" minOccurs="0"/>
 		<element type="bRiver" minOccurs="0"/>
 		<element type="bPower" minOccurs="0"/>
 		<element type="bDirtyPower" minOccurs="0"/>

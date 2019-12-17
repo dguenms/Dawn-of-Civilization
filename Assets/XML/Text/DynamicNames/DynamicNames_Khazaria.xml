@@ -34,6 +34,18 @@
 		<Spanish>%s2 Khaganate</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_KHANATE</Tag>
+		<English>%s2 Khanate</English>
+		<French>
+			<Text>Khanat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Khanate</German>
+		<Italian>%s2 Khanate</Italian>
+		<Spanish>%s2 Khanate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_KHAZARIA_FASCIST</Tag>
 		<English>Pan-Turkic Empire</English>
 		<French>
@@ -92,5 +104,29 @@
 		<German>%s2 Confederation</German>
 		<Italian>%s2 Confederation</Italian>
 		<Spanish>%s2 Confederation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_KAZAKH_DESC</Tag>
+		<English>The Kazakhs</English>
+		<French>The Kazakhs</French>
+		<German>The Kazakhs</German>
+		<Italian>The Kazakhs</Italian>
+		<Spanish>The Kazakhs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_KAZAKH</Tag>
+		<English>Kazakh</English>
+		<French>Kazakh</French>
+		<German>Kazakh</German>
+		<Italian>Kazakh</Italian>
+		<Spanish>Kazakh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHAZARIA_KAZAKHSTAN</Tag>
+		<English>Kazakhstan</English>
+		<French>Kazakhstan</French>
+		<German>Kazakhstan</German>
+		<Italian>Kazakhstan</Italian>
+		<Spanish>Kazakhstan</Spanish>
 	</TEXT>
 </Civ4GameText>
