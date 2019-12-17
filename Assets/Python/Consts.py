@@ -372,7 +372,7 @@ tFall = (
 -343,					# Egypt
 -539,					# Babylonia
 -1700,					# Harappa
-350,					# Nubia
+-1500,					# Nubia
 1127,					# China
 -146,					# Greece
 600, # end of Gupta Empire		# India
@@ -666,7 +666,7 @@ iAztecs : [iAmerica],		# Mexico
 
 # Leoreth
 lTotalWarOnSpawn = [
-[], #Egypt
+[iNubia], #Egypt
 [], #Babylonia
 [], #Harappa
 [], #Nubia

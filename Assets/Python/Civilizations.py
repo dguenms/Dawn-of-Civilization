@@ -270,7 +270,8 @@ dTechPreferences = {
 		iDivination: 20,
 		iPhilosophy: 20,
 		iPriesthood: 20,
-		iScholarship: 40,
+		iRiding: 40,
+		iLeverage: 20,
 		
 		iAlloys: -20,
 		iBloomery: -50,
@@ -300,15 +301,12 @@ dTechPreferences = {
 		iCeremony: -50,
 	},
 	iCivNubia : {
-		iScholarship: 40,
-		iSmelting: 20,
-		iBloomery: 20,
-		iMining: 20,
-		iMasonry: 20,
-		iPottery: 20,
+		iRiding: 40,
+		iTanning: 50,
 		iEthics: 20,
-		iConstruction: 20,
-		iSteel: 20,
+		
+		iSmelting: -50,
+		iAlloys: -20,
 	},
 	iCivChina : {
 		iAesthetics: 40,
@@ -795,7 +793,7 @@ dDefaultWonderPreferences = {
 
 dBuildingPreferences = {
 	iCivEgypt : {
-		iPyramids: 100,
+		iPyramids: 50,
 		iGreatLibrary: 30,
 		iGreatLighthouse: 30,
 		iGreatSphinx: 30,
@@ -816,8 +814,9 @@ dBuildingPreferences = {
 	},
 	iCivHarappa : {
 		iHangingGardens : 20,
+		iGreatSphinx : 0,
 		
-		iPyramids : -20,
+		iPyramids : -50,
 	},
 	iCivChina : {
 		iGreatWall: 80,

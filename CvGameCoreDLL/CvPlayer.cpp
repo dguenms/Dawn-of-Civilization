@@ -6379,7 +6379,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		// Leoreth: delay Babylonia building Pyramids and Sphinx
 		if (getID() == BABYLONIA)
 		{
-			if (eBuilding == (BuildingTypes)PYRAMIDS || eBuilding == (BuildingTypes)GREAT_SPHINX)
+			if (eBuilding == (BuildingTypes)GREAT_SPHINX || eBuilding == (BuildingTypes)PYRAMIDS)
 			{
 				if (!GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo((BuildingTypes)HANGING_GARDENS).getPrereqAndTech()) && !GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo((BuildingTypes)ISHTAR_GATE).getPrereqAndTech()))
 				{

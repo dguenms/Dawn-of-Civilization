@@ -28923,6 +28923,7 @@ EndPlot
 BeginPlot
 	x=63,y=27
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_COW
 	PlotType=2
 	TeamReveal=43,
 EndPlot
@@ -29929,7 +29930,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=27
-	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -30591,7 +30591,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=29
-	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_DESERT
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER, UnitOwner=66, (Independent2)
@@ -30609,18 +30608,16 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player66Culture=25, (Independent2)
 	EndCity
-	PlotType=1
+	PlotType=2
 	TeamReveal=50,
 EndPlot
 BeginPlot
 	x=66,y=30
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_CAMEL
-	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	PlotType=1
 	TeamReveal=50,
 EndPlot
 BeginPlot
@@ -31091,14 +31088,12 @@ EndPlot
 BeginPlot
 	x=67,y=27
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=67,y=28
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -31112,9 +31107,6 @@ BeginPlot
 	x=67,y=30
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_COPPER
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=50,
@@ -32286,6 +32278,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=50,65,66,
