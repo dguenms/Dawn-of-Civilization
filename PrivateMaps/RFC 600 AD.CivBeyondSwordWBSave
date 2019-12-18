@@ -37259,10 +37259,10 @@ BeginPlot
 		UnitType=UNIT_ARCHER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=65, (Independent)
@@ -37639,7 +37639,7 @@ BeginPlot
 		UnitType=UNIT_INDIAN_PATIYODHA, UnitOwner=65, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_WORKER, UnitOwner=65, (Independent)
+		UnitType=UNIT_INDIAN_PUNJABI_WORKER, UnitOwner=65, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=65, (Independent)
