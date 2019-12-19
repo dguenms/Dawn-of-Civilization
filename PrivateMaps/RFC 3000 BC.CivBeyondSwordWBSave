@@ -15448,6 +15448,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=18
+	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -20799,7 +20800,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=44,y=67
-	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
