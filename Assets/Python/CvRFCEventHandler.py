@@ -131,6 +131,9 @@ class CvRFCEventHandler:
 		
 		if bConquest:
 			sta.onCityAcquired(city, iOwner, iPlayer)
+	
+		if utils.getScenario() == i600AD and iOwner == iPersia and not utils.isReborn(iOwner):
+			sta.completeCollapse(iOwner)
 			
 		if iPlayer == iArabia:
 			self.up.arabianUP(city)

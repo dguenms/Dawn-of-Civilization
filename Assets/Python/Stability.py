@@ -123,9 +123,6 @@ def onCityAcquired(city, iOwner, iPlayer):
 	
 	checkLostCoreCollapse(iOwner)
 	
-	if iOwner == iPersia and not utils.isReborn(iPersia):
-		completeCollapse(iPersia)
-	
 	if iPlayer == iBarbarian:
 		checkBarbarianCollapse(iOwner)
 		
