@@ -18299,12 +18299,6 @@ bool CvCity::isAutoRaze() const
 		return false;
 	}
 
-	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
-	if (getOriginalOwner() == NUBIA && getX_INLINE() == 66 && getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
-	{
-		return true;
-	}
-
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_RAZING))
 	{
 		if (getHighestPopulation() == 1)
