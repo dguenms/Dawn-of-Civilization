@@ -6639,7 +6639,7 @@ bool CvUnit::greatWork()
 
 		if (pCity->getPopulation() == 0)
 		{
-			pCity->doTask(TASK_RAZE);
+			pCity->completeRaze();
 		}
 	}
 
@@ -14371,7 +14371,7 @@ bool CvUnit::resolveCrisis()
 
 		if (pLoopCity->getPopulation() == 0)
 		{
-			pLoopCity->doTask(TASK_RAZE);
+			pLoopCity->completeRaze();
 		}
 	}
 
