@@ -2033,6 +2033,11 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			}
 			else if (!isHuman())
 			{
+				// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
+				if (pNewCity->getOriginalOwner() == NUBIA && pNewCity->getX_INLINE() == 66 && pNewCity->getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
+				{
+					pNewCity->raze(iCaptureGold);
+				}
 				AI_conquerCity(pNewCity, eOldPreviousOwner, eHighestCulturePlayer, iCaptureGold); // could delete the pointer...
 			}
 			else
@@ -2099,12 +2104,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		{
 			triggerData.m_iOtherPlayerCityId = -1;
 		}
-	}
-	
-	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
-	if (pNewCity->getOriginalOwner() == NUBIA && pNewCity->getX_INLINE() == 66 && pNewCity->getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && !isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
-	{
-		pNewCity->raze(iCaptureGold);
 	}
 }
 
