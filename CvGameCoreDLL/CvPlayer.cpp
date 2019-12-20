@@ -1821,6 +1821,18 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					continue;
 				}
 
+				// cannot capture a unique building that requires different techs unless you can build your own version of it
+				if (eBuilding != iI)
+				{
+					if (kOldBuilding.getPrereqAndTech() != kNewBuilding.getPrereqAndTech())
+					{
+						if (!canConstruct(eBuilding))
+						{
+							continue;
+						}
+					}
+				}
+
 				if (bTrade || !kOldBuilding.isNeverCapture() || (kOldBuilding.getReligionType() != NO_RELIGION && getSpreadType(pCityPlot, (ReligionTypes)kOldBuilding.getReligionType()) >= RELIGION_SPREAD_NORMAL))
 				{
 					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)kNewBuilding.getBuildingClassType()), true))
