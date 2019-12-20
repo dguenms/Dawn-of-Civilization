@@ -4510,6 +4510,12 @@ bool CvUnit::canReconAt(const CvPlot* pPlot, int iX, int iY) const
 		return false;
 	}
 
+	// Leoreth: -1 for unlimited range
+	if (airRange() == -1)
+	{
+		return true;
+	}
+
 	int iDistance = plotDistance(pPlot->getX_INLINE(), pPlot->getY_INLINE(), iX, iY);
 	if (iDistance > airRange() || 0 == iDistance)
 	{

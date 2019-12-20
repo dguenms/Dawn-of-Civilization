@@ -15946,6 +15946,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iNukeRange>-1</iNukeRange>
 			<iMoves>1</iMoves>
+			<iAirRange>-1</iAirRange>
 			<iAsset>10</iAsset>
 			<iPower>0</iPower>
 			<FreePromotions>
