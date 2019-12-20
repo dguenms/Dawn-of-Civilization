@@ -1182,7 +1182,7 @@ void CvCity::doTurn()
 	// razing cities reduces population to 0 during occupation, so if that happened raze the city and return
 	if (getPopulation() == 0)
 	{
-		doTask(TASK_RAZE);
+		completeRaze();
 		return;
 	}
 
@@ -19628,7 +19628,7 @@ void CvCity::completeAcquisition(int iCaptureGold)
 		}
 		else
 		{
-			doTask(TASK_RAZE);
+			completeRaze();
 		}
 	}
 }
@@ -19708,6 +19708,25 @@ void CvCity::raze(int iCaptureGold)
 {
 	setTotalPopulationLoss(getPopulation());
 	completeAcquisition(iCaptureGold);
+}
+
+void CvCity::completeRaze()
+{
+	plot()->resetCultureConversion();
+
+	int iI;
+	CvPlot* pAdjacentPlot;
+	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+	{
+		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pAdjacentPlot != NULL)
+		{
+			pAdjacentPlot->resetCultureConversion();
+		}
+	}
+
+	doTask(TASK_RAZE);
 }
 
 bool CvCity::canLiberate() const

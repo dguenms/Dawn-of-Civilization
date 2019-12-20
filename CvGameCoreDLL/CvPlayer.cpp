@@ -1508,17 +1508,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
-	// Leoreth: undo culture conversion
-	pOldCity->plot()->resetCultureConversion();
-	for (int iDirection = 0; iDirection < NUM_DIRECTION_TYPES; iDirection++)
-	{
-		pLoopPlot = plotDirection(pOldCity->getX(), pOldCity->getY(), (DirectionTypes)iDirection);
-		if (pLoopPlot->getCultureConversionPlayer() == pOldCity->getOwnerINLINE())
-		{
-			pLoopPlot->resetCultureConversion();
-		}
-	}
-
 	if (bConquest)
 	{
 		for (iI = 0; iI < pOldCity->getNextCoveredPlot(); iI++)
