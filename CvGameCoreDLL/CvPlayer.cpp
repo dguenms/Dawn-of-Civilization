@@ -344,6 +344,12 @@ void CvPlayer::init(PlayerTypes eID)
 		{
 			changeHurryCount((HurryTypes)1, 1);
 		}
+
+		// 1SDAN: Yemen UP
+		if (eID == YEMEN)
+		{
+			changeTradeYieldModifier(YIELD_FOOD, 25);
+		}
 	}
 
 	AI_init();
@@ -12678,7 +12684,7 @@ int CvPlayer::getTradeYieldModifier(YieldTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
-	return m_aiTradeYieldModifier[eIndex] + (getID() == YEMEN && eIndex == YIELD_FOOD) ? 25 : 0;
+	return m_aiTradeYieldModifier[eIndex];
 }
 
 
