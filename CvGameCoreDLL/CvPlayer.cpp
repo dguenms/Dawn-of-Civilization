@@ -13865,6 +13865,13 @@ int CvPlayer::getSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex
 	FAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "eIndex1 expected to be < GC.getNumSpecialistInfos()");
 	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
 	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
+
+	// Leoreth: food extra yield is limited to +1
+	if (eIndex2 == YIELD_FOOD)
+	{
+		return std::min(1, m_ppaaiSpecialistExtraYield[eIndex1][eIndex2]);
+	}
+
 	return m_ppaaiSpecialistExtraYield[eIndex1][eIndex2];
 }
 

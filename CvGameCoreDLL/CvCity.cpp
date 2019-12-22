@@ -10520,7 +10520,7 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
 	// Leoreth: includes culture level yield change
-    return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex) + GC.getSpecialistInfo(eSpecialist).getCultureLevelYieldChange(getCultureLevel(), eIndex)));
+    return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex) /*+ GC.getSpecialistInfo(eSpecialist).getCultureLevelYieldChange(getCultureLevel(), eIndex)*/));
 }
 
 void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
@@ -19553,10 +19553,10 @@ int CvCity::calculateBaseYieldRate(YieldTypes eYield) const
 
 		iYield += iNumSpecialists * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield((SpecialistTypes)iI, eYield);
 		
-		if (!GC.getSpecialistInfo((SpecialistTypes)iI).isNoGlobalEffects())
+		/*if (!GC.getSpecialistInfo((SpecialistTypes)iI).isNoGlobalEffects())
 		{
 			iYield += iNumSpecialists * GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelYieldChange(getCultureLevel(), eYield);
-		}
+		}*/
 	}
 
 	iYield += getTradeYield(eYield);
