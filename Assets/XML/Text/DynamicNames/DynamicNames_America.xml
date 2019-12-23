@@ -122,6 +122,18 @@
 		<Spanish>Confederate States of %s1</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_AMERICA_GOLDEN_CIRCLE</Tag>
+		<English>Golden Circle</English>
+		<French>
+			<Text>Cercle d'or</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Golden Circle</German>
+		<Italian>Golden Circle</Italian>
+		<Spanish>Golden Circle</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICAN_ENGLAND</Tag>
 		<English>Airstrip One</English>
 		<French>

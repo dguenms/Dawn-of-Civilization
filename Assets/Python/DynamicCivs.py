@@ -2358,6 +2358,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iPlayer == iAmerica:
 		if iCivicSociety in [iSlavery, iManorialism]:
+			if isRegionControlled(iAmerica, rMesoamerica) and isRegionControlled(iAmerica, rCaribbean):
+				return "TXT_KEY_CIV_AMERICA_GOLDEN_CIRCLE"
+		
 			return "TXT_KEY_CIV_AMERICA_CSA"
 			
 	elif iPlayer == iArgentina:

@@ -1831,6 +1831,18 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					continue;
 				}
 
+				// cannot capture a unique building that requires different techs unless you can build your own version of it
+				if (eBuilding != iI)
+				{
+					if (kOldBuilding.getPrereqAndTech() != kNewBuilding.getPrereqAndTech())
+					{
+						if (!canConstruct(eBuilding))
+						{
+							continue;
+						}
+					}
+				}
+
 				if (bTrade || !kOldBuilding.isNeverCapture() || (kOldBuilding.getReligionType() != NO_RELIGION && getSpreadType(pCityPlot, (ReligionTypes)kOldBuilding.getReligionType()) >= RELIGION_SPREAD_NORMAL))
 				{
 					if (!isProductionMaxedBuildingClass(((BuildingClassTypes)kNewBuilding.getBuildingClassType()), true))
@@ -13980,6 +13992,13 @@ int CvPlayer::getSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex
 	FAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "eIndex1 expected to be < GC.getNumSpecialistInfos()");
 	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
 	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
+
+	// Leoreth: food extra yield is limited to +1
+	if (eIndex2 == YIELD_FOOD)
+	{
+		return std::min(1, m_ppaaiSpecialistExtraYield[eIndex1][eIndex2]);
+	}
+
 	return m_ppaaiSpecialistExtraYield[eIndex1][eIndex2];
 }
 
