@@ -4935,7 +4935,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 1:
 			aHelp.append(getIcon(data.iOmaniCities >= 4) + localText.getText("TXT_KEY_CITIES_CONQUERED", (data.iOmaniCities, 4)))
 		if iGoal == 2:
-			aHelp.append(getIcon(data.iOmaniTradeGold >= getTurns(2000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (data.iOmaniTradeGold, utils.getTurns(2000))))
+			aHelp.append(getIcon(data.iOmaniTradeGold >= utils.getTurns(2000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (data.iOmaniTradeGold, utils.getTurns(2000))))
 
 	elif iPlayer == iYemen:
 		if iGoal == 1:
