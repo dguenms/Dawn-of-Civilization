@@ -20,7 +20,7 @@ import CvUtil
 import re
 import string
 
-from RFCUtils import utils
+from RFCUtils import *
 
 # Globals
 ScoreOpt = BugCore.game.Scores

@@ -30,7 +30,7 @@ import BugUtil
 import TraitUtil
 import UnitUpgradesGraph
 
-from RFCUtils import utils
+from RFCUtils import *
 from Consts import *
 
 gc = CyGlobalContext()
@@ -329,7 +329,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			return
 
 		if iCategory == PEDIA_BUILDINGS:
-			iCategory += utils.getBuildingCategory(iItem)
+			iCategory += getBuildingCategory(iItem)
 		elif iCategory == PEDIA_UNITS:
 			iCategory += self.getUnitCategory(iItem)
 		elif iCategory == PEDIA_BTS_CONCEPTS:
@@ -428,7 +428,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 				continue
 
 			LeaderInfo = gc.getLeaderHeadInfo(iLeader)
-			iCiv = utils.getLeaderCiv(iLeader)
+			iCiv = getLeaderCiv(iLeader)
 			
 			if not iCiv is None and gc.getCivilizationInfo(iCiv).isPlayable():
 				lLeaders.append((LeaderInfo.getDescription(), iLeader))
@@ -649,8 +649,8 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeBuildings(self):
 		lBuildings = []
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
-			if utils.getBuildingCategory(iBuilding) == 0:
-				if iBuilding == utils.getUniqueBuilding(self.iActivePlayer, iBuilding):
+			if getBuildingCategory(iBuilding) == 0:
+				if iBuilding == unique_building(self.iActivePlayer, iBuilding):
 					lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
 			
 		lBuildings.sort()
@@ -664,7 +664,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		prevReligion = -1
 
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
-			if utils.getBuildingCategory(iBuilding) == 1:
+			if getBuildingCategory(iBuilding) == 1:
 				iReligion = gc.getBuildingInfo(iBuilding).getReligionType()
 				if iReligion != prevReligion:
 					hReligion = CyTranslator().getText("TXT_KEY_PEDIA_HEADER_RELIGION", (gc.getReligionInfo(iReligion).getDescription(), ''))
@@ -684,7 +684,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeUniqueBuildings(self):
 		lBuildings = []
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
-			if utils.getBuildingCategory(iBuilding) == 2 and not gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+			if getBuildingCategory(iBuilding) == 2 and not gc.getBuildingInfo(iBuilding).isGraphicalOnly():
 				lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
 
 		lBuildings.sort()
@@ -697,7 +697,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
 			if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
 				continue
-			if utils.getBuildingCategory(iBuilding) == 3:
+			if getBuildingCategory(iBuilding) == 3:
 				lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
 				
 		lBuildings.sort()
@@ -711,7 +711,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
 			if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
 				continue
-			if utils.getBuildingCategory(iBuilding) == 4:
+			if getBuildingCategory(iBuilding) == 4:
 				szDescription = gc.getBuildingInfo(iBuilding).getDescription().replace("The ", "")
 				lBuildings.append((szDescription, iBuilding))
 
@@ -724,7 +724,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeGreatWonders(self):
 		lBuildings = []
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
-			if utils.getBuildingCategory(iBuilding) == 5:
+			if getBuildingCategory(iBuilding) == 5:
 				szDescription = gc.getBuildingInfo(iBuilding).getDescription().replace("The ", "")
 				lBuildings.append((szDescription, iBuilding))
 
@@ -949,7 +949,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		UnitClassInfo = gc.getUnitClassInfo(UnitInfo.getUnitClassType())
 		iDefaultUnit = UnitClassInfo.getDefaultUnitIndex()
 
-		if UnitInfo.isGraphicalOnly() and not utils.getBaseUnit(iUnit) in [iWarrior, iAxeman, iSlave]:
+		if UnitInfo.isGraphicalOnly() and not base_unit(iUnit) in [iWarrior, iAxeman, iSlave]:
 			return -1
 		elif iDefaultUnit > -1 and iDefaultUnit != iUnit and not iUnit == iAztecSlave:
 			return 2

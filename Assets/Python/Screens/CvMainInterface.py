@@ -7,9 +7,10 @@ import CvScreenEnums
 import CvEventInterface
 import time
 
-from RFCUtils import utils
+from RFCUtils import *
 from StoredData import data
 from Consts import *
+from Core import *
 
 # BUG - DLL - start
 import BugDll
@@ -2515,7 +2516,7 @@ class CvMainInterface:
 						
 					# Leoreth: Byzantine UP: bribe barbarians
 					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == iByzantium and pByzantium.getNumCities() > 0:
-						if utils.canDoByzantineBribery(pUnit):
+						if canDoByzantineBribery(pUnit):
 							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iCurrency).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
@@ -4503,7 +4504,7 @@ class CvMainInterface:
 						lBars.append((iPlayer, fPercentage))
 						
 				if iRemainder > 0:
-					index = utils.getHighestIndex(lBars, lambda (iPlayer, fPercent): fPercent)
+					index = find_max(lBar, lambda (iPlayer, fPercent): fPercent).index
 					iPlayer, fPercent = lBars[index]
 					lBars[index] = (iPlayer, fPercent + float(iRemainder))
 						
@@ -5260,7 +5261,7 @@ class CvMainInterface:
 # Leoreth - Stability Icons - start
 
 												if ePlayer < iNumPlayers:
-													iStabilityLevel = data.getStabilityLevel(ePlayer)
+													iStabilityLevel = stability(ePlayer)
 													if iStabilityLevel > iStabilityShaky: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
 													elif iStabilityLevel > iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
 													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
@@ -5701,14 +5702,14 @@ class CvMainInterface:
 			iX = self.pPushedButtonUnit.getX()
 			iY = self.pPushedButtonUnit.getY()
 			city = gc.getMap().plot(iX, iY).getPlotCity()
-			city.changeHappinessTimer(utils.getTurns(5))
+			city.changeHappinessTimer(turns(5))
 			city.setWeLoveTheKingDay(True)
-			if utils.getHumanID() == self.pPushedButtonUnit.getOwner(): data.iTeotlSacrifices += 1
+			if human() == self.pPushedButtonUnit.getOwner(): data.iTeotlSacrifices += 1
 			self.pPushedButtonUnit.kill(false, city.getOwner())
 		
 		# Leoreth: start Byzantine UP
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
-			utils.doByzantineBribery(g_pSelectedUnit)
+			doByzantineBribery(g_pSelectedUnit)
 		# Leoreth: end
 
 		return 0

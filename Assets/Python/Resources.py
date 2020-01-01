@@ -5,21 +5,14 @@ import CvUtil
 import PyHelpers  
 #import Popup
 from Consts import *
-from RFCUtils import utils # edead
+from RFCUtils import * # edead
 from StoredData import data
 
-# globals
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
-localText = CyTranslator()
 
 ### Constants ###
 
-
 # initialise bonuses variables
 
-iRoad = 0
-#Orka: Silk Road road locations
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
 
@@ -28,24 +21,25 @@ class Resources:
 	# Leoreth: bonus removal alerts by edead
 	def createResource(self, iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", removeTextKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
 		"""Creates a bonus resource and alerts the plot owner"""
+		plot = plot_(iX, iY)
 		
-		iRemovedBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
+		iRemovedBonus = plot.getBonusType(-1) # for alert
 		
 		if iRemovedBonus == iBonus:
 			return
 		
-		gc.getMap().plot(iX, iY).setBonusType(iBonus)
+		plot.setBonusType(iBonus)
 				
 		if iBonus == -1:
-			iImprovement = gc.getMap().plot(iX, iY).getImprovementType()
+			iImprovement = plot.getImprovementType()
 			if iImprovement >= 0:
-				if gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(iRemovedBonus):
-					gc.getMap().plot(iX, iY).setImprovementType(-1)
+				if infos.improvement(iImprovement).isImprovementBonusTrade(iRemovedBonus):
+					plot.setImprovementType(-1)
 			
-		iOwner = gc.getMap().plot(iX,iY).getOwner()
+		iOwner = plot.getOwner()
 		if iOwner >= 0: # only show alert to the tile owner
-			bWater = gc.getMap().plot(iX, iY).isWater()
-			city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not bWater, bWater, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+			bWater = plot.isWater()
+			city = closestCity(plot, iOwner, same_continent=not bWater, coastal_only=bWater)
 			
 			if iRemovedBonus >= 0:
 				self.notifyResource(iOwner, city, iX, iY, iRemovedBonus, removeTextKey)
@@ -56,78 +50,77 @@ class Resources:
 	def notifyResource(self, iPlayer, city, iX, iY, iBonus, textKey):
 		if city.isNone(): return
 		
-		if gc.getBonusInfo(iBonus).getTechReveal() == -1 or gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(gc.getBonusInfo(iBonus).getTechReveal()):
-			text = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
-			CyInterface().addMessage(iPlayer, False, iDuration, text, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
+		if infos.bonus(iBonus).getTechReveal() == -1 or team(iPlayer).isHasTech(infos.bonus(iBonus).getTechReveal()):
+			message(iPlayer, textKey, infos.bonus(iBonus).getText(), city.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.bonus(iBonus).getButton(), location=(iX, iY))
 
 	def removeResource(self, iX, iY):
 		"""Removes a bonus resource and alerts the plot owner"""
-		if gc.getMap().plot(iX, iY).getBonusType(-1) == -1: return
+		if plot(iX, iY).getBonusType(-1) == -1: return
 		self.createResource(iX, iY, -1)
        	
 	def checkTurn(self, iGameTurn):
 		
 		# Gujarati horses appear later so Harappa cannot benefit too early
-		if iGameTurn == getTurnForYear(-1000):
+		if iGameTurn == year(-1000):
 			self.createResource(88, 37, iHorse)
 			
 		# Assyrian copper appears later to prevent Babylonia from building too strong a defensive military
-		if iGameTurn == getTurnForYear(-800):
+		if iGameTurn == year(-800):
 			self.createResource(78, 42, iCopper)
 			
 		# Tamils, 300 BC
-		elif iGameTurn == getTurnForYear(tBirth[iTamils])-1 and data.isPlayerEnabled(iTamils):
+		elif iGameTurn == year(tBirth[iTamils])-1 and data.isPlayerEnabled(iTamils):
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
-		elif iGameTurn == getTurnForYear(-200): 
-			for i in range( len(lSilkRoute) ):
-				gc.getMap().plot(lSilkRoute[i][0], lSilkRoute[i][1]).setRouteType(iRoad)
+		elif iGameTurn == year(-200): 
+			for x, y in lSilkRoute:
+				plot(x, y).setRouteType(iRouteRoad)
 		
 		#Orka: Silk Road
-		elif iGameTurn == getTurnForYear(-100):
-			gc.getMap().plot(88, 47).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-			gc.getMap().plot(88, 47).setRouteType(iRoad)
+		elif iGameTurn == year(-100):
+			plot(88, 47).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+			plot(88, 47).setRouteType(iRouteRoad)
 			
 			self.createResource(88, 47, iSilk)
 			self.createResource(85, 46, iSilk)
 
 		#Leoreth: Hanseong's pig appears later so China isn't that eager to found Sanshan
-		elif iGameTurn == getTurnForYear(-50):
+		elif iGameTurn == year(-50):
 			self.createResource(108, 47, iPig)
 
 		# Leoreth: remove floodplains in Sudan and ivory in Morocco and Tunisia
-		elif iGameTurn == getTurnForYear(550):
-			gc.getMap().plot(67, 30).setFeatureType(-1, 0)
-			gc.getMap().plot(67, 31).setFeatureType(-1, 0)
+		elif iGameTurn == year(550):
+			plot(67, 30).setFeatureType(-1, 0)
+			plot(67, 31).setFeatureType(-1, 0)
 			
 			self.removeResource(51, 36)
 			self.removeResource(58, 37)
 			
 		# Leoreth: prepare Tibet, 630 AD
-		elif iGameTurn == getTurnForYear(tBirth[iTibet])-1 and data.isPlayerEnabled(iTibet):
+		elif iGameTurn == year(tBirth[iTibet])-1 and data.isPlayerEnabled(iTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
 		# Leoreth: obstacles for colonization
-		elif iGameTurn == getTurnForYear(700):
-			gc.getMap().plot(35, 54).setFeatureType(iMud, 0)
+		elif iGameTurn == year(700):
+			plot(35, 54).setFeatureType(iMud, 0)
 			for x, y in lNewfoundlandCapes:
-				gc.getMap().plot(x, y).setFeatureType(iCape, 0)
+				plot(x, y).setFeatureType(iCape, 0)
 				
-			if utils.getHumanID() == iVikings:
-				gc.getMap().plot(41, 58).setFeatureType(-1, 0)
+			if pVikings.isHuman():
+				plot(41, 58).setFeatureType(-1, 0)
 		
 		# Leoreth: for respawned Egypt
-		elif iGameTurn == getTurnForYear(900):
+		elif iGameTurn == year(900):
 			self.createResource(71, 34, iIron)
 		
 		# Leoreth: New Guinea can be settled
-		elif iGameTurn == getTurnForYear(1000):
-			gc.getMap().plot(113, 25).setFeatureType(-1, 0)
+		elif iGameTurn == year(1000):
+			plot(113, 25).setFeatureType(-1, 0)
 		    
-		elif iGameTurn == getTurnForYear(1100):
-			#gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt
+		elif iGameTurn == year(1100):
+			#plot(71, 30).setBonusType(iSugar) #Egypt
 			
 			self.createResource(72, 24, iSugar) # East Africa
 			self.createResource(70, 17, iSugar) # Zimbabwe
@@ -150,34 +143,33 @@ class Resources:
 			self.removeResource(89, 51) # Orduqent
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
-		elif iGameTurn == getTurnForYear(tBirth[iMongolia]):
-			for tPlot in [(101, 48), (100, 49), (100, 50), (99, 50)]:
-				x, y = tPlot
-				gc.getMap().plot(x, y).setRouteType(iRoad)
+		elif iGameTurn == year(tBirth[iMongolia]):
+			for x, y in [(101, 48), (100, 49), (100, 50), (99, 50)]:
+				plot(x, y).setRouteType(iRouteRoad)
 				
 			# silk near Astrakhan
 			self.createResource(78, 51, iSilk)
 
-		if iGameTurn == getTurnForYear(1250):
-			#gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
+		if iGameTurn == year(1250):
+			#plot(57, 52).setBonusType(iWheat) #Amsterdam
 			self.createResource(96, 36, iFish) # Calcutta, Dhaka, Pagan
 
-		elif iGameTurn == getTurnForYear(1350):
-			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove rainforest in Vietnam
+		elif iGameTurn == year(1350):
+			plot(102, 35).setFeatureType(-1, 0) #remove rainforest in Vietnam
 
-		elif iGameTurn == getTurnForYear(1500):
-			gc.getMap().plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed
+		elif iGameTurn == year(1500):
+			plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed
 			for x, y in lNewfoundlandCapes:
-				gc.getMap().plot(x, y).setFeatureType(-1, 0)
+				plot(x, y).setFeatureType(-1, 0)
 				
 			# also remove Marsh on Port Moresby
-			gc.getMap().plot(116, 24).setFeatureType(-1, 0)
+			plot(116, 24).setFeatureType(-1, 0)
 			
 			self.createResource(56, 54, iFish) # Amsterdam
 			self.createResource(57, 52, iWheat) # Amsterdam
 			self.createResource(58, 52, iCow) # Amsterdam
 			
-		elif (iGameTurn == getTurnForYear(1600)):
+		elif (iGameTurn == year(1600)):
 			self.createResource(29, 52, iCow) # Montreal
 			self.createResource(18, 53, iCow) # Alberta
 			self.createResource(12, 52, iCow) # British Columbia
@@ -216,15 +208,14 @@ class Resources:
 			self.createResource(77, 52, iCorn) # Caricyn
 			
 			self.createResource(92, 35, iSpices) # Deccan
-			gc.getMap().plot(92, 35).setFeatureType(iRainforest, 0)
+			plot(92, 35).setFeatureType(iRainforest, 0)
 			
 			# remove floodplains in Transoxania
-			for tuple in [(82, 47), (83, 46), (85, 49)]:
-				x, y = tuple
-				gc.getMap().plot(x, y).setFeatureType(-1, 0)
+			for x, y in [(82, 47), (83, 46), (85, 49)]:
+				plot(x, y).setFeatureType(-1, 0)
 		       
 
-		elif iGameTurn == getTurnForYear(1700):
+		elif iGameTurn == year(1700):
 			self.createResource(16, 54, iHorse) # Alberta
 			self.createResource(26, 45, iHorse) # Washington area
 			self.createResource(21, 48, iHorse) # Midwest
@@ -256,12 +247,12 @@ class Resources:
 			
 			self.createResource(70, 59, iDeer) # St Petersburg
 			
-		elif iGameTurn == getTurnForYear(1800):
-			if gc.getDefineINT("PLAYER_REBIRTH_MEXICO") != 0:
+		elif iGameTurn == year(1800):
+			if infos.constant('PLAYER_REBIRTH_MEXICO') != 0:
 				self.createResource(17, 41, iHorse) # Mexico
 				self.createResource(16, 42, iIron) # Mexico
 				
-			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") != 0:
+			if infos.constant('PLAYER_REBIRTH_COLOMBIA') != 0:
 				self.createResource(28, 31, iIron) # Colombia
 			
 			if data.isPlayerEnabled(iArgentina):
@@ -273,7 +264,7 @@ class Resources:
 				self.createResource(36, 18, iCorn) # Sao Paulo
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 
-		elif iGameTurn == getTurnForYear(1850):
+		elif iGameTurn == year(1850):
 			self.createResource(12, 45, iWine) # California
 			self.createResource(31, 10, iWine) # Andes
 			self.createResource(113, 11, iWine) # Barossa Valley, Australia
@@ -297,6 +288,5 @@ class Resources:
 			self.createResource(108, 18, iCamel) # Australia
 			
 			# flood plains in California
-			for tPlot in [(11, 46), (11, 47), (11, 48)]:
-				x, y = tPlot
-				gc.getMap().plot(x,y).setFeatureType(iFloodPlains, 0)
+			for x, y in [(11, 46), (11, 47), (11, 48)]:
+				plot(x, y).setFeatureType(iFloodPlains, 0)

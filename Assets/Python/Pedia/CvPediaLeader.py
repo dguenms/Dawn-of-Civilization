@@ -2,7 +2,7 @@ from CvPythonExtensions import *
 import CvUtil
 import ScreenInput
 
-from RFCUtils import utils
+from RFCUtils import *
 
 gc = CyGlobalContext()
 
@@ -64,7 +64,7 @@ class CvPediaLeader:
 
 	def placeCiv(self):
 		screen = self.top.getScreen()
-		iCiv = utils.getLeaderCiv(self.iLeader)
+		iCiv = getLeaderCiv(self.iLeader)
 		if not iCiv is None and gc.getCivilizationInfo(iCiv).isPlayable():
 			screen.setImageButton(self.top.getNextWidgetName(), gc.getCivilizationInfo(iCiv).getButton(), self.X_CIV, self.Y_CIV, self.W_CIV, self.H_CIV, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, 1)
 

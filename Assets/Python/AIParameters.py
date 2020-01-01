@@ -1,32 +1,27 @@
 from Consts import *
-from RFCUtils import utils
+from Core import *
+from RFCUtils import *
 
 def getTakenTilesThreshold(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dTakenTilesThreshold, iCiv, 13)
+	return dTakenTilesThreshold[civ(iPlayer)]
 	
 def getDistanceSubtrahend(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dDistanceSubtrahend, iCiv, 4)
+	return dDistanceSubtrahend[civ(iPlayer)]
 	
 def getDistanceFactor(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dDistanceFactor, iCiv, 500)
+	return dDistanceFactor[civ(iPlayer)]
 	
 def getCompactnessModifier(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dCompactnessModifier, iCiv, 40)
+	return dCompactnessModifier[civ(iPlayer)]
 	
 def getTargetDistanceValueModifier(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dTargetDistanceValueModifier, iCiv, 10)
+	return dTargetDistanceValueModifier[civ(iPlayer)]
 
 def getReligiousTolerance(iPlayer):
-	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-	return utils.getOrElse(dReligiousTolerance, iCiv, 3)
+	return dReligiousTolerance[civ(iPlayer)]
 	
 def updateParameters(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	pPlayer.setTakenTilesThreshold(getTakenTilesThreshold(iPlayer))
 	pPlayer.setDistanceSubtrahend(getDistanceSubtrahend(iPlayer))
 	pPlayer.setDistanceFactor(getDistanceFactor(iPlayer))
@@ -40,14 +35,12 @@ def init():
 		
 def onTechAcquired(iPlayer, iTech):
 	if iTech == iExploration:
-		pPlayer = gc.getPlayer(iPlayer)
-		iCiv = pPlayer.getCivilizationType()
-		
-		if iCiv in dDistanceSubtrahendExploration: pPlayer.setDistanceSubtrahend(dDistanceSubtrahendExploration[iCiv])
-		if iCiv in dDistanceFactorExploration: pPlayer.setDistanceFactor(dDistanceFactorExploration[iCiv])
-		if iCiv in dCompactnessModifierExploration: pPlayer.setCompactnessModifier(dCompactnessModifierExploration[iCiv])
+		iCiv = civ(iPlayer)
+		if iCiv in dDistanceSubtrahendExploration: player(iPlayer).setDistanceSubtrahend(dDistanceSubtrahendExploration[iCiv])
+		if iCiv in dDistanceFactorExploration: player(iPlayer).setDistanceFactor(dDistanceFactorExploration[iCiv])
+		if iCiv in dCompactnessModifierExploration: player(iPlayer).setCompactnessModifier(dCompactnessModifierExploration[iCiv])
 	
-dTakenTilesThreshold = {
+dTakenTilesThreshold = defaultdict({
 iCivBabylonia : 14,
 iCivCarthage : 12,
 iCivKorea : 20,
@@ -67,9 +60,9 @@ iCivMongols : 10,
 iCivMughals : 15,
 iCivNetherlands : 15,
 iCivGermany : 12,
-}
+}, default=13)
 
-dDistanceSubtrahend = {
+dDistanceSubtrahend = defaultdict({
 iCivBabylonia : 3,
 iCivHarappa : 3,
 iCivGreece : 3,
@@ -92,18 +85,18 @@ iCivInca : 3,
 iCivItaly : 5,
 iCivOttomans : 3,
 iCivGermany : 3,
-}
+}, default=4)
 
-dDistanceSubtrahendExploration = {
+dDistanceSubtrahendExploration = defaultdict({
 iCivVikings : 4,
 iCivMoors : 4,
 iCivSpain : 4,
 iCivFrance : 4,
 iCivEngland : 4,
 iCivGermany : 4,
-}
+}, default=4)
 
-dDistanceFactor = {
+dDistanceFactor = defaultdict({
 iCivChina : 350,
 iCivGreece : 300,
 iCivCarthage : 400,
@@ -132,16 +125,16 @@ iCivAmerica : 200,
 iCivArgentina : 150,
 iCivBrazil : 150,
 iCivCanada : 150,
-}
+}, default=500)
 
-dDistanceFactorExploration = {
+dDistanceFactorExploration = defaultdict({
 iCivMoors : 300,
 iCivSpain : 150,
 iCivFrance : 150,
 iCivEngland : 100,
-}
+}, default=500)
 
-dCompactnessModifier = {
+dCompactnessModifier = defaultdict({
 iCivChina : 80,
 iCivGreece : 10,
 iCivIndia : 20,
@@ -162,15 +155,15 @@ iCivPortugal : 5,
 iCivItaly : 70,
 iCivNetherlands : 5,
 iCivAmerica : 20,
-}
+}, default=40)
 
-dCompactnessModifierExploration = {
+dCompactnessModifierExploration = defaultdict({
 iCivSpain : 10,
 iCivFrance : 5,
 iCivEngland : 5,
-}
+}, default=40)
 
-dTargetDistanceValueModifier = {
+dTargetDistanceValueModifier = defaultdict({
 iCivGreece : 5,
 iCivPersia : 3,
 iCivRome : 3,
@@ -189,9 +182,9 @@ iCivPortugal : 3,
 iCivNetherlands : 3,
 iCivGermany : 3,
 iCivAmerica : 3,
-}
+}, default=10)
 
-dReligiousTolerance = {
+dReligiousTolerance = defaultdict({
 iCivEgypt : 4,
 iCivChina : 4,
 iCivHarappa : 4,
@@ -219,4 +212,4 @@ iCivThailand : 4,
 iCivNetherlands : 4,
 iCivAmerica : 4,
 iCivCanada : 4,
-}
+}, default=3)

@@ -5,8 +5,12 @@ import CvUtil
 import PyHelpers
 import Popup
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 from StoredData import data
+
+from time import time
+
+from Core import *
 
 # globals
 gc = CyGlobalContext()
@@ -15,7 +19,7 @@ PyPlayer = PyHelpers.PyPlayer
 iNumLanguages = 41
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
 iLangBabylonian, iLangPersian, iLangGreek, iLangPhoenician, iLangLatin, 
- iLangMayan,iLangJapanese, iLangEthiopian, iLangKorean, iLangByzantine, 
+iLangMayan,iLangJapanese, iLangEthiopian, iLangKorean, iLangByzantine, 
 iLangViking, iLangArabian, iLangKhmer, iLangIndonesian, iLangSpanish, 
 iLangFrench, iLangEnglish, iLangGerman, iLangRussian, iLangDutch, 
 iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian, 
@@ -29,7 +33,7 @@ def isResurrected(iCiv):
 	return (data.players[iCiv].iResurrections > 0)
 
 def getLanguages(iCiv):
-	pCiv = gc.getPlayer(iCiv)
+	pCiv = player(iCiv)
 
 	if iCiv == iEgypt:
 		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
@@ -42,11 +46,11 @@ def getLanguages(iCiv):
 	elif iCiv == iCarthage: return (iLangPhoenician,)
 	elif iCiv == iPolynesia: return (iLangPolynesian,)
 	elif iCiv == iPersia: 
-		if utils.isReborn(iCiv): return (iLangArabian, iLangPersian)
+		if player(iCiv).isReborn(): return (iLangArabian, iLangPersian)
 		return (iLangPersian,)
 	elif iCiv == iRome: return (iLangLatin,)
 	elif iCiv == iMaya: 
-		if utils.isReborn(iCiv): return (iLangSpanish,)
+		if player(iCiv).isReborn(): return (iLangSpanish,)
 		return (iLangMayan, iLangAztec)
 	elif iCiv == iTamils: return (iLangIndian,)
 	elif iCiv == iEthiopia: return (iLangEthiopian,)
@@ -74,7 +78,7 @@ def getLanguages(iCiv):
 	elif iCiv == iItaly: return (iLangItalian,)
 	elif iCiv == iMongolia: return (iLangMongolian, iLangTurkish, iLangChinese)
 	elif iCiv == iAztecs: 
-		if utils.isReborn(iCiv): return (iLangMexican, iLangSpanish)
+		if player(iCiv).isReborn(): return (iLangMexican, iLangSpanish)
 		return (iLangAztec, iLangMayan)
 	elif iCiv == iMughals: return (iLangPersian, iLangArabian, iLangIndian)
 	elif iCiv == iOttomans: return (iLangTurkish, iLangArabian)
@@ -90,18 +94,15 @@ def getLanguages(iCiv):
 	else: return None
 	
 def getNativeLanguages(tPlot):
-	x, y = tPlot
-	plot = gc.getMap().plot(x, y)
-	
-	lCorePlayers = [i for i in range(iNumPlayers) if plot.isCore(i)]
-	if not lCorePlayers: lCorePlayers = [i for i in range(iNumPlayers)]
-	
-	iNativePlayer = utils.getHighestIndex(lCorePlayers, lambda x: plot.getSettlerValue(x))
-	
+	corePlayers = players.major().where(plot(tPlot).isCore)
+	if not corePlayers:
+		corePlayers = players.major()
+		
+	iNativePlayer = players.all().maximum(plot(tPlot).getSettlerValue)
 	return getLanguages(iNativePlayer)
 
-def getFoundName(iCiv, tPlot):
-	x, y = tPlot
+def getFoundName(iCiv, plot):
+	x, y = location(plot)
 	tLanguages = getLanguages(iCiv)
 	if not tLanguages: return None
 	
@@ -146,25 +147,21 @@ def getRenameName(iCiv, sName):
 	return None
 	
 def updateCityNames(iCiv):
-	for city in utils.getCityList(iCiv):
+	for city in cities.owner(iCiv):
 		sNewName = getRenameName(iCiv, city.getName())
 		if sNewName is not None:
 			city.setName(sNewName, False)
 			
 def updateCityNamesFound(iCiv):
-	for city in utils.getCityList(iCiv):
+	for city in cities.owner(iCiv):
 		sNewName = getFoundName(iCiv, (city.getX(), city.getY()))
 		if sNewName != "-1":
 			city.setName(sNewName, False)
 			
 def findLocations(iPlayer, sName):
-	lLocations = []
-	
-	for tPlot in utils.getWorldPlotsList():
-		if getFoundName(iPlayer, tPlot) == sName or getFoundName(iEngland, tPlot) == sName:
-			lLocations.append(tPlot)
-				
-	return lLocations
+	result = plots.all().where(lambda p: getFoundName(iPlayer, p) == sName or getFoundName(iEngland, p) == sName)
+	print "(%s, %s) -> %s" % (name(iPlayer), sName, result)
+	return result
 	
 def onCityBuilt(city):
 	iOwner = city.getOwner()
@@ -225,13 +222,13 @@ dCommunistNames = {
 }
 
 def applyCommunistNames(iCiv):
-	for city in utils.getCityList(iCiv):
+	for city in cities.owner(iCiv):
 		sName = city.getName()
 		if sName in dCommunistNames:
 			city.setName(dCommunistNames[sName], False)
 			
 def revertCommunistNames(iCiv):
-	for city in utils.getCityList(iCiv):
+	for city in cities.owner(iCiv):
 		sIdentifier = getIdentifier(city.getName())
 		if not sIdentifier: continue
 		
@@ -293,11 +290,11 @@ def getEraRename(sName, iEra):
 	return None
 			
 def onTechAcquired(iCiv):
-	pCiv = gc.getPlayer(iCiv)
-	lCities = utils.getCityList(iCiv)
+	pCiv = player(iCiv)
+	ownerCities = cities.owner(iCiv)
 	
 	for iEra in range(pCiv.getCurrentEra()+1):
-		for city in lCities:
+		for city in ownerCities:
 			sIdentifier = getIdentifier(city.getName())
 			if not sIdentifier: continue
 			
@@ -321,7 +318,7 @@ def onReligionSpread(iReligion, iCiv, city):
 			
 def onRevolution(iCiv):
 
-	if gc.getPlayer(iCiv).getCivics(iCivicsEconomy) == iCentralPlanning:
+	if has_civic(iCiv, iCentralPlanning):
 		applyCommunistNames(iCiv)
 	else:
 		revertCommunistNames(iCiv)

@@ -6,7 +6,7 @@ import PyHelpers
 import Popup
 from Consts import *
 from StoredData import *
-from RFCUtils import utils
+from RFCUtils import *
 
 # globals
 gc = CyGlobalContext()
@@ -80,11 +80,11 @@ class Communications:
 
 	def checkTurn(self, iGameTurn):
 		#self.decay(iIndia) #debug
-		if utils.isYearIn(-2250, -680):
+		if year().between(-2250, -680):
 			i = (iGameTurn + data.iSeed/10 - 5) % len(tPool1)
 			iCiv = tPool1[i]
 			self.canDecay(iGameTurn, iCiv)
-		elif utils.isYearIn(-680, 410): # edead: RFCM
+		elif year().between(-680, 410): # edead: RFCM
 			i = (iGameTurn + data.iSeed/10 - 5) % len(tPool2)
 			iCiv = tPool2[i]
 			self.canDecay(iGameTurn, iCiv)
@@ -98,55 +98,32 @@ class Communications:
 
 	def canDecay(self, iGameTurn, iCiv):
 		if 0 <= iCiv < iNumMajorPlayers:
-			if gc.getPlayer(iCiv).isAlive() and iGameTurn >= getTurnForYear(tBirth[iCiv]+utils.getTurns(15)): # edead: RFCM
-				if not gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iElectricity):
+			if player(iCiv).isAlive() and iGameTurn >= year(tBirth[iCiv]+turns(15)): # edead: RFCM
+				if not team(iCiv).isHasTech(iElectricity):
 					self.decay(iCiv)
 
-	def decay(self, iCiv):
-		teamCiv = gc.getTeam(gc.getPlayer(iCiv).getTeam())
+	def decay(self, iPlayer):
+		contacts = players.major().alive().where(lambda p: team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))
 		
-		# Initialize list
-		lContacts = [i for i in range(iNumPlayers) if gc.getPlayer(i).isAlive() and teamCiv.canContact(i) and teamCiv.canCutContact(i)]
-								
-		# master/vassal relationships: if master can be seen, don't cut vassal contact and vice versa
-		lRemove = []
-		for iLoopPlayer in range(iNumPlayers):
-			for iContact in lContacts:
-				if gc.getTeam(iContact).isVassal(iLoopPlayer) and iLoopPlayer not in lContacts:
-					lRemove.append(iContact)
-				elif gc.getTeam(iLoopPlayer).isVassal(iContact) and iLoopPlayer not in lContacts:
-					lRemove.append(iContact)
-					
-		# if there are still vassals in the list, their masters are too -> remove the vassals, and cut contact when their masters are chosen
-		for iContact in lContacts:
-			if gc.getTeam(iContact).isAVassal() and iContact not in lRemove:
-				lRemove.append(iContact)
-					
-		for iLoopCiv in lRemove:
-			if iLoopCiv in lContacts: lContacts.remove(iLoopCiv)
-								
+		# master/vassal relationships: keep only masters where contact can be cut with all vassals
+		dVassals = vassals()
+		contacts = contacts.where(lambda p: all(iVassal in contacts for iVassal in dVassals[p]))
+		
+		# remove all vassals, vassals where the master contact cannot be cut need to be removed -> other vassals contact will be cut along with their masters
+		contacts = contacts.where(lambda p: not team(p).isAVassal())
+		
 		# choose up to four random contacts to cut
-		for i in range(4):
-			if len(lContacts) == 0: break
+		for iContact in contacts.sample(4):
+			ours = players.vassals(iPlayer).including(iPlayer)
+			theirs = players.vassals(iContact).including(iContact)
 			
-			iContact = utils.getRandomEntry(lContacts)
+			list = [x for x in theirs]
+			print "list iterate element: %s" % type(list[0])
 			
-			lOurCivs = [iCiv]
-			lTheirCivs = [iContact]
-			
-			# remove contacts for all vassals on both sides as well
-			for iLoopCiv in range(iNumPlayers):
-				if gc.getTeam(iLoopCiv).isVassal(iCiv):
-					lOurCivs.append(iLoopCiv)
-				elif gc.getTeam(iLoopCiv).isVassal(iContact):
-					lTheirCivs.append(iLoopCiv)
-					
-			for iOurCiv in lOurCivs:
-				for iTheirCiv in lTheirCivs:
-					#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iOurCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iTheirCiv).getCivilizationShortDescription(0))
-					gc.getTeam(iOurCiv).cutContact(iTheirCiv)
-					
-			lContacts.remove(iContact)
+			for iTheirPlayer, iOurPlayer in permutations(theirs, ours):
+				print "iOurPlayer: %s" % type(iOurPlayer)
+				print "iTheirPlayer: %s" % type(iTheirPlayer)
+				team(iOurPlayer).cutContact(iTheirPlayer)
 
 
 	def onBuildingBuilt(self, iPlayer, iBuilding, city):

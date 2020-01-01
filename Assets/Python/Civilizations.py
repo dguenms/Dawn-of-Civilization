@@ -1,5 +1,5 @@
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 from sets import Set
 from StoredData import data
 import Victory as vic
@@ -17,8 +17,8 @@ class Techs:
 		
 	def list(self):
 		lTechs = Set()
-		lTechs.update([i for i in range(iNumTechs) if gc.getTechInfo(i).getGridX() <= self.column])
-		lTechs.update([i for i in range(iNumTechs) if gc.getTechInfo(i).getEra() <= self.era])
+		lTechs.update([i for i in range(iNumTechs) if infos.tech(i).getGridX() <= self.column])
+		lTechs.update([i for i in range(iNumTechs) if infos.tech(i).getEra() <= self.era])
 		lTechs.update(self.techs)
 		lTechs.difference_update(self.exceptions)
 		
@@ -27,31 +27,31 @@ class Techs:
 ### Starting tech methods ###
 
 def getScenarioTechs(iScenario, iPlayer):
-	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
+	iCivilization = civ(iPlayer)
 	for iScenarioType in reversed(range(iScenario+1)):
 		if iCivilization in lStartingTechs[iScenarioType]:
 			return lStartingTechs[iScenarioType][iCivilization].list()
 			
 def getStartingTechs(iPlayer):
-	return getScenarioTechs(utils.getScenario(), iPlayer)
+	return getScenarioTechs(scenario(), iPlayer)
 	
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
-		if tBirth[iPlayer] > utils.getScenarioStartYear(): continue
+		if tBirth[iPlayer] > scenarioStartYear(): continue
 	
-		iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
+		iCivilization = civ(iPlayer)
 		if iCivilization in lStartingTechs[iScenario]:
 			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
 	
-	if iPlayer == iChina and utils.getScenario() == i3000BC and utils.getHumanID() != iPlayer:
+	if iPlayer == iChina and scenario() == i3000BC and not player(iPlayer).isHuman():
 		initTech(iPlayer, iProperty)
 		initTech(iPlayer, iAlloys)
 				
 def initTechs(iPlayer, lTechs):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 
 	for iTech in lTechs:
 		initTech(iPlayer, iTech)
@@ -60,7 +60,7 @@ def initTechs(iPlayer, lTechs):
 	pPlayer.setStartingEra(iCurrentEra)
 	
 def initTech(iPlayer, iTech):
-	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
+	team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
 	vic.onTechAcquired(iPlayer, iTech)
 	rel.onTechAcquired(iPlayer, iTech)
 
@@ -73,7 +73,7 @@ def getDictValue(dDict, key):
 
 def getTechPreferences(iPlayer):
 	dPreferences = {}
-	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
+	iCivilization = civ(iPlayer)
 	
 	if iCivilization not in dTechPreferences:
 		return dPreferences
@@ -83,8 +83,8 @@ def getTechPreferences(iPlayer):
 		
 	for iTech, iValue in dTechPreferences[iCivilization].items():
 		for i in range(4):
-			iOrPrereq = gc.getTechInfo(iTech).getPrereqOrTechs(i)
-			iAndPrereq = gc.getTechInfo(iTech).getPrereqAndTechs(i)
+			iOrPrereq = infos.tech(iTech).getPrereqOrTechs(i)
+			iAndPrereq = infos.tech(iTech).getPrereqAndTechs(i)
 			
 			if iOrPrereq < 0 and iAndPrereq < 0: break
 			
@@ -111,13 +111,13 @@ def initPlayerTechPreferences(iPlayer):
 	
 def initTechPreferences(iPlayer, dPreferences):
 	for iTech, iValue in dPreferences.items():
-		gc.getPlayer(iPlayer).setTechPreference(iTech, iValue)
+		player(iPlayer).setTechPreference(iTech, iValue)
 
 ### Wonder preference methods ###
 
 def initBuildingPreferences(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iCiv = pPlayer.getCivilizationType()
+	pPlayer = player(iPlayer)
+	iCiv = civ(iPlayer)
 	if iCiv in dBuildingPreferences:
 		for iBuilding, iValue in dBuildingPreferences[iCiv].iteritems():
 			pPlayer.setBuildingPreference(iBuilding, iValue)
@@ -131,7 +131,7 @@ def initBuildingPreferences(iPlayer):
 ### General functions ###
 		
 def initBirthYear(iPlayer):
-	gc.getPlayer(iPlayer).setBirthYear(tBirth[iPlayer])
+	player(iPlayer).setBirthYear(tBirth[iPlayer])
 
 def init():
 	for iPlayer in range(iNumPlayers):

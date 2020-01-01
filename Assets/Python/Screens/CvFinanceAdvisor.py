@@ -7,7 +7,7 @@ import ScreenInput
 import CvScreenEnums
 
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 
 from StoredData import data
 
@@ -135,7 +135,7 @@ class CvFinanceAdvisor:
 
 		ePlayer = self.iActiveLeader #Rhye
 		
-		iStabilityLevel = utils.getStabilityLevel(ePlayer)
+		iStabilityLevel = stability(ePlayer)
 		
 		if iStabilityLevel == iStabilityCollapsing: szTempBuffer = localText.getText("TXT_KEY_STABILITY_COLLAPSING", ())
 		elif iStabilityLevel == iStabilityUnstable: szTempBuffer = localText.getText("TXT_KEY_STABILITY_UNSTABLE", ())
@@ -217,7 +217,7 @@ class CvFinanceAdvisor:
 		#szParametersPanel1 = self.getNextWidgetName()
 		#screen.addPanel(szParametersPanel1, u"", "", True, True, self.X_PARAMETERS1, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN )
 		#screen.setLabel(self.getNextWidgetName(), "Background",  u"<font=3>" + localText.getText("TXT_KEY_STABILITY_PARAMETER_CITIES", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		#iParameter1 = utils.getParCities()
+		#iParameter1 = getParCities()
 		#if (iParameter1 <= -25):
 		#	self.printStars(ePlayer, self.getNextWidgetName(), 1, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN + 40, self.Z_CONTROLS + self.DZ)
 		#elif (iParameter1 <= -10):
@@ -234,7 +234,7 @@ class CvFinanceAdvisor:
 		#szParametersPanel2 = self.getNextWidgetName()
 		#screen.addPanel(szParametersPanel2, u"", "", True, True, self.X_PARAMETERS2, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN )
 		#screen.setLabel(self.getNextWidgetName(), "Background",  u"<font=3>" + localText.getText("TXT_KEY_STABILITY_PARAMETER_CIVICS", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		#iParameter2 = utils.getParCivics()
+		#iParameter2 = getParCivics()
 		#if (iParameter2 <= -30):
 		#	self.printStars(ePlayer, self.getNextWidgetName(), 1, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN + 40, self.Z_CONTROLS + self.DZ)
 		#elif (iParameter2 <= -15):
@@ -251,7 +251,7 @@ class CvFinanceAdvisor:
 		#szParametersPanel3 = self.getNextWidgetName()
 		#screen.addPanel(szParametersPanel3, u"", "", True, True, self.X_PARAMETERS3, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN )
 		#screen.setLabel(self.getNextWidgetName(), "Background",  u"<font=3>" + localText.getText("TXT_KEY_STABILITY_PARAMETER_ECONOMY", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		#iParameter3 = utils.getParEconomy()
+		#iParameter3 = getParEconomy()
 		#if (iParameter3 <= -40):
 		#	self.printStars(ePlayer, self.getNextWidgetName(), 1, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN + 40, self.Z_CONTROLS + self.DZ)
 		#elif (iParameter3 <= -15):
@@ -268,7 +268,7 @@ class CvFinanceAdvisor:
 		#szParametersPanel4 = self.getNextWidgetName()
 		#screen.addPanel(szParametersPanel4, u"", "", True, True, self.X_PARAMETERS4, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN )
 		#screen.setLabel(self.getNextWidgetName(), "Background",  u"<font=3>" + localText.getText("TXT_KEY_STABILITY_PARAMETER_EXPANSION", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		#iParameter4 = utils.getParExpansion()
+		#iParameter4 = getParExpansion()
 		#if (iParameter4 <= -40):
 		#	self.printStars(ePlayer, self.getNextWidgetName(), 1, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN + 40, self.Z_CONTROLS + self.DZ)
 		#elif (iParameter4 <= -15):
@@ -285,7 +285,7 @@ class CvFinanceAdvisor:
 		#szParametersPanel5 = self.getNextWidgetName()
 		#screen.addPanel(szParametersPanel5, u"", "", True, True, self.X_PARAMETERS5, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN )
 		#screen.setLabel(self.getNextWidgetName(), "Background",  u"<font=3>" + localText.getText("TXT_KEY_STABILITY_PARAMETER_FOREIGN", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		#iParameter5 = utils.getParDiplomacy()
+		#iParameter5 = getParDiplomacy()
 		#if (iParameter5 <= -20):
 		#	self.printStars(ePlayer, self.getNextWidgetName(), 1, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN + 40, self.Z_CONTROLS + self.DZ)
 		#elif (iParameter5 <= -10):
@@ -469,15 +469,15 @@ class CvFinanceAdvisor:
 	def printNumber(self, ePlayer, panel, iParameter, x, y, z):
 		if (gc.getPlayer(ePlayer).isHuman()):
 			if (iParameter == 1):
-				iNewValue = utils.getParCities()
+				iNewValue = getParCities()
 			elif (iParameter == 2):
-				iNewValue = utils.getParCivics()
+				iNewValue = getParCivics()
 			elif (iParameter == 3):
-				iNewValue = utils.getParEconomy()
+				iNewValue = getParEconomy()
 			elif (iParameter == 4):
-				iNewValue = utils.getParExpansion()
+				iNewValue = getParExpansion()
 			elif (iParameter == 5):
-				iNewValue = utils.getParDiplomacy()
+				iNewValue = getParDiplomacy()
 			number = str(iNewValue)
 			if (iNewValue > 0):
 				number = '+' + number
@@ -485,7 +485,7 @@ class CvFinanceAdvisor:
 	    
 	def printArrow(self, ePlayer, panel, iParameter, x, y, z):
 		if (gc.getPlayer(ePlayer).isHuman()):
-			self.getScreen().setLabel(panel, "Background",  unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 8 + utils.getArrow(iParameter)), CvUtil.FONT_CENTER_JUSTIFY, x, y, z, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			self.getScreen().setLabel(panel, "Background",  unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 8 + getArrow(iParameter)), CvUtil.FONT_CENTER_JUSTIFY, x, y, z, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 	    
 	#Rhye - end
 	

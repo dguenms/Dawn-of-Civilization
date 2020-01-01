@@ -339,7 +339,7 @@ class UnitReName(object):
 ##  - ^rd^ - random name
 #		check if random naming convention is required
 		if not (zsName.find("^rd^") == -1):
-			zsRandomName = RandomNameUtils.getRandomName()
+			zsRandomName = RandomNamegetRandomName()
 			zsName = zsName.replace("^rd^", zsRandomName)
 
 
@@ -348,7 +348,7 @@ class UnitReName(object):
 ##  - ^rc^ - random civ related name
 #		check if random civ related naming convention is required
 		if not (zsName.find("^rc^") == -1):
-			zsRandomName = RandomNameUtils.getRandomCivilizationName(pPlayer.getCivilizationType())
+			zsRandomName = RandomNamegetRandomCivilizationName(pPlayer.getCivilizationType())
 			zsName = zsName.replace("^rc^", zsRandomName)
 
 		#BUGPrint("UnitNameEM-C [" + zsName + "]")

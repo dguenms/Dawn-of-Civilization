@@ -1,6 +1,6 @@
 from CvPythonExtensions import *
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 import Popup as PyPopup
 import Areas
 import SettlerMaps
@@ -87,7 +87,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 		sName = "Aztecs"
 
 	lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
-	if utils.isReborn(iPlayer):
+	if player(iPlayer).isReborn():
 		lOldFlipPlotList = Areas.getRebirthArea(iPlayer)
 	else:
 		lOldFlipPlotList = Areas.getBirthArea(iPlayer)
@@ -100,7 +100,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 		else:
 			if iPlayer in Areas.dChangedBirthArea:
 				tTL, tBR = Areas.getBirthRectangle(iPlayer, True)
-				lOldAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, iPlayer, [])) if tPlot not in lOldFlipPlotList]
+				lOldAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[iPlayer]).without(lOldFlipPlotList)
 			else:
 				lOldAIPlotList = []
 			bFlipChanged = len(lOldAIPlotList) != len(lNewAIPlotList)
@@ -115,9 +115,8 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 		BL, TR = getTLBR(lPlots)
 
 		lExceptions = []
-		for tPlot in utils.getPlotList(BL, TR):
-			if tPlot not in lNewFlipPlotList:
-				lExceptions.append(tPlot)
+		for plot in plots.start(BL).end(TR).without(lNewFlipPlotList):
+			lExceptions.append(location(plot))
 
 		if lNewAIPlotList:
 			lPlots = lNewAIPlotList+lNewFlipPlotList
@@ -125,7 +124,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 
 		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
 		try:
-			if not utils.isReborn(iPlayer):
+			if not player(iPlayer).isReborn():
 				file.write("# tBirthArea\n")
 				file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
 				if lExceptions:
@@ -139,7 +138,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 					file.write("i" + sName + " : " + str(lExceptions) + ",")
 
 			if lNewAIPlotList:
-				if not utils.isReborn(iPlayer):
+				if not player(iPlayer).isReborn():
 					file.write("\n\n# dChangedBirthArea\n")
 					file.write("("+ str(BLAI) + ",\t" + str(TRAI) + "),\t# " + sName)
 		finally:
@@ -166,13 +165,13 @@ def exportAllFlip(dFlipZoneEdits):
 		if iPlayer in dFlipZoneEdits.keys():
 			lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
 		else:
-			if utils.isReborn(iPlayer):
+			if player(iPlayer).isReborn():
 				lNewFlipPlotList = Areas.getRebirthArea(iPlayer)
 			else:
 				lNewFlipPlotList = Areas.getBirthArea(iPlayer)
 			if iPlayer in Areas.dChangedBirthArea:
 				tTL, tBR = Areas.getBirthRectangle(iPlayer, True)
-				lNewAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, iPlayer, [])) if tPlot not in lNewFlipPlotList]
+				lNewAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[iPlayer]).without(lNewFlipPlotList)
 			else:
 				lNewAIPlotList = []
 
@@ -180,9 +179,8 @@ def exportAllFlip(dFlipZoneEdits):
 		BL, TR = getTLBR(lPlots)
 
 		lExceptions = []
-		for tPlot in utils.getPlotList(BL, TR):
-			if tPlot not in lNewFlipPlotList:
-				lExceptions.append(tPlot)
+		for plot in plots.start(BL).end(TR):
+			lExceptions.append(location(plot))
 
 		if lNewAIPlotList:
 			lPlots = [tPlot for tPlot in lNewAIPlotList+lNewFlipPlotList if tPlot not in lExceptions]
@@ -228,24 +226,23 @@ def exportCore(iPlayer, bForce = False):
 	lCorePlotList = Areas.getCoreArea(iPlayer)
 	bCoreChanged = bForce
 	if not bCoreChanged:
-		for (x, y) in utils.getWorldPlotsList():
+		for plot in plots.all():
 			bOldCore = (x, y) in lCorePlotList
-			if gc.getMap().plot(x, y).isCore(iPlayer) != bOldCore:
+			if plot.isCore(iPlayer) != bOldCore:
 				bCoreChanged = True
 				break
 	if bCoreChanged:
-		lCorePlots = [(x, y) for (x, y) in utils.getWorldPlotsList() if gc.getMap().plot(x, y).isCore(iPlayer)]
+		lCorePlots = plots.all().core(iPlayer)
 		BL, TR = getTLBR(lCorePlots)
 
 		lExceptions = []
-		for (x, y) in utils.getPlotList(BL, TR):
-			plot = gc.getMap().plot(x, y)
+		for plot in plots.start(BL).end(TR):
 			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
-				lExceptions.append((x, y))
+				lExceptions.append(location(plot))
 
 		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
 		try:
-			if not utils.isReborn(iPlayer):
+			if not player(iPlayer).isReborn():
 				file.write("# tCoreArea\n")
 				file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
 				if lExceptions:
@@ -277,14 +274,13 @@ def exportAllCores():
 		elif iPlayer == iAztecs:
 			sName = "Aztecs"
 
-		lCorePlots = [(x, y) for (x, y) in utils.getWorldPlotsList() if gc.getMap().plot(x, y).isCore(iPlayer)]
+		lCorePlots = plots.all().core(iPlayer)
 		BL, TR = getTLBR(lCorePlots)
 
 		lExceptions = []
-		for (x, y) in utils.getPlotList(BL, TR):
-			plot = gc.getMap().plot(x, y)
+		for plot in plots.start(BL).end(TR):
 			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
-				lExceptions.append((x, y))
+				lExceptions.append(location(plot))
 
 		lAllCores.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
 		if lExceptions:
@@ -317,9 +313,8 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 
 	bSettlerValueChanged = bForce
 	if not bSettlerValueChanged:
-		for (x, y) in utils.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
-			if plot.getSettlerValue(iPlayer) != SettlerMaps.getMapValue(iCiv, x, y):
+		for plot in plots.all():
+			if plot.getSettlerValue(iPlayer) != SettlerMaps.getMapValue(iCiv, plot.getX(), plot.getY()):
 				bSettlerValueChanged = True
 				break
 	if bSettlerValueChanged:
@@ -364,9 +359,8 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 
 	bWarMapChanged = bForce
 	if not bWarMapChanged:
-		for (x, y) in utils.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
-			if plot.getWarValue(iPlayer) != WarMaps.getMapValue(iCiv, x, y):
+		for plot in plots.all():
+			if plot.getWarValue(iPlayer) != WarMaps.getMapValue(iCiv, plot.getX(), plot.getY()):
 				bWarMapChanged = True
 				break
 	if bWarMapChanged:
@@ -408,9 +402,8 @@ def exportRegionMap(bForce = False):
 
 	bMapChanged = bForce
 	if not bMapChanged:
-		for (x, y) in utils.getWorldPlotsList():
-			plot = gc.getMap().plot(x, y)
-			if plot.getRegionID() != RegionMap.getMapValue(x, y):
+		for plot in plots.all():
+			if plot.getRegionID() != RegionMap.getMapValue(plot.getX(), plot.getY()):
 				bMapChanged = True
 				break
 	if bMapChanged:
@@ -441,12 +434,12 @@ def exportRegionMap(bForce = False):
 def exportAreaExport(lPlots, bWaterException, bPeakException):
 	if lPlots:
 		BL, TR = getTLBR(lPlots)
-		lExceptions = [(x, y) for (x, y) in utils.getPlotList(BL, TR) if (x, y) not in lPlots and (bWaterException and gc.getMap().plot(x, y).isWater()) and (bPeakException and gc.getMap().plot(x, y).isPeak())]
+		lExceptions = [plot for plot in plots.start(BL).end(TR) if location(plot) not in lPlots and (bWaterException and plot.isWater()) and (bPeakException and plot.isPeak())]
 		
 		if bWaterException:
-			lExceptions.extend([(x, y) for (x, y) in lPlots if gc.getMap().plot(x, y).isWater() and (x, y) not in lExceptions])
+			lExceptions.extend([(x, y) for (x, y) in lPlots if plot(x, y).isWater() and (x, y) not in lExceptions])
 		if bPeakException:
-			lExceptions.extend([(x, y) for (x, y) in lPlots if gc.getMap().plot(x, y).isPeak() and (x, y) not in lExceptions])
+			lExceptions.extend([(x, y) for (x, y) in lPlots if plot(x, y).isPeak() and (x, y) not in lExceptions])
 
 		file = open(IMAGE_LOCATION + "\Other\\NewArea.txt", 'wt')
 		try:
