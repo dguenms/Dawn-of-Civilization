@@ -2,7 +2,7 @@ from CvPythonExtensions import *
 from Consts import *
 import Areas
 from SettlerMaps import *
-from RFCUtils import utils
+from RFCUtils import *
 import csv
 
 IMAGE_LOCATION = "D:\DoC Maps"
@@ -23,9 +23,9 @@ def createMaps():
 	print 'Maps Created'
 			
 def createMap(iPlayer, iReborn):
-	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
+	iCivilization = player(iPlayer).getCivilizationType()
 	if iReborn == 1: iCivilization = dRebirthCiv[iPlayer]
-	sName = gc.getCivilizationInfo(iCivilization).getShortDescription(0)
+	sName = infos.civ(iCivilization).getShortDescription(0)
 	
 	file = open(IMAGE_LOCATION + "\Stability\\" + sName, 'wt')
 
@@ -37,7 +37,7 @@ def createMap(iPlayer, iReborn):
 		for y in reversed(range(iWorldY)):
 			lRow = []
 			for x in range(iWorldX):
-				plot = gc.getMap().plot(x, y)
+				plot = plot_(x, y)
 				iSettlerValue = getMapValue(iCivilization, x, y)
 				bForeignCore = ((x, y) in lForeignCorePlots)
 			
@@ -63,12 +63,12 @@ def createMap(iPlayer, iReborn):
 		
 	try:
 		writer = csv.writer(file)
-		writer.writerow((gc.getPlayer(iPlayer).getPlayerTextColorR(), gc.getPlayer(iPlayer).getPlayerTextColorG(), gc.getPlayer(iPlayer).getPlayerTextColorB()))
+		writer.writerow((player(iPlayer).getPlayerTextColorR(), player(iPlayer).getPlayerTextColorG(), player(iPlayer).getPlayerTextColorB()))
 		
 		for y in reversed(range(iWorldY)):
 			lRow = []
 			for x in range(iWorldX):
-				plot = gc.getMap().plot(x, y)
+				plot = plot_(x, y)
 				if plot.isWater(): lRow.append(0)
 				elif (x, y) in lFlipzonePlots: lRow.append(1)
 				else: lRow.append(0)
@@ -89,7 +89,7 @@ def createMap(iPlayer, iReborn):
 		for y in reversed(range(iWorldY)):
 			lRow = []
 			for x in range(iWorldX):
-				plot = gc.getMap().plot(x, y)
+				plot = plot_(x, y)
 				if (x, y) in lExtendedCorePlots and (x, y) not in lCorePlots and not plot.isWater(): lRow.append(1)
 				else: lRow.append(0)
 			writer.writerow(lRow)
@@ -104,7 +104,7 @@ def getForeignCorePlots(iPlayer, iReborn):
 	
 	for iLoopPlayer in range(iNumPlayers):
 		if iLoopPlayer != iPlayer:
-			if utils.canEverRespawn(iLoopPlayer, getTurnForYear(iSpawnDate)) or tBirth[iLoopPlayer] > iSpawnDate:
+			if canEverRespawn(iLoopPlayer, year(iSpawnDate)) or tBirth[iLoopPlayer] > iSpawnDate:
 				for tPlot in Areas.getCoreArea(iLoopPlayer, iLoopPlayer in dRebirth and iSpawnDate >= dRebirth[iLoopPlayer]):
 					if not tPlot in lForeignCorePlots:
 						lForeignCorePlots.append(tPlot)

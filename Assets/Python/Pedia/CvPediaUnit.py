@@ -1,5 +1,5 @@
 from CvPythonExtensions import *
-from RFCUtils import utils
+from RFCUtils import *
 import CvUtil
 from Consts import *
 
@@ -169,8 +169,8 @@ class CvPediaUnit:
 		
 		for iUnitClass in xrange(gc.getNumUnitClassInfos()):
 			if gc.getUnitInfo(self.iUnit).getUpgradeUnitClass(iUnitClass):
-				if self.top.iActivePlayer >= 0 and self.iUnit == utils.getUniqueUnit(self.top.iActivePlayer, self.iUnit):
-					iUnit = utils.getUniqueUnitType(self.top.iActivePlayer, iUnitClass)
+				if self.top.iActivePlayer >= 0 and self.iUnit == unique_unit(self.top.iActivePlayer, self.iUnit):
+					iUnit = unique_unit_from_class(self.top.iActivePlayer, iUnitClass)
 				else:
 					iUnit = gc.getUnitClassInfo(iUnitClass).getDefaultUnitIndex()
 				screen.attachImageButton(panel, "", gc.getUnitInfo(iUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, 1, False)

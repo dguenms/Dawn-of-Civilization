@@ -1,26 +1,26 @@
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 
 def getModifier(iPlayer, iModifier):
-	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
+	iCivilization = player(iPlayer).getCivilizationType()
 	if iCivilization in lOrder:
 		return tModifiers[iModifier][lOrder.index(iCivilization)]
 	return tDefaults[iModifier]
 	
 def getAdjustedModifier(iPlayer, iModifier):
-	if utils.getScenario() > i3000BC and iPlayer < iVikings:
+	if scenario() > i3000BC and iPlayer < iVikings:
 		if iModifier in dLateScenarioModifiers:
 			return getModifier(iPlayer, iModifier) * dLateScenarioModifiers[iModifier] / 100
 	return getModifier(iPlayer, iModifier)
 	
 def setModifier(iPlayer, iModifier, iNewValue):
-	gc.getPlayer(iPlayer).setModifier(iModifier, iNewValue)
+	player(iPlayer).setModifier(iModifier, iNewValue)
 	
 def changeModifier(iPlayer, iModifier, iChange):
-	setModifier(iPlayer, iModifier, gc.getPlayer(iPlayer).getModifier(iModifier) + iChange)
+	setModifier(iPlayer, iModifier, player(iPlayer).getModifier(iModifier) + iChange)
 	
 def adjustModifier(iPlayer, iModifier, iPercent):
-	setModifier(iPlayer, iModifier, gc.getPlayer(iPlayer).getModifier(iModifier) * iPercent / 100)
+	setModifier(iPlayer, iModifier, player(iPlayer).getModifier(iModifier) * iPercent / 100)
 	
 def adjustModifiers(iPlayer):
 	for iModifier in dLateScenarioModifiers:
@@ -40,10 +40,10 @@ def init():
 	for iPlayer in range(iNumTotalPlayersB):
 		updateModifiers(iPlayer)
 		
-		if utils.getScenario() > i3000BC and iPlayer < iVikings:
+		if scenario() > i3000BC and iPlayer < iVikings:
 			adjustModifiers(iPlayer)
 		
-		gc.getPlayer(iPlayer).updateMaintenance()
+		player(iPlayer).updateMaintenance()
 		
 
 ### Modifier types ###

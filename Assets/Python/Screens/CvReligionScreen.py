@@ -9,7 +9,7 @@ import PyHelpers
 import CvUtil
 import ScreenInput
 import CvScreenEnums
-from RFCUtils import utils
+from RFCUtils import *
 from Consts import *
 
 # BUG - start

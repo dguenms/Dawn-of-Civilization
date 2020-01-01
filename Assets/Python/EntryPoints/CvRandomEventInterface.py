@@ -13,12 +13,13 @@ import CvUtil
 from CvPythonExtensions import *
 
 from Consts import * #Rhye
-import RFCUtils #Leoreth
 import Religions #Leoreth
 import PyHelpers #Leoreth
 import CityNameManager as cnm
 from StoredData import data
-from RFCUtils import utils
+from RFCUtils import *
+
+from Core import *
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -3094,18 +3095,18 @@ def canApplyCrusadeDone2(argsList):
 	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
 
 	#Rhye - switch to Jerusalem
-	if utils.getScenario() >= i600AD: #late start condition
+	if scenario() >= i600AD: #late start condition
 		if (holyCity.getX() == 60 and holyCity.getY() == 44):
 			pJerusalem = gc.getMap().plot(73, 38)
 			if (not pJerusalem.getPlotCity().isNone()):
 				holyCity = pJerusalem.getPlotCity()
 			else:
- 				return false #we don't want a Crusade on Rome
+ 				return False #we don't want a Crusade on Rome
 	
 	if -1 == kTriggeredData.eBuilding or holyCity.isHasBuilding(kTriggeredData.eBuilding):
-		return false			
+		return False			
 	
-	return true
+	return True
 
 def applyCrusadeDone2(argsList):
 	iEvent = argsList[0]
@@ -4305,18 +4306,18 @@ def canTriggerTradingCompanyConquerors(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
 	
-	if utils.getScenario() == i1700AD: return False
+	if scenario() == i1700AD: return False
 
 	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	
-	if iPlayer not in lCivList or utils.getHumanID() != iPlayer:
+	if iPlayer not in lCivList or not player(iPlayer).isHuman():
 		return False
 
 	id = lCivList.index(iPlayer)
 
 	# Leoreth: dirty solution: determine that turn's target cities during this check
-	utils.debugTextPopup('Determining colonial targets.')
-	targetList = utils.getColonialTargets(iPlayer, True)
+	debug('Determining colonial targets.')
+	targetList = getColonialTargets(iPlayer, True)
 	
 	data.lTradingCompanyConquerorsTargets[id].extend(targetList)
 
@@ -4407,9 +4408,9 @@ def doTradingCompanyConquerors1(argsList):
 			settlerList.append((x,y))
 
 	for tPlot in settlerList:
-		utils.colonialAcquisition(iPlayer, tPlot)
+		colonialAcquisition(iPlayer, tPlot)
 	
-	utils.debugTextPopup(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
+	debug(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
 	for iTargetCiv in targetCivList:
 		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
 		if iTargetCiv >= iNumPlayers:
@@ -4423,10 +4424,10 @@ def doTradingCompanyConquerors1(argsList):
 			x, y = tPlot
 			if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
 				if bAccepted:
-					utils.colonialAcquisition(iPlayer, tPlot)
+					colonialAcquisition(iPlayer, tPlot)
 					gc.getPlayer(iTargetCiv).changeGold(200)
 				else:
-					utils.colonialConquest(iPlayer, tPlot)
+					colonialConquest(iPlayer, tPlot)
 
 	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
 
@@ -4497,7 +4498,7 @@ def doTradingCompanyConquerors2(argsList):
 	for tPlot in targetList:
 		x, y = tPlot
 		if gc.getMap().plot(x, y).isCity():
-			utils.colonialConquest(iPlayer, tPlot)
+			colonialConquest(iPlayer, tPlot)
 
 	tSeaPlot = -1
 	x, y = targetList[0]
@@ -4509,9 +4510,9 @@ def doTradingCompanyConquerors2(argsList):
 
 	if tSeaPlot != -1:
 		if iPlayer == iNetherlands:
-			utils.makeUnit(iEastIndiaman, iPlayer, tSeaPlot, 1)
+			makeUnit(iPlayer, iEastIndiaman, tSeaPlot)
 		else:
-			utils.makeUnit(iGalleon, iPlayer, tSeaPlot, 1)
+			makeUnit(iPlayer, iGalleon, tSeaPlot)
 	
 ######## Reformation (Leoreth) ########
 
@@ -4519,20 +4520,14 @@ def canTriggerReformation(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
 	
-	if utils.getScenario() == i1700AD: return False
+	if scenario() == i1700AD: return False
 	
-	if utils.getHumanID() != iPlayer: return False
+	if not player(iPlayer).isHuman(): return False
 	
-	bCatholicCity = False
-	for city in PyHelpers.PyPlayer(iPlayer).getCityList():
-		if city.GetCy().isHasReligion(iCatholicism):
-			bCatholicCity = True
-			break
-			
-	if not bCatholicCity: return False
+	if cities.owner(iPlayer).none(lambda city: city.isHasReligion(iCatholicism)): return False
 	
 	if gc.getGame().isReligionFounded(iProtestantism):
-		if gc.getGame().getReligionGameTurnFounded(iProtestantism)+2 < gc.getGame().getGameTurn():
+		if gc.getGame().getReligionGameTurnFounded(iProtestantism)+2 < turn():
 			return False
 
 	return gc.getGame().isReligionFounded(iProtestantism)
@@ -4547,12 +4542,7 @@ def getReformation1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	iNumCatholicCities = 0
-	cityList = PyHelpers.PyPlayer(iPlayer).getCityList()
-	for city in cityList:
-		if city.GetCy().isHasReligion(iCatholicism):
-			iNumCatholicCities += 1
-
+	iNumCatholicCities = cities.owner(iPlayer).where(lambda city: city.isHasReligion(iCatholicism))
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_EMBRACE", (iNumCatholicCities * 100,))
 	
 def doReformation1(argsList):

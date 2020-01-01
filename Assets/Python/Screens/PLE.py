@@ -1282,9 +1282,9 @@ class PLE:
 			# move unit to temp plot. 
 			if iMode == 0:
 				pTempPlot = dTempPlots[eDomainType]
-				pLoopUnit.setXY( pTempPlot.getX(), pTempPlot.getY(), False, True, False )
+				move(pLoopUnit, pTempPlot)
 			else:
-				pLoopUnit.setXY( self.pActPlot.getX(), self.pActPlot.getY(), False, True, False )
+				move(pLoopUnit, self.pActPlot)
 
 	# replacement of the civ 4 version
 	def selectGroup(self, iID, bShift, bCtrl, bAlt):

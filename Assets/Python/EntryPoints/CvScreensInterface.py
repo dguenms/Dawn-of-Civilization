@@ -54,20 +54,17 @@ g_bIsScreenActive = -1
 from StoredData import data
 from Consts import *
 import Areas
-from RFCUtils import utils
+from RFCUtils import *
+from RFCUtils import canEverRespawn as canEverRespawnUtils
 import Victory as vic
 import CityNameManager as cnm
 import Congresses as cong
 import RiseAndFall as rnf
 
 gc = CyGlobalContext()
-
-def getStabilityLevel(argsList):
-	iPlayer = argsList[0]
-	return data.players[iPlayer].iStabilityLevel
 	
 def countAchievedGoals(argsList):
-	return utils.countAchievedGoals(argsList[0])
+	return vic.countAchievedGoals(argsList[0])
 	
 ## World Builder ## Platypedia
 import CvPlatyBuilderScreen
@@ -508,11 +505,11 @@ def getWorldBuilderScreen():
 	return worldBuilderScreen
 
 def showWorldBuilderScreen():
-	utils.removeStabilityOverlay()
+	removeStabilityOverlay()
 	worldBuilderScreen.interfaceScreen()
 
 def hideWorldBuilderScreen():
-	utils.removeStabilityOverlay()
+	removeStabilityOverlay()
 	worldBuilderScreen.killScreen()
 
 def WorldBuilderToggleUnitEditCB():
@@ -846,7 +843,7 @@ def isCorePlot(argsList):
 	x = argsList[0]
 	y = argsList[1]
 	iCiv = argsList[2]
-	reborn = utils.getReborn(iCiv)
+	reborn = player(iCiv).getReborn()
 	if iCiv < iNumPlayers:
 		if (x, y) in Areas.getCoreArea(iCiv):
 			return 1
@@ -868,7 +865,7 @@ def isForeignCorePlot(argsList):
 	y = argsList[1]
 	iResult = 0
 	for iCiv in range(iNumPlayers):
-		if CyGlobalContext().getGame().getGameTurn() >= getTurnForYear(tBirth[iCiv]):
+		if CyGlobalContext().getGame().getGameTurn() >= year(tBirth[iCiv]):
 			if (x, y) in Areas.getCoreArea(iCiv):
 				iResult = 1
 				break
@@ -879,7 +876,7 @@ def isBroaderPlot(argsList):
 	x = argsList[0]
 	y = argsList[1]
 	iCiv = argsList[2]
-	reborn = utils.getReborn(iCiv)
+	reborn = player(iCiv).getReborn()
 	if iCiv < iNumPlayers:
 		if (x, y) in Areas.getBroaderArea(iCiv):
 			return 1
@@ -919,40 +916,40 @@ def getUHVTileInfo(argsList):
 		if (x, y) in Areas.getNormalArea(iPersia, False):
 			return 3
 			
-	elif iPlayer == iPersia and CyGlobalContext().getPlayer(iPersia).isReborn():
-		if utils.isPlotInArea((x, y), vic.tSafavidMesopotamiaTL, vic.tSafavidMesopotamiaBR):
+	elif iPlayer == iPersia and pPersia.isReborn():
+		if plot in plots.start(vic.tSafavidMesopotamiaTL).end(vic.tSafavidMesopotamiaBR):
 			return 4
-			
-		if utils.isPlotInArea((x, y), vic.tTransoxaniaTL, vic.tTransoxaniaBR):
+		
+		if plot in plots.start(vic.tTransoxaniaTL).end(vic.tTransoxaniaBR):
 			return 5
-			
-		if utils.isPlotInArea((x, y), vic.tNWIndiaTL, vic.tNWIndiaBR, vic.tNWIndiaExceptions):
+		
+		if plot in plots.start(vic.tNWIndiaTL).end(vic.tNWIndiaBR).without(vic.lNWIndiaExceptions):
 			return 6
 			
 	elif iPlayer == iCarthage:
-		if utils.isPlotInArea((x, y), Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]):
+		if plot in plots.rectangle(Areas.tNormalArea[iItaly]).without([(62, 47), (63, 47), (63, 46)]):
 			return 37
 		
 		if (x, y) in Areas.getNormalArea(iSpain, False):
 			return 8
 			
 	elif iPlayer == iItaly:
-		if utils.isPlotInArea((x, y), vic.tMediterraneanTL, vic.tMediterraneanBR, vic.tMediterraneanExceptions) and CyGlobalContext().getMap().plot(x, y).isCoastalLand():
+		if plot in plots.start(vic.tMediterraneanTL).end(vic.tMediterraneanBR).without(vic.tMediterraneanExceptions) and plot.isCoastalLand():
 			return 7
 			
 	elif iPlayer == iRome:
 		if (x, y) in Areas.getNormalArea(iSpain, False):
 			return 8
 				
-		if utils.isPlotInArea((x, y), vic.tFranceTL, Areas.tNormalArea[iFrance][1]):
+		if plot in plots.start(vic.tFranceTL).end(Areas.tNormalArea[iFrance][1]):
 			return 9
-				
+		
 		if (x, y) in Areas.getCoreArea(iEngland, False):
 			return 10
-				
-		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
+		
+		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
 			return 11
-				
+		
 		if (x, y) in Areas.getCoreArea(iByzantium, False):
 			return 12
 			
@@ -960,43 +957,43 @@ def getUHVTileInfo(argsList):
 			return 13
 
 	elif iPlayer == iJapan:
-		if utils.isPlotInArea((x, y), vic.tKoreaTL, vic.tKoreaBR):
+		if plot in plots.start(vic.tKoreaTL).end(vic.tKoreaBR):
 			return 14
-				
-		if utils.isPlotInArea((x, y), vic.tManchuriaTL, vic.tManchuriaBR):
+		
+		if plot in plots.start(vic.tManchuriaTL).end(vic.tManchuriaBR):
 			return 15
-				
-		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
+		
+		if plot in plots.start(vic.tChinaTL).end(vic.tChinaBR):
 			return 16
-				
-		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR, vic.tIndochinaExceptions):
+		
+		if plot in plots.start(vic.tIndochinaTL).end(vic.tIndochinaBR).without(vic.tIndochinaExceptions):
 			return 17
-				
-		if utils.isPlotInArea((x, y), vic.tIndonesiaTL, vic.tIndonesiaBR):
+		
+		if plot in plots.start(vic.tIndonesiaTL).end(vic.tIndonesiaBR):
 			return 18
-				
-		if utils.isPlotInArea((x, y), vic.tPhilippinesTL, vic.tPhilippinesBR):
+		
+		if plot in plots.start(vic.tPhilippinesTL).end(vic.tPhilippinesBR):
 			return 19
 			
 	elif iPlayer == iEthiopia:
-		if gc.getMap().plot(x, y).getRegionID() in lAfrica:
+		if plot.getRegionID() in lAfrica:
 			return 33
 		
 	elif iPlayer == iByzantium:
-		if utils.isPlotInArea((x, y), vic.tBalkansTL, vic.tBalkansBR):
+		if plot in plots.start(vic.tBalkansTL).end(vic.tBalkansBR):
 			return 21
-				
-		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
+		
+		if plot in plots.start(vic.tNorthAfricaTL).end(vic.tNorthAfricaBR):
 			return 22
-				
-		if utils.isPlotInArea((x, y), vic.tNearEastTL, vic.tNearEastBR):
+		
+		if plot in plots.start(vic.tNearEastTL).end(vic.tNearEastBR):
 			return 23
 			
 	elif iPlayer == iArabia:
 		if (x, y) in Areas.getCoreArea(iEgypt, False):
 			return 24
-				
-		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
+		
+		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
 			return 25
 		
 		if (x, y) in Areas.getCoreArea(iBabylonia, False):
@@ -1009,14 +1006,20 @@ def getUHVTileInfo(argsList):
 			return 28
 			
 	elif iPlayer == iSpain:
-		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
-		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
+		if plot in plots.start(vic.tEuropeTL).end(vic.tEuropeBR):
+			return 29
+		
+		elif plot in plots.start(vic.tEasternEuropeTL).end(vic.tEasternEuropeBR):
+			return 29
 			
 	elif iPlayer == iFrance:
-		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
-		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
-				
-		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
+		if plot in plots.start(vic.tEuropeTL).end(vic.tEuropeBR):
+			return 29
+			
+		elif plot in plots.start(vic.tEasternEuropeTL).end(vic.tEasternEuropeBR):
+			return 29
+		
+		if plot in plots.start(vic.tNorthAfricaTL).end(vic.tNorthAmericaBR):
 			return 30
 			
 	elif iPlayer == iEngland:
@@ -1052,14 +1055,14 @@ def getUHVTileInfo(argsList):
 			return 40
 			
 	elif iPlayer == iRussia:
-		if utils.isPlotInArea((x, y), vic.tSiberiaTL, vic.tSiberiaBR):
+		if plot in plots.start(vic.tSiberiaTL).end(vic.tSiberiaBR):
 			return 41
 			
 	elif iPlayer == iInca:
 		if (x, y) in vic.lAndeanCoast:
 			return 42
-			
-		if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
+		
+		if plot in plots.start(vic.tSAmericaTL).end(vic.tSAmericaBR).without(vic.tSouthAmericaExceptions):
 			return 43
 			
 	elif iPlayer == iOttomans:
@@ -1068,42 +1071,42 @@ def getUHVTileInfo(argsList):
 			
 		if (x,y) in vic.lBlackSea:
 			return 48
-			
-		if (x, y) in utils.surroundingPlots(vic.tCairo):
+		
+		if plot in plots.surrounding(vic.tCairo):
 			return 49
-				
-		if (x, y) in utils.surroundingPlots(vic.tMecca):
+		
+		if plot in plots.surrounding(vic.tMecca):
 			return 50
-				
-		if (x, y) in utils.surroundingPlots(vic.tBaghdad):
+		
+		if plot in plots.surrounding(vic.tBaghdad):
 			return 51
-				
-		if (x, y) in utils.surroundingPlots(vic.tVienna):
+		
+		if plot in plots.surrounding(vic.tVienna):
 			return 52
 			
 	elif iPlayer == iThailand:
-		if utils.isPlotInArea((x, y), vic.tSouthAsiaTL, vic.tSouthAsiaBR):
+		if plot in plots.start(vic.tSouthAsiaTL).end(vic.tSouthAsiaBR):
 			return 53
 			
 	elif iPlayer == iAmerica:
-		if utils.isPlotInArea((x, y), vic.tNCAmericaTL, vic.tNCAmericaBR):
+		if plot in plots.start(vic.tNCAmericaTL).end(vic.tNCAmericaBR):
 			return 54
 			
 	elif iPlayer == iTamils:
-		if utils.isPlotInArea((x, y), vic.tDeccanTL, vic.tDeccanBR):
+		if plot in plots.start(vic.tDeccanTL).end(vic.tDeccanBR):
 			return 55
-			
-		if utils.isPlotInArea((x, y), vic.tSrivijayaTL, vic.tSrivijayaBR):
+		
+		if plot in plots.start(vic.tSrivijayaTL).end(civ.tSrivijayaBR):
 			return 56
 			
 	elif iPlayer == iMoors:
-		if utils.isPlotInArea((x, y), vic.tIberiaTL, vic.tIberiaBR):
+		if plot in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 			return 57
-			
-		if utils.isPlotInArea((x, y), vic.tMaghrebTL, vic.tMaghrebBR):
+		
+		if plot in plots.start(vic.tMaghrebTL).end(vic.tMaghrebBR):
 			return 58
-			
-		if utils.isPlotInArea((x, y), vic.tWestAfricaTL, vic.tWestAfricaBR):
+		
+		if plot in plots.start(vic.tWestAfricaTL).end(vic.tWestAfricaBR):
 			return 59
 			
 	elif iPlayer == iPortugal:
@@ -1112,25 +1115,25 @@ def getUHVTileInfo(argsList):
 					
 		if plot.getRegionID() in lAsia:
 			return 34
-					
-		if utils.isPlotInArea((x, y), vic.tBrazilTL, vic.tBrazilBR):
+		
+		if plot in plots.start(vic.tBrazilTL).end(vic.tBrazilBR):
 			return 60
 			
 	elif iPlayer == iMaya:
-		if utils.isReborn(iPlayer):
-			if utils.isPlotInArea((x, y), vic.tPeruTL, vic.tPeruBR):
+		if pMaya.isReborn():
+			if plot in plots.start(vic.tPeruTL).end(vic.tPeruBR):
 				return 43
-				
-			if utils.isPlotInArea((x, y), vic.tGranColombiaTL, vic.tGranColombiaBR):
+			
+			if plot in plots.start(vic.tGranColombiaTL).end(vic.tGranColombiaBR):
 				return 44
-				
-			if utils.isPlotInArea((x, y), vic.tGuayanasTL, vic.tGuayanasBR):
+			
+			if plot in plots.start(vic.tGuayanasTL).end(vic.tGuayanasBR):
 				return 45
-				
-			if utils.isPlotInArea((x, y), vic.tCaribbeanTL, vic.tCaribbeanBR):
+			
+			if plot in plots.start(vic.tCaribbeanTL).end(vic.tCaribbeanBR):
 				return 46
-				
-			if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
+			
+			if plot in plots.start(vic.tSAmericaTL).end(vic.tSAmericaBR).without(vic.tSouthAmericaExceptions):
 				return 61
 				
 	elif iPlayer == iCanada:
@@ -1139,21 +1142,21 @@ def getUHVTileInfo(argsList):
 			
 		if (x, y) in vic.lPacificCoast:
 			return 64
-			
-		if utils.isPlotInArea((x, y), vic.tCanadaWestTL, vic.tCanadaWestBR, vic.tCanadaWestExceptions) or utils.isPlotInArea((x, y), vic.tCanadaEastTL, vic.tCanadaEastBR, vic.tCanadaEastExceptions):
+		
+		if plot in plots.start(vic.tCanadaWestTL).end(vic.tCanadaWestBR).without(vic.lCanadaWestExceptions) or plot in plots.start(vic.tCanadaEastTL).end(vic.tCanadaEastBR).without(vic.lCanadaEastExceptions):
 			return 62
 			
 	elif iPlayer == iPolynesia:
-		if utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
+		if plot in plots.start(vic.tHawaiiTL).end(vic.tHawaiiBR):
 			return 65
-			
-		if utils.isPlotInArea((x, y), vic.tNewZealandTL, vic.tNewZealandBR):
+		
+		if plot in plots.start(vic.tNewZealandTL).end(vic.tNewZealandBR):
 			return 66
-			
-		if utils.isPlotInArea((x, y), vic.tMarquesasTL, vic.tMarquesasBR):
+		
+		if plot in plots.start(vic.tMarquesasTL).end(vic.tMarquesasBR):
 			return 67
-			
-		if utils.isPlotInArea((x, y), vic.tEasterIslandTL, vic.tEasterIslandBR):
+		
+		if plot in plots.start(vic.tEasterIslandTL).end(vic.tEasterIslandBR):
 			return 68
 			
 	elif iPlayer == iMongolia:
@@ -1164,7 +1167,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in vic.lMediterraneanPorts:
 			return 70
 			
-		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
+		if plot in plots.start(vic.tChinaTL).end(vic.tChinaBR):
 			return 71
 				
 		# free IDs: 20
@@ -1185,19 +1188,19 @@ def getCityName(argsList):
 def canRespawn(argsList):
 	iPlayer = argsList[0]
 	
-	if utils.canRespawn(iPlayer): return 1
+	if canRespawn(iPlayer): return 1
 	
 	return 0
 	
 def canEverRespawn(argsList):
 	iPlayer, iGameTurn = argsList
 	
-	if utils.canEverRespawn(iPlayer, iGameTurn): return 1
+	if canEverRespawnUtils(iPlayer, iGameTurn): return 1
 	
 	return 0
 
 def toggleStabilityOverlay():
-	utils.toggleStabilityOverlay()
+	toggleStabilityOverlay()
 		
 def applyClaimCityEvent(argsList):
 	data.currentCongress.applyClaimCityEvent(argsList[0])

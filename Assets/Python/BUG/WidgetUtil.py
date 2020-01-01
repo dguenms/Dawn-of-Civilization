@@ -41,7 +41,7 @@
 from CvPythonExtensions import *
 import BugConfig
 import BugUtil
-from RFCUtils import utils
+from RFCUtils import *
 import TechPrefs
 gc = CyGlobalContext()
 
@@ -123,7 +123,7 @@ def getWidgetHelp(argsList):
 	
 	# Leoreth: Aztec UP: sacrifice slaves
 	if iData1 == 10000:
-		return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (utils.getTurns(5), utils.getTurns(5)))
+		return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (turns(5), turns(5)))
 					
 	# Leoreth: Byzantine UP: bribe button
 	if iData1 == 10001:

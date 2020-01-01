@@ -182,7 +182,7 @@ class GameData:
 		
 		# Religions
 		
-		self.iSeed = gc.getGame().getSorenRandNum(100, "Random delay")
+		self.iSeed = gc.getGame().getSorenRandNum(100, 'random seed')
 		
 		# Unique Powers
 		
@@ -197,6 +197,10 @@ class GameData:
 		self.iNextTurnAIWar = -1
 		
 		self.lConquest = [False] * iNumConquests
+		
+		# Dynamic Civs
+		
+		self.dCapitalLocations = {}
 		
 		# Congresses
 		

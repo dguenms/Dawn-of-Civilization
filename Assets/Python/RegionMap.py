@@ -1,12 +1,13 @@
 from Consts import *
+from Core import *
 
 (iNone, iMinority, iPeriphery, iHistorical, iCore) = range(5)
 
 def getMapValue(x, y):
 	return tRegionMap[iWorldY-1-y][x]
 	
-def getSpreadFactor(iReligion, x, y):
-	iRegion = gc.getMap().plot(x, y).getRegionID()
+def getSpreadFactor(iReligion, (x, y)):
+	iRegion = plot(x, y).getRegionID()
 	if iRegion < 0: return -1
 	
 	for iFactor in tSpreadFactors[iReligion].keys():
@@ -16,16 +17,14 @@ def getSpreadFactor(iReligion, x, y):
 	return iNone
 	
 def updateRegionMap():
-	for x in range(iWorldX):
-		for y in range(iWorldY):
-			gc.getMap().plot(x, y).setRegionID(getMapValue(x, y))
+	for plot in plots.all():
+		plot.setRegionID(getMapValue(plot.getX(), plot.getY()))
 			
-	gc.getMap().recalculateAreas()
+	map.recalculateAreas()
 			
 def updateReligionSpread(iReligion):
-	for x in range(iWorldX):
-		for y in range(iWorldY):
-			gc.getMap().plot(x, y).setSpreadFactor(iReligion, getSpreadFactor(iReligion, x, y))
+	for plot in plots.all():
+		plot.setSpreadFactor(iReligion, getSpreadFactor(iReligion, location(plot)))
 				
 def init():
 	updateRegionMap()

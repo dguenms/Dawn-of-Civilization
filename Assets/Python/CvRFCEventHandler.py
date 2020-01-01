@@ -13,7 +13,7 @@ import UniquePowers
 import AIWars
 import Congresses as cong
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 import CvScreenEnums #Rhye
 import Victory as vic
 import Stability as sta
@@ -30,9 +30,8 @@ import Civilizations
 import AIParameters
 import GreatPeople as gp
 
-gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
-localText = CyTranslator()
+from Core import *
+
 
 class CvRFCEventHandler:
 
@@ -130,54 +129,54 @@ class CvRFCEventHandler:
 		if iPlayer == iArabia:
 			self.up.arabianUP(city)
 			
-		if iPlayer == iMongolia and bConquest and utils.getHumanID() != iPlayer:
+		if iPlayer == iMongolia and bConquest and not player(iPlayer).isHuman():
 			self.up.mongolUP(city)
 		
 		# relocate capitals
-		if utils.getHumanID() != iPlayer:
+		if not player(iPlayer).isHuman():
 			if iPlayer == iOttomans and tCity == (68, 45):
-				utils.moveCapital(iOttomans, tCity) # Kostantiniyye
+				moveCapital(iOttomans, tCity) # Kostantiniyye
 			elif iPlayer == iMongolia and tCity == (102, 47):
-				utils.moveCapital(iMongolia, tCity) # Khanbaliq	
-			elif iPlayer == iTurks and utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				moveCapital(iMongolia, tCity) # Khanbaliq	
+			elif iPlayer == iTurks and isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 				capital = pTurks.getCapitalCity()
-				if not utils.isPlotInArea((capital.getX(), capital.getY()), Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
-					newCapital = utils.getRandomEntry(utils.getAreaCitiesCiv(iTurks, utils.getPlotList(Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1])))
+				if not capital in plots.rectangle(*Areas.tCoreArea[iPersia]):
+					newCapital = cities.rectangle(*Areas.tCoreArea[iPersia]).owner(iTurks).random()
 					if newCapital:
-						utils.moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
+						moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
 				
 				
 		# remove slaves if unable to practice slavery
-		if not gc.getPlayer(iPlayer).canUseSlaves():
-			utils.removeSlaves(city)
+		if not player(iPlayer).canUseSlaves():
+			city.setFreeSpecialistCount(iSpecialistSlave, 0)
 		else:
-			utils.freeSlaves(city, iPlayer)
+			freeSlaves(city, iPlayer)
 			
 		if city.isCapital():
 			if city.isHasRealBuilding(iAdministrativeCenter): 
 				city.setHasRealBuilding(iAdministrativeCenter, False)	
 				
 		# Leoreth: relocate capital for AI if reacquired:
-		if utils.getHumanID() != iPlayer and iPlayer < iNumPlayers:
+		if not player(iPlayer).isHuman() and iPlayer < iNumPlayers:
 			if data.players[iPlayer].iResurrections == 0:
 				if Areas.getCapital(iPlayer) == tCity:
-					utils.relocateCapital(iPlayer, city)
+					relocateCapital(iPlayer, city)
 			else:
 				if Areas.getRespawnCapital(iPlayer) == tCity:
-					utils.relocateCapital(iPlayer, city)
+					relocateCapital(iPlayer, city)
 					
 		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
 		if iPlayer == iOttomans and tCity == (68, 45):
-			utils.setReborn(iOttomans, True)
+			setReborn(iOttomans, True)
 			
 		if iTurks in [iPlayer, iOwner]:
-			if utils.isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
-				utils.setReborn(iTurks, True)
+			if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				setReborn(iTurks, True)
 			else:
-				utils.setReborn(iTurks, False)
+				setReborn(iTurks, False)
 					
 		# Leoreth: help Byzantium/Constantinople
-		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
+		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -191,31 +190,31 @@ class CvRFCEventHandler:
 			
 			city.setName("Konstantinoupolis", False)
 			
-			city.setHasRealBuilding(iTemple + 4*gc.getPlayer(iPlayer).getStateReligion(), True)
+			city.setHasRealBuilding(iTemple + 4*player(iPlayer).getStateReligion(), True)
 			
 		if bConquest:
 
 			# Colombian UP: no resistance in conquered cities in Latin America
-			if iPlayer == iMaya and utils.isReborn(iMaya):
-				if utils.isPlotInArea(tCity, tSouthCentralAmericaTL, tSouthCentralAmericaBR):
+			if iPlayer == iMaya and pMaya.isReborn():
+				if city in plots.start(tSouthCentralAmericaTL).end(tSouthCentralAmericaBR):
 					city.setOccupationTimer(0)
 					
 			# Byzantium reduced to four cities: core shrinks to Constantinople
-			if iOwner == iByzantium and gc.getPlayer(iByzantium).getNumCities <= 4:
-				utils.setReborn(iByzantium, True)
+			if iOwner == iByzantium and player(iByzantium).getNumCities <= 4:
+				setReborn(iByzantium, True)
 					
 		if bTrade:
 			for iNationalWonder in range(iNumBuildings):
-				if iNationalWonder != iPalace and isNationalWonderClass(gc.getBuildingInfo(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
+				if iNationalWonder != iPalace and isNationalWonderClass(infos.building(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
 					city.setHasRealBuilding(iNationalWonder, False)
 					
 		# Leoreth: Escorial effect
-		if gc.getPlayer(iPlayer).isHasBuildingEffect(iEscorial):
+		if player(iPlayer).isHasBuildingEffect(iEscorial):
 			if city.isColony():
-				capital = gc.getPlayer(iPlayer).getCapitalCity()
-				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
-				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
-				gc.getPlayer(iPlayer).changeGold(iGold)
+				capital = player(iPlayer).getCapitalCity()
+				iGold = turns(10 + distance(capital, city))
+				message(iPlayer, 'TXT_KEY_BUILDING_ESCORIAL_EFFECT', iGold, city.getName())	
+				player(iPlayer).changeGold(iGold)
 					
 		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
 		self.com.onCityAcquired(city) # Communications
@@ -238,7 +237,7 @@ class CvRFCEventHandler:
 		if city.isCapital():
 			self.rnf.createStartingWorkers(iPlayer, (city.getX(), city.getY()))
 		
-		utils.cityConquestCulture(city, iPlayer, iOwner)
+		cityConquestCulture(city, iPlayer, iOwner)
 
 	def onCityRazed(self, argsList):
 		city, iPlayer = argsList
@@ -252,58 +251,52 @@ class CvRFCEventHandler:
 	def onCityBuilt(self, argsList):
 		city = argsList[0]
 		iOwner = city.getOwner()
-		tCity = (city.getX(), city.getY())
-		x, y = tCity
 		
 		if iOwner < iNumActivePlayers: 
 			cnm.onCityBuilt(city)
 			
 		# starting workers
 		if city.isCapital():
-			self.rnf.createStartingWorkers(iOwner, tCity)
+			self.rnf.createStartingWorkers(iOwner, city)
 
 		#Rhye - delete culture of barbs and minor civs to prevent weird unhappiness
-		pPlot = gc.getMap().plot(x, y)
-		for i in range(iNumTotalPlayers - iNumActivePlayers):
-			iMinorCiv = i + iNumActivePlayers
+		pPlot = plot(city)
+		for iMinorCiv in players.minor():
 			pPlot.setCulture(iMinorCiv, 0, True)
-		pPlot.setCulture(iBarbarian, 0, True)
 
 		if iOwner < iNumMajorPlayers:
-			utils.spreadMajorCulture(iOwner, tCity)
-			if gc.getPlayer(iOwner).getNumCities() < 2:
-				gc.getPlayer(iOwner).AI_updateFoundValues(False); # fix for settler maps not updating after 1st city is founded
+			spreadMajorCulture(iOwner, location(city))
+			if player(iOwner).getNumCities() < 2:
+				player(iOwner).AI_updateFoundValues(False); # fix for settler maps not updating after 1st city is founded
 
 		if iOwner == iOttomans:
 			self.up.ottomanUP(city, iOwner, -1)
 			
 		if iOwner == iCarthage:
-			if tCity == (58, 39):
-				if not gc.getPlayer(iCarthage).isHuman():
-					x = gc.getPlayer(iCarthage).getCapitalCity().getX()
-					y = gc.getPlayer(iCarthage).getCapitalCity().getY()
-					carthage = gc.getMap().plot(58, 39).getPlotCity()
-					carthage.setHasRealBuilding(iPalace, True)
-					gc.getMap().plot(x, y).getPlotCity().setHasRealBuilding(iPalace, False)
+			if location(city) == (58, 39):
+				if not pPhoenicia.isHuman():
+					# TODO: use relocate capital here
+					city.setHasRealBuilding(iPalace, True)
+					pPhoenicia.getCapitalCity().setHasRealBuilding(iPalace, False)
 					dc.onPalaceMoved(iCarthage)
 					
-					carthage.setPopulation(3)
+					city.setPopulation(3)
 					
-					utils.makeUnitAI(iWorkboat, iCarthage, (58, 39), UnitAITypes.UNITAI_WORKER_SEA, 1)
-					utils.makeUnitAI(iGalley, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
-					utils.makeUnitAI(iSettler, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
+					makeUnit(iCarthage, iWorkboat, (58, 39), UnitAITypes.UNITAI_WORKER_SEA)
+					makeUnit(iCarthage, iGalley, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA)
+					makeUnit(iCarthage, iSettler, (57, 40), UnitAITypes.UNITAI_SETTLE)
 					
 					# additional defenders and walls to make human life not too easy
-					if utils.getHumanID() == iRome:
-						carthage.setHasRealBuilding(iWalls, True)
-						utils.makeUnitAI(iArcher, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-						utils.makeUnit(iNumidianCavalry, iCarthage, (58, 39), 3)
-						utils.makeUnitAI(iWarElephant, iCarthage, (58, 39), UnitAITypes.UNITAI_CITY_COUNTER, 2)
+					if pRome.isHuman():
+						city.setHasRealBuilding(iWalls, True)
+						makeUnits(iCarthage, iArcher, (58, 39), 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+						makeUnits(iCarthage, iNumidianCavalry, (58, 39), 3)
+						makeUnits(iCarthage, iWarElephant, (58, 39), 2, UnitAITypes.UNITAI_CITY_COUNTER)
 					
-				if utils.getOwnedCoreCities(iCarthage) > 0:
-					utils.setReborn(iCarthage, True)
+				if getOwnedCoreCities(iCarthage) > 0:
+					setReborn(iCarthage, True)
 				
-		if iOwner == iByzantium and tCity == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
+		if iOwner == iByzantium and location(city) == Areas.getCapital(iByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -315,29 +308,29 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(iHarbor, True)
 			city.setHasRealBuilding(iForge, True)
 			
-			city.setHasRealBuilding(iTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
+			city.setHasRealBuilding(iTemple + 4*player(iOwner).getStateReligion(), True)
 			
-		if iOwner == iPortugal and tCity == Areas.getCapital(iPortugal) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iPortugal]) + 3:
+		if iOwner == iPortugal and location(city) == Areas.getCapital(iPortugal) and year() <= year(tBirth[iPortugal]) + 3:
 			city.setPopulation(5)
 			
-			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, iTemple+4*gc.getPlayer(iPortugal).getStateReligion()]:
+			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, iTemple+4*pPortugal.getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
 			
-		if iOwner == iNetherlands and tCity == Areas.getCapital(iNetherlands) and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
+		if iOwner == iNetherlands and location(city) == Areas.getCapital(iNetherlands) and year() <= year(1580)+3:
 			city.setPopulation(9)
 			
-			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre, iTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
+			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre, iTemple+4*pNetherlands.getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
 				
-			gc.getPlayer(iNetherlands).AI_updateFoundValues(False)
+			pNetherlands.AI_updateFoundValues(False)
 			
-		if iOwner == iItaly and tCity == Areas.getCapital(iItaly) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
+		if iOwner == iItaly and location(city) == Areas.getCapital(iItaly) and year() <= year(tBirth[iItaly])+3:
 			city.setPopulation(7)
 			
-			for iBuilding in [iLibrary, iPharmacy, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
+			for iBuilding in [iLibrary, iPharmacy, iTemple+4*pItaly.getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
 				city.setHasRealBuilding(iBuilding, True)
 				
-			gc.getPlayer(iItaly).AI_updateFoundValues(False)
+			pItaly.AI_updateFoundValues(False)
 
 		vic.onCityBuilt(iOwner, city)
 			
@@ -345,35 +338,35 @@ class CvRFCEventHandler:
 			dc.onCityBuilt(iOwner)
 
 		if iOwner == iArabia:
-			if not gc.getGame().isReligionFounded(iIslam):
-				if tCity == (75, 33):
-					rel.foundReligion(tCity, iIslam)
+			if not game.isReligionFounded(iIslam):
+				if location(city) == (75, 33):
+					rel.foundReligion(location(city), iIslam)
 				
 		# Leoreth: free defender and worker for AI colonies
 		if iOwner in lCivGroups[0]:
 			if city.getRegionID() not in mercRegions[iArea_Europe]:
-				if utils.getHumanID() != iOwner:
-					utils.createGarrisons(tCity, iOwner, 1)
-					utils.makeUnit(iWorker, iOwner, tCity, 1)
+				if not player(iOwner).isHuman():
+					createGarrisons(city, iOwner, 1)
+					makeUnit(iOwner, iWorker, city)
 					
 		# Holy Rome founds its capital
 		if iOwner == iHolyRome:
-			if gc.getPlayer(iHolyRome).getNumCities() == 1:
+			if pHolyRome.getNumCities() == 1:
 				self.rnf.holyRomanSpawn()
 				
 		# Leoreth: Escorial effect
-		if gc.getPlayer(iOwner).isHasBuildingEffect(iEscorial):
+		if player(iOwner).isHasBuildingEffect(iEscorial):
 			if city.isColony():
-				capital = gc.getPlayer(iOwner).getCapitalCity()
-				iGold = utils.getTurns(10 + utils.calculateDistance(capital.getX(), capital.getY(), city.getX(), city.getY()))
-				CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_ESCORIAL_EFFECT", (iGold, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
-				gc.getPlayer(iOwner).changeGold(iGold)
+				capital = player(iOwner).getCapitalCity()
+				iGold = turns(10 + distance(capital, city))
+				message(iOwner, 'TXT_KEY_BUILDING_ESCORIAL_EFFECT', iGold, city.getName())	
+				player(iOwner).changeGold(iGold)
 				
 		# Leoreth: free defender and worker for cities founded by American Pioneer in North America
 		if iOwner == iAmerica:
 			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
-				utils.createGarrisons(tCity, iOwner, 1)
-				utils.makeUnit(utils.getBestWorker(iOwner), iOwner, tCity, 1)
+				createGarrisons(city, iOwner, 1)
+				makeUnit(iOwner, getBestWorker(iOwner), city)
 
 	def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'
@@ -396,58 +389,55 @@ class CvRFCEventHandler:
 		vic.onCombatResult(pWinningUnit, pLosingUnit)
 		
 		iUnitPower = 0
-		pLosingUnitInfo = gc.getUnitInfo(pLosingUnit.getUnitType())
-		
-		if pLosingUnitInfo.getUnitCombatType() != gc.getInfoTypeForString("UNITCOMBAT_SIEGE"):
+		pLosingUnitInfo = infos.unit(pLosingUnit)
+		if pLosingUnitInfo.getUnitCombatType() != infos.type('UNITCOMBAT_SIEGE'):
 			iUnitPower = pLosingUnitInfo.getPowerValue()
 		
 		sta.onCombatResult(iWinningPlayer, iLosingPlayer, iUnitPower)
 		
 		# capture slaves
 		if iWinningPlayer == iAztecs and not pAztecs.isReborn():
-			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
+			captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
 		elif iLosingPlayer == iNative:
 			if iWinningPlayer not in lCivBioNewWorld or True in data.lFirstContactConquerors:
-				if gc.getPlayer(iWinningPlayer).isSlavery() or gc.getPlayer(iWinningPlayer).isColonialSlavery():
+				if player(iWinningPlayer).isSlavery() or player(iWinningPlayer).isColonialSlavery():
 					if pWinningUnit.getUnitType() == iBandeirante:
-						utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 100)
+						captureUnit(pLosingUnit, pWinningUnit, iSlave, 100)
 					else:
-						utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
+						captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
 		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:
 			iOwner = pWinningUnit.getOwner()
-			if gc.getPlayer(iOwner).getNumCities() > 0:
-				city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+			if player(iOwner).getNumCities() > 0:
+				city = closestCity(pWinningUnit, iOwner)
 				if city: 
-					city.changeFood(utils.getTurns(5))
-					if utils.getHumanID() == pWinningUnit.getOwner(): data.iTeotlSacrifices += 1
-					sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
-					CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MAYA_HOLKAN_EFFECT", (sAdjective, pLosingUnit.getNameKey(), 5, city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+					city.changeFood(turns(5))
+					if human() == pWinningUnit.getOwner(): data.iTeotlSacrifices += 1
+					message(iOwner, 'TXT_KEY_MAYA_HOLKAN_EFFECT', adjective(pLosingUnit), pLosingUnit.getName(), 5, city.getName())
 		
 		# Brandenburg Gate effect
-		if gc.getPlayer(iLosingPlayer).isHasBuildingEffect(iBrandenburgGate):
-			for iPromotion in range(gc.getNumPromotionInfos()):
-				if gc.getPromotionInfo(iPromotion).isLeader() and pLosingUnit.isHasPromotion(iPromotion):
-					gc.getPlayer(iLosingPlayer).restoreGeneralThreshold()
+		if player(iLosingPlayer).isHasBuildingEffect(iBrandenburgGate):
+			for iPromotion in infos.promotions():
+				if infos.promotion(iPromotion).isLeader() and pLosingUnit.isHasPromotion(iPromotion):
+					player(iLosingPlayer).restoreGeneralThreshold()
 					
 		# Motherland Calls effect
-		if gc.getPlayer(iLosingPlayer).isHasBuildingEffect(iMotherlandCalls):
+		if player(iLosingPlayer).isHasBuildingEffect(iMotherlandCalls):
 			if pLosingUnit.getLevel() >= 3:
-				lCities = [city for city in utils.getCityList(iLosingPlayer) if not city.isDrafted()]
-				pCity = utils.getHighestEntry(lCities, lambda city: -utils.calculateDistance(city.getX(), city.getY(), pLosingUnit.getX(), pLosingUnit.getY()))
+				pCity = cities.owner(iLosingPlayer).where(lambda city: not city.isDrafted()).closest(pLosingUnit)
 				if pCity:
 					pCity.conscript(True)
-					gc.getPlayer(iLosingPlayer).changeConscriptCount(-1)
-					CyInterface().addMessage(iLosingPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_MOTHERLAND_CALLS_EFFECT", (pLosingUnit.getName(), pCity.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
+					player(iLosingPlayer).changeConscriptCount(-1)
+					message(iLosingPlayer, 'TXT_KEY_BUILDING_MOTHERLAND_CALLS_EFFECT', pLosingUnit.getName(), pCity.getName())
 
 		
 	def onReligionFounded(self, argsList):
 		'Religion Founded'
 		iReligion, iFounder = argsList
 		
-		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn():
+		if turn() == scenarioStartTurn():
 			return
 	
 		vic.onReligionFounded(iFounder, iReligion)
@@ -462,11 +452,11 @@ class CvRFCEventHandler:
 			sta.onVassalState(iMaster, iVassal)
 		
 		if iVassal == iInca:
-			utils.setReborn(iInca, True)
+			setReborn(iInca, True)
 			
 		# move Mongolia's core south in case they vassalize China
 		if bCapitulated and iVassal == iChina and iMaster == iMongolia:
-			utils.setReborn(iMongolia, True)
+			setReborn(iMongolia, True)
 		
 		dc.onVassalState(iMaster, iVassal)
 
@@ -479,7 +469,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			dc.onRevolution(iPlayer)
 			
-		utils.checkSlaves(iPlayer)
+		checkSlaves(iPlayer)
 			
 		if iPlayer in [iEgypt]:
 			cnm.onRevolution(iPlayer)
@@ -491,12 +481,12 @@ class CvRFCEventHandler:
 		# Leoreth/Voyhkah: Empire State Building effect
 		if pCity.isHasBuildingEffect(iEmpireStateBuilding):
 			iPop = pCity.getPopulation()
-			pCity.setBuildingCommerceChange(gc.getBuildingInfo(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
+			pCity.setBuildingCommerceChange(infos.building(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
 			
 		# Leoreth: Oriental Pearl Tower effect
 		if pCity.isHasBuildingEffect(iOrientalPearlTower):
 			iPop = pCity.getPopulation()
-			pCity.setBuildingCommerceChange(gc.getBuildingInfo(iOrientalPearlTower).getBuildingClassType(), 1, 2 * iPop)
+			pCity.setBuildingCommerceChange(infos.building(iOrientalPearlTower).getBuildingClassType(), 1, 2 * iPop)
 			
 	def onUnitPillage(self, argsList):
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
@@ -509,12 +499,11 @@ class CvRFCEventHandler:
 		city, iPlayer, iGold = argsList
 		
 		if iGold > 0:
-			if gc.getPlayer(iPlayer).isHasBuildingEffect(iGurEAmir):
-				for loopCity in utils.getCityList(iPlayer):
-					if loopCity.isHasRealBuilding(iGurEAmir):
-						CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT", (iGold, city.getName(), loopCity.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-						loopCity.changeCulture(iPlayer, iGold, True)
-						break
+			if player(iPlayer).isHasBuildingEffect(iGurEAmir):
+				wonderCity = cities.owner(iPlayer).building(iGurEAmir).one()
+				if wonderCity:
+					message(iPlayer, 'TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT', iGold, city.getName(), wonderCity.getName())
+					wonderCity.changeCulture(iPlayer, iGold, True)
 		
 		if iPlayer == iVikings and iGold > 0:
 			vic.onCityCaptureGold(iPlayer, iGold)
@@ -541,24 +530,23 @@ class CvRFCEventHandler:
 		pUnit, iOwner, pPlot = argsList
 			
 	def onUnitCreated(self, argsList):
-		utils.debugTextPopup("Unit created")
 		pUnit = argsList
 			
 	def onUnitBuilt(self, argsList):
 		city, unit = argsList
 		
-		if unit.getUnitType() == iSettler and city.getOwner() == iChina and utils.getHumanID() != iChina:
-			utils.handleChineseCities(unit)
+		if unit.getUnitType() == iSettler and city.getOwner() == iChina and not pChina.isHuman():
+			handleChineseCities(unit)
 			
 		# Leoreth: help AI by moving new slaves to the new world
-		if unit.getUnitType() == iSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and utils.getHumanID() != city.getOwner():
-			utils.moveSlaveToNewWorld(city.getOwner(), unit)
+		if unit.getUnitType() == iSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and human() != city.getOwner():
+			moveSlaveToNewWorld(city.getOwner(), unit)
 			
 		# Space Elevator effect: +1 commerce per satellite built
 		if unit.getUnitType() == iSatellite:
-			city = utils.getBuildingEffectCity(iSpaceElevator)
+			city = getBuildingEffectCity(iSpaceElevator)
 			if city:
-				city.changeBuildingYieldChange(gc.getBuildingInfo(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 1)
+				city.changeBuildingYieldChange(infos.building(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 1)
 	
 		
 	def onBuildingBuilt(self, argsList):
@@ -573,7 +561,7 @@ class CvRFCEventHandler:
 		if iOwner < iNumPlayers:
 			self.com.onBuildingBuilt(iOwner, iBuildingType, city)
 		
-		if isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
+		if isWorldWonderClass(infos.building(iBuildingType).getBuildingClassType()):
 			sta.onWonderBuilt(iOwner, iBuildingType)
 			
 		if iBuildingType == iPalace:
@@ -584,21 +572,21 @@ class CvRFCEventHandler:
 			
 			# Leoreth: in case human Phoenicia moves palace to Carthage
 			if iOwner == iCarthage and tCity == (58, 39):
-				utils.setReborn(iCarthage, True)
+				setReborn(iCarthage, True)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == iPorcelainTower:
-			gc.getPlayer(iOwner).updateTradeRoutes()
+			player(iOwner).updateTradeRoutes()
 
 		# Leoreth/Voyhkah: Empire State Building
 		if iBuildingType == iEmpireStateBuilding:
 			iPop = city.getPopulation()
-			city.setBuildingCommerceChange(gc.getBuildingInfo(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
+			city.setBuildingCommerceChange(infos.building(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
 			
 		# Leoreth: Oriental Pearl Tower
 		if iBuildingType == iOrientalPearlTower:
 			iPop = city.getPopulation()
-			city.setBuildingCommerceChange(gc.getBuildingInfo(iOrientalPearlTower).getBuildingClassType(), 1, 2 * iPop)
+			city.setBuildingCommerceChange(infos.building(iOrientalPearlTower).getBuildingClassType(), 1, 2 * iPop)
 			
 		# Leoreth: Machu Picchu
 		if iBuildingType == iMachuPicchu:
@@ -606,14 +594,12 @@ class CvRFCEventHandler:
 			for i in range(21):
 				if city.getCityIndexPlot(i).isPeak():
 					iNumPeaks += 1
-			city.setBuildingCommerceChange(gc.getBuildingInfo(iMachuPicchu).getBuildingClassType(), 0, iNumPeaks * 2)
+			city.setBuildingCommerceChange(infos.building(iMachuPicchu).getBuildingClassType(), 0, iNumPeaks * 2)
 			
 		# Leoreth: Great Wall
 		if iBuildingType == iGreatWall:
-			for iPlot in range(gc.getMap().numPlots()):
-				plot = gc.getMap().plotByIndex(iPlot)
-				if plot.getOwner() == iOwner and not plot.isWater():
-					plot.setWithinGreatWall(True)
+			for plot in plots.all().owner(iOwner).where(lambda p: p.isWater()):
+				plot.setWithinGreatWall(True)
 					
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
@@ -626,20 +612,18 @@ class CvRFCEventHandler:
 			elif iFeature == iRainforest: iGold = 20
 			
 			if iGold > 0:
-				gc.getPlayer(iBrazil).changeGold(iGold)
-				
-				if utils.getHumanID() == iBrazil:
-					CyInterface().addMessage(iBrazil, False, iDuration, CyTranslator().getText("TXT_KEY_DEFORESTATION_EVENT", (gc.getFeatureInfo(iFeature).getText(), city.getName(), iGold)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getCommerceInfo(0).getButton(), ColorTypes(iWhite), plot.getX(), plot.getY(), True, True)
+				pBrazil.changeGold(iGold)
+				message(iBrazil, 'TXT_KEY_DEFORESTATION_EVENT', infos.feature(iFeature).getText(), city.getName(), iGold, type=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.commerce(0).getButton(), location=plot)
 
 	def onProjectBuilt(self, argsList):
 		city, iProjectType = argsList
 		vic.onProjectBuilt(city.getOwner(), iProjectType)
 		
 		# Space Elevator effect: +5 commerce per space projectBuilt
-		if gc.getProjectInfo(iProjectType).isSpaceship():
-			city = utils.getBuildingEffectCity(iSpaceElevator)
+		if infos.project(iProjectType).isSpaceship():
+			city = getBuildingEffectCity(iSpaceElevator)
 			if city:
-				city.changeBuildingYieldChange(gc.getBuildingInfo(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 5)
+				city.changeBuildingYieldChange(infos.building(iSpaceElevator).getBuildingClassType(), YieldTypes.YIELD_COMMERCE, 5)
 
 	def onImprovementDestroyed(self, argsList):
 		pass
@@ -663,7 +647,7 @@ class CvRFCEventHandler:
 		if iGameTurn % 10 == 0:
 			dc.checkTurn(iGameTurn)
 			
-		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(600):
+		if scenario() == i3000BC and iGameTurn == year(600):
 			for iPlayer in range(iVikings):
 				Modifiers.adjustInflationModifier(iPlayer)
 			
@@ -672,18 +656,15 @@ class CvRFCEventHandler:
 	def onBeginPlayerTurn(self, argsList):	
 		iGameTurn, iPlayer = argsList
 		
-		#if utils.getHumanID() == iPlayer:
-		#	utils.debugTextPopup('Can contact: ' + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in range(iNumPlayers) if gc.getTeam(iPlayer).canContact(i)]))
-
 		if (data.lDeleteMode[0] != -1):
 			self.rnf.deleteMode(iPlayer)
 			
 		self.pla.checkPlayerTurn(iGameTurn, iPlayer)
 		
-		if gc.getPlayer(iPlayer).isAlive():
+		if player(iPlayer).isAlive():
 			vic.checkTurn(iGameTurn, iPlayer)
 			
-			if iPlayer < iNumPlayers and not gc.getPlayer(iPlayer).isHuman():
+			if iPlayer < iNumPlayers and not player(iPlayer).isHuman():
 				self.rnf.checkPlayerTurn(iGameTurn, iPlayer) #for leaders switch
 
 	def onGreatPersonBorn(self, argsList):
@@ -695,31 +676,30 @@ class CvRFCEventHandler:
 		sta.onGreatPersonBorn(iPlayer)
 		
 		# Leoreth: Silver Tree Fountain effect
-		if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() > 0 and gc.getPlayer(iPlayer).isHasBuildingEffect(iSilverTreeFountain):
-			city = utils.getHighestEntry(utils.getCityList(iPlayer), lambda city: city.getGreatPeopleProgress())
-			if city and city.getGreatPeopleProgress() > 0:
-				iGreatPerson = utils.getHighestEntry(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit))
+		if infos.unit(pUnit).getLeaderExperience() > 0 and player(iPlayer).isHasBuildingEffect(iSilverTreeFountain):
+			city = cities.owner(iPlayer).where(lambda: city.getGreatPeopleProgress() > 0).maximum(lambda city: city.getGreatPeopleProgress())
+			if city:
+				iGreatPerson = find_max(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit)).result
 				if iGreatPerson >= 0:
-					gc.getPlayer(iPlayer).createGreatPeople(iGreatPerson, False, False, city.getX(), city.getY())
+					player(iPlayer).createGreatPeople(iGreatPerson, False, False, city.getX(), city.getY())
 					
 		# Leoreth: Nobel Prize effect
-		if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iNobelPrize).getBuildingClassType()) > 0:
-			if gc.getUnitInfo(pUnit.getUnitType()).getLeaderExperience() == 0 and gc.getUnitInfo(pUnit.getUnitType()).getEspionagePoints() == 0:
+		if game.getBuildingClassCreatedCount(infos.building(iNobelPrize).getBuildingClassType()) > 0:
+			if infos.unit(pUnit).getLeaderExperience() == 0 and infos.unit(pUnit).getEspionagePoints() == 0:
 				for iLoopPlayer in range(iNumPlayers):
-					if gc.getPlayer(iLoopPlayer).isHasBuildingEffect(iNobelPrize):
-						if pUnit.getOwner() != iLoopPlayer and gc.getPlayer(pUnit.getOwner()).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
-							for pLoopCity in utils.getCityList(iLoopPlayer):
-								if pLoopCity.isHasBuildingEffect(iNobelPrize):
-									iGreatPersonType = utils.getDefaultGreatPerson(pUnit.getUnitType())
-								
-									iGreatPeoplePoints = max(4, gc.getPlayer(iLoopPlayer).getGreatPeopleCreated())
-								
-									pLoopCity.changeGreatPeopleProgress(iGreatPeoplePoints)
-									pLoopCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
-									CyInterface().setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
-									CyInterface().addMessage(iLoopPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT", (gc.getPlayer(pUnit.getOwner()).getCivilizationAdjective(0), pUnit.getName(), pLoopCity.getName(), iGreatPeoplePoints)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)		
-									break
-							break
+					if player(iLoopPlayer).isHasBuildingEffect(iNobelPrize):
+						if pUnit.getOwner() != iLoopPlayer and player(pUnit).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
+							wonderCity = cities.owner(iLoopPlayer).building_effect(iNobelPrize).one()
+							if wonderCity:
+								iGreatPersonType = getDefaultGreatPerson(pUnit.getUnitType())
+							
+								iGreatPeoplePoints = max(4, player(iLoopPlayer).getGreatPeopleCreated())
+							
+								pLoopCity.changeGreatPeopleProgress(iGreatPeoplePoints)
+								pLoopCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
+								interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
+								message(iLoopPlayer, 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(pUnit), pUnit.getName(), pLoopCity.getName(), iGreatPeoplePoints)
+						break
 
 	def onReligionSpread(self, argsList):
 		iReligion, iOwner, pSpreadCity = argsList
@@ -737,26 +717,24 @@ class CvRFCEventHandler:
 	#Rhye - start
 	def onTechAcquired(self, argsList):
 		iTech, iTeam, iPlayer, bAnnounce = argsList
-
-		iHuman = utils.getHumanID()
 		
-		iEra = gc.getTechInfo(iTech).getEra()
-		iGameTurn = gc.getGame().getGameTurn()
+		iEra = infos.tech(iTech).getEra()
+		iGameTurn = turn()
 
-		if iGameTurn == utils.getScenarioStartTurn():
+		if iGameTurn == scenarioStartTurn():
 			return
 		
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
 
-		if iGameTurn > getTurnForYear(tBirth[iPlayer]):
+		if iGameTurn > year(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
 			cnm.onTechAcquired(iPlayer)
 			dc.onTechAcquired(iPlayer, iTech)
 
-		if gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
+		if player(iPlayer).isAlive() and iGameTurn >= year(tBirth[iPlayer]) and iPlayer < iNumPlayers:
 			rel.onTechAcquired(iTech, iPlayer)
-			if iGameTurn > getTurnForYear(1700):
+			if iGameTurn > year(1700):
 				self.aiw.forgetMemory(iTech, iPlayer)
 
 		if iTech == iExploration:
@@ -765,7 +743,7 @@ class CvRFCEventHandler:
 				
 		elif iTech == iCompass:
 			if iPlayer == iVikings:
-				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
+				plot(49, 62).setTerrainType(iCoast, True, True)
 
 		elif iTech == iMicrobiology:
 			self.pla.onTechAcquired(iTech, iPlayer)
@@ -774,56 +752,56 @@ class CvRFCEventHandler:
 			self.rnf.onRailroadDiscovered(iPlayer)
 			
 		if iTech in [iExploration, iFirearms]:
-			teamPlayer = gc.getTeam(iPlayer)
+			teamPlayer = team(iPlayer)
 			if teamPlayer.isHasTech(iExploration) and teamPlayer.isHasTech(iFirearms):
 				self.rnf.earlyTradingCompany(iPlayer)
 			
 		if iTech in [iEconomics, iReplaceableParts]:
-			teamPlayer = gc.getTeam(iPlayer)
+			teamPlayer = team(iPlayer)
 			if teamPlayer.isHasTech(iEconomics) and teamPlayer.isHasTech(iReplaceableParts):
 				self.rnf.lateTradingCompany(iPlayer)
 	
-		if utils.getHumanID() != iPlayer:
+		if not player(iPlayer).isHuman():
 			if iPlayer == iJapan and iEra == iIndustrial:
-				utils.moveCapital(iPlayer, (116, 47)) # Toukyou
+				moveCapital(iPlayer, (116, 47)) # Toukyou
 			elif iPlayer == iItaly and iEra == iIndustrial:
-				utils.moveCapital(iPlayer, (60, 44)) # Roma
+				moveCapital(iPlayer, (60, 44)) # Roma
 			elif iPlayer == iVikings and iEra == iRenaissance:
-				utils.moveCapital(iPlayer, (63, 59)) # Stockholm
+				moveCapital(iPlayer, (63, 59)) # Stockholm
 			elif iPlayer == iHolyRome and iEra == iRenaissance:
-				utils.moveCapital(iPlayer, (62, 49)) # Wien
+				moveCapital(iPlayer, (62, 49)) # Wien
 				
 		# Maya UP: +20 food when a tech is discovered before the medieval era
 		if iPlayer == iMaya and not pMaya.isReborn() and iEra < iMedieval:
 			if pMaya.getNumCities() > 0:
 				iFood = 20 / pMaya.getNumCities()
-				for city in utils.getCityList(iMaya):
+				for city in cities.owner(iMaya):
 					city.changeFood(iFood)
-				CyInterface().addMessage(iPlayer, False, iDuration, CyTranslator().getText("TXT_KEY_MAYA_UP_EFFECT", (gc.getTechInfo(iTech).getText(), iFood)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+				message(iPlayer, 'TXT_KEY_MAYA_UP_EFFECT', infos.tech(iTech).getText(), iFood)
 				
 		# Spain's core extends when reaching the Renaissance and there are no Moors in Iberia
 		# at the same time, the Moorish core relocates to Africa
-		if iPlayer == iSpain and iEra == iRenaissance and not utils.isReborn(iSpain):
+		if iPlayer == iSpain and iEra == iRenaissance and not pSpain.isReborn():
 			bNoMoors = True
-			if gc.getPlayer(iMoors).isAlive():
-				for city in utils.getCityList(iMoors):
+			if pMoors.isAlive():
+				for city in cities.owner(iMoors):
 					if city.plot().getRegionID() == rIberia:
 						bNoMoors = False
 			if bNoMoors:
-				utils.setReborn(iSpain, True)
-				utils.setReborn(iMoors, True)
+				setReborn(iSpain, True)
+				setReborn(iMoors, True)
 				
 		# Italy's core extends when reaching the Industrial era
 		if iPlayer == iItaly and iEra == iIndustrial:
-			utils.setReborn(iItaly, True)
+			setReborn(iItaly, True)
 			
 		# Japan's core extends when reaching the Industrial era
 		if iPlayer == iJapan and iEra == iIndustrial:
-			utils.setReborn(iJapan, True)
+			setReborn(iJapan, True)
 			
 		# Germany's core shrinks when reaching the Digital era
 		if iPlayer == iGermany and iEra == iDigital:
-			utils.setReborn(iGermany, True)
+			setReborn(iGermany, True)
 		
 
 	def onPreSave(self, argsList):
@@ -856,13 +834,13 @@ class CvRFCEventHandler:
 		iPlayer, iReleasedPlayer = argsList
 		
 		lCities = []
-		for city in utils.getCityList(iPlayer):
+		for city in cities.owner(iPlayer):
 			if city.plot().isCore(iReleasedPlayer) and not city.plot().isCore(iPlayer) and not city.isCapital():
 				lCities.append(city)
 				
 		sta.doResurrection(iReleasedPlayer, lCities, False)
 		
-		gc.getPlayer(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
+		player(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
 		
 	def onBlockade(self, argsList):
 		iPlayer, iGold = argsList
@@ -888,31 +866,25 @@ class CvRFCEventHandler:
 		
 		if ( eventType == self.EventKeyDown and theKey == int(InputTypes.KB_Q) and self.eventManager.bAlt and self.eventManager.bShift):
 			print("SHIFT-ALT-Q") #enables squatting
-			self.rnf.setCheatMode(True);
-			CyInterface().addMessage(utils.getHumanID(), True, iDuration, "EXPLOITER!!! ;)", "", 0, "", ColorTypes(iRed), -1, -1, True, True)
+			self.rnf.setCheatMode(True)
+			message(human(), 'EXPLOITER!!! ;)', color=iRed, force=True)
 
 		#Stability Cheat
 		if data.bCheatMode and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
 			print("SHIFT-ALT-S") #increases stability by one level
-			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
+			data.setStabilityLevel(human(), min(5, stability(human()) + 1))
 			
 			
 		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_V) and self.eventManager.bCtrl and self.eventManager.bShift:
 			for iPlayer in range(iNumTotalPlayersB):
-				pPlayer = gc.getPlayer(iPlayer)
-				
-				#pPlayer.initCity(71, 34)
-				#city = gc.getMap().plot(71, 34).getPlotCity()
+				pPlayer = player(iPlayer)
 				
 				lEras = [iAncient, iMedieval, iIndustrial]
 				for iEra in lEras:
 					pPlayer.setCurrentEra(iEra)
 					for iUnit in range(iNumUnits):
-						print (str(gc.getCivilizationInfo(pPlayer.getCivilizationType()).getShortDescription(0)))
-						print (str(gc.getEraInfo(iEra).getDescription()))
-						print (str(gc.getUnitInfo(iUnit).getDescription()))
-						utils.makeUnit(iUnit, iPlayer, (68, 33), 1)
-						gc.getMap().plot(68, 33).getUnit(0).kill(False, iBarbarian)
+						makeUnit(iPlayer, iUnit, (68, 33))
+						plot(68, 33).getUnit(0).kill(False, iBarbarian)
 						#print ("Button")
 						#city.pushOrder(OrderTypes.ORDER_TRAIN, iUnit , -1, False, True, False, True)
 				#city.getPlotCity().kill()

@@ -4,7 +4,8 @@ import CvScreenEnums
 import CvScreensInterface
 
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
+from Core import *
 
 gc = CyGlobalContext()
 
@@ -166,7 +167,7 @@ class CvTechChooser:
 		# Great People Techs
 		if not self.GreatPeopleList:
 			for iUnitClass in xrange(gc.getNumUnitClassInfos()):
-				iUnit = utils.getUniqueUnitType(self.iPlayer, iUnitClass)
+				iUnit = unique_unit_from_class(self.iPlayer, iUnitClass)
 				if iUnit > -1:
 					if iUnit in self.GreatPeopleList:
 						continue
@@ -245,7 +246,7 @@ class CvTechChooser:
 
 		# Units
 		for iClass in xrange(gc.getNumUnitClassInfos()):
-			iUnit = utils.getUniqueUnitType(self.iPlayer, iClass)
+			iUnit = unique_unit_from_class(self.iPlayer, iClass)
 			if iUnit > -1 and not gc.getUnitInfo(iUnit).isGraphicalOnly():
 				iTech = gc.getUnitInfo(iUnit).getPrereqAndTech()
 				if iTech > -1:
@@ -259,7 +260,7 @@ class CvTechChooser:
 
 		# Buildings
 		for iClass in xrange(gc.getNumBuildingClassInfos()):
-			iBuilding = utils.getUniqueBuildingType(self.iPlayer, iClass)
+			iBuilding = unique_building_from_class(self.iPlayer, iClass)
 			if iBuilding > -1:
 				BuildingInfo = gc.getBuildingInfo(iBuilding)
 				if BuildingInfo.getFoundsCorporation() > -1:
@@ -397,7 +398,7 @@ class CvTechChooser:
 			if TechInfo.getFirstFreeTechs():
 				self.TechEffects[iTech].append(("FreeTech", -1))
 			if TechInfo.getFirstFreeUnitClass() > -1:
-				iUnit = utils.getUniqueUnitType(self.iPlayer, TechInfo.getFirstFreeUnitClass())
+				iUnit = unique_unit_from_class(self.iPlayer, TechInfo.getFirstFreeUnitClass())
 				if iUnit > -1:
 					self.TechEffects[iTech].append(("FreeUnit", iUnit))
 			if TechInfo.getHelp():
@@ -875,12 +876,12 @@ class CvTechChooser:
 			flavor = lambda x: gc.getTechInfo(x).getFlavorValue(iFlavor)
 
 			lTechs = [i for i in xrange(gc.getNumTechInfos()) if gc.getPlayer(self.iPlayer).canResearch(i, False)]
-			iFirstDiscovery = utils.getHighestEntry(lTechs, flavor)
+			iFirstDiscovery = find_max(lTechs, flavor).result
 			
 			iSecondDiscovery = None
 			if iFirstDiscovery:
 				lTechsGiven = [i for i in xrange(gc.getNumTechInfos()) if gc.getPlayer(self.iPlayer).canResearchGiven(i, False, iFirstDiscovery) and i != iFirstDiscovery]
-				iSecondDiscovery = utils.getHighestEntry(lTechsGiven, flavor)
+				iSecondDiscovery = find_max(lTechsGiven, flavor).result
 
 			screen.addDDSGFCAt("GreatPeopleUnit" + str(iUnit),"TechBottomPanel", gc.getUnitInfo(iUnit).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, -1, False)
 			iGPX += self.GP_ICON_SIZE

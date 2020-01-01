@@ -13,7 +13,7 @@ import string
 import math
 
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 from PyHelpers import PyPlayer
 from operator import itemgetter
 
@@ -879,7 +879,7 @@ class CvInfoScreen:
 				self.scoreCache[scoreType].append(None)
 			else:
 				self.scoreCache[scoreType].append([])
-				firstTurn	= utils.getScenarioStartTurn()#CyGame().getStartTurn()
+				firstTurn	= scenarioStartTurn()#CyGame().getStartTurn()
 				thisTurn	= CyGame().getGameTurn()
 				turn	= firstTurn
 				while (turn <= thisTurn):
@@ -1085,7 +1085,7 @@ class CvInfoScreen:
 		# Compute max score
 		max = 0
 		thisTurn = CyGame().getGameTurn()
-		startTurn = utils.getScenarioStartTurn()#CyGame().getStartTurn()
+		startTurn = scenarioStartTurn()#CyGame().getStartTurn()
 
 		if (self.graphZoom == 0 or self.graphEnd == 0):
 			firstTurn = startTurn
@@ -1766,17 +1766,11 @@ class CvInfoScreen:
 					GenericButtonSizes.BUTTON_SIZE_46, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuildingID, -1, False )
 
 	def calculateTopCities(self):
-		lCities = []
-		for iLoopPlayer in range(iNumPlayers):
-			for city in utils.getCityList(iLoopPlayer):
-				iValue = ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
-					+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
-				lCities.append((city, iValue))
-		lCities.sort(key=itemgetter(1), reverse=True)
-		lCities = lCities[:5]
-		for i, city in enumerate(lCities):
-			self.pCityPointers[i] = city[0]
-			self.iCityValues[i] = city[1]
+		value = lambda city: (city.getCulture(city.getOwner()) / 5 + city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) + city.getYieldRate(YieldTypes.YIELD_COMMERCE)) * city.getPopulation()
+	
+		for i, city in enumerate(cities.all().highest(5, value)):
+			self.pCityPointers[i] = city
+			self.iCityValues[i] = value(city)
 
 	def determineCityData(self):
 
