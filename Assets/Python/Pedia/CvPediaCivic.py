@@ -2,7 +2,7 @@ from CvPythonExtensions import *
 import CvUtil
 import FontUtil
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 
 gc = CyGlobalContext()
 
@@ -120,7 +120,7 @@ class CvPediaCivic:
 			iVictory = iVictorySecularism
 			bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
 			for iGoal in range(3):
-				victorytext += bullet + utils.getReligiousGoalText(iVictory, iGoal) + "\n"
+				victorytext += bullet + getReligiousGoalText(iVictory, iGoal) + "\n"
 			szHistory = victorytext + "\n" + gc.getCivicInfo(self.iCivic).getCivilopedia()
 		else:
 			szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()

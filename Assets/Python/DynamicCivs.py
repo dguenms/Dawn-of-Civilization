@@ -6,14 +6,14 @@ import PyHelpers
 from Consts import *
 import Victory as vic
 from StoredData import data
-from RFCUtils import utils
+from RFCUtils import *
 import CityNameManager as cnm
 import Areas
 
-### Constants ###
+from Core import *
 
-gc = CyGlobalContext()
-localText = CyTranslator()
+
+### Constants ###
 
 encoding = "utf-8"
 
@@ -27,7 +27,7 @@ tBritainBR = (54, 60)
 
 tEuropeanRussiaTL = (68, 50)
 tEuropeanRussiaBR = (80, 62)
-tEuropeanRussiaExceptions = ((68, 59), (68, 60), (68, 61), (68, 62))
+lEuropeanRussiaExceptions = [(68, 59), (68, 60), (68, 61), (68, 62)]
 
 tKhazariaTL = (71, 46)
 tKhazariaBR = (79, 53)
@@ -68,7 +68,7 @@ dDefaultInsertAdjectives = {
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCAN",
 }
 
-dSpecificVassalTitles = {
+dSpecificVassalTitles = deepdict({
 	iEgypt : {
 		iPhoenicia : "TXT_KEY_CIV_EGYPTIAN_PHOENICIA",
 		iEthiopia : "TXT_KEY_CIV_EGYPTIAN_ETHIOPIA",
@@ -258,7 +258,7 @@ dSpecificVassalTitles = {
 	iBrazil : {
 		iArgentina : "TXT_KEY_CIV_BRAZILIAN_ARGENTINA",
 	},
-}
+})
 
 dMasterTitles = {
 	iChina : "TXT_KEY_CIV_CHINESE_VASSAL",
@@ -288,7 +288,7 @@ dCommunistVassalTitlesGeneric = {
 	iRussia : "TXT_KEY_CIV_RUSSIA_SOVIET",
 }
 
-dCommunistVassalTitles = {
+dCommunistVassalTitles = deepdict({
 	iRussia : {
 		iChina : "TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE",
 		iTurks : "TXT_KEY_CIV_RUSSIA_SOVIET_TURKS",
@@ -296,13 +296,13 @@ dCommunistVassalTitles = {
 		iOttomans : "TXT_KEY_CIV_RUSSIA_SOVIET_OTTOMANS",
 		iGermany : "TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY",
 	},
-}
+})
 
 dFascistVassalTitlesGeneric = {
 	iGermany : "TXT_KEY_ADJECTIVE_TITLE"
 }
 
-dFascistVassalTitles = {
+dFascistVassalTitles = deepdict({
 	iGermany : {
 		iEgypt : "TXT_KEY_CIV_GERMANY_REICHSPROTEKTORAT",
 		iChina : "TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT",
@@ -324,9 +324,9 @@ dFascistVassalTitles = {
 		iOttomans : "TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT",
 		iCanada : "TXT_KEY_CIV_GERMANY_NAZI_CANADA",
 	},
-}
+})
 
-dForeignAdjectives = {
+dForeignAdjectives = deepdict({
 	iChina : {
 		iEgypt : "TXT_KEY_CIV_CHINESE_ADJECTIVE_EGYPT",
 		iIndia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_INDIA",
@@ -343,9 +343,9 @@ dForeignAdjectives = {
 		iOttomans : "TXT_KEY_CIV_CHINESE_ADJECTIVE_OTTOMANS",
 		iTibet : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET",
 	},
-}
+})
 
-dForeignNames = {
+dForeignNames = deepdict({
 	iGreece : {
 		iTurks : "TXT_KEY_CIV_GREEK_NAME_TURKS",
 	},
@@ -435,7 +435,7 @@ dForeignNames = {
 	iGermany : {
 		iMoors : "TXT_KEY_CIV_GERMAN_NAME_MOORS",
 	},
-}
+})
 
 lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina]
@@ -511,10 +511,8 @@ dCapitals = {
 	iArabia : ["Dimashq"],
 	iSpain : ["La Paz", "Barcelona", "Valencia"],
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
-	iNetherlands : ["Brussels", "Antwerpen"],
+	iNetherlands : ["Brussels", "Antwerpen"], # TODO: no matches for Brussels
 }
-
-dCapitalLocations = findCapitalLocations(dCapitals)
 
 dStartingLeaders = [
 # 3000 BC
@@ -594,8 +592,10 @@ dStartingLeaders = [
 
 ### Event handlers
 
-def setup():			
-	iScenario = utils.getScenario()
+def setup():
+	data.dCapitalLocations = findCapitalLocations(dCapitals)
+	
+	iScenario = scenario()
 	
 	if iScenario == i600AD:
 		data.players[iChina].iAnarchyTurns += 3
@@ -610,10 +610,10 @@ def setup():
 	for iPlayer in range(iNumPlayers):
 		setDesc(iPlayer, peoplesName(iPlayer))
 		
-		if gc.getPlayer(iPlayer).getNumCities() > 0:
+		if player(iPlayer).getNumCities() > 0:
 			checkName(iPlayer)
 		
-		if (tBirth[iPlayer] >= gc.getGame().getGameTurnYear() or gc.getPlayer(iPlayer).getNumCities() > 0) and not gc.getPlayer(iPlayer).isHuman():
+		if (year(tBirth[iPlayer]) >= year() or player(iPlayer).getNumCities() > 0) and not player(iPlayer).isHuman():
 			setLeader(iPlayer, startingLeader(iPlayer))
 		
 def onCivRespawn(iPlayer, tOriginalOwners):
@@ -654,7 +654,7 @@ def onRevolution(iPlayer):
 	checkName(iPlayer)
 	
 	for iLoopPlayer in range(iNumPlayers):
-		if gc.getTeam(iLoopPlayer).isVassal(iPlayer):
+		if team(iLoopPlayer).isVassal(iPlayer):
 			checkName(iLoopPlayer)
 	
 def onCityAcquired(iPreviousOwner, iNewOwner):
@@ -668,7 +668,7 @@ def onCityBuilt(iOwner):
 	checkName(iOwner)
 	
 def onTechAcquired(iPlayer, iTech):
-	iEra = gc.getTechInfo(iTech).getEra()
+	iEra = infos.tech(iTech).getEra()
 	
 	if iPlayer == iVikings:
 		if iEra == iRenaissance:
@@ -686,7 +686,7 @@ def onTechAcquired(iPlayer, iTech):
 				
 	elif iPlayer == iMoors:
 		if iEra == iIndustrial:
-			capital = gc.getPlayer(iPlayer).getCapitalCity()
+			capital = player(iPlayer).getCapitalCity()
 			
 			if capital and capital.getRegionID() != rIberia:
 				nameChange(iPlayer)
@@ -698,8 +698,8 @@ def onTechAcquired(iPlayer, iTech):
 	checkName(iPlayer)
 	
 def onPalaceMoved(iPlayer):
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
-	iEra = gc.getPlayer(iPlayer).getCurrentEra()
+	capital = player(iPlayer).getCapitalCity()
+	iEra = player(iPlayer).getCurrentEra()
 
 	if iPlayer == iPhoenicia:
 		if capital.getRegionID() not in [rMesopotamia, rAnatolia]:
@@ -743,13 +743,13 @@ def checkTurn(iGameTurn):
 		checkLeader(iPlayer)
 		
 def checkName(iPlayer):
-	if not gc.getPlayer(iPlayer).isAlive(): return
+	if not player(iPlayer).isAlive(): return
 	if iPlayer >= iNumPlayers: return
-	if gc.getPlayer(iPlayer).getNumCities() == 0: return
+	if player(iPlayer).getNumCities() == 0: return
 	setDesc(iPlayer, desc(iPlayer, title(iPlayer)))
 	
 def checkLeader(iPlayer):
-	if not gc.getPlayer(iPlayer).isAlive(): return
+	if not player(iPlayer).isAlive(): return
 	if iPlayer >= iNumPlayers: return
 	setLeader(iPlayer, leader(iPlayer))
 	setLeaderName(iPlayer, leaderName(iPlayer))
@@ -758,52 +758,51 @@ def checkLeader(iPlayer):
 
 def setDesc(iPlayer, sName):
 	try:
-		gc.getPlayer(iPlayer).setCivDescription(sName)
+		player(iPlayer).setCivDescription(sName)
 	except:
 		pass
 	
 def setShort(iPlayer, sShort):
-	gc.getPlayer(iPlayer).setCivShortDescription(sShort)
+	player(iPlayer).setCivShortDescription(sShort)
 	
 def setAdjective(iPlayer, sAdj):
-	gc.getPlayer(iPlayer).setCivAdjective(sAdj)
+	player(iPlayer).setCivAdjective(sAdj)
 	
 def setLeader(iPlayer, iLeader):
 	if not iLeader: return
-	if gc.getPlayer(iPlayer).getLeader() == iLeader: return
-	gc.getPlayer(iPlayer).setLeader(iLeader)
+	if player(iPlayer).getLeader() == iLeader: return
+	player(iPlayer).setLeader(iLeader)
 	
 def setLeaderName(iPlayer, sName):
 	if not sName: return
-	if gc.getLeaderHeadInfo(gc.getPlayer(iPlayer).getLeader()).getText() != sName:
-		gc.getPlayer(iPlayer).setLeaderName(sName)
+	if infos.leader(player(iPlayer)).getText() != sName:
+		player(iPlayer).setLeaderName(sName)
 
 ### Utility methods ###
 
-def getOrElse(dDictionary, iPlayer, sDefault=None):
-	if iPlayer in dDictionary: return dDictionary[iPlayer]
-	return sDefault
-
 def key(iPlayer, sSuffix):
-	if sSuffix: sSuffix = "_" + sSuffix
-	return "TXT_KEY_CIV_" + short(iPlayer).replace(" ", "_").upper() + sSuffix
-
-def text(sTextKey, tInput=()):
-	return localText.getText(sTextKey.encode(encoding), tInput)
+	if sSuffix: sSuffix = "_%s" % sSuffix
+	print "suffix type: %s" % type(sSuffix)
+	return "TXT_KEY_CIV_%s%s" % (str(short(iPlayer).replace(" ", "_").upper()), sSuffix)
 	
 def desc(iPlayer, sTextKey=str("%s1")):
-	if isVassal(iPlayer): return text(sTextKey, (name(iPlayer), adjective(iPlayer), name(iPlayer, True), adjective(iPlayer, True)))
+	print "desc type textkey: %s, type name: %s, type adjective: %s" % (type(sTextKey), type(name(iPlayer)), type(adjective(iPlayer)))
 
-	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
+	if team(iPlayer).isAVassal():
+		return text(sTextKey, name(iPlayer), adjective(iPlayer), name(iPlayer, True), adjective(iPlayer, True))
 
+	return text(sTextKey, name(iPlayer), adjective(iPlayer))
+
+# TODO: overlap with name()
 def short(iPlayer):
-	return gc.getPlayer(iPlayer).getCivilizationShortDescription(0)
-	
+	return player(iPlayer).getCivilizationShortDescription(0)
+
+# TODO: overlap with adjective()
 def civAdjective(iPlayer):
-	return gc.getPlayer(iPlayer).getCivilizationAdjective(0)
+	return player(iPlayer).getCivilizationAdjective(0)
 
 def capitalName(iPlayer):
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	if capital: 
 		sCapitalName = cnm.getRenameName(iEngland, capital.getName())
 		if sCapitalName: return sCapitalName
@@ -820,14 +819,15 @@ def adjectiveChange(iPlayer):
 		setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
 	
 def getColumn(iPlayer):
-	lTechs = [gc.getTechInfo(iTech).getGridX() for iTech in range(iNumTechs) if gc.getTeam(iPlayer).isHasTech(iTech)]
+	lTechs = [infos.tech(iTech).getGridX() for iTech in range(iNumTechs) if team(iPlayer).isHasTech(iTech)]
 	if not lTechs: return 0
 	return max(lTechs)
 	
 ### Utility methods for civilization status ###
 
+# TODO: use container object?
 def getCivics(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	return (pPlayer.getCivics(i) for i in range(6))
 
 def isCommunist(iPlayer):
@@ -870,66 +870,58 @@ def isCityStates(iPlayer):
 	
 	return False
 	
-def isVassal(iPlayer):
-	return utils.isAVassal(iPlayer)
-	
 def isCapitulated(iPlayer):
-	return isVassal(iPlayer) and gc.getTeam(iPlayer).isCapitulated()
-	
-def getMaster(iPlayer):
-	return utils.getMaster(iPlayer)
+	return team(iPlayer).isAVassal() and team(iPlayer).isCapitulated()
 	
 def isEmpire(iPlayer):
-	if isVassal(iPlayer): return False
+	if team(iPlayer).isAVassal(): return False
 
-	return gc.getPlayer(iPlayer).getNumCities() >= getEmpireThreshold(iPlayer)
+	return player(iPlayer).getNumCities() >= getEmpireThreshold(iPlayer)
 	
 def getEmpireThreshold(iPlayer):
 	if iPlayer in dEmpireThreshold: return dEmpireThreshold[iPlayer]
 	
-	if iPlayer == iEthiopia and not gc.getGame().isReligionFounded(iIslam):
+	if iPlayer == iEthiopia and not game.isReligionFounded(iIslam):
 		return 4
 	
-	if gc.getPlayer(iPlayer).isReborn():
+	if player(iPlayer).isReborn():
 		if iPlayer == iPersia: return 4
 		
 	return 5
 	
 def isAtWar(iPlayer):
 	for iTarget in range(iNumPlayers):
-		if gc.getTeam(iPlayer).isAtWar(iTarget):
+		if team(iPlayer).isAtWar(iTarget):
 			return True
 	return False
 	
 def isCapital(iPlayer, lNames):
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	if not capital: return False
 	
 	tLocation = (capital.getX(), capital.getY())
 	
 	for sName in lNames:
-		if tLocation in dCapitalLocations[sName]:
+		if tLocation in data.dCapitalLocations[sName]:
 			return True
 			
 	return False
 	
 def countAreaCities(lPlots):
-	return len(utils.getAreaCities(lPlots))
+	return cities.of(lPlots).count()
 	
 def countPlayerAreaCities(iPlayer, lPlots):
-	return len(utils.getAreaCitiesCiv(iPlayer, lPlots))
+	return cities.of(lPlots).owner(iPlayer).count()
 	
-def isAreaControlled(iPlayer, tTL, tBR, iMinCities=1, tExceptions=()):
-	lPlots = utils.getPlotList(tTL, tBR, tExceptions)
-	return isPlotListControlled(iPlayer, lPlots, iMinCities)
+def isAreaControlled(iPlayer, tTL, tBR, iMinCities=1, lExceptions=[]):
+	return isControlled(iPlayer, plots.start(tTL).end(tBR).without(lExceptions), iMinCities)
 	
 def isRegionControlled(iPlayer, iRegion, iMinCities=1):
-	lPlots = utils.getRegionPlots(iRegion)
-	return isPlotListControlled(iPlayer, lPlots, iMinCities)
+	return isControlled(iPlayer, plots.region(iRegion), iMinCities)
 	
-def isPlotListControlled(iPlayer, lPlots, iMinCities=1):
-	iTotalCities = countAreaCities(lPlots)
-	iPlayerCities = countPlayerAreaCities(iPlayer, lPlots)
+def isControlled(iPlayer, area, iMinCities=1):
+	iTotalCities = area.cities().count()
+	iPlayerCities = area.cities().owner(iPlayer).count()
 	
 	if iPlayerCities < iTotalCities: return False
 	if iPlayerCities < iMinCities: return False
@@ -937,21 +929,19 @@ def isPlotListControlled(iPlayer, lPlots, iMinCities=1):
 	return True
 	
 def capitalCoords(iPlayer):
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	if capital: return (capital.getX(), capital.getY())
 	
 	return (-1, -1)
 	
 def controlsHolyCity(iPlayer, iReligion):
-	holyCity = gc.getGame().getHolyCity(iReligion)
+	holyCity = game.getHolyCity(iReligion)
 	if holyCity and holyCity.getOwner() == iPlayer: return True
 	
 	return False
 	
-def controlsCity(iPlayer, tPlot):
-	x, y = tPlot
-	plot = gc.getMap().plot(x, y)
-	
+def controlsCity(iPlayer, (x, y)):
+	plot = plot_(x, y)
 	return plot.isCity() and plot.getPlotCity().getOwner() == iPlayer
 	
 ### Naming methods ###
@@ -968,7 +958,7 @@ def name(iPlayer, bIgnoreVassal = False):
 	sSpecificName = specificName(iPlayer)
 	if sSpecificName: return sSpecificName
 	
-	sDefaultInsertName = getOrElse(dDefaultInsertNames, iPlayer)
+	sDefaultInsertName = dDefaultInsertNames.get(iPlayer)
 	if sDefaultInsertName: return sDefaultInsertName
 	
 	return short(iPlayer)
@@ -979,9 +969,9 @@ def vassalName(iPlayer, iMaster):
 		
 	if iPlayer == iNetherlands: return short(iPlayer)
 	
-	if gc.getPlayer(iPlayer).isReborn(): return short(iPlayer)
+	if player(iPlayer).isReborn(): return short(iPlayer)
 
-	sSpecificName = getOrElse(getOrElse(dForeignNames, iMaster, {}), iPlayer)
+	sSpecificName = dForeignNames[iMaster].get(iPlayer)
 	if sSpecificName: return sSpecificName
 	
 	return None
@@ -1001,9 +991,8 @@ def peoplesName(iPlayer):
 	return desc(iPlayer, key(iPlayer, "PEOPLES"))
 	
 def specificName(iPlayer):
-	iGameTurn = gc.getGame().getGameTurn()
-	pPlayer = gc.getPlayer(iPlayer)
-	tPlayer = gc.getTeam(pPlayer.getTeam())
+	pPlayer = player(iPlayer)
+	tPlayer = team(iPlayer)
 	iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory = getCivics(iPlayer)
 	
 	iNumCities = pPlayer.getNumCities()
@@ -1011,7 +1000,7 @@ def specificName(iPlayer):
 	
 	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = capitalCoords(iPlayer)
 	bAnarchy = pPlayer.isAnarchy()
 	bEmpire = isEmpire(iPlayer)
@@ -1021,7 +1010,7 @@ def specificName(iPlayer):
 	bCapitulated = isCapitulated(iPlayer)
 	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
-	iGameEra = gc.getGame().getCurrentEra()
+	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
 			
 	if iPlayer == iBabylonia:
@@ -1030,10 +1019,10 @@ def specificName(iPlayer):
 	
 	elif iPlayer == iChina:
 		if bEmpire:
-			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
+			if iEra >= iIndustrial or scenario() == i1700AD:
 				return "TXT_KEY_CIV_CHINA_QING"
 			
-			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
+			if iEra == iRenaissance and turn() >= year(1400):
 				return "TXT_KEY_CIV_CHINA_MING"
 			
 	elif iPlayer == iGreece:
@@ -1060,7 +1049,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
 			
 	elif iPlayer == iEthiopia:
-		if not gc.getGame().isReligionFounded(iIslam):
+		if not game.isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
 			
 	elif iPlayer == iKorea:
@@ -1104,10 +1093,10 @@ def specificName(iPlayer):
 		return "TXT_KEY_CIV_VIKINGS_SCANDINAVIA"
 		
 	elif iPlayer == iTurks:
-		if utils.isPlotInArea(tCapitalCoords, tKhazariaTL, tKhazariaTL):
+		if capital in plots.start(tKhazariaTL).end(tKhazariaBR):
 			return "TXT_KEY_CIV_TURKS_KHAZARIA"
 	
-		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
+		if capital in plots.start(tAnatoliaTL).end(tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_RUM"
 			
 		if iEra >= iRenaissance and not tPlayer.isAVassal():
@@ -1138,7 +1127,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_INDONESIA_SRIVIJAYA"
 			
 	elif iPlayer == iMoors:	
-		if utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
+		if capital in plots.rectangle(vic.tIberiaTL, vic.tIberiaBR):
 			return capitalName(iPlayer)
 			
 		return "TXT_KEY_CIV_MOORS_MOROCCO"
@@ -1147,10 +1136,10 @@ def specificName(iPlayer):
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_SPAIN_AL_ANDALUS"
 	
-		bSpain = not pMoors.isAlive() or not utils.isPlotInArea(capitalCoords(iMoors), vic.tIberiaTL, vic.tIberiaBR)
+		bSpain = not pMoors.isAlive() or not pMoors.getCapitalCity() in plots.start(vic.tIberiaTL).end(vic.tIberiaBR)
 	
 		if bSpain:
-			if not pPortugal.isAlive() or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
+			if not pPortugal.isAlive() or not pPortugal.getCapitalCity() in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
 		if isCapital(iPlayer, ["Barcelona", "Valencia"]):
@@ -1164,7 +1153,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:
+		if getColumn(iEngland) >= 11 and cities.start(tBritainTL).end(tBritainBR).owner(iPlayer) >= 3:
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iPlayer == iHolyRome:
@@ -1172,13 +1161,13 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_HOLY_ROME_HUNGARY"
 	
 		if not bEmpire:
-			if iGameTurn < getTurnForYear(tBirth[iGermany]):
+			if year() < year(tBirth[iGermany]):
 				return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
 			else:
 				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
 			
 	elif iPlayer == iRussia:
-		if not (bEmpire and iEra >= iRenaissance) and not isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
+		if not (bEmpire and iEra >= iRenaissance) and not isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, lEuropeanRussiaExceptions):
 			if not bCityStates and isCapital(iPlayer, ["Moskva"]):
 				return "TXT_KEY_CIV_RUSSIA_MUSCOVY"
 				
@@ -1217,10 +1206,10 @@ def specificName(iPlayer):
 	
 def adjective(iPlayer, bIgnoreVassal = False):
 	if isCapitulated(iPlayer):
-		sForeignAdjective = getOrElse(getOrElse(dForeignAdjectives, getMaster(iPlayer), {}), iPlayer)
+		sForeignAdjective = dForeignAdjectives[getMaster(iPlayer)].get(iPlayer)
 		if sForeignAdjective: return sForeignAdjective
 		
-		if not bIgnoreVassal: return adjective(getMaster(iPlayer))
+		if not bIgnoreVassal: return player(getMaster(iPlayer)).getCivilizationAdjective(0)
 		
 	if isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer):
 		sRepublicAdjective = republicAdjective(iPlayer)
@@ -1229,10 +1218,7 @@ def adjective(iPlayer, bIgnoreVassal = False):
 	sSpecificAdjective = specificAdjective(iPlayer)
 	if sSpecificAdjective: return sSpecificAdjective
 	
-	#sDefaultInsertAdjective = getOrElse(dDefaultInsertAdjectives, iPlayer)
-	#if sDefaultInsertAdjective: return sDefaultInsertAdjective
-	
-	return gc.getPlayer(iPlayer).getCivilizationAdjective(0)
+	return player(iPlayer).getCivilizationAdjective(0)
 	
 def republicAdjective(iPlayer):
 	if iPlayer == iRome:
@@ -1245,20 +1231,19 @@ def republicAdjective(iPlayer):
 	
 	if iPlayer == iInca and data.players[iPlayer].iResurrections > 0: return None
 		
-	return gc.getPlayer(iPlayer).getCivilizationAdjective(0)
+	return player(iPlayer).getCivilizationAdjective(0)
 	
 def specificAdjective(iPlayer):
-	iGameTurn = gc.getGame().getGameTurn()
-	pPlayer = gc.getPlayer(iPlayer)
-	tPlayer = gc.getTeam(pPlayer.getTeam())
+	pPlayer = player(iPlayer)
+	tPlayer = team(iPlayer)
 	iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory = getCivics(iPlayer)
 	
 	iNumCities = pPlayer.getNumCities()
-	if iNumCities == 0: return gc.getPlayer(iPlayer).getCivilizationAdjective(0)
+	if iNumCities == 0: return player(iPlayer).getCivilizationAdjective(0)
 	
 	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = capitalCoords(iPlayer)
 	bAnarchy = pPlayer.isAnarchy()
 	bEmpire = isEmpire(iPlayer)
@@ -1268,7 +1253,7 @@ def specificAdjective(iPlayer):
 	bCapitulated = isCapitulated(iPlayer)
 	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
-	iGameEra = gc.getGame().getCurrentEra()
+	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
 	
 	bMonarchy = not isCommunist(iPlayer) and not isFascist(iPlayer) and not isRepublic(iPlayer)
@@ -1304,13 +1289,13 @@ def specificAdjective(iPlayer):
 				if tPlayer.isHasTech(iPaper) and tPlayer.isHasTech(iGunpowder):
 					return "TXT_KEY_CIV_CHINA_SONG"
 			
-				if iGameTurn >= getTurnForYear(600):
+				if year() >= year(600):
 					return "TXT_KEY_CIV_CHINA_TANG"
 				
 				return "TXT_KEY_CIV_CHINA_SUI"
 			
 			if iEra == iClassical:
-				if iGameTurn >= getTurnForYear(0):
+				if year() >= year(0):
 					return "TXT_KEY_CIV_CHINA_HAN"
 				
 				return "TXT_KEY_CIV_CHINA_QIN"
@@ -1379,7 +1364,7 @@ def specificAdjective(iPlayer):
 		if iReligion == iIslam:
 			return "TXT_KEY_CIV_ETHIOPIA_ADAL"
 			
-		if not gc.getGame().isReligionFounded(iIslam):
+		if not game.isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
 			
 	elif iPlayer == iByzantium:
@@ -1387,7 +1372,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
 		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
-			return gc.getPlayer(iRome).getCivilizationAdjective(0)
+			return adjective(iRome)
 			
 	elif iPlayer == iVikings:
 		if bEmpire:
@@ -1397,16 +1382,16 @@ def specificAdjective(iPlayer):
 		if bResurrected:
 			return "TXT_KEY_CIV_TURKS_TIMURID"
 	
-		if utils.isPlotInArea(tCapitalCoords, tKhazariaTL, tKhazariaBR):
+		if capital in plots.start(tKhazariaTL).end(tKhazariaBR):
 			return "TXT_KEY_CIV_TURKS_KHAZAR"
 			
 		if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
-			
-		if utils.isPlotInArea(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][0]):
+		
+		if capital in plots.rectangle(Areas.tCoreArea[iPersia]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
-			
-		if utils.isPlotInArea(tCapitalCoords, tAnatoliaTL, tAnatoliaBR):
+		
+		if capital in plots.start(tAnatoliaTL).end(tAnatoliaBR):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 			
 		if iEra >= iRenaissance:
@@ -1414,13 +1399,11 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_TURKS_SHAYBANID"
 		
 			return "TXT_KEY_CIV_TURKS_UZBEK"
-			
-		easternmostCity = utils.getHighestEntry(utils.getCityList(iTurks), lambda city: city.getX())
-		if easternmostCity and easternmostCity.getX() < iTurkicEastWestBorder:
+		
+		if cities.owner(iTurks).all(lambda city: city.getX() < iTurkicEastWestBorder):
 			return "TXT_KEY_CIV_TURKS_WESTERN_TURKIC"
-			
-		westernmostCity = utils.getHighestEntry(utils.getCityList(iTurks), lambda city: -city.getX())
-		if westernmostCity and westernmostCity.getX() >= iTurkicEastWestBorder:
+		
+		if cities.owner(iTurks).all(lambda city: city.getY() >= iTurkicEastWestBorder):
 			return "TXT_KEY_CIV_TURKS_EASTERN_TURKIC"
 			
 	elif iPlayer == iArabia:
@@ -1437,14 +1420,14 @@ def specificAdjective(iPlayer):
 		if bEmpire and iEra <= iRenaissance:
 			return "TXT_KEY_CIV_MOORS_ALMOHAD"
 			
-		if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
+		if not capital in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 			return "TXT_KEY_CIV_MOORS_MOROCCAN"
 			
 	elif iPlayer == iSpain:
-		bSpain = not pMoors.isAlive() or not utils.isPlotInArea(capitalCoords(iMoors), vic.tIberiaTL, vic.tIberiaBR)
+		bSpain = not pMoors.isAlive() or not pMoors.getCapitalCity() in plots.start(vic.tIberiaTL).end(vic.tIberiaBR)
 	
 		if bSpain:
-			if not pPortugal.isAlive() or getMaster(iPortugal) == iPlayer or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
+			if not pPortugal.isAlive() or getMaster(iPortugal) == iPlayer or not pPortugal.getCapitalCity() in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
 		if isCapital(iPlayer, ["Barcelona", "Valencia"]):
@@ -1458,7 +1441,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 11 and countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:
+		if getColumn(iEngland) >= 11 and cities.start(tBritainTL).end(tBritainBR).owner(iPlayer) >= 3:
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iPlayer == iHolyRome:
@@ -1476,7 +1459,7 @@ def specificAdjective(iPlayer):
 		if iVassals >= 2:
 			return "TXT_KEY_CIV_HOLY_ROME_HABSBURG"
 			
-		if not bEmpire and iGameTurn < getTurnForYear(tBirth[iGermany]):
+		if not bEmpire and year() < year(tBirth[iGermany]):
 			return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
 			
 	elif iPlayer == iInca:
@@ -1540,17 +1523,17 @@ def title(iPlayer):
 	
 def vassalTitle(iPlayer, iMaster):
 	if isCommunist(iMaster):
-		sCommunistTitle = getOrElse(getOrElse(dCommunistVassalTitles, iMaster, {}), iPlayer)
+		sCommunistTitle = dCommunistVassalTitles[iMaster].get(iPlayer)
 		if sCommunistTitle: return sCommunistTitle
 		
-		sCommunistTitle = getOrElse(dCommunistVassalTitlesGeneric, iMaster)
+		sCommunistTitle = dCommunistVassalTitlesGeneric.get(iMaster)
 		if sCommunistTitle: return sCommunistTitle
 		
 	if isFascist(iMaster):
-		sFascistTitle = getOrElse(getOrElse(dFascistVassalTitles, iMaster, {}), iPlayer)
+		sFascistTitle = dFascistVassalTitles[iMaster].get(iPlayer)
 		if sFascistTitle: return sFascistTitle
 		
-		sFascistTitle = getOrElse(dFascistVassalTitlesGeneric, iMaster)
+		sFascistTitle = dFascistVassalTitlesGeneric.get(iMaster)
 		if sFascistTitle: return sFascistTitle
 				
 	if short(iMaster) == "Austria" and iPlayer == iPoland:
@@ -1563,11 +1546,11 @@ def vassalTitle(iPlayer, iMaster):
 	if iMaster == iSpain and short(iPlayer) == "Colombia":
 		return "TXT_KEY_CIV_SPANISH_COLOMBIA"
 
-	if iMaster not in lRebirths or not gc.getPlayer(iMaster).isReborn():
-		sSpecificTitle = getOrElse(getOrElse(dSpecificVassalTitles, iMaster, {}), iPlayer)
+	if iMaster not in lRebirths or not player(iMaster).isReborn():
+		sSpecificTitle = dSpecificVassalTitles[iMaster].get(iPlayer)
 		if sSpecificTitle: return sSpecificTitle
 	
-		sMasterTitle = getOrElse(dMasterTitles, iMaster)
+		sMasterTitle = dMasterTitles.get(iMaster)
 		if sMasterTitle: return sMasterTitle
 		
 	if iPlayer in lColonies:
@@ -1591,11 +1574,11 @@ def republicTitle(iPlayer):
 		return "TXT_KEY_REPUBLIC_ADJECTIVE"
 	
 	if iPlayer == iPoland:
-		if gc.getPlayer(iPlayer).getCurrentEra() <= iIndustrial:
+		if player(iPlayer).getCurrentEra() <= iIndustrial:
 			return key(iPlayer, "COMMONWEALTH")
 	
 	if iPlayer == iEngland:
-		iEra = gc.getPlayer(iPlayer).getCurrentEra()
+		iEra = player(iPlayer).getCurrentEra()
 		if isEmpire(iEngland) and iEra == iIndustrial:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
@@ -1608,11 +1591,11 @@ def republicTitle(iPlayer):
 			return key(iPlayer, "CSA")
 			
 	if iPlayer == iMaya:
-		if gc.getPlayer(iMaya).isReborn():
+		if pMaya.isReborn():
 			if isRegionControlled(iPlayer, rPeru) and isAreaControlled(iPlayer, tColombiaTL, tColombiaBR):
 				return "TXT_KEY_CIV_COLOMBIA_FEDERATION_ANDES"
 			
-	if gc.getPlayer(iPlayer).getStateReligion() == iIslam:
+	if player(iPlayer).getStateReligion() == iIslam:
 		if iPlayer in lIslamicRepublicOf: return "TXT_KEY_ISLAMIC_REPUBLIC_OF"
 
 		if iPlayer == iOttomans: return key(iPlayer, "ISLAMIC_REPUBLIC")
@@ -1626,9 +1609,8 @@ def defaultTitle(iPlayer):
 	return desc(iPlayer, key(iPlayer, "DEFAULT"))
 	
 def specificTitle(iPlayer, lPreviousOwners=[]):
-	iGameTurn = gc.getGame().getGameTurn()
-	pPlayer = gc.getPlayer(iPlayer)
-	tPlayer = gc.getTeam(pPlayer.getTeam())
+	pPlayer = player(iPlayer)
+	tPlayer = team(iPlayer)
 	iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory = getCivics(iPlayer)
 	
 	iNumCities = pPlayer.getNumCities()
@@ -1636,7 +1618,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = capitalCoords(iPlayer)
 	bAnarchy = pPlayer.isAnarchy()
 	bEmpire = isEmpire(iPlayer)
@@ -1646,11 +1628,11 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bCapitulated = isCapitulated(iPlayer)
 	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
-	iGameEra = gc.getGame().getCurrentEra()
+	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
 
 	if iPlayer == iEgypt:
-		if bResurrected or utils.getScenario() >= i600AD:
+		if bResurrected or scenario() >= i600AD:
 			if iReligion == iIslam:
 				if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
 				return "TXT_KEY_SULTANATE_ADJECTIVE"
@@ -1664,7 +1646,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if iEra == iAncient:
 			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
-			if iAnarchyTurns == utils.getTurns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
+			if iAnarchyTurns == turns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
 			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 		
 		if iEra == iClassical:
@@ -1685,10 +1667,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iPlayer == iChina:
 		if bEmpire:
-			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
+			if iEra >= iIndustrial or scenario() == i1700AD:
 				return "TXT_KEY_EMPIRE_OF"
 			
-			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
+			if iEra == iRenaissance and year() >= year(1400):
 				return "TXT_KEY_EMPIRE_OF"
 				
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
@@ -1866,7 +1848,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_MOORS_TAIFAS"
 			
-		if iReligion == iIslam and utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
+		if iReligion == iIslam and capital in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 			if bEmpire:
 				return "TXT_KEY_CALIPHATE_OF"
 				
@@ -1902,7 +1884,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iEngland:
-		if not utils.isPlotInCore(iPlayer, tCapitalCoords):
+		if tCapitalCoords not in Areas.getCoreArea(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_EXILE"
 			
 		if iEra == iMedieval and getMaster(iFrance) == iEngland:
@@ -1912,7 +1894,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bEmpire:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
-			if countPlayerAreaCities(iPlayer, utils.getPlotList(tBritainTL, tBritainBR)) >= 3:
+			if cities.start(tBritainTL).end(tBritainBR).owner(iPlayer) >= 3:
 				return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iPlayer == iHolyRome:
@@ -1935,14 +1917,14 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 			return "TXT_KEY_CIV_RUSSIA_RUS"
 			
-		if isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
+		if isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, lEuropeanRussiaExceptions):
 			return "TXT_KEY_CIV_RUSSIA_TSARDOM_OF"
 
 	elif iPlayer == iNetherlands:
 		if bCityStates:
 			return "TXT_KEY_CIV_NETHERLANDS_REPUBLIC"
-			
-		if not utils.isPlotInCore(iPlayer, tCapitalCoords):
+		
+		if tCapitalCoords not in Areas.getCoreArea(iPlayer):
 			return "TXT_KEY_CIV_NETHERLANDS_EXILE"
 			
 		if bEmpire:
@@ -1961,10 +1943,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF"
 			
 	elif iPlayer == iPortugal:
-		if utils.isPlotInCore(iBrazil, tCapitalCoords) and not pBrazil.isAlive():
+		if tCapitalCoords in Areas.getCoreArea(iBrazil) and not pBrazil.isAlive():
 			return "TXT_KEY_CIV_PORTUGAL_BRAZIL"
 			
-		if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
+		if not capital in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 			return "TXT_KEY_CIV_PORTUGAL_EXILE"
 			
 		if bEmpire and iEra >= iRenaissance:
@@ -2028,7 +2010,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iPlayer == iOttomans:
 		if iReligion == iIslam:
-			if bTheocracy and gc.getGame().getHolyCity(iIslam) and gc.getGame().getHolyCity(iIslam).getOwner() == iOttomans:
+			if bTheocracy and game.getHolyCity(iIslam) and game.getHolyCity(iIslam).getOwner() == iOttomans:
 				return "TXT_KEY_CALIPHATE_ADJECTIVE"
 				
 			if bEmpire:
@@ -2073,25 +2055,24 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 ### Leader methods ###
 
 def startingLeader(iPlayer):
-	if iPlayer in dStartingLeaders[utils.getScenario()]: return dStartingLeaders[utils.getScenario()][iPlayer]
+	if iPlayer in dStartingLeaders[scenario()]: return dStartingLeaders[scenario()][iPlayer]
 	
 	return dStartingLeaders[i3000BC][iPlayer]
 	
 def leader(iPlayer):
 	if iPlayer >= iNumPlayers: return None
 	
-	if not gc.getPlayer(iPlayer).isAlive(): return None
+	if not player(iPlayer).isAlive(): return None
 	
-	if gc.getPlayer(iPlayer).isHuman(): return None
+	if player(iPlayer).isHuman(): return None
 	
-	pPlayer = gc.getPlayer(iPlayer)
-	tPlayer = gc.getTeam(pPlayer.getTeam())
+	pPlayer = player(iPlayer)
+	tPlayer = team(iPlayer)
 	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
-	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = (capital.getX(), capital.getY())
 	iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory = getCivics(iPlayer)
-	iGameTurn = gc.getGame().getGameTurn()
 	bEmpire = isEmpire(iPlayer)
 	bCityStates = isCityStates(iPlayer)
 	bTheocracy = (iCivicReligion == iTheocracy)
@@ -2099,12 +2080,12 @@ def leader(iPlayer):
 	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
 	iAnarchyTurns = data.players[iPlayer].iAnarchyTurns
 	iEra = pPlayer.getCurrentEra()
-	iGameEra = gc.getGame().getCurrentEra()
+	iGameEra = game.getCurrentEra()
 	
 	if iPlayer == iEgypt:
 		if not bMonarchy and iEra >= iGlobal: return iNasser
 		
-		if bResurrected or utils.getScenario() >= i600AD: return iBaibars
+		if bResurrected or scenario() >= i600AD: return iBaibars
 		
 		if getColumn(iPlayer) >= 4: return iCleopatra
 		
@@ -2118,16 +2099,16 @@ def leader(iPlayer):
 	elif iPlayer == iChina:
 		if isCommunist(iPlayer) or isRepublic(iPlayer) and iEra >= iIndustrial: return iMao
 			
-		if iEra >= iRenaissance and iGameTurn >= getTurnForYear(1400): return iHongwu
+		if iEra >= iRenaissance and year() >= year(1400): return iHongwu
 	
 		if bResurrected: return iHongwu
 		
-		if utils.getScenario() >= i1700AD: return iHongwu
+		if scenario() >= i1700AD: return iHongwu
 		
 		if iEra >= iMedieval: return iTaizong
 		
 	elif iPlayer == iBabylonia:
-		if iGameTurn >= getTurnForYear(-1600): return iHammurabi
+		if year() >= year(-1600): return iHammurabi
 		
 	elif iPlayer == iGreece:
 		if iEra >= iIndustrial: return iGeorge
@@ -2164,7 +2145,7 @@ def leader(iPlayer):
 	elif iPlayer == iKorea:		
 		if iEra >= iRenaissance: return iSejong
 		
-		if utils.getScenario() >= i1700AD: return iSejong
+		if scenario() >= i1700AD: return iSejong
 		
 	elif iPlayer == iJapan:
 		if iEra >= iIndustrial: return iMeiji
@@ -2180,7 +2161,7 @@ def leader(iPlayer):
 		if iEra >= iRenaissance: return iKrishnaDevaRaya
 		
 	elif iPlayer == iByzantium:
-		if iGameTurn >= getTurnForYear(1000): return iBasil
+		if year() >= year(1000): return iBasil
 		
 	elif iPlayer == iVikings:
 		if iEra >= iGlobal: return iGerhardsen
@@ -2190,13 +2171,13 @@ def leader(iPlayer):
 	elif iPlayer == iTurks:
 		if bResurrected or bReborn: return iTamerlane
 	
-		if iGameTurn >= getTurnForYear(1000): return iAlpArslan
+		if year() >= year(1000): return iAlpArslan
 		
 	elif iPlayer == iArabia:
-		if iGameTurn >= getTurnForYear(1000): return iSaladin
+		if year() >= year(1000): return iSaladin
 		
 	elif iPlayer == iTibet:
-		if iGameTurn >= getTurnForYear(1500): return iLobsangGyatso
+		if year() >= year(1500): return iLobsangGyatso
 		
 	elif iPlayer == iIndonesia:
 		if iEra >= iGlobal: return iSuharto
@@ -2204,7 +2185,7 @@ def leader(iPlayer):
 		if bEmpire: return iHayamWuruk
 		
 	elif iPlayer == iMoors:
-		if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR): return iYaqub
+		if not capital in plots.start(vic.tIberiaTL).end(vic.tIberiaBR): return iYaqub
 		
 	elif iPlayer == iSpain:
 		if isFascist(iPlayer): return iFranco
@@ -2223,14 +2204,14 @@ def leader(iPlayer):
 		
 		if iEra >= iIndustrial: return iVictoria
 		
-		if utils.getScenario() == i1700AD: return iVictoria
+		if scenario() == i1700AD: return iVictoria
 		
 		if iEra >= iRenaissance: return iElizabeth
 		
 	elif iPlayer == iHolyRome:
 		if iEra >= iIndustrial: return iFrancis
 		
-		if utils.getScenario() == i1700AD: return iFrancis
+		if scenario() == i1700AD: return iFrancis
 		
 		if iEra >= iRenaissance: return iCharles
 		
@@ -2241,12 +2222,12 @@ def leader(iPlayer):
 			return iAlexanderII
 			
 		if iEra >= iRenaissance:
-			if iGameTurn >= getTurnForYear(1750): return iCatherine
+			if year() >= year(1750): return iCatherine
 			
 			return iPeter
 		
 	elif iPlayer == iNetherlands:
-		if iGameTurn >= getTurnForYear(1650): return iWilliam
+		if year() >= year(1650): return iWilliam
 			
 	elif iPlayer == iPoland:
 		if iEra >= iGlobal: return iWalesa
@@ -2255,7 +2236,7 @@ def leader(iPlayer):
 	
 		if iEra >= iRenaissance: return iSobieski
 		
-		if utils.getScenario() == i1700AD: return iSobieski
+		if scenario() == i1700AD: return iSobieski
 		
 	elif iPlayer == iPortugal:
 		if iEra >= iIndustrial: return iMaria
@@ -2265,7 +2246,7 @@ def leader(iPlayer):
 	elif iPlayer == iInca:
 		if iEra >= iIndustrial: return iCastilla
 		
-		if bResurrected and iGameTurn >= getTurnForYear(1600): return iCastilla
+		if bResurrected and year() >= year(1600): return iCastilla
 	
 	elif iPlayer == iItaly:
 		if isFascist(iPlayer): return iMussolini
@@ -2273,7 +2254,7 @@ def leader(iPlayer):
 		if iEra >= iIndustrial: return iCavour
 		
 	elif iPlayer == iMongolia:
-		if iGameTurn >= getTurnForYear(1400): return iKublaiKhan
+		if year() >= year(1400): return iKublaiKhan
 		
 	elif iPlayer == iAztecs:
 		if bReborn:
@@ -2306,7 +2287,7 @@ def leader(iPlayer):
 	elif iPlayer == iAmerica:
 		if iEra >= iGlobal: return iRoosevelt
 		
-		if iGameTurn >= getTurnForYear(1850): return iLincoln
+		if year() >= year(1850): return iLincoln
 		
 	elif iPlayer == iArgentina:
 		if iEra >= iGlobal: return iPeron
@@ -2321,19 +2302,17 @@ def leader(iPlayer):
 		
 	
 def leaderName(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
 	iLeader = pPlayer.getLeader()
-	
-	iGameTurn = gc.getGame().getGameTurn()
 	
 	if iPlayer == iChina:
 		if iLeader == iHongwu:
-			if iGameTurn >= getTurnForYear(1700):
+			if year() >= year(1700):
 				return "TXT_KEY_LEADER_KANGXI"
 				
 	elif iPlayer == iTamils:
 		if iLeader == iKrishnaDevaRaya:
-			if iGameTurn >= getTurnForYear(1700):
+			if year() >= year(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"
 				
 	return None

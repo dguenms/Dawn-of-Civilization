@@ -3443,11 +3443,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT</Tag>
-		<English>Votes in the Apostolic Palace: %s1 / %s2%%</English>
-		<French>Votes du Palais apostolique : %s1 / %s2%%</French>
-		<German>Votes in the Apostolic Palace: %s1 / %s2%%</German>
-		<Italian>Votes in the Apostolic Palace: %s1 / %s2%%</Italian>
-		<Spanish>Votes in the Apostolic Palace: %s1 / %s2%%</Spanish>
+		<English>Votes in the Apostolic Palace: %s1 / %d2%%</English>
+		<French>Votes du Palais apostolique : %s1 / %d2%%</French>
+		<German>Votes in the Apostolic Palace: %s1 / %d2%%</German>
+		<Italian>Votes in the Apostolic Palace: %s1 / %d2%%</Italian>
+		<Spanish>Votes in the Apostolic Palace: %s1 / %d2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ATLANTIC_RAILROAD</Tag>
@@ -3579,11 +3579,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY</Tag>
-		<English>Territory controlled by Catholic civilizations: %s1 / %s2%</English>
-		<French>Territoire contr&#244;l&#233; par des civilisations catholiques : %s1 / %s2%</French>
-		<German>Territory controlled by Catholic civilizations: %s1 / %s2%</German>
-		<Italian>Territory controlled by Catholic civilizations: %s1 / %s2%</Italian>
-		<Spanish>Territory controlled by Catholic civilizations: %s1 / %s2%</Spanish>
+		<English>Territory controlled by Catholic civilizations: %s1 / %d2%</English>
+		<French>Territoire contr&#244;l&#233; par des civilisations catholiques : %s1 / %d2%</French>
+		<German>Territory controlled by Catholic civilizations: %s1 / %d2%</German>
+		<Italian>Territory controlled by Catholic civilizations: %s1 / %d2%</Italian>
+		<Spanish>Territory controlled by Catholic civilizations: %s1 / %d2%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CAUTIOUS_OR_BETTER_RELATIONS</Tag>
@@ -3691,11 +3691,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
-		<English>Canadian territory: %s1 / %s2%%</English>
-		<French>Territoire canadien : %s1 / %s2%%</French>
-		<German>Canadian territory: %s1 / %s2%%</German>
-		<Italian>Canadian territory: %s1 / %s2%%</Italian>
-		<Spanish>Canadian territory: %s1 / %s2%%</Spanish>
+		<English>Canadian territory: %s1 / %d2%%</English>
+		<French>Territoire canadien : %s1 / %d2%%</French>
+		<German>Canadian territory: %s1 / %d2%%</German>
+		<Italian>Canadian territory: %s1 / %d2%%</Italian>
+		<Spanish>Canadian territory: %s1 / %d2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA_CITIES</Tag>
@@ -4732,11 +4732,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION</Tag>
-		<English>Percentage of world population: %s1 / %s2%%</English>
-		<French>Pourcentage de la population mondiale : %s1 / %s2%%</French>
-		<German>Percentage of world population: %s1 / %s2%%</German>
-		<Italian>Percentage of world population: %s1 / %s2%%</Italian>
-		<Spanish>Percentage of world population: %s1 / %s2%%</Spanish>
+		<English>Percentage of world population: %s1 / %d2%%</English>
+		<French>Pourcentage de la population mondiale : %s1 / %d2%%</French>
+		<German>Percentage of world population: %s1 / %d2%%</German>
+		<Italian>Percentage of world population: %s1 / %d2%%</Italian>
+		<Spanish>Percentage of world population: %s1 / %d2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
@@ -4996,11 +4996,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT</Tag>
-		<English>%s1_religion spread to: %s2 / %s3%%</English>
-		<French>%s1_religion propag&#233; &#224; : %s2 / %s3%%</French>
-		<German>%s1_religion spread to: %s2 / %s3%%</German>
-		<Italian>%s1_religion spread to: %s2 / %s3%%</Italian>
-		<Spanish>%s1_religion spread to: %s2 / %s3%%</Spanish>
+		<English>%s1_religion spread to: %s2 / %d3%%</English>
+		<French>%s1_religion propag&#233; &#224; : %s2 / %d3%%</French>
+		<German>%s1_religion spread to: %s2 / %d3%%</German>
+		<Italian>%s1_religion spread to: %s2 / %d3%%</Italian>
+		<Spanish>%s1_religion spread to: %s2 / %d3%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SRIVIJAYA</Tag>
@@ -5212,19 +5212,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT</Tag>
-		<English>Global allied commerce: %s1 / %s2%</English>
-		<French>Commerce mondial alli&#233; : %s1 / %s2%</French>
-		<German>Global allied commerce: %s1 / %s2%</German>
-		<Italian>Global allied commerce: %s1 / %s2%</Italian>
-		<Spanish>Global allied commerce: %s1 / %s2%</Spanish>
+		<English>Global allied commerce: %s1 / %d2%</English>
+		<French>Commerce mondial alli&#233; : %s1 / %d2%</French>
+		<German>Global allied commerce: %s1 / %d2%</German>
+		<Italian>Global allied commerce: %s1 / %d2%</Italian>
+		<Spanish>Global allied commerce: %s1 / %d2%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ALLIED_POWER_PERCENT</Tag>
-		<English>Global allied power: %s1 / %s2%</English>
-		<French>Puissance militaire alli&#233;e : %s1 / %s2%</French>
-		<German>Global allied power: %s1 / %s2%</German>
-		<Italian>Global allied power: %s1 / %s2%</Italian>
-		<Spanish>Global allied power: %s1 / %s2%</Spanish>
+		<English>Global allied power: %s1 / %d2%</English>
+		<French>Puissance militaire alli&#233;e : %s1 / %d2%</French>
+		<German>Global allied power: %s1 / %d2%</German>
+		<Italian>Global allied power: %s1 / %d2%</Italian>
+		<Spanish>Global allied power: %s1 / %d2%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONVERTED_TO_ORTHODOXY</Tag>

@@ -1,7 +1,8 @@
 from Consts import *
+from Core import *
 import Areas
 
-def getMapValue(iCiv, x, y, bChanged = False):
+def getMapValue(iCiv, (x, y), bChanged = False):
 	if bChanged and iCiv in dChangedWarMaps:
 		return dChangedWarMaps[iCiv][iWorldY-1-y][x]
 		
@@ -11,18 +12,16 @@ def getMapValue(iCiv, x, y, bChanged = False):
 	return 0
 	
 def applyMap(iPlayer, iCiv, bChanged = False):
-	for x in range(iWorldX):
-		for y in range(iWorldY):
-			plot = gc.getMap().plot(x, y)
-			if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
-				plot.setWarValue(iPlayer, 0)
-			elif plot.isCore(iPlayer):
-				plot.setWarValue(iPlayer, max(8, getMapValue(iCiv, x, y, bChanged)))
-			else:
-				plot.setWarValue(iPlayer, getMapValue(iCiv, x, y, bChanged))
+	for plot in plots.all():
+		if plot.isWater() or (plot.isPeak() and location(plot) not in Areas.lPeakExceptions):
+			plot.setWarValue(iPlayer, 0)
+		elif plot.isCore(iPlayer):
+			plot.setWarValue(iPlayer, max(8, getMapValue(iCiv, location(plot), bChanged)))
+		else:
+			plot.setWarValue(iPlayer, getMapValue(iCiv, location(plot), bChanged))
 			
 def updateMap(iPlayer, bChanged = False):
-	applyMap(iPlayer, gc.getPlayer(iPlayer).getCivilizationType(), bChanged)
+	applyMap(iPlayer, civ(iPlayer), bChanged)
 	
 def init():
 	for iPlayer in range(iNumPlayers):

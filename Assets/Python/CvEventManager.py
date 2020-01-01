@@ -23,7 +23,7 @@ import CvEspionageAdvisor
 
 #Rhye
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 
 ## Ultrapack ##
 import WBCityEditScreen

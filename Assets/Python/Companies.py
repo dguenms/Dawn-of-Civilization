@@ -4,13 +4,9 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
 from Consts import *
-from RFCUtils import utils
+from RFCUtils import *
 from operator import itemgetter
 
-# globals
-gc = CyGlobalContext()
-localText = CyTranslator()
-PyPlayer = PyHelpers.PyPlayer
 
 tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
@@ -46,7 +42,7 @@ class Companies:
 
 
 	def checkCompany(self, iCompany, iGameTurn):
-		if (iCompany == iSilkRoute and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)) or (iCompany == iTextileIndustry and iGameTurn > getTurnForYear(1920)):
+		if (iCompany == iSilkRoute and iGameTurn > year(1500)) or (iCompany == iTradingCompany and iGameTurn > year(1800)) or (iCompany == iTextileIndustry and iGameTurn > year(1920)):
 			iMaxCompanies = 0
 		else:
 			iMaxCompanies = tCompaniesLimit[iCompany]
@@ -54,8 +50,8 @@ class Companies:
 		# count the number of companies
 		iCompanyCount = 0
 		for iLoopPlayer in range(iNumPlayers):
-			if gc.getPlayer(iLoopPlayer).isAlive():
-				iCompanyCount += gc.getPlayer(iLoopPlayer).countCorporations(iCompany)
+			if player(iLoopPlayer).isAlive():
+				iCompanyCount += player(iLoopPlayer).countCorporations(iCompany)
 				
 		# return if gameturn is beyond company fall date and removed from all cities
 		if iMaxCompanies == 0 and iCompanyCount == 0:
@@ -64,11 +60,11 @@ class Companies:
 		# loop through all cities, check the company value for each and add the good ones to a list of tuples (city, value)
 		cityValueList = []
 		for iPlayer in range(iNumPlayers):
-			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iEconomics) or iCompany <= iTradingCompany):
-				for city in utils.getCityList(iPlayer):
+			if team(iPlayer).isHasTech(tCompanyTechs[iCompany]) and (team(iPlayer).isHasTech(iEconomics) or iCompany <= iTradingCompany):
+				for city in cities.owner(iPlayer):
 					iValue = self.getCityValue(city, iCompany)
 					if iValue > 0: 
-						cityValueList.append((city, iValue * 10 + gc.getGame().getSorenRandNum(10, 'random bonus')))
+						cityValueList.append((city, iValue * 10 + rand(10)))
 					elif city.isHasCorporation(iCompany): # quick check to remove companies
 						city.setHasCorporation(iCompany, False, True, True)
 						
@@ -118,25 +114,25 @@ class Companies:
 		iValue = 2
 		
 		iOwner = city.getOwner()
-		owner = gc.getPlayer(iOwner)
-		ownerTeam = gc.getTeam(owner.getTeam())
+		owner = player(city)
+		ownerTeam = team(city)
 		
 		# Central Planning: only one company per city
-		if owner.getCivics(iCivicsEconomy) == iCentralPlanning:
+		if has_civic(owner, iCentralPlanning):
 			for iLoopCorporation in range(iNumCorporations):
 				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
 					return -1
 
 		# Colonialism increases likeliness for trading company
-		if iCompany == iTradingCompany and owner.getCivics(iCivicsTerritory) == iColonialism:
+		if iCompany == iTradingCompany and has_civic(owner, iColonialism):
 			iValue += 2
 			
 		# Merchant Trade increases likeliness for silk route
-		if iCompany == iSilkRoute and owner.getCivics(iCivicsEconomy) == iMerchantTrade:
+		if iCompany == iSilkRoute and has_civic(owner, iMerchantTrade):
 			iValue += 2
 
 		# Free Enterprise increases likeliness for all companies
-		if owner.getCivics(iCivicsEconomy) == iFreeEnterprise:
+		if has_civic(owner, iFreeEnterprise):
 			iValue += 1
 
 		# civilization requirements
@@ -181,55 +177,55 @@ class Companies:
 		
 		# various bonuses
 		if iCompany == iSilkRoute:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iWeaver)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iStable)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
 
 		elif iCompany == iTradingCompany:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCustomsHouse)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iTradingCompanyBuilding)): iValue += 2
+			if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iCustomsHouse)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iTradingCompanyBuilding)): iValue += 2
 
 		elif iCompany == iCerealIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGranary)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSewer)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSupermarket)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iGranary)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iSewer)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iSupermarket)): iValue += 1
 
 		elif iCompany == iFishingIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iLighthouse)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSupermarket)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iLighthouse)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iHarbor)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iSupermarket)): iValue += 1
 			
 		elif iCompany == iTextileIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iWeaver)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
 
 		elif iCompany == iSteelIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCoalPlant)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIndustrialPark)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIronworks)): iValue += 3
+			if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iCoalPlant)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iIronworks)): iValue += 3
 
 		elif iCompany == iOilIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iDistillery)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIndustrialPark)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStockExchange)): iValue += 3
+			if city.hasBuilding(unique_building(iOwner, iBank)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iDistillery)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iIndustrialPark)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iStockExchange)): iValue += 3
 
 		elif iCompany == iLuxuryIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iDepartmentStore)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iNationalGallery)): iValue += 3
+			if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iWeaver)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iDepartmentStore)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iNationalGallery)): iValue += 3
 
 		elif iCompany == iComputerIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iLaboratory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iUniversity)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCERN)): iValue += 3
+			if city.hasBuilding(unique_building(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iLaboratory)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iUniversity)): iValue += 1
+			if city.hasBuilding(unique_building(iOwner, iCERN)): iValue += 3
 
 		# trade routes
 		iValue += city.getTradeRoutes() - 1
@@ -238,7 +234,7 @@ class Companies:
 		iTempValue = 0
 		bFound = False
 		for i in range(6):
-			iBonus = gc.getCorporationInfo(iCompany).getPrereqBonus(i)
+			iBonus = infos.corporation(iCompany).getPrereqBonus(i)
 			if iBonus > -1:
 				if city.getNumBonuses(iBonus) > 0: 
 					bFound = True
