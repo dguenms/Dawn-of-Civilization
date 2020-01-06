@@ -45,7 +45,7 @@ tRomeAnatoliaBR = (75, 45)
 
 iRomeCeltiaYear = -50
 tRomeCeltiaTL = (52, 45)
-tRomeCeltiaBR = (59, 51)
+tRomeCeltiaBR = (59, 55)
 
 iRomeEgyptYear = 0
 tRomeEgyptTL = (65, 31)
@@ -136,8 +136,8 @@ class AIWars:
 			utils.minorWars(iIndependent)
 		elif iGameTurn % 13 == 11 and iGameTurn > utils.getTurns(50): #1 turn after restorePeace()
 			utils.minorWars(iIndependent2)
-		if iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50):
-			utils.minorWars(iCeltia)
+		#if iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50):
+		#	utils.minorWars(iCeltia)
 			
 		for tConquest in lConquests:
 			self.checkConquest(tConquest)

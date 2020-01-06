@@ -9139,7 +9139,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 			if (pArea->isWater())
 			{
 				//if (pArea->getUnitsPerPlayer(BARBARIAN_PLAYER) > 0) //Rhye
-				if ((pArea->getUnitsPerPlayer(BARBARIAN_PLAYER) > 0) || (pArea->getUnitsPerPlayer((PlayerTypes)CELTIA) > 0) || (pArea->getUnitsPerPlayer((PlayerTypes)NATIVE) > 0)) //Rhye
+				if ((pArea->getUnitsPerPlayer(BARBARIAN_PLAYER) > 0) || (pArea->getUnitsPerPlayer((PlayerTypes)NATIVE) > 0)) //Rhye
 				{
 					iExploreValue += (2 * iCombatValue);
 				}
@@ -10969,6 +10969,10 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 				iValue /= 2;
 			}
 			else if (iI != JUDAISM && iI != NO_RELIGION && getID() == KHAZARS)
+			{
+				iValue /= 2;
+			}
+			else if (iI == CELTIA)
 			{
 				iValue /= 2;
 			}

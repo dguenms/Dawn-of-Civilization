@@ -8,6 +8,7 @@ import PyHelpers	# LOQ
 from RFCUtils import utils
 from Consts import *
 from StoredData import data
+import Stability as sta
 
 # globals
 gc = CyGlobalContext()
@@ -23,19 +24,19 @@ tMinorCities = (
 (-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
-(-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
+#(-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
 (-500, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
-(-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
+#(-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
-(-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
+#(-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
 (-250, (19, 35), iNative, 'Danibaan', 2, iHolkan, 1),	# Monte Alb�n
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
 #(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
-(-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
+#(-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (99, 38), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
@@ -49,7 +50,8 @@ tMinorCities = (
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
-(990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
+(410, (49, 56), iCeltia, '&#193;th Cliath', 1, iArcher, 1),			# Dublin
+(410, (52, 59), iCeltia, 'D&#249;n &#200;ideann', 1, iArcher, 1),			# Edinburgh
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
@@ -105,10 +107,10 @@ class Barbs:
 
 			
 		#celts
-		if utils.isYearIn(-650, -110):
-			self.checkSpawn(iCeltia, iGallicWarrior, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 6, 0)
-			if iHandicap >= 0:
-				self.checkSpawn(iCeltia, iAxeman, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GAUL"])
+		#if utils.isYearIn(-650, -110):
+		#	self.checkSpawn(iCeltia, iGallicWarrior, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 6, 0)
+		#	if iHandicap >= 0:
+		#		self.checkSpawn(iCeltia, iAxeman, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GAUL"])
 
 		#norse
 		if utils.isYearIn(-650, 550):
@@ -324,6 +326,10 @@ class Barbs:
 
 		if iGameTurn < getTurnForYear(tMinorCities[len(tMinorCities)-1][0])+10:
 			self.foundMinorCities(iGameTurn)
+			
+		if iGameTurn == getTurnForYear(410):
+			if utils.getHumanID() != iCeltia:
+				sta.doResurrection(iCeltia, sta.getResurrectionCities(iCeltia))
 
 		if iGameTurn == getTurnForYear(tBirth[iInca]):
 			if utils.getHumanID() == iInca:
@@ -349,7 +355,8 @@ class Barbs:
 			bForceSpawn = False
 			
 			if sName == 'Kyiv': lReligions = [iOrthodoxy]
-			if iPlayer == iCeltia and utils.getScenario() != i3000BC: iPlayer = iIndependent
+			if iPlayer == iCeltia and utils.getHumanID() == iCeltia: continue
+			if iPlayer == iCeltia: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
 			if sName == 'Muqdisho': lReligions = [iIslam]
 			

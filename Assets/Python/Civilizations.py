@@ -152,6 +152,7 @@ iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMyt
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
+iCivCeltia : 	Techs([iBloomery, iCalendar, iAlloys, iConstruction], column=2, exceptions=[iSeafaring]),
 iCivCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
 iCivPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
 iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
@@ -381,6 +382,9 @@ dTechPreferences = {
 		iFission: 15,
 	
 		iTheology: -40,
+	},
+	iCivCeltia : {
+		iPriesthood : 20,
 	},
 	iCivRome : {
 		iTheology: 30,
@@ -775,6 +779,7 @@ dDefaultWonderPreferences = {
 	iCivHarappa: -15,
 	iCivGreece: -15,
 	iCivIndia: -15,
+	iCivCeltia: -20,
 	iCivRome: -20,
 	iCivArabia: -15,
 	iCivIndonesia: -15,
@@ -885,6 +890,9 @@ dBuildingPreferences = {
 		iHangingGardens: 15,
 		iColossus: 15,
 		iOracle: 15,
+	},
+	iCivCeltia : {
+	
 	},
 	iCivRome : {
 		iFlavianAmphitheatre: 30,

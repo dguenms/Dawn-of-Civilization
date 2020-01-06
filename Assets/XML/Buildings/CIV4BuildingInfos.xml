@@ -828,9 +828,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_CELTIC_DUN</ArtDefineTag>
 			<ObsoleteTech>TECH_BALLISTICS</ObsoleteTech>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<FreePromotion>PROMOTION_GUERILLA1</FreePromotion>
+			<FreePromotion>PROMOTION_WOODSMAN1</FreePromotion>
+			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
-			<iCost>50</iCost>
+			<iCost>30</iCost>
 			<iConquestProb>100</iConquestProb>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -852,7 +853,6 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
-			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>

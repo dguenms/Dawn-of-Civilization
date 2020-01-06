@@ -22,6 +22,7 @@ def create(iPlayer, iUnit, (x, y)):
 def getAlias(iCiv, iType, iEra):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivIran: return iCivPersia
+	elif iCiv == iCeltia: return iCivEngland
 	elif iCiv == iCivManchuria: return iCivChina
 	elif iCiv == iCivTeotihuacan: return iCivMaya
 	

@@ -179,21 +179,27 @@ class RFCUtils:
 	#RiseAndFall, Religions, Congresses, UniquePowers
 	def makeUnit(self, iUnit, iPlayer, tCoords, iNum, sAdj="", iExp = 0): #by LOQ
 		'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
+		units = []
 		for i in range(iNum):
 			player = gc.getPlayer(iPlayer)
 			unit = player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			units.append(unit)
 			if sAdj != "":
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
 			if iExp > 0:
 				unit.changeExperience(iExp, 100, False, False, False)
+		return units
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
 		'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
+		units = []
 		for i in range(iNum):
 			player = gc.getPlayer(iPlayer)
 			unit = player.initUnit(iUnit, tCoords[0], tCoords[1], iAI, DirectionTypes.DIRECTION_SOUTH)
+			units.append(unit)
 			if sAdj != "":
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
+		return units
 
 	#RiseAndFall, Religions, Congresses
 	def getHumanID(self):

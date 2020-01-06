@@ -2607,6 +2607,14 @@
 		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Unique Power</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CULTURE_UNIQUE_POWER</Tag>
+		<English>[ICON_BULLET]%D1%[ICON_CULTURE] from Unique Power</English>
+		<French>[ICON_BULLET]%D1%[ICON_CULTURE] gr&#226;ce au pouvoir unique</French>
+		<German>[ICON_BULLET]%D1%[ICON_CULTURE] durch Einzigartige Macht</German>
+		<Italian>[ICON_BULLET]%D1%[ICON_CULTURE] from Unique Power</Italian>
+		<Spanish>[ICON_BULLET]%D1%[ICON_CULTURE] from Unique Power</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_YIELD_PLAYER</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Unique Power</English>
 		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce au pouvoir unique</French>

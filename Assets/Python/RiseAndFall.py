@@ -827,6 +827,13 @@ class RiseAndFall:
 			if pIndependent2.isAlive():
 				utils.updateMinorTechs(iIndependent2, iBarbarian)
 
+		#Leoreth: give Celtia a settler in England in 500BC
+		if not pCeltia.isHuman() and iGameTurn == getTurnForYear(-500) - (data.iSeed % 10):
+			utils.makeUnit(iSettler, iCeltia, (53, 54), 1)
+			utils.makeUnit(iArcher, iCeltia, (53, 54), 2)
+			utils.makeUnit(iWorker, iCeltia, (53, 54), 2)
+			utils.makeUnit(iCidainh, iCeltia, (53, 54), 2)
+
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
 		if not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (data.iSeed % 10):
 			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
@@ -1804,7 +1811,7 @@ class RiseAndFall:
 			iCultureChange = 0
 			
 			# Case 1: Minor civilization
-			if iOwner in [iBarbarian, iIndependent, iIndependent2, iCeltia, iNative]:
+			if iOwner in [iBarbarian, iIndependent, iIndependent2, iNative]:
 				iCultureChange = 100
 				
 			# Case 2: Human city
@@ -2408,6 +2415,8 @@ class RiseAndFall:
 			utils.makeUnit(iHoplite, iCiv, tPlot, 4)
 		elif iCiv == iPersia:
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
+		elif iCiv == iCeltia:
+			utils.makeUnit(iGallicWarrior, iCiv, tPlot, 3)
 		elif iCiv == iCarthage:
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 			utils.makeUnit(iNumidianCavalry, iCiv, tPlot, 1)
@@ -2608,6 +2617,26 @@ class RiseAndFall:
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
 			utils.makeUnit(iHorseman, iCiv, tPlot, 2)
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
+		elif iCiv == iCeltia:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(iGallicWarrior, iCiv, tPlot, 2)
+			utils.makeUnit(iCidainh, iCiv, tPlot, 2)
+			# start AI settler and garrison in La Tene and Boii
+			if utils.getHumanID() != iCiv:
+				#La Tene
+				utils.makeUnit(iSettler, iCiv, (57, 49), 2)[0].setMoves(0)
+				utils.makeUnitAI(iArcher, iCiv, (57, 49), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+				utils.makeUnit(iGallicWarrior, iCiv, (57, 49), 2)
+				utils.makeUnit(iCidainh, iCiv, (57, 49), 2)
+				#Boii
+				utils.makeUnit(iSettler, iCiv, (59, 47), 2)[0].setMoves(0)
+				utils.makeUnitAI(iArcher, iCiv, (59, 47), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			else:
+				utils.makeUnit(iSettler, iVikings, tPlot, 2)
+				utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
+				utils.makeUnit(iGallicWarrior, iCiv, tPlot, 2)
+				utils.makeUnit(iCidainh, iCiv, tPlot, 2)
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -3185,6 +3214,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iPersia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+		elif iCiv == iCeltia:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iCarthage:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iRome:

@@ -464,7 +464,7 @@ dForeignNames = {
 	},
 }
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iJapan, iEthiopia, iKorea, iVikings, iTurks, iKhazars, iTibet, iIndonesia, iKhmer, iHolyRome, iMali, iPoland, iMughals, iOttomans, iThailand, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria, iOman, iChad, iCeltia]
 lRepublicAdj = [iBabylonia, iRome, iMoors, iSpain, iFrance, iPortugal, iInca, iItaly, iAztecs, iArgentina, iAustralia, iManchuria, iHungary]
 
 lSocialistRepublicOf = [iMoors, iHolyRome, iBrazil, iVikings, iMamluks, iPhilippines, iBoers, iVietnam, iZimbabwe, iSwahili, iSweden, iNigeria]
@@ -537,6 +537,7 @@ dAdjectiveChanges = {
 dCapitals = {
 	iPolynesia : ["Kaua'i", "O'ahu", "Maui", "Manu'a", "Niue"],
 	iBabylonia : ["Ninua", "Kalhu"],
+	iCeltia : ["Hallstat", "La Tene", "&#193;th Cliath", "D&#249;n &#200;ideann", "Dublin", "Edinburgh"],
 	iTeotihuacan : ["Tollan"],
 	iByzantium : ["Dyrrachion", "Athena", "Konstantinoupolis"],
 	iVikings : ["Oslo", "Nidaros", "Roskilde"],
@@ -570,6 +571,7 @@ dStartingLeaders = [
 	iPersia : iCyrus,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,
+	iCeltia : iBrennus,
 	iRome : iJuliusCaesar,
 	iMaya : iPacal,
 	iJapan : iKammu,
@@ -1146,6 +1148,14 @@ def specificName(iPlayer):
 			
 		return "TXT_KEY_CIV_POLYNESIA_TONGA"
 		
+	elif iPlayer == iCeltia:
+		if bReborn:
+			if capital.getRegionID() == rBritain:
+				if city.getX() <= 50:
+					return "TXT_KEY_CIV_CELTIA_IRELAND_SHORT_DESC"
+				elif city.getY() >= 48:
+					return "TXT_KEY_CIV_CELTIA_SCOTLAND_SHORT_DESC"
+		
 	elif iPlayer == iTamils:
 		if iEra >= iRenaissance:
 			return "TXT_KEY_CIV_TAMILS_MYSORE"
@@ -1546,6 +1556,17 @@ def specificAdjective(iPlayer):
 			
 			if getColumn(iPlayer) >= 6: 
 				return "TXT_KEY_CIV_PERSIA_SASSANID"
+				
+	elif iPlayer == iCeltia:
+		if bReborn:
+			if capital.getRegionID() == rBritain:
+				if city.getX() <= 50:
+					return "TXT_KEY_CIV_CELTIA_IRELAND_ADJECTIVE"
+				elif city.getY() >= 48:
+					return "TXT_KEY_CIV_CELTIA_SCOTLAND_ADJECTIVE"
+					
+		elif isCapital(iPlayer, ["Hallstat", "La Tene"]):
+			return capitalName(iPlayer)
 				
 	elif iPlayer == iPolynesia:
 		if isCapital(iPlayer, ["Manu'a"]):
@@ -1952,6 +1973,19 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iPlayer == iPersia:
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	elif iPlayer == iCeltia:
+		if bReborn:
+			return "TXT_KEY_KINGDOM_OF"
+			
+		elif teamCeltia.isVassal(iRome):
+			if capital.getRegionID() == rBritain:
+				return "TXT_KEY_CIV_CELTIA_ROME_BRITANNIA"
+			if capital.getRegionID() == rEurope:
+				if capital.getX() <= 50:
+					return "TXT_KEY_CIV_CELTIA_ROME_GALLIA"
+				else:
+					return "TXT_KEY_CIV_CELTIA_ROME_GERMANIA"
 			
 	elif iPlayer == iPhoenicia:
 		if bEmpire:

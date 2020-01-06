@@ -1115,11 +1115,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BUR</Tag>
-		<English>Religious buildings provide +1 Great Person Point</English>
-		<French>Religious buildings provide +1 Great Person Point</French>
-		<German>Religious buildings provide +1 Great Person Point</German>
-		<Italian>Religious buildings provide +1 Great Person Point</Italian>
-		<Spanish>Religious buildings provide +1 Great Person Point</Spanish>
+		<English>Religious buildings provide +1 [ICON_GREATPEOPLE]</English>
+		<French>Religious buildings provide +1 [ICON_GREATPEOPLE]</French>
+		<German>Religious buildings provide +1 [ICON_GREATPEOPLE]</German>
+		<Italian>Religious buildings provide +1 [ICON_GREATPEOPLE]</Italian>
+		<Spanish>Religious buildings provide +1 [ICON_GREATPEOPLE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KRS_TITLE</Tag>
@@ -1131,11 +1131,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KRS</Tag>
-		<English>Cities produce buildings with Food</English>
-		<French>Cities produce buildings with Food</French>
-		<German>Cities produce buildings with Food</German>
-		<Italian>Cities produce buildings with Food</Italian>
-		<Spanish>Cities produce buildings with Food</Spanish>
+		<English>Cities produce buildings with [ICON_FOOD]</English>
+		<French>Cities produce buildings with [ICON_FOOD]</French>
+		<German>Cities produce buildings with [ICON_FOOD]</German>
+		<Italian>Cities produce buildings with [ICON_FOOD]</Italian>
+		<Spanish>Cities produce buildings with [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HUN_TITLE</Tag>
@@ -1211,11 +1211,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OMA</Tag>
-		<English>Extra production, commerce, and can build farms on desert</English>
-		<French>Extra production, commerce, and can build farms on desert</French>
-		<German>Extra production, commerce, and can build farms on desert</German>
-		<Italian>Extra production, commerce, and can build farms on desert</Italian>
-		<Spanish>Extra production, commerce, and can build farms on desert</Spanish>
+		<English>Extra [ICON_PRODUCTION], [ICON_COMMERCE], and can build farms on desert</English>
+		<French>Extra [ICON_PRODUCTION], [ICON_COMMERCE], and can build farms on desert</French>
+		<German>Extra [ICON_PRODUCTION], [ICON_COMMERCE], and can build farms on desert</German>
+		<Italian>Extra [ICON_PRODUCTION], [ICON_COMMERCE], and can build farms on desert</Italian>
+		<Spanish>Extra [ICON_PRODUCTION], [ICON_COMMERCE], and can build farms on desert</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_YEM_TITLE</Tag>
@@ -1227,11 +1227,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_YEM</Tag>
-		<English>25% of Commerce from trade routes is converted to Food</English>
-		<French>25% of Commerce from trade routes is converted to Food</French>
-		<German>25% of Commerce from trade routes is converted to Food</German>
-		<Italian>25% of Commerce from trade routes is converted to Food</Italian>
-		<Spanish>25% of Commerce from trade routes is converted to Food</Spanish>
+		<English>25% of [ICON_COMMERCE] from trade routes is converted to [ICON_FOOD]</English>
+		<French>25% of [ICON_COMMERCE] from trade routes is converted to [ICON_FOOD]</French>
+		<German>25% of [ICON_COMMERCE] from trade routes is converted to [ICON_FOOD]</German>
+		<Italian>25% of [ICON_COMMERCE] from trade routes is converted to [ICON_FOOD]</Italian>
+		<Spanish>25% of [ICON_COMMERCE] from trade routes is converted to [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHA_TITLE</Tag>
@@ -1259,11 +1259,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_NUB</Tag>
-		<English>+50% construction speed of ancient era buildings in cities with Stone</English>
-		<French>+50% construction speed of ancient era buildings in cities with Stone</French>
-		<German>+50% construction speed of ancient era buildings in cities with Stone</German>
-		<Italian>+50% construction speed of ancient era buildings in cities with Stone</Italian>
-		<Spanish>+50% construction speed of ancient era buildings in cities with Stone</Spanish>
+		<English>+50% [ICON_PRODUCTION] of ancient era buildings in cities with Stone</English>
+		<French>+50% [ICON_PRODUCTION] of ancient era buildings in cities with Stone</French>
+		<German>+50% [ICON_PRODUCTION] of ancient era buildings in cities with Stone</German>
+		<Italian>+50% [ICON_PRODUCTION] of ancient era buildings in cities with Stone</Italian>
+		<Spanish>+50% [ICON_PRODUCTION] of ancient era buildings in cities with Stone</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHA_TITLE</Tag>
@@ -1280,5 +1280,21 @@
 		<German>Core Cities also yield a Farm's base yields.</German>
 		<Italian>Core Cities also yield a Farm's base yields.</Italian>
 		<Spanish>Core Cities also yield a Farm's base yields.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CEL_TITLE</Tag>
+		<English>The Power of Ceilidh:</English>
+		<French>The Power of Ceilidh:</French>
+		<German>The Power of Ceilidh:</German>
+		<Italian>The Power of Ceilidh:</Italian>
+		<Spanish>The Power of Ceilidh:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CEL</Tag>
+		<English>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</English>
+		<French>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</French>
+		<German>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</German>
+		<Italian>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</Italian>
+		<Spanish>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -2017,8 +2017,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	SAFE_DELETE_ARRAY(paiNumRealBuilding);
 	SAFE_DELETE_ARRAY(paiBuildingOriginalOwner);
 	SAFE_DELETE_ARRAY(paiBuildingOriginalTime);
-
-	if (bConquest)
+	
+	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
+	if (!isHuman() && !GET_PLAYER(eOldOwner).isHuman() && pNewCity->getX_INLINE() == 66 && pNewCity->getY_INLINE() == 31 && GC.getGameINLINE().getGameTurnYear() < 350)
+	{
+		pNewCity->raze(iCaptureGold);
+	}
+	else if (bConquest)
 	{
 		//Rhye - start
 //Speed: Modified by Kael 04/19/2007
@@ -2051,11 +2056,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			}
 			else if (!isHuman())
 			{
-				// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
-				if (pNewCity->getOriginalOwner() == NUBIA && pNewCity->getX_INLINE() == 66 && pNewCity->getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
-				{
-					pNewCity->raze(iCaptureGold);
-				}
 				AI_conquerCity(pNewCity, eOldPreviousOwner, eHighestCulturePlayer, iCaptureGold); // could delete the pointer...
 			}
 			else
@@ -11280,6 +11280,14 @@ void CvPlayer::setCapitalCity(CvCity* pNewCapitalCity)
 
 	pOldCapitalCity = getCapitalCity();
 
+	if (pNewCapitalCity->getRegionID() == REGION_BRITAIN)
+	{
+		if (pNewCapitalCity->getX() <= 50 || pNewCapitalCity->getY() >= 48)
+		{
+			setReborn(true);
+		}
+	}
+
 	if (pOldCapitalCity != pNewCapitalCity)
 	{
 		bUpdatePlotGroups = ((pOldCapitalCity == NULL) || (pNewCapitalCity == NULL) || (pOldCapitalCity->plot()->getOwnerPlotGroup() != pNewCapitalCity->plot()->getOwnerPlotGroup()));
@@ -11823,7 +11831,7 @@ void CvPlayer::verifyAlive()
 
 		if (!bKill)
 		{
-			if (!isBarbarian() && getID() != NATIVE && getID() != CELTIA) // Leoreth: natives and celts should behave like barbarians
+			if (!isBarbarian() && getID() != NATIVE) // Leoreth: natives and celts should behave like barbarians
 			{
 				if (getNumCities() == 0 && getAdvancedStartPoints() < 0)
 				{

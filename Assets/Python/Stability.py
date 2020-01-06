@@ -391,6 +391,11 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	
 	for city in lCities:
 		if bRazeMinorCities:
+			# always raze Nubian Kerma prior to 350 AD
+			if iPlayer == iNubia and utils.getHumanID() != iPlayer and city.getX() == 66 and city.getY() == 31 and gc.getGame().getGameTurnYear() < 350:
+				lRemovedCities.append(city)
+				continue
+				
 			bMaxPopulation = (city.getPopulation() < 10)
 			bMaxCulture = (city.getCultureLevel() < 3)
 			bNoHolyCities = (not city.isHolyCity())
@@ -409,8 +414,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 							lRemovedCities.append(city)
 							continue
 							
-			# always raze Harappan cities
-			if iPlayer == iHarappa and utils.getHumanID() != iPlayer:
+			# always raze Harappan and Celtic cities
+			if iPlayer in [iHarappa, iCeltia] and utils.getHumanID() != iPlayer:
 				lRemovedCities.append(city)
 				continue
 						
@@ -602,6 +607,9 @@ def completeCollapse(iPlayer):
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == iChina:
 		utils.setReborn(iMongolia, True)
+		
+	if iPlayer == iCeltia:
+		utils.setReborn(iCeltia, True)
 		
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
 	

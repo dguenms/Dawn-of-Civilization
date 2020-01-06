@@ -6997,6 +6997,21 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 			iYield += 1;
 		}
 	}
+
+	// 1SDAN: Celtic UP: +2 Culture in all cities prior to chopping a forest. +1 Production on unimproved forests.
+	if (ePlayer == CELTIA)
+	{
+		if (eYield == YIELD_PRODUCTION)
+		{
+			if (getFeatureType() == FEATURE_FOREST)
+			{
+				if (eImprovement != NO_IMPROVEMENT)
+				{
+					iYield -= 1;
+				}
+			}
+		}
+	}
 	
 	// Merijn: Manchurian UP: Improved resources adjacent to cities provide additional food and production
 	if (ePlayer == MANCHURIA)
@@ -7301,6 +7316,18 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			if (isWater() && eYield == YIELD_COMMERCE)
 			{
 				iYield += 1;
+			}
+		}
+
+		// 1SDAN: Celtic UP: +2 Culture in all cities prior to chopping a forest. +1 Production on unimproved forests.
+		if (ePlayer == CELTIA)
+		{
+			if (eYield == YIELD_PRODUCTION)
+			{
+				if (getFeatureType() == FEATURE_FOREST)
+				{
+					iYield += 1;
+				}
 			}
 		}
 

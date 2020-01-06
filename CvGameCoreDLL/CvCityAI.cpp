@@ -1245,7 +1245,7 @@ void CvCityAI::AI_chooseProduction()
 		{
 			int iStartAttackStackRand = 0;
 		//if (pArea->getCitiesPerPlayer(BARBARIAN_PLAYER)) //Rhye
-		if ((pArea->getCitiesPerPlayer(BARBARIAN_PLAYER)) || (pArea->getCitiesPerPlayer((PlayerTypes)CELTIA)) || (pArea->getCitiesPerPlayer((PlayerTypes)NATIVE))) //Rhye
+		if ((pArea->getCitiesPerPlayer(BARBARIAN_PLAYER)) || (pArea->getCitiesPerPlayer((PlayerTypes)NATIVE))) //Rhye
 			{
 				iStartAttackStackRand += 15;
 			}
@@ -2432,6 +2432,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case PERSIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		break;
+	case CELTIA:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		break;
 	case ROME:      // leave unit AI unchanged so far
         aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;

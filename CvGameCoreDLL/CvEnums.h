@@ -1362,6 +1362,7 @@ enum PlayerTypes				// Exposed to Python
 	PHOENICIA,
 	POLYNESIA,
 	PERSIA,
+	CELTIA,
 	ROME,
 	MAYA,
 	TAMILS,
@@ -1420,7 +1421,6 @@ enum PlayerTypes				// Exposed to Python
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,
-	CELTIA,
 	BARBARIAN
 };
 

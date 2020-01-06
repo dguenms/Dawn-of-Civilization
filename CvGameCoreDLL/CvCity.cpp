@@ -326,6 +326,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeMaxFoodKeptPercent(25);
 	}
 
+	// Leoreth: Celtic UP: +25% food kept on city growth
+	if (getOwnerINLINE() == CELTIA)
+	{
+		changeCulture(CELTIA, 10, true, true);
+	}
+
 	// Leoreth: Prambanan effect: +25% food kept on city growth
 	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PRAMBANAN))
 	{
@@ -7342,7 +7348,6 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		case INDEPENDENT:
 		case INDEPENDENT2:
 		case NATIVE:
-		case CELTIA: //late start too, as Byzantium stands in the junction point of 3 continents
 			return 0;
 	}
 	//Rhye - end

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Harappa -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_DESC</Tag>
+		<English>The Celts</English>
+		<French>The Celts</French>
+		<German>The Celts</German>
+		<Italian>The Celts</Italian>
+		<Spanish>The Celts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_PEOPLES</Tag>
+		<English>Urnfield Peoples</English>
+		<French>Urnfield Peoples</French>
+		<German>Urnfield Peoples</German>
+		<Italian>Urnfield Peoples</Italian>
+		<Spanish>Urnfield Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_DEFAULT</Tag>
+		<English>%s2 Culture</English>
+		<French>%s2 Culture</French>
+		<German>%s2 Culture</German>
+		<Italian>%s2 Culture</Italian>
+		<Spanish>%s2 Culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_FASCIST</Tag>
+		<English>Resurrectionist %s1</English>
+		<French>Resurrectionist %s1</French>
+		<German>Resurrectionist %s1</German>
+		<Italian>Resurrectionist %s1</Italian>
+		<Spanish>Resurrectionist %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_COMMUNIST</Tag>
+		<English>%s1 People's Union</English>
+		<French>%s1 People's Union</French>
+		<German>%s1 People's Union</German>
+		<Italian>%s1 People's Union</Italian>
+		<Spanish>%s1 People's Union</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_ADJECTIVE</Tag>
+		<English>Celtic</English>
+		<French>Celtic</French>
+		<German>Celtic</German>
+		<Italian>Celtic</Italian>
+		<Spanish>Celtic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_SHORT_DESC</Tag>
+		<English>Celtia</English>
+		<French>Celtia</French>
+		<German>Celtia</German>
+		<Italian>Celtia</Italian>
+		<Spanish>Celtia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_IRELAND_DESC</Tag>
+		<English>The Irish</English>
+		<French>The Irish</French>
+		<German>The Irish</German>
+		<Italian>The Irish</Italian>
+		<Spanish>The Irish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_IRELAND_ADJECTIVE</Tag>
+		<English>Irish</English>
+		<French>Irish</French>
+		<German>Irish</German>
+		<Italian>Irish</Italian>
+		<Spanish>Irish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_IRELAND_SHORT_DESC</Tag>
+		<English>Ireland</English>
+		<French>Ireland</French>
+		<German>Ireland</German>
+		<Italian>Ireland</Italian>
+		<Spanish>Ireland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_SCOTLAND_DESC</Tag>
+		<English>The Scottish</English>
+		<French>The Scottish</French>
+		<German>The Scottish</German>
+		<Italian>The Scottish</Italian>
+		<Spanish>The Scottish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_SCOTLAND_ADJECTIVE</Tag>
+		<English>Scottish</English>
+		<French>Scottish</French>
+		<German>Scottish</German>
+		<Italian>Scottish</Italian>
+		<Spanish>Scottish</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_SCOTLAND_SHORT_DESC</Tag>
+		<English>Scotland</English>
+		<French>Scotland</French>
+		<German>Scotland</German>
+		<Italian>Scotland</Italian>
+		<Spanish>Scotland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_ROME_BRITANNIA</Tag>
+		<English>Magna Britannia</English>
+		<French>Magna Britannia</French>
+		<German>Magna Britannia</German>
+		<Italian>Magna Britannia</Italian>
+		<Spanish>Magna Britannia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_ROME_GALLIA</Tag>
+		<English>Magna Gallia</English>
+		<French>Magna Gallia</French>
+		<German>Magna Gallia</German>
+		<Italian>Magna Gallia</Italian>
+		<Spanish>Magna Gallia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CELTIA_ROME_GERMANIA</Tag>
+		<English>Magna Germania</English>
+		<French>Magna Germania</French>
+		<German>Magna Germania</German>
+		<Italian>Magna Germania</Italian>
+		<Spanish>Magna Germania</Spanish>
+	</TEXT>
+</Civ4GameText>
