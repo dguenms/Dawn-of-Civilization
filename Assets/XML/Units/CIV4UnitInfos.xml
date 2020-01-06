@@ -1309,7 +1309,6 @@
 			<Civilopedia>TXT_KEY_UNIT_SCOUT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SCOUT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bOnlyDefensive>1</bOnlyDefensive>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -1362,7 +1361,6 @@
 			<Civilopedia>TXT_KEY_UNIT_EXPLORER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_EXPLORER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bOnlyDefensive>1</bOnlyDefensive>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -1421,7 +1419,6 @@
 			<Strategy>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_PORTUGUESE_BANDEIRANTE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<bRivalTerritory>1</bRivalTerritory>
 			<bNoBadGoodies>1</bNoBadGoodies>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
