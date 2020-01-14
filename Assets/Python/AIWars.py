@@ -85,29 +85,51 @@ iChinaVietnamYear2 = 1400
 tChinaVietnamTL = (100, 35)
 tChinaVietnamBR = (103, 38)
 
-tConquestChinaVietnam1 = (8, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
-tConquestChinaVietnam2 = (8, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
+tConquestChinaVietnam1 = (9, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
+tConquestChinaVietnam2 = (10, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
 
-tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
+tConquestSpainMoors = (11, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
 iTurksPersiaYear = 1000
 tTurksPersiaTL = (78, 37)
 tTurksPersiaBR = (85, 43)
 
+iTurksOmanYear = 1100
+tTurksOmanTL = (79, 32)
+tTurksOmanBR = (82, 35)
+
 iTurksAnatoliaYear = 1100
 tTurksAnatoliaTL = (69, 37)
 tTurksAnatoliaBR = (78, 45)
 
-tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
-tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
+tConquestTurksPersia = (12, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
+tConquestTurksOman = (13, iTurks, iOman, tTurksOmanTL, tTurksOmanBR, 1, iTurksOmanYear, 10)
+tConquestTurksAnatolia = (14, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
 
 iMongolsPersiaYear = 1220
 tMongolsPersiaTL = (79, 37)
 tMongolsPersiaBR = (85, 49)
 
-tConquestMongolsPersia = (12, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+tConquestMongolsPersia = (15, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
-lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia, tConquestChinaVietnam2]
+lConquests = [
+tConquestRomeCarthage, #0
+tConquestRomeGreece, #1
+tConquestRomeAnatolia, #2
+tConquestRomeCelts, #3
+tConquestRomeEgypt, #4
+tConquestGreeceMesopotamia, #5
+tConquestGreeceEgypt, #6
+tConquestGreecePersia, #7
+tConquestCholaSumatra, #8
+tConquestChinaVietnam1, #9
+tConquestChinaVietnam2, #10
+tConquestSpainMoors, #11
+tConquestTurksPersia, #12
+tConquestTurksOman, #13
+tConquestTurksAnatolia, #14
+tConquestMongolsPersia #15
+]
 
 class AIWars:
 		
@@ -141,9 +163,6 @@ class AIWars:
 			
 		for tConquest in lConquests:
 			self.checkConquest(tConquest)
-		
-		self.checkConquest(tConquestChinaVietnam1)
-		self.checkConquest(tConquestChinaVietnam2)
 		
 		if iGameTurn == data.iNextTurnAIWar:
 			self.planWars(iGameTurn)
