@@ -6998,7 +6998,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
-	// 1SDAN: Celtic UP: +2 Culture in all cities prior to chopping a forest. +1 Production on unimproved forests.
+	// 1SDAN: Celtic UP: Extra Culture in all cities. +1 Production on unimproved forests.
 	if (ePlayer == CELTIA)
 	{
 		if (eYield == YIELD_PRODUCTION)
@@ -7319,7 +7319,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// 1SDAN: Celtic UP: +2 Culture in all cities prior to chopping a forest. +1 Production on unimproved forests.
+		// 1SDAN: Celtic UP: Extra culture in all cities. +1 Production on unimproved forests.
 		if (ePlayer == CELTIA)
 		{
 			if (eYield == YIELD_PRODUCTION)

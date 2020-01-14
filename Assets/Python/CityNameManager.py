@@ -113,7 +113,9 @@ def getLanguages(iCiv):
 	elif iCiv == iBoers: return (iLangDutch, iLangEnglish)
 	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iIsrael: return (iLangHebrew,)
-	elif iCiv == iCeltia: return (iLangCeltic, iLangFrench, iLangGerman,)
+	elif iCiv == iCeltia: 
+		if not utils.isReborn(iCiv): return (iLangCeltic, iLangFrench, iLangGerman,)
+		else: return (iLangEnglish, iLangFrench, iLangGerman,)
 	else: return None
 	
 def getNativeLanguages(tPlot):
@@ -356,6 +358,11 @@ def onTechAcquired(iCiv):
 			if sIdentifier == 'Edo':
 				if city.getRegionID() == rWestAfrica and sNewIdentifier == 'Toukyou': continue
 				if city.getRegionID() == rJapan and sNewIdentifier == 'Benin': continue
+				
+			# Italian and Germanic Boii
+			if sIdentifier == 'Boii':
+				if city.getY() < 48 and sNewIdentifier in ['Berlijn', 'Berlin', 'Berlino', 'Berolinum', 'Brandenburg']: continue
+				if city.getY() > 48 and sNewIdentifier in ['Mailand', 'Mediolan', 'Mediolanum', 'Mil&#225;n', 'Milan', 'Milano']: continue
 			
 			sNewName = getRenameName(iCiv, sNewIdentifier)
 			if sNewName: city.setName(sNewName, False)
@@ -2925,8 +2932,8 @@ iLangCeltic :
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Williams Lake",	"Williams Lake",	"-1",	"Hinton",	"Edmonton",	"Edmonton",	"Saskatoon",	"Prince Albert",	"The Pas",	"-1",	"Norway House",	"Pikangikum",	"Pickle Lake",	"Winisk",	"Fort Albany",	"-1",	"Fort George",	"Fort George",	"Mistissini",	"Chicoutimi",	"Sept-&#206;les",	"Whale Head",	"Old Fort Bay",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Cork",	"-1",	"-1",	"Chester",	"Birmingham",	"Nottingham",	"Norwich",	"-1",	"-1",	"-1",	"-1",	"Aarhus",	"Kopenhagen",	"-1",	"Malm&#246;",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kamloops",	"Kamloops",	"-1",	"Rocky Mountain House",	"Calgary",	"Calgary",	"Saskatoon",	"Saskatoon",	"Dauphin",	"-1",	"Kenora",	"Thunder Bay",	"Thunder Bay",	"Hearst",	"Fort Albany",	"-1",	"Eastmain",	"Chibougamau",	"Quebec City",	"Quebec City",	"Baie-Comeau",	"-1",	"-1",	"St. John's",	"St. John's",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bath",	"Oxford",	"London",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kiel",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Vancouver",	"-1",	"Kelowna",	"Kelowna",	"-1",	"Calgary",	"Calgary",	"Moose Jaw",	"Regina",	"Brandon",	"Winnipeg",	"Kenora",	"Thunder Bay",	"-1",	"Wawa",	"Moose Factory",	"Moose Factory",	"Fort Rupert",	"Shawinigan",	"Quebec City",	"-1",	"-1",	"-1",	"-1",	"St. John's",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Plymouth",	"Exeter",	"Southampton",	"London",	"Canterbury",	"-1",	"-1",	"Utrecht",	"Bremen",	"Hamburg",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Victoria",	"-1",	"Chilliwack",	"-1",	"-1",	"Cranbrook",	"-1",	"Lethbridge",	"Moose Jaw",	"Regina",	"Brandon",	"Winnipeg",	"Fort Frances",	"-1",	"-1",	"Sault Ste. Marie",	"Sudbury",	"Sudbury",	"Ottawa",	"Montreal",	"Montreal",	"Rimouski",	"Gasp&#233;",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Antwerpen",	"Nijmegen",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Port May",	"Port May",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Seattle",	"-1",	"Spokane",	"Spokane",	"-1",	"-1",	"Helena",	"Great Falls",	"Bismarck",	"Grand Forks",	"Fargo",	"Duluth",	"Green Bay",	"Sault Ste. Marie",	"-1",	"-1",	"Toronto",	"Ottawa",	"Montreal",	"Sherbrooke",	"Sherbrooke",	"Fredericton",	"Saint John",	"-1",	"Halifax",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Cherbourg",	"Rouen",	"Calais",	"Calais",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Port May",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Victoria",	"-1",	"Chilliwack",	"-1",	"-1",	"Cranbrook",	"-1",	"Lethbridge",	"Moose Jaw",	"Regina",	"Brandon",	"Winnipeg",	"Fort Frances",	"-1",	"-1",	"Sault Ste. Marie",	"Sudbury",	"Sudbury",	"Ottawa",	"Montreal",	"Montreal",	"Rimouski",	"Gasp&#233;",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Antwerpen",	"Nijmegen",	"-1",	"-1",	"-1",	"Boii",	"Boii",	"Boii",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Port May",	"Port May",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Seattle",	"-1",	"Spokane",	"Spokane",	"-1",	"-1",	"Helena",	"Great Falls",	"Bismarck",	"Grand Forks",	"Fargo",	"Duluth",	"Green Bay",	"Sault Ste. Marie",	"-1",	"-1",	"Toronto",	"Ottawa",	"Montreal",	"Sherbrooke",	"Sherbrooke",	"Fredericton",	"Saint John",	"-1",	"Halifax",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Cherbourg",	"Rouen",	"Calais",	"Calais",	"-1",	"-1",	"-1",	"-1",	"Volcae",	"Volcae",	"Volcae",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Port May",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Seattle",	"-1",	"Spokane",	"-1",	"Idaho Falls",	"-1",	"-1",	"Rapid City",	"Bismarck",	"Grand Forks",	"Minneapolis",	"Minneapolis",	"Milwaukee",	"-1",	"Flint",	"-1",	"Toronto",	"-1",	"Albany",	"Montpelier",	"Boston",	"Portland",	"-1",	"Halifax",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Brest",	"Rennes",	"Rennes",	"Lutetia",	"Lutetia",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"San Francisco",	"Reno",	"Reno",	"Salt Lake City",	"-1",	"-1",	"-1",	"Rapid City",	"Pierre",	"Sioux Falls",	"Minneapolis",	"Minneapolis",	"Milwaukee",	"-1",	"Kalamazoo",	"Detroit",	"-1",	"Rochester",	"Poughkeepsie",	"Springfield",	"Boston",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Nantes",	"Angers",	"Tours",	"-1",	"-1",	"La Tene",	"La Tene",	"-1",	"-1",	"-1",	"Hallstat",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"San Francisco",	"-1",	"Reno",	"Salt Lake City",	"Salt Lake City",	"-1",	"Grand Junction",	"Denver",	"Denver",	"Wichita",	"Omaha",	"Omaha",	"Chicago",	"Chicago",	"Detroit",	"Detroit",	"Toledo",	"Cleveland",	"New York",	"New York",	"Providence",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Burdigala",	"Limoges",	"-1",	"Lugodunon",	"La Tene",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -4088,6 +4095,7 @@ dIdentifiers = {
 	"Berlino"		:	"Berlin",
 	"Berolinum"		:	"Berlin",
 	"Brandenburg"		:	"Berlin",
+	"Boii"		:	"Berlin",
 	"Besan&#231;on"		:	"Besan&#231;on",
 	"Vesontio"		:	"Besan&#231;on",
 	"B&#233;ja&#239;a"	:	"Bijayah",
@@ -4320,6 +4328,7 @@ dIdentifiers = {
 	"Dresde"		:	"Dresden",
 	"Dresden"		:	"Dresden",
 	"Drezno"		:	"Dresden",
+	"Volcae"		:	"Dresden",
 	"Douala"		:	"Duala",
 	"Duala"			:	"Duala",
 	"Dubai"			:	"Dubai",
@@ -5920,7 +5929,7 @@ dIdentifiers = {
 	"Atyrau"		:	"Saraishyq",
 	"Sozak"			:	"Sozak",
 	"Turkistan"		:	"Sozak",
-	"La Teve"		:	"Constance",
+	"La Tene"		:	"Constance",
 	"D&#249;n &#200;ideann"	:	"Edinburgh",}
 
 	
@@ -6262,6 +6271,7 @@ tRenames = (
 	"Bari"			:	"Barium",
 	"Nijmegen"		:	"Batavodurum",
 	"Berlin"		:	"Berolinum",
+	"Boii"		:	"Berolinum",
 	"Frankfurt"		:	"Bona Mansio",
 	"Brundisium"		:	"Brundisium",
 	"Per-Bastet"		:	"Bubastis",
@@ -6285,6 +6295,7 @@ tRenames = (
 	"Niwt-Rst"		:	"Diospolis Magna",
 	"Dorylaion"		:	"Dorylaeum",
 	"Dresden"		:	"Dresda",
+	"Volcae"		:	"Dresda",
 	"Durostulon"		:	"Durostorum",
 	"Epidamnos"		:	"Dyrrachium",
 	"Yebu"			:	"Elephantine",
@@ -6317,6 +6328,7 @@ tRenames = (
 	"Lixos"			:	"Lixus",
 	"Lyon"			:	"Lugdunum",
 	"Paris"			:	"Lutetia Parisiorum",
+	"Lutetia"		:	"Lutetia Parisiorum",
 	"Samarqand"		:	"Marakanda",
 	"Marseille"		:	"Massilia",
 	"Boii"		:	"Mediolanum",
@@ -7117,6 +7129,7 @@ tRenames = (
 	"Bath"			:	"Bath",
 	"Baton Rouge"		:	"Baton Rouge",
 	"Belfast"		:	"Belfast",
+	"B&#233;al Feirste"		:	"Belfast",
 	"Bombay"		:	"Bombay",
 	"Mumbai"		:	"Bombay",
 	"Bruxelles"		:	"Brussels",
@@ -7143,6 +7156,7 @@ tRenames = (
 	"Derby"			:	"Derby",
 	"Detroit"		:	"Detroit",
 	"Dresden"		:	"Dresde",
+	"Volcae"		:	"Dresde",
 	"Dublin"		:	"Dublin",
 	"&#193;th Cliath"		:	"Dublin",
 	"Exeter"		:	"Exeter",
@@ -7237,6 +7251,7 @@ tRenames = (
 	"Augsburg"		:	"Augsburg",
 	"Beograd"		:	"Belgrad",
 	"Berlin"		:	"Berlin",
+	"Boii"		:	"Berlin",
 	"Bordeaux"		:	"Bordeaux",
 	"Bruxelles"		:	"Br&#252;ssel",
 	"Bremen"		:	"Bremen",
@@ -7248,6 +7263,7 @@ tRenames = (
 	"'s-Gravenhage"		:	"Den Haag",
 	"Dobruja"		:	"Dobrudscha",
 	"Dresden"		:	"Dresden",
+	"Volcae"		:	"Dresden",
 	"Dublin"		:	"Dublin",
 	"&#193;th Cliath"		:	"Dublin",
 	"Epidamnos"		:	"Durr&#235;s",
@@ -7346,7 +7362,7 @@ tRenames = (
 	"Hallstat"			:	"Wien",
 	"Vilnius"		:	"Wilna",
 	"Zadar"			:	"Zadar",
-	"La Teve"		:	"Constance",
+	"La Tene"		:	"Constance",
 },
 #Language: Russian
 {
@@ -7355,6 +7371,7 @@ tRenames = (
 	"Astrakhan"		:	"Astrakhan'",
 	"Beograd"		:	"Beograd",
 	"Berlin"		:	"Berlin",
+	"Boii"		:	"Berlin",
 	"Brest-Litowsk"		:	"Brest-Litovsk",
 	"Bucuresti"		:	"Bucuresti",
 	"Byzantion"		:	"Car'grad",
@@ -7468,6 +7485,7 @@ tRenames = (
 	"Jakarta"		:	"Batavia",
 	"Sundapura"		:	"Batavia",
 	"Berlin"		:	"Berlijn",
+	"Boii"		:	"Berlijn",
 	"Albany"		:	"Beverwyck",
 	"Bordeaux"		:	"Bordeaux",
 	"Bremen"		:	"Bremen",
@@ -7550,6 +7568,7 @@ tRenames = (
 	"Budapest"		:	"Budapeszt",
 	"Dimashq"		:	"Damaszek",
 	"Dresden"		:	"Drezno",
+	"Volcae"		:	"Drezno",
 	"Dubai"			:	"Dubaj",
 	"Dubrovnik"		:	"Dubrownik",
 	"Philadelphia"		:	"Filadelfia",
@@ -7701,6 +7720,7 @@ tRenames = (
 	"Beograd"		:	"Belgrado",
 	"Bangazi"		:	"Bengasi",
 	"Berlin"		:	"Berlino",
+	"Boii"		:	"Berlino",
 	"Bordeaux"		:	"Bordeaux",
 	"Brundisium"		:	"Brindisi",
 	"Per-Wadjet"		:	"Butos",
@@ -7725,6 +7745,7 @@ tRenames = (
 	"Krak&#243;w"		:	"Cracovia",
 	"Gdansk"		:	"Danzica",
 	"Dresden"		:	"Dresda",
+	"Volcae"		:	"Dresda",
 	"Epidamnos"		:	"Durazzo",
 	"Faro"			:	"Faro",
 	"Fiorenza"		:	"Fiorenza",
@@ -7993,13 +8014,49 @@ tRenames = (
 	"Dublin"		:	"&#193;th Cliath",
 	"Belfast"		:	"B&#233;al Feirste",
 	"Inverness"		:	"Inbhir Nis",
+	"Lutetia Parisiorum"	:	"Lutetia",
+	"Lutetia"		:	"Lutetia",
+	"Par&#237;s"		:	"Lutetia",
+	"Parigi"		:	"Lutetia",
+	"Parijs"		:	"Lutetia",
 	"Paris"			:	"Lutetia",
-	"Strasbourg"	:	"La Tene",
-	"Gen&#232;ve"	:	"La Tene",
+	"Paryz"			:	"Lutetia",
+	"Argentoratus"		:	"La Tene",
+	"Stra&#223;burg"	:	"La Tene",
+	"Strasbourg"		:	"La Tene",
+	"Strasburg"		:	"La Tene",
+	"La Tene"		:	"La Tene",
+	"Gen&#232;ve"		:	"La Tene",
+	"Genava"		:	"La Tene",
+	"Geneva"		:	"La Tene",
+	"La Tene"		:	"La Tene",
+	"Genewa"		:	"La Tene",
+	"Genf"			:	"La Tene",
+	"Ginevra"		:	"La Tene",
 	"Constance"		:	"La Tene",
+	"Mailand"		:	"Boii",
+	"Mediolan"		:	"Boii",
+	"Mediolanum"		:	"Boii",
+	"Boii"		:	"Boii",
+	"Mil&#225;n"		:	"Boii",
+	"Mil&#255;n"		:	"Boii",
+	"Milan"			:	"Boii",
 	"Milano"		:	"Boii",
+	"Augusta Taurinorum"	:	"Boii",
 	"Torino"		:	"Boii",
+	"Turin"			:	"Boii",
+	"Boii"		:	"Boii",
 	"Edinburgh"		:	"D&#249;n &#200;ideann",
+	"Berlijn"		:	"Boii",
+	"Berlin"		:	"Boii",
+	"Berlino"		:	"Boii",
+	"Berolinum"		:	"Boii",
+	"Brandenburg"		:	"Boii",
+	"Dresda"		:	"Volcae",
+	"Dresde"		:	"Volcae",
+	"Dresden"		:	"Volcae",
+	"Drezno"		:	"Volcae",
+	"Volcae"		:	"Volcae",
 },
 #Language: Mexican
 {

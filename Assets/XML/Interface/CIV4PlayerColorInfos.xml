@@ -188,9 +188,9 @@
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_GRAY_GREEN</Type> <!-- Celts -->
-			<ColorTypePrimary>COLOR_PLAYER_DARK_GRAY3</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_GREEN</ColorTypeSecondary>
-			<TextColorType>COLOR_PLAYER_DARK_GRAY_TEXT</TextColorType>
+			<ColorTypePrimary>COLOR_PLAYER_LIGHT_GREEN</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_DARK_GRAY3</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_LIGHT_GREEN</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_GRAY_YELLOW</Type> <!-- Native -->

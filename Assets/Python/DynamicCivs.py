@@ -1151,9 +1151,9 @@ def specificName(iPlayer):
 	elif iPlayer == iCeltia:
 		if bReborn:
 			if capital.getRegionID() == rBritain:
-				if city.getX() <= 50:
+				if capital.getX() <= 50:
 					return "TXT_KEY_CIV_CELTIA_IRELAND_SHORT_DESC"
-				elif city.getY() >= 48:
+				elif capital.getY() >= 48:
 					return "TXT_KEY_CIV_CELTIA_SCOTLAND_SHORT_DESC"
 		
 	elif iPlayer == iTamils:
@@ -1982,7 +1982,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if capital.getRegionID() == rBritain:
 				return "TXT_KEY_CIV_CELTIA_ROME_BRITANNIA"
 			if capital.getRegionID() == rEurope:
-				if capital.getX() <= 50:
+				if capital.getX() < 58:
 					return "TXT_KEY_CIV_CELTIA_ROME_GALLIA"
 				else:
 					return "TXT_KEY_CIV_CELTIA_ROME_GERMANIA"

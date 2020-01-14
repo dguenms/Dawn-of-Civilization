@@ -2621,14 +2621,12 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(iGallicWarrior, iCiv, tPlot, 2)
-			utils.makeUnit(iCidainh, iCiv, tPlot, 2)
 			# start AI settler and garrison in La Tene and Boii
 			if utils.getHumanID() != iCiv:
 				#La Tene
 				utils.makeUnit(iSettler, iCiv, (57, 49), 2)[0].setMoves(0)
 				utils.makeUnitAI(iArcher, iCiv, (57, 49), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 				utils.makeUnit(iGallicWarrior, iCiv, (57, 49), 2)
-				utils.makeUnit(iCidainh, iCiv, (57, 49), 2)
 				#Boii
 				utils.makeUnit(iSettler, iCiv, (59, 47), 2)[0].setMoves(0)
 				utils.makeUnitAI(iArcher, iCiv, (59, 47), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
@@ -2636,7 +2634,6 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iVikings, tPlot, 2)
 				utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
 				utils.makeUnit(iGallicWarrior, iCiv, tPlot, 2)
-				utils.makeUnit(iCidainh, iCiv, tPlot, 2)
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -3215,7 +3212,7 @@ class RiseAndFall:
 		elif iCiv == iPersia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iCeltia:
-			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+			pass
 		elif iCiv == iCarthage:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iRome:

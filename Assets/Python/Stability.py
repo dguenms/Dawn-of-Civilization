@@ -415,7 +415,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 							continue
 							
 			# always raze Harappan and Celtic cities
-			if iPlayer in [iHarappa, iCeltia] and utils.getHumanID() != iPlayer:
+			if iPlayer in [iHarappa] and utils.getHumanID() != iPlayer:
 				lRemovedCities.append(city)
 				continue
 						
