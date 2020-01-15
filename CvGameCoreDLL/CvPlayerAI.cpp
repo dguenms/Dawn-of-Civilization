@@ -1247,6 +1247,15 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (canRaze(pCity))
 	{
+		// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
+		if (pCity->getOriginalOwner() == NUBIA && pCity->getX_INLINE() == 66 && pCity->getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
+		{
+			bRaze = true;
+			log(CvWString::format(L"AI chose raze: %s", pCity->getNameKey()));
+			pCity->raze(iCaptureGold);
+			return;
+		}
+
 	    iRazeValue = 0;
 		if (GC.getGameINLINE().getElapsedGameTurns() > 20)
 		{
@@ -1410,6 +1419,12 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
                     iRazeValue *= (100 - (GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier()));
                     iRazeValue /= 100;
 				}
+			}
+
+			// Qarmatians don't raze Bahrein
+			if (getID() == BARBARIAN && pCity->getX() == 78 && pCity->getY() == 36)
+			{
+				iRazeValue = 0;
 			}
 
             if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue)

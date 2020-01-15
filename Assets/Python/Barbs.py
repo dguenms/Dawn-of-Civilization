@@ -47,6 +47,7 @@ tMinorCities = (
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# L�beck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
+(899, (78, 36), iIndependent, 'Bahrein', 2, iArcher, 2),			# Qarmatians (Abu Sa'id al-Jannabi)
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
@@ -211,6 +212,10 @@ class Barbs:
 		if utils.isYearIn(900, 1200) and utils.getHumanID() != iKhazars:
 			self.checkSpawn(iKhazars, iHorseArcher, 1 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
 			
+		#1SDAN: Qarmatians (Abu Tahir al-Jannabi)
+		if utils.isYearIn(900, 1000):
+			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (76, 34), (79, 37), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_QARMATIAN"])
+			
 		#barbarians in central asia
 		if utils.isYearIn(-1600, -850):
 			self.checkLimitedSpawn(iBarbarian, iVulture, 1, 3, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
@@ -358,7 +363,7 @@ class Barbs:
 			if iPlayer == iCeltia and utils.getHumanID() == iCeltia: continue
 			if iPlayer == iCeltia: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
-			if sName == 'Muqdisho': lReligions = [iIslam]
+			if sName in ['Muqdisho', 'Bahrein']: lReligions = [iIslam]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
@@ -393,11 +398,19 @@ class Barbs:
 			city.setName(sName, False)
 			city.setPopulation(iPopulation)
 			
-			plot.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
-			city.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
+			if sName == 'Bahrein':
+				city.setHasRealBuilding(iIslamicTemple, True)
+				city.setHasRealBuilding(iLighthouse, True)
+				city.setHasRealBuilding(iBarracks, True)
+				plot.changeCulture(iPlayer, 20 * (gc.getGame().getCurrentEra() + 1), True)
+				city.changeCulture(iPlayer, 20 * (gc.getGame().getCurrentEra() + 1), True)
+			else:
+				plot.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
+				city.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
 			
 			if iNumUnits > 0 and iUnitType > 0:
 				utils.makeUnit(iUnitType, iPlayer, tPlot, iNumUnits)
+				
 				
 			for iReligion in lReligions:
 				if gc.getGame().isReligionFounded(iReligion):
