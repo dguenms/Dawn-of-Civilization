@@ -1560,9 +1560,9 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iCeltia:
 		if bReborn:
 			if capital.getRegionID() == rBritain:
-				if city.getX() <= 50:
+				if capital.getX() <= 50:
 					return "TXT_KEY_CIV_CELTIA_IRELAND_ADJECTIVE"
-				elif city.getY() >= 48:
+				elif capital.getY() >= 48:
 					return "TXT_KEY_CIV_CELTIA_SCOTLAND_ADJECTIVE"
 					
 		elif isCapital(iPlayer, ["Hallstat", "La Tene"]):

@@ -304,11 +304,9 @@ BeginPlayer
 	PlayableCiv=0
 	StateReligion=RELIGION_ZOROASTRIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -316,7 +314,12 @@ BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	StartingGold=100
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -19362,6 +19365,24 @@ EndPlot
 BeginPlot
 	x=49,y=56
 	TerrainType=TERRAIN_GRASS
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=10, (Celtia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SKIRMISHER, UnitOwner=10, (Celtia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=10, (Celtia)
+	EndUnit
+	BeginCity
+		CityOwner=10, (Celtia)
+		CityName=&#193;th Cliath
+		CityPopulation=3
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MONUMENT
+		Player10Culture=20, (Celtia)
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -20509,6 +20530,16 @@ EndPlot
 BeginPlot
 	x=52,y=59
 	TerrainType=TERRAIN_GRASS
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=10, (Celtia)
+	EndUnit
+	BeginCity
+		CityOwner=10, (Celtia)
+		CityName=D&#249;n &#200;ideann
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		Player10Culture=10, (Celtia)
+	EndCity
 	PlotType=1
 EndPlot
 BeginPlot

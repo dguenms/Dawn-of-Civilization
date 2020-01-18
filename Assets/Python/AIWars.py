@@ -43,9 +43,13 @@ iRomeAnatoliaYear = -100
 tRomeAnatoliaTL = (70, 38)
 tRomeAnatoliaBR = (75, 45)
 
-iRomeCeltiaYear = -50
-tRomeCeltiaTL = (52, 45)
-tRomeCeltiaBR = (59, 55)
+iRomeCeltiaGaulYear = -50
+tRomeCeltiaGaulTL = (51, 46)
+tRomeCeltiaGaulBR = (67, 52)
+
+iRomeCeltiaBritainYear = -50
+tRomeCeltiaBritainTL = (48, 53)
+tRomeCeltiaBritainBR = (54, 60)
 
 iRomeEgyptYear = 0
 tRomeEgyptTL = (65, 31)
@@ -55,8 +59,9 @@ tRomeEgyptBR = (72, 36)
 tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
 tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
 tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
-tConquestRomeCelts = (3, iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
-tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
+tConquestRomeCeltsGaul = (3, iRome, iCeltia, tRomeCeltiaGaulTL, tRomeCeltiaGaulBR, 2, iRomeCeltiaGaulYear, 10)
+tConquestRomeCeltsBritain = (4, iRome, iCeltia, tRomeCeltiaBritainTL, tRomeCeltiaBritainBR, 1, iRomeCeltiaBritainYear, 10)
+tConquestRomeEgypt = (5, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
 tGreeceMesopotamiaTL = (70, 38)
@@ -66,15 +71,15 @@ tGreeceEgyptBR = (72, 36)
 tGreecePersiaTL = (79, 37)
 tGreecePersiaBR = (85, 45)
 
-tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
-tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
-tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
+tConquestGreeceMesopotamia = (6, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
+tConquestGreeceEgypt = (7, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
+tConquestGreecePersia = (8, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
 
 iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (9, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
@@ -85,10 +90,10 @@ iChinaVietnamYear2 = 1400
 tChinaVietnamTL = (100, 35)
 tChinaVietnamBR = (103, 38)
 
-tConquestChinaVietnam1 = (9, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
-tConquestChinaVietnam2 = (10, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
+tConquestChinaVietnam1 = (10, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear1, 10)
+tConquestChinaVietnam2 = (11, iChina, iVietnam, tChinaVietnamTL, tChinaVietnamBR, 1, iChinaVietnamYear2, 10)
 
-tConquestSpainMoors = (11, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
+tConquestSpainMoors = (12, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
 iTurksPersiaYear = 1000
 tTurksPersiaTL = (78, 37)
@@ -102,33 +107,34 @@ iTurksAnatoliaYear = 1100
 tTurksAnatoliaTL = (69, 37)
 tTurksAnatoliaBR = (78, 45)
 
-tConquestTurksPersia = (12, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
-tConquestTurksOman = (13, iTurks, iOman, tTurksOmanTL, tTurksOmanBR, 1, iTurksOmanYear, 10)
-tConquestTurksAnatolia = (14, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
+tConquestTurksPersia = (13, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
+tConquestTurksOman = (14, iTurks, iOman, tTurksOmanTL, tTurksOmanBR, 1, iTurksOmanYear, 10)
+tConquestTurksAnatolia = (15, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
 
 iMongolsPersiaYear = 1220
 tMongolsPersiaTL = (79, 37)
 tMongolsPersiaBR = (85, 49)
 
-tConquestMongolsPersia = (15, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+tConquestMongolsPersia = (16, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
 lConquests = [
 tConquestRomeCarthage, #0
 tConquestRomeGreece, #1
 tConquestRomeAnatolia, #2
-tConquestRomeCelts, #3
-tConquestRomeEgypt, #4
-tConquestGreeceMesopotamia, #5
-tConquestGreeceEgypt, #6
-tConquestGreecePersia, #7
-tConquestCholaSumatra, #8
-tConquestChinaVietnam1, #9
-tConquestChinaVietnam2, #10
-tConquestSpainMoors, #11
-tConquestTurksPersia, #12
-tConquestTurksOman, #13
-tConquestTurksAnatolia, #14
-tConquestMongolsPersia #15
+tConquestRomeCeltsGaul, #3
+tConquestRomeCeltsBritain, #4
+tConquestRomeEgypt, #5
+tConquestGreeceMesopotamia, #6
+tConquestGreeceEgypt, #7
+tConquestGreecePersia, #8
+tConquestCholaSumatra, #9
+tConquestChinaVietnam1, #10
+tConquestChinaVietnam2, #11
+tConquestSpainMoors, #12
+tConquestTurksPersia, #13
+tConquestTurksOman, #14
+tConquestTurksAnatolia, #15
+tConquestMongolsPersia #16
 ]
 
 class AIWars:

@@ -1473,8 +1473,9 @@ class RiseAndFall:
 				self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
 				
 		# Leoreth: reveal all normal plots on spawn
-		for (x, y) in Areas.getNormalArea(iCiv):
-			gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
+		if iCiv != iCeltia:
+			for (x, y) in Areas.getNormalArea(iCiv):
+				gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
 				
 		# Leoreth: conditional state religion for colonial civs and Byzantium
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
@@ -2488,8 +2489,9 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(iHeavyGalley, iCiv, tPlot, 2)
 		elif iCiv == iEngland:
-			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
+			utils.makeUnit(iLongbowman, iCiv, tPlot, 2)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 		elif iCiv == iHolyRome:
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
@@ -2859,18 +2861,11 @@ class RiseAndFall:
 				utils.makeUnit(iHeavyGalley, iCiv, tPlot, 1)
 				utils.makeUnit(iCog, iCiv, tPlot, 1)
 		elif iCiv == iEngland:
-			utils.createSettlers(iCiv, 3)
-			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
-			if utils.getHumanID() != iEngland:
-				utils.makeUnit(iHeavySwordsman, iCiv, tPlot, 2)
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
+			utils.makeUnit(iLongbowman, iCiv, tPlot, 2)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.createMissionaries(iCiv, 1)
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-			if tSeaPlot:
-				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
-				pEngland.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(iSettler, iCiv, tPlot, 1)
-				utils.makeUnit(iCrossbowman, iCiv, tPlot, 1)
-				utils.makeUnit(iGalley, iCiv, tSeaPlot, 2)
 		elif iCiv == iHolyRome:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
