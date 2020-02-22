@@ -1634,8 +1634,6 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	pPlayer = gc.getPlayer(iPlayer)
 	teamPlayer = gc.getTeam(iPlayer)
 	
-	lCityList = utils.getAreaCities(lPlotList)
-	
 	pPlayer.setAlive(True)
 
 	data.iRebelCiv = iPlayer
