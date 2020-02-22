@@ -1792,6 +1792,7 @@ class RiseAndFall:
 		for (x, y) in lPlots:
 			pPlot = gc.getMap().plot(x, y)
 			if pPlot.isOwned() and pPlot.isCore(pPlot.getOwner()) and not pPlot.isCore(iCiv): continue
+			pPlot.resetCultureConversion()
 			if not pPlot.isCity():
 				utils.convertPlotCulture(pPlot, iCiv, 100, False)
 

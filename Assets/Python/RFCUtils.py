@@ -1450,7 +1450,9 @@ class RFCUtils:
 		y = city.getY()
 		for (i, j) in self.surroundingPlots((x, y)):
 			plot = gc.getMap().plot(i, j)
-			if (i, j) == (x, y):
+			if gc.getPlayer(iPlayer).isMinorCiv() or gc.getPlayer(iPlayer).isBarbarian():
+				plot.resetCultureConversion()
+			elif (i, j) == (x, y):
 				self.convertTemporaryCulture(plot, iPlayer, 25, False)
 			elif plot.getOwner() == iPreviousOwner:
 				self.convertTemporaryCulture(plot, iPlayer, 50, True)

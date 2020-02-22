@@ -1143,3 +1143,8 @@ void CyPlot::resetCultureConversion()
 {
 	if (m_pPlot) m_pPlot->resetCultureConversion();
 }
+
+int CyPlot::getCultureConversionPlayer()
+{
+	return m_pPlot ? m_pPlot->getCultureConversionPlayer() : -1;
+}
