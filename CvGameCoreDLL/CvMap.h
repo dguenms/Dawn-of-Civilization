@@ -110,6 +110,8 @@ public:
 	void updateMinOriginalStartDist(CvArea* pArea);										// Exposed to Python
 	void updateYield();
 
+	void updateCulture();
+
 	void verifyUnitValidPlot();
 
 	void combinePlotGroups(PlayerTypes ePlayer, CvPlotGroup* pPlotGroup1, CvPlotGroup* pPlotGroup2);	

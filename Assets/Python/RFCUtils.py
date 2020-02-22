@@ -1295,7 +1295,7 @@ class RFCUtils:
 			self.pushOutGarrisons(tPlot, iOwner)
 			self.relocateSeaGarrisons(tPlot, iOwner)
 		
-		self.flipCity(tPlot, 0, 0, iCiv, [iOwner])
+		self.flipCity(tPlot, False, False, iCiv, [iOwner])
 		
 		if bFlipUnits: 
 			self.flipUnitsInCityAfter(tPlot, iCiv)

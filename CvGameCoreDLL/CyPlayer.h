@@ -597,6 +597,7 @@ public:
 	void changeGreatGeneralsCreated(int iChange);
 	void launch(int iVictory);
 	bool isNoTemporaryUnhappiness();
+	void setAlive(bool bNewValue);
 
 private:
 	CvPlayer* m_pPlayer;
