@@ -45772,6 +45772,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
@@ -46233,7 +46234,6 @@ BeginPlot
 	x=101,y=47
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -46678,7 +46678,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=45
-	BonusType=BONUS_INCENSE
+	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -48514,7 +48514,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=46
-	BonusType=BONUS_RICE
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -61387,7 +61387,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=50
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -61819,7 +61819,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=49
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -62264,7 +62264,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=51
-	BonusType=BONUS_SILK
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -63599,6 +63599,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=53
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
