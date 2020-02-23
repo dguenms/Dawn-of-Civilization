@@ -37575,7 +37575,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=31
-	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -39857,6 +39856,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=29
+	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -40809,6 +40809,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=32
+	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -43603,7 +43604,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=48
-	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -43980,6 +43980,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=39
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -44875,7 +44876,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=43
-	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -47546,6 +47546,7 @@ BeginPlot
 	x=104,y=37
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -48495,6 +48496,7 @@ BeginPlot
 	x=106,y=42
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49862,6 +49864,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=40
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -53867,6 +53870,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=34
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -54392,6 +54396,7 @@ BeginPlot
 	x=119,y=41
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -54495,7 +54500,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=119,y=56
-	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -55913,7 +55917,6 @@ BeginPlot
 	x=122,y=56
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -56690,6 +56693,7 @@ BeginPlot
 	x=124,y=30
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_INCENSE
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -58454,6 +58458,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=13
+	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -61397,7 +61402,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=51
-	BonusType=BONUS_INCENSE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
