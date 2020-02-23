@@ -328,6 +328,14 @@
 		<Spanish>Gems (Sapphires)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BONUS_GEMS_EMERALDS</Tag>
+		<English>Gems (Emeralds)</English>
+		<French>Gems (Emeralds)</French>
+		<German>Edelsteine (Smaragde)</German>
+		<Italian>Gems (Emeralds)</Italian>
+		<Spanish>Gems (Emeralds)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BONUS_SHEEP_LLAMA</Tag>
 		<English>Sheep (Llama)</English>
 		<French>Sheep (Llama)</French>
@@ -390,5 +398,13 @@
 		<German>Zitrusfr&#252;chte (Orangen)</German>
 		<Italian>Citrus (Oranges)</Italian>
 		<Spanish>Citrus (Oranges)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CRAB_SHRIMP</Tag>
+		<English>Crab (Shrimps)</English>
+		<French>Crab (Shrimps)</French>
+		<German>Crab (Shrimps)</German>
+		<Italian>Crab (Shrimps)</Italian>
+		<Spanish>Crab (Shrimps)</Spanish>
 	</TEXT>
 </Civ4GameText>

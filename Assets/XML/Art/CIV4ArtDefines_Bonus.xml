@@ -571,6 +571,16 @@
 			<FontButtonIndex>22</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_GEMS_EMERALDS</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Emeralds/gems.nif</NIF>
+			<KFM>Art/Terrain/Resources/Emeralds/gems.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Emeralds/gems.nif</SHADERNIF>
+			<Button>Art/Interface/Buttons/Resources/Emeralds.dds</Button>
+			<FontButtonIndex>22</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_SHEEP_LLAMA</Type>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -645,6 +655,16 @@
 			<SHADERNIF>Art/Terrain/Resources/sheep_black/Sheep_FX.nif</SHADERNIF>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Sheep.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,14</Button>
 			<FontButtonIndex>18</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_CRAB_SHRIMP</Type>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.1</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Shrimp/Shrimp.nif</NIF>
+			<KFM>Art/Terrain/Resources/Crab/Crab.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Shrimp/Shrimp.nif</SHADERNIF>
+			<Button>Art/Interface/Buttons/Resources/Shrimp.dds</Button>
+			<FontButtonIndex>13</FontButtonIndex>
 		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>
