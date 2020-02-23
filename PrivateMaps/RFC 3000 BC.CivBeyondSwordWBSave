@@ -40683,6 +40683,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=17
+	BonusType=BONUS_URANIUM
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
