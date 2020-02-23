@@ -3640,6 +3640,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=65
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4033,6 +4034,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=57
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -4064,12 +4066,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=63
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=7,y=64
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4437,6 +4439,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=52
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -4479,14 +4482,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=59
-	isNOfRiver
-	RiverWEDirection=3
+	RiverNSDirection=0
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=8,y=60
+	isNOfRiver
+	RiverWEDirection=3
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -4499,6 +4504,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=62
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4869,6 +4875,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=51
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -4969,7 +4976,7 @@ EndPlot
 BeginPlot
 	x=9,y=66
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -6309,7 +6316,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
@@ -6319,7 +6326,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6758,13 +6765,13 @@ EndPlot
 BeginPlot
 	x=13,y=66
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=67
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
 BeginPlot
@@ -7159,6 +7166,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=58
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -8873,7 +8881,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=46
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -9317,8 +9325,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=48
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -9339,7 +9347,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=51
-	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -9780,6 +9787,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=50
+	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -10215,6 +10223,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=49
+	RiverNSDirection=2
+	isWOfRiver
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -10663,13 +10673,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=49
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_LAGOON
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=50
-	isNOfRiver
-	RiverWEDirection=1
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
@@ -11497,7 +11507,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=38
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
