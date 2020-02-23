@@ -4834,12 +4834,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=43
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=9,y=44
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4850,6 +4850,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=46
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39882,7 +39883,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=35
-	BonusType=BONUS_CLAM
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41772,6 +41773,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=40
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -42227,7 +42229,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=42
-	BonusType=BONUS_OIL
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43985,6 +43987,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=41
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46128,6 +46131,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=28
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58944,6 +58948,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=21
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -65228,6 +65233,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=32
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
