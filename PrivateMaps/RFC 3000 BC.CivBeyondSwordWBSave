@@ -31386,6 +31386,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=28
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -32214,6 +32215,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=14
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -32247,6 +32250,7 @@ BeginPlot
 	x=71,y=20
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -32314,6 +32318,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=31
+	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -32683,13 +32688,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=16
-	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=72,y=17
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32724,6 +32728,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=22
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -33141,6 +33147,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=13
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
@@ -33667,7 +33674,6 @@ BeginPlot
 	x=74,y=24
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -33677,6 +33683,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -34093,6 +34100,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=16
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34136,6 +34145,7 @@ BeginPlot
 	x=75,y=23
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -34165,6 +34175,8 @@ BeginPlot
 	x=75,y=27
 	isNOfRiver
 	RiverWEDirection=3
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -34605,11 +34617,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=21
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=76,y=22
+	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -34621,7 +34635,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=24
-	BonusType=BONUS_URANIUM
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -35079,14 +35092,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=20
-	BonusType=BONUS_IVORY
-	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=21
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_EMERALDS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -35145,6 +35158,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=30
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -35512,7 +35526,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=14
-	BonusType=BONUS_COPPER
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -35547,7 +35561,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=19
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -35555,6 +35569,8 @@ BeginPlot
 	x=78,y=20
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
@@ -35572,7 +35588,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=23
-	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -35603,6 +35618,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=29
+	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -35993,6 +36009,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=14
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36013,6 +36030,7 @@ BeginPlot
 	x=79,y=17
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_RARE_EARTHS
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -36034,7 +36052,7 @@ BeginPlot
 	x=79,y=20
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_GOLD
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -36531,6 +36549,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=20
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -37017,7 +37036,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_COPPER
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -37051,6 +37070,7 @@ EndPlot
 BeginPlot
 	x=81,y=25
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -37522,6 +37542,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=27
+	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -37982,7 +38003,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=27
-	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
