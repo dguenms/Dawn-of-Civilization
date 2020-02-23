@@ -32859,6 +32859,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=41
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -32874,8 +32875,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=44
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=72,y=45
@@ -33324,7 +33325,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=41
-	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -33335,7 +33335,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=43
-	TerrainType=TERRAIN_SEMIDESERT
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33350,7 +33351,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=46
-	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_CLAM
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -33797,28 +33799,31 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=42
-	TerrainType=TERRAIN_SEMIDESERT
+	BonusType=BONUS_OIL
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=43
-	FeatureType=FEATURE_FOREST, FeatureVariety=5
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=44
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_HENNA
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=45
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=46
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34272,28 +34277,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=42
-	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=43
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=44
-	BonusType=BONUS_DYE
-	BonusVarietyType=BONUS_DYE_HENNA
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=45
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=75,y=46
@@ -34761,20 +34763,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=43
-	TerrainType=TERRAIN_SEMIDESERT
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=76,y=44
-	FeatureType=FEATURE_FOREST, FeatureVariety=5
+	BonusType=BONUS_CITRUS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=76,y=45
-	FeatureType=FEATURE_FOREST, FeatureVariety=5
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	BonusType=BONUS_FISH
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=76,y=46
@@ -35223,40 +35226,42 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=39
-	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=40
+	BonusType=BONUS_CAMEL
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=41
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
-EndPlot
-BeginPlot
-	x=77,y=42
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
+	x=77,y=42
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+EndPlot
+BeginPlot
 	x=77,y=43
-	TerrainType=TERRAIN_SEMIDESERT
+	BonusType=BONUS_COTTON
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=44
-	BonusType=BONUS_CITRUS
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=45
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35690,6 +35695,8 @@ BeginPlot
 	x=78,y=38
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35702,24 +35709,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=40
-	BonusType=BONUS_IVORY
-	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=78,y=41
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=78,y=42
+	RiverNSDirection=0
+	isWOfRiver
+	BonusType=BONUS_DATES
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=78,y=43
-	BonusType=BONUS_COTTON
+	RiverNSDirection=0
+	isWOfRiver
+	BonusType=BONUS_STONE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -35727,14 +35739,21 @@ EndPlot
 BeginPlot
 	x=78,y=44
 	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=3
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SALT
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=78,y=45
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=78,y=46
@@ -36159,6 +36178,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36171,8 +36191,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=37
-	BonusType=BONUS_IVORY
-	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -36199,47 +36217,53 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	BonusType=BONUS_MARBLE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=79,y=41
+	RiverNSDirection=0
+	isWOfRiver
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=79,y=42
+	isNOfRiver
+	RiverWEDirection=3
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_HENNA
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=79,y=43
-	RiverNSDirection=0
-	isWOfRiver
-	BonusType=BONUS_STONE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
+	BeginUnit
+		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
+	EndUnit
+	PlotType=2
+EndPlot
+BeginPlot
+	x=79,y=44
+	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
-	x=79,y=44
-	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=3
-	isWOfRiver
-	BonusType=BONUS_SALT
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	TerrainType=TERRAIN_SEMIDESERT
-	PlotType=2
-EndPlot
-BeginPlot
 	x=79,y=45
-	RiverNSDirection=0
-	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=5
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -36681,25 +36705,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=40
-	BonusType=BONUS_MARBLE
+	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=80,y=41
-	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=1
-	isWOfRiver
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=80,y=42
-	RiverNSDirection=0
-	isWOfRiver
 	BonusType=BONUS_HORSE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
@@ -36707,31 +36725,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=43
-	isNOfRiver
-	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
-	BeginUnit
-		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
-	EndUnit
-EndPlot
-BeginPlot
-	x=80,y=44
-	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
-	x=80,y=45
-	isNOfRiver
-	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=5
-	TerrainType=TERRAIN_GRASS
+	x=80,y=44
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
+EndPlot
+BeginPlot
+	x=80,y=45
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=80,y=46
@@ -37146,13 +37152,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=36
-	BonusType=BONUS_MILLET
+	BonusType=BONUS_IVORY
+	BonusVarietyType=BONUS_IVORY_AFRICAN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=81,y=37
-	BonusType=BONUS_DATES
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -37170,7 +37176,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=40
-	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -37193,7 +37198,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=44
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -37204,7 +37208,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=46
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -37649,7 +37653,7 @@ BeginPlot
 	x=82,y=44
 	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_TURQUOISE
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
