@@ -2463,6 +2463,24 @@
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BonusInfo>
 		<BonusInfo>
+			<Type>BONUS_GEMS_EMERALDS</Type>
+			<Description>TXT_KEY_BONUS_GEMS_EMERALDS</Description>
+			<Civilopedia>TXT_KEY_BONUS_GEMS_EMERALDS_PEDIA</Civilopedia>
+			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<ArtDefineTag>ART_DEF_BONUS_GEMS_EMERALDS</ArtDefineTag>
+			<iPlacementOrder>-1</iPlacementOrder>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>90</iMaxLatitude>
+			<Rands>
+				<iRandApp1>0</iRandApp1>
+				<iRandApp2>0</iRandApp2>
+				<iRandApp3>0</iRandApp3>
+				<iRandApp4>0</iRandApp4>
+			</Rands>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BonusInfo>
+		<BonusInfo>
 			<Type>BONUS_SHEEP_LLAMA</Type>
 			<Description>TXT_KEY_BONUS_SHEEP_LLAMA</Description>
 			<Civilopedia>TXT_KEY_BONUS_SHEEP_LLAMA_PEDIA</Civilopedia>
@@ -2558,6 +2576,24 @@
 			<Civilopedia>TXT_KEY_BONUS_CITRUS_ORANGES_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_CITRUS_ORANGES</ArtDefineTag>
+			<iPlacementOrder>-1</iPlacementOrder>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMinLatitude>0</iMinLatitude>
+			<iMaxLatitude>90</iMaxLatitude>
+			<Rands>
+				<iRandApp1>0</iRandApp1>
+				<iRandApp2>0</iRandApp2>
+				<iRandApp3>0</iRandApp3>
+				<iRandApp4>0</iRandApp4>
+			</Rands>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BonusInfo>
+		<BonusInfo>
+			<Type>BONUS_CRAB_SHRIMP</Type>
+			<Description>TXT_KEY_BONUS_CRAB_SHRIMP</Description>
+			<Civilopedia>TXT_KEY_BONUS_CRAB_SHRIMP_PEDIA</Civilopedia>
+			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<ArtDefineTag>ART_DEF_BONUS_CRAB_SHRIMP</ArtDefineTag>
 			<iPlacementOrder>-1</iPlacementOrder>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMinLatitude>0</iMinLatitude>
