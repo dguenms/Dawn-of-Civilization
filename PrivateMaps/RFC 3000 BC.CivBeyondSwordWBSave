@@ -52919,6 +52919,7 @@ BeginPlot
 	x=116,y=39
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -52936,6 +52937,8 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_RUBIES
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -52943,6 +52946,7 @@ BeginPlot
 	x=116,y=42
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -52951,7 +52955,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_JADE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -53396,7 +53400,7 @@ BeginPlot
 	x=117,y=41
 	BonusType=BONUS_IVORY
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -53405,8 +53409,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -53786,6 +53789,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=28
+	BonusType=BONUS_IVORY
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -54781,6 +54785,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=36
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_SAPPHIRES
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -55274,11 +55280,13 @@ BeginPlot
 	RiverWEDirection=1
 	BonusType=BONUS_PIG
 	BonusVarietyType=BONUS_PIG_FURRY
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=121,y=41
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -55748,6 +55756,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=40
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -56198,6 +56207,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=36
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -56217,6 +56227,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=39
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -56669,6 +56680,7 @@ EndPlot
 BeginPlot
 	x=124,y=36
 	BonusType=BONUS_RARE_EARTHS
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -56681,6 +56693,7 @@ EndPlot
 BeginPlot
 	x=124,y=38
 	BonusType=BONUS_IRON
+	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -58496,6 +58509,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=32
+	BonusType=BONUS_IVORY
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
