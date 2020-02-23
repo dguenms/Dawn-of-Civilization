@@ -38158,10 +38158,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=55
-	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=1
-	isWOfRiver
 	BonusType=BONUS_SPICES
 	BonusVarietyType=BONUS_SPICES_SAFFRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
@@ -38612,6 +38610,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=53
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -38624,6 +38626,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=55
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39077,6 +39081,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=54
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
@@ -39938,6 +39944,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=47
+	BonusType=BONUS_DATES
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -41322,7 +41329,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=44
-	BonusType=BONUS_DATES
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -41795,14 +41801,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=46
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=91,y=47
-	isNOfRiver
-	RiverWEDirection=3
+	RiverNSDirection=2
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -42235,21 +42245,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=46
-	RiverNSDirection=0
-	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=92,y=47
-	isNOfRiver
-	RiverWEDirection=3
+	RiverNSDirection=0
+	isWOfRiver
 	BonusType=BONUS_OLIVES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=92,y=48
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
