@@ -11948,6 +11948,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=40
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -13694,6 +13695,8 @@ BeginPlot
 	x=29,y=34
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_EMERALDS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -13702,8 +13705,6 @@ BeginPlot
 	x=29,y=35
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_EMERALDS
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -15562,7 +15563,7 @@ BeginPlot
 	x=33,y=34
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
