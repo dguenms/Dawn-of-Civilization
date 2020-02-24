@@ -100,9 +100,9 @@ def init():
 ### Capitals ###
 
 tCapitals = (
-(61, 40), # Thebes
+(79, 43), # Memphis
 (89, 47), # Babylon
-(102, 47), # Harappa
+(101, 47), # Harappa
 (121, 52), # Chang'an
 (77, 51), # Athens
 (110, 44), # Pataliputra
