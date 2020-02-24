@@ -6673,12 +6673,12 @@ BeginPlot
 	x=13,y=51
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
 	x=13,y=52
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_DESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -7124,7 +7124,7 @@ BeginPlot
 	x=14,y=51
 	RiverNSDirection=2
 	isWOfRiver
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=0
 EndPlot
 BeginPlot
@@ -21442,7 +21442,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=24
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=0
 EndPlot
 BeginPlot
@@ -36098,7 +36098,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=23
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=0
 EndPlot
 BeginPlot
@@ -37198,6 +37198,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=44
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -37486,6 +37488,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=15
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -37651,8 +37654,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=44
-	BonusType=BONUS_GEMS
-	BonusVarietyType=BONUS_GEMS_TURQUOISE
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -38981,7 +38982,7 @@ BeginPlot
 	x=85,y=35
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -40024,7 +40025,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=57
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -40960,7 +40961,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=56
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -41857,7 +41858,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -46752,7 +46753,7 @@ BeginPlot
 	x=102,y=54
 	isNOfRiver
 	RiverWEDirection=3
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -47202,7 +47203,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=54
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -50803,7 +50804,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=47
-	TerrainType=TERRAIN_STEPPE
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -53061,7 +53062,7 @@ BeginPlot
 	x=116,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=0
 EndPlot
 BeginPlot
@@ -53542,7 +53543,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=54
-	TerrainType=TERRAIN_SEMIDESERT
+	TerrainType=TERRAIN_STEPPE
 	PlotType=0
 EndPlot
 BeginPlot
@@ -54964,7 +54965,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=55
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_STEPPE
 	PlotType=0
 EndPlot
 BeginPlot
