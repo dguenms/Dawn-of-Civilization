@@ -1658,6 +1658,8 @@ def resurrectionFromCollapse(iPlayer, lCityList):
 def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	pPlayer = gc.getPlayer(iPlayer)
 	teamPlayer = gc.getTeam(iPlayer)
+	
+	pPlayer.setAlive(True)
 
 	data.iRebelCiv = iPlayer
 	

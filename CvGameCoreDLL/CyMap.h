@@ -91,6 +91,7 @@ public:
 	int plotIndex(int iX, int iY);
 	int getPrimeMeridian();
 	int getEquator();
+	void updateCulture();
 
 protected:
 	CvMap* m_pMap;

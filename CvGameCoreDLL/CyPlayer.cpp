@@ -2743,3 +2743,11 @@ bool CyPlayer::isNoTemporaryUnhappiness()
 {
 	return m_pPlayer ? m_pPlayer->isNoTemporaryUnhappiness() : false;
 }
+
+void CyPlayer::setAlive(bool bNewValue)
+{
+	if (m_pPlayer)
+	{
+		m_pPlayer->setAlive(bNewValue);
+	}
+}

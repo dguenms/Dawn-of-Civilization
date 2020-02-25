@@ -134,5 +134,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("AI_getSameReligionAttitude", &CyPlayer::AI_getSameReligionAttitude, "int (int iPlayer)")
 		.def("AI_getDifferentReligionAttitude", &CyPlayer::AI_getDifferentReligionAttitude, "int (int iPlayer)")
 		.def("AI_getFirstImpressionAttitude", &CyPlayer::AI_getFirstImpressionAttitude, "int (int iPlayer)")
+		.def("setAlive", &CyPlayer::setAlive, "void (bool bNewValue)")
 		;
 }

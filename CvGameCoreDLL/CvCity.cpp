@@ -12033,6 +12033,12 @@ int CvCity::getActualCultureTimes100(PlayerTypes eIndex) const
 }
 
 // Leoreth
+int CvCity::getActualCulture(PlayerTypes ePlayer) const
+{
+	return getActualCultureTimes100(ePlayer) / 100;
+}
+
+// Leoreth
 int CvCity::getCultureTimes100(PlayerTypes ePlayer) const
 {
 	if (plot()->getCultureConversionPlayer() == ePlayer)
@@ -12165,12 +12171,13 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
 	// Leoreth: includes K-Mod fixes / culture spread changes
-	int iOldValue = getCultureTimes100(eIndex);
+	int iOldValue = getActualCultureTimes100(eIndex);
 
 	if (iOldValue != iNewValue)
 	{
 		m_aiCulture[eIndex] = iNewValue;
 		FAssert(getCultureTimes100(eIndex) >= 0);
+		FAssert(getActualCultureTimes100(eIndex) >= 0);
 
 		updateCultureLevel(bUpdatePlotGroups);
 		updateCoveredPlots(bUpdatePlotGroups); // Leoreth
@@ -12194,12 +12201,12 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 
 void CvCity::changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups)
 {
-	setCultureTimes100(eIndex, (getCultureTimes100(eIndex) + 100  * iChange), bPlots, bUpdatePlotGroups);
+	setCultureTimes100(eIndex, (getActualCultureTimes100(eIndex) + 100  * iChange), bPlots, bUpdatePlotGroups);
 }
 
 void CvCity::changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups)
 {
-	setCultureTimes100(eIndex, (getCultureTimes100(eIndex) + iChange), bPlots, bUpdatePlotGroups);
+	setCultureTimes100(eIndex, (getActualCultureTimes100(eIndex) + iChange), bPlots, bUpdatePlotGroups);
 }
 
 
@@ -15103,12 +15110,15 @@ void CvCity::doCulture()
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		ePlayer = (PlayerTypes)iI;
-		iChange = std::min(getCultureTimes100(ePlayer), iTotalCultureTimes100 / 100);
-
-		if (!GET_PLAYER(ePlayer).isAlive() && iChange > 0)
+		if (!GET_PLAYER(ePlayer).isAlive())
 		{
-			// culture of dead civilizations decreases by 1% of total city culture per turn
-			changeCultureTimes100(ePlayer, -iChange, false, true);
+			iChange = std::min(getActualCultureTimes100(ePlayer), iTotalCultureTimes100 / 100);
+
+			if (iChange > 0)
+			{
+				// culture of dead civilizations decreases by 1% of total city culture per turn
+				changeCultureTimes100(ePlayer, -iChange, false, true);
+			}
 		}
 	}
 }
@@ -19674,7 +19684,7 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 	{
 		if (getOwnerINLINE() != iI)
 		{
-			setCulture((PlayerTypes)iI, getCulture((PlayerTypes)iI) * 8 / 10, true, true);
+			setCulture((PlayerTypes)iI, getActualCulture((PlayerTypes)iI) * 8 / 10, true, true);
 		}
 	}
 
