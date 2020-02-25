@@ -18100,7 +18100,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 	if (eCommerceType == COMMERCE_CULTURE)
 	{
 		int iCultureModifier = GET_PLAYER(city.getOwnerINLINE()).getModifier(MODIFIER_CULTURE);
-		if (iCultureModifier != 0)
+		if (iCultureModifier != 100)
 		{
 			iFinalModYield = iModYield * iCultureModifier / 100;
 

@@ -812,6 +812,7 @@ public:
 
 	// Leoreth
 	int getActualCultureTimes100(PlayerTypes ePlayer) const;
+	int getActualCulture(PlayerTypes ePlayer) const;
 
 	int getNumRevolts(PlayerTypes eIndex) const;
 	void changeNumRevolts(PlayerTypes eIndex, int iChange);

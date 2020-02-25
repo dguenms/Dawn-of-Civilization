@@ -331,3 +331,11 @@ int CyMap::getEquator()
 {
 	return m_pMap ? m_pMap->getEquator() : -1;
 }
+
+void CyMap::updateCulture()
+{
+	if (m_pMap)
+	{
+		m_pMap->updateCulture();
+	}
+}

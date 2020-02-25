@@ -43,7 +43,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SONG_VICTORY</SoundID>
-			<Filename>Sounds/Soundtrack/Victory</Filename>
+			<Filename>Sounds/Soundtrack/VictoryRFC</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

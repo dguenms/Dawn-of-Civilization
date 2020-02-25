@@ -1509,4 +1509,12 @@ int CvMap::getEquator() const
 	return m_iEquator;
 }
 
+void CvMap::updateCulture()
+{
+	for (int iI = 0; iI < numPlotsINLINE(); iI++)
+	{
+		plotByIndexINLINE(iI)->updateCulture(true, true);
+	}
+}
+
 // Private Functions...
