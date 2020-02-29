@@ -34,13 +34,13 @@ BeginTeam
 	TeamID=7, (Phoenicia)
 EndTeam
 BeginTeam
-	TeamID=8, (Polynesia)
+	TeamID=8, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=9, (Persia)
+	TeamID=9, (Polynesia)
 EndTeam
 BeginTeam
-	TeamID=10, (Celtia)
+	TeamID=10, (Persia)
 EndTeam
 BeginTeam
 	TeamID=11, (Rome)
@@ -292,25 +292,6 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=8
-	LeaderType=LEADER_AHOEITU
-	CivType=CIVILIZATION_POLYNESIA
-	PlayableCiv=0
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=9
-	LeaderType=LEADER_KHOSROW
-	CivType=CIVILIZATION_PERSIA
-	PlayableCiv=0
-	StateReligion=RELIGION_ZOROASTRIANISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=10
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=1
@@ -321,6 +302,25 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	StartingGold=100
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=9
+	LeaderType=LEADER_AHOEITU
+	CivType=CIVILIZATION_POLYNESIA
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=10
+	LeaderType=LEADER_KHOSROW
+	CivType=CIVILIZATION_PERSIA
+	PlayableCiv=0
+	StateReligion=RELIGION_ZOROASTRIANISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -19366,22 +19366,22 @@ BeginPlot
 	x=49,y=56
 	TerrainType=TERRAIN_GRASS
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=10, (Celtia)
+		UnitType=UNIT_ARCHER, UnitOwner=8, (Celtia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SKIRMISHER, UnitOwner=10, (Celtia)
+		UnitType=UNIT_SKIRMISHER, UnitOwner=8, (Celtia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=10, (Celtia)
+		UnitType=UNIT_WORKER, UnitOwner=8, (Celtia)
 	EndUnit
 	BeginCity
-		CityOwner=10, (Celtia)
+		CityOwner=8, (Celtia)
 		CityName=&#193;th Cliath
 		CityPopulation=3
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MONUMENT
-		Player10Culture=20, (Celtia)
+		Player8Culture=20, (Celtia)
 	EndCity
 	PlotType=2
 EndPlot
@@ -20531,14 +20531,14 @@ BeginPlot
 	x=52,y=59
 	TerrainType=TERRAIN_GRASS
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=10, (Celtia)
+		UnitType=UNIT_ARCHER, UnitOwner=8, (Celtia)
 	EndUnit
 	BeginCity
-		CityOwner=10, (Celtia)
+		CityOwner=8, (Celtia)
 		CityName=D&#249;n &#200;ideann
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
-		Player10Culture=10, (Celtia)
+		Player8Culture=10, (Celtia)
 	EndCity
 	PlotType=1
 EndPlot
@@ -25978,6 +25978,38 @@ BeginPlot
 	x=66,y=31
 	RiverNSDirection=0
 	isWOfRiver
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
+	EndUnit
+	BeginCity
+		CityOwner=3, (Makuria)
+		CityName=Dongola
+		CityPopulation=3
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_NUBIAN_DEFFUFAS
+		ReligionType=RELIGION_ORTHODOXY
+		Player3Culture=100, (Makuria)
+	EndCity
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -27705,38 +27737,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=31
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_NUBIAN_MEDJAY, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CAMEL_ARCHER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=3, (Makuria)
-	EndUnit
-	BeginCity
-		CityOwner=3, (Makuria)
-		CityName=Dongola
-		CityPopulation=3
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_NUBIAN_DEFFUFAS
-		ReligionType=RELIGION_ORTHODOXY
-		Player3Culture=100, (Makuria)
-	EndCity
 	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -30116,10 +30116,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Persia)
+		UnitType=UNIT_ARCHER, UnitOwner=10, (Persia)
 	EndUnit
 	BeginCity
-		CityOwner=9, (Persia)
+		CityOwner=10, (Persia)
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
@@ -30561,14 +30561,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=9, (Persia)
+		UnitType=UNIT_ARCHER, UnitOwner=10, (Persia)
 	EndUnit
 	BeginCity
-		CityOwner=9, (Persia)
+		CityOwner=10, (Persia)
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		Player9Culture=10, (Persia)
+		Player10Culture=10, (Persia)
 	EndCity
 EndPlot
 BeginPlot
@@ -32410,16 +32410,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=9, (Persia)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=10, (Persia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=9, (Persia)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=10, (Persia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=9, (Persia)
+		UnitType=UNIT_SPEARMAN, UnitOwner=10, (Persia)
 	EndUnit
 	BeginCity
-		CityOwner=9, (Persia)
+		CityOwner=10, (Persia)
 		CityName=Sirajis
 		CityPopulation=4
 		BuildingType=BUILDING_WALLS
@@ -32431,7 +32431,7 @@ BeginPlot
 		BuildingType=BUILDING_GONDESHAPUR
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player9Culture=10, (Persia)
+		Player10Culture=10, (Persia)
 	EndCity
 EndPlot
 BeginPlot
@@ -33198,16 +33198,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=9, (Persia)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=10, (Persia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=9, (Persia)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=10, (Persia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=9, (Persia)
+		UnitType=UNIT_SPEARMAN, UnitOwner=10, (Persia)
 	EndUnit
 	BeginCity
-		CityOwner=9, (Persia)
+		CityOwner=10, (Persia)
 		CityName=Herat
 		CityPopulation=4
 		BuildingType=BUILDING_WALLS
@@ -33215,7 +33215,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_SALSAL_BUDDHA
-		Player9Culture=10, (Persia)
+		Player10Culture=10, (Persia)
 	EndCity
 EndPlot
 BeginPlot

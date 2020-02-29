@@ -1247,15 +1247,6 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, PlayerTypes ePreviousOwner, Playe
 
 	if (canRaze(pCity))
 	{
-		// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
-		if (pCity->getOriginalOwner() == NUBIA && pCity->getX_INLINE() == 66 && pCity->getY_INLINE() == 31 && !GET_PLAYER(NUBIA).isHuman() && GC.getGameINLINE().getGameTurnYear() < 350)
-		{
-			bRaze = true;
-			log(CvWString::format(L"AI chose raze: %s", pCity->getNameKey()));
-			pCity->raze(iCaptureGold);
-			return;
-		}
-
 	    iRazeValue = 0;
 		if (GC.getGameINLINE().getElapsedGameTurns() > 20)
 		{
@@ -2749,7 +2740,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			iValue /= 4;
 		}
 	}
-
+	
 	//Rhye - start switch
 	if (GET_TEAM(getTeam()).isHasTech((TechTypes)COMPASS)) {
 		iTeamAreaCities = GET_TEAM(getTeam()).countNumCitiesByArea(pArea);
@@ -2876,6 +2867,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue /= 100;
 	}
 	//Rhye - end
+	
+
+	// 1SDAN: More Polynesian settlements
+	if (getID() == POLYNESIA)
+	{
+		iValue *= 2;
+		iValue += 100;
+	}
 
 	return std::max(1, iValue);
 }
@@ -2948,15 +2947,6 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	int reborn = GET_PLAYER(getID()).getReborn();
 
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
-
-	// 1SDAN: Egypt favours Kerma over Meroe
-	if (getID() == EGYPT && pCity->getX() == 66 && pCity->getY() == 31 && pCity->getOwner() == NUBIA)
-	{
-		if (GC.getMapINLINE().plot(68, 29)->isCity() && GC.getMapINLINE().plot(68, 29)->getPlotCity()->getOwner() == NUBIA)
-		{
-			return AI_targetCityValue(GC.getMapINLINE().plot(68, 29)->getPlotCity(), bRandomize, bIgnoreAttackers) + 2;
-		}
-	}
 
 	iValue = 1;
 

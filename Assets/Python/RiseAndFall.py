@@ -261,14 +261,20 @@ class RiseAndFall:
 		self.initScenario()
 		
 		# Leoreth: make sure to select the Egyptian settler
-		if pEgypt.isHuman():
-			x, y = Areas.getCapital(iEgypt)
-			plotEgypt = gc.getMap().plot(x, y)  
-			for i in range(plotEgypt.getNumUnits()):
+		# 1SDAN: AI Egypt starts with an Archer
+		x, y = Areas.getCapital(iEgypt)
+		plotEgypt = gc.getMap().plot(x, y)
+		for i in range(plotEgypt.getNumUnits()):
+			if pEgypt.isHuman(): 
 				unit = plotEgypt.getUnit(i)
+				if unit.getUnitType() == iArcher:
+					unit.kill(False, -1)
 				if unit.getUnitType() == iSettler:
 					CyInterface().selectUnit(unit, True, False, False)
-					break
+			else:
+				unit = plotEgypt.getUnit(i)
+				if unit.getUnitType() == iMilitia:
+					unit.kill(False, -1)
 					
 	def initScenario(self):
 		self.updateStartingPlots()
@@ -827,12 +833,19 @@ class RiseAndFall:
 			if pIndependent2.isAlive():
 				utils.updateMinorTechs(iIndependent2, iBarbarian)
 
-		#Leoreth: give Celtia a settler in England in 500BC
-		if not pCeltia.isHuman() and iGameTurn == getTurnForYear(-500) - (data.iSeed % 10):
-			utils.makeUnit(iSettler, iCeltia, (53, 54), 1)
-			utils.makeUnit(iArcher, iCeltia, (53, 54), 2)
-			utils.makeUnit(iWorker, iCeltia, (53, 54), 2)
-			utils.makeUnit(iCidainh, iCeltia, (53, 54), 2)
+		if not pCeltia.isHuman():
+			#1SDAN: give AI Celtia three Settlers in La Tene in 450BC
+			if iGameTurn == getTurnForYear(-450) - (data.iSeed % 5):
+				utils.makeUnit(iSettler, iCeltia, (57, 49), 3)
+				utils.makeUnit(iArcher, iCeltia, (57, 49), 3)
+				utils.makeUnit(iCidainh, iCeltia, (57, 49), 3)
+				utils.makeUnit(iGallicWarrior, iCeltia, (57, 49), 3)
+				
+			#1SDAN: give AI Celtia a settler in England in 500BC
+			if iGameTurn == getTurnForYear(-500) - (data.iSeed % 10):
+				utils.makeUnit(iSettler, iCeltia, (53, 54), 1)
+				utils.makeUnit(iArcher, iCeltia, (53, 54), 2)
+				utils.makeUnit(iCidainh, iCeltia, (53, 54), 2)
 
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
 		if not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (data.iSeed % 10):
@@ -1473,7 +1486,11 @@ class RiseAndFall:
 				self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
 				
 		# Leoreth: reveal all normal plots on spawn
-		if iCiv != iCeltia:
+		# 1SDAN: reveal birth plots for the celts
+		if iCiv == iCeltia:
+			for (x, y) in Areas.getBirthArea(iCiv):
+				gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
+		else:
 			for (x, y) in Areas.getNormalArea(iCiv):
 				gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
 				
@@ -2418,14 +2435,14 @@ class RiseAndFall:
 		elif iCiv == iPersia:
 			utils.makeUnit(iImmortal, iCiv, tPlot, 4)
 		elif iCiv == iCeltia:
-			utils.makeUnit(iGallicWarrior, iCiv, tPlot, 3)
+			utils.makeUnit(iGallicWarrior, iCiv, tPlot, 4)
 		elif iCiv == iCarthage:
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 			utils.makeUnit(iNumidianCavalry, iCiv, tPlot, 1)
 		elif iCiv == iPolynesia:
 			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 		elif iCiv == iRome:
-			utils.makeUnit(iLegion, iCiv, tPlot, 4)
+			utils.makeUnit(iLegion, iCiv, tPlot, 2)
 		elif iCiv == iJapan:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
@@ -2622,21 +2639,8 @@ class RiseAndFall:
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 		elif iCiv == iCeltia:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iGallicWarrior, iCiv, tPlot, 2)
-			# start AI settler and garrison in La Tene and Boii
-			if utils.getHumanID() != iCiv:
-				#La Tene
-				utils.makeUnit(iSettler, iCiv, (57, 49), 2)[0].setMoves(0)
-				utils.makeUnitAI(iArcher, iCiv, (57, 49), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-				utils.makeUnit(iGallicWarrior, iCiv, (57, 49), 2)
-				#Boii
-				utils.makeUnit(iSettler, iCiv, (59, 47), 2)[0].setMoves(0)
-				utils.makeUnitAI(iArcher, iCiv, (59, 47), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			else:
-				utils.makeUnit(iSettler, iVikings, tPlot, 2)
-				utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
-				utils.makeUnit(iGallicWarrior, iCiv, tPlot, 2)
 		elif iCiv == iCarthage:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -2656,7 +2660,7 @@ class RiseAndFall:
 			utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 			utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 		elif iCiv == iRome:
-			utils.createSettlers(iCiv, 3)
+			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnit(iLegion, iCiv, tPlot, 4)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
@@ -3208,7 +3212,7 @@ class RiseAndFall:
 		elif iCiv == iPersia:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iCeltia:
-			pass
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iCarthage:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iRome:

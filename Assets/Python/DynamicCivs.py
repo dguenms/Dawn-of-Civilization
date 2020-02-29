@@ -690,13 +690,15 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	data.players[iPlayer].iResurrections += 1
 	
 	if iPlayer in lRespawnNameChanges:
+	
+		nameChange(iPlayer)
+		adjectiveChange(iPlayer)
+		
 		if iPlayer == iCarthage:
 			if gc.getGame().getGameTurnYear() >= 1956:
 				setShort(iPlayer, text("TXT_KEY_CIV_TUNISIA_SHORT_DESC"))
 				setAdjective(iPlayer, text("TXT_KEY_CIV_TUNISIA_ADJECTIVE"))
-		nameChange(iPlayer)
-		adjectiveChange(iPlayer)
-		
+				
 	setDesc(iPlayer, defaultTitle(iPlayer))
 	checkName(iPlayer)
 	checkLeader(iPlayer)
@@ -883,7 +885,7 @@ def capitalName(iPlayer):
 	capital = gc.getPlayer(iPlayer).getCapitalCity()
 	if capital: 
 		sCapitalName = capital.getName()
-		if iPlayer != iBurma:
+		if iPlayer not in [iBurma, iNubia]:
 			sCapitalName = cnm.getRenameName(iEngland, sCapitalName)
 		if sCapitalName: return sCapitalName
 		else: return capital.getName()
@@ -1940,7 +1942,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_NAME"
 			
-		if bEmpire or iReligion > 0 or not pPlayer.isStateReligion() or not isCapital(iPlayer, ["Kerma"]):
+		if bEmpire or iReligion >= 0 or not pPlayer.isStateReligion() or not isCapital(iPlayer, ["Kerma"]):
 			return "TXT_KEY_KINGDOM_OF"
 			
 	elif iPlayer == iChina:
@@ -2748,5 +2750,9 @@ def leaderName(iPlayer):
 			return "TXT_KEY_LEADER_NURSULTAN"
 		if data.players[iPlayer].iResurrections > 0:
 			return "TXT_KEY_ABLAI_KHAN"
+			
+	elif iPlayer == iCarthage:
+		if gc.getGame().getGameTurnYear() >= 1956:
+			return "TXT_KEY_LEADER_BEJI"
 				
 	return None

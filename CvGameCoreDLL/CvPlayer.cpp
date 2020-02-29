@@ -2018,12 +2018,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	SAFE_DELETE_ARRAY(paiBuildingOriginalOwner);
 	SAFE_DELETE_ARRAY(paiBuildingOriginalTime);
 	
-	// 1SDAN: AI Always Raze Kerma after conquering it from the Nubians prior to 350 AD
-	if (!isHuman() && !GET_PLAYER(eOldOwner).isHuman() && pNewCity->getX_INLINE() == 66 && pNewCity->getY_INLINE() == 31 && GC.getGameINLINE().getGameTurnYear() < 350)
-	{
-		pNewCity->raze(iCaptureGold);
-	}
-	else if (bConquest)
+	if (bConquest)
 	{
 		//Rhye - start
 //Speed: Modified by Kael 04/19/2007

@@ -147,6 +147,8 @@ def onTechAcquired(iPlayer, iTech):
 def onVassalState(iMaster, iVassal):
 	checkStability(iMaster, True)
 	
+	if iMaster == iEngland and iVassal == iCeltia: data.bAngloCeltia = True
+	
 	balanceStability(iVassal, iStabilityShaky)
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
@@ -391,11 +393,6 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	
 	for city in lCities:
 		if bRazeMinorCities:
-			# always raze Nubian Kerma prior to 350 AD
-			if iPlayer == iNubia and utils.getHumanID() != iPlayer and city.getX() == 66 and city.getY() == 31 and gc.getGame().getGameTurnYear() < 350:
-				lRemovedCities.append(city)
-				continue
-				
 			bMaxPopulation = (city.getPopulation() < 10)
 			bMaxCulture = (city.getCultureLevel() < 3)
 			bNoHolyCities = (not city.isHolyCity())
@@ -414,7 +411,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 							lRemovedCities.append(city)
 							continue
 							
-			# always raze Harappan and Celtic cities
+			# always raze Harappan cities
 			if iPlayer in [iHarappa] and utils.getHumanID() != iPlayer:
 				lRemovedCities.append(city)
 				continue
@@ -609,6 +606,7 @@ def completeCollapse(iPlayer):
 		utils.setReborn(iMongolia, True)
 		
 	if iPlayer == iCeltia:
+		if pEngland.isAlive(): data.bAngloCeltia = True
 		utils.setReborn(iCeltia, True)
 		
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
@@ -662,7 +660,7 @@ def downgradeCottages(iPlayer):
 			elif iImprovement == iCottage: plot.setImprovementType(-1)
 			
 			# Destroy all Harappan improvements
-			if iPlayer == iHarappa and utils.getHumanID() != iPlayer:
+			if iPlayer in [iCeltia, iHarappa] and utils.getHumanID() != iPlayer:
 				if iImprovement >= 0:
 					plot.setImprovementType(-1)
 				

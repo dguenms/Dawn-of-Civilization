@@ -34,13 +34,13 @@ BeginTeam
 	TeamID=7, (Phoenicia)
 EndTeam
 BeginTeam
-	TeamID=8, (Polynesia)
+	TeamID=8, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=9, (Persia)
+	TeamID=9, (Polynesia)
 EndTeam
 BeginTeam
-	TeamID=10, (Celtia)
+	TeamID=10, (Persia)
 EndTeam
 BeginTeam
 	TeamID=11, (Rome)
@@ -292,13 +292,22 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=8
+	LeaderType=LEADER_BRENNUS
+	CivType=CIVILIZATION_CELT
+	PlayableCiv=1
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
+	StartingGold=100
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=9
 	LeaderType=LEADER_AHOEITU
 	CivType=CIVILIZATION_POLYNESIA
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=9
+	Team=10
 	LeaderType=LEADER_CYRUS
 	CivType=CIVILIZATION_PERSIA
 	PlayableCiv=1
@@ -308,15 +317,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=10
-	LeaderType=LEADER_BRENNUS
-	CivType=CIVILIZATION_CELT
-	PlayableCiv=1
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
-	StartingGold=100
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -26904,6 +26904,9 @@ BeginPlot
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=0, (Egypt)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)

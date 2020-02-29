@@ -1286,7 +1286,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>CEL</Identifier>
-			<StartingYear>-800</StartingYear>
+			<StartingYear>-1200</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>

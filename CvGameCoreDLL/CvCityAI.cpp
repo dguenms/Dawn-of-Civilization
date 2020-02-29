@@ -569,7 +569,8 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		SpecialistTypes eGenericCitizen = (SpecialistTypes) GC.getDefineINT("DEFAULT_SPECIALIST");
 
 		// are we the generic specialist?
-		if (eSpecialist == eGenericCitizen)
+		// 1SDAN: Don't discount Citizens for Polynesia
+		if (getOwnerINLINE() != POLYNESIA && eSpecialist == eGenericCitizen)
 		{
 			iValue *= 60;
 			iValue /= 100;
@@ -2435,6 +2436,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case CELTIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		aiUnitAIVal[UNITAI_SETTLE] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		break;

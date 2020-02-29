@@ -24,7 +24,6 @@ tMinorCities = (
 (-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
-#(-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
 (-500, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 #(-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
@@ -40,8 +39,8 @@ tMinorCities = (
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (99, 38), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
-(410, (49, 56), iCeltia, '&#193;th Cliath', 1, iArcher, 1),			# Dublin
-(410, (52, 59), iCeltia, 'D&#249;n &#200;ideann', 1, iArcher, 1),			# Edinburgh
+(400, (49, 56), iIndependent, '&#193;th Cliath', 1, iArcher, 1),			# Dublin
+(400, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iArcher, 1),			# Edinburgh
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
@@ -332,11 +331,6 @@ class Barbs:
 		if iGameTurn < getTurnForYear(tMinorCities[len(tMinorCities)-1][0])+10:
 			self.foundMinorCities(iGameTurn)
 			
-		if iGameTurn == getTurnForYear(410):
-			if utils.getHumanID() != iCeltia:
-				if gc.getMap().plot(49, 56).isCity() and gc.getMap().plot(52, 59).isCity():
-					sta.doResurrection(iCeltia, [gc.getMap().plot(49, 56).getPlotCity(), gc.getMap().plot(52, 59).getPlotCity()])
-
 		if iGameTurn == getTurnForYear(tBirth[iInca]):
 			if utils.getHumanID() == iInca:
 				utils.makeUnit(iAucac, iNative, (24, 26), 1)

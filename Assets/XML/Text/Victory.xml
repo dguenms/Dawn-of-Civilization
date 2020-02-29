@@ -6806,4 +6806,52 @@
 		<Italian>Strategic Resources Purchased: %d1 / %d2</Italian>
 		<Spanish>Strategic Resources Purchased: %d1 / %d2</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL1_TITLE</Tag>
+		<English>Brennus' Legacy</English>
+		<French>Brennus' Legacy</French>
+		<German>Brennus' Legacy</German>
+		<Italian>Brennus' Legacy</Italian>
+		<Spanish>Brennus' Legacy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL1</Tag>
+		<English>Raze 2 Capitals by 200 BC</English>
+		<French>Raze 2 Capitals by 200 BC</French>
+		<German>Raze 2 Capitals by 200 BC</German>
+		<Italian>Raze 2 Capitals by 200 BC</Italian>
+		<Spanish>Raze 2 Capitals by 200 BC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL2_TITLE</Tag>
+		<English>Europa Celtica</English>
+		<French>Europa Celtica</French>
+		<German>Europa Celtica</German>
+		<Italian>Europa Celtica</Italian>
+		<Spanish>Europa Celtica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL2</Tag>
+		<English>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</English>
+		<French>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</French>
+		<German>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</German>
+		<Italian>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</Italian>
+		<Spanish>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL3_TITLE</Tag>
+		<English>Ensured Legacy</English>
+		<French>Ensured Legacy</French>
+		<German>Ensured Legacy</German>
+		<Italian>Ensured Legacy</Italian>
+		<Spanish>Ensured Legacy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CEL3</Tag>
+		<English>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</English>
+		<French>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</French>
+		<German>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</German>
+		<Italian>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</Italian>
+		<Spanish>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</Spanish>
+	</TEXT>
 </Civ4GameText>

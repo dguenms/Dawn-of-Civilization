@@ -326,7 +326,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeMaxFoodKeptPercent(25);
 	}
 
-	// Leoreth: Celtic UP: Extra culture in all cities. +1 Production on unimproved forests.
+	// Leoreth: Celtic UP: Extra culture in all cities. +1 Commerce on unimproved tiles.
 	if (getOwnerINLINE() == CELTIA)
 	{
 		changeCulture(CELTIA, 10, true, true);

@@ -833,9 +833,9 @@
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>30</iCost>
 			<iConquestProb>100</iConquestProb>
+			<iMaintenanceModifier>-25</iMaintenanceModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iHappiness>1</iHappiness>
 			<iDefense>50</iDefense>
 			<iBombardDefense>50</iBombardDefense>
 			<iAsset>1</iAsset>

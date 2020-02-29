@@ -1291,10 +1291,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CEL</Tag>
-		<English>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</English>
-		<French>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</French>
-		<German>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</German>
-		<Italian>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</Italian>
-		<Spanish>Cities start with extra [ICON_CULTURE]. +2 [ICON_PRODUCTION] on unimproved forests.</Spanish>
+		<English>Cities start with extra Culture. +1 commerce in unimproved land plots.</English>
+		<French>Cities start with extra Culture. +1 commerce in unimproved land plots.</French>
+		<German>Cities start with extra Culture. +1 commerce in unimproved land plots.</German>
+		<Italian>Cities start with extra Culture.+1 commerce in unimproved land plots.</Italian>
+		<Spanish>Cities start with extra Culture. +1 commerce in unimproved land plots.</Spanish>
 	</TEXT>
 </Civ4GameText>

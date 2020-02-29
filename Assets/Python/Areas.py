@@ -108,9 +108,9 @@ tCapitals = (
 (67, 41), # Athens
 (94, 40), # Pataliputra
 (73, 40), # Sur
+(62, 49), # Hallstatt
 (4, 18), # Tonga
 (82, 38), # Persepolis
-(62, 49), # Hallstatt
 (60, 44), # Rome
 (22, 35), # Tikal
 (91, 30), # Thanjavur
@@ -194,7 +194,6 @@ iOttomans : (68, 45),	# Istanbul
 
 # new capital locations on respawn
 dRespawnCapitals = {
-iNubia : (70, 31),	# Dongola
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
@@ -224,9 +223,9 @@ tBirthArea = (
 ((65, 39), 	(70, 45)), 	# Greece
 ((87, 36), 	(96, 40)), 	# India
 ((71, 39), 	(74, 41)), 	# Carthage
+((50, 46),	(66, 51)),	# Celtia
 ((3, 17), 	(7, 22)), 	# Polynesia
 ((79, 37), 	(85, 44)), 	# Persia
-((50, 46),	(66, 51)),	# Celtia
 ((59, 41), 	(63, 47)), 	# Rome
 ((20, 35), 	(23, 37)), 	# Maya
 ((90, 27), 	(93, 32)), 	# Tamils
@@ -350,9 +349,9 @@ tCoreArea = (
 ((64, 39),	(70, 45)),	# Greece
 ((90, 38),	(96, 40)),	# India
 ((73, 39),	(74, 41)),	# Phoenicia
+((56, 47),	(62, 50)),	# Celtia
 ((4, 18),	(6, 21)),	# Polynesia
 ((79, 37),	(85, 44)),	# Persia
-((56, 47),	(62, 50)),	# Celtia
 ((59, 41),	(63, 47)),	# Rome
 ((21, 35),	(23, 37)),	# Maya
 ((90, 27),	(93, 32)),	# Tamils
@@ -499,9 +498,9 @@ tNormalArea = (
 ((64, 39), 	(68, 44)), 	# Greece
 ((89, 38), 	(96, 42)), 	# India
 ((72, 39), 	(74, 41)), 	# Carthage
+((48, 55), 	(49, 58)), 	# Celtia
 ((3, 15), 	(13, 21)), 	# Polynesia
 ((79, 37), 	(86, 46)), 	# Persia
-((48, 55), 	(49, 58)), 	# Celtia
 ((57, 40), 	(63, 47)), 	# Rome
 ((20, 32), 	(23, 37)), 	# Maya
 ((90, 28), 	(93, 34)), 	# Tamils
@@ -609,9 +608,9 @@ tBroaderArea = (
 ((62, 39), 	(77, 47)), 	# Greece
 ((85, 28), 	(99, 43)), 	# India
 ((71, 39), 	(74, 41)), 	# Carthage
+((48, 55), 	(54, 60)), 	# Celtia
 ((1, 15), 	(17, 38)), 	# Polynesia
 ((70, 37), 	(87, 49)), 	# Persia
-((48, 55), 	(54, 60)), 	# Celtia
 ((49, 35), 	(73, 50)), 	# Rome
 ((19, 30), 	(26, 37)), 	# Maya
 ((90, 28), 	(93, 34)), 	# Tamils

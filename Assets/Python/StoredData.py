@@ -182,6 +182,8 @@ class GameData:
 		self.bUnlimitedSwitching = False
 		self.bCheatMode = False
 		
+		self.bAngloCeltia = False
+		
 		# Religions
 		
 		self.iSeed = gc.getGame().getSorenRandNum(100, "Random delay")

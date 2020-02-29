@@ -6998,17 +6998,14 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
-	// 1SDAN: Celtic UP: Extra Culture in all cities. +1 Production on unimproved forests.
+	// 1SDAN: Celtic UP: Cities start with extra Culture. Extra Commerce on unimproved tiles.
 	if (ePlayer == CELTIA)
 	{
-		if (eYield == YIELD_PRODUCTION)
+		if (!isWater() && eYield == YIELD_COMMERCE)
 		{
-			if (getFeatureType() == FEATURE_FOREST)
+			if (eImprovement != NO_IMPROVEMENT)
 			{
-				if (eImprovement != NO_IMPROVEMENT)
-				{
-					iYield -= 1;
-				}
+				iYield -= 1;
 			}
 		}
 	}
@@ -7319,15 +7316,12 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		// 1SDAN: Celtic UP: Extra culture in all cities. +1 Production on unimproved forests.
+		// 1SDAN: Celtic UP: Cities start with extra Culture. Extra Commerce on unimproved tiles.
 		if (ePlayer == CELTIA)
 		{
-			if (eYield == YIELD_PRODUCTION)
+			if (!isWater() && eYield == YIELD_COMMERCE)
 			{
-				if (getFeatureType() == FEATURE_FOREST)
-				{
-					iYield += 1;
-				}
+				iYield += 1;
 			}
 		}
 
