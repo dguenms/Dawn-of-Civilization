@@ -35820,10 +35820,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=58
-	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=1
-	isWOfRiver
 	BonusType=BONUS_WINE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
@@ -36338,8 +36336,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=59
-	isNOfRiver
-	RiverWEDirection=1
+	RiverNSDirection=2
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36822,8 +36820,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=60
-	isNOfRiver
-	RiverWEDirection=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
