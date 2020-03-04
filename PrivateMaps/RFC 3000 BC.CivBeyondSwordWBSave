@@ -14631,9 +14631,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=33
+	BonusType=BONUS_GEMS
+	BonusVarietyType=BONUS_GEMS_EMERALDS
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=31,y=34
