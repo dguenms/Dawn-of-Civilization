@@ -5973,10 +5973,12 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 	CvCity* pLoopCity;
 	CvPlot* pLoopPlot;
 	FeatureTypes eOldFeature;
+	int iOldVariety;
 	bool bUpdateSight;
 	int iI;
 
 	eOldFeature = getFeatureType();
+	iOldVariety = getFeatureVariety();
 
 	if (eNewValue != NO_FEATURE)
 	{
@@ -5992,7 +5994,7 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 		iVariety = 0;
 	}
 
-	if ((eOldFeature != eNewValue) || (m_iFeatureVariety != iVariety))
+	if ((eOldFeature != eNewValue) || (iOldVariety != iVariety))
 	{
 		if ((eOldFeature == NO_FEATURE) ||
 			  (eNewValue == NO_FEATURE) ||
@@ -6020,7 +6022,7 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 			updateSeeFromSight(true, true);
 		}
 
-		updateFeatureSymbol();
+		updateFeatureSymbol(iOldVariety != iVariety);
 
 		if (((eOldFeature != NO_FEATURE) && (GC.getFeatureInfo(eOldFeature).getArtInfo()->isRiverArt())) ||
 			  ((getFeatureType() != NO_FEATURE) && (GC.getFeatureInfo(getFeatureType()).getArtInfo()->isRiverArt())))
