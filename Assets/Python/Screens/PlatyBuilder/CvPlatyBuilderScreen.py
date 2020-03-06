@@ -2765,6 +2765,7 @@ class CvWorldBuilderScreen:
 
 		elif inputClass.getFunctionName() == "WBSelectItem":
 			self.iSelection = inputClass.getData2()
+			self.iSelectClass = 0
 			self.refreshSelection()
 
 		elif inputClass.getFunctionName() == "RevealMode":
