@@ -8,10 +8,6 @@ def getModifier(iPlayer, iModifier):
 	return tDefaults[iModifier]
 	
 def getAdjustedModifier(iPlayer, iModifier):
-	if utils.isReborn(iCeltia) and iPlayer == iCeltia:
-		if iModifier in dRebornCelticModifiers:
-			return dRebornCelticModifiers[iModifier]
-			
 	if utils.getScenario() > i3000BC and iPlayer < iVikings:
 		if iModifier in dLateScenarioModifiers:
 			return getModifier(iPlayer, iModifier) * dLateScenarioModifiers[iModifier] / 100
@@ -72,7 +68,7 @@ tUnitUpkeep =			(	135,120,200,135,120,110,135,115,135,100,100,110,100,115,100,11
 tResearchCost =			(	140,125,125,125,120,130,130,110,140,200,125,115,120,120,110,105,105,140,120, 85,120,110, 90,100,110,120, 90, 90, 80, 80,120, 90,110, 80,100, 85, 80,100,100, 90,110, 80,100, 85, 80, 70, 90, 90, 85,120,120, 85,100, 85,110, 90, 80,100, 70, 75, 70, 90, 90, 90, 75, 80, 70, 70,	110,110,110,350,110,110	)
 tDistanceMaintenance =	(	100,110,120,135,120, 90,120, 60, 60, 50, 90,100, 95,100,110,100,120, 80, 95, 70, 60, 90,120, 80,120, 70,100, 80, 55, 65,100,100,110, 55, 70, 80, 75, 65, 80, 80, 80, 90, 80, 80, 60, 70, 80, 75, 70,100,110, 70, 80, 80,100, 70, 70, 70, 80, 60, 50, 70, 70, 80, 60, 80, 70, 70,	 20, 20, 20, 20, 20, 20	)
 tCitiesMaintenance =	(	125,135,125,100,120,125,150,120, 80,100, 90,115,100,115,110,115,130, 80,110, 75, 90,110,120,100, 90, 90, 90, 70, 50, 70,120,120,110, 70, 75, 80, 75, 90, 90, 90, 90, 75, 85, 85, 80, 80, 90, 75, 85,100,120, 70,100, 90,100, 75, 80, 70, 75, 70, 50, 85, 85, 80, 70, 70, 60, 60,	 30, 30, 30, 30, 30, 30	)
-tCivicUpkeep =			(	120,110,100,120,120,110,140, 70, 80, 80, 70, 80, 80, 80, 80, 80, 80, 90, 80, 80,110, 90, 80,100,110, 80, 70, 90, 75, 80, 70,100, 70, 70, 70, 80, 80, 80, 80, 80, 80, 70, 80, 80, 60, 60, 70, 60, 60, 90, 90, 80, 80, 80, 80, 70, 70, 70, 60, 50, 50, 70, 70, 75, 75, 70, 75, 75,	 70, 70, 70, 70, 70, 70	)
+tCivicUpkeep =			(	120,110,100,120,120,110,140, 70,110, 80, 70, 80, 80, 80, 80, 80, 80, 90, 80, 80,110, 90, 80,100,110, 80, 70, 90, 75, 80, 70,100, 70, 70, 70, 80, 80, 80, 80, 80, 80, 70, 80, 80, 60, 60, 70, 60, 60, 90, 90, 80, 80, 80, 80, 70, 70, 70, 60, 50, 50, 70, 70, 75, 75, 70, 75, 75,	 70, 70, 70, 70, 70, 70	)
 tHealth =				(	  2,  1,  1,  2,  1,  3,  1,  3,  3,  3,  3,  3,  2,  3,  3,  3,  3,  3,  2,  3,  2,  2,  3,  3,  3,  2,  3,  2,  2,  2,  3,  3,  3,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  2,  3,  2,  4,  3,  3,  4,  4,  2,  4,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,	  0,  0,  0,  0,  0,  0	)
 
 tUnitCost =				(	110,140,200, 90,130,110,120, 90, 90,100, 90,100,105, 85, 90, 90,115, 80,115, 90, 85,100,100,110,105,110,140, 80,100, 90, 90, 80, 90, 80,100, 90, 70, 80, 90, 90, 90, 90, 80, 90, 90,100,110, 90, 80,100,100,100, 90, 90, 70, 90, 90, 90, 90, 75, 85, 80, 85, 85, 85, 85, 85, 85, 85,	200,200,150,140	)
@@ -94,23 +90,4 @@ iModifierCivicUpkeep : 90,
 iModifierInflationRate : 85,
 iModifierGreatPeopleThreshold : 85,
 iModifierGrowthThreshold : 80,
-}
-
-dRebornCelticModifiers = {
-
-iModifierCulture : 110,
-
-iModifierUnitUpkeep : 135,
-iModifierResearchCost : 120,
-iModifierDistanceMaintenance : 110,
-iModifierCitiesMaintenance : 135,
-iModifierCivicUpkeep : 120,
-iModifierHealth : 2,
-
-iModifierUnitCost : 140,
-iModifierWonderCost : 100,
-iModifierBuildingCost : 130,
-iModifierInflationRate : 120,
-iModifierGreatPeopleThreshold : 100,
-iModifierGrowthThreshold :150,
 }

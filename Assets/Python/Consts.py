@@ -535,7 +535,7 @@ tResurrectionIntervals = (
 [(1800, 2020)], #Greece
 [(1600, 1800), (1900, 2020)], #India
 [(-1000, -150), (1956, 2020)], #Carthage
-[(410, 1357), (1542, 1788)], #Celtia
+[], #Celtia
 [],		# Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome

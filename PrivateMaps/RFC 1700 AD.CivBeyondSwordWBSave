@@ -310,16 +310,7 @@ BeginPlayer
 	CivShortDesc=TXT_KEY_CIV_CELTIA_IRELAND_SHORT_DESC
 	CivAdjective=TXT_KEY_CIV_CELTIA_IRELAND_ADJECTIVE
 	CivType=CIVILIZATION_CELT
-	PlayableCiv=1
-	StartingGold=100
-	StateReligion=RELIGION_PROTESTANTISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
-	AttitudePlayer=34, AttitudeExtra=-4, (England)
+	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -21771,16 +21762,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (Ireland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (Ireland)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=8, (Ireland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (England)
 	EndUnit
 	BeginCity
-		CityOwner=8, (Ireland)
+		CityOwner=34, (England)
 		CityName=Dublin
 		CityPopulation=4
 		BuildingType=BUILDING_PALACE
@@ -21795,7 +21783,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
-		Player8Culture=100, (Ireland)
+		Player34Culture=100, (England)
 	EndCity
 	TeamReveal=20,55,29,30,34,56,67,
 EndPlot

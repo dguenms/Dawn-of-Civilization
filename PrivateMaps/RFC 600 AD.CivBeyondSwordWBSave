@@ -297,15 +297,7 @@ BeginPlayer
 	CivShortDesc=TXT_KEY_CIV_CELTIA_SCOTLAND_SHORT_DESC
 	CivAdjective=TXT_KEY_CIV_CELTIA_SCOTLAND_ADJECTIVE
 	CivType=CIVILIZATION_CELT
-	PlayableCiv=1
-	StartingGold=100
-	StateReligion=RELIGION_CATHOLICISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_MANORIALISM
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
+	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -19369,23 +19361,6 @@ EndPlot
 BeginPlot
 	x=49,y=56
 	TerrainType=TERRAIN_GRASS
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=8, (Celtia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SKIRMISHER, UnitOwner=8, (Celtia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=8, (Celtia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Celtia)
-		CityName=&#193;th Cliath
-		CityPopulation=3
-		BuildingType=BUILDING_MONUMENT
-		ReligionType=RELIGION_CATHOLICISM
-		Player8Culture=20, (Celtia)
-	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -20533,19 +20508,6 @@ EndPlot
 BeginPlot
 	x=52,y=59
 	TerrainType=TERRAIN_GRASS
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=8, (Celtia)
-	EndUnit
-	BeginCity
-		CityOwner=8, (Celtia)
-		CityName=D&#249;n &#200;ideann
-		CityPopulation=2
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MONUMENT
-		ReligionType=RELIGION_CATHOLICISM
-		Player8Culture=10, (Celtia)
-	EndCity
 	PlotType=1
 EndPlot
 BeginPlot
