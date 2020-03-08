@@ -649,6 +649,10 @@ class CvRFCEventHandler:
 	def onBeginGameTurn(self, argsList):
 		iGameTurn = argsList[0]
 		
+		if iGameTurn >= utils.getScenarioStartTurn():
+			gc.getPlayer(utils.getHumanID()).killCities()
+			gc.getPlayer(utils.getHumanID()).killUnits()
+		
 		self.rnf.checkTurn(iGameTurn)
 		self.barb.checkTurn(iGameTurn)
 		rel.checkTurn(iGameTurn)

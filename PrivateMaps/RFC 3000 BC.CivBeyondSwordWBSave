@@ -47540,6 +47540,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=36
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_CINNAMON
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -49358,6 +49361,7 @@ EndPlot
 BeginPlot
 	x=108,y=32
 	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_CINNAMON
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -53384,6 +53388,7 @@ EndPlot
 BeginPlot
 	x=117,y=30
 	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_CINNAMON
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -53879,6 +53884,7 @@ EndPlot
 BeginPlot
 	x=118,y=35
 	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_CINNAMON
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -54341,6 +54347,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=119,y=32
+	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -56252,6 +56259,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=36
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_CINNAMON
 	FeatureType=FEATURE_FOREST, FeatureVariety=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
