@@ -115,8 +115,8 @@ def getLanguages(iCiv):
 	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
 	elif iCiv == iIsrael: return (iLangHebrew,)
 	elif iCiv == iCeltia:
-		if data.bAngloCeltia: return (iLangEnglish, iLangCeltic, iRome,)
-		else: return (iLangCeltic, iLangEnglish, iRome,)
+		if data.bAngloCeltia: return (iLangEnglish, iLangCeltic, iLangLatin,)
+		else: return (iLangCeltic, iLangEnglish, iLangLatin,)
 	else: return None
 	
 def getNativeLanguages(tPlot):
@@ -7284,6 +7284,7 @@ tRenames = (
 	"Dublin"		:	"Dublin",
 	"&#193;th Cliath"		:	"Dublin",
 	"D&#249;n &#200;ideann"		:	"Edinburgh",
+	"Edinburgh"		:	"Edinburgh",
 	"Exeter"		:	"Exeter",
 	"Kisangani"		:	"Falls Station",
 	"Fiorenza"		:	"Florence",

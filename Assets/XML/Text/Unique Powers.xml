@@ -1291,10 +1291,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CEL</Tag>
-		<English>Cities start with extra Culture. +1 commerce in unimproved land plots.</English>
-		<French>Cities start with extra Culture. +1 commerce in unimproved land plots.</French>
-		<German>Cities start with extra Culture. +1 commerce in unimproved land plots.</German>
-		<Italian>Cities start with extra Culture.+1 commerce in unimproved land plots.</Italian>
-		<Spanish>Cities start with extra Culture. +1 commerce in unimproved land plots.</Spanish>
+		<English>Cities start with extra Culture..</English>
+		<French>Cities start with extra Culture.</French>
+		<German>Cities start with extra Culture.</German>
+		<Italian>Cities start with extra Culture.</Italian>
+		<Spanish>Cities start with extra Culture.</Spanish>
 	</TEXT>
 </Civ4GameText>

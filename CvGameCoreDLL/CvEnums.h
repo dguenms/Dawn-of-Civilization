@@ -1278,6 +1278,8 @@ enum LeaderHeadTypes			// Exposed to Python
 	BULAN,
 	PIYE,
 	DUNAMA,
+	ROBERT,
+	COLLINS,
 	NUM_LEADERHEADS
 };
 

@@ -1310,5 +1310,21 @@
 			<NoShaderNIF>Art/Leaderheads/Kanemi/Zara Yaqob.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Kanemi/Zara Yaqob_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_COLLINS</Type>
+			<Button>Art/Leaderheads/Collins/Collins.dds</Button>
+			<NIF>Art/Leaderheads/Collins/Halis.nif</NIF>
+			<KFM>Art/Leaderheads/Collins/Gilgamesh.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Collins/Halis_nonshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Collins/Gilgamesh_Backgrnd.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ROBERT_I</Type>
+			<Button>Art/Leaderheads/Robert I/Robert.dds</Button>
+			<NIF>Art/Leaderheads/Robert I/Napoleon.nif</NIF>
+			<KFM>Art/Leaderheads/Robert I/Napoleon.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Robert I/Napoleon_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Robert I/Napoleon_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

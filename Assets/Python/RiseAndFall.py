@@ -2867,8 +2867,7 @@ class RiseAndFall:
 				utils.makeUnit(iCog, iCiv, tPlot, 1)
 		elif iCiv == iEngland:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
-			utils.makeUnit(iLongbowman, iCiv, tPlot, 2)
+			utils.makeUnit(iLongbowman, iCiv, tPlot, 6)
 			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.createMissionaries(iCiv, 1)
 		elif iCiv == iHolyRome:

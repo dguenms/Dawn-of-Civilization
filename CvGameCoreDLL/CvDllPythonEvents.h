@@ -44,7 +44,7 @@ public:
 
 	void reportCityBuilt(CvCity *pCity);
 	void reportCityRazed(CvCity *pCity, PlayerTypes ePlayer);
-	void reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pOldCity, bool bConquest, bool bTrade);
+	void reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pOldCity, bool bConquest, bool bTrade, bool bCapital);
 	void reportCityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void reportCityLost(CvCity *pCity);
 	void reportCultureExpansion(CvCity *pCity, PlayerTypes ePlayer);

@@ -6998,18 +6998,6 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
-	// 1SDAN: Celtic UP: Cities start with extra Culture. Extra Commerce on unimproved tiles.
-	if (ePlayer == CELTIA)
-	{
-		if (!isWater() && eYield == YIELD_COMMERCE)
-		{
-			if (eImprovement != NO_IMPROVEMENT)
-			{
-				iYield -= 1;
-			}
-		}
-	}
-	
 	// Merijn: Manchurian UP: Improved resources adjacent to cities provide additional food and production
 	if (ePlayer == MANCHURIA)
 	{
@@ -7311,15 +7299,6 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		if (ePlayer == TAMILS)
 		{
 			if (isWater() && eYield == YIELD_COMMERCE)
-			{
-				iYield += 1;
-			}
-		}
-
-		// 1SDAN: Celtic UP: Cities start with extra Culture. Extra Commerce on unimproved tiles.
-		if (ePlayer == CELTIA)
-		{
-			if (!isWater() && eYield == YIELD_COMMERCE)
 			{
 				iYield += 1;
 			}

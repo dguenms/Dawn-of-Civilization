@@ -142,7 +142,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 		self.CheckForAlerts(iPlayer, PyPlayer(iPlayer).getTeam(), True)
 
 	def OnCityAcquired(self, argsList):
-		owner, playerType, city, bConquest, bTrade = argsList
+		owner, playerType, city, bConquest, bTrade, bCapital = argsList
 		iPlayer = city.getOwner()
 		if (not self.getCheckForDomVictory()): return
 		if (iPlayer == gc.getGame().getActivePlayer()):

@@ -148,10 +148,10 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 34
+iNumMinorCities = 36
 
 # scripted conquerors
-iNumConquests = 17
+iNumConquests = 18
 
 #neighbours
 lNeighbours = [
@@ -535,7 +535,7 @@ tResurrectionIntervals = (
 [(1800, 2020)], #Greece
 [(1600, 1800), (1900, 2020)], #India
 [(-1000, -150), (1956, 2020)], #Carthage
-[(400, 1357), (1542, 1788)], #Celtia
+[(410, 1357), (1542, 1788)], #Celtia
 [],		# Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
@@ -631,7 +631,7 @@ lEnemyCivsOnSpawn = [
 [], #Oman
 [], #Khmer
 [], #Yemen
-[iCeltia], #England
+[iCeltia, iCeltia], #England
 [iRome,iArabia,iArabia], #Holy Rome
 [iKhazars, iKhazars], #Kievan Rus
 [iKhazars],	#Hungary
@@ -1313,7 +1313,7 @@ iVictorySecularism = 11
 
 #leaders
 
-iNumLeaders = 161
+iNumLeaders = 163
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexanderTheGreat, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
 iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
 iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
@@ -1328,7 +1328,8 @@ iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, 
 iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
 iGeorge, iKhosrow, iBumin, iTamerlane, iEzana, iChristian, iGustavVasa, iKarl, iCurtin, iMenzies, iMustasim, iKangxi, iCixi, iOduduwa, iEwuare,
 iAminatu, iLapuLapu, iKruger, iMandela, iShirazi, iDawud, iBarghash, iTrung, iChieuHoang, iHoChiMinh, iRusvingo, iMutota,
-iAnawrahta, iShinSawbu, iBayinnuang, iBohdan, iYaroslav, iIstvan, iKossuth, iAtlatlCauac, iBenGurion, iSaif, iArwa, iBulan, iPiye, iDunama) = range(iNumLeaders)
+iAnawrahta, iShinSawbu, iBayinnuang, iBohdan, iYaroslav, iIstvan, iKossuth, iAtlatlCauac, iBenGurion, iSaif, iArwa, iBulan, iPiye, iDunama,
+iCollins, iRobert) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,

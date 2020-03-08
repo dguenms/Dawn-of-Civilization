@@ -124,7 +124,7 @@ class CvRFCEventHandler:
 
 
 	def onCityAcquired(self, argsList):
-		iOwner, iPlayer, city, bConquest, bTrade = argsList
+		iOwner, iPlayer, city, bConquest, bTrade, bCapital = argsList
 		tCity = (city.getX(), city.getY())
 		
 		cnm.onCityAcquired(city, iPlayer)
@@ -141,21 +141,15 @@ class CvRFCEventHandler:
 		if iPlayer == iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
 		
-		# England's core extends if they own at least one city in Scotland and Ireland
+		# England's core extends if they own at least one city either Scotland or Ireland
 		if iPlayer == iEngland:
 			if city.getRegionID() == rBritain:
 				# If in Ireland look for a city in Scotland
 				if city.getX() <= 50:
-					for city in utils.getCityList(iCeltia):
-						if city.plot().getRegionID() == rBritain:
-							if city.getY >= 48:
-								setReborn(iEngland, True)
+					utils.setReborn(iEngland, True)
 				# If in Scotland look for a city in Ireland
 				elif city.getY() >= 48:
-					for city in utils.getCityList(iCeltia):
-						if city.plot().getRegionID() == rBritain:
-							if city.getX() <= 50:
-								setReborn(iEngland, True)
+					utils.setReborn(iEngland, True)
 		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:
@@ -248,10 +242,10 @@ class CvRFCEventHandler:
 					
 		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
 		self.com.onCityAcquired(city) # Communications
-		self.corp.onCityAcquired(argsList) # Companies
+		self.corp.onCityAcquired((iOwner, iPlayer, city, bConquest, bTrade)) # Companies
 		dc.onCityAcquired(iOwner, iPlayer) # DynamicCivs
 		
-		vic.onCityAcquired(iPlayer, iOwner, city, bConquest)
+		vic.onCityAcquired(iPlayer, iOwner, city, bConquest, bCapital)
 		
 		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 		

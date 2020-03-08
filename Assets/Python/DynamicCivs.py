@@ -631,11 +631,13 @@ dStartingLeaders = [
 # 600 AD
 {
 	iChina : iTaizong,
+	iCeltia : iRobert,
 },
 # 1700 AD
 {
 	iChina : iHongwu,
 	iIndia : iShahuji,
+	iCeltia : iCollins,
 	iPersia : iAbbas,
 	iTamils : iKrishnaDevaRaya,
 	iKorea : iSejong,
@@ -2479,6 +2481,15 @@ def leader(iPlayer):
 		if utils.getScenario() >= i1700AD: return iHongwu
 		
 		if iEra >= iMedieval: return iTaizong
+		
+	elif iPlayer == iCeltia:
+		if capital.getRegionID() == rBritain:
+			if capital.getX() <= 50:
+				return iCollins
+			elif capital.getY() >= 48:
+				return iRobert
+			else:
+				return iBoudica
 		
 	elif iPlayer == iBabylonia:
 		if iGameTurn >= getTurnForYear(-1600): return iHammurabi

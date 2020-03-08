@@ -272,6 +272,8 @@ class GameData:
 		self.iChadDiplomacyMissions = 0
 		self.iChadSlaves = 0
 		self.iChadStrategicBonuses = 0
+		self.iCeltiaRazedCapitals = 0
+		self.lCeltiaConqueredCapitals = []
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

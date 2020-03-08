@@ -1446,4 +1446,36 @@
 		<Italian>Lake Zaysan</Italian>
 		<Spanish>Lake Zaysan</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_89</Tag>
+		<English>Gallia</English>
+		<French>Gallia</French>
+		<German>Gallia</German>
+		<Italian>Gallia</Italian>
+		<Spanish>Gallia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_90</Tag>
+		<English>Germania</English>
+		<French>Germania</French>
+		<German>Germania</German>
+		<Italian>Germania</Italian>
+		<Spanish>Germania</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_91</Tag>
+		<English>Italia</English>
+		<French>Italia</French>
+		<German>Italia</German>
+		<Italian>Italia</Italian>
+		<Spanish>Italia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_92</Tag>
+		<English>Britannia</English>
+		<French>Britannia</French>
+		<German>Britannia</German>
+		<Italian>Britannia</Italian>
+		<Spanish>Britannia</Spanish>
+	</TEXT>
 </Civ4GameText>

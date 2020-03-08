@@ -59,7 +59,7 @@ tRomeEgyptBR = (72, 36)
 tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
 tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
 tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
-tConquestRomeCeltsGaul = (3, iRome, iCeltia, tRomeCeltiaGaulTL, tRomeCeltiaGaulBR, 2, iRomeCeltiaGaulYear, 10)
+tConquestRomeCeltsGaul = (3, iRome, iCeltia, tRomeCeltiaGaulTL, tRomeCeltiaGaulBR, 4, iRomeCeltiaGaulYear, 10)
 tConquestRomeCeltsBritain = (4, iRome, iCeltia, tRomeCeltiaBritainTL, tRomeCeltiaBritainBR, 1, iRomeCeltiaBritainYear, 10)
 tConquestRomeEgypt = (5, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
@@ -117,6 +117,12 @@ tMongolsPersiaBR = (85, 49)
 
 tConquestMongolsPersia = (16, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
+iConquestEnglandIrelandYear = 1171
+tConquestEnglandIrelandTL = (48, 55)
+tConquestEnglandIrelandBR = (49, 58)
+
+tConquestEnglandIreland = (17, iEngland, iCeltia, tConquestEnglandIrelandTL, tConquestEnglandIrelandBR, 1, iConquestEnglandIrelandYear, 10)
+
 lConquests = [
 tConquestRomeCarthage, #0
 tConquestRomeGreece, #1
@@ -134,7 +140,8 @@ tConquestSpainMoors, #12
 tConquestTurksPersia, #13
 tConquestTurksOman, #14
 tConquestTurksAnatolia, #15
-tConquestMongolsPersia #16
+tConquestMongolsPersia, #16
+tConquestEnglandIreland, #17
 ]
 
 class AIWars:
@@ -255,18 +262,28 @@ class AIWars:
 				
 			if iPlayer == iMongolia and utils.getHumanID() != iPlayer:
 				iExtra += 1
+				
+			if iPlayer == iEngland and utils.getHumanID() != iPlayer:
+				iExtra += 2
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
 			
 			iBestInfantry = utils.getBestInfantry(iPlayer)
 			iBestSiege = utils.getBestSiege(iPlayer)
 			
+			if iPlayer == iEngland:
+				iBestInfantry = iLongbowman
+			
 			if iPlayer == iGreece:
 				iBestInfantry = iHoplite
 				iBestSiege = iCatapult
 			
-			utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
-			utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
+			if iPlayer in [iEngland]:
+				utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + 2*iExtra)
+				utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iExtra)
+			else:
+				utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
+				utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
 			
 			if iPlayer == iGreece:
 				utils.makeUnitAI(iCompanion, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)

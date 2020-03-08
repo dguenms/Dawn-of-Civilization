@@ -6807,6 +6807,54 @@
 		<Spanish>Strategic Resources Purchased: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITALS_RAZED</Tag>
+		<English>Capitals Razed: %d1 / %d2</English>
+		<French>Capitals Razed: %d1 / %d2</French>
+		<German>Capitals Razed: %d1 / %d2</German>
+		<Italian>Capitals Razed: %d1 / %d2</Italian>
+		<Spanish>Capitals Razed: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CELTIA_CONTROL_GALLIA</Tag>
+		<English>Gallia: %d1 / %d2</English>
+		<French>Gallia : %d1 / %d2</French>
+		<German>Gallia: %d1 / %d2</German>
+		<Italian>Gallia: %d1 / %d2</Italian>
+		<Spanish>Gallia: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CELTIA_CONTROL_GERMANIA</Tag>
+		<English>Germania: %d1 / %d2</English>
+		<French>Germania : %d1 / %d2</French>
+		<German>Germania: %d1 / %d2</German>
+		<Italian>Germania: %d1 / %d2</Italian>
+		<Spanish>Germania: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CELTIA_CONTROL_ITALIA</Tag>
+		<English>Italia: %d1 / %d2</English>
+		<French>Italia : %d1 / %d2</French>
+		<German>Italia: %d1 / %d2</German>
+		<Italian>Italia: %d1 / %d2</Italian>
+		<Spanish>Italia: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CELTIA_CONTROL_BRITANNIA</Tag>
+		<English>Britannia: %d1 / %d2</English>
+		<French>Britannia : %d1 / %d2</French>
+		<German>Britannia: %d1 / %d2</German>
+		<Italian>Britannia: %d1 / %d2</Italian>
+		<Spanish>Britannia: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_CULTURED_CIVILIZATION</Tag>
+		<English>Most cultured civilizacion: %s1_city</English>
+		<French>Most cultured civilizacion: %s1_city</French>
+		<German>Most cultured civilizacion: %s1_city</German>
+		<Italian>Most cultured civilizacion: %s1_city</Italian>
+		<Spanish>Most cultured civilizacion: %s1_city</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_CEL1_TITLE</Tag>
 		<English>Brennus' Legacy</English>
 		<French>Brennus' Legacy</French>
@@ -6832,11 +6880,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CEL2</Tag>
-		<English>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</English>
-		<French>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</French>
-		<German>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</German>
-		<Italian>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</Italian>
-		<Spanish>Control 3 cities in Gaul and Germania and 1 in Italy, Iberia, and Britain in 1 BC</Spanish>
+		<English>Control 3 cities in Gallia and Germania and 1 in Italia, Iberia, and Britannia in 1 BC</English>
+		<French>Control 3 cities in Gallia and Germania and 1 in Italia, Iberia, and Britannia in 1 BC</French>
+		<German>Control 3 cities in Gallia and Germania and 1 in Italia, Iberia, and Britannia in 1 BC</German>
+		<Italian>Control 3 cities in Gallia and Germania and 1 in Italia, Iberia, and Britannia in 1 BC</Italian>
+		<Spanish>Control 3 cities in Gallia and Germania and 1 in Italia, Iberia, and Britannia in 1 BC</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CEL3_TITLE</Tag>

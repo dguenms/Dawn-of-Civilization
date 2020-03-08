@@ -477,7 +477,7 @@ void CvDllPythonEvents::reportCityRazed( CvCity *pCity, PlayerTypes ePlayer )
 	}
 }
 
-void CvDllPythonEvents::reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pOldCity, bool bConquest, bool bTrade)
+void CvDllPythonEvents::reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pOldCity, bool bConquest, bool bTrade, bool bCapital)
 {
 	if (preEvent())
 	{
@@ -491,6 +491,7 @@ void CvDllPythonEvents::reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes eP
 
 		eventData.add(bConquest);
 		eventData.add(bTrade);
+		eventData.add(bCapital);
 		postEvent(eventData);
 		delete pCyCity;
 	}

@@ -50,8 +50,8 @@ def onTechAcquired(iPlayer, iTech):
 dTakenTilesThreshold = {
 iCivBabylonia : 14,
 iCivCarthage : 12,
+iCivCeltia : 20,
 iCivVietnam : 14,
-iCivKorea : 20,
 iCivMaya : 12,
 iCivKorea : 20,
 iCivByzantium : 10,

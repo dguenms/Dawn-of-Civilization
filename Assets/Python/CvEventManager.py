@@ -957,7 +957,7 @@ class CvEventManager(object):
 		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
 	## Platy Builder ##
 		'City Acquired'
-		iPreviousOwner,iNewOwner,pCity,bConquest,bTrade = argsList
+		iPreviousOwner,iNewOwner,pCity,bConquest,bTrade,bCapital = argsList
 		CvUtil.pyPrint('City Acquired Event: %s' %(pCity.getName()))
 	
 	def onCityAcquiredAndKept(self, argsList):

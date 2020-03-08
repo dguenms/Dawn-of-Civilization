@@ -43,7 +43,7 @@ public:
 
 	virtual void cityBuilt(CvCity *pCity) = 0;
 	virtual void cityRazed(CvCity *pCity, PlayerTypes ePlayer) = 0;
-	virtual void cityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pCity, bool bConquest, bool bTrade) = 0;
+	virtual void cityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pCity, bool bConquest, bool bTrade, bCapital) = 0;
 	virtual void cityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity) = 0;
 	virtual void cityLost(CvCity *pCity) = 0;
 	virtual void cultureExpansion( CvCity *pCity, PlayerTypes ePlayer) = 0;

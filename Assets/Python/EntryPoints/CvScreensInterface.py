@@ -1250,7 +1250,24 @@ def getUHVTileInfo(argsList):
 			return 85
 			
 	elif iPlayer == iHungary:
-		if gc.getMap().plot(x, y).getRegionID() in [rIberia, rEurope, rItaly, rBalkans]: return 29
+		if gc.getMap().plot(x, y).getRegionID() in [rIberia, rEurope, rItaly, rBalkans]: 
+			return 29
+			
+	elif iPlayer == iCeltia:
+		if utils.isPlotInArea((x, y), vic.tFranceTL, Areas.tNormalArea[iFrance][1]) or (x, y) == (56, 46):
+			return 89
+			
+		if utils.isPlotInArea((x, y), vic.tGermaniaTL, vic.tGermaniaBR):
+			return 90
+			
+		if gc.getMap().plot(x, y).getRegionID() == rItaly:
+			return 91
+			
+		if gc.getMap().plot(x, y).getRegionID() == rBritain:
+			return 92
+			
+		if gc.getMap().plot(x, y).getRegionID() == rIberia:
+			return 8
 			
 		# continue with 87
 	return -1

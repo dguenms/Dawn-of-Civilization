@@ -67,7 +67,7 @@ public:
 
 	void cityBuilt(CvCity *pCity);
 	void cityRazed(CvCity *pCity, PlayerTypes ePlayer);
-	void cityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pCity, bool bConquest, bool bTrade);
+	void cityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pCity, bool bConquest, bool bTrade, bool bCapital);
 	void cityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void cityLost(CvCity *pCity);
 	void cultureExpansion( CvCity *pCity, PlayerTypes ePlayer);

@@ -305,11 +305,21 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=8
-	LeaderType=LEADER_BRENNUS
+	LeaderType=LEADER_COLLINS
+	CivDesc=TXT_KEY_CIV_CELTIA_IRELAND_DESC
+	CivShortDesc=TXT_KEY_CIV_CELTIA_IRELAND_SHORT_DESC
+	CivAdjective=TXT_KEY_CIV_CELTIA_IRELAND_ADJECTIVE
 	CivType=CIVILIZATION_CELT
 	PlayableCiv=1
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_SLAVERY
 	StartingGold=100
+	StateReligion=RELIGION_PROTESTANTISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
+	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
+	AttitudePlayer=34, AttitudeExtra=-4, (England)
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -639,9 +649,9 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
 	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
-	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_COLONIALISM
+	AttitudePlayer=8, AttitudeExtra=-4, (Ireland)
 	AttitudePlayer=30, AttitudeExtra=-4, (France)
 	AttitudePlayer=44, AttitudeExtra=2, (Portugal)
 	AttitudePlayer=50, AttitudeExtra=-2, (Mughals)
@@ -21256,7 +21266,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=55
-	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=20,55,29,30,34,56,67,
@@ -21267,7 +21276,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=20,55,29,30,34,56,67,
@@ -21763,12 +21771,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (England)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (Ireland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (Ireland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=8, (Ireland)
 	EndUnit
 	BeginCity
-		CityOwner=34, (England)
+		CityOwner=8, (Ireland)
 		CityName=Dublin
 		CityPopulation=4
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
@@ -21778,9 +21793,9 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CATHOLIC_TEMPLE
-		ReligionType=RELIGION_CATHOLICISM
-		Player34Culture=100, (England)
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
+		Player8Culture=100, (Ireland)
 	EndCity
 	TeamReveal=20,55,29,30,34,56,67,
 EndPlot
@@ -21794,7 +21809,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=58
-	ImprovementType=IMPROVEMENT_COTTAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=20,55,29,30,34,56,67,

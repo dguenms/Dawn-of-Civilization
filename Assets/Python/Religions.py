@@ -428,6 +428,8 @@ class Religions:
 	def onTechAcquired(self, iTech, iPlayer):
 		if utils.getScenario() == i1700AD:
 			return
+		if utils.getScenario() == i600AD and gc.getGame().getGameTurn() < getTurnForYear(620):
+			return
 
 		if iTech == iAcademia:
 			if gc.getPlayer(iPlayer).getStateReligion() == iCatholicism:
