@@ -2519,6 +2519,123 @@
 			<Translate>0,0</Translate>
 			<Rotate>0</Rotate>
 		</ArtRef>
+		<!-- CINNAMON crops -->
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when worked by plantation -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::2x2_01_Sugar_Worked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when worked by plantation -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::2x2_02_Sugar_Worked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when improved but not worked by plantation -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::2x2_01_Sugar_NotWorked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when improved but not worked by plantation -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::2x2_02_Sugar_NotWorked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::2x2_01_Sugar_Normal</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::2x2_02_Sugar_Normal</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<!-- CINNAMON improvement crap -->
+		<ArtRef Name="art:CINNAMON_PLANTATION_RACK">
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:Building</Attribute>
+			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:CINNAMON_PLANTATION_RACK">
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::1x3_01_Rack_Worked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:Building</Attribute>
+			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:CINNAMON_PLANTATION_POOL">
+			<!-- worked pool -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_Pool_Spinning.nif</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+		</ArtRef>
+		<ArtRef Name="art:CINNAMON_PLANTATION_POOL">
+			<!-- unworked pool -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cinnamon/Sugar_LSystem.nif::1x1_02_Pool_NotWorked</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Rotate>0</Rotate>
+		</ArtRef>
 		<!-- Wine -->
 		<ArtRef Name="art:grapes">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Wine/Wine_L_System.nif::2x2_01_Worked</Attribute>
@@ -3513,6 +3630,126 @@
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Scalar">szBatchGroup:sugar_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<!-- Cinnamon -->
+		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
+			<!-- worked ancient cinnamon orchard -->
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">iCropArea:2</Attribute>
+			<Attribute Class="Scalar">szExtra:art:CINNAMON_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:CINNAMON_PLANTATION_RACK</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Winery/Winery.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
+			<!-- unworked ancient cinnamon orchard -->
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">iCropArea:2</Attribute>
+			<Attribute Class="Scalar">szExtra:art:CINNAMON_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:CINNAMON_PLANTATION_RACK</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Winery/Winery.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:BONUS_SPICES_CINNAMON">
+			<!-- unworked cinnamon -->
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
+			<Attribute Class="Scalar">bGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bPlace:0</Attribute>
+			<Attribute Class="Scalar">iCropArea:12</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when worked by orchard -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/cinnamon/Sugar_LSystem.nif::2x2_01_Sugar_Worked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+			<Rotate>+45</Rotate>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when worked by orchard -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/cinnamon/Sugar_LSystem.nif::2x2_02_Sugar_Worked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when improved but not worked by orchard -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/cinnamon/Sugar_LSystem.nif::2x2_01_Sugar_NotWorked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when improved but not worked by orchard -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/cinnamon/Sugar_LSystem.nif::2x2_02_Sugar_NotWorked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/cinnamon/Sugar_LSystem.nif::2x2_01_Sugar_Normal</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cinnamon_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/cinnamon/Sugar_LSystem.nif::2x2_02_Sugar_Normal</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES_CINNAMON</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cinnamon_crop</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
 			<Scale>0.8</Scale>
@@ -4623,7 +4860,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_E">
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-0.5,0</Translate>
 		</To>
@@ -4633,7 +4870,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_F">
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON</Attribute>
 		<To Name="Node_2x1">
 			<Translate>-1.5,0</Translate>
 			<Rotate>90</Rotate>
@@ -4643,7 +4880,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_F">
-		<Attribute Class="Bonus">BONUS_DYE,BONUS_SUGAR</Attribute>
+		<Attribute Class="Bonus">BONUS_DYE,BONUS_SUGAR,BONUS_SPICES_CINNAMON</Attribute>
 		<Attribute Class="Scalar">bNotBFS:1</Attribute>
 		<To Name="Node_2x1">
 			<Translate>-1.5,0</Translate>
@@ -4697,7 +4934,7 @@
 	</LProduction>
 	<LProduction From="Node_2x2">
 		<Attribute Class="Improvement">NO_IMPROVEMENT</Attribute>
-		<Attribute Class="Bonus">BONUS_SILK,BONUS_DYE,BONUS_SPICES,BONUS_SUGAR,BONUS_CORN,BONUS_MILLET,BONUS_COTTON,BONUS_COFFEE,BONUS_TEA,BONUS_TOBACCO,BONUS_OLIVES,BONUS_SPICES_NUTMEG,BONUS_COCOA,BONUS_RUBBER,BONUS_OPIUM</Attribute>
+		<Attribute Class="Bonus">BONUS_SILK,BONUS_DYE,BONUS_SPICES,BONUS_SUGAR,BONUS_SPICES_CINNAMON,BONUS_CORN,BONUS_MILLET,BONUS_COTTON,BONUS_COFFEE,BONUS_TEA,BONUS_TOBACCO,BONUS_OLIVES,BONUS_SPICES_NUTMEG,BONUS_COCOA,BONUS_RUBBER,BONUS_OPIUM</Attribute>
 		<To Name="BLeaf_2x2"/>
 	</LProduction>
 	<LProduction From="Node_2x2">
@@ -4922,7 +5159,7 @@
 	</LProduction>
 	<!-- input=PlotBuilder_Productions/Node_6x2_03.bmp -->
 	<LProduction From="Node_6x2">
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SILK,!BONUS_SUGAR,!BONUS_RUBBER</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SILK,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON,!BONUS_RUBBER</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-1.500000,0.000000</Translate>
 		</To>
@@ -5062,7 +5299,7 @@
 	<!-- input=PlotBuilder_Productions/Node_6x6_05.bmp -->
 	<LProduction From="Node_6x6">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON</Attribute>
 		<To Name="Node_4x2">
 			<Translate>-2.000000,-1.000000</Translate>
 			<Rotate>90</Rotate>

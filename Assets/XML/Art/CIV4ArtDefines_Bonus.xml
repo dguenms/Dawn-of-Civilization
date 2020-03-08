@@ -505,6 +505,15 @@
 			<FontButtonIndex>20</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_SPICES_CINNAMON</Type>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.3</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Cinnamon/Sugar.nif</NIF>
+			<KFM>Art/Terrain/Resources/Cinnamon/Sugar.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/cinnamon.dds</Button>
+			<FontButtonIndex>29</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_SPICES_NUTMEG</Type>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.6</fInterfaceScale>
