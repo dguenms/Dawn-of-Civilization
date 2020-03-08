@@ -149,13 +149,13 @@ class CvRFCEventHandler:
 					for city in utils.getCityList(iEngland):
 						if city.plot().getRegionID() == rBritain:
 							if city.getY >= 48:
-								setReborn(iEngland, True)
+								utils.setReborn(iEngland, True)
 				# If in Scotland look for a city in Ireland
 				elif city.getY() >= 48:
 					for city in utils.getCityList(iEngland):
 						if city.plot().getRegionID() == rBritain:
 							if city.getX() <= 50:
-								setReborn(iEngland, True)
+								utils.setReborn(iEngland, True)
 		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:
