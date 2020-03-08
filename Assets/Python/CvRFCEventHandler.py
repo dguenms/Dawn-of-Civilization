@@ -141,15 +141,21 @@ class CvRFCEventHandler:
 		if iPlayer == iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
 		
-		# England's core extends if they own at least one city either Scotland or Ireland
+		# England's core extends if they own at least one city in both Scotland and Ireland
 		if iPlayer == iEngland:
 			if city.getRegionID() == rBritain:
 				# If in Ireland look for a city in Scotland
 				if city.getX() <= 50:
-					utils.setReborn(iEngland, True)
+					for city in utils.getCityList(iEngland):
+						if city.plot().getRegionID() == rBritain:
+							if city.getY >= 48:
+								setReborn(iEngland, True)
 				# If in Scotland look for a city in Ireland
 				elif city.getY() >= 48:
-					utils.setReborn(iEngland, True)
+					for city in utils.getCityList(iEngland):
+						if city.plot().getRegionID() == rBritain:
+							if city.getX() <= 50:
+								setReborn(iEngland, True)
 		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:
