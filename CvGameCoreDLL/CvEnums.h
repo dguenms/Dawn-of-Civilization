@@ -3415,4 +3415,10 @@ enum RegionSpreadTypes
 	NUM_REGION_SPREAD_TYPES,
 };
 
+// Leoreth
+enum PeriodTypes
+{
+	NO_PERIOD = -1,
+};
+
 #endif	// CVENUMS_h
