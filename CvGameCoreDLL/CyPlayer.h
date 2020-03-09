@@ -598,6 +598,8 @@ public:
 	void launch(int iVictory);
 	bool isNoTemporaryUnhappiness();
 	void setAlive(bool bNewValue);
+	void setPeriod(int iPeriod);
+	int getPeriod();
 
 private:
 	CvPlayer* m_pPlayer;

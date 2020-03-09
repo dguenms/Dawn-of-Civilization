@@ -2719,3 +2719,13 @@ void CyPlayer::setAlive(bool bNewValue)
 		m_pPlayer->setAlive(bNewValue);
 	}
 }
+
+void CyPlayer::setPeriod(int iPeriod)
+{
+	if (m_pPlayer) m_pPlayer->setPeriod((PeriodTypes)iPeriod);
+}
+
+int CyPlayer::getPeriod()
+{
+	return m_pPlayer ? m_pPlayer->getPeriod() : -1;
+}

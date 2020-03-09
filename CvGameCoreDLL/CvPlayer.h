@@ -1362,6 +1362,9 @@ public:
 	// Leoreth
 	void verifyCommerceRates(CommerceTypes eCommerce) const;
 
+	void setPeriod(PeriodTypes ePeriod);
+	PeriodTypes getPeriod() const;
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1536,6 +1539,8 @@ protected:
 	int m_iCapitalCommerce;
 
 	int m_iFreeTechsOnDiscovery;
+
+	PeriodTypes m_ePeriod; // Leoreth
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
