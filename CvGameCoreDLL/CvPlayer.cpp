@@ -593,6 +593,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iFreeTechsOnDiscovery = 0;
 	m_eFreeTechChosen = NO_TECH;
 
+	m_ePeriod = NO_PERIOD;
+
 	m_eID = eID;
 	updateTeamType();
 	updateHuman();
@@ -18400,7 +18402,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 6
+	// Leoreth: using flag = 7
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18564,6 +18566,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eLastStateReligion);
 	pStream->Read((int*)&m_eParent);
 	pStream->Read((int*)&m_eFreeTechChosen); // Leoreth
+	if (uiFlag >= 7) pStream->Read((int*)&m_ePeriod); // Leoreth
 	updateTeamType(); //m_eTeamType not saved
 	updateHuman();
 
@@ -18946,7 +18949,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 6; // Leoreth: 5 for no resistance and no temporary unhappiness, 6 for unhappiness decay modifier
+	uint uiFlag = 7; // Leoreth: 5 for no resistance and no temporary unhappiness, 6 for unhappiness decay modifier, 7 for periods
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19108,7 +19111,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_eStartingEra); // Leoreth
 	pStream->Write(m_eLastStateReligion);
 	pStream->Write(m_eParent);
-	pStream->Write(m_eFreeTechChosen); // Leorethr
+	pStream->Write(m_eFreeTechChosen); // Leoreth
+	pStream->Write(m_ePeriod); // Leoreth
 	//m_eTeamType not saved
 
 	pStream->Write(NUM_YIELD_TYPES, m_aiSeaPlotYield);
@@ -26170,4 +26174,14 @@ void CvPlayer::changeUnhappinessDecayModifier(int iChange)
 int CvPlayer::getUnhappinessDecayModifier() const
 {
 	return m_iUnhappinessDecayModifier;
+}
+
+void CvPlayer::setPeriod(PeriodTypes ePeriod)
+{
+	m_ePeriod = ePeriod;
+}
+
+PeriodTypes CvPlayer::getPeriod() const
+{
+	return m_ePeriod;
 }

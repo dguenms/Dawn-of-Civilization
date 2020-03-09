@@ -2711,3 +2711,13 @@ bool CyPlayer::isNoTemporaryUnhappiness()
 {
 	return m_pPlayer ? m_pPlayer->isNoTemporaryUnhappiness() : false;
 }
+
+void CyPlayer::setPeriod(int iPeriod)
+{
+	if (m_pPlayer) m_pPlayer->setPeriod((PeriodTypes)iPeriod);
+}
+
+int CyPlayer::getPeriod()
+{
+	return m_pPlayer ? m_pPlayer->getPeriod() : -1;
+}
