@@ -4,10 +4,12 @@ from Core import *
 # Peak that change to hills during the game, like Bogota
 lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
 	
-def getArea(iPlayer, tRectangle, dExceptions, bReborn=None, dChangedRectangle=None, dChangedExceptions=None):
+def getArea(iPlayer, tRectangle, dExceptions, bReborn=None, dChangedRectangle=None, dChangedExceptions=None, dPeriodRectangle=None, dPeriodExceptions=None):
 	if bReborn is None: bReborn = player(iPlayer).isReborn()
 	if dChangedRectangle is None: dChangedRectangle = appenddict()
 	if dChangedExceptions is None: dChangedExceptions = appenddict()
+	if dPeriodRectangle is None: dPeriodRectangle = appenddict()
+	if dPeriodExceptions is None: dPeriodExceptions = appenddict()
 	
 	tBL, tTR = tRectangle[iPlayer]
 	lExceptions = dExceptions[iPlayer]
@@ -16,6 +18,11 @@ def getArea(iPlayer, tRectangle, dExceptions, bReborn=None, dChangedRectangle=No
 		if iPlayer in dChangedRectangle:
 			tBL, tTR = dChangedRectangle[iPlayer]
 			lExceptions = dChangedExceptions[iPlayer]
+	else:
+		iPeriod = player(iPlayer).getPeriod()
+		if iPeriod in dPeriodRectangle:
+			tBL, tTR = dPeriodRectangle[iPeriod]
+			lExceptions = dPeriodExceptions[iPeriod]
 	
 	left, bottom = tBL
 	right, top = tTR		
@@ -23,8 +30,14 @@ def getArea(iPlayer, tRectangle, dExceptions, bReborn=None, dChangedRectangle=No
 
 def getCapital(iPlayer, bReborn=None):
 	if bReborn is None: bReborn = player(iPlayer).isReborn()
+	iPeriod = player(iPlayer).getPeriod()
+	
 	if bReborn and iPlayer in dChangedCapitals:
 		return dChangedCapitals[iPlayer]
+		
+	if iPeriod in dPeriodCapitals:
+		return dPeriodCapitals[iPeriod]
+		
 	return tCapitals[iPlayer]
 	
 def getRespawnCapital(iPlayer, bReborn=None):
@@ -49,13 +62,13 @@ def getBirthExceptions(iPlayer):
 	return []
 	
 def getCoreArea(iPlayer, bReborn=None):
-	return getArea(iPlayer, tCoreArea, dCoreAreaExceptions, bReborn, dChangedCoreArea, dChangedCoreAreaExceptions)
+	return getArea(iPlayer, tCoreArea, dCoreAreaExceptions, bReborn, dChangedCoreArea, dChangedCoreAreaExceptions, dPeriodCoreArea, dPeriodCoreAreaExceptions)
 	
 def getNormalArea(iPlayer, bReborn=None):
-	return getArea(iPlayer, tNormalArea, dNormalAreaExceptions, bReborn, dChangedNormalArea, dChangedNormalAreaExceptions)
+	return getArea(iPlayer, tNormalArea, dNormalAreaExceptions, bReborn, dChangedNormalArea, None, dPeriodNormalArea, dPeriodNormalAreaExceptions)
 
 def getBroaderArea(iPlayer, bReborn=None):
-	return getArea(iPlayer, tBroaderArea, appenddict(), dChangedBroaderArea)
+	return getArea(iPlayer, tBroaderArea, appenddict(), dChangedBroaderArea, None, dPeriodBroaderArea)
 	
 def getRespawnArea(iPlayer):
 	if iPlayer in dRespawnArea: return getArea(iPlayer, dRespawnArea, appenddict())
@@ -140,15 +153,18 @@ tCapitals = (
 (30, 52), # Montreal
 )
 
+dPeriodCapitals = {
+iPeriodMing : (102, 47),	# Beijing
+iPeriodMaratha : (90, 40),	# Delhi
+iPeriodCarthage : (58, 39),	# Carthage
+iPeriodVijayanagara : (90, 30),	# Vijayanagara
+iPeriodVietnam : (101, 37),	# Hanoi
+iPeriodAustria : (62, 49),	# Vienna
+}
+
 dChangedCapitals = {
-iChina : (102, 47),	# Beijing
-iIndia : (90, 40),	# Delhi
-iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
 iMaya : (27, 29),	# Bogota (Colombia)
-iTamils : (90, 30),	# Vijayanagara
-iKhmer : (101, 37),	# Hanoi
-iHolyRome : (62, 49),	# Vienna
 }
 
 # new capital locations if changed during the game
@@ -196,9 +212,9 @@ tBirthArea = (
 ((20, 35), 	(23, 37)), 	# Maya
 ((90, 27), 	(93, 32)), 	# Tamils
 ((70, 27),	(73, 30)),	# Ethiopia
-((107, 45), 	(110, 49)), 	# Korea
+((107, 45), (110, 49)), 	# Korea
 ((64, 38), 	(74, 45)), 	# Byzantium
-((111, 41), 	(116, 49)), 	# Japan
+((111, 41), (116, 49)), 	# Japan
 ((58, 56), 	(64, 62)), 	# Vikings
 ((79, 45),	(98, 52)),	# Turks
 ((67, 30), 	(80, 40)), 	# Arabia
@@ -207,7 +223,7 @@ tBirthArea = (
 ((51, 37), 	(58, 43)), 	# Moors
 ((49, 43), 	(53, 46)), 	# Spain
 ((51, 46), 	(57, 52)), 	# France
-((100, 32), 	(103, 36)), 	# Khmer
+((100, 32), (103, 36)), 	# Khmer
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(64, 54)), 	# Holy Rome
 ((67, 50), 	(74, 58)), 	# Russia
@@ -318,27 +334,30 @@ tCoreArea = (
 ((27, 50),	(35, 52)),	# Canada
 )
 
+dPeriodCoreArea = {
+iPeriodMing : 						((99, 42),	(107, 47)),
+iPeriodModernGreece :				((65, 39), 	(69, 42)),
+iPeriodMaratha : 					((88, 33),	(91, 38)),
+iPeriodCarthage:					((54, 37),	(60, 39)),
+iPeriodByzantineConstantinople :	((67, 44),	(69, 46)),
+iPeriodMeiji : 						((111, 41),	(116, 49)),
+iPeriodSeljuks : 					((79, 37),	(85, 44)),
+iPeriodSaudi :						((73, 30),	(82, 36)),
+iPeriodMorocco : 					((51, 37),	(56, 39)),
+iPeriodSpain : 						((49, 40),	(55, 46)),
+iPeriodVietnam : 					((97, 35),	(102, 38)),
+iPeriodAustria : 					((61, 46),	(66, 51)),
+iPeriodModernItaly : 				((58, 40),	(63, 47)),
+iPeriodYuan : 						((95, 46),	(106, 52)),
+iPeriodPakistan : 					((86, 37),	(94, 43)),
+iPeriodOttomanConstantinople : 		((67, 42),	(76, 47)),
+iPeriodModernGermany : 				((58, 49),	(63, 55)),
+}
+
 dChangedCoreArea = appenddict({
-iChina : 	((99, 42),	(107, 47)),
-iGreece :	((65, 39), 	(69, 42)),
-iIndia : 	((88, 33),	(91, 38)),
-iPhoenicia:	((54, 37),	(60, 39)),
 iPersia:	((79, 38), 	(82, 42)), 	# Iran
 iMaya : 	((24, 26),	(31, 32)),	# Colombia
-iByzantium :	((67, 44),	(69, 46)),
-iJapan : 	((111, 41),	(116, 49)),
-iTurks : 	((79, 37),	(85, 44)),
-iArabia :	((73, 30),	(82, 36)),
-iMoors : 	((51, 37),	(56, 39)),
-iSpain : 	((49, 40),	(55, 46)),
-iKhmer : 	((97, 35),	(102, 38)),
-iHolyRome : 	((61, 46),	(66, 51)),
-iItaly : 	((58, 40),	(63, 47)),
-iMongolia : 	((95, 46),	(106, 52)),
 iAztecs : 	((16, 35),	(19, 40)),	# Mexico
-iMughals : 	((86, 37),	(94, 43)),
-iOttomans : 	((67, 42),	(76, 47)),
-iGermany : 	((58, 49),	(63, 55)),
 })
 
 dCoreAreaExceptions = appenddict({
@@ -364,18 +383,21 @@ iArgentina : [(35, 12)],
 iCanada : [(29, 50), (30, 50), (31, 50), (32, 50), (32, 51)],
 })
 
+dPeriodCoreAreaExceptions = appenddict({
+iPeriodMing : [(99, 46), (99, 47), (106, 47)],
+iPeriodModernGreece : [(64, 45), (65, 45), (66, 46)],
+iPeriodSpain : [(49, 41), (49, 42), (49, 43), (49, 44), (50, 42), (50, 43), (50, 44), (55, 46)],
+iPeriodVietnam : [(104, 39)],
+iPeriodAustria : [(61, 51), (64, 51), (65, 51), (66, 51)],
+iPeriodModernItaly : [(63, 46), (63, 47)],
+iPeriodPakistan : [(92, 43), (93, 43), (94, 42), (94, 43)],
+iPeriodOttomanConstantinople : [(67, 42), (70, 42), (71, 42), (73, 42), (74, 42), (75, 42)],
+iPeriodModernGermany : [(58, 52), (58, 53), (58, 54), (61, 49), (61, 50), (62, 49), (62, 50), (62, 51), (63, 49), (63, 50), (63, 51)],
+})
+
 dChangedCoreAreaExceptions = appenddict({
-iChina : [(99, 46), (99, 47), (106, 47)],
-iGreece : [(64, 45), (65, 45), (66, 46)],
 iMaya : [(30, 26), (30, 27), (30, 28), (30, 29), (31, 26), (31, 27)], # Colombia
-iSpain : [(49, 41), (49, 42), (49, 43), (49, 44), (50, 42), (50, 43), (50, 44), (55, 46)],
-iKhmer : [(104, 39)],
-iHolyRome : [(61, 51), (64, 51), (65, 51), (66, 51)],
-iItaly : [(63, 46), (63, 47)],
 iAztecs : [(19, 40)], # Mexico
-iMughals : [(92, 43), (93, 43), (94, 42), (94, 43)],
-iOttomans : [(67, 42), (70, 42), (71, 42), (73, 42), (74, 42), (75, 42)],
-iGermany : [(58, 52), (58, 53), (58, 54), (61, 49), (61, 50), (62, 49), (62, 50), (62, 51), (63, 49), (63, 50), (63, 51)],
 })
 
 ### Normal Area ###
@@ -428,12 +450,15 @@ tNormalArea = (
 (( 8, 50), 	(37, 67)), 	# Canada
 )
 
+dPeriodNormalArea = {
+iPeriodMaratha : 	((96, 42),	(97, 42)),
+iPeriodCarthage :	((71, 39),	(74, 41)),
+iPeriodSaudi : 		((73, 30),	(82, 38)),
+iPeriodAustria :	((61, 46),	(66, 50)),
+}
+
 dChangedNormalArea = appenddict({
-iIndia : 	((96, 42),	(97, 42)),
-iCarthage : 	((71, 39),	(74, 41)),
-iMaya : 	((24, 26),	(29, 32)), # Colombia
-iArabia : 	((73, 30),	(82, 38)),
-iHolyRome : 	((61, 46),	(66, 50)),
+iMaya :	((24, 26),	(29, 32)), # Colombia
 })
 
 dNormalAreaExceptions = appenddict({
@@ -460,8 +485,8 @@ iArgentina : [(35, 12), (35, 13), (36, 12), (36, 13), (36, 14), (36, 15)],
 iCanada : [(11,50), (12,50), (13,50), (14,50), (16,50), (17,50), (18,50), (19,50), (20,50), (21,50), (22,50), (23,50), (24,50), (25,50), (29,50), (30,50), (31,50), (32,50), (32,51), (8,59), (8,60), (8,61), (8,62), (8,63), (8,64), (8,65), (9,59), (9,60), (9,61), (9,62), (9,63), (9,64), (9,65), (37,66), (37,67)],
 })
 
-dChangedNormalAreaExceptions = appenddict({
-iChina : [(99, 49), (100, 49), (101, 49), (99, 50), (100, 50), (101, 50), (102, 50)],
+dPeriodNormalAreaExceptions = appenddict({
+iPeriodMing : [(99, 49), (100, 49), (101, 49), (99, 50), (100, 50), (101, 50), (102, 50)],
 })
 
 ### Broader Area ###
@@ -514,11 +539,14 @@ tBroaderArea = (
 (( 8, 50), 	(37, 67)), 	# Canada
 )
 
+dPeriodBroaderArea = {
+iPeriodByzantineConstantinople : 	((64, 38),	(74, 45)),
+iPeriodAustria :	((61, 46),	(66, 50)),
+iPeriodPakistan :	((84, 37),	(94, 43)),
+}
+
 dChangedBroaderArea = {
 iMaya :		((33, 32),	(33, 32)),	# Colombia
-iByzantium : 	((64, 38),	(74, 45)),
-iHolyRome :	((61, 46),	(66, 50)),
-iMughals :	((84, 37),	(94, 43)),
 }
 
 ### Respawn area ###

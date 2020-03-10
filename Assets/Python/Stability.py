@@ -9,6 +9,7 @@ from operator import itemgetter
 import math
 import Areas
 import Victory as vic
+import Periods as periods
 
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
@@ -269,8 +270,7 @@ def checkLostCoreCollapse(iPlayer):
 	
 	# completely pushed out of core: collapse
 	if len(lCities) == 0:
-		if iPlayer in [iPhoenicia, iKhmer] and not player(iPlayer).isReborn():
-			pPlayer.setReborn(True)
+		if periods.evacuate(iPlayer):
 			return
 	
 		debug('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
@@ -550,14 +550,12 @@ def completeCollapse(iPlayer):
 	player(iPlayer).killUnits()
 	vic.resetAll(iPlayer)
 	data.players[iPlayer].iLastTurnAlive = turn()
+	
+	periods.onCollapse(iPlayer)
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == iByzantium:
 		removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
-		
-	# Chinese collapse: Mongolia's core moves south
-	if iPlayer == iChina:
-		setReborn(iMongolia, True)
 		
 	debug('Complete collapse: ' + name(iPlayer))
 	
@@ -1636,23 +1634,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	convertBackCulture(iPlayer)
 	
 	# change the cores of some civs on respawn
-	if iPlayer == iGreece:
-		setReborn(iGreece, True)
-		
-	elif iPlayer == iChina:
-		if year() > year(tBirth[iMongolia]):
-			setReborn(iChina, True)
-			
-	elif iPlayer == iIndia:
-		setReborn(iIndia, year() < year(1900))
-		
-	elif iPlayer == iArabia:
-		setReborn(iArabia, True)
-	
-		
-	# others revert to their old cores instead
-	if iPlayer in [iArabia, iMongolia]:
-		setReborn(iPlayer, False)
+	periods.onResurrection(iPlayer)
 	
 	# resurrection leaders
 	if iPlayer in resurrectionLeaders:
