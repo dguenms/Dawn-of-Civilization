@@ -1,5 +1,6 @@
 from CvPythonExtensions import *
 from Consts import *
+from Core import *
 from RFCUtils import *
 import Popup as PyPopup
 import Areas
@@ -314,7 +315,7 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 	bSettlerValueChanged = bForce
 	if not bSettlerValueChanged:
 		for plot in plots.all():
-			if plot.getSettlerValue(iPlayer) != SettlerMaps.getMapValue(iCiv, plot.getX(), plot.getY()):
+			if plot.getSettlerValue(iPlayer) != SettlerMaps.getMapValue(iPlayer, location(plot)):
 				bSettlerValueChanged = True
 				break
 	if bSettlerValueChanged:
@@ -360,7 +361,7 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 	bWarMapChanged = bForce
 	if not bWarMapChanged:
 		for plot in plots.all():
-			if plot.getWarValue(iPlayer) != WarMaps.getMapValue(iCiv, plot.getX(), plot.getY()):
+			if plot.getWarValue(iPlayer) != WarMaps.getMapValue(iPlayer, location(plot)):
 				bWarMapChanged = True
 				break
 	if bWarMapChanged:

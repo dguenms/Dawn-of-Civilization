@@ -19,6 +19,7 @@ import Civilizations
 import Modifiers
 import CvEspionageAdvisor
 import BugCore
+import Periods as periods
 
 from Core import *
 
@@ -253,6 +254,7 @@ class RiseAndFall:
 		self.initStartingReligions()
 		
 		Civilizations.initScenarioTechs(scenario())
+		periods.setup()
 	
 		if scenario() == i3000BC:
 			self.create4000BCstartingUnits()
@@ -270,8 +272,7 @@ class RiseAndFall:
 			self.adjust1700ADWonders()
 			self.adjust1700ADGreatPeople()
 			
-			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans]:
-				setReborn(iPlayer, True)
+			pPersia.setReborn(True)
 			
 			pChina.updateTradeRoutes()
 			
@@ -1204,6 +1205,8 @@ class RiseAndFall:
 						
 				if iIndependentCities == 0:
 					return
+		
+		periods.onBirth(iCiv)
 				
 		tCapital = Areas.getCapital(iCiv)
 				
@@ -1236,8 +1239,6 @@ class RiseAndFall:
 						tCapital = (x-1, y+1)
 						x, y = tCapital
 						plot_(x, y).setFeatureType(-1, 0)
-						
-				setReborn(iKhmer, True)
 				
 				# Prey Nokor becomes Saigon
 				saigon = city(104, 33)
@@ -2988,8 +2989,6 @@ class RiseAndFall:
 	def germanSpawn(self):
 		if stability(iHolyRome) < iStabilityShaky: data.setStabilityLevel(iHolyRome, iStabilityShaky)
 			
-		setReborn(iHolyRome, True)
-		
 		dc.nameChange(iHolyRome)
 		dc.adjectiveChange(iHolyRome)
 		

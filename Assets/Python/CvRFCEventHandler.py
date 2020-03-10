@@ -29,6 +29,7 @@ import Areas
 import Civilizations
 import AIParameters
 import GreatPeople as gp
+import Periods as periods
 
 from Core import *
 
@@ -122,6 +123,7 @@ class CvRFCEventHandler:
 		tCity = (city.getX(), city.getY())
 		
 		cnm.onCityAcquired(city, iPlayer)
+		periods.onCityAcquired(iPlayer, city, bConquest)
 		
 		if bConquest:
 			sta.onCityAcquired(city, iOwner, iPlayer)
@@ -165,16 +167,6 @@ class CvRFCEventHandler:
 				if Areas.getRespawnCapital(iPlayer) == tCity:
 					relocateCapital(iPlayer, city)
 					
-		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
-		if iPlayer == iOttomans and tCity == (68, 45):
-			setReborn(iOttomans, True)
-			
-		if iTurks in [iPlayer, iOwner]:
-			if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
-				setReborn(iTurks, True)
-			else:
-				setReborn(iTurks, False)
-					
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
@@ -198,10 +190,6 @@ class CvRFCEventHandler:
 			if iPlayer == iMaya and pMaya.isReborn():
 				if city in plots.start(tSouthCentralAmericaTL).end(tSouthCentralAmericaBR):
 					city.setOccupationTimer(0)
-					
-			# Byzantium reduced to four cities: core shrinks to Constantinople
-			if iOwner == iByzantium and player(iByzantium).getNumCities <= 4:
-				setReborn(iByzantium, True)
 					
 		if bTrade:
 			for iNationalWonder in range(iNumBuildings):
@@ -252,6 +240,8 @@ class CvRFCEventHandler:
 		city = argsList[0]
 		iOwner = city.getOwner()
 		
+		periods.onCityBuilt(city)
+		
 		if iOwner < iNumActivePlayers: 
 			cnm.onCityBuilt(city)
 			
@@ -292,9 +282,6 @@ class CvRFCEventHandler:
 						makeUnits(iCarthage, iArcher, (58, 39), 2, UnitAITypes.UNITAI_CITY_DEFENSE)
 						makeUnits(iCarthage, iNumidianCavalry, (58, 39), 3)
 						makeUnits(iCarthage, iWarElephant, (58, 39), 2, UnitAITypes.UNITAI_CITY_COUNTER)
-					
-				if getOwnedCoreCities(iCarthage) > 0:
-					setReborn(iCarthage, True)
 				
 		if iOwner == iByzantium and location(city) == Areas.getCapital(iByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
@@ -400,7 +387,7 @@ class CvRFCEventHandler:
 			captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
 		elif iLosingPlayer == iNative:
-			if iWinningPlayer not in lCivBioNewWorld or True in data.lFirstContactConquerors:
+			if iWinningPlayer not in lCivBioNewWorld or any(data.lFirstContactConquerors):
 				if player(iWinningPlayer).isSlavery() or player(iWinningPlayer).isColonialSlavery():
 					if pWinningUnit.getUnitType() == iBandeirante:
 						captureUnit(pLosingUnit, pWinningUnit, iSlave, 100)
@@ -451,14 +438,8 @@ class CvRFCEventHandler:
 		if bCapitulated:
 			sta.onVassalState(iMaster, iVassal)
 		
-		if iVassal == iInca:
-			setReborn(iInca, True)
-			
-		# move Mongolia's core south in case they vassalize China
-		if bCapitulated and iVassal == iChina and iMaster == iMongolia:
-			setReborn(iMongolia, True)
-		
 		dc.onVassalState(iMaster, iVassal)
+		periods.onVassalState(iMaster, iVassal, bCapitulated)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'
@@ -567,12 +548,9 @@ class CvRFCEventHandler:
 		if iBuildingType == iPalace:
 			sta.onPalaceMoved(iOwner)
 			dc.onPalaceMoved(iOwner)
+			periods.onPalaceMoved(city)
 			
 			if city.isHasRealBuilding(iAdministrativeCenter): city.setHasRealBuilding(iAdministrativeCenter, False)
-			
-			# Leoreth: in case human Phoenicia moves palace to Carthage
-			if iOwner == iCarthage and tCity == (58, 39):
-				setReborn(iCarthage, True)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == iPorcelainTower:
@@ -726,6 +704,7 @@ class CvRFCEventHandler:
 		
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
+		periods.onTechAcquired(iPlayer, iEra)
 
 		if iGameTurn > year(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
@@ -778,30 +757,6 @@ class CvRFCEventHandler:
 				for city in cities.owner(iMaya):
 					city.changeFood(iFood)
 				message(iPlayer, 'TXT_KEY_MAYA_UP_EFFECT', infos.tech(iTech).getText(), iFood)
-				
-		# Spain's core extends when reaching the Renaissance and there are no Moors in Iberia
-		# at the same time, the Moorish core relocates to Africa
-		if iPlayer == iSpain and iEra == iRenaissance and not pSpain.isReborn():
-			bNoMoors = True
-			if pMoors.isAlive():
-				for city in cities.owner(iMoors):
-					if city.plot().getRegionID() == rIberia:
-						bNoMoors = False
-			if bNoMoors:
-				setReborn(iSpain, True)
-				setReborn(iMoors, True)
-				
-		# Italy's core extends when reaching the Industrial era
-		if iPlayer == iItaly and iEra == iIndustrial:
-			setReborn(iItaly, True)
-			
-		# Japan's core extends when reaching the Industrial era
-		if iPlayer == iJapan and iEra == iIndustrial:
-			setReborn(iJapan, True)
-			
-		# Germany's core shrinks when reaching the Digital era
-		if iPlayer == iGermany and iEra == iDigital:
-			setReborn(iGermany, True)
 		
 
 	def onPreSave(self, argsList):

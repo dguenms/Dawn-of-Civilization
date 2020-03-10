@@ -1010,8 +1010,8 @@ def setReborn(iPlayer, bReborn):
 	pPlayer.setReborn(bReborn)
 	
 	Areas.updateCore(iPlayer)
-	SettlerMaps.updateMap(iPlayer, bReborn)
-	WarMaps.updateMap(iPlayer, bReborn)
+	SettlerMaps.updateMap(iPlayer)
+	WarMaps.updateMap(iPlayer)
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
 def toggleStabilityOverlay(iPlayer = -1):

@@ -48,7 +48,7 @@ class Resources:
 				self.notifyResource(iOwner, city, iX, iY, iBonus, createTextKey)
 					
 	def notifyResource(self, iPlayer, city, iX, iY, iBonus, textKey):
-		if city.isNone(): return
+		if not city: return
 		
 		if infos.bonus(iBonus).getTechReveal() == -1 or team(iPlayer).isHasTech(infos.bonus(iBonus).getTechReveal()):
 			message(iPlayer, textKey, infos.bonus(iBonus).getText(), city.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.bonus(iBonus).getButton(), location=(iX, iY))
