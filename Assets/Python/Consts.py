@@ -1072,6 +1072,12 @@ rebirthLeaders = {
 	iAztecs : iJuarez,
 }
 
+iNumPeriods = 19
+(iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, iPeriodVijayanagara,
+iPeriodByzantineConstantinople, iPeriodSeljuks, iPeriodMeiji, iPeriodSaudi, iPeriodVietnam,
+iPeriodMorocco, iPeriodSpain, iPeriodAustria, iPeriodYuan, iPeriodPeru,
+iPeriodModernItaly, iPeriodPakistan, iPeriodOttomanConstantinople, iPeriodModernGermany) = range(iNumPeriods)
+
 tTradingCompanyPlotLists = (
 [(109, 33)], #Spain
 [(101, 37), (101, 36), (102, 36), (102, 35), (103, 35), (103, 34), (104, 34), (104, 33)], #France

@@ -38,7 +38,7 @@ def createMap(iPlayer, iReborn):
 			lRow = []
 			for x in range(iWorldX):
 				plot = plot_(x, y)
-				iSettlerValue = getMapValue(iCivilization, x, y)
+				iSettlerValue = getMapValue(iPlayer, (x, y))
 				bForeignCore = ((x, y) in lForeignCorePlots)
 			
 				if plot.isWater(): lRow.append(WATER)

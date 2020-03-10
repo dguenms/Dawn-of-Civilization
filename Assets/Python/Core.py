@@ -20,6 +20,9 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+# TODO: class representing maps and map segments
+
+
 def closestCity(entity, owner=PlayerTypes.NO_PLAYER, same_continent=False, coastal_only=False, skip_city=None):
 	if skip_city is None:
 		if isinstance(entity, CyCity):

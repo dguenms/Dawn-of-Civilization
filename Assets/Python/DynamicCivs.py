@@ -2169,7 +2169,7 @@ def leader(iPlayer):
 		if iEra >= iRenaissance: return iGustav
 		
 	elif iPlayer == iTurks:
-		if bResurrected or bReborn: return iTamerlane
+		if bResurrected or pTurks.getPeriod() == iPeriodSeljuks: return iTamerlane
 	
 		if year() >= year(1000): return iAlpArslan
 		
