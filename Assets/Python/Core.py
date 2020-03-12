@@ -20,7 +20,14 @@ game = gc.getGame()
 map = gc.getMap()
 
 
-# TODO: class representing maps and map segments
+def emptymap(x = iWorldX, y = iWorldY):
+	return Map([[0 for _ in range(x)] for _ in range(y)])
+
+
+def deeplist(collection):
+	if isinstance(collection, tuple):
+		return list(collection)
+	return [deeplist(element) for element in collection]
 
 
 def closestCity(entity, owner=PlayerTypes.NO_PLAYER, same_continent=False, coastal_only=False, skip_city=None):
@@ -1167,6 +1174,46 @@ class Infos:
 	
 	def era(self, identifier):
 		return gc.getEraInfo(identifier)
+
+
+class Map(object):
+
+	def __init__(self, map):
+		if isinstance(map, tuple):
+			map = deeplist(map)
+	
+		if not isinstance(map, list):
+			raise ValueError("Map argument must be list, was %s" % type(map))
+		
+		self.height = len(map)
+		
+		if self.height == 0:
+			raise ValueError("Map may not be empty")
+			
+		self.width = len(map[0])
+		
+		if not all(len(row) == self.width for row in map):
+			raise ValueError("All rows in the map must be of the same width")
+		
+		self.map = map
+		
+	def __getitem__(self, (x, y)):
+		return self.map[self.height-1-y][x]
+		
+	def __setitem__(self, (x, y), value):
+		self.map[self.height-1-y][x] = value
+		
+	def __iter__(self):
+		for x in range(self.width):
+			for y in range(self.height):
+				yield (x, y), self[x, y]
+	
+	def apply(self, map, (originX, originY) = (0, 0)):
+		if not isinstance(map, Map):
+			raise ValueError("Can only apply another Map")
+		
+		for (x, y), value in map:
+			self[originX + x, originY + y] = value
 		
 		
 plots = PlotFactory()
