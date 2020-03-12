@@ -2396,6 +2396,78 @@ class TestSpecialbuilding(TestCase):
 		self.assertEqual(building, iBuddhistCathedral)
 
 
+class TestMap(TestCase):
+
+	def setUp(self):
+		self.tiles = [[1, 2, 3],
+					  [4, 5, 6],
+					  [7, 8, 9]]
+		self.map = Map(self.tiles)
+	
+	def test_init_no_list(self):
+		self.assertRaises(ValueError, Map, 1)
+	
+	def test_init_not_empty(self):
+		self.assertRaises(ValueError, Map, [])
+	
+	def test_init_different_widths(self):
+		self.assertRaises(ValueError, Map, [[1], [2, 3]])
+	
+	def test_getitem(self):
+		self.assertEqual(self.map[0, 0], 7)
+		self.assertEqual(self.map[1, 0], 8)
+		self.assertEqual(self.map[2, 0], 9)
+		self.assertEqual(self.map[0, 1], 4)
+		self.assertEqual(self.map[1, 1], 5)
+		self.assertEqual(self.map[2, 1], 6)
+		self.assertEqual(self.map[0, 2], 1)
+		self.assertEqual(self.map[1, 2], 2)
+		self.assertEqual(self.map[2, 2], 3)
+		
+	def test_setitem(self):
+		self.map[1, 1] = 0
+		self.assertEqual(self.map[1, 1], 0)
+		
+	def test_iter(self):
+		expected_items = [((0, 0), 7), ((1, 0), 8), ((2, 0), 9), ((0, 1), 4), ((1, 1), 5), ((2, 1), 6), ((0, 2), 1), ((1, 2), 2), ((2, 2), 3)]
+		actual_items = [item for item in self.map]
+		
+		self.assertEqual(set(actual_items), set(expected_items))
+	
+	def test_apply(self):
+		otherMap = Map([[0, 0], [0, 0]])
+		
+		self.map.apply(otherMap)
+		
+		self.assertEqual(self.map[0, 0], 0)
+		self.assertEqual(self.map[0, 1], 0)
+		self.assertEqual(self.map[2, 2], 3)
+		
+	def test_apply_offset(self):
+		otherMap = Map([[0, 0], [0, 0]])
+		
+		self.map.apply(otherMap, (1, 1))
+		
+		self.assertEqual(self.map[0, 0], 7)
+		self.assertEqual(self.map[1, 1], 0)
+		self.assertEqual(self.map[2, 2], 0)
+
+
+class TestDeepList(TestCase):
+
+	def test_list(self):
+		result = deeplist([1, 2, 3])
+		self.assertEqual(result, [1, 2, 3])
+		
+	def test_tuple(self):
+		result = deeplist((1, 2, 3))
+		self.assertEqual(result, [1, 2, 3])
+		
+	def test_deep_tuple(self):
+		result = deeplist(((1, 2, 3), (4, 5, 6), (7, 8, 9)))
+		self.assertEqual(result, [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+
 test_cases = [
 	TestTurn, 
 	TestInfos, 
@@ -2433,6 +2505,7 @@ test_cases = [
 	TestHuman,
 	TestIterableHelpers,
 	TestClosestCity,
+	TestMap,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
