@@ -39,8 +39,8 @@ tMinorCities = (
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (99, 38), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
-(840, (49, 56), iIndependent, '&#193;th Cliath', 1, iArcher, 2),			# Dublin
-(990, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iArcher, 2),			# Edinburgh
+(840, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iCrossbowman, 2),			# Edinburgh
+(990, (49, 56), iIndependent, '&#193;th Cliath', 1, iArcher, 2),			# Dublin
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco

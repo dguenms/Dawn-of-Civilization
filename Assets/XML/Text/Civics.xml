@@ -310,6 +310,14 @@
 		<Spanish>Extra commerce from tiles without improvement; extra commerce from camps and pastures; double production speed for Palace</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ELECTIVE_DIPLOMACY</Tag>
+		<English>[ICON_BULLET]Increased influence in the Apostolic Palace and while making peace.</English>
+		<French>[ICON_BULLET]Increased influence in the Apostolic Palace and while making peace.</French>
+		<German>[ICON_BULLET]Increased influence in the Apostolic Palace and while making peace.</German>
+		<Italian>[ICON_BULLET]Increased influence in the Apostolic Palace and while making peace.</Italian>
+		<Spanish>[ICON_BULLET]Increased influence in the Apostolic Palace and while making peace.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STATE_PARTY</Tag>
 		<English>State Party</English>
 		<French>

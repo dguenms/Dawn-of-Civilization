@@ -1164,12 +1164,8 @@ def specificName(iPlayer):
 		if iEra >= iRenaissance:
 			return "TXT_KEY_CIV_TAMILS_MYSORE"
 			
-		if isCapital(iPlayer, ["Madurai", "Thiruvananthapuram"]):
-			return capitalName(iPlayer)
-			
 		if iEra >= iMedieval:
 			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
-			
 			
 	elif iPlayer == iEthiopia:
 		if not gc.getGame().isReligionFounded(iIslam):
@@ -1586,7 +1582,7 @@ def specificAdjective(iPlayer):
 		if iReligion == iIslam:
 			if iEra in [iMedieval, iRenaissance]:
 				return "TXT_KEY_CIV_TAMILS_BAHMANI"
-	
+				
 		if iEra <= iClassical:
 			if isCapital(iPlayer, ["Madurai", "Thiruvananthapuram"]):
 				return "TXT_KEY_CIV_TAMILS_PANDYAN"
@@ -2034,9 +2030,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 			
-		if isCapital(iPlayer, ["Madurai", "Thiruvananthapuram"]):
-			return "TXT_KEY_CIV_TAMILS_PANDYA_OF"
-		
 		if iEra >= iMedieval:
 			return "TXT_KEY_KINGDOM_OF"
 		

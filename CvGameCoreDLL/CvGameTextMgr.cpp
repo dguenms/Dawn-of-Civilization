@@ -7872,6 +7872,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	// 1SDAN: Increased influence in the Apostolic Palace and while making peace
+	if (eCivic == CIVIC_ELECTIVE)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_ELECTIVE_DIPLOMACY"));
+	}
+
 	// Leoreth: ignore state religion requirements with Secularism
 	if (eCivic == CIVIC_SECULARISM)
 	{

@@ -1139,6 +1139,8 @@ int CvTeamAI::AI_endWarVal(TeamTypes eTeam) const
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 	FAssertMsg(isAtWar(eTeam), "Current AI Team instance is expected to be at war with eTeam");
 
+	bool bElective = GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_ELECTIVE;
+
 	iValue = 100;
 
 	iValue += (getNumCities() * 3);
@@ -1149,7 +1151,7 @@ int CvTeamAI::AI_endWarVal(TeamTypes eTeam) const
 
 	iValue += (GET_TEAM(eTeam).AI_getWarSuccess(getID()) * 20);
 
-	int iOurPower = std::max(1, getPower(true));
+	int iOurPower = std::max(1, int(getPower(true) * bElective ? 1.25 : 1));
 	int iTheirPower = std::max(1, GET_TEAM(eTeam).getDefensivePower());
 
 	iValue *= iTheirPower + 10;
@@ -1790,6 +1792,8 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 	CvTeam& kMasterTeam = GET_TEAM(eTeam);
 
+	bool bElective = GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_ELECTIVE;
+
 	//Rhye - start
 	//for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	for (int iLoopTeam = 0; iLoopTeam < NUM_MAJOR_PLAYERS; iLoopTeam++)
@@ -1836,7 +1840,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 			if (pCapital != NULL && GET_PLAYER(getLeaderID()).AI_isPlotThreatened(pCapital->plot(), 2))
 			{
-				if (2 * pCapital->area()->getPower(getLeaderID()) < pCapital->area()->getPower(GET_TEAM(eTeam).getLeaderID()))
+				if (2 * pCapital->area()->getPower(getLeaderID()) < int(pCapital->area()->getPower(GET_TEAM(eTeam).getLeaderID()) * bElective ? 1.25 : 1))
 				{
 					return NO_DENIAL;
 				}
@@ -1871,8 +1875,8 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 		int iTotalPower = GC.getGameINLINE().countTotalCivPower();
 		int iAveragePower = iTotalPower / std::max(1, GC.getGameINLINE().countCivTeamsAlive());
-		int iMasterPower = GET_TEAM(eTeam).getPower(false);
-		int iTotalMasterPower = GET_TEAM(eTeam).getPower(true);
+		int iMasterPower = int(GET_TEAM(eTeam).getPower(false) * bElective ? 1.25 : 1);
+		int iTotalMasterPower = int(GET_TEAM(eTeam).getPower(true) * bElective ? 1.25 : 1);
 		int iRawVassalPower = getPower(true);
 		int iVassalPower = (iRawVassalPower * (iPowerMultiplier + iPersonalityModifier / std::max(1, iMembers))) / 100;
 

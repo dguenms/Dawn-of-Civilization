@@ -99,7 +99,6 @@
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<bBuildingFoodProduction>1</bBuildingFoodProduction>
 			<UnimprovedTileYields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>

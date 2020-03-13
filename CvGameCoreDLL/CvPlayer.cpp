@@ -23095,6 +23095,12 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 			iVotes /= 100;
 		}
 	}
+	
+	// Elective: Increased influence in the Apostolic Palace and while making peace
+	if (eReligion == NO_RELIGION && getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_ELECTIVE)
+	{
+		iVotes = int(iVotes * 1.25);
+	}
 
 	//Leoreth: Holy Roman UP - disabled
 	//if (eReligion != NO_RELIGION && getID() == HOLY_ROME)
