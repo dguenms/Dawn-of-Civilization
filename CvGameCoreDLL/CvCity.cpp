@@ -10107,8 +10107,14 @@ void CvCity::changePowerYieldRateModifier(YieldTypes eIndex, int iChange)
 		m_aiPowerYieldRateModifier[eIndex] = (m_aiPowerYieldRateModifier[eIndex] + iChange);
 		FAssert(getYieldRate(eIndex) >= 0);
 
-		if (iChange > 0) changePowerConsumedCount(1);
-		if (iChange < 0) changePowerConsumedCount(-1);
+		if (iChange > 0) 
+		{
+			changePowerConsumedCount(1);
+		}
+		else if (iChange < 0)
+		{
+			changePowerConsumedCount(-1);
+		}
 
 		GET_PLAYER(getOwnerINLINE()).invalidateYieldRankCache(eIndex);
 
@@ -11692,8 +11698,14 @@ void CvCity::changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange)
 	{
 		m_aiPowerCommerceRateModifier[eIndex] = (m_aiPowerCommerceRateModifier[eIndex] + iChange);
 
-		if (iChange > 0) changePowerConsumedCount(1);
-		if (iChange < 0) changePowerConsumedCount(-1);
+		if (iChange > 0) 
+		{
+			changePowerConsumedCount(1);
+		}
+		else if (iChange < 0)
+		{
+			changePowerConsumedCount(-1);
+		}
 
 		updateCommerce(eIndex);
 
