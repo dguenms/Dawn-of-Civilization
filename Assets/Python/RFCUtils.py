@@ -73,8 +73,8 @@ def isDefenderUnit(unit):
 	return False
 
 # other utils functions
-def checkUnitsInEnemyTerritory(iCiv1, iCiv2):
-	return units.owner(iCiv1).any(lambda u: plot(u).getOwner() == iCiv2)
+def checkUnitsInEnemyTerritory(iPlayer1, iPlayer2):
+	return units.owner(iPlayer1).any(lambda u: plot(u).getOwner() == iPlayer2)
 
 # used: AIWars
 def restorePeaceAI(iMinorCiv, bOpenBorders):
@@ -130,9 +130,9 @@ def flipUnitsInCityBefore(tCityPlot, iNewOwner, iOldOwner):
 	data.lFlippingUnits = lFlippingUnits
 
 # used: RFCUtils, RiseAndFall, UniquePowers
-def flipUnitsInCityAfter(tCityPlot, iCiv):
+def flipUnitsInCityAfter(tCityPlot, iPlayer):
 	for iUnitType in data.lFlippingUnits:
-		makeUnit(iCiv, iUnitType, tCityPlot)
+		makeUnit(iPlayer, iUnitType, tCityPlot)
 		
 	data.lFlippingUnits = []
 
@@ -307,8 +307,8 @@ def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 			plot.setOwner(iPlayer)
 
 # used: DynamicCivs
-def getMaster(iCiv):
-	masters = players.all().where(lambda p: team(iCiv).isVassal(p))	
+def getMaster(iPlayer):
+	masters = players.all().where(lambda p: team(iPlayer).isVassal(p))	
 	if masters:
 		return masters.first()
 		
@@ -375,8 +375,8 @@ def createGarrisons(tCityPlot, iNewOwner, iNumUnits):
 	makeUnits(iNewOwner, iUnitType, tCityPlot, iNumUnits)
 
 # used: RiseAndFall, Stability
-def clearPlague(iCiv):
-	for city in cities.owner(iCiv).building(iPlague):
+def clearPlague(iPlayer):
+	for city in cities.owner(iPlayer).building(iPlague):
 		city.setHasRealBuilding(iPlague, False)
 
 # used: RiseAndFall
@@ -490,13 +490,13 @@ def ownedCityPlots(tCoords, iOwner):
 	return city and city.getOwner() == iOwner
 
 # used: RiseAndFall
-def clearCatapult(iCiv):
+def clearCatapult(iPlayer):
 	catapult = units.at(0, 0).first()
 	if catapult:
-		catapult.kill(False, iCiv)
+		catapult.kill(False, -1)
 		
 	for plot in plots.surrounding((0, 0), radius=2):
-		plot.setRevealed(iCiv, False, True, -1)
+		plot.setRevealed(iPlayer, False, True, -1)
 
 # used: RFCUtils, RiseAndFall
 # TODO: remove plots.of
@@ -807,8 +807,8 @@ def isPastBirth(iPlayer):
 	return year() >= year(tBirth[iPlayer])
 	
 # used: Congresses, Stability
-def isNeighbor(iCiv1, iCiv2):
-	return game.isNeighbors(iCiv1, iCiv2)
+def isNeighbor(iPlayer1, iPlayer2):
+	return game.isNeighbors(iPlayer1, iPlayer2)
 		
 # used: Stability
 def isGreatBuilding(iBuilding):

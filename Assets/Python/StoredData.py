@@ -148,10 +148,15 @@ class GameData:
 	def setup(self):
 		self.players = [PlayerData(i) for i in range(iNumTotalPlayersB)]
 		
+		# Slots
+		
+		# set the default values for now, once slots become untied this should be set and kept updated on spawn
+		# already make it dynamic because rebirths will change things
+		self.dSlots = dict((iCiv, iSlot) for iSlot, iCiv in enumerate(lCivOrder))
+		
 		# Rise and Fall
 
 		self.lTempEvents = []
-		self.lNewCivs = []
 		self.lTempPlots = []
 		self.lTimedConquests = []
 		
@@ -166,8 +171,8 @@ class GameData:
 		self.lCheatersCheck = [0, -1]
 		
 		self.iRespawnCiv = -1
-		self.iNewCivFlip = -1
-		self.iOldCivFlip = -1
+		self.iFlipNewPlayer = -1
+		self.iFlipNewPlayer = -1
 		self.iOttomanSpawnTurn = -1
 		
 		self.iSpawnWar = 0
@@ -208,7 +213,7 @@ class GameData:
 		self.iGlobalWarDefender = -1
 		
 		self.iCongressTurns = 8
-		self.iCivsWithNationalism = 0
+		self.iPlayersWithNationalism = 0
 		
 		self.currentCongress = None
 		
@@ -274,11 +279,11 @@ class GameData:
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
 		
-	def setPlayerEnabled(self, iPlayer, bNewValue):
-		self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)] = bNewValue
+	def setCivEnabled(self, iCiv, bNewValue):
+		self.lPlayerEnabled[lSecondaryCivs.index(iCiv)] = bNewValue
 		
-	def isPlayerEnabled(self, iPlayer):
-		return self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)]
+	def isCivEnabled(self, iCiv):
+		return self.lPlayerEnabled[lSecondaryCivs.index(iCiv)]
 		
 	def resetStability(self, iPlayer):
 		players[iPlayer].resetStability()
@@ -298,12 +303,6 @@ class GameData:
 	
 	def setSecedingCities(self, iPlayer, lCities):
 		self.dSecedingCities[iPlayer] = [city.getID() for city in lCities]
-		
-	def getNewCiv(self):
-		return self.lNewCivs.pop()
-	
-	def addNewCiv(self, iCiv):
-		self.lNewCivs.append(iCiv)
 		
 	def isFirstContactMongols(self, iPlayer):
 		return self.lFirstContactMongols[lMongolCivs.index(iPlayer)]

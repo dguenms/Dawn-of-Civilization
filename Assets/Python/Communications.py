@@ -13,67 +13,67 @@ gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
 #scrambled pools
-tPool1 = (iEgypt, -1, -1, -1, -1, -1,
-	iChina, -1, -1, -1, -1, -1,
-	iBabylonia, -1, -1, -1, -1, -1,
-	iGreece, -1, -1, -1, -1, -1,
-	iIndia, -1, -1, -1, -1, -1)
+tPool1 = (iCivEgypt, -1, -1, -1, -1, -1,
+	iCivChina, -1, -1, -1, -1, -1,
+	iCivBabylonia, -1, -1, -1, -1, -1,
+	iCivGreece, -1, -1, -1, -1, -1,
+	iCivIndia, -1, -1, -1, -1, -1)
 
-tPool2 = (iEgypt, -1, 
-	iCarthage, -1,
-	iChina, -1,
-	iRome, -1,
-	iBabylonia, iMaya,
-	iGreece, -1,
-	iIndia, iEthiopia,
-	iJapan, -1,	    
-	iPersia, -1)
+tPool2 = (iCivEgypt, -1, 
+	iCivCarthage, -1,
+	iCivChina, -1,
+	iCivRome, -1,
+	iCivBabylonia, iCivMaya,
+	iCivGreece, -1,
+	iCivIndia, iCivEthiopia,
+	iCivJapan, -1,	    
+	iCivPersia, -1)
 
 
-tPool3 = (iEgypt,  
-	iOttomans,
-	iEngland,
-	iInca,
-	iCarthage,
-	iRussia,
-	iChina,
-	iRome,	
-	iVikings,
-	iTurks,
-	iBabylonia,
-	iAztecs,
-	iEthiopia,
-	iNetherlands,
-	iItaly,
-	iMongolia,
-	iKhmer,
-	iIndonesia,
-	iSpain,
-	iGreece,
-	iMali,
-	iMaya,
-	iHolyRome,
-	iIndia,
-	iAmerica,
-	iPortugal,	
-	iJapan,
-	iPersia,
-	iFrance,
-	iByzantium,
-	iKorea,
-	iMughals,
-	iGermany,
-	iThailand,
-	iTamils,
-	iPoland,
-	iMoors,
-	iCongo,
-	iTibet,
-	iBrazil,
-	iArgentina,
-	iCanada,
-	iPolynesia,
-	iHarappa)
+tPool3 = (iCivEgypt,  
+	iCivOttomans,
+	iCivEngland,
+	iCivInca,
+	iCivCarthage,
+	iCivRussia,
+	iCivChina,
+	iCivRome,	
+	iCivVikings,
+	iCivTurks,
+	iCivBabylonia,
+	iCivAztecs,
+	iCivEthiopia,
+	iCivNetherlands,
+	iCivItaly,
+	iCivMongols,
+	iCivKhmer,
+	iCivIndonesia,
+	iCivSpain,
+	iCivGreece,
+	iCivMali,
+	iCivMaya,
+	iCivHolyRome,
+	iCivIndia,
+	iCivAmerica,
+	iCivPortugal,	
+	iCivJapan,
+	iCivPersia,
+	iCivFrance,
+	iCivByzantium,
+	iCivKorea,
+	iCivMughals,
+	iCivGermany,
+	iCivThailand,
+	iCivTamils,
+	iCivPoland,
+	iCivMoors,
+	iCivCongo,
+	iCivTibet,
+	iCivBrazil,
+	iCivArgentina,
+	iCivCanada,
+	iCivPolynesia,
+	iCivHarappa)
 
 
 class Communications:
@@ -97,10 +97,12 @@ class Communications:
 			self.canDecay(iGameTurn, iCiv2)
 
 	def canDecay(self, iGameTurn, iCiv):
-		if 0 <= iCiv < iNumMajorPlayers:
-			if player(iCiv).isAlive() and iGameTurn >= year(tBirth[iCiv]+turns(15)): # edead: RFCM
-				if not team(iCiv).isHasTech(iElectricity):
-					self.decay(iCiv)
+		iPlayer = slot(iCiv)
+	
+		if 0 <= iPlayer < iNumMajorPlayers:
+			if player(iPlayer).isAlive() and iGameTurn >= year(tBirth[iPlayer]+turns(15)): # edead: RFCM
+				if not team(iPlayer).isHasTech(iElectricity):
+					self.decay(iPlayer)
 
 	def decay(self, iPlayer):
 		contacts = players.major().alive().where(lambda p: team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))

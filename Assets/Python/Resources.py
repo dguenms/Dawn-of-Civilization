@@ -69,7 +69,7 @@ class Resources:
 			self.createResource(78, 42, iCopper)
 			
 		# Tamils, 300 BC
-		elif iGameTurn == year(tBirth[iTamils])-1 and data.isPlayerEnabled(iTamils):
+		elif iGameTurn == year(tBirth[iTamils])-1 and data.isCivEnabled(iCivTamils):
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
@@ -98,7 +98,7 @@ class Resources:
 			self.removeResource(58, 37)
 			
 		# Leoreth: prepare Tibet, 630 AD
-		elif iGameTurn == year(tBirth[iTibet])-1 and data.isPlayerEnabled(iTibet):
+		elif iGameTurn == year(tBirth[iTibet])-1 and data.isCivEnabled(iCivTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
@@ -129,7 +129,7 @@ class Resources:
 			self.createResource(66, 23, iBanana) # Central Africa
 			self.createResource(64, 20, iBanana) # Central Africa
 			
-			if data.isPlayerEnabled(iCongo):
+			if data.isCivEnabled(iCivCongo):
 				self.createResource(61, 22, iCotton) # Congo
 				self.createResource(63, 19, iIvory) # Congo
 				self.createResource(61, 24, iIvory) # Cameroon
@@ -255,12 +255,12 @@ class Resources:
 			if infos.constant('PLAYER_REBIRTH_COLOMBIA') != 0:
 				self.createResource(28, 31, iIron) # Colombia
 			
-			if data.isPlayerEnabled(iArgentina):
+			if data.isCivEnabled(iCivArgentina):
 				self.createResource(31, 10, iWine) # Mendoza, Argentina
 				self.createResource(31, 6, iSheep) # Pampas, Argentina
 				self.createResource(32, 11, iIron) # Argentina
 			
-			if data.isPlayerEnabled(iBrazil):
+			if data.isCivEnabled(iCivBrazil):
 				self.createResource(36, 18, iCorn) # Sao Paulo
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 

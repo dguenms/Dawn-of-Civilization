@@ -101,40 +101,35 @@ class RiseAndFall:
 ### Popups ###
 #############
 
-	def eventApply7614(self, popupReturn):
-		iNewCiv = data.getNewCiv()
-		if popupReturn.getButtonClicked() == 0: # 1st button
-			self.handleNewCiv(iNewCiv)
-
-	def scheduleFlipPopup(self, iNewCiv, lPlots):
-		data.lTempEvents.append((iNewCiv, lPlots))
+	def scheduleFlipPopup(self, iNewPlayer, lPlots):
+		data.lTempEvents.append((iNewPlayer, lPlots))
 		self.checkFlipPopup()
 
 	def checkFlipPopup(self):
 		for tEvent in data.lTempEvents:
-			iNewCiv, lPlots = tEvent
-			self.flipPopup(iNewCiv, lPlots)
+			iNewPlayer, lPlots = tEvent
+			self.flipPopup(iNewPlayer, lPlots)
 
-	def flipPopup(self, iNewCiv, lPlots):
+	def flipPopup(self, iNewPlayer, lPlots):
 		flipText = text("TXT_KEY_FLIPMESSAGE1")
 		
-		for city in self.getConvertedCities(iNewCiv, lPlots):
+		for city in self.getConvertedCities(iNewPlayer, lPlots):
 			flipText += city.getName() + "\n"
 			
 		flipText += text("TXT_KEY_FLIPMESSAGE2")
 							
 		popup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
-		data.iNewCivFlip = iNewCiv
-		data.iOldCivFlip = human()
+		data.iFlipNewPlayer = iNewPlayer
+		data.iFlipOldPlayer = human()
 		data.lTempPlots = lPlots
 
 	def eventApply7615(self, popupReturn):
 		lPlots = data.lTempPlots
-		iNewCivFlip = data.iNewCivFlip
+		iFlipNewPlayer = data.iFlipNewPlayer
 		
-		iNumCities = player(iNewCivFlip).getNumCities()
+		iNumCities = player(iFlipNewPlayer).getNumCities()
 
-		lHumanCityList = [city for city in self.getConvertedCities(iNewCivFlip, lPlots) if city.getOwner() == human()]
+		lHumanCityList = [city for city in self.getConvertedCities(iFlipNewPlayer, lPlots) if city.getOwner() == human()]
 		
 		if popupReturn.getButtonClicked() == 0:
 			message(human(), 'TXT_KEY_FLIP_AGREED', color=iGreen)
@@ -143,29 +138,29 @@ class RiseAndFall:
 				for city in lHumanCityList:
 					tCity = (city.getX(), city.getY())
 					print ("flipping ", city.getName())
-					cultureManager(tCity, 100, iNewCivFlip, iHuman, False, False, False)
-					flipUnitsInCityBefore(tCity, iNewCivFlip, iHuman)
-					flipCity(tCity, 0, 0, iNewCivFlip, [iHuman])
-					flipUnitsInCityAfter(tCity, iNewCivFlip)
+					cultureManager(tCity, 100, iFlipNewPlayer, iHuman, False, False, False)
+					flipUnitsInCityBefore(tCity, iFlipNewPlayer, iHuman)
+					flipCity(tCity, 0, 0, iFlipNewPlayer, [iHuman])
+					flipUnitsInCityAfter(tCity, iFlipNewPlayer)
 					
-			if iNumCities == 0 and player(iNewCivFlip).getNumCities() > 0:
-				self.createStartingWorkers(iNewCivFlip, player(iNewCivFlip).getCapitalCity())
+			if iNumCities == 0 and player(iFlipNewPlayer).getNumCities() > 0:
+				self.createStartingWorkers(iFlipNewPlayer, player(iFlipNewPlayer).getCapitalCity())
 
 			#same code as Betrayal - done just once to make sure human player doesn't hold a stack just outside of the cities
 			for (x, y) in lPlots:
 				betrayalPlot = plot(x,y)
-				if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iNewCivFlip): 
+				if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iFlipNewPlayer): 
 					continue
 				
 				for unit in units.at(x, y).owner(iHuman).domain(DOMAIN_LAND):
 					if rand(100) >= iBetrayalThreshold:
 						iUnitType = unit.getUnitType()
-						unit.kill(False, iNewCivFlip)
-						makeUnit(iNewCivFlip, iUnitType, (x, y))
+						unit.kill(False, iFlipNewPlayer)
+						makeUnit(iFlipNewPlayer, iUnitType, (x, y))
 
 			if data.lCheatersCheck[0] == 0:
 				data.lCheatersCheck[0] = iCheatersPeriod
-				data.lCheatersCheck[1] = data.iNewCivFlip
+				data.lCheatersCheck[1] = data.iFlipNewPlayer
 				
 		elif popupReturn.getButtonClicked() == 1:
 			message(iHuman, 'TXT_KEY_FLIP_REFUSED', color=iGreen)
@@ -173,15 +168,15 @@ class RiseAndFall:
 			for city in lHumanCityList:
 				pPlot = plot(city)
 				oldCulture = pPlot.getCulture(iHuman)
-				pPlot.setCulture(iNewCivFlip, oldCulture/2, True)
+				pPlot.setCulture(iFlipNewPlayer, oldCulture/2, True)
 				pPlot.setCulture(iHuman, oldCulture/2, True)
 				data.iSpawnWar += 1
 				if data.iSpawnWar == 1:
-					team(iNewCivFlip).declareWar(iHuman, False, -1) ##True??
+					team(iFlipNewPlayer).declareWar(iHuman, False, -1) ##True??
 					data.iBetrayalTurns = iBetrayalPeriod
 					self.initBetrayal()
 						
-		data.lTempEvents.remove((iNewCivFlip, lPlots))
+		data.lTempEvents.remove((iFlipNewPlayer, lPlots))
 		
 		game.autosave()
 				
@@ -658,17 +653,6 @@ class RiseAndFall:
 			
 		for iPlayer, iGreatGenerals in dGreatGeneralsCreated.iteritems():
 			player(iPlayer).changeGreatGeneralsCreated(iGreatGenerals)
-
-	def setupBirthTurnModifiers(self):
-		for iCiv in range(iNumPlayers):
-			if tBirth[iCiv] > -3000 and not player(iCiv).isHuman():
-				data.players[iCiv].iBirthTurnModifier = rand(-5, 5)
-		#now make sure that no civs spawn in the same turn and cause a double "new civ" popup
-		for iCiv in range(human() + 1, iNumPlayers):
-			for j in range(iNumPlayers-1-iCiv):
-				iNextCiv = iCiv+j+1
-				if year(tBirth[iCiv]) + data.players[iCiv].iBirthTurnModifier == year(tBirth[iNextCiv]) + data.players[iNextCiv].iBirthTurnModifier:
-					data.players[iNextCiv].iBirthTurnModifier += 1
 						
 	def placeGoodyHuts(self):
 			
@@ -728,9 +712,9 @@ class RiseAndFall:
 		
 		if iGameTurn == year(tBirth[iSpain])-1:
 			if scenario() == i600AD:
-				pMassilia = city(56, 46)
+				pMassilia = city_(56, 46)
 				if pMassilia:
-					pMassilia.setCulture(pMassilia.getPlotCity().getOwner(), 1, True)
+					pMassilia.setCulture(pMassilia.getOwner(), 1, True)
 
 		# Leoreth: Turkey immediately flips independent cities in its core to avoid being pushed out of Anatolia
 		if iGameTurn == data.iOttomanSpawnTurn + 1:
@@ -856,12 +840,12 @@ class RiseAndFall:
 			sta.checkResurrection()
 			
 		# Leoreth: check for scripted rebirths
-		for iCiv in range(iNumPlayers):
-			if iCiv in dRebirth:
-				if year() == year(dRebirth[iCiv]) and not player(iCiv).isAlive():
-					self.rebirthFirstTurn(iCiv)
-				if year() == year(dRebirth[iCiv])+1 and player(iCiv).isAlive() and player(iCiv).isReborn():
-					self.rebirthSecondTurn(iCiv)
+		for iPlayer, iYear in dRebirth.items():
+			if year() == year(iYear) and not player(iPlayer).isAlive():
+				self.rebirthFirstTurn(iPlayer)
+			
+			if year() == year(iYear)+1 and player(iPlayer).isAlive() and player(iPlayer).isReborn():
+				self.rebirthSecondTurn(iPlayer)
 					
 	def endTurn(self, iPlayer):
 		for tTimedConquest in data.lTimedConquests:
@@ -873,173 +857,164 @@ class RiseAndFall:
 			
 		data.lTimedConquests = []
 
-	def rebirthFirstTurn(self, iCiv):
-		pCiv = player(iCiv)
-		teamCiv = team(iCiv)
-		if iCiv in dRebirthCiv:
-			pCiv.setCivilizationType(dRebirthCiv[iCiv])
-		Modifiers.updateModifiers(iCiv)
-		x, y = Areas.dRebirthPlot[iCiv]
-		plot = plot_(x, y)
+	def rebirthFirstTurn(self, iPlayer):
+		pPlayer = player(iPlayer)
+		pTeam = team(iPlayer)
+		iCiv = civ(iPlayer)
 		
 		# disable Mexico and Colombia
-		if iCiv == iAztecs and infos.constant('PLAYER_REBIRTH_MEXICO') == 0: return
-		if iCiv == iMaya and infos.constant('PLAYER_REBIRTH_COLOMBIA') == 0: return
+		if iCiv == iCivAztecs and infos.constant('PLAYER_REBIRTH_MEXICO') == 0: return
+		if iCiv == iCivMaya and infos.constant('PLAYER_REBIRTH_COLOMBIA') == 0: return
+		
+		if iPlayer in dRebirthCiv:
+			pPlayer.setCivilizationType(dRebirthCiv[iPlayer])
+			iCiv = civ(iPlayer)
+			
+		Modifiers.updateModifiers(iPlayer)
+		x, y = Areas.dRebirthPlot[iPlayer]
+		plot = plot_(x, y)
+		city = city_(x, y)
 		
 		# reset contacts and make peace
-		for iOtherCiv in range(iNumPlayers):
-			if iCiv != iOtherCiv:
-				teamCiv.makePeace(iOtherCiv)
-				teamCiv.cutContact(iOtherCiv)
+		for iOtherCiv in players.major().without(iPlayer):
+			pTeam.makePeace(iOtherCiv)
+			pTeam.cutContact(iOtherCiv)
 		
 		# reset diplomacy
-		pCiv.AI_reset()
+		pPlayer.AI_reset()
 		
 		# reset player espionage weights
-		player().setEspionageSpendingWeightAgainstTeam(pCiv.getTeam(), 0)
+		player().setEspionageSpendingWeightAgainstTeam(pPlayer.getTeam(), 0)
 		
 		# reset great people
-		pCiv.resetGreatPeopleCreated()
+		pPlayer.resetGreatPeopleCreated()
 		
 		# reset map visibility
 		for plot in plots.all():
-			plot.setRevealed(iCiv, False, True, -1)
+			plot.setRevealed(iPlayer, False, True, -1)
 		
 		# assign new leader
-		if iCiv in rebirthLeaders:
-			if pCiv.getLeader() != rebirthLeaders[iCiv]:
-				pCiv.setLeader(rebirthLeaders[iCiv])
+		if iPlayer in rebirthLeaders:
+			if pPlayer.getLeader() != rebirthLeaders[iPlayer]:
+				pPlayer.setLeader(rebirthLeaders[iPlayer])
 
-		message(human(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iCiv), color=iGreen)
-		setReborn(iCiv, True)
+		message(human(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen)
+		setReborn(iPlayer, True)
 		
 		# Determine whether capital location is free
-		bFree = True
-		if not isFree(iCiv, (x, y), True):
-			bFree = False
-
-		if plot.isUnit():
-			bFree = False
+		bFree = isFree(iPlayer, (x, y), True) and not plot.isUnit()
 
 		# if city present, flip it. If plot is free, found it. Else give settler.
-		if plot.isCity():
-			completeCityFlip(x, y, iCiv, plot.getPlotCity().getOwner(), 100)
+		if city:
+			completeCityFlip((x, y), iPlayer, city.getOwner(), 100)
 		else:
-			convertPlotCulture(plot, iCiv, 100, True)
+			convertPlotCulture(plot, iPlayer, 100, True)
 			if bFree:
-				pCiv.found(x,y)
+				pPlayer.found(x, y)
 			else:
-				makeUnit(iCiv, iSettler, (x, y))
+				makeUnit(iPlayer, iSettler, (x, y))
 				
 		# make sure there is a palace in the city
-		if plot.isCity():
-			capital = plot.getPlotCity()
-			if not capital.hasBuilding(iPalace):
-				capital.setHasRealBuilding(iPalace, True)
+		if city and not city.hasBuilding(iPalace):
+			city.setHasRealBuilding(iPalace, True)
 		
-		self.createRespawnUnits(iCiv, (x, y))
+		self.createRespawnUnits(iPlayer, (x, y))
 		
 		# for colonial civs, set dynamic state religion
-		if iCiv in [iAztecs, iMaya]:
-			self.setStateReligion(iCiv)
+		if iCiv in [iCivMexico, iCivColombia]:
+			self.setStateReligion(iPlayer)
 
-		self.assignTechs(iCiv)
+		self.assignTechs(iPlayer)
 		if year() >= year(tBirth[human()]):
-			startNewCivSwitchEvent(iCiv)
+			startNewCivSwitchEvent(iPlayer)
 
-		player(iCiv).setLatestRebellionTurn(year(dRebirth[iCiv]))
+		player(iPlayer).setLatestRebellionTurn(year(dRebirth[iPlayer]))
 
 		# adjust gold, civics, religion and other special settings
-		if iCiv == iPersia:
-			pPersia.setGold(600)
-			pPersia.setLastStateReligion(iIslam)
-			pPersia.setCivics(iCivicsGovernment, iMonarchy)
-			pPersia.setCivics(iCivicsLegitimacy, iVassalage)
-			pPersia.setCivics(iCivicsSociety, iSlavery)
-			pPersia.setCivics(iCivicsEconomy, iMerchantTrade)
-			pPersia.setCivics(iCivicsReligion, iTheocracy)
+		if iCiv == iCivIran:
+			pPlayer.setGold(600)
+			pPlayer.setLastStateReligion(iIslam)
+			pPlayer.setCivics(iCivicsGovernment, iMonarchy)
+			pPlayer.setCivics(iCivicsLegitimacy, iVassalage)
+			pPlayer.setCivics(iCivicsSociety, iSlavery)
+			pPlayer.setCivics(iCivicsEconomy, iMerchantTrade)
+			pPlayer.setCivics(iCivicsReligion, iTheocracy)
 			
-		elif iCiv == iAztecs:
+		elif iCiv == iCivMexico:
 			city = city_(18, 37)
 			if city:
 				if game.getBuildingClassCreatedCount(infos.building(iFloatingGardens).getBuildingClassType()) == 0:
 					city.setHasRealBuilding(iFloatingGardens, True)
 					
-				iStateReligion = pAztecs.getStateReligion()
+				iStateReligion = pPlayer.getStateReligion()
 				if iStateReligion >= 0 and city.isHasReligion(iStateReligion):
 					city.setHasRealBuilding(iMonastery + 4 * iStateReligion, True)
 			
-			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
+			cnm.updateCityNamesFound(iPlayer) # use name of the plots in their city name map
 			
-			pAztecs.setGold(500)
+			pPlayer.setGold(500)
 			
-			pAztecs.setCivics(iCivicsGovernment, iDespotism)
-			pAztecs.setCivics(iCivicsLegitimacy, iConstitution)
-			pAztecs.setCivics(iCivicsSociety, iIndividualism)
-			pAztecs.setCivics(iCivicsEconomy, iRegulatedTrade)
-			pAztecs.setCivics(iCivicsReligion, iClergy)
-			pAztecs.setCivics(iCivicsTerritory, iNationhood)
+			pPlayer.setCivics(iCivicsGovernment, iDespotism)
+			pPlayer.setCivics(iCivicsLegitimacy, iConstitution)
+			pPlayer.setCivics(iCivicsSociety, iIndividualism)
+			pPlayer.setCivics(iCivicsEconomy, iRegulatedTrade)
+			pPlayer.setCivics(iCivicsReligion, iClergy)
+			pPlayer.setCivics(iCivicsTerritory, iNationhood)
 			
-		elif iCiv == iMaya:
-			pMaya.setGold(750)
-			pMaya.setCivics(iCivicsGovernment, iDespotism)
-			pMaya.setCivics(iCivicsLegitimacy, iConstitution)
-			pMaya.setCivics(iCivicsSociety, iIndividualism)
-			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
-			pMaya.setCivics(iCivicsReligion, iClergy)
-			pMaya.setCivics(iCivicsTerritory, iNationhood)
+		elif iCiv == iCivColombia:
+			pPlayer.setGold(750)
+			pPlayer.setCivics(iCivicsGovernment, iDespotism)
+			pPlayer.setCivics(iCivicsLegitimacy, iConstitution)
+			pPlayer.setCivics(iCivicsSociety, iIndividualism)
+			pPlayer.setCivics(iCivicsEconomy, iRegulatedTrade)
+			pPlayer.setCivics(iCivicsReligion, iClergy)
+			pPlayer.setCivics(iCivicsTerritory, iNationhood)
 			plot_(28, 31).setFeatureType(-1, 0)
 		
-		dc.onCivRespawn(iCiv, [])
+		dc.onCivRespawn(iPlayer, [])
 		
-	def rebirthSecondTurn(self, iCiv):
-		lRebirthPlots = Areas.getRebirthArea(iCiv)
+	def rebirthSecondTurn(self, iPlayer):
+		iCiv = civ(iPlayer)
+	
+		lRebirthPlots = Areas.getRebirthArea(iPlayer)
 		
 		# exclude American territory for Mexico
-		lRemovedPlots = []
-		if iCiv == iAztecs:
-			for tPlot in lRebirthPlots:
-				if plot(tPlot).getOwner() == iAmerica and tPlot not in Areas.getCoreArea(iAztecs, True):
-					lRemovedPlots.append(tPlot)
-					
-		for tPlot in lRemovedPlots:
-			lRebirthPlots.remove(tPlot)
+		if iCiv == iCivMexico:
+			removedPlots = plots.of(lRebirthPlots).owner(slot(iCivAmerica)).where(lambda p: location(p) not in Areas.getCoreArea(iPlayer))
+			for plot in removedPlots:
+				lRebirthPlots.remove(location(plot))
 		
 		lCities = [city_(x, y) for x, y in lRebirthPlots if city_(x, y)]
 			
 		# remove garrisons
 		for city in lCities:
 			if city.getOwner() != human():
-				tPlot = (city.getX(), city.getY())
-				relocateGarrisons(tPlot, city.getOwner())
-				relocateSeaGarrisons(tPlot, city.getOwner())
-				#createGarrisons(tPlot, iCiv)
+				relocateGarrisons(location(city), city.getOwner())
+				relocateSeaGarrisons(location(city), city.getOwner())
 				
 		# convert cities
-		iConvertedCities, iHumanCities = self.convertSurroundingCities(iCiv, lRebirthPlots)
+		iConvertedCities, iHumanCities = self.convertSurroundingCities(iPlayer, lRebirthPlots)
 		
 		# create garrisons
 		for city in lCities:
 			if city.getOwner() == human():
-				x = city.getX()
-				y = city.getY()
-				createGarrisons((x, y), iCiv, 1)
+				createGarrisons(location(city), iPlayer, 1)
 				
 		# convert plot culture
-		self.convertSurroundingPlotCulture(iCiv, plots.of(lRebirthPlots))
+		self.convertSurroundingPlotCulture(iPlayer, plots.of(lRebirthPlots))
 		
 		# reset plague
-		data.players[iCiv].iPlagueCountdown = -10
-		clearPlague(iCiv)
+		data.players[iPlayer].iPlagueCountdown = -10
+		clearPlague(iPlayer)
 		
 		# adjust starting stability
-		data.players[iCiv].resetStability()
-		data.players[iCiv].iStabilityLevel = iStabilityStable
-		if player(iCiv).isHuman(): data.resetHumanStability()
+		data.players[iPlayer].resetStability()
+		data.players[iPlayer].iStabilityLevel = iStabilityStable
+		if player(iPlayer).isHuman(): data.resetHumanStability()
 		
 		# ask human player for flips
-		if iHumanCities > 0 and not player(iCiv).isHuman():
-			self.scheduleFlipPopup(iCiv, lRebirthPlots)
+		if iHumanCities > 0 and not player(iPlayer).isHuman():
+			self.scheduleFlipPopup(iPlayer, lRebirthPlots)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
 		return
@@ -1134,19 +1109,22 @@ class RiseAndFall:
 												break
 
 					if cityList:
-						iNewCiv = iIndependent
-						iRndNum = rand(2)
-						if iRndNum == 1:
-							iNewCiv = iIndependent2
-						if iPlayer in [iAztecs, iInca, iMaya, iEthiopia, iMali]:
-							if data.iCivsWithNationalism <= 0:
+						iNewCiv = iCivIndependent
+						if rand(2) == 1:
+							iNewCiv = iCivIndependent2
+						
+						if civ(iPlayer) in [iCivAztecs, iCivInca, iCivMaya, iCivEthiopia, iCivMali, iCivCongo]:
+							if data.iPlayersWithNationalism == 0:
 								iNewCiv = iNative
+						
+						iNewPlayer = slot(iNewCiv)
+						
 						splittingCity = random_entry(cityList)
-						tPlot = (splittingCity.getX(), splittingCity.getY())
-						cultureManager(tPlot, 50, iNewCiv, iPlayer, False, True, True)
-						flipUnitsInCityBefore(tPlot, iNewCiv, iPlayer)
-						flipCity(tPlot, 0, 0, iNewCiv, [iPlayer])   #by trade because by conquest may raze the city
-						flipUnitsInCityAfter(tPlot, iNewCiv)
+						tPlot = location(splittingCity)
+						cultureManager(tPlot, 50, iNewPlayer, iPlayer, False, True, True)
+						flipUnitsInCityBefore(tPlot, iNewPlayer, iPlayer)
+						flipCity(tPlot, False, False, iNewPlayer, [iPlayer])   #by trade because by conquest may raze the city
+						flipUnitsInCityAfter(tPlot, iNewPlayer)
 						
 						message(iPlayer, '%s %s' % (splittingCity.getName(), text('TXT_KEY_STABILITY_SECESSION')), color=iOrange)
 						
@@ -1154,48 +1132,48 @@ class RiseAndFall:
 
 
 
-	def initBirth(self, iBirthYear, iCiv): # iBirthYear is really year now, so no conversion prior to function call - edead
-		print 'init birth in: '+str(iBirthYear)
+	def initBirth(self, iBirthYear, iPlayer): # iBirthYear is really year now, so no conversion prior to function call - edead
 		iBirthYear = year(iBirthYear) # converted to turns here - edead
+		iCiv = civ(iPlayer)
 		
 		if iCiv in lSecondaryCivs:
-			if not player(iCiv).isHuman() and not data.isPlayerEnabled(iCiv):
+			if not player(iPlayer).isHuman() and not data.isCivEnabled(iCiv):
 				return
 		
-		lConditionalCivs = [iByzantium, iMughals, iOttomans, iThailand, iBrazil, iArgentina, iCanada, iItaly]
+		lConditionalCivs = [iCivByzantium, iCivMughals, iCivOttomans, iCivThailand, iCivBrazil, iCivArgentina, iCivCanada, iCivItaly]
 		
 		# Leoreth: extra checks for conditional civs
-		if iCiv in lConditionalCivs and not player(iCiv).isHuman():
+		if iCiv in lConditionalCivs and not player(iPlayer).isHuman():
 			if iCiv == iByzantium:
-				if not pRome.isAlive() or pGreece.isAlive() or (pRome.isHuman() and stability(iRome) == iStabilitySolid):
+				if not player(slot(iCivRome)).isAlive() or player(slot(iCivGreece)).isAlive() or (player(slot(iCivRome)).isHuman() and stability(slot(iCivRome)) == iStabilitySolid):
 					return
 					
-			elif iCiv == iOttomans:
+			elif iCiv == iCivOttomans:
 				tMiddleEastTL = (69, 38)
 				tMiddleEastBR = (78, 45)
-				if cities.start(tMiddleEastTL).end(tMiddleEastBR).any(lambda city: iTurks in [city.getOwner(), city.getPreviousOwner()]):
+				if cities.start(tMiddleEastTL).end(tMiddleEastBR).any(lambda city: slot(iCivTurks) in [city.getOwner(), city.getPreviousOwner()]):
 					return
 
-			elif iCiv == iThailand:
-				if not pKhmer.isHuman():
-					if stability(iKhmer) > iStabilityShaky:
+			elif iCiv == iCivThailand:
+				if not player(slot(iCivKhmer)).isHuman():
+					if stability(slot(iCivKhmer)) > iStabilityShaky:
 						return
 				else:
-					if stability(iKhmer) > iStabilityUnstable:
+					if stability(slot(iCivKhmer)) > iStabilityUnstable:
 						return
 						
-			elif iCiv in [iArgentina, iBrazil]:
-				iColonyPlayer = getColonyPlayer(iCiv)
+			elif iCiv in [iCivArgentina, iCivBrazil]:
+				iColonyPlayer = getColonyPlayer(iPlayer)
 				if iColonyPlayer < 0: return
-				elif iColonyPlayer not in [iArgentina, iBrazil]:
+				elif civ(iColonyPlayer) not in [iCivArgentina, iCivBrazil]:
 					if stability(iColonyPlayer) > iStabilityStable:
 						return
 						
-			elif iCiv == iItaly:
-				if pRome.isAlive():
+			elif iCiv == iCivItaly:
+				if player(slot(iCivRome)).isAlive():
 					return
 				
-				cityList = getCitiesInCore(iRome, False)
+				cityList = getCitiesInCore(slot(iCivRome), False)
 				
 				iIndependentCities = 0
 
@@ -1206,14 +1184,14 @@ class RiseAndFall:
 				if iIndependentCities == 0:
 					return
 		
-		periods.onBirth(iCiv)
+		periods.onBirth(iPlayer)
 				
-		tCapital = Areas.getCapital(iCiv)
+		tCapital = Areas.getCapital(iPlayer)
 				
 		x, y = tCapital
 		bCapitalSettled = False
 		
-		if iCiv == iItaly:
+		if iCiv == iCivItaly:
 			for plot in plots.surrounding(tCapital):
 				if plot.isCity():
 					bCapitalSettled = True
@@ -1221,20 +1199,18 @@ class RiseAndFall:
 					x, y = tCapital
 					break
 
-		if turn() == iBirthYear-1 + data.players[iCiv].iSpawnDelay + data.players[iCiv].iFlipsDelay:
+		if turn() == iBirthYear-1 + data.players[iPlayer].iSpawnDelay + data.players[iPlayer].iFlipsDelay:
 			if iCiv in lConditionalCivs or bCapitalSettled:
-				convertPlotCulture(plot_(x, y), iCiv, 100, True)
+				convertPlotCulture(plot_(x, y), iPlayer, 100, True)
 
-			reborn = player(iCiv).getReborn()
-			tTopLeft, tBottomRight = Areas.getBirthRectangle(iCiv)
-			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
+			tTopLeft, tBottomRight = Areas.getBirthRectangle(iPlayer)
+			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iPlayer]
 			
-			if iCiv == iThailand:
-				angkor = city(Areas.tCapitals[iKhmer])
+			if iCiv == iCivThailand:
+				angkor = city(Areas.tCapitals[slot(iKhmer)])
 				if angkor:
 					bWonder = any(angkor.isHasRealBuilding(iBuilding) for iBuilding in range(iBeginWonders, iNumBuildings))
-					if bWonder and not pThailand.isHuman():
-						print "Thais flip Angkor instead to save its wonders."
+					if bWonder and not pPlayer.isHuman():
 						angkor.setName("Ayutthaya", False)
 						tCapital = (x-1, y+1)
 						x, y = tCapital
@@ -1247,87 +1223,87 @@ class RiseAndFall:
 				
 			iPreviousOwner = plot_(x, y).getOwner()
 
-			if data.players[iCiv].iFlipsDelay == 0: #city hasn't already been founded)
+			if data.players[iPlayer].iFlipsDelay == 0: #city hasn't already been founded)
 			
 				#this may fix the -1 bug
-				if player(iCiv).isHuman():
-					for unit in units.at(x, y).notowner(iCiv):
-						unit.kill(False, iBarbarian)
+				if player(iPlayer).isHuman():
+					for unit in units.at(x, y).notowner(iPlayer):
+						unit.kill(False, -1)
 				
 				bBirthInCapital = False
 				
-				if (iCiv in lConditionalCivs and iCiv != iThailand) or bCapitalSettled:
+				if (iCiv in lConditionalCivs and iCiv != iCivThailand) or bCapitalSettled:
 					bBirthInCapital = True
 				
-				if iCiv == iOttomans:
+				if iCiv == iCivOttomans:
 					self.moveOutInvaders(tTopLeft, tBottomRight)  
 					
 				if bBirthInCapital:
-					makeUnit(iCiv, iCatapult, (0, 0))
+					makeUnit(iPlayer, iCatapult, (0, 0))
 			
 				bDeleteEverything = False
 				pCapital = plot_(x, y)
 				if pCapital.isOwned():
-					if player(iCiv).isHuman() or not player(human()).isAlive():
+					if player(iPlayer).isHuman() or not player(human()).isAlive():
 						if not (pCapital.isCity() and pCapital.getPlotCity().isHolyCity()):
 							bDeleteEverything = True
 							print ("bDeleteEverything 1")
 					else:
 						bDeleteEverything = True
 						for pPlot in plots.surrounding(tCapital):
-							if (pPlot.isCity() and (pPlot.getPlotCity().getOwner() == human() or pPlot.getPlotCity().isHolyCity())) or iCiv == iOttomans:
+							if (pPlot.isCity() and (pPlot.getPlotCity().getOwner() == human() or pPlot.getPlotCity().isHolyCity())) or iCiv == iCivOttomans:
 								bDeleteEverything = False
 								print ("bDeleteEverything 2")
 								break
 				print ("bDeleteEverything", bDeleteEverything)
 				if not plot_(x, y).isOwned():
-					if iCiv in [iNetherlands, iPortugal, iByzantium, iKorea, iThailand, iItaly, iCarthage]: #dangerous starts
-						data.lDeleteMode[0] = iCiv
+					if iCiv in [iCivNetherlands, iCivPortugal, iCivByzantium, iCivKorea, iCivThailand, iCivItaly, iCivCarthage]: #dangerous starts
+						data.lDeleteMode[0] = iPlayer
 					if bBirthInCapital:
-						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
+						self.birthInCapital(iPlayer, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
-						self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
+						self.birthInFreeRegion(iPlayer, tCapital, tTopLeft, tBottomRight)
 				elif bDeleteEverything and not bBirthInCapital:
 					for pCurrent in plots.surrounding(tCapital):
-						data.lDeleteMode[0] = iCiv
-						for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
-							if iCiv != iLoopCiv:
-								flipUnitsInArea(plots.start(tTopLeft).end(tBottomRight).without(Areas.dBirthAreaExceptions[iCiv]), iCiv, iLoopCiv, True, False)
+						data.lDeleteMode[0] = iPlayer
+						for iLoopPlayer in players.withBarbarian():
+							if iPlayer != iLoopPlayer:
+								flipUnitsInArea(plots.start(tTopLeft).end(tBottomRight).without(Areas.dBirthAreaExceptions[iPlayer]), iPlayer, iLoopPlayer, True, False)
 						if pCurrent.isCity():
-							pCurrent.eraseAIDevelopment() #new function, similar to erase but won't delete rivers, resources and features()
-						for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
-							if iCiv != iLoopCiv:
-								pCurrent.setCulture(iLoopCiv, 0, True)
+							pCurrent.eraseAIDevelopment()
+						for iLoopPlayer in players.withBarbarian():
+							if iPlayer != iLoopPlayer:
+								pCurrent.setCulture(iLoopPlayer, 0, True)
 						pCurrent.setOwner(-1)
 					if bBirthInCapital:
-						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
+						self.birthInCapital(iPlayer, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
-						self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
+						self.birthInFreeRegion(iPlayer, tCapital, tTopLeft, tBottomRight)
 				else:
 					if bBirthInCapital:
-						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
+						self.birthInCapital(iPlayer, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
-						self.birthInForeignBorders(iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight)
+						self.birthInForeignBorders(iPlayer, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight)
 						
 				if bBirthInCapital:	
-					clearCatapult(iCiv)
+					clearCatapult(iPlayer)
 						
 			else:
 				print ( "setBirthType again: flips" )
-				self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
+				self.birthInFreeRegion(iPlayer, tCapital, tTopLeft, tBottomRight)
 				
 		# Leoreth: reveal all normal plots on spawn
-		for x, y in Areas.getNormalArea(iCiv):
-			plot_(x, y).setRevealed(iCiv, True, True, 0)
+		for x, y in Areas.getNormalArea(iPlayer):
+			plot_(x, y).setRevealed(iPlayer, True, True, 0)
 				
 		# Leoreth: conditional state religion for colonial civs and Byzantium
-		if iCiv in [iByzantium, iArgentina, iBrazil]:
-			self.setStateReligion(iCiv)
+		if iCiv in [iCivByzantium, iCivArgentina, iCivBrazil]:
+			self.setStateReligion(iPlayer)
 			
-		if canSwitch(iCiv, iBirthYear):
-			startNewCivSwitchEvent(iCiv)
+		if canSwitch(iPlayer, iBirthYear):
+			startNewCivSwitchEvent(iPlayer)
 			
-		data.players[iCiv].bSpawned = True
+		data.players[iPlayer].bSpawned = True
 
 	def moveOutInvaders(self, tTL, tBR):
 		if pMongolia.isAlive():
@@ -1343,59 +1319,61 @@ class RiseAndFall:
 							unit.kill(False, iBarbarian)
 
 	def deleteMode(self, iCurrentPlayer):
-		iCiv = data.lDeleteMode[0]
+		iPlayer = data.lDeleteMode[0]
+		iCiv = civ(iPlayer)
+		
 		print ("deleteMode after", iCurrentPlayer)
-		tCapital = Areas.getCapital(iCiv)
+		tCapital = Areas.getCapital(iPlayer)
 		x, y = tCapital
 			
 		
-		if iCurrentPlayer == iCiv:
-			if iCiv == iCarthage:
+		if iCurrentPlayer == iPlayer:
+			if iCiv == iCivPhoenicia:
 				for plot in plots.rectangle((x-2, y-1), (x+1, y+1)):
-					plot.setCulture(iCiv, 300, True)
+					plot.setCulture(iPlayer, 300, True)
 			else:
-				for pPlot in plots.surrounding(tCapital, radius=2):
-					pPlot.setCulture(iCiv, 300, True)
-			for pPlot in plots.surrounding(tCapital):
-				convertPlotCulture(pPlot, iCiv, 100, True)
-				if pPlot.getCulture(iCiv) < 3000:
-					pPlot.setCulture(iCiv, 3000, True) #2000 in vanilla/warlords, cos here Portugal is choked by spanish culture
-				pPlot.setOwner(iCiv)
+				for plot in plots.surrounding(tCapital, radius=2):
+					plot.setCulture(iPlayer, 300, True)
+			for plot in plots.surrounding(tCapital):
+				convertPlotCulture(plot, iPlayer, 100, True)
+				if plot.getCulture(iPlayer) < 3000:
+					plot.setCulture(iPlayer, 3000, True) #2000 in vanilla/warlords, cos here Portugal is choked by spanish culture
+				plot.setOwner(iPlayer)
 			data.lDeleteMode[0] = -1
 			return
-		    
-		#print ("iCurrentPlayer", iCurrentPlayer, "iCiv", iCiv)
-		if iCurrentPlayer != iCiv-1 and iCiv not in [iCarthage, iGreece]:
+		
+		if iCurrentPlayer != iPlayer-1 and iCiv not in [iCivCarthage, iCivGreece]:
 			return
 		
 		bNotOwned = True
-		for pPlot in plots.surrounding(tCapital):
-			if pPlot.isOwned():
+		for plot in plots.surrounding(tCapital):
+			if plot.isOwned():
 				bNotOwned = False
-				for iLoopCiv in range(iNumTotalPlayersB): #Barbarians as well
-					if iLoopCiv != iCiv:
-						pPlot.setCulture(iLoopCiv, 0, True)
-				pPlot.setOwner(iCiv)
+				for iLoopPlayer in players.withBarbarian().without(iPlayer):
+					plot.setCulture(iLoopPlayer, 0, True)
+				plot.setOwner(iPlayer)
 		
 		for plot in plots.surrounding(tCapital, radius=15).without(tCapital).land(): # must include the distance from Sogut to the Caspius
-			for unit in units.at(plot).owner(iCiv):
+			for unit in units.at(plot).owner(iPlayer):
 				move(unit, tCapital)
 		
-	def birthInFreeRegion(self, iCiv, tCapital, tTopLeft, tBottomRight):
+	def birthInFreeRegion(self, iPlayer, tCapital, tTopLeft, tBottomRight):
 		startingPlot = plot(tCapital)
-		if data.players[iCiv].iFlipsDelay == 0:
-			iFlipsDelay = data.players[iCiv].iFlipsDelay + 2
+		iCiv = civ(iPlayer)
+		
+		if data.players[iPlayer].iFlipsDelay == 0:
+			iFlipsDelay = data.players[iPlayer].iFlipsDelay + 2
 			if iFlipsDelay > 0:
-				self.createStartingUnits(iCiv, tCapital)
+				self.createStartingUnits(iPlayer, tCapital)
 				
-				if iCiv == iOttomans:
+				if iCiv == iCivOttomans:
 					data.iOttomanSpawnTurn = turn()
 			
-				if iCiv == iItaly:
-					removeCoreUnits(iItaly)
-					cityList = getCitiesInCore(iItaly, False)
+				if iCiv == iCivItaly:
+					removeCoreUnits(iPlayer)
+					cityList = getCitiesInCore(iPlayer, False)
 					
-					rome = city(Areas.getCapital(iRome))
+					rome = city(Areas.getCapital(slot(iRome)))
 					if rome:
 						cityList.append(rome)
 					
@@ -1407,51 +1385,51 @@ class RiseAndFall:
 						if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 				
 				lPlots = plots.surrounding(tCapital, radius=3)
-				flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				self.assignTechs(iCiv)
-				data.players[iCiv].iPlagueCountdown = -iImmunity
-				clearPlague(iCiv)
-				data.players[iCiv].iFlipsDelay = iFlipsDelay #save
+				flipUnitsInArea(lPlots, iPlayer, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				flipUnitsInArea(lPlots, iPlayer, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				flipUnitsInArea(lPlots, iPlayer, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				self.assignTechs(iPlayer)
+				data.players[iPlayer].iPlagueCountdown = -iImmunity
+				clearPlague(iPlayer)
+				data.players[iPlayer].iFlipsDelay = iFlipsDelay #save
 				
 
 		else: #starting units have already been placed, now the second part
 		
-			iNumCities = player(iCiv).getNumCities()
+			iNumCities = player(iPlayer).getNumCities()
 		
-			area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iCiv))
-			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, area)
-			self.convertSurroundingPlotCulture(iCiv, area)
-			flipUnitsInArea(area, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
-			flipUnitsInArea(area, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-			flipUnitsInArea(area, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
+			area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iPlayer))
+			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iPlayer, area)
+			self.convertSurroundingPlotCulture(iPlayer, area)
+			flipUnitsInArea(area, iPlayer, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
+			flipUnitsInArea(area, iPlayer, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+			flipUnitsInArea(area, iPlayer, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
 		
 			# create starting workers
-			if iNumCities == 0 and player(iCiv).getNumCities() > 0:
-				self.createStartingWorkers(iCiv, player(iCiv).getCapitalCity())
+			if iNumCities == 0 and player(iPlayer).getNumCities() > 0:
+				self.createStartingWorkers(iPlayer, player(iPlayer).getCapitalCity())
 			
-			if iCiv == iArabia:
+			if iCiv == iCivArabia:
 				self.arabianSpawn()
 				
-			if iCiv == iGermany:
+			if iCiv == iCivGermany:
 				self.germanSpawn()
    
 			#cover plots revealed by the lion
-			clearCatapult(iCiv)
+			clearCatapult(iPlayer)
 
-			if iNumHumanCitiesToConvert > 0 and not player(iCiv).isHuman(): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
-				print "Flip Popup: free region"
-				self.scheduleFlipPopup(iCiv, lPlots)
-				
+			if iNumHumanCitiesToConvert > 0 and not player(iPlayer).isHuman(): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
+				self.scheduleFlipPopup(iPlayer, lPlots)
 
 			
-	def birthInForeignBorders(self, iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
-		if iCiv == iItaly:
-			removeCoreUnits(iItaly)
-			cityList = self.getCitiesInCore(iItaly, False)
+	def birthInForeignBorders(self, iPlayer, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
+		iCiv = civ(iPlayer)
+	
+		if iCiv == iCivItaly:
+			removeCoreUnits(iPlayer)
+			cityList = self.getCitiesInCore(iPlayer, False)
 			
-			rome = city(Areas.getCapital(iRome))
+			rome = city(Areas.getCapital(slot(iCivRome)))
 			if rome:
 				cityList.append(rome)
 				
@@ -1462,31 +1440,31 @@ class RiseAndFall:
 				city.setHasRealBuilding(iCourthouse, True)
 				if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 				
-		iNumCities = player(iCiv).getNumCities()
+		iNumCities = player(iPlayer).getNumCities()
 		
-		area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iCiv))
-		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, area)
-		self.convertSurroundingPlotCulture(iCiv, area)
+		area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iPlayer))
+		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iPlayer, area)
+		self.convertSurroundingPlotCulture(iPlayer, area)
 		
 		# create starting workers
-		if iNumCities == 0 and player(iCiv).getNumCities() > 0:
-			self.createStartingWorkers(iCiv, location(player(iCiv).getCapitalCity()))
+		if iNumCities == 0 and player(iPlayer).getNumCities() > 0:
+			self.createStartingWorkers(iPlayer, location(player(iPlayer).getCapitalCity()))
 
 		#now starting units must be placed
 		if iNumAICitiesConverted > 0:
-			plotList = squareSearch(tTopLeft, tBottomRight, ownedCityPlots, iCiv)
+			plotList = squareSearch(tTopLeft, tBottomRight, ownedCityPlots, iPlayer)
 			if plotList:
 				tPlot = random_entry(plotList)
 				if tPlot:
-					self.createStartingUnits(iCiv, tPlot)
-					self.assignTechs(iCiv)
-					data.players[iCiv].iPlagueCountdown = -iImmunity
-					clearPlague(iCiv)
-			flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
-			flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
-			flipUnitsInArea(lPlots, iCiv, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
+					self.createStartingUnits(iPlayer, tPlot)
+					self.assignTechs(iPlayer)
+					data.players[iPlayer].iPlagueCountdown = -iImmunity
+					clearPlague(iPlayer)
+			flipUnitsInArea(lPlots, iPlayer, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
+			flipUnitsInArea(lPlots, iPlayer, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
+			flipUnitsInArea(lPlots, iPlayer, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
 			
-			if iCiv == iOttomans:
+			if iCiv == iCivOttomans:
 				data.iOttomanSpawnTurn = turn()
 
 		else:   #search another place
@@ -1494,99 +1472,100 @@ class RiseAndFall:
 			if plotList:
 				tPlot = random_entry(plotList)
 				if tPlot:
-					self.createStartingUnits(iCiv, tPlot)
-					self.assignTechs(iCiv)
-					data.players[iCiv].iPlagueCountdown = -iImmunity
-					clearPlague(iCiv)
+					self.createStartingUnits(iPlayer, tPlot)
+					self.assignTechs(iPlayer)
+					data.players[iPlayer].iPlagueCountdown = -iImmunity
+					clearPlague(iPlayer)
 			else:
 				plotList = squareSearch(tBroaderTopLeft, tBroaderBottomRight, goodPlots, [])
 			if plotList:
 				tPlot = random_entry(plotList)
 				if tPlot:
-					self.createStartingUnits(iCiv, tPlot)
-					#self.createStartingWorkers(iCiv, tPlot)
-					self.assignTechs(iCiv)
-					data.players[iCiv].iPlagueCountdown = -iImmunity
-					clearPlague(iCiv)
-			flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
-			flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
-			flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
+					self.createStartingUnits(iPlayer, tPlot)
+					self.assignTechs(iPlayer)
+					data.players[iPlayer].iPlagueCountdown = -iImmunity
+					clearPlague(iPlayer)
+			flipUnitsInArea(lPlots, iPlayer, slot(iCivBarbarian), True, True) #remaining barbs in the region now belong to the new civ 
+			flipUnitsInArea(lPlots, iPlayer, slot(iCivIndependent), True, False) #remaining barbs in the region now belong to the new civ 
+			flipUnitsInArea(lPlots, iPlayer, slot(iCivIndependent2), True, False) #remaining barbs in the region now belong to the new civ 
 
 		if iNumHumanCitiesToConvert > 0:
 			print "Flip Popup: foreign borders"
-			self.scheduleFlipPopup(iCiv, lPlots)
+			self.scheduleFlipPopup(iPlayer, lPlots)
 			
-		if iCiv == iGermany:
+		if iCiv == iCivGermany:
 			self.germanSpawn()
 
 	#Leoreth - adapted from SoI's birthConditional method by embryodead
-	def birthInCapital(self, iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight):
+	def birthInCapital(self, iPlayer, iPreviousOwner, tCapital, tTopLeft, tBottomRight):
 		iOwner = iPreviousOwner
+		iCiv = civ(iPlayer)
+		
 		x, y = tCapital
 		capital = city(x, y)
 
-		if data.players[iCiv].iFlipsDelay == 0:
+		if data.players[iPlayer].iFlipsDelay == 0:
 
-			iFlipsDelay = data.players[iCiv].iFlipsDelay + 2
+			iFlipsDelay = data.players[iPlayer].iFlipsDelay + 2
 
 			if iFlipsDelay > 0:
 			
 				# flip capital instead of spawning starting units
 				if capital:
 					print "birth in capital: (%d, %d)" % (capital.getX(), capital.getY())
-					capital = flipCity(capital, False, True, iCiv, ())
+					capital = flipCity(capital, False, True, iPlayer, ())
 					capital.setHasRealBuilding(iPalace, True)
-					convertPlotCulture(plot_(capital), iCiv, 100, True)
-					self.convertSurroundingPlotCulture(iCiv, plots.surrounding(capital))
+					convertPlotCulture(plot_(capital), iPlayer, 100, True)
+					self.convertSurroundingPlotCulture(iPlayer, plots.surrounding(capital))
 				
 				#cover plots revealed
 				for plot in plots.surrounding((0, 0), radius=2):
-					plot.setRevealed(iCiv, False, True, -1)
+					plot.setRevealed(iPlayer, False, True, -1)
 
 
 				print ("birthConditional: starting units in", x, y)
-				self.createStartingUnits(iCiv, tCapital)
+				self.createStartingUnits(iPlayer, tCapital)
 
-				data.players[iCiv].iPlagueCountdown
-				clearPlague(iCiv)
+				data.players[iPlayer].iPlagueCountdown
+				clearPlague(iPlayer)
 
 				print ("flipping remaining units")
 				area = plots.start(tTopLeft).end(tBottomRight)
-				flipUnitsInArea(area, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
-				flipUnitsInArea(area, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
-				flipUnitsInArea(area, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
+				flipUnitsInArea(area, iPlayer, slot(iCivBarbarian), True, True) #remaining barbs in the region now belong to the new civ 
+				flipUnitsInArea(area, iPlayer, slot(iCivIndependent), True, False) #remaining barbs in the region now belong to the new civ 
+				flipUnitsInArea(area, iPlayer, slot(iCivIndependent2), True, False) #remaining barbs in the region now belong to the new civ 
 				
-				self.assignTechs(iCiv)
+				self.assignTechs(iPlayer)
 				
-				data.players[iCiv].iFlipsDelay = iFlipsDelay #save
+				data.players[iPlayer].iFlipsDelay = iFlipsDelay #save
 
 				# kill the catapult and cover the plots
-				clearCatapult(iCiv)
+				clearCatapult(iPlayer)
 				
-				convertPlotCulture(plot_(x, y), iCiv, 100, True)
+				convertPlotCulture(plot_(x, y), iPlayer, 100, True)
 				
 				# notify dynamic names
-				dc.onCityAcquired(iCiv, iOwner)
+				dc.onCityAcquired(iPlayer, iOwner)
 				
-				self.createStartingWorkers(iCiv, tCapital)
+				self.createStartingWorkers(iPlayer, tCapital)
 
 		else: # starting units have already been placed, now to the second part
-			area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iCiv))
-			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, area)
-			self.convertSurroundingPlotCulture(iCiv, area)
+			area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iPlayer))
+			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iPlayer, area)
+			self.convertSurroundingPlotCulture(iPlayer, area)
 				
-			for i in range(iIndependent, iBarbarian+1):
-				flipUnitsInArea(area, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ   
+			for iMinorCiv in [iCivIndependent, iCivIndependent2, iCivBarbarian]:
+				flipUnitsInArea(area, iPlayer, slot(iMinorCiv), False, True) #remaining barbs/indeps in the region now belong to the new civ   
 			
 			# kill the catapult and cover the plots
-			clearCatapult(iCiv)
+			clearCatapult(iPlayer)
 				
 			# convert human cities
 			if iNumHumanCitiesToConvert > 0:
 				print "Flip Popup: in capital"
-				self.scheduleFlipPopup(iCiv, area)
+				self.scheduleFlipPopup(iPlayer, area)
 				
-			convertPlotCulture(plot(x, y), iCiv, 100, True)
+			convertPlotCulture(plot(x, y), iPlayer, 100, True)
 			
 				
 	def getConvertedCities(self, iPlayer, lPlots = []):
@@ -1679,19 +1658,19 @@ class RiseAndFall:
 		tPlot = Areas.getCapital(iPlayer)
 		self.createAdditionalUnits(iPlayer, tPlot)
 
-	def convertSurroundingPlotCulture(self, iCiv, plots):
-		for pPlot in plots:
-			if pPlot.isOwned() and pPlot.isCore(pPlot.getOwner()) and not pPlot.isCore(iCiv): continue
-			if not pPlot.isCity():
-				convertPlotCulture(pPlot, iCiv, 100, False)
+	def convertSurroundingPlotCulture(self, iPlayer, plots):
+		for plot in plots:
+			if plot.isOwned() and plot.isCore(plot.getOwner()) and not plot.isCore(iPlayer): continue
+			if not plot.isCity():
+				convertPlotCulture(plot, iPlayer, 100, False)
 
-	def findSeaPlots(self, tCoords, iRange, iCiv):
+	def findSeaPlots(self, tCoords, iRange, iPlayer):
 		"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
 		seaPlotList = [] 
 		for plot in plots.surrounding(tCoords, radius=iRange):
 			if plot.isWater():
 				if not plot.isUnit():
-					if not (plot.isOwned() and plot.getOwner() != iCiv):
+					if not (plot.isOwned() and plot.getOwner() != iPlayer):
 						seaPlotList.append(location(plot))
 						# this is a good plot, so paint it and continue search
 		if seaPlotList:
@@ -1699,74 +1678,78 @@ class RiseAndFall:
 		return (None)
 
 
-	def giveRaiders( self, iCiv, lPlots):
-		pCiv = player(iCiv)
-		teamCiv = team(iCiv)
-		if pCiv.isAlive() and not pCiv.isHuman():
-
+	def giveRaiders(self, iPlayer, lPlots):
+		pPlayer = player(iPlayer)
+		pTeam = team(iPlayer)
+		
+		if pPlayer.isAlive() and not pPlayer.isHuman():
 			cityList = []
-			#collect all the coastal cities belonging to iCiv in the area
+			
+			#collect all the coastal cities belonging to iPlayer in the area
 			for x, y in lPlots:
 				city = city_(x, y)
-				if city and city.getOwner() == iCiv and city.isCoastal(10):
+				if city and city.getOwner() == iPlayer and city.isCoastal(10):
 					cityList.append(city)
 
 			if cityList:
 				city = random_entry(cityList)
 				if city:
 					tCityPlot = (city.getX(), city.getY())
-					tPlot = self.findSeaPlots(tCityPlot, 1, iCiv)
+					tPlot = self.findSeaPlots(tCityPlot, 1, iPlayer)
 					if tPlot:
-						makeUnit(iCiv, unique_unit(iCiv, iGalley), tPlot, UnitAITypes.UNITAI_ASSAULT_SEA)
-						if teamCiv.isHasTech(iSteel):
-							makeUnit(iCiv, unique_unit(iCiv, iHeavySwordsman), tPlot, UnitAITypes.UNITAI_ATTACK)
-							makeUnit(iCiv, unique_unit(iCiv, iHeavySwordsman), tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+						makeUnit(iPlayer, unique_unit(iPlayer, iGalley), tPlot, UnitAITypes.UNITAI_ASSAULT_SEA)
+						if pTeam.isHasTech(iSteel):
+							makeUnit(iPlayer, unique_unit(iPlayer, iHeavySwordsman), tPlot, UnitAITypes.UNITAI_ATTACK)
+							makeUnit(iPlayer, unique_unit(iPlayer, iHeavySwordsman), tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 						else:
-							makeUnit(iCiv, unique_unit(iCiv, iSwordsman), tPlot, UnitAITypes.UNITAI_ATTACK)
-							makeUnit(iCiv, unique_unit(iCiv, iSwordsman), tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+							makeUnit(iPlayer, unique_unit(iPlayer, iSwordsman), tPlot, UnitAITypes.UNITAI_ATTACK)
+							makeUnit(iPlayer, unique_unit(iPlayer, iSwordsman), tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 
-	def giveEarlyColonists( self, iCiv):
-		pCiv = player(iCiv)
-		teamCiv = team(iCiv)
-		if pCiv.isAlive() and not pCiv.isHuman():
-			capital = player(iCiv).getCapitalCity()
+	def giveEarlyColonists(self, iPlayer):
+		pPlayer = player(iPlayer)
+		iCiv = civ(iPlayer)
+		
+		if pPlayer.isAlive() and not pPlayer.isHuman():
+			capital = pPlayer.getCapitalCity()
 
-			if iCiv == iRome:
-				capital = cities.owner(iCiv).region(rIberia).random()
+			if iCiv == iCivRome:
+				capital = cities.owner(iPlayer).region(rIberia).random()
 				
 			if capital:
-				tSeaPlot = self.findSeaPlots(capital, 1, iCiv)
+				tSeaPlot = self.findSeaPlots(capital, 1, iPlayer)
 				if tSeaPlot:
-					makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-					makeUnit(iCiv, iSettler, tSeaPlot)
-					makeUnit(iCiv, iArcher, tSeaPlot)
+					makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+					makeUnit(iPlayer, iSettler, tSeaPlot)
+					makeUnit(iPlayer, iArcher, tSeaPlot)
 
-	def giveColonists(self, iCiv):
-		teamCiv = team(iCiv)
+	def giveColonists(self, iPlayer):
+		pPlayer = player(iPlayer)
+		pTeam = team(iPlayer)
+		iCiv = civ(iPlayer)
 		
-		if player(iCiv).isAlive() and not player(iCiv).isHuman() and iCiv in dMaxColonists:
-			if teamCiv.isHasTech(iExploration) and data.players[iCiv].iColonistsAlreadyGiven < dMaxColonists[iCiv]:
-				sourceCities = cities.of(Areas.getCoreArea(iCiv)).owner(iCiv)
+		if pPlayer.isAlive() and not pPlayer.isHuman() and iCiv in dMaxColonists:
+			if pTeam.isHasTech(iExploration) and data.players[iPlayer].iColonistsAlreadyGiven < dMaxColonists[iCiv]:
+				sourceCities = cities.of(Areas.getCoreArea(iPlayer)).owner(iPlayer)
 				
 				# help England with settling Canada and Australia
-				if iCiv == iEngland:
-					colonialCities = cities.start(tCanadaTL).end(tCanadaBR).owner(iCiv)
-					colonialCities += cities.start(tAustraliaTL).end(tAustraliaBR).owner(iCiv)
+				if iCiv == iCivEngland:
+					colonialCities = cities.start(tCanadaTL).end(tCanadaBR).owner(iPlayer)
+					colonialCities += cities.start(tAustraliaTL).end(tAustraliaBR).owner(iPlayer)
 					
 					if colonialCities:
 						sourceCities = colonialCities
 						
 				city = sourceCities.where(lambda city: city.isCoastal(10)).random()
 				if city:
-					tSeaPlot = self.findSeaPlots(city, 1, iCiv)
+					tSeaPlot = self.findSeaPlots(city, 1, iPlayer)
 					if not tSeaPlot: tSeaPlot = city
 					
-					makeUnit(iCiv, unique_unit(iCiv, iGalleon), tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-					makeUnit(iCiv, iSettler, tSeaPlot, UnitAITypes.UNITAI_SETTLE)
-					makeUnit(iCiv, getBestDefender(iCiv), tSeaPlot)
-					makeUnit(iCiv, iWorker, tSeaPlot)
+					makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+					makeUnit(iPlayer, iSettler, tSeaPlot, UnitAITypes.UNITAI_SETTLE)
+					makeUnit(iPlayer, getBestDefender(iPlayer), tSeaPlot)
+					makeUnit(iPlayer, iWorker, tSeaPlot)
 					
-					data.players[iCiv].iColonistsAlreadyGiven += 1
+					data.players[iPlayer].iColonistsAlreadyGiven += 1
 					
 
 	def onFirstContact(self, iTeamX, iHasMetTeamY):
@@ -1918,20 +1901,25 @@ class RiseAndFall:
 					if team().canContact(iTeamX):
 						message(human(), 'TXT_KEY_MONGOL_HORDE', adjective(iTeamX))
 
-	def lateTradingCompany(self, iCiv):
-		if not player(iCiv).isHuman() and not team(iCiv).isAVassal() and scenario() != i1700AD:
-			if iCiv in [iFrance, iEngland, iNetherlands]:
-				self.handleColonialConquest(iCiv)
-
-	def earlyTradingCompany(self, iCiv):
-		if not player(iCiv).isHuman() and not team(iCiv).isAVassal():
-			if iCiv in [iSpain, iPortugal]:
-				self.handleColonialAcquisition(iCiv)
-				
-	def onRailroadDiscovered(self, iCiv):
+	def lateTradingCompany(self, iPlayer):
+		iCiv = civ(iPlayer)
 	
-		if not player(iCiv).isHuman():
-			if iCiv == iAmerica:
+		if not player(iPlayer).isHuman() and not team(iPlayer).isAVassal() and scenario() != i1700AD:
+			if iCiv in [iCivFrance, iCivEngland, iCivNetherlands]:
+				self.handleColonialConquest(iPlayer)
+
+	def earlyTradingCompany(self, iPlayer):
+		iCiv = civ(iPlayer)
+	
+		if not player(iPlayer).isHuman() and not team(iPlayer).isAVassal():
+			if iCiv in [iCivSpain, iCivPortugal]:
+				self.handleColonialAcquisition(iPlayer)
+				
+	def onRailroadDiscovered(self, iPlayer):
+		iCiv = civ(iPlayer)
+	
+		if not player(iPlayer).isHuman():
+			if iCiv == iCivAmerica:
 				iCount = 0
 				lWestCoast = [(11, 50), (11, 49), (11, 48), (11, 47), (11, 46), (12, 45)]
 				lEnemyCivs = []
@@ -1947,21 +1935,21 @@ class RiseAndFall:
 								lFreePlots.append(location(plot))
 									
 				for iEnemy in lEnemyCivs:
-					team(iCiv).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
+					team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
 									
 				if iCount > 0:
 					for i in range(iCount):
 						tPlot = random_entry(lFreePlots)
-						makeUnits(iCiv, iMinuteman, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-						makeUnits(iCiv, iCannon, tPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+						makeUnits(iPlayer, iMinuteman, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
+						makeUnits(iPlayer, iCannon, tPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 						
 				if 2-iCount > 0:
 					for i in range(2-iCount):
 						tPlot = random_entry(lWestCoast)
-						makeUnit(iCiv, iSettler, tPlot)
-						makeUnit(iCiv, iMinuteman, tPlot)
+						makeUnit(iPlayer, iSettler, tPlot)
+						makeUnit(iPlayer, iMinuteman, tPlot)
 						
-			elif iCiv == iRussia:
+			elif iCiv == iCivRussia:
 				lFreePlots = []
 				tVladivostok = (111, 51)
 				
@@ -1976,12 +1964,12 @@ class RiseAndFall:
 									
 						tPlot = random_entry(lFreePlots)
 						teamRussia.declareWar(pPlot.getOwner(), True, WarPlanTypes.WARPLAN_LIMITED)
-						makeUnits(iCiv, iRifleman, tPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
-						makeUnits(iCiv, iCannon, tPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+						makeUnits(iPlayer, iRifleman, tPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
+						makeUnits(iPlayer, iCannon, tPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 				else:
 					if isFree(iRussia, tVladivostok, True): # Also bNoEnemyUnits?
 						pRussia.found(x, y)
-						makeUnits(iCiv, iRifleman, tVladivostok, 2)
+						makeUnits(iPlayer, iRifleman, tVladivostok, 2)
 						
 						for plot in plots.surrounding(tVladivostok):
 							convertPlotCulture(plot, iRussia, 80, True)
@@ -2067,30 +2055,33 @@ class RiseAndFall:
 		if seaPlot:
 			makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
 	
-	def startWarsOnSpawn(self, iCiv):
-		pCiv = player(iCiv)
-		teamCiv = team(iCiv)
+	def startWarsOnSpawn(self, iPlayer):
+		pPlayer = player(iPlayer)
+		pTeam = team(iPlayer)
+		iCiv = civ(iPlayer)
 		
 		iMin = 10
 		
 		if rand(100) >= iMin:
 			for iLoopCiv in lEnemyCivsOnSpawn[iCiv]:
-				if team(iLoopCiv).isAVassal(): continue
-				if not player(iLoopCiv).isAlive(): continue
-				if teamCiv.isAtWar(iLoopCiv): continue
-				if player(iCiv).isHuman() and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
+				iLoopPlayer = civ(iLoopCiv)
+			
+				if team(iLoopPlayer).isAVassal(): continue
+				if not player(iLoopPlayer).isAlive(): continue
+				if pTeam.isAtWar(iLoopPlayer): continue
+				if player(iPlayer).isHuman() and iLoopCiv not in lTotalWarOnSpawn[iCiv]: continue
 				
 				iLoopMin = 50
-				if iLoopCiv >= iNumMajorPlayers: iLoopMin = 30
-				if player(iLoopCiv).isHuman(): iLoopMin += 10
+				if is_minor(iLoopPlayer): iLoopMin = 30
+				if player(iLoopPlayer).isHuman(): iLoopMin += 10
 				
 				if rand(100) >= iLoopMin:
 					iWarPlan = -1
 					if iLoopCiv in lTotalWarOnSpawn[iCiv]:
 						iWarPlan = WarPlanTypes.WARPLAN_TOTAL
-					teamCiv.declareWar(iLoopCiv, False, iWarPlan)
+					pTeam.declareWar(iLoopPlayer, False, iWarPlan)
 					
-					if player(iCiv).isHuman(): data.iBetrayalTurns = 0
+					if pPlayer.isHuman(): data.iBetrayalTurns = 0
 					
 					
 	def immuneMode(self, argsList): 
@@ -2104,40 +2095,40 @@ class RiseAndFall:
 					if rand(100) >= 50:
 						makeUnit(iLosingPlayer, iUnitType, pLosingUnit)
 
-	def initMinorBetrayal( self, iCiv ):
-		lPlots = Areas.getBirthArea(iCiv)
+	def initMinorBetrayal(self, iPlayer):
+		lPlots = Areas.getBirthArea(iPlayer)
 		plotList = listSearch(lPlots, outerInvasion, [])
 		if plotList:
 			tPlot = random_entry(plotList)
 			if tPlot:
-				self.createAdditionalUnits(iCiv, tPlot)
-				self.unitsBetrayal(iCiv, human(), lPlots, tPlot)
+				self.createAdditionalUnits(iPlayer, tPlot)
+				self.unitsBetrayal(iPlayer, human(), lPlots, tPlot)
 
 	def initBetrayal( self ):
-		iFlipPlayer = data.iNewCivFlip
+		iFlipPlayer = data.iFlipNewPlayer
 		if not player(iFlipPlayer).isAlive() or not team(iFlipPlayer).isAtWar(human()):
 			data.iBetrayalTurns = 0
 			return
 	
 		turnsLeft = data.iBetrayalTurns
 		
-		lTempPlots = [tPlot for tPlot in data.lTempPlots if not plot(tPlot).isCore(data.iOldCivFlip)]
+		lTempPlots = [tPlot for tPlot in data.lTempPlots if not plot(tPlot).isCore(data.iFlipOldPlayer)]
 		plotList = listSearch(lTempPlots, outerInvasion, [] )
 		if not plotList:
-			plotList = listSearch(lTempPlots, innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )			
+			plotList = listSearch(lTempPlots, innerSpawn, [data.iFlipOldPlayer, data.iFlipNewPlayer] )			
 		if not plotList:
-			plotList = listSearch(lTempPlots, innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )				
+			plotList = listSearch(lTempPlots, innerInvasion, [data.iFlipOldPlayer, data.iFlipNewPlayer] )				
 		if plotList:
 			tPlot = random_entry(plotList)
 			if tPlot:
 				if turnsLeft == iBetrayalPeriod:
-					self.createAdditionalUnits(data.iNewCivFlip, tPlot)
-				self.unitsBetrayal(data.iNewCivFlip, data.iOldCivFlip, lTempPlots, tPlot)
+					self.createAdditionalUnits(data.iFlipNewPlayer, tPlot)
+				self.unitsBetrayal(data.iFlipNewPlayer, data.iFlipOldPlayer, lTempPlots, tPlot)
 		data.iBetrayalTurns = turnsLeft - 1
 
 	def unitsBetrayal(self, iNewOwner, iOldOwner, lPlots, tPlot):
-		message(data.iOldCivFlip, 'TXT_KEY_FLIP_BETRAYAL', color=iGreen)
-		message(data.iNewCivFlip, 'TXT_KEY_FLIP_BETRAYAL_NEW', color=iGreen)
+		message(data.iFlipOldPlayer, 'TXT_KEY_FLIP_BETRAYAL', color=iGreen)
+		message(data.iFlipNewPlayer, 'TXT_KEY_FLIP_BETRAYAL_NEW', color=iGreen)
 		
 		for x, y in lPlots:
 			for unit in units.at(x, y).owner(iOldOwner).domain(DomainTypes.DOMAIN_LAND):
@@ -2146,593 +2137,600 @@ class RiseAndFall:
 					unit.kill(False, iNewOwner)
 					makeUnit(iNewOwner, iUnitType, tPlot)
 
-	def createAdditionalUnits(self, iCiv, tPlot):
-		if iCiv == iIndia:
-			makeUnits(iCiv, iArcher, tPlot, 2)
-			makeUnit(iCiv, iLightSwordsman, tPlot)
-		elif iCiv == iGreece:
-			makeUnits(iCiv, iHoplite, tPlot, 4)
-		elif iCiv == iPersia:
-			makeUnits(iCiv, iImmortal, tPlot, 4)
-		elif iCiv == iCarthage:
-			makeUnit(iCiv, iWarElephant, tPlot)
-			makeUnit(iCiv, iNumidianCavalry, tPlot)
-		elif iCiv == iPolynesia:
-			makeUnits(iCiv, iMilitia, tPlot, 2)
-		elif iCiv == iRome:
-			makeUnits(iCiv, iLegion, tPlot, 4)
-		elif iCiv == iJapan:
-			makeUnits(iCiv, iArcher, tPlot, 2)
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
-		elif iCiv == iTamils:
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
-			makeUnit(iCiv, iWarElephant, tPlot)
-		elif iCiv == iEthiopia:
-			makeUnits(iCiv, iArcher, tPlot, 2)
-			makeUnits(iCiv, iShotelai, tPlot, 2)
-		elif iCiv == iKorea:
-			makeUnits(iCiv, iHorseArcher, tPlot, 2)
-			makeUnits(iCiv, iCrossbowman, tPlot, 2)
-		elif iCiv == iMaya:
-			makeUnits(iCiv, iArcher, tPlot, 2)
-			makeUnits(iCiv, iHolkan, tPlot, 2)
-		elif iCiv == iByzantium:
-			makeUnits(iCiv, iCataphract, tPlot, 2)
-			makeUnits(iCiv, iHorseArcher, tPlot, 2)
-		elif iCiv == iVikings:
-			makeUnits(iCiv, iHuscarl, tPlot, 3)
-		elif iCiv == iTurks:
-			makeUnits(iCiv, iOghuz, tPlot, 4)
-		elif iCiv == iArabia:
-			makeUnits(iCiv, iGhazi, tPlot, 2)
-			makeUnits(iCiv, iMobileGuard, tPlot, 4)
-		elif iCiv == iTibet:
-			makeUnits(iCiv, iKhampa, tPlot, 2)
-		elif iCiv == iKhmer:
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-			makeUnits(iCiv, iBallistaElephant, tPlot, 2)
-		elif iCiv == iIndonesia:
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
-			makeUnit(iCiv, iWarElephant, tPlot)
-		elif iCiv == iMoors:
-			makeUnits(iCiv, iCamelArcher, tPlot, 2)
-		elif iCiv == iSpain:
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-		elif iCiv == iFrance:
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-		elif iCiv == iEngland:
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-		elif iCiv == iHolyRome:
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-		elif iCiv == iRussia:
-			makeUnits(iCiv, iCrossbowman, tPlot, 2)
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
-			makeUnits(iCiv, iHorseArcher, tPlot, 2)
-		elif iCiv == iNetherlands:
-			makeUnits(iCiv, iMusketeer, tPlot, 3)
-			makeUnits(iCiv, iPikeman, tPlot, 3)
-		elif iCiv == iMali:
-			makeUnits(iCiv, iKelebolo, tPlot, 4)
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-		elif iCiv == iOttomans:
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iHorseArcher, tPlot, 3)
-		elif iCiv == iPoland:
-			makeUnits(iCiv, iLancer, tPlot, 2)
-			makeUnits(iCiv, iCrossbowman, tPlot, 2)
-		elif iCiv == iPortugal:
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iPikeman, tPlot, 3)
-		elif iCiv == iInca:
-			makeUnits(iCiv, iAucac, tPlot, 5)
-			makeUnits(iCiv, iArcher, tPlot, 3)
-		elif iCiv == iItaly:
-			makeUnits(iCiv, iLancer, tPlot, 2)
-		elif iCiv == iMongolia:
-			makeUnits(iCiv, iCrossbowman, tPlot, 2)
-			makeUnits(iCiv, iMangudai, tPlot, 2)
-			makeUnits(iCiv, iKeshik, tPlot, 4)
-		elif iCiv == iAztecs:
-			makeUnits(iCiv, iJaguar, tPlot, 5)
-			makeUnits(iCiv, iArcher, tPlot, 3)
-		elif iCiv == iMughals:
-			makeUnits(iCiv, iSiegeElephant, tPlot, 2)
-			makeUnits(iCiv, iHorseArcher, tPlot, 4)
-		elif iCiv == iThailand:
-			makeUnits(iCiv, iPikeman, tPlot, 2)
-			makeUnits(iCiv, iChangSuek, tPlot, 2)
-		elif iCiv == iCongo:
-			makeUnits(iCiv, iPombos, tPlot, 3)
-		elif iCiv == iGermany:
-			makeUnits(iCiv, iFusilier, tPlot, 5)
-			makeUnits(iCiv, iBombard, tPlot, 3)
-		elif iCiv == iAmerica:
-			makeUnits(iCiv, iGrenadier, tPlot, 3)
-			makeUnits(iCiv, iMinuteman, tPlot, 3)
-			makeUnits(iCiv, iCannon, tPlot, 3)
-		elif iCiv == iArgentina:
-			makeUnits(iCiv, iRifleman, tPlot, 2)
-			makeUnits(iCiv, iGrenadierCavalry, tPlot, 4)
-		elif iCiv == iBrazil:
-			makeUnits(iCiv, iGrenadier, tPlot, 2)
-			makeUnits(iCiv, iRifleman, tPlot, 3)
-			makeUnits(iCiv, iCannon, tPlot, 2)
-		elif iCiv == iCanada:
-			makeUnits(iCiv, iCavalry, tPlot, 2)
-			makeUnits(iCiv, iRifleman, tPlot, 4)
-			makeUnits(iCiv, iCannon, tPlot, 2)
+	def createAdditionalUnits(self, iPlayer, tPlot):
+		iCiv = civ(iPlayer)
+	
+		if iCiv == iCivIndia:
+			makeUnits(iPlayer, iArcher, tPlot, 2)
+			makeUnit(iPlayer, iLightSwordsman, tPlot)
+		elif iCiv == iCivGreece:
+			makeUnits(iPlayer, iHoplite, tPlot, 4)
+		elif iCiv == iCivPersia:
+			makeUnits(iPlayer, iImmortal, tPlot, 4)
+		elif iCiv == iCivCarthage:
+			makeUnit(iPlayer, iWarElephant, tPlot)
+			makeUnit(iPlayer, iNumidianCavalry, tPlot)
+		elif iCiv == iCivPolynesia:
+			makeUnits(iPlayer, iMilitia, tPlot, 2)
+		elif iCiv == iCivRome:
+			makeUnits(iPlayer, iLegion, tPlot, 4)
+		elif iCiv == iCivJapan:
+			makeUnits(iPlayer, iArcher, tPlot, 2)
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
+		elif iCiv == iCivTamils:
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
+			makeUnit(iPlayer, iWarElephant, tPlot)
+		elif iCiv == iCivEthiopia:
+			makeUnits(iPlayer, iArcher, tPlot, 2)
+			makeUnits(iPlayer, iShotelai, tPlot, 2)
+		elif iCiv == iCivKorea:
+			makeUnits(iPlayer, iHorseArcher, tPlot, 2)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+		elif iCiv == iCivMaya:
+			makeUnits(iPlayer, iArcher, tPlot, 2)
+			makeUnits(iPlayer, iHolkan, tPlot, 2)
+		elif iCiv == iCivByzantium:
+			makeUnits(iPlayer, iCataphract, tPlot, 2)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 2)
+		elif iCiv == iCivVikings:
+			makeUnits(iPlayer, iHuscarl, tPlot, 3)
+		elif iCiv == iCivTurks:
+			makeUnits(iPlayer, iOghuz, tPlot, 4)
+		elif iCiv == iCivArabia:
+			makeUnits(iPlayer, iGhazi, tPlot, 2)
+			makeUnits(iPlayer, iMobileGuard, tPlot, 4)
+		elif iCiv == iCivTibet:
+			makeUnits(iPlayer, iKhampa, tPlot, 2)
+		elif iCiv == iCivKhmer:
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+			makeUnits(iPlayer, iBallistaElephant, tPlot, 2)
+		elif iCiv == iCivIndonesia:
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
+			makeUnit(iPlayer, iWarElephant, tPlot)
+		elif iCiv == iCivMoors:
+			makeUnits(iPlayer, iCamelArcher, tPlot, 2)
+		elif iCiv == iCivSpain:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+		elif iCiv == iCivFrance:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+		elif iCiv == iCivEngland:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+		elif iCiv == iCivHolyRome:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+		elif iCiv == iCivRussia:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 2)
+		elif iCiv == iCivNetherlands:
+			makeUnits(iPlayer, iMusketeer, tPlot, 3)
+			makeUnits(iPlayer, iPikeman, tPlot, 3)
+		elif iCiv == iCivMali:
+			makeUnits(iPlayer, iKelebolo, tPlot, 4)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+		elif iCiv == iCivOttomans:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 3)
+		elif iCiv == iCivPoland:
+			makeUnits(iPlayer, iLancer, tPlot, 2)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+		elif iCiv == iCivPortugal:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iPikeman, tPlot, 3)
+		elif iCiv == iCivInca:
+			makeUnits(iPlayer, iAucac, tPlot, 5)
+			makeUnits(iPlayer, iArcher, tPlot, 3)
+		elif iCiv == iCivItaly:
+			makeUnits(iPlayer, iLancer, tPlot, 2)
+		elif iCiv == iCivMongols:
+			makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+			makeUnits(iPlayer, iMangudai, tPlot, 2)
+			makeUnits(iPlayer, iKeshik, tPlot, 4)
+		elif iCiv == iCivAztecs:
+			makeUnits(iPlayer, iJaguar, tPlot, 5)
+			makeUnits(iPlayer, iArcher, tPlot, 3)
+		elif iCiv == iCivMughals:
+			makeUnits(iPlayer, iSiegeElephant, tPlot, 2)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 4)
+		elif iCiv == iCivThailand:
+			makeUnits(iPlayer, iPikeman, tPlot, 2)
+			makeUnits(iPlayer, iChangSuek, tPlot, 2)
+		elif iCiv == iCivCongo:
+			makeUnits(iPlayer, iPombos, tPlot, 3)
+		elif iCiv == iCivGermany:
+			makeUnits(iPlayer, iFusilier, tPlot, 5)
+			makeUnits(iPlayer, iBombard, tPlot, 3)
+		elif iCiv == iCivAmerica:
+			makeUnits(iPlayer, iGrenadier, tPlot, 3)
+			makeUnits(iPlayer, iMinuteman, tPlot, 3)
+			makeUnits(iPlayer, iCannon, tPlot, 3)
+		elif iCiv == iCivArgentina:
+			makeUnits(iPlayer, iRifleman, tPlot, 2)
+			makeUnits(iPlayer, iGrenadierCavalry, tPlot, 4)
+		elif iCiv == iCivBrazil:
+			makeUnits(iPlayer, iGrenadier, tPlot, 2)
+			makeUnits(iPlayer, iRifleman, tPlot, 3)
+			makeUnits(iPlayer, iCannon, tPlot, 2)
+		elif iCiv == iCivCanada:
+			makeUnits(iPlayer, iCavalry, tPlot, 2)
+			makeUnits(iPlayer, iRifleman, tPlot, 4)
+			makeUnits(iPlayer, iCannon, tPlot, 2)
 
 
-	def createStartingUnits(self, iCiv, tPlot):
-		if iCiv == iChina:
-			createSettlers(iCiv, 1)
-			makeUnit(iCiv, iArcher, tPlot)
-			makeUnit(iCiv, iMilitia, tPlot)
-		elif iCiv == iIndia:
-			createSettlers(iCiv, 1)
-			makeUnit(iCiv, iArcher, tPlot)
-			makeUnit(iCiv, iSpearman, tPlot)
-			makeUnit(iCiv, iLightSwordsman, tPlot)
-			makeUnit(iCiv, iChariot, tPlot)
-		elif iCiv == iGreece:
-			createSettlers(iCiv, 1)
-			makeUnits(iCiv, iMilitia, tPlot, 2)
-			makeUnit(iCiv, iHoplite, tPlot)
-			makeUnit(iCiv, iHoplite, tPlot, UnitAITypes.UNITAI_ATTACK)
-			makeUnit(iCiv, iHoplite, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+	def createStartingUnits(self, iPlayer, tPlot):
+		iCiv = civ(iPlayer)
+	
+		if iCiv == iCivChina:
+			createSettlers(iPlayer, 1)
+			makeUnit(iPlayer, iArcher, tPlot)
+			makeUnit(iPlayer, iMilitia, tPlot)
+		elif iCiv == iCivIndia:
+			createSettlers(iPlayer, 1)
+			makeUnit(iPlayer, iArcher, tPlot)
+			makeUnit(iPlayer, iSpearman, tPlot)
+			makeUnit(iPlayer, iLightSwordsman, tPlot)
+			makeUnit(iPlayer, iChariot, tPlot)
+		elif iCiv == iCivGreece:
+			createSettlers(iPlayer, 1)
+			makeUnits(iPlayer, iMilitia, tPlot, 2)
+			makeUnit(iPlayer, iHoplite, tPlot)
+			makeUnit(iPlayer, iHoplite, tPlot, UnitAITypes.UNITAI_ATTACK)
+			makeUnit(iPlayer, iHoplite, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iMilitia, tSeaPlot)
-		elif iCiv == iPersia:
-			createSettlers(iCiv, 3)
-			makeUnits(iCiv, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iImmortal, tPlot, 4)
-			makeUnits(iCiv, iHorseman, tPlot, 2)
-			makeUnit(iCiv, iWarElephant, tPlot)
-		elif iCiv == iCarthage:
-			createSettlers(iCiv, 1)
-			makeUnit(iCiv, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnit(iCiv, iSacredBand, tPlot)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iMilitia, tSeaPlot)
+		elif iCiv == iCivPersia:
+			createSettlers(iPlayer, 3)
+			makeUnits(iPlayer, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iImmortal, tPlot, 4)
+			makeUnits(iPlayer, iHorseman, tPlot, 2)
+			makeUnit(iPlayer, iWarElephant, tPlot)
+		elif iCiv == iCivCarthage:
+			createSettlers(iPlayer, 1)
+			makeUnit(iPlayer, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnit(iPlayer, iSacredBand, tPlot)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iArcher, tSeaPlot)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_ASSAULT_SEA)
-				makeUnit(iCiv, iWarGalley, tSeaPlot, UnitAITypes.UNITAI_ESCORT_SEA)
-		elif iCiv == iPolynesia:
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iArcher, tSeaPlot)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_ASSAULT_SEA)
+				makeUnit(iPlayer, iWarGalley, tSeaPlot, UnitAITypes.UNITAI_ESCORT_SEA)
+		elif iCiv == iCivPolynesia:
 			tSeaPlot = (4, 19)
-			makeUnit(iCiv, iSettler, tPlot)
-			makeUnit(iCiv, iWaka, tSeaPlot)
-			makeUnit(iCiv, iSettler, tSeaPlot)
-			makeUnit(iCiv, iWorkboat, tSeaPlot)
-		elif iCiv == iRome:
-			createSettlers(iCiv, 3)
-			makeUnits(iCiv, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iLegion, tPlot, 4)
+			makeUnit(iPlayer, iSettler, tPlot)
+			makeUnit(iPlayer, iWaka, tSeaPlot)
+			makeUnit(iPlayer, iSettler, tSeaPlot)
+			makeUnit(iPlayer, iWorkboat, tSeaPlot)
+		elif iCiv == iCivRome:
+			createSettlers(iPlayer, 3)
+			makeUnits(iPlayer, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iLegion, tPlot, 4)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-				makeUnits(iCiv, iGalley, tSeaPlot, 2, UnitAITypes.UNITAI_ASSAULT_SEA)
-		elif iCiv == iMaya:
-			createSettlers(iCiv, 1)
-			makeUnits(iCiv, iHolkan, tPlot, 2)
-		elif iCiv == iJapan:
-			createSettlers(iCiv, 3)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
-			makeUnits(iCiv, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+				makeUnits(iPlayer, iGalley, tSeaPlot, 2, UnitAITypes.UNITAI_ASSAULT_SEA)
+		elif iCiv == iCivMaya:
+			createSettlers(iPlayer, 1)
+			makeUnits(iPlayer, iHolkan, tPlot, 2)
+		elif iCiv == iCivJapan:
+			createSettlers(iPlayer, 3)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
+			makeUnits(iPlayer, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
 				
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iCrossbowman, tPlot, 2)
-				makeUnits(iCiv, iSamurai, tPlot, 3)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+				makeUnits(iPlayer, iSamurai, tPlot, 3)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iJapan)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-		elif iCiv == iTamils:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnit(iCiv, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnit(iCiv, iWarElephant, tPlot)
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+		elif iCiv == iCivTamils:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnit(iPlayer, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnit(iPlayer, iWarElephant, tPlot)
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
 			
-			if not player(iCiv).isHuman():
-				makeUnit(iCiv, iHinduMissionary, tPlot)
-				makeUnit(iCiv, iWarElephant, tPlot)
+			if not player(iPlayer).isHuman():
+				makeUnit(iPlayer, iHinduMissionary, tPlot)
+				makeUnit(iPlayer, iWarElephant, tPlot)
 				
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iWarGalley, tSeaPlot)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iArcher, tSeaPlot)
-		elif iCiv == iEthiopia:
-			createSettlers(iCiv, 2)
-			makeUnits(iCiv, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnit(iCiv, iShotelai, tPlot)
-			makeUnit(iCiv, iLightSwordsman, tPlot)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iWarGalley, tSeaPlot)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iArcher, tSeaPlot)
+		elif iCiv == iCivEthiopia:
+			createSettlers(iPlayer, 2)
+			makeUnits(iPlayer, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnit(iPlayer, iShotelai, tPlot)
+			makeUnit(iPlayer, iLightSwordsman, tPlot)
 			
 			tSeaPlot = (74, 29)
-			makeUnit(iCiv, iWorkboat, tSeaPlot)
-			makeUnit(iCiv, iWarGalley, tSeaPlot)
-		elif iCiv == iKorea:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnit(iCiv, iSwordsman, tPlot)
-			makeUnit(iCiv, iHorseman, tPlot)
+			makeUnit(iPlayer, iWorkboat, tSeaPlot)
+			makeUnit(iPlayer, iWarGalley, tSeaPlot)
+		elif iCiv == iCivKorea:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnit(iPlayer, iSwordsman, tPlot)
+			makeUnit(iPlayer, iHorseman, tPlot)
 			
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iSpearman, tPlot, 2)
-				makeUnits(iCiv, iCrossbowman, tPlot, 2)
-		elif iCiv == iByzantium:
-			createSettlers(iCiv, 4)
-			createMissionaries(iCiv, 1)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iSpearman, tPlot, 2)
+				makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+		elif iCiv == iCivByzantium:
+			createSettlers(iPlayer, 4)
+			createMissionaries(iPlayer, 1)
 			
-			makeUnits(iCiv, iLegion, tPlot, 4)
-			makeUnits(iCiv, iSpearman, tPlot, 2)
-			makeUnits(iCiv, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iLegion, tPlot, 4)
+			makeUnits(iPlayer, iSpearman, tPlot, 2)
+			makeUnits(iPlayer, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iGalley, tSeaPlot, 2)
-				makeUnits(iCiv, iWarGalley, tSeaPlot, 2)
+				makeUnits(iPlayer, iGalley, tSeaPlot, 2)
+				makeUnits(iPlayer, iWarGalley, tSeaPlot, 2)
 				if scenario() == i3000BC:
-					makeUnit(iCiv, iWorkboat, tSeaPlot)
-		elif iCiv == iVikings:
-			createSettlers(iCiv, 2)
-			makeUnits(iCiv, iArcher, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iHuscarl, tPlot, 3)
-			makeUnit(iCiv, iScout, tPlot)
+					makeUnit(iPlayer, iWorkboat, tSeaPlot)
+		elif iCiv == iCivVikings:
+			createSettlers(iPlayer, 2)
+			makeUnits(iPlayer, iArcher, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iHuscarl, tPlot, 3)
+			makeUnit(iPlayer, iScout, tPlot)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iArcher, tSeaPlot)
-				makeUnits(iCiv, iLongship, tSeaPlot, 2, UnitAITypes.UNITAI_EXPLORE_SEA)
-		elif iCiv == iTurks:
-			createSettlers(iCiv, 6)
-			if pTurks.isHuman():
-				makeUnits(iCiv, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iArcher, tSeaPlot)
+				makeUnits(iPlayer, iLongship, tSeaPlot, 2, UnitAITypes.UNITAI_EXPLORE_SEA)
+		elif iCiv == iCivTurks:
+			createSettlers(iPlayer, 6)
+			if player(iPlayer).isHuman():
+				makeUnits(iPlayer, iArcher, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
 			else:
-				makeUnits(iCiv, iCrossbowman, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iOghuz, tPlot, 6)
-			makeUnit(iCiv, iScout, tPlot)
-		elif iCiv == iArabia:
-			createSettlers(iCiv, 2)
-			makeUnit(iCiv, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iMobileGuard, tPlot, 2)
-			makeUnits(iCiv, iGhazi, tPlot, 2)
-			makeUnit(iCiv, iWorker, tPlot)
+				makeUnits(iPlayer, iCrossbowman, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iOghuz, tPlot, 6)
+			makeUnit(iPlayer, iScout, tPlot)
+		elif iCiv == iCivArabia:
+			createSettlers(iPlayer, 2)
+			makeUnit(iPlayer, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iMobileGuard, tPlot, 2)
+			makeUnits(iPlayer, iGhazi, tPlot, 2)
+			makeUnit(iPlayer, iWorker, tPlot)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-		elif iCiv == iTibet:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iKhampa, tPlot, 2)
-		elif iCiv == iKhmer:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			createMissionaries(iCiv, 1, iBuddhism)
-			makeUnit(iCiv, iArcher, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-			makeUnits(iCiv, iBallistaElephant, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+		elif iCiv == iCivTibet:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iArcher, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iKhampa, tPlot, 2)
+		elif iCiv == iCivKhmer:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			createMissionaries(iPlayer, 1, iBuddhism)
+			makeUnit(iPlayer, iArcher, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnits(iPlayer, iBallistaElephant, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 2, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iArcher, tSeaPlot)
-		elif iCiv == iIndonesia:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnit(iCiv, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iArcher, tSeaPlot)
+		elif iCiv == iCivIndonesia:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnit(iPlayer, iArcher, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
-				makeUnit(iCiv, iWarGalley, tSeaPlot)
-				makeUnits(iCiv, iGalley, tSeaPlot, 2, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iArcher, tSeaPlot)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iArcher, tSeaPlot)
-		elif iCiv == iMoors:
-			createSettlers(iCiv, 2)
-			createMissionaries(iCiv, 2)
-			makeUnit(iCiv, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iSwordsman, tPlot, 2)
-			makeUnits(iCiv, iSpearman, tPlot, 2)
-			makeUnits(iCiv, iHorseArcher, tPlot, 2)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
+				makeUnit(iPlayer, iWarGalley, tSeaPlot)
+				makeUnits(iPlayer, iGalley, tSeaPlot, 2, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iArcher, tSeaPlot)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iArcher, tSeaPlot)
+		elif iCiv == iCivMoors:
+			createSettlers(iPlayer, 2)
+			createMissionaries(iPlayer, 2)
+			makeUnit(iPlayer, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iSwordsman, tPlot, 2)
+			makeUnits(iPlayer, iSpearman, tPlot, 2)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 2)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iGalley, tSeaPlot)
-				makeUnit(iCiv, iHeavyGalley, tSeaPlot)
-				makeUnit(iCiv, iWorkboat, tSeaPlot)
+				makeUnit(iPlayer, iGalley, tSeaPlot)
+				makeUnit(iPlayer, iHeavyGalley, tSeaPlot)
+				makeUnit(iPlayer, iWorkboat, tSeaPlot)
 			
-			if human() in [iSpain, iMoors]:
-				makeUnit(iCiv, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-		elif iCiv == iSpain:
+			if civ(human()) in [iCivSpain, iCivMoors]:
+				makeUnit(iPlayer, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+		elif iCiv == iCivSpain:
 			iSpanishSettlers = 2
-			if not pSpain.isHuman(): iSpanishSettlers = 3
-			createSettlers(iCiv, iSpanishSettlers)
-			createMissionaries(iCiv, 1)
-			makeUnit(iCiv, iCrossbowman, tPlot)
-			makeUnit(iCiv, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iSwordsman, tPlot, 4)
+			if not player(iPlayer).isHuman(): iSpanishSettlers = 3
+			createSettlers(iPlayer, iSpanishSettlers)
+			createMissionaries(iPlayer, 1)
+			makeUnit(iPlayer, iCrossbowman, tPlot)
+			makeUnit(iPlayer, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iSwordsman, tPlot, 4)
 			
-			if data.isPlayerEnabled(iMoors):
-				if not pMoors.isHuman():
-					makeUnits(iCiv, iLancer, tPlot, 2)
+			# TODO: should be isCivEnabled
+			if data.isCivEnabled(iCivMoors):
+				if not player(slot(iCivMoors)).isHuman():
+					makeUnits(iPlayer, iLancer, tPlot, 2)
 			else:
-				makeUnit(iCiv, iSettler, tPlot)
+				makeUnit(iPlayer, iSettler, tPlot)
 				
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iCrossbowman, tPlot, 2)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iCrossbowman, tPlot, 2)
 				
 			if scenario() == i600AD: #late start condition
-				makeUnit(iCiv, iWorker, tPlot) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
-		elif iCiv == iFrance:
-			createSettlers(iCiv, 3)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iCrossbowman, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iHeavySpearman, tPlot, 2)
-			makeUnits(iCiv, iSwordsman, tPlot, 3)
-		elif iCiv == iEngland:
-			createSettlers(iCiv, 3)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iCrossbowman, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+				makeUnit(iPlayer, iWorker, tPlot) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
+		elif iCiv == iCivFrance:
+			createSettlers(iPlayer, 3)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iHeavySpearman, tPlot, 2)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3)
+		elif iCiv == iCivEngland:
+			createSettlers(iPlayer, 3)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
 			
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iHeavySwordsman, tPlot, 2)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iHeavySwordsman, tPlot, 2)
 				
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tPlot)
-				makeUnit(iCiv, iCrossbowman, tPlot)
-				makeUnits(iCiv, iGalley, tPlot, 2)
-		elif iCiv == iHolyRome:
-			createSettlers(iCiv, 3)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iCrossbowman, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iSwordsman, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-			makeUnits(iCiv, iLancer, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-			makeUnits(iCiv, iCatapult, tPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
-		elif iCiv == iRussia:
-			createSettlers(iCiv, 4)
-			makeUnits(iCiv, iCrossbowman, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iHorseArcher, tPlot, 4)
-		elif iCiv == iNetherlands:
-			createSettlers(iCiv, 2)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iArquebusier, tPlot, 6)
-			makeUnits(iCiv, iBombard, tPlot, 2)
-			makeUnits(iCiv, iPikeman, tPlot, 2)
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnit(iPlayer, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tPlot)
+				makeUnit(iPlayer, iCrossbowman, tPlot)
+				makeUnits(iPlayer, iGalley, tPlot, 2)
+		elif iCiv == iCivHolyRome:
+			createSettlers(iPlayer, 3)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iSwordsman, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnits(iPlayer, iLancer, tPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnits(iPlayer, iCatapult, tPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
+		elif iCiv == iCivRussia:
+			createSettlers(iPlayer, 4)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 4)
+		elif iCiv == iCivNetherlands:
+			createSettlers(iPlayer, 2)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iArquebusier, tPlot, 6)
+			makeUnits(iPlayer, iBombard, tPlot, 2)
+			makeUnits(iPlayer, iPikeman, tPlot, 2)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnit(iCiv, iEastIndiaman, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iCrossbowman, tSeaPlot)
-				makeUnit(iCiv, iEastIndiaman, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iCrossbowman, tSeaPlot)
-				makeUnits(iCiv, iCaravel, tSeaPlot, 2)
-		elif iCiv == iMali:
-			createSettlers(iCiv, 3)
-			createMissionaries(iCiv, 2)
-			makeUnits(iCiv, iKelebolo, tPlot, 5)
-		elif iCiv == iPoland:
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnit(iPlayer, iEastIndiaman, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iCrossbowman, tSeaPlot)
+				makeUnit(iPlayer, iEastIndiaman, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iCrossbowman, tSeaPlot)
+				makeUnits(iPlayer, iCaravel, tSeaPlot, 2)
+		elif iCiv == iCivMali:
+			createSettlers(iPlayer, 3)
+			createMissionaries(iPlayer, 2)
+			makeUnits(iPlayer, iKelebolo, tPlot, 5)
+		elif iCiv == iCivPoland:
 			iNumSettlers = 1
-			if pPoland.isHuman(): iNumSettlers = 2
-			createSettlers(iCiv, iNumSettlers)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iHeavySwordsman, tPlot, 2)
-			makeUnits(iCiv, iLancer, tPlot, 2)
+			if player(iPlayer).isHuman(): iNumSettlers = 2
+			createSettlers(iPlayer, iNumSettlers)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iHeavySwordsman, tPlot, 2)
+			makeUnits(iPlayer, iLancer, tPlot, 2)
 			
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iHeavySpearman, tPlot, 2)
-		elif iCiv == iOttomans:
-			createMissionaries(iCiv, 3)
-			makeUnits(iCiv, iHeavySwordsman, tPlot, 2)
-			makeUnits(iCiv, iCrossbowman, tPlot, 2)
-			makeUnits(iCiv, iLancer, tPlot, 3)
-			makeUnits(iCiv, iJanissary, tPlot, 2)
-			makeUnits(iCiv, iGreatBombard, tPlot, 2)
-			makeUnits(iCiv, iTrebuchet, tPlot, 2)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iHeavySpearman, tPlot, 2)
+		elif iCiv == iCivOttomans:
+			createMissionaries(iPlayer, 3)
+			makeUnits(iPlayer, iHeavySwordsman, tPlot, 2)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 2)
+			makeUnits(iPlayer, iLancer, tPlot, 3)
+			makeUnits(iPlayer, iJanissary, tPlot, 2)
+			makeUnits(iPlayer, iGreatBombard, tPlot, 2)
+			makeUnits(iPlayer, iTrebuchet, tPlot, 2)
 			
-			if player(iCiv).isHuman():
-				makeUnits(iCiv, iGreatBombard, tPlot, 4)
-				makeUnits(iCiv, iJanissary, tPlot, 5)
-				makeUnits(iCiv, iLancer, tPlot, 4)
-		elif iCiv == iPortugal:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iCrossbowman, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
-			makeUnits(iCiv, iHeavySpearman, tPlot, 2)
+			if player(iPlayer).isHuman():
+				makeUnits(iPlayer, iGreatBombard, tPlot, 4)
+				makeUnits(iPlayer, iJanissary, tPlot, 5)
+				makeUnits(iPlayer, iLancer, tPlot, 4)
+		elif iCiv == iCivPortugal:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
+			makeUnits(iPlayer, iHeavySpearman, tPlot, 2)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnit(iCiv, iCog, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
-				makeUnit(iCiv, iSettler, tSeaPlot)
-				makeUnit(iCiv, iCrossbowman, tSeaPlot)
-				makeUnit(iCiv, iHeavyGalley, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA)
-		elif iCiv == iInca:
-			createSettlers(iCiv, 1)
-			makeUnits(iCiv, iAucac, tPlot, 4)
-			makeUnits(iCiv, iArcher, tPlot, 2)
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnit(iPlayer, iCog, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
+				makeUnit(iPlayer, iSettler, tSeaPlot)
+				makeUnit(iPlayer, iCrossbowman, tSeaPlot)
+				makeUnit(iPlayer, iHeavyGalley, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA)
+		elif iCiv == iCivInca:
+			createSettlers(iPlayer, 1)
+			makeUnits(iPlayer, iAucac, tPlot, 4)
+			makeUnits(iPlayer, iArcher, tPlot, 2)
 			
-			if not player(iCiv).isHuman():
-				makeUnit(iCiv, iSettler, tPlot)
-		elif iCiv == iItaly:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iBalestriere, tPlot, 3)
-			makeUnits(iCiv, iHeavySpearman, tPlot, 2)
-			makeUnits(iCiv, iTrebuchet, tPlot, 3)
+			if not player(iPlayer).isHuman():
+				makeUnit(iPlayer, iSettler, tPlot)
+		elif iCiv == iCivItaly:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iBalestriere, tPlot, 3)
+			makeUnits(iPlayer, iHeavySpearman, tPlot, 2)
+			makeUnits(iPlayer, iTrebuchet, tPlot, 3)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnit(iCiv, iCog, tSeaPlot)
-				makeUnit(iCiv, iHeavyGalley, tSeaPlot)
-		elif iCiv == iMongolia:
-			createSettlers(iCiv, 3)
-			makeUnits(iCiv, iCrossbowman, tPlot, 3)
-			makeUnits(iCiv, iHeavySwordsman, tPlot, 2)
-			makeUnits(iCiv, iMangudai, tPlot, 2)
-			makeUnits(iCiv, iKeshik, tPlot, 6, UnitAITypes.UNITAI_ATTACK_CITY)
-			makeUnits(iCiv, iBombard, tPlot, 3)
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnit(iPlayer, iCog, tSeaPlot)
+				makeUnit(iPlayer, iHeavyGalley, tSeaPlot)
+		elif iCiv == iCivMongols:
+			createSettlers(iPlayer, 3)
+			makeUnits(iPlayer, iCrossbowman, tPlot, 3)
+			makeUnits(iPlayer, iHeavySwordsman, tPlot, 2)
+			makeUnits(iPlayer, iMangudai, tPlot, 2)
+			makeUnits(iPlayer, iKeshik, tPlot, 6, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnits(iPlayer, iBombard, tPlot, 3)
 			
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iKeshik, tPlot, 10, UnitAITypes.UNITAI_ATTACK_CITY)
-				makeUnits(iCiv, iBombard, tPlot, 5, UnitAITypes.UNITAI_ATTACK_CITY)
-				makeUnits(iCiv, iHeavySwordsman, tPlot, 2, UnitAITypes.UNITAI_COUNTER)
-				makeUnits(iCiv, iScout, tPlot, 2, UnitAITypes.UNITAI_EXPLORE)
-				makeUnits(iCiv, iCrossbowman, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
-		elif iCiv == iAztecs:
-			createSettlers(iCiv, 2)
-			makeUnits(iCiv, iJaguar, tPlot, 4)
-			makeUnits(iCiv, iArcher, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
-		elif iCiv == iMughals:
-			createSettlers(iCiv, 3)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iSiegeElephant, tPlot, 3)
-			makeUnits(iCiv, iHeavySwordsman, tPlot, 4).experience(2)
-			makeUnits(iCiv, iHorseArcher, tPlot, 2)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iKeshik, tPlot, 10, UnitAITypes.UNITAI_ATTACK_CITY)
+				makeUnits(iPlayer, iBombard, tPlot, 5, UnitAITypes.UNITAI_ATTACK_CITY)
+				makeUnits(iPlayer, iHeavySwordsman, tPlot, 2, UnitAITypes.UNITAI_COUNTER)
+				makeUnits(iPlayer, iScout, tPlot, 2, UnitAITypes.UNITAI_EXPLORE)
+				makeUnits(iPlayer, iCrossbowman, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+		elif iCiv == iCivAztecs:
+			createSettlers(iPlayer, 2)
+			makeUnits(iPlayer, iJaguar, tPlot, 4)
+			makeUnits(iPlayer, iArcher, tPlot, 4, UnitAITypes.UNITAI_CITY_DEFENSE)
+		elif iCiv == iCivMughals:
+			createSettlers(iPlayer, 3)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iSiegeElephant, tPlot, 3)
+			makeUnits(iPlayer, iHeavySwordsman, tPlot, 4).experience(2)
+			makeUnits(iPlayer, iHorseArcher, tPlot, 2)
 			
-			if player(iCiv).isHuman():
-				makeUnits(iCiv, iIslamicMissionary, tPlot, 3)
-		elif iCiv == iThailand:
-			createSettlers(iCiv, 1)
-			createMissionaries(iCiv, 1)
-			makeUnits(iCiv, iHeavySpearman, tPlot, 3)
-			makeUnits(iCiv, iChangSuek, tPlot, 2)
-		elif iCiv == iCongo:
-			createSettlers(iCiv, 1)
-			makeUnits(iCiv, iArcher, tPlot, 2)
-			makeUnits(iCiv, iPombos, tPlot, 2)
-		elif iCiv == iGermany:
-			createSettlers(iCiv, 4)
-			createMissionaries(iCiv, 2)
-			makeUnits(iCiv, iArquebusier, tPlot, 3).experience(2)
-			makeUnits(iCiv, iArquebusier, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE).experience(2)
-			makeUnits(iCiv, iBombard, tPlot, 3).experience(2)
+			if player(iPlayer).isHuman():
+				makeUnits(iPlayer, iIslamicMissionary, tPlot, 3)
+		elif iCiv == iCivThailand:
+			createSettlers(iPlayer, 1)
+			createMissionaries(iPlayer, 1)
+			makeUnits(iPlayer, iHeavySpearman, tPlot, 3)
+			makeUnits(iPlayer, iChangSuek, tPlot, 2)
+		elif iCiv == iCivCongo:
+			createSettlers(iPlayer, 1)
+			makeUnits(iPlayer, iArcher, tPlot, 2)
+			makeUnits(iPlayer, iPombos, tPlot, 2)
+		elif iCiv == iCivGermany:
+			createSettlers(iPlayer, 4)
+			createMissionaries(iPlayer, 2)
+			makeUnits(iPlayer, iArquebusier, tPlot, 3).experience(2)
+			makeUnits(iPlayer, iArquebusier, tPlot, 2, UnitAITypes.UNITAI_CITY_DEFENSE).experience(2)
+			makeUnits(iPlayer, iBombard, tPlot, 3).experience(2)
 			
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iArquebusier, tPlot, 10).experience(2)
-				makeUnits(iCiv, iBombard, tPlot, 5).experience(2)
-		elif iCiv == iAmerica:
-			createSettlers(iCiv, 8)
-			makeUnits(iCiv, iGrenadier, tPlot, 2)
-			makeUnits(iCiv, iMinuteman, tPlot, 4)
-			makeUnits(iCiv, iCannon, tPlot, 2)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iArquebusier, tPlot, 10).experience(2)
+				makeUnits(iPlayer, iBombard, tPlot, 5).experience(2)
+		elif iCiv == iCivAmerica:
+			createSettlers(iPlayer, 8)
+			makeUnits(iPlayer, iGrenadier, tPlot, 2)
+			makeUnits(iPlayer, iMinuteman, tPlot, 4)
+			makeUnits(iPlayer, iCannon, tPlot, 2)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnits(iCiv, iGalleon, tSeaPlot, 2)
-				makeUnit(iCiv, iFrigate, tSeaPlot)
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnits(iPlayer, iGalleon, tSeaPlot, 2)
+				makeUnit(iPlayer, iFrigate, tSeaPlot)
 				
-			if not player(iCiv).isHuman():
-				makeUnit(iCiv, iMinuteman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+			if not player(iPlayer).isHuman():
+				makeUnit(iPlayer, iMinuteman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
 				
-			iReligion = self.findAreaReligion(iCiv, plots.start(23, 40).end(33, 52))
+			iReligion = self.findAreaReligion(iPlayer, plots.start(23, 40).end(33, 52))
 			if iReligion >= 0:
-				pAmerica.setLastStateReligion(iReligion)
-				makeUnit(iCiv, missionary(iReligion), tPlot)
-		elif iCiv == iArgentina:
-			createSettlers(iCiv, 2)
-			makeUnits(iCiv, iMusketeer, tPlot, 3).experience(2)
-			makeUnits(iCiv, iGrenadierCavalry, tPlot, 3).experience(2)
-			makeUnits(iCiv, iCannon, tPlot, 2).experience(2)
+				player(iPlayer).setLastStateReligion(iReligion)
+				makeUnit(iPlayer, missionary(iReligion), tPlot)
+		elif iCiv == iCivArgentina:
+			createSettlers(iPlayer, 2)
+			makeUnits(iPlayer, iMusketeer, tPlot, 3).experience(2)
+			makeUnits(iPlayer, iGrenadierCavalry, tPlot, 3).experience(2)
+			makeUnits(iPlayer, iCannon, tPlot, 2).experience(2)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 2, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iGalleon, tSeaPlot)
-				makeUnits(iCiv, iFrigate, tSeaPlot, 2)
+				makeUnit(iPlayer, iGalleon, tSeaPlot)
+				makeUnits(iPlayer, iFrigate, tSeaPlot, 2)
 				
-			if not player(iCiv).isHuman():
-				makeUnit(iCiv, iMusketeer, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-				makeUnits(iCiv, iMusketeer, tPlot, 2).experience(2)
-				makeUnits(iCiv, iGrenadierCavalry, tPlot, 2).experience(2)
-				makeUnits(iCiv, iCannon, tPlot, 2).experience(2)
-		elif iCiv == iBrazil:
-			createSettlers(iCiv, 5)
-			makeUnits(iCiv, iGrenadier, tPlot, 3)
-			makeUnits(iCiv, iMusketeer, tPlot, 3)
-			makeUnits(iCiv, iCannon, tPlot, 2)
+			if not player(iPlayer).isHuman():
+				makeUnit(iPlayer, iMusketeer, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+				makeUnits(iPlayer, iMusketeer, tPlot, 2).experience(2)
+				makeUnits(iPlayer, iGrenadierCavalry, tPlot, 2).experience(2)
+				makeUnits(iPlayer, iCannon, tPlot, 2).experience(2)
+		elif iCiv == iCivBrazil:
+			createSettlers(iPlayer, 5)
+			makeUnits(iPlayer, iGrenadier, tPlot, 3)
+			makeUnits(iPlayer, iMusketeer, tPlot, 3)
+			makeUnits(iPlayer, iCannon, tPlot, 2)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iWorkboat, tSeaPlot, 2)
-				makeUnits(iCiv, iGalleon, tSeaPlot, 2)
-				makeUnits(iCiv, iFrigate, tSeaPlot, 3)
+				makeUnits(iPlayer, iWorkboat, tSeaPlot, 2)
+				makeUnits(iPlayer, iGalleon, tSeaPlot, 2)
+				makeUnits(iPlayer, iFrigate, tSeaPlot, 3)
 				
-			if not player(iCiv).isHuman():
-				makeUnit(iCiv, iRifleman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
-		elif iCiv == iCanada:
-			createSettlers(iCiv, 5)
-			makeUnits(iCiv, iDragoon, tPlot, 3)
-			makeUnits(iCiv, iRifleman, tPlot, 5)
+			if not player(iPlayer).isHuman():
+				makeUnit(iPlayer, iRifleman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
+		elif iCiv == iCivCanada:
+			createSettlers(iPlayer, 5)
+			makeUnits(iPlayer, iDragoon, tPlot, 3)
+			makeUnits(iPlayer, iRifleman, tPlot, 5)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 2, iPlayer)
 			if tSeaPlot:
-				makeUnits(iCiv, iSteamship, tSeaPlot, 2)
-				makeUnit(iCiv, iIronclad, tSeaPlot)
-				makeUnit(iCiv, iTorpedoBoat, tSeaPlot)
+				makeUnits(iPlayer, iSteamship, tSeaPlot, 2)
+				makeUnit(iPlayer, iIronclad, tSeaPlot)
+				makeUnit(iPlayer, iTorpedoBoat, tSeaPlot)
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
-		self.startWarsOnSpawn(iCiv)
+		self.startWarsOnSpawn(iPlayer)
 
-	def createRespawnUnits(self, iCiv, tPlot):
-		if iCiv == iPersia:
-			makeUnits(iCiv, iQizilbash, tPlot, 6)
-			makeUnits(iCiv, iBombard, tPlot, 3)
-			makeUnits(iCiv, iWorker, tPlot, 3)
+	def createRespawnUnits(self, iPlayer, tPlot):
+		iCiv = civ(iPlayer)
+	
+		if iCiv == iCivIran:
+			makeUnits(iPlayer, iQizilbash, tPlot, 6)
+			makeUnits(iPlayer, iBombard, tPlot, 3)
+			makeUnits(iPlayer, iWorker, tPlot, 3)
 			
-			if not player(iCiv).isHuman():
-				makeUnits(iCiv, iQizilbash, tPlot, 6)
-				makeUnits(iCiv, iBombard, tPlot, 3)
-		elif iCiv == iAztecs:
-			makeUnits(iCiv, iDragoon, tPlot, 4).experience(2)
-			makeUnits(iCiv, iMusketeer, tPlot, 5).experience(2)
-			makeUnits(iCiv, iGrenadier, tPlot, 2).experience(2)
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iMaya:
-			makeUnits(iCiv, iMusketeer, tPlot, 5).experience(2)
-			makeUnits(iCiv, iCannon, tPlot, 5).experience(2)
-			makeUnits(iCiv, iAlbionLegion, tPlot, 5).experience(2)
-			makeUnits(iCiv, iWorker, tPlot, 3)
+			if not player(iPlayer).isHuman():
+				makeUnits(iPlayer, iQizilbash, tPlot, 6)
+				makeUnits(iPlayer, iBombard, tPlot, 3)
+		elif iCiv == iCivMexico:
+			makeUnits(iPlayer, iDragoon, tPlot, 4).experience(2)
+			makeUnits(iPlayer, iMusketeer, tPlot, 5).experience(2)
+			makeUnits(iPlayer, iGrenadier, tPlot, 2).experience(2)
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivColombia:
+			makeUnits(iPlayer, iMusketeer, tPlot, 5).experience(2)
+			makeUnits(iPlayer, iCannon, tPlot, 5).experience(2)
+			makeUnits(iPlayer, iAlbionLegion, tPlot, 5).experience(2)
+			makeUnits(iPlayer, iWorker, tPlot, 3)
 			
-			tSeaPlot = self.findSeaPlots(tPlot, 3, iCiv)
+			tSeaPlot = self.findSeaPlots(tPlot, 3, iPlayer)
 			if tSeaPlot:
-				makeUnit(iCiv, iGalleon, tSeaPlot)
-				makeUnit(iCiv, iFrigate, tSeaPlot)
+				makeUnit(iPlayer, iGalleon, tSeaPlot)
+				makeUnit(iPlayer, iFrigate, tSeaPlot)
 				
 	def findAreaReligion(self, iPlayer, area):
 		lReligions = [0 for i in range(iNumReligions)]
@@ -2760,98 +2758,100 @@ class RiseAndFall:
 		return iHighestReligion
 
 				
-	def createStartingWorkers(self, iCiv, tPlot):
-		if iCiv == iChina:
-			makeUnit(iCiv, iWorker, tPlot)
-		elif iCiv == iIndia:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iGreece:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iPersia:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iCarthage:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iRome:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iMaya:
-			makeUnit(iCiv, iWorker, tPlot)
-		elif iCiv == iJapan:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iTamils:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iEthiopia:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iKorea:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iByzantium:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iVikings:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iTurks:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iArabia:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iTibet:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iKhmer:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iIndonesia:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iMoors:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iSpain:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iFrance:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iEngland:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iHolyRome:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iRussia:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iNetherlands:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iMali:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iPoland:
-			makeUnits(iCiv, iWorker, tPlot, 3)
+	def createStartingWorkers(self, iPlayer, tPlot):
+		iCiv = civ(iPlayer)
+	
+		if iCiv == iCivChina:
+			makeUnit(iPlayer, iWorker, tPlot)
+		elif iCiv == iCivIndia:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivGreece:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivPersia:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivCarthage:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivRome:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivMaya:
+			makeUnit(iPlayer, iWorker, tPlot)
+		elif iCiv == iCivJapan:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivTamils:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivEthiopia:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivKorea:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivByzantium:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivVikings:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivTurks:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivArabia:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivTibet:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivKhmer:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivIndonesia:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivMoors:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivSpain:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivFrance:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivEngland:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivHolyRome:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivRussia:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivNetherlands:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivMali:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivPoland:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
 			
-			if not player(iCiv).isHuman():
+			if not player(iPlayer).isHuman():
 				iRand = rand(5)
 				if iRand == 0: tCityPlot = (65, 55) # Memel
 				elif iRand == 1: tCityPlot = (65, 54) # Koenigsberg
 				else: tCityPlot = (64, 54) # Gdansk
 				
-				makeUnit(iCiv, iSettler, tCityPlot)
-				makeUnit(iCiv, iCrossbowman, tCityPlot)
-		elif iCiv == iOttomans:
-			makeUnits(iCiv, iWorker, tPlot, 4)
-		elif iCiv == iPortugal:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iInca:
-			makeUnits(iCiv, iWorker, tPlot, 4)
-		elif iCiv == iItaly:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iMongolia:
-			makeUnits(iCiv, iWorker, tPlot, 4)
-		elif iCiv == iAztecs:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iMughals:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iThailand:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iCongo:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iGermany:
-			makeUnits(iCiv, iWorker, tPlot, 3)
-		elif iCiv == iAmerica:
-			makeUnits(iCiv, iWorker, tPlot, 4)
-		elif iCiv == iBrazil:
-			makeUnits(iCiv, iMadeireiro, tPlot, 3)
-		elif iCiv == iArgentina:
-			makeUnits(iCiv, iWorker, tPlot, 2)
-		elif iCiv == iCanada:
-			makeUnits(iCiv, iWorker, tPlot, 3)
+				makeUnit(iPlayer, iSettler, tCityPlot)
+				makeUnit(iPlayer, iCrossbowman, tCityPlot)
+		elif iCiv == iCivOttomans:
+			makeUnits(iPlayer, iWorker, tPlot, 4)
+		elif iCiv == iCivPortugal:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivInca:
+			makeUnits(iPlayer, iWorker, tPlot, 4)
+		elif iCiv == iCivItaly:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivMongols:
+			makeUnits(iPlayer, iWorker, tPlot, 4)
+		elif iCiv == iCivAztecs:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivMughals:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivThailand:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivCongo:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivGermany:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
+		elif iCiv == iCivAmerica:
+			makeUnits(iPlayer, iWorker, tPlot, 4)
+		elif iCiv == iCivBrazil:
+			makeUnits(iPlayer, iMadeireiro, tPlot, 3)
+		elif iCiv == iCivArgentina:
+			makeUnits(iPlayer, iWorker, tPlot, 2)
+		elif iCiv == iCivCanada:
+			makeUnits(iPlayer, iWorker, tPlot, 3)
 			
 	def create1700ADstartingUnits(self):
 
@@ -2930,15 +2930,15 @@ class RiseAndFall:
 
 
 	def create4000BCstartingUnits(self):
-	
 		for iPlayer in range(iNumPlayers):
 			tCapital = Areas.getCapital(iPlayer)
+			iCiv = civ(iPlayer)
 			
 			if tBirth[iPlayer] > scenarioStartYear() and player(iPlayer).isHuman():
 				makeUnit(iPlayer, iSettler, tCapital)
 				makeUnit(iPlayer, iMilitia, tCapital)
 				
-			if iPlayer == iHarappa and (data.isPlayerEnabled(iPlayer) or player(iPlayer).isHuman()):
+			if iPlayer == iHarappa and (data.isCivEnabled(iCiv) or player(iPlayer).isHuman()):
 				makeUnit(iPlayer, iCityBuilder, tCapital)
 				makeUnit(iPlayer, iMilitia, tCapital)
 		
@@ -2999,71 +2999,71 @@ class RiseAndFall:
 	def determineEnabledPlayers(self):
 		iRand = infos.constant('PLAYER_OCCURRENCE_POLYNESIA')
 		if iRand <= 0:
-			data.setPlayerEnabled(iPolynesia, False)
+			data.setCivEnabled(iCivPolynesia, False)
 		elif rand(iRand) != 0:
-			data.setPlayerEnabled(iPolynesia, False)
+			data.setCivEnabled(iCivPolynesia, False)
 			
 		iRand = infos.constant('PLAYER_OCCURRENCE_HARAPPA')
 		if iRand <= 0:
-			data.setPlayerEnabled(iHarappa, False)
+			data.setCivEnabled(iCivHarappa, False)
 		elif rand(iRand) != 0:
-			data.setPlayerEnabled(iHarappa, False)
+			data.setCivEnabled(iCivHarappa, False)
 		
 		if not pIndia.isHuman() and not pIndonesia.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_TAMILS')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iTamils, False)
+				data.setCivPlayerEnabled(iCivTamils, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iTamils, False)
+				data.setCivEnabled(iCivTamils, False)
 				
 		if not pChina.isHuman() and not pIndia.isHuman() and not pMughals.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_TIBET')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iTibet, False)
+				data.setCivEnabled(iCivTibet, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iTibet, False)
+				data.setCivEnabled(iCivTibet, False)
 				
 		if not pSpain.isHuman() and not pMali.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_MOORS')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iMoors, False)
+				data.setCivEnabled(iCivMoors, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iMoors, False)
+				data.setCivEnabled(iCivMoors, False)
 				
 		if not pHolyRome.isHuman() and not pGermany.isHuman() and not pRussia.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_POLAND')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iPoland, False)
+				data.setCivEnabled(iCivPoland, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iPoland, False)
+				data.setCivEnabled(iCivPoland, False)
 				
 		if not pMali.isHuman() and not pPortugal.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_CONGO')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iCongo, False)
+				data.setCivEnabled(iCivCongo, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iCongo, False)
+				data.setCivEnabled(iCivCongo, False)
 				
 		if not pSpain.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_ARGENTINA')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iArgentina, False)
+				data.setCivEnabled(iCivArgentina, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iArgentina, False)
+				data.setCivEnabled(iCivArgentina, False)
 				
 		if not pPortugal.isHuman():
 			iRand = infos.constant('PLAYER_OCCURRENCE_BRAZIL')
 			
 			if iRand <= 0:
-				data.setPlayerEnabled(iBrazil, False)
+				data.setCivEnabled(iCivBrazil, False)
 			elif rand(iRand) != 0:
-				data.setPlayerEnabled(iBrazil, False)
+				data.setCivEnabled(iCivBrazil, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []

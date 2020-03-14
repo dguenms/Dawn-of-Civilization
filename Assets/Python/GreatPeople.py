@@ -30,7 +30,7 @@ def getType(iUnit):
 def getAvailableNames(iPlayer, iType):
 	pPlayer = player(iPlayer)
 	iEra = pPlayer.getCurrentEra()
-	iCiv = getAlias(pPlayer.getCivilizationType(), iType, iEra)
+	iCiv = getAlias(civ(iPlayer), iType, iEra)
 	
 	return getEraNames(iCiv, iType, iEra)
 

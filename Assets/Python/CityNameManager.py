@@ -29,68 +29,69 @@ iLangHarappan) = range(iNumLanguages)
 
 # methods
 
-def isResurrected(iCiv):
-	return (data.players[iCiv].iResurrections > 0)
+def isResurrected(iPlayer):
+	return (data.players[iPlayer].iResurrections > 0)
 
-def getLanguages(iCiv):
-	pCiv = player(iCiv)
+def getLanguages(iPlayer):
+	pPlayer = player(iPlayer)
+	iCiv = civ(iPlayer)
 
-	if iCiv == iEgypt:
-		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
+	if iCiv == iCivEgypt:
+		if pPlayer.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
 		return (iLangEgyptian,)
-	elif iCiv == iBabylonia: return (iLangBabylonian,)
-	elif iCiv == iHarappa: return (iLangHarappan, iLangIndian)
-	elif iCiv == iChina: return (iLangChinese,)
-	elif iCiv == iGreece: return (iLangGreek,)
-	elif iCiv == iIndia: return (iLangIndian,)
-	elif iCiv == iCarthage: return (iLangPhoenician,)
-	elif iCiv == iPolynesia: return (iLangPolynesian,)
-	elif iCiv == iPersia: 
-		if player(iCiv).isReborn(): return (iLangArabian, iLangPersian)
+	elif iCiv == iCivBabylonia: return (iLangBabylonian,)
+	elif iCiv == iCivHarappa: return (iLangHarappan, iLangIndian)
+	elif iCiv == iCivChina: return (iLangChinese,)
+	elif iCiv == iCivGreece: return (iLangGreek,)
+	elif iCiv == iCivIndia: return (iLangIndian,)
+	elif iCiv == iCivCarthage: return (iLangPhoenician,)
+	elif iCiv == iCivPolynesia: return (iLangPolynesian,)
+	elif iCiv == iCivPersia: 
+		if pPlayer.isReborn(): return (iLangArabian, iLangPersian)
 		return (iLangPersian,)
-	elif iCiv == iRome: return (iLangLatin,)
-	elif iCiv == iMaya: 
-		if player(iCiv).isReborn(): return (iLangSpanish,)
+	elif iCiv == iCivRome: return (iLangLatin,)
+	elif iCiv == iCivMaya: 
+		if pPlayer.isReborn(): return (iLangSpanish,)
 		return (iLangMayan, iLangAztec)
-	elif iCiv == iTamils: return (iLangIndian,)
-	elif iCiv == iEthiopia: return (iLangEthiopian,)
-	elif iCiv == iKorea: return (iLangKorean, iLangChinese)
-	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin)
-	elif iCiv == iJapan: return (iLangJapanese,)
-	elif iCiv == iVikings: return (iLangViking,)
-	elif iCiv == iTurks: return (iLangTurkish, iLangArabian, iLangPersian)
-	elif iCiv == iArabia: return (iLangArabian,)
-	elif iCiv == iTibet: return (iLangTibetan, iLangChinese,)
-	elif iCiv == iKhmer: return (iLangKhmer, iLangIndonesian)
-	elif iCiv == iIndonesia: return (iLangIndonesian, iLangKhmer)
-	elif iCiv == iMoors: return (iLangArabian,)
-	elif iCiv == iSpain: return (iLangSpanish,)
-	elif iCiv == iFrance: return (iLangFrench,)
-	elif iCiv == iEngland: return (iLangEnglish,)
-	elif iCiv == iHolyRome: return (iLangGerman,)
-	elif iCiv == iRussia: return (iLangRussian,)
-	elif iCiv == iMali: return (iLangMalian,)
-	elif iCiv == iPoland: return (iLangPolish, iLangRussian)
-	elif iCiv == iPortugal: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iInca: 
-		if isResurrected(iCiv): return (iLangSpanish,)
+	elif iCiv == iCivTamils: return (iLangIndian,)
+	elif iCiv == iCivEthiopia: return (iLangEthiopian,)
+	elif iCiv == iCivKorea: return (iLangKorean, iLangChinese)
+	elif iCiv == iCivByzantium: return (iLangByzantine, iLangLatin)
+	elif iCiv == iCivJapan: return (iLangJapanese,)
+	elif iCiv == iCivVikings: return (iLangViking,)
+	elif iCiv == iCivTurks: return (iLangTurkish, iLangArabian, iLangPersian)
+	elif iCiv == iCivArabia: return (iLangArabian,)
+	elif iCiv == iCivTibet: return (iLangTibetan, iLangChinese,)
+	elif iCiv == iCivKhmer: return (iLangKhmer, iLangIndonesian)
+	elif iCiv == iCivIndonesia: return (iLangIndonesian, iLangKhmer)
+	elif iCiv == iCivMoors: return (iLangArabian,)
+	elif iCiv == iCivSpain: return (iLangSpanish,)
+	elif iCiv == iCivFrance: return (iLangFrench,)
+	elif iCiv == iCivEngland: return (iLangEnglish,)
+	elif iCiv == iCivHolyRome: return (iLangGerman,)
+	elif iCiv == iCivRussia: return (iLangRussian,)
+	elif iCiv == iCivMali: return (iLangMalian,)
+	elif iCiv == iCivPoland: return (iLangPolish, iLangRussian)
+	elif iCiv == iCivPortugal: return (iLangPortuguese, iLangSpanish)
+	elif iCiv == iCivInca: 
+		if pPlayer.getPeriod() == iPeriodPeru: return (iLangSpanish,)
 		return (iLangQuechua,)
-	elif iCiv == iItaly: return (iLangItalian,)
-	elif iCiv == iMongolia: return (iLangMongolian, iLangTurkish, iLangChinese)
-	elif iCiv == iAztecs: 
-		if player(iCiv).isReborn(): return (iLangMexican, iLangSpanish)
+	elif iCiv == iCivItaly: return (iLangItalian,)
+	elif iCiv == iCivMongols: return (iLangMongolian, iLangTurkish, iLangChinese)
+	elif iCiv == iCivAztecs: 
+		if pPlayer.isReborn(): return (iLangMexican, iLangSpanish)
 		return (iLangAztec, iLangMayan)
-	elif iCiv == iMughals: return (iLangPersian, iLangArabian, iLangIndian)
-	elif iCiv == iOttomans: return (iLangTurkish, iLangArabian)
-	elif iCiv == iThailand: return (iLangThai, iLangKhmer, iLangIndonesian)
-	elif iCiv == iCongo: return (iLangCongolese,)
-	elif iCiv == iNetherlands: return (iLangDutch,)
-	elif iCiv == iGermany: return (iLangPrussian, iLangGerman,)
-	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
-	elif iCiv == iArgentina: return (iLangSpanish,)
-	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iCanada: return (iLangAmerican, iLangEnglish)
-	elif iCiv == iCeltia: return (iLangCeltic,)
+	elif iCiv == iCivMughals: return (iLangPersian, iLangArabian, iLangIndian)
+	elif iCiv == iCivOttomans: return (iLangTurkish, iLangArabian)
+	elif iCiv == iCivThailand: return (iLangThai, iLangKhmer, iLangIndonesian)
+	elif iCiv == iCivCongo: return (iLangCongolese,)
+	elif iCiv == iCivNetherlands: return (iLangDutch,)
+	elif iCiv == iCivGermany: return (iLangPrussian, iLangGerman,)
+	elif iCiv == iCivAmerica: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iCivArgentina: return (iLangSpanish,)
+	elif iCiv == iCivBrazil: return (iLangPortuguese, iLangSpanish)
+	elif iCiv == iCivCanada: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iCivCeltia: return (iLangCeltic,)
 	else: return None
 	
 def getNativeLanguages(tPlot):
@@ -101,9 +102,9 @@ def getNativeLanguages(tPlot):
 	iNativePlayer = players.all().maximum(plot(tPlot).getSettlerValue)
 	return getLanguages(iNativePlayer)
 
-def getFoundName(iCiv, plot):
+def getFoundName(iPlayer, plot):
 	x, y = location(plot)
-	tLanguages = getLanguages(iCiv)
+	tLanguages = getLanguages(iPlayer)
 	if not tLanguages: return None
 	
 	for iLanguage in tLanguages:
@@ -114,7 +115,7 @@ def getFoundName(iCiv, plot):
 				
 	return None
 	
-def getNativeName(iCiv, tPlot):
+def getNativeName(iPlayer, tPlot):
 	x, y = tPlot
 	tLanguages = getNativeLanguages(tPlot)
 	if not tLanguages: return None
@@ -123,7 +124,7 @@ def getNativeName(iCiv, tPlot):
 		if iLanguage in dFoundMaps:
 			sName = dFoundMaps[iLanguage][67-y][x]
 			if sName != "-1":
-				return getRenameName(iCiv, sName)
+				return getRenameName(iPlayer, sName)
 				
 	return None
 	
@@ -131,8 +132,8 @@ def getIdentifier(sName):
 	if sName not in dIdentifiers: return None
 	return dIdentifiers[sName]
 	
-def getRenameName(iCiv, sName):
-	tLanguages = getLanguages(iCiv)
+def getRenameName(iPlayer, sName):
+	tLanguages = getLanguages(iPlayer)
 	if not tLanguages: return None
 	
 	sIdentifier = getIdentifier(sName)
@@ -146,15 +147,15 @@ def getRenameName(iCiv, sName):
 	
 	return None
 	
-def updateCityNames(iCiv):
-	for city in cities.owner(iCiv):
-		sNewName = getRenameName(iCiv, city.getName())
+def updateCityNames(iPlayer):
+	for city in cities.owner(iPlayer):
+		sNewName = getRenameName(iPlayer, city.getName())
 		if sNewName is not None:
 			city.setName(sNewName, False)
 			
-def updateCityNamesFound(iCiv):
-	for city in cities.owner(iCiv):
-		sNewName = getFoundName(iCiv, (city.getX(), city.getY()))
+def updateCityNamesFound(iPlayer):
+	for city in cities.owner(iPlayer):
+		sNewName = getFoundName(iPlayer, (city.getX(), city.getY()))
 		if sNewName != "-1":
 			city.setName(sNewName, False)
 			
@@ -221,19 +222,19 @@ dCommunistNames = {
 	'Sjangan'		:	'Gon Kong',
 }
 
-def applyCommunistNames(iCiv):
-	for city in cities.owner(iCiv):
+def applyCommunistNames(iPlayer):
+	for city in cities.owner(iPlayer):
 		sName = city.getName()
 		if sName in dCommunistNames:
 			city.setName(dCommunistNames[sName], False)
 			
-def revertCommunistNames(iCiv):
-	for city in cities.owner(iCiv):
+def revertCommunistNames(iPlayer):
+	for city in cities.owner(iPlayer):
 		sIdentifier = getIdentifier(city.getName())
 		if not sIdentifier: continue
 		
 		if sIdentifier in dCommunistNames:
-			sRename = getRenameName(iCiv, sIdentifier)
+			sRename = getRenameName(iPlayer, sIdentifier)
 			
 			if sRename: city.setName(sRename, False)
 			
@@ -289,11 +290,10 @@ def getEraRename(sName, iEra):
 		return tEraNames[iEra][sName]
 	return None
 			
-def onTechAcquired(iCiv):
-	pCiv = player(iCiv)
-	ownerCities = cities.owner(iCiv)
+def onTechAcquired(iPlayer):
+	ownerCities = cities.owner(iPlayer)
 	
-	for iEra in range(pCiv.getCurrentEra()+1):
+	for iEra in range(player(iPlayer).getCurrentEra()+1):
 		for city in ownerCities:
 			sIdentifier = getIdentifier(city.getName())
 			if not sIdentifier: continue
@@ -303,12 +303,13 @@ def onTechAcquired(iCiv):
 			sNewIdentifier = getEraRename(city.getName(), iEra)
 			if not sNewIdentifier: continue
 			
-			sNewName = getRenameName(iCiv, sNewIdentifier)
+			sNewName = getRenameName(iPlayer, sNewIdentifier)
 			if sNewName: city.setName(sNewName, False)
 				
-def onReligionSpread(iReligion, iCiv, city):
+def onReligionSpread(iReligion, iPlayer, city):
+	iCiv = civ(iPlayer)
 
-	if iCiv == iIndonesia:
+	if iCiv == iCivIndonesia:
 		if iReligion == iIslam:
 			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
 			
@@ -316,15 +317,16 @@ def onReligionSpread(iReligion, iCiv, city):
 	if iReligion == iBuddhism:
 		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
 			
-def onRevolution(iCiv):
+def onRevolution(iPlayer):
+	iCiv = civ(iPlayer)
 
-	if has_civic(iCiv, iCentralPlanning):
-		applyCommunistNames(iCiv)
+	if has_civic(iPlayer, iCentralPlanning):
+		applyCommunistNames(iPlayer)
 	else:
-		revertCommunistNames(iCiv)
+		revertCommunistNames(iPlayer)
 
-	if iCiv == iEgypt:
-		updateCityNames(iCiv)
+	if iCiv == iCivEgypt:
+		updateCityNames(iPlayer)
 
 
 # city coordinates
