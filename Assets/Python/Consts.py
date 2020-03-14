@@ -64,9 +64,13 @@ iCivMaya, iCivMexico, iCivMongols, iCivMoors, iCivMughals, iCivNativeAmericans, 
 iCivPolynesia, iCivPortugal, iCivRome, iCivRussia, iCivSpain, iCivSumeria, iCivTamils, iCivThailand, iCivTibet, iCivTurks,
 iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
 
+iCivPhoenicia = iCivCarthage
 iCivCongo = iCivKongo
 iCivAztecs = iCivAztec
 iCivCeltia = iCivCelt
+
+# slot order
+lCivOrder = [iCivEgypt, iCivBabylonia, iCivHarappa, iCivChina, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivMaya, iCivTamils, iCivEthiopia, iCivKorea, iCivByzantium, iCivJapan, iCivVikings, iCivTurks, iCivArabia, iCivTibet, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivKhmer, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivOttomans, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivBarbarian]
 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iItaly, iPoland, iPortugal, iGermany],  #Euros
@@ -765,13 +769,13 @@ tPatienceThreshold = (
 100) #Barbs
 
 dMaxColonists = {
-iVikings : 1,
-iSpain : 7,
-iFrance : 5,
-iEngland : 6,
-iPortugal : 6, 
-iNetherlands : 6,
-iGermany : 2
+iCivVikings : 1,
+iCivSpain : 7,
+iCivFrance : 5,
+iCivEngland : 6,
+iCivPortugal : 6, 
+iCivNetherlands : 6,
+iCivGermany : 2
 }
 
 # initialise religion variables to religion indices from XML
@@ -1086,7 +1090,7 @@ tTradingCompanyPlotLists = (
 [(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
 )
 
-lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
+lSecondaryCivs = [iCivHarappa, iCivPolynesia, iCivTamils, iCivTibet, iCivMoors, iCivPoland, iCivCongo, iCivArgentina, iCivBrazil]
 
 lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 

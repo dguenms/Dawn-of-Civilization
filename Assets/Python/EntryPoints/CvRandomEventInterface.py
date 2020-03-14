@@ -4344,175 +4344,144 @@ def canChooseTradingCompanyConquerors1(argsList):
 def getTradingCompanyConquerors1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 	
-	sTargetCivs = ''
-	sTargetCities = ''
+	lCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+	id = lCivs.index(iCiv)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	targets = data.lTradingCompanyConquerorsTargets[id]
+	targetPlayers = []
+	targetNames = []
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-
-	targetCivList = []
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
-
-	if len(targetCivList) > 0:
-		for iCiv in targetCivList:
-			if targetCivList.index(iCiv) != 0:
-				sTargetCivs += ', '
-			sTargetCivs += gc.getPlayer(iCiv).getCivilizationShortDescription(0) #CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if targetList.index(tPlot) != 0:
-			sTargetCities += ', '
-		if gc.getMap().plot(x, y).isCity():
-			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+	for x, y in targets:
+		city = city_(x, y)
+		if city:
+			if city.getOwner() not in targetPlayers:
+				targetPlayers.append(city.getOwner())
+				
+			lTargetNames.append(city.getName())
 		else:
-			sTargetCities += cnm.getFoundName(iPlayer, (x,y))
-
-	if len(targetCivList) > 0:
-		text = localText.getText("TXT_KEY_EVENT_TCC_ACQUIRE", (len(targetList) * 200, sTargetCivs, sTargetCities))
+			lTargetNames.append(cnm.getFoundName(iPlayer, (x, y)))
+	
+	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
+	sTargetNames = ', '.join(lTargetNames)
+	
+	if targetPlayers:
+		helpText = text("TXT_KEY_EVENT_TCC_ACQUIRE", len(targets) * 200, sTargetPlayers, sTargetNames)
 	else:
-		text = localText.getText("TXT_KEY_EVENT_TCC_COLONIZE", (len(targetList) * 200, sTargetCities))
+		helpText = text("TXT_KEY_EVENT_TCC_COLONIZE", len(targets) * 200, sTargetNames)
 
-	return text
+	return helpText
 
 def doTradingCompanyConquerors1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
-	pPlayer = gc.getPlayer(iPlayer)
+	pPlayer = player(iPlayer)
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	lCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+	id = lCivList.index(iCiv)
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-	targetCivList = []
-	settlerList = []
+	targets = data.lTradingCompanyConquerorsTargets[id]
+	targetPlayers = []
+	settledTiles = []
 
-	iGold = len(targetList) * 200
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
-		else:
-			settlerList.append((x,y))
-
-	for tPlot in settlerList:
-		colonialAcquisition(iPlayer, tPlot)
+	iGold = len(targets) * 200
 	
-	debug(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
-	for iTargetCiv in targetCivList:
-		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
-		if iTargetCiv >= iNumPlayers:
+	for x, y in targets:
+		city = city_(x, y)
+		if city:
+			if not city.getOwner() in targetPlayers:
+				targetPlayers.append(city.getOwner())
+		else:
+			settledTiles.append((x, y))
+			
+	for x, y in settledTiles:
+		colonialAcquisition(iPlayer, (x, y))
+		
+	for iTargetPlayer in targetPlayers:
+		if iTargetPlayer >= iNumPlayers:
 			bAccepted = True
-		elif iRand >= tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+		elif team(iPlayer).isAtWar(iTargetPlayer):
+			bAccepted = False
+		elif rand(100) >= tPatienceThreshold[iTargetPlayer]:
 			bAccepted = True
 		else:
 			bAccepted = False
-
-		for tPlot in targetList:
-			x, y = tPlot
-			if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
+			
+		for x, y in targets:
+			city = city_(x, y)
+			if city.getOwner() == iTargetPlayer:
 				if bAccepted:
-					colonialAcquisition(iPlayer, tPlot)
-					gc.getPlayer(iTargetCiv).changeGold(200)
+					colonialAcquisition(iPlayer, (x, y))
+					player(iTargetPlayer).changeGold(200)
 				else:
-					colonialConquest(iPlayer, tPlot)
+					colonialConquest(iPlayer, (x, y))
 
-	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
+	iNewGold = pPlayer.getGold() - iGold
+	pPlayer.setGold(max(0, iNewGold))
 
 def canChooseTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	lCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+	id = lCivs.index(iCiv)
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-
-	bResult = False
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			bResult = True
-			break
-
-	return bResult
+	targets = data.lTradingCompanyConquerorsTargets[id]
+	
+	return cities.of(targets).any()
 
 def getTradingCompanyConquerors2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 	
-	sTargetCivs = ''
-	sTargetCities = ''
+	lCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+	id = lCivList.index(iCiv)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	targets = data.lTradingCompanyConquerorsTargets[id]
+	targetPlayers = []
+	targetNames = []
+	
+	for x, y in targetPlayers:
+		city = city_(x, y)
+		if city:
+			if city.getOwner() not in targetPlayers:
+				targetPlayers.append(city.getOwner())
+			targetNames.append(city.getName())
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
-	targetCivList = []
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
-
-	if len(targetCivList) == 0:
-		return localText.getText("TXT_KEY_EVENT_TCC_NO_CITIES", ())
-
-	for iCiv in targetCivList:
-		if targetCivList.index(iCiv) != 0:
-			sTargetCivs += ', '
-		sTargetCivs += gc.getPlayer(iCiv).getCivilizationShortDescription(0) #CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			if targetList.index(tPlot) != 0:
-				sTargetCities += ', '
-			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
-
-	return localText.getText("TXT_KEY_EVENT_TCC_CONQUEST", (sTargetCivs, sTargetCities))
+	if not lTargetPlayers:
+		return text("TXT_KEY_EVENT_TCC_NO_CITIES")
+		
+	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
+	sTargetNames = ', '.join(lTargetNames)
+	
+	return text("TXT_KEY_EVENT_TCC_CONQUEST", sTargetPlayers, sTargetNames)
 
 def doTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	lCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+	id = lCivs.index(iCiv)
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[id]
 
 	for tPlot in targetList:
 		x, y = tPlot
 		if gc.getMap().plot(x, y).isCity():
 			colonialConquest(iPlayer, tPlot)
-
-	tSeaPlot = -1
-	x, y = targetList[0]
-	for i in range(x-1, x+2):
-		for j in range(y-1, y+2):
-			if gc.getMap().plot(i, j).isWater():
-				tSeaPlot = (i, j)
-				break
-
-	if tSeaPlot != -1:
-		if iPlayer == iNetherlands:
-			makeUnit(iPlayer, iEastIndiaman, tSeaPlot)
-		else:
-			makeUnit(iPlayer, iGalleon, tSeaPlot)
+			
+	for city in cities.of(targets):
+		colonialConquest(iPlayer, location(city))
+		
+	seaPlot = plots.surrounding(targets[0]).water().random()
+	
+	if seaPlot:
+		makeUnit(iPlayer, unique_unit(iGalleon), seaPlot)
 	
 ######## Reformation (Leoreth) ########
 
@@ -4556,9 +4525,8 @@ def doReformation1(argsList):
 		pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
 	
 	if iPlayer != iNetherlands:
-		for iCiv in range(iNumPlayers):
-			if data.players[iCiv].iReformationDecision == 2:
-				gc.getTeam(iCiv).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
+		for iLoopPlayer in players.major().where(lambda p: data.players[p].iReformationDecision == 2):
+			team(iLoopPlayer).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 	
 def canChooseReformation2(argsList):
 	return True

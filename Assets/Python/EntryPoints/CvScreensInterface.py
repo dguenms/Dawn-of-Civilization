@@ -61,6 +61,8 @@ import CityNameManager as cnm
 import Congresses as cong
 import RiseAndFall as rnf
 
+from Core import *
+
 gc = CyGlobalContext()
 	
 def countAchievedGoals(argsList):
@@ -840,49 +842,41 @@ def featAccomplishedOnFocusCallback(argsList):
 
 # Leoreth
 def isCorePlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iCiv = argsList[2]
-	reborn = player(iCiv).getReborn()
-	if iCiv < iNumPlayers:
-		if (x, y) in Areas.getCoreArea(iCiv):
-			return 1
-	return 0
+	x, y, iPlayer = argsList
+	
+	if is_minor(iPlayer):
+		return 0
+		
+	return (x, y) in Areas.getCoreArea(iPlayer)
 
 # Leoreth
 def isNormalPlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iCiv = argsList[2]
-	if iCiv < iNumPlayers:
-		if (x, y) in Areas.getNormalArea(iCiv):
-			return 1
-	return 0
+	x, y, iPlayer = argsList
+	
+	if is_minor(iPlayer):
+		return 0
+		
+	return (x, y) in Areas.getNormalArea(iPlayer)
 
 # Leoreth
 def isForeignCorePlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iResult = 0
-	for iCiv in range(iNumPlayers):
-		if CyGlobalContext().getGame().getGameTurn() >= year(tBirth[iCiv]):
-			if (x, y) in Areas.getCoreArea(iCiv):
-				iResult = 1
-				break
-	return iResult
-
-#Leoreth
-def isBroaderPlot(argsList):
-	x = argsList[0]
-	y = argsList[1]
-	iCiv = argsList[2]
-	reborn = player(iCiv).getReborn()
-	if iCiv < iNumPlayers:
-		if (x, y) in Areas.getBroaderArea(iCiv):
-			return 1
+	x, y = argsList
+	
+	if players.major().past_birth().any(lambda p: (x, y) in Areas.getCoreArea(p)):
+		return 1
+		
 	return 0
 
-#Leoreth
+# Leoreth
+def isBroaderPlot(argsList):
+	x, y, iPlayer = argsList
+	
+	if is_minor(iPlayer):
+		return 0
+	
+	return (x, y) in Areas.getBroaderArea(iPlayer)
+
+# Leoreth
 def onTechStolen(argsList):
 	iPlayer = argsList[0]
 	iTech = argsList[1]
