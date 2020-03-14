@@ -337,7 +337,7 @@ class AIWars:
 			if lTargetValues[iLoopPlayer] <= iThreshold:
 				lTargetValues[iLoopPlayer] += rand(100)
 			else:
-				lTargetValues[iLoopPlayer] += rand(100)
+				lTargetValues[iLoopPlayer] += rand(300)
 			
 			# balanced by attitude
 			iAttitude = pPlayer.AI_getAttitude(iLoopPlayer) - 2
