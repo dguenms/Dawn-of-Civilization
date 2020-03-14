@@ -591,8 +591,7 @@ class Congress:
 					iOtherClaimant, iVotes = dResults[(x, y)]
 					if self.dVotes[iClaimant] > iVotes: dResults[(x, y)] = (iClaimant, self.dVotes[iClaimant])
 					
-		for (x, y) in dResults:
-			iClaimant, iVotes = dResults[tAssignedPlot]
+		for (x, y), (iClaimant, iVotes) in dResults.items():
 			plot = plot_(x, y)
 			
 			bCanRefuse = (plot.getOwner() == human() and human() not in self.dVotedFor[iClaimant] and not (self.bPostWar and human() in self.losers))
@@ -692,7 +691,7 @@ class Congress:
 		for iClaimant in self.dCityClaims:
 			x, y, iValue = self.dCityClaims[iClaimant]
 			
-			lVoters = self.invites
+			lVoters = self.invites.entities()
 			
 			plot = plot_(x, y)
 			if plot.isOwned():

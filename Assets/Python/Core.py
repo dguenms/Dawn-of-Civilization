@@ -20,6 +20,12 @@ game = gc.getGame()
 map = gc.getMap()
 
 
+def slot(iCiv):
+	if iCiv in data.dSlots:
+		return data.dSlots[iCiv]
+	return -1
+
+
 def emptymap(x = iWorldX, y = iWorldY):
 	return Map([[0 for _ in range(x)] for _ in range(y)])
 
@@ -1005,6 +1011,9 @@ class Players(EntityCollection):
 		
 	def novassal(self):
 		return self.where(lambda p: not team(p).isAVassal())
+	
+	def past_birth(self):
+		return self.where(lambda p: p in tBirth and year() >= year(tBirth[p]))
 		
 		
 class CreatedUnits(object):

@@ -1394,7 +1394,7 @@ def isTolerated(iPlayer, iReligion):
 	return False
 
 def checkResurrection():
-	iNationalismModifier = min(20, 4 * data.iCivsWithNationalism)
+	iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
 	possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.players[p].iLastTurnAlive)
 	
 	# civs entirely controlled by minors will always respawn
@@ -1452,7 +1452,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 		bCapital = ((city.getX(), city.getY()) == tCapital)
 		
 		# flips are less likely before Nationalism
-		if data.iCivsWithNationalism == 0:
+		if data.iPlayersWithNationalism == 0:
 			iOwnerStability += 1
 			
 		if not player(iOwner).isHuman():
@@ -1699,23 +1699,23 @@ def relocateCapital(iPlayer, bResurrection = False):
 	oldCapital.setHasRealBuilding(iPalace, False)
 	newCapital.setHasRealBuilding(iPalace, True)
 
-def convertBackCulture(iCiv):
-	for x, y in Areas.getRespawnArea(iCiv):
+def convertBackCulture(iPlayer):
+	for x, y in Areas.getRespawnArea(iPlayer):
 		plot = plot_(x, y)
 		city = city_(x, y)
 		if city:
-			if city.getOwner() == iCiv:
+			if city.getOwner() == iPlayer:
 				iCulture = 0
 				for iMinor in range(iNumPlayers, iNumTotalPlayersB):
 					iCulture += city.getCulture(iMinor)
 					city.setCulture(iMinor, 0, True)
-				city.changeCulture(iCiv, iCulture, True)
-		elif plot.isCityRadius() and plot.getOwner() == iCiv:
+				city.changeCulture(iPlayer, iCulture, True)
+		elif plot.isCityRadius() and plot.getOwner() == iPlayer:
 			iCulture = 0
 			for iMinor in range(iNumPlayers, iNumTotalPlayersB):
 				iCulture += plot.getCulture(iMinor)
 				plot.setCulture(iMinor, 0, True)
-			plot.changeCulture(iCiv, iCulture, True)
+			plot.changeCulture(iPlayer, iCulture, True)
 		
 # TODO: overlaps with RiseAndFall.setStateReligion
 def setStateReligion(iPlayer):

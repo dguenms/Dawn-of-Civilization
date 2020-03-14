@@ -329,11 +329,11 @@ class Religions:
 				self.schism(pOrthodoxHolyCity, pCatholicHolyCity, cities.none(), cities.all().notowner(pOrthodoxHolyCity.getOwner()).religion(iOrthodoxy))
 				
 					
-	def chooseProtestantism(self, iCiv):
-		return rand(100) >= getCatholicPreference(iCiv)
+	def chooseProtestantism(self, iPlayer):
+		return rand(100) >= getCatholicPreference(iPlayer)
 		
-	def isProtestantAnyway(self, iCiv):
-		return rand(100) >= (getCatholicPreference(iCiv)+50)/2
+	def isProtestantAnyway(self, iPlayer):
+		return rand(100) >= (getCatholicPreference(iPlayer)+50)/2
 
 	def reformation(self):				
 		for iPlayer in range(iNumPlayers):
@@ -364,43 +364,43 @@ class Religions:
 		else:
 			self.tolerateReformation(iPlayer)
 					
-	def embraceReformation(self, iCiv):
+	def embraceReformation(self, iPlayer):
 		iNumCatholicCities = 0
-		for city in cities.owner(iCiv).religion(iCatholicism):
+		for city in cities.owner(iPlayer).religion(iCatholicism):
 			iNumCatholicCities += 1
 			
-			if city.getPopulation() >= 8 and not self.chooseProtestantism(iCiv):
+			if city.getPopulation() >= 8 and not self.chooseProtestantism(iPlayer):
 				city.spreadReligion(iProtestantism)
 			else:
 				city.replaceReligion(iCatholicism, iProtestantism)
 				
-		pPlayer = player(iCiv)
+		pPlayer = player(iPlayer)
 		pPlayer.changeGold(iNumCatholicCities * turns(100))
 		
 		pPlayer.setLastStateReligion(iProtestantism)
 		pPlayer.setConversionTimer(10)
 		
-		if iCiv < iNumPlayers:
-			data.players[iCiv].iReformationDecision = 0
+		if not is_minor(iPlayer):
+			data.players[iPlayer].iReformationDecision = 0
 		
-	def tolerateReformation(self, iCiv):
-		for city in cities.owner(iCiv).religion(iCatholicism):
-			if self.isProtestantAnyway(iCiv):
+	def tolerateReformation(self, iPlayer):
+		for city in cities.owner(iPlayer).religion(iCatholicism):
+			if self.isProtestantAnyway(iPlayer):
 				if city.getPopulation() <= 8 and not city.isHolyCityByType(iCatholicism):
 					city.replaceReligion(iCatholicism, iProtestantism)
 				else:
 					city.spreadReligion(iProtestantism)
 
-		if iCiv < iNumPlayers:
-			data.players[iCiv].iReformationDecision = 1
+		if not is_minor(iPlayer):
+			data.players[iPlayer].iReformationDecision = 1
 					
-	def counterReformation(self, iCiv):
-		for city in cities.owner(iCiv).religion(iCatholicism):
-			if self.chooseProtestantism(iCiv):
+	def counterReformation(self, iPlayer):
+		for city in cities.owner(iPlayer).religion(iCatholicism):
+			if self.chooseProtestantism(iPlayer):
 				if city.getPopulation() >= 8:
 					city.spreadReligion(iProtestantism)
 		
-		if iCiv < iNumPlayers:
-			data.players[iCiv].iReformationDecision = 2
+		if not is_minor(iPlayer):
+			data.players[iPlayer].iReformationDecision = 2
 					
 rel = Religions()
