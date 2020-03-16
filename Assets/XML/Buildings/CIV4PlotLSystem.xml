@@ -2853,7 +2853,7 @@
 		</ArtRef>
 		<!-- General plantation -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -2863,7 +2863,28 @@
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation/Plantation_Modern.kfm</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<!-- General slave plantation -->
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation/Plantation.kfm</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -2885,7 +2906,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- ancient worked silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2901,7 +2922,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- modern worked silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2916,7 +2937,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2932,7 +2953,69 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SILK</Attribute>
+			<Attribute Class="Scalar">iCropArea:10</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- ancient worked silk slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SILK</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- modern worked silk slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SILK</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient silk slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SILK</Attribute>
+			<Attribute Class="Scalar">iCropArea:10</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern silk slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2965,7 +3048,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- ancient worked rubber plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
@@ -2981,7 +3064,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- modern worked rubber plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
@@ -2996,7 +3079,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient rubber plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
@@ -3012,7 +3095,69 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern rubber plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
+			<Attribute Class="Scalar">iCropArea:10</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- ancient worked rubber slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- modern worked rubber slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient rubber slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
+			<Attribute Class="Scalar">iCropArea:10</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern rubber slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_RUBBER</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:RUBBER_PLANTATION_SPINNER</Attribute>
@@ -3036,7 +3181,7 @@
 		<!-- Dye -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:24</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -3052,7 +3197,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked modern dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:24</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -3067,7 +3212,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -3083,7 +3228,70 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE</Attribute>
+			<Attribute Class="Scalar">iCropArea:10</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<!-- Dye -->
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient dye slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE</Attribute>
+			<Attribute Class="Scalar">iCropArea:24</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked modern dye slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE</Attribute>
+			<Attribute Class="Scalar">iCropArea:24</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient dye slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE</Attribute>
+			<Attribute Class="Scalar">iCropArea:10</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern dye slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -3310,7 +3518,7 @@
 		<!-- Cotton -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -3326,7 +3534,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -3341,7 +3549,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -3357,7 +3565,69 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient cotton slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient cotton slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient cotton slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Scale>0.9</Scale>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern cotton slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -3396,7 +3666,7 @@
 		<!-- Tobacco -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -3412,7 +3682,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -3427,7 +3697,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -3443,7 +3713,69 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient tobacco slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient tobacco slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient tobacco slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Scale>0.9</Scale>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern tobacco slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -3483,7 +3815,7 @@
 		<!-- Sugar -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -3499,7 +3831,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked modern sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -3514,7 +3846,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -3530,7 +3862,69 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
+			<Attribute Class="Scalar">iCropArea:2</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient sugar slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
+			<Attribute Class="Scalar">iCropArea:2</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked modern sugar slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
+			<Attribute Class="Scalar">iCropArea:2</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient sugar slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
+			<Attribute Class="Scalar">iCropArea:2</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern sugar slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -3853,6 +4247,72 @@
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient coffee slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COFFEE</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient coffee slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COFFEE</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_MODERN,ERA_FUTURE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient coffee slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COFFEE</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Scale>0.9</Scale>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern coffee slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_COFFEE</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COFFEE_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_MODERN,ERA_FUTURE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
 		<ArtRef Name="goal:BONUS_COFFEE">
 			<!-- unworked coffee -->
 			<Attribute Class="Bonus">BONUS_COFFEE</Attribute>
@@ -3878,7 +4338,7 @@
 		</ArtRef>
 		<!-- Tea -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- worked ancient coffee plantation -->
+			<!-- worked ancient tea plantation -->
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TEA</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
@@ -3895,7 +4355,7 @@
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- worked ancient coffee plantation -->
+			<!-- worked ancient tea plantation -->
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TEA</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
@@ -3911,7 +4371,7 @@
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- unworked ancient coffee plantation -->
+			<!-- unworked ancient tea plantation -->
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TEA</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
@@ -3928,8 +4388,74 @@
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- unworked modern coffee plantation -->
+			<!-- unworked modern tea plantation -->
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TEA</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_MODERN,ERA_FUTURE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient tea slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TEA</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient tea slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TEA</Attribute>
+			<Attribute Class="Scalar">iCropArea:16</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_MODERN,ERA_FUTURE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient tea slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_TEA</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Scale>0.9</Scale>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern tea slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TEA</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TEA_PLANTATION_GRINDER</Attribute>
