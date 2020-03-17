@@ -69,7 +69,7 @@ class Resources:
 			self.createResource(78, 42, iCopper)
 			
 		# Tamils, 300 BC
-		elif iGameTurn == year(tBirth[iTamils])-1 and data.isCivEnabled(iCivTamils):
+		elif iGameTurn == year(tBirth[iCivTamils])-1 and data.isCivEnabled(iCivTamils):
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
@@ -98,7 +98,7 @@ class Resources:
 			self.removeResource(58, 37)
 			
 		# Leoreth: prepare Tibet, 630 AD
-		elif iGameTurn == year(tBirth[iTibet])-1 and data.isCivEnabled(iCivTibet):
+		elif iGameTurn == year(tBirth[iCivTibet])-1 and data.isCivEnabled(iCivTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
@@ -143,7 +143,7 @@ class Resources:
 			self.removeResource(89, 51) # Orduqent
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
-		elif iGameTurn == year(tBirth[iMongolia]):
+		elif iGameTurn == year(tBirth[iCivMongols]):
 			for x, y in [(101, 48), (100, 49), (100, 50), (99, 50)]:
 				plot(x, y).setRouteType(iRouteRoad)
 				

@@ -120,6 +120,7 @@ class CvRFCEventHandler:
 
 	def onCityAcquired(self, argsList):
 		iOwner, iPlayer, city, bConquest, bTrade = argsList
+		iCiv = civ(iPlayer)
 		tCity = (city.getX(), city.getY())
 		
 		cnm.onCityAcquired(city, iPlayer)
@@ -140,10 +141,10 @@ class CvRFCEventHandler:
 				moveCapital(iOttomans, tCity) # Kostantiniyye
 			elif iPlayer == iMongolia and tCity == (102, 47):
 				moveCapital(iMongolia, tCity) # Khanbaliq	
-			elif iPlayer == iTurks and isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+			elif iPlayer == iTurks and isAreaControlled(iTurks, Areas.dCoreArea[iCivPersia][0], Areas.dCoreArea[iCivPersia][1]):
 				capital = pTurks.getCapitalCity()
-				if not capital in plots.rectangle(*Areas.tCoreArea[iPersia]):
-					newCapital = cities.rectangle(*Areas.tCoreArea[iPersia]).owner(iTurks).random()
+				if not capital in plots.rectangle(*Areas.dCoreArea[iCivPersia]):
+					newCapital = cities.rectangle(*Areas.dCoreArea[iCivPersia]).owner(iTurks).random()
 					if newCapital:
 						moveCapital(iTurks, (newCapital.getX(), newCapital.getY()))
 				
@@ -161,14 +162,14 @@ class CvRFCEventHandler:
 		# Leoreth: relocate capital for AI if reacquired:
 		if not player(iPlayer).isHuman() and iPlayer < iNumPlayers:
 			if data.players[iPlayer].iResurrections == 0:
-				if Areas.getCapital(iPlayer) == tCity:
+				if Areas.getCapital(iCiv) == tCity:
 					relocateCapital(iPlayer, city)
 			else:
-				if Areas.getRespawnCapital(iPlayer) == tCity:
+				if Areas.getRespawnCapital(iCiv) == tCity:
 					relocateCapital(iPlayer, city)
 					
 		# Leoreth: help Byzantium/Constantinople
-		if iPlayer == iByzantium and tCity == Areas.getCapital(iByzantium) and year() <= year(330)+3:
+		if iPlayer == iByzantium and tCity == Areas.getCapital(iCivByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -283,7 +284,7 @@ class CvRFCEventHandler:
 						makeUnits(iCarthage, iNumidianCavalry, (58, 39), 3)
 						makeUnits(iCarthage, iWarElephant, (58, 39), 2, UnitAITypes.UNITAI_CITY_COUNTER)
 				
-		if iOwner == iByzantium and location(city) == Areas.getCapital(iByzantium) and year() <= year(330)+3:
+		if iOwner == iByzantium and location(city) == Areas.getCapital(iCivByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -297,13 +298,13 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(iTemple + 4*player(iOwner).getStateReligion(), True)
 			
-		if iOwner == iPortugal and location(city) == Areas.getCapital(iPortugal) and year() <= year(tBirth[iPortugal]) + 3:
+		if iOwner == iPortugal and location(city) == Areas.getCapital(iCivPortugal) and year() <= year(tBirth[iCivPortugal]) + 3:
 			city.setPopulation(5)
 			
 			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, iTemple+4*pPortugal.getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
 			
-		if iOwner == iNetherlands and location(city) == Areas.getCapital(iNetherlands) and year() <= year(1580)+3:
+		if iOwner == iNetherlands and location(city) == Areas.getCapital(iCivNetherlands) and year() <= year(1580)+3:
 			city.setPopulation(9)
 			
 			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre, iTemple+4*pNetherlands.getStateReligion()]:
@@ -311,7 +312,7 @@ class CvRFCEventHandler:
 				
 			pNetherlands.AI_updateFoundValues(False)
 			
-		if iOwner == iItaly and location(city) == Areas.getCapital(iItaly) and year() <= year(tBirth[iItaly])+3:
+		if iOwner == iItaly and location(city) == Areas.getCapital(iCivItaly) and year() <= year(tBirth[iCivItaly])+3:
 			city.setPopulation(7)
 			
 			for iBuilding in [iLibrary, iPharmacy, iTemple+4*pItaly.getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
@@ -330,8 +331,8 @@ class CvRFCEventHandler:
 					rel.foundReligion(location(city), iIslam)
 				
 		# Leoreth: free defender and worker for AI colonies
-		if iOwner in lCivGroups[0]:
-			if city.getRegionID() not in mercRegions[iArea_Europe]:
+		if civ(iOwner) in dCivGroups[iCivGroupEurope]:
+			if city.getRegionID() not in lEurope:
 				if not player(iOwner).isHuman():
 					createGarrisons(city, iOwner, 1)
 					makeUnit(iOwner, iWorker, city)
@@ -387,7 +388,7 @@ class CvRFCEventHandler:
 			captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
 		elif iLosingPlayer == iNative:
-			if iWinningPlayer not in lCivBioNewWorld or any(data.lFirstContactConquerors):
+			if civ(iWinningPlayer) not in lBioNewWorld or any(data.lFirstContactConquerors):
 				if player(iWinningPlayer).isSlavery() or player(iWinningPlayer).isColonialSlavery():
 					if pWinningUnit.getUnitType() == iBandeirante:
 						captureUnit(pLosingUnit, pWinningUnit, iSlave, 100)
@@ -706,12 +707,12 @@ class CvRFCEventHandler:
 		AIParameters.onTechAcquired(iPlayer, iTech)
 		periods.onTechAcquired(iPlayer, iEra)
 
-		if iGameTurn > year(tBirth[iPlayer]):
+		if iGameTurn > birth(iPlayer):
 			vic.onTechAcquired(iPlayer, iTech)
 			cnm.onTechAcquired(iPlayer)
 			dc.onTechAcquired(iPlayer, iTech)
 
-		if player(iPlayer).isAlive() and iGameTurn >= year(tBirth[iPlayer]) and iPlayer < iNumPlayers:
+		if player(iPlayer).isAlive() and iGameTurn >= birth(iPlayer) and iPlayer < iNumPlayers:
 			rel.onTechAcquired(iTech, iPlayer)
 			if iGameTurn > year(1700):
 				self.aiw.forgetMemory(iTech, iPlayer)

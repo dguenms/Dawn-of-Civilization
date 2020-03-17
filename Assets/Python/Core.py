@@ -3,6 +3,7 @@
 from CvPythonExtensions import *
 from Consts import *
 from StoredData import *
+from DataStructures import *
 
 import BugCore
 import Popup
@@ -18,6 +19,36 @@ interface = CyInterface()
 translator = CyTranslator()
 game = gc.getGame()
 map = gc.getMap()
+
+
+# TODO: unify recently born, recently resurrected, recently reborn
+
+
+def count(iterable, condition):
+	return len([x for x in iterable if condition(x))
+
+
+# TODO: test
+def format_separators(list, separator, last_separator, format=lambda x: x):
+	formatted_list = [format(x) for x in list]
+
+	if len(formatted_list) > 1:
+		return last_separator.join(separator.join(formatted_list[:-1]), formatted_list[-1])
+	return last_separator.join(formatted_list)
+
+
+def fall(iPlayer):
+	iCiv = civ(iPlayer)
+	if iCiv in dFall:
+		return year(dFall[iCiv])
+	return game.getMaxTurns()
+
+
+def birth(iPlayer):
+	iCiv = civ(iPlayer)
+	if iCiv in dBirth:
+		return year(dBirth[iCiv])
+	return 0
 
 
 def slot(iCiv):
@@ -211,18 +242,6 @@ def vassals():
 		if master_id:
 			vassals[master_id].append(iPlayer)
 	return vassals
-	
-	
-def deepdict(dictionary = {}):
-	return defaultdict(dictionary, {})
-
-
-def appenddict(dictionary = {}):
-	return defaultdict(dictionary, [])
-
-
-def defaultdict(dictionary, default):
-	return DefaultDict(dictionary, default)
 
 
 def is_minor(identifier):
@@ -470,8 +489,21 @@ def player(identifier = None):
 	raise TypeError("Expected identifier to be CyPlayer, CyTeam, CyPlot, CyCity, CyUnit, or int, received '%s'" % type(identifier))
 	
 
+# TODO: test object as input
 def civ(identifier):
+	if isinstance(identifier, (CyPlayer, CyUnit)):
+		return identifier.getCivilizationType()
+
 	return player(identifier).getCivilizationType()
+	
+	
+# TODO: test
+# EXPECTS CIV
+def period(iCiv):
+	iPlayer = slot(iCiv)
+	if iPlayer >= 0:
+		return player(iPlayer).getPeriod()
+	return -1
 	
 	
 def human():
@@ -960,6 +992,10 @@ class PlayerFactory:
 		
 	def none(self):
 		return Players([])
+	
+	# TODO: test
+	def civs(self, lCivs):
+		return Players([slot(iCiv) for iCiv in lCivs if slot(iCiv) >= 0])
 		
 		
 class Players(EntityCollection):
@@ -1013,7 +1049,7 @@ class Players(EntityCollection):
 		return self.where(lambda p: not team(p).isAVassal())
 	
 	def past_birth(self):
-		return self.where(lambda p: p in tBirth and year() >= year(tBirth[p]))
+		return self.where(lambda p: year() >= birth(p))
 		
 		
 class CreatedUnits(object):
@@ -1049,18 +1085,6 @@ class CreatedUnits(object):
 		if len(self._units) == 1:
 			return self._units[0]
 		raise Exception('Can only return one unit if it is a single created unit')
-		
-		
-class DefaultDict(dict):
-
-	def __init__(self, dictionary, default):
-		self._default = default
-		self.update(dictionary)
-		
-	def __getitem__(self, key):
-		if not key in self:
-			super(DefaultDict, self).__setitem__(key, copy(self._default))
-		return super(DefaultDict, self).__getitem__(key)
 
 		
 class Turn(int):

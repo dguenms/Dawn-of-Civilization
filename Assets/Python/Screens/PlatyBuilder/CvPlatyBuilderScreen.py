@@ -1534,7 +1534,7 @@ class CvWorldBuilderScreen:
 							if self.iPlayerAddMode == "Flip":
 								bExtended = (self.m_iCurrentPlayer in Areas.dRebirthArea)
 							else:
-								bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
+								bExtended = (self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
 							if bExtended:
 								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 							else:
@@ -1997,7 +1997,7 @@ class CvWorldBuilderScreen:
 		if self.m_iCurrentPlayer < iNumPlayers:
 			self.setCurrentFlip()
 
-			tSpawn = Areas.getCapital(self.m_iCurrentPlayer)
+			tSpawn = Areas.getCapital(civ(self.m_iCurrentPlayer))
 			CyEngine().fillAreaBorderPlotAlt(tSpawn[0], tSpawn[1], 1002, "COLOR_CYAN", 0.7)
 
 			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
@@ -2023,14 +2023,11 @@ class CvWorldBuilderScreen:
 			self.lCurrentFlipZone = self.dFlipZoneEdits[self.m_iCurrentPlayer]
 		else:
 			# Human flipzone
-			if player(self.m_iCurrentPlayer).isReborn():
-				lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
-			else:
-				lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			lHumanPlotList = Areas.getBirthArea(civ(self.m_iCurrentPlayer))
 
-			if self.m_iCurrentPlayer in Areas.dChangedBirthArea:
-				tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
-				lAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[self.m_iCurrentPlayer]).notin(*lHumanPlotList)
+			if self.m_iCurrentPlayer in Areas.dExtendedBirthArea:
+				tTL, tBR = Areas.getBirthRectangle(civ(self.m_iCurrentPlayer), True)
+				lAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[civ(self.m_iCurrentPlayer)]).notin(*lHumanPlotList)
 			else:
 				lAIPlotList = []
 			self.lCurrentFlipZone = [lHumanPlotList, lAIPlotList]

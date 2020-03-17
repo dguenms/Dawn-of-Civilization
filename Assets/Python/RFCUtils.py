@@ -37,7 +37,7 @@ def findNearestLandPlot(tPlot, iPlayer):
 	if plot: return plot
 	
 	# if no plot is found, return that player's capital
-	return Areas.getCapital(iPlayer)
+	return Areas.getCapital(civ(iPlayer))
 
 # only used in Plague
 def isMortalUnit(unit):
@@ -342,7 +342,7 @@ def relocateGarrisons(tCityPlot, iOldOwner):
 # used: RiseAndFall
 # TODO: replace plots.of
 def removeCoreUnits(iPlayer):
-	for plot in plots.of(Areas.getBirthArea(iPlayer)):
+	for plot in plots.of(Areas.getBirthArea(civ(iPlayer))):
 		if plot.isCity():
 			iOwner = city(plot).getOwner()
 			if iOwner != iPlayer:
@@ -501,7 +501,7 @@ def clearCatapult(iPlayer):
 # used: RFCUtils, RiseAndFall
 # TODO: remove plots.of
 def getCitiesInCore(iPlayer, bReborn=None):
-	return plots.of(Areas.getCoreArea(iPlayer, bReborn)).cities()
+	return plots.of(Areas.getCoreArea(civ(iPlayer))).cities()
 	
 # used: CvRFCEventHandler, RFCUtils, Stability
 def getOwnedCoreCities(iPlayer, bReborn=None):
@@ -639,7 +639,7 @@ def getPlotNearCityInDirection(city, iDirection):
 def relocateCapital(iPlayer, newCapital):
 	oldCapital = player(iPlayer).getCapitalCity()
 	
-	if (oldCapital.getX(), oldCapital.getY()) == Areas.getNewCapital(iPlayer): return
+	if location(oldCapital) == Areas.getNewCapital(civ(iPlayer)): return
 	
 	newCapital.setHasRealBuilding(iPalace, True)
 	oldCapital.setHasRealBuilding(iPalace, False)
@@ -804,7 +804,7 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 
 # TODO: unused but should be
 def isPastBirth(iPlayer):
-	return year() >= year(tBirth[iPlayer])
+	return year() >= birth(iPlayer)
 	
 # used: Congresses, Stability
 def isNeighbor(iPlayer1, iPlayer2):
@@ -840,9 +840,9 @@ def moveCapital(iPlayer, tPlot):
 	
 # used: RiseAndFall
 def createSettlers(iPlayer, iTargetCities):
-	tCapital = Areas.getCapital(iPlayer)
+	tCapital = Areas.getCapital(civ(iPlayer))
 
-	iNumCities = cities.of(Areas.getBirthArea(iPlayer)).count()
+	iNumCities = cities.of(Areas.getBirthArea(civ(iPlayer))).count()
 	bCapital = city(tCapital)
 	
 	if iNumCities < iTargetCities:
@@ -861,12 +861,12 @@ def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 	if not game.isReligionFounded(iReligion):
 		return
 	
-	makeUnits(iPlayer, missionary(iReligion), Areas.getCapital(iPlayer), iNumUnits)
+	makeUnits(iPlayer, missionary(iReligion), Areas.getCapital(civ(iPlayer)), iNumUnits)
 	
 # used: RiseAndFall
 # TODO: name is misleading, it has nothing inherently to do with colonies
 def getColonyPlayer(iPlayer):
-	colonies = cities.of(Areas.getBirthArea(iPlayer))
+	colonies = cities.of(Areas.getBirthArea(civ(iPlayer)))
 	return players.major().maximum(lambda p: colonies.owner(p).count())
 	
 # used: CvRFCEventHandler
@@ -948,7 +948,7 @@ def doByzantineBribery(spy):
 # used: CvScreensInterface, Stability
 def canRespawn(iPlayer):
 	# no respawn before spawn
-	if year() < year(tBirth[iPlayer]) + 10: return False
+	if year() < birth(iPlayer) + 10: return False
 	
 	# only dead civ need to check for resurrection
 	if player(iPlayer).isAlive(): return False
@@ -958,7 +958,7 @@ def canRespawn(iPlayer):
 	
 	# check if the civ can be reborn at this date
 	# TODO: looks like it accepts this generator expression, check to remove list comprehension elsewhere after all
-	if not any(year().between(iStart, iEnd) for iStart, iEnd in tResurrectionIntervals[iPlayer]):
+	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[civ(iPlayer)]):
 		return False
 				
 	# Thailand cannot respawn when Khmer is alive and vice versa
@@ -982,7 +982,7 @@ def canRespawn(iPlayer):
 			return False
 	
 	if not player(iPlayer).isAlive() and turn() > data.players[iPlayer].iLastTurnAlive + turns(20):
-		if iPlayer not in dRebirth or year() > year(dRebirth[iPlayer]) + turns(10):
+		if civ(iPlayer) not in dRebirth or year() > year(dRebirth[civ(iPlayer)]) + turns(10):
 			return True
 			
 	return False
@@ -992,7 +992,7 @@ def canEverRespawn(iPlayer, iGameTurn = None):
 	if iGameTurn is None:
 		iGameTurn = turn()
 		
-	return not any([turn(iEnd) > iGameTurn for _, iEnd in tResurrectionIntervals[iPlayer]])
+	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[civ(iPlayer)])
 	
 # used: Barbs
 def evacuate(iPlayer, tPlot):
@@ -1121,7 +1121,7 @@ def getLeaderCiv(iLeader):
 # used: Religions, RiseAndFall
 def setStateReligionBeforeBirth(lPlayers, iReligion):
 	for iPlayer in lPlayers:
-		if year() < year(tBirth[iPlayer]) and player(iPlayer).getStateReligion() != iReligion:
+		if year() < birth(iPlayer) and player(iPlayer).getStateReligion() != iReligion:
 			player(iPlayer).setLastStateReligion(iReligion)
 	
 # used: CvRFCEventHandler
@@ -1140,7 +1140,7 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		message(pLosingUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=7, location=pWinningUnit)
 		
 		if iPlayer == iAztecs:
-			if pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers:
+			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and pLosingUnit.getOwner() < iNumPlayers:
 				data.iAztecSlaves += 1
 		
 # used: CvRandomEventInterface
@@ -1270,7 +1270,7 @@ def isAreaControlled(iPlayer, tTL, tBR, tExceptions=[]):
 # unused
 # keep for Rise and Fall refactoring
 def breakAutoplay():
-	if year < year(tBirth[human()]):
+	if year < birth(human()):
 		makeUnit(human(), iSettler, (0, 0))
 		
 # used: CvRFCEventHandler
@@ -1303,10 +1303,20 @@ def canSwitch(iPlayer, iBirthTurn):
 	if data.bAlreadySwitched and not player(iPlayer).isReborn() and not data.bUnlimitedSwitching:
 		return False
 		
-	if year(tBirth[iPlayer]) <= year(tBirth[human()]):
+	if birth(iPlayer) <= birth(human()):
 		return False
 		
-	if human() in lNeighbours[iPlayer] and year(tBirth[iPlayer]) - year(tBirth[human()]) < turns(25):
+	if civ(human()) in dNeighbours[civ(iPlayer)] and birth(iPlayer) - birth(human()) < turns(25):
 		return False
 		
 	return True
+	
+# used: RiseAndFall
+def setCivilization(iPlayer, iNewCivilization):
+	iOldCivilization = civ(iPlayer)
+	if iOldCivilization == iNewCivilization:
+		return
+
+	player(iPlayer).setCivilizationType(iNewCivilization)
+	del data.dSlots[iOldCivilization]
+	data.dSlots[iNewCivilization] = iPlayer

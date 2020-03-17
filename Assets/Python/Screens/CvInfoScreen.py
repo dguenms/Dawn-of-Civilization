@@ -2113,7 +2113,7 @@ class CvInfoScreen:
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
 					
-					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < tBirth[iActivePlayer]):
+					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < birth(iActivePlayer)):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
@@ -2916,7 +2916,7 @@ class CvInfoScreen:
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
 		
-		if (tPlayer.isHasTech(iCalendar) or year < tBirth[iPlayer]):  
+		if (tPlayer.isHasTech(iCalendar) or year < birth(iPlayer)):  
 			if (year < 0):
 			    return localText.getText("TXT_KEY_TIME_BC", (-year,))
 			else:

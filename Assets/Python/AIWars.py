@@ -54,11 +54,11 @@ tRomeEgyptTL = (65, 31)
 tRomeEgyptBR = (72, 36)
 
 # following setup: iPlayer, iPreferredTarget, TL, BR, iNumTargets, iStartYear, iTurnInterval
-tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
-tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
-tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
-tConquestRomeCelts = (3, iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
-tConquestRomeEgypt = (4, iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
+tConquestRomeCarthage = (0, iCivRome, iCivCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
+tConquestRomeGreece = (1, iCivRome, iCivGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
+tConquestRomeAnatolia = (2, iCivRome, iCivGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
+tConquestRomeCelts = (3, iCivRome, iCivCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
+tConquestRomeEgypt = (4, iCivRome, iCivEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
 tGreeceMesopotamiaTL = (70, 38)
@@ -68,21 +68,21 @@ tGreeceEgyptBR = (72, 36)
 tGreecePersiaTL = (79, 37)
 tGreecePersiaBR = (85, 45)
 
-tConquestGreeceMesopotamia = (5, iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
-tConquestGreeceEgypt = (6, iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
-tConquestGreecePersia = (7, iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
+tConquestGreeceMesopotamia = (5, iCivGreece, iCivBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 20)
+tConquestGreeceEgypt = (6, iCivGreece, iCivEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 20)
+tConquestGreecePersia = (7, iCivGreece, iCivPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 20)
 
 iCholaSumatraYear = 1030
 tCholaSumatraTL = (98, 26)
 tCholaSumatraBR = (101, 28)
 
-tConquestCholaSumatra = (8, iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+tConquestCholaSumatra = (8, iCivTamils, iCivIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 
 iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
-tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
+tConquestSpainMoors = (9, iCivSpain, iCivMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 
 iTurksPersiaYear = 1000
 tTurksPersiaTL = (78, 37)
@@ -92,14 +92,14 @@ iTurksAnatoliaYear = 1100
 tTurksAnatoliaTL = (69, 37)
 tTurksAnatoliaBR = (78, 45)
 
-tConquestTurksPersia = (10, iTurks, iArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
-tConquestTurksAnatolia = (11, iTurks, iByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
+tConquestTurksPersia = (10, iCivTurks, iCivArabia, tTurksPersiaTL, tTurksPersiaBR, 4, iTurksPersiaYear, 20)
+tConquestTurksAnatolia = (11, iCivTurks, iCivByzantium, tTurksAnatoliaTL, tTurksAnatoliaBR, 5, iTurksAnatoliaYear, 20)
 
 iMongolsPersiaYear = 1220
 tMongolsPersiaTL = (79, 37)
 tMongolsPersiaBR = (85, 49)
 
-tConquestMongolsPersia = (12, iMongolia, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+tConquestMongolsPersia = (12, iCivMongolia, iCivTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
 lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia]
 
@@ -140,10 +140,18 @@ class AIWars:
 			self.planWars(iGameTurn)
 			
 		for iLoopPlayer in range(iNumPlayers):
-			data.players[iLoopPlayer].iAggressionLevel = tAggressionLevel[iLoopPlayer] + rand(2)
+			data.players[iLoopPlayer].iAggressionLevel = dAggressionLevel[civ(iLoopPlayer)] + rand(2)
 			
 	def checkConquest(self, tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
-		iID, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
+		iID, iCiv, iPreferredTargetCiv, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
+		
+		iPlayer = slot(iCiv)
+		if iPlayer < 0:
+			return
+			
+		iPreferredTarget = slot(iPreferredTargetCiv)
+		if iPreferredTarget < 0:
+			return
 	
 		if player(iPlayer).isHuman(): return
 		if not player(iPlayer).isAlive() and iPlayer != iTurks: return
@@ -152,7 +160,7 @@ class AIWars:
 		
 		iStartTurn = year(iYear).deviate(5)
 		
-		if turn() <= year(tBirth[iPlayer])+3: return
+		if turn() <= birth(iPlayer)+3: return
 		if not turn().between(iStartTurn, iStartTurn + iIntervalTurns): return
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
@@ -346,7 +354,7 @@ class AIWars:
 				
 			# exploit plague
 			if data.players[iLoopPlayer].iPlagueCountdown > 0 or data.players[iLoopPlayer].iPlagueCountdown < -10:
-				if turn() > year(tBirth[iLoopPlayer]) + turns(20):
+				if turn() > birth(iLoopPlayer) + turns(20):
 					lTargetValues[iLoopPlayer] *= 3
 					lTargetValues[iLoopPlayer] /= 2
 		

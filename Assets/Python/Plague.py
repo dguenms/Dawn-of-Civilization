@@ -115,7 +115,7 @@ class Plague:
 						iHealth += rand(40)
 						#print ("starting plague", "civ:", iPlayer, "iHealth:", iHealth)
 						if iPlagueCounter == 2: #medieval black death
-							if iPlayer in lCivGroups[0]:
+							if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
 								iHealth -= 5 
 					if iHealth < iWorstHealth:
 						iWorstHealth = iHealth
@@ -259,7 +259,7 @@ class Plague:
 		teamOwner = team(city)
 		
 		#deadly plague when human player isn't born yet, will speed up the loading
-		if turn() < year(tBirth[human()]) + turns(20):
+		if turn() < birth(human()) + turns(20):
 			iDamage += 10
 			baseValue -= 5
 
@@ -268,11 +268,8 @@ class Plague:
 			if not pOwner.isHuman():
 				if teamOwner.isAtWar(human()):
 					iPreserveDefenders += 2
-				else:
-					for iCivGroups in range(len(lCivGroups)):
-						if iOwner in lCivGroups[iCivGroups] and human() in lCivGroups[iCivGroups]:
-							iPreserveDefenders += 1
-							break
+				elif any(civ(iOwner) in lCivGroup and civ(human()) in lCivGroup for lCivGroup in dCivGroups.values()):
+					iPreserveDefenders += 1
 							
 		# TODO: look from overlap
 		for unit in units.at(pPlot):
@@ -303,7 +300,7 @@ class Plague:
 						iDamage /= 4
 					
 				if data.players[city.getOwner()].bFirstContactPlague:
-					if unit.getOwner() in lCivBioOldWorld:
+					if civ(unit) not in lNewOldWorld and not is_minor(unit):
 						iDamage /= 2
 						
 				if rand(100) > iThreshold:
@@ -346,7 +343,7 @@ class Plague:
 			
 		if team(iPlayer).isHasTech(iMicrobiology): return False
 		
-		if iPlayer in lCivBioNewWorld and not data.lFirstContactConquerors[lCivBioNewWorld.index(iPlayer)]: return False
+		if civ(iPlayer) in lBioNewWorld and not data.lFirstContactConquerors[lBioNewWorld.index(civ(iPlayer))]: return False
 			
 		if data.players[iPlayer].iPlagueCountdown == 0: #vulnerable
 			if not team(iPlayer).isHasTech(iMicrobiology):
@@ -382,7 +379,7 @@ class Plague:
 	def onCityAcquired(self, iOldOwner, iNewOwner, city):
 		if city.hasBuilding(iPlague):
 			if not data.players[iOldOwner].bFirstContactPlague: #don't infect if first contact plague
-				if data.players[iNewOwner].iPlagueCountdown <= 0 and year() > year(tBirth[iNewOwner]) + turns(iImmunity): #skip immunity in this case (to prevent expoiting of being immune to conquer weak civs), but not for the new born civs
+				if data.players[iNewOwner].iPlagueCountdown <= 0 and year() > birth(iNewOwner) + turns(iImmunity): #skip immunity in this case (to prevent expoiting of being immune to conquer weak civs), but not for the new born civs
 					if not team(iNewOwner).isHasTech(iMicrobiology): #but not permanent immunity
 						print("acquiring plague")
 						self.spreadPlague(iNewOwner)
@@ -402,10 +399,10 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
-		if year() > year(tBirth[iAztecs]) + 2 and year() < year(1800):
+		if year() > year(tBirth[iCivAztecs]) + 2 and year() < year(1800):
 			iOldWorldCiv = -1
 			iNewWorldCiv = -1
-			if iTeamX in lCivBioNewWorld and iHasMetTeamY in lCivBioOldWorld:
+			if civ(iTeamX) in lBioNewWorld and civ(iHasMetTeamY) not in lBioNewWorld and not is_minor(iHasMetTeamY):
 				iNewWorldCiv = iTeamX
 				iOldWorldCiv = iHasMetTeamY
 			if iOldWorldCiv != -1 and iNewWorldCiv != -1:
