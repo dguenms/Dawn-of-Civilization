@@ -7,6 +7,7 @@ from Religions import rel
 
 ### Class for easier tech specification ###
 
+# TODO: cover this in Core
 class Techs:
 
 	def __init__(self, techs=[], column=0, era=-1, exceptions=[]):
@@ -37,11 +38,11 @@ def getStartingTechs(iPlayer):
 	
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
-		if tBirth[iPlayer] > scenarioStartYear(): continue
+		iCiv = civ(iPlayer)
+		if tBirth[iCiv] > scenarioStartYear(): continue
 	
-		iCivilization = civ(iPlayer)
-		if iCivilization in lStartingTechs[iScenario]:
-			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
+		if iCiv in lStartingTechs[iScenario]:
+			initTechs(iPlayer, lStartingTechs[iScenario][iCiv].list())
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))

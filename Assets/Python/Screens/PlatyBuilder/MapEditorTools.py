@@ -88,10 +88,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 		sName = "Aztecs"
 
 	lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
-	if player(iPlayer).isReborn():
-		lOldFlipPlotList = Areas.getRebirthArea(iPlayer)
-	else:
-		lOldFlipPlotList = Areas.getBirthArea(iPlayer)
+	lOldFlipPlotList = Areas.getBirthArea(iCiv)
 	bFlipChanged = len(lOldFlipPlotList) != len(lNewFlipPlotList)
 	if not bFlipChanged:
 		for tPlot in lNewFlipPlotList:
@@ -99,9 +96,9 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 				bFlipChanged = True
 				break
 		else:
-			if iPlayer in Areas.dChangedBirthArea:
-				tTL, tBR = Areas.getBirthRectangle(iPlayer, True)
-				lOldAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[iPlayer]).without(lOldFlipPlotList)
+			if iPlayer in Areas.dExtendedBirthArea:
+				tTL, tBR = Areas.getBirthRectangle(iCiv, True)
+				lOldAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[iCiv]).without(lOldFlipPlotList)
 			else:
 				lOldAIPlotList = []
 			bFlipChanged = len(lOldAIPlotList) != len(lNewAIPlotList)
@@ -140,7 +137,7 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 
 			if lNewAIPlotList:
 				if not player(iPlayer).isReborn():
-					file.write("\n\n# dChangedBirthArea\n")
+					file.write("\n\n# dExtendedBirthArea\n")
 					file.write("("+ str(BLAI) + ",\t" + str(TRAI) + "),\t# " + sName)
 		finally:
 			file.close()
@@ -166,13 +163,11 @@ def exportAllFlip(dFlipZoneEdits):
 		if iPlayer in dFlipZoneEdits.keys():
 			lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
 		else:
-			if player(iPlayer).isReborn():
-				lNewFlipPlotList = Areas.getRebirthArea(iPlayer)
-			else:
-				lNewFlipPlotList = Areas.getBirthArea(iPlayer)
-			if iPlayer in Areas.dChangedBirthArea:
-				tTL, tBR = Areas.getBirthRectangle(iPlayer, True)
-				lNewAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[iPlayer]).without(lNewFlipPlotList)
+			lNewFlipPlotList = Areas.getBirthArea(iCiv)
+			
+			if iPlayer in Areas.dExtendedBirthArea:
+				tTL, tBR = Areas.getBirthRectangle(iCiv, True)
+				lNewAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[iCiv]).without(lNewFlipPlotList)
 			else:
 				lNewAIPlotList = []
 
@@ -200,7 +195,7 @@ def exportAllFlip(dFlipZoneEdits):
 			file.write(sString + "\n")
 		file.write(")")
 		if lAllAIPlots:
-			file.write("\n\ndChangedBirthArea = {\n")
+			file.write("\n\ndExtendedBirthArea = {\n")
 			for sString in lAllAIPlots:
 				file.write(sString + "\n")
 			file.write("}")
@@ -224,7 +219,7 @@ def exportCore(iPlayer, bForce = False):
 	elif iPlayer == iAztecs:
 		sName = "Aztecs"
 
-	lCorePlotList = Areas.getCoreArea(iPlayer)
+	lCorePlotList = Areas.getCoreArea(iCiv)
 	bCoreChanged = bForce
 	if not bCoreChanged:
 		for plot in plots.all():
@@ -243,18 +238,11 @@ def exportCore(iPlayer, bForce = False):
 
 		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
 		try:
-			if not player(iPlayer).isReborn():
-				file.write("# tCoreArea\n")
-				file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-				if lExceptions:
-					file.write("\n\n# dCoreAreaExceptions\n")
-					file.write("i" + sName + " : " + str(lExceptions) + ",")
-			else:
-				file.write("# dChangedCoreArea\n")
-				file.write("i" + sName + " : " "("+ str(BL) + ",\t" + str(TR) + "),")
-				if lExceptions:
-					file.write("\n\n# dChangedCoreAreaExceptions\n")
-					file.write("i" + sName + " : " + str(lExceptions) + ",")
+			file.write("# tCoreArea\n")
+			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+			if lExceptions:
+				file.write("\n\n# dCoreAreaExceptions\n")
+				file.write("i" + sName + " : " + str(lExceptions) + ",")
 		finally:
 			file.close()
 		sText = "Core map of %s exported" %sName

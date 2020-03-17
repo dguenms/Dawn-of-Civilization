@@ -167,7 +167,7 @@ class CvDawnOfMan:
 	def update(self, fDelta):
 ##Rhye - begin
 		iActivePlayer = CyGame().getActivePlayer()
-		if tBirth[iActivePlayer] <= scenarioStartYear():
+		if birth(iActivePlayer) <= scenarioStartYear():
 			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, 1)
 			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (0,)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -175,7 +175,7 @@ class CvDawnOfMan:
 		else:
 			iGameTurn = CyGame().getGameTurn()
 
-			iNumAutoPlayTurns = year(tBirth[human()])
+			iNumAutoPlayTurns = birth(human())
 			iNumTurnsRemaining = iNumAutoPlayTurns - iGameTurn
 			
 			#if (iNumTurnsRemaining != self.iTurnsRemaining):

@@ -613,7 +613,7 @@ def setup():
 		if player(iPlayer).getNumCities() > 0:
 			checkName(iPlayer)
 		
-		if (year(tBirth[iPlayer]) >= year() or player(iPlayer).getNumCities() > 0) and not player(iPlayer).isHuman():
+		if (birth(iPlayer) >= year() or player(iPlayer).getNumCities() > 0) and not player(iPlayer).isHuman():
 			setLeader(iPlayer, startingLeader(iPlayer))
 		
 def onCivRespawn(iPlayer, tOriginalOwners):
@@ -629,7 +629,7 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	
 def onVassalState(iMaster, iVassal):
 	if iVassal in lVassalNameChanges:
-		if iVassal == iMughals and iMaster not in lCivGroups[0]: return
+		if iVassal == iMughals and civ(iMaster) not in dCivGroups[iCivGroupEurope]: return
 	
 		data.players[iVassal].iResurrections += 1
 		nameChange(iVassal)
@@ -1161,7 +1161,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_HOLY_ROME_HUNGARY"
 	
 		if not bEmpire:
-			if year() < year(tBirth[iGermany]):
+			if year() < year(tBirth[iCivGermany]):
 				return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
 			else:
 				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
@@ -1371,7 +1371,7 @@ def specificAdjective(iPlayer):
 		if pRome.getNumCities() > 0:
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
-		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
+		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iCivRome)):
 			return adjective(iRome)
 			
 	elif iPlayer == iVikings:
@@ -1385,10 +1385,10 @@ def specificAdjective(iPlayer):
 		if capital in plots.start(tKhazariaTL).end(tKhazariaBR):
 			return "TXT_KEY_CIV_TURKS_KHAZAR"
 			
-		if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+		if isAreaControlled(iTurks, Areas.dCoreArea[iCivPersia][0], Areas.dCoreArea[iCivPersia][1]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
-		if capital in plots.rectangle(Areas.tCoreArea[iPersia]):
+		if capital in plots.rectangle(Areas.dCoreArea[iCivPersia]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
 		if capital in plots.start(tAnatoliaTL).end(tAnatoliaBR):
@@ -1452,14 +1452,14 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_HOLY_ROME_AUSTRO_HUNGARIAN"
 			
 		iVassals = 0
-		for iLoopPlayer in lCivGroups[0]:
+		for civ(iLoopPlayer) in dCivGroups[iCivGroupEurope]:
 			if getMaster(iLoopPlayer) == iPlayer:
 				iVassals += 1
 				
 		if iVassals >= 2:
 			return "TXT_KEY_CIV_HOLY_ROME_HABSBURG"
 			
-		if not bEmpire and year() < year(tBirth[iGermany]):
+		if not bEmpire and year() < year(tBirth[iCivGermany]):
 			return "TXT_KEY_CIV_HOLY_ROME_GERMAN"
 			
 	elif iPlayer == iInca:
@@ -1611,6 +1611,8 @@ def defaultTitle(iPlayer):
 def specificTitle(iPlayer, lPreviousOwners=[]):
 	pPlayer = player(iPlayer)
 	tPlayer = team(iPlayer)
+	iCiv = civ(iPlayer)
+	
 	iCivicGovernment, iCivicLegitimacy, iCivicSociety, iCivicEconomy, iCivicReligion, iCivicTerritory = getCivics(iPlayer)
 	
 	iNumCities = pPlayer.getNumCities()
@@ -1774,7 +1776,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_OF"
 			
-		if tCapitalCoords != Areas.getCapital(iPlayer):
+		if tCapitalCoords != Areas.getCapital(iCiv):
 			if capital.getRegionID() == rAnatolia:
 				return "TXT_KEY_EMPIRE_OF"
 				
@@ -1803,16 +1805,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if iReligion >= 0:
 			if bEmpire:
-				if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]) and not bResurrected:
+				if isAreaControlled(iTurks, Areas.dCoreArea[iCivPersia][0], Areas.dCoreArea[iCivPersia][1]) and not bResurrected:
 					return "TXT_KEY_CIV_TURKS_GREAT_EMPIRE"
 			
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
-			if not isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+			if not isAreaControlled(iTurks, Areas.dCoreArea[iCivPersia][0], Areas.dCoreArea[iCivPersia][1]):
 				return "TXT_KEY_CIV_TURKS_KHANATE_OF"
 				
 			if iReligion == iIslam:
-				if isAreaControlled(iTurks, Areas.tCoreArea[iPersia][0], Areas.tCoreArea[iPersia][1]):
+				if isAreaControlled(iTurks, Areas.dCoreArea[iCivPersia][0], Areas.dCoreArea[iCivPersia][1]):
 					return "TXT_KEY_SULTANATE_ADJECTIVE"
 			
 				return "TXT_KEY_SULTANATE_OF"
@@ -1871,7 +1873,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_SPAIN_CROWN_OF"
 			
 	elif iPlayer == iFrance:
-		if not tCapitalCoords in Areas.getNormalArea(iPlayer):
+		if not tCapitalCoords in Areas.getNormalArea(iCivFrance):
 			return "TXT_KEY_CIV_FRANCE_EXILE"
 			
 		if iEra >= iIndustrial and bEmpire:
@@ -1884,7 +1886,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iPlayer == iEngland:
-		if tCapitalCoords not in Areas.getCoreArea(iPlayer):
+		if tCapitalCoords not in Areas.getCoreArea(iCivEngland):
 			return "TXT_KEY_CIV_ENGLAND_EXILE"
 			
 		if iEra == iMedieval and getMaster(iFrance) == iEngland:
@@ -1924,7 +1926,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_NETHERLANDS_REPUBLIC"
 		
-		if tCapitalCoords not in Areas.getCoreArea(iPlayer):
+		if tCapitalCoords not in Areas.getCoreArea(iCivNetherlands):
 			return "TXT_KEY_CIV_NETHERLANDS_EXILE"
 			
 		if bEmpire:
@@ -1943,7 +1945,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF"
 			
 	elif iPlayer == iPortugal:
-		if tCapitalCoords in Areas.getCoreArea(iBrazil) and not pBrazil.isAlive():
+		if tCapitalCoords in Areas.getCoreArea(iCivBrazil) and not pBrazil.isAlive():
 			return "TXT_KEY_CIV_PORTUGAL_BRAZIL"
 			
 		if not capital in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
@@ -2043,7 +2045,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if tCapitalCoords != Areas.getCapital(iPlayer):
+		if tCapitalCoords != Areas.getCapital(iCiv):
 			return "TXT_KEY_CIV_ARGENTINA_CONFEDERATION"
 			
 	elif iPlayer == iBrazil:

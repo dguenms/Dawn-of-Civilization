@@ -165,7 +165,7 @@ class GameData:
 		
 		self.lDeleteMode = [-1] * 3
 		self.lFirstContactConquerors = [False] * 3
-		self.lFirstContactMongols = [True] * 5
+		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
 		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
 		
 		self.lCheatersCheck = [0, -1]
@@ -304,11 +304,11 @@ class GameData:
 	def setSecedingCities(self, iPlayer, lCities):
 		self.dSecedingCities[iPlayer] = [city.getID() for city in lCities]
 		
-	def isFirstContactMongols(self, iPlayer):
-		return self.lFirstContactMongols[lMongolCivs.index(iPlayer)]
+	def isFirstContactMongols(self, iCiv):
+		return self.dFirstContactMongols[iCiv]
 		
-	def setFirstContactMongols(self, iPlayer, bValue):
-		self.lFirstContactMongols[lMongolCivs.index(iPlayer)] = bValue
+	def setFirstContactMongols(self, iCiv, bValue):
+		self.dFirstContactMongols[iCiv] = bValue
 		
 	def getStabilityLevel(self, iPlayer):
 		return self.players[iPlayer].iStabilityLevel

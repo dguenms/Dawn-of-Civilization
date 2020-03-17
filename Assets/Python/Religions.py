@@ -283,7 +283,7 @@ class Religions:
 		for city in replace:
 			city.replaceReligion(iOrthodoxy, iCatholicism)
 				
-		if player(human()).getStateReligion() == iOrthodoxy and year() >= year(tBirth[human()]):
+		if player(human()).getStateReligion() == iOrthodoxy and year() >= birth(human()):
 			popup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
 			
 		for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):

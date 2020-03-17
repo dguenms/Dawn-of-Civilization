@@ -58,13 +58,13 @@ class UniquePowers:
 
 
 	def checkTurn(self, iGameTurn):
-		if iGameTurn >= year(tBirth[iRussia]) and pRussia.isAlive():
+		if iGameTurn >= year(tBirth[iCivRussia]) and pRussia.isAlive():
 			self.russianUP()
 
-		if iGameTurn >= year(tBirth[iAmerica])+turns(5):
+		if iGameTurn >= year(tBirth[iCivAmerica])+turns(5):
 			self.checkImmigration()
 
-		if iGameTurn >= year(tBirth[iIndonesia]) and pIndonesia.isAlive():
+		if iGameTurn >= year(tBirth[iCivIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
 		
 		data.bBabyloniaTechReceived = False
@@ -140,7 +140,7 @@ class UniquePowers:
 			newUnit = makeUnit(iWinningPlayer, iAztecSlave, pWinningUnit, UnitAITypes.UNITAI_ENGINEER)
 			message(iWinningPlayer, 'TXT_KEY_UP_ENSLAVE_WIN', sound='SND_REVOLTEND', event=1, button=newUnit.getButton(), color=8, location=pWinningUnit, force=True)
 			message(iLosingPlayer, 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=newUnit.getButton(), color=7, location=pWinningUnit, force=True)
-			if pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers: # old world civs now
+			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and pLosingUnit.getOwner() < iNumPlayers: # old world civs now
 				data.iAztecSlaves += 1
 
 
@@ -200,7 +200,7 @@ class UniquePowers:
 		lTargetCities = []
 		
 		for iPlayer in range(iNumPlayers):
-			if iPlayer in lCivBioNewWorld and not player(iPlayer).isReborn(): continue # no immigration to natives
+			if civ(iPlayer) in lBioNewWorld and not player(iPlayer).isReborn(): continue # no immigration to natives
 			pPlayer = player(iPlayer)
 			lCities = []
 			bNewWorld = pPlayer.getCapitalCity().getRegionID() in lNewWorld
@@ -305,7 +305,7 @@ class UniquePowers:
 	# Indonesian UP: additional gold for foreign ships in your core
 	def indonesianUP(self):
 		iNumUnits = 0
-		for x, y in Areas.getCoreArea(iIndonesia):
+		for x, y in Areas.getCoreArea(iCivIndonesia):
 			if plot(x, y).getOwner() == iIndonesia:
 				for unit in units.at(x, y).domain(DomainTypes.DOMAIN_SEA):
 					iOwner = unit.getOwner()

@@ -4404,7 +4404,7 @@ def doTradingCompanyConquerors1(argsList):
 			bAccepted = True
 		elif team(iPlayer).isAtWar(iTargetPlayer):
 			bAccepted = False
-		elif rand(100) >= tPatienceThreshold[iTargetPlayer]:
+		elif rand(100) >= dPatienceThreshold[civ(iTargetPlayer)]:
 			bAccepted = True
 		else:
 			bAccepted = False
