@@ -2026,6 +2026,76 @@
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
 		</ArtRef>
+		<!-- COCHINEAL crops -->
+		<ArtRef Name="art:cochineal_crop">
+			<!-- when worked by plantation -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Cochineal_Worked.nif</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Scale>0.6</Scale>
+			<Rotate>+45</Rotate>
+		</ArtRef>
+		<ArtRef Name="art:cochineal_crop">
+			<!-- when improved but not worked by plantation -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Cochineal.nif</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Scale>0.6</Scale>
+			<Rotate>+45</Rotate>
+		</ArtRef>
+		<ArtRef Name="art:cochineal_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Cochineal.nif</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Scale>0.6</Scale>
+			<Rotate>+45</Rotate>
+		</ArtRef>
+		<!-- COCHINEAL improvement crap -->
+		<ArtRef Name="art:COCHINEAL_PLANTATION_RACK">
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Dye_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:COCHINEAL_PLANTATION_RACK">
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Dye_LSystem.nif::1x3_01_Rack_Worked</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="art:COCHINEAL_PLANTATION_POOL">
+			<!-- worked pool -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Dye_POOL_Spinning.nif</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+		</ArtRef>
+		<ArtRef Name="art:COCHINEAL_PLANTATION_POOL">
+			<!-- unworked pool -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Dye_LSystem.nif::1x1_01_Pool_NotWorked</Attribute>
+			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+		</ArtRef>
 		<!-- SPICE crops -->
 		<ArtRef Name="art:spice_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Worked</Attribute>
@@ -2854,7 +2924,7 @@
 		<!-- General plantation -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER,!BONUS_DYE_COCHINEAL</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -2864,7 +2934,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER,!BONUS_DYE_COCHINEAL</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
@@ -2875,7 +2945,7 @@
 		<!-- General slave plantation -->
 		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER,!BONUS_DYE_COCHINEA</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -2885,7 +2955,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES,!BONUS_RUBBER,!BONUS_DYE_COCHINEA</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
@@ -3325,6 +3395,154 @@
 			<Attribute Class="Scalar">szBatchGroup:dye_crop</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Scale>0.8</Scale>
+			<Rotate>+45</Rotate>
+		</ArtRef>
+		<!-- Cochineal -->
+		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
+			<!-- worked ancient cochineal plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:5</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
+			<!-- worked modern cochineal plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:5</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
+			<!-- unworked ancient cochineal plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:4</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
+			<!-- unworked modern cochineal plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:4</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked ancient cochineal slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:5</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- worked modern cochineal slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:5</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked ancient cochineal slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:4</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_SLAVE_PLANTATION">
+			<!-- unworked modern cochineal slave plantation -->
+			<Attribute Class="Improvement">IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">iCropArea:4</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_POOL</Attribute>
+			<Attribute Class="Scalar">szExtra:art:COCHINEAL_PLANTATION_RACK</Attribute>
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:BONUS_DYE_COCHINEAL">
+			<!-- unworked cochineal -->
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
+			<Attribute Class="Scalar">bGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bPlace:0</Attribute>
+			<Attribute Class="Scalar">iCropArea:3</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+		</ArtRef>
+		<ArtRef Name="art:cochineal_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Cochineal.nif</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Scale>0.6</Scale>
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<!-- Spices -->
@@ -4623,6 +4841,36 @@
 			<Rotate>+45</Rotate>
 		</ArtRef>
 	</LNode>
+	<!-- cochineal -->
+	<LNode Name="BLeaf_4x4">
+		<Width>4</Width>
+		<Height>4</Height>
+		<ArtRef Name="art:cochineal_crop">
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Cochineal.nif</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Rotate>+45</Rotate>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="art:cochineal_crop">
+			<!-- another variation-->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cochineal/Cochineal.nif</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Bonus">BONUS_DYE_COCHINEAL</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:cochineal_crop</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Scale>0.6</Scale>
+			<Rotate>+45</Rotate>
+		</ArtRef>
+	</LNode>
 	<!-- ******************************************************************************************** -->
 	<!-- BLeaf 4x3                                                  Tests against roads,rivers,cities -->
 	<!-- ******************************************************************************************** -->
@@ -5251,7 +5499,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x4" Name="Node_4x4_To_Bleaf_4x4_For_Wine_Dye_and_Silk">
-		<Attribute Class="Bonus">BONUS_SILK,BONUS_DYE,BONUS_RUBBER</Attribute>
+		<Attribute Class="Bonus">BONUS_SILK,BONUS_DYE,BONUS_RUBBER,BONUS_DYE_COCHINEAL</Attribute>
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
 		<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
 		<To Name="BLeaf_4x4"/>
@@ -5386,7 +5634,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_E">
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-0.5,0</Translate>
 		</To>
@@ -5396,7 +5644,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_F">
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_2x1">
 			<Translate>-1.5,0</Translate>
 			<Rotate>90</Rotate>
@@ -5406,7 +5654,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_F">
-		<Attribute Class="Bonus">BONUS_DYE,BONUS_SUGAR,BONUS_SPICES_CINNAMON</Attribute>
+		<Attribute Class="Bonus">BONUS_DYE,BONUS_SUGAR,BONUS_SPICES_CINNAMON,!BONUS_DYE_COCHINEAL</Attribute>
 		<Attribute Class="Scalar">bNotBFS:1</Attribute>
 		<To Name="Node_2x1">
 			<Translate>-1.5,0</Translate>
@@ -5460,7 +5708,7 @@
 	</LProduction>
 	<LProduction From="Node_2x2">
 		<Attribute Class="Improvement">NO_IMPROVEMENT</Attribute>
-		<Attribute Class="Bonus">BONUS_SILK,BONUS_DYE,BONUS_SPICES,BONUS_SUGAR,BONUS_SPICES_CINNAMON,BONUS_CORN,BONUS_MILLET,BONUS_COTTON,BONUS_COFFEE,BONUS_TEA,BONUS_TOBACCO,BONUS_OLIVES,BONUS_SPICES_NUTMEG,BONUS_COCOA,BONUS_RUBBER,BONUS_OPIUM</Attribute>
+		<Attribute Class="Bonus">BONUS_SILK,BONUS_DYE,BONUS_DYE_COCHINEAL,BONUS_SPICES,BONUS_SUGAR,BONUS_SPICES_CINNAMON,BONUS_CORN,BONUS_MILLET,BONUS_COTTON,BONUS_COFFEE,BONUS_TEA,BONUS_TOBACCO,BONUS_OLIVES,BONUS_SPICES_NUTMEG,BONUS_COCOA,BONUS_RUBBER,BONUS_OPIUM</Attribute>
 		<To Name="BLeaf_2x2"/>
 	</LProduction>
 	<LProduction From="Node_2x2">
@@ -5685,7 +5933,7 @@
 	</LProduction>
 	<!-- input=PlotBuilder_Productions/Node_6x2_03.bmp -->
 	<LProduction From="Node_6x2">
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SILK,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON,!BONUS_RUBBER</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SILK,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON,!BONUS_RUBBER,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-1.500000,0.000000</Translate>
 		</To>
@@ -5708,7 +5956,7 @@
 	<!-- input=PlotBuilder_Productions/Node_6x6_01.bmp -->
 	<LProduction From="Node_6x6">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-1.500000,-2.000000</Translate>
 		</To>
@@ -5737,7 +5985,7 @@
 	<!-- input=PlotBuilder_Productions/Node_6x6_02.bmp -->
 	<LProduction From="Node_6x6">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-1.500000,-2.000000</Translate>
 		</To>
@@ -5769,7 +6017,7 @@
 	<!-- input=PlotBuilder_Productions/Node_6x6_03.bmp -->
 	<LProduction From="Node_6x6">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_3x2">
 			<Translate>-2.000000,-1.500000</Translate>
 			<Rotate>90</Rotate>
@@ -5801,7 +6049,7 @@
 	<!-- input=PlotBuilder_Productions/Node_6x6_04.bmp -->
 	<LProduction From="Node_6x6">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_2x2">
 			<Translate>-2.000000,-2.000000</Translate>
 		</To>
@@ -5825,7 +6073,7 @@
 	<!-- input=PlotBuilder_Productions/Node_6x6_05.bmp -->
 	<LProduction From="Node_6x6">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON</Attribute>
+		<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES_CINNAMON,!BONUS_DYE_COCHINEAL</Attribute>
 		<To Name="Node_4x2">
 			<Translate>-2.000000,-1.000000</Translate>
 			<Rotate>90</Rotate>
