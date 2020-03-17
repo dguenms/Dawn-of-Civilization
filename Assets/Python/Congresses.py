@@ -472,7 +472,7 @@ class Congress:
 			
 	def startResultsEvent(self):
 		# don't display if human still in autoplay
-		if year() >= year(tBirth[human()]):
+		if year() >= birth(human()):
 	
 			sText = text("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName)
 		
@@ -547,7 +547,7 @@ class Congress:
 		# unless the player isn't involved, in that case resolve from here
 		if human() not in self.invites:
 			# since Congresses now can occur during autoplay, don't display these congresses to the player
-			if year() >= year(tBirth[human()]):
+			if year() >= birth(human()):
 				self.startIntroductionEvent(False, bHumanInGlobalWar)
 			else:
 				# select claims first, then move on to voting directly since the player isn't involved
@@ -669,7 +669,7 @@ class Congress:
 				
 		for iBelligerent in self.dPossibleBelligerents:
 			iRand = rand(100)
-			iThreshold = 10 + tPatienceThreshold[iBelligerent] - 5 * self.dPossibleBelligerents[iBelligerent] - iGlobalWarModifier
+			iThreshold = 10 + dPatienceThreshold[civ(iBelligerent)] - 5 * self.dPossibleBelligerents[iBelligerent] - iGlobalWarModifier
 			if iRand >= iThreshold:
 				team(iBelligerent).setDefensivePact(human(), False)
 				team(iBelligerent).declareWar(human(), False, WarPlanTypes.WARPLAN_DOGPILE)
@@ -740,7 +740,7 @@ class Congress:
 			bWarClaim = (iClaimant in self.winners and iOwner in self.losers)
 		
 		# everyone agrees on AI American claims in the west, unless owner is native to the Americas
-		if iClaimant == iAmerica and iVoter != iOwner and iOwner not in lCivGroups[5]:
+		if iClaimant == iAmerica and iVoter != iOwner and civ(iOwner) not in dCivGroups[iCivGroupAmerica]:
 			if plot in plots.start(tAmericanClaimsTL).end(tAmericanClaimsBR):
 				self.vote(iVoter, iClaimant, 1)
 				return
@@ -806,9 +806,9 @@ class Congress:
 			iClaimValidity += max(1, iClaimantValue / 100)
 
 		# Europeans support colonialism unless they want the plot for themselves
-		if iVoter in lCivGroups[0]:
-			if iClaimant in lCivGroups[0]:
-				if not bOwner or iOwner not in lCivGroups[0]:
+		if civ(iVoter) in dCivGroups[iCivGroupEurope]:
+			if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
+				if not bOwner or civ(iOwner) not in dCivGroups[iCivGroupEurope]:
 					if plot.getSettlerValue(iVoter) < 90:
 						iClaimValidity += 10
 						
@@ -816,9 +816,9 @@ class Congress:
 		if bOwner:
 			bDifferentGroupClaimant = True
 			bDifferentGroupOwner = True
-			for lGroup in lCivGroups:
-				if iVoter in lGroup and iClaimant in lGroup: bDifferentGroupClaimant = False
-				if iVoter in lGroup and iOwner in lGroup: bDifferentGroupOwner = False
+			for lGroup in dCivGroups.values():
+				if civ(iVoter) in lGroup and civ(iClaimant) in lGroup: bDifferentGroupClaimant = False
+				if civ(iVoter) in lGroup and civ(iOwner) in lGroup: bDifferentGroupOwner = False
 		
 			iClaimantValue = plot.getSettlerValue(iClaimant)
 			iOwnerValue = plot.getSettlerValue(iOwner)
@@ -999,13 +999,13 @@ class Congress:
 			if not player(iPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: continue
 			
 			# recently born
-			if iGameTurn < year(tBirth[iLoopPlayer]) + turns(20): continue
+			if iGameTurn < birth(iLoopPlayer) + turns(20): continue
 			
 			# recently resurrected
 			if iGameTurn < pPlayer.getLatestRebellionTurn() + turns(20): continue
 			
 			# recently reborn
-			if player(iLoopPlayer).isReborn() and iLoopPlayer in dRebirth and iGameTurn < year(dRebirth[iLoopPlayer]) + turns(20): continue
+			if player(iLoopPlayer).isReborn() and civ(iLoopPlayer) in dRebirth and iGameTurn < year(dRebirth[civ(iLoopPlayer)]) + turns(20): continue
 			
 			# exclude master/vassal relationships
 			if team(iPlayer).isVassal(iLoopPlayer): continue
@@ -1046,8 +1046,8 @@ class Congress:
 					iValue += 5
 							
 				# colonies
-				if iPlayer in lCivGroups[0]:
-					if iLoopPlayer >= iNumPlayers or (iLoopPlayer not in lCivGroups[0] and stability(iLoopPlayer) < iStabilityShaky) or (iLoopPlayer in lCivGroups[0] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
+				if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
+					if iLoopPlayer >= iNumPlayers or (civ(iLoopPlayer) not in dCivGroups[iCivGroupEurope] and stability(iLoopPlayer) < iStabilityShaky) or (civ(iLoopPlayer) in dCivGroups[iCivGroupEurope] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
 						if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
 							if iSettlerMapValue > 90:
 								iValue += max(1, iSettlerMapValue / 100)
@@ -1084,7 +1084,7 @@ class Congress:
 		
 		# extra spots for colonial civs -> will be settled
 		# not available after wars because these congresses are supposed to reassign cities
-		if iPlayer in lCivGroups[0] and not self.bPostWar:
+		if civ(iPlayer) in dCivGroups[iCivGroupEurope] and not self.bPostWar:
 			for plot in plots.all().where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater() and not pPlayer.canFound(p.getX(), p.getY())).regions(rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania):
 				if pPlayer.isHuman() and not plot.isRevealed(iPlayer, False): continue
 				iSettlerMapValue = plot.getSettlerValue(iPlayer)
@@ -1118,7 +1118,7 @@ class Congress:
 		self.invites = self.invites.alive()
 		
 		# America receives an invite if there are still claims in the west
-		if iAmerica not in self.invites and not self.bPostWar and year() > year(tBirth[iAmerica]):
+		if iAmerica not in self.invites and not self.bPostWar and year() > year(tBirth[iCivAmerica]):
 			if cities.start(tAmericanClaimsTL).end(tAmericanClaimsBR).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)

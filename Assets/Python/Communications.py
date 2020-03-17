@@ -100,7 +100,7 @@ class Communications:
 		iPlayer = slot(iCiv)
 	
 		if 0 <= iPlayer < iNumMajorPlayers:
-			if player(iPlayer).isAlive() and iGameTurn >= year(tBirth[iPlayer]+turns(15)): # edead: RFCM
+			if player(iPlayer).isAlive() and iGameTurn >= birth(iPlayer) + turns(15): # edead: RFCM
 				if not team(iPlayer).isHasTech(iElectricity):
 					self.decay(iPlayer)
 

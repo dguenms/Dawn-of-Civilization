@@ -312,7 +312,7 @@ class Barbs:
 		if iGameTurn < year(tMinorCities[len(tMinorCities)-1][0])+10:
 			self.foundMinorCities(iGameTurn)
 
-		if iGameTurn == year(tBirth[iInca]):
+		if iGameTurn == year(tBirth[iCivInca]):
 			if player(iInca).isHuman():
 				makeUnit(iNative, iAucac, (24, 26))
 				makeUnit(iNative, iAucac, (25, 23))
@@ -511,4 +511,4 @@ class Barbs:
 			makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)
 			
 	def includesActiveHuman(self, lPlayers):
-		return human() in lPlayers and tBirth[human()] <= year()
+		return human() in lPlayers and birth(human()) <= year()

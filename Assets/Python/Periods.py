@@ -65,7 +65,7 @@ def onResurrection(iPlayer):
 		setPeriod(iGreece, iPeriodModernGreece)
 	
 	if iPlayer == iChina:
-		if year() > year(tBirth[iMongolia]):
+		if year() > year(tBirth[iCivMongolia]):
 			setPeriod(iChina, iPeriodMing)
 	
 	if iPlayer == iIndia:
@@ -90,7 +90,7 @@ def onCityAcquired(iPlayer, city, bConquest):
 			setPeriod(iOttomans, iPeriodOttomanConstantinople)
 	
 	if iTurks in [iPlayer, iOwner]:
-		tTL, tBR = Areas.tCoreArea[iPersia]
+		tTL, tBR = Areas.dCoreArea[iCivPersia]
 		if isAreaControlled(iTurks, tTL, tBR):
 			setPeriod(iTurks, iPeriodSeljuks)
 		else:

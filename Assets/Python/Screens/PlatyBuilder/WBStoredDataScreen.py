@@ -220,8 +220,8 @@ class WBStoredDataScreen:
 				sText = CyTranslator().getText(str(gc.getPlayer(lSecondaryCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lSecondaryCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lFirstContactConquerors": # New world civs conquerors
-				sText = CyTranslator().getText(str(gc.getPlayer(lCivBioNewWorld[i]).getCivilizationShortDescriptionKey()), ())
-				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lCivBioNewWorld[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+				sText = CyTranslator().getText(str(gc.getCivilizationInfo(lBioNewWorld[i]).getText()), ())
+				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(lBioNewWorld[i]).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lFirstContactMongols": # Mongol conquerors
 				sText = CyTranslator().getText(str(gc.getPlayer(lMongolCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lMongolCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
