@@ -1491,19 +1491,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INO3_TITLE</Tag>
-		<English>National Awakening</English>
-		<French>R&#233;veil national </French>
-		<German>Nationales Erwachen</German>
-		<Italian>National Awakening</Italian>
-		<Spanish>National Awakening</Spanish>
+		<English>Rice of the Hejaz</English>
+		<French>Rice of the Hejaz</French>
+		<German>Rice of the Hejaz</German>
+		<Italian>Rice of the Hejaz</Italian>
+		<Spanish>Rice of the Hejaz</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INO3</Tag>
-		<English>Control 9% of the world's population in 1940 AD</English>
-		<French>Contr&#244;ler 9% de la population mondiale en 1940 ap. J.-C.</French>
-		<German>Kontrollieren Sie 9% der Weltbev&#246;lkerung im Jahr 1940 n. Chr.</German>
-		<Italian>Control 9% of the world's population in 1940 AD</Italian>
-		<Spanish>Control 9% of the world's population in 1940 AD</Spanish>
+		<English>Have the largest population among Islamic nations and control Cathedrals of 3 different religions in 1700 AD</English>
+		<French>Have the largest population among Islamic nations and control Cathedrals of 3 different religions in 1700 AD</French>
+		<German>Have the largest population among Islamic nations and control Cathedrals of 3 different religions in 1700 AD</German>
+		<Italian>Have the largest population among Islamic nations and control Cathedrals of 3 different religions in 1700 AD</Italian>
+		<Spanish>Have the largest population among Islamic nations and control Cathedrals of 3 different religions in 1700 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IRA1_TITLE</Tag>
@@ -6901,5 +6901,13 @@
 		<German>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</German>
 		<Italian>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</Italian>
 		<Spanish>Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ISLAMIC_CIV_HIGHEST_POPULATION</Tag>
+		<English>Islamic Civilization with the largest population: %s1</English>
+		<French>Islamic Civilisation avec la plus grande population : %s1</French>
+		<German>Islamic Civilization with the largest population: %s1</German>
+		<Italian>Islamic Civilization with the largest population: %s1</Italian>
+		<Spanish>Islamic Civilization with the largest population: %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

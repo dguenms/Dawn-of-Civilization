@@ -788,13 +788,27 @@ class UniquePowers:
 			utils.makeUnit(iKhagan, iKhazars, (city.getX(), city.getY()), 1)
 			
 	def onCorporationSpread(self, iCorporation, iOwner, pSpreadCity):
-		if iCorporation == iSpiceRoute:
-			iValue = pSpreadCity.getCorporationCommerceByCorporation(CommerceTypes.COMMERCE_GOLD, iCorporation)
-			iGold = iValue * 25
-			if iGold >= 200:
-				iGold = 200
-			if iGold < 25:
-				iGold = 25
-			gc.getPlayer(iIndonesia).changeGold(iGold)
-			if utils.getHumanID() == iIndonesia:
-				CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+		if iCorporation == iSpiceRoute and pIndonesia.isAlive():
+			self.doIndonesianUP()
+				
+	def onCityAcquired(self, iPlayer, city):
+		if iPlayer == iIndonesia and pIndonesia.getNumCities() == 1:
+			iCompanyCount = 0
+			for iLoopPlayer in range(iNumPlayers):
+				if gc.getPlayer(iLoopPlayer).isAlive():
+					iCompanyCount += gc.getPlayer(iLoopPlayer).countCorporations(iSpiceRoute)
+			self.doIndonesianUP(iCompanyCount)
+				
+	def onCityBuilt(self, iPlayer, city):
+		if iPlayer == iIndonesia and pIndonesia.getNumCities() == 1:
+			iCompanyCount = 0
+			for iLoopPlayer in range(iNumPlayers):
+				if gc.getPlayer(iLoopPlayer).isAlive():
+					iCompanyCount += gc.getPlayer(iLoopPlayer).countCorporations(iSpiceRoute)
+			self.doIndonesianUP(iCompanyCount)
+		
+	def doIndonesianUP(self, iNumCorporations = 1):
+		iGold = utils.getTurns(20 * iNumCorporations)
+		gc.getPlayer(iIndonesia).changeGold(iGold)
+		if utils.getHumanID() == iIndonesia and iGold > 0:
+			CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)

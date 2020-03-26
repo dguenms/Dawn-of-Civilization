@@ -1040,9 +1040,16 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1500):
 			expire(iIndonesia, 1)
 		
-		# third goal: control 9% of the world's population in 1940 AD
-		if iGameTurn == getTurnForYear(1940):
-			if getPopulationPercent(iIndonesia) >= 9.0:
+		# third goal: Have the largest population among Islamic nations and control Cathedrals of 3 different religions in 1700 AD
+		if iGameTurn == getTurnForYear(1700):
+			bIslamicPop = isBestPlayer(iIndonesia, playerRealPopulation, getReligionPlayers([iIslam]))
+			iNumCathedrals = 0
+			
+			for iReligion in range(iNumReligions):
+				if getNumBuildings(iIndonesia, iJewishCathedral + 4 * iReligion) >= 1:
+					iNumCathedrals += 1
+				
+			if bIslamicPop and iNumCathedrals >= 3:
 				win(iIndonesia, 2)
 			else:
 				lose(iIndonesia, 2)
@@ -4909,8 +4916,14 @@ def getUHVHelp(iPlayer, iGoal):
 			iCounter = countHappinessResources(iIndonesia)
 			aHelp.append(getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 10)))
 		elif iGoal == 2:
-			popPercent = getPopulationPercent(iIndonesia)
-			aHelp.append(getIcon(popPercent >= 9.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(9))))
+			iIslamicPop = getBestPlayer(iIndonesia, playerRealPopulation, getReligionPlayers([iIslam]))
+			iNumCathedrals = 0
+			
+			for iReligion in range(iNumReligions):
+				if getNumBuildings(iIndonesia, iJewishCathedral + 4 * iReligion) >= 1:
+					iNumCathedrals += 1
+					
+			aHelp.append(getIcon(iIslamicPop == iIndonesia) + localText.getText("TXT_KEY_VICTORY_ISLAMIC_CIV_HIGHEST_POPULATION", (gc.getPlayer(iIslamicPop).getCivilizationShortDescription(0),)) + ' ' + getIcon(iNumCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_DIFFERENT_CATHEDRALS", (iNumCathedrals, 3)))
 
 	elif iPlayer == iBurma:
 		if iGoal == 0:

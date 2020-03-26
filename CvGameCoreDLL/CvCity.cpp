@@ -11204,11 +11204,6 @@ int CvCity::getAdditionalCommerceRateModifierByBuilding(CommerceTypes eIndex, Bu
 			}
 		}
 	}
-	
-	if (eReligion != NO_RELIGION && eReligion == kBuilding.getReligionType())
-	{
-		iExtraModifier += kBuilding.getStateReligionCommerceModifier(eIndex);
-	}
 
 	iExtraModifier += getAdditionalCommerceRateModifierByBuildingImpl(eIndex, eBuilding);
 	if (bNoEspionage && eIndex == COMMERCE_CULTURE)
@@ -11243,7 +11238,7 @@ int CvCity::getAdditionalCommerceRateModifierByBuildingImpl(CommerceTypes eIndex
 		{
 			iExtraModifier += kBuilding.getPowerCommerceModifier(eIndex);
 		}
-		if (eReligion != NO_RELIGION && eReligion == kBuilding.getReligionType())
+		if (eReligion != NO_RELIGION && eReligion == kBuilding.getReligionType() && GET_PLAYER(getOwner()).getAllowStateReligionCommerceModifiers())
 		{
 			iExtraModifier += kBuilding.getStateReligionCommerceModifier(eIndex);
 		}

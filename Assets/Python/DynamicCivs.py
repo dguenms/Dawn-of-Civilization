@@ -1123,8 +1123,8 @@ def specificName(iPlayer):
 		elif iReligion == iIslam:
 			return "TXT_KEY_CIV_FUNJ"
 			
-		elif iReligion < 0 and pPlayer.isStateReligion():
-			if bEmpire or not isCapital(iPlayer, ["Kerma"]):
+		elif (iReligion < 0 or iReligion == iJudaism) and pPlayer.isStateReligion():
+			if bEmpire:
 				return "TXT_KEY_CIV_NUBIA_KUSH"
 			return capitalName(iPlayer)
 	
