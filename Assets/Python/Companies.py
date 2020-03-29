@@ -11,7 +11,7 @@ from operator import itemgetter
 tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
-lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
+lTradingCompanyCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands, iCivVikings] # Vikings too now
 
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)
@@ -49,9 +49,8 @@ class Companies:
 			
 		# count the number of companies
 		iCompanyCount = 0
-		for iLoopPlayer in range(iNumPlayers):
-			if player(iLoopPlayer).isAlive():
-				iCompanyCount += player(iLoopPlayer).countCorporations(iCompany)
+		for iLoopPlayer in players.major().alive():
+			iCompanyCount += player(iLoopPlayer).countCorporations(iCompany)
 				
 		# return if gameturn is beyond company fall date and removed from all cities
 		if iMaxCompanies == 0 and iCompanyCount == 0:
@@ -59,7 +58,7 @@ class Companies:
 			
 		# loop through all cities, check the company value for each and add the good ones to a list of tuples (city, value)
 		cityValueList = []
-		for iPlayer in range(iNumPlayers):
+		for iPlayer in players.major():
 			if team(iPlayer).isHasTech(tCompanyTechs[iCompany]) and (team(iPlayer).isHasTech(iEconomics) or iCompany <= iTradingCompany):
 				for city in cities.owner(iPlayer):
 					iValue = self.getCityValue(city, iCompany)
@@ -107,13 +106,13 @@ class Companies:
 
 
 	def getCityValue(self, city, iCompany):
-		
 		if city is None: return -1
 		elif city.isNone(): return -1
 		
 		iValue = 2
 		
 		iOwner = city.getOwner()
+		iOwnerCiv = civ(iOwner)
 		owner = player(city)
 		ownerTeam = team(city)
 		
@@ -137,9 +136,9 @@ class Companies:
 
 		# civilization requirements
 		if iCompany == iTradingCompany:
-			if not iOwner in lTradingCompanyCivs:
+			if not iOwnerCiv in lTradingCompanyCivs:
 				return -1
-			if iOwner == iNetherlands:
+			if iOwnerCiv == iCivNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
 			if city.getRegionID() in [rCentralAsia, rPersia]:
@@ -148,7 +147,7 @@ class Companies:
 				iValue -= 2
 		
 		# geographical requirements
-		tPlot = (city.getX(), city.getY())
+		tPlot = location(city)
 		if iCompany == iSilkRoute:
 			if tPlot in lMiddleEastExceptions:
 				return -1
@@ -251,7 +250,7 @@ class Companies:
 						iTempValue += city.getNumBonuses(iBonus) * 2
 		
 		# Brazilian UP: sugar counts as oil for Oil Industry
-		if iOwner == iBrazil and iCompany == iOilIndustry:
+		if iOwnerCiv == iCivBrazil and iCompany == iOilIndustry:
 			if city.getNumBonuses(iSugar) > 0:
 				bFound = True
 				iTempValue += city.getNumBonuses(iSugar) * 3
@@ -266,17 +265,6 @@ class Companies:
 		elif iCompany == iTextileIndustry and city.isHasCorporation(iSteelIndustry): iValue /= 2
 		elif iCompany == iOilIndustry and city.isHasCorporation(iComputerIndustry): iValue /= 2
 		elif iCompany == iComputerIndustry and city.isHasCorporation(iOilIndustry): iValue /= 2
-		#elif iCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
-		#	lOtherCompanies = []
-		#	for iTempCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
-		#		if iTempCompany != iCompany and city.isHasCorporation(iTempCompany):
-		#			lOtherCompanies.append(iTempCompany)
-		#	iValue *= (4 - len(lOtherCompanies))
-		#	iValue /= 4
-		
-		# protection for already established companies (in case of removals)
-		#if city.isHasCorporation(iCompany):
-		#	iValue += 1
 		
 		# threshold
 		if iValue < 4: return -1

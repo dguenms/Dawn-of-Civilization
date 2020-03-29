@@ -4,12 +4,12 @@ from CvPythonExtensions import *
 from Consts import *
 from StoredData import *
 from DataStructures import *
+from Types import Civ
 
 import BugCore
-import Popup
+# import Popup
 
 import random
-from copy import copy
 
 
 gc = CyGlobalContext()
@@ -24,36 +24,44 @@ map = gc.getMap()
 # TODO: unify recently born, recently resurrected, recently reborn
 
 
+def log(func):
+	def logged_func(*args, **kwargs):
+		print "Begin %s" % func.__name__
+		result = func(*args, **kwargs)
+		print "Complete %s" % func.__name__
+		return result
+	
+	return logged_func
+
+
+def owner(entity, identifier):
+	if isinstance(identifier, Civ):
+		return owner(entity, slot(identifier))
+	return entity.getOwner() == identifier
+
+
 def count(iterable, condition):
-	return len([x for x in iterable if condition(x))
+	return len([x for x in iterable if condition(x)])
 
 
-# TODO: test
 def format_separators(list, separator, last_separator, format=lambda x: x):
-	formatted_list = [format(x) for x in list]
+	separator = separator.rstrip() + ' '
+	last_separator = last_separator.rstrip() + ' '
+
+	formatted_list = [str(format(x)) for x in list]
 
 	if len(formatted_list) > 1:
-		return last_separator.join(separator.join(formatted_list[:-1]), formatted_list[-1])
+		return last_separator.join([separator.join(formatted_list[:-1]), formatted_list[-1]])
 	return last_separator.join(formatted_list)
 
 
-def fall(iPlayer):
-	iCiv = civ(iPlayer)
-	if iCiv in dFall:
-		return year(dFall[iCiv])
-	return game.getMaxTurns()
-
-
-def birth(iPlayer):
-	iCiv = civ(iPlayer)
-	if iCiv in dBirth:
-		return year(dBirth[iCiv])
-	return 0
-
-
 def slot(iCiv):
+	if not isinstance(iCiv, Civ):
+		raise TypeError("Can only pass Civ to determine slot, got: %s" % type(iCiv))
+
 	if iCiv in data.dSlots:
 		return data.dSlots[iCiv]
+
 	return -1
 
 
@@ -63,8 +71,10 @@ def emptymap(x = iWorldX, y = iWorldY):
 
 def deeplist(collection):
 	if isinstance(collection, tuple):
-		return list(collection)
-	return [deeplist(element) for element in collection]
+		return deeplist(list(collection))
+	elif isinstance(collection, (list, set)):
+		return [deeplist(element) for element in collection]
+	return collection
 
 
 def closestCity(entity, owner=PlayerTypes.NO_PLAYER, same_continent=False, coastal_only=False, skip_city=None):
@@ -190,8 +200,8 @@ def scenarioStartYear():
 
 
 def scenario():
-	if pEgypt.isPlayable(): return i3000BC
-	if pByzantium.isPlayable(): return i600AD
+	if player(iCivEgypt).isPlayable(): return i3000BC
+	if player(iCivByzantium).isPlayable(): return i600AD
 	return i1700AD
 
 
@@ -223,7 +233,7 @@ def unique_building(iPlayer, iBuilding):
 
 
 def unique_unit_from_class(iPlayer, iUnitClass):
-	return gc.getCivilizationInfo(player(iPlayer).getCivilizationType()).getCivilizationUnits(iUnitClass)
+	return gc.getCivilizationInfo(civ(iPlayer)).getCivilizationUnits(iUnitClass)
 
 
 def unique_unit(iPlayer, iUnit):
@@ -405,7 +415,7 @@ def _iterate(first, next, getter = lambda x: x):
 	while entity:
 		list.append(getter(entity))
 		entity, iter = next(iter, False)
-	return list
+	return [x for x in list if x is not None]
 	
 	
 def wrap(*args):
@@ -459,6 +469,11 @@ def team(identifier = None):
 	if isinstance(identifier, (CyPlayer, CyUnit, CyCity, CyPlot)):
 		return gc.getTeam(identifier.getTeam())
 		
+	if isinstance(identifier, Civ):
+		iPlayer = slot(identifier)
+		if iPlayer < 0: return NullTeam()
+		return gc.getTeam(gc.getPlayer(iPlayer).getTeam())
+		
 	if isinstance(identifier, int):
 		return gc.getTeam(gc.getPlayer(identifier).getTeam())
 		
@@ -468,7 +483,7 @@ def team(identifier = None):
 def teamtype(iTeam):
 	return gc.getTeam(iTeam)
 	
-	
+
 def player(identifier = None):
 	if identifier is None:
 		return gc.getActivePlayer()
@@ -481,24 +496,36 @@ def player(identifier = None):
 		
 	if isinstance(identifier, (CyPlot, CyCity, CyUnit)):
 		return gc.getPlayer(identifier.getOwner())
+	
+	if isinstance(identifier, Civ):
+		iPlayer = slot(identifier)
+		if iPlayer < 0: return NullPlayer()
+		return gc.getPlayer(iPlayer)
 		
 	if isinstance(identifier, int):
-		if identifier < 0: return None
+		if identifier < 0: 
+			print "identifier < 0, return None"
+			return None
 		return gc.getPlayer(identifier)
 		
 	raise TypeError("Expected identifier to be CyPlayer, CyTeam, CyPlot, CyCity, CyUnit, or int, received '%s'" % type(identifier))
 	
 
-# TODO: test object as input
 def civ(identifier):
-	if isinstance(identifier, (CyPlayer, CyUnit)):
-		return identifier.getCivilizationType()
+	if isinstance(identifier, Civ):
+		return identifier
 
-	return player(identifier).getCivilizationType()
+	if isinstance(identifier, (CyPlayer, CyUnit)):
+		return Civ(identifier.getCivilizationType())
+		
+	if isinstance(identifier, CyPlot):
+		if not identifier.isOwned():
+			return NoCiv
+		return civ(identifier.getOwner())
+
+	return Civ(player(identifier).getCivilizationType())
 	
-	
-# TODO: test
-# EXPECTS CIV
+
 def period(iCiv):
 	iPlayer = slot(iCiv)
 	if iPlayer >= 0:
@@ -641,14 +668,12 @@ class EntityCollection(object):
 		return self.sort(metric).limit(iNum)
 		
 	def including(self, *keys):
-		print "keys (%s): %s" % (type(keys), keys)
 		if len(keys) == 1:
 			if isinstance(keys[0], type(self)):
 				keys = keys[0]._keys
 			elif isinstance(keys[0], list):
 				keys = keys[0]
 		combined = list(keys) + list(self._keys)
-		print "combined: %s" % combined
 		return self.__class__(sorted(set(combined), key=combined.index))
 		
 	def limit(self, iLimit):
@@ -659,6 +684,9 @@ class EntityCollection(object):
 		
 	def maximum(self, metric):
 		return find_max(self.entities(), metric).result
+		
+	def minimum(self, metric):
+		return find_min(self.entities(), metric).result
 		
 	def rank(self, key, metric):
 		sorted_keys = sort(self._keys, lambda k: metric(self._factory(k)), True)
@@ -678,6 +706,12 @@ class EntityCollection(object):
 	def transform(self, cls, map = lambda x: x, condition = lambda x: x):
 		return cls([map(k) for k in self._keys if condition(self._factory(k))])
 
+	def periodic(self, iInterval):
+		return next([entity for i, entity in enumerate(self.entities()) if turn() % iInterval == data.iSeed + hash(tuple(self.entities())) + i * (iInterval / self.count())], None)
+
+	def divide(self, keys):
+		shuffled_entities = self.shuffle().entities()
+		return [(key, [entity for j, entity in enumerate(shuffled_entities) if j % len(keys) == i]) for i, key in enumerate(keys)]
 
 class PlotsCorner:
 
@@ -717,13 +751,19 @@ class PlotFactory:
 	def region(self, iRegion):
 		return self.regions(iRegion)
 		
-	def surrounding(self, tile, radius=1):
+	def surrounding(self, *args, **kwargs):
+		radius = retrieve(kwargs, 'radius', 1)
 		if radius < 0: raise ValueError("radius cannot be negative, received: '%d'" % radius)
-		x, y = _parse_tile(tile)
-		return Plots(sort(list(set([wrap(x+i, y+j) for i in range(-radius, radius+1) for j in range(-radius, radius+1)]))))
+		x, y = _parse_tile(*args)
+		if not isinstance(x, int): raise Exception("x must be int, is %s" % type(x))
+		if not isinstance(y, int): raise Exception("y must be int, is %s" % type(y))
+		return Plots(sort(list(set(wrap(x+i, y+j) for i in range(-radius, radius+1) for j in range(-radius, radius+1)))))
 		
-	def ring(self, tile, radius):
-		return self.surrounding(tile, radius=radius).without(self.surrounding(tile, radius=radius-1))
+	def ring(self, *args, **kwargs):
+		radius = retrieve(kwargs, 'radius', 1)
+		circle = self.surrounding(*args, **kwargs)
+		inside = self.surrounding(*args, **{'radius': radius-1})
+		return circle.without(inside)
 
 	def owner(self, iPlayer):
 		return self.all().owner(iPlayer)
@@ -756,7 +796,7 @@ class Plots(EntityCollection):
 		return sum([units.at(p) for p in self.entities()], Units([]))
 		
 	def without(self, exceptions):
-		if not isinstance(exceptions, (list, set, Plots)):
+		if not isinstance(exceptions, (list, set, Plots, Cities)):
 			exceptions = [exceptions]
 	
 		return self.where(lambda p: location(p) not in [location(e) for e in exceptions])
@@ -771,11 +811,13 @@ class Plots(EntityCollection):
 	def closest_distance(self, *args):
 		return self._closest(*args).value
 		
+	# test iPlayer == Civ
 	def owner(self, iPlayer):
-		return self.where(lambda p: p.getOwner() == iPlayer)
+		return self.where(lambda p: owner(p, iPlayer))
 		
+	# test iPlayer == Civ
 	def notowner(self, iPlayer):
-		return self.where(lambda p: p.getOwner() != iPlayer)
+		return self.where(lambda p: not owner(p, iPlayer))
 	
 	def regions(self, *regions):
 		return self.where(lambda p: p.getRegionID() in regions)
@@ -784,7 +826,7 @@ class Plots(EntityCollection):
 		return self.regions(iRegion)
 		
 	def where_surrounding(self, condition, radius=1):
-		return self.where(lambda p: plots.surrounding(p, radius).all(condition))
+		return self.where(lambda p: plots.surrounding(p, radius=radius).all(condition))
 	
 	def land(self):
 		return self.where(lambda p: not p.isWater())
@@ -819,7 +861,7 @@ class CityFactory:
 		
 	def all(self):
 		cities = []
-		for iPlayer in range(iNumTotalPlayersB):
+		for iPlayer in players.all():
 			cities += self.owner(iPlayer)
 		return Cities(cities)
 		
@@ -844,8 +886,8 @@ class CityFactory:
 	def of(self, list):
 		return Plots(list).cities()
 		
-	def surrounding(self, tile, radius=1):
-		return plots.surrounding(tile, radius).cities()
+	def surrounding(self, *args, **kwargs):
+		return plots.surrounding(*args, **kwargs).cities()
 
 
 class Cities(EntityCollection):
@@ -876,12 +918,12 @@ class Cities(EntityCollection):
 		
 	def religion(self, iReligion):
 		return self.where(lambda city: city.isHasReligion(iReligion))
-		
-	def owner(self, iPlayer):
-		return self.where(lambda city: city.getOwner() == iPlayer)
 	
+	def owner(self, iPlayer):
+		return self.where(lambda city: owner(city, iPlayer))
+
 	def notowner(self, iPlayer):
-		return self.where(lambda city: city.getOwner() != iPlayer)
+		return self.where(lambda city: not owner(city, iPlayer))
 	
 	def regions(self, *regions):
 		return self.where(lambda city: city.getRegionID() in regions)
@@ -900,6 +942,9 @@ class Cities(EntityCollection):
 
 	def core(self, iPlayer):
 		return self.where(lambda city: plot(city).isCore(iPlayer))
+	
+	def owners(self):
+		return list(set(city.getOwner() for city in self.entities()))
 	
 		
 class UnitFactory:
@@ -953,12 +998,12 @@ class Units(EntityCollection):
 		
 	def __str__(self):
 		return ", ".join(["%s (%s) at %s" % (unit.getName(), adjective(unit.getOwner()), (unit.getX(), unit.getY())) for unit in self.entities()])
-		
+
 	def owner(self, iPlayer):
-		return self.where(lambda u: u.getOwner() == iPlayer)
-		
+		return self.where(lambda u: owner(u, iPlayer))
+
 	def notowner(self, iPlayer):
-		return self.where(lambda u: u.getOwner() != iPlayer)
+		return self.where(lambda u: not owner(u, iPlayer))
 		
 	def type(self, iUnitType):
 		return self.where(lambda u: u.getUnitType() == iUnitType)
@@ -972,46 +1017,54 @@ class Units(EntityCollection):
 	def domain(self, iDomain):
 		return self.where(lambda u: u.getDomainType() == iDomain)
 	
-		
+
+# TODO: has been rewritten: make sure ALL methods are tested
 class PlayerFactory:
 
-	def major(self):
-		return Players(range(iNumPlayers))
-		
 	def all(self):
-		return Players(range(iNumTotalPlayers))
+		return Players(range(gc.getMAX_PLAYERS()))
 		
-	def withBarbarian(self):
-		return Players(range(iNumTotalPlayersB))
+	def major(self):
+		return self.all().where(lambda p: not is_minor(p))
 		
 	def minor(self):
-		return Players(range(iNumPlayers, iNumTotalPlayersB))
+		return self.all().where(lambda p: is_minor(p))
+		
+	def civs(self, *civs):
+		return self.all().where(lambda p: civ(p) in civs)
+		
+	def independent(self):
+		return self.civs(iCivIndependent, iCivIndependent2)
+		
+	def barbarian(self):
+		return self.civs(iCivBarbarian)
+		
+	def native(self):
+		return self.civs(iCivNative)
 		
 	def vassals(self, iPlayer):
-		return self.all().where(lambda p: team(p).isVassal(player(iPlayer).getID()))
+		return self.all().where(lambda p: team(p).isVassal(player(iPlayer).getTeam()))
 		
 	def none(self):
 		return Players([])
-	
-	# TODO: test
-	def civs(self, lCivs):
-		return Players([slot(iCiv) for iCiv in lCivs if slot(iCiv) >= 0])
-		
+
 		
 class Players(EntityCollection):
 
 	def __init__(self, players):
 		super(Players, self).__init__(players)
-		
+
 	def __contains__(self, item):
 		if isinstance(item, CyPlayer):
 			return item.getID() in self._keys
 			
-		# we assume ints are civilization IDs, not player IDs
-		if isinstance(item, int):
+		if isinstance(item, Civ):
 			return item in [civ(p) for p in self._keys]
 			
-		raise TypeError("Tried to check if Players contains '%s', can only check CyPlayer or civilization IDs" % type(item))
+		if isinstance(item, int):
+			return item in self._keys
+			
+		raise TypeError("Tried to check if Players contains '%s', can only check CyPlayer, player or civilization IDs" % type(item))
 		
 	def __iter__(self):
 		return iter(self._keys)
@@ -1049,7 +1102,31 @@ class Players(EntityCollection):
 		return self.where(lambda p: not team(p).isAVassal())
 	
 	def past_birth(self):
-		return self.where(lambda p: year() >= birth(p))
+		return self.where(lambda p: year() >= year(dBirth[p]))
+		
+	def before_birth(self):
+		return self.where(lambda p: year() < year(dBirth[p]))
+
+	def civs(self, *civs):
+		return self.where(lambda p: civ(p) in civs)
+	
+	def civ(self, iCiv):
+		return self.civs(iCiv)
+		
+	def barbarian(self):
+		return self.including(players.barbarian())
+		
+	def independent(self):
+		return self.including(players.independent())
+		
+	def native(self):
+		return self.including(players.native())
+	
+	def permutations(self, identical=False):
+		return Players([(x, y) for x, y in permutations(self._keys, self._keys) if (identical and x == y) or x < y])
+		
+	def asCivs(self):
+		return [civ(p) for p in self.entities()]
 		
 		
 class CreatedUnits(object):
@@ -1247,6 +1324,9 @@ class Map(object):
 		
 		for (x, y), value in map:
 			self[originX + x, originY + y] = value
+
+
+iBarbarian = slot(iCivBarbarian)
 		
 		
 plots = PlotFactory()

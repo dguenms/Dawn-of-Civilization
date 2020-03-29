@@ -1,15 +1,7 @@
-# Rhye's and Fall of Civilization - Stored Data
-
 from CvPythonExtensions import *
-import CvUtil
-import PyHelpers
-import Popup
-import cPickle as pickle
 from Consts import *
 
-# globals
 gc = CyGlobalContext()
-PyPlayer = PyHelpers.PyPlayer
 
 class PlayerData:
 
@@ -82,9 +74,9 @@ class PlayerData:
 		self.lEconomyTrend = []
 		self.lHappinessTrend = []
 		
-		self.lWarTrend = [[] for _ in range(iNumTotalPlayersB)]		
-		self.lWarStartTurn = [0] * iNumTotalPlayersB
-		self.lLastWarSuccess = [0] * iNumTotalPlayersB
+		self.lWarTrend = [[]] * gc.getMAX_PLAYERS()		
+		self.lWarStartTurn = [0] * gc.getMAX_PLAYERS()
+		self.lLastWarSuccess = [0] * gc.getMAX_PLAYERS()
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
 		
@@ -98,7 +90,7 @@ class PlayerData:
 		self.lWarTrend[iEnemy] = []
 	
 	def resetWarTrends(self):
-		for iEnemy in range(iNumPlayers):
+		for iEnemy, _ in enumerate(self.lWarTrend):
 			self.resetWarTrend(iEnemy)
 	
 	def pushEconomyTrend(self, iValue):
@@ -146,13 +138,13 @@ class GameData:
 			player.update(data)
 
 	def setup(self):
-		self.players = [PlayerData(i) for i in range(iNumTotalPlayersB)]
+		self.players = [PlayerData(i) for i in range(gc.getMAX_PLAYERS())]
 		
 		# Slots
 		
 		# set the default values for now, once slots become untied this should be set and kept updated on spawn
 		# already make it dynamic because rebirths will change things
-		self.dSlots = dict((iCiv, iSlot) for iSlot, iCiv in enumerate(lCivOrder))
+		self.dSlots = dict((iCiv, iSlot) for iSlot, iCiv in enumerate(lSlotOrder))
 		
 		# Rise and Fall
 
@@ -286,9 +278,9 @@ class GameData:
 		return self.lPlayerEnabled[lSecondaryCivs.index(iCiv)]
 		
 	def resetStability(self, iPlayer):
-		players[iPlayer].resetStability()
+		self.players[iPlayer].resetStability()
 		
-		for i, player in enumerate(players):
+		for i, player in enumerate(self.players):
 			if iPlayer != i:
 				player.resetWarTrend(iPlayer)
 				

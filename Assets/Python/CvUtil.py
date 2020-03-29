@@ -178,10 +178,10 @@ def getScoreComponent(iRawScore, iInitial, iMax, iFactor, bExponential, bFinal, 
 	if bFinal and bVictory:
 		#Alexius08: Begin new score calculation formula
 		iHuman = gc.getGame().getActivePlayer()
-		if gc.getPlayer(iHumanPlayer).isReborn() and civ(iHumanPlayer) in dRebirth:
-			iHumanSpawnTurn = getTurnForYear(dRebirth[civ(iHumanPlayer)]) #Get spawn turn for reborn civs
+		if gc.getPlayer(iHuman).isReborn() and civ(iHuman) in dRebirth:
+			iHumanSpawnTurn = year(dRebirth[iHuman]) #Get spawn turn for reborn civs
 		else:
-			iHumanSpawnTurn = birth(iHumanPlayer) #Get spawn turn for others
+			iHumanSpawnTurn = year(dBirth[iHuman]) #Get spawn turn for others
 		fTurnRatio = float(gc.getGame().getGameTurnYear() - iHumanSpawnTurn) / float(gc.getGame().getEstimateEndTurn() - iHumanSpawnTurn) #Compensate for player's delayed spawn
 		#End new formula
 		

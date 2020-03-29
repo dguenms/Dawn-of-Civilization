@@ -15,7 +15,7 @@ DISPLAY_CONTESTED = True
 gc = CyGlobalContext()
 
 def createMaps():
-	for iPlayer in range(iNumPlayers):
+	for iPlayer in players.major():
 		createMap(iPlayer, 0)
 		if civ(iPlayer) in dRebirth:
 			createMap(iPlayer, 1)
@@ -98,14 +98,13 @@ def createMap(iPlayer, iReborn):
 			
 def getForeignCorePlots(iPlayer, iReborn):
 	lForeignCorePlots = []
-	iSpawnDate = dBirth[civ(iPlayer)]
-	if iReborn == 1: iSpawnDate = dRebirth[civ(iPlayer)]
+	iSpawnDate = dBirth[iPlayer]
+	if iReborn == 1: iSpawnDate = dRebirth[iPlayer]
 	
-	for iLoopPlayer in range(iNumPlayers):
-		if iLoopPlayer != iPlayer:
-			if canEverRespawn(iLoopPlayer, year(iSpawnDate)) or dBirth[civ(iLoopPlayer)] > iSpawnDate:
-				for tPlot in Areas.getCoreArea(civ(iLoopPlayer)):
-					if not tPlot in lForeignCorePlots:
-						lForeignCorePlots.append(tPlot)
+	for iLoopPlayer in players.major().without(iPlayer):
+		if canEverRespawn(iLoopPlayer, year(iSpawnDate)) or dBirth[iLoopPlayer] > iSpawnDate:
+			for tPlot in Areas.getCoreArea(civ(iLoopPlayer)):
+				if not tPlot in lForeignCorePlots:
+					lForeignCorePlots.append(tPlot)
 						
 	return lForeignCorePlots

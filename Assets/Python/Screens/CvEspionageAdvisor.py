@@ -2,7 +2,7 @@ from CvPythonExtensions import *
 import CvScreenEnums
 import CvUtil
 
-from Consts import *
+from Core import *
 
 gc = CyGlobalContext()
 
@@ -173,13 +173,10 @@ class CvEspionageAdvisor:
 		iSeeEspionage = gc.getInfoTypeForString('ESPIONAGEMISSION_SEE_ESPIONAGE')
 
 		iCount = 0
-		for iRival in range(iNumPlayers):
+		for iRival in players.major().without(self.iActivePlayer):
 			pRival = gc.getPlayer(iRival)
 			iRivalTeam = pRival.getTeam()
 			pRivalTeam = gc.getTeam(iRivalTeam)
-
-			if iRivalTeam == self.iActiveTeam:
-				continue
 
 			if pRival.isAlive() and self.pActiveTeam.isHasMet(iRivalTeam):
 				if self.iTargetPlayer == -1:
