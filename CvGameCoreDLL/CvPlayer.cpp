@@ -6351,6 +6351,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	if (!isHuman())
 	{
 		// Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
+		if (isHumanVictoryWonder(eBuilding, PYRAMIDS, NUBIA)) return false;
+
 		if (isHumanVictoryWonder(eBuilding, NOTRE_DAME, FRANCE)) return false;
 		else if (isHumanVictoryWonder(eBuilding, EIFFEL_TOWER, FRANCE)) return false;
 		else if (isHumanVictoryWonder(eBuilding, STATUE_OF_LIBERTY, FRANCE)) return false;
