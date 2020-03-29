@@ -2113,7 +2113,7 @@ class CvInfoScreen:
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
 					
-					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < birth(iActivePlayer)):
+					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < dBirth[iActivePlayer]):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
@@ -2901,33 +2901,24 @@ class CvInfoScreen:
 		return math.log10(max(1,x))
 
 	def getTurnDate(self,turn):
-
-		year = CyGame().getTurnYear(turn)
-
-		year = CyGame().getTurnYear(turn)
-
-		#Rhye - start
-##		if (year < 0):
-##		    return localText.getText("TXT_KEY_TIME_BC", (-year,))
-##		else:
-##		    return localText.getText("TXT_KEY_TIME_AD", (year,))
+		iYear = gc.getGame().getGameTurnYear()
 		    
 		iPlayer = CyGame().getActivePlayer()
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
 		
-		if (tPlayer.isHasTech(iCalendar) or year < birth(iPlayer)):  
-			if (year < 0):
+		if tPlayer.isHasTech(iCalendar) or iYear < dBirth[iPlayer]:  
+			if iYear < 0:
 			    return localText.getText("TXT_KEY_TIME_BC", (-year,))
 			else:
 			    return localText.getText("TXT_KEY_TIME_AD", (year,))	 
-		elif (year >= 1500):
+		elif iYear >= 1500:
 			return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
-		elif (year >= 450):
+		elif iYear >= 450:
 			return localText.getText("TXT_KEY_AGE_MEDIEVAL", ())    
-		elif (year >= -800):
+		elif iYear >= -800:
 			return localText.getText("TXT_KEY_AGE_IRON", ())    
-		elif (year >= -2000):
+		elif iYear >= -2000:
 			return localText.getText("TXT_KEY_AGE_BRONZE", ())    
 		else:
 			return localText.getText("TXT_KEY_AGE_STONE", ())    

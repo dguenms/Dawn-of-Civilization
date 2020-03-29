@@ -39,37 +39,30 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-dCatholicPreference = {
-iEgypt		: 80,
-iGreece		: 80,
-iRome		: 95,
-iEthiopia	: 80,
-iByzantium	: 90,
-iVikings	: 20,
-iArabia		: 80,
-iSpain		: 95,
-iFrance		: 75,
-iEngland	: 30,
-iHolyRome	: 55,
-iRussia		: 80,
-iNetherlands	: 10,
-iPoland		: 80,
-iPortugal	: 95,
-iItaly		: 90,
-iCongo		: 80,
-iGermany	: 25,
-iAmerica	: 20,
-}
+dCatholicPreference = defaultdict({
+iCivEgypt		: 80,
+iCivGreece		: 80,
+iCivRome		: 95,
+iCivEthiopia	: 80,
+iCivByzantium	: 90,
+iCivVikings		: 20,
+iCivArabia		: 80,
+iCivSpain		: 95,
+iCivFrance		: 75,
+iCivEngland		: 30,
+iCivHolyRome	: 55,
+iCivRussia		: 80,
+iCivNetherlands	: 10,
+iCivPoland		: 80,
+iCivPortugal	: 95,
+iCivItaly		: 90,
+iCivCongo		: 80,
+iCivGermany		: 25,
+iCivAmerica		: 20,
+}, 50)
 
 def getCatholicPreference(iPlayer):
-	if iPlayer not in dCatholicPreference:
-		return 50
-	return dCatholicPreference[iPlayer]
-
-lOrthodoxFounders = (iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia, iRome)
-lOrthodoxEast = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia]
-lOrthodoxMiddle = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia, iRome, iHolyRome, iVikings]
-lOrthodoxWest = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia, iRome, iHolyRome, iVikings, iFrance, iEngland]
+	return dCatholicPreference[civ(iPlayer)]
 
 class Religions:
 
@@ -79,7 +72,7 @@ class Religions:
 		
 	def checkTurn(self, iGameTurn):
 	
-		if not pIndia.isHuman():
+		if not player(iCivIndia).isHuman():
 			if iGameTurn == year(-2000)+1:
 				if not game.isReligionFounded(iHinduism):
 					if plot(92, 39).isCity():
@@ -142,11 +135,10 @@ class Religions:
 		
 		iPlayerCount = 0
 		iPrereqCount = 0
-		for iPlayer in range(iNumPlayers):
-			if player(iPlayer).isAlive():
-				iPlayerCount += 1
-				if team(iPlayer).isHasTech(iTech):
-					iPrereqCount += 1
+		for iPlayer in players.major().alive():
+			iPlayerCount += 1
+			if team(iPlayer).isHasTech(iTech):
+				iPrereqCount += 1
 					
 		if 2 * iPrereqCount >= iPlayerCount:
 			self.foundReligionInCore(iReligion)
@@ -191,12 +183,12 @@ class Religions:
 
 	def spreadIslamIndonesia(self, iGameTurn):
 		if not game.isReligionFounded(iIslam): return
-		if not pIndonesia.isAlive(): return
+		if not player(iCivIndonesia).isAlive(): return
 		if not turn(iGameTurn).between(1300, 1600): return
 		
 		if iGameTurn % turns(15) != turns(4): return
 		
-		indonesianContacts = players.major().where(lambda p: pIndonesia.canContact(p) and player(p).getStateReligion() == iIslam)
+		indonesianContacts = players.major().where(lambda p: player(iCivIndonesia).canContact(p) and player(p).getStateReligion() == iIslam)
 		if not indonesianContacts:
 			return
 			
@@ -204,7 +196,7 @@ class Religions:
 		potentialCities = indonesianCities.where(lambda c: not c.isHasReligion(iIslam))
 		
 		iMaxCitiesMultiplier = 2
-		if pIndonesia.getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
+		if player(iCivIndonesia).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
 		
 		if len(potentialCities) * iMaxCitiesMultiplier >= len(indonesianCities):
 			spreadCity = potentialCities.random()
@@ -283,7 +275,7 @@ class Religions:
 		for city in replace:
 			city.replaceReligion(iOrthodoxy, iCatholicism)
 				
-		if player(human()).getStateReligion() == iOrthodoxy and year() >= birth(human()):
+		if player(human()).getStateReligion() == iOrthodoxy and year() >= year(dBirth[human()]):
 			popup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
 			
 		for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):
@@ -336,13 +328,13 @@ class Religions:
 		return rand(100) >= (getCatholicPreference(iPlayer)+50)/2
 
 	def reformation(self):				
-		for iPlayer in range(iNumPlayers):
+		for iPlayer in players.major():
 			self.reformationChoice(iPlayer)
 				
-		for iPlayer in range(iNumPlayers):
+		for iPlayer in players.major():
 			if data.players[iPlayer].iReformationDecision == 2:
-				for iTargetPlayer in range(iNumPlayers):
-					if data.players[iTargetPlayer].iReformationDecision == 0 and not player(iTargetPlayer).isHuman() and iTargetPlayer != iNetherlands and not team(iTargetPlayer).isAVassal():
+				for iTargetPlayer in players.major():
+					if data.players[iTargetPlayer].iReformationDecision == 0 and not player(iTargetPlayer).isHuman() and civ(iTargetPlayer) != iCivNetherlands and not team(iTargetPlayer).isAVassal():
 						team(iPlayer).declareWar(iTargetPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 						
 		pHolyCity = game.getHolyCity(iProtestantism)

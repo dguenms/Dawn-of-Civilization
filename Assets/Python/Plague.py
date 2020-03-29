@@ -27,7 +27,7 @@ class Plague:
 
 
 	def setup(self):
-		for iPlayer in range(iNumMajorPlayers):
+		for iPlayer in players.major():
 			data.players[iPlayer].iPlagueCountdown = -turns(iImmunity)
 			
 		data.lGenericPlagueDates[0] = 80
@@ -39,7 +39,7 @@ class Plague:
 		data.lGenericPlagueDates[1] = year(1300).deviate(20)
 		
 		# Avoid interfering with the Indian UHV
-		if pIndia.isHuman() and data.lGenericPlagueDates[1] <= year(1200):
+		if player(iCivIndia).isHuman() and data.lGenericPlagueDates[1] <= year(1200):
 			data.lGenericPlagueDates[1] = year(1200) + 1
 		
 		if scenario() != i1700AD:
@@ -58,7 +58,7 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
-		for iPlayer in range(iNumTotalPlayersB):
+		for iPlayer in players.all().barbarian():
 			if player(iPlayer).isAlive():
 				if data.players[iPlayer].iPlagueCountdown > 0:
 					data.players[iPlayer].iPlagueCountdown -= 1
@@ -77,7 +77,7 @@ class Plague:
 				#retry if the epidemic is dead too quickly
 				if iGameTurn == iPlagueDate + 4:
 					iInfectedCounter = 0
-					for iPlayer in range(iNumTotalPlayersB):
+					for iPlayer in players.all().barbarian():
 						if data.players[iPlayer].iPlagueCountdown > 0:
 							iInfectedCounter += 1
 					if iInfectedCounter == 1:
@@ -86,7 +86,7 @@ class Plague:
 			if iPlague == 2 or iPlague == 3:
 				if iGameTurn == iPlagueDate + 8:
 					iInfectedCounter = 0
-					for iPlayer in range(iNumTotalPlayersB):
+					for iPlayer in players.all().barbarian():
 						if data.players[iPlayer].iPlagueCountdown > 0:
 							iInfectedCounter += 1
 					if iInfectedCounter <= 2:
@@ -97,35 +97,34 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
-		if iPlayer < iNumTotalPlayersB:
+		if iPlayer in players.all():
 			if data.players[iPlayer].iPlagueCountdown > 0:
 				self.processPlague(iPlayer)
 
 
 
 	def startPlague(self, iPlagueCounter):
-		iWorstCiv = -1
+		iWorstPlayer = -1
 		iWorstHealth = 200
-		for iPlayer in range(iNumMajorPlayers):
+		
+		for iPlayer in players.major().alive().where(self.isVulnerable):
 			pPlayer = player(iPlayer)
-			if pPlayer.isAlive():
-				if self.isVulnerable(iPlayer):
-					iHealth = self.calculateHealth(iPlayer) / 2
-					if pPlayer.calculateTotalCityHealthiness() > 0:
-						iHealth += rand(40)
-						#print ("starting plague", "civ:", iPlayer, "iHealth:", iHealth)
-						if iPlagueCounter == 2: #medieval black death
-							if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
-								iHealth -= 5 
-					if iHealth < iWorstHealth:
-						iWorstHealth = iHealth
-						iWorstCiv = iPlayer
-		if iWorstCiv != -1:
-			print ("worstCiv", iWorstCiv)
-			pWorstCiv = player(iWorstCiv)
-			city = cities.owner(iWorstCiv).random()
+			iHealth = self.calculateHealth(iPlayer) / 2
+			
+			if pPlayer.calculateTotalCityHealthiness() > 0:
+				iHealth += rand(40)
+				if iPlagueCounter == 2: #medieval black death
+					if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
+						iHealth -= 5
+						
+			if iHealth < iWorstHealth:
+				iWorstHealth = iHealth
+				iWorstPlayer = iPlayer
+				
+		if iWorstPlayer != -1:
+			city = cities.owner(iWorstPlayer).random()
 			if city:
-				self.spreadPlague(iWorstCiv)
+				self.spreadPlague(iWorstPlayer)
 				self.infectCity(city)
 				self.announceForeignPlagueSpread(city)
 
@@ -156,9 +155,9 @@ class Plague:
 	def spreadToVassals(self, iPlayer):
 		if data.players[iPlayer].bFirstContactPlague: return
 		
-		for iLoopPlayer in range(iNumMajorPlayers):
+		for iLoopPlayer in players.major().where(self.isVulnerable):
 			if team(iPlayer).isVassal(iLoopPlayer) or team(iLoopPlayer).isVassal(iPlayer):
-				if self.isVulnerable(iLoopPlayer) and data.players[iLoopPlayer].iPlagueCountdown > 2:
+				if data.players[iLoopPlayer].iPlagueCountdown > 2:
 					if player(iLoopPlayer).getNumCities() > 0:
 						capital = player(iLoopPlayer).getCapitalCity()
 						self.spreadPlague(iLoopPlayer)
@@ -259,7 +258,7 @@ class Plague:
 		teamOwner = team(city)
 		
 		#deadly plague when human player isn't born yet, will speed up the loading
-		if turn() < birth(human()) + turns(20):
+		if turn() < year(dBirth[human()]) + turns(20):
 			iDamage += 10
 			baseValue -= 5
 
@@ -294,7 +293,7 @@ class Plague:
 			if isMortalUnit(unit):
 				iThreshold = baseValue + 5 * city.healthRate(False, 0)
 				
-				if teamOwner.isAtWar(human()) and iOwner < iNumMajorPlayers:
+				if teamOwner.isAtWar(human()) and not is_minor(iOwner):
 					if unit.getOwner() == iOwner:
 						iDamage *= 3
 						iDamage /= 4
@@ -311,8 +310,8 @@ class Plague:
 
 
 	def infectCity(self, city):
-		if city.getOwner() == iCongo and year() <= year(1650): return	# Leoreth: don't let plague mess up the UHV
-		elif city.getOwner() == iMali and year() <= year(1500): return	# same for Mali
+		if civ(city) == iCivCongo and year() <= year(1650): return	# Leoreth: don't let plague mess up the UHV
+		elif civ(city) == iCivMali and year() <= year(1500): return	# same for Mali
 		
 		city.setHasRealBuilding(iPlague, True)
 		message(city.getOwner(), 'TXT_KEY_PLAGUE_SPREAD_CITY', city.getName(), sound='AS2D_PLAGUE', color=iLime)
@@ -335,9 +334,8 @@ class Plague:
 
 
 	def isVulnerable(self, iPlayer):
-		if iPlayer >= iNumMajorPlayers:
-			if -10 < data.players[iPlayer].iPlagueCountdown <= 0: #more vulnerable
-				return True
+		if is_minor(iPlayer) and -10 < data.players[iPlayer].iPlagueCountdown <= 0: #more vulnerable
+			return True
 				
 		pPlayer = player(iPlayer)
 			
@@ -379,7 +377,7 @@ class Plague:
 	def onCityAcquired(self, iOldOwner, iNewOwner, city):
 		if city.hasBuilding(iPlague):
 			if not data.players[iOldOwner].bFirstContactPlague: #don't infect if first contact plague
-				if data.players[iNewOwner].iPlagueCountdown <= 0 and year() > birth(iNewOwner) + turns(iImmunity): #skip immunity in this case (to prevent expoiting of being immune to conquer weak civs), but not for the new born civs
+				if data.players[iNewOwner].iPlagueCountdown <= 0 and year() > year(dBirth[iNewOwner]) + turns(iImmunity): #skip immunity in this case (to prevent expoiting of being immune to conquer weak civs), but not for the new born civs
 					if not team(iNewOwner).isHasTech(iMicrobiology): #but not permanent immunity
 						print("acquiring plague")
 						self.spreadPlague(iNewOwner)
@@ -399,7 +397,7 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
-		if year() > year(tBirth[iCivAztecs]) + 2 and year() < year(1800):
+		if year() > year(dBirth[iCivAztecs]) + 2 and year() < year(1800):
 			iOldWorldCiv = -1
 			iNewWorldCiv = -1
 			if civ(iTeamX) in lBioNewWorld and civ(iHasMetTeamY) not in lBioNewWorld and not is_minor(iHasMetTeamY):

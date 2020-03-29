@@ -277,7 +277,7 @@ class WBGameDataScreen:
 		for iCiv in lSecondaryCivs:
 			bEnabled = data.isCivEnabled(iCiv)
 			bDefault = True
-			if iCiv in [iHarappa, iPolynesia]:
+			if iCiv in [iCivHarappa, iCivPolynesia]:
 				bDefault = False
 
 			sText = self.colorText(gc.getPlayer(iCiv).getCivilizationShortDescription(0), bEnabled)

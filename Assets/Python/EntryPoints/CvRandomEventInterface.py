@@ -1708,14 +1708,10 @@ def canTriggerGreatMediator(argsList):
 	#if gc.getTeam(player.getTeam()).AI_getAtWarCounter(destPlayer.getTeam()) < 10: #Rhye
 	if gc.getTeam(player.getTeam()).AI_getAtWarCounter(destPlayer.getTeam()) < 6: #Rhye
 		return false
-
-	#Rhye - start
-	if (player.getID() == iIndependent or player.getID() == iIndependent2):
+		
+	# Leoreth: not for minors
+	if player.isMinorCiv() or destPlayer.isMinorCiv():
 		return false
-
-	if (destPlayer.getID() == iIndependent or destPlayer.getID() == iIndependent2):
-		return false
-	#Rhye - end
 
 	return true
 
@@ -4305,15 +4301,16 @@ def canTriggerImpeachmentCity(argsList):
 def canTriggerTradingCompanyConquerors(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
+	iCiv = civ(iPlayer)
 	
 	if scenario() == i1700AD: return False
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
+	lCivList = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
 	
-	if iPlayer not in lCivList or not player(iPlayer).isHuman():
+	if iCiv not in lCivList or not player(iPlayer).isHuman():
 		return False
 
-	id = lCivList.index(iPlayer)
+	id = lCivList.index(iCiv)
 
 	# Leoreth: dirty solution: determine that turn's target cities during this check
 	debug('Determining colonial targets.')
@@ -4327,9 +4324,10 @@ def canChooseTradingCompanyConquerors1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	pPlayer = gc.getPlayer(iPlayer)
+	iCiv = civ(iPlayer)
 
-	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iPlayer)
+	lCivList = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+	id = lCivList.index(iCiv)
 
 	targetList = data.lTradingCompanyConquerorsTargets[id]
 	
@@ -4400,11 +4398,11 @@ def doTradingCompanyConquerors1(argsList):
 		colonialAcquisition(iPlayer, (x, y))
 		
 	for iTargetPlayer in targetPlayers:
-		if iTargetPlayer >= iNumPlayers:
+		if is_minor(iTargetPlayer):
 			bAccepted = True
 		elif team(iPlayer).isAtWar(iTargetPlayer):
 			bAccepted = False
-		elif rand(100) >= dPatienceThreshold[civ(iTargetPlayer)]:
+		elif rand(100) >= dPatienceThreshold[iTargetPlayer]:
 			bAccepted = True
 		else:
 			bAccepted = False
@@ -4524,7 +4522,7 @@ def doReformation1(argsList):
 	if pHolyCity.getOwner() == iPlayer:
 		pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
 	
-	if iPlayer != iNetherlands:
+	if civ(iPlayer) != iCivNetherlands:
 		for iLoopPlayer in players.major().where(lambda p: data.players[p].iReformationDecision == 2):
 			team(iLoopPlayer).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 	
@@ -4564,7 +4562,7 @@ def doReformation3(argsList):
 	
 	rel.counterReformation(iPlayer)
 	
-	for iTargetCiv in range(iNumPlayers):
+	for iTargetCiv in players.major():
 		if data.players[iTargetCiv].iReformationDecision == 0:
 			gc.getTeam(iPlayer).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
 			

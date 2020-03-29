@@ -30,7 +30,7 @@ def updateParameters(iPlayer):
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
 	
 def init():
-	for iPlayer in range(iNumTotalPlayersB):
+	for iPlayer in players.all().barbarian():
 		updateParameters(iPlayer)
 		
 def onTechAcquired(iPlayer, iTech):

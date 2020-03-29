@@ -3,16 +3,15 @@
 from CvPythonExtensions import *
 from Consts import *
 from RFCUtils import *
-from RFCUtils import *
 
 from Core import *
 
 
 lTypes = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 
-lGreatPeople = [[[] for j in lTypes] for i in range(iNumCivilizations)]
-lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCivilizations)]
-	
+lGreatPeople = [[[] for j in lTypes] for i in range(iNumCivs)]
+lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCivs)]
+
 def create(iPlayer, iUnit, (x, y)):
 	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
@@ -32,10 +31,16 @@ def getAvailableNames(iPlayer, iType):
 	iEra = pPlayer.getCurrentEra()
 	iCiv = getAlias(civ(iPlayer), iType, iEra)
 	
+	print "getAvailableNames(%s) with iCiv=%d" % (name(iPlayer), iCiv)
+	
 	return getEraNames(iCiv, iType, iEra)
 
 def getEraNames(iCiv, iType, iEra):
+	print "getEraNames(iCiv=%d, iType=%d, iEra=%d)" % (iCiv, iType, iEra)
+
 	lNames = lGreatPeople[iCiv][iType]
+	
+	print "lNames = %s" % lNames
 	
 	iOffset = lOffsets[iCiv][iType][iEra]
 	iNextOffset = len(lNames)
@@ -57,6 +62,8 @@ def getName(unit):
 	if iType < 0: return None
 	
 	lAvailableNames = getAvailableNames(unit.getOwner(), iType)
+	print "available names: %s" % lAvailableNames
+	
 	if not lAvailableNames: return None
 	
 	return random_entry(lAvailableNames)
@@ -75,9 +82,9 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 		
 	# Leoreth: display notification
 	if bAnnounceBirth:
-		if iPlayer not in [iIndependent, iIndependent2, iBarbarian]:
+		if not player(iPlayer).isMinorCiv() and not player(iPlayer).isBarbarian():
 			pDisplayCity = city
-			if pDisplayCity.isNone():
+			if not pDisplayCity:
 				pDisplayCity = closestCity(unit)
 				
 			sCity = "%s (%s)" % (pDisplayCity.getName(), name(pDisplayCity))
@@ -86,12 +93,11 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 			
 			if city.isNone(): sMessage = text("TXT_KEY_MISC_GP_BORN_OUTSIDE", unit.getName(), sCity)
 		
-			for iLoopPlayer in range(iNumPlayers):
-				if player(iLoopPlayer).isAlive():
-					if unit.plot().isRevealed(player(iLoopPlayer).getTeam(), False):
-						message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN', unit.getName(), '%s (%s)' % (pDisplayCity.getName(), name(pDisplayCity)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
-					else:
-						message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
+			for iLoopPlayer in players.major().alive():
+				if unit.plot().isRevealed(player(iLoopPlayer).getTeam(), False):
+					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN', unit.getName(), '%s (%s)' % (pDisplayCity.getName(), name(pDisplayCity)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
+				else:
+					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
 
 def setup():
 	for iCiv in dGreatPeople.keys():

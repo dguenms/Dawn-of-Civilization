@@ -37,9 +37,9 @@ def getStartingTechs(iPlayer):
 	return getScenarioTechs(scenario(), iPlayer)
 	
 def initScenarioTechs(iScenario):
-	for iPlayer in range(iNumTotalPlayers):
+	for iPlayer in players.major():
 		iCiv = civ(iPlayer)
-		if tBirth[iCiv] > scenarioStartYear(): continue
+		if dBirth[iCiv] > scenarioStartYear(): continue
 	
 		if iCiv in lStartingTechs[iScenario]:
 			initTechs(iPlayer, lStartingTechs[iScenario][iCiv].list())
@@ -47,7 +47,7 @@ def initScenarioTechs(iScenario):
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
 	
-	if iPlayer == iChina and scenario() == i3000BC and not player(iPlayer).isHuman():
+	if civ(iPlayer) == iCivChina and scenario() == i3000BC and not player(iPlayer).isHuman():
 		initTech(iPlayer, iProperty)
 		initTech(iPlayer, iAlloys)
 				
@@ -132,10 +132,10 @@ def initBuildingPreferences(iPlayer):
 ### General functions ###
 		
 def initBirthYear(iPlayer):
-	player(iPlayer).setBirthYear(tBirth[iPlayer])
+	player(iPlayer).setBirthYear(dBirth[iPlayer])
 
 def init():
-	for iPlayer in range(iNumPlayers):
+	for iPlayer in players.major():
 		initBirthYear(iPlayer)
 		initPlayerTechPreferences(iPlayer)
 		initBuildingPreferences(iPlayer)

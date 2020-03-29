@@ -74,7 +74,7 @@ class WBStoredDataScreen:
 		# Civ selection
 		screen.addDropDownBoxGFC("SelectCiv", 20, 50 + 6*35 + 100, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("SelectCiv", CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()), -1, -1, iSelectedCiv == -1)
-		for i in range(iNumPlayers):
+		for i in players.major():
 			screen.addPullDownString("SelectCiv", CyTranslator().getText(str(gc.getPlayer(i).getCivilizationShortDescriptionKey()), ()), i, i, iSelectedCiv == i)
 
 		screen.addDropDownBoxGFC("CurrentPage", 20, screen.getYResolution() - 42, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -383,8 +383,7 @@ class WBStoredDataScreen:
 				else:
 					data.players[iSelectedCiv].__dict__[item] = iValue
 			if iSelectedMode == 0:
-				for iPlayer in range(iNumPlayers):
-					if not gc.getPlayer(iPlayer).isAlive(): continue
+				for iPlayer in players.major().alive():
 					dc.checkName(iPlayer)
 			else:
 				dc.checkName(iSelectedCiv)
@@ -431,8 +430,7 @@ class WBStoredDataScreen:
 						popup.launch()
 						return 1
 			if iSelectedMode == 0:
-				for iPlayer in range(iNumPlayers):
-					if not gc.getPlayer(iPlayer).isAlive(): continue
+				for iPlayer in players.major().alive():
 					dc.checkName(iPlayer)
 			else:
 				dc.checkName(iSelectedCiv)
