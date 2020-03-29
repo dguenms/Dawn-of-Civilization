@@ -8,7 +8,7 @@ def getModifier(iPlayer, iModifier):
 	return tDefaults[iModifier]
 	
 def getAdjustedModifier(iPlayer, iModifier):
-	if scenario() > i3000BC and iPlayer < iVikings:
+	if scenario() > i3000BC and dBirth[iPlayer] < dBirth[iCivVikings]:
 		if iModifier in dLateScenarioModifiers:
 			return getModifier(iPlayer, iModifier) * dLateScenarioModifiers[iModifier] / 100
 	return getModifier(iPlayer, iModifier)
@@ -37,10 +37,10 @@ def updateModifiers(iPlayer):
 		updateModifier(iPlayer, iModifier)
 		
 def init():
-	for iPlayer in range(iNumTotalPlayersB):
+	for iPlayer in players.all().barbarian():
 		updateModifiers(iPlayer)
 		
-		if scenario() > i3000BC and iPlayer < iVikings:
+		if scenario() > i3000BC and dBirth[iPlayer] < dBirth[iCivVikings]:
 			adjustModifiers(iPlayer)
 		
 		player(iPlayer).updateMaintenance()

@@ -13,21 +13,21 @@ gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
 #scrambled pools
-tPool1 = (iCivEgypt, -1, -1, -1, -1, -1,
-	iCivChina, -1, -1, -1, -1, -1,
-	iCivBabylonia, -1, -1, -1, -1, -1,
-	iCivGreece, -1, -1, -1, -1, -1,
-	iCivIndia, -1, -1, -1, -1, -1)
+tPool1 = (iCivEgypt, NoCiv, NoCiv, NoCiv, NoCiv, NoCiv,
+	iCivChina, NoCiv, NoCiv, NoCiv, NoCiv, NoCiv,
+	iCivBabylonia, NoCiv, NoCiv, NoCiv, NoCiv, NoCiv,
+	iCivGreece, NoCiv, NoCiv, NoCiv, NoCiv, NoCiv,
+	iCivIndia, NoCiv, NoCiv, NoCiv, NoCiv, NoCiv)
 
-tPool2 = (iCivEgypt, -1, 
-	iCivCarthage, -1,
-	iCivChina, -1,
-	iCivRome, -1,
+tPool2 = (iCivEgypt, NoCiv, 
+	iCivCarthage, NoCiv,
+	iCivChina, NoCiv,
+	iCivRome, NoCiv,
 	iCivBabylonia, iCivMaya,
-	iCivGreece, -1,
+	iCivGreece, NoCiv,
 	iCivIndia, iCivEthiopia,
-	iCivJapan, -1,	    
-	iCivPersia, -1)
+	iCivJapan, NoCiv,	    
+	iCivPersia, NoCiv)
 
 
 tPool3 = (iCivEgypt,  
@@ -79,7 +79,6 @@ tPool3 = (iCivEgypt,
 class Communications:
 
 	def checkTurn(self, iGameTurn):
-		#self.decay(iIndia) #debug
 		if year().between(-2250, -680):
 			i = (iGameTurn + data.iSeed/10 - 5) % len(tPool1)
 			iCiv = tPool1[i]
@@ -97,12 +96,10 @@ class Communications:
 			self.canDecay(iGameTurn, iCiv2)
 
 	def canDecay(self, iGameTurn, iCiv):
-		iPlayer = slot(iCiv)
-	
-		if 0 <= iPlayer < iNumMajorPlayers:
-			if player(iPlayer).isAlive() and iGameTurn >= birth(iPlayer) + turns(15): # edead: RFCM
-				if not team(iPlayer).isHasTech(iElectricity):
-					self.decay(iPlayer)
+		if player(iCiv).isAlive() and not is_minor(iCiv):
+			if iGameTurn >= year(dBirth[iCiv]) + turns(15): # edead: RFCM
+				if not team(iCiv).isHasTech(iElectricity):
+					self.decay(slot(iCiv))
 
 	def decay(self, iPlayer):
 		contacts = players.major().alive().where(lambda p: team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))
@@ -119,12 +116,7 @@ class Communications:
 			ours = players.vassals(iPlayer).including(iPlayer)
 			theirs = players.vassals(iContact).including(iContact)
 			
-			list = [x for x in theirs]
-			print "list iterate element: %s" % type(list[0])
-			
 			for iTheirPlayer, iOurPlayer in permutations(theirs, ours):
-				print "iOurPlayer: %s" % type(iOurPlayer)
-				print "iTheirPlayer: %s" % type(iTheirPlayer)
 				team(iOurPlayer).cutContact(iTheirPlayer)
 
 

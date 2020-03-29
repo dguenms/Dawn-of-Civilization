@@ -82,9 +82,9 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iPlayer == iHolyRome:
+	if iCiv == iCivHolyRome:
 		sName = "HolyRome"
-	elif iPlayer == iAztecs:
+	elif iCiv == iCivAztecs:
 		sName = "Aztecs"
 
 	lNewFlipPlotList, lNewAIPlotList = dFlipZoneEdits[iPlayer]
@@ -152,12 +152,12 @@ def exportAllFlip(dFlipZoneEdits):
 	lAllFlips = []
 	lAllExceptions = []
 	lAllAIPlots = []
-	for iPlayer in range(iNumPlayers):
+	for iPlayer in players.major():
 		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-		if iPlayer == iHolyRome:
+		if iCiv == iCivHolyRome:
 			sName = "HolyRome"
-		elif iPlayer == iAztecs:
+		elif iCiv == iCivAztecs:
 			sName = "Aztecs"
 			
 		if iPlayer in dFlipZoneEdits.keys():
@@ -214,9 +214,9 @@ def exportAllFlip(dFlipZoneEdits):
 def exportCore(iPlayer, bForce = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iPlayer == iHolyRome:
+	if iCiv == iCivHolyRome:
 		sName = "HolyRome"
-	elif iPlayer == iAztecs:
+	elif iCiv == iCivAztecs:
 		sName = "Aztecs"
 
 	lCorePlotList = Areas.getCoreArea(iCiv)
@@ -255,12 +255,12 @@ def exportCore(iPlayer, bForce = False):
 def exportAllCores():
 	lAllCores = []
 	lAllExceptions = []
-	for iPlayer in range(iNumPlayers):
+	for iPlayer in players.major():
 		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-		if iPlayer == iHolyRome:
+		if iCiv == iCivHolyRome:
 			sName = "HolyRome"
-		elif iPlayer == iAztecs:
+		elif iCiv == iCivAztecs:
 			sName = "Aztecs"
 
 		lCorePlots = plots.all().core(iPlayer)
@@ -292,12 +292,12 @@ def exportAllCores():
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
-def exportSettlerMap(iPlayer, bForce = False, bAll = False):
+def exportSettlerMap(iPlayer, bForce = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iPlayer == iHolyRome:
+	if iCiv == iCivHolyRome:
 		sName = "HolyRome"
-	elif iPlayer == iAztecs:
+	elif iCiv == iCivAztecs:
 		sName = "Aztecs"
 
 	bSettlerValueChanged = bForce
@@ -329,21 +329,13 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 		sText = "Settlermap of %s exported" %sName
 	else:
 		sText = "No changes between current settlervalues and values defined in python"
-	if bAll:
-		if iPlayer == iNumPlayers-1:
-			sText = "Settlermaps of all Civs exported"
-		else:
-			return
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
-def exportWarMap(iPlayer, bForce = False, bAll = False):
+def exportWarMap(iPlayer, bForce = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-	if iPlayer == iHolyRome:
+	if iCiv == iCivHolyRome:
 		sName = "HolyRome"
-	elif iPlayer == iAztecs:
+	elif iCiv == iCivAztecs:
 		sName = "Aztecs"
 
 	bWarMapChanged = bForce
@@ -377,14 +369,6 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 		sText = "Warmap of %s exported" %sName
 	else:
 		sText = "No changes between current warvalues and values defined in python"
-	if bAll:
-		if iPlayer == iNumPlayers-1:
-			sText = "Warmaps of all Civs exported"
-		else:
-			return
-	popup = PyPopup.PyPopup()
-	popup.setBodyString(sText)
-	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
 def exportRegionMap(bForce = False):
 	bAutoWater = True

@@ -124,7 +124,7 @@ def flipUnitsInCityBefore(tCityPlot, iNewOwner, iOldOwner):
 	for unit in removedUnits:
 		unit.kill(False, iBarbarian)
 		
-		if iNewOwner < iNumPlayers or (not unit.isAnimal() and not unit.isFound()):
+		if not is_minor(iNewOwner) or (not unit.isAnimal() and not unit.isFound()):
 			lFlippingUnits.append(unit.getUnitType())
 		
 	data.lFlippingUnits = lFlippingUnits
@@ -158,7 +158,7 @@ def flipUnitsInArea(lPlots, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers):
 		lFlippingUnits = []
 		for unit in removedUnits:
 			# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
-			if iNewOwner == iItaly and iOldOwner < iNumPlayers:
+			if civ(iNewOwner) == iCivItaly and not is_minor(iOldOwner):
 				oldCapital = player(iOldOwner).getCapitalCity()
 				move(unit, oldCapital)
 				continue
@@ -233,7 +233,7 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 		if not player(iNewOwner).isBarbarian() and not player(iNewOwner).isMinorCiv():
 			for plot in plots.surrounding(tCityPlot, radius=2):
 				if location(plot) == tCityPlot or not plot.isCity():
-					for iMinor in [iBarbarian, iIndependent, iIndependent2]:
+					for iMinor in players.minor().barbarian():
 						iMinorCulture = plot.getCulture(iMinor)
 						
 						if bBarbarian2x2Decay:
@@ -307,8 +307,8 @@ def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 			plot.setOwner(iPlayer)
 
 # used: DynamicCivs
-def getMaster(iPlayer):
-	masters = players.all().where(lambda p: team(iPlayer).isVassal(p))	
+def getMaster(identifier):
+	masters = players.all().where(lambda p: team(identifier).isVassal(p))	
 	if masters:
 		return masters.first()
 		
@@ -329,13 +329,14 @@ def pushOutGarrisons(tCityPlot, iOldOwner):
 # TODO: moves all units, not just iOldOwner's
 # TODO: should it really be the closest instead of a random city?
 def relocateGarrisons(tCityPlot, iOldOwner):
-	if iOldOwner < iNumPlayers:
+	if not is_minor(iOldOwner):
 		city = cities.owner(iOldOwner).without(tCityPlot).random()
 		if city:
 			for unit in units.at(tCityPlot):
 				if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 					move(unit, city)
 			return
+	
 	for unit in units.at(tCityPlot):
 		unit.kill(False, iOldOwner)
 			
@@ -350,9 +351,9 @@ def removeCoreUnits(iPlayer):
 				relocateSeaGarrisons(location(plot), iOwner)
 				createGarrisons(location(plot), iOwner, 2)
 		else:
-			for unit in units.at(plot):
+			for unit in units.at(plot).notowner(iPlayer):
 				iOwner = unit.getOwner()
-				if iOwner < iNumPlayers and iOwner != iPlayer:
+				if not is_minor(iOwner):
 					capital = player(iOwner).getCapitalCity()
 					if capital:
 						move(unit, capital)
@@ -501,7 +502,7 @@ def clearCatapult(iPlayer):
 # used: RFCUtils, RiseAndFall
 # TODO: remove plots.of
 def getCitiesInCore(iPlayer, bReborn=None):
-	return plots.of(Areas.getCoreArea(civ(iPlayer))).cities()
+	return cities.of(Areas.getCoreArea(civ(iPlayer)))
 	
 # used: CvRFCEventHandler, RFCUtils, Stability
 def getOwnedCoreCities(iPlayer, bReborn=None):
@@ -528,6 +529,7 @@ def removeReligion(city, iReligion):
 
 # used: CvRandomEventInterface, RiseAndFall
 def colonialConquest(iPlayer, tPlot):
+	iCiv = civ(iPlayer)
 	city = city_(tPlot)
 	target = player(city.getOwner())
 	
@@ -536,15 +538,15 @@ def colonialConquest(iPlayer, tPlot):
 		
 	# independents too so the conquerors don't get pushed out in case the target collapses
 	# TODO: instead properly establish war against independents on collapse
-	for iMinor in [iIndependent, iIndependent2]:
+	for iMinor in players.civs([iCivIndependent, iCivIndependent2]):
 		if not team(iPlayer).isAtWar(iMinor):
 			team(iPlayer).declareWar(iMinor, True, WarPlanTypes.WARPLAN_LIMITED)
 			
 	targetPlot = plots.surrounding(tPlot).where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater()).random()
 	
-	if iPlayer in [iSpain, iPortugal, iNetherlands]:
+	if iCiv in [iCivSpain, iCivPortugal, iCivNetherlands]:
 		iNumUnits = 2
-	elif iPlayer in [iFrance, iEngland]:
+	elif iCiv in [iCivFrance, iCivEngland]:
 		iNumUnits = 3
 		
 	iSiege = getBestSiege(iPlayer)
@@ -561,9 +563,11 @@ def colonialConquest(iPlayer, tPlot):
 
 # used: CvRandomEventInterface, RiseAndFall
 def colonialAcquisition(iPlayer, tPlot):
-	if iPlayer in [iSpain, iPortugal]:
+	iCiv = civ(iPlayer)
+
+	if iCiv in [iCivSpain, iCivPortugal]:
 		iNumUnits = 1
-	elif iPlayer in [iFrance, iEngland, iNetherlands]:
+	elif iCiv in [iCivFrance, iCivEngland, iCivNetherlands]:
 		iNumUnits = 2
 		
 	plot = plot_(tPlot)
@@ -593,14 +597,16 @@ def colonialAcquisition(iPlayer, tPlot):
 
 # used: CvRandomEventInterface, RiseAndFall
 def getColonialTargets(iPlayer, bEmpty=False):
-	if iPlayer in [iSpain, iFrance]:
+	iCiv = civ(iPlayer)
+
+	if iCiv in [iCivSpain, iCivFrance]:
 		iNumCities = 1
-	elif iPlayer == iPortugal and not pPortugal.isHuman():
+	elif iCiv == iCivPortugal and not player(iCivPortugal).isHuman():
 		iNumCities = 5
 	else:
 		iNumCities = 3
 
-	index = list([iSpain, iFrance, iEngland, iPortugal, iNetherlands]).index(iPlayer)
+	index = list([iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]).index(iCiv)
 	lPlotList = tTradingCompanyPlotLists[index][:]
 	
 	cityPlots, emptyPlots = plots.of(lPlotList).split(lambda p: p.isCity())
@@ -674,11 +680,11 @@ def isIsland(plot, iIslandLimit = 3):
 	
 # used: CvRFCEventHandler
 def handleChineseCities(pUnit):
-	plot = plots.of(lChineseCities).where(lambda p: isFree(iChina, p, True, True, True)).random()
+	plot = plots.of(lChineseCities).where(lambda p: isFree(slot(iCivChina), p, True, True, True)).random()
 	
 	if plot:
-		pChina.found(plot.getX(), plot.getY())
-		pUnit.kill(False, iChina)
+		player(iCivChina).found(plot.getX(), plot.getY())
+		pUnit.kill(False, -1)
 			
 # used: RiseAndFall
 def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=None):
@@ -768,7 +774,7 @@ def getBestCounter(iPlayer):
 # TODO: update list or make dynamic
 def getBestDefender(iPlayer):
 	# Leoreth: there is a C++ error for barbarians for some reason, workaround by simply using independents
-	if iPlayer == iBarbarian: iPlayer = iIndependent
+	if player(iPlayer).isBarbarian(): iPlayer = players.independent().random()
 	lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketeer, iArquebusier, iCrossbowman, iArcher, iMilitia]
 	return getBestTrainable(iPlayer, lDefenderList)
 	
@@ -793,7 +799,7 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		pushOutGarrisons(plot, iOwner)
 		relocateSeaGarrisons(plot, iOwner)
 	
-	flipCity(plot, 0, 0, iPlayer, [iOwner])
+	flipCity(plot, False, False, iPlayer, [iOwner])
 	
 	if bFlipUnits: 
 		flipUnitsInCityAfter(plot, iPlayer)
@@ -801,10 +807,12 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 		createGarrisons(tPlot, iPlayer, 2)
 	
 	plot.setRevealed(iPlayer, True, True, -1)
+	
+	return city(tPlot)
 
 # TODO: unused but should be
 def isPastBirth(iPlayer):
-	return year() >= birth(iPlayer)
+	return year() >= year(dBirth[iPlayer])
 	
 # used: Congresses, Stability
 def isNeighbor(iPlayer1, iPlayer2):
@@ -947,8 +955,10 @@ def doByzantineBribery(spy):
 	
 # used: CvScreensInterface, Stability
 def canRespawn(iPlayer):
+	iCiv = civ(iPlayer)
+
 	# no respawn before spawn
-	if year() < birth(iPlayer) + 10: return False
+	if year() < dBirth[iCiv] + 10: return False
 	
 	# only dead civ need to check for resurrection
 	if player(iPlayer).isAlive(): return False
@@ -958,31 +968,32 @@ def canRespawn(iPlayer):
 	
 	# check if the civ can be reborn at this date
 	# TODO: looks like it accepts this generator expression, check to remove list comprehension elsewhere after all
-	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[civ(iPlayer)]):
+	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
 		return False
 				
+	# TODO: function like exclusive(iCiv1, iCiv2) to simplify this
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if iPlayer == iThailand and pKhmer.isAlive(): return False
-	if iPlayer == iKhmer and pThailand.isAlive(): return False
+	if iCiv == iCivThailand and player(iCivKhmer).isAlive(): return False
+	if iCiv == iCivKhmer and player(iCivThailand).isAlive(): return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if iPlayer == iRome and pItaly.isAlive(): return False
-	if iPlayer == iItaly and pRome.isAlive(): return False
+	if iCiv == iCivRome and player(iCivItaly).isAlive(): return False
+	if iCiv == iCivItaly and player(iCivRome).isAlive(): return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if iPlayer == iGreece and pByzantium.isAlive(): return False
-	if iPlayer == iByzantium and pGreece.isAlive(): return False
+	if iCiv == iCivGreece and player(iCivByzantium).isAlive(): return False
+	if iCiv == iCivByzantium and player(iCivGreece).isAlive(): return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
-	if iPlayer == iIndia and pMughals.isAlive(): return False
+	if iCiv == iCivIndia and player(iCivMughals).isAlive(): return False
 	
 	# Exception during Japanese UHV
-	if pJapan.isHuman() and year().between(1920, 1945):
-		if iPlayer in [iChina, iKorea, iIndonesia, iThailand]:
+	if player(iCivJapan).isHuman() and year().between(1920, 1945):
+		if iCiv in [iCivChina, iCivKorea, iCivIndonesia, iCivThailand]:
 			return False
 	
 	if not player(iPlayer).isAlive() and turn() > data.players[iPlayer].iLastTurnAlive + turns(20):
-		if civ(iPlayer) not in dRebirth or year() > year(dRebirth[civ(iPlayer)]) + turns(10):
+		if iCiv not in dRebirth or year() > year(dRebirth[iCiv]) + turns(10):
 			return True
 			
 	return False
@@ -992,7 +1003,7 @@ def canEverRespawn(iPlayer, iGameTurn = None):
 	if iGameTurn is None:
 		iGameTurn = turn()
 		
-	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[civ(iPlayer)])
+	return not any(turn(iEnd) > iGameTurn for _, iEnd in dResurrections[iPlayer])
 	
 # used: Barbs
 def evacuate(iPlayer, tPlot):
@@ -1119,10 +1130,10 @@ def getLeaderCiv(iLeader):
 	return next([iCiv for iCiv in range(iNumCivilizations) if infos.civ(iCiv).isLeaders(iLeader)], None)
 	
 # used: Religions, RiseAndFall
-def setStateReligionBeforeBirth(lPlayers, iReligion):
-	for iPlayer in lPlayers:
-		if year() < birth(iPlayer) and player(iPlayer).getStateReligion() != iReligion:
-			player(iPlayer).setLastStateReligion(iReligion)
+def setStateReligionBeforeBirth(lCivs, iReligion):
+	for iCiv in lCivs:
+		if year() < dBirth[iCiv] and player(iCiv).getStateReligion() != iReligion:
+			player(iCiv).setLastStateReligion(iReligion)
 	
 # used: CvRFCEventHandler
 def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
@@ -1139,8 +1150,8 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		message(pWinningUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_WIN', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=8, location=pWinningUnit)
 		message(pLosingUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=7, location=pWinningUnit)
 		
-		if iPlayer == iAztecs:
-			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and pLosingUnit.getOwner() < iNumPlayers:
+		if civ(iPlayer) == iCivAztecs:
+			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and not is_minor(pLosingUnit):
 				data.iAztecSlaves += 1
 		
 # used: CvRandomEventInterface
@@ -1270,7 +1281,7 @@ def isAreaControlled(iPlayer, tTL, tBR, tExceptions=[]):
 # unused
 # keep for Rise and Fall refactoring
 def breakAutoplay():
-	if year < birth(human()):
+	if year() < year(dBirth[human()]):
 		makeUnit(human(), iSettler, (0, 0))
 		
 # used: CvRFCEventHandler
@@ -1303,10 +1314,10 @@ def canSwitch(iPlayer, iBirthTurn):
 	if data.bAlreadySwitched and not player(iPlayer).isReborn() and not data.bUnlimitedSwitching:
 		return False
 		
-	if birth(iPlayer) <= birth(human()):
+	if dBirth[iPlayer] <= dBirth[human()]:
 		return False
 		
-	if civ(human()) in dNeighbours[civ(iPlayer)] and birth(iPlayer) - birth(human()) < turns(25):
+	if civ(human()) in dNeighbours[iPlayer] and year(dBirth[iPlayer]) - year(dBirth[human()]) < turns(25):
 		return False
 		
 	return True

@@ -3,71 +3,84 @@
 
 from CvPythonExtensions import *
 from DataStructures import *
+from Types import *
+
 gc = CyGlobalContext()
 
 iWorldX = 124
 iWorldY = 68
 
-# initialise player variables to player IDs from WBS
-iNumPlayers = 45
-(iEgypt, iBabylonia, iHarappa, iChina, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
-iMaya, iTamils, iEthiopia, iKorea, iByzantium, iJapan, iVikings, iTurks, iArabia, iTibet, 
-iIndonesia, iMoors, iSpain, iFrance, iKhmer, iEngland, iHolyRome, iRussia, iMali, iPoland, 
-iPortugal, iInca, iItaly, iMongolia, iAztecs, iMughals, iOttomans, iThailand, iCongo, iNetherlands, 
-iGermany, iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
-
-(pEgypt, pBabylonia, pHarappa, pChina, pGreece, pIndia, pPhoenicia, pPolynesia, pPersia, pRome, 
-pMaya, pTamils, pEthiopia, pKorea, pByzantium, pJapan, pVikings, pTurks, pArabia, pTibet, 
-pIndonesia, pMoors, pSpain, pFrance, pKhmer, pEngland, pHolyRome, pRussia, pMali, pPoland, 
-pPortugal, pInca, pItaly, pMongolia, pAztecs, pMughals, pOttomans, pThailand, pCongo, pNetherlands, 
-pGermany, pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
-
-(teamEgypt, teamBabylonia, teamHarappa, teamChina, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
-teamMaya, teamTamils, teamEthiopia, teamKorea, teamByzantium, teamJapan, teamVikings, teamTurks, teamArabia, teamTibet, 
-teamIndonesia, teamMoors, teamSpain, teamFrance, teamKhmer, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, 
-teamPortugal, teamInca, teamItaly, teamMongolia, teamAztecs, teamMughals, teamOttomans, teamThailand, teamCongo, teamNetherlands, 
-teamGermany, teamAmerica, teamArgentina, teamBrazil, teamCanada) = [gc.getTeam(i) for i in range(iNumPlayers)]
-
-iHolland = iNetherlands
-iDelhi = iMughals
-iSiam = iThailand
-iPhoenicia = iCarthage
-iHRE = iHolyRome
-iAustria = iHolyRome
-iPrussia = iGermany
-
-iNumMajorPlayers = iNumPlayers
-iNumActivePlayers = iNumPlayers
-
-iIndependent = iNumPlayers
-iIndependent2 = iNumPlayers+1
-iNative = iNumPlayers+2
-iCeltia = iNumPlayers+3
-iNumTotalPlayers = iNumPlayers+4
-iBarbarian = iNumPlayers+4
-iNumTotalPlayersB = iBarbarian+1
-
-(pIndependent, pIndependent2, pNative, pCeltia, pBarbarian) = [gc.getPlayer(i) for i in range(iIndependent, iNumTotalPlayersB)]
-(teamIndependent, teamIndependent2, teamNative, teamCeltia, teamBarbarian) = [gc.getTeam(i) for i in range(iIndependent, iNumTotalPlayersB)]
-
 # civilizations, not players
 iNumCivs = 57
-(iCivAmerica, iCivArabia, iCivArgentina, iCivAztec, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, 
+(iCivAmerica, iCivArabia, iCivArgentina, iCivAztec, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelts, 
 iCivChina, iCivColombia, iCivEgypt, iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHarappa, iCivHolyRome, 
 iCivInca, iCivIndia, iCivIndonesia, iCivIran, iCivItaly, iCivJapan, iCivKhmer, iCivKongo, iCivKorea, iCivMali, 
 iCivMaya, iCivMexico, iCivMongols, iCivMoors, iCivMughals, iCivNativeAmericans, iCivNetherlands, iCivOttomans, iCivPersia, iCivPoland, 
 iCivPolynesia, iCivPortugal, iCivRome, iCivRussia, iCivSpain, iCivSumeria, iCivTamils, iCivThailand, iCivTibet, iCivTurks,
-iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivs)
+iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = tuple(Civ(i) for i in range(iNumCivs))
 
 iCivPhoenicia = iCivCarthage
 iCivCongo = iCivKongo
 iCivAztecs = iCivAztec
-iCivCeltia = iCivCelt
 
 # TODO: add iCivIran, iCivMexico, iCivColombia everywhere
 
 # slot order
-lCivOrder = [iCivEgypt, iCivBabylonia, iCivHarappa, iCivChina, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivMaya, iCivTamils, iCivEthiopia, iCivKorea, iCivByzantium, iCivJapan, iCivVikings, iCivTurks, iCivArabia, iCivTibet, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivKhmer, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivOttomans, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivBarbarian]
+lCivOrder = [
+	iCivEgypt,
+	iCivBabylonia,
+	iCivHarappa,
+	iCivChina,
+	iCivGreece,
+	iCivIndia,
+	iCivCarthage,
+	iCivPolynesia,
+	iCivPersia,
+	iCivRome,
+	iCivMaya,
+	iCivTamils,
+	iCivEthiopia,
+	iCivKorea,
+	iCivByzantium,
+	iCivJapan,
+	iCivVikings,
+	iCivTurks,
+	iCivArabia,
+	iCivTibet,
+	iCivIndonesia,
+	iCivMoors,
+	iCivSpain,
+	iCivFrance,
+	iCivKhmer,
+	iCivEngland,
+	iCivHolyRome,
+	iCivRussia,
+	iCivMali,
+	iCivPoland,
+	iCivPortugal,
+	iCivInca,
+	iCivItaly,
+	iCivMongols,
+	iCivAztecs,
+	iCivMughals,
+	iCivOttomans,
+	iCivThailand,
+	iCivCongo,
+	iCivIran,
+	iCivNetherlands,
+	iCivGermany,
+	iCivAmerica,
+	iCivArgentina,
+	iCivMexico,
+	iCivColombia,
+	iCivBrazil,
+	iCivCanada,
+	iCivIndependent,
+	iCivIndependent2,
+	iCivNative,
+	iCivCelts,
+	iCivBarbarian
+]
 
 # used in: Congresses, DynamicCivs, Plague, RFCUtils, UniquePowers, Victory
 # a civilisation can be in multiple civ groups
@@ -76,7 +89,7 @@ iNumCivGroups = 6
 
 dCivGroups = {
 iCivGroupEurope : [iCivGreece, iCivRome, iCivByzantium, iCivVikings, iCivMoors, iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivNetherlands, iCivItaly, iCivPoland, iCivPortugal, iCivGermany],
-iCivGroupAsia : [iCivIndia, iCivChina, iCivHarappa, iCivPolynesia, iCivPersia, iCivJapan, iCivTamils, iCivKorea, iCivByzantium, iCivTibet, iCivKhmer, iCivIndonesia, iCivRussia, iCivMongolia, iCivMughals, iCivThailand, iCivTurks],
+iCivGroupAsia : [iCivIndia, iCivChina, iCivHarappa, iCivPolynesia, iCivPersia, iCivJapan, iCivTamils, iCivKorea, iCivByzantium, iCivTibet, iCivKhmer, iCivIndonesia, iCivRussia, iCivMongols, iCivMughals, iCivThailand, iCivTurks],
 iCivGroupMiddleEast : [iCivEgypt, iCivBabylonia, iCivPersia, iCivByzantium, iCivArabia, iCivOttomans, iCivCarthage, iCivTurks],
 iCivGroupAfrica : [iCivEgypt, iCivCarthage, iCivEthiopia, iCivMali, iCivCongo],
 iCivGroupAmerica : [iCivMaya, iCivInca, iCivAztecs, iCivAmerica, iCivArgentina, iCivBrazil, iCivCanada],
@@ -85,12 +98,12 @@ iCivGroupAmerica : [iCivMaya, iCivInca, iCivAztecs, iCivAmerica, iCivArgentina, 
 # used in: Stability
 # tech groups share techs within each other on respawn
 iNumTechGroups = 4
-(iTechGroupWestern, iTechGroupMiddleEast, iTechGroupFarEast, iTechGroupNativeAmerica) = range(iNumTechGroupe)
+(iTechGroupWestern, iTechGroupMiddleEast, iTechGroupFarEast, iTechGroupNativeAmerica) = range(iNumTechGroups)
 
 dTechGroups = {
 iTechGroupWestern : [iCivRome, iCivGreece, iCivByzantium, iCivVikings, iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivNetherlands, iCivPoland, iCivPortugal, iCivItaly, iCivGermany, iCivAmerica, iCivArgentina, iCivBrazil, iCivCanada],
 iTechGroupMiddleEast : [iCivEgypt, iCivBabylonia, iCivHarappa, iCivIndia, iCivCarthage, iCivPersia, iCivEthiopia, iCivArabia, iCivMoors, iCivMali, iCivOttomans, iCivMughals, iCivTamils, iCivCongo, iCivTurks],
-iTechGroupFarEast : [iCivChina, iCivKorea, iCivJapan, iCivTibet, iCivKhmer, iCivIndonesia, iCivMongolia, iCivThailand],
+iTechGroupFarEast : [iCivChina, iCivKorea, iCivJapan, iCivTibet, iCivKhmer, iCivIndonesia, iCivMongols, iCivThailand],
 iTechGroupNativeAmerica : [iCivPolynesia, iCivMaya, iCivInca, iCivAztecs],
 }
 
@@ -147,26 +160,26 @@ iNumMinorCities = 40
 # scripted conquerors
 iNumConquests = 13
 
-dNeighbours = appenddict({
-iCivEypt : [iCivBabylonia, iCivGreece, iCivPersia, iCivCarthage, iCivRome, iCivEthiopia, iCivByzantium, iCivArabia, iCivMoors, iCivOttomans],
-iCivBabylonia : [iCivEgypt, iCivGreece, iCivPersia, iCivTurks, iCivOttomans, iCivMongolia, iCivCarthage, iCivByzantium],
+dNeighbours = CivDict({
+iCivEgypt : [iCivBabylonia, iCivGreece, iCivPersia, iCivCarthage, iCivRome, iCivEthiopia, iCivByzantium, iCivArabia, iCivMoors, iCivOttomans],
+iCivBabylonia : [iCivEgypt, iCivGreece, iCivPersia, iCivTurks, iCivOttomans, iCivMongols, iCivCarthage, iCivByzantium],
 iCivHarappa : [iCivIndia, iCivPersia, iCivTamils, iCivTibet, iCivMughals],
-iCivChina : [iCivIndia, iCivJapan, iCivKorea, iCivTurks, iCivTibet, iCivKhmer, iCivMongolia, iCivThailand],
+iCivChina : [iCivIndia, iCivJapan, iCivKorea, iCivTurks, iCivTibet, iCivKhmer, iCivMongols, iCivThailand],
 iCivGreece : [iCivPersia, iCivCarthage, iCivRome, iCivByzantium, iCivHolyRome, iCivRussia, iCivOttomans, iCivItaly],
-iCivIndia : [iCivChina, iCivHarappa, iCivPersia, iCivTamils, iCivTibet, iCivKhmer, iCivMongolia, iCivMughals, iCivThailand],
+iCivIndia : [iCivChina, iCivHarappa, iCivPersia, iCivTamils, iCivTibet, iCivKhmer, iCivMongols, iCivMughals, iCivThailand],
 iCivCarthage : [iCivEgypt, iCivGreece, iCivRome, iCivSpain, iCivMali, iCivPortugal, iCivBabylonia, iCivPersia, iCivArabia, iCivMoors, iCivOttomans, iCivItaly],
-iCivPersia : [iCivIndia, iCivBabylonia, iCivHarappa, iCivGreece, iCivTurks, iCivByzantium, iCivOttomans, iCivMongolia, iCivCarthage, iCivMughals],
+iCivPersia : [iCivIndia, iCivBabylonia, iCivHarappa, iCivGreece, iCivTurks, iCivByzantium, iCivOttomans, iCivMongols, iCivCarthage, iCivMughals],
 iCivRome : [iCivEgypt, iCivBabylonia, iCivGreece, iCivCarthage, iCivSpain, iCivFrance, iCivHolyRome, iCivPortugal, iCivItaly, iCivGermany],
 iCivTamils : [iCivHarappa, iCivIndia, iCivKhmer, iCivIndonesia, iCivMughals, iCivThailand],
 iCivEthiopia : [iCivEgypt, iCivArabia, iCivMali, iCivCongo],
-iCivKorea : [iCivChina, iCivKorea, iCivMongolia],
+iCivKorea : [iCivChina, iCivKorea, iCivMongols],
 iCivMaya : [iCivSpain, iCivInca, iCivAztecs, iCivAmerica],
 iCivByzantium : [iCivEgypt, iCivBabylonia, iCivGreece, iCivPersia, iCivArabia, iCivRussia, iCivOttomans, iCivTurks],
-iCivJapan : [iCivChina, iCivKorea, iCivKhmer, iCivMongolia, iCivThailand],
+iCivJapan : [iCivChina, iCivKorea, iCivKhmer, iCivMongols, iCivThailand],
 iCivVikings : [iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivPoland, iCivNetherlands, iCivGermany],
-iCivTurks : [iCivChina, iCivBabylonia, iCivPersia, iCivMughals, iCivOttomans, iCivByzantium, iCivMongolia, iCivTibet],
+iCivTurks : [iCivChina, iCivBabylonia, iCivPersia, iCivMughals, iCivOttomans, iCivByzantium, iCivMongols, iCivTibet],
 iCivArabia : [iCivEgypt, iCivBabylonia, iCivPersia, iCivEthiopia, iCivByzantium, iCivOttomans, iCivCarthage],
-iCivTibet : [iCivChina, iCivHarappa, iCivIndia, iCivMongolia, iCivMughals, iCivTurks],
+iCivTibet : [iCivChina, iCivHarappa, iCivIndia, iCivMongols, iCivMughals, iCivTurks],
 iCivIndonesia : [iCivIndia, iCivJapan, iCivKhmer, iCivThailand, iCivTamils],
 iCivMoors : [iCivEgypt, iCivSpain, iCivPortugal, iCivMali],
 iCivSpain : [iCivCarthage, iCivRome, iCivMoors, iCivFrance, iCivEngland, iCivPortugal],
@@ -174,7 +187,7 @@ iCivFrance : [iCivRome, iCivVikings, iCivSpain, iCivEngland, iCivHolyRome, iCivN
 iCivKhmer : [iCivIndia, iCivChina, iCivTamils, iCivJapan, iCivIndonesia, iCivThailand],
 iCivEngland : [iCivRome, iCivVikings, iCivSpain, iCivFrance, iCivHolyRome, iCivNetherlands, iCivGermany],
 iCivHolyRome : [iCivRome, iCivVikings, iCivFrance, iCivEngland, iCivNetherlands, iCivItaly, iCivPoland, iCivGermany],
-iCivRussia : [iCivPersia, iCivByzantium, iCivVikings, iCivPoland, iCivOttomans, iCivMongolia, iCivGermany],
+iCivRussia : [iCivPersia, iCivByzantium, iCivVikings, iCivPoland, iCivOttomans, iCivMongols, iCivGermany],
 iCivMali : [iCivEgypt, iCivCarthage, iCivEthiopia, iCivMoors, iCivCongo],
 iCivPoland : [iCivVikings, iCivHolyRome, iCivRussia, iCivGermany],
 iCivPortugal : [iCivCarthage, iCivRome, iCivSpain, iCivFrance],
@@ -183,7 +196,7 @@ iCivItaly : [iCivGreece, iCivCarthage, iCivRome, iCivFrance, iCivHolyRome],
 iCivMongols : [iCivIndia, iCivChina, iCivPersia, iCivJapan, iCivKorea, iCivTibet, iCivRussia, iCivOttomans, iCivTurks],
 iCivAztecs : [iCivSpain, iCivInca, iCivAmerica],
 iCivMughals : [iCivHarappa, iCivIndia, iCivPersia, iCivTamils, iCivTibet, iCivTurks],
-iCivOttomans : [iCivBabylonia, iCivGreece, iCivPersia, iCivByzantium, iCivRussia, iCivMongolia, iCivCarthage, iCivTurks],
+iCivOttomans : [iCivBabylonia, iCivGreece, iCivPersia, iCivByzantium, iCivRussia, iCivMongols, iCivCarthage, iCivTurks],
 iCivThailand : [iCivIndia, iCivChina, iCivJapan, iCivIndonesia, iCivKhmer, iCivTamils],
 iCivCongo : [iCivEthiopia, iCivMali],
 iCivNetherlands : [iCivVikings, iCivFrance, iCivEngland, iCivHolyRome, iCivGermany],
@@ -192,9 +205,9 @@ iCivAmerica : [iCivJapan, iCivSpain, iCivFrance, iCivEngland, iCivRussia, iCivIn
 iCivArgentina : [iCivSpain, iCivPortugal, iCivInca, iCivBrazil],
 iCivBrazil : [iCivSpain, iCivPortugal, iCivInca, iCivArgentina],
 iCivCanada : [iCivAmerica],
-})
+}, [])
 
-dBirth = {
+dBirth = CivDict({
 iCivEgypt : -3000,
 iCivBabylonia : -3000,
 iCivHarappa : -3000,
@@ -228,7 +241,7 @@ iCivPoland : 1025,
 iCivPortugal : 1130,
 iCivInca : 1150,
 iCivItaly : 1167,
-iCivMongolia : 1190,
+iCivMongols : 1190,
 iCivAztecs : 1195,
 iCivMughals : 1206,
 iCivOttomans : 1280,
@@ -240,9 +253,9 @@ iCivAmerica : 1776,
 iCivArgentina : 1810,
 iCivBrazil : 1822,
 iCivCanada : 1867,
-}
+}, -3000)
 
-dFall = {
+dFall = CivDict({
 iCivEgypt : -343,
 iCivBabylonia : -539,
 iCivHarappa : -1700,
@@ -272,9 +285,9 @@ iCivMongols : 1368,
 iCivAztecs : 1521,
 iCivMughals : 1640,
 iCivCongo : 1800,
-}
+}, 2020)
 
-dVictoryYears = {
+dVictoryYears = CivDict({
 iCivEgypt : (-850, -100, 170),
 iCivBabylonia : (-1, -850, -700),
 iCivHarappa : (-1600, -1500, -800),
@@ -323,22 +336,28 @@ iCivArgentina : (1930, 1960, 2000),
 iCivColombia : (1870, 1920, 1950),
 iCivBrazil : (1880, -1, 1950),
 iCivCanada : (1920, 1950, 2000),
-}
+})
 
 # Leoreth: date-triggered respawn for certain civs
-dRebirth = {
+dRebirth = CivDict({
 iCivPersia : 1501,		# Iran
 iCivMaya : 1814,		# Colombia
 iCivAztecs : 1810,		# Mexico
-}
+})
 
-dRebirthCiv = {
+dRebirthCiv = CivDict({
 iCivPersia : iCivIran,
 iCivMaya : iCivColombia,
 iCivAztecs : iCivMexico,
-}
+})
 
-dResurrections = appenddict({
+# Leoreth: if we do not care about the difference between birth and rebirth
+dSpawn = CivDict(dict(dBirth.items() + [(dRebirthCiv[iCiv], dRebirth[iCiv]) for iCiv in dRebirth]))
+
+# Leoreth: this excludes rebirth civs to only contain civs that actually hold a slot at the start of the game
+lSlotOrder = [iCiv for iCiv in lCivOrder if iCiv not in dRebirthCiv.values()]
+
+dResurrections = CivDict({
 iCivEgypt : [(900, 1300), (1800, 2020)],
 iCivBabylonia : [(-3000, -500)],
 iCivChina : [(600, 2020)],
@@ -382,9 +401,9 @@ iCivMexico : [(1810, 2020)],
 iCivColombia : [(1810, 2020)],
 iCivBrazil : [(1820, 2020)],
 iCivCanada : [(1867, 2020)],
-})
+}, [])
 
-dEnemyCivsOnSpawn = appenddict({
+dEnemyCivsOnSpawn = CivDict({
 iCivBabylonia : [iCivIndependent, iCivIndependent2],
 iCivChina : [iCivIndependent, iCivIndependent2, iCivIndependent2],
 iCivGreece : [iCivIndependent, iCivIndependent2, iCivBabylonia],
@@ -392,7 +411,7 @@ iCivPersia : [iCivBabylonia, iCivBabylonia, iCivGreece, iCivCarthage, iCivCartha
 iCivByzantium : [iCivGreece, iCivPersia],
 iCivVikings : [iCivEngland, iCivEngland, iCivFrance, iCivIndependent, iCivIndependent2],
 iCivTurks : [iCivChina, iCivChina, iCivPersia, iCivPersia, iCivIndependent, iCivIndependent, iCivIndependent2, iCivIndependent2],
-iCivArabia : [iCivEgypt, iCivEgypt, iCivEgypt, iCivBabylonia, iCivBabylonia, iCivGreece, iCivPersia, iCivCarthage, iCivRome, iCivByzantium, iCivByzantium, iCivSpain, iCivFrance, iCivCeltia, iCivCeltia, iCivIndependent, iCivIndependent2],
+iCivArabia : [iCivEgypt, iCivEgypt, iCivEgypt, iCivBabylonia, iCivBabylonia, iCivGreece, iCivPersia, iCivCarthage, iCivRome, iCivByzantium, iCivByzantium, iCivSpain, iCivFrance, iCivCelts, iCivCelts, iCivIndependent, iCivIndependent2],
 iCivIndonesia : [iCivKhmer, iCivKhmer],
 iCivArabia : [iCivRome, iCivArabia, iCivArabia],
 iCivMongols : [iCivChina, iCivChina, iCivChina, iCivKorea, iCivKorea, iCivTurks, iCivTurks, iCivTurks, iCivIndependent, iCivIndependent, iCivIndependent2, iCivIndependent2],
@@ -406,10 +425,10 @@ iCivArgentina : [iCivSpain, iCivSpain, iCivIndependent, iCivIndependent2],
 iCivMexico : [iCivSpain, iCivSpain, iCivIndependent, iCivIndependent2],
 iCivColombia : [iCivSpain, iCivSpain, iCivIndependent, iCivIndependent2],
 iCivBrazil : [iCivIndependent, iCivIndependent2],
-})
+}, [])
 
-dTotalWarOnSpawn = appenddict({
-iCivPersia : [iiCivBabylonia, iCivCarthage],
+dTotalWarOnSpawn = CivDict({
+iCivPersia : [iCivBabylonia, iCivCarthage],
 iCivRome : [iCivGreece],
 iCivByzantium : [iCivGreece],
 iCivArabia : [iCivEgypt, iCivBabylonia, iCivCarthage, iCivPersia],
@@ -420,9 +439,9 @@ iCivAztecs : [iCivMaya],
 iCivMughals : [iCivIndia],
 iCivOttomans : [iCivArabia, iCivEgypt],
 iCivThailand : [iCivKhmer],
-})
+}, [])
 
-dAggressionLevel = defaultdict({
+dAggressionLevel = CivDict({
 iCivBabylonia : 1,
 iCivChina : 1,
 iCivGreece : 2,
@@ -432,7 +451,7 @@ iCivMaya : 1,
 iCivTamils : 1,
 iCivByzantium : 1,
 iCivJapan : 1,
-iCivViking : 2,
+iCivVikings : 2,
 iCivTurks : 2,
 iCivArabia : 2,
 iCivTibet : 1,
@@ -458,7 +477,7 @@ iCivMexico : 1,
 iCivArgentina : 1,
 }, 0)
 
-dAIStopBirthThreshold = defaultdict({
+dAIStopBirthThreshold = CivDict({
 iCivEgypt : 80,
 iCivBabylonia : 50,
 iCivHarappa : 50,
@@ -509,7 +528,7 @@ iCivBrazil : 60,
 iCivCanada : 60,
 }, 100)
 
-dResurrectionProbability = {
+dResurrectionProbability = CivDict({
 iCivEgypt : 25,
 iCivBabylonia : 40,
 iCivHarappa : 0,
@@ -558,9 +577,9 @@ iCivMexico : 100,
 iCivColombia : 80,
 iCivBrazil : 100,
 iCivCanada : 100,
-}
+})
 
-dPatienceThreshold = defaultdict({
+dPatienceThreshold = CivDict({
 iCivEgypt : 30,
 iCivBabylonia : 30,
 iCivHarappa : 30,
@@ -611,7 +630,7 @@ iCivBrazil : 40,
 iCivCanada : 40,
 }, 100)
 
-dMaxColonists = {
+dMaxColonists = CivDict({
 iCivVikings : 1,
 iCivSpain : 7,
 iCivFrance : 5,
@@ -619,7 +638,7 @@ iCivEngland : 6,
 iCivPortugal : 6, 
 iCivNetherlands : 6,
 iCivGermany : 2
-}
+})
 
 # initialise religion variables to religion indices from XML
 iNumReligions = 10
@@ -639,8 +658,8 @@ tPersecutionPreference = (
 (iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iBuddhism, iHinduism, iTaoism, iConfucianism), # Zoroastrianism
 )
 
-lCatholicStart = [iSpain, iFrance, iEngland, iHolyRome, iPoland, iPortugal, iItaly, iNetherlands, iGermany, iAmerica, iArgentina, iBrazil, iCanada]
-lProtestantStart = [iNetherlands, iGermany, iAmerica]
+lCatholicStart = [iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivPoland, iCivPortugal, iCivItaly, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivBrazil, iCivCanada]
+lProtestantStart = [iCivNetherlands, iCivGermany, iCivAmerica]
 
 # corporations
 iNumCorporations = 9
@@ -888,17 +907,17 @@ iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, 
 iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
 iGeorge, iKhosrow, iBumin, iTamerlane, iEzana) = range(iNumLeaders)
 
-dResurrectionLeaders = {
+dResurrectionLeaders = CivDict({
 	iCivChina : iHongwu,
 	iCivIndia : iShahuji,
 	iCivEgypt : iBaibars,
-}
+})
 
-dRebirthLeaders = {
+dRebirthLeaders = CivDict({
 	iCivColombia : iBolivar,
 	iCivIran : iAbbas,
 	iCivMexico : iJuarez,
-}
+})
 
 iNumPeriods = 19
 (iPeriodMing, iPeriodMaratha, iPeriodModernGreece, iPeriodCarthage, iPeriodVijayanagara,
@@ -916,7 +935,7 @@ tTradingCompanyPlotLists = (
 
 lSecondaryCivs = [iCivHarappa, iCivPolynesia, iCivTamils, iCivTibet, iCivMoors, iCivPoland, iCivCongo, iCivArgentina, iCivBrazil]
 
-lMongolCivs = [iCivPersia, iCivByzantium, iCivArabia, iCivRussia, iCivMughals]
+lMongolCivs = [iCivPersia, iCivByzantium, iCivArabia, iCivRussia]
 
 (i3000BC, i600AD, i1700AD) = range(3)
 

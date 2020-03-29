@@ -32,7 +32,7 @@ def updateMap(iPlayer):
 	applyMap(iPlayer)
 	
 def init():
-	for iPlayer in range(iNumPlayers):
+	for iPlayer in players.major():
 		updateMap(iPlayer)
 
 dSettlerMaps = {

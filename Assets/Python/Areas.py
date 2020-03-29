@@ -5,6 +5,7 @@ from Core import *
 lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
 	
 def getArea(iCiv, dRectangle, dExceptions, dPeriodRectangle=None, dPeriodExceptions=None):
+	if dExceptions is None: dExceptions = appenddict()
 	if dPeriodRectangle is None: dPeriodRectangle = appenddict()
 	if dPeriodExceptions is None: dPeriodExceptions = appenddict()
 	
@@ -40,7 +41,7 @@ def getBirthArea(iCiv):
 	return getArea(iCiv, dBirthArea, dBirthAreaExceptions)
 
 def getBirthRectangle(iCiv, bExtended=None):
-	if bExtended is None: bExtended = isExtendedBirth(slot(iPlayer))
+	if bExtended is None: bExtended = isExtendedBirth(slot(iCiv))
 	if iCiv in dExtendedBirthArea and bExtended:
 		return dExtendedBirthArea[iCiv]
 	return dBirthArea[iCiv]
@@ -69,22 +70,18 @@ def updateCore(iPlayer):
 		plot.setCore(iPlayer, location(plot) in lCore)
 			
 def isForeignCore(iPlayer, tPlot):
-	for iLoopPlayer in range(iNumPlayers):
-		if iLoopPlayer == iPlayer: continue
-		if plot(tPlot).isCore(iLoopPlayer):
-			return True
-	return False
+	return players.major().without(iPlayer).any(lambda p: plot(tPlot).isCore(p))
 	
 def isExtendedBirth(iPlayer):
 	if human() == iPlayer: return False
 	
 	# add special conditions for extended AI flip zones here
-	if iPlayer == iOttomans and pByzantium.isAlive(): return False
+	if civ(iPlayer) == iCivOttomans and player(iCivByzantium).isAlive(): return False
 	
 	return True
 			
 def init():
-	for iPlayer in range(iNumPlayers):
+	for iPlayer in players.major():
 		updateCore(iPlayer)
 	
 ### Capitals ###
@@ -138,7 +135,7 @@ iCivMexico :		(18, 37), # Mexico City
 iCivColombia :		(27, 29), # Bogota
 iCivBrazil :		(41, 18), # Rio de Janeiro
 iCivCanada :		(30, 52), # Montreal
-)
+}
 
 dPeriodCapitals = {
 iPeriodMing :			(102, 47), # Beijing
@@ -155,7 +152,7 @@ iCivJapan :		(116, 46),	# Tokyo
 iCivVikings :	(63, 59),	# Stockholm
 iCivHolyRome :	(62, 49),	# Vienna
 iCivItaly :		(60, 44),	# Rome
-iCivMongolia :	(102, 47),	# Khanbaliq
+iCivMongols :	(102, 47),	# Khanbaliq
 iCivOttomans :	(68, 45),	# Istanbul
 }
 
@@ -258,7 +255,7 @@ iCivHolyRome :		[(64, 51), (64, 52), (64, 53), (64, 54)],
 iCivRussia :		[(68, 58), (69, 58), (70, 58), (65, 55), (66, 55), (66, 56)],
 iCivPoland :		[(63, 50), (64, 50)],
 iCivItaly :			[(63,47), (63,46)],
-iCivMongolia :		[(99, 47), (100, 47), (101, 47), (102, 47), (103, 47), (99, 46), (100, 46), (101, 46), (102, 46), (103, 46), (104, 46), (99, 45), (100, 45), (101, 45), (102, 45), (103, 45), (104, 45), (105, 45), (106, 45)],
+iCivMongols :		[(99, 47), (100, 47), (101, 47), (102, 47), (103, 47), (99, 46), (100, 46), (101, 46), (102, 46), (103, 46), (104, 46), (99, 45), (100, 45), (101, 45), (102, 45), (103, 45), (104, 45), (105, 45), (106, 45)],
 iCivMughals :		[(92, 43), (93, 42), (93, 43), (94, 42), (94, 43)],
 iCivOttomans :		[(74, 48), (75, 48), (76, 48), (75, 47), (75, 48), (76, 41)],
 iCivNetherlands :	[(57, 51), (58, 51)],
@@ -321,7 +318,7 @@ iCivMexico :		((16, 35),	(19, 40)),
 iCivColombia :		((24, 26),	(31, 32)),
 iCivBrazil :		((37, 15),	(41, 22)),
 iCivCanada :		((27, 50),	(35, 52)),
-)
+}
 
 dPeriodCoreArea = {
 iPeriodMing : 						((99, 42),	(107, 47)),
@@ -358,7 +355,7 @@ iCivFrance :	[(51, 46), (52, 46), (55, 46), (57, 46)],
 iCivHolyRome :	[(61, 52), (62, 52), (63, 52)],
 iCivRussia :	[(68, 49), (68, 59), (69, 49), (69, 59), (70, 59), (71, 49)],
 iCivPoland :	[(63, 50), (64, 50)],
-iCivMongolia :	[(102, 47), (103, 47)],
+iCivMongols :	[(102, 47), (103, 47)],
 iCivMughals :	[(86, 43)],
 iCivGermany :	[(58, 52), (58, 53), (58, 54), (61, 49), (61, 50), (62, 49), (62, 50), (62, 51), (63, 49), (63, 50), (63, 51), (64, 49), (64, 50), (64, 51), (64, 52), (64, 53), (65, 49), (65, 51), (65, 52), (65, 53)],
 iCivAmerica :	[(23, 50), (27, 50), (29, 50), (30, 50)],
@@ -422,10 +419,12 @@ iCivMughals :		((86, 37), 	(94, 43)),
 iCivOttomans :		((68, 42), 	(78, 49)),
 iCivThailand :		((99, 31), 	(103, 37)),
 iCivCongo :			((61, 19), 	(65, 22)),
+iCivIran :			((79, 37), 	(86, 46)),
 iCivNetherlands :	((56, 51), 	(58, 54)),
 iCivGermany :		((59, 48), 	(66, 55)),
 iCivAmerica :		((11, 43), 	(31, 49)),
 iCivArgentina :		((31,  3), 	(36, 15)),
+iCivMexico :		((15, 35), 	(20, 40)),
 iCivColombia :		((24, 26),	(29, 32)),
 iCivBrazil :		((32, 14), 	(43, 28)),
 iCivCanada :		(( 8, 50), 	(37, 67)),
@@ -456,8 +455,9 @@ iCivFrance :	[(51, 46), (52, 46), (53, 46), (58, 47), (58, 46), (58, 51), (58, 5
 iCivRussia :	[(80, 49), (68, 62), (68, 61), (68, 60), (68, 59)],
 iCivPoland :	[(63, 50), (64, 50)],
 iCivItaly :		[(62, 47), (63, 47), (63, 46)],
-iCivMongolia :	[(92, 52), (92, 53), (92, 54), (93, 54), (94, 54), (100, 48), (101, 48), (102, 48), (103, 48), (104, 48)],
+iCivMongols :	[(92, 52), (92, 53), (92, 54), (93, 54), (94, 54), (100, 48), (101, 48), (102, 48), (103, 48), (104, 48)],
 iCivAztecs :	[(20, 35)],
+iCivMexico :	[(20, 35)],
 iCivArgentina :	[(35, 12), (35, 13), (36, 12), (36, 13), (36, 14), (36, 15)],
 iCivCanada :	[(11,50), (12,50), (13,50), (14,50), (16,50), (17,50), (18,50), (19,50), (20,50), (21,50), (22,50), (23,50), (24,50), (25,50), (29,50), (30,50), (31,50), (32,50), (32,51), (8,59), (8,60), (8,61), (8,62), (8,63), (8,64), (8,65), (9,59), (9,60), (9,61), (9,62), (9,63), (9,64), (9,65), (37,66), (37,67)],
 })

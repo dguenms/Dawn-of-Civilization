@@ -57,7 +57,7 @@ tRomeEgyptBR = (72, 36)
 tConquestRomeCarthage = (0, iCivRome, iCivCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
 tConquestRomeGreece = (1, iCivRome, iCivGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
 tConquestRomeAnatolia = (2, iCivRome, iCivGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
-tConquestRomeCelts = (3, iCivRome, iCivCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
+tConquestRomeCelts = (3, iCivRome, iCivCelts, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
 tConquestRomeEgypt = (4, iCivRome, iCivEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
 iAlexanderYear = -340
@@ -99,7 +99,7 @@ iMongolsPersiaYear = 1220
 tMongolsPersiaTL = (79, 37)
 tMongolsPersiaBR = (85, 49)
 
-tConquestMongolsPersia = (12, iCivMongolia, iCivTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
+tConquestMongolsPersia = (12, iCivMongols, iCivTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
 lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia]
 
@@ -115,23 +115,24 @@ class AIWars:
 
 
 	def checkTurn(self, iGameTurn):
-
-		#turn automatically peace on between independent cities and all the major civs
-		if iGameTurn % 20 == 7:
-			restorePeaceHuman(iIndependent2, False)
-		elif iGameTurn % 20 == 14:
-			restorePeaceHuman(iIndependent, False)
-		if iGameTurn % 60 == 55 and iGameTurn > turns(50):
-			restorePeaceAI(iIndependent, False)
-		elif iGameTurn % 60 == 30 and iGameTurn > turns(50):
-			restorePeaceAI(iIndependent2, False)
-		#turn automatically war on between independent cities and some AI major civs
-		if iGameTurn % 13 == 6 and iGameTurn > turns(50): #1 turn after restorePeace()
-			minorWars(iIndependent)
-		elif iGameTurn % 13 == 11 and iGameTurn > turns(50): #1 turn after restorePeace()
-			minorWars(iIndependent2)
-		if iGameTurn % 50 == 24 and iGameTurn > turns(50):
-			minorWars(iCeltia)
+	
+		# war and peace with minor civilisations
+		iMinor = players.independent().periodic(20)
+		if iMinor:
+			restorePeaceHuman(iMinor, False)
+		
+		if turn() > turns(50):
+			iMinor = players.independent().periodic(60)
+			if iMinor:
+				restorePeaceAI(iMinor, False)
+				
+			iMinor = players.independent().periodic(13)
+			if iMinor:
+				minorWars(iMinor)
+				
+			iMinor = players.civs(iCivCelts).periodic(50)
+			if iMinor:
+				minorWars(iMinor)
 			
 		for tConquest in lConquests:
 			self.checkConquest(tConquest)
@@ -139,8 +140,8 @@ class AIWars:
 		if iGameTurn == data.iNextTurnAIWar:
 			self.planWars(iGameTurn)
 			
-		for iLoopPlayer in range(iNumPlayers):
-			data.players[iLoopPlayer].iAggressionLevel = dAggressionLevel[civ(iLoopPlayer)] + rand(2)
+		for iLoopPlayer in players.major():
+			data.players[iLoopPlayer].iAggressionLevel = dAggressionLevel[iLoopPlayer] + rand(2)
 			
 	def checkConquest(self, tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 		iID, iCiv, iPreferredTargetCiv, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
@@ -154,13 +155,13 @@ class AIWars:
 			return
 	
 		if player(iPlayer).isHuman(): return
-		if not player(iPlayer).isAlive() and iPlayer != iTurks: return
+		if not player(iPlayer).isAlive() and iCiv != iCivTurks: return
 		if data.lConquest[iID]: return
 		if iPreferredTarget >= 0 and player(iPreferredTarget).isAlive() and team(iPreferredTarget).isVassal(iPlayer): return
 		
 		iStartTurn = year(iYear).deviate(5)
 		
-		if turn() <= birth(iPlayer)+3: return
+		if turn() <= dBirth[iCiv]+3: return
 		if not turn().between(iStartTurn, iStartTurn + iIntervalTurns): return
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
@@ -172,7 +173,7 @@ class AIWars:
 	
 		iNumMinorCities = 0
 		for city in cities.start(tTL).end(tBR):
-			if city.getOwner() in [iIndependent, iIndependent2, iBarbarian, iNative]: iNumMinorCities += 1
+			if city.getOwner() in players.minor(): iNumMinorCities += 1 # TODO: make sure this includes barbarian
 			elif city.getOwner() != iPlayer: return False
 			
 		if 2 * iNumMinorCities > len(lAreaCities): return False
@@ -186,6 +187,8 @@ class AIWars:
 		team(iPlayer).declareWar(iTarget, True, iWarPlan)
 			
 	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
+		iCiv = civ(iPlayer)
+		
 		if not player(iPlayer).isAlive():
 			for iTech in sta.getResurrectionTechs(iPlayer):
 				team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
@@ -212,7 +215,7 @@ class AIWars:
 			if human() not in [iPlayer, city.getOwner()]: 
 				iExtra += 1
 				
-			if iPlayer == iMongolia and not player(iPlayer).isHuman():
+			if iCiv == iCivMongols and not player(iPlayer).isHuman():
 				iExtra += 1
 			
 			tPlot = findNearestLandPlot((city.getX(), city.getY()), iPlayer)
@@ -220,34 +223,34 @@ class AIWars:
 			iBestInfantry = getBestInfantry(iPlayer)
 			iBestSiege = getBestSiege(iPlayer)
 			
-			if iPlayer == iGreece:
+			if iCiv == iCivGreece:
 				iBestInfantry = iHoplite
 				iBestSiege = iCatapult
 			
 			makeUnits(iPlayer, iBestInfantry, tPlot, 2 + iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
 			makeUnits(iPlayer, iBestSiege, tPlot, 1 + 2*iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
 			
-			if iPlayer == iGreece:
+			if iCiv == iCivGreece:
 				makeUnit(iPlayer, iCompanion, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 			
-			if iPlayer == iTamils:
+			if iCiv == iCivTamils:
 				makeUnit(iPlayer, iWarElephant, tPlot, UnitAITypes.UNITAI_ATTACK_CITY)
 				
-			if iPlayer == iSpain:
+			if iCiv == iCivSpain:
 				makeUnits(iPlayer, getBestCavalry(iPlayer), tPlot, 2 * iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
 				
-			if iPlayer == iTurks:
+			if iCiv == iCivTurks:
 				makeUnits(iPlayer, getBestCavalry(iPlayer), tPlot, 2 + iExtra, UnitAITypes.UNITAI_ATTACK_CITY)
 	
 	def forgetMemory(self, iTech, iPlayer):
 		if iTech in [iPsychology, iTelevision]:
 			pPlayer = player(iPlayer)
-			for iLoopCiv in range(iNumPlayers):
-				if iPlayer == iLoopCiv: continue
-				if pPlayer.AI_getMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR) > 0:
-					pPlayer.AI_changeMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR, -1)
-				if pPlayer.AI_getMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND) > 0:
-					pPlayer.AI_changeMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND, -1)
+			for iLoopPlayer in players.major().without(iPlayer):
+				if pPlayer.AI_getMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR) > 0:
+					pPlayer.AI_changeMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR, -1)
+				
+				if pPlayer.AI_getMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND) > 0:
+					pPlayer.AI_changeMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND, -1)
 					
 	def getNextInterval(self, iGameTurn):
 		if iGameTurn > year(1600):
@@ -267,7 +270,7 @@ class AIWars:
 		# skip if there is a world war
 		if iGameTurn > year(1500):
 			iCivsAtWar = 0
-			for iLoopPlayer in range(iNumPlayers):
+			for iLoopPlayer in players.major():
 				if team(iLoopPlayer).getAtWarCount(True) > 0:
 					iCivsAtWar += 1
 			if 100 * iCivsAtWar / game.countCivPlayersAlive() > 50:
@@ -291,13 +294,15 @@ class AIWars:
 		return players.major().alive().where(self.possibleTargets).maximum(lambda p: data.players[p].iAggressionLevel)
 		
 	def possibleTargets(self, iPlayer):
-		return [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if iPlayer != iLoopPlayer and team(iPlayer).canDeclareWar(player(iLoopPlayer).getTeam())]
+		return players.major().without(iPlayer).where(lambda p: team(iPlayer).canDeclareWar(player(p).getTeam()))
 		
 	def determineTargetPlayer(self, iPlayer):
 		pPlayer = player(iPlayer)
 		tPlayer = team(iPlayer)
+		iCiv = civ(iPlayer)
+		
 		lPotentialTargets = []
-		lTargetValues = [0 for i in range(iNumPlayers)]
+		lTargetValues = [0 for _ in players.major()]
 
 		# determine potential targets
 		for iLoopPlayer in self.possibleTargets(iPlayer):
@@ -340,6 +345,7 @@ class AIWars:
 			lTargetValues[iLoopPlayer] /= iMaxValue
 			
 		for iLoopPlayer in lPotentialTargets:
+			iLoopCiv = civ(iLoopPlayer)
 		
 			# randomization
 			if lTargetValues[iLoopPlayer] <= iThreshold:
@@ -354,13 +360,13 @@ class AIWars:
 				
 			# exploit plague
 			if data.players[iLoopPlayer].iPlagueCountdown > 0 or data.players[iLoopPlayer].iPlagueCountdown < -10:
-				if turn() > birth(iLoopPlayer) + turns(20):
+				if turn() > year(dBirth[iCiv]) + turns(20):
 					lTargetValues[iLoopPlayer] *= 3
 					lTargetValues[iLoopPlayer] /= 2
 		
 			# determine master
 			iMaster = -1
-			for iLoopMaster in range(iNumPlayers):
+			for iLoopMaster in players.major():
 				if tLoopPlayer.isVassal(iLoopMaster):
 					iMaster = iLoopMaster
 					break
@@ -391,19 +397,19 @@ class AIWars:
 				lTargetValues[iLoopPlayer] /= 2
 				
 			# spare smallish civs
-			if iLoopPlayer in [iNetherlands, iPortugal, iItaly]:
+			if iLoopCiv in [iCivNetherlands, iCivPortugal, iCivItaly]:
 				lTargetValues[iLoopPlayer] *= 4
 				lTargetValues[iLoopPlayer] /= 5
 				
 			# no suicide
-			if iPlayer == iNetherlands:
-				if iLoopPlayer in [iFrance, iHolyRome, iGermany]:
+			if iCiv == iCivNetherlands:
+				if iLoopCiv in [iCivFrance, iCivHolyRome, iCivGermany]:
 					lTargetValues[iLoopPlayer] /= 2
-			elif iPlayer == iPortugal:
-				if iLoopPlayer == iSpain:
+			elif iCiv == iCivPortugal:
+				if iLoopCiv == iCivSpain:
 					lTargetValues[iLoopPlayer] /= 2
-			elif iPlayer == iItaly:
-				if iLoopPlayer in [iFrance, iHolyRome, iGermany]:
+			elif iCiv == iCivItaly:
+				if iLoopCiv in [iCivFrance, iCivHolyRome, iCivGermany]:
 					lTargetValues[iLoopPlayer] /= 2
 					
 		return find_max(lTargetValues).index
