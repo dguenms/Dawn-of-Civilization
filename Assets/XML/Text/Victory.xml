@@ -6910,4 +6910,68 @@
 		<Italian>Islamic Civilization with the largest population: %s1</Italian>
 		<Spanish>Islamic Civilization with the largest population: %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NOR1_TITLE</Tag>
+		<English>The Andean Progenitor</English>
+		<French>The Andean Progenitor</French>
+		<German>The Andean Progenitor</German>
+		<Italian>The Andean Progenitor</Italian>
+		<Spanish>The Andean Progenitor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NOR1</Tag>
+		<English>Have a capital with developing culture in 1800 BC</English>
+		<French>Have a capital with developing culture in 1800 BC</French>
+		<German>Have a capital with developing culture in 1800 BC</German>
+		<Italian>Have a capital with developing culture in 1800 BC</Italian>
+		<Spanish>Have a capital with developing culture in 1800 BC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NOR2_TITLE</Tag>
+		<English>Quipu</English>
+		<French>Quipu</French>
+		<German>Quipu</German>
+		<Italian>Quipu</Italian>
+		<Spanish>Quipu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NOR2</Tag>
+		<English>Be the first to discover Writing and Calendar</English>
+		<French>Be the first to discover Writing and Calendar</French>
+		<German>Be the first to discover Writing and Calendar</German>
+		<Italian>Be the first to discover Writing and Calendar</Italian>
+		<Spanish>Be the first to discover Writing and Calendar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NOR3_TITLE</Tag>
+		<English>Andean Metropolis</English>
+		<French>Andean Metropolis</French>
+		<German>Andean Metropolis</German>
+		<Italian>Andean Metropolis</Italian>
+		<Spanish>Andean Metropolis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_NOR3</Tag>
+		<English>Have a capital with 5 populations and 6 buildings in 1500 BC</English>
+		<French>Have a capital with 5 populations and 6 buildings in 1500 BC</French>
+		<German>Have a capital with 5 populations and 6 buildings in 1500 BC</German>
+		<Italian>Have a capital with 5 populations and 6 buildings in 1500 BC</Italian>
+		<Spanish>Have a capital with 5 populations and 6 buildings in 1500 BC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITAL_POPULATION</Tag>
+		<English>Population of %s1: %d2 / %d3</English>
+		<French>Population of %s1: %d2 / %d3</French>
+		<German>Population of %s1: %d2 / %d3</German>
+		<Italian>Population of %s1: %d2 / %d3</Italian>
+		<Spanish>Population of %s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITAL_BUILDINGS</Tag>
+		<English>Buildings in %s1: %d2 / %d3</English>
+		<French>Buildings in %s1: %d2 / %d3</French>
+		<German>Buildings in %s1: %d2 / %d3</German>
+		<Italian>Buildings in %s1: %d2 / %d3</Italian>
+		<Spanish>Buildings in %s1: %d2 / %d3</Spanish>
+	</TEXT>
 </Civ4GameText>

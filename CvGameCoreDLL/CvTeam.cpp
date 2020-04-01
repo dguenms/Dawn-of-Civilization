@@ -6277,6 +6277,12 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 	BonusTypes eBonus;
 	int iI, iJ;
 
+	// Norte Chico UP
+	if (eTech == POTTERY && isHasPlayerMember(NORTECHICO))
+	{
+		GET_PLAYER(NORTECHICO).changeCommerceRateModifier(COMMERCE_RESEARCH, -100 * iChange);
+	}
+
 	if (GC.getTechInfo(eTech).isExtraWaterSeeFrom())
 	{
 		changeExtraWaterSeeFromCount(iChange);

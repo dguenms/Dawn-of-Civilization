@@ -104,7 +104,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_INCA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Inca.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,7</Button>
+			<Button>,Art/Interface/Buttons/Civilizations/Incadoc.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,7</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Tumi.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -460,6 +460,12 @@
 			<Type>ART_DEF_CIVILIZATION_CHAD</Type>
 			<Button>Art/Interface/Buttons/Civilizations/KanemBornu.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_KanemBornu.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_NORTE_CHICO</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Inca.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Sun.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>

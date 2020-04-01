@@ -3869,4 +3869,20 @@
 		<Italian>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</Italian>
 		<Spanish>+2 Experience for every civilization with the same state religion, a stronger army, and pleased or better relations</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NORTE_CHICO_AYLLU</Tag>
+		<English>Ayllu</English>
+		<French>Ayllu</French>
+		<German>Ayllu</German>
+		<Italian>Ayllu</Italian>
+		<Spanish>Ayllu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NORTE_CHICO_AYLLU_HELP</Tag>
+		<English>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</English>
+		<French>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</French>
+		<German>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</German>
+		<Italian>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</Italian>
+		<Spanish>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</Spanish>
+	</TEXT>
 </Civ4GameText>

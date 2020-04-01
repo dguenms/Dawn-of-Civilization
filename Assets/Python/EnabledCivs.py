@@ -17,6 +17,7 @@ dSpawnTypes = {
 iEgypt			: iConditionalSpawn,
 iBabylonia		: iConditionalSpawn,
 iHarappa		: iConditionalSpawn,
+iNorteChico		: iConditionalSpawn,
 iNubia			: iConditionalSpawn,
 iChina			: iConditionalSpawn,
 iGreece			: iConditionalSpawn,

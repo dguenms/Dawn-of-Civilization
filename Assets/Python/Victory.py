@@ -265,6 +265,7 @@ tCameroonBR = (64, 27)
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
+	iNorteChico: (1, [iWriting, iCalendar]),
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
 	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
@@ -411,6 +412,23 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(-800):
 			expire(iHarappa, 2)
 				
+	elif iPlayer == iNorteChico:
+		# first goal: Have a capital with developing culture in 1800 BC
+		if iGameTurn == getTurnForYear(-1800):
+			if (pNorteChico.getCapitalCity().getCulture(iNorteChico) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType())):
+				win(iNorteChico, 0)
+			else:
+				lose(iNorteChico, 0)
+		
+		# second goal: Be the first to discover Writing and Calendar
+		
+		# third goal: Have a capital with 5 populations and 6 buildings in 1500 BC
+		if iGameTurn == getTurnForYear(-1500):
+			if cityPopulation(pNorteChico.getCapitalCity()) >= 5 and pNorteChico.getCapitalCity().getNumBuildings() >= 5:
+				win(iNorteChico, 2)
+			else:
+				lose(iNorteChico, 2)
+		
 	elif iPlayer == iNubia:
 		# first goal: Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years
 		if isPossible(iNubia, 0):
@@ -536,30 +554,33 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iCeltia:
 		# first goal: Raze 2 Capitals by 200 BC
-		if iGameTurn == getTurnForYear(-200):
-			expire(iCeltia, 0)
+		if isPossible(iCeltia, 0):
+			if iGameTurn == getTurnForYear(-200):
+				expire(iCeltia, 0)
 		
 		# second goal: Control 3 cities in Gallia and Germania and 1 in Italy, Iberia, and Britain in 1 BC
-		if iGameTurn == getTurnForYear(-1):
-			iGallia =  getNumCitiesInArea(iCeltia, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
-			if gc.getMap().plot(56, 46).isCity() and gc.getMap().plot(56, 46).getPlotCity().getOwner() == iCeltia:
-				iGallia += 1
-			iGermania = getNumCitiesInArea(iCeltia, utils.getPlotList(tGermaniaTL, tGermaniaBR))
-			iItalia = getNumCitiesInRegions(iCeltia, [rItaly])
-			iIberia = getNumCitiesInRegions(iCeltia, [rIberia])
-			iBritannia = getNumCitiesInRegions(iCeltia, [rBritain])
-			bControlled = iGallia >= 3 and iGermania >= 3 and iItalia >= 1 and iIberia >= 1 and iBritannia >= 1
-			if bControlled:
-				win(iCeltia, 1)
-			else:
-				lose(iCeltia, 1)
+		if isPossible(iCeltia, 1):
+			if iGameTurn == getTurnForYear(-1):
+				iGallia =  getNumCitiesInArea(iCeltia, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
+				if gc.getMap().plot(56, 46).isCity() and gc.getMap().plot(56, 46).getPlotCity().getOwner() == iCeltia:
+					iGallia += 1
+				iGermania = getNumCitiesInArea(iCeltia, utils.getPlotList(tGermaniaTL, tGermaniaBR))
+				iItalia = getNumCitiesInRegions(iCeltia, [rItaly])
+				iIberia = getNumCitiesInRegions(iCeltia, [rIberia])
+				iBritannia = getNumCitiesInRegions(iCeltia, [rBritain])
+				bControlled = iGallia >= 3 and iGermania >= 3 and iItalia >= 1 and iIberia >= 1 and iBritannia >= 1
+				if bControlled:
+					win(iCeltia, 1)
+				else:
+					lose(iCeltia, 1)
 		
-		# third goal: Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD
-		if iGameTurn in [getTurnForYear(-200), getTurnForYear(-1), getTurnForYear(60)]:
-			if not isBestPlayer(iCeltia, playerTotalCulture):
-				lose(iCeltia, 2)
-			elif iGameTurn == getTurnForYear(60):
-				win(iCeltia, 2)
+			# third goal: Be the most cultured Civilization in the world in 200 BC, 1 BC, and 60 AD
+		if isPossible(iCeltia, 2):
+			if iGameTurn in [getTurnForYear(-200), getTurnForYear(-1), getTurnForYear(60)]:
+				if not isBestPlayer(iCeltia, playerTotalCulture):
+					lose(iCeltia, 2)
+				elif iGameTurn == getTurnForYear(60):
+					win(iCeltia, 2)
 		
 	elif iPlayer == iPolynesia:
 	
@@ -4551,6 +4572,24 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iNumPopulation = pHarappa.getTotalPopulation()
 			aHelp.append(getIcon(iNumPopulation >= 30) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 30)))
+			
+	elif iPlayer == iNorteChico:
+		if iGoal == 0:
+			capital = pNorteChico.getCapitalCity()
+			iCulture = capital.getCulture(iNorteChico)
+			iRequiredCulture = gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType())
+			aHelp.append(getIcon(iCulture >= iRequiredCulture) + localText.getText("TXT_KEY_VICTORY_CAPITAL_CULTURE", (capital.getName(), iCulture, iRequiredCulture)))
+			
+		if iGoal == 1:
+			bWriting = data.lFirstDiscovered[iWriting] == iNorteChico
+			bCalendar = data.lFirstDiscovered[iCalendar] == iNorteChico
+			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()))
+			
+		if iGoal == 2:
+			capital = pNorteChico.getCapitalCity()
+			iPop = capital.getPopulation()
+			iBuildings = capital.getNumBuildings()
+			aHelp.append(getIcon(iPop >= 5) + localText.getText("TXT_KEY_VICTORY_CAPITAL_POPULATION", (capital.getName(), iPop, 5)) + ' ' + getIcon(iBuildings >= 5) + localText.getText("TXT_KEY_VICTORY_CAPITAL_BUILDINGS", (capital.getName(), iBuildings + 1, 6)))
 			
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:

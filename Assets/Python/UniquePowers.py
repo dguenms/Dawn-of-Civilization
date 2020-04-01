@@ -812,3 +812,8 @@ class UniquePowers:
 		gc.getPlayer(iIndonesia).changeGold(iGold)
 		if utils.getHumanID() == iIndonesia and iGold > 0:
 			CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+			
+	def onUnitBuildImprovement(self, pUnit, iBuild):
+		# Norte Chico UU
+		if pUnit.getUnitType() == iAyllu:
+			gc.getPlayer(pUnit.getOwner()).getCapitalCity().changeCulture(pUnit.getOwner(), utils.getTurns(10), True)

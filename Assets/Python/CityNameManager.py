@@ -38,6 +38,7 @@ def getLanguages(iCiv):
 	if iCiv == iEgypt: return (iLangEgyptian,)
 	elif iCiv == iBabylonia: return (iLangBabylonian,)
 	elif iCiv == iHarappa: return (iLangHarappan, iLangIndian)
+	elif iCiv == iNorteChico: return (iLangQuechua,)
 	elif iCiv == iNubia: 
 		if data.lReligionFounder[iIslam] != -1:
 			return (iLangNubianArabic, iLangNubian, iLangEgyptianArabic)
@@ -146,6 +147,9 @@ def getFoundName(iCiv, tPlot):
 				
 				if not pNubia.isAlive() or data.players[iNubia].iResurrections > 0 or iCiv >= iNumMajorPlayers:
 					if sName == "Kerma": return "Napata"
+			
+				if iCiv == iNorteChico:
+					if tPlot == (25, 23): return "Caral"
 			
 				return sName
 				
@@ -4232,6 +4236,7 @@ dIdentifiers = {
 	"Fort Chambly"		:	"Chambly",
 	"Chan Chan"		:	"Chan Chan",
 	"Lima"			:	"Chan Chan",
+	"Caral"			:	"Chan Chan",
 	"Candia"		:	"Chandax",
 	"Chandax"		:	"Chandax",
 	"Kandiye"		:	"Chandax",
@@ -7009,6 +7014,7 @@ tRenames = (
 	"Eko"			:	"Lagos",
 	"Li&#232;ge"		:	"Lieja",
 	"Chan Chan"		:	"Lima",
+	"Caral"		:	"Lima",
 	"Caqonatambu"		:	"Limatambo",
 	"Lisboa"		:	"Lisboa",
 	"Lusitani"		:	"Lisboa",

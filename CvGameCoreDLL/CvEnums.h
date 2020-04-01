@@ -1280,6 +1280,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	DUNAMA,
 	ROBERT,
 	COLLINS,
+	WIRACOCHA,
 	NUM_LEADERHEADS
 };
 
@@ -1357,6 +1358,7 @@ enum PlayerTypes				// Exposed to Python
 	EGYPT,
 	BABYLONIA,
 	HARAPPA,
+	NORTECHICO,
 	NUBIA,
 	CHINA,
 	GREECE,

@@ -147,6 +147,7 @@ iCivNative : 	Techs([iTanning, iMythology]),
 iCivEgypt :	Techs([iMining, iPottery, iAgriculture]),
 iCivBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
 iCivHarappa : 	Techs([iMining, iPottery, iAgriculture]),
+iCivNorteChico : Techs([iAgriculture, iMythology]),
 iCivNubia : 	Techs([iAgriculture, iMythology, iCeremony, iPastoralism, iMining]),
 iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
@@ -301,6 +302,11 @@ dTechPreferences = {
 		iMythology: -50,
 		iDivination: -50,
 		iCeremony: -50,
+	},
+	iCivNorteChico : {
+		iCalendar: 20,
+		
+		iPottery: -100,
 	},
 	iCivNubia : {
 		iRiding: 40,
@@ -780,6 +786,7 @@ dDefaultWonderPreferences = {
 	iCivNubia: -15,
 	iCivBabylonia: -40,
 	iCivHarappa: -15,
+	iCivNorteChico: -40,
 	iCivGreece: -15,
 	iCivIndia: -15,
 	iCivCeltia: -40,

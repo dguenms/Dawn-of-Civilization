@@ -5246,6 +5246,107 @@
 			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_NORTE_CHICO</Type>
+			<Description>TXT_KEY_CIV_NORTE_CHICO_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_NORTE_CHICO_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_NORTE_CHICO_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_NORTE_CHICO_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_WHITE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_NORTE_CHICO</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
+			<Identifier>NOR</Identifier>
+			<StartingYear>-3000</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>1</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>1</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Huaricanga</City>
+				<City>Porvenir</City>
+				<City>Cerro Lampay</City>
+				<City>Caballete</City>
+				<City>Cerro Blanco</City>
+				<City>Cerro de la Cruz</City>
+				<City>Shaura</City>
+				<City>Punta y Suela</City>
+				<City>Upaca</City>
+				<City>Potao</City>
+				<City>Pampa San Jose</City>
+				<City>Vinto Alto</City>
+				<City>Huayto</City>
+				<City>Aspero</City>
+				<City>Piedra Parada</City>
+				<City>Era de Pando</City>
+				<City>Lurihuasi</City>
+				<City>Miraya</City>
+				<City>Pueblo Nuevo</City>
+				<City>Alpacoto</City>
+				<City>Penico</City>
+				<City>Huacachi</City>
+				<City>Huaural</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
+					<BuildingType>BUILDING_NORTE_CHICO_SHICRA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
+					<UnitType>UNIT_NORTE_CHICO_AYLLU</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_WIRACOCHA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_INCA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_INCA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_INCA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_NUBIA</Type>
 			<Description>TXT_KEY_CIV_NUBIA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_NUBIA_SHORT_DESC</ShortDescription>

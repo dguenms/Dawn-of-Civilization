@@ -351,6 +351,11 @@ void CvPlayer::init(PlayerTypes eID)
 			changeTradeYieldModifier(YIELD_FOOD, 25);
 		}
 	}
+	
+	if (getID() == NORTECHICO)
+	{
+		changeCommerceRateModifier(COMMERCE_RESEARCH, 100);
+	}
 
 	AI_init();
 }

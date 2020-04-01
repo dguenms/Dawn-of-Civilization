@@ -565,6 +565,7 @@ dStartingLeaders = [
 	iIndia : iAsoka,
 	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
+	iNorteChico : iWiracocha,
 	iNubia : iPiye,
 	iChina : iQinShiHuang,
 	iGreece : iPericles,

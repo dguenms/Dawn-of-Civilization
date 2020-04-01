@@ -1291,10 +1291,26 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CEL</Tag>
-		<English>Cities start with extra Culture..</English>
+		<English>Cities start with extra Culture.</English>
 		<French>Cities start with extra Culture.</French>
 		<German>Cities start with extra Culture.</German>
 		<Italian>Cities start with extra Culture.</Italian>
 		<Spanish>Cities start with extra Culture.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NOR_TITLE</Tag>
+		<English>The Power of Aceramics:</English>
+		<French>The Power of Aceramics:</French>
+		<German>The Power of Aceramics:</German>
+		<Italian>The Power of Aceramics:</Italian>
+		<Spanish>The Power of Aceramics:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_NOR</Tag>
+		<English>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</English>
+		<French>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</French>
+		<German>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</German>
+		<Italian>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</Italian>
+		<Spanish>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</Spanish>
 	</TEXT>
 </Civ4GameText>

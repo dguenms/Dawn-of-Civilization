@@ -719,6 +719,9 @@ class CvEventManager(object):
 	def onUnitBuildImprovement(self, argsList):
 		'Unit begins enacting a Build (building an Improvement or Route)'
 		pUnit, iBuild, bFinished = argsList
+		
+		if bFinished:
+			up.onUnitBuildImprovement(pUnit, iBuild)
 
 	def onGoodyReceived(self, argsList):
 		'Goody received'
