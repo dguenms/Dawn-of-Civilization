@@ -27,6 +27,10 @@ PyPlayer = PyHelpers.PyPlayer
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
 lGreatPeople = [iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy]
 
+# Third Egyptian goal: Control Nubia and the Southern Levant in 1050 BC
+tSouthLevantTL = (72, 37)
+tSouthLevantBR = (74, 39)
+
 # first Polynesian goal: settle two out of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
 # second Polynesian goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
 tHawaiiTL = (0, 34)
@@ -354,41 +358,49 @@ def checkTurn(iGameTurn, iPlayer):
 	
 	if iPlayer == iEgypt:
 	
-		# first goal: have 500 culture in 850 BC
-		if iGameTurn == getTurnForYear(-850):
-			if pEgypt.countTotalCulture() >= utils.getTurns(500):
-				win(iEgypt, 0)
-			else:
-				lose(iEgypt, 0)
+		# first goal: have 500 culture in 850 BC and 5000 culture in 170 AD
+		if isPossible(iEgypt, 0):
+			if iGameTurn == getTurnForYear(-850):
+				if pEgypt.countTotalCulture() < utils.getTurns(500):
+					lose(iEgypt, 0)
+					
+			if iGameTurn == getTurnForYear(170):
+				if pEgypt.countTotalCulture() >= utils.getTurns(5000):
+					win(iEgypt, 0)
+				else:
+					lose(iEgypt, 0)
 				
 		# first goal: build the Pyramids, the Great Lighthouse and the Great Library by 100 BC
 		if iGameTurn == getTurnForYear(-100):
 			expire(iEgypt, 1)
 				
-		# third goal: have 5000 culture in 170 AD
-		if iGameTurn == getTurnForYear(170):
-			if pEgypt.countTotalCulture() >= utils.getTurns(5000):
+		# third goal: Control Nubia and the Levant in 1050 AD
+		bLevant = isControlled(iEgypt, utils.getPlotList(tSouthLevantTL, tSouthLevantBR))
+		bNubia = isControlled(iEgypt, Areas.getNormalArea(iNubia))
+		if iGameTurn == getTurnForYear(-1050):
+			if bLevant and bNubia:
 				win(iEgypt, 2)
 			else:
 				lose(iEgypt, 2)
+		
 				
 	elif iPlayer == iBabylonia:
 	
 		# first goal: be the first to discover Construction, Arithmetics, Writing, Calendar and Contract
 		
-		# second goal: make Babylon the most populous city in the world in 850 BC
+		# second goal: mMake Babylon the most populous and culturally advanced city in the world in 850 BC
 		if iGameTurn == getTurnForYear(-850):
-			if isBestCity(iBabylonia, (76, 40), cityPopulation):
+			if isBestCity(iBabylonia, (76, 40), cityPopulation) and isBestCity(iBabylonia, (76, 40), cityCulture):
 				win(iBabylonia, 1)
 			else:
 				lose(iBabylonia, 1)
 			
-		# third goal: make Babylon the most cultured city in the world in 700 BC
-		if iGameTurn == getTurnForYear(-700):
-			if isBestCity(iBabylonia, (76, 40), cityCulture):
-				win(iBabylonia, 2)
-			else:
-				lose(iBabylonia, 2)
+		# third goal: Control the Levant in 550 BC
+		bLevant = isControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
+		if bLevant:
+			win(iBabylonia, 2)
+		else:
+			lose(iBabylonia, 2)
 				
 	elif iPlayer == iHarappa:
 	
@@ -4553,16 +4565,17 @@ def getUHVHelp(iPlayer, iGoal):
 	if iPlayer == iEgypt:
 		if iGoal == 0:
 			iCulture = pEgypt.countTotalCulture()
-			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))) + ' ' + getIcon(iCulture >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(5000))))
 		elif iGoal == 1:
 			bPyramids = data.getWonderBuilder(iPyramids) == iEgypt
 			bLibrary = data.getWonderBuilder(iGreatLibrary) == iEgypt
 			bLighthouse = data.getWonderBuilder(iGreatLighthouse) == iEgypt
 			aHelp.append(getIcon(bPyramids) + localText.getText("TXT_KEY_BUILDING_PYRAMIDS", ()) + getIcon(bLibrary) + localText.getText("TXT_KEY_BUILDING_GREAT_LIBRARY", ()) + getIcon(bLighthouse) + localText.getText("TXT_KEY_BUILDING_GREAT_LIGHTHOUSE", ()))
 		elif iGoal == 2:
-			iCulture = pEgypt.countTotalCulture()
-			aHelp.append(getIcon(iCulture >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(5000))))
-
+			bLevant = isControlled(iEgypt, utils.getPlotList(tSouthLevantTL, tSouthLevantBR))
+			bNubia = isControlled(iEgypt, Areas.getNormalArea(iNubia))
+			aHelp.append(getIcon(bNubia) + localText.getText("TXT_KEY_CIV_NUBIA_SHORT_DESC", ()) + ' ' + getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_SOUTH_LEVANT", ()))
+		
 	elif iPlayer == iHarappa:
 		if iGoal == 1:
 			iNumReservoirs = getNumBuildings(iHarappa, iReservoir)
@@ -4580,12 +4593,12 @@ def getUHVHelp(iPlayer, iGoal):
 			iRequiredCulture = gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType())
 			aHelp.append(getIcon(iCulture >= iRequiredCulture) + localText.getText("TXT_KEY_VICTORY_CAPITAL_CULTURE", (capital.getName(), iCulture, iRequiredCulture)))
 			
-		if iGoal == 1:
+		elif iGoal == 1:
 			bWriting = data.lFirstDiscovered[iWriting] == iNorteChico
 			bCalendar = data.lFirstDiscovered[iCalendar] == iNorteChico
 			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()))
 			
-		if iGoal == 2:
+		elif iGoal == 2:
 			capital = pNorteChico.getCapitalCity()
 			iPop = capital.getPopulation()
 			iBuildings = capital.getNumBuildings()
@@ -4601,13 +4614,14 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bConstruction) + localText.getText("TXT_KEY_TECH_CONSTRUCTION", ()) + ' ' + getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
 			aHelp.append(getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()) + ' ' + getIcon(bContract) + localText.getText("TXT_KEY_TECH_CONTRACT", ()))
 		elif iGoal == 1:
-			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
-			bBestCity = isBestCity(iBabylonia, (76, 40), cityPopulation)
-			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
+			pBestPopCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
+			bBestPopCity = isBestCity(iBabylonia, (76, 40), cityPopulation)
+			pBestCulCity = getBestCity(iBabylonia, (76, 40), cityCulture)
+			bBestCulCity = isBestCity(iBabylonia, (76, 40), cityCulture)
+			aHelp.append(getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + getIcon(bBestCulCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCulCity.getName(),)))
 		elif iGoal == 2:
-			pBestCity = getBestCity(iBabylonia, (76, 40), cityCulture)
-			bBestCity = isBestCity(iBabylonia, (76, 40), cityCulture)
-			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCity.getName(),)))
+			bLevant = isControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
+			aHelp.append(getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()))
 			
 	elif iPlayer == iNubia:
 		if iGoal == 0:

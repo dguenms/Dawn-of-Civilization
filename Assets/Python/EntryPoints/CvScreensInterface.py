@@ -907,6 +907,17 @@ def getUHVTileInfo(argsList):
 	
 	plot = gc.getMap().plot(x, y)
 	
+	if iPlayer == iEgypt:
+		if (x, y) in Areas.getNormalArea(iNubia):
+			return 93
+		
+		if utils.isPlotInArea((x, y), vic.tSouthLevantTL, vic.tSouthLevantBR):
+			return 94
+	
+	if iPlayer == iBabylonia:
+		if utils.isPlotInArea((x, y), vic.tLevantTL, vic.tLevantBR):
+			return 78
+	
 	if iPlayer == iGreece:
 		if (x, y) in Areas.getNormalArea(iEgypt, False):
 			return 0

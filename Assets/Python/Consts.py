@@ -445,10 +445,10 @@ tFall = (
 )
 
 dVictoryYears = {
-iCivEgypt : (-850, -100, 170),
-iCivBabylonia : (-1, -850, -700),
+iCivEgypt : (-850, -100, -1050),
+iCivBabylonia : (-1, -850, -550),
 iCivHarappa : (-1600, -1500, -800),
-iCivNorteChico : (-1, -1, -1),
+iCivNorteChico : (-1800, -1, -1500),
 iCivNubia : (-656, 1365, 1821),
 iCivChina : (1000, -1, 1800),
 iCivGreece : (-1, -330, -250),
@@ -515,6 +515,15 @@ iCivAustralia : (1950, 1950, -1),
 iCivBoers : (1920, 1950, 1980),
 iCivCanada : (1920, 1950, 2000),
 iCivIsrael : (1980, 2000, -1),
+}
+
+dVictoryYears2 = {
+	iCivEgypt : (170, -1, -1),
+	iCivCeltia : (0, -1, -1),
+}
+
+dVictoryYears3 = {
+	iCivCeltia : (60, -1, -1),
 }
 
 # Leoreth: date-triggered respawn for certain civs
@@ -602,11 +611,11 @@ tResurrectionIntervals = (
 
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
-[iNubia], #Egypt
+[], #Egypt
 [iIndependent,iIndependent2], #Babylonia
 [], #Harappa
 [], #Norte Chico
-[iEgypt, iEgypt], #Nubia
+[], #Nubia
 [iIndependent,iIndependent2,iIndependent2], #China
 [iIndependent,iIndependent2,iBabylonia], #Greece
 [], #India
@@ -680,7 +689,7 @@ iAztecs : [iAmerica],		# Mexico
 
 # Leoreth
 lTotalWarOnSpawn = [
-[iNubia], #Egypt
+[], #Egypt
 [], #Babylonia
 [], #Harappa
 [], #Norte Chico

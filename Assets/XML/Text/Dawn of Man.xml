@@ -745,4 +745,8 @@
 		<Tag>TXT_KEY_DOM_CELTIA</Tag>
 		<English>It is the year 1200 BC. As the social structure of the Germanic Celtic culture grows in its complexity, an elite class of chieftains and warriors begin taking the first steps towards consolidating power. With an advanced knowledge of Metal Working and abundant fertile land, the Celtic culture is set to spread far and wide.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NORTE_CHICO</Tag>
+		<English>It is the year 3000 BC. Settling along the river beds of the Fortaleza, Pativilca, and Supe rivers, the Andean peoples form the first civilizations in the Americas...</English>
+	</TEXT>
 </Civ4GameText>

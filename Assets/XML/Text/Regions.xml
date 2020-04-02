@@ -1478,4 +1478,20 @@
 		<Italian>Britannia</Italian>
 		<Spanish>Britannia</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_93</Tag>
+		<English>Nubia</English>
+		<French>Nubia</French>
+		<German>Nubia</German>
+		<Italian>Nubia</Italian>
+		<Spanish>Nubia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_94</Tag>
+		<English>South Levant</English>
+		<French>South Levant</French>
+		<German>South Levant</German>
+		<Italian>South Levant</Italian>
+		<Spanish>South Levant</Spanish>
+	</TEXT>
 </Civ4GameText>

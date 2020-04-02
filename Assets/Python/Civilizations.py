@@ -343,8 +343,6 @@ dTechPreferences = {
 	},
 	iCivGreece : {
 		iSailing: 40,
-		iShipbuilding: 40,
-		iNavigation: 40,
 		iWriting: 30,
 		iPhilosophy: 30,
 		iAesthetics: 30,
@@ -857,8 +855,6 @@ dBuildingPreferences = {
 		iMountAthos: 20,
 		iHagiaSophia: 20,
 		iAlKhazneh: 15,
-		iGreatLibrary: 15,
-		iGreatLighthouse: 15,
 		
 		iPyramids: -100,
 		iGreatCothon: -80,

@@ -2425,8 +2425,6 @@ class RiseAndFall:
 								utils.makeUnit(iUnitType, iNewOwner, tPlot, 1)
 
 	def createAdditionalUnits(self, iCiv, tPlot):
-		if iCiv == iNubia:
-			utils.makeUnit(iMilitia, iCiv, tPlot, 1)
 		if iCiv == iIndia:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
@@ -2607,7 +2605,10 @@ class RiseAndFall:
 	def createStartingUnits(self, iCiv, tPlot):
 		if iCiv == iNubia:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iMilitia, iCiv, tPlot, 1)
+			if utils.getHumanID() == iNubia:
+				utils.makeUnit(iMilitia, iCiv, tPlot, 1)
+			else:
+				utils.makeUnit(iMedjay, iCiv, tPlot, 1)
 		if iCiv == iChina:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 1)
