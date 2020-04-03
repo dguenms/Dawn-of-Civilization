@@ -1393,5 +1393,7 @@ lNetworkEvents = {
 	"CHANGE_COMMERCE_PERCENT" :	1200,
 }
 
+lCapitalStart = [iYemen, iBurma]
+
 iNumSpawnTypes = 3
 (iForcedSpawn, iNoSpawn, iConditionalSpawn) = range(iNumSpawnTypes)

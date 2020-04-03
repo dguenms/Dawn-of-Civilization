@@ -5251,7 +5251,7 @@
 			<ShortDescription>TXT_KEY_CIV_NORTE_CHICO_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_NORTE_CHICO_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_NORTE_CHICO_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_WHITE</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_WHITE2</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NORTE_CHICO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
