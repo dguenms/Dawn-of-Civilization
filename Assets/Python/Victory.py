@@ -396,11 +396,12 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iBabylonia, 1)
 			
 		# third goal: Control the Levant in 550 BC
-		bLevant = isControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
-		if bLevant:
-			win(iBabylonia, 2)
-		else:
-			lose(iBabylonia, 2)
+		if iGameTurn == getTurnForYear(-550):
+			bLevant = isControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
+			if bLevant:
+				win(iBabylonia, 2)
+			else:
+				lose(iBabylonia, 2)
 				
 	elif iPlayer == iHarappa:
 	
