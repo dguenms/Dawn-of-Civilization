@@ -272,6 +272,7 @@ dSpecificVassalTitles = {
 	},
 	iYemen : {
 		iEngland : "TXT_KEY_CIV_YEMEN_ENGLAND",
+		iArabia : "TXT_KEY_CIV_YEMEN_ARABIA",
 	},
 	iBoers	: {
 		iEngland : "TXT_KEY_CIV_BOER_ENGLAND",
@@ -2153,8 +2154,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_YEMEN_DEAD_ARABIA"
 		if (iCivicGovernment == iDespotism and iEra >= iGlobal) or iCivicGovernment == iStateParty:
 			return "TXT_KEY_CIV_YEMEN_STATE_PARTY"
-		if iCivicGovernment == iElective:
-			return "TXT_KEY_CIV_YEMEN_ELECTIVE"
 		return "TXT_KEY_CIV_YEMEN_DEFAULT"
 		
 	elif iPlayer == iIndonesia:
