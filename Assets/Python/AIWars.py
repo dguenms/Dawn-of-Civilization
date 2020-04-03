@@ -265,6 +265,9 @@ class AIWars:
 				
 			if iPlayer == iEngland and utils.getHumanID() != iPlayer:
 				iExtra += 1
+				
+			if iPlayer == iTurks and city.getRegionID() == iArabia:
+				iExtra = 0
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
 			
