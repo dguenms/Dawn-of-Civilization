@@ -2149,12 +2149,12 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_YEMEN_MECCA"
 		if iCivicReligion == iTheocracy:
 			return "TXT_KEY_CIV_YEMEN_THEOCRACY"
-		if iCivicGovernment == iDespotism or iCivicGovernment == iStateParty:
+		if not pArabia.isAlive():
+			return "TXT_KEY_CIV_YEMEN_DEAD_ARABIA"
+		if (iCivicGovernment == iDespotism and iEra >= iGlobal) or iCivicGovernment == iStateParty:
 			return "TXT_KEY_CIV_YEMEN_STATE_PARTY"
 		if iCivicGovernment == iElective:
 			return "TXT_KEY_CIV_YEMEN_ELECTIVE"
-		if not pArabia.isAlive():
-			return "TXT_KEY_CIV_YEMEN_DEAD_ARABIA"
 		return "TXT_KEY_CIV_YEMEN_DEFAULT"
 		
 	elif iPlayer == iIndonesia:
