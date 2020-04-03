@@ -74,12 +74,12 @@
 		<Spanish>Mutawakkilite Kingdom of Yemen</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_YEMEN_ELECTIVE</Tag>
-		<English>Tahirid Sultanate</English>
-		<French>Tahirid Sultanate</French>
-		<German>Tahirid Sultanate</German>
-		<Italian>Tahirid Sultanate</Italian>
-		<Spanish>Tahirid Sultanate</Spanish>
+		<Tag>TXT_KEY_CIV_YEMEN_ARABIA</Tag>
+		<English>Tahirid Emirate</English>
+		<French>Tahirid Emirate</French>
+		<German>Tahirid Emirate</German>
+		<Italian>Tahirid Emirate</Italian>
+		<Spanish>Tahirid Emirate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_YEMEN_ENGLAND</Tag>
