@@ -304,9 +304,9 @@ dTechPreferences = {
 		iCeremony: -50,
 	},
 	iCivNorteChico : {
-		iCalendar: 20,
-		
-		iPottery: -100,
+		iWriting : -20,
+		iCalendar : -20,
+		iPottery : -100,
 	},
 	iCivNubia : {
 		iRiding: 40,
