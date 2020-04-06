@@ -3757,5 +3757,35 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Bamah/Button_Bamah.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TIWANAKU_KALASASAYA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Kalasasaya/DruidCathedral.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Kalasasaya/DruidCathedral_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GATE_OF_THE_SUN</Type>
+			<LSystem>LSYSTEM_1x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Gate of the Sun/brana01.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Gate of the Sun/gate.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_WARI_COLCAS</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.2</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Huaca/toltemple.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Huaca/Huaca.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

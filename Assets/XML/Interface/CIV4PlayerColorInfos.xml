@@ -123,7 +123,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_WHITE2</Type> <!-- Norte Chico -->
 			<ColorTypePrimary>COLOR_PLAYER_WHITE</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_BLUE</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_WHITE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
@@ -331,7 +331,7 @@
 			<TextColorType>COLOR_PLAYER_LIME_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
-			<Type>PLAYERCOLOR_GREYISH_GREEN</Type>
+			<Type>PLAYERCOLOR_GREYISH_GREEN</Type> <!-- Tiwanaku -->
 			<ColorTypePrimary>COLOR_PLAYER_GREYISH_GREEN</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_GREYISH_GREEN_TEXT</TextColorType>
@@ -533,6 +533,12 @@
 			<ColorTypePrimary>COLOR_PLAYER_THISTLE</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_THISTLE</TextColorType>
+		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_OCHRE</Type> <!-- Wari -->
+			<ColorTypePrimary>COLOR_PLAYER_OCHRE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_MAROON</ColorTypeSecondary>
+			<TextColorType>COLOR_PLAYER_OCHRE</TextColorType>
 		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

@@ -1473,4 +1473,20 @@
 		<Italian>Wiracocha</Italian>
 		<Spanish>Wiracocha</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MALKU_HUYUSTUS</Tag>
+		<English>Malku Huyustus</English>
+		<French>Malku Huyustus</French>
+		<German>Malku Huyustus</German>
+		<Italian>Malku Huyustus</Italian>
+		<Spanish>Malku Huyustus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_WARI_CAPAC</Tag>
+		<English>Wari Capac</English>
+		<French>Wari Capac</French>
+		<German>Wari Capac</German>
+		<Italian>Wari Capac</Italian>
+		<Spanish>Wari Capac</Spanish>
+	</TEXT>
 </Civ4GameText>

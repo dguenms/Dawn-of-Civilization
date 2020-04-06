@@ -6982,4 +6982,100 @@
 		<Italian>South Levante</Italian>
 		<Spanish>South Levante</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIW1_TITLE</Tag>
+		<English>The Great Andine Theocracy</English>
+		<French>The Great Andine Theocracy</French>
+		<German>The Great Andine Theocracy</German>
+		<Italian>The Great Andine Theocracy</Italian>
+		<Spanish>The Great Andine Theocracy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIW1</Tag>
+		<English>Build the Gate of Sun and settle a Great Prophet in your capital by 900 AD</English>
+		<French>Build the Gate of Sun and settle a Great Prophet in your capital by 900 AD</French>
+		<German>Build the Gate of Sun and settle a Great Prophet in your capital by 900 AD</German>
+		<Italian>Build the Gate of Sun and settle a Great Prophet in your capital by 900 AD</Italian>
+		<Spanish>Build the Gate of Sun and settle a Great Prophet in your capital by 900 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIW2_TITLE</Tag>
+		<English>The Multi-Cultural Empire</English>
+		<French>The Multi-Cultural Empire</French>
+		<German>The Multi-Cultural Empire</German>
+		<Italian>The Multi-Cultural Empire</Italian>
+		<Spanish>The Multi-Cultural Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIW2</Tag>
+		<English>Have two cities with refined culture by 1000 AD</English>
+		<French>Have two cities with refined culture by 1000 AD</French>
+		<German>Have two cities with refined culture by 1000 AD</German>
+		<Italian>Have two cities with refined culture by 1000 AD</Italian>
+		<Spanish>Have two cities with refined culture by 1000 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIW3_TITLE</Tag>
+		<English>The Splendor of Tiwanaku</English>
+		<French>The Splendor of Tiwanaku</French>
+		<German>The Splendor of Tiwanaku</German>
+		<Italian>The Splendor of Tiwanaku</Italian>
+		<Spanish>The Splendor of Tiwanaku</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIW3</Tag>
+		<English>Experiece two golden ages by 1100 AD</English>
+		<French>Experiece two golden ages by 1100 AD</French>
+		<German>Experiece two golden ages by 1100 AD</German>
+		<Italian>Experiece two golden ages by 1100 AD</Italian>
+		<Spanish>Experiece two golden ages by 1100 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WAR1_TITLE</Tag>
+		<English>Wari Arts</English>
+		<French>Wari Arts</French>
+		<German>Wari Arts</German>
+		<Italian>Wari Arts</Italian>
+		<Spanish>Wari Arts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WAR1</Tag>
+		<English>Acquire gold, dyes, cotton, and sheep and have at least 500 Culture by 900 AD</English>
+		<French>Acquire gold, dyes, cotton, and sheep and have at least 500 Culture by 900 AD</French>
+		<German>Acquire gold, dyes, cotton, and sheep and have at least 500 Culture by 900 AD</German>
+		<Italian>Acquire gold, dyes, cotton, and sheep and have at least 500 Culture by 900 AD</Italian>
+		<Spanish>Acquire gold, dyes, cotton, and sheep and have at least 500 Culture by 900 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WAR2_TITLE</Tag>
+		<English>The First Andine Empire</English>
+		<French>The First Andine Empire</French>
+		<German>The First Andine Empire</German>
+		<Italian>The First Andine Empire</Italian>
+		<Spanish>The First Andine Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WAR2</Tag>
+		<English>Build 3 barracks and colcas and connect your cities by road by 1000 AD</English>
+		<French>Build 3 barracks and colcas and connect your cities by road by 1000 AD</French>
+		<German>Build 3 barracks and colcas and connect your cities by road by 1000 AD</German>
+		<Italian>Build 3 barracks and colcas and connect your cities by road by 1000 AD</Italian>
+		<Spanish>Build 3 barracks and colcas and connect your cities by road by 1000 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WAR3_TITLE</Tag>
+		<English>The Great Centers</English>
+		<French>The Great Centers</French>
+		<German>The Great Centers</German>
+		<Italian>The Great Centers</Italian>
+		<Spanish>The Great Centers</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_WAR3</Tag>
+		<English>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</English>
+		<French>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</French>
+		<German>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</German>
+		<Italian>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</Italian>
+		<Spanish>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</Spanish>
+	</TEXT>
 </Civ4GameText>

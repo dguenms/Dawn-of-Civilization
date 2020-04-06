@@ -1752,6 +1752,12 @@ bool CvPlot::isFreshWater() const
 
 	if (isImpassable())
 	{
+		// 1SDAN: Tiwanaku UP - Mountains provide Fresh Water. +1 Food on Farms.
+		if (getOwnerINLINE() == TIWANAKU)
+		{
+			return true;
+		}
+
 		return false;
 	}
 
@@ -6808,6 +6814,23 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	}
 	//Rhye - end UP
 
+	
+	// Wari UP: The Power of Terraces: +1 Food on tiles adjacent to Mountains
+	if (eTeam == WARI && eYield == YIELD_FOOD)
+	{
+		bool bAdjacentMountain = false;
+		for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+			CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+			if ((pAdjacentPlot != NULL) && pAdjacentPlot->isPeak())
+			{
+				iYield += 1;
+				break;
+			}
+		}
+	}
+
 	if (isImpassable())
 	{
 		return 0;
@@ -6996,6 +7019,12 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		{
 			iYield += 1;
 		}
+	}
+
+	// 1SDAN: Tiwanaku UP - Mountains provide Fresh Water. +1 Food on Farms.
+	if (getOwnerINLINE() == TIWANAKU && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM"))
+	{
+		iYield += 1;
 	}
 
 	// Merijn: Manchurian UP: Improved resources adjacent to cities provide additional food and production

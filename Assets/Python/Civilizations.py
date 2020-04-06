@@ -163,7 +163,9 @@ iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivVietnam :	Techs([iAlloys, iWriting, iCalendar, iPriesthood, iBloomery], column=2),
 iCivTeotihuacan :	Techs([iProperty, iLeverage, iCeremony], column=1, exceptions=[iSailing]),
 iCivKorea :	Techs(column=5, exceptions=[iGeneralship, iEngineering, iCurrency]),
+iCivTiwanaku :	Techs([iWriting, iCalendar], column=2),
 iCivByzantium :	Techs([iArchitecture, iPolitics, iEthics], column=5),
+iCivWari :	Techs([iWriting, iCalendar, iPriesthood, iConstruction], column=2),
 iCivJapan :	Techs([iNobility, iSteel, iArtisanry, iPolitics], column=5),
 iCivVikings : 	Techs([iNobility, iSteel, iArtisanry, iPolitics, iScholarship, iArchitecture, iGuilds], column=5),
 iCivTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedicine, iPhilosophy]),
@@ -436,12 +438,23 @@ dTechPreferences = {
 		iReplaceableParts: -40,
 		iScientificMethod: -40,
 	},
+	iCivTiwanaku : {
+		iPriesthood: 30,
+		iMathematics: 30,
+	
+		iBloomery: -40,
+	},
 	iCivByzantium : {
 		iFinance: -50,
 		iDoctrine: -20,
 		iOptics: -20,
 		iFirearms: -20,
 		iExploration: -20,
+	},
+	iCivWari : {
+		iContract : 20,
+	
+		iBloomery: -40,
 	},
 	iCivJapan : {
 		iFeudalism: 40,
@@ -928,6 +941,9 @@ dBuildingPreferences = {
 	iCivKorea : {
 		iCheomseongdae: 30,
 	},
+	iCivTiwanaku : {
+		iGateOfTheSun : 40,
+	},
 	iCivByzantium : {
 		iHagiaSophia: 40,
 		iTheodosianWalls: 30,
@@ -935,6 +951,9 @@ dBuildingPreferences = {
 		
 		iNotreDame: -20,
 		iSistineChapel: -20,
+	},
+	iCivWari : {
+		iGateOfTheSun : 20,
 	},
 	iCivJapan : {
 		iItsukushimaShrine: 30,

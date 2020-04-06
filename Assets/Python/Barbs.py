@@ -49,8 +49,8 @@ tMinorCities = (
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# L�beck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (899, (78, 36), iIndependent, 'Bahrein', 2, iArcher, 2),			# Qarmatians (Abu Sa'id al-Jannabi)
-(900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
-(900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
+(900, (24, 28), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
+(900, (24, 25), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
@@ -165,6 +165,10 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)	
 		elif utils.isYearIn(600, 1000):
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
+		
+		# Picta Aucacs in pre-Incan Andes
+		# elif utils.isYearIn(800, 1100):
+			# self.checkSpawn(iBarbarian, iPictaAucac, 1, (-1, -1), (-1, -1), self.spawnUprising, iGameTurn, 4, 2)
 		
 		# Jaguars in classical Mesoamerica
 		if utils.isYearIn(150, 500):

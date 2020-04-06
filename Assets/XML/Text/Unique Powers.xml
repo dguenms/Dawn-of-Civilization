@@ -435,11 +435,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC_TITLE</Tag>
-		<English>The Power of Terraces:</English>
-		<French>Le pouvoir des terrasses :</French>
-		<German>Die Macht der Terrassen:</German>
-		<Italian>Il potere delle terrazze:</Italian>
-		<Spanish>El poder de las terrazas:</Spanish>
+		<English>The Power of the Andes:</English>
+		<French>Le pouvoir des andes :</French>
+		<German>Die Macht der Anden:</German>
+		<Italian>Il potere delle andes:</Italian>
+		<Spanish>El poder de las andes:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC</Tag>
@@ -1312,5 +1312,37 @@
 		<German>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</German>
 		<Italian>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</Italian>
 		<Spanish>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TIW_TITLE</Tag>
+		<English>The Power of Suka Qullo:</English>
+		<French>The Power of Suka Qullo:</French>
+		<German>The Power of Suka Qullo:</German>
+		<Italian>The Power of Suka Qullo:</Italian>
+		<Spanish>The Power of Suka Qullo:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TIW</Tag>
+		<English>Mountains provide Fresh Water. +1 Food on Farms.</English>
+		<French>Mountains provide Fresh Water. +1 Food on Farms.</French>
+		<German>Mountains provide Fresh Water. +1 Food on Farms.</German>
+		<Italian>Mountains provide Fresh Water. +1 Food on Farms.</Italian>
+		<Spanish>Mountains provide Fresh Water. +1 Food on Farms.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_WAR_TITLE</Tag>
+		<English>The Power of Terraces:</English>
+		<French>Le pouvoir des terrasses :</French>
+		<German>Die Macht der Terrassen:</German>
+		<Italian>Il potere delle terrazze:</Italian>
+		<Spanish>El poder de las terrazas:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_WAR</Tag>
+		<English>+1 Food on tiles adjacent to Mountains.</English>
+		<French>+1 Food on tiles adjacent to Mountains.</French>
+		<German>+1 Food on tiles adjacent to Mountains.</German>
+		<Italian>+1 Food on tiles adjacent to Mountains.</Italian>
+		<Spanish>+1 Food on tiles adjacent to Mountains.</Spanish>
 	</TEXT>
 </Civ4GameText>

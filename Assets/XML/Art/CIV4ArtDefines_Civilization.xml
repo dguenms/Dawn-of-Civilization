@@ -468,5 +468,17 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Sun.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_TIWANAKU</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Tiwanaku.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Tiwanaku.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_WARI</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Wari.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Condor.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

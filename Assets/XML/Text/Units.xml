@@ -3885,4 +3885,28 @@
 		<Italian>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</Italian>
 		<Spanish>[ICON_BULLET]Creates 10 [ICON_CULTURE] in the capital when it constructs an improvement</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TIWANAKU_SISQENO</Tag>
+		<English>Sisqeno</English>
+		<French>Sisqeno</French>
+		<German>Sisqeno</German>
+		<Italian>Sisqeno</Italian>
+		<Spanish>Sisqeno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TIWANAKU_SISQENO_HELP</Tag>
+		<English>[ICON_BULLET]+1 [COLOR_UNIT_TEXT]Great Prophet Points[COLOR_REVERT] per turn in the capital when stationed in a foreign city</English>
+		<French>[ICON_BULLET]+1 [COLOR_UNIT_TEXT]Great Prophet Points[COLOR_REVERT] per turn in the capital when stationed in a foreign city</French>
+		<German>[ICON_BULLET]+1 [COLOR_UNIT_TEXT]Great Prophet Points[COLOR_REVERT] per turn in the capital when stationed in a foreign city</German>
+		<Italian>[ICON_BULLET]+1 [COLOR_UNIT_TEXT]Great Prophet Points[COLOR_REVERT] per turn in the capital when stationed in a foreign city</Italian>
+		<Spanish>[[ICON_BULLET]+1 [COLOR_UNIT_TEXT]Great Prophet Points[COLOR_REVERT] per turn in the capital when stationed in a foreign city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WARI_PICTA_AUCAC</Tag>
+		<English>Picta Aucac</English>
+		<French>Picta Aucac</French>
+		<German>Picta Aucac</German>
+		<Italian>Picta Aucac</Italian>
+		<Spanish>Picta Aucac</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WARI_DESC</Tag>
+		<English>The Wari</English>
+		<French>The Wari</French>
+		<German>The Wari</German>
+		<Italian>The Wari</Italian>
+		<Spanish>El Huari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WARI_PEOPLES</Tag>
+		<English>Andean Peoples</English>
+		<French>
+			<Text>Peuplades andines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Andenv&#246;lker:Andenv&#246;lker:Andenv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Andini</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Andinos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WARI_DEFAULT</Tag>
+		<English>Wari Empire</English>
+		<French>Wari Empire</French>
+		<German>Wari Empire</German>
+		<Italian>Wari Empire</Italian>
+		<Spanish>Wari Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WARI_ADJECTIVE</Tag>
+		<English>Wari</English>
+		<French>Wari</French>
+		<German>Wari</German>
+		<Italian>Wari</Italian>
+		<Spanish>Huari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WARI_SHORT_DESC</Tag>
+		<English>Wari</English>
+		<French>Wari</French>
+		<German>Wari</German>
+		<Italian>Wari</Italian>
+		<Spanish>Huari</Spanish>
+	</TEXT>
+</Civ4GameText>

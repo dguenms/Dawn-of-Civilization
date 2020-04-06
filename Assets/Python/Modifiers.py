@@ -1,11 +1,15 @@
 from Consts import *
 from RFCUtils import utils
+from StoredData import data
 
 def getModifier(iPlayer, iModifier):
 	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
+	WonderDivisor = 1
+	if data.getWonderBuilder(iShwedagonPaya) == iPlayer:
+		WonderMod = 2
 	if iCivilization in lOrder:
-		return tModifiers[iModifier][lOrder.index(iCivilization)]
-	return tDefaults[iModifier]
+		return tModifiers[iModifier][lOrder.index(iCivilization)] / WonderDivisor
+	return tDefaults[iModifier] / WonderDivisor
 	
 def getAdjustedModifier(iPlayer, iModifier):
 	if utils.getScenario() > i3000BC and iPlayer < iVikings:
@@ -56,27 +60,27 @@ iModifierInflationRate, iModifierGreatPeopleThreshold, iModifierGrowthThreshold)
 
 ### Sequence of spawns ###
 
-lOrder = [iCivEgypt, iCivBabylonia, iCivHarappa, iCivNorteChico, iCivNubia, iCivChina, iCivGreece, iCivIndia, iCivCarthage, iCivCeltia, iCivPolynesia, iCivPersia, iCivRome, iCivMaya, iCivTamils, iCivEthiopia, iCivVietnam, iCivTeotihuacan, iCivKorea, iCivByzantium, iCivJapan, iCivVikings, iCivTurks, iCivArabia, iCivTibet, iCivIndonesia, iCivBurma, iCivKhazars, iCivMoors, iCivSpain, iCivFrance, iCivOman, iCivKhmer, iCivYemen, iCivEngland, iCivHolyRome, iCivKievanRus, iCivHungary, iCivPhilippines, iCivSwahili, iCivMamluks, iCivMali, iCivPoland, iCivZimbabwe, iCivPortugal, iCivInca, iCivItaly, iCivNigeria, iCivMongols, iCivAztecs, iCivMughals, iCivOttomans, iCivRussia, iCivThailand, iCivCongo, iCivIran, iCivSweden, iCivNetherlands, iCivManchuria, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivAustralia, iCivBoers, iCivCanada, iCivIsrael, iCivIndependent, iCivIndependent2, iCivNative, iCivBarbarian]
+lOrder = [iCivEgypt, iCivBabylonia, iCivHarappa, iCivNorteChico, iCivNubia, iCivChina, iCivGreece, iCivIndia, iCivCarthage, iCivCeltia, iCivPolynesia, iCivPersia, iCivRome, iCivMaya, iCivTamils, iCivEthiopia, iCivVietnam, iCivTeotihuacan, iCivKorea, iCivTiwanaku, iCivByzantium, iCivWari, iCivJapan, iCivVikings, iCivTurks, iCivArabia, iCivTibet, iCivIndonesia, iCivBurma, iCivKhazars, iCivMoors, iCivSpain, iCivFrance, iCivOman, iCivKhmer, iCivYemen, iCivEngland, iCivHolyRome, iCivKievanRus, iCivHungary, iCivPhilippines, iCivSwahili, iCivMamluks, iCivMali, iCivPoland, iCivZimbabwe, iCivPortugal, iCivInca, iCivItaly, iCivNigeria, iCivMongols, iCivAztecs, iCivMughals, iCivOttomans, iCivRussia, iCivThailand, iCivCongo, iCivIran, iCivSweden, iCivNetherlands, iCivManchuria, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivAustralia, iCivBoers, iCivCanada, iCivIsrael, iCivIndependent, iCivIndependent2, iCivNative, iCivBarbarian]
 
 ### Modifiers (by civilization!) ###
 
-#						(	EGY	BAB	HAR	NOR	NUB	CHI	GRE	IND	CAR	CEL	PLY	PER	ROM	MAY	TAM	ETH	VIE	TEO	KOR	BYZ	JAP	VIK	TUR	ARA	TIB	INO	BUR	KHA	CHA	MOO	SPA	FRA	OMA	KHM	YEM	ENG	HRE	KRS	HUN	PHI	SWA	MAM	MAL	POL	ZIM	POR	INC	ITA	NIG	MON	AZT	MUG	OTT	RUS	THA	CON	IRA	SWE	NET	MAN	GER	AME	ARG	MEX	COL	BRA	AUS	BOE	CAN	ISR		IND	IND	NATs	BAR	)
+#						(	EGY	BAB	HAR	NOR	NUB	CHI	GRE	IND	CAR	CEL	PLY	PER	ROM	MAY	TAM	ETH	VIE	TEO	KOR	TIW	BYZ	WAR	JAP	VIK	TUR	ARA	TIB	INO	BUR	KHA	CHA	MOO	SPA	FRA	OMA	KHM	YEM	ENG	HRE	KRS	HUN	PHI	SWA	MAM	MAL	POL	ZIM	POR	INC	ITA	NIG	MON	AZT	MUG	OTT	RUS	THA	CON	IRA	SWE	NET	MAN	GER	AME	ARG	MEX	COL	BRA	AUS	BOE	CAN	ISR		IND	IND	NATs	BAR	)
 
-tCulture =				(	 90, 80, 80, 80, 80, 80,100, 80,100,100,100,100,100,100,110, 90,100,100, 50,100,110,130,120,110,120,120,120,100,120,125,125,160,130,120,140,130,150,130,120,130,120,130,130,110,130,147,140,150,120,135,140,125,150,130,130,130,135,140,165,140,150,140,130,140,140,140,140,140,140,140,	 20, 20, 20,	 30	)
+tCulture =				(	 90, 80, 80, 80, 80, 80,100, 80,100,100,100,100,100,100,110, 90,100,100, 50,110,100,120,110,130,120,110,120,120,120,100,120,125,125,160,130,120,140,130,150,130,120,130,120,130,130,110,130,147,140,150,120,135,140,125,150,130,130,130,135,140,165,140,150,140,130,140,140,140,140,140,140,140,	 20, 20, 20,	 30	)
 
-tUnitUpkeep =			(	135,120,200,200,135,120,110,135,115,135,100,100,110,100,115,100,110,100,110,105, 90,100,120,110,100,120, 90, 90,110,110,100,120, 90,110,100,100,110,100,100,100,100,100,100,100,100,100,100, 90, 75, 90,110,120,100, 90, 90,110, 90, 90, 90, 75, 80, 80, 90, 90, 80, 80, 80, 75, 75,  0,	  0,100,100,	100	)
-tResearchCost =			(	140,125,125,140,125,120,130,130,110,140,200,125,115,120,120,110,105,105,140,120, 85,120,110, 90,100,110,120, 90, 90, 80, 80,120, 90,110, 80,100, 85, 80,100,100, 90,110, 80,100, 85, 80, 70, 90, 90, 85,120,120, 85,100, 85,110, 90, 80,100, 70, 75, 70, 90, 90, 90, 75, 80, 70, 70,110,	110,110,350,	110	)
-tDistanceMaintenance =	(	100,110,120,150,135,120, 90,120, 60, 60, 50, 90,100, 95,100,110,100,120, 80, 95, 70, 60, 90,120, 80,120, 70,100, 80, 55, 65,100,100,110, 55, 70, 80, 75, 65, 80, 80, 80, 90, 80, 80, 60, 70, 80, 75, 70,100,110, 70, 80, 80,100, 70, 70, 70, 80, 60, 50, 70, 70, 80, 60, 80, 70, 70, 20,	 20, 20, 20,	 20	)
-tCitiesMaintenance =	(	125,135,125,150,100,120,125,150,120, 80,100, 90,115,100,115,110,115,130, 80,110, 75, 90,110,120,100, 90, 90, 90, 70, 50, 70,120,120,110, 70, 75, 80, 75, 90, 90, 90, 90, 75, 85, 85, 80, 80, 90, 75, 85,100,120, 70,100, 90,100, 75, 80, 70, 75, 70, 50, 85, 85, 80, 70, 70, 60, 60, 30,	 30, 30, 30,	 30	)
-tCivicUpkeep =			(	120,110,100, 70,120,120,110,140, 70,110, 80, 70, 80, 80, 80, 80, 80, 80, 90, 80, 80,110, 90, 80,100,110, 80, 70, 90, 75, 80, 70,100, 70, 70, 70, 80, 80, 80, 80, 80, 80, 70, 80, 80, 60, 60, 70, 60, 60, 90, 90, 80, 80, 80, 80, 70, 70, 70, 60, 50, 50, 70, 70, 75, 75, 70, 75, 75, 70,	 70, 70, 70,	 70	)
-tHealth =				(	  2,  1,  1,  1,  2,  1,  3,  1,  3,  3,  3,  3,  3,  2,  3,  3,  3,  3,  3,  2,  3,  2,  2,  3,  3,  3,  2,  3,  2,  2,  2,  3,  3,  3,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  2,  3,  2,  4,  3,  3,  4,  4,  2,  4,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  0,	  0,  0,  0,	  0	)
+tUnitUpkeep =			(	135,120,200,200,135,120,110,135,115,135,100,100,110,100,115,100,110,100,110,100,105, 90, 90,100,120,110,100,120, 90, 90,110,110,100,120, 90,110,100,100,110,100,100,100,100,100,100,100,100,100,100, 90, 75, 90,110,120,100, 90, 90,110, 90, 90, 90, 75, 80, 80, 90, 90, 80, 80, 80, 75, 75,  0,	  0,100,100,	100	)
+tResearchCost =			(	140,125,125,140,125,120,130,130,110,140,200,125,115,120,120,110,105,105,140, 90,120,110, 85,120,110, 90,100,110,120, 90, 90, 80, 80,120, 90,110, 80,100, 85, 80,100,100, 90,110, 80,100, 85, 80, 70, 90, 90, 85,120,120, 85,100, 85,110, 90, 80,100, 70, 75, 70, 90, 90, 90, 75, 80, 70, 70,110,	110,110,350,	110	)
+tDistanceMaintenance =	(	100,110,120,150,135,120, 90,120, 60, 60, 50, 90,100, 95,100,110,100,120, 90, 90, 95, 80, 70, 60, 90,120, 80,120, 70,100, 80, 55, 65,100,100,110, 55, 70, 80, 75, 65, 80, 80, 80, 90, 80, 80, 60, 70, 80, 75, 70,100,110, 70, 80, 80,100, 70, 70, 70, 80, 60, 50, 70, 70, 80, 60, 80, 70, 70, 20,	 20, 20, 20,	 20	)
+tCitiesMaintenance =	(	125,135,125,150,100,120,125,150,120, 80,100, 90,115,100,115,110,115,130, 90,100,110, 80, 75, 90,110,120,100, 90, 90, 90, 70, 50, 70,120,120,110, 70, 75, 80, 75, 90, 90, 90, 90, 75, 85, 85, 80, 80, 90, 75, 85,100,120, 70,100, 90,100, 75, 80, 70, 75, 70, 50, 85, 85, 80, 70, 70, 60, 60, 30,	 30, 30, 30,	 30	)
+tCivicUpkeep =			(	120,110,100, 70,120,120,110,140, 70,110, 80, 70, 80, 80, 80, 80, 80, 80, 90, 70, 80, 80, 80,110, 90, 80,100,110, 80, 70, 90, 75, 80, 70,100, 70, 70, 70, 80, 80, 80, 80, 80, 80, 70, 80, 80, 60, 60, 70, 60, 60, 90, 90, 80, 80, 80, 80, 70, 70, 70, 60, 50, 50, 70, 70, 75, 75, 70, 75, 75, 70,	 70, 70, 70,	 70	)
+tHealth =				(	  2,  1,  1,  1,  2,  1,  3,  1,  3,  3,  3,  3,  3,  2,  3,  3,  3,  3,  3,  2,  2,  2,  3,  2,  2,  3,  3,  3,  2,  3,  2,  2,  2,  3,  3,  3,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  2,  3,  2,  4,  3,  3,  4,  4,  2,  4,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  0,	  0,  0,  0,	  0	)
 
-tUnitCost =				(	110,140,200,100, 90,130,110,120, 90, 90,100, 90,100,105, 85, 90, 90,115, 80,115, 90, 85,100,100,110,105,110,140, 80,100, 90, 90, 80, 90, 80,100, 90, 70, 80, 90, 90, 90, 90, 80, 90, 90,100,110, 90, 80,100,100,100, 90, 90, 70, 90, 90, 90, 90, 75, 85, 80, 85, 85, 85, 85, 85, 85, 85,	200,200,150,	140	)
-tWonderCost = 			(	 80, 80, 80,120, 90,120, 80,100, 90,150,100, 85,100, 90,100,100,100, 90,100,110,100, 90,120, 90,100, 80, 70,110,100, 85, 90, 70,110, 90,100, 90,100, 80,110, 90, 90, 70, 90,100, 90, 90, 80, 80, 85, 90, 80, 80, 90,100, 90,100, 85, 90,100,100, 90, 70, 70, 90, 90, 90, 80, 90, 80, 80,	150,150,150,	100	)
-tBuildingCost =			(	110,110,100,100,100,120,100,110, 90, 90, 50,110, 90, 90, 70,100, 90, 90, 80,110,100, 90,100,100, 80, 90, 90, 80, 70, 90, 90, 85,100,100, 90, 90, 85, 80, 85, 80, 80, 90, 80, 80, 70, 80, 70, 80, 80, 80, 80, 85, 80, 90, 80, 80, 80, 80, 80, 75, 70, 70, 70, 80, 80, 75, 70, 75, 80, 80,	100,100,150,	100	)
-tInflationRate =		(	130,130,130,130,140,120,130,140,130,140,130,130,130,125,110,130,120,125, 90,120, 80, 70, 90, 85,100, 90,120, 90, 75, 85, 90, 75, 70,100, 90, 70, 70, 85, 80,100,115, 75,115, 70, 85, 80, 80, 85, 75, 90, 80,100,100, 75, 75, 75, 85, 75, 85, 90, 70, 65, 60, 65, 65, 60, 60, 60, 60, 60,	 95, 95, 95,	 95	)
-tGreatPeopleThreshold =	(	140,140,140,140,140,140,110,125,120,140,120,110,110,100,110,110,110,100,110,120,110, 90, 90, 80, 85, 90, 60, 80, 70, 75, 75, 70,110, 90,110, 75, 80, 80, 85, 80, 80, 80, 80, 80, 80, 75, 70, 65, 85, 70, 70, 75, 80, 80, 80, 85, 80, 70, 70, 70, 65, 65, 70, 80, 80, 80, 75, 80, 75, 75,	100,100,100,	100	)
-tGrowthThreshold =		(	150,150,150,150,150,120,130,150,120,110,120,130,120,110,110,100,110,110,112, 80,110, 80, 80, 80, 80, 80, 60, 70, 60, 80, 80, 80, 60, 80, 60, 70, 80, 60, 80, 80, 75, 75, 75, 80, 80, 80, 70, 70, 75, 75, 70, 70, 70, 80, 75, 75, 70, 75, 75, 65, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70,	125,125,125,	125	)
+tUnitCost =				(	110,140,200,100, 90,130,110,120, 90, 90,100, 90,100,105, 85, 90, 90,115, 80,100,115, 90, 90, 85,100,100,110,105,110,140, 80,100, 90, 90, 80, 90, 80,100, 90, 70, 80, 90, 90, 90, 90, 80, 90, 90,100,110, 90, 80,100,100,100, 90, 90, 70, 90, 90, 90, 90, 75, 85, 80, 85, 85, 85, 85, 85, 85, 85,	200,200,150,	140	)
+tWonderCost = 			(	 80, 80, 80,120, 90,120, 80,100, 90,150,100, 85,100, 90,100,100,100, 90,100, 90,110,110,100, 90,120, 90,100, 80, 70,110,100, 85, 90, 70,110, 90,100, 90,100, 80,110, 90, 90, 70, 90,100, 90, 90, 80, 80, 85, 90, 80, 80, 90,100, 90,100, 85, 90,100,100, 90, 70, 70, 90, 90, 90, 80, 90, 80, 80,	150,150,150,	100	)
+tBuildingCost =			(	110,110,100,100,100,120,100,110, 90, 90, 50,110, 90, 90, 70,100, 90, 90, 80, 90,110, 80,100, 90,100,100, 80, 90, 90, 80, 70, 90, 90, 85,100,100, 90, 90, 85, 80, 85, 80, 80, 90, 80, 80, 70, 80, 70, 80, 80, 80, 80, 85, 80, 90, 80, 80, 80, 80, 80, 75, 70, 70, 70, 80, 80, 75, 70, 75, 80, 80,	100,100,150,	100	)
+tInflationRate =		(	130,130,130,130,140,120,130,140,130,140,130,130,130,125,110,130,120,125, 90, 90,120, 90, 80, 70, 90, 85,100, 90,120, 90, 75, 85, 90, 75, 70,100, 90, 70, 70, 85, 80,100,115, 75,115, 70, 85, 80, 80, 85, 75, 90, 80,100,100, 75, 75, 75, 85, 75, 85, 90, 70, 65, 60, 65, 65, 60, 60, 60, 60, 60,	 95, 95, 95,	 95	)
+tGreatPeopleThreshold =	(	140,140,140,140,140,140,110,125,120,140,120,110,110,100,110,110,110,100,110, 90,120, 90,110, 90, 90, 80, 85, 90, 60, 80, 70, 75, 75, 70,110, 90,110, 75, 80, 80, 85, 80, 80, 80, 80, 80, 80, 75, 70, 65, 85, 70, 70, 75, 80, 80, 80, 85, 80, 70, 70, 70, 65, 65, 70, 80, 80, 80, 75, 80, 75, 75,	100,100,100,	100	)
+tGrowthThreshold =		(	150,150,150,150,150,120,130,150,120,110,120,130,120,110,110,100,110,110,112, 90, 80, 80,110, 80, 80, 80, 80, 80, 60, 70, 60, 80, 80, 80, 60, 80, 60, 70, 80, 60, 80, 80, 75, 75, 75, 80, 80, 80, 70, 70, 75, 75, 70, 70, 70, 80, 75, 75, 70, 75, 75, 65, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70,	125,125,125,	125	)
 
 tModifiers = (tCulture, tUnitUpkeep, tResearchCost, tDistanceMaintenance, tCitiesMaintenance, tCivicUpkeep, tHealth, tUnitCost, tWonderCost, tBuildingCost, tInflationRate, tGreatPeopleThreshold, tGrowthThreshold)
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIWANAKU_DESC</Tag>
+		<English>The Tiwanaku</English>
+		<French>The Tiwanaku</French>
+		<German>The Tiwanaku</German>
+		<Italian>The Tiwanaku</Italian>
+		<Spanish>The Tiwanaku</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIWANAKU_PEOPLES</Tag>
+		<English>Andean Peoples</English>
+		<French>
+			<Text>Peuplades andines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Andenv&#246;lker:Andenv&#246;lker:Andenv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Andini</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Andinos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIWANAKU_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIWANAKU_ADJECTIVE</Tag>
+		<English>Tiwanaku</English>
+		<French>Tiwanaku</French>
+		<German>Tiwanaku</German>
+		<Italian>Tiwanaku</Italian>
+		<Spanish>Tiwanaku</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIWANAKU_SHORT_DESC</Tag>
+		<English>Tiwanaku</English>
+		<French>Tiwanaku</French>
+		<German>Tiwanaku</German>
+		<Italian>Tiwanaku</Italian>
+		<Spanish>Tiwanaku</Spanish>
+	</TEXT>
+</Civ4GameText>
