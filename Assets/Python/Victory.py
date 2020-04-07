@@ -388,7 +388,7 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: be the first to discover Construction, Arithmetics, Writing, Calendar and Contract
 		
-		# second goal: mMake Babylon the most populous and culturally advanced city in the world in 850 BC
+		# second goal: Make Babylon the most populous and culturally advanced city in the world in 850 BC
 		if iGameTurn == getTurnForYear(-850):
 			if isBestCity(iBabylonia, (76, 40), cityPopulation) and isBestCity(iBabylonia, (76, 40), cityCulture):
 				win(iBabylonia, 1)
@@ -397,7 +397,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: Control the Levant in 550 BC
 		if iGameTurn == getTurnForYear(-550):
-			bLevant = isControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
+			bLevant = isCultureControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
 			if bLevant:
 				win(iBabylonia, 2)
 			else:
@@ -4621,7 +4621,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bBestCulCity = isBestCity(iBabylonia, (76, 40), cityCulture)
 			aHelp.append(getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + getIcon(bBestCulCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCulCity.getName(),)))
 		elif iGoal == 2:
-			bLevant = isControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
+			bLevant = isCultureControlled(iBabylonia, utils.getPlotList(tLevantTL, tLevantBR))
 			aHelp.append(getIcon(bLevant) + localText.getText("TXT_KEY_VICTORY_LEVANT", ()))
 			
 	elif iPlayer == iNubia:
