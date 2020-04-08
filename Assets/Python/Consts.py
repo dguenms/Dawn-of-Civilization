@@ -384,7 +384,7 @@ tFall = (
 -146,					# Greece
 600, # end of Gupta Empire		# India
 -146,					# Phoenicia
-200,					# Celtia
+60,					# Celtia
 1200,					# Polynesia
 651,					# Persia
 235, # crisis of the third century	# Rome
