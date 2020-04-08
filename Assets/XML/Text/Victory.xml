@@ -7072,10 +7072,34 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_WAR3</Tag>
-		<English>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</English>
-		<French>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</French>
-		<German>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</German>
-		<Italian>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</Italian>
-		<Spanish>Have two cities with developing culture and 5 population and settle 3 Great People by 1100 AD</Spanish>
+		<English>Have three cities with refined culture and 7 population by 1100 AD</English>
+		<French>Have three cities with refined culture and 7 population by 1100 AD</French>
+		<German>Have three cities with refined culture and 7 population by 1100 AD</German>
+		<Italian>Have three cities with refined culture and 7 population by 1100 AD</Italian>
+		<Spanish>Have three cities with refined culture and 7 population by 1100 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_COLCAS</Tag>
+		<English>Colcas: %d1 / %d2</English>
+		<French>Colcas : %d1 / %d2</French>
+		<German>Colcas: %d1 / %d2</German>
+		<Italian>Colcas: %d1 / %d2</Italian>
+		<Spanish>Colcas: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONNECTED</Tag>
+		<English>All Cities Connected by Routes</English>
+		<French>All Cities Connected by Routes</French>
+		<German>All Cities Connected by Routes</German>
+		<Italian>All Cities Connected by Routes</Italian>
+		<Spanish>All Cities Connected by Routes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_REFINED_7POP_CITIES</Tag>
+		<English>Cities with Refined Culture and 7 Population: %d1 / %d2</English>
+		<French>Cities with Refined Culture and 7 Population : %d1 / %d2</French>
+		<German>Cities with Refined Culture and 7 Population: %d1 / %d2</German>
+		<Italian>Cities with Refined Culture and 7 Population: %d1 / %d2</Italian>
+		<Spanish>Cities with Refined Culture and 7 Population: %d1 / %d2</Spanish>
 	</TEXT>
 </Civ4GameText>

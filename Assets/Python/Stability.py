@@ -106,7 +106,7 @@ def triggerCollapse(iPlayer):
 		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 			# The Celts collapse to Britain, not their Core.
 			bCeltia = iPlayer == iCeltia and not pCeltia.isReborn()
-			if bCeltia: iCoreCities = len(vic.getCitiesInRegions([rBritain])) 
+			if bCeltia: iCoreCities = len(vic.getCitiesInRegions(iCeltia, [rBritain])) 
 			else: iCoreCities = len(utils.getOwnedCoreCities(iPlayer))
 			
 			if iCoreCities > 0 and iCoreCities < len(utils.getCityList(iPlayer)):
@@ -586,7 +586,7 @@ def completeCollapse(iPlayer):
 			if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 				# The Celts collapse to Britain, not their Core.
 				bCeltia = iPlayer == iCeltia and not pCeltia.isReborn()
-				if bCeltia: iCoreCities = len(vic.getCitiesInRegions([rBritain])) 
+				if bCeltia: iCoreCities = len(vic.getCitiesInRegions(iCeltia, [rBritain])) 
 				else: iCoreCities = len(utils.getOwnedCoreCities(iPlayer))
 				
 				if iCoreCities > 0 and iCoreCities < len(utils.getCityList(iPlayer)):

@@ -3327,11 +3327,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GATE_OF_THE_SUN_HELP</Tag>
-		<English>Halved [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT] needed for Great Persons to be born</English>
-		<French>Halved [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT] needed for Great Persons to be born</French>
-		<German>Halved [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT] needed for Great Persons to be born</German>
-		<Italian>Halved [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT] needed for Great Persons to be born</Italian>
-		<Spanish>Halved [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT] needed for Great Persons to be born</Spanish>
+		<English>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</English>
+		<French>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</French>
+		<German>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

@@ -329,7 +329,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	// Leoreth: Celtic UP: Extra culture in all cities.
 	if (getOwnerINLINE() == CELTIA)
 	{
-		changeCulture(CELTIA, 10, true, true);
+		int iGameSpeed = GC.getGameINLINE().getGameSpeedType();
+		int iCulture = 0;
+		if (iGameSpeed == 2) { iCulture = 10; }
+		else if (iGameSpeed == 1) { iCulture = 15; }
+		else if (iGameSpeed == 0) { iCulture = 30; }
+		changeCulture(CELTIA, iCulture, true, true);
 	}
 
 	// Leoreth: Prambanan effect: +25% food kept on city growth
