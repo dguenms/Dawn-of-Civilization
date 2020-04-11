@@ -1402,7 +1402,7 @@ bool PUF_canDefend(const CvUnit* pUnit, int iData1, int iData2)
 bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
 {
 	// Leoreth: Turkic UP
-	if (pUnit->getOwnerINLINE() == BARBARIAN && iData1 == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
+	if (pUnit->isBarbarian() && GET_PLAYER((PlayerTypes)iData1).getCivilizationType() == CIV_TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
 	{
 		if (pUnit->getUnitCombatType() == 2 || pUnit->getUnitCombatType() == 3)
 		{
@@ -2391,16 +2391,30 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 
 ScenarioTypes getScenario()
 {
-	if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) return SCENARIO_3000BC;
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		CivilizationTypes eCiv = GET_PLAYER((PlayerTypes)iI).getCivilizationType();
+		bool bPlayable = GET_PLAYER((PlayerTypes)iI).isPlayable();
 
-	if (GET_PLAYER((PlayerTypes)BYZANTIUM).isPlayable()) return SCENARIO_600AD;
+		if (eCiv == CIV_EGYPT && bPlayable) return SCENARIO_3000BC;
+
+		if (eCiv == CIV_BYZANTIUM)
+		{
+			if (bPlayable) return SCENARIO_600AD;
+
+			return SCENARIO_1700AD;
+		}
+	}
 
 	return SCENARIO_1700AD;
 }
 
-int getScenarioStartYear()
+int getScenarioStartYear(ScenarioTypes eScenario)
 {
-	ScenarioTypes eScenario = getScenario();
+	if (eScenario == NO_SCENARIO)
+	{
+		eScenario = getScenario();
+	}
 
 	if (eScenario == SCENARIO_3000BC) return -3000;
 	else if (eScenario == SCENARIO_600AD) return 600;
@@ -2637,12 +2651,6 @@ int calculateExperience(int iLevel, PlayerTypes ePlayer)
 	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
 	//FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
 
-	// Japanese UP: cheaper promotions
-	/*if (ePlayer == JAPAN)
-	{
-		iLevel = std::max(1, iLevel - 1);
-	}*/
-
 	int iExperienceNeeded = iLevel * iLevel + 1;
 
 	int iModifier = GET_PLAYER(ePlayer).getLevelExperienceModifier();
@@ -2738,9 +2746,9 @@ void logMajorError(CvWString message, int iX, int iY)
 	GC.getGameINLINE().setAIAutoPlayCatapult(0);
 }
 
-bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer)
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization)
 {
-	return eBuilding == (BuildingTypes)eWonder && GET_PLAYER(ePlayer).isHuman() && GC.getGameINLINE().getGameTurn() < GET_PLAYER(ePlayer).getBirthTurn()+5;
+	return eBuilding == (BuildingTypes)eWonder && GC.getGame().getActiveCivilizationType() == eCivilization && GC.getGameINLINE().getGameTurn() < getTurnForYear(GC.getCivilizationInfo(eCivilization).getStartingYear()) + 5;
 }
 
 void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)

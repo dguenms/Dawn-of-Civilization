@@ -766,7 +766,7 @@ void CvPlot::doTurn()
 		{
 			for (int iI = 0; iI < getNumUnits(); iI++)
 			{
-				if (getUnitByIndex(iI)->getOwnerINLINE() == BARBARIAN)
+				if (getUnitByIndex(iI)->isBarbarian())
 				{
 					getUnitByIndex(iI)->changeDamage(10, getOwnerINLINE());
 				}
@@ -1794,7 +1794,7 @@ bool CvPlot::isFreshWater() const
 bool CvPlot::isPotentialIrrigation() const
 {
 	// Leoreth: all Moorish improvements that give food spread irrigation
-	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation() || (getTeam() == MOORS && GC.getImprovementInfo(getImprovementType()).getYieldChange(0) > 0))))
+	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation() || (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIV_MOORS && GC.getImprovementInfo(getImprovementType()).getYieldChange(0) > 0))))
 	{
 		if ((getTeam() != NO_TEAM) && GET_TEAM(getTeam()).isIrrigation())
 		{
@@ -1817,7 +1817,7 @@ bool CvPlot::canHavePotentialIrrigation() const
 
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation() || (getOwner() == MOORS && GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(0) > 0))
+		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation() || (getOwner() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIV_MOORS && GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(0) > 0))
 		{
 			if (canHaveImprovement(((ImprovementTypes)iI), NO_TEAM, true))
 			{
@@ -2581,7 +2581,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam == AZTECS && GET_PLAYER((PlayerTypes)AZTECS).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
+	if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == CIV_MEXICO && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
 	}
@@ -3330,16 +3330,6 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		iRouteFlatCost = MAX_INT;
 	}
 
-	//Rhye - start UP
-	// Leoreth: UP not for Italy
-	// Leoreth: UP replaced
-	/*if (getOwnerINLINE() == ROME && !GET_PLAYER((PlayerTypes)ROME).isReborn())
-	{
-		iRouteCost /= 2;
-		iRouteFlatCost /= 2;
-	}*/
-	//Rhye - end UP
-
 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
 }
 
@@ -3499,7 +3489,7 @@ PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 				}
 
 				// Independents get the same advantage over a civ's core if that civ is dead
-				if (iI == INDEPENDENT || iI == INDEPENDENT2)
+				if (GET_PLAYER((PlayerTypes)iI).isIndependent())
 				{
 					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
 					{
@@ -4731,131 +4721,6 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 	{
 		return iUpgradeLeft;
 	}
-
-	//Rhye - start switch DOESN'T WORK - it's only for display
-	/*
-	switch (ePlayer)
-	{
-	case EGYPT:
-		iUpgradeLeft *= 133;
-		iUpgradeLeft /= 100;
-		break;
-	case INDIA:
-		iUpgradeLeft *= 133;
-		iUpgradeLeft /= 100;
-		break;
-	case CHINA:
-		iUpgradeLeft *= 133;
-		iUpgradeLeft /= 100;
-		break;
-	case BABYLONIA:
-		iUpgradeLeft *= 133;
-		iUpgradeLeft /= 100;
-		break;
-	case GREECE:
-		iUpgradeLeft *= 120;
-		iUpgradeLeft /= 100;
-		break;
-	case PERSIA:
-		iUpgradeLeft *= 110;
-		iUpgradeLeft /= 100;
-		break;
-	case PHOENICIA:
-		iUpgradeLeft *= 110;
-		iUpgradeLeft /= 100;
-		break;
-	case ROME:
-		iUpgradeLeft *= 110;
-		iUpgradeLeft /= 100;
-		break;
-	case JAPAN:
-		iUpgradeLeft *= 110;
-		iUpgradeLeft /= 100;
-		break;
-	case ETHIOPIA:
-		iUpgradeLeft *= 110;
-		iUpgradeLeft /= 100;
-		break;
-	case MAYA:
-		iUpgradeLeft *= 110;
-		iUpgradeLeft /= 100;
-		break;
-	case VIKINGS:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case ARABIA:
-		iUpgradeLeft *= 100;
-		iUpgradeLeft /= 100;
-		break;
-	case KHMER:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case SPAIN:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case FRANCE:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case ENGLAND:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case GERMANY:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case RUSSIA:
-		iUpgradeLeft *= 90;
-		iUpgradeLeft /= 100;
-		break;
-	case NETHERLANDS:
-		iUpgradeLeft *= 80;
-		iUpgradeLeft /= 100;
-		break;
-	case MALI:
-		iUpgradeLeft *= 100;
-		iUpgradeLeft /= 100;
-		break;
-	case TURKEY:
-		iUpgradeLeft *= 80;
-		iUpgradeLeft /= 100;
-		break;
-	case PORTUGAL:
-		iUpgradeLeft *= 80;
-		iUpgradeLeft /= 100;
-		break;
-	case INCA:
-		iUpgradeLeft *= 80;
-		iUpgradeLeft /= 100;
-		break;
-	case MONGOLIA:
-		iUpgradeLeft *= 80;
-		iUpgradeLeft /= 100;
-		break;
-	case AZTECS:
-		iUpgradeLeft *= 80;
-		iUpgradeLeft /= 100;
-		break;
-	case AMERICA:
-		iUpgradeLeft *= 70;
-		iUpgradeLeft /= 100;
-		break;
-	default:
-		iUpgradeLeft *= 130;
-		iUpgradeLeft /= 100;
-		break;
-	}
-	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-		if (ePlayer < VIKINGS) {
-			iUpgradeLeft *= 90;
-			iUpgradeLeft /= 100;
-		}
-		*/
-	//Rhye - end switch
 
 	iUpgradeRate = GET_PLAYER(ePlayer).getImprovementUpgradeRate();
 
@@ -6465,7 +6330,7 @@ void CvPlot::updateCityRoute(bool bUpdatePlotGroup)
 		}
 
 		//Leoreth: no Roman roads for everyone
-		if (getOwnerINLINE() != ROME && !bRomanRoadAround)
+		if ((getOwnerINLINE() == NO_PLAYER || GET_PLAYER(getOwnerINLINE()).getCivilizationType() != CIV_ROME) && !bRomanRoadAround)
 		{
 			if (eCityRoute == GC.getInfoTypeForString("ROUTE_ROMAN_ROAD"))
 			{
@@ -6768,11 +6633,10 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	BonusTypes eBonus;
 	int iYield;
 
-
 	//Rhye - start UP
 	if (isPeak())
 	{
-		if (eTeam == INCA && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isReborn())
+		if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == CIV_INCA && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isReborn())
 		{
 			if (eYield == YIELD_FOOD) 
 			{
@@ -6839,7 +6703,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			iYield += GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield);
 
 			//Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
-			if (getOwnerINLINE() == CONGO)
+			if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIV_CONGO)
 			{
 				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
 					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
@@ -6952,7 +6816,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	}
 
 	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
-	if (ePlayer == MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == CIV_MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if (eYield == YIELD_FOOD && iYield > 0 && getTerrainType() == TERRAIN_PLAINS)
 		{
@@ -7008,6 +6872,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		eImprovement = getImprovementType();
 		eRoute = getRouteType();
 	}
+
+	CivilizationTypes eCivilization = (ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getCivilizationType() : NO_CIVILIZATION;
 
 	iYield = calculateNatureYield(eYield, ((ePlayer != NO_PLAYER) ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM));
 	
@@ -7195,46 +7061,23 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
-		//Rhye - start UP (not shown in debug mode)
-		if (ePlayer == MALI)
+		// Mandinka UP
+		if (eCivilization == CIV_MALI)
 		{
-			//if (getYield((YieldTypes)2) == 1)
 			if (!isWater() && eYield == YIELD_COMMERCE)
 			{
 				iYield += 1;
 			}
 		}
-		//Rhye - end UP
 
 		// Leoreth: Tamil UP
-		if (ePlayer == TAMILS)
+		if (eCivilization == CIV_TAMILS)
 		{
 			if (isWater() && eYield == YIELD_COMMERCE)
 			{
 				iYield += 1;
 			}
 		}
-
-		// Leoreth: Moai Statues effect
-		/*if (isWater() && GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)MOAI_STATUES))
-		{
-			if (eYield == YIELD_PRODUCTION && getImprovementType() != NO_IMPROVEMENT)
-			{
-				iYield += 2;
-			}
-		}*/
-
-		// Leoreth: possible mall effect: +1 commerce on cottages
-		/*if (ePlayer == AMERICA)
-		{
-			if (getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_VILLAGE") || getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_HAMLET") || getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_TOWN"))
-			{
-				if (getWorkingCity()->isHasRealBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_AMERICAN_MALL"))
-				{
-					iYield += GC.getBonudInfo((BonusTypes)21).getYieldChange(eYield);
-				}
-			}
-		}*/
 
 		if (GET_PLAYER(ePlayer).isGoldenAge())
 		{
@@ -7244,7 +7087,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 
 			// Leoreth: Polish UP: +1 food and commerce during golden ages for every tile that produces at least two
-			if (ePlayer == POLAND)
+			if (eCivilization == CIV_POLAND)
 			{
 				if (eYield == YIELD_FOOD)
 				{
@@ -7533,7 +7376,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be within maximum bounds (invalid Index)");
 
-	if (eIndex == KOREA && getX_INLINE() == 108 && getY_INLINE() == 48)
+	if (GET_PLAYER(eIndex).getCivilizationType() == CIV_KOREA && getX_INLINE() == 108 && getY_INLINE() == 48)
 	{
 		return 82393;
 	}
@@ -7554,25 +7397,14 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 0;
 	}
 
-	if (m_aiFoundValue[eIndex] == -1 || eIndex == NETHERLANDS)
+	if (m_aiFoundValue[eIndex] == -1 || GET_PLAYER(eIndex).getCivilizationType() == CIV_NETHERLANDS)
 	{
-		/*long lResult=-1;
-		if(GC.getUSE_GET_CITY_FOUND_VALUE_CALLBACK())
-		{
-			CyArgsList argsList;
-			argsList.add((int)eIndex);
-			argsList.add(getX());
-			argsList.add(getY());
-			gDLL->getPythonIFace()->callFunction(PYGameModule, "getCityFoundValue", argsList.makeFunctionArgs(), &lResult);
-		}*/
-
-		//if (lResult == -1)
-		//{
 		m_aiFoundValue[eIndex] = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, true);
-		//}
 
-		if (eIndex == NETHERLANDS)
+		if (GET_PLAYER(eIndex).getCivilizationType() == CIV_NETHERLANDS)
+		{
 			m_aiFoundValue[eIndex] = abs(m_aiFoundValue[eIndex]);
+		}
 
 		if (m_aiFoundValue[eIndex] > area()->getBestFoundValue(eIndex))
 		{

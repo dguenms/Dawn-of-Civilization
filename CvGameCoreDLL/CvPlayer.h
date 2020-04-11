@@ -76,7 +76,10 @@ public:
 	bool hasCivic(CivicTypes eCivic) const;
 	DllExport bool isHuman() const;																																							// Exposed to Python
 	DllExport void updateHuman();
-	DllExport bool isBarbarian() const;																																					// Exposed to Python
+	DllExport bool isBarbarian() const;		// Exposed to Python
+
+	bool isIndependent() const;
+	bool isNative() const;
 
 	DllExport const wchar* getName(uint uiForm = 0) const;																											// Exposed to Python
 	//Rhye (jdog) -  start ---------------------

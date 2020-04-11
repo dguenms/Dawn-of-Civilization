@@ -24,6 +24,9 @@ map = gc.getMap()
 # TODO: unify recently born, recently resurrected, recently reborn
 
 
+# TODO: use gc.getActiveCivilizationType() instead of human() or self.iActivePlayer
+
+
 def log(func):
 	def logged_func(*args, **kwargs):
 		print "Begin %s" % func.__name__
