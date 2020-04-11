@@ -727,46 +727,60 @@ void CvGame::initDiplomacy()
 
 		if (GET_TEAM((TeamTypes)iI).isBarbarian() || GET_TEAM((TeamTypes)iI).isMinorCiv())
 		{
-			//Rhye - start
-			/*for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
+			if (GET_TEAM((TeamTypes)iI).isIndependent())
 			{
-				if (iI != iJ)
+				if (getScenario() == SCENARIO_600AD) 
 				{
-					GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)iJ), false, NO_WARPLAN);
-				}
-			}*/
-			if (iI == INDEPENDENT || iI == INDEPENDENT2) {
-				if (getScenario() == SCENARIO_600AD) { //late start condition
-					GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)CHINA), false, NO_WARPLAN);
-					GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ARABIA), false, NO_WARPLAN);
-					GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)VIKINGS), false, NO_WARPLAN);
+					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+					{
+						switch (GET_PLAYER((PlayerTypes)iI).getCivilizationType())
+						{
+						case CIV_CHINA:
+						case CIV_ARABIA:
+						case CIV_VIKINGS:
+							GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).declareWar(GET_PLAYER((PlayerTypes)iJ).getTeam(), false, NO_WARPLAN);
+						}
+					}
 				}
 			}
-			else if (iI == CELTIA && getScenario() == SCENARIO_3000BC) { //late start condition Celtia
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ROME), false, NO_WARPLAN);
-				//GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)GREECE), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ENGLAND), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)HOLY_ROME), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)VIKINGS), false, NO_WARPLAN);
+			else if (GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).getCivilizationType() == CIV_CELTS && getScenario() == SCENARIO_3000BC) 
+			{
+				for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+				{
+					switch (GET_PLAYER((PlayerTypes)iI).getCivilizationType())
+					{
+					case CIV_ROME:
+					case CIV_ENGLAND:
+					case CIV_HOLY_ROME:
+					case CIV_VIKINGS:
+						GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).declareWar(GET_PLAYER((PlayerTypes)iJ).getTeam(), false, NO_WARPLAN);
+					}
+				}
 			}
-			else if (iI == CELTIA && getScenario() == SCENARIO_600AD) { //late start condition Byzantium
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)EGYPT), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)INDIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)BABYLONIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)PERSIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)PHOENICIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ETHIOPIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ARABIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)MONGOLIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)TURKEY), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)INDEPENDENT), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)INDEPENDENT2), false, NO_WARPLAN);
+			else if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CIV_CELTS && getScenario() == SCENARIO_600AD) { //late start condition Byzantium
+				for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+				{
+					switch (GET_PLAYER((PlayerTypes)iI).getCivilizationType())
+					{
+					case CIV_EGYPT:
+					case CIV_INDIA:
+					case CIV_BABYLONIA:
+					case CIV_PERSIA:
+					case CIV_CARTHAGE:
+					case CIV_ETHIOPIA:
+					case CIV_ARABIA:
+					case CIV_MONGOLS:
+					case CIV_OTTOMANS:
+					case CIV_INDEPENDENT:
+					case CIV_INDEPENDENT2:
+						GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).declareWar(GET_PLAYER((PlayerTypes)iJ).getTeam(), false, NO_WARPLAN);
+					}
+				}
 			}
 			else { //barbarian
 				for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 				{
 					if (iI != iJ)
-					//if (iI != iJ && iJ != VIKINGS && iJ != MONGOLIA) //Rhye (useless)
 					{
 						GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)iJ), false, NO_WARPLAN);
 					}
@@ -774,17 +788,6 @@ void CvGame::initDiplomacy()
 			}
 				//Rhye - end
 		}
-		//Rhye - start (uncomment only if Byzantium isn't minor)
-		/*if (iI == CELTIA && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ARABIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)TURKEY), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)MONGOLIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)VIKINGS), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)BABYLONIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)PERSIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)EGYPT), false, NO_WARPLAN);
-		}*/
-		//Rhye - end
 	}
 	// Forced peace at the beginning of Advanced starts
 	if (isOption(GAMEOPTION_ADVANCED_START))
@@ -2902,12 +2905,11 @@ bool CvGame::isTeamVoteEligible(TeamTypes eTeam, VoteSourceTypes eVoteSource) co
 {
 	CvTeam& kTeam = GET_TEAM(eTeam);
 
-	//Rhye - start
-	if (eTeam == INDEPENDENT || eTeam == INDEPENDENT2 || eTeam == NATIVE || eTeam == CELTIA)
+	// Leoreth: not for minors
+	if (kTeam.isMinorCiv())
 	{
 		return false;
 	}
-	//Rhye - end
 
 	if (kTeam.isForceTeamVoteEligible(eVoteSource))
 	{

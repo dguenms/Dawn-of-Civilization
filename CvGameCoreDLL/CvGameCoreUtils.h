@@ -229,7 +229,7 @@ inline int percent(int iValue, int iFactor, int iDivisor = 100)
 	return (long long)iValue * (long long)iFactor / (long long)iDivisor;
 }
 
-bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, PlayerTypes ePlayer);
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization);
 
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
 CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
@@ -387,7 +387,7 @@ int getTurns(int iTurns);
 // edead: end
 
 ScenarioTypes getScenario(); // Leoreth
-int getScenarioStartYear(); // Leoreth
+int getScenarioStartYear(ScenarioTypes eScenario = NO_SCENARIO); // Leoreth
 int getScenarioStartTurn(); // Leoreth
 
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth

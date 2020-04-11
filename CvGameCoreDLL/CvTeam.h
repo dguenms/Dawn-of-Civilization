@@ -104,6 +104,8 @@ public:
 	bool isHuman() const;																																// Exposed to Python
 	bool isBarbarian() const;																														// Exposed to Python
 	bool isMinorCiv() const;																														// Exposed to Python
+	bool isIndependent() const;
+	bool isNative() const;
 	PlayerTypes getLeaderID() const;																										// Exposed to Python
 	PlayerTypes getSecretaryID() const;																									// Exposed to Python
 	HandicapTypes getHandicapType() const;																							// Exposed to Python
