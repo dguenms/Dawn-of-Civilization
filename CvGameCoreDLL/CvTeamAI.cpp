@@ -1390,7 +1390,6 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 	int iTechTradeKnownPercent;
 	int iKnownCount;
 	int iPossibleKnownCount;
-	int iChinaThreshold; //Leoreth: techs known regardless of contact to limit the Chinese
 	int iI, iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
@@ -1428,7 +1427,6 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 
 	iKnownCount = 0;
 	iPossibleKnownCount = 0;
-	iChinaThreshold = 0;
 
 	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
@@ -1445,23 +1443,9 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 
 					iPossibleKnownCount++;
 				}
-
-				if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
-				{
-					iChinaThreshold++;
-				}
 			}
 		}
 	}
-
-	// Leoreth: stop China from trading away techs it has monopoly on to make its UP less powerful
-	/*if (iChinaThreshold == 0)
-	{
-		if (getID() == CHINA && GET_PLAYER((PlayerTypes)CHINA).isHuman() && GET_PLAYER((PlayerTypes)CHINA).getCurrentEra() < ERA_RENAISSANCE)
-		{
-			return DENIAL_TECH_WHORE;
-		}
-	}*/
 
 	if (isHuman())
 	{
@@ -1950,7 +1934,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 		for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 		{
-			if (iLoopTeam != getID() && iLoopTeam != INDEPENDENT && iLoopTeam != INDEPENDENT2)
+			if (iLoopTeam != getID() && !GET_TEAM((TeamTypes)iLoopTeam).isIndependent())
 			{
 				CvTeamAI& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
 
@@ -2547,24 +2531,6 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	//Leoreth: Indonesian UP: AI more likely to open borders - disabled
-	//if ((int)eTeam == INDONESIA)
-	//	eAttitude = (AttitudeTypes)((int)eAttitude + 1);
-
-	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
-	// for (iI = 0; iI < MAX_PLAYERS; iI++)
-	// {
-		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		// {
-			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			// {
-				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
-				// {
-					// return DENIAL_ATTITUDE;
-				// }
-			// }
-		// }
-	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
 		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
@@ -4197,8 +4163,7 @@ void CvTeamAI::AI_doWar()
 								{
 									if (canDeclareWar((TeamTypes)iI))
 									{
-										// Leoreth: Thai UP: AI doesn't declare war on pleased (removed)
-										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)) /*&& !(iI == THAILAND && AI_getAttitude((TeamTypes)iI) >= ATTITUDE_PLEASED)*/)
+										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)))
 										{
 											int iDefensivePower = (GET_TEAM((TeamTypes)iI).getDefensivePower() * 2) / 3;
 

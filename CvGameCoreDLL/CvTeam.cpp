@@ -1638,7 +1638,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 	FAssertMsg(eTeam != getID(), "eTeam is not expected to be equal with getID()");
 
-	if (eTeam == BARBARIAN) return; //Rhye
+	if (GET_TEAM(eTeam).isBarbarian()) return;
 
 	if (isAtWar(eTeam))
 	{
@@ -2741,14 +2741,14 @@ int CvTeam::getCivilizationResearchModifier() const
 	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
 	// nerf late game China
-	if (getLeaderID() == CHINA)
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() == CIV_CHINA)
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 20;
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
 	}
 
 	// buff late game Japan
-	else if (getLeaderID() == JAPAN)
+	else if (GET_PLAYER(getLeaderID()).getCivilizationType() == CIV_JAPAN)
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
 		{
@@ -2875,18 +2875,12 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
-	int iCivsWithTechChina = 0;
 	int iSpreadModifier = 0;
 	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
 		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) 
 		{
 			iCivsWithTech++;
-
-			if (GET_PLAYER(CHINA).canContact((PlayerTypes)iI))
-			{
-				iCivsWithTechChina++;
-			}
 		}
 	}
 
@@ -2914,7 +2908,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 
 int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 {
-	if (getLeaderID() != JAPAN) return 0;
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() != CIV_JAPAN) return 0;
 
 	bool bAllMedievalTechs = true;
 
@@ -3077,6 +3071,18 @@ bool CvTeam::isMinorCiv() const
 	}
 
 	return bValid;
+}
+
+
+bool CvTeam::isIndependent() const
+{
+	return GET_PLAYER(getLeaderID()).isIndependent();
+}
+
+
+bool CvTeam::isNative() const
+{
+	return GET_PLAYER(getLeaderID()).isNative();
 }
 
 
@@ -5263,7 +5269,7 @@ bool CvTeam::isTerrainTrade(TerrainTypes eIndex) const
 	// Leoreth: Portuguese UP: Ocean trade with Cartography
 	if (eIndex == TERRAIN_OCEAN)
 	{
-		if (getID() == PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
+		if (GET_PLAYER(getLeaderID()).getCivilizationType() == CIV_PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
 	}
 
 	return (getTerrainTradeCount(eIndex) > 0);
@@ -5681,141 +5687,6 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					}
 				}
 			}
-
-			// Leoreth: disabled both old religion and corporation founding rules
-			/*if (bFirst)
-			{
-				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
-				{
-					CyArgsList argsList;
-					argsList.add(getID());
-					argsList.add(ePlayer);
-					argsList.add(eIndex);
-					argsList.add(bFirst);
-					long lResult=0;
-					gDLL->getPythonIFace()->callFunction(PYGameModule, "doHolyCityTech", argsList.makeFunctionArgs(), &lResult);
-					if (lResult != 1 && getID() < NUM_MAJOR_PLAYERS) //Leoreth: independents don't found religions
-					{
-						for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
-						{
-							if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eIndex && eIndex != -1)
-							{
-
-								iBestValue = MAX_INT;
-								eBestPlayer = NO_PLAYER;
-
-								for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-								{
-									if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-									{
-										if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
-										{
-												iValue = 10;
-													
-												iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
-
-												for (iK = 0; iK < GC.getNumReligionInfos(); iK++)
-												{
-													iValue += (GET_PLAYER((PlayerTypes)iJ).getHasReligionCount((ReligionTypes)iK) * 10);
-												}
-
-												if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-												{
-													iValue *= 10;
-												}
-
-												if (iValue < iBestValue)
-												{
-													iBestValue = iValue;
-													eBestPlayer = ((PlayerTypes)iJ);
-												}
-											
-										}
-									}
-								}
-
-								if (eBestPlayer != NO_PLAYER)
-								{
-									//Rhye - start comment (comment this to stop religion founding)
-									//GC.getGameINLINE().setReligionSlotTaken((ReligionTypes)iI, true);
-
-									if (GC.getGameINLINE().isOption(GAMEOPTION_PICK_RELIGION))
-									{
-										if (GET_PLAYER(eBestPlayer).isHuman())
-										{
-											CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_FOUND_RELIGION, iI);
-											if (NULL != pInfo)
-											{
-												gDLL->getInterfaceIFace()->addPopup(pInfo, eBestPlayer);
-											}
-										}
-										else
-										{
-											ReligionTypes eReligion = GET_PLAYER(eBestPlayer).AI_chooseReligion();
-											if (NO_RELIGION != eReligion)
-											{
-												GET_PLAYER(eBestPlayer).foundReligion(eReligion, (ReligionTypes)iI, true);
-											}
-										}
-									}
-									else
-									{
-										GET_PLAYER(eBestPlayer).foundReligion((ReligionTypes)iI, (ReligionTypes)iI, true);
-									}
-
-									bReligionFounded = true;
-									bFirstBonus = true;
-									//Rhye - end comment
-									eBestPlayer = NO_PLAYER;
-								}
-							}
-						}
-
-						// Leoreth: don't found corporations from techs
-						for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
-						{
-							if (GC.getCorporationInfo((CorporationTypes)iI).getTechPrereq() == eIndex)
-							{
-								if (!(GC.getGameINLINE().isCorporationFounded((CorporationTypes)iI)))
-								{
-									iBestValue = MAX_INT;
-									eBestPlayer = NO_PLAYER;
-
-									for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-									{
-										if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-										{
-											if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
-											{
-												iValue = 10;
-
-												iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Corporation (Player)");
-
-												if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-												{
-													iValue *= 10;
-												}
-
-												if (iValue < iBestValue)
-												{
-													iBestValue = iValue;
-													eBestPlayer = ((PlayerTypes)iJ);
-												}
-											}
-										}
-									}
-
-									if (eBestPlayer != NO_PLAYER)
-									{
-										GET_PLAYER(eBestPlayer).foundCorporation((CorporationTypes)iI);
-										bFirstBonus = true;
-									}
-								}
-							}
-						}
-					}
-				}
-			}*/
 
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
