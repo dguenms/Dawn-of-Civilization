@@ -2741,14 +2741,14 @@ int CvTeam::getCivilizationResearchModifier() const
 	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
 	// nerf late game China
-	if (GET_PLAYER(getLeaderID()).getCivilizationType() == CIV_CHINA)
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() == CHINA)
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 20;
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
 	}
 
 	// buff late game Japan
-	else if (GET_PLAYER(getLeaderID()).getCivilizationType() == CIV_JAPAN)
+	else if (GET_PLAYER(getLeaderID()).getCivilizationType() == JAPAN)
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
 		{
@@ -2908,7 +2908,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 
 int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 {
-	if (GET_PLAYER(getLeaderID()).getCivilizationType() != CIV_JAPAN) return 0;
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() != JAPAN) return 0;
 
 	bool bAllMedievalTechs = true;
 
@@ -5269,7 +5269,7 @@ bool CvTeam::isTerrainTrade(TerrainTypes eIndex) const
 	// Leoreth: Portuguese UP: Ocean trade with Cartography
 	if (eIndex == TERRAIN_OCEAN)
 	{
-		if (GET_PLAYER(getLeaderID()).getCivilizationType() == CIV_PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
+		if (GET_PLAYER(getLeaderID()).getCivilizationType() == PORTUGAL && isHasTech((TechTypes)CARTOGRAPHY)) return true;
 	}
 
 	return (getTerrainTradeCount(eIndex) > 0);

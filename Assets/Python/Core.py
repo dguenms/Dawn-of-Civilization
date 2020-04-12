@@ -203,8 +203,8 @@ def scenarioStartYear():
 
 
 def scenario():
-	if player(iCivEgypt).isPlayable(): return i3000BC
-	if player(iCivByzantium).isPlayable(): return i600AD
+	if player(iEgypt).isPlayable(): return i3000BC
+	if player(iByzantium).isPlayable(): return i600AD
 	return i1700AD
 
 
@@ -799,6 +799,9 @@ class Plots(EntityCollection):
 		return sum([units.at(p) for p in self.entities()], Units([]))
 		
 	def without(self, exceptions):
+		if not exceptions:
+			return self
+
 		if not isinstance(exceptions, (list, set, Plots, Cities)):
 			exceptions = [exceptions]
 	
@@ -1037,13 +1040,13 @@ class PlayerFactory:
 		return self.all().where(lambda p: civ(p) in civs)
 		
 	def independent(self):
-		return self.civs(iCivIndependent, iCivIndependent2)
+		return self.civs(iIndependent, iIndependent2)
 		
 	def barbarian(self):
-		return self.civs(iCivBarbarian)
+		return self.civs(iBarbarian)
 		
 	def native(self):
-		return self.civs(iCivNative)
+		return self.civs(iNative)
 		
 	def vassals(self, iPlayer):
 		return self.all().where(lambda p: team(p).isVassal(player(iPlayer).getTeam()))
@@ -1329,7 +1332,7 @@ class Map(object):
 			self[originX + x, originY + y] = value
 
 
-iBarbarian = slot(iCivBarbarian)
+iBarbarianPlayer = slot(iBarbarian)
 		
 		
 plots = PlotFactory()

@@ -1402,7 +1402,7 @@ bool PUF_canDefend(const CvUnit* pUnit, int iData1, int iData2)
 bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
 {
 	// Leoreth: Turkic UP
-	if (pUnit->isBarbarian() && GET_PLAYER((PlayerTypes)iData1).getCivilizationType() == CIV_TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
+	if (pUnit->isBarbarian() && GET_PLAYER((PlayerTypes)iData1).getCivilizationType() == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
 	{
 		if (pUnit->getUnitCombatType() == 2 || pUnit->getUnitCombatType() == 3)
 		{
@@ -2396,9 +2396,9 @@ ScenarioTypes getScenario()
 		CivilizationTypes eCiv = GET_PLAYER((PlayerTypes)iI).getCivilizationType();
 		bool bPlayable = GET_PLAYER((PlayerTypes)iI).isPlayable();
 
-		if (eCiv == CIV_EGYPT && bPlayable) return SCENARIO_3000BC;
+		if (eCiv == EGYPT && bPlayable) return SCENARIO_3000BC;
 
-		if (eCiv == CIV_BYZANTIUM)
+		if (eCiv == BYZANTIUM)
 		{
 			if (bPlayable) return SCENARIO_600AD;
 

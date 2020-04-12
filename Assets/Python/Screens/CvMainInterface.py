@@ -2505,17 +2505,17 @@ class CvMainInterface:
 						iCount = iCount + 1
 						
 					# Leoreth: Aztec UP: sacrifice slaves
-					if pUnit.getUnitType() == iAztecSlave and civ(pUnit) == iCivAztecs:
+					if pUnit.getUnitType() == iAztecSlave and civ(pUnit) == iAztecs:
 						plot = plot_(pUnit)
 						if plot.isCity():
 							city = plot.getPlotCity()
-							if civ(city) == iCivAztecs and not city.isWeLoveTheKingDay():
+							if civ(city) == iAztecs and not city.isWeLoveTheKingDay():
 								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(iSacrificialAltar).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
 								screen.show("BottomButtonContainer")
 								iCount = iCount + 1
 						
 					# Leoreth: Byzantine UP: bribe barbarians
-					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and civ(pUnit) == iCivByzantium and player(iCivByzantium).getNumCities() > 0:
+					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and civ(pUnit) == iByzantium and player(iByzantium).getNumCities() > 0:
 						if canDoByzantineBribery(pUnit):
 							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iCurrency).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")

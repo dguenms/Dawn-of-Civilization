@@ -898,20 +898,20 @@ def getUHVTileInfo(argsList):
 	
 	plot = gc.getMap().plot(x, y)
 	
-	if iCiv == iCivGreece:
-		if (x, y) in Areas.getNormalArea(iCivEgypt):
+	if iCiv == iGreece:
+		if (x, y) in Areas.getNormalArea(iEgypt):
 			return 0
 			
-		if (x, y) in Areas.getNormalArea(iCivCarthage):
+		if (x, y) in Areas.getNormalArea(iCarthage):
 			return 1
 			
-		if (x, y) in Areas.getNormalArea(iCivBabylonia):
+		if (x, y) in Areas.getNormalArea(iBabylonia):
 			return 2
 			
-		if (x, y) in Areas.getNormalArea(iCivPersia):
+		if (x, y) in Areas.getNormalArea(iPersia):
 			return 3
 			
-	elif iCiv == iCivIran:
+	elif iCiv == iIran:
 		if plot in plots.start(vic.tSafavidMesopotamiaTL).end(vic.tSafavidMesopotamiaBR):
 			return 4
 		
@@ -921,37 +921,37 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tNWIndiaTL).end(vic.tNWIndiaBR).without(vic.lNWIndiaExceptions):
 			return 6
 			
-	elif iCiv == iCivPhoenicia:
-		if plot in plots.rectangle(Areas.dNormalArea[iCivItaly]).without([(62, 47), (63, 47), (63, 46)]):
+	elif iCiv == iPhoenicia:
+		if plot in plots.rectangle(Areas.dNormalArea[iItaly]).without([(62, 47), (63, 47), (63, 46)]):
 			return 37
 		
-		if (x, y) in Areas.getNormalArea(iCivSpain):
+		if (x, y) in Areas.getNormalArea(iSpain):
 			return 8
 			
-	elif iCiv == iCivItaly:
+	elif iCiv == iItaly:
 		if plot in plots.start(vic.tMediterraneanTL).end(vic.tMediterraneanBR).without(vic.tMediterraneanExceptions) and plot.isCoastalLand():
 			return 7
 			
-	elif iCiv == iCivRome:
-		if (x, y) in Areas.getNormalArea(iCivSpain):
+	elif iCiv == iRome:
+		if (x, y) in Areas.getNormalArea(iSpain):
 			return 8
 				
-		if plot in plots.start(vic.tFranceTL).end(Areas.dNormalArea[iCivFrance][1]):
+		if plot in plots.start(vic.tFranceTL).end(Areas.dNormalArea[iFrance][1]):
 			return 9
 		
-		if (x, y) in Areas.getCoreArea(iCivEngland):
+		if (x, y) in Areas.getCoreArea(iEngland):
 			return 10
 		
 		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
 			return 11
 		
-		if (x, y) in Areas.getCoreArea(iCivByzantium):
+		if (x, y) in Areas.getCoreArea(iByzantium):
 			return 12
 			
-		if (x, y) in Areas.getCoreArea(iCivEgypt):
+		if (x, y) in Areas.getCoreArea(iEgypt):
 			return 13
 
-	elif iCiv == iCivJapan:
+	elif iCiv == iJapan:
 		if plot in plots.start(vic.tKoreaTL).end(vic.tKoreaBR):
 			return 14
 		
@@ -970,11 +970,11 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tPhilippinesTL).end(vic.tPhilippinesBR):
 			return 19
 			
-	elif iCiv == iCivEthiopia:
+	elif iCiv == iEthiopia:
 		if plot.getRegionID() in lAfrica:
 			return 33
 		
-	elif iCiv == iCivByzantium:
+	elif iCiv == iByzantium:
 		if plot in plots.start(vic.tBalkansTL).end(vic.tBalkansBR):
 			return 21
 		
@@ -984,30 +984,30 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tNearEastTL).end(vic.tNearEastBR):
 			return 23
 			
-	elif iCiv == iCivArabia:
-		if (x, y) in Areas.getCoreArea(iCivEgypt):
+	elif iCiv == iArabia:
+		if (x, y) in Areas.getCoreArea(iEgypt):
 			return 24
 		
 		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
 			return 25
 		
-		if (x, y) in Areas.getCoreArea(iCivBabylonia):
+		if (x, y) in Areas.getCoreArea(iBabylonia):
 			return 26
 				
-		if (x, y) in Areas.getCoreArea(iCivPersia):
+		if (x, y) in Areas.getCoreArea(iPersia):
 			return 27
 		
-		if (x, y) in Areas.getNormalArea(iCivSpain):
+		if (x, y) in Areas.getNormalArea(iSpain):
 			return 28
 			
-	elif iCiv == iCivSpain:
+	elif iCiv == iSpain:
 		if plot in plots.start(vic.tEuropeTL).end(vic.tEuropeBR):
 			return 29
 		
 		elif plot in plots.start(vic.tEasternEuropeTL).end(vic.tEasternEuropeBR):
 			return 29
 			
-	elif iCiv == iCivFrance:
+	elif iCiv == iFrance:
 		if plot in plots.start(vic.tEuropeTL).end(vic.tEuropeBR):
 			return 29
 			
@@ -1017,7 +1017,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tNorthAfricaTL).end(vic.tNorthAmericaBR):
 			return 30
 			
-	elif iCiv == iCivEngland:
+	elif iCiv == iEngland:
 		if plot.getRegionID() in lNorthAmerica:
 			return 31
 				
@@ -1033,34 +1033,34 @@ def getUHVTileInfo(argsList):
 		if plot.getRegionID() in lOceania:
 			return 35
 			
-	elif iCiv == iCivGermany:
-		if (x, y) in Areas.getNormalArea(iCivFrance):
+	elif iCiv == iGermany:
+		if (x, y) in Areas.getNormalArea(iFrance):
 			return 36
 		
-		if (x, y) in Areas.getNormalArea(iCivItaly):
+		if (x, y) in Areas.getNormalArea(iItaly):
 			return 37
 		
-		if (x, y) in Areas.getNormalArea(iCivRussia):
+		if (x, y) in Areas.getNormalArea(iRussia):
 			return 38
 		
-		if (x, y) in Areas.getNormalArea(iCivEngland):
+		if (x, y) in Areas.getNormalArea(iEngland):
 			return 39
 		
-		if (x, y) in Areas.getNormalArea(iCivVikings):
+		if (x, y) in Areas.getNormalArea(iVikings):
 			return 40
 			
-	elif iCiv == iCivRussia:
+	elif iCiv == iRussia:
 		if plot in plots.start(vic.tSiberiaTL).end(vic.tSiberiaBR):
 			return 41
 			
-	elif iCiv == iCivInca:
+	elif iCiv == iInca:
 		if (x, y) in vic.lAndeanCoast:
 			return 42
 		
 		if plot in plots.start(vic.tSAmericaTL).end(vic.tSAmericaBR).without(vic.tSouthAmericaExceptions):
 			return 43
 			
-	elif iCiv == iCivOttomans:
+	elif iCiv == iOttomans:
 		if (x,y) in vic.lEasternMediterranean:
 			return 47
 			
@@ -1079,22 +1079,22 @@ def getUHVTileInfo(argsList):
 		if plot in plots.surrounding(vic.tVienna):
 			return 52
 			
-	elif iCiv == iCivThailand:
+	elif iCiv == iThailand:
 		if plot in plots.start(vic.tSouthAsiaTL).end(vic.tSouthAsiaBR):
 			return 53
 			
-	elif iCiv == iCivAmerica:
+	elif iCiv == iAmerica:
 		if plot in plots.start(vic.tNCAmericaTL).end(vic.tNCAmericaBR):
 			return 54
 			
-	elif iCiv == iCivTamils:
+	elif iCiv == iTamils:
 		if plot in plots.start(vic.tDeccanTL).end(vic.tDeccanBR):
 			return 55
 		
 		if plot in plots.start(vic.tSrivijayaTL).end(civ.tSrivijayaBR):
 			return 56
 			
-	elif iCiv == iCivMoors:
+	elif iCiv == iMoors:
 		if plot in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
 			return 57
 		
@@ -1104,7 +1104,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tWestAfricaTL).end(vic.tWestAfricaBR):
 			return 59
 			
-	elif iCiv == iCivPortugal:
+	elif iCiv == iPortugal:
 		if plot.getRegionID() in lAfrica:
 			return 33
 					
@@ -1114,7 +1114,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tBrazilTL).end(vic.tBrazilBR):
 			return 60
 			
-	elif iCiv == iCivColombia:
+	elif iCiv == iColombia:
 		if plot in plots.start(vic.tPeruTL).end(vic.tPeruBR):
 			return 43
 		
@@ -1130,7 +1130,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tSAmericaTL).end(vic.tSAmericaBR).without(vic.tSouthAmericaExceptions):
 			return 61
 				
-	elif iCiv == iCivCanada:
+	elif iCiv == iCanada:
 		if (x, y) in vic.lAtlanticCoast:
 			return 63
 			
@@ -1140,7 +1140,7 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tCanadaWestTL).end(vic.tCanadaWestBR).without(vic.lCanadaWestExceptions) or plot in plots.start(vic.tCanadaEastTL).end(vic.tCanadaEastBR).without(vic.lCanadaEastExceptions):
 			return 62
 			
-	elif iCiv == iCivPolynesia:
+	elif iCiv == iPolynesia:
 		if plot in plots.start(vic.tHawaiiTL).end(vic.tHawaiiBR):
 			return 65
 		
@@ -1153,11 +1153,11 @@ def getUHVTileInfo(argsList):
 		if plot in plots.start(vic.tEasterIslandTL).end(vic.tEasterIslandBR):
 			return 68
 			
-	elif iCiv == iCivMongols:
-		if (x, y) in Areas.getNormalArea(iCivChina):
+	elif iCiv == iMongols:
+		if (x, y) in Areas.getNormalArea(iChina):
 			return 69
 			
-	elif iCiv == iCivTurks:
+	elif iCiv == iTurks:
 		if (x, y) in vic.lMediterraneanPorts:
 			return 70
 			

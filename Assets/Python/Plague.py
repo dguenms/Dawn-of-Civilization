@@ -39,7 +39,7 @@ class Plague:
 		data.lGenericPlagueDates[1] = year(1300).deviate(20)
 		
 		# Avoid interfering with the Indian UHV
-		if player(iCivIndia).isHuman() and data.lGenericPlagueDates[1] <= year(1200):
+		if player(iIndia).isHuman() and data.lGenericPlagueDates[1] <= year(1200):
 			data.lGenericPlagueDates[1] = year(1200) + 1
 		
 		if scenario() != i1700AD:
@@ -279,7 +279,7 @@ class Plague:
 						if pPlot.getNumUnits() <= iPreserveDefenders:
 							iMaxDamage = 50
 							if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
-							unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarian)
+							unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarianPlayer)
 						continue
 			elif iPreserveDefenders > 0:
 				if isDefenderUnit(unit):
@@ -287,7 +287,7 @@ class Plague:
 					if pPlot.getNumUnits() <= iPreserveDefenders and team(unit).isAtWar(human()):
 						iMaxDamage = 50
 						if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
-						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarian)
+						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarianPlayer)
 					continue
 					
 			if isMortalUnit(unit):
@@ -305,13 +305,13 @@ class Plague:
 				if rand(100) > iThreshold:
 					iMaxDamage = 50
 					if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
-					unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), iBarbarian)
+					unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), iBarbarianPlayer)
 					break
 
 
 	def infectCity(self, city):
-		if civ(city) == iCivCongo and year() <= year(1650): return	# Leoreth: don't let plague mess up the UHV
-		elif civ(city) == iCivMali and year() <= year(1500): return	# same for Mali
+		if civ(city) == iCongo and year() <= year(1650): return	# Leoreth: don't let plague mess up the UHV
+		elif civ(city) == iMali and year() <= year(1500): return	# same for Mali
 		
 		city.setHasRealBuilding(iPlague, True)
 		message(city.getOwner(), 'TXT_KEY_PLAGUE_SPREAD_CITY', city.getName(), sound='AS2D_PLAGUE', color=iLime)
@@ -397,7 +397,7 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
-		if year() > year(dBirth[iCivAztecs]) + 2 and year() < year(1800):
+		if year() > year(dBirth[iAztecs]) + 2 and year() < year(1800):
 			iOldWorldCiv = -1
 			iNewWorldCiv = -1
 			if civ(iTeamX) in lBioNewWorld and civ(iHasMetTeamY) not in lBioNewWorld and not is_minor(iHasMetTeamY):

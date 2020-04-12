@@ -740,7 +740,7 @@ class Congress:
 			bWarClaim = (iClaimant in self.winners and iOwner in self.losers)
 		
 		# everyone agrees on AI American claims in the west, unless owner is native to the Americas
-		if civ(iClaimant) == iCivAmerica and iVoter != iOwner and civ(iOwner) not in dCivGroups[iCivGroupAmerica]:
+		if civ(iClaimant) == iAmerica and iVoter != iOwner and civ(iOwner) not in dCivGroups[iCivGroupAmerica]:
 			if plot in plots.rectangle(tAmericanClaimsTL, tAmericanClaimsBR):
 				self.vote(iVoter, iClaimant, 1)
 				return
@@ -775,8 +775,8 @@ class Congress:
 			if team(iOwner).isVassal(iVoter): iFavorOwner += 10
 			
 			# French UP
-			if civ(iClaimant) == iCivFrance: iFavorClaimant += 10
-			if civ(iOwner) == iCivFrance: iFavorOwner += 10
+			if civ(iClaimant) == iFrance: iFavorClaimant += 10
+			if civ(iOwner) == iFrance: iFavorOwner += 10
 			
 			# Palace of Nations
 			if player(iClaimant).isHasBuildingEffect(iPalaceOfNations): iFavorClaimant += 10
@@ -789,7 +789,7 @@ class Congress:
 		if pVoter.AI_getAttitude(iClaimant) >= AttitudeTypes.ATTITUDE_CAUTIOUS: iClaimValidity += iClaimValue
 			
 		# French UP
-		if civ(iClaimant) == iCivFrance: iClaimValidity += 5
+		if civ(iClaimant) == iFrance: iClaimValidity += 5
 			
 		# plot factors
 		# plot culture
@@ -1034,7 +1034,7 @@ class Congress:
 				if iTotalCulture > 0:
 					iCultureRatio = city.getCultureTimes100(iPlayer) * 100 / iTotalCulture
 					if iCultureRatio > 20:
-						if civ(iLoopPlayer) != iCivAmerica:
+						if civ(iLoopPlayer) != iAmerica:
 							iValue += iCultureRatio / 20
 							
 				# ever owned
@@ -1070,12 +1070,12 @@ class Congress:
 					iValue += plot.getWarValue(iPlayer) / 2
 					
 				# AI America receives extra value for claims in the west
-				if civ(iPlayer) == iCivAmerica and not player(iPlayer).isHuman():
+				if civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
 					if city in plots.start(tAmericanClaimsTL).end(tAmericanClaimsBR):
 						iValue += 5
 						
 				# help Canada gain Labrador and Newfoundland
-				if civ(iPlayer) == iCivCanada:
+				if civ(iPlayer) == iCanada:
 					if city in plots.start(tNewfoundlandTL).end(tNewfoundlandBR):
 						iValue += 5
 					
@@ -1118,8 +1118,8 @@ class Congress:
 		self.invites = self.invites.alive()
 		
 		# America receives an invite if there are still claims in the west
-		if player(iCivAmerica).isAlive() and slot(iCivAmerica) not in self.invites and not self.bPostWar:
-			if cities.rectangle(tAmericanClaimsTL, tAmericanClaimsBR).notowner(iCivAmerica):
+		if player(iAmerica).isAlive() and slot(iAmerica) not in self.invites and not self.bPostWar:
+			if cities.rectangle(tAmericanClaimsTL, tAmericanClaimsBR).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)
-				self.invites = self.invites.including(slot(iCivAmerica))
+				self.invites = self.invites.including(slot(iAmerica))

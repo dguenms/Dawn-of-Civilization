@@ -28,59 +28,59 @@ iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican, iLangPolynesian,
 iLangHarappan) = range(iNumLanguages)
 
 dLanguages = {
-iCivEgypt : [iLangEgyptian],
-iCivBabylonia : [iLangBabylonian],
-iCivHarappa : [iLangHarappan, iLangIndian],
-iCivChina : [iLangChinese],
-iCivGreece : [iLangChinese],
-iCivIndia : [iLangIndian],
-iCivPhoenicia : [iLangPhoenician],
-iCivPolynesia : [iLangPolynesian],
-iCivPersia : [iLangPersian],
-iCivRome : [iLangLatin],
-iCivMaya : [iLangMayan, iLangAztec],
-iCivTamils : [iLangIndian],
-iCivEthiopia : [iLangEthiopian],
-iCivKorea : [iLangKorean, iLangChinese],
-iCivByzantium : [iLangByzantine, iLangLatin],
-iCivJapan : [iLangJapanese],
-iCivVikings : [iLangViking],
-iCivTurks : [iLangTurkish, iLangArabian, iLangPersian],
-iCivArabia : [iLangArabian],
-iCivTibet : [iLangTibetan, iLangChinese],
-iCivKhmer : [iLangKhmer, iLangIndonesian],
-iCivIndonesia : [iLangIndonesian, iLangKhmer],
-iCivMoors : [iLangArabian],
-iCivSpain : [iLangSpanish],
-iCivFrance : [iLangFrench],
-iCivEngland : [iLangEnglish],
-iCivHolyRome : [iLangGerman],
-iCivRussia : [iLangRussian],
-iCivMali : [iLangMalian],
-iCivPoland : [iLangPolish, iLangRussian],
-iCivPortugal : [iLangPortuguese, iLangSpanish],
-iCivInca : [iLangQuechua],
-iCivItaly : [iLangItalian],
-iCivMongols : [iLangMongolian, iLangTurkish, iLangChinese],
-iCivAztecs : [iLangAztec, iLangMayan],
-iCivMughals : [iLangPersian, iLangArabian, iLangIndian],
-iCivOttomans : [iLangTurkish, iLangArabian],
-iCivThailand : [iLangThai, iLangKhmer, iLangIndonesian],
-iCivCongo : [iLangCongolese],
-iCivIran : [iLangArabian, iLangPersian],
-iCivNetherlands : [iLangDutch],
-iCivGermany : [iLangPrussian, iLangGerman],
-iCivAmerica : [iLangAmerican, iLangEnglish],
-iCivMexico : [iLangMexican, iLangSpanish],
-iCivArgentina : [iLangSpanish],
-iCivColombia : [iLangSpanish],
-iCivBrazil : [iLangPortuguese, iLangSpanish],
-iCivCanada : [iLangAmerican, iLangEnglish],
-iCivCelts : [iLangCeltic],
+iEgypt : [iLangEgyptian],
+iBabylonia : [iLangBabylonian],
+iHarappa : [iLangHarappan, iLangIndian],
+iChina : [iLangChinese],
+iGreece : [iLangChinese],
+iIndia : [iLangIndian],
+iPhoenicia : [iLangPhoenician],
+iPolynesia : [iLangPolynesian],
+iPersia : [iLangPersian],
+iRome : [iLangLatin],
+iMaya : [iLangMayan, iLangAztec],
+iTamils : [iLangIndian],
+iEthiopia : [iLangEthiopian],
+iKorea : [iLangKorean, iLangChinese],
+iByzantium : [iLangByzantine, iLangLatin],
+iJapan : [iLangJapanese],
+iVikings : [iLangViking],
+iTurks : [iLangTurkish, iLangArabian, iLangPersian],
+iArabia : [iLangArabian],
+iTibet : [iLangTibetan, iLangChinese],
+iKhmer : [iLangKhmer, iLangIndonesian],
+iIndonesia : [iLangIndonesian, iLangKhmer],
+iMoors : [iLangArabian],
+iSpain : [iLangSpanish],
+iFrance : [iLangFrench],
+iEngland : [iLangEnglish],
+iHolyRome : [iLangGerman],
+iRussia : [iLangRussian],
+iMali : [iLangMalian],
+iPoland : [iLangPolish, iLangRussian],
+iPortugal : [iLangPortuguese, iLangSpanish],
+iInca : [iLangQuechua],
+iItaly : [iLangItalian],
+iMongols : [iLangMongolian, iLangTurkish, iLangChinese],
+iAztecs : [iLangAztec, iLangMayan],
+iMughals : [iLangPersian, iLangArabian, iLangIndian],
+iOttomans : [iLangTurkish, iLangArabian],
+iThailand : [iLangThai, iLangKhmer, iLangIndonesian],
+iCongo : [iLangCongolese],
+iIran : [iLangArabian, iLangPersian],
+iNetherlands : [iLangDutch],
+iGermany : [iLangPrussian, iLangGerman],
+iAmerica : [iLangAmerican, iLangEnglish],
+iMexico : [iLangMexican, iLangSpanish],
+iArgentina : [iLangSpanish],
+iColombia : [iLangSpanish],
+iBrazil : [iLangPortuguese, iLangSpanish],
+iCanada : [iLangAmerican, iLangEnglish],
+iCelts : [iLangCeltic],
 }
 
 dPeriodLanguages = {
-(iCivInca, iPeriodPeru) : [iLangSpanish],
+(iInca, iPeriodPeru) : [iLangSpanish],
 }
 
 # methods
@@ -89,7 +89,7 @@ def isResurrected(iPlayer):
 	return data.players[iPlayer].iResurrections > 0
 
 def getLanguages(iCiv):
-	if iCiv == iCivEgypt and player(iCiv).getStateReligion() == iIslam:
+	if iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam:
 		return [iLangEgyptianArabic, iLangArabian]
 		
 	iPeriod = player(iCiv).getPeriod()
@@ -196,17 +196,17 @@ def onCityAcquired(city, iNewOwner):
 	sOldName = city.getName()
 	sNewName = None
 	
-	if sOldName == 'Inbhir Nis' and iNewOwnerCiv != iCivCelts: sNewName = 'Inverness'
-	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwnerCiv != iCivCelts: sNewName = 'Edinburgh'
-	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwnerCiv not in [iCivRome, iCivOttomans]: sNewName = 'Buda'
+	if sOldName == 'Inbhir Nis' and iNewOwnerCiv != iCelts: sNewName = 'Inverness'
+	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwnerCiv != iCelts: sNewName = 'Edinburgh'
+	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwnerCiv not in [iRome, iOttomans]: sNewName = 'Buda'
 	elif sOldName in ['Takao', 'Gaoxiong'] and is_minor(iNewOwner): sNewName = 'Kaohsiung'
-	elif sOldName == 'Momba&#231;a' and iNewOwnerCiv != iCivPortugal: sNewName = 'Mombasa'
-	elif sOldName == 'Mo&#231;ambique' and iNewOwnerCiv != iCivPortugal: sNewName = 'Mozambique'
-	elif sOldName == 'Toranaro' and iNewOwnerCiv not in [iCivJapan, iCivFrance]: sNewName = 'Tolanaro'
-	elif sOldName == 'Kerimane' and iNewOwnerCiv != iCivJapan: sNewName = 'Quelimane'
-	elif sOldName == 'Sofara' and iNewOwnerCiv != iCivJapan: sNewName = 'Sofala'
-	elif sOldName == 'Singidunon' and iNewOwnerCiv != iCivByzantium: sNewName = 'Belgrad'
-	elif sOldName == 'York' and iNewOwnerCiv == iCivCanada and city.getRegionID() == rCanada: sNewName = 'Toronto'
+	elif sOldName == 'Momba&#231;a' and iNewOwnerCiv != iPortugal: sNewName = 'Mombasa'
+	elif sOldName == 'Mo&#231;ambique' and iNewOwnerCiv != iPortugal: sNewName = 'Mozambique'
+	elif sOldName == 'Toranaro' and iNewOwnerCiv not in [iJapan, iFrance]: sNewName = 'Tolanaro'
+	elif sOldName == 'Kerimane' and iNewOwnerCiv != iJapan: sNewName = 'Quelimane'
+	elif sOldName == 'Sofara' and iNewOwnerCiv != iJapan: sNewName = 'Sofala'
+	elif sOldName == 'Singidunon' and iNewOwnerCiv != iByzantium: sNewName = 'Belgrad'
+	elif sOldName == 'York' and iNewOwnerCiv == iCanada and city.getRegionID() == rCanada: sNewName = 'Toronto'
 	elif sOldName == 'Prey Nokor': sNewName = 'Saigon'
 	
 	if sNewName:
@@ -320,7 +320,7 @@ def onTechAcquired(iPlayer):
 def onReligionSpread(iReligion, iPlayer, city):
 	iCiv = civ(iPlayer)
 
-	if iCiv == iCivIndonesia:
+	if iCiv == iIndonesia:
 		if iReligion == iIslam:
 			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
 			
@@ -336,7 +336,7 @@ def onRevolution(iPlayer):
 	else:
 		revertCommunistNames(iPlayer)
 
-	if iCiv == iCivEgypt:
+	if iCiv == iEgypt:
 		updateCityNames(iPlayer)
 
 
