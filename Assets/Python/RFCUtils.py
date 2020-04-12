@@ -122,7 +122,7 @@ def flipUnitsInCityBefore(tCityPlot, iNewOwner, iOldOwner):
 	
 	lFlippingUnits = []
 	for unit in removedUnits:
-		unit.kill(False, iBarbarian)
+		unit.kill(False, iBarbarianPlayer)
 		
 		if not is_minor(iNewOwner) or (not unit.isAnimal() and not unit.isFound()):
 			lFlippingUnits.append(unit.getUnitType())
@@ -141,7 +141,7 @@ def killUnitsInArea(iPlayer, lPlots):
 	for (x, y) in lPlots:
 		killedUnits = units.at(x, y).owner(iPlayer)
 		for unit in killedUnits:
-			unit.kill(False, iBarbarian)
+			unit.kill(False, iBarbarianPlayer)
 
 # used: RiseAndFall
 # TODO: accept a Plots instance instead of lPlots
@@ -158,12 +158,12 @@ def flipUnitsInArea(lPlots, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers):
 		lFlippingUnits = []
 		for unit in removedUnits:
 			# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
-			if civ(iNewOwner) == iCivItaly and not is_minor(iOldOwner):
+			if civ(iNewOwner) == iItaly and not is_minor(iOldOwner):
 				oldCapital = player(iOldOwner).getCapitalCity()
 				move(unit, oldCapital)
 				continue
 				
-			unit.kill(False, iBarbarian)
+			unit.kill(False, iBarbarianPlayer)
 				
 			if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
 				continue
@@ -226,8 +226,8 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 		city.changeCulture(iOldOwner, -iConvertedCulture, False)
 		city.changeCulture(iNewOwner, iConvertedCulture, False)
 		
-		if iNewOwner != iBarbarian:
-			city.setCulture(iBarbarian, 0, True)
+		if not player(iNewOwner).isBarbarian():
+			city.setCulture(iBarbarianPlayer, 0, True)
 			
 	if bBarbarian2x2Decay or bBarbarian2x2Conversion:
 		if not player(iNewOwner).isBarbarian() and not player(iNewOwner).isMinorCiv():
@@ -538,15 +538,15 @@ def colonialConquest(iPlayer, tPlot):
 		
 	# independents too so the conquerors don't get pushed out in case the target collapses
 	# TODO: instead properly establish war against independents on collapse
-	for iMinor in players.civs([iCivIndependent, iCivIndependent2]):
+	for iMinor in players.civs([iIndependent, iIndependent2]):
 		if not team(iPlayer).isAtWar(iMinor):
 			team(iPlayer).declareWar(iMinor, True, WarPlanTypes.WARPLAN_LIMITED)
 			
 	targetPlot = plots.surrounding(tPlot).where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater()).random()
 	
-	if iCiv in [iCivSpain, iCivPortugal, iCivNetherlands]:
+	if iCiv in [iSpain, iPortugal, iNetherlands]:
 		iNumUnits = 2
-	elif iCiv in [iCivFrance, iCivEngland]:
+	elif iCiv in [iFrance, iEngland]:
 		iNumUnits = 3
 		
 	iSiege = getBestSiege(iPlayer)
@@ -565,9 +565,9 @@ def colonialConquest(iPlayer, tPlot):
 def colonialAcquisition(iPlayer, tPlot):
 	iCiv = civ(iPlayer)
 
-	if iCiv in [iCivSpain, iCivPortugal]:
+	if iCiv in [iSpain, iPortugal]:
 		iNumUnits = 1
-	elif iCiv in [iCivFrance, iCivEngland, iCivNetherlands]:
+	elif iCiv in [iFrance, iEngland, iNetherlands]:
 		iNumUnits = 2
 		
 	plot = plot_(tPlot)
@@ -599,14 +599,14 @@ def colonialAcquisition(iPlayer, tPlot):
 def getColonialTargets(iPlayer, bEmpty=False):
 	iCiv = civ(iPlayer)
 
-	if iCiv in [iCivSpain, iCivFrance]:
+	if iCiv in [iSpain, iFrance]:
 		iNumCities = 1
-	elif iCiv == iCivPortugal and not player(iCivPortugal).isHuman():
+	elif iCiv == iPortugal and not player(iPortugal).isHuman():
 		iNumCities = 5
 	else:
 		iNumCities = 3
 
-	index = list([iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]).index(iCiv)
+	index = list([iSpain, iFrance, iEngland, iPortugal, iNetherlands]).index(iCiv)
 	lPlotList = tTradingCompanyPlotLists[index][:]
 	
 	cityPlots, emptyPlots = plots.of(lPlotList).split(lambda p: p.isCity())
@@ -680,10 +680,10 @@ def isIsland(plot, iIslandLimit = 3):
 	
 # used: CvRFCEventHandler
 def handleChineseCities(pUnit):
-	plot = plots.of(lChineseCities).where(lambda p: isFree(slot(iCivChina), p, True, True, True)).random()
+	plot = plots.of(lChineseCities).where(lambda p: isFree(slot(iChina), p, True, True, True)).random()
 	
 	if plot:
-		player(iCivChina).found(plot.getX(), plot.getY())
+		player(iChina).found(plot.getX(), plot.getY())
 		pUnit.kill(False, -1)
 			
 # used: RiseAndFall
@@ -973,23 +973,23 @@ def canRespawn(iPlayer):
 				
 	# TODO: function like exclusive(iCiv1, iCiv2) to simplify this
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if iCiv == iCivThailand and player(iCivKhmer).isAlive(): return False
-	if iCiv == iCivKhmer and player(iCivThailand).isAlive(): return False
+	if iCiv == iThailand and player(iKhmer).isAlive(): return False
+	if iCiv == iKhmer and player(iThailand).isAlive(): return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if iCiv == iCivRome and player(iCivItaly).isAlive(): return False
-	if iCiv == iCivItaly and player(iCivRome).isAlive(): return False
+	if iCiv == iRome and player(iItaly).isAlive(): return False
+	if iCiv == iItaly and player(iRome).isAlive(): return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if iCiv == iCivGreece and player(iCivByzantium).isAlive(): return False
-	if iCiv == iCivByzantium and player(iCivGreece).isAlive(): return False
+	if iCiv == iGreece and player(iByzantium).isAlive(): return False
+	if iCiv == iByzantium and player(iGreece).isAlive(): return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
-	if iCiv == iCivIndia and player(iCivMughals).isAlive(): return False
+	if iCiv == iIndia and player(iMughals).isAlive(): return False
 	
 	# Exception during Japanese UHV
-	if player(iCivJapan).isHuman() and year().between(1920, 1945):
-		if iCiv in [iCivChina, iCivKorea, iCivIndonesia, iCivThailand]:
+	if player(iJapan).isHuman() and year().between(1920, 1945):
+		if iCiv in [iChina, iKorea, iIndonesia, iThailand]:
 			return False
 	
 	if not player(iPlayer).isAlive() and turn() > data.players[iPlayer].iLastTurnAlive + turns(20):
@@ -1150,7 +1150,7 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		message(pWinningUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_WIN', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=8, location=pWinningUnit)
 		message(pLosingUnit.getOwner(), 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=infos.unit(iUnit).getButton(), color=7, location=pWinningUnit)
 		
-		if civ(iPlayer) == iCivAztecs:
+		if civ(iPlayer) == iAztecs:
 			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and not is_minor(pLosingUnit):
 				data.iAztecSlaves += 1
 		
@@ -1187,7 +1187,7 @@ def flipOrRelocateGarrison(city, iNumDefenders):
 def flipUnit(unit, iNewOwner, plot):
 	if location(unit) >= (0, 0):
 		iUnitType = unit.getUnitType()
-		unit.kill(False, iBarbarian)
+		unit.kill(False, iBarbarianPlayer)
 		makeUnit(iNewOwner, iUnitType, plot)
 	
 # used: Congresses, Stability
@@ -1219,7 +1219,7 @@ def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
 def killUnits(lUnits):
 	for unit in lUnits:
 		if location(unit) >= (0, 0):
-			unit.kill(False, iBarbarian)
+			unit.kill(False, iBarbarianPlayer)
 			
 # used: RiseAndFall
 def ensureDefenders(iPlayer, tPlot, iNumDefenders):

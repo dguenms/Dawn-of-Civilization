@@ -11443,11 +11443,11 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes ePlayer) const
 	iUnitCost /= 100;
 
 	// bonus for Netherlands and Germany in the beginning
-	if (GET_PLAYER(ePlayer).getCivilizationType() == CIV_NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
 	{
 	    iUnitCost /= 2;
 	}
-	else if (GET_PLAYER(ePlayer).getCivilizationType() == CIV_GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
+	else if (GET_PLAYER(ePlayer).getCivilizationType() == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
 	{
 	    iUnitCost /= 2;
 	}
@@ -11643,7 +11643,7 @@ int CvHandicapInfo::getHappyBonus() const
 
 int CvHandicapInfo::getHappyBonusByID(PlayerTypes ePlayer) const
 {
-	if (GET_PLAYER(ePlayer).getCivilizationType() == CIV_NETHERLANDS)
+	if (GET_PLAYER(ePlayer).getCivilizationType() == NETHERLANDS)
 	{
 		return m_iHappyBonus + 3;
 	}

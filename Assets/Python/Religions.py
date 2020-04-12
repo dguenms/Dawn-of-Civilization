@@ -40,25 +40,25 @@ tQufuBR = (106, 46)
 tMecca = (75, 33)
 
 dCatholicPreference = defaultdict({
-iCivEgypt		: 80,
-iCivGreece		: 80,
-iCivRome		: 95,
-iCivEthiopia	: 80,
-iCivByzantium	: 90,
-iCivVikings		: 20,
-iCivArabia		: 80,
-iCivSpain		: 95,
-iCivFrance		: 75,
-iCivEngland		: 30,
-iCivHolyRome	: 55,
-iCivRussia		: 80,
-iCivNetherlands	: 10,
-iCivPoland		: 80,
-iCivPortugal	: 95,
-iCivItaly		: 90,
-iCivCongo		: 80,
-iCivGermany		: 25,
-iCivAmerica		: 20,
+iEgypt		: 80,
+iGreece		: 80,
+iRome		: 95,
+iEthiopia	: 80,
+iByzantium	: 90,
+iVikings		: 20,
+iArabia		: 80,
+iSpain		: 95,
+iFrance		: 75,
+iEngland		: 30,
+iHolyRome	: 55,
+iRussia		: 80,
+iNetherlands	: 10,
+iPoland		: 80,
+iPortugal	: 95,
+iItaly		: 90,
+iCongo		: 80,
+iGermany		: 25,
+iAmerica		: 20,
 }, 50)
 
 def getCatholicPreference(iPlayer):
@@ -72,7 +72,7 @@ class Religions:
 		
 	def checkTurn(self, iGameTurn):
 	
-		if not player(iCivIndia).isHuman():
+		if not player(iIndia).isHuman():
 			if iGameTurn == year(-2000)+1:
 				if not game.isReligionFounded(iHinduism):
 					if plot(92, 39).isCity():
@@ -183,12 +183,12 @@ class Religions:
 
 	def spreadIslamIndonesia(self, iGameTurn):
 		if not game.isReligionFounded(iIslam): return
-		if not player(iCivIndonesia).isAlive(): return
+		if not player(iIndonesia).isAlive(): return
 		if not turn(iGameTurn).between(1300, 1600): return
 		
 		if iGameTurn % turns(15) != turns(4): return
 		
-		indonesianContacts = players.major().where(lambda p: player(iCivIndonesia).canContact(p) and player(p).getStateReligion() == iIslam)
+		indonesianContacts = players.major().where(lambda p: player(iIndonesia).canContact(p) and player(p).getStateReligion() == iIslam)
 		if not indonesianContacts:
 			return
 			
@@ -196,7 +196,7 @@ class Religions:
 		potentialCities = indonesianCities.where(lambda c: not c.isHasReligion(iIslam))
 		
 		iMaxCitiesMultiplier = 2
-		if player(iCivIndonesia).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
+		if player(iIndonesia).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
 		
 		if len(potentialCities) * iMaxCitiesMultiplier >= len(indonesianCities):
 			spreadCity = potentialCities.random()
@@ -334,7 +334,7 @@ class Religions:
 		for iPlayer in players.major():
 			if data.players[iPlayer].iReformationDecision == 2:
 				for iTargetPlayer in players.major():
-					if data.players[iTargetPlayer].iReformationDecision == 0 and not player(iTargetPlayer).isHuman() and civ(iTargetPlayer) != iCivNetherlands and not team(iTargetPlayer).isAVassal():
+					if data.players[iTargetPlayer].iReformationDecision == 0 and not player(iTargetPlayer).isHuman() and civ(iTargetPlayer) != iNetherlands and not team(iTargetPlayer).isAVassal():
 						team(iPlayer).declareWar(iTargetPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 						
 		pHolyCity = game.getHolyCity(iProtestantism)

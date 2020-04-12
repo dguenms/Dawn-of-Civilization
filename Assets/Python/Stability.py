@@ -115,15 +115,15 @@ def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
 	checkLostCoreCollapse(iOwner)
 	
-	if iPlayer == iBarbarian:
+	if player(iPlayer).isBarbarian():
 		checkBarbarianCollapse(iOwner)
 		
 def onCityRazed(iPlayer, city):
 	iOwner = city.getPreviousOwner()
 	
-	if iOwner == iBarbarian: return
+	if player(iOwner).isBarbarian(): return
 
-	if player(iPlayer).isHuman() and civ(iPlayer) != iCivMongols:
+	if player(iPlayer).isHuman() and civ(iPlayer) != iMongols:
 		iRazePenalty = -10
 		if city.getHighestPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getHighestPopulation()
@@ -169,7 +169,7 @@ def onGreatPersonBorn(iPlayer):
 	checkStability(iPlayer, True)
 	
 def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
-	if iWinningPlayer == iBarbarian and not is_minor(iLosingPlayer):
+	if player(iWinningPlayer).isBarbarian() and not is_minor(iLosingPlayer):
 		data.players[iLosingPlayer].iBarbarianLosses += 1
 	
 def onCivSpawn(iPlayer):
@@ -342,13 +342,13 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 			checkStability(iLoopPlayer, bPositive, iPlayer)
 		
 def getPossibleMinors(iPlayer):
-	lPossibleMinors = [iCivIndependent, iCivIndependent2]
+	lPossibleMinors = [iIndependent, iIndependent2]
 
-	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and civ(iPlayer) in [iCivMaya, iCivAztecs, iCivInca, iCivMali, iCivEthiopia, iCivCongo]:
-		lPossibleMinors = [iCivNative]
+	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and civ(iPlayer) in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo]:
+		lPossibleMinors = [iNative]
 		
 	if gc.getGame().getCurrentEra() <= iMedieval:
-		lPossibleMinors = [iCivBarbarian, iCivIndependent, iCivIndependent2]
+		lPossibleMinors = [iBarbarian, iIndependent, iIndependent2]
 		
 	return players.civs(*lPossibleMinors)
 	
@@ -391,7 +391,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 							continue
 							
 			# always raze Harappan cities
-			if iCiv == iCivHarappa and not player(iPlayer).isHuman():
+			if iCiv == iHarappa and not player(iPlayer).isHuman():
 				lRemovedCities.append(city)
 				continue
 						
@@ -469,7 +469,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 			if turn() - data.players[iLoopPlayer].iLastTurnAlive < turns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
-			if iCiv == iCivArabia and civ(iLoopPlayer) == iCivEgypt: continue
+			if iCiv == iArabia and civ(iLoopPlayer) == iEgypt: continue
 
 			if location(city) in Areas.getRespawnArea(civ(iLoopPlayer)):
 				bPossible = False
@@ -553,8 +553,8 @@ def completeCollapse(iPlayer):
 	periods.onCollapse(iPlayer)
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
-	if civ(iPlayer) == iCivByzantium:
-		removeReligionByArea(Areas.getCoreArea(iCivOttomans), iOrthodoxy)
+	if civ(iPlayer) == iByzantium:
+		removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
 		
 	debug('Complete collapse: ' + name(iPlayer))
 	
@@ -592,7 +592,7 @@ def downgradeCottages(iPlayer):
 		elif iImprovement == iCottage: plot.setImprovementType(-1)
 		
 		# Destroy all Harappan improvements
-		if civ(iPlayer) == iCivHarappa and not player(iPlayer).isHuman():
+		if civ(iPlayer) == iHarappa and not player(iPlayer).isHuman():
 			if iImprovement >= 0:
 				plot.setImprovementType(-1)
 				
@@ -684,7 +684,7 @@ def calculateStability(iPlayer):
 			else:
 				iCulturePercent = 100
 					
-			bExpansionExceptions = ((bHistorical and iCiv == iCivMongols) or bTotalitarianism)
+			bExpansionExceptions = ((bHistorical and iCiv == iMongols) or bTotalitarianism)
 		
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -697,7 +697,7 @@ def calculateStability(iPlayer):
 				if city.getOriginalOwner() != iPlayer and turn() - city.getGameTurnAcquired() < turns(25): iModifier += 1
 			
 			# not majority culture (includes foreign core and Persian UP)
-			if iCiv != iCivPersia:
+			if iCiv != iPersia:
 				if iCulturePercent < 50: iModifier += 1
 				if iCulturePercent < 20: iModifier += 1
 			
@@ -709,7 +709,7 @@ def calculateStability(iPlayer):
 			
 			# Portuguese UP: reduced instability from overseas colonies
 			if city.isColony():
-				if iCiv == iCivPortugal: iModifier -= 2
+				if iCiv == iPortugal: iModifier -= 2
 				if bColonialism and bHistorical: iModifier -= 1
 					
 			# cap
@@ -789,7 +789,7 @@ def calculateStability(iPlayer):
 	# recent expansion stability
 	iConquestModifier = 1
 	if bConquest: iConquestModifier += 1
-	if iCiv == iCivPersia: iConquestModifier += 1 # Persian UP
+	if iCiv == iPersia: iConquestModifier += 1 # Persian UP
 	
 	iRecentExpansionStability += iRecentlyFounded
 	iRecentExpansionStability += iConquestModifier * iRecentlyConquered
@@ -1389,7 +1389,7 @@ def isTolerated(iPlayer, iReligion):
 	
 	# Poland
 	lChristianity = [iOrthodoxy, iCatholicism, iProtestantism]
-	if civ(iPlayer) == iCivPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
+	if civ(iPlayer) == iPoland and iStateReligion in lChristianity and iReligion in lChristianity: return True
 	
 	return False
 
@@ -1415,7 +1415,7 @@ def checkResurrection():
 		
 		# special case Netherlands: need only one city to respawn (Amsterdam)
 		# TODO: instead of special case, require at least 2 or ALL
-		if civ(iPlayer) == iCivNetherlands:
+		if civ(iPlayer) == iNetherlands:
 			iMinNumCities = 1
 			
 		if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
@@ -1594,7 +1594,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		teamOwner = team(iOwner)
 		bOwnerHumanVassal = teamOwner.isVassal(human())
 	
-		if not player(iOwner).isHuman() and iOwner != iPlayer and iOwner != iBarbarian:
+		if not player(iOwner).isHuman() and iOwner != iPlayer and not player(iOwner).isBarbarian():
 			if rand(100) >= dAIStopBirthThreshold[iOwner] and not bOwnerHumanVassal:
 				teamOwner.declareWar(iPlayer, False, -1)
 			else:

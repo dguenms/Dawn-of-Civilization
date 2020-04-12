@@ -11,7 +11,7 @@ from operator import itemgetter
 tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
-lTradingCompanyCivs = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands, iCivVikings] # Vikings too now
+lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
 
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)
@@ -138,7 +138,7 @@ class Companies:
 		if iCompany == iTradingCompany:
 			if not iOwnerCiv in lTradingCompanyCivs:
 				return -1
-			if iOwnerCiv == iCivNetherlands:
+			if iOwnerCiv == iNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
 			if city.getRegionID() in [rCentralAsia, rPersia]:
@@ -250,7 +250,7 @@ class Companies:
 						iTempValue += city.getNumBonuses(iBonus) * 2
 		
 		# Brazilian UP: sugar counts as oil for Oil Industry
-		if iOwnerCiv == iCivBrazil and iCompany == iOilIndustry:
+		if iOwnerCiv == iBrazil and iCompany == iOilIndustry:
 			if city.getNumBonuses(iSugar) > 0:
 				bFound = True
 				iTempValue += city.getNumBonuses(iSugar) * 3

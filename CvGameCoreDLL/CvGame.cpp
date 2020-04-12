@@ -735,44 +735,44 @@ void CvGame::initDiplomacy()
 					{
 						switch (GET_PLAYER((PlayerTypes)iI).getCivilizationType())
 						{
-						case CIV_CHINA:
-						case CIV_ARABIA:
-						case CIV_VIKINGS:
+						case CHINA:
+						case ARABIA:
+						case VIKINGS:
 							GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).declareWar(GET_PLAYER((PlayerTypes)iJ).getTeam(), false, NO_WARPLAN);
 						}
 					}
 				}
 			}
-			else if (GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).getCivilizationType() == CIV_CELTS && getScenario() == SCENARIO_3000BC) 
+			else if (GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).getCivilizationType() == CELTS && getScenario() == SCENARIO_3000BC) 
 			{
 				for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
 				{
 					switch (GET_PLAYER((PlayerTypes)iI).getCivilizationType())
 					{
-					case CIV_ROME:
-					case CIV_ENGLAND:
-					case CIV_HOLY_ROME:
-					case CIV_VIKINGS:
+					case ROME:
+					case ENGLAND:
+					case HOLY_ROME:
+					case VIKINGS:
 						GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).declareWar(GET_PLAYER((PlayerTypes)iJ).getTeam(), false, NO_WARPLAN);
 					}
 				}
 			}
-			else if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CIV_CELTS && getScenario() == SCENARIO_600AD) { //late start condition Byzantium
+			else if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CELTS && getScenario() == SCENARIO_600AD) { //late start condition Byzantium
 				for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
 				{
 					switch (GET_PLAYER((PlayerTypes)iI).getCivilizationType())
 					{
-					case CIV_EGYPT:
-					case CIV_INDIA:
-					case CIV_BABYLONIA:
-					case CIV_PERSIA:
-					case CIV_CARTHAGE:
-					case CIV_ETHIOPIA:
-					case CIV_ARABIA:
-					case CIV_MONGOLS:
-					case CIV_OTTOMANS:
-					case CIV_INDEPENDENT:
-					case CIV_INDEPENDENT2:
+					case EGYPT:
+					case INDIA:
+					case BABYLONIA:
+					case PERSIA:
+					case CARTHAGE:
+					case ETHIOPIA:
+					case ARABIA:
+					case MONGOLS:
+					case OTTOMANS:
+					case INDEPENDENT:
+					case INDEPENDENT2:
 						GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).declareWar(GET_PLAYER((PlayerTypes)iJ).getTeam(), false, NO_WARPLAN);
 					}
 				}

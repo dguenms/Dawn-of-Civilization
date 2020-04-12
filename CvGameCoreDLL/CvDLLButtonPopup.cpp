@@ -1671,7 +1671,7 @@ bool CvDLLButtonPopup::launchChangeCivicsPopup(CvPopup* pPopup, CvPopupInfo &inf
 	bool bValid = false;
 
 	// Leoreth: suppress for Egypt due to their UP
-	if (eCivicType == NO_CIVIC && GC.getGameINLINE().getActiveCivilizationType() == CIV_EGYPT)
+	if (eCivicType == NO_CIVIC && GC.getGameINLINE().getActiveCivilizationType() == EGYPT)
 	{
 		return false;
 	}

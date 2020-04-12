@@ -58,29 +58,29 @@ class UniquePowers:
 
 
 	def checkTurn(self, iGameTurn):
-		if iGameTurn >= year(dBirth[iCivRussia]) and player(iCivRussia).isAlive():
+		if iGameTurn >= year(dBirth[iRussia]) and player(iRussia).isAlive():
 			self.russianUP()
 
-		if iGameTurn >= year(dBirth[iCivAmerica])+turns(5):
+		if iGameTurn >= year(dBirth[iAmerica])+turns(5):
 			self.checkImmigration()
 
-		if iGameTurn >= year(dBirth[iCivIndonesia]) and player(iCivIndonesia).isAlive():
+		if iGameTurn >= year(dBirth[iIndonesia]) and player(iIndonesia).isAlive():
 			self.indonesianUP()
 		
 		data.bBabyloniaTechReceived = False
 					
 	def onChangeWar(self, bWar, iTeam, iOtherTeam):
 		# reset Mongol UP flags when peace is made
-		if not bWar and slot(iCivMongols) in [iTeam, iOtherTeam]:
-			for city in cities.owner(iCivMongols):
+		if not bWar and slot(iMongols) in [iTeam, iOtherTeam]:
+			for city in cities.owner(iMongols):
 				city.setMongolUP(False)
 			
 	def setup(self):
 		# Babylonian UP: receive a free tech after discovering the first five techs
-		player(iCivBabylonia).setFreeTechsOnDiscovery(5)
+		player(iBabylonia).setFreeTechsOnDiscovery(5)
 		
 	def onBuildingBuilt(self, city, iOwner, iBuilding):
-		if civ(iOwner) == iCivMughals:
+		if civ(iOwner) == iMughals:
 			self.mughalUP(city, iBuilding)
 					
 #------------------VIKING UP----------------------
@@ -93,22 +93,22 @@ class UniquePowers:
 		iOwner = pWinningUnit.getOwner()
 		iOwnerCiv = civ(iOwner)
 
-		if (iOwnerCiv == iCivVikings and year() <= year(1500)) or pWinningUnit.getUnitType() == iCorsair:
+		if (iOwnerCiv == iVikings and year() <= year(1500)) or pWinningUnit.getUnitType() == iCorsair:
 			if cLosingUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
 				iGold = cLosingUnit.getProductionCost() / 2
 				iGold = turns(iGold)
 				player(iOwner).changeGold(iGold)
 				message(iOwner, 'TXT_KEY_VIKING_NAVAL_UP', iGold, adjective(pLosingUnit), pLosingUnit.getName())
 				
-				if iOwnerCiv == iCivVikings:
+				if iOwnerCiv == iVikings:
 					data.iVikingGold += iGold
-				elif iOwnerCiv == iCivMoors:
+				elif iOwnerCiv == iMoors:
 					data.iMoorishGold += iGold
 
 #------------------ARABIAN U.P.-------------------
 
 	def arabianUP(self, city):
-		iStateReligion = player(iCivArabia).getStateReligion()
+		iStateReligion = player(iArabia).getStateReligion()
 
 		if iStateReligion >= 0:
 			if not city.isHasReligion(iStateReligion):
@@ -119,7 +119,7 @@ class UniquePowers:
 #------------------AZTEC U.P.-------------------
 
 	def aztecUP(self, argsList): #Real Slavery by Sevo
-		if not player(iCivAztecs).isAlive(): return
+		if not player(iAztecs).isAlive(): return
 		
 		pWinningUnit, pLosingUnit = argsList
 		
@@ -129,7 +129,7 @@ class UniquePowers:
 		iLosingPlayer = pLosingUnit.getOwner()
 		iLosingUnit = pLosingUnit.getUnitType()
 		
-		if civ(iWinningPlayer) != iCivAztecs:
+		if civ(iWinningPlayer) != iAztecs:
 			return
 
 		# Only enslave land units!!
@@ -148,9 +148,9 @@ class UniquePowers:
 #------------------RUSSIAN U.P.-------------------
 
 	def russianUP(self):
-		for unit in plots.rectangle(tRussianTopLeft, tRussianBottomRight).owner(iCivRussia).units():
-			if team(iCivRussia).isAtWar(unit.getOwner()):
-				unit.changeDamage(8, slot(iCivRussia))
+		for unit in plots.rectangle(tRussianTopLeft, tRussianBottomRight).owner(iRussia).units():
+			if team(iRussia).isAtWar(unit.getOwner()):
+				unit.changeDamage(8, slot(iRussia))
 
 
 
@@ -175,12 +175,12 @@ class UniquePowers:
 
 	def mongolUP(self, city):
 		if city.getPopulation() >= 7:
-			makeUnits(iCivMongols, iKeshik, city, 2, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnits(iMongols, iKeshik, city, 2, UnitAITypes.UNITAI_ATTACK_CITY)
 		elif city.getPopulation() >= 4:
-			makeUnit(iCivMongols, iKeshik, city, UnitAITypes.UNITAI_ATTACK_CITY)
+			makeUnit(iMongols, iKeshik, city, UnitAITypes.UNITAI_ATTACK_CITY)
 
 		if city.getPopulation() >= 4:
-			message(slot(iCivMongols), 'TXT_KEY_UP_MONGOL_HORDE')
+			message(slot(iMongols), 'TXT_KEY_UP_MONGOL_HORDE')
 
 
 #------------------AMERICAN U.P.-------------------
@@ -269,7 +269,7 @@ class UniquePowers:
 			message(iSourcePlayer, 'TXT_KEY_UP_EMIGRATION', sourceCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=sourceCity)
 			message(iTargetPlayer, 'TXT_KEY_UP_IMMIGRATION', targetCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=targetCity)
 	
-			if civ(iTargetPlayer) == iCivCanada:
+			if civ(iTargetPlayer) == iCanada:
 				self.canadianUP(targetCity)
 		
 	def canadianUP(self, city):
@@ -304,13 +304,13 @@ class UniquePowers:
 			
 	# Indonesian UP: additional gold for foreign ships in your core
 	def indonesianUP(self):
-		seaUnits = plots.of(Areas.getCoreArea(iCivIndonesia)).owner(iCivIndonesia).units().domain(DomainTypes.DOMAIN_SEA)
-		iNumUnits = seaUnits.notowner(iCivIndonesia).where(lambda unit: not is_minor(unit)).where(lambda unit: not team(iCivIndonesia).isAtWar(unit.getTeam())).count()
+		seaUnits = plots.of(Areas.getCoreArea(iIndonesia)).owner(iIndonesia).units().domain(DomainTypes.DOMAIN_SEA)
+		iNumUnits = seaUnits.notowner(iIndonesia).where(lambda unit: not is_minor(unit)).where(lambda unit: not team(iIndonesia).isAtWar(unit.getTeam())).count()
 					
 		if iNumUnits > 0:
 			iGold = 5 * iNumUnits
-			player(iCivIndonesia).changeGold(iGold)
-			message(slot(iCivIndonesia), 'TXT_KEY_INDONESIAN_UP', iGold)
+			player(iIndonesia).changeGold(iGold)
+			message(slot(iIndonesia), 'TXT_KEY_INDONESIAN_UP', iGold)
 	
 	# Mughal UP: receives 50% of building cost as culture when building is completed
 	def mughalUP(self, city, iBuilding):

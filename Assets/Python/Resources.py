@@ -69,7 +69,7 @@ class Resources:
 			self.createResource(78, 42, iCopper)
 			
 		# Tamils, 300 BC
-		elif iGameTurn == year(dBirth[iCivTamils])-1 and data.isCivEnabled(iCivTamils):
+		elif iGameTurn == year(dBirth[iTamils])-1 and data.isCivEnabled(iTamils):
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
@@ -98,7 +98,7 @@ class Resources:
 			self.removeResource(58, 37)
 			
 		# Leoreth: prepare Tibet, 630 AD
-		elif iGameTurn == year(dBirth[iCivTibet])-1 and data.isCivEnabled(iCivTibet):
+		elif iGameTurn == year(dBirth[iTibet])-1 and data.isCivEnabled(iTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
@@ -108,7 +108,7 @@ class Resources:
 			for x, y in lNewfoundlandCapes:
 				plot(x, y).setFeatureType(iCape, 0)
 				
-			if player(iCivVikings).isHuman():
+			if player(iVikings).isHuman():
 				plot(41, 58).setFeatureType(-1, 0)
 		
 		# Leoreth: for respawned Egypt
@@ -129,7 +129,7 @@ class Resources:
 			self.createResource(66, 23, iBanana) # Central Africa
 			self.createResource(64, 20, iBanana) # Central Africa
 			
-			if data.isCivEnabled(iCivCongo):
+			if data.isCivEnabled(iCongo):
 				self.createResource(61, 22, iCotton) # Congo
 				self.createResource(63, 19, iIvory) # Congo
 				self.createResource(61, 24, iIvory) # Cameroon
@@ -143,7 +143,7 @@ class Resources:
 			self.removeResource(89, 51) # Orduqent
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
-		elif iGameTurn == year(dBirth[iCivMongols]):
+		elif iGameTurn == year(dBirth[iMongols]):
 			for x, y in [(101, 48), (100, 49), (100, 50), (99, 50)]:
 				plot(x, y).setRouteType(iRouteRoad)
 				
@@ -255,12 +255,12 @@ class Resources:
 			if infos.constant('PLAYER_REBIRTH_COLOMBIA') != 0:
 				self.createResource(28, 31, iIron) # Colombia
 			
-			if data.isCivEnabled(iCivArgentina):
+			if data.isCivEnabled(iArgentina):
 				self.createResource(31, 10, iWine) # Mendoza, Argentina
 				self.createResource(31, 6, iSheep) # Pampas, Argentina
 				self.createResource(32, 11, iIron) # Argentina
 			
-			if data.isCivEnabled(iCivBrazil):
+			if data.isCivEnabled(iBrazil):
 				self.createResource(36, 18, iCorn) # Sao Paulo
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 

@@ -129,22 +129,22 @@ class CvRFCEventHandler:
 		if bConquest:
 			sta.onCityAcquired(city, iOwner, iPlayer)
 			
-		if iCiv == iCivArabia:
+		if iCiv == iArabia:
 			self.up.arabianUP(city)
 			
-		if iCiv == iCivMongols and bConquest and not player(iPlayer).isHuman():
+		if iCiv == iMongols and bConquest and not player(iPlayer).isHuman():
 			self.up.mongolUP(city)
 		
 		# relocate capitals
 		if not player(iPlayer).isHuman():
-			if iCiv == iCivOttomans and tCity == (68, 45):
+			if iCiv == iOttomans and tCity == (68, 45):
 				moveCapital(iPlayer, tCity) # Kostantiniyye
-			elif iCiv == iCivMongols and tCity == (102, 47):
+			elif iCiv == iMongols and tCity == (102, 47):
 				moveCapital(iPlayer, tCity) # Khanbaliq	
-			elif iCiv == iCivTurks and isAreaControlled(iPlayer, Areas.dCoreArea[iCivPersia][0], Areas.dCoreArea[iCivPersia][1]):
+			elif iCiv == iTurks and isAreaControlled(iPlayer, Areas.dCoreArea[iPersia][0], Areas.dCoreArea[iPersia][1]):
 				capital = player(iPlayer).getCapitalCity()
-				if not capital in plots.rectangle(*Areas.dCoreArea[iCivPersia]):
-					newCapital = cities.rectangle(*Areas.dCoreArea[iCivPersia]).owner(iPlayer).random()
+				if not capital in plots.rectangle(*Areas.dCoreArea[iPersia]):
+					newCapital = cities.rectangle(*Areas.dCoreArea[iPersia]).owner(iPlayer).random()
 					if newCapital:
 						moveCapital(iPlayer, (newCapital.getX(), newCapital.getY()))
 				
@@ -169,7 +169,7 @@ class CvRFCEventHandler:
 					relocateCapital(iPlayer, city)
 					
 		# Leoreth: help Byzantium/Constantinople
-		if iCiv == iCivByzantium and tCity == Areas.getCapital(iCivByzantium) and year() <= year(330)+3:
+		if iCiv == iByzantium and tCity == Areas.getCapital(iByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -188,7 +188,7 @@ class CvRFCEventHandler:
 		if bConquest:
 
 			# Colombian UP: no resistance in conquered cities in Latin America
-			if iCiv == iCivColombia:
+			if iCiv == iColombia:
 				if city in plots.start(tSouthCentralAmericaTL).end(tSouthCentralAmericaBR):
 					city.setOccupationTimer(0)
 					
@@ -212,7 +212,7 @@ class CvRFCEventHandler:
 		
 		vic.onCityAcquired(iPlayer, iOwner, city, bConquest)
 		
-		lTradingCompanyList = [iCivSpain, iCivFrance, iCivEngland, iCivPortugal, iCivNetherlands]
+		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 		
 		if bTrade and iCiv in lTradingCompanyList and (city.getX(), city.getY()) in tTradingCompanyPlotLists[lTradingCompanyList.index(iCiv)]: # TODO: all of those should be dicts
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
@@ -261,31 +261,31 @@ class CvRFCEventHandler:
 			if player(iOwner).getNumCities() < 2:
 				player(iOwner).AI_updateFoundValues(False); # fix for settler maps not updating after 1st city is founded
 
-		if iOwnerCiv == iCivOttomans:
+		if iOwnerCiv == iOttomans:
 			self.up.ottomanUP(city, iOwner, -1)
 			
-		if iOwnerCiv == iCivPhoenicia:
+		if iOwnerCiv == iPhoenicia:
 			if location(city) == (58, 39):
-				if not player(iCivPhoenicia).isHuman():
+				if not player(iPhoenicia).isHuman():
 					# TODO: use relocate capital here
 					city.setHasRealBuilding(iPalace, True)
-					player(iCivPhoenicia).getCapitalCity().setHasRealBuilding(iPalace, False)
+					player(iPhoenicia).getCapitalCity().setHasRealBuilding(iPalace, False)
 					dc.onPalaceMoved(iOwner)
 					
 					city.setPopulation(3)
 					
-					makeUnit(iCivPhoenicia, iWorkboat, (58, 39), UnitAITypes.UNITAI_WORKER_SEA)
-					makeUnit(iCivPhoenicia, iGalley, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA)
-					makeUnit(iCivPhoenicia, iSettler, (57, 40), UnitAITypes.UNITAI_SETTLE)
+					makeUnit(iPhoenicia, iWorkboat, (58, 39), UnitAITypes.UNITAI_WORKER_SEA)
+					makeUnit(iPhoenicia, iGalley, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA)
+					makeUnit(iPhoenicia, iSettler, (57, 40), UnitAITypes.UNITAI_SETTLE)
 					
 					# additional defenders and walls to make human life not too easy
-					if player(iCivRome).isHuman():
+					if player(iRome).isHuman():
 						city.setHasRealBuilding(iWalls, True)
-						makeUnits(iCivPhoenicia, iArcher, (58, 39), 2, UnitAITypes.UNITAI_CITY_DEFENSE)
-						makeUnits(iCivPhoenicia, iNumidianCavalry, (58, 39), 3)
-						makeUnits(iCivPhoenicia, iWarElephant, (58, 39), 2, UnitAITypes.UNITAI_CITY_COUNTER)
+						makeUnits(iPhoenicia, iArcher, (58, 39), 2, UnitAITypes.UNITAI_CITY_DEFENSE)
+						makeUnits(iPhoenicia, iNumidianCavalry, (58, 39), 3)
+						makeUnits(iPhoenicia, iWarElephant, (58, 39), 2, UnitAITypes.UNITAI_CITY_COUNTER)
 				
-		if iOwnerCiv == iCivByzantium and location(city) == Areas.getCapital(iCivByzantium) and year() <= year(330)+3:
+		if iOwnerCiv == iByzantium and location(city) == Areas.getCapital(iByzantium) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -299,13 +299,13 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(iTemple + 4*player(iOwner).getStateReligion(), True)
 			
-		if iOwnerCiv == iCivPortugal and location(city) == Areas.getCapital(iCivPortugal) and year() <= year(dBirth[iCivPortugal]) + 3:
+		if iOwnerCiv == iPortugal and location(city) == Areas.getCapital(iPortugal) and year() <= year(dBirth[iPortugal]) + 3:
 			city.setPopulation(5)
 			
 			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, temple(player(iOwner).getStateReligion())]:
 				city.setHasRealBuilding(iBuilding, True)
 			
-		if iOwnerCiv == iCivNetherlands and location(city) == Areas.getCapital(iCivNetherlands) and year() <= year(1580)+3:
+		if iOwnerCiv == iNetherlands and location(city) == Areas.getCapital(iNetherlands) and year() <= year(1580)+3:
 			city.setPopulation(9)
 			
 			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre, temple(player(iOwner).getStateReligion())]:
@@ -313,7 +313,7 @@ class CvRFCEventHandler:
 				
 			player(iOwner).AI_updateFoundValues(False)
 			
-		if iOwnerCiv == iCivItaly and location(city) == Areas.getCapital(iCivItaly) and year() <= year(dBirth[iCivItaly])+3:
+		if iOwnerCiv == iItaly and location(city) == Areas.getCapital(iItaly) and year() <= year(dBirth[iItaly])+3:
 			city.setPopulation(7)
 			
 			for iBuilding in [iLibrary, iPharmacy, temple(player(iOwner).getStateReligion()), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
@@ -326,7 +326,7 @@ class CvRFCEventHandler:
 		if not is_minor(iOwner):
 			dc.onCityBuilt(iOwner)
 
-		if iOwnerCiv == iCivArabia:
+		if iOwnerCiv == iArabia:
 			if not game.isReligionFounded(iIslam):
 				if location(city) == (75, 33):
 					rel.foundReligion(location(city), iIslam)
@@ -339,7 +339,7 @@ class CvRFCEventHandler:
 					makeUnit(iOwner, iWorker, city)
 					
 		# Holy Rome founds its capital
-		if iOwnerCiv == iCivHolyRome:
+		if iOwnerCiv == iHolyRome:
 			if player(iOwner).getNumCities() == 1:
 				self.rnf.holyRomanSpawn()
 				
@@ -352,7 +352,7 @@ class CvRFCEventHandler:
 				player(iOwner).changeGold(iGold)
 				
 		# Leoreth: free defender and worker for cities founded by American Pioneer in North America
-		if iOwnerCiv == iCivAmerica:
+		if iOwnerCiv == iAmerica:
 			if city.getRegionID() in [rUnitedStates, rCanada, rAlaska]:
 				createGarrisons(city, iOwner, 1)
 				makeUnit(iOwner, getBestWorker(iOwner), city)
@@ -385,10 +385,10 @@ class CvRFCEventHandler:
 		sta.onCombatResult(iWinningPlayer, iLosingPlayer, iUnitPower)
 		
 		# capture slaves
-		if civ(iWinningPlayer) == iCivAztecs:
+		if civ(iWinningPlayer) == iAztecs:
 			captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
-		elif civ(iLosingPlayer) == iCivNative:
+		elif civ(iLosingPlayer) == iNative:
 			if civ(iWinningPlayer) not in lBioNewWorld or any(data.lFirstContactConquerors):
 				if player(iWinningPlayer).isSlavery() or player(iWinningPlayer).isColonialSlavery():
 					if pWinningUnit.getUnitType() == iBandeirante:
@@ -455,7 +455,7 @@ class CvRFCEventHandler:
 			
 		checkSlaves(iPlayer)
 			
-		if iCiv == iCivEgypt:
+		if iCiv == iEgypt:
 			cnm.onRevolution(iPlayer)
 			
 	def onCityGrowth(self, argsList):
@@ -489,25 +489,25 @@ class CvRFCEventHandler:
 					message(iPlayer, 'TXT_KEY_BUILDING_GUR_E_AMIR_EFFECT', iGold, city.getName(), wonderCity.getName())
 					wonderCity.changeCulture(iPlayer, iGold, True)
 		
-		if civ(iPlayer) == iCivVikings and iGold > 0:
+		if civ(iPlayer) == iVikings and iGold > 0:
 			vic.onCityCaptureGold(iPlayer, iGold)
 			
 	def onPlayerGoldTrade(self, argsList):
 		iFromPlayer, iToPlayer, iGold = argsList
 		
-		if civ(iToPlayer) == iCivTamils:
+		if civ(iToPlayer) == iTamils:
 			vic.onPlayerGoldTrade(iToPlayer, iGold)
 			
 	def onTradeMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, iGold = argsList
 		
-		if civ(iPlayer) in [iCivTamils, iCivMali]:
+		if civ(iPlayer) in [iTamils, iMali]:
 			vic.onTradeMission(iPlayer, iX, iY, iGold)
 		
 	def onPlayerSlaveTrade(self, argsList):
 		iPlayer, iGold = argsList
 		
-		if civ(iPlayer) == iCivCongo:
+		if civ(iPlayer) == iCongo:
 			vic.onPlayerSlaveTrade(iPlayer, iGold)
 			
 	def onUnitGifted(self, argsList):
@@ -519,7 +519,7 @@ class CvRFCEventHandler:
 	def onUnitBuilt(self, argsList):
 		city, unit = argsList
 		
-		if unit.getUnitType() == iSettler and civ(city) == iCivChina and not player(iCivChina).isHuman():
+		if unit.getUnitType() == iSettler and civ(city) == iChina and not player(iChina).isHuman():
 			handleChineseCities(unit)
 			
 		# Leoreth: help AI by moving new slaves to the new world
@@ -585,7 +585,7 @@ class CvRFCEventHandler:
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
 		
-		if civ(plot) == iCivBrazil:
+		if civ(plot) == iBrazil:
 			iGold = 0
 			
 			if iFeature == iForest: iGold = 15
@@ -629,7 +629,7 @@ class CvRFCEventHandler:
 			dc.checkTurn(iGameTurn)
 			
 		if scenario() == i3000BC and iGameTurn == year(600):
-			for iPlayer in players.major().where(lambda p: dBirth[p] < dBirth[iCivVikings]):
+			for iPlayer in players.major().where(lambda p: dBirth[p] < dBirth[iVikings]):
 				Modifiers.adjustInflationModifier(iPlayer)
 			
 		return 0
@@ -721,11 +721,11 @@ class CvRFCEventHandler:
 				self.aiw.forgetMemory(iTech, iPlayer)
 
 		if iTech == iExploration:
-			if iCiv in [iCivSpain, iCivFrance, iCivEngland, iCivGermany, iCivVikings, iCivNetherlands, iCivPortugal]:
+			if iCiv in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
 				data.players[iPlayer].iExplorationTurn = iGameTurn
 				
 		elif iTech == iCompass:
-			if iCiv == iCivVikings:
+			if iCiv == iVikings:
 				plot(49, 62).setTerrainType(iCoast, True, True)
 
 		elif iTech == iMicrobiology:
@@ -745,17 +745,17 @@ class CvRFCEventHandler:
 				self.rnf.lateTradingCompany(iPlayer)
 	
 		if not player(iPlayer).isHuman():
-			if iCiv == iCivJapan and iEra == iIndustrial:
+			if iCiv == iJapan and iEra == iIndustrial:
 				moveCapital(iPlayer, (116, 47)) # Toukyou
-			elif iCiv == iCivItaly and iEra == iIndustrial:
+			elif iCiv == iItaly and iEra == iIndustrial:
 				moveCapital(iPlayer, (60, 44)) # Roma
-			elif iCiv == iCivVikings and iEra == iRenaissance:
+			elif iCiv == iVikings and iEra == iRenaissance:
 				moveCapital(iPlayer, (63, 59)) # Stockholm
-			elif iCiv == iCivHolyRome and iEra == iRenaissance:
+			elif iCiv == iHolyRome and iEra == iRenaissance:
 				moveCapital(iPlayer, (62, 49)) # Wien
 				
 		# Maya UP: +20 food when a tech is discovered before the medieval era
-		if iCiv == iCivMaya and iEra < iMedieval:
+		if iCiv == iMaya and iEra < iMedieval:
 			iNumCities = player(iPlayer).getNumCities()
 			if iNumCities > 0:
 				iFood = 20 / iNumCities
