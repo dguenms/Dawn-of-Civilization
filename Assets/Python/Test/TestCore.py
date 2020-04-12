@@ -116,7 +116,7 @@ class TestInfos(TestCase):
 	def test_type(self):
 		# given
 		string = 'CIVILIZATION_EGYPT'
-		expected_type = iCivEgypt
+		expected_type = iEgypt
 		
 		# when
 		actual_type = self.infos.type(string)
@@ -155,7 +155,7 @@ class TestInfos(TestCase):
 	def test_civ_player(self):
 		# given
 		player = gc.getPlayer(0)
-		expected_civinfo = gc.getCivilizationInfo(iCivEgypt)
+		expected_civinfo = gc.getCivilizationInfo(iEgypt)
 		
 		# when
 		actual_civinfo = self.infos.civ(player)
@@ -619,7 +619,7 @@ class TestPlayers(TestCase):
 		self.assert_(0 in self.players)
 		
 	def test_contains_civ_id(self):
-		self.assert_(iCivEgypt in self.players)
+		self.assert_(iEgypt in self.players)
 		
 	def test_iterate(self):
 		for element in self.players:
@@ -693,13 +693,13 @@ class TestPlayers(TestCase):
 			
 	def test_filter_by_civ(self):
 		expected_players = [0]
-		actual_players = self.players.civ(iCivEgypt)
+		actual_players = self.players.civ(iEgypt)
 		
 		self.assertEqual(actual_players.entities(), expected_players)
 		
 	def test_filter_by_civs(self):
 		expected_players = [0, 1]
-		actual_players = self.players.civs(iCivEgypt, iCivBabylonia)
+		actual_players = self.players.civs(iEgypt, iBabylonia)
 		
 		self.assertEqual(set(actual_players.entities()), set(expected_players))
 	
@@ -734,7 +734,7 @@ class TestPlayers(TestCase):
 		self.assertEqual(set(actual_permutations), set(expected_permutations))
 		
 	def test_as_civs(self):
-		expected_civs = [iCivEgypt, iCivBabylonia, iCivHarappa]
+		expected_civs = [iEgypt, iBabylonia, iHarappa]
 		actual_civs = self.players.asCivs()
 		
 		self.assertEqual(set(actual_civs), set(expected_civs))
@@ -832,7 +832,7 @@ class TestUnits(TestCase):
 		units = self.units + Units([indian_unit])
 		
 		# when
-		indian_units = units.owner(iCivIndia)
+		indian_units = units.owner(iIndia)
 		
 		# then
 		assertType(self, indian_units, Units)
@@ -905,7 +905,7 @@ class TestUnitFactory(TestCase):
 	
 	def test_owner_civ(self):
 		# when
-		chinese_units = self.factory.owner(iCivChina)
+		chinese_units = self.factory.owner(iChina)
 		
 		# then
 		assertType(self, chinese_units, Units)
@@ -1057,6 +1057,27 @@ class TestPlots(TestCase):
 		self.assertEqual(len(plots), 6)
 		for tile in tiles:
 			self.assert_(tile not in plots)
+
+	def test_without_none(self):
+		plots = self.plots.without(None)
+		tiles = [(plot.getX(), plot.getY()) for plot in plots]
+		
+		assertType(self, plots, Plots)
+		self.assertEqual(set(tiles), set(self.tiles))
+
+	def test_without_empty_list(self):
+		plots = self.plots.without([])
+		tiles = [(plot.getX(), plot.getY()) for plot in plots]
+
+		assertType(self, plots, Plots)
+		self.assertEqual(set(tiles), set(self.tiles))
+
+	def test_without_empty_tuple(self):
+		plots = self.plots.without(())
+		tiles = [(plot.getX(), plot.getY()) for plot in plots]
+
+		assertType(self, plots, Plots)
+		self.assertEqual(set(tiles), set(self.tiles))
 			
 	def test_closest(self):
 		closest = self.plots.closest(3, 3)
@@ -1090,7 +1111,7 @@ class TestPlots(TestCase):
 		gc.getMap().plot(1, 1).setOwner(0)
 		
 		# when
-		plots = self.plots.notowner(iCivEgypt)
+		plots = self.plots.notowner(iEgypt)
 		
 		# then
 		assertType(self, plots, Plots)
@@ -1513,7 +1534,7 @@ class TestPlotFactory(TestCase):
 		gc.getMap().plot(1, 0).setOwner(0)
 		
 		expected_tiles = [(0, 0), (1, 0)]
-		plots = self.factory.owner(iCivEgypt)
+		plots = self.factory.owner(iEgypt)
 		
 		actual_tiles = [(p.getX(), p.getY()) for p in plots]
 		
@@ -1633,7 +1654,7 @@ class TestCities(TestCase):
 		self.assertEqual(actual_tiles, expected_tiles)
 		
 	def test_owner_civ(self):
-		cities = self.cities.owner(iCivChina)
+		cities = self.cities.owner(iChina)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -1717,7 +1738,7 @@ class TestCities(TestCase):
 	def test_notowner_civ(self):
 		expected_tiles = [(2, 0)]
 		
-		cities = self.cities.notowner(iCivChina)
+		cities = self.cities.notowner(iChina)
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
 		
 		self.assertEqual(actual_tiles, expected_tiles)
@@ -1746,7 +1767,7 @@ class TestCityFactory(TestCase):
 		self.assertEqual(set(actual_tiles), set(expected_tiles))
 		
 	def test_owner_civ(self):
-		cities = self.factory.owner(iCivChina)
+		cities = self.factory.owner(iChina)
 		expected_tiles = [(0, 0), (0, 2)]
 		
 		actual_tiles = [(city.getX(), city.getY()) for city in cities]
@@ -1883,10 +1904,10 @@ class TestUniqueUnitsAndBuildings(TestCase):
 		self.assertEqual(unique_building(-1, iObelisk), iMonument)
 		
 	def test_unique_building_for_base_civ(self):
-		self.assertEqual(unique_building(iCivEgypt, iMonument), iObelisk)
+		self.assertEqual(unique_building(iEgypt, iMonument), iObelisk)
 	
 	def test_unique_building_for_unique_civ(self):
-		self.assertEqual(unique_building(iCivEgypt, iObelisk), iObelisk)
+		self.assertEqual(unique_building(iEgypt, iObelisk), iObelisk)
 		
 	def test_unique_building_no_civ(self):
 		self.assertEqual(unique_building(NoCiv, iObelisk), iMonument)
@@ -1907,10 +1928,10 @@ class TestUniqueUnitsAndBuildings(TestCase):
 		self.assertEqual(unique_unit(-1, iWarChariot), iChariot)
 	
 	def test_unique_unit_for_base_civ(self):
-		self.assertEqual(unique_unit(iCivEgypt, iChariot), iWarChariot)
+		self.assertEqual(unique_unit(iEgypt, iChariot), iWarChariot)
 	
 	def test_unique_unit_for_unique_civ(self):
-		self.assertEqual(unique_unit(iCivEgypt, iWarChariot), iWarChariot)
+		self.assertEqual(unique_unit(iEgypt, iWarChariot), iWarChariot)
 	
 	def test_unique_unit_no_civ(self):
 		self.assertEqual(unique_unit(NoCiv, iWarChariot), iChariot)
@@ -1955,13 +1976,13 @@ class TestMasterAndVassal(TestCase):
 class TestMinor(TestCase):
 
 	def test_is_minor_independent(self):
-		self.assert_(is_minor(slot(iCivIndependent)))
+		self.assert_(is_minor(slot(iIndependent)))
 		
 	def test_is_minor_barbarian(self):
-		self.assert_(is_minor(iBarbarian))
+		self.assert_(is_minor(iBarbarianPlayer))
 		
 	def test_is_minor_player(self):
-		self.assert_(is_minor(gc.getPlayer(slot(iCivIndependent))))
+		self.assert_(is_minor(gc.getPlayer(slot(iIndependent))))
 		
 	def test_not_is_minor(self):
 		self.assert_(not is_minor(0))
@@ -2156,10 +2177,10 @@ class TestNames(TestCase):
 		self.assertEqual(adjective(gc.getPlayer(0)), "Egyptian")
 		
 	def test_full_name(self):
-		self.assertEqual(fullname(slot(iCivEngland)), "Anglo-Saxon Peoples")
+		self.assertEqual(fullname(slot(iEngland)), "Anglo-Saxon Peoples")
 		
 	def test_full_name_player(self):
-		self.assertEqual(fullname(player(iCivEngland)), "Anglo-Saxon Peoples")
+		self.assertEqual(fullname(player(iEngland)), "Anglo-Saxon Peoples")
 		
 		
 class TestWrap(TestCase):
@@ -2341,7 +2362,7 @@ class TestPlayer(TestCase):
 	
 	def test_civ(self):
 		p = gc.getPlayer(0)
-		self.assertEqual(player(iCivEgypt).getID(), p.getID())
+		self.assertEqual(player(iEgypt).getID(), p.getID())
 		
 	def test_team(self):
 		t = gc.getTeam(0)
@@ -2381,21 +2402,21 @@ class TestPlayer(TestCase):
 class TestCiv(TestCase):
 	
 	def test_id(self):
-		self.assertEqual(civ(0), iCivEgypt)
+		self.assertEqual(civ(0), iEgypt)
 		
 	def test_player(self):
-		self.assertEqual(civ(gc.getPlayer(0)), iCivEgypt)
+		self.assertEqual(civ(gc.getPlayer(0)), iEgypt)
 		
 	def test_team(self):
-		self.assertEqual(civ(gc.getTeam(gc.getPlayer(0).getTeam())), iCivEgypt)
+		self.assertEqual(civ(gc.getTeam(gc.getPlayer(0).getTeam())), iEgypt)
 		
 	def test_civ(self):
-		self.assertEqual(civ(iCivEgypt), iCivEgypt)
+		self.assertEqual(civ(iEgypt), iEgypt)
 	
 	def test_unit(self):
 		unit = gc.getPlayer(0).initUnit(4, 0, 0, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 		
-		self.assertEqual(civ(unit), iCivEgypt)
+		self.assertEqual(civ(unit), iEgypt)
 		
 		unit.kill(False, -1)
 	
@@ -2403,7 +2424,7 @@ class TestCiv(TestCase):
 		plot = gc.getMap().plot(0, 0)
 		plot.setOwner(0)
 		
-		self.assertEqual(civ(plot), iCivEgypt)
+		self.assertEqual(civ(plot), iEgypt)
 		
 		plot.setOwner(-1)
 		
@@ -2688,14 +2709,14 @@ class TestPeriod(TestCase):
 
 	def test_period(self):
 		gc.getPlayer(0).setPeriod(123)	
-		iPeriod = period(iCivEgypt)
+		iPeriod = period(iEgypt)
 		
 		self.assertEqual(iPeriod, 123)
 		
 		gc.getPlayer(0).setPeriod(-1)
 	
 	def test_period_no_player(self):
-		iPeriod = period(iCivIran)
+		iPeriod = period(iIran)
 		self.assertEqual(iPeriod, -1)
 
 
@@ -2764,25 +2785,25 @@ class TestFormatSeparators(TestCase):
 class TestSlot(TestCase):
 
 	def test_slot(self):
-		self.assertEqual(slot(iCivEgypt), 0)
+		self.assertEqual(slot(iEgypt), 0)
 		
 	def test_slot_requires_civ(self):
 		self.assertRaises(TypeError, slot, 0)
 		
 	def test_nonexistent(self):
-		self.assertEqual(slot(iCivIran), -1)
+		self.assertEqual(slot(iIran), -1)
 
 
 class TestCivDict(TestCase):
 
 	def setUp(self):
-		self.civdict = CivDict({iCivEgypt: 0, iCivBabylonia: 1, iCivHarappa: 2})
+		self.civdict = CivDict({iEgypt: 0, iBabylonia: 1, iHarappa: 2})
 		
 	def test_is_dict(self):
 		self.assert_(isinstance(self.civdict, dict))
 		
 	def test_get_civ(self):
-		self.assertEqual(self.civdict[iCivEgypt], 0)
+		self.assertEqual(self.civdict[iEgypt], 0)
 		
 	def test_get_int(self):
 		self.assertEqual(self.civdict[0], 0)
@@ -2792,8 +2813,8 @@ class TestCivDict(TestCase):
 	
 	def test_set_civ(self):
 		tempdict = self.civdict.copy()
-		tempdict[iCivChina] = 3
-		self.assertEqual(tempdict[iCivChina], 3)
+		tempdict[iChina] = 3
+		self.assertEqual(tempdict[iChina], 3)
 	
 	def test_set_other(self):
 		tempdict = self.civdict.copy()
@@ -2801,7 +2822,7 @@ class TestCivDict(TestCase):
 		
 	def test_default_civ(self):
 		tempdict = CivDict({}, -123)
-		self.assertEqual(tempdict[iCivEgypt], -123)
+		self.assertEqual(tempdict[iEgypt], -123)
 		
 	def test_default_int(self):
 		tempdict = CivDict({}, -123)

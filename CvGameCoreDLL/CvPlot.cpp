@@ -1794,7 +1794,7 @@ bool CvPlot::isFreshWater() const
 bool CvPlot::isPotentialIrrigation() const
 {
 	// Leoreth: all Moorish improvements that give food spread irrigation
-	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation() || (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIV_MOORS && GC.getImprovementInfo(getImprovementType()).getYieldChange(0) > 0))))
+	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation() || (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == MOORS && GC.getImprovementInfo(getImprovementType()).getYieldChange(0) > 0))))
 	{
 		if ((getTeam() != NO_TEAM) && GET_TEAM(getTeam()).isIrrigation())
 		{
@@ -1817,7 +1817,7 @@ bool CvPlot::canHavePotentialIrrigation() const
 
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation() || (getOwner() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIV_MOORS && GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(0) > 0))
+		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation() || (getOwner() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == MOORS && GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(0) > 0))
 		{
 			if (canHaveImprovement(((ImprovementTypes)iI), NO_TEAM, true))
 			{
@@ -2581,7 +2581,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == CIV_MEXICO && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
+	if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == MEXICO && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
 	}
@@ -6330,7 +6330,7 @@ void CvPlot::updateCityRoute(bool bUpdatePlotGroup)
 		}
 
 		//Leoreth: no Roman roads for everyone
-		if ((getOwnerINLINE() == NO_PLAYER || GET_PLAYER(getOwnerINLINE()).getCivilizationType() != CIV_ROME) && !bRomanRoadAround)
+		if ((getOwnerINLINE() == NO_PLAYER || GET_PLAYER(getOwnerINLINE()).getCivilizationType() != ROME) && !bRomanRoadAround)
 		{
 			if (eCityRoute == GC.getInfoTypeForString("ROUTE_ROMAN_ROAD"))
 			{
@@ -6636,7 +6636,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	//Rhye - start UP
 	if (isPeak())
 	{
-		if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == CIV_INCA && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isReborn())
+		if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == INCA && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isReborn())
 		{
 			if (eYield == YIELD_FOOD) 
 			{
@@ -6703,7 +6703,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			iYield += GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield);
 
 			//Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
-			if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CIV_CONGO)
+			if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).getCivilizationType() == CONGO)
 			{
 				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
 					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
@@ -6816,7 +6816,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	}
 
 	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
-	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == CIV_MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
+	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if (eYield == YIELD_FOOD && iYield > 0 && getTerrainType() == TERRAIN_PLAINS)
 		{
@@ -7062,7 +7062,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 
 		// Mandinka UP
-		if (eCivilization == CIV_MALI)
+		if (eCivilization == MALI)
 		{
 			if (!isWater() && eYield == YIELD_COMMERCE)
 			{
@@ -7071,7 +7071,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 
 		// Leoreth: Tamil UP
-		if (eCivilization == CIV_TAMILS)
+		if (eCivilization == TAMILS)
 		{
 			if (isWater() && eYield == YIELD_COMMERCE)
 			{
@@ -7087,7 +7087,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 
 			// Leoreth: Polish UP: +1 food and commerce during golden ages for every tile that produces at least two
-			if (eCivilization == CIV_POLAND)
+			if (eCivilization == POLAND)
 			{
 				if (eYield == YIELD_FOOD)
 				{
@@ -7376,7 +7376,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be within maximum bounds (invalid Index)");
 
-	if (GET_PLAYER(eIndex).getCivilizationType() == CIV_KOREA && getX_INLINE() == 108 && getY_INLINE() == 48)
+	if (GET_PLAYER(eIndex).getCivilizationType() == KOREA && getX_INLINE() == 108 && getY_INLINE() == 48)
 	{
 		return 82393;
 	}
@@ -7397,11 +7397,11 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 0;
 	}
 
-	if (m_aiFoundValue[eIndex] == -1 || GET_PLAYER(eIndex).getCivilizationType() == CIV_NETHERLANDS)
+	if (m_aiFoundValue[eIndex] == -1 || GET_PLAYER(eIndex).getCivilizationType() == NETHERLANDS)
 	{
 		m_aiFoundValue[eIndex] = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, true);
 
-		if (GET_PLAYER(eIndex).getCivilizationType() == CIV_NETHERLANDS)
+		if (GET_PLAYER(eIndex).getCivilizationType() == NETHERLANDS)
 		{
 			m_aiFoundValue[eIndex] = abs(m_aiFoundValue[eIndex]);
 		}

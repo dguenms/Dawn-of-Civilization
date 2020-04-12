@@ -201,7 +201,7 @@ class CvCorporationScreen:
 						szList = u""
 						
 			iActivePlayer = CyGame().getActivePlayer()
-			if civ(iActivePlayer) == iCivBrazil and i == companies.iOilIndustry:
+			if civ(iActivePlayer) == iBrazil and i == companies.iOilIndustry:
 				eBonus = iSugar
 				szList += u", %c" % (gc.getBonusInfo(eBonus).getChar(), )
 				
@@ -367,7 +367,7 @@ class CvCorporationScreen:
 					iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
 					szList += u"%d" % iAvailableBonus
 					szListLabels.append(szList)
-			if civ(iActivePlayer) == iCivBrazil and iLinkCorporation == companies.iOilIndustry:
+			if civ(iActivePlayer) == iBrazil and iLinkCorporation == companies.iOilIndustry:
 				eBonus = iSugar
 				szList = u""
 				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )

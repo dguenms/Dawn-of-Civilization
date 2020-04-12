@@ -2211,7 +2211,7 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 
 					int iMaxDraftUnitsNonState = iMaxDraftUnits;
 
-					if (pHeadSelectedCity->getCivilizationType() == CIV_OTTOMANS)
+					if (pHeadSelectedCity->getCivilizationType() == OTTOMANS)
 					{
 						if (pHeadSelectedCity->getReligionCount() <= ((!GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isStateReligion() || !pHeadSelectedCity->isHasReligion(GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getStateReligion())) ? 0 : 1))
 						{
@@ -3126,7 +3126,7 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_CHANGE_PRODUCTION", iProduction, pCity->getNameKey()));
 						}
 
-						bool bKhmerUP = GC.getGame().getActiveCivilizationType() == CIV_KHMER && GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_FARM") && pMissionPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST");
+						bool bKhmerUP = GC.getGame().getActiveCivilizationType() == KHMER && GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_FARM") && pMissionPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST");
 
 						if (!bKhmerUP)
 						{
@@ -4293,7 +4293,7 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 		// Leoreth: stability effects of cultural control
 		int iOwnCulture = iTotalCulture == 0 ? 100 : 100 * pHeadSelectedCity->plot()->getCulture(pHeadSelectedCity->getOwnerINLINE()) / iTotalCulture;
 
-		if (pHeadSelectedCity->getCivilizationType() != CIV_PERSIA)
+		if (pHeadSelectedCity->getCivilizationType() != PERSIA)
 		{
 			if (iOwnCulture < 20)
 			{

@@ -161,7 +161,7 @@ lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 tSouthAsiaTL = (88, 24)
 tSouthAsiaBR = (110, 38)
-lSouthAsianCivs = [iCivIndia, iCivTamils, iCivIndonesia, iCivKhmer, iCivMughals, iCivThailand]
+lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
 
 # second Iranian goal: control Mesopotamia, Transoxania and Northwest India in 1750 AD
 tSafavidMesopotamiaTL = (75, 39)
@@ -201,30 +201,30 @@ lCanadaEastExceptions = [(30, 50), (31, 50), (32, 50), (32, 51)]
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
-	iCivChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
-	iCivBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
-	iCivGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
-	iCivRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
-	iCivKorea: (1, [iPrinting]),
-	iCivPoland: (1, [iCivilLiberties]),
+	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
+	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
+	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
+	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
+	iKorea: (1, [iPrinting]),
+	iPoland: (1, [iCivilLiberties]),
 }
 
 dEraGoals = {}
 
 dWonderGoals = {
-	iCivEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
-	iCivGreece: (2, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
-	iCivCarthage: (0, [iGreatCothon], False),
-	iCivPolynesia: (2, [iMoaiStatues], True),
-	iCivMaya: (1, [iTempleOfKukulkan], True),
-	iCivMoors: (1, [iMezquita], False),
-	iCivKhmer: (0, [iWatPreahPisnulok], False),
-	iCivFrance: (2, [iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain], True),
-	iCivMali: (1, [iUniversityOfSankore], False),
-	iCivItaly: (0, [iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore], True),
-	iCivMughals: (1, [iTajMahal, iRedFort, iShalimarGardens], True),
-	iCivAmerica: (1, [iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations], True),
-	iCivBrazil: (1, [iWembley, iCristoRedentor, iItaipuDam], True),
+	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
+	iGreece: (2, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
+	iCarthage: (0, [iGreatCothon], False),
+	iPolynesia: (2, [iMoaiStatues], True),
+	iMaya: (1, [iTempleOfKukulkan], True),
+	iMoors: (1, [iMezquita], False),
+	iKhmer: (0, [iWatPreahPisnulok], False),
+	iFrance: (2, [iNotreDame, iVersailles, iLouvre, iEiffelTower, iMetropolitain], True),
+	iMali: (1, [iUniversityOfSankore], False),
+	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore], True),
+	iMughals: (1, [iTajMahal, iRedFort, iShalimarGardens], True),
+	iAmerica: (1, [iStatueOfLiberty, iBrooklynBridge, iEmpireStateBuilding, iGoldenGateBridge, iPentagon, iUnitedNations], True),
+	iBrazil: (1, [iWembley, iCristoRedentor, iItaipuDam], True),
 }
 
 dReligionGoals = {}
@@ -235,18 +235,18 @@ def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
 	if scenario() == i1700AD:
-		for iCiv in [iCivChina, iCivIndia, iCivTamils, iCivKorea, iCivVikings, iCivTurks, iCivSpain, iCivHolyRome, iCivPoland, iCivPortugal, iCivMughals, iCivOttomans, iCivThailand]:
+		for iCiv in [iChina, iIndia, iTamils, iKorea, iVikings, iTurks, iSpain, iHolyRome, iPoland, iPortugal, iMughals, iOttomans, iThailand]:
 			loseAll(slot(iCiv))
 			
-		win(slot(iCivIran), 0)
-		win(slot(iCivJapan), 0)
-		win(slot(iCivFrance), 0)
-		win(slot(iCivCongo), 0)
+		win(slot(iIran), 0)
+		win(slot(iJapan), 0)
+		win(slot(iFrance), 0)
+		win(slot(iCongo), 0)
 		
 		# French goal needs to be winnable
-		data.setWonderBuilder(iNotreDame, slot(iCivFrance))
-		data.setWonderBuilder(iVersailles, slot(iCivFrance))
-		data.setWonderBuilder(iLouvre, slot(iCivFrance))
+		data.setWonderBuilder(iNotreDame, slot(iFrance))
+		data.setWonderBuilder(iVersailles, slot(iFrance))
+		data.setWonderBuilder(iLouvre, slot(iFrance))
 		
 		# help Congo
 		data.iCongoSlaveCounter += 500
@@ -277,7 +277,7 @@ def checkTurn(iGameTurn, iPlayer):
 	# Don't check AI civilizations to improve speed
 	if not pPlayer.isHuman() and data.bIgnoreAI: return
 	
-	if iCiv == iCivEgypt:
+	if iCiv == iEgypt:
 	
 		# first goal: have 500 culture in 850 BC
 		if iGameTurn == year(-850):
@@ -297,7 +297,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivBabylonia:
+	elif iCiv == iBabylonia:
 	
 		# first goal: be the first to discover Construction, Arithmetics, Writing, Calendar and Contract
 		
@@ -315,7 +315,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivHarappa:
+	elif iCiv == iHarappa:
 	
 		# first goal: establish a trade connection with another civilization by 1600 BC
 		if isPossible(iPlayer, 0):
@@ -337,7 +337,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(-800):
 			expire(iPlayer, 2)
 				
-	elif iCiv == iCivChina:
+	elif iCiv == iChina:
 	
 		# first goal: build two Confucian and Taoist Cathedrals by 1000 AD
 		if iGameTurn == year(1000):
@@ -356,16 +356,16 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1800):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivGreece:
+	elif iCiv == iGreece:
 	
 		# first goal: be the first to discover Mathematics, Literature, Aesthetics, Medicine and Philosophy
 			
 		# second goal: control Egypt, Phoenicia, Babylonia and Persia in 330 BC
 		if iGameTurn == year(-330):
-			bEgypt = checkOwnedCiv(iPlayer, iCivEgypt)
-			bPhoenicia = checkOwnedCiv(iPlayer, iCivCarthage)
-			bBabylonia = checkOwnedCiv(iPlayer, iCivBabylonia)
-			bPersia = checkOwnedCiv(iPlayer, iCivPersia)
+			bEgypt = checkOwnedCiv(iPlayer, iEgypt)
+			bPhoenicia = checkOwnedCiv(iPlayer, iCarthage)
+			bBabylonia = checkOwnedCiv(iPlayer, iBabylonia)
+			bPersia = checkOwnedCiv(iPlayer, iPersia)
 			if bEgypt and bPhoenicia and bBabylonia and bPersia:
 				win(iPlayer, 1)
 			else:
@@ -375,7 +375,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(-250):
 			expire(iPlayer, 2)
 				
-	elif iCiv == iCivIndia:
+	elif iCiv == iIndia:
 	
 		# first goal: control the Hindu and Buddhist shrine in 100 BC
 		if iGameTurn == year(-100):
@@ -397,7 +397,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivPhoenicia:
+	elif iCiv == iPhoenicia:
 	
 		# first goal: build a Palace and the Great Cothon in Carthagee by 300 BC
 		if isPossible(iPlayer, 0):
@@ -411,8 +411,8 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# second goal: control Italy and Iberia in 100 BC
 		if iGameTurn == year(-100):
-			bItaly = isControlled(iPlayer, plots.rectangle(Areas.dNormalArea[iCivItaly]).without((62, 47), (63, 47), (63, 46)))
-			bIberia = isControlled(iPlayer, plots.of(Areas.getNormalArea(iCivSpain)))
+			bItaly = isControlled(iPlayer, plots.rectangle(Areas.dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)))
+			bIberia = isControlled(iPlayer, plots.of(Areas.getNormalArea(iSpain)))
 			if bItaly and bIberia:
 				win(iPlayer, 1)
 			else:
@@ -425,7 +425,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivPolynesia:
+	elif iCiv == iPolynesia:
 	
 		# first goal: settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
 		if iGameTurn == year(800):
@@ -439,7 +439,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1200):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivPersia:
+	elif iCiv == iPersia:
 		
 		# first goal: control 7% of world territory by 140 AD
 		if isPossible(iPlayer, 0):
@@ -464,7 +464,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 					
-	elif iCiv == iCivRome:
+	elif iCiv == iRome:
 	
 		# first goal: build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD
 		if iGameTurn == year(100):
@@ -472,12 +472,12 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# second goal: control Iberia, Gaul, Britain, Africa, Greece, Asia Minor and Egypt in 320 AD
 		if iGameTurn == year(320):
-			bSpain = cities.of(Areas.getNormalArea(iCivSpain)).owner(iPlayer) >= 2
-			bFrance = cities.start(tFranceTL).end(Areas.dNormalArea[iCivFrance][1]).owner(iPlayer) >= 2
-			bEngland = cities.rectangle(Areas.getCoreArea(iCivEngland)).owner(iPlayer) >= 1
+			bSpain = cities.of(Areas.getNormalArea(iSpain)).owner(iPlayer) >= 2
+			bFrance = cities.start(tFranceTL).end(Areas.dNormalArea[iFrance][1]).owner(iPlayer) >= 2
+			bEngland = cities.rectangle(Areas.getCoreArea(iEngland)).owner(iPlayer) >= 1
 			bCarthage = cities.start(tCarthageTL).end(tCarthageBR).owner(iPlayer) >= 2
-			bByzantium = cities.rectangle(Areas.getCoreArea(iCivByzantium)).owner(iPlayer) >= 4
-			bEgypt = cities.rectangle(Areas.getCoreArea(iCivEgypt)).owner(iPlayer) >= 2
+			bByzantium = cities.rectangle(Areas.getCoreArea(iByzantium)).owner(iPlayer) >= 4
+			bEgypt = cities.rectangle(Areas.getCoreArea(iEgypt)).owner(iPlayer) >= 2
 			if bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt:
 				win(iPlayer, 1)
 			else:
@@ -485,7 +485,7 @@ def checkTurn(iGameTurn, iPlayer):
 					
 		# third goal: be first to discover Theology, Machinery and Civil Service
 		
-	elif iCiv == iCivMaya:
+	elif iCiv == iMaya:
 		
 		# first goal: discover Calendar by 200 AD
 		if iGameTurn == year(200):
@@ -500,7 +500,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if any(team(iPlayer).canContact(slot(iEuropean)) for iEuropean in dCivGroups[iCivGroupEurope]):
 				win(iPlayer, 2)
 		
-	elif iCiv == iCivTamils:
+	elif iCiv == iTamils:
 	
 		# first goal: have 3000 gold and 2000 culture in 800 AD
 		if iGameTurn == year(800):
@@ -540,7 +540,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1200):
 			expire(iPlayer, 2)
 					
-	elif iCiv == iCivEthiopia:
+	elif iCiv == iEthiopia:
 		
 		# first goal: acquire three incense resources by 400 AD
 		if isPossible(iPlayer, 0):
@@ -573,7 +573,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivKorea:
+	elif iCiv == iKorea:
 	
 		# first goal: build a Buddhist Stupa and a Confucian Academy by 1200 AD
 		if iGameTurn == year(1200):
@@ -583,7 +583,7 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: sink 20 enemy ships
 					
-	elif iCiv == iCivByzantium:
+	elif iCiv == iByzantium:
 		
 		# first goal: have 5000 gold in 1000 AD
 		if iGameTurn == year(1000):
@@ -611,7 +611,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 					
-	elif iCiv == iCivJapan:
+	elif iCiv == iJapan:
 	
 		# first goal: have an average culture of 6000 by 1600 AD without ever losing a city
 		if isPossible(iPlayer, 0):
@@ -636,7 +636,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# third goal: be the first to discover 5 modern techs
 		
-	elif iCiv == iCivVikings:
+	elif iCiv == iVikings:
 	
 		# first goal: control the core of a European civilization in 1050 AD
 		if iGameTurn == year(1050):
@@ -658,7 +658,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1500):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivTurks:
+	elif iCiv == iTurks:
 	
 		# first goal: control 6% of the world's territory and pillage 20 improvements by 900 AD
 		if isPossible(iPlayer, 0):
@@ -704,7 +704,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1400):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivArabia:
+	elif iCiv == iArabia:
 	
 		# first goal: be the most advanced civilization in 1300 AD
 		if iGameTurn == year(1300):
@@ -715,11 +715,11 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# second goal: control or vassalize Spain, the Maghreb, Egypt, Mesopotamia and Persia in 1300 AD
 		if iGameTurn == year(1300):
-			bEgypt = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivEgypt)))
+			bEgypt = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iEgypt)))
 			bMaghreb = isControlledOrVassalized(iPlayer, plots.start(tCarthageTL).end(tCarthageBR))
-			bMesopotamia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivBabylonia)))
-			bPersia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivPersia)))
-			bSpain = isControlledOrVassalized(iPlayer, plots.of(Areas.getNormalArea(iCivSpain)))
+			bMesopotamia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iBabylonia)))
+			bPersia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iPersia)))
+			bSpain = isControlledOrVassalized(iPlayer, plots.of(Areas.getNormalArea(iSpain)))
 			if bSpain and bMaghreb and bEgypt and bMesopotamia and bPersia:
 				win(iPlayer, 1)
 			else:
@@ -730,7 +730,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if game.calculateReligionPercent(iIslam) >= 30.0:
 				win(iPlayer, 2)
 				
-	elif iCiv == iCivTibet:
+	elif iCiv == iTibet:
 	
 		# first goal: acquire five cities by 1000 AD
 		if iGameTurn == year(1000):
@@ -746,13 +746,13 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: settle five great prophets in Lhasa by 1700 AD
 		if isPossible(iPlayer, 2):
-			if countCitySpecialists(iPlayer, Areas.getCapital(iCivTibet), iSpecialistGreatProphet) >= 5:
+			if countCitySpecialists(iPlayer, Areas.getCapital(iTibet), iSpecialistGreatProphet) >= 5:
 				win(iPlayer, 2)
 				
 		if iGameTurn == year(1700):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivIndonesia:
+	elif iCiv == iIndonesia:
 	
 		# first goal: have the largest population in the world in 1300 AD
 		if iGameTurn == year(1300):
@@ -776,7 +776,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivMoors:
+	elif iCiv == iMoors:
 	
 		# first goal: control three cities in the Maghreb and conquer two cities in Iberia and West Africa
 		if iGameTurn == year(1200):
@@ -812,7 +812,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1650):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivSpain:
+	elif iCiv == iSpain:
 	
 		# first goal: be the first to found a colony in America
 		
@@ -839,7 +839,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivFrance:
+	elif iCiv == iFrance:
 	
 		# first goal: have legendary culture in Paris in 1700 AD
 		if iGameTurn == year(1700):
@@ -866,7 +866,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1900):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivKhmer:
+	elif iCiv == iKhmer:
 	
 		# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok in 1200 AD
 		if iGameTurn == year(1200):
@@ -895,7 +895,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1450):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivEngland:
+	elif iCiv == iEngland:
 	
 		# first goal: colonize every continent by 1730 AD
 		if iGameTurn == year(1730):
@@ -915,7 +915,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: be the first to enter the Industrial and Modern eras
 		
-	elif iCiv == iCivHolyRome:
+	elif iCiv == iHolyRome:
 	
 		# first goal: control Saint Peter's Basilica in 1000 AD, the Church of the Anastasis in 1200 AD and All Saint's Church in 1550 AD
 		if iGameTurn == year(1000):
@@ -962,7 +962,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1850):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivRussia:
+	elif iCiv == iRussia:
 	
 		# first goal: found seven cities in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
 		if iGameTurn == year(1700):
@@ -970,7 +970,7 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iPlayer, 0)
 				
 		if isPossible(iPlayer, 0):
-			if isConnectedByRailroad(iPlayer, Areas.getCapital(iCivRussia), lSiberianCoast):
+			if isConnectedByRailroad(iPlayer, Areas.getCapital(iRussia), lSiberianCoast):
 				win(iPlayer, 0)
 					
 		if iGameTurn == year(1920):
@@ -986,7 +986,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1950):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivMali:
+	elif iCiv == iMali:
 		
 		# first goal: conduct a trade mission to your holy city by 1350 AD
 		if iGameTurn == year(1350):
@@ -1011,7 +1011,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivPoland:
+	elif iCiv == iPoland:
 	
 		# first goal: have three cities with a population of 12 by 1400 AD
 		if isPossible(iPlayer, 0):
@@ -1027,7 +1027,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1600):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivPortugal:
+	elif iCiv == iPortugal:
 	
 		# first goal: have open borders with 14 civilizations by 1550 AD
 		if isPossible(iPlayer, 0):
@@ -1056,7 +1056,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivInca:
+	elif iCiv == iInca:
 	
 		# first goal: build five Tambos and a road along the Andean coast by 1500 AD
 		if isPossible(iPlayer, 0):
@@ -1080,7 +1080,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivItaly:
+	elif iCiv == iItaly:
 	
 		# first goal: build San Marco Basilica, the Sistine Chapel and Santa Maria del Fiore by 1500 AD
 		if iGameTurn == year(1500):
@@ -1105,11 +1105,11 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1930):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivMongols:
+	elif iCiv == iMongols:
 	
 		# first goal: control China by 1300 AD
 		if isPossible(iPlayer, 0):
-			if checkOwnedCiv(iPlayer, iCivChina):
+			if checkOwnedCiv(iPlayer, iChina):
 				win(iPlayer, 0)
 				
 		if iGameTurn == year(1300):
@@ -1125,7 +1125,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1500):
 			expire(iPlayer, 2)
 					
-	elif iCiv == iCivMughals:
+	elif iCiv == iMughals:
 	
 		# first goal: build three Muslim Cathedrals by 1500 AD
 		if iGameTurn == year(1500):
@@ -1142,7 +1142,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 			
-	elif iCiv == iCivAztecs:
+	elif iCiv == iAztecs:
 		
 		# first goal: make Tenochtitlan the largest city in the world in 1520 AD
 		if iGameTurn == year(1520):
@@ -1164,7 +1164,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if data.iAztecSlaves >= 20:
 				win(iPlayer, 2)
 				
-	elif iCiv == iCivOttomans:
+	elif iCiv == iOttomans:
 	
 		# first goal: have four non-obsolete wonders in your capital in 1550 AD
 		if iGameTurn == year(1550):
@@ -1197,7 +1197,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivThailand:
+	elif iCiv == iThailand:
 	
 		# first goal: have open borders with 10 civilizations by 1650 AD
 		if isPossible(iPlayer, 0):
@@ -1221,7 +1221,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivCongo:
+	elif iCiv == iCongo:
 	
 		# first goal: acquire 15% of the votes in the Apostolic Palace by 1650 AD
 		if isPossible(iPlayer, 0):
@@ -1237,7 +1237,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: enter the Industrial Era before anyone enters the Modern Era
 	
-	elif iCiv == iCivIran:
+	elif iCiv == iIran:
 		
 		# first goal: have open borders with 6 European civilizations in 1650
 		if iGameTurn == year(1650):
@@ -1265,11 +1265,11 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 		
-	elif iCiv == iCivNetherlands:
+	elif iCiv == iNetherlands:
 	
 		# first goal: settle three great merchants in Amsterdam by 1745 AD
 		if isPossible(iPlayer, 0):
-			if countCitySpecialists(iPlayer, Areas.getCapital(iCivNetherlands), iSpecialistGreatMerchant) >= 3:
+			if countCitySpecialists(iPlayer, Areas.getCapital(iNetherlands), iSpecialistGreatMerchant) >= 3:
 				win(iPlayer, 0)
 				
 		if iGameTurn == year(1745):
@@ -1287,13 +1287,13 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1775):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivGermany:
+	elif iCiv == iGermany:
 	
 		# first goal: settle seven great people in Berlin in 1900 AD
 		if iGameTurn == year(1900):
 			iCount = 0
 			for iSpecialist in lGreatPeople:
-				iCount += countCitySpecialists(iPlayer, Areas.getCapital(iCivGermany), iSpecialist)
+				iCount += countCitySpecialists(iPlayer, Areas.getCapital(iGermany), iSpecialist)
 			if iCount >= 7:
 				win(iPlayer, 0)
 			else:
@@ -1301,11 +1301,11 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# second goal: control Italy, France, England, Scandinavia and Russia
 		if iGameTurn == year(1940):
-			bItaly = checkOwnedCiv(iPlayer, iCivItaly)
-			bFrance = checkOwnedCiv(iPlayer, iCivFrance)
-			bEngland = checkOwnedCiv(iPlayer, iCivEngland)
-			bScandinavia = checkOwnedCiv(iPlayer, iCivVikings)
-			bRussia = checkOwnedCiv(iPlayer, iCivRussia)
+			bItaly = checkOwnedCiv(iPlayer, iItaly)
+			bFrance = checkOwnedCiv(iPlayer, iFrance)
+			bEngland = checkOwnedCiv(iPlayer, iEngland)
+			bScandinavia = checkOwnedCiv(iPlayer, iVikings)
+			bRussia = checkOwnedCiv(iPlayer, iRussia)
 			if bItaly and bFrance and bEngland and bScandinavia and bRussia:
 				win(iPlayer, 1)
 			else:
@@ -1313,12 +1313,12 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# third goal: be the first to complete the tech tree
 		
-	elif iCiv == iCivAmerica:
+	elif iCiv == iAmerica:
 	
 		# first goal: allow no European colonies in North America, Central America and the Caribbean and control or vassalize Mexico in 1930 AD
 		if iGameTurn == year(1900):
 			# TODO: isAreaFreeOfCivs expects players, this passes civs
-			if isAreaFreeOfCivs(plots.start(tNCAmericaTL).end(tNCAmericaBR), dCivGroups[iCivGroupEurope]) and isControlledOrVassalized(iPlayer, Areas.getCoreArea(iCivMexico, True)):
+			if isAreaFreeOfCivs(plots.start(tNCAmericaTL).end(tNCAmericaBR), dCivGroups[iCivGroupEurope]) and isControlledOrVassalized(iPlayer, Areas.getCoreArea(iMexico, True)):
 				win(iPlayer, 0)
 			else:
 				lose(iPlayer, 0)
@@ -1335,7 +1335,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1990):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivArgentina:
+	elif iCiv == iArgentina:
 	
 		# first goal: experience two golden ages by 1930 AD
 		if isPossible(iPlayer, 0):
@@ -1347,7 +1347,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# second goal: have lengendary culture in Buenos Aires by 1960 AD
 		if isPossible(iPlayer, 1):
-			if getCityCulture(iPlayer, Areas.getCapital(iCivArgentina)) >= turns(50000):
+			if getCityCulture(iPlayer, Areas.getCapital(iArgentina)) >= turns(50000):
 				win(iPlayer, 1)
 				
 		if iGameTurn == year(1960):
@@ -1364,7 +1364,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if pPlayer.isGoldenAge() and not pPlayer.isAnarchy():
 			data.iArgentineGoldenAgeTurns += 1
 	
-	elif iCiv == iCivMexico:
+	elif iCiv == iMexico:
 		
 		# first goal: build three cathedrals of your state religion by 1880 AD
 		if iGameTurn == year(1880):
@@ -1381,7 +1381,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iPlayer, 2)
 				
-	elif iCiv == iCivColombia:
+	elif iCiv == iColombia:
 		
 		# first goal: allow no European civilizations in Peru, Gran Colombia, the Guayanas and the Caribbean in 1870 AD
 		if iGameTurn == year(1870):
@@ -1417,7 +1417,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1950):
 			expire(iPlayer, 2)
 			
-	elif iCiv == iCivBrazil:
+	elif iCiv == iBrazil:
 	
 		# first goal: control 8 slave plantations and 4 pastures in 1880 AD
 		if iGameTurn == year(1880):
@@ -1436,7 +1436,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == year(1950):
 			expire(iPlayer, 2)
 				
-	elif iCiv == iCivCanada:
+	elif iCiv == iCanada:
 	
 		# first goal: connect your capital to an Atlantic and a Pacific port by 1920 AD
 		if isPossible(iPlayer, 0):
@@ -1545,7 +1545,7 @@ def onCityBuilt(iPlayer, city):
 				data.iFirstNewWorldColony = iPlayer
 			
 				# second Viking goal: found a city in America by 1100 AD
-				iVikingPlayer = slot(iCivVikings)
+				iVikingPlayer = slot(iVikings)
 				if isPossible(iVikingPlayer, 1):
 					if iPlayer == iVikingPlayer:
 						win(iVikingPlayer, 1)
@@ -1553,7 +1553,7 @@ def onCityBuilt(iPlayer, city):
 						lose(iVikingPlayer, 1)
 					
 				# first Spanish goal: be the first to found a colony in America
-				iSpainPlayer = slot(iCivSpain)
+				iSpainPlayer = slot(iSpain)
 				if isPossible(iSpainPlayer, 0):
 					if iPlayer == iSpainPlayer:
 						win(iSpainPlayer, 0)
@@ -1562,7 +1562,7 @@ def onCityBuilt(iPlayer, city):
 				
 	# first Polynesian goal: settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas, Easter Island
 	# second Polynesian goal: control Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
-	if iCiv == iCivPolynesia:
+	if iCiv == iPolynesia:
 		iCount = 0
 		if getNumCitiesInArea(iPlayer, plots.start(tHawaiiTL).end(tHawaiiBR)) >= 1: iCount += 1
 		if getNumCitiesInArea(iPlayer, plots.start(tNewZealandTL).end(tNewZealandBR)) >= 1: iCount += 1
@@ -1578,13 +1578,13 @@ def onCityBuilt(iPlayer, city):
 				win(iPlayer, 1)
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
-	elif iCiv == iCivTibet:
+	elif iCiv == iTibet:
 		if isPossible(iPlayer, 0):
 			if pPlayer.getNumCities() >= 5:
 				win(iPlayer, 0)
 					
 	# first English goal: colonize every continent by 1730 AD
-	elif iCiv == iCivEngland:
+	elif iCiv == iEngland:
 		if isPossible(iPlayer, 0):
 			bNAmerica = getNumCitiesInRegions(iPlayer, lNorthAmerica) >= 5
 			bSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica) >= 3
@@ -1603,19 +1603,19 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	if not game.isVictoryValid(7): return
 	
 	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
-	if iOwnerCiv == iCivJapan:
+	if iOwnerCiv == iJapan:
 		expire(iPlayer, 0)
 	
 	if not player(iPlayer).isHuman() and data.bIgnoreAI: return
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
-	if iCiv == iCivTibet:
+	if iCiv == iTibet:
 		if isPossible(iPlayer, 0):
 			if pPlayer.getNumCities() >= 5:
 				win(iPlayer, 0)
 					
 	# first English goal: colonize every continent by 1730 AD
-	elif iCiv == iCivEngland:
+	elif iCiv == iEngland:
 		if isPossible(iPlayer, 0):
 			bNAmerica = getNumCitiesInRegions(iPlayer, lNorthAmerica) >= 5
 			bSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica) >= 3
@@ -1626,7 +1626,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 				win(iPlayer, 0)
 				
 	# second Dutch goal: conquer four European colonies by 1745 AD
-	elif iCiv == iCivNetherlands:
+	elif iCiv == iNetherlands:
 		if isPossible(iPlayer, 1):
 			if iOwnerCiv in dCivGroups[iCivGroupEurope]:
 				bColony = city.getRegionID() not in lEurope
@@ -1637,7 +1637,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 						win(iPlayer, 1)
 				
 	# second Canadian goal: control all cities and 90% of the territory in Canada by 1950 AD without ever conquering a city
-	elif iCiv == iCivCanada:
+	elif iCiv == iCanada:
 		if bConquest:
 			expire(iPlayer, 1)
 			
@@ -1664,7 +1664,7 @@ def onTechAcquired(iPlayer, iTech):
 				elif checkTechGoal(iLoopPlayer, lTechs): win(iLoopPlayer, iGoal)
 				
 		# third Japanese goal: be the first to discover ten Global and ten Digital technologies
-		iJapanPlayer = slot(iCivJapan)
+		iJapanPlayer = slot(iJapan)
 		if isPossible(iJapanPlayer, 2):
 			if iEra in [iGlobal, iDigital]:
 				if countFirstDiscovered(iPlayer, iGlobal) >= 8 and countFirstDiscovered(iPlayer, iDigital) >= 8:
@@ -1676,7 +1676,7 @@ def onTechAcquired(iPlayer, iTech):
 					lose(iJapanPlayer, 2)
 				
 		# third English goal: be the first to discover ten Renaissance and ten Industrial technologies
-		iEnglandPlayer = slot(iCivEngland)
+		iEnglandPlayer = slot(iEngland)
 		if isPossible(iEnglandPlayer, 2):
 			if iEra in [iRenaissance, iIndustrial]:
 				if countFirstDiscovered(iPlayer, iRenaissance) >= 8 and countFirstDiscovered(iPlayer, iIndustrial) >= 8:
@@ -1688,7 +1688,7 @@ def onTechAcquired(iPlayer, iTech):
 					lose(iEnglandPlayer, 2)
 				
 		# third German goal: be the first to discover ten Industrial and ten Global technologies
-		iGermanyPlayer = slot(iCivGermany)
+		iGermanyPlayer = slot(iGermany)
 		if isPossible(iGermanyPlayer, 2):
 			if iEra in [iIndustrial, iGlobal]:
 				if countFirstDiscovered(iPlayer, iIndustrial) >= 8 and countFirstDiscovered(iPlayer, iGlobal) >= 8:
@@ -1714,14 +1714,14 @@ def onTechAcquired(iPlayer, iTech):
 					win(iLoopPlayer, iGoal)
 				
 	# first Maya goal: discover Calendar by 200 AD
-	if iCiv == iCivMaya:
+	if iCiv == iMaya:
 		if not pPlayer.isReborn() and isPossible(iPlayer, 0):
 			if iTech == iCalendar:
 				if team(iPlayer).isHasTech(iCalendar):
 					win(iPlayer, 0)
 				
 	# third Congolese goal: enter the Industrial era before anyone enters the Modern era
-	iCongoPlayer = slot(iCivCongo)
+	iCongoPlayer = slot(iCongo)
 	if isPossible(iCongoPlayer, 2):
 		if iEra == iIndustrial and iPlayer == iCongoPlayer:
 			win(iCongoPlayer, 2)
@@ -1758,7 +1758,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	if not player(iPlayer).isAlive(): return
 	
 	# first Chinese goal: build two Confucian and Taoist Cathedrals by 1000 AD
-	if iCiv == iCivChina:
+	if iCiv == iChina:
 		if isPossible(iPlayer, 0):
 			if iBuilding in [iConfucianCathedral, iTaoistCathedral]:
 				iConfucian = getNumBuildings(iPlayer, iConfucianCathedral)
@@ -1767,7 +1767,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					win(iPlayer, 0)
 					
 	# second Harappan goal: build three Baths, two Granaries and two Smokehouses by 1500 BC
-	elif iCiv == iCivHarappa:
+	elif iCiv == iHarappa:
 		if isPossible(iPlayer, 1):
 			if iBuilding in [iReservoir, iGranary, iSmokehouse]:
 				iNumBaths = getNumBuildings(iPlayer, iReservoir)
@@ -1777,7 +1777,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					win(iPlayer, 1)
 					
 	# second Indian goal: build 20 temples by 700 AD
-	elif iCiv == iCivIndia:
+	elif iCiv == iIndia:
 		if isPossible(iPlayer, 1):
 			lTemples = [iTemple + i*4 for i in range(iNumReligions)]
 			if iBuilding in lTemples:
@@ -1788,7 +1788,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					win(iPlayer, 1)
 	
 	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Arenas and 3 Forums by 100 AD
-	elif iCiv == iCivRome:
+	elif iCiv == iRome:
 		if isPossible(iPlayer, 0):
 			if iBuilding in [iBarracks, iAqueduct, iArena, iForum]:
 				iNumBarracks = getNumBuildings(iPlayer, iBarracks)
@@ -1799,7 +1799,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					win(iPlayer, 0)
 					
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
-	elif iCiv == iCivKorea:
+	elif iCiv == iKorea:
 		if isPossible(iPlayer, 0):
 			if iBuilding in [iConfucianCathedral, iBuddhistCathedral]:
 				bBuddhist = getNumBuildings(iPlayer, iBuddhistCathedral) > 0
@@ -1808,7 +1808,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					win(iPlayer, 0)
 					
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
-	elif iCiv == iCivPoland:
+	elif iCiv == iPoland:
 		if isPossible(iPlayer, 2):
 			iCatholic = getNumBuildings(iPlayer, iCatholicCathedral)
 			iOrthodox = getNumBuildings(iPlayer, iOrthodoxCathedral)
@@ -1817,7 +1817,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				win(iPlayer, 2)
 				
 	# second Aztec goal: build 6 pagan temples and sacrificial altars
-	elif iCiv == iCivAztecs:
+	elif iCiv == iAztecs:
 		if isPossible(iPlayer, 1):
 			if iBuilding in [iPaganTemple, iSacrificialAltar]:
 				iTemples = getNumBuildings(iPlayer, iPaganTemple)
@@ -1826,7 +1826,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					win(iPlayer, 1)
 	
 	# first Mexican goal: build three cathedrals of your state religion by 1880 AD	
-	elif iCiv == iCivMexico:				
+	elif iCiv == iMexico:				
 		if isPossible(iPlayer, 0):
 			iStateReligion = pPlayer.getStateReligion()
 			if iStateReligion >= 0:
@@ -1836,14 +1836,14 @@ def onBuildingBuilt(iPlayer, iBuilding):
 						win(iPlayer, 0)
 	
 	# first Mughal goal: build three Islamic Mosques by 1500 AD
-	elif iCiv == iCivMughals:
+	elif iCiv == iMughals:
 		if isPossible(iPlayer, 0):
 			if iBuilding == iIslamicCathedral:
 				if getNumBuildings(iPlayer, iIslamicCathedral) >= 3:
 					win(iPlayer, 0)
 		
 	# first Incan goal: build 5 tambos and a road along the Andean coast by 1500 AD
-	elif iCiv == iCivInca:
+	elif iCiv == iInca:
 		if isPossible(iPlayer, 0):
 			if iBuilding == iTambo:
 				if isRoad(iPlayer, lAndeanCoast) and getNumBuildings(iPlayer, iTambo) >= 5:
@@ -1881,7 +1881,7 @@ def onCityRazed(iPlayer, city):
 	if not player(iPlayer).isHuman() and data.bIgnoreAI: return
 	
 	# second Mongol goal: raze seven cities
-	if iCiv == iCivMongols:
+	if iCiv == iMongols:
 		if isPossible(iPlayer, 1):
 			data.iMongolRazes += 1
 			if data.iMongolRazes >= 7:
@@ -1891,7 +1891,7 @@ def onProjectBuilt(iPlayer, iProject):
 	if not game.isVictoryValid(7): return
 	
 	# second Russian goal: be the first civilization to complete the Manhattan Project and the Apollo Program
-	iRussiaPlayer = slot(iCivRussia)
+	iRussiaPlayer = slot(iRussia)
 	if isPossible(iRussiaPlayer, 1):
 		if iProject in [iLunarLanding, iManhattanProject]:
 			if iPlayer == iRussiaPlayer:
@@ -1914,13 +1914,13 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 	iDomainSea = DomainTypes.DOMAIN_SEA
 	
 	# second English goal: control a total of 25 frigates and ships of the line and sink 50 ships in 1800 AD
-	if iWinningCiv == iCivEngland:
+	if iWinningCiv == iEngland:
 		if isPossible(iWinningPlayer, 1):
 			if pLosingUnitInfo.getDomainType() == iDomainSea:
 				data.iEnglishSinks += 1
 				
 	# third Korean goal: sink 20 enemy ships
-	elif iWinningCiv == iCivKorea:
+	elif iWinningCiv == iKorea:
 		if isPossible(iWinningPlayer, 2):
 			if pLosingUnitInfo.getDomainType() == iDomainSea:
 				data.iKoreanSinks += 1
@@ -1937,7 +1937,7 @@ def onGreatPersonBorn(iPlayer, unit):
 		data.lFirstGreatPeople[lGreatPeopleUnits.index(iUnitType)] = iPlayer
 	
 	# second Mexican goal: get three great generals by 1940 AD
-	if iCiv == iCivMexico:
+	if iCiv == iMexico:
 		if isPossible(iPlayer, 1):
 			if pUnitInfo.getGreatPeoples(iSpecialistGreatGeneral):
 				data.iMexicanGreatGenerals += 1
@@ -1951,16 +1951,16 @@ def onUnitPillage(iPlayer, iGold, iUnit):
 	iCiv = civ(iPlayer)
 
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
-	if iCiv == iCivVikings:
+	if iCiv == iVikings:
 		if isPossible(iPlayer, 2):
 			data.iVikingGold += iGold
 			
 	# first Turkic goal: pillage 20 improvements by 900 AD
-	elif iCiv == iCivTurks:
+	elif iCiv == iTurks:
 		if isPossible(iPlayer, 0):
 			data.iTurkicPillages += 1
 			
-	elif iCiv == iCivMoors:
+	elif iCiv == iMoors:
 		if isPossible(iPlayer, 2) and iUnit == iCorsair:
 			data.iMoorishGold += iGold
 		
@@ -1968,7 +1968,7 @@ def onCityCaptureGold(iPlayer, iGold):
 	iCiv = civ(iPlayer)
 
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
-	if iCiv == iCivVikings:
+	if iCiv == iVikings:
 		if isPossible(iPlayer, 2):
 			data.iVikingGold += iGold
 		
@@ -1976,7 +1976,7 @@ def onPlayerGoldTrade(iPlayer, iGold):
 	iCiv = civ(iPlayer)
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
-	if iCiv == iCivTamils:
+	if iCiv == iTamils:
 		if isPossible(iPlayer, 2):
 			data.iTamilTradeGold += iGold * 100
 		
@@ -1984,7 +1984,7 @@ def onPlayerSlaveTrade(iPlayer, iGold):
 	iCiv = civ(iPlayer)
 
 	# second Congolese goal: gain 1000 gold through slave trade by 1800 AD
-	if iCiv == iCivCongo:
+	if iCiv == iCongo:
 		if isPossible(iPlayer, 1):
 			data.iCongoSlaveCounter += iGold
 			if data.iCongoSlaveCounter >= turns(1000):
@@ -1995,11 +1995,11 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	pPlayer = player(iPlayer)
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
-	if iCiv == iCivTamils:
+	if iCiv == iTamils:
 		data.iTamilTradeGold += iGold * 100
 		
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
-	elif iCiv == iCivMali:
+	elif iCiv == iMali:
 		if isPossible(iPlayer, 0):
 			iStateReligion = pPlayer.getStateReligion()
 			if iStateReligion != -1:
@@ -2011,7 +2011,7 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 	iBrokerCiv = civ(iBroker)
 
 	# third Canadian goal: end twelve wars through diplomacy by 2000 AD
-	if iBrokerCiv == iCivCanada:
+	if iBrokerCiv == iCanada:
 		if isPossible(iBroker, 2):
 			data.iCanadianPeaceDeals += 1
 			if data.iCanadianPeaceDeals >= 12:
@@ -2021,13 +2021,13 @@ def onBlockade(iPlayer, iGold):
 	iCiv = civ(iPlayer)
 
 	# third Moorish goal: acquire 3000 gold through piracy by 1650 AD
-	if iCiv == iCivMoors:
+	if iCiv == iMoors:
 		if isPossible(iPlayer, 2):
 			data.iMoorishGold += iGold
 			
 def onFirstContact(iPlayer, iHasMetPlayer):
 	# third Maya goal: make contact with a European civilization before they have discovered America
-	iMayaPlayer = slot(iCivMaya)
+	iMayaPlayer = slot(iMaya)
 	if isPossible(iMayaPlayer, 2):
 		if iMayaPlayer in [iPlayer, iHasMetPlayer]:
 			if iPlayer == iMayaPlayer and civ(iHasMetPlayer) in dCivGroups[iCivGroupEurope]:
@@ -2046,7 +2046,7 @@ def onPlayerChangeStateReligion(iPlayer, iStateReligion):
 	iCiv = civ(iPlayer)
 
 	# second Ethiopian goal: convert to Orthodoxy five turns after it is founded
-	if iCiv == iCivEthiopia:
+	if iCiv == iEthiopia:
 		if iStateReligion == iOrthodoxy:
 			if game.isReligionFounded(iOrthodoxy):
 				if turn() <= game.getReligionGameTurnFounded(iOrthodoxy) + turns(5):
@@ -2528,7 +2528,7 @@ def checkOwnedCiv(iPlayer, iOwnedCiv):
 	iPlayerCities = getNumCitiesInArea(iPlayer, Areas.getNormalArea(iOwnedCiv))
 	iOwnedCities = getNumCitiesInArea(iOwnedPlayer, Areas.getNormalArea(iOwnedCiv))
 	
-	return (iPlayerCities >= 2 and iPlayerCities > iOwnedCities) or (iPlayerCities >= 1 and not player(iOwnedPlayer).isAlive()) or (iPlayerCities >= 1 and civ(iOwnedPlayer) == iCivPhoenicia)
+	return (iPlayerCities >= 2 and iPlayerCities > iOwnedCities) or (iPlayerCities >= 1 and not player(iOwnedPlayer).isAlive()) or (iPlayerCities >= 1 and civ(iOwnedPlayer) == iPhoenicia)
 	
 def isControlled(iPlayer, area):
 	lOwners = set(city.getOwner() for city in area.cities() if not is_minor(city))
@@ -3281,7 +3281,7 @@ def getPaganGoalHelp(iPlayer):
 	
 	elif paganReligion == "Teotl":
 		iCount = data.iTeotlSacrifices
-		if iCiv == iCivMaya:
+		if iCiv == iMaya:
 			return getIcon(iCount >= 10) + text("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", iCount * 5, 50)
 		return getIcon(iCount >= 10) + text("TXT_KEY_VICTORY_SACRIFICED_SLAVES", iCount, 10)
 	
@@ -3322,7 +3322,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if not AdvisorOpt.UHVProgressAfterFinish():
 			return aHelp
 
-	if iCiv == iCivEgypt:
+	if iCiv == iEgypt:
 		if iGoal == 0:
 			iCulture = pPlayer.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= turns(500)) + text("TXT_KEY_VICTORY_TOTAL_CULTURE", iCulture, turns(500)))
@@ -3335,7 +3335,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCulture = pPlayer.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= turns(5000)) + text("TXT_KEY_VICTORY_TOTAL_CULTURE", iCulture, turns(5000)))
 
-	elif iCiv == iCivHarappa:
+	elif iCiv == iHarappa:
 		if iGoal == 1:
 			iNumReservoirs = getNumBuildings(iPlayer, iReservoir)
 			iNumGranaries = getNumBuildings(iPlayer, iGranary)
@@ -3345,7 +3345,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumPopulation = pPlayer.getTotalPopulation()
 			aHelp.append(getIcon(iNumPopulation >= 30) + text("TXT_KEY_VICTORY_TOTAL_POPULATION", iNumPopulation, 30))
 			
-	elif iCiv == iCivBabylonia:
+	elif iCiv == iBabylonia:
 		if iGoal == 0:
 			bConstruction = data.lFirstDiscovered[iConstruction] == iPlayer
 			bArithmetics = data.lFirstDiscovered[iArithmetics] == iPlayer
@@ -3363,7 +3363,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bBestCity = isBestCity(iPlayer, (76, 40), cityCulture)
 			aHelp.append(getIcon(bBestCity) + text("TXT_KEY_VICTORY_MOST_CULTURED_CITY", pBestCity.getName()))
 			
-	elif iCiv == iCivChina:
+	elif iCiv == iChina:
 		if iGoal == 0:
 			iConfucianCounter = getNumBuildings(iPlayer, iConfucianCathedral)
 			iTaoistCounter = getNumBuildings(iPlayer, iTaoistCathedral)
@@ -3378,7 +3378,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iGoldenAgeTurns = data.iChineseGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= turns(32)) + text("TXT_KEY_VICTORY_GOLDEN_AGES", iGoldenAgeTurns / turns(8), 4))
 
-	elif iCiv == iCivGreece:
+	elif iCiv == iGreece:
 		if iGoal == 0:
 			bMathematics = data.lFirstDiscovered[iMathematics] == iPlayer
 			bLiterature = data.lFirstDiscovered[iLiterature] == iPlayer
@@ -3388,10 +3388,10 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bMathematics) + text("TXT_KEY_TECH_MATHEMATICS") + ' ' + getIcon(bLiterature) + text("TXT_KEY_TECH_LITERATURE") + ' ' + getIcon(bAesthetics) + text("TXT_KEY_TECH_AESTHETICS"))
 			aHelp.append(getIcon(bPhilosophy) + text("TXT_KEY_TECH_PHILOSOPHY") + ' ' + getIcon(bMedicine) + text("TXT_KEY_TECH_MEDICINE"))
 		elif iGoal == 1:
-			bEgypt = checkOwnedCiv(iPlayer, iCivEgypt)
-			bPhoenicia = checkOwnedCiv(iPlayer, iCivCarthage)
-			bBabylonia = checkOwnedCiv(iPlayer, iCivBabylonia)
-			bPersia = checkOwnedCiv(iPlayer, iCivPersia)
+			bEgypt = checkOwnedCiv(iPlayer, iEgypt)
+			bPhoenicia = checkOwnedCiv(iPlayer, iCarthage)
+			bBabylonia = checkOwnedCiv(iPlayer, iBabylonia)
+			bPersia = checkOwnedCiv(iPlayer, iPersia)
 			aHelp.append(getIcon(bEgypt) + text("TXT_KEY_CIV_EGYPT_SHORT_DESC") + ' ' + getIcon(bPhoenicia) + text("TXT_KEY_CIV_PHOENICIA_SHORT_DESC") + ' ' + getIcon(bBabylonia) + text("TXT_KEY_CIV_BABYLONIA_SHORT_DESC") + ' ' + getIcon(bPersia) + text("TXT_KEY_CIV_PERSIA_SHORT_DESC"))
 		elif iGoal == 2:
 			bParthenon = (getNumBuildings(iPlayer, iParthenon) > 0)
@@ -3400,7 +3400,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bArtemis = (getNumBuildings(iPlayer, iTempleOfArtemis) > 0)
 			aHelp.append(getIcon(bParthenon) + text("TXT_KEY_BUILDING_PARTHENON") + ' ' + getIcon(bColossus) + text("TXT_KEY_BUILDING_COLOSSUS") + ' ' + getIcon(bStatueOfZeus) + text("TXT_KEY_BUILDING_STATUE_OF_ZEUS") + ' ' + getIcon(bArtemis) + text("TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS"))
 
-	elif iCiv == iCivIndia:
+	elif iCiv == iIndia:
 		if iGoal == 0:
 			bBuddhistShrine = (getNumBuildings(iPlayer, iBuddhistShrine) > 0)
 			bHinduShrine = (getNumBuildings(iPlayer, iHinduShrine) > 0)
@@ -3415,20 +3415,20 @@ def getUHVHelp(iPlayer, iGoal):
 			popPercent = getPopulationPercent(iPlayer)
 			aHelp.append(getIcon(popPercent >= 20.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, 20))
 
-	elif iCiv == iCivCarthage:
+	elif iCiv == iCarthage:
 		if iGoal == 0:
 			bPalace = isBuildingInCity((58, 39), iPalace)
 			bGreatCothon = isBuildingInCity((58, 39), iGreatCothon)
 			aHelp.append(getIcon(bPalace) + text("TXT_KEY_BUILDING_PALACE") + ' ' + getIcon(bGreatCothon) + text("TXT_KEY_BUILDING_GREAT_COTHON"))
 		elif iGoal == 1:
-			bItaly = isControlled(iPlayer, plots.rectange(Areas.dNormalArea[iCivItaly]).without((62, 47), (63, 47), (63, 46)))
-			bIberia = isControlled(iPlayer, plots.of(Areas.getNormalArea(iCivSpain)))
+			bItaly = isControlled(iPlayer, plots.rectange(Areas.dNormalArea[iItaly]).without((62, 47), (63, 47), (63, 46)))
+			bIberia = isControlled(iPlayer, plots.of(Areas.getNormalArea(iSpain)))
 			aHelp.append(getIcon(bItaly) + text("TXT_KEY_VICTORY_ITALY") + ' ' + getIcon(bIberia) + text("TXT_KEY_VICTORY_IBERIA_CARTHAGE"))
 		elif iGoal == 2:
 			iTreasury = pPlayer.getGold()
 			aHelp.append(getIcon(iTreasury >= turns(5000)) + text("TXT_KEY_VICTORY_TOTAL_GOLD", iTreasury, turns(5000)))
 
-	elif iCiv == iCivPolynesia:
+	elif iCiv == iPolynesia:
 		if iGoal == 0 or iGoal == 1:
 			bHawaii = cities.start(tHawaiiTL).end(tHawaiiBR).owner(iPlayer).any()
 			bNewZealand = cities.start(tNewZealandTL).end(tNewZealandBR).owner(iPlayer).any()
@@ -3436,7 +3436,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bEasterIsland = cities.start(tEasterIslandTL).end(tEasterIslandBR).owner(iPlayer).any()
 			aHelp.append(getIcon(bHawaii) + text("TXT_KEY_VICTORY_HAWAII") + getIcon(bNewZealand) + text("TXT_KEY_VICTORY_NEW_ZEALAND") + getIcon(bMarquesas) + text("TXT_KEY_VICTORY_MARQUESAS") + getIcon(bEasterIsland) + text("TXT_KEY_VICTORY_EASTER_ISLAND"))
 
-	elif iCiv == iCivPersia:
+	elif iCiv == iPersia:
 		if iGoal == 0:
 			landPercent = getLandPercent(iPlayer)
 			aHelp.append(getIcon(landPercent >= 6.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % landPercent, 7))
@@ -3447,7 +3447,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCounter = countShrines(iPlayer)
 			aHelp.append(getIcon(iCounter >= 2) + text("TXT_KEY_VICTORY_NUM_SHRINES", iCounter, 2))
 				
-	elif iCiv == iCivRome:
+	elif iCiv == iRome:
 		if iGoal == 0:
 			iNumBarracks = getNumBuildings(iPlayer, iBarracks)
 			iNumAqueducts = getNumBuildings(iPlayer, iAqueduct)
@@ -3455,12 +3455,12 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumForums = getNumBuildings(iPlayer, iForum)
 			aHelp.append(getIcon(iNumBarracks >= 6) + text("TXT_KEY_VICTORY_NUM_BARRACKS", iNumBarracks, 6) + ' ' + getIcon(iNumAqueducts >= 5) + text("TXT_KEY_VICTORY_NUM_AQUEDUCTS", iNumAqueducts, 5) + ' ' + getIcon(iNumArenas >= 4) + text("TXT_KEY_VICTORY_NUM_ARENAS", iNumArenas, 4) + ' ' + getIcon(iNumForums >= 3) + text("TXT_KEY_VICTORY_NUM_FORUMS", iNumForums, 3))
 		elif iGoal == 1:
-			iCitiesSpain = cities.of(Areas.getNormalArea(iCivSpain)).owner(iPlayer).count()
-			iCitiesFrance = cities.start(tFranceTL).end(Areas.dNormalArea[iCivFrance][1]).owner(iPlayer).count()
-			iCitiesEngland = cities.of(Areas.getCoreArea(iCivEngland)).owner(iPlayer).count()
+			iCitiesSpain = cities.of(Areas.getNormalArea(iSpain)).owner(iPlayer).count()
+			iCitiesFrance = cities.start(tFranceTL).end(Areas.dNormalArea[iFrance][1]).owner(iPlayer).count()
+			iCitiesEngland = cities.of(Areas.getCoreArea(iEngland)).owner(iPlayer).count()
 			iCitiesCarthage = cities.start(tCarthageTL).end(tCarthageBR).owner(iPlayer).count()
-			iCitiesByzantium = cities.of(Areas.getCoreArea(iCivByzantium)).owner(iPlayer).count()
-			iCitiesEgypt = cities.of(Areas.getCoreArea(iCivEgypt)).owner(iPlayer).count()
+			iCitiesByzantium = cities.of(Areas.getCoreArea(iByzantium)).owner(iPlayer).count()
+			iCitiesEgypt = cities.of(Areas.getCoreArea(iEgypt)).owner(iPlayer).count()
 			aHelp.append(getIcon(iCitiesSpain >= 2) + text("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", iCitiesSpain, 2) + ' ' + getIcon(iCitiesFrance >= 3) + text("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", iCitiesFrance, 3) + ' ' + getIcon(iCitiesEngland >= 1) + text("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", iCitiesEngland, 1))
 			aHelp.append(getIcon(iCitiesCarthage >= 2) + text("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", iCitiesCarthage, 2) + ' ' + getIcon(iCitiesByzantium >= 4) + text("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", iCitiesByzantium, 4) + ' ' + getIcon(iCitiesEgypt >= 2) + text("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", iCitiesEgypt, 2))
 		elif iGoal == 2:
@@ -3474,7 +3474,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	# Maya goals have no stages
 
-	elif iCiv == iCivTamils:
+	elif iCiv == iTamils:
 		if iGoal == 0:
 			iTreasury = pPlayer.getGold()
 			iCulture = pPlayer.countTotalCulture()
@@ -3488,7 +3488,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iTradeGold = data.iTamilTradeGold / 100
 			aHelp.append(getIcon(iTradeGold >= turns(4000)) + text("TXT_KEY_VICTORY_TRADE_GOLD", iTradeGold, turns(4000)))
 
-	elif iCiv == iCivEthiopia:
+	elif iCiv == iEthiopia:
 		if iGoal == 0:
 			iNumIncense = pPlayer.getNumAvailableBonuses(iIncense)
 			aHelp.append(getIcon(iNumIncense >= 3) + text("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", iNumIncense, 3))
@@ -3504,7 +3504,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iMuslimCities = countRegionReligion(iIslam, lAfrica)
 			aHelp.append(getIcon(iOrthodoxCities > iMuslimCities) + text("TXT_KEY_VICTORY_ORTHODOX_CITIES", iOrthodoxCities) + ' ' + text("TXT_KEY_VICTORY_MUSLIM_CITIES", iMuslimCities))
 
-	elif iCiv == iCivKorea:
+	elif iCiv == iKorea:
 		if iGoal == 0:
 			bConfucianCathedral = (getNumBuildings(iPlayer, iConfucianCathedral) > 0)
 			bBuddhistCathedral = (getNumBuildings(iPlayer, iBuddhistCathedral) > 0)
@@ -3513,7 +3513,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumSinks = data.iKoreanSinks
 			aHelp.append(getIcon(iNumSinks >= 20) + text("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", iNumSinks, 20))
 
-	elif iCiv == iCivByzantium:
+	elif iCiv == iByzantium:
 		if iGoal == 0:
 			iTreasury = pPlayer.getGold()
 			aHelp.append(getIcon(iTreasury >= turns(5000)) + text("TXT_KEY_VICTORY_TOTAL_GOLD", iTreasury, turns(5000)))
@@ -3529,7 +3529,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNearEast = cities.start(tNearEastTL).end(tNearEastBR).owner(iPlayer).count()
 			aHelp.append(getIcon(iBalkans >= 3) + text("TXT_KEY_VICTORY_BALKANS", iBalkans, 3) + ' ' + getIcon(iNorthAfrica >= 3) + text("TXT_KEY_VICTORY_NORTH_AFRICA", iNorthAfrica, 3) + ' ' + getIcon(iNearEast >= 3) + text("TXT_KEY_VICTORY_NEAR_EAST", iNearEast, 3))
 
-	elif iCiv == iCivJapan:
+	elif iCiv == iJapan:
 		if iGoal == 0:
 			iAverageCulture = getAverageCulture(iPlayer)
 			aHelp.append(getIcon(iAverageCulture >= turns(6000)) + text("TXT_KEY_VICTORY_AVERAGE_CULTURE", iAverageCulture, turns(6000)))
@@ -3547,7 +3547,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iDigitalTechs = countFirstDiscovered(iPlayer, iDigital)
 			aHelp.append(getIcon(iGlobalTechs >= 8) + text("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", infos.era(iGlobal).getText(), iGlobalTechs, 8) + ' ' + getIcon(iDigitalTechs >= 8) + text("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", infos.era(iDigital).getText(), iDigitalTechs, 8))
 			
-	elif iCiv == iCivVikings:
+	elif iCiv == iVikings:
 		if iGoal == 0:
 			lEuroCivs = [iLoopCiv for iLoopCiv in dCivGroups[iCivGroupEurope] if dBirth[iLoopCiv] < 1050 and slot(iLoopCiv) != iPlayer]
 			bEuropeanCore = isCoreControlled(iPlayer, lEuroCivs)
@@ -3556,7 +3556,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iRaidGold = data.iVikingGold
 			aHelp.append(getIcon(iRaidGold >= turns(3000)) + text("TXT_KEY_VICTORY_ACQUIRED_GOLD", iRaidGold, turns(3000)))
 			
-	elif iCiv == iCivTurks:
+	elif iCiv == iTurks:
 		if iGoal == 0:
 			fLandPercent = getLandPercent(iPlayer)
 			iPillagedImprovements = data.iTurkicPillages
@@ -3589,23 +3589,23 @@ def getUHVHelp(iPlayer, iGoal):
 				else:
 					aHelp.append(getIcon(iCulture >= iRequiredCulture) + text("TXT_KEY_VICTORY_CAPITAL_CULTURE", capital.getName(), iCulture, iRequiredCulture))
 
-	elif iCiv == iCivArabia:
+	elif iCiv == iArabia:
 		if iGoal == 0:
 			iMostAdvancedCiv = getBestPlayer(iPlayer, playerTechs)
 			aHelp.append(getIcon(iMostAdvancedCiv == iPlayer) + text("TXT_KEY_VICTORY_MOST_ADVANCED_CIV", name(iMostAdvancedCiv)))
 		elif iGoal == 1:
-			bEgypt = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivEgypt)))
+			bEgypt = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iEgypt)))
 			bMaghreb = isControlledOrVassalized(iPlayer, plots.start(tCarthageTL).end(tCarthageBR))
-			bMesopotamia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivBabylonia)))
-			bPersia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivPersia)))
-			bSpain = isControlledOrVassalized(iPlayer, plots.of(Areas.getNormalArea(iCivSpain)))
+			bMesopotamia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iBabylonia)))
+			bPersia = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iPersia)))
+			bSpain = isControlledOrVassalized(iPlayer, plots.of(Areas.getNormalArea(iSpain)))
 			aHelp.append(getIcon(bEgypt) + text("TXT_KEY_CIV_EGYPT_SHORT_DESC") + ' ' + getIcon(bMaghreb) + text("TXT_KEY_VICTORY_MAGHREB") + ' ' + getIcon(bSpain) + text("TXT_KEY_CIV_SPAIN_SHORT_DESC"))
 			aHelp.append(getIcon(bMesopotamia) + text("TXT_KEY_VICTORY_MESOPOTAMIA") + ' ' + getIcon(bPersia) + text("TXT_KEY_CIV_PERSIA_SHORT_DESC"))
 		elif iGoal == 2:
 			fReligionPercent = game.calculateReligionPercent(iIslam)
 			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iIslam).getTextKey(), "%.2f%%" % fReligionPercent, 30))
 
-	elif iCiv == iCivTibet:
+	elif iCiv == iTibet:
 		if iGoal == 0:
 			iNumCities = pPlayer.getNumCities()
 			aHelp.append(getIcon(iNumCities >= 5) + text("TXT_KEY_VICTORY_CITIES_ACQUIRED", iNumCities, 5))
@@ -3613,10 +3613,10 @@ def getUHVHelp(iPlayer, iGoal):
 			fReligionPercent = game.calculateReligionPercent(iBuddhism)
 			aHelp.append(getIcon(fReligionPercent >= 25.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iBuddhism).getTextKey(), "%.2f%%" % fReligionPercent, 25))
 		elif iGoal == 2:
-			iCounter = countCitySpecialists(iPlayer, Areas.getCapital(iCivTibet), iSpecialistGreatProphet)
+			iCounter = countCitySpecialists(iPlayer, Areas.getCapital(iTibet), iSpecialistGreatProphet)
 			aHelp.append(getIcon(iCounter >= 5) + text("TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED", "Lhasa", iCounter, 5))
 
-	elif iCiv == iCivIndonesia:
+	elif iCiv == iIndonesia:
 		if iGoal == 0:
 			iHighestCiv = getBestPlayer(iPlayer, playerRealPopulation)
 			bHighest = (iHighestCiv == iPlayer)
@@ -3628,7 +3628,7 @@ def getUHVHelp(iPlayer, iGoal):
 			popPercent = getPopulationPercent(iPlayer)
 			aHelp.append(getIcon(popPercent >= 9.0) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", "%.2f%%" % popPercent, 9))
 
-	elif iCiv == iCivMoors:
+	elif iCiv == iMoors:
 		if iGoal == 0:
 			iIberia = getNumConqueredCitiesInArea(iPlayer, plots.start(tIberiaTL).end(tIberiaBR))
 			iMaghreb = getNumCitiesInArea(iPlayer, plots.start(tMaghrebTL).end(tMaghrebBR))
@@ -3645,7 +3645,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iRaidGold = data.iMoorishGold
 			aHelp.append(getIcon(iRaidGold >= turns(3000)) + text("TXT_KEY_VICTORY_PIRACY", iRaidGold, turns(3000)))
 
-	elif iCiv == iCivSpain:
+	elif iCiv == iSpain:
 		if iGoal == 1:
 			iNumGold = countResources(iPlayer, iGold)
 			iNumSilver = countResources(iPlayer, iSilver)
@@ -3655,7 +3655,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bNoProtestants = not isStateReligionInArea(iProtestantism, tEuropeTL, tEuropeBR) and not isStateReligionInArea(iProtestantism, tEasternEuropeTL, tEasternEuropeBR)
 			aHelp.append(getIcon(fReligionPercent >= 30.0) + text("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", infos.religion(iCatholicism).getTextKey(), "%.2f%%" % fReligionPercent, 30)) + ' ' + getIcon(bNoProtestants) + text("TXT_KEY_VICTORY_NO_PROTESTANTS")
 
-	elif iCiv == iCivFrance:
+	elif iCiv == iFrance:
 		if iGoal == 0:
 			iCulture = getCityCulture(iPlayer, (55, 50))
 			aHelp.append(getIcon(iCulture >= turns(50000)) + text("TXT_KEY_VICTORY_CITY_CULTURE", "Paris", iCulture, turns(50000)))
@@ -3675,7 +3675,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bNotreDame) + text("TXT_KEY_BUILDING_NOTRE_DAME") + ' ' + getIcon(bVersailles) + text("TXT_KEY_BUILDING_VERSAILLES") + ' ' + getIcon(bLouvre) + text("TXT_KEY_BUILDING_LOUVRE"))
 			aHelp.append(getIcon(bEiffelTower) + text("TXT_KEY_BUILDING_EIFFEL_TOWER") + ' ' + getIcon(bMetropolitain) + text("TXT_KEY_BUILDING_METROPOLITAIN"))
 
-	elif iCiv == iCivKhmer:
+	elif iCiv == iKhmer:
 		if iGoal == 0:
 			iNumBuddhism = getNumBuildings(iPlayer, iBuddhistMonastery)
 			iNumHinduism = getNumBuildings(iPlayer, iHinduMonastery)
@@ -3688,7 +3688,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCulture = pPlayer.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= turns(8000)) + text("TXT_KEY_VICTORY_TOTAL_CULTURE", iCulture, turns(8000)))
 
-	elif iCiv == iCivEngland:
+	elif iCiv == iEngland:
 		if iGoal == 0:
 			iNAmerica = getNumCitiesInRegions(iPlayer, lNorthAmerica)
 			iSCAmerica = getNumCitiesInRegions(iPlayer, lSouthAmerica)
@@ -3709,7 +3709,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iIndustrialTechs = countFirstDiscovered(iPlayer, iIndustrial)
 			aHelp.append(getIcon(iRenaissanceTechs >= 8) + text("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", infos.era(iRenaissance).getText(), iRenaissanceTechs, 8) + ' ' + getIcon(iIndustrialTechs >= 8) + text("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", infos.era(iIndustrial).getText(), iIndustrialTechs, 8))
 
-	elif iCiv == iCivHolyRome:
+	elif iCiv == iHolyRome:
 		if iGoal == 0:
 			bSaintPeters = data.lHolyRomanShrines[0] or getNumBuildings(iPlayer, iCatholicShrine) > 0
 			bAnastasis = data.lHolyRomanShrines[1] or getNumBuildings(iPlayer, iOrthodoxShrine) > 0
@@ -3727,13 +3727,13 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iGreatArtists + iGreatStatesmen >= 10) + text("TXT_KEY_VICTORY_GREAT_ARTISTS_AND_STATESMEN_SETTLED", 'Vienna', iGreatArtists + iGreatStatesmen, 10))
 			aHelp.append(getIcon(iPleasedOrBetterEuropeans >= 8) + text("TXT_KEY_VICTORY_PLEASED_OR_FRIENDLY_EUROPEANS", iPleasedOrBetterEuropeans, 8))
 
-	elif iCiv == iCivRussia:
+	elif iCiv == iRussia:
 		if iGoal == 0:
 			iSiberia = getNumFoundedCitiesInArea(iPlayer, plots.start(tSiberiaTL).end(tSiberiaBR))
 			bSiberia = iSiberia >= 7 or scenario() == i1700AD
 			siberiaText = text("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", iSiberia, 7)
 			if bSiberia: siberiaText = text("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA_COMPLETE") 
-			bSiberianRailway = isConnectedByRailroad(iPlayer, Areas.getCapital(iCivRussia), lSiberianCoast)
+			bSiberianRailway = isConnectedByRailroad(iPlayer, Areas.getCapital(iRussia), lSiberianCoast)
 			aHelp.append(getIcon(bSiberia) + siberiaText + ' ' + getIcon(bSiberianRailway) + text("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY"))
 		elif iGoal == 1:
 			bManhattanProject = team(iPlayer).getProjectCount(iManhattanProject) > 0
@@ -3744,7 +3744,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCount = countPlayersWithAttitudeAndCriteria(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, dc.isCommunist)
 			aHelp.append(getIcon(bCommunism) + text("TXT_KEY_VICTORY_COMMUNISM") + ' ' + getIcon(iCount >= 5) + text("TXT_KEY_VICTORY_FRIENDLY_WITH_COMMUNISM", iCount, 5))
 
-	elif iCiv == iCivMali:
+	elif iCiv == iMali:
 		if iGoal == 1:
 			sankore = cities.owner(iPlayer).where(lambda city: city.isHasRealBuilding(iUniversityOfSankore))
 			bSankore = sankore.any()
@@ -3758,7 +3758,7 @@ def getUHVHelp(iPlayer, iGoal):
 			if year() > year(1500): iThreshold = 15000
 			aHelp.append(getIcon(iTreasury >= turns(iThreshold)) + text("TXT_KEY_VICTORY_TOTAL_GOLD", iTreasury, turns(iThreshold)))
 		
-	elif iCiv == iCivPoland:
+	elif iCiv == iPoland:
 		if iGoal == 0:
 			lCities = getLargestCities(iPlayer, 3)
 			bCity1 = len(lCities) > 0
@@ -3775,7 +3775,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCathedrals = iCatholic + iOrthodox + iProtestant
 			aHelp.append(getIcon(iCathedrals >= 3) + text("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", iCathedrals, 3))
 
-	elif iCiv == iCivPortugal:
+	elif iCiv == iPortugal:
 		if iGoal == 0:
 			iCount = countOpenBorders(iPlayer)
 			aHelp.append(getIcon(iCount >= 14) + text("TXT_KEY_VICTORY_OPEN_BORDERS", iCount, 14))
@@ -3788,7 +3788,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iColonies += getNumCitiesInRegions(iPlayer, plots.of(lAsia))
 			aHelp.append(getIcon(iColonies >= 15) + text("TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES", iColonies, 15))
 
-	elif iCiv == iCivInca:
+	elif iCiv == iInca:
 		if iGoal == 0:
 			bRoad = isRoad(iPlayer, lAndeanCoast)
 			iTambos = getNumBuildings(iPlayer, iTambo)
@@ -3800,7 +3800,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSouthAmerica = isAreaOnlyCivs(tSAmericaTL, tSAmericaBR, [iCiv])
 			aHelp.append(getIcon(bSouthAmerica) + text("TXT_KEY_VICTORY_NO_FOREIGN_CITIES_SOUTH_AMERICA"))
 
-	elif iCiv == iCivItaly:
+	elif iCiv == iItaly:
 		if iGoal == 0:
 			bSanMarcoBasilica = data.getWonderBuilder(iSanMarcoBasilica) == iPlayer
 			bSistineChapel = data.getWonderBuilder(iSistineChapel) == iPlayer
@@ -3814,7 +3814,7 @@ def getUHVHelp(iPlayer, iGoal):
 			fMediterranean = iMediterranean * 100.0 / iTotalMediterranean
 			aHelp.append(getIcon(fMediterranean >= 65.0) + text("TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY", "%.2f%%" % fMediterranean, 65))
 
-	elif iCiv == iCivMongols:
+	elif iCiv == iMongols:
 		if iGoal == 1:
 			iRazedCities = data.iMongolRazes
 			aHelp.append(getIcon(iRazedCities >= 7) + text("TXT_KEY_VICTORY_NUM_CITIES_RAZED", iRazedCities, 7))
@@ -3822,7 +3822,7 @@ def getUHVHelp(iPlayer, iGoal):
 			landPercent = getLandPercent(iPlayer)
 			aHelp.append(getIcon(landPercent >= 11.995) + text("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", "%.2f%%" % landPercent, 12))
 
-	elif iCiv == iCivMughals:
+	elif iCiv == iMughals:
 		if iGoal == 0:
 			iNumMosques = getNumBuildings(iPlayer, iIslamicCathedral)
 			aHelp.append(getIcon(iNumMosques >= 3) + text("TXT_KEY_VICTORY_MOSQUES_BUILT", iNumMosques, 3))
@@ -3835,7 +3835,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCulture = pPlayer.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= turns(50000)) + text("TXT_KEY_VICTORY_TOTAL_CULTURE", iCulture, turns(50000)))
 
-	elif iCiv == iCivAztecs:
+	elif iCiv == iAztecs:
 		if iGoal == 0:
 			pBestCity = getBestCity(iPlayer, (18, 37), cityPopulation)
 			bBestCity = isBestCity(iPlayer, (18, 37), cityPopulation)
@@ -3848,7 +3848,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iEnslavedUnits = data.iAztecSlaves
 			aHelp.append(getIcon(iEnslavedUnits >= 20) + text("TXT_KEY_VICTORY_ENSLAVED_UNITS", iEnslavedUnits, 20))
 
-	elif iCiv == iCivOttomans:
+	elif iCiv == iOttomans:
 		if iGoal == 0:
 			capital = pPlayer.getCapitalCity()
 			iCounter = countCityWonders(iPlayer, location(capital), False)
@@ -3868,7 +3868,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iEuropeanCulture = getTotalCulture(dCivGroups[iCivGroupEurope])
 			aHelp.append(getIcon(iOttomanCulture > iEuropeanCulture) + text("TXT_KEY_VICTORY_TOTAL_CULTURE", iOttomanCulture, iEuropeanCulture))
 
-	elif iCiv == iCivThailand:
+	elif iCiv == iThailand:
 		if iGoal == 0:
 			iCount = countOpenBorders(iPlayer)
 			aHelp.append(getIcon(iCount >= 10) + text("TXT_KEY_VICTORY_OPEN_BORDERS", iCount, 10))
@@ -3883,7 +3883,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSouthAsia = isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs)
 			aHelp.append(getIcon(bSouthAsia) + text("TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES"))
 
-	elif iCiv == iCivCongo:
+	elif iCiv == iCongo:
 		if iGoal == 0:
 			fPercent = getApostolicVotePercent(iPlayer)
 			aHelp.append(getIcon(fPercent >= 15.0) + text("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", "%.2f%%" % fPercent, 15))
@@ -3891,7 +3891,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iSlaves = data.iCongoSlaveCounter
 			aHelp.append(getIcon(iSlaves >= turns(1000)) + text("TXT_KEY_VICTORY_SLAVES_TRADED", iSlaves, turns(1000)))
 	
-	elif iCiv == iCivIran:
+	elif iCiv == iIran:
 		if iGoal == 0:
 			# TODO countOpenBorders expects players, this passes civs
 			iCount = countOpenBorders(iPlayer, dCivGroups[iCivGroupEurope])
@@ -3906,9 +3906,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iCulture = pBestCity.getCulture(iPlayer)
 			aHelp.append(getIcon(iCulture >= turns(20000)) + text("TXT_KEY_VICTORY_MOST_CULTURED_CITY_VALUE", pBestCity.getName(), iCulture, turns(20000)))
 
-	elif iCiv == iCivNetherlands:
+	elif iCiv == iNetherlands:
 		if iGoal == 0:
-			iMerchants = countCitySpecialists(iPlayer, Areas.getCapital(iCivNetherlands), iSpecialistGreatMerchant)
+			iMerchants = countCitySpecialists(iPlayer, Areas.getCapital(iNetherlands), iSpecialistGreatMerchant)
 			aHelp.append(getIcon(iMerchants >= 3) + text("TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY", "Amsterdam", iMerchants, 3))
 		elif iGoal == 1:
 			iColonies = data.iDutchColonies
@@ -3917,18 +3917,18 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumSpices = pPlayer.getNumAvailableBonuses(iSpices)
 			aHelp.append(getIcon(iNumSpices >= 7) + text("TXT_KEY_VICTORY_AVAILABLE_SPICE_RESOURCES", iNumSpices, 7))
 
-	elif iCiv == iCivGermany:
+	elif iCiv == iGermany:
 		if iGoal == 0:
 			iCounter = 0
 			for iSpecialist in lGreatPeople:
-				iCounter += countCitySpecialists(iPlayer, Areas.getCapital(iCivGermany), iSpecialist)
+				iCounter += countCitySpecialists(iPlayer, Areas.getCapital(iGermany), iSpecialist)
 			aHelp.append(getIcon(iCounter >= 7) + text("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY", "Berlin", iCounter, 7))
 		elif iGoal == 1:
-			bFrance = checkOwnedCiv(iPlayer, iCivFrance)
-			bRome = checkOwnedCiv(iPlayer, iCivItaly)
-			bRussia = checkOwnedCiv(iPlayer, iCivRussia)
-			bEngland = checkOwnedCiv(iPlayer, iCivEngland)
-			bScandinavia = checkOwnedCiv(iPlayer, iCivVikings)
+			bFrance = checkOwnedCiv(iPlayer, iFrance)
+			bRome = checkOwnedCiv(iPlayer, iItaly)
+			bRussia = checkOwnedCiv(iPlayer, iRussia)
+			bEngland = checkOwnedCiv(iPlayer, iEngland)
+			bScandinavia = checkOwnedCiv(iPlayer, iVikings)
 			aHelp.append(getIcon(bRome) + text("TXT_KEY_CIV_ITALY_SHORT_DESC") + ' ' + getIcon(bFrance) + text("TXT_KEY_CIV_FRANCE_SHORT_DESC") + ' ' + getIcon(bScandinavia) + text("TXT_KEY_VICTORY_SCANDINAVIA"))
 			aHelp.append(getIcon(bEngland) + text("TXT_KEY_CIV_ENGLAND_SHORT_DESC") + ' ' + getIcon(bRussia) + text("TXT_KEY_CIV_RUSSIA_SHORT_DESC"))
 		elif iGoal == 2:
@@ -3936,11 +3936,11 @@ def getUHVHelp(iPlayer, iGoal):
 			iGlobalTechs = countFirstDiscovered(iPlayer, iGlobal)
 			aHelp.append(getIcon(iIndustrialTechs >= 8) + text("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", infos.era(iIndustrial).getText(), iIndustrialTechs, 8) + ' ' + getIcon(iGlobalTechs >= 8) + text("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", infos.era(iGlobal).getText(), iGlobalTechs, 8))
 
-	elif iCiv == iCivAmerica:
+	elif iCiv == iAmerica:
 		if iGoal == 0:
 			# TODO: isAreaFreeOfCivs expects players, this passes civs
 			bAmericas = isAreaFreeOfCivs(plots.start(tNCAmericaTL).end(tNCAmericaBR), dCivGroups[iCivGroupEurope])
-			bMexico = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iCivAztecs)))
+			bMexico = isControlledOrVassalized(iPlayer, plots.of(Areas.getCoreArea(iAztecs)))
 			aHelp.append(getIcon(bAmericas) + text("TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES") + ' ' + getIcon(bMexico) + text("TXT_KEY_CIV_MEXICO_SHORT_DESC"))
 		elif iGoal == 1:
 			bUnitedNations = data.getWonderBuilder(iUnitedNations) == iPlayer
@@ -3957,18 +3957,18 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(fAlliedCommercePercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_COMMERCE_PERCENT", "%.2f%%" % fAlliedCommercePercent, 75))
 			aHelp.append(getIcon(fAlliedPowerPercent >= 75.0) + text("TXT_KEY_VICTORY_ALLIED_POWER_PERCENT", "%.2f%%" % fAlliedPowerPercent, 75))
 
-	elif iCiv == iCivArgentina:
+	elif iCiv == iArgentina:
 		if iGoal == 0:
 			iGoldenAgeTurns = data.iArgentineGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= turns(16)) + text("TXT_KEY_VICTORY_GOLDEN_AGES", iGoldenAgeTurns / turns(8), 2))
 		elif iGoal == 1:
-			iCulture = getCityCulture(iPlayer, Areas.getCapital(iCivArgentina))
+			iCulture = getCityCulture(iPlayer, Areas.getCapital(iArgentina))
 			aHelp.append(getIcon(iCulture >= turns(50000)) + text("TXT_KEY_VICTORY_CITY_CULTURE", "Buenos Aires", iCulture, turns(50000)))
 		elif iGoal == 2:
 			iGoldenAgeTurns = data.iArgentineGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= turns(48)) + text("TXT_KEY_VICTORY_GOLDEN_AGES", iGoldenAgeTurns / turns(8), 6))
 			
-	elif iCiv == iCivMexico:
+	elif iCiv == iMexico:
 		if iGoal == 0:
 			iNumCathedrals = 0
 			iStateReligion = pPlayer.getStateReligion()
@@ -3984,7 +3984,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bBestCity = isBestCity(iPlayer, (18, 37), cityPopulation)
 			aHelp.append(getIcon(bBestCity) + text("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", pBestCity.getName()))
 	
-	elif iCiv == iCivColombia:
+	elif iCiv == iColombia:
 		if iGoal == 0:
 			# TODO: isAreaFreeOfCivs expects players, not civs
 			bPeru = isAreaFreeOfCivs(plots.start(tPeruTL).end(tPeruBR), dCivGroups[iCivGroupEurope])
@@ -4000,7 +4000,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iTradeGold = data.iColombianTradeGold
 			aHelp.append(getIcon(iTradeGold >= turns(3000)) + text("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", iTradeGold, turns(3000)))
 
-	elif iCiv == iCivBrazil:
+	elif iCiv == iBrazil:
 		if iGoal == 0:
 			iSlavePlantations = countImprovements(iPlayer, iSlavePlantation)
 			iPastures = countImprovements(iPlayer, iPasture)
@@ -4017,7 +4017,7 @@ def getUHVHelp(iPlayer, iGoal):
 			if capital: bNationalPark = capital.isHasRealBuilding(iNationalPark)
 			aHelp.append(getIcon(iForestPreserves >= 20) + text("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", infos.improvement(iForestPreserve).getText(), iForestPreserves, 20) + ' ' + getIcon(bNationalPark) + text("TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL"))
 
-	elif iCiv == iCivCanada:
+	elif iCiv == iCanada:
 		if iGoal == 0:
 			capital = pPlayer.getCapitalCity()
 			bAtlantic = capital and isConnectedByRailroad(iPlayer, location(capital), lAtlanticCoast)

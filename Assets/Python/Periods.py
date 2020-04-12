@@ -7,8 +7,8 @@ import WarMaps as war
 
 
 dEvacuatePeriods = {
-	iCivPhoenicia : iPeriodCarthage,
-	iCivKhmer : iPeriodVietnam,
+	iPhoenicia : iPeriodCarthage,
+	iKhmer : iPeriodVietnam,
 }
 
 
@@ -41,50 +41,50 @@ def setup():
 	iScenario = scenario()
 	
 	if iScenario == i1700AD:
-		setPeriod(iCivIndia, iPeriodMaratha)
-		setPeriod(iCivKhmer, iPeriodVietnam)
-		setPeriod(iCivMoors, iPeriodMorocco)
-		setPeriod(iCivSpain, iPeriodSpain)
-		setPeriod(iCivHolyRome, iPeriodAustria)
-		setPeriod(iCivOttomans, iPeriodOttomanConstantinople)
+		setPeriod(iIndia, iPeriodMaratha)
+		setPeriod(iKhmer, iPeriodVietnam)
+		setPeriod(iMoors, iPeriodMorocco)
+		setPeriod(iSpain, iPeriodSpain)
+		setPeriod(iHolyRome, iPeriodAustria)
+		setPeriod(iOttomans, iPeriodOttomanConstantinople)
 
 
 def onBirth(iPlayer):
 	iCiv = civ(iPlayer)
 
-	if iCiv == iCivThailand:
-		setPeriod(iCivKhmer, iPeriodVietnam)
+	if iCiv == iThailand:
+		setPeriod(iKhmer, iPeriodVietnam)
 	
-	if iCiv == iCivGermany:
-		setPeriod(iCivHolyRome, iPeriodAustria)
+	if iCiv == iGermany:
+		setPeriod(iHolyRome, iPeriodAustria)
 
 
 def onCollapse(iPlayer):
-	if civ(iPlayer) == iCivChina:
-		setPeriod(iCivMongols, iPeriodYuan)
+	if civ(iPlayer) == iChina:
+		setPeriod(iMongols, iPeriodYuan)
 
 
 def onResurrection(iPlayer):
 	iCiv = civ(iPlayer)
 
-	if iCiv == iCivGreece:
-		setPeriod(iCivGreece, iPeriodModernGreece)
+	if iCiv == iGreece:
+		setPeriod(iGreece, iPeriodModernGreece)
 	
-	if iCiv == iCivChina:
-		if year() > year(dBirth[iCivMongols]):
-			setPeriod(iCivChina, iPeriodMing)
+	if iCiv == iChina:
+		if year() > year(dBirth[iMongols]):
+			setPeriod(iChina, iPeriodMing)
 	
-	if iCiv == iCivIndia:
+	if iCiv == iIndia:
 		if year() < year(1900):
-			setPeriod(iCivIndia, iPeriodMaratha)
+			setPeriod(iIndia, iPeriodMaratha)
 		else:
-			setPeriod(iCivIndia, -1)
+			setPeriod(iIndia, -1)
 	
-	if iCiv == iCivArabia:
-		setPeriod(iCivArabia, iPeriodSaudi)
+	if iCiv == iArabia:
+		setPeriod(iArabia, iPeriodSaudi)
 		
 	# TODO: it was like this in onResurrection - figure out the intent
-	if iCiv in [iCivArabia, iCivMongols]:
+	if iCiv in [iArabia, iMongols]:
 		setPeriod(iCiv, -1)
 
 
@@ -93,69 +93,69 @@ def onCityAcquired(iPlayer, city, bConquest):
 	iCiv = civ(iPlayer)
 	iOwnerCiv = civ(iOwner)
 
-	if iCiv == iCivOttomans:
+	if iCiv == iOttomans:
 		if city.at(68, 45):
-			setPeriod(iCivOttomans, iPeriodOttomanConstantinople)
+			setPeriod(iOttomans, iPeriodOttomanConstantinople)
 	
-	if iCivTurks in [iCiv, iOwnerCiv]:
-		tTL, tBR = Areas.dCoreArea[iCivPersia]
-		if isAreaControlled(slot(iCivTurks), tTL, tBR):
-			setPeriod(iCivTurks, iPeriodSeljuks)
+	if iTurks in [iCiv, iOwnerCiv]:
+		tTL, tBR = Areas.dCoreArea[iPersia]
+		if isAreaControlled(slot(iTurks), tTL, tBR):
+			setPeriod(iTurks, iPeriodSeljuks)
 		else:
-			setPeriod(iCivTurks, -1)
+			setPeriod(iTurks, -1)
 			
-	if iOwnerCiv == iCivByzantium:
-		if bConquest and player(iCivByzantium).getNumCities() <= 4:
-			setPeriod(iCivByzantium, iPeriodByzantineConstantinople)
+	if iOwnerCiv == iByzantium:
+		if bConquest and player(iByzantium).getNumCities() <= 4:
+			setPeriod(iByzantium, iPeriodByzantineConstantinople)
 	
 	
 def onCityBuilt(city):
 	iOwner = city.getOwner()
 	iOwnerCiv = civ(iOwner)
 
-	if iOwnerCiv == iCivPhoenicia:
+	if iOwnerCiv == iPhoenicia:
 		if city.at(58, 39) and getOwnedCoreCities(iOwner) > 0:
-			setPeriod(iCivPhoenicia, iPeriodCarthage)
+			setPeriod(iPhoenicia, iPeriodCarthage)
 
 
 def onVassalState(iMaster, iVassal, bCapitulated):
 	iMasterCiv = civ(iMaster)
 	iVassalCiv = civ(iVassal)
 
-	if iVassalCiv == iCivInca:
-		setPeriod(iCivInca, iPeriodPeru)
+	if iVassalCiv == iInca:
+		setPeriod(iInca, iPeriodPeru)
 		
-	if iVassalCiv == iCivChina:
-		if bCapitulated and iMasterCiv == iCivMongols:
-			setPeriod(iCivMongols, iPeriodYuan)
+	if iVassalCiv == iChina:
+		if bCapitulated and iMasterCiv == iMongols:
+			setPeriod(iMongols, iPeriodYuan)
 			
 
 def onPalaceMoved(city):
 	iOwner = city.getOwner()
 	iOwnerCiv = civ(iOwner)
 	
-	if iOwnerCiv == iCivPhoenicia:
+	if iOwnerCiv == iPhoenicia:
 		if city.at(58, 39):
-			setPeriod(iCivPhoenicia, iPeriodCarthage)
+			setPeriod(iPhoenicia, iPeriodCarthage)
 
 
 def onTechAcquired(iPlayer, iEra):
 	iCiv = civ(iPlayer)
 
-	if iCiv == iCivSpain:
+	if iCiv == iSpain:
 		if iEra == iRenaissance and player(iCiv).getPeriod() == -1:
-			if player(iCivMoors).isAlive() and cities.owner(iCivMoors).region(rIberia).none():
-				setPeriod(iCivSpain, iPeriodSpain)
-				setPeriod(iCivMoors, iPeriodMorocco)
+			if player(iMoors).isAlive() and cities.owner(iMoors).region(rIberia).none():
+				setPeriod(iSpain, iPeriodSpain)
+				setPeriod(iMoors, iPeriodMorocco)
 	
-	if iCiv == iCivJapan:
+	if iCiv == iJapan:
 		if iEra == iIndustrial:
-			setPeriod(iCivJapan, iPeriodMeiji)
+			setPeriod(iJapan, iPeriodMeiji)
 	
-	if iCiv == iCivItaly:
+	if iCiv == iItaly:
 		if iEra == iIndustrial:
-			setPeriod(iCivItaly, iPeriodModernItaly)
+			setPeriod(iItaly, iPeriodModernItaly)
 	
-	if iPlayer == iCivGermany:
+	if iPlayer == iGermany:
 		if iEra == iDigital:
-			setPeriod(iCivGermany, iPeriodModernGermany)
+			setPeriod(iGermany, iPeriodModernGermany)

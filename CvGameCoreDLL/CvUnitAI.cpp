@@ -2026,7 +2026,7 @@ void CvUnitAI::AI_attackMove()
 
 			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 			{
-				if (GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).isIndependent() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CIV_CELTS)
+				if (GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).isIndependent() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CELTS)
 				{
 					if (area()->getCitiesPerPlayer((PlayerTypes)iI) > 0)
 					{
@@ -2358,7 +2358,7 @@ void CvUnitAI::AI_attackCityMove()
 	{
 		bHuntPlayer[iI] = false;
 
-		if (GET_PLAYER((PlayerTypes)iI).isIndependent() || GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CIV_CELTS)
+		if (GET_PLAYER((PlayerTypes)iI).isIndependent() || GET_PLAYER((PlayerTypes)iI).isNative() || GET_PLAYER((PlayerTypes)iI).getCivilizationType() == CELTS)
 		{
 			if (area()->getCitiesPerPlayer((PlayerTypes)iI) > 0)
 			{
