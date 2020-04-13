@@ -161,7 +161,7 @@ class AIWars:
 		
 		iStartTurn = year(iYear).deviate(5)
 		
-		if turn() <= dBirth[iCiv]+3: return
+		if turn() < player(iCiv).getLastBirthTurn() + turns(3): return
 		if not turn().between(iStartTurn, iStartTurn + iIntervalTurns): return
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
@@ -360,7 +360,7 @@ class AIWars:
 				
 			# exploit plague
 			if data.players[iLoopPlayer].iPlagueCountdown > 0 or data.players[iLoopPlayer].iPlagueCountdown < -10:
-				if turn() > year(dBirth[iCiv]) + turns(20):
+				if turn() > player(iLoopPlayer).getLastBirthTurn() + turns(20):
 					lTargetValues[iLoopPlayer] *= 3
 					lTargetValues[iLoopPlayer] /= 2
 		

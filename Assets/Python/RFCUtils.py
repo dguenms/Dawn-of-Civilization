@@ -1317,7 +1317,7 @@ def canSwitch(iPlayer, iBirthTurn):
 	if dBirth[iPlayer] <= dBirth[human()]:
 		return False
 		
-	if civ(human()) in dNeighbours[iPlayer] and year(dBirth[iPlayer]) - year(dBirth[human()]) < turns(25):
+	if civ(human()) in dNeighbours[iPlayer] and year(dBirth[iPlayer]) < year(dBirth[human()]) + turns(25):
 		return False
 		
 	return True

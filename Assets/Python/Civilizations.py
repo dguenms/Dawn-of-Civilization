@@ -132,7 +132,7 @@ def initBuildingPreferences(iPlayer):
 ### General functions ###
 		
 def initBirthYear(iPlayer):
-	player(iPlayer).setBirthYear(dBirth[iPlayer])
+	player(iPlayer).setInitialBirthTurn(year(dBirth[iPlayer]))
 
 def init():
 	for iPlayer in players.major():

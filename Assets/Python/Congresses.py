@@ -998,14 +998,8 @@ class Congress:
 			# AI civs: cannot claim cities from friends
 			if not player(iPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: continue
 			
-			# recently born
-			if civ(iLoopPlayer) in dBirth and iGameTurn < year(dBirth[iLoopPlayer]) + turns(20): continue
-			
-			# recently resurrected
-			if iGameTurn < pPlayer.getLatestRebellionTurn() + turns(20): continue
-			
-			# recently reborn
-			if player(iLoopPlayer).isReborn() and civ(iLoopPlayer) in dRebirth and iGameTurn < year(dRebirth[iLoopPlayer]) + turns(20): continue
+			# recently spawned
+			if iGameTurn < player(iLoopPlayer).getLastBirthTurn(): continue
 			
 			# exclude master/vassal relationships
 			if team(iPlayer).isVassal(iLoopPlayer): continue

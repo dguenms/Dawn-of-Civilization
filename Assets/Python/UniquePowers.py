@@ -61,7 +61,7 @@ class UniquePowers:
 		if iGameTurn >= year(dBirth[iRussia]) and player(iRussia).isAlive():
 			self.russianUP()
 
-		if iGameTurn >= year(dBirth[iAmerica])+turns(5):
+		if iGameTurn >= year(dBirth[iAmerica]) + turns(5):
 			self.checkImmigration()
 
 		if iGameTurn >= year(dBirth[iIndonesia]) and player(iIndonesia).isAlive():

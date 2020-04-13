@@ -1412,18 +1412,15 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 		}
 	}
 
-	//Rhye - start (no trading the first turns, for the exploit)
-	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()]+2)
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn()+2) // edead
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
 	{
 		return DENIAL_TECH_MONOPOLY;
 	}
-	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[eTeam]+2)
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn()+2) // edead
+
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
 	{
 		return DENIAL_TECH_WHORE;
 	}
-	//Rhye - end
 
 	iKnownCount = 0;
 	iPossibleKnownCount = 0;
@@ -1703,7 +1700,7 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 	CvTeamAI& kMasterTeam = GET_TEAM(eTeam);
 
 	//Leoreth: recently spawned or respawned civs won't vassalize
-	if (GC.getGame().getGameTurn() - GET_PLAYER((PlayerTypes)getID()).getLatestRebellionTurn() < 10)
+	if (GC.getGame().getGameTurn() < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
 	{
 		return DENIAL_NO_GAIN;
 	}
@@ -1834,24 +1831,12 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	{
 		int iPersonalityModifier = 0;
 		int iMembers = 0;
-		// Sanguo Mod Performance start, added by poyuzhe 07.29.09
-		// for (int iI = 0; iI < MAX_PLAYERS; iI++)
-		// {
-			// if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			// {
-				// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-				// {
-					// iPersonalityModifier += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getVassalPowerModifier();
-					// ++iMembers;
-				// }
-			// }
-		// }
+
 		for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-			{
+		{
 			iPersonalityModifier += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getVassalPowerModifier();
-					++iMembers;
-				}
-		// Sanguo Mod Performance, end
+			++iMembers;
+		}
 
 		int iTotalPower = GC.getGameINLINE().countTotalCivPower();
 		int iAveragePower = iTotalPower / std::max(1, GC.getGameINLINE().countCivTeamsAlive());
@@ -1918,19 +1903,11 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				iMasterPower /= 2;
 			}
 		}
-	//Rhye - start
-	//iMasterPower *= 3;
-	//iMasterPower /= 2;
-	//Rhye - end
 
-	//Rhye - start (lower the first turns)
-	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()]+5)
-	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn()+5) // edead
-	{
-		iMasterPower /= 2;
-	}
-	//Rhye - end
-
+		if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(5)) // edead
+		{
+			iMasterPower /= 2;
+		}
 
 		for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 		{

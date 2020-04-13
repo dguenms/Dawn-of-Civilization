@@ -2283,7 +2283,7 @@ void CvGame::update()
 		if (getTurnSlice() == 0)
 		{
 			// edead: disable autosave during autoplay
-			if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < getGameTurnForYear(GET_PLAYER(getActivePlayer()).getBirthYear(), getStartYear(), getCalendar(), getGameSpeedType()))))
+			if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < GET_PLAYER(getActivePlayer()).getInitialBirthTurn())))
 			{
 				gDLL->getEngineIFace()->AutoSave(true);
 			}
@@ -2330,11 +2330,11 @@ void CvGame::update()
 		}
 		
 		// Leoreth
-		if (getGameTurn() == getScenarioStartTurn() && GET_PLAYER(getActivePlayer()).getBirthTurn() > getScenarioStartTurn())
+		if (getGameTurn() == getScenarioStartTurn() && GET_PLAYER(getActivePlayer()).getInitialBirthTurn() > getScenarioStartTurn())
 		{
 			setAIAutoPlay(1);
 		}
-		else if (getGameTurn() <= GET_PLAYER(getActivePlayer()).getBirthTurn())
+		else if (getGameTurn() <= GET_PLAYER(getActivePlayer()).getInitialBirthTurn())
 		{
 			setAIAutoPlayCatapult(1);
 		}
@@ -6283,7 +6283,7 @@ void CvGame::doTurn()
 	stopProfilingDLL();
 
 	// edead: disable autosave during autoplay
-	if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < getGameTurnForYear(GET_PLAYER(getActivePlayer()).getBirthYear(), getStartYear(), getCalendar(), getGameSpeedType()))))
+	if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < GET_PLAYER(getActivePlayer()).getInitialBirthTurn())))
 	{
 		gDLL->getEngineIFace()->AutoSave();
 	}
