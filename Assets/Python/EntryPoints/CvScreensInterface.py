@@ -56,6 +56,7 @@ from Consts import *
 import Areas
 from RFCUtils import *
 from RFCUtils import canEverRespawn as canEverRespawnUtils
+from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 import Victory as vic
 import CityNameManager as cnm
 import Congresses as cong
@@ -1194,7 +1195,7 @@ def canEverRespawn(argsList):
 	return 0
 
 def toggleStabilityOverlay():
-	toggleStabilityOverlay()
+	toggleStabilityOverlayUtils()
 		
 def applyClaimCityEvent(argsList):
 	data.currentCongress.applyClaimCityEvent(argsList[0])

@@ -1030,7 +1030,6 @@ def toggleStabilityOverlay(iPlayer = -1):
 	if bReturn:
 		return
 
-	bWB = (iPlayer != -1)
 	if iPlayer == -1:
 		iPlayer = human()
 
@@ -1041,15 +1040,16 @@ def toggleStabilityOverlay(iPlayer = -1):
 
 	engine = CyEngine()
 
+	bDebug = game.isDebugMode()
+
 	# apply the highlight
-	for plot in plots.all():
-		if game.isDebugMode() or plot.isRevealed(iTeam, False):
-			if plot.isWater(): continue
+	for plot in plots.all().land():
+		if bDebug or plot.isRevealed(iTeam, False):
 			if plot.isCore(iPlayer):
 				iPlotType = iCore
 			else:
 				iSettlerValue = plot.getSettlerValue(iPlayer)
-				if bWB and iSettlerValue == 3:
+				if bDebug and iSettlerValue == 3:
 					iPlotType = iAIForbidden
 				elif iSettlerValue >= 90:
 					if isPossibleForeignCore(iPlayer, plot):

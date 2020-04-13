@@ -2,10 +2,10 @@ from CvPythonExtensions import *
 from Consts import *
 from Core import *
 from RFCUtils import *
-import Areas
-import SettlerMaps
-import WarMaps
-import RegionMap
+# import Areas
+# import SettlerMaps
+# import WarMaps
+# import RegionMap
 import os
 
 IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"

@@ -36,6 +36,7 @@ import Areas
 import SettlerMaps
 import WarMaps
 import RiseAndFall
+import RegionMap
 import DynamicCivs as dc
 
 from Core import *
@@ -1968,21 +1969,21 @@ class CvWorldBuilderScreen:
 			CyEngine().fillAreaBorderPlotAlt(tSpawn[0], tSpawn[1], 1002, "COLOR_CYAN", 0.7)
 
 			lHumanPlotList, lAIPlotList = self.getFlipZone(self.m_iCurrentPlayer)
+
 			for tPlot in lHumanPlotList:
-				if tPlot in lAIPlotList: continue
 				if tPlot == tSpawn: continue
-				else:
-					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, "COLOR_MAGENTA", 0.7)
+				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, "COLOR_MAGENTA", 0.7)
+					
+			for tPlot in lAIPlotList:
+				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
 
 			# Additional cities outside flipzone (Canada)
 			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
 			for city in lExtraCities:
 				x, y = location(city)
-				if (x, y) not in lHumanPlotList:
+				if (x, y) not in lHumanPlotList and (x, y) not in lAIPlotList:
 					 CyEngine().fillAreaBorderPlotAlt(x, y, 1003, "COLOR_PLAYER_DARK_DARK_GREEN", 0.7)
 
-			for tPlot in lAIPlotList:
-				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
 
 	def changeFlipZone(self, plot, bAdd):
 		lHumanPlotList, lAIPlotList	= self.getFlipZone(self.m_iCurrentPlayer)
@@ -2023,7 +2024,7 @@ class CvWorldBuilderScreen:
 	def showWarOverlay(self):
 		removeStabilityOverlay()
 		if not is_minor(self.m_iCurrentPlayer):
-			for plot in plots.all():
+			for plot in plots.all().land():
 				iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
 				if iPlotType > 0:
 					szColor = lWarMapColors[iPlotType-1]
@@ -2031,8 +2032,7 @@ class CvWorldBuilderScreen:
 
 	def showReligionOverlay(self):
 		removeStabilityOverlay()
-		for i in range(CyMap().numPlots()):
-			plot = CyMap().plotByIndex(i)
+		for plot in plots.all().land():
 			iValue = plot.getSpreadFactor(self.m_iCurrentReligion)
 			if iValue > 0:
 				szColor = lReligionMapColors[iValue-1]
@@ -2040,9 +2040,8 @@ class CvWorldBuilderScreen:
 
 	def showRegionOverlay(self):
 		removeStabilityOverlay()
-		for plot in plots.all():
+		for plot in plots.all().land().where(lambda p: p.getRegionID() != -1):
 			iRegion = plot.getRegionID()
-			if iRegion == -1: continue
 			if iRegion == self.m_iRegionMapID:
 				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_BLUE", 0.7)
 			elif self.bAllRegions:
@@ -2054,17 +2053,14 @@ class CvWorldBuilderScreen:
 		dNeighbourRegions = dict([(i, []) for i in range(iNumRegions)])
 		dRegionColors = dict([(i, "") for i in range(iNumRegions)])
 		
-		for plot in plots.all():
+		for plot in plots.all().land().where(lambda p: p.getRegionID() != -1):
 			iRegion = plot.getRegionID()
-			if iRegion == -1: continue
-			for surroundingPlot in plots.surrounding(plot):
-				iNeighbourRegion = surroundingPlot.getRegionID()
-				if iNeighbourRegion != iRegion and iNeighbourRegion != -1 and iNeighbourRegion not in dNeighbourRegions[iRegion]:
+			for surroundingPlot in plots.surrounding(plot).where(lambda p: p.getRegionID() not in [-1, iRegion]):
+				if iNeighbourRegion not in dNeighbourRegions[iRegion]:
 					dNeighbourRegions[iRegion].append(iNeighbourRegion)
 
 		for iRegion in range(iNumRegions):
 			for color in lColors:
-				bColorUsed = False
 				for iNeighbourRegion in dNeighbourRegions[iRegion]:
 					if dRegionColors[iNeighbourRegion] == color:
 						break

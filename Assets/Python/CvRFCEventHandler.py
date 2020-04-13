@@ -39,7 +39,6 @@ class CvRFCEventHandler:
 	def __init__(self, eventManager):
 
 		self.EventKeyDown=6
-		self.bStabilityOverlay = False
 
 		# initialize base class
 		eventManager.addEventHandler("GameStart", self.onGameStart) #Stability
