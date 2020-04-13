@@ -117,9 +117,6 @@ CvPlayer::CvPlayer()
 	CvWString m_szCivAdj;
 	//Rhye (jdog) - end -----------------------
 
-	//Leoreth - rebirth mechanism
-	bool m_bReborn = false;
-
 	reset(NO_PLAYER, true);
 }
 
@@ -584,7 +581,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_szCivDescKey.clear();
 
 	//Leoreth
-	m_bReborn = false;
 	m_iInitialBirthTurn = 0;
 	m_iLastBirthTurn = 0;
 	m_iNoAnarchyTurns = 0;
@@ -18539,7 +18535,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	//Rhye (jdog) -  end -----------------------
 
 	//Leoreth
-	pStream->Read(&m_bReborn);
 	if (uiFlag >= 8) pStream->Read(&m_iInitialBirthTurn);
 	if (uiFlag >= 8) pStream->Read(&m_iLastBirthTurn);
 	pStream->Read(&m_iNoAnarchyTurns);
@@ -19086,7 +19081,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	//Rhye (jdog) -  end -----------------------
 
 	//Leoreth
-	pStream->Write(m_bReborn);
 	pStream->Write(m_iInitialBirthTurn);
 	pStream->Write(m_iLastBirthTurn);
 	pStream->Write(m_iNoAnarchyTurns);
@@ -24441,27 +24435,6 @@ bool CvPlayer::hasSpaceshipArrived() const
 	}
 
 	return false;
-}
-
-//Leoreth - get if this civ is reborn (int value for arrays: 1 -> reborn, 0 -> not reborn)
-
-bool CvPlayer::isReborn()
-{
-    return m_bReborn;
-}
-
-
-int CvPlayer::getReborn()
-{
-    if (m_bReborn)
-        return 1;
-    else
-        return 0;
-}
-
-void CvPlayer::setReborn(bool bNewValue)
-{
-	m_bReborn = bNewValue;
 }
 
 int CvPlayer::getWarValue(int x, int y)

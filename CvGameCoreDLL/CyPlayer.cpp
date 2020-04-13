@@ -2429,22 +2429,6 @@ int /*LeaderHeadTypes*/ CyPlayer::getLeader()
 
 // Leoreth - start
 
-bool CyPlayer::isReborn()
-{
-    return m_pPlayer ? m_pPlayer->isReborn() : false;
-}
-
-int CyPlayer::getReborn()
-{
-    return m_pPlayer ? m_pPlayer->getReborn() : -1;
-}
-
-void CyPlayer::setReborn(bool bNewValue)
-{
-    if (m_pPlayer)
-        m_pPlayer->setReborn(bNewValue);
-}
-
 void CyPlayer::updateTradeRoutes()
 {
 	if (m_pPlayer)

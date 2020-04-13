@@ -676,10 +676,10 @@ class CvRFCEventHandler:
 							
 								iGreatPeoplePoints = max(4, player(iLoopPlayer).getGreatPeopleCreated())
 							
-								pLoopCity.changeGreatPeopleProgress(iGreatPeoplePoints)
-								pLoopCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
+								wonderCity.changeGreatPeopleProgress(iGreatPeoplePoints)
+								wonderCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
 								interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
-								message(iLoopPlayer, 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(pUnit), pUnit.getName(), pLoopCity.getName(), iGreatPeoplePoints)
+								message(iLoopPlayer, 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(pUnit), pUnit.getName(), wonderCity.getName(), iGreatPeoplePoints)
 						break
 
 	def onReligionSpread(self, argsList):

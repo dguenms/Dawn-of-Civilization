@@ -74,9 +74,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getLeader", &CyPlayer::getLeader, "int /*LeaderHeadTypes*/ ()") //Rhye
 
 		//Leoreth
-		.def("isReborn", &CyPlayer::isReborn, "bool ()")
-		.def("getReborn", &CyPlayer::getReborn, "int (bool bNewValue)")
-		.def("setReborn", &CyPlayer::setReborn, "void ()")
 		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
 		.def("updateMaintenance", &CyPlayer::updateMaintenance, "void ()")
 		.def("AI_reset", &CyPlayer::AI_reset, "void ()")

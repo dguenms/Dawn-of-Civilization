@@ -6636,7 +6636,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 	//Rhye - start UP
 	if (isPeak())
 	{
-		if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == INCA && !GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isReborn())
+		if (eTeam != NO_TEAM && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCivilizationType() == INCA && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getPeriod() == NO_PERIOD)
 		{
 			if (eYield == YIELD_FOOD) 
 			{
