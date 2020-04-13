@@ -612,7 +612,6 @@ def calculateStability(iPlayer):
 	lParameters = [0 for i in range(iNumStabilityParameters)]
 	
 	# Collect required data
-	iReborn = pPlayer.getReborn()
 	iStateReligion = pPlayer.getStateReligion()
 	iCurrentEra = pPlayer.getCurrentEra()
 	iTotalPopulation = pPlayer.getTotalPopulation()
@@ -1773,7 +1772,7 @@ def balanceStability(iPlayer, iNewStabilityLevel):
 	playerData.resetWarTrends()
 	
 def isDecline(iPlayer):
-	return not player(iPlayer).isHuman() and not player(iPlayer).isReborn() and year() >= year(dFall[iPlayer])
+	return not player(iPlayer).isHuman() and year() >= year(dFall[iPlayer])
 	
 class Civics:
 

@@ -200,7 +200,7 @@ class UniquePowers:
 		lTargetCities = []
 		
 		for iPlayer in players.major():
-			if civ(iPlayer) in lBioNewWorld and not player(iPlayer).isReborn(): continue # no immigration to natives
+			if civ(iPlayer) in lBioNewWorld: continue # no immigration to natives
 			pPlayer = player(iPlayer)
 			lCities = []
 			bNewWorld = pPlayer.getCapitalCity().getRegionID() in lNewWorld

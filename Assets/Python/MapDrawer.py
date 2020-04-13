@@ -1,3 +1,5 @@
+# Leoreth: this should be changed to work off civs instead of players
+
 from CvPythonExtensions import *
 from Consts import *
 import Areas

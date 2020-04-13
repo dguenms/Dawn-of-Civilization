@@ -1715,7 +1715,7 @@ def onTechAcquired(iPlayer, iTech):
 				
 	# first Maya goal: discover Calendar by 200 AD
 	if iCiv == iMaya:
-		if not pPlayer.isReborn() and isPossible(iPlayer, 0):
+		if isPossible(iPlayer, 0):
 			if iTech == iCalendar:
 				if team(iPlayer).isHasTech(iCalendar):
 					win(iPlayer, 0)

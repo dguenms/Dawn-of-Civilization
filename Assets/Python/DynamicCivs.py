@@ -1011,7 +1011,6 @@ def specificName(iPlayer):
 	iNumCities = pPlayer.getNumCities()
 	if iNumCities == 0: return short(iPlayer)
 	
-	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
 	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = capitalCoords(iPlayer)
@@ -1265,7 +1264,6 @@ def specificAdjective(iPlayer):
 	iNumCities = pPlayer.getNumCities()
 	if iNumCities == 0: return player(iPlayer).getCivilizationAdjective(0)
 	
-	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
 	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = capitalCoords(iPlayer)
@@ -1656,7 +1654,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	iNumCities = pPlayer.getNumCities()
 	if iNumCities == 0: return defaultTitle(iPlayer)
 	
-	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
 	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = capitalCoords(iPlayer)
@@ -2111,7 +2108,6 @@ def leader(iPlayer):
 	
 	pPlayer = player(iPlayer)
 	tPlayer = team(iPlayer)
-	bReborn = pPlayer.isReborn()
 	iReligion = pPlayer.getStateReligion()
 	capital = player(iPlayer).getCapitalCity()
 	tCapitalCoords = (capital.getX(), capital.getY())

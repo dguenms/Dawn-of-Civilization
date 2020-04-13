@@ -847,7 +847,7 @@ class RiseAndFall:
 			if year() == year(iYear) and not player(iCiv).isAlive():
 				self.rebirthFirstTurn(iPlayer)
 
-			if year() == year(iYear)+1 and player(iCiv).isAlive() and player(iCiv).isReborn():
+			if year() == year(iYear)+1 and player(iCiv).isAlive() and player(iCiv).getLastBirthTurn() == year()-1:
 				self.rebirthSecondTurn(iPlayer)
 
 	def endTurn(self, iPlayer):
@@ -904,7 +904,6 @@ class RiseAndFall:
 				pPlayer.setLeader(dRebirthLeaders[iCiv])
 
 		message(human(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen)
-		setReborn(iPlayer, True)
 		
 		# Determine whether capital location is free
 		bFree = isFree(iPlayer, (x, y), True) and not plot.isUnit()
@@ -1138,7 +1137,7 @@ class RiseAndFall:
 				if player(iRome).isAlive():
 					return
 					
-				if not getCitiesInCore(slot(iRome), False).where(lambda city: city.getOwner() not in players.major()):
+				if not getCitiesInCore(slot(iRome)).where(lambda city: city.getOwner() not in players.major()):
 					return
 		
 		periods.onBirth(iPlayer)
@@ -1329,7 +1328,7 @@ class RiseAndFall:
 			
 				if iCiv == iItaly:
 					removeCoreUnits(iPlayer)
-					cityList = getCitiesInCore(iPlayer, False)
+					cityList = getCitiesInCore(iPlayer)
 					
 					rome = city(Areas.getCapital(iRome))
 					if rome:
@@ -1383,7 +1382,7 @@ class RiseAndFall:
 	
 		if iCiv == iItaly:
 			removeCoreUnits(iPlayer)
-			cityList = self.getCitiesInCore(iPlayer, False)
+			cityList = self.getCitiesInCore(iPlayer)
 			
 			rome = city(Areas.getCapital(iRome))
 			if rome:
