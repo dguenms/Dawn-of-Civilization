@@ -501,12 +501,12 @@ def clearCatapult(iPlayer):
 
 # used: RFCUtils, RiseAndFall
 # TODO: remove plots.of
-def getCitiesInCore(iPlayer, bReborn=None):
+def getCitiesInCore(iPlayer):
 	return cities.of(Areas.getCoreArea(civ(iPlayer)))
 	
 # used: CvRFCEventHandler, RFCUtils, Stability
-def getOwnedCoreCities(iPlayer, bReborn=None):
-	return getCitiesInCore(iPlayer, bReborn).owner(iPlayer)
+def getOwnedCoreCities(iPlayer):
+	return getCitiesInCore(iPlayer).owner(iPlayer)
 
 # used: Stability
 def removeReligionByArea(lPlotList, iReligion):
@@ -967,7 +967,6 @@ def canRespawn(iPlayer):
 	if turn() - data.players[iPlayer].iLastTurnAlive < turns(10): return False
 	
 	# check if the civ can be reborn at this date
-	# TODO: looks like it accepts this generator expression, check to remove list comprehension elsewhere after all
 	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
 		return False
 				
@@ -1011,18 +1010,6 @@ def evacuate(iPlayer, tPlot):
 		for unit in units.at(plot).notowner(iPlayer):
 			target = plots.surrounding(plot, radius=2).without(tPlot).where(lambda p: isFree(unit.getOwner(), p, bNoEnemyUnit=True, bCanEnter=True)).random()
 			move(unit, target)
-	
-# used: RiseAndFall, CvPlatyBuilderScreen, Stability
-def setReborn(iPlayer, bReborn):
-	pPlayer = player(iPlayer)
-	
-	if pPlayer.isReborn() == bReborn: return
-
-	pPlayer.setReborn(bReborn)
-	
-	Areas.updateCore(iPlayer)
-	SettlerMaps.updateMap(iPlayer)
-	WarMaps.updateMap(iPlayer)
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
 def toggleStabilityOverlay(iPlayer = -1):
@@ -1311,13 +1298,13 @@ def canSwitch(iPlayer, iBirthTurn):
 	if not player(iPlayer).isAlive():
 		return False
 		
-	if data.bAlreadySwitched and not player(iPlayer).isReborn() and not data.bUnlimitedSwitching:
+	if data.bAlreadySwitched and not data.bUnlimitedSwitching:
 		return False
 		
-	if dBirth[iPlayer] <= dBirth[human()]:
+	if dSpawn[iPlayer] <= dSpawn[human()]:
 		return False
 		
-	if civ(human()) in dNeighbours[iPlayer] and year(dBirth[iPlayer]) < year(dBirth[human()]) + turns(25):
+	if civ(human()) in dNeighbours[iPlayer] and year(dSpawn[iPlayer]) < year(dSpawn[human()]) + turns(25):
 		return False
 		
 	return True

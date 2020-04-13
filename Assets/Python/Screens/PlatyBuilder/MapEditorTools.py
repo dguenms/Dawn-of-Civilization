@@ -122,23 +122,14 @@ def exportFlip(iPlayer, dFlipZoneEdits):
 
 		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
 		try:
-			if not player(iPlayer).isReborn():
-				file.write("# tBirthArea\n")
-				file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-				if lExceptions:
-					file.write("\n\n# dBirthAreaExceptions\n")
-					file.write("i" + sName + " : " + str(lExceptions) + ",")
-			else:
-				file.write("# dRebirthArea\n")
-				file.write("i" + sName + " : " "("+ str(BL) + ",\t" + str(TR) + "),")
-				if lExceptions:
-					file.write("\n\n# dRebirthAreaExceptions\n")
-					file.write("i" + sName + " : " + str(lExceptions) + ",")
-
+			file.write("# tBirthArea\n")
+			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+			if lExceptions:
+				file.write("\n\n# dBirthAreaExceptions\n")
+				file.write("i" + sName + " : " + str(lExceptions) + ",")
 			if lNewAIPlotList:
-				if not player(iPlayer).isReborn():
-					file.write("\n\n# dExtendedBirthArea\n")
-					file.write("("+ str(BLAI) + ",\t" + str(TRAI) + "),\t# " + sName)
+				file.write("\n\n# dExtendedBirthArea\n")
+				file.write("("+ str(BLAI) + ",\t" + str(TRAI) + "),\t# " + sName)
 		finally:
 			file.close()
 		sText = "Flipzone map of %s exported" %sName

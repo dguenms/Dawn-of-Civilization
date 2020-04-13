@@ -544,9 +544,6 @@ public:
 	int /*LeaderHeadTypes*/ getLeader(); //Rhye
 
 	//Leoreth
-	bool isReborn();
-	int getReborn();
-	void setReborn(bool bNewValue = true);
 	void updateTradeRoutes();
 	void updateMaintenance();
 	void AI_reset();

@@ -21,7 +21,10 @@ game = gc.getGame()
 map = gc.getMap()
 
 
-# TODO: unify recently born, recently resurrected, recently reborn
+# TODO: add better API for turns and years
+
+
+# TODO: once reborn is gone, refactor Areas code and make it compatible with Plots and Cities
 
 
 # TODO: use gc.getActiveCivilizationType() instead of human() or self.iActivePlayer

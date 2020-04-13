@@ -1844,7 +1844,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
     int tempX = pPlot->getX_INLINE();
 	int tempY = pPlot->getY_INLINE();
-    int reborn = GET_PLAYER(getID()).getReborn();
 
     int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
 
@@ -2938,7 +2937,6 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	CvPlot* pLoopPlot;
 	int iValue;
 	int iI;
-	int reborn = GET_PLAYER(getID()).getReborn();
 
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
 
@@ -3005,12 +3003,6 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2; // Leoreth: lowered because of war maps influence
 	else if (iSettlerMapValue >= 300) //300-400
 		iValue += 1; // Leoreth: lowered because of war maps influence
-
-	/* Leoreth: take out because of war map influence
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 150) //150-200
-		iValue += 2;
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 40) //40-60-90
-		iValue += 1;*/
 
 	//Leoreth: take war maps into account here as well
 	iValue += pCity->plot()->getWarValue(getID()) / 2;
@@ -7735,7 +7727,6 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 	CvPlot* pLoopPlot;
 	int iValue;
 	int iI;
-	int reborn = GET_PLAYER(getID()).getReborn();
 
 	FAssert(pCity->getOwnerINLINE() != getID());
 
@@ -18145,7 +18136,6 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 	std::vector<int>::iterator it;
 	int iValue;
 	int iI;
-	int reborn = GET_PLAYER(getID()).getReborn();
 
 	int iPass = 0;
 	while (iPass < iMaxSites)
@@ -18226,7 +18216,6 @@ int CvPlayerAI::AI_browseStep(int iMinFoundValueThreshold, int iBestFoundValue, 
 	int iValue;
 	//int iI;
 	int iI, iJ;
-	int reborn = GET_PLAYER(getID()).getReborn();
 
 	for (iI = 0; iI < EARTH_X; iI++)
 	{

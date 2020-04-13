@@ -1253,11 +1253,7 @@ public:
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's
 	DenialTypes AI_slaveTrade(PlayerTypes ePlayer) const; // edead (from Advanced Diplomacy by Afforess)
 
-	//DllExport int getCivicPreference(int column); // Leoreth
-	bool isReborn(); // Leoreth
-    int getReborn(); // Leoreth
-    void setReborn(bool bNewValue = true); // Leoreth
-    bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
+	bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
 	int getSettlerValue(int x, int y); // Leoreth
 	int getWarValue(int x, int y); //Leoreth
@@ -1523,7 +1519,6 @@ protected:
 	//Rhye (jdog) -  end -----------------------
 
 	// Leoreth
-	bool m_bReborn;
 	int m_iInitialBirthTurn;
 	int m_iLastBirthTurn;
 	int m_iPersecutionCountdown;
