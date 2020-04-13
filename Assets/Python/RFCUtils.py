@@ -28,8 +28,6 @@ tCol = (
 lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
 # Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
 
-bStabilityOverlay = False
-
 # Leoreth - finds an adjacent land plot without enemy units that's closest to the player's capital (for the Roman UP)
 # TODO: how is that closest to the capital
 def findNearestLandPlot(tPlot, iPlayer):
@@ -1026,7 +1024,7 @@ def setReborn(iPlayer, bReborn):
 
 # used: CvScreensInterface, CvPlatyBuilderScreen
 def toggleStabilityOverlay(iPlayer = -1):
-	bReturn = bStabilityOverlay
+	bReturn = data.bStabilityOverlay
 	removeStabilityOverlay()
 
 	if bReturn:
@@ -1036,7 +1034,7 @@ def toggleStabilityOverlay(iPlayer = -1):
 	if iPlayer == -1:
 		iPlayer = human()
 
-	bStabilityOverlay = True
+	data.bStabilityOverlay = True
 	CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
 
 	iTeam = player(iPlayer).getTeam()
@@ -1072,7 +1070,7 @@ def removeStabilityOverlay():
 	# clear the highlight
 	for i in range(50):
 		engine.clearAreaBorderPlots(1000+i)
-	bStabilityOverlay = False
+	data.bStabilityOverlay = False
 	CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
 	
 # used: CvPediaBuilding
@@ -1300,7 +1298,7 @@ def getDefaultGreatPerson(iGreatPersonType):
 
 # used: RFCUtils
 def isPossibleForeignCore(iPlayer, tPlot):
-	plot = plot(tPlot)
+	plot = plot_(tPlot)
 	return players.major().alive().without(iPlayer).any(lambda p: canEverRespawn(p) and plot.isCore(p))
 	
 # used: RiseAndFall

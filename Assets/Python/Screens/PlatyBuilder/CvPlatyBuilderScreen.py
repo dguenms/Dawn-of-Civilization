@@ -1284,7 +1284,6 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("UtilButtonPanel")
 			screen.deleteWidget("ClearChanges")
 			screen.deleteWidget("Export")
-			screen.deleteWidget("SwitchReborn")
 			screen.deleteWidget("FlipAIButton")
 			screen.deleteWidget("MoveMapReset")
 			screen.deleteWidget("VictoryRectangleButton")
@@ -1530,15 +1529,6 @@ class CvWorldBuilderScreen:
 						iX += iSpan*iAdjust
 						screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 						iX += iSpan*iAdjust
-						if self.iPlayerAddMode != "RegionMap":
-							if self.iPlayerAddMode == "Flip":
-								bExtended = (self.m_iCurrentPlayer in Areas.dRebirthArea)
-							else:
-								bExtended = (self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
-							if bExtended:
-								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-							else:
-								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in self.MoveMap:
 				if self.iPlayerAddMode == "MoveMap":
@@ -2836,18 +2826,6 @@ class CvWorldBuilderScreen:
 				self.showRegionOverlay()
 			elif self.iPlayerAddMode in self.AreaExport:
 				met.exportAreaExport(self.TempInfo, self.bWaterException, self.bPeaksException)
-
-		elif inputClass.getFunctionName() == "SwitchReborn":
-			bDeleteOverlay = False
-			if inputClass.getData1() == 0:
-				setReborn(self.m_iCurrentPlayer, not player(self.m_iCurrentPlayer).isReborn())
-				if self.iPlayerAddMode == "Flip":
-					self.showFlipZone()
-				elif self.iPlayerAddMode == "WarMap":
-					self.showWarOverlay()
-				else:
-					self.showStabilityOverlay()
-				dc.checkName(self.m_iCurrentPlayer)
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			bDeleteOverlay = False

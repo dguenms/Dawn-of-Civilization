@@ -268,6 +268,8 @@ class GameData:
 		
 		self.dSecedingCities = {}
 		
+		self.bStabilityOverlay = False
+		
 	def timedConquest(self, iPlayer, tPlot):
 		self.lTimedConquests.append((iPlayer, tPlot))
 		
