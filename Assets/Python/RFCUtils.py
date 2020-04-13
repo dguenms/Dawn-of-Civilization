@@ -1326,3 +1326,15 @@ def setCivilization(iPlayer, iNewCivilization):
 	player(iPlayer).setCivilizationType(iNewCivilization)
 	del data.dSlots[iOldCivilization]
 	data.dSlots[iNewCivilization] = iPlayer
+	
+	
+# used: Congresses, CvRandomEventInterface, Stability
+def debug(message):
+	if MainOpt.isShowDebugPopups():
+		show(message)
+
+#used: RFCUtils, CvPlatyBuilderScreen, MapEditorTools, Victory
+def show(message):
+	popup = Popup.PyPopup()
+	popup.setBodyString(message)
+	popup.launch()

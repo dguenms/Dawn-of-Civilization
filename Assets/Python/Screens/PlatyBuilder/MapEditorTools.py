@@ -86,7 +86,7 @@ def exportWarMap(iPlayer):
 	valueFunction = getWarValue
 	writeMapFile(sLocation, sName, valueFunction, iPlayer = iPlayer, bDictStyle = True)
 	
-	utilshow("Warmap of %s exported" % sName)
+	show("Warmap of %s exported" % sName)
 	
 def getWarValue(plot, *args, **kwargs):
 	iPlayer = kwargs.get('iPlayer', None)

@@ -336,17 +336,6 @@ def text_if_exists(key, *format, **kwargs):
 	return ''
 
 
-def debug(message):
-	if MainOpt.isShowDebugPopups():
-		show(message)
-
-
-def show(message):
-	popup = Popup.PyPopup()
-	popup.setBodyString(message)
-	popup.launch()
-
-
 def distance(location1, location2):
 	x1, y1 = _parse_tile(location1)
 	x2, y2 = _parse_tile(location2)
