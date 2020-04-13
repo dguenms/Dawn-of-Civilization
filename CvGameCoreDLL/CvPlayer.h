@@ -1277,16 +1277,15 @@ public:
 	int getBuildingPreference(BuildingTypes eBuilding) const;
 	void setBuildingPreference(BuildingTypes eBuilding, int iNewValue);
 
-	int getBirthYear() const;
-	int getBirthTurn() const;
-	void setBirthYear(int iNewValue);
-
 	int distance(PlayerTypes ePlayer);
 	bool isDistant(PlayerTypes ePlayer);
 	bool isNeighbor(PlayerTypes ePlayer);
 
-	int getLatestRebellionTurn();
-	void setLatestRebellionTurn(int iNewValue);
+	int getInitialBirthTurn() const;
+	void setInitialBirthTurn(int iNewValue);
+
+	int getLastBirthTurn() const;
+	void setLastBirthTurn(int iNewValue);
 
 	EraTypes getSoundtrackEra();
 
@@ -1525,7 +1524,8 @@ protected:
 
 	// Leoreth
 	bool m_bReborn;
-	int m_iLatestRebellionTurn;
+	int m_iInitialBirthTurn;
+	int m_iLastBirthTurn;
 	int m_iPersecutionCountdown;
 	int m_iNoAnarchyTurns;
 	int m_iBirthYear;

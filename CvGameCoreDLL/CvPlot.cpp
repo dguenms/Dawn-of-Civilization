@@ -3493,7 +3493,7 @@ PlayerTypes CvPlot::calculateCulturalOwner(bool bActual) const
 				{
 					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
 					{
-						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > GET_PLAYER((PlayerTypes)iJ).getBirthYear() && !GET_PLAYER((PlayerTypes)iI).isAlive())
+						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurn() > GET_PLAYER((PlayerTypes)iJ).getInitialBirthTurn() && !GET_PLAYER((PlayerTypes)iI).isAlive())
 						{
 							iCulture *= 4;
 							break;

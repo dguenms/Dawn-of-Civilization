@@ -1163,9 +1163,17 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	{
 		int iGameTurn = GC.getGameINLINE().getGameTurn();
 
-		if (iGameTurn - getScenarioStartTurn() > getTurns(10) && // 10 turns after scenario start
-			iGameTurn - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(10) && // 10 turns after player spawn
-			(iGameTurn - GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn() < getTurns(10) || iGameTurn - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < getTurns(10))) // less than 10 turns after target spawn
+		if (iGameTurn < getScenarioStartTurn() + getTurns(10))
+		{
+			return false;
+		}
+
+		if (iGameTurn < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
+		{
+			return false;
+		}
+
+		if (iGameTurn < GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(10))
 		{
 			return false;
 		}
@@ -2805,9 +2813,9 @@ int CvTeam::getTurnResearchModifier() const
 		iTurnModifier *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
 		iTurnModifier /= 100;
 
-		if (GC.getGame().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn() + iTurnModifier)
+		if (GC.getGame().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + iTurnModifier)
 		{
-			iAmount = (GET_PLAYER(getLeaderID()).getBirthTurn() + iTurnModifier) - GC.getGame().getGameTurn();
+			iAmount = (GET_PLAYER(getLeaderID()).getLastBirthTurn() + iTurnModifier) - GC.getGame().getGameTurn();
 
 			// edead: this should make the length of the bonus longer but not the amount
 			iAmount *= 100;
@@ -2825,13 +2833,13 @@ int CvTeam::getTechLeaderModifier() const
 	int iModifier = 0;
 
 	// Leoreth: only during human autoplay
-	if (GC.getGame().getGameTurn() >= GET_PLAYER(GC.getGame().getActivePlayer()).getBirthTurn())
+	if (GC.getGame().getGameTurn() >= GET_PLAYER(GC.getGame().getActivePlayer()).getInitialBirthTurn())
 	{
 		return iModifier;
 	}
 
 	// Leoreth: penalty for the tech leader
-	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(30))
+	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() >= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(30))
 	{
 		int iBestValue = getTotalTechValue();
 		int iDenominator = 0;

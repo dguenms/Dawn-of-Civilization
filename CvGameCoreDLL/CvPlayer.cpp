@@ -585,7 +585,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	//Leoreth
 	m_bReborn = false;
-	m_iLatestRebellionTurn = 0;
+	m_iInitialBirthTurn = 0;
+	m_iLastBirthTurn = 0;
 	m_iNoAnarchyTurns = 0;
 	m_iBirthYear = -1;
 
@@ -7424,7 +7425,7 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 	// Leoreth: help AIs, especially those that start with large stacks, so they don't disband them
 	if (!isHuman())
 	{
-		if (GC.getGame().getGameTurn() < getBirthTurn() + getTurns(20))
+		if (GC.getGame().getGameTurn() < getLastBirthTurn() + getTurns(20))
 		{
 			return 0;
 		}
@@ -12201,7 +12202,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		}
 
 		int iGameTurn = GC.getGame().getGameTurn();
-		if (isHuman() && (iGameTurn > getBirthTurn()) && (iGameTurn > getScenarioStartTurn()) && !GC.getGameINLINE().isNetworkMultiPlayer())
+		if (isHuman() && (iGameTurn > getInitialBirthTurn()) && (iGameTurn > getScenarioStartTurn()) && !GC.getGameINLINE().isNetworkMultiPlayer())
 		{
 			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 			{
@@ -18395,7 +18396,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Init data before load
 	reset();
 
-	// Leoreth: using flag = 7
+	// Leoreth: using flag = 8
 
 	uint uiFlag=0;
 	pStream->Read(&uiFlag);	// flags for expansion
@@ -18539,7 +18540,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 
 	//Leoreth
 	pStream->Read(&m_bReborn);
-	pStream->Read(&m_iLatestRebellionTurn);
+	if (uiFlag >= 8) pStream->Read(&m_iInitialBirthTurn);
+	if (uiFlag >= 8) pStream->Read(&m_iLastBirthTurn);
 	pStream->Read(&m_iNoAnarchyTurns);
 	pStream->Read(&m_iBirthYear);
 
@@ -18942,7 +18944,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 7; // Leoreth: 5 for no resistance and no temporary unhappiness, 6 for unhappiness decay modifier, 7 for periods
+	uint uiFlag = 8; // Leoreth: 5 for no resistance and no temporary unhappiness, 6 for unhappiness decay modifier, 7 for periods, 8 for initial and last birth turn
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -19085,7 +19087,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 
 	//Leoreth
 	pStream->Write(m_bReborn);
-	pStream->Write(m_iLatestRebellionTurn);
+	pStream->Write(m_iInitialBirthTurn);
+	pStream->Write(m_iLastBirthTurn);
 	pStream->Write(m_iNoAnarchyTurns);
 	pStream->Write(m_iBirthYear);
 
@@ -24522,14 +24525,26 @@ EraTypes CvPlayer::getSoundtrackEra()
 	return eCurrentEra;
 }
 
-int CvPlayer::getLatestRebellionTurn()
+int CvPlayer::getInitialBirthTurn() const
 {
-	return m_iLatestRebellionTurn;
+	return m_iInitialBirthTurn;
 }
 
-void CvPlayer::setLatestRebellionTurn(int iNewValue)
+void CvPlayer::setInitialBirthTurn(int iNewValue)
 {
-	m_iLatestRebellionTurn = iNewValue;
+	m_iInitialBirthTurn = iNewValue;
+
+	setLastBirthTurn(iNewValue);
+}
+
+int CvPlayer::getLastBirthTurn() const
+{
+	return m_iLastBirthTurn;
+}
+
+void CvPlayer::setLastBirthTurn(int iNewValue)
+{
+	m_iLastBirthTurn = iNewValue;
 }
 
 // Relic trade based on Afforess' Advanced Diplomacy
@@ -25055,21 +25070,6 @@ int CvPlayer::AI_getTargetDistanceValueModifier() const
 void CvPlayer::setTargetDistanceValueModifier(int iNewValue)
 {
 	m_iTargetDistanceValueModifier = iNewValue;
-}
-
-int CvPlayer::getBirthYear() const
-{
-	return m_iBirthYear;
-}
-
-int CvPlayer::getBirthTurn() const
-{
-	return getTurnForYear(m_iBirthYear);
-}
-
-void CvPlayer::setBirthYear(int iNewValue)
-{
-	m_iBirthYear = iNewValue;
 }
 
 int CvPlayer::AI_getReligiousTolerance() const

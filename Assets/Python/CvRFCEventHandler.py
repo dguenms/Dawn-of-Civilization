@@ -299,7 +299,7 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(iTemple + 4*player(iOwner).getStateReligion(), True)
 			
-		if iOwnerCiv == iPortugal and location(city) == Areas.getCapital(iPortugal) and year() <= year(dBirth[iPortugal]) + 3:
+		if iOwnerCiv == iPortugal and location(city) == Areas.getCapital(iPortugal) and year() <= year(dBirth[iPortugal]) + turns(3):
 			city.setPopulation(5)
 			
 			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, temple(player(iOwner).getStateReligion())]:
@@ -313,7 +313,7 @@ class CvRFCEventHandler:
 				
 			player(iOwner).AI_updateFoundValues(False)
 			
-		if iOwnerCiv == iItaly and location(city) == Areas.getCapital(iItaly) and year() <= year(dBirth[iItaly])+3:
+		if iOwnerCiv == iItaly and location(city) == Areas.getCapital(iItaly) and year() <= year(dBirth[iItaly]) + turns(3):
 			city.setPopulation(7)
 			
 			for iBuilding in [iLibrary, iPharmacy, temple(player(iOwner).getStateReligion()), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:

@@ -3459,20 +3459,18 @@ bool CvPlayerAI::AI_avoidScience() const
 // XXX
 bool CvPlayerAI::AI_isFinancialTrouble() const
 {
-	//if (getCommercePercent(COMMERCE_GOLD) > 50)
 	{
-		//Rhye - start
-		int iGameTurn = GC.getGameINLINE().getGameTurn();
-		//if (iGameTurn == startingTurn[getID()] || iGameTurn == startingTurn[getID()] + 1 || iGameTurn == startingTurn[getID()] + 2)
-		if (iGameTurn == getBirthTurn() || iGameTurn == getBirthTurn() + 1 || iGameTurn == getBirthTurn() + 2) //edead
+		// Leoreth: be generous with recently started civs
+		if (GC.getGameINLINE().getGameTurn() < getLastBirthTurn() + getTurns(5))
+		{
 			return false;
-		//if (getScenario() == SCENARIO_600AD) //late start condition
-			//if (iGameTurn <= 181+2)
-			//if (iGameTurn <= getTurnForYear(600)+2) // edead
-				//return false;
-		if (iGameTurn <= getScenarioStartTurn()+2)
+		}
+
+		if (GC.getGameINLINE().getGameTurn() < getScenarioStartTurn() + getTurns(5))
+		{
 			return false;
-		//Rhye - end
+		}
+
 		int iNetCommerce = 1 + getCommerceRate(COMMERCE_GOLD) + getCommerceRate(COMMERCE_RESEARCH) + std::max(0, getGoldPerTurn());
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       06/11/09                       jdog5000 & DanF5771    */
@@ -12536,7 +12534,7 @@ void CvPlayerAI::AI_doCivics()
 	}
 
 	// Leoreth: don't immediately switch after respawn
-	if (getLatestRebellionTurn() >= GC.getGame().getGameTurn() - 2)
+	if (GC.getGame().getGameTurn() < getLastBirthTurn() + getTurns(2))
 	{
 		return;
 	}
@@ -15188,19 +15186,13 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 		return false;
 	}
 
-	// Leoreth: prevent units from being disbanded after spawn in general
-	if (getID() < NUM_MAJOR_PLAYERS && GC.getGame().getGameTurn() < getBirthTurn() + getTurns(20))
+	// Leoreth: do not disband after spawn
+	if (GC.getGame().getGameTurn() < getLastBirthTurn() + getTurns(20))
 	{
 		return false;
 	}
 
-	// don't disband immediately after respawn
-	if (getLatestRebellionTurn() >= GC.getGame().getGameTurn() - 2)
-	{
-		return false;
-	}
-
-	for(pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 	{
 		if (!(pLoopUnit->hasCargo()))
 		{

@@ -553,8 +553,10 @@ public:
 	void setPersecutionCountdown(int iNewValue);
 	bool hasCivic(int iCivic);
 	int getWorstEnemy();
-	int getLatestRebellionTurn();
-	void setLatestRebellionTurn(int iTurn);
+	int getInitialBirthTurn();
+	void setInitialBirthTurn(int iNewValue);
+	int getLastBirthTurn();
+	void setLastBirthTurn(int iNewValue);
 	bool isSlaveTrade(int ePlayer);
 	bool isHasBuildingEffect(int eBuildingType);
 	void setStabilityParameter(int eParameter, int iNewValue);
@@ -576,9 +578,6 @@ public:
 	void setCompactnessModifier(int iNewValue);
 	void setTargetDistanceValueModifier(int iNewValue);
 	void setReligiousTolerance(int iNewValue);
-	int getBirthYear();
-	int getBirthTurn();
-	void setBirthYear(int iNewValue);
 	void AI_chooseFreeTech();
 	bool isSlavery();
 	bool isColonialSlavery();

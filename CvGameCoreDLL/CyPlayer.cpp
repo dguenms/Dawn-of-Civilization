@@ -2473,15 +2473,30 @@ int CyPlayer::getWorstEnemy()
 	return m_pPlayer ? m_pPlayer->getWorstEnemy() : false;
 }
 
-int CyPlayer::getLatestRebellionTurn()
+int CyPlayer::getInitialBirthTurn()
 {
-	return m_pPlayer ? m_pPlayer->getLatestRebellionTurn() : -1;
+	return m_pPlayer ? m_pPlayer->getInitialBirthTurn() : -1;
 }
 
-void CyPlayer::setLatestRebellionTurn(int iTurn)
+void CyPlayer::setInitialBirthTurn(int iNewValue)
 {
 	if (m_pPlayer)
-		m_pPlayer->setLatestRebellionTurn(iTurn);
+	{
+		m_pPlayer->setInitialBirthTurn(iNewValue);
+	}
+}
+
+int CyPlayer::getLastBirthTurn()
+{
+	return m_pPlayer ? m_pPlayer->getLastBirthTurn() : -1;
+}
+
+void CyPlayer::setLastBirthTurn(int iNewValue)
+{
+	if (m_pPlayer)
+	{
+		m_pPlayer->setLastBirthTurn(iNewValue);
+	}
 }
 
 bool CyPlayer::isSlaveTrade(int ePlayer)
@@ -2587,22 +2602,6 @@ void CyPlayer::setReligiousTolerance(int iNewValue)
 {
 	if (m_pPlayer)
 		m_pPlayer->setReligiousTolerance(iNewValue);
-}
-
-int CyPlayer::getBirthYear() 
-{
-	return m_pPlayer ? m_pPlayer->getBirthYear() : -1;
-}
-
-int CyPlayer::getBirthTurn()
-{
-	return m_pPlayer ? m_pPlayer->getBirthTurn() : -1;
-}
-
-void CyPlayer::setBirthYear(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setBirthYear(iNewValue);
 }
 
 int CyPlayer::getSpreadType(CyPlot* pPlot, int iReligion) const
