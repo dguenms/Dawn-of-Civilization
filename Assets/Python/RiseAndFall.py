@@ -814,7 +814,7 @@ class RiseAndFall:
 				sta.completeCollapse(slot(iAztecs))
 
 		for iLoopPlayer in players.major().where(lambda p: dBirth[p] > scenarioStartYear()):
-			if year() >= year(dBirth[iLoopPlayer]) - 2 and year() <= year(dBirth[iLoopPlayer]) + 6:
+			if year(dBirth[iLoopPlayer]) - turns(2) <= year() <= year(dBirth[iLoopPlayer]) + turns(6):
 				self.initBirth(dBirth[iLoopPlayer], iLoopPlayer)
 
 		if year() == year(600):
@@ -830,7 +830,7 @@ class RiseAndFall:
 
 		#kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
 		for iCiv in [iVikings, iSpain, iFrance, iHolyRome, iRussia, iAztecs]:
-			if year() >= dBirth[iCiv]+2 and year() <= dBirth[iCiv]+turns(10):
+			if year(dBirth[iCiv]) + turns(2) <= year() <= year(dBirth[iCiv]) + turns(10):
 				killUnitsInArea(iBarbarianPlayer, Areas.getBirthArea(iCiv))
 				
 		#fragment utility
@@ -933,7 +933,7 @@ class RiseAndFall:
 		if year() >= year(dBirth[human()]):
 			startNewCivSwitchEvent(iPlayer)
 
-		player(iPlayer).setLatestRebellionTurn(year(dSpawn[iCiv]))
+		player(iPlayer).setInitialBirthTurn(year(dSpawn[iCiv]))
 
 		# adjust gold, civics, religion and other special settings
 		if iCiv == iIran:
@@ -1602,7 +1602,7 @@ class RiseAndFall:
 		elif iCiv == iGermany and not player(iPlayer).isHuman():
 			return
 		
-		if year() <= dBirth[iCiv] + 5:
+		if year() <= year(dBirth[iCiv]) + turns(5):
 			for iEnemy in lEnemies:
 				tEnemy = team(iEnemy)
 				
@@ -2017,7 +2017,7 @@ class RiseAndFall:
 		iUnitType = pLosingUnit.getUnitType()
 		if not is_minor(iLosingPlayer):
 			iBirthTurn = year(dBirth[iLosingPlayer])
-			if iBirthTurn <= year() <= iBirthTurn+2:
+			if iBirthTurn <= year() <= iBirthTurn + turns(2):
 				if location(pLosingUnit) == Areas.getCapital(civ(iLosingPlayer)):
 					if rand(100) >= 50:
 						makeUnit(iLosingPlayer, iUnitType, pLosingUnit)

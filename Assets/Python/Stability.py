@@ -207,15 +207,15 @@ def isImmune(iPlayer):
 		return True
 		
 	# immune right after scenario start
-	if turn() - scenarioStartTurn() < turns(20):
+	if turn() < scenarioStartTurn() + turns(20):
 		return True
 		
 	# immune right after birth
-	if year() - year(dSpawn[iPlayer]) < turns(20):
+	if turn() < pPlayer.getInitialBirthTurn() + turn(20):
 		return True
 		
 	# immune right after resurrection
-	if turn() - pPlayer.getLatestRebellionTurn() < turns(10):
+	if turn() < pPlayer.getLastBirthTurn() + turns(10):
 		return True
 		
 	return False
@@ -1538,7 +1538,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	iGarrison = 2
 	iArmySize = pPlayer.getCurrentEra()
 	
-	pPlayer.setLatestRebellionTurn(turn())
+	pPlayer.setLastBirthTurn(turn())
 		
 	# add former colonies that are still free
 	for city in players.minor().alive().cities().where(lambda city: city.getOriginalOwner() == iPlayer):

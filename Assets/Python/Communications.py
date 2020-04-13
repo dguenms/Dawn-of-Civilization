@@ -97,7 +97,7 @@ class Communications:
 
 	def canDecay(self, iGameTurn, iCiv):
 		if player(iCiv).isAlive() and not is_minor(iCiv):
-			if iGameTurn >= year(dBirth[iCiv]) + turns(15): # edead: RFCM
+			if iGameTurn >= player(iCiv).getLastBirthTurn() + turns(15): # edead: RFCM
 				if not team(iCiv).isHasTech(iElectricity):
 					self.decay(slot(iCiv))
 

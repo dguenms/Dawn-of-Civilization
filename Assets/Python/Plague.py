@@ -397,7 +397,7 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
-		if year() > year(dBirth[iAztecs]) + 2 and year() < year(1800):
+		if year() > year(dBirth[iAztecs]) + turns(2) and year() < year(1800):
 			iOldWorldCiv = -1
 			iNewWorldCiv = -1
 			if civ(iTeamX) in lBioNewWorld and civ(iHasMetTeamY) not in lBioNewWorld and not is_minor(iHasMetTeamY):
