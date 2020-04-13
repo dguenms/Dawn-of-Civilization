@@ -1,0 +1,8 @@
+# dBirthArea
+iEgypt :		((66, 30),	(70, 36)),
+
+# dBirthAreaExceptions
+iEgypt :		[(67, 33)],
+
+# dExtendedBirthArea
+iEgypt :		((65, 30), (70, 36)),

@@ -570,45 +570,32 @@ class CvWorldBuilderScreen:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
 		elif self.iPlayerAddMode == "Flip":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-				if self.bFlipAI:
-					if tPlot not in lAIPlotList:
-						lAIPlotList.append(tPlot)
-				else:
-					if tPlot not in lHumanPlotList:
-						lHumanPlotList.append(tPlot)
-					if tPlot in lAIPlotList:
-						lAIPlotList.remove(tPlot)
-				self.lCurrentFlipZone = lHumanPlotList, lAIPlotList
-				self.dFlipZoneEdits[self.m_iCurrentPlayer] = self.lCurrentFlipZone
+				self.changeFlipZone(self.m_pCurrentPlot, True)
 				if not bMulti:
 					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
+				self.m_pCurrentPlot.setCore(self.m_iCurrentPlayer, True)
 				if not bMulti:
 					self.showStabilityOverlay()
 					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "SettlerValue":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
+				self.m_pCurrentPlot.setSettlerValue(self.m_iCurrentPlayer, iSetValue)
 				if not bMulti:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeWarValue(self.m_iCurrentPlayer, tPlot, iWarValue)
+				self.m_pCurrentPlot.setWarValue(self.m_iCurrentPlayer, iWarValue)
 				if not bMulti:
 					self.showWarOverlay()
 		elif self.iPlayerAddMode == "ReligionMap":
-			met.changeReligionValue(self.m_iCurrentReligion, self.m_pCurrentPlot, self.m_iReligionMapValue)
+			if not self.m_pCurrentPlot.isWater():
+				self.m_pCurrentPlot.setSpreadFactor(self.m_iCurrentReligion, self.m_iReligionMapValue)
 			if not bMulti:
 				self.showReligionOverlay()
 		elif self.iPlayerAddMode == "RegionMap":
-			met.changeRegionID(self.m_pCurrentPlot, self.m_iRegionMapID)
+			self.m_pCurrentPlot.setRegionID(self.m_iRegionMapID)
 			if not bMulti:
 				self.showRegionOverlay()
 		elif self.iPlayerAddMode == "AreaExporter1":
@@ -720,37 +707,28 @@ class CvWorldBuilderScreen:
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "Flip":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-				if tPlot in lAIPlotList:
-					lAIPlotList.remove(tPlot)
-				if tPlot in lHumanPlotList:
-					lHumanPlotList.remove(tPlot)
-				self.lCurrentFlipZone = lHumanPlotList, lAIPlotList
-				self.dFlipZoneEdits[self.m_iCurrentPlayer] = self.lCurrentFlipZone
+				self.changeFlipZone(self.m_pCurrentPlot, False)
 				if not bMulti:
 					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
+				self.m_pCurrentPlot.setCore(self.m_iCurrentPlayer, False)
 				if not bMulti:
 					self.showStabilityOverlay()
 					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "SettlerValue":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, 20)
+				self.m_pCurrentPlot.setSettlerValue(self.m_iCurrentPlayer, 20)
 				if not bMulti:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
 			if not is_minor(self.m_iCurrentPlayer):
-				tPlot = location(self.m_pCurrentPlot)
-				met.changeWarValue(self.m_iCurrentPlayer, tPlot, 0)
+				self.m_pCurrentPlot.setWarValue(self.m_iCurrentPlayer, 0)
 				if not bMulti:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "ReligionMap":
-			met.changeReligionValue(self.m_iCurrentReligion, self.m_pCurrentPlot, 0)
+			if not self.m_pCurrentPlot.isWater():
+				self.m_pCurrentPlot.setSpreadFactor(self.m_iCurrentReligion, 0)
 			if not bMulti:
 				self.showReligionOverlay()
 		elif self.iPlayerAddMode == "RegionMap":
@@ -1985,12 +1963,11 @@ class CvWorldBuilderScreen:
 	def showFlipZone(self):
 		removeStabilityOverlay()
 		if not is_minor(self.m_iCurrentPlayer):
-			self.setCurrentFlip()
 
 			tSpawn = Areas.getCapital(civ(self.m_iCurrentPlayer))
 			CyEngine().fillAreaBorderPlotAlt(tSpawn[0], tSpawn[1], 1002, "COLOR_CYAN", 0.7)
 
-			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
+			lHumanPlotList, lAIPlotList = self.getFlipZone(self.m_iCurrentPlayer)
 			for tPlot in lHumanPlotList:
 				if tPlot in lAIPlotList: continue
 				if tPlot == tSpawn: continue
@@ -2007,19 +1984,36 @@ class CvWorldBuilderScreen:
 			for tPlot in lAIPlotList:
 				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, "COLOR_RED", 0.7)
 
-	def setCurrentFlip(self):
-		if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
-			self.lCurrentFlipZone = self.dFlipZoneEdits[self.m_iCurrentPlayer]
-		else:
-			# Human flipzone
-			lHumanPlotList = Areas.getBirthArea(civ(self.m_iCurrentPlayer))
-
-			if self.m_iCurrentPlayer in Areas.dExtendedBirthArea:
-				tTL, tBR = Areas.getBirthRectangle(civ(self.m_iCurrentPlayer), True)
-				lAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[civ(self.m_iCurrentPlayer)]).notin(*lHumanPlotList)
+	def changeFlipZone(self, plot, bAdd):
+		lHumanPlotList, lAIPlotList	= self.getFlipZone(self.m_iCurrentPlayer)
+		
+		tPlot = location(self.m_pCurrentPlot)
+		if bAdd:
+			if self.bFlipAI:
+				if tPlot in lHumanPlotList: lHumanPlotList.remove(tPlot)
+				if tPlot not in lAIPlotList: lAIPlotList.append(tPlot)
 			else:
-				lAIPlotList = []
-			self.lCurrentFlipZone = [lHumanPlotList, lAIPlotList]
+				if tPlot not in lHumanPlotList: lHumanPlotList.append(tPlot)
+				if tPlot in lAIPlotList: lAIPlotList.remove(tPlot)
+		else:
+			if tPlot in lHumanPlotList: lHumanPlotList.remove(tPlot)
+			if tPlot in lAIPlotList: lAIPlotList.remove(tPlot)
+			
+		self.dFlipZoneEdits[self.m_iCurrentPlayer] = (lHumanPlotList, lAIPlotList)
+
+
+	def getFlipZone(self, iPlayer):
+		if iPlayer in self.dFlipZoneEdits.keys():
+			return self.dFlipZoneEdits[iPlayer]
+
+		# Human flipzone
+		lHumanPlotList = Areas.getBirthArea(civ(iPlayer))
+
+		lAIPlotList = []
+		if civ(iPlayer) in Areas.dExtendedBirthArea:
+			tTL, tBR = Areas.getBirthRectangle(civ(iPlayer), True)
+			lAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[civ(iPlayer)]).notin(*lHumanPlotList)
+		return (lHumanPlotList, lAIPlotList)
 
 	def showStabilityOverlay(self):
 		removeStabilityOverlay()
@@ -2758,33 +2752,33 @@ class CvWorldBuilderScreen:
 			elif self.iPlayerAddMode == "Core":
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in players.major():
-						met.resetCore(iPlayer)
+						Areas.updateCore(iPlayer)
 				else:
-					met.resetCore(self.m_iCurrentPlayer)
+					Areas.updateCore(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in players.major():
-						met.resetSettler(iPlayer)
+						SettlerMaps.updateMap(iPlayer)
 				else:
-					met.resetSettler(self.m_iCurrentPlayer)
+					SettlerMaps.updateMap(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "WarMap":
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in players.major():
-						met.resetWarMap(iPlayer)
+						WarMaps.updateMap(iPlayer)
 				else:
-					met.resetWarMap(self.m_iCurrentPlayer)
+					WarMaps.updateMap(self.m_iCurrentPlayer)
 				self.showWarOverlay()
 			elif self.iPlayerAddMode == "ReligionMap":
 				if CvEventInterface.getEventManager().bAlt:
 					for iReligion in range(iNumReligions):
-						met.resetReligionMap(iReligion)
+						RegionMap.updateReligionSpread(iReligion)
 				else:
-					met.resetReligionMap(self.m_iCurrentReligion)
+					RegionMap.updateReligionSpread(self.m_iCurrentReligion)
 				self.showReligionOverlay()
 			elif self.iPlayerAddMode == "RegionMap":
-				met.resetRegionMap()
+				RegionMap.updateRegionMap()
 				self.showRegionOverlay()
 			elif self.iPlayerAddMode in self.AreaExport:
 				self.TempInfo = []
@@ -2795,34 +2789,18 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "Export":
 			bDeleteOverlay = False
 			if self.iPlayerAddMode == "Flip":
-				if CvEventInterface.getEventManager().bAlt:
-					met.exportAllFlip(self.dFlipZoneEdits)
-				else:
-					met.exportFlip(self.m_iCurrentPlayer, self.dFlipZoneEdits)
+				met.exportFlip(self.m_iCurrentPlayer, self.getFlipZone(self.m_iCurrentPlayer))
 			elif self.iPlayerAddMode == "Core":
-				if CvEventInterface.getEventManager().bAlt:
-					met.exportAllCores()
-				else:
-					met.exportCore(self.m_iCurrentPlayer, CyInterface().shiftKey())
+				met.exportCore(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
-				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in players.major():
-						met.exportSettlerMap(iPlayer, True)
-					show("Settlermaps of all Civs exported")
-				else:
-					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
+				met.exportSettlerMap(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "WarMap":
-				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in players.major():
-						met.exportWarMap(iPlayer, True)
-					show("Warmaps of all Civs exported")
-				else:
-					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
+				met.exportWarMap(self.m_iCurrentPlayer)
 				self.showWarOverlay()
 			elif self.iPlayerAddMode == "RegionMap":
-				met.exportRegionMap(CyInterface().shiftKey())
+				met.exportRegionMap()
 				self.showRegionOverlay()
 			elif self.iPlayerAddMode in self.AreaExport:
 				met.exportAreaExport(self.TempInfo, self.bWaterException, self.bPeaksException)
