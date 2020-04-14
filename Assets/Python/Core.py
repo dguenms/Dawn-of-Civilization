@@ -6,8 +6,8 @@ from StoredData import *
 from DataStructures import *
 from Types import Civ
 
+import Popup
 import BugCore
-# import Popup
 
 import random
 
@@ -1098,6 +1098,9 @@ class Players(EntityCollection):
 		
 	def ai(self):
 		return self.where(lambda p: not player(p).isHuman())
+
+	def human(self):
+		return self.where(lambda p: player(p).isHuman())
 		
 	def without(self, exceptions):
 		if not isinstance(exceptions, (list, set, Players)):
