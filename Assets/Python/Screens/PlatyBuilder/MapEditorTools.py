@@ -20,9 +20,18 @@ def getTLBR(lPlots):
 	BR = (max(lPlotX), max(lPlotY))
 	return TL, BR
 
+def getCivName(iPlayer):
+	if civ(player(iPlayer)) == iHolyRome:
+		return "HolyRome"
+	elif civ(player(iPlayer)) == iTurks:
+		return "Turks"
+	elif civ(player(iPlayer)) == iOttomans:
+		return "Ottomans"
+	return name(iPlayer)
+
 def exportFlip(iPlayer, (lHumanFlipPlot, lAIFlipPlots)):
 	sLocation = "FlipZones"
-	sName = Infos().civ(player(iPlayer)).getShortDescription(0)
+	sName = getCivName(iPlayer)
 	sDictName = "dBirthArea"
 	
 	BL, TR = getTLBR(lHumanFlipPlot)
@@ -44,7 +53,7 @@ def exportFlip(iPlayer, (lHumanFlipPlot, lAIFlipPlots)):
 
 def exportCore(iPlayer):
 	sLocation = "Cores"
-	sName = Infos().civ(player(iPlayer)).getShortDescription(0)
+	sName = getCivName(iPlayer)
 	sDictName = "dCoreArea"
 	
 	lCorePlots = plots.all().core(iPlayer)
@@ -61,7 +70,7 @@ def exportCore(iPlayer):
 
 def exportSettlerMap(iPlayer):
 	sLocation = "SettlerValues"
-	sName = Infos().civ(player(iPlayer)).getShortDescription(0)
+	sName = getCivName(iPlayer)
 	valueFunction = getSettlerValue
 	writeMapFile(sLocation, sName, valueFunction, iPlayer = iPlayer, bDictStyle = True)
 	
@@ -82,7 +91,7 @@ def getSettlerValue(plot, *args, **kwargs):
 
 def exportWarMap(iPlayer):
 	sLocation = "WarMaps"
-	sName = Infos().civ(player(iPlayer)).getShortDescription(0)
+	sName = getCivName(iPlayer)
 	valueFunction = getWarValue
 	writeMapFile(sLocation, sName, valueFunction, iPlayer = iPlayer, bDictStyle = True)
 	
