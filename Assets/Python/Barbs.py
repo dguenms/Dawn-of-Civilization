@@ -331,7 +331,7 @@ class Barbs:
 			bForceSpawn = False
 			
 			if sName == 'Kyiv': lReligions = [iOrthodoxy]
-			if iCiv == iCelts and scenario() != i3000BC: iCiv = players.independent().asCivs().random()
+			if iCiv == iCelts and scenario() != i3000BC: iCiv = civ(players.independent().random())
 			if sName == 'Buda': bForceSpawn = True
 			if sName == 'Muqdisho': lReligions = [iIslam]
 			
