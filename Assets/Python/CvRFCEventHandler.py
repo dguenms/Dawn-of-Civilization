@@ -319,7 +319,7 @@ class CvRFCEventHandler:
 			for iBuilding in [iLibrary, iPharmacy, temple(player(iOwner).getStateReligion()), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
 				city.setHasRealBuilding(iBuilding, True)
 				
-			player(iPlayer).AI_updateFoundValues(False)
+			player(iOwner).AI_updateFoundValues(False)
 
 		vic.onCityBuilt(iOwner, city)
 			

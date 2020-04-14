@@ -649,6 +649,12 @@ class TestPlayers(TestCase):
 		assertType(self, players, Players)
 		self.assertEqual(len(players), 2)
 		self.assert_(gc.getPlayer(0) not in players)
+
+	def test_human(self):
+		players = self.players.human()
+		assertType(self, players, Players)
+		self.assertEqual(len(players), 1)
+		self.assert_(gc.getPlayer(0) in players)
 		
 	def test_without_player_id(self):
 		players = self.players.without(0)

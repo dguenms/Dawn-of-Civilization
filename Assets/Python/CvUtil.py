@@ -10,7 +10,6 @@ import sys
 
 #Alexius08: import RFC-specific constants and functions for new score calc formula
 from Consts import *
-from Core import *
 
 # For Civ game code access
 from CvPythonExtensions import *
@@ -177,7 +176,7 @@ def getScoreComponent(iRawScore, iInitial, iMax, iFactor, bExponential, bFinal, 
 
 	if bFinal and bVictory:
 		#Alexius08: Begin new score calculation formula
-		iHumanSpawnTurn = year(dSpawn[human()])
+		iHumanSpawnTurn = getTurnForYear(dSpawn[gc.getGame().getActivePlayer()])
 		fTurnRatio = float(gc.getGame().getGameTurnYear() - iHumanSpawnTurn) / float(gc.getGame().getEstimateEndTurn() - iHumanSpawnTurn) #Compensate for player's delayed spawn
 		#End new formula
 		
