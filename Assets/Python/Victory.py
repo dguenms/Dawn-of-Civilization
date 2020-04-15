@@ -957,8 +957,9 @@ def checkTurn(iGameTurn, iPlayer):
 			bDye = pWari.getNumAvailableBonuses(iDye) >= 1
 			bCotton = pWari.getNumAvailableBonuses(iCotton) >= 1
 			bSheep = pWari.getNumAvailableBonuses(iSheep) >= 1
+			bCulture = pWari.countTotalCulture() >= utils.getTurns(500)
 			
-			if bGold and bDye and bCotton and bSheep:
+			if bGold and bDye and bCotton and bSheep and bCulture:
 				win(iWari, 0)
 			
 		if iGameTurn == getTurnForYear(900):
@@ -971,7 +972,7 @@ def checkTurn(iGameTurn, iPlayer):
 			bRoute = True
 			for city in utils.getCityList(iPlayer):
 				if city.getX() == pWari.getCapitalCity().getX() and city.getY() == pWari.getCapitalCity().getY(): continue
-				if not isConnectedByRoute(iWari, (pWari.getCapitalCity().getX(), pWari.getCapitalCity().getY()), (city.getX(), city.getY())):
+				if not isConnectedByRoute(iWari, (pWari.getCapitalCity().getX(), pWari.getCapitalCity().getY()), [(city.getX(), city.getY())]):
 					bRoute = False
 					break
 			if iNumBarracks >= 3 and iNumColcas >= 3 and bRoute:
@@ -980,10 +981,10 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1000):
 			expire(iWari, 1)
 			
-		# third goal: Have three cities with refined culture and 7 population by 1100 AD
+		# third goal: Have three cities with refined culture and 5 population by 1100 AD
 		if isPossible(iWari, 2):
-			iDual = countCitiesWithCultureLevelAndSize(iWari, 4, 7)
-			if iDual >= 3:
+			iDual = countCitiesWithCultureLevelAndSize(iWari, 4, 5)
+			if iDual >= 2:
 				win(iWari, 2)
 		
 		if iGameTurn ==getTurnForYear(1100):
@@ -4969,8 +4970,9 @@ def getUHVHelp(iPlayer, iGoal):
 			bDye = pWari.getNumAvailableBonuses(iDye) >= 1
 			bCotton = pWari.getNumAvailableBonuses(iCotton) >= 1
 			bSheep = pWari.getNumAvailableBonuses(iSheep) >= 1
+			iCulture = pWari.countTotalCulture()
 			
-			aHelp.append(getIcon(bGold) + localText.getText("TXT_KEY_BONUS_GOLD", ()) + ' ' + getIcon(bDye) + localText.getText("TXT_KEY_BONUS_DYE", ()) + ' ' + getIcon(bCotton) + localText.getText("TXT_KEY_BONUS_COTTON", ()) + ' ' + getIcon(bSheep) + localText.getText("TXT_KEY_BONUS_SHEEP", ()))
+			aHelp.append(getIcon(bGold) + localText.getText("TXT_KEY_BONUS_GOLD", ()) + ' ' + getIcon(bDye) + localText.getText("TXT_KEY_BONUS_DYE", ()) + ' ' + getIcon(bCotton) + localText.getText("TXT_KEY_BONUS_COTTON", ()) + ' ' + getIcon(bSheep) + localText.getText("TXT_KEY_BONUS_SHEEP", ()) + getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
 
 		elif iGoal == 1:
 			iNumBarracks = getNumBuildings(iWari, iBarracks)
@@ -4978,16 +4980,16 @@ def getUHVHelp(iPlayer, iGoal):
 			bRoute = True
 			for city in utils.getCityList(iPlayer):
 				if city.getX() == pWari.getCapitalCity().getX() and city.getY() == pWari.getCapitalCity().getY(): continue
-				if not isConnectedByRoute(iWari, (pWari.getCapitalCity().getX(), pWari.getCapitalCity().getY()), (city.getX(), city.getY())):
+				if not isConnectedByRoute(iWari, (pWari.getCapitalCity().getX(), pWari.getCapitalCity().getY()), [(city.getX(), city.getY())]):
 					bRoute = False
 					break
 			
 			aHelp.append(getIcon(iNumBarracks >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 3)) + ' ' + getIcon(iNumColcas >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_COLCAS", (iNumColcas, 3)) + ' ' + getIcon(bRoute) + localText.getText("TXT_KEY_VICTORY_CONNECTED", ()))
 
 		elif iGoal == 2:
-			iDual = countCitiesWithCultureLevelAndSize(iWari, 4, 7)
+			iDual = countCitiesWithCultureLevelAndSize(iWari, 4, 5)
 			
-			aHelp.append(getIcon(iDual >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_REFINED_7POP_CITIES", (iDual, 3)))
+			aHelp.append(getIcon(iDual >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_REFINED_7POP_CITIES", (iDual, 2)))
 
 	elif iPlayer == iByzantium:
 		if iGoal == 0:

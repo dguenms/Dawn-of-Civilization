@@ -214,7 +214,7 @@
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<YieldModifiers>
 				<iYield>0</iYield>
-				<iYield>10</iYield>
+				<iYield>15</iYield>
 			</YieldModifiers>
 			<BonusHealthChanges>
 				<BonusHealthChange>
@@ -230,12 +230,12 @@
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
+			<DomainFreeExperiences>
+				<DomainFreeExperience>
+					<DomainType>DOMAIN_LAND</DomainType>
+					<iExperience>1</iExperience>
+				</DomainFreeExperience>
+			</DomainFreeExperiences>
 			<ConstructSound>AS2D_BUILD_GRANARY</ConstructSound>
 			<Flavors>
 				<Flavor>

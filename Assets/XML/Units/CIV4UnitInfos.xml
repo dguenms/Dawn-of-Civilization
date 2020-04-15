@@ -7524,7 +7524,7 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>4</iCombat>
+			<iCombat>3</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
@@ -7535,12 +7535,13 @@
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
+			<iWithdrawalProb>30</iWithdrawalProb>
 			<iCityDefense>25</iCityDefense>
-			<iHillsAttack>25</iHillsAttack>
 			<iHillsDefense>50</iHillsDefense>
+			<iHillsAttack>25</iHillsAttack>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>1</iAsset>
-			<iPower>4</iPower>
+			<iPower>3</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>

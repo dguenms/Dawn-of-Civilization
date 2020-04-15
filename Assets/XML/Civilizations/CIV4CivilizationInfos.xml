@@ -7729,7 +7729,7 @@
 			<DerivativeCiv>CIVILIZATION_AMERICA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_VIKING_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_VIKING_ORDER</CivilizationActionSound>
-		</CivilizationInfo>>
+		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_WARI</Type>
 			<Description>TXT_KEY_CIV_WARI_DESC</Description>

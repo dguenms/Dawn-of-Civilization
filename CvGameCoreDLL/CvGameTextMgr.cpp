@@ -11046,6 +11046,21 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
 	{
+		if (ePlayer == TIWANAKU && kBuilding.getBuildingClassType() == GC.getBuildingInfo(PAGAN_TEMPLE).getBuildingClassType() && iI == SPECIALIST_PRIEST)
+		{
+			if (kBuilding.getSpecialistCount(iI) > 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TURN_CITIZENS_INTO", kBuilding.getSpecialistCount(iI) + 1, GC.getSpecialistInfo((SpecialistTypes) iI).getTextKeyWide()));
+			}
+			else
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TURN_CITIZEN_INTO", GC.getSpecialistInfo((SpecialistTypes) iI).getTextKeyWide()));
+			}
+			
+		}
+
 		if (kBuilding.getSpecialistCount(iI) > 0)
 		{
 			if (kBuilding.getSpecialistCount(iI) == 1)

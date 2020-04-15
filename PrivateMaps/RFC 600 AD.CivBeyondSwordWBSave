@@ -10034,6 +10034,22 @@ BeginPlot
 	x=24,y=25
 	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
+	BeginUnit
+		UnitType=UNIT_WARI_PICTA_AUCAC, UnitOwner=21, (Wari)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WARI_PICTA_AUCAC, UnitOwner=21, (Wari)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=21, (Wari)
+	EndUnit
+	BeginCity
+		CityOwner=21, (Wari)
+		CityName=Inkapirka
+		CityPopulation=3
+		BuildingType=BUILDING_MONUMENT
+		Player21Culture=100, (Wari)
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -10388,6 +10404,8 @@ EndPlot
 BeginPlot
 	x=25,y=24
 	BonusType=BONUS_CORN
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -10740,6 +10758,7 @@ EndPlot
 BeginPlot
 	x=26,y=21
 	BonusType=BONUS_CRAB
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11114,6 +11133,8 @@ EndPlot
 BeginPlot
 	x=27,y=21
 	BonusType=BONUS_CORN
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -11141,12 +11162,12 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=21, (Wari)
-		CityName=Cerro Patapo
+		CityName=Wari
 		CityPopulation=3
 		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MONUMENT
-		Player21Culture=100, (Wari)
+		BuildingType=BUILDING_WARI_COLCAS
+		BuildingType=BUILDING_BARRACKS
+		Player21Culture=250, (Wari)
 	EndCity
 	PlotType=1
 EndPlot
@@ -11877,6 +11898,8 @@ BeginPlot
 	x=29,y=19
 	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
+	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	PlotType=2
 EndPlot
 BeginPlot
@@ -12259,12 +12282,15 @@ BeginPlot
 	x=30,y=17
 	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=18
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
+	RouteType=ROUTE_ROAD
 	PlotType=2
 EndPlot
 BeginPlot
@@ -12279,9 +12305,6 @@ BeginPlot
 		UnitType=UNIT_ARCHER, UnitOwner=19, (Tiwanaku)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=19, (Tiwanaku)
-	EndUnit
-	BeginUnit
 		UnitType=UNIT_SKIRMISHER, UnitOwner=19, (Tiwanaku)
 	EndUnit
 	BeginUnit
@@ -12291,13 +12314,13 @@ BeginPlot
 		UnitType=UNIT_WORKER, UnitOwner=19, (Tiwanaku)
 	EndUnit
 	BeginCity
-		CityOwner=19, (Wari)
+		CityOwner=19, (Tiwanaku)
 		CityName=Tiwanaku
 		CityPopulation=3
 		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MONUMENT
-		Player19Culture=100, (Tiwanaku)
+		BuildingType=BUILDING_INTI_TEMPLE
+		BuildingType=BUILDING_TIWANAKU_KALASASAYA
+		Player19Culture=500, (Tiwanaku)
 	EndCity
 	PlotType=1
 EndPlot
@@ -12684,6 +12707,8 @@ EndPlot
 BeginPlot
 	x=31,y=19
 	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot

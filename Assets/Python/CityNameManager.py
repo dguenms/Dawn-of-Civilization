@@ -154,7 +154,7 @@ def getFoundName(iCiv, tPlot):
 					if tPlot == (25, 23): return "Caral"
 			
 				if iCiv == iWari:
-					if tPlot == (27, 22): return "Cerro Patapo"
+					if tPlot == (27, 22): return "Wari"
 			
 				return sName
 				
@@ -4936,7 +4936,7 @@ dIdentifiers = {
 	"Nori"		:	"M&#252;nchen",
 	"Machu Picchu"		:	"Machu-Pikchu",
 	"Machu-Pikchu"		:	"Machu-Pikchu",
-	"Cerro Patapo"		:	"Machu-Pikchu",
+	"Wari"		:	"Machu-Pikchu",
 	"Madinah"		:	"Madinah",
 	"Medine"		:	"Madinah",
 	"Chennai"		:	"Madras",
@@ -7033,7 +7033,7 @@ tRenames = (
 	"Aomen"			:	"Macao",
 	"Haojing"		:	"Macao",
 	"Machu-Pikchu"		:	"Machu Picchu",
-	"Cerro Patapo"		:	"Machu-Pikchu",
+	"Wari"		:	"Machu-Pikchu",
 	"Madrid"		:	"Madrid",
 	"Celtiberi"		:	"Madrid",
 	"Bandar Melaka"		:	"Malaca",
