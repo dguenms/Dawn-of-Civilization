@@ -749,4 +749,20 @@
 		<Tag>TXT_KEY_DOM_NORTE_CHICO</Tag>
 		<English>It is the year 3000 BC. Settling along the river beds of the Fortaleza, Pativilca, and Supe rivers, the Andean peoples form the first civilizations in the Americas...</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TIWANAKU</Tag>
+		<English>It is the year 110 AD. As the invention of ceramics strengthens existing trade routes, the pilgrimige site of Tiwanaku begins growing into a true city and the first great regional power since the fall of the Norte Chican Civilization. With an economy built on the seasonal swelling of visitors from far and wide, the city of Tiwanaku is primed to grow into an empire of great fame and glory.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_WARI</Tag>
+		<English>It is the year 400 AD. North of the flourishing Tiwanaku, the rist of the Wari Empire heralds what will soon become the first major Andean power struggle...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TIWANAKU_600</Tag>
+		<English>It is the year 600 AD. The Tiwanaku Empire is in the middle of a cold war with their northern neighbors...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_WARI_600AD</Tag>
+		<English>It is the year 600 AD. The Wari Empire is in the middle of a cold war with their southern neighbors...</English>
+	</TEXT>
 </Civ4GameText>

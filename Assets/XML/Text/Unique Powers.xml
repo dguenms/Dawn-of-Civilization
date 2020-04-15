@@ -435,11 +435,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC_TITLE</Tag>
-		<English>The Power of Terraces:</English>
-		<French>Le pouvoir des terrasses :</French>
-		<German>Die Macht der Terrassen:</German>
-		<Italian>Il potere delle terrazze:</Italian>
-		<Spanish>El poder de las terrazas:</Spanish>
+		<English>The Power of the Andes:</English>
+		<French>Le pouvoir des andes :</French>
+		<German>Die Macht der Anden:</German>
+		<Italian>Il potere delle andes:</Italian>
+		<Spanish>El poder de las andes:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_INC</Tag>
@@ -1312,5 +1312,37 @@
 		<German>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</German>
 		<Italian>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</Italian>
 		<Spanish>Doubled [ICON_RESEARCH] prior to the discovery of Pottery.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TIW_TITLE</Tag>
+		<English>The Power of Hospitality:</English>
+		<French>The Power of Hospitality:</French>
+		<German>The Power of Hospitality:</German>
+		<Italian>The Power of Hospitality:</Italian>
+		<Spanish>The Power of Hospitality:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TIW</Tag>
+		<English>Extra Production in the Capital. +1 Priest Slot from Pagan Temples.</English>
+		<French>Extra Production in the Capital. +1 Priest Slot from Pagan Temples.</French>
+		<German>Extra Production in the Capital. +1 Priest Slot from Pagan Temples.</German>
+		<Italian>Extra Production in the Capital. +1 Priest Slot from Pagan Temples.</Italian>
+		<Spanish>Extra Production in the Capital. +1 Priest Slot from Pagan Temples.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_WAR_TITLE</Tag>
+		<English>The Power of Terraces:</English>
+		<French>Le pouvoir des terrasses :</French>
+		<German>Die Macht der Terrassen:</German>
+		<Italian>Il potere delle terrazze:</Italian>
+		<Spanish>El poder de las terrazas:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_WAR</Tag>
+		<English>+1 Food on tiles adjacent to Mountains.</English>
+		<French>+1 Food on tiles adjacent to Mountains.</French>
+		<German>+1 Food on tiles adjacent to Mountains.</German>
+		<Italian>+1 Food on tiles adjacent to Mountains.</Italian>
+		<Spanish>+1 Food on tiles adjacent to Mountains.</Spanish>
 	</TEXT>
 </Civ4GameText>

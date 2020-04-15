@@ -22,7 +22,6 @@ def create(iPlayer, iUnit, (x, y)):
 def getAlias(iCiv, iType, iEra):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivIran: return iCivPersia
-	elif iCiv == iCeltia: return iCivEngland
 	elif iCiv == iCivManchuria: return iCivChina
 	elif iCiv == iCivTeotihuacan: return iCivMaya
 	
@@ -237,6 +236,9 @@ iCivBabylonia : {
 		"Nebukanezar", # 7th BC
 		"Shalmaneser", # 7th BC
 	],
+},
+iCivNorteChico : {
+
 },
 iCivNubia : {
 },
@@ -939,6 +941,9 @@ iCivPersia : {
 		"Mohammad Ali Jafari", # 20th
 	],
 },
+iCivCeltia : {
+
+},
 iCivRome : {
 	iGreatProphet : [
 		"fClaudia Quinta", # 3rd BC
@@ -1354,6 +1359,9 @@ iCivKorea : {
 		"Kim Jae-gyu", # 20th
 	],
 },
+iCivTiwanaku : {
+
+},
 iCivByzantium : {
 	iGreatProphet : [
 		"Nestorios", # 5th
@@ -1597,6 +1605,9 @@ iCivJapan : {
 		"Takeo Yoshikawa", # 20th
 		"Keiji Suzuki", # 20th
 	],
+},
+iCivWari : {
+
 },
 iCivVikings : {
 	iGreatProphet : [

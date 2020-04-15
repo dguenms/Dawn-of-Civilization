@@ -888,6 +888,39 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: sink 20 enemy ships
 					
+	elif iPlayer == iTiwanaku:
+		
+		# first goal: Build the Gate of Sun and settle a Great Prophet in your capital by 900 AD
+		if isPossible(iTiwanaku, 0):
+			bGateOfTheSun = data.getWonderBuilder(iGateOfTheSun) == iTiwanaku
+			iGreatProphets = countCitySpecialists(iTiwanaku, (pTiwanaku.getCapitalCity().getX(), pTiwanaku.getCapitalCity().getY()), iSpecialistGreatProphet)
+			if bGateOfTheSun and iGreatProphets >= 1:
+				win(iTiwanaku, 0)
+		
+		if iGameTurn == getTurnForYear(900):
+			expire(iTiwanaku, 0)
+				
+		# second goal: Have two cities with refined culture by 1000 AD
+		if isPossible(iTiwanaku, 1):
+			iRefined = countCitiesWithCultureLevel(iTiwanaku, 4)
+			
+			if iRefined >= 2:
+				win(iTiwanaku, 1)
+				
+		if iGameTurn == getTurnForYear(1000):
+			expire(iTiwanaku, 1)
+					
+		# third goal: Experiece two golden ages by 1100 AD
+		if isPossible(iTiwanaku, 2):
+			if pTiwanaku.isGoldenAge() and not pTiwanaku.isAnarchy():
+				data.iTiwanakuGoldenAgeTurns += 1
+			
+			if data.iTiwanakuGoldenAgeTurns >= utils.getTurns(16):
+				win(iTiwanaku, 2)
+				
+		if iGameTurn == getTurnForYear(1100):
+			expire(iTiwanaku, 2)
+		
 	elif iPlayer == iByzantium:
 		
 		# first goal: have 5000 gold in 1000 AD
@@ -915,6 +948,47 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iByzantium, 2)
 			else:
 				lose(iByzantium, 2)
+			
+	elif iPlayer == iWari:
+		
+		# first goal: Acquire gold, dyes, cotton, and sheep and have at least 500 Culture by 900 AD
+		if isPossible(iWari, 0):
+			bGold = pWari.getNumAvailableBonuses(iGold) >= 1
+			bDye = pWari.getNumAvailableBonuses(iDye) >= 1
+			bCotton = pWari.getNumAvailableBonuses(iCotton) >= 1
+			bSheep = pWari.getNumAvailableBonuses(iSheep) >= 1
+			bCulture = pWari.countTotalCulture() >= utils.getTurns(500)
+			
+			if bGold and bDye and bCotton and bSheep and bCulture:
+				win(iWari, 0)
+			
+		if iGameTurn == getTurnForYear(900):
+			expire(iWari, 0)
+			
+		# second goal: Build 3 barracks and colcas and connect your cities by road by 1000 AD
+		if isPossible(iWari, 1):
+			iNumBarracks = getNumBuildings(iWari, iBarracks)
+			iNumColcas = getNumBuildings(iWari, iColcas)
+			bRoute = True
+			for city in utils.getCityList(iPlayer):
+				if city.getX() == pWari.getCapitalCity().getX() and city.getY() == pWari.getCapitalCity().getY(): continue
+				if not isConnectedByRoute(iWari, (pWari.getCapitalCity().getX(), pWari.getCapitalCity().getY()), [(city.getX(), city.getY())]):
+					bRoute = False
+					break
+			if iNumBarracks >= 3 and iNumColcas >= 3 and bRoute:
+				win(iWari, 1)
+		
+		if iGameTurn == getTurnForYear(1000):
+			expire(iWari, 1)
+			
+		# third goal: Have four cities with developing culture and 5 population by 1100 AD
+		if isPossible(iWari, 2):
+			iDual = countCitiesWithCultureLevelAndSize(iWari, 3, 5)
+			if iDual >= 4:
+				win(iWari, 4)
+		
+		if iGameTurn ==getTurnForYear(1100):
+			expire(iWari, 2)
 					
 	elif iPlayer == iJapan:
 	
@@ -3754,6 +3828,16 @@ def isConnectedByRailroad(iPlayer, tStart, lTargets):
 	plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() == iPlayer and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() == iRouteRailroad)
 	
 	return isConnected(tStart, lTargets, plotFunction)
+	
+def isConnectedByRoute(iPlayer, tStart, lTargets):
+	if not gc.getTeam(iPlayer).isHasTech(iLeverage): return False
+	
+	startPlot = utils.plot(tStart)
+	if not (startPlot.isCity() and startPlot.getOwner() == iPlayer): return False
+	
+	plotFunction = lambda tPlot: utils.plot(tPlot).getOwner() == iPlayer and (utils.plot(tPlot).isCity() or utils.plot(tPlot).getRouteType() != -1)
+	
+	return isConnected(tStart, lTargets, plotFunction)
 
 def countPlayersWithAttitudeAndCriteria(iPlayer, eAttitude, function):
 	return len([iOtherPlayer for iOtherPlayer in range(iNumPlayers) if gc.getPlayer(iPlayer).canContact(iOtherPlayer) and gc.getPlayer(iOtherPlayer).AI_getAttitude(iPlayer) >= eAttitude and function(iOtherPlayer)])
@@ -3793,6 +3877,13 @@ def countCitiesWithCultureLevel(iPlayer, iThreshold):
 	iCount = 0
 	for city in utils.getCityList(iPlayer):
 		if city.getCultureLevel() >= iThreshold:
+			iCount += 1
+	return iCount
+	
+def countCitiesWithCultureLevelAndSize(iPlayer, iCulture, iPop):
+	iCount = 0
+	for city in utils.getCityList(iPlayer):
+		if city.getPopulation() >= iPop and city.getCultureLevel() >= iCulture:
 			iCount += 1
 	return iCount
 	
@@ -4858,6 +4949,48 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumSinks = data.iKoreanSinks
 			aHelp.append(getIcon(iNumSinks >= 20) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iNumSinks, 20)))
 
+	elif iPlayer == iTiwanaku:
+		if iGoal == 0:
+			bGateOfTheSun = data.getWonderBuilder(iGateOfTheSun) == iTiwanaku
+			iGreatProphets = countCitySpecialists(iTiwanaku, (pTiwanaku.getCapitalCity().getX(), pTiwanaku.getCapitalCity().getY()), iSpecialistGreatProphet)
+			aHelp.append(getIcon(bGateOfTheSun) + localText.getText("TXT_KEY_BUILDING_GATE_OF_THE_SUN", ()) + ' ' + getIcon(iGreatProphets >= 1) + localText.getText("TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED", (pTiwanaku.getCapitalCity().getName(), iGreatProphets, 1)))
+			
+		elif iGoal == 1:
+			iRefined = countCitiesWithCultureLevel(iTiwanaku, 4)
+			
+			aHelp.append(getIcon(iRefined >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE", (iRefined, 2)))
+			
+		elif iGoal == 2:
+			iGoldenAgeTurns = data.iTiwanakuGoldenAgeTurns
+			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(16)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 2)))
+
+	elif iPlayer == iWari:
+		if iGoal == 0:
+			bGold = pWari.getNumAvailableBonuses(iGold) >= 1
+			bDye = pWari.getNumAvailableBonuses(iDye) >= 1
+			bCotton = pWari.getNumAvailableBonuses(iCotton) >= 1
+			bSheep = pWari.getNumAvailableBonuses(iSheep) >= 1
+			iCulture = pWari.countTotalCulture()
+			
+			aHelp.append(getIcon(bGold) + localText.getText("TXT_KEY_BONUS_GOLD", ()) + ' ' + getIcon(bDye) + localText.getText("TXT_KEY_BONUS_DYE", ()) + ' ' + getIcon(bCotton) + localText.getText("TXT_KEY_BONUS_COTTON", ()) + ' ' + getIcon(bSheep) + localText.getText("TXT_KEY_BONUS_SHEEP", ()) + getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
+
+		elif iGoal == 1:
+			iNumBarracks = getNumBuildings(iWari, iBarracks)
+			iNumColcas = getNumBuildings(iWari, iColcas)
+			bRoute = True
+			for city in utils.getCityList(iPlayer):
+				if city.getX() == pWari.getCapitalCity().getX() and city.getY() == pWari.getCapitalCity().getY(): continue
+				if not isConnectedByRoute(iWari, (pWari.getCapitalCity().getX(), pWari.getCapitalCity().getY()), [(city.getX(), city.getY())]):
+					bRoute = False
+					break
+			
+			aHelp.append(getIcon(iNumBarracks >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 3)) + ' ' + getIcon(iNumColcas >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_COLCAS", (iNumColcas, 3)) + ' ' + getIcon(bRoute) + localText.getText("TXT_KEY_VICTORY_CONNECTED", ()))
+
+		elif iGoal == 2:
+			iDual = countCitiesWithCultureLevelAndSize(iWari, 3, 5)
+			
+			aHelp.append(getIcon(iDual >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_REFINED_7POP_CITIES", (iDual, 4)))
+
 	elif iPlayer == iByzantium:
 		if iGoal == 0:
 			iTreasury = pByzantium.getGold()
@@ -4873,6 +5006,8 @@ def getUHVHelp(iPlayer, iGoal):
 			iNorthAfrica = getNumCitiesInArea(iByzantium, utils.getPlotList(tNorthAfricaTL, tNorthAfricaBR))
 			iNearEast = getNumCitiesInArea(iByzantium, utils.getPlotList(tNearEastTL, tNearEastBR))
 			aHelp.append(getIcon(iBalkans >= 3) + localText.getText("TXT_KEY_VICTORY_BALKANS", (iBalkans, 3)) + ' ' + getIcon(iNorthAfrica >= 3) + localText.getText("TXT_KEY_VICTORY_NORTH_AFRICA", (iNorthAfrica, 3)) + ' ' + getIcon(iNearEast >= 3) + localText.getText("TXT_KEY_VICTORY_NEAR_EAST", (iNearEast, 3)))
+
+	
 
 	elif iPlayer == iJapan:
 		if iGoal == 0:

@@ -3341,4 +3341,20 @@
 		<Italian>Shicra</Italian>
 		<Spanish>Shicra</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIWANAKU_KALASASAYA</Tag>
+		<English>Kalasasaya</English>
+		<French>Kalasasaya</French>
+		<German>Kalasasaya</German>
+		<Italian>Kalasasaya</Italian>
+		<Spanish>Kalasasaya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WARI_COLCAS</Tag>
+		<English>Colcas</English>
+		<French>Colcas</French>
+		<German>Colcas</German>
+		<Italian>Colcas</Italian>
+		<Spanish>Colcas</Spanish>
+	</TEXT>
 </Civ4GameText>

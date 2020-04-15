@@ -6827,6 +6827,23 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		iYield += GC.getYieldInfo(eYield).getPeakChange();
 	}
 
+	
+	// Wari UP: The Power of Terraces: +1 Food on tiles adjacent to Mountains
+	if (eTeam == WARI && eYield == YIELD_FOOD)
+	{
+		bool bAdjacentMountain = false;
+		for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+			CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+			if ((pAdjacentPlot != NULL) && pAdjacentPlot->isPeak())
+			{
+				iYield += 1;
+				break;
+			}
+		}
+	}
+
 	if (isLake())
 	{
 		iYield += GC.getYieldInfo(eYield).getLakeChange();
@@ -7234,10 +7251,25 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 		
+		// 1SDAN: Tiwanaku UP: Extra Production in the Capital. +1 Priest Slot from Pagan Temples.
+		if (ePlayer == TIWANAKU)
+		{
+			if (eYield == YIELD_PRODUCTION)
+			{
+				if (pCity->isCapital())
+				{
+					iYield += 2;
+				}
+			}
+		}
+		
 		// 1SDAN: Chadian UP: Core Cities also yield a Farm's base yields.
 		if (ePlayer == CHAD)
 		{
-			iYield += calculateImprovementYieldChange((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_FARM"), eYield, ePlayer, false, true);
+			if (isCore(ePlayer))
+			{
+				iYield += calculateImprovementYieldChange((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_FARM"), eYield, ePlayer, false, true);
+			}
 		}
 		
 		if (GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)GREAT_ZIMBABWE))

@@ -3318,6 +3318,22 @@
 		<Spanish>[ICON_BULLET]Requires Jungle or Rainforest in city radius</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GATE_OF_THE_SUN</Tag>
+		<English>Gate of the Sun</English>
+		<French>Gate of the Sun</French>
+		<German>Gate of the Sun</German>
+		<Italian>Gate of the Sun</Italian>
+		<Spanish>Gate of the Sun</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GATE_OF_THE_SUN_HELP</Tag>
+		<English>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</English>
+		<French>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</French>
+		<German>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

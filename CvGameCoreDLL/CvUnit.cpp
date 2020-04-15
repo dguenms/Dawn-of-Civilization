@@ -913,6 +913,68 @@ void CvUnit::doTurn()
 		kill(false);
 	}
 
+	// 1SDAN: Tiwanaku UU
+	if (getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_TIWANAKU_SISQENO"))
+	{
+		if (plot()->isCity() && plot()->getOwnerINLINE() != getOwnerINLINE())
+		{
+			CvUnit* eUnit;
+			for (int i = 0; i < plot()->getNumUnits(); i++)
+			{
+				eUnit = plot()->getUnitByIndex(i);
+				if (eUnit == this)
+				{
+					CvCity* pCity = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
+					UnitTypes eProphet = (UnitTypes)GC.getInfoTypeForString("UNIT_GREAT_PROPHET");
+
+					pCity->changeGreatPeopleProgress(1);
+					pCity->changeGreatPeopleUnitProgress(eProphet, 1);
+
+					if (pCity->getGreatPeopleProgress() >= GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false))
+					{
+						int iTotalGreatPeopleUnitProgress = 0;
+						for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+						{
+							iTotalGreatPeopleUnitProgress += pCity->getGreatPeopleUnitProgress((UnitTypes)iI);
+						}
+
+						int iGreatPeopleUnitRand = GC.getGameINLINE().getSorenRandNum(iTotalGreatPeopleUnitProgress, "Great Person");
+
+						UnitTypes eGreatPeopleUnit = NO_UNIT;
+						for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+						{
+							if (iGreatPeopleUnitRand < pCity->getGreatPeopleUnitProgress((UnitTypes)iI))
+							{
+								eGreatPeopleUnit = ((UnitTypes)iI);
+								break;
+							}
+							else
+							{
+								iGreatPeopleUnitRand -= pCity->getGreatPeopleUnitProgress((UnitTypes)iI);
+							}
+						}
+
+						if (eGreatPeopleUnit != NO_UNIT)
+						{
+							pCity->changeGreatPeopleProgress(-(GET_PLAYER(getOwnerINLINE()).greatPeopleThreshold(false)));
+
+							for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+							{
+								pCity->setGreatPeopleUnitProgress(((UnitTypes)iI), 0);
+							}
+
+							pCity->createGreatPeople(eGreatPeopleUnit, true, false);
+						}
+					}
+				}
+				if (plot()->getUnitByIndex(i)->getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_TIWANAKU_SISQENO"))
+				{
+					break;
+				}
+			}
+		}
+	}
+
 	m_iStuckLoopCount = 0;
 }
 

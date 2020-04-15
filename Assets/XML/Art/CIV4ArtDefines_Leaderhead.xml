@@ -1334,5 +1334,21 @@
 			<NoShaderNIF>Art/Leaderheads/Pachacuti/pachacuti.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Pachacuti/justinian_background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MALKU_HUYUSTUS</Type>
+			<Button>Art/Leaderheads/Tuskaloosa/Button_Tuskaloosa.dds</Button>
+			<NIF>Art/Leaderheads/Tuskaloosa/Arawak.nif</NIF>
+			<KFM>Art/Leaderheads/Tuskaloosa/Arawak.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Tuskaloosa/Arawak.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Tuskaloosa/Arawak_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_WARI_CAPAC</Type>
+			<Button>Art/Leaderheads/Atlatl Cauac/Button_Atlatl_Cauac.dds</Button>
+			<NIF>Art/Leaderheads/Atlatl Cauac/Arawak.nif</NIF>
+			<KFM>Art/Leaderheads/Atlatl Cauac/Arawak.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Atlatl Cauac/Arawak.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Atlatl Cauac/Hannibal_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
