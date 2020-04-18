@@ -12,6 +12,7 @@ import CvCorporationScreen
 import CvCivicsScreen
 import CvVictoryScreen
 import CvEspionageAdvisor
+import UniquePowers
 
 import CvOptionsScreen
 import CvReplayScreen
@@ -61,6 +62,7 @@ import Congresses as cong
 import RiseAndFall as rnf
 
 gc = CyGlobalContext()
+up = UniquePowers.UniquePowers()
 
 def getStabilityLevel(argsList):
 	iPlayer = argsList[0]
@@ -1280,7 +1282,14 @@ def getUHVTileInfo(argsList):
 		if gc.getMap().plot(x, y).getRegionID() == rIberia:
 			return 8
 			
-		# continue with 87
+	elif iPlayer == iChimu:
+		if (x, y) in Areas.getCoreArea(iInca, False):
+			return 95
+			
+		elif (x, y) in utils.isPlotInArea((x, y), up.tChimuTL, vic.tChimuBR):
+			return 96
+			
+		# continue with 97
 	return -1
 		
 def getCityName(argsList):

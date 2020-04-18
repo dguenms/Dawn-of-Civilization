@@ -3046,6 +3046,8 @@ iCivMali : {
 },
 iCivPhilippines :{
 },
+iCivChimu :{
+},
 iCivPoland : {
 	iGreatProphet : [
 		"Wojciech", # 10th

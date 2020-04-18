@@ -161,8 +161,8 @@ class GameData:
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.lDeleteMode = [-1] * 3
-		self.lFirstContactConquerors = [False] * 7
-		self.lFirstContactMongols = [True] * 5
+		self.lFirstContactConquerors = [False] * 8
+		self.lFirstContactMongols = [True] * 6
 		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
 		
 		self.lCheatersCheck = [0, -1]

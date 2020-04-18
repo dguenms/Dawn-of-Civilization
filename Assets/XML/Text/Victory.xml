@@ -5159,54 +5159,6 @@
 		<Spanish>Northwest India</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_ALTARS</Tag>
-		<English>Sacrificial Altars: %d1 / %d2</English>
-		<French>Autels de sacrifice : %d1 / %d2</French>
-		<German>Sacrificial Altars: %d1 / %d2</German>
-		<Italian>Sacrificial Altars: %d1 / %d2</Italian>
-		<Spanish>Sacrificial Altars: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_ARENAS</Tag>
-		<English>Arenas: %d1 / %d2</English>
-		<French>Ar&#232;nes: %d1 / %d2</French>
-		<German>Arenas: %d1 / %d2</German>
-		<Italian>Arenas: %d1 / %d2</Italian>
-		<Spanish>Arenas: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_AQUEDUCTS</Tag>
-		<English>Aqueducts: %d1 / %d2</English>
-		<French>Aqueducs : %d1 / %d2</French>
-		<German>Aqueducts: %d1 / %d2</German>
-		<Italian>Aqueducts: %d1 / %d2</Italian>
-		<Spanish>Aqueducts: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_BARRACKS</Tag>
-		<English>Barracks: %d1 / %d2</English>
-		<French>Casernes : %d1 / %d2</French>
-		<German>Barracks: %d1 / %d2</German>
-		<Italian>Barracks: %d1 / %d2</Italian>
-		<Spanish>Barracks: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_RESERVOIRS</Tag>
-		<English>Reservoirs: %d1 / %d2</English>
-		<French>R&#233;servoirs : %d1 / %d2</French>
-		<German>Reservoirs: %d1 / %d2</German>
-		<Italian>Reservoirs: %d1 / %d2</Italian>
-		<Spanish>Reservoirs: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES</Tag>
-		<English>Buddhist Sanghas: %d1 / %d2</English>
-		<French>Sanghas bouddhistes : %d1 / %d2</French>
-		<German>Buddhist Sanghas: %d1 / %d2</German>
-		<Italian>Buddhist Sanghas: %d1 / %d2</Italian>
-		<Spanish>Buddhist Sanghas: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE</Tag>
 		<English>Cities with influential culture: %d1 / %d2</English>
 		<French>Villes avec une culture influente : %d1 / %d2</French>
@@ -5223,44 +5175,12 @@
 		<Spanish>Cities razed: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES</Tag>
-		<English>Confucian Guozijians: %d1 / %d2</English>
-		<French>Guozijians confuc&#233;ens : %d1 / %d2</French>
-		<German>Confucian Guozijians: %d1 / %d2</German>
-		<Italian>Confucian Guozijians: %d1 / %d2</Italian>
-		<Spanish>Confucian Guozijians: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_FORUMS</Tag>
-		<English>Forums: %d1 / %d2</English>
-		<French>Forums : %d1 / %d2</French>
-		<German>Forums: %d1 / %d2</German>
-		<Italian>Forums: %d1 / %d2</Italian>
-		<Spanish>Forums: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES</Tag>
 		<English>Owned happiness resources: %d1 / %d2</English>
 		<French>Ressources de bonheur poss&#233;d&#233;es : %d1 / %d2</French>
 		<German>Owned happiness resources: %d1 / %d2</German>
 		<Italian>Owned happiness resources: %d1 / %d2</Italian>
 		<Spanish>Owned happiness resources: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES</Tag>
-		<English>Hindu Ashrams: %d1 / %d2</English>
-		<French>Ashrams hindous : %d1 / %d2</French>
-		<German>Hindu Ashrams: %d1 / %d2</German>
-		<Italian>Hindu Ashrams: %d1 / %d2</Italian>
-		<Spanish>Hindu Ashrams: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_IMPROVEMENTS</Tag>
-		<English>%s1: %d2 / %d3</English>
-		<French>%s1 : %d2 / %d3</French>
-		<German>%s1: %d2 / %d3</German>
-		<Italian>%s1: %d2 / %d3</Italian>
-		<Spanish>%s1: %d2 / %d3</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS</Tag>
@@ -5287,44 +5207,12 @@
 		<Spanish>Shrines: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_TAMBOS</Tag>
-		<English>Tambos: %d1 / %d2</English>
-		<French>Tambos : %d1 / %d2</French>
-		<German>Tambos: %d1 / %d2</German>
-		<Italian>Tambos: %d1 / %d2</Italian>
-		<Spanish>Tambos: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS</Tag>
-		<English>Taoist Gongs: %d1 / %d2</English>
-		<French>Gongs tao&#239;stes : %d1 / %d2</French>
-		<German>Taoist Gongs: %d1 / %d2</German>
-		<Italian>Taoist Gongs: %d1 / %d2</Italian>
-		<Spanish>Taoist Gongs: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_STEP_PYRAMIDS</Tag>
-		<English>Step Pyramids: %d1 / %d2</English>
-		<French>Pyramides &#224; degr&#233;s : %d1 / %d2</French>
-		<German>Step Pyramids: %d1 / %d2</German>
-		<Italian>Step Pyramids: %d1 / %d2</Italian>
-		<Spanish>Step Pyramids: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_VASSALS</Tag>
 		<English>Number of vassals: %d1 / %d2</English>
 		<French>Nombre de vassaux : %d1 / %d2</French>
 		<German>Number of vassals: %d1 / %d2</German>
 		<Italian>Number of vassals: %d1 / %d2</Italian>
 		<Spanish>Number of vassals: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_WALLS</Tag>
-		<English>Walls: %d1 / %d2</English>
-		<French>Remparts : %d1 / %d2</French>
-		<German>Walls: %d1 / %d2</German>
-		<Italian>Walls: %d1 / %d2</Italian>
-		<Spanish>Walls: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_WONDERS</Tag>
@@ -5357,14 +5245,6 @@
 		<German>Open border agreements: %d1 / %d2</German>
 		<Italian>Open border agreements: %d1 / %d2</Italian>
 		<Spanish>Open border agreements: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS</Tag>
-		<English>Orthodox cathedrals: %d1 / %d2</English>
-		<French>Cath&#233;drales orthodoxes : %d1 / %d2</French>
-		<German>Orthodox cathedrals: %d1 / %d2</German>
-		<Italian>Orthodox cathedrals: %d1 / %d2</Italian>
-		<Spanish>Orthodox cathedrals: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CULTURE_CITIES</Tag>
@@ -5815,22 +5695,6 @@
 		<Spanish>Western North America: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_GRANARIES</Tag>
-		<English>Granaries: %d1 / %d2</English>
-		<French>Greniers : %d1 / %d2</French>
-		<German>Granaries: %d1 / %d2</German>
-		<Italian>Granaries: %d1 / %d2</Italian>
-		<Spanish>Granaries: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_SMOKEHOUSES</Tag>
-		<English>Smokehouses: %d1 / %d2</English>
-		<French>Fumoirs : %d1 / %d2</French>
-		<German>Smokehouses: %d1 / %d2</German>
-		<Italian>Smokehouses: %d1 / %d2</Italian>
-		<Spanish>Smokehouses: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
 		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
 		<French>Villes orthodoxes avec des proph&#232;tes illustres : %d1 / %d2</French>
@@ -6191,22 +6055,6 @@
 		<Spanish>Monopolized %s1</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_CASTLES</Tag>
-		<English>Castles: %d1 / %d2</English>
-		<French>Castles: %d1 / %d2</French>
-		<German>Castles: %d1 / %d2</German>
-		<Italian>Castles: %d1 / %d2</Italian>
-		<Spanish>Castles: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_KRAALS</Tag>
-		<English>Kraals: %d1 / %d2</English>
-		<French>Kraals: %d1 / %d2</French>
-		<German>Kraals: %d1 / %d2</German>
-		<Italian>Kraals: %d1 / %d2</Italian>
-		<Spanish>Kraals: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT_ZIMBABWE</Tag>
 		<English>Currently no European colonies in Subequatorial Africa</English>
 		<French>Currently no European colonies in Subequatorial Africa</French>
@@ -6261,14 +6109,6 @@
 		<German>Control all of Indochina in 1580 AD</German>
 		<Italian>Control all of Indochina in 1580 AD</Italian>
 		<Spanish>Control all of Indochina in 1580 AD</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_BUDDHIST_TEMPLES</Tag>
-		<English>Buddhist Stupa: %d1 / %d2</English>
-		<French>Stupa bouddhistes : %d1 / %d2</French>
-		<German>Buddhist Stupa: %d1 / %d2</German>
-		<Italian>Buddhist Stupa: %d1 / %d2</Italian>
-		<Spanish>Buddhist Stupa: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROPHETS_SCIENTISTS_ARTISTS</Tag>
@@ -7079,14 +6919,6 @@
 		<Spanish>Have four cities with developing culture and 5 population by 1100 AD</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_COLCAS</Tag>
-		<English>Colcas: %d1 / %d2</English>
-		<French>Colcas : %d1 / %d2</French>
-		<German>Colcas: %d1 / %d2</German>
-		<Italian>Colcas: %d1 / %d2</Italian>
-		<Spanish>Colcas: %d1 / %d2</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONNECTED</Tag>
 		<English>All Cities Connected by Routes</English>
 		<French>All Cities Connected by Routes</French>
@@ -7101,5 +6933,61 @@
 		<German>Cities with Developing Culture and 5 Population: %d1 / %d2</German>
 		<Italian>Cities with Developing Culture and 5 Population: %d1 / %d2</Italian>
 		<Spanish>Cities with Developing Culture and 5 Population: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CMU1_TITLE</Tag>
+		<English>The Mighty Paramonga</English>
+		<French>The Mighty Paramonga</French>
+		<German>The Mighty Paramonga</German>
+		<Italian>The Mighty Paramonga</Italian>
+		<Spanish>The Mighty Paramonga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CMU1</Tag>
+		<English>Build two Kanchas by 1300 CE</English>
+		<French>Build two Kanchas by 1300 CE</French>
+		<German>Build two Kanchas by 1300 CE</German>
+		<Italian>Build two Kanchas by 1300 CE</Italian>
+		<Spanish>Build two Kanchas by 1300 CE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CMU2_TITLE</Tag>
+		<English>Minchancaman Revenge</English>
+		<French>Minchancaman Revenge</French>
+		<German>Minchancaman Revenge</German>
+		<Italian>Minchancaman Revenge</Italian>
+		<Spanish>Minchancaman Revenge</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CMU2</Tag>
+		<English>Conquer or vassalize the Inca by 1475 CE</English>
+		<French>Conquer or vassalize the Inca by 1475 CE</French>
+		<German>Conquer or vassalize the Inca by 1475 CE</German>
+		<Italian>Conquer or vassalize the Inca by 1475 CE</Italian>
+		<Spanish>Conquer or vassalize the Inca by 1475 CE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CMU3_TITLE</Tag>
+		<English>The Lambayeque-Sipan Conection</English>
+		<French>The Lambayeque-Sipan Conection</French>
+		<German>The Lambayeque-Sipan Conection</German>
+		<Italian>The Lambayeque-Sipan Conection</Italian>
+		<Spanish>The Lambayeque-Sipan Conection</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CMU3</Tag>
+		<English>Settle three great artists in your capital by 1500 CE</English>
+		<French>Settle three great artists in your capital by 1500 CE</French>
+		<German>Settle three great artists in your capital by 1500 CE</German>
+		<Italian>Settle three great artists in your capital by 1500 CE</Italian>
+		<Spanish>Settle three great artists in your capital by 1500 CE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_STRING</Tag>
+		<English>%s1: %d2 / %d3</English>
+		<French>%s1: %d2 / %d3</French>
+		<German>%s1: %d2 / %d3</German>
+		<Italian>%s1: %d2 / %d3</Italian>
+		<Spanish>%s1: %d2 / %d3</Spanish>
 	</TEXT>
 </Civ4GameText>

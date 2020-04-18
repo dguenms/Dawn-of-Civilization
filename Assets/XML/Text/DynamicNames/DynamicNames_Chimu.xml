@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHIMU_DESC</Tag>
+		<English>The Chimu</English>
+		<French>The Chimu</French>
+		<German>The Chimu</German>
+		<Italian>The Chimu</Italian>
+		<Spanish>The Chimu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHIMU_PEOPLES</Tag>
+		<English>Andean Peoples</English>
+		<French>
+			<Text>Peuplades andines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Andenv&#246;lker:Andenv&#246;lker:Andenv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Andini</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Andinos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHIMU_DEFAULT</Tag>
+		<English>Chimu Empire</English>
+		<French>Chimu Empire</French>
+		<German>Chimu Empire</German>
+		<Italian>Chimu Empire</Italian>
+		<Spanish>Chimu Empire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHIMU_ADJECTIVE</Tag>
+		<English>Chimu</English>
+		<French>Chimu</French>
+		<German>Chimu</German>
+		<Italian>Chimu</Italian>
+		<Spanish>Chimu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHIMU_SHORT_DESC</Tag>
+		<English>Chimu</English>
+		<French>Chimu</French>
+		<German>Chimu</German>
+		<Italian>Chimu</Italian>
+		<Spanish>Chimu</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1970,7 +1970,12 @@ class RFCUtils:
 		self.flipUnits(lUnits, iNewOwner, tPlot)
 	
 		if len(lUnits) < iNumDefenders and utils.getHumanID() != iNewOwner:
-			self.makeUnit(self.getBestDefender(iNewOwner), iNewOwner, tPlot, iNumDefenders - len(lUnits))
+			iDefender = self.getBestDefender(iNewOwner)
+			if self.plot(tPlot).getRegionID() in lNewWorld:
+				if iDefender == iCrossbowman:
+					if not (True in data.lFirstContactConquerors):
+						iDefender = iArcher
+			self.makeUnit(iDefender, iNewOwner, tPlot, iNumDefenders - len(lUnits))
 			
 	def killUnits(self, lUnits):
 		for unit in lUnits:

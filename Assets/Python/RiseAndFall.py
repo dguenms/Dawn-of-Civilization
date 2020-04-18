@@ -2001,12 +2001,24 @@ class RiseAndFall:
 					return
 					
 				if not bAlreadyContacted:
-					if iNewWorldCiv == iMaya:
+					if iNewWorldCiv == iNorteChico:
+						tContactZoneTL = (21, 11)
+						tContactZoneBR = (36, 40)
+					elif iNewWorldCiv == iMaya:
 						tContactZoneTL = (15, 30)
 						tContactZoneBR = (34, 42)
 					elif iNewWorldCiv == iTeotihuacan:
 						tContactZoneTL = (11, 31)
 						tContactZoneBR = (34, 43)
+					elif iNewWorldCiv == iTiwanaku:
+						tContactZoneTL = (21, 11)
+						tContactZoneBR = (36, 40)
+					elif iNewWorldCiv == iWari:
+						tContactZoneTL = (21, 11)
+						tContactZoneBR = (36, 40)
+					elif iNewWorldCiv == iChimu:
+						tContactZoneTL = (21, 11)
+						tContactZoneBR = (36, 40)
 					elif iNewWorldCiv == iAztecs:
 						tContactZoneTL = (11, 31)
 						tContactZoneBR = (34, 43)
@@ -2533,6 +2545,9 @@ class RiseAndFall:
 		elif iCiv == iPhilippines:
 			utils.makeUnit(iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+		elif iCiv == iChimu:
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(iChimuSuchucChiquiAucac, iCiv, tPlot, 3)
 		elif iCiv == iSwahili:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 3)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 3)
@@ -2923,6 +2938,10 @@ class RiseAndFall:
 		elif iCiv == iPhilippines:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+		elif iCiv == iChimu:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(iChimuSuchucChiquiAucac, iCiv, tPlot, 2)
 		elif iCiv == iSwahili:
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnit(iArcher, iCiv, tPlot, 5)
@@ -3292,6 +3311,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3) 
 		elif iCiv == iPhilippines:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
+		elif iCiv == iChimu:
+			utils.makeUnit(iWorker, iCiv, tPlot, 1)
 		elif iCiv == iSwahili:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iMali:

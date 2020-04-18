@@ -1494,4 +1494,20 @@
 		<Italian>South Levant</Italian>
 		<Spanish>South Levant</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_95</Tag>
+		<English>Inca</English>
+		<French>Inca</French>
+		<German>Inca</German>
+		<Italian>Inca</Italian>
+		<Spanish>Inca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_96</Tag>
+		<English>Northwestern South America</English>
+		<French>Northwestern South America</French>
+		<German>Northwestern South America</German>
+		<Italian>Northwestern South America</Italian>
+		<Spanish>Northwestern South America</Spanish>
+	</TEXT>
 </Civ4GameText>

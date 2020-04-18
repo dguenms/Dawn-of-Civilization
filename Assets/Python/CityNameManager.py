@@ -87,6 +87,7 @@ def getLanguages(iCiv):
 	elif iCiv == iPhilippines:
 		if utils.isReborn(iCiv): return (iLangSpanish,)
 		return (iLangPhilippine, iLangIndonesian)
+	elif iCiv == iChimu: return (iLangQuechua,)
 	elif iCiv == iSwahili: return (iLangSwahili, iLangEthiopian, iLangCongolese,)
 	elif iCiv == iMamluks: return (iLangEgyptianArabic, iLangArabian)
 	elif iCiv == iMali: return (iLangMalian,)
@@ -155,6 +156,9 @@ def getFoundName(iCiv, tPlot):
 			
 				if iCiv == iWari:
 					if tPlot == (27, 22): return "Wari"
+			
+				if iCiv in [iNorteChico, iWari, iChimu]:
+					if tPlot == (24, 25): return "Chan Chan"
 			
 				return sName
 				

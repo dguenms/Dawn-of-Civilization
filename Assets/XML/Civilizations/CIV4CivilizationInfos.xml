@@ -1484,6 +1484,93 @@
 			<CivilizationActionSound>AS3D_MALI_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_CHIMU</Type>
+			<Description>TXT_KEY_CIV_CHIMU_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_CHIMU_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_CHIMU_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_CHIMU_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DARK_RED_AND_BLACK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_CHIMU</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
+			<Identifier>CMU</Identifier>
+			<StartingYear>900</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Paramonga</City>
+				<City>Gran Pajaten</City>
+				<City>Kuelap</City>
+				<City>Gran Saposoa</City>
+				<City>Kuelap</City>
+				<City>Sechin Alto</City>
+				<City>Chanquillo</City>
+				<City>Las Haldas or Aldas</City>
+				<City>Cumbemayo</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_CASTLE</BuildingClassType>
+					<BuildingType>BUILDING_CHIMU_KANCHA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
+					<UnitType>UNIT_CHIMU_SC_AUCAC</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TACAYNAMO</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_WARI</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_INCA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_INCA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_CHINA</Type>
 			<Description>TXT_KEY_CIV_CHINA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_CHINA_SHORT_DESC</ShortDescription>
@@ -7347,18 +7434,15 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Kalasasaya</City>
-				<City>Kalasasaya</City>
-				<City>Vilcas</City>
-				<City>Riobamba</City>
-				<City>Bomb&#243;n</City>
-				<City>Tumbes</City>
-				<City>Sipan</City>
-				<City>Llactapata</City>
-				<City>Pisac</City>
-				<City>Kuelap</City>
-				<City>Pajaten</City>
-				<City>Chucuito</City>
+				<City>El Fuerte</City>
+				<City>Pumapunku</City>
+				<City>Chinkana</City>
+				<City>Chiripa</City>
+				<City>Chipaya</City>
+				<City>Inaq Uyu</City>
+				<City>Iskanwaya</City>
+				<City>Pillkukayna</City>
+				<City>Qhunqhu Wankani</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -7759,32 +7843,14 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
+				<City>Toro Muerto</City>
 				<City>Pachacamac</City>
 				<City>Pikillaqta</City>
-				<City>Cerro Baúl</City>
-				<City>Huaricanga</City>
-				<City>Porvenir</City>
-				<City>Cerro Lampay</City>
-				<City>Caballete</City>
-				<City>Cerro Blanco</City>
-				<City>Cerro de la Cruz</City>
-				<City>Shaura</City>
-				<City>Punta y Suela</City>
-				<City>Upaca</City>
-				<City>Potao</City>
-				<City>Pampa San Jose</City>
-				<City>Vinto Alto</City>
-				<City>Huayto</City>
-				<City>Aspero</City>
-				<City>Piedra Parada</City>
-				<City>Era de Pando</City>
-				<City>Lurihuasi</City>
-				<City>Miraya</City>
-				<City>Pueblo Nuevo</City>
-				<City>Alpacoto</City>
-				<City>Penico</City>
-				<City>Huacachi</City>
-				<City>Huaural</City>
+				<City>Cerro Baul</City>
+				<City>Marayniyuq</City>
+				<City>Rumiqullqa</City>
+				<City>Viracochapampa</City>
+				<City>Willkawayin</City>
 			</Cities>
 			<Buildings>
 				<Building>

@@ -1345,4 +1345,20 @@
 		<Italian>+1 Food on tiles adjacent to Mountains.</Italian>
 		<Spanish>+1 Food on tiles adjacent to Mountains.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CMU_TITLE</Tag>
+		<English>The Power of the Mochica Heritage:</English>
+		<French>Le pouvoir des mochica heritage:</French>
+		<German>Die Macht der Mochica Heritage:</German>
+		<Italian>Il potere delle mochica heritage:</Italian>
+		<Spanish>El poder de las mochica heritage:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CMU</Tag>
+		<English>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</English>
+		<French>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</French>
+		<German>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</German>
+		<Italian>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</Italian>
+		<Spanish>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</Spanish>
+	</TEXT>
 </Civ4GameText>

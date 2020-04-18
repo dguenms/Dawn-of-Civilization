@@ -186,6 +186,7 @@ iCivHolyRome :	Techs([iFeudalism, iTheology], column=6),
 iCivKievanRus :	Techs([iFeudalism, iTheology, iDoctrine], column=6, exceptions=[iArtisanry, iArchitecture]),
 iCivHungary :	Techs([iFeudalism, iFortification, iMachinery], column=6, exceptions=[iPolitics, iScholarship]),
 iCivPhilippines : 	Techs(column=6),
+iCivChimu : 	Techs([iPriesthood, iMathematics, iLiterature], column=3, exceptions=[iAlloys, iRiding]),
 iCivSwahili : 	Techs([iTheology], column=6, exceptions=[iArtisanry, iPolitics]),
 iCivMamluks : 	Techs([iTheology], column=6),
 iCivMali : 	Techs([iTheology], column=6),
@@ -605,6 +606,9 @@ dTechPreferences = {
 		iOptics : 40,
 		iCompass : 40,
 	},
+	iCivChimu : {
+		
+	},
 	iCivMamluks : {
 		iScholarship : 30,
 		iAlchemy : 30,
@@ -955,7 +959,7 @@ dBuildingPreferences = {
 		iSistineChapel: -20,
 	},
 	iCivWari : {
-		iGateOfTheSun : 20,
+		iPyramidOfTheSun: 20,
 	},
 	iCivJapan : {
 		iItsukushimaShrine: 30,
@@ -1090,7 +1094,13 @@ dBuildingPreferences = {
 		iMountAthos: 20,
 		iMetropolitain: 20,
 	},
-	iCivPhilippines: {
+	iCivPhilippines : {
+	},
+	iCivChimu : {
+		iGateOfTheSun : -40,
+		iPyramidOfTheSun: -40,
+		iMachuPicchu: -20,
+		iTempleOfKukulkan: -20,
 	},
 	iCivSwahili : {
 	},

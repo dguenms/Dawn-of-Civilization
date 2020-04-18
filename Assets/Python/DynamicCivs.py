@@ -606,6 +606,7 @@ dStartingLeaders = [
 	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
 	iPhilippines : iLapuLapu,
+	iChimu : iTacaynamo,
 	iSwahili : iShirazi,
 	iMamluks : iSaladin,
 	iMali : iMansaMusa,

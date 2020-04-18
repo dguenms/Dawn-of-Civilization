@@ -1283,6 +1283,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	WIRACOCHA,
 	MALKU_HUYUSTUS,
 	WARI_CAPAC,
+	TACAYNAMO,
 	NUM_LEADERHEADS
 };
 
@@ -1399,6 +1400,7 @@ enum PlayerTypes				// Exposed to Python
 	KIEVAN_RUS,
 	HUNGARY,
 	PHILIPPINES,
+	CHIMU,
 	SWAHILI,
 	MAMLUKS,
 	MALI,

@@ -6829,7 +6829,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 
 	
 	// Wari UP: The Power of Terraces: +1 Food on tiles adjacent to Mountains
-	if (eTeam == WARI && eYield == YIELD_FOOD)
+	if (eTeam == WARI && eYield == YIELD_FOOD && !isWater())
 	{
 		bool bAdjacentMountain = false;
 		for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)

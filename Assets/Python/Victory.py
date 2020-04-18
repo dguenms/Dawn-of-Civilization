@@ -1526,7 +1526,40 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iPhilippines, 2)
 			else:
 				lose(iPhilippines, 2)
-
+				
+	elif iPlayer == iChimu:
+		# first goal: Build two Kanchas by 1300 CE
+		
+		if isPossible(iChimu, 0):
+			bKancha = getNumBuildings(iChimu, iKancha) >= 2
+			
+			if bKancha:
+				win(iChimu, 0)
+		
+		if iGameTurn == getTurnForYear(1300):
+			expire(iChimu, 0)
+		
+		# second goal: Conquer or vassalize the Inca by 1475 CE
+		if isPossible(iChimu, 1):
+			bInca = iGameTurn >= getTurnForYear(tBirth[iInca]) and isControlledOrVassalized(iChimu, Areas.getCoreArea(iInca, True))
+			
+			if bInca:
+				win(iChimu, 1)
+				
+		
+		if iGameTurn == getTurnForYear(1475):
+			expire(iChimu, 1)
+			
+		# third goal: Settle three great artists in your capital by 1500 CE
+		if isPossible(iChimu, 2):
+			bArtist = countCitySpecialists(iChimu, Areas.getCapital(iChimu), iSpecialistGreatArtist) >= 3
+			
+			if bArtist:
+				win(iChimu, 2)
+				
+		if iGameTurn == getTurnForYear(1500):
+			expire(iChimu, 2)
+			
 	elif iPlayer == iSwahili:
 		# first goal: acquire 4000 gold by trade by 1500 AD
 		if isPossible(iSwahili, 0):
@@ -4381,7 +4414,7 @@ def getURVHelp(iPlayer, iGoal):
 	elif iVictoryType == iOrthodoxy:
 		if iGoal == 0:
 			iOrthodoxCathedrals = getNumBuildings(iPlayer, iOrthodoxCathedral)
-			aHelp.append(getIcon(iOrthodoxCathedrals >= 4) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", (iOrthodoxCathedrals, 4)))
+			aHelp.append(getIcon(iOrthodoxCathedrals >= 4) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", ("TXT_KEY_BUILDING_STRING", iOrthodoxCathedrals, 4)))
 		elif iGoal == 1:
 			lCultureCities = getBestCities(cityCulture)[:5]
 			iCultureCities = countBestCitiesReligion(iOrthodoxy, cityCulture, 5)
@@ -4673,7 +4706,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumReservoirs = getNumBuildings(iHarappa, iReservoir)
 			iNumGranaries = getNumBuildings(iHarappa, iGranary)
 			iNumSmokehouses = getNumBuildings(iHarappa, iSmokehouse)
-			aHelp.append(getIcon(iNumReservoirs >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_RESERVOIRS", (iNumReservoirs, 3)) + ' ' + getIcon(iNumGranaries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_GRANARIES", (iNumGranaries, 2)) + ' ' + getIcon(iNumSmokehouses >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_SMOKEHOUSES", (iNumSmokehouses, 2)))
+			aHelp.append(getIcon(iNumReservoirs >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("BUILDING_HARAPPAN_RESERVOIR", iNumReservoirs, 3)) + ' ' + getIcon(iNumGranaries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_GRANARY", iNumGranaries, 2)) + ' ' + getIcon(iNumSmokehouses >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_SMOKEHOUSE", iNumSmokehouses, 2)))
 		elif iGoal == 2:
 			iNumPopulation = pHarappa.getTotalPopulation()
 			aHelp.append(getIcon(iNumPopulation >= 30) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 30)))
@@ -4734,7 +4767,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iConfucianCounter = getNumBuildings(iChina, iConfucianCathedral)
 			iTaoistCounter = getNumBuildings(iChina, iTaoistCathedral)
-			aHelp.append(getIcon(iConfucianCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES", (iConfucianCounter, 2)) + ' ' + getIcon(iTaoistCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS", (iTaoistCounter, 2)))
+			aHelp.append(getIcon(iConfucianCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES", ("TXT_KEY_BUILDING_STRING", iConfucianCounter, 2)) + ' ' + getIcon(iTaoistCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_TAOIST_CATHEDRAL", iTaoistCounter, 2)))
 		elif iGoal == 1:
 			bCompass = data.lFirstDiscovered[iCompass] == iChina
 			bPaper = data.lFirstDiscovered[iPaper] == iChina
@@ -4854,7 +4887,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 			iNumArenas = getNumBuildings(iRome, iArena)
 			iNumForums = getNumBuildings(iRome, iForum)
-			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumArenas >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_ARENAS", (iNumArenas, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 3)))
+			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_BARRACKS", iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_AQUEDUCT", iNumAqueducts, 5)) + ' ' + getIcon(iNumArenas >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_ARENA", iNumArenas, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_ROMAN_FORUM", iNumForums, 3)))
 		elif iGoal == 1:
 			iCitiesSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False))
 			iCitiesFrance = getNumCitiesInArea(iRome, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
@@ -4984,7 +5017,7 @@ def getUHVHelp(iPlayer, iGoal):
 					bRoute = False
 					break
 			
-			aHelp.append(getIcon(iNumBarracks >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 3)) + ' ' + getIcon(iNumColcas >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_COLCAS", (iNumColcas, 3)) + ' ' + getIcon(bRoute) + localText.getText("TXT_KEY_VICTORY_CONNECTED", ()))
+			aHelp.append(getIcon(iNumBarracks >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_BARRACKS", iNumBarracks, 3)) + ' ' + getIcon(iNumColcas >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_WARI_COLCAS", iNumColcas, 3)) + ' ' + getIcon(bRoute) + localText.getText("TXT_KEY_VICTORY_CONNECTED", ()))
 
 		elif iGoal == 2:
 			iDual = countCitiesWithCultureLevelAndSize(iWari, 3, 5)
@@ -5119,7 +5152,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bShwedagon = data.getWonderBuilder(iShwedagonPaya) == iBurma
 			iTemples = getNumBuildings(iBurma, iBuddhistTemple)
 			iMonasteries = getNumBuildings(iBurma, iBuddhistMonastery)
-			aHelp.append(getIcon(bShwedagon) + localText.getText("TXT_KEY_BUILDING_SHWEDAGON_PAYA", ()) + ' ' + getIcon(iTemples >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_TEMPLES", (iTemples, 2)) + ' ' + getIcon(iMonasteries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iMonasteries, 2)))
+			aHelp.append(getIcon(bShwedagon) + localText.getText("TXT_KEY_BUILDING_SHWEDAGON_PAYA", ()) + ' ' + getIcon(iTemples >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_BUDDHIST_TEMPLE", iTemples, 2)) + ' ' + getIcon(iMonasteries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_BUDDHIST_MONASTERY", iMonasteries, 2)))
 		if iGoal == 1:
 			iProphets = 0
 			iScientists = 0
@@ -5227,7 +5260,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumBuddhism = getNumBuildings(iKhmer, iBuddhistMonastery)
 			iNumHinduism = getNumBuildings(iKhmer, iHinduMonastery)
 			bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
-			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iNumHinduism, 4)) + ' ' + getIcon(bWatPreahPisnulok) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
+			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_BUDDHIST_MONASTERY", iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_HINDU_MONASTERY", iNumHinduism, 4)) + ' ' + getIcon(bWatPreahPisnulok) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
 		elif iGoal == 1:
 			fPopPerCity = getAverageCitySize(iKhmer)
 			aHelp.append(getIcon(fPopPerCity >= 12.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(12))))
@@ -5332,6 +5365,19 @@ def getUHVHelp(iPlayer, iGoal):
 			iTreasury = pPhilippines.getGold()
 			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
 
+	elif iPlayer == iChimu:
+		if iGoal == 0:
+			iNumKancha = getNumBuildings(iChimu, iKancha)
+			aHelp.append(getIcon(iNumKancha >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_STRING" , ("TXT_KEY_BUILDING_CHIMU_KANCHA", iNumKancha, 2)))
+			
+		if iGoal == 1:
+			bInca = isControlledOrVassalized(iChimu, Areas.getCoreArea(iInca, True))
+			aHelp.append(getIcon(bInca) + localText.getText("TXT_KEY_CIV_INCA_SHORT_DESC", ()))
+			
+		if iGoal == 2:
+			iArtist = countCitySpecialists(iChimu, Areas.getCapital(iChimu), iSpecialistGreatArtist)
+			aHelp.append(getIcon(iArtist >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_SPECIALIST_GREAT_ARTIST", iArtist, 3)))
+
 	elif iPlayer == iSwahili:
 		if iGoal == 0:
 			iTradeGold = data.iSwahiliTradeGold / 100
@@ -5393,7 +5439,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumCastles = getNumBuildings(iZimbabwe, iCastle)
 			iNumKraals = getNumBuildings(iZimbabwe, iKraal)
 			bGreatZimbabwe = data.getWonderBuilder(iGreatZimbabwe) == iZimbabwe
-			aHelp.append(getIcon(iNumCastles >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_CASTLES", (iNumCastles, 4)) + ' ' + getIcon(iNumKraals >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_KRAALS", (iNumKraals, 4)) + ' ' + getIcon(bGreatZimbabwe) + localText.getText("TXT_KEY_BUILDING_GREAT_ZIMBABWE", ()))
+			aHelp.append(getIcon(iNumCastles >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_CASTLE", iNumCastles, 4)) + ' ' + getIcon(iNumKraals >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_ZIMBABWE_KRAAL", iNumKraals, 4)) + ' ' + getIcon(bGreatZimbabwe) + localText.getText("TXT_KEY_BUILDING_GREAT_ZIMBABWE", ()))
 		elif iGoal == 1:
 			lSubSaharanAfrica = utils.getPlotList(tSubSaharaTL, tSubSaharaBR, tSubSaharaExceptions)
 			bGoldMonopoly = isMonopoly(iZimbabwe, iGold, lSubSaharanAfrica)
@@ -5422,7 +5468,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			bRoad = isRoad(iInca, lAndeanCoast)
 			iTambos = getNumBuildings(iInca, iTambo)
-			aHelp.append(getIcon(bRoad) + localText.getText("TXT_KEY_VICTORY_ANDEAN_ROAD", ()) + ' ' + getIcon(iTambos >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_TAMBOS", (iTambos, 5)))
+			aHelp.append(getIcon(bRoad) + localText.getText("TXT_KEY_VICTORY_ANDEAN_ROAD", ()) + ' ' + getIcon(iTambos >= 5) + localText.getText("TXT_KEY_VICTORY_STRING", ("TXT_KEY_BUILDING_INCAN_TAMBO", iTambos, 5)))
 		elif iGoal == 1:
 			iTreasury = pInca.getGold()
 			aHelp.append(getIcon(iTreasury >= utils.getTurns(2500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(2500))))
@@ -5487,7 +5533,7 @@ def getUHVHelp(iPlayer, iGoal):
 			elif iGoal == 1:
 				iStepPyramids = getNumBuildings(iAztecs, utils.getUniqueBuilding(iAztecs, iPaganTemple))
 				iAltars = getNumBuildings(iAztecs, iSacrificialAltar)
-				aHelp.append(getIcon(iStepPyramids >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_STEP_PYRAMIDS", (iStepPyramids, 6)) + " " + getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
+				aHelp.append(getIcon(iStepPyramids >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("BUILDING_TEOTL_STEP_PYRAMID", iStepPyramids, 6)) + " " + getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("BUILDING_AZTEC_SACRIFICIAL_ALTAR", iAltars, 6)))
 			elif iGoal == 2:
 				iEnslavedUnits = data.iAztecSlaves
 				aHelp.append(getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
@@ -5640,7 +5686,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iSlavePlantations = countImprovements(iBrazil, iSlavePlantation)
 			iPastures = countImprovements(iBrazil, iPasture)
-			aHelp.append(getIcon(iSlavePlantations >= 8) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iSlavePlantation).getText(), iSlavePlantations, 8)) + ' ' + getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iPasture).getText(), iPastures, 4)))
+			aHelp.append(getIcon(iSlavePlantations >= 8) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", (gc.getImprovementInfo(iSlavePlantation).getText(), iSlavePlantations, 8)) + ' ' + getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iPasture).getText(), iPastures, 4)))
 		elif iGoal == 1:
 			bWembley = data.getWonderBuilder(iWembley) == iBrazil
 			bCristoRedentor = data.getWonderBuilder(iCristoRedentor) == iBrazil

@@ -18,29 +18,23 @@ PyPlayer = PyHelpers.PyPlayer	# LOQ
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
 tMinorCities = (
 (-3000, (73, 38), iIndependent, 'Yerushalayim', 2, iArcher, 3),	# Jerusalem
-(-3000, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
-(-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
-#(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
+(-3000, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1),		# Susa
+(-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1),	# Samarkand
 (-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
 (-500, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
-#(-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
-#(-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
 (-250, (19, 35), iNative, 'Danibaan', 2, iHolkan, 1),	# Monte Alb�n
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, iArcher, 1),		# Dunhuang
-#(100, (18, 37), iBarbarian, 'Tolan', 2, iJaguar, 2),		# Teotihuacan
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, iArcher, 1),		# Kashgar
-#(-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (99, 38), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
 (840, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iCrossbowman, 2),			# Edinburgh
-(990, (49, 56), iIndependent, '&#193;th Cliath', 1, iArcher, 2),			# Dublin
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
@@ -48,9 +42,9 @@ tMinorCities = (
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# L�beck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (899, (78, 36), iIndependent, 'Bahrein', 2, iArcher, 2),			# Qarmatians (Abu Sa'id al-Jannabi)
-(900, (24, 28), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
-(900, (24, 25), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
+(900, (24, 28), iNative, 'Tucume', 2, iPictaAucac, 4),			# Tucume
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
+(990, (49, 56), iIndependent, '&#193;th Cliath', 1, iArcher, 2),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
@@ -166,8 +160,8 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
 		
 		# Picta Aucacs in pre-Incan Andes
-		# elif utils.isYearIn(800, 1100):
-			# self.checkSpawn(iBarbarian, iPictaAucac, 1, (-1, -1), (-1, -1), self.spawnUprising, iGameTurn, 4, 2)
+		if utils.isYearIn(800, 1100):
+			self.checkSpawn(iBarbarian, iPictaAucac, 1, (-1, -1), (-1, -1), self.spawnUprising, iGameTurn, 4, 2)
 		
 		# Jaguars in classical Mesoamerica
 		if utils.isYearIn(150, 500):
@@ -296,10 +290,10 @@ class Barbs:
 		if utils.isYearIn(1300, 1600):
 			if iGameTurn % 18 == 0:
 				if not gc.getMap().plot(27, 29).isUnit():
-					utils.makeUnitAI(iDogSoldier, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
+					utils.makeUnitAI(iChimuSuchucChiquiAucac, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 			elif iGameTurn % 18 == 9:
 				if not gc.getMap().plot(30, 13).isUnit():
-					utils.makeUnitAI(iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
+					utils.makeUnitAI(iPictaAucac, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 		
 		if self.includesActiveHuman([iAmerica, iEngland, iFrance]):
 			if utils.isYearIn(1700, 1900):
@@ -360,7 +354,7 @@ class Barbs:
 			if sName == 'Kyiv': lReligions = [iOrthodoxy]
 			if iPlayer == iCeltia and utils.getHumanID() == iCeltia: continue
 			if iPlayer == iCeltia: iPlayer = iIndependent
-			if sName == 'Buda': bForceSpawn = True
+			if sName in ['Buda', 'Tucume']: bForceSpawn = True
 			if sName in ['Muqdisho', 'Bahrein']: lReligions = [iIslam]
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
@@ -396,7 +390,12 @@ class Barbs:
 			city.setName(sName, False)
 			city.setPopulation(iPopulation)
 			
-			if sName == 'Bahrein':
+			if sName in ['Tucume'] : 
+				utils.makeUnit(iWorker, iPlayer, tPlot, 1)
+				plot.changeCulture(iPlayer, 20 * (gc.getGame().getCurrentEra() + 1), True)
+				city.changeCulture(iPlayer, 20 * (gc.getGame().getCurrentEra() + 1), True)
+				
+			elif sName == 'Bahrein':
 				city.setHasRealBuilding(iIslamicTemple, True)
 				city.setHasRealBuilding(iLighthouse, True)
 				city.setHasRealBuilding(iBarracks, True)

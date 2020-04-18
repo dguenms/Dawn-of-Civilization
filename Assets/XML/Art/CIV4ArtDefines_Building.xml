@@ -3787,5 +3787,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Huaca/Huaca.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CHIMU_KANCHA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.25</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Calmecac/IC_Palace_med.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Calmecac/Calmecac_Button.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
