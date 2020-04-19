@@ -711,6 +711,7 @@ class UniquePowers:
 			pPlayer = gc.getPlayer(iPlayer)
 			lCities = []
 			for city in utils.getCityList(iPlayer):
+				if not city.isHasReligion(iJudaism): continue
 				iFoodDifference = city.foodDifference(False)
 				iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 				if iPlayer == iKhazars:
