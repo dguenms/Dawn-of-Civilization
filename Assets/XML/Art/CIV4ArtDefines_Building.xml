@@ -3797,5 +3797,35 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Calmecac/Calmecac_Button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MISSISSIPPI_EFFIGY_MOUND</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Effigy_Mound/an_inca_palace.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Effigy_Mound/MoundButton.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SERPENT_MOUND</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Serpent Mound/serpent.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Serpent Mound/Button_SerpentMound.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MIDEWIWIN_MIDEWIGAAN</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Midewiwin/camp.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Midewiwin/Midewiwin.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

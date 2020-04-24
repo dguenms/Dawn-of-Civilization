@@ -42,6 +42,10 @@ tMarquesasBR = (16, 24)
 tEasterIslandTL = (20, 15)
 tEasterIslandBR = (22, 17)
 
+# Chimu UP
+tChimuBR = (23, 21)
+tChimuTL = (27, 30)
+
 # second Roman goal: control Iberia, Gaul, Britain, Africa, Greece, Asia Minor and Egypt in 320 AD
 tFranceTL = (51, 47)
 
@@ -94,6 +98,12 @@ tPhilippinesBR = (110, 36)
 
 # second Turkic goal: create an overland trade route from a city in China to a Mediterranean port by 1100 AD
 lMediterraneanPorts = [(66, 37), (66, 36), (67, 36), (68, 36), (69, 36), (70, 36), (71, 36), (72, 37), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (70, 43), (69, 43), (69, 44), (68, 45)]
+
+# first Mississippi goal: Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD
+lMississippiRiver = [(23, 42), (23, 43), (23, 44), (23, 45), (23, 46), (23, 47), (23, 48), (23, 49), (23, 50), (22, 46), (22, 47), (22, 48), (22, 49), (22, 50), (22, 51), (21, 49), (21, 50), (21, 51), (20, 50), (20, 51), (24, 43), (24, 44), (24, 45), (24, 46), (24, 47)]
+lOhioRiver = [(24, 45), (24, 46), (24, 47), (25, 46), (25, 47), (26, 47), (27, 46), (27, 47)]
+lGreatLakes = [(23, 48), (23, 49), (23, 50), (23, 51), (24, 48), (24, 51), (22, 51), (22, 52), (22, 53), (23, 53), (23, 54), (24, 54), (25, 54), (25, 53), (25, 52), (26, 52), (27, 52), (27, 51), (27, 50), (25, 50), (25, 49), (25, 48), (26, 49), (26, 48), (27, 48), (28, 48), (28, 49), (29, 49), (29, 50), (29, 51), (28, 51)]
+
 
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tIberiaTL = (49, 40)
@@ -287,6 +297,7 @@ dWonderGoals = {
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
+	iMississippi: (0, [iSerpentMound], False),
 	iBurma: (0, [iShwedagonPaya], False),
 	iMoors: (1, [iMezquita], False),
 	iKhmer: (0, [iWatPreahPisnulok], False),
@@ -308,7 +319,7 @@ def setup():
 
 	# 600 AD scenario: handle dates that have already been passed
 	if utils.getScenario() == i600AD:
-		for iPlayer in [iNubia, iEthiopia, iTamils, iCeltia]:
+		for iPlayer in [iNubia, iEthiopia, iTamils, iCeltia, iMississippi]:
 			loseAll(iPlayer)
 
 	# 1700 AD scenario: handle dates that have already been passed
@@ -878,6 +889,39 @@ def checkTurn(iGameTurn, iPlayer):
 			else: 
 				lose(iTeotihuacan, 2)
 				
+	elif iPlayer == iMississippi:
+		# first goal: Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD
+		if isPossible(iMississippi, 0):
+			bMississippiRiver = isCultureControlled(iMississippi, lMississippiRiver, True, True)
+			bOhioRiver = isCultureControlled(iMississippi, lOhioRiver, True, True)
+			bGreatLakes = isCultureControlled(iMississippi, lGreatLakes, True, True)
+			if bMississippiRiver and bOhioRiver and bGreatLakes:
+				win(iMississippi, 0)
+				
+		if iGameTurn == getTurnForYear(500):
+			expire(iMississippi, 0)
+				
+		# second goal: Build the Serpent Mound and 7 Effigy Mounds by 1070 AD
+		if isPossible(iMississippi, 1):
+			bEffigyMound = getNumBuildings(iPlayer, iEffigyMound) >= 7
+			
+			if bEffigyMound:
+				win(iMississippi, 1)
+				
+		if iGameTurn == getTurnForYear(1070):
+			expire(iMississippi, 1)
+			
+		# third goal: Build a palace and settle 2 great merchants in Cahokia by 1400 AD
+		if isPossible(iMississippi, 2):
+			bPalace = isBuildingInCity(Areas.getCapital(iPlayer, True), iPalace)
+			bMerchant = countCitySpecialists(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()), iSpecialistGreatMerchant) >= 2
+			
+			if bPalace and bMerchant:
+				win(iMississippi, 2)
+				
+		if iGameTurn == getTurnForYear(1400):
+			expire(iMississippi, 2)
+			
 	elif iPlayer == iKorea:
 	
 		# first goal: build a Buddhist Stupa and a Confucian Academy by 1200 AD
@@ -985,7 +1029,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if isPossible(iWari, 2):
 			iDual = countCitiesWithCultureLevelAndSize(iWari, 3, 5)
 			if iDual >= 4:
-				win(iWari, 4)
+				win(iWari, 2)
 		
 		if iGameTurn ==getTurnForYear(1100):
 			expire(iWari, 2)
@@ -3320,6 +3364,12 @@ def checkReligiousGoal(iPlayer, iGoal):
 			elif paganReligion == "Yoruba":
 				if pPlayer.getNumAvailableBonuses(iIvory) >= 8 and pPlayer.getNumAvailableBonuses(iGems) >= 6:
 					return 1
+			elif paganReligion == "Midewiwin":
+				bCorn = pPlayer.getNumAvailableBonuses(iCorn) >= 4
+				bFarms = countImprovements(iPlayer, iFarm) >= 20
+				
+				if bCorn and bFarms:
+					return 1
 			
 		# third Pagan goal: don't allow more than half of your cities to have a religion
 		elif iGoal == 2:
@@ -3952,12 +4002,12 @@ def countCityWonders(iPlayer, tPlot, bIncludeObsolete=False):
 		
 	return iCount
 	
-def isCultureControlled(iPlayer, lPlots, bIgnoreWater = False):
+def isCultureControlled(iPlayer, lPlots, bIgnoreWater = False, bRequireAll = False):
 	for tPlot in lPlots:
 		x, y = tPlot
 		plot = gc.getMap().plot(x, y)
 		if bIgnoreWater and plot.isWater(): continue
-		if plot.getOwner() != -1 and plot.getOwner() != iPlayer:
+		if (plot.getOwner() != -1 and plot.getOwner() != iPlayer) or (plot.getOwner() == -1 and bRequireAll):
 			return False
 	return True
 	
@@ -4661,6 +4711,12 @@ def getPaganGoalHelp(iPlayer):
 		iNumGems = pPlayer.getNumAvailableBonuses(iGems)
 		return getIcon(iNumIvory >= 8) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iIvory).getText().lower(), iNumIvory, 8)) + ' ' + getIcon(iNumGems >= 6) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iGems).getText().lower(), iNumGems, 6))
 
+	elif paganReligion == "Midewiwin":
+		iNumCorn = pPlayer.getNumAvailableBonuses(iCorn)
+		iNumFarms = countImprovements(iPlayer, iFarm)
+		
+		return getIcon(iNumCorn >= 4) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iCorn).getText().lower(), iNumCorn, 4)) + ' ' + getIcon(iNumFarms >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_IMPROVEMENT_FARM", iNumFarms, 20))
+
 def getUHVHelp(iPlayer, iGoal):
 	"Returns an array of help strings used by the Victory Screen table"
 
@@ -4973,6 +5029,25 @@ def getUHVHelp(iPlayer, iGoal):
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
 			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))))
 	
+	elif iPlayer == iMississippi:
+		if iGoal == 0:
+			bMississippiRiver = isCultureControlled(iMississippi, lMississippiRiver, True, True)
+			bOhioRiver = isCultureControlled(iMississippi, lOhioRiver, True, True)
+			bGreatLakes = isCultureControlled(iMississippi, lGreatLakes, True, True)
+			
+			aHelp.append(getIcon(bMississippiRiver) + localText.getText("TXT_KEY_VICTORY_MISSISSIPPI_RIVER", ()) + ' ' + getIcon(bOhioRiver) + localText.getText("TXT_KEY_VICTORY_OHIO_RIVER", ()) + ' ' + getIcon(bGreatLakes) + localText.getText("TXT_KEY_VICTORY_GREAT_LAKES", ()))
+		if iGoal == 1:
+			bSerpentMound = data.getWonderBuilder(iSerpentMound) == iMississippi
+			iNumEffigyMound = getNumBuildings(iPlayer, iEffigyMound)
+			
+			aHelp.append(getIcon(bSerpentMound) + localText.getText("TXT_KEY_BUILDING_SERPENT_MOUND", ()) + ' ' + getIcon(iNumEffigyMound >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND", iNumEffigyMound, 7)))
+			
+		if iGoal == 2:
+			bPalace = isBuildingInCity(Areas.getCapital(iPlayer, True), iPalace)
+			iNumMerchant = countCitySpecialists(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()), iSpecialistGreatMerchant) >= 2
+			
+			aHelp.append(getIcon(bPalace) + localText.getText("TXT_KEY_BUILDING_PALACE", ()) + ' ' + getIcon(iNumMerchant >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY", (pMississippi.getCapitalCity().getName(), iNumMerchant, 2)))
+			
 	elif iPlayer == iKorea:
 		if iGoal == 0:
 			bConfucianCathedral = (getNumBuildings(iKorea, iConfucianCathedral) > 0)
@@ -4991,7 +5066,7 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 1:
 			iRefined = countCitiesWithCultureLevel(iTiwanaku, 4)
 			
-			aHelp.append(getIcon(iRefined >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE", (iRefined, 2)))
+			aHelp.append(getIcon(iRefined >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_REFINED_CULTURE", (iRefined, 2)))
 			
 		elif iGoal == 2:
 			iGoldenAgeTurns = data.iTiwanakuGoldenAgeTurns

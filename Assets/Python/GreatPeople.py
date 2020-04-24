@@ -238,7 +238,6 @@ iCivBabylonia : {
 	],
 },
 iCivNorteChico : {
-
 },
 iCivNubia : {
 },
@@ -1358,6 +1357,8 @@ iCivKorea : {
 		"Yi Bong-chang", # 20th
 		"Kim Jae-gyu", # 20th
 	],
+},
+iCivMississippi : {
 },
 iCivTiwanaku : {
 

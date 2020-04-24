@@ -3947,6 +3947,14 @@
 		<Spanish>Acquire eight ivory resources and six gem resources</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_MIDEWIWIN</Tag>
+		<English>Acquire 4 Corn Resources and construct 20 Farms</English>
+		<French>Acquire 4 Corn Resources and construct 20 Farms</French>
+		<German>Acquire 4 Corn Resources and construct 20 Farms</German>
+		<Italian>Acquire 4 Corn Resources and construct 20 Farms</Italian>
+		<Spanish>Acquire 4 Corn Resources and construct 20 Farms</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL3</Tag>
 		<English>Don't allow more than half of your cities to have a religion</English>
 		<French>Ne pas permettre &#224; plus de la moiti&#233; de vos villes d'avoir une religion</French>
@@ -6983,11 +6991,91 @@
 		<Spanish>Settle three great artists in your capital by 1500 CE</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CITIES_REFINED_CULTURE</Tag>
+		<English>Cities with refined culture: %d1 / %d2</English>
+		<French>Villes avec une culture raffin&#233;e : %d1 / %d2</French>
+		<German>Cities with refined culture: %d1 / %d2</German>
+		<Italian>Cities with refined culture: %d1 / %d2</Italian>
+		<Spanish>Cities with refined culture: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_STRING</Tag>
 		<English>%s1: %d2 / %d3</English>
 		<French>%s1: %d2 / %d3</French>
 		<German>%s1: %d2 / %d3</German>
 		<Italian>%s1: %d2 / %d3</Italian>
 		<Spanish>%s1: %d2 / %d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MIS1_TITLE</Tag>
+		<English>Hopewell Exchange</English>
+		<French>Hopewell Exchange</French>
+		<German>Hopewell Exchange</German>
+		<Italian>Hopewell Exchange</Italian>
+		<Spanish>Hopewell Exchange</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MIS1</Tag>
+		<English>Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD</English>
+		<French>Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD</French>
+		<German>Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD</German>
+		<Italian>Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD</Italian>
+		<Spanish>Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MIS2_TITLE</Tag>
+		<English>Fort Ancient Culture</English>
+		<French>Fort Ancient Culture</French>
+		<German>Fort Ancient Culture</German>
+		<Italian>Fort Ancient Culture</Italian>
+		<Spanish>Fort Ancient Culture</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MIS2</Tag>
+		<English>Build the Serpent Mound and 7 Effigy Mounds by 1070 AD</English>
+		<French>Build the Serpent Mound and 7 Effigy Mounds by 1070 AD</French>
+		<German>Build the Serpent Mound and 7 Effigy Mounds by 1070 AD</German>
+		<Italian>Build the Serpent Mound and 7 Effigy Mounds by 1070 AD</Italian>
+		<Spanish>Build the Serpent Mound and 7 Effigy Mounds by 1070 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MIS3_TITLE</Tag>
+		<English>Northern Metropolis</English>
+		<French>Northern Metropolis</French>
+		<German>Northern Metropolis</German>
+		<Italian>Northern Metropolis</Italian>
+		<Spanish>Northern Metropolis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MIS3</Tag>
+		<English>Build a palace and settle 2 great merchants in Cahokia by 1400 AD</English>
+		<French>Build a palace and settle 2 great merchants in Cahokia by 1400 AD</French>
+		<German>Build a palace and settle 2 great merchants in Cahokia by 1400 AD</German>
+		<Italian>Build a palace and settle 2 great merchants in Cahokia by 1400 AD</Italian>
+		<Spanish>Build a palace and settle 2 great merchants in Cahokia by 1400 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MISSISSIPPI_RIVER</Tag>
+		<English>Mississippi River</English>
+		<French>Mississippi River</French>
+		<German>Mississippi River</German>
+		<Italian>Mississippi River</Italian>
+		<Spanish>Mississippi River</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OHIO_RIVER</Tag>
+		<English>Ohio River</English>
+		<French>Ohio River</French>
+		<German>Ohio River</German>
+		<Italian>Ohio River</Italian>
+		<Spanish>Ohio River</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_LAKES</Tag>
+		<English>Great Lakes</English>
+		<French>Great Lakes</French>
+		<German>Great Lakes</German>
+		<Italian>Great Lakes</Italian>
+		<Spanish>Great Lakes</Spanish>
 	</TEXT>
 </Civ4GameText>

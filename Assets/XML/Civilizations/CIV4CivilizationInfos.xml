@@ -1444,6 +1444,10 @@
 					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_CHAD_ZANGO</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4636,6 +4640,128 @@
 			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_MISSISSIPPI</Type>
+			<Description>TXT_KEY_CIV_MISSISSIPPI_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MISSISSIPPI_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MISSISSIPPI_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_MISSISSIPPI_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_MISSISSIPPI</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_MISSISSIPPI</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_NATIVE_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MISSISSIPPIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_MIDEWIWIN</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Midewiwin.dds</PaganReligionButton>
+			<Identifier>MIS</Identifier>
+			<StartingYear>100</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>15</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Cahokia</City>
+				<City>Towosahgy</City>
+				<City>Paducah</City>
+				<City>Tolu</City>
+				<City>Chicalissa</City>
+				<City>Quizquiz</City>
+				<City>Aquixo</City>
+				<City>Casqui</City>
+				<City>Pacaha</City>
+				<City>Palisema</City>
+				<City>Tanico</City>
+				<City>Utiangue</City>
+				<City>Anilco</City>
+				<City>Quigualtam</City>
+				<City>Natchez</City>
+				<City>Tula</City>
+				<City>Natchitoches</City>
+				<City>Hasinai</City>
+				<City>Kadohadacho</City>
+				<City>Atahachi</City>
+				<City>Talisi</City>
+				<City>Humati</City>
+				<City>Mabila</City>
+				<City>Zabusta</City>
+				<City>Chicaza</City>
+				<City>Coosa</City>
+				<City>Talimachusi</City>
+				<City>Etalwa</City>
+				<City>Satapo</City>
+				<City>Koasati</City>
+				<City>Olamico</City>
+				<City>Guasili</City>
+				<City>Canasoga</City>
+				<City>Xuala</City>
+				<City>Cofitachequi</City>
+				<City>Talimeco</City>
+				<City>Ilasi</City>
+				<City>Ocute</City>
+				<City>Cofaqui</City>
+				<City>Ocmulgee</City>
+				<City>Ichisi</City>
+				<City>Capachequi</City>
+				<City>Kolomoki</City>
+				<City>Aztalan</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PARK</BuildingClassType>
+					<BuildingType>BUILDING_MISSISSIPPI_EFFIGY_MOUND</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_MIDEWIWIN_MIDEWIGAAN</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MILITIA</UnitClassType>
+					<UnitType>UNIT_MISSISSIPPI_FALCON_DANCER</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_RED_HORN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_NATIVE_AMERICA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_NATIVE_AMERICA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_NATIVE_AMERICA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_MONGOL</Type>
 			<Description>TXT_KEY_CIV_MONGOL_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_MONGOL_SHORT_DESC</ShortDescription>
@@ -5499,6 +5625,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_NUBIAN_DEFFUFAS</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PESEDJET_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

@@ -1358,5 +1358,26 @@
 			<fBlue>0.13</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_LEMON</Type>
+			<fRed>0.85</fRed>
+			<fGreen>0.95</fGreen>
+			<fBlue>0.35</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_LEMON_TEXT</Type>
+			<fRed>0.85</fRed>
+			<fGreen>0.95</fGreen>
+			<fBlue>0.35</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_CIVILIZATION_KHAKI</Type>
+			<fRed>0.20</fRed>
+			<fGreen>0.25</fGreen>
+			<fBlue>0.05</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

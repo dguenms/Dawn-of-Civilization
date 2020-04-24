@@ -755,7 +755,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_WARI</Tag>
-		<English>It is the year 400 AD. North of the flourishing Tiwanaku, the rist of the Wari Empire heralds what will soon become the first major Andean power struggle...</English>
+		<English>It is the year 400 AD. North of the flourishing Tiwanaku, the rise of the Wari Empire heralds what will soon become the first major Andean power struggle...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_TIWANAKU_600</Tag>
@@ -764,5 +764,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_WARI_600AD</Tag>
 		<English>It is the year 600 AD. The Wari Empire is in the middle of a cold war with their southern neighbors...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_CHIMU</Tag>
+		<English>It is the year 900 AD. Taking advantage of their neighbor's preoccupation in their cold war with the Tiwanaku, the Chimu people take the first steps towards the formation of an Empire of their own...</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_HOPEWELL</Tag>
+		<English>It is the year 100 BC. The consolidation of the Ohio Hopewell tradition marks the first major step towards the development of complex civilization north of the Mexican Altiplano...</English>
 	</TEXT>
 </Civ4GameText>

@@ -34,12 +34,12 @@ tMinorCities = (
 (100, (76, 30), iIndependent, "Sana'a", 2, iArcher, 2),			# Sana'a
 (107, (99, 38), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (200, (75, 28), iIndependent2, 'Barbara', 2, iArcher, 2),	# Berbera
-(840, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iCrossbowman, 2),			# Edinburgh
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# L�beck
+(840, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iCrossbowman, 2),			# Edinburgh
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (899, (78, 36), iIndependent, 'Bahrein', 2, iArcher, 2),			# Qarmatians (Abu Sa'id al-Jannabi)
 (900, (24, 28), iNative, 'Tucume', 2, iPictaAucac, 4),			# Tucume
@@ -276,6 +276,8 @@ class Barbs:
 			self.checkSpawn(iNative, iLongbowman, 1, (61, 27), (66, 34), self.spawnNatives, iGameTurn, 12, 8, ["TXT_KEY_ADJECTIVE_BULALA"])
 
 		#American natives
+		if utils.isYearIn(-100, 400):
+			self.checkSpawn(iNative, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
 		if utils.isYearIn(400, 1100):
 			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
 			if utils.getScenario() == i3000BC:  #late start condition

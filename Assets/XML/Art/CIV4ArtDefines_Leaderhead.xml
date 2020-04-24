@@ -1358,5 +1358,13 @@
 			<NoShaderNIF>Art/Leaderheads/Jasaw/tachnechobrus.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Jasaw/tachnechobrus_background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_RED_HORN</Type>
+			<Button>Art/Leaderheads/Uwahci'l/Button_Uwahci'l.dds</Button>
+			<NIF>Art/Leaderheads/Uwahci'l/shaka.nif</NIF>
+			<KFM>Art/Leaderheads/Uwahci'l/shaka.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Uwahci'l/shaka.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Uwahci'l/shaka_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

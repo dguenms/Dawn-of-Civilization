@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISSISSIPPI_DESC</Tag>
+		<English>The Hopewell</English>
+		<French>The Hopewell</French>
+		<German>The Hopewell</German>
+		<Italian>The Hopewell</Italian>
+		<Spanish>The Hopewell</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOPEWELL_DESC</Tag>
+		<English>The Mississippi</English>
+		<French>The Mississippi</French>
+		<German>The Mississippi</German>
+		<Italian>The Mississippi</Italian>
+		<Spanish>The Mississippi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOPEWELL_PEOPLES</Tag>
+		<English>%s1 Peoples</English>
+		<French>%s1 Peoples</French>
+		<German>%s1 Peoples</German>
+		<Italian>%s1 Peoples</Italian>
+		<Spanish>%s1 Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISSISSIPPI_PEOPLES</Tag>
+		<English>%s1 Peoples</English>
+		<French>%s1 Peoples</French>
+		<German>%s1 Peoples</German>
+		<Italian>%s1 Peoples</Italian>
+		<Spanish>%s1 Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISSISSIPPI_DEFAULT</Tag>
+		<English>%s1 City States</English>
+		<French>%s1 City States</French>
+		<German>%s1 City States</German>
+		<Italian>%s1 City States</Italian>
+		<Spanish>%s1 City States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOPEWELL_DEFAULT</Tag>
+		<English>%s1 City States</English>
+		<French>%s1 City States</French>
+		<German>%s1 City States</German>
+		<Italian>%s1 City States</Italian>
+		<Spanish>%s1 City States</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOPEWELL_ADJECTIVE</Tag>
+		<English>Mississippian</English>
+		<French>Mississippian</French>
+		<German>Mississippian</German>
+		<Italian>Mississippian</Italian>
+		<Spanish>Mississippian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISSISSIPPI_ADJECTIVE</Tag>
+		<English>Hopewell</English>
+		<French>Hopewell</French>
+		<German>Hopewell</German>
+		<Italian>Hopewell</Italian>
+		<Spanish>Hopewell</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MISSISSIPPI_SHORT_DESC</Tag>
+		<English>Hopewell</English>
+		<French>Hopewell</French>
+		<German>Hopewell</German>
+		<Italian>Hopewell</Italian>
+		<Spanish>Hopewell</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOPEWELL_SHORT_DESC</Tag>
+		<English>Mississippi</English>
+		<French>Mississippi</French>
+		<German>Mississippi</German>
+		<Italian>Mississippi</Italian>
+		<Spanish>Mississippi</Spanish>
+	</TEXT>
+</Civ4GameText>

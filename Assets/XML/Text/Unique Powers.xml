@@ -1291,11 +1291,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CEL</Tag>
-		<English>Cities start with extra Culture.</English>
-		<French>Cities start with extra Culture.</French>
-		<German>Cities start with extra Culture.</German>
-		<Italian>Cities start with extra Culture.</Italian>
-		<Spanish>Cities start with extra Culture.</Spanish>
+		<English>Cities start with extra Culture. Extra Food from unimproved Forests.</English>
+		<French>Cities start with extra Culture. Extra Food from unimproved Forests.</French>
+		<German>Cities start with extra Culture. Extra Food from unimproved Forests.</German>
+		<Italian>Cities start with extra Culture. Extra Food from unimproved Forests.</Italian>
+		<Spanish>Cities start with extra Culture. Extra Food from unimproved Forests.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_NOR_TITLE</Tag>
@@ -1355,10 +1355,26 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CMU</Tag>
-		<English>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</English>
-		<French>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</French>
-		<German>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</German>
-		<Italian>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</Italian>
-		<Spanish>Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.</Spanish>
+		<English>Recieves a Free Artist in the capital for every other improved resource in Northwestern South American.</English>
+		<French>Recieves a Free Artist in the capital for every other improved resource in Northwestern South American.</French>
+		<German>Recieves a Free Artist in the capital for every other improved resource in Northwestern South American.</German>
+		<Italian>Recieves a Free Artist in the capital for every other improved resource in Northwestern South American.</Italian>
+		<Spanish>Recieves a Free Artist in the capital for every other improved resource in Northwestern South American.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MIS_TITLE</Tag>
+		<English>The Power of Mshi-Ziibi:</English>
+		<French>Le pouvoir de lshi-ziibi:</French>
+		<German>Die Macht des Mshi-Ziibi:</German>
+		<Italian>Il potere della mshi-ziibi:</Italian>
+		<Spanish>El poder de la mshi-ziibi:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MIS</Tag>
+		<English>Extra Commerce along Rivers.</English>
+		<French>Extra Commerce along Rivers.</French>
+		<German>Extra Commerce along Rivers.</German>
+		<Italian>Extra Commerce along Rivers.</Italian>
+		<Spanish>Extra Commerce along Rivers.</Spanish>
 	</TEXT>
 </Civ4GameText>

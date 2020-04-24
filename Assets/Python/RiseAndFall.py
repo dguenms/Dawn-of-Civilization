@@ -847,6 +847,21 @@ class RiseAndFall:
 				utils.makeUnit(iArcher, iCeltia, (53, 54), 2)
 				utils.makeUnit(iCidainh, iCeltia, (53, 54), 2)
 
+		#1SDAN: Move Mississippi Capital and set them to be reborn in 800 AD
+		if not pMississippi.isHuman() and iGameTurn == getTurnForYear(800) - (data.iSeed % 10):
+			if gc.getMap().plot(Areas.getCapital(iMississippi, False)[0], Areas.getCapital(iMississippi, False)[1]).isCity():
+				if gc.getMap().plot(Areas.getCapital(iMississippi, True)[0], Areas.getCapital(iMississippi, True)[1]).isCity():
+					utils.moveCapital(iMississippi, (Areas.getCapital(iMississippi, True)[0], Areas.getCapital(iMississippi, True)[1]))
+					utils.setReborn(iMississippi, True)
+					dc.nameChange(iMississippi)
+					dc.adjectiveChange(iMississippi)
+				#1SDAN: Include both Cahokia sites
+				if gc.getMap().plot(Areas.getCapital(iMississippi, True)[0]+1, Areas.getCapital(iMississippi, True)[1]).isCity():
+					utils.moveCapital(iMississippi, (Areas.getCapital(iMississippi, True)[0]+1, Areas.getCapital(iMississippi, True)[1]))
+					utils.setReborn(iMississippi, True)
+					dc.nameChange(iMississippi)
+					dc.adjectiveChange(iMississippi)
+
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
 		if not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (data.iSeed % 10):
 			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
@@ -2025,6 +2040,8 @@ class RiseAndFall:
 					elif iNewWorldCiv == iInca:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
+					elif iNewWorldCiv == iMississippi:
+						sta.completeCollapse(iMississippi)
 						
 					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
 						
@@ -2112,9 +2129,9 @@ class RiseAndFall:
 						elif utils.getHumanID() == iOldWorldCiv:
 							CyInterface().addMessage(iOldWorldCiv, True, iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 							
-		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Kievan Rus
+		# Leoreth: Mongol horde event against Arabia, Persia, Byzantium, Kievan Rus, and Khazars (Mughals don't seem to be included)
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
-			if iTeamX in [iPersia, iByzantium, iKievanRus]:
+			if iTeamX in lMongolCivs:
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols(iTeamX):
 
 					data.setFirstContactMongols(iTeamX, False)
@@ -2137,6 +2154,14 @@ class RiseAndFall:
 						tTL = (68, 48)
 						tBR = (81, 62)
 						iDirection = DirectionTypes.DIRECTION_EAST
+					elif iTeamX == iKhazars:
+						tTL = (72, 47)
+						tBR = (81, 53)
+						iDirection = DirectionTypes.DIRECTION_EAST
+					elif iTeamX == iMughals:
+						tTL = (85, 35)
+						tBR = (96, 44)
+						iDirection = DirectionTypes.DIRECTION_NORTH
 
 					lTargetList = utils.getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
 					
@@ -2468,6 +2493,8 @@ class RiseAndFall:
 		elif iCiv == iVietnam:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+		elif iCiv == iMississippi:
+			utils.makeUnit(iFalconDancer, iCiv, tPlot, 4)
 		elif iCiv == iKorea:
 			for iUnit in [iHorseArcher, iCrossbowman]:
 				utils.makeUnit(iUnit, iCiv, tPlot, 2)
@@ -2738,6 +2765,10 @@ class RiseAndFall:
 				utils.makeUnit(iGalley, iCiv, tSeaPlot, 1)
 		elif iCiv == iTeotihuacan:
 			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+		elif iCiv == iMississippi:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iFalconDancer, iCiv, tPlot, 2)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.createSettlers(iCiv, 1)
@@ -3260,6 +3291,8 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iTeotihuacan:
 			utils.makeUnit(iArtisan, iCiv, tPlot, 2)
+		elif iCiv == iMississippi:
+			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		elif iCiv == iKorea:
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
 		elif iCiv == iTiwanaku:

@@ -7,6 +7,7 @@ import Popup
 #import cPickle as pickle
 from Consts import *
 import Areas
+import Resources
 from RFCUtils import utils
 import UniquePowers
 from StoredData import data # edead
@@ -152,6 +153,7 @@ class AIWars:
 			iTurn = getTurnForYear(900)
 		elif utils.getScenario() == i1700AD:
 			iTurn = getTurnForYear(1720)
+		self.res = Resources.Resources()
 		data.iNextTurnAIWar = iTurn + gc.getGame().getSorenRandNum(iMaxIntervalEarly-iMinIntervalEarly, 'random turn')
 
 
@@ -227,7 +229,10 @@ class AIWars:
 		if not gc.getPlayer(iPlayer).isAlive():
 			for iTech in sta.getResurrectionTechs(iPlayer):
 				gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
-	
+		
+		if iPlayer == iRome and iPreferredTarget == iCeltia:
+			self.res.doRomanPigs()
+		
 		lCities = []
 		for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)):
 			if city.getOwner() != iPlayer and not gc.getTeam(city.getOwner()).isVassal(iPlayer):

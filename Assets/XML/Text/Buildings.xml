@@ -3365,4 +3365,20 @@
 		<Italian>Kancha</Italian>
 		<Spanish>Kancha</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND</Tag>
+		<English>Effigy Mound</English>
+		<French>Effigy Mound</French>
+		<German>Effigy Mound</German>
+		<Italian>Effigy Mound</Italian>
+		<Spanish>Effigy Mound</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MIDEWIWIN_MIDEWIGAAN</Tag>
+		<English>Midewigaan</English>
+		<French>Midewigaan</French>
+		<German>Midewigaan</German>
+		<Italian>Midewigaan</Italian>
+		<Spanish>Midewigaan</Spanish>
+	</TEXT>
 </Civ4GameText>

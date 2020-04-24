@@ -764,6 +764,108 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_mod_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
+		<!-- 1x1 NATIVE ANCIENT/CLASSICAL -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::1x1_01</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::1x1_02</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::1x1_04</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<!-- 1x1 NATIVE MEDIEVAL/RENAISSANCE -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x1_01</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x1_02</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x1_03</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x1_04</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<!-- 1x1 NATIVE INDUSTRIAL -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x1_01</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x1_02</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x1_03</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x1_04</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
 		<!-- Other stuff -->
 		<ArtRef Name="goal:IMPROVEMENT_COTTAGE">
 			<Attribute Class="Scalar">bPlace:0</Attribute>
@@ -1393,6 +1495,362 @@
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
 			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<!-- 2x1 NATIVE ANCIENT/CLASSICAL -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::1x2_01</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::1x2_02</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::1x2_04</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::2x1_01</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::2x1_02</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::2x1_03</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Plains.nif::2x1_04</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Plains</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.32</Scale>
+		</ArtRef>
+		<!-- 2x1 NATIVE MEDIEVAL/RENAISSANCE -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x2_01</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x2_02</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x2_03</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::1x2_04</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::2x1_01</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::2x1_02</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::2x1_03</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::2x1_04</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/Native_Woodlands.nif::3x1_02</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_Native_Woodlands</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<!-- 2x1 NATIVE INDUSTRIAL -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_01</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_02</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_03</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_04</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_01</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_02</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_03</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_04</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<!-- 2x1 NATIVE MODERN -->
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_01</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_02</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_03</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::1x2_04</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_01</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_02</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_03</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.35</Scale>
+		</ArtRef>
+		<ArtRef Name="art:building">
+			<Attribute Class="Era">ERA_GLOBAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Cities/colony_euro_late.nif::2x1_04</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET</Attribute>
+			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:buildings_colony_euro_late</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
 		<!-- industrial -->

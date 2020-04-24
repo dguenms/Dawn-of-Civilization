@@ -49,6 +49,7 @@
 		<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 		<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
 		<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
+		<ArtStyleType>ARTSTYLE_NATIVE_AMERICA</ArtStyleType>
 	</ArtStyleTypes>
 	<CitySizeTypes>
 		<CitySizeType>CITYSIZE_SMALL</CitySizeType>

@@ -521,7 +521,8 @@ dNameChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iBurma : "TXT_KEY_CIV_BURMA_MYANMAR_SHORT_DESC",
-	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC"
+	iKievanRus : "TXT_KEY_CIV_UKRAINE_SHORT_DESC",
+	iMississippi : "TXT_KEY_CIV_HOPEWELL_SHORT_DESC",
 }
 
 dAdjectiveChanges = {
@@ -533,6 +534,7 @@ dAdjectiveChanges = {
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 	iKievanRus : "TXT_KEY_CIV_UKRAINE_ADJECTIVE",
+	iMississippi : "TXT_KEY_CIV_HOPEWELL_ADJECTIVE",
 }
 
 dCapitals = {
@@ -581,6 +583,7 @@ dStartingLeaders = [
 	iEthiopia : iEzana,
 	iVietnam : iTrung,
 	iTeotihuacan : iAtlatlCauac,
+	iMississippi : iRedHorn,
 	iKorea : iWangKon,
 	iTiwanaku : iMalkuHuyustus,
 	iByzantium : iJustinian,
@@ -758,7 +761,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner):
 def onCityRazed(iOwner):
 	checkName(iOwner)
 	
-def onCityBuilt(iOwner):
+def onCityBuilt(iOwner, city):
 	checkName(iOwner)
 	
 def onTechAcquired(iPlayer, iTech):

@@ -162,6 +162,7 @@ iCivTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
 iCivVietnam :	Techs([iAlloys, iWriting, iCalendar, iPriesthood, iBloomery], column=2),
 iCivTeotihuacan :	Techs([iProperty, iLeverage, iCeremony], column=1, exceptions=[iSailing]),
+iCivMississippi :	Techs([iTanning, iMining, iPottery, iSmelting, iMasonry, iAlloys]),
 iCivKorea :	Techs(column=5, exceptions=[iGeneralship, iEngineering, iCurrency]),
 iCivTiwanaku :	Techs([iWriting, iCalendar], column=2),
 iCivByzantium :	Techs([iArchitecture, iPolitics, iEthics], column=5),
@@ -226,6 +227,7 @@ iCivPersia :	Techs([iNobility, iSteel, iFeudalism], column=5),
 iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[iNobility]),
 iCivTamils :	Techs([iArtisanry, iArchitecture], column=5, exceptions=[iGeneralship, iPhilosophy]),
 iCivEthiopia :	Techs([iFortification], column=6, exceptions=[iArtisanry]),
+iCivMississippi :	Techs([iTanning, iMining, iPottery, iSmelting, iMasonry, iAlloys, iMythology, iSailing, iDivination]),
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iScholarship]),
 iCivTiwanaku :	Techs([iWriting, iCalendar, iPriesthood, iConstruction, iAlloys, iCement], column=2),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
@@ -440,6 +442,14 @@ dTechPreferences = {
 		iExploration: -40,
 		iReplaceableParts: -40,
 		iScientificMethod: -40,
+	},
+	iCivMississippi : {
+		iLeverage : 40,
+		iPastoralism : 20,
+		iMythology : 20,
+		
+		iAgriculture : -20,
+		iSailing : -40,
 	},
 	iCivTiwanaku : {
 		iPriesthood: 30,
@@ -946,6 +956,13 @@ dBuildingPreferences = {
 	},
 	iCivKorea : {
 		iCheomseongdae: 30,
+	},
+	iCivMississippi : {
+		iSerpentMound : 40,
+		iGateOfTheSun : -20,
+		iPyramidOfTheSun : -20,
+		iMachuPicchu : -20,
+		iTempleOfKukulkan : -20
 	},
 	iCivTiwanaku : {
 		iGateOfTheSun : 40,

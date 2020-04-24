@@ -45,9 +45,6 @@ PyPlayer = PyHelpers.PyPlayer
 tRussianTopLeft = (65, 49)
 tRussianBottomRight = (121, 65)
 
-tChimuBR = (27, 30)
-tChimuTL = (23, 21)
-
 iMongolianRadius = 4
 iMongolianTimer = 1
 

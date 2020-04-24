@@ -5207,6 +5207,44 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PARK</BuildingClass>
+			<Type>BUILDING_MISSISSIPPI_EFFIGY_MOUND</Type>
+			<Description>TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MISSISSIPPI_EFFIGY_MOUND</ArtDefineTag>
+			<PrereqTech>TECH_LEVERAGE</PrereqTech>
+			<iCost>100</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>70</iConquestProb>
+			<iHappiness>2</iHappiness>
+			<iHealth>2</iHealth>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_COAL_PLANT</BuildingClass>
 			<Type>BUILDING_COAL_PLANT</Type>
 			<Description>TXT_KEY_BUILDING_COAL_PLANT</Description>
@@ -16848,6 +16886,55 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SERPENT_MOUND</BuildingClass>
+			<Type>BUILDING_SERPENT_MOUND</Type>
+			<Description>TXT_KEY_BUILDING_SERPENT_MOUND</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SERPENT_MOUND_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SERPENT_MOUND_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SERPENT_MOUND_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SERPENT_MOUND</ArtDefineTag>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<PrereqTech>TECH_LEVERAGE</PrereqTech>
+			<ObsoleteTech>TECH_CARTOGRAPHY</ObsoleteTech>
+			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
+			<iCost>300</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iHappiness>2</iHappiness>
+			<iHealth>2</iHealth>
+			<iAsset>12</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_PYRAMID</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PLAGUE</BuildingClass>
 			<Type>BUILDING_PLAGUE</Type>
 			<Description>TXT_KEY_BUILDING_PLAGUE</Description>
@@ -17550,6 +17637,46 @@
 			<Strategy>TXT_KEY_BUILDING_ASTAR_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ASTAR_TEMPLE</ArtDefineTag>
+			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>30</iCost>
+			<iConquestProb>50</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
+			<Type>BUILDING_MIDEWIWIN_MIDEWIGAAN</Type>
+			<Description>TXT_KEY_BUILDING_MIDEWIWIN_MIDEWIGAAN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MIDEWIWIN_MIDEWIGAAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MIDEWIWIN_MIDEWIGAAN_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MIDEWIWIN_MIDEWIGAAN</ArtDefineTag>
 			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<bCenterInCity>1</bCenterInCity>
 			<bPagan>1</bPagan>

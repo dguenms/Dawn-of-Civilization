@@ -389,7 +389,7 @@ class CvRFCEventHandler:
 		self.up.onCityBuilt(iOwner, city)
 			
 		if iOwner < iNumPlayers:
-			dc.onCityBuilt(iOwner)
+			dc.onCityBuilt(iOwner, city)
 
 		if iOwner == iArabia:
 			if not gc.getGame().isReligionFounded(iIslam):
@@ -652,6 +652,13 @@ class CvRFCEventHandler:
 			# Leoreth: in case human Phoenicia moves palace to Carthage
 			if iOwner == iCarthage and tCity == (58, 39):
 				utils.setReborn(iCarthage, True)
+				
+			
+			if (iOwner == iMississippi and cnm.getFoundName(iOwner, (tCity[0], tCity[1])) == "Cahokia"):
+				if utils.getOwnedCoreCities(iOwner) > 0:
+					utils.setReborn(iOwner, True)
+					dc.nameChange(iMississippi)
+					dc.adjectiveChange(iMississippi)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == iPorcelainTower:

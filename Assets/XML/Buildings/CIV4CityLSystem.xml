@@ -341,6 +341,83 @@
 			<Attribute Class="ArtStyle">ARTSTYLE_GRECO_ROMAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x1_01">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x1_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x1_04">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x1_01">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x1_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.8</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x1_03">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x1_04">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x1_01">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x1_02">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x1_03">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x1_04">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
 		<!-- LEAF 1x1 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_1x1">
 			<Scale>1.0</Scale>
@@ -954,6 +1031,198 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x2_01">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x2_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x2_04">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x1_01">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x1_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x1_03">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x1_04">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x2_01">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x2_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x2_03">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x2_04">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x1_01">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x1_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x1_03">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x1_04">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::3x1_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x2_01">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x2_02">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x2_03">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x2_04">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x1_01">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x1_02">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x1_03">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x1_04">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
 		<!-- LEAF 2x1 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_2x1">
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1042,6 +1311,88 @@
 			<Attribute Class="ArtStyle">ARTSTYLE_GRECO_ROMAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::1x3_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::3x1_01">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::3x1_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+
+
+		<ArtRef Name="generic:Native_Woodlands.nif::1x3_01">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::1x3_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::3x1_01">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x3_01">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::1x3_02">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">90,270</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::3x1_01">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::3x1_02">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
 		</ArtRef>
 		<!-- LEAF 3x1 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_3x1">
@@ -1206,6 +1557,76 @@
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_GRECO_ROMAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x2_01">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x2_02">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Plains.nif::2x2_04">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x2_01">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x2_02">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:Native_Woodlands.nif::2x2_04">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x2_01">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x2_02">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x2_03">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
+		</ArtRef>
+		<ArtRef Name="generic:colony_euro_late.nif::2x2_04">
+			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
+			<Attribute Class="ArtStyle">ARTSTYLE_NATIVE_AMERICA</Attribute>
+			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
+			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
+			<Scale>1.0</Scale>
 		</ArtRef>
 		<!-- LEAF 2x2 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_2x2">

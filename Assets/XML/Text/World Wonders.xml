@@ -3334,6 +3334,22 @@
 		<Spanish>[ICON_BULLET]Great Person births require 50% less [COLOR_HIGHLIGHT_TEXT]Great Person Points[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SERPENT_MOUND</Tag>
+		<English>Serpent Mound</English>
+		<French>Serpent Mound</French>
+		<German>Serpent Mound</German>
+		<Italian>Serpent Mound</Italian>
+		<Spanish>Serpent Mound</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SERPENT_MOUND_HELP</Tag>
+		<English>[ICON_BULLET]+1 [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] slot from Parks</English>
+		<French>[ICON_BULLET+1 [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] slot from Parks</French>
+		<German>[ICON_BULLET]+1 [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] slot from Parks</German>
+		<Italian>[ICON_BULLET]+1 [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] slot from Parks</Italian>
+		<Spanish>[ICON_BULLET]+1 [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] slot from Parks</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

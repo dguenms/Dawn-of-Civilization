@@ -1510,4 +1510,68 @@
 		<Italian>Northwestern South America</Italian>
 		<Spanish>Northwestern South America</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_97</Tag>
+		<English>Mississippi River</English>
+		<French>Mississippi River</French>
+		<German>Mississippi River</German>
+		<Italian>Mississippi River</Italian>
+		<Spanish>Mississippi River</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_98</Tag>
+		<English>Mississippi and Ohio Rivers</English>
+		<French>Mississippi and Ohio Rivers</French>
+		<German>Mississippi and Ohio Rivers</German>
+		<Italian>Mississippi and Ohio Rivers</Italian>
+		<Spanish>Mississippi and Ohio Rivers</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_99</Tag>
+		<English>Ohio River</English>
+		<French>Ohio River</French>
+		<German>Ohio River</German>
+		<Italian>Ohio River</Italian>
+		<Spanish>Ohio River</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_100</Tag>
+		<English>Great Lakes</English>
+		<French>Great Lakes</French>
+		<German>Great Lakes</German>
+		<Italian>Great Lakes</Italian>
+		<Spanish>Great Lakes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_101</Tag>
+		<English>Mississippi River and Great Lakes</English>
+		<French>Mississippi River and Great Lakes</French>
+		<German>Mississippi River and Great Lakes</German>
+		<Italian>Mississippi River and Great Lakes</Italian>
+		<Spanish>Mississippi River and Great Lakes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_102</Tag>
+		<English>Cameroon</English>
+		<French>Cameroon</French>
+		<German>Cameroon</German>
+		<Italian>Cameroon</Italian>
+		<Spanish>Cameroon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_103</Tag>
+		<English>Nigeria</English>
+		<French>Nigeria</French>
+		<German>Nigeria</German>
+		<Italian>Nigeria</Italian>
+		<Spanish>Nigeria</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_104</Tag>
+		<English>Libya</English>
+		<French>Libya</French>
+		<German>Libya</German>
+		<Italian>Libya</Italian>
+		<Spanish>Libya</Spanish>
+	</TEXT>
 </Civ4GameText>

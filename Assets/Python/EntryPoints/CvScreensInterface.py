@@ -1076,6 +1076,14 @@ def getUHVTileInfo(argsList):
 		if (x, y) in vic.lZaysan:
 			return 88
 			
+	elif iPlayer == iChad:
+		if utils.isPlotInArea((x, y), vic.tCameroonTL, vic.tCameroonBR):
+			return 102
+		if utils.isPlotInArea((x, y), vic.tNigeriaTL, vic.tNigeriaBR):
+			return 103
+		if utils.isPlotInArea((x, y), vic.tLibyaTL, vic.tLibyaBR):
+			return 104
+			
 	elif iPlayer == iRussia:
 		if utils.isPlotInArea((x, y), vic.tSiberiaTL, vic.tSiberiaBR):
 			return 41
@@ -1286,10 +1294,22 @@ def getUHVTileInfo(argsList):
 		if (x, y) in Areas.getCoreArea(iInca, False):
 			return 95
 			
-		elif (x, y) in utils.isPlotInArea((x, y), up.tChimuTL, vic.tChimuBR):
+		if (x, y) in utils.isPlotInArea((x, y), vic.tChimuTL, vic.tChimuBR):
 			return 96
 			
-		# continue with 97
+	elif iPlayer == iMississippi:
+		if (x, y) in vic.lMississippiRiver:
+			if (x, y) in vic.lOhioRiver:
+				return 99
+			elif (x, y) in vic.lGreatLakes:
+				return 101
+			return 98
+		elif (x, y) in vic.lGreatLakes:
+			return 100
+		elif (x, y) in vic.lOhioRiver:
+			return 97
+			
+		# continue with 102
 	return -1
 		
 def getCityName(argsList):

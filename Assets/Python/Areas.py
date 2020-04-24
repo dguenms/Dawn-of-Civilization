@@ -70,6 +70,7 @@ def getRebirthArea(iPlayer):
 	
 def updateCore(iPlayer):
 	lCore = getCoreArea(iPlayer)
+	
 	for x in range(iWorldX):
 		for y in range(iWorldY):
 			plot = gc.getMap().plot(x, y)
@@ -118,6 +119,7 @@ tCapitals = (
 (72, 30), # Aksum
 (101, 37), # Co Loa (Hanoi)
 (18, 37), # Tenotihuacan (Tollan)
+(27, 47), # Portsmouth
 (109, 46), # Seoul
 (30, 20), # Tiwanaku
 (68, 45), # Constantinople
@@ -178,6 +180,7 @@ iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
+iMississippi : (22, 48), # Cahokia
 iKazakh : (84, 52), # Astana
 iMaya : (27, 29),	# Bogota (Colombia)
 iTamils : (90, 30),	# Vijayanagara
@@ -237,6 +240,7 @@ tBirthArea = (
 ((70, 27),	(73, 30)),	# Ethiopia
 ((100, 35),	(104, 39)),	# Vietnam
 ((15, 36), 	(20, 41)), 	# Teotihuacan
+((24, 46),	(27, 48)), 	# Mississippi
 ((107, 45), (110, 49)), 	# Korea
 ((29, 17), (31, 20)),	# Tiwanaku
 ((64, 38), 	(74, 45)), 	# Byzantium
@@ -295,6 +299,7 @@ dChangedBirthArea = {
 iCarthage : ((57, 37), (59, 39)),
 iPersia :	((74, 37), 	(85, 44)), 	# includes Assyria and Anatolia
 iCeltia:	((47, 55),	(54, 60)),
+iMississippi :	((22, 42), (25, 48)),
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iEngland : 	((50, 53), 	(54, 60)),
 iInca : 	((26, 19), 	(31, 24)),
@@ -316,6 +321,7 @@ iRome : [(58, 41), (58, 42), (58, 43)],
 iTamils : [(90, 33), (90, 34), (91, 34)],
 iTurks : [(95, 45), (96, 45), (97, 45)],
 iVietnam : [(103, 39), (104, 38), (104, 39)],
+iMississippi : [(26, 46), (27, 46)],
 iTiwanaku : [(29, 17), (29, 18)],
 iArabia : [(82, 34), (73, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)],
 iTibet : [(98, 42)],
@@ -369,6 +375,7 @@ tCoreArea = (
 ((70, 27),	(73, 30)),	# Ethiopia
 ((100, 35),	(104, 38)),	# Vietnam
 ((17, 36),	(19, 37)),	# Teotihuacan
+((24, 46),	(27, 48)), 	# Mississippi
 ((108, 45),	(110, 48)),	# Korea
 ((29, 18),	(31, 20)),	# Tiwanaku
 ((64, 40),	(72, 46)),	# Byzantium
@@ -430,6 +437,7 @@ iIndia : 	((88, 33),	(91, 38)),
 iPhoenicia:	((54, 37),	(60, 39)),
 iPersia:	((79, 38), 	(82, 42)), 	# Iran
 iCeltia:	((48, 55),	(53, 60)), # Ireland
+iMississippi :	((22, 42), (25, 48)),
 iMaya : 	((24, 26),	(31, 32)),	# Colombia
 iByzantium :	((67, 44),	(69, 46)),
 iJapan : 	((111, 41),	(116, 49)),
@@ -457,6 +465,7 @@ iGreece : [(64, 45), (65, 45)],
 iPersia : [(85, 37), (85, 38), (85, 39)],
 iCeltia : [(56, 49), (56, 50), (56, 51), (57, 51), (58, 51),(59, 51), (60, 51), (63, 47), (63, 51), (62, 50), (57, 50)],
 iByzantium : [(71, 40)],
+iMississippi : [(26, 46), (27, 46)],
 iTurks : [(84, 36), (84, 37), (85, 36), (85, 37), (85, 38), (85, 39), (88, 44)],
 iArabia : [(72, 42), (73, 42), (74, 42), (77, 33), (78, 33), (77, 34), (78, 34), (76, 35), (77, 35), (78, 35), (76, 36), (77, 36), (78, 36), (76, 37), (77, 37), (78, 37)],
 iTibet : [(98, 42)],
@@ -522,6 +531,7 @@ tNormalArea = (
 ((68, 25), 	(77, 30)), 	# Ethiopia
 ((101, 35), 	(104, 39)), 	# Vietnam
 ((15, 35), 	(20, 40)), 	# Teotihuacan
+((24, 46),	(27, 48)), 	# Mississippi
 ((108, 45), 	(110, 49)), 	# Korea
 ((29, 17), (31, 20)),	# Tiwanaku
 ((64, 40), 	(72, 45)), 	# Byzantium
@@ -579,6 +589,7 @@ tNormalArea = (
 dChangedNormalArea = {
 iIndia : 	((96, 42),	(97, 42)),
 iCarthage : 	((71, 39),	(74, 41)),
+iMississippi :	((22, 42), (25, 48)),
 iMaya : 	((24, 26),	(29, 32)), # Colombia
 iKhazars : ((79, 50),	(89, 54)),
 iArabia : 	((73, 30),	(82, 38)),
@@ -594,6 +605,7 @@ iPolynesia : [(13, 21)],
 iPersia : [(86, 39), (86, 38), (86, 37)],
 iRome : [(62, 47), (63, 47), (63, 46)],
 iEthiopia : [(76, 30), (77, 30)],
+iMississippi : [(26, 46), (27, 46)],
 iJapan : [(111, 52), (112, 52), (111, 51)],
 iVikings : [(65, 56), (66, 56), (67, 56), (66, 57), (67, 57)],
 iTurks : [(88, 44), (93, 44), (94, 44), (95, 44), (96, 44), (97, 44), (98, 44), (95, 45), (96, 45), (97, 45), (100, 44), (101, 44), (102, 44), (103, 44), (100, 45), (101, 45), (102, 45), (103, 45), (99, 46), (101, 46), (102, 46), (103, 46), (99, 47), (100, 47), (101, 47), (102, 47), (103, 47), (99, 48), (100, 48), (101, 48), (102, 48), (103, 48), (100, 49), (101, 49), (102, 49), (103, 49)],
@@ -636,6 +648,7 @@ tBroaderArea = (
 ((67, 21), 	(77, 30)), 	# Ethiopia
 ((101, 35), 	(104, 39)), 	# Vietnam
 ((14, 32), 	(24, 43)), 	# Teotihuacan
+((24, 46),	(27, 48)), 	# Mississippi
 ((106, 45), 	(110, 52)), 	# Korea
 ((29, 17), (31, 20)),	# Tiwanaku
 ((58, 34), 	(74, 45)), 	# Byzantium
@@ -691,6 +704,7 @@ tBroaderArea = (
 )
 
 dChangedBroaderArea = {
+iMississippi :	((22, 42), (25, 48)),
 iMaya :		((33, 32),	(33, 32)),	# Colombia
 iByzantium : 	((64, 38),	(74, 45)),
 iHolyRome :	((61, 46),	(66, 50)),

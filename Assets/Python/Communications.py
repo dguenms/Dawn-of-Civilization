@@ -30,7 +30,8 @@ tPool2 = (iEgypt, -1,
 	iJapan, -1,	    
 	iPersia, -1,
 	iTeotihuacan, -1,
-	iTiwanaku, iWari)
+	iTiwanaku, iWari,
+	iMississippi, -1)
 
 
 tPool3 = (iEgypt,  

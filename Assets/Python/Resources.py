@@ -66,7 +66,14 @@ class Resources:
 		"""Removes a bonus resource and alerts the plot owner"""
 		if gc.getMap().plot(iX, iY).getBonusType(-1) == -1: return
 		self.createResource(iX, iY, -1)
-       	
+		
+	def doRomanPigs(self):
+		self.createResource(53, 50, iPig)
+		self.createResource(56, 49, iPig)
+		self.createResource(59, 50, iPig)
+		self.createResource(61, 53, iPig)
+		self.createResource(63, 48, iPig)
+		
 	def checkTurn(self, iGameTurn):
 		
 		# Gujarati horses appear later so Harappa cannot benefit too early
@@ -190,6 +197,8 @@ class Resources:
 			self.createResource(58, 52, iCow) # Amsterdam
 			
 		elif (iGameTurn == getTurnForYear(1600)):
+			self.createResource(25, 47, iIron) # Indianapolis
+			
 			self.createResource(29, 52, iCow) # Montreal
 			self.createResource(18, 53, iCow) # Alberta
 			self.createResource(12, 52, iCow) # British Columbia
