@@ -405,7 +405,7 @@ class Barbs:
 		for current in plots.surrounding(tCity):
 			if current.isCity():
 				return False, -1
-			if units.at(current).owner(human()).any():
+			if units.at(current).owner(active()).any():
 				return False, tCity[3]+1
 				
 		return True, tCity[3]
@@ -511,4 +511,4 @@ class Barbs:
 			makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)
 			
 	def includesActiveHuman(self, *civs):
-		return civ(human()) in civs and year(dBirth[human()]) <= year()
+		return civ() in civs and year(dBirth[active()]) <= year()

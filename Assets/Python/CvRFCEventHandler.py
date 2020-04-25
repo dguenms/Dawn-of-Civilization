@@ -403,7 +403,7 @@ class CvRFCEventHandler:
 				city = closestCity(pWinningUnit, iOwner)
 				if city: 
 					city.changeFood(turns(5))
-					if human() == pWinningUnit.getOwner(): data.iTeotlSacrifices += 1
+					if active() == pWinningUnit.getOwner(): data.iTeotlSacrifices += 1
 					message(iOwner, 'TXT_KEY_MAYA_HOLKAN_EFFECT', adjective(pLosingUnit), pLosingUnit.getName(), 5, city.getName())
 		
 		# Brandenburg Gate effect
@@ -827,12 +827,12 @@ class CvRFCEventHandler:
 		if ( eventType == self.EventKeyDown and theKey == int(InputTypes.KB_Q) and self.eventManager.bAlt and self.eventManager.bShift):
 			print("SHIFT-ALT-Q") #enables squatting
 			self.rnf.setCheatMode(True)
-			message(human(), 'EXPLOITER!!! ;)', color=iRed, force=True)
+			message(active(), 'EXPLOITER!!! ;)', color=iRed, force=True)
 
 		#Stability Cheat
 		if data.bCheatMode and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
 			print("SHIFT-ALT-S") #increases stability by one level
-			data.setStabilityLevel(human(), min(5, stability(human()) + 1))
+			data.setStabilityLevel(active(), min(5, stability(active()) + 1))
 			
 			
 		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_V) and self.eventManager.bCtrl and self.eventManager.bShift:

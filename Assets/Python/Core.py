@@ -26,9 +26,6 @@ map = gc.getMap()
 # TODO: add better API for turns and years
 
 
-# TODO: use gc.getActiveCivilizationType() instead of human() or self.iActivePlayer
-
-
 def isExtendedBirth(iPlayer):
 	if player(iPlayer).isHuman(): return False
 	
@@ -535,7 +532,10 @@ def player(identifier = None):
 	raise TypeError("Expected identifier to be CyPlayer, CyTeam, CyPlot, CyCity, CyUnit, or int, received '%s'" % type(identifier))
 	
 
-def civ(identifier):
+def civ(identifier = None):
+	if identifier is None:
+		return Civ(game.getActiveCivilizationType())
+
 	if isinstance(identifier, Civ):
 		return identifier
 
@@ -557,7 +557,7 @@ def period(iCiv):
 	return -1
 	
 	
-def human():
+def active():
 	return gc.getGame().getActivePlayer()
 	
 	
@@ -969,7 +969,6 @@ class CityFactory:
 	def surrounding(self, *args, **kwargs):
 		return plots.surrounding(*args, **kwargs).cities()
 
-	# TODO: test below
 	def birth(self, identifier, extended = None):
 		return PlotFactory().birth(identifier, extended).cities()
 
@@ -1157,7 +1156,6 @@ class PlayerFactory:
 	def none(self):
 		return Players([])
 	
-	# TODO: test
 	def of(self, *players):
 		return Players(players)
 

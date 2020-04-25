@@ -173,8 +173,8 @@ class Congress:
 				
 		if self.bPostWar:
 			if bHumanInvited: 
-				if human() in self.winners: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON", self.sHostCityName, sInviteString)
-				elif human() in self.losers: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST", self.sHostCityName, sInviteString)
+				if active() in self.winners: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON", self.sHostCityName, sInviteString)
+				elif active() in self.losers: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST", self.sHostCityName, sInviteString)
 				else: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR", self.sHostCityName, sInviteString)
 			else: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", self.sHostCityName, sInviteString)
 		else:
@@ -185,7 +185,7 @@ class Congress:
 		popup.setText(sText)
 			
 		popup.addPythonButton(text("TXT_KEY_CONGRESS_OK"), '')
-		popup.addPopup(human())
+		popup.addPopup(active())
 		
 	def applyIntroductionEvent(self):
 		# check one more time if player has collapsed in the meantime
@@ -202,7 +202,7 @@ class Congress:
 			if not player(iLoopPlayer).isHuman():
 				self.makeClaimAI(iLoopPlayer)
 	
-		if human() in self.dPossibleClaims:
+		if active() in self.dPossibleClaims:
 			# human still has to make a claim
 			self.makeClaimHuman()
 		else:
@@ -215,28 +215,28 @@ class Congress:
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 		popup.setOnClickedPythonCallback("applyClaimCityEvent")
 		
-		for tCity in self.dPossibleClaims[human()]:
+		for tCity in self.dPossibleClaims[active()]:
 			x, y, iValue = tCity
 			plot = plot_(x, y)
 			if plot.isCity():
 				popup.addPythonButton(plot.getPlotCity().getName(), infos.civ(plot).getButton())
 			else:
-				popup.addPythonButton(cnm.getFoundName(human(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
+				popup.addPythonButton(cnm.getFoundName(active(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
 			
 		popup.addPythonButton(text("TXT_KEY_CONGRESS_NO_REQUEST"), 'Art/Interface/Buttons/Actions/Cancel.dds')
-		popup.addPopup(human())
+		popup.addPopup(active())
 
 	def applyClaimCityEvent(self, iChoice):
-		if iChoice < len(self.dPossibleClaims[human()]):
-			x, y, iValue = self.dPossibleClaims[human()][iChoice]
-			self.dCityClaims[human()] = (x, y, iValue)
+		if iChoice < len(self.dPossibleClaims[active()]):
+			x, y, iValue = self.dPossibleClaims[active()][iChoice]
+			self.dCityClaims[active()] = (x, y, iValue)
 
 		self.voteOnClaims()	
 		
 	def startVoteCityEvent(self, iClaimant, (x, y)):
 		plot = plot_(x, y)
 		
-		if plot.isRevealed(human(), False):
+		if plot.isRevealed(active(), False):
 			plot.cameraLookAt()
 		
 		popup = CyPopupInfo()
@@ -260,10 +260,10 @@ class Congress:
 		popup.addPythonButton(text("TXT_KEY_POPUP_ABSTAIN"), infos.art("INTERFACE_EVENT_BULLET"))
 		popup.addPythonButton(text("TXT_KEY_POPUP_VOTE_NO"), infos.art("INTERFACE_EVENT_BULLET"))
 		
-		popup.addPopup(human())
+		popup.addPopup(active())
 		
 	def applyVoteCityEvent(self, iClaimant, iOwner, iVote):
-		self.vote(human(), iClaimant, 1 - iVote) # yes=0, abstain=1, no=2
+		self.vote(active(), iClaimant, 1 - iVote) # yes=0, abstain=1, no=2
 		
 		if iClaimant in self.dVotingMemory: self.dVotingMemory[iClaimant] += (1 - iVote)
 		if iOwner >= 0 and iOwner in self.dVotingMemory: self.dVotingMemory[iOwner] += (iVote - 1)
@@ -283,7 +283,7 @@ class Congress:
 		bHumanClaim = player(iClaimant).isHuman()
 		bCity = plot.isCity()
 		
-		if plot.isRevealed(human(), False):
+		if plot.isRevealed(active(), False):
 			plot.cameraLookAt()
 		
 		if bHumanClaim:
@@ -296,7 +296,7 @@ class Congress:
 			if bCity:
 				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_CITY", adjective(iBribedPlayer), adjective(iClaimant), plot.getPlotCity().getName())
 			else:
-				closest = closestCity(plot, human(), same_continent=True)
+				closest = closestCity(plot, active(), same_continent=True)
 				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY", adjective(iBribedPlayer), adjective(iClaimant), closest.getName())
 				
 		iCost = iDifference * player(iBribedPlayer).calculateTotalCommerce() / 5
@@ -358,7 +358,7 @@ class Congress:
 		else:
 			popup.addPythonButton(text("TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE"), infos.art("INTERFACE_BUTTONS_CANCEL"))
 		
-		popup.addPopup(human())
+		popup.addPopup(active())
 		
 	def applyBriberyEvent(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
 		if iChoice < len(self.lBriberyOptions):
@@ -399,8 +399,8 @@ class Congress:
 				sText = text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", name(iBribedPlayer))
 				self.vote(iBribedPlayer, iClaimant, 1)
 				
-			player(iBribedPlayer).AI_changeMemoryCount(human(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, 1)
-			player(iBribedPlayer).AI_changeAttitudeExtra(human(), -2)
+			player(iBribedPlayer).AI_changeMemoryCount(active(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, 1)
+			player(iBribedPlayer).AI_changeAttitudeExtra(active(), -2)
 			
 		popup = CyPopupInfo()
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
@@ -408,7 +408,7 @@ class Congress:
 		popup.setText(sText)
 		popup.addPythonButton(text("TXT_KEY_CONGRESS_OK"), '')
 		
-		popup.addPopup(human())
+		popup.addPopup(active())
 		
 	def applyBriberyResultEvent(self):
 		# just continue to the next bribe if there is one
@@ -423,7 +423,7 @@ class Congress:
 	def startRefusalEvent(self, iClaimant, (x, y)):
 		plot = plot_(x, y)
 		
-		if plot.isRevealed(human(), False):
+		if plot.isRevealed(active(), False):
 			plot.cameraLookAt()
 		
 		popup = CyPopupInfo()
@@ -442,13 +442,13 @@ class Congress:
 		if plot.isCity():
 			sText = text("TXT_KEY_CONGRESS_DEMAND_CITY", name(iClaimant), plot.getPlotCity().getName(), sVotedYes)
 		else:
-			closest = closestCity(plot, human(), same_continent=True)
+			closest = closestCity(plot, active(), same_continent=True)
 			sText = text("TXT_KEY_CONGRESS_DEMAND_TERRITORY", name(iClaimant), closest.getName(), sVotedYes)
 			
 		popup.setText(sText)
 		popup.addPythonButton(text("TXT_KEY_CONGRESS_ACCEPT"), infos.art("INTERFACE_EVENT_BULLET"))
 		popup.addPythonButton(text("TXT_KEY_CONGRESS_REFUSE"), infos.art("INTERFACE_EVENT_BULLET"))
-		popup.addPopup(human())
+		popup.addPopup(active())
 		
 	def applyRefusalEvent(self, iChoice, iClaimant, x, y):
 		if iChoice == 0:
@@ -471,7 +471,7 @@ class Congress:
 			
 	def startResultsEvent(self):
 		# don't display if human still in autoplay
-		if year() >= year(dBirth[human()]):
+		if year() >= year(dBirth[active()]):
 	
 			sText = text("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName)
 		
@@ -493,7 +493,7 @@ class Congress:
 			popup.setText(sText)
 			popup.addPythonButton(text("TXT_KEY_CONGRESS_OK"), '')
 		
-			popup.addPopup(human())
+			popup.addPopup(active())
 			
 		# if this was triggered by a war, reset belligerents
 		if isGlobalWar():
@@ -533,7 +533,7 @@ class Congress:
 		self.sHostCityName = getOwnedCoreCities(iHostPlayer).random().getName()
 		
 		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
-		if human() in self.invites:
+		if active() in self.invites:
 			self.startIntroductionEvent(True)
 				
 		# procedure continues from the makeClaimHuman event
@@ -541,12 +541,12 @@ class Congress:
 		bHumanInGlobalWar = False
 		if isGlobalWar():
 			lAttackers, lDefenders = determineAlliances(data.iGlobalWarAttacker, data.iGlobalWarDefender)
-			bHumanInGlobalWar = human() in lAttackers + lDefenders
+			bHumanInGlobalWar = active() in lAttackers + lDefenders
 		
 		# unless the player isn't involved, in that case resolve from here
-		if human() not in self.invites:
+		if active() not in self.invites:
 			# since Congresses now can occur during autoplay, don't display these congresses to the player
-			if year() >= year(dBirth[human()]):
+			if year() >= year(dBirth[active()]):
 				self.startIntroductionEvent(False, bHumanInGlobalWar)
 			else:
 				# select claims first, then move on to voting directly since the player isn't involved
@@ -574,7 +574,7 @@ class Congress:
 		# procedure continues from the voteOnClaimsHuman event
 				
 		# unless the player isn't involved, in that case resolve from here
-		if human() not in self.invites:
+		if active() not in self.invites:
 			self.voteOnClaimsAI()
 			
 	def applyVotes(self):
@@ -593,7 +593,7 @@ class Congress:
 		for (x, y), (iClaimant, iVotes) in dResults.items():
 			plot = plot_(x, y)
 			
-			bCanRefuse = (plot.getOwner() == human() and human() not in self.dVotedFor[iClaimant] and not (self.bPostWar and human() in self.losers))
+			bCanRefuse = (plot.getOwner() == active() and active() not in self.dVotedFor[iClaimant] and not (self.bPostWar and active() in self.losers))
 			
 			if plot.isCity():
 				self.lAssignments.append((plot.getPlotCity().getName(), plot.getOwner(), iClaimant))
@@ -670,8 +670,8 @@ class Congress:
 			iRand = rand(100)
 			iThreshold = 10 + dPatienceThreshold[iBelligerent] - 5 * self.dPossibleBelligerents[iBelligerent] - iGlobalWarModifier
 			if iRand >= iThreshold:
-				team(iBelligerent).setDefensivePact(human(), False)
-				team(iBelligerent).declareWar(human(), False, WarPlanTypes.WARPLAN_DOGPILE)
+				team(iBelligerent).setDefensivePact(active(), False)
+				team(iBelligerent).declareWar(active(), False, WarPlanTypes.WARPLAN_DOGPILE)
 				
 		# display Congress results
 		self.startResultsEvent()
@@ -698,7 +698,7 @@ class Congress:
 				if iOwner not in lVoters and iOwner in players.major().highest(getNumInvitations(), game.getPlayerRank):
 					lVoters.append(iOwner)
 			
-			if human() in lVoters: lVoters.remove(human())
+			if active() in lVoters: lVoters.remove(active())
 			if iClaimant in lVoters: lVoters.remove(iClaimant)
 			
 			for iVoter in lVoters:

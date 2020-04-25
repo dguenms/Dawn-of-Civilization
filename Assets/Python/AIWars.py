@@ -210,7 +210,7 @@ class AIWars:
 			
 		for city in targetCities:
 			iExtra = 0
-			if human() not in [iPlayer, city.getOwner()]: 
+			if active() not in [iPlayer, city.getOwner()]: 
 				iExtra += 1
 				
 			if iCiv == iMongols and not player(iPlayer).isHuman():

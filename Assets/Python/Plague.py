@@ -258,16 +258,16 @@ class Plague:
 		teamOwner = team(city)
 		
 		#deadly plague when human player isn't born yet, will speed up the loading
-		if turn() < year(dBirth[human()]) + turns(20):
+		if turn() < year(dBirth[active()]) + turns(20):
 			iDamage += 10
 			baseValue -= 5
 
 		iPreserveHumanDefenders = iPreserveDefenders
 		if iPreserveDefenders > 0:
 			if not pOwner.isHuman():
-				if teamOwner.isAtWar(human()):
+				if teamOwner.isAtWar(active()):
 					iPreserveDefenders += 2
-				elif any(civ(iOwner) in lCivGroup and civ(human()) in lCivGroup for lCivGroup in dCivGroups.values()):
+				elif any(civ(iOwner) in lCivGroup and civ() in lCivGroup for lCivGroup in dCivGroups.values()):
 					iPreserveDefenders += 1
 							
 		# TODO: look from overlap
@@ -284,7 +284,7 @@ class Plague:
 			elif iPreserveDefenders > 0:
 				if isDefenderUnit(unit):
 					iPreserveDefenders -= 1
-					if pPlot.getNumUnits() <= iPreserveDefenders and team(unit).isAtWar(human()):
+					if pPlot.getNumUnits() <= iPreserveDefenders and team(unit).isAtWar(active()):
 						iMaxDamage = 50
 						if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
 						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarianPlayer)
@@ -293,7 +293,7 @@ class Plague:
 			if isMortalUnit(unit):
 				iThreshold = baseValue + 5 * city.healthRate(False, 0)
 				
-				if teamOwner.isAtWar(human()) and not is_minor(iOwner):
+				if teamOwner.isAtWar(active()) and not is_minor(iOwner):
 					if unit.getOwner() == iOwner:
 						iDamage *= 3
 						iDamage /= 4
@@ -423,8 +423,8 @@ class Plague:
 
 	def announceForeignPlagueSpread(self, city):
 		iOwner = city.getOwner()
-		if player().canContact(iOwner) and human() != iOwner and city.isRevealed(human(), False):
-			message(human(), 'TXT_KEY_PLAGUE_SPREAD_CITY', '%s (%s)' % (city.getName(), adjective(iOwner)), sound='AS2D_PLAGUE', color=iLime)
+		if player().canContact(iOwner) and active() != iOwner and city.isRevealed(active(), False):
+			message(active(), 'TXT_KEY_PLAGUE_SPREAD_CITY', '%s (%s)' % (city.getName(), adjective(iOwner)), sound='AS2D_PLAGUE', color=iLime)
 
 
 	def onTechAcquired(self, iTech, iPlayer):

@@ -786,6 +786,16 @@ class TestPlayerFactory(TestCase):
 		players = self.factory.none()
 		assertType(self, players, Players)
 		self.assertEqual(len(players), 0)
+	
+	def test_of(self):
+		expected_players = [0, 1, 2]
+		actual_players = self.factory.of(0, 1, 2)
+		
+		assertType(self, actual_players, Players)
+		self.assertEqual(len(actual_players), 3)
+		
+		for iPlayer in expected_players:
+			self.assert_(iPlayer in actual_players)
 		
 		
 class TestUnits(TestCase):
@@ -2469,12 +2479,15 @@ class TestCiv(TestCase):
 		plot = gc.getMap().plot(0, 0)
 	
 		self.assertEqual(civ(plot), NoCiv)
+	
+	def test_civ_none(self):
+		self.assertEqual(civ(), iEgypt)
 		
 		
-class TestHuman(TestCase):
+class TestActive(TestCase):
 
-	def test_human(self):
-		self.assertEqual(human(), gc.getGame().getActivePlayer())
+	def test_active(self):
+		self.assertEqual(active(), gc.getGame().getActivePlayer())
 
 
 class TestIterableHelpers(TestCase):
@@ -2900,7 +2913,7 @@ test_cases = [
 	TestTeam,
 	TestPlayer,
 	TestCiv,
-	TestHuman,
+	TestActive,
 	TestIterableHelpers,
 	TestClosestCity,
 	TestSpecialbuilding,
