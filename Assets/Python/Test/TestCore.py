@@ -1548,7 +1548,38 @@ class TestPlotFactory(TestCase):
 		
 		gc.getMap().plot(0, 0).setOwner(-1)
 		gc.getMap().plot(1, 0).setOwner(-1)
-
+	
+	def test_birth(self):
+		plots = self.factory.birth(iEgypt)
+		assertType(self, plots, Plots)
+		
+	def test_respawn(self):
+		plots = self.factory.birth(iEgypt)
+		assertType(self, plots, Plots)
+		
+	def test_core(self):
+		plots = self.factory.core(iEgypt)
+		assertType(self, plots, Plots)
+		
+	def test_normal(self):
+		plots = self.factory.normal(iEgypt)
+		assertType(self, plots, Plots)
+		
+	def test_broader(self):
+		plots = self.factory.broader(iEgypt)
+		assertType(self, plots, Plots)
+		
+	def test_capital(self):
+		plot = self.factory.capital(iEgypt)
+		assertType(self, plot, CyPlot)
+		
+	def test_newCapital(self):
+		plot = self.factory.newCapital(iEgypt)
+		assertType(self, plot, CyPlot)
+		
+	def test_respawnCapital(self):
+		plot = self.factory.respawnCapital(iEgypt)
+		assertType(self, plot, CyPlot)
 
 class TestCities(TestCase):
 

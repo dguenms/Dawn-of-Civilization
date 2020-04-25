@@ -7,7 +7,6 @@ import Popup
 from Consts import *
 from StoredData import data
 import BugCore
-import Areas
 import SettlerMaps
 import WarMaps
 import CvScreenEnums
@@ -37,7 +36,7 @@ def findNearestLandPlot(tPlot, iPlayer):
 	if plot: return plot
 	
 	# if no plot is found, return that player's capital
-	return Areas.getCapital(civ(iPlayer))
+	return plots.capital(iPlayer)
 
 # only used in Plague
 def isMortalUnit(unit):
@@ -118,16 +117,15 @@ def updateMinorTechs(iMinorCiv, iMajorCiv):
 
 # used: RFCUtils, RiseAndFall, UniquePowers
 def flipUnitsInCityBefore(tCityPlot, iNewOwner, iOldOwner):
-	removedUnits = units.at(tCityPlot).owner(iOldOwner)
+	plotUnits = units.at(tCityPlot).owner(iOldOwner)
 	
-	lFlippingUnits = []
+	flippingUnits = plotUnits.where(lambda unit: not is_minor(unit) or (not unit.isAnimal() and not unit.isFound()))
+	removedUnits = plotUnits.where(lambda unit: not unit.isCargo())
+		
+	data.lFlippingUnits = [unit.getUnitType() for unit in flippingUnits]
+	
 	for unit in removedUnits:
-		unit.kill(False, iBarbarianPlayer)
-		
-		if not is_minor(iNewOwner) or (not unit.isAnimal() and not unit.isFound()):
-			lFlippingUnits.append(unit.getUnitType())
-		
-	data.lFlippingUnits = lFlippingUnits
+		unit.kill(False, -1)
 
 # used: RFCUtils, RiseAndFall, UniquePowers
 def flipUnitsInCityAfter(tCityPlot, iPlayer):
@@ -137,11 +135,11 @@ def flipUnitsInCityAfter(tCityPlot, iPlayer):
 	data.lFlippingUnits = []
 
 # used: RiseAndFall
-def killUnitsInArea(iPlayer, lPlots):
-	for (x, y) in lPlots:
-		killedUnits = units.at(x, y).owner(iPlayer)
+def killUnitsInArea(iPlayer, area):
+	for plot in area:
+		killedUnits = units.at(plot).owner(iPlayer)
 		for unit in killedUnits:
-			unit.kill(False, iBarbarianPlayer)
+			unit.kill(False, -1)
 
 # used: RiseAndFall
 # TODO: accept a Plots instance instead of lPlots
@@ -343,7 +341,7 @@ def relocateGarrisons(tCityPlot, iOldOwner):
 # used: RiseAndFall
 # TODO: replace plots.of
 def removeCoreUnits(iPlayer):
-	for plot in plots.of(Areas.getBirthArea(civ(iPlayer))):
+	for plot in plots.birth(iPlayer):
 		if plot.isCity():
 			iOwner = city(plot).getOwner()
 			if iOwner != iPlayer:
@@ -487,7 +485,7 @@ def goodPlots(tCoords, argsList):
 def ownedCityPlots(tCoords, iOwner):
 	"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 	Plot is valid if it contains a city belonging to the civ"""
-	city = city(tCoords)
+	city = city_(tCoords)
 	return city and city.getOwner() == iOwner
 
 # used: RiseAndFall
@@ -502,7 +500,7 @@ def clearCatapult(iPlayer):
 # used: RFCUtils, RiseAndFall
 # TODO: remove plots.of
 def getCitiesInCore(iPlayer):
-	return cities.of(Areas.getCoreArea(civ(iPlayer)))
+	return cities.core(iPlayer)
 	
 # used: CvRFCEventHandler, RFCUtils, Stability
 def getOwnedCoreCities(iPlayer):
@@ -645,7 +643,7 @@ def getPlotNearCityInDirection(city, iDirection):
 def relocateCapital(iPlayer, newCapital):
 	oldCapital = player(iPlayer).getCapitalCity()
 	
-	if location(oldCapital) == Areas.getNewCapital(civ(iPlayer)): return
+	if location(oldCapital) == location(plots.newCapital(iPlayer)): return
 	
 	newCapital.setHasRealBuilding(iPalace, True)
 	oldCapital.setHasRealBuilding(iPalace, False)
@@ -848,15 +846,14 @@ def moveCapital(iPlayer, tPlot):
 	
 # used: RiseAndFall
 def createSettlers(iPlayer, iTargetCities):
-	tCapital = Areas.getCapital(civ(iPlayer))
+	capital = plots.capital(iPlayer)
 
-	iNumCities = cities.of(Areas.getBirthArea(civ(iPlayer))).count()
-	bCapital = city(tCapital)
+	iNumCities = cities.birth(iPlayer).count()
 	
 	if iNumCities < iTargetCities:
-		makeUnits(iPlayer, unique_unit(iPlayer, iSettler), tCapital, iTargetCities - iNumCities)
-	elif not bCapital:
-		makeUnit(iPlayer, unique_unit(iPlayer, iSettler), tCapital)
+		makeUnits(iPlayer, unique_unit(iPlayer, iSettler), capital, iTargetCities - iNumCities)
+	elif not city(capital):
+		makeUnit(iPlayer, unique_unit(iPlayer, iSettler), capital)
 		
 # used: RiseAndFall
 def createMissionaries(iPlayer, iNumUnits, iReligion=None):
@@ -869,13 +866,12 @@ def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 	if not game.isReligionFounded(iReligion):
 		return
 	
-	makeUnits(iPlayer, missionary(iReligion), Areas.getCapital(civ(iPlayer)), iNumUnits)
+	makeUnits(iPlayer, missionary(iReligion), plots.capital(iPlayer), iNumUnits)
 	
 # used: RiseAndFall
 # TODO: name is misleading, it has nothing inherently to do with colonies
 def getColonyPlayer(iPlayer):
-	colonies = cities.of(Areas.getBirthArea(civ(iPlayer)))
-	return players.major().maximum(lambda p: colonies.owner(p).count())
+	return players.major().maximum(lambda p: cities.birth(iPlayer).owner(p).count())
 	
 # used: CvRFCEventHandler
 def cityConquestCulture(city, iPlayer, iPreviousOwner):

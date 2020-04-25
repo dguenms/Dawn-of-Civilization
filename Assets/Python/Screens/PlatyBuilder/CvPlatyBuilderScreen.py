@@ -32,7 +32,6 @@ import GreatPeople as gp
 from Consts import *
 from RFCUtils import *
 import MapEditorTools as met
-import Areas
 import SettlerMaps
 import WarMaps
 import RiseAndFall
@@ -1987,15 +1986,16 @@ class CvWorldBuilderScreen:
 		if not is_minor(self.m_iCurrentPlayer):
 			self.setCurrentFlip()
 
-			tSpawn = Areas.getCapital(civ(self.m_iCurrentPlayer))
-			CyEngine().fillAreaBorderPlotAlt(tSpawn[0], tSpawn[1], 1002, "COLOR_CYAN", 0.7)
+			tSpawn = location(plots.capital(self.m_iCurrentPlayer))
+			x, y = tSpawn
+			CyEngine().fillAreaBorderPlotAlt(x, y, 1002, "COLOR_CYAN", 0.7)
 
 			lHumanPlotList, lAIPlotList = self.lCurrentFlipZone
-			for tPlot in lHumanPlotList:
-				if tPlot in lAIPlotList: continue
-				if tPlot == tSpawn: continue
+			for x, y in lHumanPlotList:
+				if (x, y) in lAIPlotList: continue
+				if (x, y) == tSpawn: continue
 				else:
-					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, "COLOR_MAGENTA", 0.7)
+					CyEngine().fillAreaBorderPlotAlt(x, y, 1000, "COLOR_MAGENTA", 0.7)
 
 			# Additional cities outside flipzone (Canada)
 			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
@@ -2012,14 +2012,13 @@ class CvWorldBuilderScreen:
 			self.lCurrentFlipZone = self.dFlipZoneEdits[self.m_iCurrentPlayer]
 		else:
 			# Human flipzone
-			lHumanPlotList = Areas.getBirthArea(civ(self.m_iCurrentPlayer))
+			humanBirthArea = plots.birth(self.m_iCurrentPlayer)
 
-			if self.m_iCurrentPlayer in Areas.dExtendedBirthArea:
-				tTL, tBR = Areas.getBirthRectangle(civ(self.m_iCurrentPlayer), True)
-				lAIPlotList = plots.start(tTL).end(tBR).without(Areas.dBirthAreaExceptions[civ(self.m_iCurrentPlayer)]).notin(*lHumanPlotList)
+			if self.m_iCurrentPlayer in dExtendedBirthArea:
+				aiBirthArea = plots.birth(self.m_iCurrentPlayer, True).without(dBirthAreaExceptions[self.m_iCurrentPlayer]).without(humanBirthArea)
 			else:
 				lAIPlotList = []
-			self.lCurrentFlipZone = [lHumanPlotList, lAIPlotList]
+			self.lCurrentFlipZone = [humanBirthArea, aiBirthArea]
 
 	def showStabilityOverlay(self):
 		removeStabilityOverlay()

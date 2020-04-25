@@ -7,7 +7,6 @@ from RFCUtils import *
 import DynamicCivs as dc
 from operator import itemgetter
 import math
-import Areas
 import Victory as vic
 import Periods as periods
 
@@ -264,7 +263,7 @@ def checkLostCoreCollapse(iPlayer):
 	
 	if isImmune(iPlayer): return
 	
-	lCities = cities.of(Areas.getCoreArea(civ(iPlayer))).owner(iPlayer)
+	lCities = cities.core(iPlayer).owner(iPlayer)
 	
 	# completely pushed out of core: collapse
 	if len(lCities) == 0:
@@ -359,7 +358,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	iCiv = civ(iPlayer)
 
 	lPossibleMinors = getPossibleMinors(iPlayer)
-	dPossibleResurrections = {}
+	dPossibleResurrections = appenddict()
 	
 	bComplete = len(lCities) == player(iPlayer).getNumCities()
 	
@@ -420,7 +419,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in Areas.getBirthArea(iCiv) and player(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and human() != iOriginalOwner:
+			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in plots.birth(iCiv) and player(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and human() != iOriginalOwner:
 				if not is_minor(iOriginalOwner) and year() < year(dFall[iOriginalOwner]):
 					# cities lost too long ago don't return
 					if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(25):
@@ -471,7 +470,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
 			if iCiv == iArabia and civ(iLoopPlayer) == iEgypt: continue
 
-			if location(city) in Areas.getRespawnArea(civ(iLoopPlayer)):
+			if city in cities.respawn(iLoopPlayer):
 				bPossible = False
 				
 				if any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iLoopPlayer]):
@@ -482,10 +481,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 					bPossible = True
 				
 				if bPossible:
-					if iLoopPlayer in dPossibleResurrections:
-						dPossibleResurrections[iLoopPlayer].append(city)
-					else:
-						dPossibleResurrections[iLoopPlayer] = [city]
+					dPossibleResurrections[iLoopPlayer].append(city)
 					bResurrectionFound = True
 					debug(adjective(iPlayer) + ' ' + city.getName() + ' is part of the ' + adjective(iLoopPlayer) + ' resurrection.')
 					break
@@ -554,7 +550,7 @@ def completeCollapse(iPlayer):
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if civ(iPlayer) == iByzantium:
-		removeReligionByArea(Areas.getCoreArea(iOttomans), iOrthodoxy)
+		removeReligionByArea(plots.core(iOttomans), iOrthodoxy)
 		
 	debug('Complete collapse: ' + name(iPlayer))
 	
@@ -746,8 +742,7 @@ def calculateStability(iPlayer):
 				else: iDifferentReligionPopulation += iPopulation
 		
 	iPopulationImprovements = 0
-	for (x, y) in Areas.getCoreArea(iCiv):
-		plot = plot_(x, y)
+	for plot in plots.core(iCiv):
 		if plot.getOwner() == iPlayer and plot.getWorkingCity():
 			if plot.getImprovementType() in [iVillage, iTown]:
 				iPopulationImprovements += 1
@@ -1400,8 +1395,8 @@ def checkResurrection():
 	for iPlayer in possibleResurrections:
 		if turn() - data.players[iPlayer].iLastTurnAlive < turns(15):
 			continue
-			
-		if cities.of(Areas.getRespawnArea(civ(iPlayer))).all(lambda city: is_minor(city)):
+		
+		if cities.respawn(iPlayer).all(lambda city: is_minor(city)):
 			resurrectionCities = getResurrectionCities(iPlayer)
 			if resurrectionCities:
 				doResurrection(iPlayer, resurrectionCities)
@@ -1419,7 +1414,7 @@ def checkResurrection():
 			
 		if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
 			resurrectionCities = getResurrectionCities(iPlayer)
-			if resurrectionCities >= iMinNumCities:
+			if len(resurrectionCities) >= iMinNumCities:
 				doResurrection(iPlayer, resurrectionCities)
 				return
 						
@@ -1431,14 +1426,12 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	lPotentialCities = []
 	lFlippingCities = []
 	
-	tCapital = Areas.getRespawnCapital(iCiv)
-		
-	for x, y in Areas.getRespawnArea(iCiv):
-		city = city_(x, y)
-		if city:
-			# for humans: exclude recently conquered cities to avoid annoying reflips
-			if city.getOwner() != human() or city.getGameTurnAcquired() < turn() - turns(5):
-				lPotentialCities.append(city)
+	tCapital = plots.respawnCapital(iCiv)
+	
+	for city in cities.respawn(iCiv):
+		# for humans: exclude recently conquered cities to avoid annoying reflips
+		if city.getOwner() != human() or city.getGameTurnAcquired() < turn() - turns(5):
+			lPotentialCities.append(city)
 					
 	for city in lPotentialCities:
 		iOwner = city.getOwner()
@@ -1598,17 +1591,11 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 				teamOwner.declareWar(iPlayer, False, -1)
 			else:
 				teamOwner.makePeace(iPlayer)
-	
-	if cities.owner(iPlayer).none():
-		debug('Civ resurrected without any cities')
 			
 	relocateCapital(iPlayer, True)
 	
 	# give the new civ a starting army
 	capital = pPlayer.getCapitalCity()
-	
-	if not capital:
-		raise Exception("no capital found")
 	
 	makeUnits(iPlayer, getBestInfantry(iPlayer), capital, 2 * iArmySize + iNumCities)
 	makeUnits(iPlayer, getBestCavalry(iPlayer), capital, iArmySize)
@@ -1685,12 +1672,11 @@ def relocateCapital(iPlayer, bResurrection = False):
 	
 	iCiv = civ(iPlayer)
 
-	tCapital = Areas.getCapital(iCiv)
+	newCapital = cities.capital(iCiv)
 	oldCapital = player(iPlayer).getCapitalCity()
 	
-	if bResurrection: tCapital = Areas.getRespawnCapital(iCiv)
+	if bResurrection: newCapital = cities.respawnCapital(iCiv)
 	
-	newCapital = city(tCapital)
 	if not newCapital or newCapital.getOwner() != iPlayer:
 		newCapital = cities.owner(iPlayer).maximum(lambda city: max(0, turns(500) - city.getGameTurnFounded()) + city.getPopulation() * 5)
 		
@@ -1698,9 +1684,8 @@ def relocateCapital(iPlayer, bResurrection = False):
 	newCapital.setHasRealBuilding(iPalace, True)
 
 def convertBackCulture(iPlayer):
-	for x, y in Areas.getRespawnArea(civ(iPlayer)):
-		plot = plot_(x, y)
-		city = city_(x, y)
+	for plot in plots.respawn(iPlayer):
+		city = city_(plot)
 		if city:
 			if city.getOwner() == iPlayer:
 				iCulture = 0
@@ -1717,7 +1702,7 @@ def convertBackCulture(iPlayer):
 		
 # TODO: overlaps with RiseAndFall.setStateReligion
 def setStateReligion(iPlayer):
-	coreCities = cities.of(Areas.getCoreArea(civ(iPlayer)))
+	coreCities = cities.core(iPlayer)
 	lReligions = [iReligion for iReligion in range(iNumReligions) if gc.getReligionInfo(iReligion).isLocal()]
 	
 	iNewStateReligion = find_max(lReligions, lambda iReligion: coreCities.where(lambda city: plot(city).getSpreadFactor(iReligion) != RegionSpreadTypes.REGION_SPREAD_CORE).religion(iReligion).count()).result

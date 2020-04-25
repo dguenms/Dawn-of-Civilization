@@ -25,7 +25,7 @@ import Modifiers
 import SettlerMaps
 import WarMaps
 import RegionMap
-import Areas
+import Setup
 import Civilizations
 import AIParameters
 import GreatPeople as gp
@@ -108,7 +108,7 @@ class CvRFCEventHandler:
 		
 		# Leoreth: set DLL core values
 		Modifiers.init()
-		Areas.init()
+		Setup.init()
 		SettlerMaps.init()
 		WarMaps.init()
 		RegionMap.init()
@@ -141,10 +141,10 @@ class CvRFCEventHandler:
 				moveCapital(iPlayer, tCity) # Kostantiniyye
 			elif iCiv == iMongols and tCity == (102, 47):
 				moveCapital(iPlayer, tCity) # Khanbaliq	
-			elif iCiv == iTurks and isAreaControlled(iPlayer, Areas.dCoreArea[iPersia][0], Areas.dCoreArea[iPersia][1]):
+			elif iCiv == iTurks and isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
 				capital = player(iPlayer).getCapitalCity()
-				if not capital in plots.rectangle(*Areas.dCoreArea[iPersia]):
-					newCapital = cities.rectangle(*Areas.dCoreArea[iPersia]).owner(iPlayer).random()
+				if not capital in plots.core(iPersia):
+					newCapital = cities.core(iPersia).owner(iPlayer).random()
 					if newCapital:
 						moveCapital(iPlayer, (newCapital.getX(), newCapital.getY()))
 				
@@ -162,14 +162,14 @@ class CvRFCEventHandler:
 		# Leoreth: relocate capital for AI if reacquired:
 		if not player(iPlayer).isHuman() and not is_minor(iPlayer):
 			if data.players[iPlayer].iResurrections == 0:
-				if Areas.getCapital(iCiv) == tCity:
+				if location(plots.capital(iCiv)) == tCity:
 					relocateCapital(iPlayer, city)
 			else:
-				if Areas.getRespawnCapital(iCiv) == tCity:
+				if location(plots.respawnCapital(iCiv)) == tCity:
 					relocateCapital(iPlayer, city)
 					
 		# Leoreth: help Byzantium/Constantinople
-		if iCiv == iByzantium and tCity == Areas.getCapital(iByzantium) and year() <= year(330)+3:
+		if iCiv == iByzantium and tCity == location(plots.capital(iByzantium)) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -285,7 +285,7 @@ class CvRFCEventHandler:
 						makeUnits(iPhoenicia, iNumidianCavalry, (58, 39), 3)
 						makeUnits(iPhoenicia, iWarElephant, (58, 39), 2, UnitAITypes.UNITAI_CITY_COUNTER)
 				
-		if iOwnerCiv == iByzantium and location(city) == Areas.getCapital(iByzantium) and year() <= year(330)+3:
+		if iOwnerCiv == iByzantium and location(city) == location(plots.capital(iByzantium)) and year() <= year(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -299,13 +299,13 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(iTemple + 4*player(iOwner).getStateReligion(), True)
 			
-		if iOwnerCiv == iPortugal and location(city) == Areas.getCapital(iPortugal) and year() <= year(dBirth[iPortugal]) + turns(3):
+		if iOwnerCiv == iPortugal and location(city) == location(plots.capital(iPortugal)) and year() <= year(dBirth[iPortugal]) + turns(3):
 			city.setPopulation(5)
 			
 			for iBuilding in [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls, temple(player(iOwner).getStateReligion())]:
 				city.setHasRealBuilding(iBuilding, True)
 			
-		if iOwnerCiv == iNetherlands and location(city) == Areas.getCapital(iNetherlands) and year() <= year(1580)+3:
+		if iOwnerCiv == iNetherlands and location(city) == location(plots.capital(iNetherlands)) and year() <= year(1580)+3:
 			city.setPopulation(9)
 			
 			for iBuilding in [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre, temple(player(iOwner).getStateReligion())]:
@@ -313,7 +313,7 @@ class CvRFCEventHandler:
 				
 			player(iOwner).AI_updateFoundValues(False)
 			
-		if iOwnerCiv == iItaly and location(city) == Areas.getCapital(iItaly) and year() <= year(dBirth[iItaly]) + turns(3):
+		if iOwnerCiv == iItaly and location(city) == location(plots.capital(iItaly)) and year() <= year(dBirth[iItaly]) + turns(3):
 			city.setPopulation(7)
 			
 			for iBuilding in [iLibrary, iPharmacy, temple(player(iOwner).getStateReligion()), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:

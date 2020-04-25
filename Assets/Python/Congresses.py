@@ -6,7 +6,6 @@ import PyHelpers
 import Popup
 from RFCUtils import *
 from Consts import *
-import Areas
 import CityNameManager as cnm
 from StoredData import data # edead
 
