@@ -120,7 +120,7 @@ class Religions:
 		if preferredCity and (not bAIOnly or preferredCity.isHuman()):
 			return preferredCity
 					
-		holyCity = cities.start(tTL).end(tBR).where(lambda c: not bAIOnly or c.getOwner() != human()).random()
+		holyCity = cities.rectangle(tTL, tBR).where(lambda city: not bAIOnly or not city.isHuman()).random()
 		if holyCity:
 			return location(holyCity)
 			
@@ -222,11 +222,11 @@ class Religions:
 		if iGameTurn == year(0) + iOffset:
 			holyCity = game.getHolyCity(iJudaism)
 			
-			if holyCity.getOwner() != human() and rand(2) == 0:
+			if not holyCity.isHuman() and rand(2) == 0:
 				self.foundReligion(holyCity, iOrthodoxy)
 				return
 				
-			jewishCity = cities.all().notowner(human()).where(lambda c: c.isHasReligion(iJudaism)).random()
+			jewishCity = cities.all().notowner(human()).where(lambda city: city.isHasReligion(iJudaism)).random()
 			if jewishCity:
 				self.foundReligion(location(jewishCity), iOrthodoxy)
 			
@@ -275,7 +275,7 @@ class Religions:
 		for city in replace:
 			city.replaceReligion(iOrthodoxy, iCatholicism)
 				
-		if player(human()).getStateReligion() == iOrthodoxy and year() >= year(dBirth[human()]):
+		if player().getStateReligion() == iOrthodoxy and year() >= year(dBirth[active()]):
 			popup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
 			
 		for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):
@@ -286,11 +286,11 @@ class Religions:
 
 	def eventApply7624(self, popupReturn):
 		if popupReturn.getButtonClicked() == 0:
-			self.embraceReformation(human())
+			self.embraceReformation(active())
 		elif popupReturn.getButtonClicked() == 1:
-			self.tolerateReformation(human())
+			self.tolerateReformation(active())
 		elif popupReturn.getButtonClicked() == 2:
-			self.counterReformation(human())
+			self.counterReformation(active())
 
 	def onTechAcquired(self, iTech, iPlayer):
 		if scenario() == i1700AD:

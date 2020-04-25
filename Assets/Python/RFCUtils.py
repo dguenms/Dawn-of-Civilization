@@ -90,7 +90,7 @@ def restorePeaceAI(iMinorCiv, bOpenBorders):
 # used: AIWars
 def restorePeaceHuman(iMinorCiv, bOpenBorders): 
 	teamMinor = team(iMinorCiv)
-	iHuman = human()
+	iHuman = active()
 	if player().isAlive():
 		if teamMinor.isAtWar(iHuman):
 			bInvadingIndependents = checkUnitsInEnemyTerritory(iHuman, iMinorCiv)
@@ -1017,7 +1017,7 @@ def toggleStabilityOverlay(iPlayer = -1):
 
 	bWB = (iPlayer != -1)
 	if iPlayer == -1:
-		iPlayer = human()
+		iPlayer = active()
 
 	bStabilityOverlay = True
 	CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
@@ -1195,7 +1195,7 @@ def flipOrCreateDefenders(iNewOwner, units, tPlot, iNumDefenders):
 	for unit in units:
 		flipUnit(unit, iNewOwner, tPlot)
 
-	if len(units) < iNumDefenders and human() != iNewOwner:
+	if len(units) < iNumDefenders and active() != iNewOwner:
 		makeUnits(iNewOwner, getBestDefender(iNewOwner), tPlot, iNumDefenders - len(units))
 		
 # used: Congresses, Stability
@@ -1264,8 +1264,8 @@ def isAreaControlled(iPlayer, tTL, tBR, tExceptions=[]):
 # unused
 # keep for Rise and Fall refactoring
 def breakAutoplay():
-	if year() < year(dBirth[human()]):
-		makeUnit(human(), iSettler, (0, 0))
+	if year() < year(dBirth[active()]):
+		makeUnit(active(), iSettler, (0, 0))
 		
 # used: CvRFCEventHandler
 # TODO: use more, e.g. wonder implementations
@@ -1297,10 +1297,10 @@ def canSwitch(iPlayer, iBirthTurn):
 	if data.bAlreadySwitched and not data.bUnlimitedSwitching:
 		return False
 		
-	if dSpawn[iPlayer] <= dSpawn[human()]:
+	if dSpawn[iPlayer] <= dSpawn[active()]:
 		return False
 		
-	if civ(human()) in dNeighbours[iPlayer] and year(dSpawn[iPlayer]) < year(dSpawn[human()]) + turns(25):
+	if civ() in dNeighbours[iPlayer] and year(dSpawn[iPlayer]) < year(dSpawn[active()]) + turns(25):
 		return False
 		
 	return True

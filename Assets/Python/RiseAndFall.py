@@ -47,7 +47,7 @@ def startNewCivSwitchEvent(iPlayer):
 		popup.addPythonButton(text("TXT_KEY_POPUP_NO"), infos.art('INTERFACE_EVENT_BULLET'))
 		popup.addPythonButton(text("TXT_KEY_POPUP_YES"), infos.art('INTERFACE_EVENT_BULLET'))
 		
-		popup.addPopup(human())
+		popup.addPopup(active())
 	
 def applyNewCivSwitchEvent(argsList):
 	iButton = argsList[0]
@@ -59,7 +59,7 @@ def applyNewCivSwitchEvent(argsList):
 ### Utility methods ###
 
 def handleNewCiv(iPlayer):
-	iPreviousPlayer = human()
+	iPreviousPlayer = active()
 	iOldHandicap = player().getHandicapType()
 	
 	pPlayer = player(iPlayer)
@@ -118,7 +118,7 @@ class RiseAndFall:
 							
 		popup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
 		data.iFlipNewPlayer = iNewPlayer
-		data.iFlipOldPlayer = human()
+		data.iFlipOldPlayer = active()
 		data.lTempPlots = lPlots
 
 	def eventApply7615(self, popupReturn):
@@ -127,10 +127,10 @@ class RiseAndFall:
 		
 		iNumCities = player(iFlipNewPlayer).getNumCities()
 
-		lHumanCityList = [city for city in self.getConvertedCities(iFlipNewPlayer, lPlots) if city.getOwner() == human()]
+		lHumanCityList = [city for city in self.getConvertedCities(iFlipNewPlayer, lPlots) if city.isHuman()]
 		
 		if popupReturn.getButtonClicked() == 0:
-			message(human(), 'TXT_KEY_FLIP_AGREED', color=iGreen)
+			message(active(), 'TXT_KEY_FLIP_AGREED', color=iGreen)
 						
 			if lHumanCityList:
 				for city in lHumanCityList:
@@ -192,9 +192,9 @@ class RiseAndFall:
 		iPlayer, targetList = data.lTempEventList
 		if popupReturn.getButtonClicked() == 0:
 			for x, y in targetList:
-				if city(x, y).getOwner() == human():
+				if city(x, y).isHuman():
 					colonialAcquisition(iPlayer, tPlot)
-					player(human()).changeGold(200)
+					player().changeGold(200)
 		elif popupReturn.getButtonClicked() == 1:
 			for x, y in targetList:
 				if city(x, y).getOwner() == human():
@@ -805,7 +805,7 @@ class RiseAndFall:
 				
 		# Leoreth: make sure Aztecs are dead in 1700 if a civ that spawns from that point is selected
 		if year() == year(1700)-2:
-			if year(dBirth[human()]) >= year(1700) and player(iAztecs).isAlive():
+			if year(dBirth[active()]) >= year(1700) and player(iAztecs).isAlive():
 				sta.completeCollapse(slot(iAztecs))
 
 		for iLoopPlayer in players.major().where(lambda p: dBirth[p] > scenarioStartYear()):
@@ -895,7 +895,7 @@ class RiseAndFall:
 			if pPlayer.getLeader() != dRebirthLeaders[iCiv]:
 				pPlayer.setLeader(dRebirthLeaders[iCiv])
 
-		message(human(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen)
+		message(active(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen)
 		
 		# Determine whether capital location is free
 		bFree = isFree(iPlayer, (x, y), True) and not plot.isUnit()
@@ -921,7 +921,7 @@ class RiseAndFall:
 			self.setStateReligion(iPlayer)
 
 		self.assignTechs(iPlayer)
-		if year() >= year(dBirth[human()]):
+		if year() >= year(dBirth[active()]):
 			startNewCivSwitchEvent(iPlayer)
 
 		player(iPlayer).setInitialBirthTurn(year(dSpawn[iCiv]))
@@ -981,7 +981,7 @@ class RiseAndFall:
 		rebirthCities = rebirthArea.cities()
 			
 		# remove garrisons
-		for city in rebirthCities.notowner(human()):
+		for city in rebirthCities.notowner(active()):
 			relocateGarrisons(location(city), city.getOwner())
 			relocateSeaGarrisons(location(city), city.getOwner())
 				
@@ -989,7 +989,7 @@ class RiseAndFall:
 		iConvertedCities, iHumanCities = self.convertSurroundingCities(iPlayer, rebirthArea)
 		
 		# create garrisons
-		for city in rebirthCities.owner(human()):
+		for city in rebirthCities.owner(active()):
 			createGarrisons(location(city), iPlayer, 1)
 				
 		# convert plot culture
@@ -1191,14 +1191,14 @@ class RiseAndFall:
 				bDeleteEverything = False
 				pCapital = plot_(x, y)
 				if pCapital.isOwned():
-					if player(iPlayer).isHuman() or not player(human()).isAlive():
+					if player(iPlayer).isHuman() or not player().isAlive():
 						if not (pCapital.isCity() and pCapital.getPlotCity().isHolyCity()):
 							bDeleteEverything = True
 							print ("bDeleteEverything 1")
 					else:
 						bDeleteEverything = True
 						for pPlot in plots.surrounding(tCapital):
-							if (pPlot.isCity() and (pPlot.getPlotCity().getOwner() == human() or pPlot.getPlotCity().isHolyCity())) or iCiv == iOttomans:
+							if (pPlot.isCity() and (pPlot.getPlotCity().isHuman() or pPlot.getPlotCity().isHolyCity())) or iCiv == iOttomans:
 								bDeleteEverything = False
 								print ("bDeleteEverything 2")
 								break
@@ -1559,7 +1559,7 @@ class RiseAndFall:
 				iCultureChange = 100
 				
 			# Case 2: Human city
-			elif iOwner == human():
+			elif iOwner == active():
 				iNumHumanCities += 1
 				
 			# Case 3: Other
@@ -1741,7 +1741,7 @@ class RiseAndFall:
 							if not player(iNewWorldPlayer).isHuman():
 								iModifier2 = 1
 								
-						if year() < year(dBirth[human()]):
+						if year() < year(dBirth[active()]):
 							iModifier1 += 1
 							iModifier2 += 1
 							
@@ -1827,7 +1827,7 @@ class RiseAndFall:
 						
 					message(iTeamX, 'TXT_KEY_MONGOL_HORDE_HUMAN')
 					if team().canContact(iTeamX):
-						message(human(), 'TXT_KEY_MONGOL_HORDE', adjective(iTeamX))
+						message(active(), 'TXT_KEY_MONGOL_HORDE', adjective(iTeamX))
 
 	def lateTradingCompany(self, iPlayer):
 		iCiv = civ(iPlayer)
@@ -2010,11 +2010,11 @@ class RiseAndFall:
 			tPlot = random_entry(plotList)
 			if tPlot:
 				self.createAdditionalUnits(iPlayer, tPlot)
-				self.unitsBetrayal(iPlayer, human(), lPlots, tPlot)
+				self.unitsBetrayal(iPlayer, active(), lPlots, tPlot)
 
 	def initBetrayal( self ):
 		iFlipPlayer = data.iFlipNewPlayer
-		if not player(iFlipPlayer).isAlive() or not team(iFlipPlayer).isAtWar(human()):
+		if not player(iFlipPlayer).isAlive() or not team(iFlipPlayer).isAtWar(active()):
 			data.iBetrayalTurns = 0
 			return
 	
@@ -2371,7 +2371,7 @@ class RiseAndFall:
 				makeUnit(iPlayer, iHeavyGalley, tSeaPlot)
 				makeUnit(iPlayer, iWorkboat, tSeaPlot)
 			
-			if civ(human()) in [iSpain, iMoors]:
+			if civ() in [iSpain, iMoors]:
 				makeUnit(iPlayer, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
 		elif iCiv == iSpain:
 			iSpanishSettlers = 2

@@ -121,7 +121,7 @@ class CvWorldBuilderScreen:
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 		self.__init__()
-		self.m_iCurrentPlayer = human()
+		self.m_iCurrentPlayer = active()
 		self.m_iCurrentTeam = gc.getPlayer(self.m_iCurrentPlayer).getTeam()
 		screen.setCloseOnEscape(False)
 		screen.setAlwaysShown(True)
