@@ -1,8 +1,7 @@
 # Leoreth: this should be changed to work off civs instead of players
 
 from CvPythonExtensions import *
-from Consts import *
-import Areas
+from Core import *
 from SettlerMaps import *
 from RFCUtils import *
 import csv
@@ -25,13 +24,13 @@ def createMaps():
 	print 'Maps Created'
 			
 def createMap(iPlayer, iReborn):
-	iCivilization = player(iPlayer).getCivilizationType()
+	iCivilization = civ(iPlayer)
 	if iReborn == 1: iCivilization = dRebirthCiv[iCivilization]
 	sName = infos.civ(iCivilization).getShortDescription(0)
 	
 	file = open(IMAGE_LOCATION + "\Stability\\" + sName, 'wt')
 
-	lCorePlots = Areas.getCoreArea(iCivilization)
+	lCorePlots = plots.core(iCivilization)
 	lForeignCorePlots = getForeignCorePlots(iPlayer, iReborn)
 	
 	try:
@@ -57,7 +56,7 @@ def createMap(iPlayer, iReborn):
 		
 	file = open(IMAGE_LOCATION + "\Spawns\\" + sName, 'wt')
 	
-	lFlipzonePlots = Areas.getBirthArea(iCivilization)
+	lFlipzonePlots = plots.birth(iCivilization)
 		
 	try:
 		writer = csv.writer(file)
@@ -81,7 +80,7 @@ def createMap(iPlayer, iReborn):
 	lExtendedCorePlots = []
 	
 	if iReborn == 0 and civ(iPlayer) in dRebirth:
-		lExtendedCorePlots = Areas.getCoreArea(iPlayer, True)
+		lExtendedCorePlots = plots.core(iPlayer)
 		
 	try:
 		writer = csv.writer(file)
@@ -105,8 +104,8 @@ def getForeignCorePlots(iPlayer, iReborn):
 	
 	for iLoopPlayer in players.major().without(iPlayer):
 		if canEverRespawn(iLoopPlayer, year(iSpawnDate)) or dBirth[iLoopPlayer] > iSpawnDate:
-			for tPlot in Areas.getCoreArea(civ(iLoopPlayer)):
-				if not tPlot in lForeignCorePlots:
-					lForeignCorePlots.append(tPlot)
+			for plot in plots.core(iLoopPlayer):
+				if not location(plot) in lForeignCorePlots:
+					lForeignCorePlots.append(location(plot))
 						
 	return lForeignCorePlots

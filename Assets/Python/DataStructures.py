@@ -36,14 +36,18 @@ class CivDict(dict):
 		self._default = default
 		for key, value in elements.items():
 			self[key] = value
+	
+	# TODO: test
+	def __contains__(self, key):
+		if isinstance(key, Civ):
+			return dict.__contains__(self, key)
+		elif isinstance(key, int):
+			return self.__contains__(Civ(gc.getPlayer(key).getCivilizationType()))
+		raise TypeError("CivDict only accepts keys of type Civ or int, received: %s" % type(key))
 			
 	def __getitem__(self, key):
-		print "get %s from %s" % (key, self)
 		if isinstance(key, Civ):
-			if self._default is not None: print "default is %s" % self._default
-			if key not in self: print "key %s not found" % key
 			if self._default is not None and key not in self:
-				print "%s not found, set to default of %s" % (key, self._default)
 				dict.__setitem__(self, key, copy(self._default))
 			return dict.__getitem__(self, key)
 		elif isinstance(key, int):

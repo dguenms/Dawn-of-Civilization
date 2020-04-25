@@ -4,6 +4,8 @@ from CvPythonExtensions import *
 from Consts import *
 from StoredData import *
 from DataStructures import *
+from Areas import *
+
 from Types import Civ
 
 import Popup
@@ -24,10 +26,23 @@ map = gc.getMap()
 # TODO: add better API for turns and years
 
 
-# TODO: once reborn is gone, refactor Areas code and make it compatible with Plots and Cities
-
-
 # TODO: use gc.getActiveCivilizationType() instead of human() or self.iActivePlayer
+
+
+def isExtendedBirth(iPlayer):
+	if player(iPlayer).isHuman(): return False
+	
+	# add special conditions for extended AI flip zones here
+	if civ(iPlayer) == iOttomans and player(iByzantium).isAlive(): return False
+	
+	return True
+
+
+def birthRectangle(identifier, extended = None):
+	if extended is None: extended = isExtendedBirth(identifier)
+	if identifier in dExtendedBirthArea and extended:
+		return dExtendedBirthArea[identifier]
+	return dBirthArea[identifier]
 
 
 def log(func):
@@ -351,6 +366,9 @@ def show(message):
 
 
 def distance(location1, location2):
+	if not location1 or not location2:
+		return map.maxStepDistance()
+	
 	x1, y1 = _parse_tile(location1)
 	x2, y2 = _parse_tile(location2)
 	return stepDistance(x1, y1, x2, y2)
@@ -462,7 +480,7 @@ def location(entity):
 	
 	
 def unit_key(unit):
-	return UnitKey(unit.getOwner(), unit.getID())
+	return UnitKey(unit)
 	
 
 def team(identifier = None):
@@ -730,7 +748,6 @@ class PlotsCorner:
 		return Plots([(i, j) for i in range(min(self.x, x), min(max(self.x, x)+1, iWorldX)) for j in range(min(self.y, y), min(max(self.y, y)+1, iWorldY))])
 	
 
-# maybe .owner(iPlayer)? check how often we use all().owner()
 class PlotFactory:
 
 	def of(self, list):
@@ -773,6 +790,60 @@ class PlotFactory:
 
 	def owner(self, iPlayer):
 		return self.all().owner(iPlayer)
+
+	def area(self, dArea, dExceptions, identifier):
+		return self.rectangle(*dArea[identifier]).without(dExceptions[identifier])
+
+	def birth(self, identifier, extended=None):
+		if extended is None: extended = isExtendedBirth(identifier)
+		if identifier in dExtendedBirthArea and extended:
+			return self.area(dExtendedBirthArea, dBirthAreaExceptions, identifier)
+		return self.area(dBirthArea, dBirthAreaExceptions, identifier)
+
+	def core(self, identifier):
+		iPeriod = player(identifier).getPeriod()
+		if iPeriod in dPeriodCoreArea:
+			try:
+				return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
+			except Exception, e:
+				raise Exception("Could not find %d (type %s) in dPeriodCoreArea, dPeriodCoreAreaExceptions" % (iPeriod, type(iPeriod)))
+		return self.area(dCoreArea, dCoreAreaExceptions, identifier)
+
+	def normal(self, identifier):
+		iPeriod = player(identifier).getPeriod()
+		if iPeriod in dPeriodNormalArea:
+			try:
+				return self.area(dPeriodNormalArea, dPeriodNormalAreaExceptions, iPeriod)
+			except Exception, e:
+				raise Exception("Could not find %d (type %s) in dPeriodNormalArea, dPeriodNormalAreaExceptions" % (iPeriod, type(iPeriod)))
+		return self.area(dNormalArea, dNormalAreaExceptions, identifier)
+
+	def broader(self, identifier):
+		iPeriod = player(identifier).getPeriod()
+		if iPeriod in dPeriodBroaderArea:
+			return self.rectangle(*dPeriodBroaderArea[identifier])
+		return self.rectangle(*dBroaderArea[identifier])
+
+	def respawn(self, identifier):
+		if identifier in dRespawnArea:
+			return self.rectangle(*dRespawnArea[identifier])
+		return self.normal(identifier)
+	
+	def capital(self, identifier):
+		iPeriod = player(identifier).getPeriod()
+		if iPeriod in dPeriodCapitals:
+			return plot(dPeriodCapitals[iPeriod])
+		return plot(dCapitals[identifier])
+		
+	def respawnCapital(self, identifier):
+		if identifier in dRespawnCapitals:
+			return plot(dRespawnCapitals[identifier])
+		return self.capital(identifier)
+		
+	def newCapital(self, identifier):
+		if identifier in dNewCapitals:
+			return plot(dNewCapitals[identifier])
+		return self.respawnCapital(identifier)
 
 
 class Plots(EntityCollection):
@@ -898,6 +969,31 @@ class CityFactory:
 	def surrounding(self, *args, **kwargs):
 		return plots.surrounding(*args, **kwargs).cities()
 
+	# TODO: test below
+	def birth(self, identifier, extended = None):
+		return PlotFactory().birth(identifier, extended).cities()
+
+	def core(self, identifier):
+		return PlotFactory().core(identifier).cities()
+
+	def normal(self, identifier):
+		return PlotFactory().normal(identifier).cities()
+
+	def broader(self, identifier):
+		return PlotFactory().broader(identifier).cities()
+
+	def respawn(self, identifier):
+		return PlotFactory().respawn(identifier).cities()
+	
+	def capital(self, identifier):
+		return city(PlotFactory().capital(identifier))
+		
+	def respawnCapital(self, identifier):
+		return city(PlotFactory().respawnCapital(identifier))
+		
+	def newCapital(self, identifier):
+		return city(PlotFactory().newCapital(identifier))
+
 
 class Cities(EntityCollection):
 
@@ -968,15 +1064,17 @@ class UnitFactory:
 	def at(self, *args):
 		if args is None:
 			return Units([])
-		units = [unit_key(plot(*args).getUnit(i)) for i in range(plot(*args).getNumUnits())]
-		return Units(units)
+			
+		return Units([unit_key(plot(*args).getUnit(i)) for i in range(plot(*args).getNumUnits())])
 		
 		
 class UnitKey:
 
-	def __init__(self, owner, id):
-		self.owner = owner
-		self.id = id
+	def __init__(self, unit):
+		self.owner = unit.getOwner()
+		self.id = unit.getID()
+		self.x = unit.getX()
+		self.y = unit.getY()
 		
 	def __eq__(self, other):
 		return isinstance(other, UnitKey) and (self.owner, self.id) == (other.owner, other.id)
@@ -984,11 +1082,14 @@ class UnitKey:
 	def __str__(self):
 		return str((self.owner, self.id))
 		
+	def __nonzero__(self):
+		return self.x >= 0 and self.y >= 0
+		
 	@classmethod
 	def of(cls, unit):
 		if isinstance(unit, cls):
 			return unit
-		return cls(unit.getOwner(), unit.getID())
+		return cls(unit)
 		
 		
 class Units(EntityCollection):
@@ -1027,7 +1128,6 @@ class Units(EntityCollection):
 		return self.where(lambda u: u.getDomainType() == iDomain)
 	
 
-# TODO: has been rewritten: make sure ALL methods are tested
 class PlayerFactory:
 
 	def all(self):
@@ -1056,6 +1156,10 @@ class PlayerFactory:
 		
 	def none(self):
 		return Players([])
+	
+	# TODO: test
+	def of(self, *players):
+		return Players(players)
 
 		
 class Players(EntityCollection):

@@ -53,7 +53,7 @@ g_bIsScreenActive = -1
 #Rhye - start
 from StoredData import data
 from Consts import *
-import Areas
+from Areas import *
 from RFCUtils import *
 from RFCUtils import canEverRespawn as canEverRespawnUtils
 import Victory as vic
@@ -847,7 +847,7 @@ def isCorePlot(argsList):
 	if is_minor(iPlayer):
 		return 0
 		
-	return (x, y) in Areas.getCoreArea(civ(iPlayer))
+	return (x, y) in plots.core(iPlayer)
 
 # Leoreth
 def isNormalPlot(argsList):
@@ -856,13 +856,13 @@ def isNormalPlot(argsList):
 	if is_minor(iPlayer):
 		return 0
 		
-	return (x, y) in Areas.getNormalArea(civ(iPlayer))
+	return (x, y) in plots.normal(iPlayer)
 
 # Leoreth
 def isForeignCorePlot(argsList):
 	x, y = argsList
 	
-	if players.major().past_birth().any(lambda p: (x, y) in Areas.getCoreArea(civ(p))):
+	if players.major().past_birth().any(lambda p: (x, y) in plots.core(p)):
 		return 1
 		
 	return 0
@@ -874,7 +874,7 @@ def isBroaderPlot(argsList):
 	if is_minor(iPlayer):
 		return 0
 	
-	return (x, y) in Areas.getBroaderArea(civ(iPlayer))
+	return (x, y) in plots.broader(iPlayer)
 
 # Leoreth
 def onTechStolen(argsList):
@@ -899,16 +899,16 @@ def getUHVTileInfo(argsList):
 	plot = gc.getMap().plot(x, y)
 	
 	if iCiv == iGreece:
-		if (x, y) in Areas.getNormalArea(iEgypt):
+		if (x, y) in plots.normal(iEgypt):
 			return 0
 			
-		if (x, y) in Areas.getNormalArea(iCarthage):
+		if (x, y) in plots.normal(iCarthage):
 			return 1
 			
-		if (x, y) in Areas.getNormalArea(iBabylonia):
+		if (x, y) in plots.normal(iBabylonia):
 			return 2
 			
-		if (x, y) in Areas.getNormalArea(iPersia):
+		if (x, y) in plots.normal(iPersia):
 			return 3
 			
 	elif iCiv == iIran:
@@ -922,10 +922,10 @@ def getUHVTileInfo(argsList):
 			return 6
 			
 	elif iCiv == iPhoenicia:
-		if plot in plots.rectangle(Areas.dNormalArea[iItaly]).without([(62, 47), (63, 47), (63, 46)]):
+		if plot in plots.normal(iItaly).without([(62, 47), (63, 47), (63, 46)]):
 			return 37
 		
-		if (x, y) in Areas.getNormalArea(iSpain):
+		if (x, y) in plots.normal(iSpain):
 			return 8
 			
 	elif iCiv == iItaly:
@@ -933,22 +933,22 @@ def getUHVTileInfo(argsList):
 			return 7
 			
 	elif iCiv == iRome:
-		if (x, y) in Areas.getNormalArea(iSpain):
+		if (x, y) in plots.normal(iSpain):
 			return 8
 				
-		if plot in plots.start(vic.tFranceTL).end(Areas.dNormalArea[iFrance][1]):
+		if plot in plots.rectangle(vic.tFranceTL, dNormalArea[iFrance][1]):
 			return 9
 		
-		if (x, y) in Areas.getCoreArea(iEngland):
+		if (x, y) in plots.core(iEngland):
 			return 10
 		
-		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
+		if plot in plots.rectangle(vic.tCarthageTL, vic.tCarthageBR):
 			return 11
 		
-		if (x, y) in Areas.getCoreArea(iByzantium):
+		if (x, y) in plots.core(iByzantium):
 			return 12
 			
-		if (x, y) in Areas.getCoreArea(iEgypt):
+		if (x, y) in plots.core(iEgypt):
 			return 13
 
 	elif iCiv == iJapan:
@@ -985,19 +985,19 @@ def getUHVTileInfo(argsList):
 			return 23
 			
 	elif iCiv == iArabia:
-		if (x, y) in Areas.getCoreArea(iEgypt):
+		if (x, y) in plots.core(iEgypt):
 			return 24
 		
 		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
 			return 25
 		
-		if (x, y) in Areas.getCoreArea(iBabylonia):
+		if (x, y) in plots.core(iBabylonia):
 			return 26
 				
-		if (x, y) in Areas.getCoreArea(iPersia):
+		if (x, y) in plots.core(iPersia):
 			return 27
 		
-		if (x, y) in Areas.getNormalArea(iSpain):
+		if (x, y) in plots.normal(iSpain):
 			return 28
 			
 	elif iCiv == iSpain:
@@ -1034,19 +1034,19 @@ def getUHVTileInfo(argsList):
 			return 35
 			
 	elif iCiv == iGermany:
-		if (x, y) in Areas.getNormalArea(iFrance):
+		if (x, y) in plots.normal(iFrance):
 			return 36
 		
-		if (x, y) in Areas.getNormalArea(iItaly):
+		if (x, y) in plots.normal(iItaly):
 			return 37
 		
-		if (x, y) in Areas.getNormalArea(iRussia):
+		if (x, y) in plots.normal(iRussia):
 			return 38
 		
-		if (x, y) in Areas.getNormalArea(iEngland):
+		if (x, y) in plots.normal(iEngland):
 			return 39
 		
-		if (x, y) in Areas.getNormalArea(iVikings):
+		if (x, y) in plots.normal(iVikings):
 			return 40
 			
 	elif iCiv == iRussia:
@@ -1154,7 +1154,7 @@ def getUHVTileInfo(argsList):
 			return 68
 			
 	elif iCiv == iMongols:
-		if (x, y) in Areas.getNormalArea(iChina):
+		if (x, y) in plots.normal(iChina):
 			return 69
 			
 	elif iCiv == iTurks:

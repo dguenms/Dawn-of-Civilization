@@ -4,9 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers	# LOQ
 import Popup
-#import cPickle as pickle
 from Consts import *
-import Areas
 from RFCUtils import *
 import UniquePowers
 from StoredData import data # edead

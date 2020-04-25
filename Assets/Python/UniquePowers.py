@@ -1,40 +1,11 @@
-# Rhye's and Fall of Civilization - (a part of) Unique Powers
-
-#Egypt in CvPlayer::canDoCivics() and in WBS
-#India in CvPlayer::updateMaxAnarchyTurns()
-#China (and England before the change) in CvPlayer::getProductionNeeded()
-#Babylonia in CvPlayer.cpp::acquireCity()
-# Babylonia now in CvPlayer::getCapitalYieldModifier(); +33% production and commerce in the capital after Code of Laws
-#Greece CvCity:getGreatPeopleRate()
-#Persia (USED TO BE in CvHandicapInfo::getDistanceMaintenancePercentByID(); THEN in RiseAndFall.py, collapseCapitals()), NOW in Stability.py, onCityAcquired()
-#Rome in CvPlot::movementCost()
-#Japan, Spain and England in CvUnit::init(). Turkey used to be there as well
-# Japan now in CvUnit::experienceNeeded(); +50% promotion tempo
-# England now in CvHandicapInfo::getDistanceMaintenancePercentByID()
-#Ethiopia in Congresses.py (USED TO BE in CvUnit::init() and CvUnit::upgrade())
-#Maya in CvHandicapInfo::getResearchPercentByID()
-#Byzantium in Stability.checkImplosion()
-#Khmer in CvUnit::canMoveInto()
-#Germany (USED TO BE IN in CvUnit::init(), CvUnit::upgrade() and CvUnitAI::AI_pillageValue()); NOW IN CvUnit::upgradePrice()
-#France in CvPlayerAI::AI_getAttitudeVal() and in Congresses.py
-#Netherlands in CvUnit::canEnterTerritory()
-#Mali in CvPlot::calculateYield() and Stability.py and CvInfos.cpp (CvHandicapInfo::getResearchPercentByID())
-#Portugal in CvUnit::init()
-#Inca in CvPlot::calculateNatureYield()
-#Mongolia (USED TO BE IN in CvUnit::pillage()); now HERE and in CvRFCEventHandler.py (in OnCityRazed() and BeginPlayerTurn())
-#Turkey HERE + in CvPlayer::canRazeCity()
-#America HERE + in CvCity::getCulturePercentAnger()
-
 from CvPythonExtensions import *
 import CvUtil
 import PyHelpers   
 import Popup
-#import cPickle as pickle
 from StoredData import data # edead
 from Consts import *
 from RFCUtils import *
 from operator import itemgetter
-import Areas
 
 from Core import *
 
@@ -304,7 +275,7 @@ class UniquePowers:
 			
 	# Indonesian UP: additional gold for foreign ships in your core
 	def indonesianUP(self):
-		seaUnits = plots.of(Areas.getCoreArea(iIndonesia)).owner(iIndonesia).units().domain(DomainTypes.DOMAIN_SEA)
+		seaUnits = plots.core(iIndonesia).owner(iIndonesia).units().domain(DomainTypes.DOMAIN_SEA)
 		iNumUnits = seaUnits.notowner(iIndonesia).where(lambda unit: not is_minor(unit)).where(lambda unit: not team(iIndonesia).isAtWar(unit.getTeam())).count()
 					
 		if iNumUnits > 0:

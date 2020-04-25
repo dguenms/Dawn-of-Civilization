@@ -1,7 +1,7 @@
 from Core import *
 from RFCUtils import *
 
-import Areas as areas
+import Setup as init
 import SettlerMaps as settler
 import WarMaps as war
 
@@ -19,7 +19,7 @@ def setPeriod(iCiv, iPeriod):
 	player(iCiv).setPeriod(iPeriod)
 	
 	iPlayer = slot(iCiv)
-	areas.updateCore(iPlayer)
+	init.updateCore(iPlayer)
 	settler.updateMap(iPlayer)
 	war.updateMap(iPlayer)
 
@@ -98,7 +98,7 @@ def onCityAcquired(iPlayer, city, bConquest):
 			setPeriod(iOttomans, iPeriodOttomanConstantinople)
 	
 	if iTurks in [iCiv, iOwnerCiv]:
-		tTL, tBR = Areas.dCoreArea[iPersia]
+		tTL, tBR = dCoreArea[iPersia]
 		if isAreaControlled(slot(iTurks), tTL, tBR):
 			setPeriod(iTurks, iPeriodSeljuks)
 		else:
