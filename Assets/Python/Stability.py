@@ -87,8 +87,8 @@ def checkTurn(iGameTurn):
 		for iPlayer in players.major():
 			checkLostCitiesCollapse(iPlayer)
 			
-	if iGameTurn >= year(dBirth[human()]):
-		data.iHumanStability = calculateStability(human())
+	if iGameTurn >= year(dBirth[active()]):
+		data.iHumanStability = calculateStability(active())
 		
 def endTurn(iPlayer):
 	lSecedingCities = data.getSecedingCities(iPlayer)
@@ -419,7 +419,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in plots.birth(iCiv) and player(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and human() != iOriginalOwner:
+			if cityPlot.getSettlerValue(iOriginalOwner) >= 90 and not cityPlot.isCore(iPlayer) and not cityPlot in plots.birth(iCiv) and player(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and active() != iOriginalOwner:
 				if not is_minor(iOriginalOwner) and year() < year(dFall[iOriginalOwner]):
 					# cities lost too long ago don't return
 					if city.getGameTurnPlayerLost(iOriginalOwner) >= turn() - turns(25):
@@ -495,7 +495,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	# notify for partial secessions
 	if not bComplete:
 		if player().canContact(iPlayer):
-			message(human(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(lCededCities))
+			message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(lCededCities))
 		
 	# collect additional cities that can be part of the resurrection
 	lCededTiles = [(city.getX(), city.getY()) for city in lCededCities]
@@ -554,7 +554,7 @@ def completeCollapse(iPlayer):
 		
 	debug('Complete collapse: ' + name(iPlayer))
 	
-	message(human(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
+	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
 		
 def collapseToCore(iPlayer):
 	nonCoreCities = cities.owner(iPlayer).where(lambda city: not plot(city).isCore(iPlayer))
@@ -1430,7 +1430,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 	
 	for city in cities.respawn(iCiv):
 		# for humans: exclude recently conquered cities to avoid annoying reflips
-		if city.getOwner() != human() or city.getGameTurnAcquired() < turn() - turns(5):
+		if city.getOwner() != active() or city.getGameTurnAcquired() < turn() - turns(5):
 			lPotentialCities.append(city)
 					
 	for city in lPotentialCities:
@@ -1586,7 +1586,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			
 	for iOwner in lOwners:
 		teamOwner = team(iOwner)
-		bOwnerHumanVassal = teamOwner.isVassal(human())
+		bOwnerHumanVassal = teamOwner.isVassal(active())
 	
 		if not player(iOwner).isHuman() and iOwner != iPlayer and not player(iOwner).isBarbarian():
 			if rand(100) >= dAIStopBirthThreshold[iOwner] and not bOwnerHumanVassal:
@@ -1609,9 +1609,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	
 	switchCivics(iPlayer)
 		
-	message(human(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen, force=True)
+	message(active(), 'TXT_KEY_INDEPENDENCE_TEXT', adjective(iPlayer), color=iGreen, force=True)
 	
-	if bAskFlip and human() in lOwners:
+	if bAskFlip and active() in lOwners:
 		rebellionPopup(iPlayer)
 		
 	data.setStabilityLevel(iPlayer, iStabilityStable)
