@@ -1,6 +1,5 @@
 from Consts import *
 from Core import *
-import Areas
 
 def getMap(iPlayer):
 	iCiv = civ(iPlayer)
@@ -23,7 +22,7 @@ def applyMap(iPlayer):
 	
 	for (x, y), value in map:
 		plot = plot_(x, y)
-		if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
+		if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions):
 			plot.setSettlerValue(iPlayer, 20)
 		else:
 			plot.setSettlerValue(iPlayer, value)

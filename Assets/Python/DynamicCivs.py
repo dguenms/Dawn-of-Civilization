@@ -7,8 +7,8 @@ from Consts import *
 import Victory as vic
 from StoredData import data
 from RFCUtils import *
+from Areas import *
 import CityNameManager as cnm
-import Areas
 
 from Core import *
 
@@ -1403,7 +1403,7 @@ def specificAdjective(iPlayer):
 		if player(iRome).isAlive() and player(iRome).getNumCities() > 0:
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
-		if bEmpire and controlsCity(iPlayer, Areas.getCapital(iRome)):
+		if bEmpire and controlsCity(iPlayer, location(plots.capital(iRome))):
 			return infos.civ(iRome).getAdjective(0) # TODO: can be improved by using Core.adjective
 			
 	elif iCiv == iVikings:
@@ -1417,10 +1417,10 @@ def specificAdjective(iPlayer):
 		if capital in plots.start(tKhazariaTL).end(tKhazariaBR):
 			return "TXT_KEY_CIV_TURKS_KHAZAR"
 			
-		if isAreaControlled(iPlayer, Areas.dCoreArea[iPersia][0], Areas.dCoreArea[iPersia][1]):
+		if isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
-		if capital in plots.rectangle(Areas.dCoreArea[iPersia]):
+		if capital in plots.rectangle(dCoreArea[iPersia]):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
 		if capital in plots.start(tAnatoliaTL).end(tAnatoliaBR):
@@ -1810,7 +1810,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_OF"
 			
-		if tCapitalCoords != Areas.getCapital(iCiv):
+		if location(capital) != location(plots.capital(iCiv)):
 			if capital.getRegionID() == rAnatolia:
 				return "TXT_KEY_EMPIRE_OF"
 				
@@ -1839,16 +1839,16 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if iReligion >= 0:
 			if bEmpire:
-				if isAreaControlled(iPlayer, Areas.dCoreArea[iPersia][0], Areas.dCoreArea[iPersia][1]) and not bResurrected:
+				if isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]) and not bResurrected:
 					return "TXT_KEY_CIV_TURKS_GREAT_EMPIRE"
 			
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 				
-			if not isAreaControlled(iPlayer, Areas.dCoreArea[iPersia][0], Areas.dCoreArea[iPersia][1]):
+			if not isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
 				return "TXT_KEY_CIV_TURKS_KHANATE_OF"
 				
 			if iReligion == iIslam:
-				if isAreaControlled(iPlayer, Areas.dCoreArea[iPersia][0], Areas.dCoreArea[iPersia][1]):
+				if isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
 					return "TXT_KEY_SULTANATE_ADJECTIVE"
 			
 				return "TXT_KEY_SULTANATE_OF"
@@ -1907,7 +1907,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_SPAIN_CROWN_OF"
 			
 	elif iCiv == iFrance:
-		if not tCapitalCoords in Areas.getNormalArea(iFrance):
+		if not capital in cities.normal(iFrance):
 			return "TXT_KEY_CIV_FRANCE_EXILE"
 			
 		if iEra >= iIndustrial and bEmpire:
@@ -1920,7 +1920,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 	elif iCiv == iEngland:
-		if tCapitalCoords not in Areas.getCoreArea(iEngland):
+		if capital not in cities.core(iEngland):
 			return "TXT_KEY_CIV_ENGLAND_EXILE"
 			
 		if iEra == iMedieval and player(iFrance).isAlive() and team(iFrance).isAVassal() and civ(getMaster(iFrance)) == iEngland:
@@ -1960,7 +1960,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_NETHERLANDS_REPUBLIC"
 		
-		if tCapitalCoords not in Areas.getCoreArea(iNetherlands):
+		if capital not in cities.core(iNetherlands):
 			return "TXT_KEY_CIV_NETHERLANDS_EXILE"
 			
 		if bEmpire:
@@ -1979,7 +1979,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF"
 			
 	elif iCiv == iPortugal:
-		if tCapitalCoords in Areas.getCoreArea(iBrazil) and not player(iBrazil).isAlive():
+		if capital in cities.core(iBrazil) and not player(iBrazil).isAlive():
 			return "TXT_KEY_CIV_PORTUGAL_BRAZIL"
 			
 		if not capital in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
@@ -2079,7 +2079,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if tCapitalCoords != Areas.getCapital(iCiv):
+		if location(capital) != location(plots.capital(iCiv)):
 			return "TXT_KEY_CIV_ARGENTINA_CONFEDERATION"
 			
 	elif iCiv == iBrazil:

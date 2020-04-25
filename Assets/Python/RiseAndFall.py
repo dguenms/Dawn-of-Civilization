@@ -13,7 +13,6 @@ import Victory as vic
 import DynamicCivs as dc
 from operator import itemgetter
 import Stability as sta
-import Areas
 import Civilizations
 import Modifiers
 import CvEspionageAdvisor
@@ -230,7 +229,7 @@ class RiseAndFall:
 		
 		# Leoreth: make sure to select the Egyptian settler
 		if player(iEgypt).isHuman():
-			for unit in units.at(Areas.getCapital(iEgypt)):
+			for unit in units.at(plots.capital(iEgypt)):
 				if unit.getUnitType() == iSettler:
 					interface.selectUnit(unit, True, False, False)
 					break
@@ -288,8 +287,7 @@ class RiseAndFall:
 
 	def updateStartingPlots(self):
 		for iPlayer in players.major():
-			x, y = Areas.getCapital(civ(iPlayer))
-			player(iPlayer).setStartingPlot(plot(x, y), False)
+			player(iPlayer).setStartingPlot(plots.capital(iPlayer), False)
 
 	def adjustCityCulture(self):
 		if turns(10) == 10: return
@@ -387,9 +385,9 @@ class RiseAndFall:
 		
 			# China
 			self.prepareChina()
-			tCapital = Areas.getCapital(iChina)
+			capital = plots.capital(iChina)
 			lBuildings = [iGranary, iConfucianTemple, iTaixue, iBarracks, iForge]
-			foundCapital(slot(iChina), tCapital, "Xi'an", 4, 100, lBuildings, [iConfucianism, iTaoism])
+			foundCapital(slot(iChina), location(capital), "Xi'an", 4, 100, lBuildings, [iConfucianism, iTaoism])
 			
 		elif scenario() == i1700AD:
 			
@@ -401,9 +399,8 @@ class RiseAndFall:
 		if scenario() == i600AD:
 			
 			# China
-			tTL, tBR = Areas.dBirthArea[iChina]
 			if not player(iChina).isHuman(): tTL = (99, 39) # 4 tiles further south
-			self.startingFlip(slot(iChina), [(tTL, tBR)])
+			self.startingFlip(slot(iChina), [dBirthArea[iChina]])
 			
 		if scenario() == i1700AD:
 		
@@ -724,15 +721,13 @@ class RiseAndFall:
 
 		# Leoreth: Turkey immediately flips independent cities in its core to avoid being pushed out of Anatolia
 		if iGameTurn == data.iOttomanSpawnTurn + 1:
-			cityPlotList = cities.of(Areas.getBirthArea(iOttomans))
-			for city in cityPlotList:
-				tPlot = (city.getX(), city.getY())
+			for city in cities.birth(iOttomans):
 				iOwner = city.getOwner()
 				if is_minor(iOwner):
-					flipCity(tPlot, False, True, slot(iOttomans), ())
-					cultureManager(tPlot, 100, slot(iOttomans), iOwner, True, False, False)
-					self.convertSurroundingPlotCulture(slot(iOttomans), plots.surrounding(tPlot))
-					makeUnit(iOttomans, iCrossbowman, tPlot)
+					flipCity(city, False, True, slot(iOttomans), ())
+					cultureManager(city, 100, slot(iOttomans), iOwner, True, False, False)
+					self.convertSurroundingPlotCulture(slot(iOttomans), plots.surrounding(city))
+					makeUnit(iOttomans, iCrossbowman, city)
 					
 		#Trigger betrayal mode
 		if data.iBetrayalTurns > 0:
@@ -783,7 +778,7 @@ class RiseAndFall:
 
 		if year().between(860, 1250):
 			if turn() % turns(10) == 9:
-				self.giveRaiders(iVikings, Areas.getBroaderArea(iVikings))
+				self.giveRaiders(iVikings)
 		
 		if year().between(1350, 1918):
 			for iCiv in [iSpain, iEngland, iFrance, iPortugal, iNetherlands, iVikings, iGermany]:
@@ -802,7 +797,7 @@ class RiseAndFall:
 				
 		# Leoreth: help human with Aztec UHV - prevent super London getting in the way
 		if year() == year(1500) and player(iAztecs).isHuman():
-			plot = plot_(Areas.getCapital(iEngland))
+			plot = plots.capital(iEngland)
 			if plot.isCity():
 				city = plot.getPlotCity()
 				if city.getPopulation() > 14:
@@ -819,7 +814,7 @@ class RiseAndFall:
 
 		if year() == year(600):
 			if scenario() == i600AD:  #late start condition
-				tTL, tBR = Areas.dBirthArea[iChina]
+				tTL, tBR = dBirthArea[iChina]
 				if not player(iChina).isHuman(): tTL = (99, 39) # 4 tiles further north
 				china = plots.start(tTL).end(tBR)
 				iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(slot(iChina), china)
@@ -831,7 +826,7 @@ class RiseAndFall:
 		#kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
 		for iCiv in [iVikings, iSpain, iFrance, iHolyRome, iRussia, iAztecs]:
 			if year(dBirth[iCiv]) + turns(2) <= year() <= year(dBirth[iCiv]) + turns(10):
-				killUnitsInArea(iBarbarianPlayer, Areas.getBirthArea(iCiv))
+				killUnitsInArea(iBarbarianPlayer, plots.birth(iCiv))
 				
 		#fragment utility
 		if year() >= year(50) and turn() % turns(15) == 6:
@@ -872,11 +867,8 @@ class RiseAndFall:
 			iCiv = dRebirthCiv[iCiv]
 			setCivilization(iPlayer, iCiv)
 			
-		if iCiv == -1:
-			raise Exception("iCiv = -1 for iPlayer = %d" % iPlayer)
-			
 		Modifiers.updateModifiers(iPlayer)
-		x, y = Areas.dCapitals[iCiv]
+		x, y = dCapitals[iCiv]
 		plot = plot_(x, y)
 		city = city_(x, y)
 		
@@ -979,33 +971,29 @@ class RiseAndFall:
 
 	def rebirthSecondTurn(self, iPlayer):
 		iCiv = civ(iPlayer)
-	
-		lRebirthPlots = Areas.getBirthArea(iCiv)
-		
+
+		rebirthArea = plots.birth(iCiv)
+
 		# exclude American territory for Mexico
 		if iCiv == iMexico:
-			removedPlots = plots.of(lRebirthPlots).owner(slot(iAmerica)).where(lambda p: location(p) not in Areas.getCoreArea(iCiv))
-			for plot in removedPlots:
-				lRebirthPlots.remove(location(plot))
-		
-		lCities = [city_(x, y) for x, y in lRebirthPlots if city_(x, y)]
+			rebirthArea = rebirthArea.where(lambda p: owner(p) != iAmerica or p in plots.core(iCiv))
+
+		rebirthCities = rebirthArea.cities()
 			
 		# remove garrisons
-		for city in lCities:
-			if city.getOwner() != human():
-				relocateGarrisons(location(city), city.getOwner())
-				relocateSeaGarrisons(location(city), city.getOwner())
+		for city in rebirthCities.notowner(human()):
+			relocateGarrisons(location(city), city.getOwner())
+			relocateSeaGarrisons(location(city), city.getOwner())
 				
 		# convert cities
-		iConvertedCities, iHumanCities = self.convertSurroundingCities(iPlayer, lRebirthPlots)
+		iConvertedCities, iHumanCities = self.convertSurroundingCities(iPlayer, rebirthArea)
 		
 		# create garrisons
-		for city in lCities:
-			if city.getOwner() == human():
-				createGarrisons(location(city), iPlayer, 1)
+		for city in rebirthCities.owner(human()):
+			createGarrisons(location(city), iPlayer, 1)
 				
 		# convert plot culture
-		self.convertSurroundingPlotCulture(iPlayer, plots.of(lRebirthPlots))
+		self.convertSurroundingPlotCulture(iPlayer, rebirthArea)
 		
 		# reset plague
 		data.players[iPlayer].iPlagueCountdown = -10
@@ -1018,7 +1006,7 @@ class RiseAndFall:
 		
 		# ask human player for flips
 		if iHumanCities > 0 and not player(iPlayer).isHuman():
-			self.scheduleFlipPopup(iPlayer, lRebirthPlots)
+			self.scheduleFlipPopup(iPlayer, rebirthArea)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
 		return
@@ -1033,7 +1021,7 @@ class RiseAndFall:
 	def fragmentBarbarians(self, iGameTurn):
 		for iDeadPlayer in players.major().shuffle():
 			if not player(iDeadPlayer).isAlive() and iGameTurn > year(dBirth[iDeadPlayer]) + turns(50):
-				barbarianCities = cities.of(Areas.getNormalArea(civ(iDeadPlayer))).owner(iBarbarian)
+				barbarianCities = cities.normal(iDeadPlayer).owner(iBarbarian)
 				
 				if barbarianCities > 3:
 					for iMinor, minorCities in barbarianCities.fraction(2).divide(players.independent()):
@@ -1052,7 +1040,7 @@ class RiseAndFall:
 					for city in cities.owner(iPlayer):
 						pPlot = plot(city)
 
-						if not city.isWeLoveTheKingDay() and not city.isCapital() and location(city) != Areas.getCapital(civ(iPlayer)):
+						if not city.isWeLoveTheKingDay() and not city.isCapital() and location(city) != location(plots.capital(iPlayer)):
 							if player(iPlayer).getNumCities() > 0: #this check is needed, otherwise game crashes
 								capital = player(iPlayer).getCapitalCity()
 								iDistance = distance(city, capital)
@@ -1142,7 +1130,7 @@ class RiseAndFall:
 		
 		periods.onBirth(iPlayer)
 				
-		tCapital = Areas.getCapital(iCiv)
+		tCapital = location(plots.capital(iCiv))
 				
 		x, y = tCapital
 		bCapitalSettled = False
@@ -1162,11 +1150,11 @@ class RiseAndFall:
 			if iCiv in lConditionalCivs or bCapitalSettled:
 				convertPlotCulture(plot_(x, y), iPlayer, 100, True)
 
-			tTopLeft, tBottomRight = Areas.getBirthRectangle(iCiv)
-			tBroaderTopLeft, tBroaderBottomRight = Areas.dBroaderArea[iCiv]
+			tTopLeft, tBottomRight = birthRectangle(iCiv)
+			tBroaderTopLeft, tBroaderBottomRight = dBroaderArea[iCiv]
 			
 			if iCiv == iThailand:
-				angkor = city(Areas.dCapitals[iKhmer])
+				angkor = cities.capital(iKhmer)
 				if angkor:
 					bWonder = any(angkor.isHasRealBuilding(iBuilding) for iBuilding in range(iBeginWonders, iNumBuildings))
 					if bWonder and not player(iPlayer).isHuman():
@@ -1226,7 +1214,7 @@ class RiseAndFall:
 					for pCurrent in plots.surrounding(tCapital):
 						data.lDeleteMode[0] = iPlayer
 						for iLoopPlayer in players.all().without(iPlayer):
-							flipUnitsInArea(plots.start(tTopLeft).end(tBottomRight).without(Areas.dBirthAreaExceptions[iCiv]), iPlayer, iLoopPlayer, True, False)
+							flipUnitsInArea(plots.birth(iCiv), iPlayer, iLoopPlayer, True, False)
 						if pCurrent.isCity():
 							pCurrent.eraseAIDevelopment()
 						for iLoopPlayer in players.all().without(iPlayer):
@@ -1250,8 +1238,8 @@ class RiseAndFall:
 				self.birthInFreeRegion(iPlayer, tCapital, tTopLeft, tBottomRight)
 				
 		# Leoreth: reveal all normal plots on spawn
-		for x, y in Areas.getNormalArea(iCiv):
-			plot_(x, y).setRevealed(iPlayer, True, True, 0)
+		for plot in plots.normal(iCiv):
+			plot.setRevealed(iPlayer, True, True, 0)
 				
 		# Leoreth: conditional state religion for colonial civs and Byzantium
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
@@ -1280,9 +1268,8 @@ class RiseAndFall:
 		iCiv = civ(iPlayer)
 		
 		print ("deleteMode after", iCurrentPlayer)
-		tCapital = Areas.getCapital(iCiv)
+		tCapital = location(plots.capital(iCiv))
 		x, y = tCapital
-			
 		
 		if iCurrentPlayer == iPlayer:
 			if iCiv == iPhoenicia:
@@ -1330,7 +1317,7 @@ class RiseAndFall:
 					removeCoreUnits(iPlayer)
 					cityList = getCitiesInCore(iPlayer)
 					
-					rome = city(Areas.getCapital(iRome))
+					rome = cities.capital(iRome)
 					if rome:
 						cityList.append(rome)
 					
@@ -1355,7 +1342,7 @@ class RiseAndFall:
 		
 			iNumCities = player(iPlayer).getNumCities()
 		
-			area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iCiv))
+			area = plots.rectangle(tTopLeft, tBottomRight).without(dBirthAreaExceptions[iPlayer])
 			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iPlayer, area)
 			self.convertSurroundingPlotCulture(iPlayer, area)
 			for iMinor in players.independent().barbarian():
@@ -1384,7 +1371,7 @@ class RiseAndFall:
 			removeCoreUnits(iPlayer)
 			cityList = self.getCitiesInCore(iPlayer)
 			
-			rome = city(Areas.getCapital(iRome))
+			rome = cities.capital(iRome)
 			if rome:
 				cityList.append(rome)
 				
@@ -1397,7 +1384,7 @@ class RiseAndFall:
 				
 		iNumCities = player(iPlayer).getNumCities()
 		
-		area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iCiv))
+		area = plots.start(tTopLeft).end(tBottomRight).without(dBirthAreaExceptions[iCiv])
 		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iPlayer, area)
 		self.convertSurroundingPlotCulture(iPlayer, area)
 		
@@ -1504,7 +1491,7 @@ class RiseAndFall:
 				self.createStartingWorkers(iPlayer, tCapital)
 
 		else: # starting units have already been placed, now to the second part
-			area = plots.start(tTopLeft).end(tBottomRight).without(Areas.getBirthExceptions(iCiv))
+			area = plots.start(tTopLeft).end(tBottomRight).without(dBirthAreaExceptions[iCiv])
 			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iPlayer, area)
 			self.convertSurroundingPlotCulture(iPlayer, area)
 				
@@ -1533,7 +1520,7 @@ class RiseAndFall:
 			
 		# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
 		if iCiv == iByzantium and player(iRome).isAlive():
-			x, y = Areas.getCapital(iByzantium)
+			x, y = location(plots.capital(iByzantium))
 			for city in cities.owner(iRome):
 				if city.getX() >= x-1 and city.getY() <= y:
 					if (city.getX(), city.getY()) not in lPlots:
@@ -1542,13 +1529,13 @@ class RiseAndFall:
 		# Leoreth: Canada also flips English/American/French cities in the Canada region
 		if iCiv == iCanada:
 			for city in cities.owner(iFrance) + cities.owner(iEngland) + cities.owner(iAmerica):
-				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0] and location(city) not in [location(c) for c in lCities]:
+				if city.getRegionID() == rCanada and city.getX() < plots.capital(iCanada).getX() and location(city) not in [location(c) for c in lCities]:
 					lCities.append(city)
 					
 		# Leoreth: remove capital locations
 		for city in lCities:
 			if not is_minor(city):
-				if location(city) == Areas.getCapital(civ(city)) and city.isCapital():
+				if location(city) == location(plots.capital(city.getOwner())) and city.isCapital():
 					lCities.remove(city)
 
 		return lCities
@@ -1614,8 +1601,7 @@ class RiseAndFall:
 					self.spawnAdditionalUnits(iPlayer)
 
 	def spawnAdditionalUnits(self, iPlayer):
-		tPlot = Areas.getCapital(civ(iPlayer))
-		self.createAdditionalUnits(iPlayer, tPlot)
+		self.createAdditionalUnits(iPlayer, location(plots.capital(iPlayer)))
 
 	def convertSurroundingPlotCulture(self, iCiv, plots):
 		for pPlot in plots:
@@ -1628,7 +1614,7 @@ class RiseAndFall:
 		"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
 		return plots.surrounding(tCoords, radius=iRange).water().where(lambda p: not p.isUnit()).where(lambda p: p.getOwner() in [-1, slot(iCiv)]).random()
 
-	def giveRaiders(self, iCiv, lPlots):
+	def giveRaiders(self, iCiv):
 		pPlayer = player(iCiv)
 		pTeam = team(iCiv)
 		
@@ -1668,7 +1654,7 @@ class RiseAndFall:
 		
 		if pPlayer.isAlive() and not pPlayer.isHuman() and iCiv in dMaxColonists:
 			if pTeam.isHasTech(iExploration) and data.players[iPlayer].iColonistsAlreadyGiven < dMaxColonists[iCiv]:
-				sourceCities = cities.of(Areas.getCoreArea(iCiv)).owner(iPlayer)
+				sourceCities = cities.core(iCiv).owner(iPlayer)
 				
 				# help England with settling Canada and Australia
 				if iCiv == iEngland:
@@ -1825,10 +1811,7 @@ class RiseAndFall:
 						tBR = (81, 62)
 						iDirection = DirectionTypes.DIRECTION_EAST
 
-					try:
-						lTargetList = getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
-					except Exception, e:
-						raise Exception("Exception for iCivX=%d: %s" % (iCivX, e))
+					lTargetList = getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
 					
 					if not lTargetList: return
 
@@ -2017,13 +2000,13 @@ class RiseAndFall:
 		if not is_minor(iLosingPlayer):
 			iBirthTurn = year(dBirth[iLosingPlayer])
 			if iBirthTurn <= year() <= iBirthTurn + turns(2):
-				if location(pLosingUnit) == Areas.getCapital(civ(iLosingPlayer)):
+				if location(pLosingUnit) == location(plots.capital(iLosingPlayer)):
 					if rand(100) >= 50:
 						makeUnit(iLosingPlayer, iUnitType, pLosingUnit)
 
 	def initMinorBetrayal(self, iPlayer):
-		lPlots = Areas.getBirthArea(civ(iPlayer))
-		plotList = listSearch(lPlots, outerInvasion, [])
+		birthArea = plots.birth(iPlayer)
+		plotList = listSearch(birthArea, outerInvasion, [])
 		if plotList:
 			tPlot = random_entry(plotList)
 			if tPlot:
@@ -2780,43 +2763,43 @@ class RiseAndFall:
 	def create1700ADstartingUnits(self):
 
 		# Japan
-		tCapital = Areas.getCapital(iJapan)
+		capital = plots.capital(iJapan)
 		if not player(iJapan).isHuman():
-			makeUnit(iJapan, iSettler, tCapital)
+			makeUnit(iJapan, iSettler, capital)
 		
 		for iPlayer in players.major():
 			iCiv = civ(iPlayer)
 			if dBirth[iCiv] > scenarioStartYear() and player(iPlayer).isHuman():
-				makeUnit(iPlayer, iSettler, Areas.getCapital(iCiv))
-				makeUnit(iPlayer, iMilitia, Areas.getCapital(iCiv))
+				makeUnit(iPlayer, iSettler, plots.capital(iCiv))
+				makeUnit(iPlayer, iMilitia, plots.capital(iCiv))
 
 	def create600ADstartingUnits( self ):
 
-		tCapital = Areas.getCapital(iChina)
-		makeUnits(iChina, iSwordsman, tCapital, 2)
-		makeUnit(iChina, iArcher, tCapital)
-		makeUnit(iChina, iSpearman, tCapital, UnitAITypes.UNITAI_CITY_DEFENSE)
-		makeUnits(iChina, iChokonu, tCapital, 2)
-		makeUnit(iChina, iHorseArcher, tCapital)
-		makeUnits(iChina, iWorker, tCapital, 2)
+		capital = plots.capital(iChina)
+		makeUnits(iChina, iSwordsman, capital, 2)
+		makeUnit(iChina, iArcher, capital)
+		makeUnit(iChina, iSpearman, capital, UnitAITypes.UNITAI_CITY_DEFENSE)
+		makeUnits(iChina, iChokonu, capital, 2)
+		makeUnit(iChina, iHorseArcher, capital)
+		makeUnits(iChina, iWorker, capital, 2)
 		
-		tCapital = Areas.getCapital(iJapan)
-		tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
+		capital = plots.capital(iJapan)
+		tSeaPlot = self.findSeaPlots(capital, 1, iJapan)
 		if tSeaPlot:
 			makeUnits(iJapan, iWorkboat, tSeaPlot, 2)
 			
 		if not player(iJapan).isHuman():
-			makeUnits(iJapan, iCrossbowman, tCapital, 2)
-			makeUnits(iJapan, iSamurai, tCapital, 3)
+			makeUnits(iJapan, iCrossbowman, capital, 2)
+			makeUnits(iJapan, iSamurai, capital, 3)
 
-		tCapital = Areas.getCapital(iByzantium)
-		tSeaPlot = self.findSeaPlots(tCapital, 1, iByzantium)
+		capital = plots.capital(iByzantium)
+		tSeaPlot = self.findSeaPlots(capital, 1, iByzantium)
 		if tSeaPlot:
 			makeUnits(iByzantium, iGalley, tSeaPlot, 2)
 			makeUnits(iByzantium, iWarGalley, tSeaPlot, 2)
 
-		tCapital = Areas.getCapital(iVikings)
-		tSeaPlot = self.findSeaPlots(tCapital, 1, iVikings)
+		capital = plots.capital(iVikings)
+		tSeaPlot = self.findSeaPlots(capital, 1, iVikings)
 		if tSeaPlot:
 			makeUnit(iVikings, iWorkboat, tSeaPlot)
 			if player(iVikings).isHuman():
@@ -2834,36 +2817,36 @@ class RiseAndFall:
 			makeUnit(iVikings, iSettler, (63, 59))
 			makeUnit(iVikings, iArcher, (63, 59))
 		else:
-			makeUnit(iVikings, iSettler, tCapital)
-			makeUnits(iVikings, iArcher, 2)
+			makeUnit(iVikings, iSettler, capital)
+			makeUnits(iVikings, iArcher, capital, 2)
 
-		tCapital = Areas.getCapital(iKorea)
+		capital = plots.capital(iKorea)
 		if not player(iKorea).isHuman():
-			makeUnits(iKorea, iHeavySwordsman, tCapital, 2)
+			makeUnits(iKorea, iHeavySwordsman, capital, 2)
 				
-		tCapital = Areas.getCapital(iTurks)
-		makeUnits(iTurks, iSettler, tCapital, 2)
-		makeUnits(iTurks, iOghuz, tCapital, 6)
-		makeUnit(iTurks, iArcher, tCapital)
-		makeUnit(iTurks, iScout, tCapital)
+		capital = plots.capital(iTurks)
+		makeUnits(iTurks, iSettler, capital, 2)
+		makeUnits(iTurks, iOghuz, capital, 6)
+		makeUnit(iTurks, iArcher, capital)
+		makeUnit(iTurks, iScout, capital)
 			
 		for iPlayer in players.major().human().before_birth():
-			tCapital = Areas.getCapital(civ(iPlayer))
-			makeUnit(iPlayer, iSettler, tCapital)
-			makeUnit(iPlayer, iMilitia, tCapital)
+			capital = plots.capital(iPlayer)
+			makeUnit(iPlayer, iSettler, capital)
+			makeUnit(iPlayer, iMilitia, capital)
 
 	def create4000BCstartingUnits(self):
 		for iPlayer in players.major():
 			iCiv = civ(iPlayer)
-			tCapital = Areas.getCapital(iCiv)
+			capital = plots.capital(iPlayer)
 			
 			if dBirth[iCiv] > scenarioStartYear() and player(iPlayer).isHuman():
-				makeUnit(iPlayer, iSettler, tCapital)
-				makeUnit(iPlayer, iMilitia, tCapital)
+				makeUnit(iPlayer, iSettler, capital)
+				makeUnit(iPlayer, iMilitia, capital)
 				
 			if iCiv == iHarappa and (data.isCivEnabled(iCiv) or player(iPlayer).isHuman()):
-				makeUnit(iPlayer, iCityBuilder, tCapital)
-				makeUnit(iPlayer, iMilitia, tCapital)
+				makeUnit(iPlayer, iCityBuilder, capital)
+				makeUnit(iPlayer, iMilitia, capital)
 
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
@@ -3006,7 +2989,7 @@ class RiseAndFall:
 		plot_(tPlot).setImprovementType(iHut)
 
 	def setStateReligion(self, iPlayer):
-		coreCities = cities.of(Areas.getCoreArea(civ(iPlayer)))
+		coreCities = cities.core(iPlayer)
 		lReligions = [iReligion for iReligion in range(iNumReligions) if iReligion != iJudaism]
 		
 		def owner_religion(city):
