@@ -1364,7 +1364,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_MIS_TITLE</Tag>
 		<English>The Power of Mshi-Ziibi:</English>
-		<French>Le pouvoir de lshi-ziibi:</French>
+		<French>Le pouvoir de mshi-ziibi:</French>
 		<German>Die Macht des Mshi-Ziibi:</German>
 		<Italian>Il potere della mshi-ziibi:</Italian>
 		<Spanish>El poder de la mshi-ziibi:</Spanish>
@@ -1376,5 +1376,21 @@
 		<German>Extra Commerce along Rivers.</German>
 		<Italian>Extra Commerce along Rivers.</Italian>
 		<Spanish>Extra Commerce along Rivers.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_INU_TITLE</Tag>
+		<English>The Power of Inuksuk:</English>
+		<French>Le pouvoir de inuksuk:</French>
+		<German>Die Macht des Inuksuk:</German>
+		<Italian>Il potere della inuksuk:</Italian>
+		<Spanish>El poder de la inuksuk:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_INU</Tag>
+		<English>Trade routes do not require roads. Extra Commerce on coastal city tiles.</English>
+		<French>Trade routes do not require roads. Extra Commerce on coastal city tiles.</French>
+		<German>Trade routes do not require roads. Extra Commerce on coastal city tiles.</German>
+		<Italian>Trade routes do not require roads. Extra Commerce on coastal city tiles.</Italian>
+		<Spanish>Trade routes do not require roads. Extra Commerce on coastal city tiles.</Spanish>
 	</TEXT>
 </Civ4GameText>

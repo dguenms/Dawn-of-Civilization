@@ -146,6 +146,10 @@ tConquestEnglandIreland, #17
 ]
 
 class AIWars:
+
+		
+	def __init__(self, resources):
+		self.res = resources
 		
 	def setup(self):
 		iTurn = getTurnForYear(-600)
@@ -153,7 +157,6 @@ class AIWars:
 			iTurn = getTurnForYear(900)
 		elif utils.getScenario() == i1700AD:
 			iTurn = getTurnForYear(1720)
-		self.res = Resources.Resources()
 		data.iNextTurnAIWar = iTurn + gc.getGame().getSorenRandNum(iMaxIntervalEarly-iMinIntervalEarly, 'random turn')
 
 
@@ -232,6 +235,7 @@ class AIWars:
 		
 		if iPlayer == iRome and iPreferredTarget == iCeltia:
 			self.res.doRomanPigs()
+			data.iRomanPigs = 0
 		
 		lCities = []
 		for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)):

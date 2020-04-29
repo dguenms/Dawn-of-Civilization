@@ -1574,4 +1574,36 @@
 		<Italian>Libya</Italian>
 		<Spanish>Libya</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_105</Tag>
+		<English>Kivalliq</English>
+		<French>Kivalliq</French>
+		<German>Kivalliq</German>
+		<Italian>Kivalliq</Italian>
+		<Spanish>Kivalliq</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_106</Tag>
+		<English>Nunavik</English>
+		<French>Nunavik</French>
+		<German>Nunavik</German>
+		<Italian>Nunavik</Italian>
+		<Spanish>Nunavik</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_107</Tag>
+		<English>Qikiqtaaluk</English>
+		<French>Qikiqtaaluk</French>
+		<German>Qikiqtaaluk</German>
+		<Italian>Qikiqtaaluk</Italian>
+		<Spanish>Qikiqtaaluk</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_108</Tag>
+		<English>Kalaallit Nunaat</English>
+		<French>Kalaallit Nunaat</French>
+		<German>Kalaallit Nunaat</German>
+		<Italian>Kalaallit Nunaat</Italian>
+		<Spanish>Kalaallit Nunaat</Spanish>
+	</TEXT>
 </Civ4GameText>

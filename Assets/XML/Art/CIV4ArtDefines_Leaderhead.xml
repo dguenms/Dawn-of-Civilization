@@ -1366,5 +1366,13 @@
 			<NoShaderNIF>Art/Leaderheads/Uwahci'l/shaka.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Uwahci'l/shaka_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_AUA</Type>
+			<Button>Art/Leaderheads/Aua/Aua.dds</Button>
+			<NIF>Art/Leaderheads/Aua/Sitting Bull.nif</NIF>
+			<KFM>Art/Leaderheads/Aua/Sitting Bull.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Inuit/Aua/Sitting Bull_bg.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Aua/Sitting Bull_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

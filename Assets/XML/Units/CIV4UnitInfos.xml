@@ -457,6 +457,66 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_SETTLER</Class>
+			<Type>UNIT_INUIT_DOG_SLED</Type>
+			<Capture>UNITCLASS_WORKER</Capture>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_INUIT_DOG_SLED</Description>
+			<Civilopedia>TXT_KEY_UNIT_INUIT_DOG_SLED_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_INUIT_DOG_SLED_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_INUIT_DOG_SLED_HELP</Help>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bFood>1</bFood>
+			<bFound>1</bFound>
+			<bIgnoreTerrainCost>1</bIgnoreTerrainCost>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_SETTLE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_GRASS</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_PLAINS</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_MARSH</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<iAsset>4</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>4</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>4</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_INUIT_SETTLER</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WOLF</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_WORKER</Class>
 			<Type>UNIT_WORKER</Type>
 			<Capture>UNITCLASS_WORKER</Capture>

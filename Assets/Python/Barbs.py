@@ -89,6 +89,14 @@ class Barbs:
 						iUnit = utils.getRandomEntry(lUnitList)
 						utils.makeUnit(iUnit, iOwner, tPlot, 1)
 
+		if utils.isYearIn(-100, 1600):
+			# Siberian Bears
+			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5, (115, 53), (123, 64), self.spawnNatives, iGameTurn, 10, 4)
+			# Alaskan and Eastern Canadian Bears
+			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5,  (3, 58), (20, 67), self.spawnNatives, iGameTurn, 5, 2)
+			# Greenland and Western Canadian Bears
+			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5, (21, 53), (44, 67), self.spawnNatives, iGameTurn, 5, 2)
+
 		if utils.isYearIn(-3000, -850):
 			if iHandicap >= 0:
 				self.checkSpawn(iBarbarian, iWarrior, 1, (76, 46), (99, 53), self.spawnMinors, iGameTurn, 5, 0)
@@ -297,7 +305,7 @@ class Barbs:
 				if not gc.getMap().plot(30, 13).isUnit():
 					utils.makeUnitAI(iPictaAucac, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 2 + iHandicap)
 		
-		if self.includesActiveHuman([iAmerica, iEngland, iFrance]):
+		if self.includesActiveHuman([iAmerica, iEngland, iFrance, iMississippi]):
 			if utils.isYearIn(1700, 1900):
 				self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnNomads, iGameTurn, 12 - iHandicap, 2)
 			

@@ -152,8 +152,6 @@ def onTechAcquired(iPlayer, iTech):
 def onVassalState(iMaster, iVassal):
 	checkStability(iMaster, True)
 	
-	if iMaster == iEngland and iVassal == iCeltia: data.bAngloCeltia = True
-	
 	balanceStability(iVassal, iStabilityShaky)
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
@@ -372,7 +370,7 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		
 def getPossibleMinors(iPlayer):
 
-	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and iPlayer in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo]:
+	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and iPlayer in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo, iInuit]:
 		return [iNative]
 		
 	if gc.getGame().getCurrentEra() <= iMedieval:
@@ -596,6 +594,10 @@ def completeCollapse(iPlayer):
 					collapseToCore(iPlayer)
 					return
 	
+	# Spread Roman pigs on Celtia's complete collapse
+	if data.iRomanPigs < 0 and iPlayer == iCeltia:
+		data.iRomanPigs = 1
+	
 	vic.onCollapse(iPlayer, False)
 	
 	# before cities are seceded, downgrade their cottages
@@ -618,10 +620,6 @@ def completeCollapse(iPlayer):
 	if iPlayer == iChina:
 		utils.setReborn(iMongolia, True)
 		
-	if iPlayer == iCeltia:
-		if pEngland.isAlive(): data.bAngloCeltia = True
-		utils.setReborn(iCeltia, True)
-		
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
 	
 	sText = localText.getText("TXT_KEY_STABILITY_COMPLETE_COLLAPSE", (gc.getPlayer(iPlayer).getCivilizationAdjective(0),))
@@ -631,6 +629,10 @@ def collapseToCore(iPlayer):
 	lAhistoricalCities = []
 	lNonCoreCities = []
 	vic.onCollapse(iPlayer, False)
+	
+	# Spread Roman pigs on Celtia's complete collapse
+	if data.iRomanPigs < 0 and iPlayer == iCeltia:
+		data.iRomanPigs = 1
 	
 	for city in utils.getCityList(iPlayer):
 		plot = gc.getMap().plot(city.getX(), city.getY())
@@ -671,6 +673,7 @@ def downgradeCottages(iPlayer):
 		plot = gc.getMap().plot(x, y)
 		if plot.getOwner() == iPlayer:
 			iImprovement = plot.getImprovementType()
+			iRoute = plot.getRouteType()
 			
 			if iImprovement == iTown: plot.setImprovementType(iHamlet)
 			elif iImprovement == iVillage: plot.setImprovementType(iCottage)
@@ -681,6 +684,11 @@ def downgradeCottages(iPlayer):
 			if iPlayer in [iCeltia, iHarappa, iNorteChico, iMississippi] and utils.getHumanID() != iPlayer:
 				if iImprovement >= 0:
 					plot.setImprovementType(-1)
+			
+			# Destroy all Norte Chico routes
+			if iPlayer in [iCeltia, iHarappa, iNorteChico, iMississippi] and utils.getHumanID() != iPlayer:
+				if iRoute >= 0:
+					plot.setRouteType(-1)
 				
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_DOWNGRADE_COTTAGES", ())

@@ -11514,6 +11514,41 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+			<SoundID>SONG_DIP_NA_EARLY_PEACE</SoundID>
+			<Filename>Sounds/Soundtrack/DipNAEarlyPeace</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SONG_DIP_NA_EARLY_WAR</SoundID>
+			<Filename>Sounds/Soundtrack/DipNAEarlyWar</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SONG_DIP_NA_LATE_PEACE</SoundID>
+			<Filename>Sounds/Soundtrack/DipNALatePeace</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SONG_DIP_NA_LATE_WAR</SoundID>
+			<Filename>Sounds/Soundtrack/DipNALateWar</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_INUIT</SoundID>
+			<Filename>Sounds/Soundtrack/Eskimo</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>

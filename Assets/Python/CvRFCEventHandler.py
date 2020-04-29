@@ -92,7 +92,7 @@ class CvRFCEventHandler:
 		self.barb = Barbs.Barbs()
 		self.res = Resources.Resources()
 		self.up = UniquePowers.UniquePowers()
-		self.aiw = AIWars.AIWars()
+		self.aiw = AIWars.AIWars(self.res)
 		self.pla = Plague.Plague()
 		self.com = Communications.Communications()
 		self.corp = Companies.Companies()
@@ -131,6 +131,10 @@ class CvRFCEventHandler:
 		
 		if bConquest:
 			sta.onCityAcquired(city, iOwner, iPlayer)
+			
+			# Spread Roman pigs on Celtia's complete conquest
+			if iOwner == iCeltia and pCeltia.getNumCities() == 0 and data.iRomanPigs < 0:
+				data.iRomanPigs = 1
 	
 		if utils.getScenario() == i600AD and iOwner == iPersia and not utils.isReborn(iOwner):
 			sta.completeCollapse(iOwner)
@@ -511,6 +515,9 @@ class CvRFCEventHandler:
 		
 		if bCapitulated:
 			sta.onVassalState(iMaster, iVassal)
+		
+		if iVassal == iCeltia and data.iRomanPigs < 0:
+			data.iRomanPigs = 1
 		
 		if iVassal == iInca:
 			utils.setReborn(iInca, True)

@@ -326,7 +326,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeMaxFoodKeptPercent(25);
 	}
 
-	// Leoreth: Celtic UP: Extra culture in all cities.
+	// Celtic UP: Cities start with extra Culture. Extra Food from Forests with Chiefdom.
 	if (getOwnerINLINE() == CELTIA)
 	{
 		int iGameSpeed = GC.getGameINLINE().getGameSpeedType();
@@ -4585,6 +4585,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeFreePromotionCount(((PromotionTypes)(GC.getBuildingInfo(eBuilding).getFreePromotion())), iChange);
 		}
 
+		// Inuit UB: +1 Food, Production, and Commerce from Ice, Sea Ice, and Tundra
+		if (eBuilding == GC.getInfoTypeForString("BUILDING_INUIT_IGLOO"))
+		{
+			updateYield();
+		}
+
 		changeEspionageDefenseModifier(GC.getBuildingInfo(eBuilding).getEspionageDefenseModifier() * iChange);
 		changeGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getGreatPeopleRateModifier() * iChange);
 		changeFreeExperience(GC.getBuildingInfo(eBuilding).getFreeExperience() * iChange);
@@ -4680,6 +4686,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 			// Tiwanaku UP: Extra Production in the Capital. +1 Priest Slot from Pagan Temples.
 			if (getOwnerINLINE() == TIWANAKU && (SpecialistTypes)iI == SPECIALIST_PRIEST && eBuilding == getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE))
+			{
+				changeMaxSpecialistCount(((SpecialistTypes)iI), iChange);
+			}
+
+			// Serpent Mound: +1 Merchant slot from Parks
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)SERPENT_MOUND) && (SpecialistTypes)iI == SPECIALIST_MERCHANT && eBuilding == getUniqueBuilding(getCivilizationType(), (BuildingTypes)GC.getInfoTypeForString("BUILDING_PARK")))
 			{
 				changeMaxSpecialistCount(((SpecialistTypes)iI), iChange);
 			}
@@ -13239,35 +13251,6 @@ int CvCity::getFreeSpecialistCount(SpecialistTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
-
-	// Chimu UP: Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.
-	// 1SDAN: God this is such clunky way of implementing this effect. I tried tracking the number of bonuses with a variable in CvPlayer but I couldn't get it to work.
-	if (getOwnerINLINE() == CHIMU && isCapital() && eIndex == SPECIALIST_ARTIST)
-	{
-		int iBonuses = 0;
-		CvPlot* plot;
-		
-		
-		for (int x = 23; x <= 27; x++)
-		{
-			for (int y = 21; y <= 30; y++)
-			{
-				plot = GC.getMapINLINE().plotINLINE(x, y);
-				BonusTypes eBonus = plot->getBonusType();
-				ImprovementTypes eImprovement = plot->getImprovementType();
-
-				if (eBonus != NO_BONUS && plot->getOwnerINLINE() == CHIMU)
-				{
-					if (plot->isCity() || (eImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(eBonus)))
-					{
-						iBonuses++;
-					}
-				}
-			}
-		}
-
-		return m_paiFreeSpecialistCount[eIndex] + (iBonuses / 2);
-	}
 
 	return m_paiFreeSpecialistCount[eIndex];
 }

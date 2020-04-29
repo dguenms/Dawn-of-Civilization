@@ -298,6 +298,7 @@ class RiseAndFall:
 			self.create600ADstartingUnits()
 			self.adjust600ADWonders()
 			self.adjust600ADGreatPeople()
+			utils.setReborn(iCarthage, True)
 			
 		if utils.getScenario() == i1700AD:
 			self.create1700ADstartingUnits()
@@ -307,7 +308,7 @@ class RiseAndFall:
 			self.adjust1700ADWonders()
 			self.adjust1700ADGreatPeople()
 			
-			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria, iKhmer, iKhazars]:
+			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iOttomans, iManchuria, iKhmer, iKhazars, iCarthage]:
 				utils.setReborn(iPlayer, True)
 			
 			pManchuria.updateTradeRoutes()
@@ -791,6 +792,25 @@ class RiseAndFall:
 			
 	def checkTurn(self, iGameTurn):
 	
+		if pInuit.isAlive() and iInuit != utils.getHumanID():
+			if gc.getGame().getGameTurn() in [getTurnForYear(1), getTurnForYear(500)]:
+				utils.makeUnit(iArcher, iInuit, (4, 59), 1)
+				utils.makeUnit(iDogSled, iInuit, (4, 59), 1)
+				
+			if pInuit.isAlive() and gc.getGame().getGameTurn() == getTurnForYear(900):
+				utils.makeUnit(iArcher, iInuit, (27, 61), 1)
+				utils.makeUnit(iDogSled, iInuit, (27, 61), 1)
+				utils.makeUnit(iArcher, iInuit, (31, 58), 1)
+				utils.makeUnit(iDogSled, iInuit, (31, 58), 1)
+				
+			if gc.getGame().getGameTurn() == getTurnForYear(1300):
+				utils.makeUnit(iArcher, iInuit, (32, 63), 1)
+				utils.makeUnit(iDogSled, iInuit, (32, 63), 1)
+				
+			if gc.getGame().getGameTurn() == getTurnForYear(1500):
+				utils.makeUnit(iArcher, iInuit, (39, 61), 1)
+				utils.makeUnit(iDogSled, iInuit, (39, 61), 1)
+		
 		# Leoreth: randomly place goody huts
 		if iGameTurn == utils.getScenarioStartTurn()+3:
 			self.placeGoodyHuts()
@@ -1274,7 +1294,7 @@ class RiseAndFall:
 						iRndNum = gc.getGame().getSorenRandNum(2, 'random independent')
 						if iRndNum == 1:
 							iNewCiv = iIndependent2
-						if iPlayer in [iAztecs, iInca, iMaya, iEthiopia, iMali]:
+						if iPlayer in [iAztecs, iInca, iMaya, iEthiopia, iMali, iInuit]:
 							if data.iCivsWithNationalism <= 0:
 								iNewCiv = iNative
 						splittingCity = utils.getRandomEntry(cityList)
@@ -1998,6 +2018,9 @@ class RiseAndFall:
 	
 		iGameTurn = gc.getGame().getGameTurn()
 		
+		# inuit don't trigger mississippi collapse
+		if iTeamX in [iInuit]: return
+		
 		# no conquerors for minor civs
 		if iHasMetTeamY >= iNumPlayers: return
 		
@@ -2006,6 +2029,8 @@ class RiseAndFall:
 				iNewWorldCiv = iTeamX
 				iOldWorldCiv = iHasMetTeamY
 				
+				if pMississippi.isAlive() and not pMississippi.isHuman():
+					sta.completeCollapse(iMississippi)
 				iIndex = lCivBioNewWorld.index(iNewWorldCiv)
 				
 				bAlreadyContacted = data.lFirstContactConquerors[iIndex]
@@ -2040,8 +2065,6 @@ class RiseAndFall:
 					elif iNewWorldCiv == iInca:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
-					elif iNewWorldCiv == iMississippi:
-						sta.completeCollapse(iMississippi)
 						
 					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
 						
@@ -2060,15 +2083,16 @@ class RiseAndFall:
 						
 					lContactPlots = []
 					lArrivalPlots = []
-					for (x, y) in utils.getPlotList(tContactZoneTL, tContactZoneBR, lArrivalExceptions):
-						plot = gc.getMap().plot(x, y)
-						if plot.isVisible(iNewWorldCiv, False) and plot.isVisible(iOldWorldCiv, False):
-							lContactPlots.append((x,y))
-						if plot.getOwner() == iNewWorldCiv and not plot.isCity():
-							if plot.isFlatlands() or plot.isHills():
-								if not plot.getFeatureType() in [iJungle, iRainforest] and not plot.getTerrainType() == iMarsh:
-									if gc.getMap().getArea(plot.getArea()).getNumTiles() > 3:
-										lArrivalPlots.append((x,y))
+					if not iNewWorldCiv in [iMississippi]:
+						for (x, y) in utils.getPlotList(tContactZoneTL, tContactZoneBR, lArrivalExceptions):
+							plot = gc.getMap().plot(x, y)
+							if plot.isVisible(iNewWorldCiv, False) and plot.isVisible(iOldWorldCiv, False):
+								lContactPlots.append((x,y))
+							if plot.getOwner() == iNewWorldCiv and not plot.isCity():
+								if plot.isFlatlands() or plot.isHills():
+									if not plot.getFeatureType() in [iJungle, iRainforest] and not plot.getTerrainType() == iMarsh:
+										if gc.getMap().getArea(plot.getArea()).getNumTiles() > 3:
+											lArrivalPlots.append((x,y))
 								
 					if lContactPlots and lArrivalPlots:
 						tContactPlot = utils.getRandomEntry(lContactPlots)
@@ -2198,7 +2222,9 @@ class RiseAndFall:
 		if utils.getHumanID() != iCiv:
 			if iCiv == iAmerica:
 				iCount = 0
+				bAlaska = False
 				lWestCoast = [(11, 50), (11, 49), (11, 48), (11, 47), (11, 46), (12, 45)]
+				lAlaska = [(7, 58), (8, 59), (9, 59), (10, 60), (11, 59), (11, 60), (11, 61), (10, 61), (9, 61), (8, 62), (7, 62), (7, 61), (6, 60), (5, 59), (4, 59), (3, 60), (4, 60), (5, 60), (5, 61), (7, 63), (7, 64), (8, 65), (9, 65), (9, 64), (8, 63), (9, 62), (10, 63), (10, 64), (11, 63), (11, 62)]
 				lEnemyCivs = []
 				lFreePlots = []
 				for tPlot in lWestCoast:
@@ -2213,6 +2239,23 @@ class RiseAndFall:
 								plot = gc.getMap().plot(i, j)
 								if not (plot.isCity() or plot.isPeak() or plot.isWater()):
 									lFreePlots.append((i, j))
+									
+				for tPlot in lAlaska:
+					x, y = tPlot
+					pPlot = gc.getMap().plot(x, y)
+					if pPlot.isCity():
+						if pPlot.getPlotCity().getOwner() != iAmerica:
+							iCount += 1
+							lAlaska.remove((x, y))
+							lEnemyCivs.append(pPlot.getPlotCity().getOwner())
+							for (i, j) in utils.surroundingPlots(tPlot):
+								plot = gc.getMap().plot(i, j)
+								if not (plot.isCity() or plot.isPeak() or plot.isWater()):
+									lFreePlots.append((i, j))
+							if bAlaska:
+								break
+							else:
+								bAlaska = True
 									
 				for iEnemy in lEnemyCivs:
 					gc.getTeam(iCiv).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
@@ -2495,6 +2538,8 @@ class RiseAndFall:
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 		elif iCiv == iMississippi:
 			utils.makeUnit(iFalconDancer, iCiv, tPlot, 4)
+		elif iCiv == iInuit:
+			utils.makeUnit(iMilitia, iCiv, tPlot, 4)
 		elif iCiv == iKorea:
 			for iUnit in [iHorseArcher, iCrossbowman]:
 				utils.makeUnit(iUnit, iCiv, tPlot, 2)
@@ -2766,6 +2811,11 @@ class RiseAndFall:
 		elif iCiv == iTeotihuacan:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
+		elif iCiv == iInuit:
+			utils.createSettlers(iCiv, 1)
+			utils.makeUnit(iMilitia, iCiv, tPlot, 1)
+			utils.makeUnit(iMilitia, iCiv, (123, 62), 1)
+			utils.makeUnit(iDogSled, iCiv, (123, 62), 1)
 		elif iCiv == iMississippi:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnit(iFalconDancer, iCiv, tPlot, 2)

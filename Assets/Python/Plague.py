@@ -443,6 +443,8 @@ class Plague:
 		if data.bNoPlagues:
 			return
 
+		if iTeamX == iInuit: return
+
 		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iAztecs]) + 2 and gc.getGame().getGameTurn() < getTurnForYear(1800):
 			iOldWorldCiv = -1
 			iNewWorldCiv = -1

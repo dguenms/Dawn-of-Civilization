@@ -1379,5 +1379,19 @@
 			<fBlue>0.05</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_X_PALETURQUOISE</Type>
+			<fRed>0.69</fRed>
+			<fGreen>0.93</fGreen>
+			<fBlue>0.93</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_X_SNOW</Type>
+			<fRed>1.00</fRed>
+			<fGreen>0.98</fGreen>
+			<fBlue>0.98</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

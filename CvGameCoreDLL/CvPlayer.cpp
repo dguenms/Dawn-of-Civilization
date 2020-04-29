@@ -481,6 +481,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iMaxPlayerBuildingProductionModifier = 0;
 	m_iFreeExperience = 0;
 	m_iFeatureProductionModifier = 0;
+	m_iUniqueValue = 0; // 1SDAN
 	m_iWorkerCostModifier = 0; // Leoreth
 	m_iWorkerSpeedModifier = 0;
 	m_iImprovementUpgradeRateModifier = 0;
@@ -5705,7 +5706,8 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 	if (!bValid)
 	{
-		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFound())
+		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFound() || 
+			(getID() == INUIT && pPlot->getTerrainType() == GC.getInfoTypeForString("TERRAIN_TUNDRA")))
 		{
 			bValid = true;
 		}
@@ -5713,7 +5715,9 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 	if (!bValid)
 	{
-		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFoundCoast())
+		// Inuit UU: Can settle on Ice (along Coast), and Tundra
+		if (GC.getTerrainInfo(pPlot->getTerrainType()).isFoundCoast() || 
+			(getID() == INUIT && pPlot->getTerrainType() == GC.getInfoTypeForString("TERRAIN_SNOW")))
 		{
 			if (pPlot->isCoastalLand())
 			{
@@ -9770,6 +9774,37 @@ int CvPlayer::getFeatureProductionModifier() const
 void CvPlayer::changeFeatureProductionModifier(int iChange)
 {
 	m_iFeatureProductionModifier = (m_iFeatureProductionModifier + iChange);
+}
+
+
+// 1SDAN
+int CvPlayer::getUniqueValue() const
+{
+	return m_iUniqueValue;
+}
+
+
+// 1SDAN
+void CvPlayer::setUniqueValue(int iValue)
+{
+	// Chimu UP: Recieves a Free specialist in the capital for every other improved resource in Northwestern South American.
+	if (getID() == CHIMU)
+	{
+		int iArtists = (m_iUniqueValue - iValue) / 2;
+		if (iArtists != 0 && getCapitalCity() != NULL)
+		{
+			getCapitalCity()->changeFreeSpecialistCount(SPECIALIST_ARTIST, iArtists);
+		}
+	}
+
+	m_iUniqueValue = iValue;
+}
+
+
+// 1SDAN
+void CvPlayer::changeUniqueValue(int iChange)
+{
+	setUniqueValue(getUniqueValue() + iChange);
 }
 
 
@@ -18248,6 +18283,11 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeLevelExperienceModifier(GC.getCivicInfo(eCivic).getLevelExperienceModifier() * iChange); // Leoreth
 	changeUnhappinessDecayModifier(GC.getCivicInfo(eCivic).getUnhappinessDecayModifier() * iChange); // Leoreth
 
+	if (getID() == CELTIA && eCivic == (CivicTypes)GC.getInfoTypeForString("CIVIC_CHIEFDOM"))
+	{
+		updateYield();
+	}
+
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		changeYieldRateModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getYieldModifier(iI) * iChange));
@@ -18576,6 +18616,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMaxPlayerBuildingProductionModifier);
 	pStream->Read(&m_iFreeExperience);
 	pStream->Read(&m_iFeatureProductionModifier);
+	pStream->Read(&m_iUniqueValue); // 1SDAN
 	pStream->Read(&m_iWorkerCostModifier); // Leoreth
 	pStream->Read(&m_iWorkerSpeedModifier);
 	pStream->Read(&m_iImprovementUpgradeRateModifier);
@@ -19124,6 +19165,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iMaxPlayerBuildingProductionModifier);
 	pStream->Write(m_iFreeExperience);
 	pStream->Write(m_iFeatureProductionModifier);
+	pStream->Write(m_iUniqueValue); // Leoreth
 	pStream->Write(m_iWorkerCostModifier); // Leoreth
 	pStream->Write(m_iWorkerSpeedModifier);
 	pStream->Write(m_iImprovementUpgradeRateModifier);

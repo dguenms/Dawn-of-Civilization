@@ -552,5 +552,11 @@
 			<ColorTypeSecondary>COLOR_CIVILIZATION_KHAKI</ColorTypeSecondary>
 			<TextColorType>COLOR_CIVILIZATION_LEMON_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_INUIT</Type>
+			<ColorTypePrimary>COLOR_X_PALETURQUOISE</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_X_SNOW</ColorTypeSecondary>
+			<TextColorType>COLOR_X_PALETURQUOISE</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

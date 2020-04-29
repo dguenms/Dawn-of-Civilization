@@ -2822,7 +2822,8 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 
 	if (isAnimal())
 	{
-		if (pPlot->isOwned())
+		// Animals attack Cities in Alaska, Canada, and Siberia
+		if (pPlot->isOwned() && (pPlot->getRegionID() == REGION_CANADA || pPlot->getRegionID() == REGION_ALASKA || pPlot->getRegionID() == REGION_SIBERIA))
 		{
 			return false;
 		}

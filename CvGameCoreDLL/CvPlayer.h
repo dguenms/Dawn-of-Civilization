@@ -432,6 +432,11 @@ public:
 	int getWorkerCostModifier() const;
 	void changeWorkerCostModifier(int iChange);
 
+	// Leoreth
+	int getUniqueValue() const;
+	void setUniqueValue(int iValue);
+	void changeUniqueValue(int iChange);
+
 	int getWorkerSpeedModifier() const;																																		// Exposed to Python
 	void changeWorkerSpeedModifier(int iChange);
 	
@@ -1412,6 +1417,7 @@ protected:
 	int m_iMaxPlayerBuildingProductionModifier;
 	int m_iFreeExperience;
 	int m_iFeatureProductionModifier;
+	int m_iUniqueValue; // 1SDAN
 	int m_iWorkerCostModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;

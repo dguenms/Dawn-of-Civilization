@@ -104,6 +104,25 @@ lMississippiRiver = [(23, 42), (23, 43), (23, 44), (23, 45), (23, 46), (23, 47),
 lOhioRiver = [(24, 45), (24, 46), (24, 47), (25, 46), (25, 47), (26, 47), (27, 46), (27, 47)]
 lGreatLakes = [(23, 48), (23, 49), (23, 50), (23, 51), (24, 48), (24, 51), (22, 51), (22, 52), (22, 53), (23, 53), (23, 54), (24, 54), (25, 54), (25, 53), (25, 52), (26, 52), (27, 52), (27, 51), (27, 50), (25, 50), (25, 49), (25, 48), (26, 49), (26, 48), (27, 48), (28, 48), (28, 49), (29, 49), (29, 50), (29, 51), (28, 51)]
 
+# first Inuit goal: Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 1300AD
+
+# Hudson Bay
+lKivalliq = [(27, 61), (26, 62), (25, 62), (25, 61), (24, 61), (24, 60), (23, 60), (23, 59), (23, 58), (23, 57), (23, 56), (24, 56), (24, 55), (25, 55), (26, 55), (26, 54), (26, 53), (27, 53), (28, 53), (28, 54), (28, 55), (29, 55), (29, 56), (29, 57), (29, 58), (29, 59), (29, 60)]
+
+# Quebec
+tNunavikTL = (30, 53)
+tNunavikBR = (36, 60)
+tNunavikExceptions = ((30, 53), (30, 54))
+
+# Baffin Island
+tQikiqtaalukTL = (27, 61)
+tQikiqtaalukBR = (34, 67)
+tQikiqtaalukExceptions = ((27, 61))
+
+# Greenland
+tKalaallitNunaatTL = (37, 60)
+tKalaallitNunaatBR = (45, 67)
+tKalaallitNunaatExceptions = ((44, 64), (45, 63), (45, 62))
 
 # first Moorish goal: control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 tIberiaTL = (49, 40)
@@ -889,6 +908,67 @@ def checkTurn(iGameTurn, iPlayer):
 			else: 
 				lose(iTeotihuacan, 2)
 				
+	elif iPlayer == iInuit:
+		# first goal: Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD
+		if isPossible(iInuit, 0):
+			bKivalliq = False
+			bNunavik = False
+			bKalaallitNunaat = False
+			bQikiqtaaluk = False
+			
+			for city in utils.getCityList(iPlayer):
+				tCity = (city.getX(), city.getY)
+				
+				if (tCity in lKivalliq):
+					bKivalliq = True
+				
+				if utils.isPlotInArea(tCity, tNunavikTL, tNunavikBR, tNunavikExceptions):
+					bNunavik = True
+					
+				if utils.isPlotInArea(tCity, tKalaallitNunaatTL, tKalaallitNunaatBR, tKalaallitNunaatExceptions):
+					bKalaallitNunaat = True
+					
+				if utils.isPlotInArea(tCity, tQikiqtaalukTL, tQikiqtaalukBR, tQikiqtaalukExceptions):
+					bQikiqtaaluk = True
+					
+				if bKivalliq and tNunavik and tKalaallitNunaat and tQikiqtaaluk:
+					win(iInuit, 0)
+					break
+					
+		if iGameTurn == getTurnForYear(900):
+			expire(iInuit, 0)
+			
+		
+		# second goal: Acquire 25 Resources
+		if isPossible(iInuit, 1):
+			iNumResources = 0
+			for iBonus in range(iNumBonuses):
+				iNumResources += countResources(iInuit, iBonus)
+				
+				if iNumResources >= 25:
+					win(iInuit, 1)
+					break
+					
+		# third goal: Control and work more Ocean, Coast, and Lake tiles than any other civilization
+		if isPossible(iInuit, 2):
+			iBestPlayerOwner = -1
+			iBestScoreOwner = -1
+			iBestPlayerWorker = -1
+			iBestScoreWorker= -1
+			
+			for iLoopPlayer in range(iNumMajorPlayers):
+				lNumWater = countControlledTerrain(iLoopPlayer, [iCoast, iOcean], True)
+				if lNumWater[0] > iBestScoreOwner or (lNumWater[0] == iBestScoreOwner and iBestPlayerOwner == iPlayer):
+					iBestScoreOwner = lNumWater[0]
+					iBestPlayerOwner = iLoopPlayer
+					
+				if lNumWater[1] > iBestPlayerWorker or (lNumWater[1] == iBestScoreWorker and iBestPlayerWorker == iPlayer):
+					iBestScoreWorker = lNumWater[1]
+					iBestPlayerWorker = iLoopPlayer
+					
+			if iBestPlayerOwner == iPlayer and iBestPlayerWorker == iPlayer:
+				win(iInuit, 2)
+		
 	elif iPlayer == iMississippi:
 		# first goal: Control all tiles along the Mississippi River, Ohio River, and Great Lakes by 500 AD
 		if isPossible(iMississippi, 0):
@@ -2221,15 +2301,15 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1920):
 			expire(iCanada, 0)
 			
-		# second goal: control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
+		# second goal: control or vassalize all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
 		if isPossible(iCanada, 1):
-			iEast, iTotalEast = countControlledTiles(iCanada, tCanadaEastTL, tCanadaEastBR, False, tCanadaEastExceptions)
-			iWest, iTotalWest = countControlledTiles(iCanada, tCanadaWestTL, tCanadaWestBR, False, tCanadaWestExceptions)
+			iEast, iTotalEast = countControlledTiles(iCanada, tCanadaEastTL, tCanadaEastBR, True, tCanadaEastExceptions)
+			iWest, iTotalWest = countControlledTiles(iCanada, tCanadaWestTL, tCanadaWestBR, True, tCanadaWestExceptions)
 			
 			fCanada = (iEast + iWest) * 100.0 / (iTotalEast + iTotalWest)
 			
-			bAllCitiesEast = controlsAllCities(iCanada, tCanadaEastTL, tCanadaEastBR, tCanadaEastExceptions)
-			bAllCitiesWest = controlsAllCities(iCanada, tCanadaWestTL, tCanadaWestBR, tCanadaWestExceptions)
+			bAllCitiesEast = controlsOrVassalizedAllCities(iCanada, tCanadaEastTL, tCanadaEastBR, tCanadaEastExceptions)
+			bAllCitiesWest = controlsOrVassalizedAllCities(iCanada, tCanadaWestTL, tCanadaWestBR, tCanadaWestExceptions)
 			
 			if fCanada >= 90.0 and bAllCitiesEast and bAllCitiesWest:
 				win(iCanada, 1)
@@ -3364,11 +3444,21 @@ def checkReligiousGoal(iPlayer, iGoal):
 			elif paganReligion == "Yoruba":
 				if pPlayer.getNumAvailableBonuses(iIvory) >= 8 and pPlayer.getNumAvailableBonuses(iGems) >= 6:
 					return 1
+			# Midewiwin: Acquire 4 Corn Resources and construct 20 Farms
 			elif paganReligion == "Midewiwin":
 				bCorn = pPlayer.getNumAvailableBonuses(iCorn) >= 4
 				bFarms = countImprovements(iPlayer, iFarm) >= 20
 				
 				if bCorn and bFarms:
+					return 1
+					
+			# Angakkuq: Acquire and work 3 crab, fish, and whale resources
+			elif paganReligion == "Angakkuq":
+				bCrab = countResources(iPlayer, iCrab) >= 3
+				bFish = countResources(iPlayer, iFish) >= 3
+				bWhale = countResources(iPlayer, iWhales) >= 3
+				
+				if bCrab and bFish and bWhale:
 					return 1
 			
 		# third Pagan goal: don't allow more than half of your cities to have a religion
@@ -3753,6 +3843,11 @@ def isAreaFreeOfCivs(lPlots, lCivs):
 	for city in utils.getAreaCities(lPlots):
 		if city.getOwner() in lCivs: return False
 	return True
+
+def areRegionsFreeOfCivs(lRegions, lCivs):
+	for city in utils.getRegionCities(lRegions):
+		if city.getOwner() in lCivs: return False
+	return True
 	
 def isAreaOnlyCivs(tTopLeft, tBottomRight, lCivs):
 	for city in utils.getAreaCities(utils.getPlotList(tTopLeft, tBottomRight)):
@@ -4033,6 +4128,15 @@ def controlsAllCities(iPlayer, tTopLeft, tBottomRight, tExceptions=()):
 		if city.getOwner() != iPlayer: return False
 	return True
 	
+def controlsOrVassalizedAllCities(iPlayer, tTopLeft, tBottomRight, tExceptions=()):
+	lValidOwners = [iPlayer]
+	for iLoopPlayer in range(iNumPlayers):
+		if gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
+			lValidOwners.append(iLoopPlayer)
+	for city in utils.getAreaCities(utils.getPlotList(tTopLeft, tBottomRight, tExceptions)):
+		if not city.getOwner() in lValidOwners: return False
+	return True
+	
 def isAtPeace(iPlayer):
 	for iLoopPlayer in range(iNumPlayers):
 		if gc.getPlayer(iLoopPlayer).isAlive() and gc.getTeam(iPlayer).isAtWar(iLoopPlayer):
@@ -4228,15 +4332,24 @@ def countUnitsOfLevel(iPlayer, iLevel):
 			
 	return iCount
 	
-def countControlledTerrain(iPlayer, iTerrain):
+def countControlledTerrain(iPlayer, lTerrains, bCountWorked = False):
 	iCount = 0
+	iWorked = 0
+	
+	if isinstance(lTerrains, int):
+		lTerrains = [lTerrains]
 	
 	for (x, y) in utils.getWorldPlotsList():
 		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer and plot.getTerrainType() == iTerrain:
+		if plot.getOwner() == iPlayer and plot.getTerrainType() in lTerrains:
 			iCount += 1
+			if bCountWorked and plot.isBeingWorked():
+				iWorked += 1
 			
-	return iCount
+	if bCountWorked:
+		return (iCount, iWorked) 
+	else:
+		return iCount
 	
 def countControlledFeatures(iPlayer, iFeature, iImprovement):
 	iCount = 0
@@ -4245,6 +4358,17 @@ def countControlledFeatures(iPlayer, iFeature, iImprovement):
 		plot = gc.getMap().plot(x, y)
 		if plot.getOwner() == iPlayer and plot.getFeatureType() == iFeature and plot.getImprovementType() == iImprovement:
 			iCount += 1
+			
+	return iCount
+	
+def countControlledResources(iPlayer, iResource, iImprovement, iWorkedOnly = False):
+	iCount = 0
+	
+	for (x, y) in utils.getWorldPlotsList():
+		plot = gc.getMap().plot(x, y)
+		if plot.getOwner() == iPlayer and plot.getResourceType() == iResource and plot.getImprovementType() == iImprovement:
+			if (not iWorkedOnly) or plot.isBeingWorked():
+				iCount += 1
 			
 	return iCount
 	
@@ -4717,6 +4841,14 @@ def getPaganGoalHelp(iPlayer):
 		
 		return getIcon(iNumCorn >= 4) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iCorn).getText().lower(), iNumCorn, 4)) + ' ' + getIcon(iNumFarms >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_IMPROVEMENT_FARM", iNumFarms, 20))
 
+	elif paganReligion == "Angakkuq":
+		iNumCrabs = countResources(iPlayer, iCrab)
+		iNumFish = countResources(iPlayer, iFish)
+		iNumWhales = countResources(iPlayer, iWhales)
+		
+		return getIcon(iNumCrabs >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iCrab).getText().lower(), iNumCrabs, 3)) + ' ' + getIcon(iNumFish >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iFish).getText().lower(), iNumFish, 3)) + ' ' + getIcon(iNumWhales >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iWhales).getText().lower(), iNumWhales, 3))
+		
+
 def getUHVHelp(iPlayer, iGoal):
 	"Returns an array of help strings used by the Victory Screen table"
 
@@ -5029,6 +5161,58 @@ def getUHVHelp(iPlayer, iGoal):
 			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
 			aHelp.append(getIcon(percentMesoamerica >= 99.5) + localText.getText("TXT_KEY_VICTORY_CONTROL_TEOTIHUACAN", (str(u"%.2f%%" % percentMesoamerica), str(100))))
 	
+	elif iPlayer == iInuit:
+		if iGoal == 0:
+			bKivalliq = False
+			bNunavik = False
+			bKalaallitNunaat = False
+			bQikiqtaaluk = False
+			
+			for city in utils.getCityList(iPlayer):
+				tCity = (city.getX(), city.getY())
+				
+				if (tCity in lKivalliq):
+					bKivalliq = True
+				
+				if utils.isPlotInArea(tCity, tNunavikTL, tNunavikBR, tNunavikExceptions):
+					bNunavik = True
+					
+				if utils.isPlotInArea(tCity, tKalaallitNunaatTL, tKalaallitNunaatBR, tKalaallitNunaatExceptions):
+					bKalaallitNunaat = True
+					
+				if utils.isPlotInArea(tCity, tQikiqtaalukTL, tQikiqtaalukBR, tQikiqtaalukExceptions):
+					bQikiqtaaluk = True
+					
+				if bKivalliq and bNunavik and bKalaallitNunaat and bQikiqtaaluk:
+					break
+					
+			aHelp.append(getIcon(bKivalliq) + localText.getText("TXT_KEY_VICTORY_KIVALLIQ", ()) + ' ' + getIcon(bKalaallitNunaat) + localText.getText("TXT_KEY_VICTORY_KALAALLIT_NUNAAT", ()) + ' ' +  getIcon(bQikiqtaaluk) + localText.getText("TXT_KEY_VICTORY_QIKIQTAALUK", ()) + ' ' + getIcon(bNunavik) + localText.getText("TXT_KEY_VICTORY_NUNAVIK", ()))
+			
+		if iGoal == 1:
+			iNumResources = 0
+			for iBonus in range(iNumBonuses):
+				iNumResources += countResources(iInuit, iBonus)
+			
+			aHelp.append(getIcon(iNumResources >= 25) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_VICTORY_RESOURCES", iNumResources, 25)))
+			
+		if iGoal == 2:
+			iBestPlayerOwner = -1
+			iBestScoreOwner = -1
+			iBestPlayerWorker = -1
+			iBestScoreWorker= -1
+			
+			for iLoopPlayer in range(iNumMajorPlayers):
+				lNumWater = countControlledTerrain(iLoopPlayer, [iCoast, iOcean], True)
+				if lNumWater[0] > iBestScoreOwner or (lNumWater[0] == iBestScoreOwner and iBestPlayerOwner == iPlayer):
+					iBestScoreOwner = lNumWater[0]
+					iBestPlayerOwner = iLoopPlayer
+					
+				if lNumWater[1] > iBestPlayerWorker or (lNumWater[1] == iBestScoreWorker and iBestPlayerWorker == iPlayer):
+					iBestScoreWorker = lNumWater[1]
+					iBestPlayerWorker = iLoopPlayer
+					
+			aHelp.append(getIcon(iBestPlayerOwner == iPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_WATER_OWN_CIV", (gc.getPlayer(iBestPlayerOwner).getCivilizationShortDescription(0),)) + " (" + str(iBestScoreOwner) + ")" + ' ' + getIcon(iBestPlayerWorker == iLoopPlayer) + localText.getText("TXT_KEY_VICTORY_MOST_WATER_WORK_CIV", (gc.getPlayer(iBestPlayerWorker).getCivilizationShortDescription(0),)) + " (" + str(iBestScoreWorker) + ")")
+			
 	elif iPlayer == iMississippi:
 		if iGoal == 0:
 			bMississippiRiver = isCultureControlled(iMississippi, lMississippiRiver, True, True)
@@ -5036,13 +5220,13 @@ def getUHVHelp(iPlayer, iGoal):
 			bGreatLakes = isCultureControlled(iMississippi, lGreatLakes, True, True)
 			
 			aHelp.append(getIcon(bMississippiRiver) + localText.getText("TXT_KEY_VICTORY_MISSISSIPPI_RIVER", ()) + ' ' + getIcon(bOhioRiver) + localText.getText("TXT_KEY_VICTORY_OHIO_RIVER", ()) + ' ' + getIcon(bGreatLakes) + localText.getText("TXT_KEY_VICTORY_GREAT_LAKES", ()))
-		if iGoal == 1:
+		elif iGoal == 1:
 			bSerpentMound = data.getWonderBuilder(iSerpentMound) == iMississippi
 			iNumEffigyMound = getNumBuildings(iPlayer, iEffigyMound)
 			
 			aHelp.append(getIcon(bSerpentMound) + localText.getText("TXT_KEY_BUILDING_SERPENT_MOUND", ()) + ' ' + getIcon(iNumEffigyMound >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND", iNumEffigyMound, 7)))
 			
-		if iGoal == 2:
+		elif iGoal == 2:
 			bPalace = isBuildingInCity(Areas.getCapital(iPlayer, True), iPalace)
 			iNumMerchant = countCitySpecialists(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()), iSpecialistGreatMerchant) >= 2
 			
@@ -5805,10 +5989,10 @@ def getUHVHelp(iPlayer, iGoal):
 			bPacific = capital and isConnectedByRailroad(iCanada, (capital.getX(), capital.getY()), lPacificCoast)
 			aHelp.append(getIcon(bAtlantic) + localText.getText("TXT_KEY_VICTORY_ATLANTIC_RAILROAD", ()) + ' ' + getIcon(bPacific) + localText.getText("TXT_KEY_VICTORY_PACIFIC_RAILROAD", ()))
 		elif iGoal == 1:
-			iCanadaWest, iTotalCanadaWest = countControlledTiles(iCanada, tCanadaWestTL, tCanadaWestBR, False, tCanadaWestExceptions)
-			iCanadaEast, iTotalCanadaEast = countControlledTiles(iCanada, tCanadaEastTL, tCanadaEastBR, False, tCanadaEastExceptions)
+			iCanadaWest, iTotalCanadaWest = countControlledTiles(iCanada, tCanadaWestTL, tCanadaWestBR, True, tCanadaWestExceptions)
+			iCanadaEast, iTotalCanadaEast = countControlledTiles(iCanada, tCanadaEastTL, tCanadaEastBR, True, tCanadaEastExceptions)
 			fCanada = (iCanadaWest + iCanadaEast) * 100.0 / (iTotalCanadaWest + iTotalCanadaEast)
-			bAllCities = controlsAllCities(iCanada, tCanadaWestTL, tCanadaWestBR, tCanadaWestExceptions) and controlsAllCities(iCanada, tCanadaEastTL, tCanadaEastBR, tCanadaEastExceptions)
+			bAllCities = controlsOrVassalizedAllCities(iCanada, tCanadaWestTL, tCanadaWestBR, tCanadaWestExceptions) and controlsOrVassalizedAllCities(iCanada, tCanadaEastTL, tCanadaEastBR, tCanadaEastExceptions)
 			aHelp.append(getIcon(fCanada >= 90.0) + localText.getText("TXT_KEY_VICTORY_CONTROL_CANADA", (str(u"%.2f%%" % fCanada), str(90))) + ' ' + getIcon(bAllCities) + localText.getText("TXT_KEY_VICTORY_CONTROL_CANADA_CITIES", ()))
 		elif iGoal == 2:
 			iPeaceDeals = data.iCanadianPeaceDeals

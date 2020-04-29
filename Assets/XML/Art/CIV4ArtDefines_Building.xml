@@ -3827,5 +3827,25 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Midewiwin/Midewiwin.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_INUIT_IGLOO</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>.8</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Igloo/Hut.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Igloo/UPA_Igloo.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ANGAKKUQ_QARGI</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Qargi/kurgan.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Qargi/Button_Kurgan.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

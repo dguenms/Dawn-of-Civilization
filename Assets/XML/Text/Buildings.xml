@@ -3381,4 +3381,28 @@
 		<Italian>Midewigaan</Italian>
 		<Spanish>Midewigaan</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INUIT_IGLOO</Tag>
+		<English>Igloo</English>
+		<French>Igloo</French>
+		<German>Igloo</German>
+		<Italian>Igloo</Italian>
+		<Spanish>Igloo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INUIT_IGLOO_HELP</Tag>
+		<English>[ICON_BULLET]+1 Food and Production from Ice and Tundra</English>
+		<French>[ICON_BULLET]+1 Food and Production from Ice and Tundra</French>
+		<German>[ICON_BULLET]+1 Food and Production from Ice and Tundra</German>
+		<Italian>[ICON_BULLET]+1 Food and Production from Ice and Tundra</Italian>
+		<Spanish>[ICON_BULLET]+1 Food and Production from Ice and Tundra</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANGAKKUQ_QARGI</Tag>
+		<English>Qargi</English>
+		<French>Qargi</French>
+		<German>Qargi</German>
+		<Italian>Qargi</Italian>
+		<Spanish>Qargi</Spanish>
+	</TEXT>
 </Civ4GameText>

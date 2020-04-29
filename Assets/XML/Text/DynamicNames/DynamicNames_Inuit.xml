@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_DESC</Tag>
+		<English>The Inuit</English>
+		<French>The Inuit</French>
+		<German>The Inuit</German>
+		<Italian>The Inuit</Italian>
+		<Spanish>The Inuit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_PEOPLES</Tag>
+		<English>The Inuit</English>
+		<French>The Inuit</French>
+		<German>The Inuit</German>
+		<Italian>The Inuit</Italian>
+		<Spanish>The Inuit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_DEFAULT</Tag>
+		<English>%s1 %s2</English>
+		<French>%s1 %s2</French>
+		<German>%s1 %s2</German>
+		<Italian>%s1 %s2</Italian>
+		<Spanish>%s1 %s2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_ADJECTIVE</Tag>
+		<English>Inuit</English>
+		<French>Inuit</French>
+		<German>Inuit</German>
+		<Italian>Inuit</Italian>
+		<Spanish>Inuit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_BERING_SEA</Tag>
+		<English>Bering Sea</English>
+		<French>Bering Sea</French>
+		<German>Bering Sea</German>
+		<Italian>Bering Sea</Italian>
+		<Spanish>Bering Sea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_DORSET</Tag>
+		<English>Dorset</English>
+		<French>Dorset</French>
+		<German>Dorset</German>
+		<Italian>Dorset</Italian>
+		<Spanish>Dorset</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_THULE</Tag>
+		<English>Thule</English>
+		<French>Thule</French>
+		<German>Thule</German>
+		<Italian>Thule</Italian>
+		<Spanish>Thule</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_COUNCIL</Tag>
+		<English>%s2 Circumpolar Council</English>
+		<French>%s2 Circumpolar Council</French>
+		<German>%s2 Circumpolar Council</German>
+		<Italian>%s2 Circumpolar Council</Italian>
+		<Spanish>%s2 Circumpolar Council</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INUIT_SHORT_DESC</Tag>
+		<English>Inuit</English>
+		<French>Inuit</French>
+		<German>Inuit</German>
+		<Italian>Inuit</Italian>
+		<Spanish>Inuit</Spanish>
+	</TEXT>
+</Civ4GameText>

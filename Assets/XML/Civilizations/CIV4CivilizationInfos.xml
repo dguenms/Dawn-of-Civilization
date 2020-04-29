@@ -3166,6 +3166,111 @@
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_INUIT</Type>
+			<Description>TXT_KEY_CIV_INUIT_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_INUIT_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_INUIT_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_INUIT_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_INUIT</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_INUIT</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_NATIVE_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MISSISSIPPIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANGAKKUQ</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Angakkuq.dds</PaganReligionButton>
+			<Identifier>INU</Identifier>
+			<StartingYear>-200</StartingYear>
+			<LoadingTimes>
+				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
+			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>1</Start>
+			</Rating>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Iqaluit</City>
+				<City>Nuuk</City>
+				<City>Sisimiut</City>
+				<City>Inuvik</City>
+				<City>Mamterilleq</City>
+				<City>Ilulissat</City>
+				<City>Kuujjuaq</City>
+				<City>Kingiqiniq</City>
+				<City>Kotzebue</City>
+				<City>Qaqortoq</City>
+				<City>Behchoko</City>
+				<City>Aasiaat</City>
+				<City>Qamanituaq</City>
+				<City>Maniitsoq</City>
+				<City>Igloolik</City>
+				<City>Tasiilaq</City>
+				<City>Iqaluqtuuttiaq</City>
+				<City>Puvirnituq</City>
+				<City>Paamiut</City>
+				<City>Kigluktuk</City>
+				<City>Salluit</City>
+				<City>Narsaq</City>
+				<City>Pagnirtung</City>
+				<City>Mittimatalik</City>
+				<City>Nanortalik</City>
+				<City>Tuktoyaktuk</City>
+				<City>Uummannaq</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
+					<BuildingType>BUILDING_INUIT_IGLOO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANGAKKUQ_QARGI</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<UnitType>UNIT_INUIT_DOG_SLED</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_AUA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_NATIVE_AMERICA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_NATIVE_AMERICA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_IRAN</Type>
 			<Description>TXT_KEY_CIV_IRAN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_IRAN_SHORT_DESC</ShortDescription>
@@ -4757,7 +4862,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_NATIVE_AMERICA</DerivativeCiv>
+			<DerivativeCiv>NONE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_NATIVE_AMERICA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_NATIVE_AMERICA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>

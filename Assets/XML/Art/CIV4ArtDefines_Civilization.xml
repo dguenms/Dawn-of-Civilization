@@ -492,5 +492,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Mississippi.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_INUIT</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Inuit.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Inuit.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

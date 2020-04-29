@@ -76,6 +76,10 @@ class Resources:
 		
 	def checkTurn(self, iGameTurn):
 		
+		if data.iRomanPigs == 1:
+			self.doRomanPigs()
+			data.iRomanPigs = 0
+		
 		# Gujarati horses appear later so Harappa cannot benefit too early
 		if iGameTurn == getTurnForYear(-1000):
 			self.createResource(88, 37, iHorse)
@@ -131,6 +135,7 @@ class Resources:
 				
 			if utils.getHumanID() == iVikings:
 				gc.getMap().plot(41, 58).setFeatureType(-1, 0)
+				gc.getMap().plot(42, 60).setFeatureType(-1, 0)
 		
 		# Leoreth: for respawned Egypt
 		elif iGameTurn == getTurnForYear(900):
@@ -198,6 +203,9 @@ class Resources:
 			
 		elif (iGameTurn == getTurnForYear(1600)):
 			self.createResource(25, 47, iIron) # Indianapolis
+			self.createResource(30, 54, iIron) # Quebec
+			self.createResource(22, 53, iCopper) # Kenora
+			self.createResource(12, 55, iCopper) # Williams Lake
 			
 			self.createResource(29, 52, iCow) # Montreal
 			self.createResource(18, 53, iCow) # Alberta

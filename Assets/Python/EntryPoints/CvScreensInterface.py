@@ -1309,6 +1309,19 @@ def getUHVTileInfo(argsList):
 		elif (x, y) in vic.lOhioRiver:
 			return 97
 			
+	elif iPlayer == iInuit:
+		if (x, y) in vic.lKivalliq:
+			return 105
+			
+		if utils.isPlotInArea((x, y), vic.tNunavikTL, vic.tNunavikBR, vic.tNunavikExceptions):
+			return 106
+			
+		if utils.isPlotInArea((x, y), vic.tQikiqtaalukTL, vic.tQikiqtaalukBR, vic.tQikiqtaalukExceptions):
+			return 107
+			
+		if utils.isPlotInArea((x, y), vic.tKalaallitNunaatTL, vic.tKalaallitNunaatBR, vic.tKalaallitNunaatExceptions):
+			return 108
+			
 		# continue with 102
 	return -1
 		

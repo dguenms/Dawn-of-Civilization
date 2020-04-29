@@ -773,4 +773,8 @@
 		<Tag>TXT_KEY_DOM_HOPEWELL</Tag>
 		<English>It is the year 100 BC. The consolidation of the Ohio Hopewell tradition marks the first major step towards the development of complex civilization north of the Mexican Altiplano...</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_INUIT</Tag>
+		<English>It is the year 200 BC. The Inuit's arrival to the Bering Strait marks the beginning of what will become one of the longest lasting cultures of the arctic.</English>
+	</TEXT>
 </Civ4GameText>

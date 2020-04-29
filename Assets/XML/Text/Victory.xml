@@ -547,11 +547,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAN2</Tag>
-		<English>Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</English>
-		<French>Contr&#244;ler toutes les villes et 90% du territoire du Canada sans jamais conqu&#233;rir une ville avant 1950 ap. J.-C.</French>
-		<German>Kontrollieren Sie bis zum Jahr 1950 n. Chr. alle St&#228;dte und 90% des Gebiets in Kanada ohne jemals eine Stadt zu erobern</German>
-		<Italian>Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</Italian>
-		<Spanish>Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</Spanish>
+		<English>Control or vassalize all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</English>
+		<French>Contr&#244;ler ou vassaliser toutes les villes et 90% du territoire du Canada sans jamais conqu&#233;rir une ville avant 1950 ap. J.-C.</French>
+		<German>Kontrollieren oder vassalisieren Sie bis zum Jahr 1950 n. Chr. alle St&#228;dte und 90% des Gebiets in Kanada ohne jemals eine Stadt zu erobern</German>
+		<Italian>Control or vassalize all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</Italian>
+		<Spanish>Control or vassalize all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAN3_TITLE</Tag>
@@ -3955,6 +3955,14 @@
 		<Spanish>Acquire 4 Corn Resources and construct 20 Farms</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_ANGAKKUQ</Tag>
+		<English>Acquire and work 3 Crab, Whale, and Fish Resources</English>
+		<French>Acquire and work 3 Crab, Whale, and Fish Resources</French>
+		<German>Acquire and work 3 Crab, Whale, and Fish Resources</German>
+		<Italian>Acquire and work 3 Crab, Whale, and Fish Resources</Italian>
+		<Spanish>Acquire and work 3 Crab, Whale, and Fish Resources</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL3</Tag>
 		<English>Don't allow more than half of your cities to have a religion</English>
 		<French>Ne pas permettre &#224; plus de la moiti&#233; de vos villes d'avoir une religion</French>
@@ -7077,5 +7085,117 @@
 		<German>Great Lakes</German>
 		<Italian>Great Lakes</Italian>
 		<Spanish>Great Lakes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INU1_TITLE</Tag>
+		<English>The Dorset</English>
+		<French>The Dorset</French>
+		<German>The Dorset</German>
+		<Italian>The Dorset</Italian>
+		<Spanish>The Dorset</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INU1</Tag>
+		<English>Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD</English>
+		<French>Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD</French>
+		<German>Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD</German>
+		<Italian>Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD</Italian>
+		<Spanish>Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INU2_TITLE</Tag>
+		<English>Bounty of the North</English>
+		<French>Bounty of the North</French>
+		<German>Bounty of the North</German>
+		<Italian>Bounty of the North</Italian>
+		<Spanish>Bounty of the North</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INU2</Tag>
+		<English>Acquire 25 Resources</English>
+		<French>Acquire 25 Resources</French>
+		<German>Acquire 25 Resources</German>
+		<Italian>Acquire 25 Resources</Italian>
+		<Spanish>Acquire 25 Resources</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INU3_TITLE</Tag>
+		<English>Bladder Festival</English>
+		<French>Bladder Festival</French>
+		<German>Bladder Festival</German>
+		<Italian>Bladder Festival</Italian>
+		<Spanish>Bladder Festival</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INU3</Tag>
+		<English>Control and work more Ocean, Coast, and Lake tiles than any other civilization</English>
+		<French>Control and work more Ocean, Coast, and Lake tiles than any other civilization</French>
+		<German>Control and work more Ocean, Coast, and Lake tiles than any other civilization</German>
+		<Italian>Control and work more Ocean, Coast, and Lake tiles than any other civilization</Italian>
+		<Spanish>Control and work more Ocean, Coast, and Lake tiles than any other civilization</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_KIVALLIQ</Tag>
+		<English>Kivalliq</English>
+		<French>Kivalliq</French>
+		<German>Kivalliq</German>
+		<Italian>Kivalliq</Italian>
+		<Spanish>Kivalliq</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUNAVIK</Tag>
+		<English>Nunavik</English>
+		<French>Nunavik</French>
+		<German>Nunavik</German>
+		<Italian>Nunavik</Italian>
+		<Spanish>Nunavik</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_KALAALLIT_NUNAAT</Tag>
+		<English>Kalaallit Nunaat</English>
+		<French>Kalaallit Nunaat</French>
+		<German>Kalaallit Nunaat</German>
+		<Italian>Kalaallit Nunaat</Italian>
+		<Spanish>Kalaallit Nunaat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_QIKIQTAALUK</Tag>
+		<English>Qikiqtaaluk</English>
+		<French>Qikiqtaaluk</French>
+		<German>Qikiqtaaluk</German>
+		<Italian>Qikiqtaaluk</Italian>
+		<Spanish>Qikiqtaaluk</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RESOURCES</Tag>
+		<English>Resources</English>
+		<French>Resources</French>
+		<German>Resources</German>
+		<Italian>Resources</Italian>
+		<Spanish>Resources</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_WATER_OWN_CIV</Tag>
+		<English>Civilization with the most Coast, Ocean, and Lakes: %s1</English>
+		<French>Civilization with the most Coast, Ocean, and Lakes: %s1</French>
+		<German>Civilization with the most Coast, Ocean, and Lakes: %s1</German>
+		<Italian>Civilization with the most Coast, Ocean, and Lakes: %s1</Italian>
+		<Spanish>Civilization with the most Coast, Ocean, and Lakes: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_WATER_WORK_CIV</Tag>
+		<English>Civilization working the most Coast, Ocean, and Lakes: %s1</English>
+		<French>Civilization working the most Coast, Ocean, and Lakes: %s1</French>
+		<German>Civilization working the most Coast, Ocean, and Lakes: %s1</German>
+		<Italian>Civilization working the most Coast, Ocean, and Lakes: %s1</Italian>
+		<Spanish>Civilization working the most Coast, Ocean, and Lakes: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WORKED_RESOURCES</Tag>
+		<English>Worked %s1 resources: %d2 / %d3d</English>
+		<French>Worked %s1 resources: %d2 / %d3d</French>
+		<German>Worked %s1 resources: %d2 / %d3d</German>
+		<Italian>Worked %s1 resources: %d2 / %d3d</Italian>
+		<Spanish>Worked %s1 resources: %d2 / %d3d</Spanish>
 	</TEXT>
 </Civ4GameText>

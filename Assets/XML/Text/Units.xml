@@ -3925,4 +3925,20 @@
 		<Italian>Falcon Dancer</Italian>
 		<Spanish>Falcon Dancer</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INUIT_DOG_SLED</Tag>
+		<English>Inuit Dog Sled</English>
+		<French>Inuit Dog Sled</French>
+		<German>Inuit Dog Sled</German>
+		<Italian>Inuit Dog Sled</Italian>
+		<Spanish>Inuit Dog Sled</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INUIT_DOG_SLED_HELP</Tag>
+		<English>[ICON_BULLET]Can settle on Ice (along Coast)</English>
+		<French>[ICON_BULLET]Can settle on Ice (along Coast)</French>
+		<German>[ICON_BULLET]Can settle on Ice (along Coast)</German>
+		<Italian>[ICON_BULLET]Can settle on Ice (along Coast)</Italian>
+		<Spanish>[ICON_BULLET]Can settle on Ice (along Coast)</Spanish>
+	</TEXT>
 </Civ4GameText>
