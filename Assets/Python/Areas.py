@@ -120,7 +120,7 @@ tCapitals = (
 (101, 37), # Co Loa (Hanoi)
 (18, 37), # Tenotihuacan (Tollan)
 (4, 59), # Naparyaarmiut
-(27, 47), # Portsmouth
+(27, 47), # Erie
 (109, 46), # Seoul
 (30, 20), # Tiwanaku
 (68, 45), # Constantinople
@@ -181,7 +181,7 @@ iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iCarthage : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
-iMississippi : (22, 48), # Cahokia
+iMississippi : (23, 45), # Cahokia
 iKazakh : (84, 52), # Astana
 iMaya : (27, 29),	# Bogota (Colombia)
 iTamils : (90, 30),	# Vijayanagara

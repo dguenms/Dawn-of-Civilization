@@ -875,9 +875,15 @@ class RiseAndFall:
 					utils.setReborn(iMississippi, True)
 					dc.nameChange(iMississippi)
 					dc.adjectiveChange(iMississippi)
-				#1SDAN: Include both Cahokia sites
-				if gc.getMap().plot(Areas.getCapital(iMississippi, True)[0]+1, Areas.getCapital(iMississippi, True)[1]).isCity():
-					utils.moveCapital(iMississippi, (Areas.getCapital(iMississippi, True)[0]+1, Areas.getCapital(iMississippi, True)[1]))
+				#1SDAN: Include all three Cahokia sites
+				if gc.getMap().plot(Areas.getCapital(iMississippi, True)[0], Areas.getCapital(iMississippi, True)[1]+1).isCity():
+					utils.moveCapital(iMississippi, (Areas.getCapital(iMississippi, True)[0], Areas.getCapital(iMississippi, True)[1]+1))
+					utils.setReborn(iMississippi, True)
+					dc.nameChange(iMississippi)
+					dc.adjectiveChange(iMississippi)
+				#1SDAN: Include all three Cahokia sites
+				if gc.getMap().plot(Areas.getCapital(iMississippi, True)[0], Areas.getCapital(iMississippi, True)[1]+2).isCity():
+					utils.moveCapital(iMississippi, (Areas.getCapital(iMississippi, True)[0], Areas.getCapital(iMississippi, True)[1]+2))
 					utils.setReborn(iMississippi, True)
 					dc.nameChange(iMississippi)
 					dc.adjectiveChange(iMississippi)
