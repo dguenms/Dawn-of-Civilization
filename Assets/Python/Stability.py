@@ -426,7 +426,17 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		gc.getPlayer(iBarbarian).disband(city)
 		plot.setCulture(iPlayer, 0, True)
 		if iPlayer in [iMississippi, iNorteChico]:
-			plot.setImprovementType(-1)
+			if iPlayer in [iMississippi]:
+				if plot.getImprovementType() >= iCityRuins and not (plot.isPeak() and plot.isWater() and plot.getTerrainType() in [iDesert, iSnow, iMarsh]):
+					if plot.getFeatureType() == -1:
+						plot.setFeatureType(iForest, 0)
+				if not plot.getImprovementType() in [iCityRuins, iHut]:
+					plot.setImprovementType(-1)
+				if plot.getImprovementType() in [iCityRuins]:
+					plot.setImprovementType(iHut)
+			else:
+				plot.setImprovementType(-1)
+				
 			plot.setRouteType(-1)
 	
 	for city in lCededCities:

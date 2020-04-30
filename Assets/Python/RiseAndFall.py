@@ -2035,7 +2035,8 @@ class RiseAndFall:
 				iNewWorldCiv = iTeamX
 				iOldWorldCiv = iHasMetTeamY
 				
-				if pMississippi.isAlive() and not pMississippi.isHuman():
+				if pMississippi.isAlive() and not pMississippi.isHuman() and not data.bMississippiCollapse:
+					data.bMississippiCollapse = True
 					sta.completeCollapse(iMississippi)
 				iIndex = lCivBioNewWorld.index(iNewWorldCiv)
 				

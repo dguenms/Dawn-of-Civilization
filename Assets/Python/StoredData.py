@@ -183,6 +183,8 @@ class GameData:
 		self.bCheatMode = False
 		
 		self.iRomanPigs = -1
+		self.bMississippiCollapse = False
+		self.bPersianCollapse = False
 		
 		# Religions
 		

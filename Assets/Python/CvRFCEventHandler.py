@@ -135,9 +135,10 @@ class CvRFCEventHandler:
 			# Spread Roman pigs on Celtia's complete conquest
 			if iOwner == iCeltia and pCeltia.getNumCities() == 0 and data.iRomanPigs < 0:
 				data.iRomanPigs = 1
-	
-		if utils.getScenario() == i600AD and iOwner == iPersia and not utils.isReborn(iOwner):
-			sta.completeCollapse(iOwner)
+			
+			if utils.getScenario() == i600AD and iOwner == iPersia and not utils.isReborn(iOwner) and not data.bPersianCollapse:
+				data.bPersianCollapse = True
+				sta.completeCollapse(iOwner)
 			
 		if iPlayer == iArabia:
 			self.up.arabianUP(city)
