@@ -1,5 +1,5 @@
-from Consts import *
 from Core import *
+from Events import handler
 
 def getMap(iPlayer):
 	iCiv = civ(iPlayer)
@@ -31,7 +31,8 @@ def applyMap(iPlayer):
 			
 def updateMap(iPlayer):
 	applyMap(iPlayer)
-	
+
+@handler("GameStart")
 def init():
 	for iPlayer in players.major():
 		updateMap(iPlayer)

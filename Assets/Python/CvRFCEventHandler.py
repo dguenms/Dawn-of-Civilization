@@ -95,25 +95,25 @@ class CvRFCEventHandler:
 	def onGameStart(self, argsList):
 		'Called at the start of the game'
 		
-		data.setup()
+		# data.setup()
 
-		self.rnf.setup()
-		self.pla.setup()
-		dc.setup()
-		self.aiw.setup()
-		self.up.setup()
+		# self.rnf.setup()
+		# self.pla.setup()
+		# dc.setup()
+		# self.aiw.setup()
+		# self.up.setup()
 		
-		vic.setup()
-		cong.setup()
+		# vic.setup()
+		# cong.setup()
 		
 		# Leoreth: set DLL core values
-		Modifiers.init()
-		Setup.init()
-		SettlerMaps.init()
-		WarMaps.init()
-		RegionMap.init()
-		Civilizations.init()
-		AIParameters.init()
+		# Modifiers.init()
+		# Setup.init()
+		# SettlerMaps.init()
+		# WarMaps.init()
+		# RegionMap.init()
+		# Civilizations.init()
+		# AIParameters.init()
 		
 		return 0
 
@@ -123,99 +123,99 @@ class CvRFCEventHandler:
 		iCiv = civ(iPlayer)
 		tCity = (city.getX(), city.getY())
 		
-		cnm.onCityAcquired(city, iPlayer)
-		periods.onCityAcquired(iPlayer, city, bConquest)
+		# cnm.onCityAcquired(city, iPlayer)
+		# periods.onCityAcquired(iPlayer, city, bConquest)
 		
-		if bConquest:
-			sta.onCityAcquired(city, iOwner, iPlayer)
+		#if bConquest:
+		#	sta.onCityAcquired(city, iOwner, iPlayer)
 			
-		if iCiv == iArabia:
-			self.up.arabianUP(city)
+		#if iCiv == iArabia:
+		#	self.up.arabianUP(city)
 			
-		if iCiv == iMongols and bConquest and not player(iPlayer).isHuman():
-			self.up.mongolUP(city)
+		#if iCiv == iMongols and bConquest and not player(iPlayer).isHuman():
+		#	self.up.mongolUP(city)
 		
 		# relocate capitals
-		if not player(iPlayer).isHuman():
-			if iCiv == iOttomans and tCity == (68, 45):
-				moveCapital(iPlayer, tCity) # Kostantiniyye
-			elif iCiv == iMongols and tCity == (102, 47):
-				moveCapital(iPlayer, tCity) # Khanbaliq	
-			elif iCiv == iTurks and isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
-				capital = player(iPlayer).getCapitalCity()
-				if not capital in plots.core(iPersia):
-					newCapital = cities.core(iPersia).owner(iPlayer).random()
-					if newCapital:
-						moveCapital(iPlayer, (newCapital.getX(), newCapital.getY()))
+		#if not player(iPlayer).isHuman():
+		#	if iCiv == iOttomans and tCity == (68, 45):
+		#		moveCapital(iPlayer, tCity) # Kostantiniyye
+		#	elif iCiv == iMongols and tCity == (102, 47):
+		#		moveCapital(iPlayer, tCity) # Khanbaliq	
+		#	elif iCiv == iTurks and isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
+		#		capital = player(iPlayer).getCapitalCity()
+		#		if not capital in plots.core(iPersia):
+		#			newCapital = cities.core(iPersia).owner(iPlayer).random()
+		#			if newCapital:
+		#				moveCapital(iPlayer, (newCapital.getX(), newCapital.getY()))
 				
 				
 		# remove slaves if unable to practice slavery
-		if not player(iPlayer).canUseSlaves():
-			city.setFreeSpecialistCount(iSpecialistSlave, 0)
-		else:
-			freeSlaves(city, iPlayer)
+		#if not player(iPlayer).canUseSlaves():
+		#	city.setFreeSpecialistCount(iSpecialistSlave, 0)
+		#else:
+		#	freeSlaves(city, iPlayer)
 			
-		if city.isCapital():
-			if city.isHasRealBuilding(iAdministrativeCenter): 
-				city.setHasRealBuilding(iAdministrativeCenter, False)	
+		# if city.isCapital():
+		#	if city.isHasRealBuilding(iAdministrativeCenter): 
+		#		city.setHasRealBuilding(iAdministrativeCenter, False)	
 				
 		# Leoreth: relocate capital for AI if reacquired:
-		if not player(iPlayer).isHuman() and not is_minor(iPlayer):
-			if data.players[iPlayer].iResurrections == 0:
-				if location(plots.capital(iCiv)) == tCity:
-					relocateCapital(iPlayer, city)
-			else:
-				if location(plots.respawnCapital(iCiv)) == tCity:
-					relocateCapital(iPlayer, city)
+		#if not player(iPlayer).isHuman() and not is_minor(iPlayer):
+		#	if data.players[iPlayer].iResurrections == 0:
+		#		if location(plots.capital(iCiv)) == tCity:
+		#			relocateCapital(iPlayer, city)
+		#	else:
+		#		if location(plots.respawnCapital(iCiv)) == tCity:
+		#			relocateCapital(iPlayer, city)
 					
 		# Leoreth: help Byzantium/Constantinople
-		if iCiv == iByzantium and tCity == location(plots.capital(iByzantium)) and year() <= year(330)+3:
-			if city.getPopulation() < 5:
-				city.setPopulation(5)
-				
-			city.setHasRealBuilding(iBarracks, True)
-			city.setHasRealBuilding(iWalls, True)
-			city.setHasRealBuilding(iLibrary, True)
-			city.setHasRealBuilding(iMarket, True)
-			city.setHasRealBuilding(iGranary, True)
-			city.setHasRealBuilding(iHarbor, True)
-			city.setHasRealBuilding(iForge, True)
+		#if iCiv == iByzantium and tCity == location(plots.capital(iByzantium)) and year() <= year(330)+3:
+		#	if city.getPopulation() < 5:
+		#		city.setPopulation(5)
+		#	
+		#	city.setHasRealBuilding(iBarracks, True)
+		#	city.setHasRealBuilding(iWalls, True)
+		#	city.setHasRealBuilding(iLibrary, True)
+		#	city.setHasRealBuilding(iMarket, True)
+		#	city.setHasRealBuilding(iGranary, True)
+		#	city.setHasRealBuilding(iHarbor, True)
+		#	city.setHasRealBuilding(iForge, True)
+		#	
+		#	city.setName("Konstantinoupolis", False)
+		#	
+		#	city.setHasRealBuilding(iTemple + 4*player(iPlayer).getStateReligion(), True)
 			
-			city.setName("Konstantinoupolis", False)
-			
-			city.setHasRealBuilding(iTemple + 4*player(iPlayer).getStateReligion(), True)
-			
-		if bConquest:
+		#if bConquest:
 
 			# Colombian UP: no resistance in conquered cities in Latin America
-			if iCiv == iColombia:
-				if city in plots.start(tSouthCentralAmericaTL).end(tSouthCentralAmericaBR):
-					city.setOccupationTimer(0)
+		#	if iCiv == iColombia:
+		#		if city in plots.start(tSouthCentralAmericaTL).end(tSouthCentralAmericaBR):
+		#			city.setOccupationTimer(0)
 					
-		if bTrade:
-			for iNationalWonder in range(iNumBuildings):
-				if iNationalWonder != iPalace and isNationalWonderClass(infos.building(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
-					city.setHasRealBuilding(iNationalWonder, False)
+		#if bTrade:
+		#	for iNationalWonder in range(iNumBuildings):
+		#		if iNationalWonder != iPalace and isNationalWonderClass(infos.building(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
+		#			city.setHasRealBuilding(iNationalWonder, False)
 					
 		# Leoreth: Escorial effect
-		if player(iPlayer).isHasBuildingEffect(iEscorial):
-			if city.isColony():
-				capital = player(iPlayer).getCapitalCity()
-				iGold = turns(10 + distance(capital, city))
-				message(iPlayer, 'TXT_KEY_BUILDING_ESCORIAL_EFFECT', iGold, city.getName())	
-				player(iPlayer).changeGold(iGold)
+		#if player(iPlayer).isHasBuildingEffect(iEscorial):
+		#	if city.isColony():
+		#		capital = player(iPlayer).getCapitalCity()
+		#		iGold = turns(10 + distance(capital, city))
+		#		message(iPlayer, 'TXT_KEY_BUILDING_ESCORIAL_EFFECT', iGold, city.getName())	
+		#		player(iPlayer).changeGold(iGold)
 					
-		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
-		self.com.onCityAcquired(city) # Communications
-		self.corp.onCityAcquired(argsList) # Companies
-		dc.onCityAcquired(iOwner, iPlayer) # DynamicCivs
+		#self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
+		#self.com.onCityAcquired(city) # Communications
+		#self.corp.onCityAcquired(argsList) # Companies
+		#dc.onCityAcquired(iOwner, iPlayer) # DynamicCivs
 		
-		vic.onCityAcquired(iPlayer, iOwner, city, bConquest)
+		#vic.onCityAcquired(iPlayer, iOwner, city, bConquest)
 		
-		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
+		#lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 		
-		if bTrade and iCiv in lTradingCompanyList and (city.getX(), city.getY()) in tTradingCompanyPlotLists[lTradingCompanyList.index(iCiv)]: # TODO: all of those should be dicts
-			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
+		#if bTrade and iCiv in lTradingCompanyList and (city.getX(), city.getY()) in tTradingCompanyPlotLists[lTradingCompanyList.index(iCiv)]: # TODO: all of those should be dicts
+		#	self.up.tradingCompanyCulture(city, iPlayer, iOwner)
 		
 		return 0
 		

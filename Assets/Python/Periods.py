@@ -1,5 +1,6 @@
 from Core import *
 from RFCUtils import *
+from Events import handler
 
 import Setup as init
 import SettlerMaps as settler
@@ -88,8 +89,8 @@ def onResurrection(iPlayer):
 		setPeriod(iCiv, -1)
 
 
-def onCityAcquired(iPlayer, city, bConquest):
-	iOwner = city.getOwner()
+@handler("cityAcquired")
+def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	iCiv = civ(iPlayer)
 	iOwnerCiv = civ(iOwner)
 

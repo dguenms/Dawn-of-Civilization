@@ -100,14 +100,11 @@
 
 from CvPythonExtensions import *
 import CvEventManager
+import BugCore
 import BugData
 import BugUtil
 import InputUtil
 import types
-
-import RiseAndFall
-import Religions
-import CvRFCEventHandler
 
 # BUG - Mac Support - start
 BugUtil.fixSets(globals())
@@ -204,29 +201,29 @@ class BugEventManager(CvEventManager.CvEventManager):
 		self.addEvent("combatLogFlanking")
 		self.addEvent("playerRevolution")
 
-		self.CustomEvents = {
-		    7614 : ('RiseAndFallPopupEvent', self.rnfEventApply7614, self.rnfEventBegin7614),
-		    7615 : ('FlipPopupEvent', self.rnfEventApply7615, self.rnfEventBegin7615),
-		    7616 : ('VotePopupEvent', self.congEventApply7616, self.congEventBegin7616),
-		    7617 : ('AskCityPopupEvent', self.congEventApply7617, self.congEventBegin7617),
-		    7618 : ('DecisionPopupEvent', self.congEventApply7618, self.congEventBegin7618),
-		    7619 : ('InvitationPopupEvent', self.congEventApply7619, self.congEventBegin7619),
-		    7620 : ('BribePopupEvent', self.congEventApply7620, self.congEventBegin7620),
-		    7621 : ('GoldPopupEvent', self.congEventApply7621, self.congEventBegin7621),
-		    7622 : ('ResurrectionEvent', self.rnfEventApply7622, self.rnfEventBegin7622),
-		    7623 : ('AskNoCityPopupEvent', self.congEventApply7623, self.congEventBegin7623),
-		    #7624 : ('ReformationEvent', self.relEventApply7624, self.relEventBegin7624),
-		    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
-		    #7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
-		    #7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
-		    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
-		    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
-		}
+		#self.CustomEvents = {
+		#    7614 : ('RiseAndFallPopupEvent', self.rnfEventApply7614, self.rnfEventBegin7614),
+		#    7615 : ('FlipPopupEvent', self.rnfEventApply7615, self.rnfEventBegin7615),
+		#    7616 : ('VotePopupEvent', self.congEventApply7616, self.congEventBegin7616),
+		#    7617 : ('AskCityPopupEvent', self.congEventApply7617, self.congEventBegin7617),
+		#    7618 : ('DecisionPopupEvent', self.congEventApply7618, self.congEventBegin7618),
+		#    7619 : ('InvitationPopupEvent', self.congEventApply7619, self.congEventBegin7619),
+		#    7620 : ('BribePopupEvent', self.congEventApply7620, self.congEventBegin7620),
+		#    7621 : ('GoldPopupEvent', self.congEventApply7621, self.congEventBegin7621),
+		#    7622 : ('ResurrectionEvent', self.rnfEventApply7622, self.rnfEventBegin7622),
+		#    7623 : ('AskNoCityPopupEvent', self.congEventApply7623, self.congEventBegin7623),
+		#    #7624 : ('ReformationEvent', self.relEventApply7624, self.relEventBegin7624),
+		#    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
+		#    #7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
+		#    #7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
+		#    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
+		#    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
+		#}
 
 		# --> INSERT EVENT HANDLER INITIALIZATION HERE <--
-		CvRFCEventHandler.CvRFCEventHandler(self)
-		self.rnf = RiseAndFall.RiseAndFall()
-		self.rel = Religions.Religions()
+		#CvRFCEventHandler.CvRFCEventHandler(self)
+		#self.rnf = RiseAndFall.RiseAndFall()
+		#self.rel = Religions.Religions()
 	
 	def setLogging(self, logging):
 		if logging is not None:
@@ -577,103 +574,6 @@ class BugEventManager(CvEventManager.CvEventManager):
 			if eOldCivic != eNewCivic:
 				civics.append(gc.getCivicInfo(eNewCivic).getDescription())
 		BugUtil.debug("Revolution for %s, %d turns: %s", gc.getPlayer(ePlayer).getCivilizationShortDescription(0), iAnarchyTurns, ", ".join(civics))
-
-	# popup events
-	def rnfEventBegin7614(self):
-		pass
-
-	def rnfEventApply7614(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7614(popupReturn)
-
-	def rnfEventBegin7615(self):
-		pass
-
-	def rnfEventApply7615(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7615(popupReturn)
-
-	def congEventBegin7616(self):
-		pass
-
-	def congEventApply7616(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7616(popupReturn)
-
-	def congEventBegin7617(self):
-		pass
-
-	def congEventApply7617(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7617(popupReturn)
-
-	def congEventBegin7618(self):
-		pass
-
-	def congEventApply7618(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7618(popupReturn)
-
-	def congEventBegin7619(self):
-		pass
-
-	def congEventApply7619(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7619(popupReturn)
-
-	def congEventBegin7620(self):
-		pass
-
-	def congEventApply7620(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7620(popupReturn)
-
-	def congEventBegin7621(self):
-		pass
-
-	def congEventApply7621(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7621(popupReturn)
-
-	def rnfEventBegin7622(self):
-		pass
-
-	def rnfEventApply7622(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7622(popupReturn)
-
-	def congEventBegin7623(self):
-		pass
-
-	def congEventApply7623(self, playerID, netUserData, popupReturn):
-		self.cong.eventApply7623(popupReturn)
-
-	def relEventBegin7624(self):
-		pass
-
-	def relEventApply7624(self, playerID, netUserData, popupReturn):
-		self.rel.eventApply7624(popupReturn)
-
-	def rnfEventApply7625(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7625(popupReturn)
-
-	def rnfEventBegin7625(self):
-		pass
-	   
-	def relEventApply7626(self, playerID, netUserData, popupReturn):
-		self.rel.eventApply7626(popupReturn)
-	    
-	def relEventBegin7626(self):
-		pass
-	    
-	def rnfEventApply7627(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7627(popupReturn)
-	    
-	def rnfEventBegin7627(self):
-		pass
-	    
-	def rnfEventApply7628(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7628(popupReturn)
-	   
-	def rnfEventBegin7628(self):
-		pass
-	    
-	def rnfEventApply7629(self, playerID, netUserData, popupReturn):
-		self.rnf.eventApply7629(netUserData, popupReturn)
-		
-	def rnfEventBegin7629(self):
-		pass
 
 
 EVENT_FUNCTION_MAP = {

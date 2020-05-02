@@ -1,5 +1,6 @@
 from Consts import *
 from RFCUtils import *
+from Events import *
 
 def getModifier(iPlayer, iModifier):
 	iCivilization = player(iPlayer).getCivilizationType()
@@ -35,7 +36,8 @@ def updateModifier(iPlayer, iModifier):
 def updateModifiers(iPlayer):
 	for iModifier in range(iNumModifiers):
 		updateModifier(iPlayer, iModifier)
-		
+
+@handler("GameStart")
 def init():
 	for iPlayer in players.all().barbarian():
 		updateModifiers(iPlayer)

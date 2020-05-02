@@ -23,7 +23,12 @@ game = gc.getGame()
 map = gc.getMap()
 
 
-# TODO: add better API for turns and years
+# TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
+
+
+# TODO: test
+def at(location1, location2):
+	return location(location1) == location(location2)
 
 
 def isExtendedBirth(iPlayer):

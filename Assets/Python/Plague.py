@@ -10,6 +10,7 @@ from Consts import *
 from StoredData import data #edead
 from RFCUtils import *
 import random
+from Events import handler
 
 from Core import *
 
@@ -19,37 +20,48 @@ PyPlayer = PyHelpers.PyPlayer
 
 iDuration = 6
 
+@handler("GameStart")
+def setup():
+	for iPlayer in players.major():
+		data.players[iPlayer].iPlagueCountdown = -turns(iImmunity)
+		
+	data.lGenericPlagueDates[0] = 80
+	data.lGenericPlagueDates[2] = 300 # safe value to prevent plague at start of 1700 AD scenario
+	
+	if scenario() == i3000BC:
+		data.lGenericPlagueDates[0] = year(400).deviate(20)
+		
+	data.lGenericPlagueDates[1] = year(1300).deviate(20)
+	
+	# Avoid interfering with the Indian UHV
+	if player(iIndia).isHuman() and data.lGenericPlagueDates[1] <= year(1200):
+		data.lGenericPlagueDates[1] = year(1200) + 1
+	
+	if scenario() != i1700AD:
+		data.lGenericPlagueDates[2] = year(1650).deviate(20)
+		
+	data.lGenericPlagueDates[3] = year(1850).deviate(20)
+
+	undoPlague = rand(8)
+	if undoPlague <= 3:
+		data.lGenericPlagueDates[undoPlague] = -1
+
+
+@handler("cityAcquired")
+def clearOrSpreadPlague(iOwner, iPlayer, city):
+	if city.isHasRealBuilding(iPlague):
+		if plague.isVulnerable(iPlayer) and not data.players[iOwner].bFirstContactPlague:
+			plague.spreadPlague(iPlayer)
+			plague.infectCitiesNear(iPlayer, city)
+		else:
+			city.setHasRealBuilding(iPlague, False)
+
+
 class Plague:
 
 ######################################
 ### Main methods (Event-Triggered) ###
 ######################################
-
-
-	def setup(self):
-		for iPlayer in players.major():
-			data.players[iPlayer].iPlagueCountdown = -turns(iImmunity)
-			
-		data.lGenericPlagueDates[0] = 80
-		data.lGenericPlagueDates[2] = 300 # safe value to prevent plague at start of 1700 AD scenario
-		
-		if scenario() == i3000BC:
-			data.lGenericPlagueDates[0] = year(400).deviate(20)
-			
-		data.lGenericPlagueDates[1] = year(1300).deviate(20)
-		
-		# Avoid interfering with the Indian UHV
-		if player(iIndia).isHuman() and data.lGenericPlagueDates[1] <= year(1200):
-			data.lGenericPlagueDates[1] = year(1200) + 1
-		
-		if scenario() != i1700AD:
-			data.lGenericPlagueDates[2] = year(1650).deviate(20)
-			
-		data.lGenericPlagueDates[3] = year(1850).deviate(20)
-
-		undoPlague = rand(8)
-		if undoPlague <= 3:
-			data.lGenericPlagueDates[undoPlague] = -1
 			
 	
 
@@ -100,7 +112,6 @@ class Plague:
 		if iPlayer in players.all():
 			if data.players[iPlayer].iPlagueCountdown > 0:
 				self.processPlague(iPlayer)
-
 
 
 	def startPlague(self, iPlagueCounter):
@@ -374,18 +385,6 @@ class Plague:
 				self.announceForeignPlagueSpread(city)
 
 
-	def onCityAcquired(self, iOldOwner, iNewOwner, city):
-		if city.hasBuilding(iPlague):
-			if not data.players[iOldOwner].bFirstContactPlague: #don't infect if first contact plague
-				if data.players[iNewOwner].iPlagueCountdown <= 0 and year() > year(dBirth[iNewOwner]) + turns(iImmunity): #skip immunity in this case (to prevent expoiting of being immune to conquer weak civs), but not for the new born civs
-					if not team(iNewOwner).isHasTech(iMicrobiology): #but not permanent immunity
-						print("acquiring plague")
-						self.spreadPlague(iNewOwner)
-						self.infectCitiesNear(iNewOwner, city)
-						return
-			city.setHasRealBuilding(iPlague, False)
-
-
 	def onCityRazed(self, city, iNewOwner):
 		if city.hasBuilding(iPlague):
 			if data.players[iNewOwner].iPlagueCountdown > 0:
@@ -430,3 +429,6 @@ class Plague:
 	def onTechAcquired(self, iTech, iPlayer):
 		if data.players[iPlayer].iPlagueCountdown > 1:
 			data.players[iPlayer].iPlagueCountdown = 1
+
+# make a singleton until we can destroy the class completely
+plague = Plague()

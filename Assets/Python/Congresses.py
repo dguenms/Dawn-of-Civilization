@@ -8,6 +8,7 @@ from RFCUtils import *
 from Consts import *
 import CityNameManager as cnm
 from StoredData import data # edead
+from Events import handler
 
 from Core import *
 
@@ -26,6 +27,7 @@ tNewfoundlandBR = (36, 59)
 
 ### Event Handlers ###
 
+@handler("GameStart")
 def setup():
 	data.iCongressTurns = getCongressInterval()
 
