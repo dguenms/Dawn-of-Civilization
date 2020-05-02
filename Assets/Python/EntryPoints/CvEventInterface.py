@@ -10,12 +10,12 @@
 # No other modules should import this
 #
 import CvUtil
-import CvRFCEventManager
 import BugEventManager
 from CvPythonExtensions import *
 
-rfcEventManager = CvRFCEventManager.CvRFCEventManager()
 bugEventManager = BugEventManager.BugEventManager()
+
+import Handlers
 
 def getEventManager():
 	return bugEventManager

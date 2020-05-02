@@ -7,6 +7,7 @@ import Popup
 from Consts import *
 from StoredData import *
 from RFCUtils import *
+from Events import handler
 
 # globals
 gc = CyGlobalContext()
@@ -121,7 +122,4 @@ class Communications:
 
 
 	def onBuildingBuilt(self, iPlayer, iBuilding, city):
-		return
-
-	def onCityAcquired(self, city):
 		return

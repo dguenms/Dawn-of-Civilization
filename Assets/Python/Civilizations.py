@@ -4,6 +4,7 @@ from sets import Set
 from StoredData import data
 import Victory as vic
 from Religions import rel
+from Events import handler
 
 ### Class for easier tech specification ###
 
@@ -134,6 +135,7 @@ def initBuildingPreferences(iPlayer):
 def initBirthYear(iPlayer):
 	player(iPlayer).setInitialBirthTurn(year(dBirth[iPlayer]))
 
+@handler("GameStart")
 def init():
 	for iPlayer in players.major():
 		initBirthYear(iPlayer)

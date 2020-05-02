@@ -9,6 +9,7 @@ from operator import itemgetter
 import math
 import Victory as vic
 import Periods as periods
+from Events import handler
 
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
@@ -110,7 +111,11 @@ def triggerCollapse(iPlayer):
 def scheduleCollapse(iPlayer):
 	data.players[iPlayer].iTurnsToCollapse = 1
 
-def onCityAcquired(city, iOwner, iPlayer):
+@handler("cityAcquired")
+def onCityAcquired(iOwner, iPlayer, city, bConquest):
+	if not bConquest:
+		return
+
 	checkStability(iOwner)
 	checkLostCoreCollapse(iOwner)
 	

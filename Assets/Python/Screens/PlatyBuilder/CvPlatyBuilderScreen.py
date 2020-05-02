@@ -29,6 +29,8 @@ import CityNameManager as cnm
 import WBStoredDataScreen
 import GreatPeople as gp
 
+from CvPlatyBuilderSettings import *
+
 from Consts import *
 from RFCUtils import *
 import MapEditorTools as met
@@ -43,13 +45,6 @@ rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
 gc = CyGlobalContext()
-iChange = 1
-bRemove = False
-bPython = True
-bHideInactive = True
-Activities = ["AWAKE", "HOLD", "SLEEP", "HEAL", "SENTRY", "INTERCEPT", "MISSION", "PATROL", "PLUNDER"]
-iSetValue = 3
-iWarValue = 0
 
 class CvWorldBuilderScreen:
 

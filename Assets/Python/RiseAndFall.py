@@ -18,6 +18,7 @@ import Modifiers
 import CvEspionageAdvisor
 import BugCore
 import Periods as periods
+from Events import handler
 
 from Core import *
 
@@ -32,6 +33,19 @@ iBetrayalPeriod = 8
 iBetrayalThreshold = 80
 iRebellionDelay = 15
 iEscapePeriod = 30
+
+### Event handlers ###
+
+@handler("GameStart")
+def setup():
+	rnf.determineEnabledPlayers()
+	rnf.initScenario()
+	
+	# Leoreth: make sure to select the Egyptian settler
+	if player(iEgypt).isHuman():
+		unit = units.at(plots.capital(iEgypt)).type(iSettler).one()
+		if unit:
+			interface.selectUnit(unit, True, False, False)
 
 ### Screen popups ###
 # (Slowly migrate event handlers here when rewriting to use BUTTONPOPUP_PYTHON and more idiomatic code)
@@ -220,19 +234,6 @@ class RiseAndFall:
 #######################################
 ### Main methods (Event-Triggered) ###
 #####################################  
-
-	def setup(self):
-
-		self.determineEnabledPlayers()
-		
-		self.initScenario()
-		
-		# Leoreth: make sure to select the Egyptian settler
-		if player(iEgypt).isHuman():
-			for unit in units.at(plots.capital(iEgypt)):
-				if unit.getUnitType() == iSettler:
-					interface.selectUnit(unit, True, False, False)
-					break
 
 	def initScenario(self):
 		self.updateStartingPlots()

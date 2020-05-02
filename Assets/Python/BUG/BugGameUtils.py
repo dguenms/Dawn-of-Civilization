@@ -355,26 +355,31 @@ class Callback:
 			BugUtil.trace("Error in %s callback listener %s", listener.__module__, self.name)
 	
 	def __call__(self, argsList=None):
-		for handler in self.handlers:
-			if self.log: BugUtil.debug("BugGameUtils - %s - dispatching to %s handler", self.name, handler.__module__)
-			result = self.callHandler(handler, argsList)
-			if result is not None and result != self.default:
-				break
-		else:
-			if self.default is not None:
-				if self.log: BugUtil.debug("BugGameUtils - %s - using default %s", self.name, self.default)
-				result = self.default
+		iterations = 0
+		try:
+			for handler in self.handlers:
+				iterations += 1
+				if self.log: BugUtil.debug("BugGameUtils - %s - dispatching to %s handler", self.name, handler.__module__)
+				result = self.callHandler(handler, argsList)
+				if result is not None and result != self.default:
+					break
 			else:
-				if self.log: BugUtil.debug("BugGameUtils - %s - dispatching to base handler", self.name)
-				result = self.callHandler(self.baseHandler, argsList)
-		if result is not None:
-			for listener in self.listeners:
-				if self.log: BugUtil.debug("BugGameUtils - %s - calling %s listener", self.name, listener.__module__)
-				self.callListener(listener, argsList, result)
-		else:
-			BugUtil.error("BugGameUtils - %s - no handler returned a value", self.name)
-		return result
-
+				if self.default is not None:
+					if self.log: BugUtil.debug("BugGameUtils - %s - using default %s", self.name, self.default)
+					result = self.default
+				else:
+					if self.log: BugUtil.debug("BugGameUtils - %s - dispatching to base handler", self.name)
+					result = self.callHandler(self.baseHandler, argsList)
+			if result is not None:
+				for listener in self.listeners:
+					if self.log: BugUtil.debug("BugGameUtils - %s - calling %s listener", self.name, listener.__module__)
+					self.callListener(listener, argsList, result)
+			else:
+				BugUtil.error("BugGameUtils - %s - no handler returned a value", self.name)
+			return result
+		except:
+			print "call %s: handlers: %s, iterations: %d" % (str(self), self.handlers, iterations)
+			raise
 
 ## Config Parser Handler
 

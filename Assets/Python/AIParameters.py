@@ -1,6 +1,6 @@
-from Consts import *
 from Core import *
 from RFCUtils import *
+from Events import handler
 
 def getTakenTilesThreshold(iPlayer):
 	return dTakenTilesThreshold[civ(iPlayer)]
@@ -28,7 +28,8 @@ def updateParameters(iPlayer):
 	pPlayer.setCompactnessModifier(getCompactnessModifier(iPlayer))
 	pPlayer.setTargetDistanceValueModifier(getTargetDistanceValueModifier(iPlayer))
 	pPlayer.setReligiousTolerance(getReligiousTolerance(iPlayer))
-	
+
+@handler("GameStart")
 def init():
 	for iPlayer in players.all().barbarian():
 		updateParameters(iPlayer)

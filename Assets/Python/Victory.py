@@ -8,6 +8,7 @@ import heapq
 import CityNameManager as cnm
 import DynamicCivs as dc
 import BugCore
+from Events import handler
 
 from Core import *
 
@@ -230,6 +231,7 @@ dReligionGoals = {}
 		
 ### EVENT HANDLING ###
 
+@handler("GameStart")
 def setup():
 
 	# 1700 AD scenario: handle dates that have already been passed
@@ -1585,7 +1587,8 @@ def onCityBuilt(iPlayer, city):
 			bOceania = getNumCitiesInRegions(iPlayer, lOceania) >= 3
 			if bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania:
 				win(iPlayer, 0)
-				
+
+@handler("cityAcquired")	
 def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	iCiv = civ(iPlayer)
 	pPlayer = player(iPlayer)
