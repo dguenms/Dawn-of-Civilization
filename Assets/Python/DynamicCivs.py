@@ -9,6 +9,7 @@ from StoredData import data
 from RFCUtils import *
 from Areas import *
 import CityNameManager as cnm
+from Events import handler
 
 from Core import *
 
@@ -596,6 +597,7 @@ dStartingLeaders = [
 
 ### Event handlers
 
+@handler("GameStart")
 def setup():
 	data.dCapitalLocations = findCapitalLocations(dCapitals)
 	
@@ -663,6 +665,7 @@ def onRevolution(iPlayer):
 	for iLoopPlayer in players.vassals(iPlayer):
 		checkName(iLoopPlayer)
 	
+@handler("cityAcquired")
 def onCityAcquired(iPreviousOwner, iNewOwner):
 	checkName(iPreviousOwner)
 	checkName(iNewOwner)

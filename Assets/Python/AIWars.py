@@ -9,6 +9,7 @@ from RFCUtils import *
 import UniquePowers
 from StoredData import data # edead
 import Stability as sta
+from Events import handler
 
 from Core import *
 
@@ -101,15 +102,18 @@ tConquestMongolsPersia = (12, iMongols, iTurks, tMongolsPersiaTL, tMongolsPersia
 
 lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors, tConquestTurksPersia, tConquestTurksAnatolia, tConquestMongolsPersia]
 
+	
+@handler("GameStart")
+def setup():
+	iTurn = year(-600)
+	if scenario() == i600AD:  #late start condition
+		iTurn = year(900)
+	elif scenario() == i1700AD:
+		iTurn = year(1720)
+	data.iNextTurnAIWar = iTurn + rand(iMaxIntervalEarly-iMinIntervalEarly)
+
+
 class AIWars:
-		
-	def setup(self):
-		iTurn = year(-600)
-		if scenario() == i600AD:  #late start condition
-			iTurn = year(900)
-		elif scenario() == i1700AD:
-			iTurn = year(1720)
-		data.iNextTurnAIWar = iTurn + rand(iMaxIntervalEarly-iMinIntervalEarly)
 
 
 	def checkTurn(self, iGameTurn):

@@ -91,9 +91,10 @@ def initGameData():
 
 def onGameStart(argsList):
 	initGameData()
+	
+	data.setup()
 
 def onGameLoad(argsList):
-	print 'ON GAME LOAD'
 	initGameData().load()
 	
 	data.update(getTable(STORED_DATA).data)

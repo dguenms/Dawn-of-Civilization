@@ -6,6 +6,7 @@ import PyHelpers
 from Consts import *
 from RFCUtils import *
 from operator import itemgetter
+from Events import handler
 
 
 tCompanyTechs = (iCurrency, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
@@ -29,6 +30,15 @@ tSubSaharanAfricaBR = (77, 29)
 
 tSouthAsiaTL = (76, 24)
 tSouthAsiaBR = (117, 39)
+					
+	
+@handler("cityAcquired")
+def verifyCorporations(iOwner, iPlayer, city):
+	for iCorporation in range(iNumCorporations):
+		if city.isHasCorporation(iCorporation):
+			if companies.getCityValue(city, iCorporation) < 0:
+				city.setHasCorporation(iCorporation, False, True, True)
+
 
 class Companies:
 
@@ -281,3 +291,6 @@ class Companies:
 		brx, bry = tBR
 
 		return ((x >= tlx) and (x <= brx) and (y >= tly) and (y <= bry))
+		
+# make a singleton until we can destroy the class completely
+companies = Companies()

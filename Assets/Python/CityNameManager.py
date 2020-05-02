@@ -7,6 +7,7 @@ import Popup
 from Consts import *
 from RFCUtils import *
 from StoredData import data
+from Events import handler
 
 from time import time
 
@@ -190,7 +191,8 @@ def onCityBuilt(city):
 	if sNewName:
 		city.setName(sNewName, False)
 		
-def onCityAcquired(city, iNewOwner):
+@handler("cityAcquired")
+def onCityAcquired(iOwner, iNewOwner, city):
 	iNewOwnerCiv = civ(iNewOwner)
 
 	sOldName = city.getName()

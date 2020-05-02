@@ -1,5 +1,5 @@
-from Consts import *
 from Core import *
+from Events import handler
 
 (iNone, iMinority, iPeriphery, iHistorical, iCore) = range(5)
 
@@ -25,7 +25,8 @@ def updateRegionMap():
 def updateReligionSpread(iReligion):
 	for plot in plots.all():
 		plot.setSpreadFactor(iReligion, getSpreadFactor(iReligion, location(plot)))
-				
+
+@handler("GameStart")
 def init():
 	updateRegionMap()
 	for iReligion in range(iNumReligions):
