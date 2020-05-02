@@ -119,42 +119,48 @@ def setup():
 dGreatPeople = {
 iCivEgypt : {
 	iGreatProphet : [
-		"Ptah-Hotep", # 25th BC
-		"Meryre", # 15th BC
+		"Meryre", # 14th BC
 		"Akhenaten", # 14th BC
 		"fNefertiti", # 13th BC
+		"Khaemwaset", # 12th BC
+		"Ramessesnakht", # 12th BC
 		iClassical,
-		"Petiese", # 7th BC
+		"fNitiqret", # 7th BC
+		"Petosiris", # 4th BC
 	],
 	iGreatArtist : [
 		"Pehen-Ptah", # 27th BC
+		"Sedjemnetjeru", # 17th BC
 		"Thutmose", # 14th BC
 		"Bek", # 14th BC
 		"Ipuki", # 14th BC
-		"Sennedjem", # 13th
-		"Khaemweset", # 12th BC
+		"Sennedjem", # 13th BC
 		"Amenemope", # 12th BC
 		iClassical,
 		"fHelena", # 4th BC
 	],
 	iGreatScientist : [
 		"fMerit-Ptah", # 27th BC
+		"Hesy-Ra", # 27th BC
 		"fPeseshet", # 26th BC
 		"Ahmose", # 17th BC
 		iClassical,
 		"Harkhebi", # 3rd BC
 		"Manetho", # 3rd BC
+		"Eratosthenes", # 3rd BC
 		"Ptolemaios", # 2nd
 		"Diophantos", # 3rd
 		"fHypatia", # 4th
 	],
 	iGreatMerchant : [
 		"Harkhuf", # 23rd BC
+		"Yuya", # 14th BC
 		"Maya", # 13th BC
 		"fTiye", # 13th BC
 		iClassical,
 		"Piye", # 8th BC
 		"Alara", # 8th BC
+		"Eudoxos", # 2nd BC
 	],
 	iGreatEngineer : [
 		"Imhotep", # 27th BC
@@ -168,9 +174,12 @@ iCivEgypt : {
 	],
 	iGreatStatesman : [
 		"Kagemni", # 26th BC
+		"Ptahhotep", # 25th BC
 		"Amenemhat", # 20th BC
 		"fHatshepsut", # 15th BC
 		"Herihor", # 11th BC
+		iClassical,
+		"fBerenice Euergetis", # 3rd BC
 	],
 	iGreatGeneral : [
 		"Narmer", # 32nd BC
@@ -179,6 +188,8 @@ iCivEgypt : {
 		"Mentuhotep", # 21st BC
 		"Thutmosis", # 15th BC
 		"Sethi", # 13th BC
+		iClassical,
+		"Ptolemaios Euergetes", # 3rd BC
 	],
 },
 iCivBabylonia : {
@@ -316,6 +327,9 @@ iCivChina : {
 		"Zheng He", # 15th
 		"Yishiha", # 15th
 		"Pan Qiguan", # 18th
+		iIndustrial,
+		"Wu Bingjian", # 19th
+		"Sheng Xuanhuai", # 19th
 		iGlobal,
 		"Zeng Junchen", # 20th
 		"Deng Xiaoping", # 20th
@@ -324,6 +338,7 @@ iCivChina : {
 		"fLeizu", # 27th BC
 		iClassical,
 		"Lu Ban", # 5th BC
+		"Li Bing", # 3rd BC
 		"Cai Lun", # 1st
 		"Zhang Heng", # 2nd
 		"Ma Jun", # 3rd
@@ -351,6 +366,7 @@ iCivChina : {
 		"Zhang Juzheng", # 16th
 		"Zhang Tingyu", # 18th
 		iIndustrial,
+		"Lin Zexu", # 19th
 		"Li Hongzhang", # 19th
 		"Sun Yat-sen", # 19th
 		iGlobal,
@@ -508,8 +524,9 @@ iCivGreece : {
 		"Themistokles", # 5th BC
 		"Lysandros", # 5th BC
 		"Philippos", # 4th BC
-		"Pyrrhos", # 3rd BC
 		"fArtemisia", # 4th BC
+		"Pyrrhos", # 3rd BC
+		"Antiochos Megas", # 3rd BC
 		iIndustrial,
 		"fLaskarina Bouboulina", # 19th
 		"Alexandros Ypsilantis", # 19th
@@ -568,6 +585,7 @@ iCivIndia : {
 		"Rabindranath Tagore", # 20th
 		"Raja Rao", # 20th
 		"fAmrita Sher-Gil", # 20th
+		"fMadurai Shanmukhavadivu Subbulakshmi", # 20th
 		"Satyajit Ray", # 20th
 		"Ravi Shankar", # 20th
 	],
@@ -587,6 +605,7 @@ iCivIndia : {
 		"Nilakantha Somayaji", # 15th
 		"Kamalakara", # 17th
 		iGlobal,
+		"Srinivasa Ramanujan", # 20th
 		"Chandrasekhara Venkata Raman", # 20th
 		"Satyendra Nath Bose", # 20th
 		"fAsima Chatterjee", # 20th
@@ -600,6 +619,7 @@ iCivIndia : {
 		"Ardeshir Godrej", # 19th
 		iGlobal,
 		"Kappalottiya Tamizhan", # 20th
+		"Jehangir Ratanji Dadabhoy Tata", # 20th
 		"fIndra Nooyi", # 20th
 	],
 	iGreatEngineer : [
@@ -614,6 +634,7 @@ iCivIndia : {
 		"Mokshagundam Visvesvaraya", # 19th
 		"Jamsetji Tata", # 19th
 		iGlobal,
+		"Avul Pakir Jainulabdeen Abdul Kalam", # 20th
 		"fEulie Chowdhury", # 20th
 		"Satish Dhawan", # 20th
 		"Charles Correa", # 20th
@@ -634,6 +655,7 @@ iCivIndia : {
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
 		iGlobal,
+		"Vallabhbhai Patel", # 20th
 		"fSarojini Naidu", # 20th
 		"Sarvepalli Radhakrishnan", # 20th
 		"Bhimrao Ramji Ambedkar", # 20th
@@ -798,6 +820,7 @@ iCivPersia : {
 		"Al-Muqanna", # 8th
 		"Al-Ghazali", # 11th
 		"Mevlana", # 13th
+		"Sultan Sahak", # 14th
 		iRenaissance,
 		"Mulla Sadra", # 17th
 		"Muhammad Baqir Majlisi", # 17th
@@ -839,6 +862,7 @@ iCivPersia : {
 		"Ardashir", # 4th
 		"Borzuya", # 6th
 		"Paulos-e irani", # 6th
+		"Anania Shirakatsi", # 7th
 		iMedieval,
 		"Al-Khwarizmi", # 9th
 		"Muhammad ibn Zakariya al-Razi", # 9th
@@ -945,6 +969,7 @@ iCivRome : {
 		"fMarcella", # 4th
 	],
 	iGreatArtist : [
+		"Quintus Ennius", # 3rd BC
 		"Publius Vergilius Maro", # 1st BC
 		"fIaia", # 1st BC
 		"Titus Livius", # 1st
@@ -990,7 +1015,8 @@ iCivRome : {
 		"Scipio Africanus", # 2nd BC
 		"Gaius Marius", # 2nd BC
 		"Gnaeus Pompeius Magnus", # 1st BC
-		"Vaspasianus", # 1st
+		"Germanicus", # 1st
+		"Vespasianus", # 1st
 		"Traianus", # 1st
 		"fAgrippina", # 1st AD
 		"Hadrianus", # 2nd
@@ -2274,6 +2300,7 @@ iCivFrance : {
 		"fMarie Curie", # 19th
 		"Antoine Henri Becquerel", # 19th
 		iGlobal,
+		u"fIrène Joliot-Curie", # 20th
 		"Jacques Monod", # 20th
 		u"Benoît Mandelbrot", # 20th
 	],
@@ -2283,6 +2310,7 @@ iCivFrance : {
 		iRenaissance,
 		"Jacques Cartier", # 16th
 		"Samuel de Champlain", # 17th
+		"Pierre Le Moyne d'Iberville", # 17th
 		"Antoine de Lamothe-Cadillac", # 18th
 		u"fThérèse de Couagne", # 18th
 		iIndustrial,
@@ -2466,6 +2494,7 @@ iCivEngland : {
 		"John Stott", # 20th
 	],
 	iGreatArtist : [
+		u"Ælfric of Eynsham", # 10th
 		"Geoffrey Chaucer", # 14th
 		"Thomas Malory", # 15th
 		iRenaissance,
@@ -2479,14 +2508,18 @@ iCivEngland : {
 		"fMary Shelley", # 19th
 		"Alfred Tennyson", # 19th
 		"Charles Dickens", # 19th
+		"fGeorge Eliot", # 19th
 		"Arthur Conan Doyle", # 19th
 		iGlobal,
+		"fVirginia Woolf", # 20th
 		"James Joyce", # 20th
 		"fAgatha Christie", # 20th
 		"John R. R. Tolkien", # 20th
+		"Alfred Hitchcock", # 20th
 		"John Lennon", # 20th
 	],
 	iGreatScientist : [
+		"Byrhtferth", # 10th
 		"Robert Grosseteste", # 13th
 		"Roger Bacon", # 13th
 		"William of Ockham", # 14th
@@ -2519,8 +2552,9 @@ iCivEngland : {
 		"James Cook", # 18th
 		"Adam Smith", # 18th
 		iIndustrial,
+		"David Ricardo", # 18th
 		"George Hudson", # 19th
-		"Richard Francis Burton", # 19TH
+		"Richard Francis Burton", # 19th
 		"Thomas Sutherland", # 19th
 		"Cecil Rhodes", # 19th
 		iGlobal,
@@ -2987,6 +3021,7 @@ iCivPoland : {
 		"fMaria Sklodowska", # 19th
 		iGlobal, 
 		"Kazimierz Funk", # 20th
+		"Jan Czochralski", # 20th
 		"Alfred Tarski", # 20th
 		u"Józef Rotblat", # 20th
 	],
@@ -3638,6 +3673,7 @@ iCivOttomans : {
 		"Turgut Reis", # 16th
 		"Kara Mustafa", # 17th
 		iIndustrial, 
+		"Muhammad Ali", # 19th
 		"Omar Latas", # 19th
 		"Osman Nuri", # 19th
 		iGlobal,
@@ -4031,6 +4067,8 @@ iCivAmerica : {
 		"fGrace Hopper", # 20th
 	],
 	iGreatMerchant : [
+		"Stephen Girard", # 18th
+		iIndustrial,
 		"Cornelius Vanderbilt", # 19th
 		"John D. Rockefeller", # 19th
 		"Andrew Carnegie", # 19th
