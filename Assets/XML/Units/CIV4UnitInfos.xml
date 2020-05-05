@@ -1746,6 +1746,58 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_SCOUT</Class>
+			<Type>UNIT_OLMEC_BLOWGUNNER</Type>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Combat>UNITCOMBAT_RECON</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_EXPLORE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_OLMEC_BLOWGUNNER</Description>
+			<Civilopedia>TXT_KEY_UNIT_OLMEC_BLOWGUNNER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_OLMEC_BLOWGUNNER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<bNoBadGoodies>1</bNoBadGoodies>
+			<bOnlyDefensive>1</bOnlyDefensive>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_EXPLORER</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_EXPLORE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_TANNING</PrereqTech>
+			<iCost>15</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iCombat>3</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<iAnimalCombat>100</iAnimalCombat>
+			<iAsset>2</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>2</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>2</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_OLMEC_BLOWGUNNER</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_EXPLORER</Class>
 			<Type>UNIT_EXPLORER</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>

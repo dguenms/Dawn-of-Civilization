@@ -878,6 +878,46 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<Type>BUILDING_OLMEC_COLOSSAL_HEAD</Type>
+			<Description>TXT_KEY_BUILDING_OLMEC_COLOSSAL_HEAD</Description>
+			<Civilopedia>TXT_KEY_BUILDING_OLMEC_COLOSSAL_HEAD_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_OLMEC_COLOSSAL_HEAD_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_OLMEC_COLOSSAL_HEAD</ArtDefineTag>
+			<PrereqTech>TECH_CEREMONY</PrereqTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>40</iCost>
+			<iConquestProb>65</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iSpecialistCount>2</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_WALLS</BuildingClass>
 			<Type>BUILDING_WALLS</Type>
 			<Description>TXT_KEY_BUILDING_WALLS</Description>
