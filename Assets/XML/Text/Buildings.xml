@@ -3421,4 +3421,16 @@
 		<Italian>[ICON_BULLET]+1 Gold per Gold Resource</Italian>
 		<Spanish>[ICON_BULLET]+1 Gold per Gold Resource</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLMEC_COLOSSAL_HEAD</Tag>
+		<English>Colossal Head</English>
+		<French>
+			<Text>T&#234;te colossale:T&#234;tes colossales</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Colossal Head</German>
+		<Italian>Colossal Head</Italian>
+		<Spanish>Colossal Head</Spanish>
+	</TEXT>
 </Civ4GameText>

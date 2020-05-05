@@ -3950,6 +3950,18 @@
 		<Spanish>Guecha Warrior</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_OLMEC_BLOWGUNNER</Tag>
+		<English>Blowgunner</English>
+		<French>
+			<Text>Sarbacanier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Blowgunner</German>
+		<Italian>Blowgunner</Italian>
+		<Spanish>Blowgunner</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_HYENA</Tag>
 		<English>Hyena</English>
 		<French>Hyena</French>

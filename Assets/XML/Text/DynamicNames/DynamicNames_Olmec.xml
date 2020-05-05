@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OLMEC_DESC</Tag>
+		<English>The Olmecs</English>
+		<French>Les Olm&#232;ques</French>
+		<German>The Olmecs</German>
+		<Italian>The Olmecs</Italian>
+		<Spanish>The Olmecs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OLMEC_PEOPLES</Tag>
+		<English>Peoples of the Gulf lowlands</English>
+		<French>
+			<Text>Peuplades des basses-terres du golfe</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Peoples of the Gulf lowlands:Peoples of the Gulf lowlands:Peoples of the Gulf lowlands</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Peoples of the Gulf lowlands</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Peoples of the Gulf lowlands</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OLMEC_DEFAULT</Tag>
+		<English>%s2 City-States</English>
+		<French>
+			<Text>Cit&#233;s-&#201;tats %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>%s2-Stadtstaaten:%s2-Stadtstaaten:%s2-Stadtstaaten</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OLMEC_ADJECTIVE</Tag>
+		<English>Olmec</English>
+		<French>
+			<Text>olm&#232;que:olm&#232;que:olm&#232;ques:olm&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>Olmec</German>
+		<Italian>Olmec</Italian>
+		<Spanish>Olmec</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OLMEC_SHORT_DESC</Tag>
+		<English>Olmecs</English>
+		<French>
+			<Text>Olm&#232;ques</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>Olmecs</German>
+		<Italian>Olmecs</Italian>
+		<Spanish>Olmecs</Spanish>
+	</TEXT>
+</Civ4GameText>
