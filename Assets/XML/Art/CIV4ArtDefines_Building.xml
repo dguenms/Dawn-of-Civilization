@@ -3857,5 +3857,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/blacksmith/Goldsmith.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_OLMEC_COLOSSAL_HEAD</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.35</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Colossal_Head/lm_stonehead.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/stonehead.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
