@@ -42,7 +42,7 @@ tMinorCities = (
 (840, (52, 59), iIndependent2, 'D&#249;n &#200;ideann', 1, iCrossbowman, 2),			# Edinburgh
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (899, (78, 36), iIndependent, 'Bahrein', 2, iArcher, 2),			# Qarmatians (Abu Sa'id al-Jannabi)
-(900, (24, 28), iNative, 'Tucume', 2, iPictaAucac, 4),			# Tucume
+(900, (24, 28), iNative, 'Tucume', 2, iPictaAucac, 2),			# Tucume
 (900, (74, 25), iIndependent, 'Muqdisho', 3, iCrossbowman, 2),	# Mogadishu
 (990, (49, 56), iIndependent, '&#193;th Cliath', 1, iArcher, 2),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
@@ -90,21 +90,37 @@ class Barbs:
 						utils.makeUnit(iUnit, iOwner, tPlot, 1)
 
 		if utils.isYearIn(-100, 1600):
-			# Siberian Bears
-			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5, (115, 53), (123, 64), self.spawnNatives, iGameTurn, 10, 4)
-			# Alaskan and Eastern Canadian Bears
-			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5,  (3, 58), (20, 67), self.spawnNatives, iGameTurn, 5, 2)
-			# Greenland and Western Canadian Bears
-			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5, (21, 53), (44, 67), self.spawnNatives, iGameTurn, 5, 2)
+			# Brown Bear in Chukchi
+			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5, (115, 53), (123, 64), self.spawnBears, iGameTurn, 10, 1)
+			# Brown Bear and American Black Bear in Alaska and Western Canada
+			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5,  (3, 58), (20, 67), self.spawnBears, iGameTurn, 5, 3)
+			# Polar Bear in Greenland and Eastern Canada
+			self.checkLimitedSpawn(iBarbarian, iPolarBear, 1, 5, (21, 53), (44, 67), self.spawnBears, iGameTurn, 5, 5)
 
 		if utils.isYearIn(-3000, -850):
 			if iHandicap >= 0:
 				self.checkSpawn(iBarbarian, iWarrior, 1, (76, 46), (99, 53), self.spawnMinors, iGameTurn, 5, 0)
 			
+			# Wolves and Brown Bears in Russia and Siberia
 			self.checkSpawn(iBarbarian, iWolf, 1, (75, 54), (104, 64), self.spawnNatives, iGameTurn, 5, 2)
 			self.checkSpawn(iBarbarian, iBear, 1, (75, 54), (104, 64), self.spawnNatives, iGameTurn, 5, 4)
+			
+			# Panthers, Hyenas, and Lions in South Africa
 			self.checkLimitedSpawn(iBarbarian, iLion, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 1)
 			self.checkLimitedSpawn(iBarbarian, iPanther, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 3)
+			self.checkLimitedSpawn(iBarbarian, iHyena, 1, 5, (60, 10), (72, 28), self.spawnNatives, iGameTurn, 5, 3)
+			
+			# Panthers and Tigers in India, South China, Indochina, and Indonesia
+			self.checkLimitedSpawn(iBarbarian, iPanther, 1, 5, (88, 24), (107, 41), self.spawnNatives, iGameTurn, 5, 1)
+			self.checkLimitedSpawn(iBarbarian, iTiger, 1, 5, (88, 24), (107, 41), self.spawnNatives, iGameTurn, 5, 1)
+			
+			#Asian Black Bears in China, Japan, Manchuria, Vietnam, and Korea
+			self.checkLimitedSpawn(iBarbarian, iBear, 1, 5, (100, 36), (116, 56), self.spawnNatives, iGameTurn, 5, 3)
+			
+			# Jaguars in Brazil, Colombia, and Mesoamerica
+			self.checkLimitedSpawn(iBarbarian, iJaguarAnimal, 1, 5, (32, 14), (43, 31), self.spawnNatives, iGameTurn, 5, 1)
+			self.checkLimitedSpawn(iBarbarian, iJaguarAnimal, 1, 5, (29, 21), (33, 32), self.spawnNatives, iGameTurn, 5, 3)
+			self.checkLimitedSpawn(iBarbarian, iJaguarAnimal, 1, 5, (15, 31), (24, 41), self.spawnNatives, iGameTurn, 5, 3)
 
 			
 		#celts
@@ -404,6 +420,7 @@ class Barbs:
 				utils.makeUnit(iWorker, iPlayer, tPlot, 1)
 				plot.changeCulture(iPlayer, 20 * (gc.getGame().getCurrentEra() + 1), True)
 				city.changeCulture(iPlayer, 20 * (gc.getGame().getCurrentEra() + 1), True)
+				utils.makeUnit(iChimuSuchucChiquiAucac, iPlayer, tPlot, 2)
 				
 			elif sName == 'Bahrein':
 				city.setHasRealBuilding(iIslamicTemple, True)
@@ -632,6 +649,17 @@ class Barbs:
 			
 	def includesActiveHuman(self, lPlayers):
 		return utils.getHumanID() in lPlayers and tBirth[utils.getHumanID()] <= gc.getGame().getGameTurnYear()
+
+	def spawnBears(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
+		''' 1SDAN: inside territory, dispersed over several plots, attacking'''
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True, bNearCity=True)
+		
+		for i in range(iNumUnits):
+			tPlot = utils.getRandomEntry(lPlots)
+			if not tPlot: break
+			
+			lPlots.remove(tPlot)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, 1, sAdj)
 
 	def spawnRabbits(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Merijn: inside territory, dispersed over several plots, pillaging'''

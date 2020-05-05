@@ -3847,5 +3847,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Qargi/Button_Kurgan.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MUISCA_GOLDSMITH</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.35</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/blacksmith/blksmith.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/blacksmith/Goldsmith.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

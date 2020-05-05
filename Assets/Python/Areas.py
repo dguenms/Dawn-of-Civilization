@@ -1,7 +1,7 @@
 from Consts import *
 
 # Peak that change to hills during the game, like Bogota
-lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
+lPeakExceptions = [(31, 13), (32, 19), (88, 47), (40, 66)]
 
 def isReborn(iPlayer):
 	return gc.getPlayer(iPlayer).isReborn()
@@ -139,6 +139,7 @@ tCapitals = (
 (55, 50), # Paris
 (82, 34), # Muscat
 (103, 32), # Angkor
+(27, 29), # Bacata
 (76, 30), # Sana'a
 (53, 54), # London
 (59, 51), # Frankfurt
@@ -261,6 +262,7 @@ tBirthArea = (
 ((51, 46), 	(57, 52)), 	# France
 ((79, 32),	(82, 35)),	# Oman
 ((102, 31),	(104, 35)),	# Khmer
+((25, 29), (28, 31)),	# Muisca
 ((74, 29),	(80, 32)),	# Yemen
 ((52, 53),	(54, 57)),	# England
 ((58, 48), 	(64, 54)), 	# Holy Rome
@@ -398,6 +400,7 @@ tCoreArea = (
 ((51, 46),	(57, 51)),	# France
 ((79, 32),	(82, 35)),	# Oman
 ((100, 32),	(103, 36)),	# Khmer
+((27, 29),	(27, 29)),	# Muisca
 ((75, 30),	(79, 33)),	# Yemen
 ((52, 53),	(54, 57)),	# England
 ((58, 49),	(63, 52)),	# HolyRome
@@ -480,6 +483,7 @@ iKhazars : [(73, 50)],
 iSpain : [(49, 43), (49, 44), (50, 43), (50, 44)],
 iFrance : [(51, 46), (52, 46), (55, 46), (57, 46)],
 iOman : [(79, 34), (79, 35)],
+iMuisca : [(26, 29)],
 iYemen : [(76, 33), (77, 33), (78, 33), (79, 33)],
 iHolyRome : [(61, 52), (62, 52), (63, 52)],
 iKievanRus : [(73, 51), (73, 52)],
@@ -556,6 +560,7 @@ tNormalArea = (
 ((51, 46), 	(58, 52)), 	# France
 ((80, 32), 	(82, 35)), 	# Oman
 ((98, 26), 	(103, 37)), 	# Khmer
+((27, 29), (27, 29)),	# Muisca
 ((76, 30), 	(79, 31)), 	# Yemen
 ((50, 53), 	(54, 60)), 	# England
 ((58, 48), 	(65, 54)), 	# Holy Rome
@@ -674,6 +679,7 @@ tBroaderArea = (
 ((49, 44), 	(61, 52)), 	# France
 ((79, 32),	(82, 35)),	# Oman
 ((97, 25), 	(105, 39)), 	# Khmer
+((27, 29), (27, 29)),	# Muisca
 ((75, 30),	(79, 32)),	# Yemen
 ((48, 53), 	(54, 60)), 	# England
 ((58, 43), 	(64, 54)), 	# Holy Rome

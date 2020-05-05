@@ -105,8 +105,7 @@ def triggerCollapse(iPlayer):
 	if utils.getHumanID() != iPlayer:
 		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 			# The Celts collapse to Britain, not their Core.
-			bCeltia = iPlayer == iCeltia and not pCeltia.isReborn()
-			if bCeltia: iCoreCities = len(vic.getCitiesInRegions(iCeltia, [rBritain])) 
+			if iPlayer == iCeltia: iCoreCities = len(vic.getCitiesInRegions(iCeltia, [rBritain])) 
 			else: iCoreCities = len(utils.getOwnedCoreCities(iPlayer))
 			
 			if iCoreCities > 0 and iCoreCities < len(utils.getCityList(iPlayer)):
@@ -370,7 +369,7 @@ def checkStability(iPlayer, bPositive = False, iMaster = -1):
 		
 def getPossibleMinors(iPlayer):
 
-	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and iPlayer in [iMaya, iAztecs, iInca, iMali, iEthiopia, iCongo, iInuit]:
+	if gc.getGame().countKnownTechNumTeams(iNationalism) == 0 and (iPlayer in [iMali, iEthiopia, iCongo] or iPlayer in lCivBioNewWorld):
 		return [iNative]
 		
 	if gc.getGame().getCurrentEra() <= iMedieval:
@@ -596,8 +595,7 @@ def completeCollapse(iPlayer):
 		if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iNationalism):
 			if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
 				# The Celts collapse to Britain, not their Core.
-				bCeltia = iPlayer == iCeltia and not pCeltia.isReborn()
-				if bCeltia: iCoreCities = len(vic.getCitiesInRegions(iCeltia, [rBritain])) 
+				if iPlayer == iCeltia: iCoreCities = len(vic.getCitiesInRegions(iCeltia, [rBritain])) 
 				else: iCoreCities = len(utils.getOwnedCoreCities(iPlayer))
 				
 				if iCoreCities > 0 and iCoreCities < len(utils.getCityList(iPlayer)):
@@ -648,8 +646,7 @@ def collapseToCore(iPlayer):
 		plot = gc.getMap().plot(city.getX(), city.getY())
 		
 		# The Celts collapse to Britain, not their Core.
-		bBoudica = iPlayer == iCeltia and not pCeltia.isReborn()
-		bCore = (bBoudica and city.getRegionID() == rBritain) or (not bBoudica and plot.isCore(iPlayer))
+		bCore = (iPlayer == iCeltia and city.getRegionID() == rBritain) or (iPlayer != iCeltia and plot.isCore(iPlayer))
 		
 		if not bCore:
 			lNonCoreCities.append(city)
@@ -771,8 +768,8 @@ def calculateStability(iPlayer):
 		
 		iTotalCulture = 0
 		
-		# If the Celts are not reborn, do not control any core cities and their capital is in Britain, their capital counts as a core city
-		bBoudica = iPlayer == iCeltia and city.getRegionID == rBritain and not pCeltia.isReborn() and city.isCapital() and len(utils.getOwnedCoreCities(iPlayer)) == 0
+		# If the Celts do not control any core cities and their capital is in Britain, their capital counts as a core city
+		bBoudica = iPlayer == iCeltia and city.getRegionID == rBritain and city.isCapital() and len(utils.getOwnedCoreCities(iPlayer)) == 0
 		
 		# Expansion
 		if plot.isCore(iPlayer) or bBoudica:

@@ -3405,4 +3405,20 @@
 		<Italian>Qargi</Italian>
 		<Spanish>Qargi</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUISCA_GOLDSMITH</Tag>
+		<English>Goldsmith</English>
+		<French>Goldsmith</French>
+		<German>Goldsmith</German>
+		<Italian>Goldsmith</Italian>
+		<Spanish>Goldsmith</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUISCA_GOLDSMITH_HELP</Tag>
+		<English>[ICON_BULLET]+1 Gold per Gold Resource</English>
+		<French>[ICON_BULLET]+1 Gold per Gold Resource</French>
+		<German>[ICON_BULLET]+1 Gold per Gold Resource</German>
+		<Italian>[ICON_BULLET]+1 Gold per Gold Resource</Italian>
+		<Spanish>[ICON_BULLET]+1 Gold per Gold Resource</Spanish>
+	</TEXT>
 </Civ4GameText>

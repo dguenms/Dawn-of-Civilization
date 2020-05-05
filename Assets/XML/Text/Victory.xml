@@ -7015,6 +7015,22 @@
 		<Spanish>%s1: %d2 / %d3</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_STRING_SINGLE</Tag>
+		<English>%s1: %d2</English>
+		<French>%s1: %d2</French>
+		<German>%s1: %d2</German>
+		<Italian>%s1: %d2</Italian>
+		<Spanish>%s1: %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENT_STRING</Tag>
+		<English>%s1: %s2 / %s3</English>
+		<French>%s1: %s2 / %s3</French>
+		<German>%s1: %s2 / %s3</German>
+		<Italian>%s1: %s2 / %s3</Italian>
+		<Spanish>%s1: %s2 / %s3</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_MIS1_TITLE</Tag>
 		<English>Hopewell Exchange</English>
 		<French>Hopewell Exchange</French>
@@ -7197,5 +7213,93 @@
 		<German>Worked %s1 resources: %d2 / %d3d</German>
 		<Italian>Worked %s1 resources: %d2 / %d3d</Italian>
 		<Spanish>Worked %s1 resources: %d2 / %d3d</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI2_TITLE</Tag>
+		<English>Tejuelo Gold Coins</English>
+		<French>Tejuelo Gold Coins</French>
+		<German>Tejuelo Gold Coins</German>
+		<Italian>Tejuelo Gold Coins</Italian>
+		<Spanish>Tejuelo Gold Coins</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI2</Tag>
+		<English>Spend 2000 Gold in diplomacy by 1540 AD</English>
+		<French>Spend 2000 Gold in diplomacy by 1540 AD</French>
+		<German>Spend 2000 Gold in diplomacy by 1540 AD</German>
+		<Italian>Spend 2000 Gold in diplomacy by 1540 AD</Italian>
+		<Spanish>Spend 2000 Gold in diplomacy by 1540 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI2_EPIC</Tag>
+		<English>Spend 3000 Gold in diplomacy by 1540 AD</English>
+		<French>Spend 3000 Gold in diplomacy by 1540 AD</French>
+		<German>Spend 3000 Gold in diplomacy by 1540 AD</German>
+		<Italian>Spend 3000 Gold in diplomacy by 1540 AD</Italian>
+		<Spanish>Spend 3000 Gold in diplomacy by 1540 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI2_MARATHON</Tag>
+		<English>Spend 6000 Gold in diplomacy by 1540 AD</English>
+		<French>Spend 6000 Gold in diplomacy by 1540 AD</French>
+		<German>Spend 6000 Gold in diplomacy by 1540 AD</German>
+		<Italian>Spend 6000 Gold in diplomacy by 1540 AD</Italian>
+		<Spanish>Spend 6000 Gold in diplomacy by 1540 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI1_TITLE</Tag>
+		<English>The Altiplano Cundiboyacense</English>
+		<French>The Altiplano Cundiboyacense</French>
+		<German>The Altiplano Cundiboyacense</German>
+		<Italian>The Altiplano Cundiboyacense</Italian>
+		<Spanish>The Altiplano Cundiboyacense</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI1</Tag>
+		<English>Have the highest average population in the New World at the time of Old World contact</English>
+		<French>Have the highest average population in the New World at the time of Old World contact</French>
+		<German>Have the highest average population in the New World at the time of Old World contact</German>
+		<Italian>Have the highest average population in the New World at the time of Old World contact</Italian>
+		<Spanish>Have the highest average population in the New World at the time of Old World contact</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI3_TITLE</Tag>
+		<English>El Dorado</English>
+		<French>El Dorado</French>
+		<German>El Dorado</German>
+		<Italian>El Dorado</Italian>
+		<Spanish>El Dorado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUI3</Tag>
+		<English>Ensure no Old World civilization controls a silver or gold resource in South or Central America in 1600 AD</English>
+		<French>Ensure no Old World civilization controls a silver or gold resource in South or Central America in 1600 AD</French>
+		<German>Ensure no Old World civilization controls a silver or gold resource in South or Central America in 1600 AD</German>
+		<Italian>Ensure no Old World civilization controls a silver or gold resource in South or Central America in 1600 AD</Italian>
+		<Spanish>Ensure no Old World civilization controls a silver or gold resource in South or Central America in 1600 AD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_GOLD_SPENT</Tag>
+		<English>Gold spent</English>
+		<French>Gold spent</French>
+		<German>Gold spent</German>
+		<Italian>Gold spent</Italian>
+		<Spanish>Gold spent</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENT_NEW_WORLD_POPULATION</Tag>
+		<English>Percentage of new world population</English>
+		<French>Percentage of new world population</French>
+		<German>Percentage of new world population</German>
+		<Italian>Percentage of new world population</Italian>
+		<Spanish>Percentage of new world population</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_AVERAGE_POPULATION_NEW_WORLD</Tag>
+		<English>New world civilization with the highest average population: %s1_city</English>
+		<French>New world civilization with the highest average population: %s1_city</French>
+		<German>New world civilization with the highest average population: %s1_city</German>
+		<Italian>New world civilization with the highest average population: %s1_city</Italian>
+		<Spanish>New world civilization with the highest average population: %s1_city</Spanish>
 	</TEXT>
 </Civ4GameText>

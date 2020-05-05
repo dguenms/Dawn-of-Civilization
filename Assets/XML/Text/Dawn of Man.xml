@@ -777,4 +777,8 @@
 		<Tag>TXT_KEY_DOM_INUIT</Tag>
 		<English>It is the year 200 BC. The Inuit's arrival to the Bering Strait marks the beginning of what will become one of the longest lasting cultures of the arctic.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MUISCA</Tag>
+		<English>It is the year 800 AD. The formation end of the Hererra period heralds in a new age for the peopel of the Altiplano Cundiboyacense. The rise of the Muisca Confederation marks the start in a new golden age of American trade.</English>
+	</TEXT>
 </Civ4GameText>

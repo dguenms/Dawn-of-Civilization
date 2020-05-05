@@ -7253,8 +7253,85 @@ void CvGame::createAnimals()
 
 										if (iValue > iBestValue)
 										{
-											eBestUnit = eLoopUnit;
-											iBestValue = iValue;
+											bool bAppropriateLocation = true;
+
+											if (eBestUnit == GC.getInfoTypeForString("UNIT_TIGER") &&
+												!(pPlot->getRegionID() == REGION_INDIA ||
+												pPlot->getRegionID() == REGION_DECCAN ||
+												pPlot->getRegionID() == REGION_CHINA ||
+												pPlot->getRegionID() == REGION_MANCHURIA ||
+												pPlot->getRegionID() == REGION_KOREA ||
+												pPlot->getRegionID() == REGION_INDOCHINA))
+											{
+												bAppropriateLocation = false;
+											}
+
+											if ((eBestUnit == GC.getInfoTypeForString("UNIT_LION")) &&
+												!(pPlot->getRegionID() == REGION_ETHIOPIA ||
+												pPlot->getRegionID() == REGION_SOUTH_AFRICA ||
+												pPlot->getRegionID() == REGION_WEST_AFRICA ||
+												pPlot->getRegionID() == REGION_EGYPT ||
+												pPlot->getRegionID() == REGION_ARABIA ||
+												pPlot->getRegionID() == REGION_MESOPOTAMIA ||
+												pPlot->getRegionID() == REGION_EGYPT ||
+												pPlot->getRegionID() == REGION_ANATOLIA ||
+												pPlot->getRegionID() == REGION_PERSIA ||
+												pPlot->getRegionID() == REGION_INDIA ||
+												pPlot->getRegionID() == REGION_DECCAN ||
+												pPlot->getRegionID() == REGION_BALKANS ||
+												pPlot->getRegionID() == REGION_MAGHREB))
+											{
+												bAppropriateLocation = false;
+											}
+
+											if ((eBestUnit == GC.getInfoTypeForString("UNIT_HYENA")) &&
+												!(pPlot->getRegionID() == REGION_ETHIOPIA ||
+												pPlot->getRegionID() == REGION_SOUTH_AFRICA ||
+												pPlot->getRegionID() == REGION_WEST_AFRICA ||
+												pPlot->getRegionID() == REGION_EGYPT ||
+												pPlot->getRegionID() == REGION_ARABIA ||
+												pPlot->getRegionID() == REGION_MESOPOTAMIA ||
+												pPlot->getRegionID() == REGION_EGYPT ||
+												pPlot->getRegionID() == REGION_ANATOLIA ||
+												pPlot->getRegionID() == REGION_PERSIA ||
+												pPlot->getRegionID() == REGION_INDIA ||
+												pPlot->getRegionID() == REGION_DECCAN ))
+											{
+												bAppropriateLocation = false;
+											}
+
+											if ((eBestUnit == GC.getInfoTypeForString("UNIT_PANTHER")) &&
+												!(pPlot->getRegionID() == REGION_ETHIOPIA ||
+												pPlot->getRegionID() == REGION_SOUTH_AFRICA ||
+												pPlot->getRegionID() == REGION_WEST_AFRICA ||
+												pPlot->getRegionID() == REGION_EGYPT ||
+												pPlot->getRegionID() == REGION_ARABIA ||
+												pPlot->getRegionID() == REGION_MESOPOTAMIA ||
+												pPlot->getRegionID() == REGION_EGYPT ||
+												pPlot->getRegionID() == REGION_ANATOLIA ||
+												pPlot->getRegionID() == REGION_PERSIA ||
+												pPlot->getRegionID() == REGION_INDIA ||
+												pPlot->getRegionID() == REGION_DECCAN ||
+												pPlot->getRegionID() == REGION_INDOCHINA ||
+												pPlot->getRegionID() == REGION_KOREA ||
+												pPlot->getRegionID() == REGION_CHINA))
+											{
+												bAppropriateLocation = false;
+											}
+
+											if ((eBestUnit == GC.getInfoTypeForString("UNIT_JAGUAR")) &&
+												!(pPlot->getRegionID() == REGION_BRAZIL ||
+												pPlot->getRegionID() == REGION_COLOMBIA ||
+												pPlot->getRegionID() == REGION_MESOAMERICA))
+											{
+												bAppropriateLocation = false;
+											}
+											
+											if (bAppropriateLocation)
+											{
+												eBestUnit = eLoopUnit;
+												iBestValue = iValue;
+											}
 										}
 									}
 								}

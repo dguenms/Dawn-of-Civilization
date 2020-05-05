@@ -594,6 +594,7 @@ dStartingLeaders = [
 	iArabia : iHarun,
 	iTibet : iSongtsen,
 	iKhmer : iSuryavarman,
+	iMuisca : iSacuamanchica,
 	iIndonesia : iDharmasetu,
 	iBurma : iAnawrahta,
 	iKhazars : iBulan,

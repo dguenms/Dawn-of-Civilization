@@ -458,19 +458,21 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iNorteChico:
 		# first goal: Have a capital with developing culture in 1800 BC
 		if iGameTurn == getTurnForYear(-1800):
-			if (pNorteChico.getCapitalCity().getCulture(iNorteChico) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType())):
-				win(iNorteChico, 0)
-			else:
-				lose(iNorteChico, 0)
+			if isPossible(iNorteChico, 0):
+				if (pNorteChico.getCapitalCity().getCulture(iNorteChico) >= gc.getCultureLevelInfo(3).getSpeedThreshold(gc.getGame().getGameSpeedType())):
+					win(iNorteChico, 0)
+				else:
+					lose(iNorteChico, 0)
 		
 		# second goal: Be the first to discover Writing and Calendar
 		
 		# third goal: Have a capital with 5 populations and 6 buildings in 1500 BC
 		if iGameTurn == getTurnForYear(-1500):
-			if cityPopulation(pNorteChico.getCapitalCity()) >= 5 and pNorteChico.getCapitalCity().getNumBuildings() >= 5:
-				win(iNorteChico, 2)
-			else:
-				lose(iNorteChico, 2)
+			if isPossible(iNorteChico, 2):
+				if cityPopulation(pNorteChico.getCapitalCity()) >= 5 and pNorteChico.getCapitalCity().getNumBuildings() >= 5:
+					win(iNorteChico, 2)
+				else:
+					lose(iNorteChico, 2)
 		
 	elif iPlayer == iNubia:
 		# first goal: Build the Pyramids in Kerma by 656 BC and Control Egypt for 1000 years
@@ -487,8 +489,8 @@ def checkTurn(iGameTurn, iPlayer):
 					expire(iNubia, 0)
 				
 		# second goal: Control 2 Orthodox Cathedrals and have Pleased or better relations with 5 other Christian Civilizations in 1365
-		if isPossible(iNubia, 1):
-			if iGameTurn == getTurnForYear(1365):
+		if iGameTurn == getTurnForYear(1365):
+			if isPossible(iNubia, 1):
 				iNumOrthodoxCathedrals = getNumBuildings(iNubia, iOrthodoxCathedral)
 				iNumPleasedOrBetterChristians = countPlayersWithAttitudeInGroup(iNubia, AttitudeTypes.ATTITUDE_PLEASED, getReligionPlayers(dc.lChristianity)) >= 5
 				if iNumOrthodoxCathedrals >= 2 and iNumPleasedOrBetterChristians >= 5:
@@ -602,8 +604,8 @@ def checkTurn(iGameTurn, iPlayer):
 				expire(iCeltia, 0)
 		
 		# second goal: Control 3 cities in Gallia and Germania and 1 in Italy, Iberia, and Britain in 1 BC
-		if isPossible(iCeltia, 1):
-			if iGameTurn == getTurnForYear(-1):
+		if iGameTurn == getTurnForYear(-1):
+			if isPossible(iCeltia, 1):
 				iGallia =  getNumCitiesInArea(iCeltia, utils.getPlotList(tFranceTL, Areas.tNormalArea[iFrance][1]))
 				if gc.getMap().plot(56, 46).isCity() and gc.getMap().plot(56, 46).getPlotCity().getOwner() == iCeltia:
 					iGallia += 1
@@ -874,19 +876,21 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: never lose a single city until 1950 AD and allow no foreign powers in South Asia in 1950 AD
 		if iGameTurn == getTurnForYear(1950):
-			if isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs):
-				win(iVietnam, 2)
-			else:
-				lose(iVietnam, 2)
+			if isPossible(iVietnam, 2):
+				if isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs):
+					win(iVietnam, 2)
+				else:
+					lose(iVietnam, 2)
 				
 	elif iPlayer == iTeotihuacan:
 		
 		# first goal: have 500 culture in 550
 		if iGameTurn == getTurnForYear(550):
-			if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
-				win(iTeotihuacan, 0)
-			else:
-				lose(iTeotihuacan, 0)
+			if isPossible(iTeotihuacan, 0):
+				if pTeotihuacan.countTotalCulture() >= utils.getTurns(500):
+					win(iTeotihuacan, 0)
+				else:
+					lose(iTeotihuacan, 0)
 			
 		# second goal: experience a golden age by 550 AD
 		if isPossible(iTeotihuacan, 1):
@@ -901,12 +905,13 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: control all tiles in Mesoamerica in 1000 AD
 		if iGameTurn == getTurnForYear(1000):
-			iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
-			percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
-			if percentMesoamerica >= 99.5:
-				win(iTeotihuacan, 2)
-			else: 
-				lose(iTeotihuacan, 2)
+			if isPossible(iTeotihuacan, 2):
+				iMesoamericaTiles, iTotalMesoamericaTiles = countControlledTiles(iTeotihuacan, tMesoamericaTL, tMesoamericaBR, False)
+				percentMesoamerica = iMesoamericaTiles * 100.0 / iTotalMesoamericaTiles
+				if percentMesoamerica >= 99.5:
+					win(iTeotihuacan, 2)
+				else: 
+					lose(iTeotihuacan, 2)
 				
 	elif iPlayer == iInuit:
 		# first goal: Settle Kivalliq, Kalaallit Nunaat, Qikiqtaaluk, and Nunavik by 900 AD
@@ -993,7 +998,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: Build a palace and settle 2 great merchants in Cahokia by 1400 AD
 		if isPossible(iMississippi, 2):
-			bPalace = isBuildingInCity(Areas.getCapital(iPlayer, True), iPalace)
+			bPalace = cnm.getFoundName(iMississippi, pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()) == "Cahokia"
 			bMerchant = countCitySpecialists(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()), iSpecialistGreatMerchant) >= 2
 			
 			if bPalace and bMerchant:
@@ -1313,11 +1318,12 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: Control all of Indochina in 1580 AD
 		if iGameTurn == getTurnForYear(1580):
-			bIndochina = isControlled(iBurma, utils.getPlotList(tIndochinaTL, tIndochinaBR, tIndochinaExceptions))
-			if bIndochina:
-				win(iBurma, 2)
-			else:
-				lose(iBurma, 2)
+			if isPossible(iBurma, 2):
+				bIndochina = isControlled(iBurma, utils.getPlotList(tIndochinaTL, tIndochinaBR, tIndochinaExceptions))
+				if bIndochina:
+					win(iBurma, 2)
+				else:
+					lose(iBurma, 2)
 				
 	elif iPlayer == iKhazars:
 		# first goal: Conduct a Diplomatic mission in a European City controlled by a Muslim Civilization by 1031 AD
@@ -1326,18 +1332,20 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# second goal: Have 10 Religious Happiness and a larger Jewish population than any other nation in 1031 AD
 		if iGameTurn == getTurnForYear(1031):
-			iLeader, iPopulation = getLargestReligionPopulation(iReligion)
-			if iLeader == iKhazars and getReligionHappiness(iKhazars) >= 10:
-				win(iKhazars, 1)
-			else:
-				lose(iKhazars, 1)
+			if isPossible(iKhazars, 1):
+				iLeader, iPopulation = getLargestReligionPopulation(iReligion)
+				if iLeader == iKhazars and getReligionHappiness(iKhazars) >= 10:
+					win(iKhazars, 1)
+				else:
+					lose(iKhazars, 1)
 				
 		# third goal: Control a continuous empire from the Danube River to Lake Zaysan in 1241 AD
 		if iGameTurn == getTurnForYear(1241):
-			if isConnectedByLand(iKhazars, lDanube, lZaysan):
-				win(iKhazars, 2)
-			else:
-				lose(iKhazars, 2)
+			if isPossible(iKhazars, 2):
+				if isConnectedByLand(iKhazars, lDanube, lZaysan):
+					win(iKhazars, 2)
+				else:
+					lose(iKhazars, 2)
 				
 	elif iPlayer == iChad:
 		if iGameTurn == getTurnForYear(1259):
@@ -1478,18 +1486,48 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1450):
 			expire(iKhmer, 2)
 			
+	elif iPlayer == iMuisca:
+		# first goal: Spend 1000 Gold in diplomacy by 1540 AD
+		if isPossible(iMuisca, 1):
+			iTradeGold = 0
+			
+			for iLoopPlayer in range(iNumPlayers):
+				iTradeGold += gc.getPlayer(iLoopPlayer).getGoldPerTurnByPlayer(iMuisca)
+			
+			data.iMuiscaTradeGold += iTradeGold
+			
+			if data.iMuiscaTradeGold >= utils.getTurns(2000):
+				win(iMuisca, 1)
+				
+		if iGameTurn == getTurnForYear(1540):
+			expire(iMuisca, 1)
+			
+		# second goal: Control 25% of the New World population and the largest average city population in the New World at the time of Old World contact
+		
+		# third goal: Ensure no Old World civilization controls a silver or gold resource in South or Central America in 1600 AD
+		if iGameTurn == getTurnForYear(1600):
+			if isPossible(iMuisca, 2):
+				if countControlledResourcesInRegions(lCivBioOldWorld, lSouthAmerica, [iGold, iSilver], iMine) >= 0:
+					lose(iMuisca, 2)
+				if not isLost(iMuisca, 2):
+					win(iMuisca, 2)
+					
 	elif iPlayer == iYemen:
 		# second goal: Control Mecca in 1265
 		if iGameTurn == getTurnForYear(1265):
-			if controlsCity(iYemen, tMecca):
-				win(iYemen, 1)
-			else:
-				lose(iYemen, 1)
+			if isPossible(iYemen, 1):
+				if controlsCity(iYemen, tMecca):
+					win(iYemen, 1)
+				else:
+					lose(iYemen, 1)
 			
 		# first goal: Control more culture producing buildings in your capital than any other nation in 1229
 		if iGameTurn == getTurnForYear(1229):
-			if getCapitalCultureBuildingsLeader()[0] == iYemen:
-				win(iYemen, 0)
+			if isPossible(iYemen, 0):
+				if getCapitalCultureBuildingsLeader()[0] == iYemen:
+					win(iYemen, 0)
+				else:
+					lose(iYemen, 0)
 				
 		
 	elif iPlayer == iEngland:
@@ -1586,19 +1624,21 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iHungary:
 		# Control 20% of Europe in 1301 AD
 		if iGameTurn == getTurnForYear(1327):
-			iEurope, iTotalEurope = countControlledTilesInRegions(iPlayer, [rIberia, rEurope, rItaly, rBalkans], False, True)
-			fEurope = (iEurope) * 100.0 / (iTotalEurope)
-			if fEurope >= 19.995:
-				win(iHungary, 0)
-			else:
-				lose(iHungary, 0)
+			if isPossible(iHungary, 0):
+				iEurope, iTotalEurope = countControlledTilesInRegions(iPlayer, [rIberia, rEurope, rItaly, rBalkans], False, True)
+				fEurope = (iEurope) * 100.0 / (iTotalEurope)
+				if fEurope >= 19.995:
+					win(iHungary, 0)
+				else:
+					lose(iHungary, 0)
 		# Be the first to adopt Tolerance and have Friendly Relations with 5 Catholic Civs in 1867 AD
 		if iGameTurn == getTurnForYear(1867):
-			iCount = countPlayersWithAttitudeAndReligion(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, iCatholicism, True)
-			if data.bHungaryTolerance and iCount >= 5:
-				win(iHungary, 0)
-			else:
-				lose(iHungary, 0)
+			if isPossible(iHungary, 1):
+				iCount = countPlayersWithAttitudeAndReligion(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, iCatholicism, True)
+				if data.bHungaryTolerance and iCount >= 5:
+					win(iHungary, 1)
+				else:
+					lose(iHungary, 1)
 		# Win and attend the congress for two world wars
 		if isPossible(iHungary, 2):
 			if data.iHungaryGlobalWars >= 2:
@@ -1631,10 +1671,11 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iPhilippines:
 		# first goal: control 7 embassies in 1400 AD
 		if iGameTurn == getTurnForYear(1400):
-			if len(data.lPhilippineEmbassies) >= 7:
-				win(iPhilippines, 0)
-			else:
-				lose(iPhilippines, 0)
+			if isPossible(iPhilippines, 0):
+				if len(data.lPhilippineEmbassies) >= 7:
+					win(iPhilippines, 0)
+				else:
+					lose(iPhilippines, 0)
 				
 		# second goal: acquire 8 different happiness resources by 1550 AD
 		if isPossible(iPhilippines, 1):
@@ -1646,10 +1687,11 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: Have 5000 gold in 1600 AD
 		if iGameTurn == getTurnForYear(1600):
-			if pPhilippines.getGold() >= utils.getTurns(5000):
-				win(iPhilippines, 2)
-			else:
-				lose(iPhilippines, 2)
+			if isPossible(iPhilippines, 2):
+				if pPhilippines.getGold() >= utils.getTurns(5000):
+					win(iPhilippines, 2)
+				else:
+					lose(iPhilippines, 2)
 				
 	elif iPlayer == iChimu:
 		# first goal: Build two Kanchas by 1300 CE
@@ -1728,20 +1770,22 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# second goal: Make Cairo the most populous city in the world and have at least 30 population on the Lower Nile in 1380 AD
 		if iGameTurn == getTurnForYear(1380):
-			lLowerNile = [(x, y) for (x, y) in utils.getPlotList(tLowerNileTL, tLowerNileBR) if gc.getMap().plot(x, y).isRiver()]
-			if isBestCity(iMamluks, (69, 35), cityPopulation) and countPopulationInArea(iMamluks, lLowerNile) >= 30:
-				win(iMamluks, 1)
-			else:
-				lose(iMamluks, 1)
+			if isPossible(iMamluks, 1):
+				lLowerNile = [(x, y) for (x, y) in utils.getPlotList(tLowerNileTL, tLowerNileBR) if gc.getMap().plot(x, y).isRiver()]
+				if isBestCity(iMamluks, (69, 35), cityPopulation) and countPopulationInArea(iMamluks, lLowerNile) >= 30:
+					win(iMamluks, 1)
+				else:
+					lose(iMamluks, 1)
 				
 		# third goal: Have the highest total culture and science output in 1500 AD
 		if iGameTurn == getTurnForYear(1500):
-			bMostCultureOutput = isBestPlayer(iMamluks, playerCultureOutput)
-			bMostResearchOutput = isBestPlayer(iMamluks, playerResearchOutput)
-			if bMostCultureOutput and bMostResearchOutput:
-				win(iMamluks, 2)
-			else:
-				lose(iMamluks, 2)
+			if isPossible(iMamluks, 2):
+				bMostCultureOutput = isBestPlayer(iMamluks, playerCultureOutput)
+				bMostResearchOutput = isBestPlayer(iMamluks, playerResearchOutput)
+				if bMostCultureOutput and bMostResearchOutput:
+					win(iMamluks, 2)
+				else:
+					lose(iMamluks, 2)
 			
 	elif iPlayer == iMali:
 		
@@ -1800,23 +1844,25 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# second goal: Have a monopoly on Ivory and Gold in Sub-Saharan Africa in 1500 AD
 		if iGameTurn == getTurnForYear(1500):
-			lSubSaharanAfrica = utils.getPlotList(tSubSaharaTL, tSubSaharaBR, tSubSaharaExceptions)
-			bGoldMonopoly = isMonopoly(iZimbabwe, iGold, lSubSaharanAfrica)
-			bSilverMonopoly = isMonopoly(iZimbabwe, iSilver, lSubSaharanAfrica)
-			bGemsMonopoly = isMonopoly(iZimbabwe, iGems, lSubSaharanAfrica)
-			bIvoryMonopoly = isMonopoly(iZimbabwe, iIvory, lSubSaharanAfrica)
-			if bGoldMonopoly and bSilverMonopoly and bGemsMonopoly and bIvoryMonopoly:
-				win(iZimbabwe, 1)
-			else:
-				lose(iZimbabwe, 1)
+			if isPossible(iZimbabwe, 1):
+				lSubSaharanAfrica = utils.getPlotList(tSubSaharaTL, tSubSaharaBR, tSubSaharaExceptions)
+				bGoldMonopoly = isMonopoly(iZimbabwe, iGold, lSubSaharanAfrica)
+				bSilverMonopoly = isMonopoly(iZimbabwe, iSilver, lSubSaharanAfrica)
+				bGemsMonopoly = isMonopoly(iZimbabwe, iGems, lSubSaharanAfrica)
+				bIvoryMonopoly = isMonopoly(iZimbabwe, iIvory, lSubSaharanAfrica)
+				if bGoldMonopoly and bSilverMonopoly and bGemsMonopoly and bIvoryMonopoly:
+					win(iZimbabwe, 1)
+				else:
+					lose(iZimbabwe, 1)
 		
 		# third goal: allow no European colonies in Subequatorial Africa in 1700 AD
 		if iGameTurn == getTurnForYear(1700):
-			bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
-			if bSubequatorialAfrica:
-				win(iZimbabwe, 2)
-			else:
-				lose(iZimbabwe, 2)
+			if isPossible(iZimbabwe, 2):
+				bSubequatorialAfrica = isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
+				if bSubequatorialAfrica:
+					win(iZimbabwe, 2)
+				else:
+					lose(iZimbabwe, 2)
 			
 	elif iPlayer == iPortugal:
 	
@@ -1899,11 +1945,12 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iNigeria:
 		# first goal: Have the largest army of Africa in 1600 AD
 		if iGameTurn == getTurnForYear(1600):
-			lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapitalCity().getRegionID() in lAfrica]
-			if isBestPlayer(iNigeria, playerArmySize, lAfricaCivs):
-				win(iNigeria, 0)
-			else:
-				lose(iNigeria, 0)
+			if isPossible(iNigeria, 0):
+				lAfricaCivs = [iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).getCapitalCity().getRegionID() in lAfrica]
+				if isBestPlayer(iNigeria, playerArmySize, lAfricaCivs):
+					win(iNigeria, 0)
+				else:
+					lose(iNigeria, 0)
 		
 		# second goal: Acquire 2000 gold by selling resources by 1750 AD
 		if isPossible(iNigeria, 1):
@@ -2134,17 +2181,19 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iManchuria:
 		# first goal: Have 20% of the world population in 1850 AD
 		if iGameTurn == getTurnForYear(1850):
-			if getPopulationPercent(iManchuria) >= 20.0:
-				win(iManchuria, 0)
-			else:
-				lose(iManchuria, 0)
+			if isPossible(iManchuria, 0):
+				if getPopulationPercent(iManchuria) >= 20.0:
+					win(iManchuria, 0)
+				else:
+					lose(iManchuria, 0)
 				
 		# second goal: Have the highest food, production and commerce output in 1850 AD
 		if iGameTurn == getTurnForYear(1850):
-			if isBestPlayer(iManchuria, playerFoodOutput) and isBestPlayer(iManchuria, playerProductionOutput) and isBestPlayer(iManchuria, playerCommerceOutput):
-				win(iManchuria, 1)
-			else:
-				lose(iManchuria, 1)
+			if isPossible(iManchuria, 0):
+				if isBestPlayer(iManchuria, playerFoodOutput) and isBestPlayer(iManchuria, playerProductionOutput) and isBestPlayer(iManchuria, playerCommerceOutput):
+					win(iManchuria, 1)
+				else:
+					lose(iManchuria, 1)
 		
 		# third goal: Be the first to discover all Industrial and eight Global technologies
 		
@@ -2247,15 +2296,16 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# first Australian goal: control Australia, New Zealand, New Guinea and 3 pacific islands in 1950 AD
 		if iGameTurn == getTurnForYear(1950):
-			bAustralia = getNumCitiesInArea(iAustralia, utils.getPlotList(tAustraliaTL, tAustraliaBR)) >= 7
-			bNewZealand = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewZealandTL, tNewZealandBR)) >= 2
-			bGuinea = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewGuineaTL, tNewGuineaBR)) >= 1
-			bPacific = getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific1TL, tPacific1BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific2TL, tPacific2BR)) \
-				+ getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific3TL, tPacific3BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tHawaiiTL, tHawaiiBR)) >= 3
-			if bAustralia and bNewZealand and bGuinea and bPacific:
-				win(iAustralia, 0)
-			else:
-				lose(iAustralia, 0)
+			if isPossible(iAustralia, 0):
+				bAustralia = getNumCitiesInArea(iAustralia, utils.getPlotList(tAustraliaTL, tAustraliaBR)) >= 7
+				bNewZealand = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewZealandTL, tNewZealandBR)) >= 2
+				bGuinea = getNumCitiesInArea(iAustralia, utils.getPlotList(tNewGuineaTL, tNewGuineaBR)) >= 1
+				bPacific = getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific1TL, tPacific1BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific2TL, tPacific2BR)) \
+					+ getNumCitiesInArea(iAustralia, utils.getPlotList(tPacific3TL, tPacific3BR)) + getNumCitiesInArea(iAustralia, utils.getPlotList(tHawaiiTL, tHawaiiBR)) >= 3
+				if bAustralia and bNewZealand and bGuinea and bPacific:
+					win(iAustralia, 0)
+				else:
+					lose(iAustralia, 0)
 		
 		# second goal: Gift 25 Digger, Marines or Mechanized Infantry to other civilizations by 1950 AD
 		if iGameTurn == getTurnForYear(1950):
@@ -2962,7 +3012,7 @@ def onCityCaptureGold(iPlayer, iGold):
 		if isPossible(iVikings, 2):
 			data.iVikingGold += iGold
 		
-def onPlayerGoldTrade(iPlayer, iGold):
+def onPlayerGoldTrade(iPlayer, iBuyer, iGold):
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
@@ -2979,6 +3029,12 @@ def onPlayerGoldTrade(iPlayer, iGold):
 		if isPossible(iOman, 2):
 			if iGold > 0:
 				data.iOmaniTradeGold += iGold
+				
+	# second Muisca goal: Spend 1000 Gold in diplomacy by 1540 AD
+	elif iBuyer == iMuisca:
+		if isPossible(iMuisca, 1):
+			if iGold > 0:
+				data.iMuiscaTradeGold += iGold
 		
 def onPlayerSlaveTrade(iPlayer, iSlaves, iGold):
 
@@ -3118,8 +3174,40 @@ def onBlockade(iPlayer, iGold):
 			
 def onFirstContact(iPlayer, iHasMetPlayer):
 
+	# second Muisca goal: Control 25% of the New World population and the largest average city population in the New World at the time of Old World contact
+	if isPossible(iMuisca, 0):
+		
+		if iHasMetPlayer >= iNumPlayers: return
+		
+		if iPlayer in [iInuit]: return
+
+		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iAztecs]) + 2 and gc.getGame().getGameTurn() < getTurnForYear(1800):
+			iOldWorldCiv = -1
+			iNewWorldCiv = -1
+			if iPlayer in lCivBioNewWorld and iHasMetPlayer in lCivBioOldWorld:
+				iNewWorldCiv = iPlayer
+				iOldWorldCiv = iHasMetPlayer
+			if iOldWorldCiv != -1 and iNewWorldCiv != -1:
+				iAveragePlayer = -1
+				iAverageScore = -1
+				iLoopScore = -1
+				for iLoopPlayer in lCivBioNewWorld:
+					iLoopScore = getAverageCitySize(iLoopPlayer)
+					if iLoopScore > iAverageScore or (iLoopScore == iAverageScore and iAveragePlayer == iMuisca):
+						iAveragePlayer = iLoopPlayer
+						iAverageScore = iLoopScore
+						
+				if iAveragePlayer == iMuisca:
+					win(iMuisca, 0)
+				else:
+					lose(iMuisca, 0)
+				
+
 	# third Maya goal: make contact with a European civilization before they have discovered America
 	if not pMaya.isReborn() and isPossible(iMaya, 2):
+		
+		if iPlayer >= iNumPlayers or iHasMetPlayer >= iNumPlayers: return
+		
 		if iPlayer == iMaya or iHasMetPlayer == iMaya:
 			if iPlayer == iMaya and iHasMetPlayer in lCivGroups[0]: iEuropean = iHasMetPlayer
 			elif iHasMetPlayer == iMaya and iPlayer in lCivGroups[0]: iEuropean = iPlayer
@@ -3687,6 +3775,19 @@ def getPopulationPercent(iPlayer, cityFunction = None):
 				iPopulation += city.getPopulation()
 	
 	return 100.0 * iPopulation / iTotalPopulation
+	
+def getPopulationPercentInRegions(iPlayer, lRegions):
+	iTotalPopulation = 0
+	iPlayerPopulation = 0
+	iTempPopulation = 0
+	
+	for city in utils.getRegionCities(lRegions):
+		iTempPopulation = city.getPopulation()
+		iTotalPopulation += iTempPopulation
+		if city.getOwner() == iPlayer:
+			iPlayerPopulation += iTempPopulation
+			
+	return 100.0 * iPlayerPopulation / iTotalPopulation
 	
 def getLandPercent(iPlayer):
 	iTotalLand = gc.getMap().getLandPlots()
@@ -4366,9 +4467,21 @@ def countControlledResources(iPlayer, iResource, iImprovement, iWorkedOnly = Fal
 	
 	for (x, y) in utils.getWorldPlotsList():
 		plot = gc.getMap().plot(x, y)
-		if plot.getOwner() == iPlayer and plot.getResourceType() == iResource and plot.getImprovementType() == iImprovement:
+		if plot.getOwner() == iPlayer and plot.getBonusType(iPlayer) == iResource and plot.getImprovementType() == iImprovement:
 			if (not iWorkedOnly) or plot.isBeingWorked():
 				iCount += 1
+			
+	return iCount
+	
+def countControlledResourcesInRegions(lPlayers, lRegions, lResources, iImprovement, iWorkedOnly = False):
+	iCount = 0
+	
+	for rRegion in lRegions:
+		for (x, y) in utils.getRegionPlots(rRegion):
+			plot = gc.getMap().plot(x, y)
+			if plot.getOwner() in lPlayers and plot.getBonusType(plot.getOwner()) in lResources and plot.getImprovementType() == iImprovement:
+				if (not iWorkedOnly) or plot.isBeingWorked():
+					iCount += 1
 			
 	return iCount
 	
@@ -5526,6 +5639,26 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iCulture = pKhmer.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= utils.getTurns(8000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(8000))))
+
+	elif iPlayer == iMuisca:
+		if iGoal == 1:
+			aHelp.append(getIcon(data.iMuiscaTradeGold >= utils.getTurns(2000)) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_VICTORY_TRADE_GOLD_SPENT", data.iMuiscaTradeGold, utils.getTurns(2000))))
+			
+		elif iGoal == 0:
+			iAveragePlayer = -1
+			iAverageScore = -1
+			iLoopScore = -1
+			for iLoopPlayer in lCivBioNewWorld:
+				iLoopScore = getAverageCitySize(iLoopPlayer)
+				if iLoopScore > iAverageScore or (iLoopScore == iAverageScore and iAveragePlayer == iMuisca):
+					iAveragePlayer = iLoopPlayer
+					iAverageScore = iLoopScore
+			
+			aHelp.append(getIcon(iAveragePlayer == iMuisca) + localText.getText("TXT_KEY_VICTORY_HIGHEST_AVERAGE_POPULATION_NEW_WORLD", (gc.getPlayer(iAveragePlayer).getCivilizationShortDescription(0),)) + " (" + str(int(iAverageScore)) + ")")
+
+		elif iGoal == 2:
+			iCount = countControlledResourcesInRegions(lCivBioOldWorld, lSouthAmerica, [iGold, iSilver], iMine)
+			aHelp.append(getIcon(iCount == 0) + localText.getText("TXT_KEY_VICTORY_NUM_STRING_SINGLE", (gc.getBonusInfo(iGold).getDescription(), iCount)))
 
 	elif iPlayer == iEngland:
 		if iGoal == 0:

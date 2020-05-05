@@ -1393,4 +1393,20 @@
 		<Italian>Trade routes do not require roads. Extra Commerce on coastal city tiles.</Italian>
 		<Spanish>Trade routes do not require roads. Extra Commerce on coastal city tiles.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MUI_TITLE</Tag>
+		<English>The Power of Salt:</English>
+		<French>Le pouvoir de sel:</French>
+		<German>Die Macht des Salz-:</German>
+		<Italian>Il potere della sale:</Italian>
+		<Spanish>El poder de la sal:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MUI</Tag>
+		<English>+1 Food from Mines.</English>
+		<French>+1 Food from Mines.</French>
+		<German>+1 Food from Mines.</German>
+		<Italian>+1 Food from Mines.</Italian>
+		<Spanish>+1 Food from Mines.</Spanish>
+	</TEXT>
 </Civ4GameText>

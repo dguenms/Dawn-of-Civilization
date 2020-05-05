@@ -98,7 +98,8 @@ tPool3 = (iEgypt,
 	iNubia,
 	iChad,
 	iCeltia,
-	iChimu)
+	iChimu,
+	iMuisca)
 
 
 class Communications:

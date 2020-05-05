@@ -4527,6 +4527,12 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 
 	changeBonusGoodHappiness(iGoodValue * iChange);
 	changeBonusBadHappiness(iBadValue * iChange);
+
+	// Muisca UB: +1 Gold per Gold Resource
+	if (eBonus == BONUS_GOLD && isHasBuildingEffect((BuildingTypes)GC.getInfoTypeForString("BUILDING_MUISCA_GOLDSMITH")))
+	{
+		updateBuildingCommerce();
+	}
 }
 
 
@@ -4589,6 +4595,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		if (eBuilding == GC.getInfoTypeForString("BUILDING_INUIT_IGLOO"))
 		{
 			updateYield();
+		}
+
+		// Muisca UB: +1 Gold per Gold Resource
+		if (eBuilding == GC.getInfoTypeForString("BUILDING_MUISCA_GOLDSMITH"))
+		{
+			updateBuildingCommerce();
 		}
 
 		changeEspionageDefenseModifier(GC.getBuildingInfo(eBuilding).getEspionageDefenseModifier() * iChange);
@@ -10871,7 +10883,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - countNoGlobalEffectsFreeSpecialists()) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
 	iBaseCommerceRate += 100 * countSatellites() * GET_PLAYER(getOwnerINLINE()).getSatelliteExtraCommerce(eIndex);
-
+	
 	// Leoreth: Himeji Castle effect
 	if (eIndex == COMMERCE_CULTURE && isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 	{
@@ -11054,6 +11066,12 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 				if (eBuilding == GUADALUPE_BASILICA && eIndex == COMMERCE_GOLD)
 				{
 					iCommerce += std::min(iShrineLimit, GC.getMap().getArea(getArea())->countHasReligion(CATHOLICISM));
+				}
+				
+				// Muisca UB: +1 Gold per Gold Resource
+				if (eIndex == COMMERCE_GOLD && eBuilding == GC.getInfoTypeForString("BUILDING_MUISCA_GOLDSMITH"))
+				{
+					iCommerce += getNumBonuses(BONUS_GOLD);
 				}
 
 				if (GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce() != NO_CORPORATION)

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inca -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUISCA_DESC</Tag>
+		<English>The Muisca</English>
+		<French>The Muisca</French>
+		<German>The Muisca</German>
+		<Italian>The Muisca</Italian>
+		<Spanish>The Muisca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUISCA_PEOPLES</Tag>
+		<English>Andean Peoples</English>
+		<French>
+			<Text>Peuplades andines</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Andenv&#246;lker:Andenv&#246;lker:Andenv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Andini</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Andinos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUISCA_DEFAULT</Tag>
+		<English>Muisca Confederation</English>
+		<French>Muisca Confederation</French>
+		<German>Muisca Confederation</German>
+		<Italian>Muisca Confederation</Italian>
+		<Spanish>Muisca Confederation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUISCA_ADJECTIVE</Tag>
+		<English>Muisca</English>
+		<French>Muisca</French>
+		<German>Muisca</German>
+		<Italian>Muisca</Italian>
+		<Spanish>Muisca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUISCA_SHORT_DESC</Tag>
+		<English>Muisca</English>
+		<French>Muisca</French>
+		<German>Muisca</German>
+		<Italian>Muisca</Italian>
+		<Spanish>Muisca</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -6361,6 +6361,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	{
 		// Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
 		if (isHumanVictoryWonder(eBuilding, PYRAMIDS, NUBIA)) return false;
+		if (isHumanVictoryWonder(eBuilding, SERPENT_MOUND, MISSISSIPPI)) return false;
+		if (isHumanVictoryWonder(eBuilding, SAINT_SOPHIA, KIEVAN_RUS)) return false;
 
 		if (isHumanVictoryWonder(eBuilding, NOTRE_DAME, FRANCE)) return false;
 		else if (isHumanVictoryWonder(eBuilding, EIFFEL_TOWER, FRANCE)) return false;
@@ -11317,14 +11319,6 @@ void CvPlayer::setCapitalCity(CvCity* pNewCapitalCity)
 	bool bUpdatePlotGroups;
 
 	pOldCapitalCity = getCapitalCity();
-
-	if (pNewCapitalCity->getRegionID() == REGION_BRITAIN)
-	{
-		if (pNewCapitalCity->getX() <= 50 || pNewCapitalCity->getY() >= 48)
-		{
-			setReborn(true);
-		}
-	}
 
 	if (pOldCapitalCity != pNewCapitalCity)
 	{
@@ -25867,7 +25861,11 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
 				{
-					if (GET_TEAM(getTeam()).canContact(GET_PLAYER((PlayerTypes)iI).getTeam()) && canTradeNetworkWith((PlayerTypes)iI))
+					if (GET_TEAM(getTeam()).canContact(GET_PLAYER((PlayerTypes)iI).getTeam()) && canTradeNetworkWith((PlayerTypes)iI) && 
+						(getID() != INUIT || 
+						canTrain(getUniqueUnit(getCivilizationType(), (UnitTypes)GC.getInfoTypeForString("UNIT_CARAVEL"))) || 
+						GET_PLAYER((PlayerTypes)iI).canTrain(getUniqueUnit(GET_PLAYER((PlayerTypes)iI).getCivilizationType(), (UnitTypes)GC.getInfoTypeForString("UNIT_CARAVEL"))))
+						)
 					{
 						return true;
 					}

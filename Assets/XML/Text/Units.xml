@@ -3941,4 +3941,44 @@
 		<Italian>[ICON_BULLET]Can settle on Ice (along Coast)</Italian>
 		<Spanish>[ICON_BULLET]Can settle on Ice (along Coast)</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUISCA_GUECHA_WARRIOR</Tag>
+		<English>Guecha Warrior</English>
+		<French>Guecha Warrior</French>
+		<German>Guecha Warrior</German>
+		<Italian>Guecha Warrior</Italian>
+		<Spanish>Guecha Warrior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HYENA</Tag>
+		<English>Hyena</English>
+		<French>Hyena</French>
+		<German>Hyena</German>
+		<Italian>Hyena</Italian>
+		<Spanish>Hyena</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TIGER</Tag>
+		<English>Tiger</English>
+		<French>Tiger</French>
+		<German>Tiger</German>
+		<Italian>Tiger</Italian>
+		<Spanish>Tiger</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAGUAR</Tag>
+		<English>Jaguar</English>
+		<French>Jaguar</French>
+		<German>Jaguar</German>
+		<Italian>Jaguar</Italian>
+		<Spanish>Jaguar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_POLAR_BEAR</Tag>
+		<English>Polar Bear</English>
+		<French>Polar Bear</French>
+		<German>Polar Bear</German>
+		<Italian>Polar Bear</Italian>
+		<Spanish>Polar Bear</Spanish>
+	</TEXT>
 </Civ4GameText>

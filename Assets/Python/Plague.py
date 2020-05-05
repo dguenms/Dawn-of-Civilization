@@ -444,7 +444,9 @@ class Plague:
 			return
 
 		if iTeamX == iInuit: return
-
+		
+		if iHasMetTeamY >= iNumPlayers: return
+		
 		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iAztecs]) + 2 and gc.getGame().getGameTurn() < getTurnForYear(1800):
 			iOldWorldCiv = -1
 			iNewWorldCiv = -1
@@ -452,6 +454,22 @@ class Plague:
 				iNewWorldCiv = iTeamX
 				iOldWorldCiv = iHasMetTeamY
 			if iOldWorldCiv != -1 and iNewWorldCiv != -1:
+				if iNewWorldCiv == iMississippi:
+					if data.players[iInuit].iPlagueCountdown == 0: #vulnerable
+						#print ("vulnerable", iNewWorldCiv)
+						if not teamInuit.isHasTech(iBiology):
+							city = utils.getRandomCity(iInuit)
+							if city:
+								iHealth = self.calculateHealth(iInuit)
+								if iHealth < 10: #no spread for iHealth >= 70 years
+									iHealth /= 10
+									if gc.getGame().getSorenRandNum(100, 'roll') > 30 + 5*iHealth:
+										data.players[iInuit].iPlagueCountdown = iDuration - iHealth
+										data.players[iInuit].bFirstContactPlague = True
+										#print ("spreading (through first contact) plague to", iInuit)
+										self.infectCity(city)
+										self.announceForeignPlagueSpread(city)
+
 				pNewWorldCiv = gc.getPlayer(iNewWorldCiv)
 				if data.players[iNewWorldCiv].iPlagueCountdown == 0: #vulnerable
 					#print ("vulnerable", iNewWorldCiv)

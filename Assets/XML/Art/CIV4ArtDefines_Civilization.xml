@@ -498,5 +498,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Inuit.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MUISCA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Muisca.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Muisca.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

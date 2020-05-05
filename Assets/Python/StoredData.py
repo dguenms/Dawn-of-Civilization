@@ -277,6 +277,7 @@ class GameData:
 		self.iCeltiaRazedCapitals = 0
 		self.lCeltiaConqueredCapitals = []
 		self.iTiwanakuGoldenAgeTurns = 0
+		self.iMuiscaTradeGold = 0
 		
 		self.tFirstTurkicCapital = None
 		self.tSecondTurkicCapital = None

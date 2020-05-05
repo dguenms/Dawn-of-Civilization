@@ -1286,6 +1286,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	TACAYNAMO,
 	RED_HORN,
 	AUA,
+	SAGUAMANCHICA,
 	NUM_LEADERHEADS
 };
 
@@ -1398,6 +1399,7 @@ enum PlayerTypes				// Exposed to Python
 	FRANCE,
 	OMAN,
 	KHMER,
+	MUISCA,
 	YEMEN,
 	ENGLAND,
 	HOLY_ROME,
