@@ -1382,5 +1382,13 @@
 			<NoShaderNIF>Art/Leaderheads/Smoke Jaguar/SmokeJaguar.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Smoke Jaguar/Gilgamesh_Backgrnd.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_TEZCATLIPOCA</Type>
+			<Button>Art/Leaderheads/Tezcatlipoca/Itzcoatl.dds</Button>
+			<NIF>Art/Leaderheads/Tezcatlipoca/Arawak.nif</NIF>
+			<KFM>Art/Leaderheads/Tezcatlipoca/Arawak.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Tezcatlipoca/Arawak.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Tezcatlipoca/Arawak_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
