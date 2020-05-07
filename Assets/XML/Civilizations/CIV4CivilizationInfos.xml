@@ -5869,7 +5869,7 @@
 			<ShortDescription>TXT_KEY_CIV_OLMEC_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_OLMEC_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_OLMEC_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_OLMEC</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_YELLOWISH_JADE_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_OLMEC</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
