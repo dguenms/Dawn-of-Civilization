@@ -1418,7 +1418,7 @@
 		<Spanish>El poder de la Reheatable Tortilla:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MUI</Tag>
+		<Tag>TXT_KEY_UP_OLM</Tag>
 		<English>Improved resources are connected to the trade network even without roads.</English>
 		<French>Les ressources am&#233;nag&#233;es sont connect&#233;s au r&#233;seau commercial m&#234;me en l'absence de routes</French>
 		<German>Improved resources are connected to the trade network even without roads.</German>
