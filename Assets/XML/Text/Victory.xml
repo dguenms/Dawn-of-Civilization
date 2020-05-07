@@ -1284,7 +1284,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1_TITLE</Tag>
 		<English>Translatio Imperii and Reformation</English>
-		<French>Translatio imperii et Réforme </French>
+		<French>Translatio imperii et R&#233;forme </French>
 		<German>Translatio Imperii and Reformation</German>
 		<Italian>Translatio Imperii and Reformation</Italian>
 		<Spanish>Translatio Imperii and Reformation</Spanish>
@@ -3216,7 +3216,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TEO2</Tag>
 		<English>Experience a golden age by 550 AD</English>
-		<French>Traverser un âge d'or avant 550 ap. J.-C.</French>
+		<French>Traverser un &#226;ge d'or avant 550 ap. J.-C.</French>
 		<German>Experience a golden age by 550 AD</German>
 		<Italian>Experience a golden age by 550 AD</Italian>
 		<Spanish>Experience a golden age by 550 AD</Spanish>
@@ -7301,5 +7301,61 @@
 		<German>New world civilization with the highest average population: %s1_city</German>
 		<Italian>New world civilization with the highest average population: %s1_city</Italian>
 		<Spanish>New world civilization with the highest average population: %s1_city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OLM1_TITLE</Tag>
+		<English>Mother Culture of Mesoamerica</English>
+		<French>Culture m&#232;re de la M&#233;soam&#233;rique </French>
+		<German>Mother Culture of Mesoamerica</German>
+		<Italian>Mother Culture of Mesoamerica</Italian>
+		<Spanish>Mother Culture of Mesoamerica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OLM1</Tag>
+		<English>Build 5 culture-producing buildings by 400 BC</English>
+		<French>Construire 5 b&#226;timents produisant de la culture avant 400 av. J.-C.</French>
+		<German>Build 5 culture-producing buildings by 400 BC</German>
+		<Italian>Build 5 culture-producing buildings by 400 BC</Italian>
+		<Spanish>Build 5 culture-producing buildings by 400 BC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT</Tag>
+		<English>Culture Buildings Built</English>
+		<French>B&#226;timents construits</French>
+		<German>Culture Buildings Built</German>
+		<Italian>Culture Buildings Built</Italian>
+		<Spanish>Culture Buildings Built</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OLM2_TITLE</Tag>
+		<English>The Long Count Begins</English>
+		<French>Que commence le compte long </French>
+		<German>The Long Count Begins</German>
+		<Italian>The Long Count Begins</Italian>
+		<Spanish>The Long Count Begins</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OLM2</Tag>
+		<English>Discover Arithmetics, Writing and Calendar by 400 BC</English>
+		<French>D&#233;couvrir l'arithm&#233;tique, l'&#233;criture et le calendrier avant 400 av. J.-C.</French>
+		<German>Discover Arithmetics, Writing and Calendar by 400 BC</German>
+		<Italian>Discover Arithmetics, Writing and Calendar by 400 BC</Italian>
+		<Spanish>Discover Arithmetics, Writing and Calendar by 400 BC</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OLM3_TITLE</Tag>
+		<English>A Magnetite Artifact</English>
+		<French>Un art&#233;fact en magn&#233;tite </French>
+		<German>A Magnetite Artifact</German>
+		<Italian>A Magnetite Artifact</Italian>
+		<Spanish>A Magnetite Artifact</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_OLM3</Tag>
+		<English>Be the first to discover Compass</English>
+		<French>&#202;tre le premier &#224; d&#233;couvrir la boussole</French>
+		<German>Be the first to discover Compass</German>
+		<Italian>Be the first to discover Compass</Italian>
+		<Spanish>Be the first to discover Compass</Spanish>
 	</TEXT>
 </Civ4GameText>

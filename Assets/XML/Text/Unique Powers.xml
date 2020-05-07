@@ -1180,7 +1180,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UP_IMMIGRATION_ALIYAH</Tag>
 		<English>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</English>
-		<French>La population juive de %s1 a quitté %s2 afin d'accomplir son alya à %s3!</French>
+		<French>La population juive de %s1 a quitt&#233; %s2 afin d'accomplir son alya à %s3!</French>
 		<German>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</German>
 		<Italian>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Italian>
 		<Spanish>The Jewish population of %s1 is fleeing %s2 and performing their Aliyah to %s3!</Spanish>
@@ -1408,5 +1408,21 @@
 		<German>+1 Food from Mines.</German>
 		<Italian>+1 Food from Mines.</Italian>
 		<Spanish>+1 Food from Mines.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_OLM_TITLE</Tag>
+		<English>The Power of the Reheatable Tortilla:</English>
+		<French>Le pouvoir de la tortilla r&#233;chauff&#233;e :</French>
+		<German>Die Macht des Reheatable Tortilla-:</German>
+		<Italian>Il potere della Reheatable Tortilla:</Italian>
+		<Spanish>El poder de la Reheatable Tortilla:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MUI</Tag>
+		<English>Improved resources are connected to the trade network even without roads.</English>
+		<French>Les ressources am&#233;nag&#233;es sont connect&#233;s au r&#233;seau commercial m&#234;me en l'absence de routes</French>
+		<German>Improved resources are connected to the trade network even without roads.</German>
+		<Italian>Improved resources are connected to the trade network even without roads.</Italian>
+		<Spanish>Improved resources are connected to the trade network even without roads.</Spanish>
 	</TEXT>
 </Civ4GameText>
