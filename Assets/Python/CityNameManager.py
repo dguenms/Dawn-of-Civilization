@@ -174,8 +174,12 @@ def updateCityNamesFound(iPlayer):
 def findLocations(iPlayer, sName):
 	result = plots.all().where(lambda p: getFoundName(iPlayer, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
 	return result
-	
+
+@handler("cityAcquired")
 def onCityBuilt(city):
+	if is_minor(city):
+		return
+
 	iOwner = city.getOwner()
 	x = city.getX()
 	y = city.getY()
@@ -329,16 +333,15 @@ def onReligionSpread(iReligion, iPlayer, city):
 	# easter egg
 	if iReligion == iBuddhism:
 		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
-			
-def onRevolution(iPlayer):
-	iCiv = civ(iPlayer)
 
+@handler("revolution")
+def onRevolution(iPlayer):
 	if has_civic(iPlayer, iCentralPlanning):
 		applyCommunistNames(iPlayer)
 	else:
 		revertCommunistNames(iPlayer)
 
-	if iCiv == iEgypt:
+	if civ(iPlayer) == iEgypt:
 		updateCityNames(iPlayer)
 
 

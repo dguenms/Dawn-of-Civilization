@@ -39,30 +39,63 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-dCatholicPreference = defaultdict({
+dCatholicPreference = CivDict({
 iEgypt		: 80,
 iGreece		: 80,
 iRome		: 95,
 iEthiopia	: 80,
 iByzantium	: 90,
-iVikings		: 20,
+iVikings	: 20,
 iArabia		: 80,
 iSpain		: 95,
 iFrance		: 75,
-iEngland		: 30,
+iEngland	: 30,
 iHolyRome	: 55,
 iRussia		: 80,
-iNetherlands	: 10,
+iNetherlands: 10,
 iPoland		: 80,
 iPortugal	: 95,
 iItaly		: 90,
 iCongo		: 80,
-iGermany		: 25,
-iAmerica		: 20,
+iGermany	: 25,
+iAmerica	: 20,
 }, 50)
 
 def getCatholicPreference(iPlayer):
-	return dCatholicPreference[civ(iPlayer)]
+	return dCatholicPreference[iPlayer]
+	
+
+@handler("religionFounded")
+def onReligionFounded(iReligion):
+	if turn() == scenarioStartTurn(): return
+
+	if iReligion == iCatholicism:
+		setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
+		setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
+		
+	elif iReligion == iProtestantism:
+		setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
+
+
+@handler("buildingBuilt")	
+def onBuildingBuilt(city, iBuilding):
+	iPlayer = city.getOwner()
+
+	if iBuilding == iHinduTemple:
+		if game.isReligionFounded(iBuddhism): return
+		rel.foundBuddhism(city)
+		
+	if iBuilding == iOrthodoxCathedral:
+		if game.isReligionFounded(iCatholicism): return
+	
+		pOrthodoxHolyCity = game.getHolyCity(iOrthodoxy)
+	
+		if pOrthodoxHolyCity.getOwner() != iPlayer:
+			rel.foundReligion(location(city), iCatholicism)
+			pCatholicHolyCity = game.getHolyCity(iCatholicism)
+			rel.schism(pOrthodoxHolyCity, pCatholicHolyCity, cities.none(), cities.all().notowner(pOrthodoxHolyCity.getOwner()).religion(iOrthodoxy))
+				
+
 
 class Religions:
 
@@ -101,16 +134,7 @@ class Religions:
 			
 		return False
 		
-		
-	def onReligionFounded(self, iReligion, iFounder):
-		if turn() == scenarioStartTurn(): return
-	
-		if iReligion == iCatholicism:
-			setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
-			setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
-			
-		elif iReligion == iProtestantism:
-			setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
+
 		
 	def getTargetCities(self, lCities, iReligion):
 		return [city for city in lCities if not city.isHasReligion(iReligion) and player(city).getSpreadType(city.plot(), iReligion) > ReligionSpreadTypes.RELIGION_SPREAD_NONE]
@@ -304,22 +328,6 @@ class Religions:
 					
 		for iReligion in range(iNumReligions):
 			self.checkLateReligionFounding(iReligion, iTech)
-					
-	def onBuildingBuilt(self, city, iPlayer, iBuilding):
-		if iBuilding == iHinduTemple:
-			if game.isReligionFounded(iBuddhism): return
-			self.foundBuddhism(city)
-			
-		if iBuilding == iOrthodoxCathedral:
-			if game.isReligionFounded(iCatholicism): return
-		
-			pOrthodoxHolyCity = game.getHolyCity(iOrthodoxy)
-		
-			if pOrthodoxHolyCity.getOwner() != iPlayer:
-				self.foundReligion(location(city), iCatholicism)
-				pCatholicHolyCity = game.getHolyCity(iCatholicism)
-				self.schism(pOrthodoxHolyCity, pCatholicHolyCity, cities.none(), cities.all().notowner(pOrthodoxHolyCity.getOwner()).religion(iOrthodoxy))
-				
 					
 	def chooseProtestantism(self, iPlayer):
 		return rand(100) >= getCatholicPreference(iPlayer)

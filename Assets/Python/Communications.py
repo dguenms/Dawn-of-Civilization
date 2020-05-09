@@ -119,7 +119,3 @@ class Communications:
 			
 			for iTheirPlayer, iOurPlayer in permutations(theirs, ours):
 				team(iOurPlayer).cutContact(iTheirPlayer)
-
-
-	def onBuildingBuilt(self, iPlayer, iBuilding, city):
-		return

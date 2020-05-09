@@ -675,14 +675,6 @@ def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False):
 # used: RiseAndFall
 def isIsland(plot, iIslandLimit = 3):
 	return map.getArea(plot_(plot).getArea()).getNumTiles <= iIslandLimit
-	
-# used: CvRFCEventHandler
-def handleChineseCities(pUnit):
-	plot = plots.of(lChineseCities).where(lambda p: isFree(slot(iChina), p, True, True, True)).random()
-	
-	if plot:
-		player(iChina).found(plot.getX(), plot.getY())
-		pUnit.kill(False, -1)
 			
 # used: RiseAndFall
 def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=None):
@@ -707,7 +699,7 @@ def foundCapital(iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligio
 			city.setHasRealBuilding(iBuilding, True)
 			
 	return city
-	
+
 # used: CvRFCEventHandler
 def moveSlaveToNewWorld(iPlayer, unit):
 	colony = cities.owner(iPlayer).where(lambda c: c.getRegionID() in lNorthAmerica + lSouthAmerica + lSubSaharanAfrica).random()
@@ -872,16 +864,6 @@ def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 # TODO: name is misleading, it has nothing inherently to do with colonies
 def getColonyPlayer(iPlayer):
 	return players.major().maximum(lambda p: cities.birth(iPlayer).owner(p).count())
-	
-# used: CvRFCEventHandler
-def cityConquestCulture(city, iPlayer, iPreviousOwner):
-	for plot in plots.surrounding(city):
-		if location(plot) == location(city):
-			convertTemporaryCulture(plot, iPlayer, 25, False)
-		elif plot.getOwner() == iPreviousOwner:
-			convertTemporaryCulture(plot, iPlayer, 50, True)
-		else:
-			convertTemporaryCulture(plot, iPlayer, 25, True)
 	
 # used: CvVictoryScreen, Victory
 def getReligiousVictoryType(iPlayer):
@@ -1268,7 +1250,7 @@ def breakAutoplay():
 		makeUnit(active(), iSettler, (0, 0))
 		
 # used: CvRFCEventHandler
-# TODO: use more, e.g. wonder implementations
+# TODO: use more, e.g. wonder implementations -> check Wonders module
 def getBuildingEffectCity(iBuilding):
 	if game.getBuildingClassCreatedCount(infos.building(iBuilding).getBuildingClassType()) == 0:
 		return None
