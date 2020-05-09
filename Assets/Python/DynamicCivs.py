@@ -2458,8 +2458,6 @@ def leader(iPlayer):
 	
 	if not gc.getPlayer(iPlayer).isAlive(): return None
 	
-	if gc.getPlayer(iPlayer).isHuman(): return None
-	
 	pPlayer = gc.getPlayer(iPlayer)
 	tPlayer = gc.getTeam(pPlayer.getTeam())
 	iNumCities = pPlayer.getNumCities()
