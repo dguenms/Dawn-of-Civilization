@@ -109,7 +109,7 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 		if bConquest and player(iByzantium).getNumCities() <= 4:
 			setPeriod(iByzantium, iPeriodByzantineConstantinople)
 	
-	
+@handler("cityBuilt")
 def onCityBuilt(city):
 	iOwner = city.getOwner()
 	iOwnerCiv = civ(iOwner)
@@ -119,7 +119,8 @@ def onCityBuilt(city):
 			setPeriod(iPhoenicia, iPeriodCarthage)
 
 
-def onVassalState(iMaster, iVassal, bCapitulated):
+@handler("vassalState")
+def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
 	iMasterCiv = civ(iMaster)
 	iVassalCiv = civ(iVassal)
 
@@ -131,13 +132,16 @@ def onVassalState(iMaster, iVassal, bCapitulated):
 			setPeriod(iMongols, iPeriodYuan)
 			
 
-def onPalaceMoved(city):
-	iOwner = city.getOwner()
-	iOwnerCiv = civ(iOwner)
-	
-	if iOwnerCiv == iPhoenicia:
-		if city.at(58, 39):
-			setPeriod(iPhoenicia, iPeriodCarthage)
+# TODO: own event type
+@handler("buildingBuilt")
+def onPalaceMoved(city, iBuilding):
+	if iBuilding == iPalace:
+		iOwner = city.getOwner()
+		iOwnerCiv = civ(iOwner)
+		
+		if iOwnerCiv == iPhoenicia:
+			if city.at(58, 39):
+				setPeriod(iPhoenicia, iPeriodCarthage)
 
 
 def onTechAcquired(iPlayer, iEra):

@@ -27,6 +27,28 @@ map = gc.getMap()
 
 
 # TODO: test
+def periodic(interval):
+	return periodic_of(range(interval), interval)
+
+
+# TODO: test
+def periodic_of(iterable, interval):
+	return next(element for i, element in enumerate(iterable) if turn() % interval == data.iSeed + hash(tuple(elements)) + i * (interval/ len(iterable)))
+
+
+# TODO: test
+def direction(tile, direction_type):
+	x, y = location(tile)
+	return plotDirection(x, y, direction_type)
+
+
+# TODO: test
+def weighted_random_entry(weighted_elements):
+	elements = reduce(sum, [elements * weight for elements, weight in weighted_elements.items()])
+	return random_entry(elements)
+
+
+# TODO: test
 def at(location1, location2):
 	return location(location1) == location(location2)
 
@@ -792,6 +814,10 @@ class PlotFactory:
 		circle = self.surrounding(*args, **kwargs)
 		inside = self.surrounding(*args, **{'radius': radius-1})
 		return circle.without(inside)
+	
+	# TODO: test
+	def city_radius(self, city):
+		return Plots([location(city.getCityIndexPlot(i)) for i in range(21)])
 
 	def owner(self, iPlayer):
 		return self.all().owner(iPlayer)

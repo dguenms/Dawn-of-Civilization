@@ -56,6 +56,13 @@ def clearOrSpreadPlague(iOwner, iPlayer, city):
 		else:
 			city.setHasRealBuilding(iPlague, False)
 
+@handler("cityRazed")
+def clearPlagueIfLastPlagueCityRazed(city, iNewOwner):
+	if city.hasBuilding(iPlague):
+		if data.players[iNewOwner].iPlagueCountdown > 0:
+			if cities.owner(iNewOwner).without(city).none(lambda other: other.hasBuilding(iPlague)):
+				data.players[iNewOwner].iPlagueCountdown = 0
+
 
 class Plague:
 
@@ -383,13 +390,6 @@ class Plague:
 			if distance(city, tile) <= 3:
 				self.infectCity(city)
 				self.announceForeignPlagueSpread(city)
-
-
-	def onCityRazed(self, city, iNewOwner):
-		if city.hasBuilding(iPlague):
-			if data.players[iNewOwner].iPlagueCountdown > 0:
-				if cities.owner(iNewOwner).without(city).none(lambda other: other.hasBuilding(iPlague)):
-					data.players[iNewOwner].iPlagueCountdown = 0
 
 
 	def onFirstContact(self, iTeamX, iHasMetTeamY):

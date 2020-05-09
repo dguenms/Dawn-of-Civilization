@@ -17,7 +17,7 @@ iChange = 1
 bRemove = False
 
 from StoredData import data
-from Consts import *
+from Core import *
 import Modifiers
 localText = CyTranslator()
 

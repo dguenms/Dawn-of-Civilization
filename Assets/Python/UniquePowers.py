@@ -60,6 +60,42 @@ def mongolUP(iOwner, iPlayer, city, bConquest):
 	if city.getPopulation() >= 4:
 		message(slot(iMongols), 'TXT_KEY_UP_MONGOL_HORDE')
 
+@handler("cityBuilt")
+def ottomanUP(city):
+	iOwner = city.getOwner()
+	for plot in plots.surrounding(city, radius=2):
+		if at(plot, city):
+			convertPlotCulture(plot, iOwner, 51, False)
+		elif plot.isCity():
+			continue
+		elif distance(plot, city) == 1:
+			convertPlotCulture(plot, iOwner, 80, True)
+		else:
+			if plot.getOwner() == iPreviousOwner:
+				convertPlotCulture(plot, iOwner, 20, False)
+
+@handler("combatResult")
+def vikingUP(winningUnit, losingUnit):
+	iWinner = winningUnit.getOwner()
+	if (civ(iWinner) == iVikings and year() <= year(1500)) or winningUnit.getUnitType() == iCorsair:
+		if infos.unit(losingUnit).getDomainType() == DomainTypes.DOMAIN_SEA:
+			iGold = scale(infos.unit(losingUnit).getProductionCost() / 2)
+			player(iWinner).changeGold(iGold)
+			message(iWinner, 'TXT_KEY_VIKING_NAVAL_UP', iGold, adjective(losingUnit), losingUnit.getName())
+			
+			if civ(iWinner) == iVikings:
+				data.iVikingGold += iGold
+			elif civ(iWinner) == iMoors:
+				data.iMoorishGold += iGold
+
+
+# Mughal UP: receives 50% of building cost as culture when building is completed
+@handler("buildingBuilt")
+def mughalUP(city, iBuilding):
+	if civ(city) == iMughals:
+		iCost = player(city).getBuildingProductionNeeded(iBuilding)
+		city.changeCulture(city.getOwner(), iCost / 2, True)
+
 
 class UniquePowers:
 
@@ -91,26 +127,6 @@ class UniquePowers:
 			self.mughalUP(city, iBuilding)
 					
 #------------------VIKING UP----------------------
-
-	def vikingUP(self, argsList):
-	
-		pWinningUnit, pLosingUnit = argsList
-		cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
-		
-		iOwner = pWinningUnit.getOwner()
-		iOwnerCiv = civ(iOwner)
-
-		if (iOwnerCiv == iVikings and year() <= year(1500)) or pWinningUnit.getUnitType() == iCorsair:
-			if cLosingUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
-				iGold = cLosingUnit.getProductionCost() / 2
-				iGold = turns(iGold)
-				player(iOwner).changeGold(iGold)
-				message(iOwner, 'TXT_KEY_VIKING_NAVAL_UP', iGold, adjective(pLosingUnit), pLosingUnit.getName())
-				
-				if iOwnerCiv == iVikings:
-					data.iVikingGold += iGold
-				elif iOwnerCiv == iMoors:
-					data.iMoorishGold += iGold
 
 #------------------ARABIAN U.P.-------------------
 
@@ -154,19 +170,6 @@ class UniquePowers:
 
 
 #------------------TURKISH U.P.-------------------
-
-
-	def ottomanUP(self, city, iCiv, iPreviousOwner):
-		for pPlot in plots.surrounding(city, radius=2):
-			if location(pPlot) == location(city):
-				convertPlotCulture(pPlot, iCiv, 51, False)
-			elif pPlot.isCity():
-				pass
-			elif distance(pPlot, city) == 1:
-				convertPlotCulture(pPlot, iCiv, 80, True)
-			else:
-				if pPlot.getOwner() == iPreviousOwner:
-					convertPlotCulture(pPlot, iCiv, 20, False)
 
 
 #------------------MONGOLIAN U.P
@@ -300,8 +303,3 @@ class UniquePowers:
 			iGold = 5 * iNumUnits
 			player(iIndonesia).changeGold(iGold)
 			message(slot(iIndonesia), 'TXT_KEY_INDONESIAN_UP', iGold)
-	
-	# Mughal UP: receives 50% of building cost as culture when building is completed
-	def mughalUP(self, city, iBuilding):
-		iCost = player(city).getBuildingProductionNeeded(iBuilding)
-		city.changeCulture(city.getOwner(), iCost / 2, True)

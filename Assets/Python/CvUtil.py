@@ -177,7 +177,7 @@ def getScoreComponent(iRawScore, iInitial, iMax, iFactor, bExponential, bFinal, 
 	if bFinal and bVictory:
 		#Alexius08: Begin new score calculation formula
 		iHumanSpawnTurn = getTurnForYear(dSpawn[gc.getGame().getActivePlayer()])
-		fTurnRatio = float(gc.getGame().getGameTurnYear() - iHumanSpawnTurn) / float(gc.getGame().getEstimateEndTurn() - iHumanSpawnTurn) #Compensate for player's delayed spawn
+		fTurnRatio = float(gc.getGame().getGameTurn() - iHumanSpawnTurn) / float(gc.getGame().getEstimateEndTurn() - iHumanSpawnTurn) #Compensate for player's delayed spawn
 		#End new formula
 		
 		if bExponential and (iInitial != 0):

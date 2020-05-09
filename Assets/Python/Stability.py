@@ -121,8 +121,9 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 	
 	if player(iPlayer).isBarbarian():
 		checkBarbarianCollapse(iOwner)
-		
-def onCityRazed(iPlayer, city):
+
+@handler("cityRazed")
+def onCityRazed(city, iPlayer):
 	iOwner = city.getPreviousOwner()
 	
 	if player(iOwner).isBarbarian(): return
@@ -139,11 +140,12 @@ def onCityRazed(iPlayer, city):
 	
 def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
-	
-def onVassalState(iMaster, iVassal):
-	checkStability(iMaster, True)
-	
-	balanceStability(iVassal, iStabilityShaky)
+
+@handler("vassalState")
+def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
+	if bVassal and bCapitulated:
+		checkStability(iMaster, True)	
+		balanceStability(iVassal, iStabilityShaky)
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
 	if not is_minor(iTeam) and not is_minor(iOtherTeam):
@@ -153,28 +155,37 @@ def onChangeWar(bWar, iTeam, iOtherTeam):
 		if bWar:
 			startWar(iTeam, iOtherTeam)
 			startWar(iOtherTeam, iTeam)
-	
+
+@handler("revolution")
 def onRevolution(iPlayer):
 	checkStability(iPlayer)
-	
+
+@handler("playerChangeStateReligion")
 def onPlayerChangeStateReligion(iPlayer):
 	checkStability(iPlayer)
-	
-def onPalaceMoved(iPlayer):
-	checkStability(iPlayer)
-	
-def onWonderBuilt(iPlayer, iBuildingType):
-	checkStability(iPlayer, True)
+
+# TODO: palace moved event?
+@handler("buildingBuilt")
+def onPalaceMoved(city, iBuilding):
+	if iBuilding == iPalace:
+		checkStability(city.getOwner())
+
+# TODO: wonder built event?
+@handler("buildingBuilt")
+def onWonderBuilt(city, iBuilding):
+	if isWorldWonderType(infos.building(iBuilding).getBuildingClassType()):
+		checkStability(city.getOwner(), True)
 	
 def onGoldenAge(iPlayer):
 	checkStability(iPlayer, True)
 	
 def onGreatPersonBorn(iPlayer):
 	checkStability(iPlayer, True)
-	
-def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
-	if player(iWinningPlayer).isBarbarian() and not is_minor(iLosingPlayer):
-		data.players[iLosingPlayer].iBarbarianLosses += 1
+
+@handler("combatResult")
+def onCombatResult(winningUnit, losingUnit):
+	if player(winningUnit).isBarbarian() and not is_minor(losingUnit):
+		data.players[losingUnit.getOwner()].iBarbarianLosses += 1
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in players.civs(dNeighbours[iPlayer]):
@@ -1392,36 +1403,38 @@ def isTolerated(iPlayer, iReligion):
 	
 	return False
 
+@handler("BeginGameTurn")
 def checkResurrection():
-	iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
-	possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.players[p].iLastTurnAlive)
-	
-	# civs entirely controlled by minors will always respawn
-	for iPlayer in possibleResurrections:
-		if turn() - data.players[iPlayer].iLastTurnAlive < turns(15):
-			continue
+	if periodic(10):
+		iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
+		possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.players[p].iLastTurnAlive)
 		
-		if cities.respawn(iPlayer).all(lambda city: is_minor(city)):
-			resurrectionCities = getResurrectionCities(iPlayer)
-			if resurrectionCities:
-				doResurrection(iPlayer, resurrectionCities)
-				return
-				
-	# otherwise minimum amount of cities and random chance are required
-	# TODO: no check on number of turns dead?
-	for iPlayer in possibleResurrections:
-		iMinNumCities = 2
-		
-		# special case Netherlands: need only one city to respawn (Amsterdam)
-		# TODO: instead of special case, require at least 2 or ALL
-		if civ(iPlayer) == iNetherlands:
-			iMinNumCities = 1
+		# civs entirely controlled by minors will always respawn
+		for iPlayer in possibleResurrections:
+			if turn() - data.players[iPlayer].iLastTurnAlive < turns(15):
+				continue
 			
-		if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
-			resurrectionCities = getResurrectionCities(iPlayer)
-			if len(resurrectionCities) >= iMinNumCities:
-				doResurrection(iPlayer, resurrectionCities)
-				return
+			if cities.respawn(iPlayer).all(lambda city: is_minor(city)):
+				resurrectionCities = getResurrectionCities(iPlayer)
+				if resurrectionCities:
+					doResurrection(iPlayer, resurrectionCities)
+					return
+					
+		# otherwise minimum amount of cities and random chance are required
+		# TODO: no check on number of turns dead?
+		for iPlayer in possibleResurrections:
+			iMinNumCities = 2
+			
+			# special case Netherlands: need only one city to respawn (Amsterdam)
+			# TODO: instead of special case, require at least 2 or ALL
+			if civ(iPlayer) == iNetherlands:
+				iMinNumCities = 1
+				
+			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
+				resurrectionCities = getResurrectionCities(iPlayer)
+				if len(resurrectionCities) >= iMinNumCities:
+					doResurrection(iPlayer, resurrectionCities)
+					return
 						
 def getResurrectionCities(iPlayer, bFromCollapse = False):
 	pPlayer = player(iPlayer)
