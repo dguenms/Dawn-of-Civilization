@@ -262,6 +262,28 @@ def setup():
 	if bIgnoreAI:
 		for iPlayer in players.major().ai():
 			loseAll(iPlayer)
+
+@handler("BeginGameTurn"):
+def aztecUHVHelp():
+	if year() == year(1500) and player(iAztecs).isHuman():
+		city = cities.capital(iEngland)
+		if city and city.getPopulation() > 14:
+				city.changePopulation(-3)
+
+@handler("cityRazed")
+def onCityRazed(city, iPlayer):
+	iCiv = civ(iPlayer)
+
+	if not game.isVictoryValid(7): return
+	
+	if not player(iPlayer).isHuman() and data.bIgnoreAI: return
+	
+	# second Mongol goal: raze seven cities
+	if iCiv == iMongols:
+		if isPossible(iPlayer, 1):
+			data.iMongolRazes += 1
+			if data.iMongolRazes >= 7:
+				win(iPlayer, 1)
 				
 def checkTurn(iGameTurn, iPlayer):
 	if not game.isVictoryValid(7): return
@@ -1521,8 +1543,10 @@ def checkHistoricalVictory(iPlayer):
 	if game.getWinner() == -1:
 		if countAchievedGoals(iPlayer) == 3:
 			game.setWinner(iPlayer, 7)
-		
-def onCityBuilt(iPlayer, city):
+
+@handler("cityBuilt")		
+def onCityBuilt(city):
+	iPlayer = city.getOwner()
 	iCiv = civ(iPlayer)
 	pPlayer = player(iPlayer)
 
@@ -1728,8 +1752,10 @@ def checkTechGoal(iPlayer, lTechs):
 	
 def checkEraGoal(iPlayer, lEras):
 	return all(data.lFirstEntered[iEra] == iPlayer for iEra in lEras)
-	
-def onBuildingBuilt(iPlayer, iBuilding):
+
+@handler("buildingBuilt")
+def onBuildingBuilt(city, iBuilding):
+	iPlayer = city.getOwner()
 	iCiv = civ(iPlayer)
 
 	if not game.isVictoryValid(7): return False
@@ -1846,8 +1872,9 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				
 def checkWonderGoal(iPlayer, lWonders):
 	return all(data.getWonderBuilder(iWonder) == iPlayer for iWonder in lWonders)
-				
-def onReligionFounded(iPlayer, iReligion):
+
+@handler("religionFounded")
+def onReligionFounded(iReligion, iPlayer):
 
 	if not game.isVictoryValid(7): return
 	
@@ -1867,21 +1894,8 @@ def onReligionFounded(iPlayer, iReligion):
 				
 def checkReligionGoal(iPlayer, lReligions):
 	return all(data.lReligionFounder[iReligion] == iPlayer for iReligion in lReligion)
-				
-def onCityRazed(iPlayer, city):
-	iCiv = civ(iPlayer)
 
-	if not game.isVictoryValid(7): return
-	
-	if not player(iPlayer).isHuman() and data.bIgnoreAI: return
-	
-	# second Mongol goal: raze seven cities
-	if iCiv == iMongols:
-		if isPossible(iPlayer, 1):
-			data.iMongolRazes += 1
-			if data.iMongolRazes >= 7:
-				win(iPlayer, 1)
-				
+@handler("projectBuilt")
 def onProjectBuilt(iPlayer, iProject):
 	if not game.isVictoryValid(7): return
 	
@@ -1896,7 +1910,8 @@ def onProjectBuilt(iPlayer, iProject):
 					win(iRussiaPlayer, 1)
 			else:
 				lose(iRussiaPlayer, 1)
-				
+
+@handler("combatResult")				
 def onCombatResult(pWinningUnit, pLosingUnit):
 	iWinningPlayer = pWinningUnit.getOwner()
 	iLosingPlayer = pLosingUnit.getOwner()
@@ -1939,9 +1954,10 @@ def onGreatPersonBorn(iPlayer, unit):
 				
 				if data.iMexicanGreatGenerals >= 3:
 					win(iPlayer, 1)
-					
-def onUnitPillage(iPlayer, iGold, iUnit):
-	if iGold >= 1000: return
+
+@handler("unitPillage")
+def onUnitPillage(unit, iImprovement, iRoute, iPlayer, iGold):
+	if iImprovement < 0 or iGold >= 1000: return
 	
 	iCiv = civ(iPlayer)
 
@@ -1954,40 +1970,38 @@ def onUnitPillage(iPlayer, iGold, iUnit):
 	elif iCiv == iTurks:
 		if isPossible(iPlayer, 0):
 			data.iTurkicPillages += 1
-			
+	
+	# third Moorish goal: acquire 3000 gold through piracy by 1650 AD
 	elif iCiv == iMoors:
-		if isPossible(iPlayer, 2) and iUnit == iCorsair:
+		if isPossible(iPlayer, 2) and unit.getUnitType() == iCorsair:
 			data.iMoorishGold += iGold
-		
-def onCityCaptureGold(iPlayer, iGold):
-	iCiv = civ(iPlayer)
 
+@handler("cityCaptureGold")
+def onCityCaptureGold(city, iPlayer, iGold):
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
-	if iCiv == iVikings:
+	if civ(iPlayer) == iVikings:
 		if isPossible(iPlayer, 2):
 			data.iVikingGold += iGold
-		
-def onPlayerGoldTrade(iPlayer, iGold):
-	iCiv = civ(iPlayer)
 
+@handler("playerGoldTrade")
+def onPlayerGoldTrade(iFrom, iTo, iGold):
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
-	if iCiv == iTamils:
-		if isPossible(iPlayer, 2):
+	if civ(iTo) == iTamils:
+		if isPossible(iTo, 2):
 			data.iTamilTradeGold += iGold * 100
-		
-def onPlayerSlaveTrade(iPlayer, iGold):
-	iCiv = civ(iPlayer)
 
+@handler("playerSlaveTrade")
+def onPlayerSlaveTrade(iPlayer, iGold):
 	# second Congolese goal: gain 1000 gold through slave trade by 1800 AD
-	if iCiv == iCongo:
+	if civ(iPlayer) == iCongo:
 		if isPossible(iPlayer, 1):
 			data.iCongoSlaveCounter += iGold
-			if data.iCongoSlaveCounter >= turns(1000):
+			if data.iCongoSlaveCounter >= scale(1000):
 				win(iPlayer, 1)
-				
-def onTradeMission(iPlayer, iX, iY, iGold):
+
+@handler("tradeMission")
+def onTradeMission(iUnit, iPlayer, iX, iY, iGold):
 	iCiv = civ(iPlayer)
-	pPlayer = player(iPlayer)
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iCiv == iTamils:
@@ -1996,7 +2010,7 @@ def onTradeMission(iPlayer, iX, iY, iGold):
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iCiv == iMali:
 		if isPossible(iPlayer, 0):
-			iStateReligion = pPlayer.getStateReligion()
+			iStateReligion = player(iPlayer).getStateReligion()
 			if iStateReligion != -1:
 				pHolyCity = game.getHolyCity(iStateReligion)
 				if location(pHolyCity) == (iX, iY):
@@ -2036,7 +2050,8 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 				if plot.isRevealed(iEuropean, False) and not plot.isWater():
 					lose(iMayaPlayer, 2)
 					return
-					
+
+@handler("playerChangeStateReligion")					
 def onPlayerChangeStateReligion(iPlayer, iStateReligion):
 	iCiv = civ(iPlayer)
 

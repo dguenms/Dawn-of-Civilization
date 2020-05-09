@@ -632,7 +632,8 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	setDesc(iPlayer, defaultTitle(iPlayer))
 	checkName(iPlayer)
 	checkLeader(iPlayer)
-	
+
+@handler("vassalState")	
 def onVassalState(iMaster, iVassal):
 	iMasterCiv = civ(iMaster)
 	iVassalCiv = civ(iVassal)
@@ -645,16 +646,24 @@ def onVassalState(iMaster, iVassal):
 		adjectiveChange(iVassal)
 		
 	checkName(iVassal)
-	
+
+@handler("playerChangeStateReligion")
 def onPlayerChangeStateReligion(iPlayer, iReligion):
+	if is_minor(iPlayer):
+		return
+
 	if civ(iPlayer) in lChristianityNameChanges and iReligion in lChristianity:
 		data.players[iPlayer].iResurrections += 1
 		nameChange(iPlayer)
 		adjectiveChange(iPlayer)
 		
 	checkName(iPlayer)
-	
+
+@handler("revolution")
 def onRevolution(iPlayer):
+	if is_minor(iPlayer):
+		return
+
 	data.players[iPlayer].iAnarchyTurns += 1
 	
 	if civ(iPlayer) == iMughals and isRepublic(iPlayer):
@@ -669,12 +678,14 @@ def onRevolution(iPlayer):
 def onCityAcquired(iPreviousOwner, iNewOwner):
 	checkName(iPreviousOwner)
 	checkName(iNewOwner)
-	
-def onCityRazed(iOwner):
-	checkName(iOwner)
-	
-def onCityBuilt(iOwner):
-	checkName(iOwner)
+
+@handler("cityRazed")
+def onCityRazed(city):
+	checkName(city.getPreviousOwner())
+
+@handler("cityBuilt")	
+def onCityBuilt(city):
+	checkName(city.getOwner())
 	
 def onTechAcquired(iPlayer, iTech):
 	iEra = infos.tech(iTech).getEra()
@@ -706,46 +717,51 @@ def onTechAcquired(iPlayer, iTech):
 				setAdjective(iPlayer, civAdjective(iPlayer))
 				
 	checkName(iPlayer)
-	
-def onPalaceMoved(iPlayer):
-	capital = player(iPlayer).getCapitalCity()
-	iEra = player(iPlayer).getCurrentEra()
-	iCiv = civ(iPlayer)
 
-	if iCiv == iPhoenicia:
-		if capital.getRegionID() not in [rMesopotamia, rAnatolia]:
-			nameChange(iPlayer)
-			adjectiveChange(iPlayer)
-		else:
-			setShort(iPlayer, short(iPlayer))
-			setAdjective(iPlayer, civAdjective(iPlayer))
-			
-	elif iCiv == iVikings:
-		if iEra >= iRenaissance:
-			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
-				setShort(iPlayer, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
-				setAdjective(iPlayer, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
-			
-			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
-				setShort(iPlayer, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
-				setAdjective(iPlayer, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
-			
-			elif isCapital(iPlayer, ["Roskilde"]):
-				setShort(iPlayer, text("TXT_KEY_CIV_DENMARK_SHORT_DESC"))
-				setAdjective(iPlayer, text("TXT_KEY_CIV_DENMARK_ADJECTIVE"))
-				
-	elif iCiv == iMoors:
-		if iEra >= iIndustrial:
-			if capital.getRegionID() != rIberia:
+# TODO: implement as own event type	
+@handler("buildingBuilt")
+def onPalaceMoved(city, iBuilding):
+	if iBuilding == iPalace:
+		iPlayer = city.getOwner()
+		capital = player(iPlayer).getCapitalCity()
+		iEra = player(iPlayer).getCurrentEra()
+		iCiv = civ(iPlayer)
+
+		if iCiv == iPhoenicia:
+			if capital.getRegionID() not in [rMesopotamia, rAnatolia]:
 				nameChange(iPlayer)
 				adjectiveChange(iPlayer)
 			else:
 				setShort(iPlayer, short(iPlayer))
 				setAdjective(iPlayer, civAdjective(iPlayer))
-			
-	checkName(iPlayer)
-	
-def onReligionFounded(iPlayer):
+				
+		elif iCiv == iVikings:
+			if iEra >= iRenaissance:
+				if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
+					setShort(iPlayer, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
+					setAdjective(iPlayer, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
+				
+				elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+					setShort(iPlayer, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
+					setAdjective(iPlayer, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
+				
+				elif isCapital(iPlayer, ["Roskilde"]):
+					setShort(iPlayer, text("TXT_KEY_CIV_DENMARK_SHORT_DESC"))
+					setAdjective(iPlayer, text("TXT_KEY_CIV_DENMARK_ADJECTIVE"))
+					
+		elif iCiv == iMoors:
+			if iEra >= iIndustrial:
+				if capital.getRegionID() != rIberia:
+					nameChange(iPlayer)
+					adjectiveChange(iPlayer)
+				else:
+					setShort(iPlayer, short(iPlayer))
+					setAdjective(iPlayer, civAdjective(iPlayer))
+				
+		checkName(iPlayer)
+
+@handler("religionFounded"	
+def onReligionFounded(_, iPlayer):
 	checkName(iPlayer)
 	
 def checkTurn(iGameTurn):
