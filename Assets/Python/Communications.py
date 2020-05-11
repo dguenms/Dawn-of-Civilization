@@ -18,7 +18,8 @@ tPool1 = (iEgypt, -1, -1, -1, -1, -1,
 	iBabylonia, -1, -1, -1, -1, -1,
 	iGreece, -1, -1, -1, -1, -1,
 	iIndia, -1, -1, -1, -1, -1,
-	iNorteChico, -1, -1, -1, -1, -1)
+	iNorteChico, -1, -1, -1, -1, -1,
+	iOlmecs, -1, -1, -1, -1, -1)
 
 tPool2 = (iEgypt, -1, 
 	iCarthage, -1,
