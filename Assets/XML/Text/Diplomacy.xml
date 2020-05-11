@@ -498,6 +498,14 @@
 		<Spanish>Welcome to our grand city, [CT_NAME]. They call me Atlatl Cauac, or, in your language, Spearthrower Owl. Please join me atop one of our pyramids, the view of the valley is magnificent...</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_TEZCATLIPOCA_1</Tag>
+		<English>Welcome to the Olmec heartland, [CT_NAME]. I am Tezcatlipoca, god-ruler of these lands. Shall I order my men to carve your likeness in stone?</English>
+		<French>Bienvenue dans la patrie des Olm&#232;ques, [CT_NAME]. Moi, Tezcatlipoca, r&#232;gne sur ces terres. Dois-je ordonner à mes hommes de sculpter votre portrait dans la pierre ?</French>
+		<German>Welcome to the Olmec heartland, [CT_NAME]. I am Tezcatlipoca, god-ruler of these lands. Shall I order my men to carve your likeness in stone?</German>
+		<Italian>Welcome to the Olmec heartland, [CT_NAME]. I am Tezcatlipoca, god-ruler of these lands. Shall I order my men to carve your likeness in stone?</Italian>
+		<Spanish>Welcome to the Olmec heartland, [CT_NAME]. I am Tezcatlipoca, god-ruler of these lands. Shall I order my men to carve your likeness in stone?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_BEN_GURION_1</Tag>
 		<English>Shalom, [CT_NAME]. Let us hope you bring with you peaceful relations, for aggression against [OUR_CIV_SHORT] will be answered with equal or greater force.</English>
 		<French>Shalom, [CT_NAME]. Souhaitons que vos intentions soient paisibles, car toute agression contre [OUR_CIV_SHORT] recevra une r&#233;ponse de force &#233;gale ou sup&#233;rieure.</French>
