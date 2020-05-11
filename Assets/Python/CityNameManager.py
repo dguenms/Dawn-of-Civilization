@@ -5010,6 +5010,8 @@ dIdentifiers = {
 	"Hu&#225;nuco"		:	"Lauricucha",
 	"Lauricucha"		:	"Lauricucha",
 	"Lausanne"		:	"Lausanne",
+    "La Venta"		:	"La Venta",
+    "Je Taa'c"		:	"La Venta",
 	"Lousonna"		:	"Lausanne",
 	"Leipzig"		:	"Leipzig",
 	"Lipsk"			:	"Leipzig",
@@ -5943,6 +5945,8 @@ dIdentifiers = {
 	"Trapezus"		:	"Trapezon",
 	"Trebisonda"		:	"Trapezon",
 	"Trebizond"		:	"Trapezon",
+    "Tres Zapotes"		:	"Tres Zapotes",
+    "Toojc Yuctsoo'c"	:	"Tres Zapotes",
 	"Trefel&#237;n"		:	"Trevelin",
 	"Trevelin"		:	"Trevelin",
 	"Augusta Treverorum"	:	"Trier",
@@ -7263,6 +7267,8 @@ tRenames = (
 	"Bacat&#225"		:	"Bogot&#225",
 	"Ciudad Perdida"		:	"Cartagena de Indias",
 	"Cartagena de Indias"		:	"Cartagena de Indias",
+    "La Venta"		:	"La Venta",
+    "Tres Zapotes"	:	"Tres Zapotes",
 },
 #Language: French
 {
@@ -8601,5 +8607,10 @@ tRenames = (
 #Language: Mississippi
 {
 
+},
+#Language: Olmec
+{
+    "La Venta"		:	"Je Taa'c",
+    "Tres Zapotes"	:	"Toojc Yuctsoo'c",
 },
 )
