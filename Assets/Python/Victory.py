@@ -302,6 +302,7 @@ dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
 	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
+	iOlmecs: (2, [iCompass]),
 	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
 	iKorea: (1, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
@@ -569,6 +570,26 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iIndia, 2)
 				
+	elif iPlayer == iOlmecs:
+		
+		# first goal: build 5 culture-producing buildings by 400 BC
+		if isPossible(iOlmecs, 0):www
+			lCultureBuildingCount = 0
+			for city in utils.getCityList(iOlmecs):
+				lCultureBuildingCount += countCultureBuildings(city)
+			
+			if lCultureBuildingCount >= 5:
+				win(iOlmecs, 0)
+		
+		if iGameTurn == getTurnForYear(-400):
+			expire(iOlmecs, 0)
+		
+		# second goal: discover Arithmetics, Writing and Calendar by 400 BC
+		if iGameTurn == getTurnForYear(-400):
+			expire(iOlmecs, 1)
+		
+		# third goal: be the first to discover Compass
+	
 	elif iPlayer == iCarthage:
 	
 		# first goal: build a Palace and the Great Cothon in Carthagee by 300 BC
@@ -2706,6 +2727,13 @@ def onTechAcquired(iPlayer, iTech):
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkEraGoal(iLoopPlayer, lEras): win(iLoopPlayer, iGoal)
 				
+	# second Olmec goal: discover Arithmetics, Writing and Calendar by 400 BC
+	if iPlayer == iOlmecs:
+		if isPossible(iOlmecs, 1):
+			if iTech in [iArithmetics, iWriting, iCalendar]:
+				if teamOlmecs.isHasTech(iArithmetics) and teamOlmecs.isHasTech(iWriting) and teamOlmecs.isHasTech(iCalendar):
+					win(iOlmecs, 1)
+
 	# first Maya goal: discover Calendar by 200 AD
 	if iPlayer == iMaya:
 		if not pMaya.isReborn() and isPossible(iMaya, 0):
@@ -5116,6 +5144,18 @@ def getUHVHelp(iPlayer, iGoal):
 			popPercent = getPopulationPercent(iIndia)
 			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
 
+	elif iPlayer == iOlmecs: 
+		if iGoal == 0:
+			lCultureBuildingCount = 0
+			for city in utils.getCityList(iOlmecs):
+				iCultureBuildingCount += countCultureBuildings(city)
+			aHelp.append(getIcon(iCultureBuildingCount >= 5) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (iCultureBuildingCount)))
+		if iGoal == 1:
+			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
+			bWriting = teamOlmecs.isHasTech(iWriting)
+			bCalendar = teamOlmecs.isHasTech(iCalendar)
+			aHelp.append(getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(iWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(iCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()))
+		
 	elif iPlayer == iCarthage:
 		if iGoal == 0:
 			bPalace = isBuildingInCity((58, 39), iPalace)
