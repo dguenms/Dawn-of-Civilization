@@ -998,7 +998,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: Build a palace and settle 2 great merchants in Cahokia by 1400 AD
 		if isPossible(iMississippi, 2):
-			bPalace = cnm.getFoundName(iMississippi, pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()) == "Cahokia"
+			bPalace = cnm.getFoundName(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY())) == "Cahokia"
 			bMerchant = countCitySpecialists(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()), iSpecialistGreatMerchant) >= 2
 			
 			if bPalace and bMerchant:
@@ -5340,7 +5340,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bSerpentMound) + localText.getText("TXT_KEY_BUILDING_SERPENT_MOUND", ()) + ' ' + getIcon(iNumEffigyMound >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_STRING", ("TXT_KEY_BUILDING_MISSISSIPPI_EFFIGY_MOUND", iNumEffigyMound, 7)))
 			
 		elif iGoal == 2:
-			bPalace = isBuildingInCity(Areas.getCapital(iPlayer, True), iPalace)
+			bPalace = cnm.getFoundName(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY())) == "Cahokia"
 			iNumMerchant = countCitySpecialists(iMississippi, (pMississippi.getCapitalCity().getX(), pMississippi.getCapitalCity().getY()), iSpecialistGreatMerchant) >= 2
 			
 			aHelp.append(getIcon(bPalace) + localText.getText("TXT_KEY_BUILDING_PALACE", ()) + ' ' + getIcon(iNumMerchant >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY", (pMississippi.getCapitalCity().getName(), iNumMerchant, 2)))
