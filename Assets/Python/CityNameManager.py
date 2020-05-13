@@ -12,7 +12,7 @@ from StoredData import data
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
-iNumLanguages = 51
+iNumLanguages = 52
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
 iLangBabylonian, iLangPersian, iLangGreek, iLangPhoenician, iLangLatin, 
  iLangMayan,iLangJapanese, iLangEthiopian, iLangTeotihuacan, iLangKorean, iLangByzantine, 
@@ -22,7 +22,8 @@ iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian,
 iLangMongolian, iLangAztec, iLangTurkish, iLangThai, iLangCongolese, 
 iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican, iLangPolynesian,
 iLangHarappan, iLangNigerian, iLangPhilippine, iLangSwahili, iLangVietnamese,
-iLangZimbabwean, iLangHebrew, iLangNubian, iLangNubianArabic, iLangMississippi) = range(iNumLanguages)
+iLangZimbabwean, iLangHebrew, iLangNubian, iLangNubianArabic, iLangMississippi,
+iLangOlmec) = range(iNumLanguages)
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
 
