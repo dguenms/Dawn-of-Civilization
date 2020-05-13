@@ -207,6 +207,21 @@ def brazilianMadeireiroAbility(plot, city, iFeature):
 			message(plot.getOwner(), 'TXT_KEY_DEFORESTATION_EVENT', infos.feature(iFeature).getText(), city.getName(), iGold, type=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.commerce(0).getButton(), location=plot)
 
 
+### BEGIN GAME TURN ###
+
+
+@handler("BeginGameTurn")
+def checkImmigration(iGameTurn):
+	if iGameTurn < year(dBirth[iAmerica]) + turns(5):
+		return
+
+	data.iImmigrationTimer -= 1
+	
+	if data.iImmigrationTimer == 0:
+		immigration()
+		data.iImmigrationTimer = 3 + rand(5)
+
+
 ### IMPLEMENTATIONS ###
 
 
@@ -258,3 +273,79 @@ dStartingWorkers = CivDict({
 def createStartingWorkers(iPlayer, city):
 	if city.isCapital() and iPlayer in dStartingWorkers:
 		makeUnits(iPlayer, getBestWorker(iPlayer), city, dStartingWorkers[iPlayer])
+		
+		
+def getImmigrationValue(city):
+	iFoodDifference = city.foodDifference(False)
+	iHappinessDifference = city.happyLevel - city.unhappyLevel(0)
+	
+	iValue = 0
+	
+	iValue += max(0, iHappinessDifference)
+	iValue += max(0, iFoodDifference / 2)
+	iValue += city.getPopulation() / 2
+	
+	if city.getRegionID() in lNorthAmerica:
+		iValue += 5
+		
+	return iValue
+	
+	
+def getEmigrationValue(city):
+	iFoodDifference = city.foodDifference(False)
+	iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
+	
+	iValue -= min(0, iHappinessDifference)
+	iValue -= min(0, iFoodDifference / 2)
+	
+	return iValue
+
+
+def immigration():
+	sourcePlayers = players.major().alive().where(lambda p: player(p).getCapitalCity().getRegionID() not in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getEmigrationValue(city) > 0))
+	targetPlayers = players.major().alive().where(lambda p: player(p).getCapitalCity().getRegionID() in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getImmigrationValue(city) > 0))
+	
+	iNumMigrations = min(sourcePlayers.count() / 4, targetPlayers.count())
+	
+	sourceCities = sourcePlayers.cities().highest(iNumMigrations, getEmigrationValue)
+	targetCities = targetPlayers.cities().highest(iNumMigrations, getImmigrationValue)
+	
+	for sourceCity, targetCity in zip(sourceCities, targetCities):
+		sourceCity.changePopulation(-1)
+		targetCity.changePopulation(1)
+		
+		if sourceCity.getPopulation() >= 9:
+			sourceCity.changePopulation(-1)
+			targetCity.changePopulation(1)
+			
+		# extra cottage growth for target city's vicinity
+		for pCurrent in plots.surrounding(targetCity, radius=2):
+			if pCurrent.getWorkingCity() == targetCity:
+				pCurrent.changeUpgradeProgress(turns(10))
+					
+		# migration brings culture
+		targetPlot = plot(city)
+		iTargetPlayer = targetCity.getOwner()
+		iSourcePlayer = sourceCity.getOwner()
+		
+		iCultureChange = targetPlot.getCulture(iTargetPlayer) / targetCity.getPopulation()
+		targetPlot.changeCulture(iSourcePlayer, iCultureChange, False)
+		
+		iCultureChange = targetCity.getCulture(iTargetPlayer) / targetCity.getPopulation()
+		targetCity.changeCulture(iSourcePlayer, iCultureChange, False, False)
+		
+		# chance to spread religions in source city
+		lReligions = [iReligion for iReligion in range(iNumReligions) if sourceCity.isHasReligion(iReligion) and not targetCity.isHasReligion(iReligion)
+		if player(iSourcePlayer).getStateReligion() in lReligions:
+			lReligions.append(player(iSourcePlayer).getStateReligion())
+		
+		if rand(1, 4) <= len(lReligions):
+			targetCity.setHasReligion(random_entry(lReligions), True, True, True)
+					
+		# notify affected players
+		message(iSourcePlayer, 'TXT_KEY_UP_EMIGRATION', sourceCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=sourceCity)
+		message(iTargetPlayer, 'TXT_KEY_UP_IMMIGRATION', targetCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=targetCity)
+
+		# TODO: fire on immigration event
+		if civ(iTargetPlayer) == iCanada:
+			UniquePowers.canadianUP(targetCity)

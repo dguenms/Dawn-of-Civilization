@@ -156,7 +156,7 @@ class GameData:
 		self.lPlayerEnabled = [True] * len(lSecondaryCivs)
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
-		self.lDeleteMode = [-1] * 3
+		self.iPrepareCapitalPlayer = -1
 		self.lFirstContactConquerors = [False] * 3
 		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
 		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]

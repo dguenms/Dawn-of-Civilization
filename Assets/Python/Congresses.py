@@ -31,6 +31,7 @@ tNewfoundlandBR = (36, 59)
 def setup():
 	data.iCongressTurns = getCongressInterval()
 
+@handler("BeginGameTurn")
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
 		if data.iCongressTurns > 0:
@@ -41,6 +42,7 @@ def checkTurn(iGameTurn):
 			currentCongress = Congress()
 			data.currentCongress = currentCongress
 			currentCongress.startCongress()
+
 
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
 	if isCongressEnabled():

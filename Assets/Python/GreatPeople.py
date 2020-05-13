@@ -12,62 +12,8 @@ lTypes = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEn
 lGreatPeople = [[[] for j in lTypes] for i in range(iNumCivs)]
 lOffsets = [[[0 for i in range(iNumEras)] for j in lTypes] for i in range(iNumCivs)]
 
-def create(iPlayer, iUnit, (x, y)):
-	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
 
-def getAlias(iCiv, iType, iEra):
-	if iCiv in [iHarappa, iTamils]: return iIndia
-	elif iCiv == iIran: return iPersia
-	
-	return iCiv
-	
-def getType(iUnit):
-	iUnitType = base_unit(iUnit)
-	if iUnitType in lTypes: return lTypes.index(iUnitType)
-	return -1
-
-def getAvailableNames(iPlayer, iType):
-	pPlayer = player(iPlayer)
-	iEra = pPlayer.getCurrentEra()
-	iCiv = getAlias(civ(iPlayer), iType, iEra)
-	
-	print "getAvailableNames(%s) with iCiv=%d" % (name(iPlayer), iCiv)
-	
-	return getEraNames(iCiv, iType, iEra)
-
-def getEraNames(iCiv, iType, iEra):
-	print "getEraNames(iCiv=%d, iType=%d, iEra=%d)" % (iCiv, iType, iEra)
-
-	lNames = lGreatPeople[iCiv][iType]
-	
-	print "lNames = %s" % lNames
-	
-	iOffset = lOffsets[iCiv][iType][iEra]
-	iNextOffset = len(lNames)
-	if iEra + 1 < iNumEras: iNextOffset = lOffsets[iCiv][iType][iEra+1]
-	
-	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
-	
-	lBefore = [sName for sName in lNames[:iOffset] if not game.isGreatPersonBorn(sName)]
-	lAfter = [sName for sName in lNames[iOffset:] if not game.isGreatPersonBorn(sName)]
-	
-	if len(lAfter) >= iSpread:
-		return lAfter[:iSpread]
-	
-	iSpread -= len(lAfter)
-	return lBefore[-iSpread:] + lAfter
-	
-def getName(unit):
-	iType = getType(unit.getUnitType())
-	if iType < 0: return None
-	
-	lAvailableNames = getAvailableNames(unit.getOwner(), iType)
-	print "available names: %s" % lAvailableNames
-	
-	if not lAvailableNames: return None
-	
-	return random_entry(lAvailableNames)
-	
+@handler("greatPersonBorn")
 def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 	sName = getName(unit)
 	if sName:
@@ -98,6 +44,53 @@ def onGreatPersonBorn(unit, iPlayer, city, bAnnounceBirth = True):
 					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN', unit.getName(), '%s (%s)' % (pDisplayCity.getName(), name(pDisplayCity)), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, button=unit.getButton(), color=infos.type('COLOR_UNIT_TEXT'), location=unit)
 				else:
 					message(iLoopPlayer, 'TXT_KEY_MISC_GP_BORN_SOMEWHERE', unit.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, color=infos.type('COLOR_UNIT_TEXT'))
+
+def create(iPlayer, iUnit, (x, y)):
+	player(iPlayer).createGreatPeople(unique_unit(iPlayer, iUnit), True, True, x, y)
+
+def getAlias(iCiv, iType, iEra):
+	if iCiv in [iHarappa, iTamils]: return iIndia
+	elif iCiv == iIran: return iPersia
+	
+	return iCiv
+	
+def getType(iUnit):
+	iUnitType = base_unit(iUnit)
+	if iUnitType in lTypes: return lTypes.index(iUnitType)
+	return -1
+
+def getAvailableNames(iPlayer, iType):
+	pPlayer = player(iPlayer)
+	iEra = pPlayer.getCurrentEra()
+	iCiv = getAlias(civ(iPlayer), iType, iEra)
+	
+	return getEraNames(iCiv, iType, iEra)
+
+def getEraNames(iCiv, iType, iEra):
+	lNames = lGreatPeople[iCiv][iType]
+	
+	iOffset = lOffsets[iCiv][iType][iEra]
+	iNextOffset = len(lNames)
+	if iEra + 1 < iNumEras: iNextOffset = lOffsets[iCiv][iType][iEra+1]
+	
+	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
+	
+	lBefore = [sName for sName in lNames[:iOffset] if not game.isGreatPersonBorn(sName)]
+	lAfter = [sName for sName in lNames[iOffset:] if not game.isGreatPersonBorn(sName)]
+	
+	if len(lAfter) >= iSpread:
+		return lAfter[:iSpread]
+	
+	iSpread -= len(lAfter)
+	return lBefore[-iSpread:] + lAfter
+	
+def getName(unit):
+	iType = getType(unit.getUnitType())
+	if iType < 0: return None
+	
+	lAvailableNames = getAvailableNames(unit.getOwner(), iType)
+	
+	return random_entry(lAvailableNames)
 
 def setup():
 	for iCiv in dGreatPeople.keys():

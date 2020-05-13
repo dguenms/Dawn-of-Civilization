@@ -134,6 +134,49 @@ def clearBirthArea():
 		if year(dBirth[iCiv]) + turns(2) <= year() <= year(dBirth[iCiv]) + turns(10):
 			killUnitsInArea(iBarbarianPlayer, plots.birth(iCiv))
 
+
+@handler("BeginPlayerTurn")
+def preparePlayerCapital(iGameTurn, iCurrentPlayer):
+	iPlayer = data.iPrepareCapitalPlayer
+	
+	if iPlayer < 0:
+		return
+	
+	iCiv = civ(iPlayer)
+	
+	tCapital = location(plots.capital(iCiv))
+	x, y = tCapital
+	
+	if iCurrentPlayer == iPlayer:
+		if iCiv == iPhoenicia:
+			for plot in plots.rectangle((x-2, y-1), (x+1, y+1)):
+				plot.setCulture(iPlayer, 300, True)
+		else:
+			for plot in plots.surrounding(tCapital, radius=2):
+				plot.setCulture(iPlayer, 300, True)
+		for plot in plots.surrounding(tCapital):
+			convertPlotCulture(plot, iPlayer, 100, True)
+			if plot.getCulture(iPlayer) < 3000:
+				plot.setCulture(iPlayer, 3000, True) #2000 in vanilla/warlords, cos here Portugal is choked by spanish culture
+			plot.setOwner(iPlayer)
+		data.iPrepareCapitalPlayer = -1
+		return
+	
+	if iCurrentPlayer != iPlayer-1 and iCiv not in [iCarthage, iGreece]:
+		return
+	
+	bNotOwned = True
+	for plot in plots.surrounding(tCapital):
+		if plot.isOwned():
+			bNotOwned = False
+			for iLoopPlayer in players.all().without(iPlayer):
+				plot.setCulture(iLoopPlayer, 0, True)
+			plot.setOwner(iPlayer)
+	
+	for plot in plots.surrounding(tCapital, radius=15).without(tCapital).land(): # must include the distance from Sogut to the Caspius
+		for unit in units.at(plot).owner(iPlayer):
+			move(unit, tCapital)
+
 ### Screen popups ###
 # (Slowly migrate event handlers here when rewriting to use BUTTONPOPUP_PYTHON and more idiomatic code)
 
@@ -931,9 +974,6 @@ class RiseAndFall:
 		if iHumanCities > 0 and not player(iPlayer).isHuman():
 			self.scheduleFlipPopup(iPlayer, rebirthArea)
 
-	def checkPlayerTurn(self, iGameTurn, iPlayer):
-		return
-
 	def fragmentBarbarians(self, iGameTurn):
 		for iDeadPlayer in players.major().shuffle():
 			if not player(iDeadPlayer).isAlive() and iGameTurn > year(dBirth[iDeadPlayer]) + turns(50):
@@ -1121,14 +1161,14 @@ class RiseAndFall:
 				print ("bDeleteEverything", bDeleteEverything)
 				if not plot_(x, y).isOwned():
 					if iCiv in [iNetherlands, iPortugal, iByzantium, iKorea, iThailand, iItaly, iCarthage]: #dangerous starts
-						data.lDeleteMode[0] = iPlayer
+						data.iPrepareCapitalPlayer = iPlayer
 					if bBirthInCapital:
 						self.birthInCapital(iPlayer, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
 						self.birthInFreeRegion(iPlayer, tCapital, tTopLeft, tBottomRight)
 				elif bDeleteEverything and not bBirthInCapital:
 					for pCurrent in plots.surrounding(tCapital):
-						data.lDeleteMode[0] = iPlayer
+						data.iPrepareCapitalPlayer = iPlayer
 						for iLoopPlayer in players.all().without(iPlayer):
 							flipUnitsInArea(plots.birth(iCiv), iPlayer, iLoopPlayer, True, False)
 						if pCurrent.isCity():
@@ -1178,44 +1218,6 @@ class RiseAndFall:
 					else:
 						if unit.getUnitType() == iKeshik:
 							unit.kill(False, iBarbarianPlayer)
-
-	def deleteMode(self, iCurrentPlayer):
-		iPlayer = data.lDeleteMode[0]
-		iCiv = civ(iPlayer)
-		
-		print ("deleteMode after", iCurrentPlayer)
-		tCapital = location(plots.capital(iCiv))
-		x, y = tCapital
-		
-		if iCurrentPlayer == iPlayer:
-			if iCiv == iPhoenicia:
-				for plot in plots.rectangle((x-2, y-1), (x+1, y+1)):
-					plot.setCulture(iPlayer, 300, True)
-			else:
-				for plot in plots.surrounding(tCapital, radius=2):
-					plot.setCulture(iPlayer, 300, True)
-			for plot in plots.surrounding(tCapital):
-				convertPlotCulture(plot, iPlayer, 100, True)
-				if plot.getCulture(iPlayer) < 3000:
-					plot.setCulture(iPlayer, 3000, True) #2000 in vanilla/warlords, cos here Portugal is choked by spanish culture
-				plot.setOwner(iPlayer)
-			data.lDeleteMode[0] = -1
-			return
-		
-		if iCurrentPlayer != iPlayer-1 and iCiv not in [iCarthage, iGreece]:
-			return
-		
-		bNotOwned = True
-		for plot in plots.surrounding(tCapital):
-			if plot.isOwned():
-				bNotOwned = False
-				for iLoopPlayer in players.all().without(iPlayer):
-					plot.setCulture(iLoopPlayer, 0, True)
-				plot.setOwner(iPlayer)
-		
-		for plot in plots.surrounding(tCapital, radius=15).without(tCapital).land(): # must include the distance from Sogut to the Caspius
-			for unit in units.at(plot).owner(iPlayer):
-				move(unit, tCapital)
 		
 	def birthInFreeRegion(self, iPlayer, tCapital, tTopLeft, tBottomRight):
 		startingPlot = plot(tCapital)

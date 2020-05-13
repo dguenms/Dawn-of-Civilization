@@ -557,75 +557,45 @@ class CvRFCEventHandler:
 		iGameTurn = argsList[0]
 		
 		#self.rnf.checkTurn(iGameTurn)
-		self.barb.checkTurn(iGameTurn)
-		rel.checkTurn(iGameTurn)
-		self.res.checkTurn(iGameTurn)
-		self.up.checkTurn(iGameTurn)
-		self.aiw.checkTurn(iGameTurn)
-		self.pla.checkTurn(iGameTurn)
-		self.com.checkTurn(iGameTurn)
-		self.corp.checkTurn(iGameTurn)
+		#self.barb.checkTurn(iGameTurn)
+		#rel.checkTurn(iGameTurn)
+		#self.res.checkTurn(iGameTurn)
+		#self.up.checkTurn(iGameTurn)
+		#self.aiw.checkTurn(iGameTurn)
+		#self.pla.checkTurn(iGameTurn)
+		#self.com.checkTurn(iGameTurn)
+		#self.corp.checkTurn(iGameTurn)
 		
-		sta.checkTurn(iGameTurn)
-		cong.checkTurn(iGameTurn)
+		#sta.checkTurn(iGameTurn)
+		#cong.checkTurn(iGameTurn)
 		
-		if iGameTurn % 10 == 0:
-			dc.checkTurn(iGameTurn)
-			
-		if scenario() == i3000BC and iGameTurn == year(600):
-			for iPlayer in players.major().where(lambda p: dBirth[p] < dBirth[iVikings]):
-				Modifiers.adjustInflationModifier(iPlayer)
+		#if iGameTurn % 10 == 0:
+		#	dc.checkTurn(iGameTurn)
 			
 		return 0
 
+	# BeginPlayerTurn
 	def onBeginPlayerTurn(self, argsList):	
 		iGameTurn, iPlayer = argsList
 		
-		if (data.lDeleteMode[0] != -1):
-			self.rnf.deleteMode(iPlayer)
+		#if (data.lDeleteMode[0] != -1):
+		#	self.rnf.deleteMode(iPlayer)
 			
-		self.pla.checkPlayerTurn(iGameTurn, iPlayer)
+		#self.pla.checkPlayerTurn(iGameTurn, iPlayer)
 		
-		if player(iPlayer).isAlive():
-			vic.checkTurn(iGameTurn, iPlayer)
-			
-			if not is_minor(iPlayer) and not player(iPlayer).isHuman():
-				self.rnf.checkPlayerTurn(iGameTurn, iPlayer) #for leaders switch
+		#if player(iPlayer).isAlive():
+		#	vic.checkTurn(iGameTurn, iPlayer)
 
+	# greatPersonBorn
 	def onGreatPersonBorn(self, argsList):
 		'Great Person Born'
 		pUnit, iPlayer, pCity = argsList
 		
-		gp.onGreatPersonBorn(pUnit, iPlayer, pCity)
-		vic.onGreatPersonBorn(iPlayer, pUnit)
-		sta.onGreatPersonBorn(iPlayer)
-		
-		# Leoreth: Silver Tree Fountain effect
-		if infos.unit(pUnit).getLeaderExperience() > 0 and player(iPlayer).isHasBuildingEffect(iSilverTreeFountain):
-			city = cities.owner(iPlayer).where(lambda: city.getGreatPeopleProgress() > 0).maximum(lambda city: city.getGreatPeopleProgress())
-			if city:
-				iGreatPerson = find_max(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit)).result
-				if iGreatPerson >= 0:
-					player(iPlayer).createGreatPeople(iGreatPerson, False, False, city.getX(), city.getY())
+		#gp.onGreatPersonBorn(pUnit, iPlayer, pCity)
+		#vic.onGreatPersonBorn(iPlayer, pUnit)
+		#sta.onGreatPersonBorn(iPlayer)
 					
-		# Leoreth: Nobel Prize effect
-		if game.getBuildingClassCreatedCount(infos.building(iNobelPrize).getBuildingClassType()) > 0:
-			if infos.unit(pUnit).getLeaderExperience() == 0 and infos.unit(pUnit).getEspionagePoints() == 0:
-				for iLoopPlayer in players.major():
-					if player(iLoopPlayer).isHasBuildingEffect(iNobelPrize):
-						if pUnit.getOwner() != iLoopPlayer and player(pUnit).AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_PLEASED:
-							wonderCity = cities.owner(iLoopPlayer).building_effect(iNobelPrize).one()
-							if wonderCity:
-								iGreatPersonType = getDefaultGreatPerson(pUnit.getUnitType())
-							
-								iGreatPeoplePoints = max(4, player(iLoopPlayer).getGreatPeopleCreated())
-							
-								wonderCity.changeGreatPeopleProgress(iGreatPeoplePoints)
-								wonderCity.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
-								interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
-								message(iLoopPlayer, 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(pUnit), pUnit.getName(), wonderCity.getName(), iGreatPeoplePoints)
-						break
-
+	# religionSpread
 	def onReligionSpread(self, argsList):
 		iReligion, iOwner, pSpreadCity = argsList
 		
