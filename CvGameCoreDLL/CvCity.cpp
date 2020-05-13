@@ -3841,7 +3841,8 @@ int CvCity::getProductionDifference(int iProductionNeeded, int iProduction, int 
 		return 0;
 	}
 
-	int iFoodProduction = ((bFoodProduction) ? std::max(0, (getYieldRate(YIELD_FOOD) - foodConsumption(true))) : 0);
+	// Steb: Olmec UP: Excess Food provides extra Production at a 50% rate when not consuming Food for Production.
+	int iFoodProduction = ((bFoodProduction) ? std::max(0, (getYieldRate(YIELD_FOOD) - foodConsumption(true))) : (getOwnerINLINE() == OLMECS) ? std::max(0, (getYieldRate(YIELD_FOOD) - foodConsumption(true)) / 2) : 0);
 
 	int iOverflow = ((bOverflow) ? (getOverflowProduction() + getFeatureProduction()) : 0);
 

@@ -1411,18 +1411,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OLM_TITLE</Tag>
-		<English>The Power of the Reheatable Tortilla:</English>
-		<French>Le pouvoir de la tortilla r&#233;chauff&#233;e :</French>
-		<German>Die Macht des Reheatable Tortilla-:</German>
-		<Italian>Il potere della Reheatable Tortilla:</Italian>
-		<Spanish>El poder de la Reheatable Tortilla:</Spanish>
+		<English>The Power of Nixtamal:</English>
+		<French>Le pouvoir du nixtamal :</French>
+		<German>Die Macht des Nixtamal-:</German>
+		<Italian>Il potere del Nixtamal:</Italian>
+		<Spanish>El poder del Nixtamal:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OLM</Tag>
-		<English>Improved resources are connected to the trade network even without roads.</English>
-		<French>Les ressources am&#233;nag&#233;es sont connect&#233;s au r&#233;seau commercial m&#234;me en l'absence de routes</French>
-		<German>Improved resources are connected to the trade network even without roads.</German>
-		<Italian>Improved resources are connected to the trade network even without roads.</Italian>
-		<Spanish>Improved resources are connected to the trade network even without roads.</Spanish>
+		<English>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</English>
+		<French>La nourriture en exc&#232;s fournit de la production additionnelle &#224; un taux de 50 %, sauf si la nourriture est consomm&#233;e pour la production.</French>
+		<German>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</German>
+		<Italian>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</Italian>
+		<Spanish>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</Spanish>
 	</TEXT>
 </Civ4GameText>
