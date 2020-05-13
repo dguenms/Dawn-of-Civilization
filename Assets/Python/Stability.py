@@ -48,19 +48,28 @@ tEraCorePopulationModifiers = (
 	400, # future
 )
 
-def checkTurn(iGameTurn):
+
+@handler("BeginGameTurn")
+def checkScheduledCollapse():
 	for iPlayer in players.major():
 		if data.players[iPlayer].iTurnsToCollapse == 0:
 			data.players[iPlayer].iTurnsToCollapse = -1
 			completeCollapse(iPlayer)
 		elif data.players[iPlayer].iTurnsToCollapse > 0:
 			data.players[iPlayer].iTurnsToCollapse -= 1
-	
+
+
+@handler("BeginGameTurn")
+def crisisCountdown():
+	for iPlayer in players.major():
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
-			
+
+
+@handler("BeginGameTurn")
+def updateTrendScores():
 	# calculate economic and happiness stability
-	if iGameTurn % turns(3) == 0:
+	if periodic(3):
 		for iPlayer in players.major():
 			updateEconomyTrend(iPlayer)
 			updateHappinessTrend(iPlayer)
@@ -75,22 +84,32 @@ def checkTurn(iGameTurn):
 					data.players[iPlayer].lLastWarSuccess[iEnemy] = team(iPlayer).AI_getWarSuccess(iEnemy)
 				else:
 					data.players[iPlayer].lLastWarSuccess[iEnemy] = 0
-			
+
+
+@handler("BeginGameTurn")
+def decayPenalties():
 	# decay penalties from razing cities and losing to barbarians
-	if iGameTurn % turns(5) == 0:
+	if periodic(5):
 		if data.iHumanRazePenalty < 0:
 			data.iHumanRazePenalty += 2
 		for iPlayer in players.major():
 			if data.players[iPlayer].iBarbarianLosses > 0:
 				data.players[iPlayer].iBarbarianLosses -= 1
-			
-	if iGameTurn % turns(12) == 0:
+
+
+@handler("BeginGameTurn")
+def checkLostCitiesCollapses():
+	if periodic(12):
 		for iPlayer in players.major():
 			checkLostCitiesCollapse(iPlayer)
-			
+	
+
+@handler("BeginGameTurn")
+def updateHumanStability(iGameTurn):
 	if iGameTurn >= year(dBirth[active()]):
 		data.iHumanStability = calculateStability(active())
-		
+
+
 def endTurn(iPlayer):
 	lSecedingCities = data.getSecedingCities(iPlayer)
 	
@@ -178,8 +197,9 @@ def onWonderBuilt(city, iBuilding):
 	
 def onGoldenAge(iPlayer):
 	checkStability(iPlayer, True)
-	
-def onGreatPersonBorn(iPlayer):
+
+@handler("greatPersonBorn")
+def onGreatPersonBorn(unit, iPlayer):
 	checkStability(iPlayer, True)
 
 @handler("combatResult")

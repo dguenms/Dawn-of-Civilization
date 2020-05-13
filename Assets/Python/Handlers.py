@@ -20,3 +20,8 @@ import Rules
 import Powers
 import Wonders
 import Companies
+import Communications
+import Resources
+import Religions
+import Barbs
+import GreatPeople

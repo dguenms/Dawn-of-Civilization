@@ -118,3 +118,31 @@ def greatWallEffect(city, iBuilding):
 	if iBuilding == iGreatWall:
 		for plot in plots.all().owner(iOwner).where(lambda plot: not plot.isWater()):
 			plot.setWithinGreatWall(True)
+
+
+# Silver Tree Fountain effect: free Great Person whenever a Great General is born
+@handler("greatPersonBorn")
+def silverFountainEffect(unit, iPlayer):
+	if infos.unit(unit).getLeaderExperience() > 0 and player(iPlayer).isHasBuildingEffect(iSilverTreeFountain):
+		city = cities.owner(iPlayer).where(lambda: city.getGreatPeopleProgress() > 0).maximum(lambda city: city.getGreatPeopleProgress())
+		if city:
+			iGreatPerson = find_max(range(iNumUnits), lambda iUnit: city.getGreatPeopleUnitProgress(iUnit)).result
+			if iGreatPerson >= 0:
+				player(iPlayer).createGreatPeople(iGreatPerson, False, False, city.getX(), city.getY())
+
+
+# Nobel Prize effect: additional great people points whenever a Great Person is born in a civ with pleasant relations
+@handler("greatPersonBorn")
+def nobelPrizeEffect(unit, iPlayer):
+	city = getBuildingEffectCity(iNobelPrize):
+	if city:
+		if infos.unit(unit).getLeaderExperience() == 0 and infos.unit(unit).getEspionagePoints() == 0:
+			if unit.getOwner() == city.getOwner() or player(unit).AI_getAttitude(city.getOwner()) >= AttitudeTypes.ATTITUDE_PLEASED:
+				iGreatPersonType = getDefaultGreatPerson(unit.getUnitType())
+				iGreatPeoplePoints = max(4, player(city).getGreatPeopleCreated())
+				
+				city.changeGreatPeopleProgress(iGreatPeoplePoints)
+				city.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
+				
+				interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
+				message(iLoopPlayer, 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(pUnit), pUnit.getName(), wonderCity.getName(), iGreatPeoplePoints)

@@ -284,7 +284,8 @@ def onCityRazed(city, iPlayer):
 			data.iMongolRazes += 1
 			if data.iMongolRazes >= 7:
 				win(iPlayer, 1)
-				
+
+@handler("BeginPlayerTurn")
 def checkTurn(iGameTurn, iPlayer):
 	if not game.isVictoryValid(7): return
 	
@@ -1936,8 +1937,9 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 				data.iKoreanSinks += 1
 				if data.iKoreanSinks >= 20:
 					win(iWinningPlayer, 2)
-					
-def onGreatPersonBorn(iPlayer, unit):
+
+@handler("greatPersonBorn")					
+def onGreatPersonBorn(unit, iPlayer):
 	iUnitType = base_unit(unit)
 	pUnitInfo = infos.unit(iUnitType)
 	

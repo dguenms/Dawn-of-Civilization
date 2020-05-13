@@ -33,6 +33,7 @@ def periodic(interval):
 
 # TODO: test
 def periodic_of(iterable, interval):
+	interval = turns(interval)
 	return next(element for i, element in enumerate(iterable) if turn() % interval == data.iSeed + hash(tuple(elements)) + i * (interval/ len(iterable)))
 
 
@@ -86,7 +87,7 @@ def owner(entity, identifier):
 
 
 def count(iterable, condition):
-	return len([x for x in iterable if condition(x)])
+	return len(x for x in iterable if condition(x))
 
 
 def format_separators(list, separator, last_separator, format=lambda x: x):
@@ -729,9 +730,10 @@ class EntityCollection(object):
 		
 	def limit(self, iLimit):
 		return self.__class__(self._keys[:iLimit])
-		
-	def count(self):
-		return len(self)
+	
+	# TODO: this changed, test again
+	def count(self, condition = lambda x: True):
+		return count(self, condition)
 		
 	def maximum(self, metric):
 		return find_max(self.entities(), metric).result
@@ -758,7 +760,7 @@ class EntityCollection(object):
 		return cls([map(k) for k in self._keys if condition(self._factory(k))])
 
 	def periodic(self, iInterval):
-		return next([entity for i, entity in enumerate(self.entities()) if turn() % iInterval == data.iSeed + hash(tuple(self.entities())) + i * (iInterval / self.count())], None)
+		return periodic_of(self.entities(), iInterval)
 
 	def divide(self, keys):
 		shuffled_entities = self.shuffle().entities()
@@ -1053,6 +1055,9 @@ class Cities(EntityCollection):
 		
 	def religion(self, iReligion):
 		return self.where(lambda city: city.isHasReligion(iReligion))
+	
+	def corporation(self, iCorporation):
+		return self.where(lambda city: city.isHasCorporation(iCorporation))
 	
 	def owner(self, iPlayer):
 		return self.where(lambda city: owner(city, iPlayer))

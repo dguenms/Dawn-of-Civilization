@@ -46,6 +46,13 @@ def init():
 			adjustModifiers(iPlayer)
 		
 		player(iPlayer).updateMaintenance()
+
+
+@handler("BeginGameTurn"):
+def updateLateModifiers(iGameTurn):			
+	if scenario() == i3000BC and iGameTurn == year(600):
+		for iPlayer in players.major().where(lambda p: dBirth[p] < dBirth[iVikings]):
+			adjustInflationModifier(iPlayer)
 		
 
 ### Modifier types ###
