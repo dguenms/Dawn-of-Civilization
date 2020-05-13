@@ -83,7 +83,7 @@ def onBuildingBuilt(city, iBuilding):
 
 	if iBuilding == iHinduTemple:
 		if game.isReligionFounded(iBuddhism): return
-		rel.foundBuddhism(city)
+		player(city).foundReligion(iBuddhism, iBuddhism, True)
 		
 	if iBuilding == iOrthodoxCathedral:
 		if game.isReligionFounded(iCatholicism): return
@@ -94,7 +94,157 @@ def onBuildingBuilt(city, iBuilding):
 			rel.foundReligion(location(city), iCatholicism)
 			pCatholicHolyCity = game.getHolyCity(iCatholicism)
 			rel.schism(pOrthodoxHolyCity, pCatholicHolyCity, cities.none(), cities.all().notowner(pOrthodoxHolyCity.getOwner()).religion(iOrthodoxy))
+
+
+@handler("BeginGameTurn")
+def foundHinduism(iGameTurn):
+	if not player(iIndia).isHuman():
+		if iGameTurn == year(-2000)+1:
+			if not game.isReligionFounded(iHinduism):
+				if plot(92, 39).isCity():
+					foundReligion((92, 39), iHinduism)
+
+
+@handler("BeginGameTurn")
+def checkJudaism(iGameTurn):
+	if game.isReligionFounded(iJudaism):
+		return
+
+	if iGameTurn == year(-1500) - turns(data.iSeed % 5):
+		foundReligion(selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
+
+
+@handler("BeginGameTurn")
+def checkChristianity(iGameTurn):
+	if not game.isReligionFounded(iJudaism): return
+	if game.isReligionFounded(iOrthodoxy): return
+	
+	iOffset = turns(data.iSeed % 15)
+	
+	if iGameTurn == year(0) + iOffset:
+		holyCity = game.getHolyCity(iJudaism)
+		
+		if not holyCity.isHuman() and rand(2) == 0:
+			foundReligion(holyCity, iOrthodoxy)
+			return
+			
+		jewishCity = cities.all().notowner(human()).where(lambda city: city.isHasReligion(iJudaism)).random()
+		if jewishCity:
+			foundReligion(location(jewishCity), iOrthodoxy)
+
+
+@handler("BeginGameTurn")
+def checkSchism(iGameTurn):
+	if not game.isReligionFounded(iOrthodoxy): return
+	if game.isReligionFounded(iCatholicism): return
+	
+	if game.countReligionLevels(iOrthodoxy) < 10: return
+	
+	religionCities = cities.all().religion(iOrthodoxy)
+	majorCities, minorCities = religionCities.split(is_minor)
+	
+	stateReligionCities, noStateReligionCities, differentStateReligionCities = majorCities.buckets(lambda city: player(city).getStateReligion() == iOrthodoxy, lambda city: player(city).getStateReligion() == -1)
+	
+	if not stateReligionCities: return
+	if not noStateReligionCities and not minorCities: return
+	
+	if stateReligionCities >= noStateReligionCities + minorCities: return
+	
+	orthodoxCapital = stateReligionCities.where(lambda city: city.isCapital())
+	if not orthodoxCapital:
+		orthodoxCapital = game.getHolyCity(iOrthodoxy)
+		
+	catholicCities = (noStateReligionCities + minorCities).without(orthodoxCapital)
+	catholicCapital = catholicCities.where(lambda city: plot(city).getSpreadFactor(iCatholicism) >= 3).maximum(lambda city: city.getPopulation())
+	if not catholicCapital:
+		catholicCapital = catholicCities.maximum(lambda city: city.getPopulation())
+	
+	foundReligion(catholicCapital, iCatholicism)
+	
+	independentCities = differentStateReligionCities + minorCities
+			
+	schism(orthodoxCapital, catholicCapital, noStateReligionCities, independentCities)
+
+
+@handler("BeginGameTurn")
+def spreadJudaism():
+	spreadReligionToRegion(iJudaism, [rIberia, rEurope, rItaly, rBritain, rRussia, rBalkans], 1000, 10)
+	spreadReligionToRegion(iJudaism, [rMesopotamia, rAnatolia, rEgypt], 600, 20)
+	spreadReligionToRegion(iJudaism, [rCanada, rAlaska, rUnitedStates], 1850, 10)
+
+
+@handler("BeginGameTurn")
+def spreadIslamIndonesia():
+	if not game.isReligionFounded(iIslam): return
+	if not player(iIndonesia).isAlive(): return
+	if not turn().between(1300, 1600): return
+	
+	if not periodic(15): return
+	
+	indonesianContacts = players.major().where(lambda p: player(iIndonesia).canContact(p) and player(p).getStateReligion() == iIslam)
+	if not indonesianContacts:
+		return
+		
+	indonesianCities = cities.region(rIndonesia)
+	potentialCities = indonesianCities.where(lambda c: not c.isHasReligion(iIslam))
+	
+	iMaxCitiesMultiplier = 2
+	if player(iIndonesia).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
+	
+	if len(potentialCities) * iMaxCitiesMultiplier >= len(indonesianCities):
+		spreadCity = potentialCities.random()
+		if spreadCity:
+			spreadCity.spreadReligion(iIslam)
+
+
+def foundReligion(location, iReligion):
+	city = city_(location)
+	if city:
+		game.setHolyCity(iReligion, city, True)
+		return True
+		
+	return False
+
+
+def selectHolyCity(tTL, tBR, tPreferredCity = None, bAIOnly = True):
+	preferredCity = city(tPreferredCity)
+	if preferredCity and (not bAIOnly or preferredCity.isHuman()):
+		return preferredCity
 				
+	holyCity = cities.rectangle(tTL, tBR).where(lambda city: not bAIOnly or not city.isHuman()).random()
+	if holyCity:
+		return location(holyCity)
+		
+	return None
+
+	
+def spreadReligionToRegion(iReligion, lRegions, iStartDate, iInterval):
+	if not game.isReligionFounded(iReligion): return
+	if iGameTurn < year(iStartDate): return
+	
+	if not periodic(iInterval): return
+	
+	regionCities = cities.regions(*lRegions)
+	religionCities = regionCities.religion(iReligion)
+	
+	if 2 * len(religionCities) < len(regionCities):
+		spreadCity = regionCities.where(lambda city: not city.isHasReligion(iReligion) and player(city.getOwner()).getSpreadType(plot(city), iReligion) > ReligionSpreadTypes.RELIGION_SPREAD_NONE).random()
+		if spreadCity:
+			spreadCity.spreadReligion(iReligion)
+
+
+def schism(orthodoxCapital, catholicCapital, replace, distance):
+	replace += distance.where(lambda city: distance(city, catholicCapital) <= distance(city, orthodoxCapital))
+	for city in replace:
+		city.replaceReligion(iOrthodoxy, iCatholicism)
+			
+	if player().getStateReligion() == iOrthodoxy and year() >= year(dBirth[active()]):
+		popup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
+		
+	for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):
+		if 2 * replace.owner(iPlayer) >= player(iPlayer).getNumCities():
+			player(iPlayer).setLastStateReligion(iCatholicism)
+	
 
 
 class Religions:
@@ -103,52 +253,7 @@ class Religions:
 ### Main methods (Event-Triggered) ###
 #####################################
 		
-	def checkTurn(self, iGameTurn):
-	
-		if not player(iIndia).isHuman():
-			if iGameTurn == year(-2000)+1:
-				if not game.isReligionFounded(iHinduism):
-					if plot(92, 39).isCity():
-						self.foundReligion((92, 39), iHinduism)
-				
-		self.checkJudaism(iGameTurn)
-		
-		#self.checkBuddhism(iGameTurn)
 
-		self.checkChristianity(iGameTurn)
-						
-		self.checkSchism(iGameTurn)
-
-		self.spreadJudaismEurope(iGameTurn)
-		self.spreadJudaismMiddleEast(iGameTurn)
-		self.spreadJudaismAmerica(iGameTurn)
-		
-		self.spreadIslamIndonesia(iGameTurn)
-
-
-	def foundReligion(self, location, iReligion):
-		plot = plot_(location)
-		if plot.isCity():
-			game.setHolyCity(iReligion, plot.getPlotCity(), True)
-			return True
-			
-		return False
-		
-
-		
-	def getTargetCities(self, lCities, iReligion):
-		return [city for city in lCities if not city.isHasReligion(iReligion) and player(city).getSpreadType(city.plot(), iReligion) > ReligionSpreadTypes.RELIGION_SPREAD_NONE]
-		
-	def selectHolyCity(self, tTL, tBR, tPreferredCity = None, bAIOnly = True):
-		preferredCity = city(tPreferredCity)
-		if preferredCity and (not bAIOnly or preferredCity.isHuman()):
-			return preferredCity
-					
-		holyCity = cities.rectangle(tTL, tBR).where(lambda city: not bAIOnly or not city.isHuman()).random()
-		if holyCity:
-			return location(holyCity)
-			
-		return None
 		
 	def checkLateReligionFounding(self, iReligion, iTech):
 		if infos.religion(iReligion).getTechPrereq() != iTech:
@@ -173,138 +278,18 @@ class Religions:
 			self.foundReligion(location(city), iReligion)
 					
 ## JUDAISM
-
-	def checkJudaism(self, iGameTurn):
-		if game.isReligionFounded(iJudaism): return
-
-		if iGameTurn == year(-1500) - turns(data.iSeed % 5):
-			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
-			
-	def spreadJudaismEurope(self, iGameTurn):
-		self.spreadReligionToRegion(iJudaism, [rIberia, rEurope, rItaly, rBritain, rRussia, rBalkans], iGameTurn, 1000, 10, 0)
-				
-	def spreadJudaismMiddleEast(self, iGameTurn):
-		self.spreadReligionToRegion(iJudaism, [rMesopotamia, rAnatolia, rEgypt], iGameTurn, 600, 20, 5)
-		
-	def spreadJudaismAmerica(self, iGameTurn):
-		self.spreadReligionToRegion(iJudaism, [rCanada, rAlaska, rUnitedStates], iGameTurn, 1850, 10, 4)
-				
-	def spreadReligionToRegion(self, iReligion, lRegions, iGameTurn, iStartDate, iInterval, iOffset):
-		if not game.isReligionFounded(iReligion): return
-		if iGameTurn < year(iStartDate): return
-		
-		if iGameTurn % turns(iInterval) != iOffset: return
-		
-		regionCities = cities.regions(*lRegions)
-		religionCities = regionCities.religion(iReligion)
-		
-		if 2 * len(religionCities) < len(regionCities):
-			spreadCity = regionCities.where(lambda city: not city.isHasReligion(iReligion) and player(city.getOwner()).getSpreadType(plot(city), iReligion) > ReligionSpreadTypes.RELIGION_SPREAD_NONE).random()
-			if spreadCity:
-				spreadCity.spreadReligion(iReligion)
 				
 ## ISLAM
-
-	def spreadIslamIndonesia(self, iGameTurn):
-		if not game.isReligionFounded(iIslam): return
-		if not player(iIndonesia).isAlive(): return
-		if not turn(iGameTurn).between(1300, 1600): return
-		
-		if iGameTurn % turns(15) != turns(4): return
-		
-		indonesianContacts = players.major().where(lambda p: player(iIndonesia).canContact(p) and player(p).getStateReligion() == iIslam)
-		if not indonesianContacts:
-			return
-			
-		indonesianCities = cities.region(rIndonesia)
-		potentialCities = indonesianCities.where(lambda c: not c.isHasReligion(iIslam))
-		
-		iMaxCitiesMultiplier = 2
-		if player(iIndonesia).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
-		
-		if len(potentialCities) * iMaxCitiesMultiplier >= len(indonesianCities):
-			spreadCity = potentialCities.random()
-			if spreadCity:
-				spreadCity.spreadReligion(iIslam)
 		
 ## BUDDHISM
-
-	def checkBuddhism(self, iGameTurn):
-		if game.isReligionFounded(iBuddhism): return
-		
-		if iGameTurn == year(-300).deviate(5, data.iSeed):
-			self.foundReligion(self.selectHolyCity(tBuddhistTL, tBuddhistBR), iBuddhism)
 		
 ## ORTHODOXY
-
-	def checkChristianity(self, iGameTurn):
-		if not game.isReligionFounded(iJudaism): return
-		if game.isReligionFounded(iOrthodoxy): return
-		
-		iOffset = turns(data.iSeed % 15)
-		
-		if iGameTurn == year(0) + iOffset:
-			holyCity = game.getHolyCity(iJudaism)
-			
-			if not holyCity.isHuman() and rand(2) == 0:
-				self.foundReligion(holyCity, iOrthodoxy)
-				return
-				
-			jewishCity = cities.all().notowner(human()).where(lambda city: city.isHasReligion(iJudaism)).random()
-			if jewishCity:
-				self.foundReligion(location(jewishCity), iOrthodoxy)
 			
 		
 ##BUDDHISM
-
-	def foundBuddhism(self, city):
-		player(city).foundReligion(iBuddhism, iBuddhism, True)
 		
 		
 ## CATHOLICISM
-
-	def checkSchism(self, iGameTurn):
-		if not game.isReligionFounded(iOrthodoxy): return
-		if game.isReligionFounded(iCatholicism): return
-		
-		if game.countReligionLevels(iOrthodoxy) < 10: return
-		
-		religionCities = cities.all().religion(iOrthodoxy)
-		majorCities, minorCities = religionCities.split(is_minor)
-		
-		stateReligionCities, noStateReligionCities, differentStateReligionCities = majorCities.buckets(lambda city: player(city).getStateReligion() == iOrthodoxy, lambda city: player(city).getStateReligion() == -1)
-		
-		if not stateReligionCities: return
-		if not noStateReligionCities and not minorCities: return
-		
-		if stateReligionCities >= noStateReligionCities + minorCities: return
-		
-		orthodoxCapital = stateReligionCities.where(lambda city: city.isCapital())
-		if not orthodoxCapital:
-			orthodoxCapital = game.getHolyCity(iOrthodoxy)
-			
-		catholicCities = (noStateReligionCities + minorCities).without(orthodoxCapital)
-		catholicCapital = catholicCities.where(lambda city: plot(city).getSpreadFactor(iCatholicism) >= 3).maximum(lambda city: city.getPopulation())
-		if not catholicCapital:
-			catholicCapital = catholicCities.maximum(lambda city: city.getPopulation())
-		
-		self.foundReligion(catholicCapital, iCatholicism)
-		
-		independentCities = differentStateReligionCities + minorCities
-				
-		self.schism(orthodoxCapital, catholicCapital, noStateReligionCities, independentCities)
-
-	def schism(self, orthodoxCapital, catholicCapital, replace, distance):
-		replace += distance.where(lambda city: distance(city, catholicCapital) <= distance(city, orthodoxCapital))
-		for city in replace:
-			city.replaceReligion(iOrthodoxy, iCatholicism)
-				
-		if player().getStateReligion() == iOrthodoxy and year() >= year(dBirth[active()]):
-			popup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
-			
-		for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):
-			if 2 * replace.owner(iPlayer) >= player(iPlayer).getNumCities():
-				player(iPlayer).setLastStateReligion(iCatholicism)
 
 #REFORMATION
 
