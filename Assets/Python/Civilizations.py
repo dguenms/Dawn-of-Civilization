@@ -385,7 +385,7 @@ dTechPreferences = {
 	iCivOlmecs : {
 		iWriting: 30,
 		iCalendar: 30,
-		iArithmetic: 30,
+		iArithmetics: 30,
 	},
 	iCivCarthage : {
 		iNavigation: 40,
