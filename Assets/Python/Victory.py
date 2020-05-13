@@ -573,7 +573,7 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iOlmecs:
 		
 		# first goal: build 5 culture-producing buildings by 400 BC
-		if isPossible(iOlmecs, 0):www
+		if isPossible(iOlmecs, 0):
 			lCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				lCultureBuildingCount += countCultureBuildings(city)
