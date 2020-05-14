@@ -5154,7 +5154,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
 			bWriting = teamOlmecs.isHasTech(iWriting)
 			bCalendar = teamOlmecs.isHasTech(iCalendar)
-			aHelp.append(getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(iWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(iCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()))
+			aHelp.append(getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()))
 		
 	elif iPlayer == iCarthage:
 		if iGoal == 0:
