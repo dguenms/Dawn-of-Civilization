@@ -3553,6 +3553,10 @@ def checkReligiousGoal(iPlayer, iGoal):
 				if iPlayer == iTeotihuacan:
 					if data.iTeotlSacrifices >= 200:
 						return 1
+				elif iPlayer == iOlmecs:
+					capital = pPlayer.getCapitalCity()
+					if capital and countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatArtist) >= 3:
+						return 1
 				elif data.iTeotlSacrifices >= 10:
 					return 1
 					
@@ -4970,6 +4974,11 @@ def getPaganGoalHelp(iPlayer):
 			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
 		if iPlayer == iTeotihuacan:
 			return getIcon(iCount >= 200) + localText.getText("TXT_KEY_VICTORY_CULTURE_FROM_ARTISANS", (iCount, 200))
+		if iPlayer == iOlmecs:
+			capital = pPlayer.getCapitalCity()
+			iCount = 0
+			if capital: iCount = countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatSpy)
+			return getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED", (iCount, 3))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 	
 	elif paganReligion == "Vedism":

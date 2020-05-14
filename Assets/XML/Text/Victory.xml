@@ -3931,6 +3931,11 @@
 		<French>Produire 200 culture par les artisans</French>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TEOTL_OLMECS</Tag>
+		<English>Settle three Great Artists in your capital</English>
+		<French>Faire rejoindre trois artistes illustres dans votre capitale</French>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
 		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
 		<French>Avoir l'&#233;quivalent de 100 tours de villes c&#233;l&#233;brant "La f&#234;te du roi"</French>
@@ -4241,6 +4246,14 @@
 		<German>Great Spies in capital: %d1 / %d2</German>
 		<Italian>Great Spies in capital: %d1 / %d2</Italian>
 		<Spanish>Great Spies in capital: %d1 / %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITAL_GREAT_ARTISTS</Tag>
+		<English>Great Artists in capital: %d1 / %d2</English>
+		<French>Artistes illustres dans la capitale : %d1 / %d2</French>
+		<German>Great Artists in capital: %d1 / %d2</German>
+		<Italian>Great Artists in capital: %d1 / %d2</Italian>
+		<Spanish>Great Artists in capital: %d1 / %d2</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CATHOLIC_SAINTS</Tag>
@@ -7320,8 +7333,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT</Tag>
-		<English>Culture buildings built</English>
-		<French>B&#226;timents construits</French>
+		<English>Culture buildings built: %d1 / %d2</English>
+		<French>B&#226;timents construits : %d1 / %d2</French>
 		<German>Culture buildings built</German>
 		<Italian>Culture buildings built</Italian>
 		<Spanish>Culture buildings built</Spanish>
