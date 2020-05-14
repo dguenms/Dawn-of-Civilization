@@ -151,8 +151,8 @@ iCivNorteChico : Techs([iAgriculture, iMythology]),
 iCivNubia : 	Techs([iAgriculture, iMythology, iCeremony, iPastoralism, iMining]),
 iCivChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
 iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
-iCivOlmecs : Techs([iTanning, iMining, iAgriculture]),
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
+iCivOlmecs : Techs([iTanning, iMining, iAgriculture]),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
 iCivCeltia : 	Techs([iAlloys, iBloomery, iCalendar, iConstruction], column=2, exceptions=[iSeafaring, iProperty]),
 iCivCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
@@ -373,6 +373,11 @@ dTechPreferences = {
 		iPrinting: -20,
 		iTheology: -15,
 	},
+	iCivOlmecs : {
+		iWriting: 30,
+		iCalendar: 30,
+		iArithmetics: 30,
+	},
 	iCivIndia : {
 		iCeremony: 200,
 		iPriesthood: 200,
@@ -381,11 +386,6 @@ dTechPreferences = {
 		iEngineering: -20,
 		iTheology: -20,
 		iCivilService: -20,
-	},
-	iCivOlmecs : {
-		iWriting: 30,
-		iCalendar: 30,
-		iArithmetics: 30,
 	},
 	iCivCarthage : {
 		iNavigation: 40,

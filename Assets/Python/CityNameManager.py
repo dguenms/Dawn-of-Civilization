@@ -47,8 +47,8 @@ def getLanguages(iCiv):
 			return (iLangNubian, iLangEgyptian,)
 	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iGreece: return (iLangGreek,)
-	elif iCiv == iIndia: return (iLangIndian,)
 	elif iCiv == iOlmecs: return (iLangOlmec, iLangMayan, iLangTeotihuacan, iLangAztec)
+	elif iCiv == iIndia: return (iLangIndian,)
 	elif iCiv == iCarthage: return (iLangPhoenician,)
 	elif iCiv == iPolynesia: return (iLangPolynesian,)
 	elif iCiv == iPersia: 

@@ -9,19 +9,19 @@ iWorldY = 68
 
 # initialise player variables to player IDs from WBS
 iNumPlayers = 74
-(iEgypt, iBabylonia, iHarappa, iNorteChico, iNubia, iChina, iGreece, iIndia, iOlmecs, iCarthage, iCeltia, iPolynesia, iPersia, iRome, 
+(iEgypt, iBabylonia, iHarappa, iNorteChico, iNubia, iChina, iGreece, iOlmecs, iIndia, iCarthage, iCeltia, iPolynesia, iPersia, iRome, 
 iMaya, iTamils, iEthiopia, iVietnam, iTeotihuacan, iInuit, iMississippi, iKorea, iTiwanaku, iByzantium, iWari, iJapan, iVikings, iTurks, iArabia, iTibet, 
 iIndonesia, iBurma, iKhazars, iChad, iMoors, iSpain, iFrance, iOman, iKhmer, iMuisca, iYemen, iEngland, iHolyRome, iKievanRus, iHungary, iPhilippines, iChimu, iSwahili, iMamluks, iMali, iPoland, iZimbabwe, 
 iPortugal, iInca, iItaly, iNigeria, iMongolia, iAztecs, iMughals, iOttomans, iRussia, iThailand, iCongo, iSweden, iNetherlands, iManchuria,
 iGermany, iAmerica, iArgentina, iBrazil, iAustralia, iBoers, iCanada, iIsrael) = range(iNumPlayers)
 
-(pEgypt, pBabylonia, pHarappa, pNorteChico, pNubia, pChina, pGreece, pIndia, pOlmecs, pCarthage, pCeltia, pPolynesia, pPersia, pRome, 
+(pEgypt, pBabylonia, pHarappa, pNorteChico, pNubia, pChina, pGreece, pOlmecs, pIndia, pCarthage, pCeltia, pPolynesia, pPersia, pRome, 
 pMaya, pTamils, pEthiopia, pVietnam, pTeotihuacan, pInuit, pMississippi, pKorea, pTiwanaku, pByzantium, pWari, pJapan, pVikings, pTurks, pArabia, pTibet, 
 pIndonesia, pBurma, pKhazars, pChad, pMoors, pSpain, pFrance, pOman, pKhmer, pMuisca, pYemen, pEngland, pHolyRome, pKievanRus, pHungary, pPhilippines, pChimu, pSwahili, pMamluks, pMali, pPoland, pZimbabwe, 
 pPortugal, pInca, pItaly, pNigeria, pMongolia, pAztecs, pMughals, pOttomans, pRussia, pThailand, pCongo, pSweden, pNetherlands, pManchuria, 
 pGermany, pAmerica, pArgentina, pBrazil, pAustralia, pBoers, pCanada, pIsrael) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
-(teamEgypt, teamBabylonia, teamHarappa, teamNorteChico, teamNubia, teamChina, teamGreece, teamIndia, teamOlmecs, teamCarthage, teamCeltia, teamPolynesia, teamPersia, teamRome, 
+(teamEgypt, teamBabylonia, teamHarappa, teamNorteChico, teamNubia, teamChina, teamGreece, teamOlmecs, teamIndia, teamCarthage, teamCeltia, teamPolynesia, teamPersia, teamRome, 
 teamMaya, teamTamils, teamEthiopia, teamVietnam, teamTeotihuacan, teamInuit, teamMississippi, teamKorea, teamTiwanaku, teamByzantium, teamWari, teamJapan, teamVikings, teamTurks, teamArabia, teamTibet, 
 teamIndonesia, teamBurma, teamKhazars, teamChad, teamMoors, teamSpain, teamFrance, teamOman, teamKhmer, teamMuisca, teamYemen, teamEngland, teamHolyRome, teamKievanRus, teamHungary, teamPhilippines, teamChimu, teamSwahili, teamMamluks, teamMali, teamPoland, teamZimbabwe, 
 teamPortugal, teamInca, teamItaly, teamNigeria, teamMongolia, teamAztecs, teamMughals, teamOttomans, teamRussia, teamThailand, teamCongo, teamSweden, teamNetherlands, teamManchuria, 
@@ -160,8 +160,8 @@ lNeighbours = [
 [iEgypt, iEthiopia, iArabia, iOman, iYemen, iMamluks, iMali, iZimbabwe, iNigeria, iCongo, iChad], #Nubia
 [iIndia, iJapan, iKorea, iTurks, iTibet, iKhmer, iMongolia, iThailand, iManchuria, iPhilippines, iBurma], #China
 [iPersia, iCeltia, iCarthage, iRome, iByzantium, iHolyRome, iRussia, iKievanRus, iOttomans, iItaly, iKhazars], #Greece
-[iChina, iHarappa, iPersia, iTamils, iTibet, iKhmer, iMongolia, iMughals, iThailand, iVietnam, iBurma], #India
 [iTeotihuacan, iMaya, iAztecs], #Olmecs
+[iChina, iHarappa, iPersia, iTamils, iTibet, iKhmer, iMongolia, iMughals, iThailand, iVietnam, iBurma], #India
 [iEgypt, iGreece, iRome, iSpain, iMali, iPortugal, iBabylonia, iPersia, iArabia, iMoors, iOttomans, iItaly, iMamluks], #Carthage
 [iGreece, iRome, iVikings, iFrance, iEngland, iHolyRome, iOttomans, iNetherlands, iItaly, iPoland, iSweden, iGermany, iHungary], #Celtia
 [], # Polynesia
@@ -238,8 +238,8 @@ lOlderNeighbours = [
 [iEgypt], #Nubia
 [], #China
 [iEgypt, iBabylonia], #Greece
-[iHarappa], #India
 [], #Olmecs
+[iHarappa], #India
 [iEgypt, iBabylonia], #Carthage
 [iGreece], #Celtia
 [], # Polynesia
@@ -318,8 +318,8 @@ tBirth = (
 -2500,					# Nubia
 -2070,					# China
 -1600, # 50, #1600BC			# Greece
+-1600, 					# Olmecs
 -1500, # 0, #3000BC			# India
--1500, 					# Olmecs
 -1200, # 66, #814BC # Leoreth: 1200 BC	# Carthage
 -1200, 						# Celtia
 -1000,					# Polynesia
@@ -402,8 +402,8 @@ tFall = (
 -1500,					# Nubia
 1127,					# China
 -146,					# Greece
-600, # end of Gupta Empire		# India
 -400,					# Olmecs
+600, # end of Gupta Empire		# India
 -146,					# Phoenicia
 60,					# Celtia
 1200,					# Polynesia
@@ -479,8 +479,8 @@ iCivNorteChico : (-1800, -1, -1500),
 iCivNubia : (-656, 1365, 1821),
 iCivChina : (1000, -1, 1800),
 iCivGreece : (-1, -330, -250),
-iCivIndia : (-100, 700, 1200),
 iCivOlmecs : (-400, -400, -1),
+iCivIndia : (-100, 700, 1200),
 iCivCarthage : (-300, -100, 200),
 iCivCeltia : (-270, -280, 800),
 iCivPolynesia : (800, 1000, 1200),
@@ -581,8 +581,8 @@ tResurrectionIntervals = (
 [(-785, 350), (350, 1365), (1504, 1821)], #Nubia
 [(600, 2020)], #China
 [(1800, 2020)], #Greece
-[(1600, 1800), (1900, 2020)], #India
 [], #Olmecs
+[(1600, 1800), (1900, 2020)], #India
 [(-1000, -150)], #Carthage
 [], #Celtia
 [],		# Polynesia
@@ -658,9 +658,9 @@ lEnemyCivsOnSpawn = [
 [], #Norte Chico
 [], #Nubia
 [iIndependent,iIndependent2,iIndependent2], #China
+[], #Olmecs
 [iIndependent,iIndependent2,iBabylonia], #Greece
 [], #India
-[], #Olmecs
 [], #Carthage
 [iGreece, iRome], #Celtia
 [], #Polynesia
@@ -744,8 +744,8 @@ lTotalWarOnSpawn = [
 [], #Nubia
 [], #China
 [iCeltia], #Greece
-[], #India
 [], #Olmecs
+[], #India
 [], #Phoenicia
 [iEngland], #Celtia
 [], #Polynesia
@@ -823,8 +823,8 @@ tAggressionLevel = (
 1, #Nubia
 1, #China
 2, #Greece
-0, #India
 0, #Olmecs
+0, #India
 0, #Carthage
 2, #Celtia
 0, #Polynesia
@@ -902,8 +902,8 @@ tAIStopBirthThreshold = (
     80, #Nubia
     60, #China
     50, #Greece #would be 80 but with Turks must be lower
-    80, #India
     80, #Olmecs
+    80, #India
     80, #Carthage
 	30, #Celtia
     80, #Polynesia
@@ -984,8 +984,8 @@ tResurrectionProb = (
 60, #Nubia
 100, #China
 60, #Greece
-50, #India
 50, #Olmecs
+50, #India
 30, #Carthage
 70, #Celtia
 40, #Polynesia
@@ -1065,8 +1065,8 @@ tPatienceThreshold = (
 30, #Nubia
 30, #China
 35, #Greece
-50, #India
 30, #Olmecs
+50, #India
 35, #Carthage
 30, #Celtia
 50, #Polynesia
