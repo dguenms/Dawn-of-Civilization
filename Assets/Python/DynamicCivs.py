@@ -573,6 +573,7 @@ dStartingLeaders = [
 	iChina : iQinShiHuang,
 	iGreece : iPericles,
 	iPersia : iCyrus,
+	iOlmecs : iTezcatlipoca,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,
 	iCeltia : iBrennus,
