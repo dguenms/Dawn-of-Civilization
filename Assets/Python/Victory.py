@@ -2727,11 +2727,16 @@ def onTechAcquired(iPlayer, iTech):
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkEraGoal(iLoopPlayer, lEras): win(iLoopPlayer, iGoal)
 				
-	# second Olmec goal: discover Arithmetics, Writing and Calendar by 400 BC
+	# second Olmec goal: discover two of Arithmetics, Writing and Calendar by 400 BC
 	if iPlayer == iOlmecs:
+		lRequiredTechs = [iArithmetics, iWriting, iCalendar]
 		if isPossible(iOlmecs, 1):
-			if iTech in [iArithmetics, iWriting, iCalendar]:
-				if teamOlmecs.isHasTech(iArithmetics) and teamOlmecs.isHasTech(iWriting) and teamOlmecs.isHasTech(iCalendar):
+			iCount = 0
+			if iTech in lRequiredTechs:
+				for iRequiredTech in lRequiredTechs:
+					if teamOlmecs.isHasTech(iRequiredTech):
+						iCount += 1
+				if count >= 2:
 					win(iOlmecs, 1)
 
 	# first Maya goal: discover Calendar by 200 AD
