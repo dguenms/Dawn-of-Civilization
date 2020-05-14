@@ -1402,9 +1402,9 @@
 		</ColorVal>
 		<ColorVal>
 			<Type>COLOR_X_ORANGERED</Type>
-			<fRed>0.77</fRed>
-			<fGreen>0.31</fGreen>
-			<fBlue>0.15</fBlue>
+			<fRed>0.70</fRed>
+			<fGreen>0.25</fGreen>
+			<fBlue>0.10</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 	</ColorVals>
