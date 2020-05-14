@@ -317,7 +317,7 @@ EndPlayer
 BeginPlayer
 	Team=8
 	LeaderType=LEADER_TEZCATLIPOCA
-	CivType=CIVILIZATION_OLMEC
+	CivType=CIVILIZATION_OLMECS
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
