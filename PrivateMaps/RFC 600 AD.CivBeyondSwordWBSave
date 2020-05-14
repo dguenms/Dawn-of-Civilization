@@ -238,10 +238,10 @@ BeginTeam
 	TeamID=75, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=75, (Native)
+	TeamID=76, (Native)
 EndTeam
 BeginTeam
-	TeamID=76, (Barbarian)
+	TeamID=77, (Barbarian)
 EndTeam
 BeginPlayer
 	Team=0
@@ -1176,7 +1176,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=75
+	Team=76
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
 	PlayableCiv=0
@@ -1185,7 +1185,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=76
+	Team=77
 	LeaderType=LEADER_BARBARIAN
 	CivType=CIVILIZATION_BARBARIAN
 	PlayableCiv=0
@@ -42084,16 +42084,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 (	BeginUnit)
-(		UnitType=UNIT_ARCHER, UnitOwner=76, (Barbarian))
+(		UnitType=UNIT_ARCHER, UnitOwner=77, (Barbarian))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=76, (Barbarian))
+(		UnitType=UNIT_WARRIOR, UnitOwner=77, (Barbarian))
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_WARRIOR, UnitOwner=76, (Barbarian))
+(		UnitType=UNIT_WARRIOR, UnitOwner=77, (Barbarian))
 (	EndUnit)
 (	BeginCity)
-(		CityOwner=76, (Barbarian))
+(		CityOwner=77, (Barbarian))
 (		CityName=Simiyan hoton)
 (		CityPopulation=2)
 (		BuildingType=BUILDING_WALLS)
