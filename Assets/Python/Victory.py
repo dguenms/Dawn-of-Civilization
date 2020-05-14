@@ -5149,7 +5149,7 @@ def getUHVHelp(iPlayer, iGoal):
 			lCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				lCultureBuildingCount += countCultureBuildings(city)
-			aHelp.append(getIcon(lCultureBuildingCount >= 5) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (lCultureBuildingCount)))
+			aHelp.append(getIcon(lCultureBuildingCount >= 5) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (lCultureBuildingCount, 5)))
 		if iGoal == 1:
 			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
 			bWriting = teamOlmecs.isHasTech(iWriting)
