@@ -23,7 +23,7 @@ tMinorCities = (
 (-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
-(-500, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
+(-400, (19, 35), iNative, 'Danibaan', 2, iHolkan, 2),	# Monte Alb�n
 (-325, (92, 33), iIndependent, 'Kanchipuram', 2, iArcher, 1),	# Madras
 (-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, iChariot, 2),	# Shenyang
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, iWarElephant, 1),	# Thanjavur
