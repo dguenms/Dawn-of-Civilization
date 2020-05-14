@@ -1419,10 +1419,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OLM</Tag>
-		<English>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</English>
-		<French>La nourriture en exc&#232;s fournit de la production additionnelle &#224; un taux de 50 %, sauf si la nourriture est consomm&#233;e pour la production.</French>
-		<German>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</German>
-		<Italian>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</Italian>
-		<Spanish>Excess Food provides extra Production at a 50% rate when not consuming Food for Production.</Spanish>
+		<English>Excess Food provides extra Production when not consuming Food for Production.</English>
+		<French>La nourriture en exc&#232;s fournit de la production additionnelle, sauf si la nourriture est consomm&#233;e pour la production.</French>
+		<German>Excess Food provides extra Production when not consuming Food for Production.</German>
+		<Italian>Excess Food provides extra Production when not consuming Food for Production.</Italian>
+		<Spanish>Excess Food provides extra Production when not consuming Food for Production.</Spanish>
 	</TEXT>
 </Civ4GameText>
