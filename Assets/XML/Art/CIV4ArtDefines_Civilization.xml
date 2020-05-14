@@ -505,7 +505,7 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_OLMEC</Type>
+			<Type>ART_DEF_CIVILIZATION_OLMECS</Type>
 			<Button>Art/Interface/Buttons/Civilizations/olmec.dds</Button>
 			<Path>Art/Interface/TeamColor/flagdecal_olmec.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>

@@ -5864,13 +5864,13 @@
 			<CivilizationActionSound>AS3D_EGYPT_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
-			<Type>CIVILIZATION_OLMEC</Type>
-			<Description>TXT_KEY_CIV_OLMEC_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_OLMEC_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_OLMEC_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_CIV_OLMEC_PEDIA</Civilopedia>
+			<Type>CIVILIZATION_OLMECS</Type>
+			<Description>TXT_KEY_CIV_OLMECS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_OLMECS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_OLMECS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_OLMECS_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_YELLOWISH_JADE_GREEN</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_OLMEC</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_OLMECS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>

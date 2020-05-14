@@ -2,7 +2,7 @@
 <!-- Inca -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OLMEC_DESC</Tag>
+		<Tag>TXT_KEY_CIV_OLMECS_DESC</Tag>
 		<English>The Olmecs</English>
 		<French>Les Olm&#232;ques</French>
 		<German>The Olmecs</German>
@@ -10,7 +10,7 @@
 		<Spanish>The Olmecs</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OLMEC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_OLMECS_PEOPLES</Tag>
 		<English>Peoples of the Gulf lowlands</English>
 		<French>
 			<Text>Peuplades des basses-terres du golfe</Text>
@@ -34,7 +34,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OLMEC_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_OLMECS_DEFAULT</Tag>
 		<English>%s2 City-States</English>
 		<French>
 			<Text>Cit&#233;s-&#201;tats %s2</Text>
@@ -58,7 +58,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OLMEC_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_OLMECS_ADJECTIVE</Tag>
 		<English>Olmec</English>
 		<French>
 			<Text>olm&#232;que:olm&#232;que:olm&#232;ques:olm&#232;ques</Text>
@@ -70,7 +70,7 @@
 		<Spanish>Olmec</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OLMEC_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_OLMECS_SHORT_DESC</Tag>
 		<English>Olmecs</English>
 		<French>
 			<Text>Olm&#232;ques</Text>
