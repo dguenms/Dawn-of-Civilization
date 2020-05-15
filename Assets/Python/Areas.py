@@ -108,8 +108,8 @@ tCapitals = (
 (66, 31), # Kerma
 (100, 44), # Chang'an
 (67, 41), # Athens
-(94, 40), # Pataliputra
 (20, 35), # La Venta
+(94, 40), # Pataliputra
 (73, 40), # Sur
 (62, 49), # Hallstatt
 (4, 18), # Tonga
