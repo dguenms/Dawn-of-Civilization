@@ -5876,7 +5876,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
 			<Identifier>OLM</Identifier>
-			<StartingYear>-1500</StartingYear>
+			<StartingYear>-1600</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
