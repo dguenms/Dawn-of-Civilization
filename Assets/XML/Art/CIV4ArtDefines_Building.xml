@@ -3773,9 +3773,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Gate of the Sun/brana01.nif</NIF>
+			<NIF>Art/Structures/Buildings/Gate_of_the_Sun/brana01.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Gate of the Sun/gate.dds</Button>
+			<Button>Art/Structures/Buildings/Gate_of_the_Sun/gate.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_WARI_COLCAS</Type>
