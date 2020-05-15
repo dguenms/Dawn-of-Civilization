@@ -3841,8 +3841,7 @@ int CvCity::getProductionDifference(int iProductionNeeded, int iProduction, int 
 		return 0;
 	}
 
-	// Steb: Olmec UP: Excess Food provides extra Production when not consuming Food for Production.
-	int iFoodProduction = ((bFoodProduction || (getOwnerINLINE() == OLMECS)) ? std::max(0, (getYieldRate(YIELD_FOOD) - foodConsumption(true))) : 0);
+	int iFoodProduction = ((bFoodProduction) ? std::max(0, (getYieldRate(YIELD_FOOD) - foodConsumption(true))) : 0);
 
 	int iOverflow = ((bOverflow) ? (getOverflowProduction() + getFeatureProduction()) : 0);
 
@@ -10200,6 +10199,12 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 	if (eIndex == YIELD_FOOD && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)LOTUS_TEMPLE))
 	{
 		iYieldRateTimes100 += 100 * (getReligionCount() - (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) ? 1 : 0));
+	}
+	
+	// Steb: Olmec UP: Excess Food provides extra Commerce when not consuming Food for Production.
+	if (eIndex == YIELD_COMMERCE && getOwnerINLINE() == OLMECS && !isFoodProduction())
+	{
+		iYieldRateTimes100 += 100 * (getYieldRate(YIELD_FOOD) - foodConsumption(true))
 	}
 
 	return (iYieldRateTimes100 / 100);
