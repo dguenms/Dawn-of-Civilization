@@ -1419,10 +1419,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_OLM</Tag>
-		<English>Excess Food provides extra Commerce when not consuming Food for Production.</English>
-		<French>La nourriture en exc&#232;s fournit du commerce additionnel, sauf si la nourriture est consomm&#233;e pour la production.</French>
-		<German>Excess Food provides extra Commerce when not consuming Food for Production.</German>
-		<Italian>Excess Food provides extra Commerce when not consuming Food for Production.</Italian>
-		<Spanish>Excess Food provides extra Commerce when not consuming Food for Production.</Spanish>
+		<English>Excess Food provides extra Commerce.</English>
+		<French>La nourriture en exc&#232;s fournit du commerce additionnel.</French>
+		<German>Excess Food provides extra Commerce.</German>
+		<Italian>Excess Food provides extra Commerce.</Italian>
+		<Spanish>Excess Food provides extra Commerce.</Spanish>
 	</TEXT>
 </Civ4GameText>
