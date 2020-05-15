@@ -31,10 +31,10 @@ BeginTeam
 	TeamID=6, (Greece)
 EndTeam
 BeginTeam
-	TeamID=7, (India)
+	TeamID=7, (Olmecs)
 EndTeam
 BeginTeam
-	TeamID=8, (Olmecs)
+	TeamID=8, (India)
 EndTeam
 BeginTeam
 	TeamID=9, (Phoenicia)
@@ -313,6 +313,13 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=7
+	LeaderType=LEADER_TEZCATLIPOCA
+	CivType=CIVILIZATION_OLMECS
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=8
 	LeaderType=LEADER_SHIVAJI
 	CivType=CIVILIZATION_INDIA
 	PlayableCiv=1
@@ -325,13 +332,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_MONASTICISM
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_CONQUEST
 	AttitudePlayer=58, AttitudeExtra=-2, (Mughals)
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=8
-	LeaderType=LEADER_TEZCATLIPOCA
-	CivType=CIVILIZATION_OLMECS
-	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -877,7 +877,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REGULATED_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
-	AttitudePlayer=7, AttitudeExtra=-2, (India)
+	AttitudePlayer=8, AttitudeExtra=-2, (India)
 	AttitudePlayer=12, AttitudeExtra=-2, (Iran)
 	AttitudePlayer=41, AttitudeExtra=-2, (England)
 	Handicap=HANDICAP_REGENT
@@ -39880,7 +39880,7 @@ BeginPlot
 	x=84,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,41,52,64,74,
+	TeamReveal=8,41,52,64,74,
 EndPlot
 BeginPlot
 	x=84,y=33
@@ -39888,25 +39888,25 @@ BeginPlot
 	BonusType=BONUS_FISH
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	PlotType=3
-	TeamReveal=7,35,41,52,58,64,74,
+	TeamReveal=8,35,41,52,58,64,74,
 EndPlot
 BeginPlot
 	x=84,y=34
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,12,35,41,52,58,64,74,
+	TeamReveal=8,12,35,41,52,58,64,74,
 EndPlot
 BeginPlot
 	x=84,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,12,35,41,52,58,64,74,75,
+	TeamReveal=8,12,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=84,y=36
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=7,12,35,41,52,58,64,74,75,
+	TeamReveal=8,12,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=84,y=37
@@ -40400,37 +40400,37 @@ BeginPlot
 	x=85,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,52,74,
+	TeamReveal=8,52,74,
 EndPlot
 BeginPlot
 	x=85,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,52,74,
+	TeamReveal=8,52,74,
 EndPlot
 BeginPlot
 	x=85,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,41,52,74,
+	TeamReveal=8,41,52,74,
 EndPlot
 BeginPlot
 	x=85,y=33
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,41,52,58,74,
+	TeamReveal=8,41,52,58,74,
 EndPlot
 BeginPlot
 	x=85,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,12,41,52,58,64,74,
+	TeamReveal=8,12,41,52,58,64,74,
 EndPlot
 BeginPlot
 	x=85,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,12,35,41,52,58,64,74,75,
+	TeamReveal=8,12,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=85,y=36
@@ -40459,7 +40459,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player58Culture=50, (Mughals)
 	EndCity
-	TeamReveal=7,12,35,41,52,58,64,74,75,
+	TeamReveal=8,12,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=85,y=37
@@ -40893,44 +40893,44 @@ BeginPlot
 	x=86,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,14,52,
+	TeamReveal=8,14,52,
 EndPlot
 BeginPlot
 	x=86,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,14,52,74,
+	TeamReveal=8,14,52,74,
 EndPlot
 BeginPlot
 	x=86,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,14,41,52,74,75,
+	TeamReveal=8,14,41,52,74,75,
 EndPlot
 BeginPlot
 	x=86,y=33
 	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,14,41,52,58,64,74,75,
+	TeamReveal=8,14,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=86,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,41,52,58,64,74,75,
+	TeamReveal=8,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=86,y=35
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,12,35,41,52,58,64,74,75,
+	TeamReveal=8,12,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=86,y=36
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,12,35,41,58,64,74,75,
+	TeamReveal=8,12,35,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=86,y=37
@@ -41311,56 +41311,56 @@ BeginPlot
 	x=87,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,14,52,58,74,75,
+	TeamReveal=8,14,52,58,74,75,
 EndPlot
 BeginPlot
 	x=87,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=7,14,52,58,74,75,
+	TeamReveal=8,14,52,58,74,75,
 EndPlot
 BeginPlot
 	x=87,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,14,41,52,58,74,75,
+	TeamReveal=8,14,41,52,58,74,75,
 EndPlot
 BeginPlot
 	x=87,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=87,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,35,41,52,58,64,74,75,
+	TeamReveal=8,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=87,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,35,41,52,58,64,74,75,
+	TeamReveal=8,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=87,y=36
 	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,12,35,41,58,64,74,75,
+	TeamReveal=8,12,35,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=87,y=37
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=7,12,35,41,58,64,74,75,
+	TeamReveal=8,12,35,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=87,y=38
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=87,y=39
@@ -41746,7 +41746,7 @@ BeginPlot
 	x=88,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=31
@@ -41754,13 +41754,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=33
@@ -41769,7 +41769,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=34
@@ -41777,61 +41777,61 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=7, (India)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=7, (India)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=7, (India)
+		UnitType=UNIT_CUIRASSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=7, (India)
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=7, (India)
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=7, (India)
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=7, (India)
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=7, (India)
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=7, (India)
+		UnitType=UNIT_WORKER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=7, (India)
+		UnitType=UNIT_WORKER, UnitOwner=8, (India)
 	EndUnit
 	BeginCity
-		CityOwner=7, (India)
+		CityOwner=8, (India)
 		CityName=Mumbai
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
@@ -41847,9 +41847,9 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
 		FreeSpecialistType=SPECIALIST_GREAT_GENERAL
-		Player7Culture=75, (India)
+		Player8Culture=75, (India)
 	EndCity
-	TeamReveal=7,35,41,52,58,64,74,75,
+	TeamReveal=8,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=35
@@ -41858,7 +41858,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,35,41,52,58,64,74,75,
+	TeamReveal=8,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=36
@@ -41866,7 +41866,7 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,35,41,58,64,74,75,
+	TeamReveal=8,35,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=37
@@ -41875,13 +41875,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,35,41,58,64,74,75,
+	TeamReveal=8,35,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=88,y=38
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=88,y=39
@@ -41889,7 +41889,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=88,y=40
@@ -42249,20 +42249,20 @@ BeginPlot
 	x=89,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=31
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=32
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=33
@@ -42272,13 +42272,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=34
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=35
@@ -42287,7 +42287,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,35,41,52,58,64,74,75,
+	TeamReveal=8,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=36
@@ -42298,26 +42298,26 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=89,y=37
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=89,y=38
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=89,y=39
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=89,y=40
@@ -42728,7 +42728,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=31
@@ -42789,14 +42789,14 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player15Culture=50, (Tamils)
 	EndCity
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=32
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=33
@@ -42806,14 +42806,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,41,52,58,64,74,75,
+	TeamReveal=8,14,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=34
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,41,52,58,64,74,75,
+	TeamReveal=8,14,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=35
@@ -42821,7 +42821,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,52,58,64,74,75,
+	TeamReveal=8,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=36
@@ -42830,7 +42830,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=90,y=37
@@ -42840,13 +42840,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER, UnitOwner=7, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=8, (India)
 	EndUnit
 	BeginCity
-		CityOwner=7, (India)
+		CityOwner=8, (India)
 		CityName=Bhopal
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -42856,9 +42856,9 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_VIJAYA_STAMBHA
 		ReligionType=RELIGION_HINDUISM
-		Player7Culture=75, (India)
+		Player8Culture=75, (India)
 	EndCity
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=90,y=38
@@ -42867,7 +42867,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=90,y=39
@@ -42875,7 +42875,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_CAMP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=90,y=40
@@ -42936,7 +42936,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player58Culture=250, (Mughals)
 	EndCity
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=90,y=41
@@ -43298,7 +43298,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=91,y=32
@@ -43308,7 +43308,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=91,y=33
@@ -43319,7 +43319,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=91,y=34
@@ -43351,7 +43351,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player75Culture=200, (Independent2)
 	EndCity
-	TeamReveal=7,14,41,52,58,64,74,75,
+	TeamReveal=8,14,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=91,y=35
@@ -43363,7 +43363,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,52,58,64,74,75,
+	TeamReveal=8,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=91,y=36
@@ -43371,7 +43371,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=91,y=37
@@ -43381,14 +43381,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=91,y=38
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=91,y=39
@@ -43397,7 +43397,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=91,y=40
@@ -43407,7 +43407,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,12,41,58,74,75,
+	TeamReveal=8,12,41,58,74,75,
 EndPlot
 BeginPlot
 	x=91,y=41
@@ -43820,7 +43820,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=92,y=34
@@ -43829,7 +43829,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=92,y=35
@@ -43839,14 +43839,14 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=92,y=36
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=92,y=37
@@ -43855,7 +43855,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=92,y=38
@@ -43865,14 +43865,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=92,y=39
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=92,y=40
@@ -43882,14 +43882,14 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=92,y=41
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,7,41,58,74,75,
+	TeamReveal=1,8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=92,y=42
@@ -44277,7 +44277,7 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,14,35,41,52,58,64,74,75,
+	TeamReveal=8,14,35,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=93,y=35
@@ -44285,7 +44285,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=7,14,41,52,58,64,74,75,
+	TeamReveal=8,14,41,52,58,64,74,75,
 EndPlot
 BeginPlot
 	x=93,y=36
@@ -44293,7 +44293,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=93,y=37
@@ -44302,7 +44302,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,64,75,
+	TeamReveal=8,41,58,64,75,
 EndPlot
 BeginPlot
 	x=93,y=38
@@ -44311,13 +44311,13 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=7,41,58,64,74,75,
+	TeamReveal=8,41,58,64,74,75,
 EndPlot
 BeginPlot
 	x=93,y=39
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=93,y=40
@@ -44327,13 +44327,13 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=93,y=41
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=1,7,41,58,74,75,
+	TeamReveal=1,8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=93,y=42
@@ -44733,7 +44733,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=94,y=40
@@ -44773,7 +44773,7 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player58Culture=200, (Mughals)
 	EndCity
-	TeamReveal=7,41,58,74,75,
+	TeamReveal=8,41,58,74,75,
 EndPlot
 BeginPlot
 	x=94,y=41

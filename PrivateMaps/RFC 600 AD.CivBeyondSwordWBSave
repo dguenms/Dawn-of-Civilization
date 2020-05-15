@@ -31,10 +31,10 @@ BeginTeam
 	TeamID=6, (Greece)
 EndTeam
 BeginTeam
-	TeamID=7, (India)
+	TeamID=7, (Olmecs)
 EndTeam
 BeginTeam
-	TeamID=8, (Olmecs)
+	TeamID=8, (India)
 EndTeam
 BeginTeam
 	TeamID=9, (Phoenicia)
@@ -309,15 +309,15 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=7
-	LeaderType=LEADER_ASOKA
-	CivType=CIVILIZATION_INDIA
+	LeaderType=LEADER_TEZCATLIPOCA
+	CivType=CIVILIZATION_OLMECS
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	Team=8
-	LeaderType=LEADER_TEZCATLIPOCA
-	CivType=CIVILIZATION_OLMECS
+	LeaderType=LEADER_ASOKA
+	CivType=CIVILIZATION_INDIA
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
