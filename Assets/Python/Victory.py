@@ -574,11 +574,12 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# first goal: build 5 culture-producing buildings by 400 BC
 		if isPossible(iOlmecs, 0):
-			lCultureBuildingCount = 0
+			iCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
-				lCultureBuildingCount += countCultureBuildings(city)
+				iCultureBuildingCount += countCultureBuildings(city)
+			iCultureBuildingCount += getNumBuildings(iOlmecs, iPaganTemple)
 			
-			if lCultureBuildingCount >= 5:
+			if iCultureBuildingCount >= 5:
 				win(iOlmecs, 0)
 		
 		if iGameTurn == getTurnForYear(-400):
@@ -5163,6 +5164,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				iCultureBuildingCount += countCultureBuildings(city)
+			iCultureBuildingCount += getNumBuildings(iOlmecs, iPaganTemple)
 			aHelp.append(getIcon(iCultureBuildingCount >= 5) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (iCultureBuildingCount, 5)))			
 		if iGoal == 1:
 			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
