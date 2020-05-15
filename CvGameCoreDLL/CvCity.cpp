@@ -10202,9 +10202,9 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 	}
 	
 	// Steb: Olmec UP: Excess Food provides extra Commerce when not consuming Food for Production.
-	if (eIndex == YIELD_COMMERCE && getOwnerINLINE() == OLMECS && !isFoodProduction())
+	if (eIndex == YIELD_COMMERCE && getOwnerINLINE() == OLMECS)
 	{
-		iYieldRateTimes100 += 100 * (getYieldRate(YIELD_FOOD) - foodConsumption(true))
+		iYieldRateTimes100 += 100 * (getYieldRate(YIELD_FOOD) - foodConsumption(true));
 	}
 
 	return (iYieldRateTimes100 / 100);
