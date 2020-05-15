@@ -10619,7 +10619,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_OLMEC_BLOWGUNNER</Type>
-			<Button>Art/Units/incan slinger/button_slinger.dds</Button>
+			<Button>Art/Units/blowgunner/blowgunner.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
