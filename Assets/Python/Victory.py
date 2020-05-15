@@ -2736,7 +2736,7 @@ def onTechAcquired(iPlayer, iTech):
 				for iRequiredTech in lRequiredTechs:
 					if teamOlmecs.isHasTech(iRequiredTech):
 						iCount += 1
-				if count >= 2:
+				if iCount >= 2:
 					win(iOlmecs, 1)
 
 	# first Maya goal: discover Calendar by 200 AD
