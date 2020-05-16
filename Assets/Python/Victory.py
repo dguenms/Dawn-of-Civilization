@@ -577,7 +577,7 @@ def checkTurn(iGameTurn, iPlayer):
 			iCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				iCultureBuildingCount += countCultureBuildings(city)
-			iCultureBuildingCount += getNumBuildings(iOlmecs, iPaganTemple)
+			iCultureBuildingCount += getNumBuildings(iOlmecs, utils.getUniqueBuilding(iOlmecs, iPaganTemple))
 			
 			if iCultureBuildingCount >= 5:
 				win(iOlmecs, 0)
@@ -5164,7 +5164,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				iCultureBuildingCount += countCultureBuildings(city)
-			iCultureBuildingCount += getNumBuildings(iOlmecs, iPaganTemple)
+			iCultureBuildingCount += getNumBuildings(iOlmecs, utils.getUniqueBuilding(iOlmecs, iPaganTemple))
 			aHelp.append(getIcon(iCultureBuildingCount >= 5) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (iCultureBuildingCount, 5)))			
 		if iGoal == 1:
 			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
