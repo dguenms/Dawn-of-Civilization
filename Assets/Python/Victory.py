@@ -572,14 +572,14 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iOlmecs:
 		
-		# first goal: build 5 culture-producing buildings by 400 BC
+		# first goal: build 4 culture-producing buildings by 400 BC
 		if isPossible(iOlmecs, 0):
 			iCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				iCultureBuildingCount += countCultureBuildings(city)
 			iCultureBuildingCount += getNumBuildings(iOlmecs, utils.getUniqueBuilding(iOlmecs, iPaganTemple))
 			
-			if iCultureBuildingCount >= 5:
+			if iCultureBuildingCount >= 4:
 				win(iOlmecs, 0)
 		
 		if iGameTurn == getTurnForYear(-400):
@@ -5159,13 +5159,13 @@ def getUHVHelp(iPlayer, iGoal):
 			popPercent = getPopulationPercent(iIndia)
 			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(25))))
 
-	elif iPlayer == iOlmecs: 
+	elif iPlayer == iOlmecs:
 		if iGoal == 0:
 			iCultureBuildingCount = 0
 			for city in utils.getCityList(iOlmecs):
 				iCultureBuildingCount += countCultureBuildings(city)
 			iCultureBuildingCount += getNumBuildings(iOlmecs, utils.getUniqueBuilding(iOlmecs, iPaganTemple))
-			aHelp.append(getIcon(iCultureBuildingCount >= 5) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (iCultureBuildingCount, 5)))			
+			aHelp.append(getIcon(iCultureBuildingCount >= 4) + localText.getText("TXT_KEY_VICTORY_CULTURE_BUILDINGS_BUILT", (iCultureBuildingCount, 4)))
 		if iGoal == 1:
 			bArithmetics = teamOlmecs.isHasTech(iArithmetics)
 			bWriting = teamOlmecs.isHasTech(iWriting)
