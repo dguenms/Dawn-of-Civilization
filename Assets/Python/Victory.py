@@ -4979,7 +4979,7 @@ def getPaganGoalHelp(iPlayer):
 			capital = pPlayer.getCapitalCity()
 			iCount = 0
 			if capital: iCount = countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatSpy)
-			return getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED", (iCount, 3))
+			return getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_CAPITAL_GREAT_ARTISTS", (iCount, 3))
 		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
 	
 	elif paganReligion == "Vedism":
