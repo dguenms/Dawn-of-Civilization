@@ -332,9 +332,9 @@ class Barbs:
 		if iGameTurn >= getTurnForYear(1860):
 			self.checkSpawn(iBarbarian, iRabbit, 2 + iHandicap, (103, 10), (118, 22), self.spawnRabbits, iGameTurn, 8, 4)
 				
-		if iGameTurn == getTurnForYear(-500):
-			gc.getMap().plot(19, 35).setImprovementType(iHut)
-			utils.makeUnitAI(iHolkan, iNative, (19, 35), UnitAITypes.UNITAI_ATTACK, 2)
+		# if iGameTurn == getTurnForYear(-500):
+		# 	gc.getMap().plot(19, 35).setImprovementType(iHut)
+		# 	utils.makeUnitAI(iHolkan, iNative, (19, 35), UnitAITypes.UNITAI_ATTACK, 2)
 			
 		# Oromos in the Horn of Africa
 		if utils.isYearIn(1500, 1700):
