@@ -110,7 +110,8 @@ def updateHumanStability(iGameTurn):
 		data.iHumanStability = calculateStability(active())
 
 
-def endTurn(iPlayer):
+@handler("EndPlayerTurn")
+def checkSecedingCities(iGameTurn, iPlayer):
 	lSecedingCities = data.getSecedingCities(iPlayer)
 	
 	if lSecedingCities:
@@ -156,8 +157,12 @@ def onCityRazed(city, iPlayer):
 			
 		data.iHumanRazePenalty += iRazePenalty
 		checkStability(iPlayer)
+
+@handler("techAcquired")
+def onTechAcquired(iTech, iTeam, iPlayer):
+	if year() == scenarioStartTurn():
+		return
 	
-def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
 
 @handler("vassalState")
@@ -165,7 +170,8 @@ def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
 	if bVassal and bCapitulated:
 		checkStability(iMaster, True)	
 		balanceStability(iVassal, iStabilityShaky)
-	
+
+@handler("changeWar")
 def onChangeWar(bWar, iTeam, iOtherTeam):
 	if not is_minor(iTeam) and not is_minor(iOtherTeam):
 		checkStability(iTeam, not bWar)
@@ -192,9 +198,10 @@ def onPalaceMoved(city, iBuilding):
 # TODO: wonder built event?
 @handler("buildingBuilt")
 def onWonderBuilt(city, iBuilding):
-	if isWorldWonderType(infos.building(iBuilding).getBuildingClassType()):
+	if isWorldWonderClass(infos.building(iBuilding).getBuildingClassType()):
 		checkStability(city.getOwner(), True)
-	
+
+@handler("goldenAge")	
 def onGoldenAge(iPlayer):
 	checkStability(iPlayer, True)
 
@@ -206,6 +213,14 @@ def onGreatPersonBorn(unit, iPlayer):
 def onCombatResult(winningUnit, losingUnit):
 	if player(winningUnit).isBarbarian() and not is_minor(losingUnit):
 		data.players[losingUnit.getOwner()].iBarbarianLosses += 1
+
+@handler("releasedPlayer")
+def onReleasedPlayer(iPlayer, iReleasedPlayer):
+	releasedCities = cities.owner(iPlayer).core(iReleasedPlayer).where(lambda city: not city.plot().isCore(iPlayer) and not city.isCapital())
+
+	doResurrection(iReleasedPlayer, releasedCities, False)
+	
+	player(iReleasedPlayer).AI_changeAttitudeExtra(iPlayer, 2)
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in players.civs(dNeighbours[iPlayer]):

@@ -2877,6 +2877,97 @@ class TestCivDict(TestCase):
 	def test_default_int(self):
 		tempdict = CivDict({}, -123)
 		self.assertEqual(tempdict[0], -123)
+		
+
+class TestSpread(TestCase):
+
+	def test_spread_equal(self):
+		elements = [1, 2, 3, 4]
+		expected = [1, 2, 3, 4]
+		
+		actual = spread(elements, 4)
+		
+		self.assertEqual(actual, expected)
+	
+	def test_spread_double(self):
+		elements = [1, 2, 3]
+		expected = [1, None, 2, None, 3, None]
+		
+		actual = spread(elements, 6)
+		
+		self.assertEqual(actual, expected)
+	
+	def test_spread_more(self):
+		elements = [1, 2, 3]
+		expected = [1, None, 2, None, 3, None, None]
+		
+		actual = spread(elements, 7)
+		
+		self.assertEqual(actual, expected)
+		
+	def test_spread_another_more(self):
+		elements = [1, 2, 3]
+		expected = [1, None, 2, None, 3]
+		
+		actual = spread(elements, 5)
+		
+		self.assertEqual(actual, expected)
+		
+	def test_spread_half(self):
+		elements = [1, 2, 3, 4, 5, 6]
+		expected = [(1, 4), (2, 5), (3, 6)]
+		
+		actual = spread(elements, 3)
+		
+		self.assertEqual(actual, expected)
+	
+	def test_spread_third(self):
+		elements = [1, 2, 3, 4, 5, 6]
+		expected = [(1, 3, 5), (2, 4, 6)]
+		
+		actual = spread(elements, 2)
+		
+		self.assertEqual(actual, expected)
+		
+	def test_spread_less(self):
+		elements = [1, 2, 3, 4, 5]
+		expected = [(1, 3, 5), (2, 4)]
+		
+		actual = spread(elements, 2)
+		
+		self.assertEqual(actual, expected)
+		
+	def test_spread_double_offset(self):
+		elements = [1, 2, 3]
+		expected = [None, 1, None, 2, None, 3]
+		
+		actual = spread(elements, 6, offset=1)
+		
+		self.assertEqual(actual, expected)
+	
+	def test_spread_double_offset_2(self):
+		elements = [1, 2, 3]
+		expected = [3, None, 1, None, 2, None]
+		
+		actual = spread(elements, 6, offset=2)
+		
+		self.assertEqual(actual, expected)
+	
+	def test_spread_half_offset(self):
+		elements = [1, 2, 3, 4, 5, 6]
+		expected = [(3, 6), (1, 4), (2, 5)]
+		
+		actual = spread(elements, 3, offset=1)
+		
+		self.assertEqual(actual, expected)
+	
+	def test_spread_half_offset_2(self):
+		elements = [1, 2, 3, 4, 5, 6]
+		expected = [(2, 5), (3, 6), (1, 4)]
+		
+		actual = spread(elements, 3, offset=2)
+		
+		self.assertEqual(actual, expected)
 
 
 test_cases = [
@@ -2926,6 +3017,7 @@ test_cases = [
 	TestFormatSeparators,
 	TestSlot,
 	TestCivDict,
+	TestSpread,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

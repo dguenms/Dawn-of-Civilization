@@ -43,6 +43,7 @@ tColombiaBR = (28, 32)
 
 def findCapitalLocations(dCapitals):
 	dLocations = {}
+	
 	for iCiv in dCapitals:
 		for sCapital in dCapitals[iCiv]:
 			dLocations[sCapital] = cnm.findLocations(slot(iCiv), sCapital)
@@ -687,7 +688,7 @@ def onCityRazed(city):
 def onCityBuilt(city):
 	checkName(city.getOwner())
 	
-def onTechAcquired(iPlayer, iTech):
+def onTechAcquired(iTech, iTeam, iPlayer):
 	iEra = infos.tech(iTech).getEra()
 	iCiv = civ(iPlayer)
 	

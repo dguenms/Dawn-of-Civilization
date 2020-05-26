@@ -3,6 +3,66 @@ from RFCUtils import *
 from Events import handler
 
 
+### CONSTANTS ###
+
+
+dStartingWorkers = CivDict({
+	iChina : 1,
+	iIndia : 2,
+	iGreece : 2,
+	iPersia : 3,
+	iPhoenicia : 2,
+	iRome : 2,
+	iMaya : 1,
+	iJapan : 2,
+	iTamils : 2,
+	iEthiopia : 3,
+	iKorea : 3,
+	iByzantium : 3,
+	iVikings : 3,
+	iTurks : 3,
+	iArabia : 3,
+	iTibet : 2,
+	iKhmer : 3,
+	iIndonesia : 3,
+	iMoors : 2,
+	iSpain : 3,
+	iFrance : 3,
+	iEngland : 3,
+	iHolyRome : 3,
+	iRussia : 3,
+	iNetherlands : 3,
+	iMali : 3,
+	iPoland : 3,
+	iOttomans : 4,
+	iPortugal : 3,
+	iInca : 4,
+	iItaly : 3,
+	iMongols : 4,
+	iAztecs : 3,
+	iMughals : 3,
+	iThailand : 2,
+	iCongo : 2,
+	iGermany : 3,
+	iAmerica : 4,
+	iBrazil : 3,
+	iArgentina : 2,
+	iCanada : 3,
+})
+
+tStockholm = (63, 59)
+tVienna = (62, 49)
+tTokyo = (116, 47)
+tRome = (60, 44)
+
+dRelocatedCapitals = {
+	(iVikings, iRenaissance): tStockholm,
+	(iHolyRome, iRenaissance): tVienna,
+	(iJapan, iIndustrial): tTokyo,
+	(iItaly, iIndustrial): tRome,
+}
+
+
 ### CITY ACQUIRED ###
 
 
@@ -222,52 +282,29 @@ def checkImmigration(iGameTurn):
 		data.iImmigrationTimer = 3 + rand(5)
 
 
+### TECH ACQUIRED ###
+
+
+@handler("techAcquired")
+def relocateCapitals(iTech, iTeam, iPlayer):
+	if not player(iPlayer).isHuman():
+		iEra = infos.tech(iTech).getEra()
+		if (iPlayer, iEra) in dRelocatedCapitals:
+			moveCapital(iPlayer, dRelocatedCapitals[iPlayer, iEra])
+
+
+### END GAME TURN ###
+
+
+@handler("EndGameTurn")
+def startTimedConquests():
+	for iConqueror, tPlot in data.lTimedConquests:
+		colonialConquest(iConqueror, tPlot)
+	
+	data.lTimedConquests = []
+
+
 ### IMPLEMENTATIONS ###
-
-
-dStartingWorkers = CivDict({
-	iChina : 1,
-	iIndia : 2,
-	iGreece : 2,
-	iPersia : 3,
-	iPhoenicia : 2,
-	iRome : 2,
-	iMaya : 1,
-	iJapan : 2,
-	iTamils : 2,
-	iEthiopia : 3,
-	iKorea : 3,
-	iByzantium : 3,
-	iVikings : 3,
-	iTurks : 3,
-	iArabia : 3,
-	iTibet : 2,
-	iKhmer : 3,
-	iIndonesia : 3,
-	iMoors : 2,
-	iSpain : 3,
-	iFrance : 3,
-	iEngland : 3,
-	iHolyRome : 3,
-	iRussia : 3,
-	iNetherlands : 3,
-	iMali : 3,
-	iPoland : 3,
-	iOttomans : 4,
-	iPortugal : 3,
-	iInca : 4,
-	iItaly : 3,
-	iMongols : 4,
-	iAztecs : 3,
-	iMughals : 3,
-	iThailand : 2,
-	iCongo : 2,
-	iGermany : 3,
-	iAmerica : 4,
-	iBrazil : 3,
-	iArgentina : 2,
-	iCanada : 3,
-})
 
 
 def createStartingWorkers(iPlayer, city):
@@ -335,7 +372,7 @@ def immigration():
 		targetCity.changeCulture(iSourcePlayer, iCultureChange, False, False)
 		
 		# chance to spread religions in source city
-		lReligions = [iReligion for iReligion in range(iNumReligions) if sourceCity.isHasReligion(iReligion) and not targetCity.isHasReligion(iReligion)
+		lReligions = [iReligion for iReligion in range(iNumReligions) if sourceCity.isHasReligion(iReligion) and not targetCity.isHasReligion(iReligion)]
 		if player(iSourcePlayer).getStateReligion() in lReligions:
 			lReligions.append(player(iSourcePlayer).getStateReligion())
 		

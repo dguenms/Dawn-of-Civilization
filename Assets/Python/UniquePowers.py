@@ -71,7 +71,7 @@ def ottomanUP(city):
 		elif distance(plot, city) == 1:
 			convertPlotCulture(plot, iOwner, 80, True)
 		else:
-			if plot.getOwner() == iPreviousOwner:
+			if plot.getOwner() == city.getPreviousOwner():
 				convertPlotCulture(plot, iOwner, 20, False)
 
 @handler("combatResult")
@@ -122,6 +122,33 @@ def indonesianUP():
 def resetBabylonianPower():
 	data.bBabyloniaTechReceived = False
 
+
+@handler("cityAcquired")
+def colombianPower(iOwner, iPlayer, city, bConquest):
+	if civ(iPlayer) == iColombia and bConquest:
+		if city in cities.rectangle(tSouthCentralAmericaTL, tSouthCentralAmericaBR):
+			city.setOccupationTimer(0)
+
+
+@handler("techAcquired")
+def mayanPower(iTech, iTeam, iPlayer):
+	iEra = infos.tech(iTech).getEra()
+	if civ(iPlayer) == iMaya and iEra < iMedieval:
+		iNumCities = player(iPlayer).getNumCities()
+		if iNumCities > 0:
+			iFood = 20 / iNumCities
+			for city in cities.owner(iPlayer):
+				city.changeFood(iFood)
+			message(iPlayer, 'TXT_KEY_MAYA_UP_EFFECT', infos.tech(iTech).getText(), iFood)
+
+
+@handler("changeWar")
+def resetMongolPower(bWar, iTeam, iOtherTeam):
+	if not bWar and iMongols in civs(iTeam, iOtherTeam):
+		for city in cities.owner(iMongols):
+			city.setMongolUP(False)
+
+
 # TODO: add handler for custom event here
 def canadianUP(city):
 	iPopulation = 5 * city.getPopulation() / 2
@@ -149,12 +176,7 @@ class UniquePowers:
 ### Main methods (Event-Triggered) ###
 #####################################  
 
-					
-	def onChangeWar(self, bWar, iTeam, iOtherTeam):
-		# reset Mongol UP flags when peace is made
-		if not bWar and slot(iMongols) in [iTeam, iOtherTeam]:
-			for city in cities.owner(iMongols):
-				city.setMongolUP(False)
+
 		
 	def onBuildingBuilt(self, city, iOwner, iBuilding):
 		if civ(iOwner) == iMughals:

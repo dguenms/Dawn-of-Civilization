@@ -33,7 +33,7 @@ iEgypt : [iLangEgyptian],
 iBabylonia : [iLangBabylonian],
 iHarappa : [iLangHarappan, iLangIndian],
 iChina : [iLangChinese],
-iGreece : [iLangChinese],
+iGreece : [iLangGreek],
 iIndia : [iLangIndian],
 iPhoenicia : [iLangPhoenician],
 iPolynesia : [iLangPolynesian],
@@ -172,10 +172,9 @@ def updateCityNamesFound(iPlayer):
 			city.setName(sNewName, False)
 			
 def findLocations(iPlayer, sName):
-	result = plots.all().where(lambda p: getFoundName(iPlayer, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
-	return result
+	return plots.all().where(lambda p: getFoundName(iPlayer, p) == sName or getMapName(iLangEnglish, location(p)) == sName)
 
-@handler("cityAcquired")
+@handler("cityBuilt")
 def onCityBuilt(city):
 	if is_minor(city):
 		return
@@ -306,8 +305,9 @@ def getEraRename(sName, iEra):
 	if sName in tEraNames[iEra]:
 		return tEraNames[iEra][sName]
 	return None
-			
-def onTechAcquired(iPlayer):
+
+@handler("techAcquired")
+def onTechAcquired(iTech, iTeam, iPlayer):
 	ownerCities = cities.owner(iPlayer)
 	
 	for iEra in range(player(iPlayer).getCurrentEra()+1):
@@ -322,7 +322,8 @@ def onTechAcquired(iPlayer):
 			
 			sNewName = getRenameName(iPlayer, sNewIdentifier)
 			if sNewName: city.setName(sNewName, False)
-				
+
+@handler("religionSpread")
 def onReligionSpread(iReligion, iPlayer, city):
 	iCiv = civ(iPlayer)
 

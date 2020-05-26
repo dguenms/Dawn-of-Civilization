@@ -32,7 +32,7 @@ def canDecay(iGameTurn, iPlayer):
 	return True
 	
 	
-def decay(self, iPlayer):
+def decay(iPlayer):
 	contacts = players.major().alive().where(lambda p: team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))
 	
 	# master/vassal relationships: keep only masters where contact can be cut with all vassals

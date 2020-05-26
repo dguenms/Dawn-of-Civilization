@@ -3,6 +3,7 @@ from Consts import *
 
 gc = CyGlobalContext()
 
+
 class PlayerData:
 
 	def __init__(self, iPlayer):

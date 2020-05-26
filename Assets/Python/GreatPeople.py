@@ -4,6 +4,7 @@ from CvPythonExtensions import *
 from Consts import *
 from RFCUtils import *
 
+from Events import handler
 from Core import *
 
 
