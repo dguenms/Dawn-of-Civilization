@@ -1,4 +1,5 @@
 from Events import events, handler
+from CvPythonExtensions import *
 
 import CvScreensInterface
 import CvWBPopups
@@ -7,6 +8,8 @@ import CvWorldBuilderScreen
 import CvTechChooser
 import CvUtil
 import CvEspionageAdvisor
+import CvDebugTools
+import CvCameraControls
 
 ## Ultrapack ##
 import WBCityEditScreen
@@ -19,84 +22,70 @@ import WBStoredDataScreen
 ## Ultrapack ##
 
 
-events.addPopupHandlers(CvUtil.EventEditCityName, 'EditCityName', self.__eventEditCityNameApply, self.__eventEditCityNameBegin)
-events.addPopupHandlers(CvUtil.EventPlaceObject, 'PlaceObject', self.__eventPlaceObjectApply, self.__eventPlaceObjectBegin)
-events.addPopupHandlers(CvUtil.EventAwardTechsAndGold, 'AwardTechsAndGold', self.__eventAwardTechsAndGoldApply, self.__eventAwardTechsAndGoldBegin)
-events.addPopupHandlers(CvUtil.EventEditUnitName, 'EditUnitName', self.__eventEditUnitNameApply, self.__eventEditUnitNameBegin)
-
-## Platy Builder ##
-events.addPopupHandlers(CvUtil.EventWBLandmarkPopup, 'WBLandmarkPopup', self.__eventWBLandmarkPopupApply, self.__eventWBScriptPopupBegin)
-events.addPopupHandlers(CvUtil.EventShowWonder, 'ShowWonder', self.__eventShowWonderApply, self.__eventShowWonderBegin)
-events.addPopupHandlers(1111, 'WBPlayerScript', self.__eventWBPlayerScriptPopupApply, self.__eventWBScriptPopupBegin)
-events.addPopupHandlers(2222, 'WBCityScript', self.__eventWBCityScriptPopupApply, self.__eventWBScriptPopupBegin)
-events.addPopupHandlers(3333, 'WBUnitScript', self.__eventWBUnitScriptPopupApply, self.__eventWBScriptPopupBegin)
-events.addPopupHandlers(4444, 'WBGameScript', self.__eventWBGameScriptPopupApply, self.__eventWBScriptPopupBegin)
-events.addPopupHandlers(5555, 'WBPlotScript', self.__eventWBPlotScriptPopupApply, self.__eventWBScriptPopupBegin)
-events.addPopupHandlers(7777, 'WBStoredDataValue', self.__eventWBStoredDataValuePopupApply, self.__eventWBScriptPopupBegin),
-## Platy Builder ##
+gc = CyGlobalContext()
 
 
 @handler("kbdEvent")
 def onKbdEvent(eventType, key, mx, my, px, py):
 	game = gc.getGame()
 	
-	if (self.bAllowCheats):
+	if (events.bAllowCheats):
 		# notify debug tools of input to allow it to override the control
-		argsList = (eventType,key,self.bCtrl,self.bShift,self.bAlt,mx,my,px,py,gc.getGame().isNetworkMultiPlayer())
+		argsList = (eventType,key,events.bCtrl,events.bShift,events.bAlt,mx,my,px,py,gc.getGame().isNetworkMultiPlayer())
 		if ( CvDebugTools.g_CvDebugTools.notifyInput(argsList) ):
 			return 0
 	
-	if ( eventType == self.EventKeyDown ):
+	if ( eventType == events.EventKeyDown ):
 		theKey=int(key)
 		
 		CvCameraControls.g_CameraControls.handleInput( theKey )
 					
-		if (self.bAllowCheats):
+		if (events.bAllowCheats):
 			# Shift - T (Debug - No MP)
 			if (theKey == int(InputTypes.KB_T)):
-				if ( self.bShift ):
-					self.beginEvent(CvUtil.EventAwardTechsAndGold)
-					#self.beginEvent(CvUtil.EventCameraControlPopup)
+				if ( events.bShift ):
+					events.beginEvent(CvUtil.EventAwardTechsAndGold)
+					#events.beginEvent(CvUtil.EventCameraControlPopup)
 					return 1
 						
 			elif (theKey == int(InputTypes.KB_W)):
-				if ( self.bShift and self.bCtrl):
-					self.beginEvent(CvUtil.EventShowWonder)
+				if ( events.bShift and events.bCtrl):
+					events.beginEvent(CvUtil.EventShowWonder)
 					return 1
 						
 			# Shift - ] (Debug - currently mouse-overd unit, health += 10
-			elif (theKey == int(InputTypes.KB_LBRACKET) and self.bShift ):
+			elif (theKey == int(InputTypes.KB_LBRACKET) and events.bShift ):
 				unit = CyMap().plot(px, py).getUnit(0)
 				if ( not unit.isNone() ):
 					d = min( unit.maxHitPoints()-1, unit.getDamage() + 10 )
 					unit.setDamage( d, PlayerTypes.NO_PLAYER )
 				
 			# Shift - [ (Debug - currently mouse-overd unit, health -= 10
-			elif (theKey == int(InputTypes.KB_RBRACKET) and self.bShift ):
+			elif (theKey == int(InputTypes.KB_RBRACKET) and events.bShift ):
 				unit = CyMap().plot(px, py).getUnit(0)
 				if ( not unit.isNone() ):
 					d = max( 0, unit.getDamage() - 10 )
 					unit.setDamage( d, PlayerTypes.NO_PLAYER )
 				
 			elif (theKey == int(InputTypes.KB_F1)):
-				if ( self.bShift ):
+				if ( events.bShift ):
 					CvScreensInterface.replayScreen.showScreen(False)
 					return 1
 				# don't return 1 unless you want the input consumed
 			
 			elif (theKey == int(InputTypes.KB_F2)):
-				if ( self.bShift ):
+				if ( events.bShift ):
 					import CvDebugInfoScreen
 					CvScreensInterface.showDebugInfoScreen()
 					return 1
 			
 			elif (theKey == int(InputTypes.KB_F3)):
-				if ( self.bShift ):
+				if ( events.bShift ):
 					CvScreensInterface.showDanQuayleScreen(())
 					return 1
 					
 			elif (theKey == int(InputTypes.KB_F4)):
-				if ( self.bShift ):
+				if ( events.bShift ):
 					CvScreensInterface.showUnVictoryScreen(())
 					return 1
 
@@ -104,20 +93,20 @@ def onKbdEvent(eventType, key, mx, my, px, py):
 @handler("mouseEvent")
 def onMouseEvent(eventType, mx, my, px, py, interfaceConsumed, screens):
 	if ( px!=-1 and py!=-1 ):
-		if ( eventType == self.EventLButtonDown ):
-			if (self.bAllowCheats and self.bCtrl and self.bAlt and CyMap().plot(px,py).isCity() and not interfaceConsumed):
+		if ( eventType == events.EventLButtonDown ):
+			if (events.bAllowCheats and events.bCtrl and events.bAlt and CyMap().plot(px,py).isCity() and not interfaceConsumed):
 				# Launch Edit City Event
-				self.beginEvent( CvUtil.EventEditCity, (px,py) )
+				events.beginEvent( CvUtil.EventEditCity, (px,py) )
 				return 1
 			
-			elif (self.bAllowCheats and self.bCtrl and self.bShift and not interfaceConsumed):
+			elif (events.bAllowCheats and events.bCtrl and events.bShift and not interfaceConsumed):
 				# Launch Place Object Event
-				self.beginEvent( CvUtil.EventPlaceObject, (px, py) )
+				events.beginEvent( CvUtil.EventPlaceObject, (px, py) )
 				return 1
 		
-	if ( eventType == self.EventBack ):
+	if ( eventType == events.EventBack ):
 		return CvScreensInterface.handleBack(screens)
-	elif ( eventType == self.EventForward ):
+	elif ( eventType == events.EventForward ):
 		return CvScreensInterface.handleForward(screens)
 
 
@@ -289,3 +278,23 @@ def __eventWBLandmarkPopupApply(playerID, userData, popupReturn):
 			CyEngine().addSign(pPlot, iPlayer, CvUtil.convertToStr(sScript))
 	WBPlotScreen.iCounter = 10
 	return
+
+
+### REGISTER POPUP HANDLERS ###
+
+
+events.setPopupHandlers(CvUtil.EventEditCityName, 'EditCityName', __eventEditCityNameApply, __eventEditCityNameBegin)
+events.setPopupHandlers(CvUtil.EventPlaceObject, 'PlaceObject', __eventPlaceObjectApply, __eventPlaceObjectBegin)
+events.setPopupHandlers(CvUtil.EventAwardTechsAndGold, 'AwardTechsAndGold', __eventAwardTechsAndGoldApply, __eventAwardTechsAndGoldBegin)
+events.setPopupHandlers(CvUtil.EventEditUnitName, 'EditUnitName', __eventEditUnitNameApply, __eventEditUnitNameBegin)
+
+## Platy Builder ##
+events.setPopupHandlers(CvUtil.EventWBLandmarkPopup, 'WBLandmarkPopup', __eventWBLandmarkPopupApply, __eventWBScriptPopupBegin)
+events.setPopupHandlers(CvUtil.EventShowWonder, 'ShowWonder', __eventShowWonderApply, __eventShowWonderBegin)
+events.setPopupHandlers(1111, 'WBPlayerScript', __eventWBPlayerScriptPopupApply, __eventWBScriptPopupBegin)
+events.setPopupHandlers(2222, 'WBCityScript', __eventWBCityScriptPopupApply, __eventWBScriptPopupBegin)
+events.setPopupHandlers(3333, 'WBUnitScript', __eventWBUnitScriptPopupApply, __eventWBScriptPopupBegin)
+events.setPopupHandlers(4444, 'WBGameScript', __eventWBGameScriptPopupApply, __eventWBScriptPopupBegin)
+events.setPopupHandlers(5555, 'WBPlotScript', __eventWBPlotScriptPopupApply, __eventWBScriptPopupBegin)
+events.setPopupHandlers(7777, 'WBStoredDataValue', __eventWBStoredDataValuePopupApply, __eventWBScriptPopupBegin),
+## Platy Builder ##

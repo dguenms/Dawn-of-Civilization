@@ -105,7 +105,7 @@ def clearIncompatibleAIsDuringAutoplay(iGameTurn):
 def checkBirths():
 	for iLoopPlayer in players.major().where(lambda p: dBirth[p] > scenarioStartYear()):
 		if year(dBirth[iLoopPlayer]) - turns(2) <= year() <= year(dBirth[iLoopPlayer]) + turns(6):
-			self.initBirth(dBirth[iLoopPlayer], iLoopPlayer)
+			rnf.initBirth(dBirth[iLoopPlayer], iLoopPlayer)
 
 @handler("BeginGameTurn")
 def checkRebirths():
@@ -113,10 +113,10 @@ def checkRebirths():
 		iPlayer = slot(iCiv)
 	
 		if year() == year(iYear) and not player(iCiv).isAlive():
-			self.rebirthFirstTurn(iPlayer)
+			rnf.rebirthFirstTurn(iPlayer)
 
 		if year() == year(iYear)+1 and player(iCiv).isAlive() and player(iCiv).getLastBirthTurn() == year()-1:
-			self.rebirthSecondTurn(iPlayer)
+			rnf.rebirthSecondTurn(iPlayer)
 
 @handler("BeginGameTurn")
 def fragmentIndependents():
@@ -243,33 +243,36 @@ def checkMinorTechs():
 	if iMinor:
 		updateMinorTechs(iMinor, iBarbarianPlayer)
 
+@handler("EndPlayerTurn")
+def checkFlipPopup(iGameTurn, iPlayer):
+	if player(iPlayer).isHuman():
+		for tEvent in data.lTempEvents:
+			iNewPlayer, lPlots = tEvent
+			flipPopup(iNewPlayer, lPlots)
+
+def scheduleFlipPopup(iNewPlayer, lPlots):
+	data.lTempEvents.append((iNewPlayer, lPlots))
+	checkFlipPopup(game.getGameTurn(), active())
+	
+def flipPopup(iNewPlayer, lPlots):
+	flipText = text("TXT_KEY_FLIPMESSAGE1")
+	
+	for city in self.getConvertedCities(iNewPlayer, lPlots):
+		flipText += city.getName() + "\n"
+		
+	flipText += text("TXT_KEY_FLIPMESSAGE2")
+						
+	popup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
+	data.iFlipNewPlayer = iNewPlayer
+	data.iFlipOldPlayer = active()
+	data.lTempPlots = lPlots
+			
+
 class RiseAndFall:
 
 ###############
 ### Popups ###
 #############
-
-	def scheduleFlipPopup(self, iNewPlayer, lPlots):
-		data.lTempEvents.append((iNewPlayer, lPlots))
-		self.checkFlipPopup()
-
-	def checkFlipPopup(self):
-		for tEvent in data.lTempEvents:
-			iNewPlayer, lPlots = tEvent
-			self.flipPopup(iNewPlayer, lPlots)
-
-	def flipPopup(self, iNewPlayer, lPlots):
-		flipText = text("TXT_KEY_FLIPMESSAGE1")
-		
-		for city in self.getConvertedCities(iNewPlayer, lPlots):
-			flipText += city.getName() + "\n"
-			
-		flipText += text("TXT_KEY_FLIPMESSAGE2")
-							
-		popup(7615, text("TXT_KEY_NEWCIV_TITLE"), flipText, (text("TXT_KEY_POPUP_YES"), text("TXT_KEY_POPUP_NO")))
-		data.iFlipNewPlayer = iNewPlayer
-		data.iFlipOldPlayer = active()
-		data.lTempPlots = lPlots
 
 	def eventApply7615(self, popupReturn):
 		lPlots = data.lTempPlots
@@ -811,15 +814,6 @@ class RiseAndFall:
 			setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
 			setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 
-	def endTurn(self, iPlayer):
-		for iConqueror, tPlot in data.lTimedConquests:
-			colonialConquest(iConqueror, tPlot)
-			
-		if player(iPlayer).isHuman():
-			self.checkFlipPopup()
-			
-		data.lTimedConquests = []
-
 	def rebirthFirstTurn(self, iPlayer):
 		pPlayer = player(iPlayer)
 		pTeam = team(iPlayer)
@@ -1044,6 +1038,8 @@ class RiseAndFall:
 		iBirthYear = year(iBirthYear) # converted to turns here - edead
 		iCiv = civ(iPlayer)
 		
+		print "initBirth: %s" % name(iPlayer)
+		
 		if iCiv in lSecondaryCivs:
 			if not player(iPlayer).isHuman() and not data.isCivEnabled(iCiv):
 				return
@@ -1101,6 +1097,7 @@ class RiseAndFall:
 					
 		print "initBirth turn check"
 
+		print "turn = %d, iBirthYear-1 = %d, spawn delay = %d, flips delay = %d" % (turn(), iBirthYear-1, data.players[iPlayer].iSpawnDelay, data.players[iPlayer].iFlipsDelay)
 		if turn() == iBirthYear-1 + data.players[iPlayer].iSpawnDelay + data.players[iPlayer].iFlipsDelay:
 			print "turn check passed"
 			if iCiv in lConditionalCivs or bCapitalSettled:
@@ -1220,10 +1217,13 @@ class RiseAndFall:
 							unit.kill(False, iBarbarianPlayer)
 		
 	def birthInFreeRegion(self, iPlayer, tCapital, tTopLeft, tBottomRight):
+		print "birthInFreeRegion: %s" % name(iPlayer)
+	
 		startingPlot = plot(tCapital)
 		iCiv = civ(iPlayer)
 		
 		if data.players[iPlayer].iFlipsDelay == 0:
+			print "birth in free region: flips delay +2"
 			iFlipsDelay = data.players[iPlayer].iFlipsDelay + 2
 			if iFlipsDelay > 0:
 				self.createStartingUnits(iPlayer, tCapital)
@@ -1535,294 +1535,8 @@ class RiseAndFall:
 
 
 
-	def onFirstContact(self, iTeamX, iHasMetTeamY):
-		if is_minor(iHasMetTeamY): return
-		
-		if year().between(600, 1800):
-			if civ(iTeamX) in lBioNewWorld and civ(iHasMetTeamY) not in lBioNewWorld:
-				iNewWorldPlayer = iTeamX
-				iOldWorldPlayer = iHasMetTeamY
-				
-				iNewWorldCiv = civ(iNewWorldPlayer)
-				
-				iIndex = lBioNewWorld.index(civ(iNewWorldPlayer))
-				
-				# TODO: use dict for first contact conquerors to avoid using index
-				bAlreadyContacted = data.lFirstContactConquerors[iIndex]
-				
-				# avoid "return later" exploit
-				if year() <= year(dBirth[iAztecs]) + turns(10):
-					data.lFirstContactConquerors[iIndex] = True
-					return
-					
-				if not bAlreadyContacted:
-					if iNewWorldCiv == iMaya:
-						tContactZoneTL = (15, 30)
-						tContactZoneBR = (34, 42)
-					elif iNewWorldCiv == iAztecs:
-						tContactZoneTL = (11, 31)
-						tContactZoneBR = (34, 43)
-					elif iNewWorldCiv == iInca:
-						tContactZoneTL = (21, 11)
-						tContactZoneBR = (36, 40)
-						
-					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
-						
-					data.lFirstContactConquerors[iIndex] = True
-					
-					# change some terrain to end isolation
-					if iNewWorldCiv == iInca:
-						plot(27, 30).setFeatureType(-1, 0)
-						plot(28, 31).setFeatureType(-1, 0)
-						plot(29, 23).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
-						plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
-						
-					elif iNewWorldCiv == iAztecs:
-						plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
-						
-					newWorldPlots = plots.start(tContactZoneTL).end(tContactZoneBR).without(lArrivalExceptions)
-					contactPlots = newWorldPlots.where(lambda p: p.isVisible(iNewWorldPlayer, False) and p.isVisible(iOldWorldPlayer, False))
-					arrivalPlots = newWorldPlots.owner(iNewWorldPlayer).where(lambda p: not p.isCity() and isFree(iOldWorldPlayer, p, bCanEnter=True) and not isIsland(p))
-					
-					if contactPlots and arrivalPlots:
-						contactPlot = contactPlots.random()
-						arrivalPlot = arrivalPlots.closest(contactPlot)
-						
-						iModifier1 = 0
-						iModifier2 = 0
-						
-						if player(iNewWorldPlayer).isHuman() and player(iNewWorldPlayer).getNumCities() > 6:
-							iModifier1 = 1
-						else:
-							if iNewWorldCiv == iInca or player(iNewWorldPlayer).getNumCities() > 4:
-								iModifier1 = 1
-							if not player(iNewWorldPlayer).isHuman():
-								iModifier2 = 1
-								
-						if year() < year(dBirth[active()]):
-							iModifier1 += 1
-							iModifier2 += 1
-							
-						team(iOldWorldPlayer).declareWar(iNewWorldPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
-						
-						iInfantry = getBestInfantry(iOldWorldPlayer)
-						iCounter = getBestCounter(iOldWorldPlayer)
-						iCavalry = getBestCavalry(iOldWorldPlayer)
-						iSiege = getBestSiege(iOldWorldPlayer)
-						
-						iStateReligion = player(iOldWorldPlayer).getStateReligion()
-						iMissionary = missionary(iStateReligion)
-						
-						if iInfantry:
-							makeUnits(iOldWorldPlayer, iInfantry, arrivalPlot, 1 + iModifier2, UnitAITypes.UNITAI_ATTACK_CITY)
-						
-						if iCounter:
-							makeUnits(iOldWorldPlayer, iCounter, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						if iSiege:
-							makeUnits(iOldWorldPlayer, iSiege, arrivalPlot, 1 + iModifier1 + iModifier2, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						if iCavalry:
-							makeUnits(iOldWorldPlayer, iCavalry, arrivalPlot, 2 + iModifier1, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						if iMissionary:
-							makeUnit(iOldWorldPlayer, iMissionary, arrivalPlot)
-							
-						if iNewWorldCiv == iInca:
-							makeUnits(iOldWorldPlayer, iAucac, arrivalPlot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-						elif iNewWorldCiv == iAztecs:
-							makeUnits(iOldWorldPlayer, iJaguar, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							makeUnit(iOldWorldPlayer, iHolkan, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-						elif iNewWorldCiv == iMaya:
-							makeUnits(iOldWorldPlayer, iHolkan, arrivalPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-							makeUnit(iOldWorldPlayer, iJaguar, arrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY)
-							
-						message(iNewWorldPlayer, 'TXT_KEY_FIRST_CONTACT_NEWWORLD')
-						message(iOldWorldPlayer, 'TXT_KEY_FIRST_CONTACT_OLDWORLD')
-							
-		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
-		if civ(iHasMetTeamY) == iMongols and not player(iMongols).isHuman():
-			iCivX = civ(iTeamX)
-		
-			if iCivX in lMongolCivs:
-				if year() < year(1500) and data.isFirstContactMongols(iCivX):
 
-					data.setFirstContactMongols(iCivX, False)
-		
-					teamTarget = team(iTeamX)
-						
-					if iCivX == iArabia:
-						tTL = (73, 31)
-						tBR = (84, 43)
-						iDirection = DirectionTypes.DIRECTION_EAST
-					elif iCivX == iPersia:
-						tTL = (73, 37)
-						tBR = (86, 48)
-						iDirection = DirectionTypes.DIRECTION_NORTH
-					elif iCivX == iByzantium:
-						tTL = (68, 41)
-						tBR = (77, 46)
-						iDirection = DirectionTypes.DIRECTION_EAST
-					elif iCivX == iRussia:
-						tTL = (68, 48)
-						tBR = (81, 62)
-						iDirection = DirectionTypes.DIRECTION_EAST
 
-					lTargetList = getBorderPlots(iTeamX, tTL, tBR, iDirection, 3)
-					
-					if not lTargetList: return
-
-					team(iMongols).declareWar(iTeamX, True, WarPlanTypes.WARPLAN_TOTAL)
-					
-					iHandicap = 0
-					if teamtype(iTeamX).isHuman():
-						iHandicap = game.getHandicapType() / 2
-
-					for tPlot in lTargetList:
-						makeUnits(iMongols, iKeshik, tPlot, 2 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-						makeUnits(iMongols, iMangudai, tPlot, 1 + 2 * iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-						makeUnits(iMongols, iTrebuchet, tPlot, 1 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
-						
-					message(iTeamX, 'TXT_KEY_MONGOL_HORDE_HUMAN')
-					if team().canContact(iTeamX):
-						message(active(), 'TXT_KEY_MONGOL_HORDE', adjective(iTeamX))
-
-	def lateTradingCompany(self, iPlayer):
-		iCiv = civ(iPlayer)
-	
-		if not player(iPlayer).isHuman() and not team(iPlayer).isAVassal() and scenario() != i1700AD:
-			if iCiv in [iFrance, iEngland, iNetherlands]:
-				self.handleColonialConquest(iPlayer)
-
-	def earlyTradingCompany(self, iPlayer):
-		iCiv = civ(iPlayer)
-	
-		if not player(iPlayer).isHuman() and not team(iPlayer).isAVassal():
-			if iCiv in [iSpain, iPortugal]:
-				self.handleColonialAcquisition(iPlayer)
-				
-	def onRailroadDiscovered(self, iPlayer):
-		iCiv = civ(iPlayer)
-	
-		if not player(iPlayer).isHuman():
-			if iCiv == iAmerica:
-				iCount = 0
-				lWestCoast = [(11, 50), (11, 49), (11, 48), (11, 47), (11, 46), (12, 45)]
-				
-				enemyCities = cities.of(lWestCoast).notowner(iAmerica)
-				
-				for iEnemy in enemyCities.owners():
-					team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
-				
-				for city in enemyCities:
-					plot = plots.surrounding(city).random()
-					makeUnits(iPlayer, iMinuteman, plot, 3, UnitAITypes.UNITAI_ATTACK_CITY)
-					makeUnits(iPlayer, iCannon, plot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-						
-				if enemyCities.count() < 2:
-					for plot in plots.of(lWestCoast).without(enemyCities).sample(2 - enemyCities.count()):
-						makeUnit(iPlayer, iSettler, plot)
-						makeUnit(iPlayer, iMinuteman, plot)
-						
-			elif iCiv == iRussia:
-				lFreePlots = []
-				x, y = (111, 51)
-				
-				city = city_(x, y)
-				plot = plot_(x, y)
-				convertPlotCulture(plot, iPlayer, 100, True)
-				if city:
-					if civ(city) != iRussia:
-						for plot in plots.surrounding(x, y):
-							if not (plot.isCity() or plot.isWater() or plot.isPeak()):
-								lFreePlots.append((i, j))
-									
-						tPlot = random_entry(lFreePlots)
-						team(iPlayer).declareWar(plot.getOwner(), True, WarPlanTypes.WARPLAN_LIMITED)
-						makeUnits(iPlayer, iRifleman, tPlot, 4, UnitAITypes.UNITAI_ATTACK_CITY)
-						makeUnits(iPlayer, iCannon, tPlot, 2, UnitAITypes.UNITAI_ATTACK_CITY)
-				else:
-					if isFree(iPlayer, (x, y), True): # Also bNoEnemyUnits?
-						player(iPlayer).found(x, y)
-						makeUnits(iPlayer, iRifleman, (x, y), 2)
-						
-						for plot in plots.surrounding(x, y):
-							convertPlotCulture(plot, iPlayer, 80, True)
-
-	def handleColonialAcquisition(self, iPlayer):
-		pPlayer = player(iPlayer)
-		iCiv = civ(iPlayer)
-		
-		targets = getColonialTargets(iPlayer, bEmpty=True)
-		if not targets:
-			return
-			
-		targetPlayers = []
-		settledPlots = []
-
-		iGold = len(targets) * 200
-
-		for plot in targets:
-			city = city_(plot)
-			if city:
-				iTarget = city.getOwner()
-				if not iTarget in targetPlayers:
-					targetPlayers.append(iTarget)
-			else:
-				settledPlots.append(location(plot))
-
-		for tPlot in settledPlots:
-			colonialAcquisition(iPlayer, tPlot)
-	
-		for iTarget in targetPlayers:
-			if player(iTarget).isHuman():
-				askedCities = [(x, y) for x, y in targets if city_(x, y).getOwner() == iTarget]
-				message = format_separators(askedCities, ',', text("TXT_KEY_AND"), lambda tPlot: city_(tPlot).getName())
-						
-				iAskGold = len(askedCities) * 200
-						
-				popup = Popup.PyPopup(7625, EventContextTypes.EVENTCONTEXT_ALL)
-				popup.setHeaderString(text("TXT_KEY_ASKCOLONIALCITY_TITLE", adjective(iPlayer)))
-				popup.setBodyString(text("TXT_KEY_ASKCOLONIALCITY_MESSAGE", adjective(iPlayer), iAskGold, message))
-				popup.addButton(text("TXT_KEY_POPUP_YES"))
-				popup.addButton(text("TXT_KEY_POPUP_NO"))
-				data.lTempEventList = (iPlayer, askedCities)
-				popup.launch(False)
-				
-			else:
-				bAccepted = is_minor(iTarget) or (rand(100) >= dPatienceThreshold[iTarget] and not team(iPlayer).isAtWar(iTarget))
-				iNumCities = count(targets, lambda tPlot: city_(tPlot).getOwner() == iTarget)
-						
-				if iNumCities >= player(iTarget).getNumCities():
-					bAccepted = False
-
-				for tPlot in targets:
-					if city_(tPlot).getOwner() == iTarget:
-						if bAccepted:
-							colonialAcquisition(iPlayer, tPlot)
-							player(iTarget).changeGold(200)
-						else:
-							data.timedConquest(iPlayer, tPlot)
-
-		iNewGold = pPlayer.getGold() - iGold
-		pPlayer.setGold(max(0, iNewGold))
-
-	def handleColonialConquest(self, iPlayer):
-		targetList = getColonialTargets(iPlayer)
-		
-		if not targetList:
-			self.handleColonialAcquisition(iPlayer)
-			return
-
-		for tPlot in targetList:
-			data.timedConquest(iPlayer, tPlot)
-			
-		seaPlot = plots.surrounding(targetList[0]).water().random()
-
-		if seaPlot:
-			makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)
 
 	def startWarsOnSpawn(self, iPlayer):
 		pPlayer = player(iPlayer)
@@ -2698,21 +2412,6 @@ class RiseAndFall:
 				data.setCivEnabled(iBrazil, False)
 			elif rand(iRand) != 0:
 				data.setCivEnabled(iBrazil, False)
-
-	def placeHut(self, tTL, tBR):
-		plotList = []
-		
-		for plot in plots.start(tTL).end(tBR):
-			if plot.isFlatlands() or plot.isHills():
-				if plot.getFeatureType() != iMud:
-					if plot.getOwner() < 0:
-						plotList.append(location(plot))
-		
-		if not plotList:
-			return
-		
-		tPlot = random_entry(plotList)
-		plot_(tPlot).setImprovementType(iHut)
 
 	def setStateReligion(self, iPlayer):
 		coreCities = cities.core(iPlayer)

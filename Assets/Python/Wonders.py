@@ -134,7 +134,7 @@ def silverFountainEffect(unit, iPlayer):
 # Nobel Prize effect: additional great people points whenever a Great Person is born in a civ with pleasant relations
 @handler("greatPersonBorn")
 def nobelPrizeEffect(unit, iPlayer):
-	city = getBuildingEffectCity(iNobelPrize):
+	city = getBuildingEffectCity(iNobelPrize)
 	if city:
 		if infos.unit(unit).getLeaderExperience() == 0 and infos.unit(unit).getEspionagePoints() == 0:
 			if unit.getOwner() == city.getOwner() or player(unit).AI_getAttitude(city.getOwner()) >= AttitudeTypes.ATTITUDE_PLEASED:

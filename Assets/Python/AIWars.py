@@ -154,6 +154,28 @@ def increaseAggressionLevels():
 	for iLoopPlayer in players.major():
 		data.players[iLoopPlayer].iAggressionLevel = dAggressionLevel[iLoopPlayer] + rand(2)
 
+
+@handler("techAcquired")	
+def forgetMemory(iTech, iTeam, iPlayer):
+	if year() <= year(1700):
+		return
+
+	if iTech in [iPsychology, iTelevision]:
+		pPlayer = player(iPlayer)
+		for iLoopPlayer in players.major().without(iPlayer):
+			if pPlayer.AI_getMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR) > 0:
+				pPlayer.AI_changeMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR, -1)
+			
+			if pPlayer.AI_getMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND) > 0:
+				pPlayer.AI_changeMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND, -1)
+
+
+@handler("changeWar")
+def resetAggressionLevel(bWar, iTeam, iOtherTeam):
+	if bWar and not is_minor(iTeam) and not is_minor(iOtherTeam):
+		data.players[iTeam].iAggressionLevel = 0
+		data.players[iOtherTeam].iAggressionLevel = 0
+
 		
 def checkConquest(tConquest, tPrereqConquest = (), iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 	iID, iCiv, iPreferredTargetCiv, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
@@ -422,22 +444,3 @@ def getNextInterval(iGameTurn):
 	iMaxInterval = turns(iMaxInterval)
 	
 	return rand(iMinInterval, iMaxInterval)
-
-
-class AIWars:
-		
-		
-
-			
-
-
-	
-	def forgetMemory(self, iTech, iPlayer):
-		if iTech in [iPsychology, iTelevision]:
-			pPlayer = player(iPlayer)
-			for iLoopPlayer in players.major().without(iPlayer):
-				if pPlayer.AI_getMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR) > 0:
-					pPlayer.AI_changeMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR, -1)
-				
-				if pPlayer.AI_getMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND) > 0:
-					pPlayer.AI_changeMemoryCount(iLoopPlayer, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND, -1)

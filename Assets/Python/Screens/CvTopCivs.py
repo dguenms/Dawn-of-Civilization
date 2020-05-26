@@ -7,7 +7,7 @@ import PyHelpers
 import CvUtil
 import CvScreenEnums
 import random
-from Consts import * #Rhye
+from Consts import *
 from CvPythonExtensions import *
 
 PyPlayer = PyHelpers.PyPlayer
@@ -159,7 +159,10 @@ class CvTopCivs:
 		self.aiTopCivsValues = []
 		
 		# Loop through all players except the barbs
-		for iPlayerLoop in players.major().alive():
+		for iPlayerLoop in range(gc.getMAX_CIV_PLAYERS()):
+			pPlayer = gc.getPlayer(iPlayerLoop)
+			if not pPlayer.isAlive() or pPlayer.isMinorCiv() or pPlayer.isBarbarian():
+				continue
 				
 			if (szType == localText.getText("TXT_KEY_TOPCIVS_WEALTH", ())):
 

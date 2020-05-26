@@ -9,6 +9,7 @@ from RFCUtils import *
 from Consts import *
 from StoredData import data
 
+from Events import handler
 from Core import *
 
 # globals
@@ -91,6 +92,8 @@ def helpMinorStates():
 
 @handler("BeginGameTurn")
 def spawnBarbarians(iGameTurn):
+	iHandicap = infos.handicap().getBarbarianSpawnModifier()
+
 	if year().between(-3000, -850):
 		if iHandicap >= 0:
 			checkSpawn(iBarbarian, iWarrior, 1, (76, 46), (99, 53), spawnMinors, iGameTurn, 5, 0)
@@ -235,7 +238,7 @@ def spawnBarbarians(iGameTurn):
 	#camels in arabia
 	if year().between(190, 550):
 		self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
-	if year().between(-800, 1300) and self.includesActiveHuman(iEgypt, iArabia):
+	if year().between(-800, 1300) and includesActiveHuman(iEgypt, iArabia):
 		iNumUnits = iHandicap
 		if scenario() == i3000BC: iNumUnits += 1
 		checkSpawn(iBarbarian, iMedjay, iNumUnits, (66, 28), (71, 34), spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
@@ -278,7 +281,7 @@ def spawnBarbarians(iGameTurn):
 			if not plot_(30, 13).isUnit():
 				makeUnits(iNative, iDogSoldier, (30, 13), 2 + iHandicap, UnitAITypes.UNITAI_ATTACK)
 	
-	if self.includesActiveHuman(iAmerica, iEngland, iFrance):
+	if includesActiveHuman(iAmerica, iEngland, iFrance):
 		if year().between(1700, 1900):
 			checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), spawnNomads, iGameTurn, 12 - iHandicap, 2)
 		
@@ -397,7 +400,7 @@ def checkSpawn(iCiv, iUnitType, iNumUnits, tTL, tBR, spawnFunction, iTurn, iPeri
 		spawnFunction(slot(iCiv), iUnitType, iNumUnits, tTL, tBR, random_entry(lAdj))
 			
 def possibleTiles(tTL, tBR, bWater=False, bTerritory=False, bBorder=False, bImpassable=False, bNearCity=False):
-	return plots.start(tTL).end(tBR).where(lambda p: self.possibleTile(p, bWater, bTerritory, bBorder, bImpassable, bNearCity))
+	return plots.start(tTL).end(tBR).where(lambda p: possibleTile(p, bWater, bTerritory, bBorder, bImpassable, bNearCity))
 	
 def possibleTile(plot, bWater, bTerritory, bBorder, bImpassable, bNearCity):
 	# never on peaks
@@ -436,22 +439,20 @@ def possibleTile(plot, bWater, bTerritory, bBorder, bImpassable, bNearCity):
 
 def spawnPirates(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 	'''Leoreth: spawns all ships at the same coastal spot, out to pillage and disrupt trade, can spawn inside borders'''
-	plot = self.possibleTiles(tTL, tBR, bWater=True, bTerritory=False).random()
+	plot = possibleTiles(tTL, tBR, bWater=True, bTerritory=False).random()
 	
 	if plot:
 		makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_PIRATE_SEA).adjective(sAdj)
 	
 def spawnNatives(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 	'''Leoreth: outside of territory, in jungles, all dispersed on several plots, out to pillage'''
-	print "possibleTiles: %s" % self.possibleTiles(tTL, tBR, bTerritory=False, bImpassable=True)
-	
-	for plot in self.possibleTiles(tTL, tBR, bTerritory=False, bImpassable=True).sample(iNumUnits):
+	for plot in possibleTiles(tTL, tBR, bTerritory=False, bImpassable=True).sample(iNumUnits):
 		makeUnits(iPlayer, iUnitType, plot, 1, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)
 		
 def spawnMinors(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 	'''Leoreth: represents minor states without ingame cities
 			outside of territory, not in jungles, in groups, passive'''
-	plot = self.possibleTiles(tTL, tBR, bTerritory=False).random()
+	plot = possibleTiles(tTL, tBR, bTerritory=False).random()
 	
 	if plot:
 		makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)
@@ -459,7 +460,7 @@ def spawnMinors(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 def spawnNomads(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 	'''Leoreth: represents aggressive steppe nomads etc.
 			outside of territory, not in jungles, in small groups, target cities'''
-	plot = self.possibleTiles(tTL, tBR, bTerritory=False).random()
+	plot = possibleTiles(tTL, tBR, bTerritory=False).random()
 	
 	if plot:
 		makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)
@@ -467,7 +468,7 @@ def spawnNomads(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 def spawnInvaders(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 	'''Leoreth: represents large invasion forces and migration movements
 			inside of territory, not in jungles, in groups, target cities'''
-	plot = self.possibleTiles(tTL, tBR, bTerritory=True, bBorder=True).random()
+	plot = possibleTiles(tTL, tBR, bTerritory=True, bBorder=True).random()
 	
 	if plot:
 		makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)
@@ -476,7 +477,7 @@ def spawnUprising(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 	''' Leoreth: represents uprisings of Natives against colonial settlements, especially North America
 			 spawns units in a free plot in the second ring of a random target city in the area
 			 (also used for units from warring city states in classical Mesoamerica)'''
-	plot = self.possibleTiles(tTL, tBR, bTerritory=True, bNearCity=True).random()
+	plot = possibleTiles(tTL, tBR, bTerritory=True, bNearCity=True).random()
 	
 	if plot:
 		makeUnits(iPlayer, iUnitType, plot, iNumUnits, UnitAITypes.UNITAI_ATTACK).adjective(sAdj)

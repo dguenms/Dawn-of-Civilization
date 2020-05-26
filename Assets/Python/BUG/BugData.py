@@ -91,8 +91,6 @@ def initGameData():
 
 def onGameStart(argsList):
 	initGameData()
-	
-	data.setup()
 
 def onGameLoad(argsList):
 	initGameData().load()

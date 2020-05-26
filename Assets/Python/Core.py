@@ -5,6 +5,7 @@ from Consts import *
 from StoredData import *
 from DataStructures import *
 from Areas import *
+from Events import handler
 
 from Types import Civ
 
@@ -12,6 +13,8 @@ import Popup
 import BugCore
 
 import random
+
+from traceback import extract_stack
 
 
 gc = CyGlobalContext()
@@ -26,15 +29,54 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
-# TODO: test
+def spread(iterable, size, offset=0):
+	if len(iterable) <= size:
+		return spread_padded(iterable, size, offset)
+	else:
+		return spread_grouped(iterable, size, offset)
+
+
+def spread_padded(iterable, size, offset=0):
+	result = [None] * size
+	for i, element in enumerate(iterable):
+		result[(i * ((size+1) / len(iterable)) + offset) % size] = element
+	
+	return result
+
+
+def spread_grouped(iterable, size, offset=0):
+	result = [tuple(iterable[j] for j in range(i, len(iterable), size)) for i in range(size)]
+	return result[-offset%size:] + result[:-offset%size]
+
+
+def every(interval):
+	return turn() % interval == 0
+
+
+def periodic_from(entities, interval=None):
+	if interval is None:
+		interval = len(entities)
+	offset = hash(tuple(entities)) + data.iSeed
+	entities = spread(entities, interval)
+	return entities[(turn() + offset) % interval]
+
+
+def get_calling_module():
+	trace = [call[0] for call in extract_stack() if call[0] != 'Core']
+	return trace[-1]
+
+
 def periodic(interval):
-	return periodic_of(range(interval), interval)
+	index = period_offsets(interval)
+	offset = (index / 2 + ((index + interval) % 2) * interval / 2 ) % interval
+	result = turn() % interval == offset
+	if interval == 5: print "interval = %d, turn = %d, index = %d, offset = %d, result = %d" % (interval, turn(), index, offset, result)
+	return result 
 
 
 # TODO: test
-def periodic_of(iterable, interval):
-	interval = turns(interval)
-	return next(element for i, element in enumerate(iterable) if turn() % interval == data.iSeed + hash(tuple(elements)) + i * (interval/ len(iterable)))
+def matching(condition, *elements):
+	return next(element for element in elements if condition(element))
 
 
 # TODO: test
@@ -87,7 +129,7 @@ def owner(entity, identifier):
 
 
 def count(iterable, condition):
-	return len(x for x in iterable if condition(x))
+	return len([x for x in iterable if condition(x)])
 
 
 def format_separators(list, separator, last_separator, format=lambda x: x):
@@ -576,7 +618,12 @@ def civ(identifier = None):
 		return civ(identifier.getOwner())
 
 	return Civ(player(identifier).getCivilizationType())
-	
+
+
+# TODO: test
+def civs(iterable):
+	return [civ(element) for element in iterable]
+
 
 def period(iCiv):
 	iPlayer = slot(iCiv)
@@ -729,7 +776,10 @@ class EntityCollection(object):
 		return self.__class__(sorted(set(combined), key=combined.index))
 		
 	def limit(self, iLimit):
-		return self.__class__(self._keys[:iLimit])
+		try:
+			return self.__class__(self._keys[:iLimit])
+		except TypeError, e:
+			raise TypeError("%s, was: %s" % (e, iLimit))
 	
 	# TODO: this changed, test again
 	def count(self, condition = lambda x: True):
@@ -760,7 +810,7 @@ class EntityCollection(object):
 		return cls([map(k) for k in self._keys if condition(self._factory(k))])
 
 	def periodic(self, iInterval):
-		return periodic_of(self.entities(), iInterval)
+		return periodic_from(self.entities(), iInterval)
 
 	def divide(self, keys):
 		shuffled_entities = self.shuffle().entities()
@@ -924,11 +974,11 @@ class Plots(EntityCollection):
 	def closest_distance(self, *args):
 		return self._closest(*args).value
 		
-	# test iPlayer == Civ
+	# TODO test iPlayer == Civ
 	def owner(self, iPlayer):
 		return self.where(lambda p: owner(p, iPlayer))
 		
-	# test iPlayer == Civ
+	# TODO test iPlayer == Civ
 	def notowner(self, iPlayer):
 		return self.where(lambda p: not owner(p, iPlayer))
 	
@@ -1277,6 +1327,10 @@ class Players(EntityCollection):
 		
 	def asCivs(self):
 		return [civ(p) for p in self.entities()]
+	
+	# TODO: test
+	def tech(self, iTech):
+		return self.where(lambda p: team(p).isHasTech(iTech))
 		
 		
 class CreatedUnits(object):
@@ -1333,6 +1387,19 @@ class Turn(int):
 		if seed:
 			return self + seed % (2 * variation) - variation
 		return self + rand(2 * variation) - variation
+
+
+class InfoCollection(EntityCollection):
+
+	def __init__(self, infoClass, iNumInfos):
+		super(InfoCollection, self).__init__(range(iNumInfos))
+		self.info_class = infoClass
+	
+	def __contains__(self, item):
+		return item in self._keys()
+	
+	def __str__(self):
+		return ','.join([self.info_class(i).getText() for i in self])
 		
 
 class Infos:
@@ -1393,6 +1460,9 @@ class Infos:
 	def handicap(self):
 		return gc.getHandicapInfo(game.getHandicapType())
 		
+	def corporations(self):
+		return InfoCollection(gc.getCorporationInfo, iNumCorporations)
+		
 	def corporation(self, identifier):
 		return gc.getCorporationInfo(identifier)
 		
@@ -1406,7 +1476,7 @@ class Infos:
 		return gc.getCommerceInfo(identifier)
 		
 	def promotions(self):
-		return range(gc.getNumPromotionInfos())
+		return InfoCollection(gc.getPromotionInfo, iNumPromotions)
 		
 	def promotion(self, identifier):
 		return gc.getPromotionInfo(identifier)
@@ -1476,6 +1546,30 @@ class Map(object):
 			self[originX + x, originY + y] = value
 
 
+class PeriodOffsets(object):
+
+	def __init__(self):
+		self.turn = 0
+		self.offsets = defaultdict({}, 0)
+		
+	def __call__(self, interval):
+		self._check_invalidate()
+		calling = get_calling_module()
+		print (calling, interval)
+		offset = self.offsets[(calling, interval)]
+		self.offsets[(calling, interval)] += 1
+		return offset
+		
+	def _check_invalidate(self):
+		if turn() > self.turn:
+			self._invalidate()
+	
+	def _invalidate(self):
+		print "invalidate"
+		self.turn = turn()
+		self.offsets = defaultdict({}, 0)
+
+
 iBarbarianPlayer = slot(iBarbarian)
 		
 		
@@ -1484,6 +1578,7 @@ cities = CityFactory()
 units = UnitFactory()
 players = PlayerFactory()
 infos = Infos()
+period_offsets = PeriodOffsets()
 
 plot_ = plot
 city_ = city
