@@ -8,6 +8,11 @@ def updateCore(iPlayer):
 		plot.setCore(iPlayer, location(plot) in coreArea)
 
 @handler("GameStart")
-def initsetup():
+def init():
 	for iPlayer in players.major():
 		updateCore(iPlayer)
+		
+@handler("GameStart")
+def resetStoredData():
+	print "data.setup()"
+	data.setup()

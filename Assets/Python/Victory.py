@@ -263,7 +263,7 @@ def setup():
 		for iPlayer in players.major().ai():
 			loseAll(iPlayer)
 
-@handler("BeginGameTurn"):
+@handler("BeginGameTurn")
 def aztecUHVHelp():
 	if year() == year(1500) and player(iAztecs).isHuman():
 		city = cities.capital(iEngland)
@@ -1660,14 +1660,20 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	elif iCiv == iCanada:
 		if bConquest:
 			expire(iPlayer, 1)
-			
-def onTechAcquired(iPlayer, iTech):
+
+@handler("techAcquired")
+def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
 	pPlayer = player(iPlayer)
 
-	if not game.isVictoryValid(7): return
+	if not game.isVictoryValid(7):
+		return
 	
-	if is_minor(iPlayer): return
+	if is_minor(iPlayer):
+		return
+	
+	if year() <= year(dSpawn[iCiv]):
+		return
 	
 	iEra = infos.tech(iTech).getEra()
 	
@@ -2017,7 +2023,8 @@ def onTradeMission(iUnit, iPlayer, iX, iY, iGold):
 				pHolyCity = game.getHolyCity(iStateReligion)
 				if location(pHolyCity) == (iX, iY):
 					win(iPlayer, 0)
-					
+
+@handler("peaceBrokered")
 def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 	iBrokerCiv = civ(iBroker)
 
@@ -2027,7 +2034,8 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 			data.iCanadianPeaceDeals += 1
 			if data.iCanadianPeaceDeals >= 12:
 				win(iBroker, 2)
-			
+
+@handler("blockade")
 def onBlockade(iPlayer, iGold):
 	iCiv = civ(iPlayer)
 
@@ -2035,7 +2043,8 @@ def onBlockade(iPlayer, iGold):
 	if iCiv == iMoors:
 		if isPossible(iPlayer, 2):
 			data.iMoorishGold += iGold
-			
+
+@handler("firstContact")			
 def onFirstContact(iPlayer, iHasMetPlayer):
 	# third Maya goal: make contact with a European civilization before they have discovered America
 	iMayaPlayer = slot(iMaya)

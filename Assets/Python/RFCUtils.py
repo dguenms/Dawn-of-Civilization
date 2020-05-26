@@ -604,8 +604,7 @@ def getColonialTargets(iPlayer, bEmpty=False):
 	else:
 		iNumCities = 3
 
-	index = list([iSpain, iFrance, iEngland, iPortugal, iNetherlands]).index(iCiv)
-	lPlotList = tTradingCompanyPlotLists[index][:]
+	lPlots = dTradingCompanyPlots[iCiv][:]
 	
 	cityPlots, emptyPlots = plots.of(lPlotList).split(lambda p: p.isCity())
 	targetCities = cityPlots.notowner(iPlayer).sample(iNumCities)

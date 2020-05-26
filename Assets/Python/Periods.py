@@ -144,8 +144,10 @@ def onPalaceMoved(city, iBuilding):
 				setPeriod(iPhoenicia, iPeriodCarthage)
 
 
-def onTechAcquired(iPlayer, iEra):
+@handler("techAcquired")
+def onTechAcquired(iTech, iTeam, iPlayer):
 	iCiv = civ(iPlayer)
+	iEra = infos.tech(iTech).getEra()
 
 	if iCiv == iSpain:
 		if iEra == iRenaissance and player(iCiv).getPeriod() == -1:

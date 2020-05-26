@@ -44,7 +44,11 @@ def checkTurn(iGameTurn):
 			currentCongress.startCongress()
 
 
+@handler("changeWar")
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
+	if is_minor(iPlayer) or is_minor(iOtherPlayer):
+		return
+
 	if isCongressEnabled():
 		if bWar and not isGlobalWar():
 			attackers, defenders = determineAlliances(iPlayer, iOtherPlayer)

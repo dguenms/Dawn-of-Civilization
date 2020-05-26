@@ -24,8 +24,6 @@ dCompanyExpiry = defaultdict({
 	iTextileIndustry : 1920,
 }, 2020)
 
-lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
-
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)
 
@@ -54,11 +52,8 @@ def verifyCorporations(iOwner, iPlayer, city):
 
 @handler("BeginGameTurn")
 def checkCompanies(iGameTurn):
-	iCompany = periodic_of(range(iNumCompanies), iNumCompanies)
-	checkCompany(iCompany, iGameTurn)
-	
-	iCompany = iCompany + iNumCompanies / 2 % iNumCompanies
-	checkCompany(iCompany, iGameTurn)
+	for iCompany in infos.corporations().periodic(iNumCorporations / 2):
+		checkCompany(iCompany, iGameTurn)
 
 
 def isCompanyValid(iCompany, iGameTurn):
@@ -99,7 +94,7 @@ def checkCompany(iCompany, iGameTurn):
 	
 	# if company can still spread, select the most attractive city without the company
 	if iCompanyCount < iMaxCompanies:
-		city = availableCities.highest(lambda city: getCityValue(city, iCompany) * 10 + rand(10))
+		city = availableCities.maximum(lambda city: getCityValue(city, iCompany) * 10 + rand(10))
 		if city:
 			city.setHasCorporation(iCompany, True, True, True)
 	
@@ -138,7 +133,7 @@ def getCityValue(city, iCompany):
 
 	# civilization requirements
 	if iCompany == iTradingCompany:
-		if not iOwnerCiv in lTradingCompanyCivs:
+		if iOwnerCiv not in dTradingCompanyPlots:
 			return -1
 		if iOwnerCiv == iNetherlands:
 			iValue += 2

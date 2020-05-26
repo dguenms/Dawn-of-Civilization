@@ -4,7 +4,7 @@ from sets import Set
 from StoredData import data
 import Victory as vic
 from Religions import rel
-from Events import handler
+from Events import events, handler
 
 ### Class for easier tech specification ###
 
@@ -63,8 +63,8 @@ def initTechs(iPlayer, lTechs):
 	
 def initTech(iPlayer, iTech):
 	team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
-	vic.onTechAcquired(iPlayer, iTech)
-	rel.onTechAcquired(iPlayer, iTech)
+	
+	#events.fireEvent("techAcquired", iTech, player(iPlayer).getTeam(), iPlayer)
 
 ### Tech preference functions ###
 

@@ -4,8 +4,6 @@
 from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
-#import Popup
-#import cPickle as pickle
 from Consts import *
 from StoredData import data #edead
 from RFCUtils import *
@@ -82,7 +80,7 @@ def progressPlagueCountdown():
 
 
 @handler("BeginGameTurn")
-def startPlagues():
+def startPlagues(iGameTurn):
 	if data.bNoPlagues:
 		return
 
@@ -143,6 +141,44 @@ def processPlague(iGameTurn, iPlayer):
 		
 	# spread within the civilization
 	spreadBetweenCities(iPlayer, infectedCities, uninfectedCities)
+
+
+@handler("firstContact")
+def newWorldPlague(iTeamX, iHasMetTeamY):
+	if data.bNoPlagues:
+		return
+		
+	if year() <= year(dBirth[iAztecs]):
+		return
+	
+	if year() >= year(1800):
+		return
+		
+	iOldWorld = matching(lambda iPlayer: civ(iPlayer) not in lBioNewWorld, iTeamX, iHasMetTeamY)
+	iNewWorld = matching(lambda iPlayer: civ(iPlayer) in lBioNewWorld, iTeamX, iHasMetTeamY)
+	
+	if iOldWorld is None or iNewWorld is None:
+		return
+	
+	if data.players[iNewWorld].iPlagueCountdown == 0:
+		if not team(iNewWorld).isHasTech(iMicrobiology):
+			city = cities.owner(iNewWorld).random()
+			
+			if city:
+				iHealth = calculateHealth(iNewWorld)
+				if rand(100) > 30 + iHealth / 2:
+					data.players[iNewWorld].iPlagueCountdown = iDuration - iHealth / 10
+					data.players[iNewWorld].bFirstContactPlague = True
+					
+					infectCity(city)
+					announceForeignPlagueSpread(city)
+
+
+@handler("techAcquired")
+def acquireVaccine(iTech, iTeam, iPlayer):
+	if iTech == iMicrobiology:
+		if data.players[iPlayer].iPlagueCountdown > 1:
+			data.players[iPlayer].iPlagueCountdown = 1
 
 
 def calculateTotalPlagueHealth(iPlayer):
@@ -426,37 +462,8 @@ class Plague:
 
 
 
-	def onFirstContact(self, iTeamX, iHasMetTeamY):
-		if data.bNoPlagues:
-			return
-
-		if year() > year(dBirth[iAztecs]) + turns(2) and year() < year(1800):
-			iOldWorldCiv = -1
-			iNewWorldCiv = -1
-			if civ(iTeamX) in lBioNewWorld and civ(iHasMetTeamY) not in lBioNewWorld and not is_minor(iHasMetTeamY):
-				iNewWorldCiv = iTeamX
-				iOldWorldCiv = iHasMetTeamY
-			if iOldWorldCiv != -1 and iNewWorldCiv != -1:
-				pNewWorldCiv = player(iNewWorldCiv)
-				if data.players[iNewWorldCiv].iPlagueCountdown == 0: #vulnerable
-					#print ("vulnerable", iNewWorldCiv)
-					if not team(iNewWorldCiv).isHasTech(iBiology):
-						city = cities.owner(iNewWorldCiv).random()
-						if city:
-							iHealth = self.calculateHealth(iNewWorldCiv)
-							if iHealth < 10: #no spread for iHealth >= 70 years
-								iHealth /= 10
-								if rand(100) > 30 + 5*iHealth:
-									data.players[iNewWorldCiv].iPlagueCountdown = iDuration - iHealth
-									data.players[iNewWorldCiv].bFirstContactPlague = True
-									#print ("spreading (through first contact) plague to", iNewWorldCiv)
-									self.infectCity(city)
-									self.announceForeignPlagueSpread(city)
 
 
-	def onTechAcquired(self, iTech, iPlayer):
-		if data.players[iPlayer].iPlagueCountdown > 1:
-			data.players[iPlayer].iPlagueCountdown = 1
 
 # make a singleton until we can destroy the class completely
 plague = Plague()
