@@ -658,8 +658,8 @@ lEnemyCivsOnSpawn = [
 [], #Norte Chico
 [], #Nubia
 [iIndependent,iIndependent2,iIndependent2], #China
-[], #Olmecs
 [iIndependent,iIndependent2,iBabylonia], #Greece
+[], #Olmecs
 [], #India
 [], #Carthage
 [iGreece, iRome], #Celtia
