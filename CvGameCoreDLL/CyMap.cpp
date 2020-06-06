@@ -331,3 +331,13 @@ int CyMap::getEquator()
 {
 	return m_pMap ? m_pMap->getEquator() : -1;
 }
+
+int CyMap::maxStepDistance()
+{
+	return m_pMap ? m_pMap->maxStepDistance() : -1;
+}
+
+int CyMap::maxPlotDistance()
+{
+	return m_pMap ? m_pMap->maxPlotDistance() : -1;
+}

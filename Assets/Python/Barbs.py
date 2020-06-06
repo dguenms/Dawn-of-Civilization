@@ -81,7 +81,7 @@ iHandicapOld = (game.getHandicapType() - 1)
 
 @handler("BeginGameTurn")
 def helpMinorStates():
-	if periodic(20):
+	if every(20):
 		for iStartYear, iEndYear, tPlot, lUnits in tMinorStates:
 			if year().between(iStartYear, iEndYear):
 				plot = plot_(tPlot)
@@ -231,13 +231,13 @@ def spawnBarbarians(iGameTurn):
 		checkSpawn(iBarbarian, iCamelRider, 1, (54, 31), (67, 35), spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
 	elif year().between(50, 900):
 		if scenario() == i3000BC:  #late start condition
-			checkSpawn(iBarbarian, iCamelRider, 1 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
+			checkSpawn(iBarbarian, iCamelRider, 1 + iHandicap, (54, 31), (67, 35), spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
 	elif year().between(900, 1800):
 		checkSpawn(iBarbarian, iCamelArcher, 1, (54, 27), (67, 35), spawnNomads, iGameTurn, 10-iHandicap, 4, ["TXT_KEY_ADJECTIVE_BERBER"])
 		
 	#camels in arabia
 	if year().between(190, 550):
-		self.checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
+		checkSpawn(iBarbarian, iCamelArcher, 1, (73, 30), (82, 36), spawnNomads, iGameTurn, 9-iHandicap, 7, ["TXT_KEY_ADJECTIVE_BEDOUIN"])
 	if year().between(-800, 1300) and includesActiveHuman(iEgypt, iArabia):
 		iNumUnits = iHandicap
 		if scenario() == i3000BC: iNumUnits += 1

@@ -763,11 +763,14 @@ def onPalaceMoved(city, iBuilding):
 
 @handler("religionFounded")
 def onReligionFounded(_, iPlayer):
+	if turn() == scenarioStartTurn():
+		return
+
 	checkName(iPlayer)
 
 @handler("BeginGameTurn")
 def checkTurn(iGameTurn):
-	if periodic(10):
+	if every(10):
 		for iPlayer in players.major():
 			checkName(iPlayer)
 			checkLeader(iPlayer)

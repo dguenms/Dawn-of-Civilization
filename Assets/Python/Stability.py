@@ -69,7 +69,7 @@ def crisisCountdown():
 @handler("BeginGameTurn")
 def updateTrendScores():
 	# calculate economic and happiness stability
-	if periodic(3):
+	if every(3):
 		for iPlayer in players.major():
 			updateEconomyTrend(iPlayer)
 			updateHappinessTrend(iPlayer)
@@ -89,7 +89,7 @@ def updateTrendScores():
 @handler("BeginGameTurn")
 def decayPenalties():
 	# decay penalties from razing cities and losing to barbarians
-	if periodic(5):
+	if every(5):
 		if data.iHumanRazePenalty < 0:
 			data.iHumanRazePenalty += 2
 		for iPlayer in players.major():
@@ -99,7 +99,7 @@ def decayPenalties():
 
 @handler("BeginGameTurn")
 def checkLostCitiesCollapses():
-	if periodic(12):
+	if every(12):
 		for iPlayer in players.major():
 			checkLostCitiesCollapse(iPlayer)
 	
@@ -1440,7 +1440,7 @@ def isTolerated(iPlayer, iReligion):
 
 @handler("BeginGameTurn")
 def checkResurrection():
-	if periodic(10):
+	if every(10):
 		iNationalismModifier = min(20, 4 * data.iPlayersWithNationalism)
 		possibleResurrections = players.major().where(canRespawn).sort(lambda p: data.players[p].iLastTurnAlive)
 		

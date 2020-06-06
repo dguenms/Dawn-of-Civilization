@@ -4307,16 +4307,11 @@ def canTriggerTradingCompanyConquerors(argsList):
 
 	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	
-	if iCiv not in lCivList or not player(iPlayer).isHuman():
+	if iCiv not in dTradingCompanyPlots or not dTradingCompanyPlots[iCiv] or not player(iPlayer).isHuman():
 		return False
 
-	id = lCivList.index(iCiv)
-
 	# Leoreth: dirty solution: determine that turn's target cities during this check
-	debug('Determining colonial targets.')
-	targetList = getColonialTargets(iPlayer, True)
-	
-	data.lTradingCompanyConquerorsTargets[id].extend(targetList)
+	data.lTradingCompanyConquerorsTargets[iCiv] = getColonialTargets(iPlayer, True)
 
 	return True	
 
@@ -4329,11 +4324,11 @@ def canChooseTradingCompanyConquerors1(argsList):
 	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iCiv)
 
-	targetList = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 	
-	if not targetList: return False
+	if not targets: return False
 
-	iGold = len(targetList) * 200
+	iGold = targets.count() * 200
 
 	if pPlayer.getGold() >= iGold:
 		return True
@@ -4343,23 +4338,20 @@ def getTradingCompanyConquerors1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	iCiv = civ(iPlayer)
-	
-	lCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivs.index(iCiv)
 
-	targets = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 	targetPlayers = []
 	targetNames = []
 
-	for x, y in targets:
-		city = city_(x, y)
+	for plot in targets:
+		city = city_(plot)
 		if city:
 			if city.getOwner() not in targetPlayers:
 				targetPlayers.append(city.getOwner())
 				
 			lTargetNames.append(city.getName())
 		else:
-			lTargetNames.append(cnm.getFoundName(iPlayer, (x, y)))
+			lTargetNames.append(cnm.getFoundName(iPlayer, location(plot)))
 	
 	sTargetPlayers = ', '.join(name(i) for i in targetPlayers)
 	sTargetNames = ', '.join(lTargetNames)
@@ -4377,25 +4369,22 @@ def doTradingCompanyConquerors1(argsList):
 	pPlayer = player(iPlayer)
 	iCiv = civ(iPlayer)
 
-	lCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iCiv)
-
-	targets = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 	targetPlayers = []
 	settledTiles = []
 
-	iGold = len(targets) * 200
+	iGold = targets.count() * 200
 	
-	for x, y in targets:
-		city = city_(x, y)
+	for plot in targets:
+		city = city_(plot)
 		if city:
 			if not city.getOwner() in targetPlayers:
 				targetPlayers.append(city.getOwner())
 		else:
-			settledTiles.append((x, y))
+			settledTiles.append(plot)
 			
-	for x, y in settledTiles:
-		colonialAcquisition(iPlayer, (x, y))
+	for plot in settledTiles:
+		colonialAcquisition(iPlayer, location(plot))
 		
 	for iTargetPlayer in targetPlayers:
 		if is_minor(iTargetPlayer):
@@ -4407,14 +4396,14 @@ def doTradingCompanyConquerors1(argsList):
 		else:
 			bAccepted = False
 			
-		for x, y in targets:
-			city = city_(x, y)
+		for plot in targets:
+			city = city_(plot)
 			if city.getOwner() == iTargetPlayer:
 				if bAccepted:
-					colonialAcquisition(iPlayer, (x, y))
+					colonialAcquisition(iPlayer, location(plot))
 					player(iTargetPlayer).changeGold(200)
 				else:
-					colonialConquest(iPlayer, (x, y))
+					colonialConquest(iPlayer, location(plot))
 
 	iNewGold = pPlayer.getGold() - iGold
 	pPlayer.setGold(max(0, iNewGold))
@@ -4424,10 +4413,7 @@ def canChooseTradingCompanyConquerors2(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	iCiv = civ(iPlayer)
 
-	lCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivs.index(iCiv)
-
-	targets = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 	
 	return cities.of(targets).any()
 
@@ -4435,16 +4421,13 @@ def getTradingCompanyConquerors2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	iCiv = civ(iPlayer)
-	
-	lCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivList.index(iCiv)
 
-	targets = data.lTradingCompanyConquerorsTargets[id]
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 	targetPlayers = []
 	targetNames = []
 	
-	for x, y in targetPlayers:
-		city = city_(x, y)
+	for plot in targets:
+		city = city_(plot)
 		if city:
 			if city.getOwner() not in targetPlayers:
 				targetPlayers.append(city.getOwner())
@@ -4463,15 +4446,7 @@ def doTradingCompanyConquerors2(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	iCiv = civ(iPlayer)
 
-	lCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-	id = lCivs.index(iCiv)
-
-	targets = data.lTradingCompanyConquerorsTargets[id]
-
-	for tPlot in targetList:
-		x, y = tPlot
-		if gc.getMap().plot(x, y).isCity():
-			colonialConquest(iPlayer, tPlot)
+	targets = data.lTradingCompanyConquerorsTargets[iCiv]
 			
 	for city in cities.of(targets):
 		colonialConquest(iPlayer, location(city))

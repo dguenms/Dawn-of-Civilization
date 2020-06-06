@@ -106,6 +106,14 @@ def foundHinduism(iGameTurn):
 					foundReligion((92, 39), iHinduism)
 
 
+@handler("cityBuilt")
+def foundIslam(city):
+	if civ(city) == iArabia:
+		if not game.isReligionFounded(iIslam):
+			if at(city, tMecca):
+				foundReligion(location(city), iIslam)
+
+
 @handler("BeginGameTurn")
 def checkJudaism(iGameTurn):
 	if game.isReligionFounded(iJudaism):
@@ -242,7 +250,7 @@ def selectHolyCity(tTL, tBR, tPreferredCity = None, bAIOnly = True):
 	
 def spreadReligionToRegion(iReligion, lRegions, iStartDate, iInterval):
 	if not game.isReligionFounded(iReligion): return
-	if iGameTurn < year(iStartDate): return
+	if turn() < year(iStartDate): return
 	
 	if not periodic(iInterval): return
 	
@@ -313,7 +321,7 @@ def embraceReformation(iPlayer):
 	for city in cities.owner(iPlayer).religion(iCatholicism):
 		iNumCatholicCities += 1
 		
-		if city.getPopulation() >= 8 and not self.chooseProtestantism(iPlayer):
+		if city.getPopulation() >= 8 and not chooseProtestantism(iPlayer):
 			city.spreadReligion(iProtestantism)
 		else:
 			city.replaceReligion(iCatholicism, iProtestantism)
@@ -339,7 +347,7 @@ def tolerateReformation(iPlayer):
 	if not is_minor(iPlayer):
 		data.players[iPlayer].iReformationDecision = 1
 				
-def counterReformation(self, iPlayer):
+def counterReformation(iPlayer):
 	for city in cities.owner(iPlayer).religion(iCatholicism):
 		if chooseProtestantism(iPlayer):
 			if city.getPopulation() >= 8:
@@ -366,7 +374,7 @@ def checkLateReligionFounding(iReligion, iTech):
 def foundReligionInCore(iReligion):
 	city = cities.all().where(lambda c: c.plot().getSpreadFactor(iReligion) == RegionSpreadTypes.REGION_SPREAD_CORE).random()
 	if city:
-		self.foundReligion(location(city), iReligion)
+		foundReligion(location(city), iReligion)
 	
 
 

@@ -1,4 +1,5 @@
 from Core import *
+from RFCUtils import *
 from Events import handler
 
 
@@ -116,7 +117,7 @@ def machuPicchuEffect(city, iBuilding):
 @handler("buildingBuilt")
 def greatWallEffect(city, iBuilding):
 	if iBuilding == iGreatWall:
-		for plot in plots.all().owner(iOwner).where(lambda plot: not plot.isWater()):
+		for plot in plots.all().owner(city.getOwner()).where(lambda plot: not plot.isWater()):
 			plot.setWithinGreatWall(True)
 
 
@@ -145,4 +146,4 @@ def nobelPrizeEffect(unit, iPlayer):
 				city.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
 				
 				interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
-				message(iLoopPlayer, 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(pUnit), pUnit.getName(), wonderCity.getName(), iGreatPeoplePoints)
+				message(city.getOwner(), 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(unit), unit.getName(), city.getName(), iGreatPeoplePoints)

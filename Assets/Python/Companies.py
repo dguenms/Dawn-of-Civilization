@@ -46,7 +46,7 @@ tSouthAsiaBR = (117, 39)
 def verifyCorporations(iOwner, iPlayer, city):
 	for iCorporation in range(iNumCorporations):
 		if city.isHasCorporation(iCorporation):
-			if companies.getCityValue(city, iCorporation) < 0:
+			if getCityValue(city, iCorporation) < 0:
 				city.setHasCorporation(iCorporation, False, True, True)
 
 
@@ -100,7 +100,7 @@ def checkCompany(iCompany, iGameTurn):
 	
 	# if too many cities have the company, remove it from the least attractive city that has it
 	elif iCompanyCount > iMaxCompanies:
-		city = companyCities.lowest(lambda city: getCityValue(city, iCompany) * 10 + rand(10))
+		city = companyCities.minimum(lambda city: getCityValue(city, iCompany) * 10 + rand(10))
 		if city:
 			city.setHasCorporation(iCompany, False, True, True)
 
@@ -270,26 +270,3 @@ def getCityValue(city, iCompany):
 	iValue -= owner.countCorporations(iCompany)*2
 	
 	return iValue
-
-
-class Companies:
-
-
-	def onCityAcquired(self, argsList):
-		iPreviousOwner, iNewOwner, city, bConquest, bTrade = argsList
-		
-		for iCompany in range(iNumCorporations):
-			if city.isHasCorporation(iCompany):
-				if self.getCityValue(city, iCompany) < 0:
-					city.setHasCorporation(iCompany, False, True, True)
-
-	def isCityInArea(self, tCityPos, tTL, tBR):
-
-		x, y = tCityPos
-		tlx, tly = tTL
-		brx, bry = tBR
-
-		return ((x >= tlx) and (x <= brx) and (y >= tly) and (y <= bry))
-		
-# make a singleton until we can destroy the class completely
-companies = Companies()

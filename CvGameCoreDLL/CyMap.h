@@ -92,6 +92,9 @@ public:
 	int getPrimeMeridian();
 	int getEquator();
 
+	int maxStepDistance();
+	int maxPlotDistance();
+
 protected:
 	CvMap* m_pMap;
 };

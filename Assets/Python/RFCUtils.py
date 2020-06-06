@@ -24,8 +24,7 @@ tCol = (
 '128,128,128'
 )
 
-lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
-# Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
+
 
 bStabilityOverlay = False
 
@@ -253,7 +252,10 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 			plot.changeCulture(iOldOwner, -iConvertedCulture / 3, True)
 			
 			if bAlwaysOwnPlots:
-				plot.setOwner(iNewOwner)
+				try:
+					plot.setOwner(iNewOwner)
+				except Exception, e:
+					raise Exception("plot.setOwner(%d): %s" % (iNewOwner, e))
 
 # used: CvRFCEventHandler
 def spreadMajorCulture(iMajorCiv, tPlot):
@@ -293,13 +295,19 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot.changeCulture(iPlayer, iTotalConvertedCulture, True)
 	
 	if bOwner:
-		plot.setOwner(iPlayer)
+		try:
+			plot.setOwner(iPlayer)
+		except Exception, e:
+			raise Exception("plot.setOwner(%d): %s" % (iPlayer, e)) 
 		
 # used: RFCUtils
 def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot = core.plot(tPlot)
 	if not plot.isOwned() or not plot.isCore(plot.getOwner()):
-		plot.setCultureConversion(iPlayer, iPercent)
+		try:
+			plot.setCultureConversion(iPlayer, iPercent)
+		except Exception, e:
+			raise Exception("plot.setCultureConversion(%d, %d): %s" % (iPlayer, iPercent, e))
 	
 		if bOwner:
 			plot.setOwner(iPlayer)
@@ -581,7 +589,7 @@ def colonialAcquisition(iPlayer, tPlot):
 			else:
 				convertPlotCulture(current, iPlayer, 60, True)
 				
-		player(iPlayer).found(*tPlot)
+		player(iPlayer).found(*location(plot))
 		
 	makeUnits(iPlayer, iWorker, tPlot, iNumUnits)
 	
@@ -606,14 +614,21 @@ def getColonialTargets(iPlayer, bEmpty=False):
 
 	lPlots = dTradingCompanyPlots[iCiv][:]
 	
-	cityPlots, emptyPlots = plots.of(lPlotList).split(lambda p: p.isCity())
+	cityPlots, emptyPlots = plots.of(lPlots).split(lambda p: p.isCity())
 	targetCities = cityPlots.notowner(iPlayer).sample(iNumCities)
+	
+	if not isinstance(targetCities, Plots):
+		raise Exception("is not Plots: %s" % type(targetCities))
 	
 	if bEmpty:
 		targetPlots = emptyPlots.where_surrounding(lambda p: not p.isCity()).sample(iNumCities - len(targetCities))
 		if targetPlots:
+			if not isinstance(targetCities + targetPlots, Plots):
+				raise Exception("is not Plots: %s" % type(targetCities + targetPlots))
 			return targetCities + targetPlots
-		
+	
+	if not isinstance(targetCities, Plots):
+		raise Exception("is not Plots: %s" % type(targetCities))
 	return targetCities
 	
 # used: RFCUtils
@@ -1276,3 +1291,9 @@ def setCivilization(iPlayer, iNewCivilization):
 	player(iPlayer).setCivilizationType(iNewCivilization)
 	del data.dSlots[iOldCivilization]
 	data.dSlots[iNewCivilization] = iPlayer
+	
+
+# used: RiseAndFall, History
+def findSeaPlots(tile, iRange, iCiv):
+	"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
+	return plots.surrounding(tile, radius=iRange).water().where(lambda p: not p.isUnit()).where(lambda p: p.getOwner() in [-1, slot(iCiv)]).random()

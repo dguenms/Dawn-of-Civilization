@@ -107,13 +107,13 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 	if bTrade and iPlayer in dTradingCompanyPlots and location(city) in dTradingCompanyPlots[iPlayer]:
 		for plot in plots.surrounding(city):
 			if location(plot) == location(city):
-				convertPlotCulture(plot, iCiv, 51, False)
+				convertPlotCulture(plot, iPlayer, 51, False)
 			elif plot.isCity():
 				pass
 			elif distance(plot, city) == 1:
-				convertPlotCulture(plot, iCiv, 65, True)
+				convertPlotCulture(plot, iPlayer, 65, True)
 			elif pPlot.getOwner() == iPreviousOwner:
-				convertPlotCulture(plot, iCiv, 15, False)
+				convertPlotCulture(plot, iPlayer, 15, False)
 
 
 ### CITY ACQUIRED AND KEPT ###
@@ -130,7 +130,7 @@ def spreadCultureOnConquest(iPlayer, city):
 	for plot in plots.surrounding(city):
 		if location(plot) == location(city):
 			convertTemporaryCulture(plot, iPlayer, 25, False)
-		elif plot.getOwner() == iPreviousOwner:
+		elif plot.getOwner() == city.getPreviousOwner():
 			convertTemporaryCulture(plot, iPlayer, 50, True)
 		else:
 			convertTemporaryCulture(plot, iPlayer, 25, True)
@@ -215,7 +215,7 @@ def mayanHolkanAbility(winningUnit, losingUnit):
 @handler("revolution")
 def validateSlaves(iPlayer):
 	if not player(iPlayer).canUseSlaves():
-		if player(iPlayer).getImprovementCount() > 0:
+		if player(iPlayer).getImprovementCount(iSlavePlantation) > 0:
 			for plot in plots.owner(iPlayer).where(lambda plot: plot.getImprovementType() == iSlavePlantation):
 				plot.setImprovementType(iPlantation)
 		
