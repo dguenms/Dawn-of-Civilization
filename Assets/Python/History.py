@@ -1,11 +1,12 @@
 from Events import handler
+from RiseAndFall import *
+from RFCUtils import *
 from Core import *
 
 
 tCarthage = (58, 39)
 tConstantinople = (68, 45)
 tBeijing = (102, 47)
-tMecca = (75, 33)
 tCopenhagen = (60, 56)
 
 dRelocatedCapitals = CivDict({
@@ -84,25 +85,20 @@ def createCarthaginianDefenses(city):
 			makeUnits(iPhoenicia, iWarElephant, tCarthage, 2, UnitAITypes.UNITAI_CITY_COUNTER)
 
 
-@handler("cityBuilt")
-def foundIslam(city):
-	if civ(city) == iArabia:
-		if not game.isReligionFounded(iIslam):
-			if at(city, tMecca):
-				rel.foundReligion(location(city), iIslam)
-
-
 # TODO: use capital founded/acquired event OR hook up into new rnf code
 @handler("cityBuilt")
 def clearDanishCulture(city):
 	if civ(city) == iHolyRome and player(city).getNumCities() == 1:
-		copenhagen = city(tCopenhagen)
+		copenhagen = city_(tCopenhagen)
 		if copenhagen and civ(copenhagen) == iVikings:
 			city.setCulture(city.getOwner(), 5, True)
 			
 			
 ### UNIT BUILT ###
-	
+
+
+lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
+# Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
 
 @handler("unitBuilt")
 def foundChineseCity(city, unit):
@@ -236,8 +232,8 @@ def flipChineseStartingCities():
 			tTL = (99, 39) # 4 tiles further north
 		
 		china = plots.start(tTL).end(tBR)
-		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(slot(iChina), china)
-		self.convertSurroundingPlotCulture(slot(iChina), china)
+		iNumAICitiesConverted, iNumHumanCitiesToConvert = convertSurroundingCities(slot(iChina), china)
+		convertSurroundingPlotCulture(slot(iChina), china)
 		
 		for iMinor in players.independent().barbarian():
 			flipUnitsInArea(china, slot(iChina), iMinor, False, player(iMinor).isBarbarian())
@@ -448,7 +444,7 @@ def russianSiberianSettlement(iTech, iTeam, iPlayer):
 		
 		vladivostok = city(tVladivostok)
 		
-		convertPlotCulture(plot(tVladivostok), iPlayer, 100, True)
+		convertPlotCulture(plot_(tVladivostok), iPlayer, 100, True)
 		
 		if vladivostok and vladivostok.getOwner() != iPlayer:
 			spawnPlot = plots.surrounding(tVladivostok).land().passable().where(lambda plot: not city_(plot)).random()
@@ -512,7 +508,7 @@ def relocateCapitals(iPlayer, city):
 def buildCapitalInfrastructure(iPlayer, city):
 	if iPlayer in dCapitalInfrastructure:
 		if at(city, plots.capital(iPlayer)) and year() <= year(dSpawn[iPlayer]) + turns(5):
-			iPopulation, lBuildings, lReligiousBuildings = dCapitalInfrastructure
+			iPopulation, lBuildings, lReligiousBuildings = dCapitalInfrastructure[iPlayer]
 			
 			if city.getPopulation() < iPopulation:
 				city.setPopulation(iPopulation)
@@ -536,7 +532,7 @@ def giveEarlyColonists(iCiv):
 			capital = cities.owner(iCiv).region(rIberia).random()
 			
 		if capital:
-			tSeaPlot = self.findSeaPlots(capital, 1, iCiv)
+			tSeaPlot = findSeaPlots(capital, 1, iCiv)
 			if tSeaPlot:
 				makeUnit(iCiv, iGalley, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
 				makeUnit(iCiv, iSettler, tSeaPlot)
@@ -562,7 +558,7 @@ def giveColonists(iPlayer):
 					
 			city = sourceCities.coastal().random()
 			if city:
-				tSeaPlot = self.findSeaPlots(city, 1, iCiv)
+				tSeaPlot = findSeaPlots(city, 1, iCiv)
 				if not tSeaPlot: tSeaPlot = city
 				
 				makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA)
@@ -580,7 +576,7 @@ def giveRaiders(iCiv):
 	if pPlayer.isAlive() and not pPlayer.isHuman():
 		city = cities.owner(iCiv).coastal().random()
 		if city:
-			seaPlot = self.findSeaPlots(location(city), 1, iCiv)
+			seaPlot = findSeaPlots(location(city), 1, iCiv)
 			if seaPlot:
 				makeUnit(iCiv, unique_unit(iCiv, iGalley), seaPlot, UnitAITypes.UNITAI_ASSAULT_SEA)
 				if pTeam.isHasTech(iSteel):
@@ -598,7 +594,7 @@ def handleColonialAcquisition(iPlayer):
 	targets = getColonialTargets(iPlayer, bEmpty=True)
 	if not targets:
 		return
-		
+	
 	iGold = targets.count() * 200
 	
 	targetPlayers = targets.cities().owners()
@@ -650,7 +646,7 @@ def handleColonialConquest(iPlayer):
 	for plot in targets:
 		data.timedConquest(iPlayer, location(plot))
 		
-	seaPlot = plots.surrounding(targetList[0]).water().random()
+	seaPlot = plots.surrounding(targets[0]).water().random()
 
 	if seaPlot:
 		makeUnit(iPlayer, unique_unit(iPlayer, iGalleon), seaPlot)

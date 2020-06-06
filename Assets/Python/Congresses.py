@@ -664,7 +664,7 @@ class Congress:
 		else:
 			player(iPlayer).found(x, y)
 			
-		createGarrisons(tPlot, iPlayer, 2)
+		createGarrisons(plot, iPlayer, 2)
 		
 	def finishCongress(self):
 		# declare war against human if he refused demands
@@ -1103,7 +1103,7 @@ class Congress:
 		self.invites = players.none()
 		
 		if self.bPostWar:
-			iLowestWinnerRank = rank(self.winners.sort(rank).first())
+			iLowestWinnerRank = find_min(self.winners, rank).value
 			self.invites = self.invites.including(self.winners)
 			self.invites = self.invites.including(self.losers.where(lambda p: rank(p) < iLowestWinnerRank))
 			

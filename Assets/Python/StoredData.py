@@ -160,7 +160,7 @@ class GameData:
 		self.iPrepareCapitalPlayer = -1
 		self.lFirstContactConquerors = [False] * 3
 		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
-		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
+		self.lTradingCompanyConquerorsTargets = appenddict()
 		
 		self.lCheatersCheck = [0, -1]
 		

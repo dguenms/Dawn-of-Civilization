@@ -48,9 +48,9 @@ def setup():
 @handler("cityAcquired")
 def clearOrSpreadPlague(iOwner, iPlayer, city):
 	if city.isHasRealBuilding(iPlague):
-		if plague.isVulnerable(iPlayer) and not data.players[iOwner].bFirstContactPlague:
-			plague.spreadPlague(iPlayer)
-			plague.infectCitiesNear(iPlayer, city)
+		if isVulnerable(iPlayer) and not data.players[iOwner].bFirstContactPlague:
+			spreadPlague(iPlayer)
+			infectCitiesNear(iPlayer, city)
 		else:
 			city.setHasRealBuilding(iPlague, False)
 
@@ -72,9 +72,9 @@ def progressPlagueCountdown():
 			if data.players[iPlayer].iPlagueCountdown > 0:
 				data.players[iPlayer].iPlagueCountdown -= 1
 				if data.players[iPlayer].iPlagueCountdown == 2:
-					self.preStopPlague(iPlayer)
+					preStopPlague(iPlayer)
 				elif data.players[iPlayer].iPlagueCountdown == 0:
-					self.stopPlague(iPlayer)
+					stopPlague(iPlayer)
 			elif data.players[iPlayer].iPlagueCountdown < 0:
 				data.players[iPlayer].iPlagueCountdown += 1
 
@@ -181,23 +181,23 @@ def acquireVaccine(iTech, iTeam, iPlayer):
 			data.players[iPlayer].iPlagueCountdown = 1
 
 
-def calculateTotalPlagueHealth(iPlayer):
+def calculateTotalPlagueHealth(iPlayer, iPlague):
 	iHealth = calculateHealth(iPlayer) / 2
 	
 	if player(iPlayer).calculateTotalCityHealthiness() > 0:
 		iHealth += rand(40)
 		
-		if iPlagueCounter == 2: # medieval Black Death
+		if iPlague == 2: # medieval Black Death
 			if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
 				iHealth -= 5
 	
 	return iHealth
 
 
-def startPlague(iPlagueCounter):
-	iPlayer = players.major().alive().where(isVulnerable).lowest(calculateTotalPlagueHealth)
+def startPlague(iPlague):
+	iPlayer = players.major().alive().where(isVulnerable).minimum(lambda iPlayer: calculateTotalPlagueHealth(iPlayer, iPlague))
 			
-	if calculateTotalPlagueHealth(iPlayer) <= 200:
+	if calculateTotalPlagueHealth(iPlayer, iPlague) <= 200:
 		city = cities.owner(iPlayer).random()
 		if city:
 			spreadPlague(iPlayer)
@@ -332,7 +332,7 @@ def losePopulation(city):
 def spreadToVassals(iPlayer):
 	if data.players[iPlayer].bFirstContactPlague: return
 	
-	for iLoopPlayer in players.major().where(self.isVulnerable):
+	for iLoopPlayer in players.major().where(isVulnerable):
 		if team(iPlayer).isVassal(iLoopPlayer) or team(iLoopPlayer).isVassal(iPlayer):
 			if data.players[iLoopPlayer].iPlagueCountdown > 2:
 				if player(iLoopPlayer).getNumCities() > 0:
@@ -356,7 +356,7 @@ def spreadToSurroundings(city):
 			continue
 		
 		if plot.getOwner() == iPlayer:
-			plotCity = city(plot)
+			plotCity = city_(plot)
 			if plotCity:
 				if not plotCity.isHasRealBuilding(iPlague):
 					infectCity(plotCity)
@@ -382,7 +382,7 @@ def damageNearbyUnits(city):
 		iDistance = distance(city, plot)
 		
 		if iDistance == 0:
-			self.killUnitsByPlague(city, plot, 0, 42, 2)
+			killUnitsByPlague(city, plot, 0, 42, 2)
 		elif not plot.isCity():
 			if iDistance < 3:
 				if plot.isRoute():
@@ -419,51 +419,23 @@ def spreadBetweenCities(iPlayer, sourceCities, targetCities):
 	target = targetCities.where(lambda city: sourceCities.any(lambda source: source.isConnectedTo(city) and distance(source, city) <= 6)).random()
 	if target:
 		infectCity(target)
-			
-
-class Plague:
-
-######################################
-### Main methods (Event-Triggered) ###
-######################################
-			
-	
 
 
-	def checkTurn(self, iGameTurn):
-		if data.bNoPlagues:
-			return
-
-	def checkPlayerTurn(self, iGameTurn, iPlayer):
-		if data.bNoPlagues:
-			return
-
-		if iPlayer in players.all():
-			if data.players[iPlayer].iPlagueCountdown > 0:
-				self.processPlague(iPlayer)
-
-
-	def preStopPlague(self, iPlayer):
-		iModifier = 0
-		for city in cities.owner(iPlayer).where(lambda city: city.hasBuilding(iPlague)):
-			if rand(100) > 30 - 5 * city.healthRate(False, 0) + iModifier:
-				city.setHasRealBuilding(iPlague, False)
-				iModifier += 5
-
-
-	def stopPlague(self, iPlayer):
-		data.players[iPlayer].iPlagueCountdown = -turns(iImmunity)
-		if data.players[iPlayer].bFirstContactPlague:
-			data.players[iPlayer].iPlagueCountdown = -turns(iImmunity-30)
-		data.players[iPlayer].bFirstContactPlague = False
-		for city in cities.owner(iPlayer):
+def preStopPlague(iPlayer):
+	iModifier = 0
+	for city in cities.owner(iPlayer).where(lambda city: city.hasBuilding(iPlague)):
+		if rand(100) > 30 - 5 * city.healthRate(False, 0) + iModifier:
 			city.setHasRealBuilding(iPlague, False)
+			iModifier += 5
 
 
-
-
-
-
-
-# make a singleton until we can destroy the class completely
-plague = Plague()
+def stopPlague(iPlayer):
+	data.players[iPlayer].iPlagueCountdown = -turns(iImmunity)
+	
+	if data.players[iPlayer].bFirstContactPlague:
+		data.players[iPlayer].iPlagueCountdown = -turns(iImmunity-30)
+		
+	data.players[iPlayer].bFirstContactPlague = False
+	
+	for city in cities.owner(iPlayer):
+		city.setHasRealBuilding(iPlague, False)
