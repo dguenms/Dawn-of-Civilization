@@ -13,10 +13,9 @@ def decayCommunications(iGameTurn):
 	else:
 		iPeriod = 12
 		
-	iPlayer = players.major().alive().periodic(iPeriod)
-	
-	if iPlayer and canDecay(iGameTurn, iPlayer):
-		decay(iPlayer)
+	for iPlayer in players.major().alive().periodic_iter(iPeriod):
+		if canDecay(iGameTurn, iPlayer):
+			decay(iPlayer)
 
 
 def canDecay(iGameTurn, iPlayer):

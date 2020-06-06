@@ -87,7 +87,7 @@ def direction(tile, direction_type):
 
 # TODO: test
 def weighted_random_entry(weighted_elements):
-	elements = reduce(sum, [elements * weight for elements, weight in weighted_elements.items()])
+	elements = reduce(sum, [[elements] * weight for element, weight in weighted_elements.items()])
 	return random_entry(elements)
 
 
@@ -621,7 +621,7 @@ def civ(identifier = None):
 
 
 # TODO: test
-def civs(iterable):
+def civs(*iterable):
 	return [civ(element) for element in iterable]
 
 
@@ -741,12 +741,17 @@ class EntityCollection(object):
 		if len(self) != 1:
 			raise Exception("Only excepted one element in %s, but got: %s" % (type(self), str(self)))
 		return self.first()
-		
+	
+	def empty(self):
+		return self.__class__([])
+	
+	# TODO: this changed, previously we returned a list
 	def sample(self, iSampleSize):
-		if not self: return []
+		if not self: return self.empty()
 		iSampleSize = min(iSampleSize, len(self))
-		if iSampleSize <= 0: return None
-		return random.sample(self.entities(), iSampleSize)
+		if iSampleSize <= 0: return self.empty()
+		return self.__class__(random.sample(self._keys, iSampleSize))
+		# return random.sample(self.entities(), iSampleSize)
 		
 	def buckets(self, *conditions):
 		rest = lambda e: not any([condition(e) for condition in conditions])
@@ -811,6 +816,15 @@ class EntityCollection(object):
 
 	def periodic(self, iInterval):
 		return periodic_from(self.entities(), iInterval)
+	
+	def periodic_iter(self, iInterval):
+		element = self.periodic(iInterval)
+		if element is None:
+			return ()
+		elif isinstance(element, tuple):
+			return element
+		else:
+			return (element,)
 
 	def divide(self, keys):
 		shuffled_entities = self.shuffle().entities()
@@ -1476,7 +1490,7 @@ class Infos:
 		return gc.getCommerceInfo(identifier)
 		
 	def promotions(self):
-		return InfoCollection(gc.getPromotionInfo, iNumPromotions)
+		return InfoCollection(gc.getPromotionInfo, gc.getNumPromotionInfos())
 		
 	def promotion(self, identifier):
 		return gc.getPromotionInfo(identifier)

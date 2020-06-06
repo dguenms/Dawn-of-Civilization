@@ -93,6 +93,9 @@ public:
 	int getEquator();
 	void updateCulture();
 
+	int maxStepDistance();
+	int maxPlotDistance();
+
 protected:
 	CvMap* m_pMap;
 };
