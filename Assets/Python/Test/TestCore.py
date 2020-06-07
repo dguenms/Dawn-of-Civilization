@@ -364,7 +364,13 @@ class TestInfos(TestCase):
 		self.assertEqual(actual_commerceinfo.getText(), expected_commerceinfo.getText())
 		
 	def test_promotions(self):
-		self.assertEqual(self.infos.promotions(), range(gc.getNumPromotionInfos()))
+		promotions = self.infos.promotions()
+	
+		assertType(self, promotions, InfoCollection)
+		self.assertEqual(len(promotions), gc.getNumPromotionInfos())
+		
+		for i, info in enumerate(promotions):
+			self.assertEqual(i, info)
 		
 	def test_promotion(self):
 		# given
@@ -1199,17 +1205,17 @@ class TestPlots(TestCase):
 		
 	def test_sample(self):
 		plots = self.plots.sample(3)
-		assertType(self, plots, list)
+		assertType(self, plots, Plots)
 		self.assertEqual(len(plots), 3)
-		self.assertEqual(len(set(plots)), 3)
 		
 	def test_sample_invalid_size(self):
 		plots = self.plots.sample(0)
-		self.assertEqual(plots, None)
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 0)
 		
 	def test_sample_empty(self):
 		plots = self.plots.where(lambda p: False).sample(3)
-		assertType(self, plots, list)
+		assertType(self, plots, Plots)
 		self.assertEqual(len(plots), 0)
 		
 	def test_buckets(self):
@@ -1987,37 +1993,33 @@ class TestUniqueUnitsAndBuildings(TestCase):
 class TestMasterAndVassal(TestCase):
 	
 	def test_master(self):
-		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(2, True, False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, True, False)
 		
-		self.assertEqual(master(1), 2)
+		self.assert_(gc.getTeam(0).isVassal(1))
 		
-		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(2, False, False)
+		self.assertEqual(master(0), 1)
+		
+		gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, False, False)
 		
 	def test_master_no_vassal(self):
 		self.assertEqual(master(1), None)
 		
 	def test_vassals(self):
 		gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, True, False)
-		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(2, True, False)
-		gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(1, True, False)
 		
 		vassal = vassals()
 		
 		assertType(self, vassal, DefaultDict)
-		self.assertEqual(vassal[1], [0, 2])
-		self.assertEqual(vassal[2], [1])
 		self.assertEqual(vassal[0], [])
+		self.assertEqual(vassal[1], [0])
 		
 		gc.getTeam(gc.getPlayer(0).getTeam()).setVassal(1, False, False)
-		gc.getTeam(gc.getPlayer(1).getTeam()).setVassal(2, False, False)
-		gc.getTeam(gc.getPlayer(2).getTeam()).setVassal(1, False, False)
 		
 	def test_vassals_no_vassals(self):
 		vassal = vassals()
 		assertType(self, vassal, DefaultDict)
 		self.assertEqual(vassal[0], [])
 		self.assertEqual(vassal[1], [])
-		self.assertEqual(vassal[2], [])
 
 
 class TestMinor(TestCase):
@@ -2970,6 +2972,64 @@ class TestSpread(TestCase):
 		self.assertEqual(actual, expected)
 
 
+class TestTechFactory(TestCase):
+
+	def setUp(self):
+		self.factory = TechFactory()
+
+	def test_of(self):
+		techs = self.factory.of(1, 2, 3)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [1, 2, 3])
+	
+	def test_column(self):
+		techs = self.factory.column(1)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [i for i in range(7)])
+	
+	def test_era(self):
+		techs = self.factory.era(0)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [i for i in range(21)])
+
+
+class TestTechCollection(TestCase):
+
+	def setUp(self):
+		self.techs = TechFactory().column(1)
+	
+	def test_including(self):
+		techs = self.techs.including(7)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [i for i in range(8)])
+		
+	def test_including_more(self):
+		techs = self.techs.including(7, 8, 9)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [i for i in range(10)])
+	
+	def test_without(self):
+		techs = self.techs.without(6)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [i for i in range(6)])
+	
+	def test_without_more(self):
+		techs = self.techs.without(4, 5, 6)
+		
+		assertType(self, techs, TechCollection)
+		self.assertEqual(list(techs.techs), [i for i in range(4)])
+	
+	def test_iter(self):
+		for i, tech in enumerate(self.techs):
+			self.assertEqual(i, tech)
+		
+
 test_cases = [
 	TestTurn, 
 	TestInfos, 
@@ -3018,6 +3078,8 @@ test_cases = [
 	TestSlot,
 	TestCivDict,
 	TestSpread,
+	TestTechFactory,
+	TestTechCollection,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

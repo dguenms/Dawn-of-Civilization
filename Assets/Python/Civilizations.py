@@ -1,30 +1,10 @@
 from Consts import *
 from RFCUtils import *
-from sets import Set
 from StoredData import data
 import Victory as vic
 from Religions import rel
+from Core import *
 from Events import events, handler
-
-### Class for easier tech specification ###
-
-# TODO: cover this in Core
-class Techs:
-
-	def __init__(self, techs=[], column=0, era=-1, exceptions=[]):
-		self.column = column
-		self.era = era
-		self.techs = techs
-		self.exceptions = exceptions
-		
-	def list(self):
-		lTechs = Set()
-		lTechs.update([i for i in range(iNumTechs) if infos.tech(i).getGridX() <= self.column])
-		lTechs.update([i for i in range(iNumTechs) if infos.tech(i).getEra() <= self.era])
-		lTechs.update(self.techs)
-		lTechs.difference_update(self.exceptions)
-		
-		return list(lTechs)
 
 ### Starting tech methods ###
 
@@ -32,7 +12,7 @@ def getScenarioTechs(iScenario, iPlayer):
 	iCivilization = civ(iPlayer)
 	for iScenarioType in reversed(range(iScenario+1)):
 		if iCivilization in lStartingTechs[iScenarioType]:
-			return lStartingTechs[iScenarioType][iCivilization].list()
+			return lStartingTechs[iScenarioType][iCivilization]
 			
 def getStartingTechs(iPlayer):
 	return getScenarioTechs(scenario(), iPlayer)
@@ -43,7 +23,7 @@ def initScenarioTechs(iScenario):
 		if dBirth[iCiv] > scenarioStartYear(): continue
 	
 		if iCiv in lStartingTechs[iScenario]:
-			initTechs(iPlayer, lStartingTechs[iScenario][iCiv].list())
+			initTechs(iPlayer, lStartingTechs[iScenario][iCiv])
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
@@ -62,7 +42,10 @@ def initTechs(iPlayer, lTechs):
 	pPlayer.setStartingEra(iCurrentEra)
 	
 def initTech(iPlayer, iTech):
-	team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
+	try:
+		team(iPlayer).setHasTech(iTech, True, iPlayer, False, False)
+	except Exception, e:
+		raise Exception("%s: iTech = %s" % (e, iTech))
 	
 	#events.fireEvent("techAcquired", iTech, player(iPlayer).getTeam(), iPlayer)
 
@@ -137,6 +120,8 @@ def initBirthYear(iPlayer):
 
 @handler("GameStart")
 def init():
+	setupStartingTechs()
+
 	for iPlayer in players.major():
 		initBirthYear(iPlayer)
 		initPlayerTechPreferences(iPlayer)
@@ -144,93 +129,98 @@ def init():
 
 ### Starting technologies ###
 
-lStartingTechs = [
-{
-iNative : 	Techs([iTanning, iMythology]),
-iEgypt :	Techs([iMining, iPottery, iAgriculture]),
-iBabylonia :	Techs([iPottery, iPastoralism, iAgriculture]),
-iHarappa : 	Techs([iMining, iPottery, iAgriculture]),
-iChina :	Techs([iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage]),
-iIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafaring]),
-iGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
-iPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
-iCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
-iPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
-iRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
-iMaya :	Techs([iProperty, iMasonry, iSmelting, iCeremony], column=1, exceptions=[iSailing]),
-iTamils :	Techs([iBloomery, iMathematics, iContract, iPriesthood], column=3),
-iEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
-iKorea :	Techs(column=5, exceptions=[iGeneralship, iEngineering, iCurrency]),
-iByzantium :	Techs([iArchitecture, iPolitics, iEthics], column=5),
-iJapan :	Techs([iNobility, iSteel, iArtisanry, iPolitics], column=5),
-iVikings : 	Techs([iNobility, iSteel, iArtisanry, iPolitics, iScholarship, iArchitecture, iGuilds], column=5),
-iTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedicine, iPhilosophy]),
-iArabia :	Techs([iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
-iTibet :	Techs([iNobility, iScholarship, iEthics], column=5),
-iIndonesia :	Techs([iEthics], column=5, exceptions=[iGeneralship]),
-iMoors :	Techs([iMachinery, iAlchemy, iTheology], column=6, exceptions=[iPolitics]),
-iSpain : 	Techs([iFeudalism, iAlchemy, iGuilds], column=6),
-iFrance :	Techs([iFeudalism, iTheology], column=6),
-iKhmer :	Techs([iNobility, iArchitecture, iArtisanry, iScholarship, iEthics], column=5),
-iEngland :	Techs([iFeudalism, iTheology], column=6),
-iHolyRome :	Techs([iFeudalism, iTheology], column=6),
-iRussia :	Techs([iFeudalism], column=6, exceptions=[iPolitics, iScholarship, iEthics]),
-iMali : 	Techs([iTheology], column=6),
-iPoland : 	Techs([iFeudalism, iFortification, iCivilService, iTheology], column=6),
-iPortugal :	Techs([iPatronage], column=7),
-iInca : 	Techs([iMathematics, iContract, iLiterature, iPriesthood], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
-iMongols :	Techs([iPaper, iCompass], column=7, exceptions=[iTheology]),
-iAztecs :	Techs([iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw], column=3, exceptions=[iSeafaring, iAlloys, iRiding, iShipbuilding]),
-iItaly : 	Techs([iCommune, iPaper, iCompass, iDoctrine], column=7),
-iMughals :	Techs([iCommune, iCropRotation, iDoctrine, iGunpowder], column=7),
-iOttomans :	Techs([iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder], column=7),
-iCongo : 	Techs([iMachinery, iCivilService, iTheology], column=6),
-iThailand : 	Techs(column=8, exceptions=[iCompass, iDoctrine, iCommune, iPatronage]),
-iIran : 	Techs([iHeritage, iFirearms], column=9),
-iNetherlands:Techs(column=10),
-iGermany :	Techs(column=11, exceptions=[iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning]),
-iAmerica :	Techs([iRepresentation, iChemistry], column=12),
-iArgentina :	Techs([iRepresentation, iNationalism], column=12),
-iMexico :	Techs([iRepresentation, iNationalism], column=12),
-iColombia :	Techs([iRepresentation, iNationalism], column=12),
-iBrazil :	Techs([iRepresentation, iNationalism, iBiology], column=12),
-iCanada :	Techs([iBallistics, iEngine, iRailroad, iJournalism], column=13),
-},
-{
-iIndependent:Techs(column=5),
-iIndependent2:Techs(column=5),
-iChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[iNobility]),
-iKorea :	Techs([iMachinery], column=6, exceptions=[iScholarship]),
-iByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
-iJapan :	Techs(column=6, exceptions=[iScholarship]),
-iVikings :	Techs([iGuilds], column=6),
-iTurks :	Techs([iNobility, iSteel], column=5, exceptions=[iNavigation, iMedicine, iPhilosophy]),
-},
-{
-iIndependent:Techs(column=10),
-iIndependent2:Techs(column=10),
-iChina :	Techs([iHorticulture, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics, iAcademia]),
-iIndia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration]),
-iTamils :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
-iIran :	Techs([iCombinedArms, iGeography, iUrbanPlanning, iHorticulture], column=10),
-iKorea :	Techs(column=10, exceptions=[iExploration, iOptics, iAcademia]),
-iJapan :	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
-iVikings :	Techs(column=11, exceptions=[iEconomics, iHorticulture]),
-iTurks :	Techs([iFirearms, iLogistics, iHeritage], column=9),
-iSpain :	Techs([iCombinedArms, iGeography, iHorticulture], column=10),
-iFrance :	Techs(column=11, exceptions=[iUrbanPlanning, iEconomics]),
-iEngland :	Techs(column=11, exceptions=[iUrbanPlanning, iHorticulture]),
-iHolyRome :	Techs([iCombinedArms, iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
-iRussia : 	Techs([iCombinedArms, iUrbanPlanning], column=10, exceptions=[iExploration, iOptics]),
-iPoland :	Techs(column=11, exceptions=[iEconomics, iGeography, iHorticulture, iUrbanPlanning]),
-iPortugal :	Techs([iGeography, iHorticulture], column=10),
-iOttomans :	Techs([iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration]),
-iMughals :	Techs([iUrbanPlanning, iHorticulture], column=10, exceptions=[iExploration, iOptics]),
-iThailand :	Techs(column=10, exceptions=[iExploration, iOptics]),
-iCongo :	Techs([iCartography, iJudiciary], column=8),
-iNetherlands:Techs(column=11, exceptions=[iHorticulture, iScientificMethod, iUrbanPlanning]),
-iGermany :	Techs(column=11, exceptions=[iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning]),
-}]
+lStartingTechs = []
+
+def setupStartingTechs():
+	global lStartingTechs
+
+	lStartingTechs = [
+	{
+		iNative : 		techs.of(iTanning, iMythology),
+		iEgypt :		techs.of(iMining, iPottery, iAgriculture),
+		iBabylonia :	techs.of(iPottery, iPastoralism, iAgriculture),
+		iHarappa : 		techs.of(iMining, iPottery, iAgriculture),
+		iChina :		techs.of(iTanning, iMining, iAgriculture, iPastoralism, iPottery, iMythology, iSmelting, iLeverage),
+		iIndia :		techs.column(2).including(iAlloys, iWriting, iCalendar).without(iSeafaring),
+		iGreece :		techs.column(2).including(iAlloys, iArithmetics, iWriting),
+		iPersia :		techs.column(3).including(iBloomery, iPriesthood).without(iSeafaring, iShipbuilding),
+		iCarthage :		techs.column(2).including(iAlloys, iWriting, iShipbuilding),
+		iPolynesia :	techs.of(iTanning, iMythology, iSailing, iSeafaring),
+		iRome : 		techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature).without(iRiding, iCalendar, iShipbuilding),
+		iMaya :			techs.column(1).including(iProperty, iMasonry, iSmelting, iCeremony).without(iSailing),
+		iTamils :		techs.column(3).including(iBloomery, iMathematics, iContract, iPriesthood),
+		iEthiopia :		techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood),
+		iKorea :		techs.column(5).without(iGeneralship, iEngineering, iCurrency),
+		iByzantium :	techs.column(5).including(iArchitecture, iPolitics, iEthics),
+		iJapan :		techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics),
+		iVikings : 		techs.column(5).including(iNobility, iSteel, iArtisanry, iPolitics, iScholarship, iArchitecture, iGuilds),
+		iTurks :		techs.column(5).including(iNobility, iSteel).column(5).without(iNavigation, iMedicine, iPhilosophy),
+		iArabia :		techs.column(6).including(iAlchemy, iTheology).without(iPolitics),
+		iTibet :		techs.column(5).including(iNobility, iScholarship, iEthics),
+		iIndonesia :	techs.column(5).including(iEthics).without(iGeneralship),
+		iMoors :		techs.column(6).including(iMachinery, iAlchemy, iTheology).without(iPolitics),
+		iSpain : 		techs.column(6).including(iFeudalism, iAlchemy, iGuilds),
+		iFrance :		techs.column(6).including(iFeudalism, iTheology),
+		iKhmer :		techs.column(6).including(iNobility, iArchitecture, iArtisanry, iScholarship, iEthics),
+		iEngland :		techs.column(6).including(iFeudalism, iTheology),
+		iHolyRome :		techs.column(6).including(iFeudalism, iTheology),
+		iRussia :		techs.column(6).including(iFeudalism).without(iPolitics, iScholarship, iEthics),
+		iMali : 		techs.column(6).including(iTheology),
+		iPoland : 		techs.column(6).including(iFeudalism, iFortification, iCivilService, iTheology),
+		iPortugal :		techs.column(7).including(iPatronage),
+		iInca : 		techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood).without(iSeafaring, iAlloys, iRiding, iShipbuilding),
+		iMongols :		techs.column(7).including(iPaper, iCompass).without(iTheology),
+		iAztecs :		techs.column(3).including(iMathematics, iContract, iLiterature, iPriesthood, iGeneralship, iAesthetics, iCurrency, iLaw).without(iSeafaring, iAlloys, iRiding, iShipbuilding),
+		iItaly : 		techs.column(7).including(iCommune, iPaper, iCompass, iDoctrine),
+		iMughals :		techs.column(7).including(iCommune, iCropRotation, iDoctrine, iGunpowder),
+		iOttomans :		techs.column(7).including(iCommune, iCropRotation, iPaper, iDoctrine, iGunpowder),
+		iCongo : 		techs.column(6).including(iMachinery, iCivilService, iTheology),
+		iThailand : 	techs.column(8).without(iCompass, iDoctrine, iCommune, iPatronage),
+		iIran : 		techs.column(9).including(iHeritage, iFirearms),
+		iNetherlands:	techs.column(10),
+		iGermany :		techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
+		iAmerica :		techs.column(12).including(iRepresentation, iChemistry),
+		iArgentina :	techs.column(12).including(iRepresentation, iNationalism),
+		iMexico :		techs.column(12).including(iRepresentation, iNationalism),
+		iColombia :		techs.column(12).including(iRepresentation, iNationalism),
+		iBrazil :		techs.column(12).including(iRepresentation, iNationalism, iBiology),
+		iCanada :		techs.column(13).including(iBallistics, iEngine, iRailroad, iJournalism),
+	},
+	{
+		iIndependent:	techs.column(5),
+		iIndependent2:	techs.column(5),
+		iChina :		techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility),
+		iKorea :		techs.column(6).including(iMachinery).without(iScholarship),
+		iByzantium :	techs.column(6).including(iFortification,iMachinery, iCivilService),
+		iJapan :		techs.column(6).without(iScholarship),
+		iVikings :		techs.column(6).including(iGuilds),
+		iTurks :		techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy),
+	},
+	{
+		iIndependent:	techs.column(10),
+		iIndependent2:	techs.column(10),
+		iChina :		techs.column(10).including(iHorticulture, iUrbanPlanning).without(iExploration, iOptics, iAcademia),
+		iIndia : 		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration),
+		iTamils :		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
+		iIran :			techs.column(10).including(iCombinedArms, iGeography, iUrbanPlanning, iHorticulture),
+		iKorea :		techs.column(10).without(iExploration, iOptics, iAcademia),
+		iJapan :		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
+		iVikings :		techs.column(11).without(iEconomics, iHorticulture),
+		iTurks :		techs.column(9).including(iFirearms, iLogistics, iHeritage),
+		iSpain :		techs.column(10).including(iCombinedArms, iGeography, iHorticulture),
+		iFrance :		techs.column(11).without(iUrbanPlanning, iEconomics),
+		iEngland :		techs.column(11).without(iUrbanPlanning, iHorticulture),
+		iHolyRome :		techs.column(10).including(iCombinedArms, iUrbanPlanning, iHorticulture).without(iExploration),
+		iRussia : 		techs.column(10).including(iCombinedArms, iUrbanPlanning).without(iExploration, iOptics),
+		iPoland :		techs.column(11).without(iEconomics, iGeography, iHorticulture, iUrbanPlanning),
+		iPortugal :		techs.column(10).including(iGeography, iHorticulture),
+		iOttomans :		techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration),
+		iMughals :		techs.column(10).including(iUrbanPlanning, iHorticulture).without(iExploration, iOptics),
+		iThailand :		techs.column(10).without(iExploration, iOptics),
+		iCongo :		techs.column(8).including(iCartography, iJudiciary),
+		iNetherlands:	techs.column(11).without(iHorticulture, iScientificMethod, iUrbanPlanning),
+		iGermany :		techs.column(11).without(iGeography, iCivilLiberties, iHorticulture, iUrbanPlanning),
+	}]
 
 ### Tech Preferences ###
 

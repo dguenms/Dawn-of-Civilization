@@ -15,6 +15,7 @@ import BugCore
 import random
 
 from traceback import extract_stack
+from sets import Set
 
 
 gc = CyGlobalContext()
@@ -650,7 +651,10 @@ class EntityCollection(object):
 		return key
 
 	def __init__(self, keys):
-		self._keys = list(keys)
+		try:
+			self._keys = list(keys)
+		except Exception, e:
+			raise Exception("%s: %s" % (e, type(keys)))
 		
 	def __getitem__(self, index):
 		return self.entities()[index]
@@ -900,19 +904,13 @@ class PlotFactory:
 	def core(self, identifier):
 		iPeriod = player(identifier).getPeriod()
 		if iPeriod in dPeriodCoreArea:
-			try:
-				return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
-			except Exception, e:
-				raise Exception("Could not find %d (type %s) in dPeriodCoreArea, dPeriodCoreAreaExceptions" % (iPeriod, type(iPeriod)))
+			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.area(dCoreArea, dCoreAreaExceptions, identifier)
 
 	def normal(self, identifier):
 		iPeriod = player(identifier).getPeriod()
 		if iPeriod in dPeriodNormalArea:
-			try:
-				return self.area(dPeriodNormalArea, dPeriodNormalAreaExceptions, iPeriod)
-			except Exception, e:
-				raise Exception("Could not find %d (type %s) in dPeriodNormalArea, dPeriodNormalAreaExceptions" % (iPeriod, type(iPeriod)))
+			return self.area(dPeriodNormalArea, dPeriodNormalAreaExceptions, iPeriod)
 		return self.area(dNormalArea, dNormalAreaExceptions, identifier)
 
 	def broader(self, identifier):
@@ -1016,6 +1014,12 @@ class Plots(EntityCollection):
 		
 	def passable(self):
 		return self.where(lambda p: not p.isImpassable())
+		
+	def lake(self):
+		return self.where(lambda p: p.isLake())
+	
+	def sea(self):
+		return self.water().where(lambda p: not p.isLake())
 
 		
 class CitiesCorner:
@@ -1405,15 +1409,28 @@ class Turn(int):
 
 class InfoCollection(EntityCollection):
 
-	def __init__(self, infoClass, iNumInfos):
-		super(InfoCollection, self).__init__(range(iNumInfos))
+	@staticmethod
+	def type(infoClass, iNumInfos):
+		return InfoCollection(range(iNumInfos), infoClass)
+
+	def __init__(self, infos, infoClass):
+		super(InfoCollection, self).__init__(infos)
 		self.info_class = infoClass
+		
+	def where(self, condition):
+		return self.__class__([k for k in self._keys if condition(self._factory(k))], self.info_class)
 	
 	def __contains__(self, item):
-		return item in self._keys()
+		return item in self._keys
 	
 	def __str__(self):
-		return ','.join([self.info_class(i).getText() for i in self])
+		return ','.join([self._factory(i).getText() for i in self])
+		
+	def _factory(self, key):
+		return self.info_class(key)
+	
+	def entities(self):
+		return self._keys
 		
 
 class Infos:
@@ -1461,6 +1478,9 @@ class Infos:
 		
 	def tech(self, iTech):
 		return gc.getTechInfo(iTech)
+	
+	def techs(self):
+		return InfoCollection.type(gc.getTechInfo, iNumTechs)
 		
 	def bonus(self, identifier):
 		if isinstance(identifier, CyPlot):
@@ -1475,7 +1495,7 @@ class Infos:
 		return gc.getHandicapInfo(game.getHandicapType())
 		
 	def corporations(self):
-		return InfoCollection(gc.getCorporationInfo, iNumCorporations)
+		return InfoCollection.type(gc.getCorporationInfo, iNumCorporations)
 		
 	def corporation(self, identifier):
 		return gc.getCorporationInfo(identifier)
@@ -1490,7 +1510,7 @@ class Infos:
 		return gc.getCommerceInfo(identifier)
 		
 	def promotions(self):
-		return InfoCollection(gc.getPromotionInfo, gc.getNumPromotionInfos())
+		return InfoCollection.type(gc.getPromotionInfo, gc.getNumPromotionInfos())
 		
 	def promotion(self, identifier):
 		return gc.getPromotionInfo(identifier)
@@ -1579,9 +1599,45 @@ class PeriodOffsets(object):
 			self._invalidate()
 	
 	def _invalidate(self):
-		print "invalidate"
 		self.turn = turn()
 		self.offsets = defaultdict({}, 0)
+
+
+class TechFactory(object):
+
+	def of(self, *techs):
+		return TechCollection().including(*techs)
+
+	def era(self, iEra):
+		return TechCollection().era(iEra)
+		
+	def column(self, iColumn):
+		return TechCollection().column(iColumn)
+
+
+class TechCollection(object):
+
+	def __init__(self):
+		self.techs = []
+	
+	def era(self, iEra):
+		self.techs += [i for i in infos.techs().where(lambda tech: tech.getEra() <= iEra) if i not in self.techs]
+		return self
+	
+	def column(self, iColumn):
+		self.techs += [i for i in infos.techs().where(lambda tech: tech.getGridX() <= iColumn) if i not in self.techs]
+		return self
+	
+	def without(self, *techs):
+		self.techs = [i for i in self.techs if i not in techs]
+		return self
+	
+	def including(self, *techs):
+		self.techs += [i for i in techs if i not in self.techs]
+		return self
+	
+	def __iter__(self):
+		return iter(self.techs)
 
 
 iBarbarianPlayer = slot(iBarbarian)
@@ -1591,6 +1647,7 @@ plots = PlotFactory()
 cities = CityFactory()
 units = UnitFactory()
 players = PlayerFactory()
+techs = TechFactory()
 infos = Infos()
 period_offsets = PeriodOffsets()
 

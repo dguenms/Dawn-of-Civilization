@@ -208,7 +208,7 @@ def isConquered(tConquest):
 
 	iNumMinorCities = 0
 	for city in cities.start(tTL).end(tBR):
-		if city.getOwner() in players.minor(): iNumMinorCities += 1 # TODO: make sure this includes barbarian
+		if city.getOwner() in players.minor(): iNumMinorCities += 1
 		elif city.getOwner() != iPlayer: return False
 		
 	if 2 * iNumMinorCities > len(lAreaCities): return False
