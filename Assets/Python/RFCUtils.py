@@ -252,10 +252,7 @@ def cultureManager(tCityPlot, iCulturePercent, iNewOwner, iOldOwner, bBarbarian2
 			plot.changeCulture(iOldOwner, -iConvertedCulture / 3, True)
 			
 			if bAlwaysOwnPlots:
-				try:
-					plot.setOwner(iNewOwner)
-				except Exception, e:
-					raise Exception("plot.setOwner(%d): %s" % (iNewOwner, e))
+				plot.setOwner(iNewOwner)
 
 # used: CvRFCEventHandler
 def spreadMajorCulture(iMajorCiv, tPlot):
@@ -295,19 +292,13 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot.changeCulture(iPlayer, iTotalConvertedCulture, True)
 	
 	if bOwner:
-		try:
-			plot.setOwner(iPlayer)
-		except Exception, e:
-			raise Exception("plot.setOwner(%d): %s" % (iPlayer, e)) 
+		plot.setOwner(iPlayer)
 		
 # used: RFCUtils
 def convertTemporaryCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot = core.plot(tPlot)
 	if not plot.isOwned() or not plot.isCore(plot.getOwner()):
-		try:
-			plot.setCultureConversion(iPlayer, iPercent)
-		except Exception, e:
-			raise Exception("plot.setCultureConversion(%d, %d): %s" % (iPlayer, iPercent, e))
+		plot.setCultureConversion(iPlayer, iPercent)
 	
 		if bOwner:
 			plot.setOwner(iPlayer)
@@ -617,18 +608,11 @@ def getColonialTargets(iPlayer, bEmpty=False):
 	cityPlots, emptyPlots = plots.of(lPlots).split(lambda p: p.isCity())
 	targetCities = cityPlots.notowner(iPlayer).sample(iNumCities)
 	
-	if not isinstance(targetCities, Plots):
-		raise Exception("is not Plots: %s" % type(targetCities))
-	
 	if bEmpty:
 		targetPlots = emptyPlots.where_surrounding(lambda p: not p.isCity()).sample(iNumCities - len(targetCities))
 		if targetPlots:
-			if not isinstance(targetCities + targetPlots, Plots):
-				raise Exception("is not Plots: %s" % type(targetCities + targetPlots))
 			return targetCities + targetPlots
 	
-	if not isinstance(targetCities, Plots):
-		raise Exception("is not Plots: %s" % type(targetCities))
 	return targetCities
 	
 # used: RFCUtils
@@ -1315,4 +1299,4 @@ def setCivilization(iPlayer, iNewCivilization):
 # used: RiseAndFall, History
 def findSeaPlots(tile, iRange, iCiv):
 	"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
-	return plots.surrounding(tile, radius=iRange).water().where(lambda p: not p.isUnit()).where(lambda p: p.getOwner() in [-1, slot(iCiv)]).random()
+	return plots.surrounding(tile, radius=iRange).sea().where(lambda p: not p.isUnit()).where(lambda p: p.getOwner() in [-1, slot(iCiv)]).random()
