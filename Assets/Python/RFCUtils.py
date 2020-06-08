@@ -338,7 +338,6 @@ def relocateGarrisons(tCityPlot, iOldOwner):
 		unit.kill(False, iOldOwner)
 			
 # used: RiseAndFall
-# TODO: replace plots.of
 def removeCoreUnits(iPlayer):
 	for plot in plots.birth(iPlayer):
 		if plot.isCity():
@@ -497,11 +496,12 @@ def clearCatapult(iPlayer):
 		plot.setRevealed(iPlayer, False, True, -1)
 
 # used: RFCUtils, RiseAndFall
-# TODO: remove plots.of
+# TODO: remove entire function and call cities.core directly
 def getCitiesInCore(iPlayer):
 	return cities.core(iPlayer)
 	
 # used: CvRFCEventHandler, RFCUtils, Stability
+# TODO: remove entire function and call cities.core.owner directly
 def getOwnedCoreCities(iPlayer):
 	return getCitiesInCore(iPlayer).owner(iPlayer)
 
@@ -534,7 +534,7 @@ def colonialConquest(iPlayer, tPlot):
 		team(iPlayer).declareWar(target.getID(), True, WarPlanTypes.WARPLAN_TOTAL)
 		
 	# independents too so the conquerors don't get pushed out in case the target collapses
-	# TODO: instead properly establish war against independents on collapse
+	# TODO: instead properly establish war against independents on collapse - new custom event type
 	for iMinor in players.civs([iIndependent, iIndependent2]):
 		if not team(iPlayer).isAtWar(iMinor):
 			team(iPlayer).declareWar(iMinor, True, WarPlanTypes.WARPLAN_LIMITED)
@@ -778,10 +778,6 @@ def completeCityFlip(tPlot, iPlayer, iOwner, iCultureChange, bBarbarianDecay = T
 	plot.setRevealed(iPlayer, True, True, -1)
 	
 	return city(tPlot)
-
-# TODO: unused but should be
-def isPastBirth(iPlayer):
-	return year() >= year(dBirth[iPlayer])
 	
 # used: Congresses, Stability
 def isNeighbor(iPlayer1, iPlayer2):
