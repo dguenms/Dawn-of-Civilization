@@ -189,7 +189,7 @@ def onRevolution(iPlayer):
 def onPlayerChangeStateReligion(iPlayer):
 	checkStability(iPlayer)
 
-# TODO: palace moved event?
+# TODO: palace moved event? -> onCapitalMoved
 @handler("buildingBuilt")
 def onPalaceMoved(city, iBuilding):
 	if iBuilding == iPalace:

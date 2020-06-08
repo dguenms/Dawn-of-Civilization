@@ -2013,7 +2013,6 @@ class RiseAndFall:
 			makeUnit(iPlayer, iCrossbowman, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE)
 			makeUnits(iPlayer, iSwordsman, tPlot, 4)
 			
-			# TODO: should be isCivEnabled
 			if data.isCivEnabled(iMoors):
 				if not player(iMoors).isHuman():
 					makeUnits(iPlayer, iLancer, tPlot, 2)

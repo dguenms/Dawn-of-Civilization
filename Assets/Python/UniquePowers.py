@@ -149,7 +149,7 @@ def resetMongolPower(bWar, iTeam, iOtherTeam):
 			city.setMongolUP(False)
 
 
-# TODO: add handler for custom event here
+# TODO: add handler for custom event here -> onImmigration
 def canadianUP(city):
 	iPopulation = 5 * city.getPopulation() / 2
 	

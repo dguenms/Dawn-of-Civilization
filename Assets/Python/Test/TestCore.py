@@ -750,6 +750,27 @@ class TestPlayers(TestCase):
 		actual_civs = self.players.asCivs()
 		
 		self.assertEqual(set(actual_civs), set(expected_civs))
+		
+	def test_techs(self):
+		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iWriting, True, 0, False, False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iAlloys, True, 0, False, False)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setHasTech(iWriting, True, 1, False, False)
+		
+		has_writing = self.players.tech(iWriting)
+		has_alloys = self.players.tech(iAlloys)
+		
+		assertType(self, has_writing, Players)
+		assertType(self, has_alloys, Players)
+		
+		has_writing_ids = [i for i in has_writing]
+		has_alloys_ids = [i for i in has_alloys]
+		
+		self.assertEqual(has_writing_ids, [0, 1])
+		self.assertEqual(has_alloys_ids, [0])
+		
+		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iWriting, False, 0, False, False)
+		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iAlloys, False, 0, False, False)
+		gc.getTeam(gc.getPlayer(1).getTeam()).setHasTech(iWriting, False, 0, False, False)
 
 			
 class TestPlayerFactory(TestCase):
@@ -1112,6 +1133,36 @@ class TestPlots(TestCase):
 		
 		assertType(self, distance, int)
 		self.assertEqual(distance, 1)
+	
+	def test_owner(self):
+		# given
+		gc.getMap().plot(1, 1).setOwner(0)
+		
+		# when
+		plots = self.plots.owner(0)
+		
+		# then
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 1)
+		self.assert_((1, 1) in plots)
+		
+		# cleanup
+		gc.getMap().plot(1, 1).setOwner(-1)
+		
+	def test_owner_civ(self):
+		# given
+		gc.getMap().plot(1, 1).setOwner(0)
+		
+		# when
+		plots = self.plots.owner(iEgypt)
+		
+		# then
+		assertType(self, plots, Plots)
+		self.assertEqual(len(plots), 1)
+		self.assert_((1, 1) in plots)
+		
+		# cleanup
+		gc.getMap().plot(1, 1).setOwner(-1)
 		
 	def test_notowner(self):
 		# given
@@ -1306,6 +1357,9 @@ class TestPlots(TestCase):
 			
 	def test_count(self):
 		self.assertEqual(self.plots.count(), 9)
+		
+	def test_count_condition(self):
+		self.assertEqual(self.plots.count(lambda p: p.getX() == 0), 3)
 		
 	def test_maximum(self):
 		max = self.plots.maximum(lambda p: p.getX() + p.getY())
@@ -1596,6 +1650,25 @@ class TestPlotFactory(TestCase):
 	def test_respawnCapital(self):
 		plot = self.factory.respawnCapital(iEgypt)
 		assertType(self, plot, CyPlot)
+		
+	def test_city_radius(self):
+		gc.getPlayer(0).found(70, 30)
+		city = gc.getMap().plot(70, 30).getPlotCity()
+		
+		expected_plots = sorted([
+					  (69, 32), (70, 32), (71, 32),
+			(68, 31), (69, 31), (70, 31), (71, 31), (72, 31),
+			(68, 30), (69, 30), (70, 30), (71, 30), (72, 30),
+			(68, 29), (69, 29), (70, 29), (71, 29), (72, 29),
+			          (69, 28), (70, 28), (71, 28)
+		])
+		
+		actual_plots = self.factory.city_radius(city)
+		sorted_actual_plots = sorted([(plot.getX(), plot.getY()) for plot in actual_plots])
+		
+		self.assertEqual(sorted_actual_plots, expected_plots)
+		
+		city.kill()
 
 class TestCities(TestCase):
 
@@ -2981,19 +3054,19 @@ class TestTechFactory(TestCase):
 		techs = self.factory.of(1, 2, 3)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [1, 2, 3])
+		self.assertEqual(techs.techs(), [1, 2, 3])
 	
 	def test_column(self):
 		techs = self.factory.column(1)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [i for i in range(7)])
+		self.assertEqual(techs.techs(), [i for i in range(7)])
 	
 	def test_era(self):
 		techs = self.factory.era(0)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [i for i in range(21)])
+		self.assertEqual(techs.techs(), [i for i in range(21)])
 
 
 class TestTechCollection(TestCase):
@@ -3005,29 +3078,146 @@ class TestTechCollection(TestCase):
 		techs = self.techs.including(7)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [i for i in range(8)])
+		self.assertEqual(techs.techs(), [i for i in range(8)])
 		
 	def test_including_more(self):
 		techs = self.techs.including(7, 8, 9)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [i for i in range(10)])
+		self.assertEqual(techs.techs(), [i for i in range(10)])
 	
 	def test_without(self):
 		techs = self.techs.without(6)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [i for i in range(6)])
+		self.assertEqual(techs.techs(), [i for i in range(6)])
 	
 	def test_without_more(self):
 		techs = self.techs.without(4, 5, 6)
 		
 		assertType(self, techs, TechCollection)
-		self.assertEqual(list(techs.techs), [i for i in range(4)])
+		self.assertEqual(techs.techs(), [i for i in range(4)])
 	
 	def test_iter(self):
 		for i, tech in enumerate(self.techs):
 			self.assertEqual(i, tech)
+
+
+class TestMatching(TestCase):
+
+	def setUp(self):
+		self.even = lambda x: x % 2 == 0
+
+	def test_true_one(self):
+		result = matching(self.even, 2)
+		
+		self.assertEqual(result, 2)
+		
+	def test_false_one(self):
+		result = matching(self.even, 1)
+		
+		self.assertEqual(result, None)
+		
+	def test_empty(self):
+		result = matching(self.even)
+		
+		self.assertEqual(result, None)
+	
+	def test_true_first(self):
+		result = matching(self.even, 2, 1, 3)
+		
+		self.assertEqual(result, 2)
+	
+	def test_true_second(self):
+		result = matching(self.even, 1, 2, 3)
+		
+		self.assertEqual(result, 2)
+		
+	def test_true_none(self):
+		result = matching(self.even, 1, 3, 5)
+		
+		self.assertEqual(result, None)
+
+
+class TestDirection(TestCase):
+
+	def test_cardinal(self):
+		tile = direction((2, 2), DirectionTypes.DIRECTION_NORTH)
+		
+		self.assertEqual((tile.getX(), tile.getY()), (2, 3))
+		
+	def test_non_cardinal(self):
+		tile = direction((2, 2), DirectionTypes.DIRECTION_NORTHEAST)
+		
+		self.assertEqual((tile.getX(), tile.getY()), (3, 3))
+	
+	def test_plot(self):
+		plot = gc.getMap().plot(2, 2)
+		tile = direction(plot, DirectionTypes.DIRECTION_NORTH)
+		
+		self.assertEqual((tile.getX(), tile.getY()), (2, 3))
+
+
+class TestAt(TestCase):
+
+	def test_same_tuples(self):
+		result = at((0, 0), (0, 0))
+		
+		self.assertEqual(result, True)
+	
+	def test_different_tuples(self):
+		result = at((0, 0), (0, 1))
+		
+		self.assertEqual(result, False)
+		
+	def test_same_plots(self):
+		result = at(gc.getMap().plot(0, 0), gc.getMap().plot(0, 0))
+		
+		self.assertEqual(result, True)
+		
+	def test_different_plots(self):
+		result = at(gc.getMap().plot(0, 0), gc.getMap().plot(0, 1))
+		
+		self.assertEqual(result, False)
+	
+	def test_same_mismatch(self):
+		result = at(gc.getMap().plot(0, 0), (0, 0))
+		
+		self.assertEqual(result, True)
+		
+	def test_different_mismatch(self):
+		result = at(gc.getMap().plot(0, 0), (0, 1))
+		
+		self.assertEqual(result, False)
+
+
+class TestCivs(TestCase):
+
+	def test_one(self):
+		lCivs = civs(12)
+		
+		assertType(self, lCivs, list)
+		self.assertEqual(len(lCivs), 1)
+		
+		self.assertType(self, lCivs[0], Civ)
+		self.assertEqual(lCivs[0], 12)
+	
+	def test_more(self):
+		lCivs = civs(12, 4, 18)
+		
+		assertType(self, lCivs, list)
+		self.assertEqual(len(lCivs), 3)
+		
+		for i, iCiv in enumerate([12, 4, 18]):
+			assertType(self, lCivs[i], Civ)
+			assertType(lCivs[i], iCiv)
+	
+	def test_none(self):
+		lCivs = civs()
+		
+		assertType(self, lCivs, list)
+		self.assertEqual(lCivs, 0)
+	
 		
 
 test_cases = [
@@ -3080,6 +3270,10 @@ test_cases = [
 	TestSpread,
 	TestTechFactory,
 	TestTechCollection,
+	TestMatching,
+	TestDirection,
+	TestAt,
+	TestCiv,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])
