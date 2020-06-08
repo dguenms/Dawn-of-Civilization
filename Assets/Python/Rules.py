@@ -119,7 +119,7 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 ### CITY ACQUIRED AND KEPT ###
 
 
-# TODO: maybe new event capitalfounded/acquired ?
+# TODO: maybe new event capitalfounded/acquired ? -> firstcity
 @handler("cityAcquiredAndKept")
 def createStartingWorkersOnCapitalAcquired(iPlayer, city):
 	createStartingWorkers(iPlayer, city)
@@ -240,7 +240,7 @@ def moveSlavesToNewWorld(city, unit):
 ### BUILDING BUILT ###
 
 
-# TODO: own event for palace built
+# TODO: own event for palace built -> capitalmoved
 @handler("buildingBuilt")
 def resetAdminCenterOnPalaceBuilt(city, iBuilding):
 	if iBuilding == iPalace and city.isHasRealBuilding(iAdministrativeCenter):
@@ -383,6 +383,6 @@ def immigration():
 		message(iSourcePlayer, 'TXT_KEY_UP_EMIGRATION', sourceCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=sourceCity)
 		message(iTargetPlayer, 'TXT_KEY_UP_IMMIGRATION', targetCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=targetCity)
 
-		# TODO: fire on immigration event
+		# TODO: fire on immigration event -> add custom onImmigration event, handle this in UniquePowers
 		if civ(iTargetPlayer) == iCanada:
 			UniquePowers.canadianUP(targetCity)

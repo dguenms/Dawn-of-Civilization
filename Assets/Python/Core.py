@@ -75,24 +75,20 @@ def periodic(interval):
 	return result 
 
 
-# TODO: test
 def matching(condition, *elements):
 	return next(element for element in elements if condition(element))
 
 
-# TODO: test
 def direction(tile, direction_type):
 	x, y = location(tile)
 	return plotDirection(x, y, direction_type)
 
 
-# TODO: test
 def weighted_random_entry(weighted_elements):
 	elements = reduce(sum, [[elements] * weight for element, weight in weighted_elements.items()])
 	return random_entry(elements)
 
 
-# TODO: test
 def at(location1, location2):
 	return location(location1) == location(location2)
 
@@ -621,7 +617,6 @@ def civ(identifier = None):
 	return Civ(player(identifier).getCivilizationType())
 
 
-# TODO: test
 def civs(*iterable):
 	return [civ(element) for element in iterable]
 
@@ -749,13 +744,11 @@ class EntityCollection(object):
 	def empty(self):
 		return self.__class__([])
 	
-	# TODO: this changed, previously we returned a list
 	def sample(self, iSampleSize):
 		if not self: return self.empty()
 		iSampleSize = min(iSampleSize, len(self))
 		if iSampleSize <= 0: return self.empty()
 		return self.__class__(random.sample(self._keys, iSampleSize))
-		# return random.sample(self.entities(), iSampleSize)
 		
 	def buckets(self, *conditions):
 		rest = lambda e: not any([condition(e) for condition in conditions])
@@ -790,7 +783,6 @@ class EntityCollection(object):
 		except TypeError, e:
 			raise TypeError("%s, was: %s" % (e, iLimit))
 	
-	# TODO: this changed, test again
 	def count(self, condition = lambda x: True):
 		return count(self, condition)
 		
@@ -885,8 +877,10 @@ class PlotFactory:
 		inside = self.surrounding(*args, **{'radius': radius-1})
 		return circle.without(inside)
 	
-	# TODO: test
 	def city_radius(self, city):
+		if not city or city.isNone():
+			raise TypeError("city object is None")
+	
 		return Plots([location(city.getCityIndexPlot(i)) for i in range(21)])
 
 	def owner(self, iPlayer):
@@ -985,12 +979,10 @@ class Plots(EntityCollection):
 		
 	def closest_distance(self, *args):
 		return self._closest(*args).value
-		
-	# TODO test iPlayer == Civ
+	
 	def owner(self, iPlayer):
 		return self.where(lambda p: owner(p, iPlayer))
-		
-	# TODO test iPlayer == Civ
+	
 	def notowner(self, iPlayer):
 		return self.where(lambda p: not owner(p, iPlayer))
 	
@@ -1346,7 +1338,6 @@ class Players(EntityCollection):
 	def asCivs(self):
 		return [civ(p) for p in self.entities()]
 	
-	# TODO: test
 	def tech(self, iTech):
 		return self.where(lambda p: team(p).isHasTech(iTech))
 		
@@ -1618,26 +1609,36 @@ class TechFactory(object):
 class TechCollection(object):
 
 	def __init__(self):
-		self.techs = []
+		self.included = []
+		self.excluded = []
+		self.iEra = -1
+		self.iColumn = 0
 	
 	def era(self, iEra):
-		self.techs += [i for i in infos.techs().where(lambda tech: tech.getEra() <= iEra) if i not in self.techs]
+		self.iEra = iEra
 		return self
 	
 	def column(self, iColumn):
-		self.techs += [i for i in infos.techs().where(lambda tech: tech.getGridX() <= iColumn) if i not in self.techs]
+		self.iColumn = iColumn
 		return self
 	
 	def without(self, *techs):
-		self.techs = [i for i in self.techs if i not in techs]
+		self.excluded += [i for i in techs if i not in self.excluded]
 		return self
 	
 	def including(self, *techs):
-		self.techs += [i for i in techs if i not in self.techs]
+		self.included += [i for i in techs if i not in self.included]
 		return self
+		
+	def techs(self):
+		techs = [i for i in infos.techs().where(lambda tech: tech.getEra() <= self.iEra or tech.getGridX() <= self.iColumn)]
+		techs += [i for i in self.included if i not in techs]
+		techs = [i for i in techs if i not in self.excluded]
+		
+		return techs
 	
 	def __iter__(self):
-		return iter(self.techs)
+		return iter(self.techs())
 
 
 iBarbarianPlayer = slot(iBarbarian)
