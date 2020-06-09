@@ -11,6 +11,7 @@ from RFCUtils import *
 from StoredData import data #edead
 
 from Events import handler
+from Locations import *
 from Core import *
 
 # globals
@@ -18,27 +19,6 @@ gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
 # initialise coordinates
-
-tJerusalem = (73, 38)
-tJewishTL = (68, 34)
-tJewishBR = (80, 42)
-tVaranasiTL = (91, 37)
-tVaranasiBR = (94, 40)
-tBodhgayaTL = (92, 38)
-tBodhgayaBR = (95, 40)
-tBuddhistTL = (87, 33)
-tBuddhistBR = (102, 44)
-tHenanTL = (101, 43)
-tHenanBR = (104, 46)
-tSEAsiaTL = (97, 31)
-tSEAsiaBR = (107, 46)
-tAsiaTL = (83, 28)
-tAsiaBR = (1, 66)
-tEuropeTL = (48, 33)
-tEuropeBR = (72, 65)
-tQufuTL = (102, 44)
-tQufuBR = (106, 46)
-tMecca = (75, 33)
 
 dCatholicPreference = CivDict({
 iEgypt		: 80,

@@ -56,9 +56,7 @@ from Consts import *
 from Areas import *
 from RFCUtils import *
 from RFCUtils import canEverRespawn as canEverRespawnUtils
-import Victory as vic
 import CityNameManager as cnm
-import Congresses as cong
 import RiseAndFall as rnf
 
 from Core import *
@@ -912,13 +910,13 @@ def getUHVTileInfo(argsList):
 			return 3
 			
 	elif iCiv == iIran:
-		if plot in plots.start(vic.tSafavidMesopotamiaTL).end(vic.tSafavidMesopotamiaBR):
+		if plot in plots.rectangle(tSafavidMesopotamia):
 			return 4
 		
-		if plot in plots.start(vic.tTransoxaniaTL).end(vic.tTransoxaniaBR):
+		if plot in plots.rectangle(tTransoxiana):
 			return 5
 		
-		if plot in plots.start(vic.tNWIndiaTL).end(vic.tNWIndiaBR).without(vic.lNWIndiaExceptions):
+		if plot in plots.rectangle(tNorthWestIndia).without(lNorthWestIndiaExceptions):
 			return 6
 			
 	elif iCiv == iPhoenicia:
@@ -929,20 +927,20 @@ def getUHVTileInfo(argsList):
 			return 8
 			
 	elif iCiv == iItaly:
-		if plot in plots.start(vic.tMediterraneanTL).end(vic.tMediterraneanBR).without(vic.tMediterraneanExceptions) and plot.isCoastalLand():
+		if plot in plots.rectangle(tMediterranean).without(lMediterraneanExceptions) and plot.isCoastalLand():
 			return 7
 			
 	elif iCiv == iRome:
 		if (x, y) in plots.normal(iSpain):
 			return 8
 				
-		if plot in plots.rectangle(vic.tFranceTL, dNormalArea[iFrance][1]):
+		if plot in plots.rectangle(tGaul):
 			return 9
 		
 		if (x, y) in plots.core(iEngland):
 			return 10
 		
-		if plot in plots.rectangle(vic.tCarthageTL, vic.tCarthageBR):
+		if plot in plots.rectangle(tCarthage):
 			return 11
 		
 		if (x, y) in plots.core(iByzantium):
@@ -952,22 +950,22 @@ def getUHVTileInfo(argsList):
 			return 13
 
 	elif iCiv == iJapan:
-		if plot in plots.start(vic.tKoreaTL).end(vic.tKoreaBR):
+		if plot in plots.rectangle(tKorea):
 			return 14
 		
-		if plot in plots.start(vic.tManchuriaTL).end(vic.tManchuriaBR):
+		if plot in plots.rectangle(tManchura):
 			return 15
 		
-		if plot in plots.start(vic.tChinaTL).end(vic.tChinaBR):
+		if plot in plots.rectangle(tChina):
 			return 16
 		
-		if plot in plots.start(vic.tIndochinaTL).end(vic.tIndochinaBR).without(vic.tIndochinaExceptions):
+		if plot in plots.rectangle(tIndochina).without(lIndochinaExceptions):
 			return 17
 		
-		if plot in plots.start(vic.tIndonesiaTL).end(vic.tIndonesiaBR):
+		if plot in plots.rectangle(tIndonesia):
 			return 18
 		
-		if plot in plots.start(vic.tPhilippinesTL).end(vic.tPhilippinesBR):
+		if plot in plots.rectangle(tPhilippines):
 			return 19
 			
 	elif iCiv == iEthiopia:
@@ -975,20 +973,20 @@ def getUHVTileInfo(argsList):
 			return 33
 		
 	elif iCiv == iByzantium:
-		if plot in plots.start(vic.tBalkansTL).end(vic.tBalkansBR):
+		if plot in plots.rectangle(tBalkans):
 			return 21
 		
-		if plot in plots.start(vic.tNorthAfricaTL).end(vic.tNorthAfricaBR):
+		if plot in plots.rectangle(tNorthAfrica):
 			return 22
 		
-		if plot in plots.start(vic.tNearEastTL).end(vic.tNearEastBR):
+		if plot in plots.rectangle(tNearEast):
 			return 23
 			
 	elif iCiv == iArabia:
 		if (x, y) in plots.core(iEgypt):
 			return 24
 		
-		if plot in plots.start(vic.tCarthageTL).end(vic.tCarthageBR):
+		if plot in plots.rectangle(tCarthage):
 			return 25
 		
 		if (x, y) in plots.core(iBabylonia):
@@ -1001,20 +999,20 @@ def getUHVTileInfo(argsList):
 			return 28
 			
 	elif iCiv == iSpain:
-		if plot in plots.start(vic.tEuropeTL).end(vic.tEuropeBR):
+		if plot in plots.rectangle(tEurope):
 			return 29
 		
-		elif plot in plots.start(vic.tEasternEuropeTL).end(vic.tEasternEuropeBR):
+		elif plot in plots.rectangle(tEasternEurope):
 			return 29
 			
 	elif iCiv == iFrance:
-		if plot in plots.start(vic.tEuropeTL).end(vic.tEuropeBR):
+		if plot in plots.rectangle(tEurope):
 			return 29
 			
-		elif plot in plots.start(vic.tEasternEuropeTL).end(vic.tEasternEuropeBR):
+		elif plot in plots.rectangle(tEasternEurope):
 			return 29
 		
-		if plot in plots.start(vic.tNorthAfricaTL).end(vic.tNorthAmericaBR):
+		if plot in plots.rectangle(tNorthAfrica):
 			return 30
 			
 	elif iCiv == iEngland:
@@ -1050,58 +1048,58 @@ def getUHVTileInfo(argsList):
 			return 40
 			
 	elif iCiv == iRussia:
-		if plot in plots.start(vic.tSiberiaTL).end(vic.tSiberiaBR):
+		if plot in plots.rectangle(tSiberia):
 			return 41
 			
 	elif iCiv == iInca:
-		if (x, y) in vic.lAndeanCoast:
+		if (x, y) in lAndeanCoast:
 			return 42
 		
-		if plot in plots.start(vic.tSAmericaTL).end(vic.tSAmericaBR).without(vic.tSouthAmericaExceptions):
+		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
 			return 43
 			
 	elif iCiv == iOttomans:
-		if (x,y) in vic.lEasternMediterranean:
+		if (x,y) in lEasternMediterranean:
 			return 47
 			
-		if (x,y) in vic.lBlackSea:
+		if (x,y) in lBlackSea:
 			return 48
 		
-		if plot in plots.surrounding(vic.tCairo):
+		if plot in plots.surrounding(tCairo):
 			return 49
 		
-		if plot in plots.surrounding(vic.tMecca):
+		if plot in plots.surrounding(tMecca):
 			return 50
 		
-		if plot in plots.surrounding(vic.tBaghdad):
+		if plot in plots.surrounding(tBaghdad):
 			return 51
 		
-		if plot in plots.surrounding(vic.tVienna):
+		if plot in plots.surrounding(tVienna):
 			return 52
 			
 	elif iCiv == iThailand:
-		if plot in plots.start(vic.tSouthAsiaTL).end(vic.tSouthAsiaBR):
+		if plot in plots.rectangle(tSouthAsia):
 			return 53
 			
 	elif iCiv == iAmerica:
-		if plot in plots.start(vic.tNCAmericaTL).end(vic.tNCAmericaBR):
+		if plot in plots.rectangle(tNorthCentralAmerica):
 			return 54
 			
 	elif iCiv == iTamils:
-		if plot in plots.start(vic.tDeccanTL).end(vic.tDeccanBR):
+		if plot in plots.rectangle(tDeccan):
 			return 55
 		
-		if plot in plots.start(vic.tSrivijayaTL).end(civ.tSrivijayaBR):
+		if plot in plots.rectangle(tSrivijaya):
 			return 56
 			
 	elif iCiv == iMoors:
-		if plot in plots.start(vic.tIberiaTL).end(vic.tIberiaBR):
+		if plot in plots.rectangle(tIberia):
 			return 57
 		
-		if plot in plots.start(vic.tMaghrebTL).end(vic.tMaghrebBR):
+		if plot in plots.rectangle(tMaghreb):
 			return 58
 		
-		if plot in plots.start(vic.tWestAfricaTL).end(vic.tWestAfricaBR):
+		if plot in plots.rectangle(tWestAfrica):
 			return 59
 			
 	elif iCiv == iPortugal:
@@ -1111,46 +1109,46 @@ def getUHVTileInfo(argsList):
 		if plot.getRegionID() in lAsia:
 			return 34
 		
-		if plot in plots.start(vic.tBrazilTL).end(vic.tBrazilBR):
+		if plot in plots.rectangle(tBrazil):
 			return 60
 			
 	elif iCiv == iColombia:
-		if plot in plots.start(vic.tPeruTL).end(vic.tPeruBR):
+		if plot in plots.rectangle(tPeru):
 			return 43
 		
-		if plot in plots.start(vic.tGranColombiaTL).end(vic.tGranColombiaBR):
+		if plot in plots.rectangle(tGranColombia):
 			return 44
 		
-		if plot in plots.start(vic.tGuayanasTL).end(vic.tGuayanasBR):
+		if plot in plots.rectangle(tGuayanas):
 			return 45
 		
-		if plot in plots.start(vic.tCaribbeanTL).end(vic.tCaribbeanBR):
+		if plot in plots.rectangle(tCaribbean):
 			return 46
 		
-		if plot in plots.start(vic.tSAmericaTL).end(vic.tSAmericaBR).without(vic.tSouthAmericaExceptions):
+		if plot in plots.rectangle(tSouthAmerica).without(lSouthAmericaExceptions):
 			return 61
 				
 	elif iCiv == iCanada:
-		if (x, y) in vic.lAtlanticCoast:
+		if (x, y) in lAtlanticCoast:
 			return 63
 			
-		if (x, y) in vic.lPacificCoast:
+		if (x, y) in lPacificCoast:
 			return 64
 		
-		if plot in plots.start(vic.tCanadaWestTL).end(vic.tCanadaWestBR).without(vic.lCanadaWestExceptions) or plot in plots.start(vic.tCanadaEastTL).end(vic.tCanadaEastBR).without(vic.lCanadaEastExceptions):
+		if plot in plots.rectangle(tCanadaWest).without(lCanadaWestExceptions) or plot in plots.rectangle(tCanadaEast).without(lCanadaEastExceptions):
 			return 62
 			
 	elif iCiv == iPolynesia:
-		if plot in plots.start(vic.tHawaiiTL).end(vic.tHawaiiBR):
+		if plot in plots.rectangle(tHawaii):
 			return 65
 		
-		if plot in plots.start(vic.tNewZealandTL).end(vic.tNewZealandBR):
+		if plot in plots.rectangle(tNewZealand):
 			return 66
 		
-		if plot in plots.start(vic.tMarquesasTL).end(vic.tMarquesasBR):
+		if plot in plots.rectangle(tMarquesas):
 			return 67
 		
-		if plot in plots.start(vic.tEasterIslandTL).end(vic.tEasterIslandBR):
+		if plot in plots.rectangle(tEasterIsland):
 			return 68
 			
 	elif iCiv == iMongols:
@@ -1158,10 +1156,10 @@ def getUHVTileInfo(argsList):
 			return 69
 			
 	elif iCiv == iTurks:
-		if (x, y) in vic.lMediterraneanPorts:
+		if (x, y) in lMediterraneanPorts:
 			return 70
 			
-		if plot in plots.start(vic.tChinaTL).end(vic.tChinaBR):
+		if plot in plots.rectangle(tChina):
 			return 71
 				
 		# free IDs: 20

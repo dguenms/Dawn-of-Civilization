@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 
 from Core import *
+from Locations import *
 from Events import handler
 
 
@@ -23,23 +24,6 @@ dCompanyExpiry = defaultdict({
 	iTradingCompany : 1800,
 	iTextileIndustry : 1920,
 }, 2020)
-
-tSilkRouteTL = (80, 46)
-tSilkRouteBR = (99, 52)
-
-tMiddleEastTL = (68, 38)
-tMiddleEastBR = (85, 46)
-
-lMiddleEastExceptions = [(68, 39), (69, 39), (71, 40)]
-
-tCaribbeanTL = (26, 33)
-tCaribbeanBR = (34, 39)
-
-tSubSaharanAfricaTL = (49, 10)
-tSubSaharanAfricaBR = (77, 29)
-
-tSouthAsiaTL = (76, 24)
-tSouthAsiaBR = (117, 39)
 					
 	
 @handler("cityAcquired")
@@ -145,15 +129,13 @@ def getCityValue(city, iCompany):
 	
 	# geographical requirements
 	if iCompany == iSilkRoute:
-		if city in cities.of(lMiddleEastExceptions):
-			return -1
-		if city not in cities.rectangle(tSilkRouteTL, tSilkRouteBR) and city not in cities.rectangle(tMiddleEastTL, tMiddleEastBR):
+		if city not in cities.rectangle(tSilkRoute) and city not in cities.rectangle(tMiddleEast).without(lMiddleEastExceptions):
 			return -1
 			
 	elif iCompany == iTradingCompany:
-		if city not in cities.rectangle(tCaribbeanTL, tCaribbeanBR) and city not in cities.rectangle(tSubSaharanAfricaTL, tSubSaharanAfricaBR) and city not in cities.rectangle(tSouthAsiaTL, tSouthAsiaBR) and not city.isHasRealBuilding(unique_building(city.getOwner(), iTradingCompanyBuilding)):
+		if city not in cities.rectangle(tCaribbean) and city not in cities.rectangle(tSubSaharanAfrica) and city not in cities.rectangle(tSouthAsia) and not city.isHasRealBuilding(unique_building(city.getOwner(), iTradingCompanyBuilding)):
 			return -1
-		if city in cities.rectangle(tCaribbeanTL, tCaribbeanBR):
+		if city in cities.rectangle(tCaribbean):
 			iValue += 1
 	
 	# trade companies and fishing industry - coastal cities only
