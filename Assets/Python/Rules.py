@@ -1,4 +1,5 @@
 from Core import *
+from Locations import *
 from RFCUtils import *
 from Events import handler
 
@@ -49,11 +50,6 @@ dStartingWorkers = CivDict({
 	iArgentina : 2,
 	iCanada : 3,
 })
-
-tStockholm = (63, 59)
-tVienna = (62, 49)
-tTokyo = (116, 47)
-tRome = (60, 44)
 
 dRelocatedCapitals = {
 	(iVikings, iRenaissance): tStockholm,
@@ -189,7 +185,7 @@ def captureSlaves(winningUnit, losingUnit):
 		captureUnit(losingUnit, winningUnit, iAztecSlave, 35)
 		
 	elif civ(losingUnit) == iNative:
-		if civ(winningUnit) not in lBioNewWorld or any(data.lFirstContactConquerors):
+		if civ(winningUnit) not in lBioNewWorld or any(data.dFirstContactConquerors.values()):
 			if player(winningUnit).isSlavery() or player(winningUnit).isColonialSlavery():
 				if winningUnit.getUnitType() == iBandeirante:
 					captureUnit(losingUnit, winningUnit, iSlave, 100)

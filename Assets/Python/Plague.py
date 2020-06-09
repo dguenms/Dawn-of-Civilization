@@ -217,7 +217,7 @@ def isVulnerable(iPlayer):
 		
 	if team(iPlayer).isHasTech(iMicrobiology): return False
 	
-	if civ(iPlayer) in lBioNewWorld and not data.lFirstContactConquerors[lBioNewWorld.index(civ(iPlayer))]: return False
+	if civ(iPlayer) in lBioNewWorld and not data.dFirstContactConquerors[civ(iPlayer)]: return False
 		
 	if data.players[iPlayer].iPlagueCountdown == 0: #vulnerable
 		if not team(iPlayer).isHasTech(iMicrobiology):

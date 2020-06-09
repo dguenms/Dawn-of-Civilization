@@ -8,6 +8,7 @@ from RFCUtils import *
 from operator import itemgetter
 from Events import handler
 
+from Locations import *
 from Core import *
 
 # globals
@@ -15,9 +16,6 @@ gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
 ### Constants ###
-
-tRussianTopLeft = (65, 49)
-tRussianBottomRight = (121, 65)
 
 iMongolianRadius = 4
 iMongolianTimer = 1
@@ -100,7 +98,7 @@ def mughalUP(city, iBuilding):
 @handler("BeginGameTurn")
 def russianUP(self):
 	if player(iRussia).isAlive():
-		for unit in plots.rectangle(tRussianTopLeft, tRussianBottomRight).owner(iRussia).units():
+		for unit in plots.rectangle(tRussia).owner(iRussia).units():
 			if team(iRussia).isAtWar(unit.getOwner()):
 				unit.changeDamage(8, slot(iRussia))
 			
@@ -151,7 +149,7 @@ def resetMongolPower(bWar, iTeam, iOtherTeam):
 
 # TODO: add handler for custom event here -> onImmigration
 def canadianUP(city):
-	iPopulation = 5 * city.getPopulation() / 2
+	iProgress = 5 * city.getPopulation()
 	
 	lSpecialists = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]
 	lProgress = [city.getGreatPeopleUnitProgress(unique_unit(city.getOwner(), iSpecialist)) for iSpecialist in lSpecialists]
@@ -160,14 +158,14 @@ def canadianUP(city):
 	if bAllZero:
 		iGreatPerson = random_entry(lSpecialists)
 	else:
-		iGreatPerson = find_max(lProgress).index + iGreatProphet
+		iGreatPerson = lSpecialists[find_max(lProgress).index]
 		
 	iGreatPerson = unique_unit(city.getOwner(), iGreatPerson)
 	
-	city.changeGreatPeopleProgress(iPopulation)
-	city.changeGreatPeopleUnitProgress(iGreatPerson, iPopulation)
+	city.changeGreatPeopleProgress(iProgress)
+	city.changeGreatPeopleUnitProgress(iGreatPerson, iProgress)
 	
-	message(city.getOwner(), 'TXT_KEY_UP_MULTICULTURALISM', city.getName(), infos.unit(iGreatPerson).getText(), iPopulation, event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iGreatPerson).getButton(), color=iGreen, location=city)
+	message(city.getOwner(), 'TXT_KEY_UP_MULTICULTURALISM', city.getName(), infos.unit(iGreatPerson).getText(), iProgress, event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iGreatPerson).getButton(), color=iGreen, location=city)
 
 
 class UniquePowers:

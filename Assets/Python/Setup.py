@@ -14,5 +14,4 @@ def init():
 		
 @handler("GameStart")
 def resetStoredData():
-	print "data.setup()"
 	data.setup()

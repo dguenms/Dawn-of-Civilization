@@ -158,7 +158,7 @@ class GameData:
 		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.iPrepareCapitalPlayer = -1
-		self.lFirstContactConquerors = [False] * 3
+		self.dFirstContactConquerors = dict((iCiv, False) for iCiv in lBioNewWorld)
 		self.dFirstContactMongols = dict((iCiv, True) for iCiv in lMongolCivs)
 		self.lTradingCompanyConquerorsTargets = appenddict()
 		

@@ -2,12 +2,9 @@ from Events import handler
 from RiseAndFall import *
 from RFCUtils import *
 from Core import *
+from Locations import *
 
 
-tCarthage = (58, 39)
-tConstantinople = (68, 45)
-tBeijing = (102, 47)
-tCopenhagen = (60, 56)
 
 dRelocatedCapitals = CivDict({
 	iPhoenicia : tCarthage,
@@ -44,11 +41,10 @@ def buildAcquiredCapitalInfrastructure(iOwner, iPlayer, city):
 @handler("cityAcquiredAndKept")
 def createAdditionalPolishSettler(iPlayer, city):
 	if city.isCapital() and civ(iPlayer) == iPoland and not player(iPlayer).isHuman():
-		# TODO: move to Locations
 		locations = {
-			(65, 55): 1, # Memel
-			(65, 54): 1, # Koenigsberg
-			(64, 54): 3, # Gdansk
+			tMemel: 1, # Memel
+			tKoenigsberg: 1, # Koenigsberg
+			tGdansk: 3, # Gdansk
 		}
 		
 		location = weighted_random_entry(locations)
@@ -97,8 +93,7 @@ def clearDanishCulture(city):
 ### UNIT BUILT ###
 
 
-lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
-# Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
+lChineseCities = [tBeijing, tKaifeng, tLuoyang, tShanghai, tHangzhou, tGuangzhou, tHaojing]
 
 @handler("unitBuilt")
 def foundChineseCity(city, unit):
@@ -254,14 +249,11 @@ def conquistadors(iTeamX, iHasMetTeamY):
 				
 				iNewWorldCiv = civ(iNewWorldPlayer)
 				
-				iIndex = lBioNewWorld.index(civ(iNewWorldPlayer))
-				
-				# TODO: use dict for first contact conquerors to avoid using index
-				bAlreadyContacted = data.lFirstContactConquerors[iIndex]
+				bAlreadyContacted = data.dFirstContactConquerors[iNewWorldCiv]
 				
 				# avoid "return later" exploit
 				if year() <= year(dBirth[iAztecs]) + turns(10):
-					data.lFirstContactConquerors[iIndex] = True
+					data.dFirstContactConquerors[iNewWorldCiv] = True
 					return
 					
 				if not bAlreadyContacted:
@@ -277,7 +269,7 @@ def conquistadors(iTeamX, iHasMetTeamY):
 						
 					lArrivalExceptions = [(25, 32), (26, 40), (25, 42), (23, 42), (21, 42)]
 						
-					data.lFirstContactConquerors[iIndex] = True
+					data.dFirstContactConquerors[iNewWorldCiv] = True
 					
 					# change some terrain to end isolation
 					if iNewWorldCiv == iInca:

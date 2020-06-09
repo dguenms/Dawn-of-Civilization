@@ -17,14 +17,6 @@ from Core import *
 
 currentCongress = None
 
-### Constants ###
-
-tAmericanClaimsTL = (19, 41)
-tAmericanClaimsBR = (24, 49)
-
-tNewfoundlandTL = (27, 53)
-tNewfoundlandBR = (36, 59)
-
 ### Event Handlers ###
 
 @handler("GameStart")
@@ -748,7 +740,7 @@ class Congress:
 		
 		# everyone agrees on AI American claims in the west, unless owner is native to the Americas
 		if civ(iClaimant) == iAmerica and iVoter != iOwner and civ(iOwner) not in dCivGroups[iCivGroupAmerica]:
-			if plot in plots.rectangle(tAmericanClaimsTL, tAmericanClaimsBR):
+			if plot in plots.rectangle(tAmericanClaims):
 				self.vote(iVoter, iClaimant, 1)
 				return
 			
@@ -1072,12 +1064,12 @@ class Congress:
 					
 				# AI America receives extra value for claims in the west
 				if civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
-					if city in plots.start(tAmericanClaimsTL).end(tAmericanClaimsBR):
+					if city in plots.rectangle(tAmericanClaims):
 						iValue += 5
 						
 				# help Canada gain Labrador and Newfoundland
 				if civ(iPlayer) == iCanada:
-					if city in plots.start(tNewfoundlandTL).end(tNewfoundlandBR):
+					if city in plots.rectangle(tNewfoundland):
 						iValue += 5
 					
 				if iValue > 0:
@@ -1120,7 +1112,7 @@ class Congress:
 		
 		# America receives an invite if there are still claims in the west
 		if player(iAmerica).isAlive() and slot(iAmerica) not in self.invites and not self.bPostWar:
-			if cities.rectangle(tAmericanClaimsTL, tAmericanClaimsBR).notowner(iAmerica):
+			if cities.rectangle(tAmericanClaims).notowner(iAmerica):
 				if len(self.invites) == getNumInvitations():
 					self.invites = self.invites.limit(len(self.invites)-1)
 				self.invites = self.invites.including(slot(iAmerica))

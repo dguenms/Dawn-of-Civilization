@@ -1,8 +1,6 @@
 from CvPythonExtensions import *
+from Locations import *
 from Events import events, handler
-
-
-tThebes = (68, 33)
 
 
 @handler("kbdEvent")
