@@ -219,7 +219,7 @@ class WBStoredDataScreen:
 			elif item == "lPlayerEnabled": # Secondary civs
 				sText = CyTranslator().getText(str(gc.getPlayer(lSecondaryCivs[i]).getCivilizationShortDescriptionKey()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(gc.getPlayer(lSecondaryCivs[i]).getCivilizationType()).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-			elif item == "lFirstContactConquerors": # New world civs conquerors
+			elif item == "dFirstContactConquerors": # New world civs conquerors
 				sText = CyTranslator().getText(str(gc.getCivilizationInfo(lBioNewWorld[i]).getText()), ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getCivilizationInfo(lBioNewWorld[i]).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lFirstContactMongols": # Mongol conquerors

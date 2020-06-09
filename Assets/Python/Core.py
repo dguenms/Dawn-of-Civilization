@@ -30,6 +30,16 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
+class Civics(object):
+
+	def __init__(self, identifier):
+		self.iGovernment, self.iLegitimacy, self.iSociety, self.iEconomy, self.iReligion, self.iTerritory = (player(identifier).getCivics(i) for i in range(6))
+
+
+def civics(identifier):
+	return Civics(identifier)
+
+
 def spread(iterable, size, offset=0):
 	if len(iterable) <= size:
 		return spread_padded(iterable, size, offset)
