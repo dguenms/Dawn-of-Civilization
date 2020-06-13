@@ -10,6 +10,7 @@ import CityNameManager as cnm
 from StoredData import data # edead
 from Events import handler
 
+from Locations import *
 from Core import *
 
 
@@ -530,7 +531,7 @@ class Congress:
 					tThisPlayer = team(iThisPlayer)
 					if not tThisPlayer.canContact(iThatPlayer): tThisPlayer.meet(iThatPlayer, False)
 
-		self.sHostCityName = getOwnedCoreCities(iHostPlayer).random().getName()
+		self.sHostCityName = cities.core(iHostPlayer).owner(iHostPlayer).random().getName()
 		
 		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
 		if active() in self.invites:

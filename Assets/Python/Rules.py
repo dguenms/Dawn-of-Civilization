@@ -113,12 +113,6 @@ def spreadTradingCompanyCulture(iOwner, iPlayer, city, bConquest, bTrade):
 
 
 ### CITY ACQUIRED AND KEPT ###
-
-
-# TODO: maybe new event capitalfounded/acquired ? -> firstcity
-@handler("cityAcquiredAndKept")
-def createStartingWorkersOnCapitalAcquired(iPlayer, city):
-	createStartingWorkers(iPlayer, city)
 	
 
 @handler("cityAcquiredAndKept")
@@ -133,11 +127,6 @@ def spreadCultureOnConquest(iPlayer, city):
 
 
 ### CITY BUILT ###
-
-
-@handler("cityBuilt")
-def createStartingWorkersOnCapitalFounded(city):
-	createStartingWorkers(city.getOwner(), city)
 	
 
 @handler("cityBuilt")
@@ -233,13 +222,12 @@ def moveSlavesToNewWorld(city, unit):
 			move(unit, colony)
 
 
-### BUILDING BUILT ###
+### CAPITAL MOVED ###
 
 
-# TODO: own event for palace built -> capitalmoved
-@handler("buildingBuilt")
-def resetAdminCenterOnPalaceBuilt(city, iBuilding):
-	if iBuilding == iPalace and city.isHasRealBuilding(iAdministrativeCenter):
+@handler("capitalMoved")
+def resetAdminCenterOnPalaceBuilt(city):
+	if city.isHasRealBuilding(iAdministrativeCenter):
 		city.setHasRealBuilding(iAdministrativeCenter, False)
 
 
@@ -286,7 +274,7 @@ def relocateCapitals(iTech, iTeam, iPlayer):
 	if not player(iPlayer).isHuman():
 		iEra = infos.tech(iTech).getEra()
 		if (iPlayer, iEra) in dRelocatedCapitals:
-			moveCapital(iPlayer, dRelocatedCapitals[iPlayer, iEra])
+			relocateCapital(iPlayer, dRelocatedCapitals[iPlayer, iEra])
 
 
 ### END GAME TURN ###
@@ -300,12 +288,17 @@ def startTimedConquests():
 	data.lTimedConquests = []
 
 
-### IMPLEMENTATIONS ###
+### FIRST CITY ###
 
 
-def createStartingWorkers(iPlayer, city):
+@handler("firstCity")
+def createStartingWorkers(city):
+	iPlayer = city.getOwner()
 	if city.isCapital() and iPlayer in dStartingWorkers:
 		makeUnits(iPlayer, getBestWorker(iPlayer), city, dStartingWorkers[iPlayer])
+
+
+### IMPLEMENTATIONS ###
 		
 		
 def getImmigrationValue(city):
@@ -344,12 +337,12 @@ def immigration():
 	targetCities = targetPlayers.cities().highest(iNumMigrations, getImmigrationValue)
 	
 	for sourceCity, targetCity in zip(sourceCities, targetCities):
-		sourceCity.changePopulation(-1)
-		targetCity.changePopulation(1)
-		
+		iPopulation = 1
 		if sourceCity.getPopulation() >= 9:
-			sourceCity.changePopulation(-1)
-			targetCity.changePopulation(1)
+			iPopulation += 1
+	
+		sourceCity.changePopulation(-iPopulation)
+		targetCity.changePopulation(iPopulation)
 			
 		# extra cottage growth for target city's vicinity
 		for pCurrent in plots.surrounding(targetCity, radius=2):
@@ -379,6 +372,4 @@ def immigration():
 		message(iSourcePlayer, 'TXT_KEY_UP_EMIGRATION', sourceCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=sourceCity)
 		message(iTargetPlayer, 'TXT_KEY_UP_IMMIGRATION', targetCity.getName(), event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iSettler).getButton(), color=iYellow, location=targetCity)
 
-		# TODO: fire on immigration event -> add custom onImmigration event, handle this in UniquePowers
-		if civ(iTargetPlayer) == iCanada:
-			UniquePowers.canadianUP(targetCity)
+		events.fireEvent("immigration", sourceCity, targetCity, iPopulation, iCultureChange)

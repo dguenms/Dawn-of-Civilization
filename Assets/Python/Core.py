@@ -81,7 +81,6 @@ def periodic(interval):
 	index = period_offsets(interval)
 	offset = (index / 2 + ((index + interval) % 2) * interval / 2 ) % interval
 	result = turn() % interval == offset
-	if interval == 5: print "interval = %d, turn = %d, index = %d, offset = %d, result = %d" % (interval, turn(), index, offset, result)
 	return result 
 
 
@@ -95,7 +94,9 @@ def direction(tile, direction_type):
 
 
 def weighted_random_entry(weighted_elements):
-	elements = reduce(sum, [[elements] * weight for element, weight in weighted_elements.items()])
+	elements = []
+	for element, weight in weighted_elements.items():
+		elements += [element] * weight
 	return random_entry(elements)
 
 
@@ -602,7 +603,6 @@ def player(identifier = None):
 		
 	if isinstance(identifier, int):
 		if identifier < 0: 
-			print "identifier < 0, return None"
 			return None
 		return gc.getPlayer(identifier)
 		
@@ -1155,6 +1155,16 @@ class Cities(EntityCollection):
 	
 	def owners(self):
 		return list(set(city.getOwner() for city in self.entities()))
+		
+	def _closest(self, *args):
+		x, y = _parse_tile(*args)
+		return find_min(self.entities(), lambda p: distance(p, (x, y)))
+		
+	def closest(self, *args):
+		return self._closest(*args).result
+		
+	def closest_distance(self, *args):
+		return self._closest(*args).value
 	
 		
 class UnitFactory:
@@ -1264,6 +1274,10 @@ class PlayerFactory:
 	
 	def of(self, *players):
 		return Players(players)
+	
+	# TODO: test
+	def at_war(self, iPlayer):
+		return self.all().at_war(iPlayer)
 
 		
 class Players(EntityCollection):
@@ -1350,6 +1364,10 @@ class Players(EntityCollection):
 	
 	def tech(self, iTech):
 		return self.where(lambda p: team(p).isHasTech(iTech))
+	
+	# TODO: test
+	def at_war(self, iPlayer):
+		return self.where(lambda p: team(iPlayer).isAtWar(player(p).getTeam()))
 		
 		
 class CreatedUnits(object):
@@ -1590,7 +1608,6 @@ class PeriodOffsets(object):
 	def __call__(self, interval):
 		self._check_invalidate()
 		calling = get_calling_module()
-		print (calling, interval)
 		offset = self.offsets[(calling, interval)]
 		self.offsets[(calling, interval)] += 1
 		return offset

@@ -1,3 +1,4 @@
+from Consts import *
 from BugEventManager import g_eventManager as events
 import inspect
 
@@ -17,3 +18,27 @@ def handler(event):
 		return handler_func
 		
 	return handler_decorator
+
+
+events.addEvent("firstCity")
+events.addEvent("capitalMoved")
+events.addEvent("immigration")
+events.addEvent("collapse")
+
+
+@handler("buildingBuilt")
+def capitalMovedOnPalaceBuilt(city, iBuilding):
+	if iBuilding == iPalace:
+		events.fireEvent("capitalMoved", city)
+
+
+@handler("cityAcquiredAndKept")
+def firstCityOnCityAcquiredAndKept(iPlayer, city):
+	if city.isCapital():
+		events.fireEvent("firstCity", city)
+
+
+@handler("cityBuilt")
+def firstCityOnCityBuilt(city):
+	if city.isCapital():
+		events.fireEvent("firstCity", city)

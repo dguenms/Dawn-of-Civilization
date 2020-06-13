@@ -16,13 +16,14 @@ from StoredData import data
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
 
-def invert_and_aggregate(input):
+def invert_and_aggregate(input, key_as_turn=True):
 	output = appenddict()
 	for old_key, (new_key, value) in input.items():
+		if key_as_turn:
+			new_key = year(new_key)
 		output[new_key].append((old_key, value))
 	return output
 
-# TODO: deal with duplicate keys
 dResources = {
 	(88, 37)  : (-1000, iHorse),   # Gujarat
 	(78, 42)  : (-800,  iCopper),  # Assyria
@@ -133,7 +134,7 @@ dSpawnResources = {
 	(42, 18) : (iBrazil,    iFish),
 }
 
-dSpawnResources = invert_and_aggregate(dSpawnResources)
+dSpawnResources = invert_and_aggregate(dSpawnResources, False)
 
 dRemovedResources = {
 	(51, 36) : 550, # Ivory in Morocco
@@ -169,7 +170,7 @@ dFeatures = {
 }
 
 dFeatures = invert_and_aggregate(dFeatures)
-dFeatures[700] += [(tile, iCape) for tile in lNewfoundlandCapes]
+dFeatures[turn(700)] += [(tile, iCape) for tile in lNewfoundlandCapes]
 
 dRemovedFeatures = {
 	(67, 30)  : 550,  # Sudan
@@ -184,13 +185,12 @@ dRemovedFeatures = {
 }
 
 dRemovedFeatures = invert_and_aggregate(dRemovedFeatures)
-dRemovedFeatures[1500] += lNewfoundlandCapes
+dRemovedFeatures[year(1500)] += lNewfoundlandCapes
 
 
 @handler("BeginGameTurn")
 def createResources():
-	# TODO: this only works if the exact year exists which is not a given at every speed
-	for (x, y), iResource in dResources[game.getGameTurnYear()]:
+	for (x, y), iResource in dResources[game.getGameTurn()]:
 		createResource(x, y, iResource)
 
 
@@ -204,13 +204,13 @@ def createResourcesBeforeSpawn(iGameTurn):
 
 @handler("BeginGameTurn")
 def removeResources():
-	for x, y in dRemovedResources[game.getGameTurnYear()]:
+	for x, y in dRemovedResources[game.getGameTurn()]:
 		removeResource(x, y)
 
 
 @handler("BeginGameTurn")
 def createRoutes():
-	for tile in dRoutes[game.getGameTurnYear()]:
+	for tile in dRoutes[game.getGameTurn()]:
 		plot(tile).setRouteType(iRouteRoad)
 
 
@@ -224,19 +224,19 @@ def createRoutesBeforeSpawn(iGameTurn):
 
 @handler("BeginGameTurn")
 def changePlotType():
-	for tile, type in dPlotTypes[game.getGameTurnYear()]:
+	for tile, type in dPlotTypes[game.getGameTurn()]:
 		plot(tile).setPlotType(type, True, True)
 
 
 @handler("BeginGameTurn")
 def createFeatures():
-	for tile, iFeature in dFeatures[game.getGameTurnYear()]:
+	for tile, iFeature in dFeatures[game.getGameTurn()]:
 		plot(tile).setFeatureType(iFeature, 0)
 
 
 @handler("BeginGameTurn")
 def removeFeatures():
-	for tile in dRemovedFeatures[game.getGameTurnYear()]:
+	for tile in dRemovedFeatures[game.getGameTurn()]:
 		plot(tile).setFeatureType(-1, 0)
 		
 	if iGameTurn == year(700) and player(iVikings).isHuman():
