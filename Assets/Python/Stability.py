@@ -9,7 +9,7 @@ from operator import itemgetter
 import math
 import Victory as vic
 import Periods as periods
-from Events import handler
+from Events import handler, events
 
 import PyHelpers
 PyPlayer = PyHelpers.PyPlayer
@@ -122,7 +122,7 @@ def triggerCollapse(iPlayer):
 	# help overexpanding AI: collapse to core, unless fall date
 	if not player(iPlayer).isHuman():
 		if gc.getGame().getGameTurnYear() < dFall[iPlayer]:
-			if getOwnedCoreCities(iPlayer) < cities.owner(iPlayer):
+			if cities.core(iPlayer).owner(iPlayer) < cities.owner(iPlayer):
 				collapseToCore(iPlayer)
 				return
 
@@ -566,6 +566,11 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 def secedeCity(city, iNewOwner, bRelocate):
 	if not city: return
 	
+	if player(iNewOwner).isMinorCiv():
+		for iPlayer in players.at_war(city):
+			if not team(iPlayer).isAtWar(player(iNewOwner).getTeam()):
+				team(iPlayer).declareWar(player(iNewOwner).getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
+	
 	iNumDefenders = max(2, player(iNewOwner).getCurrentEra()-1)
 	lFlippedUnits, lRelocatedUnits = flipOrRelocateGarrison(city, iNumDefenders)
 	
@@ -596,16 +601,14 @@ def completeCollapse(iPlayer):
 	player(iPlayer).killUnits()
 	vic.resetAll(iPlayer)
 	data.players[iPlayer].iLastTurnAlive = turn()
-	
-	periods.onCollapse(iPlayer)
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if civ(iPlayer) == iByzantium:
 		removeReligionByArea(plots.core(iOttomans), iOrthodoxy)
-		
-	debug('Complete collapse: ' + name(iPlayer))
 	
 	message(active(), 'TXT_KEY_STABILITY_COMPLETE_COLLAPSE', adjective(iPlayer))
+	
+	events.fireEvent("collapse", iPlayer)
 		
 def collapseToCore(iPlayer):
 	nonCoreCities = cities.owner(iPlayer).where(lambda city: not plot(city).isCore(iPlayer))
@@ -696,7 +699,7 @@ def calculateStability(iPlayer):
 	bNationhood = iCivicTerritory == iNationhood
 	bMultilateralism = iCivicTerritory == iMultilateralism
 	
-	bSingleCoreCity = len(getOwnedCoreCities(iPlayer)) == 1
+	bSingleCoreCity = cities.core(iPlayer).owner(iPlayer).count() == 1
 	
 	iCorePopulationModifier = getCorePopulationModifier(iCurrentEra)
 	
@@ -1624,7 +1627,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 				newCity.setHasRealBuilding(iBuilding, True)
 			
 		if bCapital and not is_minor(iOwner):
-			relocateCapital(iOwner)
+			relocateCapital(iOwner, cities.capital(iOwner))
 			
 		if iOwner not in lOwners:
 			lOwners.append(iOwner)
@@ -1645,7 +1648,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			else:
 				teamOwner.makePeace(iPlayer)
 			
-	relocateCapital(iPlayer, True)
+	relocateCapital(iPlayer, cities.respawnCapital(iPlayer))
 	
 	# give the new civ a starting army
 	capital = pPlayer.getCapitalCity()
@@ -1717,24 +1720,6 @@ def getResurrectionTechs(iPlayer):
 			lTechList.append(iTech)
 			
 	return lTechList
-	
-# overlaps with relocateCapital
-def relocateCapital(iPlayer, bResurrection = False):
-	if not is_minor(iPlayer): return
-	if player(iPlayer).getNumCities() == 0: return
-	
-	iCiv = civ(iPlayer)
-
-	newCapital = cities.capital(iCiv)
-	oldCapital = player(iPlayer).getCapitalCity()
-	
-	if bResurrection: newCapital = cities.respawnCapital(iCiv)
-	
-	if not newCapital or newCapital.getOwner() != iPlayer:
-		newCapital = cities.owner(iPlayer).maximum(lambda city: max(0, turns(500) - city.getGameTurnFounded()) + city.getPopulation() * 5)
-		
-	oldCapital.setHasRealBuilding(iPalace, False)
-	newCapital.setHasRealBuilding(iPalace, True)
 
 def convertBackCulture(iPlayer):
 	for plot in plots.respawn(iPlayer):

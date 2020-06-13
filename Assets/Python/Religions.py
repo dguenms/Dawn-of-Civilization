@@ -100,7 +100,7 @@ def checkJudaism(iGameTurn):
 		return
 
 	if iGameTurn == year(-1500) - turns(data.iSeed % 5):
-		foundReligion(selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
+		foundReligion(selectHolyCity(plots.rectangle(tJudaism), tJerusalem), iJudaism)
 
 
 @handler("BeginGameTurn")
@@ -216,12 +216,12 @@ def foundReligion(location, iReligion):
 	return False
 
 
-def selectHolyCity(tTL, tBR, tPreferredCity = None, bAIOnly = True):
+def selectHolyCity(area, tPreferredCity = None, bAIOnly = True):
 	preferredCity = city(tPreferredCity)
 	if preferredCity and (not bAIOnly or preferredCity.isHuman()):
 		return preferredCity
 				
-	holyCity = cities.rectangle(tTL, tBR).where(lambda city: not bAIOnly or not city.isHuman()).random()
+	holyCity = area.cities().where(lambda city: not bAIOnly or not city.isHuman()).random()
 	if holyCity:
 		return location(holyCity)
 		

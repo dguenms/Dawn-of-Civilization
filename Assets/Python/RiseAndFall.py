@@ -20,6 +20,7 @@ import BugCore
 import Periods as periods
 from Events import events, handler
 
+from Locations import *
 from Core import *
 
 MainOpt = BugCore.game.MainInterface
@@ -1264,8 +1265,6 @@ class RiseAndFall:
 		iBirthYear = year(iBirthYear) # converted to turns here - edead
 		iCiv = civ(iPlayer)
 		
-		print "initBirth: %s" % name(iPlayer)
-		
 		if iCiv in lSecondaryCivs:
 			if not player(iPlayer).isHuman() and not data.isCivEnabled(iCiv):
 				return
@@ -1303,7 +1302,7 @@ class RiseAndFall:
 				if player(iRome).isAlive():
 					return
 					
-				if not getCitiesInCore(slot(iRome)).where(lambda city: city.getOwner() not in players.major()):
+				if not cities.core(iRome).where(lambda city: city.getOwner() not in players.major()):
 					return
 		
 		periods.onBirth(iPlayer)
@@ -1321,11 +1320,7 @@ class RiseAndFall:
 					x, y = tCapital
 					break
 					
-		print "initBirth turn check"
-
-		print "turn = %d, iBirthYear-1 = %d, spawn delay = %d, flips delay = %d" % (turn(), iBirthYear-1, data.players[iPlayer].iSpawnDelay, data.players[iPlayer].iFlipsDelay)
 		if turn() == iBirthYear-1 + data.players[iPlayer].iSpawnDelay + data.players[iPlayer].iFlipsDelay:
-			print "turn check passed"
 			if iCiv in lConditionalCivs or bCapitalSettled:
 				convertPlotCulture(plot_(x, y), iPlayer, 100, True)
 
@@ -1443,13 +1438,10 @@ class RiseAndFall:
 							unit.kill(False, iBarbarianPlayer)
 		
 	def birthInFreeRegion(self, iPlayer, tCapital, tTopLeft, tBottomRight):
-		print "birthInFreeRegion: %s" % name(iPlayer)
-	
 		startingPlot = plot(tCapital)
 		iCiv = civ(iPlayer)
 		
 		if data.players[iPlayer].iFlipsDelay == 0:
-			print "birth in free region: flips delay +2"
 			iFlipsDelay = data.players[iPlayer].iFlipsDelay + 2
 			if iFlipsDelay > 0:
 				self.createStartingUnits(iPlayer, tCapital)
@@ -1459,7 +1451,7 @@ class RiseAndFall:
 			
 				if iCiv == iItaly:
 					removeCoreUnits(iPlayer)
-					cityList = getCitiesInCore(iPlayer)
+					cityList = cities.core(iPlayer)
 					
 					rome = cities.capital(iRome)
 					if rome:
@@ -1509,7 +1501,7 @@ class RiseAndFall:
 	
 		if iCiv == iItaly:
 			removeCoreUnits(iPlayer)
-			cityList = self.getCitiesInCore(iPlayer)
+			cityList = cities.core(iPlayer)
 			
 			rome = cities.capital(iRome)
 			if rome:
@@ -1568,7 +1560,6 @@ class RiseAndFall:
 				flipUnitsInArea(lPlots, iPlayer, iMinor, True, player(iPlayer).isBarbarian())
 
 		if iNumHumanCitiesToConvert > 0:
-			print "Flip Popup: foreign borders"
 			self.scheduleFlipPopup(iPlayer, lPlots)
 			
 		if iCiv == iGermany:
@@ -1590,7 +1581,6 @@ class RiseAndFall:
 			
 				# flip capital instead of spawning starting units
 				if capital:
-					print "birth in capital: (%d, %d)" % (capital.getX(), capital.getY())
 					capital = flipCity(capital, False, True, iPlayer, ())
 					capital.setHasRealBuilding(iPalace, True)
 					convertPlotCulture(plot_(capital), iPlayer, 100, True)
@@ -1600,14 +1590,11 @@ class RiseAndFall:
 				for plot in plots.surrounding((0, 0), radius=2):
 					plot.setRevealed(iPlayer, False, True, -1)
 
-
-				print ("birthConditional: starting units in", x, y)
 				self.createStartingUnits(iPlayer, tCapital)
 
 				data.players[iPlayer].iPlagueCountdown
 				clearPlague(iPlayer)
 
-				print ("flipping remaining units")
 				area = plots.start(tTopLeft).end(tBottomRight)
 				for iMinor in players.independent().barbarian():
 					flipUnitsInArea(area, iPlayer, iMinor, True, player(iMinor).isBarbarian())
@@ -1638,7 +1625,6 @@ class RiseAndFall:
 				
 			# convert human cities
 			if iNumHumanCitiesToConvert > 0:
-				print "Flip Popup: in capital"
 				self.scheduleFlipPopup(iPlayer, area)
 				
 			convertPlotCulture(plot(x, y), iPlayer, 100, True)
@@ -2281,10 +2267,6 @@ class RiseAndFall:
 		sta.onCivSpawn(iPlayer)
 
 	def arabianSpawn(self):
-		tBaghdad = (77, 40)
-		tCairo = (69, 35)
-		tMecca = (75, 33)
-
 		bBaghdad = civ(plot(tBaghdad)) == iArabia
 		bCairo = civ(plot(tCairo)) == iArabia
 		
@@ -2297,7 +2279,7 @@ class RiseAndFall:
 		
 		if tCapital:
 			if not player(iArabia).isHuman():
-				moveCapital(slot(iArabia), tCapital)
+				relocateCapital(iArabia, tCapital)
 				makeUnits(iArabia, iMobileGuard, tCapital, 3)
 				makeUnits(iArabia, iGhazi, tCapital, 2)
 			makeUnits(iArabia, iMobileGuard, tCapital, 2)

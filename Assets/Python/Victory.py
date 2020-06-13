@@ -1891,7 +1891,7 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 			else:
 				return
 			
-			for plot in plots.start(tNorthAmerica[0]).end(tNorthAmerica[1][0]+2, tNorthAmericaBR[1][1]) + plots.start(tSouthCentralAmerica[0]).end(tSouthCentralAmerica[1][0]+2, tSouthCentralAmerica[1][1]):
+			for plot in plots.start(tNorthAmerica[0]).end(tNorthAmerica[1][0]+2, tNorthAmerica[1][1]) + plots.start(tSouthCentralAmerica[0]).end(tSouthCentralAmerica[1][0]+2, tSouthCentralAmerica[1][1]):
 				if plot.isRevealed(iEuropean, False) and not plot.isWater():
 					lose(iMayaPlayer, 2)
 					return
@@ -2384,10 +2384,6 @@ def checkOwnedCiv(iPlayer, iOwnedCiv):
 	iOwnedCities = getNumCitiesInArea(iOwnedPlayer, plots.normal(iOwnedCiv))
 	
 	return (iPlayerCities >= 2 and iPlayerCities > iOwnedCities) or (iPlayerCities >= 1 and not player(iOwnedCiv).isAlive()) or (iPlayerCities >= 1 and iOwnedCiv == iPhoenicia)
-	
-def isControlled(iPlayer, area):
-	lOwners = set(city.getOwner() for city in area.cities() if not is_minor(city))
-	return iPlayer in lOwners and len(lOwners) == 1
 	
 def isControlledOrVassalized(iPlayer, lPlots):
 	bControlled = False

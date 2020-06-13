@@ -335,7 +335,7 @@ def foundMinorCities(iGameTurn):
 		if sName == 'Buda': bForceSpawn = True
 		if sName == 'Muqdisho': lReligions = [iIslam]
 		
-		if not isFreePlot(tPlot, bForceSpawn): continue
+		if not isFree(iCiv, tPlot, bNoCity=True, bNoCulture=not bForceSpawn): continue
 		
 		evacuate(slot(iCiv), tPlot)
 	
@@ -376,18 +376,6 @@ def foundCity(iCiv, (x, y), sName, iPopulation, iUnitType = -1, iNumUnits = -1, 
 		return True
 	
 	return False
-				
-def isFreePlot(tPlot, bIgnoreCulture = False):		
-	# no cultural control over the tile
-	if plot(tPlot).isOwned() and plot(tPlot).getOwner() in players.major() and not bIgnoreCulture:
-		return False
-			
-	# no city in adjacent tiles
-	for current in plots.surrounding(tPlot):
-		if current.isCity():
-			return False
-					
-	return True
 
 def checkLimitedSpawn(iCiv, iUnitType, iNumUnits, iMaxUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj=[]):
 	iAreaUnits = plots.start(tTL).end(tBR).units().owner(iCiv).count()

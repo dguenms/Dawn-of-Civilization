@@ -2953,6 +2953,15 @@ class TestCivDict(TestCase):
 		tempdict = CivDict({}, -123)
 		self.assertEqual(tempdict[0], -123)
 		
+	def test_contains_civ(self):
+		self.assert_(iEgypt in self.civdict)
+		
+	def test_contains_int(self):
+		self.assert_(0 in self.civdict)
+	
+	def test_contains_else_throws_error(self):
+		self.assertRaises(TypeError, self.civdict.__contains__, 'string')
+		
 
 class TestSpread(TestCase):
 
@@ -3194,30 +3203,38 @@ class TestAt(TestCase):
 class TestCivs(TestCase):
 
 	def test_one(self):
-		lCivs = civs(12)
+		lCivs = civs(iEgypt)
 		
 		assertType(self, lCivs, list)
 		self.assertEqual(len(lCivs), 1)
 		
-		self.assertType(self, lCivs[0], Civ)
-		self.assertEqual(lCivs[0], 12)
+		assertType(self, lCivs[0], Civ)
+		self.assertEqual(lCivs[0], iEgypt)
 	
 	def test_more(self):
-		lCivs = civs(12, 4, 18)
+		lCivs = civs(iEgypt, iBabylonia, iHarappa)
 		
 		assertType(self, lCivs, list)
 		self.assertEqual(len(lCivs), 3)
 		
-		for i, iCiv in enumerate([12, 4, 18]):
+		for i, iCiv in enumerate([iEgypt, iBabylonia, iHarappa]):
 			assertType(self, lCivs[i], Civ)
-			assertType(lCivs[i], iCiv)
+			self.assertEqual(lCivs[i], iCiv)
 	
 	def test_none(self):
 		lCivs = civs()
 		
 		assertType(self, lCivs, list)
-		self.assertEqual(lCivs, 0)
+		self.assertEqual(lCivs, [])
 	
+	def test_int(self):
+		lCivs = civs(0)
+		
+		assertType(self, lCivs, list)
+		self.assertEqual(len(lCivs), 1)
+		
+		assertType(self, lCivs[0], Civ)
+		self.assertEqual(lCivs[0], iEgypt)
 		
 
 test_cases = [
@@ -3273,7 +3290,7 @@ test_cases = [
 	TestMatching,
 	TestDirection,
 	TestAt,
-	TestCiv,
+	TestCivs,
 ]
 		
 suite = TestSuite([makeSuite(case) for case in test_cases])

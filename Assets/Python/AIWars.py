@@ -6,7 +6,6 @@ import PyHelpers	# LOQ
 import Popup
 from Consts import *
 from RFCUtils import *
-import UniquePowers
 from StoredData import data # edead
 import Stability as sta
 from Events import handler
@@ -16,7 +15,6 @@ from Core import *
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	# LOQ
-up = UniquePowers.UniquePowers()
 
 ### Constants ###
 
@@ -248,7 +246,7 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 		if iCiv == iMongols and not player(iPlayer).isHuman():
 			iExtra += 1
 		
-		tPlot = findNearestLandPlot((city.getX(), city.getY()), iPlayer)
+		tPlot = findNearestLandPlot(city, iPlayer)
 		
 		iBestInfantry = getBestInfantry(iPlayer)
 		iBestSiege = getBestSiege(iPlayer)

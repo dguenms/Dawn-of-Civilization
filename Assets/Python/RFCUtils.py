@@ -28,8 +28,8 @@ tCol = (
 
 bStabilityOverlay = False
 
-# Leoreth - finds an adjacent land plot without enemy units that's closest to the player's capital (for the Roman UP)
-# TODO: how is that closest to the capital
+# used: AIWars
+# finds a free adjacent plot to spawn units in, uses capital location as fallback
 def findNearestLandPlot(tPlot, iPlayer):
 	plot = plots.surrounding(tPlot).where(lambda p: not p.isWater() and not p.isPeak() and not p.isUnit()).random()
 	if plot: return plot
@@ -313,28 +313,26 @@ def getMaster(identifier):
 
 
 # used: RFCUtils
-# TODO: pushes out all units not just iOldOwner's
+# relocates units in a city plot to a free surrounding tile
 def pushOutGarrisons(tCityPlot, iOldOwner):
 	destination = plots.surrounding(tCityPlot, radius=2).owner(iOldOwner).without(tCityPlot).land().passable().first()
 	
 	if destination:
-		for unit in units.at(tCityPlot):
+		for unit in units.at(tCityPlot).owner(iOldOwner):
 			if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 				move(unit, destination)
 
 # used: RFCUtils, RiseAndFall
-# TODO: moves all units, not just iOldOwner's
-# TODO: should it really be the closest instead of a random city?
+# relocates units in a city plot to the nearest city
 def relocateGarrisons(tCityPlot, iOldOwner):
 	if not is_minor(iOldOwner):
-		city = cities.owner(iOldOwner).without(tCityPlot).random()
+		city = cities.owner(iOldOwner).without(tCityPlot).closest(tCityPlot)
 		if city:
-			for unit in units.at(tCityPlot):
+			for unit in units.at(tCityPlot).owner(iOldOwner):
 				if unit.getDomainType() == DomainTypes.DOMAIN_LAND:
 					move(unit, city)
-			return
 	
-	for unit in units.at(tCityPlot):
+	for unit in units.at(tCityPlot).owner(iOldOwner):
 		unit.kill(False, iOldOwner)
 			
 # used: RiseAndFall
@@ -495,16 +493,6 @@ def clearCatapult(iPlayer):
 	for plot in plots.surrounding((0, 0), radius=2):
 		plot.setRevealed(iPlayer, False, True, -1)
 
-# used: RFCUtils, RiseAndFall
-# TODO: remove entire function and call cities.core directly
-def getCitiesInCore(iPlayer):
-	return cities.core(iPlayer)
-	
-# used: CvRFCEventHandler, RFCUtils, Stability
-# TODO: remove entire function and call cities.core.owner directly
-def getOwnedCoreCities(iPlayer):
-	return getCitiesInCore(iPlayer).owner(iPlayer)
-
 # used: Stability
 def removeReligionByArea(lPlotList, iReligion):
 	for city in cities.of(lPlotList):
@@ -532,12 +520,6 @@ def colonialConquest(iPlayer, tPlot):
 	
 	if player and not team(target).isAtWar(iPlayer):
 		team(iPlayer).declareWar(target.getID(), True, WarPlanTypes.WARPLAN_TOTAL)
-		
-	# independents too so the conquerors don't get pushed out in case the target collapses
-	# TODO: instead properly establish war against independents on collapse - new custom event type
-	for iMinor in players.civs([iIndependent, iIndependent2]):
-		if not team(iPlayer).isAtWar(iMinor):
-			team(iPlayer).declareWar(iMinor, True, WarPlanTypes.WARPLAN_LIMITED)
 			
 	targetPlot = plots.surrounding(tPlot).where(lambda p: not p.isCity() and not p.isPeak() and not p.isWater()).random()
 	
@@ -637,22 +619,12 @@ def getPlotNearCityInDirection(city, iDirection):
 	
 	return secondRing.where(lambda p: estimate_direction(city, p) == iDirection).random()
 	
-# used: CvRFCEventHandler, Stability
-def relocateCapital(iPlayer, newCapital):
-	oldCapital = player(iPlayer).getCapitalCity()
-	
-	if location(oldCapital) == location(plots.newCapital(iPlayer)): return
-	
-	newCapital.setHasRealBuilding(iPalace, True)
-	oldCapital.setHasRealBuilding(iPalace, False)
-	
 # used: RFCUtils
 def hasEnemyUnit(iPlayer, tPlot):
 	return units.at(tPlot).notowner(iPlayer).atwar(iPlayer).any()
 	
 # used: RFCUtils, RiseAndFall
-# TODO: overlap with function in Barbs
-def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False):
+def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False, bNoCulture=False):
 	plot = plot_(tPlot)
 	
 	if bNoCity:
@@ -667,6 +639,10 @@ def isFree(iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False):
 		if plot.isPeak(): return False
 		if plot.isWater(): return False
 		if plot.getFeatureType() in [iMud, iJungle, iRainforest]: return False
+	
+	if bNoCulture:
+		if plot.isOwned() and plot.getOwner() != iPlayer and plot.getOwner() in players.major():
+			return False
 		
 	return True
 	
@@ -797,15 +773,17 @@ def isGreatBuilding(iBuilding):
 	# Regular building
 	return True
 	
-# used: CvRFCEventHandler, RiseAndFall
-# TODO: overlaps with relocateCapital
-def moveCapital(iPlayer, tPlot):
-	newCapital = city(tPlot)
-	if not newCapital or newCapital.getOwner() != iPlayer:
+# used: History, RiseAndFall, Rules, Stability
+def relocateCapital(iPlayer, tile):
+	if not tile:
+		return
+
+	newCapital = city(tile)
+	if not newCapital or newCapital.getOwner() != player(iPlayer).getID():
 		return
 		
 	oldCapital = player(iPlayer).getCapitalCity()
-	if oldCapital == newCapital:
+	if location(oldCapital) == location(newCapital):
 		return
 	
 	oldCapital.setHasRealBuilding(iPalace, False)
@@ -1132,8 +1110,7 @@ def flipUnit(unit, iNewOwner, plot):
 	
 # used: Congresses, Stability
 def relocateUnitsToCore(iPlayer, lUnits):
-	print "relocateUnitsToCore: %s" % lUnits
-	coreCities = getOwnedCoreCities(iPlayer)
+	coreCities = cities.core(iPlayer).owner(iPlayer)
 	if not coreCities:
 		killUnits(lUnits)
 		return
@@ -1212,11 +1189,15 @@ def getDawnOfManText(iPlayer):
 	
 	return text_if_exists(fullKey, otherwise=baseKey)
 	
-# used: CvRFCEventHandler
-# TODO: this overlaps with isControlled and isAreaControlled in DynamicCivs
-def isAreaControlled(iPlayer, tTL, tBR, tExceptions=[]):
-	areaCities = cities.start(tTL).end(tBR).without(tExceptions)
-	return areaCities.owner(iPlayer) >= areaCities
+# used: History, Periods, DynamicCivs, Victory
+def isControlled(iPlayer, area, iMinCities=1):
+	iTotalCities = area.cities().count()
+	iPlayerCities = area.cities().owner(iPlayer).count()
+	
+	if iPlayerCities < iTotalCities: return False
+	if iPlayerCities < iMinCities: return False
+	
+	return True
 	
 # unused
 # keep for Rise and Fall refactoring
@@ -1225,7 +1206,6 @@ def breakAutoplay():
 		makeUnit(active(), iSettler, (0, 0))
 		
 # used: CvRFCEventHandler
-# TODO: use more, e.g. wonder implementations -> check Wonders module
 def getBuildingEffectCity(iBuilding):
 	if game.getBuildingClassCreatedCount(infos.building(iBuilding).getBuildingClassType()) == 0:
 		return None

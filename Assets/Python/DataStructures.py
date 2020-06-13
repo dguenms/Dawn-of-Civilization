@@ -37,7 +37,6 @@ class CivDict(dict):
 		for key, value in elements.items():
 			self[key] = value
 	
-	# TODO: test
 	def __contains__(self, key):
 		if isinstance(key, Civ):
 			return dict.__contains__(self, key)

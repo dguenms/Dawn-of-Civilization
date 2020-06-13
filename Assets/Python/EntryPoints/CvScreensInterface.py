@@ -58,7 +58,9 @@ from RFCUtils import *
 from RFCUtils import canEverRespawn as canEverRespawnUtils
 import CityNameManager as cnm
 import RiseAndFall as rnf
+import Victory as vic
 
+from Locations import *
 from Core import *
 
 gc = CyGlobalContext()
