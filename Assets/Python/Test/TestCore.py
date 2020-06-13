@@ -771,6 +771,26 @@ class TestPlayers(TestCase):
 		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iWriting, False, 0, False, False)
 		gc.getTeam(gc.getPlayer(0).getTeam()).setHasTech(iAlloys, False, 0, False, False)
 		gc.getTeam(gc.getPlayer(1).getTeam()).setHasTech(iWriting, False, 0, False, False)
+	
+	def test_at_war(self):
+		gc.getTeam(gc.getPlayer(0).getTeam()).declareWar(gc.getPlayer(1).getTeam(), True, -1)
+		
+		players0 = self.players.at_war(0)
+		players1 = self.players.at_war(1)
+		players2 = self.players.at_war(2)
+		
+		assertType(self, players0, Players)
+		assertType(self, players1, Players)
+		assertType(self, players2, Players)
+		
+		self.assertEqual(len(players0), 1)
+		self.assertEqual(len(players1), 1)
+		self.assertEqual(len(players2), 0)
+		
+		self.assert_(1 in players0)
+		self.assert_(0 in players1)
+		
+		gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
 
 			
 class TestPlayerFactory(TestCase):
@@ -823,6 +843,27 @@ class TestPlayerFactory(TestCase):
 		
 		for iPlayer in expected_players:
 			self.assert_(iPlayer in actual_players)
+	
+	def test_at_war(self):
+		gc.getTeam(gc.getPlayer(0).getTeam()).declareWar(gc.getPlayer(1).getTeam(), True, -1)
+		
+		players0 = self.factory.at_war(0)
+		players1 = self.factory.at_war(1)
+		players2 = self.factory.at_war(2)
+		
+		assertType(self, players0, Players)
+		assertType(self, players1, Players)
+		assertType(self, players2, Players)
+		
+		# note: always at war with natives and barbarians
+		self.assertEqual(len(players0), 3)
+		self.assertEqual(len(players1), 3)
+		self.assertEqual(len(players2), 2)
+		
+		self.assert_(1 in players0)
+		self.assert_(0 in players1)
+		
+		gc.getTeam(gc.getPlayer(0).getTeam()).makePeace(gc.getPlayer(1).getTeam())
 		
 		
 class TestUnits(TestCase):
