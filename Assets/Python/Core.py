@@ -989,7 +989,7 @@ class Locations(EntityCollection):
 		return self.where(lambda loc: plots.surrounding(loc, radius=radius).all(condition))
 	
 	def owners(self):
-		return list(set(loc.getOwner() for loc in self.entities()))
+		return Players(set(loc.getOwner() for loc in self.entities() if loc.getOwner() >= 0))
 	
 	
 
@@ -1049,6 +1049,9 @@ class CitiesCorner:
 		
 class CityFactory:
 
+	def __init__(self):
+		self.plots = PlotFactory()
+
 	def owner(self, identifier):
 		owner = player(identifier)
 		cities = _iterate(owner.firstCity, owner.nextCity, location)
@@ -1073,40 +1076,40 @@ class CityFactory:
 		return self.start(start).end(end)
 		
 	def regions(self, *regions):
-		return PlotFactory().regions(*regions).cities()
+		return self.plots.regions(*regions).cities()
 		
 	def region(self, iRegion):
 		return self.regions(iRegion)
 		
 	def of(self, list):
-		return Plots(list).cities()
+		return self.plots.of(list).cities()
 		
 	def surrounding(self, *args, **kwargs):
-		return plots.surrounding(*args, **kwargs).cities()
+		return self.plots.surrounding(*args, **kwargs).cities()
 
 	def birth(self, identifier, extended = None):
-		return PlotFactory().birth(identifier, extended).cities()
+		return self.plots.birth(identifier, extended).cities()
 
 	def core(self, identifier):
-		return PlotFactory().core(identifier).cities()
+		return self.plots.core(identifier).cities()
 
 	def normal(self, identifier):
-		return PlotFactory().normal(identifier).cities()
+		return self.plots.normal(identifier).cities()
 
 	def broader(self, identifier):
-		return PlotFactory().broader(identifier).cities()
+		return self.plots.broader(identifier).cities()
 
 	def respawn(self, identifier):
-		return PlotFactory().respawn(identifier).cities()
+		return self.plots.respawn(identifier).cities()
 	
 	def capital(self, identifier):
-		return city(PlotFactory().capital(identifier))
+		return city(self.plots.capital(identifier))
 		
 	def respawnCapital(self, identifier):
-		return city(PlotFactory().respawnCapital(identifier))
+		return city(self.plots.respawnCapital(identifier))
 		
 	def newCapital(self, identifier):
-		return city(PlotFactory().newCapital(identifier))
+		return city(self.plots.newCapital(identifier))
 
 
 class Cities(Locations):

@@ -1193,6 +1193,28 @@ class TestPlots(TestCase):
 		
 		# cleanup
 		gc.getMap().plot(1, 1).setOwner(-1)
+	
+	def test_owners(self):
+		# given
+		gc.getMap().plot(2, 2).setOwner(0)
+		gc.getMap().plot(3, 2).setOwner(0)
+		gc.getMap().plot(4, 2).setOwner(1)
+		
+		# when
+		plots = Plots([(2, 2), (3, 2), (4, 2), (5, 2)])
+		players = plots.owners()
+		
+		# then
+		assertType(self, players, Players)
+		self.assertEqual(len(players), 2)
+		self.assert_(0 in players)
+		self.assert_(1 in players)
+		self.assert_(-1 not in players)
+		
+		# cleanup
+		gc.getMap().plot(2, 2).setOwner(-1)
+		gc.getMap().plot(3, 2).setOwner(-1)
+		gc.getMap().plot(4, 2).setOwner(-1)
 		
 	def test_where_surrounding(self):
 		# given
@@ -1652,8 +1674,7 @@ class TestPlotFactory(TestCase):
 		assertType(self, plot, CyPlot)
 		
 	def test_city_radius(self):
-		gc.getPlayer(0).found(70, 30)
-		city = gc.getMap().plot(70, 30).getPlotCity()
+		city = gc.getPlayer(0).initCity(70, 30)
 		
 		expected_plots = sorted([
 					  (69, 32), (70, 32), (71, 32),
@@ -1787,6 +1808,27 @@ class TestCities(TestCase):
 		
 		assertType(self, cities, Cities)
 		self.assertEqual(actual_tiles, expected_tiles)
+	
+	def test_owners(self):
+		# given
+		city1 = gc.getPlayer(0).initCity(2, 2)
+		city2 = gc.getPlayer(0).initCity(4, 2)
+		city3 = gc.getPlayer(1).initCity(6, 2)
+		
+		# when
+		cities = CityFactory().of([(2, 2), (4, 2), (6, 2), (8, 2)])
+		players = cities.owners()
+		
+		# then
+		assertType(self, players, Players)
+		self.assertEqual(len(players), 2)
+		self.assert_(0 in players)
+		self.assert_(1 in players)
+		
+		# cleanup
+		city1.kill()
+		city2.kill()
+		city3.kill()
 		
 	def test_building(self):
 		self.cities[0].setHasRealBuilding(iFactory, True)
