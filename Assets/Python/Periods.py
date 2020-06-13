@@ -31,7 +31,7 @@ def evacuate(iPlayer):
 		if iCiv in dEvacuatePeriods:
 			setPeriod(iCiv, dEvacuatePeriods[iCiv])
 			
-			if getOwnedCoreCities(iPlayer) > 0:
+			if cities.core(iPlayer).owner(iPlayer) > 0:
 				return True
 			else:
 				setPeriod(iPlayer, -1)
@@ -99,8 +99,7 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 			setPeriod(iOttomans, iPeriodOttomanConstantinople)
 	
 	if iTurks in [iCiv, iOwnerCiv]:
-		tTL, tBR = dCoreArea[iPersia]
-		if isAreaControlled(slot(iTurks), tTL, tBR):
+		if isControlled(iTurks, plots.core(iPersia)):
 			setPeriod(iTurks, iPeriodSeljuks)
 		else:
 			setPeriod(iTurks, -1)
@@ -115,7 +114,7 @@ def onCityBuilt(city):
 	iOwnerCiv = civ(iOwner)
 
 	if iOwnerCiv == iPhoenicia:
-		if city.at(58, 39) and getOwnedCoreCities(iOwner) > 0:
+		if city.at(58, 39) and cities.core(iOwner).owner(iOwner) > 0:
 			setPeriod(iPhoenicia, iPeriodCarthage)
 
 
@@ -132,16 +131,14 @@ def onVassalState(iMaster, iVassal, bVassal, bCapitulated):
 			setPeriod(iMongols, iPeriodYuan)
 			
 
-# TODO: own event type
-@handler("buildingBuilt")
+@handler("palaceMoved")
 def onPalaceMoved(city, iBuilding):
-	if iBuilding == iPalace:
-		iOwner = city.getOwner()
-		iOwnerCiv = civ(iOwner)
-		
-		if iOwnerCiv == iPhoenicia:
-			if city.at(58, 39):
-				setPeriod(iPhoenicia, iPeriodCarthage)
+	iOwner = city.getOwner()
+	iOwnerCiv = civ(iOwner)
+	
+	if iOwnerCiv == iPhoenicia:
+		if city.at(58, 39):
+			setPeriod(iPhoenicia, iPeriodCarthage)
 
 
 @handler("techAcquired")

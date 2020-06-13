@@ -37,14 +37,14 @@ def buildAcquiredCapitalInfrastructure(iOwner, iPlayer, city):
 ### CITY ACQUIRED AND KEPT ###
 
 
-# TODO: maybe new event capitalfounded?
-@handler("cityAcquiredAndKept")
-def createAdditionalPolishSettler(iPlayer, city):
+@handler("firstCity")
+def createAdditionalPolishSettler(city):
+	iPlayer = city.getOwner()
 	if city.isCapital() and civ(iPlayer) == iPoland and not player(iPlayer).isHuman():
 		locations = {
-			tMemel: 1, # Memel
-			tKoenigsberg: 1, # Koenigsberg
-			tGdansk: 3, # Gdansk
+			tMemel: 1,
+			tKoenigsberg: 1,
+			tGdansk: 3,
 		}
 		
 		location = weighted_random_entry(locations)
@@ -81,10 +81,9 @@ def createCarthaginianDefenses(city):
 			makeUnits(iPhoenicia, iWarElephant, tCarthage, 2, UnitAITypes.UNITAI_CITY_COUNTER)
 
 
-# TODO: use capital founded/acquired event OR hook up into new rnf code
-@handler("cityBuilt")
+@handler("firstCity")
 def clearDanishCulture(city):
-	if civ(city) == iHolyRome and player(city).getNumCities() == 1:
+	if civ(city) == iHolyRome:
 		copenhagen = city_(tCopenhagen)
 		if copenhagen and civ(copenhagen) == iVikings:
 			city.setCulture(city.getOwner(), 5, True)
@@ -487,14 +486,14 @@ def relocateCapitals(iPlayer, city):
 		tCapital = dRelocatedCapitals[iPlayer]
 		
 		if location(city) == tCapital:
-			moveCapital(iPlayer, tCapital)
+			relocateCapital(iPlayer, tCapital)
 			
-	if civ(iPlayer) == iTurks and isAreaControlled(iPlayer, dCoreArea[iPersia][0], dCoreArea[iPersia][1]):
+	if civ(iPlayer) == iTurks and isControlled(iPlayer, plots.core(iPersia)):
 		capital = player(iPlayer).getCapitalCity()
 		if capital not in plots.core(iPersia):
 			newCapital = cities.core(iPersia).owner(iPlayer).random()
 			if newCapital:
-				moveCapital(iPlayer, location(newCapital))
+				relocateCapital(iPlayer, location(newCapital))
 
 
 def buildCapitalInfrastructure(iPlayer, city):

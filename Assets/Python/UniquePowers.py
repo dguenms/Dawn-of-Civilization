@@ -147,93 +147,23 @@ def resetMongolPower(bWar, iTeam, iOtherTeam):
 			city.setMongolUP(False)
 
 
-# TODO: add handler for custom event here -> onImmigration
-def canadianUP(city):
-	iProgress = 5 * city.getPopulation()
-	
-	lSpecialists = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]
-	lProgress = [city.getGreatPeopleUnitProgress(unique_unit(city.getOwner(), iSpecialist)) for iSpecialist in lSpecialists]
-	bAllZero = all(x <= 0 for x in lProgress)
+@handler("immigration")
+def canadianUP(_, city, iPopulation):
+	if civ(city) == iCanada:
+		iProgress = 5 * city.getPopulation() * iPopulation
 		
-	if bAllZero:
-		iGreatPerson = random_entry(lSpecialists)
-	else:
-		iGreatPerson = lSpecialists[find_max(lProgress).index]
+		lSpecialists = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]
+		lProgress = [city.getGreatPeopleUnitProgress(unique_unit(city.getOwner(), iSpecialist)) for iSpecialist in lSpecialists]
+		bAllZero = all(x <= 0 for x in lProgress)
+			
+		if bAllZero:
+			iGreatPerson = random_entry(lSpecialists)
+		else:
+			iGreatPerson = lSpecialists[find_max(lProgress).index]
+			
+		iGreatPerson = unique_unit(city.getOwner(), iGreatPerson)
 		
-	iGreatPerson = unique_unit(city.getOwner(), iGreatPerson)
-	
-	city.changeGreatPeopleProgress(iProgress)
-	city.changeGreatPeopleUnitProgress(iGreatPerson, iProgress)
-	
-	message(city.getOwner(), 'TXT_KEY_UP_MULTICULTURALISM', city.getName(), infos.unit(iGreatPerson).getText(), iProgress, event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iGreatPerson).getButton(), color=iGreen, location=city)
-
-
-class UniquePowers:
-
-#######################################
-### Main methods (Event-Triggered) ###
-#####################################  
-
-
+		city.changeGreatPeopleProgress(iProgress)
+		city.changeGreatPeopleUnitProgress(iGreatPerson, iProgress)
 		
-	def onBuildingBuilt(self, city, iOwner, iBuilding):
-		if civ(iOwner) == iMughals:
-			self.mughalUP(city, iBuilding)
-					
-#------------------VIKING UP----------------------
-
-#------------------ARABIAN U.P.-------------------
-
-#------------------AZTEC U.P.-------------------
-
-	def aztecUP(self, argsList): #Real Slavery by Sevo
-		if not player(iAztecs).isAlive(): return
-		
-		pWinningUnit, pLosingUnit = argsList
-		
-		iWinningPlayer = pWinningUnit.getOwner()
-		pWinningPlayer = player(iWinningPlayer)
-		
-		iLosingPlayer = pLosingUnit.getOwner()
-		iLosingUnit = pLosingUnit.getUnitType()
-		
-		if civ(iWinningPlayer) != iAztecs:
-			return
-
-		# Only enslave land units!!
-		if pLosingUnit.isAnimal() or not (pLosingUnit.getDomainType() == DomainTypes.DOMAIN_LAND and gc.getUnitInfo(iLosingUnit).getCombat() > 0):
-			return
-		
-		if rand(100) < 35:
-			newUnit = makeUnit(iWinningPlayer, iAztecSlave, pWinningUnit, UnitAITypes.UNITAI_ENGINEER)
-			message(iWinningPlayer, 'TXT_KEY_UP_ENSLAVE_WIN', sound='SND_REVOLTEND', event=1, button=newUnit.getButton(), color=8, location=pWinningUnit, force=True)
-			message(iLosingPlayer, 'TXT_KEY_UP_ENSLAVE_LOSE', sound='SND_REVOLTEND', event=1, button=newUnit.getButton(), color=7, location=pWinningUnit, force=True)
-			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and not is_minor(pLosingUnit): # old world civs now
-				data.iAztecSlaves += 1
-
-
-
-#------------------RUSSIAN U.P.-------------------
-
-
-
-
-
-#------------------TURKISH U.P.-------------------
-
-
-#------------------MONGOLIAN U.P
-
-
-#------------------AMERICAN U.P.-------------------
-					
-	def tradingCompanyCulture(self, city, iCiv, iPreviousOwner):
-		for pPlot in plots.surrounding(city):
-			if location(pPlot) == location(city):
-				convertPlotCulture(pPlot, iCiv, 51, False)
-			elif pPlot.isCity():
-				pass
-			elif distance(pPlot, city) == 1:
-				convertPlotCulture(pPlot, iCiv, 65, True)
-			elif pPlot.getOwner() == iPreviousOwner:
-				convertPlotCulture(pPlot, iCiv, 15, False)
+		message(city.getOwner(), 'TXT_KEY_UP_MULTICULTURALISM', city.getName(), infos.unit(iGreatPerson).getText(), iProgress, event=InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, button=infos.unit(iGreatPerson).getButton(), color=iGreen, location=city)
