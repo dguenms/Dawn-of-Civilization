@@ -945,7 +945,56 @@ class PlotFactory:
 		return self.respawnCapital(identifier)
 
 
-class Plots(EntityCollection):
+class Locations(EntityCollection):
+
+
+	def __init__(self, locations):
+		super(Locations, self).__init__(locations)
+		
+	def without(self, exceptions):
+		if not exceptions:
+			return self
+
+		if not isinstance(exceptions, (list, set, Plots, Cities)):
+			exceptions = [exceptions]
+	
+		return self.where(lambda loc: location(loc) not in [location(e) for e in exceptions])
+		
+	def _closest(self, *args):
+		x, y = _parse_tile(*args)
+		return find_min(self.entities(), lambda loc: distance(loc, (x, y)))
+		
+	def closest(self, *args):
+		return self._closest(*args).result
+		
+	def closest_distance(self, *args):
+		return self._closest(*args).value
+		
+	def units(self):
+		return sum([units.at(loc) for loc in self.entities()], Units([]))
+	
+	def owner(self, iPlayer):
+		return self.where(lambda loc: owner(loc, iPlayer))
+	
+	def notowner(self, iPlayer):
+		return self.where(lambda loc: not owner(loc, iPlayer))
+	
+	def regions(self, *regions):
+		return self.where(lambda loc: loc.getRegionID() in regions)
+	
+	def region(self, iRegion):
+		return self.regions(iRegion)
+		
+	def where_surrounding(self, condition, radius=1):
+		return self.where(lambda loc: plots.surrounding(loc, radius=radius).all(condition))
+	
+	def owners(self):
+		return list(set(loc.getOwner() for loc in self.entities()))
+	
+	
+
+
+class Plots(Locations):
 
 	def __init__(self, plots):
 		super(Plots, self).__init__(plots)
@@ -967,43 +1016,6 @@ class Plots(EntityCollection):
 		
 	def cities(self):
 		return self.transform(Cities, condition = lambda p: p.isCity())
-		
-	def units(self):
-		return sum([units.at(p) for p in self.entities()], Units([]))
-		
-	def without(self, exceptions):
-		if not exceptions:
-			return self
-
-		if not isinstance(exceptions, (list, set, Plots, Cities)):
-			exceptions = [exceptions]
-	
-		return self.where(lambda p: location(p) not in [location(e) for e in exceptions])
-		
-	def _closest(self, *args):
-		x, y = _parse_tile(*args)
-		return find_min(self.entities(), lambda p: distance(p, (x, y)))
-		
-	def closest(self, *args):
-		return self._closest(*args).result
-		
-	def closest_distance(self, *args):
-		return self._closest(*args).value
-	
-	def owner(self, iPlayer):
-		return self.where(lambda p: owner(p, iPlayer))
-	
-	def notowner(self, iPlayer):
-		return self.where(lambda p: not owner(p, iPlayer))
-	
-	def regions(self, *regions):
-		return self.where(lambda p: p.getRegionID() in regions)
-	
-	def region(self, iRegion):
-		return self.regions(iRegion)
-		
-	def where_surrounding(self, condition, radius=1):
-		return self.where(lambda p: plots.surrounding(p, radius=radius).all(condition))
 	
 	def land(self):
 		return self.where(lambda p: not p.isWater())
@@ -1097,7 +1109,7 @@ class CityFactory:
 		return city(PlotFactory().newCapital(identifier))
 
 
-class Cities(EntityCollection):
+class Cities(Locations):
 
 	def __init__(self, plots):
 		super(Cities, self).__init__(plots)
@@ -1117,30 +1129,12 @@ class Cities(EntityCollection):
 	def __str__(self):
 		return str(["%s (%s) at %s" % (city.getName(), adjective(city.getOwner()), (city.getX(), city.getY())) for city in self.entities()])
 		
-	def without(self, exceptions):
-		if not isinstance(exceptions, (list, set, Cities, Plots)):
-			exceptions = [exceptions]
-	
-		return self.where(lambda c: location(c) not in [location(e) for e in exceptions])
-		
 	def religion(self, iReligion):
 		return self.where(lambda city: city.isHasReligion(iReligion))
 	
 	def corporation(self, iCorporation):
 		return self.where(lambda city: city.isHasCorporation(iCorporation))
 	
-	def owner(self, iPlayer):
-		return self.where(lambda city: owner(city, iPlayer))
-
-	def notowner(self, iPlayer):
-		return self.where(lambda city: not owner(city, iPlayer))
-	
-	def regions(self, *regions):
-		return self.where(lambda city: city.getRegionID() in regions)
-	
-	def region(self, iRegion):
-		return self.regions(iRegion)
-		
 	def building(self, iBuilding):
 		return self.where(lambda city: city.isHasRealBuilding(iBuilding))
 	
@@ -1152,19 +1146,6 @@ class Cities(EntityCollection):
 
 	def core(self, iPlayer):
 		return self.where(lambda city: plot(city).isCore(iPlayer))
-	
-	def owners(self):
-		return list(set(city.getOwner() for city in self.entities()))
-		
-	def _closest(self, *args):
-		x, y = _parse_tile(*args)
-		return find_min(self.entities(), lambda p: distance(p, (x, y)))
-		
-	def closest(self, *args):
-		return self._closest(*args).result
-		
-	def closest_distance(self, *args):
-		return self._closest(*args).value
 	
 		
 class UnitFactory:
