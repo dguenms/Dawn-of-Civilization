@@ -22,6 +22,7 @@ def handler(event):
 
 events.addEvent("firstCity")
 events.addEvent("capitalMoved")
+events.addEvent("wonderBuilt")
 events.addEvent("immigration")
 events.addEvent("collapse")
 
@@ -42,3 +43,9 @@ def firstCityOnCityAcquiredAndKept(iPlayer, city):
 def firstCityOnCityBuilt(city):
 	if city.isCapital():
 		events.fireEvent("firstCity", city)
+
+
+@handler("buildingBuilt")
+def wonderBuiltOnBuildingBuilt(city, iBuilding):
+	if isWorldWonderClass(infos.building(iBuilding).getBuildingClassType()):
+		events.fireEvent("wonderBuilt", city, iBuilding)

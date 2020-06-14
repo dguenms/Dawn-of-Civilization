@@ -5,7 +5,6 @@ from Consts import *
 from StoredData import *
 from DataStructures import *
 from Areas import *
-from Events import handler
 
 from Types import Civ
 
@@ -1259,7 +1258,6 @@ class PlayerFactory:
 	def of(self, *players):
 		return Players(players)
 	
-	# TODO: test
 	def at_war(self, iPlayer):
 		return self.all().at_war(iPlayer)
 
@@ -1349,7 +1347,6 @@ class Players(EntityCollection):
 	def tech(self, iTech):
 		return self.where(lambda p: team(p).isHasTech(iTech))
 	
-	# TODO: test
 	def at_war(self, iPlayer):
 		return self.where(lambda p: team(iPlayer).isAtWar(player(p).getTeam()))
 		
