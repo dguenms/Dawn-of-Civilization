@@ -189,17 +189,13 @@ def onRevolution(iPlayer):
 def onPlayerChangeStateReligion(iPlayer):
 	checkStability(iPlayer)
 
-# TODO: palace moved event? -> onCapitalMoved
-@handler("buildingBuilt")
-def onPalaceMoved(city, iBuilding):
-	if iBuilding == iPalace:
-		checkStability(city.getOwner())
+@handler("palaceMoved")
+def onPalaceMoved(city):
+	checkStability(city.getOwner())
 
-# TODO: wonder built event?
-@handler("buildingBuilt")
-def onWonderBuilt(city, iBuilding):
-	if isWorldWonderClass(infos.building(iBuilding).getBuildingClassType()):
-		checkStability(city.getOwner(), True)
+@handler("wonderBuilt")
+def onWonderBuilt(city, iWonder):
+	checkStability(city.getOwner(), True)
 
 @handler("goldenAge")	
 def onGoldenAge(iPlayer):
@@ -1449,7 +1445,7 @@ def checkResurrection():
 		
 		# civs entirely controlled by minors will always respawn
 		for iPlayer in possibleResurrections:
-			if turn() - data.players[iPlayer].iLastTurnAlive < turns(15):
+			if turn() < data.players[iPlayer].iLastTurnAlive + turns(15):
 				continue
 			
 			if cities.respawn(iPlayer).all(lambda city: is_minor(city)):
@@ -1459,18 +1455,15 @@ def checkResurrection():
 					return
 					
 		# otherwise minimum amount of cities and random chance are required
-		# TODO: no check on number of turns dead?
 		for iPlayer in possibleResurrections:
-			iMinNumCities = 2
+			if turn() < data.players[iPlayer].iLastTurnAlive + turns(15):
+				continue
 			
-			# special case Netherlands: need only one city to respawn (Amsterdam)
-			# TODO: instead of special case, require at least 2 or ALL
-			if civ(iPlayer) == iNetherlands:
-				iMinNumCities = 1
+			iMinNumCities = 2
 				
 			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iPlayer]:
 				resurrectionCities = getResurrectionCities(iPlayer)
-				if len(resurrectionCities) >= iMinNumCities:
+				if len(resurrectionCities) >= iMinNumCities or len(resurrectionCities) >= len(cities.respawn(iPlayer)):
 					doResurrection(iPlayer, resurrectionCities)
 					return
 						
@@ -1661,7 +1654,10 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	makeUnits(iPlayer, getBestSiege(iPlayer), capital, iArmySize + iNumCities)
 	
 	# set state religion based on religions in the area
-	setStateReligion(iPlayer)
+	iNewStateReligion = getPrevalentReligion(plots.of(lCityList))
+	
+	if iNewStateReligion >= 0:
+		pPlayer.setLastStateReligion(iNewStateReligion)
 	
 	switchCivics(iPlayer)
 		
@@ -1739,16 +1735,6 @@ def convertBackCulture(iPlayer):
 				iCulture += plot.getCulture(iMinor)
 				plot.setCulture(iMinor, 0, True)
 			plot.changeCulture(iPlayer, iCulture, True)
-		
-# TODO: overlaps with RiseAndFall.setStateReligion
-def setStateReligion(iPlayer):
-	coreCities = cities.core(iPlayer)
-	lReligions = [iReligion for iReligion in range(iNumReligions) if gc.getReligionInfo(iReligion).isLocal()]
-	
-	iNewStateReligion = find_max(lReligions, lambda iReligion: coreCities.where(lambda city: plot(city).getSpreadFactor(iReligion) != RegionSpreadTypes.REGION_SPREAD_CORE).religion(iReligion).count()).result
-	
-	if iNewStateReligion >= 0:
-		player(iPlayer).setLastStateReligion(iNewStateReligion)
 		
 def switchCivics(iPlayer):
 	pPlayer = player(iPlayer)

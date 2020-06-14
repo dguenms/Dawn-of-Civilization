@@ -1105,7 +1105,10 @@ class RiseAndFall:
 		
 		# for colonial civs, set dynamic state religion
 		if iCiv in [iMexico, iColombia]:
-			self.setStateReligion(iPlayer)
+			iNewStateReligion = getPrevalentReligion(plots.core(iPlayer), iPlayer)
+			
+			if iNewStateReligion >= 0:
+				player(iPlayer).setLastStateReligion(iNewStateReligion)
 
 		self.assignTechs(iPlayer)
 		if year() >= year(dBirth[active()]):
@@ -1292,7 +1295,7 @@ class RiseAndFall:
 						return
 						
 			elif iCiv in [iArgentina, iBrazil]:
-				iColonyPlayer = getColonyPlayer(iPlayer)
+				iColonyPlayer = getPlayerWithMostCities(plots.birth(iPlayer))
 				if iColonyPlayer < 0: return
 				elif civ(iColonyPlayer) not in [iArgentina, iBrazil]:
 					if stability(iColonyPlayer) > iStabilityStable:
@@ -1417,7 +1420,10 @@ class RiseAndFall:
 				
 		# Leoreth: conditional state religion for colonial civs and Byzantium
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
-			self.setStateReligion(iPlayer)
+			iNewStateReligion = getPrevalentReligion(plots.core(iPlayer), iPlayer)
+			
+			if iNewStateReligion >= 0:
+				player(iPlayer).setLastStateReligion(iNewStateReligion)
 			
 		if canSwitch(iPlayer, iBirthYear):
 			startNewCivSwitchEvent(iPlayer)
@@ -2483,22 +2489,5 @@ class RiseAndFall:
 				data.setCivEnabled(iBrazil, False)
 			elif rand(iRand) != 0:
 				data.setCivEnabled(iBrazil, False)
-
-	def setStateReligion(self, iPlayer):
-		coreCities = cities.core(iPlayer)
-		lReligions = [iReligion for iReligion in range(iNumReligions) if iReligion != iJudaism]
-		
-		def owner_religion(city):
-			owner = player(city)
-			if city.getOwner() == iPlayer:
-				owner = player(city.getPreviousOwner())
-				
-			if owner: return owner.getStateReligion()
-			return -1
-		
-		iNewStateReligion = find_max(lReligions, lambda iReligion: coreCities.religion(iReligion).count() + coreCities.where(lambda city: owner_religion(city) == iReligion).count()).result
-	
-		if iNewStateReligion >= 0:
-			player(iPlayer).setLastStateReligion(iNewStateReligion)
 			
 rnf = RiseAndFall()
