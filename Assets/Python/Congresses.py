@@ -126,7 +126,7 @@ def endGlobalWar(iAttacker, iDefender):
 		lWinners = lDefenders
 		lLosers = lAttackers
 	
-	currentCongress = Congress(players.of(lWinners), players.of(lLosers))
+	currentCongress = Congress(players.of(*lWinners), players.of(*lLosers))
 	data.iCongressTurns = getCongressInterval()
 	data.currentCongress = currentCongress
 	currentCongress.startCongress()

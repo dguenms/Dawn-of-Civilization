@@ -833,9 +833,8 @@ def createMissionaries(iPlayer, iNumUnits, iReligion=None):
 	makeUnits(iPlayer, missionary(iReligion), plots.capital(iPlayer), iNumUnits)
 	
 # used: RiseAndFall
-# TODO: name is misleading, it has nothing inherently to do with colonies
-def getColonyPlayer(iPlayer):
-	return players.major().maximum(lambda p: cities.birth(iPlayer).owner(p).count())
+def getPlayerWithMostCities(area):
+	return players.major().maximum(lambda p: area.cities().owner(p).count())
 	
 # used: CvVictoryScreen, Victory
 def getReligiousVictoryType(iPlayer):
@@ -903,6 +902,9 @@ def doByzantineBribery(spy):
 	popup.addButton(text("TXT_KEY_BYZANTINE_UP_BUTTON_NONE"))
 	popup.launch(False)
 	
+def exclusive(iPlayer, *civs):
+	return civ(iPlayer) in civs and any(player(iCiv).isAlive() for iCiv in civs if civ(iPlayer) != iCiv)
+	
 # used: CvScreensInterface, Stability
 def canRespawn(iPlayer):
 	iCiv = civ(iPlayer)
@@ -920,18 +922,14 @@ def canRespawn(iPlayer):
 	if not any(year().between(iStart, iEnd) for iStart, iEnd in dResurrections[iPlayer]):
 		return False
 				
-	# TODO: function like exclusive(iCiv1, iCiv2) to simplify this
 	# Thailand cannot respawn when Khmer is alive and vice versa
-	if iCiv == iThailand and player(iKhmer).isAlive(): return False
-	if iCiv == iKhmer and player(iThailand).isAlive(): return False
+	if exclusive(iPlayer, iKhmer, iThailand): return False
 	
 	# Rome cannot respawn when Italy is alive and vice versa
-	if iCiv == iRome and player(iItaly).isAlive(): return False
-	if iCiv == iItaly and player(iRome).isAlive(): return False
+	if exclusive(iPlayer, iRome, iItaly): return False
 	
 	# Greece cannot respawn when Byzantium is alive and vice versa
-	if iCiv == iGreece and player(iByzantium).isAlive(): return False
-	if iCiv == iByzantium and player(iGreece).isAlive(): return False
+	if exclusive(iPlayer, iGreece, iByzantium): return False
 	
 	# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 	if iCiv == iIndia and player(iMughals).isAlive(): return False
@@ -1090,14 +1088,6 @@ def captureUnit(pLosingUnit, pWinningUnit, iUnit, iChance):
 		if civ(iPlayer) == iAztecs:
 			if civ(pLosingUnit) not in dCivGroups[iCivGroupAmerica] and not is_minor(pLosingUnit):
 				data.iAztecSlaves += 1
-		
-# used: CvRandomEventInterface
-# TODO: just move there?
-def triggerMeltdown(iPlayer, iCity):
-	print "trigger meltdown"
-	
-	pCity = player(iPlayer).getCity(iCity)
-	pCity.triggerMeltdown(iNuclearPlant)
 	
 # unused
 # kept for scripted settler AI later
@@ -1120,7 +1110,7 @@ def flipOrRelocateGarrison(city, iNumDefenders):
 	return lFlippedUnits, lRelocatedUnits
 		
 # used: RFCUtils
-# TODO: must overlap with SOMETHING
+# TODO: use more
 def flipUnit(unit, iNewOwner, plot):
 	if location(unit) >= (0, 0):
 		iUnitType = unit.getUnitType()
@@ -1276,3 +1266,21 @@ def setCivilization(iPlayer, iNewCivilization):
 def findSeaPlots(tile, iRange, iCiv):
 	"""Searches a sea plot that isn't occupied by a unit and isn't a civ's territory surrounding the starting coordinates"""
 	return plots.surrounding(tile, radius=iRange).sea().where(lambda p: not p.isUnit()).where(lambda p: p.getOwner() in [-1, slot(iCiv)]).random()
+
+
+def getOwnerStateReligion(city, iPlayer):
+	iOwner = city.getOwner()
+	if iOwner == iPlayer:
+		iOwner = city.getPreviousOwner()
+	
+	if iOwner >= 0:
+		return player(iOwner).getStateReligion()
+		
+	return -1
+
+
+def getPrevalentReligion(area, iStateReligionPlayer=None):
+	cities = area.cities()
+	lReligions = [iReligion for iReligion in range(iNumReligions) if not infos.religion(iReligion).isLocal()]
+	
+	return find_max(lReligions, lambda iReligion: cities.religion(iReligion).count() + cities.where(lambda city: iStateReligionPlayer is not None and getOwnerStateReligion(city, iStateReligionPlayer) == iReligion).count()).result
