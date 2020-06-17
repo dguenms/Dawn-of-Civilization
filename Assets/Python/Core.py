@@ -29,6 +29,10 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
+def autoplay():
+	return year() < year(dSpawn[active()])
+
+
 class Civics(object):
 
 	def __init__(self, identifier):
@@ -415,7 +419,12 @@ def encode(text):
 def text(key, *format):
 	if isinstance(key, unicode) and len(format) == 0:
 		return key
-	return translator.getText(str(key), tuple([encode(f) for f in format]))
+		
+	formatted = translator.getText(str(key), tuple(encode(f) for f in format))
+	if formatted == key:
+		return str(key) % tuple(encode(f) for f in format)
+		
+	return formatted
 	
 	
 def text_if_exists(key, *format, **kwargs):

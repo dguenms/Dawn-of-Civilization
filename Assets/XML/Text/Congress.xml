@@ -499,34 +499,34 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_ASSIGNMENT</Tag>
-		<English>[NEWLINE][ICON_BULLET]%s2 %s1 falls under %s3 control.</English>
-		<French>[NEWLINE][ICON_BULLET]%s2 %s1 tombe sous contr&#244;le %s3.</French>
-		<German>[NEWLINE][ICON_BULLET]%s2 %s1 f&#228;llt unter %s3 Kontrolle.</German>
-		<Italian>[NEWLINE][ICON_BULLET]%s2 %s1 falls under %s3 control.</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]%s2 %s1 falls under %s3 control.</Spanish>
+		<English>[ICON_BULLET]%s2 %s1 falls under %s3 control.</English>
+		<French>[ICON_BULLET]%s2 %s1 tombe sous contr&#244;le %s3.</French>
+		<German>[ICON_BULLET]%s2 %s1 f&#228;llt unter %s3 Kontrolle.</German>
+		<Italian>[ICON_BULLET]%s2 %s1 falls under %s3 control.</Italian>
+		<Spanish>[ICON_BULLET]%s2 %s1 falls under %s3 control.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_COLONY</Tag>
-		<English>[NEWLINE][ICON_BULLET]%s2 may found %s1.</English>
-		<French>[NEWLINE][ICON_BULLET]%s2 peut fonder %s1.</French>
-		<German>[NEWLINE][ICON_BULLET]%s2 darf %s1 gr&#252;nden.</German>
-		<Italian>[NEWLINE][ICON_BULLET]%s2 may found %s1.</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]%s2 may found %s1.</Spanish>
+		<English>[ICON_BULLET]%s2 may found %s1.</English>
+		<French>[ICON_BULLET]%s2 peut fonder %s1.</French>
+		<German>[ICON_BULLET]%s2 darf %s1 gr&#252;nden.</German>
+		<Italian>[ICON_BULLET]%s2 may found %s1.</Italian>
+		<Spanish>[ICON_BULLET]%s2 may found %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY</Tag>
-		<English>[NEWLINE][ICON_BULLET]%s3 may found %s1 in %s2 territory.</English>
-		<French>[NEWLINE][ICON_BULLET]%s3 peut fonder %s1 en territoire %s2.</French>
-		<German>[NEWLINE][ICON_BULLET]%s3 darf %s1 in %s2 Territorium gr&#252;nden.</German>
-		<Italian>[NEWLINE][ICON_BULLET]%s3 may found %s1 in %s2 territory.</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET]%s3 may found %s1 in %s2 territory.</Spanish>
+		<English>[ICON_BULLET]%s3 may found %s1 in %s2 territory.</English>
+		<French>[ICON_BULLET]%s3 peut fonder %s1 en territoire %s2.</French>
+		<German>[ICON_BULLET]%s3 darf %s1 in %s2 Territorium gr&#252;nden.</German>
+		<Italian>[ICON_BULLET]%s3 may found %s1 in %s2 territory.</Italian>
+		<Spanish>[ICON_BULLET]%s3 may found %s1 in %s2 territory.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_RESULTS</Tag>
-		<English>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE]</English>
-		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Au bout de longues n&#233;gociations, les d&#233;l&#233;gu&#233;s du congr&#232;s en sont arriv&#233;s &#224; la d&#233;cision suivante :[NEWLINE]</French>
-		<German>[H1]Kongress von %s1[\H1][NEWLINE]Nach langen Verhandlung sind die stimmberechtigen Mitglieder des Kongresses zu folgender Entscheidung gekommen:[NEWLINE]</German>
-		<Italian>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE]</Italian>
-		<Spanish>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE]</Spanish>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:</English>
+		<French>[H1]Congr&#232;s de %s1[\H1][NEWLINE]Au bout de longues n&#233;gociations, les d&#233;l&#233;gu&#233;s du congr&#232;s en sont arriv&#233;s &#224; la d&#233;cision suivante :</French>
+		<German>[H1]Kongress von %s1[\H1][NEWLINE]Nach langen Verhandlung sind die stimmberechtigen Mitglieder des Kongresses zu folgender Entscheidung gekommen:</German>
+		<Italian>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:</Italian>
+		<Spanish>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:</Spanish>
 	</TEXT>
 </Civ4GameText>
