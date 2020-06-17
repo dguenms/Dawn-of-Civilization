@@ -2,13 +2,14 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import PyHelpers 
-import Popup
+import PyHelpers
 from RFCUtils import *
 from Consts import *
 import CityNameManager as cnm
 from StoredData import data # edead
+
 from Events import handler
+from Popups import popup
 
 from Locations import *
 from Core import *
@@ -159,36 +160,74 @@ class Congress:
 		self.lPossibleBribes = []
 		self.iNumBribes = 0
 		self.lBriberyOptions = []
-
+		
+		base_introduction = popup.option(self.applyIntroduction, "TXT_KEY_CONGRESS_OK")
+		
+		self.introduction_peace = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION").build()
+		self.introduction_peace_excluded = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_AI").build()
+		self.introduction_peace_excluded_own_war = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_AI_WAR_EXCLUDED").build()
+		self.introduction_war_won = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON").build()
+		self.introduction_war_lost = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST").build()
+		self.introduction_war_neutral = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR").build()
+		self.introduction_war_excluded = base_introduction.text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI").build()
+			
+		self.claim_city = popup.text("TXT_KEY_CONGRESS_CLAIM_CITY").selection(self.applyClaimCity).option(None, "TXT_KEY_CONGRESS_NO_REQUEST").build()
+	
+		base_vote = popup.option(self.approveClaim, "TXT_KEY_POPUP_VOTE_YES").option(self.abstainClaim, "TXT_KEY_POPUP_ABSTAIN").option(self.rejectClaim, "TXT_KEY_POPUP_VOTE_NO")
+		
+		self.vote_city = base_vote.text("TEXT_KEY_CONGRESS_REQUEST_CITY").build()
+		self.vote_settle_own = base_vote.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN").build()
+		self.vote_settle_foreign = base_vote.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN").build()
+		self.vote_settle_empty = base_vote.text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY").build()
+		
+		base_bribery = popup.option(self.noBribe, "TXT_KEY_CONGRESS_NO_BRIBE", "INTERFACE_BUTTONS_CANCEL") \
+		                    .option(self.cannotAffordBribe, "TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE", "INTERFACE_BUTTONS_CANCEL") \
+							.selection(self.bribeGold, "TXT_KEY_CONGRESS_BRIBE_GOLD", infos.commerce(iCommerceType).getButton()) \
+							.selection(self.bribeManipulate, "TXT_KEY_CONGRESS_MANIPULATION", 'Art/Interface/Buttons/Espionage.dds') \
+							.build()
+		
+		self.bribe_other_city = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY").build()
+		self.bribe_other_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY").build()
+		self.bribe_own_city = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_CITY").build()
+		self.bribe_own_plot = base_bribery.selection(self.applyBribe, "TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY").build()
+		
+		bribery_result = popup.option(self.applyBriberyResult, "TXT_KEY_CONGRESS_OK")
+		
+		self.bribery_result_human_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS").build()
+		self.bribery_result_human_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE").build()
+		self.bribery_result_other_success = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS").build()
+		self.bribery_result_other_failure = bribery_result.text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE").build()
+	
 	### Popups ###
 	
-	def startIntroductionEvent(self, bHumanInvited, bHumanInGlobalWar = False):
-		popup = CyPopupInfo()
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyIntroductionEvent")
-		
-		sInviteString = ""
-		for iPlayer in self.invites:
-			if not player(iPlayer).isHuman():
-				sInviteString += text("TXT_KEY_CONGRESS_INVITE", fullname(iPlayer))
-				
+	def getIntroductionEvent(self, bHumanInvited, bHumanInGlobalWar):
 		if self.bPostWar:
-			if bHumanInvited: 
-				if active() in self.winners: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON", self.sHostCityName, sInviteString)
-				elif active() in self.losers: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST", self.sHostCityName, sInviteString)
-				else: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR", self.sHostCityName, sInviteString)
-			else: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", self.sHostCityName, sInviteString)
-		else:
-			if bHumanInvited: sText = text("TXT_KEY_CONGRESS_INTRODUCTION", self.sHostCityName, sInviteString)
-			elif bHumanInGlobalWar: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_AI_WAR_EXCLUDED", self.sHostCityName, sInviteString)
-			else: sText = text("TXT_KEY_CONGRESS_INTRODUCTION_AI", self.sHostCityName, sInviteString)
+			if bHumanInvited:
+				if active() in self.winners:
+					return self.introduction_war_won
+				if active() in self.losers:
+					return self.introduction_war_lost
+				
+				return self.introduction_war_neutral
 			
-		popup.setText(sText)
-			
-		popup.addPythonButton(text("TXT_KEY_CONGRESS_OK"), '')
-		popup.addPopup(active())
+			return self.introduction_war_excluded
 		
-	def applyIntroductionEvent(self):
+		if bHumanInvited:
+			return self.introduction_peace
+		if bHumanInGlobalWar:
+			return self.introduction_peace_excluded_own_war
+		
+		return self.introduction_peace_excluded
+		
+	
+	def startIntroduction(self, bHumanInvited, bHumanInGlobalWar = False):
+		other_players = [text("TXT_KEY_CONGRESS_INVITE", fullname(iPlayer)) for iPlayer in self.invites.without(active())]
+	
+		event = self.getIntroductionEvent(bHumanInvited, bHumanInGlobalWar)
+		
+		event.text(self.sHostCityName, newline.join(other_players)).launch()
+		
+	def applyIntroduction(self):
 		# check one more time if player has collapsed in the meantime
 		self.invites = self.invites.without(players.all().notalive())
 	
@@ -210,29 +249,21 @@ class Congress:
 			# human cannot make claims, so let the AI vote
 			self.voteOnClaims()
 
-	def startClaimCityEvent(self):
-		popup = CyPopupInfo()
-		popup.setText(text("TXT_KEY_CONGRESS_CLAIM_CITY", self.sHostCityName))
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyClaimCityEvent")
+	def startClaimCity(self):
+		event = self.claim_city.text(self.sHostCityName)
 		
-		for tCity in self.dPossibleClaims[active()]:
-			x, y, iValue = tCity
-			plot = plot_(x, y)
-			if plot.isCity():
-				popup.addPythonButton(plot.getPlotCity().getName(), infos.civ(plot).getButton())
+		for x, y, _ in self.dPossibleClaims[active()]:
+			city = city_(x, y)
+			if city:
+				event.applyClaimCity(city.getName(), infos.civ(city).getButton())
 			else:
-				popup.addPythonButton(cnm.getFoundName(active(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
-			
-		popup.addPythonButton(text("TXT_KEY_CONGRESS_NO_REQUEST"), 'Art/Interface/Buttons/Actions/Cancel.dds')
-		popup.addPopup(active())
+				event.applyClaimCity(cnm.getFoundName(active(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
+				
+		event.launch()
 
-	def applyClaimCityEvent(self, iChoice):
-		if iChoice < len(self.dPossibleClaims[active()]):
-			x, y, iValue = self.dPossibleClaims[active()][iChoice]
-			self.dCityClaims[active()] = (x, y, iValue)
-
-		self.voteOnClaims()	
+	def applyClaimCity(self, iChoice):
+		self.dCityClaims[active()] = self.dPossibleClaims[active()][iChoice]
+		self.voteOnClaims()
 		
 	def startVoteCityEvent(self, iClaimant, (x, y)):
 		plot = plot_(x, y)
@@ -240,34 +271,35 @@ class Congress:
 		if plot.isRevealed(active(), False):
 			plot.cameraLookAt()
 		
-		popup = CyPopupInfo()
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyVoteCityEvent")
-		popup.setData1(iClaimant)
-		popup.setData2(plot.getOwner())
-		
-		sClaimant = name(iClaimant)
-		
 		if plot.isCity():
-			popup.setText(text("TXT_KEY_CONGRESS_REQUEST_CITY", sClaimant, adjective(plot), plot.getPlotCity().getName()))
+			event = self.vote_city.text(name(iClaimant), adjective(plot), city(plot).getName())
 		elif plot.getOwner() == iClaimant:
-			popup.setText(text("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWN", sClaimant, cnm.getFoundName(iClaimant, tPlot)))
+			event = self.vote_settle_own.text(name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
 		elif plot.isOwned():
-			popup.setText(text("TXT_KEY_CONGRESS_REQUEST_SETTLE_FOREIGN", sClaimant, adjective(plot), cnm.getFoundName(iClaimant, tPlot)))
+			event.text(name(iClaimant), adjective(plot), cnm.getFoundName(iClaimant, (x, y)))
 		else:
-			popup.setText(text("TXT_KEY_CONGRESS_REQUEST_SETTLE_EMPTY", sClaimant, cnm.getFoundName(iClaimant, tPlot)))
+			event.text(name(iClaimant), cnm.getFoundName(iClaimant, (x, y)))
 			
-		popup.addPythonButton(text("TXT_KEY_POPUP_VOTE_YES"), infos.art("INTERFACE_EVENT_BULLET"))
-		popup.addPythonButton(text("TXT_KEY_POPUP_ABSTAIN"), infos.art("INTERFACE_EVENT_BULLET"))
-		popup.addPythonButton(text("TXT_KEY_POPUP_VOTE_NO"), infos.art("INTERFACE_EVENT_BULLET"))
+		event.approveClaim().abstainClaim().denyClaim().launch(iClaimant, plot.getOwner())
 		
-		popup.addPopup(active())
+	def approveClaim(self, iClaimant, iOwner):
+		self.applyClaimVote(iClaimant, iOwner, 1)
 		
-	def applyVoteCityEvent(self, iClaimant, iOwner, iVote):
-		self.vote(active(), iClaimant, 1 - iVote) # yes=0, abstain=1, no=2
+	def abstainClaim(self, iClaimant, iOwner):
+		self.applyClaimVote(iClaimant, iOwner, 0)
+	
+	def denyClaim(self, iClaimant, iOwner):
+		self.applyClaimVote(iClaimant, iOwner, -1)
 		
-		if iClaimant in self.dVotingMemory: self.dVotingMemory[iClaimant] += (1 - iVote)
-		if iOwner >= 0 and iOwner in self.dVotingMemory: self.dVotingMemory[iOwner] += (iVote - 1)
+	def applyClaimVote(self, iClaimant, iOwner, iVote):
+		self.vote(active(), iClaimant, iVote)
+		
+		if iClaimant in self.dVotingMemory:
+			self.dVotingMemory[iClaimant] += iVote
+			
+		if iOwner >= 0 and iOwner in self.dVotingMemory:
+			self.dVotingMemory[iOwner] -= iVote
+		
 		self.iNumHumanVotes += 1
 		
 		# still votes to cast: start a new popup, otherwise let the AI vote
@@ -277,9 +309,8 @@ class Congress:
 		else:
 			self.voteOnClaimsAI()
 			
-	def startBriberyEvent(self, iVoter, iClaimant, (x, y), iDifference, iClaimValidity):
+	def startBribery(self, iBribedPlayer, iClaimant, (x, y), iDifference, iClaimValidity):
 		plot = plot_(x, y)
-		iBribedPlayer = iVoter
 		
 		bHumanClaim = player(iClaimant).isHuman()
 		bCity = plot.isCity()
@@ -289,17 +320,15 @@ class Congress:
 		
 		if bHumanClaim:
 			if bCity:
-				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY", adjective(iBribedPlayer), adjective(plot), plot.getPlotCity().getName())
+				event = self.bribe_other_city.text(adjective(iBribedPlayer), adjective(plot), city(plot).getName())
 			else:
-				closest = closestCity(plot, iBribedPlayer, same_continent=True)
-				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY", adjective(iBribedPlayer), adjective(plot), closest.getName())
+				event = self.bribe_other_plot.text(adjective(iBribedPlayer), adjective(plot), closestCity(plot, iBribedPlayer, same_continent=True).getName())
 		else:	
 			if bCity:
-				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_CITY", adjective(iBribedPlayer), adjective(iClaimant), plot.getPlotCity().getName())
+				event = self.bribe_own_city.text(adjective(iBribedPlayer), adjective(iClaimant), city(plot).getName())
 			else:
-				closest = closestCity(plot, active(), same_continent=True)
-				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY", adjective(iBribedPlayer), adjective(iClaimant), closest.getName())
-				
+				event = self.bribe_own_territory.text(adjective(iBribedPlayer), adjective(iClaimant), closestCity(plot, active(), same_continent=True).getName())
+		
 		iCost = iDifference * player(iBribedPlayer).calculateTotalCommerce() / 5
 		
 		# make sure costs are positive
@@ -325,93 +354,82 @@ class Congress:
 		if iTreasury >= iCost: self.lBriberyOptions.append((0, iCost, iMediumChance))
 		if iTreasury >= iCost * 2: self.lBriberyOptions.append((0, iCost * 2, iHighChance))
 		
-		if iEspionageSpent >= iCost / 2: self.lBriberyOptions.append((3, iCost / 2, iLowChance))
-		if iEspionageSpent >= iCost: self.lBriberyOptions.append((3, iCost, iMediumChance))
-		if iEspionageSpent >= iCost * 2: self.lBriberyOptions.append((3, iCost * 2, iHighChance))
+		if iEspionageSpent >= iCost / 2: self.lBriberyOptions.append((3, iCost / 4, iLowChance))
+		if iEspionageSpent >= iCost: self.lBriberyOptions.append((3, iCost / 2, iMediumChance))
+		if iEspionageSpent >= iCost * 2: self.lBriberyOptions.append((3, iCost, iHighChance))
 		
-		popup = CyPopupInfo()
-		popup.setText(sText)
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyBriberyEvent")
-		popup.setData1(iBribedPlayer)
-		popup.setData2(iClaimant)
-		popup.setData3(iClaimValidity)
+		if not self.lBriberyOptions:
+			event.cannotAffordBribe().launch(iBribedPlayer, iClaimant, iClaimValidity)
+			return
 		
-		for tOption in self.lBriberyOptions:
-			iCommerceType, iCost, iThreshold = tOption
-			if iCommerceType == 0: 
-				textKey = "TXT_KEY_CONGRESS_BRIBE_GOLD"
-				button = infos.commerce(iCommerceType).getButton()
+		dChanceText = {
+			iLowChance : "TXT_KEY_CONGRESS_CHANCE_AVERAGE",
+			iMediumChance : "TXT_KEY_CONGRESS_CHANCE_HIGH",
+			iHighChance : "TXT_KEY_CONGRESS_CHANCE_VERY_HIGH",
+		}
+		
+		for iCommerceType, iCost, iThreshold in self.lBriberyOptions:
+			if iCommerceType == 0:
+				event.bribeGold(iCost, text(dChanceText[iThreshold]))
 			elif iCommerceType == 3: 
-				textKey = "TXT_KEY_CONGRESS_MANIPULATION"
-				button = 'Art/Interface/Buttons/Espionage.dds'
-				
-			if iThreshold == iLowChance: sChance = "TXT_KEY_CONGRESS_CHANCE_AVERAGE"
-			elif iThreshold == iHighChance: sChance = "TXT_KEY_CONGRESS_CHANCE_VERY_HIGH"
-			else: sChance = "TXT_KEY_CONGRESS_CHANCE_HIGH"
-			
-			sChance = text(sChance)
-			
-			popup.addPythonButton(text(textKey, iCost, sChance), button)
-			
-		if self.lBriberyOptions:
-			popup.addPythonButton(text("TXT_KEY_CONGRESS_NO_BRIBE"), infos.art("INTERFACE_BUTTONS_CANCEL"))
-		else:
-			popup.addPythonButton(text("TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE"), infos.art("INTERFACE_BUTTONS_CANCEL"))
+				event.bribeManipulate(iCost, text(dChanceText[iThreshold]))
 		
-		popup.addPopup(active())
+		event.noBribe().launch(iBribedPlayer, iClaimant, iClaimValidity)
 		
-	def applyBriberyEvent(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
-		if iChoice < len(self.lBriberyOptions):
-			iCommerceType, iCost, iThreshold = self.lBriberyOptions[iChoice]
-			iRand = rand(100)
-			
-			if iCommerceType == 0: player().changeGold(-iCost)
-			elif iCommerceType == 3: team().changeEspionagePointsAgainstTeam(iBribedPlayer, -iCost)
-			
-			bHumanClaim = player(iClaimant).isHuman()
-			bSuccess = (iRand < iThreshold)
-			
-			self.startBriberyResultEvent(iBribedPlayer, iClaimant, bHumanClaim, bSuccess)
+	def noBribe(self, iBribedPlayer, iClaimant, iClaimValidity):
+		self.randomVote(iBribedPlayer, iClaimant, iClaimValidity)
+		
+	def cannotAffordBribe(self, iBribedPlayer, iClaimant, iClaimValidity):
+		self.randomVote(iBribedPlayer, iClaimant, iClaimValidity)
+		
+	def randomVote(self, iBribedPlayer, iClaimant, iClaimValidity):
+		# if no bribery option was chosen, the civ votes randomly as usual
+		if rand(50) < iClaimValidity:
+			self.vote(iBribedPlayer, iClaimant, 1)
 		else:
-			# if no bribery option was chosen, the civ votes randomly as usual
-			iRand = rand(50)
-			if iRand < iClaimValidity:
-				self.vote(iBribedPlayer, iClaimant, 1)
-			else:
-				self.vote(iBribedPlayer, iClaimant, -1)
-				
-			# to continue the process
-			self.applyBriberyResultEvent()
-				
-	def startBriberyResultEvent(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):	
-		if bSuccess:
-			if bHumanClaim:
-				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS", name(iBribedPlayer))
-				self.vote(iBribedPlayer, iClaimant, 1)
-			else:
-				sText = text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS", name(iBribedPlayer))
-				self.vote(iBribedPlayer, iClaimant, -1)
-		else:
-			if bHumanClaim:
-				sText = text("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE", name(iBribedPlayer))
-				self.vote(iBribedPlayer, iClaimant, -1)
-			else:
-				sText = text("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", name(iBribedPlayer))
-				self.vote(iBribedPlayer, iClaimant, 1)
-				
+			self.vote(iBribedPlayer, iClaimant, -1)
+			
+		# to continue the process
+		self.applyBriberyResult()
+		
+	def applyBribery(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
+		iCommerceType, iCost, iThreshold = self.lBriberyOptions[iChoice]
+		iRand = rand(100)
+		
+		if iCommerceType == 0: player().changeGold(-iCost)
+		elif iCommerceType == 3: team().changeEspionagePointsAgainstTeam(iBribedPlayer, -iCost)
+		
+		bHumanClaim = player(iClaimant).isHuman()
+		bSuccess = (iRand < iThreshold)
+		
+		iVote = 1
+		if not bHumanClaim: iVote *= -1
+		if not bSuccess: iVote *= -1
+		
+		self.vote(iBribedPlayer, iClaimant, iVote)
+		
+		if not bSuccess:
 			player(iBribedPlayer).AI_changeMemoryCount(active(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, 1)
 			player(iBribedPlayer).AI_changeAttitudeExtra(active(), -2)
-			
-		popup = CyPopupInfo()
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyBriberyResultEvent")
-		popup.setText(sText)
-		popup.addPythonButton(text("TXT_KEY_CONGRESS_OK"), '')
 		
-		popup.addPopup(active())
 		
-	def applyBriberyResultEvent(self):
+		self.startBriberyResult(iBribedPlayer, iClaimant, bHumanClaim, bSuccess)
+				
+	def startBriberyResult(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):
+		if bSuccess:
+			if bHumanClaim:
+				event = self.bribery_result_human_success
+			else:
+				event = self.bribery_result_other_success
+		else:
+			if bHumanClaim:
+				event = self.bribery_result_human_failure
+			else:
+				event = self.bribery_result_other_failure
+				
+		event.text(name(iBribedPlayer)).launch()
+		
+	def applyBriberyResult(self):
 		# just continue to the next bribe if there is one
 		self.iNumBribes += 1
 		if self.iNumBribes < len(self.lPossibleBribes):
@@ -420,81 +438,84 @@ class Congress:
 		else:
 			# otherwise continue with applying the votes
 			self.applyVotes()
+		
+		demand = popup.option(self.acceptDemand, "TXT_KEY_CONGRESS_ACCEPT").option(self.refuseDemand, "TXT_KEY_CONGRESS_REFUSE")
+		
+		self.demand_city = refusal.text("TXT_KEY_CONGRESS_DEMAND_CITY")
+		self.demand_plot = refusal.text("TXT_KEY_CONGRESS_DEMAND_PLOT")
 			
-	def startRefusalEvent(self, iClaimant, (x, y)):
+	def startDemand(self, iClaimant, (x, y)):
 		plot = plot_(x, y)
 		
 		if plot.isRevealed(active(), False):
 			plot.cameraLookAt()
-		
-		popup = CyPopupInfo()
-		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-		popup.setOnClickedPythonCallback("applyRefusalEvent")
-		popup.setData1(iClaimant)
-		popup.setData2(x)
-		popup.setData3(y)
-		
-		sVotedYes = ""
-		for iPlayer in self.dVotedFor[iClaimant]:
-			if not player(iPlayer).isHuman() and iClaimant != iPlayer:
-				sVotedYes += text("TXT_KEY_CONGRESS_INVITE", fullname(iPlayer))
-		
-		
-		if plot.isCity():
-			sText = text("TXT_KEY_CONGRESS_DEMAND_CITY", name(iClaimant), plot.getPlotCity().getName(), sVotedYes)
-		else:
-			closest = closestCity(plot, active(), same_continent=True)
-			sText = text("TXT_KEY_CONGRESS_DEMAND_TERRITORY", name(iClaimant), closest.getName(), sVotedYes)
 			
-		popup.setText(sText)
-		popup.addPythonButton(text("TXT_KEY_CONGRESS_ACCEPT"), infos.art("INTERFACE_EVENT_BULLET"))
-		popup.addPythonButton(text("TXT_KEY_CONGRESS_REFUSE"), infos.art("INTERFACE_EVENT_BULLET"))
-		popup.addPopup(active())
+		voted_yes = [text("TXT_KEY_CONGRESS_INVITE", fullname(iPlayer)) for iPlayer in self.dVotedFor[iClaimant] if not player(iPlayer).isHuman() and iPlayer != iClaimant]
+			
+		city = city_(plot)
+		if city:
+			event = self.demand_city.text(name(iClaimant), city.getName(), voted_yes)
+		else:
+			event = self.demand_plot.text(name(iClaimant), closestCity(plot, active(), same_continent=True).getName(), voted_yes)
 		
-	def applyRefusalEvent(self, iChoice, iClaimant, x, y):
-		if iChoice == 0:
-			plot = plot_(x, y)
-			if plot.isCity():
-				self.assignCity(iClaimant, plot.getOwner(), (x, y))
+		event.acceptDemand().refuseDemand().launch(iClaimant, x, y)
+		
+	def acceptDemand(self, iClaimant, x, y):
+		city = city_(x, y)
+		if city:
+			self.assignCity(iClaimant, city.getOwner(), (x, y))
+		else:
+			self.foundColony(iClaimant, (x, y))
+		
+		self.continueAssignments()
+			
+	def refuseDemand(self, iClaimant):
+		iVotes = self.dVotes[iClaimant]
+		
+		if iClaimant not in self.dPossibleBelligerents:
+			self.dPossibleBelligerents[iClaimant] = 2 * iVotes
+		else:
+			self.dPossibleBelligerents[iClaimant] += 2 * iVotes
+		
+		for iVoter in self.dVotedFor[iClaimant]:
+			if team(iVoter).isAVassal(): continue
+			if iVoter not in self.dPossibleBelligerents:
+				self.dPossibleBelligerents[iVoter] = iVotes
 			else:
-				self.foundColony(iClaimant, (x, y))
-		else:
-			self.refuseDemand(iClaimant)
+				self.dPossibleBelligerents[iVoter] += iVotes
+		
+		self.continueAssignments()
 			
+	def continueAssignments(self):
 		self.iNumHumanAssignments += 1
 		
 		# still assignments to react to: start a new popup, otherwise show the results
 		if self.iNumHumanAssignments < len(self.lHumanAssignments):
 			iNextClaimant, tPlot = self.lHumanAssignments[self.iNumHumanAssignments]
-			self.startRefusalEvent(iNextClaimant, tPlot)
+			self.startDemand(iNextClaimant, tPlot)
 		else:
 			self.finishCongress()
 			
-	def startResultsEvent(self):
-		# don't display if human still in autoplay
-		if year() >= year(dBirth[active()]):
-	
-			sText = text("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName)
-		
-			for tAssignment in self.lAssignments:
-				sName, iOldOwner, iNewOwner = tAssignment
-				sText += text("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", sName, adjective(iOldOwner), adjective(iNewOwner))
+		self.results = popup.option(None, "TXT_KEY_CONGRESS_OK")
 			
-			for tColony in self.lColonies:
-				sName, iOldOwner, iNewOwner = tColony
+	def startResults(self):
+		if not autoplay():
+			content = []
+			content.append(text("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName))
+			
+			for sName, iOldOwner, iNewOwner in self.lAssignments:
+				content.append(text("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", sName, adjective(iOldOwner), adjective(iNewOwner)))
+				
+			for sName, iOldOwner, iNewOwner in self.lColonies:
 				if iOldOwner >= 0:
-					sText += text("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", sName, adjective(iOldOwner), name(iNewOwner))
+					content.append(text("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", sName, adjective(iOldOwner), name(iNewOwner)))
 				else:
-					sText += text("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner))
+					content.append(text("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner)))
 			
 			if not self.lAssignments and not self.lColonies:
-				sText += text("TXT_KEY_CONGRESS_NO_RESULTS")
-			
-			popup = CyPopupInfo()
-			popup.setText(sText)
-			popup.addPythonButton(text("TXT_KEY_CONGRESS_OK"), '')
-		
-			popup.addPopup(active())
+				content.append(text("TXT_KEY_CONGRESS_NO_RESULTS"))
+				
+			self.results.text(newline.join(content)).launch()
 			
 		# if this was triggered by a war, reset belligerents
 		if isGlobalWar():
@@ -535,7 +556,7 @@ class Congress:
 		
 		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
 		if active() in self.invites:
-			self.startIntroductionEvent(True)
+			self.startIntroduction(True)
 				
 		# procedure continues from the makeClaimHuman event
 		
@@ -612,25 +633,10 @@ class Congress:
 		# allow human player to refuse in case his cities were claimed -> last decision leads to result event
 		if len(self.lHumanAssignments) > 0:
 			iClaimant, tPlot = self.lHumanAssignments[0]
-			self.startRefusalEvent(iClaimant, tPlot)
+			self.startDemand(iClaimant, tPlot)
 		else:
 			# without human cities affected, finish the congress immediately
 			self.finishCongress()
-			
-	def refuseDemand(self, iClaimant):
-		iVotes = self.dVotes[iClaimant]
-		
-		if iClaimant not in self.dPossibleBelligerents:
-			self.dPossibleBelligerents[iClaimant] = 2 * iVotes
-		else:
-			self.dPossibleBelligerents[iClaimant] += 2 * iVotes
-		
-		for iVoter in self.dVotedFor[iClaimant]:
-			if team(iVoter).isAVassal(): continue
-			if iVoter not in self.dPossibleBelligerents:
-				self.dPossibleBelligerents[iVoter] = iVotes
-			else:
-				self.dPossibleBelligerents[iVoter] += iVotes
 					
 	def assignCity(self, iPlayer, iOwner, (x, y)):
 		assignedCity = city(x, y)
