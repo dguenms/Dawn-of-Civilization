@@ -1,4 +1,4 @@
-from Consts import *
+from Core import *
 from BugEventManager import g_eventManager as events
 import inspect
 

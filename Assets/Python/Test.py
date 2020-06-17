@@ -1,3 +1,8 @@
-import Popup
+def function():
+	print "you have called the function"
 
-popup = Popup.PyPopup()
+name = 'name'
+othername = 'othername'
+
+globals()[name] = function
+globals()[othername] = function
