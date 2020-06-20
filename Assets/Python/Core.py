@@ -844,6 +844,9 @@ class EntityCollection(object):
 	def divide(self, keys):
 		shuffled_entities = self.shuffle().entities()
 		return [(key, [entity for j, entity in enumerate(shuffled_entities) if j % len(keys) == i]) for i, key in enumerate(keys)]
+	
+	def index(self, key):
+		return self.entities().index(key)
 
 class PlotsCorner:
 

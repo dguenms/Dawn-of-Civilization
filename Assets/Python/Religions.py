@@ -117,7 +117,7 @@ def checkChristianity(iGameTurn):
 			foundReligion(holyCity, iOrthodoxy)
 			return
 			
-		jewishCity = cities.all().notowner(human()).where(lambda city: city.isHasReligion(iJudaism)).random()
+		jewishCity = cities.all().notowner(active()).where(lambda city: city.isHasReligion(iJudaism)).random()
 		if jewishCity:
 			foundReligion(location(jewishCity), iOrthodoxy)
 
