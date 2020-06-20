@@ -29,6 +29,11 @@ map = gc.getMap()
 # TODO: is there a right equal or right not equal to add to Civ so we can do iPlayer == iEgypt and convert iPlayer to Civ implicitly?
 
 
+def itemize(iterable, format_func = lambda x: x, item_char = bullet):
+	return item_char + (newline + item_char).join(format_func(i) for i in iterable)
+
+
+
 def autoplay():
 	return year() < year(dSpawn[active()])
 
@@ -272,7 +277,7 @@ def move(unit, destination):
 		unit.setXY(x, y, False, True, False)
 
 		
-def popup(id, title, message, labels=[]):
+def eventpopup(id, title, message, labels=[]):
 	popup = Popup.PyPopup(id, EventContextTypes.EVENTCONTEXT_ALL)
 	popup.setHeaderString(title)
 	popup.setBodyString(message)
@@ -420,11 +425,7 @@ def text(key, *format):
 	if isinstance(key, unicode) and len(format) == 0:
 		return key
 		
-	formatted = translator.getText(str(key), tuple(encode(f) for f in format))
-	if formatted == key:
-		return str(key) % tuple(encode(f) for f in format)
-		
-	return formatted
+	return translator.getText(str(key), tuple(encode(f) for f in format))
 	
 	
 def text_if_exists(key, *format, **kwargs):
@@ -477,9 +478,9 @@ def find(list, metric = lambda x: x, reverse = True):
 
 def rand(iLeft, iRight = None):
 	if iRight is None:
-		iLeft = 0
 		iRight = iLeft
-	
+		iLeft = 0
+		
 	return iLeft + gc.getGame().getSorenRandNum(iRight - iLeft, 'random number')
 	
 	

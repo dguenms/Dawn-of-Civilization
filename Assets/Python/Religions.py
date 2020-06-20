@@ -249,7 +249,7 @@ def schism(orthodoxCapital, catholicCapital, replace, distance):
 		city.replaceReligion(iOrthodoxy, iCatholicism)
 			
 	if player().getStateReligion() == iOrthodoxy and year() >= year(dBirth[active()]):
-		popup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
+		eventpopup(-1, text("TXT_KEY_SCHISM_TITLE"), text("TXT_KEY_SCHISM_MESSAGE", pCatholicCapital.getName()), ())
 		
 	for iPlayer in players.major().alive().where(lambda p: player(p).getStateReligion() == iOrthodoxy):
 		if 2 * replace.owner(iPlayer) >= player(iPlayer).getNumCities():
